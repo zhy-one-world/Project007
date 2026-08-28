@@ -1,0 +1,38 @@
+
+namespace hld
+{
+	
+
+
+
+	class cauction_mgr
+	{
+    public:
+		int  get_empty_sell_slot();
+		bool load_self_selling_by_db_lua(const char *data_ptr, int data_len);
+	
+		bool lua_make_auction_to_ws(citem *temp_item, int sell_num, int price_type, int price_value);
+		void buy_item(guid_64 item_guid);
+		void cancel_sell_item(guid_64 item_guid);
+		void bid_item(guid_64 item_guid, int price_type, int price_value);
+		void read_record(guid_64 record_guid, int type);
+		
+				
+		void req_goods_list(int main_type, int sub_type, 
+			int item_color, int quality_level, 
+			int single_money_sort_mode, int total_money_sort_mode,
+			bool is_show_gold, bool is_show_diamond, int show_page, std::string key_word,
+			int trade_type, int career_type);
+			
+		void req_trade_record(int trade_type, int page_index);
+		
+		void req_another_sell_info(int sell_money_type, int item_template_id);
+		
+		
+		void req_self_bid_info(int trade_type, int page_index);
+			
+		
+	};
+
+}
+

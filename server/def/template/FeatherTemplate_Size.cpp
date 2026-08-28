@@ -1,0 +1,54 @@
+#include "FeatherTemplate_S.h"
+
+namespace hld
+{
+    void FeatherTemplateSize()
+    {
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("template_base");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("AttributeId");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("NameStringId");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("UpgradeMax");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("AddStarMax");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("UpgradeNow");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("AddStarNow");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("vector<float>");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("AttArray");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("AddStarMatirialId");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("StarShopId");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("AddStarMatirialNum");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("AddStarMoneyList");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("UpgradeMatirialId");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("UpgradeShopId");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("UpgradeMatirialNum");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("UpgradeMoneyList");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("ExhibitionNpcId");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("ExhibitionBuffArray");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("UnlockMaterialId");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("UnlockMaterialNum");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("SkillID");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("EventCondition");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("BuffArray");
+        template_size::get_instance().template_size_map[e_FeatherTemplate].push_back("vector<float>");
+        template_size::get_instance().template_key_map[e_FeatherTemplate].push_back("PurenessBasicAtt");
+    }
+}

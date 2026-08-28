@@ -1,0 +1,34 @@
+
+
+namespace hld
+{
+
+	void c2cs_req_aoi_location_lua(player& player_ref, const char* msg, int32 msg_len);
+	void c2cs_req_aoi_rotation_lua(player& player_ref, const char* msg, int32 msg_len);
+	void c2cs_req_aoi_simple_pos_lua(player& player_ref, const char* msg, int32 msg_len);
+	void c2cs_back_to_self_server_lua(player & player_ref, const char * msg, int32 msg_len);
+	void c2cs_req_transfer_scene_lua(player& player_ref, const char* msg, int32 msg_len);
+	void c2cs_req_transfer_scene_pos_lua(player & player_ref, const char * msg, int32 msg_len);
+	void c2cs_req_base_body_att_lua(player & player_ref, const char * msg, int32 msg_len);
+	void c2cs_req_base_body_att_lua(player& player_ref, const char* msg, int32 msg_len);
+	
+	void c2cs_ask_unit_dead_lua(player& player_ref, const char* msg, int32 msg_len);
+	void item_set_quick_call_mount_proc_lua(player& player_ref, const char* msg, int32 msg_len);
+	void skill_req_message_lua(player & player_ref, const char * msg, int32 msg_len);
+	void buff_req_message_lua(player& player_ref, const char* msg, int32 msg_len);
+	void c2s_player_gmorder_message_lua(player& player_ref, const char* msg, int32 msg_len);
+	
+	void c2s_add_guide_record_lua(player & player_ref, const char * msg, int32 msg_len);
+	
+	void c2s_operate_mail_lua(player& player_ref, const char* msg, int32 msg_len);
+	
+	void c2s_send_notice_with_param_lua(player& player_ref, const char* msg, int32 msg_len);
+	
+	void c2s_send_chat_new_lua(player& player_ref, const char* msg, int32 msg_len);
+	
+	void c2s_cross_boss_get_boss_is_dead_lua(player& player_ref, const char* msg, int32 msg_len);
+	
+	void c2s_get_boss_god_time_lua(player& player_ref, const char* msg, int32 msg_len);
+}
+
+

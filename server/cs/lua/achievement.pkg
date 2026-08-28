@@ -1,0 +1,11 @@
+
+
+namespace hld
+{
+	class cachievement
+	{
+	public:
+		int  get_inst_data(int index) const;
+		bool set_inst_data(int index, int num);
+	};
+}

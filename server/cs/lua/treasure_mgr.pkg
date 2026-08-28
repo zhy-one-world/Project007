@@ -1,0 +1,12 @@
+
+namespace hld
+{
+	class ctreasure_mgr
+	{
+    public:
+		void send_treasure_notice(int32 item_id, int32 item_quality, int32 operate_type);
+
+	};
+}
+
+

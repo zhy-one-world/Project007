@@ -1,0 +1,104 @@
+#pragma once
+
+#include "logic/type_def.hpp"
+#include "template_base.h"
+
+namespace hld
+{
+    void PlayerInitTemplateSize();
+#pragma pack(push, 1)
+    struct PlayerInitTemplate : public template_base
+    {
+        int32 Sex;
+        int32 Class;
+        int32 Branch;
+        std::vector<int32> GradeBranch;
+        int32 CareerName;
+        int32 CareerNameNaNo;
+        int32 TitleName;
+        int32 TitleGroundImageId;
+        int32 GradeImageId;
+        int32 BigGradeImageId;
+        int32 BigGradeNameImageId;
+        int32 LevelMax;
+        int32 UpgradeId;
+        std::vector<int32> GradeUpCostMoney;
+        std::vector<int32> GradeUpCostItem;
+        int32 GradeUpMission;
+        std::vector<float> GradeUpProperty;
+        int32 CorrespondingUpgradeIdAfterGradeUp;
+        std::vector<int32> GradeUpTalent;
+        std::vector<int32> InitMoney;
+        std::vector<int32> InstSkills;
+        std::vector<int32> AssistSkills;
+        std::vector<int32> PassiveSkills;
+        std::vector<int32> InitBuffs;
+        std::vector<int32> InitEquips;
+        std::vector<int32> InitItems;
+        std::vector<int32> InitFashion;
+        std::vector<int32> InitMission;
+        std::vector<int32> InitMount;
+        std::vector<int32> InitWing;
+        std::vector<int32> InitStarMapSpirit;
+        std::vector<int32> InitFeather;
+        int32 InitSoul;
+        int32 InitSpirit;
+        std::vector<int32> InitAchieve;
+        std::vector<int32> InitBelie;
+        std::vector<int32> InitPokedex;
+        std::vector<int32> InitAchievement;
+        int32 IconId;
+        int32 HeadId;
+        int32 SmallHeadId;
+        int32 WholeId;
+        int32 HalfImgRes;
+        float UseSkillSpeedX;
+        float UseSkillSpeedY;
+        int32 BornMapTemplateID;
+        std::vector<int32> BornLocation;
+        std::vector<int32> BornRotation;
+        std::vector<float> BornScale;
+        std::vector<int32> Capsule;
+        std::vector<int32> UnitRes;
+        std::vector<float> EffectsScale;
+        int32 NoticeId;
+        std::vector<float> WalkCameraPos;
+        std::vector<float> WingCameraPos;
+        std::vector<float> WingFlyCameraPos;
+        std::vector<float> RideCameraPos;
+        std::vector<float> WalkCameraRange;
+        std::vector<float> WingCameraRange;
+        std::vector<float> WingFlyCameraRange;
+        std::vector<float> RideCameraRange;
+        int32 DefaultShowWeaponId;
+        std::vector<int32> InitProtectMark;
+        int32 GradeUpShowWeaponId;
+        int32 GradeUpShowWingId;
+        int32 RaidWinAniId;
+        int32 RaidLoseAniId;
+        int32 UpgradeNewHighAniId;
+        int32 GradeUpAniId;
+        int32 SkyRaidWinAniId;
+        int32 CreateLevelRequirement;
+        int32 InitLevel;
+        int32 GradeBuff;
+        int32 GradeAB;
+        std::vector<int32> PreviewAB;
+        std::vector<int32> PreviewAM;
+        std::vector<int32> NewHighAB;
+        std::vector<int32> WidgetShowAB;
+        std::vector<int32> WidgetShowAM;
+        int32 RoleClassCharacteristic;
+        int32 SkillVideo;
+        std::vector<int32> InitGoddess;
+        std::vector<int32> InitWedding;
+        std::vector<int32> InitCoreElement;
+        std::vector<int32> MeshUnitRes;
+        int32 DiffOccText;
+        std::vector<int32> MusicPathId;
+        std::vector<int32> InitBreakWill;
+        int32 BreakWillId;
+        std::vector<int32> InitAwakenItem;
+    };
+#pragma pack(pop)
+}

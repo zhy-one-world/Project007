@@ -1,0 +1,26 @@
+
+
+namespace hld
+{
+
+
+	class  ranking_mgr_ws
+	{
+    public:	
+		static void  c2ws_get_ranking_list_func(e_RankingIndex ranking_index, const guid_64& role_guid);
+		static void  c2ws_get_my_rank_func(e_RankingIndex ranking_type, const guid_64& sender_guid, const guid_64& legion_guid);
+		
+		static void  c2ws_get_player_ranking_info_func(e_RankingIndex ranking_type, const guid_64& sender_guid, const guid_64& target_guid);
+		static void  send_service_rank_first_player_to_client_by_type(client_session* session, int32 send_type);
+		static void  get_oracle_trial_rank_info(guid_64 play_guid);
+		
+		static void  sync_player_arena_lua(const char* my_str, int32 my_len, const char*dst_str, int32 dst_len, bool is_robot);
+		
+		static int32	get_srv_avg_level();
+		
+		static guid_64 get_ranking_player_guid(e_RankingIndex ranking_index, int32 ranking_pos);
+	
+	};
+	
+}
+

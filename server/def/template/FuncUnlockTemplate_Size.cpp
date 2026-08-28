@@ -1,0 +1,52 @@
+#include "FuncUnlockTemplate_S.h"
+
+namespace hld
+{
+    void FuncUnlockTemplateSize()
+    {
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("template_base");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("AttributeId");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("string");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("FuncName");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("FuncShowName");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("Icon");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("Description");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("DetailIcon");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("ItemAwardArr");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("IsPreview");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("IsSpecialLogic");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("UnlockNeedMissionID");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("UnlockNeedLevel");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("IsNeedCrossServer");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("UnlockNeedGuideID");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("NeedOpenServerDays");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("string");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("PrecondFuncUnlock");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("Activate");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("ExhibitionNpcIdArray");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("ExhibitionNpcBuffArray");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("NewExhibitionNpcIdArray");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("TitleDescribeId");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("JumpToWidget");
+        template_size::get_instance().template_size_map[e_FuncUnlockTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_FuncUnlockTemplate].push_back("ShieldRegion");
+    }
+}

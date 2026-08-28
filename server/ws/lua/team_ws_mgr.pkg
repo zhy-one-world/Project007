@@ -1,0 +1,30 @@
+
+
+
+namespace hld
+{
+	class team_ws_mgr
+	{
+
+	public:
+		static team_ws_mgr&		get_instance();
+
+		team_ws*				get_team(guid_64 team_guid);
+		
+		team_ws*				get_unit_team(const guid_64& unit_guid);
+		
+		void					send_team_error_to_session(client_session* session, e_team_error err_type);
+		
+		void					player_stop_auto_match_team(guid_64& player_guid);
+		
+		bool					is_team_type_valid(e_team_type team_type, int32 sub_type_id);
+		
+		
+		void					req_condition_check_to_cs(client_session* session, e_team_common_check_invoker invoker, e_team_type team_type, int32 team_sub_type_id, guid_64 team_guid);
+		
+		
+		void					req_no_team_mate_list(client_session* session, e_team_req_mate_type mate_type);
+	
+	};
+}
+

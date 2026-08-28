@@ -1,0 +1,12 @@
+
+
+namespace hld
+{
+	class legion_ws_warehouse
+	{
+
+		void                     send_item_list_to_client(uint64 role_guid);
+		void                     send_log_list_to_client(uint64 role_guid);
+
+	};
+}

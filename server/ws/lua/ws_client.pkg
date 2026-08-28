@@ -1,0 +1,11 @@
+
+
+namespace hld
+{
+	class ws_client
+	{
+	public:
+		static ws_client& getInstance();
+		void send_to_dp_lua(const char* msg, int msg_len, int header, int server_id);
+	}
+}

@@ -1,0 +1,50 @@
+#include "EquipTemplate_S.h"
+
+namespace hld
+{
+    void EquipTemplateSize()
+    {
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("template_base");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("AttributeId");
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("EquipSlot");
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("equip_addon_num");
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("equip_enchant_num");
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("ExcellentShowGs");
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("vector<float>");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("AttArray");
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("vector<float>");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("EquipAddonAtt");
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("AddOnTemplateId");
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("SuccinctTemplateID");
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("GodAssembledSpend");
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("float");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("GodAssembledRadio");
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("Smelt_limit");
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("MaterialID");
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("MaterialCost");
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("LockMaterialID");
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("LockMaterialCost");
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("ForgeExcellentAttQualityWeight");
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("SuitType");
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("SuitAttArr");
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("StarBuffId");
+        template_size::get_instance().template_size_map[e_EquipTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_EquipTemplate].push_back("JewelCarveID");
+    }
+}

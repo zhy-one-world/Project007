@@ -1,0 +1,37 @@
+
+
+namespace hld
+{
+	class base_map_system
+	{
+	public:
+		static int32 get_map_template_id(const guid_64& map_guid);
+		static int32 get_map_type(const guid_64& map_guid);
+		static int32 get_map_sub_type(const guid_64& map_guid);
+	};
+	class bonfire_map_cs : public map_object
+	{
+		void					goto_next_stage();
+	};
+	class legion_station_map_cs : public map_object
+	{
+	public:
+		int					add_legion_boss_damage(guid_64 role_guid, int add_type);
+		int					get_player_demon_count(guid_64 role_guid);
+		int					get_player_gold_count(guid_64 role_guid);	
+        void                set_bonfire_level(int32 level);	
+        void				send_map_all_play_info(guid_64 play_guid);		
+	};
+	class map_cs : public map_object
+	{
+	public:
+	
+		void create_harry_map_normal_npc(int32 num);
+	};
+	class raid_map_cs : public map_object
+	{
+	public:
+		void  map_tigger_volume(int tigger_id,int tick_time,bool is_need_reply_clinet,int player_idex);
+		int32 add_exp_raid_attack_buff(player& player_ref, int32 add_type);
+	};
+}

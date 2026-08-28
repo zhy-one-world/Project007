@@ -1,0 +1,22 @@
+
+namespace hld
+{
+
+	class client_session_mgr 
+	{
+
+	public:
+
+		void	send_message_to_all_client_data_lua(const char * msg, int32 msg_len, uint32 header);
+		void    send_message_to_map_lua(int32 map_template_id, const char *msg, int32 msg_len, uint32 header);
+		
+		
+		int32							get_session_array_used();
+		
+		
+		client_session*                 get_session_by_use_index(int32 index);
+	
+	};
+}
+
+

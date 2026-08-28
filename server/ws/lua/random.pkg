@@ -1,0 +1,11 @@
+/*
+	lua 调用C++函数统一处理接口
+*/
+namespace hld
+{
+	class random_gen
+	{
+	public:
+		static int get_random(int nmin, int nmax);
+	};
+}

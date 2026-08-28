@@ -1,0 +1,23 @@
+
+namespace hld 
+{
+
+	struct s_client_uid
+	{
+		s_client_uid();
+
+		s_client_uid(int64 InValue); 
+
+		bool is_valid()
+		{
+			return fep_uid_64 > 0;
+		}
+		void clear_data()
+		{
+			fep_uid_64 = 0;
+		}
+		int64 fep_uid_64;
+	};
+
+}
+

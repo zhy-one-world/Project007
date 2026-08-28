@@ -1,0 +1,8 @@
+namespace hld
+{	
+	void load_role_pk_top_lua(int connindex);
+	void load_role_pk_info_lua(int connindex, long long role_guid, int tempalte_id, int role_gs, std::string role_name);
+	void save_role_pk_info_lua(int connindex, long long role_guid, std::string target_name1, std::string target_name2, std::string target_name3, int laddet_score, int win_result, int cross_honor);
+	void save_role_pk_honor_refresh_lua(int connindex, long long role_guid, int refresh_time);
+	void load_role_pk_log_lua(int connindex, long long role_guid, int server_id);
+}

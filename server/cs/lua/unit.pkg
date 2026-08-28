@@ -1,0 +1,37 @@
+/*
+	lua 调用C++函数统一处理接口
+*/
+namespace hld
+{
+	class unit
+	{
+	public:
+		/*
+			player自身的数据获取
+		*/
+		s_unit_info& get_unit_info_inst();
+		const bool& is_valid() const;
+		const guid_64&	get_unit_guid();
+		const guid_64&	get_map_guid();
+		s_unit_identifier& get_identifier();
+		int& get_unit_info(e_role_info eType);
+		int get_unit_guid_A();
+		int get_unit_guid_B();
+		void broadcast_info_one(e_role_info info_index);
+		/*
+			所有管理器都写到这里
+		*/
+		int  get_cur_map_type();
+		int& get_must_do_count(e_daily_must_do_typ eType);
+		void set_must_do_count(e_daily_must_do_typ eType, int iValue);
+		void send_daily_must_do_count_info_one(e_daily_must_do_typ info_index);
+		pawn_att& get_pawn_att();
+		
+		virtual guid_64&	get_legion_guid();
+		s_player_legion_info&	get_legion_info();
+		legion_cs_mgr&					get_legion_cs_mgr();
+		
+		const s_map_pos&				get_new_map_pos();
+	}
+}
+

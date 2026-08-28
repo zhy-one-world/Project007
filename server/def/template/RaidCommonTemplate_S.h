@@ -1,0 +1,106 @@
+#pragma once
+
+#include "logic/type_def.hpp"
+#include "template_base.h"
+
+namespace hld
+{
+    void RaidCommonTemplateSize();
+#pragma pack(push, 1)
+    struct RaidCommonTemplate : public template_base
+    {
+        int32 FubenIcon;
+        int32 FubenBgImg;
+        std::vector<int32> FubenAssessment;
+        int32 MustUseWing;
+        std::vector<std::string> BeginJoinTime;
+        std::vector<std::string> EndJoinTime;
+        std::vector<std::string> BeginMapTime;
+        std::vector<std::string> EndMapTime;
+        std::vector<int32> EnterWeek;
+        int32 BeginCanJoin;
+        int32 EnterLevel;
+        int32 EnterVIPLevel;
+        int32 UnLockMissionID;
+        std::vector<int32> EnterRaidCostItem;
+        std::vector<int32> MoppingUpCostItem;
+        int32 Preconditions;
+        int32 UnlockCondition;
+        int32 Difficulty;
+        int32 DifficultyName;
+        int32 EnterCount;
+        int32 GroupType;
+        int32 ConsumeEnterCounterCond;
+        int32 HaveExtraEnterWay;
+        std::vector<int32> ExtraBuyCount;
+        std::vector<int32> ExtraBuyCountNeedMoney;
+        std::vector<std::string> ExtraBuyCountNeedMoneyStr;
+        int32 ExtraEnterCount;
+        std::vector<int32> ExtraEnterNeedMoney;
+        int32 MPPanelType;
+        std::vector<int32> InfoPanelType;
+        std::vector<int32> WinCond;
+        std::vector<int32> SettleLevelType;
+        std::vector<int32> SettleLevelDropIdArr;
+        int32 TimeBegin;
+        int32 AutoTransferTime;
+        int32 TimeRequire;
+        std::vector<int32> TriggerList;
+        int32 RecommandFightingPower;
+        int32 MoppingUpUnlockCond;
+        int32 ProtectNpc;
+        int32 BossID;
+        std::vector<int32> PlotTips;
+        std::vector<int32> DropItems;
+        std::vector<int32> DropItemsNum;
+        int32 ResultDialogType;
+        float ResultDialogPopDelayTime;
+        float ResultDialogLiveTime;
+        int32 RandomAwardItems;
+        int32 FirstWinAwardDropId;
+        std::vector<int32> FirstWinAwardItems;
+        std::vector<int32> FirstWinAwardItemsNum;
+        std::vector<int32> FirstWinAwardMoney;
+        int32 RewardSettlementType;
+        std::vector<int32> AwardItems;
+        std::vector<int32> AwardItemsNum;
+        int32 AwardMoneyFactor;
+        std::vector<int32> AwardMoney;
+        std::vector<int32> AssistAwardItems;
+        int32 MoppingUpRandomAwardItems;
+        std::vector<int32> MoppingUpAwardMoney;
+        float MoppingUpTime;
+        int32 DefaultPkMode;
+        int32 BackgroundMusic;
+        std::vector<int32> MapWidgetJumpArray;
+        int32 HpOperateWhenIn;
+        int32 HpOperateWhenOut;
+        int32 MapReviveType;
+        int32 AutoReviveCD;
+        int32 DeadToLiveCD;
+        int32 DistanceOfShowHeadPanel;
+        int32 BestRecordOrderType;
+        int32 Noticeld;
+        int32 ExpTitleIcon;
+        int32 IsSceneCamera;
+        std::vector<int32> RaidWinCharacterRotation;
+        std::vector<int32> RaidWidgetLocation;
+        std::vector<float> RaidBossAniParams;
+        int32 EnterGradeLevel;
+        std::vector<int32> RecommendLevel;
+        std::vector<int32> CaptainRewardItems;
+        int32 NotCanRevive;
+        int32 NextRefreshTime;
+        int32 BreakLineLogin;
+        int32 ReviveEndClearTarget;
+        int32 LoginEndAutoFight;
+        std::vector<int32> VipEnterSceneBuff;
+        int32 HookWaitTime;
+        int32 NeedFightLeaveSafe;
+        std::vector<int32> JoinTopTip;
+        std::vector<float> CameraData;
+        std::vector<int32> VipMoppingConfig;
+        std::vector<int32> VipMoppingDrop;
+    };
+#pragma pack(pop)
+}

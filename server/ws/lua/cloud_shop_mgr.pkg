@@ -1,0 +1,17 @@
+
+
+namespace hld
+{
+	
+	class cloud_shop_mgr
+	{
+	public:
+		static cloud_shop_mgr& get_instance();
+	
+
+		void	handler_client_request(client_session*  pSession, e_client_req_type req_type);
+	
+	};
+}
+
+

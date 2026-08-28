@@ -1,0 +1,18 @@
+namespace hld
+{
+
+
+
+	class cworship_target
+	{
+	
+	  bool  load_worship_by_db_lua(const char *data_ptr, int data_len);
+	  void  add_new_record(const guid_64 target_guid, const int32 ranking_index);
+	  void  req_worship_player(e_RankingIndex ranking_index, int32 worship_type, const guid_64& target_player);
+	  void  req_worship_player_end(e_RankingIndex ranking_index, const int32& worship_type, const guid_64& target_guid, const int32& worship_value, const int32& worship_result);
+
+
+	};
+}
+
+

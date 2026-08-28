@@ -1,0 +1,52 @@
+#include "LadderTemplate_S.h"
+
+namespace hld
+{
+    void LadderTemplateSize()
+    {
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("template_base");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("AttributeId");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("Region");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("SeasonNum");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("RankName");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("RankIcon");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("LowScore");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("HighScore");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("WinScore");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("LoseScore");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("PeaceScore");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("WinReward");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("LoseReward");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("PeaceReward");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("SeasonReward");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("ReservedScore");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("BigGradeFlag");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("ExpandTime");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("UpgradeNotify");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("UpgradeReward");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("TitleReward");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("RobotRate");
+        template_size::get_instance().template_size_map[e_LadderTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_LadderTemplate].push_back("RobotTemplateID");
+    }
+}

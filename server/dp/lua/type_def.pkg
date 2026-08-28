@@ -1,0 +1,41 @@
+/*
+	lua 调用C++函数统一处理接口
+*/
+namespace hld
+{
+	struct guid_64
+	{
+
+	    guid_64();
+		guid_64(long long In64);
+		guid_64(int InA, int InB);
+		int get_A();
+		int get_B();
+		long long get_AB();
+		bool is_valid();
+	};
+	
+	/* struct fvector
+	{
+	  float x;
+	  float y;
+	  float z;
+	  fvector();
+	  void set_data(float temp_x, float temp_y, float temp_z);
+	};
+	
+	struct frotator
+	{
+	    float roll;
+		float pitch;
+		float yaw;
+		frotator();
+	};
+	
+	struct s_map_pos
+	{
+		fvector unit_location;
+		frotator unit_rotation;
+		s_map_pos();
+	}; */
+}

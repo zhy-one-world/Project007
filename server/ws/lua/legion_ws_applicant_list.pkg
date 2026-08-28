@@ -1,0 +1,16 @@
+
+
+namespace hld
+{
+	class legion_ws_applicant_list
+	{
+	public:
+
+		legion_ws_applicant*	get_applicant(guid_64 applicant_guid);
+		
+		void					del_applicant(guid_64 applicant_guid);
+		
+		void					del_applicant_with_join_legion(guid_64 role_guid);
+	
+	};
+}

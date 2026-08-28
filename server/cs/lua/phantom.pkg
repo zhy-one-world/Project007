@@ -1,0 +1,17 @@
+
+
+namespace hld
+{
+
+	class cphantom
+	{
+	public:
+		bool set_inst_data(int idx, int value);
+		int get_inst_data(int idx) const;
+		bool is_finish(int class_type);
+		int get_skill_id();
+		bool  is_valid();
+	};
+	
+
+}

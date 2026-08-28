@@ -1,0 +1,21 @@
+
+
+namespace hld
+{
+	class appearance_info_mgr
+	{
+	public:
+
+		static appearance_info_mgr& get_instance();
+
+
+		void req_save_appearance_info_to_id(s_client_uid client_uid, const std::string& appearance_info);
+
+		void req_load_appearance_info_by_id(s_client_uid client_uid, int32 id);
+	
+
+
+	};
+}
+
+

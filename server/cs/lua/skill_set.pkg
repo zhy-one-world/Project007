@@ -1,0 +1,12 @@
+namespace hld
+{
+
+	class skill_set
+	{
+
+	public:
+        skill*			get_skill_inst_by_id(int skill_template_id);
+        void			activate_skill(int skill_template_id, bool is_activate);
+	};
+
+}

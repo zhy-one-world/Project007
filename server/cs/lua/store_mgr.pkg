@@ -1,0 +1,79 @@
+
+
+
+namespace hld
+{
+    enum e_goods_info
+	{
+		e_goods_info_id = 0,//模板id
+		e_goods_info_owner_store,//隶属商店id
+		e_goods_info_purchased_num,//已购买的数量
+		e_goods_info_last_update_time,//最近一次更新时间
+		e_goods_info_max,
+	};
+
+	class store_mgr
+	{
+	public:
+
+		static store_mgr& get_instance();
+
+		int get_server_open_time();
+		
+	};
+	class cgoods
+	{
+
+
+		bool&								is_data_use(); 
+
+	
+		int									get_goods_data_by_index(e_goods_info eIndex); 
+	
+	};
+
+	struct s_store_goods
+	{
+		
+		bool is_valid(); 
+
+		void add_goods(const s_goods_info& goods_info);
+
+		bool remove_goods(const int& goods_id);
+
+		cgoods* get_goods_by_id(const int& goods_id);
+	
+		cgoods* get_goods_by_idex(const int& idex);
+
+		int get_store_id();
+
+
+	};
+	class player_store_helper
+	{
+	public:
+
+
+		s_store_goods*					get_empty_store_goods();
+		s_store_goods*					get_store_goods_by_id(const int & store_id);
+		
+		bool                            can_buy(int goods_id, int store_id);
+		int							    can_buy_num(int goods_id,int store_id );			
+		void							add_buy_info(int goods_id, int goods_num, int store_id);		
+		void							create_record_by_inst(const s_goods_info& goods_info);
+		
+		bool                            load_purchase_record_by_db_lua(const char *data_ptr, int data_len);
+		
+	
+		void							update_record(bool is_send, int update_type);		
+		void							send_store_goods_record_all();
+		void							remove_record_by_goods_id(int goods_id, int store_id);
+
+		bool							check_is_store_open_time(int store_id,int goods_id);
+		bool							check_ladder_store_can_buy(int store_id);
+		bool							check_is_goods_open_time(int goods_id);
+
+
+	    s_store_goods*                  get_s_store_goods_by_index(int index);
+	};
+}

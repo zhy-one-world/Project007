@@ -1,0 +1,38 @@
+
+namespace hld
+{ 
+
+	class marry_mgr_ws 
+	{
+	
+	public:
+		static marry_mgr_ws& get_instance();
+
+
+	public:
+        
+		void    c2ws_get_married_reward(const guid_64& role_guid);
+		void    c2ws_get_marry_mission(const guid_64& role_guid, int32 is_near);
+
+		//-----		marry	 -------------------------- 
+	
+		void	req_check_marry_with_sb(const guid_64& main_guid, const guid_64& sub_guid,int32 marry_item);
+		void	c2ws_reply_marry_choice(const guid_64& role_guid, bool is_agree); 
+	
+
+		//-----		divorce	 -------------------------- 
+		void	c2ws_req_check_divorce(const guid_64& main_guid, const guid_64& sub_guid, bool is_force); 
+		void	c2ws_reply_divorce_choice(const guid_64& role_guid, bool is_agree, bool is_force);
+	
+
+
+		//-----		wedding_ring	 --------------------------
+		void	req_bless_one_couple(client_session* client_ptr, const guid_64& target_guid);
+	
+	};
+
+
+
+}
+
+

@@ -1,0 +1,17 @@
+
+
+namespace hld
+{	class cs_map_system
+	{
+	public:
+		static int32 get_map_template_id(const guid_64& map_guid);
+	};
+	class cs_map_mgr_system
+	{
+	public:
+		static void	send_map_error_to_client(client_session* session, e_error_code error_code);
+		static void	transfer_to_map(client_session* session, int32 map_template_id, guid_64 map_guid, int32 war_index, int32 server_id);
+		static void	send_big_player(int32 map_template_id, s_fake_player_info& fake_player_info, int32 big_type);	
+	};
+}
+

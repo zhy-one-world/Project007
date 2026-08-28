@@ -1,0 +1,12 @@
+
+namespace hld
+{
+
+	class boss_island_mgr
+	{
+
+		bool    load_boss_island_by_db_lua(const char *data_ptr, int data_len);
+
+	};
+}
+

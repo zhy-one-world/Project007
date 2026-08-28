@@ -1,0 +1,16 @@
+
+
+namespace hld
+{
+	void save_arena_rank_first_lua(int connindex, int t_rank_pos, long long t_role_guid, std::string t_role_name, long long t_gs_value, int t_role_temp_id, int t_robot_temp_id, int t_military_rank_level
+		, int t_vip_level, std::string t_game_channel, int n_rank_pos, long long n_role_guid, std::string n_role_name, long long n_gs_value, int n_role_temp_id, int n_robot_temp_id, int n_military_rank_level
+		, int n_vip_level, std::string n_game_channel);
+	void load_all_ranking_info_lua(int connindex, int ranking_type);
+	void save_ranking_info_one_lua(int connindex, long long role_guid,std::string role_name,long long ranking_type,long long ranking_value,
+		long long save_time,long long supporting_guid,std::string supporting_name,int vip_level,int peak,int server_id,std::string game_channel,long long standby_parameter);
+	void load_all_service_rank_info_lua(int connindex, int rank_type);
+	void save_ranking_worship_lua(int connindex, long long sender_guid, long long role_guid, std::string role_name, long long ranking_type, long long ranking_value,
+		long long save_time, long long supporting_guid, std::string supporting_name, int vip_level, int peak, int server_id, std::string game_channel, long long standby_parameter,
+		long long worship_add_value, int worship_type);
+	void load_player_worship_value_lua(int connindex, long long sender, long long target);
+}

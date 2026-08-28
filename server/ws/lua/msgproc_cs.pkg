@@ -1,0 +1,22 @@
+
+
+namespace hld
+{
+	
+    void lua_cs2ws_send_red_package_process(uint32 conn_index, const char* data_ptr, int32 data_len);
+	
+	void lua_cs2ws_get_red_package_process(uint32 conn_index, const char* data_ptr, int32 data_len);
+	
+
+	void lua_cs2ws_get_arena_rank(uint32 conn_index, const char* data_ptr, int32 data_len);
+
+	void lua_cs2ws_req_challenge(uint32 conn_index, const char* data_ptr, int32 data_len);
+
+	void lua_cs2ws_req_get_choose_list(uint32 conn_index, const char* data_ptr, int32 data_len);
+	
+	void lua_cs2ws_req_get_first_three(uint32 conn_index, const char* data_ptr, int32 data_len);
+	
+	void lua_cs2ws_chellenge_over_req(uint32 conn_index, const char* data_ptr, int32 data_len);
+	
+	void lua_cs2ws_arena_sync_gs_value_proc(uint32 conn_index, const char* data_ptr, int32 data_len);
+}

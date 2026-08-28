@@ -1,0 +1,52 @@
+#include "DeityTemplate_S.h"
+
+namespace hld
+{
+    void DeityTemplateSize()
+    {
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("template_base");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("AttributeId");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("Name");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("Describe");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("Icon");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("Type");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("ItemGet");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("CurLevel");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("MaxLevel");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("UpgradeCost");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("AddExpCost");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("UpgradeNeedNum");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("vector<float>");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("AttArray");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("NpcId");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("AdditionBuff");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("AdditionBuffName");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("AdditionBuffDescribe");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("CooperateBuff");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("CooperateBuffDescribe");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("CooperateUnlockNeed");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("StarID");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("EquNeedLv");
+        template_size::get_instance().template_size_map[e_DeityTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_DeityTemplate].push_back("ShowBuff");
+    }
+}

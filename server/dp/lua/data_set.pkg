@@ -1,0 +1,13 @@
+
+namespace hld
+{
+
+	class data_set
+	{
+	 public:
+		void add_data_info(long long data_type, const char * data_ptr, int data_size, int data_num);
+		bool get_data_info(long long data_type, void* data_ptr, int& data_num);
+		bool get_proto_info(long long data_type, void* data_ptr, int& data_size);
+	};
+}
+

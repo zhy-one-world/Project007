@@ -1,0 +1,15 @@
+
+namespace hld
+{
+
+
+	class starark_mgr 
+	{
+
+		bool load_starark_by_proto_db(const char *data_ptr, int data_len);
+		void  on_operate(int32 oper_type, int32 param1, int32 param2,  int32 param3);
+		
+	};
+
+}
+

@@ -1,0 +1,11 @@
+
+namespace hld
+{
+
+	class cseven_day_goal_mgr
+	{
+	public:
+		bool          load_seven_day_goal_by_db_lua(const char *data_ptr, int data_len);
+
+	};
+}

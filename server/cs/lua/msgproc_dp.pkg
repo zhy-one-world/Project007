@@ -1,0 +1,8 @@
+
+namespace hld
+{
+
+	bool dp2cs_load_role_info_lua(int unit_array_index,const char *data_ptr, int data_len);
+	
+}
+

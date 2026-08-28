@@ -1,0 +1,16 @@
+
+
+namespace hld
+{
+	class assist_fight_mgr
+	{
+	public:
+
+		static assist_fight_mgr& get_instance();
+
+		void sync_assist_fight_info(guid_64 role_guid, bool is_login , guid_64 create_guid = guid_64());
+		void req_assist_fight(guid_64 role_guid, guid_64 assist_fight_guid);
+	
+	};
+}
+

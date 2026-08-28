@@ -1,0 +1,50 @@
+#include "AdditionBuffTemplate_S.h"
+
+namespace hld
+{
+    void AdditionBuffTemplateSize()
+    {
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("template_base");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("AttributeId");
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("BuffName");
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("BuffDescription");
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("AdditionBuffType");
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("AdditionBuffSubType");
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("AdditionBuffLevel");
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("EquipNum");
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("UpgradeNum");
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("EquipQuality");
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("AchievementID");
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("FeatherNum");
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("FeatherUpgradeNum");
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("RankID");
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("AddOnLevel");
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("SuccinctFullQualityLevel");
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("vector<float>");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("AdditionValue");
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("BuffArray");
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("Icon");
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("IsCanShow");
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("ShowNoticeId");
+        template_size::get_instance().template_size_map[e_AdditionBuffTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_AdditionBuffTemplate].push_back("SuitSkillID");
+    }
+}

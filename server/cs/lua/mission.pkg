@@ -1,0 +1,24 @@
+
+
+namespace hld
+{
+   	enum e_mission_finish_type
+	{
+		e_mission_finish_type_normal,//正常完成
+		e_mission_finish_type_double,//双倍奖励
+		e_mission_finish_type_endall,//一键完成
+	};
+
+	class cmission
+	{
+	public:
+		void				init_mission_by_template(int mission_id, int mission_slot, player* player_ptr);
+		int				    finish_mission(int npc_id,e_mission_finish_type finish_type = e_mission_finish_type_normal);//完成发钱
+		int				    get_inst_data(int index);
+		bool				set_inst_data(int index, int num);
+		MissionTemplate*	get_mission_template_ptr();
+		void				create_npc();
+		int				    get_mission_id();
+	
+	}
+}

@@ -1,0 +1,15 @@
+
+namespace hld
+{
+	class ctalent_mgr
+	{
+
+	public:
+	    bool load_talent_by_db_lua(const char *data_ptr, int data_len);
+		void send_talent_one(ctalent* talent_ptr);
+		ctalent* get_talent_by_series(int series_id);
+		ctalent* get_talent_empty();
+		int get_talent_cast(const int talent_type);
+		void talent_reset();	
+	};
+}

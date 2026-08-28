@@ -1,0 +1,20 @@
+
+
+namespace hld
+{
+	void auction_add_item_into_db_proc_lua(int connindex, const char *data_ptr, int data_len);
+	void auction_find_buy_target_proc_lua(int connindex, int64 role_guid, int64 item_guid);
+	void auction_find_cancel_target_proc_lua(int connindex, int64 role_guid, int64 item_guid);
+	void auction_find_bid_target_proc_lua(int connindex, int64 role_guid, int64 item_guid, int32 money_type, int32 money_value);
+	void auction_bid_success_proc_lua(int connindex, int64 new_record_id, int64 old_buyer_guid, const char *data_ptr, int data_len);
+	void auction_get_and_clear_old_item_proc_lua(int connindex, int32 trade_type, int64 cur_time);
+	void auction_add_share_list_proc_lua(int connindex, int64 item_guid[130], int64 role_guid[130], float share_rate[130], std::string share_mail_title[130], std::string share_mail_content[130]);
+	void auction_add_trade_record_proc_lua(int connindex, int64 record_guid, int64 role_guid, bool is_sell, const char *data_ptr, int data_len);
+	void auction_req_share_list_proc_lua(int connindex, int64 item_guid, int32 item_template_id, int64 buyer_guid, int32 money_type, int32 money_value);
+	void auction_check_legion_selling_proc_lua(int connindex, int64 legion_guid, int64 cur_time);
+	void auction_del_bid_record_proc_lua(int connindex, int64 item_guid);
+	void auction_clear_old_bid_record_proc_lua(int connindex);
+	void auction_update_sell_show_proc_lua(int connindex, int32 end_time, const char *data_ptr, int data_len);
+	void auction_time_out_proc_lua(int connindex, int64 cur_mil_sec, int64 sell_time, int64 deal_time, int32 is_first);
+}
+

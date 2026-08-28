@@ -1,0 +1,36 @@
+/*
+	lua 调用C++函数统一处理接口
+*/
+namespace hld
+{
+   	enum e_att_one
+	{
+		e_att_one_level,//层级
+		e_att_one_att_id,//属性id
+		e_att_one_value,//属性值
+		e_att_one_percent,//属性百分比
+		e_att_one_show,//是否显示到面板中 0不显示，1显示
+		e_att_one_max
+	};
+	enum e_base_att_info
+	{
+		e_base_att_info_none = 0,
+		e_base_att_info_strength,						// 力量(防御)		--果实加的属性
+		e_base_att_info_agility,						// 敏捷(闪避)
+		e_base_att_info_intellect,						// 智力(抗性)
+		e_base_att_info_stamina,						// 耐力(生命)
+		e_base_att_info_hp_cur,							// 当前生命值
+		e_base_att_info_pk_value,						// 玩家pk值
+		e_base_att_info_pk_mode,						// 玩家pk模式
+		e_base_att_info_community_type,					// 玩家阵营类型
+		e_base_att_info_equip_title_id,					// 玩家佩戴称号id
+		e_base_att_info_magic_cur,						// 当前魔法值
+		e_base_att_info_body_power_cur,					// 当前体力值
+		e_base_att_info_body_strength,					// 力量				--玩家自身属性
+		e_base_att_info_body_agility,					// 敏捷
+		e_base_att_info_body_intellect,					// 智力
+		e_base_att_info_body_stamina,					// 耐力
+		e_base_att_info_hp_main,						// 在大世界时的血量
+		e_base_att_info_max
+	};
+}

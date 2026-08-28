@@ -1,0 +1,12 @@
+namespace hld
+{
+
+	class cpokedex
+	{
+
+	public:
+        int	    get_data_info(int eIndex);
+        void    set_data_info(e_pokedex_Info eIndex, int iValue);
+	};
+
+}

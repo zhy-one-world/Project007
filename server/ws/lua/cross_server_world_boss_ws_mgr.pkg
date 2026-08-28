@@ -1,0 +1,27 @@
+
+
+
+namespace hld
+{
+	class cross_server_world_boss_ws_mgr
+	{
+
+		static cross_server_world_boss_ws_mgr& get_instance();
+
+
+	
+		bool						is_in_cross_boss_map(guid_64 map_guid);
+		//地图传送
+		e_error_code				is_can_join_with_cross(guid_64 role_guid, int32 map_type);
+
+		void						get_world_boss_map_guid(guid_64& map_guid, int32& war_idex, int32 map_type);			//获得跨服世界boss活动地图id
+		int32						get_cross_server_world_boss_map_temp_id(int32 map_type);								//获得跨服世界boss活动地图模板id
+		void						send_kill_boss_show(client_session* session);
+	
+	
+
+	};
+
+
+}
+

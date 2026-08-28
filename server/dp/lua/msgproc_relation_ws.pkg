@@ -1,0 +1,9 @@
+
+
+namespace hld
+{
+	void ws2dp_req_load_offline_other_relation_lua(int connindex,long long sender_guid,int list_type,long long other_guid);
+	void ws2dp_req_load_player_relation_lua(int connindex,long long sender_guid);
+	void ws2dp_req_add_relation_lua(int connindex, long long role_guid, long long relation_guid, std::string relation_name, long long relation_gs_value, int data_array[8]);
+	void ws2dp_req_del_relation_lua(int connindex, long long role_guid, long long target_role_guid, int relation_type);
+}

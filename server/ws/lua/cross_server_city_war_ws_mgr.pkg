@@ -1,0 +1,22 @@
+
+
+namespace hld
+{
+	class cross_server_city_war_ws_mgr
+	{
+	public:
+	
+		static cross_server_city_war_ws_mgr& get_instance();
+		
+		
+		
+		
+		bool						is_in_game_time();
+		int32						get_cur_legion_in_rank(guid_64 legion_guid);
+
+
+	
+	};
+}
+
+

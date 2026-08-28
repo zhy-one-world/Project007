@@ -1,0 +1,25 @@
+
+
+namespace hld
+{
+
+	class awaken_mgr
+	{
+
+	public:
+		void syc_client_update_item(citem* p_item);
+		citem *get_item(guid_64 item_guid);
+	
+		int    get_grade_num();
+		bool   is_material(int material_id, int material_num);
+		void   del_material(int material_id, int material_num);
+		void   set_awaken_attr(citem *item, bool is_add);
+
+		void    sync_fight_power(citem *item);
+		citem  *get_item_id_str(string item_guid_str);
+		void    item_str_to_item_guid_array_del(string  item_array_str);
+		void    operate_msg_str(string main_guid_str, int result);
+	};
+
+}
+

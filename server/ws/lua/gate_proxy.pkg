@@ -1,0 +1,12 @@
+
+namespace hld
+{
+
+	class gate_proxy 
+	{
+	
+		bool is_gate_run();	
+	
+	};
+}
+

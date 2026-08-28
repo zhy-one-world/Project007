@@ -1,0 +1,38 @@
+
+namespace hld
+{
+
+    enum e_need_server_cross
+	{
+		e_need_server_cross_none,
+		e_need_server_cross_begin_cross,//开始跨服
+		e_need_server_cross_begin_cross_pk,//开始跨服职业竞技
+		e_need_server_cross_begin_cross_activity,//开始跨服PK之王和破碎虚空
+		e_need_server_cross_begin_cross_harry,//开始跨服掠夺
+		e_need_server_cross_begin_cross_city_war,//开始霸主战
+		e_need_server_cross_begin_cross_legion_territory_war,//开始跨服城战
+		e_need_server_cross_begin_cross_boss,	//开启跨服世界boss
+		e_need_server_cross_begin_cross_ladder,//开始跨服天梯
+		e_need_server_cross_begin_cross_cloud,//开始跨服云购
+		e_need_server_element_war,	//开始元素争霸
+		e_need_server_cross_max
+	};
+
+	class world_server 
+	{
+	
+	
+		int32   get_need_begin_cross_gm_common(e_need_server_cross gm_type);
+		bool	is_sky_island_server();
+		int32	get_server_id();
+		int32	get_cross_id();
+		
+		void	set_server_act_hidden(bool is_need_hidden, bool is_other_server);
+		
+		void	set_ws_loading_flag(int64 flag);
+		void	send_to_gate_get_msg(int64 flag);
+
+	};
+}
+
+

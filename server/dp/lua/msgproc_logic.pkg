@@ -1,0 +1,7 @@
+
+namespace hld
+{
+
+	bool cs2dp_save_role_logic_cache_lua(long long role_id, const char* data_ptr, int data_len);
+}
+

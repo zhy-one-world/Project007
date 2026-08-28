@@ -1,0 +1,92 @@
+/*
+	lua 调用C++函数统一处理接口
+*/
+namespace hld
+{
+	class item_set
+	{
+	public:
+		int get_item_count(e_bag_type bag_type, int item_template_id, int lock);//所有物品数量
+		void del_item(e_server_log_del_item causeid, int location, citem* item_ref, int del_num);
+		void del_item(e_server_log_del_item causeid, int location, guid_64 item_guid, int del_num);
+	    bool load_item_by_db_lua(const char *data_ptr, int data_len);
+		citem* get_wedding_equip_item();
+		void set_wedding_equip_att(citem * equip_ptr, bool is_add);
+		void set_wedding_init_fashion_state(bool activate);
+		void send_item_one(citem* item_ref, bool to_self, e_update_item_info_mode update_mode);
+		void put_in_bag(citem* item_ptr);	// 把物品放入背包中 放不下就自动发邮件
+		citem* create_item_by_template(e_server_log_add_item add_type, int param, int item_template_id, int item_num, int locked, int item_over_time, e_bag_type bag_type, int item_const_att);
+		citem* get_item_by_slot(int bag_type,int item_slot);
+		int get_double_att_element_num();
+		bool is_empty_slot_enough(e_bag_type temp_bag_typ, int request_num);
+		bool tidy_item(e_bag_type tidy_bag_typ);
+		citem* get_item(int item_guid_A, int item_guid_B);
+		citem* get_item(std::string item_guid_str);
+		int get_empty_slot_num(e_bag_type temp_bag_type);
+		int count_star_map_spirit(int item_template_id);
+		int get_bind_material_num();
+		int get_no_bind_material_num();
+		void cost_item_by_id_with_lock_states(e_server_log_del_item causeid, int location,int item_template_id, int item_cost_num, int first_use_lock);//消耗某类物品，是否优先锁定
+		void cost_star_map_spirit_item_states(e_server_log_del_item causeid, int location,int item_template_id, int item_cost_num);
+		void set_target_slot_guid(e_bag_type target_bag, int target_slot, guid_64 new_guid);
+		int get_empty_slot(e_bag_type temp_bag_type);
+		void clear_target_slot(e_bag_type target_bag, int target_slot);
+		void set_wing_att(bool is_add);
+		void set_feather_att(const citem& feather_ptr, bool is_add);
+		void calcu_addition(e_addition_buff addition_buff_type, bool need_send_notice);
+		void set_equip_jewel_att(citem& equip_ptr, bool is_add);
+		void sync_ranking_spirit();
+		void send_spirit_msg(citem* temp_item, bool is_del);
+		void  sync_ranking_spirit();
+		citem* get_cur_level_wing();
+		void set_showed_wing();
+		citem* get_showed_mount();
+		citem* get_item_by_template_id(int target_template_id);
+		bool is_class_enable(citem* target_item);
+		void change_beast_spirit_att(int beast_spirit_type, bool is_add_att);
+		bool set_mount_or_wing_beast_spirit_bag_data(int item_id,int item_type, int upgrade_num);
+		void sync_ranking_wing();
+		void sync_ranking_mount();
+		int get_equipment_upgrade_buff_id(bool is_weapon);
+		void equip_off_upgrade_show_buff();		//去除装备强化光效buff
+		void equip_on_upgrade_show_buff();		//添加装备强化光效buff
+		void equip_off_addon_show_buff();		//去除装备追加光效buff
+		void equip_on_addon_show_buff();		//添加装备追加光效buff
+		void equip_off_awaken_show_buff();		//去除装备觉醒光效buff
+		void equip_on_awaken_show_buff();		//添加装备觉醒光效buff
+		void equip_off_forge_show_buff();		//去除装备重铸光效buff
+		void equip_on_forge_show_buff();		//添加装备重铸光效buff
+		void equip_off_enchant_show_buff();		//去除装备附魔光效buff
+		void equip_on_enchant_show_buff();		//添加装备附魔光效buff
+		void add_new_quick_mount_call(guid_64& new_mount_guid);
+		void set_showed_mount();
+		void set_equip_upgrade_att(const EquipTemplate* equip_template_ptr, const int& upgrade_num, bool is_add);
+		void set_equip_addon_att(const EquipTemplate* equip_template_ptr, const int& addon_num, bool is_add);
+		void add_fashion_star_num();
+		int get_fashion_star_num();
+		bool is_equipment_effective(guid_64& item_guid);
+		void refresh_succinct_buff(bool is_add);
+		void sync_whole_euip_fighting_power();
+		int get_equip_num_by_strength_limit(int limit_level);
+		int get_equip_num_by_addition_limie(int limit_level);
+		void get_mount_grade_and_level_by_order_num(int order_num, int& grade, int& level);
+		int get_total_mount_activate_num();
+		int get_equip_num_by_limit(int limit_item_grade, int limit_item_color);
+		void  get_cur_wing_grade_and_level(int& grade, int& level);
+		int get_total_element_heart_level();
+		void set_goddess_equip_att(citem* equip_ptr, bool is_add);
+		void refresh_spirit_att(int old_spirit_id, int new_spirit_id);
+		
+		void equip_off_equip_show_buff();
+		void set_show_fashion_buff();
+		void equip_on_equip_show_buff();
+		int32 star_skill_unlock(guid_64 choosed_guid, int32 choosed_index, bool use_item, bool is_star);
+		void get_hope_item(int32 get_typ);
+		
+		int32 get_equip_smallest_enchant_level_by_type(int32 show_type);
+		void refresh_break_will_skill_by_id(int tem_id);
+		
+		int32 get_equip_num_awaken_level();
+	}
+	
+}

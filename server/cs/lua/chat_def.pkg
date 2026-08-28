@@ -1,0 +1,38 @@
+/*
+	lua 调用C++函数统一处理接口
+*/
+namespace hld
+{
+	struct e_chat_notice_info
+	{
+	};
+	enum e_sync_cs2ws_data_type
+	{
+		e_sync_cs2ws_data_gs_value,
+		e_sync_cs2ws_data_cur_hp,
+		e_sync_cs2ws_data_max_hp,
+		e_sync_cs2ws_data_exp_level,
+		//e_sync_cs2ws_data_money,
+		//e_sync_cs2ws_data_demonstower,
+		//e_sync_cs2ws_data_wing,
+		//e_sync_cs2ws_data_mount,
+		//e_sync_cs2ws_data_worship,
+		e_sync_cs2ws_military_rank,
+		e_sync_cs2ws_data_player_template,
+		e_sync_cs2ws_data_dead_to_addhate,
+		e_sync_cs2ws_data_vip_level,
+		e_sync_cs2ws_data_max
+	};
+	
+	// 角色转生操作的返回结果
+	enum e_grade_up_result
+	{
+		e_grade_up_result_unknown,                      // 未知错误
+		e_grade_up_result_success,                      // 转生成功
+		e_grade_up_result_level_not_enough,             // 等级不足
+		e_grade_up_result_silver_not_enough,            // 金币不足
+		e_grade_up_result_magic_crystal_not_enough,     // 魔晶不足
+		e_grade_up_result_full_grade_num,               // 已达到最大转生次数
+		e_grade_up_result_max
+	};
+}

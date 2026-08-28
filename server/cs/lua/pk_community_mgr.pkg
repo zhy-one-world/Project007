@@ -1,0 +1,13 @@
+
+
+namespace hld
+{
+	
+
+
+	class pk_community_mgr
+	{
+	public:
+		void change_pk_info(int32 pk_type, int32 pk_value, bool need_check_map = false);
+	};
+}

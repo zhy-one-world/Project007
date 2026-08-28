@@ -1,0 +1,14 @@
+
+namespace hld
+{
+	class goddess_mgr
+	{
+	public:
+		void									calcu_cooperate_buff(citem* item_ptr, bool is_add);
+		void									calcu_goddess_buff(citem* item_ptr, bool is_add);
+		void									set_star_is_open(citem* item_ptr, bool is_send);
+	};
+
+
+}
+

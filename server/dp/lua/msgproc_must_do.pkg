@@ -1,0 +1,10 @@
+
+namespace hld
+{
+
+    bool cs2dp_save_role_yesterday_must_do_remain_cache_lua(long long role_id, const char* data_ptr, int data_len);
+
+	bool cs2dp_save_role_daily_must_do_count_cache_lua(long long role_id, const char* data_ptr, int data_len);
+}
+
+

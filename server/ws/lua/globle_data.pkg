@@ -1,0 +1,66 @@
+/*
+	lua 调用C++函数统一处理接口
+*/
+namespace hld
+{
+	class globle_data
+	{
+	public:
+		static globle_data& get_instance();
+		void send_mail_to_another_player_by_system(
+			guid_64 target_player_guid,
+			guid_64 sender_guid,
+			int receiver_server_id,
+			std::string SenderName,
+			std::string title,
+			std::string contentText,
+			int money_typ1,
+			int money_num1,
+			int money_typ2,
+			int money_num2,
+			const s_item_info* item_list,
+			int item_num);
+	public:
+		void clear_char_notice_info();
+		void set_notice_id(int notice_id);
+		void add_other_name(const std::string& temp_other_name);
+		void add_describe_str(const std::string& temp_describe_str);
+		void add_item_name(const std::string& temp_item_name);
+		void add_num_type_data(const int& temp_num_type_data);
+		void add_item_data(const s_item_info& temp_item_data);
+		char* get_mail_common_text(int id_index);
+		char* get_mail_common_text_id(e_mail_common_text id_index);
+		int   get_region_code();
+		
+		string get_money_str_by_type(int32 money_type);
+		
+		int32 get_server_on_days(int32 time_stamp);
+		
+		bool make_auction_info(s_auction_info& target_info, s_item_info item_info, int32 sell_num, int32 trade_type = 0,  
+			guid_64 seller_guid = guid_64(), std::string seller_name = "", int32 seller_vip_level = 0,
+			int32 sell_money_type = 0, int64 sell_total_money = 0);
+		
+	};
+	
+	class c_mail_info
+	{
+	public:
+		guid_64 TargetPlayerGuid;
+		guid_64 SenderPlayerGuid;
+		std::string SenderName;
+		std::string title;
+		std::string contentText;
+		int money_typ1;
+		int money_num1;
+		int money_typ2;
+		int money_num2;
+		const s_item_info* item_list;
+		int item_num;
+
+		c_mail_info();
+
+		c_mail_info(std::string _SenderName, std::string _title, std::string _contentText);
+
+		void clear_data();
+	};
+}

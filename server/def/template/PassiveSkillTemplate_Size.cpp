@@ -1,0 +1,56 @@
+#include "PassiveSkillTemplate_S.h"
+
+namespace hld
+{
+    void PassiveSkillTemplateSize()
+    {
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("template_base");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("AttributeId");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("Series");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("Type");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("Level");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("LevelMax");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("Name");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("Icon");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("Describe");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("OpenMoney");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("OpenItem");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("BuffArray");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("FeatherArray");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("vector<float>");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("AttArray");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("vector<float>");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("AttAddArray");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("BuffAddType");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("GSAddValue");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("float");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("ShowCD");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("ObtainDescription");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("WidgetJumpId");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("RegionArr");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("OpenTipStr");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("NoOpenTipStr");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("NewGetTip");
+        template_size::get_instance().template_size_map[e_PassiveSkillTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_PassiveSkillTemplate].push_back("SkillVedio");
+    }
+}

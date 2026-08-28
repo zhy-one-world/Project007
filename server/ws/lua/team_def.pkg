@@ -1,0 +1,113 @@
+
+
+namespace hld
+{
+
+
+	enum e_join_team_way
+	{
+		e_join_team_way_by_team_guid,        // 通过队伍的GUID来加入队伍
+		e_join_team_way_by_captain_guid,     // 通过队长的GUID来加入队伍
+		e_join_team_way_max
+	};
+
+	enum ETeamMemberInfo
+	{
+		ETeamMemberInfo_is_online,			// 成员是否在线
+		ETeamMemberInfo_line_id,			// 成员所在线
+		ETeamMemberInfo_player_template_id,	// 成员的头像ID
+		ETeamMemberInfo_cur_hp,				// 成员的当前生命值
+		ETeamMemberInfo_max_hp,				// 成员的最大生命值
+		ETeamMemberInfo_level,				// 成员的等级
+		ETeamMemberInfo_fighting_power,		// 成员的战斗力
+		ETeamMemberInfo_cur_map,			// 成员当前所在的地图ID
+		ETeamMemberInfo_damage,				// 造成的伤害
+		ETeamMemberInfo_PosX,				// 当前坐标X
+		ETeamMemberInfo_PosY,				// 当前坐标Y
+		ETeamMemberInfo_PosZ,				// 当前坐标Z
+		ETeamMemberInfo_ready_state,		// 准备状态
+		ETeamMemberInfo_follow_state,		// 跟随状态
+		ETeamMemberInfo_check_ret,			// checkret
+		ETeamMemberInfo_one_stop_flags,		// 一条龙flags
+		ETeamMemberInfo_agora_id,			// AgoraId
+		ETeamMemberInfo_max
+	};
+
+	struct s_team_member_info
+	{
+		guid_64		role_guid;						// 成员的角色GUID
+		int32		role_index;						// 成员的数组下标
+		char		role_name[101];	                // 成员的名称
+		int64		gs_value;						// 成员的战力值
+		int64		data_ary[ETeamMemberInfo_max];
+
+		bool is_valid(); 
+
+
+		s_team_member_info();
+
+	
+	};
+
+
+	enum e_team_error
+	{
+		e_team_error_none,
+		e_team_error_team_full,							// 队伍已满
+		e_team_error_fighting_power_not_enough,			// 战斗力不足不能加入队伍
+		e_team_error_level_not_enough,					// 等级不足不能加入队伍
+		e_team_error_player_already_join_team,			// 玩家已经加了队伍
+		e_team_error_player_already_join_other_team,	// 玩家已经加入了其他队伍
+		e_team_error_player_already_offline,			// 玩家已经离线
+		e_team_error_team_already_dissolve,				// 队伍已经解散
+		e_team_error_target_player_not_in_team,			// 目标玩家未在任何队伍中
+		e_team_error_target_player_is_not_captain,		// 目标玩家不是队长
+		e_team_error_captain_change,					// 队长已变更
+		e_team_error_create_raid_failed,				// 创建副本失败
+		e_team_error_invalid_raid_instance,				// 无效的副本地图实例
+		e_team_error_member_change_during_transfer,		// 传送期间队伍成员发生改变
+		e_team_error_raid_condition_less,				// 不满足目标副本条件 如等级进入次数
+		e_team_error_cur_map_cant_ready,				// 当前地图不可发起准备
+		e_team_error_team_member_is_full,				// 队伍人数已满
+		e_team_error_raidmulti_ingame,					// 队伍已经进入多人本
+		e_team_error_max
+	};
+
+	enum e_player_match_team_ret
+	{
+		e_player_match_team_none,
+		e_player_match_team_waiting,
+		e_player_match_team_succeed
+	};
+
+	
+
+	enum e_team_common_check_invoker
+	{
+		e_team_common_check_invoker_auto_match_team,
+		e_team_common_check_invoker_mem_ready,
+		e_team_common_check_invoker_up_mem_check_ret
+	};
+	
+	enum e_team_req_mate_type
+	{
+		e_team_req_mate_type_friend,
+		e_team_req_mate_type_legion
+	};
+
+	enum e_team_mem_ready_state
+	{
+		e_team_mem_ready_state_none,
+		e_team_mem_ready_state_ready,
+		e_team_mem_ready_state_waiting_ready,
+	};
+
+	enum e_team_one_stop_aim_state
+	{
+		e_team_one_stop_aim_ok,
+		e_team_one_stop_aim_lack_of_times,
+		e_team_one_stop_aim_locked,
+	};
+
+}
+

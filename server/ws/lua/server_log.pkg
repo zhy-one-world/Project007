@@ -1,0 +1,19 @@
+/*
+	lua 调用C++函数统一处理接口
+*/
+namespace hld
+{
+	class server_log
+	{
+	public:
+	  static void auction_sell_log(int32 item_id, int32 item_num, int32 money_type, int32 item_price);
+	  static void auction_db_log(const s_auction_info& auction_info, int32 auction_state, const s_unit_info& role_info, const login_fixed_data& third_info, const int32& login_type);
+	  static void auctionbid_log(login_fixed_data& third_info, s_unit_info& role_info, const int32& money_type, const int32& money_value, const int32& item_template_id, const int32& data_num, const guid_64& buyer_guid);
+	  
+	  static void serverAuction(s_log_common_head &lg_common_head, string sellerAccountId, string sellerRoleGuid, string sellerRoleName, int32 sellerRoleLevel,
+			string itemGuid, int32 itemId, int32 itemNum, int32 auctionType,
+			string buyerAccountId, string buyerRoleGuid, string buyerRoleName, int32 buyerRoleLevel,
+			int32 moneyType, string moneyName, int32 moneyValue, int32 auctionState);
+					
+	};
+}

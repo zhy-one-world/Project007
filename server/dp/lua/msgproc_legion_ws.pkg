@@ -1,0 +1,27 @@
+
+
+namespace hld
+{
+	void save_legion_info_lua(int connindex, long long legion_guid, std::string legion_name, std::string announcement, long long gs_value, long long data_ary[16]);
+	void save_legion_member_info_lua(int connindex, long long legion_guid, long long role_guid, std::string role_name, long long gs_value, long long data_ary[16]);
+	void save_legion_city_war_member_info_lua(int connindex, long long legion_guid, long long role_guid, long long use_type, std::string role_name, long long player_temp_id, long long week_contribution, long long job_title);
+	void delete_legion_info_lua(int connindex, long long legion_guid);
+	void delete_legion_member_info_lua(int connindex, long long role_guid);
+	void delete_legion_city_war_member_info_lua(int connindex, int del_type);
+	void delete_legion_applicant_lua(int connindex, long long role_guid);
+	void save_legion_applicant_lua(int connindex, long long legion_guid, long long role_guid, std::string role_name, float exist_time, long long gs_value, int data_ary[4]);
+	void save_legion_boss_award_get_log_lua(int connindex, long long role_guid, int boss_map_id);
+	void load_all_legion_boss_award_get_log_lua(int connindex, long long role_guid);
+	void save_city_info_lua(int connindex, long long occupation_legion_guid, std::string city_master_name);
+	void save_war_bid_info_lua(int connindex, int territory_id, int index_in_terr, long long legion_guid, int cur_bid_price, int is_prior_maintain,int occupy_time_stamp, int server_id, std::string legion_name);
+	void clear_war_bid_info_lua(int connindex, int clear_type);
+	void clear_city_war_reward_stuff_lua(int connindex, int del_stuff_type, long long target_guid);
+	void save_legion_event_lua(int connindex, long long legion_guid, int event_idx, std::string extra_data, int happen_time);
+	void clear_legion_event_lua(int connindex, long long legion_guid);
+	void save_legion_bonus_info_lua(int connindex, long long legion_guid, int mission_id, int finish_count);
+	void clear_legion_bonus_info_lua(int connindex, long long legion_guid);
+	void load_cross_city_info_lua(int connindex);
+	void save_cross_city_info_lua(int connindex, int rank_idex, long long legion_guid, int server_id, long long chief_guid, std::string legion_name, std::string chief_name);
+	void clear_cross_city_info_lua(int connindex);
+	
+}

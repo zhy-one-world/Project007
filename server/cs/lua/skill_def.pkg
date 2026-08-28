@@ -1,0 +1,29 @@
+
+namespace hld
+{
+
+
+	struct use_skill_param
+	{
+		guid_64	map_guid;
+		s_unit_identifier sender_unit_idf;
+		s_unit_identifier target_unit_idf;
+		int skill_template_id;
+		long long skill_order;
+		fvector pos;
+        int yaw;
+		bool is_begin;
+		bool be_hit;
+		bool be_critical;
+		bool is_server;
+		int hit_random;
+		int effect_index;
+		fvector dest_pos;
+		int damage_num;
+		use_skill_param();
+		void clear_data();
+	};
+	
+}
+
+

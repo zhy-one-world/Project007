@@ -1,0 +1,15 @@
+
+
+
+
+namespace hld
+{
+	class data_manager
+	{
+		static data_manager& get_instance();
+		data_set* get_data_set(const guid_64& role_guid);
+		string get_db_name(const long long& data_guid);
+	};
+}
+
+

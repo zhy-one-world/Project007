@@ -1,0 +1,95 @@
+#pragma once
+
+#include "logic/type_def.hpp"
+#include "template_base.h"
+
+namespace hld
+{
+    void SkillTemplateSize();
+#pragma pack(push, 1)
+    struct SkillTemplate : public template_base
+    {
+        int32 Type;
+        int32 Series;
+        int32 ChangeLevel;
+        int32 Level;
+        int32 MaxLevel;
+        int32 NextLevelId;
+        int32 GSAddValue;
+        int32 IsUseCreate;
+        int32 ClassBranch;
+        int32 ClassType;
+        float Ratio;
+        int32 PlusValue;
+        int32 BeginSkill;
+        int32 NextSkill;
+        float NextSkillTime;
+        float PublicTime;
+        int32 LearnConditionLevel;
+        std::vector<int32> LearnConfitionMoney;
+        std::vector<int32> LearnConfitionItem;
+        int32 MaxMasteryNum;
+        int32 ActiveType;
+        int32 TargetType;
+        int32 CastType;
+        int32 NeedTarget;
+        int32 TargetDistance;
+        int32 TargetAngle;
+        int32 MaxDistance;
+        int32 AddDistance;
+        int32 IsAngleBullet;
+        int32 ConsumeMagic;
+        int32 ConsumeEnergy;
+        float ChannelTime;
+        float SpellTime;
+        int32 InWar;
+        float InWarTime;
+        float SelfCd;
+        int32 AutoReleasePriority;
+        std::vector<float> CastTimeAxle;
+        std::vector<int32> CastEffectBPIdx;
+        int32 AvoidCrowd;
+        int32 UseConfig;
+        std::vector<int32> MoveLength;
+        std::vector<float> MoveDuration;
+        std::vector<float> MoveInitSpeed;
+        float LengthCorrection;
+        int32 CastTraceTargetLocation;
+        int32 CastTraceTargetRotation;
+        std::vector<int32> BeginBuff;
+        std::vector<int32> TargetBuff;
+        std::vector<int32> FriendBuff;
+        std::vector<int32> SelfBuff;
+        std::vector<int32> PassiveBuff;
+        std::vector<int32> BuffPrecent;
+        int32 SaveType;
+        int32 ResourceId;
+        std::vector<int32> MissileId;
+        int32 NotChangePublicTime;
+        std::vector<int32> InvalidMapTypeArray;
+        std::vector<int32> ValidMapTypeArray;
+        std::vector<int32> GroupIds;
+        std::vector<int32> GroupCdTimes;
+        int32 TriggerGuide;
+        int32 IsNotSyncRotation;
+        int32 IsClientDriver;
+        int32 StopAutoFight;
+        float StopTime;
+        float CriticalStopTime;
+        float StopScale;
+        int32 IsShack;
+        float LateFilmTime;
+        float LateFilmTimeIn;
+        float LateFilmTimeOut;
+        std::vector<float> LateFilmTint;
+        float ChromaticAberation;
+        float ExposureBias;
+        std::vector<int32> BreakSkillArray;
+        int32 CanUseNoMove;
+        int32 CanHurtNoMove;
+        std::vector<float> CameraVague;
+        int32 IsAttack;
+        float DecTime;
+    };
+#pragma pack(pop)
+}

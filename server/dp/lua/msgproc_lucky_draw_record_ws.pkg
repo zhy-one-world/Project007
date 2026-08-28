@@ -1,0 +1,15 @@
+
+
+namespace hld
+{
+	void del_draw_info_from_db_lua(int connindex, long long info_guid);
+	void add_draw_info_to_db_lua(int connindex, long long info_guid, long long role_guid, std::string role_name, int item_template_id, int get_type, int record_type, long long record_time);
+	void load_draw_info_by_db_lua(int connindex);
+}
+
+
+
+
+
+
+

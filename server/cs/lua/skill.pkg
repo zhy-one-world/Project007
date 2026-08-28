@@ -1,0 +1,11 @@
+namespace hld
+{
+
+	class skill
+	{
+
+	public:
+        int		get_data_info(e_skill_info eIndex);
+	};
+
+}

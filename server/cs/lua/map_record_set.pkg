@@ -1,0 +1,11 @@
+
+namespace hld
+{
+	
+	class map_record_set
+	{
+	public:
+		explicit map_record_set();
+	};
+}
+

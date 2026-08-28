@@ -1,0 +1,30 @@
+
+namespace hld
+{
+
+
+	class cell_server 
+	{
+
+     public:
+	    void set_reload_csv();
+		
+		void clear_all_server_config();
+
+        void set_open_time(int32 open_time);
+		void set_server_info_arr(int32 server_info_type, int32 server_info_value);
+		void set_need_begin_cross_gm_common(e_need_server_cross gm_type, int32 need_cross);
+		void set_server_info_arr(int32 server_info_type, int32 server_info_value);
+		void set_server_avg_level(int32 lv);
+		void set_world_level_cur(int32 lv);
+		void set_world_level_last(int32 lv);
+		
+		bool get_gm_state();
+		
+		int get_server_id();
+		
+
+
+	};
+}
+

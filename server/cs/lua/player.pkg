@@ -1,0 +1,270 @@
+/*
+	lua 调用C++函数统一处理接口
+*/
+namespace hld
+{
+	class player : public unit
+	{
+	public:
+		/*
+			player自身的数据获取
+		*/
+		e_session_status get_session_state();
+		float get_game_att(int att_index);
+		string get_name();
+		int get_unit_gs_value();
+		int get_unit_guid_A();
+		int get_unit_guid_B();
+		guid_64& get_unit_guid();
+		guid_64& get_map_guid();
+		int	get_array_index();
+		int& get_unit_info(e_role_info eType);
+		void set_unit_info(e_role_info eType, int iValue);
+		int get_logic_data(e_role_logic_info logic_type);
+		void set_logic_data(e_role_logic_info logic_type, int logic_num);
+		void send_logic_one(e_role_logic_info logic_type);
+		login_fixed_data&	get_third_info();
+		long long get_money_data(e_money_type money_type);
+		long long get_time_data(e_time_type time_type);
+		int  get_time_data_sec(e_time_type time_type);
+		s_unit_info& get_unit_info_inst();
+		s_client_uid& get_client_uid();
+		void send_message_to_self_lua(const char* msg, int msg_len, int header);
+		void send_message_to_aoi_lua(const char* msg, int msg_len, int header, bool to_self, bool use_length);
+		void send_message_to_ws_lua(const void* data_ptr, int data_len, int server_id);
+		void send_message_to_dp_lua(const char* msg, int32 msg_len, int header);
+		int	get_grade_num();
+		void send_grade_up_notice(int new_player_template_id);
+		bool get_write_log();
+		/*
+			所有管理器都写到这里
+		*/
+		cbelief_mgr& get_belief_mgr();
+		belief_rune_mgr& get_belief_rune_mgr();
+		item_set& get_item_set();
+		celement_heart_mgr&	get_element_heart_mgr();
+		oracle_trial_mgr& get_oracle_trial_mgr();
+		cinteraction_mgr& get_interaction_mgr();
+		legion_dance_mgr& get_legion_dance_mgr();
+		awaken_mgr& get_awaken_mgr();
+		cwelfare_mgr& get_welfare_mgr();
+		cchat_mgr& get_chat_mgr();
+		recycle_mgr& get_recycle_mgr();
+		cmission_mgr& get_mission_mgr();
+		convert_mgr& get_convert_mgr();
+		time_limit_activity_mgr& get_time_limit_activity_mgr();
+		meditation_manager&	get_meditation_mgr();
+		cachievement_mgr& get_achievement_mgr();
+		cranking_mgr&       get_ranking_mgr();
+		pawn_att& get_pawn_att();
+		feather_heart_mgr&  get_feather_heart_mgr();
+		cpatron_saint_mgr&	get_patron_saint_mgr();
+		passive_skill&		get_passive_skill();
+		cspirit_mgr& get_spirit_mgr();
+		cphantom_mgr&       get_phantom_mgr();
+		first_time_do_mgr&	get_first_time_do_mgr();
+
+		cservice_goal_mgr&	get_service_goal_mgr();
+		goddess_mgr&		get_goddess_mgr();
+		ctitle_mgr&			get_title_mgr();
+		cpokedex_mgr&		get_pokedex_mgr();
+		special_name_mgr&	get_special_name_mgr();
+		person_information_mgr& get_person_infor_mgr();
+
+		player_store_helper&	get_goods_helper_mgr();
+
+		cseven_day_goal_mgr&    get_seven_day_goal_mgr();
+		player_arena_mgr&	    get_arena_mgr();
+		
+		marry_mgr&			    get_marry_mgr();
+		
+		dragontrip_mgr&     	get_dragontrip_mgr();
+		
+		mount_power_mgr&    	get_mount_power_mgr();
+		
+		cauction_mgr&	    	get_auction_mgr();
+		ctalent_mgr&        	get_talent_mgr();
+		func_unlock_mgr&    	get_func_unlock_mgr();
+		gain_treasure_mgr&  	get_gain_treasure_mgr();
+		starark_mgr&         	get_starark_mgr();
+		skytreasure_mgr&     	get_skytreasure_mgr();
+		legion_skill&	       	get_legion_skill();
+		
+		role_competition_mgr&		get_competition_mgr(); 
+		server_harry_mgr&		    get_server_harry_mgr();
+		boss_island_mgr&			get_boss_island_mgr();
+		service_rank_mgr&			get_service_rank_mgr();
+		cmail_mgr&					get_mail_mgr();
+		guide_mgr&					get_guide_mgr();
+		cworship_target&		    get_worship_target();
+		assist_fight_cs_mgr&		get_assist_fight_mgr();
+		pk_community_mgr&			get_pk_community_mgr();
+		ctreasure_mgr&              get_treasure_mgr();
+		jewel_carve_mgr&            get_jewel_carve_mgr();
+		skytreasure_mgr&            get_skytreasure_mgr();
+		starark_mgr&                get_starark_mgr();
+		element_competition_mgr&	get_element_competition_mgr();
+		
+		
+		
+		
+		bool  load_role_logic_by_db_lua(const char *data_ptr, int data_len);
+		bool  load_history_highest_record_by_db_lua(const char *data_ptr, int data_len);
+		bool  load_daily_must_do_count_by_db_lua(long long role_id,const char *data_ptr, int data_len);
+		bool  load_yesterday_must_do_remain_by_db_lua(const char *data_ptr, int data_len);
+		bool  load_money_by_db_lua(const char *data_ptr, int data_len);
+		bool  load_role_time_by_db_lua(const char *data_ptr, int data_len);
+		
+		
+		
+		bool gm_set_vip_point(int vip_point);
+		void on_player_disconnect();
+		bool get_loading_flag_all_finish();
+		bool get_saveing_flag_all_finish();
+		bool is_during_transfer();
+		
+
+		
+		
+		
+		
+		/*
+			各种函数
+		*/
+		void treasure_prize(int treasure_type, int prize_type, int cost_money_type, int cost_money_value, int prize_score, int prize_luck, int item_id, int item_num, int prize_list[30]);
+		void send_promp_msg_to_client(const std::vector<s_item_template_info>& items_array, const std::vector<s_item_template_info>& money_array);
+		void send_notice(const std::string& notice_str);
+		void send_notice();
+		void sync_wedding_ring_level_to_ws();
+		void player_changed(e_achievement_type operate_type);
+		void add_title_by_type_and_value(e_title_type title_type, int value1, int value2);
+		string lua_get_unit_guid_str();
+		void send_info_one(e_role_info info_index, bool is_to_aoi = false);
+		bool had_couple();
+		bool is_self_server();
+		bool can_cut_money(e_money_type money_type, long long money_value);
+		void cut_money(e_money_type money_type, long long money_value, e_server_log_cut_money cut_type, int param, int param2);
+		bool is_player_in_team();
+		bool is_in_copy_map();
+		bool is_player_in_the_same_team(player *m_player);
+		void get_marry_dati_reward(int dati_id,bool is_true);
+		void get_marry_dati_last_reward();
+		void add_heart_value(int heart_value,int send_type);
+		string lua_add_exp(string exp_value, bool is_need_show = false, bool gm = false, bool grade_up = false, float extra_fix = 0.0f, bool is_add_by_kill_npc = false);
+		void send_stat_num_award(int drop_id);
+		void send_oracle_trial_fuben_over_award(int map_id, int drop_id, int rank_num);
+		long long add_exp(long long exp_value, bool is_need_show = false, bool gm = false, bool grade_up = false, float extra_fix = 0.0f, bool is_add_by_kill_npc = false);
+		bool add_money_or_exp(e_money_type money_type, long long money_value, e_server_log_add_money add_type, int param);
+		bool lua_add_money_or_exp(e_money_type money_type, string money_value, e_server_log_add_money add_type, int param);
+		int get_vip_level(bool is_check_experience_level = true);
+		bool is_recharge_by_type(e_recharge_type recharge_type);
+		int	get_month_card_current_activity_time();
+		int	get_exclusive_card_current_activity_time();
+		bool check_and_set_highest_record(e_role_history_highest_record record_type, int single_type_target_level, int single_type_target_color);
+		int get_highest_record(int index);
+		void refresh_service_goal(const e_service_goal_type service_goal_type);
+		bool add_money_or_exp_with_string(e_money_type money_type, std::string money_value, e_server_log_add_money add_type, int param);
+		void set_time_data(e_time_type time_type, long long time_num);
+		void send_time_one(e_time_type time_type);
+		void set_unit_gs_change();
+		bool is_grow_up_fund_enable(int fund_template_id);
+		int get_login_type();	
+		void kill_pet_by_type(e_summon_pet_type type);
+		npc* summon_pet(int template_id);
+		int get_mission_id(e_mission_slot mission_index);
+		int get_grade_num();
+		void skill_cast_by_skill_id(int skill_id);
+		void send_money_one(e_money_type money_type);
+		void send_grade_up_response(int result_code, int old_equip_buff_id, int new_equip_buff_id, int skill_template_id);
+		void sync_data_to_ws_lua(e_sync_cs2ws_data_type type, int data, int sub_data);
+		void add_legion_dance_daily_must();
+		bool is_fuben_clearance(int fuben_id);
+		s_log_common_head& get_share_log_head();
+		void set_daily_active_degree_info(e_daily_must_do_typ eType);
+		int  is_need_daily_finish(e_daily_must_do_typ eType);
+		int	 get_cross_ladder_can_buy_ticket_num();
+		int	get_main_line_id();
+		void transfer_by_template(int map_template_id, int line_id, int group_id, const guid_64& map_guid, int war_index);
+		
+		
+		void	  update_three_day_must_do_remain();
+		
+		
+		int       get_find_back_template_id(int daily_activities_type, int exp_level);
+		void      update_find_back_count(int must_do_type,int find_back_count);
+		s_unit_yesterday_must_do_remain&  get_find_back_info();
+		void	  find_back_must_do_resource_process(int must_do_typ, bool is_diamond_find);
+		int       get_find_count_by_type(int must_do_type);
+		
+		bool	 buy_count_with_map_id(int map_temp_id, int buy_count);
+		
+		
+		int      get_player_legion_level_3();
+		
+		void	 change_big_player_title(int32 title_type);
+		
+		
+		void     check_can_marry(const guid_64& sub_guid, int32 marry_item_id, bool is_cost);
+		void     check_can_divorce(bool is_cost);
+		void     get_new_married_reward_end(int32 old_marry_state);
+		void     get_first_kill_world_boss_prize_func(int32 first_kill_welfare_template_id);
+		
+		void     set_role_right(e_role_right role_right_type, int32 type_value);	
+		void     buy_goods(int32 goods_id, int32 goods_num, int32 store_id, bool is_auto_buy, int32 back_string);
+		void     get_red_pack_end(guid_64 red_package_guid, int32 get_result, int32 money_type, int32 money_num);
+		void     send_red_package_end_proc(int32 template_id, int32 send_result);
+		void     upgrade_highest_record(e_role_history_highest_record record_type, int64 new_value);
+		void	 req_relation_end(int32 relation_type, guid_64 target_guid);
+		
+		void     sub_rename_card(int32 rename_card_id);
+		void     change_name(string role_name);
+		guid_64& get_couple_guid();
+		void     set_couple_name(const char* couple_name);
+		
+		void	 set_cross_ladder_can_buy_ticket_num(int32 num);
+		void	 receive_cross_ladder_last_score(int32 last_score);
+		void	 receive_cross_ladder_last_ranking(int32 last_ranking);
+		
+		void     receive_element_ladder_last_score(int32 last_score);
+		void     receive_element_ladder_last_ranking(int32 last_ranking);
+		
+		void     aoi_change_show_player(int32 show_num);
+		void     lucky_draw(int32 fuben_template_id);
+		bool     unlock_bag_slot(int32 unlock_slot_index, int32 unlock_storage_slot_index);
+		void     back_to_life(e_revive_type revive_mode, bool is_free);
+		void     get_func_unlock_award(int32 func_unlock_id);
+		void     req_hit_and_get_npc_proc(guid_64 npc_guid);
+		void     grade_up_level_ani_end(int32 old_buff_id, int32 new_buff_id);
+		bool     change_role_class(int32 class_change);
+		void     set_auto_use_hp_pot(float hp_percent, bool is_auto_buy_pot);
+		
+		void     on_req_pick_drop_box(const s_unit_identifier& unit_identifier);
+		void	 recharge_by_template_id(int32 goods_id, const string& order_id , int64 order_num , int32 payment_type , float pay_price , int32 recharge_time_count );
+		bool&	 get_is_robot();
+		
+		void     set_recharget_widget_type(bool is_dead_recharge);
+		void     worship_by_type(int32 worship_type, bool is_cost_diamond);
+		void     find_other_player_info(guid_64 target_guid, int32 server_id);
+		void     send_red_package(int32 template_id, string send_text, guid_64 item_guid);
+		void     get_red_package(guid_64 red_package_guid);
+		void     transfer_buff(int32 operate_type);
+		void     change_harry_buff();
+		void     show_vip(int32 is_show_vip);
+
+				
+	}
+	
+	enum e_session_status
+	{
+		e_ss_invalid,	                    // 非法值
+		e_session_status_created_session,   // session创建完毕
+		e_session_status_create_player,	    // player 创建完毕
+		e_session_status_dp_loading,	    // session加入到管理器，开始从 DP 读取数据
+		e_session_status_client_loading,    // DP加载完毕后，向client同步数据
+		e_session_status_in_gaming,	        // 进入到场景，游戏状态
+		e_session_status_switching_loading,	// 跨loading区域数据加载
+		e_session_status_logout_connect,	// 在断线重连状态
+		e_session_status_max,	            // 
+	};
+}
+

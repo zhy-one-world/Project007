@@ -1,0 +1,18 @@
+namespace hld
+{
+
+	class cpokedex_mgr
+	{
+
+	public:
+	    bool        load_pokedex_by_db_lua(const char *data_ptr, int data_len);
+        cpokedex*   get_pokedex_by_templateid(int templayeid);
+        cpokedex*	get_pokedex_by_index(int index);
+        cpokedex*	get_palace_pokedex();
+        void	    send_pokedex_one(int pokedex_template_id);
+        void        send_pokedex_all();
+		int			get_active_pokedex_num();
+		int			get_all_active_pokedex_num();
+	};
+
+}

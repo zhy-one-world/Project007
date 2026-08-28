@@ -1,0 +1,45 @@
+/*
+	lua 调用C++函数统一处理接口
+*/
+namespace hld
+{
+	struct cs2ws_send_notice : public packet_base
+	{
+		s_client_uid	client_uid;
+		guid_64			role_guid;
+		int32			notice_id;
+		int32			item_num;
+		s_item_info		data_ary[4];
+		char			notice_string[201];
+
+		cs2ws_send_notice();
+		void clear_item_info();
+	};
+	
+	struct cs2ws_convenient_join_legion : public packet_base
+	{
+		guid_64 role_guid;
+
+		cs2ws_convenient_join_legion();
+
+		int get_len();
+	};
+	
+	struct cs2ws_invite_to_join_legion : public packet_base
+	{
+		s_client_uid	client_uid;
+		s_client_uid	invite_client_uid;
+
+		cs2ws_invite_to_join_legion();
+
+		int get_len();
+	};
+	
+	struct cs2ws_apply_to_join_legion : public packet_base
+	{
+		guid_64			legion_guid;
+		s_client_uid	client_uid;
+		cs2ws_apply_to_join_legion();
+		int get_len();
+	};
+}

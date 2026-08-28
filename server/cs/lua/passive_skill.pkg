@@ -1,0 +1,10 @@
+namespace hld
+{
+
+	class passive_skill
+	{
+	public:
+        void passive_skill_special(int passive_skill_id, bool is_add);
+	};
+
+}

@@ -1,0 +1,18 @@
+/*
+	lua 调用C++函数统一处理接口
+*/
+namespace hld
+{
+	class marry_mgr
+	{
+	public:
+		void confirm_marry_operate(int operate_type, int ext_param_1, int ext_param_2);
+		void begin_marry_dati(bool is_near);
+		void confirm_marry_dati(int is_receive);
+		void wedding_ring_upgrade(int item_id);
+		void refresh_wedding_ring_info(bool is_marry, int32 marry_item_id, int32 mate_ring_level, int32 heart_value);
+		
+		void req_use_fireworks(const guid_64& obj_guid, const string& target_name, const string& target_blessing);
+		void req_lucky_operator(e_lucky_info_req_type type);
+	}		
+}

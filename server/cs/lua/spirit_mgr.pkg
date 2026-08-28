@@ -1,0 +1,19 @@
+/*
+	lua 调用C++函数统一处理接口
+*/
+namespace hld
+{
+	class cspirit_mgr
+	{
+	public:
+		void operate_basic_att(citem* target_spirit, bool is_add, float add_percent);//精灵基础属性
+		void set_qiyuan_att_all();//与上次操作后的奇缘等级进行比较，并处理属性
+		void set_jiban_att_all();//与上次操作后的羁绊等级进行比较，并处理属性
+		bool check_equip_slot_is_unlock(int index);
+		void unlock_equip_slot(int index);
+		int get_spirit_total_level();
+		int num_of_spirit_equiped(int m_quality);
+		void check_star_map();//检查精灵星图羁绊
+	}
+	
+}

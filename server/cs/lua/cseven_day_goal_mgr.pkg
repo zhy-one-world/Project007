@@ -1,0 +1,20 @@
+/*
+	lua 调用C++函数统一处理接口
+*/
+namespace hld
+{
+    class cseven_day_goal_mgr 
+    {
+    public:
+		void refresh_seven_day_goal_received_reward_days();
+		cseven_day_goal& get_seven_day_goal_obj_by_id(int obj_id);
+		bool put_reward_into_bag(int seven_day_goal_info_id);
+		void send_seven_day_goal_operate_result_to_self(int operate_type, int operate_end_state, cseven_day_goal& seven_day_goal_obj_ref);
+		cseven_day_goal& get_seven_day_goal_obj_by_index(int obj_index);
+		cseven_day_goal* get_seven_day_goal_obj_by_index_lua(int obj_index);
+		int	get_specify_reward_num();
+		void send_seven_day_goal_one_to_self(cseven_day_goal& seven_day_goal_obj_ref);
+		int	get_seven_day_goal_num();
+		int get_seven_day_goal_reward_days(int reward_data, e_service_goal_active_type active_type);
+	};
+}

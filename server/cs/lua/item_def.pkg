@@ -1,0 +1,223 @@
+/*
+	lua 调用C++函数统一处理接口
+*/
+namespace hld
+{
+	// 武器种类类型(武器模板数据的子类型)
+	enum e_weap_sub_type
+	{
+		e_weap_sub_type_none,			// 徒手熟练度
+		// 单手武器
+		e_weap_sub_type_jian,			// 剑
+		e_weap_sub_type_fu,				// 斧
+		e_weap_sub_type_faqi,			// 法器
+		e_weap_sub_type_duanzhang,		// 短杖
+		// 双持武器
+		e_weap_sub_type_shuangdao,		// 双刀
+		e_weap_sub_type_shuanggun,		// 棍
+		// 巨型武器
+		e_weap_sub_type_jujian,			// 巨剑
+		e_weap_sub_type_juchu,			// 巨杵
+		// 轮刺长柄武器
+		e_weap_sub_type_qianggun,		// 枪棍
+		e_weap_sub_type_changzhang,		// 长杖
+		// 挥砍长柄武器
+		e_weap_sub_type_jiyue,			// 戟钺
+		// 弓类武器
+		e_weap_sub_type_gong,			// 弓
+		e_weap_sub_type_gongjian,		// 箭
+		// 单手武器
+		e_weap_sub_type_dao,			// 刀
+		// 弓类武器
+		e_weap_sub_type_zhonggong,		// 重弓
+		e_weap_sub_type_assistant,		// 盾牌		
+		e_weap_sub_type_max,
+	};
+
+	enum e_item_lock_status
+	{
+		e_item_lock_status_unlocked,    // 非绑定
+		e_item_lock_status_locked,      // 绑定
+		e_item_lock_status_ignore,      // 不关心绑不绑定
+		e_item_lock_status_max
+	};
+
+	enum e_item_get_hope_item_typ
+	{
+		e_item_get_hope_item_typ_one_free,
+		e_item_get_hope_item_typ_one_voucher,
+		e_item_get_hope_item_typ_ten_voucher,
+		e_item_get_hope_item_typ_one_cost,
+		e_item_get_hope_item_typ_ten_cost,
+		e_item_get_hope_item_typ_max,
+	};
+
+	enum e_quest_sub_type
+	{// 任务物品子类型(任务物品模板数据的子类型SubType)
+		e_quest_sub_type_none,				// 缺省，未指定类型
+		e_quest_sub_type_unexpendable,		// 不可消耗类
+		e_quest_sub_type_expendable,		// 可消耗类
+		e_quest_sub_type_max,
+	};
+
+	enum e_item_color
+	{
+		e_item_color_white = 1,		// 白色
+		e_item_color_green,			// 绿色
+		e_item_color_blue,			// 蓝色
+		e_item_color_purple,		// 紫色
+		e_item_color_orange,		// 橙色
+		e_item_color_red,			// 紅色
+		e_item_color_pink,			// 粉色
+		e_item_color_max
+	};
+	
+	enum item_temp_succinct_property				//洗练属性临时存储
+	{
+		item_temp_succinct_property_1,
+		item_temp_succinct_property_2,
+		item_temp_succinct_property_3,
+		item_temp_succinct_property_4,
+		item_temp_succinct_property_max
+
+	};
+
+	enum item_temp_forge_property				//重铸属性临时存储
+	{
+		item_temp_forge_property_1,
+		item_temp_forge_property_2,
+		item_temp_forge_property_3,
+		item_temp_forge_property_4,
+		item_temp_forge_property_5,
+		item_temp_forge_property_6,
+		item_temp_forge_property_max
+	};
+
+
+	enum item_succinct_money_cost_typ				//洗练时消耗的货币种类
+	{
+		item_succinct_money_cost_non = 0,
+		item_succinct_money_cost_gold,
+		item_succinct_money_cost_diamond
+	};
+
+	enum item_succinct_change_range_read_index
+	{
+		item_succinct_change_des_max = 0,		//最大减值,如-5
+		item_succinct_change_des_min,			//最小减值,如-1
+		item_succinct_change_ins_min,			//最小加值,如 1
+		item_succinct_change_ins_max,			//最大加值,如 5
+		item_succinct_change_max
+	};
+
+	//enum wing_type_read
+	//{
+	//	wing_type_non				= 0,		//翅膀类型，无
+	//	wing_type_normal			= 1,		//普通翅膀
+	//	wing_type_shape				= 2,		//外形翅膀
+	//};
+
+	enum mount_type_read
+	{
+		mount_type_non = 0,				//坐骑类型，无
+		mount_type_normal = 1,			//普通坐骑
+		mount_type_special = 2,			//特殊坐骑
+		mount_type_warlord = 3,			//城主坐骑
+		mount_type_illusion = 4,		//坐骑幻化
+		mount_type_lordlegionmem = 5,	//霸主军团成员坐骑
+	};
+
+	enum e_item_transform_type
+	{
+		e_item_transform_type_none,
+		e_item_transform_type_two,	//二元数组
+		e_item_transform_type_three,	//三元数组
+		e_item_transform_type_four,	//四元数组
+		e_item_transform_type_max
+	};
+
+	enum e_item_operate_money
+	{
+		e_item_operate_money_gold,		//使用金币
+		e_item_operate_money_diamond	//使用钻石
+	};
+	enum e_item_lock_states 
+	{
+		e_item_unlocked,
+		e_item_locked,
+	};
+	//enum e_item_wing_type
+	//{
+	//	e_item_wing_type_non,		// 空
+	//	e_item_wing_type_normal,	// 普通翅膀
+	//	e_item_wing_type_shape_no_illusion,		// 无幻化外形翅膀
+	//	e_item_wing_type_shape_illusion, // 有幻化的外形翅膀
+	//	e_item_wing_type_illusion,		// 幻化的翅膀
+	//};
+	enum e_wing_illusion_originalid_range
+	{
+		e_wing_illusion_originalid_range_low,
+		e_wing_illusion_originalid_range_high,
+		e_wing_illusion_originalid_range_max,
+	};
+	enum e_mount_illusion_originalid_range
+	{
+		e_mount_illusion_originalid_range_low,
+		e_mount_illusion_originalid_range_high,
+		e_mount_illusion_originalid_range_max,
+	};
+	enum e_wing_rush	//翅膀三段冲
+	{
+		e_wing_rush_first,
+		e_wing_rush_second,
+		e_wing_rush_third,
+		e_wing_rush_max,
+	};
+
+	enum e_item_advance_type
+	{
+		e_item_advance_ban,			// 不可进阶
+		e_item_advance_normal,		// 普通进阶
+		e_item_advance_godassembly,	// 神装再造
+
+	};
+
+	enum EItemPropertyIdex
+	{
+		EItemProperty_Level,
+		EItemProperty_PropertyID,
+		EItemProperty_Points,
+		EItemProperty_Percent,
+		EItemProperty_IsShow,
+		EItemProperty_Max
+	};
+
+	enum e_luck_draw_record_type
+	{
+		e_luck_draw_record_type_sprite,
+		e_luck_draw_record_type_hope_item,
+		e_luck_draw_record_type_max
+	};
+
+	enum e_composit_type
+	{
+		e_composit_type_none,
+		e_composit_type_yinji,
+		e_composit_type_chibang,
+		e_composit_type_zhuangbeisuipian,
+		e_composit_type_zhuangbeicailiao,
+		e_composit_type_zuoqi,
+		e_composit_type_jingling,
+		e_composit_type_chengzhuang,
+		e_composit_type_hongzhuang,
+		e_composit_type_jewel,
+		e_composit_type_item_advance,
+		e_composit_type_god_assembly,
+		e_composit_type_god_assembled,
+		e_composit_type_item_cast,
+		e_composit_type_max
+	};
+	struct s_item_info
+	{
+	};
+}

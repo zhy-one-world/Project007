@@ -1,0 +1,47 @@
+/*
+	lua 调用C++函数统一处理接口
+*/
+namespace hld
+{
+	struct s_unit_yesterday_must_do_remain
+	{
+		guid_64 role_guid;
+		int		role_exp_level_yesterday;
+		int		save_date;
+		int		role_vip_level_yesterday;
+		int     distance_today_day_count;
+		int     role_arena_rank;
+		int32		data_ary[e_daily_must_do_typ_max];
+	
+		s_unit_yesterday_must_do_remain();
+
+	};
+	
+	
+	
+	enum e_role_right
+	{
+		e_role_right_allow_login,//是否允许登录
+		e_role_right_allow_chat,//是否允许发言
+		e_role_right_radio_host,//是否主播
+		e_role_right_vip_point,//vip点数
+		e_role_right_max
+	};
+	
+	
+	enum e_lucky_info_req_type
+	{
+		e_lucky_info_req_type_vec,
+		e_lucky_info_req_type_special_info,
+		e_lucky_info_req_type_buy_special_times,
+	};
+	
+	enum e_competition_manual_get_reward_type
+	{
+		e_competition_manual_get_reward_type_none,
+		e_competition_manual_get_reward_type_normal,
+		e_competition_manual_get_reward_type_special,
+		e_competition_manual_get_reward_type_all,
+	};
+
+}

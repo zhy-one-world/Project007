@@ -1,0 +1,56 @@
+#include "BoxMapTemplate_S.h"
+
+namespace hld
+{
+    void BoxMapTemplateSize()
+    {
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("template_base");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("AttributeId");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("MonsterBrushId");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("AwardBrushId");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("BigAward");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("MiddleAward");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("MiddleAwardCount");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("MiddleAwardRefrush");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("AwardMaxCount");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("MarqueeRandomRange");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("MapPlayId");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("TreasureNpcId");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("TreasureMaxCount");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("TreasureDropId");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("TreasureRefrushBoss");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("TreasureMultipleMax");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("BossBrushId");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("BossFightId");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("SearchRefrushBossValue");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("BoxMonsterId");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("MiddleBoxOpen");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("BigBoxOpen");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("SpecialId");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("vector<int32>");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("SpecialBoxRefrush");
+        template_size::get_instance().template_size_map[e_BoxMapTemplate].push_back("int32");
+        template_size::get_instance().template_key_map[e_BoxMapTemplate].push_back("SpecialBoxOpen");
+    }
+}

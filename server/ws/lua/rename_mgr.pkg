@@ -1,0 +1,16 @@
+
+namespace hld
+{
+	class client_session;
+
+	class rename_mgr
+	{
+
+		static rename_mgr& get_instance();
+
+		bool change_player_name(string name, guid_64 role_guid); //ĞŞ¸ÄÍæ¼ÒÃû×Ö
+		void confirm_change_name(bool confirm_type, guid_64 role_guid, const string& role_name);
+	
+	};
+}
+

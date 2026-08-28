@@ -1,0 +1,99 @@
+
+$#include "lua_call_handle.h"
+$#include "logic/game_enum_def_s.h"
+$#include "logic/server_log_def.hpp"
+$#include "server_log.hpp"
+$#include "utility/init_unit.h"
+$#include "utility/globle_data.h"
+$#include "ws_client.hpp"
+$#include "msgproc/msgproc_dp.hpp"
+$#include "server/arena/arena_mgr_ws.h"
+$#include "server/relation/marry_mgr_ws.hpp"
+$#include "server/legion/legion_ws_mgr.h"
+$#include "server/mail/mail_event_ws.h"
+$#include "server/activity/cross_server_city_war_ws_mgr.h"
+$#include "lua_globle_data.h"
+$#include "system/scene/cs_map_system.h"
+$#include "system/scene/cs_map_mgr_system.h"
+
+$using namespace hld;
+
+$pfile "server_def.pkg"
+$pfile "type_def.pkg"
+
+
+$pfile "lua_globle_data.pkg"
+
+
+
+$pfile "globle_data.pkg"
+$pfile "init_unit.pkg"
+$pfile "game_enum_def_s.pkg"
+$pfile "ws_client.pkg"
+$pfile "msgproc_dp.pkg"
+$pfile "arena_mgr_ws.pkg"
+
+$pfile "client_session.pkg"
+
+$pfile "cross_server_city_war_ws_mgr.pkg"
+$pfile "legion_def.pkg"
+
+
+$pfile "legion_ws_applicant_list.pkg"
+$pfile "legion_ws_answer.pkg"
+$pfile "legion_ws_warehouse.pkg"
+$pfile "legion_ws.pkg"
+
+
+$pfile "city_war_territory_mgr.pkg"
+$pfile "legion_ws_city_war.pkg"
+
+$pfile "legion_ws_mgr.pkg"
+
+$pfile "msgproc_client.pkg"
+$pfile "invalid_ansi_word.pkg"
+
+
+$pfile "team_def.pkg"
+$pfile "team_ws.pkg"
+$pfile "team_ws_mgr.pkg"
+
+$pfile "cs_map_mgr_system.pkg"
+
+$pfile "pk_king_mgr.pkg"
+$pfile "map_def.pkg"
+$pfile "cross_server_pk_ws_mgr.pkg"
+$pfile "crystal_fairyland_mgr.pkg"
+$pfile "broken_sky_mgr.pkg"
+$pfile "world_boss_ws_mgr.pkg"
+$pfile "cross_server_harry_ws_mgr.pkg"
+$pfile "web_client.pkg"
+
+$pfile "relation_mgr.pkg"
+$pfile "marry_mgr_ws.pkg"
+$pfile "ranking_mgr_ws.pkg"
+$pfile "cloud_shop_mgr.pkg"
+$pfile "gain_treasure_ws_mgr.pkg"
+$pfile "time_limit_activity_ws_mgr.pkg"
+$pfile "rename_mgr.pkg"
+$pfile "cross_server_world_boss_ws_mgr.pkg"
+$pfile "assist_fight_mgr.pkg"
+$pfile "appearance_info_mgr.pkg"
+$pfile "element_war_ws_mgr.pkg"
+
+$pfile "world_server.pkg"
+$pfile "client_session_mgr.pkg"
+$pfile "event_ws_mgr.pkg"
+$pfile "random.pkg"
+$pfile "big_player_ws_mgr.pkg"
+$pfile "msgproc_cs.pkg"
+$pfile "mail_event_ws.pkg"
+$pfile "mail_def.pkg"
+$pfile "server_log.pkg"
+$pfile "item_def.pkg"
+$pfile "cross_transfer_logic.pkg"
+$pfile "title_def.pkg"
+
+
+
+

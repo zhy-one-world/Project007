@@ -1,0 +1,23 @@
+/*
+	lua 调用C++函数统一处理接口
+*/
+namespace hld
+{
+	class cwelfare_mgr
+	{
+	public:
+	    bool load_welfare_by_db_lua(const char *data_ptr, int data_len);
+	    bool load_active_degree_by_db_lua(const char *data_ptr, int data_len);
+		void set_welfare_info(e_welfare_type info_type, int info_value);
+		int get_welfare_info(e_welfare_type info_type);
+		int get_random_get_info(e_welfare_random_item info_index);
+		void set_random_get_info(e_welfare_random_item info_index, int info_value);
+		void set_active_degree_info(e_daily_active_degree_type info_type, int info_value);
+		int get_active_degree_info(e_daily_active_degree_type info_type);
+		bool is_recharge_time(int recharge_index);
+		void get_cumulative_sign_in_reward(int index);
+		void retroactive_all_days();
+		
+		void get_first_recharge_welfare_by_id();
+	};
+}

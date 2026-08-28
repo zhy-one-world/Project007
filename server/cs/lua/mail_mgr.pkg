@@ -1,0 +1,16 @@
+
+
+namespace hld
+{
+
+
+	class cmail_mgr
+	{
+	public:
+
+		bool    load_had_globel_mail_guid_by_db_lua(const char *data_ptr, int data_len);
+		bool    load_mail_by_db_lua(const char *data_ptr, int data_len);
+		bool    load_mail_item_by_db_lua(const char *data_ptr, int data_len);
+
+	};
+}

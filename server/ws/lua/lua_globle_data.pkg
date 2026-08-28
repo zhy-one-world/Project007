@@ -1,0 +1,51 @@
+
+namespace hld
+{
+	class client_session;
+	
+	guid_64* get_guid_64(int64 value);
+	guid_64* get_guid_64(int32 a, int32 b);
+	guid_64* get_guid_64();
+
+	client_session*	get_client_session_by_index(int64 unit_index);
+	client_session* get_client_session_by_guid(guid_64 guid);
+	
+	world_server* get_world_server();
+	
+	int64  make_guid_lua(int64 in_guid);
+	
+	client_session_mgr* get_client_session_mgr();
+	
+	std::string get_str_by_string_template_id(int32 template_id, int32 index);
+	
+	
+	s_item_info* get_item_info_by_str(const char *msg, int32 msg_len);
+	
+	
+	s_item_info* get_item_info_by_str(const char *msg, int32 msg_len);
+	s_auction_info* get_auction_info_by_str(const char* msg, int32 msg_len);
+	char*     get_auction_buffer(s_auction_info *auction_ptr);
+	s_unit_info* get_unit_info_by_str(const char* msg, int32 msg_len);
+	login_fixed_data *get_login_fixed_data_by_str(const char *msg, int32 msg_len);
+	
+	
+	s_log_common_head* get_log_common_head();
+
+	void lua_set_log_common_head_part1(s_log_common_head& head, string game_id, string channel_id, string media_id, string device_id);
+
+	void lua_set_log_common_head_part2(s_log_common_head& head, string version_name, int32  version_code);
+	
+	void lua_set_log_common_head_part3(s_log_common_head& head, string user_id, int32  server_id, int64 log_time);
+	
+	void lua_set_log_common_head_part4(s_log_common_head& head, int64 role_id, string role_name, int32 role_level, int32 role_gender);
+	
+	void lua_set_log_common_head_part5(s_log_common_head& head, int64 battle_points, int32 role_type, int32 vip_level);
+	
+	string get_app_key();
+	
+	s_mail_info* get_mail_info_by_str(const char *msg, int32 msg_len);
+	s_fake_player_info* get_fake_player_info_by_str(const char *msg, int32 msg_len);
+	ws2ws_send_big_player_msg* get_send_big_player_msg(const char *msg, int32 msg_len, int32& out_len);
+
+}
+

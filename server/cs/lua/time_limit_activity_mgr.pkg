@@ -1,0 +1,21 @@
+/*
+	lua 调用C++函数统一处理接口
+*/
+namespace hld
+{
+	class time_limit_activity_mgr
+	{
+	public:
+	    bool load_data_by_db_lua(const char *data_ptr, int data_len);
+		bool is_activity_open(e_time_limit_activity_type activity_type);
+		void activity_behavior_done(e_time_limit_behavior_type behavior_type, int add_value);
+		int get_treasure_lua_award_index(e_time_limit_activity_type activity_type);
+		time_limit_activity_object& get_new_act_obj_by_act_type(e_time_limit_activity_type activity_type);
+		
+		void apply_award(int reward_template_id, int act_guid, int param_int_1);
+		int get_activity_schedule(e_time_limit_activity_type activity_type, int32 schedule_index, int32 act_guid);
+		
+		void add_activity_schedule(e_time_limit_activity_type activity_type, int add_value, int schedule_index /*= 0*/, int act_guid);
+		void check_time_limit_activity_common_data_to_ws_resp(int32 activity_id, bool is_achieve);
+	};
+}

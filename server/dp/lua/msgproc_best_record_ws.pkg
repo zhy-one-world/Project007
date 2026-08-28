@@ -1,0 +1,10 @@
+
+namespace hld
+{
+	void save_best_record_lua(int connindex, int map_template_id, long long role_guid[5], std::string role_name[5], int role_value[5]);
+	void load_all_best_record_lua(int connindex);
+}
+
+
+
+
