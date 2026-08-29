@@ -19,7 +19,7 @@
 #include "activity/time_limit_activity_temp_ws_mgr.h"
 #include "activity/cloud_shop_mgr.h"
 #include "connection/daemon_client.hpp"
-#include "lua/script_mgr.h"
+
 #include "md5/aes.h"
 #include "md5/Base64.h"
 #include "md5/md5.h"

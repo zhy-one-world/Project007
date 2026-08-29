@@ -2,10 +2,11 @@
 #define __REGION_H_
 
 #include "logic/type_def.hpp"
+#include "logic/math.hpp"
 
 namespace faith
 {
-    //ÇøÓò½Ó¿Ú
+    //ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½
     class region
     {
     public:

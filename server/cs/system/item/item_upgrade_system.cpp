@@ -7,7 +7,7 @@
 #include "item_equip_system.h"
 #include "item_upgrade_system.h"
 #include "logic/player.hpp"
-#include "lua/script_mgr.h"
+
 #include "server_log.hpp"
 
 using namespace faith;

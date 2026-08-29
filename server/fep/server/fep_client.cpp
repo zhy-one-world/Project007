@@ -18,7 +18,6 @@
 #include "connection/daemon_client.hpp"
 #include "utility/parse_msg.h"
 #include "http/http_access_mgr.hpp"
-#include "csv_synchronization_fep_mgr.h"
 #include "net.pb.h"
 #include "eye_proto.pb.h"
 
@@ -155,7 +154,7 @@ namespace faith
 
 			CONSOLE_INFO("ws {}/{} cs {}/{}", net_client_mgr::getInstance().get_server_count(e_server_type_ws), SERVER_WS_COUNT, net_client_mgr::getInstance().get_server_count(e_server_type_cs), SERVER_CS_COUNT);
 
-			// Êä³öÐÅÏ¢
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 			int32 session_count = proxy_service_cli::getInstance().get_session_num();
 			CONSOLE_INFO("session num:{} session max:{}", session_count, init_socket_more);
 			if (loop_counter > 0)
@@ -173,9 +172,8 @@ namespace faith
 		}
 		daemon_client::getInstance().heart_tick(time_now);
 		http_access_mgr::get_instance().tick(time_now);
-		csv_synchronization_fep_mgr::get_instance().heart_tick(time_now);
 
-		static uint64 sync_fep_data = 0;	// fepÍ¬²½Êý¾Ý¼ÆÊ±Æ÷
+		static uint64 sync_fep_data = 0;	// fepÍ¬ï¿½ï¿½ï¿½ï¿½ï¿½Ý¼ï¿½Ê±ï¿½ï¿½
 		if(time_now >= sync_fep_data)
 		{
 			sync_fep_data = time_now + server_player_to_ws;

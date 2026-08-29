@@ -6,7 +6,7 @@
 #include "item_equip_system.h"
 #include "item_system.h"
 #include "item_upgrade_system.h"
-#include "lua/script_mgr.h"
+
 #include "logic/player.hpp"
 #include "server_log.hpp"
 #include "template/template_manager.h"
@@ -183,7 +183,7 @@ void item_equip_system::equip_on_equip(unit* unit_ptr, Entity* item_ent, int32& 
 		return;
 	}
 
-	// equip_slot±íÊ¾ÎïÆ·±»×°±¸ºóÓ¦¸ÃÔÚÄÄ¸ö×°±¸´°¿ÚÖÐ
+	// equip_slotï¿½ï¿½Ê¾ï¿½ï¿½Æ·ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	e_role_equip_slot equip_slot = init_unit::get_slot_by_item_type(item_template->item_type, item_template->sub_type);
 	if (equip_slot >= e_role_equip_slot_max)
 	{
@@ -191,7 +191,7 @@ void item_equip_system::equip_on_equip(unit* unit_ptr, Entity* item_ent, int32& 
 		return;
 	}
 
-	// Èç¹ûÏàÓ¦µÄ×°±¸´°¿ÚÒÑ¾­ÓÐÁË×°±¸¾ÍÍÑµôËü
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½Ñµï¿½ï¿½ï¿½
 	auto old_item = get_equip_item(unit_ptr, equip_slot);
 	if (old_item)
 	{
@@ -200,7 +200,7 @@ void item_equip_system::equip_on_equip(unit* unit_ptr, Entity* item_ent, int32& 
 
 	item_system::remove_item_from_bag(unit_ptr, item_ent);
 
-	// ÏòÏàÓ¦µÄ×°±¸´°¿ÚÖÐÌí¼ÓÒª×°±¸µÄÎïÆ·
+	// ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òª×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·
 	item_base_cp->m_data_array[e_item_base_locked] = 1;
 	item_system::put_item_into_bag(unit_ptr, item_ent, e_bag_type_equip);
 
@@ -208,7 +208,7 @@ void item_equip_system::equip_on_equip(unit* unit_ptr, Entity* item_ent, int32& 
 
 	item_system::send_item_one(unit_ptr, { item_ent });
 
-	//Èç¹ûÊÇÍæ¼Ò£¬¸üÐÂÒ»ÏÂ×î¸ß¼ÍÂ¼
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò£ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ß¼ï¿½Â¼
 	auto* player_ptr = player::cast(unit_ptr);
 	if (player_ptr)
 	{

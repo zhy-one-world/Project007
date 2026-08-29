@@ -81,9 +81,9 @@ target_link_directories(ws PUBLIC
 # 链接库
 target_link_libraries(ws PUBLIC
 	hld_def
-	release_common
-	release_lua
-	release_net
+	server_common
+	server_lua
+	server_net
 	event
 	libcrypto
 	libcurl
@@ -95,6 +95,6 @@ target_link_libraries(ws PUBLIC
 	spdlog
 	fmt
 	TracyClient
-	boost_thread-vc143-mt-x64-1_85
-	boost_serialization-vc143-mt-x64-1_85
+	boost_thread-vc143-mt-x64-1_88
+	boost_serialization-vc143-mt-x64-1_88
 )

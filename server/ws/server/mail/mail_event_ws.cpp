@@ -5,7 +5,7 @@
 #include "cross_group/cross_transfer_logic.hpp"
 #include "mail_event_ws.h"
 #include "utility/guid_gen.h"
-#include "lua/script_mgr.h"
+
 #include "net.pb.h"
 
 
@@ -23,7 +23,7 @@ namespace faith
 
 	void mail_ws_mgr::tick(const int64& new_time)
 	{
-		//²âÊÔ¿ç·þÓÊ¼þ´úÂë
+		//ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½
 		int a1 = 0;
 		if (a1 > 0)
 		{
@@ -78,7 +78,7 @@ namespace faith
 	{
 		client_session* temp_session = client_session_mgr::getInstance().get_session(address_guid);
 
-		// nullptrËµÃ÷²»ÔÚÏß/²»´æÔÚ£¬cs_uid = 0 ËµÃ÷²»ÔÚCSÉÏ£¨±ÈÈç´«ËÍÖÐ£©
+		// nullptrËµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½cs_uid = 0 Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½CSï¿½Ï£ï¿½ï¿½ï¿½ï¿½ç´«ï¿½ï¿½ï¿½Ð£ï¿½
 		if (!is_only_to_sql
 			&& (temp_session != nullptr)
 			&& (temp_session->get_cs_conn_index() >= 0))

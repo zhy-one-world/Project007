@@ -1,7 +1,0 @@
-namespace hld
-{
-	void save_cross_server_harry_ws_info_lua(int connindex, int server_id, int server_money, int special_money, long long first_player_guid, long long second_player_guid, long long third_player_guid, std::string first_player_name);
-	void load_cross_server_harry_ws_info_lua(int connindex);
-	void load_harry_player_detail_lua(int connindex, int player_idex, long long role_guid, int server_id);
-	void del_one_server_msg_func_lua(int connindex, int server_id);
-}	

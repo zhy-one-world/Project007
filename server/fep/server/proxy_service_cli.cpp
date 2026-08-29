@@ -13,7 +13,6 @@
 #include <base.hpp>
 #include "Logic/time_def.hpp"
 #include "server_log.hpp"
-#include "csv_synchronization_fep_mgr.h"
 #include "error.pb.h"
 #include "net.pb.h"
 #include "login_msg.hpp"
@@ -98,7 +97,7 @@ namespace faith
 
 		set_allow_connection(true);
 
-		//´ÓÎÄ¼þ×°ÔØRDEÊý¾Ýµ½¹ÜÀíÆ÷
+		//ï¿½ï¿½ï¿½Ä¼ï¿½×°ï¿½ï¿½RDEï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		//
 
 		m_scl_cli_sender = boost::bind(&tcp_server::send, m_tcpserver, _1,_2,_3);
@@ -199,7 +198,6 @@ namespace faith
 		{
 			return false;
 		}
-		csv_synchronization_fep_mgr::get_instance().erase_from_send_csv_msg_map_by_session_uid(client_session_ptr->get_client_uid().fep_uid_64);
 		client_session_ptr->clear_data();
 		m_session_array_num--;
 		return true;
@@ -302,8 +300,6 @@ namespace faith
 
 		if (package_ptr->header_verstion != server_header_verstion)
 		{
-			game_proto_version_wrong version_wrong;
-			security_communication_layer::getInstance().send_to_session(client_session_ptr->get_conn_index(), &version_wrong, e_msgindex_s2c_proto_version_wrong);
 			client_session_ptr->set_is_logout(true);
 			return;
 		}
@@ -365,7 +361,7 @@ namespace faith
 
 	bool proxy_service_cli::set_netpara_option(uint32 send_buf_size, uint32 recv_buf_size, uint32 _max_packet_size)
 	{
-		const int32 FAITH_INNER_HEADER_SIZE = 8; //FAITHÄÚ²¿Êý¾Ý°üÍ·´óÐ¡
+		const int32 FAITH_INNER_HEADER_SIZE = 8; //FAITHï¿½Ú²ï¿½ï¿½ï¿½ï¿½Ý°ï¿½Í·ï¿½ï¿½Ð¡
 
 		const int32 client_send_buffer_coef = 32;
 		const int32 client_recv_buffer_coef = 8;
@@ -402,16 +398,4 @@ namespace faith
 			return client_session_ptr;
 		}
 	}
-
-	void proxy_service_cli::send_time_limit_activity_template_to_all()
-	{
-		for (int32 i = 0; i < init_socket_more; ++i)
-		{
-			if (m_session_array[i].is_vaild())
-			{
-				csv_synchronization_fep_mgr::get_instance().send_time_limit_template(&m_session_array[i]);
-			}
-		}
-	}
-
 }

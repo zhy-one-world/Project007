@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2016Äê12ÔÂ5ÈÕ12:00:20
+	created:	2016ï¿½ï¿½12ï¿½ï¿½5ï¿½ï¿½12:00:20
 	file base:	server_log
 	file ext:	hpp
 	author:		zhy
@@ -11,6 +11,7 @@
 
 #include "logic/type_def.hpp"
 #include "Logic/char_def.hpp"
+#include "Logic/math.hpp"
 
 #include "Logic/login_def.hpp"
 #include "Logic/item_def.hpp"
@@ -130,11 +131,11 @@ namespace faith
 		static int32  change_string_to_i32(std::string str_i32);
 
 
-		//login_role_logÎªtokenµÇÂ¼ÈÕÖ¾
+		//login_role_logÎªtokenï¿½ï¿½Â¼ï¿½ï¿½Ö¾
 		static void login_role_log(int32 server_id, std::string app_key, std::string client_version, xstring gamechannel, xstring adchannel, std::string account, std::string device_id, std::string ip, xstring model, xstring idfa, xstring imei, xstring android_id, xstring mac, xstring sn);
 		static void login_create_role_log(int32 server_id, std::string app_key, std::string client_version, xstring gamechannel, xstring adchannel, std::string account, std::string device_id, std::string ip, xstring model, xstring idfa, xstring imei, xstring android_id, xstring mac, xstring sn, int32 login_type);
 		static void create_role_log(int32 server_template_id, xstring deviceid, xstring appid, xstring version, xstring gamechannel, xstring adchannel, xstring model, xstring idfa, xstring imei, xstring android_id, xstring mac, xstring sn, const s_unit_info& role_info, xstring ip, int32 login_type);
-		//enter_game_role_logÎªµÇÂ½ÈÕÖ¾ logout_role_logÎªµÇ³öÈÕÖ¾
+		//enter_game_role_logÎªï¿½ï¿½Â½ï¿½ï¿½Ö¾ logout_role_logÎªï¿½Ç³ï¿½ï¿½ï¿½Ö¾
 		static void enter_game_role_log(login_fixed_data& third_info, s_unit_info& role_info, s_money_info& money_info, int64 online_time, int64 create_time, int32 login_type);
 		static void logout_role_log(login_fixed_data& third_info, s_unit_info& role_info, s_money_info& money_info, int64 online_time, int64 create_time, int32 login_type);
 		static void across_day_log(login_fixed_data& third_info, s_unit_info& role_info, int64 online_time, int64 create_time, int32 login_type);

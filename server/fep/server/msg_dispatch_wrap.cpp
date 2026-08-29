@@ -103,7 +103,7 @@ namespace faith
 	}
 	bool message_from_server_dispatcher::init()
 	{
-		// ³õÊ¼»¯¼ÓÃÜÏûÏ¢
+		// ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 
 		REGISTER_MESSAGE_S2S(e_msg_index_rep_login, boost::bind(&fep_client::internal_rep_login, &fep_client::getInstance(), _1, _2, _3));
 		REGISTER_MESSAGE_S2S(e_msg_index_req_stop, boost::bind(&fep_client::internal_rep_stop, &fep_client::getInstance(), _1, _2, _3));
@@ -122,7 +122,7 @@ namespace faith
 		REGISTER_MESSAGE_S2S(e_msgindex_ws2fep_time_limit_temp, ws2fep_recv_act_limit_temp);
 		REGISTER_MESSAGE_S2S(e_msgindex_ws2fep_time_limit_branch_temp, ws2fep_recv_act_limit_branch_temp);
 
-		// ×¢²áÏûÏ¢´¦Àíº¯Êý, ÍâÍøÏûÏ¢
+		// ×¢ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 		// ------------------------------------------login system---------------------------------------------
 		REGISTER_MESSAGE_C2S(e_msgindex_c2fep_ping, c2fep_ping);
 		REGISTER_MESSAGE_C2S(e_msgindex_c2s_logout, c2fep_logout);
@@ -784,7 +784,7 @@ namespace faith
 		REGISTER_MESSAGE_S2C(e_mgsindex_s2c_legion_pdate_legion_member_gs_value);
 		REGISTER_MESSAGE_S2C(e_mgsindex_s2c_legion_pdate_legion_member_contribution);
 		
-		// ¾üÍÅ²Ö¿â
+		// ï¿½ï¿½ï¿½Å²Ö¿ï¿½
 		REGISTER_MESSAGE_C2WS(e_msgindex_c2s_get_legion_warehouse_item_info);
 		REGISTER_MESSAGE_S2C(e_msgindex_s2c_get_legion_warehouse_item_info_end);
 		REGISTER_MESSAGE_C2CS(e_msgindex_c2s_operation_legion_warehouse_item);
@@ -1327,40 +1327,17 @@ namespace faith
 		REGISTER_MESSAGE_C2CS(e_msgindex_c2s_get_offline_award);
 		REGISTER_MESSAGE_C2CS(e_msgindex_c2s_get_online_award);
 
-		REGISTER_MESSAGE_C2CS(e_msgindex_c2s_kill_award_npc);
-		REGISTER_MESSAGE_S2C(e_msgindex_s2c_kill_award_npc);
 		REGISTER_MESSAGE_C2CS(e_msgindex_c2s_upgrade_search_level);
 		REGISTER_MESSAGE_S2C(e_msgindex_s2c_upgrade_search_level_end);
 		REGISTER_MESSAGE_C2CS(e_msgindex_c2s_get_npc_award);
 		REGISTER_MESSAGE_S2C(e_msgindex_c2s_get_npc_award_end);
 		REGISTER_MESSAGE_C2CS(e_msgindex_c2s_open_treasuer_pic);
 		REGISTER_MESSAGE_C2CS(e_msgindex_c2s_get_treasuer_award);
-		REGISTER_MESSAGE_S2C(e_msgindex_s2c_get_treasuer_award);
 		REGISTER_MESSAGE_C2CS(e_msgindex_c2s_map_anim_end);
-		REGISTER_MESSAGE_S2C(e_msgindex_s2c_map_anim_end);
 		REGISTER_MESSAGE_S2C(e_msgindex_s2c_map_settlement);
 		REGISTER_MESSAGE_C2CS(e_msgindex_c2s_refrush_award_npc);
 		REGISTER_MESSAGE_C2CS(e_msgindex_c2s_search_award_npc);
 		REGISTER_MESSAGE_S2C(e_msgindex_s2c_search_award_npc_end);
-		REGISTER_MESSAGE_S2C(e_msgindex_s2c_flip_box_info);
-		REGISTER_MESSAGE_C2CS(e_msgindex_c2s_flip_box_open);
-		REGISTER_MESSAGE_S2C(e_msgindex_s2c_flip_box_open_end);
-		REGISTER_MESSAGE_C2CS(e_msgindex_c2s_mop_up_map);
-		REGISTER_MESSAGE_S2C(e_msgindex_s2c_finger_guess_info);
-		REGISTER_MESSAGE_C2CS(e_msgindex_c2s_finger_guess_end);
-		REGISTER_MESSAGE_S2C(e_msgindex_s2c_finger_guess_end);
-		REGISTER_MESSAGE_S2C(e_msgindex_s2c_smashing_bottle_info);
-		REGISTER_MESSAGE_C2CS(e_msgindex_c2s_smashing_bottle_end);
-		REGISTER_MESSAGE_S2C(e_msgindex_s2c_smashing_bottle_end);
-
-		REGISTER_MESSAGE_S2C(e_msgindex_s2c_activity_info_all);
-		REGISTER_MESSAGE_S2C(e_msgindex_s2c_activity_info_one);
-		REGISTER_MESSAGE_S2C(e_msgindex_s2c_activity_info_del);
-		REGISTER_MESSAGE_C2CS(e_msgindex_c2s_get_activity);
-		REGISTER_MESSAGE_S2C(e_msgindex_s2c_wheel_plate_begin);
-		REGISTER_MESSAGE_C2CS(e_msgindex_c2s_wheel_plate_end);
-		REGISTER_MESSAGE_S2C(e_msgindex_s2c_wheel_plate_end);
-		
 		return true; 
 	}
 }

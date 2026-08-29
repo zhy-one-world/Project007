@@ -4,7 +4,7 @@
 #include "server/mail/event_ws_mgr.h"
 #include "utility/init_unit.h"
 #include "logic/activity_def.hpp"
-#include "lua/script_mgr.h"
+
 #include "server/team/team_ws_mgr.h"
 #include "net.pb.h"
 
@@ -87,7 +87,7 @@ namespace faith
 		return map_template_ptr->BestRecordOrderType;
 	}
 
-	int32	best_record_mgr::get_convert_map_template_id(int32 map_template_id)	//»î¶¯¸±±¾ÖÐ×îºÃ¼ÇÂ¼¸ÄÎªÊÀ½çÍ³Ò»,Í³Ò»ÉèÖÃmap_template_id
+	int32	best_record_mgr::get_convert_map_template_id(int32 map_template_id)	//ï¿½î¶¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½Â¼ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Í³Ò»,Í³Ò»ï¿½ï¿½ï¿½ï¿½map_template_id
 	{
 		MapTemplate* map_template_ptr = GET_TEMPLATE(MapTemplate, map_template_id);
 		if (nullptr == map_template_ptr)
@@ -261,7 +261,7 @@ namespace faith
 		insert_record(best_record, new_record, is_from_db);
 
 		if (!is_from_db)
-		{//¸üÐÂ¸±±¾×î¿ì¼ÍÂ¼µÄ¹«¸æ
+		{//ï¿½ï¿½ï¿½Â¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½Ä¹ï¿½ï¿½ï¿½
 			notice_best_record(map_template_id, new_record);
 		}
 		
@@ -274,7 +274,7 @@ namespace faith
 		{
 			return;
 		}
-		if (best_record_str->single_map_best_record[0].role_guid != best_record.role_guid)//²»ÊÇµÚÒ»Ãû²»·¢¹«¸æ
+		if (best_record_str->single_map_best_record[0].role_guid != best_record.role_guid)//ï¿½ï¿½ï¿½Çµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		{
 			return;
 		}
@@ -293,7 +293,7 @@ namespace faith
 		if (map_template_ptr->Type == e_map_type_exp_fuben && best_value >= 10000)
 		{
 			notice_id = exp_best_record_hundred_million_notice_id;
-			//±£ÁôÁ½Î»Ð¡Êý
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»Ð¡ï¿½ï¿½
 			int32 temp_best_value = best_value / 100;
 			best_value = (float)temp_best_value / 100;
 		}
@@ -366,17 +366,17 @@ namespace faith
 				{
 				case e_map_difficulty_easy:
 					{
-						return template_manager::get_instance().int_to_string(90300098);//ÆÕÍ¨
+						return template_manager::get_instance().int_to_string(90300098);//ï¿½ï¿½Í¨
 					}
 					break;
 				case e_map_difficulty_normal:
 					{
-						return template_manager::get_instance().int_to_string(90300099);//¾«Ó¢
+						return template_manager::get_instance().int_to_string(90300099);//ï¿½ï¿½Ó¢
 					}
 					break;
 				case e_map_difficulty_heard:
 					{
-						return template_manager::get_instance().int_to_string(90300100);;//Á¶Óü
+						return template_manager::get_instance().int_to_string(90300100);;//ï¿½ï¿½ï¿½ï¿½
 					}
 					break;
 				default:
@@ -393,27 +393,27 @@ namespace faith
 				{
 				case e_map_difficulty_for_multiplayer_easy:
 					{
-						return template_manager::get_instance().int_to_string(90300101);//¼òµ¥
+						return template_manager::get_instance().int_to_string(90300101);//ï¿½ï¿½
 					}
 					break;
 				case e_map_difficulty_for_multiplayer_normal:
 					{
-						return template_manager::get_instance().int_to_string(90300102);//ÆÕÍ¨
+						return template_manager::get_instance().int_to_string(90300102);//ï¿½ï¿½Í¨
 					}
 					break;
 				case e_map_difficulty_for_multiplayer_hard:
 					{
-						return template_manager::get_instance().int_to_string(90300103);//À§ÄÑ
+						return template_manager::get_instance().int_to_string(90300103);//ï¿½ï¿½ï¿½ï¿½
 					}
 					break;
 				case e_map_difficulty_for_multiplayer_heroic:
 					{
-						return template_manager::get_instance().int_to_string(90300104);//Ó¢ÐÛ
+						return template_manager::get_instance().int_to_string(90300104);//Ó¢ï¿½ï¿½
 					}
 					break;
 				case e_map_difficulty_for_multiplayer_hell:
 					{
-						return template_manager::get_instance().int_to_string(90300105);//µØÓü
+						return template_manager::get_instance().int_to_string(90300105);//ï¿½ï¿½ï¿½ï¿½
 					}
 					break;
 				default:

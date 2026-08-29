@@ -2,7 +2,7 @@
 #include "dragontrip_mgr.h"
 #include "logic/player.hpp"
 #include "logic/unit_man.h"
-#include "lua/script_mgr.h"
+
 #include "system/item/item_system.h"
 #include "template/template_manager.h"
 #include "utility/random.h"
@@ -31,7 +31,6 @@ namespace faith
 	{
 		//script_mgr::get_instance().call_func("reload", 0);
 		bool bRet = false;
-		script_mgr::get_instance().call_func("g_dragontrip", "is_use_lua", 1, false, ">%b", &bRet);
 		return bRet;
 	}
 	void dragontrip_mgr::set_player_ptr(const int32 array_index)
@@ -747,11 +746,6 @@ namespace faith
 
 	void dragontrip_mgr::day_refresh()
 	{
-		if (is_use_lua())
-		{
-			script_mgr::get_instance().call_func("g_dragontrip", "day_refresh", 0, false, "%d", m_array_index);
-			return;
-		}
 		set_data(e_dragontrip_day_times, 0);
 		sync_all_message_to_client();
 
@@ -818,7 +812,6 @@ namespace faith
 	{
 		if (is_use_lua())
 		{
-			script_mgr::get_instance().call_func("g_dragontrip", "refresh_recycle", 0, false, "%d", m_array_index);
 			return;
 		}
 		int32 state = get_data(e_dragontrip_active_state);

@@ -22,7 +22,7 @@ purpose:
 #include "logic/unit.hpp"
 #include "logic/unit_man.h"
 #include "logic/world_cs.h"
-#include "lua/script_mgr.h"
+
 #include "internet/net.pb.h"
 #include "server_log.hpp"
 #include "system/item/item_system.h"
@@ -85,10 +85,10 @@ item_set::~item_set(void)
 	clear_data();
 }
 
-// ¶ÔËùÓÐÎïÆ··¢Éä¼ÆÊ±Âö³å
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 void item_set::heart_tick(const int64& new_time)
 {
-	// Ë¢ÐÂËùÓÐCDÖÐÎïÆ·µÄCD
+	// Ë¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½CDï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½CD
 	if (m_unit_array_index >= npc_arrary_index_begin)
 	{
 		return;
@@ -119,13 +119,13 @@ void item_set::heart_tick(const int64& new_time)
 	}
 }
 
-// ÉèÖÃÎïÆ·ËùÊôµÄÓÎÏ·½ÇÉ«
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½É«
 void item_set::set_unit_ptr(int32 unit_array_index)
 {
 	m_unit_array_index = unit_array_index;
 }
 
-// Çå¿ÕËùÓÐÎïÆ·µÄÊý¾Ý(°üÀ¨ÎïÆ·À¸+×°±¸À¸)
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½+×°ï¿½ï¿½ï¿½ï¿½)
 void item_set::clear_data()
 {
 	m_item_load_flag = 0;
@@ -151,7 +151,7 @@ void item_set::clear_data()
 }
 
 
-// °Ñ½ÇÉ«ËùÓÐÐ¯´øµÄÎïÆ·µÄÊý¾Ý´æÈëÊý¾Ý¿â
+// ï¿½Ñ½ï¿½É«ï¿½ï¿½ï¿½ï¿½Ð¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½
 void item_set::save_item_to_db(int32 save_type)
 {
 	player& player_ref = unit_man::get_player(m_unit_array_index);
@@ -428,7 +428,7 @@ void item_set::init_skill_and_item_gs()
 	}
 }
 
-// Ïò¿Í»§¶Ë·¢ËÍËùÓÐÎïÆ·µÄÊý¾Ý
+// ï¿½ï¿½Í»ï¿½ï¿½Ë·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 void item_set::send_item_all()
 {
 	unit& temp_unit = unit_man::get_unit(m_unit_array_index);
@@ -505,7 +505,7 @@ s_item_template_info item_set::get_const_att_item_by_id(int32 item_tem_id, int32
 		return item_info;
 	}
 
-	//¼ì²âÊÇ·ñÎª¹Ì¶¨×¿Ô½ÊôÐÔ×°±¸¿ªÆô°ü£¬ÐèÒªµ¥¶À×öitem_infoµÄ´¦Àí
+	//ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Îªï¿½Ì¶ï¿½×¿Ô½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½item_infoï¿½Ä´ï¿½ï¿½ï¿½
 	if (item_template_ptr->item_type == e_item_type_expendable && item_template_ptr->sub_type == e_prop_sub_type_const_att_equip)
 	{
 		PropBasicAttributeTemplate* prop_basic_temp_ptr = GET_TEMPLATE(PropBasicAttributeTemplate, item_template_ptr->logic_id);
@@ -599,7 +599,7 @@ void item_set::all_wing_sort()
 	}
 }
 
-// Ïò¿Í»§¶Ë·¢ËÍËùÓÐ³á°òµÄÊý¾Ý
+// ï¿½ï¿½Í»ï¿½ï¿½Ë·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 void item_set::send_wing_item_all()
 {
 	unit& temp_unit = unit_man::get_unit(m_unit_array_index);
@@ -944,7 +944,7 @@ void item_set::set_equip_att_all()
 				{
 					if (item_template_ptr->sub_type == 0)
 					{
-						if (item_ptr->get_data_info(e_item_info_is_first) > 0)	//Å®Éñ½âËø¾Í¼ÓÊôÐÔ
+						if (item_ptr->get_data_info(e_item_info_is_first) > 0)	//Å®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½
 						{
 							set_goddess_equip_att(item_ptr, true);
 							player_ref.get_goddess_mgr().set_star_is_open(item_ptr, true);
@@ -966,7 +966,7 @@ void item_set::set_equip_att_all()
 		}
 	}
 
-	//¼ÆËã»é½äÊôÐÔ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	for (int32 i = 0; i < max_wedding_equip_num; i++)
 	{
 		if (GET_BAG(e_bag_type_wedding_equip)[i].is_valid())
@@ -1147,12 +1147,12 @@ void item_set::set_equip_att(citem* equip_ptr, bool is_add)
 	auto item_template_ptr = equip_ptr->get_item_info_ptr();
 
 	if (item_template_ptr->item_type != e_item_type_weapon && item_template_ptr->item_type != e_item_type_armor)
-	{//ÅÐ¶ÏÊÇ·ñÎªÎäÆ÷·À¾ßÊÎÆ·
+	{//ï¿½Ð¶ï¿½ï¿½Ç·ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·
 		CONSOLE_ERROR("item_set::set_equip_att item_type:{}", item_template_ptr->item_type);
 		return;
 	}
 
-	//»ù´¡Ä£°åÔö¼Ó
+	//ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	auto equip_template_ptr = equip_ptr->get_equip_info_ptr();
 	if (nullptr == equip_template_ptr)
 	{
@@ -1202,7 +1202,7 @@ void item_set::set_sky_equip_att(citem* equip_ptr, bool is_add)
 		return;
 	}
 	if (item_template_ptr->item_type != e_item_type_sky_equip)
-	{//ÅÐ¶ÏÊÇ·ñÎªÌì¿Õ×°±¸
+	{//ï¿½Ð¶ï¿½ï¿½Ç·ï¿½Îªï¿½ï¿½ï¿½×°ï¿½ï¿½
 		return;
 	}
 	EquipTemplate* equip_template_ptr = equip_ptr->get_equip_info_ptr();
@@ -1230,7 +1230,7 @@ void item_set::set_skygod_equip_att(citem* equip_ptr, bool is_add)
 		return;
 	}
 	if (item_template_ptr->item_type != e_item_type_skygod_equip)
-	{//ÅÐ¶ÏÊÇ·ñÎªÌìÉñ×°±¸
+	{//ï¿½Ð¶ï¿½ï¿½Ç·ï¿½Îªï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½
 		return;
 	}
 	EquipTemplate* equip_template_ptr = equip_ptr->get_equip_info_ptr();
@@ -1258,7 +1258,7 @@ void item_set::set_supreme_equip_att(citem* equip_ptr, bool is_add)
 		return;
 	}
 	if (item_template_ptr->item_type != e_item_type_supreme_equip)
-	{//ÅÐ¶ÏÊÇ·ñÎªÉñÍõ×°±¸
+	{//ï¿½Ð¶ï¿½ï¿½Ç·ï¿½Îªï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½
 		return;
 	}
 	EquipTemplate* equip_template_ptr = equip_ptr->get_equip_info_ptr();
@@ -1416,7 +1416,7 @@ void item_set::set_equip_excellent_att(const EquipTemplate* equip_template_ptr, 
 }
 void item_set::set_equip_jewel_att(citem& equip_ptr, bool is_add)
 {
-	//±¦Ê¯ÊôÐÔ
+	//ï¿½ï¿½Ê¯ï¿½ï¿½ï¿½ï¿½
 	for (int32 i = e_item_info_jewel_slot_0; i <= e_item_info_jewel_vip_slot_1; ++i)
 	{
 		int32 jewel_id = equip_ptr.get_data_info((e_item_info)i);
@@ -1467,7 +1467,7 @@ void item_set::set_equip_enchant_att(citem& equip_ptr, const int32& enchant_num,
 		return;
 	}
 
-	//ÊýÖµ¼Ó³É
+	//ï¿½ï¿½Öµï¿½Ó³ï¿½
 	item_change_att(enchant_template_ptr->AttArray, 1, is_add);
 
 }
@@ -1489,7 +1489,7 @@ void item_set::set_goddess_equip_att(citem* equip_ptr, bool is_add)
 		return;
 	}
 	if (item_template_ptr->item_type != e_item_type_goddess_equip)
-	{//ÅÐ¶ÏÊÇ·ñÎªÅ®Éñ»òÅ®Éñ×°±¸
+	{//ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ÎªÅ®ï¿½ï¿½ï¿½Å®ï¿½ï¿½×°ï¿½ï¿½
 		return;
 	}
 	DeityTemplate* deity_template_ptr = equip_ptr->get_deity_info_ptr();
@@ -1644,7 +1644,7 @@ void item_set::set_fashion_att(citem* fashion_ptr, bool is_add, int32 star_num)
 		return;
 	}
 
-	//»ù´¡Ä£°åÔö¼Ó
+	//ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	FasionTemplate* fashion_template_ptr = GET_TEMPLATE(FasionTemplate, item_template_ptr->logic_id + star_num);
 	if (nullptr == fashion_template_ptr)
 	{
@@ -1662,7 +1662,7 @@ void item_set::set_wing_att(bool is_add)
 	m_wing_att_change = is_add;
 	citem* wing_ptr = get_cur_level_wing();
 	if (wing_ptr)
-	{//³á°ò½×Êý»ù´¡ÊôÐÔ
+	{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		auto item_template_ptr = wing_ptr->get_item_info_ptr();
 		if (item_template_ptr)
 		{
@@ -1676,7 +1676,7 @@ void item_set::set_wing_att(bool is_add)
 		}
 	}
 
-	//¼ÆËãÍâÐÎ³á°òÊôÐÔ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	std::vector<citem*> shape_wing_block = get_all_shape_wing();
 	int32 array_size = shape_wing_block.size();
 	for (int32 shape_wing_index = 0; shape_wing_index < array_size; shape_wing_index++)
@@ -1724,7 +1724,7 @@ void item_set::set_wing_att(bool is_add)
 
 	citem* spirit_ptr = get_wing_add_spirit();
 	if (spirit_ptr != nullptr)
-	{//×¢Áé
+	{//×¢ï¿½ï¿½
 		ItemTemplate* item_template_ptr = spirit_ptr->get_item_info_ptr();
 		if (item_template_ptr != nullptr)
 		{
@@ -1739,7 +1739,7 @@ void item_set::set_wing_att(bool is_add)
 
 	citem* soul_ptr = get_wing_add_soul();
 	if (soul_ptr != nullptr)
-	{//×¢»ê
+	{//×¢ï¿½ï¿½
 		ItemTemplate* item_template_ptr = soul_ptr->get_item_info_ptr();
 		if (item_template_ptr)
 		{
@@ -1780,7 +1780,7 @@ void item_set::set_feather_att(const citem& feather_ptr, bool is_add)
 	}
 
 	int32 real_id = feather_template_ptr->logic_id + feather_ptr.get_data_info(e_item_info_upgrade_count);
-	//»ù´¡Ä£°åÔö¼Ó
+	//ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	FeatherTemplate* feather_att_ptr = GET_TEMPLATE(FeatherTemplate, real_id);
 	if (nullptr == feather_att_ptr)
 	{
@@ -1944,7 +1944,7 @@ int32 item_set::item_star_skill_unlock(guid_64 choosed_guid, int32 choosed_index
 	break;
 	case e_item_type_wing:
 	{
-		if (item_sub_type == 2)//³á°òôáÓð
+		if (item_sub_type == 2)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		{
 			FeatherTemplate* feather_template_ptr = GET_TEMPLATE(FeatherTemplate, logic_id + temp_item->get_data_info(e_item_info_upgrade_count));
 			if (nullptr == feather_template_ptr)
@@ -2012,7 +2012,7 @@ int32 item_set::item_star_skill_unlock(guid_64 choosed_guid, int32 choosed_index
 		if (passive_skill_template_ptr->OpenItem.size() >= 2 && use_item)
 		{
 			if (item_system::can_cost_item(&player_ref, e_bag_type_bag, passive_skill_template_ptr->OpenItem[0], passive_skill_template_ptr->OpenItem[1]) == false)
-			{//ËØ²Ä²»×ã
+			{//ï¿½Ø²Ä²ï¿½ï¿½ï¿½
 				return e_item_string_matirial_not_enough;
 			}
 			item_system::cost_item_from_bag(&player_ref, e_bag_type_bag, passive_skill_template_ptr->OpenItem[0], passive_skill_template_ptr->OpenItem[1]);
@@ -2039,8 +2039,8 @@ int32 item_set::item_star_skill_unlock(guid_64 choosed_guid, int32 choosed_index
 
 			open_time = temp_item->get_data_info(e_item_info_succinct_property4);
 		}
-		//Èç¹ûÔ­À´ÓÐÍ¬Ïµ±»¶¯¼¼ÄÜ»á¶¥µô
-		player_ref.get_passive_skill().passive_skill_special(passive_skill_template_id, true);//¸Ä±äÕ½Á¦
+		//ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½Í¬Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü»á¶¥ï¿½ï¿½
+		player_ref.get_passive_skill().passive_skill_special(passive_skill_template_id, true);//ï¿½Ä±ï¿½Õ½ï¿½ï¿½
 
 		result = 1;
 		//unlock_flag = (1 << choosed_index) | unlock_flag;
@@ -2059,8 +2059,8 @@ int32 item_set::wing_psychic_skill_unlock(int32 passive_skill_template_id, bool 
 	{
 		return result;
 	}
-	//Èç¹ûÔ­À´ÓÐÍ¬Ïµ±»¶¯¼¼ÄÜ»á¶¥µô
-	player_ref.get_passive_skill().passive_skill_special(passive_skill_template_id, is_add);//¸Ä±äÕ½Á¦
+	//ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½Í¬Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü»á¶¥ï¿½ï¿½
+	player_ref.get_passive_skill().passive_skill_special(passive_skill_template_id, is_add);//ï¿½Ä±ï¿½Õ½ï¿½ï¿½
 
 	result = 1;
 	return result;
@@ -2108,7 +2108,7 @@ int32 item_set::get_double_att_element_num()
 		if (temp_element_heart_ptr != nullptr)
 		{
 			//ElementHeartTemplate* element_heart_temp_ptr = player_ref.get_element_heart_mgr().get_element_heart_template(*temp_element_heart_ptr);
-			//if (element_heart_temp_ptr != nullptr && element_heart_temp_ptr->Type == 1)//±íÖÐÌí¼ÓÀàÐÍ×Ö¶ÎºóÐÞ¸Ä
+			//if (element_heart_temp_ptr != nullptr && element_heart_temp_ptr->Type == 1)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶Îºï¿½ï¿½Þ¸ï¿½
 			//{
 			//	total_num++;
 			//}
@@ -2284,9 +2284,9 @@ void item_set::init_awaken_fetter_att()
 					{
 						continue;
 					}
-					//Ôö¼ÓÊôÐÔ
+					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 					item_change_att(template_ptr->AttArray, 1, true);
-					//Ôö¼Ó¼¼ÄÜ
+					//ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½ï¿½
 					int32 skill_level = temp_item->get_data_info((e_item_info)(e_item_info_random_property1 + template_ptr->SubIndex));
 					if (template_ptr->Type == 1 && template_ptr->UnLockSkillList.size() > skill_level - 1 && skill_level > 0)
 					{
@@ -2360,7 +2360,7 @@ citem* item_set::create_item_by_template(e_server_log_add_item add_type, int32 p
 		return nullptr;
 	}
 
-	//¼ì²âÊÇ·ñÎª¹Ì¶¨×¿Ô½ÊôÐÔ×°±¸¿ªÆô°ü
+	//ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Îªï¿½Ì¶ï¿½×¿Ô½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (item_template_ptr->item_type == e_item_type_expendable && item_template_ptr->sub_type == e_prop_sub_type_const_att_equip)
 	{
 		PropBasicAttributeTemplate* prop_basic_temp_ptr = GET_TEMPLATE(PropBasicAttributeTemplate, item_template_ptr->logic_id);
@@ -2391,7 +2391,7 @@ citem* item_set::create_item_by_template(e_server_log_add_item add_type, int32 p
 			return nullptr;
 		}
 	}
-	//ÏÞÊ±ÎïÆ·id¸ü»»
+	//ï¿½ï¿½Ê±ï¿½ï¿½Æ·idï¿½ï¿½ï¿½ï¿½
 	if (item_template_ptr->item_type == e_item_type_time_limit)
 	{
 		item_template_id = item_template_ptr->logic_id;
@@ -2411,23 +2411,23 @@ citem* item_set::create_item_by_template(e_server_log_add_item add_type, int32 p
 		item_over_time = time_helper::get_cur_time_new().second + item_template_ptr->EffectiveTime;
 	}
 
-	//¼ì²âÊÇ·ñÎªÏÞÊ±ÓðÒíÀàÐÍ
+	//ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Îªï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (item_template_ptr->item_type == e_item_type_expendable && item_template_ptr->sub_type == e_prop_sub_type_wing_experience)
 	{
 		int32 class_type = player_ref.get_unit_info(e_role_info_class_type);
 		int32 item_wing_template_id = 0;
 		switch (class_type)
 		{
-		case e_class_type_barserker://¿ñÕ½Ê¿
+		case e_class_type_barserker://ï¿½ï¿½Õ½Ê¿
 			item_wing_template_id = 31040001;
 			break;
-		case e_class_type_wizard: //Î×Ê¦
+		case e_class_type_wizard: //ï¿½ï¿½Ê¦
 			item_wing_template_id = 31040011;
 			break;
-		case e_class_type_guardian: //ÊØ»¤Õß
+		case e_class_type_guardian: //ï¿½Ø»ï¿½ï¿½ï¿½
 			item_wing_template_id = 31040021;
 			break;
-		case e_class_type_assassinator: //°µÉ±Õß
+		case e_class_type_assassinator: //ï¿½ï¿½É±ï¿½ï¿½
 			item_wing_template_id = 31040031;
 			break;
 		}
@@ -2438,10 +2438,10 @@ citem* item_set::create_item_by_template(e_server_log_add_item add_type, int32 p
 			if (true == is_unlock)
 			{
 				CONSOLE_ERROR("item is unlock item_template_id:{}", item_template_id);
-				return nullptr;//Èç¹ûÒÑ½âËø³á°ò¹¦ÄÜ£¬Ôò¸ÃÎïÆ·ÎªÎÞÐ§ÎïÆ·
+				return nullptr;//ï¿½ï¿½ï¿½ï¿½Ñ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·Îªï¿½ï¿½Ð§ï¿½ï¿½Æ·
 			}
 		}
-		if (nullptr != get_showed_wing())//Èç¹ûÓÐÕ¹Ê¾µÄ³á°ò£¬¾ÍÀ¹½Ø£¬²»ÔÊÐíÊ¹ÓÃ¸ÃÎïÆ·
+		if (nullptr != get_showed_wing())//ï¿½ï¿½ï¿½ï¿½ï¿½Õ¹Ê¾ï¿½Ä³ï¿½ò£¬¾ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã¸ï¿½ï¿½ï¿½Æ·
 		{
 			CONSOLE_ERROR("item is showed wing item_template_id:{}", item_template_id);
 			return nullptr;
@@ -2474,7 +2474,7 @@ citem* item_set::create_item_by_template(e_server_log_add_item add_type, int32 p
 			//	}
 			//}
 			CONSOLE_ERROR("temp is nullptr item_template_id:{}", item_template_id);
-			return temp;//ÒòÎª³á°òÒÑ¾­±»³õÊ¼»¯£¬ËùÒÔ²»¿ÉÄÜÎª¿Õ
+			return temp;//ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½
 		}
 		else
 		{
@@ -2689,12 +2689,12 @@ citem* item_set::create_item_by_info(const s_item_info& temp_info, e_server_log_
 	return nullptr;
 }
 
-// ·µ»ØÖµËµÃ÷:
-//  1 ÕýÈ··µ»Ø
-// -1 ÎïÆ·Êý¾Ý´íÎó
-// -2 ÎïÆ·ÒÑ¾­ÔÚ±³°üÖÐ
-// -3 ´´½¨ÐÂÎïÆ·Ê§°Ü(±ÈÈçÎïÆ·ÊýÁ¿¹ý¶àÐèÒª²ð·ÖÊ±ÐèÒª¶îÍâµÄÎïÆ·´´½¨²Ù×÷)
-// -4 ±³°üÈÝÁ¿ÒÑÂú
+// ï¿½ï¿½ï¿½ï¿½ÖµËµï¿½ï¿½:
+//  1 ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½
+// -1 ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
+// -2 ï¿½ï¿½Æ·ï¿½Ñ¾ï¿½ï¿½Ú±ï¿½ï¿½ï¿½ï¿½ï¿½
+// -3 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·Ê§ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Ê±ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+// -4 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 bool item_set::put_item_into_bag(citem* item_ptr, e_bag_type bag_type, bool merge, e_update_item_info_mode update_mode, bool is_show_go_to_bag, bool is_continue_put)
 {
 	ZoneScoped;
@@ -2721,11 +2721,11 @@ bool item_set::put_item_into_bag(citem* item_ptr, e_bag_type bag_type, bool merg
 		return false;
 	}
 	if (item_template_ptr->item_type == faith::e_item_type_stone && item_template_ptr->sub_type == faith::e_stone_sub_type_psyche)
-	{//ÎªÓ¦¶Ô¿Í»§¶Ë×Ô¶¯·Ö½âµÄÎÊÌâ£¬Ç¿ÖÆ°Ñ¸üÐÂÀàÐÍµ÷ÕûÁË
+	{//ÎªÓ¦ï¿½Ô¿Í»ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½â£¬Ç¿ï¿½Æ°Ñ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½
 		update_mode = e_update_item_info_mode_default;
 	}
 
-	// ÒÑ¾­ÔÚ±³°üÀïµÄÎïÆ·²»ÐèÒªÖØÐÂ·ÅÈë
+	// ï¿½Ñ¾ï¿½ï¿½Ú±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½
 	if (item_ptr->get_data_info(e_item_info_container_type) == bag_type)
 	{
 		send_item_one(item_ptr);
@@ -2742,14 +2742,14 @@ bool item_set::put_item_into_bag(citem* item_ptr, e_bag_type bag_type, bool merg
 
 	int32 left_item_num = total_item_num;
 
-	// Èç¹ûÎïÆ·µÄÊýÁ¿Îª0¾ÍÇåÀíµôËü
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (total_item_num <= 0)
 	{
 		del_item(e_server_log_del_item_bag_zero, old_slot, item_ptr, 1);
 		return true;
 	}
 
-	// Èç¹ûÎïÆ·±»±êÃ÷ÁË"×Ô¶¯Ê¹ÓÃ",ÔòÐèÒªÔÚ·ÅÈë±³°üÊ±Ê¹ÓÃËü
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"ï¿½Ô¶ï¿½Ê¹ï¿½ï¿½",ï¿½ï¿½ï¿½ï¿½Òªï¿½Ú·ï¿½ï¿½ë±³ï¿½ï¿½Ê±Ê¹ï¿½ï¿½ï¿½ï¿½
 	if (item_template_ptr->AutoUse > 0)
 	{
 		citem* end_item = nullptr;
@@ -2791,7 +2791,7 @@ bool item_set::put_item_into_bag(citem* item_ptr, e_bag_type bag_type, bool merg
 		}
 	}
 
-	// ¸ÃÌî²¹µÄºÍ¸Ã²ð·ÖµÄ¶¼×öÍêÁË¾Í¿ÉÒÔÔÚ±³°üÀïÕÒ¸ö¿Õ¸ñ×Ó°ÑÎïÆ··Å½øÈ¥ÁË
+	// ï¿½ï¿½ï¿½î²¹ï¿½ÄºÍ¸Ã²ï¿½ÖµÄ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¾Í¿ï¿½ï¿½ï¿½ï¿½Ú±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¸ï¿½ï¿½Õ¸ï¿½ï¿½Ó°ï¿½ï¿½ï¿½Æ·ï¿½Å½ï¿½È¥ï¿½ï¿½
 	if (left_item_num > 0)
 	{
 		if (left_item_num > item_template_ptr->max_pile_num)
@@ -2849,7 +2849,7 @@ bool item_set::put_item_into_bag(citem* item_ptr, e_bag_type bag_type, bool merg
 		player_ref.send_message_to_self(&show_go_to_bag_info, e_msgindex_s2c_item_show_goto_bag);
 	}
 
-	//ÐÂ»ñµÃµÄ£¬ºìÉ« ÎäÆ÷¡¢·À¾ß£¬Òª¹ã²¥Ò»¸ö
+	//ï¿½Â»ï¿½ÃµÄ£ï¿½ï¿½ï¿½É« ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß£ï¿½Òªï¿½ã²¥Ò»ï¿½ï¿½
 	if (put_count == 0)
 	{
 		item_ptr->set_data_info(e_item_info_put_in_bag_count, 1);
@@ -2863,13 +2863,13 @@ bool item_set::put_item_into_bag(citem* item_ptr, e_bag_type bag_type, bool merg
 				if (temp_string_array_list.size() >= 2
 					&& temp_item_string_array_list.size() >= 1)
 				{
-					std::string first_string = temp_string_array_list[0];		//"ºÃÔË±¬Åï£¡¹§Ï²"
-					std::string second_string = temp_string_array_list[1];		//"£¬»ñµÃÁËÕä¹óµÄ"
+					std::string first_string = temp_string_array_list[0];		//"ï¿½ï¿½ï¿½Ë±ï¿½ï¿½ï£¡ï¿½ï¿½Ï²"
+					std::string second_string = temp_string_array_list[1];		//"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
 
-					std::string final_string = first_string;				//"ºÃÔË±¬Åï£¡¹§Ï²"
-					final_string += player_ref.get_name();					//"ºÃÔË±¬Åï£¡¹§Ï²XXX"
-					final_string += second_string;							//"ºÃÔË±¬Åï£¡¹§Ï²XXX£¬»ñµÃÁËÕä¹óµÄ"
-					final_string += temp_item_string_array_list[0];					//"ºÃÔË±¬Åï£¡¹§Ï²XXX£¬»ñµÃÁËÕä¹óµÄXXXX"
+					std::string final_string = first_string;				//"ï¿½ï¿½ï¿½Ë±ï¿½ï¿½ï£¡ï¿½ï¿½Ï²"
+					final_string += player_ref.get_name();					//"ï¿½ï¿½ï¿½Ë±ï¿½ï¿½ï£¡ï¿½ï¿½Ï²XXX"
+					final_string += second_string;							//"ï¿½ï¿½ï¿½Ë±ï¿½ï¿½ï£¡ï¿½ï¿½Ï²XXXï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
+					final_string += temp_item_string_array_list[0];					//"ï¿½ï¿½ï¿½Ë±ï¿½ï¿½ï£¡ï¿½ï¿½Ï²XXXï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½XXXX"
 					player_ref.get_chat_mgr().send_globel_message(final_string);
 				}
 			}
@@ -2877,7 +2877,7 @@ bool item_set::put_item_into_bag(citem* item_ptr, e_bag_type bag_type, bool merg
 	}
 
 	if (left_item_num <= 0)
-	{//Ð´ÔÚ×îºó ·ÀÖ¹ÉÏÃæÂß¼­Ê¹ÓÃitem¶ÔÏó
+	{//Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½Ê¹ï¿½ï¿½itemï¿½ï¿½ï¿½ï¿½
 		del_item(e_server_log_del_item_bag_merge, 0, item_ptr, total_item_num);
 	}
 	return true;
@@ -2905,7 +2905,7 @@ bool item_set::put_in_bag(std::vector<citem*>& item_inst_array, e_bag_type bag_t
 	{
 		return false;
 	}
-	vector<citem*> will_send_email_item_array;												// »º´æÏÂ±³°ü×°²»ÏÂµÄÎïÆ· ×îºó·¢ÓÊ¼þ
+	vector<citem*> will_send_email_item_array;												// ï¿½ï¿½ï¿½ï¿½ï¿½Â±ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½Æ· ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½
 
 	for (int32 item_array_index = 0; item_array_index < item_inst_array_size; item_array_index++)
 	{
@@ -2925,7 +2925,7 @@ bool item_set::put_in_bag(std::vector<citem*>& item_inst_array, e_bag_type bag_t
 	}
 	bool all_success = will_send_email_item_array.empty();
 	if (will_send_email_item_array.empty() == false)
-	{// ½«ÎïÆ·ÒÔÓÊ¼þÐÎÊ½·¢ËÍ
+	{// ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½
 		if (mail_type > 0)
 		{
 			send_item_by_mail(will_send_email_item_array, mail_type);
@@ -3146,7 +3146,7 @@ std::vector<s_item_info> item_set::get_item_info_array(std::vector<citem*>& item
 
 s_item_info item_set::filter_items_with_notice(std::vector<citem*> item_ptr_array, std::string& item_names_str, int32 notices_id)
 {
-	int32 notice_id = 93000204;//¶ÔÓÃÕâ¸ö¹«¸æidµÄÀñ°üÌØÊâ´¦Àí
+	int32 notice_id = 93000204;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½idï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â´¦ï¿½ï¿½
 	//std::vector<citem*> filter_item_ptr_array;
 	s_item_info item_data;
 	const int32 item_ptr_array_size = item_ptr_array.size();
@@ -3242,7 +3242,7 @@ int32 item_set::against_buy_item(guid_64 item_guid, int32 goods_id)
 		return false;
 	}
 
-	//ÄÜ·ñ»¨Ç®
+	//ï¿½Ü·ï¿½Ç®
 	if (temp_player.can_cut_money((e_money_type)goods_template->NewPrice[money_type_index], goods_template->NewPrice[money_num_index]) == false)
 	{
 		return false;
@@ -3254,7 +3254,7 @@ int32 item_set::against_buy_item(guid_64 item_guid, int32 goods_id)
 	int32 item_info_over_time = 0;
 	bool is_equip = true;
 
-	//Èç¹ûµ±Ç°Ê±¼ä´óÓÚµÈÓÚÎïÆ·µÄ¹ýÆÚÊ±¼ä,¾ÍÔÚµ±Ç°Ê±¼äÉÏÃæ+Ê±¼ä
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ç°Ê±ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Ä¹ï¿½ï¿½ï¿½Ê±ï¿½ï¿½,ï¿½ï¿½ï¿½Úµï¿½Ç°Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½+Ê±ï¿½ï¿½
 	if (cur_second_time >= item_ptr->get_data_info(e_item_info_over_time))
 	{
 		if (goods_template->EffectiveTime == 0)
@@ -3275,7 +3275,7 @@ int32 item_set::against_buy_item(guid_64 item_guid, int32 goods_id)
 			}
 		}
 	}
-	else//Ã»¹ýÆÚ,¾ÍÔÚµ±Ç°Ê±¼äÉÏÐøÊ±¼ä
+	else//Ã»ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Úµï¿½Ç°Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 	{
 		if (goods_template->EffectiveTime == 0)
 		{
@@ -3641,16 +3641,16 @@ int32  item_set::show_this_init_max_wing(citem* item_ptr)
 		int32 item_wing_template_id = 0;
 		switch (class_type)
 		{
-		case e_class_type_barserker://¿ñÕ½Ê¿
+		case e_class_type_barserker://ï¿½ï¿½Õ½Ê¿
 			item_wing_template_id = 31040001;
 			break;
-		case e_class_type_wizard: //Î×Ê¦
+		case e_class_type_wizard: //ï¿½ï¿½Ê¦
 			item_wing_template_id = 31040011;
 			break;
-		case e_class_type_guardian: //ÊØ»¤Õß
+		case e_class_type_guardian: //ï¿½Ø»ï¿½ï¿½ï¿½
 			item_wing_template_id = 31040021;
 			break;
-		case e_class_type_assassinator: //°µÉ±Õß
+		case e_class_type_assassinator: //ï¿½ï¿½É±ï¿½ï¿½
 			item_wing_template_id = 31040031;
 			break;
 		}
@@ -3660,7 +3660,7 @@ int32  item_set::show_this_init_max_wing(citem* item_ptr)
 			bool is_unlock = temp_player_ref.get_func_unlock_mgr().is_func_unlock(item_ptr_lock->FuncUnlockid);
 			if (false == is_unlock && nullptr != item_ptr)
 			{
-				item_ptr->set_data_info(e_item_info_activate, 1);//½«Æä¼¤»î£¬±ãÓÚÍÑÏÂ³á°ò
+				item_ptr->set_data_info(e_item_info_activate, 1);//ï¿½ï¿½ï¿½ä¼¤ï¿½î£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â³ï¿½ï¿½
 				show_this_wing(item_ptr, -1, true, true);
 				item_ptr->set_data_info(e_item_info_activate, 0);
 				return -1;
@@ -3690,7 +3690,7 @@ int32  item_set::show_this_init_max_wing(citem* item_ptr)
 		bool is_unlock = temp_player_ref.get_func_unlock_mgr().is_func_unlock(item_ptr_lock->FuncUnlockid);
 		if (false == is_unlock && nullptr != item_ptr)
 		{
-			item_ptr->set_data_info(e_item_info_activate, 1);//½«Æä¼¤»î£¬±ãÓÚÍÑÏÂ³á°ò
+			item_ptr->set_data_info(e_item_info_activate, 1);//ï¿½ï¿½ï¿½ä¼¤ï¿½î£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â³ï¿½ï¿½
 			show_this_wing(item_ptr, -1, true, true);
 			item_ptr->set_data_info(e_item_info_activate, 0);
 			return -1;
@@ -3777,14 +3777,14 @@ bool item_set::put_in_bag(e_server_log_add_item add_type, int32 param, const std
 	}
 	bool b_can_put_item_into_bag = can_put_items(item_array);
 
-	if (true == b_can_put_item_into_bag || mail_type > 0)						// ¿ÉÒÔ½«ÎïÆ··Å½ø±³°ü
+	if (true == b_can_put_item_into_bag || mail_type > 0)						// ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½Æ·ï¿½Å½ï¿½ï¿½ï¿½ï¿½ï¿½
 	{
 		std::string item_names_str;
 		item_names_str.reserve(100);
 		s_item_info item_data[chat_max_item];
 		int32 item_data_size = 0;
 		std::vector<xstring> item_name_array;
-		std::vector<citem*> item_ptr_array = create_items(add_type, param, item_array);	// ´´½¨ÎïÆ·ÊµÀý
+		std::vector<citem*> item_ptr_array = create_items(add_type, param, item_array);	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·Êµï¿½ï¿½
 		if (item_data_size < chat_max_item)
 		{
 			item_data[item_data_size] = filter_items_with_notice(item_ptr_array, item_names_str);
@@ -3793,7 +3793,7 @@ bool item_set::put_in_bag(e_server_log_add_item add_type, int32 param, const std
 				item_data_size++;
 			}
 		}
-		if (0 < notice_id && 0 < item_data_size)								// ·¢ËÍÎïÆ·»ñµÃ¹«¸æ
+		if (0 < notice_id && 0 < item_data_size)								// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ã¹ï¿½ï¿½ï¿½
 		{
 			std::string notice_str_id = template_manager::get_instance().get_str_id_by_notice_id(notice_id);
 			std::vector<std::string> notice_str_params_vec;
@@ -3804,13 +3804,13 @@ bool item_set::put_in_bag(e_server_log_add_item add_type, int32 param, const std
 			player_ref.get_chat_mgr().send_notice(notice_id, notice_str, item_data, item_data_size - 1);
 		}
 
-		if (false == b_can_put_item_into_bag)		// ·¢ËÍÌáÊ¾ ½«»á·¢ËÍ "½±ÀøÒÔÓÊ¼þÐÎÊ½·¢ËÍ¹ýÈ¥"
+		if (false == b_can_put_item_into_bag)		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ ï¿½ï¿½ï¿½á·¢ï¿½ï¿½ "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½Í¹ï¿½È¥"
 		{
 			std::string show_string = template_manager::get_instance().get_str_id_by_notice_id(mail_with_item_notice_id);
 			player_ref.get_chat_mgr().send_notice(mail_with_item_notice_id, show_string);
 		}
 
-		put_in_bag(item_ptr_array, bag_type, mail_type);									// ÎïÆ·½ø°ü
+		put_in_bag(item_ptr_array, bag_type, mail_type);									// ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½
 		return true;
 	}
 	else
@@ -3959,8 +3959,8 @@ std::vector<citem*> item_set::create_items(e_server_log_add_item add_type, int32
 	return items_array;
 }
 
-// locked: 0±íÊ¾Ö»»ñµÃ·Ç°ó¶¨ÎïÆ·Êý×é 1±íÊ¾Ö»»ñÈ¡°ó¶¨µÄÎïÆ·Êý×é 2±íÊ¾°ó¶¨ºÍ·Ç°ó¶¨µÄ¶¼»ñÈ¡
-// only_bag±íÊ¾ÊÇ·ñÖ»»ñÈ¡±³°üÖÐµÄÏàÓ¦ÎïÆ·
+// locked: 0ï¿½ï¿½Ê¾Ö»ï¿½ï¿½Ã·Ç°ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½Ê¾Ö»ï¿½ï¿½È¡ï¿½ó¶¨µï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½Ê¾ï¿½ó¶¨ºÍ·Ç°ó¶¨µÄ¶ï¿½ï¿½ï¿½È¡
+// only_bagï¿½ï¿½Ê¾ï¿½Ç·ï¿½Ö»ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Æ·
 std::vector<citem*> item_set::get_items_by_template_id(int32 item_template_id, int32 locked, bool only_bag)
 {
 	std::vector<citem*> item_array;
@@ -3995,9 +3995,9 @@ int32 item_set::del_item_instance(e_server_log_del_item causeid, int32 location,
 	}
 	return del_item_instance(causeid, location, item_ptr, del_num);
 }
-// ·µ»ØÉ¾³ýÎïÆ·ºó¸Ã¸ñ×ÓÊ£ÓàµÄÎïÆ·ÊýÄ¿
+// ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ã¸ï¿½ï¿½ï¿½Ê£ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ä¿
 //
-// PS: ËùÓÐµÄÎïÆ·É¾³ýº¯Êý×îÖÕ¶¼»áµ÷ÓÃÕâ¸öº¯Êý
+// PS: ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½Æ·É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 int32 item_set::del_item_instance(e_server_log_del_item causeid, int32 location, citem* item_ptr, int32 del_num)
 {
 	if (nullptr == item_ptr)
@@ -4289,7 +4289,7 @@ void item_set::del_item(e_server_log_del_item causeid, int32 location, citem* it
 	del_item(causeid, location, item_ptr->get_item_guid(), del_num);
 }
 
-// ÕûÀíÎïÆ·À¸ÖÐµÄËùÓÐÎïÆ·
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·
 bool item_set::tidy_item(e_bag_type tidy_bag_typ, bool is_not_tidy_time)
 {
 	unit& unit_ref = unit_man::get_unit(m_unit_array_index);
@@ -4297,7 +4297,7 @@ bool item_set::tidy_item(e_bag_type tidy_bag_typ, bool is_not_tidy_time)
 	{
 		return false;
 	}
-	// ÕûÀí¹¦ÄÜÀäÈ´ÆÚ¼ä²»ÄÜÔÙ½øÐÐÕûÀí
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½Ú¼ä²»ï¿½ï¿½ï¿½Ù½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (m_item_tidy_cd > utility::get_tick_count())
 	{
 		if (is_not_tidy_time)
@@ -4395,7 +4395,7 @@ void item_set::refresh_element_heart_faker_player_buff()
 	{
 		citem* temp_equip_rune = get_item_by_slot(e_bag_type_equip_elemenet, i);
 		if (temp_equip_rune == nullptr)
-		{//Ã»×°±¸µÄ²»¼Ó
+		{//Ã»×°ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½
 			continue;
 		}
 		ElementHeartTemplate* temp_template_ptr = GET_TEMPLATE(ElementHeartTemplate, temp_equip_rune->get_item_logic_id());
@@ -4450,11 +4450,11 @@ void item_set::calcu_addition_with_fake_player(e_addition_buff addition_buff_typ
 
 	faith::template_manager::template_type::iterator ite;
 	AdditionBuffTemplate* addition_tmpl_ptr = nullptr;
-	std::vector<int32> new_buff_id_arr;          // µ±Ç°ÄÜÉúÐ§µÄ×î´óÐ§¹ûµÄBUFFÄ£°åµÄID
-	std::vector<int32> new_buff_equip_num_arr;   // µ±Ç°ÉúÐ§µÄ×î´óÐ§¹ûµÄBUFFÄ£°åµÄÒªÇó×°±¸¸öÊý
-	std::vector<int32> new_buff_need_num_arr;    // µ±Ç°ÉúÐ§µÄ×î´óÐ§¹ûµÄBUFFÄ£°åµÄÒªÇó²Ù×÷´ÎÊý
-	std::vector<int32> new_buff_sub_type_arr;	 //	µ±Ç°ÉúÐ§µÄ×î´óÐ§¹ûµÄBUFFÄ£°åµÄ×ÓÀàÐÍ
-	std::vector<int32> new_buff_level_arr;		 //	µ±Ç°ÉúÐ§µÄ×î´óÐ§¹ûµÄBUFFÄ£°åµÄµÈ¼¶
+	std::vector<int32> new_buff_id_arr;          // ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½BUFFÄ£ï¿½ï¿½ï¿½ID
+	std::vector<int32> new_buff_equip_num_arr;   // ï¿½ï¿½Ç°ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½BUFFÄ£ï¿½ï¿½ï¿½Òªï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	std::vector<int32> new_buff_need_num_arr;    // ï¿½ï¿½Ç°ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½BUFFÄ£ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	std::vector<int32> new_buff_sub_type_arr;	 //	ï¿½ï¿½Ç°ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½BUFFÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	std::vector<int32> new_buff_level_arr;		 //	ï¿½ï¿½Ç°ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½BUFFÄ£ï¿½ï¿½ÄµÈ¼ï¿½
 
 	for (ite = addition_buff_tmpl_table->begin(); ite != addition_buff_tmpl_table->end(); ++ite)
 	{
@@ -4478,8 +4478,8 @@ void item_set::calcu_addition(e_addition_buff addition_buff_type, bool need_send
 	{
 		return;
 	}
-	// »ñµÃµ±Ç°ÕýÔÚÉúÐ§µÄÇ¿»¯BUFFµÄID£¬ÕâÊÇÎªÁËÈç¹ûÏÂÃæÒª¼¤»îÄ³¸öÐÂBUFFµÄÊ±ºòÄÜ°ÑÏÖÔÚÕýÔÚÉúÐ§µÄ
-	// BUFF¸ø³·µô
+	// ï¿½ï¿½Ãµï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½Ç¿ï¿½ï¿½BUFFï¿½ï¿½IDï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½BUFFï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ü°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½
+	// BUFFï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	std::vector<int32> old_buff_id_arr = temp_player.get_addition_buff_id_arr(addition_buff_type);
 
 	faith::template_manager::template_type* addition_buff_tmpl_table = template_manager::get_instance().get_templates(e_AdditionBuffTemplate);
@@ -4490,11 +4490,11 @@ void item_set::calcu_addition(e_addition_buff addition_buff_type, bool need_send
 
 	faith::template_manager::template_type::iterator ite;
 	AdditionBuffTemplate* addition_tmpl_ptr = nullptr;
-	std::vector<int32> new_buff_id_arr;          // µ±Ç°ÄÜÉúÐ§µÄ×î´óÐ§¹ûµÄBUFFÄ£°åµÄID
-	std::vector<int32> new_buff_equip_num_arr;   // µ±Ç°ÉúÐ§µÄ×î´óÐ§¹ûµÄBUFFÄ£°åµÄÒªÇó×°±¸¸öÊý
-	std::vector<int32> new_buff_need_num_arr;    // µ±Ç°ÉúÐ§µÄ×î´óÐ§¹ûµÄBUFFÄ£°åµÄÒªÇó²Ù×÷´ÎÊý
-	std::vector<int32> new_buff_sub_type_arr;	 //	µ±Ç°ÉúÐ§µÄ×î´óÐ§¹ûµÄBUFFÄ£°åµÄ×ÓÀàÐÍ
-	std::vector<int32> new_buff_level_arr;		 //	µ±Ç°ÉúÐ§µÄ×î´óÐ§¹ûµÄBUFFÄ£°åµÄµÈ¼¶
+	std::vector<int32> new_buff_id_arr;          // ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½BUFFÄ£ï¿½ï¿½ï¿½ID
+	std::vector<int32> new_buff_equip_num_arr;   // ï¿½ï¿½Ç°ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½BUFFÄ£ï¿½ï¿½ï¿½Òªï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	std::vector<int32> new_buff_need_num_arr;    // ï¿½ï¿½Ç°ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½BUFFÄ£ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	std::vector<int32> new_buff_sub_type_arr;	 //	ï¿½ï¿½Ç°ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½BUFFÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	std::vector<int32> new_buff_level_arr;		 //	ï¿½ï¿½Ç°ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½BUFFÄ£ï¿½ï¿½ÄµÈ¼ï¿½
 	for (ite = addition_buff_tmpl_table->begin(); ite != addition_buff_tmpl_table->end(); ++ite)
 	{
 		addition_tmpl_ptr = (AdditionBuffTemplate*)(ite->second);
@@ -4530,7 +4530,7 @@ void item_set::calcu_addition(e_addition_buff addition_buff_type, bool need_send
 	int32 old_addtion_level = 0;
 	for (int32 i = 0; i < old_buff_id_arr.size(); i++)
 	{
-		// Èç¹ûµ±Ç°ÒÑ¾­ÓÐÕýÔÚÉúÐ§µÄBUFF£¬ÏÈÐ¶³ýËü
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½BUFFï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½
 		if (old_buff_id_arr[i] > 0)
 		{
 			AdditionBuffTemplate* cur_addition_tmpl_ptr = GET_TEMPLATE(AdditionBuffTemplate, old_buff_id_arr[i]);
@@ -4573,7 +4573,7 @@ void item_set::calcu_addition(e_addition_buff addition_buff_type, bool need_send
 				temp_player.send_addition_buff_info(temp_player.get_unit_guid(), addition_buff_type, new_buff_id_arr[i]);
 				if (true == need_send_notice && new_addtion_level > old_addtion_level)
 				{
-					//wucun ÕâÀï×°±¸¸½Ä§µÄ¹«¸æÃ»ÓÐ¼æÈÝ
+					//wucun ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½Ä§ï¿½Ä¹ï¿½ï¿½ï¿½Ã»ï¿½Ð¼ï¿½ï¿½ï¿½
 					temp_player.send_addition_notice_with_type(addition_buff_type, new_buff_id_arr[i]);
 				}
 			}
@@ -4592,7 +4592,7 @@ void item_set::calcu_addition(e_addition_buff addition_buff_type, bool need_send
 	}
 }
 
-// ¼ÆËãÒ»ÌõbuffÊÇ·ñ·ûºÏ
+// ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½buffï¿½Ç·ï¿½ï¿½ï¿½ï¿½
 void item_set::calcu_addition_by_one(AdditionBuffTemplate* addition_tmpl_ptr, std::vector<int32>& buff_id_arr, std::vector<int32>& buff_equip_num_arr, std::vector<int32>& buff_need_num_arr, std::vector<int32>& buff_sub_type_arr, std::vector<int32>& buff_level_arr)
 {
 	if (buff_id_arr.size() != buff_equip_num_arr.size() || buff_id_arr.size() != buff_need_num_arr.size() || buff_id_arr.size() != buff_sub_type_arr.size() || buff_id_arr.size() != buff_level_arr.size())
@@ -4625,7 +4625,7 @@ void item_set::calcu_addition_by_one(AdditionBuffTemplate* addition_tmpl_ptr, st
 				}
 			}
 
-			// Èç¹û½øÈëÁËÏÂÃæµÄifÓï¾ä¾ÍËµÃ÷µ±Ç°µÄ¸÷×°±¸Ç¿»¯Ìõ¼þÂú×ã¸ÃÌõBUFF£¬½Ó×ÅÔÙ±È½ÏÕâ¸öBUFFÊÇ·ñÊÇÄ¿Ç°ÎªÖ¹Ð§¹û×î¼ÑµÄBUFF
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ifï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Ç°ï¿½Ä¸ï¿½×°ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½BUFFï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù±È½ï¿½ï¿½ï¿½ï¿½BUFFï¿½Ç·ï¿½ï¿½ï¿½Ä¿Ç°ÎªÖ¹Ð§ï¿½ï¿½ï¿½ï¿½Ñµï¿½BUFF
 			if (equip_num >= addition_tmpl_ptr->EquipNum)
 			{
 				if (buff_id_arr.size() <= 0)
@@ -5300,7 +5300,7 @@ bool item_set::item_operate(const std::vector<guid_64>& item_guid, int32 item_sl
 		}
 	}
 	break;
-	case e_item_operation_wing_shape_unlock:		//ÓðÒíÍâÐÎ½âËø
+	case e_item_operation_wing_shape_unlock:		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î½ï¿½ï¿½ï¿½
 		if (item_guid.size() > 0)
 		{
 			citem* temp_item = get_item(item_guid[0]);
@@ -5308,7 +5308,7 @@ bool item_set::item_operate(const std::vector<guid_64>& item_guid, int32 item_sl
 			{
 				if (temp_item->get_item_info_ptr()->sub_type == 2)
 				{
-					bSuccess = wing_feather_unlock(item_guid[0], item_slot);//³á°òôáÓð½âËø
+					bSuccess = wing_feather_unlock(item_guid[0], item_slot);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				}
 				else
 				{
@@ -5504,7 +5504,7 @@ bool item_set::item_operate(const std::vector<guid_64>& item_guid, int32 item_sl
 	case e_item_operation_against_buy:
 		if (item_guid.size() > 0)
 		{
-			//ÔÚÕâitem_slot´«À´µÄ²ÎÊý´ú±í×ÅÉÌÆ·ID
+			//ï¿½ï¿½ï¿½ï¿½item_slotï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ID
 			bSuccess = against_buy_item(item_guid[0], item_slot);
 			if (bSuccess)
 			{
@@ -5515,13 +5515,13 @@ bool item_set::item_operate(const std::vector<guid_64>& item_guid, int32 item_sl
 	case e_item_operation_buy_and_use:
 		if (item_guid.size() > 0)
 		{
-			bSuccess = item_buy_and_use(item_slot);//ÕâÀïµÄitem_slotÒ²´ú±í×ÅÉÌÆ·ID
+			bSuccess = item_buy_and_use(item_slot);//ï¿½ï¿½ï¿½ï¿½ï¿½item_slotÒ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ID
 		}
 		break;
 	case e_item_operation_use_beast_spirit:
 		if (item_guid.size() > 0)
 		{
-			bSuccess = use_beast_spirit(item_guid[0], item_num);//ÕâÀïµÄitem_slotÒ²´ú±í×ÅÉÌÆ·ID
+			bSuccess = use_beast_spirit(item_guid[0], item_num);//ï¿½ï¿½ï¿½ï¿½ï¿½item_slotÒ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ID
 		}
 		break;
 	case e_item_operation_set_jewel_on:
@@ -5726,7 +5726,7 @@ int32 item_set::get_highest_mount_level()
 	return max_level;
 }
 
-// ´©ÉÏÏàÓ¦µÄ×°±¸
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½×°ï¿½ï¿½
 bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_without_auto_inherit, bool is_against_buy_time)
 {
 	unit& temp_unit = unit_man::get_unit(m_unit_array_index);
@@ -5769,13 +5769,13 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 		return false;
 	}
 
-	// ¼ì²éÖ°ÒµÏÞÖÆ
+	// ï¿½ï¿½ï¿½Ö°Òµï¿½ï¿½ï¿½ï¿½
 	if (!is_class_enable(item_ptr))
 	{
 		CONSOLE_ERROR("item_set::equip_on is_class_enable false");
 		return false;
 	}
-	// µÈ¼¶²»×ã²»ÄÜ´©´÷¸Ã×°±¸
+	// ï¿½È¼ï¿½ï¿½ï¿½ï¿½ã²»ï¿½Ü´ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½
 	if (item_template_ptr->level_limit.size() >= 2)
 	{
 		if (temp_unit.get_unit_info(e_role_info_exp_level) < item_template_ptr->level_limit[0])
@@ -5785,7 +5785,7 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 		}
 	}
 
-	// in_which_item_slot±íÊ¾ÎïÆ·µ±Ç°ÔÚÎïÆ·À¸ÖÐµÄÐ¡´°¿ÚµÄÎ»ÖÃ
+	// in_which_item_slotï¿½ï¿½Ê¾ï¿½ï¿½Æ·ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ðµï¿½Ð¡ï¿½ï¿½ï¿½Úµï¿½Î»ï¿½ï¿½
 	int32 in_which_item_slot = item_ptr->get_data_info(e_item_info_slot);
 	e_bag_type in_which_bag_type = e_bag_type(item_ptr->get_data_info(e_item_info_container_type));
 	citem* old_equip_item_ptr = nullptr;
@@ -5831,10 +5831,10 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 			}
 		}
 
-		equip_off_equip_show_buff();	//È¥×°±¸¹âÐ§buff
+		equip_off_equip_show_buff();	//È¥×°ï¿½ï¿½ï¿½ï¿½Ð§buff
 
-		// ÏòÏàÓ¦µÄ×°±¸´°¿ÚÖÐÌí¼ÓÒª×°±¸µÄÎïÆ·
-		item_ptr->set_data_info(e_item_info_container_type, e_bag_type_equip_fasion); // °ÑÎïÆ·µÄÎ»ÖÃÉèÖÃÎªÔÙ×°±¸´°¿ÚÖÐ
+		// ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òª×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·
+		item_ptr->set_data_info(e_item_info_container_type, e_bag_type_equip_fasion); // ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		item_ptr->set_data_info(e_item_info_slot, item_template_ptr->sub_type);
 
 		GET_BAG(e_bag_type_equip_fasion)[item_template_ptr->sub_type] = item_ptr->get_item_guid();
@@ -5842,7 +5842,7 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 		item_ptr->set_data_info(e_item_info_locked, 1);
 		send_item_one(item_ptr);
 
-		//¼Ó×°±¸¹âÐ§buff
+		//ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½Ð§buff
 		equip_on_equip_show_buff();
 
 		player& player_ref = unit_man::get_player(m_unit_array_index);
@@ -5856,7 +5856,7 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 			player_ref.send_message_to_aoi(&show_request_end, e_msgindex_s2c_show_fashion, true);
 		}
 
-		//´©ÉÏÊ±×°µÄÊ±ºò¼ì²âÉíÉÏ´©´÷µÄ×°±¸ÊÇ·ñÓÐÌØÐ§£¬Èç¹û´©´÷ÁË1½×³ÈÉ«×°±¸¼ì²é²¢É¾³ý
+		//ï¿½ï¿½ï¿½ï¿½Ê±×°ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½×³ï¿½É«×°ï¿½ï¿½ï¿½ï¿½é²¢É¾ï¿½ï¿½
 		//reset_weapon_fashion_effect();
 		if (false == player_ref.is_valid())
 		{
@@ -5875,7 +5875,7 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 			item_ptr->set_unit_buff(m_unit_array_index, true);
 		}
 
-		//±£´æÍ·Ïñ¿ò
+		//ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½
 		if (item_template_ptr->sub_type == e_fashion_show_type_head_frame)
 		{
 			player_ref.set_unit_info(e_role_info_head_frame, item_template_ptr->attribute_id);
@@ -5917,7 +5917,7 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 		GET_BAG(e_bag_type_sky_equip)[should_in_which_equip_slot] = item_ptr->get_item_guid();
 		send_item_one(item_ptr);
 
-		set_sky_equip_att(item_ptr, true);//×°±¸»ù´¡ÊôÐÔ
+		set_sky_equip_att(item_ptr, true);//×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		calcu_addition(e_addition_buff_sky_equip);
 		return true;
 	}
@@ -5955,7 +5955,7 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 		GET_BAG(e_bag_type_skygod_equip)[should_in_which_equip_slot] = item_ptr->get_item_guid();
 		send_item_one(item_ptr);
 
-		set_skygod_equip_att(item_ptr, true);//×°±¸»ù´¡ÊôÐÔ
+		set_skygod_equip_att(item_ptr, true);//×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		calcu_addition(e_addition_buff_skygod_equip);
 		return true;
 	}
@@ -5993,7 +5993,7 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 		GET_BAG(e_bag_type_supreme_equip)[should_in_which_equip_slot] = item_ptr->get_item_guid();
 		send_item_one(item_ptr);
 
-		set_supreme_equip_att(item_ptr, true);//×°±¸»ù´¡ÊôÐÔ
+		set_supreme_equip_att(item_ptr, true);//×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		calcu_addition(e_addition_buff_supreme_equip);
 	}
 	break;
@@ -6044,7 +6044,7 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 		send_item_one(item_ptr);
 
 
-		set_goddess_equip_att(item_ptr, true);//×°±¸»ù´¡ÊôÐÔ
+		set_goddess_equip_att(item_ptr, true);//×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		calcu_addition(e_addition_buff_goddess);
 		player& player_ref = unit_man::get_player(m_unit_array_index);
 
@@ -6146,18 +6146,18 @@ void item_set::change_att_for_equip(const guid_64& item_guid, bool is_add)
 	{
 		return;
 	}
-	equip_off_equip_show_buff();	//È¥×°±¸¹âÐ§buff
+	equip_off_equip_show_buff();	//È¥×°ï¿½ï¿½ï¿½ï¿½Ð§buff
 	calcu_addition(e_addition_buff_upgrade);
 	calcu_addition(e_addition_buff_quality);
 	calcu_addition(e_addition_buff_addon);
 	calcu_addition(e_addition_buff_succinct);
 	calcu_addition(e_addition_buff_enchant);
-	equip_on_equip_show_buff();	//Ôö¼Ó×°±¸¹âÐ§buff
+	equip_on_equip_show_buff();	//ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½Ð§buff
 	set_equip_att(item_ptr, is_add);
 }
 
 
-// ÍÑµôÏàÓ¦µÄ×°±¸
+// ï¿½Ñµï¿½ï¿½ï¿½Ó¦ï¿½ï¿½×°ï¿½ï¿½
 bool item_set::equip_off(const guid_64& item_guid, int32 item_slot, bool is_auto_equip_off, bool is_change_equipment)
 {
 	ZoneScoped;
@@ -6213,7 +6213,7 @@ bool item_set::equip_off(const guid_64& item_guid, int32 item_slot, bool is_auto
 		GET_BAG(e_bag_type_bag)[empty_slot] = item_ptr->get_item_guid();
 		clear_target_slot(e_bag_type_sky_equip, old_slot);
 
-		if (false == is_auto_equip_off)//Èç¹ûÊÇÒò»»×°±¸¶øÖ´ÐÐµÄÍÑ×°±¸²Ù×÷£¬Ôò²»¼ÆËã¹â»·£¬ÔÚequiponÄÇÀï¼ÆËã
+		if (false == is_auto_equip_off)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½Ö´ï¿½Ðµï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ò²»¼ï¿½ï¿½ï¿½â»·ï¿½ï¿½ï¿½ï¿½equiponï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		{
 			calcu_addition(e_addition_buff_sky_equip);
 		}
@@ -6259,7 +6259,7 @@ bool item_set::equip_off(const guid_64& item_guid, int32 item_slot, bool is_auto
 		GET_BAG(e_bag_type_bag)[empty_slot] = item_ptr->get_item_guid();
 		clear_target_slot(e_bag_type_skygod_equip, old_slot);
 
-		if (false == is_auto_equip_off)//Èç¹ûÊÇÒò»»×°±¸¶øÖ´ÐÐµÄÍÑ×°±¸²Ù×÷£¬Ôò²»¼ÆËã¹â»·£¬ÔÚequiponÄÇÀï¼ÆËã
+		if (false == is_auto_equip_off)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½Ö´ï¿½Ðµï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ò²»¼ï¿½ï¿½ï¿½â»·ï¿½ï¿½ï¿½ï¿½equiponï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		{
 			calcu_addition(e_addition_buff_skygod_equip);
 		}
@@ -6306,7 +6306,7 @@ bool item_set::equip_off(const guid_64& item_guid, int32 item_slot, bool is_auto
 		GET_BAG(e_bag_type_bag)[empty_slot] = item_ptr->get_item_guid();
 		clear_target_slot(e_bag_type_supreme_equip, old_slot);
 
-		if (false == is_auto_equip_off)//Èç¹ûÊÇÒò»»×°±¸¶øÖ´ÐÐµÄÍÑ×°±¸²Ù×÷£¬Ôò²»¼ÆËã¹â»·£¬ÔÚequiponÄÇÀï¼ÆËã
+		if (false == is_auto_equip_off)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½Ö´ï¿½Ðµï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ò²»¼ï¿½ï¿½ï¿½â»·ï¿½ï¿½ï¿½ï¿½equiponï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		{
 			calcu_addition(e_addition_buff_supreme_equip);
 		}
@@ -6357,7 +6357,7 @@ bool item_set::equip_off(const guid_64& item_guid, int32 item_slot, bool is_auto
 		GET_BAG(e_bag_type_bag)[empty_slot] = item_ptr->get_item_guid();
 		clear_target_slot(e_bag_type_goddess_equip, old_slot);
 
-		if (false == is_auto_equip_off)//Èç¹ûÊÇÒò»»×°±¸¶øÖ´ÐÐµÄÍÑ×°±¸²Ù×÷£¬Ôò²»¼ÆËã¹â»·£¬ÔÚequiponÄÇÀï¼ÆËã
+		if (false == is_auto_equip_off)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½Ö´ï¿½Ðµï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ò²»¼ï¿½ï¿½ï¿½â»·ï¿½ï¿½ï¿½ï¿½equiponï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		{
 			calcu_addition(e_addition_buff_goddess);
 		}
@@ -6382,7 +6382,7 @@ bool item_set::equip_off(const guid_64& item_guid, int32 item_slot, bool is_auto
 		}
 		if (item_ptr->get_data_info(e_item_info_activate) > 0)
 		{
-			equip_off_upgrade_show_buff();	//È¥×°±¸¹âÐ§buff Ö»ÓÐÇ¿»¯ÊÇ¸ü¸Ä²ÄÖÊ ¼´ ÐÞ¸ÄÄ£ÐÍµÄ
+			equip_off_upgrade_show_buff();	//È¥×°ï¿½ï¿½ï¿½ï¿½Ð§buff Ö»ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½Ç¸ï¿½ï¿½Ä²ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Þ¸ï¿½Ä£ï¿½Íµï¿½
 			//set_fashion_att(item_ptr, false);
 		}
 		int32 old_slot = item_ptr->get_data_info(e_item_info_slot);
@@ -6407,14 +6407,14 @@ bool item_set::equip_off(const guid_64& item_guid, int32 item_slot, bool is_auto
 		{
 			reset_weapon_fashion_effect();
 		}
-		//±£´æÍ·Ïñ¿ò
+		//ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½
 		if (item_template_ptr->sub_type == e_fashion_show_type_head_frame)
 		{
 			temp_player.set_unit_info(e_role_info_head_frame, 0);
 		}
 		send_item_one(item_ptr);
 
-		equip_on_upgrade_show_buff();	//ÔÙ¼ÓÒ»±éÇ¿»¯buff
+		equip_on_upgrade_show_buff();	//ï¿½Ù¼ï¿½Ò»ï¿½ï¿½Ç¿ï¿½ï¿½buff
 		return true;
 	}
 	return false;
@@ -6556,7 +6556,7 @@ bool item_set::is_can_add_fashion_buff(citem* item_fashion)
 	return false;
 }
 
-void item_set::equip_off_upgrade_show_buff()		//È¥³ý×°±¸ÏÔÊ¾¹âÐ§buff
+void item_set::equip_off_upgrade_show_buff()		//È¥ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ð§buff
 {
 	int32 weapon_buff_id = get_equipment_upgrade_buff_id(true);
 	buff_man::del_buff_by_template_id(m_unit_array_index, m_unit_array_index, weapon_buff_id);
@@ -6564,7 +6564,7 @@ void item_set::equip_off_upgrade_show_buff()		//È¥³ý×°±¸ÏÔÊ¾¹âÐ§buff
 	int32 equip_buff_id = get_equipment_upgrade_buff_id(false);
 	buff_man::del_buff_by_template_id(m_unit_array_index, m_unit_array_index, equip_buff_id);
 }
-void item_set::equip_on_upgrade_show_buff()		//Ìí¼Ó×°±¸ÏÔÊ¾¹âÐ§buff
+void item_set::equip_on_upgrade_show_buff()		//ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ð§buff
 {
 	player& temp_player = unit_man::get_player(m_unit_array_index);
 	if (temp_player.is_valid() == false)
@@ -6667,12 +6667,12 @@ bool item_set::check_equip_by_item_id(int32 item_id)
 
 faith::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_template_id, int32 first_use_lock)
 {
-	//Ìõ¼þÅÐ¶Ï Ä£°åÊý¾Ý ÊÇ·ñÊÇÏÂÒ»¼¶ ²ÄÁÏ×ã¹»
-	//¿Û³ýÎïÆ·
-	//¼õÈ¥Ô­ÓÐÊýÖµ¼Ó³É É¾³ýËùÓÐÌ××°buff
-	//Ôö¼Ó×°±¸¸½Ä§¼¶Êý
-	//¼ÓÉÏÊýÖµ¼Ó³É Ôö¼ÓËùÓÐÌ××°buff
-	//·µ»Ø³É¹¦
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ã¹»
+	//ï¿½Û³ï¿½ï¿½ï¿½Æ·
+	//ï¿½ï¿½È¥Ô­ï¿½ï¿½ï¿½ï¿½Öµï¿½Ó³ï¿½ É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°buff
+	//ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½Ä§ï¿½ï¿½ï¿½ï¿½
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½Ó³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°buff
+	//ï¿½ï¿½ï¿½Ø³É¹ï¿½
 	player& temp_player = unit_man::get_player(m_unit_array_index);
 	if (temp_player.is_valid() == false)
 	{
@@ -6700,7 +6700,7 @@ faith::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_temp
 		return e_item_string_unkown;
 	}
 
-	//Ä£°åÊý¾Ý
+	//Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	int32 enchant_num = item_ptr->get_data_info(e_item_info_illusion_had_byte);
 	if (enchant_num / faith::max_enchant_type_num != (enchant_template_ptr->Level - 1))
 	{
@@ -6715,7 +6715,7 @@ faith::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_temp
 		return e_item_string_unkown;
 	}
 
-	//×°±¸Æ·ÖÊ
+	//×°ï¿½ï¿½Æ·ï¿½ï¿½
 	if (item_template_ptr->item_color < faith::e_item_color_purple)
 	{
 		return e_item_string_unkown;
@@ -6725,7 +6725,7 @@ faith::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_temp
 		return e_item_string_unkown;
 	}
 
-	//²ÄÁÏ×ã¹»
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ã¹»
 	if (enchant_template_ptr->ItemConsume.size() % 2 != 0)
 	{
 		return e_item_string_unkown;
@@ -6742,13 +6742,13 @@ faith::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_temp
 		}
 	}
 
-	//¿Û³ýÎïÆ·
+	//ï¿½Û³ï¿½ï¿½ï¿½Æ·
 	for (int32 i = 0; i < enchant_template_ptr->ItemConsume.size() / 2; i++)
 	{
 		cost_item_by_id_with_lock_states(e_server_log_del_item_enchant, 0, enchant_template_ptr->ItemConsume[i * 2], enchant_template_ptr->ItemConsume[i * 2 + 1], first_use_lock);
 	}
 
-	//É¾³ýÊýÖµ¼Ó³É
+	//É¾ï¿½ï¿½ï¿½ï¿½Öµï¿½Ó³ï¿½
 	faith::template_manager::template_type* enchant_table = template_manager::get_instance().get_templates(e_EquipEnchantTemplate);
 	if (nullptr == enchant_table)
 	{
@@ -6768,10 +6768,10 @@ faith::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_temp
 			item_change_att(temp_enchant_template_ptr->AttArray, 1, false);
 		}
 	}
-	//Ôö¼Ó×°±¸¸½Ä§¼¶Êý
+	//ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½Ä§ï¿½ï¿½ï¿½ï¿½
 	item_ptr->set_data_info(e_item_info_illusion_had_byte, enchant_template_ptr->Level * faith::max_enchant_type_num + enchant_template_ptr->Type);
 
-	//¼ÓÉÏÊýÖµ¼Ó³É Ôö¼ÓËùÓÐÌ××°buff
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½Ó³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°buff
 	calcu_addition(e_addition_buff_enchant);
 	item_change_att(enchant_template_ptr->AttArray, 1, true);
 
@@ -6779,18 +6779,18 @@ faith::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_temp
 
 	temp_player.get_ranking_mgr().set_and_sync_single_equip_ranking_data(item_ptr);
 
-	//·µ»Ø³É¹¦
+	//ï¿½ï¿½ï¿½Ø³É¹ï¿½
 	return e_item_string_succeed;
 }
 
 faith::int32 item_set::item_unenchant(const guid_64& item_guid)
 {
-	//Ìõ¼þÅÐ¶Ï ÊÇ·ñÊÇ¸½Ä§ÎïÆ·
-	//¼õÈ¥Ô­ÓÐÊýÖµ¼Ó³É É¾³ýËùÓÐÌ××°buff
-	//¼õÉÙ×°±¸¸½Ä§¼¶Êý
-	//·µ»¹ÎïÆ·
-	//Ôö¼ÓËùÓÐÌ××°buff
-	//·µ»Ø³É¹¦
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ ï¿½Ç·ï¿½ï¿½Ç¸ï¿½Ä§ï¿½ï¿½Æ·
+	//ï¿½ï¿½È¥Ô­ï¿½ï¿½ï¿½ï¿½Öµï¿½Ó³ï¿½ É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°buff
+	//ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½Ä§ï¿½ï¿½ï¿½ï¿½
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°buff
+	//ï¿½ï¿½ï¿½Ø³É¹ï¿½
 	player& temp_player = unit_man::get_player(m_unit_array_index);
 	if (temp_player.is_valid() == false)
 	{
@@ -6853,24 +6853,24 @@ faith::int32 item_set::item_unenchant(const guid_64& item_guid)
 	{
 		return e_item_string_unkown;
 	}
-	//Ö»ÓÐÔÚ×°±¸µÄÎïÆ·¼õÈ¥ÊýÖµ
+	//Ö»ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½È¥ï¿½ï¿½Öµ
 	if (item_ptr->get_data_info(e_item_info_container_type) == e_bag_type_equip)
 	{
-		//¼õÈ¥ÊýÖµ¼Ó³É
+		//ï¿½ï¿½È¥ï¿½ï¿½Öµï¿½Ó³ï¿½
 		item_change_att(enchant_template_ptr->AttArray, 1, false);
 	}
-	//¼õÉÙ×°±¸¸½Ä§¼¶Êý
+	//ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½Ä§ï¿½ï¿½ï¿½ï¿½
 	item_ptr->set_data_info(e_item_info_illusion_had_byte, 0);
 	send_item_one(item_ptr);
 
-	//·µ»¹ÎïÆ·
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·
 	std::vector<s_item_template_info> data_array;
 	for (int32 i = 0; i < enchant_template_ptr->ItemGet.size() / 2; i++)
 	{
 		data_array.push_back({ enchant_template_ptr->ItemGet[i * 2],enchant_template_ptr->ItemGet[i * 2 + 1], 1 });
 	}
 	put_in_bag(e_server_log_add_item_unenchant, 0, data_array);
-	//ÖØÖÃËùÓÐÌ××°buff
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°buff
 	calcu_addition(e_addition_buff_enchant);
 
 	temp_player.get_ranking_mgr().set_and_sync_single_equip_ranking_data(item_ptr);
@@ -6916,7 +6916,7 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 	for (int32 i = 0; i < max_item_advance_num; i++)
 	{
 		citem* item_ptr = get_item(item_guids[i]);
-		//ÏÞÊ±ÎïÆ·²»¿É½ø½×
+		//ï¿½ï¿½Ê±ï¿½ï¿½Æ·ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½
 		if (nullptr == item_ptr || item_ptr->get_data_info(e_item_info_over_time) > 0)
 		{
 			//return e_error_code_item_advance_over_time;
@@ -6939,7 +6939,7 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 	{
 		vec_item_succinct_level.push_back(0);
 	}
-	//´æÆðÀ´Èý¼þ×°±¸µÄÆ·ÖÊ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½
 	for (int32 i = 0; i < vec_item_color.size(); i++)
 	{
 		if (i > 0 && vec_item_ptr[i]->get_data_info(e_item_info_info_id) != vec_item_ptr[0]->get_data_info(e_item_info_info_id))
@@ -6950,7 +6950,7 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 		vec_item_color[i] = vec_item_ptr[i]->get_item_color();
 	}
 
-	//´æÆðÀ´Èý¼þ×°±¸µÄÄ£°å
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½
 	for (int32 i = 0; i < vec_item_equip_template_ptr.size(); i++)
 	{
 		EquipTemplate* equip_template_ptr = vec_item_ptr[i]->get_equip_info_ptr();
@@ -6962,7 +6962,7 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 		vec_item_equip_template_ptr[i] = equip_template_ptr;
 	}
 
-	//»ñÈ¡Èý¼þ×°±¸µÄ×¿Ô½ÊôÐÔÌõÄ¿ÊýÁ¿
+	//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½×¿Ô½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½
 	for (int32 i = 0; i < vec_item_ptr.size(); i++)
 	{
 		vec_item_excellent_num[i] = vec_item_ptr[i]->get_excellent_att_num();
@@ -6990,7 +6990,7 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 		}
 	}
 
-	//´æÆðÀ´Èý¼þ×°±¸µÄÅàÑø°Ù·Ö±È
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù·Ö±ï¿½
 	for (int32 i = 0; i < vec_item_culturing_percent.size(); i++)
 	{
 		vector<int32> item_property_max_limit;
@@ -7031,7 +7031,7 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 		}
 	}
 
-	//ÎïÆ·µÄ½ø½×ÀàÐÍ²»ÊÇ ÆÕÍ¨½ø½×
+	//ï¿½ï¿½Æ·ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í²ï¿½ï¿½ï¿½ ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½
 	ItemTemplate* item_template_ptr = vec_item_ptr[0]->get_item_info_ptr();
 	if (nullptr == item_template_ptr || item_template_ptr->advanced_type != e_item_advance_normal)
 	{
@@ -7050,7 +7050,7 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 	//		return e_error_code_item_advance;
 	//	}
 	//}
-	////»õ±ÒÏûºÄ
+	////ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	//if (vec_item_equip_template_ptr[0]->AdvanceSpend.size() % 2 != 0)
 	//{
 	//	return e_error_code_item_advance;
@@ -7069,7 +7069,7 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 	//	temp_player.cut_money((e_money_type)vec_item_equip_template_ptr[0]->AdvanceSpend[i], vec_item_equip_template_ptr[0]->AdvanceSpend[i + 1], e_server_log_cut_money_item_advance, vec_item_ptr[0]->get_data_info(e_item_info_info_id));
 	//}
 
-	////8½×ÒÔÉÏÎïÆ·ÏûºÄ
+	////8ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½
 	//if (vec_item_equip_template_ptr[0]->quality_level >= EQUIP_QUALITY_MAX)
 	//{
 	//	if (vec_item_equip_template_ptr[0]->AdvanceItemSpend.size() % 2 != 0)
@@ -7117,7 +7117,7 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 	//if the any one suply_items is locked ,then the result one is locked.
 	std::vector<int32> succinct_property;
 
-	//»ñÈ¡Ï´Á·ÊôÐÔ
+	//ï¿½ï¿½È¡Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	int32 property_start = 0;
 	int32 property_end = int32(e_item_info_succinct_property6) - int32(e_item_info_succinct_property1);
 	for (; property_start <= property_end; property_start++)
@@ -7141,7 +7141,7 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 			return e_error_code_item_advance;
 		}
 
-		//±¦Ê¯´«³Ð
+		//ï¿½ï¿½Ê¯ï¿½ï¿½ï¿½ï¿½
 		std::vector<int32> waiting_inherit_jewer_array;
 		waiting_inherit_jewer_array.reserve((e_item_info_jewel_vip_slot_1 - e_item_info_jewel_slot_0) * max_item_advance_num);
 		for (int32 i = e_item_info_jewel_slot_0; i <= e_item_info_jewel_vip_slot_1; ++i)
@@ -7161,7 +7161,7 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 	}
 
 	temp_item = *new_item_ptr;
-	s_item_info main_item_data; //»ñÈ¡Ê×Î»×°±¸µÄÐÅÏ¢
+	s_item_info main_item_data; //ï¿½ï¿½È¡ï¿½ï¿½Î»×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	main_item_data = vec_item_ptr[0]->get_item_inst();
 
 	ItemTemplate* new_advance_ptr = new_item_ptr->get_item_info_ptr();
@@ -7191,14 +7191,14 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 	new_item_ptr->set_data_info(e_item_info_jewel_carve_1, skill_id1);
 	new_item_ptr->set_data_info(e_item_info_jewel_carve_2, skill_id2);
 
-	//ºÏ³Éºó×°±¸Ôö¼Ó¸½Ä§Ð§¹û
+	//ï¿½Ï³Éºï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½Ó¸ï¿½Ä§Ð§ï¿½ï¿½
 	new_item_ptr->set_data_info(e_item_info_illusion_had_byte, main_item_data.data_ary[e_item_info_illusion_had_byte]);
 	e_role_equip_slot equip_slot = init_unit::get_slot_by_item_type(item_template_ptr->item_type, item_template_ptr->sub_type);
 	for (int32 i = e_item_info_random_had_flag; i <= e_item_info_random_property6; ++i)
-	{//½ø½×ºóµÄ×°±¸×¿Ô½ÊôÐÔÒª¼Ì³Ð²»ÒªËæ»ú£¨ÊÇµÄ£¬±äÈõÁË£©
+	{//ï¿½ï¿½ï¿½×ºï¿½ï¿½×°ï¿½ï¿½×¿Ô½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ì³Ð²ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÇµÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½
 		if (equip_slot == e_role_equip_slot_magic_1)
 		{
-			break;//Èç¹ûÊÇÄ§·¨ÊéÔò²»¼Ì³Ð×¿Ô½ÊôÐÔ
+			break;//ï¿½ï¿½ï¿½ï¿½ï¿½Ä§ï¿½ï¿½ï¿½ï¿½ï¿½ò²»¼Ì³ï¿½×¿Ô½ï¿½ï¿½ï¿½ï¿½
 		}
 		new_item_ptr->set_data_info(e_item_info(i), main_item_data.data_ary[i]);
 	}
@@ -7232,7 +7232,7 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 	temp_item_data_array.push_back({ temp_item.get_data_info(e_item_info_info_id),temp_item.get_data_info(e_item_info_stack_count),temp_item.get_data_info(e_item_info_locked) });
 	get_item_send_promp_msg_to_client(temp_item_data_array);
 
-	//»ñµÃÐÂÎïÆ·µÄÇ¿»¯¡¢×·¼Ó¡¢µÈ½×Öµ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½ï¿½×·ï¿½Ó¡ï¿½ï¿½È½ï¿½Öµ
 	int32 finish_item_quality_level = 0;
 	int32 finish_item_upgrade_level = 0;
 	int32 finish_item_addon_level = 0;
@@ -7251,7 +7251,7 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 	{
 		finish_item_addon_level = new_addon_template_ptr->level;
 	}
-	//ÅàÑøÊôÐÔ°Ù·Ö±È
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô°Ù·Ö±ï¿½
 	int32 cur_succinct_num = 0;
 	int32 Max_succinct_num = 0;
 	float finish_item_culturing_percent = 0;
@@ -7285,7 +7285,7 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 
 	temp_player.get_mission_mgr().target_check(e_mission_end_type_equip_levelup);
 
-	//²ð·Ö¸±×°±¸¸½Ä§Ð§¹û
+	//ï¿½ï¿½Ö¸ï¿½×°ï¿½ï¿½ï¿½ï¿½Ä§Ð§ï¿½ï¿½
 	for (int32 i = 1; i < max_item_advance_num; i++)
 	{
 		citem* item_ptr = get_item(item_guids[i]);
@@ -7340,7 +7340,7 @@ bool item_set::is_can_inherit(citem* strip_item_ptr, citem* inherited_item_ptr)
 	vector<int32> vec_property_max_limit;
 	inherited_item_ptr->get_property_max_limit(vec_property_max_limit);
 	if (vec_property_max_limit.size() > 0)
-	{//Ò²Ðí¸ù±¾¾ÍÃ»ÓÐÏ´Á·ÊôÐÔ
+	{//Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		for (int32 i = e_item_info_succinct_property1; i <= e_item_info_succinct_property4; ++i)
 		{
 			int32 temp_index = i - e_item_info_succinct_property1;
@@ -7465,10 +7465,10 @@ int64 item_set::get_inherit_money_num(citem* strip_item_ptr, int32 cost_type)
 		return return_value;
 	}
 
-	//»¨·ÑÊÇÁ½Á½Ò»×é£¨ID+ÊýÁ¿/ÏµÊý£©£¬Ò»¹²Á½×é£¨°ó½ð+×êÊ¯£©£¬ÕâÀïÖ»È¡¶ÔÓ¦µÄÇ®ÊýÁ¿¾ÍÐÐÁË
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½é£¨ID+ï¿½ï¿½ï¿½ï¿½/Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½é£¨ï¿½ï¿½ï¿½+ï¿½ï¿½Ê¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»È¡ï¿½ï¿½Ó¦ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	int32 money_num_get_index = 1;
 	if (cost_type > 0)
-	{//cost_type = 0ÊÇ°ó½ð£¬cost_type = 1 ÊÇÓÃ×êÊ¯£¬ ±£ÏÕÆð¼û£¬°´ > 0 ÅÐ¶Ï
+	{//cost_type = 0ï¿½Ç°ï¿½ï¿½cost_type = 1 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ > 0 ï¿½Ð¶ï¿½
 		money_num_get_index = 3;
 	}
 	//if (money_num_get_index >= equip_template_ptr->InheritUpgradeSpend.size()
@@ -7500,7 +7500,7 @@ int64 item_set::get_inherit_money_num(citem* strip_item_ptr, int32 cost_type)
 	//	base_add_on_cost *= add_on_template_ptr->InheritAddonRatio[money_num_get_index];
 	//}
 
-	//Ï´Á·»¨·Ñ²»Ëæ×ÅÏ´Á·ÊôÐÔ¾ßÌåÊýÖµ¶ø±ä£¬Ö±½Ó¾ÍÊÇbaseÖµ,µ«ÊÇÒªÈ·±£±»°þÀë×°±¸È·ÊµÓÐ Ï´Á·ÊôÐÔ
+	//Ï´ï¿½ï¿½ï¿½ï¿½ï¿½Ñ²ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½Ô¾ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ä£¬Ö±ï¿½Ó¾ï¿½ï¿½ï¿½baseÖµ,ï¿½ï¿½ï¿½ï¿½ÒªÈ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½È·Êµï¿½ï¿½ Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	//if (money_num_get_index < equip_template_ptr->InheritSuccinctSpend.size())
 	//{
 	//	for (int32 i = e_item_info_succinct_property1; i <= e_item_info_succinct_property4; ++i)
@@ -7531,7 +7531,7 @@ int32 item_set::item_inherit(const std::vector<guid_64>& item_guids, bool is_aut
 	}
 	citem* item_strip_ptr = get_item(item_guids[0]);
 	citem* item_inherit_ptr = get_item(item_guids[1]);
-	//ÎïÆ·´æÔÚÅÐ¶Ï
+	//ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½
 	if (nullptr == item_strip_ptr)
 	{
 		return e_error_code_item_inherit;
@@ -7569,7 +7569,7 @@ int32 item_set::item_inherit(const std::vector<guid_64>& item_guids, bool is_aut
 		return e_error_code_item_inherit;
 	}
 
-	//ÏÖÔÚÊÇÃâ·ÑµÄÁË
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñµï¿½ï¿½ï¿½
 	//int32 money_cost_type = e_money_type_silver_bind;
 	//if (use_up_item > 0)
 	//{
@@ -7648,7 +7648,7 @@ int32 item_set::item_inherit(const std::vector<guid_64>& item_guids, bool is_aut
 	}
 
 	{
-		//±¦Ê¯´«³Ð
+		//ï¿½ï¿½Ê¯ï¿½ï¿½ï¿½ï¿½
 		std::vector<int32> waiting_inherit_jewer_array;
 		waiting_inherit_jewer_array.reserve((e_item_info_jewel_vip_slot_1 - e_item_info_jewel_slot_0) * 2);
 		for (int32 i = e_item_info_jewel_slot_0; i <= e_item_info_jewel_vip_slot_1; ++i)
@@ -7782,19 +7782,19 @@ int32 item_set::item_assembly(const guid_64& item_guid, int32 first_use_lock)
 		return e_error_code_item_godassembly;
 	}
 
-	//ÏÞÊ±ÎïÆ·²»¿ÉÒÔÉñ×°ÔÙÔì
+	//ï¿½ï¿½Ê±ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½
 	if (item_ptr->get_data_info(e_item_info_over_time) > 0)
 	{
 		return e_error_code_item_godassembly;
 	}
 
-	//½ÇÉ«µ±Ç°µÈ¼¶ÊÇ·ñ  ¸ßÓÚ7×ª99¼¶
+	//ï¿½ï¿½É«ï¿½ï¿½Ç°ï¿½È¼ï¿½ï¿½Ç·ï¿½  ï¿½ï¿½ï¿½ï¿½7×ª99ï¿½ï¿½
 	if (temp_player.get_unit_info(e_role_info_exp_level) < 2)
 	{
 		return e_error_code_item_godassembly;
 	}
 
-	//×°±¸Æ·½×ÊÇ·ñ¸ßÓÚ10½×
+	//×°ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½10ï¿½ï¿½
 	EquipTemplate* equiptemplate_ptr = item_ptr->get_equip_info_ptr();
 	if (!equiptemplate_ptr)
 	{
@@ -7805,24 +7805,24 @@ int32 item_set::item_assembly(const guid_64& item_guid, int32 first_use_lock)
 	//	return e_error_code_item_godassembly;
 	//}
 
-	//ÊÇ·ñÊôÓÚÉñ×°ÔÙÔì
+	//ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½
 	if (item_ptr->get_item_info_ptr()->advanced_type != e_item_advance_godassembly)
 	{
 		return e_error_code_item_godassembly;
 	}
-	//ÏûºÄ²ÄÁÏÊÇ·ñ×ã¹»
+	//ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ã¹»
 	//std::vector<int32>& materialList = equiptemplate_ptr->AdvanceSpend;
 	//int32   materialTypeInt = materialList.size();
 	//bool is_use_lock_material = false;
 	//if (materialTypeInt >= 4 && materialTypeInt % 2 == 0)
 	//{
-	//	//½ð±ÒÊÇ·ñ×ã¹»
+	//	//ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ã¹»
 	//	if (!temp_player.can_cut_money((e_money_type)materialList[0], materialList[1]))
 	//	{
 	//		return e_error_code_item_godassembly;
 	//	}
 
-	//	//ÔÙÔìµãÊýÊÇ·ñ×ã¹»
+	//	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ã¹»
 	//	if (!temp_player.can_cut_money((e_money_type)materialList[2], materialList[3]))
 	//	{
 	//		return e_error_code_item_godassembly;
@@ -7836,12 +7836,12 @@ int32 item_set::item_assembly(const guid_64& item_guid, int32 first_use_lock)
 	//			return e_error_code_item_godassembly;
 	//		}
 	//	}
-		//ÏûºÄ½ð±Ò,ÔÙÔìµãÊý
+		//ï¿½ï¿½ï¿½Ä½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	//	temp_player.cut_money((e_money_type)materialList[0], materialList[1], e_server_log_cut_money_item_assembly, item_ptr->get_data_info(e_item_info_info_id));
 	//	temp_player.cut_money((e_money_type)materialList[2], materialList[3], e_server_log_cut_money_item_assembly, item_ptr->get_data_info(e_item_info_info_id));
 
-	//	//ÏûºÄËØ²Ä
+	//	//ï¿½ï¿½ï¿½ï¿½ï¿½Ø²ï¿½
 	//	for (int32 i = 2; i < materialTypeInt; i++)
 	//	{
 	//		if (first_use_lock == 1 && get_item_count(e_bag_type_bag, materialList[i * 2], 1) > 0)
@@ -7849,7 +7849,7 @@ int32 item_set::item_assembly(const guid_64& item_guid, int32 first_use_lock)
 	//			is_use_lock_material = true;
 	//		}
 	//		else if (get_item_count(e_bag_type_bag, materialList[i * 2], 0) < materialList[i * 2 + 1])
-	//		{//Ê¹ÓÃµ½ÁË°ó¶¨ËØ²Ä
+	//		{//Ê¹ï¿½Ãµï¿½ï¿½Ë°ï¿½ï¿½Ø²ï¿½
 	//			is_use_lock_material = true;
 	//		}
 	//		cost_item_by_id_with_lock_states(e_server_log_del_item_assembly, 0, materialList[i * 2], materialList[i * 2 + 1], first_use_lock);
@@ -7862,7 +7862,7 @@ int32 item_set::item_assembly(const guid_64& item_guid, int32 first_use_lock)
 
 	//if (rand() % 100 < (equiptemplate_ptr->AdvanceRadio * 100))
 	//{
-	//	//»ñÈ¡¾ÉÎïÆ·ÐÅÏ¢
+	//	//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ï¢
 	//	int32 upgrade = item_ptr->get_data_info(e_item_info_upgrade_count);
 	//	int32 addon = item_ptr->get_data_info(e_item_info_add_on);
 	//	int32 islock = item_ptr->get_data_info(e_item_info_locked);
@@ -7871,13 +7871,13 @@ int32 item_set::item_assembly(const guid_64& item_guid, int32 first_use_lock)
 
 	//	int32 property_start = int32(e_item_info_succinct_property1);
 	//	int32 property_end = int32(e_item_info_succinct_property6);
-	//	for (; property_start <= property_end; property_start++)//Ï´Á·ÊôÐÔ
+	//	for (; property_start <= property_end; property_start++)//Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	//	{
 	//		succinct_property.push_back(int32(item_ptr->get_data_info((e_item_info)property_start)));
 	//	}
 
 	//	int32 advanced_id = item_ptr->get_item_info_ptr()->advanced_id;
-	//	//É¾³ý¾ÉÎïÆ·
+	//	//É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·
 	//	del_item(e_server_log_del_item_assembly_cost, 0, item_guid, 1);
 
 	//	int32 temp_id = 0;
@@ -7896,7 +7896,7 @@ int32 item_set::item_assembly(const guid_64& item_guid, int32 first_use_lock)
 	//		{
 	//			new_item->set_data_info(e_item_info_locked, 1);
 	//		}
-	//		//ÉèÖÃÏ´Á·ÊôÐÔ
+	//		//ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	//		for (int32 i = 0; i < succinct_property.size(); i++)
 	//		{
 	//			new_item->set_data_info((e_item_info)(int32(e_item_info_succinct_property1) + i), succinct_property[i]);
@@ -7931,7 +7931,7 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 	{
 		return e_error_code_item_godassembled;
 	}
-	//ÊÇ·ñÊôÓÚÉñ×°ºÏ³É
+	//ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½Ï³ï¿½
 	if (item_template_ptr->god_assembled <= 0)
 	{
 		return e_error_code_item_godassembled;
@@ -7941,7 +7941,7 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 	{
 		return e_error_code_item_godassembled;
 	}
-	//È¡³ö»õ±ÒºÍÏûºÄ²ÄÁÏ
+	//È¡ï¿½ï¿½ï¿½ï¿½ï¿½Òºï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½
 	std::vector<int32> need_money_list;
 	std::vector<int32> need_material_list;
 	for (int32 j = 0; j < equiptemplate_ptr->GodAssembledSpend.size() / 2; j++)
@@ -7957,7 +7957,7 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 			need_material_list.push_back(equiptemplate_ptr->GodAssembledSpend[j * 2 + 1]);
 		}
 	}
-	//½ð±ÒÊÇ·ñ×ã¹»
+	//ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ã¹»
 	if (need_money_list.size() >= 2)
 	{
 		if (!temp_player.can_cut_money((e_money_type)need_money_list[0], need_money_list[1]))
@@ -7966,7 +7966,7 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 		}
 	}
 
-	//ËØ²ÄÊÇ·ñ×ã¹»
+	//ï¿½Ø²ï¿½ï¿½Ç·ï¿½ï¿½ã¹»
 	int32   materialTypeInt = need_material_list.size();
 	if (materialTypeInt < 2 || materialTypeInt % 2 != 0)
 	{
@@ -7986,7 +7986,7 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 	}
 
 	bool is_use_lock_material = false;
-	//ÏûºÄËØ²Ä
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ø²ï¿½
 	for (int32 i = 0; i < materialTypeInt; i++)
 	{
 		if (first_use_lock == 1 && get_item_count(e_bag_type_bag, need_material_list[i * 2], 1) > 0)
@@ -7994,14 +7994,14 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 			is_use_lock_material = true;
 		}
 		else if (get_item_count(e_bag_type_bag, need_material_list[i * 2], 0) < need_material_list[i * 2 + 1])
-		{//Ê¹ÓÃµ½ÁË°ó¶¨ËØ²Ä
+		{//Ê¹ï¿½Ãµï¿½ï¿½Ë°ï¿½ï¿½Ø²ï¿½
 			is_use_lock_material = true;
 		}
 		cost_item_by_id_with_lock_states(e_server_log_del_item_assembled, 0, need_material_list[i * 2], need_material_list[i * 2 + 1], first_use_lock);
 	}
 	if (rand() % 100 < (equiptemplate_ptr->GodAssembledRadio * 100))
 	{
-		//»ñÈ¡¾ÉÎïÆ·ÐÅÏ¢
+		//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ï¢
 		int32 upgrade = item_ptr->get_data_info(e_item_info_upgrade_count);
 		int32 addon = item_ptr->get_data_info(e_item_info_add_on);
 		int32 islock = item_ptr->get_data_info(e_item_info_locked);
@@ -8009,7 +8009,7 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 		std::vector<int32> succinct_property;
 		int32 property_start = int32(e_item_info_succinct_property1);
 		int32 property_end = int32(e_item_info_succinct_property6);
-		for (; property_start <= property_end; property_start++)//Ï´Á·ÊôÐÔ
+		for (; property_start <= property_end; property_start++)//Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		{
 			succinct_property.push_back(int32(item_ptr->get_data_info((e_item_info)property_start)));
 		}
@@ -8052,13 +8052,13 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 		{
 			new_item->set_data_info(e_item_info_locked, 1);
 		}
-		//ÉèÖÃÏ´Á·ÊôÐÔ
+		//ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		for (int32 i = 0; i < succinct_property.size(); i++)
 		{
 			new_item->set_data_info((e_item_info)(int32(e_item_info_succinct_property1) + i), succinct_property[i]);
 		}
 		for (int32 i = e_item_info_random_had_flag; i <= e_item_info_random_property6; ++i)
-		{//½ø½×ºóµÄ×°±¸×¿Ô½ÊôÐÔÒª¼Ì³Ð²»ÒªËæ»ú£¨ÊÇµÄ£¬±äÈõÁË£©
+		{//ï¿½ï¿½ï¿½×ºï¿½ï¿½×°ï¿½ï¿½×¿Ô½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ì³Ð²ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÇµÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½
 			new_item->set_data_info(e_item_info(i), item_ptr->get_item_inst().data_ary[i]);
 		}
 
@@ -8084,7 +8084,7 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 		std::vector<s_item_template_info> item_data;
 		item_data.push_back({ temp_id ,temp_num,temp_locked });
 		get_item_send_promp_msg_to_client(item_data);
-		//ºÏ³É³É¹¦·¢¹«¸æ
+		//ï¿½Ï³É³É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		ItemTemplate* new_item_template_ptr = new_item->get_item_info_ptr();
 		if (nullptr != new_item_template_ptr)
 		{
@@ -8094,7 +8094,7 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 			temp_player.get_chat_mgr().send_notice_new(notice_id, notice_data);
 		}
 
-		//É¾³ý¾ÉÎïÆ·
+		//É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·
 		del_item(e_server_log_del_item_assembled_cost, 0, item_guid, 1);
 
 		return e_error_code_success;
@@ -8115,7 +8115,7 @@ e_error_code item_set::item_use_check(citem& item_ref, int32& use_num)
 		return e_error_code_item_over_time;
 	}
 
-	// ¼ì²éÊ¹ÓÃÊýÁ¿ÊÇ·ñºÏÀí
+	// ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½
 	if (use_num <= 0 || use_num > item_ref.get_data_info(e_item_info_stack_count))
 	{
 		return e_error_code_item_invalid_use_num;
@@ -8128,21 +8128,21 @@ e_error_code item_set::item_use_check(citem& item_ref, int32& use_num)
 	}
 
 
-	//¼ì²éÊ¹ÓÃÕß×ªÖ°µÈ¼¶ÊÇ·ñ¿ÉÒÔÊ¹ÓÃ¸ÃÎïÆ·
+	//ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½×ªÖ°ï¿½È¼ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã¸ï¿½ï¿½ï¿½Æ·
 	int32 player_grade_num = temp_player.get_grade_num();
 	if (player_grade_num < item_template_ptr->grade_level_limit)
 	{
 		return	e_error_code_item_invalid_player_state;
 	}
 
-	// ¼ì²éÊ¹ÓÃÕßµÄÖ°ÒµÊÇ·ñ¿ÉÒÔÊ¹ÓÃ¸ÃÎïÆ·
+	// ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ßµï¿½Ö°Òµï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã¸ï¿½ï¿½ï¿½Æ·
 	int32 player_class_type = temp_player.get_unit_info(e_role_info_class_type);
 	if (item_ref.can_used_by_class_type((e_class_type)player_class_type) == false)
 	{
 		return e_error_code_item_class_type_limit;
 	}
 
-	// ¼ì²éÊ¹ÓÃÕßµÄµÈ¼¶ÊÇ·ñ¿ÉÒÔÊ¹ÓÃ¸ÃÎïÆ·
+	// ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ßµÄµÈ¼ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã¸ï¿½ï¿½ï¿½Æ·
 
 	int32 player_level = temp_player.get_unit_info(e_role_info_exp_level);
 	if (item_template_ptr->level_limit.size() >= 2)
@@ -8176,7 +8176,7 @@ e_error_code item_set::item_use_check(citem& item_ref, int32& use_num)
 		return	e_error_code_item_invalid_player_state;
 	}
 
-	// ¼ì²é½«ÒªÍ¨¹ý¸ÃÎïÆ·»ñµÃµÄ³ÆºÅÊÇ·ñÒÑ¾­±»¼¤»î
+	// ï¿½ï¿½é½«ÒªÍ¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ÃµÄ³Æºï¿½ï¿½Ç·ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	int32 title_template_id = prop_template_ptr->TitleGet;
 	if (title_template_id > 0)
 	{
@@ -8193,13 +8193,13 @@ e_error_code item_set::item_use_check(citem& item_ref, int32& use_num)
 		}
 	}
 
-	// Èç¹ûÎïÆ·ÕýÔÚCDÖÐÔòÎÞ·¨Ê¹ÓÃ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½CDï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½Ê¹ï¿½ï¿½
 	if (m_item_use_cd.find(item_template_ptr->attribute_id) != m_item_use_cd.end())
 	{
 		return e_error_code_item_in_cd;
 	}
 
-	//----------Ö´ÐÐµ½ÕâÀï¾ÍÒÑ¾­ËµÃ÷¸ÃÎïÆ·¿ÉÒÔÊ¹ÓÃÁË,½ÓÏÂÀ´µÄÂß¼­»áµ÷Õû¾ßÌåµÄÎïÆ·Ê¹ÓÃÊýÁ¿(±ÈÈç¹ûÊµÓÐÉÏÏÞ)-----------
+	//----------Ö´ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)-----------
 
 	e_fruit_type fruit_type = item_ref.is_fruit();
 	if (e_fruit_type_none != fruit_type)
@@ -8207,7 +8207,7 @@ e_error_code item_set::item_use_check(citem& item_ref, int32& use_num)
 		int32 fruit_cur_eated, fruid_can_eat_max;
 		temp_player.get_fruit_eating_info(fruit_type, fruit_cur_eated, fruid_can_eat_max);
 
-		int32 can_eat_now = fruid_can_eat_max - fruit_cur_eated; // »ñÈ¡µ±Ç°¿ÉÒÔ³ÔµÄ¹ûÊµµÄÊýÄ¿
+		int32 can_eat_now = fruid_can_eat_max - fruit_cur_eated; // ï¿½ï¿½È¡ï¿½ï¿½Ç°ï¿½ï¿½ï¿½Ô³ÔµÄ¹ï¿½Êµï¿½ï¿½ï¿½ï¿½Ä¿
 		if (can_eat_now < 0)
 		{
 			can_eat_now = 0;
@@ -8283,7 +8283,7 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 
 	e_error_code item_use_check_ret = item_use_check(*item_ptr, item_num);
 
-	// Ê¹ÓÃÊýÁ¿µÄ·´À¡ÏÈ²»ÔÙÕâÀïÉèÖÃ,ÒòÎªÊ¹ÓÃÊýÁ¿¿ÉÄÜ»á¸ù¾Ý¹ûÊµ»ò±³°ü¿Õ¼äµÄÇé¿ö¶ø±äÉÙ
+	// Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½È²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ÎªÊ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü»ï¿½ï¿½ï¿½Ý¹ï¿½Êµï¿½ò±³°ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	item_proto_item_use_end item_use_end_msg;
 	item_use_end_msg.set_result(item_use_check_ret);
 	item_use_end_msg.set_item_template_id(item_id);
@@ -8445,7 +8445,7 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 	//	get_item_send_promp_msg_to_client(get_item_list, is_cotinue_use);
 	//}
 
-	// Ê¹½«ÓÀ¾Ã¸Ä±äÍæ¼ÒÊôÐÔµÄÐ§¹ûÉúÐ§
+	// Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½Ã¸Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôµï¿½Ð§ï¿½ï¿½ï¿½ï¿½Ð§
 	int32 len = prop_template->RoleAttributeChange.size();
 	if (len > 0 && len % e_att_one_max == 0)
 	{
@@ -8457,10 +8457,10 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 		}
 	}
 
-	// ÎïÆ·µÄÐ§¹û¶¼Í¨¹ýBUFFÀ´Ìá¹©
+	// ï¿½ï¿½Æ·ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½BUFFï¿½ï¿½ï¿½á¹©
 	item_ptr->set_unit_buff(m_unit_array_index, true);
 
-	// Ê¹Ç®²ÆÀàµÄ¸Ä±äÉúÐ§
+	// Ê¹Ç®ï¿½ï¿½ï¿½ï¿½Ä¸Ä±ï¿½ï¿½ï¿½Ð§
 	len = prop_template->MoneyChange.size();
 	vector<int32> get_money_list;
 	if (len > 0)
@@ -8468,22 +8468,22 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 		add_money_by_card(prop_template->MoneyChange, item_num, get_money_list);
 	}
 
-	// »ñµÃ³ÆºÅ
+	// ï¿½ï¿½Ã³Æºï¿½
 	temp_player.get_title_mgr().add_title_by_template_id(prop_template->TitleGet);
 
-	// Èç¹ûÎïÆ·ÓÐÊ¹ÓÃCDÔòÉèÖÃCDÀäÈ´Ê±¼ä
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ê¹ï¿½ï¿½CDï¿½ï¿½ï¿½ï¿½ï¿½ï¿½CDï¿½ï¿½È´Ê±ï¿½ï¿½
 	if (prop_template->UseCD > 0)
 	{
 		m_item_use_cd.insert({ item_id, init_unit::get_end_time(prop_template->UseCD) });
 	}
 
-	//¶¯Ì¬Ôö¼Ó¾­ÑéÖµÎïÆ·
+	//ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½Ó¾ï¿½ï¿½ï¿½Öµï¿½ï¿½Æ·
 	if (e_prop_sub_type_add_exp_with_num == real_item_template_ptr->sub_type)
 	{
 		float exp_fix_num = prop_template->ExpNum;
 		if (exp_fix_num >= .0f)
 		{
-			//ÂúÁËÒ²ÄÜ¼Ó¾­Ñé£¬ÀÛ»ý¾ÍÐÐ
+			//ï¿½ï¿½ï¿½ï¿½Ò²ï¿½Ü¼Ó¾ï¿½ï¿½é£¬ï¿½Û»ï¿½ï¿½ï¿½ï¿½ï¿½
 			//if (true == temp_player.can_add_exp())
 			{
 				int32 upgrade_temp_id = temp_player.get_unit_info(e_role_info_upgrade_id);
@@ -8530,7 +8530,7 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 		}
 	}
 
-	//¾­Ñéµ¤£¬Ê¹µÈ¼¶ºÍ¾­Ñé¸Ä±ä,
+	//ï¿½ï¿½ï¿½éµ¤ï¿½ï¿½Ê¹ï¿½È¼ï¿½ï¿½Í¾ï¿½ï¿½ï¿½Ä±ï¿½,
 	if (e_prop_sub_type_max_level_up_medicine == real_item_template_ptr->sub_type
 		|| e_prop_sub_type_mid_level_up_medicine == real_item_template_ptr->sub_type
 		|| e_prop_sub_type_min_level_up_medicine == real_item_template_ptr->sub_type)
@@ -8538,10 +8538,10 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 		int32 level_array_size = prop_template->LevelUp.size();
 		if (3 == level_array_size)
 		{
-			//ÂúÁËÒ²ÄÜ¼Ó¾­Ñé£¬ÀÛ»ý¾ÍÐÐ
+			//ï¿½ï¿½ï¿½ï¿½Ò²ï¿½Ü¼Ó¾ï¿½ï¿½é£¬ï¿½Û»ï¿½ï¿½ï¿½ï¿½ï¿½
 			//if (true == temp_player.can_add_exp())
 			{
-				//»ñÈ¡Íæ¼ÒµÈ¼¶ºÍ¾­Ñé
+				//ï¿½ï¿½È¡ï¿½ï¿½ÒµÈ¼ï¿½ï¿½Í¾ï¿½ï¿½ï¿½
 				int32 old_level = temp_player.get_unit_info(e_role_info_exp_level);
 				//int64 exp_num = 0;
 				if (old_level < prop_template->LevelUp[0])
@@ -8613,7 +8613,7 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 		}
 	}
 
-	//Ï´µãË®
+	//Ï´ï¿½ï¿½Ë®
 	if (e_prop_sub_type_wash_talent_water == real_item_template_ptr->sub_type)
 	{
 		player& ref_player = unit_man::get_player(m_unit_array_index);
@@ -8628,7 +8628,7 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 		ref_player.get_talent_mgr().talent_reset();
 	}
 
-	//Ï´ÊôÐÔ
+	//Ï´ï¿½ï¿½ï¿½ï¿½
 	if (e_prop_sub_type_refresh_body_att == real_item_template_ptr->sub_type)
 	{
 		player& ref_player = unit_man::get_player(m_unit_array_index);
@@ -8644,7 +8644,7 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 		ref_player.get_pawn_att().change_base_body_att(init_body_att, true);
 	}
 
-	//Ôö¼ÓµØÍ¼´ÎÊý
+	//ï¿½ï¿½ï¿½Óµï¿½Í¼ï¿½ï¿½ï¿½ï¿½
 	if (e_prop_sub_type_add_map_count == real_item_template_ptr->sub_type)
 	{
 		player& ref_player = unit_man::get_player(m_unit_array_index);
@@ -8670,7 +8670,7 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 
 	}
 
-	//Ôö¼ÓµØÍ¼Ê±¼ä
+	//ï¿½ï¿½ï¿½Óµï¿½Í¼Ê±ï¿½ï¿½
 	if (e_prop_sub_type_add_map_time == real_item_template_ptr->sub_type)
 	{
 		player& ref_player = unit_man::get_player(m_unit_array_index);
@@ -8730,7 +8730,7 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 		}
 	}
 
-	//Ú¤ÏëÒ©Ë®
+	//Ú¤ï¿½ï¿½Ò©Ë®
 	if (e_prop_sub_type_meditation_medicine == real_item_template_ptr->sub_type)
 	{
 		player& ref_player = unit_man::get_player(m_unit_array_index);
@@ -8796,13 +8796,13 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 		temp_player.set_unit_info(e_role_info_recharge_num, vip_card_add_point + cur_vip_recharge_num);
 		temp_player.set_unit_info(e_role_info_daily_recharge_num, cur_daily_recharge_num + vip_card_add_point);
 
-		//ÏÞÊ±»î¶¯ÀÛ¼Æ³äÖµÊýÁ¿µþ¼Ó
+		//ï¿½ï¿½Ê±ï¿½î¶¯ï¿½Û¼Æ³ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_total_charge, vip_card_add_point);
 		temp_player.get_time_limit_activity_mgr().reset_ranking_value(e_time_limit_activity_type_total_charge);
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_cross_total_charge, vip_card_add_point);
 		temp_player.get_time_limit_activity_mgr().reset_ranking_value(e_time_limit_activity_type_cross_total_charge);
 
-		//ÏÞÊ±»î¶¯Ã¿ÈÕ³äÖµÊýÁ¿µþ¼Ó
+		//ï¿½ï¿½Ê±ï¿½î¶¯Ã¿ï¿½Õ³ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_daily_charge, vip_card_add_point);
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_daily_charge2, vip_card_add_point);
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_daily_charge3, vip_card_add_point);
@@ -8814,11 +8814,11 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_new_total_charge_2, vip_card_add_point);
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_new_total_charge_3, vip_card_add_point);
 
-		//ÏÞÊ±»î¶¯È«Ãñ¾Û±¦³äÖµÊýÁ¿Ôö¼Ó
-		//¿ç·þ
+		//ï¿½ï¿½Ê±ï¿½î¶¯È«ï¿½ï¿½Û±ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		//ï¿½ï¿½ï¿½
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_national_treasure_1, vip_card_add_point);
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_national_treasure_2, vip_card_add_point);
-		//±¾·þ
+		//ï¿½ï¿½ï¿½ï¿½
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_national_treasure_3, vip_card_add_point);
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_national_treasure_4, vip_card_add_point);
 
@@ -8834,7 +8834,7 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 				temp_player.refresh_vip_title();
 			}
 			temp_player.broadcast_info_one(e_role_info_vip_level);
-			//Í¬²½vipµÈ¼¶µ½session
+			//Í¬ï¿½ï¿½vipï¿½È¼ï¿½ï¿½ï¿½session
 			temp_player.sync_data_to_ws(e_sync_cs2ws_data_vip_level, new_vip_level);
 		}
 
@@ -8942,7 +8942,7 @@ int32 item_set::item_buy_and_use(int32 goods_id)
 		return e_item_string_unkown;
 	}
 
-	// ÅÐ¶ÏÍæ¼ÒµÄµÈ¼¶ÊÇ·ñ´ïµ½ÁËÄÜ¹»¹ºÂò´ËÉÌÆ·µÄÒªÇó
+	// ï¿½Ð¶ï¿½ï¿½ï¿½ÒµÄµÈ¼ï¿½ï¿½Ç·ï¿½ïµ½ï¿½ï¿½ï¿½Ü¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Òªï¿½ï¿½
 	int32 player_level = temp_player.get_unit_info(e_role_info_exp_level);
 	if (goods_template->Levellimit.size() < 2)
 	{
@@ -9010,7 +9010,7 @@ bool item_set::use_beast_spirit(const guid_64& item_guid, int32 item_num)
 		return false;
 	}
 
-	if (item_ptr->get_data_info(e_item_info_stack_count) < item_num || item_num <= 0)//±³°üÀïµÄÊýÁ¿
+	if (item_ptr->get_data_info(e_item_info_stack_count) < item_num || item_num <= 0)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	{
 		return false;
 	}
@@ -9042,11 +9042,11 @@ bool item_set::use_beast_spirit(const guid_64& item_guid, int32 item_num)
 
 				if (mount_template_ptr->ClassNow >= beast_spirit_template_ptr->UnlockConditionArray[i + 1])
 				{
-					is_upgrade = true;//Âú×ãÊ¹ÓÃÌõ¼þ
+					is_upgrade = true;//ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 					break;
 				}
 			}
-			else if (beast_spirit_template_ptr->BeastSpiritType == e_beast_spirit_type_wing)//³á°ò»ê
+			else if (beast_spirit_template_ptr->BeastSpiritType == e_beast_spirit_type_wing)//ï¿½ï¿½ï¿½ï¿½
 			{
 				WingTemplate* wing_template_ptr = item_mount_or_wing_ptr->get_wing_template_ptr();
 				if (nullptr == wing_template_ptr)
@@ -9056,7 +9056,7 @@ bool item_set::use_beast_spirit(const guid_64& item_guid, int32 item_num)
 
 				if (wing_template_ptr->UpgradeNow >= beast_spirit_template_ptr->UnlockConditionArray[i + 1])
 				{
-					is_upgrade = true;//Âú×ãÊ¹ÓÃÌõ¼þ
+					is_upgrade = true;//ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 					break;
 				}
 			}
@@ -9068,7 +9068,7 @@ bool item_set::use_beast_spirit(const guid_64& item_guid, int32 item_num)
 	}
 	if (!is_upgrade)
 	{
-		return false;//Î´Âú×ã½âËøÌõ¼þ
+		return false;//Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 
 	change_beast_spirit_att(beast_spirit_template_ptr->BeastSpiritType, false);
@@ -9154,7 +9154,7 @@ bool item_set::item_one_key_use(const std::vector<guid_64>& item_guid_array)
 
 		e_error_code item_use_check_ret = item_use_check(*item_ptr, item_num);
 
-		// Ê¹ÓÃÊýÁ¿µÄ·´À¡ÏÈ²»ÔÙÕâÀïÉèÖÃ,ÒòÎªÊ¹ÓÃÊýÁ¿¿ÉÄÜ»á¸ù¾Ý¹ûÊµ»ò±³°ü¿Õ¼äµÄÇé¿ö¶ø±äÉÙ
+		// Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½È²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ÎªÊ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü»ï¿½ï¿½ï¿½Ý¹ï¿½Êµï¿½ò±³°ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		item_proto_item_use_end item_use_end_msg;
 		item_use_end_msg.set_result(item_use_check_ret);
 		item_use_end_msg.set_item_template_id(item_gid);
@@ -9266,7 +9266,7 @@ bool item_set::item_sell(const guid_64& item_guid, int32 item_num)
 
 		SpiritTemplate* temp_template = GET_TEMPLATE(SpiritTemplate, spirit_templateid);
 		//int32 earn_money_num = temp_template->Recycle;
-		//¾«Áé²»¶Ñµþ
+		//ï¿½ï¿½ï¿½é²»ï¿½Ñµï¿½
 		if (temp_template->RecoveryMoney.size() % e_money_tuple_max != 0)
 		{
 			return false;
@@ -9748,14 +9748,14 @@ void item_set::cost_item_by_id_with_lock_states(e_server_log_del_item causeid, i
 			{
 				int32 item_num = item_ptr->get_data_info(e_item_info_stack_count);
 				if (item_num > temp_item_count)
-				{//Ä³ÖÖÎïÆ·×ã¹»ÏûºÄ
+				{//Ä³ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ã¹»ï¿½ï¿½ï¿½ï¿½
 					m_bind_material_num += temp_item_count;
 					del_item(causeid, location, item_ptr, temp_item_count);
 					temp_item_count = 0;
 					break;
 				}
 				else
-				{//Ëø¶¨ÎïÆ·ÏûºÄ²»×ã
+				{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½
 					m_bind_material_num += item_num;
 					temp_item_count -= item_num;
 					del_item(causeid, location, item_ptr, item_num);
@@ -9764,7 +9764,7 @@ void item_set::cost_item_by_id_with_lock_states(e_server_log_del_item causeid, i
 		}
 	}
 
-	if (temp_item_count > 0)//ÏûºÄÎ´½áÊø
+	if (temp_item_count > 0)//ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½
 	{
 		for (int32 i = 0; i < MAX_ITEM_BAG_NUM; ++i)
 		{
@@ -9782,13 +9782,13 @@ void item_set::cost_item_by_id_with_lock_states(e_server_log_del_item causeid, i
 					del_item(causeid, location, item_ptr, temp_item_count);
 					temp_item_count = 0;
 					break;
-				}//Ä³ÖÖÎïÆ·×ã¹»ÏûºÄ
+				}//Ä³ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ã¹»ï¿½ï¿½ï¿½ï¿½
 				else
 				{
 					m_no_bind_material_num += item_num;
 					temp_item_count -= item_num;
 					del_item(causeid, location, item_ptr, item_num);
-				}//ÎïÆ·ÏûºÄ²»×ã
+				}//ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½
 			}
 		}
 	}
@@ -9833,7 +9833,7 @@ int32 item_set::upgrade_protect_item_can_use(const ItemUpgradeTemplate* item_upg
 	//{
 	//	return e_error_code_item_upgrade;
 	//}
-	////Èç¹ûÊ¹ÓÃÐ¡ÓÚ×÷ÓÃÏÂÏÞ»òÕß´óÓÚ×÷ÓÃÉÏÏÞ£¬Ôò²»ÄÜÊ¹ÓÃ
+	////ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ»ï¿½ï¿½ß´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ£ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½
 	//if (props_template_ptr->FuncLevelLimit.size() >= 2)
 	//{
 	//	if (cur_upgrade_num < props_template_ptr->FuncLevelLimit[0] || cur_upgrade_num > props_template_ptr->FuncLevelLimit[1])
@@ -10106,16 +10106,16 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 	if (nullptr == wing_ptr
 		|| nullptr == wing_ptr->get_item_info_ptr())
 	{
-		return e_item_string_no_item;//Ã»ÓÐÎïÆ·
+		return e_item_string_no_item;//Ã»ï¿½ï¿½ï¿½ï¿½Æ·
 	}
 
 	if (wing_ptr->get_data_info(e_item_info_activate) == 0 || wing_ptr->get_data_info(e_item_info_over_time) != 0)
 	{
-		return e_item_string_unkown;//Î´¼¤»î¸Ã³á°ò,²»¿ÉÉý¼¶
+		return e_item_string_unkown;//Î´ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 
 	if (wing_ptr->get_item_info_ptr()->item_type != e_item_type_wing)
-	{//²»ÊÇ³á°ò
+	{//ï¿½ï¿½ï¿½Ç³ï¿½ï¿½
 		return e_item_string_unkown;
 	}
 	bool use_money_instead_matirial = false;
@@ -10145,7 +10145,7 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 		return e_item_string_unkown;
 	}
 
-	if (wing_template_ptr->GradeLimit > temp_player_ref.get_grade_num())  // ÐÂÔö×ªÖ°ÏÞ¶¨
+	if (wing_template_ptr->GradeLimit > temp_player_ref.get_grade_num())  // ï¿½ï¿½ï¿½ï¿½×ªÖ°ï¿½Þ¶ï¿½
 	{
 		return e_item_string_unkown;
 	}
@@ -10158,7 +10158,7 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 
 	if (wing_template_ptr->Type == e_item_wing_type_normal
 		&& wing_ptr != get_cur_level_wing())
-	{//Ñ¡ÔñÁËÒ»¸öµÍ½×µÄÒÑÉýÂúµÄ³á°ò½øÐÐÉý¼¶
+	{//Ñ¡ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Í½×µï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		return e_item_string_full_level;
 	}
 	if (wing_template_ptr->Type == e_item_wing_type_illusion || wing_template_ptr->Type == e_item_wing_type_special_santo)
@@ -10167,18 +10167,18 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 	}
 
 	if ((cur_wing_star_num >= max_wing_star_num) && (cur_wing_level >= max_wing_level))
-	{//Âú¼¶
+	{//ï¿½ï¿½ï¿½ï¿½
 		return e_item_string_full_level;
 	}
 
 	if (cur_wing_star_num == max_wing_star_num)
 	{
-		//Éý½× ÏÈÅÐ¶ÏµÈ¼¶ÐèÇó,ÔÙÅÐ¶Ï²ÄÁÏ
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ð¶ÏµÈ¼ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Ð¶Ï²ï¿½ï¿½ï¿½
 		if (wing_template_ptr->Type == e_item_wing_type_normal)
 		{
 			if (temp_player_ref.get_unit_info(e_role_info_exp_level) < wing_template_ptr->WingOpenNeedRoleClass)
 			{
-				return e_item_string_level;//Î´Âú×ãµÈ¼¶ÐèÇó
+				return e_item_string_level;//Î´ï¿½ï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½
 			}
 		}
 		else
@@ -10202,9 +10202,9 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 		}
 
 		if (get_item_count(wing_template_ptr->UpgradeMatirialId, e_bag_type_bag) < wing_template_ptr->UpgradeMatirialNum)
-		{//ËØ²Ä²»×ã
+		{//ï¿½Ø²Ä²ï¿½ï¿½ï¿½
 			if (use_up_item == 0)
-			{//²»ÓÃ×êÊ¯
+			{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¯
 				return e_item_string_matirial_not_enough;
 			}
 			else
@@ -10212,7 +10212,7 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 				use_money_instead_matirial = true;
 			}
 		}
-		//ÏûºÄ±¦Ê¯´úÌæ²ÄÁÏ
+		//ï¿½ï¿½ï¿½Ä±ï¿½Ê¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if (use_money_instead_matirial)
 		{
 			GoodsTemplate* goods_ptr = GET_TEMPLATE(GoodsTemplate, wing_template_ptr->UpgradeShopId);
@@ -10257,9 +10257,9 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 
 		wing_ptr->set_data_info(e_item_info_wing_bless, upgrade_bless_now + wing_template_ptr->EachUpgradeBless);
 		upgrade_bless_now = wing_ptr->get_data_info(e_item_info_wing_bless);
-		//ÏÈ¼Ó×£¸£Öµ
+		//ï¿½È¼ï¿½×£ï¿½ï¿½Öµ
 		if (wing_upgrade_rate(upgrade_bless_now, wing_template_ptr) == true)
-		{//Éý½×¸ÅÂÊÅÐ¶Ï³É¹¦,½«¾­Ñé,×£¸£,ÉýÐÇÇå¿Õ.
+		{//ï¿½ï¿½ï¿½×¸ï¿½ï¿½ï¿½ï¿½Ð¶Ï³É¹ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,×£ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 			set_wing_att(false);
 
 			wing_ptr->set_data_info(e_item_info_wing_exp, 0);
@@ -10273,7 +10273,7 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 				effect_msg.set_show_type(e_item_upgrade_effect_type_wing_upgrade);
 				effect_msg.set_show_value(cur_wing_level + 1);
 				temp_player_ref.send_message_to_self(&effect_msg, e_msgindex_s2c_show_item_upgrade_effect);
-				//³á°òÉý½×¹«¸æ
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¹ï¿½ï¿½ï¿½
 				WingTemplate* new_wing_template_ptr = get_wing_template_ptr(*wing_ptr);
 				if (new_wing_template_ptr != nullptr)
 				{
@@ -10297,7 +10297,7 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 			}
 			else
 			{
-				//ÏÖÔÚ³ýÁËÐèÒª°Ñµ±Ç°½×³á°òÉý¼¶ÖÁÂúÍâ£¬»¹Òª¼¤»îÏÂÒ»½×³á°ò
+				//ï¿½ï¿½ï¿½Ú³ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ñµï¿½Ç°ï¿½×³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¬ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½×³ï¿½ï¿½
 				reset_wings_order();
 				citem* next_level_wing = get_item_by_slot(e_bag_type_wing, wing_ptr->get_data_info(e_item_info_slot) + 1);
 				if (next_level_wing == nullptr)
@@ -10342,7 +10342,7 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 				temp_player_ref.get_mission_mgr().target_check(e_mission_end_type_wing_upgrade);
 				temp_player_ref.get_achievement_mgr().item_changed(wing_ptr, e_item_operation_featherupgrade_grade);
 
-				//³á°òÉý½×¹«¸æ
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¹ï¿½ï¿½ï¿½
 				WingTemplate* current_wing_template_ptr = cur_level_wing->get_wing_template_ptr();
 				if (current_wing_template_ptr && current_wing_template_ptr->NoticeId > 0)
 				{
@@ -10367,17 +10367,17 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 		}
 
 		send_item_one(wing_ptr);
-		int32 temp_cur_value = temp_player_ref.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_wing); // »îÔ¾¶È
+		int32 temp_cur_value = temp_player_ref.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_wing); // ï¿½ï¿½Ô¾ï¿½ï¿½
 		temp_player_ref.get_welfare_mgr().set_active_degree_info(e_daily_active_degree_type_strengthing_one_wing, temp_cur_value + 1);
 		//sync_ranking_wing();
 		return e_error_code_success;
 	}
 	else
-	{//ÉýÐÇ
+	{//ï¿½ï¿½ï¿½ï¿½
 		if (get_item_count(wing_template_ptr->AddStarMatirialId, e_bag_type_bag) < wing_template_ptr->AddStarMatirialNum)
-		{//ËØ²Ä²»×ã
+		{//ï¿½Ø²Ä²ï¿½ï¿½ï¿½
 			if (use_up_item == 0)
-			{//²»ÓÃ×êÊ¯
+			{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¯
 				return e_item_string_matirial_not_enough;
 			}
 			else
@@ -10385,7 +10385,7 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 				use_money_instead_matirial = true;
 			}
 		}
-		//ÏûºÄ±¦Ê¯´úÌæ²ÄÁÏ
+		//ï¿½ï¿½ï¿½Ä±ï¿½Ê¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if (use_money_instead_matirial)
 		{
 			GoodsTemplate* goods_ptr = GET_TEMPLATE(GoodsTemplate, wing_template_ptr->StarShopId);
@@ -10413,24 +10413,24 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 		int32 add_star_exp_max = wing_template_ptr->AddStarMaxEXP;
 		bool crirical_flag;
 		if (rand() % 100 < wing_template_ptr->AddStarCriticalRate)
-		{//ÉýÐÇ±©»÷¾­Ñé
+		{//ï¿½ï¿½ï¿½Ç±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			add_star_exp_now += wing_template_ptr->EachAddStarExp * 2;
 			crirical_flag = true;
 		}
 		else
-		{//Î´±©»÷
+		{//Î´ï¿½ï¿½ï¿½ï¿½
 			add_star_exp_now += wing_template_ptr->EachAddStarExp;
 			crirical_flag = false;
 		}
 
 		int32 temp_star = 0;
 		while (add_star_exp_now >= add_star_exp_max)
-		{//¾­ÑéÒÑÂúÉýÐÇ
+		{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			add_star_exp_now -= add_star_exp_max;
 			temp_star++;
 		}
 		if (temp_star > 0)
-		{//ÉýÐÇÈ·ÈÏ¸Ä±äÊôÐÔ
+		{//ï¿½ï¿½ï¿½ï¿½È·ï¿½Ï¸Ä±ï¿½ï¿½ï¿½ï¿½ï¿½
 			set_wing_att(false);
 			if (cur_wing_star_num + temp_star > max_wing_star_num)
 			{
@@ -10467,7 +10467,7 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 			return e_error_code_item_add_star_critical;
 		}
 
-		int32 temp_cur_value = temp_player_ref.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_wing); // »îÔ¾¶È
+		int32 temp_cur_value = temp_player_ref.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_wing); // ï¿½ï¿½Ô¾ï¿½ï¿½
 		temp_player_ref.get_welfare_mgr().set_active_degree_info(e_daily_active_degree_type_strengthing_one_wing, temp_cur_value + 1);
 		return e_error_code_success;
 	}
@@ -10490,16 +10490,16 @@ int32 item_set::wing_starupgrade(const guid_64& wing_guid, int32 use_up_item)
 	if (nullptr == wing_ptr
 		|| nullptr == wing_ptr->get_item_info_ptr())
 	{
-		return e_item_string_no_item;//Ã»ÓÐÎïÆ·
+		return e_item_string_no_item;//Ã»ï¿½ï¿½ï¿½ï¿½Æ·
 	}
 
 	if (wing_ptr->get_data_info(e_item_info_activate) == 0 || wing_ptr->get_data_info(e_item_info_over_time) != 0)
 	{
-		return e_item_string_unkown;//Î´¼¤»î¸Ã³á°ò,²»¿ÉÉý¼¶
+		return e_item_string_unkown;//Î´ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 
 	if (wing_ptr->get_item_info_ptr()->item_type != e_item_type_wing)
-	{//²»ÊÇ³á°ò
+	{//ï¿½ï¿½ï¿½Ç³ï¿½ï¿½
 		return e_item_string_unkown;
 	}
 	bool use_money_instead_matirial = false;
@@ -10546,15 +10546,15 @@ int32 item_set::wing_starupgrade(const guid_64& wing_guid, int32 use_up_item)
 	int32 max_wing_star_num = wing_template_ptr->StarGradeMax;
 
 	if (wing_template_ptr->Type == e_item_wing_type_shape_illusion && (cur_wing_star_num >= max_wing_star_num))
-	{//Âú¼¶
+	{//ï¿½ï¿½ï¿½ï¿½
 		return e_item_string_full_level;
 	}
 
-	//ÉýÐÇ
+	//ï¿½ï¿½ï¿½ï¿½
 	if (get_item_count(wing_template_ptr->AddStarMatirialId, e_bag_type_bag) < wing_template_ptr->AddStarMatirialNum)
-	{//ËØ²Ä²»×ã
+	{//ï¿½Ø²Ä²ï¿½ï¿½ï¿½
 		if (use_up_item == 0)
-		{//²»ÓÃ×êÊ¯
+		{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¯
 			return e_item_string_matirial_not_enough;
 		}
 		else
@@ -10562,7 +10562,7 @@ int32 item_set::wing_starupgrade(const guid_64& wing_guid, int32 use_up_item)
 			use_money_instead_matirial = true;
 		}
 	}
-	//ÏûºÄ±¦Ê¯´úÌæ²ÄÁÏ
+	//ï¿½ï¿½ï¿½Ä±ï¿½Ê¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (use_money_instead_matirial)
 	{
 		GoodsTemplate* goods_ptr = GET_TEMPLATE(GoodsTemplate, wing_template_ptr->StarShopId);
@@ -10587,7 +10587,7 @@ int32 item_set::wing_starupgrade(const guid_64& wing_guid, int32 use_up_item)
 		cost_item_by_id_with_lock_states(e_server_log_del_item_wing_starupgrade , 0 ,wing_template_ptr->AddStarMatirialId, wing_template_ptr->AddStarMatirialNum, e_item_locked);
 	}
 
-	//ÉýÐÇÈ·ÈÏ¸Ä±äÊôÐÔ
+	//ï¿½ï¿½ï¿½ï¿½È·ï¿½Ï¸Ä±ï¿½ï¿½ï¿½ï¿½ï¿½
 	item_change_att(wing_template_ptr->AttArray, 1, false);
 	wing_ptr->set_data_info(e_item_info_stargrade_count, wing_ptr->get_data_info(e_item_info_stargrade_count) + 1);
 	int32 wing_next_id = wing_ptr->get_item_info_ptr()->logic_id + wing_ptr->get_data_info(e_item_info_stargrade_count) + 1000;
@@ -10602,9 +10602,9 @@ int32 item_set::wing_starupgrade(const guid_64& wing_guid, int32 use_up_item)
 		temp_player_ref.send_message_to_self(&effect_msg, e_msgindex_s2c_show_item_upgrade_effect);
 
 		// wangsonghao
-		// ±»¶¯¼¼ÄÜ
-		// ÕâÀïÏàµ±ÓÚ»¹ÊÇÖ±½Ó¼Óbuff£¬ºóÃæ»á½øÐÐÐÞ¸Ä£¬Í¨¹ý PassiveSkillManager À´½øÐÐ±»¶¯¼¼ÄÜµÄ¹ÜÀí
-		// ÏÖÔÚÔÝÎ´ÊµÏÖ PassiveSkillManager
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ï¿½àµ±ï¿½Ú»ï¿½ï¿½ï¿½Ö±ï¿½Ó¼ï¿½buffï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸Ä£ï¿½Í¨ï¿½ï¿½ PassiveSkillManager ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÜµÄ¹ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î´Êµï¿½ï¿½ PassiveSkillManager
 		if (wing_next_temp_ptr->StarBuffId > 0)
 		{
 			PassiveSkillTemplate* passive_skill_template_ptr = GET_TEMPLATE(PassiveSkillTemplate, wing_next_temp_ptr->StarBuffId);
@@ -10621,7 +10621,7 @@ int32 item_set::wing_starupgrade(const guid_64& wing_guid, int32 use_up_item)
 	//sync_ranking_wing();
 	//temp_player_ref.refresh_service_goal(e_service_goal_type_wing_level);
 
-	int32 temp_cur_value = temp_player_ref.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_wing); // »îÔ¾¶È
+	int32 temp_cur_value = temp_player_ref.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_wing); // ï¿½ï¿½Ô¾ï¿½ï¿½
 	temp_player_ref.get_welfare_mgr().set_active_degree_info(e_daily_active_degree_type_strengthing_one_wing, temp_cur_value + 1);
 	return e_error_code_success;
 	*/
@@ -10638,16 +10638,16 @@ int32 item_set::wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 
 	if (nullptr == wing_ptr
 		|| nullptr == wing_ptr->get_item_info_ptr())
 	{
-		return e_error_code_success;//Ã»ÓÐÎïÆ·
+		return e_error_code_success;//Ã»ï¿½ï¿½ï¿½ï¿½Æ·
 	}
 
 	if (wing_ptr->get_data_info(e_item_info_activate) == 0 || wing_ptr->get_data_info(e_item_info_over_time) != 0)
 	{
-		return e_error_code_template_param;//Î´¼¤»î¸Ã³á°ò,²»¿ÉÉý¼¶
+		return e_error_code_template_param;//Î´ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 
 	if (wing_ptr->get_item_info_ptr()->item_type != e_item_type_wing)
-	{//²»ÊÇ³á°ò
+	{//ï¿½ï¿½ï¿½Ç³ï¿½ï¿½
 		return e_error_code_template_param;
 	}
 
@@ -10659,7 +10659,7 @@ int32 item_set::wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 
 	}
 	if (wing_upgrade_template_ptr->UpgradeNow < GAMECONFIG->WingPsychicUnlockNum)
 	{
-		return e_error_code_template_param; //³á°òµÄ½×ÊýÐ¡ÓÚÅäÖÃµÄ½×Êý
+		return e_error_code_template_param; //ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ÃµÄ½ï¿½ï¿½ï¿½
 	}
 
 	if (wing_ptr->get_data_info(e_item_info_forge_property1) < 0 || wing_ptr->get_data_info(e_item_info_forge_property1) >= 110)
@@ -10667,7 +10667,7 @@ int32 item_set::wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 
 		return e_error_code_template_param;
 	}
 
-	//ÄÃµ½¶ÔÓ¦ÁéÐÔÖµµÄ³á°ò
+	//ï¿½Ãµï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Öµï¿½Ä³ï¿½ï¿½
 	int32 real_id = wing_ptr->get_item_info_ptr()->logic_id + wing_ptr->get_data_info(e_item_info_forge_property1) + 2000;
 	WingTemplate* wing_template_ptr = GET_TEMPLATE(WingTemplate, real_id);
 	if (nullptr == wing_template_ptr)
@@ -10675,18 +10675,18 @@ int32 item_set::wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 
 		return e_error_code_template_param;
 	}
 
-	//ÖýÁéÈ·ÈÏ¸Ä±äÊôÐÔ
+	//ï¿½ï¿½ï¿½ï¿½È·ï¿½Ï¸Ä±ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (wing_ptr->get_data_info(e_item_info_forge_property1) < 50)
 	{
 
-		//ÀäÈ´Ê±¼ä²»Îª0²¢ÇÒÀäÈ´Ê±¼äÃ»µ½
+		//ï¿½ï¿½È´Ê±ï¿½ä²»Îª0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È´Ê±ï¿½ï¿½Ã»ï¿½ï¿½
 		if (wing_ptr->get_data_info(e_item_info_forge_property2) != 0 && time_helper::get_cur_time_new().second < wing_ptr->get_data_info(e_item_info_forge_property2))
 		{
 			return e_error_code_template_param;
 		}
 
 		if (get_item_count(e_bag_type_bag, wing_template_ptr->AddStarMatirialId) < wing_template_ptr->AddStarMatirialNum)
-		{//ËØ²Ä²»×ã
+		{//ï¿½Ø²Ä²ï¿½ï¿½ï¿½
 			return e_error_code_template_param;
 		}
 		else
@@ -10697,7 +10697,7 @@ int32 item_set::wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 
 		wing_ptr->set_data_info(e_item_info_forge_property1, wing_ptr->get_data_info(e_item_info_forge_property1) + 10);
 		wing_ptr->set_data_info(e_item_info_forge_property2, time_helper::get_cur_time_new().second + wing_template_ptr->LengQueTime * 3600);
 	}
-	//×¢ÁéÈ·ÈÏ¸Ä±äÊôÐÔ
+	//×¢ï¿½ï¿½È·ï¿½Ï¸Ä±ï¿½ï¿½ï¿½ï¿½ï¿½
 	else
 	{
 		if (GAMECONFIG->WingZhuLingFrequency.size() < 2 || GAMECONFIG->WingZhuLingRandomRange.size() < 9)
@@ -10705,7 +10705,7 @@ int32 item_set::wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 
 			return e_error_code_template_param;
 		}
 
-		//×¢Áé´ÎÊýÊÇ·ñ×ã¹»
+		//×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ã¹»
 		if (wing_ptr->get_data_info(e_item_info_forge_property1) < 80)
 		{
 			if (wing_ptr->get_data_info(e_item_info_forge_property4) > GAMECONFIG->WingZhuLingFrequency[0] - 1)
@@ -10721,14 +10721,14 @@ int32 item_set::wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 
 			}
 		}
 
-		//×¢Áé²ÄÁÏºÍÊýÁ¿²»ÄÜÎª0
+		//×¢ï¿½ï¿½ï¿½ï¿½Ïºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
 		if (use_up_item == 0 || item_num == 0)
 		{
 			return e_error_code_template_param;
 		}
 
 		if (get_item_count(e_bag_type_bag, use_up_item) < item_num)
-		{//ËØ²Ä²»×ã
+		{//ï¿½Ø²Ä²ï¿½ï¿½ï¿½
 			return e_error_code_template_param;
 		}
 		else
@@ -10750,7 +10750,7 @@ int32 item_set::wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 
 		wing_ptr->set_data_info(e_item_info_forge_property4, wing_ptr->get_data_info(e_item_info_forge_property4) + 1);
 	}
 
-	//³¬³ö×î´óÁéÐÔÖµ ÉèÎª×î´óÁéÐÔÖµ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 	if (wing_ptr->get_data_info(e_item_info_forge_property1) > 110)
 	{
 		wing_ptr->set_data_info(e_item_info_forge_property1, 110);
@@ -10769,7 +10769,7 @@ int32 item_set::wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 
 		temp_player_ref.send_message_to_self(&effect_msg, e_msgindex_s2c_show_item_upgrade_effect);*/
 	}
 
-	//ÁéÐÔÖµµÚÒ»´Îµ½´ï80
+	//ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½Ò»ï¿½Îµï¿½ï¿½ï¿½80
 	if (wing_ptr->get_data_info(e_item_info_forge_property1) >= 80 && wing_ptr->get_data_info(e_item_info_forge_property5) < 80)
 	{
 		if (wing_next_temp_ptr->SkillPool.size() % 2 != 0)
@@ -10798,7 +10798,7 @@ int32 item_set::wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 
 		wing_ptr->set_data_info(e_item_info_forge_property5, wing_ptr->get_data_info(e_item_info_forge_property1));
 	}
 
-	//ÁéÐÔÖµµ½´ï110¶ÔÓ¦¼¼ÄÜ±äÎª2¼¶
+	//ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½110ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ü±ï¿½Îª2ï¿½ï¿½
 	if (wing_ptr->get_data_info(e_item_info_forge_property1) >= 110 && wing_ptr->get_data_info(e_item_info_forge_property6) == 0)
 	{
 		if (!wing_psychic_skill_unlock(wing_ptr->get_data_info(e_item_info_forge_property3), false))
@@ -10829,16 +10829,16 @@ int32 item_set::wing_lengque(const guid_64& wing_guid, int32 use_up_item)
 	if (nullptr == wing_ptr
 		|| nullptr == wing_ptr->get_item_info_ptr())
 	{
-		return e_error_code_template_param;//Ã»ÓÐÎïÆ·
+		return e_error_code_template_param;//Ã»ï¿½ï¿½ï¿½ï¿½Æ·
 	}
 
 	if (wing_ptr->get_data_info(e_item_info_activate) == 0 || wing_ptr->get_data_info(e_item_info_over_time) != 0)
 	{
-		return e_error_code_template_param;//Î´¼¤»î¸Ã³á°ò,²»¿ÉÉý¼¶
+		return e_error_code_template_param;//Î´ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 
 	if (wing_ptr->get_item_info_ptr()->item_type != e_item_type_wing)
-	{//²»ÊÇ³á°ò
+	{//ï¿½ï¿½ï¿½Ç³ï¿½ï¿½
 		return e_error_code_template_param;
 	}
 
@@ -10850,16 +10850,16 @@ int32 item_set::wing_lengque(const guid_64& wing_guid, int32 use_up_item)
 	}
 	if (wing_upgrade_template_ptr->UpgradeNow < GAMECONFIG->WingPsychicUnlockNum)
 	{
-		return e_error_code_template_param; //³á°òµÄ½×ÊýÐ¡ÓÚÅäÖÃµÄ½×Êý
+		return e_error_code_template_param; //ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ÃµÄ½ï¿½ï¿½ï¿½
 	}
 
-	//µÚÒ»´ÎÀäÈ´ÁéÐÔÖµÖÁÉÙÎª10
+	//ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½È´ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½Îª10
 	if (wing_ptr->get_data_info(e_item_info_forge_property1) < 10 || wing_ptr->get_data_info(e_item_info_forge_property1) >= 50)
 	{
 		return e_error_code_template_param;
 	}
 
-	//ÄÃµ½¶ÔÓ¦ÁéÐÔÖµµÄ³á°ò
+	//ï¿½Ãµï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Öµï¿½Ä³ï¿½ï¿½
 	int32 real_id = wing_ptr->get_item_info_ptr()->logic_id + wing_ptr->get_data_info(e_item_info_forge_property1) + 2000;
 	WingTemplate* wing_template_ptr = GET_TEMPLATE(WingTemplate, real_id);
 	if (nullptr == wing_template_ptr)
@@ -10867,13 +10867,13 @@ int32 item_set::wing_lengque(const guid_64& wing_guid, int32 use_up_item)
 		return e_error_code_template_param;
 	}
 
-	//ÀäÈ´Ê±¼äÎª0»òÕßÀäÈ´Ê±¼ä¹ýÁË
+	//ï¿½ï¿½È´Ê±ï¿½ï¿½Îª0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È´Ê±ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (wing_ptr->get_data_info(e_item_info_forge_property2) == 0 || time_helper::get_cur_time_new().second - wing_ptr->get_data_info(e_item_info_forge_property2) >= 0)
 	{
 		return e_error_code_template_param;
 	}
 
-	//µÚ¼¸´ÎÖýÁé
+	//ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	int32 money_times = (wing_ptr->get_data_info(e_item_info_forge_property1) / 10 - 1) * 3;
 
 	if (GAMECONFIG->WingZhuLingMoneyCost.size() < 12 || money_times < 0 || money_times > 9)
@@ -10905,16 +10905,16 @@ int32 item_set::wing_xiling(const guid_64& wing_guid, int32 use_up_item)
 	if (nullptr == wing_ptr
 		|| nullptr == wing_ptr->get_item_info_ptr())
 	{
-		return e_error_code_template_param;//Ã»ÓÐÎïÆ·
+		return e_error_code_template_param;//Ã»ï¿½ï¿½ï¿½ï¿½Æ·
 	}
 
 	if (wing_ptr->get_data_info(e_item_info_activate) == 0 || wing_ptr->get_data_info(e_item_info_over_time) != 0)
 	{
-		return e_error_code_template_param;//Î´¼¤»î¸Ã³á°ò,²»¿ÉÉý¼¶
+		return e_error_code_template_param;//Î´ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 
 	if (wing_ptr->get_item_info_ptr()->item_type != e_item_type_wing)
-	{//²»ÊÇ³á°ò
+	{//ï¿½ï¿½ï¿½Ç³ï¿½ï¿½
 		return e_error_code_template_param;
 	}
 
@@ -10926,7 +10926,7 @@ int32 item_set::wing_xiling(const guid_64& wing_guid, int32 use_up_item)
 	}
 	if (wing_upgrade_template_ptr->UpgradeNow < GAMECONFIG->WingPsychicUnlockNum)
 	{
-		return e_error_code_template_param; //³á°òµÄ½×ÊýÐ¡ÓÚÅäÖÃµÄ½×Êý
+		return e_error_code_template_param; //ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ÃµÄ½ï¿½ï¿½ï¿½
 	}
 
 	if (wing_ptr->get_data_info(e_item_info_forge_property1) < 50 || wing_ptr->get_data_info(e_item_info_forge_property1) > 110)
@@ -10934,7 +10934,7 @@ int32 item_set::wing_xiling(const guid_64& wing_guid, int32 use_up_item)
 		return e_error_code_template_param;
 	}
 
-	//ÄÃµ½¶ÔÓ¦ÁéÐÔÖµµÄ³á°ò
+	//ï¿½Ãµï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Öµï¿½Ä³ï¿½ï¿½
 	int32 real_id = wing_ptr->get_item_info_ptr()->logic_id + wing_ptr->get_data_info(e_item_info_forge_property1) + 2000;
 	WingTemplate* wing_template_ptr = GET_TEMPLATE(WingTemplate, real_id);
 	if (nullptr == wing_template_ptr)
@@ -11022,7 +11022,7 @@ int32 item_set::wing_xiling(const guid_64& wing_guid, int32 use_up_item)
 		temp_player_ref.cut_money((e_money_type)money_id, money_num, e_server_log_cut_money_wing_xiling);
 		wing_ptr->set_data_info(e_item_info_forge_property4, 0);
 		wing_ptr->set_data_info(e_item_info_forge_property6, 0);
-		wing_ptr->set_data_info(e_item_info_forge_property1, wing_ptr->get_data_info(e_item_info_forge_property5)); //Ï´ÁéÖØÖÃÁéÐÔÖµÎªÒ»´Î³¬¹ý80µÄÖµ
+		wing_ptr->set_data_info(e_item_info_forge_property1, wing_ptr->get_data_info(e_item_info_forge_property5)); //Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÖµÎªÒ»ï¿½Î³ï¿½ï¿½ï¿½80ï¿½ï¿½Öµ
 		set_wing_att(true);
 	}
 
@@ -11057,7 +11057,7 @@ int32 item_set::wing_illusionupgrade(const guid_64& wing_guid, int32 use_up_item
 	if (wing_ptr->get_data_info(e_item_info_activate) <= 0)
 	{
 		return e_item_string_mount_unlock;
-		//ÐèÒª¸Ä³É×øÆï×¨ÓÐµÄÌáÊ¾
+		//ï¿½ï¿½Òªï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½×¨ï¿½Ðµï¿½ï¿½ï¿½Ê¾
 	}
 	ItemTemplate* temp_item_template_ptr = wing_ptr->get_item_info_ptr();
 	if (temp_item_template_ptr == nullptr)
@@ -11089,14 +11089,14 @@ int32 item_set::wing_illusionupgrade(const guid_64& wing_guid, int32 use_up_item
 		return e_item_string_full_level;
 	}
 
-	int32 temp_cur_value = temp_player.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_mount); // »îÔ¾¶È
+	int32 temp_cur_value = temp_player.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_mount); // ï¿½ï¿½Ô¾ï¿½ï¿½
 	temp_player.get_welfare_mgr().set_active_degree_info(e_daily_active_degree_type_strengthing_one_mount, temp_cur_value + 1);
 
 	matirial_count = get_item_count(real_wing_template_ptr->UpgradeMatirialId, e_bag_type_bag);
 	if (matirial_count < real_wing_template_ptr->UpgradeMatirialNum)
-	{//ËØ²Ä²»×ã
+	{//ï¿½Ø²Ä²ï¿½ï¿½ï¿½
 		if (use_up_item == 0)
-		{//²»ÓÃ×êÊ¯
+		{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¯
 			return e_item_string_matirial_not_enough;
 		}
 		else
@@ -11108,7 +11108,7 @@ int32 item_set::wing_illusionupgrade(const guid_64& wing_guid, int32 use_up_item
 
 	if (use_money_instead_matirial)
 	{
-		//´úÌæ²ÄÁÏµÄ×êÊ¯×ã¹»
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½Ê¯ï¿½ã¹»
 		GoodsTemplate* goods_ptr = GET_TEMPLATE(GoodsTemplate, real_wing_template_ptr->UpgradeShopId);
 		if (goods_ptr != nullptr
 			&& goods_ptr->NewPrice.size() > region_money_num_index)
@@ -11139,9 +11139,9 @@ int32 item_set::wing_illusionupgrade(const guid_64& wing_guid, int32 use_up_item
 		item_change_att(wing_ptr->get_wing_template_ptr()->AttArray, 1, true);
 
 		// wangsonghao
-		// ±»¶¯¼¼ÄÜ
-		// ÕâÀïÏàµ±ÓÚ»¹ÊÇÖ±½Ó¼Óbuff£¬ºóÃæ»á½øÐÐÐÞ¸Ä£¬Í¨¹ý PassiveSkillManager À´½øÐÐ±»¶¯¼¼ÄÜµÄ¹ÜÀí
-		// ÏÖÔÚÔÝÎ´ÊµÏÖ PassiveSkillManager
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ï¿½àµ±ï¿½Ú»ï¿½ï¿½ï¿½Ö±ï¿½Ó¼ï¿½buffï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸Ä£ï¿½Í¨ï¿½ï¿½ PassiveSkillManager ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÜµÄ¹ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î´Êµï¿½ï¿½ PassiveSkillManager
 		if (wing_ptr->get_wing_template_ptr()->StarBuffId > 0)
 		{
 			star_skill_unlock(wing_guid, wing_ptr->get_data_info(e_item_info_upgrade_count), false, false);
@@ -11194,7 +11194,7 @@ int32 item_set::wing_shape_upgrade(citem& ref_wing_item_shape, int32 use_up_item
 	const int32 max_wing_upgrade_num = wing_template_ptr->WingUpgradeMax;
 
 	if ((cur_wing_star_num == max_wing_star_num) && (cur_wing_upgrade_num == max_wing_upgrade_num))
-	{//Âú¼¶
+	{//ï¿½ï¿½ï¿½ï¿½
 		return e_item_string_full_level;
 	}
 
@@ -11232,9 +11232,9 @@ int32 item_set::wing_shape_upgrade(citem& ref_wing_item_shape, int32 use_up_item
 		if (cur_wing_star_num == max_wing_star_num)
 		{
 			if (get_item_count(e_bag_type_bag, wing_template_ptr->UpgradeMatirialId) < wing_template_ptr->UpgradeMatirialNum)
-			{//ËØ²Ä²»×ã
+			{//ï¿½Ø²Ä²ï¿½ï¿½ï¿½
 				if (use_up_item == 0)
-				{//²»ÓÃ×êÊ¯
+				{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¯
 					return e_item_string_matirial_not_enough;
 				}
 				else
@@ -11242,7 +11242,7 @@ int32 item_set::wing_shape_upgrade(citem& ref_wing_item_shape, int32 use_up_item
 					use_money_instead_matirial = true;
 				}
 			}
-			//ÏûºÄ±¦Ê¯´úÌæ²ÄÁÏ
+			//ï¿½ï¿½ï¿½Ä±ï¿½Ê¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (use_money_instead_matirial)
 			{
 				GoodsTemplate* goods_ptr = GET_TEMPLATE(GoodsTemplate, wing_template_ptr->UpgradeShopId);
@@ -11278,9 +11278,9 @@ int32 item_set::wing_shape_upgrade(citem& ref_wing_item_shape, int32 use_up_item
 		else
 		{
 			if (get_item_count(e_bag_type_bag, wing_template_ptr->AddStarMatirialId) < wing_template_ptr->AddStarMatirialNum)
-			{//ËØ²Ä²»×ã
+			{//ï¿½Ø²Ä²ï¿½ï¿½ï¿½
 				if (use_up_item == 0)
-				{//²»ÓÃ×êÊ¯
+				{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¯
 					return e_item_string_matirial_not_enough;
 				}
 				else
@@ -11288,7 +11288,7 @@ int32 item_set::wing_shape_upgrade(citem& ref_wing_item_shape, int32 use_up_item
 					use_money_instead_matirial = true;
 				}
 			}
-			//ÏûºÄ±¦Ê¯´úÌæ²ÄÁÏ
+			//ï¿½ï¿½ï¿½Ä±ï¿½Ê¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (use_money_instead_matirial)
 			{
 				GoodsTemplate* goods_ptr = GET_TEMPLATE(GoodsTemplate, wing_template_ptr->StarShopId);
@@ -11347,8 +11347,8 @@ int32 item_set::wing_shape_upgrade(citem& ref_wing_item_shape, int32 use_up_item
 	set_wing_att(true);
 	send_item_one(&ref_wing_item_shape);
 
-	//ÓðÒí¹«¸æ
-	//³á°òÉý½×¹«¸æ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¹ï¿½ï¿½ï¿½
 	WingTemplate* new_wing_template_ptr = get_wing_template_ptr(ref_wing_item_shape);
 	if (new_wing_template_ptr != nullptr)
 	{
@@ -11580,7 +11580,7 @@ int32 item_set::wing_shape_illusion_unlock(const guid_64& wing_guid, const int32
 	{
 		return e_item_string_have_no_illusion;
 	}
-	//ÅÐ¶ÏÇ°ÖÃÌõ¼þ
+	//ï¿½Ð¶ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (temp_illusion_wing_template_ptr->PreWingRequirement.size() >= 2)
 	{
 		if (real_wing_template_ptr->UpgradeNow < temp_illusion_wing_template_ptr->PreWingRequirement[1])
@@ -11606,7 +11606,7 @@ int32 item_set::wing_shape_illusion_unlock(const guid_64& wing_guid, const int32
 	{
 		if (!temp_player_ref.can_cut_money((e_money_type)temp_illusion_wing_template_ptr->UnlockNeedMoney[e_money_tuple_id], temp_illusion_wing_template_ptr->UnlockNeedMoney[e_money_tuple_num]))
 		{
-			return e_item_string_money;//Ç®²»¹»
+			return e_item_string_money;//Ç®ï¿½ï¿½ï¿½ï¿½
 		}
 		is_cut_money = true;
 	}
@@ -11725,7 +11725,7 @@ void  item_set::sync_ranking_wing()
 	}
 }
 
-bool item_set::wing_upgrade_rate(int32 bless, WingTemplate* wing_template_ptr)//×î´óÖµÒ»°Ù,Ä¿Ç°Îª´óÓÚ50Ê±(bless-50)/50
+bool item_set::wing_upgrade_rate(int32 bless, WingTemplate* wing_template_ptr)//ï¿½ï¿½ï¿½ÖµÒ»ï¿½ï¿½,Ä¿Ç°Îªï¿½ï¿½ï¿½ï¿½50Ê±(bless-50)/50
 {
 	if (wing_template_ptr == nullptr)
 	{
@@ -11768,18 +11768,18 @@ int32 item_set::wing_add_soul(const guid_64& add_soul_guid)
 	if (nullptr == item_ptr)
 	{
 		return e_item_string_unkown;
-	}//Ã»ÓÐÎïÆ·
+	}//Ã»ï¿½ï¿½ï¿½ï¿½Æ·
 	if (nullptr == item_ptr->get_item_info_ptr())
 	{
 		return e_item_string_unkown;
 	}
 	if (item_ptr->get_item_info_ptr()->item_type != e_item_type_wing)
-	{//²»ÊÇ³á°ò
+	{//ï¿½ï¿½ï¿½Ç³ï¿½ï¿½
 		return e_item_string_unkown;
 	}
 
 	if (item_ptr->get_item_info_ptr()->sub_type != e_wing_sub_type_soul)
-	{//²»ÊÇ×¢»ê
+	{//ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½
 		return e_item_string_unkown;
 	}
 
@@ -11792,7 +11792,7 @@ int32 item_set::wing_add_soul(const guid_64& add_soul_guid)
 	}
 	WingAddSoulTemplate* next_wing_add_soul_ptr = GET_TEMPLATE(WingAddSoulTemplate, real_id + 1);
 	if (nullptr == next_wing_add_soul_ptr)
-	{//ÂúÁË
+	{//ï¿½ï¿½ï¿½ï¿½
 		return e_item_string_full_level;
 	}
 
@@ -11802,11 +11802,11 @@ int32 item_set::wing_add_soul(const guid_64& add_soul_guid)
 		return e_item_string_unkown;
 	}
 	//if ((wing_item_ptr->get_data_info(e_item_info_slot)+1) < ADD_SOUL_OPEN)
-	//{//½×Êý²»×ã¿ªÆôÌõ¼þ
+	//{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã¿ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	//	return e_item_string_unkown;
 	//}
 	if (get_item_count(e_bag_type_bag, wing_add_soul_ptr->AddSoulMatirialId) < wing_add_soul_ptr->AddSoulMatirialNum)
-	{//ËØ²Ä²»×ã		
+	{//ï¿½Ø²Ä²ï¿½ï¿½ï¿½		
 		return e_item_string_matirial_not_enough;
 	}
 	if (wing_add_soul_ptr->AddSoulMoney.size() < 2)
@@ -11818,8 +11818,8 @@ int32 item_set::wing_add_soul(const guid_64& add_soul_guid)
 		return e_item_string_money;
 	}
 
-	//¿ÉÒÔ×¢»ê
-	//ÏûºÄ²ÄÁÏ
+	//ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½
+	//ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½
 	cost_item_by_id_with_lock_states(e_server_log_del_item_add_soul, 0, wing_add_soul_ptr->AddSoulMatirialId, wing_add_soul_ptr->AddSoulMatirialNum, e_item_locked);
 	temp_player.cut_money((e_money_type)wing_add_soul_ptr->AddSoulMoney[0], wing_add_soul_ptr->AddSoulMoney[1], e_server_log_cut_money_add_soul, real_id);
 	set_wing_att(false);
@@ -11840,18 +11840,18 @@ int32 item_set::wing_add_spirit(const guid_64& add_spirit_guid)
 	if (nullptr == item_ptr)
 	{
 		return e_item_string_unkown;
-	}//Ã»ÓÐÎïÆ·
+	}//Ã»ï¿½ï¿½ï¿½ï¿½Æ·
 	if (nullptr == item_ptr->get_item_info_ptr())
 	{
 		return e_item_string_unkown;
 	}
 	if (item_ptr->get_item_info_ptr()->item_type != e_item_type_wing)
-	{//²»ÊÇ³á°ò
+	{//ï¿½ï¿½ï¿½Ç³ï¿½ï¿½
 		return e_item_string_unkown;
 	}
 
 	if (item_ptr->get_item_info_ptr()->sub_type != e_wing_sub_type_spirit)
-	{//²»ÊÇ×¢Áé
+	{//ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½
 		return e_item_string_unkown;
 	}
 
@@ -11865,7 +11865,7 @@ int32 item_set::wing_add_spirit(const guid_64& add_spirit_guid)
 
 	WingAddSpiritTemplate* next_wing_add_spirit_ptr = GET_TEMPLATE(WingAddSpiritTemplate, real_id + 1);
 	if (nullptr == next_wing_add_spirit_ptr)
-	{//ÂúÁË
+	{//ï¿½ï¿½ï¿½ï¿½
 		return e_item_string_full_level;
 	}
 
@@ -11875,12 +11875,12 @@ int32 item_set::wing_add_spirit(const guid_64& add_spirit_guid)
 		return e_item_string_unkown;
 	}
 	//if ((wing_item_ptr->get_data_info(e_item_info_slot) + 1) < ADD_SPIRIT_OPEN)
-	//{//½×Êý²»×ã¿ªÆôÌõ¼þ
+	//{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã¿ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	//	return e_item_string_unkown;
 	//}
 
 	if (get_item_count(e_bag_type_bag, wing_add_spirit_ptr->AddSpiritMatirialId) < wing_add_spirit_ptr->AddSpiritMatirialNum)
-	{//ËØ²Ä²»×ã		
+	{//ï¿½Ø²Ä²ï¿½ï¿½ï¿½		
 		return e_item_string_matirial_not_enough;
 	}
 	if (wing_add_spirit_ptr->AddSpiritMoney.size() < 2)
@@ -11892,11 +11892,11 @@ int32 item_set::wing_add_spirit(const guid_64& add_spirit_guid)
 		return e_item_string_money;
 	}
 
-	//¿ÉÒÔ×¢Áé
-	//ÏûºÄ²ÄÁÏ
+	//ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½
+	//ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½
 	cost_item_by_id_with_lock_states(e_server_log_del_item_add_sprite, 0, wing_add_spirit_ptr->AddSpiritMatirialId, wing_add_spirit_ptr->AddSpiritMatirialNum, e_item_locked);
 
-	//»¨Ç®
+	//ï¿½ï¿½Ç®
 	temp_player.cut_money((e_money_type)wing_add_spirit_ptr->AddSpiritMoney[0], wing_add_spirit_ptr->AddSpiritMoney[1], e_server_log_cut_money_add_sprite, real_id);
 	set_wing_att(false);
 	item_ptr->set_data_info(e_item_info_upgrade_count, now_spirit_count + 1);
@@ -11921,7 +11921,7 @@ int32 item_set::feather_upgrade(const guid_64& feather_guid, int32 use_up_item)
 	if (nullptr == feather_ptr)
 	{
 		return e_item_string_unkown;
-	}//Ã»ÓÐÎïÆ·
+	}//Ã»ï¿½ï¿½ï¿½ï¿½Æ·
 	if (feather_ptr->get_data_info(e_item_info_activate) != 1)
 	{
 		return e_item_string_unkown;
@@ -11931,11 +11931,11 @@ int32 item_set::feather_upgrade(const guid_64& feather_guid, int32 use_up_item)
 		return e_item_string_unkown;
 	}
 	if (feather_ptr->get_item_info_ptr()->item_type != e_item_type_wing)
-	{//²»ÊÇ³á°ò
+	{//ï¿½ï¿½ï¿½Ç³ï¿½ï¿½
 		return e_item_string_unkown;
 	}
 	if (feather_ptr->get_item_info_ptr()->sub_type != e_wing_sub_type_feather)
-	{//²»ÊÇôáÓð
+	{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		return e_item_string_unkown;
 	}
 	RegionTemplate* region_template_ptr = globle_data::get_instance().get_region_template_ptr();
@@ -11977,22 +11977,22 @@ int32 item_set::feather_upgrade(const guid_64& feather_guid, int32 use_up_item)
 	}
 	//int32 mount_upgrade_now = wing_ptr->get_data_info(e_item_info_upgrade_count);
 	//if ((cur_wing_ptr->get_data_info(e_item_info_slot) + 1) < FEATHER_EQUIP_OPEN)
-	//{//×øÆï½×Êý²»×ã¿ªÆôÌõ¼þ
+	//{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã¿ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	//	return e_item_string_unkown;
 	//}
 
 	bool is_use_jewel_instead_matirial = false;
 
 	if (cur_star_num == max_star_num)
-	{//Éý½×
+	{//ï¿½ï¿½ï¿½ï¿½
 		if (get_item_count(feather_upgrade_ptr->UpgradeMatirialId, e_bag_type_bag) < feather_upgrade_ptr->UpgradeMatirialNum)
-		{//ËØ²Ä²»×ã
+		{//ï¿½Ø²Ä²ï¿½ï¿½ï¿½
 			if (use_up_item == 0)
-			{//²»ÓÃ×êÊ¯
+			{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¯
 				return e_item_string_matirial_not_enough;
 			}
 			else
-			{//Ê¹ÓÃ×êÊ¯¾ÍÈ¥ÉÌµêÂò¶«Î÷
+			{//Ê¹ï¿½ï¿½ï¿½ï¿½Ê¯ï¿½ï¿½È¥ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½
 				is_use_jewel_instead_matirial = true;
 			}
 
@@ -12003,7 +12003,7 @@ int32 item_set::feather_upgrade(const guid_64& feather_guid, int32 use_up_item)
 		//	return e_item_string_money;
 		//}
 		if (is_use_jewel_instead_matirial == false)
-		{//ÏûºÄ²ÄÁÏ
+		{//ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½
 			cost_item_by_id_with_lock_states(e_server_log_del_item_feather_add_star , 0, feather_upgrade_ptr->UpgradeMatirialId, feather_upgrade_ptr->UpgradeMatirialNum, e_item_locked);
 		}
 		else
@@ -12025,7 +12025,7 @@ int32 item_set::feather_upgrade(const guid_64& feather_guid, int32 use_up_item)
 				return e_item_string_no_item;
 			}
 		}
-		//»¨Ç®
+		//ï¿½ï¿½Ç®
 		//temp_player.cut_money((e_money_type)feather_upgrade_ptr->UpgradeMoneyList[0], feather_upgrade_ptr->UpgradeMoneyList[1], e_server_log_cut_money_feather_upgrade, real_id);
 		set_feather_att(*feather_ptr, false);
 		feather_ptr->set_data_info(e_item_info_upgrade_count, now_feather_count + 1);
@@ -12038,15 +12038,15 @@ int32 item_set::feather_upgrade(const guid_64& feather_guid, int32 use_up_item)
 		temp_player.get_achievement_mgr().item_changed(feather_ptr, e_item_operation_featherupgrade_star);
 	}
 	else
-	{//ÉýÐÇ
+	{//ï¿½ï¿½ï¿½ï¿½
 		if (get_item_count(feather_upgrade_ptr->AddStarMatirialId, e_bag_type_bag) < feather_upgrade_ptr->AddStarMatirialNum)
-		{//ËØ²Ä²»×ã
+		{//ï¿½Ø²Ä²ï¿½ï¿½ï¿½
 			if (use_up_item == 0)
-			{//²»ÓÃ×êÊ¯
+			{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¯
 				return e_item_string_matirial_not_enough;
 			}
 			else
-			{//Ê¹ÓÃ×êÊ¯Ö±½ÓÈ¥ÉÌµê¹ºÂò
+			{//Ê¹ï¿½ï¿½ï¿½ï¿½Ê¯Ö±ï¿½ï¿½È¥ï¿½Ìµê¹ºï¿½ï¿½
 				is_use_jewel_instead_matirial = true;
 			}
 		}
@@ -12055,10 +12055,10 @@ int32 item_set::feather_upgrade(const guid_64& feather_guid, int32 use_up_item)
 		//	return e_item_string_money;
 		//}
 
-		//¿ÉÒÔÉý¼¶
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 		if (is_use_jewel_instead_matirial == false)
-		{//ÏûºÄ²ÄÁÏ
+		{//ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½
 			cost_item_by_id_with_lock_states(e_server_log_del_item_feather_add_star , 0, feather_upgrade_ptr->AddStarMatirialId, feather_upgrade_ptr->AddStarMatirialNum, e_item_locked);
 		}
 		else
@@ -12080,14 +12080,14 @@ int32 item_set::feather_upgrade(const guid_64& feather_guid, int32 use_up_item)
 				return e_item_string_no_item;
 			}
 		}
-		//»¨Ç®
+		//ï¿½ï¿½Ç®
 		//temp_player.cut_money((e_money_type)feather_upgrade_ptr->AddStarMoneyList[0], feather_upgrade_ptr->AddStarMoneyList[1], e_server_log_cut_money_feather_add_star, real_id);
 		set_feather_att(*feather_ptr, false);
 		feather_ptr->set_data_info(e_item_info_upgrade_count, now_feather_count + 1);
 		send_item_one(feather_ptr);
 		set_feather_att(*feather_ptr, true);
 	}
-	//¼¼ÄÜ
+	//ï¿½ï¿½ï¿½ï¿½
 	if (next_feather_upgrade_ptr->SkillID > 0)
 	{
 		PassiveSkillTemplate* passive_skill_template_ptr = GET_TEMPLATE(PassiveSkillTemplate, next_feather_upgrade_ptr->SkillID);
@@ -12178,7 +12178,7 @@ void item_set::equip_all_feather()
 			{
 				send_item_one(temp_feather);
 
-				//ÕâÀï²»Òªµ¥¼ÓÊôÐÔ ÔÚ set wing att Í³Ò»¼Ó 
+				//ï¿½ï¿½ï¿½ï²»Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ set wing att Í³Ò»ï¿½ï¿½ 
 				//set_feather_att(*temp_feather, true);
 			}
 
@@ -12318,13 +12318,13 @@ citem* item_set::get_item_in_bag_with_template_id(int32 item_template_id)
 
 int32 item_set::get_equip_smallest_upgrade_level()
 {
-	//»ñÈ¡È«Éí×°±¸8¼þ×°±¸Ç¿»¯µÈ¼¶×îµÍÖµ		
+	//ï¿½ï¿½È¡È«ï¿½ï¿½×°ï¿½ï¿½8ï¿½ï¿½×°ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½Öµ		
 	int32 return_value = -1;
 	for (int32 i = e_role_equip_slot_hat; i < e_role_equip_slot_amulet; ++i)
 	{
 		citem* temp_equip_item_ptr = get_item(GET_BAG(e_bag_type_equip)[i]);
 		if (temp_equip_item_ptr == nullptr)
-		{//Ò»¼þ²»´©¶¼²»ÐÐ
+		{//Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			return 0;
 		}
 		bool is_can_att = is_equipment_effective(temp_equip_item_ptr->get_item_guid());
@@ -12343,7 +12343,7 @@ int32 item_set::get_equip_smallest_upgrade_level()
 
 int32 item_set::get_equip_num_by_color(int32 target_color)
 {
-	//»ñÈ¡È«Éí×°±¸µ½Ö¸¶¨ÑÕÉ«£¨ÏòÉÏ¼æÈÝ£©ÊýÁ¿
+	//ï¿½ï¿½È¡È«ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½ï¿½
 	int32 return_value = 0;
 	if (target_color < e_item_color_white
 		|| target_color >= e_item_color_max)
@@ -12840,7 +12840,7 @@ int32 item_set::item_save_succinct(const guid_64& item_guid)
 
 		temp_unit.check_and_set_highest_record(e_role_history_highest_record_item_succinct_reach_mark_level, temp_item->get_item_grade(), item_template_ptr->item_color);
 
-		// ÎïÆ·Ï´Á·ÖÁÂú¼¶¹«¸æ
+		// ï¿½ï¿½Æ·Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		int32 notice_id = temp_succinct_template->Noticeld;
 		if (notice_id > 0)
 		{
@@ -12865,12 +12865,12 @@ int32 item_set::item_save_succinct(const guid_64& item_guid)
 	}
 	temp_unit.get_ranking_mgr().set_and_sync_single_equip_ranking_data(temp_item);
 
-	//ÎäÆ÷
+	//ï¿½ï¿½ï¿½ï¿½
 	if (item_template_ptr->item_type == e_item_type_weapon)
 	{
 		temp_unit.check_and_set_highest_record(e_role_history_highest_record_weapon_full_succinct_grade);
 	}
-	//×°±¸
+	//×°ï¿½ï¿½
 	if (item_template_ptr->item_type == e_item_type_armor)
 	{
 		temp_unit.check_and_set_highest_record(e_role_history_highest_record_equip_full_succinct_grade);
@@ -12887,7 +12887,7 @@ int32 item_set::rand_excellent_att_color(EquipTemplate* equip_template_ptr)
 	}
 
 	int32 color_rand_value = random_gen::get_random(1, 100);
-	//²»ÄÜ´Ó0¿ªÊ¼
+	//ï¿½ï¿½ï¿½Ü´ï¿½0ï¿½ï¿½Ê¼
 
 	int32 color_rand_target_value = 0;
 	int32 final_excellent_color = 0;
@@ -12924,7 +12924,7 @@ int32 item_set::rand_spirit_excellent_att_color(SpiritTemplate* spirit_template_
 		return e_item_color_max;
 	}
 	int32 color_rand_value = random_gen::get_random(1, 100);
-	//²»ÄÜ´Ó0¿ªÊ¼
+	//ï¿½ï¿½ï¿½Ü´ï¿½0ï¿½ï¿½Ê¼
 	int32 color_rand_target_value = 0;
 	int32 final_excellent_color = 0;
 	for (int32 i = 0; i < spirit_template_ptr->ForgeExcellentAttQualityWeight.size(); ++i)
@@ -13375,7 +13375,7 @@ int32 item_set::show_this_wing(citem* wing_ptr, int32 item_slot, bool is_mission
 	if (cur_showing_wing == wing_template_id)
 	{
 		wing_template_id = 0;
-		//ÏÔÊ¾ÕýÔÚÏÔÊ¾µÄ³á°ò£¬¾ÍÏàµ±ÓÚ²»ÏÔÊ¾³á°ò
+		//ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½Ä³ï¿½ò£¬¾ï¿½ï¿½àµ±ï¿½Ú²ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½
 	}
 	temp_unit.set_unit_info(e_role_info_wing_showd_template_id, wing_template_id);
 	temp_unit.send_info_one(e_role_info_wing_showd_template_id);
@@ -13491,11 +13491,11 @@ int32 item_set::get_use_time_item_empty_slot()
 
 bool item_set::set_mount_or_wing_beast_spirit_bag_data(int32 item_id, int32 item_type, int32 upgrade_num)
 {
-	if (e_beast_spirit_type_mount == item_type)//×øÆï»ê
+	if (e_beast_spirit_type_mount == item_type)//ï¿½ï¿½ï¿½ï¿½ï¿½
 	{
 		for (int32 i = 0; i < MAX_BEAST_SPIRIT_NUM; i++)
 		{
-			if (GET_BAG(e_bag_type_mount_beast_spirit)[i].is_valid())//Ë³Ðò²åÈë
+			if (GET_BAG(e_bag_type_mount_beast_spirit)[i].is_valid())//Ë³ï¿½ï¿½ï¿½ï¿½ï¿½
 			{
 				citem* item_mount_beast_spirit = get_item(GET_BAG(e_bag_type_mount_beast_spirit)[i]);
 				if (nullptr != item_mount_beast_spirit && item_mount_beast_spirit->get_data_info(e_item_info_info_id) == item_id)
@@ -13517,7 +13517,7 @@ bool item_set::set_mount_or_wing_beast_spirit_bag_data(int32 item_id, int32 item
 						}
 						else
 						{
-							return false;//ÒÑÂú¼¶
+							return false;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 						}
 					}
 					else
@@ -13537,7 +13537,7 @@ bool item_set::set_mount_or_wing_beast_spirit_bag_data(int32 item_id, int32 item
 						}
 						else
 						{
-							return false;//ÒÑÂú¼¶
+							return false;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 						}
 					}
 				}
@@ -13565,11 +13565,11 @@ bool item_set::set_mount_or_wing_beast_spirit_bag_data(int32 item_id, int32 item
 			}
 		}
 	}
-	else if (e_beast_spirit_type_wing == item_type)//³á°ò»ê
+	else if (e_beast_spirit_type_wing == item_type)//ï¿½ï¿½ï¿½ï¿½
 	{
 		for (int32 i = 0; i < MAX_BEAST_SPIRIT_NUM; i++)
 		{
-			if (GET_BAG(e_bag_type_wing_beast_spirit)[i].is_valid())//Ë³Ðò²åÈë
+			if (GET_BAG(e_bag_type_wing_beast_spirit)[i].is_valid())//Ë³ï¿½ï¿½ï¿½ï¿½ï¿½
 			{
 				citem* item_wing_beast_spirit = get_item(GET_BAG(e_bag_type_wing_beast_spirit)[i]);
 				if (nullptr != item_wing_beast_spirit && item_wing_beast_spirit->get_data_info(e_item_info_info_id) == item_id)
@@ -13591,7 +13591,7 @@ bool item_set::set_mount_or_wing_beast_spirit_bag_data(int32 item_id, int32 item
 						}
 						else
 						{
-							return false;//ÒÑÂú¼¶
+							return false;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 						}
 
 					}
@@ -13612,7 +13612,7 @@ bool item_set::set_mount_or_wing_beast_spirit_bag_data(int32 item_id, int32 item
 						}
 						else
 						{
-							return false;//ÒÑÂú¼¶
+							return false;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 						}
 					}
 				}
@@ -13641,11 +13641,11 @@ bool item_set::set_mount_or_wing_beast_spirit_bag_data(int32 item_id, int32 item
 			}
 		}
 	}
-	else if (e_beast_spirit_type_spirit == item_type)//³á°ò»ê
+	else if (e_beast_spirit_type_spirit == item_type)//ï¿½ï¿½ï¿½ï¿½
 	{
 		for (int32 i = 0; i < MAX_BEAST_SPIRIT_NUM; i++)
 		{
-			if (GET_BAG(e_bag_type_spirit_beast_spirit)[i].is_valid())//Ë³Ðò²åÈë
+			if (GET_BAG(e_bag_type_spirit_beast_spirit)[i].is_valid())//Ë³ï¿½ï¿½ï¿½ï¿½ï¿½
 			{
 				citem* item_spirit_beast_spirit = get_item(GET_BAG(e_bag_type_spirit_beast_spirit)[i]);
 				if (nullptr != item_spirit_beast_spirit && item_spirit_beast_spirit->get_data_info(e_item_info_info_id) == item_id)
@@ -13667,7 +13667,7 @@ bool item_set::set_mount_or_wing_beast_spirit_bag_data(int32 item_id, int32 item
 						}
 						else
 						{
-							return false;//ÒÑÂú¼¶
+							return false;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 						}
 
 					}
@@ -13688,7 +13688,7 @@ bool item_set::set_mount_or_wing_beast_spirit_bag_data(int32 item_id, int32 item
 						}
 						else
 						{
-							return false;//ÒÑÂú¼¶
+							return false;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 						}
 					}
 				}
@@ -13722,7 +13722,7 @@ bool item_set::set_mount_or_wing_beast_spirit_bag_data(int32 item_id, int32 item
 
 void item_set::change_beast_spirit_att(int32 beast_spirit_type, bool is_add_att)
 {
-	if (beast_spirit_type == e_beast_spirit_type_mount)//×øÆï»ê
+	if (beast_spirit_type == e_beast_spirit_type_mount)//ï¿½ï¿½ï¿½ï¿½ï¿½
 	{
 		for (int32 i = 0; i < MAX_BEAST_SPIRIT_NUM; i++)
 		{
@@ -13744,7 +13744,7 @@ void item_set::change_beast_spirit_att(int32 beast_spirit_type, bool is_add_att)
 			}
 		}
 	}
-	else if (beast_spirit_type == e_beast_spirit_type_wing)//³á°ò»ê
+	else if (beast_spirit_type == e_beast_spirit_type_wing)//ï¿½ï¿½ï¿½ï¿½
 	{
 		for (int32 i = 0; i < MAX_BEAST_SPIRIT_NUM; i++)
 		{
@@ -13766,7 +13766,7 @@ void item_set::change_beast_spirit_att(int32 beast_spirit_type, bool is_add_att)
 			}
 		}
 	}
-	else if (beast_spirit_type == e_beast_spirit_type_spirit)//³á°ò»ê
+	else if (beast_spirit_type == e_beast_spirit_type_spirit)//ï¿½ï¿½ï¿½ï¿½
 	{
 		for (int32 i = 0; i < MAX_BEAST_SPIRIT_NUM; i++)
 		{
@@ -13829,7 +13829,7 @@ void item_set::set_mount_att(bool is_add)
 					}
 
 				}
-				if (temp_player.is_valid() == false)  //ÊÇÍæ¼Ò
+				if (temp_player.is_valid() == false)  //ï¿½ï¿½ï¿½ï¿½ï¿½
 				{
 					continue;
 				}
@@ -13867,7 +13867,7 @@ int32 item_set::mount_upgrade(const guid_64& mount_guid, int32 use_up_item)
 	if (mount_ptr->get_data_info(e_item_info_activate) <= 0)
 	{
 		return e_item_string_mount_unlock;
-		//ÐèÒª¸Ä³É×øÆï×¨ÓÐµÄÌáÊ¾
+		//ï¿½ï¿½Òªï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½×¨ï¿½Ðµï¿½ï¿½ï¿½Ê¾
 	}
 	ItemTemplate* temp_item_template_ptr = mount_ptr->get_item_info_ptr();
 	if (temp_item_template_ptr == nullptr)
@@ -13898,7 +13898,7 @@ int32 item_set::mount_upgrade(const guid_64& mount_guid, int32 use_up_item)
 
 	if (real_mount_template_ptr->Type == mount_type_warlord || real_mount_template_ptr->Type == mount_type_lordlegionmem)
 	{
-		//³ÇÖ÷×øÆï²»ÄÜÉý¼¶
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï²»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		return e_item_string_auto_use_money_not_enough;
 	}
 
@@ -13912,18 +13912,18 @@ int32 item_set::mount_upgrade(const guid_64& mount_guid, int32 use_up_item)
 		return e_item_string_unkown;
 	}
 
-	int32 temp_cur_value = temp_player.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_mount); // »îÔ¾¶È
+	int32 temp_cur_value = temp_player.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_mount); // ï¿½ï¿½Ô¾ï¿½ï¿½
 	temp_player.get_welfare_mgr().set_active_degree_info(e_daily_active_degree_type_strengthing_one_mount, temp_cur_value + 1);
 
 	bool is_big_upgrade = false;
-	//µÈ¼¶²»µÈÓÚ×î¸ßµÈ¼¶£¬Éý¼¶
+	//ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµÈ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (real_mount_template_ptr->GradeNow != real_mount_template_ptr->MountGradeMax)
 	{
 		matirial_count = get_item_count(real_mount_template_ptr->UpgradeMatirialId, e_bag_type_bag);
 		if (matirial_count < real_mount_template_ptr->UpgradeMatirialNum)
-		{//ËØ²Ä²»×ã
+		{//ï¿½Ø²Ä²ï¿½ï¿½ï¿½
 			if (use_up_item == 0)
-			{//²»ÓÃ×êÊ¯
+			{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¯
 				return e_item_string_matirial_not_enough;
 			}
 			else
@@ -13940,7 +13940,7 @@ int32 item_set::mount_upgrade(const guid_64& mount_guid, int32 use_up_item)
 
 		if (use_money_instead_matirial)
 		{
-			//´úÌæ²ÄÁÏµÄ×êÊ¯×ã¹»
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½Ê¯ï¿½ã¹»
 			GoodsTemplate* goods_ptr = GET_TEMPLATE(GoodsTemplate, real_mount_template_ptr->UpgradeMatirialShopId);
 			if (goods_ptr != nullptr
 				&& goods_ptr->NewPrice.size() > region_money_num_index)
@@ -13995,15 +13995,15 @@ int32 item_set::mount_upgrade(const guid_64& mount_guid, int32 use_up_item)
 		//set_mount_att(true);
 
 	}
-	//·ñÔòÉý½×
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	else
 	{
 		is_big_upgrade = true;
 		matirial_count = get_item_count(real_mount_template_ptr->LiftingClassMatirialId, e_bag_type_bag);
 		if (matirial_count < real_mount_template_ptr->LiftingClassMatirialNum)
-		{//ËØ²Ä²»×ã
+		{//ï¿½Ø²Ä²ï¿½ï¿½ï¿½
 			if (use_up_item == 0)
-			{//²»ÓÃ×êÊ¯
+			{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¯
 				return e_item_string_matirial_not_enough;
 			}
 			else
@@ -14019,7 +14019,7 @@ int32 item_set::mount_upgrade(const guid_64& mount_guid, int32 use_up_item)
 
 		if (use_money_instead_matirial)
 		{
-			//´úÌæ²ÄÁÏµÄ×êÊ¯×ã¹»
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½Ê¯ï¿½ã¹»
 			GoodsTemplate* goods_ptr = GET_TEMPLATE(GoodsTemplate, real_mount_template_ptr->LiftingClassShopId);
 			if (goods_ptr != nullptr
 				&& goods_ptr->NewPrice.size() > region_money_num_index)
@@ -14085,10 +14085,10 @@ int32 item_set::mount_upgrade(const guid_64& mount_guid, int32 use_up_item)
 	}
 
 
-	//¸üÐÂÅÅÐÐ°ñ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½
 	//sync_ranking_mount();
 
-	//×øÆïÉý½×¹«¸æ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¹ï¿½ï¿½ï¿½
 	if (is_big_upgrade)
 	{
 		int32 current_mount_id = temp_item_template_ptr->logic_id + mount_ptr->get_data_info(e_item_info_upgrade_count);
@@ -14160,7 +14160,7 @@ int32 item_set::fashion_upgrade(const guid_64& fashion_guid, int32 use_up_item, 
 	}
 
 	bool is_big_upgrade = false;
-	//µÈ¼¶²»µÈÓÚ×î¸ßµÈ¼¶£¬Éý¼¶
+	//ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµÈ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (real_fashion_template_ptr->UpgradeMaterial.size() != 0 && real_fashion_template_ptr->UpgradeMaterial[0] > 0)
 	{
 		int32 item_id = real_fashion_template_ptr->UpgradeMaterial[0];
@@ -14268,7 +14268,7 @@ int32 item_set::mount_starupgrade(const guid_64& mount_guid, int32 use_up_item)
 	if (mount_ptr->get_data_info(e_item_info_activate) <= 0)
 	{
 		return e_item_string_mount_unlock;
-		//ÐèÒª¸Ä³É×øÆï×¨ÓÐµÄÌáÊ¾
+		//ï¿½ï¿½Òªï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½×¨ï¿½Ðµï¿½ï¿½ï¿½Ê¾
 	}
 	ItemTemplate* temp_item_template_ptr = mount_ptr->get_item_info_ptr();
 	if (temp_item_template_ptr == nullptr)
@@ -14292,7 +14292,7 @@ int32 item_set::mount_starupgrade(const guid_64& mount_guid, int32 use_up_item)
 
 	if (real_mount_template_ptr->Type == mount_type_warlord || real_mount_template_ptr->Type == mount_type_lordlegionmem)
 	{
-		//³ÇÖ÷×øÆï²»ÄÜÉý¼¶
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï²»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		return e_item_string_auto_use_money_not_enough;
 	}
 
@@ -14313,14 +14313,14 @@ int32 item_set::mount_starupgrade(const guid_64& mount_guid, int32 use_up_item)
 		return e_item_string_unkown;
 	}
 
-	int32 temp_cur_value = temp_player.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_mount); // »îÔ¾¶È
+	int32 temp_cur_value = temp_player.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_mount); // ï¿½ï¿½Ô¾ï¿½ï¿½
 	temp_player.get_welfare_mgr().set_active_degree_info(e_daily_active_degree_type_strengthing_one_mount, temp_cur_value + 1);
 
 	matirial_count = get_item_count(real_mount_template_ptr->UpgradeMatirialId, e_bag_type_bag);
 	if (matirial_count < real_mount_template_ptr->UpgradeMatirialNum)
-	{//ËØ²Ä²»×ã
+	{//ï¿½Ø²Ä²ï¿½ï¿½ï¿½
 		if (use_up_item == 0)
-		{//²»ÓÃ×êÊ¯
+		{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¯
 			return e_item_string_matirial_not_enough;
 		}
 		else
@@ -14332,7 +14332,7 @@ int32 item_set::mount_starupgrade(const guid_64& mount_guid, int32 use_up_item)
 
 	if (use_money_instead_matirial)
 	{
-		//´úÌæ²ÄÁÏµÄ×êÊ¯×ã¹»
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½Ê¯ï¿½ã¹»
 		GoodsTemplate* goods_ptr = GET_TEMPLATE(GoodsTemplate, real_mount_template_ptr->UpgradeMatirialShopId);
 		if (goods_ptr != nullptr
 			&& goods_ptr->NewPrice.size() > region_money_num_index)
@@ -14358,7 +14358,7 @@ int32 item_set::mount_starupgrade(const guid_64& mount_guid, int32 use_up_item)
 	int32 mount_starupgrade_now = mount_ptr->get_data_info(e_item_info_stargrade_count);
 	mount_ptr->set_data_info(e_item_info_stargrade_count, mount_starupgrade_now + 1);
 
-	// ËéÆ¬ÉýÐÇÊôÐÔ¸Ä±ä
+	// ï¿½ï¿½Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¸Ä±ï¿½
 	item_change_att(real_mount_template_ptr->AttArray, 1, false);
 
 	int32 next_mount_real_id = temp_item_template_ptr->logic_id + mount_ptr->get_data_info(e_item_info_stargrade_count) + 1000;
@@ -14368,9 +14368,9 @@ int32 item_set::mount_starupgrade(const guid_64& mount_guid, int32 use_up_item)
 		item_change_att(next_real_mount_template_ptr->AttArray, 1, true);
 
 		// wangsonghao
-		// ±»¶¯¼¼ÄÜ
-		// ÕâÀïÏàµ±ÓÚ»¹ÊÇÖ±½Ó¼Óbuff£¬ºóÃæ»á½øÐÐÐÞ¸Ä£¬Í¨¹ý PassiveSkillManager À´½øÐÐ±»¶¯¼¼ÄÜµÄ¹ÜÀí
-		// ÏÖÔÚÔÝÎ´ÊµÏÖ PassiveSkillManager
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ï¿½àµ±ï¿½Ú»ï¿½ï¿½ï¿½Ö±ï¿½Ó¼ï¿½buffï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸Ä£ï¿½Í¨ï¿½ï¿½ PassiveSkillManager ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÜµÄ¹ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î´Êµï¿½ï¿½ PassiveSkillManager
 		if (next_real_mount_template_ptr->StarBuffId > 0)
 		{
 			PassiveSkillTemplate* passive_skill_template_ptr = GET_TEMPLATE(PassiveSkillTemplate, next_real_mount_template_ptr->StarBuffId);
@@ -14418,7 +14418,7 @@ int32 item_set::mount_illusionupgrade(const guid_64& mount_guid, int32 use_up_it
 	if (mount_ptr->get_data_info(e_item_info_activate) <= 0)
 	{
 		return e_item_string_mount_unlock;
-		//ÐèÒª¸Ä³É×øÆï×¨ÓÐµÄÌáÊ¾
+		//ï¿½ï¿½Òªï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½×¨ï¿½Ðµï¿½ï¿½ï¿½Ê¾
 	}
 	ItemTemplate* temp_item_template_ptr = mount_ptr->get_item_info_ptr();
 	if (temp_item_template_ptr == nullptr)
@@ -14450,7 +14450,7 @@ int32 item_set::mount_illusionupgrade(const guid_64& mount_guid, int32 use_up_it
 		return e_item_string_full_level;
 	}
 
-	if (real_mount_template_ptr->PreMountRequirement.size() > 1)  // »Ã»¯Éý¼¶ÐÂÌí¼ÓÇ°ÖÃÌõ¼þ
+	if (real_mount_template_ptr->PreMountRequirement.size() > 1)  // ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	{
 		citem* pre_mount = get_item_by_template_id(real_mount_template_ptr->PreMountRequirement[0]);
 		if (pre_mount == nullptr)
@@ -14462,14 +14462,14 @@ int32 item_set::mount_illusionupgrade(const guid_64& mount_guid, int32 use_up_it
 			return e_item_string_unkown;
 		}
 	}
-	int32 temp_cur_value = temp_player.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_mount); // »îÔ¾¶È
+	int32 temp_cur_value = temp_player.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_mount); // ï¿½ï¿½Ô¾ï¿½ï¿½
 	temp_player.get_welfare_mgr().set_active_degree_info(e_daily_active_degree_type_strengthing_one_mount, temp_cur_value + 1);
 
 	matirial_count = get_item_count(real_mount_template_ptr->UpgradeMatirialId, e_bag_type_bag);
 	if (matirial_count < real_mount_template_ptr->UpgradeMatirialNum)
-	{//ËØ²Ä²»×ã
+	{//ï¿½Ø²Ä²ï¿½ï¿½ï¿½
 		if (use_up_item == 0)
-		{//²»ÓÃ×êÊ¯
+		{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¯
 			return e_item_string_matirial_not_enough;
 		}
 		else
@@ -14481,7 +14481,7 @@ int32 item_set::mount_illusionupgrade(const guid_64& mount_guid, int32 use_up_it
 
 	if (use_money_instead_matirial)
 	{
-		//´úÌæ²ÄÁÏµÄ×êÊ¯×ã¹»
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½Ê¯ï¿½ã¹»
 		GoodsTemplate* goods_ptr = GET_TEMPLATE(GoodsTemplate, real_mount_template_ptr->UpgradeMatirialShopId);
 		if (goods_ptr != nullptr
 			&& goods_ptr->NewPrice.size() > region_money_num_index)
@@ -14512,9 +14512,9 @@ int32 item_set::mount_illusionupgrade(const guid_64& mount_guid, int32 use_up_it
 		item_change_att(mount_ptr->get_mount_template_ptr()->AttArray, 1, true);
 
 		// wangsonghao
-		// ±»¶¯¼¼ÄÜ
-		// ÕâÀïÏàµ±ÓÚ»¹ÊÇÖ±½Ó¼Óbuff£¬ºóÃæ»á½øÐÐÐÞ¸Ä£¬Í¨¹ý PassiveSkillManager À´½øÐÐ±»¶¯¼¼ÄÜµÄ¹ÜÀí
-		// ÏÖÔÚÔÝÎ´ÊµÏÖ PassiveSkillManager
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ï¿½àµ±ï¿½Ú»ï¿½ï¿½ï¿½Ö±ï¿½Ó¼ï¿½buffï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸Ä£ï¿½Í¨ï¿½ï¿½ PassiveSkillManager ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÜµÄ¹ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î´Êµï¿½ï¿½ PassiveSkillManager
 		if (mount_ptr->get_mount_template_ptr()->StarBuffId > 0)
 		{
 			star_skill_unlock(mount_guid, mount_ptr->get_data_info(e_item_info_upgrade_count), false, false);
@@ -14575,7 +14575,7 @@ int32 item_set::mount_unlock(const guid_64& mount_guid)
 	bool matirial_cost = false;
 	bool money_cost = false;
 
-	//ÅÐ¶ÏÇ®
+	//ï¿½Ð¶ï¿½Ç®
 	if (temp_mount_template_ptr->UnlockMoneyRequirement.size() > 1)
 	{
 		money_cost = true;
@@ -14590,7 +14590,7 @@ int32 item_set::mount_unlock(const guid_64& mount_guid)
 		money_done = true;
 	}
 
-	//ÅÐ¶Ï²ÄÁÏ
+	//ï¿½Ð¶Ï²ï¿½ï¿½ï¿½
 	if (temp_mount_template_ptr->UnlockMatirialRequirement.size() > 1)
 	{
 		matirial_cost = true;
@@ -14607,7 +14607,7 @@ int32 item_set::mount_unlock(const guid_64& mount_guid)
 		matirial_done = true;
 	}
 
-	//ÅÐ¶ÏÇ°ÖÃ×øÆï
+	//ï¿½Ð¶ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (temp_mount_template_ptr->PreMountRequirement.size() > 1)
 	{
 		citem* pre_mount = get_item_by_template_id(temp_mount_template_ptr->PreMountRequirement[0]);
@@ -14645,10 +14645,10 @@ int32 item_set::mount_unlock(const guid_64& mount_guid)
 
 		show_this_mount(temp_mount_item, -1);
 
-		//¸üÐÂÅÅÐÐ°ñ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½
 		//sync_ranking_mount();
 
-		// ½âËø×øÆï¹«¸æ
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¹«ï¿½ï¿½
 		if (temp_mount_template_ptr->NoticeId > 0)
 		{
 			s_chat_notice_info notice_data;
@@ -14673,7 +14673,7 @@ int32 item_set::mount_unlock(const guid_64& mount_guid)
 
 void  item_set::sync_ranking_mount()
 {
-	//Ä¿Ç°×ÜÕ½Á¦¼ÆËã¾ÍÊÇËùÓÐÀàÐÍµÄ×øÆïµÄÕ½Á¦µÄºÍ
+	//Ä¿Ç°ï¿½ï¿½Õ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ½ï¿½ï¿½ï¿½Äºï¿½
 	int32	sum_fight_num = 0;
 	int32	max_fight_num = 0;
 	citem* highest_mount_item = nullptr;
@@ -14722,7 +14722,7 @@ void  item_set::sync_ranking_mount()
 
 void  item_set::sync_ranking_spirit()
 {
-	//¾«ÁéÕ½Á¦
+	//ï¿½ï¿½ï¿½ï¿½Õ½ï¿½ï¿½
 	int32	sum_fight_num = 0;
 	player& temp_player = unit_man::get_player(m_unit_array_index);
 	if (temp_player.is_valid() == false)
@@ -15078,7 +15078,7 @@ citem* item_set::get_illusion_range_mount_or_wing(citem* item_mount_or_wing)
 		}
 		else
 		{
-			return nullptr;//´«½øÀ´µÄ×øÆïÊÇÔ­Ê¼×øÆï
+			return nullptr;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­Ê¼ï¿½ï¿½ï¿½ï¿½
 		}
 
 	}
@@ -15109,7 +15109,7 @@ citem* item_set::get_illusion_range_mount_or_wing(citem* item_mount_or_wing)
 		}
 		else
 		{
-			return nullptr;//´«½øÀ´µÄ³á°òÊÇÔ­Ê¼³á°ò
+			return nullptr;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½Ô­Ê¼ï¿½ï¿½ï¿½
 		}
 	}
 
@@ -15329,21 +15329,21 @@ void item_set::set_quick_mount_call_array(guid_64* guid_array)
 
 		if (temp_item == nullptr || temp_item->get_item_inst().data_ary[e_item_info_activate] <= 0)
 		{
-			//ÎïÆ·²»´æÔÚ»òÕßÃ»¼¤»î
+			//ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½Ú»ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
 			m_quick_call_mount_array[i] = guid_64(0, 0);
 			continue;
 		}
 		ItemTemplate* temp_template = temp_item->get_item_info_ptr();
 		if (temp_template == nullptr)
 		{
-			//±í¸ñÓÐÎó
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			m_quick_call_mount_array[i] = guid_64(0, 0);
 			continue;
 		}
 
 		if (temp_template->item_type != e_item_type_mount)
 		{
-			//²»ÊÇ×øÆï
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			m_quick_call_mount_array[i] = guid_64(0, 0);
 			continue;
 		}
@@ -15405,7 +15405,7 @@ void item_set::get_hope_item(int32 get_typ)
 	item_proto_item_hope_item_get_end msg;
 	msg.set_get_typ(get_typ);
 
-	//ÏÈÉèÖÃÎª³É¹¦£¨0£©£¬Ê§°ÜÊ±ºòÔÙµ¥¶ÀÉèÖÃ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½É¹ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ùµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	msg.set_get_result(0);
 
 	player& temp_player = unit_man::get_player(m_unit_array_index);
@@ -15444,7 +15444,7 @@ void item_set::get_hope_item(int32 get_typ)
 		int32 cur_time = time_helper::get_cur_time_new().second;
 		if (max_interval_time > (cur_time - last_get_time))
 		{
-			//Ã»µ½Ê±
+			//Ã»ï¿½ï¿½Ê±
 			msg.set_get_result(e_item_string_cant_free_get_hope_item);
 			temp_player.send_message_to_self(&msg, e_msgindex_s2c_get_hope_item_end);
 			return;
@@ -15462,7 +15462,7 @@ void item_set::get_hope_item(int32 get_typ)
 				drop_template_id = rare_drop_id;
 				temp_player.set_unit_info(e_role_info_hope_value, 0);
 				temp_player.send_info_one(e_role_info_hope_value);
-				//³éµ½Ò»´Î±£µ×°ü£¬¾ÍÇåÁã×£¸£Öµ
+				//ï¿½éµ½Ò»ï¿½Î±ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×£ï¿½ï¿½Öµ
 			}
 			else
 			{
@@ -15476,7 +15476,7 @@ void item_set::get_hope_item(int32 get_typ)
 				{
 					temp_player.set_unit_info(e_role_info_hope_value, 0);
 					temp_player.send_info_one(e_role_info_hope_value);
-					//³éµ½Ò»´Î±£µ×°ü£¬¾ÍÇåÁã×£¸£Öµ
+					//ï¿½éµ½Ò»ï¿½Î±ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×£ï¿½ï¿½Öµ
 				}
 			}
 			std::vector<s_item_template_info> item_drop_list_with_att;
@@ -15485,14 +15485,14 @@ void item_set::get_hope_item(int32 get_typ)
 
 			if (item_drop_list_with_att.empty())
 			{
-				//²»¿ÉÄÜÉ¶¶¼Ã»³éµ½
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¶ï¿½ï¿½Ã»ï¿½éµ½
 				msg.set_get_result(e_item_string_unkown);
 				temp_player.send_message_to_self(&msg, e_msgindex_s2c_get_hope_item_end);
 				return;
 			}
 			temp_item_with_num.m_item_id = item_drop_list_with_att[0].m_item_id;
 			temp_item_with_num.m_item_num = item_drop_list_with_att.size();
-			//±ØÐëÖ»ÓÐÒ»ÖÖId£¬µ«ÊÇ¿ÉÒÔÊÇ¶à¸ö
+			//ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½Ò»ï¿½ï¿½Idï¿½ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½ï¿½Ç¶ï¿½ï¿½
 			final_list.push_back(temp_item_with_num);
 
 			int32 cur_get_time = time_helper::get_cur_time_new().second;
@@ -15518,7 +15518,7 @@ void item_set::get_hope_item(int32 get_typ)
 				drop_template_id = rare_drop_id;
 				temp_player.set_unit_info(e_role_info_hope_value, 0);
 				temp_player.send_info_one(e_role_info_hope_value);
-				//³éµ½Ò»´Î±£µ×°ü£¬¾ÍÇåÁã×£¸£Öµ
+				//ï¿½éµ½Ò»ï¿½Î±ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×£ï¿½ï¿½Öµ
 			}
 			else
 			{
@@ -15532,7 +15532,7 @@ void item_set::get_hope_item(int32 get_typ)
 				{
 					temp_player.set_unit_info(e_role_info_hope_value, 0);
 					temp_player.send_info_one(e_role_info_hope_value);
-					//³éµ½Ò»´Î±£µ×°ü£¬¾ÍÇåÁã×£¸£Öµ
+					//ï¿½éµ½Ò»ï¿½Î±ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×£ï¿½ï¿½Öµ
 				}
 			}
 			std::vector<s_item_template_info> item_drop_list_with_att;
@@ -15541,21 +15541,21 @@ void item_set::get_hope_item(int32 get_typ)
 
 			if (item_drop_list_with_att.empty())
 			{
-				//²»¿ÉÄÜÉ¶¶¼Ã»³éµ½
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¶ï¿½ï¿½Ã»ï¿½éµ½
 				msg.set_get_result(e_item_string_unkown);
 				temp_player.send_message_to_self(&msg, e_msgindex_s2c_get_hope_item_end);
 				return;
 			}
 			temp_item_with_num.m_item_id = item_drop_list_with_att[0].m_item_id;
 			temp_item_with_num.m_item_num = item_drop_list_with_att.size();
-			//±ØÐëÖ»ÓÐÒ»ÖÖId£¬µ«ÊÇ¿ÉÒÔÊÇ¶à¸ö
+			//ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½Ò»ï¿½ï¿½Idï¿½ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½ï¿½Ç¶ï¿½ï¿½
 			final_list.push_back(temp_item_with_num);
 
 			cost_item_by_id_with_lock_states(e_server_log_del_item_hope_item_one, 0, hop_item_get_voucher_id, 1, 1);
 		}
 		else
 		{
-			//¿Í»§¶ËÃ»ÓÐÊ¹ÓÃ¾íµÄ°´Å¥£¬ÊÇÍ¨¹ýÅÐ¶Ï Ã»µ½Ê± + ÓÐ¾í À´·¢ ÓÃ¾í³éÒ»¸öµÄÏûÏ¢µÄ£¬ËùÒÔ²»Ó¦¸Ã³öÏÖÃ»ÓÐ¾íµÄÇé¿ö
+			//ï¿½Í»ï¿½ï¿½ï¿½Ã»ï¿½ï¿½Ê¹ï¿½Ã¾ï¿½ï¿½Ä°ï¿½Å¥ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½Ð¶ï¿½ Ã»ï¿½ï¿½Ê± + ï¿½Ð¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã¾ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½Ä£ï¿½ï¿½ï¿½ï¿½Ô²ï¿½Ó¦ï¿½Ã³ï¿½ï¿½ï¿½Ã»ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		}
 	}
 	break;
@@ -15579,7 +15579,7 @@ void item_set::get_hope_item(int32 get_typ)
 					drop_template_id = rare_drop_id;
 					temp_player.set_unit_info(e_role_info_hope_value, 0);
 					temp_player.send_info_one(e_role_info_hope_value);
-					//³éµ½Ò»´Î±£µ×°ü£¬¾ÍÇåÁã×£¸£Öµ
+					//ï¿½éµ½Ò»ï¿½Î±ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×£ï¿½ï¿½Öµ
 				}
 				else
 				{
@@ -15593,7 +15593,7 @@ void item_set::get_hope_item(int32 get_typ)
 					{
 						temp_player.set_unit_info(e_role_info_hope_value, 0);
 						temp_player.send_info_one(e_role_info_hope_value);
-						//³éµ½Ò»´Î±£µ×°ü£¬¾ÍÇåÁã×£¸£Öµ
+						//ï¿½éµ½Ò»ï¿½Î±ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×£ï¿½ï¿½Öµ
 					}
 				}
 				std::vector<s_item_template_info> item_drop_list_with_att;
@@ -15602,21 +15602,21 @@ void item_set::get_hope_item(int32 get_typ)
 
 				if (item_drop_list_with_att.empty())
 				{
-					//²»¿ÉÄÜÉ¶¶¼Ã»³éµ½
+					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¶ï¿½ï¿½Ã»ï¿½éµ½
 					msg.set_get_result(e_item_string_unkown);
 					temp_player.send_message_to_self(&msg, e_msgindex_s2c_get_hope_item_end);
 					return;
 				}
 				temp_item_with_num.m_item_id = item_drop_list_with_att[0].m_item_id;
 				temp_item_with_num.m_item_num = item_drop_list_with_att.size();
-				//±ØÐëÖ»ÓÐÒ»ÖÖId£¬µ«ÊÇ¿ÉÒÔÊÇ¶à¸ö
+				//ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½Ò»ï¿½ï¿½Idï¿½ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½ï¿½Ç¶ï¿½ï¿½
 				final_list.push_back(temp_item_with_num);
 			}
 			cost_item_by_id_with_lock_states(e_server_log_del_item_hope_item_ten, 0, hop_item_get_voucher_id, 10, 1);
 		}
 		else
 		{
-			//¿Í»§¶ËÃ»ÓÐÊ¹ÓÃ¾íµÄ°´Å¥£¬ÊÇÍ¨¹ýÅÐ¶Ï Ã»µ½Ê± + ÓÐ¾í À´·¢ ÓÃ¾í³éÒ»¸öµÄÏûÏ¢µÄ£¬ËùÒÔ²»Ó¦¸Ã³öÏÖÃ»ÓÐ¾íµÄÇé¿ö
+			//ï¿½Í»ï¿½ï¿½ï¿½Ã»ï¿½ï¿½Ê¹ï¿½Ã¾ï¿½ï¿½Ä°ï¿½Å¥ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½Ð¶ï¿½ Ã»ï¿½ï¿½Ê± + ï¿½Ð¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã¾ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½Ä£ï¿½ï¿½ï¿½ï¿½Ô²ï¿½Ó¦ï¿½Ã³ï¿½ï¿½ï¿½Ã»ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		}
 	}
 	break;
@@ -15641,7 +15641,7 @@ void item_set::get_hope_item(int32 get_typ)
 			drop_template_id = rare_drop_id;
 			temp_player.set_unit_info(e_role_info_hope_value, 0);
 			temp_player.send_info_one(e_role_info_hope_value);
-			//³éµ½Ò»´Î±£µ×°ü£¬¾ÍÇåÁã×£¸£Öµ
+			//ï¿½éµ½Ò»ï¿½Î±ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×£ï¿½ï¿½Öµ
 		}
 		else
 		{
@@ -15655,7 +15655,7 @@ void item_set::get_hope_item(int32 get_typ)
 			{
 				temp_player.set_unit_info(e_role_info_hope_value, 0);
 				temp_player.send_info_one(e_role_info_hope_value);
-				//³éµ½Ò»´Î±£µ×°ü£¬¾ÍÇåÁã×£¸£Öµ
+				//ï¿½éµ½Ò»ï¿½Î±ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×£ï¿½ï¿½Öµ
 			}
 		}
 		std::vector<s_item_template_info> item_drop_list_with_att;
@@ -15664,14 +15664,14 @@ void item_set::get_hope_item(int32 get_typ)
 
 		if (item_drop_list_with_att.empty())
 		{
-			//²»¿ÉÄÜÉ¶¶¼Ã»³éµ½
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¶ï¿½ï¿½Ã»ï¿½éµ½
 			msg.set_get_result(e_item_string_unkown);
 			temp_player.send_message_to_self(&msg, e_msgindex_s2c_get_hope_item_end);
 			return;
 		}
 		temp_item_with_num.m_item_id = item_drop_list_with_att[0].m_item_id;
 		temp_item_with_num.m_item_num = item_drop_list_with_att.size();
-		//±ØÐëÖ»ÓÐÒ»ÖÖId£¬µ«ÊÇ¿ÉÒÔÊÇ¶à¸ö
+		//ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½Ò»ï¿½ï¿½Idï¿½ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½ï¿½Ç¶ï¿½ï¿½
 		final_list.push_back(temp_item_with_num);
 
 		temp_player.cut_money(e_money_type_jewel, cost, e_server_log_cut_money_hope_item_one);
@@ -15703,7 +15703,7 @@ void item_set::get_hope_item(int32 get_typ)
 				drop_template_id = rare_drop_id;
 				temp_player.set_unit_info(e_role_info_hope_value, 0);
 				temp_player.send_info_one(e_role_info_hope_value);
-				//³éµ½Ò»´Î±£µ×°ü£¬¾ÍÇåÁã×£¸£Öµ
+				//ï¿½éµ½Ò»ï¿½Î±ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×£ï¿½ï¿½Öµ
 			}
 			else
 			{
@@ -15717,7 +15717,7 @@ void item_set::get_hope_item(int32 get_typ)
 				{
 					temp_player.set_unit_info(e_role_info_hope_value, 0);
 					temp_player.send_info_one(e_role_info_hope_value);
-					//³éµ½Ò»´Î±£µ×°ü£¬¾ÍÇåÁã×£¸£Öµ
+					//ï¿½éµ½Ò»ï¿½Î±ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×£ï¿½ï¿½Öµ
 				}
 			}
 			std::vector<s_item_template_info> item_drop_list_with_att;
@@ -15726,14 +15726,14 @@ void item_set::get_hope_item(int32 get_typ)
 
 			if (item_drop_list_with_att.empty())
 			{
-				//²»¿ÉÄÜÉ¶¶¼Ã»³éµ½
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¶ï¿½ï¿½Ã»ï¿½éµ½
 				msg.set_get_result(e_item_string_unkown);
 				temp_player.send_message_to_self(&msg, e_msgindex_s2c_get_hope_item_end);
 				return;
 			}
 			temp_item_with_num.m_item_id = item_drop_list_with_att[0].m_item_id;
 			temp_item_with_num.m_item_num = item_drop_list_with_att.size();
-			//±ØÐëÖ»ÓÐÒ»ÖÖId£¬µ«ÊÇ¿ÉÒÔÊÇ¶à¸ö
+			//ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½Ò»ï¿½ï¿½Idï¿½ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½ï¿½Ç¶ï¿½ï¿½
 			final_list.push_back(temp_item_with_num);
 		}
 
@@ -15772,7 +15772,7 @@ void item_set::get_hope_item(int32 get_typ)
 	s_item_info item_data[chat_max_item];
 	int32 item_num = 0;
 
-	//Æí¸£¹«¸æ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (msg.get_result() == 0 && final_list.size() > 0)
 	{
 		bool if_notice = false;
@@ -15802,7 +15802,7 @@ void item_set::get_hope_item(int32 get_typ)
 			}
 
 
-			//Æí¸£¼ÇÂ¼
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼
 			cs2ws_add_new_draw_record add_record_msg;
 			add_record_msg.record_info.info_guid = guid_gen::make_guid(temp_player.get_unit_guid());
 			add_record_msg.record_info.role_guid = temp_player.get_unit_guid();
@@ -16182,12 +16182,12 @@ int32 item_set::get_wing_and_total_feather_star_num()
 					WingTemplate* wing_ptr = GET_TEMPLATE(WingTemplate, real_id);
 					if (wing_ptr != nullptr)
 					{
-						//ÆÕÍ¨³á°ò¶à¸öÓðÒí¹«ÓÃÒ»¸öµÈ¼¶ËùÒÔÖ»ÐèÒª¼ÆËãÐÇ¼¶¾ÍÐÐ
+						//ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Ç¼ï¿½ï¿½ï¿½ï¿½ï¿½
 						if (wing_ptr->Type == e_item_wing_type_normal)
 						{
 							return_value += wing_ptr->StarNow;
 						}
-						else if (wing_ptr->Type != e_item_wing_type_special_santo)	//³ÇÖ÷ÓðÒí²»¼ÆËã
+						else if (wing_ptr->Type != e_item_wing_type_special_santo)	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 						{
 							return_value += (wing_ptr->UpgradeNow - 1) * wing_ptr->WingAddStarMax + wing_ptr->StarNow;
 						}
@@ -16419,7 +16419,7 @@ int32 item_set::add_money_by_card(const std::vector<int32>& money_card, const in
 		if (money_id == e_money_type_jewel)
 		{
 			int32 cur_real_recharge_jewel_num = temp_player.get_unit_info(e_role_info_real_recharge_jewel_num);
-			//ÅÐ¶ÏÊÇ·ñÊÇµÚÒ»´ÎÊ¹ÓÃ³äÖµ¿¨
+			//ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½Çµï¿½Ò»ï¿½ï¿½Ê¹ï¿½Ã³ï¿½Öµï¿½ï¿½
 			if (cur_real_recharge_jewel_num == 0)
 			{
 				int32 cur_time = time_helper::get_today_zero_time_info().second;
@@ -16434,7 +16434,7 @@ int32 item_set::add_money_by_card(const std::vector<int32>& money_card, const in
 			//int32 cur_daily_recharge_num = temp_player.get_unit_info(e_role_info_daily_recharge_num);
 			//temp_player.set_unit_info(e_role_info_daily_recharge_num, cur_daily_recharge_num + money_num);
 
-			//Í¬²½³äÖµÅÅÐÐ°óÐÅÏ¢
+			//Í¬ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½Ð°ï¿½ï¿½ï¿½Ï¢
 			temp_player.get_ranking_mgr().set_and_sync_ranking_data(e_RankingIndex_recharge_rmb, temp_player.get_unit_info(e_role_info_real_recharge_jewel_num));
 
 			//temp_player.send_info_one(e_role_info_daily_recharge_num);
@@ -16461,7 +16461,7 @@ int32 item_set::open_fruit_bag(const PropBasicAttributeTemplate* prop_template, 
 	int32 has_prop_num = 0;
 	for (; has_prop_num < package_num; has_prop_num++)
 	{
-		// Ê¹½«ÓÀ¾Ã¸Ä±äÍæ¼ÒÊôÐÔµÄÐ§¹ûÉúÐ§
+		// Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½Ã¸Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôµï¿½Ð§ï¿½ï¿½ï¿½ï¿½Ð§
 		int32 len = prop_template->RoleAttributeChange.size();
 		if (len > 0 && len % e_att_one_max == 0)
 		{
@@ -16556,7 +16556,7 @@ int32 item_set::open_package_bag(const int32 drop_template_id, const int32 packa
 				item_data_num++;
 			}
 		}
-		if (0 < notice_id && chat_max_item <= item_data_num)								// ·¢ËÍÎïÆ·»ñµÃ¹«¸æ
+		if (0 < notice_id && chat_max_item <= item_data_num)								// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ã¹ï¿½ï¿½ï¿½
 		{
 			player& temp_player = unit_man::get_player(m_unit_array_index);
 			if (temp_player.is_valid() == false)
@@ -16569,7 +16569,7 @@ int32 item_set::open_package_bag(const int32 drop_template_id, const int32 packa
 			std::vector<std::string> notice_str_params_vec;
 			notice_str_params_vec.push_back(notice_str_id);
 			notice_str_params_vec.push_back(temp_player.get_name());
-			//ÒòÓ¢ÎÄ·­ÒëÓëÖÐÎÄÓï·¨²»Í¬ÐèÒª½«²ÎÊý2Óë²ÎÊý3µÄÏÈºóË³Ðòµ÷×ª
+			//ï¿½ï¿½Ó¢ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï·¨ï¿½ï¿½Í¬ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½ï¿½Èºï¿½Ë³ï¿½ï¿½ï¿½×ª
 			if (region_template_ptr->RegionCode == e_version_region_type_en)
 			{
 				notice_str_params_vec.push_back(item_names_str);
@@ -16603,7 +16603,7 @@ int32 item_set::open_package_bag(const int32 drop_template_id, const int32 packa
 		}
 	}
 
-	if (0 < notice_id && 0 < item_data_num)								// ·¢ËÍÎïÆ·»ñµÃ¹«¸æ
+	if (0 < notice_id && 0 < item_data_num)								// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ã¹ï¿½ï¿½ï¿½
 	{
 		player& temp_player = unit_man::get_player(m_unit_array_index);
 		if (temp_player.is_valid() == false)
@@ -16728,7 +16728,7 @@ int32 item_set::open_choose_package_bag(const int32 logic_id, const int32 packag
 		}
 	}
 
-	if (0 < notice_id && 0 < item_data_num)								// ·¢ËÍÎïÆ·»ñµÃ¹«¸æ
+	if (0 < notice_id && 0 < item_data_num)								// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ã¹ï¿½ï¿½ï¿½
 	{
 		player& temp_player = unit_man::get_player(m_unit_array_index);
 		if (temp_player.is_valid() == false)
@@ -16741,7 +16741,7 @@ int32 item_set::open_choose_package_bag(const int32 logic_id, const int32 packag
 		std::vector<std::string> notice_str_params_vec;
 		notice_str_params_vec.push_back(notice_str_id);
 		notice_str_params_vec.push_back(temp_player.get_name());
-		//ÒòÓ¢ÎÄ·­ÒëÓëÖÐÎÄÓï·¨²»Í¬ÐèÒª½«²ÎÊý2Óë²ÎÊý3µÄÏÈºóË³Ðòµ÷×ª
+		//ï¿½ï¿½Ó¢ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï·¨ï¿½ï¿½Í¬ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½ï¿½Èºï¿½Ë³ï¿½ï¿½ï¿½×ª
 		if (region_template_ptr->RegionCode == e_version_region_type_en)
 		{
 			notice_str_params_vec.push_back(item_names_str);
@@ -16814,7 +16814,7 @@ int32 item_set::open_package_elementbag(const int32 drop_template_id, const int3
 	put_in_bag(item_array);
 	item_use_end_result = e_error_code_success;
 
-	//·¢ËÍ¹«¸æ
+	//ï¿½ï¿½ï¿½Í¹ï¿½ï¿½ï¿½
 	if (notice_id > 0)
 	{
 		if (notice_data.item_data.size() > 0)
@@ -16858,7 +16858,7 @@ int32 item_set::open_package_wingbag(const int32 drop_template_id, item_proto_it
 	ItemTemplate* item_template_ptr = GET_TEMPLATE(ItemTemplate, item_template_id);
 	if (nullptr == item_template_ptr)
 	{
-		// Êý¾Ý´íÎó
+		// ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
 		item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 		return 0;
 	}
@@ -16869,14 +16869,14 @@ int32 item_set::open_package_wingbag(const int32 drop_template_id, item_proto_it
 		WingTemplate* item_wing_illustion_template_ptr = GET_TEMPLATE(WingTemplate, item_wing_illustion_template_id);
 		if (nullptr == item_wing_illustion_template_ptr)
 		{
-			// Êý¾Ý´íÎó
+			// ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
 			item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 			return 0;
 		}
 
 		if (item_wing_illustion_template_ptr->PreWingRequirement.size() <= 0)
 		{
-			// Êý¾Ý´íÎó
+			// ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
 			item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 			return 0;
 		}
@@ -16884,18 +16884,18 @@ int32 item_set::open_package_wingbag(const int32 drop_template_id, item_proto_it
 		const citem* item_wing_origin_template_ptr = get_item_by_template_id(item_wing_origin_template_id);
 		if (nullptr == item_wing_origin_template_ptr)
 		{
-			// Êý¾Ý´íÎó
+			// ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
 			item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 			return 0;
 		}
-		// ÅÐ¶Ï±¾ÌåÊÇ·ñ½âËø
+		// ï¿½Ð¶Ï±ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½
 		if (0 == item_wing_origin_template_ptr->get_data_info(e_item_info_activate))
 		{
-			// Î´´ïµ½½âËøÌõ¼þ
+			// Î´ï¿½ïµ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			item_use_end_msg.set_result(e_error_code_item_cant_unlock_wing_illusion);
 			return 0;
 		}
-		// ÅÐ¶ÏÊÇ·ñÂú×ãµÈ¼¶ÒªÇó
+		// ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½È¼ï¿½Òªï¿½ï¿½
 		/*				if (item_wing_illustion_template_ptr->IllusionOpenClass > (item_wing_origin_template_ptr->get_data_info(e_item_info_upgrade_count) + 1))
 		{
 		item_use_end_msg.set_result(e_error_code_item_cant_unlock_illusion);
@@ -16916,7 +16916,7 @@ int32 item_set::open_package_wingbag(const int32 drop_template_id, item_proto_it
 	}
 	if (1 == new_wing_item->get_data_info(e_item_info_activate))
 	{
-		// ²»ÄÜÖØ¸´¼¤»î
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½
 		item_use_end_msg.set_result(e_error_code_item_has_unlocked);
 		return 0;
 	}
@@ -16960,7 +16960,7 @@ faith::int32 item_set::open_package_mountbag(const int32 drop_template_id, item_
 	ItemTemplate* item_template_ptr = GET_TEMPLATE(ItemTemplate, item_template_id);
 	if (nullptr == item_template_ptr)
 	{
-		// Êý¾Ý´íÎó
+		// ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
 		item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 		return 0;
 	}
@@ -16975,14 +16975,14 @@ faith::int32 item_set::open_package_mountbag(const int32 drop_template_id, item_
 		MountTemplate* item_mount_illustion_template_ptr = GET_TEMPLATE(MountTemplate, item_mount_illustion_template_id);
 		if (nullptr == item_mount_illustion_template_ptr)
 		{
-			// Êý¾Ý´íÎó
+			// ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
 			item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 			return 0;
 		}
 
 		if (item_mount_illustion_template_ptr->PreMountRequirement.size() <= 1)
 		{
-			// Êý¾Ý´íÎó
+			// ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
 			item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 			return 0;
 		}
@@ -16990,21 +16990,21 @@ faith::int32 item_set::open_package_mountbag(const int32 drop_template_id, item_
 		item_mount_origin_ptr = get_item_by_template_id(item_mount_origin_template_id);
 		if (nullptr == item_mount_origin_ptr)
 		{
-			// Êý¾Ý´íÎó
+			// ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
 			item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 			return 0;
 		}
-		// ÅÐ¶Ï±¾ÌåÊÇ·ñ½âËø
+		// ï¿½Ð¶Ï±ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½
 		if (0 == item_mount_origin_ptr->get_data_info(e_item_info_activate))
 		{
-			// Î´´ïµ½½âËøÌõ¼þ
+			// Î´ï¿½ïµ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			item_use_end_msg.set_result(e_error_code_item_cant_unlock_mount_illusion);
 			return 0;
 		}
-		// ÅÐ¶ÏÊÇ·ñÂú×ãµÈ¼¶ÒªÇó
+		// ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½È¼ï¿½Òªï¿½ï¿½
 		//if (item_mount_illustion_template_ptr->PreMountRequirement[1] > item_mount_origin_ptr->get_data_info(e_item_info_upgrade_count))
 		//{
-		//	// Î´´ïµ½½âËøÌõ¼þ
+		//	// Î´ï¿½ïµ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		//	item_use_end_msg.set_result(e_error_code_item_cant_unlock_illusion);
 		//	temp_player.send_message_to_self(&item_use_end_msg, e_msgindex_s2c_item_use_end);
 		//	return false;
@@ -17017,14 +17017,14 @@ faith::int32 item_set::open_package_mountbag(const int32 drop_template_id, item_
 		new_mount_item = create_item_by_template(e_server_log_add_item_mount_illusion, 0, item_template_id, 1, 0);
 		if (new_mount_item == nullptr)
 		{
-			// Êý¾Ý´íÎó
+			// ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
 			item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 			return 0;
 		}
 	}
 	if (1 == new_mount_item->get_data_info(e_item_info_activate))
 	{
-		// ²»ÄÜÖØ¸´¼¤»î
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½
 		item_use_end_msg.set_result(e_error_code_item_has_unlocked);
 		temp_player.send_message_to_self(&item_use_end_msg, e_msgindex_s2c_item_use_end);
 		return 0;
@@ -17034,7 +17034,7 @@ faith::int32 item_set::open_package_mountbag(const int32 drop_template_id, item_
 	MountTemplate* new_mount_template_ptr = new_mount_item->get_mount_template_ptr();
 	if (nullptr == new_mount_template_ptr)
 	{
-		// Êý¾Ý´íÎó
+		// ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
 		item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 		return 0;
 	}
@@ -17052,7 +17052,7 @@ faith::int32 item_set::open_package_mountbag(const int32 drop_template_id, item_
 		const int32 illusion_slot = get_mount_illusion_slot(item_template_ptr->logic_id);
 		if (-1 == illusion_slot)
 		{
-			// Êý¾Ý´íÎó
+			// ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
 			item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 			return 0;
 		}
@@ -17096,7 +17096,7 @@ int32 item_set::open_package_time_limit_prop(const int32 drop_template_id, item_
 	ItemTemplate* item_template_ptr = GET_TEMPLATE(ItemTemplate, item_template_id);
 	if (nullptr == item_template_ptr)
 	{
-		// Êý¾Ý´íÎó
+		// ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
 		item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 		return 0;
 	}
@@ -17107,7 +17107,7 @@ int32 item_set::open_package_time_limit_prop(const int32 drop_template_id, item_
 		item_ptr = create_item_by_template(e_server_log_add_item_mount_illusion, 0, item_template_id, 1, 0);
 		if (item_ptr == nullptr)
 		{
-			// Êý¾Ý´íÎó
+			// ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
 			item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 			return 0;
 		}
@@ -17115,7 +17115,7 @@ int32 item_set::open_package_time_limit_prop(const int32 drop_template_id, item_
 
 	if (1 == item_ptr->get_data_info(e_item_info_activate) && 0 == item_ptr->get_data_info(e_item_info_over_time))
 	{
-		// ²»ÄÜÖØ¸´¼¤»î
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½
 		item_use_end_msg.set_result(e_error_code_item_has_unlocked);
 		temp_player.send_message_to_self(&item_use_end_msg, e_msgindex_s2c_item_use_end);
 		return 0;
@@ -17123,7 +17123,7 @@ int32 item_set::open_package_time_limit_prop(const int32 drop_template_id, item_
 
 	item_ptr->set_data_info(e_item_info_activate, 1);
 
-	//ÌåÑé¿¨¿ÉÒÔµþ¼ÓÊ±¼ä
+	//ï¿½ï¿½ï¿½é¿¨ï¿½ï¿½ï¿½Ôµï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 	bool is_equip = true;
 	int32 cur_second_time = time_helper::get_cur_time_new().second;
 	if (cur_second_time >= item_ptr->get_data_info(e_item_info_over_time))
@@ -17134,7 +17134,7 @@ int32 item_set::open_package_time_limit_prop(const int32 drop_template_id, item_
 		}
 		else
 		{
-			if (item_ptr->get_data_info(e_item_info_over_time) < 0)//»¹Ã»ÓÐÊ¹ÓÃ¹ý(ÏÞÊ±Ê±×°Î´×°±¸Ê±Ê±¼ä´æµÄÊÇ¸ºÊý)
+			if (item_ptr->get_data_info(e_item_info_over_time) < 0)//ï¿½ï¿½Ã»ï¿½ï¿½Ê¹ï¿½Ã¹ï¿½(ï¿½ï¿½Ê±Ê±×°Î´×°ï¿½ï¿½Ê±Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½ï¿½ï¿½)
 			{
 				over_time = item_ptr->get_data_info(e_item_info_over_time) - over_time;
 				item_ptr->set_data_info(e_item_info_over_time, over_time);
@@ -17146,7 +17146,7 @@ int32 item_set::open_package_time_limit_prop(const int32 drop_template_id, item_
 			}
 		}
 	}
-	else//Ã»¹ýÆÚ,¾ÍÔÚµ±Ç°Ê±¼äÉÏÐøÊ±¼ä
+	else//Ã»ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Úµï¿½Ç°Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 	{
 		if (over_time == 0)
 		{
@@ -17201,7 +17201,7 @@ int32 item_set::open_package_time_limit_prop(const int32 drop_template_id, item_
 
 int32 faith::item_set::open_const_att_equip_bag(const int32 drop_template_id, const int32 package_num, e_error_code& item_use_end_result, std::vector<s_item_template_info>& get_item_list, citem*& end_item)
 {
-	//¿ª×Ô¶¯Ê¹ÓÃµÄ×°±¸¸£ÀûºÐ Ö»ÓÐÒ»¼þ×°±¸
+	//ï¿½ï¿½ï¿½Ô¶ï¿½Ê¹ï¿½Ãµï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ö»ï¿½ï¿½Ò»ï¿½ï¿½×°ï¿½ï¿½
 	player& player_ref = unit_man::get_player(m_unit_array_index);
 	if (false == player_ref.is_valid())
 	{
@@ -17254,7 +17254,7 @@ int32 item_set::open_rand_equip_package_bag(const int32 drop_template_id, const 
 	{
 		return 0;
 	}
-	int32 notice_id = 0;			//¶Ä×°±¸£¬Ö»»á¿ª³öÒ»¼þ×°±¸
+	int32 notice_id = 0;			//ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½Ö»ï¿½á¿ªï¿½ï¿½Ò»ï¿½ï¿½×°ï¿½ï¿½
 	s_chat_notice_info notice_data;
 	int32 has_opened_package_num = 0;
 	for (int32 package_index = 0; package_index < package_num; package_index++)
@@ -17305,7 +17305,7 @@ int32 item_set::open_rand_equip_package_bag(const int32 drop_template_id, const 
 	}
 	item_use_end_result = e_error_code_success;
 
-	//·¢ËÍ¹«¸æ
+	//ï¿½ï¿½ï¿½Í¹ï¿½ï¿½ï¿½
 	if (notice_id > 0)
 	{
 		if (notice_data.item_data.size() > 0)
@@ -17640,7 +17640,7 @@ e_item_succinct_buff_level item_set::get_succinct_equip_buff_level()
 		int32 cur_buff_level_num = 0;
 		int32 non_equip_num = 0;
 		for (int32 i = e_role_equip_slot_hat; i <= e_role_equip_slot_magic_2; ++i)
-		{//Ä§·¨ÊéºÍ»¤·û¶¼Òª½øÐÐÅÐ¶Ï
+		{//Ä§ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½
 			if (non_equip_num >= e_role_equip_slot_magic_2 - add_buff_need_equip_num)
 			{
 				return e_item_succinct_buff_level_none;
@@ -17902,7 +17902,7 @@ void item_set::set_wedding_init_fashion_state(bool activate)
 {
 	if (false == activate)
 	{
-		//Èç¹ûÊÇÈ¡Ïû¼¤»î ÄÇÃ´¶ÔÒÑ¾­´«µ½ÉíÉÏµÄ½øÐÐÐ¶ÏÂ²Ù×÷
+		//ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã´ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÄ½ï¿½ï¿½ï¿½Ð¶ï¿½Â²ï¿½ï¿½ï¿½
 		for (int32 i = 0; i < e_fashion_equip_slot_max; ++i)
 		{
 			if (GET_BAG(e_bag_type_equip_fasion)[i].is_valid())
@@ -17924,7 +17924,7 @@ void item_set::set_wedding_init_fashion_state(bool activate)
 			{
 				if (item_ptr->get_data_info(e_item_info_activate) && false == activate)
 				{
-					//Àë»é¹Ø±Õ
+					//ï¿½ï¿½ï¿½Ø±ï¿½
 					int32 star_num = item_ptr->get_data_info(e_item_info_upgrade_count);
 					item_ptr->set_data_info(e_item_info_activate, 0);
 					item_ptr->set_data_info(e_item_info_upgrade_count, 0);
@@ -17933,7 +17933,7 @@ void item_set::set_wedding_init_fashion_state(bool activate)
 				}
 				else if (0 == item_ptr->get_data_info(e_item_info_activate) && true == activate)
 				{
-					//½á»é¼¤»î ³õÊ¼ÉèÖÃÎªÒ»¼¶
+					//ï¿½ï¿½é¼¤ï¿½ï¿½ ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ÎªÒ»ï¿½ï¿½
 					item_ptr->set_data_info(e_item_info_activate, 1);
 					item_ptr->set_data_info(e_item_info_upgrade_count, 1);
 					set_fashion_att(item_ptr, true, 1);
@@ -17946,13 +17946,13 @@ void item_set::set_wedding_init_fashion_state(bool activate)
 
 int32 item_set::get_equip_smallest_addon_level()
 {
-	//»ñÈ¡È«Éí×°±¸×·¼ÓµÈ¼¶×îµÍÖµ		
+	//ï¿½ï¿½È¡È«ï¿½ï¿½×°ï¿½ï¿½×·ï¿½ÓµÈ¼ï¿½ï¿½ï¿½ï¿½Öµ		
 	int32 return_value = -1;
 	for (int32 i = e_role_equip_slot_weapon_1; i < e_role_equip_slot_amulet; ++i)
 	{
 		citem* temp_equip_item_ptr = get_item(GET_BAG(e_bag_type_equip)[i]);
 		if (temp_equip_item_ptr == nullptr)
-		{//Ò»¼þ²»´©¶¼²»ÐÐ
+		{//Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			return 0;
 		}
 		if (false == is_equipment_effective(temp_equip_item_ptr->get_item_guid()))
@@ -17969,13 +17969,13 @@ int32 item_set::get_equip_smallest_addon_level()
 
 int32 item_set::get_equip_smallest_awaken_level()
 {
-	//»ñÈ¡È«Éí×°±¸×·¼ÓµÈ¼¶×îµÍÖµ		
+	//ï¿½ï¿½È¡È«ï¿½ï¿½×°ï¿½ï¿½×·ï¿½ÓµÈ¼ï¿½ï¿½ï¿½ï¿½Öµ		
 	int32 return_value = -1;
 	for (int32 i = e_role_equip_slot_weapon_1; i < e_role_equip_slot_amulet; ++i)
 	{
 		citem* temp_equip_item_ptr = get_item(GET_BAG(e_bag_type_equip)[i]);
 		if (temp_equip_item_ptr == nullptr)
-		{//Ò»¼þ²»´©¶¼²»ÐÐ
+		{//Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			return 0;
 		}
 		if (false == is_equipment_effective(temp_equip_item_ptr->get_item_guid()))
@@ -17991,13 +17991,13 @@ int32 item_set::get_equip_smallest_awaken_level()
 }
 int32 item_set::get_equip_smallest_forge_level()
 {
-	//»ñÈ¡È«Éí×°±¸×·¼ÓµÈ¼¶×îµÍÖµ		
+	//ï¿½ï¿½È¡È«ï¿½ï¿½×°ï¿½ï¿½×·ï¿½ÓµÈ¼ï¿½ï¿½ï¿½ï¿½Öµ		
 	int32 return_value = -1;
 	for (int32 i = e_role_equip_slot_weapon_1; i < e_role_equip_slot_amulet; ++i)
 	{
 		citem* temp_equip_item_ptr = get_item(GET_BAG(e_bag_type_equip)[i]);
 		if (temp_equip_item_ptr == nullptr)
-		{//Ò»¼þ²»´©¶¼²»ÐÐ
+		{//Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			return 0;
 		}
 		if (false == is_equipment_effective(temp_equip_item_ptr->get_item_guid()))
@@ -18041,7 +18041,7 @@ int32 item_set::get_equip_smallest_forge_level()
 }
 int32 item_set::get_equip_smallest_enchant_level(bool is_jewelry)
 {
-	//»ñÈ¡È«Éí×°±¸×·¼ÓµÈ¼¶×îµÍÖµ		
+	//ï¿½ï¿½È¡È«ï¿½ï¿½×°ï¿½ï¿½×·ï¿½ÓµÈ¼ï¿½ï¿½ï¿½ï¿½Öµ		
 	int32 return_value = -1;
 
 	std::vector<int32> check_equip_slot;
@@ -18067,7 +18067,7 @@ int32 item_set::get_equip_smallest_enchant_level(bool is_jewelry)
 		citem* temp_equip_item_ptr = get_item(GET_BAG(e_bag_type_equip)[*iter]);
 		if (temp_equip_item_ptr == nullptr)
 		{
-			//Ò»¼þ²»´©¶¼²»ÐÐ
+			//Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			return 0;
 		}
 		if (false == is_equipment_effective(temp_equip_item_ptr->get_item_guid()))
@@ -18076,7 +18076,7 @@ int32 item_set::get_equip_smallest_enchant_level(bool is_jewelry)
 		}
 
 		int32 enchant_value = temp_equip_item_ptr->get_data_info(e_item_info_illusion_had_byte);
-		//ÓÐÒ»¼þÃ»¸½Ä§Ò²²»ÐÐ
+		//ï¿½ï¿½Ò»ï¿½ï¿½Ã»ï¿½ï¿½Ä§Ò²ï¿½ï¿½ï¿½ï¿½
 		if (enchant_value <= 0)
 			return 0;
 		int32 enchant_type = enchant_value % faith::max_enchant_type_num;
@@ -18128,7 +18128,7 @@ int32 item_set::get_equip_smallest_enchant_level_by_type(int32 show_type)
 		citem* temp_equip_item_ptr = get_equip_item_by_slot(e_role_equip_slot(item_slot));
 		if (temp_equip_item_ptr == nullptr)
 		{
-			//Ò»¼þ²»´©¶¼²»ÐÐ
+			//Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			return 0;
 		}
 		if (false == is_equipment_effective(temp_equip_item_ptr->get_item_guid()))
@@ -18137,7 +18137,7 @@ int32 item_set::get_equip_smallest_enchant_level_by_type(int32 show_type)
 		}
 
 		int32 enchant_value = temp_equip_item_ptr->get_data_info(e_item_info_illusion_had_byte);
-		//ÓÐÒ»¼þÃ»¸½Ä§Ò²²»ÐÐ
+		//ï¿½ï¿½Ò»ï¿½ï¿½Ã»ï¿½ï¿½Ä§Ò²ï¿½ï¿½ï¿½ï¿½
 		if (enchant_value <= 0)
 		{
 			return 0;

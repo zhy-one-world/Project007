@@ -11,7 +11,7 @@
 #include "utility/init_unit.h"
 #include "Logic/activity_def.hpp"
 #include "world_server.hpp"
-#include "lua/script_mgr.h"
+
 #include "base/ecs_world.h"
 #include "system/scene/cs_map_mgr_system.h"
 #include "system/scene/cs_map_system.h"
@@ -48,7 +48,7 @@ namespace faith
 		}
 	}
 
-	// ÒÔÃëÎªµ¥Î»µÄÂıtick
+	// ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½tick
 	void legion_ws_city_war::tick_1_sec(const uint64& tick_time)
 	{
 	}
@@ -91,14 +91,14 @@ namespace faith
 		{
 			if (world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_legion_territory_war) && !world_server::getInstance().is_sky_island_server()) 
 			{
-				city_war_territory_mgr::get_instance().territory_war_clear();//Çå¿ÕÆÕÍ¨³ÇÕ½Êı¾İ£¬¿ç·ş³ÇÕ½¿ªÆô
+				city_war_territory_mgr::get_instance().territory_war_clear();//ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½Õ½ï¿½ï¿½ï¿½İ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ½ï¿½ï¿½ï¿½ï¿½
 				m_cross_server_territory_war_state = true;
 			}
 		}
 		if (m_cross_server_territory_war_state) 
 		{
 			if (!world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_legion_territory_war))
-			{//¿ç·ş³ÇÕ½½áÊø
+			{//ï¿½ï¿½ï¿½ï¿½ï¿½Õ½ï¿½ï¿½ï¿½ï¿½
 				m_cross_server_territory_war_state = false;
 			}
 		}
@@ -133,12 +133,12 @@ namespace faith
 		{
 			return;
 		}
-		////É¾³ı¾É³ÇÖ÷µÄ½±Àø
+		////É¾ï¿½ï¿½ï¿½É³ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½
 		//guid_64 old_city_master_guid = get_city_master_guid();
 		//send_del_city_master_stuff(old_city_master_guid);
-		////É¾³ıÊ§°Ü¾üÍÅµÄ³ÉÔ±µÄ³ÆºÅ
+		////É¾ï¿½ï¿½Ê§ï¿½Ü¾ï¿½ï¿½ÅµÄ³ï¿½Ô±ï¿½Ä³Æºï¿½
 		//send_del_city_war_winner_title(m_overlord_legion);
-		//ÉèÖÃĞÂ»ñÊ¤¾üÍÅguid
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Â»ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½guid
 		m_overlord_legion = legion_guid;
 		
 		if (!is_from_cross_city)
@@ -165,7 +165,7 @@ namespace faith
 		if (!is_from_cross_city)
 		{
 			new_city_master_guid = legion_ws_ptr->get_chief_guid();
-			big_player_ws_mgr::get_instance().set_big_player_guid(e_big_player_type_lord_of_city, new_city_master_guid);//¶Á¿âµÄÊ±ºò£¬ÉèÖÃÒ»´ÎÃûÈËÌÃµÄĞÅÏ¢£¬·ÀÖ¹big_playerÃ»ÓĞÊı¾İµ¼ÖÂ³ÆºÅ¼ÓÔØ²»ÉÏ
+			big_player_ws_mgr::get_instance().set_big_player_guid(e_big_player_type_lord_of_city, new_city_master_guid);//ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Ö¹big_playerÃ»ï¿½ï¿½ï¿½ï¿½ï¿½İµï¿½ï¿½Â³ÆºÅ¼ï¿½ï¿½Ø²ï¿½ï¿½ï¿½
 		}
 		else
 		{
@@ -173,7 +173,7 @@ namespace faith
 		}
 
 
-		//¸øĞÂ³ÇÖ÷Ôö¼Ó½±Àø
+		//ï¿½ï¿½ï¿½Â³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó½ï¿½ï¿½ï¿½
 
 		client_session* new_city_master_session = client_session_mgr::getInstance().get_session(new_city_master_guid);
 		if (new_city_master_session)
@@ -181,7 +181,7 @@ namespace faith
 			send_get_city_master_stuff(new_city_master_session);
 		}
 
-		//ĞÂÔöÊ¤Àû¾üÍÅµÄ³ÉÔ±³ÆºÅ
+		//ï¿½ï¿½ï¿½ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½ï¿½ÅµÄ³ï¿½Ô±ï¿½Æºï¿½
 		send_add_city_war_winner_title(m_overlord_legion);
 
 		if (!is_from_cross_city)
@@ -342,7 +342,7 @@ namespace faith
 			return;
 		}
 		
-		//³ÇÖ÷ÉÏÏß¹«¸æ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¹ï¿½ï¿½ï¿½
 		int32 notice_id = legion_city_master_online_notice_id;
 		if (world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_city_war))
 		{
@@ -647,7 +647,7 @@ namespace faith
 			return;
 		}
 		struct tm cur_time = *cur_date;
-		//ÁìµØÎ¬»¤·ÑÓÃ¸ÄÎªÔÚ¾º±ê½áÊøÊ±¿Û³ı
+		//ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½ï¿½Ã¸ï¿½Îªï¿½Ú¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½Û³ï¿½
 		tm begin_maintain_tm, end_maintain_tm;
 		get_maintain_time(begin_maintain_tm, end_maintain_tm);
 		if (cur_time.tm_hour < begin_maintain_tm.tm_hour || cur_time.tm_hour > end_maintain_tm.tm_hour)
@@ -668,7 +668,7 @@ namespace faith
 
 			if (world_server::getInstance().is_sky_island_server() && world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_legion_territory_war))
 			{
-				//Í¨Öªws¿Û³ıÎ¬»¤×Ê½ğ
+				//Í¨Öªwsï¿½Û³ï¿½Î¬ï¿½ï¿½ï¿½Ê½ï¿½
 				city_war_territory_mgr::get_instance().send_cross_territory_war_maintain_terrories_to_other_server(0);
 			}
 			if (!world_server::getInstance().is_sky_island_server()) 
@@ -700,7 +700,7 @@ namespace faith
 			}
 			if (territory_cfg->attribute_id == overlord_war_territory_flag && world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_city_war))
 			{
-				continue;//¿ç·ş³ÇÕ½¿ªÆôÒÔºó£¬Ô­ÆÕÍ¨°ÔÖ÷Õ½¹Ø±Õ
+				continue;//ï¿½ï¿½ï¿½ï¿½ï¿½Õ½ï¿½ï¿½ï¿½ï¿½ï¿½Ôºï¿½Ô­ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Õ½ï¿½Ø±ï¿½
 			}
 			if (!world_server::getInstance().is_sky_island_server() && world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_legion_territory_war) && territory_cfg->attribute_id != overlord_war_territory_flag)
 			{
@@ -721,7 +721,7 @@ namespace faith
 			}
 
 
-			// ÓÉÓÚtickÊÇ1minÒ»´Î ¸ÄÎªÖ»ÔÚ¿ªÊ¼µÄÕâÒ»·ÖÖÓtick²ÅÖ´ĞĞ¿ªÊ¼Âß¼­
+			// ï¿½ï¿½ï¿½ï¿½tickï¿½ï¿½1minÒ»ï¿½ï¿½ ï¿½ï¿½ÎªÖ»ï¿½Ú¿ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½tickï¿½ï¿½Ö´ï¿½Ğ¿ï¿½Ê¼ï¿½ß¼ï¿½
 			//if (cur_time.tm_hour != begin_tm.tm_hour || cur_time.tm_min != begin_tm.tm_min)
 			//{
 			//	continue;
@@ -737,7 +737,7 @@ namespace faith
 
 		if (is_war_begun)
 		{
-			//send_city_war_info_to_all_attended(); //ÒÑ¾­ÊµÊ±Í¬²½ÁË ²»ÓÃÕâ¸öÁË
+			//send_city_war_info_to_all_attended(); //ï¿½Ñ¾ï¿½ÊµÊ±Í¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (!is_overload_war_begun)
 			{
 				add_legion_bouns_count_city_war();
@@ -791,7 +791,7 @@ namespace faith
 			return;
 		}
 
-		//Èç¹ûÊÇ¾üÍÅÕù°Ô¿ªÊ¼£¬¾Í¸Éµôµ±Ç°°ÔÖ÷¾üÍÅµÄËùÓĞ½±Àø
+		//ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½Ê¼ï¿½ï¿½ï¿½Í¸Éµï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½Ğ½ï¿½ï¿½ï¿½
 		//if (overlord_war_territory_flag == terr_id)
 		//{
 		//	del_overlord_legion();
@@ -802,7 +802,7 @@ namespace faith
 		//int32 create_time = time_helper::get_time();
 		//event_ws_mgr::get_instance().send_notice_to_all(notice_id, create_time, guid_64(), notice_str);
 
-		// Ö»ÓĞ1¸ö¾üÍÅ²ÎÕ½µÄÊ±ºò
+		// Ö»ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½Å²ï¿½Õ½ï¿½ï¿½Ê±ï¿½ï¿½
 		if (get_bid_info_count(terr_id) <= 1)
 		{
 			guid_64 win_legion_guid = guid_64();
@@ -909,7 +909,7 @@ namespace faith
 
 	void legion_ws_city_war::end_war(int32 terr_id, guid_64 winner_legion_guid, bool need_send_notice)
 	{
-		// Èç¹ûÊÇÁìÖ÷Õù°Ô
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if (terr_id == overlord_war_territory_flag)
 		{
 			legion_ws* legion_ptr = legion_ws_mgr::get_instance().get_legion(winner_legion_guid);
@@ -1092,7 +1092,7 @@ namespace faith
 	{
 		if (!is_city_war_hold_day(terr_id))
 		{
-			return false;//Ö»ÓĞ³ÇÕ½µ±Ìì²ÅÄÜ¾º±ê
+			return false;//Ö»ï¿½Ğ³ï¿½Õ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¾ï¿½ï¿½ï¿½
 		}
 		if (is_during_city_war_prepare_time(terr_id) || is_during_city_war_time(terr_id))
 		{
@@ -1146,7 +1146,7 @@ namespace faith
 			return e_legion_error_invalid_banquet_type;
 		}
 
-		// ¾ÙĞĞ³ÇÕ½µÄÈÕÆÚ²»ÄÜ¾ÙĞĞÑç»á
+		// ï¿½ï¿½ï¿½Ğ³ï¿½Õ½ï¿½ï¿½ï¿½ï¿½ï¿½Ú²ï¿½ï¿½Ü¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if (is_city_war_hold_day() == true)
 		{
 			return e_legion_error_can_not_hold_banquet_in_legion_war_day;
@@ -1157,7 +1157,7 @@ namespace faith
 			return e_legion_error_invalid_hold_banquet_time;
 		}
 
-		// Èç¹ûÒÑ¾­ÇëÇóÁË¾Ù°ìÑç»á¾Í²»ÄÜÖØ¸´ÇëÇó
+		// ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¾Ù°ï¿½ï¿½ï¿½ï¿½Í²ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½
 		if (true == m_request_hold_banquet)
 		{
 			return e_legion_error_request_hold_banquet_again;
@@ -1213,7 +1213,7 @@ namespace faith
 
 		m_is_banquet_holding = true;
 
-		// ·¢ËÍ¹«¸æÍ¨ÖªËùÓĞÍæ¼ÒÎè»áÒÑ¾­¿ªÊ¼
+		// ï¿½ï¿½ï¿½Í¹ï¿½ï¿½ï¿½Í¨Öªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½Ê¼
 		int32 notice_id = legion_city_dance_open_notice_id;
 		std::string notice_str = template_manager::get_instance().get_str_id_by_notice_id(notice_id);
 		int32 create_time = time_helper::get_cur_time_new().second;
@@ -1224,7 +1224,7 @@ namespace faith
 	{
 		m_is_banquet_holding = false;
 
-		// ¼ÆËã³ÇÖ÷»ñµÃµÄ×ÜÊÕÒæ
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if (GAMECONFIG->TakePartInOrdinaryBanquetCostMoney.size() < 2
 			|| GAMECONFIG->TakePartInHeartyBanquetCostMoney.size() < 2
 			|| GAMECONFIG->TakePartInLuxuryBanquetCostMoney.size() < 2
@@ -1278,7 +1278,7 @@ namespace faith
 		}
 		guid_64 role_guid = session->get_role_guid();
 
-		// Èç¹û×Ü´ÎÊıÒÑÂú¾Í²»ÄÜÔÚ²Î¼ÓÎè»áÁË
+		// ï¿½ï¿½ï¿½ï¿½Ü´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í²ï¿½ï¿½ï¿½ï¿½Ú²Î¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if (m_participant_count >= m_participant_max)
 		{
 			legion_ws_mgr::get_instance().send_legion_error_to_session(session, e_legion_error_banquet_already_over);
@@ -1292,11 +1292,11 @@ namespace faith
 			ite = m_participant_record.find(role_guid.server_64);
 			if (ite == m_participant_record.end())
 			{
-				return; // Èç¹ûÖ´ĞĞÁËÕâÀï¾ÍËµÃ÷³ıÁËÆæ¹ÖµÄÎÊÌâ,ÒòÎªÕâÀï±¾À´Ò»¶¨»áÓĞÓĞĞ§Öµ
+				return; // ï¿½ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½Îªï¿½ï¿½ï¿½ï±¾ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ§Öµ
 			}
 		}
 
-		// Èç¹ûµ¥¸ö½ÇÉ«µÄ¿É²Î¼Ó´ÎÊıÒÑÂú¾Í²»ÄÜ²Î¼ÓÎè»áÁË
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«ï¿½Ä¿É²Î¼Ó´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í²ï¿½ï¿½Ü²Î¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if (ite->second >= max_take_part_in_banquet_per_role)
 		{
 			legion_ws_mgr::get_instance().send_legion_error_to_session(session, e_legion_error_used_all_take_part_in_banquet_times);
@@ -1306,20 +1306,20 @@ namespace faith
 		ite->second += 1;
 		m_participant_count += 1;
 
-		// Í¨Öªcs¿Û³ı²Î¼Ó·ÑÓÃ²¢»ñÈ¡½±Àø
+		// Í¨Öªcsï¿½Û³ï¿½ï¿½Î¼Ó·ï¿½ï¿½Ã²ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
 		ws2cs_get_take_part_in_banquet_award get_take_part_in_banquet_award_msg;
 		get_take_part_in_banquet_award_msg.role_guid = role_guid;
 		get_take_part_in_banquet_award_msg.banquet_level = get_banquet_level();
 		session->send_to_cs(&get_take_part_in_banquet_award_msg, sizeof(get_take_part_in_banquet_award_msg));
 
-		// ·¢ËÍ¸ø¿Í»§¶ËÏàÓ¦µÄÌáÊ¾
+		// ï¿½ï¿½ï¿½Í¸ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Ê¾
 		legion_proto_take_part_in_banquet_end take_part_in_banquet_end_msg;
 		take_part_in_banquet_end_msg.set_participant_num(m_participant_count);
 		take_part_in_banquet_end_msg.set_participant_max(m_participant_max);
 		take_part_in_banquet_end_msg.set_role_take_part_in_num(ite->second);
 		session->send_to_client(&take_part_in_banquet_end_msg, e_msgindex_s2c_take_part_in_banquet_end);
 
-		// Îè»á½áÊø
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if (m_participant_count >= m_participant_max)
 		{
 			stop_hold_banquet();
@@ -1590,7 +1590,7 @@ namespace faith
 				send_common_war_begin_notice();
 			}
 			if (territory_id == cross_server_territory_war_flag) {
-				//¹ã²¥µ½ËùÓĞws·şÎñÆ÷
+				//ï¿½ã²¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½wsï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				city_war_territory_mgr::get_instance().send_cross_territory_war_begin_notice_to_other_server(0);
 			}
 		}
@@ -1666,7 +1666,7 @@ namespace faith
 
 		if (world_server::getInstance().is_sky_island_server() && world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_legion_territory_war)) 
 		{
-			//Ö»ÓĞgate·şÔÚ¿ç·ş»î¶¯¿ªÆôµÄÇé¿öÏÂ»áÌáĞÑ
+			//Ö»ï¿½ï¿½gateï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½î¶¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â»ï¿½ï¿½ï¿½ï¿½ï¿½
 			check_send_city_war_begin_notice(cross_server_territory_war_flag);
 		}
 	}

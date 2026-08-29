@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2015Äê12ÔÂ28ÈÕ16:11:23
+	created:	2015ï¿½ï¿½12ï¿½ï¿½28ï¿½ï¿½16:11:23
 	file base:	msgproc_gm
 	file ext:	cpp
 	author:		zhy
@@ -14,7 +14,7 @@
 #include "logic/buff_man.h"
 #include "logic/unit_man.h"
 #include "base/ecs_world.h"
-#include "lua/script_mgr.h"
+
 #include "system/scene/wave_map_system.h"
 #include "logic/skill_manager.h"
 #include "system/scene/base_map_system.h"

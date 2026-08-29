@@ -1,3 +1,0 @@
-
-$#include "lua_call_handle.h"
-$using namespace hld;

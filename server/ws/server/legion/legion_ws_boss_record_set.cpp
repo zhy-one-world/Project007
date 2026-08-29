@@ -6,7 +6,7 @@
 #include "Logic/activity_def.hpp"
 #include "utility/guid_gen.h"
 #include "ws_client.hpp"
-#include "lua/script_mgr.h"
+
 #include "system/scene/cs_map_mgr_system.h"
 #include "net.pb.h"
 

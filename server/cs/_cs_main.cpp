@@ -22,7 +22,6 @@
 #include "logic/skill_manager.h"
 #include "Logic/store_mgr.hpp"
 #include "logic/unit_man.h"
-#include "lua/script_mgr.h"
 #include "msg_dispatch.hpp"
 #include "msgproc/msgproc_gm.hpp"
 #include "net/message_manager.hpp"
@@ -53,7 +52,6 @@ namespace faith
 			return false;
 		}
 		message_manager::getInstance().set_server_type(e_server_type_cs);
-		script_mgr::get_instance().call_func(nullptr, "cs_main", 0, false, "");
 		CONSOLE_INFO("begin template");
 		template_manager::get_instance().init();
 		CONSOLE_INFO("begin CCharLib");

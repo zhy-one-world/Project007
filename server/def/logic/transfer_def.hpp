@@ -11,6 +11,7 @@
 #define _TRANSFER_DEF_HPP_
 
 #include "logic/type_def.hpp"
+#include "logic/math.hpp"
 #include <string>
 #include "world_def.hpp"
 
@@ -42,15 +43,15 @@ namespace faith
 
 	const int32 kmax_transfer_dynamic_int_num = 5;
 
-	//´«ËÍÐÅÏ¢
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	struct s_transfer_info
 	{		
-		s_map_pos		map_pos;				// ´«ËÍºóµÄµØÍ¼×ø±ê
-		e_scene_type	scene_type;				// ³¡¾°ÀàÐÍ
-		uint32			map_id;					// ³¡¾°Ä£°åid
-		int32			line_id;				// ´«ËÍµÄÏßid
-		guid_64			map_guid;				// ´«ËÍµÄµØÍ¼guid
-		int32			war_index;				// ÄÄÒ»·½
+		s_map_pos		map_pos;				// ï¿½ï¿½ï¿½Íºï¿½Äµï¿½Í¼ï¿½ï¿½ï¿½ï¿½
+		e_scene_type	scene_type;				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		uint32			map_id;					// ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½id
+		int32			line_id;				// ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½id
+		guid_64			map_guid;				// ï¿½ï¿½ï¿½ÍµÄµï¿½Í¼guid
+		int32			war_index;				// ï¿½ï¿½Ò»ï¿½ï¿½
 		int32			dynamic_ints[kmax_transfer_dynamic_int_num];
 		s_transfer_info()
 		{

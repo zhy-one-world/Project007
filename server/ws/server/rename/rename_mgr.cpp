@@ -5,7 +5,7 @@
 #include "template/template_manager.h"
 #include "server/mail/mail_event_ws.h"
 #include <char_msg.hpp>
-#include "lua/script_mgr.h"
+
 #include "invalid_word/invalid_ansi_word.h"
 #include "net.pb.h"
 #include "character.pb.h"
@@ -77,11 +77,11 @@ namespace faith
 		}
 
 		if (invalid_ansi_word::include_invalid_ansi_str(role_name))
-		{//´æÔÚ·Ç·¨×Ö
+		{//ï¿½ï¿½ï¿½Ú·Ç·ï¿½ï¿½ï¿½
 			check_ret = e_change_failed_role_name_invalid;
 		}
 
-		//ÅÐ¶Ï½ÇÉ«Ãû³¤¶ÈÊÇ·ñºÏ·¨
+		//ï¿½Ð¶Ï½ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Ï·ï¿½
 		if ((role_name.size() < min_name_size))
 		{
 			check_ret = e_change_failed_role_name_size_too_short;

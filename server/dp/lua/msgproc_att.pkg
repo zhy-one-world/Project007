@@ -1,9 +1,0 @@
-
-namespace hld
-{
-
-	bool cs2dp_save_role_att_cache_lua(long long role_id, const char* data_ptr, int data_len);
-	void cs2dp_push_role_att_sql_add_callback(const char *sql, long long role_id, float attack_att[e_unit_attack_att_max], int connindex, int unit_array_index, int save_type_ex);
-
-}
-

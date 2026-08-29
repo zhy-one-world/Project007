@@ -18,7 +18,7 @@
 #include "server/relation/marry_mgr_ws.hpp"
 #include "server/mail/event_ws_mgr.h"
 #include "server/activity/cross_ladder_ws_mgr.h"
-#include "lua/script_mgr.h"
+
 #include "globle_data.h"
 #include "ranking.pb.h"
 #include "server/mail/mail_event_ws.h"
@@ -65,14 +65,14 @@ void  ranking_mgr_ws::heart_tick(int64& time_now)
 	static int64 m_sec_tick = 0;
 	if (m_sec_tick < time_now )
 	{
-		m_sec_tick = time_now + faith::minute_tick_time;			//·ÖÖÓtick
+		m_sec_tick = time_now + faith::minute_tick_time;			//ï¿½ï¿½ï¿½ï¿½tick
 		open_server_first_day_proc();
 	}
 	static int64 m_ranking_tick = 0;
 	if (m_ranking_tick < time_now && true == gate_proxy::getInstance().is_gate_run()  && world_server::getInstance().get_server_id() != world_server::getInstance().get_cross_id())
 	{
-		//Á½·ÖÖÓË¢ĞÂÒ»´Î
-		m_ranking_tick = time_now + faith::minute_tick_time * 2;			//ÃëÖÓtick 
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¢ï¿½ï¿½Ò»ï¿½ï¿½
+		m_ranking_tick = time_now + faith::minute_tick_time * 2;			//ï¿½ï¿½ï¿½ï¿½tick 
 		send_gs_ranking(e_RankingIndex_gs, e_RankingIndex_gs_all);
 		send_gs_ranking(e_RankingIndex_legion_core, e_RankingIndex_legion_gs_all);
 		send_gs_ranking(e_RankingIndex_level, e_RankingIndex_level_all);
@@ -96,7 +96,7 @@ void  ranking_mgr_ws::heart_tick(int64& time_now)
 		
 	time_info cur_time_info = time_helper::get_cur_time_new();
 	static bool m_cur_time_is_zero = false;
-	if (cur_time_info.hour_in_day == 23 && cur_time_info.minute_in_hour == 55)	//µ÷Õûµ½23µã
+	if (cur_time_info.hour_in_day == 23 && cur_time_info.minute_in_hour == 55)	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½23ï¿½ï¿½
 	{
 		m_cur_time_is_zero = true;
 	} 
@@ -118,7 +118,7 @@ void  ranking_mgr_ws::heart_tick(int64& time_now)
 		m_cur_rank_index++;
 	}
 
-	//È«Ãñ³å°ñ¸üĞÂ¼ì²â
+	//È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½
 	if (m_service_rank_check_index < e_service_rank_type_max && m_loading_end_flag)
 	{
 		ServiceRankTemplate* service_rank_template_ptr = GET_TEMPLATE(ServiceRankTemplate, service_rank_first_template_id + m_service_rank_check_index);
@@ -417,17 +417,17 @@ bool ranking_mgr_ws::fixed_ranking_legion_name_data(s_ranking_player_info* load_
 	int32 rangking_type = load_info->ranking_type;
 	switch ((e_RankingIndex)rangking_type)
 	{
-	case e_RankingIndex_legion_core: //¾üÍÅ°ñ -×ÜÕ½Á¦ÅÅĞĞ	
-	case e_RankingIndex_legion_territory: //¾üÍÅ°ñ-ÁìµØÅÅĞĞ
-	case e_RankingIndex_legion_boss: //¾üÍÅ°ñ-¾üÍÅboss
-	case e_RankingIndex_legion_bonfire: //¾üÍÅ°ñ-¾üÍÅóô»ğ
-	case e_RankingIndex_world_boss_one: //ÊÀ½çBOSS-boss1
-	case e_RankingIndex_world_boss_two: //ÊÀ½çBOSS-boss2
-	case e_RankingIndex_world_boss_three: //ÊÀ½çBOSS-boss3
-	case e_RankingIndex_world_boss_four: //ÊÀ½çBOSS-boss4
-	case e_RankingIndex_world_boss_five: //ÊÀ½çBOSS-boss5
-	case e_RankingIndex_world_boss_six: //ÊÀ½çBOSS-boss6
-	case e_RankingIndex_world_boss_seven: //ÊÀ½çBOSS-boss7
+	case e_RankingIndex_legion_core: //ï¿½ï¿½ï¿½Å°ï¿½ -ï¿½ï¿½Õ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	
+	case e_RankingIndex_legion_territory: //ï¿½ï¿½ï¿½Å°ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	case e_RankingIndex_legion_boss: //ï¿½ï¿½ï¿½Å°ï¿½-ï¿½ï¿½ï¿½ï¿½boss
+	case e_RankingIndex_legion_bonfire: //ï¿½ï¿½ï¿½Å°ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	case e_RankingIndex_world_boss_one: //ï¿½ï¿½ï¿½ï¿½BOSS-boss1
+	case e_RankingIndex_world_boss_two: //ï¿½ï¿½ï¿½ï¿½BOSS-boss2
+	case e_RankingIndex_world_boss_three: //ï¿½ï¿½ï¿½ï¿½BOSS-boss3
+	case e_RankingIndex_world_boss_four: //ï¿½ï¿½ï¿½ï¿½BOSS-boss4
+	case e_RankingIndex_world_boss_five: //ï¿½ï¿½ï¿½ï¿½BOSS-boss5
+	case e_RankingIndex_world_boss_six: //ï¿½ï¿½ï¿½ï¿½BOSS-boss6
+	case e_RankingIndex_world_boss_seven: //ï¿½ï¿½ï¿½ï¿½BOSS-boss7
 	{
 		load_info->set_role_name(legion_name);
 		return true;
@@ -522,7 +522,7 @@ void ranking_mgr_ws::load_ranking_from_db(const s_ranking_player_info* load_info
 		{
 			continue;
 		}
-		//ÒòÕ½Á¦Öµ´Ó32Î»¸ÄÎª64 ÒÔÏÂÅÅĞĞ°ñÊÇ¸ü»»ÁËÕ½Á¦µÄ´æ´¢Î»ÖÃ,·ÀÖ¹ÉÏÏßÊ±ĞÂ×Ö¶ÎÎª¿Õµ¼ÖÂÏÔÊ¾ÎÊÌâ,ËùÓĞÔÚload½áÊøÊ±½«Ô­ÓĞÕ½Á¦·ÅÈëµ½ĞÂµÄÕ½Á¦´æ´¢ÖĞ
+		//ï¿½ï¿½Õ½ï¿½ï¿½Öµï¿½ï¿½32Î»ï¿½ï¿½Îª64 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ°ï¿½ï¿½Ç¸ï¿½ï¿½ï¿½ï¿½ï¿½Õ½ï¿½ï¿½ï¿½Ä´æ´¢Î»ï¿½ï¿½,ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ö¶ï¿½Îªï¿½Õµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½loadï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ô­ï¿½ï¿½Õ½ï¿½ï¿½ï¿½ï¿½ï¿½ëµ½ï¿½Âµï¿½Õ½ï¿½ï¿½ï¿½æ´¢ï¿½ï¿½
 		if (ranking_type == e_RankingIndex_arena && player_info.standby_parameter <= 0)
 		{
 			player_info.standby_parameter = player_info.supporting_guid.A;
@@ -573,10 +573,10 @@ void ranking_mgr_ws::load_ranking_from_db(const s_ranking_player_info* load_info
 	{
 		send_gs_ranking(e_RankingIndex_Oracle_Trial, e_RankingIndex_Oracle_Trial);
 	}
-	//ÅÅĞĞ°ñÈ«²¿¼ÓÔØÍê Ïògate·ş·¢ËÍµ±Ç°·şµÄµÈ¼¶
+	//ï¿½ï¿½ï¿½Ğ°ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½gateï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½Ç°ï¿½ï¿½ï¿½ÄµÈ¼ï¿½
 	if (e_RankingIndex_max - 1 == ranking_type)
 	{
-		//Î´¿ªÆô¿ç·şÖ±½ÓÉèÖÃ
+		//Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		world_server::getInstance().set_ws_loading_flag(e_ws_flag_ranking_info);
 	}
 }
@@ -598,9 +598,9 @@ void ranking_mgr_ws::load_one_worship_ranking_from_db(const guid_64& sender, con
 
 	s_ranking_player_info player_info;
 	player_info = one_load_info;
-	//¸üĞÂÍşÍûÅÅĞĞ°ñ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ°ï¿½
 	sync_player_info(player_info);
-	//»ØÏûÏ¢¸øsenderºÍtarget
+	//ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½senderï¿½ï¿½target
 	client_session* sender_ptr = client_session_mgr::getInstance().get_session(sender);
 	if (sender_ptr != nullptr)
 	{
@@ -628,7 +628,7 @@ void ranking_mgr_ws::load_one_worship_ranking_from_db(const guid_64& sender, con
 
 void ranking_mgr_ws::create_robot_data()
 {
-	//ÅÅĞĞ°ñÖĞ²»¼ÓÈë»úÆ÷ÈË
+	//ï¿½ï¿½ï¿½Ğ°ï¿½ï¿½Ğ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	return;
 	//template_manager::template_type* robot_name_tmpl_table = template_manager::get_instance().get_templates(e_ArenaRobotTemplate);
 	//if (nullptr == robot_name_tmpl_table)
@@ -659,7 +659,7 @@ void ranking_mgr_ws::create_robot_data()
 	//		temp_robot_data.ranking_type = robot_template_ptr->Rank;
 
 	//		temp_robot_data.role_guid = ite->first;
-	//		//·´ÕıÊÇ»úÆ÷ÈË£¬Ö±½ÓÓÃTemplateId×öGuid
+	//		//ï¿½ï¿½ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ï¿½Ë£ï¿½Ö±ï¿½ï¿½ï¿½ï¿½TemplateIdï¿½ï¿½Guid
 
 	//		temp_robot_data.set_role_name(robot_name);
 	//		temp_robot_data.ranking_value = ite->first;
@@ -686,7 +686,7 @@ void ranking_mgr_ws::save_worship_to_db(const guid_64& sender_guid, const s_rank
 	//ws2dp_save_ranking_worship req;
 	//req.sender_guid = sender_guid;
 	//req.target_data = *target;
-	//req.target_data.Peak = 1;  //ÍşÍû°ñÄ¬ÈÏÈ«´æ1
+	//req.target_data.Peak = 1;  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½È«ï¿½ï¿½1
 	//req.worship_add_value = add_value;
 	//req.worship_type = worship_type;
 	//ws_client::getInstance().send_to_dp(&req, sizeof(req));
@@ -747,7 +747,7 @@ int32 ranking_mgr_ws::insert_player_arena(s_ranking_player_info& player_info)
 			ranking_list_ite arena_ite_high = m_ranking_all[e_RankingIndex_arena].begin();
 			ranking_list_ite arena_ite_low = m_ranking_all[e_RankingIndex_arena].begin();
 			arena_ite_low++;
-			//ÄÜ½øĞĞÕâÃ´²åÈëµÄËµÃ÷ ²»»áÊÇµÚÒ»
+			//ï¿½Ü½ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Çµï¿½Ò»
 			for (int32 Index = 2; arena_ite_low != m_ranking_all[e_RankingIndex_arena].end(); Index++)
 			{
 				if ((arena_ite_high->ranking_value < player_info.ranking_value)
@@ -765,13 +765,13 @@ int32 ranking_mgr_ws::insert_player_arena(s_ranking_player_info& player_info)
 			}
 		}
 	}
-	return -1;			//Ã»ÓĞ½ø°ñ
+	return -1;			//Ã»ï¿½Ğ½ï¿½ï¿½ï¿½
 }
 
 
 void ranking_mgr_ws::sync_player_arena(s_ranking_player_info& my_player_info, s_ranking_player_info& target_player_info, bool is_robot)
 {
-	//Ò»¶¨ÊÇ ÎÒ»÷°ÜÄ¿±ê ²Å»á½øÈëÕâ¸öº¯Êı
+	//Ò»ï¿½ï¿½ï¿½ï¿½ ï¿½Ò»ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ ï¿½Å»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (my_player_info.role_guid.is_valid() == false)
 	{
 		return;
@@ -818,7 +818,7 @@ void ranking_mgr_ws::sync_player_arena(s_ranking_player_info& my_player_info, s_
 		}
 	}
 		
-	//²åÈëÅÅĞĞ°ñ, ¾º¼¼³¡ÅÅÃû-1¾ÍÊÇÃ»ÓĞÅÅÃû ²»»á½øÈëÅÅĞĞ°ñÖĞ£¬ÒªĞŞ¸ÄdbÖĞµÄÅÅÃûÖµ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ°ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-1ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ°ï¿½ï¿½Ğ£ï¿½Òªï¿½Ş¸ï¿½dbï¿½Ğµï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 	if (is_binsert_my)
 	{
 		insert_player_arena(my_player_info);
@@ -841,11 +841,11 @@ void ranking_mgr_ws::sync_player_arena(s_ranking_player_info& my_player_info, s_
 		m_ranking_all[e_RankingIndex_arena].pop_back();
 	}
 
-	// ¾º¼¼³¡Ç°Ê®¸ü»»¹«¸æ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°Ê®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (MinRankingPost <= my_player_info.ranking_value &&  my_player_info.ranking_value <= MaxRankingPost)
 	{
 		int32 notice_id = 93000031;
-		std::string player_name = std::string(my_player_info.role_name);	//½ÇÉ«Ãû
+		std::string player_name = std::string(my_player_info.role_name);	//ï¿½ï¿½É«ï¿½ï¿½
 		int32 create_time = time_helper::get_cur_time_new().second;
 		std::string ranking = template_manager::get_instance().int_to_string(my_player_info.ranking_value + 1);
 
@@ -858,7 +858,7 @@ void ranking_mgr_ws::sync_player_arena(s_ranking_player_info& my_player_info, s_
 	}
 }
 
-void ranking_mgr_ws::sync_after_merge_first_player_deal(s_ranking_player_info& my_player_info) //³öÏÖ¾º¼¼³¡ÅÅĞĞµÚÒ»ÃûÍæ¼ÒÊı¾İÃ»´æÈë ranking ¿â bug£¬½øĞĞÌØÊâÂß¼­´¦Àí
+void ranking_mgr_ws::sync_after_merge_first_player_deal(s_ranking_player_info& my_player_info) //ï¿½ï¿½ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ ranking ï¿½ï¿½ bugï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½ï¿½ï¿½ï¿½ï¿½
 {
 	if (my_player_info.role_guid.is_valid() == false)
 	{
@@ -1038,18 +1038,18 @@ bool ranking_mgr_ws::is_legion_ranking(e_RankingIndex ranking_index)
 	case faith::e_RankingIndex_world_elite_seven:
 	case faith::e_RankingIndex_world_elite_eight:
 
-	case faith::e_RankingIndex_cross_boss_one: //¿ç·şÊÀ½çboss1
-	case faith::e_RankingIndex_cross_boss_two: //`¿ç·şÊÀ½çboss2
-	case faith::e_RankingIndex_cross_boss_three: //¿ç·şÊÀ½çboss3
-	case faith::e_RankingIndex_cross_boss_four: //¿ç·şÊÀ½çboss4
-	case faith::e_RankingIndex_cross_boss_five: //¿ç·şÊÀ½çboss5
-	case faith::e_RankingIndex_cross_boss_six: //¿ç·şÊÀ½çboss6
-	case faith::e_RankingIndex_cross_boss_seven: //¿ç·şÊÀ½çboss7
-	case faith::e_RankingIndex_cross_boss_eight: //¿ç·şÊÀ½çboss8
-	case faith::e_RankingIndex_cross_boss_nine: //¿ç·şÊÀ½çboss9
-	case faith::e_RankingIndex_cross_boss_ten: //¿ç·şÊÀ½çboss10
-	case faith::e_RankingIndex_cross_boss_eleven: //¿ç·şÊÀ½çboss11
-	case faith::e_RankingIndex_cross_boss_tweleve: //¿ç·şÊÀ½çboss12
+	case faith::e_RankingIndex_cross_boss_one: //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½boss1
+	case faith::e_RankingIndex_cross_boss_two: //`ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½boss2
+	case faith::e_RankingIndex_cross_boss_three: //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½boss3
+	case faith::e_RankingIndex_cross_boss_four: //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½boss4
+	case faith::e_RankingIndex_cross_boss_five: //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½boss5
+	case faith::e_RankingIndex_cross_boss_six: //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½boss6
+	case faith::e_RankingIndex_cross_boss_seven: //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½boss7
+	case faith::e_RankingIndex_cross_boss_eight: //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½boss8
+	case faith::e_RankingIndex_cross_boss_nine: //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½boss9
+	case faith::e_RankingIndex_cross_boss_ten: //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½boss10
+	case faith::e_RankingIndex_cross_boss_eleven: //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½boss11
+	case faith::e_RankingIndex_cross_boss_tweleve: //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½boss12
 	{
 		return true;
 	}
@@ -1079,7 +1079,7 @@ bool ranking_mgr_ws::make_ranking_data(ranking_proto_ranking_player_info_lua* ra
 	ranking_player_data->set_peak(player_data.Peak);
 	ranking_player_data->set_server_id(player_data.server_id);
 	ranking_player_data->set_standby_parameter(player_data.standby_parameter);
-	//Ä¿Ç°ÕâÀïÎ´Ôö¼ÓÇşµÀºÅ×Ö¶Î
+	//Ä¿Ç°ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶ï¿½
 	return true;
 }
 
@@ -1099,7 +1099,7 @@ bool ranking_mgr_ws::make_ranking_data(ranking_proto_ranking_player_info* rankin
 	ranking_player_data->set_peak(player_data.Peak);
 	ranking_player_data->set_server_id(player_data.server_id);
 	ranking_player_data->set_standby_parameter(player_data.standby_parameter);
-	//Ä¿Ç°ÕâÀïÎ´Ôö¼ÓÇşµÀºÅ×Ö¶Î
+	//Ä¿Ç°ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶ï¿½
 	return true;
 }
 
@@ -1754,7 +1754,7 @@ void ranking_mgr_ws::sync_player_info(const s_ranking_player_info& player_info)
 				{
 					if (player_info.ranking_value != (*ite_remove).ranking_value)
 					{
-						//¸ÄÅÅĞĞ°ñÊÇ·ñË¢ĞÂÊÇÓÉ¿ç·şÅĞ¶ÏµÄ Ôö¼ÓÅĞ¶Ï·ÀÖ¹±¾·şË¢ĞÂÊı¾İµ¼ÖÂÊı¾İ³öÏÖÊ§Îó
+						//ï¿½ï¿½ï¿½ï¿½ï¿½Ğ°ï¿½ï¿½Ç·ï¿½Ë¢ï¿½ï¿½ï¿½ï¿½ï¿½É¿ï¿½ï¿½ï¿½Ğ¶Ïµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¶Ï·ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½Ë¢ï¿½ï¿½ï¿½ï¿½ï¿½İµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ³ï¿½ï¿½ï¿½Ê§ï¿½ï¿½
 						if (ranking_index == e_RankingIndex_cross_time_limit_activity_total_recharge && player_info.ranking_value < (*ite_remove).ranking_value)
 						{
 							return;
@@ -1895,7 +1895,7 @@ void ranking_mgr_ws::cs2ws_req_add_worship_func(e_RankingIndex ranking_index, in
 	}
 
 
-	//µ½°ñÖĞÕÒÃû×Ö
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	ranking_list* ranking_ptr = get_ranking_list_by_type(ranking_index);
 	if (nullptr == ranking_ptr)
 	{
@@ -1908,7 +1908,7 @@ void ranking_mgr_ws::cs2ws_req_add_worship_func(e_RankingIndex ranking_index, in
 		ranking_list_ite ite = ranking_ptr->begin();
 		for (; ite != ranking_ptr->end(); ++ite)
 		{ 
-			if (target_guid == ite->supporting_guid)		//ÓĞ¿ÉÄÜÊÇ¾üÍÅÅÅĞĞ°ñ Ôö¼ÓµÄÊÇ¾üÍÅ³¤µÄÍşÍû
+			if (target_guid == ite->supporting_guid)		//ï¿½Ğ¿ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ°ï¿½ ï¿½ï¿½ï¿½Óµï¿½ï¿½Ç¾ï¿½ï¿½Å³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			{
 				target_data = &(*ite);
 				break;
@@ -1951,7 +1951,7 @@ void ranking_mgr_ws::cs2ws_req_add_worship_func(e_RankingIndex ranking_index, in
 		return;
 	}
 
-	//·¢ÏûÏ¢¸ødb ÈÃdbÈ¥Ôö¼Ó ²¢·µ»ØÔö¼ÓºóµÄÖµ¸øws £¬ws½Óµ½ÏûÏ¢ºóÍ¬²½¸øtargetºÍsender£¬²¢ÇÒ²é¿´ÊÇ·ñ ¸ü¸ÄÅÅĞĞ°ñ
+	//ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½db ï¿½ï¿½dbÈ¥ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óºï¿½ï¿½Öµï¿½ï¿½ws ï¿½ï¿½wsï¿½Óµï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½targetï¿½ï¿½senderï¿½ï¿½ï¿½ï¿½ï¿½Ò²é¿´ï¿½Ç·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ°ï¿½
 	save_worship_to_db(sender_guid, target_data, GAMECONFIG->WorshipAddValueArray[worship_type], worship_type);
 }
 

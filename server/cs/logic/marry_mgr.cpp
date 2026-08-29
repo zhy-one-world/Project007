@@ -1,7 +1,7 @@
 #include "marry_mgr.h"
 #include "logic/unit_man.h"
 #include "logic/player.hpp"
-#include "lua/script_mgr.h"
+
 #include "invalid_word/invalid_ansi_word.h"
 #include "internet/net.pb.h"
 #include "internet/relation.pb.h"
@@ -91,7 +91,7 @@ namespace faith
 				return;
 			}	
 			int32 result = 0;
-			//ÅÐ¶Ï¶ÓÎé
+			//ï¿½Ð¶Ï¶ï¿½ï¿½ï¿½
 			if (!player_ref.is_player_in_team())
 			{
 				player_ref.send_notice("90096775");
@@ -112,7 +112,7 @@ namespace faith
 			if (!couple_ref.is_valid() || !couple_ref.is_self_server())
 			{
 				player_ref.send_notice("90096777");
-				//¶Ô·½²»ÔÚÏß
+				//ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				return;
 			}
 			if (is_near == 0)
@@ -180,13 +180,13 @@ namespace faith
 		{
 			relation_proto_s2c_sync_marry_heart_value msg;
 			msg.set_heart_value(get_heart_value());
-			//ÁéÏ¬Öµ
+			//ï¿½ï¿½Ï¬Öµ
 			player_ref.send_message_to_self(&msg, e_mgsindex_s2c_sync_marry_heart_value);
 		}	
 	}
-	//stage = 0 ·þÎñÆ÷Í¬²½
-	//stage = 1 ¿ªÊ¼´ðÌâ
-	//stage = 2 ´ðÌâÖÐ
+	//stage = 0 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½
+	//stage = 1 ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½
+	//stage = 2 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	void marry_mgr::sync_dati_marry(int32 stage)
 	{
 		player& player_ref = unit_man::get_player(m_array_index);
@@ -202,7 +202,7 @@ namespace faith
 			msg.set_dati_right_num(cur_right_num);
 			msg.set_heart_value(get_heart_value());
 			msg.set_dati_stage(stage);
-			//ÁéÏ¬Öµ
+			//ï¿½ï¿½Ï¬Öµ
 			player_ref.send_message_to_self(&msg, e_msgindex_s2c_sync_marry_examination);
 		}
 	}
@@ -240,7 +240,7 @@ namespace faith
 				}
 				else if (operate_type == 1)
 				{
-					//ÖÕÖ¹´ðÌâ
+					//ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½
 					relation_proto_s2c_operate_marry_examination reult_msg_couple;
 					reult_msg_couple.set_operate_type(operate_type);
 					reult_msg_couple.set_result(is_right);
@@ -316,17 +316,17 @@ namespace faith
 			//ItemTemplate* real_item_template_ptr = item_ptr->get_item_info_ptr();
 			//if (real_item_template_ptr == nullptr)
 			//	return;
-			////¼ì²âÊÇ·ñÊÇÑÌ»¨µÀ¾ß
+			////ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ì»ï¿½ï¿½ï¿½ï¿½ï¿½
 			//if (real_item_template_ptr->item_type != e_item_type_expendable || real_item_template_ptr->sub_type != e_prop_sub_type_fireworks)
 			//	return;
 
-			////Ê¹ÓÃÍ¨ÓÃ½Ó¿Ú
+			////Ê¹ï¿½ï¿½Í¨ï¿½Ã½Ó¿ï¿½
 			//citem* end_item = nullptr;
 			//int32 template_name = real_item_template_ptr->ItemName;
 			//bool Success = player_ref.get_item_set().item_use(item_ptr->get_item_guid(), end_item);
 			//if (Success)
 			//{
-			//	//·¢ËÍ¹«¸æ
+			//	//ï¿½ï¿½ï¿½Í¹ï¿½ï¿½ï¿½
 			//	int32 notice_id = 93000293;
 			//	std::vector<std::string> vec_notice_str;
 			//	vec_notice_str.push_back(template_manager::get_instance().get_str_id_by_notice_id(notice_id));

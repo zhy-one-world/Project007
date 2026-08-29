@@ -4,7 +4,6 @@
 #include "logic/item_set.h"
 #include "logic/player.hpp"
 #include "logic/unit_man.h"
-#include "lua/script_mgr.h"
 #include "server_log.hpp"
 #include "system/item/item_system.h"
 #include "template/AwakenTemplate_S.h"
@@ -36,14 +35,12 @@ namespace faith
 		xstring need_item_guid_str = item_guid_array_to_string(need_item_guid);
 		xstring main_guid_str = main_guid.to_string();
 
-		script_mgr::get_instance().call_func(nullptr, "awaken_mgr_item_operate", 0, false, "%d%s%s", m_array_index, main_guid_str.c_str(), need_item_guid_str.c_str());
 
 	}
 	bool awaken_mgr::is_use_lua()
 	{
 		//script_mgr::get_instance().call_func("reload", 0);
 		bool bRet = false;
-		script_mgr::get_instance().call_func(nullptr, "awaken_mgr_is_use_lua", 1, false, ">%b", &bRet);
 		return bRet;
 	}
 	void awaken_mgr::operate_msg(guid_64 main_guid, int32 result)
@@ -178,7 +175,7 @@ namespace faith
 		{
 			return false;
 		}
-		if (sub_type < e_armor_sub_type_hat || sub_type > e_armor_sub_type_fashion) //  2 ·À¾ß 10 ÎªÄ§·¨Êé
+		if (sub_type < e_armor_sub_type_hat || sub_type > e_armor_sub_type_fashion) //  2 ï¿½ï¿½ï¿½ï¿½ 10 ÎªÄ§ï¿½ï¿½ï¿½ï¿½
 		{
 			return false;
 		}
@@ -247,7 +244,7 @@ namespace faith
 		{
 			return;
 		}
-		// Ôö¼ÓÊôÐÔÊôÐÔ±ÈÀýÊÇµ±Ç°¾õÐÑµÈ¼¶
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½Çµï¿½Ç°ï¿½ï¿½ï¿½ÑµÈ¼ï¿½
 		float add_count = (float)item_ptr->get_data_info(e_item_info_wing_bless) / (float)awaken_template_ptr->NeedPower;
 		AwakenTemplate *next_awaken_template_ptr = get_next_awaken_template_by_item(item_ptr);
 		if (next_awaken_template_ptr == nullptr)

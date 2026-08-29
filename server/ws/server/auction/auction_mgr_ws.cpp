@@ -17,7 +17,7 @@ purpose:
 #include "server_log.hpp"
 #include "world_server.hpp"
 #include "game_cfg/servers_config.h"
-#include "lua/script_mgr.h"
+
 #include "utility/parse_msg.h"
 #include "../ranking/ranking_mgr_ws.h"
 #include "globle_data.h"
@@ -220,7 +220,7 @@ namespace faith
 			buy_failed_msg.set_operate_type(e_auction_operate_type_purchase);
 			buy_failed_msg.set_operate_result(e_auction_purchase_already_purchased);
 
-			//ÏÂÃæÕâ¼¸¸ö¶¼Ã»Ê²Ã´ÓÃ
+			//ï¿½ï¿½ï¿½ï¿½ï¿½â¼¸ï¿½ï¿½ï¿½ï¿½Ã»Ê²Ã´ï¿½ï¿½
 			buy_failed_msg.set_item_guid(item_guid.server_64);
 			buy_failed_msg.set_item_num(0);	
 			buy_failed_msg.set_money_type(0);
@@ -260,7 +260,7 @@ namespace faith
 			buy_failed_msg.set_operate_type(e_auction_operate_type_purchase);
 			buy_failed_msg.set_operate_result(e_auction_purchase_already_purchased);
 
-			//ÏÂÃæÕâ¼¸¸ö¶¼Ã»Ê²Ã´ÓÃ
+			//ï¿½ï¿½ï¿½ï¿½ï¿½â¼¸ï¿½ï¿½ï¿½ï¿½Ã»Ê²Ã´ï¿½ï¿½
 			buy_failed_msg.set_item_guid(0);
 			buy_failed_msg.set_item_num(0);
 			buy_failed_msg.set_money_type(0);
@@ -277,7 +277,7 @@ namespace faith
 			if (nullptr == session_player
 				|| session_player->get_cs_conn_index() < 0)
 			{
-				//¶Ô·½±ØĞëÔÚÏß ·ñÔò²»ÖªµÀ¿Û¶àÉÙÇ®
+				//ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Öªï¿½ï¿½ï¿½Û¶ï¿½ï¿½ï¿½Ç®
 				auction_mgr_ws::get_instance().add_auction_info_to_db(info);
 			}
 			else
@@ -344,14 +344,14 @@ namespace faith
 		{
 			return;
 		}
-		//guidÒ»¶¨ÓĞ£¬ÓÃIDÅĞ¶¨ÊÇ·ñÕÒµ½
+		//guidÒ»ï¿½ï¿½ï¿½Ğ£ï¿½ï¿½ï¿½IDï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½Òµï¿½
 		if (info.item_info.data_ary[e_item_info_info_id] == 0)
 		{
 			auction_proto_operate_end buy_failed_msg;
 			buy_failed_msg.set_operate_type(e_auction_operate_type_cancel_sell);
 			buy_failed_msg.set_operate_result(e_auction_cancel_sell_already_sell);
 
-			//ÏÂÃæÕâ¼¸¸ö¶¼Ã»Ê²Ã´ÓÃ
+			//ï¿½ï¿½ï¿½ï¿½ï¿½â¼¸ï¿½ï¿½ï¿½ï¿½Ã»Ê²Ã´ï¿½ï¿½
 			buy_failed_msg.set_item_guid(0);
 			buy_failed_msg.set_item_num(0);
 			buy_failed_msg.set_money_type(0);
@@ -447,7 +447,7 @@ namespace faith
 		{
 		case e_trading_type_world:
 		case e_trading_type_normal_sell:
-		{//ÆÕÍ¨²ÅĞèÒª¸øCS»Ø°ü
+		{//ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½CSï¿½Ø°ï¿½
 			client_session* session_player = client_session_mgr::getInstance().get_session(info.seller_guid);
 			if (session_player != nullptr
 				&& session_player->get_cs_conn_index() >= 0)
@@ -563,19 +563,19 @@ namespace faith
 			notice_param_array.push_back(info.item_info.data_ary[i]);
 		}
 
-		//ÅÜÂíµÆµÄ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½
 		std::vector<std::string> vec_notice;
 		vec_notice.push_back(template_manager::get_instance().get_str_id_by_notice_id(93000232));
 		vec_notice.push_back(info.seller_name);
 
-		//½á¹¹ÌåÖĞµÄnameÃ»ÓĞÑÕÉ«´úÂë
+		//ï¿½á¹¹ï¿½ï¿½ï¿½Ğµï¿½nameÃ»ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½
 		const std::string& temp_string = template_manager::get_instance().get_str_by_string_template_id(item_template_ptr->ItemName);
 		vec_notice.push_back(temp_string);
 
 		std::string notice_str = init_unit::implode(vec_notice);
 		event_ws_mgr::get_instance().send_notice_to_all(93000232, time_helper::get_cur_time_new().second, info.seller_guid, notice_str, session_player->get_role_info_data(e_role_info_template_id));
 
-		//ÁÄÌìÆµµÀµÄ
+		//ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½
 		event_ws_mgr::get_instance().send_notice_with_param(
 			info.seller_guid, info.seller_name, 
 			"90089566", 
@@ -596,7 +596,7 @@ namespace faith
 			bid_failed_msg.set_operate_type(e_auction_operate_type_bid);
 			bid_failed_msg.set_operate_result(e_auction_bid_money_changed);
 
-			//ÏÂÃæÕâ¼¸¸ö¶¼Ã»Ê²Ã´ÓÃ
+			//ï¿½ï¿½ï¿½ï¿½ï¿½â¼¸ï¿½ï¿½ï¿½ï¿½Ã»Ê²Ã´ï¿½ï¿½
 			bid_failed_msg.set_item_guid(item_guid.server_64);
 			bid_failed_msg.set_item_num(0);
 			bid_failed_msg.set_money_type(0);
@@ -640,7 +640,7 @@ namespace faith
 			buy_failed_msg.set_operate_type(e_auction_operate_type_bid);
 			buy_failed_msg.set_operate_result(e_auction_purchase_already_purchased);
 
-			//ÏÂÃæÕâ¼¸¸ö¶¼Ã»Ê²Ã´ÓÃ
+			//ï¿½ï¿½ï¿½ï¿½ï¿½â¼¸ï¿½ï¿½ï¿½ï¿½Ã»Ê²Ã´ï¿½ï¿½
 			buy_failed_msg.set_item_guid(0);
 			buy_failed_msg.set_item_num(0);
 			buy_failed_msg.set_money_type(0);
@@ -662,7 +662,7 @@ namespace faith
 				buy_failed_msg.set_operate_type(e_auction_operate_type_bid);
 				buy_failed_msg.set_operate_result(e_auction_bid_money_changed);
 
-				//ÏÂÃæÕâ¼¸¸ö¶¼Ã»Ê²Ã´ÓÃ
+				//ï¿½ï¿½ï¿½ï¿½ï¿½â¼¸ï¿½ï¿½ï¿½ï¿½Ã»Ê²Ã´ï¿½ï¿½
 				buy_failed_msg.set_item_guid(0);
 				buy_failed_msg.set_item_num(0);
 				buy_failed_msg.set_money_type(0);
@@ -682,7 +682,7 @@ namespace faith
 			}
 			else
 			{
-				//¶Ô·½±ØĞëÔÚÏß ·ñÔò²»ÖªµÀ¿Û¶àÉÙÇ®
+				//ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Öªï¿½ï¿½ï¿½Û¶ï¿½ï¿½ï¿½Ç®
 				ws2cs_auction_find_bid_target_end success_msg;
 				success_msg.auction_info = info;
 				success_msg.role_guid = role_guid;
@@ -798,7 +798,7 @@ namespace faith
 			{
 				add_record_to_db(auction_info[i], auction_info[i].buyer_guid, 0, false);
 				add_record_to_db(auction_info[i], auction_info[i].seller_guid, 0, true);
-				// ÊÀ½çÅÄÂôÖ»ÓĞ³öÊÛÕßÓĞĞ§²ÅÊÇÕæÈË³öÊÛ ³öÊÛÊ§°ÜĞèÒª°ÑÎïÆ··µ»Ø¸ø³öÊÛÕß
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½Ğ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				if (auction_info[i].seller_guid.is_valid())
 				{
 					if (auction_info[i].buyer_guid.is_valid() == false)
@@ -820,7 +820,7 @@ namespace faith
 			break;
 			case e_trading_type_legion:
 			{
-				//¾üÍÅÅÄÂô ¼ÇÂ¼ÊôÓÚ¾üÍÅ ÇÒ ³öÊÛÈË¾ÍÊÇ¾üÍÅguid
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Ú¾ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ë¾ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½guid
 				add_record_to_db(auction_info[i], auction_info[i].seller_guid);
 				if (!auction_info[i].buyer_guid.is_valid()
 					&& !m_is_force_clear_old_item)
@@ -865,7 +865,7 @@ namespace faith
 		{
 		case e_trading_type_normal_sell:
 		{
-			//ÆÕÍ¨Ã»¾ºÅÄ ¶«Î÷Ò²²»ÔÚÕâ¸ø
+			//ï¿½ï¿½Í¨Ã»ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		}
 		break;
 		case e_trading_type_world:
@@ -926,7 +926,7 @@ namespace faith
 		case e_trading_type_normal_sell:
 		case e_trading_type_world:
 		{
-			//ÊÀ½ç²»·Öºì ÆÕÍ¨Ã»ÓĞ¾ºÅÄÃ»·Öºì
+			//ï¿½ï¿½ï¿½ç²»ï¿½Öºï¿½ ï¿½ï¿½Í¨Ã»ï¿½Ğ¾ï¿½ï¿½ï¿½Ã»ï¿½Öºï¿½
 		}
 			break;
 		case e_trading_type_legion:
@@ -1142,7 +1142,7 @@ namespace faith
 			memcpy(temp_mail_info.text_contents, share_info[i].share_mail_content, mail_content_len);
 
 			float temp_money_value = share_money_value * share_info[i].share_rate + 0.5f;
-			//+0.5 ËÄÉáÎåÈë
+			//+0.5 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 			int32 share_money_num = temp_money_value;
 			if (share_money_num <= 0)
@@ -1322,19 +1322,19 @@ namespace faith
 			notice_param_array.push_back(info.auction_info.item_info.data_ary[i]);
 		}
 
-		//ÅÜÂíµÆµÄ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½
 		std::vector<std::string> vec_notice;
 		vec_notice.push_back(template_manager::get_instance().get_str_id_by_notice_id(93000232));
 		vec_notice.push_back(info.auction_info.seller_name);
 
-		//½á¹¹ÌåÖĞµÄnameÃ»ÓĞÑÕÉ«´úÂë
+		//ï¿½á¹¹ï¿½ï¿½ï¿½Ğµï¿½nameÃ»ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½
 		const std::string& temp_string = template_manager::get_instance().get_str_by_string_template_id(item_template_ptr->ItemName);
 		vec_notice.push_back(temp_string);
 
 		std::string notice_str = init_unit::implode(vec_notice);
 		event_ws_mgr::get_instance().send_notice_to_all(93000232, time_helper::get_cur_time_new().second, info.auction_info.seller_guid, notice_str, info.template_id);
 
-		//ÁÄÌìÆµµÀµÄ
+		//ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½
 		event_ws_mgr::get_instance().send_notice_with_param(
 			info.auction_info.seller_guid, info.auction_info.seller_name,
 			"90089566",
@@ -1587,18 +1587,18 @@ namespace faith
 			notice_param_array.push_back(info.item_info.data_ary[i]);
 		}
 
-		//ÅÜÂíµÆµÄ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½
 		std::vector<std::string> vec_notice;
 		vec_notice.push_back(template_manager::get_instance().get_str_id_by_notice_id(93000416));
 
-		//½á¹¹ÌåÖĞµÄnameÃ»ÓĞÑÕÉ«´úÂë
+		//ï¿½á¹¹ï¿½ï¿½ï¿½Ğµï¿½nameÃ»ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½
 		const std::string& temp_string = template_manager::get_instance().get_str_by_string_template_id(item_template_ptr->ItemName);
 		vec_notice.push_back(temp_string);
 
 		std::string notice_str = init_unit::implode(vec_notice);
 		event_ws_mgr::get_instance().send_notice_to_all(93000416, time_helper::get_cur_time_new().second, guid_64(), notice_str, 0);
 
-		//ÁÄÌìÆµµÀµÄ
+		//ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½
 		event_ws_mgr::get_instance().send_notice_with_param(
 			guid_64(), "",
 			"90089577",
@@ -1625,18 +1625,18 @@ namespace faith
 			notice_param_array.push_back(info.item_info.data_ary[i]);
 		}
 
-		//ÅÜÂíµÆµÄ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½
 		std::vector<std::string> vec_notice;
 		vec_notice.push_back(template_manager::get_instance().get_str_id_by_notice_id(93000418));
 	
-		//½á¹¹ÌåÖĞµÄnameÃ»ÓĞÑÕÉ«´úÂë
+		//ï¿½á¹¹ï¿½ï¿½ï¿½Ğµï¿½nameÃ»ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½
 		const std::string& temp_string = template_manager::get_instance().get_str_by_string_template_id(item_template_ptr->ItemName);
 		vec_notice.push_back(temp_string);
 
 		std::string notice_str = init_unit::implode(vec_notice);
 		event_ws_mgr::get_instance().send_notice_to_all(93000418, time_helper::get_cur_time_new().second, guid_64(), notice_str, 0);
 
-		//ÁÄÌìÆµµÀµÄ
+		//ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½
 		event_ws_mgr::get_instance().send_notice_with_param(
 			guid_64(), "",
 			"90089578",
@@ -1786,7 +1786,7 @@ namespace faith
 	}
 	void auction_mgr_ws::make_person_auction(s_auction_person_info& person_info, int32 item_id)
 	{
-		// ÏµÍ³ÉÏ¼Ü
+		// ÏµÍ³ï¿½Ï¼ï¿½
 		ItemTemplate* item_template_ptr = GET_TEMPLATE(ItemTemplate, item_id);
 		if (item_template_ptr == nullptr)
 		{

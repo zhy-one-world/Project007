@@ -2,7 +2,7 @@
 #include "finger_guess_system.h"
 #include "internet/finger_guess.pb.h"
 #include "logic/player.hpp"
-#include "lua/script_mgr.h"
+
 #include "internet/net.pb.h"
 #include "server_log.hpp"
 #include "template/template_manager.h"

@@ -12,10 +12,10 @@
 #include "server_log.hpp"
 
 /*
-	Ö§³ÖÖÐÎÄ×Ö·û¼¯£¬¿Í»§¶ËÖ»ÄÜÊ¹ÓÃgb2312, utf8µÈÖ§³ÖÖÐÎÄµÄ×Ö·û¼¯£¬mysql·þÎñÆ÷µÄ×Ö·û¼¯ÅäÖÃ¼û¡¶mysql·þÎñÆ÷ÅäÖÃºÍdpÊ¹ÓÃÊÂÏî.doc¡·
-	ÒÔÏÂ¼¸¸öºê¹æ¶¨ÁË¿Í»§¶ËËùÊ¹ÓÃµÄ×Ö·û¼¯¡£Ê¹ÓÃÖÐÎÄ×Ö·ûÐè¶¨ÒåSET_LOCALE_CHARSET¡£
-	¿Í»§¶ËÊ¹ÓÃµÄÖÐÎÄ×Ö·û±àÂë±ØÐëºÍDEFALUT_CHARSET_NAME¶¨ÒåµÄÒ»ÖÂ£¬DEFALUT_CHARSET_MAX_LENÎª´Ë×Ö·û±àÂëµÄ×î´ó³¤¶È¡£
-	¶ÔÓÚÖÐÎÄ×Ö·û¼¯£¬ÍÆ¼öÊ¹ÓÃgb2312¡£ Èç¹ûÊ¹ÓÃµÄÊÇutf8, DEFALUT_CHARSET_MAX_LEN = 3¡£gbk,DEFALUT_CHARSET_MAX_LEN=2
+	Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½Ö»ï¿½ï¿½Ê¹ï¿½ï¿½gb2312, utf8ï¿½ï¿½Ö§ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½mysqlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½mysqlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãºï¿½dpÊ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.docï¿½ï¿½
+	ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½æ¶¨ï¿½Ë¿Í»ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ãµï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½è¶¨ï¿½ï¿½SET_LOCALE_CHARSETï¿½ï¿½
+	ï¿½Í»ï¿½ï¿½ï¿½Ê¹ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½DEFALUT_CHARSET_NAMEï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Â£ï¿½DEFALUT_CHARSET_MAX_LENÎªï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó³¤¶È¡ï¿½
+	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¼ï¿½Ê¹ï¿½ï¿½gb2312ï¿½ï¿½ ï¿½ï¿½ï¿½Ê¹ï¿½Ãµï¿½ï¿½ï¿½utf8, DEFALUT_CHARSET_MAX_LEN = 3ï¿½ï¿½gbk,DEFALUT_CHARSET_MAX_LEN=2
 */
 #define DEFALUT_CHARSET_NAME		"latin1"
 #define DEFALUT_CHARSET_MAX_LEN		1
@@ -54,11 +54,10 @@ namespace faith
 		case MYSQL_TYPE_TIME:
 		case MYSQL_TYPE_TIMESTAMP:
 			/*
-				¶ÔÓÚÊ±¼äÀàÐÍ
-					´æÊ±¼äÀàÐÍÊý¾Ýµ½mysqlÊý¾Ý¿â£¬¿ÉÒÔÓÃ'YYYY-MM-DD HH:MM:SS'/ 'YYYYMMDDHHMMSS'/YYYYMMDDHHMMSSµÈµÈ¸ñÊ½µÄ×Ö·û´®»òÊý×Ö
-					È¡Ê±¼äÀàÐÍÊý¾Ý£¬Ê¹ÓÃ_time_typeÀàÐÍ¡£³ÌÐòÖÐÊ¹ÓÃ_time_typeÀàÐÍ±íÊ¾Ò»¸öÊ±¼ä¡£
+				ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+					ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½mysqlï¿½ï¿½ï¿½Ý¿â£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½'YYYY-MM-DD HH:MM:SS'/ 'YYYYMMDDHHMMSS'/YYYYMMDDHHMMSSï¿½ÈµÈ¸ï¿½Ê½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+					È¡Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½Ê¹ï¿½ï¿½_time_typeï¿½ï¿½ï¿½Í¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½_time_typeï¿½ï¿½ï¿½Í±ï¿½Ê¾Ò»ï¿½ï¿½Ê±ï¿½ä¡£
 			*/
-			BOOST_STATIC_ASSERT(sizeof(_time_type)==sizeof(MYSQL_TIME));
 			real_len = sizeof(MYSQL_TIME);
 			return real_len;
 		default:
@@ -102,8 +101,8 @@ namespace faith
 		const xchar * charset_name = DEFALUT_CHARSET_NAME; 
 		mysql_options(&mysql_,MYSQL_SET_CHARSET_NAME, charset_name);
 
-		//Í¨±¨Êý¾Ý½Ø¶Ï´íÎó
-		my_bool on_data_truncation = my_bool(1);
+		//Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ý½Ø¶Ï´ï¿½ï¿½ï¿½
+		bool on_data_truncation = true;
 		mysql_options(&mysql_, MYSQL_REPORT_DATA_TRUNCATION, &on_data_truncation);
 
 		// Establish the connection. CLIENT_MULTI_STATEMENTS:support multi query.
@@ -115,8 +114,8 @@ namespace faith
 			m_conn_params = params;
 			is_connected_ = true;
 			///*
-			//	ÏòÐèÒª×¢²ádpµÄÊý¾Ý¿â×¢²ádp¡£²»ÐèÒª×¢²ádpµÄÊý¾Ý¿â»áÖ´ÐÐÊ§°Ü£¬ÕâÖÖÇé¿öºöÂÔÖ®
-			//	²ÎÊýÎªdp±êÊ¶£¬ÔÝÌî0
+			//	ï¿½ï¿½ï¿½ï¿½Òª×¢ï¿½ï¿½dpï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½×¢ï¿½ï¿½dpï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òª×¢ï¿½ï¿½dpï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½Ö´ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®
+			//	ï¿½ï¿½ï¿½ï¿½Îªdpï¿½ï¿½Ê¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0
 			//	*/
 			//xchar sql[256];
 			//sprintf(sql, "CALL SP_ON_DP_STARTED (%u)", 0);
@@ -269,7 +268,7 @@ namespace faith
 				binds_[field_count_].buffer_length = real_len;
 				if(field_info->flags & UNSIGNED_FLAG)
 				{
-					binds_[field_count_].is_unsigned = my_bool(1);
+					binds_[field_count_].is_unsigned = bool(1);
 				}
 				fields_[field_count_].lenght = len;
 				fields_[field_count_].fieldtype = (real_len == len)?0:1;
@@ -290,7 +289,7 @@ namespace faith
 		int32 row_count;
 		int32 fetch_result = 0;
 		int32 real_num = 0;
-		my_bool is_bind_ok;
+		bool is_bind_ok = false;
 		int32 total_size;
 		if (query.query_type != QT_BATCH_QUERY)
 		{

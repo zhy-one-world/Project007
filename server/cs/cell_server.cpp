@@ -16,7 +16,6 @@
 #include "http/http_access_mgr.hpp"
 #include "logic/unit_man.h"
 #include "logic/world_cs.h"
-#include "Lua/script_mgr.h"
 #include "net/net_client_mgr.hpp"
 #include "server_log.hpp"
 #include "system/item/item_system.h"
@@ -145,7 +144,7 @@ namespace faith
 	}
 	void cell_server::on_req_login(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
-		//´æÏÂÕâÌ¨·þÎñÆ÷µÄÐÅÏ¢
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 		const faith::req_login* msg = static_cast<const faith::req_login*>(data_ptr);
 		if (NULL == msg)
 		{
@@ -212,9 +211,9 @@ namespace faith
 			return;
 		}
 		static int32 loop_counter = 0;
-		static int64 tick_time = get_tick_count();	// Ã¿´Î³¡¾°tickÊ±¼ä(Æ½¾ùÖµ)
+		static int64 tick_time = get_tick_count();	// Ã¿ï¿½Î³ï¿½ï¿½ï¿½tickÊ±ï¿½ï¿½(Æ½ï¿½ï¿½Öµ)
 		static int64 last_log_time = 0;
-		static int64 sync_cs_data = 0;	// Ã¿5·ÖÖÓ´òÓ¡Ò»Ð©Êý¾Ý
+		static int64 sync_cs_data = 0;	// Ã¿5ï¿½ï¿½ï¿½Ó´ï¿½Ó¡Ò»Ð©ï¿½ï¿½ï¿½ï¿½
 		static int64 time_old = 0;
 		++loop_counter;
 		static bool is_cs_ok = false;
@@ -231,7 +230,6 @@ namespace faith
 		{
 			m_reload_csv = false;
 			template_manager::get_instance().init();
-			script_mgr::get_instance().call_func(nullptr, "cs_main", 0, false, "");
 			unit_man::reload_csv();
 			cs_reload_csv_end msg;
 			connection_mgr::getInstance().send_to_ws(&msg, sizeof(msg));
@@ -292,7 +290,7 @@ namespace faith
 
 		if (daemon_client::getInstance().get_server_close())
 		{
-			// Êä³öÐÅÏ¢
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 			CONSOLE_INFO("daemon close, all player offline, please shutdown cs ! ! !");
 			unit_man::save_all_player(e_logout_result_connect_dis);
 			unit_man::remove_all_player();

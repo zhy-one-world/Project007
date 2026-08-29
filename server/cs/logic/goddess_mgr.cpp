@@ -5,7 +5,7 @@
 #include "logic/player.hpp"
 #include "logic/item_set.h"
 #include "template/StringConst_S.h"
-#include "lua/script_mgr.h"
+
 #include "npc.hpp"
 
 namespace faith
@@ -60,14 +60,14 @@ namespace faith
 				}
 			}
 			item->set_data_info(e_item_info_activate, 1);
-			item->set_data_info(e_item_info_illusion_had_byte, slot);//¼ÇÂ¼ÉÏÕóÎ»ÖÃ
+			item->set_data_info(e_item_info_illusion_had_byte, slot);//ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
 			if (slot > 0)
 			{
-				calcu_cooperate_buff(item, true);//ÉèÖÃÍê³öÕ½Î»ÖÃÖ®ºóÔÙ¼ÆËã
+				calcu_cooperate_buff(item, true);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ½Î»ï¿½ï¿½Ö®ï¿½ï¿½ï¿½Ù¼ï¿½ï¿½ï¿½
 			}
 			if (slot == 0 && item->get_data_info(e_item_info_starskill_flag) == 0)
 			{
-				goddess_fight(item->get_item_guid());//Ö÷³öÕ½Î»²Ù×÷
+				goddess_fight(item->get_item_guid());//ï¿½ï¿½ï¿½ï¿½Õ½Î»ï¿½ï¿½ï¿½ï¿½
 			}
 			player_ref.get_item_set().send_item_one(item);
 			return true;
@@ -102,7 +102,7 @@ namespace faith
 			
 			if (real_slot == 0)
 			{
-				goddess_fight(item->get_item_guid());//Ö÷³öÕ½Î»²Ù×÷
+				goddess_fight(item->get_item_guid());//ï¿½ï¿½ï¿½ï¿½Õ½Î»ï¿½ï¿½ï¿½ï¿½
 			}
 			player_ref.get_item_set().send_item_one(item);
 			return true;
@@ -373,7 +373,7 @@ namespace faith
 			{
 				if (template_ptr->AdditionBuff.size() >= per_goddess_type_equip_num)
 				{
-					if (is_add)//×°±¸ËùÐ¯´øµÄ¹âÐ§buff
+					if (is_add)//×°ï¿½ï¿½ï¿½ï¿½Ð¯ï¿½ï¿½ï¿½Ä¹ï¿½Ð§buff
 					{
 						buff_man::add_buff_inst(array_index, array_index, template_ptr->AdditionBuff[temp_item_template->sub_type - 1]);
 					}
@@ -386,7 +386,7 @@ namespace faith
 				{
 					for (int32 j = 0; j < deity_template_ptr->AdditionBuff.size(); j++)
 					{
-						if (is_add)//×°±¸ËùÐ¯´øµÄ¼¼ÄÜÊôÐÔbuff
+						if (is_add)//×°ï¿½ï¿½ï¿½ï¿½Ð¯ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½buff
 						{
 							buff_man::add_buff_inst(array_index, array_index, deity_template_ptr->AdditionBuff[j]);
 						}

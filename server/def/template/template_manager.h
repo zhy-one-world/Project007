@@ -19,7 +19,7 @@ namespace faith
     public:
         void init();
 		void init_for_dp();
-        typedef std::map<int32, i8*> template_type;
+        typedef std::map<int32, ui8*> template_type;
 
     public:
         template<class T>
@@ -74,7 +74,7 @@ namespace faith
 
 	public:
 		GameConfigTemplate*							get_game_config_template() { return m_game_config_template; }
-		SpecialNameTemplate*						get_template_by_type_and_level_and_star(int32 name_type, int32 name_level, int32 name_star);//根据类型和等级获取称号
+		SpecialNameTemplate*						get_template_by_type_and_level_and_star(int32 name_type, int32 name_level, int32 name_star);
 		StoreTemplate*								get_store_template_by_id(int32 store_id);
 		DailyActivitiesTemplate*					get_template_by_daily_activity_type(int32 activity_typ, int32 player_exp_level);
 		std::vector<DailyActivitiesTemplate*>		get_template_array_by_daily_activity_type(int32 activity_typ, int32 player_exp_level);
@@ -110,22 +110,21 @@ namespace faith
 		WaveTemplate*								get_wave_template(BrushStrangeTemplate* brush_temp_ptr, int32 wave_id);
 		std::vector<int32>&							get_excellent_target_color_array(EquipTemplate* equip_template_ptr, int32 target_color);
 		std::vector<int32>&							get_spirit_excellent_target_color_array(SpiritTemplate* spirit_template_ptr, int32 target_color);
-		TimeLimitActivityTemplate*					get_time_limit_activity_template_ptr(int32 template_id);						//运营活动分表 优先使用运营专用表格
-		TimeLimitActivityBranchTemplate*			get_time_limit_activity_branch_template_ptr(int32 template_id);					//运营活动分表 优先使用运营专用表格
+		TimeLimitActivityTemplate*					get_time_limit_activity_template_ptr(int32 template_id);						
+		TimeLimitActivityBranchTemplate*			get_time_limit_activity_branch_template_ptr(int32 template_id);					
 		EquipEnchantTemplate*                       get_equip_enchant_template_ptr(int32 level, int32 type, int32 slot);
 		CompetitionSeasonTemplate*					get_template_by_competition_level(int32 level, int64 world_level);
 		ElementCompetitionTemplate*					get_template_by_element_competition_level(int32 level, int64 world_level);
 		std::vector<BreakWillTemplate*>				get_break_will_template_ptr_type_array();
 	public:
-		std::string									get_str_id_by_notice_id(int32 notice_id);		// 通过NoticedId获得StringTemplate的字符串数组
-		bool										get_vec_str_by_notice_id(std::vector<std::string>& str_list, int32 notice_id);		// 通过NoticedId获得StringTemplate的字符串数组
-		bool										get_str_by_attribute_id(std::string& str, int32 attributed_id);					// 通过AttributeId获得StringTemplate的字符串数组的第一行数据
+		std::string									get_str_id_by_notice_id(int32 notice_id);		
+		bool										get_vec_str_by_notice_id(std::vector<std::string>& str_list, int32 notice_id);		
+		bool										get_str_by_attribute_id(std::string& str, int32 attributed_id);					
 		const std::string&							get_str_by_string_template_id(const int32 string_template_id, int32 index=0);
-		std::string									get_second_str_by_string_template_id(const int32 string_template_id);				//获取strlist[1]的字符串
-		std::string									int_to_string(int64 num);			// 将int转为string
+		std::string									get_second_str_by_string_template_id(const int32 string_template_id);				
 		std::string									float_to_string(float num);
-		std::vector<std::pair<int32, i8*>>&			get_grade_qiyuan_templates();
-		std::vector<std::pair<int32, i8*>>&			get_flair_qiyuan_templates();
+		std::vector<std::pair<int32, ui8*>>&		get_grade_qiyuan_templates();
+		std::vector<std::pair<int32, ui8*>>&		get_flair_qiyuan_templates();
 		const std::vector<std::string>&				get_string_list(const int32 string_template_id);
 		const std::string&							get_target_sensitive_text(const int32 word_template_id);
 		int32										get_competition_first_id(int64 world_level);
@@ -142,12 +141,12 @@ namespace faith
 		template_type								template_map[e_template_max];
 		std::vector<int32>							m_empty_int_array;
 		std::vector<float>							m_empty_float_array;
-		std::vector<std::pair<int32, i8*>>			vec_grade_qiyuan_templates;
-		std::vector<std::pair<int32, i8*>>			vec_flair_qiyuan_templates;
+		std::vector<std::pair<int32, ui8*>>			vec_grade_qiyuan_templates;
+		std::vector<std::pair<int32, ui8*>>			vec_flair_qiyuan_templates;
 		GameConfigTemplate*							m_game_config_template;	
 	public:
-		std::string return_empty_string;//用于返回空字符串的引用
-		std::vector<std::string> return_string_list;//用于返回空vector的引用
+		std::string return_empty_string;
+		std::vector<std::string> return_string_list;
 	};
 
 #define proto_by_lua(Head)  template_manager::get_instance().is_message_use_lua(Head)

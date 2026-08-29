@@ -14,7 +14,7 @@
 #include "cross_group/cross_transfer_logic.hpp"
 #include "game_cfg/servers_config.h"
 #include "http/http_send.hpp"
-#include "lua/script_mgr.h"
+
 #include "msgproc_dp.hpp"
 #include "net.pb.h"
 #include "relation.pb.h"
@@ -276,13 +276,13 @@ namespace faith
 		{
 			if (i == e_server_info_type_begin_cross_server_time)
 			{
-				world_server::getInstance().set_cross_server_open_time(server_info_arr[i], false);//¿ª·þÊ±¼äÌØÊâÂß¼­
+				world_server::getInstance().set_cross_server_open_time(server_info_arr[i], false);//ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½
 				continue;
 			}
 			int32 server_value = server_info_arr[i];
 			if (i == e_server_info_type_server_cross_state && !world_server::getInstance().is_sky_island_server())
 			{
-				continue;//ÏÞÊ±»î¶¯µÈ¼¶²»×ß×Ô¼ºµÄdb
+				continue;//ï¿½ï¿½Ê±ï¿½î¶¯ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½db
 			}
 			world_server::getInstance().set_server_info_arr(server_value, i);
 		}
@@ -294,7 +294,7 @@ namespace faith
 		CONSOLE_INFO("main(): world_server started");
 		CONSOLE_INFO("main(): main-thread enter loop");
 
-		if (cross_server_id <= 0)//µ±¶ÁÈ¡Êý¾Ý¿â·¢ÏÖ²»Îª¿ç·þÊ±£¬Ö´ÐÐÔ­Âß¼­
+		if (cross_server_id <= 0)//ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½Ý¿â·¢ï¿½Ö²ï¿½Îªï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ö´ï¿½ï¿½Ô­ï¿½ß¼ï¿½
 		{
 			for (int32 i = e_need_server_cross_begin_cross; i < e_need_server_cross_max; i++)
 			{
@@ -308,9 +308,9 @@ namespace faith
 			world_server::getInstance().send_server_config_to_db();
 			world_server::getInstance().load_server_attr_val();
 		}
-		else//µ±¶ÁÈ¡Êý¾Ý¿â·¢ÏÖÎª¿ç·þÊ±£¬Ö´ÐÐÐÂÂß¼­
+		else//ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½Ý¿â·¢ï¿½ï¿½Îªï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½
 		{
-			if (world_server::getInstance().is_sky_island_server())//GATE·þÒ²ÊÇÔ­Âß¼­
+			if (world_server::getInstance().is_sky_island_server())//GATEï¿½ï¿½Ò²ï¿½ï¿½Ô­ï¿½ß¼ï¿½
 			{
 				for (int32 i = e_need_server_cross_begin_cross; i < e_need_server_cross_max; i++)
 				{
@@ -380,7 +380,7 @@ namespace faith
 		case e_error_code_success:
 		{
 			if (is_login > 0)
-			{//ÏÞÖÆµÇÂ¼
+			{//ï¿½ï¿½ï¿½Æµï¿½Â¼
 				CONSOLE_INFO("dp2ws_rep_get_role_info_ws is_login > 0");
 				ws2fep_enter_game rep;
 				rep.client_uid = session->m_client_uid;
@@ -406,7 +406,7 @@ namespace faith
 
 			session->m_is_send_chat = false;
 			for (int32 i = 0; i < max_character_num; ++i)
-			{//½ûÑÔ
+			{//ï¿½ï¿½ï¿½ï¿½
 				if (session->m_ban_chat_array[i] == session->get_role_guid().server_64)
 				{
 					session->m_is_send_chat = true;
@@ -420,9 +420,9 @@ namespace faith
 			session->m_worship_value = worship_value;
 			session->m_step_num = client_session::e_session_step_dp_load;
 			session->m_login_time = utility::get_tick_count();
-			if (session->get_role_info_data(e_role_info_server_id) == world_server::getInstance().get_server_id())//±¾·þ
+			if (session->get_role_info_data(e_role_info_server_id) == world_server::getInstance().get_server_id())//ï¿½ï¿½ï¿½ï¿½
 			{
-				if (session->get_role_info_data(e_role_info_move_server_id) != 0 && session->get_role_info_data(e_role_info_move_server_id) != world_server::getInstance().get_server_id())//³öÏÖÕâÖÖÇé¿öËµÃ÷Íæ¼ÒÔÚÆäËû·þ·ÇÕý³£Çé¿öµôÏß£¬ËùÒÔ·¢Ò»¸öÌß³öÐÅÏ¢µ½¶ÔÓ¦·þ£¬Í¬Ê±ÔÚ±¾·þµÇÂ½
+				if (session->get_role_info_data(e_role_info_move_server_id) != 0 && session->get_role_info_data(e_role_info_move_server_id) != world_server::getInstance().get_server_id())//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß£ï¿½ï¿½ï¿½ï¿½Ô·ï¿½Ò»ï¿½ï¿½ï¿½ß³ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Í¬Ê±ï¿½Ú±ï¿½ï¿½ï¿½ï¿½ï¿½Â½
 				{
 					CONSOLE_INFO("dp2ws_rep_get_role_info_ws move_server_id:{}, cur_server_id:{}", session->get_role_info_data(e_role_info_move_server_id), world_server::getInstance().get_server_id());
 					ws2ws_kick_out_player kick_msg;
@@ -430,14 +430,14 @@ namespace faith
 					kick_msg.need_send_save_end = true;
 					cross::send_msg_to_ws(guid_64(), session->get_role_info_data(e_role_info_move_server_id), e_msgindex_ws2ws_kick_player, &kick_msg, sizeof(kick_msg));
 					session->set_role_info_data(e_role_info_move_server_id, world_server::getInstance().get_server_id());
-					int64 save_end_time = time_helper::get_cur_time_new().millisecond + second_tick_time * 3;//3S²»·µ»ØsaveendÐÅÏ¢£¬ÔòÇ¿ÖÆµÇÂ½
+					int64 save_end_time = time_helper::get_cur_time_new().millisecond + second_tick_time * 3;//3Sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½saveendï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½Æµï¿½Â½
 					session->set_cross_server_save_time(save_end_time);
-					return;//ÐèÒªµÈÄ¿±ê·þÎñÆ÷save³É¹¦ºó£¬²Å¿É¼ÌÐøÖ´ÐÐµÇÂ½£¬·ñÔò»á³öÏÖÏÈloadºósave£¬Ä¿±ê·þÍæ¼ÒÊý¾Ý¶ªÊ§µÄÎÊÌâ
+					return;//ï¿½ï¿½Òªï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½saveï¿½É¹ï¿½ï¿½ó£¬²Å¿É¼ï¿½ï¿½ï¿½Ö´ï¿½Ðµï¿½Â½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½loadï¿½ï¿½saveï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¶ï¿½Ê§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				}
 			}
 			else
 			{
-				if (session->get_role_info_data(e_role_info_move_server_id) != world_server::getInstance().get_server_id())//±¾·þºÍÍæ¼ÒÔ¤ÆÚµ½´ï·þÎñÆ÷²»Ò»ÖÂ
+				if (session->get_role_info_data(e_role_info_move_server_id) != world_server::getInstance().get_server_id())//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
 				{
 					CONSOLE_INFO("dp2ws_rep_get_role_info_ws move_server_id:{}, cur_server_id:{}", session->get_role_info_data(e_role_info_move_server_id), world_server::getInstance().get_server_id());
 					ws2fep_enter_game rep;
@@ -1076,12 +1076,12 @@ namespace faith
 		const dp2ws_load_all_legion_member_info* packet = static_cast<const dp2ws_load_all_legion_member_info*>(data_ptr);
 		if (nullptr == packet || data_len == 0)
 		{
-			CONSOLE_INFO("dp2ws_load_all_legion_member_info_process data_len = 0£º ");
+			CONSOLE_INFO("dp2ws_load_all_legion_member_info_process data_len = 0ï¿½ï¿½ ");
 			return;
 		}
 		if (data_len != packet->get_pak_length())
 		{
-			CONSOLE_INFO("dp2ws_load_all_legion_member_info_process data_len != get_pak_length£º ");
+			CONSOLE_INFO("dp2ws_load_all_legion_member_info_process data_len != get_pak_lengthï¿½ï¿½ ");
 			return;
 		}
 
@@ -1103,7 +1103,7 @@ namespace faith
 				continue;
 			}
 
-			// ·þÎñÆ÷¸ÕÆô¶¯µÄÊ±ºòËùÓÐ¾üÍÅ³ÉÔ±¿Ï¶¨¶¼ÊÇÀëÏß×´Ì¬µÄ
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ð¾ï¿½ï¿½Å³ï¿½Ô±ï¿½Ï¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½
 			loaded_member_info.data_ary[e_legion_member_info_is_online] = 0;
 			if (loaded_member_info.data_ary[e_legion_member_info_last_logout_stamp] <= 0)
 			{
@@ -1244,7 +1244,7 @@ namespace faith
 				world_server::getInstance().set_ws_loading_flag(e_ws_flag_city_war);
 				if (world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_legion_territory_war))
 				{
-					//¸üÐÂËùÓÐ·þÎñÆ÷µÄ¾º¼ÛÊý¾Ý
+					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 					city_war_territory_mgr::get_instance().send_city_info_all_to_other_ws(0);
 				}
 				else
@@ -1705,7 +1705,7 @@ namespace faith
 		}
 		session_player->get_relation_list_mgr().clear_relation_list();
 		session_player->get_relation_list_mgr().load_relation_from_db(load_player_relation->relation_array, load_player_relation->data_num);
-		session_player->get_relation_list_mgr().update_relation_state(true, false);				//¸üÐÂÍæ¼Ò×´Ì¬ºÍ×î½üµÇÂ½Ê±¼ä
+		session_player->get_relation_list_mgr().update_relation_state(true, false);				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â½Ê±ï¿½ï¿½
 		session_player->get_relation_list_mgr().sync_relation_list_to_client();
 		session_player->get_relation_list_mgr().sync_full_relation_list_to_cs(false);
 	}
@@ -1744,7 +1744,7 @@ namespace faith
 			return;
 		}
 
-		//³ö´í²¢ÇÒÊÇ¼ÓºÃÓÑÁÐ±í
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¼Óºï¿½ï¿½ï¿½ï¿½Ð±ï¿½
 		if (packet->relation_type == e_relationlist_type_friend)
 		{
 			client_session* session_ptr = client_session_mgr::getInstance().get_session(packet->relation_guid);

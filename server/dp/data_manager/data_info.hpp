@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2018Äê1ÔÂ4ÈÕ20:52:57
+	created:	2018ï¿½ï¿½1ï¿½ï¿½4ï¿½ï¿½20:52:57
 	file base:	data_info
 	file ext:	hpp
 	author:		zhy
@@ -26,7 +26,7 @@ namespace faith
 		bool get_data_info(void* data_ptr, int32& data_num);
 		bool get_proto_info(void* data_ptr, int32& data_size);
 	private:
-		i8* m_data_info;
+		ui8* m_data_info;
 		int32 m_data_size;
 		int32 m_data_num;
 	};

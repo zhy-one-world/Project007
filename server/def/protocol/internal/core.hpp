@@ -853,7 +853,7 @@ namespace faith
 		s_client_uid	client_uid;
 		uint32					dest_cs_uid;
 		bool					req_ack;
-		i8						result;
+		ui8						result;
 		uint32					map_id;				// 新的地图id，由map_id判断为主世界的场景或副本场景
 		s_map_pos				map_pos;			// 新的位置信息
 		int32						time_stamp;			// 时间

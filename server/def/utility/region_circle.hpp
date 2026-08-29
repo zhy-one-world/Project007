@@ -2,6 +2,7 @@
 #define __REGION_CIRCLE_H_
 
 #include "region.hpp"
+#include "logic/math.hpp"
 
 namespace faith
 {

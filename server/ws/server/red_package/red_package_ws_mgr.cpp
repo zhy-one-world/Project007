@@ -9,7 +9,7 @@
 #include "server/client_session_mgr.hpp"
 #include "server/legion/legion_ws_mgr.h"
 #include "../cache_ws_mgr.hpp"
-#include "lua/script_mgr.h"
+
 #include "internet/character.pb.h"
 #include "event_msg.hpp"
 #include "net.pb.h"
@@ -130,7 +130,7 @@ namespace faith
 			suit_solt = get_oldest_red_package_slot();
 			if (suit_solt != -1 && red_package_arr[suit_solt] != nullptr)
 			{
-				//É¾³ı×îÏÈ·¢µÄºì°ü
+				//É¾ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½Äºï¿½ï¿½
 				character_proto_del_red_package msg;
 				msg.add_red_package_guid(red_package_arr[suit_solt]->get_guid().A);
 				msg.add_red_package_guid(red_package_arr[suit_solt]->get_guid().B);
@@ -245,7 +245,7 @@ namespace faith
 			return;
 		}
 		if (red_package_arr[target_index]->get_remain_times() <= 0)
-		{//Õı³£Çé¿öÏÂ£¬ÕÒ²»µ½Õâ¸öºì°üÓ¦¸ÃÊÇºì°üÒÑ¾­ÁìÍê±»É¾ÁË£¬²»ÓÃ¿¼ÂÇ´«ÁË¸ö¼ÙGUIDµÄÇé¿ö
+		{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â£ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Çºï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ê±»É¾ï¿½Ë£ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½Ç´ï¿½ï¿½Ë¸ï¿½ï¿½ï¿½GUIDï¿½ï¿½ï¿½ï¿½ï¿½
 			ws2cs_get_red_package_end msg;
 			msg.receiver_guid = role_guid;
 			msg.get_result = e_red_bag_alread_done;
@@ -287,7 +287,7 @@ namespace faith
 		if (draw_num > 0)
 		{
 			//send_info_to_all(target_index);
-			//²»ÔÙÈ«·¢ÁË£¬È«·¢µÄ»°£¬»á·¢Éúµ±ÒÑ³éÈ¡ÈË½Ï¶àµÄÊ±ºò£¬°üÁ¿½Ï´óµÄÎÊÌâ
+			//ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½Ë£ï¿½È«ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½á·¢ï¿½ï¿½ï¿½ï¿½ï¿½Ñ³ï¿½È¡ï¿½Ë½Ï¶ï¿½ï¿½Ê±ï¿½ò£¬°ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			send_new_draw_info(target_index, role_guid, role_name, draw_num);
 
 			ws2cs_get_red_package_end msg;
@@ -596,7 +596,7 @@ namespace faith
 			red_package_ws_ptr->set_base_info(data_list[i]);
 
 			if (data_list[i].remain_times > 0)
-			{//»¹ÄÜ³éµÄÒªload³é½±ÈËĞÅÏ¢£¬ÒÑ¾­³é¹âµÄ£¬ÏÈ²»load£¬µÈÓĞÈËÒª¿´ÔÙload
+			{//ï¿½ï¿½ï¿½Ü³ï¿½ï¿½Òªloadï¿½é½±ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½È²ï¿½loadï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½load
 				load_receiver_by_db(data_list[i].red_package_guid);
 			}
 		}
@@ -612,7 +612,7 @@ namespace faith
 		{
 			return;
 		}
-		//ÊôÓÚÍ¬Ò»¸öºì°üµÄ ÁìÈ¡ÈË£¬ºì°üµÄguid¶¼Ó¦¸ÃÒ»Ñù£¬Ëæ±ãÄÃÒ»¸ö¾ÍĞĞ
+		//ï¿½ï¿½ï¿½ï¿½Í¬Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¡ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½guidï¿½ï¿½Ó¦ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		guid_64 red_package_guid = data_list[0].red_package_guid;
 		int32 target_index = find_package_index(red_package_guid);
 		if (target_index < 0

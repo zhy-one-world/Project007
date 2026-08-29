@@ -1,8 +1,0 @@
-
-
-namespace hld
-{
-	void save_big_player_to_sql_lua(int connindex, int player_type[e_big_player_type_max], int64 role_guid[e_big_player_type_max]);
-	void load_big_player_lua(int connindex);
-	void load_big_player_detail_lua(int connindex, int player_type, long long role_guid);
-}

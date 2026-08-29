@@ -38,7 +38,7 @@
 #include "server_log.hpp"
 #include "net/message_manager.hpp"
 #include "server/cache_ws_mgr.hpp"
-#include "lua/script_mgr.h"
+
 #include "system/scene/cs_map_mgr_system.h"
 
 namespace faith

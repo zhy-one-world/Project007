@@ -1308,7 +1308,6 @@ enum
 		void from_proto(const faith::ws2cs_proto::full_friend_guid& msg)
 		{
 			player_index = msg.player_index();
-			highest_firendliness_value = msg.has_highest_firendliness_value();
 			friend_num = msg.friend_num();
 			is_add = msg.is_add();
 

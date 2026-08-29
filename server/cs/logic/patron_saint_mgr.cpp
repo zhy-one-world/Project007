@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2017Äê6ÔÂ8ÈÕ15:55
+created: 2017ï¿½ï¿½6ï¿½ï¿½8ï¿½ï¿½15:55
 file base: patron_saint
 file ext: cpp
 author: Lxy
@@ -10,7 +10,7 @@ purpose: about role's pokedex_mgr
 #include "internet/item.pb.h"
 #include "logic/player.hpp"
 #include "logic/unit_man.h"
-#include "lua/script_mgr.h"
+
 #include "internet/net.pb.h"
 #include "patron_saint_mgr.h"
 #include "system/item/item_system.h"
@@ -65,7 +65,7 @@ namespace faith
 		int32 cur_unlock_order = tinder_template_ptr_unlock->CurrentOrder;
 		if (cur_unlock_order > faith::tinder_old_num_max)
 		{
-			cur_unlock_order += 2; // ºóÃæÖ»ÓĞ4¸ö
+			cur_unlock_order += 2; // ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½4ï¿½ï¿½
 		}
 		int32 cur_equip_slot_can_open_num = cur_unlock_order / 6;
 		/////////////////////////
@@ -108,7 +108,7 @@ namespace faith
 		//int32 cur_unlock_order = tinder_template_ptr_unlock->CurrentOrder;
 		//if (cur_unlock_order > faith::tinder_old_num_max)
 		//{
-		//	cur_unlock_order += 2; // ºóÃæÖ»ÓĞ4¸ö
+		//	cur_unlock_order += 2; // ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½4ï¿½ï¿½
 		//}
 		////int32 cur_equip_slot_open_num = tinder_template_ptr_unlock->CurrentOrder / 6;
 		//int32 cur_equip_slot_open_num = cur_unlock_order / 6;

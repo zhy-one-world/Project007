@@ -16,7 +16,7 @@
 #include "game_cfg/servers_config.h"
 #include "http/http_access_mgr.hpp"
 #include "log/log_db_proxy.hpp"
-#include "lua/script_mgr.h"
+
 #include "net/message_manager.hpp"
 #include "net/net_client_mgr.hpp"
 #include "net/tcp_client.hpp"

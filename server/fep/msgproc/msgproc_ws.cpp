@@ -21,10 +21,8 @@
 #include "utility/init_unit.h"
 #include <Utility/serialize_msg.h>
 #include "server_log.hpp"
-#include <time_limit_activity_msg.hpp>
-#include "../server/time_limit_activity_temp_fep_mgr.h"
-#include "../server/csv_synchronization_fep_mgr.h"
 #include "net.pb.h"
+#include "game.pb.h"
 
 namespace faith
 {
@@ -70,10 +68,6 @@ namespace faith
 		}
 
 		client_session_ptr->response_login(pdata->eResult, pdata->queue_pos, pdata->left_time_in_sec);
-		if (pdata->eResult == e_error_code_success_queue_complete || pdata->eResult == e_error_code_success)
-		{
-			csv_synchronization_fep_mgr::get_instance().send_time_limit_template(client_session_ptr);
-		}
 	}
 
 	void ws2fep_reconnect_game_func(uint32 connindex, const void* data_ptr, size_t data_len)
@@ -160,33 +154,4 @@ namespace faith
 		security_communication_layer::getInstance().send_to_session(client_session_ptr->get_conn_index(), &logout_msg, e_msgindex_s2c_logout);
 		client_session_ptr->set_is_logout(true);
 	}
-
-	void ws2fep_recv_act_limit_temp(uint32 connindex, const void* data_ptr, size_t data_len)
-	{
-		const ws2fep_act_limit_temp* packek = static_cast<const ws2fep_act_limit_temp*>(data_ptr);
-		if (nullptr == packek)
-		{
-			return;
-		}
-		if (data_len != sizeof(ws2fep_act_limit_temp))
-		{
-			return;
-		}
-		time_limit_activity_temp_fep_mgr::get_instance().recv_ws2fep_limit_act_temp(packek->temp_db_info, packek->data_num, packek->is_begin);
-	}
-
-	void ws2fep_recv_act_limit_branch_temp(uint32 connindex, const void* data_ptr, size_t data_len)
-	{
-		const ws2fep_act_limit_branch_temp* packek = static_cast<const ws2fep_act_limit_branch_temp*>(data_ptr);
-		if (nullptr == packek)
-		{
-			return;
-		}
-		if (data_len != sizeof(ws2fep_act_limit_branch_temp))
-		{
-			return;
-		}
-		time_limit_activity_temp_fep_mgr::get_instance().recv_ws2fep_limit_act_branch_temp(packek->temp_db_info, packek->data_num, packek->is_end);
-	}
-
 }

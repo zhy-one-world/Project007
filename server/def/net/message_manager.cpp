@@ -10,16 +10,12 @@
 #include "message_manager.hpp"
 #include <base.hpp>
 #include "template/template_manager.h"
-#include "lua/script_mgr.h"
 #include "utility/parse_msg.h"
-#include "tolua++.h"
 #include "server_log.hpp"
 
 
 namespace faith
 {
-	TOLUA_API int  tolua_logic_open(lua_State* tolua_S);
-
 	void none_msg_fuction(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
 		return;
@@ -53,63 +49,6 @@ namespace faith
 		{
 			return;
 		}
-		int32 wheader = pPacket->wheader;
-
-		LuaMessageTemplate* LuaMessageTemplatePtr = GET_TEMPLATE(LuaMessageTemplate, pPacket->wheader);
-
-		if (LuaMessageTemplatePtr && LuaMessageTemplatePtr->UseLua == m_server_type)
-		{
-			if (LuaMessageTemplatePtr->UseLua == (int32)e_server_type_dp)   
-			{
-
-				//CONSOLE_INFO("on_data_received_dp") << pPacket->wheader);
-
-				packet_s2s* pPacket = (packet_s2s*)data_ptr;
-				//script_mgr::get_instance().call_func(nullptr, "hotupdate", 0, false, "");
-				script_mgr::get_instance().call_func(nullptr, "on_data_received_dp", 0, true, "%s%d%d", pPacket->google_data, pPacket->google_data_len, pPacket->wheader, conn_index);
-				return;
-			}
-
-			if (LuaMessageTemplatePtr->UseLua == (int32)e_server_type_cs)
-			{
-				if (wheader > e_msg_c2s_s2c_begin && wheader < e_msg_c2s_s2c_end) // client--->server
-				{
-					s_client_uid client_uid;
-					parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-					packet_c2s_s2c* pPacket = (packet_c2s_s2c*)data_ptr;
-				    //script_mgr::get_instance().call_func(nullptr,"hotupdate", 0, false, "");
-					script_mgr::get_instance().call_func(nullptr, "on_data_received_cs", 0, true, "%s%d%d", pPacket->google_data, pPacket->google_data_len, pPacket->wheader, client_uid.fepsession_uid);
-					return;
-				}
-
-				//CONSOLE_INFO("on_data_received") << pPacket->wheader);
-				packet_s2s* pPacket = (packet_s2s*)data_ptr;
-				//script_mgr::get_instance().call_func(nullptr, "hotupdate", 0, false, "");
-				script_mgr::get_instance().call_func(nullptr, "on_data_received_ss", 0, true, "%s%d%d", pPacket->google_data, pPacket->google_data_len, pPacket->wheader, conn_index);
-				return;
-			}
-
-			else if (LuaMessageTemplatePtr->UseLua == (int32)e_server_type_ws)
-			{
-				if (wheader > e_msg_c2s_s2c_begin && wheader < e_msg_c2s_s2c_end) // client--->server
-				{
-					s_client_uid client_uid;
-					parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-					packet_c2s_s2c* pPacket = (packet_c2s_s2c*)data_ptr;
-					//script_mgr::get_instance().call_func(nullptr, "hotupdate", 0, false, "");
-					script_mgr::get_instance().call_func(nullptr, "on_data_received_cs", 0, true, "%s%d%l", pPacket->google_data, pPacket->google_data_len, pPacket->wheader, client_uid.fep_uid_64);
-					return;
-				}
-				//CONSOLE_INFO("on_data_received_ws") << pPacket->wheader);
-				packet_s2s* pPacket = (packet_s2s*)data_ptr;
-				script_mgr::get_instance().call_func(nullptr, "on_data_received_ws", 0, true, "%s%d%d", pPacket->google_data, pPacket->google_data_len, pPacket->wheader, conn_index);
-				return;
-			}
-
-		}
-		else
-		{
-			m_handler_map[pPacket->wheader](conn_index, data_ptr, data_len);
-		}
+		m_handler_map[pPacket->wheader](conn_index, data_ptr, data_len);
 	}
 }

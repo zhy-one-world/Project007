@@ -47,7 +47,6 @@
 #include "internet/map.pb.h"
 #include "internet/net.pb.h"
 #include "internet/skill.pb.h"
-#include "internet/time_activity.pb.h"
 #include "logic/buff_man.h"
 #include "logic/item_set.h"
 #include "logic/player.hpp"
@@ -148,7 +147,7 @@ namespace faith
 		}
 		if (move_map_template_ptr->Type != faith::e_map_type_big_map && map_object_ptr->get_map_type() == faith::e_map_type_big_map)
 		{
-			// ´Ó¸±±¾ÀïÍË³öÓÎÏ· ÓÖÉÏÏßºó ¸±±¾ÒÑ¾­±»»ØÊÕµÄ»° »á×ßÕâÀï
+			// ï¿½Ó¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½Ï· ï¿½ï¿½ï¿½ï¿½ï¿½ßºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÕµÄ»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			unit_info.data_ary[e_role_info_move_pos_x] = unit_info.data_ary[e_role_info_main_pos_x];
 			unit_info.data_ary[e_role_info_move_pos_y] = unit_info.data_ary[e_role_info_main_pos_y];
 			unit_info.data_ary[e_role_info_move_pos_z] = unit_info.data_ary[e_role_info_main_pos_z];
@@ -218,7 +217,7 @@ namespace faith
 
 
 
-	// 1. ÊôĞÔ
+	// 1. ï¿½ï¿½ï¿½ï¿½
 	void dp2cs_rep_load_char_info(uint32 conn_index,const void* data_ptr,size_t data_len)
 	{
 		const dp2cs_load_role_info* packet = static_cast<const dp2cs_load_role_info*>(data_ptr);
@@ -279,7 +278,7 @@ namespace faith
 		}
 		if (move_map_template_ptr->Type != faith::e_map_type_big_map && base_map_cp->m_map_template->Type == faith::e_map_type_big_map)
 		{
-			// ´Ó¸±±¾ÀïÍË³öÓÎÏ· ÓÖÉÏÏßºó ¸±±¾ÒÑ¾­±»»ØÊÕµÄ»° »á×ßÕâÀï
+			// ï¿½Ó¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½Ï· ï¿½ï¿½ï¿½ï¿½ï¿½ßºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÕµÄ»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			unit_info.data_ary[e_role_info_move_pos_x] = unit_info.data_ary[e_role_info_main_pos_x];
 			unit_info.data_ary[e_role_info_move_pos_y] = unit_info.data_ary[e_role_info_main_pos_y];
 			unit_info.data_ary[e_role_info_move_pos_z] = unit_info.data_ary[e_role_info_main_pos_z];
@@ -1066,7 +1065,7 @@ namespace faith
 			CONSOLE_INFO("player_ref is null");
 			return;
 		}
-		// ¼ÓÔØÊı¾İ´íÎó´¦Àí£¬session playerÉ¾³ı
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½session playerÉ¾ï¿½ï¿½
 		unit_man::logout_player(player_ref.get_unit_guid(), player_ref.get_array_index(), true, e_logout_result_load_data_fail);
 	}
 
@@ -1087,7 +1086,7 @@ namespace faith
 		if (false == packet->is_ok)
 		{
 			CONSOLE_ERROR("packet->is_ok is false");
-			// ´æµµÊı¾İ´íÎó´¦Àí£¬session playerÉ¾³ı
+			// ï¿½æµµï¿½ï¿½ï¿½İ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½session playerÉ¾ï¿½ï¿½
 			unit_man::logout_player(player_ref.get_unit_guid(),player_ref.get_array_index(), true, e_logout_result_save_data_fail);
 			return;
 		}

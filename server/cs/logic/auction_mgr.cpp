@@ -13,7 +13,6 @@
 #include "template/StringConst_S.h"
 #include "server_log.hpp"
 #include "invalid_word/invalid_ansi_word.h"
-#include "lua/script_mgr.h"
 #include "system/item/item_system.h"
 #include "components/item/item_base_component.h"
 #include "utility/parse_msg.h"
@@ -91,9 +90,6 @@ namespace faith
 
 
 		int32 ret = 0;
-
-		script_mgr::get_instance().call_func("auction_lua_mgr", "operate_cpp", 1, false, "%d%d%d%d%d%d%d>%d", m_unit_array_index, operate_type, item_guid.A, item_guid.B, sell_num, price_type, price_value, &ret);
-		
 
 		/*	switch (operate_type)
 			{
@@ -686,7 +682,7 @@ namespace faith
 
 		temp_player.get_first_time_do_mgr().add_do_record(e_first_time_do_type_auction_buy);
 
-		//ÅĞ¶ÏÅÄÂôĞĞ¹ºÎïÈÎÎñÊÇ·ñÍê³É
+		//ï¿½Ğ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½
 		temp_player.get_mission_mgr().target_check(e_mission_end_type_auction_shopping);
 
 		int32 item_num = item_info.item_info.data_ary[e_item_info_stack_count];
@@ -1086,7 +1082,7 @@ namespace faith
 		case e_trading_type_normal_sell:
 		case e_trading_type_world:
 		{
-			//¹ºÂò¼ÇÂ¼
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Â¼
 			cs2ws_auction_add_purchase_record auction_record_msg;
 			auction_record_msg.auction_record_info.record_guid = guid_gen::make_guid(temp_player.get_unit_guid());
 			auction_record_msg.auction_record_info.role_guid = temp_player.get_unit_guid();
@@ -1096,7 +1092,7 @@ namespace faith
 
 			if (auction_info.seller_guid.is_valid())
 			{
-				//³öÊÛ¼ÇÂ¼
+				//ï¿½ï¿½ï¿½Û¼ï¿½Â¼
 				auction_record_msg.auction_record_info.record_guid = guid_gen::make_guid(temp_player.get_unit_guid());
 				auction_record_msg.auction_record_info.role_guid = auction_info.seller_guid;
 				auction_record_msg.auction_record_info.is_sell = true;
@@ -1115,7 +1111,7 @@ namespace faith
 		{
 			cs2ws_auction_add_purchase_record auction_record_msg;
 			auction_record_msg.auction_record_info.record_guid = guid_gen::make_guid(temp_player.get_unit_guid());
-			auction_record_msg.auction_record_info.role_guid = auction_info.seller_guid;		//¾üÍÅÅÄÂô guidÊÇ¾üÍÅguid
+			auction_record_msg.auction_record_info.role_guid = auction_info.seller_guid;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ guidï¿½Ç¾ï¿½ï¿½ï¿½guid
 			auction_record_msg.auction_record_info.is_sell = false;
 			auction_record_msg.auction_record_info.auction_info = auction_info;
 			connection_mgr::getInstance().send_to_ws( &auction_record_msg, sizeof(cs2ws_auction_add_purchase_record));
@@ -1133,7 +1129,7 @@ namespace faith
 		{
 			return;
 		}
-		//´Ë´¦µÄ price_value ²¢²»ÊÇ½«Òª³ËÒÔµ¥´Î¼Ó¼ÛÊı¶îµÄ»ù×¼Öµ
+		//ï¿½Ë´ï¿½ï¿½ï¿½ price_value ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½Òªï¿½ï¿½ï¿½Ôµï¿½ï¿½Î¼Ó¼ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½×¼Öµ
 
 		temp_player.get_star_trip_mgr().target_mission(e_star_trip_target_type_bid);
 
@@ -1203,13 +1199,13 @@ namespace faith
 			cost_money_value = auction_info.cur_bid_money + cost_money_add_value;
 		}
 		else
-		{//ÎŞÈË¾ºÅÄ£¨µÚÒ»´ÎÅÄ£©Ê¹ÓÃ²»¼Ó¼ÛµÄ¼Û¸ñ
+		{//ï¿½ï¿½ï¿½Ë¾ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ä£ï¿½Ê¹ï¿½Ã²ï¿½ï¿½Ó¼ÛµÄ¼Û¸ï¿½
 			cost_money_value = auction_info.cur_bid_money;
 		}
 
 		if (cost_money_value >= auction_info.sell_total_money && auction_info.sell_total_money != 0)
-		{//Èç¹ûÊÇÕâÑù Ó¦¸ÃÖ±½Ó×ß ¹ºÂòÂß¼­
-			//ÒÔÏÂÎªÅÄÂôĞĞÂñµãÈÕÖ¾
+		{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ó¦ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½
+			//ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾
 			item_num = auction_info.item_info.data_ary[e_item_info_stack_count];
 			money_type = auction_info.sell_money_type;
 			item_price = auction_info.sell_total_money;
@@ -1266,7 +1262,7 @@ namespace faith
 		
 		temp_player.get_time_limit_activity_mgr().activity_behavior_done(e_time_limit_behavior_type_auction_bid);
 
-		//ÒÔÏÂÎªÅÄÂôĞĞÂñµãÈÕÖ¾
+		//ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾
 		item_num = auction_info.item_info.data_ary[e_item_info_stack_count];
 		money_type = auction_info.sell_money_type;
 		item_price = auction_info.sell_total_money;
@@ -1503,7 +1499,7 @@ namespace faith
 	    temp_player.send_message_to_self(&msg, e_msgindex_s2c_update_bid_notice_red);
 	}
 
-	void cauction_mgr::person_tick(int64 new_time) // ÔÚÏß
+	void cauction_mgr::person_tick(int64 new_time) // ï¿½ï¿½ï¿½ï¿½
 	{
 		if (m_refresh_time == 0)
 		{
@@ -1549,7 +1545,7 @@ namespace faith
 	{
 
 		time_info cur_time_info = time_helper::get_cur_time_new();
-		if (m_refresh_info.second == 0) // ³õÊ¼»¯µ±Ç°Ê±¼ä
+		if (m_refresh_info.second == 0) // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Ç°Ê±ï¿½ï¿½
 		{
 			m_refresh_info = time_helper::get_time_by_today_stamp_new(get_config_param(e_auction_param_person_refresh_time));
 		}

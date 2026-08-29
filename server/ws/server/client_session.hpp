@@ -25,49 +25,49 @@ namespace faith
 	public:
 		enum e_session_status
 		{
-			e_ss_logout,						//	µÇ³öÖÐ
-			e_ss_created,						//	³õÊ¼´´½¨session
-			e_ss_login_ok,						//	µÇÂ½³É¹¦
-			e_ss_ingame,						//	ÒÑ½øÈëCS/IS£¬ÓÎÏ·ÖÐ
-			e_ss_queue,							//	ÔÚµÇÂ½¶ÓÁÐÖÐ
-			e_ss_map_transfer,					//	µØÍ¼ÇÐ»»ÖÐ
-			e_ss_cross_transfer,				//	¿ç·þ´«ËÍÖÐ
-			e_ss_check_token,					//  ÑéÖ¤Token¹ý³ÌÖÐ
+			e_ss_logout,						//	ï¿½Ç³ï¿½ï¿½ï¿½
+			e_ss_created,						//	ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½session
+			e_ss_login_ok,						//	ï¿½ï¿½Â½ï¿½É¹ï¿½
+			e_ss_ingame,						//	ï¿½Ñ½ï¿½ï¿½ï¿½CS/ISï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½
+			e_ss_queue,							//	ï¿½Úµï¿½Â½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			e_ss_map_transfer,					//	ï¿½ï¿½Í¼ï¿½Ð»ï¿½ï¿½ï¿½
+			e_ss_cross_transfer,				//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			e_ss_check_token,					//  ï¿½ï¿½Ö¤Tokenï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		};
 		enum e_session_step
 		{
-			e_session_step_null,				//	³õÊ¼×´Ì¬
-			e_session_step_login,				//	µÇÂ½
-			e_session_step_login_win,			//	µÇÂ½³É¹¦
+			e_session_step_null,				//	ï¿½ï¿½Ê¼×´Ì¬
+			e_session_step_login,				//	ï¿½ï¿½Â½
+			e_session_step_login_win,			//	ï¿½ï¿½Â½ï¿½É¹ï¿½
 			e_session_step_enter_game,			//	enter_game
-			e_session_step_dp_load,				//	dp·µ»Ørole_infoÐÅÏ¢
-			e_session_step_send_enter_game_cs,	//	¸øcs·¢ËÍenter_gameÐÅÏ¢
-			e_session_step_cs_enter_game,		//	cs·µ»Øenter_game³É¹¦
-			e_session_step_send_enter_scene,	//  ¸øcs·¢ËÍenter_sceneÐÅÏ¢
-			e_session_step_cs_enter_scene,		//  cs·µ»Øenter_scene³É¹¦
+			e_session_step_dp_load,				//	dpï¿½ï¿½ï¿½ï¿½role_infoï¿½ï¿½Ï¢
+			e_session_step_send_enter_game_cs,	//	ï¿½ï¿½csï¿½ï¿½ï¿½ï¿½enter_gameï¿½ï¿½Ï¢
+			e_session_step_cs_enter_game,		//	csï¿½ï¿½ï¿½ï¿½enter_gameï¿½É¹ï¿½
+			e_session_step_send_enter_scene,	//  ï¿½ï¿½csï¿½ï¿½ï¿½ï¿½enter_sceneï¿½ï¿½Ï¢
+			e_session_step_cs_enter_scene,		//  csï¿½ï¿½ï¿½ï¿½enter_sceneï¿½É¹ï¿½
 		};
 		enum e_player_scene_status_type
 		{
-			e_pss_left,			//	ÒÑÀë¿ª
-			e_pss_leaving,		//	Àë¿ªÖÐ
-			e_pss_entering,		//	½øÈëÖÐ
-			e_pss_entered,		//	ÒÑ½øÈë
-			e_pss_sys_transfer,	//  ·þÎñÆ÷´«ËÍ
+			e_pss_left,			//	ï¿½ï¿½ï¿½ë¿ª
+			e_pss_leaving,		//	ï¿½ë¿ªï¿½ï¿½
+			e_pss_entering,		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			e_pss_entered,		//	ï¿½Ñ½ï¿½ï¿½ï¿½
+			e_pss_sys_transfer,	//  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		};
 
 		/*
-		ÊÇ·ñÊÇÔÚÏß×´Ì¬
-		¶ÔÏó¸Õ´´½¨Ê±,m_online_state=0.
-		¼ÓÈë¶ÓÁÐºóm_online_state=1
-		´Óm_status±äÎªSS_LOGIN_OKÄÇÒ»¿Ì¿ªÊ¼£¬Ö±µ½¸Ã¶ÔÏó±»É¾³ý,ËüµÄm_online_state=2
+		ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬
+		ï¿½ï¿½ï¿½ï¿½Õ´ï¿½ï¿½ï¿½Ê±,m_online_state=0.
+		ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðºï¿½m_online_state=1
+		ï¿½ï¿½m_statusï¿½ï¿½ÎªSS_LOGIN_OKï¿½ï¿½Ò»ï¿½Ì¿ï¿½Ê¼ï¿½ï¿½Ö±ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½É¾ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½m_online_state=2
 
-		WSÉÏËùÓÐm_online_state=1 client_session¶ÔÏó¼ÆÊýÖµ,¾ÍÊÇclient_session_mgrÖÐµÄm_online_counterÖµ¡£
+		WSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½m_online_state=1 client_sessionï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ,ï¿½ï¿½ï¿½ï¿½client_session_mgrï¿½Ðµï¿½m_online_counterÖµï¿½ï¿½
 		*/
 		enum e_online_state
 		{
-			e_os_offline,		//	Îª½øÈëÓÎÏ·
-			e_os_online,		//	ÓÎÏ·ÖÐ
-			e_os_inqueue,		//	¶ÓÁÐÖÐ
+			e_os_offline,		//	Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·
+			e_os_online,		//	ï¿½ï¿½Ï·ï¿½ï¿½
+			e_os_inqueue,		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		};
 	public:
 		client_session();
@@ -85,9 +85,9 @@ namespace faith
 	public:
 		void									set_client_logout_begin();
 	public:
-		void									tick(const int64& new_time);						//	ÓÎÏ·Ñ­»·ÄÚ±»µ÷ÓÃ£¬¶¨ÆÚ¸üÐÂ
-		void									send_to_fep( const void*,size_t );			//	·¢ËÍÏûÏ¢µ½´Ë session ËùÔÚµÄ fep server	
-		void									send_to_cs( const void*,size_t );			//	·¢ËÍÏûÏ¢µ½´Ë session ËùÔÚµÄ ls server
+		void									tick(const int64& new_time);						//	ï¿½ï¿½Ï·Ñ­ï¿½ï¿½ï¿½Ú±ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½
+		void									send_to_fep( const void*,size_t );			//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ session ï¿½ï¿½ï¿½Úµï¿½ fep server	
+		void									send_to_cs( const void*,size_t );			//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ session ï¿½ï¿½ï¿½Úµï¿½ ls server
 		bool                                    send_to_cs_lua(google::protobuf::Message* net_pro, uint32 header);
 		void                                    send_to_cs_lua(const char* msg, int32 msg_len, uint32 header);
 		void									send_to_client(google::protobuf::Message* net_pro, uint32 header);
@@ -132,11 +132,11 @@ namespace faith
 		void									player_enter_game_transfer(guid_64 role_guid, int32 server_id);
 		void									login_try_enter_scene();
 		void									enter_scene_logic_proc();
-		void									enter_scene_logic_proc_login(); //Ö»ÔÚµÇÂ¼µÄenterscene´¥·¢
+		void									enter_scene_logic_proc_login(); //Ö»ï¿½Úµï¿½Â¼ï¿½ï¿½entersceneï¿½ï¿½ï¿½ï¿½
 		void									send_notice(std::string notice_str);
 		void									send_recharge(const xchar* order_id, int32 goods_id, float pay_price, int64 order_num, int32 payment_type, int32 direct_diamond = 0);
 		int64									get_login_time() { return m_logout_time - m_logintime; };
-		bool									is_self_server(guid_64 target_guid = guid_64(), bool is_need_same_server_for_ws = true);//¼ì²â¸ÃÍæ¼ÒÊÇ·ñÔÚ¸Ã·þÎñÆ÷£¬ÒÔ¼°ÅÐ¶Ï¸ÃWSÊÇ·ñ¿ªÆô¿ç·þ
+		bool									is_self_server(guid_64 target_guid = guid_64(), bool is_need_same_server_for_ws = true);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Ú¸Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½Ð¶Ï¸ï¿½WSï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		void									load_offline_chat();
 
 		guid_64									get_last_map_guid() { return m_last_map_guid; };
@@ -145,7 +145,7 @@ namespace faith
 		void									set_cross_server_save_time(int64 time_sec) { m_cross_server_save_time_sec = time_sec; };
 		void									set_need_send_save_end(bool need_send) { m_is_need_send_save_end = need_send; };
 		void									set_is_cross_server_save_end(bool is_save_end) { m_is_cross_server_save_end = is_save_end; };
-		void									func_session_load_dp_end();//WS session¶ÁÍêÊý¾Ý¿âÖ®ºóÖ´ÐÐµÄº¯Êý
+		void									func_session_load_dp_end();//WS sessionï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½Ö®ï¿½ï¿½Ö´ï¿½ÐµÄºï¿½ï¿½ï¿½
 
 		void									get_log_common_head_info(s_log_common_head &log_head);
 		xstring									get_class_name();
@@ -166,37 +166,37 @@ namespace faith
 		bool									m_is_robot_account;
 		bool									m_is_data_use;
 		int32									m_array_index;
-		s_unit_info								m_role_info;												// ½ÇÉ«µÄÐÅÏ¢
-		s_unit_ws_info							m_role_ws_info;												// ½ÇÉ«WS¶ËÐÅÏ¢
-		int32									m_is_send_chat;												// ÊÇ·ñ¿ÉÒÔÁÄÌì
-		int64									m_worship_value;												// ½ÇÉ«±»³ç°ÝÖµ
+		s_unit_info								m_role_info;												// ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½Ï¢
+		s_unit_ws_info							m_role_ws_info;												// ï¿½ï¿½É«WSï¿½ï¿½ï¿½ï¿½Ï¢
+		int32									m_is_send_chat;												// ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		int64									m_worship_value;												// ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 		s_client_uid							m_client_uid;
 		e_session_status						m_status;
 		int32									m_step_num;
-		i8										m_online_state;
+		ui8										m_online_state;
 		s_transfer_info							m_transfer_info;
 		int32									m_dest_group_id;
-		int32									m_cs_conn_index;													//	´Ë session ËùÔÚµÄ cs/is
+		int32									m_cs_conn_index;													//	ï¿½ï¿½ session ï¿½ï¿½ï¿½Úµï¿½ cs/is
 		int32									m_cs_array_index;
-		xchar									m_account[max_account_length + 1];							//	´Ë session µÇÂ¼ÓÃµÄÕËºÅ
-		int32									m_login_type;												//	µÇÂ¼ÀàÐÍ
-		int32									m_login_type_plus;											//	µÇÂ¼ÀàÐÍ
-		login_fixed_data						m_login_third_data;											//	µÚÈý·½µÇÂ½Êý¾Ý
+		xchar									m_account[max_account_length + 1];							//	ï¿½ï¿½ session ï¿½ï¿½Â¼ï¿½Ãµï¿½ï¿½Ëºï¿½
+		int32									m_login_type;												//	ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½
+		int32									m_login_type_plus;											//	ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½
+		login_fixed_data						m_login_third_data;											//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½
 		xstring									m_ip_address;
-		uint32									m_cross_callback_val[limit_call_back_val_count];			//	¿ç·þ´«ËÍ²ÎÊý	
-		guid_64									m_map_guid;													//	µØÍ¼guid
-		int32									m_line_id;													//	Ïßid
+		uint32									m_cross_callback_val[limit_call_back_val_count];			//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í²ï¿½ï¿½ï¿½	
+		guid_64									m_map_guid;													//	ï¿½ï¿½Í¼guid
+		int32									m_line_id;													//	ï¿½ï¿½id
 
-		guid_64									m_team_guid;												// µ±Ç°ËùÊô¶ÓÎéµÄGUID
-		//guid_64								m_legion_guid;												// µ±Ç°ËùÊô¾üÍÅµÄGUID
+		guid_64									m_team_guid;												// ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½GUID
+		//guid_64								m_legion_guid;												// ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½GUID
 
-		int64									m_logintime;												//µÇÂ½Ê±¼ä
-		relation_mgr							m_relation_mgr;												//ºÃÓÑ¹ØÏµ¹ÜÀí 
+		int64									m_logintime;												//ï¿½ï¿½Â½Ê±ï¿½ï¿½
+		relation_mgr							m_relation_mgr;												//ï¿½ï¿½ï¿½Ñ¹ï¿½Ïµï¿½ï¿½ï¿½ï¿½ 
 
-		bool									m_is_already_login;											//ÊÇ·ñÊÇµÚÒ»´ÎµÇÂ½ÓÎÏ·
-		int64									m_logout_time;												//Àë¿ªµÄÊ±¼ä
-		bool									m_logout_begin;												//¶ÏÏßºó¿ªÆôÀë¿ªµÄ¼ÆÊ±
-		int64									m_activate_code_time;										//Àñ°üÂë·¢ËÍÊ±¼ä
+		bool									m_is_already_login;											//ï¿½Ç·ï¿½ï¿½Çµï¿½Ò»ï¿½Îµï¿½Â½ï¿½ï¿½Ï·
+		int64									m_logout_time;												//ï¿½ë¿ªï¿½ï¿½Ê±ï¿½ï¿½
+		bool									m_logout_begin;												//ï¿½ï¿½ï¿½ßºï¿½ï¿½ï¿½ï¿½ë¿ªï¿½Ä¼ï¿½Ê±
+		int64									m_activate_code_time;										//ï¿½ï¿½ï¿½ï¿½ë·¢ï¿½ï¿½Ê±ï¿½ï¿½
 
 		int64									m_update_time_count;
 		int32									m_out_send_count;
@@ -206,7 +206,7 @@ namespace faith
 		int64									m_login_time;
 		int32									m_jewel_num;
 
-		int64									m_last_send_world_boss_damage_list_sec;//ÉÏ´Î·¢bossÉËº¦ÐÅÏ¢ÁÐ±íµÄÊ±¼ä´Á
+		int64									m_last_send_world_boss_damage_list_sec;//ï¿½Ï´Î·ï¿½bossï¿½Ëºï¿½ï¿½ï¿½Ï¢ï¿½Ð±ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½
 
 		int64									m_client_session_tick_min_last;
 
@@ -214,12 +214,12 @@ namespace faith
 
 		s_player_legion_info					m_player_legion_info;
 
-		guid_64									m_last_map_guid;//´«ËÍÇ°µÄmapguid£¬×öÒ»¸ö»º´æ£¬µ±¿ç·þÊ§°ÜÊ±£¬·µ»Ø¸Ãmap
+		guid_64									m_last_map_guid;//ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½mapguidï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½æ£¬ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½map
 
 		int64									m_recharge_time;
 
-		bool									m_is_cross_server_save_end;//¿ç·þÄ¿±ê·þÎñÆ÷saveend
-		int64									m_cross_server_save_time_sec;//¿ç·þÄ¿±ê·þÎñÆ÷save¿ªÊ¼Ê±¼ä
+		bool									m_is_cross_server_save_end;//ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½saveend
+		int64									m_cross_server_save_time_sec;//ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½saveï¿½ï¿½Ê¼Ê±ï¿½ï¿½
 		bool									m_is_need_send_save_end;
 
 		bool									m_is_in_assist;

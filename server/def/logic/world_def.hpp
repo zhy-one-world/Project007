@@ -11,6 +11,7 @@
 #define _WORLD_DEF_HPP_
 
 #include "logic/type_def.hpp"
+#include "logic/math.hpp"
 #include <string>
 
 namespace faith 
@@ -18,104 +19,104 @@ namespace faith
 #pragma pack(push,1)
 
 	const int32 color_arr_size = 4; // RGBA
-	const int32 cross_state_mark = 500000;//¿ç·þ×é±ê¼ÇÎ»
+	const int32 cross_state_mark = 500000;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»
 	const int32 cross_state = 10000;
 	const int32 gm_set_result_len = 30;
 
-//////////////////////////////////WSloadingÁ´////////////////////////////////////////
+//////////////////////////////////WSloadingï¿½ï¿½////////////////////////////////////////
 	const int64 e_ws_flag_none =											0x0000000000000000;
-	const int64 e_ws_flag_big_player =										0x0000000000000001;//ÃûÈËÌÃ
-	const int64 e_ws_flag_cs_connect =										0x0000000000000002;//CSÁ¬½Ó³É¹¦
-	const int64 e_ws_flag_gm_common =										0x0000000000000004;//GMÖ¸ÁîloadÍê±Ï
-	const int64 e_ws_flag_harry =											0x0000000000000008;//¿ç·þÂÓ¶á
-	const int64 e_ws_flag_cross_pk =										0x0000000000000010;//¿ç·þÖ°Òµ¾º¼¼
-	const int64 e_ws_flag_overload_war =									0x0000000000000020;//¿ç·þ°ÔÖ÷Õ½
-	const int64 e_ws_flag_city_war =										0x0000000000000040;//¿ç·þ³ÇÕ½
-	const int64 e_ws_flag_cross_boss =										0x0000000000000080;//¿ç·þBOSS
-	const int64 e_ws_flag_server_cross_time =								0x0000000000000100;//·þÎñÆ÷¿ç·þÊ±¼ä
-	const int64 e_ws_flag_server_refresh =									0x0000000000000200;//·þÎñÆ÷server_refresh±íÖÐµÄÊý¾Ý£¬°üº¬¸÷ÖÖË¢ÐÂÊ±¼äÒÔ¼°·þÎñÆ÷µÈ¼¶
-	const int64 e_ws_flag_time_limit_info =									0x0000000000000400;//ÏÞÊ±»î¶¯Êý¾Ý
-	const int64 e_ws_flag_time_limit_template =								0x0000000000000800;//ÏÞÊ±»î¶¯±í¸ñÊý¾Ý
-	const int64	e_ws_flag_ranking_info =									0x0000000000001000;//ÅÅÐÐ°ñÊý¾Ý
-	const int64	e_ws_flag_load_legion_info =								0x0000000000002000;//¾üÍÅÊý¾Ý
-	const int64	e_ws_flag_cross_server_state =								0x0000000000004000;//¿ç·þ×´Ì¬
-	const int64 e_ws_flag_init_time_limit_template =						0x0000000000008000;//ÏÞÊ±»î¶¯±í¸ñÊý¾Ý³õÊ¼»¯Íê³É
-	const int64 e_ws_flag_load_cloud_shop_info =							0x0000000000010000;//ÔÆ¹ºÊý¾Ý¶ÁÈ¡
-	const int64 e_ws_flag_fep_connect =										0x0000000000020000;//fepÁ¬½Ó³É¹¦
-	const int64 e_ws_flag_attack_city =										0x0000000000040000;//¹¥³ÇÕ½
+	const int64 e_ws_flag_big_player =										0x0000000000000001;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	const int64 e_ws_flag_cs_connect =										0x0000000000000002;//CSï¿½ï¿½ï¿½Ó³É¹ï¿½
+	const int64 e_ws_flag_gm_common =										0x0000000000000004;//GMÖ¸ï¿½ï¿½loadï¿½ï¿½ï¿½
+	const int64 e_ws_flag_harry =											0x0000000000000008;//ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½
+	const int64 e_ws_flag_cross_pk =										0x0000000000000010;//ï¿½ï¿½ï¿½Ö°Òµï¿½ï¿½ï¿½ï¿½
+	const int64 e_ws_flag_overload_war =									0x0000000000000020;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ½
+	const int64 e_ws_flag_city_war =										0x0000000000000040;//ï¿½ï¿½ï¿½ï¿½ï¿½Õ½
+	const int64 e_ws_flag_cross_boss =										0x0000000000000080;//ï¿½ï¿½ï¿½BOSS
+	const int64 e_ws_flag_server_cross_time =								0x0000000000000100;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+	const int64 e_ws_flag_server_refresh =									0x0000000000000200;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½server_refreshï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¢ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¼ï¿½
+	const int64 e_ws_flag_time_limit_info =									0x0000000000000400;//ï¿½ï¿½Ê±ï¿½î¶¯ï¿½ï¿½ï¿½ï¿½
+	const int64 e_ws_flag_time_limit_template =								0x0000000000000800;//ï¿½ï¿½Ê±ï¿½î¶¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	const int64	e_ws_flag_ranking_info =									0x0000000000001000;//ï¿½ï¿½ï¿½Ð°ï¿½ï¿½ï¿½ï¿½ï¿½
+	const int64	e_ws_flag_load_legion_info =								0x0000000000002000;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	const int64	e_ws_flag_cross_server_state =								0x0000000000004000;//ï¿½ï¿½ï¿½×´Ì¬
+	const int64 e_ws_flag_init_time_limit_template =						0x0000000000008000;//ï¿½ï¿½Ê±ï¿½î¶¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½
+	const int64 e_ws_flag_load_cloud_shop_info =							0x0000000000010000;//ï¿½Æ¹ï¿½ï¿½ï¿½ï¿½Ý¶ï¿½È¡
+	const int64 e_ws_flag_fep_connect =										0x0000000000020000;//fepï¿½ï¿½ï¿½Ó³É¹ï¿½
+	const int64 e_ws_flag_attack_city =										0x0000000000040000;//ï¿½ï¿½ï¿½ï¿½Õ½
 ///////////////////////////////////////////////////////////////////////////////////////
 
-	//	³¡¾°Ïà¹Ø³£Á¿¶¨Òå
+	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	enum
 	{
-		e_zone_uid_invalid				= 0,			//	·Ç·¨µÄÇøÓòUID
-		e_invalid_instance_obj_id		= 0,			// ÎÞÐ§¸±±¾ÊµÀýID
+		e_zone_uid_invalid				= 0,			//	ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½UID
+		e_invalid_instance_obj_id		= 0,			// ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ID
 		e_max_limited_broadcast_count	= 0xFFFFFFFF,
 	};
 
-	//Èç¹ûÐÞ¸ÄÇë×¢ÒâÊý¾Ý¿âÖÐÏà¹ØÂß¼­
+	//ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½
 	enum e_scene_type : uint32
 	{
-		e_scene_type_low_world,				//0ÎÞ·ìÖ÷ÊÀ½ç,±¾ÏîÄ¿ÎÞÓÃ(0)
-		e_scene_type_low_seam_world,		//1ÓÐ·ìÊÀ½ç(0)
-		e_scene_type_low_instance,			//2ÆÕÍ¨¸±±¾½øÈë(type_id)Ä¬ÈÏ¸úËæ¶ÓÓÑ
-		e_scene_type_low_new_instance,		//3´´½¨ÐÂÊµÀý²¢½øÈë(type_id)Ç¿ÖÆ
-		e_scene_type_low_instance_object,	//4¸±±¾ÔËÐÐÊµÀý(id)
-		e_scene_type_low_map,				//5 lowµØÍ¼(id)
-		e_scene_type_low_load_area,			//6ÔØÈëÇøÓò
-		e_scene_type_low_nouse0,			//7ÕóÓª(id/0)
-		e_scene_type_low_guild,				//8¼Ò×å(id/0)
-		e_scene_type_low_battle,			//9Õ½³¡(id/0)
-		e_scene_type_low_nouse1,			//10¸úËæÍæ¼Ò(id)
-		e_scene_type_low_exit,				//11·µ»ØÉÏÒ»µØµã(ÍË³ö¸±±¾µÈ)
-		e_scene_type_low_local = 0xffffffff,//±¾µØ
+		e_scene_type_low_world,				//0ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½(0)
+		e_scene_type_low_seam_world,		//1ï¿½Ð·ï¿½ï¿½ï¿½ï¿½ï¿½(0)
+		e_scene_type_low_instance,			//2ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(type_id)Ä¬ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		e_scene_type_low_new_instance,		//3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(type_id)Ç¿ï¿½ï¿½
+		e_scene_type_low_instance_object,	//4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½(id)
+		e_scene_type_low_map,				//5 lowï¿½ï¿½Í¼(id)
+		e_scene_type_low_load_area,			//6ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		e_scene_type_low_nouse0,			//7ï¿½ï¿½Óª(id/0)
+		e_scene_type_low_guild,				//8ï¿½ï¿½ï¿½ï¿½(id/0)
+		e_scene_type_low_battle,			//9Õ½ï¿½ï¿½(id/0)
+		e_scene_type_low_nouse1,			//10ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(id)
+		e_scene_type_low_exit,				//11ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Øµï¿½(ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+		e_scene_type_low_local = 0xffffffff,//ï¿½ï¿½ï¿½ï¿½
 	};
 
 	enum e_need_server_cross
 	{
 		e_need_server_cross_none,
-		e_need_server_cross_begin_cross,//¿ªÊ¼¿ç·þ
-		e_need_server_cross_begin_cross_pk,//¿ªÊ¼¿ç·þÖ°Òµ¾º¼¼
-		e_need_server_cross_begin_cross_activity,//¿ªÊ¼¿ç·þPKÖ®ÍõºÍÆÆËéÐé¿Õ
-		e_need_server_cross_begin_cross_harry,//¿ªÊ¼¿ç·þÂÓ¶á
-		e_need_server_cross_begin_cross_city_war,//¿ªÊ¼°ÔÖ÷Õ½
-		e_need_server_cross_begin_cross_legion_territory_war,//¿ªÊ¼¿ç·þ³ÇÕ½
-		e_need_server_cross_begin_cross_boss,	//¿ªÆô¿ç·þÊÀ½çboss
-		e_need_server_cross_begin_cross_ladder,//¿ªÊ¼¿ç·þÌìÌÝ
-		e_need_server_cross_begin_cross_cloud,//¿ªÊ¼¿ç·þÔÆ¹º
-		e_need_server_element_war,	//¿ªÊ¼ÔªËØÕù°Ô
-		e_need_server_attack_city,	//¿ªÊ¼¹¥³ÇÕ½
+		e_need_server_cross_begin_cross,//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½
+		e_need_server_cross_begin_cross_pk,//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½Ö°Òµï¿½ï¿½ï¿½ï¿½
+		e_need_server_cross_begin_cross_activity,//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½PKÖ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		e_need_server_cross_begin_cross_harry,//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½
+		e_need_server_cross_begin_cross_city_war,//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Õ½
+		e_need_server_cross_begin_cross_legion_territory_war,//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½Õ½
+		e_need_server_cross_begin_cross_boss,	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½boss
+		e_need_server_cross_begin_cross_ladder,//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		e_need_server_cross_begin_cross_cloud,//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Æ¹ï¿½
+		e_need_server_element_war,	//ï¿½ï¿½Ê¼Ôªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		e_need_server_attack_city,	//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Õ½
 		e_need_server_cross_max
 	};
 
 	enum e_server_info_type
 	{
-		e_server_info_type_begin_cross_server_time,				//¿ªÊ¼¿ç·þÊ±¼ä
-		e_server_info_type_server_state,						//·þÎñÆ÷ÀàÐÍ£¨ÐÂ£¬ÀÏ£¬ºÍ£¬¿çµÈ)
-		e_server_info_type_server_cross_state,					//·þÎñÆ÷¿ç·þÀàÐÍ£¨ÐÂ£¬ÀÏµÈ£©
-		e_server_info_type_begin_first_cross_server_time,		//µÚÒ»´Î¿ªÆô¿ç·þµÄÊ±¼ä ²»ÊÜÍ¬²½Ó°Ïì
-		e_server_info_type_begin_first_merge_server_time,		//µÚÒ»´Î¿ªÆôºÏ·þµÄÊ±¼ä
-		e_server_info_type_time_limit_ranking_level,			//ÏÞÊ±»î¶¯µÈ¼¶ ÓÃÓÚ¶ÁÈ¡²»Í¬µÈ¼¶Çø¼äÊý¾Ý Ö»ÔÚÃ»¿ªÆôÈÎºÎ¿ç·þ»î¶¯Ê±Ë¢ÐÂ
-		e_server_info_type_close_exchange,						//¹Ø±ÕÀñÆ·¶Ò»»
-		e_server_info_type_only_create_role,                    // ´´½¨½ÇÉ«·þ
+		e_server_info_type_begin_cross_server_time,				//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+		e_server_info_type_server_state,						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½Â£ï¿½ï¿½Ï£ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½)
+		e_server_info_type_server_cross_state,					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½Â£ï¿½ï¿½ÏµÈ£ï¿½
+		e_server_info_type_begin_first_cross_server_time,		//ï¿½ï¿½Ò»ï¿½Î¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½Ó°ï¿½ï¿½
+		e_server_info_type_begin_first_merge_server_time,		//ï¿½ï¿½Ò»ï¿½Î¿ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+		e_server_info_type_time_limit_ranking_level,			//ï¿½ï¿½Ê±ï¿½î¶¯ï¿½È¼ï¿½ ï¿½ï¿½ï¿½Ú¶ï¿½È¡ï¿½ï¿½Í¬ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ö»ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ÎºÎ¿ï¿½ï¿½ï¿½î¶¯Ê±Ë¢ï¿½ï¿½
+		e_server_info_type_close_exchange,						//ï¿½Ø±ï¿½ï¿½ï¿½Æ·ï¿½Ò»ï¿½
+		e_server_info_type_only_create_role,                    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½
 		e_server_info_type_max
 	};
 
 	enum e_server_state
 	{
-		e_server_state_none,//¿Õ
-		e_server_state_new,//ÐÂ·þ×é
-		e_server_state_cross,//¿ç·þ×é
-		e_server_state_merge,//ºÏ·þ×é
+		e_server_state_none,//ï¿½ï¿½
+		e_server_state_new,//ï¿½Â·ï¿½ï¿½ï¿½
+		e_server_state_cross,//ï¿½ï¿½ï¿½ï¿½ï¿½
+		e_server_state_merge,//ï¿½Ï·ï¿½ï¿½ï¿½
 		e_server_state_max
 	};
 
 	enum e_server_cross_state
 	{
-		e_server_cross_state_none,//¿Õ
-		e_server_cross_state_new,//ÐÂ·þ¿ç·þ×é
-		e_server_cross_state_mid,//¿ç·þ×é
-		e_server_cross_state_old,//ÀÏ¿ç·þ×é
+		e_server_cross_state_none,//ï¿½ï¿½
+		e_server_cross_state_new,//ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		e_server_cross_state_mid,//ï¿½ï¿½ï¿½ï¿½ï¿½
+		e_server_cross_state_old,//ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½
 		e_server_cross_state_max
 	};
 

@@ -6,6 +6,7 @@
 #include "utility/csv_parser.hpp"
 #include "utility/globle_data.h"
 #include "utility/init_unit.h"
+#include "utility/tools.h"
 
 namespace faith
 {
@@ -348,7 +349,7 @@ namespace faith
 	template <class T>
 	void template_manager::re_struct_in_memory(template_type& template_file, e_template template_name, std::shared_ptr<csv_row> row_content, const std::vector<std::string>& result_types, const std::vector<std::string>& key_types, int32 data_size)
 	{
-		static i8 memory[20000];
+		static ui8 memory[20000];
 		memset(memory, 0, sizeof(memory));
 		int32 offset = 0;
 		int32 id = 0;
@@ -417,7 +418,7 @@ namespace faith
 		if (ite_find == template_file.end())
 		{
 
-			template_file[template_line_key] = new i8[data_size + data_size / 2];
+			template_file[template_line_key] = new ui8[data_size + data_size / 2];
 		}
 
 		memcpy(template_file[template_line_key], memory, data_size);
@@ -720,25 +721,8 @@ namespace faith
 		}
 		return temp_array[1];
 	}
-	std::string template_manager::int_to_string(int64 num)
-	{
-		std::string temp_string;
-		std::stringstream temp_string_stream;
-		temp_string_stream << num;
-		temp_string_stream >> temp_string;
-		return temp_string;
-	}
 
-	std::string template_manager::float_to_string(float num)
-	{
-		std::string temp_string;
-		std::stringstream temp_string_stream;
-		temp_string_stream << num;
-		temp_string_stream >> temp_string;
-		return temp_string;
-	}
-
-	std::vector<std::pair<int32, i8*>>& template_manager::get_grade_qiyuan_templates()
+	std::vector<std::pair<int32, ui8*>>& template_manager::get_grade_qiyuan_templates()
 	{
 		if (vec_grade_qiyuan_templates.empty())
 		{
@@ -761,7 +745,7 @@ namespace faith
 		return vec_grade_qiyuan_templates;
 	}
 
-	std::vector<std::pair<int32, i8*>>& template_manager::get_flair_qiyuan_templates()
+	std::vector<std::pair<int32, ui8*>>& template_manager::get_flair_qiyuan_templates()
 	{
 		if (vec_flair_qiyuan_templates.empty())
 		{
@@ -1257,10 +1241,10 @@ namespace faith
 			{
 				continue;
 			}
-			//×î¸ß·ÖÐ¡ÓÚ»òÊÇ×îµÍ·ÖÐ¡ÓÚµÈÓÚµÄÌø¹ý
+			//ï¿½ï¿½ß·ï¿½Ð¡ï¿½Ú»ï¿½ï¿½ï¿½ï¿½ï¿½Í·ï¿½Ð¡ï¿½Úµï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½
 			if (ladder_tmpl_ptr->HighScore < min_score || ladder_tmpl_ptr->LowScore <= min_score)
 			{
-				//µÚÒ»¸ö¶ÎÎ»»áÔÚµÚÒ»´ÎÉý¶ÎµÄÊ±ºò·¢·Å
+				//ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½Úµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½Ê±ï¿½ò·¢·ï¿½
 				if (min_score != 0 || ladder_tmpl_ptr->LowScore != 0)
 				{
 					continue;

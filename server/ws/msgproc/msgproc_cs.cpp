@@ -17,7 +17,7 @@
 #include "cross_ladder.pb.h"
 #include "http/http_send.hpp"
 #include "invalid_word/invalid_ansi_word.h"
-#include "lua/script_mgr.h"
+
 #include "msgproc_cs.hpp"
 #include "net.pb.h"
 #include "server/activity/boss_island_ws_mgr.h"
@@ -99,7 +99,7 @@ namespace faith
 		if (nullptr == client_session_ptr)
 		{
 			ws2cs_client_logout	req_logout;
-			//	ÖÜÆÚĞÔ¹ã²¥£¬Í¨ÖªËùÓĞ CS LOGOUT
+			//	ï¿½ï¿½ï¿½ï¿½ï¿½Ô¹ã²¥ï¿½ï¿½Í¨Öªï¿½ï¿½ï¿½ï¿½ CS LOGOUT
 			req_logout.role_guid = packet->role_guid;
 			req_logout.client_uid = packet->client_uid;
 
@@ -561,7 +561,7 @@ namespace faith
 		
 		team_ws_mgr& team_ws_mgr_ref = team_ws_mgr::get_instance();
 
-		// ÒÑ¾­ÓĞÁË¶ÓÎé¾Í²»ÄÜÔÙ´´½¨¶ÓÎéÁË
+		// ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½ï¿½Í²ï¿½ï¿½ï¿½ï¿½Ù´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if (team_ws_mgr_ref.get_unit_team(role_guid))
 		{
 			return;
@@ -586,13 +586,13 @@ namespace faith
 		}
 		if (team_type == e_team_type_none)
 		{
-			// modify by wangsonghgao : Ö®Ç°µÄÂß¼­ÊÇ¶ÓÎéÄ¿±êÎª"È«²¿"µÄÊ±ºòÊÇ²»ÄÜ¿ªÆô×Ô¶¯Æ¥ÅäµÄ
-			// ÏÖÔÚ¸ù¾İĞèÇóĞŞ¸ÄÎª¶ÓÎéÄ¿±êÎª"È«²¿"µÄÒ²¿ÉÒÔ¿ªÆô×Ô¶¯Æ¥Åä
+			// modify by wangsonghgao : Ö®Ç°ï¿½ï¿½ï¿½ß¼ï¿½ï¿½Ç¶ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Îª"È«ï¿½ï¿½"ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ç²ï¿½ï¿½Ü¿ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½Æ¥ï¿½ï¿½ï¿½
+			// ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ş¸ï¿½Îªï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Îª"È«ï¿½ï¿½"ï¿½ï¿½Ò²ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½Æ¥ï¿½ï¿½
 			// auto_matching_member = false;
 			team_sub_type_id = -1;
 		}
 
-		// ¼ÓÈë¶ÓÎéËùĞèµÄÕ½¶·Á¦²»ÄÜÊÇ¸ºÊı
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½ï¿½ï¿½
 		if (required_fighting_power < 0)
 		{
 			return;
@@ -672,7 +672,7 @@ namespace faith
 		team_ws* team_ws_ptr = team_ws_mgr_ref.get_team(team_guid);
 		if (nullptr == team_ws_ptr)
 		{
-			// ¿Í»§¶Ë´¦ÀíµÄÊ±ºò¿ÉÒÔË³±ãÉ¾ÁË
+			// ï¿½Í»ï¿½ï¿½Ë´ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½É¾ï¿½ï¿½
 			team_ws_mgr_ref.send_team_error_to_session(session, e_team_error_team_already_dissolve);
 			return;
 		}
@@ -695,7 +695,7 @@ namespace faith
 			return;
 		}
 
-		if (false == team_ws_ptr->is_have_invite_guid(new_member_guid))//¼ì²âÊÇ·ñ´æÔÚÓÚÑûÇëÁĞ±íÖĞ
+		if (false == team_ws_ptr->is_have_invite_guid(new_member_guid))//ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ±ï¿½ï¿½ï¿½
 		{
 			return;
 		}
@@ -733,7 +733,7 @@ namespace faith
 		team_ws* team_ws_ptr = team_ws_mgr_ref.get_team(team_guid);
 		if (nullptr == team_ws_ptr)
 		{
-			// ¿Í»§¶Ë´¦ÀíµÄÊ±ºò¿ÉÒÔË³±ãÉ¾ÁË
+			// ï¿½Í»ï¿½ï¿½Ë´ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½É¾ï¿½ï¿½
 			team_ws_mgr_ref.send_team_error_to_session(session, e_team_error_team_already_dissolve);
 			return;
 		}
@@ -789,7 +789,7 @@ namespace faith
 			return;
 		}
 
-// 		// Èç¹ûÄ¿±ê¶ÓÎéµÄ»î¶¯µØÍ¼ºÍ·¢ÆğÇëÇóµÄ²»Ò»Ñù¾Í²»ÄÜÉêÇë
+// 		// ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½Ä»î¶¯ï¿½ï¿½Í¼ï¿½Í·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½Ò»ï¿½ï¿½ï¿½Í²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 // 		int32 need_team_map_id = packet->team_map_id;
 // 		if (need_team_map_id > 0 && team_ws_ptr->get_team_map_tempalte_id() != need_team_map_id)
 // 		{
@@ -809,7 +809,7 @@ namespace faith
 				return;
 			}
 			team_ws_ptr->add_invite_guid(applicant_guid);
-			// ¸ø¶Ó³¤·¢ËÍÉêÇëĞÅÏ¢
+			// ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 			team_proto_join_team_applicant_info join_team_applicant_info_msg;
 			join_team_applicant_info_msg.set_role_guid(applicant_info.role_guid.server_64);
 			join_team_applicant_info_msg.set_team_guid(team_ws_ptr->get_team_guid().server_64);
@@ -818,7 +818,7 @@ namespace faith
 			join_team_applicant_info_msg.set_level(applicant_info.data_ary[ETeamMemberInfo_level]);
 			captain_session->send_to_client(&join_team_applicant_info_msg, e_msgindex_s2c_join_team_applicant_info);
 
-			// ¸øÉêÇëÕß·¢ËÍÒ»¸öÉêÇë·´À¡
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß·ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ë·´ï¿½ï¿½
 			team_proto_join_team_apply_end join_team_apply_end_msg;
 			join_team_apply_end_msg.set_applied_team_guid(team_ws_ptr->get_team_guid().server_64);
 			applicant_session->send_to_client(&join_team_apply_end_msg, e_msgindex_s2c_join_team_apply_end);
@@ -918,7 +918,7 @@ namespace faith
 		
 		team_ws_ptr->send_all_member_aoi_team_info();
 
-		//Ò»ÌõÁú¸Ä±äÄ¿±êµÄÊ±ºò ÖØĞÂ¿ªÊ¼automatchÃ´
+		//Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½Ä¿ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ ï¿½ï¿½ï¿½Â¿ï¿½Ê¼automatchÃ´
 		team_ws_ptr->on_team_attribute_changed();
 		
 		//team_ws_ptr->sync_team_attribute_to_mems();();
@@ -948,7 +948,7 @@ namespace faith
 			return;
 		}
 		
-		// ÏÖÔÚÃ¿¸ö³ÉÔ±ÓĞÁË one_stop_flags Ö±½Ó¾ÍÖªµÀÖúÕ½×´Ì¬ÁË ÕâÀï²»ËãÒ²ĞĞ
+		// ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ one_stop_flags Ö±ï¿½Ó¾ï¿½Öªï¿½ï¿½ï¿½ï¿½Õ½×´Ì¬ï¿½ï¿½ ï¿½ï¿½ï¿½ï²»ï¿½ï¿½Ò²ï¿½ï¿½
 		if (packet->map_check_ret >= e_error_code_success)
 		{
 			team_ws_ptr->set_member_check_ret(player_guid, (e_error_code)packet->map_check_ret);
@@ -959,7 +959,7 @@ namespace faith
 		{
 			team_ws_ptr->set_member_one_stop_flags(player_guid, op_ret_one_stop_flags);
 
-			if (team_ws_ptr->get_captain_guid() == player_guid && team_ws_ptr->is_one_stop_team()) //ËµÃ÷ÏÖÔÚ¾ÍÊÇÒ»ÌõÁú¶ÓÎé
+			if (team_ws_ptr->get_captain_guid() == player_guid && team_ws_ptr->is_one_stop_team()) //Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ú¾ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			{
 				if (team_ws_ptr->set_one_stop_flags(op_ret_one_stop_flags))
 				{
@@ -1207,7 +1207,7 @@ namespace faith
 			{
 				legion_ws_ptr->update_member_info_one(packet->role_guid, e_legion_member_info_vip_level, packet->data_value);
 			}
-			//Í¬²½Vipµ½Gate
+			//Í¬ï¿½ï¿½Vipï¿½ï¿½Gate
 			element_war_ws_mgr::get_instance().send_req_element_war_role_info(session_ptr);
 		}
 			break;
@@ -1503,7 +1503,7 @@ namespace faith
 		}
 		world_boss_ws_mgr::get_instance().set_world_boss_dead(packet->world_boss_spawn_template_id, packet->killer_name);
 
-				//µ±Ç°»÷É±boss²»ÎªÊÀ½çboss ²»ÍùÏÂÃæ½øĞĞ
+				//ï¿½ï¿½Ç°ï¿½ï¿½É±bossï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½boss ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		int32 cur_boss_spawn_tem_id = packet->world_boss_spawn_template_id;
 		NpcSpawnPointTemplate* cur_spawn_point_template_ptr = GET_TEMPLATE(NpcSpawnPointTemplate, cur_boss_spawn_tem_id);
 		if (cur_spawn_point_template_ptr == nullptr)
@@ -1839,7 +1839,7 @@ namespace faith
 	}
 	void cs2ws_send_chat_to_ws_process_new(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
-		//chat±È½ÏÌØÊâ£¬²»ÄÜÖ±½Ó·¢¿Í»§¶Ë£¬ÒòÎªËûÓĞÒ»Ğ© ·¢ËÍÊ§°Ü¡¢³É¹¦ µÄÂß¼­+»Ø¸´ĞÅÏ¢
+		//chatï¿½È½ï¿½ï¿½ï¿½ï¿½â£¬ï¿½ï¿½ï¿½ï¿½Ö±ï¿½Ó·ï¿½ï¿½Í»ï¿½ï¿½Ë£ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Ò»Ğ© ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü¡ï¿½ï¿½É¹ï¿½ ï¿½ï¿½ï¿½ß¼ï¿½+ï¿½Ø¸ï¿½ï¿½ï¿½Ï¢
 		const cs2ws_send_chat_to_ws_new* packet = static_cast<const cs2ws_send_chat_to_ws_new*>(data_ptr);
 		if (nullptr == packet)
 		{
@@ -1868,7 +1868,7 @@ namespace faith
 		msg.set_head_frame_id(packet->sender_head_frame_id);
 		msg.set_server_id(packet->sender_server_id);
 		//msg.set sender_head_frame_id(packet->sender_head_frame_id);
-		//¾üÍÅÏûÏ¢
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 		std::vector<xstring> legion_answer_content_vec;
 		if (packet->chat_type == e_chat_type_legion)
 		{
@@ -1984,7 +1984,7 @@ namespace faith
 			{
 				if (chat_content_vec.size() > 0)
 				{
-					//Ä¿±êÍæ¼ÒÀëÏß±£´æµ½Êı¾İ¿â
+					//Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß±ï¿½ï¿½æµ½ï¿½ï¿½ï¿½İ¿ï¿½
 					ws2dp_save_chat_with_offline offline_msg;
 					offline_msg.sender_guid = packet->sender_guid;
 					offline_msg.sender_templete_id = packet->sender_template_id;
@@ -2027,9 +2027,9 @@ namespace faith
 				msg.add_addressee_guid(addressee_guid.B);
 				temp_session->send_to_client(&msg, e_msgindex_s2c_receive_chat_new);
 
-				//ÕâÀïËµÃ÷·¢ËÍ³É¹¦£¬ÔÙ»Ø·¢¸ø×Ô¼º£¬ÓÃÓÚÏÔÊ¾ ×Ô¼ºËµÁËÊ²Ã´
+				//ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Í³É¹ï¿½ï¿½ï¿½ï¿½Ù»Ø·ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ ï¿½Ô¼ï¿½Ëµï¿½ï¿½Ê²Ã´
 				client_session* self_session = client_session_mgr::getInstance().get_session(sender_guid);
-				//ÕâÀïÒª¸½¼ÓÉÏ¡°ÊÕ¼şÈËÃû³Æ¡±£¬ÓÃÓÚÏÔÊ¾¡°ÎÒ¶ÔXXXËµ¡±
+				//ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Ï¡ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ò¶ï¿½XXXËµï¿½ï¿½
 				msg.set_addressee_name(temp_session->m_role_info.role_name);
 
 				if (self_session != nullptr)
@@ -3299,33 +3299,33 @@ namespace faith
 			{
 				continue;
 			}
-			// ÉèÖÃ¾üÍÅÒÑ¾­²ÎÓë»î¶¯ ºóĞøµã»÷½øÈë½«ÎŞĞ§
+			// ï¿½ï¿½ï¿½Ã¾ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½î¶¯ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë½«ï¿½ï¿½Ğ§
 			legion_info.is_check = (int32)e_attack_check_type_join_end;
-			// S×éµÚÒ»ÃûÁ¬Ê¤´ÎÊı¼ÓÒ» Ãû´Î²»±ä¶¯
+			// Sï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò» ï¿½ï¿½ï¿½Î²ï¿½ï¿½ä¶¯
 			if (packet->group_level == e_attack_city_group_level_s && packet->info_list[i].group_level == 0)
 			{
 				legion_info.group_level = 0;
 				legion_info.winning_streak_num++;
 			}
-			// C×é×îºóÒ»ÃûÃû´ÎÒ²²»¶¯
+			// Cï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½
 			else if (packet->group_level == e_attack_city_group_level_c && packet->info_list[i].group_level == 3)
 			{
 				legion_info.group_level = packet->group_level * attack_city_group_max_num + packet->info_list[i].group_level;
 				legion_info.winning_streak_num = 0;
 			}
-			// Ã¿×éµÚÒ»Ãû½ú¼¶
+			// Ã¿ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			else if (packet->info_list[i].group_level == 0)
 			{
 				legion_info.group_level = ((packet->group_level * attack_city_group_max_num) - 1);
 				legion_info.winning_streak_num = 0;
 			}
-			// Ã¿×é×îºóÒ»Ãû½µ¼¶
+			// Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			else if (packet->info_list[i].group_level == 3)
 			{
 				legion_info.group_level = ((packet->group_level + 1) * attack_city_group_max_num);
 				legion_info.winning_streak_num = 0;
 			}
-			// ÆäËûÈËµÈ¼¶²»±ä
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ËµÈ¼ï¿½ï¿½ï¿½ï¿½ï¿½
 			else
 			{
 				legion_info.group_level = packet->group_level * attack_city_group_max_num + packet->info_list[i].group_level;

@@ -2,7 +2,7 @@
 #include "internet/net.pb.h"
 #include "internet/smashing_bottle.pb.h"
 #include "logic/player.hpp"
-#include "lua/script_mgr.h"
+
 #include "server_log.hpp"
 #include "smashing_bottle_system.h"
 #include "template/template_manager.h"
@@ -10,7 +10,7 @@
 
 using namespace faith;
 
-const int32 smashing_bottle_play_count = 3;//ÔÒ¾ÆÆ¿»ØºÏÊý
+const int32 smashing_bottle_play_count = 3;//ï¿½Ò¾ï¿½Æ¿ï¿½Øºï¿½ï¿½ï¿½
 
 bool smashing_bottle_system::start_up(player* player_ptr, int32 flip_box_id)
 {

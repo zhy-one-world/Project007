@@ -12,7 +12,7 @@
 #include "world_server.hpp"
 #include "utility/init_unit.h"
 #include <world_server_msg.hpp>
-#include "lua/script_mgr.h"
+
 #include "system/scene/cs_map_mgr_system.h"
 #include "net.pb.h"
 #include "character.pb.h"
@@ -57,7 +57,7 @@ namespace faith
 			if (m_timer - m_last_save_time > 180000)
 			{
 				m_last_save_time = m_timer;
-				//Èý·ÖÖÓÒ»´æµµ
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½æµµ
 				save_data_to_db();
 			}
 			for (int32 i = 0; i < e_big_player_type_max; ++i)
@@ -189,7 +189,7 @@ namespace faith
 		//msg.big_type = index;
 		//ws_client::getInstance().send_to_dp(&msg, sizeof(ws2dp_load_big_player_detail));
 
-		//ÕâÁ©²»load
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½load
 		player_info_array[index].mask_data_block(s_fake_player_info::efpi_spirit);
 		player_info_array[index].mask_data_block(s_fake_player_info::efpi_fight_att);
 	}
@@ -370,7 +370,7 @@ namespace faith
 			msg.add_statue_guid(statue_guid_array[i].B);
 		}
 		client_session* temp_session = client_session_mgr::getInstance().get_session(request_player_guid);
-		// nullptrËµÃ÷²»ÔÚÏß/²»´æÔÚ£¬cs_uid = 0 ËµÃ÷²»ÔÚCSÉÏ£¨±ÈÈç´«ËÍÖÐ£©
+		// nullptrËµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½cs_uid = 0 Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½CSï¿½Ï£ï¿½ï¿½ï¿½ï¿½ç´«ï¿½ï¿½ï¿½Ð£ï¿½
 		if ((temp_session != nullptr) && (temp_session->get_cs_conn_index() >= 0))
 		{
 			temp_session->send_to_client(&msg, e_msgindex_s2c_update_big_player_statue_guid);

@@ -1,10 +1,10 @@
 /********************************************************************
-created: 2019Äê7ÔÂ25ÈÕ
+created: 2019ï¿½ï¿½7ï¿½ï¿½25ï¿½ï¿½
 file base: oracle_trial_mgr
 file ext: cpp
-author: ÕÔÓñÃ÷
+author: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-purpose: ÌìÆôÊÔÁ¶
+purpose: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 *********************************************************************/
 
 
@@ -12,7 +12,7 @@ purpose: ÌìÆôÊÔÁ¶
 #include "logic/drop.h"
 #include "logic/item_set.h"
 #include "logic/unit_man.h"
-#include "lua/script_mgr.h"
+
 #include "oracle_trial_mgr.h"
 #include "internal/oracle_trial_msg.hpp"
 #include "template/template_manager.h"
@@ -40,7 +40,7 @@ namespace faith
 		m_oracle_trial_info.clear_data();
 	}
 
-	//¼ÓÔØÊÔÁ¶ĞÅÏ¢
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	void oracle_trial_mgr::load_oracle_trial_info_from_db(const s_oracle_trial_info_db* oracle_trial_info, int32 data_num)
 	{
 		m_oracle_trial_info.clear_data();
@@ -90,7 +90,7 @@ namespace faith
 
 	}
 
-	//±£´æÊÔÁ¶ĞÅÏ¢
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	void oracle_trial_mgr::save_oracle_trial_to_db(int32 save_type)
 	{
 		player& player_ref = unit_man::get_player(m_array_index);
@@ -158,7 +158,7 @@ namespace faith
 		player_ref.send_message_to_dp_lua(&msg, e_msgindex_cs2dp_save_oracle_trial_info);
 	}
 
-	//·¢ËÍÍæ¼ÒµÄÊÔÁ¶ĞÅÏ¢µ½¿Í»§¶Ë
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½
 	void oracle_trial_mgr::send_player_oracle_trial_info_all()
 	{
 		player& player_ref = unit_man::get_player(m_array_index);
@@ -183,7 +183,7 @@ namespace faith
 		player_ref.send_message_to_self(&msg, e_msgindex_s2c_send_oracle_trial_info_all);
 	}
 
-	//ÉèÖÃÍæ¼ÒµÄÖ¸¶¨²ãÊıµÄÊÔÁ¶ĞÅÏ¢
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	void oracle_trial_mgr::set_play_oracle_trial_info(int32 tier_num, int32 customs_num, int32 customs_state)
 	{
 		if (tier_num < 1 || tier_num > GAMECONFIG->OracleTrialTierNum || customs_num < 1 || customs_num > max_customs_num || customs_state < m_oracle_trial_info.tier_num[tier_num - 1].customs_state)
@@ -193,7 +193,7 @@ namespace faith
 		int32 old_rank = m_oracle_trial_info.get_all_stat_num();
 		m_oracle_trial_info.tier_num[tier_num - 1].customs_state = customs_state;
 		send_player_oracle_trial_info_all();
-		//Èç¹û×î¸ß¼ÍÂ¼Ìá¸ßÁË ¾Í·¢ËÍ¼ÍÂ¼µ½ws²¢Í¬²½µ½ÅÅĞĞ°ñÉÏ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Í·ï¿½ï¿½Í¼ï¿½Â¼ï¿½ï¿½wsï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ°ï¿½ï¿½ï¿½
 		if (m_oracle_trial_info.get_all_stat_num() > old_rank)
 		{
 			player& player_ref = unit_man::get_player(m_array_index);
@@ -208,7 +208,7 @@ namespace faith
 		}	
 	}
 
-	//ÉèÖÃÍæ¼ÒÖ¸¶¨²ãÊıµÄ½±ÀøĞÅÏ¢
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	void oracle_trial_mgr::set_play_oracle_trial_reward_info(int32 tier_num, int32 reward_num, int32 reward_state)
 	{
 		if (tier_num < 1 || tier_num > GAMECONFIG->OracleTrialTierNum || reward_num < 1 || reward_num > max_reward_num || reward_state < m_oracle_trial_info.tier_num[tier_num - 1].reward_stat)
@@ -219,19 +219,19 @@ namespace faith
 		send_player_oracle_trial_info_all();
 	}
 
-	//»ñµÃÖ¸¶¨²ãÊıµÄÊÔÁ¶ĞÅÏ¢
+	//ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	int32 oracle_trial_mgr::get_tier_customs_state_info(int32 tier_num)
 	{
 		return m_oracle_trial_info.tier_num[tier_num - 1].customs_state;
 	}
 
-	//»ñµÃÖ¸¶¨²ãÊıµÄ½±ÀøĞÅÏ¢
+	//ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	int32 oracle_trial_mgr::get_tier_reward_state_info(int32 tier_num)
 	{
 		return  m_oracle_trial_info.tier_num[tier_num - 1].reward_stat;
 	}
 	
-	//·¢ËÍÍæ¼ÒÉ¨µ´½±Àø
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	void oracle_trial_mgr::send_mopping_up_award()
 	{
 		player& player_ref = unit_man::get_player(m_array_index);
@@ -257,13 +257,13 @@ namespace faith
 		player_ref.send_message_to_self(&msg, e_msgindex_s2c_oracle_trial_commpingup_end);
 	}
 
-	//»ñµÃÍæ¼Ò×î¸ßÍ¨¹Ø¹Ø¿¨
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½Ø¹Ø¿ï¿½
 	int32 oracle_trial_mgr::get_hight_rank_num()
 	{
 		return m_oracle_trial_info.get_hight_rank();
 	}
 
-	//Íæ¼ÒÁìÈ¡ĞÇ¼¶½±ÀøµÄ·µ»Ø½á¹û
+	//ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½Ç¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½Ø½ï¿½ï¿½
 	void oracle_trial_mgr::get_oracle_trial_stat_num_raward(int32 tier_num, int32 reward_num)
 	{
 		player& player_ref = unit_man::get_player(m_array_index);

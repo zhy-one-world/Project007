@@ -4,7 +4,7 @@
 #include "ws_client.hpp"
 #include "utility/cs_date.hpp"
 #include "utility/init_unit.h"
-#include "lua/script_mgr.h"
+
 #include "utility/parse_msg.h"
 #include "game.pb.h"
 #include "net.pb.h"
@@ -271,7 +271,7 @@ namespace faith
 
 	void gain_treasure_ws_mgr::add_gain_item_reocrd_by_one_boss(const s_gain_treasure_record_info_one& record_info)
 	{
-		//ÏÈ·Å¼ÇÂ¼ ÔÙ·ÅÖÃ¶¥ ¿ÉÒÔÈÃÖÃ¶¥µÄÎïÆ·Ò»Ö±ÔÚ¼ÇÂ¼ÉÏÃæ
+		//ï¿½È·Å¼ï¿½Â¼ ï¿½Ù·ï¿½ï¿½Ã¶ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½Æ·Ò»Ö±ï¿½Ú¼ï¿½Â¼ï¿½ï¿½ï¿½ï¿½
 		add_gain_item_reocrd_by_dorp_record_model(record_info, e_drop_record_model_type_record);
 		add_gain_item_reocrd_by_dorp_record_model(record_info, e_drop_record_model_type_set_top);
 	}
@@ -380,7 +380,7 @@ namespace faith
 			return 0;
 		}
 
-		//ÏÈÕÒµ½ÒÑ¾­·¢ËÍ¼ÇÂ¼µÄÎ»ÖÃ
+		//ï¿½ï¿½ï¿½Òµï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Â¼ï¿½ï¿½Î»ï¿½ï¿½
 		auto ite = m_gain_item_record_list.begin();
 		if (record_index >= 0)
 		{
@@ -461,14 +461,14 @@ namespace faith
 		}
 		else
 		{
-			//boss¸Õ¸´»î»òÕß¸ÕËÀÍö ÏûÏ¢·¢ËÍ¸øÈ«·þÍæ¼Ò
+			//bossï¿½Õ¸ï¿½ï¿½ï¿½ï¿½ï¿½ß¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Í¸ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½
 			if ((!ite->second.boss_guid.is_valid() && boss_info.boss_guid.is_valid())
 				|| !boss_info.boss_guid.is_valid())
 			{
 				ite->second = boss_info;
 				send_gain_treasure_boss_to_all(boss_info.boss_spawn_point_template_id);
 			}
-			//boss¹éÊô¸Ä±äÖ»·¢¸ø¶ÔÓ¦µØÍ¼µÄÍæ¼Ò
+			//bossï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½
 			else
 			{
 				ite->second = boss_info;
@@ -570,7 +570,7 @@ namespace faith
 				cur_num++;
 			}
 		}
-		if (cur_num == 0)//Èç¹ûÎª0Ôò±íÊ¾³ðºÞ±»Çå³ý£¬·¢¸øËùÓÐÈË
+		if (cur_num == 0)//ï¿½ï¿½ï¿½Îª0ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Þ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		{
 			client_session_mgr::getInstance().send_message_to_all_client(&boss_info_msg, e_msgindex_s2c_gain_treasure_boss_info_one);
 			return;
@@ -644,11 +644,6 @@ namespace faith
 
 	void gain_treasure_ws_mgr::change_player_name_func(const guid_64& role_guid, const xstring& role_name, const xstring& original_name)
 	{
-		if (is_use_lua())
-		{
-			script_mgr::get_instance().call_func(nullptr, "gain_treasure_mgr_change_player_name_func", 0, false, "%l%s%s", role_guid.server_64, role_name.c_str(), original_name.c_str());
-			return;
-		}
 		auto iter_boss_info = m_boss_info_map.begin();
 		for (; iter_boss_info != m_boss_info_map.end(); ++iter_boss_info)
 		{
