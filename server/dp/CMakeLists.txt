@@ -90,6 +90,7 @@ target_link_libraries(dp PUBLIC
 	lua
 	tolua++
 	libprotobuf
+	abseil_dll
 	jsoncpp
 	spdlog
 	fmt

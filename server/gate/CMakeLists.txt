@@ -86,6 +86,7 @@ target_link_libraries(gate PUBLIC
 	zlib
 	lua
 	libprotobuf
+	abseil_dll
 	jsoncpp
 	spdlog
 	fmt

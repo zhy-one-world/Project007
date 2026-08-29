@@ -119,8 +119,6 @@ namespace faith
 		REGISTER_MESSAGE_S2S(e_msgindex_s2c_enum_char, ls2fep_rep_client_enum_char);
 		REGISTER_MESSAGE_S2S(e_msgindex_ls2fep_create_character, ls2fep_rep_client_create_char);
 		REGISTER_MESSAGE_S2S(e_msgindex_s2c_del_char, ls2fep_rep_client_del_char);
-		REGISTER_MESSAGE_S2S(e_msgindex_ws2fep_time_limit_temp, ws2fep_recv_act_limit_temp);
-		REGISTER_MESSAGE_S2S(e_msgindex_ws2fep_time_limit_branch_temp, ws2fep_recv_act_limit_branch_temp);
 
 		// ע����Ϣ��������, ������Ϣ
 		// ------------------------------------------login system---------------------------------------------

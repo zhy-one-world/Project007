@@ -85,6 +85,7 @@ target_link_libraries(fep PUBLIC
 	zlib
 	lua
 	libprotobuf
+	abseil_dll
 	jsoncpp
 	spdlog
 	fmt
