@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -771,15 +771,15 @@ void protobuf_AddDesc_map_2eproto() {
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\tmap.proto\022\003hld\"\211\005\n\007map_s2s\032\306\001\n\nmap_rec"
     "ord\022\027\n\017map_template_id\030\001 \001(\005\022/\n\014box_map_"
-    "data\030\002 \001(\0132\031.hld.map_s2s.box_map_info\0227\n"
-    "\020element_map_data\030\003 \001(\0132\035.hld.map_s2s.el"
+    "data\030\002 \001(\0132\031.faith.map_s2s.box_map_info\0227\n"
+    "\020element_map_data\030\003 \001(\0132\035.faith.map_s2s.el"
     "ement_map_info\0225\n\017battle_map_data\030\004 \001(\0132"
-    "\034.hld.map_s2s.battle_map_info\032A\n\rsl_map_"
-    "record\0220\n\017map_record_list\030\001 \003(\0132\027.hld.ma"
+    "\034.faith.map_s2s.battle_map_info\032A\n\rsl_map_"
+    "record\0220\n\017map_record_list\030\001 \003(\0132\027.faith.ma"
     "p_s2s.map_record\032\242\002\n\014box_map_info\022\022\n\ndat"
     "a_array\030\001 \003(\005\022A\n\017npc_point_array\030\002 \003(\0132("
-    ".hld.map_s2s.box_map_info.npc_point_info"
-    "\0229\n\rflip_box_info\030\003 \001(\0132\".hld.map_s2s.bo"
+    ".faith.map_s2s.box_map_info.npc_point_info"
+    "\0229\n\rflip_box_info\030\003 \001(\0132\".faith.map_s2s.bo"
     "x_map_info.flip_box\0328\n\016npc_point_info\022\016\n"
     "\006npc_id\030\001 \001(\005\022\026\n\016spawn_point_id\030\002 \001(\005\032F\n"
     "\010flip_box\022\022\n\naward_list\030\001 \003(\005\022\021\n\topen_li"
@@ -789,10 +789,10 @@ void protobuf_AddDesc_map_2eproto() {
     "element_map_info\022\022\n\ndata_array\030\001 \003(\005\032%\n\017"
     "battle_map_info\022\022\n\ndata_array\030\001 \003(\005\032\221\001\n\016"
     "s2c_map_record\022\027\n\017map_template_id\030\001 \001(\005\022"
-    "3\n\020element_map_data\030\002 \001(\0132\031.hld.map.elem"
+    "3\n\020element_map_data\030\002 \001(\0132\031.faith.map.elem"
     "ent_map_info\0221\n\017battle_map_data\030\003 \001(\0132\030."
-    "hld.map.battle_map_info\032^\n\022s2c_map_recor"
-    "d_all\0221\n\020map_record_array\030\001 \003(\0132\027.hld.ma"
+    "faith.map.battle_map_info\032^\n\022s2c_map_recor"
+    "d_all\0221\n\020map_record_array\030\001 \003(\0132\027.faith.ma"
     "p.s2c_map_record\022\025\n\ris_end_record\030\002 \001(\005\032"
     "&\n\021c2s_get_npc_award\022\021\n\tnpc_index\030\001 \001(\005\032"
     "p\n\025s2c_get_npc_award_end\022\022\n\naward_type\030\001"
@@ -906,9 +906,9 @@ map_s2s_map_record::map_s2s_map_record()
 }
 
 void map_s2s_map_record::InitAsDefaultInstance() {
-  box_map_data_ = const_cast< ::hld::map_s2s_box_map_info*>(&::hld::map_s2s_box_map_info::default_instance());
-  element_map_data_ = const_cast< ::hld::map_s2s_element_map_info*>(&::hld::map_s2s_element_map_info::default_instance());
-  battle_map_data_ = const_cast< ::hld::map_s2s_battle_map_info*>(&::hld::map_s2s_battle_map_info::default_instance());
+  box_map_data_ = const_cast< ::faith::map_s2s_box_map_info*>(&::faith::map_s2s_box_map_info::default_instance());
+  element_map_data_ = const_cast< ::faith::map_s2s_element_map_info*>(&::faith::map_s2s_element_map_info::default_instance());
+  battle_map_data_ = const_cast< ::faith::map_s2s_battle_map_info*>(&::faith::map_s2s_battle_map_info::default_instance());
 }
 
 map_s2s_map_record::map_s2s_map_record(const map_s2s_map_record& from)
@@ -963,13 +963,13 @@ void map_s2s_map_record::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     map_template_id_ = 0;
     if (has_box_map_data()) {
-      if (box_map_data_ != NULL) box_map_data_->::hld::map_s2s_box_map_info::Clear();
+      if (box_map_data_ != NULL) box_map_data_->::faith::map_s2s_box_map_info::Clear();
     }
     if (has_element_map_data()) {
-      if (element_map_data_ != NULL) element_map_data_->::hld::map_s2s_element_map_info::Clear();
+      if (element_map_data_ != NULL) element_map_data_->::faith::map_s2s_element_map_info::Clear();
     }
     if (has_battle_map_data()) {
-      if (battle_map_data_ != NULL) battle_map_data_->::hld::map_s2s_battle_map_info::Clear();
+      if (battle_map_data_ != NULL) battle_map_data_->::faith::map_s2s_battle_map_info::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -997,7 +997,7 @@ bool map_s2s_map_record::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.map_s2s.box_map_info box_map_data = 2;
+      // optional .faith.map_s2s.box_map_info box_map_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1011,7 +1011,7 @@ bool map_s2s_map_record::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.map_s2s.element_map_info element_map_data = 3;
+      // optional .faith.map_s2s.element_map_info element_map_data = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1025,7 +1025,7 @@ bool map_s2s_map_record::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.map_s2s.battle_map_info battle_map_data = 4;
+      // optional .faith.map_s2s.battle_map_info battle_map_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1062,19 +1062,19 @@ void map_s2s_map_record::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->map_template_id(), output);
   }
 
-  // optional .hld.map_s2s.box_map_info box_map_data = 2;
+  // optional .faith.map_s2s.box_map_info box_map_data = 2;
   if (has_box_map_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->box_map_data(), output);
   }
 
-  // optional .hld.map_s2s.element_map_info element_map_data = 3;
+  // optional .faith.map_s2s.element_map_info element_map_data = 3;
   if (has_element_map_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->element_map_data(), output);
   }
 
-  // optional .hld.map_s2s.battle_map_info battle_map_data = 4;
+  // optional .faith.map_s2s.battle_map_info battle_map_data = 4;
   if (has_battle_map_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->battle_map_data(), output);
@@ -1093,21 +1093,21 @@ void map_s2s_map_record::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->map_template_id(), target);
   }
 
-  // optional .hld.map_s2s.box_map_info box_map_data = 2;
+  // optional .faith.map_s2s.box_map_info box_map_data = 2;
   if (has_box_map_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         2, this->box_map_data(), target);
   }
 
-  // optional .hld.map_s2s.element_map_info element_map_data = 3;
+  // optional .faith.map_s2s.element_map_info element_map_data = 3;
   if (has_element_map_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         3, this->element_map_data(), target);
   }
 
-  // optional .hld.map_s2s.battle_map_info battle_map_data = 4;
+  // optional .faith.map_s2s.battle_map_info battle_map_data = 4;
   if (has_battle_map_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1132,21 +1132,21 @@ int map_s2s_map_record::ByteSize() const {
           this->map_template_id());
     }
 
-    // optional .hld.map_s2s.box_map_info box_map_data = 2;
+    // optional .faith.map_s2s.box_map_info box_map_data = 2;
     if (has_box_map_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->box_map_data());
     }
 
-    // optional .hld.map_s2s.element_map_info element_map_data = 3;
+    // optional .faith.map_s2s.element_map_info element_map_data = 3;
     if (has_element_map_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->element_map_data());
     }
 
-    // optional .hld.map_s2s.battle_map_info battle_map_data = 4;
+    // optional .faith.map_s2s.battle_map_info battle_map_data = 4;
     if (has_battle_map_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -1184,13 +1184,13 @@ void map_s2s_map_record::MergeFrom(const map_s2s_map_record& from) {
       set_map_template_id(from.map_template_id());
     }
     if (from.has_box_map_data()) {
-      mutable_box_map_data()->::hld::map_s2s_box_map_info::MergeFrom(from.box_map_data());
+      mutable_box_map_data()->::faith::map_s2s_box_map_info::MergeFrom(from.box_map_data());
     }
     if (from.has_element_map_data()) {
-      mutable_element_map_data()->::hld::map_s2s_element_map_info::MergeFrom(from.element_map_data());
+      mutable_element_map_data()->::faith::map_s2s_element_map_info::MergeFrom(from.element_map_data());
     }
     if (from.has_battle_map_data()) {
-      mutable_battle_map_data()->::hld::map_s2s_battle_map_info::MergeFrom(from.battle_map_data());
+      mutable_battle_map_data()->::faith::map_s2s_battle_map_info::MergeFrom(from.battle_map_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -1301,7 +1301,7 @@ bool map_s2s_sl_map_record::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.map_s2s.map_record map_record_list = 1;
+      // repeated .faith.map_s2s.map_record map_record_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1334,7 +1334,7 @@ bool map_s2s_sl_map_record::MergePartialFromCodedStream(
 
 void map_s2s_sl_map_record::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.map_s2s.map_record map_record_list = 1;
+  // repeated .faith.map_s2s.map_record map_record_list = 1;
   for (int i = 0; i < this->map_record_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->map_record_list(i), output);
@@ -1348,7 +1348,7 @@ void map_s2s_sl_map_record::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* map_s2s_sl_map_record::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.map_s2s.map_record map_record_list = 1;
+  // repeated .faith.map_s2s.map_record map_record_list = 1;
   for (int i = 0; i < this->map_record_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1365,7 +1365,7 @@ void map_s2s_sl_map_record::SerializeWithCachedSizes(
 int map_s2s_sl_map_record::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.map_s2s.map_record map_record_list = 1;
+  // repeated .faith.map_s2s.map_record map_record_list = 1;
   total_size += 1 * this->map_record_list_size();
   for (int i = 0; i < this->map_record_list_size(); i++) {
     total_size +=
@@ -2004,7 +2004,7 @@ map_s2s_box_map_info::map_s2s_box_map_info()
 }
 
 void map_s2s_box_map_info::InitAsDefaultInstance() {
-  flip_box_info_ = const_cast< ::hld::map_s2s_box_map_info_flip_box*>(&::hld::map_s2s_box_map_info_flip_box::default_instance());
+  flip_box_info_ = const_cast< ::faith::map_s2s_box_map_info_flip_box*>(&::faith::map_s2s_box_map_info_flip_box::default_instance());
 }
 
 map_s2s_box_map_info::map_s2s_box_map_info(const map_s2s_box_map_info& from)
@@ -2053,7 +2053,7 @@ map_s2s_box_map_info* map_s2s_box_map_info::New() const {
 void map_s2s_box_map_info::Clear() {
   if (_has_bits_[2 / 32] & (0xffu << (2 % 32))) {
     if (has_flip_box_info()) {
-      if (flip_box_info_ != NULL) flip_box_info_->::hld::map_s2s_box_map_info_flip_box::Clear();
+      if (flip_box_info_ != NULL) flip_box_info_->::faith::map_s2s_box_map_info_flip_box::Clear();
     }
   }
   data_array_.Clear();
@@ -2090,7 +2090,7 @@ bool map_s2s_box_map_info::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.map_s2s.box_map_info.npc_point_info npc_point_array = 2;
+      // repeated .faith.map_s2s.box_map_info.npc_point_info npc_point_array = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2105,7 +2105,7 @@ bool map_s2s_box_map_info::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.map_s2s.box_map_info.flip_box flip_box_info = 3;
+      // optional .faith.map_s2s.box_map_info.flip_box flip_box_info = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2143,13 +2143,13 @@ void map_s2s_box_map_info::SerializeWithCachedSizes(
       1, this->data_array(i), output);
   }
 
-  // repeated .hld.map_s2s.box_map_info.npc_point_info npc_point_array = 2;
+  // repeated .faith.map_s2s.box_map_info.npc_point_info npc_point_array = 2;
   for (int i = 0; i < this->npc_point_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->npc_point_array(i), output);
   }
 
-  // optional .hld.map_s2s.box_map_info.flip_box flip_box_info = 3;
+  // optional .faith.map_s2s.box_map_info.flip_box flip_box_info = 3;
   if (has_flip_box_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->flip_box_info(), output);
@@ -2169,14 +2169,14 @@ void map_s2s_box_map_info::SerializeWithCachedSizes(
       WriteInt32ToArray(1, this->data_array(i), target);
   }
 
-  // repeated .hld.map_s2s.box_map_info.npc_point_info npc_point_array = 2;
+  // repeated .faith.map_s2s.box_map_info.npc_point_info npc_point_array = 2;
   for (int i = 0; i < this->npc_point_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         2, this->npc_point_array(i), target);
   }
 
-  // optional .hld.map_s2s.box_map_info.flip_box flip_box_info = 3;
+  // optional .faith.map_s2s.box_map_info.flip_box flip_box_info = 3;
   if (has_flip_box_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -2194,7 +2194,7 @@ int map_s2s_box_map_info::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[2 / 32] & (0xffu << (2 % 32))) {
-    // optional .hld.map_s2s.box_map_info.flip_box flip_box_info = 3;
+    // optional .faith.map_s2s.box_map_info.flip_box flip_box_info = 3;
     if (has_flip_box_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -2212,7 +2212,7 @@ int map_s2s_box_map_info::ByteSize() const {
     total_size += 1 * this->data_array_size() + data_size;
   }
 
-  // repeated .hld.map_s2s.box_map_info.npc_point_info npc_point_array = 2;
+  // repeated .faith.map_s2s.box_map_info.npc_point_info npc_point_array = 2;
   total_size += 1 * this->npc_point_array_size();
   for (int i = 0; i < this->npc_point_array_size(); i++) {
     total_size +=
@@ -2249,7 +2249,7 @@ void map_s2s_box_map_info::MergeFrom(const map_s2s_box_map_info& from) {
   npc_point_array_.MergeFrom(from.npc_point_array_);
   if (from._has_bits_[2 / 32] & (0xffu << (2 % 32))) {
     if (from.has_flip_box_info()) {
-      mutable_flip_box_info()->::hld::map_s2s_box_map_info_flip_box::MergeFrom(from.flip_box_info());
+      mutable_flip_box_info()->::faith::map_s2s_box_map_info_flip_box::MergeFrom(from.flip_box_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -3306,8 +3306,8 @@ map_s2c_map_record::map_s2c_map_record()
 }
 
 void map_s2c_map_record::InitAsDefaultInstance() {
-  element_map_data_ = const_cast< ::hld::map_element_map_info*>(&::hld::map_element_map_info::default_instance());
-  battle_map_data_ = const_cast< ::hld::map_battle_map_info*>(&::hld::map_battle_map_info::default_instance());
+  element_map_data_ = const_cast< ::faith::map_element_map_info*>(&::faith::map_element_map_info::default_instance());
+  battle_map_data_ = const_cast< ::faith::map_battle_map_info*>(&::faith::map_battle_map_info::default_instance());
 }
 
 map_s2c_map_record::map_s2c_map_record(const map_s2c_map_record& from)
@@ -3360,10 +3360,10 @@ void map_s2c_map_record::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     map_template_id_ = 0;
     if (has_element_map_data()) {
-      if (element_map_data_ != NULL) element_map_data_->::hld::map_element_map_info::Clear();
+      if (element_map_data_ != NULL) element_map_data_->::faith::map_element_map_info::Clear();
     }
     if (has_battle_map_data()) {
-      if (battle_map_data_ != NULL) battle_map_data_->::hld::map_battle_map_info::Clear();
+      if (battle_map_data_ != NULL) battle_map_data_->::faith::map_battle_map_info::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -3391,7 +3391,7 @@ bool map_s2c_map_record::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.map.element_map_info element_map_data = 2;
+      // optional .faith.map.element_map_info element_map_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -3405,7 +3405,7 @@ bool map_s2c_map_record::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.map.battle_map_info battle_map_data = 3;
+      // optional .faith.map.battle_map_info battle_map_data = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -3442,13 +3442,13 @@ void map_s2c_map_record::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->map_template_id(), output);
   }
 
-  // optional .hld.map.element_map_info element_map_data = 2;
+  // optional .faith.map.element_map_info element_map_data = 2;
   if (has_element_map_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->element_map_data(), output);
   }
 
-  // optional .hld.map.battle_map_info battle_map_data = 3;
+  // optional .faith.map.battle_map_info battle_map_data = 3;
   if (has_battle_map_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->battle_map_data(), output);
@@ -3467,14 +3467,14 @@ void map_s2c_map_record::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->map_template_id(), target);
   }
 
-  // optional .hld.map.element_map_info element_map_data = 2;
+  // optional .faith.map.element_map_info element_map_data = 2;
   if (has_element_map_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         2, this->element_map_data(), target);
   }
 
-  // optional .hld.map.battle_map_info battle_map_data = 3;
+  // optional .faith.map.battle_map_info battle_map_data = 3;
   if (has_battle_map_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -3499,14 +3499,14 @@ int map_s2c_map_record::ByteSize() const {
           this->map_template_id());
     }
 
-    // optional .hld.map.element_map_info element_map_data = 2;
+    // optional .faith.map.element_map_info element_map_data = 2;
     if (has_element_map_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->element_map_data());
     }
 
-    // optional .hld.map.battle_map_info battle_map_data = 3;
+    // optional .faith.map.battle_map_info battle_map_data = 3;
     if (has_battle_map_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -3544,10 +3544,10 @@ void map_s2c_map_record::MergeFrom(const map_s2c_map_record& from) {
       set_map_template_id(from.map_template_id());
     }
     if (from.has_element_map_data()) {
-      mutable_element_map_data()->::hld::map_element_map_info::MergeFrom(from.element_map_data());
+      mutable_element_map_data()->::faith::map_element_map_info::MergeFrom(from.element_map_data());
     }
     if (from.has_battle_map_data()) {
-      mutable_battle_map_data()->::hld::map_battle_map_info::MergeFrom(from.battle_map_data());
+      mutable_battle_map_data()->::faith::map_battle_map_info::MergeFrom(from.battle_map_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -3662,7 +3662,7 @@ bool map_s2c_map_record_all::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.map.s2c_map_record map_record_array = 1;
+      // repeated .faith.map.s2c_map_record map_record_array = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -3711,7 +3711,7 @@ bool map_s2c_map_record_all::MergePartialFromCodedStream(
 
 void map_s2c_map_record_all::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.map.s2c_map_record map_record_array = 1;
+  // repeated .faith.map.s2c_map_record map_record_array = 1;
   for (int i = 0; i < this->map_record_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->map_record_array(i), output);
@@ -3730,7 +3730,7 @@ void map_s2c_map_record_all::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* map_s2c_map_record_all::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.map.s2c_map_record map_record_array = 1;
+  // repeated .faith.map.s2c_map_record map_record_array = 1;
   for (int i = 0; i < this->map_record_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -3761,7 +3761,7 @@ int map_s2c_map_record_all::ByteSize() const {
     }
 
   }
-  // repeated .hld.map.s2c_map_record map_record_array = 1;
+  // repeated .faith.map.s2c_map_record map_record_array = 1;
   total_size += 1 * this->map_record_array_size();
   for (int i = 0; i < this->map_record_array_size(); i++) {
     total_size +=
@@ -7905,6 +7905,6 @@ void map::Swap(map* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

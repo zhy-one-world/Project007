@@ -6,7 +6,7 @@
 #include "template/template_manager.h"
 #include "internet/net.pb.h"
 
-namespace hld
+namespace faith
 {
 
 	recycle::recycle()

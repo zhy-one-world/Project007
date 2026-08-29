@@ -15,7 +15,7 @@ purpose:
 #include "proxy_service_cli.hpp"
 #include "csv_synchronization_fep_mgr.h"
 
-namespace hld
+namespace faith
 {
 	time_limit_activity_temp_fep_mgr::time_limit_activity_temp_fep_mgr()
 	{

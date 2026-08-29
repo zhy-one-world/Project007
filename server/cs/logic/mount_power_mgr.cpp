@@ -7,7 +7,7 @@
 #include "internet/net.pb.h"
 #include "utility/init_unit.h"
 
-namespace hld
+namespace faith
 {
 	mount_power_mgr::mount_power_mgr()
 	{

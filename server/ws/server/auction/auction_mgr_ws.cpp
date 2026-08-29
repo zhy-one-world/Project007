@@ -26,7 +26,7 @@ purpose:
 #include "server/legion/legion_ws_mgr.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	auction_mgr_ws auction_mgr_ws::s_auction_mgr_ws;
 
@@ -202,7 +202,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::auction_send_sell_success_info pro_msg;
+			faith::ws2cs_proto::auction_send_sell_success_info pro_msg;
 			success_msg.to_proto(pro_msg);
 			target_session->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_auction_sell_success_info);
 		}
@@ -292,7 +292,7 @@ namespace hld
 				}
 				else
 				{
-					hld::ws2cs_proto::auction_purchase_success pro_msg;
+					faith::ws2cs_proto::auction_purchase_success pro_msg;
 					success_msg.to_proto(pro_msg);
 					session_player->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_auction_purchase_success);
 				}
@@ -392,7 +392,7 @@ namespace hld
 				}
 				else
 				{
-					hld::ws2cs_proto::auction_cancel_sell pro_msg;
+					faith::ws2cs_proto::auction_cancel_sell pro_msg;
 					success_msg.to_proto(pro_msg);
 					session_player->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_auction_cancel_sell);
 				}
@@ -462,7 +462,7 @@ namespace hld
 				}
 				else
 				{
-					hld::ws2cs_proto::auction_sell_end pro_msg;
+					faith::ws2cs_proto::auction_sell_end pro_msg;
 					end_msg.to_proto(pro_msg);
 					session_player->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_auction_sell_end);
 				}
@@ -693,7 +693,7 @@ namespace hld
 				}
 				else
 				{
-					hld::ws2cs_proto::auction_find_bid_target_end pro_msg;
+					faith::ws2cs_proto::auction_find_bid_target_end pro_msg;
 					success_msg.to_proto(pro_msg);
 					session_player->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_auction_find_bid_target_end);
 				}
@@ -1175,7 +1175,7 @@ namespace hld
 	{
 		//ws2dp_auction_check_world_sell msg;
 
-		hld::server2dp_proto::ws2dp_auction_check_world_sell pro_msg;
+		faith::server2dp_proto::ws2dp_auction_check_world_sell pro_msg;
 
 		ws_client::getInstance().send_to_dp_new(&pro_msg, e_msgindex_ws2dp_auction_check_world_sell);
 
@@ -1513,7 +1513,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::auction_time_out_del pro_msg;
+				faith::ws2cs_proto::auction_time_out_del pro_msg;
 				msg.to_proto(pro_msg);
 				session_player->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_time_out_del);
 			}
@@ -1880,7 +1880,7 @@ namespace hld
 
 	packet_s2s *auction_mgr_ws::get_auction_buffer( s_auction_info& auction_info)
 	{
-		hld::st_proto::st_auction_info pro_msg;
+		faith::st_proto::st_auction_info pro_msg;
 		auction_info.to_proto(&pro_msg);
 		packet_s2s *p_s2s = parse_msg::getInstance().serialze_buffer(&pro_msg);
 		return p_s2s;

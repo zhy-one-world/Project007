@@ -34,7 +34,7 @@
 #include <login_msg.hpp>
 #include <Utility/parse_msg.h>
 
-namespace hld
+namespace faith
 {
 
 	void fep2ls_request_client_login(uint32 conn_index, const void* data_ptr, size_t data_len)
@@ -80,11 +80,11 @@ namespace hld
 		//}
 
 		//判断角色名长度是否合法final
-		if ((create_proto_msg.name().size() < hld::min_name_size))
+		if ((create_proto_msg.name().size() < faith::min_name_size))
 		{
 			check_ret = e_failed_role_name_size_too_short;
 		}
-		if ((create_proto_msg.name().size() > hld::max_name_size))
+		if ((create_proto_msg.name().size() > faith::max_name_size))
 		{
 			check_ret = e_failed_role_name_size_too_long;
 		}
@@ -317,12 +317,12 @@ namespace hld
 
 
 		//初始化引导
-		hld::template_manager::template_type* table = template_manager::get_instance().get_templates(e_GuideTriggerTemplate);
+		faith::template_manager::template_type* table = template_manager::get_instance().get_templates(e_GuideTriggerTemplate);
 		if (nullptr == table)
 		{
 			return;
 		}
-		hld::template_manager::template_type::iterator ite;
+		faith::template_manager::template_type::iterator ite;
 		GuideTriggerTemplate* guide_trigger_template_ptr = nullptr;
 		reqeust_db.record_num = 0;
 		for (ite = table->begin(); ite != table->end(); ++ite)
@@ -345,7 +345,7 @@ namespace hld
 		character_proto_delete_character delete_char;
 		parse_msg::getInstance().parse_message_new(&delete_char, data_ptr, data_len);
 
-		hld::ls2dp_delete_character request;
+		faith::ls2dp_delete_character request;
 		request.client_uid = client_uid;
 		request.server_id = delete_char.server_id();
 		request.role_guid.server_64 = delete_char.role_guid();
@@ -400,7 +400,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::reconnect_game msg;
+				faith::ws2cs_proto::reconnect_game msg;
 				msg.set_client_uid(packet->client_uid.fep_uid_64);
 				msg.set_role_guid(old_session_ptr->get_role_guid().server_64);
 				msg.set_cur_map_id(packet->cur_map_id);
@@ -527,7 +527,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::enter_scene pro_msg;
+			faith::ws2cs_proto::enter_scene pro_msg;
 			pro_msg.set_role_guid(session->get_role_guid().server_64);
 			pro_msg.set_cs_array_index(session->get_cs_array_index());
 			session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_enter_scene);
@@ -565,7 +565,7 @@ namespace hld
 		}
 		guid_64 team_guid = packet.team_guid();
 		team_guid.server_64 = packet.team_guid();
-		int32 send_result = team_ws_mgr::get_instance().send_recruit_proc(team_guid, packet.aim_type(), packet.aim_sub_id(), packet.recruit_type(), session->get_role_guid(), session->m_role_info.role_name, session->get_role_info_data(hld::e_role_info_template_id), packet.one_dragon_flag());
+		int32 send_result = team_ws_mgr::get_instance().send_recruit_proc(team_guid, packet.aim_type(), packet.aim_sub_id(), packet.recruit_type(), session->get_role_guid(), session->m_role_info.role_name, session->get_role_info_data(faith::e_role_info_template_id), packet.one_dragon_flag());
 
 		chat_proto_recruit_end_info end_msg;
 		end_msg.set_recruit_result(send_result);
@@ -636,7 +636,7 @@ namespace hld
 		//	}
 		//	else
 		//	{
-		//		hld::ws2cs_proto::time_out pro_msg;
+		//		faith::ws2cs_proto::time_out pro_msg;
 		//		pro_msg.set_role_guid(client_session_ptr->get_role_guid().server_64);
 		//		pro_msg.set_cs_unit_index(client_session_ptr->get_cs_array_index());
 		//		world_server::getInstance().broadcast_lua(&pro_msg, e_msg_index_ws2cs_time_out, e_server_type_cs);

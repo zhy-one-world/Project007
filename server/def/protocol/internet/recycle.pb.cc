@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -295,12 +295,12 @@ void protobuf_AddDesc_recycle_2eproto() {
     "\022\r\n\005state\030\002 \001(\005\032I\n\020recycle_item_one\022\022\n\nr"
     "ecycle_id\030\001 \001(\005\022\022\n\nfinish_num\030\002 \001(\005\022\r\n\005s"
     "tate\030\003 \001(\005\032\251\002\n\020recycle_data_all\022\022\n\nstart"
-    "_time\030\001 \001(\005\0227\n\ntask_array\030\002 \003(\0132#.hld.re"
+    "_time\030\001 \001(\005\0227\n\ntask_array\030\002 \003(\0132#.faith.re"
     "cycle_proto.recycle_item_one\022:\n\013login_ar"
-    "ray\030\003 \003(\0132%.hld.recycle_proto.recycle_re"
-    "ward_one\0228\n\tbuy_array\030\004 \003(\0132%.hld.recycl"
+    "ray\030\003 \003(\0132%.faith.recycle_proto.recycle_re"
+    "ward_one\0228\n\tbuy_array\030\004 \003(\0132%.faith.recycl"
     "e_proto.recycle_reward_one\022B\n\023invited_le"
-    "vel_array\030\005 \003(\0132%.hld.recycle_proto.recy"
+    "vel_array\030\005 \003(\0132%.faith.recycle_proto.recy"
     "cle_reward_one\022\016\n\006params\030\006 \003(\005\0328\n\017recycl"
     "e_operate\022\022\n\nrecycle_id\030\001 \001(\005\022\021\n\toper_ty"
     "pe\030\002 \001(\005\032L\n\023recycle_operate_end\022\022\n\nrecyc"
@@ -311,7 +311,7 @@ void protobuf_AddDesc_recycle_2eproto() {
     "one\022\014\n\004guid\030\001 \003(\005\022\r\n\005level\030\002 \001(\005\022\017\n\007head"
     "_id\030\003 \001(\005\022\023\n\013grade_level\030\004 \001(\005\022\024\n\014invite"
     "d_name\030\005 \001(\t\032U\n\024recycle_invited_list\022=\n\r"
-    "invited_array\030\001 \003(\0132&.hld.recycle_proto."
+    "invited_array\030\001 \003(\0132&.faith.recycle_proto."
     "recycle_invited_one", 899);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "recycle.proto", &protobuf_RegisterTypes);
@@ -976,7 +976,7 @@ bool recycle_proto_recycle_data_all::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.recycle_proto.recycle_item_one task_array = 2;
+      // repeated .faith.recycle_proto.recycle_item_one task_array = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -991,7 +991,7 @@ bool recycle_proto_recycle_data_all::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.recycle_proto.recycle_reward_one login_array = 3;
+      // repeated .faith.recycle_proto.recycle_reward_one login_array = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1006,7 +1006,7 @@ bool recycle_proto_recycle_data_all::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.recycle_proto.recycle_reward_one buy_array = 4;
+      // repeated .faith.recycle_proto.recycle_reward_one buy_array = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1021,7 +1021,7 @@ bool recycle_proto_recycle_data_all::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.recycle_proto.recycle_reward_one invited_level_array = 5;
+      // repeated .faith.recycle_proto.recycle_reward_one invited_level_array = 5;
       case 5: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1081,25 +1081,25 @@ void recycle_proto_recycle_data_all::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->start_time(), output);
   }
 
-  // repeated .hld.recycle_proto.recycle_item_one task_array = 2;
+  // repeated .faith.recycle_proto.recycle_item_one task_array = 2;
   for (int i = 0; i < this->task_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->task_array(i), output);
   }
 
-  // repeated .hld.recycle_proto.recycle_reward_one login_array = 3;
+  // repeated .faith.recycle_proto.recycle_reward_one login_array = 3;
   for (int i = 0; i < this->login_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->login_array(i), output);
   }
 
-  // repeated .hld.recycle_proto.recycle_reward_one buy_array = 4;
+  // repeated .faith.recycle_proto.recycle_reward_one buy_array = 4;
   for (int i = 0; i < this->buy_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->buy_array(i), output);
   }
 
-  // repeated .hld.recycle_proto.recycle_reward_one invited_level_array = 5;
+  // repeated .faith.recycle_proto.recycle_reward_one invited_level_array = 5;
   for (int i = 0; i < this->invited_level_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       5, this->invited_level_array(i), output);
@@ -1124,28 +1124,28 @@ void recycle_proto_recycle_data_all::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->start_time(), target);
   }
 
-  // repeated .hld.recycle_proto.recycle_item_one task_array = 2;
+  // repeated .faith.recycle_proto.recycle_item_one task_array = 2;
   for (int i = 0; i < this->task_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         2, this->task_array(i), target);
   }
 
-  // repeated .hld.recycle_proto.recycle_reward_one login_array = 3;
+  // repeated .faith.recycle_proto.recycle_reward_one login_array = 3;
   for (int i = 0; i < this->login_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         3, this->login_array(i), target);
   }
 
-  // repeated .hld.recycle_proto.recycle_reward_one buy_array = 4;
+  // repeated .faith.recycle_proto.recycle_reward_one buy_array = 4;
   for (int i = 0; i < this->buy_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         4, this->buy_array(i), target);
   }
 
-  // repeated .hld.recycle_proto.recycle_reward_one invited_level_array = 5;
+  // repeated .faith.recycle_proto.recycle_reward_one invited_level_array = 5;
   for (int i = 0; i < this->invited_level_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1177,7 +1177,7 @@ int recycle_proto_recycle_data_all::ByteSize() const {
     }
 
   }
-  // repeated .hld.recycle_proto.recycle_item_one task_array = 2;
+  // repeated .faith.recycle_proto.recycle_item_one task_array = 2;
   total_size += 1 * this->task_array_size();
   for (int i = 0; i < this->task_array_size(); i++) {
     total_size +=
@@ -1185,7 +1185,7 @@ int recycle_proto_recycle_data_all::ByteSize() const {
         this->task_array(i));
   }
 
-  // repeated .hld.recycle_proto.recycle_reward_one login_array = 3;
+  // repeated .faith.recycle_proto.recycle_reward_one login_array = 3;
   total_size += 1 * this->login_array_size();
   for (int i = 0; i < this->login_array_size(); i++) {
     total_size +=
@@ -1193,7 +1193,7 @@ int recycle_proto_recycle_data_all::ByteSize() const {
         this->login_array(i));
   }
 
-  // repeated .hld.recycle_proto.recycle_reward_one buy_array = 4;
+  // repeated .faith.recycle_proto.recycle_reward_one buy_array = 4;
   total_size += 1 * this->buy_array_size();
   for (int i = 0; i < this->buy_array_size(); i++) {
     total_size +=
@@ -1201,7 +1201,7 @@ int recycle_proto_recycle_data_all::ByteSize() const {
         this->buy_array(i));
   }
 
-  // repeated .hld.recycle_proto.recycle_reward_one invited_level_array = 5;
+  // repeated .faith.recycle_proto.recycle_reward_one invited_level_array = 5;
   total_size += 1 * this->invited_level_array_size();
   for (int i = 0; i < this->invited_level_array_size(); i++) {
     total_size +=
@@ -2727,7 +2727,7 @@ bool recycle_proto_recycle_invited_list::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.recycle_proto.recycle_invited_one invited_array = 1;
+      // repeated .faith.recycle_proto.recycle_invited_one invited_array = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2760,7 +2760,7 @@ bool recycle_proto_recycle_invited_list::MergePartialFromCodedStream(
 
 void recycle_proto_recycle_invited_list::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.recycle_proto.recycle_invited_one invited_array = 1;
+  // repeated .faith.recycle_proto.recycle_invited_one invited_array = 1;
   for (int i = 0; i < this->invited_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->invited_array(i), output);
@@ -2774,7 +2774,7 @@ void recycle_proto_recycle_invited_list::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* recycle_proto_recycle_invited_list::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.recycle_proto.recycle_invited_one invited_array = 1;
+  // repeated .faith.recycle_proto.recycle_invited_one invited_array = 1;
   for (int i = 0; i < this->invited_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -2791,7 +2791,7 @@ void recycle_proto_recycle_invited_list::SerializeWithCachedSizes(
 int recycle_proto_recycle_invited_list::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.recycle_proto.recycle_invited_one invited_array = 1;
+  // repeated .faith.recycle_proto.recycle_invited_one invited_array = 1;
   total_size += 1 * this->invited_array_size();
   for (int i = 0; i < this->invited_array_size(); i++) {
     total_size +=
@@ -3021,6 +3021,6 @@ void recycle_proto::Swap(recycle_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

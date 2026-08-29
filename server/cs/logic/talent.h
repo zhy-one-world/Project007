@@ -12,7 +12,7 @@ purpose: about role's talent
 #include <Logic/talent_def.hpp>
 #include "template/ServerTemplateHead.h"
 
-namespace hld
+namespace faith
 {
 	class ctalent
 	{

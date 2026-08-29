@@ -3,7 +3,7 @@
 
 #include "item.h"
 
-namespace hld
+namespace faith
 {
 	class role_competition_mgr
 	{

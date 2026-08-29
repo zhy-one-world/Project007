@@ -14,16 +14,16 @@ purpose:
 #include "base.hpp"
 #include "Logic/char_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	enum
 	{
-		e_msgindex_dp2cs_load_char_convert = hld::e_msg_base_convert,
+		e_msgindex_dp2cs_load_char_convert = faith::e_msg_base_convert,
 		e_msgindex_cs2dp_save_char_convert,
 	};
 	// DP2CS 分批发送玩家的所有称号信息
-	struct dp2cs_load_char_convert : public hld::packet_base
+	struct dp2cs_load_char_convert : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32							unit_array_index;
@@ -37,7 +37,7 @@ namespace hld
 		}
 	};
 
-	struct cs2dp_save_char_convert : public hld::packet_base
+	struct cs2dp_save_char_convert : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;

@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -661,11 +661,11 @@ void protobuf_AddDesc_login_2eproto() {
     "\022\017\n\007ip_addr\030\003 \001(\t\022\014\n\004port\030\004 \001(\r\022\024\n\014serve"
     "r_state\030\005 \001(\r\022\027\n\017recommend_state\030\006 \001(\r\022\022"
     "\n\nbegin_time\030\007 \001(\r\032M\n\023get_server_list_en"
-    "d\0226\n\013server_list\030\001 \003(\0132!.hld.login_proto"
+    "d\0226\n\013server_list\030\001 \003(\0132!.faith.login_proto"
     ".server_list_info\032^\n\016role_list_info\022\021\n\ts"
     "erver_id\030\001 \001(\r\022\023\n\013template_id\030\002 \001(\r\022\021\n\te"
     "xp_level\030\003 \001(\r\022\021\n\trole_name\030\004 \001(\t\032G\n\021get"
-    "_role_list_end\0222\n\trole_list\030\001 \003(\0132\037.hld."
+    "_role_list_end\0222\n\trole_list\030\001 \003(\0132\037.faith."
     "login_proto.role_list_info\032O\n\017login_reco"
     "nnect\022\017\n\007account\030\001 \001(\t\022\022\n\ncur_map_id\030\002 \001"
     "(\005\022\027\n\017cur_map_line_id\030\003 \001(\005\032,\n\023login_rec"
@@ -676,7 +676,7 @@ void protobuf_AddDesc_login_2eproto() {
     "uildTimes\030\006 \001(\r\022\026\n\016switch_cluster\030\007 \001(\r\022"
     "\021\n\tserver_id\030\010 \001(\r\022\023\n\013captcha_str\030\t \001(\t\022"
     "\n\n\002ip\030\n \001(\t\022\023\n\013device_type\030\013 \001(\t\022\023\n\013cust"
-    "om_info\030\014 \001(\t\022%\n\010sdk_data\030\r \001(\0132\023.hld.sd"
+    "om_info\030\014 \001(\t\022%\n\010sdk_data\030\r \001(\0132\023.faith.sd"
     "k_login_data\032\303\002\n\tlogin_end\022\016\n\006result\030\001 \001"
     "(\r\022\017\n\007account\030\002 \001(\t\022\022\n\nserver_msg\030\004 \001(\t\022"
     "\025\n\nlogin_type\030\005 \001(\r:\0011\022\032\n\017login_type_plu"
@@ -703,7 +703,7 @@ void protobuf_AddDesc_login_2eproto() {
     "_ws\032\227\002\n\014client_login\022\022\n\nclient_uid\030\001 \001(\004"
     "\022\017\n\007account\030\002 \001(\t\022\022\n\nlogin_type\030\003 \001(\005\022\027\n"
     "\017login_type_plus\030\004 \001(\005\022\'\n\nfixed_data\030\005 \001"
-    "(\0132\023.hld.sdk_login_data\022\021\n\trole_guid\030\006 \001"
+    "(\0132\023.faith.sdk_login_data\022\021\n\trole_guid\030\006 \001"
     "(\004\022\020\n\010map_guid\030\007 \001(\004\022\021\n\twar_index\030\010 \001(\005\022"
     "\021\n\tjewel_num\030\t \001(\005\022\021\n\tserver_id\030\n \001(\005\022\026\n"
     "\016ban_role_array\030\013 \003(\003\022\026\n\016ban_chat_array\030"
@@ -3479,7 +3479,7 @@ bool login_proto_get_server_list_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.login_proto.server_list_info server_list = 1;
+      // repeated .faith.login_proto.server_list_info server_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -3512,7 +3512,7 @@ bool login_proto_get_server_list_end::MergePartialFromCodedStream(
 
 void login_proto_get_server_list_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.login_proto.server_list_info server_list = 1;
+  // repeated .faith.login_proto.server_list_info server_list = 1;
   for (int i = 0; i < this->server_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->server_list(i), output);
@@ -3526,7 +3526,7 @@ void login_proto_get_server_list_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* login_proto_get_server_list_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.login_proto.server_list_info server_list = 1;
+  // repeated .faith.login_proto.server_list_info server_list = 1;
   for (int i = 0; i < this->server_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -3543,7 +3543,7 @@ void login_proto_get_server_list_end::SerializeWithCachedSizes(
 int login_proto_get_server_list_end::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.login_proto.server_list_info server_list = 1;
+  // repeated .faith.login_proto.server_list_info server_list = 1;
   total_size += 1 * this->server_list_size();
   for (int i = 0; i < this->server_list_size(); i++) {
     total_size +=
@@ -4027,7 +4027,7 @@ bool login_proto_get_role_list_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.login_proto.role_list_info role_list = 1;
+      // repeated .faith.login_proto.role_list_info role_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -4060,7 +4060,7 @@ bool login_proto_get_role_list_end::MergePartialFromCodedStream(
 
 void login_proto_get_role_list_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.login_proto.role_list_info role_list = 1;
+  // repeated .faith.login_proto.role_list_info role_list = 1;
   for (int i = 0; i < this->role_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->role_list(i), output);
@@ -4074,7 +4074,7 @@ void login_proto_get_role_list_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* login_proto_get_role_list_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.login_proto.role_list_info role_list = 1;
+  // repeated .faith.login_proto.role_list_info role_list = 1;
   for (int i = 0; i < this->role_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -4091,7 +4091,7 @@ void login_proto_get_role_list_end::SerializeWithCachedSizes(
 int login_proto_get_role_list_end::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.login_proto.role_list_info role_list = 1;
+  // repeated .faith.login_proto.role_list_info role_list = 1;
   total_size += 1 * this->role_list_size();
   for (int i = 0; i < this->role_list_size(); i++) {
     total_size +=
@@ -4700,7 +4700,7 @@ login_proto_login::login_proto_login()
 }
 
 void login_proto_login::InitAsDefaultInstance() {
-  sdk_data_ = const_cast< ::hld::sdk_login_data*>(&::hld::sdk_login_data::default_instance());
+  sdk_data_ = const_cast< ::faith::sdk_login_data*>(&::faith::sdk_login_data::default_instance());
 }
 
 login_proto_login::login_proto_login(const login_proto_login& from)
@@ -4831,7 +4831,7 @@ void login_proto_login::Clear() {
       }
     }
     if (has_sdk_data()) {
-      if (sdk_data_ != NULL) sdk_data_->::hld::sdk_login_data::Clear();
+      if (sdk_data_ != NULL) sdk_data_->::faith::sdk_login_data::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -5043,7 +5043,7 @@ bool login_proto_login::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.sdk_login_data sdk_data = 13;
+      // optional .faith.sdk_login_data sdk_data = 13;
       case 13: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -5167,7 +5167,7 @@ void login_proto_login::SerializeWithCachedSizes(
       12, this->custom_info(), output);
   }
 
-  // optional .hld.sdk_login_data sdk_data = 13;
+  // optional .faith.sdk_login_data sdk_data = 13;
   if (has_sdk_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       13, this->sdk_data(), output);
@@ -5281,7 +5281,7 @@ void login_proto_login::SerializeWithCachedSizes(
         12, this->custom_info(), target);
   }
 
-  // optional .hld.sdk_login_data sdk_data = 13;
+  // optional .faith.sdk_login_data sdk_data = 13;
   if (has_sdk_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -5385,7 +5385,7 @@ int login_proto_login::ByteSize() const {
           this->custom_info());
     }
 
-    // optional .hld.sdk_login_data sdk_data = 13;
+    // optional .faith.sdk_login_data sdk_data = 13;
     if (has_sdk_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -5458,7 +5458,7 @@ void login_proto_login::MergeFrom(const login_proto_login& from) {
       set_custom_info(from.custom_info());
     }
     if (from.has_sdk_data()) {
-      mutable_sdk_data()->::hld::sdk_login_data::MergeFrom(from.sdk_data());
+      mutable_sdk_data()->::faith::sdk_login_data::MergeFrom(from.sdk_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -8460,7 +8460,7 @@ login_fep_ws_client_login::login_fep_ws_client_login()
 }
 
 void login_fep_ws_client_login::InitAsDefaultInstance() {
-  fixed_data_ = const_cast< ::hld::sdk_login_data*>(&::hld::sdk_login_data::default_instance());
+  fixed_data_ = const_cast< ::faith::sdk_login_data*>(&::faith::sdk_login_data::default_instance());
 }
 
 login_fep_ws_client_login::login_fep_ws_client_login(const login_fep_ws_client_login& from)
@@ -8529,7 +8529,7 @@ void login_fep_ws_client_login::Clear() {
     login_type_ = 0;
     login_type_plus_ = 0;
     if (has_fixed_data()) {
-      if (fixed_data_ != NULL) fixed_data_->::hld::sdk_login_data::Clear();
+      if (fixed_data_ != NULL) fixed_data_->::faith::sdk_login_data::Clear();
     }
     role_guid_ = GOOGLE_ULONGLONG(0);
     map_guid_ = GOOGLE_ULONGLONG(0);
@@ -8615,7 +8615,7 @@ bool login_fep_ws_client_login::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.sdk_login_data fixed_data = 5;
+      // optional .faith.sdk_login_data fixed_data = 5;
       case 5: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -8795,7 +8795,7 @@ void login_fep_ws_client_login::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->login_type_plus(), output);
   }
 
-  // optional .hld.sdk_login_data fixed_data = 5;
+  // optional .faith.sdk_login_data fixed_data = 5;
   if (has_fixed_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       5, this->fixed_data(), output);
@@ -8871,7 +8871,7 @@ void login_fep_ws_client_login::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->login_type_plus(), target);
   }
 
-  // optional .hld.sdk_login_data fixed_data = 5;
+  // optional .faith.sdk_login_data fixed_data = 5;
   if (has_fixed_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -8954,7 +8954,7 @@ int login_fep_ws_client_login::ByteSize() const {
           this->login_type_plus());
     }
 
-    // optional .hld.sdk_login_data fixed_data = 5;
+    // optional .faith.sdk_login_data fixed_data = 5;
     if (has_fixed_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -9060,7 +9060,7 @@ void login_fep_ws_client_login::MergeFrom(const login_fep_ws_client_login& from)
       set_login_type_plus(from.login_type_plus());
     }
     if (from.has_fixed_data()) {
-      mutable_fixed_data()->::hld::sdk_login_data::MergeFrom(from.fixed_data());
+      mutable_fixed_data()->::faith::sdk_login_data::MergeFrom(from.fixed_data());
     }
     if (from.has_role_guid()) {
       set_role_guid(from.role_guid());
@@ -9443,6 +9443,6 @@ void login::Swap(login* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

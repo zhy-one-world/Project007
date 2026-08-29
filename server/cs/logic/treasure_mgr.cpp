@@ -18,7 +18,7 @@ purpose:
 #include "internet/character.pb.h"
 #include "internet/net.pb.h"
 #include "utility/init_unit.h"
-namespace hld
+namespace faith
 {
 
 	ctreasure_mgr::ctreasure_mgr()

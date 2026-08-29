@@ -7,7 +7,7 @@
 #include <char_msg.hpp>
 #include "dp2cs.pb.h"
 
-namespace hld
+namespace faith
 {
 	void cs2dp_req_load_char_guide_record(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index)
 	{
@@ -23,15 +23,15 @@ namespace hld
 	}
 	static void cs2dp_load_role_guide_send_lua(uint32 connindex, const dp2cs_load_guide_record& msgData)
 	{
-		hld::dp2cs_proto::load_role_db_data msg;
+		faith::dp2cs_proto::load_role_db_data msg;
 		msg.set_role_guid(msgData.role_guid.server_64);
 		msg.set_unit_array_index(msgData.unit_array_index);
 
-		hld::db_proto::load_role_guide_db msg_db;
+		faith::db_proto::load_role_guide_db msg_db;
 		msg_db.set_row_count(msgData.data_num);
 		for (int32 i = 0; i < msg_db.row_count(); i++)
 		{
-			hld::db_proto::load_role_guide_row *db_row = msg_db.add_row_data();
+			faith::db_proto::load_role_guide_row *db_row = msg_db.add_row_data();
 			if (db_row == nullptr)
 			{
 				return;
@@ -57,11 +57,11 @@ namespace hld
 		{
 			guid_64 role_guid;
 			s_record_info	guide_info;
-		}sql_data[hld::max_guide_record_num];
+		}sql_data[faith::max_guide_record_num];
 
 		int32 row_count = result.query.data_select.row_count;
 		int32 row_size = sizeof(guide_record_db_row);
-		if (result.error || row_count > hld::max_guide_record_num || row_size != result.query.data_select.row_size)
+		if (result.error || row_count > faith::max_guide_record_num || row_size != result.query.data_select.row_size)
 		{
 			dp2cs_load_data_error error;
 			error.role_guid = role_guid;

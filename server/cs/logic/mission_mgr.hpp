@@ -10,7 +10,7 @@ purpose: 任务管理系统
 #include "mission.hpp"
 #include"Logic/mission_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class cmission_mgr
 	{

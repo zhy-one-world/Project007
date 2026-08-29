@@ -11,7 +11,7 @@ purpose:
 #ifndef _SERVER_LOG_DEF_HPP_
 #define _SERVER_LOG_DEF_HPP_
 
-namespace hld
+namespace faith
 {
 
 	const int32 max_log_char_num = 4096;							// log日志最大长度 

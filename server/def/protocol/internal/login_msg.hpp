@@ -17,7 +17,7 @@
 #include "Logic/gate_def.hpp"
 #include "internet/error.pb.h"
 
-namespace hld 
+namespace faith 
 {
 #pragma pack(push,1)
 
@@ -73,8 +73,8 @@ namespace hld
 		xchar										server_msg[max_server_msg_length + 1];
 		int32										jewel_num;
 		int32										radio_host;
-		int64										ban_role_array[hld::max_character_num];
-		int64										ban_chat_array[hld::max_character_num];
+		int64										ban_role_array[faith::max_character_num];
+		int64										ban_chat_array[faith::max_character_num];
 		bool										is_create_new;
 		int32										online_duration;
 		int32										online_time;
@@ -99,8 +99,8 @@ namespace hld
 		xchar						server_msg[max_server_msg_length + 1];
 		xchar						create_ip[max_ip_address_length + 1];
 		xchar						device_type[max_device_type_length + 1];
-		int64						ban_role_array[hld::max_character_num];
-		int64						ban_chat_array[hld::max_character_num];
+		int64						ban_role_array[faith::max_character_num];
+		int64						ban_chat_array[faith::max_character_num];
 		int32						age;
 
 		ls2dp_client_login()
@@ -123,8 +123,8 @@ namespace hld
 		int32								login_type_plus;
 		int32								jewel_num;
 		int32								radio_host;
-		int64								ban_role_array[hld::max_character_num];
-		int64								ban_chat_array[hld::max_character_num];
+		int64								ban_role_array[faith::max_character_num];
+		int64								ban_chat_array[faith::max_character_num];
 		bool								is_create_new;
 		int32								online_duration;
 		int32								online_time;
@@ -175,8 +175,8 @@ namespace hld
 		int32										war_index;
 		int32										jewel_num;
 		int32										server_id;
-		int64										ban_role_array[hld::max_character_num];
-		int64										ban_chat_array[hld::max_character_num];
+		int64										ban_role_array[faith::max_character_num];
+		int64										ban_chat_array[faith::max_character_num];
 		fep2ws_client_logined()
 		{
 			memset(this, 0, sizeof(*this));

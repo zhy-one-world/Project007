@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_title_2eproto();
@@ -123,7 +123,7 @@ class title_proto_title_equip_operate : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 operate_type() const;
   inline void set_operate_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.title_proto.title_equip_operate)
+  // @@protoc_insertion_point(class_scope:faith.title_proto.title_equip_operate)
  private:
   inline void set_has_template_id();
   inline void clear_has_template_id();
@@ -214,7 +214,7 @@ class title_proto_title_info_one : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_title_data();
 
-  // @@protoc_insertion_point(class_scope:hld.title_proto.title_info_one)
+  // @@protoc_insertion_point(class_scope:faith.title_proto.title_info_one)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -287,24 +287,24 @@ class title_proto_own_title_msg_all : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.title_proto.title_info_one title_info_arr = 1;
+  // repeated .faith.title_proto.title_info_one title_info_arr = 1;
   inline int title_info_arr_size() const;
   inline void clear_title_info_arr();
   static const int kTitleInfoArrFieldNumber = 1;
-  inline const ::hld::title_proto_title_info_one& title_info_arr(int index) const;
-  inline ::hld::title_proto_title_info_one* mutable_title_info_arr(int index);
-  inline ::hld::title_proto_title_info_one* add_title_info_arr();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::title_proto_title_info_one >&
+  inline const ::faith::title_proto_title_info_one& title_info_arr(int index) const;
+  inline ::faith::title_proto_title_info_one* mutable_title_info_arr(int index);
+  inline ::faith::title_proto_title_info_one* add_title_info_arr();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::title_proto_title_info_one >&
       title_info_arr() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::title_proto_title_info_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::title_proto_title_info_one >*
       mutable_title_info_arr();
 
-  // @@protoc_insertion_point(class_scope:hld.title_proto.own_title_msg_all)
+  // @@protoc_insertion_point(class_scope:faith.title_proto.own_title_msg_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::title_proto_title_info_one > title_info_arr_;
+  ::google::protobuf::RepeatedPtrField< ::faith::title_proto_title_info_one > title_info_arr_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -398,7 +398,7 @@ class title_proto_title_add_title_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.title_proto.title_add_title_end)
+  // @@protoc_insertion_point(class_scope:faith.title_proto.title_add_title_end)
  private:
   inline void set_has_template_id();
   inline void clear_has_template_id();
@@ -489,7 +489,7 @@ class title_proto_title_open_title_system_end : public ::google::protobuf::Messa
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_unit_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.title_proto.title_open_title_system_end)
+  // @@protoc_insertion_point(class_scope:faith.title_proto.title_open_title_system_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -574,7 +574,7 @@ class title_proto_title_set_title_no_need_see : public ::google::protobuf::Messa
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_unit_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.title_proto.title_set_title_no_need_see)
+  // @@protoc_insertion_point(class_scope:faith.title_proto.title_set_title_no_need_see)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -654,7 +654,7 @@ class title_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.title_proto)
+  // @@protoc_insertion_point(class_scope:faith.title_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -779,27 +779,27 @@ title_proto_title_info_one::mutable_title_data() {
 
 // title_proto_own_title_msg_all
 
-// repeated .hld.title_proto.title_info_one title_info_arr = 1;
+// repeated .faith.title_proto.title_info_one title_info_arr = 1;
 inline int title_proto_own_title_msg_all::title_info_arr_size() const {
   return title_info_arr_.size();
 }
 inline void title_proto_own_title_msg_all::clear_title_info_arr() {
   title_info_arr_.Clear();
 }
-inline const ::hld::title_proto_title_info_one& title_proto_own_title_msg_all::title_info_arr(int index) const {
+inline const ::faith::title_proto_title_info_one& title_proto_own_title_msg_all::title_info_arr(int index) const {
   return title_info_arr_.Get(index);
 }
-inline ::hld::title_proto_title_info_one* title_proto_own_title_msg_all::mutable_title_info_arr(int index) {
+inline ::faith::title_proto_title_info_one* title_proto_own_title_msg_all::mutable_title_info_arr(int index) {
   return title_info_arr_.Mutable(index);
 }
-inline ::hld::title_proto_title_info_one* title_proto_own_title_msg_all::add_title_info_arr() {
+inline ::faith::title_proto_title_info_one* title_proto_own_title_msg_all::add_title_info_arr() {
   return title_info_arr_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::title_proto_title_info_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::title_proto_title_info_one >&
 title_proto_own_title_msg_all::title_info_arr() const {
   return title_info_arr_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::title_proto_title_info_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::title_proto_title_info_one >*
 title_proto_own_title_msg_all::mutable_title_info_arr() {
   return &title_info_arr_;
 }
@@ -942,7 +942,7 @@ title_proto_title_set_title_no_need_see::mutable_unit_guid() {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

@@ -2,7 +2,7 @@
 #define AI_UNIT_HEAD
 #include "Logic/ai_def.hpp"
 #include "ai_level_nomal.h"
-namespace hld
+namespace faith
 {
 	struct s_fake_player_info;
 

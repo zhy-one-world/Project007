@@ -17,7 +17,7 @@
 #include "net.pb.h"
 #include "character.pb.h"
 
-namespace hld
+namespace faith
 {
 	big_player_ws_mgr::big_player_ws_mgr()
 	{
@@ -101,7 +101,7 @@ namespace hld
 				}
 				else
 				{
-					hld::ws2cs_proto::clear_big_player_title pro_msg;
+					faith::ws2cs_proto::clear_big_player_title pro_msg;
 					pro_msg.set_role_guid(client_session_ref.get_role_guid().server_64);
 					pro_msg.set_title_type(title_type);
 					client_session_ref.send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_clear_pk_king_title);
@@ -325,7 +325,7 @@ namespace hld
 			return false;
 		}
 
-		cs_map_mgr_system::send_big_player(hld::big_world_map_id, player_info_array[big_type], big_type);
+		cs_map_mgr_system::send_big_player(faith::big_world_map_id, player_info_array[big_type], big_type);
 		player_info_array[big_type].reset_data_block_mask();
 		return true;
 	}
@@ -399,7 +399,7 @@ namespace hld
 		cross::send_msg_to_ws(guid_64(), server_id, e_msgindex_ws2ws_big_player_info, &msg, sizeof(msg));
 	}
 
-	void big_player_ws_mgr::set_title_session_login(const guid_64& role_guid, bool(&loading_title_flag)[hld::e_title_type_max])
+	void big_player_ws_mgr::set_title_session_login(const guid_64& role_guid, bool(&loading_title_flag)[faith::e_title_type_max])
 	{
 		if (is_use_lua())
 		{
@@ -502,16 +502,16 @@ namespace hld
 			return e_big_player_type_gs_first_assassinator;
 			break;
 		case e_RankingIndex_gs:
-			return hld::e_big_player_type_gs_first_player;
+			return faith::e_big_player_type_gs_first_player;
 			break;
 		case e_RankingIndex_box_map_level:
-			return hld::e_big_player_type_money_first_player;
+			return faith::e_big_player_type_money_first_player;
 			break;
 		case e_RankingIndex_worship:
-			return hld::e_big_player_type_worship_first_player;
+			return faith::e_big_player_type_worship_first_player;
 			break;
 		case e_RankingIndex_arena:
-			return hld::e_big_player_type_arena_first_player;
+			return faith::e_big_player_type_arena_first_player;
 			break;
 		default:
 			return -1;

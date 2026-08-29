@@ -3,7 +3,7 @@
 #include "logic/type_def.hpp"
 #include "template/EquipTemplate_S.h"
 
-namespace hld
+namespace faith
 {
 	struct item_equip_component
 	{

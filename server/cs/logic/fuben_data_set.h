@@ -11,7 +11,7 @@
 
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 	typedef std::unordered_map<int32, int32> fuben_boss_info_map;
 	struct s_fuben_info_to_client

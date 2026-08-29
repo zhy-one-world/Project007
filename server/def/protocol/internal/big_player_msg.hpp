@@ -15,13 +15,13 @@ purpose:
 #include "internet/ws2ws.pb.h"
 #include "internet/dp2s.pb.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_ws2dp_save_big_player = hld::e_msg_big_player,
+		e_msgindex_ws2dp_save_big_player = faith::e_msg_big_player,
 		e_msgindex_ws2dp_load_big_player,
 		e_msgindex_ws2dp_load_big_player_detail,
 		e_msgindex_dp2ws_load_big_player_end,
@@ -35,7 +35,7 @@ namespace hld
 		e_msgindex_ws2ws_big_player_info,
 	};
 
-	struct ws2dp_save_big_player_to_db : public hld::packet_base
+	struct ws2dp_save_big_player_to_db : public faith::packet_base
 	{
 		s_big_player_db						data_info[e_big_player_type_max];
 		ws2dp_save_big_player_to_db()
@@ -45,7 +45,7 @@ namespace hld
 		}
 	};
 
-	struct ws2dp_load_big_player_by_db : public hld::packet_base
+	struct ws2dp_load_big_player_by_db : public faith::packet_base
 	{
 		ws2dp_load_big_player_by_db()
 		{
@@ -54,7 +54,7 @@ namespace hld
 		}
 	};
 
-	//struct ws2dp_load_big_player_by_db_one : public hld::packet_base
+	//struct ws2dp_load_big_player_by_db_one : public faith::packet_base
 	//{
 	//	guid_64						player_guid;
 	//	ws2dp_load_big_player_by_db_one()
@@ -63,7 +63,7 @@ namespace hld
 	//		wheader = e_msgindex_ws2dp_load_big_player_one;
 	//	}
 	//};
-	struct dp2ws_load_big_player_end: public hld::packet_base
+	struct dp2ws_load_big_player_end: public faith::packet_base
 	{
 		s_big_player_db						data_info[e_big_player_type_max];
 		dp2ws_load_big_player_end()
@@ -71,11 +71,11 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_dp2ws_load_big_player_end;
 		}
-		bool to_proto(hld::dp2s_proto::load_big_player_end& msg)
+		bool to_proto(faith::dp2s_proto::load_big_player_end& msg)
 		{
 			for (int32 i = 0; i < e_big_player_type_max; i++)
 			{
-				hld::st_proto::st_big_player_db* st_big_ptr = msg.add_data_info();
+				faith::st_proto::st_big_player_db* st_big_ptr = msg.add_data_info();
 				if (st_big_ptr == nullptr)
 				{
 					return false;
@@ -84,7 +84,7 @@ namespace hld
 			}
 			return true;
 		}
-		void from_proto(const hld::dp2s_proto::load_big_player_end& msg)
+		void from_proto(const faith::dp2s_proto::load_big_player_end& msg)
 		{
 			for (int32 i = 0; i < e_big_player_type_max && i < msg.data_info_size(); i++)
 			{
@@ -93,7 +93,7 @@ namespace hld
 		}
 	};
 
-	struct ws2ws_send_big_player_msg : public hld::packet_base
+	struct ws2ws_send_big_player_msg : public faith::packet_base
 	{
 		s_big_player_db						data_info[e_big_player_type_max];
 		bool								is_load_flag;
@@ -107,11 +107,11 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 
 		}
-		bool to_proto(hld::ws2ws_proto::send_big_player_msg& msg)
+		bool to_proto(faith::ws2ws_proto::send_big_player_msg& msg)
 		{
 			for (int32 i = 0; i < e_big_player_type_max; i++)
 			{
-				hld::st_proto::st_big_player_db* st_big_ptr = msg.add_data_info();
+				faith::st_proto::st_big_player_db* st_big_ptr = msg.add_data_info();
 				if (st_big_ptr == nullptr)
 				{
 					return false;
@@ -120,7 +120,7 @@ namespace hld
 			}
 			msg.set_is_load_flag(is_load_flag);
 		}
-		void from_proto(const hld::ws2ws_proto::send_big_player_msg& msg)
+		void from_proto(const faith::ws2ws_proto::send_big_player_msg& msg)
 		{
 			for (int32 i = 0; i < e_big_player_type_max && i < msg.data_info_size(); i++)
 			{

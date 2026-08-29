@@ -1,0 +1,39 @@
+syntax = "proto2";
+package hld;
+
+message talent_proto
+{
+	message talent_info_one
+	{
+		repeated	int32						data_ary = 1;
+	}
+	message talent_info_all
+	{
+		repeated talent_info_one	talent_array	= 1;
+	}
+
+	message level_up
+	{
+		optional int32 talent_template_id = 1;
+		optional int32 talent_list_template_id = 2;
+		optional int32 layer_index = 3;
+	}
+	message level_up_end
+	{
+		optional int32 operate_result = 1;
+		optional int32 old_talent_template_id = 2;
+		optional int32 new_talent_template_id = 3;
+	}
+	message reset_money
+	{
+	}
+
+
+	//同步吸血的value
+	message suck_blood_value
+	{
+		optional	uint64	sender_guid = 1;			
+		optional	int32	suck_blood_value = 2;	//吸收的hp value
+	}
+
+}

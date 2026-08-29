@@ -4,7 +4,7 @@
 
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 #ifndef SAFE_DELETE
 #define SAFE_DELETE(x)	if( (x)!=NULL ) { delete (x); (x)=NULL; }

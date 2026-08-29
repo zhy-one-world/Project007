@@ -17,7 +17,7 @@
 #include "server_log.hpp"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	using namespace utility;
 	security_communication_layer::security_communication_layer(void)

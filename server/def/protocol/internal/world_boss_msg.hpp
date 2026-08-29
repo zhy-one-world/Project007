@@ -18,13 +18,13 @@ purpose:
 #include "internet/ws2cs.pb.h"
 #include "team_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_ws2dp_save_world_boss = hld::e_msg_base_world_boss,
+		e_msgindex_ws2dp_save_world_boss = faith::e_msg_base_world_boss,
 		e_msgindex_ws2dp_load_world_boss,
 		e_msgindex_dp2ws_load_world_boss_end,
 		e_msgindex_cs2ws_load_world_boss_by_ws,
@@ -49,7 +49,7 @@ namespace hld
 		e_msgindex_cs2ws_join_team_assist_fight,
 	};
 
-	struct ws2dp_save_world_boss_to_db : public hld::packet_base
+	struct ws2dp_save_world_boss_to_db : public faith::packet_base
 	{
 		int32						data_num;
 		s_world_boss_info			data_info[max_world_boss_and_gold_army_num];
@@ -66,7 +66,7 @@ namespace hld
 		}
 	};
 
-	struct ws2dp_load_world_boss : public hld::packet_base
+	struct ws2dp_load_world_boss : public faith::packet_base
 	{
 		//这里什么都不用传，其实就是个load使能，load整张表
 		ws2dp_load_world_boss()
@@ -76,7 +76,7 @@ namespace hld
 		}
 	};
 
-	struct dp2ws_load_world_boss_end : public hld::packet_base
+	struct dp2ws_load_world_boss_end : public faith::packet_base
 	{
 		int32						data_num;
 		s_world_boss_info			data_info[max_world_boss_and_gold_army_num];
@@ -113,12 +113,12 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_create_world_boss;
 		}
-		void to_proto(hld::ws2cs_proto::create_world_boss& msg)
+		void to_proto(faith::ws2cs_proto::create_world_boss& msg)
 		{
 			msg.set_world_boss_spawn_template_id(world_boss_spawn_template_id);
 			msg.set_world_boss_random_pos_arr_id(world_boss_random_pos_arr_id);
 		}
-		void from_proto(const hld::ws2cs_proto::create_world_boss& msg)
+		void from_proto(const faith::ws2cs_proto::create_world_boss& msg)
 		{
 			world_boss_spawn_template_id = msg.world_boss_spawn_template_id();
 			world_boss_random_pos_arr_id = msg.world_boss_random_pos_arr_id();
@@ -157,12 +157,12 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_remove_world_boss;
 		}
-		void to_proto(hld::ws2cs_proto::remove_world_boss& msg)
+		void to_proto(faith::ws2cs_proto::remove_world_boss& msg)
 		{
 			msg.set_world_boss_npc_array_index(world_boss_npc_array_index);
 			msg.set_world_boss_guid(world_boss_guid.server_64);
 		}
-		void from_proto(const hld::ws2cs_proto::remove_world_boss& msg)
+		void from_proto(const faith::ws2cs_proto::remove_world_boss& msg)
 		{
 			world_boss_npc_array_index = msg.world_boss_npc_array_index();
 			world_boss_guid.server_64 = msg.world_boss_guid();
@@ -179,12 +179,12 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_create_first_kill_prize;
 		}
-		void to_proto(hld::ws2cs_proto::create_first_kill_prize& msg)
+		void to_proto(faith::ws2cs_proto::create_first_kill_prize& msg)
 		{
 			msg.set_first_killer_guid(first_killer_guid.server_64);
 			msg.set_first_kill_welfare_template_id(first_kill_welfare_template_id);
 		}
-		void from_proto(const hld::ws2cs_proto::create_first_kill_prize& msg)
+		void from_proto(const faith::ws2cs_proto::create_first_kill_prize& msg)
 		{
 			first_killer_guid.server_64 = msg.first_killer_guid();
 			first_kill_welfare_template_id = msg.first_kill_welfare_template_id();
@@ -269,10 +269,10 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_sync_assist_fight_info;
 		}
-		bool to_proto(hld::ws2cs_proto::sync_assist_fight_info& msg)
+		bool to_proto(faith::ws2cs_proto::sync_assist_fight_info& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
-			hld::st_proto::st_assist_fight_info*  st_assit_ptr = msg.mutable_m_assist_fight_info();
+			faith::st_proto::st_assist_fight_info*  st_assit_ptr = msg.mutable_m_assist_fight_info();
 			if (st_assit_ptr == nullptr)
 			{
 				return false;
@@ -281,7 +281,7 @@ namespace hld
 			m_assist_fight_info.to_proto(st_assit_ptr);
 			return true;
 		}
-		void from_proto(const hld::ws2cs_proto::sync_assist_fight_info& msg)
+		void from_proto(const faith::ws2cs_proto::sync_assist_fight_info& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			m_assist_fight_info.from_proto(msg.m_assist_fight_info());

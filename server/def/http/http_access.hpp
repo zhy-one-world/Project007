@@ -12,7 +12,7 @@
 #include "server_def.hpp"
 #include <net/http_accessor.hpp>
 
-namespace hld
+namespace faith
 {
 	class http_access
 	{

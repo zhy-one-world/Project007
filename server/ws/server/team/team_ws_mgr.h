@@ -9,7 +9,7 @@
 #include "ws_client.hpp"
 
 
-namespace hld
+namespace faith
 {
 	class team_ws_mgr
 	{

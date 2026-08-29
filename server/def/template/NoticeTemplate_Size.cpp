@@ -1,6 +1,6 @@
 #include "NoticeTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void NoticeTemplateSize()
     {

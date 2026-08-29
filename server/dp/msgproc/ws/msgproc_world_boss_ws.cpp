@@ -12,7 +12,7 @@ purpose:
 #include <gain_treasure_msg.hpp>
 #include "utility/parse_msg.h"
 
-namespace hld
+namespace faith
 {
 	
 	void save_world_boss_to_sql(uint32 connindex, const void *data_ptr, size_t data_len)

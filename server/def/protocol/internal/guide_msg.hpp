@@ -5,13 +5,13 @@
 #include "Logic/guide_def.hpp"
 #include "base.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_cs2dp_save_guide_record = hld::e_msg_base_guide,
+		e_msgindex_cs2dp_save_guide_record = faith::e_msg_base_guide,
 		e_msgindex_dp2cs_load_guide_record
 	};
 
@@ -34,7 +34,7 @@ namespace hld
 		guid_64	role_guid;
 		int32							unit_array_index;
 		int32	data_num;
-		s_record_info	data_list[hld::max_guide_record_num];
+		s_record_info	data_list[faith::max_guide_record_num];
 
 		dp2cs_load_guide_record()
 		{

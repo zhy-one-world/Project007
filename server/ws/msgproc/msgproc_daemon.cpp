@@ -10,7 +10,7 @@
 #include "../server/mail/event_ws_mgr.h"
 #include "../server/web_client.hpp"
 
-namespace hld
+namespace faith
 {
 	void daemon2ws_exit_func(protocolUnpacker& unpacker)
 	{

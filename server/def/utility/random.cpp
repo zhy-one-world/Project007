@@ -12,7 +12,7 @@
 #include <random.hpp>
 #include "random.h"
 
-namespace hld
+namespace faith
 {
 	int32 random_gen::randseed = 0;
 

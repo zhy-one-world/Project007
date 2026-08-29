@@ -41,7 +41,7 @@
 #include "server/auction/auction_mgr_ws.h"
 
 
-namespace hld
+namespace faith
 {
 	class client_session;
 	class world_server;

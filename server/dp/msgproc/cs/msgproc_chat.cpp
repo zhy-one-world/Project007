@@ -7,19 +7,19 @@
 #include "dp2cs.pb.h"
 #include "cs2dp.pb.h"
 
-namespace hld
+namespace faith
 {
 	static void  cs2dp_load_role_chat_record_send_lua(uint32 connindex, const dp2cs_load_chat_record& msgData)
 	{
-		hld::dp2cs_proto::load_role_db_data msg;
+		faith::dp2cs_proto::load_role_db_data msg;
 		msg.set_role_guid(msgData.role_guid.server_64);
 		msg.set_unit_array_index(msgData.unit_array_index);
 
-		hld::cs2dp_proto::role_chat_record_db db_msg;
+		faith::cs2dp_proto::role_chat_record_db db_msg;
 		db_msg.set_row_count(msgData.data_num);
 		for (int32 i = 0; i < db_msg.row_count(); i++)
 		{
-			hld::cs2dp_proto::role_chat_record_row *db_row = db_msg.add_row_data();
+			faith::cs2dp_proto::role_chat_record_row *db_row = db_msg.add_row_data();
 			if (db_row == nullptr)
 			{
 				return;
@@ -128,7 +128,7 @@ namespace hld
 		guid_64 role_guid;
 		role_guid.server_64 = role_id;
 
-		hld::cs2dp_proto::role_chat_record_db msg;
+		faith::cs2dp_proto::role_chat_record_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -147,7 +147,7 @@ namespace hld
 
 		for (int32 i = 0; i < row_count; i++)
 		{
-			hld::cs2dp_proto::role_chat_record_row one_row = msg.row_data(i);
+			faith::cs2dp_proto::role_chat_record_row one_row = msg.row_data(i);
 
 			p_row->pos = one_row.pos();
 			parse_msg::getInstance().my_memcopy(p_row->record, chat_record_max_len, one_row.record().c_str(), one_row.record().size());

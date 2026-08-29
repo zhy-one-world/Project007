@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -182,7 +182,7 @@ void protobuf_AddDesc_dragontrip_2eproto() {
     "\noper_param\030\002 \001(\005\032\257\001\n\026dragontrip_operate"
     "_end\022\021\n\toper_type\030\001 \001(\005\022\016\n\006result\030\002 \001(\005\022"
     "\020\n\010roll_num\030\003 \001(\005\022\017\n\007item_id\030\004 \001(\005\022\020\n\010it"
-    "em_num\030\005 \001(\005\022=\n\titem_list\030\006 \003(\0132*.hld.dr"
+    "em_num\030\005 \001(\005\022=\n\titem_list\030\006 \003(\0132*.faith.dr"
     "agontrip_proto.dragontrip_item_info\032J\n\024d"
     "ragontrip_item_info\022\017\n\007item_id\030\001 \001(\005\022\020\n\010"
     "item_num\030\002 \001(\005\022\017\n\007end_pos\030\003 \001(\005", 431);
@@ -926,7 +926,7 @@ bool dragontrip_proto_dragontrip_operate_end::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.dragontrip_proto.dragontrip_item_info item_list = 6;
+      // repeated .faith.dragontrip_proto.dragontrip_item_info item_list = 6;
       case 6: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -984,7 +984,7 @@ void dragontrip_proto_dragontrip_operate_end::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->item_num(), output);
   }
 
-  // repeated .hld.dragontrip_proto.dragontrip_item_info item_list = 6;
+  // repeated .faith.dragontrip_proto.dragontrip_item_info item_list = 6;
   for (int i = 0; i < this->item_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       6, this->item_list(i), output);
@@ -1023,7 +1023,7 @@ void dragontrip_proto_dragontrip_operate_end::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->item_num(), target);
   }
 
-  // repeated .hld.dragontrip_proto.dragontrip_item_info item_list = 6;
+  // repeated .faith.dragontrip_proto.dragontrip_item_info item_list = 6;
   for (int i = 0; i < this->item_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1077,7 +1077,7 @@ int dragontrip_proto_dragontrip_operate_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.dragontrip_proto.dragontrip_item_info item_list = 6;
+  // repeated .faith.dragontrip_proto.dragontrip_item_info item_list = 6;
   total_size += 1 * this->item_list_size();
   for (int i = 0; i < this->item_list_size(); i++) {
     total_size +=
@@ -1617,6 +1617,6 @@ void dragontrip_proto::Swap(dragontrip_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

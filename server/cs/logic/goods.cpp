@@ -8,7 +8,7 @@ purpose: 单个商品
 #include "goods.h"
 #include "template/template_manager.h"
 
-namespace hld
+namespace faith
 {
 	cgoods::cgoods()
 	{

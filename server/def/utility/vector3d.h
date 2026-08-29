@@ -4,7 +4,7 @@
 #include "logic/type_def.hpp"
 //#pragma intrinsic(sqrt, pow)
 
-namespace hld
+namespace faith
 {
     namespace math
     {

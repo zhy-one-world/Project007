@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_phantom_2eproto();
@@ -107,7 +107,7 @@ class phantom_proto_phantom_one : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_phantom_info();
 
-  // @@protoc_insertion_point(class_scope:hld.phantom_proto.phantom_one)
+  // @@protoc_insertion_point(class_scope:faith.phantom_proto.phantom_one)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -192,25 +192,25 @@ class phantom_proto_phantom_all : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // repeated .hld.phantom_proto.phantom_one phantom_array = 2;
+  // repeated .faith.phantom_proto.phantom_one phantom_array = 2;
   inline int phantom_array_size() const;
   inline void clear_phantom_array();
   static const int kPhantomArrayFieldNumber = 2;
-  inline const ::hld::phantom_proto_phantom_one& phantom_array(int index) const;
-  inline ::hld::phantom_proto_phantom_one* mutable_phantom_array(int index);
-  inline ::hld::phantom_proto_phantom_one* add_phantom_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::phantom_proto_phantom_one >&
+  inline const ::faith::phantom_proto_phantom_one& phantom_array(int index) const;
+  inline ::faith::phantom_proto_phantom_one* mutable_phantom_array(int index);
+  inline ::faith::phantom_proto_phantom_one* add_phantom_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::phantom_proto_phantom_one >&
       phantom_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::phantom_proto_phantom_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::phantom_proto_phantom_one >*
       mutable_phantom_array();
 
-  // @@protoc_insertion_point(class_scope:hld.phantom_proto.phantom_all)
+  // @@protoc_insertion_point(class_scope:faith.phantom_proto.phantom_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > role_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::phantom_proto_phantom_one > phantom_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::phantom_proto_phantom_one > phantom_array_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -292,7 +292,7 @@ class phantom_proto_phantom_operate : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 oper_type() const;
   inline void set_oper_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.phantom_proto.phantom_operate)
+  // @@protoc_insertion_point(class_scope:faith.phantom_proto.phantom_operate)
  private:
   inline void set_has_phantom_id();
   inline void clear_has_phantom_id();
@@ -391,7 +391,7 @@ class phantom_proto_phantom_operate_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.phantom_proto.phantom_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.phantom_proto.phantom_operate_end)
  private:
   inline void set_has_phantom_id();
   inline void clear_has_phantom_id();
@@ -477,7 +477,7 @@ class phantom_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.phantom_proto)
+  // @@protoc_insertion_point(class_scope:faith.phantom_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -554,27 +554,27 @@ phantom_proto_phantom_all::mutable_role_guid() {
   return &role_guid_;
 }
 
-// repeated .hld.phantom_proto.phantom_one phantom_array = 2;
+// repeated .faith.phantom_proto.phantom_one phantom_array = 2;
 inline int phantom_proto_phantom_all::phantom_array_size() const {
   return phantom_array_.size();
 }
 inline void phantom_proto_phantom_all::clear_phantom_array() {
   phantom_array_.Clear();
 }
-inline const ::hld::phantom_proto_phantom_one& phantom_proto_phantom_all::phantom_array(int index) const {
+inline const ::faith::phantom_proto_phantom_one& phantom_proto_phantom_all::phantom_array(int index) const {
   return phantom_array_.Get(index);
 }
-inline ::hld::phantom_proto_phantom_one* phantom_proto_phantom_all::mutable_phantom_array(int index) {
+inline ::faith::phantom_proto_phantom_one* phantom_proto_phantom_all::mutable_phantom_array(int index) {
   return phantom_array_.Mutable(index);
 }
-inline ::hld::phantom_proto_phantom_one* phantom_proto_phantom_all::add_phantom_array() {
+inline ::faith::phantom_proto_phantom_one* phantom_proto_phantom_all::add_phantom_array() {
   return phantom_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::phantom_proto_phantom_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::phantom_proto_phantom_one >&
 phantom_proto_phantom_all::phantom_array() const {
   return phantom_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::phantom_proto_phantom_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::phantom_proto_phantom_one >*
 phantom_proto_phantom_all::mutable_phantom_array() {
   return &phantom_array_;
 }
@@ -704,7 +704,7 @@ inline void phantom_proto_phantom_operate_end::set_result(::google::protobuf::in
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

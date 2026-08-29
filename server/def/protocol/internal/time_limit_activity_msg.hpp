@@ -14,13 +14,13 @@ purpose:
 #include "Logic/time_limit_activity_def.hpp"
 #include "internet/ws2cs.pb.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_cs2dp_load_time_limit_activity_info = hld::e_msg_base_time_limit_activity,
+		e_msgindex_cs2dp_load_time_limit_activity_info = faith::e_msg_base_time_limit_activity,
 		e_msgindex_dp2cs_load_time_limit_activity_info_end,
 		e_msgindex_cs2dp_save_time_limit_activity_info,
 		e_msgindex_ws2dp_load_time_limit_temp,
@@ -142,11 +142,11 @@ namespace hld
 				temp_db_info[i].clear_data();
 			}
 		}
-		bool to_proto(hld::ws2cs_proto::act_limit_temp& msg)
+		bool to_proto(faith::ws2cs_proto::act_limit_temp& msg)
 		{
 			for (int32 i = 0; i < data_num && i < max_send_cs2ws_once_num; i++)
 			{
-				hld::st_proto::st_time_limit_activity_temp_db *st_act_ptr = msg.add_temp_db_info();
+				faith::st_proto::st_time_limit_activity_temp_db *st_act_ptr = msg.add_temp_db_info();
 				if (st_act_ptr == nullptr)
 				{
 					return false;
@@ -157,7 +157,7 @@ namespace hld
 			msg.set_data_num(data_num);
 			return true;
 		}
-		void from_proto(const hld::ws2cs_proto::act_limit_temp& msg)
+		void from_proto(const faith::ws2cs_proto::act_limit_temp& msg)
 		{
 			data_num = msg.data_num();
 			is_begin = msg.is_begin();
@@ -187,11 +187,11 @@ namespace hld
 				temp_db_info[i].clear_data();
 			}
 		}
-		bool to_proto(hld::ws2cs_proto::act_limit_branch_temp& msg)
+		bool to_proto(faith::ws2cs_proto::act_limit_branch_temp& msg)
 		{
 			 for (int32 i = 0; i < data_num && i < max_send_cs2ws_once_num; i++)
 			 {
-				 hld::st_proto::st_time_limit_activity_branch_temp_db *st_act_branch_ptr = msg.add_temp_db_info();
+				 faith::st_proto::st_time_limit_activity_branch_temp_db *st_act_branch_ptr = msg.add_temp_db_info();
 				 if (st_act_branch_ptr == nullptr)
 				 {
 					 return false;
@@ -203,7 +203,7 @@ namespace hld
 			 return true;
 		}
 
-		void from_proto(const hld::ws2cs_proto::act_limit_branch_temp& msg)
+		void from_proto(const faith::ws2cs_proto::act_limit_branch_temp& msg)
 		{
 			is_end = msg.is_end();
 			data_num = msg.data_num();
@@ -266,12 +266,12 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_end_act_type;
 		}
-		void to_proto(hld::ws2cs_proto::end_act_type& msg)
+		void to_proto(faith::ws2cs_proto::end_act_type& msg)
 		{
 			msg.set_act_type(act_type);
 			msg.set_is_need_send_to_client(is_need_send_to_client);
 		}
-		void from_proto(const hld::ws2cs_proto::end_act_type& msg)
+		void from_proto(const faith::ws2cs_proto::end_act_type& msg)
 		{
 			act_type = msg.act_type();
 			is_need_send_to_client = msg.is_need_send_to_client();

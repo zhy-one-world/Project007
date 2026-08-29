@@ -10,7 +10,7 @@ purpose:
 #include <role_pk_msg.hpp>
 #include "dbproxy_service.hpp"
 
-namespace hld
+namespace faith
 {
 	
 
@@ -24,7 +24,7 @@ namespace hld
 		struct _ranking_info
 		{
 			int32				ranking_id;
-			hld::guid_64		role_guid;
+			faith::guid_64		role_guid;
 			xchar				role_name[max_name_size + 1];
 			int32				template_id;
 			int32				role_gs;

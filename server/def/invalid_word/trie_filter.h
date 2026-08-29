@@ -4,7 +4,7 @@
 
 
 
-namespace hld
+namespace faith
 {
 	struct trie
 	{

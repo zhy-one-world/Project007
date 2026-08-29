@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -1334,16 +1334,16 @@ void protobuf_AddDesc_relation_2eproto() {
     "info\022\014\n\004guid\030\001 \001(\004\022\014\n\004name\030\002 \001(\t\022\020\n\010gs_v"
     "alue\030\003 \001(\t\022\022\n\ndata_array\030\004 \003(\005\032g\n\027s2c_re"
     "t_friend_userinfo\022\021\n\tis_search\030\001 \001(\010\0229\n\013"
-    "friend_list\030\002 \003(\0132$.hld.relation_proto.f"
+    "friend_list\030\002 \003(\0132$.faith.relation_proto.f"
     "riend_user_info\032\035\n\rs2c_delfriend\022\014\n\004guid"
     "\030\001 \001(\004\0323\n\024s2c_syc_friend_state\022\014\n\004guid\030\001"
     " \001(\004\022\r\n\005state\030\002 \001(\005\032^\n\027s2c_syc_full_frie"
     "ndlist\022C\n\025friend_full_list_info\030\001 \003(\0132$."
-    "hld.relation_proto.friend_user_info\032;\n\021s"
+    "faith.relation_proto.friend_user_info\032;\n\021s"
     "2c_syn_loverinfo\022\021\n\tloverguid\030\001 \001(\004\022\023\n\013s"
     "ender_guid\030\002 \001(\004\032e\n\033s2c_syc_full_other_r"
     "eq_list\022F\n\030full_other_req_list_info\030\001 \003("
-    "\0132$.hld.relation_proto.friend_user_info\032"
+    "\0132$.faith.relation_proto.friend_user_info\032"
     "\205\001\n\032c2s_add_friendliness_value\022\023\n\013sender"
     "_guid\030\001 \001(\004\022\027\n\017addreessee_guid\030\002 \001(\004\022\017\n\007"
     "gift_id\030\003 \001(\004\022\022\n\ngift_count\030\004 \001(\004\022\024\n\014cha"
@@ -1356,11 +1356,11 @@ void protobuf_AddDesc_relation_2eproto() {
     "tion_state\030\002 \001(\004\022\033\n\023relation_login_time\030"
     "\003 \001(\004\022\021\n\texp_level\030\004 \001(\005\032]\n\026s2c_ret_rela"
     "tion_state\022C\n\023full_relation_state\030\001 \003(\0132"
-    "&.hld.relation_proto.ret_relation_state\032"
+    "&.faith.relation_proto.ret_relation_state\032"
     "F\n\030c2s_req_syc_nearly_state\022\023\n\013sender_gu"
     "id\030\001 \001(\004\022\025\n\rstranger_guid\030\002 \003(\004\032_\n\030s2c_r"
     "et_syc_nearly_state\022C\n\023full_stranger_sta"
-    "te\030\001 \003(\0132&.hld.relation_proto.ret_relati"
+    "te\030\001 \003(\0132&.faith.relation_proto.ret_relati"
     "on_state\0324\n\037s2c_ret_operate_relation_res"
     "ult\022\021\n\tresult_id\030\001 \001(\005\032u\n\025s2c_add_relati"
     "on_info\022\032\n\022relation_list_type\030\001 \001(\005\022\014\n\004g"
@@ -1368,7 +1368,7 @@ void protobuf_AddDesc_relation_2eproto() {
     "\t\022\022\n\ndata_array\030\005 \003(\005\032A\n\025s2c_del_relatio"
     "n_info\022\032\n\022relation_list_type\030\001 \001(\005\022\014\n\004gu"
     "id\030\002 \001(\004\032c\n\032s2c_syc_full_relation_list\022E"
-    "\n\027full_relation_list_info\030\001 \003(\0132$.hld.re"
+    "\n\027full_relation_list_info\030\001 \003(\0132$.faith.re"
     "lation_proto.friend_user_info\032K\n\030s2c_mar"
     "ry_operate_result\022\033\n\023operate_result_type"
     "\030\001 \001(\005\022\022\n\nsupport_id\030\002 \001(\005\032J\n\017c2s_req_ma"
@@ -1423,7 +1423,7 @@ void protobuf_AddDesc_relation_2eproto() {
     "ole_template\030\005 \001(\005\022\022\n\nrole_level\030\006 \001(\005\022\022"
     "\n\nrole_fight\030\007 \001(\t\022\021\n\trole_time\030\010 \001(\t\022\021\n"
     "\trole_desc\030\t \001(\t\032P\n\026s2c_ret_lucky_info_v"
-    "ec\0226\n\tuser_info\030\001 \003(\0132#.hld.relation_pro"
+    "ec\0226\n\tuser_info\030\001 \003(\0132#.faith.relation_pro"
     "to.lucky_role_info\032p\n\032s2c_ret_special_lu"
     "cky_info\022\023\n\013role_guid_a\030\001 \001(\005\022\023\n\013role_gu"
     "id_b\030\002 \001(\005\022\021\n\trole_name\030\003 \001(\t\022\025\n\rrole_te"
@@ -3783,7 +3783,7 @@ bool relation_proto_s2c_ret_friend_userinfo::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.relation_proto.friend_user_info friend_list = 2;
+      // repeated .faith.relation_proto.friend_user_info friend_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -3821,7 +3821,7 @@ void relation_proto_s2c_ret_friend_userinfo::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->is_search(), output);
   }
 
-  // repeated .hld.relation_proto.friend_user_info friend_list = 2;
+  // repeated .faith.relation_proto.friend_user_info friend_list = 2;
   for (int i = 0; i < this->friend_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->friend_list(i), output);
@@ -3840,7 +3840,7 @@ void relation_proto_s2c_ret_friend_userinfo::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->is_search(), target);
   }
 
-  // repeated .hld.relation_proto.friend_user_info friend_list = 2;
+  // repeated .faith.relation_proto.friend_user_info friend_list = 2;
   for (int i = 0; i < this->friend_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -3864,7 +3864,7 @@ int relation_proto_s2c_ret_friend_userinfo::ByteSize() const {
     }
 
   }
-  // repeated .hld.relation_proto.friend_user_info friend_list = 2;
+  // repeated .faith.relation_proto.friend_user_info friend_list = 2;
   total_size += 1 * this->friend_list_size();
   for (int i = 0; i < this->friend_list_size(); i++) {
     total_size +=
@@ -4465,7 +4465,7 @@ bool relation_proto_s2c_syc_full_friendlist::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.relation_proto.friend_user_info friend_full_list_info = 1;
+      // repeated .faith.relation_proto.friend_user_info friend_full_list_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -4498,7 +4498,7 @@ bool relation_proto_s2c_syc_full_friendlist::MergePartialFromCodedStream(
 
 void relation_proto_s2c_syc_full_friendlist::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.relation_proto.friend_user_info friend_full_list_info = 1;
+  // repeated .faith.relation_proto.friend_user_info friend_full_list_info = 1;
   for (int i = 0; i < this->friend_full_list_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->friend_full_list_info(i), output);
@@ -4512,7 +4512,7 @@ void relation_proto_s2c_syc_full_friendlist::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* relation_proto_s2c_syc_full_friendlist::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.relation_proto.friend_user_info friend_full_list_info = 1;
+  // repeated .faith.relation_proto.friend_user_info friend_full_list_info = 1;
   for (int i = 0; i < this->friend_full_list_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -4529,7 +4529,7 @@ void relation_proto_s2c_syc_full_friendlist::SerializeWithCachedSizes(
 int relation_proto_s2c_syc_full_friendlist::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.relation_proto.friend_user_info friend_full_list_info = 1;
+  // repeated .faith.relation_proto.friend_user_info friend_full_list_info = 1;
   total_size += 1 * this->friend_full_list_info_size();
   for (int i = 0; i < this->friend_full_list_info_size(); i++) {
     total_size +=
@@ -4916,7 +4916,7 @@ bool relation_proto_s2c_syc_full_other_req_list::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.relation_proto.friend_user_info full_other_req_list_info = 1;
+      // repeated .faith.relation_proto.friend_user_info full_other_req_list_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -4949,7 +4949,7 @@ bool relation_proto_s2c_syc_full_other_req_list::MergePartialFromCodedStream(
 
 void relation_proto_s2c_syc_full_other_req_list::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.relation_proto.friend_user_info full_other_req_list_info = 1;
+  // repeated .faith.relation_proto.friend_user_info full_other_req_list_info = 1;
   for (int i = 0; i < this->full_other_req_list_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->full_other_req_list_info(i), output);
@@ -4963,7 +4963,7 @@ void relation_proto_s2c_syc_full_other_req_list::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* relation_proto_s2c_syc_full_other_req_list::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.relation_proto.friend_user_info full_other_req_list_info = 1;
+  // repeated .faith.relation_proto.friend_user_info full_other_req_list_info = 1;
   for (int i = 0; i < this->full_other_req_list_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -4980,7 +4980,7 @@ void relation_proto_s2c_syc_full_other_req_list::SerializeWithCachedSizes(
 int relation_proto_s2c_syc_full_other_req_list::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.relation_proto.friend_user_info full_other_req_list_info = 1;
+  // repeated .faith.relation_proto.friend_user_info full_other_req_list_info = 1;
   total_size += 1 * this->full_other_req_list_info_size();
   for (int i = 0; i < this->full_other_req_list_info_size(); i++) {
     total_size +=
@@ -6368,7 +6368,7 @@ bool relation_proto_s2c_ret_relation_state::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.relation_proto.ret_relation_state full_relation_state = 1;
+      // repeated .faith.relation_proto.ret_relation_state full_relation_state = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -6401,7 +6401,7 @@ bool relation_proto_s2c_ret_relation_state::MergePartialFromCodedStream(
 
 void relation_proto_s2c_ret_relation_state::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.relation_proto.ret_relation_state full_relation_state = 1;
+  // repeated .faith.relation_proto.ret_relation_state full_relation_state = 1;
   for (int i = 0; i < this->full_relation_state_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->full_relation_state(i), output);
@@ -6415,7 +6415,7 @@ void relation_proto_s2c_ret_relation_state::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* relation_proto_s2c_ret_relation_state::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.relation_proto.ret_relation_state full_relation_state = 1;
+  // repeated .faith.relation_proto.ret_relation_state full_relation_state = 1;
   for (int i = 0; i < this->full_relation_state_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -6432,7 +6432,7 @@ void relation_proto_s2c_ret_relation_state::SerializeWithCachedSizes(
 int relation_proto_s2c_ret_relation_state::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.relation_proto.ret_relation_state full_relation_state = 1;
+  // repeated .faith.relation_proto.ret_relation_state full_relation_state = 1;
   total_size += 1 * this->full_relation_state_size();
   for (int i = 0; i < this->full_relation_state_size(); i++) {
     total_size +=
@@ -6827,7 +6827,7 @@ bool relation_proto_s2c_ret_syc_nearly_state::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.relation_proto.ret_relation_state full_stranger_state = 1;
+      // repeated .faith.relation_proto.ret_relation_state full_stranger_state = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -6860,7 +6860,7 @@ bool relation_proto_s2c_ret_syc_nearly_state::MergePartialFromCodedStream(
 
 void relation_proto_s2c_ret_syc_nearly_state::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.relation_proto.ret_relation_state full_stranger_state = 1;
+  // repeated .faith.relation_proto.ret_relation_state full_stranger_state = 1;
   for (int i = 0; i < this->full_stranger_state_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->full_stranger_state(i), output);
@@ -6874,7 +6874,7 @@ void relation_proto_s2c_ret_syc_nearly_state::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* relation_proto_s2c_ret_syc_nearly_state::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.relation_proto.ret_relation_state full_stranger_state = 1;
+  // repeated .faith.relation_proto.ret_relation_state full_stranger_state = 1;
   for (int i = 0; i < this->full_stranger_state_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -6891,7 +6891,7 @@ void relation_proto_s2c_ret_syc_nearly_state::SerializeWithCachedSizes(
 int relation_proto_s2c_ret_syc_nearly_state::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.relation_proto.ret_relation_state full_stranger_state = 1;
+  // repeated .faith.relation_proto.ret_relation_state full_stranger_state = 1;
   total_size += 1 * this->full_stranger_state_size();
   for (int i = 0; i < this->full_stranger_state_size(); i++) {
     total_size +=
@@ -7896,7 +7896,7 @@ bool relation_proto_s2c_syc_full_relation_list::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.relation_proto.friend_user_info full_relation_list_info = 1;
+      // repeated .faith.relation_proto.friend_user_info full_relation_list_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -7929,7 +7929,7 @@ bool relation_proto_s2c_syc_full_relation_list::MergePartialFromCodedStream(
 
 void relation_proto_s2c_syc_full_relation_list::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.relation_proto.friend_user_info full_relation_list_info = 1;
+  // repeated .faith.relation_proto.friend_user_info full_relation_list_info = 1;
   for (int i = 0; i < this->full_relation_list_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->full_relation_list_info(i), output);
@@ -7943,7 +7943,7 @@ void relation_proto_s2c_syc_full_relation_list::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* relation_proto_s2c_syc_full_relation_list::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.relation_proto.friend_user_info full_relation_list_info = 1;
+  // repeated .faith.relation_proto.friend_user_info full_relation_list_info = 1;
   for (int i = 0; i < this->full_relation_list_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -7960,7 +7960,7 @@ void relation_proto_s2c_syc_full_relation_list::SerializeWithCachedSizes(
 int relation_proto_s2c_syc_full_relation_list::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.relation_proto.friend_user_info full_relation_list_info = 1;
+  // repeated .faith.relation_proto.friend_user_info full_relation_list_info = 1;
   total_size += 1 * this->full_relation_list_info_size();
   for (int i = 0; i < this->full_relation_list_info_size(); i++) {
     total_size +=
@@ -15465,7 +15465,7 @@ bool relation_proto_s2c_ret_lucky_info_vec::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.relation_proto.lucky_role_info user_info = 1;
+      // repeated .faith.relation_proto.lucky_role_info user_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -15498,7 +15498,7 @@ bool relation_proto_s2c_ret_lucky_info_vec::MergePartialFromCodedStream(
 
 void relation_proto_s2c_ret_lucky_info_vec::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.relation_proto.lucky_role_info user_info = 1;
+  // repeated .faith.relation_proto.lucky_role_info user_info = 1;
   for (int i = 0; i < this->user_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->user_info(i), output);
@@ -15512,7 +15512,7 @@ void relation_proto_s2c_ret_lucky_info_vec::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* relation_proto_s2c_ret_lucky_info_vec::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.relation_proto.lucky_role_info user_info = 1;
+  // repeated .faith.relation_proto.lucky_role_info user_info = 1;
   for (int i = 0; i < this->user_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -15529,7 +15529,7 @@ void relation_proto_s2c_ret_lucky_info_vec::SerializeWithCachedSizes(
 int relation_proto_s2c_ret_lucky_info_vec::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.relation_proto.lucky_role_info user_info = 1;
+  // repeated .faith.relation_proto.lucky_role_info user_info = 1;
   total_size += 1 * this->user_info_size();
   for (int i = 0; i < this->user_info_size(); i++) {
     total_size +=
@@ -16104,6 +16104,6 @@ void relation_proto::Swap(relation_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

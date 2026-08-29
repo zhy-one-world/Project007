@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -701,7 +701,7 @@ void protobuf_AddDesc_skill_2eproto() {
     "\n\014effect_index\030\t \001(\005\022\023\n\013skill_order\030\n \001("
     "\005\0321\n\nskill_info\022\021\n\tunit_guid\030\001 \001(\003\022\020\n\010da"
     "ta_ary\030\002 \003(\005\032f\n\016skill_info_all\022\021\n\tunit_g"
-    "uid\030\001 \001(\003\022/\n\nskill_list\030\002 \003(\0132\033.hld.skil"
+    "uid\030\001 \001(\003\022/\n\nskill_list\030\002 \003(\0132\033.faith.skil"
     "l_proto.skill_info\022\020\n\010is_clear\030\003 \001(\010\0328\n\006"
     "sub_cd\022\031\n\021skill_template_id\030\001 \001(\005\022\023\n\013sub"
     "_cd_time\030\002 \001(\005\032)\n\014change_skill\022\031\n\021skill_"
@@ -721,7 +721,7 @@ void protobuf_AddDesc_skill_2eproto() {
     "e_skill_id\030\002 \001(\005\022\034\n\024new_passive_skill_id"
     "\030\003 \001(\005\"\202\001\n\tskill_s2s\032&\n\022passive_skill_in"
     "fo\022\020\n\010data_ary\030\001 \003(\005\032M\n\025sl_passive_skill"
-    "_info\0224\n\tdata_list\030\001 \003(\0132!.hld.skill_s2s"
+    "_info\0224\n\tdata_list\030\001 \003(\0132!.faith.skill_s2s"
     ".passive_skill_info", 2379);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "skill.proto", &protobuf_RegisterTypes);
@@ -4954,7 +4954,7 @@ bool skill_proto_skill_info_all::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.skill_proto.skill_info skill_list = 2;
+      // repeated .faith.skill_proto.skill_info skill_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -5008,7 +5008,7 @@ void skill_proto_skill_info_all::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->unit_guid(), output);
   }
 
-  // repeated .hld.skill_proto.skill_info skill_list = 2;
+  // repeated .faith.skill_proto.skill_info skill_list = 2;
   for (int i = 0; i < this->skill_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->skill_list(i), output);
@@ -5032,7 +5032,7 @@ void skill_proto_skill_info_all::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->unit_guid(), target);
   }
 
-  // repeated .hld.skill_proto.skill_info skill_list = 2;
+  // repeated .faith.skill_proto.skill_info skill_list = 2;
   for (int i = 0; i < this->skill_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -5068,7 +5068,7 @@ int skill_proto_skill_info_all::ByteSize() const {
     }
 
   }
-  // repeated .hld.skill_proto.skill_info skill_list = 2;
+  // repeated .faith.skill_proto.skill_info skill_list = 2;
   total_size += 1 * this->skill_list_size();
   for (int i = 0; i < this->skill_list_size(); i++) {
     total_size +=
@@ -7989,7 +7989,7 @@ bool skill_s2s_sl_passive_skill_info::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.skill_s2s.passive_skill_info data_list = 1;
+      // repeated .faith.skill_s2s.passive_skill_info data_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -8022,7 +8022,7 @@ bool skill_s2s_sl_passive_skill_info::MergePartialFromCodedStream(
 
 void skill_s2s_sl_passive_skill_info::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.skill_s2s.passive_skill_info data_list = 1;
+  // repeated .faith.skill_s2s.passive_skill_info data_list = 1;
   for (int i = 0; i < this->data_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->data_list(i), output);
@@ -8036,7 +8036,7 @@ void skill_s2s_sl_passive_skill_info::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* skill_s2s_sl_passive_skill_info::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.skill_s2s.passive_skill_info data_list = 1;
+  // repeated .faith.skill_s2s.passive_skill_info data_list = 1;
   for (int i = 0; i < this->data_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -8053,7 +8053,7 @@ void skill_s2s_sl_passive_skill_info::SerializeWithCachedSizes(
 int skill_s2s_sl_passive_skill_info::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.skill_s2s.passive_skill_info data_list = 1;
+  // repeated .faith.skill_s2s.passive_skill_info data_list = 1;
   total_size += 1 * this->data_list_size();
   for (int i = 0; i < this->data_list_size(); i++) {
     total_size +=
@@ -8283,6 +8283,6 @@ void skill_s2s::Swap(skill_s2s* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

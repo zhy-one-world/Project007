@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_team_2eproto();
@@ -184,7 +184,7 @@ class team_proto_member_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_data();
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.member_info)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.member_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -301,16 +301,16 @@ class team_proto_team_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 member_num() const;
   inline void set_member_num(::google::protobuf::int32 value);
 
-  // repeated .hld.team_proto.member_info member_list = 6;
+  // repeated .faith.team_proto.member_info member_list = 6;
   inline int member_list_size() const;
   inline void clear_member_list();
   static const int kMemberListFieldNumber = 6;
-  inline const ::hld::team_proto_member_info& member_list(int index) const;
-  inline ::hld::team_proto_member_info* mutable_member_list(int index);
-  inline ::hld::team_proto_member_info* add_member_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::team_proto_member_info >&
+  inline const ::faith::team_proto_member_info& member_list(int index) const;
+  inline ::faith::team_proto_member_info* mutable_member_list(int index);
+  inline ::faith::team_proto_member_info* add_member_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::team_proto_member_info >&
       member_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::team_proto_member_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::team_proto_member_info >*
       mutable_member_list();
 
   // optional int32 required_fighting_power = 7;
@@ -348,7 +348,7 @@ class team_proto_team_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 one_stop_flags() const;
   inline void set_one_stop_flags(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.team_info)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.team_info)
  private:
   inline void set_has_team_type();
   inline void clear_has_team_type();
@@ -377,7 +377,7 @@ class team_proto_team_info : public ::google::protobuf::Message {
   ::google::protobuf::int32 team_sub_type_id_;
   ::google::protobuf::uint64 team_guid_;
   ::google::protobuf::uint64 captain_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::team_proto_member_info > member_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::team_proto_member_info > member_list_;
   ::google::protobuf::int32 member_num_;
   ::google::protobuf::int32 required_fighting_power_;
   ::google::protobuf::int32 required_level_;
@@ -486,7 +486,7 @@ class team_proto_create_team : public ::google::protobuf::Message {
   inline bool auto_accept_new_member() const;
   inline void set_auto_accept_new_member(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.create_team)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.create_team)
  private:
   inline void set_has_team_type();
   inline void clear_has_team_type();
@@ -573,7 +573,7 @@ class team_proto_create_team_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.create_team_end)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.create_team_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -694,7 +694,7 @@ class team_proto_notice_create_new_team : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 captain_guid() const;
   inline void set_captain_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.notice_create_new_team)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.notice_create_new_team)
  private:
   inline void set_has_team_guid();
   inline void clear_has_team_guid();
@@ -801,7 +801,7 @@ class team_proto_join_team : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 tar_player_guid() const;
   inline void set_tar_player_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.join_team)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.join_team)
  private:
   inline void set_has_team_guid();
   inline void clear_has_team_guid();
@@ -900,7 +900,7 @@ class team_proto_join_team_apply : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 given_guid() const;
   inline void set_given_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.join_team_apply)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.join_team_apply)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -988,7 +988,7 @@ class team_proto_join_team_apply_end : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 applied_team_guid() const;
   inline void set_applied_team_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.join_team_apply_end)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.join_team_apply_end)
  private:
   inline void set_has_applied_team_guid();
   inline void clear_has_applied_team_guid();
@@ -1103,7 +1103,7 @@ class team_proto_join_team_applicant_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 level() const;
   inline void set_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.join_team_applicant_info)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.join_team_applicant_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -1197,7 +1197,7 @@ class team_proto_refused_to_join_team : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 tar_player_guid() const;
   inline void set_tar_player_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.refused_to_join_team)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.refused_to_join_team)
  private:
   inline void set_has_tar_player_guid();
   inline void clear_has_tar_player_guid();
@@ -1279,7 +1279,7 @@ class team_proto_refused_to_join_team_end : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 tar_player_guid() const;
   inline void set_tar_player_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.refused_to_join_team_end)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.refused_to_join_team_end)
  private:
   inline void set_has_tar_player_guid();
   inline void clear_has_tar_player_guid();
@@ -1368,7 +1368,7 @@ class team_proto_let_role_join_team : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 role_guid() const;
   inline void set_role_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.let_role_join_team)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.let_role_join_team)
  private:
   inline void set_has_team_guid();
   inline void clear_has_team_guid();
@@ -1453,16 +1453,16 @@ class team_proto_add_team_member : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 team_guid() const;
   inline void set_team_guid(::google::protobuf::uint64 value);
 
-  // optional .hld.team_proto.member_info member_info = 2;
+  // optional .faith.team_proto.member_info member_info = 2;
   inline bool has_member_info() const;
   inline void clear_member_info();
   static const int kMemberInfoFieldNumber = 2;
-  inline const ::hld::team_proto_member_info& member_info() const;
-  inline ::hld::team_proto_member_info* mutable_member_info();
-  inline ::hld::team_proto_member_info* release_member_info();
-  inline void set_allocated_member_info(::hld::team_proto_member_info* member_info);
+  inline const ::faith::team_proto_member_info& member_info() const;
+  inline ::faith::team_proto_member_info* mutable_member_info();
+  inline ::faith::team_proto_member_info* release_member_info();
+  inline void set_allocated_member_info(::faith::team_proto_member_info* member_info);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.add_team_member)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.add_team_member)
  private:
   inline void set_has_team_guid();
   inline void clear_has_team_guid();
@@ -1472,7 +1472,7 @@ class team_proto_add_team_member : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint64 team_guid_;
-  ::hld::team_proto_member_info* member_info_;
+  ::faith::team_proto_member_info* member_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -1554,7 +1554,7 @@ class team_proto_del_team_member : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 role_guid() const;
   inline void set_role_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.del_team_member)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.del_team_member)
  private:
   inline void set_has_team_guid();
   inline void clear_has_team_guid();
@@ -1653,7 +1653,7 @@ class team_proto_ready : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 is_ready() const;
   inline void set_is_ready(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.ready)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.ready)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -1762,7 +1762,7 @@ class team_proto_ready_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 trans_check_ret() const;
   inline void set_trans_check_ret(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.ready_end)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.ready_end)
  private:
   inline void set_has_team_guid();
   inline void clear_has_team_guid();
@@ -1867,7 +1867,7 @@ class team_proto_kickout_team_member : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 leaver_guid() const;
   inline void set_leaver_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.kickout_team_member)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.kickout_team_member)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -1948,7 +1948,7 @@ class team_proto_kickout_team_member_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.kickout_team_member_end)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.kickout_team_member_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2034,7 +2034,7 @@ class team_proto_leave_team : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 team_guid() const;
   inline void set_team_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.leave_team)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.leave_team)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -2119,7 +2119,7 @@ class team_proto_leave_team_end : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 team_guid() const;
   inline void set_team_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.leave_team_end)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.leave_team_end)
  private:
   inline void set_has_team_guid();
   inline void clear_has_team_guid();
@@ -2283,7 +2283,7 @@ class team_proto_team_brief_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 one_stop_flags() const;
   inline void set_one_stop_flags(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.team_brief_info)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.team_brief_info)
  private:
   inline void set_has_team_guid();
   inline void clear_has_team_guid();
@@ -2405,7 +2405,7 @@ class team_proto_search_team_by_map_id : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 map_template_id() const;
   inline void set_map_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.search_team_by_map_id)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.search_team_by_map_id)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -2490,16 +2490,16 @@ class team_proto_search_team_by_map_id_end : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 map_template_id() const;
   inline void set_map_template_id(::google::protobuf::int32 value);
 
-  // repeated .hld.team_proto.team_brief_info team_list = 2;
+  // repeated .faith.team_proto.team_brief_info team_list = 2;
   inline int team_list_size() const;
   inline void clear_team_list();
   static const int kTeamListFieldNumber = 2;
-  inline const ::hld::team_proto_team_brief_info& team_list(int index) const;
-  inline ::hld::team_proto_team_brief_info* mutable_team_list(int index);
-  inline ::hld::team_proto_team_brief_info* add_team_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::team_proto_team_brief_info >&
+  inline const ::faith::team_proto_team_brief_info& team_list(int index) const;
+  inline ::faith::team_proto_team_brief_info* mutable_team_list(int index);
+  inline ::faith::team_proto_team_brief_info* add_team_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::team_proto_team_brief_info >&
       team_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::team_proto_team_brief_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::team_proto_team_brief_info >*
       mutable_team_list();
 
   // optional int32 team_list_len = 3;
@@ -2509,7 +2509,7 @@ class team_proto_search_team_by_map_id_end : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 team_list_len() const;
   inline void set_team_list_len(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.search_team_by_map_id_end)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.search_team_by_map_id_end)
  private:
   inline void set_has_map_template_id();
   inline void clear_has_map_template_id();
@@ -2518,7 +2518,7 @@ class team_proto_search_team_by_map_id_end : public ::google::protobuf::Message 
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::team_proto_team_brief_info > team_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::team_proto_team_brief_info > team_list_;
   ::google::protobuf::int32 map_template_id_;
   ::google::protobuf::int32 team_list_len_;
 
@@ -2602,7 +2602,7 @@ class team_proto_ready_to_transfer_team : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 team_guid() const;
   inline void set_team_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.ready_to_transfer_team)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.ready_to_transfer_team)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -2694,7 +2694,7 @@ class team_proto_ready_to_transfer_team_end : public ::google::protobuf::Message
   inline ::google::protobuf::int32 sec() const;
   inline void set_sec(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.ready_to_transfer_team_end)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.ready_to_transfer_team_end)
  private:
   inline void set_has_team_guid();
   inline void clear_has_team_guid();
@@ -2793,7 +2793,7 @@ class team_proto_transfer_team_to_scene : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 map_template_id() const;
   inline void set_map_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.transfer_team_to_scene)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.transfer_team_to_scene)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -2921,7 +2921,7 @@ class team_proto_player_brief_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 cur_map_template_id() const;
   inline void set_cur_map_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.player_brief_info)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.player_brief_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3032,7 +3032,7 @@ class team_proto_invite_player : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 invitee_guid() const;
   inline void set_invitee_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.invite_player)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.invite_player)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3120,7 +3120,7 @@ class team_proto_invite_player_success : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 invitee_guid() const;
   inline void set_invitee_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.invite_player_success)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.invite_player_success)
  private:
   inline void set_has_invitee_guid();
   inline void clear_has_invitee_guid();
@@ -3195,16 +3195,16 @@ class team_proto_invite_player_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.team_proto.team_brief_info inviter_team_info = 1;
+  // repeated .faith.team_proto.team_brief_info inviter_team_info = 1;
   inline int inviter_team_info_size() const;
   inline void clear_inviter_team_info();
   static const int kInviterTeamInfoFieldNumber = 1;
-  inline const ::hld::team_proto_team_brief_info& inviter_team_info(int index) const;
-  inline ::hld::team_proto_team_brief_info* mutable_inviter_team_info(int index);
-  inline ::hld::team_proto_team_brief_info* add_inviter_team_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::team_proto_team_brief_info >&
+  inline const ::faith::team_proto_team_brief_info& inviter_team_info(int index) const;
+  inline ::faith::team_proto_team_brief_info* mutable_inviter_team_info(int index);
+  inline ::faith::team_proto_team_brief_info* add_inviter_team_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::team_proto_team_brief_info >&
       inviter_team_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::team_proto_team_brief_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::team_proto_team_brief_info >*
       mutable_inviter_team_info();
 
   // optional uint64 sender_guid = 2;
@@ -3214,14 +3214,14 @@ class team_proto_invite_player_end : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 sender_guid() const;
   inline void set_sender_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.invite_player_end)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.invite_player_end)
  private:
   inline void set_has_sender_guid();
   inline void clear_has_sender_guid();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::team_proto_team_brief_info > inviter_team_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::team_proto_team_brief_info > inviter_team_info_;
   ::google::protobuf::uint64 sender_guid_;
 
   mutable int _cached_size_;
@@ -3311,7 +3311,7 @@ class team_proto_set_captain : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 new_captain_guid() const;
   inline void set_new_captain_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.set_captain)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.set_captain)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3406,7 +3406,7 @@ class team_proto_set_captain_end : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 new_captain_guid() const;
   inline void set_new_captain_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.set_captain_end)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.set_captain_end)
  private:
   inline void set_has_team_guid();
   inline void clear_has_team_guid();
@@ -3545,7 +3545,7 @@ class team_proto_set_player_team_aoi_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 one_stop_flags() const;
   inline void set_one_stop_flags(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.set_player_team_aoi_info)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.set_player_team_aoi_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3646,7 +3646,7 @@ class team_proto_clear_player_team_aoi_info : public ::google::protobuf::Message
   inline ::google::protobuf::uint64 role_guid() const;
   inline void set_role_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.clear_player_team_aoi_info)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.clear_player_team_aoi_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3749,7 +3749,7 @@ class team_proto_update_team_member_info_one : public ::google::protobuf::Messag
   inline ::google::protobuf::int64 info_value() const;
   inline void set_info_value(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.update_team_member_info_one)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.update_team_member_info_one)
  private:
   inline void set_has_team_guid();
   inline void clear_has_team_guid();
@@ -3859,7 +3859,7 @@ class team_proto_update_team_gs_value : public ::google::protobuf::Message {
   inline ::std::string* release_gs_value();
   inline void set_allocated_gs_value(::std::string* gs_value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.update_team_gs_value)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.update_team_gs_value)
  private:
   inline void set_has_team_guid();
   inline void clear_has_team_guid();
@@ -3947,7 +3947,7 @@ class team_proto_team_error : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 error_type() const;
   inline void set_error_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.team_error)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.team_error)
  private:
   inline void set_has_error_type();
   inline void clear_has_error_type();
@@ -4050,7 +4050,7 @@ class team_proto_team_member_pos_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 pos_z() const;
   inline void set_pos_z(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.team_member_pos_info)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.team_member_pos_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4134,16 +4134,16 @@ class team_proto_team_pos_info : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.team_proto.team_member_pos_info member_list = 1;
+  // repeated .faith.team_proto.team_member_pos_info member_list = 1;
   inline int member_list_size() const;
   inline void clear_member_list();
   static const int kMemberListFieldNumber = 1;
-  inline const ::hld::team_proto_team_member_pos_info& member_list(int index) const;
-  inline ::hld::team_proto_team_member_pos_info* mutable_member_list(int index);
-  inline ::hld::team_proto_team_member_pos_info* add_member_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::team_proto_team_member_pos_info >&
+  inline const ::faith::team_proto_team_member_pos_info& member_list(int index) const;
+  inline ::faith::team_proto_team_member_pos_info* mutable_member_list(int index);
+  inline ::faith::team_proto_team_member_pos_info* add_member_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::team_proto_team_member_pos_info >&
       member_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::team_proto_team_member_pos_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::team_proto_team_member_pos_info >*
       mutable_member_list();
 
   // optional int32 member_num = 2;
@@ -4153,14 +4153,14 @@ class team_proto_team_pos_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 member_num() const;
   inline void set_member_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.team_pos_info)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.team_pos_info)
  private:
   inline void set_has_member_num();
   inline void clear_has_member_num();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::team_proto_team_member_pos_info > member_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::team_proto_team_member_pos_info > member_list_;
   ::google::protobuf::int32 member_num_;
 
   mutable int _cached_size_;
@@ -4243,7 +4243,7 @@ class team_proto_get_no_team_mate_list : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 mate_type() const;
   inline void set_mate_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.get_no_team_mate_list)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.get_no_team_mate_list)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4340,7 +4340,7 @@ class team_proto_get_no_team_mate_list_end : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 mate_type() const;
   inline void set_mate_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.get_no_team_mate_list_end)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.get_no_team_mate_list_end)
  private:
   inline void set_has_mate_type();
   inline void clear_has_mate_type();
@@ -4442,7 +4442,7 @@ class team_proto_get_team_list_by_aim : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_team_sub_type_id();
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.get_team_list_by_aim)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.get_team_list_by_aim)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4528,26 +4528,26 @@ class team_proto_get_team_list_by_aim_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 team_type_id() const;
   inline void set_team_type_id(::google::protobuf::int32 value);
 
-  // repeated .hld.team_proto.team_brief_info team_list = 2;
+  // repeated .faith.team_proto.team_brief_info team_list = 2;
   inline int team_list_size() const;
   inline void clear_team_list();
   static const int kTeamListFieldNumber = 2;
-  inline const ::hld::team_proto_team_brief_info& team_list(int index) const;
-  inline ::hld::team_proto_team_brief_info* mutable_team_list(int index);
-  inline ::hld::team_proto_team_brief_info* add_team_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::team_proto_team_brief_info >&
+  inline const ::faith::team_proto_team_brief_info& team_list(int index) const;
+  inline ::faith::team_proto_team_brief_info* mutable_team_list(int index);
+  inline ::faith::team_proto_team_brief_info* add_team_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::team_proto_team_brief_info >&
       team_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::team_proto_team_brief_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::team_proto_team_brief_info >*
       mutable_team_list();
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.get_team_list_by_aim_end)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.get_team_list_by_aim_end)
  private:
   inline void set_has_team_type_id();
   inline void clear_has_team_type_id();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::team_proto_team_brief_info > team_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::team_proto_team_brief_info > team_list_;
   ::google::protobuf::int32 team_type_id_;
 
   mutable int _cached_size_;
@@ -4644,7 +4644,7 @@ class team_proto_auto_match_team : public ::google::protobuf::Message {
   inline bool match_state() const;
   inline void set_match_state(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.auto_match_team)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.auto_match_team)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4735,7 +4735,7 @@ class team_proto_auto_match_team_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 match_ret() const;
   inline void set_match_ret(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.auto_match_team_end)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.auto_match_team_end)
  private:
   inline void set_has_match_ret();
   inline void clear_has_match_ret();
@@ -4845,7 +4845,7 @@ class team_proto_update_team_attribute : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 limit_level() const;
   inline void set_limit_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.update_team_attribute)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.update_team_attribute)
  private:
   inline void set_has_team_type_id();
   inline void clear_has_team_type_id();
@@ -4974,7 +4974,7 @@ class team_proto_update_team_attribute_end : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 n_one_stop_flags() const;
   inline void set_n_one_stop_flags(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.update_team_attribute_end)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.update_team_attribute_end)
  private:
   inline void set_has_n_team_type_id();
   inline void clear_has_n_team_type_id();
@@ -5090,7 +5090,7 @@ class team_proto_team_mem_operate : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_operate_params();
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.team_mem_operate)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.team_mem_operate)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -5195,7 +5195,7 @@ class team_proto_team_mem_operate_end : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_operate_params();
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.team_mem_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.team_mem_operate_end)
  private:
   inline void set_has_req_role_guid();
   inline void clear_has_req_role_guid();
@@ -5281,7 +5281,7 @@ class team_proto_self_os_flags_update : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 own_os_flags() const;
   inline void set_own_os_flags(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto.self_os_flags_update)
+  // @@protoc_insertion_point(class_scope:faith.team_proto.self_os_flags_update)
  private:
   inline void set_has_own_os_flags();
   inline void clear_has_own_os_flags();
@@ -5407,7 +5407,7 @@ class team_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.team_proto)
+  // @@protoc_insertion_point(class_scope:faith.team_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -5731,27 +5731,27 @@ inline void team_proto_team_info::set_member_num(::google::protobuf::int32 value
   member_num_ = value;
 }
 
-// repeated .hld.team_proto.member_info member_list = 6;
+// repeated .faith.team_proto.member_info member_list = 6;
 inline int team_proto_team_info::member_list_size() const {
   return member_list_.size();
 }
 inline void team_proto_team_info::clear_member_list() {
   member_list_.Clear();
 }
-inline const ::hld::team_proto_member_info& team_proto_team_info::member_list(int index) const {
+inline const ::faith::team_proto_member_info& team_proto_team_info::member_list(int index) const {
   return member_list_.Get(index);
 }
-inline ::hld::team_proto_member_info* team_proto_team_info::mutable_member_list(int index) {
+inline ::faith::team_proto_member_info* team_proto_team_info::mutable_member_list(int index) {
   return member_list_.Mutable(index);
 }
-inline ::hld::team_proto_member_info* team_proto_team_info::add_member_list() {
+inline ::faith::team_proto_member_info* team_proto_team_info::add_member_list() {
   return member_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::team_proto_member_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::team_proto_member_info >&
 team_proto_team_info::member_list() const {
   return member_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::team_proto_member_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::team_proto_member_info >*
 team_proto_team_info::mutable_member_list() {
   return &member_list_;
 }
@@ -6574,7 +6574,7 @@ inline void team_proto_add_team_member::set_team_guid(::google::protobuf::uint64
   team_guid_ = value;
 }
 
-// optional .hld.team_proto.member_info member_info = 2;
+// optional .faith.team_proto.member_info member_info = 2;
 inline bool team_proto_add_team_member::has_member_info() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -6585,24 +6585,24 @@ inline void team_proto_add_team_member::clear_has_member_info() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void team_proto_add_team_member::clear_member_info() {
-  if (member_info_ != NULL) member_info_->::hld::team_proto_member_info::Clear();
+  if (member_info_ != NULL) member_info_->::faith::team_proto_member_info::Clear();
   clear_has_member_info();
 }
-inline const ::hld::team_proto_member_info& team_proto_add_team_member::member_info() const {
+inline const ::faith::team_proto_member_info& team_proto_add_team_member::member_info() const {
   return member_info_ != NULL ? *member_info_ : *default_instance_->member_info_;
 }
-inline ::hld::team_proto_member_info* team_proto_add_team_member::mutable_member_info() {
+inline ::faith::team_proto_member_info* team_proto_add_team_member::mutable_member_info() {
   set_has_member_info();
-  if (member_info_ == NULL) member_info_ = new ::hld::team_proto_member_info;
+  if (member_info_ == NULL) member_info_ = new ::faith::team_proto_member_info;
   return member_info_;
 }
-inline ::hld::team_proto_member_info* team_proto_add_team_member::release_member_info() {
+inline ::faith::team_proto_member_info* team_proto_add_team_member::release_member_info() {
   clear_has_member_info();
-  ::hld::team_proto_member_info* temp = member_info_;
+  ::faith::team_proto_member_info* temp = member_info_;
   member_info_ = NULL;
   return temp;
 }
-inline void team_proto_add_team_member::set_allocated_member_info(::hld::team_proto_member_info* member_info) {
+inline void team_proto_add_team_member::set_allocated_member_info(::faith::team_proto_member_info* member_info) {
   delete member_info_;
   member_info_ = member_info;
   if (member_info) {
@@ -7360,27 +7360,27 @@ inline void team_proto_search_team_by_map_id_end::set_map_template_id(::google::
   map_template_id_ = value;
 }
 
-// repeated .hld.team_proto.team_brief_info team_list = 2;
+// repeated .faith.team_proto.team_brief_info team_list = 2;
 inline int team_proto_search_team_by_map_id_end::team_list_size() const {
   return team_list_.size();
 }
 inline void team_proto_search_team_by_map_id_end::clear_team_list() {
   team_list_.Clear();
 }
-inline const ::hld::team_proto_team_brief_info& team_proto_search_team_by_map_id_end::team_list(int index) const {
+inline const ::faith::team_proto_team_brief_info& team_proto_search_team_by_map_id_end::team_list(int index) const {
   return team_list_.Get(index);
 }
-inline ::hld::team_proto_team_brief_info* team_proto_search_team_by_map_id_end::mutable_team_list(int index) {
+inline ::faith::team_proto_team_brief_info* team_proto_search_team_by_map_id_end::mutable_team_list(int index) {
   return team_list_.Mutable(index);
 }
-inline ::hld::team_proto_team_brief_info* team_proto_search_team_by_map_id_end::add_team_list() {
+inline ::faith::team_proto_team_brief_info* team_proto_search_team_by_map_id_end::add_team_list() {
   return team_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::team_proto_team_brief_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::team_proto_team_brief_info >&
 team_proto_search_team_by_map_id_end::team_list() const {
   return team_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::team_proto_team_brief_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::team_proto_team_brief_info >*
 team_proto_search_team_by_map_id_end::mutable_team_list() {
   return &team_list_;
 }
@@ -7857,27 +7857,27 @@ inline void team_proto_invite_player_success::set_invitee_guid(::google::protobu
 
 // team_proto_invite_player_end
 
-// repeated .hld.team_proto.team_brief_info inviter_team_info = 1;
+// repeated .faith.team_proto.team_brief_info inviter_team_info = 1;
 inline int team_proto_invite_player_end::inviter_team_info_size() const {
   return inviter_team_info_.size();
 }
 inline void team_proto_invite_player_end::clear_inviter_team_info() {
   inviter_team_info_.Clear();
 }
-inline const ::hld::team_proto_team_brief_info& team_proto_invite_player_end::inviter_team_info(int index) const {
+inline const ::faith::team_proto_team_brief_info& team_proto_invite_player_end::inviter_team_info(int index) const {
   return inviter_team_info_.Get(index);
 }
-inline ::hld::team_proto_team_brief_info* team_proto_invite_player_end::mutable_inviter_team_info(int index) {
+inline ::faith::team_proto_team_brief_info* team_proto_invite_player_end::mutable_inviter_team_info(int index) {
   return inviter_team_info_.Mutable(index);
 }
-inline ::hld::team_proto_team_brief_info* team_proto_invite_player_end::add_inviter_team_info() {
+inline ::faith::team_proto_team_brief_info* team_proto_invite_player_end::add_inviter_team_info() {
   return inviter_team_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::team_proto_team_brief_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::team_proto_team_brief_info >&
 team_proto_invite_player_end::inviter_team_info() const {
   return inviter_team_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::team_proto_team_brief_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::team_proto_team_brief_info >*
 team_proto_invite_player_end::mutable_inviter_team_info() {
   return &inviter_team_info_;
 }
@@ -8563,27 +8563,27 @@ inline void team_proto_team_member_pos_info::set_pos_z(::google::protobuf::int32
 
 // team_proto_team_pos_info
 
-// repeated .hld.team_proto.team_member_pos_info member_list = 1;
+// repeated .faith.team_proto.team_member_pos_info member_list = 1;
 inline int team_proto_team_pos_info::member_list_size() const {
   return member_list_.size();
 }
 inline void team_proto_team_pos_info::clear_member_list() {
   member_list_.Clear();
 }
-inline const ::hld::team_proto_team_member_pos_info& team_proto_team_pos_info::member_list(int index) const {
+inline const ::faith::team_proto_team_member_pos_info& team_proto_team_pos_info::member_list(int index) const {
   return member_list_.Get(index);
 }
-inline ::hld::team_proto_team_member_pos_info* team_proto_team_pos_info::mutable_member_list(int index) {
+inline ::faith::team_proto_team_member_pos_info* team_proto_team_pos_info::mutable_member_list(int index) {
   return member_list_.Mutable(index);
 }
-inline ::hld::team_proto_team_member_pos_info* team_proto_team_pos_info::add_member_list() {
+inline ::faith::team_proto_team_member_pos_info* team_proto_team_pos_info::add_member_list() {
   return member_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::team_proto_team_member_pos_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::team_proto_team_member_pos_info >&
 team_proto_team_pos_info::member_list() const {
   return member_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::team_proto_team_member_pos_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::team_proto_team_member_pos_info >*
 team_proto_team_pos_info::mutable_member_list() {
   return &member_list_;
 }
@@ -8808,27 +8808,27 @@ inline void team_proto_get_team_list_by_aim_end::set_team_type_id(::google::prot
   team_type_id_ = value;
 }
 
-// repeated .hld.team_proto.team_brief_info team_list = 2;
+// repeated .faith.team_proto.team_brief_info team_list = 2;
 inline int team_proto_get_team_list_by_aim_end::team_list_size() const {
   return team_list_.size();
 }
 inline void team_proto_get_team_list_by_aim_end::clear_team_list() {
   team_list_.Clear();
 }
-inline const ::hld::team_proto_team_brief_info& team_proto_get_team_list_by_aim_end::team_list(int index) const {
+inline const ::faith::team_proto_team_brief_info& team_proto_get_team_list_by_aim_end::team_list(int index) const {
   return team_list_.Get(index);
 }
-inline ::hld::team_proto_team_brief_info* team_proto_get_team_list_by_aim_end::mutable_team_list(int index) {
+inline ::faith::team_proto_team_brief_info* team_proto_get_team_list_by_aim_end::mutable_team_list(int index) {
   return team_list_.Mutable(index);
 }
-inline ::hld::team_proto_team_brief_info* team_proto_get_team_list_by_aim_end::add_team_list() {
+inline ::faith::team_proto_team_brief_info* team_proto_get_team_list_by_aim_end::add_team_list() {
   return team_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::team_proto_team_brief_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::team_proto_team_brief_info >&
 team_proto_get_team_list_by_aim_end::team_list() const {
   return team_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::team_proto_team_brief_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::team_proto_team_brief_info >*
 team_proto_get_team_list_by_aim_end::mutable_team_list() {
   return &team_list_;
 }
@@ -9380,7 +9380,7 @@ inline void team_proto_self_os_flags_update::set_own_os_flags(::google::protobuf
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

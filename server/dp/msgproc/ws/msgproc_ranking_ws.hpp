@@ -12,7 +12,7 @@
 #include "db_manager.hpp"
 #include "Logic/arena_def.hpp"
 
-namespace hld
+namespace faith
 {
 	// 需要越过cs直接读/写数据库的内容
 	//排行榜

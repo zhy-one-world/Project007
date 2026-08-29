@@ -2,7 +2,7 @@
 
 #include "logic/type_def.hpp"
 #include "template/BoxMapTemplate_S.h"
-namespace hld
+namespace faith
 {
 	const int32 g_role_box_search_time_cut = 1719802290;//宝箱搜索时间减少时间戳值，防止int32溢出
 	const int32 g_role_box_search_time_interval = 1;//宝箱搜索时间间隔

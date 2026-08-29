@@ -11,7 +11,7 @@
 
 #include "char_def.hpp"
 #include "pk_king_def.hpp"
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	const int32 ELEMENT_WAR_MAP_ID					= 71220601;	//±ÈÈüµØÍ¼id
@@ -253,7 +253,7 @@ namespace hld
 			memset(server_name, 0, sizeof(server_name));
 			memcpy(server_name, _role_name.c_str(), _role_name.size() > sizeof(server_name) ? sizeof(server_name) : _role_name.size());
 		}
-		bool to_proto(hld::st_proto::st_element_war_match_role_info* st_role_ptr)
+		bool to_proto(faith::st_proto::st_element_war_match_role_info* st_role_ptr)
 		{
 			if (st_role_ptr == nullptr)
 			{
@@ -285,7 +285,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::st_proto::st_element_war_match_role_info& st_role_ref)
+		void from_proto(const faith::st_proto::st_element_war_match_role_info& st_role_ref)
 		{
 
 			role_guid.server_64 = st_role_ref.role_guid();
@@ -316,7 +316,7 @@ namespace hld
 		{
 			memset(this, 0, sizeof(s_element_war_match_info));
 		}
-		bool to_proto(hld::st_proto::st_element_war_match_info* st_match_ptr)
+		bool to_proto(faith::st_proto::st_element_war_match_info* st_match_ptr)
 		{
 			if (st_match_ptr == nullptr)
 			{
@@ -324,7 +324,7 @@ namespace hld
 			}
 			for (int32 i = 0; i < ELEMENT_WAR_PLAY_NUM; i++)
 			{
-				hld::st_proto::st_element_war_match_role_info* st_role_ptr = st_match_ptr->add_first_role_info();
+				faith::st_proto::st_element_war_match_role_info* st_role_ptr = st_match_ptr->add_first_role_info();
 				if (st_role_ptr == nullptr)
 				{
 					return false;
@@ -333,7 +333,7 @@ namespace hld
 			}
 			for (int32 i = 0; i < ELEMENT_WAR_PLAY_NUM; i++)
 			{
-				hld::st_proto::st_element_war_match_role_info* st_role_ptr = st_match_ptr->add_first_role_info();
+				faith::st_proto::st_element_war_match_role_info* st_role_ptr = st_match_ptr->add_first_role_info();
 				if (st_role_ptr == nullptr)
 				{
 					return false;
@@ -343,7 +343,7 @@ namespace hld
 			st_match_ptr->set_map_level(map_level);
 			return true;
 		}
-	    void from_proto(const hld::st_proto::st_element_war_match_info& st_match_ref)
+	    void from_proto(const faith::st_proto::st_element_war_match_info& st_match_ref)
 		{
 			for (int32 i = 0; i < ELEMENT_WAR_PLAY_NUM && i < st_match_ref.first_role_info_size() ; i++)
 			{

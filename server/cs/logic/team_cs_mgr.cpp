@@ -25,7 +25,7 @@ purpose: team mgr in cs
 #include <Utility/parse_msg.h>
 
 
-namespace hld
+namespace faith
 {
 	team_cs_mgr::team_cs_mgr()
 	{
@@ -111,7 +111,7 @@ namespace hld
 		m_unit_team_info.clear_data();
 
 		const guid_64 player_guid = player_ref.get_unit_guid();
-		hld::team_proto_clear_player_team_aoi_info clear_player_team_aoi_info_msg;
+		faith::team_proto_clear_player_team_aoi_info clear_player_team_aoi_info_msg;
 		clear_player_team_aoi_info_msg.set_role_guid(player_guid.server_64);
 		player_ref.send_message_to_aoi(&clear_player_team_aoi_info_msg, e_msgindex_s2c_clear_player_team_aoi_info);
 
@@ -205,7 +205,7 @@ namespace hld
 		else
 		{
 			const guid_64 player_guid = player_ref.get_unit_guid();
-			hld::team_proto_clear_player_team_aoi_info clear_player_team_aoi_info_msg;
+			faith::team_proto_clear_player_team_aoi_info clear_player_team_aoi_info_msg;
 			clear_player_team_aoi_info_msg.set_role_guid(player_guid.server_64);
 			player_ref.send_message_to_self(&clear_player_team_aoi_info_msg, e_msgindex_s2c_clear_player_team_aoi_info);
 		}
@@ -537,7 +537,7 @@ namespace hld
 			{
 				continue;
 			}
-			if (temp_map_template_ptr->Type == hld::e_map_type_big_map && temp_map_template_id == map_template_id)
+			if (temp_map_template_ptr->Type == faith::e_map_type_big_map && temp_map_template_id == map_template_id)
 			{
 				num++;
 			}
@@ -619,7 +619,7 @@ namespace hld
 		return nullptr;
 	}
 
-	hld::e_team_type team_cs_mgr::get_team_type()
+	faith::e_team_type team_cs_mgr::get_team_type()
 	{
 		s_player_team_info& player_team_info = get_unit_team_info();
 		return player_team_info.team_type;
@@ -1698,7 +1698,7 @@ namespace hld
 		int32 cur_map_template_id = player_ref.get_unit_info(e_role_info_move_map_id);
 		if (is_team_type_raid(team_info_cur.team_type) && team_info_cur.team_sub_type_id == cur_map_template_id && cur_map_type != e_map_type_field)
 		{
-			player_ref.transfer_by_template(player_ref.get_unit_info(hld::e_role_info_main_map_id), player_ref.get_main_line_id(), 0, guid_64(), 0);
+			player_ref.transfer_by_template(player_ref.get_unit_info(faith::e_role_info_main_map_id), player_ref.get_main_line_id(), 0, guid_64(), 0);
 		}
 
 		player_ref.get_team_cs_mgr().clear_player_team_info();
@@ -1851,7 +1851,7 @@ namespace hld
 
 	void team_cs_mgr::lua_ws2cs_apply_to_join_team_func(uint32 conn_index, const char* data_ptr, int32 data_len)
 	{
-		hld::ws2cs_proto::apply_to_join_team msg;
+		faith::ws2cs_proto::apply_to_join_team msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (is_sucess == false)
 		{
@@ -1866,7 +1866,7 @@ namespace hld
 
 	void team_cs_mgr::lua_ws2cs_set_player_team_info_func(uint32 conn_index, const char* data_ptr, int32 data_len)
 	{
-		hld::ws2cs_proto::set_player_team_info msg;
+		faith::ws2cs_proto::set_player_team_info msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (is_sucess == false)
 		{
@@ -1881,7 +1881,7 @@ namespace hld
 
 	void team_cs_mgr::lua_ws2cs_clear_player_team_info_func(uint32 conn_index, const char* data_ptr, int32 data_len)
 	{
-		hld::ws2cs_proto::clear_player_team_info msg;
+		faith::ws2cs_proto::clear_player_team_info msg;
 
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (is_sucess == false)
@@ -1897,7 +1897,7 @@ namespace hld
 
 	void team_cs_mgr::lua_ws2cs_transfer_team_member_to_scene_func(uint32 conn_index, const char* data_ptr, int32 data_len)
 	{
-		hld::ws2cs_proto::transfer_team_member_to_scene msg;
+		faith::ws2cs_proto::transfer_team_member_to_scene msg;
 
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (is_sucess == false)
@@ -1912,7 +1912,7 @@ namespace hld
 
 	void team_cs_mgr::lua_ws2cs_team_common_check_in_cs_func(uint32 conn_index, const char* data_ptr, int32 data_len)
 	{
-		hld::ws2cs_proto::team_common_check_in_cs msg;
+		faith::ws2cs_proto::team_common_check_in_cs msg;
 
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (is_sucess == false)
@@ -1927,7 +1927,7 @@ namespace hld
 
 	void team_cs_mgr::lua_ws2cs_sync_team_start_aim_func(uint32 conn_index, const char* data_ptr, int32 data_len)
 	{
-		hld::ws2cs_proto::sync_team_start_aim msg;
+		faith::ws2cs_proto::sync_team_start_aim msg;
 
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (is_sucess == false)
@@ -1964,7 +1964,7 @@ namespace hld
 		m_team_guid = team_guid;
 	}
 
-	hld::guid_64 team_set::get_team_guid()
+	faith::guid_64 team_set::get_team_guid()
 	{
 		return m_team_guid;
 	}

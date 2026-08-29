@@ -35,7 +35,7 @@
 #include "internet/game.pb.h"
 #include "internet/net.pb.h"
 #include "internet/assist_fight.pb.h"
-namespace hld
+namespace faith
 {
 	npc::npc()
 	{
@@ -582,14 +582,14 @@ namespace hld
 			bool is_end = m_kill_num_now >= GAMECONFIG->BeEndKillNeedNum;
 			temp_send_player.send_kill_prompt(m_array_index);
 			MapTemplate* map_template_ptr = GET_TEMPLATE(MapTemplate, get_unit_info(e_role_info_move_map_id));
-			if (map_template_ptr && map_template_ptr->Type == hld::e_map_type_big_map && temp_send_unit.get_unit_guid() != get_unit_guid())
+			if (map_template_ptr && map_template_ptr->Type == faith::e_map_type_big_map && temp_send_unit.get_unit_guid() != get_unit_guid())
 			{
 				//增加杀人数
-				int32 kill_player_num = temp_send_player.get_unit_info(hld::e_role_info_kill_player_num);
-				temp_send_player.set_unit_info(hld::e_role_info_kill_player_num, ++kill_player_num);
-				temp_send_player.send_info_one(hld::e_role_info_kill_player_num);
+				int32 kill_player_num = temp_send_player.get_unit_info(faith::e_role_info_kill_player_num);
+				temp_send_player.set_unit_info(faith::e_role_info_kill_player_num, ++kill_player_num);
+				temp_send_player.send_info_one(faith::e_role_info_kill_player_num);
 				//增加杀人称号
-				temp_send_player.get_title_mgr().add_title_by_type_and_value(hld::e_title_type_kill_player_num, kill_player_num);
+				temp_send_player.get_title_mgr().add_title_by_type_and_value(faith::e_title_type_kill_player_num, kill_player_num);
 			}
 		}
 	}
@@ -1429,7 +1429,7 @@ namespace hld
 		return RunningTime;
 	}
 
-	void npc::get_aoi_msg(hld::aoi_proto_unit_aoi_all& msg)
+	void npc::get_aoi_msg(faith::aoi_proto_unit_aoi_all& msg)
 	{
 		if (m_npc_template_ptr != nullptr)
 		{

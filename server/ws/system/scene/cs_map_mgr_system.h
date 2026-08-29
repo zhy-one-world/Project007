@@ -3,7 +3,7 @@
 #include "google/protobuf/message.h"
 #include "base/ecs_world.h"
 
-namespace hld
+namespace faith
 {
 	struct s_fake_player_info;
 	typedef	std::vector<int32> line_id_vec;

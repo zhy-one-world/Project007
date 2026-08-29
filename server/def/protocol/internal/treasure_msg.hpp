@@ -11,17 +11,17 @@ purpose:
 #include "base.hpp"
 #include "Logic/treasure_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_dp2cs_load_char_treasure = hld::e_msg_base_treasure,
+		e_msgindex_dp2cs_load_char_treasure = faith::e_msg_base_treasure,
 		e_msgindex_cs2dp_save_char_treasure,
 	};
 
-	struct dp2cs_load_char_treasure : public hld::packet_base
+	struct dp2cs_load_char_treasure : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -39,7 +39,7 @@ namespace hld
 			return (basic_len + data_num * sizeof(s_treasure_record));
 		}
 	};
-	struct cs2dp_save_char_treasure : public hld::packet_base
+	struct cs2dp_save_char_treasure : public faith::packet_base
 	{
 		guid_64							role_guid;
 		int32							unit_array_index;

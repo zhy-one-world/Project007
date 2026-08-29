@@ -7,7 +7,7 @@ purpose:
 #include "Logic/auction_def.h"
 #include "Internal/auction_msg.hpp"
 
-namespace hld
+namespace faith
 {
 	class client_session;
 

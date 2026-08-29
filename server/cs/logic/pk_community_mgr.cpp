@@ -26,7 +26,7 @@ purpose: about pk and community system's store_mgr
 #include "utility/globle_data.h"
 
 
-namespace hld
+namespace faith
 {
 	void pk_community_mgr::clear_data()
 	{
@@ -115,7 +115,7 @@ namespace hld
 		bool if_change = false;
 		switch (pk_type)
 		{
-		case hld::e_pk_info_pk_mode:
+		case faith::e_pk_info_pk_mode:
 		{
 			int32 pk_mode_val = get_pk_mode(pk_value);
 			if (e_pk_mode_peace <= pk_mode_val && pk_mode_val < e_pk_mode_max)
@@ -125,7 +125,7 @@ namespace hld
 			}
 		}
 		break;
-		case hld::e_pk_info_community_type:
+		case faith::e_pk_info_community_type:
 		{
 			if (0 <= pk_value && pk_value < e_community_type_max)
 			{
@@ -161,12 +161,12 @@ namespace hld
 		int32 pk_value = -1;
 		switch (pk_type)
 		{
-		case hld::e_pk_info_pk_mode:
+		case faith::e_pk_info_pk_mode:
 		{
 			pk_value = m_unit_ref.get_pawn_att().get_unit_base_att(e_base_att_info_pk_mode);
 		}
 		break;
-		case hld::e_pk_info_community_type:
+		case faith::e_pk_info_community_type:
 		{
 			pk_value = m_unit_ref.get_pawn_att().get_unit_base_att(e_base_att_info_community_type);
 		}
@@ -197,7 +197,7 @@ namespace hld
 		m_pre_safe_map_template_id = 0;
 		m_max_safe_map_priority = -1;
 		
-		int32 map_template_id = m_unit_ref.get_unit_info(hld::e_role_info_move_map_id);
+		int32 map_template_id = m_unit_ref.get_unit_info(faith::e_role_info_move_map_id);
 		MapTemplate* map_tempalte_ptr = GET_TEMPLATE(MapTemplate, map_template_id);
 		if (map_tempalte_ptr)
 		{
@@ -341,7 +341,7 @@ namespace hld
 		{
 			return false;
 		}
-		if (temp_target_unit_ref.get_unit_type() == hld::e_unit_type_summoned)
+		if (temp_target_unit_ref.get_unit_type() == faith::e_unit_type_summoned)
 		{
 			npc& npc_ref = unit_man::get_npc(target_unit_index);
 			if (npc_ref.is_valid() && npc_ref.is_summon_pet())
@@ -349,7 +349,7 @@ namespace hld
 		}
 		s_unit_identifier my_unit_identifier;
 		my_unit_identifier.clear_data();
-		if (temp_my_unit_ref.get_unit_type() == hld::e_unit_type_summoned || temp_my_unit_ref.get_unit_type() == e_unit_type_hide)
+		if (temp_my_unit_ref.get_unit_type() == faith::e_unit_type_summoned || temp_my_unit_ref.get_unit_type() == e_unit_type_hide)
 		{
 			npc* npc_ptr = npc::cast(&temp_my_unit_ref);
 			if (npc_ptr == nullptr)
@@ -374,7 +374,7 @@ namespace hld
 
 		s_unit_identifier target_unit_identifier;
 		target_unit_identifier.clear_data();
-		if (temp_target_unit_ref.get_unit_type() == hld::e_unit_type_summoned)
+		if (temp_target_unit_ref.get_unit_type() == faith::e_unit_type_summoned)
 		{
 			npc* npc_ptr = npc::cast(&temp_target_unit_ref);
 			if (npc_ptr == nullptr)
@@ -834,12 +834,12 @@ namespace hld
 		{
 			return false;
 		}
-		int32 unit_template_id = m_unit_ref.get_unit_info(hld::e_role_info_template_id);
-		if ((m_unit_ref.get_unit_info(hld::e_role_info_move_pos_x) == m_pre_location.x) && (m_unit_ref.get_unit_info(hld::e_role_info_move_pos_y) == m_pre_location.y) && (m_unit_ref.get_unit_info(hld::e_role_info_move_pos_z) == m_pre_location.z))
+		int32 unit_template_id = m_unit_ref.get_unit_info(faith::e_role_info_template_id);
+		if ((m_unit_ref.get_unit_info(faith::e_role_info_move_pos_x) == m_pre_location.x) && (m_unit_ref.get_unit_info(faith::e_role_info_move_pos_y) == m_pre_location.y) && (m_unit_ref.get_unit_info(faith::e_role_info_move_pos_z) == m_pre_location.z))
 		{
 			return false;
 		}
-		m_pre_location = fvector(m_unit_ref.get_unit_info(hld::e_role_info_move_pos_x), m_unit_ref.get_unit_info(hld::e_role_info_move_pos_y), m_unit_ref.get_unit_info(hld::e_role_info_move_pos_z));
+		m_pre_location = fvector(m_unit_ref.get_unit_info(faith::e_role_info_move_pos_x), m_unit_ref.get_unit_info(faith::e_role_info_move_pos_y), m_unit_ref.get_unit_info(faith::e_role_info_move_pos_z));
 		return true;
 	}
 
@@ -878,8 +878,8 @@ namespace hld
 			}
 		}
 
-		//int32 cur_map_template_id = m_unit_ref.get_unit_info(hld::e_role_info_move_map_id);
-		// if (cur_map_template_id == hld::big_world_map_id) //依赖于副本中没配安全区就好 不用特例
+		//int32 cur_map_template_id = m_unit_ref.get_unit_info(faith::e_role_info_move_map_id);
+		// if (cur_map_template_id == faith::big_world_map_id) //依赖于副本中没配安全区就好 不用特例
 		const s_map_block* cur_safe_region = m_unit_ref.get_in_map_safe();
 		if (nullptr == cur_safe_region)
 		{
@@ -1030,7 +1030,7 @@ namespace hld
 		}
 	}
 
-	hld::int32 pk_community_mgr::get_region_type()
+	faith::int32 pk_community_mgr::get_region_type()
 	{
 		return m_region_type;
 	}

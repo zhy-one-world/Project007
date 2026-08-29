@@ -13,18 +13,18 @@ purpose: 任务存档消息
 #include "Logic/mission_def.hpp"
 
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_dp2cs_load_char_mission = hld::e_msg_base_mission,
+		e_msgindex_dp2cs_load_char_mission = faith::e_msg_base_mission,
 		e_msgindex_cs2dp_save_char_mission,
 	};
 
 	// DP2CS 分批发送玩家的所有信仰信息
-	struct dp2cs_load_char_mission : public hld::packet_base
+	struct dp2cs_load_char_mission : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -42,7 +42,7 @@ namespace hld
 			return (basic_len + data_num * sizeof(s_mission_info));
 		}
 	};
-	struct cs2dp_save_char_mission : public hld::packet_base
+	struct cs2dp_save_char_mission : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;

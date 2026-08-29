@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -664,7 +664,7 @@ void protobuf_AddDesc_ranking_2eproto() {
     "get_player_ranking_value\022\023\n\013sender_guid\030"
     "\001 \001(\003\022\023\n\013target_guid\030\002 \001(\003\022\024\n\014ranking_ty"
     "pe\030\003 \001(\005\032b\n\034get_player_ranking_value_end"
-    "\022B\n\022target_player_info\030\001 \001(\0132&.hld.ranki"
+    "\022B\n\022target_player_info\030\001 \001(\0132&.faith.ranki"
     "ng_proto.ranking_player_info\0320\n\026ranking_"
     "operate_result\022\026\n\016operate_result\030\001 \001(\005\032J"
     "\n\013get_my_rank\022\023\n\013sender_guid\030\001 \001(\003\022\021\n\tra"
@@ -673,7 +673,7 @@ void protobuf_AddDesc_ranking_2eproto() {
     "_level\030\002 \001(\005\022\022\n\nrank_value\030\003 \001(\003\0320\n\014get_"
     "top_list\022\021\n\trole_guid\030\001 \001(\003\022\r\n\005index\030\002 \001"
     "(\005\032\227\001\n\020get_top_list_end\022\025\n\rranking_index"
-    "\030\001 \001(\005\022\?\n\017top_player_info\030\002 \003(\0132&.hld.ra"
+    "\030\001 \001(\005\022\?\n\017top_player_info\030\002 \003(\0132&.faith.ra"
     "nking_proto.ranking_player_info\022\025\n\rif_fi"
     "rst_send\030\003 \001(\005\022\024\n\014if_last_send\030\004 \001(\005\032e\n\016"
     "worship_player\022\021\n\trole_guid\030\001 \001(\003\022\023\n\013tar"
@@ -685,16 +685,16 @@ void protobuf_AddDesc_ranking_2eproto() {
     "sync_player_data\022\021\n\trole_guid\030\001 \003(\005\032\?\n\022w"
     "orship_record_one\022\024\n\014ranking_type\030\001 \001(\005\022"
     "\023\n\013target_guid\030\002 \001(\003\032K\n\016worship_record\0229"
-    "\n\nrecord_one\030\001 \003(\0132%.hld.ranking_proto.w"
+    "\n\nrecord_one\030\001 \003(\0132%.faith.ranking_proto.w"
     "orship_record_one\032F\n\025service_rank_info_o"
     "ne\022\031\n\021service_rank_type\030\001 \001(\005\022\022\n\nrank_in"
     "dex\030\002 \001(\005\032\\\n\025service_rank_info_all\022C\n\021se"
-    "rvice_rank_info\030\001 \003(\0132(.hld.ranking_prot"
+    "rvice_rank_info\030\001 \003(\0132(.faith.ranking_prot"
     "o.service_rank_info_one\032b\n&service_rank_"
     "recevice_reward_state_one\022\031\n\021service_ran"
     "k_type\030\001 \001(\005\022\035\n\025recevice_reward_state\030\002 "
     "\001(\005\032~\n&service_rank_recevice_reward_stat"
-    "e_all\022T\n\021service_rank_type\030\001 \003(\01329.hld.r"
+    "e_all\022T\n\021service_rank_type\030\001 \003(\01329.faith.r"
     "anking_proto.service_rank_recevice_rewar"
     "d_state_one\032:\n\035service_rank_get_first_pl"
     "ayer\022\031\n\021service_rank_type\030\001 \001(\005\032Y\n!servi"
@@ -710,14 +710,14 @@ void protobuf_AddDesc_ranking_2eproto() {
     "vip_level\030\t \001(\005\022\014\n\004peak\030\n \001(\005\022\021\n\tserver_"
     "id\030\013 \001(\005\022\031\n\021standby_parameter\030\014 \001(\003\032\237\001\n\024"
     "get_top_list_end_lua\022\025\n\rranking_index\030\001 "
-    "\001(\005\022C\n\017top_player_info\030\002 \003(\0132*.hld.ranki"
+    "\001(\005\022C\n\017top_player_info\030\002 \003(\0132*.faith.ranki"
     "ng_proto.ranking_player_info_lua\022\025\n\rif_f"
     "irst_send\030\003 \001(\005\022\024\n\014if_last_send\030\004 \001(\005\032\200\001"
     "\n\017get_my_rank_lua\022\025\n\rsender_guid_a\030\001 \001(\005"
     "\022\025\n\rsender_guid_b\030\002 \001(\005\022\021\n\trank_type\030\003 \001"
     "(\005\022\025\n\rlegion_guid_a\030\004 \001(\005\022\025\n\rlegion_guid"
     "_b\030\005 \001(\005\032l\n\031get_oracle_trial_rank_end\022=\n"
-    "\tplay_info\030\001 \003(\0132*.hld.ranking_proto.ran"
+    "\tplay_info\030\001 \003(\0132*.faith.ranking_proto.ran"
     "king_player_info_lua\022\020\n\010data_num\030\002 \001(\005", 2598);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "ranking.proto", &protobuf_RegisterTypes);
@@ -1689,7 +1689,7 @@ ranking_proto_get_player_ranking_value_end::ranking_proto_get_player_ranking_val
 }
 
 void ranking_proto_get_player_ranking_value_end::InitAsDefaultInstance() {
-  target_player_info_ = const_cast< ::hld::ranking_proto_ranking_player_info*>(&::hld::ranking_proto_ranking_player_info::default_instance());
+  target_player_info_ = const_cast< ::faith::ranking_proto_ranking_player_info*>(&::faith::ranking_proto_ranking_player_info::default_instance());
 }
 
 ranking_proto_get_player_ranking_value_end::ranking_proto_get_player_ranking_value_end(const ranking_proto_get_player_ranking_value_end& from)
@@ -1738,7 +1738,7 @@ ranking_proto_get_player_ranking_value_end* ranking_proto_get_player_ranking_val
 void ranking_proto_get_player_ranking_value_end::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_target_player_info()) {
-      if (target_player_info_ != NULL) target_player_info_->::hld::ranking_proto_ranking_player_info::Clear();
+      if (target_player_info_ != NULL) target_player_info_->::faith::ranking_proto_ranking_player_info::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -1751,7 +1751,7 @@ bool ranking_proto_get_player_ranking_value_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.ranking_proto.ranking_player_info target_player_info = 1;
+      // optional .faith.ranking_proto.ranking_player_info target_player_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1782,7 +1782,7 @@ bool ranking_proto_get_player_ranking_value_end::MergePartialFromCodedStream(
 
 void ranking_proto_get_player_ranking_value_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.ranking_proto.ranking_player_info target_player_info = 1;
+  // optional .faith.ranking_proto.ranking_player_info target_player_info = 1;
   if (has_target_player_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->target_player_info(), output);
@@ -1796,7 +1796,7 @@ void ranking_proto_get_player_ranking_value_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* ranking_proto_get_player_ranking_value_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.ranking_proto.ranking_player_info target_player_info = 1;
+  // optional .faith.ranking_proto.ranking_player_info target_player_info = 1;
   if (has_target_player_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1814,7 +1814,7 @@ int ranking_proto_get_player_ranking_value_end::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.ranking_proto.ranking_player_info target_player_info = 1;
+    // optional .faith.ranking_proto.ranking_player_info target_player_info = 1;
     if (has_target_player_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -1849,7 +1849,7 @@ void ranking_proto_get_player_ranking_value_end::MergeFrom(const ranking_proto_g
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_target_player_info()) {
-      mutable_target_player_info()->::hld::ranking_proto_ranking_player_info::MergeFrom(from.target_player_info());
+      mutable_target_player_info()->::faith::ranking_proto_ranking_player_info::MergeFrom(from.target_player_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -3015,7 +3015,7 @@ bool ranking_proto_get_top_list_end::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.ranking_proto.ranking_player_info top_player_info = 2;
+      // repeated .faith.ranking_proto.ranking_player_info top_player_info = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -3085,7 +3085,7 @@ void ranking_proto_get_top_list_end::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->ranking_index(), output);
   }
 
-  // repeated .hld.ranking_proto.ranking_player_info top_player_info = 2;
+  // repeated .faith.ranking_proto.ranking_player_info top_player_info = 2;
   for (int i = 0; i < this->top_player_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->top_player_info(i), output);
@@ -3114,7 +3114,7 @@ void ranking_proto_get_top_list_end::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->ranking_index(), target);
   }
 
-  // repeated .hld.ranking_proto.ranking_player_info top_player_info = 2;
+  // repeated .faith.ranking_proto.ranking_player_info top_player_info = 2;
   for (int i = 0; i < this->top_player_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -3164,7 +3164,7 @@ int ranking_proto_get_top_list_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.ranking_proto.ranking_player_info top_player_info = 2;
+  // repeated .faith.ranking_proto.ranking_player_info top_player_info = 2;
   total_size += 1 * this->top_player_info_size();
   for (int i = 0; i < this->top_player_info_size(); i++) {
     total_size +=
@@ -4472,7 +4472,7 @@ bool ranking_proto_worship_record::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.ranking_proto.worship_record_one record_one = 1;
+      // repeated .faith.ranking_proto.worship_record_one record_one = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -4505,7 +4505,7 @@ bool ranking_proto_worship_record::MergePartialFromCodedStream(
 
 void ranking_proto_worship_record::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.ranking_proto.worship_record_one record_one = 1;
+  // repeated .faith.ranking_proto.worship_record_one record_one = 1;
   for (int i = 0; i < this->record_one_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->record_one(i), output);
@@ -4519,7 +4519,7 @@ void ranking_proto_worship_record::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* ranking_proto_worship_record::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.ranking_proto.worship_record_one record_one = 1;
+  // repeated .faith.ranking_proto.worship_record_one record_one = 1;
   for (int i = 0; i < this->record_one_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -4536,7 +4536,7 @@ void ranking_proto_worship_record::SerializeWithCachedSizes(
 int ranking_proto_worship_record::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.ranking_proto.worship_record_one record_one = 1;
+  // repeated .faith.ranking_proto.worship_record_one record_one = 1;
   total_size += 1 * this->record_one_size();
   for (int i = 0; i < this->record_one_size(); i++) {
     total_size +=
@@ -4923,7 +4923,7 @@ bool ranking_proto_service_rank_info_all::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.ranking_proto.service_rank_info_one service_rank_info = 1;
+      // repeated .faith.ranking_proto.service_rank_info_one service_rank_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -4956,7 +4956,7 @@ bool ranking_proto_service_rank_info_all::MergePartialFromCodedStream(
 
 void ranking_proto_service_rank_info_all::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.ranking_proto.service_rank_info_one service_rank_info = 1;
+  // repeated .faith.ranking_proto.service_rank_info_one service_rank_info = 1;
   for (int i = 0; i < this->service_rank_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->service_rank_info(i), output);
@@ -4970,7 +4970,7 @@ void ranking_proto_service_rank_info_all::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* ranking_proto_service_rank_info_all::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.ranking_proto.service_rank_info_one service_rank_info = 1;
+  // repeated .faith.ranking_proto.service_rank_info_one service_rank_info = 1;
   for (int i = 0; i < this->service_rank_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -4987,7 +4987,7 @@ void ranking_proto_service_rank_info_all::SerializeWithCachedSizes(
 int ranking_proto_service_rank_info_all::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.ranking_proto.service_rank_info_one service_rank_info = 1;
+  // repeated .faith.ranking_proto.service_rank_info_one service_rank_info = 1;
   total_size += 1 * this->service_rank_info_size();
   for (int i = 0; i < this->service_rank_info_size(); i++) {
     total_size +=
@@ -5374,7 +5374,7 @@ bool ranking_proto_service_rank_recevice_reward_state_all::MergePartialFromCoded
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.ranking_proto.service_rank_recevice_reward_state_one service_rank_type = 1;
+      // repeated .faith.ranking_proto.service_rank_recevice_reward_state_one service_rank_type = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -5407,7 +5407,7 @@ bool ranking_proto_service_rank_recevice_reward_state_all::MergePartialFromCoded
 
 void ranking_proto_service_rank_recevice_reward_state_all::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.ranking_proto.service_rank_recevice_reward_state_one service_rank_type = 1;
+  // repeated .faith.ranking_proto.service_rank_recevice_reward_state_one service_rank_type = 1;
   for (int i = 0; i < this->service_rank_type_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->service_rank_type(i), output);
@@ -5421,7 +5421,7 @@ void ranking_proto_service_rank_recevice_reward_state_all::SerializeWithCachedSi
 
 ::google::protobuf::uint8* ranking_proto_service_rank_recevice_reward_state_all::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.ranking_proto.service_rank_recevice_reward_state_one service_rank_type = 1;
+  // repeated .faith.ranking_proto.service_rank_recevice_reward_state_one service_rank_type = 1;
   for (int i = 0; i < this->service_rank_type_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -5438,7 +5438,7 @@ void ranking_proto_service_rank_recevice_reward_state_all::SerializeWithCachedSi
 int ranking_proto_service_rank_recevice_reward_state_all::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.ranking_proto.service_rank_recevice_reward_state_one service_rank_type = 1;
+  // repeated .faith.ranking_proto.service_rank_recevice_reward_state_one service_rank_type = 1;
   total_size += 1 * this->service_rank_type_size();
   for (int i = 0; i < this->service_rank_type_size(); i++) {
     total_size +=
@@ -6963,7 +6963,7 @@ bool ranking_proto_get_top_list_end_lua::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.ranking_proto.ranking_player_info_lua top_player_info = 2;
+      // repeated .faith.ranking_proto.ranking_player_info_lua top_player_info = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -7033,7 +7033,7 @@ void ranking_proto_get_top_list_end_lua::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->ranking_index(), output);
   }
 
-  // repeated .hld.ranking_proto.ranking_player_info_lua top_player_info = 2;
+  // repeated .faith.ranking_proto.ranking_player_info_lua top_player_info = 2;
   for (int i = 0; i < this->top_player_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->top_player_info(i), output);
@@ -7062,7 +7062,7 @@ void ranking_proto_get_top_list_end_lua::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->ranking_index(), target);
   }
 
-  // repeated .hld.ranking_proto.ranking_player_info_lua top_player_info = 2;
+  // repeated .faith.ranking_proto.ranking_player_info_lua top_player_info = 2;
   for (int i = 0; i < this->top_player_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -7112,7 +7112,7 @@ int ranking_proto_get_top_list_end_lua::ByteSize() const {
     }
 
   }
-  // repeated .hld.ranking_proto.ranking_player_info_lua top_player_info = 2;
+  // repeated .faith.ranking_proto.ranking_player_info_lua top_player_info = 2;
   total_size += 1 * this->top_player_info_size();
   for (int i = 0; i < this->top_player_info_size(); i++) {
     total_size +=
@@ -7638,7 +7638,7 @@ bool ranking_proto_get_oracle_trial_rank_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.ranking_proto.ranking_player_info_lua play_info = 1;
+      // repeated .faith.ranking_proto.ranking_player_info_lua play_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -7687,7 +7687,7 @@ bool ranking_proto_get_oracle_trial_rank_end::MergePartialFromCodedStream(
 
 void ranking_proto_get_oracle_trial_rank_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.ranking_proto.ranking_player_info_lua play_info = 1;
+  // repeated .faith.ranking_proto.ranking_player_info_lua play_info = 1;
   for (int i = 0; i < this->play_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->play_info(i), output);
@@ -7706,7 +7706,7 @@ void ranking_proto_get_oracle_trial_rank_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* ranking_proto_get_oracle_trial_rank_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.ranking_proto.ranking_player_info_lua play_info = 1;
+  // repeated .faith.ranking_proto.ranking_player_info_lua play_info = 1;
   for (int i = 0; i < this->play_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -7737,7 +7737,7 @@ int ranking_proto_get_oracle_trial_rank_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.ranking_proto.ranking_player_info_lua play_info = 1;
+  // repeated .faith.ranking_proto.ranking_player_info_lua play_info = 1;
   total_size += 1 * this->play_info_size();
   for (int i = 0; i < this->play_info_size(); i++) {
     total_size +=
@@ -7973,6 +7973,6 @@ void ranking_proto::Swap(ranking_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

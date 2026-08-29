@@ -11,7 +11,7 @@ author: zhaoyuming
 #include "template/ServerTemplateHead.h"
 #include "Logic/char_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class time_limit_gift_mgr
 	{

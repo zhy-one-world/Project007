@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_goods_2eproto();
@@ -108,7 +108,7 @@ class goods_proto_goods_id : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 goods_id() const;
   inline void set_goods_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.goods_proto.goods_id)
+  // @@protoc_insertion_point(class_scope:faith.goods_proto.goods_id)
  private:
   inline void set_has_goods_id();
   inline void clear_has_goods_id();
@@ -195,7 +195,7 @@ class goods_proto_goods_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_goods_info();
 
-  // @@protoc_insertion_point(class_scope:hld.goods_proto.goods_info)
+  // @@protoc_insertion_point(class_scope:faith.goods_proto.goods_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -275,26 +275,26 @@ class goods_proto_store_goods : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 store_id() const;
   inline void set_store_id(::google::protobuf::int32 value);
 
-  // repeated .hld.goods_proto.goods_info goods_list = 2;
+  // repeated .faith.goods_proto.goods_info goods_list = 2;
   inline int goods_list_size() const;
   inline void clear_goods_list();
   static const int kGoodsListFieldNumber = 2;
-  inline const ::hld::goods_proto_goods_info& goods_list(int index) const;
-  inline ::hld::goods_proto_goods_info* mutable_goods_list(int index);
-  inline ::hld::goods_proto_goods_info* add_goods_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::goods_proto_goods_info >&
+  inline const ::faith::goods_proto_goods_info& goods_list(int index) const;
+  inline ::faith::goods_proto_goods_info* mutable_goods_list(int index);
+  inline ::faith::goods_proto_goods_info* add_goods_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::goods_proto_goods_info >&
       goods_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::goods_proto_goods_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::goods_proto_goods_info >*
       mutable_goods_list();
 
-  // @@protoc_insertion_point(class_scope:hld.goods_proto.store_goods)
+  // @@protoc_insertion_point(class_scope:faith.goods_proto.store_goods)
  private:
   inline void set_has_store_id();
   inline void clear_has_store_id();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::goods_proto_goods_info > goods_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::goods_proto_goods_info > goods_list_;
   ::google::protobuf::int32 store_id_;
 
   mutable int _cached_size_;
@@ -370,16 +370,16 @@ class goods_proto_goods_all : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 goods_id() const;
   inline void set_goods_id(::google::protobuf::int32 value);
 
-  // repeated .hld.goods_proto.goods_info goods_array = 2;
+  // repeated .faith.goods_proto.goods_info goods_array = 2;
   inline int goods_array_size() const;
   inline void clear_goods_array();
   static const int kGoodsArrayFieldNumber = 2;
-  inline const ::hld::goods_proto_goods_info& goods_array(int index) const;
-  inline ::hld::goods_proto_goods_info* mutable_goods_array(int index);
-  inline ::hld::goods_proto_goods_info* add_goods_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::goods_proto_goods_info >&
+  inline const ::faith::goods_proto_goods_info& goods_array(int index) const;
+  inline ::faith::goods_proto_goods_info* mutable_goods_array(int index);
+  inline ::faith::goods_proto_goods_info* add_goods_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::goods_proto_goods_info >&
       goods_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::goods_proto_goods_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::goods_proto_goods_info >*
       mutable_goods_array();
 
   // optional int32 store_id = 3;
@@ -389,7 +389,7 @@ class goods_proto_goods_all : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 store_id() const;
   inline void set_store_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.goods_proto.goods_all)
+  // @@protoc_insertion_point(class_scope:faith.goods_proto.goods_all)
  private:
   inline void set_has_goods_id();
   inline void clear_has_goods_id();
@@ -398,7 +398,7 @@ class goods_proto_goods_all : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::goods_proto_goods_info > goods_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::goods_proto_goods_info > goods_array_;
   ::google::protobuf::int32 goods_id_;
   ::google::protobuf::int32 store_id_;
 
@@ -489,7 +489,7 @@ class goods_proto_goods_purchase_record : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 time() const;
   inline void set_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.goods_proto.goods_purchase_record)
+  // @@protoc_insertion_point(class_scope:faith.goods_proto.goods_purchase_record)
  private:
   inline void set_has_goods_id();
   inline void clear_has_goods_id();
@@ -605,7 +605,7 @@ class goods_proto_goods_operate : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 role_guid() const;
   inline void set_role_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.goods_proto.goods_operate)
+  // @@protoc_insertion_point(class_scope:faith.goods_proto.goods_operate)
  private:
   inline void set_has_goods_id();
   inline void clear_has_goods_id();
@@ -727,7 +727,7 @@ class goods_proto_goods_operate_end : public ::google::protobuf::Message {
   inline bool is_auto_buy() const;
   inline void set_is_auto_buy(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.goods_proto.goods_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.goods_proto.goods_operate_end)
  private:
   inline void set_has_goods_id();
   inline void clear_has_goods_id();
@@ -814,24 +814,24 @@ class goods_proto_update_store_goods : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.goods_proto.store_goods store_list = 1;
+  // repeated .faith.goods_proto.store_goods store_list = 1;
   inline int store_list_size() const;
   inline void clear_store_list();
   static const int kStoreListFieldNumber = 1;
-  inline const ::hld::goods_proto_store_goods& store_list(int index) const;
-  inline ::hld::goods_proto_store_goods* mutable_store_list(int index);
-  inline ::hld::goods_proto_store_goods* add_store_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::goods_proto_store_goods >&
+  inline const ::faith::goods_proto_store_goods& store_list(int index) const;
+  inline ::faith::goods_proto_store_goods* mutable_store_list(int index);
+  inline ::faith::goods_proto_store_goods* add_store_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::goods_proto_store_goods >&
       store_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::goods_proto_store_goods >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::goods_proto_store_goods >*
       mutable_store_list();
 
-  // @@protoc_insertion_point(class_scope:hld.goods_proto.update_store_goods)
+  // @@protoc_insertion_point(class_scope:faith.goods_proto.update_store_goods)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::goods_proto_store_goods > store_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::goods_proto_store_goods > store_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -925,7 +925,7 @@ class goods_proto_request_update_store : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 update_time() const;
   inline void set_update_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.goods_proto.request_update_store)
+  // @@protoc_insertion_point(class_scope:faith.goods_proto.request_update_store)
  private:
   inline void set_has_request_type();
   inline void clear_has_request_type();
@@ -1011,7 +1011,7 @@ class goods_proto_goods_get_server_opent_time : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 server_open_time() const;
   inline void set_server_open_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.goods_proto.goods_get_server_opent_time)
+  // @@protoc_insertion_point(class_scope:faith.goods_proto.goods_get_server_opent_time)
  private:
   inline void set_has_server_open_time();
   inline void clear_has_server_open_time();
@@ -1097,7 +1097,7 @@ class goods_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.goods_proto)
+  // @@protoc_insertion_point(class_scope:faith.goods_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1197,27 +1197,27 @@ inline void goods_proto_store_goods::set_store_id(::google::protobuf::int32 valu
   store_id_ = value;
 }
 
-// repeated .hld.goods_proto.goods_info goods_list = 2;
+// repeated .faith.goods_proto.goods_info goods_list = 2;
 inline int goods_proto_store_goods::goods_list_size() const {
   return goods_list_.size();
 }
 inline void goods_proto_store_goods::clear_goods_list() {
   goods_list_.Clear();
 }
-inline const ::hld::goods_proto_goods_info& goods_proto_store_goods::goods_list(int index) const {
+inline const ::faith::goods_proto_goods_info& goods_proto_store_goods::goods_list(int index) const {
   return goods_list_.Get(index);
 }
-inline ::hld::goods_proto_goods_info* goods_proto_store_goods::mutable_goods_list(int index) {
+inline ::faith::goods_proto_goods_info* goods_proto_store_goods::mutable_goods_list(int index) {
   return goods_list_.Mutable(index);
 }
-inline ::hld::goods_proto_goods_info* goods_proto_store_goods::add_goods_list() {
+inline ::faith::goods_proto_goods_info* goods_proto_store_goods::add_goods_list() {
   return goods_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::goods_proto_goods_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::goods_proto_goods_info >&
 goods_proto_store_goods::goods_list() const {
   return goods_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::goods_proto_goods_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::goods_proto_goods_info >*
 goods_proto_store_goods::mutable_goods_list() {
   return &goods_list_;
 }
@@ -1248,27 +1248,27 @@ inline void goods_proto_goods_all::set_goods_id(::google::protobuf::int32 value)
   goods_id_ = value;
 }
 
-// repeated .hld.goods_proto.goods_info goods_array = 2;
+// repeated .faith.goods_proto.goods_info goods_array = 2;
 inline int goods_proto_goods_all::goods_array_size() const {
   return goods_array_.size();
 }
 inline void goods_proto_goods_all::clear_goods_array() {
   goods_array_.Clear();
 }
-inline const ::hld::goods_proto_goods_info& goods_proto_goods_all::goods_array(int index) const {
+inline const ::faith::goods_proto_goods_info& goods_proto_goods_all::goods_array(int index) const {
   return goods_array_.Get(index);
 }
-inline ::hld::goods_proto_goods_info* goods_proto_goods_all::mutable_goods_array(int index) {
+inline ::faith::goods_proto_goods_info* goods_proto_goods_all::mutable_goods_array(int index) {
   return goods_array_.Mutable(index);
 }
-inline ::hld::goods_proto_goods_info* goods_proto_goods_all::add_goods_array() {
+inline ::faith::goods_proto_goods_info* goods_proto_goods_all::add_goods_array() {
   return goods_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::goods_proto_goods_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::goods_proto_goods_info >&
 goods_proto_goods_all::goods_array() const {
   return goods_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::goods_proto_goods_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::goods_proto_goods_info >*
 goods_proto_goods_all::mutable_goods_array() {
   return &goods_array_;
 }
@@ -1597,27 +1597,27 @@ inline void goods_proto_goods_operate_end::set_is_auto_buy(bool value) {
 
 // goods_proto_update_store_goods
 
-// repeated .hld.goods_proto.store_goods store_list = 1;
+// repeated .faith.goods_proto.store_goods store_list = 1;
 inline int goods_proto_update_store_goods::store_list_size() const {
   return store_list_.size();
 }
 inline void goods_proto_update_store_goods::clear_store_list() {
   store_list_.Clear();
 }
-inline const ::hld::goods_proto_store_goods& goods_proto_update_store_goods::store_list(int index) const {
+inline const ::faith::goods_proto_store_goods& goods_proto_update_store_goods::store_list(int index) const {
   return store_list_.Get(index);
 }
-inline ::hld::goods_proto_store_goods* goods_proto_update_store_goods::mutable_store_list(int index) {
+inline ::faith::goods_proto_store_goods* goods_proto_update_store_goods::mutable_store_list(int index) {
   return store_list_.Mutable(index);
 }
-inline ::hld::goods_proto_store_goods* goods_proto_update_store_goods::add_store_list() {
+inline ::faith::goods_proto_store_goods* goods_proto_update_store_goods::add_store_list() {
   return store_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::goods_proto_store_goods >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::goods_proto_store_goods >&
 goods_proto_update_store_goods::store_list() const {
   return store_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::goods_proto_store_goods >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::goods_proto_store_goods >*
 goods_proto_update_store_goods::mutable_store_list() {
   return &store_list_;
 }
@@ -1728,7 +1728,7 @@ inline void goods_proto_goods_get_server_opent_time::set_server_open_time(::goog
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

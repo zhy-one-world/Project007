@@ -20,7 +20,7 @@ purpose: ÓÀºãµº
 #include "internet/game.pb.h"
 #include "internet/net.pb.h"
 
-namespace hld
+namespace faith
 {
 	boss_island_mgr::boss_island_mgr()
 	{
@@ -61,7 +61,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_boss_island_db msg;
+		faith::cs2dp_proto::role_boss_island_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -101,12 +101,12 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_boss_island msg;
+			faith::cs2dp_proto::save_role_boss_island msg;
 			msg.set_role_guid(m_player_ptr->get_unit_guid().server_64);
 			msg.set_unit_array_index(m_player_ptr->get_array_index());
 			msg.set_save_type_ex(type);
 
-			hld::cs2dp_proto::role_boss_island_db *db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_boss_island_db *db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return;

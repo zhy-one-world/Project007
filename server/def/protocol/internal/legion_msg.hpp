@@ -5,14 +5,14 @@
 #include "base.hpp"
 #include "Logic/legion_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
 		// 军团信息存读消息头
-		e_msgindex_ws2dp_load_all_legion_info = hld::e_msg_base_legion,
+		e_msgindex_ws2dp_load_all_legion_info = faith::e_msg_base_legion,
 		e_msgindex_dp2ws_load_all_legion_info,
 		e_msgindex_ws2dp_save_legion_info,
 		e_msgindex_ws2dp_delete_legion_info,
@@ -592,7 +592,7 @@ namespace hld
 		}
 	};
 
-	struct dp2ws_load_cross_city_info_all : public hld::packet_base
+	struct dp2ws_load_cross_city_info_all : public faith::packet_base
 	{
 		bool is_empty_msg;
 		int32 data_num;
@@ -629,7 +629,7 @@ namespace hld
 		}
 	};
 
-	struct gws2ws_legion_rank_with_cross_city_war : public hld::packet_base
+	struct gws2ws_legion_rank_with_cross_city_war : public faith::packet_base
 	{
 		guid_64 legion_guid;
 		int32	rank_idex;
@@ -642,7 +642,7 @@ namespace hld
 		}
 	};
 
-	struct gws2ws_overload_city_begin_notice : public hld::packet_base
+	struct gws2ws_overload_city_begin_notice : public faith::packet_base
 	{
 		guid_64 legion_guid;
 		int32	 group_num;
@@ -654,7 +654,7 @@ namespace hld
 		}
 	};
 
-	struct gws2ws_cross_city_info_all : public hld::packet_base
+	struct gws2ws_cross_city_info_all : public faith::packet_base
 	{
 		s_cross_city_info city_info_all[max_cross_server_all_city_num];
 		int32 data_num;
@@ -665,7 +665,7 @@ namespace hld
 		}
 	};
 
-	struct ws2gws_change_cross_city_chief : public hld::packet_base
+	struct ws2gws_change_cross_city_chief : public faith::packet_base
 	{
 		guid_64 leigon_guid;
 		xchar role_name[max_name_size + 1];

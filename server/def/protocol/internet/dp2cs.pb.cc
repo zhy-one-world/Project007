@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -197,12 +197,12 @@ void protobuf_AddDesc_dp2cs_2eproto() {
   already_here = true;
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  ::hld::protobuf_AddDesc_db_2eproto();
+  ::faith::protobuf_AddDesc_db_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\013dp2cs.proto\022\003hld\032\010db.proto\"\347\003\n\013dp2cs_p"
     "roto\032p\n\021load_role_starark\022\021\n\trole_guid\030\001"
     " \001(\003\022\030\n\020unit_array_index\030\002 \001(\005\022.\n\007db_dat"
-    "a\030\004 \001(\0132\035.hld.db_proto.role_starark_db\032h"
+    "a\030\004 \001(\0132\035.faith.db_proto.role_starark_db\032h"
     "\n\025load_role_skytreasure\022\021\n\trole_guid\030\001 \001"
     "(\003\022\030\n\020unit_array_index\030\002 \001(\005\022\021\n\trow_coun"
     "t\030\003 \001(\005\022\017\n\007db_data\030\004 \001(\014\032Q\n\021load_role_re"
@@ -250,7 +250,7 @@ dp2cs_proto_load_role_starark::dp2cs_proto_load_role_starark()
 }
 
 void dp2cs_proto_load_role_starark::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::db_proto_role_starark_db*>(&::hld::db_proto_role_starark_db::default_instance());
+  db_data_ = const_cast< ::faith::db_proto_role_starark_db*>(&::faith::db_proto_role_starark_db::default_instance());
 }
 
 dp2cs_proto_load_role_starark::dp2cs_proto_load_role_starark(const dp2cs_proto_load_role_starark& from)
@@ -303,7 +303,7 @@ void dp2cs_proto_load_role_starark::Clear() {
     role_guid_ = GOOGLE_LONGLONG(0);
     unit_array_index_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::db_proto_role_starark_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::db_proto_role_starark_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -347,7 +347,7 @@ bool dp2cs_proto_load_role_starark::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.db_proto.role_starark_db db_data = 4;
+      // optional .faith.db_proto.role_starark_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -389,7 +389,7 @@ void dp2cs_proto_load_role_starark::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->unit_array_index(), output);
   }
 
-  // optional .hld.db_proto.role_starark_db db_data = 4;
+  // optional .faith.db_proto.role_starark_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -413,7 +413,7 @@ void dp2cs_proto_load_role_starark::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->unit_array_index(), target);
   }
 
-  // optional .hld.db_proto.role_starark_db db_data = 4;
+  // optional .faith.db_proto.role_starark_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -445,7 +445,7 @@ int dp2cs_proto_load_role_starark::ByteSize() const {
           this->unit_array_index());
     }
 
-    // optional .hld.db_proto.role_starark_db db_data = 4;
+    // optional .faith.db_proto.role_starark_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -486,7 +486,7 @@ void dp2cs_proto_load_role_starark::MergeFrom(const dp2cs_proto_load_role_starar
       set_unit_array_index(from.unit_array_index());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::db_proto_role_starark_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::db_proto_role_starark_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -1911,6 +1911,6 @@ void dp2cs_proto::Swap(dp2cs_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

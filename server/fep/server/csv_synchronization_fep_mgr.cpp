@@ -13,7 +13,7 @@ purpose: csv同步信息管理器
 #include "../server/security_communication_layer.hpp"
 #include "proxy_service_cli.hpp"
 #include "net.pb.h"
-namespace hld
+namespace faith
 {
 
 	csv_synchronization_fep_mgr::csv_synchronization_fep_mgr()

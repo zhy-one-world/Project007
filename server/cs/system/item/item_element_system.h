@@ -3,7 +3,7 @@
 #include "logic/type_def.hpp"
 #include "base/ecs_world.h"
 
-namespace hld
+namespace faith
 {
 	struct ItemTemplate;
 	struct s_item_template_info;

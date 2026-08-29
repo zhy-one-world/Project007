@@ -13,7 +13,7 @@ purpose: µ¥¸ö³ÆºÅ
 #include "Logic/title_def.hpp"
 #include "template/template_manager.h"
 
-namespace hld
+namespace faith
 {
 	class ctitle
 	{

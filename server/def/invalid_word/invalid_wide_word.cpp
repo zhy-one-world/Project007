@@ -10,7 +10,7 @@
 
 #include <iostream>
 
-namespace hld
+namespace faith
 {
 	//是否为一个英文字符
 	bool is_an_english_charactor(wchar_t ch)

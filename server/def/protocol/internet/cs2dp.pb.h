@@ -27,7 +27,7 @@
 #include "db.pb.h"
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_cs2dp_2eproto();
@@ -218,16 +218,16 @@ class cs2dp_proto_save_role_starark : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.db_proto.role_starark_db db_data = 4;
+  // optional .faith.db_proto.role_starark_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::db_proto_role_starark_db& db_data() const;
-  inline ::hld::db_proto_role_starark_db* mutable_db_data();
-  inline ::hld::db_proto_role_starark_db* release_db_data();
-  inline void set_allocated_db_data(::hld::db_proto_role_starark_db* db_data);
+  inline const ::faith::db_proto_role_starark_db& db_data() const;
+  inline ::faith::db_proto_role_starark_db* mutable_db_data();
+  inline ::faith::db_proto_role_starark_db* release_db_data();
+  inline void set_allocated_db_data(::faith::db_proto_role_starark_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_starark)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_starark)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -243,7 +243,7 @@ class cs2dp_proto_save_role_starark : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::db_proto_role_starark_db* db_data_;
+  ::faith::db_proto_role_starark_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -346,7 +346,7 @@ class cs2dp_proto_role_recycle_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 invited_state() const;
   inline void set_invited_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_recycle_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_recycle_db)
  private:
   inline void set_has_e_start_time_1();
   inline void clear_has_e_start_time_1();
@@ -454,16 +454,16 @@ class cs2dp_proto_save_role_recycle : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_recycle_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_recycle_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_recycle_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_recycle_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_recycle_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_recycle_db* db_data);
+  inline const ::faith::cs2dp_proto_role_recycle_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_recycle_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_recycle_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_recycle_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_recycle)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_recycle)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -479,7 +479,7 @@ class cs2dp_proto_save_role_recycle : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_recycle_db* db_data_;
+  ::faith::cs2dp_proto_role_recycle_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -559,7 +559,7 @@ class cs2dp_proto_role_recycle_task_row : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_recycle_task_row)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_recycle_task_row)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -639,26 +639,26 @@ class cs2dp_proto_role_recycle_task_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.cs2dp_proto.role_recycle_task_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_recycle_task_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::cs2dp_proto_role_recycle_task_row& row_data(int index) const;
-  inline ::hld::cs2dp_proto_role_recycle_task_row* mutable_row_data(int index);
-  inline ::hld::cs2dp_proto_role_recycle_task_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_recycle_task_row >&
+  inline const ::faith::cs2dp_proto_role_recycle_task_row& row_data(int index) const;
+  inline ::faith::cs2dp_proto_role_recycle_task_row* mutable_row_data(int index);
+  inline ::faith::cs2dp_proto_role_recycle_task_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_recycle_task_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_recycle_task_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_recycle_task_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_recycle_task_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_recycle_task_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_recycle_task_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_recycle_task_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -748,16 +748,16 @@ class cs2dp_proto_save_role_recycle_task : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_recycle_task_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_recycle_task_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_recycle_task_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_recycle_task_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_recycle_task_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_recycle_task_db* db_data);
+  inline const ::faith::cs2dp_proto_role_recycle_task_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_recycle_task_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_recycle_task_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_recycle_task_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_recycle_task)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_recycle_task)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -773,7 +773,7 @@ class cs2dp_proto_save_role_recycle_task : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_recycle_task_db* db_data_;
+  ::faith::cs2dp_proto_role_recycle_task_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -853,7 +853,7 @@ class cs2dp_proto_role_dragontrip_db : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_dragontrip_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_dragontrip_db)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -947,16 +947,16 @@ class cs2dp_proto_save_role_dragontrip : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_dragontrip_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_dragontrip_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_dragontrip_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_dragontrip_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_dragontrip_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_dragontrip_db* db_data);
+  inline const ::faith::cs2dp_proto_role_dragontrip_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_dragontrip_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_dragontrip_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_dragontrip_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_dragontrip)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_dragontrip)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -972,7 +972,7 @@ class cs2dp_proto_save_role_dragontrip : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_dragontrip_db* db_data_;
+  ::faith::cs2dp_proto_role_dragontrip_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -1052,7 +1052,7 @@ class cs2dp_proto_role_phantom_row : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_phantom_row)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_phantom_row)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1132,26 +1132,26 @@ class cs2dp_proto_role_phantom_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.cs2dp_proto.role_phantom_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_phantom_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::cs2dp_proto_role_phantom_row& row_data(int index) const;
-  inline ::hld::cs2dp_proto_role_phantom_row* mutable_row_data(int index);
-  inline ::hld::cs2dp_proto_role_phantom_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_phantom_row >&
+  inline const ::faith::cs2dp_proto_role_phantom_row& row_data(int index) const;
+  inline ::faith::cs2dp_proto_role_phantom_row* mutable_row_data(int index);
+  inline ::faith::cs2dp_proto_role_phantom_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_phantom_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_phantom_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_phantom_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_phantom_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_phantom_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_phantom_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_phantom_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -1241,16 +1241,16 @@ class cs2dp_proto_save_role_phantom : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_phantom_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_phantom_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_phantom_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_phantom_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_phantom_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_phantom_db* db_data);
+  inline const ::faith::cs2dp_proto_role_phantom_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_phantom_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_phantom_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_phantom_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_phantom)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_phantom)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -1266,7 +1266,7 @@ class cs2dp_proto_save_role_phantom : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_phantom_db* db_data_;
+  ::faith::cs2dp_proto_role_phantom_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -1353,7 +1353,7 @@ class cs2dp_proto_role_chat_record_row : public ::google::protobuf::Message {
   inline ::std::string* release_record();
   inline void set_allocated_record(::std::string* record);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_chat_record_row)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_chat_record_row)
  private:
   inline void set_has_pos();
   inline void clear_has_pos();
@@ -1438,26 +1438,26 @@ class cs2dp_proto_role_chat_record_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.cs2dp_proto.role_chat_record_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_chat_record_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::cs2dp_proto_role_chat_record_row& row_data(int index) const;
-  inline ::hld::cs2dp_proto_role_chat_record_row* mutable_row_data(int index);
-  inline ::hld::cs2dp_proto_role_chat_record_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_chat_record_row >&
+  inline const ::faith::cs2dp_proto_role_chat_record_row& row_data(int index) const;
+  inline ::faith::cs2dp_proto_role_chat_record_row* mutable_row_data(int index);
+  inline ::faith::cs2dp_proto_role_chat_record_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_chat_record_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_chat_record_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_chat_record_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_chat_record_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_chat_record_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_chat_record_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_chat_record_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -1547,16 +1547,16 @@ class cs2dp_proto_save_role_chat_record : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_chat_record_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_chat_record_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_chat_record_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_chat_record_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_chat_record_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_chat_record_db* db_data);
+  inline const ::faith::cs2dp_proto_role_chat_record_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_chat_record_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_chat_record_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_chat_record_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_chat_record)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_chat_record)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -1572,7 +1572,7 @@ class cs2dp_proto_save_role_chat_record : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_chat_record_db* db_data_;
+  ::faith::cs2dp_proto_role_chat_record_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -1668,7 +1668,7 @@ class cs2dp_proto_role_oracle_trial_row : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 reward_stat() const;
   inline void set_reward_stat(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_oracle_trial_row)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_oracle_trial_row)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -1759,26 +1759,26 @@ class cs2dp_proto_role_oracle_trial_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.cs2dp_proto.role_oracle_trial_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_oracle_trial_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::cs2dp_proto_role_oracle_trial_row& row_data(int index) const;
-  inline ::hld::cs2dp_proto_role_oracle_trial_row* mutable_row_data(int index);
-  inline ::hld::cs2dp_proto_role_oracle_trial_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_oracle_trial_row >&
+  inline const ::faith::cs2dp_proto_role_oracle_trial_row& row_data(int index) const;
+  inline ::faith::cs2dp_proto_role_oracle_trial_row* mutable_row_data(int index);
+  inline ::faith::cs2dp_proto_role_oracle_trial_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_oracle_trial_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_oracle_trial_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_oracle_trial_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_oracle_trial_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_oracle_trial_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_oracle_trial_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_oracle_trial_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -1868,16 +1868,16 @@ class cs2dp_proto_save_role_oracle_trial : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_oracle_trial_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_oracle_trial_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_oracle_trial_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_oracle_trial_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_oracle_trial_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_oracle_trial_db* db_data);
+  inline const ::faith::cs2dp_proto_role_oracle_trial_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_oracle_trial_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_oracle_trial_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_oracle_trial_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_oracle_trial)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_oracle_trial)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -1893,7 +1893,7 @@ class cs2dp_proto_save_role_oracle_trial : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_oracle_trial_db* db_data_;
+  ::faith::cs2dp_proto_role_oracle_trial_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -2075,7 +2075,7 @@ class cs2dp_proto_role_person_information_db : public ::google::protobuf::Messag
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_tags();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_person_information_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_person_information_db)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -2202,16 +2202,16 @@ class cs2dp_proto_save_role_person_information : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_person_information_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_person_information_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_person_information_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_person_information_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_person_information_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_person_information_db* db_data);
+  inline const ::faith::cs2dp_proto_role_person_information_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_person_information_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_person_information_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_person_information_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_person_information)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_person_information)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -2227,7 +2227,7 @@ class cs2dp_proto_save_role_person_information : public ::google::protobuf::Mess
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_person_information_db* db_data_;
+  ::faith::cs2dp_proto_role_person_information_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -2391,7 +2391,7 @@ class cs2dp_proto_role_competition_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 have_type() const;
   inline void set_have_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_competition_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_competition_db)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -2521,16 +2521,16 @@ class cs2dp_proto_save_role_competition : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_competition_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_competition_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_competition_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_competition_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_competition_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_competition_db* db_data);
+  inline const ::faith::cs2dp_proto_role_competition_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_competition_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_competition_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_competition_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_competition)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_competition)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -2546,7 +2546,7 @@ class cs2dp_proto_save_role_competition : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_competition_db* db_data_;
+  ::faith::cs2dp_proto_role_competition_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -2626,7 +2626,7 @@ class cs2dp_proto_role_legion_skill_row : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_legion_skill_row)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_legion_skill_row)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2706,26 +2706,26 @@ class cs2dp_proto_role_legion_skill_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.cs2dp_proto.role_legion_skill_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_legion_skill_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::cs2dp_proto_role_legion_skill_row& row_data(int index) const;
-  inline ::hld::cs2dp_proto_role_legion_skill_row* mutable_row_data(int index);
-  inline ::hld::cs2dp_proto_role_legion_skill_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_legion_skill_row >&
+  inline const ::faith::cs2dp_proto_role_legion_skill_row& row_data(int index) const;
+  inline ::faith::cs2dp_proto_role_legion_skill_row* mutable_row_data(int index);
+  inline ::faith::cs2dp_proto_role_legion_skill_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_legion_skill_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_legion_skill_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_legion_skill_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_legion_skill_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_legion_skill_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_legion_skill_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_legion_skill_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -2815,16 +2815,16 @@ class cs2dp_proto_save_role_legion_skill : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_legion_skill_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_legion_skill_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_legion_skill_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_legion_skill_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_legion_skill_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_legion_skill_db* db_data);
+  inline const ::faith::cs2dp_proto_role_legion_skill_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_legion_skill_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_legion_skill_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_legion_skill_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_legion_skill)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_legion_skill)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -2840,7 +2840,7 @@ class cs2dp_proto_save_role_legion_skill : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_legion_skill_db* db_data_;
+  ::faith::cs2dp_proto_role_legion_skill_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -2929,7 +2929,7 @@ class cs2dp_proto_role_skytreasure_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 skytreasure_pos_in_array() const;
   inline void set_skytreasure_pos_in_array(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_skytreasure_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_skytreasure_db)
  private:
   inline void set_has_skytreasure_layer_num();
   inline void clear_has_skytreasure_layer_num();
@@ -3031,16 +3031,16 @@ class cs2dp_proto_save_role_skytreasure : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_skytreasure_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_skytreasure_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_skytreasure_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_skytreasure_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_skytreasure_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_skytreasure_db* db_data);
+  inline const ::faith::cs2dp_proto_role_skytreasure_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_skytreasure_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_skytreasure_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_skytreasure_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_skytreasure)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_skytreasure)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3056,7 +3056,7 @@ class cs2dp_proto_save_role_skytreasure : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_skytreasure_db* db_data_;
+  ::faith::cs2dp_proto_role_skytreasure_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -3136,7 +3136,7 @@ class cs2dp_proto_role_harry_record_db : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_harry_record_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_harry_record_db)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -3230,16 +3230,16 @@ class cs2dp_proto_save_role_harry_record : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_harry_record_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_harry_record_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_harry_record_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_harry_record_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_harry_record_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_harry_record_db* db_data);
+  inline const ::faith::cs2dp_proto_role_harry_record_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_harry_record_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_harry_record_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_harry_record_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_harry_record)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_harry_record)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3255,7 +3255,7 @@ class cs2dp_proto_save_role_harry_record : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_harry_record_db* db_data_;
+  ::faith::cs2dp_proto_role_harry_record_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -3335,7 +3335,7 @@ class cs2dp_proto_role_seven_day_goal_row : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_seven_day_goal_row)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_seven_day_goal_row)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -3415,26 +3415,26 @@ class cs2dp_proto_role_seven_day_goal_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.cs2dp_proto.role_seven_day_goal_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_seven_day_goal_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::cs2dp_proto_role_seven_day_goal_row& row_data(int index) const;
-  inline ::hld::cs2dp_proto_role_seven_day_goal_row* mutable_row_data(int index);
-  inline ::hld::cs2dp_proto_role_seven_day_goal_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_seven_day_goal_row >&
+  inline const ::faith::cs2dp_proto_role_seven_day_goal_row& row_data(int index) const;
+  inline ::faith::cs2dp_proto_role_seven_day_goal_row* mutable_row_data(int index);
+  inline ::faith::cs2dp_proto_role_seven_day_goal_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_seven_day_goal_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_seven_day_goal_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_seven_day_goal_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_seven_day_goal_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_seven_day_goal_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_seven_day_goal_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_seven_day_goal_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -3524,16 +3524,16 @@ class cs2dp_proto_save_role_seven_day_goal : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_seven_day_goal_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_seven_day_goal_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_seven_day_goal_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_seven_day_goal_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_seven_day_goal_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_seven_day_goal_db* db_data);
+  inline const ::faith::cs2dp_proto_role_seven_day_goal_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_seven_day_goal_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_seven_day_goal_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_seven_day_goal_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_seven_day_goal)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_seven_day_goal)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3549,7 +3549,7 @@ class cs2dp_proto_save_role_seven_day_goal : public ::google::protobuf::Message 
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_seven_day_goal_db* db_data_;
+  ::faith::cs2dp_proto_role_seven_day_goal_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -3629,7 +3629,7 @@ class cs2dp_proto_role_passive_skill_row : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_passive_skill_row)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_passive_skill_row)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -3709,26 +3709,26 @@ class cs2dp_proto_role_passive_skill_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.cs2dp_proto.role_passive_skill_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_passive_skill_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::cs2dp_proto_role_passive_skill_row& row_data(int index) const;
-  inline ::hld::cs2dp_proto_role_passive_skill_row* mutable_row_data(int index);
-  inline ::hld::cs2dp_proto_role_passive_skill_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_passive_skill_row >&
+  inline const ::faith::cs2dp_proto_role_passive_skill_row& row_data(int index) const;
+  inline ::faith::cs2dp_proto_role_passive_skill_row* mutable_row_data(int index);
+  inline ::faith::cs2dp_proto_role_passive_skill_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_passive_skill_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_passive_skill_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_passive_skill_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_passive_skill_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_passive_skill_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_passive_skill_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_passive_skill_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -3818,16 +3818,16 @@ class cs2dp_proto_save_role_passive_skill : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_passive_skill_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_passive_skill_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_passive_skill_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_passive_skill_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_passive_skill_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_passive_skill_db* db_data);
+  inline const ::faith::cs2dp_proto_role_passive_skill_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_passive_skill_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_passive_skill_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_passive_skill_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_passive_skill)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_passive_skill)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3843,7 +3843,7 @@ class cs2dp_proto_save_role_passive_skill : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_passive_skill_db* db_data_;
+  ::faith::cs2dp_proto_role_passive_skill_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -3923,7 +3923,7 @@ class cs2dp_proto_role_boss_island_db : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_boss_island_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_boss_island_db)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -4017,16 +4017,16 @@ class cs2dp_proto_save_role_boss_island : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_boss_island_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_boss_island_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_boss_island_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_boss_island_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_boss_island_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_boss_island_db* db_data);
+  inline const ::faith::cs2dp_proto_role_boss_island_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_boss_island_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_boss_island_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_boss_island_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_boss_island)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_boss_island)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4042,7 +4042,7 @@ class cs2dp_proto_save_role_boss_island : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_boss_island_db* db_data_;
+  ::faith::cs2dp_proto_role_boss_island_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -4153,7 +4153,7 @@ class cs2dp_proto_role_time_limit_activity_row : public ::google::protobuf::Mess
   inline ::google::protobuf::int64 reward_flag() const;
   inline void set_reward_flag(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_time_limit_activity_row)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_time_limit_activity_row)
  private:
   inline void set_has_schedule_str();
   inline void clear_has_schedule_str();
@@ -4240,26 +4240,26 @@ class cs2dp_proto_role_time_limit_activity_db : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.cs2dp_proto.role_time_limit_activity_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_time_limit_activity_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::cs2dp_proto_role_time_limit_activity_row& row_data(int index) const;
-  inline ::hld::cs2dp_proto_role_time_limit_activity_row* mutable_row_data(int index);
-  inline ::hld::cs2dp_proto_role_time_limit_activity_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_time_limit_activity_row >&
+  inline const ::faith::cs2dp_proto_role_time_limit_activity_row& row_data(int index) const;
+  inline ::faith::cs2dp_proto_role_time_limit_activity_row* mutable_row_data(int index);
+  inline ::faith::cs2dp_proto_role_time_limit_activity_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_time_limit_activity_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_time_limit_activity_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_time_limit_activity_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_time_limit_activity_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_time_limit_activity_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_time_limit_activity_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_time_limit_activity_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -4356,16 +4356,16 @@ class cs2dp_proto_save_role_time_limit_activity : public ::google::protobuf::Mes
   inline bool is_self_server() const;
   inline void set_is_self_server(bool value);
 
-  // optional .hld.cs2dp_proto.role_time_limit_activity_db db_data = 5;
+  // optional .faith.cs2dp_proto.role_time_limit_activity_db db_data = 5;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 5;
-  inline const ::hld::cs2dp_proto_role_time_limit_activity_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_time_limit_activity_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_time_limit_activity_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_time_limit_activity_db* db_data);
+  inline const ::faith::cs2dp_proto_role_time_limit_activity_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_time_limit_activity_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_time_limit_activity_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_time_limit_activity_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_time_limit_activity)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_time_limit_activity)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4383,7 +4383,7 @@ class cs2dp_proto_save_role_time_limit_activity : public ::google::protobuf::Mes
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_time_limit_activity_db* db_data_;
+  ::faith::cs2dp_proto_role_time_limit_activity_db* db_data_;
   bool is_self_server_;
 
   mutable int _cached_size_;
@@ -4464,7 +4464,7 @@ class cs2dp_proto_role_gain_treasure_db : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_gain_treasure_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_gain_treasure_db)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -4558,16 +4558,16 @@ class cs2dp_proto_save_role_gain_treasure : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_gain_treasure_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_gain_treasure_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_gain_treasure_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_gain_treasure_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_gain_treasure_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_gain_treasure_db* db_data);
+  inline const ::faith::cs2dp_proto_role_gain_treasure_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_gain_treasure_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_gain_treasure_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_gain_treasure_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_gain_treasure)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_gain_treasure)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4583,7 +4583,7 @@ class cs2dp_proto_save_role_gain_treasure : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_gain_treasure_db* db_data_;
+  ::faith::cs2dp_proto_role_gain_treasure_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -4663,7 +4663,7 @@ class cs2dp_proto_role_logic_db : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_logic_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_logic_db)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -4757,16 +4757,16 @@ class cs2dp_proto_save_role_logic : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_logic_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_logic_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_logic_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_logic_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_logic_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_logic_db* db_data);
+  inline const ::faith::cs2dp_proto_role_logic_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_logic_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_logic_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_logic_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_logic)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_logic)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4782,7 +4782,7 @@ class cs2dp_proto_save_role_logic : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_logic_db* db_data_;
+  ::faith::cs2dp_proto_role_logic_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -4864,7 +4864,7 @@ class cs2dp_proto_role_service_rank_reward_row : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 reward_state() const;
   inline void set_reward_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_service_rank_reward_row)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_service_rank_reward_row)
  private:
   inline void set_has_rank_type();
   inline void clear_has_rank_type();
@@ -4949,26 +4949,26 @@ class cs2dp_proto_role_service_rank_reward_db : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.cs2dp_proto.role_service_rank_reward_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_service_rank_reward_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::cs2dp_proto_role_service_rank_reward_row& row_data(int index) const;
-  inline ::hld::cs2dp_proto_role_service_rank_reward_row* mutable_row_data(int index);
-  inline ::hld::cs2dp_proto_role_service_rank_reward_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_service_rank_reward_row >&
+  inline const ::faith::cs2dp_proto_role_service_rank_reward_row& row_data(int index) const;
+  inline ::faith::cs2dp_proto_role_service_rank_reward_row* mutable_row_data(int index);
+  inline ::faith::cs2dp_proto_role_service_rank_reward_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_service_rank_reward_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_service_rank_reward_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_service_rank_reward_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_service_rank_reward_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_service_rank_reward_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_service_rank_reward_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_service_rank_reward_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -5058,16 +5058,16 @@ class cs2dp_proto_save_role_service_rank_reward : public ::google::protobuf::Mes
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_service_rank_reward_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_service_rank_reward_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_service_rank_reward_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_service_rank_reward_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_service_rank_reward_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_service_rank_reward_db* db_data);
+  inline const ::faith::cs2dp_proto_role_service_rank_reward_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_service_rank_reward_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_service_rank_reward_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_service_rank_reward_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_service_rank_reward)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_service_rank_reward)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -5083,7 +5083,7 @@ class cs2dp_proto_save_role_service_rank_reward : public ::google::protobuf::Mes
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_service_rank_reward_db* db_data_;
+  ::faith::cs2dp_proto_role_service_rank_reward_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -5163,7 +5163,7 @@ class cs2dp_proto_role_highest_record_db : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_highest_record_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_highest_record_db)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -5257,16 +5257,16 @@ class cs2dp_proto_save_role_highest_record : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_highest_record_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_highest_record_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_highest_record_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_highest_record_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_highest_record_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_highest_record_db* db_data);
+  inline const ::faith::cs2dp_proto_role_highest_record_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_highest_record_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_highest_record_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_highest_record_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_highest_record)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_highest_record)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -5282,7 +5282,7 @@ class cs2dp_proto_save_role_highest_record : public ::google::protobuf::Message 
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_highest_record_db* db_data_;
+  ::faith::cs2dp_proto_role_highest_record_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -5362,7 +5362,7 @@ class cs2dp_proto_role_daily_must_do_count_db : public ::google::protobuf::Messa
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_daily_must_do_count_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_daily_must_do_count_db)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -5456,16 +5456,16 @@ class cs2dp_proto_save_role_daily_must_do_count : public ::google::protobuf::Mes
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_daily_must_do_count_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_daily_must_do_count_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_daily_must_do_count_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_daily_must_do_count_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_daily_must_do_count_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_daily_must_do_count_db* db_data);
+  inline const ::faith::cs2dp_proto_role_daily_must_do_count_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_daily_must_do_count_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_daily_must_do_count_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_daily_must_do_count_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_daily_must_do_count)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_daily_must_do_count)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -5481,7 +5481,7 @@ class cs2dp_proto_save_role_daily_must_do_count : public ::google::protobuf::Mes
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_daily_must_do_count_db* db_data_;
+  ::faith::cs2dp_proto_role_daily_must_do_count_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -5561,7 +5561,7 @@ class cs2dp_proto_role_talent_row : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_talent_row)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_talent_row)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -5641,26 +5641,26 @@ class cs2dp_proto_role_talent_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.cs2dp_proto.role_talent_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_talent_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::cs2dp_proto_role_talent_row& row_data(int index) const;
-  inline ::hld::cs2dp_proto_role_talent_row* mutable_row_data(int index);
-  inline ::hld::cs2dp_proto_role_talent_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_talent_row >&
+  inline const ::faith::cs2dp_proto_role_talent_row& row_data(int index) const;
+  inline ::faith::cs2dp_proto_role_talent_row* mutable_row_data(int index);
+  inline ::faith::cs2dp_proto_role_talent_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_talent_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_talent_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_talent_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_talent_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_talent_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_talent_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_talent_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -5750,16 +5750,16 @@ class cs2dp_proto_save_role_talent : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_talent_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_talent_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_talent_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_talent_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_talent_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_talent_db* db_data);
+  inline const ::faith::cs2dp_proto_role_talent_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_talent_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_talent_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_talent_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_talent)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_talent)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -5775,7 +5775,7 @@ class cs2dp_proto_save_role_talent : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_talent_db* db_data_;
+  ::faith::cs2dp_proto_role_talent_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -5855,7 +5855,7 @@ class cs2dp_proto_role_title_row : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_title_row)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_title_row)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -5935,26 +5935,26 @@ class cs2dp_proto_role_title_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.cs2dp_proto.role_title_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_title_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::cs2dp_proto_role_title_row& row_data(int index) const;
-  inline ::hld::cs2dp_proto_role_title_row* mutable_row_data(int index);
-  inline ::hld::cs2dp_proto_role_title_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_title_row >&
+  inline const ::faith::cs2dp_proto_role_title_row& row_data(int index) const;
+  inline ::faith::cs2dp_proto_role_title_row* mutable_row_data(int index);
+  inline ::faith::cs2dp_proto_role_title_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_title_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_title_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_title_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_title_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_title_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_title_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_title_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -6044,16 +6044,16 @@ class cs2dp_proto_save_role_title : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_title_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_title_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_title_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_title_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_title_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_title_db* db_data);
+  inline const ::faith::cs2dp_proto_role_title_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_title_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_title_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_title_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_title)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_title)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6069,7 +6069,7 @@ class cs2dp_proto_save_role_title : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_title_db* db_data_;
+  ::faith::cs2dp_proto_role_title_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -6149,7 +6149,7 @@ class cs2dp_proto_role_active_degree_db : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_active_degree_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_active_degree_db)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -6243,16 +6243,16 @@ class cs2dp_proto_save_role_active_degree : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_active_degree_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_active_degree_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_active_degree_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_active_degree_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_active_degree_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_active_degree_db* db_data);
+  inline const ::faith::cs2dp_proto_role_active_degree_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_active_degree_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_active_degree_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_active_degree_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_active_degree)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_active_degree)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6268,7 +6268,7 @@ class cs2dp_proto_save_role_active_degree : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_active_degree_db* db_data_;
+  ::faith::cs2dp_proto_role_active_degree_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -6348,7 +6348,7 @@ class cs2dp_proto_role_welfare_db : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_welfare_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_welfare_db)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -6442,16 +6442,16 @@ class cs2dp_proto_save_role_welfare : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_welfare_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_welfare_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_welfare_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_welfare_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_welfare_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_welfare_db* db_data);
+  inline const ::faith::cs2dp_proto_role_welfare_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_welfare_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_welfare_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_welfare_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_welfare)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_welfare)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6467,7 +6467,7 @@ class cs2dp_proto_save_role_welfare : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_welfare_db* db_data_;
+  ::faith::cs2dp_proto_role_welfare_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -6547,7 +6547,7 @@ class cs2dp_proto_role_convert_db : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_convert_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_convert_db)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -6641,16 +6641,16 @@ class cs2dp_proto_save_role_convert : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_convert_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_convert_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_convert_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_convert_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_convert_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_convert_db* db_data);
+  inline const ::faith::cs2dp_proto_role_convert_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_convert_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_convert_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_convert_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_convert)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_convert)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6666,7 +6666,7 @@ class cs2dp_proto_save_role_convert : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_convert_db* db_data_;
+  ::faith::cs2dp_proto_role_convert_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -6788,7 +6788,7 @@ class cs2dp_proto_role_yesterday_must_do_remain_row : public ::google::protobuf:
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_yesterday_must_do_remain_row)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_yesterday_must_do_remain_row)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6886,26 +6886,26 @@ class cs2dp_proto_role_yesterday_must_do_remain_db : public ::google::protobuf::
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.cs2dp_proto.role_yesterday_must_do_remain_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_yesterday_must_do_remain_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::cs2dp_proto_role_yesterday_must_do_remain_row& row_data(int index) const;
-  inline ::hld::cs2dp_proto_role_yesterday_must_do_remain_row* mutable_row_data(int index);
-  inline ::hld::cs2dp_proto_role_yesterday_must_do_remain_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_yesterday_must_do_remain_row >&
+  inline const ::faith::cs2dp_proto_role_yesterday_must_do_remain_row& row_data(int index) const;
+  inline ::faith::cs2dp_proto_role_yesterday_must_do_remain_row* mutable_row_data(int index);
+  inline ::faith::cs2dp_proto_role_yesterday_must_do_remain_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_yesterday_must_do_remain_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_yesterday_must_do_remain_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_yesterday_must_do_remain_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_yesterday_must_do_remain_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_yesterday_must_do_remain_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_yesterday_must_do_remain_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_yesterday_must_do_remain_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -6995,16 +6995,16 @@ class cs2dp_proto_save_role_yesterday_must_do_remain : public ::google::protobuf
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_yesterday_must_do_remain_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_yesterday_must_do_remain_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_yesterday_must_do_remain_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_yesterday_must_do_remain_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_yesterday_must_do_remain_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_yesterday_must_do_remain_db* db_data);
+  inline const ::faith::cs2dp_proto_role_yesterday_must_do_remain_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_yesterday_must_do_remain_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_yesterday_must_do_remain_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_yesterday_must_do_remain_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_yesterday_must_do_remain)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_yesterday_must_do_remain)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -7020,7 +7020,7 @@ class cs2dp_proto_save_role_yesterday_must_do_remain : public ::google::protobuf
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_yesterday_must_do_remain_db* db_data_;
+  ::faith::cs2dp_proto_role_yesterday_must_do_remain_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -7102,7 +7102,7 @@ class cs2dp_proto_role_worship_row : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 target_guid() const;
   inline void set_target_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_worship_row)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_worship_row)
  private:
   inline void set_has_ranking_index();
   inline void clear_has_ranking_index();
@@ -7187,26 +7187,26 @@ class cs2dp_proto_role_worship_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.cs2dp_proto.role_worship_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_worship_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::cs2dp_proto_role_worship_row& row_data(int index) const;
-  inline ::hld::cs2dp_proto_role_worship_row* mutable_row_data(int index);
-  inline ::hld::cs2dp_proto_role_worship_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_worship_row >&
+  inline const ::faith::cs2dp_proto_role_worship_row& row_data(int index) const;
+  inline ::faith::cs2dp_proto_role_worship_row* mutable_row_data(int index);
+  inline ::faith::cs2dp_proto_role_worship_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_worship_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_worship_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_worship_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_worship_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_worship_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_worship_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_worship_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -7296,16 +7296,16 @@ class cs2dp_proto_save_role_worship : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_worship_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_worship_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_worship_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_worship_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_worship_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_worship_db* db_data);
+  inline const ::faith::cs2dp_proto_role_worship_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_worship_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_worship_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_worship_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_worship)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_worship)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -7321,7 +7321,7 @@ class cs2dp_proto_save_role_worship : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_worship_db* db_data_;
+  ::faith::cs2dp_proto_role_worship_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -7401,7 +7401,7 @@ class cs2dp_proto_role_tinder_db : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_tinder_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_tinder_db)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -7495,16 +7495,16 @@ class cs2dp_proto_save_role_tinder : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_tinder_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_tinder_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_tinder_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_tinder_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_tinder_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_tinder_db* db_data);
+  inline const ::faith::cs2dp_proto_role_tinder_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_tinder_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_tinder_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_tinder_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_tinder)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_tinder)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -7520,7 +7520,7 @@ class cs2dp_proto_save_role_tinder : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_tinder_db* db_data_;
+  ::faith::cs2dp_proto_role_tinder_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -7612,7 +7612,7 @@ class cs2dp_proto_role_pokedex_row : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_collect_num();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_pokedex_row)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_pokedex_row)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -7693,26 +7693,26 @@ class cs2dp_proto_role_pokedex_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.cs2dp_proto.role_pokedex_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_pokedex_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::cs2dp_proto_role_pokedex_row& row_data(int index) const;
-  inline ::hld::cs2dp_proto_role_pokedex_row* mutable_row_data(int index);
-  inline ::hld::cs2dp_proto_role_pokedex_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_pokedex_row >&
+  inline const ::faith::cs2dp_proto_role_pokedex_row& row_data(int index) const;
+  inline ::faith::cs2dp_proto_role_pokedex_row* mutable_row_data(int index);
+  inline ::faith::cs2dp_proto_role_pokedex_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_pokedex_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_pokedex_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_pokedex_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_pokedex_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_pokedex_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_pokedex_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_pokedex_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -7802,16 +7802,16 @@ class cs2dp_proto_save_role_pokedex : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_pokedex_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_pokedex_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_pokedex_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_pokedex_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_pokedex_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_pokedex_db* db_data);
+  inline const ::faith::cs2dp_proto_role_pokedex_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_pokedex_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_pokedex_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_pokedex_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_pokedex)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_pokedex)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -7827,7 +7827,7 @@ class cs2dp_proto_save_role_pokedex : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_pokedex_db* db_data_;
+  ::faith::cs2dp_proto_role_pokedex_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -7907,7 +7907,7 @@ class cs2dp_proto_role_achievement_row : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_achievement_row)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_achievement_row)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -7987,26 +7987,26 @@ class cs2dp_proto_role_achievement_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.cs2dp_proto.role_achievement_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_achievement_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::cs2dp_proto_role_achievement_row& row_data(int index) const;
-  inline ::hld::cs2dp_proto_role_achievement_row* mutable_row_data(int index);
-  inline ::hld::cs2dp_proto_role_achievement_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_achievement_row >&
+  inline const ::faith::cs2dp_proto_role_achievement_row& row_data(int index) const;
+  inline ::faith::cs2dp_proto_role_achievement_row* mutable_row_data(int index);
+  inline ::faith::cs2dp_proto_role_achievement_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_achievement_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_achievement_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_achievement_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_achievement_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_achievement_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_achievement_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_achievement_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -8096,16 +8096,16 @@ class cs2dp_proto_save_role_achievement : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_achievement_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_achievement_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_achievement_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_achievement_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_achievement_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_achievement_db* db_data);
+  inline const ::faith::cs2dp_proto_role_achievement_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_achievement_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_achievement_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_achievement_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_achievement)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_achievement)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -8121,7 +8121,7 @@ class cs2dp_proto_save_role_achievement : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_achievement_db* db_data_;
+  ::faith::cs2dp_proto_role_achievement_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -8201,7 +8201,7 @@ class cs2dp_proto_role_special_name_db : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_special_name_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_special_name_db)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -8295,16 +8295,16 @@ class cs2dp_proto_save_role_special_name : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_special_name_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_special_name_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_special_name_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_special_name_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_special_name_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_special_name_db* db_data);
+  inline const ::faith::cs2dp_proto_role_special_name_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_special_name_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_special_name_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_special_name_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_special_name)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_special_name)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -8320,7 +8320,7 @@ class cs2dp_proto_save_role_special_name : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_special_name_db* db_data_;
+  ::faith::cs2dp_proto_role_special_name_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -8400,7 +8400,7 @@ class cs2dp_proto_role_service_goal_row : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_service_goal_row)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_service_goal_row)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -8480,26 +8480,26 @@ class cs2dp_proto_role_service_goal_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.cs2dp_proto.role_service_goal_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_service_goal_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::cs2dp_proto_role_service_goal_row& row_data(int index) const;
-  inline ::hld::cs2dp_proto_role_service_goal_row* mutable_row_data(int index);
-  inline ::hld::cs2dp_proto_role_service_goal_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_service_goal_row >&
+  inline const ::faith::cs2dp_proto_role_service_goal_row& row_data(int index) const;
+  inline ::faith::cs2dp_proto_role_service_goal_row* mutable_row_data(int index);
+  inline ::faith::cs2dp_proto_role_service_goal_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_service_goal_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_service_goal_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_service_goal_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_service_goal_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_service_goal_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_service_goal_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_service_goal_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -8589,16 +8589,16 @@ class cs2dp_proto_save_role_service_goal : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_service_goal_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_service_goal_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_service_goal_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_service_goal_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_service_goal_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_service_goal_db* db_data);
+  inline const ::faith::cs2dp_proto_role_service_goal_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_service_goal_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_service_goal_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_service_goal_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_service_goal)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_service_goal)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -8614,7 +8614,7 @@ class cs2dp_proto_save_role_service_goal : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_service_goal_db* db_data_;
+  ::faith::cs2dp_proto_role_service_goal_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -8694,7 +8694,7 @@ class cs2dp_proto_role_map_record_row : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_map_record_row)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_map_record_row)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -8774,26 +8774,26 @@ class cs2dp_proto_role_map_record_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.cs2dp_proto.role_map_record_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_map_record_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::cs2dp_proto_role_map_record_row& row_data(int index) const;
-  inline ::hld::cs2dp_proto_role_map_record_row* mutable_row_data(int index);
-  inline ::hld::cs2dp_proto_role_map_record_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_map_record_row >&
+  inline const ::faith::cs2dp_proto_role_map_record_row& row_data(int index) const;
+  inline ::faith::cs2dp_proto_role_map_record_row* mutable_row_data(int index);
+  inline ::faith::cs2dp_proto_role_map_record_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_map_record_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_map_record_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_map_record_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_map_record_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_map_record_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_map_record_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_map_record_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -8883,16 +8883,16 @@ class cs2dp_proto_save_role_map_record : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_map_record_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_map_record_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_map_record_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_map_record_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_map_record_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_map_record_db* db_data);
+  inline const ::faith::cs2dp_proto_role_map_record_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_map_record_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_map_record_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_map_record_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_map_record)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_map_record)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -8908,7 +8908,7 @@ class cs2dp_proto_save_role_map_record : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_map_record_db* db_data_;
+  ::faith::cs2dp_proto_role_map_record_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -8988,7 +8988,7 @@ class cs2dp_proto_role_goods_row : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_goods_row)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_goods_row)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -9068,26 +9068,26 @@ class cs2dp_proto_role_goods_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.cs2dp_proto.role_goods_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_goods_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::cs2dp_proto_role_goods_row& row_data(int index) const;
-  inline ::hld::cs2dp_proto_role_goods_row* mutable_row_data(int index);
-  inline ::hld::cs2dp_proto_role_goods_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_goods_row >&
+  inline const ::faith::cs2dp_proto_role_goods_row& row_data(int index) const;
+  inline ::faith::cs2dp_proto_role_goods_row* mutable_row_data(int index);
+  inline ::faith::cs2dp_proto_role_goods_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_goods_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_goods_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_goods_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_goods_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_goods_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_goods_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_goods_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -9177,16 +9177,16 @@ class cs2dp_proto_save_role_goods : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_goods_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_goods_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_goods_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_goods_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_goods_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_goods_db* db_data);
+  inline const ::faith::cs2dp_proto_role_goods_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_goods_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_goods_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_goods_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_goods)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_goods)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -9202,7 +9202,7 @@ class cs2dp_proto_save_role_goods : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_goods_db* db_data_;
+  ::faith::cs2dp_proto_role_goods_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -9282,7 +9282,7 @@ class cs2dp_proto_role_mission_row : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_mission_row)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_mission_row)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -9362,26 +9362,26 @@ class cs2dp_proto_role_mission_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.cs2dp_proto.role_mission_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_mission_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::cs2dp_proto_role_mission_row& row_data(int index) const;
-  inline ::hld::cs2dp_proto_role_mission_row* mutable_row_data(int index);
-  inline ::hld::cs2dp_proto_role_mission_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_mission_row >&
+  inline const ::faith::cs2dp_proto_role_mission_row& row_data(int index) const;
+  inline ::faith::cs2dp_proto_role_mission_row* mutable_row_data(int index);
+  inline ::faith::cs2dp_proto_role_mission_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_mission_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_mission_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_mission_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_mission_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_mission_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_mission_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_mission_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -9471,16 +9471,16 @@ class cs2dp_proto_save_role_mission : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_mission_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_mission_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_mission_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_mission_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_mission_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_mission_db* db_data);
+  inline const ::faith::cs2dp_proto_role_mission_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_mission_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_mission_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_mission_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_mission)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_mission)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -9496,7 +9496,7 @@ class cs2dp_proto_save_role_mission : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_mission_db* db_data_;
+  ::faith::cs2dp_proto_role_mission_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -9576,7 +9576,7 @@ class cs2dp_proto_role_belief_row : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_belief_row)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_belief_row)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -9656,26 +9656,26 @@ class cs2dp_proto_role_belief_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.cs2dp_proto.role_belief_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_belief_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::cs2dp_proto_role_belief_row& row_data(int index) const;
-  inline ::hld::cs2dp_proto_role_belief_row* mutable_row_data(int index);
-  inline ::hld::cs2dp_proto_role_belief_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_belief_row >&
+  inline const ::faith::cs2dp_proto_role_belief_row& row_data(int index) const;
+  inline ::faith::cs2dp_proto_role_belief_row* mutable_row_data(int index);
+  inline ::faith::cs2dp_proto_role_belief_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_belief_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_belief_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_belief_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_belief_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_belief_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_belief_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_belief_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -9765,16 +9765,16 @@ class cs2dp_proto_save_role_belief : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_belief_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_belief_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_belief_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_belief_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_belief_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_belief_db* db_data);
+  inline const ::faith::cs2dp_proto_role_belief_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_belief_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_belief_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_belief_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_belief)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_belief)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -9790,7 +9790,7 @@ class cs2dp_proto_save_role_belief : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_belief_db* db_data_;
+  ::faith::cs2dp_proto_role_belief_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -9894,7 +9894,7 @@ class cs2dp_proto_role_money_db : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_cost_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_money_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_money_db)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -9990,16 +9990,16 @@ class cs2dp_proto_save_role_money : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_money_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_money_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_money_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_money_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_money_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_money_db* db_data);
+  inline const ::faith::cs2dp_proto_role_money_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_money_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_money_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_money_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_money)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_money)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -10015,7 +10015,7 @@ class cs2dp_proto_save_role_money : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_money_db* db_data_;
+  ::faith::cs2dp_proto_role_money_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -10095,7 +10095,7 @@ class cs2dp_proto_role_time_db : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_time_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_time_db)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -10189,16 +10189,16 @@ class cs2dp_proto_save_role_time : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_time_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_time_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_time_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_time_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_time_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_time_db* db_data);
+  inline const ::faith::cs2dp_proto_role_time_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_time_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_time_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_time_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_time)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_time)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -10214,7 +10214,7 @@ class cs2dp_proto_save_role_time : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_time_db* db_data_;
+  ::faith::cs2dp_proto_role_time_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -10368,7 +10368,7 @@ class cs2dp_proto_role_info_db : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_info_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_info_db)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -10481,16 +10481,16 @@ class cs2dp_proto_save_role_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_info_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_info_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_info_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_info_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_info_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_info_db* db_data);
+  inline const ::faith::cs2dp_proto_role_info_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_info_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_info_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_info_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_info)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -10506,7 +10506,7 @@ class cs2dp_proto_save_role_info : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_info_db* db_data_;
+  ::faith::cs2dp_proto_role_info_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -10598,7 +10598,7 @@ class cs2dp_proto_role_att_db : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< float >*
       mutable_attack_att();
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_att_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_att_db)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -10693,16 +10693,16 @@ class cs2dp_proto_save_role_att : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_att_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_att_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_att_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_att_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_att_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_att_db* db_data);
+  inline const ::faith::cs2dp_proto_role_att_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_att_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_att_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_att_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_att)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_att)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -10718,7 +10718,7 @@ class cs2dp_proto_save_role_att : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_att_db* db_data_;
+  ::faith::cs2dp_proto_role_att_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -10800,7 +10800,7 @@ class cs2dp_proto_save_recycle_invited : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 target_guid() const;
   inline void set_target_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_recycle_invited)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_recycle_invited)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -10892,7 +10892,7 @@ class cs2dp_proto_role_guide_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 state() const;
   inline void set_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.role_guide_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.role_guide_db)
  private:
   inline void set_has_guide_trigger_id();
   inline void clear_has_guide_trigger_id();
@@ -10991,16 +10991,16 @@ class cs2dp_proto_save_role_guide : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_type_ex() const;
   inline void set_save_type_ex(::google::protobuf::int32 value);
 
-  // optional .hld.cs2dp_proto.role_guide_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_guide_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::cs2dp_proto_role_guide_db& db_data() const;
-  inline ::hld::cs2dp_proto_role_guide_db* mutable_db_data();
-  inline ::hld::cs2dp_proto_role_guide_db* release_db_data();
-  inline void set_allocated_db_data(::hld::cs2dp_proto_role_guide_db* db_data);
+  inline const ::faith::cs2dp_proto_role_guide_db& db_data() const;
+  inline ::faith::cs2dp_proto_role_guide_db* mutable_db_data();
+  inline ::faith::cs2dp_proto_role_guide_db* release_db_data();
+  inline void set_allocated_db_data(::faith::cs2dp_proto_role_guide_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_guide)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_guide)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -11016,7 +11016,7 @@ class cs2dp_proto_save_role_guide : public ::google::protobuf::Message {
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int32 unit_array_index_;
   ::google::protobuf::int32 save_type_ex_;
-  ::hld::cs2dp_proto_role_guide_db* db_data_;
+  ::faith::cs2dp_proto_role_guide_db* db_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -11117,7 +11117,7 @@ class cs2dp_proto_save_role_db_data : public ::google::protobuf::Message {
   inline ::std::string* release_db_data();
   inline void set_allocated_db_data(::std::string* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto.save_role_db_data)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto.save_role_db_data)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -11307,7 +11307,7 @@ class cs2dp_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.cs2dp_proto)
+  // @@protoc_insertion_point(class_scope:faith.cs2dp_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -11396,7 +11396,7 @@ inline void cs2dp_proto_save_role_starark::set_save_type_ex(::google::protobuf::
   save_type_ex_ = value;
 }
 
-// optional .hld.db_proto.role_starark_db db_data = 4;
+// optional .faith.db_proto.role_starark_db db_data = 4;
 inline bool cs2dp_proto_save_role_starark::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -11407,24 +11407,24 @@ inline void cs2dp_proto_save_role_starark::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_starark::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::db_proto_role_starark_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::db_proto_role_starark_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::db_proto_role_starark_db& cs2dp_proto_save_role_starark::db_data() const {
+inline const ::faith::db_proto_role_starark_db& cs2dp_proto_save_role_starark::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::db_proto_role_starark_db* cs2dp_proto_save_role_starark::mutable_db_data() {
+inline ::faith::db_proto_role_starark_db* cs2dp_proto_save_role_starark::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::db_proto_role_starark_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::db_proto_role_starark_db;
   return db_data_;
 }
-inline ::hld::db_proto_role_starark_db* cs2dp_proto_save_role_starark::release_db_data() {
+inline ::faith::db_proto_role_starark_db* cs2dp_proto_save_role_starark::release_db_data() {
   clear_has_db_data();
-  ::hld::db_proto_role_starark_db* temp = db_data_;
+  ::faith::db_proto_role_starark_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_starark::set_allocated_db_data(::hld::db_proto_role_starark_db* db_data) {
+inline void cs2dp_proto_save_role_starark::set_allocated_db_data(::faith::db_proto_role_starark_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -11618,7 +11618,7 @@ inline void cs2dp_proto_save_role_recycle::set_save_type_ex(::google::protobuf::
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_recycle_db db_data = 4;
+// optional .faith.cs2dp_proto.role_recycle_db db_data = 4;
 inline bool cs2dp_proto_save_role_recycle::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -11629,24 +11629,24 @@ inline void cs2dp_proto_save_role_recycle::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_recycle::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_recycle_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_recycle_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_recycle_db& cs2dp_proto_save_role_recycle::db_data() const {
+inline const ::faith::cs2dp_proto_role_recycle_db& cs2dp_proto_save_role_recycle::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_recycle_db* cs2dp_proto_save_role_recycle::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_recycle_db* cs2dp_proto_save_role_recycle::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_recycle_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_recycle_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_recycle_db* cs2dp_proto_save_role_recycle::release_db_data() {
+inline ::faith::cs2dp_proto_role_recycle_db* cs2dp_proto_save_role_recycle::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_recycle_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_recycle_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_recycle::set_allocated_db_data(::hld::cs2dp_proto_role_recycle_db* db_data) {
+inline void cs2dp_proto_save_role_recycle::set_allocated_db_data(::faith::cs2dp_proto_role_recycle_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -11711,27 +11711,27 @@ inline void cs2dp_proto_role_recycle_task_db::set_row_count(::google::protobuf::
   row_count_ = value;
 }
 
-// repeated .hld.cs2dp_proto.role_recycle_task_row row_data = 2;
+// repeated .faith.cs2dp_proto.role_recycle_task_row row_data = 2;
 inline int cs2dp_proto_role_recycle_task_db::row_data_size() const {
   return row_data_.size();
 }
 inline void cs2dp_proto_role_recycle_task_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::cs2dp_proto_role_recycle_task_row& cs2dp_proto_role_recycle_task_db::row_data(int index) const {
+inline const ::faith::cs2dp_proto_role_recycle_task_row& cs2dp_proto_role_recycle_task_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::cs2dp_proto_role_recycle_task_row* cs2dp_proto_role_recycle_task_db::mutable_row_data(int index) {
+inline ::faith::cs2dp_proto_role_recycle_task_row* cs2dp_proto_role_recycle_task_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::cs2dp_proto_role_recycle_task_row* cs2dp_proto_role_recycle_task_db::add_row_data() {
+inline ::faith::cs2dp_proto_role_recycle_task_row* cs2dp_proto_role_recycle_task_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_recycle_task_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_recycle_task_row >&
 cs2dp_proto_role_recycle_task_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_recycle_task_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_recycle_task_row >*
 cs2dp_proto_role_recycle_task_db::mutable_row_data() {
   return &row_data_;
 }
@@ -11806,7 +11806,7 @@ inline void cs2dp_proto_save_role_recycle_task::set_save_type_ex(::google::proto
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_recycle_task_db db_data = 4;
+// optional .faith.cs2dp_proto.role_recycle_task_db db_data = 4;
 inline bool cs2dp_proto_save_role_recycle_task::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -11817,24 +11817,24 @@ inline void cs2dp_proto_save_role_recycle_task::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_recycle_task::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_recycle_task_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_recycle_task_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_recycle_task_db& cs2dp_proto_save_role_recycle_task::db_data() const {
+inline const ::faith::cs2dp_proto_role_recycle_task_db& cs2dp_proto_save_role_recycle_task::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_recycle_task_db* cs2dp_proto_save_role_recycle_task::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_recycle_task_db* cs2dp_proto_save_role_recycle_task::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_recycle_task_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_recycle_task_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_recycle_task_db* cs2dp_proto_save_role_recycle_task::release_db_data() {
+inline ::faith::cs2dp_proto_role_recycle_task_db* cs2dp_proto_save_role_recycle_task::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_recycle_task_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_recycle_task_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_recycle_task::set_allocated_db_data(::hld::cs2dp_proto_role_recycle_task_db* db_data) {
+inline void cs2dp_proto_save_role_recycle_task::set_allocated_db_data(::faith::cs2dp_proto_role_recycle_task_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -11943,7 +11943,7 @@ inline void cs2dp_proto_save_role_dragontrip::set_save_type_ex(::google::protobu
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_dragontrip_db db_data = 4;
+// optional .faith.cs2dp_proto.role_dragontrip_db db_data = 4;
 inline bool cs2dp_proto_save_role_dragontrip::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -11954,24 +11954,24 @@ inline void cs2dp_proto_save_role_dragontrip::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_dragontrip::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_dragontrip_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_dragontrip_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_dragontrip_db& cs2dp_proto_save_role_dragontrip::db_data() const {
+inline const ::faith::cs2dp_proto_role_dragontrip_db& cs2dp_proto_save_role_dragontrip::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_dragontrip_db* cs2dp_proto_save_role_dragontrip::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_dragontrip_db* cs2dp_proto_save_role_dragontrip::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_dragontrip_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_dragontrip_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_dragontrip_db* cs2dp_proto_save_role_dragontrip::release_db_data() {
+inline ::faith::cs2dp_proto_role_dragontrip_db* cs2dp_proto_save_role_dragontrip::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_dragontrip_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_dragontrip_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_dragontrip::set_allocated_db_data(::hld::cs2dp_proto_role_dragontrip_db* db_data) {
+inline void cs2dp_proto_save_role_dragontrip::set_allocated_db_data(::faith::cs2dp_proto_role_dragontrip_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -12036,27 +12036,27 @@ inline void cs2dp_proto_role_phantom_db::set_row_count(::google::protobuf::int32
   row_count_ = value;
 }
 
-// repeated .hld.cs2dp_proto.role_phantom_row row_data = 2;
+// repeated .faith.cs2dp_proto.role_phantom_row row_data = 2;
 inline int cs2dp_proto_role_phantom_db::row_data_size() const {
   return row_data_.size();
 }
 inline void cs2dp_proto_role_phantom_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::cs2dp_proto_role_phantom_row& cs2dp_proto_role_phantom_db::row_data(int index) const {
+inline const ::faith::cs2dp_proto_role_phantom_row& cs2dp_proto_role_phantom_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::cs2dp_proto_role_phantom_row* cs2dp_proto_role_phantom_db::mutable_row_data(int index) {
+inline ::faith::cs2dp_proto_role_phantom_row* cs2dp_proto_role_phantom_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::cs2dp_proto_role_phantom_row* cs2dp_proto_role_phantom_db::add_row_data() {
+inline ::faith::cs2dp_proto_role_phantom_row* cs2dp_proto_role_phantom_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_phantom_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_phantom_row >&
 cs2dp_proto_role_phantom_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_phantom_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_phantom_row >*
 cs2dp_proto_role_phantom_db::mutable_row_data() {
   return &row_data_;
 }
@@ -12131,7 +12131,7 @@ inline void cs2dp_proto_save_role_phantom::set_save_type_ex(::google::protobuf::
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_phantom_db db_data = 4;
+// optional .faith.cs2dp_proto.role_phantom_db db_data = 4;
 inline bool cs2dp_proto_save_role_phantom::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -12142,24 +12142,24 @@ inline void cs2dp_proto_save_role_phantom::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_phantom::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_phantom_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_phantom_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_phantom_db& cs2dp_proto_save_role_phantom::db_data() const {
+inline const ::faith::cs2dp_proto_role_phantom_db& cs2dp_proto_save_role_phantom::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_phantom_db* cs2dp_proto_save_role_phantom::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_phantom_db* cs2dp_proto_save_role_phantom::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_phantom_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_phantom_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_phantom_db* cs2dp_proto_save_role_phantom::release_db_data() {
+inline ::faith::cs2dp_proto_role_phantom_db* cs2dp_proto_save_role_phantom::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_phantom_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_phantom_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_phantom::set_allocated_db_data(::hld::cs2dp_proto_role_phantom_db* db_data) {
+inline void cs2dp_proto_save_role_phantom::set_allocated_db_data(::faith::cs2dp_proto_role_phantom_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -12291,27 +12291,27 @@ inline void cs2dp_proto_role_chat_record_db::set_row_count(::google::protobuf::i
   row_count_ = value;
 }
 
-// repeated .hld.cs2dp_proto.role_chat_record_row row_data = 2;
+// repeated .faith.cs2dp_proto.role_chat_record_row row_data = 2;
 inline int cs2dp_proto_role_chat_record_db::row_data_size() const {
   return row_data_.size();
 }
 inline void cs2dp_proto_role_chat_record_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::cs2dp_proto_role_chat_record_row& cs2dp_proto_role_chat_record_db::row_data(int index) const {
+inline const ::faith::cs2dp_proto_role_chat_record_row& cs2dp_proto_role_chat_record_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::cs2dp_proto_role_chat_record_row* cs2dp_proto_role_chat_record_db::mutable_row_data(int index) {
+inline ::faith::cs2dp_proto_role_chat_record_row* cs2dp_proto_role_chat_record_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::cs2dp_proto_role_chat_record_row* cs2dp_proto_role_chat_record_db::add_row_data() {
+inline ::faith::cs2dp_proto_role_chat_record_row* cs2dp_proto_role_chat_record_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_chat_record_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_chat_record_row >&
 cs2dp_proto_role_chat_record_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_chat_record_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_chat_record_row >*
 cs2dp_proto_role_chat_record_db::mutable_row_data() {
   return &row_data_;
 }
@@ -12386,7 +12386,7 @@ inline void cs2dp_proto_save_role_chat_record::set_save_type_ex(::google::protob
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_chat_record_db db_data = 4;
+// optional .faith.cs2dp_proto.role_chat_record_db db_data = 4;
 inline bool cs2dp_proto_save_role_chat_record::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -12397,24 +12397,24 @@ inline void cs2dp_proto_save_role_chat_record::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_chat_record::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_chat_record_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_chat_record_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_chat_record_db& cs2dp_proto_save_role_chat_record::db_data() const {
+inline const ::faith::cs2dp_proto_role_chat_record_db& cs2dp_proto_save_role_chat_record::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_chat_record_db* cs2dp_proto_save_role_chat_record::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_chat_record_db* cs2dp_proto_save_role_chat_record::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_chat_record_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_chat_record_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_chat_record_db* cs2dp_proto_save_role_chat_record::release_db_data() {
+inline ::faith::cs2dp_proto_role_chat_record_db* cs2dp_proto_save_role_chat_record::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_chat_record_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_chat_record_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_chat_record::set_allocated_db_data(::hld::cs2dp_proto_role_chat_record_db* db_data) {
+inline void cs2dp_proto_save_role_chat_record::set_allocated_db_data(::faith::cs2dp_proto_role_chat_record_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -12542,27 +12542,27 @@ inline void cs2dp_proto_role_oracle_trial_db::set_row_count(::google::protobuf::
   row_count_ = value;
 }
 
-// repeated .hld.cs2dp_proto.role_oracle_trial_row row_data = 2;
+// repeated .faith.cs2dp_proto.role_oracle_trial_row row_data = 2;
 inline int cs2dp_proto_role_oracle_trial_db::row_data_size() const {
   return row_data_.size();
 }
 inline void cs2dp_proto_role_oracle_trial_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::cs2dp_proto_role_oracle_trial_row& cs2dp_proto_role_oracle_trial_db::row_data(int index) const {
+inline const ::faith::cs2dp_proto_role_oracle_trial_row& cs2dp_proto_role_oracle_trial_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::cs2dp_proto_role_oracle_trial_row* cs2dp_proto_role_oracle_trial_db::mutable_row_data(int index) {
+inline ::faith::cs2dp_proto_role_oracle_trial_row* cs2dp_proto_role_oracle_trial_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::cs2dp_proto_role_oracle_trial_row* cs2dp_proto_role_oracle_trial_db::add_row_data() {
+inline ::faith::cs2dp_proto_role_oracle_trial_row* cs2dp_proto_role_oracle_trial_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_oracle_trial_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_oracle_trial_row >&
 cs2dp_proto_role_oracle_trial_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_oracle_trial_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_oracle_trial_row >*
 cs2dp_proto_role_oracle_trial_db::mutable_row_data() {
   return &row_data_;
 }
@@ -12637,7 +12637,7 @@ inline void cs2dp_proto_save_role_oracle_trial::set_save_type_ex(::google::proto
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_oracle_trial_db db_data = 4;
+// optional .faith.cs2dp_proto.role_oracle_trial_db db_data = 4;
 inline bool cs2dp_proto_save_role_oracle_trial::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -12648,24 +12648,24 @@ inline void cs2dp_proto_save_role_oracle_trial::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_oracle_trial::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_oracle_trial_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_oracle_trial_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_oracle_trial_db& cs2dp_proto_save_role_oracle_trial::db_data() const {
+inline const ::faith::cs2dp_proto_role_oracle_trial_db& cs2dp_proto_save_role_oracle_trial::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_oracle_trial_db* cs2dp_proto_save_role_oracle_trial::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_oracle_trial_db* cs2dp_proto_save_role_oracle_trial::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_oracle_trial_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_oracle_trial_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_oracle_trial_db* cs2dp_proto_save_role_oracle_trial::release_db_data() {
+inline ::faith::cs2dp_proto_role_oracle_trial_db* cs2dp_proto_save_role_oracle_trial::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_oracle_trial_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_oracle_trial_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_oracle_trial::set_allocated_db_data(::hld::cs2dp_proto_role_oracle_trial_db* db_data) {
+inline void cs2dp_proto_save_role_oracle_trial::set_allocated_db_data(::faith::cs2dp_proto_role_oracle_trial_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -13256,7 +13256,7 @@ inline void cs2dp_proto_save_role_person_information::set_save_type_ex(::google:
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_person_information_db db_data = 4;
+// optional .faith.cs2dp_proto.role_person_information_db db_data = 4;
 inline bool cs2dp_proto_save_role_person_information::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -13267,24 +13267,24 @@ inline void cs2dp_proto_save_role_person_information::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_person_information::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_person_information_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_person_information_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_person_information_db& cs2dp_proto_save_role_person_information::db_data() const {
+inline const ::faith::cs2dp_proto_role_person_information_db& cs2dp_proto_save_role_person_information::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_person_information_db* cs2dp_proto_save_role_person_information::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_person_information_db* cs2dp_proto_save_role_person_information::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_person_information_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_person_information_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_person_information_db* cs2dp_proto_save_role_person_information::release_db_data() {
+inline ::faith::cs2dp_proto_role_person_information_db* cs2dp_proto_save_role_person_information::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_person_information_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_person_information_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_person_information::set_allocated_db_data(::hld::cs2dp_proto_role_person_information_db* db_data) {
+inline void cs2dp_proto_save_role_person_information::set_allocated_db_data(::faith::cs2dp_proto_role_person_information_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -13657,7 +13657,7 @@ inline void cs2dp_proto_save_role_competition::set_save_type_ex(::google::protob
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_competition_db db_data = 4;
+// optional .faith.cs2dp_proto.role_competition_db db_data = 4;
 inline bool cs2dp_proto_save_role_competition::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -13668,24 +13668,24 @@ inline void cs2dp_proto_save_role_competition::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_competition::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_competition_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_competition_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_competition_db& cs2dp_proto_save_role_competition::db_data() const {
+inline const ::faith::cs2dp_proto_role_competition_db& cs2dp_proto_save_role_competition::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_competition_db* cs2dp_proto_save_role_competition::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_competition_db* cs2dp_proto_save_role_competition::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_competition_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_competition_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_competition_db* cs2dp_proto_save_role_competition::release_db_data() {
+inline ::faith::cs2dp_proto_role_competition_db* cs2dp_proto_save_role_competition::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_competition_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_competition_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_competition::set_allocated_db_data(::hld::cs2dp_proto_role_competition_db* db_data) {
+inline void cs2dp_proto_save_role_competition::set_allocated_db_data(::faith::cs2dp_proto_role_competition_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -13750,27 +13750,27 @@ inline void cs2dp_proto_role_legion_skill_db::set_row_count(::google::protobuf::
   row_count_ = value;
 }
 
-// repeated .hld.cs2dp_proto.role_legion_skill_row row_data = 2;
+// repeated .faith.cs2dp_proto.role_legion_skill_row row_data = 2;
 inline int cs2dp_proto_role_legion_skill_db::row_data_size() const {
   return row_data_.size();
 }
 inline void cs2dp_proto_role_legion_skill_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::cs2dp_proto_role_legion_skill_row& cs2dp_proto_role_legion_skill_db::row_data(int index) const {
+inline const ::faith::cs2dp_proto_role_legion_skill_row& cs2dp_proto_role_legion_skill_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::cs2dp_proto_role_legion_skill_row* cs2dp_proto_role_legion_skill_db::mutable_row_data(int index) {
+inline ::faith::cs2dp_proto_role_legion_skill_row* cs2dp_proto_role_legion_skill_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::cs2dp_proto_role_legion_skill_row* cs2dp_proto_role_legion_skill_db::add_row_data() {
+inline ::faith::cs2dp_proto_role_legion_skill_row* cs2dp_proto_role_legion_skill_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_legion_skill_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_legion_skill_row >&
 cs2dp_proto_role_legion_skill_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_legion_skill_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_legion_skill_row >*
 cs2dp_proto_role_legion_skill_db::mutable_row_data() {
   return &row_data_;
 }
@@ -13845,7 +13845,7 @@ inline void cs2dp_proto_save_role_legion_skill::set_save_type_ex(::google::proto
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_legion_skill_db db_data = 4;
+// optional .faith.cs2dp_proto.role_legion_skill_db db_data = 4;
 inline bool cs2dp_proto_save_role_legion_skill::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -13856,24 +13856,24 @@ inline void cs2dp_proto_save_role_legion_skill::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_legion_skill::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_legion_skill_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_legion_skill_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_legion_skill_db& cs2dp_proto_save_role_legion_skill::db_data() const {
+inline const ::faith::cs2dp_proto_role_legion_skill_db& cs2dp_proto_save_role_legion_skill::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_legion_skill_db* cs2dp_proto_save_role_legion_skill::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_legion_skill_db* cs2dp_proto_save_role_legion_skill::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_legion_skill_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_legion_skill_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_legion_skill_db* cs2dp_proto_save_role_legion_skill::release_db_data() {
+inline ::faith::cs2dp_proto_role_legion_skill_db* cs2dp_proto_save_role_legion_skill::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_legion_skill_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_legion_skill_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_legion_skill::set_allocated_db_data(::hld::cs2dp_proto_role_legion_skill_db* db_data) {
+inline void cs2dp_proto_save_role_legion_skill::set_allocated_db_data(::faith::cs2dp_proto_role_legion_skill_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -14023,7 +14023,7 @@ inline void cs2dp_proto_save_role_skytreasure::set_save_type_ex(::google::protob
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_skytreasure_db db_data = 4;
+// optional .faith.cs2dp_proto.role_skytreasure_db db_data = 4;
 inline bool cs2dp_proto_save_role_skytreasure::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -14034,24 +14034,24 @@ inline void cs2dp_proto_save_role_skytreasure::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_skytreasure::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_skytreasure_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_skytreasure_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_skytreasure_db& cs2dp_proto_save_role_skytreasure::db_data() const {
+inline const ::faith::cs2dp_proto_role_skytreasure_db& cs2dp_proto_save_role_skytreasure::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_skytreasure_db* cs2dp_proto_save_role_skytreasure::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_skytreasure_db* cs2dp_proto_save_role_skytreasure::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_skytreasure_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_skytreasure_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_skytreasure_db* cs2dp_proto_save_role_skytreasure::release_db_data() {
+inline ::faith::cs2dp_proto_role_skytreasure_db* cs2dp_proto_save_role_skytreasure::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_skytreasure_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_skytreasure_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_skytreasure::set_allocated_db_data(::hld::cs2dp_proto_role_skytreasure_db* db_data) {
+inline void cs2dp_proto_save_role_skytreasure::set_allocated_db_data(::faith::cs2dp_proto_role_skytreasure_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -14160,7 +14160,7 @@ inline void cs2dp_proto_save_role_harry_record::set_save_type_ex(::google::proto
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_harry_record_db db_data = 4;
+// optional .faith.cs2dp_proto.role_harry_record_db db_data = 4;
 inline bool cs2dp_proto_save_role_harry_record::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -14171,24 +14171,24 @@ inline void cs2dp_proto_save_role_harry_record::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_harry_record::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_harry_record_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_harry_record_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_harry_record_db& cs2dp_proto_save_role_harry_record::db_data() const {
+inline const ::faith::cs2dp_proto_role_harry_record_db& cs2dp_proto_save_role_harry_record::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_harry_record_db* cs2dp_proto_save_role_harry_record::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_harry_record_db* cs2dp_proto_save_role_harry_record::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_harry_record_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_harry_record_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_harry_record_db* cs2dp_proto_save_role_harry_record::release_db_data() {
+inline ::faith::cs2dp_proto_role_harry_record_db* cs2dp_proto_save_role_harry_record::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_harry_record_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_harry_record_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_harry_record::set_allocated_db_data(::hld::cs2dp_proto_role_harry_record_db* db_data) {
+inline void cs2dp_proto_save_role_harry_record::set_allocated_db_data(::faith::cs2dp_proto_role_harry_record_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -14253,27 +14253,27 @@ inline void cs2dp_proto_role_seven_day_goal_db::set_row_count(::google::protobuf
   row_count_ = value;
 }
 
-// repeated .hld.cs2dp_proto.role_seven_day_goal_row row_data = 2;
+// repeated .faith.cs2dp_proto.role_seven_day_goal_row row_data = 2;
 inline int cs2dp_proto_role_seven_day_goal_db::row_data_size() const {
   return row_data_.size();
 }
 inline void cs2dp_proto_role_seven_day_goal_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::cs2dp_proto_role_seven_day_goal_row& cs2dp_proto_role_seven_day_goal_db::row_data(int index) const {
+inline const ::faith::cs2dp_proto_role_seven_day_goal_row& cs2dp_proto_role_seven_day_goal_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::cs2dp_proto_role_seven_day_goal_row* cs2dp_proto_role_seven_day_goal_db::mutable_row_data(int index) {
+inline ::faith::cs2dp_proto_role_seven_day_goal_row* cs2dp_proto_role_seven_day_goal_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::cs2dp_proto_role_seven_day_goal_row* cs2dp_proto_role_seven_day_goal_db::add_row_data() {
+inline ::faith::cs2dp_proto_role_seven_day_goal_row* cs2dp_proto_role_seven_day_goal_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_seven_day_goal_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_seven_day_goal_row >&
 cs2dp_proto_role_seven_day_goal_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_seven_day_goal_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_seven_day_goal_row >*
 cs2dp_proto_role_seven_day_goal_db::mutable_row_data() {
   return &row_data_;
 }
@@ -14348,7 +14348,7 @@ inline void cs2dp_proto_save_role_seven_day_goal::set_save_type_ex(::google::pro
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_seven_day_goal_db db_data = 4;
+// optional .faith.cs2dp_proto.role_seven_day_goal_db db_data = 4;
 inline bool cs2dp_proto_save_role_seven_day_goal::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -14359,24 +14359,24 @@ inline void cs2dp_proto_save_role_seven_day_goal::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_seven_day_goal::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_seven_day_goal_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_seven_day_goal_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_seven_day_goal_db& cs2dp_proto_save_role_seven_day_goal::db_data() const {
+inline const ::faith::cs2dp_proto_role_seven_day_goal_db& cs2dp_proto_save_role_seven_day_goal::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_seven_day_goal_db* cs2dp_proto_save_role_seven_day_goal::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_seven_day_goal_db* cs2dp_proto_save_role_seven_day_goal::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_seven_day_goal_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_seven_day_goal_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_seven_day_goal_db* cs2dp_proto_save_role_seven_day_goal::release_db_data() {
+inline ::faith::cs2dp_proto_role_seven_day_goal_db* cs2dp_proto_save_role_seven_day_goal::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_seven_day_goal_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_seven_day_goal_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_seven_day_goal::set_allocated_db_data(::hld::cs2dp_proto_role_seven_day_goal_db* db_data) {
+inline void cs2dp_proto_save_role_seven_day_goal::set_allocated_db_data(::faith::cs2dp_proto_role_seven_day_goal_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -14441,27 +14441,27 @@ inline void cs2dp_proto_role_passive_skill_db::set_row_count(::google::protobuf:
   row_count_ = value;
 }
 
-// repeated .hld.cs2dp_proto.role_passive_skill_row row_data = 2;
+// repeated .faith.cs2dp_proto.role_passive_skill_row row_data = 2;
 inline int cs2dp_proto_role_passive_skill_db::row_data_size() const {
   return row_data_.size();
 }
 inline void cs2dp_proto_role_passive_skill_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::cs2dp_proto_role_passive_skill_row& cs2dp_proto_role_passive_skill_db::row_data(int index) const {
+inline const ::faith::cs2dp_proto_role_passive_skill_row& cs2dp_proto_role_passive_skill_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::cs2dp_proto_role_passive_skill_row* cs2dp_proto_role_passive_skill_db::mutable_row_data(int index) {
+inline ::faith::cs2dp_proto_role_passive_skill_row* cs2dp_proto_role_passive_skill_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::cs2dp_proto_role_passive_skill_row* cs2dp_proto_role_passive_skill_db::add_row_data() {
+inline ::faith::cs2dp_proto_role_passive_skill_row* cs2dp_proto_role_passive_skill_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_passive_skill_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_passive_skill_row >&
 cs2dp_proto_role_passive_skill_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_passive_skill_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_passive_skill_row >*
 cs2dp_proto_role_passive_skill_db::mutable_row_data() {
   return &row_data_;
 }
@@ -14536,7 +14536,7 @@ inline void cs2dp_proto_save_role_passive_skill::set_save_type_ex(::google::prot
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_passive_skill_db db_data = 4;
+// optional .faith.cs2dp_proto.role_passive_skill_db db_data = 4;
 inline bool cs2dp_proto_save_role_passive_skill::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -14547,24 +14547,24 @@ inline void cs2dp_proto_save_role_passive_skill::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_passive_skill::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_passive_skill_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_passive_skill_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_passive_skill_db& cs2dp_proto_save_role_passive_skill::db_data() const {
+inline const ::faith::cs2dp_proto_role_passive_skill_db& cs2dp_proto_save_role_passive_skill::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_passive_skill_db* cs2dp_proto_save_role_passive_skill::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_passive_skill_db* cs2dp_proto_save_role_passive_skill::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_passive_skill_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_passive_skill_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_passive_skill_db* cs2dp_proto_save_role_passive_skill::release_db_data() {
+inline ::faith::cs2dp_proto_role_passive_skill_db* cs2dp_proto_save_role_passive_skill::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_passive_skill_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_passive_skill_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_passive_skill::set_allocated_db_data(::hld::cs2dp_proto_role_passive_skill_db* db_data) {
+inline void cs2dp_proto_save_role_passive_skill::set_allocated_db_data(::faith::cs2dp_proto_role_passive_skill_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -14673,7 +14673,7 @@ inline void cs2dp_proto_save_role_boss_island::set_save_type_ex(::google::protob
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_boss_island_db db_data = 4;
+// optional .faith.cs2dp_proto.role_boss_island_db db_data = 4;
 inline bool cs2dp_proto_save_role_boss_island::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -14684,24 +14684,24 @@ inline void cs2dp_proto_save_role_boss_island::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_boss_island::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_boss_island_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_boss_island_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_boss_island_db& cs2dp_proto_save_role_boss_island::db_data() const {
+inline const ::faith::cs2dp_proto_role_boss_island_db& cs2dp_proto_save_role_boss_island::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_boss_island_db* cs2dp_proto_save_role_boss_island::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_boss_island_db* cs2dp_proto_save_role_boss_island::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_boss_island_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_boss_island_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_boss_island_db* cs2dp_proto_save_role_boss_island::release_db_data() {
+inline ::faith::cs2dp_proto_role_boss_island_db* cs2dp_proto_save_role_boss_island::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_boss_island_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_boss_island_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_boss_island::set_allocated_db_data(::hld::cs2dp_proto_role_boss_island_db* db_data) {
+inline void cs2dp_proto_save_role_boss_island::set_allocated_db_data(::faith::cs2dp_proto_role_boss_island_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -14883,27 +14883,27 @@ inline void cs2dp_proto_role_time_limit_activity_db::set_row_count(::google::pro
   row_count_ = value;
 }
 
-// repeated .hld.cs2dp_proto.role_time_limit_activity_row row_data = 2;
+// repeated .faith.cs2dp_proto.role_time_limit_activity_row row_data = 2;
 inline int cs2dp_proto_role_time_limit_activity_db::row_data_size() const {
   return row_data_.size();
 }
 inline void cs2dp_proto_role_time_limit_activity_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::cs2dp_proto_role_time_limit_activity_row& cs2dp_proto_role_time_limit_activity_db::row_data(int index) const {
+inline const ::faith::cs2dp_proto_role_time_limit_activity_row& cs2dp_proto_role_time_limit_activity_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::cs2dp_proto_role_time_limit_activity_row* cs2dp_proto_role_time_limit_activity_db::mutable_row_data(int index) {
+inline ::faith::cs2dp_proto_role_time_limit_activity_row* cs2dp_proto_role_time_limit_activity_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::cs2dp_proto_role_time_limit_activity_row* cs2dp_proto_role_time_limit_activity_db::add_row_data() {
+inline ::faith::cs2dp_proto_role_time_limit_activity_row* cs2dp_proto_role_time_limit_activity_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_time_limit_activity_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_time_limit_activity_row >&
 cs2dp_proto_role_time_limit_activity_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_time_limit_activity_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_time_limit_activity_row >*
 cs2dp_proto_role_time_limit_activity_db::mutable_row_data() {
   return &row_data_;
 }
@@ -15000,7 +15000,7 @@ inline void cs2dp_proto_save_role_time_limit_activity::set_is_self_server(bool v
   is_self_server_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_time_limit_activity_db db_data = 5;
+// optional .faith.cs2dp_proto.role_time_limit_activity_db db_data = 5;
 inline bool cs2dp_proto_save_role_time_limit_activity::has_db_data() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
@@ -15011,24 +15011,24 @@ inline void cs2dp_proto_save_role_time_limit_activity::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000010u;
 }
 inline void cs2dp_proto_save_role_time_limit_activity::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_time_limit_activity_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_time_limit_activity_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_time_limit_activity_db& cs2dp_proto_save_role_time_limit_activity::db_data() const {
+inline const ::faith::cs2dp_proto_role_time_limit_activity_db& cs2dp_proto_save_role_time_limit_activity::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_time_limit_activity_db* cs2dp_proto_save_role_time_limit_activity::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_time_limit_activity_db* cs2dp_proto_save_role_time_limit_activity::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_time_limit_activity_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_time_limit_activity_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_time_limit_activity_db* cs2dp_proto_save_role_time_limit_activity::release_db_data() {
+inline ::faith::cs2dp_proto_role_time_limit_activity_db* cs2dp_proto_save_role_time_limit_activity::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_time_limit_activity_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_time_limit_activity_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_time_limit_activity::set_allocated_db_data(::hld::cs2dp_proto_role_time_limit_activity_db* db_data) {
+inline void cs2dp_proto_save_role_time_limit_activity::set_allocated_db_data(::faith::cs2dp_proto_role_time_limit_activity_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -15137,7 +15137,7 @@ inline void cs2dp_proto_save_role_gain_treasure::set_save_type_ex(::google::prot
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_gain_treasure_db db_data = 4;
+// optional .faith.cs2dp_proto.role_gain_treasure_db db_data = 4;
 inline bool cs2dp_proto_save_role_gain_treasure::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -15148,24 +15148,24 @@ inline void cs2dp_proto_save_role_gain_treasure::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_gain_treasure::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_gain_treasure_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_gain_treasure_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_gain_treasure_db& cs2dp_proto_save_role_gain_treasure::db_data() const {
+inline const ::faith::cs2dp_proto_role_gain_treasure_db& cs2dp_proto_save_role_gain_treasure::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_gain_treasure_db* cs2dp_proto_save_role_gain_treasure::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_gain_treasure_db* cs2dp_proto_save_role_gain_treasure::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_gain_treasure_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_gain_treasure_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_gain_treasure_db* cs2dp_proto_save_role_gain_treasure::release_db_data() {
+inline ::faith::cs2dp_proto_role_gain_treasure_db* cs2dp_proto_save_role_gain_treasure::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_gain_treasure_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_gain_treasure_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_gain_treasure::set_allocated_db_data(::hld::cs2dp_proto_role_gain_treasure_db* db_data) {
+inline void cs2dp_proto_save_role_gain_treasure::set_allocated_db_data(::faith::cs2dp_proto_role_gain_treasure_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -15274,7 +15274,7 @@ inline void cs2dp_proto_save_role_logic::set_save_type_ex(::google::protobuf::in
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_logic_db db_data = 4;
+// optional .faith.cs2dp_proto.role_logic_db db_data = 4;
 inline bool cs2dp_proto_save_role_logic::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -15285,24 +15285,24 @@ inline void cs2dp_proto_save_role_logic::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_logic::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_logic_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_logic_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_logic_db& cs2dp_proto_save_role_logic::db_data() const {
+inline const ::faith::cs2dp_proto_role_logic_db& cs2dp_proto_save_role_logic::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_logic_db* cs2dp_proto_save_role_logic::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_logic_db* cs2dp_proto_save_role_logic::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_logic_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_logic_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_logic_db* cs2dp_proto_save_role_logic::release_db_data() {
+inline ::faith::cs2dp_proto_role_logic_db* cs2dp_proto_save_role_logic::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_logic_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_logic_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_logic::set_allocated_db_data(::hld::cs2dp_proto_role_logic_db* db_data) {
+inline void cs2dp_proto_save_role_logic::set_allocated_db_data(::faith::cs2dp_proto_role_logic_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -15386,27 +15386,27 @@ inline void cs2dp_proto_role_service_rank_reward_db::set_row_count(::google::pro
   row_count_ = value;
 }
 
-// repeated .hld.cs2dp_proto.role_service_rank_reward_row row_data = 2;
+// repeated .faith.cs2dp_proto.role_service_rank_reward_row row_data = 2;
 inline int cs2dp_proto_role_service_rank_reward_db::row_data_size() const {
   return row_data_.size();
 }
 inline void cs2dp_proto_role_service_rank_reward_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::cs2dp_proto_role_service_rank_reward_row& cs2dp_proto_role_service_rank_reward_db::row_data(int index) const {
+inline const ::faith::cs2dp_proto_role_service_rank_reward_row& cs2dp_proto_role_service_rank_reward_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::cs2dp_proto_role_service_rank_reward_row* cs2dp_proto_role_service_rank_reward_db::mutable_row_data(int index) {
+inline ::faith::cs2dp_proto_role_service_rank_reward_row* cs2dp_proto_role_service_rank_reward_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::cs2dp_proto_role_service_rank_reward_row* cs2dp_proto_role_service_rank_reward_db::add_row_data() {
+inline ::faith::cs2dp_proto_role_service_rank_reward_row* cs2dp_proto_role_service_rank_reward_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_service_rank_reward_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_service_rank_reward_row >&
 cs2dp_proto_role_service_rank_reward_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_service_rank_reward_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_service_rank_reward_row >*
 cs2dp_proto_role_service_rank_reward_db::mutable_row_data() {
   return &row_data_;
 }
@@ -15481,7 +15481,7 @@ inline void cs2dp_proto_save_role_service_rank_reward::set_save_type_ex(::google
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_service_rank_reward_db db_data = 4;
+// optional .faith.cs2dp_proto.role_service_rank_reward_db db_data = 4;
 inline bool cs2dp_proto_save_role_service_rank_reward::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -15492,24 +15492,24 @@ inline void cs2dp_proto_save_role_service_rank_reward::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_service_rank_reward::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_service_rank_reward_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_service_rank_reward_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_service_rank_reward_db& cs2dp_proto_save_role_service_rank_reward::db_data() const {
+inline const ::faith::cs2dp_proto_role_service_rank_reward_db& cs2dp_proto_save_role_service_rank_reward::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_service_rank_reward_db* cs2dp_proto_save_role_service_rank_reward::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_service_rank_reward_db* cs2dp_proto_save_role_service_rank_reward::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_service_rank_reward_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_service_rank_reward_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_service_rank_reward_db* cs2dp_proto_save_role_service_rank_reward::release_db_data() {
+inline ::faith::cs2dp_proto_role_service_rank_reward_db* cs2dp_proto_save_role_service_rank_reward::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_service_rank_reward_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_service_rank_reward_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_service_rank_reward::set_allocated_db_data(::hld::cs2dp_proto_role_service_rank_reward_db* db_data) {
+inline void cs2dp_proto_save_role_service_rank_reward::set_allocated_db_data(::faith::cs2dp_proto_role_service_rank_reward_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -15618,7 +15618,7 @@ inline void cs2dp_proto_save_role_highest_record::set_save_type_ex(::google::pro
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_highest_record_db db_data = 4;
+// optional .faith.cs2dp_proto.role_highest_record_db db_data = 4;
 inline bool cs2dp_proto_save_role_highest_record::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -15629,24 +15629,24 @@ inline void cs2dp_proto_save_role_highest_record::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_highest_record::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_highest_record_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_highest_record_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_highest_record_db& cs2dp_proto_save_role_highest_record::db_data() const {
+inline const ::faith::cs2dp_proto_role_highest_record_db& cs2dp_proto_save_role_highest_record::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_highest_record_db* cs2dp_proto_save_role_highest_record::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_highest_record_db* cs2dp_proto_save_role_highest_record::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_highest_record_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_highest_record_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_highest_record_db* cs2dp_proto_save_role_highest_record::release_db_data() {
+inline ::faith::cs2dp_proto_role_highest_record_db* cs2dp_proto_save_role_highest_record::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_highest_record_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_highest_record_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_highest_record::set_allocated_db_data(::hld::cs2dp_proto_role_highest_record_db* db_data) {
+inline void cs2dp_proto_save_role_highest_record::set_allocated_db_data(::faith::cs2dp_proto_role_highest_record_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -15755,7 +15755,7 @@ inline void cs2dp_proto_save_role_daily_must_do_count::set_save_type_ex(::google
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_daily_must_do_count_db db_data = 4;
+// optional .faith.cs2dp_proto.role_daily_must_do_count_db db_data = 4;
 inline bool cs2dp_proto_save_role_daily_must_do_count::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -15766,24 +15766,24 @@ inline void cs2dp_proto_save_role_daily_must_do_count::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_daily_must_do_count::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_daily_must_do_count_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_daily_must_do_count_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_daily_must_do_count_db& cs2dp_proto_save_role_daily_must_do_count::db_data() const {
+inline const ::faith::cs2dp_proto_role_daily_must_do_count_db& cs2dp_proto_save_role_daily_must_do_count::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_daily_must_do_count_db* cs2dp_proto_save_role_daily_must_do_count::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_daily_must_do_count_db* cs2dp_proto_save_role_daily_must_do_count::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_daily_must_do_count_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_daily_must_do_count_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_daily_must_do_count_db* cs2dp_proto_save_role_daily_must_do_count::release_db_data() {
+inline ::faith::cs2dp_proto_role_daily_must_do_count_db* cs2dp_proto_save_role_daily_must_do_count::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_daily_must_do_count_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_daily_must_do_count_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_daily_must_do_count::set_allocated_db_data(::hld::cs2dp_proto_role_daily_must_do_count_db* db_data) {
+inline void cs2dp_proto_save_role_daily_must_do_count::set_allocated_db_data(::faith::cs2dp_proto_role_daily_must_do_count_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -15848,27 +15848,27 @@ inline void cs2dp_proto_role_talent_db::set_row_count(::google::protobuf::int32 
   row_count_ = value;
 }
 
-// repeated .hld.cs2dp_proto.role_talent_row row_data = 2;
+// repeated .faith.cs2dp_proto.role_talent_row row_data = 2;
 inline int cs2dp_proto_role_talent_db::row_data_size() const {
   return row_data_.size();
 }
 inline void cs2dp_proto_role_talent_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::cs2dp_proto_role_talent_row& cs2dp_proto_role_talent_db::row_data(int index) const {
+inline const ::faith::cs2dp_proto_role_talent_row& cs2dp_proto_role_talent_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::cs2dp_proto_role_talent_row* cs2dp_proto_role_talent_db::mutable_row_data(int index) {
+inline ::faith::cs2dp_proto_role_talent_row* cs2dp_proto_role_talent_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::cs2dp_proto_role_talent_row* cs2dp_proto_role_talent_db::add_row_data() {
+inline ::faith::cs2dp_proto_role_talent_row* cs2dp_proto_role_talent_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_talent_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_talent_row >&
 cs2dp_proto_role_talent_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_talent_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_talent_row >*
 cs2dp_proto_role_talent_db::mutable_row_data() {
   return &row_data_;
 }
@@ -15943,7 +15943,7 @@ inline void cs2dp_proto_save_role_talent::set_save_type_ex(::google::protobuf::i
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_talent_db db_data = 4;
+// optional .faith.cs2dp_proto.role_talent_db db_data = 4;
 inline bool cs2dp_proto_save_role_talent::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -15954,24 +15954,24 @@ inline void cs2dp_proto_save_role_talent::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_talent::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_talent_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_talent_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_talent_db& cs2dp_proto_save_role_talent::db_data() const {
+inline const ::faith::cs2dp_proto_role_talent_db& cs2dp_proto_save_role_talent::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_talent_db* cs2dp_proto_save_role_talent::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_talent_db* cs2dp_proto_save_role_talent::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_talent_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_talent_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_talent_db* cs2dp_proto_save_role_talent::release_db_data() {
+inline ::faith::cs2dp_proto_role_talent_db* cs2dp_proto_save_role_talent::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_talent_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_talent_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_talent::set_allocated_db_data(::hld::cs2dp_proto_role_talent_db* db_data) {
+inline void cs2dp_proto_save_role_talent::set_allocated_db_data(::faith::cs2dp_proto_role_talent_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -16036,27 +16036,27 @@ inline void cs2dp_proto_role_title_db::set_row_count(::google::protobuf::int32 v
   row_count_ = value;
 }
 
-// repeated .hld.cs2dp_proto.role_title_row row_data = 2;
+// repeated .faith.cs2dp_proto.role_title_row row_data = 2;
 inline int cs2dp_proto_role_title_db::row_data_size() const {
   return row_data_.size();
 }
 inline void cs2dp_proto_role_title_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::cs2dp_proto_role_title_row& cs2dp_proto_role_title_db::row_data(int index) const {
+inline const ::faith::cs2dp_proto_role_title_row& cs2dp_proto_role_title_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::cs2dp_proto_role_title_row* cs2dp_proto_role_title_db::mutable_row_data(int index) {
+inline ::faith::cs2dp_proto_role_title_row* cs2dp_proto_role_title_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::cs2dp_proto_role_title_row* cs2dp_proto_role_title_db::add_row_data() {
+inline ::faith::cs2dp_proto_role_title_row* cs2dp_proto_role_title_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_title_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_title_row >&
 cs2dp_proto_role_title_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_title_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_title_row >*
 cs2dp_proto_role_title_db::mutable_row_data() {
   return &row_data_;
 }
@@ -16131,7 +16131,7 @@ inline void cs2dp_proto_save_role_title::set_save_type_ex(::google::protobuf::in
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_title_db db_data = 4;
+// optional .faith.cs2dp_proto.role_title_db db_data = 4;
 inline bool cs2dp_proto_save_role_title::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -16142,24 +16142,24 @@ inline void cs2dp_proto_save_role_title::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_title::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_title_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_title_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_title_db& cs2dp_proto_save_role_title::db_data() const {
+inline const ::faith::cs2dp_proto_role_title_db& cs2dp_proto_save_role_title::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_title_db* cs2dp_proto_save_role_title::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_title_db* cs2dp_proto_save_role_title::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_title_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_title_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_title_db* cs2dp_proto_save_role_title::release_db_data() {
+inline ::faith::cs2dp_proto_role_title_db* cs2dp_proto_save_role_title::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_title_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_title_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_title::set_allocated_db_data(::hld::cs2dp_proto_role_title_db* db_data) {
+inline void cs2dp_proto_save_role_title::set_allocated_db_data(::faith::cs2dp_proto_role_title_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -16268,7 +16268,7 @@ inline void cs2dp_proto_save_role_active_degree::set_save_type_ex(::google::prot
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_active_degree_db db_data = 4;
+// optional .faith.cs2dp_proto.role_active_degree_db db_data = 4;
 inline bool cs2dp_proto_save_role_active_degree::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -16279,24 +16279,24 @@ inline void cs2dp_proto_save_role_active_degree::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_active_degree::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_active_degree_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_active_degree_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_active_degree_db& cs2dp_proto_save_role_active_degree::db_data() const {
+inline const ::faith::cs2dp_proto_role_active_degree_db& cs2dp_proto_save_role_active_degree::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_active_degree_db* cs2dp_proto_save_role_active_degree::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_active_degree_db* cs2dp_proto_save_role_active_degree::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_active_degree_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_active_degree_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_active_degree_db* cs2dp_proto_save_role_active_degree::release_db_data() {
+inline ::faith::cs2dp_proto_role_active_degree_db* cs2dp_proto_save_role_active_degree::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_active_degree_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_active_degree_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_active_degree::set_allocated_db_data(::hld::cs2dp_proto_role_active_degree_db* db_data) {
+inline void cs2dp_proto_save_role_active_degree::set_allocated_db_data(::faith::cs2dp_proto_role_active_degree_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -16405,7 +16405,7 @@ inline void cs2dp_proto_save_role_welfare::set_save_type_ex(::google::protobuf::
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_welfare_db db_data = 4;
+// optional .faith.cs2dp_proto.role_welfare_db db_data = 4;
 inline bool cs2dp_proto_save_role_welfare::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -16416,24 +16416,24 @@ inline void cs2dp_proto_save_role_welfare::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_welfare::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_welfare_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_welfare_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_welfare_db& cs2dp_proto_save_role_welfare::db_data() const {
+inline const ::faith::cs2dp_proto_role_welfare_db& cs2dp_proto_save_role_welfare::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_welfare_db* cs2dp_proto_save_role_welfare::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_welfare_db* cs2dp_proto_save_role_welfare::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_welfare_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_welfare_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_welfare_db* cs2dp_proto_save_role_welfare::release_db_data() {
+inline ::faith::cs2dp_proto_role_welfare_db* cs2dp_proto_save_role_welfare::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_welfare_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_welfare_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_welfare::set_allocated_db_data(::hld::cs2dp_proto_role_welfare_db* db_data) {
+inline void cs2dp_proto_save_role_welfare::set_allocated_db_data(::faith::cs2dp_proto_role_welfare_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -16542,7 +16542,7 @@ inline void cs2dp_proto_save_role_convert::set_save_type_ex(::google::protobuf::
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_convert_db db_data = 4;
+// optional .faith.cs2dp_proto.role_convert_db db_data = 4;
 inline bool cs2dp_proto_save_role_convert::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -16553,24 +16553,24 @@ inline void cs2dp_proto_save_role_convert::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_convert::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_convert_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_convert_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_convert_db& cs2dp_proto_save_role_convert::db_data() const {
+inline const ::faith::cs2dp_proto_role_convert_db& cs2dp_proto_save_role_convert::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_convert_db* cs2dp_proto_save_role_convert::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_convert_db* cs2dp_proto_save_role_convert::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_convert_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_convert_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_convert_db* cs2dp_proto_save_role_convert::release_db_data() {
+inline ::faith::cs2dp_proto_role_convert_db* cs2dp_proto_save_role_convert::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_convert_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_convert_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_convert::set_allocated_db_data(::hld::cs2dp_proto_role_convert_db* db_data) {
+inline void cs2dp_proto_save_role_convert::set_allocated_db_data(::faith::cs2dp_proto_role_convert_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -16767,27 +16767,27 @@ inline void cs2dp_proto_role_yesterday_must_do_remain_db::set_row_count(::google
   row_count_ = value;
 }
 
-// repeated .hld.cs2dp_proto.role_yesterday_must_do_remain_row row_data = 2;
+// repeated .faith.cs2dp_proto.role_yesterday_must_do_remain_row row_data = 2;
 inline int cs2dp_proto_role_yesterday_must_do_remain_db::row_data_size() const {
   return row_data_.size();
 }
 inline void cs2dp_proto_role_yesterday_must_do_remain_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::cs2dp_proto_role_yesterday_must_do_remain_row& cs2dp_proto_role_yesterday_must_do_remain_db::row_data(int index) const {
+inline const ::faith::cs2dp_proto_role_yesterday_must_do_remain_row& cs2dp_proto_role_yesterday_must_do_remain_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::cs2dp_proto_role_yesterday_must_do_remain_row* cs2dp_proto_role_yesterday_must_do_remain_db::mutable_row_data(int index) {
+inline ::faith::cs2dp_proto_role_yesterday_must_do_remain_row* cs2dp_proto_role_yesterday_must_do_remain_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::cs2dp_proto_role_yesterday_must_do_remain_row* cs2dp_proto_role_yesterday_must_do_remain_db::add_row_data() {
+inline ::faith::cs2dp_proto_role_yesterday_must_do_remain_row* cs2dp_proto_role_yesterday_must_do_remain_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_yesterday_must_do_remain_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_yesterday_must_do_remain_row >&
 cs2dp_proto_role_yesterday_must_do_remain_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_yesterday_must_do_remain_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_yesterday_must_do_remain_row >*
 cs2dp_proto_role_yesterday_must_do_remain_db::mutable_row_data() {
   return &row_data_;
 }
@@ -16862,7 +16862,7 @@ inline void cs2dp_proto_save_role_yesterday_must_do_remain::set_save_type_ex(::g
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_yesterday_must_do_remain_db db_data = 4;
+// optional .faith.cs2dp_proto.role_yesterday_must_do_remain_db db_data = 4;
 inline bool cs2dp_proto_save_role_yesterday_must_do_remain::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -16873,24 +16873,24 @@ inline void cs2dp_proto_save_role_yesterday_must_do_remain::clear_has_db_data() 
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_yesterday_must_do_remain::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_yesterday_must_do_remain_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_yesterday_must_do_remain_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_yesterday_must_do_remain_db& cs2dp_proto_save_role_yesterday_must_do_remain::db_data() const {
+inline const ::faith::cs2dp_proto_role_yesterday_must_do_remain_db& cs2dp_proto_save_role_yesterday_must_do_remain::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_yesterday_must_do_remain_db* cs2dp_proto_save_role_yesterday_must_do_remain::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_yesterday_must_do_remain_db* cs2dp_proto_save_role_yesterday_must_do_remain::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_yesterday_must_do_remain_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_yesterday_must_do_remain_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_yesterday_must_do_remain_db* cs2dp_proto_save_role_yesterday_must_do_remain::release_db_data() {
+inline ::faith::cs2dp_proto_role_yesterday_must_do_remain_db* cs2dp_proto_save_role_yesterday_must_do_remain::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_yesterday_must_do_remain_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_yesterday_must_do_remain_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_yesterday_must_do_remain::set_allocated_db_data(::hld::cs2dp_proto_role_yesterday_must_do_remain_db* db_data) {
+inline void cs2dp_proto_save_role_yesterday_must_do_remain::set_allocated_db_data(::faith::cs2dp_proto_role_yesterday_must_do_remain_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -16974,27 +16974,27 @@ inline void cs2dp_proto_role_worship_db::set_row_count(::google::protobuf::int32
   row_count_ = value;
 }
 
-// repeated .hld.cs2dp_proto.role_worship_row row_data = 2;
+// repeated .faith.cs2dp_proto.role_worship_row row_data = 2;
 inline int cs2dp_proto_role_worship_db::row_data_size() const {
   return row_data_.size();
 }
 inline void cs2dp_proto_role_worship_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::cs2dp_proto_role_worship_row& cs2dp_proto_role_worship_db::row_data(int index) const {
+inline const ::faith::cs2dp_proto_role_worship_row& cs2dp_proto_role_worship_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::cs2dp_proto_role_worship_row* cs2dp_proto_role_worship_db::mutable_row_data(int index) {
+inline ::faith::cs2dp_proto_role_worship_row* cs2dp_proto_role_worship_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::cs2dp_proto_role_worship_row* cs2dp_proto_role_worship_db::add_row_data() {
+inline ::faith::cs2dp_proto_role_worship_row* cs2dp_proto_role_worship_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_worship_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_worship_row >&
 cs2dp_proto_role_worship_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_worship_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_worship_row >*
 cs2dp_proto_role_worship_db::mutable_row_data() {
   return &row_data_;
 }
@@ -17069,7 +17069,7 @@ inline void cs2dp_proto_save_role_worship::set_save_type_ex(::google::protobuf::
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_worship_db db_data = 4;
+// optional .faith.cs2dp_proto.role_worship_db db_data = 4;
 inline bool cs2dp_proto_save_role_worship::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -17080,24 +17080,24 @@ inline void cs2dp_proto_save_role_worship::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_worship::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_worship_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_worship_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_worship_db& cs2dp_proto_save_role_worship::db_data() const {
+inline const ::faith::cs2dp_proto_role_worship_db& cs2dp_proto_save_role_worship::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_worship_db* cs2dp_proto_save_role_worship::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_worship_db* cs2dp_proto_save_role_worship::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_worship_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_worship_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_worship_db* cs2dp_proto_save_role_worship::release_db_data() {
+inline ::faith::cs2dp_proto_role_worship_db* cs2dp_proto_save_role_worship::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_worship_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_worship_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_worship::set_allocated_db_data(::hld::cs2dp_proto_role_worship_db* db_data) {
+inline void cs2dp_proto_save_role_worship::set_allocated_db_data(::faith::cs2dp_proto_role_worship_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -17206,7 +17206,7 @@ inline void cs2dp_proto_save_role_tinder::set_save_type_ex(::google::protobuf::i
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_tinder_db db_data = 4;
+// optional .faith.cs2dp_proto.role_tinder_db db_data = 4;
 inline bool cs2dp_proto_save_role_tinder::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -17217,24 +17217,24 @@ inline void cs2dp_proto_save_role_tinder::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_tinder::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_tinder_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_tinder_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_tinder_db& cs2dp_proto_save_role_tinder::db_data() const {
+inline const ::faith::cs2dp_proto_role_tinder_db& cs2dp_proto_save_role_tinder::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_tinder_db* cs2dp_proto_save_role_tinder::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_tinder_db* cs2dp_proto_save_role_tinder::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_tinder_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_tinder_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_tinder_db* cs2dp_proto_save_role_tinder::release_db_data() {
+inline ::faith::cs2dp_proto_role_tinder_db* cs2dp_proto_save_role_tinder::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_tinder_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_tinder_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_tinder::set_allocated_db_data(::hld::cs2dp_proto_role_tinder_db* db_data) {
+inline void cs2dp_proto_save_role_tinder::set_allocated_db_data(::faith::cs2dp_proto_role_tinder_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -17324,27 +17324,27 @@ inline void cs2dp_proto_role_pokedex_db::set_row_count(::google::protobuf::int32
   row_count_ = value;
 }
 
-// repeated .hld.cs2dp_proto.role_pokedex_row row_data = 2;
+// repeated .faith.cs2dp_proto.role_pokedex_row row_data = 2;
 inline int cs2dp_proto_role_pokedex_db::row_data_size() const {
   return row_data_.size();
 }
 inline void cs2dp_proto_role_pokedex_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::cs2dp_proto_role_pokedex_row& cs2dp_proto_role_pokedex_db::row_data(int index) const {
+inline const ::faith::cs2dp_proto_role_pokedex_row& cs2dp_proto_role_pokedex_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::cs2dp_proto_role_pokedex_row* cs2dp_proto_role_pokedex_db::mutable_row_data(int index) {
+inline ::faith::cs2dp_proto_role_pokedex_row* cs2dp_proto_role_pokedex_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::cs2dp_proto_role_pokedex_row* cs2dp_proto_role_pokedex_db::add_row_data() {
+inline ::faith::cs2dp_proto_role_pokedex_row* cs2dp_proto_role_pokedex_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_pokedex_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_pokedex_row >&
 cs2dp_proto_role_pokedex_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_pokedex_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_pokedex_row >*
 cs2dp_proto_role_pokedex_db::mutable_row_data() {
   return &row_data_;
 }
@@ -17419,7 +17419,7 @@ inline void cs2dp_proto_save_role_pokedex::set_save_type_ex(::google::protobuf::
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_pokedex_db db_data = 4;
+// optional .faith.cs2dp_proto.role_pokedex_db db_data = 4;
 inline bool cs2dp_proto_save_role_pokedex::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -17430,24 +17430,24 @@ inline void cs2dp_proto_save_role_pokedex::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_pokedex::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_pokedex_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_pokedex_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_pokedex_db& cs2dp_proto_save_role_pokedex::db_data() const {
+inline const ::faith::cs2dp_proto_role_pokedex_db& cs2dp_proto_save_role_pokedex::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_pokedex_db* cs2dp_proto_save_role_pokedex::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_pokedex_db* cs2dp_proto_save_role_pokedex::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_pokedex_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_pokedex_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_pokedex_db* cs2dp_proto_save_role_pokedex::release_db_data() {
+inline ::faith::cs2dp_proto_role_pokedex_db* cs2dp_proto_save_role_pokedex::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_pokedex_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_pokedex_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_pokedex::set_allocated_db_data(::hld::cs2dp_proto_role_pokedex_db* db_data) {
+inline void cs2dp_proto_save_role_pokedex::set_allocated_db_data(::faith::cs2dp_proto_role_pokedex_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -17512,27 +17512,27 @@ inline void cs2dp_proto_role_achievement_db::set_row_count(::google::protobuf::i
   row_count_ = value;
 }
 
-// repeated .hld.cs2dp_proto.role_achievement_row row_data = 2;
+// repeated .faith.cs2dp_proto.role_achievement_row row_data = 2;
 inline int cs2dp_proto_role_achievement_db::row_data_size() const {
   return row_data_.size();
 }
 inline void cs2dp_proto_role_achievement_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::cs2dp_proto_role_achievement_row& cs2dp_proto_role_achievement_db::row_data(int index) const {
+inline const ::faith::cs2dp_proto_role_achievement_row& cs2dp_proto_role_achievement_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::cs2dp_proto_role_achievement_row* cs2dp_proto_role_achievement_db::mutable_row_data(int index) {
+inline ::faith::cs2dp_proto_role_achievement_row* cs2dp_proto_role_achievement_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::cs2dp_proto_role_achievement_row* cs2dp_proto_role_achievement_db::add_row_data() {
+inline ::faith::cs2dp_proto_role_achievement_row* cs2dp_proto_role_achievement_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_achievement_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_achievement_row >&
 cs2dp_proto_role_achievement_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_achievement_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_achievement_row >*
 cs2dp_proto_role_achievement_db::mutable_row_data() {
   return &row_data_;
 }
@@ -17607,7 +17607,7 @@ inline void cs2dp_proto_save_role_achievement::set_save_type_ex(::google::protob
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_achievement_db db_data = 4;
+// optional .faith.cs2dp_proto.role_achievement_db db_data = 4;
 inline bool cs2dp_proto_save_role_achievement::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -17618,24 +17618,24 @@ inline void cs2dp_proto_save_role_achievement::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_achievement::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_achievement_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_achievement_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_achievement_db& cs2dp_proto_save_role_achievement::db_data() const {
+inline const ::faith::cs2dp_proto_role_achievement_db& cs2dp_proto_save_role_achievement::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_achievement_db* cs2dp_proto_save_role_achievement::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_achievement_db* cs2dp_proto_save_role_achievement::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_achievement_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_achievement_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_achievement_db* cs2dp_proto_save_role_achievement::release_db_data() {
+inline ::faith::cs2dp_proto_role_achievement_db* cs2dp_proto_save_role_achievement::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_achievement_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_achievement_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_achievement::set_allocated_db_data(::hld::cs2dp_proto_role_achievement_db* db_data) {
+inline void cs2dp_proto_save_role_achievement::set_allocated_db_data(::faith::cs2dp_proto_role_achievement_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -17744,7 +17744,7 @@ inline void cs2dp_proto_save_role_special_name::set_save_type_ex(::google::proto
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_special_name_db db_data = 4;
+// optional .faith.cs2dp_proto.role_special_name_db db_data = 4;
 inline bool cs2dp_proto_save_role_special_name::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -17755,24 +17755,24 @@ inline void cs2dp_proto_save_role_special_name::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_special_name::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_special_name_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_special_name_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_special_name_db& cs2dp_proto_save_role_special_name::db_data() const {
+inline const ::faith::cs2dp_proto_role_special_name_db& cs2dp_proto_save_role_special_name::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_special_name_db* cs2dp_proto_save_role_special_name::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_special_name_db* cs2dp_proto_save_role_special_name::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_special_name_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_special_name_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_special_name_db* cs2dp_proto_save_role_special_name::release_db_data() {
+inline ::faith::cs2dp_proto_role_special_name_db* cs2dp_proto_save_role_special_name::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_special_name_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_special_name_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_special_name::set_allocated_db_data(::hld::cs2dp_proto_role_special_name_db* db_data) {
+inline void cs2dp_proto_save_role_special_name::set_allocated_db_data(::faith::cs2dp_proto_role_special_name_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -17837,27 +17837,27 @@ inline void cs2dp_proto_role_service_goal_db::set_row_count(::google::protobuf::
   row_count_ = value;
 }
 
-// repeated .hld.cs2dp_proto.role_service_goal_row row_data = 2;
+// repeated .faith.cs2dp_proto.role_service_goal_row row_data = 2;
 inline int cs2dp_proto_role_service_goal_db::row_data_size() const {
   return row_data_.size();
 }
 inline void cs2dp_proto_role_service_goal_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::cs2dp_proto_role_service_goal_row& cs2dp_proto_role_service_goal_db::row_data(int index) const {
+inline const ::faith::cs2dp_proto_role_service_goal_row& cs2dp_proto_role_service_goal_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::cs2dp_proto_role_service_goal_row* cs2dp_proto_role_service_goal_db::mutable_row_data(int index) {
+inline ::faith::cs2dp_proto_role_service_goal_row* cs2dp_proto_role_service_goal_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::cs2dp_proto_role_service_goal_row* cs2dp_proto_role_service_goal_db::add_row_data() {
+inline ::faith::cs2dp_proto_role_service_goal_row* cs2dp_proto_role_service_goal_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_service_goal_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_service_goal_row >&
 cs2dp_proto_role_service_goal_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_service_goal_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_service_goal_row >*
 cs2dp_proto_role_service_goal_db::mutable_row_data() {
   return &row_data_;
 }
@@ -17932,7 +17932,7 @@ inline void cs2dp_proto_save_role_service_goal::set_save_type_ex(::google::proto
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_service_goal_db db_data = 4;
+// optional .faith.cs2dp_proto.role_service_goal_db db_data = 4;
 inline bool cs2dp_proto_save_role_service_goal::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -17943,24 +17943,24 @@ inline void cs2dp_proto_save_role_service_goal::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_service_goal::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_service_goal_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_service_goal_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_service_goal_db& cs2dp_proto_save_role_service_goal::db_data() const {
+inline const ::faith::cs2dp_proto_role_service_goal_db& cs2dp_proto_save_role_service_goal::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_service_goal_db* cs2dp_proto_save_role_service_goal::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_service_goal_db* cs2dp_proto_save_role_service_goal::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_service_goal_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_service_goal_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_service_goal_db* cs2dp_proto_save_role_service_goal::release_db_data() {
+inline ::faith::cs2dp_proto_role_service_goal_db* cs2dp_proto_save_role_service_goal::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_service_goal_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_service_goal_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_service_goal::set_allocated_db_data(::hld::cs2dp_proto_role_service_goal_db* db_data) {
+inline void cs2dp_proto_save_role_service_goal::set_allocated_db_data(::faith::cs2dp_proto_role_service_goal_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -18025,27 +18025,27 @@ inline void cs2dp_proto_role_map_record_db::set_row_count(::google::protobuf::in
   row_count_ = value;
 }
 
-// repeated .hld.cs2dp_proto.role_map_record_row row_data = 2;
+// repeated .faith.cs2dp_proto.role_map_record_row row_data = 2;
 inline int cs2dp_proto_role_map_record_db::row_data_size() const {
   return row_data_.size();
 }
 inline void cs2dp_proto_role_map_record_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::cs2dp_proto_role_map_record_row& cs2dp_proto_role_map_record_db::row_data(int index) const {
+inline const ::faith::cs2dp_proto_role_map_record_row& cs2dp_proto_role_map_record_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::cs2dp_proto_role_map_record_row* cs2dp_proto_role_map_record_db::mutable_row_data(int index) {
+inline ::faith::cs2dp_proto_role_map_record_row* cs2dp_proto_role_map_record_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::cs2dp_proto_role_map_record_row* cs2dp_proto_role_map_record_db::add_row_data() {
+inline ::faith::cs2dp_proto_role_map_record_row* cs2dp_proto_role_map_record_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_map_record_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_map_record_row >&
 cs2dp_proto_role_map_record_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_map_record_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_map_record_row >*
 cs2dp_proto_role_map_record_db::mutable_row_data() {
   return &row_data_;
 }
@@ -18120,7 +18120,7 @@ inline void cs2dp_proto_save_role_map_record::set_save_type_ex(::google::protobu
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_map_record_db db_data = 4;
+// optional .faith.cs2dp_proto.role_map_record_db db_data = 4;
 inline bool cs2dp_proto_save_role_map_record::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -18131,24 +18131,24 @@ inline void cs2dp_proto_save_role_map_record::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_map_record::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_map_record_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_map_record_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_map_record_db& cs2dp_proto_save_role_map_record::db_data() const {
+inline const ::faith::cs2dp_proto_role_map_record_db& cs2dp_proto_save_role_map_record::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_map_record_db* cs2dp_proto_save_role_map_record::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_map_record_db* cs2dp_proto_save_role_map_record::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_map_record_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_map_record_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_map_record_db* cs2dp_proto_save_role_map_record::release_db_data() {
+inline ::faith::cs2dp_proto_role_map_record_db* cs2dp_proto_save_role_map_record::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_map_record_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_map_record_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_map_record::set_allocated_db_data(::hld::cs2dp_proto_role_map_record_db* db_data) {
+inline void cs2dp_proto_save_role_map_record::set_allocated_db_data(::faith::cs2dp_proto_role_map_record_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -18213,27 +18213,27 @@ inline void cs2dp_proto_role_goods_db::set_row_count(::google::protobuf::int32 v
   row_count_ = value;
 }
 
-// repeated .hld.cs2dp_proto.role_goods_row row_data = 2;
+// repeated .faith.cs2dp_proto.role_goods_row row_data = 2;
 inline int cs2dp_proto_role_goods_db::row_data_size() const {
   return row_data_.size();
 }
 inline void cs2dp_proto_role_goods_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::cs2dp_proto_role_goods_row& cs2dp_proto_role_goods_db::row_data(int index) const {
+inline const ::faith::cs2dp_proto_role_goods_row& cs2dp_proto_role_goods_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::cs2dp_proto_role_goods_row* cs2dp_proto_role_goods_db::mutable_row_data(int index) {
+inline ::faith::cs2dp_proto_role_goods_row* cs2dp_proto_role_goods_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::cs2dp_proto_role_goods_row* cs2dp_proto_role_goods_db::add_row_data() {
+inline ::faith::cs2dp_proto_role_goods_row* cs2dp_proto_role_goods_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_goods_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_goods_row >&
 cs2dp_proto_role_goods_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_goods_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_goods_row >*
 cs2dp_proto_role_goods_db::mutable_row_data() {
   return &row_data_;
 }
@@ -18308,7 +18308,7 @@ inline void cs2dp_proto_save_role_goods::set_save_type_ex(::google::protobuf::in
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_goods_db db_data = 4;
+// optional .faith.cs2dp_proto.role_goods_db db_data = 4;
 inline bool cs2dp_proto_save_role_goods::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -18319,24 +18319,24 @@ inline void cs2dp_proto_save_role_goods::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_goods::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_goods_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_goods_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_goods_db& cs2dp_proto_save_role_goods::db_data() const {
+inline const ::faith::cs2dp_proto_role_goods_db& cs2dp_proto_save_role_goods::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_goods_db* cs2dp_proto_save_role_goods::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_goods_db* cs2dp_proto_save_role_goods::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_goods_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_goods_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_goods_db* cs2dp_proto_save_role_goods::release_db_data() {
+inline ::faith::cs2dp_proto_role_goods_db* cs2dp_proto_save_role_goods::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_goods_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_goods_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_goods::set_allocated_db_data(::hld::cs2dp_proto_role_goods_db* db_data) {
+inline void cs2dp_proto_save_role_goods::set_allocated_db_data(::faith::cs2dp_proto_role_goods_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -18401,27 +18401,27 @@ inline void cs2dp_proto_role_mission_db::set_row_count(::google::protobuf::int32
   row_count_ = value;
 }
 
-// repeated .hld.cs2dp_proto.role_mission_row row_data = 2;
+// repeated .faith.cs2dp_proto.role_mission_row row_data = 2;
 inline int cs2dp_proto_role_mission_db::row_data_size() const {
   return row_data_.size();
 }
 inline void cs2dp_proto_role_mission_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::cs2dp_proto_role_mission_row& cs2dp_proto_role_mission_db::row_data(int index) const {
+inline const ::faith::cs2dp_proto_role_mission_row& cs2dp_proto_role_mission_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::cs2dp_proto_role_mission_row* cs2dp_proto_role_mission_db::mutable_row_data(int index) {
+inline ::faith::cs2dp_proto_role_mission_row* cs2dp_proto_role_mission_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::cs2dp_proto_role_mission_row* cs2dp_proto_role_mission_db::add_row_data() {
+inline ::faith::cs2dp_proto_role_mission_row* cs2dp_proto_role_mission_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_mission_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_mission_row >&
 cs2dp_proto_role_mission_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_mission_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_mission_row >*
 cs2dp_proto_role_mission_db::mutable_row_data() {
   return &row_data_;
 }
@@ -18496,7 +18496,7 @@ inline void cs2dp_proto_save_role_mission::set_save_type_ex(::google::protobuf::
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_mission_db db_data = 4;
+// optional .faith.cs2dp_proto.role_mission_db db_data = 4;
 inline bool cs2dp_proto_save_role_mission::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -18507,24 +18507,24 @@ inline void cs2dp_proto_save_role_mission::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_mission::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_mission_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_mission_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_mission_db& cs2dp_proto_save_role_mission::db_data() const {
+inline const ::faith::cs2dp_proto_role_mission_db& cs2dp_proto_save_role_mission::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_mission_db* cs2dp_proto_save_role_mission::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_mission_db* cs2dp_proto_save_role_mission::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_mission_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_mission_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_mission_db* cs2dp_proto_save_role_mission::release_db_data() {
+inline ::faith::cs2dp_proto_role_mission_db* cs2dp_proto_save_role_mission::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_mission_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_mission_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_mission::set_allocated_db_data(::hld::cs2dp_proto_role_mission_db* db_data) {
+inline void cs2dp_proto_save_role_mission::set_allocated_db_data(::faith::cs2dp_proto_role_mission_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -18589,27 +18589,27 @@ inline void cs2dp_proto_role_belief_db::set_row_count(::google::protobuf::int32 
   row_count_ = value;
 }
 
-// repeated .hld.cs2dp_proto.role_belief_row row_data = 2;
+// repeated .faith.cs2dp_proto.role_belief_row row_data = 2;
 inline int cs2dp_proto_role_belief_db::row_data_size() const {
   return row_data_.size();
 }
 inline void cs2dp_proto_role_belief_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::cs2dp_proto_role_belief_row& cs2dp_proto_role_belief_db::row_data(int index) const {
+inline const ::faith::cs2dp_proto_role_belief_row& cs2dp_proto_role_belief_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::cs2dp_proto_role_belief_row* cs2dp_proto_role_belief_db::mutable_row_data(int index) {
+inline ::faith::cs2dp_proto_role_belief_row* cs2dp_proto_role_belief_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::cs2dp_proto_role_belief_row* cs2dp_proto_role_belief_db::add_row_data() {
+inline ::faith::cs2dp_proto_role_belief_row* cs2dp_proto_role_belief_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_belief_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_belief_row >&
 cs2dp_proto_role_belief_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cs2dp_proto_role_belief_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cs2dp_proto_role_belief_row >*
 cs2dp_proto_role_belief_db::mutable_row_data() {
   return &row_data_;
 }
@@ -18684,7 +18684,7 @@ inline void cs2dp_proto_save_role_belief::set_save_type_ex(::google::protobuf::i
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_belief_db db_data = 4;
+// optional .faith.cs2dp_proto.role_belief_db db_data = 4;
 inline bool cs2dp_proto_save_role_belief::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -18695,24 +18695,24 @@ inline void cs2dp_proto_save_role_belief::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_belief::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_belief_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_belief_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_belief_db& cs2dp_proto_save_role_belief::db_data() const {
+inline const ::faith::cs2dp_proto_role_belief_db& cs2dp_proto_save_role_belief::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_belief_db* cs2dp_proto_save_role_belief::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_belief_db* cs2dp_proto_save_role_belief::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_belief_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_belief_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_belief_db* cs2dp_proto_save_role_belief::release_db_data() {
+inline ::faith::cs2dp_proto_role_belief_db* cs2dp_proto_save_role_belief::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_belief_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_belief_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_belief::set_allocated_db_data(::hld::cs2dp_proto_role_belief_db* db_data) {
+inline void cs2dp_proto_save_role_belief::set_allocated_db_data(::faith::cs2dp_proto_role_belief_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -18871,7 +18871,7 @@ inline void cs2dp_proto_save_role_money::set_save_type_ex(::google::protobuf::in
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_money_db db_data = 4;
+// optional .faith.cs2dp_proto.role_money_db db_data = 4;
 inline bool cs2dp_proto_save_role_money::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -18882,24 +18882,24 @@ inline void cs2dp_proto_save_role_money::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_money::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_money_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_money_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_money_db& cs2dp_proto_save_role_money::db_data() const {
+inline const ::faith::cs2dp_proto_role_money_db& cs2dp_proto_save_role_money::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_money_db* cs2dp_proto_save_role_money::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_money_db* cs2dp_proto_save_role_money::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_money_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_money_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_money_db* cs2dp_proto_save_role_money::release_db_data() {
+inline ::faith::cs2dp_proto_role_money_db* cs2dp_proto_save_role_money::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_money_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_money_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_money::set_allocated_db_data(::hld::cs2dp_proto_role_money_db* db_data) {
+inline void cs2dp_proto_save_role_money::set_allocated_db_data(::faith::cs2dp_proto_role_money_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -19008,7 +19008,7 @@ inline void cs2dp_proto_save_role_time::set_save_type_ex(::google::protobuf::int
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_time_db db_data = 4;
+// optional .faith.cs2dp_proto.role_time_db db_data = 4;
 inline bool cs2dp_proto_save_role_time::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -19019,24 +19019,24 @@ inline void cs2dp_proto_save_role_time::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_time::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_time_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_time_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_time_db& cs2dp_proto_save_role_time::db_data() const {
+inline const ::faith::cs2dp_proto_role_time_db& cs2dp_proto_save_role_time::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_time_db* cs2dp_proto_save_role_time::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_time_db* cs2dp_proto_save_role_time::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_time_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_time_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_time_db* cs2dp_proto_save_role_time::release_db_data() {
+inline ::faith::cs2dp_proto_role_time_db* cs2dp_proto_save_role_time::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_time_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_time_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_time::set_allocated_db_data(::hld::cs2dp_proto_role_time_db* db_data) {
+inline void cs2dp_proto_save_role_time::set_allocated_db_data(::faith::cs2dp_proto_role_time_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -19494,7 +19494,7 @@ inline void cs2dp_proto_save_role_info::set_save_type_ex(::google::protobuf::int
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_info_db db_data = 4;
+// optional .faith.cs2dp_proto.role_info_db db_data = 4;
 inline bool cs2dp_proto_save_role_info::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -19505,24 +19505,24 @@ inline void cs2dp_proto_save_role_info::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_info::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_info_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_info_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_info_db& cs2dp_proto_save_role_info::db_data() const {
+inline const ::faith::cs2dp_proto_role_info_db& cs2dp_proto_save_role_info::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_info_db* cs2dp_proto_save_role_info::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_info_db* cs2dp_proto_save_role_info::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_info_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_info_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_info_db* cs2dp_proto_save_role_info::release_db_data() {
+inline ::faith::cs2dp_proto_role_info_db* cs2dp_proto_save_role_info::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_info_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_info_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_info::set_allocated_db_data(::hld::cs2dp_proto_role_info_db* db_data) {
+inline void cs2dp_proto_save_role_info::set_allocated_db_data(::faith::cs2dp_proto_role_info_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -19656,7 +19656,7 @@ inline void cs2dp_proto_save_role_att::set_save_type_ex(::google::protobuf::int3
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_att_db db_data = 4;
+// optional .faith.cs2dp_proto.role_att_db db_data = 4;
 inline bool cs2dp_proto_save_role_att::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -19667,24 +19667,24 @@ inline void cs2dp_proto_save_role_att::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_att::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_att_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_att_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_att_db& cs2dp_proto_save_role_att::db_data() const {
+inline const ::faith::cs2dp_proto_role_att_db& cs2dp_proto_save_role_att::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_att_db* cs2dp_proto_save_role_att::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_att_db* cs2dp_proto_save_role_att::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_att_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_att_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_att_db* cs2dp_proto_save_role_att::release_db_data() {
+inline ::faith::cs2dp_proto_role_att_db* cs2dp_proto_save_role_att::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_att_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_att_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_att::set_allocated_db_data(::hld::cs2dp_proto_role_att_db* db_data) {
+inline void cs2dp_proto_save_role_att::set_allocated_db_data(::faith::cs2dp_proto_role_att_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -19860,7 +19860,7 @@ inline void cs2dp_proto_save_role_guide::set_save_type_ex(::google::protobuf::in
   save_type_ex_ = value;
 }
 
-// optional .hld.cs2dp_proto.role_guide_db db_data = 4;
+// optional .faith.cs2dp_proto.role_guide_db db_data = 4;
 inline bool cs2dp_proto_save_role_guide::has_db_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -19871,24 +19871,24 @@ inline void cs2dp_proto_save_role_guide::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2dp_proto_save_role_guide::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_guide_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_guide_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::cs2dp_proto_role_guide_db& cs2dp_proto_save_role_guide::db_data() const {
+inline const ::faith::cs2dp_proto_role_guide_db& cs2dp_proto_save_role_guide::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::cs2dp_proto_role_guide_db* cs2dp_proto_save_role_guide::mutable_db_data() {
+inline ::faith::cs2dp_proto_role_guide_db* cs2dp_proto_save_role_guide::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::cs2dp_proto_role_guide_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::cs2dp_proto_role_guide_db;
   return db_data_;
 }
-inline ::hld::cs2dp_proto_role_guide_db* cs2dp_proto_save_role_guide::release_db_data() {
+inline ::faith::cs2dp_proto_role_guide_db* cs2dp_proto_save_role_guide::release_db_data() {
   clear_has_db_data();
-  ::hld::cs2dp_proto_role_guide_db* temp = db_data_;
+  ::faith::cs2dp_proto_role_guide_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void cs2dp_proto_save_role_guide::set_allocated_db_data(::hld::cs2dp_proto_role_guide_db* db_data) {
+inline void cs2dp_proto_save_role_guide::set_allocated_db_data(::faith::cs2dp_proto_role_guide_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -20045,7 +20045,7 @@ inline void cs2dp_proto_save_role_db_data::set_allocated_db_data(::std::string* 
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

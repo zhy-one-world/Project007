@@ -17,7 +17,7 @@ purpose: about role's interaction_mgr
 #include "template/template_manager.h"
 #include "utility/init_unit.h"
 
-namespace hld
+namespace faith
 {
 	cinteraction_mgr::cinteraction_mgr()
 	{
@@ -31,7 +31,7 @@ namespace hld
 	{
 		m_handle_invite_cd_time = -1;
 		m_interaction_target_guid.clear_data();
-		m_interaction_type = hld::e_interaction_type_none;
+		m_interaction_type = faith::e_interaction_type_none;
 		m_wait_real_interaction_time = -1;
 		m_old_tick_time = 0;
 		m_interaction_state = e_interaction_state_none;
@@ -83,7 +83,7 @@ namespace hld
 		}
 	}
 
-	void cinteraction_mgr::set_interaction_info(guid_64 target_guid, hld::e_interaction_type interaction_type)
+	void cinteraction_mgr::set_interaction_info(guid_64 target_guid, faith::e_interaction_type interaction_type)
 	{
 		m_interaction_target_guid = target_guid;
 		m_interaction_type = interaction_type;
@@ -93,23 +93,23 @@ namespace hld
 
 	void cinteraction_mgr::reset_interaction_info()
 	{
-		m_interaction_target_guid = hld::guid_64();
-		m_interaction_type = hld::e_interaction_type_none;
+		m_interaction_target_guid = faith::guid_64();
+		m_interaction_type = faith::e_interaction_type_none;
 		m_interaction_state = e_interaction_state_none;
 		m_wait_real_interaction_time = -1;
 	}
 
-	hld::guid_64 cinteraction_mgr::get_interaction_guid()
+	faith::guid_64 cinteraction_mgr::get_interaction_guid()
 	{
 		return m_interaction_target_guid;
 	}
 
-	hld::e_interaction_type cinteraction_mgr::get_interaction_type()
+	faith::e_interaction_type cinteraction_mgr::get_interaction_type()
 	{
 		return m_interaction_type;
 	}
 
-	hld::e_interaction_type cinteraction_mgr::get_real_interaction_type()
+	faith::e_interaction_type cinteraction_mgr::get_real_interaction_type()
 	{
 		if (get_is_inviter() == true)
 		{
@@ -122,7 +122,7 @@ namespace hld
 		}
 	}
 
-	e_interaction_type cinteraction_mgr::get_target_interaction_type(hld::e_interaction_type interaction_type, bool target_is_man)
+	e_interaction_type cinteraction_mgr::get_target_interaction_type(faith::e_interaction_type interaction_type, bool target_is_man)
 	{
 		if (interaction_type == e_interaction_type_marry_raid_back_target_man || interaction_type == e_interaction_type_marry_raid_back_target_woman)
 		{
@@ -133,12 +133,12 @@ namespace hld
 			return get_marry_raid_interaction_type(true, target_is_man);;
 		}
 
-		hld::template_manager::template_type* table = template_manager::get_instance().get_templates(e_InteractionTemplate);
+		faith::template_manager::template_type* table = template_manager::get_instance().get_templates(e_InteractionTemplate);
 		if (nullptr == table)
 		{
 			return e_interaction_type_none;
 		}
-		hld::template_manager::template_type::iterator ite;
+		faith::template_manager::template_type::iterator ite;
 		InteractionTemplate* interaction_template_ptr = nullptr;
 		for (ite = table->begin(); ite != table->end(); ++ite)
 		{
@@ -152,10 +152,10 @@ namespace hld
 				return (e_interaction_type)interaction_template_ptr->CorrespondInteractionType;
 			}
 		}
-		return hld::e_interaction_type_none;
+		return faith::e_interaction_type_none;
 	}
 
-	hld::e_interaction_type cinteraction_mgr::get_marry_raid_interaction_type(bool is_back, bool is_man)
+	faith::e_interaction_type cinteraction_mgr::get_marry_raid_interaction_type(bool is_back, bool is_man)
 	{
 		if (is_back)
 		{
@@ -225,7 +225,7 @@ namespace hld
 		m_interaction_state = state;
 	}
 
-	void cinteraction_mgr::recv_interaction_invite(guid_64 invite_guid, hld::e_interaction_type interaction_type)
+	void cinteraction_mgr::recv_interaction_invite(guid_64 invite_guid, faith::e_interaction_type interaction_type)
 	{
 		//当前是被邀请者
 
@@ -245,19 +245,19 @@ namespace hld
 		//正在被邀请交互 交互中 则不能交互 直接返回交互应答
 		if (m_handle_invite_cd_time > 0)
 		{
-			send_interaction_answer_to_two_side(invite_guid, interaction_type, hld::e_interaction_reply_be_invited);
+			send_interaction_answer_to_two_side(invite_guid, interaction_type, faith::e_interaction_reply_be_invited);
 			return;
 		}
 		if (m_interaction_target_guid.is_valid())
 		{
-			send_interaction_answer_to_two_side(invite_guid, interaction_type, hld::e_interaction_reply_is_interacting);
+			send_interaction_answer_to_two_side(invite_guid, interaction_type, faith::e_interaction_reply_is_interacting);
 			return;
 		}
 
 		send_interaction_invite(invite_guid, interaction_type);
 	}
 
-	void cinteraction_mgr::send_interaction_invite(guid_64 invite_guid, hld::e_interaction_type interaction_type)
+	void cinteraction_mgr::send_interaction_invite(guid_64 invite_guid, faith::e_interaction_type interaction_type)
 	{
 		//当前是被邀请者
 
@@ -280,17 +280,17 @@ namespace hld
 		set_interaction_state(e_interaction_state_wait_reply);
 		invite_ref.get_interaction_mgr().set_interaction_state(e_interaction_state_wait_reply);
 
-		hld::interaction_proto_s_c_interaction_invite interaction_invite_proto;
+		faith::interaction_proto_s_c_interaction_invite interaction_invite_proto;
 		interaction_invite_proto.set_invite_guid(invite_guid.server_64);
 		interaction_invite_proto.set_interaction_type(interaction_type);
 		be_invited_ref.send_message_to_self(&interaction_invite_proto, e_msgindex_s2c_s_c_interaction_invite);
 	}
 
-	void cinteraction_mgr::recv_interaction_answer(guid_64 invite_guid, hld::e_interaction_type interaction_type, hld::e_interaction_reply result)
+	void cinteraction_mgr::recv_interaction_answer(guid_64 invite_guid, faith::e_interaction_type interaction_type, faith::e_interaction_reply result)
 	{
 		//当前是被邀请者
 
-		if (result == hld::e_interaction_reply_agree)
+		if (result == faith::e_interaction_reply_agree)
 		{
 			//如果同意 则设置交互目标信息
 			player& be_invited_ref = unit_man::get_player(m_unit_array_index);
@@ -310,7 +310,7 @@ namespace hld
 			}
 
 			guid_64 temp_target_guid = invite_ref.get_interaction_mgr().get_interaction_guid();
-			hld::e_interaction_type temp_interaction_type = invite_ref.get_interaction_mgr().get_interaction_type();
+			faith::e_interaction_type temp_interaction_type = invite_ref.get_interaction_mgr().get_interaction_type();
 			if (temp_target_guid != be_invited_ref.get_unit_guid() || temp_interaction_type != interaction_type)
 			{
 				invite_ref.get_interaction_mgr().reset_interaction_info();
@@ -330,7 +330,7 @@ namespace hld
 		send_interaction_answer_to_two_side(invite_guid, interaction_type, result);
 	}
 
-	void cinteraction_mgr::send_interaction_answer_to_two_side(guid_64 invite_guid, hld::e_interaction_type interaction_type, hld::e_interaction_reply result)
+	void cinteraction_mgr::send_interaction_answer_to_two_side(guid_64 invite_guid, faith::e_interaction_type interaction_type, faith::e_interaction_reply result)
 	{
 		//当前是被邀请者
 
@@ -344,21 +344,21 @@ namespace hld
 		{
 			return;
 		}
-		hld::interaction_proto_s_c_interaction_invite_reply interaction_invite_reply_proto;
+		faith::interaction_proto_s_c_interaction_invite_reply interaction_invite_reply_proto;
 		interaction_invite_reply_proto.set_invite_guid(invite_guid.server_64);
 		interaction_invite_reply_proto.set_be_invited_guid(be_invited_ref.get_unit_guid().server_64);
 		interaction_invite_reply_proto.set_interaction_type(interaction_type);
 		interaction_invite_reply_proto.set_reply_result(result);
 		//如果同意 则发给双方 否则只发给邀请者
-		if (result == hld::e_interaction_reply_agree)
+		if (result == faith::e_interaction_reply_agree)
 		{
-			hld::template_manager::template_type* table = template_manager::get_instance().get_templates(e_InteractionTemplate);
+			faith::template_manager::template_type* table = template_manager::get_instance().get_templates(e_InteractionTemplate);
 			if (nullptr == table)
 			{
 				return;
 			}
 			int32 real_time = 10;
-			hld::template_manager::template_type::iterator ite;
+			faith::template_manager::template_type::iterator ite;
 			InteractionTemplate* interaction_template_ptr = nullptr;
 			for (ite = table->begin(); ite != table->end(); ++ite)
 			{
@@ -400,7 +400,7 @@ namespace hld
 		}			
 	}
 
-	void cinteraction_mgr::recv_real_start_interaction(guid_64 be_invited_guid, hld::e_interaction_type interaction_type)
+	void cinteraction_mgr::recv_real_start_interaction(guid_64 be_invited_guid, faith::e_interaction_type interaction_type)
 	{
 		//当前为邀请方
 
@@ -421,7 +421,7 @@ namespace hld
 		}
 
 		guid_64 temp_target_guid = be_invited_ref.get_interaction_mgr().get_interaction_guid();
-		hld::e_interaction_type temp_interaction_type = be_invited_ref.get_interaction_mgr().get_interaction_type();
+		faith::e_interaction_type temp_interaction_type = be_invited_ref.get_interaction_mgr().get_interaction_type();
 		if (temp_target_guid != invited_ref.get_unit_guid() || temp_interaction_type != interaction_type)
 		{
 			return;
@@ -451,7 +451,7 @@ namespace hld
 		}
 	}
 
-	void cinteraction_mgr::send_real_start_interaction_to_aoi(guid_64 invite_guid, guid_64 be_invited_guid, hld::e_interaction_type interaction_type)
+	void cinteraction_mgr::send_real_start_interaction_to_aoi(guid_64 invite_guid, guid_64 be_invited_guid, faith::e_interaction_type interaction_type)
 	{
 		//当前为邀请方
 
@@ -460,7 +460,7 @@ namespace hld
 		{
 			return;
 		}
-		hld::interaction_proto_s_c_real_start_interaction real_start_interaction_proto;
+		faith::interaction_proto_s_c_real_start_interaction real_start_interaction_proto;
 		real_start_interaction_proto.set_invite_guid(invite_guid.server_64);
 		real_start_interaction_proto.set_be_invited_guid(be_invited_guid.server_64);
 		real_start_interaction_proto.set_interaction_type(interaction_type);
@@ -468,7 +468,7 @@ namespace hld
 		invited_ref.send_message_to_aoi(&real_start_interaction_proto, e_msgindex_s2c_s_c_real_start_interaction, true);
 	}
 
-	void cinteraction_mgr::set_interaction_type_attribute(guid_64 be_invited_guid, hld::e_interaction_type interaction_type)
+	void cinteraction_mgr::set_interaction_type_attribute(guid_64 be_invited_guid, faith::e_interaction_type interaction_type)
 	{
 		//当前为邀请方
 		player& invited_ref = unit_man::get_player(m_unit_array_index);
@@ -482,9 +482,9 @@ namespace hld
 			return;
 		}
 		
-		invited_ref.get_pawn_att().set_game_att(hld::e_unit_game_att_interaction, interaction_type, true);
+		invited_ref.get_pawn_att().set_game_att(faith::e_unit_game_att_interaction, interaction_type, true);
 		e_interaction_type target_interaction_type = get_target_interaction_type(interaction_type, get_cur_player_if_sex_is_man());
-		be_invited_ref.get_pawn_att().set_game_att(hld::e_unit_game_att_interaction, target_interaction_type, true);
+		be_invited_ref.get_pawn_att().set_game_att(faith::e_unit_game_att_interaction, target_interaction_type, true);
 	}
 
 	void cinteraction_mgr::stop_interaction()
@@ -518,15 +518,15 @@ namespace hld
 		if (player_ref.get_interaction_mgr().get_is_inviter() == false)
 		{
 			bool target_is_man = player_ref.get_interaction_mgr().get_interaction_player_if_sex_is_man();
-			interaction_type = get_target_interaction_type((hld::e_interaction_type)interaction_type, target_is_man);
+			interaction_type = get_target_interaction_type((faith::e_interaction_type)interaction_type, target_is_man);
 		}
 
-		hld::interaction_proto_s_c_stop_interaction stop_interaction_proto;
+		faith::interaction_proto_s_c_stop_interaction stop_interaction_proto;
 		stop_interaction_proto.set_role_guid(guid.server_64);
 		stop_interaction_proto.set_interaction_type(interaction_type);
 		player_ref.send_message_to_aoi(&stop_interaction_proto, e_msgindex_s2c_s_c_stop_interaction, true);
 
-		player_ref.get_pawn_att().set_game_att(hld::e_unit_game_att_interaction, hld::e_interaction_type_none, true);
+		player_ref.get_pawn_att().set_game_att(faith::e_unit_game_att_interaction, faith::e_interaction_type_none, true);
 	}
 
 

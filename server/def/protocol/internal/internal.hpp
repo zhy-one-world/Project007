@@ -15,7 +15,7 @@
 #include "Logic/char_def.hpp"
 #include "base.hpp"
 
-namespace hld 
+namespace faith 
 {
 #pragma pack(push,1)
 	//	用于服务器组内部各服务器间建立连接的协议定义

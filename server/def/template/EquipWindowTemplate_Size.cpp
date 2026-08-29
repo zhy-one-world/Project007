@@ -1,6 +1,6 @@
 #include "EquipWindowTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void EquipWindowTemplateSize()
     {

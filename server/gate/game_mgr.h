@@ -27,20 +27,20 @@
 #include <net/net_server_mgr.hpp>
 #include "cross_mgr.h"
 
-using namespace hld::net;
+using namespace faith::net;
 
 //////////////////////////////////////////////////////////////////////////
 //
 //	Class Declare
 //
 //////////////////////////////////////////////////////////////////////////
-namespace hld
+namespace faith
 {
 	typedef std::map<int32, cross_mgr*> cross_mgr_map;
 	typedef cross_mgr_map::iterator cross_mgr_map_it;
-	class game_mgr : public hld::singleton<game_mgr>
+	class game_mgr : public faith::singleton<game_mgr>
 	{
-		friend class hld::singleton<game_mgr>;
+		friend class faith::singleton<game_mgr>;
 		game_mgr();
 	public:
 		~game_mgr();

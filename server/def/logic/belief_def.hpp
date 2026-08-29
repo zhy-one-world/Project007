@@ -16,7 +16,7 @@ purpose:define the type of belief, define the type and the length of belief inst
 #include "game_enum_def_s.h"
 #include "template/template_base.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
@@ -57,7 +57,7 @@ namespace hld
 		{
 			memset(data_ary, 0, sizeof(data_ary));
 		}
-		bool to_proto(hld::st_proto::st_belief_info* st_belief_ptr)
+		bool to_proto(faith::st_proto::st_belief_info* st_belief_ptr)
 		{
 			if (st_belief_ptr == nullptr)
 			{
@@ -69,7 +69,7 @@ namespace hld
 			}
 			return true;
 		}
-		void from_proto(const hld::st_proto::st_belief_info& st_belief_ref)
+		void from_proto(const faith::st_proto::st_belief_info& st_belief_ref)
 		{
 			for (int32 i = 0; i < e_belief_info_max && i < st_belief_ref.data_ary_size(); i++)
 			{

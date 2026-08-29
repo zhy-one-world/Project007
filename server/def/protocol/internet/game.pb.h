@@ -27,7 +27,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_game_2eproto();
@@ -365,7 +365,7 @@ class game_proto_enter_game : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 line_id() const;
   inline void set_line_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.enter_game)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.enter_game)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -460,7 +460,7 @@ class game_proto_enter_game_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 server_type() const;
   inline void set_server_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.enter_game_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.enter_game_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -559,7 +559,7 @@ class game_proto_pos_vector : public ::google::protobuf::Message {
   inline float z() const;
   inline void set_z(float value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.pos_vector)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.pos_vector)
  private:
   inline void set_has_x();
   inline void clear_has_x();
@@ -661,7 +661,7 @@ class game_proto_rot_angle : public ::google::protobuf::Message {
   inline float z() const;
   inline void set_z(float value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.rot_angle)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.rot_angle)
  private:
   inline void set_has_x();
   inline void clear_has_x();
@@ -742,7 +742,7 @@ class game_proto_pawn_att : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.pawn_att)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.pawn_att)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -814,14 +814,14 @@ class game_proto_enter_scene : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .hld.game_proto.enter_scene_type type = 1 [default = enter];
+  // optional .faith.game_proto.enter_scene_type type = 1 [default = enter];
   inline bool has_type() const;
   inline void clear_type();
   static const int kTypeFieldNumber = 1;
-  inline ::hld::game_proto_enter_scene_type type() const;
-  inline void set_type(::hld::game_proto_enter_scene_type value);
+  inline ::faith::game_proto_enter_scene_type type() const;
+  inline void set_type(::faith::game_proto_enter_scene_type value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.enter_scene)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.enter_scene)
  private:
   inline void set_has_type();
   inline void clear_has_type();
@@ -903,7 +903,7 @@ class game_proto_enter_scene_end : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 result() const;
   inline void set_result(::google::protobuf::uint32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.enter_scene_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.enter_scene_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -1018,7 +1018,7 @@ class game_proto_transfer_scene : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 war_index() const;
   inline void set_war_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.transfer_scene)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.transfer_scene)
  private:
   inline void set_has_map_template_id();
   inline void clear_has_map_template_id();
@@ -1153,7 +1153,7 @@ class game_proto_transfer_scene_pos : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_rotation();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.transfer_scene_pos)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.transfer_scene_pos)
  private:
   inline void set_has_map_template_id();
   inline void clear_has_map_template_id();
@@ -1234,7 +1234,7 @@ class game_proto_transfer_scene_born : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.transfer_scene_born)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.transfer_scene_born)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1313,7 +1313,7 @@ class game_proto_reconnect_enter_scene_end : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.reconnect_enter_scene_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.reconnect_enter_scene_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -1400,7 +1400,7 @@ class game_proto_line_list : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_line_id();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.line_list)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.line_list)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1487,25 +1487,25 @@ class game_proto_transfer_scene_end : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 scene_uid() const;
   inline void set_scene_uid(::google::protobuf::uint32 value);
 
-  // optional .hld.game_proto.pos_vector position = 3;
+  // optional .faith.game_proto.pos_vector position = 3;
   inline bool has_position() const;
   inline void clear_position();
   static const int kPositionFieldNumber = 3;
-  inline const ::hld::game_proto_pos_vector& position() const;
-  inline ::hld::game_proto_pos_vector* mutable_position();
-  inline ::hld::game_proto_pos_vector* release_position();
-  inline void set_allocated_position(::hld::game_proto_pos_vector* position);
+  inline const ::faith::game_proto_pos_vector& position() const;
+  inline ::faith::game_proto_pos_vector* mutable_position();
+  inline ::faith::game_proto_pos_vector* release_position();
+  inline void set_allocated_position(::faith::game_proto_pos_vector* position);
 
-  // optional .hld.game_proto.rot_angle rotator_angle = 4;
+  // optional .faith.game_proto.rot_angle rotator_angle = 4;
   inline bool has_rotator_angle() const;
   inline void clear_rotator_angle();
   static const int kRotatorAngleFieldNumber = 4;
-  inline const ::hld::game_proto_rot_angle& rotator_angle() const;
-  inline ::hld::game_proto_rot_angle* mutable_rotator_angle();
-  inline ::hld::game_proto_rot_angle* release_rotator_angle();
-  inline void set_allocated_rotator_angle(::hld::game_proto_rot_angle* rotator_angle);
+  inline const ::faith::game_proto_rot_angle& rotator_angle() const;
+  inline ::faith::game_proto_rot_angle* mutable_rotator_angle();
+  inline ::faith::game_proto_rot_angle* release_rotator_angle();
+  inline void set_allocated_rotator_angle(::faith::game_proto_rot_angle* rotator_angle);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.transfer_scene_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.transfer_scene_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -1520,8 +1520,8 @@ class game_proto_transfer_scene_end : public ::google::protobuf::Message {
 
   ::google::protobuf::uint32 result_;
   ::google::protobuf::uint32 scene_uid_;
-  ::hld::game_proto_pos_vector* position_;
-  ::hld::game_proto_rot_angle* rotator_angle_;
+  ::faith::game_proto_pos_vector* position_;
+  ::faith::game_proto_rot_angle* rotator_angle_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -1596,23 +1596,23 @@ class game_proto_trans_local_scene_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // optional .hld.game_proto.pos_vector position = 2;
+  // optional .faith.game_proto.pos_vector position = 2;
   inline bool has_position() const;
   inline void clear_position();
   static const int kPositionFieldNumber = 2;
-  inline const ::hld::game_proto_pos_vector& position() const;
-  inline ::hld::game_proto_pos_vector* mutable_position();
-  inline ::hld::game_proto_pos_vector* release_position();
-  inline void set_allocated_position(::hld::game_proto_pos_vector* position);
+  inline const ::faith::game_proto_pos_vector& position() const;
+  inline ::faith::game_proto_pos_vector* mutable_position();
+  inline ::faith::game_proto_pos_vector* release_position();
+  inline void set_allocated_position(::faith::game_proto_pos_vector* position);
 
-  // optional .hld.game_proto.rot_angle rotator_angle = 3;
+  // optional .faith.game_proto.rot_angle rotator_angle = 3;
   inline bool has_rotator_angle() const;
   inline void clear_rotator_angle();
   static const int kRotatorAngleFieldNumber = 3;
-  inline const ::hld::game_proto_rot_angle& rotator_angle() const;
-  inline ::hld::game_proto_rot_angle* mutable_rotator_angle();
-  inline ::hld::game_proto_rot_angle* release_rotator_angle();
-  inline void set_allocated_rotator_angle(::hld::game_proto_rot_angle* rotator_angle);
+  inline const ::faith::game_proto_rot_angle& rotator_angle() const;
+  inline ::faith::game_proto_rot_angle* mutable_rotator_angle();
+  inline ::faith::game_proto_rot_angle* release_rotator_angle();
+  inline void set_allocated_rotator_angle(::faith::game_proto_rot_angle* rotator_angle);
 
   // optional int32 transfer_reason = 4;
   inline bool has_transfer_reason() const;
@@ -1628,7 +1628,7 @@ class game_proto_trans_local_scene_end : public ::google::protobuf::Message {
   inline bool use_anim() const;
   inline void set_use_anim(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.trans_local_scene_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.trans_local_scene_end)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -1644,8 +1644,8 @@ class game_proto_trans_local_scene_end : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 role_guid_;
-  ::hld::game_proto_pos_vector* position_;
-  ::hld::game_proto_rot_angle* rotator_angle_;
+  ::faith::game_proto_pos_vector* position_;
+  ::faith::game_proto_rot_angle* rotator_angle_;
   ::google::protobuf::int32 transfer_reason_;
   bool use_anim_;
 
@@ -1722,7 +1722,7 @@ class game_proto_client2fep_ping : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 client_time() const;
   inline void set_client_time(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.client2fep_ping)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.client2fep_ping)
  private:
   inline void set_has_client_time();
   inline void clear_has_client_time();
@@ -1811,7 +1811,7 @@ class game_proto_fep2client_ping : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 server_time() const;
   inline void set_server_time(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.fep2client_ping)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.fep2client_ping)
  private:
   inline void set_has_client_time();
   inline void clear_has_client_time();
@@ -1910,7 +1910,7 @@ class game_proto_client2cs_ping : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 trace_time_3() const;
   inline void set_trace_time_3(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.client2cs_ping)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.client2cs_ping)
  private:
   inline void set_has_trace_time();
   inline void clear_has_trace_time();
@@ -2012,7 +2012,7 @@ class game_proto_cs2client_ping : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 trace_time_3() const;
   inline void set_trace_time_3(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.cs2client_ping)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.cs2client_ping)
  private:
   inline void set_has_trace_time();
   inline void clear_has_trace_time();
@@ -2093,7 +2093,7 @@ class game_proto_version_wrong : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.version_wrong)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.version_wrong)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2179,7 +2179,7 @@ class game_proto_set_timekeeping : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 prefix_text() const;
   inline void set_prefix_text(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.set_timekeeping)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.set_timekeeping)
  private:
   inline void set_has_time();
   inline void clear_has_time();
@@ -2264,7 +2264,7 @@ class game_proto_wave_trigger_message : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 message() const;
   inline void set_message(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.wave_trigger_message)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.wave_trigger_message)
  private:
   inline void set_has_message();
   inline void clear_has_message();
@@ -2360,7 +2360,7 @@ class game_proto_game_state : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 cur_server_time() const;
   inline void set_cur_server_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.game_state)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.game_state)
  private:
   inline void set_has_state();
   inline void clear_has_state();
@@ -2462,7 +2462,7 @@ class game_proto_boss_state : public ::google::protobuf::Message {
   inline bool is_final_boss() const;
   inline void set_is_final_boss(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.boss_state)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.boss_state)
  private:
   inline void set_has_boss_id();
   inline void clear_has_boss_id();
@@ -2543,24 +2543,24 @@ class game_proto_bosses_state : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.boss_state created_bosses = 1;
+  // repeated .faith.game_proto.boss_state created_bosses = 1;
   inline int created_bosses_size() const;
   inline void clear_created_bosses();
   static const int kCreatedBossesFieldNumber = 1;
-  inline const ::hld::game_proto_boss_state& created_bosses(int index) const;
-  inline ::hld::game_proto_boss_state* mutable_created_bosses(int index);
-  inline ::hld::game_proto_boss_state* add_created_bosses();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_boss_state >&
+  inline const ::faith::game_proto_boss_state& created_bosses(int index) const;
+  inline ::faith::game_proto_boss_state* mutable_created_bosses(int index);
+  inline ::faith::game_proto_boss_state* add_created_bosses();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_boss_state >&
       created_bosses() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_boss_state >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_boss_state >*
       mutable_created_bosses();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.bosses_state)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.bosses_state)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_boss_state > created_bosses_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_boss_state > created_bosses_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -2649,7 +2649,7 @@ class game_proto_protect_npc_state : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 npc_state_code() const;
   inline void set_npc_state_code(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.protect_npc_state)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.protect_npc_state)
  private:
   inline void set_has_npc_id();
   inline void clear_has_npc_id();
@@ -2754,7 +2754,7 @@ class game_proto_update_map_record_end : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_map_record_info_data();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.update_map_record_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.update_map_record_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2854,7 +2854,7 @@ class game_proto_update_map_record_all_end : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 map_num() const;
   inline void set_map_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.update_map_record_all_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.update_map_record_all_end)
  private:
   inline void set_has_is_end_record();
   inline void clear_has_is_end_record();
@@ -2964,7 +2964,7 @@ class game_proto_update_demons_tower_info_end : public ::google::protobuf::Messa
   inline bool is_in_mopping_up() const;
   inline void set_is_in_mopping_up(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.update_demons_tower_info_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.update_demons_tower_info_end)
  private:
   inline void set_has_is_in_mopping_up();
   inline void clear_has_is_in_mopping_up();
@@ -3072,7 +3072,7 @@ class game_proto_score_record : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 score() const;
   inline void set_score(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.score_record)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.score_record)
  private:
   inline void set_has_role_name();
   inline void clear_has_role_name();
@@ -3158,26 +3158,26 @@ class game_proto_score_record_list : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 score_list_len() const;
   inline void set_score_list_len(::google::protobuf::int32 value);
 
-  // repeated .hld.game_proto.score_record score_list = 2;
+  // repeated .faith.game_proto.score_record score_list = 2;
   inline int score_list_size() const;
   inline void clear_score_list();
   static const int kScoreListFieldNumber = 2;
-  inline const ::hld::game_proto_score_record& score_list(int index) const;
-  inline ::hld::game_proto_score_record* mutable_score_list(int index);
-  inline ::hld::game_proto_score_record* add_score_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_score_record >&
+  inline const ::faith::game_proto_score_record& score_list(int index) const;
+  inline ::faith::game_proto_score_record* mutable_score_list(int index);
+  inline ::faith::game_proto_score_record* add_score_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_score_record >&
       score_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_score_record >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_score_record >*
       mutable_score_list();
 
-  // optional .hld.game_proto.score_record extra_score = 3;
+  // optional .faith.game_proto.score_record extra_score = 3;
   inline bool has_extra_score() const;
   inline void clear_extra_score();
   static const int kExtraScoreFieldNumber = 3;
-  inline const ::hld::game_proto_score_record& extra_score() const;
-  inline ::hld::game_proto_score_record* mutable_extra_score();
-  inline ::hld::game_proto_score_record* release_extra_score();
-  inline void set_allocated_extra_score(::hld::game_proto_score_record* extra_score);
+  inline const ::faith::game_proto_score_record& extra_score() const;
+  inline ::faith::game_proto_score_record* mutable_extra_score();
+  inline ::faith::game_proto_score_record* release_extra_score();
+  inline void set_allocated_extra_score(::faith::game_proto_score_record* extra_score);
 
   // optional int32 extra_rank = 4;
   inline bool has_extra_rank() const;
@@ -3200,7 +3200,7 @@ class game_proto_score_record_list : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 npc_id() const;
   inline void set_npc_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.score_record_list)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.score_record_list)
  private:
   inline void set_has_score_list_len();
   inline void clear_has_score_list_len();
@@ -3215,10 +3215,10 @@ class game_proto_score_record_list : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_score_record > score_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_score_record > score_list_;
   ::google::protobuf::int32 score_list_len_;
   ::google::protobuf::int32 extra_rank_;
-  ::hld::game_proto_score_record* extra_score_;
+  ::faith::game_proto_score_record* extra_score_;
   bool is_legion_score_;
   ::google::protobuf::int32 npc_id_;
 
@@ -3323,7 +3323,7 @@ class game_proto_temple_game_over : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 win_money_num_2() const;
   inline void set_win_money_num_2(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.temple_game_over)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.temple_game_over)
  private:
   inline void set_has_npc_score();
   inline void clear_has_npc_score();
@@ -3417,7 +3417,7 @@ class game_proto_get_temple_over_gift : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 get_over_num() const;
   inline void set_get_over_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_temple_over_gift)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_temple_over_gift)
  private:
   inline void set_has_get_over_num();
   inline void clear_has_get_over_num();
@@ -3492,7 +3492,7 @@ class game_proto_get_temple_over_gift_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_temple_over_gift_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_temple_over_gift_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -3578,7 +3578,7 @@ class game_proto_pop_plot_tip : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 str_id_type() const;
   inline void set_str_id_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.pop_plot_tip)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.pop_plot_tip)
  private:
   inline void set_has_str_id();
   inline void clear_has_str_id();
@@ -3663,7 +3663,7 @@ class game_proto_get_best_record : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 map_template_id() const;
   inline void set_map_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_best_record)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_best_record)
  private:
   inline void set_has_map_template_id();
   inline void clear_has_map_template_id();
@@ -3773,7 +3773,7 @@ class game_proto_get_best_record_end : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_best_record_value();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_best_record_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_best_record_end)
  private:
   inline void set_has_map_template_id();
   inline void clear_has_map_template_id();
@@ -3857,7 +3857,7 @@ class game_proto_transfer_error : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 error_code() const;
   inline void set_error_code(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.transfer_error)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.transfer_error)
  private:
   inline void set_has_error_code();
   inline void clear_has_error_code();
@@ -3932,7 +3932,7 @@ class game_proto_transfer_to_pk_king_map : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.transfer_to_pk_king_map)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.transfer_to_pk_king_map)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -4018,7 +4018,7 @@ class game_proto_pk_king_game_over : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 award_money() const;
   inline void set_award_money(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.pk_king_game_over)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.pk_king_game_over)
  private:
   inline void set_has_award_exp();
   inline void clear_has_award_exp();
@@ -4110,7 +4110,7 @@ class game_proto_transfer_to_broken_sky_map : public ::google::protobuf::Message
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.transfer_to_broken_sky_map)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.transfer_to_broken_sky_map)
  private:
   inline void set_has_map_id();
   inline void clear_has_map_id();
@@ -4195,7 +4195,7 @@ class game_proto_broken_sky_boss_dead : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 boss_guid() const;
   inline void set_boss_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.broken_sky_boss_dead)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.broken_sky_boss_dead)
  private:
   inline void set_has_boss_guid();
   inline void clear_has_boss_guid();
@@ -4270,7 +4270,7 @@ class game_proto_leave_map : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.leave_map)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.leave_map)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -4349,7 +4349,7 @@ class game_proto_get_one_map_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 map_template_id() const;
   inline void set_map_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_one_map_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_one_map_info)
  private:
   inline void set_has_map_template_id();
   inline void clear_has_map_template_id();
@@ -4443,7 +4443,7 @@ class game_proto_get_one_map_info_end : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_map_info_arr();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_one_map_info_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_one_map_info_end)
  private:
   inline void set_has_map_template_id();
   inline void clear_has_map_template_id();
@@ -4540,7 +4540,7 @@ class game_proto_server_exp_level : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 exp_last_level() const;
   inline void set_exp_last_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.server_exp_level)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.server_exp_level)
  private:
   inline void set_has_exp_level();
   inline void clear_has_exp_level();
@@ -4628,7 +4628,7 @@ class game_proto_need_hot_update : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 update_type() const;
   inline void set_update_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.need_hot_update)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.need_hot_update)
  private:
   inline void set_has_update_type();
   inline void clear_has_update_type();
@@ -4717,7 +4717,7 @@ class game_proto_gain_treasure_info_one : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 info_value() const;
   inline void set_info_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.gain_treasure_info_one)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.gain_treasure_info_one)
  private:
   inline void set_has_info_type();
   inline void clear_has_info_type();
@@ -4795,24 +4795,24 @@ class game_proto_gain_treasure_info_all : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.gain_treasure_info_one info_arr = 1;
+  // repeated .faith.game_proto.gain_treasure_info_one info_arr = 1;
   inline int info_arr_size() const;
   inline void clear_info_arr();
   static const int kInfoArrFieldNumber = 1;
-  inline const ::hld::game_proto_gain_treasure_info_one& info_arr(int index) const;
-  inline ::hld::game_proto_gain_treasure_info_one* mutable_info_arr(int index);
-  inline ::hld::game_proto_gain_treasure_info_one* add_info_arr();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_gain_treasure_info_one >&
+  inline const ::faith::game_proto_gain_treasure_info_one& info_arr(int index) const;
+  inline ::faith::game_proto_gain_treasure_info_one* mutable_info_arr(int index);
+  inline ::faith::game_proto_gain_treasure_info_one* add_info_arr();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_gain_treasure_info_one >&
       info_arr() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_gain_treasure_info_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_gain_treasure_info_one >*
       mutable_info_arr();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.gain_treasure_info_all)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.gain_treasure_info_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_gain_treasure_info_one > info_arr_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_gain_treasure_info_one > info_arr_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -4887,7 +4887,7 @@ class game_proto_add_exp_raid_buff : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 add_count() const;
   inline void set_add_count(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.add_exp_raid_buff)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.add_exp_raid_buff)
  private:
   inline void set_has_add_count();
   inline void clear_has_add_count();
@@ -4969,7 +4969,7 @@ class game_proto_add_exp_raid_buff_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 add_count() const;
   inline void set_add_count(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.add_exp_raid_buff_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.add_exp_raid_buff_end)
  private:
   inline void set_has_add_count();
   inline void clear_has_add_count();
@@ -5065,7 +5065,7 @@ class game_proto_add_legion_boss_buff_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 gold_count() const;
   inline void set_gold_count(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.add_legion_boss_buff_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.add_legion_boss_buff_end)
  private:
   inline void set_has_add_count();
   inline void clear_has_add_count();
@@ -5172,7 +5172,7 @@ class game_proto_add_legion_boss_big_player_info : public ::google::protobuf::Me
   inline ::std::string* release_player_name();
   inline void set_allocated_player_name(::std::string* player_name);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.add_legion_boss_big_player_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.add_legion_boss_big_player_info)
  private:
   inline void set_has_class_type();
   inline void clear_has_class_type();
@@ -5260,7 +5260,7 @@ class game_proto_gain_treasure_req_kill_record : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 boss_spawn_point_template_id() const;
   inline void set_boss_spawn_point_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.gain_treasure_req_kill_record)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.gain_treasure_req_kill_record)
  private:
   inline void set_has_boss_spawn_point_template_id();
   inline void clear_has_boss_spawn_point_template_id();
@@ -5358,7 +5358,7 @@ class game_proto_gain_treasure_kill_record_one : public ::google::protobuf::Mess
   inline const ::google::protobuf::RepeatedPtrField< ::std::string>& role_name() const;
   inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_role_name();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.gain_treasure_kill_record_one)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.gain_treasure_kill_record_one)
  private:
   inline void set_has_killed_stamp();
   inline void clear_has_killed_stamp();
@@ -5441,26 +5441,26 @@ class game_proto_gain_treasure_kill_record_end : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 boss_spawn_point_template_id() const;
   inline void set_boss_spawn_point_template_id(::google::protobuf::int32 value);
 
-  // repeated .hld.game_proto.gain_treasure_kill_record_one record_arr = 2;
+  // repeated .faith.game_proto.gain_treasure_kill_record_one record_arr = 2;
   inline int record_arr_size() const;
   inline void clear_record_arr();
   static const int kRecordArrFieldNumber = 2;
-  inline const ::hld::game_proto_gain_treasure_kill_record_one& record_arr(int index) const;
-  inline ::hld::game_proto_gain_treasure_kill_record_one* mutable_record_arr(int index);
-  inline ::hld::game_proto_gain_treasure_kill_record_one* add_record_arr();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_gain_treasure_kill_record_one >&
+  inline const ::faith::game_proto_gain_treasure_kill_record_one& record_arr(int index) const;
+  inline ::faith::game_proto_gain_treasure_kill_record_one* mutable_record_arr(int index);
+  inline ::faith::game_proto_gain_treasure_kill_record_one* add_record_arr();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_gain_treasure_kill_record_one >&
       record_arr() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_gain_treasure_kill_record_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_gain_treasure_kill_record_one >*
       mutable_record_arr();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.gain_treasure_kill_record_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.gain_treasure_kill_record_end)
  private:
   inline void set_has_boss_spawn_point_template_id();
   inline void clear_has_boss_spawn_point_template_id();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_gain_treasure_kill_record_one > record_arr_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_gain_treasure_kill_record_one > record_arr_;
   ::google::protobuf::int32 boss_spawn_point_template_id_;
 
   mutable int _cached_size_;
@@ -5536,7 +5536,7 @@ class game_proto_gain_treasure_req_gain_item_record : public ::google::protobuf:
   inline ::google::protobuf::int32 record_index() const;
   inline void set_record_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.gain_treasure_req_gain_item_record)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.gain_treasure_req_gain_item_record)
  private:
   inline void set_has_record_index();
   inline void clear_has_record_index();
@@ -5658,7 +5658,7 @@ class game_proto_gain_treasure_gain_item_record_info_one : public ::google::prot
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.gain_treasure_gain_item_record_info_one)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.gain_treasure_gain_item_record_info_one)
  private:
   inline void set_has_role_name();
   inline void clear_has_role_name();
@@ -5748,24 +5748,24 @@ class game_proto_gain_treasure_gain_item_record_end : public ::google::protobuf:
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.gain_treasure_gain_item_record_info_one record_arr = 1;
+  // repeated .faith.game_proto.gain_treasure_gain_item_record_info_one record_arr = 1;
   inline int record_arr_size() const;
   inline void clear_record_arr();
   static const int kRecordArrFieldNumber = 1;
-  inline const ::hld::game_proto_gain_treasure_gain_item_record_info_one& record_arr(int index) const;
-  inline ::hld::game_proto_gain_treasure_gain_item_record_info_one* mutable_record_arr(int index);
-  inline ::hld::game_proto_gain_treasure_gain_item_record_info_one* add_record_arr();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_gain_treasure_gain_item_record_info_one >&
+  inline const ::faith::game_proto_gain_treasure_gain_item_record_info_one& record_arr(int index) const;
+  inline ::faith::game_proto_gain_treasure_gain_item_record_info_one* mutable_record_arr(int index);
+  inline ::faith::game_proto_gain_treasure_gain_item_record_info_one* add_record_arr();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_gain_treasure_gain_item_record_info_one >&
       record_arr() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_gain_treasure_gain_item_record_info_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_gain_treasure_gain_item_record_info_one >*
       mutable_record_arr();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.gain_treasure_gain_item_record_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.gain_treasure_gain_item_record_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_gain_treasure_gain_item_record_info_one > record_arr_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_gain_treasure_gain_item_record_info_one > record_arr_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -5885,7 +5885,7 @@ class game_proto_gain_treasure_boss_info_one : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 map_type() const;
   inline void set_map_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.gain_treasure_boss_info_one)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.gain_treasure_boss_info_one)
  private:
   inline void set_has_boss_spawn_point_template_id();
   inline void clear_has_boss_spawn_point_template_id();
@@ -5973,24 +5973,24 @@ class game_proto_gain_treasure_boss_info_all : public ::google::protobuf::Messag
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.gain_treasure_boss_info_one boss_info = 1;
+  // repeated .faith.game_proto.gain_treasure_boss_info_one boss_info = 1;
   inline int boss_info_size() const;
   inline void clear_boss_info();
   static const int kBossInfoFieldNumber = 1;
-  inline const ::hld::game_proto_gain_treasure_boss_info_one& boss_info(int index) const;
-  inline ::hld::game_proto_gain_treasure_boss_info_one* mutable_boss_info(int index);
-  inline ::hld::game_proto_gain_treasure_boss_info_one* add_boss_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_gain_treasure_boss_info_one >&
+  inline const ::faith::game_proto_gain_treasure_boss_info_one& boss_info(int index) const;
+  inline ::faith::game_proto_gain_treasure_boss_info_one* mutable_boss_info(int index);
+  inline ::faith::game_proto_gain_treasure_boss_info_one* add_boss_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_gain_treasure_boss_info_one >&
       boss_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_gain_treasure_boss_info_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_gain_treasure_boss_info_one >*
       mutable_boss_info();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.gain_treasure_boss_info_all)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.gain_treasure_boss_info_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_gain_treasure_boss_info_one > boss_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_gain_treasure_boss_info_one > boss_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -6072,7 +6072,7 @@ class game_proto_buy_raid_count : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 buy_count() const;
   inline void set_buy_count(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.buy_raid_count)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.buy_raid_count)
  private:
   inline void set_has_map_temp_id();
   inline void clear_has_map_temp_id();
@@ -6164,7 +6164,7 @@ class game_proto_buy_raid_count_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 buy_count() const;
   inline void set_buy_count(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.buy_raid_count_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.buy_raid_count_end)
  private:
   inline void set_has_map_temp_id();
   inline void clear_has_map_temp_id();
@@ -6256,7 +6256,7 @@ class game_proto_boss_island_info_one : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 info_value() const;
   inline void set_info_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.boss_island_info_one)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.boss_island_info_one)
  private:
   inline void set_has_info_type();
   inline void clear_has_info_type();
@@ -6346,7 +6346,7 @@ class game_proto_boss_island_info_all : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_info_value();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.boss_island_info_all)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.boss_island_info_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -6475,7 +6475,7 @@ class game_proto_server_config_all : public ::google::protobuf::Message {
   inline const ::google::protobuf::RepeatedPtrField< ::std::string>& server_name() const;
   inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_server_name();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.server_config_all)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.server_config_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -6565,7 +6565,7 @@ class game_proto_gm_begin_cross : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 gate_server_id() const;
   inline void set_gate_server_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.gm_begin_cross)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.gm_begin_cross)
  private:
   inline void set_has_is_begin_cross();
   inline void clear_has_is_begin_cross();
@@ -6657,7 +6657,7 @@ class game_proto_gm_begin_cross_one : public ::google::protobuf::Message {
   inline bool is_begin() const;
   inline void set_is_begin(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.gm_begin_cross_one)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.gm_begin_cross_one)
  private:
   inline void set_has_gm_type();
   inline void clear_has_gm_type();
@@ -6747,7 +6747,7 @@ class game_proto_gm_begin_cross_all : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< bool >*
       mutable_is_begin_arr();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.gm_begin_cross_all)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.gm_begin_cross_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -6827,7 +6827,7 @@ class game_proto_is_close_exchange : public ::google::protobuf::Message {
   inline bool is_close() const;
   inline void set_is_close(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.is_close_exchange)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.is_close_exchange)
  private:
   inline void set_has_is_close();
   inline void clear_has_is_close();
@@ -6909,7 +6909,7 @@ class game_proto_gm_begin_cross_pk : public ::google::protobuf::Message {
   inline bool is_begin_cross() const;
   inline void set_is_begin_cross(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.gm_begin_cross_pk)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.gm_begin_cross_pk)
  private:
   inline void set_has_is_begin_cross();
   inline void clear_has_is_begin_cross();
@@ -6991,7 +6991,7 @@ class game_proto_gm_begin_cross_harry : public ::google::protobuf::Message {
   inline bool is_begin_cross() const;
   inline void set_is_begin_cross(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.gm_begin_cross_harry)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.gm_begin_cross_harry)
  private:
   inline void set_has_is_begin_cross();
   inline void clear_has_is_begin_cross();
@@ -7073,7 +7073,7 @@ class game_proto_gm_begin_cross_territory_war : public ::google::protobuf::Messa
   inline bool is_begin_cross() const;
   inline void set_is_begin_cross(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.gm_begin_cross_territory_war)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.gm_begin_cross_territory_war)
  private:
   inline void set_has_is_begin_cross();
   inline void clear_has_is_begin_cross();
@@ -7155,7 +7155,7 @@ class game_proto_gm_begin_cross_world_boss : public ::google::protobuf::Message 
   inline bool is_begin_cross() const;
   inline void set_is_begin_cross(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.gm_begin_cross_world_boss)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.gm_begin_cross_world_boss)
  private:
   inline void set_has_is_begin_cross();
   inline void clear_has_is_begin_cross();
@@ -7237,7 +7237,7 @@ class game_proto_gm_begin_cross_ladder : public ::google::protobuf::Message {
   inline bool is_begin_cross() const;
   inline void set_is_begin_cross(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.gm_begin_cross_ladder)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.gm_begin_cross_ladder)
  private:
   inline void set_has_is_begin_cross();
   inline void clear_has_is_begin_cross();
@@ -7359,7 +7359,7 @@ class game_proto_pk_one_player_msg : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 is_winner() const;
   inline void set_is_winner(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.pk_one_player_msg)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.pk_one_player_msg)
  private:
   inline void set_has_player_guida();
   inline void clear_has_player_guida();
@@ -7463,16 +7463,16 @@ class game_proto_cross_server_one_island_msg : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 island_pk_state() const;
   inline void set_island_pk_state(::google::protobuf::int32 value);
 
-  // repeated .hld.game_proto.pk_one_player_msg player_msg = 3;
+  // repeated .faith.game_proto.pk_one_player_msg player_msg = 3;
   inline int player_msg_size() const;
   inline void clear_player_msg();
   static const int kPlayerMsgFieldNumber = 3;
-  inline const ::hld::game_proto_pk_one_player_msg& player_msg(int index) const;
-  inline ::hld::game_proto_pk_one_player_msg* mutable_player_msg(int index);
-  inline ::hld::game_proto_pk_one_player_msg* add_player_msg();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_pk_one_player_msg >&
+  inline const ::faith::game_proto_pk_one_player_msg& player_msg(int index) const;
+  inline ::faith::game_proto_pk_one_player_msg* mutable_player_msg(int index);
+  inline ::faith::game_proto_pk_one_player_msg* add_player_msg();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_pk_one_player_msg >&
       player_msg() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_pk_one_player_msg >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_pk_one_player_msg >*
       mutable_player_msg();
 
   // optional int32 winner_guidA = 4;
@@ -7503,7 +7503,7 @@ class game_proto_cross_server_one_island_msg : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 pk_count() const;
   inline void set_pk_count(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.cross_server_one_island_msg)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.cross_server_one_island_msg)
  private:
   inline void set_has_war_idex();
   inline void clear_has_war_idex();
@@ -7522,7 +7522,7 @@ class game_proto_cross_server_one_island_msg : public ::google::protobuf::Messag
 
   ::google::protobuf::int32 war_idex_;
   ::google::protobuf::int32 island_pk_state_;
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_pk_one_player_msg > player_msg_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_pk_one_player_msg > player_msg_;
   ::google::protobuf::int32 winner_guida_;
   ::google::protobuf::int32 winner_guidb_;
   ::google::protobuf::int32 is_end_war_;
@@ -7594,24 +7594,24 @@ class game_proto_cross_server_all_msg : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.cross_server_one_island_msg island_msg = 1;
+  // repeated .faith.game_proto.cross_server_one_island_msg island_msg = 1;
   inline int island_msg_size() const;
   inline void clear_island_msg();
   static const int kIslandMsgFieldNumber = 1;
-  inline const ::hld::game_proto_cross_server_one_island_msg& island_msg(int index) const;
-  inline ::hld::game_proto_cross_server_one_island_msg* mutable_island_msg(int index);
-  inline ::hld::game_proto_cross_server_one_island_msg* add_island_msg();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_cross_server_one_island_msg >&
+  inline const ::faith::game_proto_cross_server_one_island_msg& island_msg(int index) const;
+  inline ::faith::game_proto_cross_server_one_island_msg* mutable_island_msg(int index);
+  inline ::faith::game_proto_cross_server_one_island_msg* add_island_msg();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_cross_server_one_island_msg >&
       island_msg() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_cross_server_one_island_msg >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_cross_server_one_island_msg >*
       mutable_island_msg();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.cross_server_all_msg)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.cross_server_all_msg)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_cross_server_one_island_msg > island_msg_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_cross_server_one_island_msg > island_msg_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -7700,7 +7700,7 @@ class game_proto_cross_server_map_msg : public ::google::protobuf::Message {
   inline bool is_in_the_war() const;
   inline void set_is_in_the_war(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.cross_server_map_msg)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.cross_server_map_msg)
  private:
   inline void set_has_map_state();
   inline void clear_has_map_state();
@@ -7809,7 +7809,7 @@ class game_proto_cross_server_pk_map_island_msg : public ::google::protobuf::Mes
   inline ::google::protobuf::int32 war_idex() const;
   inline void set_war_idex(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.cross_server_pk_map_island_msg)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.cross_server_pk_map_island_msg)
  private:
   inline void set_has_map_state();
   inline void clear_has_map_state();
@@ -7893,7 +7893,7 @@ class game_proto_cross_server_pk_map_transfer : public ::google::protobuf::Messa
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.cross_server_pk_map_transfer)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.cross_server_pk_map_transfer)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -7972,7 +7972,7 @@ class game_proto_cross_server_pk_state_end_msg : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 pk_state() const;
   inline void set_pk_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.cross_server_pk_state_end_msg)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.cross_server_pk_state_end_msg)
  private:
   inline void set_has_pk_state();
   inline void clear_has_pk_state();
@@ -8054,7 +8054,7 @@ class game_proto_get_world_boss_damage : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 boss_id() const;
   inline void set_boss_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_world_boss_damage)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_world_boss_damage)
  private:
   inline void set_has_boss_id();
   inline void clear_has_boss_id();
@@ -8153,7 +8153,7 @@ class game_proto_template_table_param_string : public ::google::protobuf::Messag
   inline ::std::string* release_param_date();
   inline void set_allocated_param_date(::std::string* param_date);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.template_table_param_string)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.template_table_param_string)
  private:
   inline void set_has_param_name();
   inline void clear_has_param_name();
@@ -8250,7 +8250,7 @@ class game_proto_template_table_param_int : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 param_date() const;
   inline void set_param_date(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.template_table_param_int)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.template_table_param_int)
  private:
   inline void set_has_param_name();
   inline void clear_has_param_name();
@@ -8328,28 +8328,28 @@ class game_proto_template_table_data : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.template_table_param_string param_string = 1;
+  // repeated .faith.game_proto.template_table_param_string param_string = 1;
   inline int param_string_size() const;
   inline void clear_param_string();
   static const int kParamStringFieldNumber = 1;
-  inline const ::hld::game_proto_template_table_param_string& param_string(int index) const;
-  inline ::hld::game_proto_template_table_param_string* mutable_param_string(int index);
-  inline ::hld::game_proto_template_table_param_string* add_param_string();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_template_table_param_string >&
+  inline const ::faith::game_proto_template_table_param_string& param_string(int index) const;
+  inline ::faith::game_proto_template_table_param_string* mutable_param_string(int index);
+  inline ::faith::game_proto_template_table_param_string* add_param_string();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_template_table_param_string >&
       param_string() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_template_table_param_string >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_template_table_param_string >*
       mutable_param_string();
 
-  // repeated .hld.game_proto.template_table_param_int param_int = 2;
+  // repeated .faith.game_proto.template_table_param_int param_int = 2;
   inline int param_int_size() const;
   inline void clear_param_int();
   static const int kParamIntFieldNumber = 2;
-  inline const ::hld::game_proto_template_table_param_int& param_int(int index) const;
-  inline ::hld::game_proto_template_table_param_int* mutable_param_int(int index);
-  inline ::hld::game_proto_template_table_param_int* add_param_int();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_template_table_param_int >&
+  inline const ::faith::game_proto_template_table_param_int& param_int(int index) const;
+  inline ::faith::game_proto_template_table_param_int* mutable_param_int(int index);
+  inline ::faith::game_proto_template_table_param_int* add_param_int();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_template_table_param_int >&
       param_int() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_template_table_param_int >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_template_table_param_int >*
       mutable_param_int();
 
   // optional int32 attribute_id = 3;
@@ -8359,15 +8359,15 @@ class game_proto_template_table_data : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 attribute_id() const;
   inline void set_attribute_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.template_table_data)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.template_table_data)
  private:
   inline void set_has_attribute_id();
   inline void clear_has_attribute_id();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_template_table_param_string > param_string_;
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_template_table_param_int > param_int_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_template_table_param_string > param_string_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_template_table_param_int > param_int_;
   ::google::protobuf::int32 attribute_id_;
 
   mutable int _cached_size_;
@@ -8436,16 +8436,16 @@ class game_proto_set_template_table : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.template_table_data template_data = 1;
+  // repeated .faith.game_proto.template_table_data template_data = 1;
   inline int template_data_size() const;
   inline void clear_template_data();
   static const int kTemplateDataFieldNumber = 1;
-  inline const ::hld::game_proto_template_table_data& template_data(int index) const;
-  inline ::hld::game_proto_template_table_data* mutable_template_data(int index);
-  inline ::hld::game_proto_template_table_data* add_template_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_template_table_data >&
+  inline const ::faith::game_proto_template_table_data& template_data(int index) const;
+  inline ::faith::game_proto_template_table_data* mutable_template_data(int index);
+  inline ::faith::game_proto_template_table_data* add_template_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_template_table_data >&
       template_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_template_table_data >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_template_table_data >*
       mutable_template_data();
 
   // optional string tabel_name = 2;
@@ -8467,7 +8467,7 @@ class game_proto_set_template_table : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 if_first_send() const;
   inline void set_if_first_send(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.set_template_table)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.set_template_table)
  private:
   inline void set_has_tabel_name();
   inline void clear_has_tabel_name();
@@ -8476,7 +8476,7 @@ class game_proto_set_template_table : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_template_table_data > template_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_template_table_data > template_data_;
   ::std::string* tabel_name_;
   ::google::protobuf::int32 if_first_send_;
 
@@ -8546,7 +8546,7 @@ class game_proto_get_world_level : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_world_level)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_world_level)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -8625,7 +8625,7 @@ class game_proto_send_world_level : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 server_level() const;
   inline void set_server_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.send_world_level)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.send_world_level)
  private:
   inline void set_has_server_level();
   inline void clear_has_server_level();
@@ -8775,7 +8775,7 @@ class game_proto_cross_server_harry_one_msg : public ::google::protobuf::Message
   inline ::std::string* release_first_player_name();
   inline void set_allocated_first_player_name(::std::string* first_player_name);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.cross_server_harry_one_msg)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.cross_server_harry_one_msg)
  private:
   inline void set_has_server_id();
   inline void clear_has_server_id();
@@ -8877,24 +8877,24 @@ class game_proto_cross_server_harry_all_msg : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.cross_server_harry_one_msg all_harry_msg = 1;
+  // repeated .faith.game_proto.cross_server_harry_one_msg all_harry_msg = 1;
   inline int all_harry_msg_size() const;
   inline void clear_all_harry_msg();
   static const int kAllHarryMsgFieldNumber = 1;
-  inline const ::hld::game_proto_cross_server_harry_one_msg& all_harry_msg(int index) const;
-  inline ::hld::game_proto_cross_server_harry_one_msg* mutable_all_harry_msg(int index);
-  inline ::hld::game_proto_cross_server_harry_one_msg* add_all_harry_msg();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_cross_server_harry_one_msg >&
+  inline const ::faith::game_proto_cross_server_harry_one_msg& all_harry_msg(int index) const;
+  inline ::faith::game_proto_cross_server_harry_one_msg* mutable_all_harry_msg(int index);
+  inline ::faith::game_proto_cross_server_harry_one_msg* add_all_harry_msg();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_cross_server_harry_one_msg >&
       all_harry_msg() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_cross_server_harry_one_msg >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_cross_server_harry_one_msg >*
       mutable_all_harry_msg();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.cross_server_harry_all_msg)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.cross_server_harry_all_msg)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_cross_server_harry_one_msg > all_harry_msg_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_cross_server_harry_one_msg > all_harry_msg_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -8962,7 +8962,7 @@ class game_proto_give_server_item_msg : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.give_server_item_msg)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.give_server_item_msg)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -9048,7 +9048,7 @@ class game_proto_role_harry_msg_info_one : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 harry_value() const;
   inline void set_harry_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.role_harry_msg_info_one)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.role_harry_msg_info_one)
  private:
   inline void set_has_harry_idex();
   inline void clear_has_harry_idex();
@@ -9138,7 +9138,7 @@ class game_proto_role_harry_msg_info_all : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_harry_value_arr();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.role_harry_msg_info_all)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.role_harry_msg_info_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -9218,7 +9218,7 @@ class game_proto_transfer_to_harry_map : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 server_id() const;
   inline void set_server_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.transfer_to_harry_map)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.transfer_to_harry_map)
  private:
   inline void set_has_server_id();
   inline void clear_has_server_id();
@@ -9305,7 +9305,7 @@ class game_proto_random_array : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_random_num();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.random_array)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.random_array)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -9385,7 +9385,7 @@ class game_proto_cross_server_world_boss_map_transfer : public ::google::protobu
   inline ::google::protobuf::int32 boss_map_type() const;
   inline void set_boss_map_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.cross_server_world_boss_map_transfer)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.cross_server_world_boss_map_transfer)
  private:
   inline void set_has_boss_map_type();
   inline void clear_has_boss_map_type();
@@ -9460,7 +9460,7 @@ class game_proto_get_cross_boss_show_info : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_cross_boss_show_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_cross_boss_show_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -9576,7 +9576,7 @@ class game_proto_set_cross_boss_show_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_boss_residue_num();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.set_cross_boss_show_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.set_cross_boss_show_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -9651,7 +9651,7 @@ class game_proto_get_cross_boss_damage_list : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_cross_boss_damage_list)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_cross_boss_damage_list)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -9754,7 +9754,7 @@ class game_proto_cross_boss_rank_info : public ::google::protobuf::Message {
   inline ::std::string* release_legion_damage();
   inline void set_allocated_legion_damage(::std::string* legion_damage);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.cross_boss_rank_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.cross_boss_rank_info)
  private:
   inline void set_has_legion_value();
   inline void clear_has_legion_value();
@@ -9835,16 +9835,16 @@ class game_proto_cross_boss_legion_rank_list : public ::google::protobuf::Messag
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.cross_boss_rank_info rank_info = 1;
+  // repeated .faith.game_proto.cross_boss_rank_info rank_info = 1;
   inline int rank_info_size() const;
   inline void clear_rank_info();
   static const int kRankInfoFieldNumber = 1;
-  inline const ::hld::game_proto_cross_boss_rank_info& rank_info(int index) const;
-  inline ::hld::game_proto_cross_boss_rank_info* mutable_rank_info(int index);
-  inline ::hld::game_proto_cross_boss_rank_info* add_rank_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_cross_boss_rank_info >&
+  inline const ::faith::game_proto_cross_boss_rank_info& rank_info(int index) const;
+  inline ::faith::game_proto_cross_boss_rank_info* mutable_rank_info(int index);
+  inline ::faith::game_proto_cross_boss_rank_info* add_rank_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_cross_boss_rank_info >&
       rank_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_cross_boss_rank_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_cross_boss_rank_info >*
       mutable_rank_info();
 
   // optional int32 legion_rank = 2;
@@ -9873,7 +9873,7 @@ class game_proto_cross_boss_legion_rank_list : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 boss_tmp_id() const;
   inline void set_boss_tmp_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.cross_boss_legion_rank_list)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.cross_boss_legion_rank_list)
  private:
   inline void set_has_legion_rank();
   inline void clear_has_legion_rank();
@@ -9884,7 +9884,7 @@ class game_proto_cross_boss_legion_rank_list : public ::google::protobuf::Messag
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_cross_boss_rank_info > rank_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_cross_boss_rank_info > rank_info_;
   ::std::string* legion_damage_;
   ::google::protobuf::int32 legion_rank_;
   ::google::protobuf::int32 boss_tmp_id_;
@@ -9955,24 +9955,24 @@ class game_proto_cross_boss_legion_rank_list_all : public ::google::protobuf::Me
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.cross_boss_legion_rank_list rank_info_all = 1;
+  // repeated .faith.game_proto.cross_boss_legion_rank_list rank_info_all = 1;
   inline int rank_info_all_size() const;
   inline void clear_rank_info_all();
   static const int kRankInfoAllFieldNumber = 1;
-  inline const ::hld::game_proto_cross_boss_legion_rank_list& rank_info_all(int index) const;
-  inline ::hld::game_proto_cross_boss_legion_rank_list* mutable_rank_info_all(int index);
-  inline ::hld::game_proto_cross_boss_legion_rank_list* add_rank_info_all();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_cross_boss_legion_rank_list >&
+  inline const ::faith::game_proto_cross_boss_legion_rank_list& rank_info_all(int index) const;
+  inline ::faith::game_proto_cross_boss_legion_rank_list* mutable_rank_info_all(int index);
+  inline ::faith::game_proto_cross_boss_legion_rank_list* add_rank_info_all();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_cross_boss_legion_rank_list >&
       rank_info_all() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_cross_boss_legion_rank_list >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_cross_boss_legion_rank_list >*
       mutable_rank_info_all();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.cross_boss_legion_rank_list_all)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.cross_boss_legion_rank_list_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_cross_boss_legion_rank_list > rank_info_all_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_cross_boss_legion_rank_list > rank_info_all_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -10064,7 +10064,7 @@ class game_proto_cross_boss_is_dead : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_boss_is_dead();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.cross_boss_is_dead)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.cross_boss_is_dead)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -10145,7 +10145,7 @@ class game_proto_send_boss_god_begin_time : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 boss_id() const;
   inline void set_boss_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.send_boss_god_begin_time)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.send_boss_god_begin_time)
  private:
   inline void set_has_boss_id();
   inline void clear_has_boss_id();
@@ -10227,7 +10227,7 @@ class game_proto_get_boss_god_time : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 boss_id() const;
   inline void set_boss_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_boss_god_time)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_boss_god_time)
  private:
   inline void set_has_boss_id();
   inline void clear_has_boss_id();
@@ -10316,7 +10316,7 @@ class game_proto_send_boss_god_time : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 boss_id() const;
   inline void set_boss_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.send_boss_god_time)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.send_boss_god_time)
  private:
   inline void set_has_god_time();
   inline void clear_has_god_time();
@@ -10401,7 +10401,7 @@ class game_proto_get_map_boss_is_dead : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 map_template_id() const;
   inline void set_map_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_map_boss_is_dead)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_map_boss_is_dead)
  private:
   inline void set_has_map_template_id();
   inline void clear_has_map_template_id();
@@ -10490,7 +10490,7 @@ class game_proto_oracle_trial_customs_info : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 reward_stat() const;
   inline void set_reward_stat(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.oracle_trial_customs_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.oracle_trial_customs_info)
  private:
   inline void set_has_customs_state();
   inline void clear_has_customs_state();
@@ -10589,16 +10589,16 @@ class game_proto_oracle_trial_info_all : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 max_commping() const;
   inline void set_max_commping(::google::protobuf::int32 value);
 
-  // repeated .hld.game_proto.oracle_trial_customs_info all_info = 4;
+  // repeated .faith.game_proto.oracle_trial_customs_info all_info = 4;
   inline int all_info_size() const;
   inline void clear_all_info();
   static const int kAllInfoFieldNumber = 4;
-  inline const ::hld::game_proto_oracle_trial_customs_info& all_info(int index) const;
-  inline ::hld::game_proto_oracle_trial_customs_info* mutable_all_info(int index);
-  inline ::hld::game_proto_oracle_trial_customs_info* add_all_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_oracle_trial_customs_info >&
+  inline const ::faith::game_proto_oracle_trial_customs_info& all_info(int index) const;
+  inline ::faith::game_proto_oracle_trial_customs_info* mutable_all_info(int index);
+  inline ::faith::game_proto_oracle_trial_customs_info* add_all_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_oracle_trial_customs_info >&
       all_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_oracle_trial_customs_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_oracle_trial_customs_info >*
       mutable_all_info();
 
   // optional bool show_prompt = 5;
@@ -10608,7 +10608,7 @@ class game_proto_oracle_trial_info_all : public ::google::protobuf::Message {
   inline bool show_prompt() const;
   inline void set_show_prompt(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.oracle_trial_info_all)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.oracle_trial_info_all)
  private:
   inline void set_has_hight_rank();
   inline void clear_has_hight_rank();
@@ -10623,7 +10623,7 @@ class game_proto_oracle_trial_info_all : public ::google::protobuf::Message {
 
   ::google::protobuf::int32 hight_rank_;
   ::google::protobuf::int32 max_tier_;
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_oracle_trial_customs_info > all_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_oracle_trial_customs_info > all_info_;
   ::google::protobuf::int32 max_commping_;
   bool show_prompt_;
 
@@ -10693,7 +10693,7 @@ class game_proto_send_oracle_trial_commpingup : public ::google::protobuf::Messa
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.send_oracle_trial_commpingup)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.send_oracle_trial_commpingup)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -10772,7 +10772,7 @@ class game_proto_oracle_trial_commpingup_end : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 error_index() const;
   inline void set_error_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.oracle_trial_commpingup_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.oracle_trial_commpingup_end)
  private:
   inline void set_has_error_index();
   inline void clear_has_error_index();
@@ -10861,7 +10861,7 @@ class game_proto_get_oracle_trial_customs_award : public ::google::protobuf::Mes
   inline ::google::protobuf::int32 award_num() const;
   inline void set_award_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_oracle_trial_customs_award)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_oracle_trial_customs_award)
  private:
   inline void set_has_tier_num();
   inline void clear_has_tier_num();
@@ -10946,7 +10946,7 @@ class game_proto_send_oracle_trial_customs_award_end : public ::google::protobuf
   inline ::google::protobuf::int32 error_index() const;
   inline void set_error_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.send_oracle_trial_customs_award_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.send_oracle_trial_customs_award_end)
  private:
   inline void set_has_error_index();
   inline void clear_has_error_index();
@@ -11021,7 +11021,7 @@ class game_proto_get_oracle_trial_rank : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_oracle_trial_rank)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_oracle_trial_rank)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -11114,7 +11114,7 @@ class game_proto_send_oracle_trial_funben_over_info : public ::google::protobuf:
   inline ::google::protobuf::int32 new_statr() const;
   inline void set_new_statr(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.send_oracle_trial_funben_over_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.send_oracle_trial_funben_over_info)
  private:
   inline void set_has_map_id();
   inline void clear_has_map_id();
@@ -11214,7 +11214,7 @@ class game_proto_send_server_name : public ::google::protobuf::Message {
   inline ::std::string* release_server_name();
   inline void set_allocated_server_name(::std::string* server_name);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.send_server_name)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.send_server_name)
  private:
   inline void set_has_is_self_server();
   inline void clear_has_is_self_server();
@@ -11292,7 +11292,7 @@ class game_proto_send_transfer_new_map_error : public ::google::protobuf::Messag
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.send_transfer_new_map_error)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.send_transfer_new_map_error)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -11430,7 +11430,7 @@ class game_proto_boss_damage_list_item : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 legion_guid_b() const;
   inline void set_legion_guid_b(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.boss_damage_list_item)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.boss_damage_list_item)
  private:
   inline void set_has_role_name();
   inline void clear_has_role_name();
@@ -11526,28 +11526,28 @@ class game_proto_send_boss_damage_list_msg : public ::google::protobuf::Message 
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.boss_damage_list_item ranking_list = 1;
+  // repeated .faith.game_proto.boss_damage_list_item ranking_list = 1;
   inline int ranking_list_size() const;
   inline void clear_ranking_list();
   static const int kRankingListFieldNumber = 1;
-  inline const ::hld::game_proto_boss_damage_list_item& ranking_list(int index) const;
-  inline ::hld::game_proto_boss_damage_list_item* mutable_ranking_list(int index);
-  inline ::hld::game_proto_boss_damage_list_item* add_ranking_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_boss_damage_list_item >&
+  inline const ::faith::game_proto_boss_damage_list_item& ranking_list(int index) const;
+  inline ::faith::game_proto_boss_damage_list_item* mutable_ranking_list(int index);
+  inline ::faith::game_proto_boss_damage_list_item* add_ranking_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_boss_damage_list_item >&
       ranking_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_boss_damage_list_item >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_boss_damage_list_item >*
       mutable_ranking_list();
 
-  // repeated .hld.game_proto.boss_damage_list_item helper_list = 2;
+  // repeated .faith.game_proto.boss_damage_list_item helper_list = 2;
   inline int helper_list_size() const;
   inline void clear_helper_list();
   static const int kHelperListFieldNumber = 2;
-  inline const ::hld::game_proto_boss_damage_list_item& helper_list(int index) const;
-  inline ::hld::game_proto_boss_damage_list_item* mutable_helper_list(int index);
-  inline ::hld::game_proto_boss_damage_list_item* add_helper_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_boss_damage_list_item >&
+  inline const ::faith::game_proto_boss_damage_list_item& helper_list(int index) const;
+  inline ::faith::game_proto_boss_damage_list_item* mutable_helper_list(int index);
+  inline ::faith::game_proto_boss_damage_list_item* add_helper_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_boss_damage_list_item >&
       helper_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_boss_damage_list_item >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_boss_damage_list_item >*
       mutable_helper_list();
 
   // optional string my_damage = 3;
@@ -11583,7 +11583,7 @@ class game_proto_send_boss_damage_list_msg : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 boss_template_id() const;
   inline void set_boss_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.send_boss_damage_list_msg)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.send_boss_damage_list_msg)
  private:
   inline void set_has_my_damage();
   inline void clear_has_my_damage();
@@ -11596,8 +11596,8 @@ class game_proto_send_boss_damage_list_msg : public ::google::protobuf::Message 
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_boss_damage_list_item > ranking_list_;
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_boss_damage_list_item > helper_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_boss_damage_list_item > ranking_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_boss_damage_list_item > helper_list_;
   ::std::string* my_damage_;
   ::google::protobuf::int32 damage_rate_;
   ::google::protobuf::int32 is_end_;
@@ -11669,7 +11669,7 @@ class game_proto_send_leave_boss_damage_list_msg : public ::google::protobuf::Me
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.send_leave_boss_damage_list_msg)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.send_leave_boss_damage_list_msg)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -11774,7 +11774,7 @@ class game_proto_help_succes_list_item : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 template_id() const;
   inline void set_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.help_succes_list_item)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.help_succes_list_item)
  private:
   inline void set_has_role_name();
   inline void clear_has_role_name();
@@ -11858,16 +11858,16 @@ class game_proto_send_help_success_msg : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.help_succes_list_item help_list = 1;
+  // repeated .faith.game_proto.help_succes_list_item help_list = 1;
   inline int help_list_size() const;
   inline void clear_help_list();
   static const int kHelpListFieldNumber = 1;
-  inline const ::hld::game_proto_help_succes_list_item& help_list(int index) const;
-  inline ::hld::game_proto_help_succes_list_item* mutable_help_list(int index);
-  inline ::hld::game_proto_help_succes_list_item* add_help_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_help_succes_list_item >&
+  inline const ::faith::game_proto_help_succes_list_item& help_list(int index) const;
+  inline ::faith::game_proto_help_succes_list_item* mutable_help_list(int index);
+  inline ::faith::game_proto_help_succes_list_item* add_help_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_help_succes_list_item >&
       help_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_help_succes_list_item >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_help_succes_list_item >*
       mutable_help_list();
 
   // optional int32 helper_reward = 2;
@@ -11884,7 +11884,7 @@ class game_proto_send_help_success_msg : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 my_reward() const;
   inline void set_my_reward(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.send_help_success_msg)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.send_help_success_msg)
  private:
   inline void set_has_helper_reward();
   inline void clear_has_helper_reward();
@@ -11893,7 +11893,7 @@ class game_proto_send_help_success_msg : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_help_succes_list_item > help_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_help_succes_list_item > help_list_;
   ::google::protobuf::int32 helper_reward_;
   ::google::protobuf::int32 my_reward_;
 
@@ -12010,7 +12010,7 @@ class game_proto_send_the_attacker_info : public ::google::protobuf::Message {
   inline bool is_npc() const;
   inline void set_is_npc(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.send_the_attacker_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.send_the_attacker_info)
  private:
   inline void set_has_role_name();
   inline void clear_has_role_name();
@@ -12107,7 +12107,7 @@ class game_proto_buy_simple_boss_num : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 map_type() const;
   inline void set_map_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.buy_simple_boss_num)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.buy_simple_boss_num)
  private:
   inline void set_has_map_type();
   inline void clear_has_map_type();
@@ -12189,7 +12189,7 @@ class game_proto_buy_simple_boss_num_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 error_index() const;
   inline void set_error_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.buy_simple_boss_num_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.buy_simple_boss_num_end)
  private:
   inline void set_has_error_index();
   inline void clear_has_error_index();
@@ -12271,7 +12271,7 @@ class game_proto_is_can_transfer_other_line : public ::google::protobuf::Message
   inline ::google::protobuf::int32 transfer_state() const;
   inline void set_transfer_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.is_can_transfer_other_line)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.is_can_transfer_other_line)
  private:
   inline void set_has_transfer_state();
   inline void clear_has_transfer_state();
@@ -12346,24 +12346,24 @@ class game_proto_legion_auction_item_show : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.legion_aunction_item_one item_all = 1;
+  // repeated .faith.game_proto.legion_aunction_item_one item_all = 1;
   inline int item_all_size() const;
   inline void clear_item_all();
   static const int kItemAllFieldNumber = 1;
-  inline const ::hld::game_proto_legion_aunction_item_one& item_all(int index) const;
-  inline ::hld::game_proto_legion_aunction_item_one* mutable_item_all(int index);
-  inline ::hld::game_proto_legion_aunction_item_one* add_item_all();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_legion_aunction_item_one >&
+  inline const ::faith::game_proto_legion_aunction_item_one& item_all(int index) const;
+  inline ::faith::game_proto_legion_aunction_item_one* mutable_item_all(int index);
+  inline ::faith::game_proto_legion_aunction_item_one* add_item_all();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_legion_aunction_item_one >&
       item_all() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_legion_aunction_item_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_legion_aunction_item_one >*
       mutable_item_all();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.legion_auction_item_show)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.legion_auction_item_show)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_legion_aunction_item_one > item_all_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_legion_aunction_item_one > item_all_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -12452,7 +12452,7 @@ class game_proto_legion_aunction_item_one : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 item_lock() const;
   inline void set_item_lock(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.legion_aunction_item_one)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.legion_aunction_item_one)
  private:
   inline void set_has_item_temp_id();
   inline void clear_has_item_temp_id();
@@ -12568,7 +12568,7 @@ class game_proto_pk_king_player_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 is_dead() const;
   inline void set_is_dead(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.pk_king_player_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.pk_king_player_info)
  private:
   inline void set_has_kill_num();
   inline void clear_has_kill_num();
@@ -12681,7 +12681,7 @@ class game_proto_pk_king_kill_num_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 class_type() const;
   inline void set_class_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.pk_king_kill_num_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.pk_king_kill_num_info)
  private:
   inline void set_has_role_name();
   inline void clear_has_role_name();
@@ -12790,7 +12790,7 @@ class game_proto_pk_king_map_state_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 map_time_state_remaing() const;
   inline void set_map_time_state_remaing(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.pk_king_map_state_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.pk_king_map_state_info)
  private:
   inline void set_has_map_time();
   inline void clear_has_map_time();
@@ -12881,7 +12881,7 @@ class game_proto_pk_king_map_game_over : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 end_type() const;
   inline void set_end_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.pk_king_map_game_over)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.pk_king_map_game_over)
  private:
   inline void set_has_end_type();
   inline void clear_has_end_type();
@@ -12956,16 +12956,16 @@ class game_proto_pk_king_rank_list : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.pk_king_rank_info rank_list = 1;
+  // repeated .faith.game_proto.pk_king_rank_info rank_list = 1;
   inline int rank_list_size() const;
   inline void clear_rank_list();
   static const int kRankListFieldNumber = 1;
-  inline const ::hld::game_proto_pk_king_rank_info& rank_list(int index) const;
-  inline ::hld::game_proto_pk_king_rank_info* mutable_rank_list(int index);
-  inline ::hld::game_proto_pk_king_rank_info* add_rank_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_pk_king_rank_info >&
+  inline const ::faith::game_proto_pk_king_rank_info& rank_list(int index) const;
+  inline ::faith::game_proto_pk_king_rank_info* mutable_rank_list(int index);
+  inline ::faith::game_proto_pk_king_rank_info* add_rank_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_pk_king_rank_info >&
       rank_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_pk_king_rank_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_pk_king_rank_info >*
       mutable_rank_list();
 
   // optional int32 rank_num = 2;
@@ -12975,14 +12975,14 @@ class game_proto_pk_king_rank_list : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 rank_num() const;
   inline void set_rank_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.pk_king_rank_list)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.pk_king_rank_list)
  private:
   inline void set_has_rank_num();
   inline void clear_has_rank_num();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_pk_king_rank_info > rank_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_pk_king_rank_info > rank_list_;
   ::google::protobuf::int32 rank_num_;
 
   mutable int _cached_size_;
@@ -13098,7 +13098,7 @@ class game_proto_pk_king_rank_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 is_sur() const;
   inline void set_is_sur(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.pk_king_rank_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.pk_king_rank_info)
  private:
   inline void set_has_guid_a();
   inline void clear_has_guid_a();
@@ -13202,7 +13202,7 @@ class game_proto_send_need_break_line_login : public ::google::protobuf::Message
   inline ::google::protobuf::int32 active_type() const;
   inline void set_active_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.send_need_break_line_login)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.send_need_break_line_login)
  private:
   inline void set_has_map_template_id();
   inline void clear_has_map_template_id();
@@ -13294,7 +13294,7 @@ class game_proto_send_need_break_line_login_end : public ::google::protobuf::Mes
   inline ::google::protobuf::int32 active_type() const;
   inline void set_active_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.send_need_break_line_login_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.send_need_break_line_login_end)
  private:
   inline void set_has_is_login();
   inline void clear_has_is_login();
@@ -13393,7 +13393,7 @@ class game_proto_create_pk_end_time : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 end_str_type() const;
   inline void set_end_str_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.create_pk_end_time)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.create_pk_end_time)
  private:
   inline void set_has_begin_time();
   inline void clear_has_begin_time();
@@ -13486,7 +13486,7 @@ class game_proto_send_to_server_special_msg : public ::google::protobuf::Message
   inline ::std::string* release_special_msg();
   inline void set_allocated_special_msg(::std::string* special_msg);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.send_to_server_special_msg)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.send_to_server_special_msg)
  private:
   inline void set_has_special_msg();
   inline void clear_has_special_msg();
@@ -13592,7 +13592,7 @@ class game_proto_pk_king_target_list_msg : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 data_num() const;
   inline void set_data_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.pk_king_target_list_msg)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.pk_king_target_list_msg)
  private:
   inline void set_has_data_num();
   inline void clear_has_data_num();
@@ -13676,7 +13676,7 @@ class game_proto_server_act_is_open_end : public ::google::protobuf::Message {
   inline bool is_hiden() const;
   inline void set_is_hiden(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.server_act_is_open_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.server_act_is_open_end)
  private:
   inline void set_has_is_hiden();
   inline void clear_has_is_hiden();
@@ -13758,7 +13758,7 @@ class game_proto_element_war_send_upgrade_notify : public ::google::protobuf::Me
   inline ::google::protobuf::int32 upgrade_id() const;
   inline void set_upgrade_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_send_upgrade_notify)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_send_upgrade_notify)
  private:
   inline void set_has_upgrade_id();
   inline void clear_has_upgrade_id();
@@ -13833,7 +13833,7 @@ class game_proto_element_war_send_sign_up : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_send_sign_up)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_send_sign_up)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -13926,7 +13926,7 @@ class game_proto_element_war_send_sign_up_end : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 guid_b() const;
   inline void set_guid_b(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_send_sign_up_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_send_sign_up_end)
  private:
   inline void set_has_ret_index();
   inline void clear_has_ret_index();
@@ -14014,7 +14014,7 @@ class game_proto_element_war_send_sign_up_team_ready : public ::google::protobuf
   inline ::google::protobuf::int32 is_ready() const;
   inline void set_is_ready(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_send_sign_up_team_ready)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_send_sign_up_team_ready)
  private:
   inline void set_has_is_ready();
   inline void clear_has_is_ready();
@@ -14110,7 +14110,7 @@ class game_proto_element_war_send_sign_up_team_ready_end : public ::google::prot
   inline ::google::protobuf::int32 guid_b() const;
   inline void set_guid_b(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_send_sign_up_team_ready_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_send_sign_up_team_ready_end)
  private:
   inline void set_has_ret_index();
   inline void clear_has_ret_index();
@@ -14191,7 +14191,7 @@ class game_proto_element_war_send_close_sign_up : public ::google::protobuf::Mes
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_send_close_sign_up)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_send_close_sign_up)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -14284,7 +14284,7 @@ class game_proto_element_war_send_close_sign_up_end : public ::google::protobuf:
   inline ::google::protobuf::int32 guid_b() const;
   inline void set_guid_b(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_send_close_sign_up_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_send_close_sign_up_end)
  private:
   inline void set_has_ret_index();
   inline void clear_has_ret_index();
@@ -14419,7 +14419,7 @@ class game_proto_element_match_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 vip_level() const;
   inline void set_vip_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_match_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_match_info)
  private:
   inline void set_has_guid_a();
   inline void clear_has_guid_a();
@@ -14512,37 +14512,37 @@ class game_proto_element_war_send_match_success_msg : public ::google::protobuf:
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.element_match_info my_team_info = 1;
+  // repeated .faith.game_proto.element_match_info my_team_info = 1;
   inline int my_team_info_size() const;
   inline void clear_my_team_info();
   static const int kMyTeamInfoFieldNumber = 1;
-  inline const ::hld::game_proto_element_match_info& my_team_info(int index) const;
-  inline ::hld::game_proto_element_match_info* mutable_my_team_info(int index);
-  inline ::hld::game_proto_element_match_info* add_my_team_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_match_info >&
+  inline const ::faith::game_proto_element_match_info& my_team_info(int index) const;
+  inline ::faith::game_proto_element_match_info* mutable_my_team_info(int index);
+  inline ::faith::game_proto_element_match_info* add_my_team_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_match_info >&
       my_team_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_match_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_match_info >*
       mutable_my_team_info();
 
-  // repeated .hld.game_proto.element_match_info other_team_info = 2;
+  // repeated .faith.game_proto.element_match_info other_team_info = 2;
   inline int other_team_info_size() const;
   inline void clear_other_team_info();
   static const int kOtherTeamInfoFieldNumber = 2;
-  inline const ::hld::game_proto_element_match_info& other_team_info(int index) const;
-  inline ::hld::game_proto_element_match_info* mutable_other_team_info(int index);
-  inline ::hld::game_proto_element_match_info* add_other_team_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_match_info >&
+  inline const ::faith::game_proto_element_match_info& other_team_info(int index) const;
+  inline ::faith::game_proto_element_match_info* mutable_other_team_info(int index);
+  inline ::faith::game_proto_element_match_info* add_other_team_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_match_info >&
       other_team_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_match_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_match_info >*
       mutable_other_team_info();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_send_match_success_msg)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_send_match_success_msg)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_match_info > my_team_info_;
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_match_info > other_team_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_match_info > my_team_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_match_info > other_team_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -14657,7 +14657,7 @@ class game_proto_element_war_role_info : public ::google::protobuf::Message {
   inline bool is_sign() const;
   inline void set_is_sign(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_role_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_role_info)
  private:
   inline void set_has_max_index();
   inline void clear_has_max_index();
@@ -14780,7 +14780,7 @@ class game_proto_element_war_map_role_info : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 kill_player() const;
   inline void set_kill_player(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_map_role_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_map_role_info)
  private:
   inline void set_has_cur_score_num();
   inline void clear_has_cur_score_num();
@@ -14895,7 +14895,7 @@ class game_proto_element_war_boss_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 pos_z() const;
   inline void set_pos_z(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_boss_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_boss_info)
  private:
   inline void set_has_boss_id();
   inline void clear_has_boss_id();
@@ -15000,32 +15000,32 @@ class game_proto_element_war_map_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 map_state() const;
   inline void set_map_state(::google::protobuf::int32 value);
 
-  // optional .hld.game_proto.element_war_boss_info first_boss = 4;
+  // optional .faith.game_proto.element_war_boss_info first_boss = 4;
   inline bool has_first_boss() const;
   inline void clear_first_boss();
   static const int kFirstBossFieldNumber = 4;
-  inline const ::hld::game_proto_element_war_boss_info& first_boss() const;
-  inline ::hld::game_proto_element_war_boss_info* mutable_first_boss();
-  inline ::hld::game_proto_element_war_boss_info* release_first_boss();
-  inline void set_allocated_first_boss(::hld::game_proto_element_war_boss_info* first_boss);
+  inline const ::faith::game_proto_element_war_boss_info& first_boss() const;
+  inline ::faith::game_proto_element_war_boss_info* mutable_first_boss();
+  inline ::faith::game_proto_element_war_boss_info* release_first_boss();
+  inline void set_allocated_first_boss(::faith::game_proto_element_war_boss_info* first_boss);
 
-  // optional .hld.game_proto.element_war_boss_info secord_boss = 5;
+  // optional .faith.game_proto.element_war_boss_info secord_boss = 5;
   inline bool has_secord_boss() const;
   inline void clear_secord_boss();
   static const int kSecordBossFieldNumber = 5;
-  inline const ::hld::game_proto_element_war_boss_info& secord_boss() const;
-  inline ::hld::game_proto_element_war_boss_info* mutable_secord_boss();
-  inline ::hld::game_proto_element_war_boss_info* release_secord_boss();
-  inline void set_allocated_secord_boss(::hld::game_proto_element_war_boss_info* secord_boss);
+  inline const ::faith::game_proto_element_war_boss_info& secord_boss() const;
+  inline ::faith::game_proto_element_war_boss_info* mutable_secord_boss();
+  inline ::faith::game_proto_element_war_boss_info* release_secord_boss();
+  inline void set_allocated_secord_boss(::faith::game_proto_element_war_boss_info* secord_boss);
 
-  // optional .hld.game_proto.element_war_boss_info target_boss = 6;
+  // optional .faith.game_proto.element_war_boss_info target_boss = 6;
   inline bool has_target_boss() const;
   inline void clear_target_boss();
   static const int kTargetBossFieldNumber = 6;
-  inline const ::hld::game_proto_element_war_boss_info& target_boss() const;
-  inline ::hld::game_proto_element_war_boss_info* mutable_target_boss();
-  inline ::hld::game_proto_element_war_boss_info* release_target_boss();
-  inline void set_allocated_target_boss(::hld::game_proto_element_war_boss_info* target_boss);
+  inline const ::faith::game_proto_element_war_boss_info& target_boss() const;
+  inline ::faith::game_proto_element_war_boss_info* mutable_target_boss();
+  inline ::faith::game_proto_element_war_boss_info* release_target_boss();
+  inline void set_allocated_target_boss(::faith::game_proto_element_war_boss_info* target_boss);
 
   // repeated int32 buff_have_team = 7;
   inline int buff_have_team_size() const;
@@ -15055,7 +15055,7 @@ class game_proto_element_war_map_info : public ::google::protobuf::Message {
   inline const ::google::protobuf::RepeatedPtrField< ::std::string>& buff_have_name() const;
   inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_buff_have_name();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_map_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_map_info)
  private:
   inline void set_has_first_score_num();
   inline void clear_has_first_score_num();
@@ -15074,9 +15074,9 @@ class game_proto_element_war_map_info : public ::google::protobuf::Message {
 
   ::google::protobuf::int32 first_score_num_;
   ::google::protobuf::int32 secord_score_num_;
-  ::hld::game_proto_element_war_boss_info* first_boss_;
-  ::hld::game_proto_element_war_boss_info* secord_boss_;
-  ::hld::game_proto_element_war_boss_info* target_boss_;
+  ::faith::game_proto_element_war_boss_info* first_boss_;
+  ::faith::game_proto_element_war_boss_info* secord_boss_;
+  ::faith::game_proto_element_war_boss_info* target_boss_;
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > buff_have_team_;
   ::google::protobuf::RepeatedPtrField< ::std::string> buff_have_name_;
   ::google::protobuf::int32 map_state_;
@@ -15208,7 +15208,7 @@ class game_proto_element_war_map_end_role_info : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 team_index() const;
   inline void set_team_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_map_end_role_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_map_end_role_info)
  private:
   inline void set_has_role_name();
   inline void clear_has_role_name();
@@ -15304,28 +15304,28 @@ class game_proto_element_war_map_end_info : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.element_war_map_end_role_info first_team = 1;
+  // repeated .faith.game_proto.element_war_map_end_role_info first_team = 1;
   inline int first_team_size() const;
   inline void clear_first_team();
   static const int kFirstTeamFieldNumber = 1;
-  inline const ::hld::game_proto_element_war_map_end_role_info& first_team(int index) const;
-  inline ::hld::game_proto_element_war_map_end_role_info* mutable_first_team(int index);
-  inline ::hld::game_proto_element_war_map_end_role_info* add_first_team();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_war_map_end_role_info >&
+  inline const ::faith::game_proto_element_war_map_end_role_info& first_team(int index) const;
+  inline ::faith::game_proto_element_war_map_end_role_info* mutable_first_team(int index);
+  inline ::faith::game_proto_element_war_map_end_role_info* add_first_team();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_war_map_end_role_info >&
       first_team() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_war_map_end_role_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_war_map_end_role_info >*
       mutable_first_team();
 
-  // repeated .hld.game_proto.element_war_map_end_role_info secord_team = 2;
+  // repeated .faith.game_proto.element_war_map_end_role_info secord_team = 2;
   inline int secord_team_size() const;
   inline void clear_secord_team();
   static const int kSecordTeamFieldNumber = 2;
-  inline const ::hld::game_proto_element_war_map_end_role_info& secord_team(int index) const;
-  inline ::hld::game_proto_element_war_map_end_role_info* mutable_secord_team(int index);
-  inline ::hld::game_proto_element_war_map_end_role_info* add_secord_team();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_war_map_end_role_info >&
+  inline const ::faith::game_proto_element_war_map_end_role_info& secord_team(int index) const;
+  inline ::faith::game_proto_element_war_map_end_role_info* mutable_secord_team(int index);
+  inline ::faith::game_proto_element_war_map_end_role_info* add_secord_team();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_war_map_end_role_info >&
       secord_team() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_war_map_end_role_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_war_map_end_role_info >*
       mutable_secord_team();
 
   // optional bool is_win = 3;
@@ -15335,15 +15335,15 @@ class game_proto_element_war_map_end_info : public ::google::protobuf::Message {
   inline bool is_win() const;
   inline void set_is_win(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_map_end_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_map_end_info)
  private:
   inline void set_has_is_win();
   inline void clear_has_is_win();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_war_map_end_role_info > first_team_;
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_war_map_end_role_info > secord_team_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_war_map_end_role_info > first_team_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_war_map_end_role_info > secord_team_;
   bool is_win_;
 
   mutable int _cached_size_;
@@ -15466,7 +15466,7 @@ class game_proto_element_war_send_boss_be_attack : public ::google::protobuf::Me
   inline ::google::protobuf::int32 attack_level() const;
   inline void set_attack_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_send_boss_be_attack)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_send_boss_be_attack)
  private:
   inline void set_has_pos_x();
   inline void clear_has_pos_x();
@@ -15566,7 +15566,7 @@ class game_proto_element_war_get_mission_reward : public ::google::protobuf::Mes
   inline ::google::protobuf::int32 mission_index() const;
   inline void set_mission_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_get_mission_reward)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_get_mission_reward)
  private:
   inline void set_has_mission_index();
   inline void clear_has_mission_index();
@@ -15648,7 +15648,7 @@ class game_proto_element_war_get_mission_reward_end : public ::google::protobuf:
   inline ::google::protobuf::int32 ret_index() const;
   inline void set_ret_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_get_mission_reward_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_get_mission_reward_end)
  private:
   inline void set_has_ret_index();
   inline void clear_has_ret_index();
@@ -15723,7 +15723,7 @@ class game_proto_element_war_request_role_info : public ::google::protobuf::Mess
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_request_role_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_request_role_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -15795,7 +15795,7 @@ class game_proto_element_war_buy_ticket : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_buy_ticket)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_buy_ticket)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -15874,7 +15874,7 @@ class game_proto_element_war_buy_ticket_end : public ::google::protobuf::Message
   inline ::google::protobuf::int32 ret_index() const;
   inline void set_ret_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_buy_ticket_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_buy_ticket_end)
  private:
   inline void set_has_ret_index();
   inline void clear_has_ret_index();
@@ -15949,7 +15949,7 @@ class game_proto_element_war_send_create_ready_ui : public ::google::protobuf::M
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_send_create_ready_ui)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_send_create_ready_ui)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -16054,7 +16054,7 @@ class game_proto_element_war_create_boss_dead : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 boss_id() const;
   inline void set_boss_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_war_create_boss_dead)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_war_create_boss_dead)
  private:
   inline void set_has_class_type();
   inline void clear_has_class_type();
@@ -16183,7 +16183,7 @@ class game_proto_boss_rank_item : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 rank() const;
   inline void set_rank(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.boss_rank_item)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.boss_rank_item)
  private:
   inline void set_has_role_name();
   inline void clear_has_role_name();
@@ -16270,16 +16270,16 @@ class game_proto_boss_result_rank_list_end : public ::google::protobuf::Message 
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.boss_rank_item top_list = 1;
+  // repeated .faith.game_proto.boss_rank_item top_list = 1;
   inline int top_list_size() const;
   inline void clear_top_list();
   static const int kTopListFieldNumber = 1;
-  inline const ::hld::game_proto_boss_rank_item& top_list(int index) const;
-  inline ::hld::game_proto_boss_rank_item* mutable_top_list(int index);
-  inline ::hld::game_proto_boss_rank_item* add_top_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_boss_rank_item >&
+  inline const ::faith::game_proto_boss_rank_item& top_list(int index) const;
+  inline ::faith::game_proto_boss_rank_item* mutable_top_list(int index);
+  inline ::faith::game_proto_boss_rank_item* add_top_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_boss_rank_item >&
       top_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_boss_rank_item >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_boss_rank_item >*
       mutable_top_list();
 
   // optional int32 top_num = 2;
@@ -16289,14 +16289,14 @@ class game_proto_boss_result_rank_list_end : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 top_num() const;
   inline void set_top_num(::google::protobuf::int32 value);
 
-  // optional .hld.game_proto.boss_rank_item my_rank = 3;
+  // optional .faith.game_proto.boss_rank_item my_rank = 3;
   inline bool has_my_rank() const;
   inline void clear_my_rank();
   static const int kMyRankFieldNumber = 3;
-  inline const ::hld::game_proto_boss_rank_item& my_rank() const;
-  inline ::hld::game_proto_boss_rank_item* mutable_my_rank();
-  inline ::hld::game_proto_boss_rank_item* release_my_rank();
-  inline void set_allocated_my_rank(::hld::game_proto_boss_rank_item* my_rank);
+  inline const ::faith::game_proto_boss_rank_item& my_rank() const;
+  inline ::faith::game_proto_boss_rank_item* mutable_my_rank();
+  inline ::faith::game_proto_boss_rank_item* release_my_rank();
+  inline void set_allocated_my_rank(::faith::game_proto_boss_rank_item* my_rank);
 
   // optional int32 boss_template_id = 4;
   inline bool has_boss_template_id() const;
@@ -16305,7 +16305,7 @@ class game_proto_boss_result_rank_list_end : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 boss_template_id() const;
   inline void set_boss_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.boss_result_rank_list_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.boss_result_rank_list_end)
  private:
   inline void set_has_top_num();
   inline void clear_has_top_num();
@@ -16316,8 +16316,8 @@ class game_proto_boss_result_rank_list_end : public ::google::protobuf::Message 
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_boss_rank_item > top_list_;
-  ::hld::game_proto_boss_rank_item* my_rank_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_boss_rank_item > top_list_;
+  ::faith::game_proto_boss_rank_item* my_rank_;
   ::google::protobuf::int32 top_num_;
   ::google::protobuf::int32 boss_template_id_;
 
@@ -16427,7 +16427,7 @@ class game_proto_element_map_rank_role_info : public ::google::protobuf::Message
   inline ::google::protobuf::int32 guid_b() const;
   inline void set_guid_b(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_map_rank_role_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_map_rank_role_info)
  private:
   inline void set_has_role_name();
   inline void clear_has_role_name();
@@ -16514,24 +16514,24 @@ class game_proto_element_map_rank_info : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.element_map_rank_role_info rank_info = 1;
+  // repeated .faith.game_proto.element_map_rank_role_info rank_info = 1;
   inline int rank_info_size() const;
   inline void clear_rank_info();
   static const int kRankInfoFieldNumber = 1;
-  inline const ::hld::game_proto_element_map_rank_role_info& rank_info(int index) const;
-  inline ::hld::game_proto_element_map_rank_role_info* mutable_rank_info(int index);
-  inline ::hld::game_proto_element_map_rank_role_info* add_rank_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_map_rank_role_info >&
+  inline const ::faith::game_proto_element_map_rank_role_info& rank_info(int index) const;
+  inline ::faith::game_proto_element_map_rank_role_info* mutable_rank_info(int index);
+  inline ::faith::game_proto_element_map_rank_role_info* add_rank_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_map_rank_role_info >&
       rank_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_map_rank_role_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_map_rank_role_info >*
       mutable_rank_info();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.element_map_rank_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.element_map_rank_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_map_rank_role_info > rank_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_map_rank_role_info > rank_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -16620,7 +16620,7 @@ class game_proto_map_target_show_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 image_index() const;
   inline void set_image_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.map_target_show_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.map_target_show_info)
  private:
   inline void set_has_guid_a();
   inline void clear_has_guid_a();
@@ -16701,24 +16701,24 @@ class game_proto_map_target_show_info_list : public ::google::protobuf::Message 
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.map_target_show_info info_list = 1;
+  // repeated .faith.game_proto.map_target_show_info info_list = 1;
   inline int info_list_size() const;
   inline void clear_info_list();
   static const int kInfoListFieldNumber = 1;
-  inline const ::hld::game_proto_map_target_show_info& info_list(int index) const;
-  inline ::hld::game_proto_map_target_show_info* mutable_info_list(int index);
-  inline ::hld::game_proto_map_target_show_info* add_info_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_map_target_show_info >&
+  inline const ::faith::game_proto_map_target_show_info& info_list(int index) const;
+  inline ::faith::game_proto_map_target_show_info* mutable_info_list(int index);
+  inline ::faith::game_proto_map_target_show_info* add_info_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_map_target_show_info >&
       info_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_map_target_show_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_map_target_show_info >*
       mutable_info_list();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.map_target_show_info_list)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.map_target_show_info_list)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_map_target_show_info > info_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_map_target_show_info > info_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -16786,7 +16786,7 @@ class game_proto_get_map_target_show_info_list : public ::google::protobuf::Mess
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_map_target_show_info_list)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_map_target_show_info_list)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -16893,7 +16893,7 @@ class game_proto_refresh_lucky_card_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 lucky_card_info() const;
   inline void set_lucky_card_info(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.refresh_lucky_card_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.refresh_lucky_card_info)
  private:
   inline void set_has_activity_guid();
   inline void clear_has_activity_guid();
@@ -16987,7 +16987,7 @@ class game_proto_refresh_lucky_card : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 card_index() const;
   inline void set_card_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.refresh_lucky_card)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.refresh_lucky_card)
  private:
   inline void set_has_card_index();
   inline void clear_has_card_index();
@@ -17076,7 +17076,7 @@ class game_proto_lucky_card_operate : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 is_jump() const;
   inline void set_is_jump(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.lucky_card_operate)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.lucky_card_operate)
  private:
   inline void set_has_touch_index();
   inline void clear_has_touch_index();
@@ -17161,7 +17161,7 @@ class game_proto_lucky_card_operate_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 error_index() const;
   inline void set_error_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.lucky_card_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.lucky_card_operate_end)
  private:
   inline void set_has_error_index();
   inline void clear_has_error_index();
@@ -17236,7 +17236,7 @@ class game_proto_get_element_competition : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_element_competition)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_element_competition)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -17322,7 +17322,7 @@ class game_proto_get_competition_lv_reward : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 manual_type() const;
   inline void set_manual_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_competition_lv_reward)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_competition_lv_reward)
  private:
   inline void set_has_manual_id();
   inline void clear_has_manual_id();
@@ -17431,7 +17431,7 @@ class game_proto_get_competition_lv_reward_end : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 get_type() const;
   inline void set_get_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_competition_lv_reward_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_competition_lv_reward_end)
  private:
   inline void set_has_get_type();
   inline void clear_has_get_type();
@@ -17508,7 +17508,7 @@ class game_proto_get_competition_lv_reward_all : public ::google::protobuf::Mess
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_competition_lv_reward_all)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_competition_lv_reward_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -17587,7 +17587,7 @@ class game_proto_buy_competition_lv : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 level() const;
   inline void set_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.buy_competition_lv)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.buy_competition_lv)
  private:
   inline void set_has_level();
   inline void clear_has_level();
@@ -17676,7 +17676,7 @@ class game_proto_buy_competition_lv_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 cur_exp() const;
   inline void set_cur_exp(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.buy_competition_lv_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.buy_competition_lv_end)
  private:
   inline void set_has_level();
   inline void clear_has_level();
@@ -17761,7 +17761,7 @@ class game_proto_buy_speical_manual : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 manual_type() const;
   inline void set_manual_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.buy_speical_manual)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.buy_speical_manual)
  private:
   inline void set_has_manual_type();
   inline void clear_has_manual_type();
@@ -17850,7 +17850,7 @@ class game_proto_buy_speical_manual_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 manual_type() const;
   inline void set_manual_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.buy_speical_manual_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.buy_speical_manual_end)
  private:
   inline void set_has_is_buy();
   inline void clear_has_is_buy();
@@ -18015,7 +18015,7 @@ class game_proto_sync_role_competition : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 world_level() const;
   inline void set_world_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.sync_role_competition)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.sync_role_competition)
  private:
   inline void set_has_is_buy();
   inline void clear_has_is_buy();
@@ -18116,7 +18116,7 @@ class game_proto_send_new_server_treasure_finish : public ::google::protobuf::Me
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.send_new_server_treasure_finish)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.send_new_server_treasure_finish)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -18188,7 +18188,7 @@ class game_proto_transfer_attack_city_map : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.transfer_attack_city_map)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.transfer_attack_city_map)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -18274,7 +18274,7 @@ class game_proto_get_attack_city_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 guid_b() const;
   inline void set_guid_b(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_attack_city_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_attack_city_info)
  private:
   inline void set_has_guid_a();
   inline void clear_has_guid_a();
@@ -18385,7 +18385,7 @@ class game_proto_attack_city_info_level_info : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 group_level() const;
   inline void set_group_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.attack_city_info_level_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.attack_city_info_level_info)
  private:
   inline void set_has_guid_a();
   inline void clear_has_guid_a();
@@ -18516,16 +18516,16 @@ class game_proto_attack_city_info_list : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 win_num() const;
   inline void set_win_num(::google::protobuf::int32 value);
 
-  // repeated .hld.game_proto.attack_city_info_level_info list_info = 7;
+  // repeated .faith.game_proto.attack_city_info_level_info list_info = 7;
   inline int list_info_size() const;
   inline void clear_list_info();
   static const int kListInfoFieldNumber = 7;
-  inline const ::hld::game_proto_attack_city_info_level_info& list_info(int index) const;
-  inline ::hld::game_proto_attack_city_info_level_info* mutable_list_info(int index);
-  inline ::hld::game_proto_attack_city_info_level_info* add_list_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_info_level_info >&
+  inline const ::faith::game_proto_attack_city_info_level_info& list_info(int index) const;
+  inline ::faith::game_proto_attack_city_info_level_info* mutable_list_info(int index);
+  inline ::faith::game_proto_attack_city_info_level_info* add_list_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_info_level_info >&
       list_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_info_level_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_info_level_info >*
       mutable_list_info();
 
   // optional int32 is_in_game_time = 8;
@@ -18535,7 +18535,7 @@ class game_proto_attack_city_info_list : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 is_in_game_time() const;
   inline void set_is_in_game_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.attack_city_info_list)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.attack_city_info_list)
  private:
   inline void set_has_legion_level();
   inline void clear_has_legion_level();
@@ -18559,7 +18559,7 @@ class game_proto_attack_city_info_list : public ::google::protobuf::Message {
   ::google::protobuf::int32 gs_rank_;
   ::google::protobuf::int32 is_have_rank_;
   ::std::string* win_num_legion_name_;
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_info_level_info > list_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_info_level_info > list_info_;
   ::google::protobuf::int32 win_num_;
   ::google::protobuf::int32 is_in_game_time_;
 
@@ -18629,7 +18629,7 @@ class game_proto_get_attack_city_rank_list : public ::google::protobuf::Message 
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_attack_city_rank_list)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_attack_city_rank_list)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -18701,7 +18701,7 @@ class game_proto_get_attack_city_map_rank_list : public ::google::protobuf::Mess
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_attack_city_map_rank_list)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_attack_city_map_rank_list)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -18848,7 +18848,7 @@ class game_proto_attack_city_rank_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 show_index() const;
   inline void set_show_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.attack_city_rank_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.attack_city_rank_info)
  private:
   inline void set_has_guid_a();
   inline void clear_has_guid_a();
@@ -18969,16 +18969,16 @@ class game_proto_attack_city_rank_info_list : public ::google::protobuf::Message
   inline ::google::protobuf::int32 legion_source() const;
   inline void set_legion_source(::google::protobuf::int32 value);
 
-  // repeated .hld.game_proto.attack_city_rank_info info_list = 3;
+  // repeated .faith.game_proto.attack_city_rank_info info_list = 3;
   inline int info_list_size() const;
   inline void clear_info_list();
   static const int kInfoListFieldNumber = 3;
-  inline const ::hld::game_proto_attack_city_rank_info& info_list(int index) const;
-  inline ::hld::game_proto_attack_city_rank_info* mutable_info_list(int index);
-  inline ::hld::game_proto_attack_city_rank_info* add_info_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_rank_info >&
+  inline const ::faith::game_proto_attack_city_rank_info& info_list(int index) const;
+  inline ::faith::game_proto_attack_city_rank_info* mutable_info_list(int index);
+  inline ::faith::game_proto_attack_city_rank_info* add_info_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_rank_info >&
       info_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_rank_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_rank_info >*
       mutable_info_list();
 
   // optional int32 guid_a = 4;
@@ -19009,7 +19009,7 @@ class game_proto_attack_city_rank_info_list : public ::google::protobuf::Message
   inline ::google::protobuf::int32 show_index() const;
   inline void set_show_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.attack_city_rank_info_list)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.attack_city_rank_info_list)
  private:
   inline void set_has_legion_name();
   inline void clear_has_legion_name();
@@ -19027,7 +19027,7 @@ class game_proto_attack_city_rank_info_list : public ::google::protobuf::Message
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::std::string* legion_name_;
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_rank_info > info_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_rank_info > info_list_;
   ::google::protobuf::int32 legion_source_;
   ::google::protobuf::int32 guid_a_;
   ::google::protobuf::int32 guid_b_;
@@ -19100,24 +19100,24 @@ class game_proto_get_attack_city_rank_list_end : public ::google::protobuf::Mess
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.attack_city_rank_info_list rank_list = 1;
+  // repeated .faith.game_proto.attack_city_rank_info_list rank_list = 1;
   inline int rank_list_size() const;
   inline void clear_rank_list();
   static const int kRankListFieldNumber = 1;
-  inline const ::hld::game_proto_attack_city_rank_info_list& rank_list(int index) const;
-  inline ::hld::game_proto_attack_city_rank_info_list* mutable_rank_list(int index);
-  inline ::hld::game_proto_attack_city_rank_info_list* add_rank_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_rank_info_list >&
+  inline const ::faith::game_proto_attack_city_rank_info_list& rank_list(int index) const;
+  inline ::faith::game_proto_attack_city_rank_info_list* mutable_rank_list(int index);
+  inline ::faith::game_proto_attack_city_rank_info_list* add_rank_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_rank_info_list >&
       rank_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_rank_info_list >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_rank_info_list >*
       mutable_rank_list();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.get_attack_city_rank_list_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.get_attack_city_rank_list_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_rank_info_list > rank_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_rank_info_list > rank_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -19216,7 +19216,7 @@ class game_proto_attack_city_map_legion_info : public ::google::protobuf::Messag
   inline ::std::string* release_legion_damage();
   inline void set_allocated_legion_damage(::std::string* legion_damage);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.attack_city_map_legion_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.attack_city_map_legion_info)
  private:
   inline void set_has_server_id();
   inline void clear_has_server_id();
@@ -19297,16 +19297,16 @@ class game_proto_send_attack_city_map_legion_info : public ::google::protobuf::M
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.attack_city_map_legion_info info_list = 1;
+  // repeated .faith.game_proto.attack_city_map_legion_info info_list = 1;
   inline int info_list_size() const;
   inline void clear_info_list();
   static const int kInfoListFieldNumber = 1;
-  inline const ::hld::game_proto_attack_city_map_legion_info& info_list(int index) const;
-  inline ::hld::game_proto_attack_city_map_legion_info* mutable_info_list(int index);
-  inline ::hld::game_proto_attack_city_map_legion_info* add_info_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_map_legion_info >&
+  inline const ::faith::game_proto_attack_city_map_legion_info& info_list(int index) const;
+  inline ::faith::game_proto_attack_city_map_legion_info* mutable_info_list(int index);
+  inline ::faith::game_proto_attack_city_map_legion_info* add_info_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_map_legion_info >&
       info_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_map_legion_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_map_legion_info >*
       mutable_info_list();
 
   // optional int32 map_state = 2;
@@ -19337,7 +19337,7 @@ class game_proto_send_attack_city_map_legion_info : public ::google::protobuf::M
   inline ::google::protobuf::int32 guid_b() const;
   inline void set_guid_b(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.send_attack_city_map_legion_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.send_attack_city_map_legion_info)
  private:
   inline void set_has_map_state();
   inline void clear_has_map_state();
@@ -19350,7 +19350,7 @@ class game_proto_send_attack_city_map_legion_info : public ::google::protobuf::M
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_map_legion_info > info_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_map_legion_info > info_list_;
   ::google::protobuf::int32 map_state_;
   ::google::protobuf::int32 next_refresh_time_;
   ::google::protobuf::int32 guid_a_;
@@ -19436,7 +19436,7 @@ class game_proto_attack_city_operate : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 prop_npc_guid() const;
   inline void set_prop_npc_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.attack_city_operate)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.attack_city_operate)
  private:
   inline void set_has_operate_type();
   inline void clear_has_operate_type();
@@ -19535,7 +19535,7 @@ class game_proto_attack_city_operate_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 npc_id() const;
   inline void set_npc_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.attack_city_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.attack_city_operate_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -19658,7 +19658,7 @@ class game_proto_attack_city_npc_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 guid_b() const;
   inline void set_guid_b(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.attack_city_npc_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.attack_city_npc_info)
  private:
   inline void set_has_npc_type();
   inline void clear_has_npc_type();
@@ -19748,24 +19748,24 @@ class game_proto_attack_city_npc_list : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.attack_city_npc_info info_list = 1;
+  // repeated .faith.game_proto.attack_city_npc_info info_list = 1;
   inline int info_list_size() const;
   inline void clear_info_list();
   static const int kInfoListFieldNumber = 1;
-  inline const ::hld::game_proto_attack_city_npc_info& info_list(int index) const;
-  inline ::hld::game_proto_attack_city_npc_info* mutable_info_list(int index);
-  inline ::hld::game_proto_attack_city_npc_info* add_info_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_npc_info >&
+  inline const ::faith::game_proto_attack_city_npc_info& info_list(int index) const;
+  inline ::faith::game_proto_attack_city_npc_info* mutable_info_list(int index);
+  inline ::faith::game_proto_attack_city_npc_info* add_info_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_npc_info >&
       info_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_npc_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_npc_info >*
       mutable_info_list();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.attack_city_npc_list)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.attack_city_npc_list)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_npc_info > info_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_npc_info > info_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -19861,7 +19861,7 @@ class game_proto_attack_city_camp_cut : public ::google::protobuf::Message {
   inline ::std::string* release_guard_name();
   inline void set_allocated_guard_name(::std::string* guard_name);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.attack_city_camp_cut)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.attack_city_camp_cut)
  private:
   inline void set_has_guard_name();
   inline void clear_has_guard_name();
@@ -19937,7 +19937,7 @@ class game_proto_transfer_to_bron_pos : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.transfer_to_bron_pos)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.transfer_to_bron_pos)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -20091,7 +20091,7 @@ class game_proto_attack_city_map_end_player_info : public ::google::protobuf::Me
   inline ::google::protobuf::int32 repair_statue() const;
   inline void set_repair_statue(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.attack_city_map_end_player_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.attack_city_map_end_player_info)
  private:
   inline void set_has_guid_a();
   inline void clear_has_guid_a();
@@ -20217,7 +20217,7 @@ class game_proto_attack_city_map_end_item_info : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 show_type() const;
   inline void set_show_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.attack_city_map_end_item_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.attack_city_map_end_item_info)
  private:
   inline void set_has_item_id();
   inline void clear_has_item_id();
@@ -20298,28 +20298,28 @@ class game_proto_attack_city_map_end_info : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.attack_city_map_end_player_info play_list = 1;
+  // repeated .faith.game_proto.attack_city_map_end_player_info play_list = 1;
   inline int play_list_size() const;
   inline void clear_play_list();
   static const int kPlayListFieldNumber = 1;
-  inline const ::hld::game_proto_attack_city_map_end_player_info& play_list(int index) const;
-  inline ::hld::game_proto_attack_city_map_end_player_info* mutable_play_list(int index);
-  inline ::hld::game_proto_attack_city_map_end_player_info* add_play_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_map_end_player_info >&
+  inline const ::faith::game_proto_attack_city_map_end_player_info& play_list(int index) const;
+  inline ::faith::game_proto_attack_city_map_end_player_info* mutable_play_list(int index);
+  inline ::faith::game_proto_attack_city_map_end_player_info* add_play_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_map_end_player_info >&
       play_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_map_end_player_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_map_end_player_info >*
       mutable_play_list();
 
-  // repeated .hld.game_proto.attack_city_map_end_item_info item_list = 2;
+  // repeated .faith.game_proto.attack_city_map_end_item_info item_list = 2;
   inline int item_list_size() const;
   inline void clear_item_list();
   static const int kItemListFieldNumber = 2;
-  inline const ::hld::game_proto_attack_city_map_end_item_info& item_list(int index) const;
-  inline ::hld::game_proto_attack_city_map_end_item_info* mutable_item_list(int index);
-  inline ::hld::game_proto_attack_city_map_end_item_info* add_item_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_map_end_item_info >&
+  inline const ::faith::game_proto_attack_city_map_end_item_info& item_list(int index) const;
+  inline ::faith::game_proto_attack_city_map_end_item_info* mutable_item_list(int index);
+  inline ::faith::game_proto_attack_city_map_end_item_info* add_item_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_map_end_item_info >&
       item_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_map_end_item_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_map_end_item_info >*
       mutable_item_list();
 
   // optional int32 role_source = 3;
@@ -20336,7 +20336,7 @@ class game_proto_attack_city_map_end_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 role_rank() const;
   inline void set_role_rank(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.attack_city_map_end_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.attack_city_map_end_info)
  private:
   inline void set_has_role_source();
   inline void clear_has_role_source();
@@ -20345,8 +20345,8 @@ class game_proto_attack_city_map_end_info : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_map_end_player_info > play_list_;
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_map_end_item_info > item_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_map_end_player_info > play_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_map_end_item_info > item_list_;
   ::google::protobuf::int32 role_source_;
   ::google::protobuf::int32 role_rank_;
 
@@ -20416,7 +20416,7 @@ class game_proto_attack_legion_call : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.attack_legion_call)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.attack_legion_call)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -20488,7 +20488,7 @@ class game_proto_reset_camera : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.reset_camera)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.reset_camera)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -20567,7 +20567,7 @@ class game_proto_attack_transfer_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.attack_transfer_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.attack_transfer_info)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -20642,7 +20642,7 @@ class game_proto_end_attack_transfer_info : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.end_attack_transfer_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.end_attack_transfer_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -20726,7 +20726,7 @@ class game_proto_attack_city_npc_state_change_info : public ::google::protobuf::
   inline ::std::string* release_notice_content();
   inline void set_allocated_notice_content(::std::string* notice_content);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.attack_city_npc_state_change_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.attack_city_npc_state_change_info)
  private:
   inline void set_has_notice_content();
   inline void clear_has_notice_content();
@@ -20822,7 +20822,7 @@ class game_proto_time_feed_back_operation : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 sub_tem_id() const;
   inline void set_sub_tem_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.time_feed_back_operation)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.time_feed_back_operation)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -20910,7 +20910,7 @@ class game_proto_time_feed_back_operation_end : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.time_feed_back_operation_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.time_feed_back_operation_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -21034,7 +21034,7 @@ class game_proto_send_time_feed_back_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 money_num() const;
   inline void set_money_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.send_time_feed_back_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.send_time_feed_back_info)
  private:
   inline void set_has_template_id();
   inline void clear_has_template_id();
@@ -21127,24 +21127,24 @@ class game_proto_send_time_feed_back_info_list : public ::google::protobuf::Mess
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.send_time_feed_back_info info_list = 1;
+  // repeated .faith.game_proto.send_time_feed_back_info info_list = 1;
   inline int info_list_size() const;
   inline void clear_info_list();
   static const int kInfoListFieldNumber = 1;
-  inline const ::hld::game_proto_send_time_feed_back_info& info_list(int index) const;
-  inline ::hld::game_proto_send_time_feed_back_info* mutable_info_list(int index);
-  inline ::hld::game_proto_send_time_feed_back_info* add_info_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_send_time_feed_back_info >&
+  inline const ::faith::game_proto_send_time_feed_back_info& info_list(int index) const;
+  inline ::faith::game_proto_send_time_feed_back_info* mutable_info_list(int index);
+  inline ::faith::game_proto_send_time_feed_back_info* add_info_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_send_time_feed_back_info >&
       info_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_send_time_feed_back_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_send_time_feed_back_info >*
       mutable_info_list();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.send_time_feed_back_info_list)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.send_time_feed_back_info_list)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_send_time_feed_back_info > info_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_send_time_feed_back_info > info_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -21226,7 +21226,7 @@ class game_proto_time_limit_gift_operation : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 template_id() const;
   inline void set_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.time_limit_gift_operation)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.time_limit_gift_operation)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -21318,7 +21318,7 @@ class game_proto_time_limit_gift_operation_end : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 template_id() const;
   inline void set_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.time_limit_gift_operation_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.time_limit_gift_operation_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -21438,7 +21438,7 @@ class game_proto_time_limit_gift_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 buy_num() const;
   inline void set_buy_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.time_limit_gift_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.time_limit_gift_info)
  private:
   inline void set_has_template_id();
   inline void clear_has_template_id();
@@ -21528,24 +21528,24 @@ class game_proto_update_time_limit_gift_info : public ::google::protobuf::Messag
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.time_limit_gift_info info_list = 1;
+  // repeated .faith.game_proto.time_limit_gift_info info_list = 1;
   inline int info_list_size() const;
   inline void clear_info_list();
   static const int kInfoListFieldNumber = 1;
-  inline const ::hld::game_proto_time_limit_gift_info& info_list(int index) const;
-  inline ::hld::game_proto_time_limit_gift_info* mutable_info_list(int index);
-  inline ::hld::game_proto_time_limit_gift_info* add_info_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_time_limit_gift_info >&
+  inline const ::faith::game_proto_time_limit_gift_info& info_list(int index) const;
+  inline ::faith::game_proto_time_limit_gift_info* mutable_info_list(int index);
+  inline ::faith::game_proto_time_limit_gift_info* add_info_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_time_limit_gift_info >&
       info_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_time_limit_gift_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_time_limit_gift_info >*
       mutable_info_list();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.update_time_limit_gift_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.update_time_limit_gift_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_time_limit_gift_info > info_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_time_limit_gift_info > info_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -21620,7 +21620,7 @@ class game_proto_initiative_time_limit_gift : public ::google::protobuf::Message
   inline ::google::protobuf::int32 template_id() const;
   inline void set_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.initiative_time_limit_gift)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.initiative_time_limit_gift)
  private:
   inline void set_has_template_id();
   inline void clear_has_template_id();
@@ -21709,7 +21709,7 @@ class game_proto_limit_time_notice_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 weight_num() const;
   inline void set_weight_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.limit_time_notice_info)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.limit_time_notice_info)
  private:
   inline void set_has_template_id();
   inline void clear_has_template_id();
@@ -21787,16 +21787,16 @@ class game_proto_limit_time_notice_info_list : public ::google::protobuf::Messag
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.game_proto.limit_time_notice_info info_list = 1;
+  // repeated .faith.game_proto.limit_time_notice_info info_list = 1;
   inline int info_list_size() const;
   inline void clear_info_list();
   static const int kInfoListFieldNumber = 1;
-  inline const ::hld::game_proto_limit_time_notice_info& info_list(int index) const;
-  inline ::hld::game_proto_limit_time_notice_info* mutable_info_list(int index);
-  inline ::hld::game_proto_limit_time_notice_info* add_info_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_limit_time_notice_info >&
+  inline const ::faith::game_proto_limit_time_notice_info& info_list(int index) const;
+  inline ::faith::game_proto_limit_time_notice_info* mutable_info_list(int index);
+  inline ::faith::game_proto_limit_time_notice_info* add_info_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_limit_time_notice_info >&
       info_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_limit_time_notice_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_limit_time_notice_info >*
       mutable_info_list();
 
   // repeated int32 black_show_notice = 2;
@@ -21811,12 +21811,12 @@ class game_proto_limit_time_notice_info_list : public ::google::protobuf::Messag
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_black_show_notice();
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.limit_time_notice_info_list)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.limit_time_notice_info_list)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::game_proto_limit_time_notice_info > info_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::game_proto_limit_time_notice_info > info_list_;
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > black_show_notice_;
 
   mutable int _cached_size_;
@@ -21899,7 +21899,7 @@ class game_proto_fuben_vip_mopping : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 settlement() const;
   inline void set_settlement(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.fuben_vip_mopping)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.fuben_vip_mopping)
  private:
   inline void set_has_fuben_template_id();
   inline void clear_has_fuben_template_id();
@@ -21984,7 +21984,7 @@ class game_proto_fuben_vip_mopping_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.fuben_vip_mopping_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.fuben_vip_mopping_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -22059,7 +22059,7 @@ class game_proto_kill_boss : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.kill_boss)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.kill_boss)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -22138,7 +22138,7 @@ class game_proto_kill_boss_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.kill_boss_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.kill_boss_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -22220,7 +22220,7 @@ class game_proto_map_search : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 multiplier() const;
   inline void set_multiplier(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.map_search)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.map_search)
  private:
   inline void set_has_multiplier();
   inline void clear_has_multiplier();
@@ -22302,7 +22302,7 @@ class game_proto_map_search_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.map_search_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.map_search_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -22384,7 +22384,7 @@ class game_proto_upgrade_searche_level : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 multiplier() const;
   inline void set_multiplier(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.upgrade_searche_level)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.upgrade_searche_level)
  private:
   inline void set_has_multiplier();
   inline void clear_has_multiplier();
@@ -22466,7 +22466,7 @@ class game_proto_upgrade_searche_level_end : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto.upgrade_searche_level_end)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.upgrade_searche_level_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -22794,7 +22794,7 @@ class game_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.game_proto)
+  // @@protoc_insertion_point(class_scope:faith.game_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -23127,7 +23127,7 @@ inline void game_proto_rot_angle::set_z(float value) {
 
 // game_proto_enter_scene
 
-// optional .hld.game_proto.enter_scene_type type = 1 [default = enter];
+// optional .faith.game_proto.enter_scene_type type = 1 [default = enter];
 inline bool game_proto_enter_scene::has_type() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -23141,11 +23141,11 @@ inline void game_proto_enter_scene::clear_type() {
   type_ = 0;
   clear_has_type();
 }
-inline ::hld::game_proto_enter_scene_type game_proto_enter_scene::type() const {
-  return static_cast< ::hld::game_proto_enter_scene_type >(type_);
+inline ::faith::game_proto_enter_scene_type game_proto_enter_scene::type() const {
+  return static_cast< ::faith::game_proto_enter_scene_type >(type_);
 }
-inline void game_proto_enter_scene::set_type(::hld::game_proto_enter_scene_type value) {
-  assert(::hld::game_proto_enter_scene_type_IsValid(value));
+inline void game_proto_enter_scene::set_type(::faith::game_proto_enter_scene_type value) {
+  assert(::faith::game_proto_enter_scene_type_IsValid(value));
   set_has_type();
   type_ = value;
 }
@@ -23523,7 +23523,7 @@ inline void game_proto_transfer_scene_end::set_scene_uid(::google::protobuf::uin
   scene_uid_ = value;
 }
 
-// optional .hld.game_proto.pos_vector position = 3;
+// optional .faith.game_proto.pos_vector position = 3;
 inline bool game_proto_transfer_scene_end::has_position() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -23534,24 +23534,24 @@ inline void game_proto_transfer_scene_end::clear_has_position() {
   _has_bits_[0] &= ~0x00000004u;
 }
 inline void game_proto_transfer_scene_end::clear_position() {
-  if (position_ != NULL) position_->::hld::game_proto_pos_vector::Clear();
+  if (position_ != NULL) position_->::faith::game_proto_pos_vector::Clear();
   clear_has_position();
 }
-inline const ::hld::game_proto_pos_vector& game_proto_transfer_scene_end::position() const {
+inline const ::faith::game_proto_pos_vector& game_proto_transfer_scene_end::position() const {
   return position_ != NULL ? *position_ : *default_instance_->position_;
 }
-inline ::hld::game_proto_pos_vector* game_proto_transfer_scene_end::mutable_position() {
+inline ::faith::game_proto_pos_vector* game_proto_transfer_scene_end::mutable_position() {
   set_has_position();
-  if (position_ == NULL) position_ = new ::hld::game_proto_pos_vector;
+  if (position_ == NULL) position_ = new ::faith::game_proto_pos_vector;
   return position_;
 }
-inline ::hld::game_proto_pos_vector* game_proto_transfer_scene_end::release_position() {
+inline ::faith::game_proto_pos_vector* game_proto_transfer_scene_end::release_position() {
   clear_has_position();
-  ::hld::game_proto_pos_vector* temp = position_;
+  ::faith::game_proto_pos_vector* temp = position_;
   position_ = NULL;
   return temp;
 }
-inline void game_proto_transfer_scene_end::set_allocated_position(::hld::game_proto_pos_vector* position) {
+inline void game_proto_transfer_scene_end::set_allocated_position(::faith::game_proto_pos_vector* position) {
   delete position_;
   position_ = position;
   if (position) {
@@ -23561,7 +23561,7 @@ inline void game_proto_transfer_scene_end::set_allocated_position(::hld::game_pr
   }
 }
 
-// optional .hld.game_proto.rot_angle rotator_angle = 4;
+// optional .faith.game_proto.rot_angle rotator_angle = 4;
 inline bool game_proto_transfer_scene_end::has_rotator_angle() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -23572,24 +23572,24 @@ inline void game_proto_transfer_scene_end::clear_has_rotator_angle() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void game_proto_transfer_scene_end::clear_rotator_angle() {
-  if (rotator_angle_ != NULL) rotator_angle_->::hld::game_proto_rot_angle::Clear();
+  if (rotator_angle_ != NULL) rotator_angle_->::faith::game_proto_rot_angle::Clear();
   clear_has_rotator_angle();
 }
-inline const ::hld::game_proto_rot_angle& game_proto_transfer_scene_end::rotator_angle() const {
+inline const ::faith::game_proto_rot_angle& game_proto_transfer_scene_end::rotator_angle() const {
   return rotator_angle_ != NULL ? *rotator_angle_ : *default_instance_->rotator_angle_;
 }
-inline ::hld::game_proto_rot_angle* game_proto_transfer_scene_end::mutable_rotator_angle() {
+inline ::faith::game_proto_rot_angle* game_proto_transfer_scene_end::mutable_rotator_angle() {
   set_has_rotator_angle();
-  if (rotator_angle_ == NULL) rotator_angle_ = new ::hld::game_proto_rot_angle;
+  if (rotator_angle_ == NULL) rotator_angle_ = new ::faith::game_proto_rot_angle;
   return rotator_angle_;
 }
-inline ::hld::game_proto_rot_angle* game_proto_transfer_scene_end::release_rotator_angle() {
+inline ::faith::game_proto_rot_angle* game_proto_transfer_scene_end::release_rotator_angle() {
   clear_has_rotator_angle();
-  ::hld::game_proto_rot_angle* temp = rotator_angle_;
+  ::faith::game_proto_rot_angle* temp = rotator_angle_;
   rotator_angle_ = NULL;
   return temp;
 }
-inline void game_proto_transfer_scene_end::set_allocated_rotator_angle(::hld::game_proto_rot_angle* rotator_angle) {
+inline void game_proto_transfer_scene_end::set_allocated_rotator_angle(::faith::game_proto_rot_angle* rotator_angle) {
   delete rotator_angle_;
   rotator_angle_ = rotator_angle;
   if (rotator_angle) {
@@ -23625,7 +23625,7 @@ inline void game_proto_trans_local_scene_end::set_role_guid(::google::protobuf::
   role_guid_ = value;
 }
 
-// optional .hld.game_proto.pos_vector position = 2;
+// optional .faith.game_proto.pos_vector position = 2;
 inline bool game_proto_trans_local_scene_end::has_position() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -23636,24 +23636,24 @@ inline void game_proto_trans_local_scene_end::clear_has_position() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void game_proto_trans_local_scene_end::clear_position() {
-  if (position_ != NULL) position_->::hld::game_proto_pos_vector::Clear();
+  if (position_ != NULL) position_->::faith::game_proto_pos_vector::Clear();
   clear_has_position();
 }
-inline const ::hld::game_proto_pos_vector& game_proto_trans_local_scene_end::position() const {
+inline const ::faith::game_proto_pos_vector& game_proto_trans_local_scene_end::position() const {
   return position_ != NULL ? *position_ : *default_instance_->position_;
 }
-inline ::hld::game_proto_pos_vector* game_proto_trans_local_scene_end::mutable_position() {
+inline ::faith::game_proto_pos_vector* game_proto_trans_local_scene_end::mutable_position() {
   set_has_position();
-  if (position_ == NULL) position_ = new ::hld::game_proto_pos_vector;
+  if (position_ == NULL) position_ = new ::faith::game_proto_pos_vector;
   return position_;
 }
-inline ::hld::game_proto_pos_vector* game_proto_trans_local_scene_end::release_position() {
+inline ::faith::game_proto_pos_vector* game_proto_trans_local_scene_end::release_position() {
   clear_has_position();
-  ::hld::game_proto_pos_vector* temp = position_;
+  ::faith::game_proto_pos_vector* temp = position_;
   position_ = NULL;
   return temp;
 }
-inline void game_proto_trans_local_scene_end::set_allocated_position(::hld::game_proto_pos_vector* position) {
+inline void game_proto_trans_local_scene_end::set_allocated_position(::faith::game_proto_pos_vector* position) {
   delete position_;
   position_ = position;
   if (position) {
@@ -23663,7 +23663,7 @@ inline void game_proto_trans_local_scene_end::set_allocated_position(::hld::game
   }
 }
 
-// optional .hld.game_proto.rot_angle rotator_angle = 3;
+// optional .faith.game_proto.rot_angle rotator_angle = 3;
 inline bool game_proto_trans_local_scene_end::has_rotator_angle() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -23674,24 +23674,24 @@ inline void game_proto_trans_local_scene_end::clear_has_rotator_angle() {
   _has_bits_[0] &= ~0x00000004u;
 }
 inline void game_proto_trans_local_scene_end::clear_rotator_angle() {
-  if (rotator_angle_ != NULL) rotator_angle_->::hld::game_proto_rot_angle::Clear();
+  if (rotator_angle_ != NULL) rotator_angle_->::faith::game_proto_rot_angle::Clear();
   clear_has_rotator_angle();
 }
-inline const ::hld::game_proto_rot_angle& game_proto_trans_local_scene_end::rotator_angle() const {
+inline const ::faith::game_proto_rot_angle& game_proto_trans_local_scene_end::rotator_angle() const {
   return rotator_angle_ != NULL ? *rotator_angle_ : *default_instance_->rotator_angle_;
 }
-inline ::hld::game_proto_rot_angle* game_proto_trans_local_scene_end::mutable_rotator_angle() {
+inline ::faith::game_proto_rot_angle* game_proto_trans_local_scene_end::mutable_rotator_angle() {
   set_has_rotator_angle();
-  if (rotator_angle_ == NULL) rotator_angle_ = new ::hld::game_proto_rot_angle;
+  if (rotator_angle_ == NULL) rotator_angle_ = new ::faith::game_proto_rot_angle;
   return rotator_angle_;
 }
-inline ::hld::game_proto_rot_angle* game_proto_trans_local_scene_end::release_rotator_angle() {
+inline ::faith::game_proto_rot_angle* game_proto_trans_local_scene_end::release_rotator_angle() {
   clear_has_rotator_angle();
-  ::hld::game_proto_rot_angle* temp = rotator_angle_;
+  ::faith::game_proto_rot_angle* temp = rotator_angle_;
   rotator_angle_ = NULL;
   return temp;
 }
-inline void game_proto_trans_local_scene_end::set_allocated_rotator_angle(::hld::game_proto_rot_angle* rotator_angle) {
+inline void game_proto_trans_local_scene_end::set_allocated_rotator_angle(::faith::game_proto_rot_angle* rotator_angle) {
   delete rotator_angle_;
   rotator_angle_ = rotator_angle;
   if (rotator_angle) {
@@ -24181,27 +24181,27 @@ inline void game_proto_boss_state::set_is_final_boss(bool value) {
 
 // game_proto_bosses_state
 
-// repeated .hld.game_proto.boss_state created_bosses = 1;
+// repeated .faith.game_proto.boss_state created_bosses = 1;
 inline int game_proto_bosses_state::created_bosses_size() const {
   return created_bosses_.size();
 }
 inline void game_proto_bosses_state::clear_created_bosses() {
   created_bosses_.Clear();
 }
-inline const ::hld::game_proto_boss_state& game_proto_bosses_state::created_bosses(int index) const {
+inline const ::faith::game_proto_boss_state& game_proto_bosses_state::created_bosses(int index) const {
   return created_bosses_.Get(index);
 }
-inline ::hld::game_proto_boss_state* game_proto_bosses_state::mutable_created_bosses(int index) {
+inline ::faith::game_proto_boss_state* game_proto_bosses_state::mutable_created_bosses(int index) {
   return created_bosses_.Mutable(index);
 }
-inline ::hld::game_proto_boss_state* game_proto_bosses_state::add_created_bosses() {
+inline ::faith::game_proto_boss_state* game_proto_bosses_state::add_created_bosses() {
   return created_bosses_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_boss_state >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_boss_state >&
 game_proto_bosses_state::created_bosses() const {
   return created_bosses_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_boss_state >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_boss_state >*
 game_proto_bosses_state::mutable_created_bosses() {
   return &created_bosses_;
 }
@@ -24626,32 +24626,32 @@ inline void game_proto_score_record_list::set_score_list_len(::google::protobuf:
   score_list_len_ = value;
 }
 
-// repeated .hld.game_proto.score_record score_list = 2;
+// repeated .faith.game_proto.score_record score_list = 2;
 inline int game_proto_score_record_list::score_list_size() const {
   return score_list_.size();
 }
 inline void game_proto_score_record_list::clear_score_list() {
   score_list_.Clear();
 }
-inline const ::hld::game_proto_score_record& game_proto_score_record_list::score_list(int index) const {
+inline const ::faith::game_proto_score_record& game_proto_score_record_list::score_list(int index) const {
   return score_list_.Get(index);
 }
-inline ::hld::game_proto_score_record* game_proto_score_record_list::mutable_score_list(int index) {
+inline ::faith::game_proto_score_record* game_proto_score_record_list::mutable_score_list(int index) {
   return score_list_.Mutable(index);
 }
-inline ::hld::game_proto_score_record* game_proto_score_record_list::add_score_list() {
+inline ::faith::game_proto_score_record* game_proto_score_record_list::add_score_list() {
   return score_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_score_record >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_score_record >&
 game_proto_score_record_list::score_list() const {
   return score_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_score_record >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_score_record >*
 game_proto_score_record_list::mutable_score_list() {
   return &score_list_;
 }
 
-// optional .hld.game_proto.score_record extra_score = 3;
+// optional .faith.game_proto.score_record extra_score = 3;
 inline bool game_proto_score_record_list::has_extra_score() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -24662,24 +24662,24 @@ inline void game_proto_score_record_list::clear_has_extra_score() {
   _has_bits_[0] &= ~0x00000004u;
 }
 inline void game_proto_score_record_list::clear_extra_score() {
-  if (extra_score_ != NULL) extra_score_->::hld::game_proto_score_record::Clear();
+  if (extra_score_ != NULL) extra_score_->::faith::game_proto_score_record::Clear();
   clear_has_extra_score();
 }
-inline const ::hld::game_proto_score_record& game_proto_score_record_list::extra_score() const {
+inline const ::faith::game_proto_score_record& game_proto_score_record_list::extra_score() const {
   return extra_score_ != NULL ? *extra_score_ : *default_instance_->extra_score_;
 }
-inline ::hld::game_proto_score_record* game_proto_score_record_list::mutable_extra_score() {
+inline ::faith::game_proto_score_record* game_proto_score_record_list::mutable_extra_score() {
   set_has_extra_score();
-  if (extra_score_ == NULL) extra_score_ = new ::hld::game_proto_score_record;
+  if (extra_score_ == NULL) extra_score_ = new ::faith::game_proto_score_record;
   return extra_score_;
 }
-inline ::hld::game_proto_score_record* game_proto_score_record_list::release_extra_score() {
+inline ::faith::game_proto_score_record* game_proto_score_record_list::release_extra_score() {
   clear_has_extra_score();
-  ::hld::game_proto_score_record* temp = extra_score_;
+  ::faith::game_proto_score_record* temp = extra_score_;
   extra_score_ = NULL;
   return temp;
 }
-inline void game_proto_score_record_list::set_allocated_extra_score(::hld::game_proto_score_record* extra_score) {
+inline void game_proto_score_record_list::set_allocated_extra_score(::faith::game_proto_score_record* extra_score) {
   delete extra_score_;
   extra_score_ = extra_score;
   if (extra_score) {
@@ -25449,27 +25449,27 @@ inline void game_proto_gain_treasure_info_one::set_info_value(::google::protobuf
 
 // game_proto_gain_treasure_info_all
 
-// repeated .hld.game_proto.gain_treasure_info_one info_arr = 1;
+// repeated .faith.game_proto.gain_treasure_info_one info_arr = 1;
 inline int game_proto_gain_treasure_info_all::info_arr_size() const {
   return info_arr_.size();
 }
 inline void game_proto_gain_treasure_info_all::clear_info_arr() {
   info_arr_.Clear();
 }
-inline const ::hld::game_proto_gain_treasure_info_one& game_proto_gain_treasure_info_all::info_arr(int index) const {
+inline const ::faith::game_proto_gain_treasure_info_one& game_proto_gain_treasure_info_all::info_arr(int index) const {
   return info_arr_.Get(index);
 }
-inline ::hld::game_proto_gain_treasure_info_one* game_proto_gain_treasure_info_all::mutable_info_arr(int index) {
+inline ::faith::game_proto_gain_treasure_info_one* game_proto_gain_treasure_info_all::mutable_info_arr(int index) {
   return info_arr_.Mutable(index);
 }
-inline ::hld::game_proto_gain_treasure_info_one* game_proto_gain_treasure_info_all::add_info_arr() {
+inline ::faith::game_proto_gain_treasure_info_one* game_proto_gain_treasure_info_all::add_info_arr() {
   return info_arr_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_gain_treasure_info_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_gain_treasure_info_one >&
 game_proto_gain_treasure_info_all::info_arr() const {
   return info_arr_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_gain_treasure_info_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_gain_treasure_info_one >*
 game_proto_gain_treasure_info_all::mutable_info_arr() {
   return &info_arr_;
 }
@@ -25836,27 +25836,27 @@ inline void game_proto_gain_treasure_kill_record_end::set_boss_spawn_point_templ
   boss_spawn_point_template_id_ = value;
 }
 
-// repeated .hld.game_proto.gain_treasure_kill_record_one record_arr = 2;
+// repeated .faith.game_proto.gain_treasure_kill_record_one record_arr = 2;
 inline int game_proto_gain_treasure_kill_record_end::record_arr_size() const {
   return record_arr_.size();
 }
 inline void game_proto_gain_treasure_kill_record_end::clear_record_arr() {
   record_arr_.Clear();
 }
-inline const ::hld::game_proto_gain_treasure_kill_record_one& game_proto_gain_treasure_kill_record_end::record_arr(int index) const {
+inline const ::faith::game_proto_gain_treasure_kill_record_one& game_proto_gain_treasure_kill_record_end::record_arr(int index) const {
   return record_arr_.Get(index);
 }
-inline ::hld::game_proto_gain_treasure_kill_record_one* game_proto_gain_treasure_kill_record_end::mutable_record_arr(int index) {
+inline ::faith::game_proto_gain_treasure_kill_record_one* game_proto_gain_treasure_kill_record_end::mutable_record_arr(int index) {
   return record_arr_.Mutable(index);
 }
-inline ::hld::game_proto_gain_treasure_kill_record_one* game_proto_gain_treasure_kill_record_end::add_record_arr() {
+inline ::faith::game_proto_gain_treasure_kill_record_one* game_proto_gain_treasure_kill_record_end::add_record_arr() {
   return record_arr_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_gain_treasure_kill_record_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_gain_treasure_kill_record_one >&
 game_proto_gain_treasure_kill_record_end::record_arr() const {
   return record_arr_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_gain_treasure_kill_record_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_gain_treasure_kill_record_one >*
 game_proto_gain_treasure_kill_record_end::mutable_record_arr() {
   return &record_arr_;
 }
@@ -26075,27 +26075,27 @@ inline void game_proto_gain_treasure_gain_item_record_info_one::set_role_guid(::
 
 // game_proto_gain_treasure_gain_item_record_end
 
-// repeated .hld.game_proto.gain_treasure_gain_item_record_info_one record_arr = 1;
+// repeated .faith.game_proto.gain_treasure_gain_item_record_info_one record_arr = 1;
 inline int game_proto_gain_treasure_gain_item_record_end::record_arr_size() const {
   return record_arr_.size();
 }
 inline void game_proto_gain_treasure_gain_item_record_end::clear_record_arr() {
   record_arr_.Clear();
 }
-inline const ::hld::game_proto_gain_treasure_gain_item_record_info_one& game_proto_gain_treasure_gain_item_record_end::record_arr(int index) const {
+inline const ::faith::game_proto_gain_treasure_gain_item_record_info_one& game_proto_gain_treasure_gain_item_record_end::record_arr(int index) const {
   return record_arr_.Get(index);
 }
-inline ::hld::game_proto_gain_treasure_gain_item_record_info_one* game_proto_gain_treasure_gain_item_record_end::mutable_record_arr(int index) {
+inline ::faith::game_proto_gain_treasure_gain_item_record_info_one* game_proto_gain_treasure_gain_item_record_end::mutable_record_arr(int index) {
   return record_arr_.Mutable(index);
 }
-inline ::hld::game_proto_gain_treasure_gain_item_record_info_one* game_proto_gain_treasure_gain_item_record_end::add_record_arr() {
+inline ::faith::game_proto_gain_treasure_gain_item_record_info_one* game_proto_gain_treasure_gain_item_record_end::add_record_arr() {
   return record_arr_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_gain_treasure_gain_item_record_info_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_gain_treasure_gain_item_record_info_one >&
 game_proto_gain_treasure_gain_item_record_end::record_arr() const {
   return record_arr_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_gain_treasure_gain_item_record_info_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_gain_treasure_gain_item_record_info_one >*
 game_proto_gain_treasure_gain_item_record_end::mutable_record_arr() {
   return &record_arr_;
 }
@@ -26291,27 +26291,27 @@ inline void game_proto_gain_treasure_boss_info_one::set_map_type(::google::proto
 
 // game_proto_gain_treasure_boss_info_all
 
-// repeated .hld.game_proto.gain_treasure_boss_info_one boss_info = 1;
+// repeated .faith.game_proto.gain_treasure_boss_info_one boss_info = 1;
 inline int game_proto_gain_treasure_boss_info_all::boss_info_size() const {
   return boss_info_.size();
 }
 inline void game_proto_gain_treasure_boss_info_all::clear_boss_info() {
   boss_info_.Clear();
 }
-inline const ::hld::game_proto_gain_treasure_boss_info_one& game_proto_gain_treasure_boss_info_all::boss_info(int index) const {
+inline const ::faith::game_proto_gain_treasure_boss_info_one& game_proto_gain_treasure_boss_info_all::boss_info(int index) const {
   return boss_info_.Get(index);
 }
-inline ::hld::game_proto_gain_treasure_boss_info_one* game_proto_gain_treasure_boss_info_all::mutable_boss_info(int index) {
+inline ::faith::game_proto_gain_treasure_boss_info_one* game_proto_gain_treasure_boss_info_all::mutable_boss_info(int index) {
   return boss_info_.Mutable(index);
 }
-inline ::hld::game_proto_gain_treasure_boss_info_one* game_proto_gain_treasure_boss_info_all::add_boss_info() {
+inline ::faith::game_proto_gain_treasure_boss_info_one* game_proto_gain_treasure_boss_info_all::add_boss_info() {
   return boss_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_gain_treasure_boss_info_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_gain_treasure_boss_info_one >&
 game_proto_gain_treasure_boss_info_all::boss_info() const {
   return boss_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_gain_treasure_boss_info_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_gain_treasure_boss_info_one >*
 game_proto_gain_treasure_boss_info_all::mutable_boss_info() {
   return &boss_info_;
 }
@@ -27144,27 +27144,27 @@ inline void game_proto_cross_server_one_island_msg::set_island_pk_state(::google
   island_pk_state_ = value;
 }
 
-// repeated .hld.game_proto.pk_one_player_msg player_msg = 3;
+// repeated .faith.game_proto.pk_one_player_msg player_msg = 3;
 inline int game_proto_cross_server_one_island_msg::player_msg_size() const {
   return player_msg_.size();
 }
 inline void game_proto_cross_server_one_island_msg::clear_player_msg() {
   player_msg_.Clear();
 }
-inline const ::hld::game_proto_pk_one_player_msg& game_proto_cross_server_one_island_msg::player_msg(int index) const {
+inline const ::faith::game_proto_pk_one_player_msg& game_proto_cross_server_one_island_msg::player_msg(int index) const {
   return player_msg_.Get(index);
 }
-inline ::hld::game_proto_pk_one_player_msg* game_proto_cross_server_one_island_msg::mutable_player_msg(int index) {
+inline ::faith::game_proto_pk_one_player_msg* game_proto_cross_server_one_island_msg::mutable_player_msg(int index) {
   return player_msg_.Mutable(index);
 }
-inline ::hld::game_proto_pk_one_player_msg* game_proto_cross_server_one_island_msg::add_player_msg() {
+inline ::faith::game_proto_pk_one_player_msg* game_proto_cross_server_one_island_msg::add_player_msg() {
   return player_msg_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_pk_one_player_msg >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_pk_one_player_msg >&
 game_proto_cross_server_one_island_msg::player_msg() const {
   return player_msg_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_pk_one_player_msg >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_pk_one_player_msg >*
 game_proto_cross_server_one_island_msg::mutable_player_msg() {
   return &player_msg_;
 }
@@ -27261,27 +27261,27 @@ inline void game_proto_cross_server_one_island_msg::set_pk_count(::google::proto
 
 // game_proto_cross_server_all_msg
 
-// repeated .hld.game_proto.cross_server_one_island_msg island_msg = 1;
+// repeated .faith.game_proto.cross_server_one_island_msg island_msg = 1;
 inline int game_proto_cross_server_all_msg::island_msg_size() const {
   return island_msg_.size();
 }
 inline void game_proto_cross_server_all_msg::clear_island_msg() {
   island_msg_.Clear();
 }
-inline const ::hld::game_proto_cross_server_one_island_msg& game_proto_cross_server_all_msg::island_msg(int index) const {
+inline const ::faith::game_proto_cross_server_one_island_msg& game_proto_cross_server_all_msg::island_msg(int index) const {
   return island_msg_.Get(index);
 }
-inline ::hld::game_proto_cross_server_one_island_msg* game_proto_cross_server_all_msg::mutable_island_msg(int index) {
+inline ::faith::game_proto_cross_server_one_island_msg* game_proto_cross_server_all_msg::mutable_island_msg(int index) {
   return island_msg_.Mutable(index);
 }
-inline ::hld::game_proto_cross_server_one_island_msg* game_proto_cross_server_all_msg::add_island_msg() {
+inline ::faith::game_proto_cross_server_one_island_msg* game_proto_cross_server_all_msg::add_island_msg() {
   return island_msg_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_cross_server_one_island_msg >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_cross_server_one_island_msg >&
 game_proto_cross_server_all_msg::island_msg() const {
   return island_msg_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_cross_server_one_island_msg >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_cross_server_one_island_msg >*
 game_proto_cross_server_all_msg::mutable_island_msg() {
   return &island_msg_;
 }
@@ -27748,52 +27748,52 @@ inline void game_proto_template_table_param_int::set_param_date(::google::protob
 
 // game_proto_template_table_data
 
-// repeated .hld.game_proto.template_table_param_string param_string = 1;
+// repeated .faith.game_proto.template_table_param_string param_string = 1;
 inline int game_proto_template_table_data::param_string_size() const {
   return param_string_.size();
 }
 inline void game_proto_template_table_data::clear_param_string() {
   param_string_.Clear();
 }
-inline const ::hld::game_proto_template_table_param_string& game_proto_template_table_data::param_string(int index) const {
+inline const ::faith::game_proto_template_table_param_string& game_proto_template_table_data::param_string(int index) const {
   return param_string_.Get(index);
 }
-inline ::hld::game_proto_template_table_param_string* game_proto_template_table_data::mutable_param_string(int index) {
+inline ::faith::game_proto_template_table_param_string* game_proto_template_table_data::mutable_param_string(int index) {
   return param_string_.Mutable(index);
 }
-inline ::hld::game_proto_template_table_param_string* game_proto_template_table_data::add_param_string() {
+inline ::faith::game_proto_template_table_param_string* game_proto_template_table_data::add_param_string() {
   return param_string_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_template_table_param_string >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_template_table_param_string >&
 game_proto_template_table_data::param_string() const {
   return param_string_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_template_table_param_string >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_template_table_param_string >*
 game_proto_template_table_data::mutable_param_string() {
   return &param_string_;
 }
 
-// repeated .hld.game_proto.template_table_param_int param_int = 2;
+// repeated .faith.game_proto.template_table_param_int param_int = 2;
 inline int game_proto_template_table_data::param_int_size() const {
   return param_int_.size();
 }
 inline void game_proto_template_table_data::clear_param_int() {
   param_int_.Clear();
 }
-inline const ::hld::game_proto_template_table_param_int& game_proto_template_table_data::param_int(int index) const {
+inline const ::faith::game_proto_template_table_param_int& game_proto_template_table_data::param_int(int index) const {
   return param_int_.Get(index);
 }
-inline ::hld::game_proto_template_table_param_int* game_proto_template_table_data::mutable_param_int(int index) {
+inline ::faith::game_proto_template_table_param_int* game_proto_template_table_data::mutable_param_int(int index) {
   return param_int_.Mutable(index);
 }
-inline ::hld::game_proto_template_table_param_int* game_proto_template_table_data::add_param_int() {
+inline ::faith::game_proto_template_table_param_int* game_proto_template_table_data::add_param_int() {
   return param_int_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_template_table_param_int >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_template_table_param_int >&
 game_proto_template_table_data::param_int() const {
   return param_int_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_template_table_param_int >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_template_table_param_int >*
 game_proto_template_table_data::mutable_param_int() {
   return &param_int_;
 }
@@ -27824,27 +27824,27 @@ inline void game_proto_template_table_data::set_attribute_id(::google::protobuf:
 
 // game_proto_set_template_table
 
-// repeated .hld.game_proto.template_table_data template_data = 1;
+// repeated .faith.game_proto.template_table_data template_data = 1;
 inline int game_proto_set_template_table::template_data_size() const {
   return template_data_.size();
 }
 inline void game_proto_set_template_table::clear_template_data() {
   template_data_.Clear();
 }
-inline const ::hld::game_proto_template_table_data& game_proto_set_template_table::template_data(int index) const {
+inline const ::faith::game_proto_template_table_data& game_proto_set_template_table::template_data(int index) const {
   return template_data_.Get(index);
 }
-inline ::hld::game_proto_template_table_data* game_proto_set_template_table::mutable_template_data(int index) {
+inline ::faith::game_proto_template_table_data* game_proto_set_template_table::mutable_template_data(int index) {
   return template_data_.Mutable(index);
 }
-inline ::hld::game_proto_template_table_data* game_proto_set_template_table::add_template_data() {
+inline ::faith::game_proto_template_table_data* game_proto_set_template_table::add_template_data() {
   return template_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_template_table_data >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_template_table_data >&
 game_proto_set_template_table::template_data() const {
   return template_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_template_table_data >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_template_table_data >*
 game_proto_set_template_table::mutable_template_data() {
   return &template_data_;
 }
@@ -28247,27 +28247,27 @@ inline void game_proto_cross_server_harry_one_msg::set_allocated_first_player_na
 
 // game_proto_cross_server_harry_all_msg
 
-// repeated .hld.game_proto.cross_server_harry_one_msg all_harry_msg = 1;
+// repeated .faith.game_proto.cross_server_harry_one_msg all_harry_msg = 1;
 inline int game_proto_cross_server_harry_all_msg::all_harry_msg_size() const {
   return all_harry_msg_.size();
 }
 inline void game_proto_cross_server_harry_all_msg::clear_all_harry_msg() {
   all_harry_msg_.Clear();
 }
-inline const ::hld::game_proto_cross_server_harry_one_msg& game_proto_cross_server_harry_all_msg::all_harry_msg(int index) const {
+inline const ::faith::game_proto_cross_server_harry_one_msg& game_proto_cross_server_harry_all_msg::all_harry_msg(int index) const {
   return all_harry_msg_.Get(index);
 }
-inline ::hld::game_proto_cross_server_harry_one_msg* game_proto_cross_server_harry_all_msg::mutable_all_harry_msg(int index) {
+inline ::faith::game_proto_cross_server_harry_one_msg* game_proto_cross_server_harry_all_msg::mutable_all_harry_msg(int index) {
   return all_harry_msg_.Mutable(index);
 }
-inline ::hld::game_proto_cross_server_harry_one_msg* game_proto_cross_server_harry_all_msg::add_all_harry_msg() {
+inline ::faith::game_proto_cross_server_harry_one_msg* game_proto_cross_server_harry_all_msg::add_all_harry_msg() {
   return all_harry_msg_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_cross_server_harry_one_msg >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_cross_server_harry_one_msg >&
 game_proto_cross_server_harry_all_msg::all_harry_msg() const {
   return all_harry_msg_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_cross_server_harry_one_msg >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_cross_server_harry_one_msg >*
 game_proto_cross_server_harry_all_msg::mutable_all_harry_msg() {
   return &all_harry_msg_;
 }
@@ -28729,27 +28729,27 @@ inline void game_proto_cross_boss_rank_info::set_allocated_legion_damage(::std::
 
 // game_proto_cross_boss_legion_rank_list
 
-// repeated .hld.game_proto.cross_boss_rank_info rank_info = 1;
+// repeated .faith.game_proto.cross_boss_rank_info rank_info = 1;
 inline int game_proto_cross_boss_legion_rank_list::rank_info_size() const {
   return rank_info_.size();
 }
 inline void game_proto_cross_boss_legion_rank_list::clear_rank_info() {
   rank_info_.Clear();
 }
-inline const ::hld::game_proto_cross_boss_rank_info& game_proto_cross_boss_legion_rank_list::rank_info(int index) const {
+inline const ::faith::game_proto_cross_boss_rank_info& game_proto_cross_boss_legion_rank_list::rank_info(int index) const {
   return rank_info_.Get(index);
 }
-inline ::hld::game_proto_cross_boss_rank_info* game_proto_cross_boss_legion_rank_list::mutable_rank_info(int index) {
+inline ::faith::game_proto_cross_boss_rank_info* game_proto_cross_boss_legion_rank_list::mutable_rank_info(int index) {
   return rank_info_.Mutable(index);
 }
-inline ::hld::game_proto_cross_boss_rank_info* game_proto_cross_boss_legion_rank_list::add_rank_info() {
+inline ::faith::game_proto_cross_boss_rank_info* game_proto_cross_boss_legion_rank_list::add_rank_info() {
   return rank_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_cross_boss_rank_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_cross_boss_rank_info >&
 game_proto_cross_boss_legion_rank_list::rank_info() const {
   return rank_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_cross_boss_rank_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_cross_boss_rank_info >*
 game_proto_cross_boss_legion_rank_list::mutable_rank_info() {
   return &rank_info_;
 }
@@ -28872,27 +28872,27 @@ inline void game_proto_cross_boss_legion_rank_list::set_boss_tmp_id(::google::pr
 
 // game_proto_cross_boss_legion_rank_list_all
 
-// repeated .hld.game_proto.cross_boss_legion_rank_list rank_info_all = 1;
+// repeated .faith.game_proto.cross_boss_legion_rank_list rank_info_all = 1;
 inline int game_proto_cross_boss_legion_rank_list_all::rank_info_all_size() const {
   return rank_info_all_.size();
 }
 inline void game_proto_cross_boss_legion_rank_list_all::clear_rank_info_all() {
   rank_info_all_.Clear();
 }
-inline const ::hld::game_proto_cross_boss_legion_rank_list& game_proto_cross_boss_legion_rank_list_all::rank_info_all(int index) const {
+inline const ::faith::game_proto_cross_boss_legion_rank_list& game_proto_cross_boss_legion_rank_list_all::rank_info_all(int index) const {
   return rank_info_all_.Get(index);
 }
-inline ::hld::game_proto_cross_boss_legion_rank_list* game_proto_cross_boss_legion_rank_list_all::mutable_rank_info_all(int index) {
+inline ::faith::game_proto_cross_boss_legion_rank_list* game_proto_cross_boss_legion_rank_list_all::mutable_rank_info_all(int index) {
   return rank_info_all_.Mutable(index);
 }
-inline ::hld::game_proto_cross_boss_legion_rank_list* game_proto_cross_boss_legion_rank_list_all::add_rank_info_all() {
+inline ::faith::game_proto_cross_boss_legion_rank_list* game_proto_cross_boss_legion_rank_list_all::add_rank_info_all() {
   return rank_info_all_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_cross_boss_legion_rank_list >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_cross_boss_legion_rank_list >&
 game_proto_cross_boss_legion_rank_list_all::rank_info_all() const {
   return rank_info_all_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_cross_boss_legion_rank_list >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_cross_boss_legion_rank_list >*
 game_proto_cross_boss_legion_rank_list_all::mutable_rank_info_all() {
   return &rank_info_all_;
 }
@@ -29195,27 +29195,27 @@ inline void game_proto_oracle_trial_info_all::set_max_commping(::google::protobu
   max_commping_ = value;
 }
 
-// repeated .hld.game_proto.oracle_trial_customs_info all_info = 4;
+// repeated .faith.game_proto.oracle_trial_customs_info all_info = 4;
 inline int game_proto_oracle_trial_info_all::all_info_size() const {
   return all_info_.size();
 }
 inline void game_proto_oracle_trial_info_all::clear_all_info() {
   all_info_.Clear();
 }
-inline const ::hld::game_proto_oracle_trial_customs_info& game_proto_oracle_trial_info_all::all_info(int index) const {
+inline const ::faith::game_proto_oracle_trial_customs_info& game_proto_oracle_trial_info_all::all_info(int index) const {
   return all_info_.Get(index);
 }
-inline ::hld::game_proto_oracle_trial_customs_info* game_proto_oracle_trial_info_all::mutable_all_info(int index) {
+inline ::faith::game_proto_oracle_trial_customs_info* game_proto_oracle_trial_info_all::mutable_all_info(int index) {
   return all_info_.Mutable(index);
 }
-inline ::hld::game_proto_oracle_trial_customs_info* game_proto_oracle_trial_info_all::add_all_info() {
+inline ::faith::game_proto_oracle_trial_customs_info* game_proto_oracle_trial_info_all::add_all_info() {
   return all_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_oracle_trial_customs_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_oracle_trial_customs_info >&
 game_proto_oracle_trial_info_all::all_info() const {
   return all_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_oracle_trial_customs_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_oracle_trial_customs_info >*
 game_proto_oracle_trial_info_all::mutable_all_info() {
   return &all_info_;
 }
@@ -29800,52 +29800,52 @@ inline void game_proto_boss_damage_list_item::set_legion_guid_b(::google::protob
 
 // game_proto_send_boss_damage_list_msg
 
-// repeated .hld.game_proto.boss_damage_list_item ranking_list = 1;
+// repeated .faith.game_proto.boss_damage_list_item ranking_list = 1;
 inline int game_proto_send_boss_damage_list_msg::ranking_list_size() const {
   return ranking_list_.size();
 }
 inline void game_proto_send_boss_damage_list_msg::clear_ranking_list() {
   ranking_list_.Clear();
 }
-inline const ::hld::game_proto_boss_damage_list_item& game_proto_send_boss_damage_list_msg::ranking_list(int index) const {
+inline const ::faith::game_proto_boss_damage_list_item& game_proto_send_boss_damage_list_msg::ranking_list(int index) const {
   return ranking_list_.Get(index);
 }
-inline ::hld::game_proto_boss_damage_list_item* game_proto_send_boss_damage_list_msg::mutable_ranking_list(int index) {
+inline ::faith::game_proto_boss_damage_list_item* game_proto_send_boss_damage_list_msg::mutable_ranking_list(int index) {
   return ranking_list_.Mutable(index);
 }
-inline ::hld::game_proto_boss_damage_list_item* game_proto_send_boss_damage_list_msg::add_ranking_list() {
+inline ::faith::game_proto_boss_damage_list_item* game_proto_send_boss_damage_list_msg::add_ranking_list() {
   return ranking_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_boss_damage_list_item >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_boss_damage_list_item >&
 game_proto_send_boss_damage_list_msg::ranking_list() const {
   return ranking_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_boss_damage_list_item >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_boss_damage_list_item >*
 game_proto_send_boss_damage_list_msg::mutable_ranking_list() {
   return &ranking_list_;
 }
 
-// repeated .hld.game_proto.boss_damage_list_item helper_list = 2;
+// repeated .faith.game_proto.boss_damage_list_item helper_list = 2;
 inline int game_proto_send_boss_damage_list_msg::helper_list_size() const {
   return helper_list_.size();
 }
 inline void game_proto_send_boss_damage_list_msg::clear_helper_list() {
   helper_list_.Clear();
 }
-inline const ::hld::game_proto_boss_damage_list_item& game_proto_send_boss_damage_list_msg::helper_list(int index) const {
+inline const ::faith::game_proto_boss_damage_list_item& game_proto_send_boss_damage_list_msg::helper_list(int index) const {
   return helper_list_.Get(index);
 }
-inline ::hld::game_proto_boss_damage_list_item* game_proto_send_boss_damage_list_msg::mutable_helper_list(int index) {
+inline ::faith::game_proto_boss_damage_list_item* game_proto_send_boss_damage_list_msg::mutable_helper_list(int index) {
   return helper_list_.Mutable(index);
 }
-inline ::hld::game_proto_boss_damage_list_item* game_proto_send_boss_damage_list_msg::add_helper_list() {
+inline ::faith::game_proto_boss_damage_list_item* game_proto_send_boss_damage_list_msg::add_helper_list() {
   return helper_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_boss_damage_list_item >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_boss_damage_list_item >&
 game_proto_send_boss_damage_list_msg::helper_list() const {
   return helper_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_boss_damage_list_item >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_boss_damage_list_item >*
 game_proto_send_boss_damage_list_msg::mutable_helper_list() {
   return &helper_list_;
 }
@@ -30134,27 +30134,27 @@ inline void game_proto_help_succes_list_item::set_template_id(::google::protobuf
 
 // game_proto_send_help_success_msg
 
-// repeated .hld.game_proto.help_succes_list_item help_list = 1;
+// repeated .faith.game_proto.help_succes_list_item help_list = 1;
 inline int game_proto_send_help_success_msg::help_list_size() const {
   return help_list_.size();
 }
 inline void game_proto_send_help_success_msg::clear_help_list() {
   help_list_.Clear();
 }
-inline const ::hld::game_proto_help_succes_list_item& game_proto_send_help_success_msg::help_list(int index) const {
+inline const ::faith::game_proto_help_succes_list_item& game_proto_send_help_success_msg::help_list(int index) const {
   return help_list_.Get(index);
 }
-inline ::hld::game_proto_help_succes_list_item* game_proto_send_help_success_msg::mutable_help_list(int index) {
+inline ::faith::game_proto_help_succes_list_item* game_proto_send_help_success_msg::mutable_help_list(int index) {
   return help_list_.Mutable(index);
 }
-inline ::hld::game_proto_help_succes_list_item* game_proto_send_help_success_msg::add_help_list() {
+inline ::faith::game_proto_help_succes_list_item* game_proto_send_help_success_msg::add_help_list() {
   return help_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_help_succes_list_item >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_help_succes_list_item >&
 game_proto_send_help_success_msg::help_list() const {
   return help_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_help_succes_list_item >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_help_succes_list_item >*
 game_proto_send_help_success_msg::mutable_help_list() {
   return &help_list_;
 }
@@ -30469,27 +30469,27 @@ inline void game_proto_is_can_transfer_other_line::set_transfer_state(::google::
 
 // game_proto_legion_auction_item_show
 
-// repeated .hld.game_proto.legion_aunction_item_one item_all = 1;
+// repeated .faith.game_proto.legion_aunction_item_one item_all = 1;
 inline int game_proto_legion_auction_item_show::item_all_size() const {
   return item_all_.size();
 }
 inline void game_proto_legion_auction_item_show::clear_item_all() {
   item_all_.Clear();
 }
-inline const ::hld::game_proto_legion_aunction_item_one& game_proto_legion_auction_item_show::item_all(int index) const {
+inline const ::faith::game_proto_legion_aunction_item_one& game_proto_legion_auction_item_show::item_all(int index) const {
   return item_all_.Get(index);
 }
-inline ::hld::game_proto_legion_aunction_item_one* game_proto_legion_auction_item_show::mutable_item_all(int index) {
+inline ::faith::game_proto_legion_aunction_item_one* game_proto_legion_auction_item_show::mutable_item_all(int index) {
   return item_all_.Mutable(index);
 }
-inline ::hld::game_proto_legion_aunction_item_one* game_proto_legion_auction_item_show::add_item_all() {
+inline ::faith::game_proto_legion_aunction_item_one* game_proto_legion_auction_item_show::add_item_all() {
   return item_all_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_legion_aunction_item_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_legion_aunction_item_one >&
 game_proto_legion_auction_item_show::item_all() const {
   return item_all_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_legion_aunction_item_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_legion_aunction_item_one >*
 game_proto_legion_auction_item_show::mutable_item_all() {
   return &item_all_;
 }
@@ -30918,27 +30918,27 @@ inline void game_proto_pk_king_map_game_over::set_end_type(::google::protobuf::i
 
 // game_proto_pk_king_rank_list
 
-// repeated .hld.game_proto.pk_king_rank_info rank_list = 1;
+// repeated .faith.game_proto.pk_king_rank_info rank_list = 1;
 inline int game_proto_pk_king_rank_list::rank_list_size() const {
   return rank_list_.size();
 }
 inline void game_proto_pk_king_rank_list::clear_rank_list() {
   rank_list_.Clear();
 }
-inline const ::hld::game_proto_pk_king_rank_info& game_proto_pk_king_rank_list::rank_list(int index) const {
+inline const ::faith::game_proto_pk_king_rank_info& game_proto_pk_king_rank_list::rank_list(int index) const {
   return rank_list_.Get(index);
 }
-inline ::hld::game_proto_pk_king_rank_info* game_proto_pk_king_rank_list::mutable_rank_list(int index) {
+inline ::faith::game_proto_pk_king_rank_info* game_proto_pk_king_rank_list::mutable_rank_list(int index) {
   return rank_list_.Mutable(index);
 }
-inline ::hld::game_proto_pk_king_rank_info* game_proto_pk_king_rank_list::add_rank_list() {
+inline ::faith::game_proto_pk_king_rank_info* game_proto_pk_king_rank_list::add_rank_list() {
   return rank_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_pk_king_rank_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_pk_king_rank_info >&
 game_proto_pk_king_rank_list::rank_list() const {
   return rank_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_pk_king_rank_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_pk_king_rank_info >*
 game_proto_pk_king_rank_list::mutable_rank_list() {
   return &rank_list_;
 }
@@ -31971,52 +31971,52 @@ inline void game_proto_element_match_info::set_vip_level(::google::protobuf::int
 
 // game_proto_element_war_send_match_success_msg
 
-// repeated .hld.game_proto.element_match_info my_team_info = 1;
+// repeated .faith.game_proto.element_match_info my_team_info = 1;
 inline int game_proto_element_war_send_match_success_msg::my_team_info_size() const {
   return my_team_info_.size();
 }
 inline void game_proto_element_war_send_match_success_msg::clear_my_team_info() {
   my_team_info_.Clear();
 }
-inline const ::hld::game_proto_element_match_info& game_proto_element_war_send_match_success_msg::my_team_info(int index) const {
+inline const ::faith::game_proto_element_match_info& game_proto_element_war_send_match_success_msg::my_team_info(int index) const {
   return my_team_info_.Get(index);
 }
-inline ::hld::game_proto_element_match_info* game_proto_element_war_send_match_success_msg::mutable_my_team_info(int index) {
+inline ::faith::game_proto_element_match_info* game_proto_element_war_send_match_success_msg::mutable_my_team_info(int index) {
   return my_team_info_.Mutable(index);
 }
-inline ::hld::game_proto_element_match_info* game_proto_element_war_send_match_success_msg::add_my_team_info() {
+inline ::faith::game_proto_element_match_info* game_proto_element_war_send_match_success_msg::add_my_team_info() {
   return my_team_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_match_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_match_info >&
 game_proto_element_war_send_match_success_msg::my_team_info() const {
   return my_team_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_match_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_match_info >*
 game_proto_element_war_send_match_success_msg::mutable_my_team_info() {
   return &my_team_info_;
 }
 
-// repeated .hld.game_proto.element_match_info other_team_info = 2;
+// repeated .faith.game_proto.element_match_info other_team_info = 2;
 inline int game_proto_element_war_send_match_success_msg::other_team_info_size() const {
   return other_team_info_.size();
 }
 inline void game_proto_element_war_send_match_success_msg::clear_other_team_info() {
   other_team_info_.Clear();
 }
-inline const ::hld::game_proto_element_match_info& game_proto_element_war_send_match_success_msg::other_team_info(int index) const {
+inline const ::faith::game_proto_element_match_info& game_proto_element_war_send_match_success_msg::other_team_info(int index) const {
   return other_team_info_.Get(index);
 }
-inline ::hld::game_proto_element_match_info* game_proto_element_war_send_match_success_msg::mutable_other_team_info(int index) {
+inline ::faith::game_proto_element_match_info* game_proto_element_war_send_match_success_msg::mutable_other_team_info(int index) {
   return other_team_info_.Mutable(index);
 }
-inline ::hld::game_proto_element_match_info* game_proto_element_war_send_match_success_msg::add_other_team_info() {
+inline ::faith::game_proto_element_match_info* game_proto_element_war_send_match_success_msg::add_other_team_info() {
   return other_team_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_match_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_match_info >&
 game_proto_element_war_send_match_success_msg::other_team_info() const {
   return other_team_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_match_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_match_info >*
 game_proto_element_war_send_match_success_msg::mutable_other_team_info() {
   return &other_team_info_;
 }
@@ -32436,7 +32436,7 @@ inline void game_proto_element_war_map_info::set_map_state(::google::protobuf::i
   map_state_ = value;
 }
 
-// optional .hld.game_proto.element_war_boss_info first_boss = 4;
+// optional .faith.game_proto.element_war_boss_info first_boss = 4;
 inline bool game_proto_element_war_map_info::has_first_boss() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -32447,24 +32447,24 @@ inline void game_proto_element_war_map_info::clear_has_first_boss() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void game_proto_element_war_map_info::clear_first_boss() {
-  if (first_boss_ != NULL) first_boss_->::hld::game_proto_element_war_boss_info::Clear();
+  if (first_boss_ != NULL) first_boss_->::faith::game_proto_element_war_boss_info::Clear();
   clear_has_first_boss();
 }
-inline const ::hld::game_proto_element_war_boss_info& game_proto_element_war_map_info::first_boss() const {
+inline const ::faith::game_proto_element_war_boss_info& game_proto_element_war_map_info::first_boss() const {
   return first_boss_ != NULL ? *first_boss_ : *default_instance_->first_boss_;
 }
-inline ::hld::game_proto_element_war_boss_info* game_proto_element_war_map_info::mutable_first_boss() {
+inline ::faith::game_proto_element_war_boss_info* game_proto_element_war_map_info::mutable_first_boss() {
   set_has_first_boss();
-  if (first_boss_ == NULL) first_boss_ = new ::hld::game_proto_element_war_boss_info;
+  if (first_boss_ == NULL) first_boss_ = new ::faith::game_proto_element_war_boss_info;
   return first_boss_;
 }
-inline ::hld::game_proto_element_war_boss_info* game_proto_element_war_map_info::release_first_boss() {
+inline ::faith::game_proto_element_war_boss_info* game_proto_element_war_map_info::release_first_boss() {
   clear_has_first_boss();
-  ::hld::game_proto_element_war_boss_info* temp = first_boss_;
+  ::faith::game_proto_element_war_boss_info* temp = first_boss_;
   first_boss_ = NULL;
   return temp;
 }
-inline void game_proto_element_war_map_info::set_allocated_first_boss(::hld::game_proto_element_war_boss_info* first_boss) {
+inline void game_proto_element_war_map_info::set_allocated_first_boss(::faith::game_proto_element_war_boss_info* first_boss) {
   delete first_boss_;
   first_boss_ = first_boss;
   if (first_boss) {
@@ -32474,7 +32474,7 @@ inline void game_proto_element_war_map_info::set_allocated_first_boss(::hld::gam
   }
 }
 
-// optional .hld.game_proto.element_war_boss_info secord_boss = 5;
+// optional .faith.game_proto.element_war_boss_info secord_boss = 5;
 inline bool game_proto_element_war_map_info::has_secord_boss() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
@@ -32485,24 +32485,24 @@ inline void game_proto_element_war_map_info::clear_has_secord_boss() {
   _has_bits_[0] &= ~0x00000010u;
 }
 inline void game_proto_element_war_map_info::clear_secord_boss() {
-  if (secord_boss_ != NULL) secord_boss_->::hld::game_proto_element_war_boss_info::Clear();
+  if (secord_boss_ != NULL) secord_boss_->::faith::game_proto_element_war_boss_info::Clear();
   clear_has_secord_boss();
 }
-inline const ::hld::game_proto_element_war_boss_info& game_proto_element_war_map_info::secord_boss() const {
+inline const ::faith::game_proto_element_war_boss_info& game_proto_element_war_map_info::secord_boss() const {
   return secord_boss_ != NULL ? *secord_boss_ : *default_instance_->secord_boss_;
 }
-inline ::hld::game_proto_element_war_boss_info* game_proto_element_war_map_info::mutable_secord_boss() {
+inline ::faith::game_proto_element_war_boss_info* game_proto_element_war_map_info::mutable_secord_boss() {
   set_has_secord_boss();
-  if (secord_boss_ == NULL) secord_boss_ = new ::hld::game_proto_element_war_boss_info;
+  if (secord_boss_ == NULL) secord_boss_ = new ::faith::game_proto_element_war_boss_info;
   return secord_boss_;
 }
-inline ::hld::game_proto_element_war_boss_info* game_proto_element_war_map_info::release_secord_boss() {
+inline ::faith::game_proto_element_war_boss_info* game_proto_element_war_map_info::release_secord_boss() {
   clear_has_secord_boss();
-  ::hld::game_proto_element_war_boss_info* temp = secord_boss_;
+  ::faith::game_proto_element_war_boss_info* temp = secord_boss_;
   secord_boss_ = NULL;
   return temp;
 }
-inline void game_proto_element_war_map_info::set_allocated_secord_boss(::hld::game_proto_element_war_boss_info* secord_boss) {
+inline void game_proto_element_war_map_info::set_allocated_secord_boss(::faith::game_proto_element_war_boss_info* secord_boss) {
   delete secord_boss_;
   secord_boss_ = secord_boss;
   if (secord_boss) {
@@ -32512,7 +32512,7 @@ inline void game_proto_element_war_map_info::set_allocated_secord_boss(::hld::ga
   }
 }
 
-// optional .hld.game_proto.element_war_boss_info target_boss = 6;
+// optional .faith.game_proto.element_war_boss_info target_boss = 6;
 inline bool game_proto_element_war_map_info::has_target_boss() const {
   return (_has_bits_[0] & 0x00000020u) != 0;
 }
@@ -32523,24 +32523,24 @@ inline void game_proto_element_war_map_info::clear_has_target_boss() {
   _has_bits_[0] &= ~0x00000020u;
 }
 inline void game_proto_element_war_map_info::clear_target_boss() {
-  if (target_boss_ != NULL) target_boss_->::hld::game_proto_element_war_boss_info::Clear();
+  if (target_boss_ != NULL) target_boss_->::faith::game_proto_element_war_boss_info::Clear();
   clear_has_target_boss();
 }
-inline const ::hld::game_proto_element_war_boss_info& game_proto_element_war_map_info::target_boss() const {
+inline const ::faith::game_proto_element_war_boss_info& game_proto_element_war_map_info::target_boss() const {
   return target_boss_ != NULL ? *target_boss_ : *default_instance_->target_boss_;
 }
-inline ::hld::game_proto_element_war_boss_info* game_proto_element_war_map_info::mutable_target_boss() {
+inline ::faith::game_proto_element_war_boss_info* game_proto_element_war_map_info::mutable_target_boss() {
   set_has_target_boss();
-  if (target_boss_ == NULL) target_boss_ = new ::hld::game_proto_element_war_boss_info;
+  if (target_boss_ == NULL) target_boss_ = new ::faith::game_proto_element_war_boss_info;
   return target_boss_;
 }
-inline ::hld::game_proto_element_war_boss_info* game_proto_element_war_map_info::release_target_boss() {
+inline ::faith::game_proto_element_war_boss_info* game_proto_element_war_map_info::release_target_boss() {
   clear_has_target_boss();
-  ::hld::game_proto_element_war_boss_info* temp = target_boss_;
+  ::faith::game_proto_element_war_boss_info* temp = target_boss_;
   target_boss_ = NULL;
   return temp;
 }
-inline void game_proto_element_war_map_info::set_allocated_target_boss(::hld::game_proto_element_war_boss_info* target_boss) {
+inline void game_proto_element_war_map_info::set_allocated_target_boss(::faith::game_proto_element_war_boss_info* target_boss) {
   delete target_boss_;
   target_boss_ = target_boss;
   if (target_boss) {
@@ -32851,52 +32851,52 @@ inline void game_proto_element_war_map_end_role_info::set_team_index(::google::p
 
 // game_proto_element_war_map_end_info
 
-// repeated .hld.game_proto.element_war_map_end_role_info first_team = 1;
+// repeated .faith.game_proto.element_war_map_end_role_info first_team = 1;
 inline int game_proto_element_war_map_end_info::first_team_size() const {
   return first_team_.size();
 }
 inline void game_proto_element_war_map_end_info::clear_first_team() {
   first_team_.Clear();
 }
-inline const ::hld::game_proto_element_war_map_end_role_info& game_proto_element_war_map_end_info::first_team(int index) const {
+inline const ::faith::game_proto_element_war_map_end_role_info& game_proto_element_war_map_end_info::first_team(int index) const {
   return first_team_.Get(index);
 }
-inline ::hld::game_proto_element_war_map_end_role_info* game_proto_element_war_map_end_info::mutable_first_team(int index) {
+inline ::faith::game_proto_element_war_map_end_role_info* game_proto_element_war_map_end_info::mutable_first_team(int index) {
   return first_team_.Mutable(index);
 }
-inline ::hld::game_proto_element_war_map_end_role_info* game_proto_element_war_map_end_info::add_first_team() {
+inline ::faith::game_proto_element_war_map_end_role_info* game_proto_element_war_map_end_info::add_first_team() {
   return first_team_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_war_map_end_role_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_war_map_end_role_info >&
 game_proto_element_war_map_end_info::first_team() const {
   return first_team_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_war_map_end_role_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_war_map_end_role_info >*
 game_proto_element_war_map_end_info::mutable_first_team() {
   return &first_team_;
 }
 
-// repeated .hld.game_proto.element_war_map_end_role_info secord_team = 2;
+// repeated .faith.game_proto.element_war_map_end_role_info secord_team = 2;
 inline int game_proto_element_war_map_end_info::secord_team_size() const {
   return secord_team_.size();
 }
 inline void game_proto_element_war_map_end_info::clear_secord_team() {
   secord_team_.Clear();
 }
-inline const ::hld::game_proto_element_war_map_end_role_info& game_proto_element_war_map_end_info::secord_team(int index) const {
+inline const ::faith::game_proto_element_war_map_end_role_info& game_proto_element_war_map_end_info::secord_team(int index) const {
   return secord_team_.Get(index);
 }
-inline ::hld::game_proto_element_war_map_end_role_info* game_proto_element_war_map_end_info::mutable_secord_team(int index) {
+inline ::faith::game_proto_element_war_map_end_role_info* game_proto_element_war_map_end_info::mutable_secord_team(int index) {
   return secord_team_.Mutable(index);
 }
-inline ::hld::game_proto_element_war_map_end_role_info* game_proto_element_war_map_end_info::add_secord_team() {
+inline ::faith::game_proto_element_war_map_end_role_info* game_proto_element_war_map_end_info::add_secord_team() {
   return secord_team_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_war_map_end_role_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_war_map_end_role_info >&
 game_proto_element_war_map_end_info::secord_team() const {
   return secord_team_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_war_map_end_role_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_war_map_end_role_info >*
 game_proto_element_war_map_end_info::mutable_secord_team() {
   return &secord_team_;
 }
@@ -33573,27 +33573,27 @@ inline void game_proto_boss_rank_item::set_rank(::google::protobuf::int32 value)
 
 // game_proto_boss_result_rank_list_end
 
-// repeated .hld.game_proto.boss_rank_item top_list = 1;
+// repeated .faith.game_proto.boss_rank_item top_list = 1;
 inline int game_proto_boss_result_rank_list_end::top_list_size() const {
   return top_list_.size();
 }
 inline void game_proto_boss_result_rank_list_end::clear_top_list() {
   top_list_.Clear();
 }
-inline const ::hld::game_proto_boss_rank_item& game_proto_boss_result_rank_list_end::top_list(int index) const {
+inline const ::faith::game_proto_boss_rank_item& game_proto_boss_result_rank_list_end::top_list(int index) const {
   return top_list_.Get(index);
 }
-inline ::hld::game_proto_boss_rank_item* game_proto_boss_result_rank_list_end::mutable_top_list(int index) {
+inline ::faith::game_proto_boss_rank_item* game_proto_boss_result_rank_list_end::mutable_top_list(int index) {
   return top_list_.Mutable(index);
 }
-inline ::hld::game_proto_boss_rank_item* game_proto_boss_result_rank_list_end::add_top_list() {
+inline ::faith::game_proto_boss_rank_item* game_proto_boss_result_rank_list_end::add_top_list() {
   return top_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_boss_rank_item >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_boss_rank_item >&
 game_proto_boss_result_rank_list_end::top_list() const {
   return top_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_boss_rank_item >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_boss_rank_item >*
 game_proto_boss_result_rank_list_end::mutable_top_list() {
   return &top_list_;
 }
@@ -33620,7 +33620,7 @@ inline void game_proto_boss_result_rank_list_end::set_top_num(::google::protobuf
   top_num_ = value;
 }
 
-// optional .hld.game_proto.boss_rank_item my_rank = 3;
+// optional .faith.game_proto.boss_rank_item my_rank = 3;
 inline bool game_proto_boss_result_rank_list_end::has_my_rank() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -33631,24 +33631,24 @@ inline void game_proto_boss_result_rank_list_end::clear_has_my_rank() {
   _has_bits_[0] &= ~0x00000004u;
 }
 inline void game_proto_boss_result_rank_list_end::clear_my_rank() {
-  if (my_rank_ != NULL) my_rank_->::hld::game_proto_boss_rank_item::Clear();
+  if (my_rank_ != NULL) my_rank_->::faith::game_proto_boss_rank_item::Clear();
   clear_has_my_rank();
 }
-inline const ::hld::game_proto_boss_rank_item& game_proto_boss_result_rank_list_end::my_rank() const {
+inline const ::faith::game_proto_boss_rank_item& game_proto_boss_result_rank_list_end::my_rank() const {
   return my_rank_ != NULL ? *my_rank_ : *default_instance_->my_rank_;
 }
-inline ::hld::game_proto_boss_rank_item* game_proto_boss_result_rank_list_end::mutable_my_rank() {
+inline ::faith::game_proto_boss_rank_item* game_proto_boss_result_rank_list_end::mutable_my_rank() {
   set_has_my_rank();
-  if (my_rank_ == NULL) my_rank_ = new ::hld::game_proto_boss_rank_item;
+  if (my_rank_ == NULL) my_rank_ = new ::faith::game_proto_boss_rank_item;
   return my_rank_;
 }
-inline ::hld::game_proto_boss_rank_item* game_proto_boss_result_rank_list_end::release_my_rank() {
+inline ::faith::game_proto_boss_rank_item* game_proto_boss_result_rank_list_end::release_my_rank() {
   clear_has_my_rank();
-  ::hld::game_proto_boss_rank_item* temp = my_rank_;
+  ::faith::game_proto_boss_rank_item* temp = my_rank_;
   my_rank_ = NULL;
   return temp;
 }
-inline void game_proto_boss_result_rank_list_end::set_allocated_my_rank(::hld::game_proto_boss_rank_item* my_rank) {
+inline void game_proto_boss_result_rank_list_end::set_allocated_my_rank(::faith::game_proto_boss_rank_item* my_rank) {
   delete my_rank_;
   my_rank_ = my_rank;
   if (my_rank) {
@@ -33846,27 +33846,27 @@ inline void game_proto_element_map_rank_role_info::set_guid_b(::google::protobuf
 
 // game_proto_element_map_rank_info
 
-// repeated .hld.game_proto.element_map_rank_role_info rank_info = 1;
+// repeated .faith.game_proto.element_map_rank_role_info rank_info = 1;
 inline int game_proto_element_map_rank_info::rank_info_size() const {
   return rank_info_.size();
 }
 inline void game_proto_element_map_rank_info::clear_rank_info() {
   rank_info_.Clear();
 }
-inline const ::hld::game_proto_element_map_rank_role_info& game_proto_element_map_rank_info::rank_info(int index) const {
+inline const ::faith::game_proto_element_map_rank_role_info& game_proto_element_map_rank_info::rank_info(int index) const {
   return rank_info_.Get(index);
 }
-inline ::hld::game_proto_element_map_rank_role_info* game_proto_element_map_rank_info::mutable_rank_info(int index) {
+inline ::faith::game_proto_element_map_rank_role_info* game_proto_element_map_rank_info::mutable_rank_info(int index) {
   return rank_info_.Mutable(index);
 }
-inline ::hld::game_proto_element_map_rank_role_info* game_proto_element_map_rank_info::add_rank_info() {
+inline ::faith::game_proto_element_map_rank_role_info* game_proto_element_map_rank_info::add_rank_info() {
   return rank_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_map_rank_role_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_map_rank_role_info >&
 game_proto_element_map_rank_info::rank_info() const {
   return rank_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_element_map_rank_role_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_element_map_rank_role_info >*
 game_proto_element_map_rank_info::mutable_rank_info() {
   return &rank_info_;
 }
@@ -33945,27 +33945,27 @@ inline void game_proto_map_target_show_info::set_image_index(::google::protobuf:
 
 // game_proto_map_target_show_info_list
 
-// repeated .hld.game_proto.map_target_show_info info_list = 1;
+// repeated .faith.game_proto.map_target_show_info info_list = 1;
 inline int game_proto_map_target_show_info_list::info_list_size() const {
   return info_list_.size();
 }
 inline void game_proto_map_target_show_info_list::clear_info_list() {
   info_list_.Clear();
 }
-inline const ::hld::game_proto_map_target_show_info& game_proto_map_target_show_info_list::info_list(int index) const {
+inline const ::faith::game_proto_map_target_show_info& game_proto_map_target_show_info_list::info_list(int index) const {
   return info_list_.Get(index);
 }
-inline ::hld::game_proto_map_target_show_info* game_proto_map_target_show_info_list::mutable_info_list(int index) {
+inline ::faith::game_proto_map_target_show_info* game_proto_map_target_show_info_list::mutable_info_list(int index) {
   return info_list_.Mutable(index);
 }
-inline ::hld::game_proto_map_target_show_info* game_proto_map_target_show_info_list::add_info_list() {
+inline ::faith::game_proto_map_target_show_info* game_proto_map_target_show_info_list::add_info_list() {
   return info_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_map_target_show_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_map_target_show_info >&
 game_proto_map_target_show_info_list::info_list() const {
   return info_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_map_target_show_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_map_target_show_info >*
 game_proto_map_target_show_info_list::mutable_info_list() {
   return &info_list_;
 }
@@ -35100,27 +35100,27 @@ inline void game_proto_attack_city_info_list::set_win_num(::google::protobuf::in
   win_num_ = value;
 }
 
-// repeated .hld.game_proto.attack_city_info_level_info list_info = 7;
+// repeated .faith.game_proto.attack_city_info_level_info list_info = 7;
 inline int game_proto_attack_city_info_list::list_info_size() const {
   return list_info_.size();
 }
 inline void game_proto_attack_city_info_list::clear_list_info() {
   list_info_.Clear();
 }
-inline const ::hld::game_proto_attack_city_info_level_info& game_proto_attack_city_info_list::list_info(int index) const {
+inline const ::faith::game_proto_attack_city_info_level_info& game_proto_attack_city_info_list::list_info(int index) const {
   return list_info_.Get(index);
 }
-inline ::hld::game_proto_attack_city_info_level_info* game_proto_attack_city_info_list::mutable_list_info(int index) {
+inline ::faith::game_proto_attack_city_info_level_info* game_proto_attack_city_info_list::mutable_list_info(int index) {
   return list_info_.Mutable(index);
 }
-inline ::hld::game_proto_attack_city_info_level_info* game_proto_attack_city_info_list::add_list_info() {
+inline ::faith::game_proto_attack_city_info_level_info* game_proto_attack_city_info_list::add_list_info() {
   return list_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_info_level_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_info_level_info >&
 game_proto_attack_city_info_list::list_info() const {
   return list_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_info_level_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_info_level_info >*
 game_proto_attack_city_info_list::mutable_list_info() {
   return &list_info_;
 }
@@ -35523,27 +35523,27 @@ inline void game_proto_attack_city_rank_info_list::set_legion_source(::google::p
   legion_source_ = value;
 }
 
-// repeated .hld.game_proto.attack_city_rank_info info_list = 3;
+// repeated .faith.game_proto.attack_city_rank_info info_list = 3;
 inline int game_proto_attack_city_rank_info_list::info_list_size() const {
   return info_list_.size();
 }
 inline void game_proto_attack_city_rank_info_list::clear_info_list() {
   info_list_.Clear();
 }
-inline const ::hld::game_proto_attack_city_rank_info& game_proto_attack_city_rank_info_list::info_list(int index) const {
+inline const ::faith::game_proto_attack_city_rank_info& game_proto_attack_city_rank_info_list::info_list(int index) const {
   return info_list_.Get(index);
 }
-inline ::hld::game_proto_attack_city_rank_info* game_proto_attack_city_rank_info_list::mutable_info_list(int index) {
+inline ::faith::game_proto_attack_city_rank_info* game_proto_attack_city_rank_info_list::mutable_info_list(int index) {
   return info_list_.Mutable(index);
 }
-inline ::hld::game_proto_attack_city_rank_info* game_proto_attack_city_rank_info_list::add_info_list() {
+inline ::faith::game_proto_attack_city_rank_info* game_proto_attack_city_rank_info_list::add_info_list() {
   return info_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_rank_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_rank_info >&
 game_proto_attack_city_rank_info_list::info_list() const {
   return info_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_rank_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_rank_info >*
 game_proto_attack_city_rank_info_list::mutable_info_list() {
   return &info_list_;
 }
@@ -35640,27 +35640,27 @@ inline void game_proto_attack_city_rank_info_list::set_show_index(::google::prot
 
 // game_proto_get_attack_city_rank_list_end
 
-// repeated .hld.game_proto.attack_city_rank_info_list rank_list = 1;
+// repeated .faith.game_proto.attack_city_rank_info_list rank_list = 1;
 inline int game_proto_get_attack_city_rank_list_end::rank_list_size() const {
   return rank_list_.size();
 }
 inline void game_proto_get_attack_city_rank_list_end::clear_rank_list() {
   rank_list_.Clear();
 }
-inline const ::hld::game_proto_attack_city_rank_info_list& game_proto_get_attack_city_rank_list_end::rank_list(int index) const {
+inline const ::faith::game_proto_attack_city_rank_info_list& game_proto_get_attack_city_rank_list_end::rank_list(int index) const {
   return rank_list_.Get(index);
 }
-inline ::hld::game_proto_attack_city_rank_info_list* game_proto_get_attack_city_rank_list_end::mutable_rank_list(int index) {
+inline ::faith::game_proto_attack_city_rank_info_list* game_proto_get_attack_city_rank_list_end::mutable_rank_list(int index) {
   return rank_list_.Mutable(index);
 }
-inline ::hld::game_proto_attack_city_rank_info_list* game_proto_get_attack_city_rank_list_end::add_rank_list() {
+inline ::faith::game_proto_attack_city_rank_info_list* game_proto_get_attack_city_rank_list_end::add_rank_list() {
   return rank_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_rank_info_list >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_rank_info_list >&
 game_proto_get_attack_city_rank_list_end::rank_list() const {
   return rank_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_rank_info_list >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_rank_info_list >*
 game_proto_get_attack_city_rank_list_end::mutable_rank_list() {
   return &rank_list_;
 }
@@ -35835,27 +35835,27 @@ inline void game_proto_attack_city_map_legion_info::set_allocated_legion_damage(
 
 // game_proto_send_attack_city_map_legion_info
 
-// repeated .hld.game_proto.attack_city_map_legion_info info_list = 1;
+// repeated .faith.game_proto.attack_city_map_legion_info info_list = 1;
 inline int game_proto_send_attack_city_map_legion_info::info_list_size() const {
   return info_list_.size();
 }
 inline void game_proto_send_attack_city_map_legion_info::clear_info_list() {
   info_list_.Clear();
 }
-inline const ::hld::game_proto_attack_city_map_legion_info& game_proto_send_attack_city_map_legion_info::info_list(int index) const {
+inline const ::faith::game_proto_attack_city_map_legion_info& game_proto_send_attack_city_map_legion_info::info_list(int index) const {
   return info_list_.Get(index);
 }
-inline ::hld::game_proto_attack_city_map_legion_info* game_proto_send_attack_city_map_legion_info::mutable_info_list(int index) {
+inline ::faith::game_proto_attack_city_map_legion_info* game_proto_send_attack_city_map_legion_info::mutable_info_list(int index) {
   return info_list_.Mutable(index);
 }
-inline ::hld::game_proto_attack_city_map_legion_info* game_proto_send_attack_city_map_legion_info::add_info_list() {
+inline ::faith::game_proto_attack_city_map_legion_info* game_proto_send_attack_city_map_legion_info::add_info_list() {
   return info_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_map_legion_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_map_legion_info >&
 game_proto_send_attack_city_map_legion_info::info_list() const {
   return info_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_map_legion_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_map_legion_info >*
 game_proto_send_attack_city_map_legion_info::mutable_info_list() {
   return &info_list_;
 }
@@ -36206,27 +36206,27 @@ inline void game_proto_attack_city_npc_info::set_guid_b(::google::protobuf::int3
 
 // game_proto_attack_city_npc_list
 
-// repeated .hld.game_proto.attack_city_npc_info info_list = 1;
+// repeated .faith.game_proto.attack_city_npc_info info_list = 1;
 inline int game_proto_attack_city_npc_list::info_list_size() const {
   return info_list_.size();
 }
 inline void game_proto_attack_city_npc_list::clear_info_list() {
   info_list_.Clear();
 }
-inline const ::hld::game_proto_attack_city_npc_info& game_proto_attack_city_npc_list::info_list(int index) const {
+inline const ::faith::game_proto_attack_city_npc_info& game_proto_attack_city_npc_list::info_list(int index) const {
   return info_list_.Get(index);
 }
-inline ::hld::game_proto_attack_city_npc_info* game_proto_attack_city_npc_list::mutable_info_list(int index) {
+inline ::faith::game_proto_attack_city_npc_info* game_proto_attack_city_npc_list::mutable_info_list(int index) {
   return info_list_.Mutable(index);
 }
-inline ::hld::game_proto_attack_city_npc_info* game_proto_attack_city_npc_list::add_info_list() {
+inline ::faith::game_proto_attack_city_npc_info* game_proto_attack_city_npc_list::add_info_list() {
   return info_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_npc_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_npc_info >&
 game_proto_attack_city_npc_list::info_list() const {
   return info_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_npc_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_npc_info >*
 game_proto_attack_city_npc_list::mutable_info_list() {
   return &info_list_;
 }
@@ -36721,52 +36721,52 @@ inline void game_proto_attack_city_map_end_item_info::set_show_type(::google::pr
 
 // game_proto_attack_city_map_end_info
 
-// repeated .hld.game_proto.attack_city_map_end_player_info play_list = 1;
+// repeated .faith.game_proto.attack_city_map_end_player_info play_list = 1;
 inline int game_proto_attack_city_map_end_info::play_list_size() const {
   return play_list_.size();
 }
 inline void game_proto_attack_city_map_end_info::clear_play_list() {
   play_list_.Clear();
 }
-inline const ::hld::game_proto_attack_city_map_end_player_info& game_proto_attack_city_map_end_info::play_list(int index) const {
+inline const ::faith::game_proto_attack_city_map_end_player_info& game_proto_attack_city_map_end_info::play_list(int index) const {
   return play_list_.Get(index);
 }
-inline ::hld::game_proto_attack_city_map_end_player_info* game_proto_attack_city_map_end_info::mutable_play_list(int index) {
+inline ::faith::game_proto_attack_city_map_end_player_info* game_proto_attack_city_map_end_info::mutable_play_list(int index) {
   return play_list_.Mutable(index);
 }
-inline ::hld::game_proto_attack_city_map_end_player_info* game_proto_attack_city_map_end_info::add_play_list() {
+inline ::faith::game_proto_attack_city_map_end_player_info* game_proto_attack_city_map_end_info::add_play_list() {
   return play_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_map_end_player_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_map_end_player_info >&
 game_proto_attack_city_map_end_info::play_list() const {
   return play_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_map_end_player_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_map_end_player_info >*
 game_proto_attack_city_map_end_info::mutable_play_list() {
   return &play_list_;
 }
 
-// repeated .hld.game_proto.attack_city_map_end_item_info item_list = 2;
+// repeated .faith.game_proto.attack_city_map_end_item_info item_list = 2;
 inline int game_proto_attack_city_map_end_info::item_list_size() const {
   return item_list_.size();
 }
 inline void game_proto_attack_city_map_end_info::clear_item_list() {
   item_list_.Clear();
 }
-inline const ::hld::game_proto_attack_city_map_end_item_info& game_proto_attack_city_map_end_info::item_list(int index) const {
+inline const ::faith::game_proto_attack_city_map_end_item_info& game_proto_attack_city_map_end_info::item_list(int index) const {
   return item_list_.Get(index);
 }
-inline ::hld::game_proto_attack_city_map_end_item_info* game_proto_attack_city_map_end_info::mutable_item_list(int index) {
+inline ::faith::game_proto_attack_city_map_end_item_info* game_proto_attack_city_map_end_info::mutable_item_list(int index) {
   return item_list_.Mutable(index);
 }
-inline ::hld::game_proto_attack_city_map_end_item_info* game_proto_attack_city_map_end_info::add_item_list() {
+inline ::faith::game_proto_attack_city_map_end_item_info* game_proto_attack_city_map_end_info::add_item_list() {
   return item_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_map_end_item_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_map_end_item_info >&
 game_proto_attack_city_map_end_info::item_list() const {
   return item_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_attack_city_map_end_item_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_attack_city_map_end_item_info >*
 game_proto_attack_city_map_end_info::mutable_item_list() {
   return &item_list_;
 }
@@ -37185,27 +37185,27 @@ inline void game_proto_send_time_feed_back_info::set_money_num(::google::protobu
 
 // game_proto_send_time_feed_back_info_list
 
-// repeated .hld.game_proto.send_time_feed_back_info info_list = 1;
+// repeated .faith.game_proto.send_time_feed_back_info info_list = 1;
 inline int game_proto_send_time_feed_back_info_list::info_list_size() const {
   return info_list_.size();
 }
 inline void game_proto_send_time_feed_back_info_list::clear_info_list() {
   info_list_.Clear();
 }
-inline const ::hld::game_proto_send_time_feed_back_info& game_proto_send_time_feed_back_info_list::info_list(int index) const {
+inline const ::faith::game_proto_send_time_feed_back_info& game_proto_send_time_feed_back_info_list::info_list(int index) const {
   return info_list_.Get(index);
 }
-inline ::hld::game_proto_send_time_feed_back_info* game_proto_send_time_feed_back_info_list::mutable_info_list(int index) {
+inline ::faith::game_proto_send_time_feed_back_info* game_proto_send_time_feed_back_info_list::mutable_info_list(int index) {
   return info_list_.Mutable(index);
 }
-inline ::hld::game_proto_send_time_feed_back_info* game_proto_send_time_feed_back_info_list::add_info_list() {
+inline ::faith::game_proto_send_time_feed_back_info* game_proto_send_time_feed_back_info_list::add_info_list() {
   return info_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_send_time_feed_back_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_send_time_feed_back_info >&
 game_proto_send_time_feed_back_info_list::info_list() const {
   return info_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_send_time_feed_back_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_send_time_feed_back_info >*
 game_proto_send_time_feed_back_info_list::mutable_info_list() {
   return &info_list_;
 }
@@ -37446,27 +37446,27 @@ inline void game_proto_time_limit_gift_info::set_buy_num(::google::protobuf::int
 
 // game_proto_update_time_limit_gift_info
 
-// repeated .hld.game_proto.time_limit_gift_info info_list = 1;
+// repeated .faith.game_proto.time_limit_gift_info info_list = 1;
 inline int game_proto_update_time_limit_gift_info::info_list_size() const {
   return info_list_.size();
 }
 inline void game_proto_update_time_limit_gift_info::clear_info_list() {
   info_list_.Clear();
 }
-inline const ::hld::game_proto_time_limit_gift_info& game_proto_update_time_limit_gift_info::info_list(int index) const {
+inline const ::faith::game_proto_time_limit_gift_info& game_proto_update_time_limit_gift_info::info_list(int index) const {
   return info_list_.Get(index);
 }
-inline ::hld::game_proto_time_limit_gift_info* game_proto_update_time_limit_gift_info::mutable_info_list(int index) {
+inline ::faith::game_proto_time_limit_gift_info* game_proto_update_time_limit_gift_info::mutable_info_list(int index) {
   return info_list_.Mutable(index);
 }
-inline ::hld::game_proto_time_limit_gift_info* game_proto_update_time_limit_gift_info::add_info_list() {
+inline ::faith::game_proto_time_limit_gift_info* game_proto_update_time_limit_gift_info::add_info_list() {
   return info_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_time_limit_gift_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_time_limit_gift_info >&
 game_proto_update_time_limit_gift_info::info_list() const {
   return info_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_time_limit_gift_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_time_limit_gift_info >*
 game_proto_update_time_limit_gift_info::mutable_info_list() {
   return &info_list_;
 }
@@ -37549,27 +37549,27 @@ inline void game_proto_limit_time_notice_info::set_weight_num(::google::protobuf
 
 // game_proto_limit_time_notice_info_list
 
-// repeated .hld.game_proto.limit_time_notice_info info_list = 1;
+// repeated .faith.game_proto.limit_time_notice_info info_list = 1;
 inline int game_proto_limit_time_notice_info_list::info_list_size() const {
   return info_list_.size();
 }
 inline void game_proto_limit_time_notice_info_list::clear_info_list() {
   info_list_.Clear();
 }
-inline const ::hld::game_proto_limit_time_notice_info& game_proto_limit_time_notice_info_list::info_list(int index) const {
+inline const ::faith::game_proto_limit_time_notice_info& game_proto_limit_time_notice_info_list::info_list(int index) const {
   return info_list_.Get(index);
 }
-inline ::hld::game_proto_limit_time_notice_info* game_proto_limit_time_notice_info_list::mutable_info_list(int index) {
+inline ::faith::game_proto_limit_time_notice_info* game_proto_limit_time_notice_info_list::mutable_info_list(int index) {
   return info_list_.Mutable(index);
 }
-inline ::hld::game_proto_limit_time_notice_info* game_proto_limit_time_notice_info_list::add_info_list() {
+inline ::faith::game_proto_limit_time_notice_info* game_proto_limit_time_notice_info_list::add_info_list() {
   return info_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::game_proto_limit_time_notice_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::game_proto_limit_time_notice_info >&
 game_proto_limit_time_notice_info_list::info_list() const {
   return info_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::game_proto_limit_time_notice_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::game_proto_limit_time_notice_info >*
 game_proto_limit_time_notice_info_list::mutable_info_list() {
   return &info_list_;
 }
@@ -37814,15 +37814,15 @@ inline void game_proto_upgrade_searche_level_end::set_result(::google::protobuf:
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {
 namespace protobuf {
 
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::hld::game_proto_enter_scene_type>() {
-  return ::hld::game_proto_enter_scene_type_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::faith::game_proto_enter_scene_type>() {
+  return ::faith::game_proto_enter_scene_type_descriptor();
 }
 
 }  // namespace google

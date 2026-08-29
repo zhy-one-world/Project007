@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_dragontrip_2eproto();
@@ -131,7 +131,7 @@ class dragontrip_proto_dragontrip_all : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_params();
 
-  // @@protoc_insertion_point(class_scope:hld.dragontrip_proto.dragontrip_all)
+  // @@protoc_insertion_point(class_scope:faith.dragontrip_proto.dragontrip_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -220,7 +220,7 @@ class dragontrip_proto_dragontrip_operate : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 oper_param() const;
   inline void set_oper_param(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.dragontrip_proto.dragontrip_operate)
+  // @@protoc_insertion_point(class_scope:faith.dragontrip_proto.dragontrip_operate)
  private:
   inline void set_has_oper_type();
   inline void clear_has_oper_type();
@@ -333,19 +333,19 @@ class dragontrip_proto_dragontrip_operate_end : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 item_num() const;
   inline void set_item_num(::google::protobuf::int32 value);
 
-  // repeated .hld.dragontrip_proto.dragontrip_item_info item_list = 6;
+  // repeated .faith.dragontrip_proto.dragontrip_item_info item_list = 6;
   inline int item_list_size() const;
   inline void clear_item_list();
   static const int kItemListFieldNumber = 6;
-  inline const ::hld::dragontrip_proto_dragontrip_item_info& item_list(int index) const;
-  inline ::hld::dragontrip_proto_dragontrip_item_info* mutable_item_list(int index);
-  inline ::hld::dragontrip_proto_dragontrip_item_info* add_item_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::dragontrip_proto_dragontrip_item_info >&
+  inline const ::faith::dragontrip_proto_dragontrip_item_info& item_list(int index) const;
+  inline ::faith::dragontrip_proto_dragontrip_item_info* mutable_item_list(int index);
+  inline ::faith::dragontrip_proto_dragontrip_item_info* add_item_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::dragontrip_proto_dragontrip_item_info >&
       item_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::dragontrip_proto_dragontrip_item_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::dragontrip_proto_dragontrip_item_info >*
       mutable_item_list();
 
-  // @@protoc_insertion_point(class_scope:hld.dragontrip_proto.dragontrip_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.dragontrip_proto.dragontrip_operate_end)
  private:
   inline void set_has_oper_type();
   inline void clear_has_oper_type();
@@ -364,7 +364,7 @@ class dragontrip_proto_dragontrip_operate_end : public ::google::protobuf::Messa
   ::google::protobuf::int32 result_;
   ::google::protobuf::int32 roll_num_;
   ::google::protobuf::int32 item_id_;
-  ::google::protobuf::RepeatedPtrField< ::hld::dragontrip_proto_dragontrip_item_info > item_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::dragontrip_proto_dragontrip_item_info > item_list_;
   ::google::protobuf::int32 item_num_;
 
   mutable int _cached_size_;
@@ -454,7 +454,7 @@ class dragontrip_proto_dragontrip_item_info : public ::google::protobuf::Message
   inline ::google::protobuf::int32 end_pos() const;
   inline void set_end_pos(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.dragontrip_proto.dragontrip_item_info)
+  // @@protoc_insertion_point(class_scope:faith.dragontrip_proto.dragontrip_item_info)
  private:
   inline void set_has_item_id();
   inline void clear_has_item_id();
@@ -540,7 +540,7 @@ class dragontrip_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.dragontrip_proto)
+  // @@protoc_insertion_point(class_scope:faith.dragontrip_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -800,27 +800,27 @@ inline void dragontrip_proto_dragontrip_operate_end::set_item_num(::google::prot
   item_num_ = value;
 }
 
-// repeated .hld.dragontrip_proto.dragontrip_item_info item_list = 6;
+// repeated .faith.dragontrip_proto.dragontrip_item_info item_list = 6;
 inline int dragontrip_proto_dragontrip_operate_end::item_list_size() const {
   return item_list_.size();
 }
 inline void dragontrip_proto_dragontrip_operate_end::clear_item_list() {
   item_list_.Clear();
 }
-inline const ::hld::dragontrip_proto_dragontrip_item_info& dragontrip_proto_dragontrip_operate_end::item_list(int index) const {
+inline const ::faith::dragontrip_proto_dragontrip_item_info& dragontrip_proto_dragontrip_operate_end::item_list(int index) const {
   return item_list_.Get(index);
 }
-inline ::hld::dragontrip_proto_dragontrip_item_info* dragontrip_proto_dragontrip_operate_end::mutable_item_list(int index) {
+inline ::faith::dragontrip_proto_dragontrip_item_info* dragontrip_proto_dragontrip_operate_end::mutable_item_list(int index) {
   return item_list_.Mutable(index);
 }
-inline ::hld::dragontrip_proto_dragontrip_item_info* dragontrip_proto_dragontrip_operate_end::add_item_list() {
+inline ::faith::dragontrip_proto_dragontrip_item_info* dragontrip_proto_dragontrip_operate_end::add_item_list() {
   return item_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::dragontrip_proto_dragontrip_item_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::dragontrip_proto_dragontrip_item_info >&
 dragontrip_proto_dragontrip_operate_end::item_list() const {
   return item_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::dragontrip_proto_dragontrip_item_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::dragontrip_proto_dragontrip_item_info >*
 dragontrip_proto_dragontrip_operate_end::mutable_item_list() {
   return &item_list_;
 }
@@ -902,7 +902,7 @@ inline void dragontrip_proto_dragontrip_item_info::set_end_pos(::google::protobu
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

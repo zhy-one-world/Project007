@@ -1,6 +1,6 @@
 #include "TimeLimitActivityTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void TimeLimitActivityTemplateSize()
     {

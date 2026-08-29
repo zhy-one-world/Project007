@@ -32,11 +32,11 @@ purpose: legion mgr in cs
 
 
 
-namespace hld
+namespace faith
 {
 
 //#define PROTO_FUNC_TO_PACKET_EX(FUNC, NAME)                \
-//	hld::ws2cs_proto::##NAME msg;          \
+//	faith::ws2cs_proto::##NAME msg;          \
 //	bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len); \
 //	if (is_sucess == false)   \
 //	{                        \
@@ -420,7 +420,7 @@ namespace hld
 	}
 	void legion_cs_mgr::c2cs_convenient_join_legion(uint32 connindex, const void *data_ptr, size_t data_len)
 	{
-		hld::legion_proto_convenient_join_legion convenient_join_legion_msg;
+		faith::legion_proto_convenient_join_legion convenient_join_legion_msg;
 		bool suc = parse_msg::getInstance().parse_message_new(&convenient_join_legion_msg, data_ptr, data_len);
 		if (!suc)
 		{
@@ -523,7 +523,7 @@ namespace hld
 
 	void legion_cs_mgr::c2cs_draw_mem_daily_award_fun(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
-		hld::legion_proto_draw_mem_daily_award draw_mem_daily_msg;
+		faith::legion_proto_draw_mem_daily_award draw_mem_daily_msg;
 		bool suc = parse_msg::getInstance().parse_message_new(&draw_mem_daily_msg, data_ptr, data_len);
 		if (!suc)
 		{
@@ -580,7 +580,7 @@ namespace hld
 	
 	void legion_cs_mgr::c2cs_legion_territory_buff_operate(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
-		hld::legion_proto_legion_territory_buff_operate territory_buff_operate_msg;
+		faith::legion_proto_legion_territory_buff_operate territory_buff_operate_msg;
 		bool suc = parse_msg::getInstance().parse_message_new(&territory_buff_operate_msg, data_ptr, data_len);
 		if (!suc)
 		{
@@ -620,7 +620,7 @@ namespace hld
 
 	void legion_cs_mgr::c2cs_goto_next_stage_of_bonfire_map(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
-		hld::legion_proto_goto_next_stage_of_bonfire_map goto_next_stage_of_bonfire_map_msg;
+		faith::legion_proto_goto_next_stage_of_bonfire_map goto_next_stage_of_bonfire_map_msg;
 		bool suc = parse_msg::getInstance().parse_message_new(&goto_next_stage_of_bonfire_map_msg, data_ptr, data_len);
 		if (!suc)
 		{
@@ -952,7 +952,7 @@ namespace hld
 		case e_map_type_city_war:
 		case e_map_type_legion_bonfire:
 		case e_map_type_legion_station:
-			my_unit_ref.transfer_by_template(my_unit_ref.get_unit_info(hld::e_role_info_main_map_id), my_unit_ref.get_main_line_id(), 0, guid_64(), 0);
+			my_unit_ref.transfer_by_template(my_unit_ref.get_unit_info(faith::e_role_info_main_map_id), my_unit_ref.get_main_line_id(), 0, guid_64(), 0);
 			break;
 		default:
 			break;
@@ -1688,7 +1688,7 @@ namespace hld
 
 	void legion_cs_mgr::lua_ws2cs_create_legion_fun(uint32 conn_index, const char * data_ptr, int32 data_len)
 	{
-		hld::ws2cs_proto::create_legion msg;
+		faith::ws2cs_proto::create_legion msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (is_sucess == false)
 		{
@@ -1703,7 +1703,7 @@ namespace hld
 	}
 	void legion_cs_mgr::lua_ws2cs_legion_donate_money_fun(uint32 conn_index, const char * data_ptr, int32 data_len)
 	{
-		hld::ws2cs_proto::donate_legion_money msg;
+		faith::ws2cs_proto::donate_legion_money msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (is_sucess == false)
 		{
@@ -1717,7 +1717,7 @@ namespace hld
 	}
 	void legion_cs_mgr::lua_ws2cs_legion_donate_item_fun(uint32 conn_index, const char * data_ptr, int32 data_len)
 	{
-		hld::ws2cs_proto::donate_legion_item msg;
+		faith::ws2cs_proto::donate_legion_item msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (is_sucess == false)
 		{
@@ -1733,7 +1733,7 @@ namespace hld
 
 	void legion_cs_mgr::lua_ws2cs_enter_legion_boss_map_fun(uint32 conn_index, const char * data_ptr, int32 data_len)
 	{
-		hld::ws2cs_proto::donate_legion_item msg;
+		faith::ws2cs_proto::donate_legion_item msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (is_sucess == false)
 		{
@@ -2794,7 +2794,7 @@ namespace hld
 		{
 			return false;
 		}
-		int32 show_title = self_ref.get_pawn_att().get_unit_base_att(hld::e_base_att_info_equip_title_id);
+		int32 show_title = self_ref.get_pawn_att().get_unit_base_att(faith::e_base_att_info_equip_title_id);
 		self_ref.get_title_mgr().remove_title_by_template_id(title_template_id);
 		if (show_title == title_template_id)
 		{

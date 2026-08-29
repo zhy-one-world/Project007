@@ -17,7 +17,7 @@ author: zhaoyuming
 #include "internal/char_msg.hpp"
 
 
-namespace hld
+namespace faith
 {
 	time_feed_back_mgr::time_feed_back_mgr()
 	{

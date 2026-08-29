@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_pokedex_2eproto();
@@ -130,7 +130,7 @@ class pokedex_proto_pokedex_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_collect_num();
 
-  // @@protoc_insertion_point(class_scope:hld.pokedex_proto.pokedex_info)
+  // @@protoc_insertion_point(class_scope:faith.pokedex_proto.pokedex_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -225,7 +225,7 @@ class pokedex_proto_pokedex_operate : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 operate_index() const;
   inline void set_operate_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.pokedex_proto.pokedex_operate)
+  // @@protoc_insertion_point(class_scope:faith.pokedex_proto.pokedex_operate)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -320,7 +320,7 @@ class pokedex_proto_pokedex_operate_result_end : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 operate_result() const;
   inline void set_operate_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.pokedex_proto.pokedex_operate_result_end)
+  // @@protoc_insertion_point(class_scope:faith.pokedex_proto.pokedex_operate_result_end)
  private:
   inline void set_has_operate_type();
   inline void clear_has_operate_type();
@@ -434,7 +434,7 @@ class pokedex_proto_update_character_pokedex_one : public ::google::protobuf::Me
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_collect_num();
 
-  // @@protoc_insertion_point(class_scope:hld.pokedex_proto.update_character_pokedex_one)
+  // @@protoc_insertion_point(class_scope:faith.pokedex_proto.update_character_pokedex_one)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -521,7 +521,7 @@ class pokedex_proto_update_tinder_info_all : public ::google::protobuf::Message 
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_tinder_info();
 
-  // @@protoc_insertion_point(class_scope:hld.pokedex_proto.update_tinder_info_all)
+  // @@protoc_insertion_point(class_scope:faith.pokedex_proto.update_tinder_info_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -608,7 +608,7 @@ class pokedex_proto_update_tinder_info_one : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 info_value() const;
   inline void set_info_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.pokedex_proto.update_tinder_info_one)
+  // @@protoc_insertion_point(class_scope:faith.pokedex_proto.update_tinder_info_one)
  private:
   inline void set_has_info_index();
   inline void clear_has_info_index();
@@ -712,7 +712,7 @@ class pokedex_proto_pokedex_operate_end : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_submit_item_array();
 
-  // @@protoc_insertion_point(class_scope:hld.pokedex_proto.pokedex_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.pokedex_proto.pokedex_operate_end)
  private:
   inline void set_has_pokedex_template_id();
   inline void clear_has_pokedex_template_id();
@@ -803,25 +803,25 @@ class pokedex_proto_update_character_pokedex_all : public ::google::protobuf::Me
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // repeated .hld.pokedex_proto.pokedex_info pokedex_list = 2;
+  // repeated .faith.pokedex_proto.pokedex_info pokedex_list = 2;
   inline int pokedex_list_size() const;
   inline void clear_pokedex_list();
   static const int kPokedexListFieldNumber = 2;
-  inline const ::hld::pokedex_proto_pokedex_info& pokedex_list(int index) const;
-  inline ::hld::pokedex_proto_pokedex_info* mutable_pokedex_list(int index);
-  inline ::hld::pokedex_proto_pokedex_info* add_pokedex_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::pokedex_proto_pokedex_info >&
+  inline const ::faith::pokedex_proto_pokedex_info& pokedex_list(int index) const;
+  inline ::faith::pokedex_proto_pokedex_info* mutable_pokedex_list(int index);
+  inline ::faith::pokedex_proto_pokedex_info* add_pokedex_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::pokedex_proto_pokedex_info >&
       pokedex_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::pokedex_proto_pokedex_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::pokedex_proto_pokedex_info >*
       mutable_pokedex_list();
 
-  // @@protoc_insertion_point(class_scope:hld.pokedex_proto.update_character_pokedex_all)
+  // @@protoc_insertion_point(class_scope:faith.pokedex_proto.update_character_pokedex_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > role_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::pokedex_proto_pokedex_info > pokedex_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::pokedex_proto_pokedex_info > pokedex_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -915,7 +915,7 @@ class pokedex_proto_protect_operate : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 item_solt() const;
   inline void set_item_solt(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.pokedex_proto.protect_operate)
+  // @@protoc_insertion_point(class_scope:faith.pokedex_proto.protect_operate)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -1001,7 +1001,7 @@ class pokedex_proto_tinder_operate : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 operation_type() const;
   inline void set_operation_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.pokedex_proto.tinder_operate)
+  // @@protoc_insertion_point(class_scope:faith.pokedex_proto.tinder_operate)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -1090,7 +1090,7 @@ class pokedex_proto_tinder_operate_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.pokedex_proto.tinder_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.pokedex_proto.tinder_operate_end)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -1182,7 +1182,7 @@ class pokedex_proto_patron_saint_operate_end : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 operation_state() const;
   inline void set_operation_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.pokedex_proto.patron_saint_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.pokedex_proto.patron_saint_operate_end)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -1267,7 +1267,7 @@ class pokedex_proto_protect_spirit_operation_end : public ::google::protobuf::Me
   inline ::google::protobuf::int32 operation_state() const;
   inline void set_operation_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.pokedex_proto.protect_spirit_operation_end)
+  // @@protoc_insertion_point(class_scope:faith.pokedex_proto.protect_spirit_operation_end)
  private:
   inline void set_has_operation_state();
   inline void clear_has_operation_state();
@@ -1361,7 +1361,7 @@ class pokedex_proto_psyche_recovery : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 item_num() const;
   inline void set_item_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.pokedex_proto.psyche_recovery)
+  // @@protoc_insertion_point(class_scope:faith.pokedex_proto.psyche_recovery)
  private:
   inline void set_has_item_num();
   inline void clear_has_item_num();
@@ -1444,7 +1444,7 @@ class pokedex_proto_psyche_recovery_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 operation_state() const;
   inline void set_operation_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.pokedex_proto.psyche_recovery_end)
+  // @@protoc_insertion_point(class_scope:faith.pokedex_proto.psyche_recovery_end)
  private:
   inline void set_has_operation_state();
   inline void clear_has_operation_state();
@@ -1535,7 +1535,7 @@ class pokedex_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.pokedex_proto)
+  // @@protoc_insertion_point(class_scope:faith.pokedex_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1984,27 +1984,27 @@ pokedex_proto_update_character_pokedex_all::mutable_role_guid() {
   return &role_guid_;
 }
 
-// repeated .hld.pokedex_proto.pokedex_info pokedex_list = 2;
+// repeated .faith.pokedex_proto.pokedex_info pokedex_list = 2;
 inline int pokedex_proto_update_character_pokedex_all::pokedex_list_size() const {
   return pokedex_list_.size();
 }
 inline void pokedex_proto_update_character_pokedex_all::clear_pokedex_list() {
   pokedex_list_.Clear();
 }
-inline const ::hld::pokedex_proto_pokedex_info& pokedex_proto_update_character_pokedex_all::pokedex_list(int index) const {
+inline const ::faith::pokedex_proto_pokedex_info& pokedex_proto_update_character_pokedex_all::pokedex_list(int index) const {
   return pokedex_list_.Get(index);
 }
-inline ::hld::pokedex_proto_pokedex_info* pokedex_proto_update_character_pokedex_all::mutable_pokedex_list(int index) {
+inline ::faith::pokedex_proto_pokedex_info* pokedex_proto_update_character_pokedex_all::mutable_pokedex_list(int index) {
   return pokedex_list_.Mutable(index);
 }
-inline ::hld::pokedex_proto_pokedex_info* pokedex_proto_update_character_pokedex_all::add_pokedex_list() {
+inline ::faith::pokedex_proto_pokedex_info* pokedex_proto_update_character_pokedex_all::add_pokedex_list() {
   return pokedex_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::pokedex_proto_pokedex_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::pokedex_proto_pokedex_info >&
 pokedex_proto_update_character_pokedex_all::pokedex_list() const {
   return pokedex_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::pokedex_proto_pokedex_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::pokedex_proto_pokedex_info >*
 pokedex_proto_update_character_pokedex_all::mutable_pokedex_list() {
   return &pokedex_list_;
 }
@@ -2314,7 +2314,7 @@ inline void pokedex_proto_psyche_recovery_end::set_operation_state(::google::pro
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

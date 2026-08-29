@@ -12,7 +12,7 @@
 
 
 
-namespace hld
+namespace faith
 {
 	class client_session;
 	typedef std::list<relation> relation_list;

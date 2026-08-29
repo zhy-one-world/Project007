@@ -14,7 +14,7 @@
 #include "internet/net.pb.h"
 #include "internal/core.hpp"
 
-namespace hld
+namespace faith
 {
 	bool cross_arena_island::is_vaild()
 	{
@@ -148,15 +148,15 @@ namespace hld
 		war_idex = war_idex + class_type * max_cross_server_war_count;
 		switch (m_pk_state)
 		{
-		case hld::e_cross_pk_state_16:
+		case faith::e_cross_pk_state_16:
 			break;
-		case hld::e_cross_pk_state_8:
+		case faith::e_cross_pk_state_8:
 			war_idex += 8;
 			break;
-		case hld::e_cross_pk_state_4:
+		case faith::e_cross_pk_state_4:
 			war_idex += 12;
 			break;
-		case hld::e_cross_pk_state_2:
+		case faith::e_cross_pk_state_2:
 			war_idex += 14;
 			break;
 		default:
@@ -500,19 +500,19 @@ namespace hld
 		}
 		switch (m_pk_state)
 		{
-		case hld::e_cross_pk_state_16:
+		case faith::e_cross_pk_state_16:
 			pk_state_id = 90305267;
 			notice_id = 93000269;
 			break;
-		case hld::e_cross_pk_state_8:
+		case faith::e_cross_pk_state_8:
 			pk_state_id = 90305268;
 			notice_id = 93000269;
 			break;
-		case hld::e_cross_pk_state_4:
+		case faith::e_cross_pk_state_4:
 			pk_state_id = 90305269;
 			notice_id = 93000269;
 			break;
-		case hld::e_cross_pk_state_2:
+		case faith::e_cross_pk_state_2:
 			notice_id = 93000272;
 			break;
 		default:
@@ -715,19 +715,19 @@ namespace hld
 		int32 left_time = -1;
 		switch (m_1v1_pk_state)
 		{
-		case hld::e_1v1_pk_state_ready:
+		case faith::e_1v1_pk_state_ready:
 			left_time = (m_next_begin_war_time - time_helper::get_cur_time_new().millisecond) / second_tick_time;
 			msg.set_left_time(left_time);
 			break;
-		case hld::e_1v1_pk_state_begin:
+		case faith::e_1v1_pk_state_begin:
 			left_time = (m_next_begin_war_time + m_war_time * second_tick_time - time_helper::get_cur_time_new().millisecond) / second_tick_time;
 			msg.set_left_time(left_time);
 			break;
-		case hld::e_1v1_pk_state_end:
+		case faith::e_1v1_pk_state_end:
 			left_time = (m_next_ready_war_time - time_helper::get_cur_time_new().millisecond) / second_tick_time;
 			msg.set_left_time(left_time);
 			break;
-		case hld::e_1v1_pk_state_max:
+		case faith::e_1v1_pk_state_max:
 			msg.set_left_time(0);
 			break;
 		default:

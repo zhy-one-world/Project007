@@ -8,7 +8,7 @@
 #include "system/scene/base_map_system.h"
 #include "threat_drop_processor.h"
 
-using namespace hld;
+using namespace faith;
 Entity* m_map_ent;
 std::vector<player_score_info> m_hate_player_score_info_array;
 std::vector<team_score_info>   m_hate_team_score_info_array;
@@ -797,7 +797,7 @@ bool drop_manager::is_same_class(int32& drop_template_id, player* player_ptr)
 		return false;
 	}
 	int32& drop_class = temp_drop_ptr->ClassType;
-	if (hld::e_class_type_none == drop_class)
+	if (faith::e_class_type_none == drop_class)
 	{
 		return true;
 	}
@@ -949,7 +949,7 @@ std::vector< s_item_template_info > drop_manager::create_drop_box_by_drop_templa
 	return temp_list;
 }
 
-hld::team_score_info drop_manager::get_team_score_info(guid_64& team_guid)
+faith::team_score_info drop_manager::get_team_score_info(guid_64& team_guid)
 {
 	int32 score_info_array_size = m_hate_team_score_info_array.size();
 	for (int32 score_info_array_index = 0; score_info_array_index < score_info_array_size; score_info_array_index++)

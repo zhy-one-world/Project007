@@ -22,7 +22,7 @@
 
 using namespace std;
 
-namespace hld
+namespace faith
 {
 	struct ItemUpgradeTemplate;
 	struct EquipTemplate;
@@ -95,9 +95,9 @@ namespace hld
 		static int32 get_element_season();
 		static bool is_all_time_map(int32 map_temp_id);
 
-		static bool init_item_data(hld::s_item_info& msg_data, int32 template_id, int32 slot, int32 stack_count, e_bag_type container_type = e_bag_type_bag, int32 is_activate = 0, int32 locked = 1, int32 item_over_time = 0, int32 item_const_att = 0);
-		static bool init_spirit_data(hld::s_spirit_info& msg_data, int32 template_id, int32 slot, e_spirit_bag_type container_type, int32 is_activate);
-		static bool init_skill_data(hld::s_skill_info& msg_data, int32 template_id, int32 activated = 0);//判断是否能释放该技能
+		static bool init_item_data(faith::s_item_info& msg_data, int32 template_id, int32 slot, int32 stack_count, e_bag_type container_type = e_bag_type_bag, int32 is_activate = 0, int32 locked = 1, int32 item_over_time = 0, int32 item_const_att = 0);
+		static bool init_spirit_data(faith::s_spirit_info& msg_data, int32 template_id, int32 slot, e_spirit_bag_type container_type, int32 is_activate);
+		static bool init_skill_data(faith::s_skill_info& msg_data, int32 template_id, int32 activated = 0);//判断是否能释放该技能
 		static int64 get_distance(const int64& x, const int64& y, const int64& z, const int64& x1, const int64& y1, const int64& z1);
 		static int64 get_distance(const int64& x, const int64& y, const int64& x1, const int64& y1);
 		static int64 get_distance(const fvector& pos1, const fvector& pos2);
@@ -111,7 +111,7 @@ namespace hld
 		static bool in_skill_target(fvector boss_location, fvector target_location, int32 skill_wight, int32 skill_length, fvector unit_location);
 		static bool in_skill_target_x(fvector boss_location, fvector target_location, int32 skill_wight, int32 skill_length, fvector unit_location);
 		static bool in_skill_target_y(fvector boss_location, fvector target_location, int32 skill_wight, int32 skill_length, fvector unit_location);
-		static bool init_mail_data_array(hld::s_mail_info& msg_data, const std::vector<guid_64>& item_guid, int32 money_typ1, int32 money_num1, int32 money_typ2, int32 money_num2, guid_64 sender_guid, int64 cur_time_sec = time_helper::get_cur_time_new().second);
+		static bool init_mail_data_array(faith::s_mail_info& msg_data, const std::vector<guid_64>& item_guid, int32 money_typ1, int32 money_num1, int32 money_typ2, int32 money_num2, guid_64 sender_guid, int64 cur_time_sec = time_helper::get_cur_time_new().second);
 		static void range_pos(s_map_pos& pos);
 			
 		static int32 get_player_grade_num(int32 level);				// 获得角色当前的转生数
@@ -145,7 +145,7 @@ namespace hld
 		static void merge_money_to_two_tuples(std::vector<s_item_template_info>& source_array, int32 new_id, int32 new_num);
 		static void merge_item(std::vector<s_item_template_info>& source_array, int32 new_id, int32 new_num, bool new_lock_stated = true);
 
-		static void get_item_recovery_money_info(const hld::s_item_info& item_inst_data, std::vector<s_item_template_info>& money_reward_array, std::vector<s_item_template_info>& money_cost_array, bool is_clear_array, bool is_sprite_use_diamond = false);
+		static void get_item_recovery_money_info(const faith::s_item_info& item_inst_data, std::vector<s_item_template_info>& money_reward_array, std::vector<s_item_template_info>& money_cost_array, bool is_clear_array, bool is_sprite_use_diamond = false);
 		static int32 get_mission_money_empty_slot(int64* money_value_array);
 
 		static int32 get_mission_money_same_slot(int32* money_type_array, int32 target_type);
@@ -202,13 +202,13 @@ namespace hld
 		static int32 rand_excellent_att_color(EquipTemplate* equip_template_ptr, int32 item_const_att = 0);
 		static int32 rand_spirit_excellent_att_color(SpiritTemplate* spirit_template_ptr, int32 item_const_att = 0);
 	public:
-		static void make_new_excellent_att(EquipTemplate* equip_template_ptr, hld::s_item_info& item_data, int32 item_const_att);
-		static void make_new_spirit_eccellent_att(SpiritTemplate* spirit_template_ptr, hld::s_item_info& item_data, int32 item_const_att);
+		static void make_new_excellent_att(EquipTemplate* equip_template_ptr, faith::s_item_info& item_data, int32 item_const_att);
+		static void make_new_spirit_eccellent_att(SpiritTemplate* spirit_template_ptr, faith::s_item_info& item_data, int32 item_const_att);
 		static int32 get_activity_sec_left(int32 activity_type, e_activity_time_get time_get, bool is_other_time = false, bool is_cross_city_war = false, bool is_cross_active = false);
 
 		static int32 get_activity_sec_left(int32 activity_type, const std::vector<int32>& ActivityOpenTime, const std::vector<int32>& OpenDate, e_activity_time_get time_get, bool is_cross_city_war = false, bool is_cross_active = false);
 
-		static TArray<float> get_excellent_att_array(const TArray<float>& base_att_array, const hld::s_item_info& item_data);
+		static TArray<float> get_excellent_att_array(const TArray<float>& base_att_array, const faith::s_item_info& item_data);
 		static TArray<int32> get_excellent_color_array(
 			const TArray<float>&  base_att_info_array,
 			const TArray<int32>&  green_color_standard_array,
@@ -217,7 +217,7 @@ namespace hld
 			const TArray<int32>&  orange_color_standard_array,
 			const TArray<int32>&  red_color_standard_array,
 			const TArray<int32>&  pink_color_standard_array,
-			const hld::s_item_info& item_data);
+			const faith::s_item_info& item_data);
 		
 		static bool is_can_use_this_jewel_slot_on_this_equip_level(int32 equip_level, int32 slot_index);
 		static bool is_can_use_this_jewel_slot_on_this_vip_level(int32 role_vip_level, int32 slot_index);

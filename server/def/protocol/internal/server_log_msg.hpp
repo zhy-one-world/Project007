@@ -18,9 +18,9 @@
 #include "Logic/login_def.hpp"
 #include <base.hpp>
 
-using namespace hld;
+using namespace faith;
 
-namespace hld
+namespace faith
 {
 	const int32 log_time_str_len = 32;
 

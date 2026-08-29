@@ -32,7 +32,7 @@
 //	Macro And Struct Define
 //
 //////////////////////////////////////////////////////////////////////////
-namespace hld
+namespace faith
 {
 	const uint32 TOKEN_LEN = 64;
 	const uint32 SIGLE_CROSS_LADDER_EXP_LEVEL = 14;

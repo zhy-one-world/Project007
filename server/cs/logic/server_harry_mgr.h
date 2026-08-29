@@ -11,7 +11,7 @@ purpose: ¿ç·şÂÓ¶á
 
 #include "cross_server_harry_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class player;
 	class server_harry_mgr

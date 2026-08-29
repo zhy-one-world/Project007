@@ -1,0 +1,416 @@
+syntax = "proto2";
+package hld;
+
+message item_proto
+{
+	message item_save_load
+	{
+		repeated 	int32	data_ary = 1;					// 存读档数据
+		repeated 	int64	item_guid = 2;					// 物品guid
+		repeated 	string	param_str = 3;					// 补单订点号
+		optional 	int32	bag_type = 4;					// 背包类型
+	}
+	message item_info
+	{
+		optional int64	item_guid			= 1;				// 物品guid
+		repeated int32	item_data			= 2;				// 物品数据
+	}
+	
+	message equip_end_load_new_effect
+	{
+		repeated int32	item_guid			= 1;				// 物品guid
+	}
+	
+	message update_character_item
+	{
+		repeated int32		role_guid		= 1;
+		optional uint32		item_error		= 2;
+		repeated item_info	item_list		= 3;				// 物品列表
+		optional uint32		update_mode		= 4;
+	}
+
+	message item_operation
+	{
+		optional uint32	operation_type		= 1;                // 物品的操作类型
+		repeated int32	item_guid			= 2;                // 要操作的物品的guid数组
+		optional int32	item_slot			= 3;                // 传入的物品所在格子位置的信息
+		optional int32	use_up_item			= 4;                // 使用特殊物品
+		optional int32	first_use_lock		= 5;                // 是否优先使用锁定物品
+		optional int32  item_num            = 6;                // 操作物品的数量信息
+		optional int32  force_do            = 7[default = 0];   // 强制进行（并不忽略可行性判断），现在只对应 确认覆盖Buff 的操作
+	}
+	
+	message item_quick_call_mount
+	{
+		repeated int64	mount_guid			= 2;                // 坐骑guid，一次全传（3个guid）
+	}
+	
+	message item_show_info
+	{
+		repeated int32	mount_guid			= 1;                // 坐骑guid，一次全传（3个guid 6个int32）
+	}
+	
+	message item_show_info_quickly_hp
+	{
+		optional int64  quickly_hp_guid     = 1;				// 快捷药品guid
+	}
+	
+	message item_operation_end
+	{
+		optional uint32	operation_state		= 1;
+		optional uint32	operation_type		= 2;
+		repeated int32	role_guid			= 3;
+		repeated int32	item_guid			= 4;
+		optional int32	item_slot			= 5;
+		optional int32  item_num            = 6;                // 返回物品操作结果的数量相关信息
+	}
+	
+	message item_operation_tidy
+	{
+		repeated int32  item_guid_list       = 1;
+	}
+	
+	message item_recovery_earn_info
+	{
+		repeated int32  money_array 			= 1;
+		repeated int32  item_array 				= 2;
+	}
+	
+	message item_delete
+	{
+		repeated int32	role_guid				= 1;
+		optional int32	del_item_arr_len		= 2; // 要删除的物品的数量
+		repeated int32	del_item_guid_arr		= 3; // 要删除的物品的GUID数组
+	}
+	
+	message element_heart_delete
+	{
+		repeated int32	item_guid			= 1;
+	}
+
+	message item_sell_earn_info
+	{
+		optional int32 earn_money_id         = 1;
+		optional int32 earn_money            = 2;
+	}
+	
+	message pick_drop_box
+	{
+		repeated int32              role_guid                = 1;   // 人物guid
+		optional int32              item_template_id     	 = 2;   // 物品id
+		optional int32				pick_state				 = 3;	// 拾取是否成功
+		optional int32				pick_fail_msg_id		 = 4;	// 拾取操作失败提示ID
+		optional uint64				item_guid				 = 5;	// 掉落物品的guid
+	}
+	
+	message item_composit
+	{
+		repeated int32 role_guid             = 1;     // 人物guid
+		optional int32 composit_template_id  = 2;     // 要合成的配方的模板ID
+		optional int32 first_use_locked_material = 3; // 是否优先使用绑定材料
+		optional int32 composit_num			 = 4;	  //合成数量
+	}
+	
+	message item_composit_end
+	{
+		repeated int32 role_guid             = 1;       // 人物guid
+		optional int32 composit_item_template_id  = 2;  // 合成的物品的模板ID
+		repeated int32 result_code           = 3;       // 合成结果
+	}
+	
+	message item_succinct_temp_value
+	{
+		repeated int32 item_guid             = 1;       // 物品guid	
+		repeated int32 property_value        = 2;       // 属性值，必须4个
+		optional bool  is_save_operate       = 3;       // 是否是保存操作
+	}
+	
+	message show_this_wing
+	{
+		repeated int32 role_guid             = 1;       // 人物guid	
+		optional int32 wing_template_id		 = 2;		//要显示的翅膀的ID
+	}
+	
+	message change_mount_shape
+	{
+		repeated int32 role_guid             = 1;       			// 人物guid	
+		optional int32 mount_template_id	 = 2;					// 要显示的模型ID
+		optional bool is_buff				 = 3;					// 是否要调用buff
+	}
+	
+	message item_get_item_msg
+	{
+		repeated int32 role_guid			= 1;		// 人物guid	
+		repeated int32 item_data			= 2;		// 获得的物品ID
+		optional bool  is_continue_add		= 3;		// 是否是由一循环获取触发的物品获得
+		optional int32 boss_id				= 4;
+	}
+	
+	message item_cd
+	{
+		repeated int32 role_guid             = 1;       // 人物guid	
+		optional int32 item_template_id		 = 2;		// 获得的物品ID
+		optional float cd_time				 = 3;		// cd时间
+	}
+	
+	message item_hope_item_get
+	{
+		repeated int32 role_guid             = 1;       // 人物guid	
+		optional int32 get_typ				 = 2;		// 获取类型
+	}
+	
+	message item_hope_item_get_end
+	{
+		repeated int32 role_guid             = 1;       // 人物guid	
+		optional int32 get_typ				 = 2;		// 获取类型
+		optional int32 get_result			 = 3;		// 获取结果ID
+		repeated int32 get_item_template_id	 = 4;		// 获取物品列表
+		repeated int32 get_item_num			 = 5;		// 获取物品数量列表
+		optional int32 free_get_time		 = 6;		// 免费抽取成功时的时间
+		optional int32 send_mail_num		 = 7;		// 通过邮件发送的数量
+	}
+	
+	message item_use_end
+	{
+		optional int32	result				= 1; // 使用结果
+		optional int32	item_template_id	= 2; // 物品的模板ID
+		optional int32	use_num				= 3; // 使用数量
+		optional int32  effect_value		= 4; // 洗pk值，实际洗掉的pk值	
+		optional int32  illusion_unlock_teamplate_id = 5;	// 解锁幻化id
+	}
+	
+	message item_merge_entry
+	{
+		repeated int32		item_guid			= 1;
+		optional int32		item_num			= 2;
+	}
+	
+	message item_merge_end
+	{
+		repeated int32				role_guid			= 1; // 角色GUID
+		optional int32				merge_item_count	= 2; // 物品合并的结果的数量
+		repeated item_merge_entry	merge_item_list		= 3; // 发生合并操作的物品的列表
+	}
+	
+	message item_auto_inherit
+	{
+		optional int32				auto_result			= 1; //0是成功，有数是字符ID，只有 能传承 但是会损失点数时候才有数
+		repeated int32				item_guid			= 2; //被剥离和被传承的物品ID
+	}
+	
+	message hunt_spirit
+	{
+		optional int32				hunt_type			= 1;
+	}
+	
+	message hunt_spirit_end
+	{
+		optional int32				hunt_type			= 1;
+		repeated int32				spirit_id			= 2;
+		optional int32				hunt_result			= 3;
+		optional int32 				send_mail_num		= 4;		// 通过邮件发送的数量
+	}
+	
+	message show_item_upgrade_effect
+	{
+		optional int32				show_type			= 1;		//类型，用于显示 前缀后缀
+		optional int32				show_value			= 2;		//升到了多少级
+	}
+	
+	message add_money
+	{
+		optional int32				money_id			= 1;
+		optional int32				money_num			= 2;
+	}
+	
+	message add_item
+	{
+		optional int32				item_id				= 1;
+		optional int32				item_num			= 2;
+		optional bool				send_by_mail		= 3;
+	}
+	
+	message lucky_draw_record
+	{
+		optional int64				info_guid			= 1;		//消息Guid
+		optional int64				role_guid			= 2;		//抽奖人Guid
+		optional string				role_name			= 3;		//抽奖人姓名
+		optional int32				item_template_id	= 4;		//抽到的物品id
+		optional int32				get_type			= 5;		//获取方式，十连还是单抽
+		optional int32				record_type			= 6;		//记录类型，祈福还是精灵
+		optional int64				record_time			= 7;		//抽奖时间
+	}
+	
+	message load_lucky_draw_record_end
+	{
+		repeated lucky_draw_record	data_array			= 1;
+	}
+	
+	message lucky_draw_record_operate
+	{
+		repeated int64				del_array					= 1;
+		repeated lucky_draw_record	add_array					= 2;
+	}
+	
+	message patron_saint_mark_operate
+	{
+		optional int32				mark_guid_a				= 1;
+		optional int32				mark_guid_b				= 2;
+		optional int32				target_slot				= 3;
+		optional int32				operate_type			= 4;
+	}
+	
+	message patron_saint_mark_operate_end
+	{
+		optional int32				mark_guid_a				= 1;
+		optional int32				mark_guid_b				= 2;
+		optional int32				target_slot				= 3;
+		optional int32				operate_type			= 4;
+		optional int32				operate_result			= 5;
+	}
+	
+	message item_one_key_use_end
+	{
+		optional int32	result				= 1; 			// 使用结果
+	}
+	
+	message simple_item_info
+	{
+		optional int32	item_template_id				= 1; 
+		optional int32	item_num						= 2;
+	}
+	
+	message show_fashion
+	{
+		optional int32 is_show_fashion					= 1;
+		repeated int32 role_guid 						= 2;
+	}
+	
+	message unlock_skill_end
+	{
+		optional int32 				result				= 1;
+	}
+	message unlock_skill
+	{
+		optional int64 				choosed_guid		= 1;
+		optional int32				choosed_index		= 2;
+		optional int32				buff_template_id	= 3;
+		optional int32				choosed_type		= 4;
+		optional int32				open_need_level		= 5;
+	}
+	
+	
+	message item_forge
+	{
+		repeated int32 item_guid             = 1;       // 物品guid	
+		optional int32 forge_lock_flag       = 2;       // 
+		optional bool  is_save_operate       = 3;       // 是否是保存操作
+		optional bool  first_use_locked_item = 4; 
+	}
+	
+	message item_forge_end
+	{	
+		repeated int32 property_name         = 1;       // 属性名	
+		repeated int32 property_value        = 2;       // 属性值
+		optional bool  is_save_operate       = 3;       // 是否是保存操作
+		optional bool  in_is_enabled         = 4;       // 是否是保存操作
+		repeated int32 property_index		 = 5;		// 属性索引
+		optional int32 change_gs_value     	 = 6;       // 变化属性
+	}
+	message tinder_prop_operate
+	{
+		repeated int32				mark_guid				= 1;
+		optional int32				target_slot				= 2;
+		optional int32				operate_type			= 3;
+	}
+	
+	message tinder_prop_operate_end
+	{
+		optional int32				mark_guid_a				= 1;
+		optional int32				mark_guid_b				= 2;
+		optional int32				target_slot				= 3;
+		optional int32				operate_type			= 4;
+		optional int32				operate_result			= 5;
+	}
+	
+	message get_meditation_item_msg
+	{
+		repeated int64              item_data			    = 1;		// 获得的物品
+	}
+	
+	message change_sky_suit_shape	
+	{
+		optional int32 				operate_state			= 1;
+		optional int32 				operate_type			= 2;
+	}
+	message item_awaken
+	{
+	    repeated int32              main_item_guid               = 1;
+		repeated int32              need_item_guid               = 2;
+	}
+	message item_awaken_end
+	{
+	    repeated int32 item_guid					        = 1; 
+        optional int32 result                               = 2;			
+	}
+	
+	message item_jewel_carve_oper
+	{
+		repeated int32           item_guid                 =1;
+		optional int32           oper_type                 =2;
+		optional int32           param                     =3;
+	}
+	
+	message item_jewel_carve_oper_end
+	{
+	    repeated int32          item_guid                  =1;
+		optional int32          oper_type                  =2;
+		optional int32          result                     =3;
+	}
+}
+
+message item_s2s
+{
+	message sprite_fetter_info
+	{	
+		repeated int32 data_array = 1;
+	}
+	message sl_sprite_fetter_list
+	{	
+		repeated sprite_fetter_info data_list = 1;
+	}
+	message sl_item_upgrade
+	{	
+		repeated int32 data_array = 1;	
+	}
+}
+
+message item
+{
+	message sprite_fetter_info
+	{	
+		repeated int32 data_array = 1;
+	}
+	message s2c_sprite_fetter_info
+	{
+		repeated sprite_fetter_info data_list = 1;		
+	}
+	message c2s_sprite_fetter_upgrade
+	{
+		optional int32 sprite_fetter_id = 1;		
+	}
+	message s2c_sprite_fetter_upgrade
+	{
+		optional int32 res = 1;		
+		optional int32 sprite_fetter_id = 2;		
+	}
+	message s2c_item_upgrade
+	{	
+		optional int32 res = 1;
+		optional int64 unit_guid = 2;
+		repeated int32 data_array = 3;
+	}
+	message c2s_item_upgrade
+	{	
+	}
+}

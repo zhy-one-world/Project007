@@ -15,7 +15,7 @@
 #include "Logic/element_war_def.hpp"
 #include "pk_king_msg.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push, 1)
 	enum
@@ -54,7 +54,7 @@ namespace hld
 
 
 	//gate服向dp更新数据（比赛后）
-	struct ws2dp_element_war_update_info : public hld::packet_base
+	struct ws2dp_element_war_update_info : public faith::packet_base
 	{
 		guid_64		role_guid;
 		int32		total_win_num;
@@ -72,7 +72,7 @@ namespace hld
 		}
 	};
 
-	struct ws2dp_element_war_refresh_season_info : public hld::packet_base
+	struct ws2dp_element_war_refresh_season_info : public faith::packet_base
 	{
 		guid_64		role_guid;
 		int32		score_num;
@@ -90,7 +90,7 @@ namespace hld
 	};
 
 	//原区ws向gate服ws发送请求角色信息
-	struct ws2ws_element_war_req_role_info : public hld::packet_base
+	struct ws2ws_element_war_req_role_info : public faith::packet_base
 	{
 		xchar		role_name[max_name_size + 1];
 		xchar		server_name[max_name_size + 1];
@@ -108,7 +108,7 @@ namespace hld
 	};
 
 	//gate服向dp更新数据（新建数据后)
-	struct ws2dp_element_war_add_role_info : public hld::packet_base
+	struct ws2dp_element_war_add_role_info : public faith::packet_base
 	{
 		s_element_war_role_info	role_info;
 		ws2dp_element_war_add_role_info()
@@ -119,7 +119,7 @@ namespace hld
 	};
 
 	//gate服向dp刷新role_name
-	struct ws2dp_element_war_update_role_info : public hld::packet_base
+	struct ws2dp_element_war_update_role_info : public faith::packet_base
 	{
 		guid_64		role_guid;
 		xchar		role_name[max_name_size + 1];
@@ -138,7 +138,7 @@ namespace hld
 	};
 
 	//gate服向dp请求数据
-	struct ws2dp_element_war_load_info : public hld::packet_base
+	struct ws2dp_element_war_load_info : public faith::packet_base
 	{
 		ws2dp_element_war_load_info()
 		{
@@ -146,7 +146,7 @@ namespace hld
 		}
 	};
 
-	struct dp2ws_element_war_load_role_info : public hld::packet_base
+	struct dp2ws_element_war_load_role_info : public faith::packet_base
 	{
 		bool		is_load_all;
 		int32		cur_data_num;
@@ -170,7 +170,7 @@ namespace hld
 	};
 
 	//原区ws向gate服发送报名请求
-	struct ws2ws_element_war_sign_up : public hld::packet_base
+	struct ws2ws_element_war_sign_up : public faith::packet_base
 	{
 		guid_64		role_guid_list[ELEMENT_WAR_PLAY_NUM];
 		guid_64		team_guid;
@@ -186,7 +186,7 @@ namespace hld
 	};
 
 	//原区ws向gate服发送取消报名请求
-	struct ws2ws_element_war_close_sign_up : public hld::packet_base
+	struct ws2ws_element_war_close_sign_up : public faith::packet_base
 	{
 		guid_64		role_guid;
 		int32		server_id;
@@ -197,7 +197,7 @@ namespace hld
 		}
 	};
 	//地图创建失败重置角色信息
-	struct ws2ws_element_war_create_map_failed : public hld::packet_base
+	struct ws2ws_element_war_create_map_failed : public faith::packet_base
 	{
 		guid_64		first_role_guid[ELEMENT_WAR_PLAY_NUM];
 		guid_64		second_role_guid[ELEMENT_WAR_PLAY_NUM];
@@ -208,7 +208,7 @@ namespace hld
 		}
 	};
 
-	struct ws2ws_element_war_create_map : public hld::packet_base
+	struct ws2ws_element_war_create_map : public faith::packet_base
 	{
 		s_element_war_match_info match_info;
 		ws2ws_element_war_create_map()
@@ -219,7 +219,7 @@ namespace hld
 	};
 
 	//比赛服ws向原区ws发送比赛匹配成功
-	struct ws2ws_element_war_send_match_success : public hld::packet_base
+	struct ws2ws_element_war_send_match_success : public faith::packet_base
 	{
 		int32		server_id;
 		guid_64		map_id;
@@ -233,7 +233,7 @@ namespace hld
 	};
 
 	//比赛服ws向cs发送创建机器人消息
-	struct ws2cs_element_war_send_create_robot : public hld::packet_base
+	struct ws2cs_element_war_send_create_robot : public faith::packet_base
 	{
 		guid_64		map_guid;
 		s_element_war_match_info match_info;
@@ -242,10 +242,10 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_element_war_send_create_robot;
 		}
-		bool to_proto(hld::ws2cs_proto::element_war_send_create_robot& msg)
+		bool to_proto(faith::ws2cs_proto::element_war_send_create_robot& msg)
 		{
 			msg.set_map_guid(map_guid.server_64);
-			hld::st_proto::st_element_war_match_info * st_match_ptr = msg.mutable_match_info();
+			faith::st_proto::st_element_war_match_info * st_match_ptr = msg.mutable_match_info();
 			if (st_match_ptr == nullptr)
 			{
 				return false;
@@ -253,14 +253,14 @@ namespace hld
 			match_info.to_proto(st_match_ptr);
 			return true;
 		}
-		void from_proto(const hld::ws2cs_proto::element_war_send_create_robot& msg)
+		void from_proto(const faith::ws2cs_proto::element_war_send_create_robot& msg)
 		{
 
 		}
 	};
 
 	//gate服通知dp刷新每日数据
-	struct ws2dp_element_war_refresh_ticket_info : public hld::packet_base
+	struct ws2dp_element_war_refresh_ticket_info : public faith::packet_base
 	{
 		int32		ticket_num;
 		int32		have_buy_num;
@@ -272,7 +272,7 @@ namespace hld
 	};
 
 	//ws服通知cs刷新每日数据
-	struct ws2cs_element_war_refresh_ticket_info : public hld::packet_base
+	struct ws2cs_element_war_refresh_ticket_info : public faith::packet_base
 	{
 		guid_64		role_guid;
 		int32		can_buy_ticket_num;
@@ -284,7 +284,7 @@ namespace hld
 	};
 
 	//发送上赛季排名
-	struct ws2cs_element_war_send_last_score : public hld::packet_base
+	struct ws2cs_element_war_send_last_score : public faith::packet_base
 	{
 		guid_64		role_guid;
 		int32		last_score;
@@ -294,14 +294,14 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_element_war_send_last_score;
 		}
-		void to_proto(hld::ws2cs_proto::element_war_send_last_score& msg)
+		void to_proto(faith::ws2cs_proto::element_war_send_last_score& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_last_score(last_score);
 			msg.set_last_ranking(last_ranking);
 
 		}
-		void from_proto(const hld::ws2cs_proto::element_war_send_last_score& msg)
+		void from_proto(const faith::ws2cs_proto::element_war_send_last_score& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			last_score = msg.last_score();
@@ -310,7 +310,7 @@ namespace hld
 	};
 
 	//发送赛季更新
-	struct ws2ws_element_war_notify_season_reward : public hld::packet_base
+	struct ws2ws_element_war_notify_season_reward : public faith::packet_base
 	{
 		ws2ws_element_war_notify_season_reward()
 		{
@@ -319,7 +319,7 @@ namespace hld
 		}
 	};
 
-	struct cs2ws_element_war_map_game_end_role_info : public hld::packet_base
+	struct cs2ws_element_war_map_game_end_role_info : public faith::packet_base
 	{
 		guid_64		role_guid;
 		int32		add_score;
@@ -338,7 +338,7 @@ namespace hld
 
 	};
 
-	struct ws2dp_element_war_clear_mission_info : public hld::packet_base
+	struct ws2dp_element_war_clear_mission_info : public faith::packet_base
 	{
 		ws2dp_element_war_clear_mission_info()
 		{
@@ -348,7 +348,7 @@ namespace hld
 
 	};
 
-	struct ws2dp_element_war_refresh_mission_info : public hld::packet_base
+	struct ws2dp_element_war_refresh_mission_info : public faith::packet_base
 	{
 		guid_64 role_guid;
 		int32 mission1;
@@ -367,7 +367,7 @@ namespace hld
 
 	};
 
-	struct ws2ws_element_war_sync_game_result : public hld::packet_base
+	struct ws2ws_element_war_sync_game_result : public faith::packet_base
 	{
 		guid_64 role_guid;
 		xchar role_name[max_name_size + 1];
@@ -383,7 +383,7 @@ namespace hld
 
 	};
 
-	struct ws2ws_element_war_check_can_get_mission_reward : public hld::packet_base
+	struct ws2ws_element_war_check_can_get_mission_reward : public faith::packet_base
 	{
 		guid_64 role_guid;
 		int32 mission_index;
@@ -394,7 +394,7 @@ namespace hld
 		}
 	};
 
-	struct ws2ws_element_war_check_can_get_mission_reward_end : public hld::packet_base
+	struct ws2ws_element_war_check_can_get_mission_reward_end : public faith::packet_base
 	{
 		guid_64 role_guid;
 		int32 ret_index;
@@ -407,7 +407,7 @@ namespace hld
 		}
 	};
 
-	struct ws2cs_element_war_check_can_get_mission_reward_end : public hld::packet_base
+	struct ws2cs_element_war_check_can_get_mission_reward_end : public faith::packet_base
 	{
 		guid_64 role_guid;
 		int32 ret_index;
@@ -418,7 +418,7 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_element_war_check_can_get_mission_reward_end;
 		}
-		void to_proto(hld::ws2cs_proto::element_war_check_can_get_mission_reward_end& msg)
+		void to_proto(faith::ws2cs_proto::element_war_check_can_get_mission_reward_end& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_ret_index(ret_index);
@@ -426,7 +426,7 @@ namespace hld
 			msg.set_mission_id(mission_id);
 
 		}
-		void from_proto(const hld::ws2cs_proto::element_war_check_can_get_mission_reward_end& msg)
+		void from_proto(const faith::ws2cs_proto::element_war_check_can_get_mission_reward_end& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			ret_index = msg.ret_index();
@@ -436,7 +436,7 @@ namespace hld
 	};
 
 	//扣除货币成功通知gate服增加次数
-	struct cs2ws_element_war_buy_ticket : public hld::packet_base
+	struct cs2ws_element_war_buy_ticket : public faith::packet_base
 	{
 		guid_64 role_guid;
 		cs2ws_element_war_buy_ticket()
@@ -446,7 +446,7 @@ namespace hld
 		}
 	};
 	//前期上赛季分数
-	struct cs2ws_element_ladder_req_last_score : public hld::packet_base
+	struct cs2ws_element_ladder_req_last_score : public faith::packet_base
 	{
 		guid_64		role_guid;
 		int32		server_id;
@@ -457,7 +457,7 @@ namespace hld
 		}
 	};
 	//发送上赛季分数
-	struct ws2ws_element_ladder_send_last_score : public hld::packet_base
+	struct ws2ws_element_ladder_send_last_score : public faith::packet_base
 	{
 		guid_64		role_guid;
 		int32		last_score;
@@ -470,7 +470,7 @@ namespace hld
 	};
 
 	//发送匹配提示Tip
-	struct ws2ws_element_war_send_math_tip : public hld::packet_base
+	struct ws2ws_element_war_send_math_tip : public faith::packet_base
 	{
 		guid_64		role_guid;
 		ws2ws_element_war_send_math_tip()
@@ -480,7 +480,7 @@ namespace hld
 		}
 	};
 	
-	struct cs2ws_element_war_gm_send_add_ticket : public hld::packet_base
+	struct cs2ws_element_war_gm_send_add_ticket : public faith::packet_base
 	{
 		guid_64 role_guid;
 		cs2ws_element_war_gm_send_add_ticket()

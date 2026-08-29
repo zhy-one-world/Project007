@@ -1,0 +1,29 @@
+/*
+* Lua Pkg File
+*/
+
+// ************************************* 头文件引用 *********************************
+$#include "type_def.hpp"
+$#include "server_def.hpp"
+
+$#include "../../../FaithGame/Source/FaithGameCore/ServerLayer/lua/script_mgr.h"
+$#include "../../../FaithGame/Source/FaithGameCore/ServerLayer/lua/gm_command.h"
+$#include "../../../FaithGame/Source/FaithGameCore/ServerLayer/lua/lua_call_handle.h"
+$#include "../../../FaithGame/Source/FaithGameCore/ServerLayer/player.hpp"
+$#include "../../../FaithGame/Source/FaithGameCore/ServerLayer/lua_oracle_trial.hpp"
+$#include "../../../FaithGame/Source/FaithGameCore/ServerLayer/legion_dance_mgr.h"
+
+
+
+// ************************************* type *********************************
+typedef std::string					xstring;
+
+
+// ************************************* pkg文件引用 *********************************
+$pfile "../../../faith/app/FaithGame/Source/FaithGameCore/ServerLayer/lua/script_mgr.pkg"
+$pfile "../../../faith/app/FaithGame/Source/FaithGameCore/ServerLayer/lua/lua_call_handle.pkg"
+$pfile "../../../faith/app/FaithGame/Source/FaithGameCore/ServerLayer/player.pkg"
+$pfile "../../../faith/app/FaithGame/Source/FaithGameCore/ServerLayer/map_cs.pkg"
+$pfile "../../../faith/app/FaithGame/Source/FaithGameCore/ServerLayer/lua_oracle_trial.pkg"
+$pfile "../../../faith/app/FaithGame/Source/FaithGameCore/ServerLayer/lua_legion_dance_mgr.pkg"
+$pfile "../../../faith/app/FaithGame/Source/FaithGameCore/ServerLayer/lua_interaction_mgr.pkg"

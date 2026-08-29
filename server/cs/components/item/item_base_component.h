@@ -4,7 +4,7 @@
 #include "template/ItemTemplate_S.h"
 #include "logic/unit.hpp"
 
-namespace hld
+namespace faith
 {
 	struct item_base_component
 	{

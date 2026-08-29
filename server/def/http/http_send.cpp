@@ -16,7 +16,7 @@
 #include "http/http_access_mgr.hpp"
 #include "internal/daemon.hpp"
 
-namespace hld
+namespace faith
 {
 	http_send& http_send::get_instance()
 	{

@@ -10,7 +10,7 @@
 #include "logic/type_def.hpp"
 #include "db_manager.hpp"
 
-namespace hld
+namespace faith
 {
 	//角色历史最高纪录
 	void cs2dp_req_load_player_highest_record(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index);

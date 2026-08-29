@@ -8,7 +8,7 @@
 #include "Logic/item_def.hpp"
 #include "../server/client_session.hpp"
 
-namespace hld
+namespace faith
 {
 	void	daemon2ws_exit_func(protocolUnpacker& unpacker);
 	void	daemon2ws_gmcmd_func(protocolUnpacker& unpacker);

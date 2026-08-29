@@ -1,6 +1,6 @@
 #include "RegionTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void RegionTemplateSize()
     {

@@ -14,7 +14,7 @@ author: shangxiaoliang
 #include "game_enum_def_s.h"
 #include "template/template_base.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 

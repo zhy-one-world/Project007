@@ -14,7 +14,7 @@
 #include "server_def.hpp"
 #include <net/net_client_mgr.hpp>
 
-namespace hld
+namespace faith
 {
 	//
 	//	FEP server is a client of ws

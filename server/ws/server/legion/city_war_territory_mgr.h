@@ -4,7 +4,7 @@
 
 #include "Logic/legion_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class city_war_territory_mgr
 	{

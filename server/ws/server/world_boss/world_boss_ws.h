@@ -4,7 +4,7 @@
 #include "logic/type_def.hpp"
 #include "Logic/world_boss_def.hpp"
 
-namespace hld
+namespace faith
 {
 	struct NpcSpawnPointTemplate;
 	struct NpcTemplate;

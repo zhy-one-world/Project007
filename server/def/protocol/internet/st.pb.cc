@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -1100,17 +1100,17 @@ void protobuf_AddDesc_st_2eproto() {
     "data_ary\030\002 \003(\005\032\"\n\016st_belief_info\022\020\n\010data"
     "_ary\030\001 \003(\005\032\231\004\n\023st_fake_player_info\022\027\n\017da"
     "ta_block_mask\030\001 \001(\005\022\014\n\004guid\030\002 \001(\003\022-\n\trol"
-    "e_info\030\003 \001(\0132\032.hld.st_proto.st_unit_info"
-    "\0220\n\010att_info\030\004 \001(\0132\036.hld.st_proto.st_bas"
+    "e_info\030\003 \001(\0132\032.faith.st_proto.st_unit_info"
+    "\0220\n\010att_info\030\004 \001(\0132\036.faith.st_proto.st_bas"
     "e_att_info\022\021\n\tskill_num\030\005 \001(\005\022/\n\nskill_d"
-    "ata\030\006 \003(\0132\033.hld.st_proto.st_skill_info\022\020"
+    "ata\030\006 \003(\0132\033.faith.st_proto.st_skill_info\022\020"
     "\n\010item_num\030\007 \001(\005\022-\n\titem_data\030\010 \003(\0132\032.hl"
     "d.st_proto.st_item_info\022\020\n\010buff_num\030\t \001("
-    "\005\022-\n\tbuff_data\030\n \003(\0132\032.hld.st_proto.st_b"
-    "uff_info\022:\n\013m_fight_att\030\013 \001(\0132%.hld.st_p"
+    "\005\022-\n\tbuff_data\030\n \003(\0132\032.faith.st_proto.st_b"
+    "uff_info\022:\n\013m_fight_att\030\013 \001(\0132%.faith.st_p"
     "roto.st_arena_char_fight_att\0221\n\013spirit_d"
-    "ata\030\014 \001(\0132\034.hld.st_proto.st_spirit_info\022"
-    "1\n\013belief_data\030\r \003(\0132\034.hld.st_proto.st_b"
+    "ata\030\014 \001(\0132\034.faith.st_proto.st_spirit_info\022"
+    "1\n\013belief_data\030\r \003(\0132\034.faith.st_proto.st_b"
     "elief_info\022\022\n\nbelief_num\030\016 \001(\005\032\232\004\n\017st_au"
     "ction_info\022\023\n\013seller_guid\030\001 \001(\003\022\023\n\013selle"
     "r_name\030\002 \001(\t\022\022\n\nbuyer_guid\030\003 \001(\003\022\022\n\nbuye"
@@ -1124,7 +1124,7 @@ void protobuf_AddDesc_st_2eproto() {
     "\n\021sell_single_money\030\021 \001(\003\022\025\n\rcur_bid_mon"
     "ey\030\022 \001(\003\022\017\n\007is_show\030\023 \001(\005\022\020\n\010add_time\030\024 "
     "\001(\005\022\024\n\014is_sky_order\030\025 \001(\005\022\021\n\tshow_guid\030\026"
-    " \001(\003\022-\n\titem_info\030\027 \001(\0132\032.hld.st_proto.s"
+    " \001(\003\022-\n\titem_info\030\027 \001(\0132\032.faith.st_proto.s"
     "t_item_info\032\302\001\n\023st_server_harry_msg\022\021\n\ts"
     "erver_id\030\001 \001(\005\022\024\n\014server_money\030\002 \001(\005\022\025\n\r"
     "special_money\030\003 \001(\005\022\031\n\021first_player_guid"
@@ -1171,9 +1171,9 @@ void protobuf_AddDesc_st_2eproto() {
     "e_server_out_ip\030\014 \001(\t\022\034\n\024role_server_out"
     "_port\030\r \001(\005\022\020\n\010is_robor\030\016 \001(\010\022\031\n\021robor_t"
     "emplate_id\030\017 \001(\005\032\275\001\n\031st_element_war_matc"
-    "h_info\022E\n\017first_role_info\030\001 \003(\0132,.hld.st"
+    "h_info\022E\n\017first_role_info\030\001 \003(\0132,.faith.st"
     "_proto.st_element_war_match_role_info\022F\n"
-    "\020second_role_info\030\002 \003(\0132,.hld.st_proto.s"
+    "\020second_role_info\030\002 \003(\0132,.faith.st_proto.s"
     "t_element_war_match_role_info\022\021\n\tmap_lev"
     "el\030\003 \001(\005\032\225\002\n\026st_ranking_player_info\022\021\n\tr"
     "ole_guid\030\001 \001(\003\022\021\n\trole_name\030\002 \001(\t\022\024\n\014ran"
@@ -1191,21 +1191,21 @@ void protobuf_AddDesc_st_2eproto() {
     "\n\trole_guid\030\003 \001(\003\032\260\001\n#st_gain_treasure_r"
     "ecord_info_one_db\022$\n\034boss_spawn_point_te"
     "mplate_id\030\001 \001(\005\022\024\n\014killed_stamp\030\002 \001(\005\022M\n"
-    "\017player_info_arr\030\003 \003(\01324.hld.st_proto.st"
+    "\017player_info_arr\030\003 \003(\01324.faith.st_proto.st"
     "_gain_treasure_record_player_info_db\032j\n#"
     "st_gain_treasure_record_player_info\022\021\n\tr"
     "ole_name\030\001 \001(\t\022\035\n\025gain_item_template_id\030"
     "\002 \003(\005\022\021\n\trole_guid\030\003 \001(\003\032\252\001\n st_gain_tre"
     "asure_record_info_one\022$\n\034boss_spawn_poin"
     "t_template_id\030\001 \001(\005\022\024\n\014killed_stamp\030\002 \001("
-    "\005\022J\n\017player_info_arr\030\003 \003(\01321.hld.st_prot"
+    "\005\022J\n\017player_info_arr\030\003 \003(\01321.faith.st_prot"
     "o.st_gain_treasure_record_player_info\032H\n"
     "\034st_gain_treasure_player_info\022\023\n\013player_"
     "guid\030\001 \001(\003\022\023\n\013player_name\030\002 \001(\t\032\262\001\n\032st_g"
     "ain_treasure_boss_info\022$\n\034boss_spawn_poi"
     "nt_template_id\030\001 \001(\005\022\021\n\tboss_guid\030\002 \001(\003\022"
     "\032\n\022next_refresh_stamp\030\003 \001(\005\022\?\n\013player_in"
-    "fo\030\004 \003(\0132*.hld.st_proto.st_gain_treasure"
+    "fo\030\004 \003(\0132*.faith.st_proto.st_gain_treasure"
     "_player_info\032K\n\024st_single_map_record\022\021\n\t"
     "role_guid\030\001 \001(\003\022\021\n\trole_name\030\002 \001(\t\022\r\n\005va"
     "lue\030\003 \001(\005\032a\n\021st_db_best_record\022\027\n\017map_te"
@@ -7695,10 +7695,10 @@ st_proto_st_fake_player_info::st_proto_st_fake_player_info()
 }
 
 void st_proto_st_fake_player_info::InitAsDefaultInstance() {
-  role_info_ = const_cast< ::hld::st_proto_st_unit_info*>(&::hld::st_proto_st_unit_info::default_instance());
-  att_info_ = const_cast< ::hld::st_proto_st_base_att_info*>(&::hld::st_proto_st_base_att_info::default_instance());
-  m_fight_att_ = const_cast< ::hld::st_proto_st_arena_char_fight_att*>(&::hld::st_proto_st_arena_char_fight_att::default_instance());
-  spirit_data_ = const_cast< ::hld::st_proto_st_spirit_info*>(&::hld::st_proto_st_spirit_info::default_instance());
+  role_info_ = const_cast< ::faith::st_proto_st_unit_info*>(&::faith::st_proto_st_unit_info::default_instance());
+  att_info_ = const_cast< ::faith::st_proto_st_base_att_info*>(&::faith::st_proto_st_base_att_info::default_instance());
+  m_fight_att_ = const_cast< ::faith::st_proto_st_arena_char_fight_att*>(&::faith::st_proto_st_arena_char_fight_att::default_instance());
+  spirit_data_ = const_cast< ::faith::st_proto_st_spirit_info*>(&::faith::st_proto_st_spirit_info::default_instance());
 }
 
 st_proto_st_fake_player_info::st_proto_st_fake_player_info(const st_proto_st_fake_player_info& from)
@@ -7761,10 +7761,10 @@ void st_proto_st_fake_player_info::Clear() {
     data_block_mask_ = 0;
     guid_ = GOOGLE_LONGLONG(0);
     if (has_role_info()) {
-      if (role_info_ != NULL) role_info_->::hld::st_proto_st_unit_info::Clear();
+      if (role_info_ != NULL) role_info_->::faith::st_proto_st_unit_info::Clear();
     }
     if (has_att_info()) {
-      if (att_info_ != NULL) att_info_->::hld::st_proto_st_base_att_info::Clear();
+      if (att_info_ != NULL) att_info_->::faith::st_proto_st_base_att_info::Clear();
     }
     skill_num_ = 0;
     item_num_ = 0;
@@ -7772,10 +7772,10 @@ void st_proto_st_fake_player_info::Clear() {
   if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     buff_num_ = 0;
     if (has_m_fight_att()) {
-      if (m_fight_att_ != NULL) m_fight_att_->::hld::st_proto_st_arena_char_fight_att::Clear();
+      if (m_fight_att_ != NULL) m_fight_att_->::faith::st_proto_st_arena_char_fight_att::Clear();
     }
     if (has_spirit_data()) {
-      if (spirit_data_ != NULL) spirit_data_->::hld::st_proto_st_spirit_info::Clear();
+      if (spirit_data_ != NULL) spirit_data_->::faith::st_proto_st_spirit_info::Clear();
     }
     belief_num_ = 0;
   }
@@ -7824,7 +7824,7 @@ bool st_proto_st_fake_player_info::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.st_proto.st_unit_info role_info = 3;
+      // optional .faith.st_proto.st_unit_info role_info = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -7838,7 +7838,7 @@ bool st_proto_st_fake_player_info::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.st_proto.st_base_att_info att_info = 4;
+      // optional .faith.st_proto.st_base_att_info att_info = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -7868,7 +7868,7 @@ bool st_proto_st_fake_player_info::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.st_proto.st_skill_info skill_data = 6;
+      // repeated .faith.st_proto.st_skill_info skill_data = 6;
       case 6: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -7899,7 +7899,7 @@ bool st_proto_st_fake_player_info::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.st_proto.st_item_info item_data = 8;
+      // repeated .faith.st_proto.st_item_info item_data = 8;
       case 8: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -7930,7 +7930,7 @@ bool st_proto_st_fake_player_info::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.st_proto.st_buff_info buff_data = 10;
+      // repeated .faith.st_proto.st_buff_info buff_data = 10;
       case 10: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -7945,7 +7945,7 @@ bool st_proto_st_fake_player_info::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.st_proto.st_arena_char_fight_att m_fight_att = 11;
+      // optional .faith.st_proto.st_arena_char_fight_att m_fight_att = 11;
       case 11: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -7959,7 +7959,7 @@ bool st_proto_st_fake_player_info::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.st_proto.st_spirit_info spirit_data = 12;
+      // optional .faith.st_proto.st_spirit_info spirit_data = 12;
       case 12: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -7973,7 +7973,7 @@ bool st_proto_st_fake_player_info::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.st_proto.st_belief_info belief_data = 13;
+      // repeated .faith.st_proto.st_belief_info belief_data = 13;
       case 13: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -8032,13 +8032,13 @@ void st_proto_st_fake_player_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->guid(), output);
   }
 
-  // optional .hld.st_proto.st_unit_info role_info = 3;
+  // optional .faith.st_proto.st_unit_info role_info = 3;
   if (has_role_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->role_info(), output);
   }
 
-  // optional .hld.st_proto.st_base_att_info att_info = 4;
+  // optional .faith.st_proto.st_base_att_info att_info = 4;
   if (has_att_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->att_info(), output);
@@ -8049,7 +8049,7 @@ void st_proto_st_fake_player_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->skill_num(), output);
   }
 
-  // repeated .hld.st_proto.st_skill_info skill_data = 6;
+  // repeated .faith.st_proto.st_skill_info skill_data = 6;
   for (int i = 0; i < this->skill_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       6, this->skill_data(i), output);
@@ -8060,7 +8060,7 @@ void st_proto_st_fake_player_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->item_num(), output);
   }
 
-  // repeated .hld.st_proto.st_item_info item_data = 8;
+  // repeated .faith.st_proto.st_item_info item_data = 8;
   for (int i = 0; i < this->item_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       8, this->item_data(i), output);
@@ -8071,25 +8071,25 @@ void st_proto_st_fake_player_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(9, this->buff_num(), output);
   }
 
-  // repeated .hld.st_proto.st_buff_info buff_data = 10;
+  // repeated .faith.st_proto.st_buff_info buff_data = 10;
   for (int i = 0; i < this->buff_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       10, this->buff_data(i), output);
   }
 
-  // optional .hld.st_proto.st_arena_char_fight_att m_fight_att = 11;
+  // optional .faith.st_proto.st_arena_char_fight_att m_fight_att = 11;
   if (has_m_fight_att()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       11, this->m_fight_att(), output);
   }
 
-  // optional .hld.st_proto.st_spirit_info spirit_data = 12;
+  // optional .faith.st_proto.st_spirit_info spirit_data = 12;
   if (has_spirit_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       12, this->spirit_data(), output);
   }
 
-  // repeated .hld.st_proto.st_belief_info belief_data = 13;
+  // repeated .faith.st_proto.st_belief_info belief_data = 13;
   for (int i = 0; i < this->belief_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       13, this->belief_data(i), output);
@@ -8118,14 +8118,14 @@ void st_proto_st_fake_player_info::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->guid(), target);
   }
 
-  // optional .hld.st_proto.st_unit_info role_info = 3;
+  // optional .faith.st_proto.st_unit_info role_info = 3;
   if (has_role_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         3, this->role_info(), target);
   }
 
-  // optional .hld.st_proto.st_base_att_info att_info = 4;
+  // optional .faith.st_proto.st_base_att_info att_info = 4;
   if (has_att_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -8137,7 +8137,7 @@ void st_proto_st_fake_player_info::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->skill_num(), target);
   }
 
-  // repeated .hld.st_proto.st_skill_info skill_data = 6;
+  // repeated .faith.st_proto.st_skill_info skill_data = 6;
   for (int i = 0; i < this->skill_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -8149,7 +8149,7 @@ void st_proto_st_fake_player_info::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(7, this->item_num(), target);
   }
 
-  // repeated .hld.st_proto.st_item_info item_data = 8;
+  // repeated .faith.st_proto.st_item_info item_data = 8;
   for (int i = 0; i < this->item_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -8161,28 +8161,28 @@ void st_proto_st_fake_player_info::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(9, this->buff_num(), target);
   }
 
-  // repeated .hld.st_proto.st_buff_info buff_data = 10;
+  // repeated .faith.st_proto.st_buff_info buff_data = 10;
   for (int i = 0; i < this->buff_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         10, this->buff_data(i), target);
   }
 
-  // optional .hld.st_proto.st_arena_char_fight_att m_fight_att = 11;
+  // optional .faith.st_proto.st_arena_char_fight_att m_fight_att = 11;
   if (has_m_fight_att()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         11, this->m_fight_att(), target);
   }
 
-  // optional .hld.st_proto.st_spirit_info spirit_data = 12;
+  // optional .faith.st_proto.st_spirit_info spirit_data = 12;
   if (has_spirit_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         12, this->spirit_data(), target);
   }
 
-  // repeated .hld.st_proto.st_belief_info belief_data = 13;
+  // repeated .faith.st_proto.st_belief_info belief_data = 13;
   for (int i = 0; i < this->belief_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -8219,14 +8219,14 @@ int st_proto_st_fake_player_info::ByteSize() const {
           this->guid());
     }
 
-    // optional .hld.st_proto.st_unit_info role_info = 3;
+    // optional .faith.st_proto.st_unit_info role_info = 3;
     if (has_role_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->role_info());
     }
 
-    // optional .hld.st_proto.st_base_att_info att_info = 4;
+    // optional .faith.st_proto.st_base_att_info att_info = 4;
     if (has_att_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -8256,14 +8256,14 @@ int st_proto_st_fake_player_info::ByteSize() const {
           this->buff_num());
     }
 
-    // optional .hld.st_proto.st_arena_char_fight_att m_fight_att = 11;
+    // optional .faith.st_proto.st_arena_char_fight_att m_fight_att = 11;
     if (has_m_fight_att()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->m_fight_att());
     }
 
-    // optional .hld.st_proto.st_spirit_info spirit_data = 12;
+    // optional .faith.st_proto.st_spirit_info spirit_data = 12;
     if (has_spirit_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -8278,7 +8278,7 @@ int st_proto_st_fake_player_info::ByteSize() const {
     }
 
   }
-  // repeated .hld.st_proto.st_skill_info skill_data = 6;
+  // repeated .faith.st_proto.st_skill_info skill_data = 6;
   total_size += 1 * this->skill_data_size();
   for (int i = 0; i < this->skill_data_size(); i++) {
     total_size +=
@@ -8286,7 +8286,7 @@ int st_proto_st_fake_player_info::ByteSize() const {
         this->skill_data(i));
   }
 
-  // repeated .hld.st_proto.st_item_info item_data = 8;
+  // repeated .faith.st_proto.st_item_info item_data = 8;
   total_size += 1 * this->item_data_size();
   for (int i = 0; i < this->item_data_size(); i++) {
     total_size +=
@@ -8294,7 +8294,7 @@ int st_proto_st_fake_player_info::ByteSize() const {
         this->item_data(i));
   }
 
-  // repeated .hld.st_proto.st_buff_info buff_data = 10;
+  // repeated .faith.st_proto.st_buff_info buff_data = 10;
   total_size += 1 * this->buff_data_size();
   for (int i = 0; i < this->buff_data_size(); i++) {
     total_size +=
@@ -8302,7 +8302,7 @@ int st_proto_st_fake_player_info::ByteSize() const {
         this->buff_data(i));
   }
 
-  // repeated .hld.st_proto.st_belief_info belief_data = 13;
+  // repeated .faith.st_proto.st_belief_info belief_data = 13;
   total_size += 1 * this->belief_data_size();
   for (int i = 0; i < this->belief_data_size(); i++) {
     total_size +=
@@ -8347,10 +8347,10 @@ void st_proto_st_fake_player_info::MergeFrom(const st_proto_st_fake_player_info&
       set_guid(from.guid());
     }
     if (from.has_role_info()) {
-      mutable_role_info()->::hld::st_proto_st_unit_info::MergeFrom(from.role_info());
+      mutable_role_info()->::faith::st_proto_st_unit_info::MergeFrom(from.role_info());
     }
     if (from.has_att_info()) {
-      mutable_att_info()->::hld::st_proto_st_base_att_info::MergeFrom(from.att_info());
+      mutable_att_info()->::faith::st_proto_st_base_att_info::MergeFrom(from.att_info());
     }
     if (from.has_skill_num()) {
       set_skill_num(from.skill_num());
@@ -8364,10 +8364,10 @@ void st_proto_st_fake_player_info::MergeFrom(const st_proto_st_fake_player_info&
       set_buff_num(from.buff_num());
     }
     if (from.has_m_fight_att()) {
-      mutable_m_fight_att()->::hld::st_proto_st_arena_char_fight_att::MergeFrom(from.m_fight_att());
+      mutable_m_fight_att()->::faith::st_proto_st_arena_char_fight_att::MergeFrom(from.m_fight_att());
     }
     if (from.has_spirit_data()) {
-      mutable_spirit_data()->::hld::st_proto_st_spirit_info::MergeFrom(from.spirit_data());
+      mutable_spirit_data()->::faith::st_proto_st_spirit_info::MergeFrom(from.spirit_data());
     }
     if (from.has_belief_num()) {
       set_belief_num(from.belief_num());
@@ -8458,7 +8458,7 @@ st_proto_st_auction_info::st_proto_st_auction_info()
 }
 
 void st_proto_st_auction_info::InitAsDefaultInstance() {
-  item_info_ = const_cast< ::hld::st_proto_st_item_info*>(&::hld::st_proto_st_item_info::default_instance());
+  item_info_ = const_cast< ::faith::st_proto_st_item_info*>(&::faith::st_proto_st_item_info::default_instance());
 }
 
 st_proto_st_auction_info::st_proto_st_auction_info(const st_proto_st_auction_info& from)
@@ -8576,7 +8576,7 @@ void st_proto_st_auction_info::Clear() {
     is_sky_order_ = 0;
     show_guid_ = GOOGLE_LONGLONG(0);
     if (has_item_info()) {
-      if (item_info_ != NULL) item_info_->::hld::st_proto_st_item_info::Clear();
+      if (item_info_ != NULL) item_info_->::faith::st_proto_st_item_info::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -8943,7 +8943,7 @@ bool st_proto_st_auction_info::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.st_proto.st_item_info item_info = 23;
+      // optional .faith.st_proto.st_item_info item_info = 23;
       case 23: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -9097,7 +9097,7 @@ void st_proto_st_auction_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(22, this->show_guid(), output);
   }
 
-  // optional .hld.st_proto.st_item_info item_info = 23;
+  // optional .faith.st_proto.st_item_info item_info = 23;
   if (has_item_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       23, this->item_info(), output);
@@ -9236,7 +9236,7 @@ void st_proto_st_auction_info::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(22, this->show_guid(), target);
   }
 
-  // optional .hld.st_proto.st_item_info item_info = 23;
+  // optional .faith.st_proto.st_item_info item_info = 23;
   if (has_item_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -9412,7 +9412,7 @@ int st_proto_st_auction_info::ByteSize() const {
           this->show_guid());
     }
 
-    // optional .hld.st_proto.st_item_info item_info = 23;
+    // optional .faith.st_proto.st_item_info item_info = 23;
     if (has_item_info()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -9517,7 +9517,7 @@ void st_proto_st_auction_info::MergeFrom(const st_proto_st_auction_info& from) {
       set_show_guid(from.show_guid());
     }
     if (from.has_item_info()) {
-      mutable_item_info()->::hld::st_proto_st_item_info::MergeFrom(from.item_info());
+      mutable_item_info()->::faith::st_proto_st_item_info::MergeFrom(from.item_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -13994,7 +13994,7 @@ bool st_proto_st_element_war_match_info::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.st_proto.st_element_war_match_role_info first_role_info = 1;
+      // repeated .faith.st_proto.st_element_war_match_role_info first_role_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -14009,7 +14009,7 @@ bool st_proto_st_element_war_match_info::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.st_proto.st_element_war_match_role_info second_role_info = 2;
+      // repeated .faith.st_proto.st_element_war_match_role_info second_role_info = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -14058,13 +14058,13 @@ bool st_proto_st_element_war_match_info::MergePartialFromCodedStream(
 
 void st_proto_st_element_war_match_info::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.st_proto.st_element_war_match_role_info first_role_info = 1;
+  // repeated .faith.st_proto.st_element_war_match_role_info first_role_info = 1;
   for (int i = 0; i < this->first_role_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->first_role_info(i), output);
   }
 
-  // repeated .hld.st_proto.st_element_war_match_role_info second_role_info = 2;
+  // repeated .faith.st_proto.st_element_war_match_role_info second_role_info = 2;
   for (int i = 0; i < this->second_role_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->second_role_info(i), output);
@@ -14083,14 +14083,14 @@ void st_proto_st_element_war_match_info::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* st_proto_st_element_war_match_info::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.st_proto.st_element_war_match_role_info first_role_info = 1;
+  // repeated .faith.st_proto.st_element_war_match_role_info first_role_info = 1;
   for (int i = 0; i < this->first_role_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         1, this->first_role_info(i), target);
   }
 
-  // repeated .hld.st_proto.st_element_war_match_role_info second_role_info = 2;
+  // repeated .faith.st_proto.st_element_war_match_role_info second_role_info = 2;
   for (int i = 0; i < this->second_role_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -14121,7 +14121,7 @@ int st_proto_st_element_war_match_info::ByteSize() const {
     }
 
   }
-  // repeated .hld.st_proto.st_element_war_match_role_info first_role_info = 1;
+  // repeated .faith.st_proto.st_element_war_match_role_info first_role_info = 1;
   total_size += 1 * this->first_role_info_size();
   for (int i = 0; i < this->first_role_info_size(); i++) {
     total_size +=
@@ -14129,7 +14129,7 @@ int st_proto_st_element_war_match_info::ByteSize() const {
         this->first_role_info(i));
   }
 
-  // repeated .hld.st_proto.st_element_war_match_role_info second_role_info = 2;
+  // repeated .faith.st_proto.st_element_war_match_role_info second_role_info = 2;
   total_size += 1 * this->second_role_info_size();
   for (int i = 0; i < this->second_role_info_size(); i++) {
     total_size +=
@@ -15742,7 +15742,7 @@ bool st_proto_st_gain_treasure_record_info_one_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.st_proto.st_gain_treasure_record_player_info_db player_info_arr = 3;
+      // repeated .faith.st_proto.st_gain_treasure_record_player_info_db player_info_arr = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -15785,7 +15785,7 @@ void st_proto_st_gain_treasure_record_info_one_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->killed_stamp(), output);
   }
 
-  // repeated .hld.st_proto.st_gain_treasure_record_player_info_db player_info_arr = 3;
+  // repeated .faith.st_proto.st_gain_treasure_record_player_info_db player_info_arr = 3;
   for (int i = 0; i < this->player_info_arr_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->player_info_arr(i), output);
@@ -15809,7 +15809,7 @@ void st_proto_st_gain_treasure_record_info_one_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->killed_stamp(), target);
   }
 
-  // repeated .hld.st_proto.st_gain_treasure_record_player_info_db player_info_arr = 3;
+  // repeated .faith.st_proto.st_gain_treasure_record_player_info_db player_info_arr = 3;
   for (int i = 0; i < this->player_info_arr_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -15842,7 +15842,7 @@ int st_proto_st_gain_treasure_record_info_one_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.st_proto.st_gain_treasure_record_player_info_db player_info_arr = 3;
+  // repeated .faith.st_proto.st_gain_treasure_record_player_info_db player_info_arr = 3;
   total_size += 1 * this->player_info_arr_size();
   for (int i = 0; i < this->player_info_arr_size(); i++) {
     total_size +=
@@ -16343,7 +16343,7 @@ bool st_proto_st_gain_treasure_record_info_one::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.st_proto.st_gain_treasure_record_player_info player_info_arr = 3;
+      // repeated .faith.st_proto.st_gain_treasure_record_player_info player_info_arr = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -16386,7 +16386,7 @@ void st_proto_st_gain_treasure_record_info_one::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->killed_stamp(), output);
   }
 
-  // repeated .hld.st_proto.st_gain_treasure_record_player_info player_info_arr = 3;
+  // repeated .faith.st_proto.st_gain_treasure_record_player_info player_info_arr = 3;
   for (int i = 0; i < this->player_info_arr_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->player_info_arr(i), output);
@@ -16410,7 +16410,7 @@ void st_proto_st_gain_treasure_record_info_one::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->killed_stamp(), target);
   }
 
-  // repeated .hld.st_proto.st_gain_treasure_record_player_info player_info_arr = 3;
+  // repeated .faith.st_proto.st_gain_treasure_record_player_info player_info_arr = 3;
   for (int i = 0; i < this->player_info_arr_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -16443,7 +16443,7 @@ int st_proto_st_gain_treasure_record_info_one::ByteSize() const {
     }
 
   }
-  // repeated .hld.st_proto.st_gain_treasure_record_player_info player_info_arr = 3;
+  // repeated .faith.st_proto.st_gain_treasure_record_player_info player_info_arr = 3;
   total_size += 1 * this->player_info_arr_size();
   for (int i = 0; i < this->player_info_arr_size(); i++) {
     total_size +=
@@ -16915,7 +16915,7 @@ bool st_proto_st_gain_treasure_boss_info::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.st_proto.st_gain_treasure_player_info player_info = 4;
+      // repeated .faith.st_proto.st_gain_treasure_player_info player_info = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -16963,7 +16963,7 @@ void st_proto_st_gain_treasure_boss_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->next_refresh_stamp(), output);
   }
 
-  // repeated .hld.st_proto.st_gain_treasure_player_info player_info = 4;
+  // repeated .faith.st_proto.st_gain_treasure_player_info player_info = 4;
   for (int i = 0; i < this->player_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->player_info(i), output);
@@ -16992,7 +16992,7 @@ void st_proto_st_gain_treasure_boss_info::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->next_refresh_stamp(), target);
   }
 
-  // repeated .hld.st_proto.st_gain_treasure_player_info player_info = 4;
+  // repeated .faith.st_proto.st_gain_treasure_player_info player_info = 4;
   for (int i = 0; i < this->player_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -17032,7 +17032,7 @@ int st_proto_st_gain_treasure_boss_info::ByteSize() const {
     }
 
   }
-  // repeated .hld.st_proto.st_gain_treasure_player_info player_info = 4;
+  // repeated .faith.st_proto.st_gain_treasure_player_info player_info = 4;
   total_size += 1 * this->player_info_size();
   for (int i = 0; i < this->player_info_size(); i++) {
     total_size +=
@@ -18174,6 +18174,6 @@ void st_proto::Swap(st_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

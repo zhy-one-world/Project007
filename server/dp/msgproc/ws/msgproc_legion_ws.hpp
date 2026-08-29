@@ -12,7 +12,7 @@
 #include "legion_def.hpp"
 
 
-namespace hld
+namespace faith
 {
 	struct db_result_type;
 

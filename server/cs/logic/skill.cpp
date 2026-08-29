@@ -22,7 +22,7 @@
 #include "internet/net.pb.h"
 #include "template/SkillTemplate_S.h"
 
-namespace hld
+namespace faith
 {
 	skill::skill()
 	{

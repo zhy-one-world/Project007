@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -1288,7 +1288,7 @@ void protobuf_AddDesc_team_2eproto() {
     "\n\tteam_info\022\021\n\tteam_type\030\001 \001(\005\022\030\n\020team_s"
     "ub_type_id\030\002 \001(\005\022\021\n\tteam_guid\030\003 \001(\004\022\024\n\014c"
     "aptain_guid\030\004 \001(\004\022\022\n\nmember_num\030\005 \001(\005\0220\n"
-    "\013member_list\030\006 \003(\0132\033.hld.team_proto.memb"
+    "\013member_list\030\006 \003(\0132\033.faith.team_proto.memb"
     "er_info\022\037\n\027required_fighting_power\030\007 \001(\005"
     "\022\026\n\016required_level\030\010 \001(\005\022\025\n\rauto_matchin"
     "g\030\t \001(\010\022\024\n\014is_when_join\030\n \001(\010\022\026\n\016one_sto"
@@ -1337,7 +1337,7 @@ void protobuf_AddDesc_team_2eproto() {
     "id\022\021\n\trole_guid\030\001 \001(\004\022\027\n\017map_template_id"
     "\030\002 \001(\005\032\177\n\031search_team_by_map_id_end\022\027\n\017m"
     "ap_template_id\030\001 \001(\005\0222\n\tteam_list\030\002 \003(\0132"
-    "\037.hld.team_proto.team_brief_info\022\025\n\rteam"
+    "\037.faith.team_proto.team_brief_info\022\025\n\rteam"
     "_list_len\030\003 \001(\005\032>\n\026ready_to_transfer_tea"
     "m\022\021\n\trole_guid\030\001 \001(\004\022\021\n\tteam_guid\030\002 \001(\004\032"
     "<\n\032ready_to_transfer_team_end\022\021\n\tteam_gu"
@@ -1351,7 +1351,7 @@ void protobuf_AddDesc_team_2eproto() {
     "le_guid\030\001 \001(\004\022\021\n\tteam_guid\030\002 \001(\004\022\024\n\014invi"
     "tee_guid\030\003 \001(\004\032-\n\025invite_player_success\022"
     "\024\n\014invitee_guid\030\001 \001(\004\032d\n\021invite_player_e"
-    "nd\022:\n\021inviter_team_info\030\001 \003(\0132\037.hld.team"
+    "nd\022:\n\021inviter_team_info\030\001 \003(\0132\037.faith.team"
     "_proto.team_brief_info\022\023\n\013sender_guid\030\002 "
     "\001(\004\032M\n\013set_captain\022\021\n\trole_guid\030\001 \001(\004\022\021\n"
     "\tteam_guid\030\002 \001(\004\022\030\n\020new_captain_guid\030\003 \001"
@@ -1371,7 +1371,7 @@ void protobuf_AddDesc_team_2eproto() {
     "\022\022\n\nerror_type\030\001 \001(\005\032V\n\024team_member_pos_"
     "info\022\021\n\trole_guid\030\001 \001(\004\022\r\n\005pos_x\030\002 \001(\005\022\r"
     "\n\005pos_y\030\003 \001(\005\022\r\n\005pos_z\030\004 \001(\005\032^\n\rteam_pos"
-    "_info\0229\n\013member_list\030\001 \003(\0132$.hld.team_pr"
+    "_info\0229\n\013member_list\030\001 \003(\0132$.faith.team_pr"
     "oto.team_member_pos_info\022\022\n\nmember_num\030\002"
     " \001(\005\032=\n\025get_no_team_mate_list\022\021\n\trole_gu"
     "id\030\001 \001(\004\022\021\n\tmate_type\030\002 \001(\005\032F\n\031get_no_te"
@@ -1380,7 +1380,7 @@ void protobuf_AddDesc_team_2eproto() {
     "aim\022\021\n\trole_guid\030\001 \001(\004\022\024\n\014team_type_id\030\002"
     " \001(\005\022\030\n\020team_sub_type_id\030\003 \003(\005\032d\n\030get_te"
     "am_list_by_aim_end\022\024\n\014team_type_id\030\001 \001(\005"
-    "\0222\n\tteam_list\030\002 \003(\0132\037.hld.team_proto.tea"
+    "\0222\n\tteam_list\030\002 \003(\0132\037.faith.team_proto.tea"
     "m_brief_info\032i\n\017auto_match_team\022\021\n\trole_"
     "guid\030\001 \001(\004\022\024\n\014team_type_id\030\002 \001(\005\022\030\n\020team"
     "_sub_type_id\030\003 \001(\005\022\023\n\013match_state\030\004 \001(\010\032"
@@ -2063,7 +2063,7 @@ bool team_proto_team_info::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.team_proto.member_info member_list = 6;
+      // repeated .faith.team_proto.member_info member_list = 6;
       case 6: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2201,7 +2201,7 @@ void team_proto_team_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->member_num(), output);
   }
 
-  // repeated .hld.team_proto.member_info member_list = 6;
+  // repeated .faith.team_proto.member_info member_list = 6;
   for (int i = 0; i < this->member_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       6, this->member_list(i), output);
@@ -2265,7 +2265,7 @@ void team_proto_team_info::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->member_num(), target);
   }
 
-  // repeated .hld.team_proto.member_info member_list = 6;
+  // repeated .faith.team_proto.member_info member_list = 6;
   for (int i = 0; i < this->member_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -2377,7 +2377,7 @@ int team_proto_team_info::ByteSize() const {
     }
 
   }
-  // repeated .hld.team_proto.member_info member_list = 6;
+  // repeated .faith.team_proto.member_info member_list = 6;
   total_size += 1 * this->member_list_size();
   for (int i = 0; i < this->member_list_size(); i++) {
     total_size +=
@@ -5267,7 +5267,7 @@ team_proto_add_team_member::team_proto_add_team_member()
 }
 
 void team_proto_add_team_member::InitAsDefaultInstance() {
-  member_info_ = const_cast< ::hld::team_proto_member_info*>(&::hld::team_proto_member_info::default_instance());
+  member_info_ = const_cast< ::faith::team_proto_member_info*>(&::faith::team_proto_member_info::default_instance());
 }
 
 team_proto_add_team_member::team_proto_add_team_member(const team_proto_add_team_member& from)
@@ -5318,7 +5318,7 @@ void team_proto_add_team_member::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     team_guid_ = GOOGLE_ULONGLONG(0);
     if (has_member_info()) {
-      if (member_info_ != NULL) member_info_->::hld::team_proto_member_info::Clear();
+      if (member_info_ != NULL) member_info_->::faith::team_proto_member_info::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -5346,7 +5346,7 @@ bool team_proto_add_team_member::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.team_proto.member_info member_info = 2;
+      // optional .faith.team_proto.member_info member_info = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -5383,7 +5383,7 @@ void team_proto_add_team_member::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->team_guid(), output);
   }
 
-  // optional .hld.team_proto.member_info member_info = 2;
+  // optional .faith.team_proto.member_info member_info = 2;
   if (has_member_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->member_info(), output);
@@ -5402,7 +5402,7 @@ void team_proto_add_team_member::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->team_guid(), target);
   }
 
-  // optional .hld.team_proto.member_info member_info = 2;
+  // optional .faith.team_proto.member_info member_info = 2;
   if (has_member_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -5427,7 +5427,7 @@ int team_proto_add_team_member::ByteSize() const {
           this->team_guid());
     }
 
-    // optional .hld.team_proto.member_info member_info = 2;
+    // optional .faith.team_proto.member_info member_info = 2;
     if (has_member_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -5465,7 +5465,7 @@ void team_proto_add_team_member::MergeFrom(const team_proto_add_team_member& fro
       set_team_guid(from.team_guid());
     }
     if (from.has_member_info()) {
-      mutable_member_info()->::hld::team_proto_member_info::MergeFrom(from.member_info());
+      mutable_member_info()->::faith::team_proto_member_info::MergeFrom(from.member_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -8280,7 +8280,7 @@ bool team_proto_search_team_by_map_id_end::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.team_proto.team_brief_info team_list = 2;
+      // repeated .faith.team_proto.team_brief_info team_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -8334,7 +8334,7 @@ void team_proto_search_team_by_map_id_end::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->map_template_id(), output);
   }
 
-  // repeated .hld.team_proto.team_brief_info team_list = 2;
+  // repeated .faith.team_proto.team_brief_info team_list = 2;
   for (int i = 0; i < this->team_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->team_list(i), output);
@@ -8358,7 +8358,7 @@ void team_proto_search_team_by_map_id_end::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->map_template_id(), target);
   }
 
-  // repeated .hld.team_proto.team_brief_info team_list = 2;
+  // repeated .faith.team_proto.team_brief_info team_list = 2;
   for (int i = 0; i < this->team_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -8396,7 +8396,7 @@ int team_proto_search_team_by_map_id_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.team_proto.team_brief_info team_list = 2;
+  // repeated .faith.team_proto.team_brief_info team_list = 2;
   total_size += 1 * this->team_list_size();
   for (int i = 0; i < this->team_list_size(); i++) {
     total_size +=
@@ -10255,7 +10255,7 @@ bool team_proto_invite_player_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.team_proto.team_brief_info inviter_team_info = 1;
+      // repeated .faith.team_proto.team_brief_info inviter_team_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -10304,7 +10304,7 @@ bool team_proto_invite_player_end::MergePartialFromCodedStream(
 
 void team_proto_invite_player_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.team_proto.team_brief_info inviter_team_info = 1;
+  // repeated .faith.team_proto.team_brief_info inviter_team_info = 1;
   for (int i = 0; i < this->inviter_team_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->inviter_team_info(i), output);
@@ -10323,7 +10323,7 @@ void team_proto_invite_player_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* team_proto_invite_player_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.team_proto.team_brief_info inviter_team_info = 1;
+  // repeated .faith.team_proto.team_brief_info inviter_team_info = 1;
   for (int i = 0; i < this->inviter_team_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -10354,7 +10354,7 @@ int team_proto_invite_player_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.team_proto.team_brief_info inviter_team_info = 1;
+  // repeated .faith.team_proto.team_brief_info inviter_team_info = 1;
   total_size += 1 * this->inviter_team_info_size();
   for (int i = 0; i < this->inviter_team_info_size(); i++) {
     total_size +=
@@ -12913,7 +12913,7 @@ bool team_proto_team_pos_info::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.team_proto.team_member_pos_info member_list = 1;
+      // repeated .faith.team_proto.team_member_pos_info member_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -12962,7 +12962,7 @@ bool team_proto_team_pos_info::MergePartialFromCodedStream(
 
 void team_proto_team_pos_info::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.team_proto.team_member_pos_info member_list = 1;
+  // repeated .faith.team_proto.team_member_pos_info member_list = 1;
   for (int i = 0; i < this->member_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->member_list(i), output);
@@ -12981,7 +12981,7 @@ void team_proto_team_pos_info::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* team_proto_team_pos_info::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.team_proto.team_member_pos_info member_list = 1;
+  // repeated .faith.team_proto.team_member_pos_info member_list = 1;
   for (int i = 0; i < this->member_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -13012,7 +13012,7 @@ int team_proto_team_pos_info::ByteSize() const {
     }
 
   }
-  // repeated .hld.team_proto.team_member_pos_info member_list = 1;
+  // repeated .faith.team_proto.team_member_pos_info member_list = 1;
   total_size += 1 * this->member_list_size();
   for (int i = 0; i < this->member_list_size(); i++) {
     total_size +=
@@ -13978,7 +13978,7 @@ bool team_proto_get_team_list_by_aim_end::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.team_proto.team_brief_info team_list = 2;
+      // repeated .faith.team_proto.team_brief_info team_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -14016,7 +14016,7 @@ void team_proto_get_team_list_by_aim_end::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->team_type_id(), output);
   }
 
-  // repeated .hld.team_proto.team_brief_info team_list = 2;
+  // repeated .faith.team_proto.team_brief_info team_list = 2;
   for (int i = 0; i < this->team_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->team_list(i), output);
@@ -14035,7 +14035,7 @@ void team_proto_get_team_list_by_aim_end::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->team_type_id(), target);
   }
 
-  // repeated .hld.team_proto.team_brief_info team_list = 2;
+  // repeated .faith.team_proto.team_brief_info team_list = 2;
   for (int i = 0; i < this->team_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -14061,7 +14061,7 @@ int team_proto_get_team_list_by_aim_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.team_proto.team_brief_info team_list = 2;
+  // repeated .faith.team_proto.team_brief_info team_list = 2;
   total_size += 1 * this->team_list_size();
   for (int i = 0; i < this->team_list_size(); i++) {
     total_size +=
@@ -16403,6 +16403,6 @@ void team_proto::Swap(team_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

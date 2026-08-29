@@ -27,7 +27,7 @@ purpose: about role's mail_mgr
 #include "internal/core.hpp"
 #include "internal/mail_msg.hpp"
 
-namespace hld
+namespace faith
 {
 	cmail_mgr::cmail_mgr()
 	{
@@ -280,7 +280,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::db_proto::role_event_db msg;
+		faith::db_proto::role_event_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -392,7 +392,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::db_proto::role_mail_db msg;
+		faith::db_proto::role_mail_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -407,7 +407,7 @@ namespace hld
 		s_mail_info *p_row = (s_mail_info *)p_data;
 		for (int32 i = 0; i < msg.row_count(); i++)
 		{
-			hld::db_proto::role_mail_row db_row = msg.row_data(i);
+			faith::db_proto::role_mail_row db_row = msg.row_data(i);
 			p_row->mail_guid.server_64 = db_row.mail_guid();
 			for (int32 j = 0; j < db_row.data_ary_size(); j++)
 			{
@@ -1693,7 +1693,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::db_proto::role_mail_item_db msg;
+		faith::db_proto::role_mail_item_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -1708,7 +1708,7 @@ namespace hld
 		s_item_info *p_row = (s_item_info *)p_data;
 		for (int32 i = 0; i < msg.row_count(); i++)
 		{
-			hld::db_proto::item_info_db db_row = msg.row_data(i);
+			faith::db_proto::item_info_db db_row = msg.row_data(i);
 			p_row->item_guid.server_64 = db_row.item_guid();
 			for (int32 j = 0; j < db_row.data_ary_size(); j++)
 			{

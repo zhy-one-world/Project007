@@ -14,7 +14,7 @@
 #include <cstdlib>
 #include <string.h>
 
-namespace hld 
+namespace faith 
 {
 	namespace net 
 	{
@@ -86,6 +86,6 @@ namespace hld
 
 	}	// end of namespace net
 
-}	// end of namespace hld
+}	// end of namespace faith
 
 #endif//#define __FAITH_TCPPAKDEF_H_

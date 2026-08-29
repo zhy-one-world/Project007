@@ -8,7 +8,7 @@ purpose: about arena system's arena_mgr_ws
 *********************************************************************/
 
 #include "ranking_cross.h"
-namespace hld
+namespace faith
 {
 	void ranking_cross::clear_data()
 	{

@@ -14,7 +14,7 @@
 #include <xchar.hpp>
 #include <singleton.hpp>
 
-namespace hld
+namespace faith
 {
 
 	class clog_db_proxy : public singleton< clog_db_proxy >

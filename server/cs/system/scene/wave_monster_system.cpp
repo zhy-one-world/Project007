@@ -9,7 +9,7 @@
 #include "logic/npc.hpp"
 #include "internet/net.pb.h"
 
-using namespace hld;
+using namespace faith;
 
 void wave_monster_system::start_up(Entity* map_ent, MapTemplate* map_template)
 {

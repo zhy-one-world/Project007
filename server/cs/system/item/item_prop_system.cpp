@@ -9,7 +9,7 @@
 #include "server_log.hpp"
 #include "template/template_manager.h"
 
-using namespace hld;
+using namespace faith;
 void item_prop_system::start_up(Entity* item_ent, ItemTemplate* item_template, PropBasicAttributeTemplate* prop_template, const item_s2s_item_data& msg)
 {
 	ZoneScoped;

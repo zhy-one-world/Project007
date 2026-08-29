@@ -12,7 +12,7 @@
 
 #include "base.hpp"
 
-namespace hld
+namespace faith
 {
 
 	class serialize_msg

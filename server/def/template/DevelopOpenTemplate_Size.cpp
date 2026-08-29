@@ -1,6 +1,6 @@
 #include "DevelopOpenTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void DevelopOpenTemplateSize()
     {

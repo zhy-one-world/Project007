@@ -1,6 +1,6 @@
 #include "OperatorUseActivityTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void OperatorUseActivityTemplateSize()
     {

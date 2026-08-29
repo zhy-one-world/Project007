@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_talent_2eproto();
@@ -109,7 +109,7 @@ class talent_proto_talent_info_one : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.talent_proto.talent_info_one)
+  // @@protoc_insertion_point(class_scope:faith.talent_proto.talent_info_one)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -182,24 +182,24 @@ class talent_proto_talent_info_all : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.talent_proto.talent_info_one talent_array = 1;
+  // repeated .faith.talent_proto.talent_info_one talent_array = 1;
   inline int talent_array_size() const;
   inline void clear_talent_array();
   static const int kTalentArrayFieldNumber = 1;
-  inline const ::hld::talent_proto_talent_info_one& talent_array(int index) const;
-  inline ::hld::talent_proto_talent_info_one* mutable_talent_array(int index);
-  inline ::hld::talent_proto_talent_info_one* add_talent_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::talent_proto_talent_info_one >&
+  inline const ::faith::talent_proto_talent_info_one& talent_array(int index) const;
+  inline ::faith::talent_proto_talent_info_one* mutable_talent_array(int index);
+  inline ::faith::talent_proto_talent_info_one* add_talent_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::talent_proto_talent_info_one >&
       talent_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::talent_proto_talent_info_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::talent_proto_talent_info_one >*
       mutable_talent_array();
 
-  // @@protoc_insertion_point(class_scope:hld.talent_proto.talent_info_all)
+  // @@protoc_insertion_point(class_scope:faith.talent_proto.talent_info_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::talent_proto_talent_info_one > talent_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::talent_proto_talent_info_one > talent_array_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -288,7 +288,7 @@ class talent_proto_level_up : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 layer_index() const;
   inline void set_layer_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.talent_proto.level_up)
+  // @@protoc_insertion_point(class_scope:faith.talent_proto.level_up)
  private:
   inline void set_has_talent_template_id();
   inline void clear_has_talent_template_id();
@@ -390,7 +390,7 @@ class talent_proto_level_up_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 new_talent_template_id() const;
   inline void set_new_talent_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.talent_proto.level_up_end)
+  // @@protoc_insertion_point(class_scope:faith.talent_proto.level_up_end)
  private:
   inline void set_has_operate_result();
   inline void clear_has_operate_result();
@@ -471,7 +471,7 @@ class talent_proto_reset_money : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.talent_proto.reset_money)
+  // @@protoc_insertion_point(class_scope:faith.talent_proto.reset_money)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -557,7 +557,7 @@ class talent_proto_suck_blood_value : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 suck_blood_value() const;
   inline void set_suck_blood_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.talent_proto.suck_blood_value)
+  // @@protoc_insertion_point(class_scope:faith.talent_proto.suck_blood_value)
  private:
   inline void set_has_sender_guid();
   inline void clear_has_sender_guid();
@@ -642,7 +642,7 @@ class talent_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.talent_proto)
+  // @@protoc_insertion_point(class_scope:faith.talent_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -694,27 +694,27 @@ talent_proto_talent_info_one::mutable_data_ary() {
 
 // talent_proto_talent_info_all
 
-// repeated .hld.talent_proto.talent_info_one talent_array = 1;
+// repeated .faith.talent_proto.talent_info_one talent_array = 1;
 inline int talent_proto_talent_info_all::talent_array_size() const {
   return talent_array_.size();
 }
 inline void talent_proto_talent_info_all::clear_talent_array() {
   talent_array_.Clear();
 }
-inline const ::hld::talent_proto_talent_info_one& talent_proto_talent_info_all::talent_array(int index) const {
+inline const ::faith::talent_proto_talent_info_one& talent_proto_talent_info_all::talent_array(int index) const {
   return talent_array_.Get(index);
 }
-inline ::hld::talent_proto_talent_info_one* talent_proto_talent_info_all::mutable_talent_array(int index) {
+inline ::faith::talent_proto_talent_info_one* talent_proto_talent_info_all::mutable_talent_array(int index) {
   return talent_array_.Mutable(index);
 }
-inline ::hld::talent_proto_talent_info_one* talent_proto_talent_info_all::add_talent_array() {
+inline ::faith::talent_proto_talent_info_one* talent_proto_talent_info_all::add_talent_array() {
   return talent_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::talent_proto_talent_info_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::talent_proto_talent_info_one >&
 talent_proto_talent_info_all::talent_array() const {
   return talent_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::talent_proto_talent_info_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::talent_proto_talent_info_one >*
 talent_proto_talent_info_all::mutable_talent_array() {
   return &talent_array_;
 }
@@ -918,7 +918,7 @@ inline void talent_proto_suck_blood_value::set_suck_blood_value(::google::protob
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

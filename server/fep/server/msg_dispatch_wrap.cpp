@@ -25,7 +25,7 @@
 #include <time_limit_activity_msg.hpp>
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	void transfer_c2ws(uint32 array_index, const void* data_ptr, size_t data_len)
 	{

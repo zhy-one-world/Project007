@@ -22,7 +22,7 @@ purpose: ´ò±¦Ïà¹Ø
 #include "utility/parse_msg.h"
 #include "utility/globle_data.h"
 
-namespace hld
+namespace faith
 {
 	gain_treasure_mgr::gain_treasure_mgr()
 	{
@@ -154,7 +154,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_gain_treasure_db msg;
+		faith::cs2dp_proto::role_gain_treasure_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -196,12 +196,12 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_gain_treasure msg;
+			faith::cs2dp_proto::save_role_gain_treasure msg;
 			msg.set_role_guid(m_player_ptr->get_unit_guid().server_64);
 			msg.set_unit_array_index(m_player_ptr->get_array_index());
 			msg.set_save_type_ex(save_type);
 
-			hld::cs2dp_proto::role_gain_treasure_db *db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_gain_treasure_db *db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return;

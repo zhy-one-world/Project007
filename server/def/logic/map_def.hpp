@@ -13,7 +13,7 @@
 #include "utility/cs_date.hpp"
 #include "game_enum_def_s.h"
 
-namespace hld 
+namespace faith 
 {
 #pragma pack(push,1)
 
@@ -375,25 +375,25 @@ namespace hld
 
 	struct s_double_line_info
 	{
-		int32	data[hld::e_double_line_max];
+		int32	data[faith::e_double_line_max];
 		guid_64	map_guid;
 		bool	is_in_time(tm time)
 		{
 			tm begin_time, end_time;
 			memset(&begin_time, 0, sizeof(begin_time));
 			memset(&end_time, 0, sizeof(end_time));
-			begin_time.tm_hour = data[hld::e_double_line_open_time_hour];
-			begin_time.tm_min = data[hld::e_double_line_open_time_min];
-			begin_time.tm_sec = data[hld::e_double_line_open_time_seconds];
-			end_time.tm_hour = data[hld::e_double_line_end_time_hour];
-			end_time.tm_min = data[hld::e_double_line_end_time_min];
-			end_time.tm_sec = data[hld::e_double_line_end_time_seconds];
+			begin_time.tm_hour = data[faith::e_double_line_open_time_hour];
+			begin_time.tm_min = data[faith::e_double_line_open_time_min];
+			begin_time.tm_sec = data[faith::e_double_line_open_time_seconds];
+			end_time.tm_hour = data[faith::e_double_line_end_time_hour];
+			end_time.tm_min = data[faith::e_double_line_end_time_min];
+			end_time.tm_sec = data[faith::e_double_line_end_time_seconds];
 
 			return time_helper::compare_tm(&time, &begin_time) > 0 && time_helper::compare_tm(&end_time, &time) > 0;
 		}
 		bool	is_valid()
 		{
-			return data[hld::e_double_line_map_template_id] > 0;
+			return data[faith::e_double_line_map_template_id] > 0;
 		}
 
 		s_double_line_info()

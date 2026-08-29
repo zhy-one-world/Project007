@@ -24,7 +24,7 @@
 #include "world_boss_def.hpp"
 #include "game.pb.h"
 
-namespace hld
+namespace faith
 {
 	void c2ws_req_create_legion(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
@@ -184,7 +184,7 @@ namespace hld
 		c2ws_req_get_legion_list_logic(session, start_index, base_fighting_power, only_get_auto_accpet_new_member_legion);
 
 		
-		/*hld::legion_proto_get_legion_list_end get_legion_list_end_msg;
+		/*faith::legion_proto_get_legion_list_end get_legion_list_end_msg;
 		if (legion_ws_mgr::get_instance().get_legion_list(start_index, base_fighting_power, get_legion_list_end_msg, only_get_auto_accpet_new_member_legion))
 		{
 			session->send_to_client(&get_legion_list_end_msg, e_msgindex_s2c_get_legion_list_end);
@@ -197,7 +197,7 @@ namespace hld
 			return;
 		}
 
-		hld::legion_proto_get_legion_list_end get_legion_list_end_msg;
+		faith::legion_proto_get_legion_list_end get_legion_list_end_msg;
 		if (legion_ws_mgr::get_instance().get_legion_list(start_index, base_fighting_power, get_legion_list_end_msg, only_get_auto_accpet_new_member_legion))
 		{
 			session->send_to_client(&get_legion_list_end_msg, e_msgindex_s2c_get_legion_list_end);
@@ -437,7 +437,7 @@ namespace hld
 		//}
 		//else
 		//{
-		//	hld::ws2cs_proto::donate_legion_money pro_msg;
+		//	faith::ws2cs_proto::donate_legion_money pro_msg;
 		//	donate_legion_money_msg.to_proto(pro_msg);
 		//	session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_donate_legion_money);
 		//}
@@ -471,7 +471,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::donate_legion_money pro_msg;
+			faith::ws2cs_proto::donate_legion_money pro_msg;
 			donate_legion_money_msg.to_proto(pro_msg);
 			session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_donate_legion_money);
 		}
@@ -536,7 +536,7 @@ namespace hld
 		//}
 		//else
 		//{
-		//	hld::ws2cs_proto::donate_legion_item pro_msg;
+		//	faith::ws2cs_proto::donate_legion_item pro_msg;
 		//	donate_legion_item_msg.to_proto(pro_msg);
 		//	session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_donate_legion_item);
 		//}
@@ -588,7 +588,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::donate_legion_item pro_msg;
+			faith::ws2cs_proto::donate_legion_item pro_msg;
 			donate_legion_item_msg.to_proto(pro_msg);
 			session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_donate_legion_item);
 		}
@@ -924,7 +924,7 @@ namespace hld
 		//}
 		//else
 		//{
-		//	hld::ws2cs_proto::get_legion_boss_award pro_msg;
+		//	faith::ws2cs_proto::get_legion_boss_award pro_msg;
 		//	get_legion_boss_award_msg.to_proto(pro_msg);
 		//	session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_get_legion_boss_award);
 		//}
@@ -969,7 +969,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::get_legion_boss_award pro_msg;
+			faith::ws2cs_proto::get_legion_boss_award pro_msg;
 			get_legion_boss_award_msg.to_proto(pro_msg);
 			session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_get_legion_boss_award);
 		}
@@ -1337,7 +1337,7 @@ namespace hld
 		//}
 		//else
 		//{
-		//	hld::ws2cs_proto::enter_city_war_map pro_msg;
+		//	faith::ws2cs_proto::enter_city_war_map pro_msg;
 		//	enter_city_war_map.to_proto(pro_msg);
 		//	session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_enter_city_war_map);
 
@@ -1405,7 +1405,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::enter_city_war_map pro_msg;
+			faith::ws2cs_proto::enter_city_war_map pro_msg;
 			enter_city_war_map.to_proto(pro_msg);
 			session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_enter_city_war_map);
 
@@ -1480,7 +1480,7 @@ namespace hld
 		//	}
 		//	else
 		//	{
-		//		hld::ws2cs_proto::city_war_operate pro_msg;
+		//		faith::ws2cs_proto::city_war_operate pro_msg;
 		//		city_war_operate_msg.to_proto(pro_msg);
 		//		session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_city_war_operate);
 		//	}
@@ -1534,7 +1534,7 @@ namespace hld
 		//	}
 		//	else
 		//	{
-		//		hld::ws2cs_proto::city_war_operate pro_msg;
+		//		faith::ws2cs_proto::city_war_operate pro_msg;
 		//		city_war_operate_msg.to_proto(pro_msg);
 		//		session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_city_war_operate);
 		//	}
@@ -1598,7 +1598,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::city_war_operate pro_msg;
+				faith::ws2cs_proto::city_war_operate pro_msg;
 				city_war_operate_msg.to_proto(pro_msg);
 				session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_city_war_operate);
 			}
@@ -1652,7 +1652,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::city_war_operate pro_msg;
+				faith::ws2cs_proto::city_war_operate pro_msg;
 				city_war_operate_msg.to_proto(pro_msg);
 				session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_city_war_operate);
 			}
@@ -1908,7 +1908,7 @@ namespace hld
 		//	}
 		//	else
 		//	{
-		//		hld::ws2cs_proto::get_bonus_award pro_msg;
+		//		faith::ws2cs_proto::get_bonus_award pro_msg;
 		//		get_bonus_award_msg.to_proto(pro_msg);
 		//		session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_get_bonus_award);
 		//	}
@@ -1933,7 +1933,7 @@ namespace hld
 		//}
 		//else
 		//{
-		//	hld::ws2cs_proto::get_bonus_award pro_msg;
+		//	faith::ws2cs_proto::get_bonus_award pro_msg;
 		//	get_bonus_award_msg.to_proto(pro_msg);
 		//	session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_get_bonus_award);
 		//}
@@ -1991,7 +1991,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::get_bonus_award pro_msg;
+				faith::ws2cs_proto::get_bonus_award pro_msg;
 				get_bonus_award_msg.to_proto(pro_msg);
 				session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_get_bonus_award);
 			}
@@ -2016,7 +2016,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::get_bonus_award pro_msg;
+			faith::ws2cs_proto::get_bonus_award pro_msg;
 			get_bonus_award_msg.to_proto(pro_msg);
 			session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_get_bonus_award);
 		}
@@ -2148,7 +2148,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::get_occupation_daily_award pro_msg;
+			faith::ws2cs_proto::get_occupation_daily_award pro_msg;
 			get_occupation_daily_award_msg.to_proto(pro_msg);
 			session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_get_occupation_daily_award);
 		}
@@ -2285,7 +2285,7 @@ namespace hld
 		//}
 		//else
 		//{
-		//	hld::ws2cs_proto::bonfire_add_fuel pro_msg;
+		//	faith::ws2cs_proto::bonfire_add_fuel pro_msg;
 		//	bonfire_add_fuel_msg.to_proto(pro_msg);
 		//	session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_add_fuel_to_bonfire);
 		//}
@@ -2330,7 +2330,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::bonfire_add_fuel pro_msg;
+			faith::ws2cs_proto::bonfire_add_fuel pro_msg;
 			bonfire_add_fuel_msg.to_proto(pro_msg);
 			session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_add_fuel_to_bonfire);
 		}
@@ -2378,7 +2378,7 @@ namespace hld
 				}
 				else
 				{
-					hld::ws2cs_proto::legion_remove_recruit_cd pro_msg;
+					faith::ws2cs_proto::legion_remove_recruit_cd pro_msg;
 					rm_recruit_cd_msg.to_proto(pro_msg);
 					session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_legion_rm_recruit_cd);
 				}
@@ -2421,7 +2421,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::legion_remove_recruit_cd pro_msg;
+				faith::ws2cs_proto::legion_remove_recruit_cd pro_msg;
 				rm_recruit_cd_msg.to_proto(pro_msg);
 				session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_legion_rm_recruit_cd);
 			}
@@ -2699,7 +2699,7 @@ namespace hld
 		//}
 		//else
 		//{
-		//	hld::ws2cs_proto::draw_bonfire_daily_rwd pro_msg;
+		//	faith::ws2cs_proto::draw_bonfire_daily_rwd pro_msg;
 		//	bonfire_daily_rwd_msg.to_proto(pro_msg);
 		//	session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_draw_bonfire_daily_rwd);
 		//}
@@ -2742,7 +2742,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::draw_bonfire_daily_rwd pro_msg;
+			faith::ws2cs_proto::draw_bonfire_daily_rwd pro_msg;
 			bonfire_daily_rwd_msg.to_proto(pro_msg);
 			session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_draw_bonfire_daily_rwd);
 		}
@@ -2789,7 +2789,7 @@ namespace hld
 
 		//switch (operate_type)
 		//{
-		//case hld::e_legion_call_type_call_legion_boss:
+		//case faith::e_legion_call_type_call_legion_boss:
 		//{
 		//	if (legion_ws_ptr->get_job_title(operate_role_guid) < e_legion_job_title_assistant_chief)
 		//	{
@@ -2815,7 +2815,7 @@ namespace hld
 		//	event_ws_mgr::get_instance().send_notice_with_param(operate_role_guid, legion_member_info_ptr->role_name, content_text.c_str(), param_arr, e_notice_param_open_widget, e_chat_type_legion, session->get_role_info_data(e_role_info_template_id), 93000140);
 		//	break;
 		//}
-		//case hld::e_legion_call_type_call_city_war: 
+		//case faith::e_legion_call_type_call_city_war: 
 		//{
 		//	if (legion_ws_ptr->get_job_title(operate_role_guid) < e_legion_job_title_assistant_chief)
 		//	{
@@ -2841,7 +2841,7 @@ namespace hld
 		//	event_ws_mgr::get_instance().send_notice_with_param(operate_role_guid, legion_member_info_ptr->role_name, content_text.c_str(), param_arr, e_notice_param_open_widget, e_chat_type_legion, session->get_role_info_data(e_role_info_template_id), 93000144);
 		//	break;
 		//}
-		//case hld::e_legion_call_type_call_bonfire:
+		//case faith::e_legion_call_type_call_bonfire:
 		//{
 		//	if (legion_ws_ptr->get_job_title(operate_role_guid) < e_legion_job_title_assistant_chief)
 		//	{
@@ -2859,7 +2859,7 @@ namespace hld
 		//	event_ws_mgr::get_instance().send_notice_with_param(operate_role_guid, legion_member_info_ptr->role_name, content_text.c_str(), param_arr, e_notice_param_open_widget, e_chat_type_legion, session->get_role_info_data(e_role_info_template_id), 93000143);
 		//	break;
 		//}
-		//case hld::e_legion_call_type_call_elite_boss:
+		//case faith::e_legion_call_type_call_elite_boss:
 		//{
 		//	NpcSpawnPointTemplate* npc_spawn_point_template_ptr = GET_TEMPLATE(NpcSpawnPointTemplate, req.operate_params(0));
 		//	if (npc_spawn_point_template_ptr == nullptr)
@@ -2876,7 +2876,7 @@ namespace hld
 		//	content_text_arr.push_back(init_unit::change_i64_to_string(npc_template_ptr->NpcName));
 		//	content_text = init_unit::implode(content_text_arr);
 
-		//	param_arr.push_back(hld::world_boss_line);
+		//	param_arr.push_back(faith::world_boss_line);
 		//	param_arr.push_back(npc_spawn_point_template_ptr->MapId);
 		//	param_arr.push_back(npc_spawn_point_template_ptr->PosX);
 		//	param_arr.push_back(npc_spawn_point_template_ptr->PosY);
@@ -2884,7 +2884,7 @@ namespace hld
 		//	event_ws_mgr::get_instance().send_notice_with_param(operate_role_guid, legion_member_info_ptr->role_name, content_text.c_str(), param_arr, e_notice_param_go_to_location, e_chat_type_legion, session->get_role_info_data(e_role_info_template_id), 93000141);
 		//	break;
 		//}
-		//case hld::e_legion_call_type_call_world_boss:
+		//case faith::e_legion_call_type_call_world_boss:
 		//{
 		//	if (world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_boss) && (cross_server_world_boss_ws_mgr::get_instance().is_in_game_time() || cross_server_world_boss_ws_mgr::get_instance().is_in_game_ready_time()))
 		//	{
@@ -2922,7 +2922,7 @@ namespace hld
 		//		content_text_arr.push_back(init_unit::change_i64_to_string(npc_template_ptr->NpcName));
 		//		content_text = init_unit::implode(content_text_arr);
 
-		//		param_arr.push_back(hld::world_boss_line);
+		//		param_arr.push_back(faith::world_boss_line);
 		//		param_arr.push_back(npc_spawn_point_template_ptr->MapId);
 		//		param_arr.push_back(npc_spawn_point_template_ptr->PosX);
 		//		param_arr.push_back(npc_spawn_point_template_ptr->PosY);
@@ -2931,7 +2931,7 @@ namespace hld
 		//		break;
 		//	}
 		//}
-		//case hld::e_legion_call_type_max:
+		//case faith::e_legion_call_type_max:
 		//	break;
 		//default:
 		//	break;
@@ -2981,7 +2981,7 @@ namespace hld
 
 		switch (operate_type)
 		{
-		case hld::e_legion_call_type_call_legion_boss:
+		case faith::e_legion_call_type_call_legion_boss:
 		{
 			if (legion_ws_ptr->get_job_title(operate_role_guid) < e_legion_job_title_assistant_chief)
 			{
@@ -3007,7 +3007,7 @@ namespace hld
 			event_ws_mgr::get_instance().send_notice_with_param(operate_role_guid, legion_member_info_ptr->role_name, content_text.c_str(), param_arr, e_notice_param_open_widget, e_chat_type_legion, session->get_role_info_data(e_role_info_template_id), 93000140);
 			break;
 		}
-		case hld::e_legion_call_type_call_city_war:
+		case faith::e_legion_call_type_call_city_war:
 		{
 			if (legion_ws_ptr->get_job_title(operate_role_guid) < e_legion_job_title_assistant_chief)
 			{
@@ -3033,7 +3033,7 @@ namespace hld
 			event_ws_mgr::get_instance().send_notice_with_param(operate_role_guid, legion_member_info_ptr->role_name, content_text.c_str(), param_arr, e_notice_param_open_widget, e_chat_type_legion, session->get_role_info_data(e_role_info_template_id), 93000144);
 			break;
 		}
-		case hld::e_legion_call_type_call_bonfire:
+		case faith::e_legion_call_type_call_bonfire:
 		{
 			if (legion_ws_ptr->get_job_title(operate_role_guid) < e_legion_job_title_assistant_chief)
 			{
@@ -3051,7 +3051,7 @@ namespace hld
 			event_ws_mgr::get_instance().send_notice_with_param(operate_role_guid, legion_member_info_ptr->role_name, content_text.c_str(), param_arr, e_notice_param_open_widget, e_chat_type_legion, session->get_role_info_data(e_role_info_template_id), 93000143);
 			break;
 		}
-		case hld::e_legion_call_type_call_elite_boss:
+		case faith::e_legion_call_type_call_elite_boss:
 		{
 			NpcSpawnPointTemplate* npc_spawn_point_template_ptr = GET_TEMPLATE(NpcSpawnPointTemplate, req.operate_params(0));
 			if (npc_spawn_point_template_ptr == nullptr)
@@ -3068,7 +3068,7 @@ namespace hld
 			content_text_arr.push_back(init_unit::change_i64_to_string(npc_template_ptr->NpcName));
 			content_text = init_unit::implode(content_text_arr);
 
-			param_arr.push_back(hld::world_boss_line);
+			param_arr.push_back(faith::world_boss_line);
 			param_arr.push_back(npc_spawn_point_template_ptr->MapId);
 			param_arr.push_back(npc_spawn_point_template_ptr->PosX);
 			param_arr.push_back(npc_spawn_point_template_ptr->PosY);
@@ -3076,7 +3076,7 @@ namespace hld
 			event_ws_mgr::get_instance().send_notice_with_param(operate_role_guid, legion_member_info_ptr->role_name, content_text.c_str(), param_arr, e_notice_param_go_to_location, e_chat_type_legion, session->get_role_info_data(e_role_info_template_id), 93000141);
 			break;
 		}
-		case hld::e_legion_call_type_call_world_boss:
+		case faith::e_legion_call_type_call_world_boss:
 		{
 			if (world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_boss) && (cross_server_world_boss_ws_mgr::get_instance().is_in_game_time() || cross_server_world_boss_ws_mgr::get_instance().is_in_game_ready_time()))
 			{
@@ -3123,7 +3123,7 @@ namespace hld
 				content_text_arr.push_back(init_unit::change_i64_to_string(npc_template_ptr->NpcName));
 				content_text = init_unit::implode(content_text_arr);
 
-				param_arr.push_back(hld::world_boss_line);
+				param_arr.push_back(faith::world_boss_line);
 				param_arr.push_back(npc_spawn_point_template_ptr->MapId);
 				param_arr.push_back(GAMECONFIG->WorldBossRandomPosArr[req.operate_params(1) * 6]);
 				param_arr.push_back(GAMECONFIG->WorldBossRandomPosArr[req.operate_params(1) * 6 + 1]);
@@ -3132,7 +3132,7 @@ namespace hld
 				break;
 			}
 		}
-		case hld::e_legion_call_type_max:
+		case faith::e_legion_call_type_max:
 			break;
 		default:
 			break;
@@ -3293,7 +3293,7 @@ namespace hld
 		// }
 		// else
 		// {
-		//	 hld::ws2cs_proto::buy_good pro_msg;
+		//	 faith::ws2cs_proto::buy_good pro_msg;
 		//	 buy_good.to_proto(pro_msg);
 		//	 session->send_to_cs_lua(&pro_msg, e_msgindex_cs2ws_buy_good);
 		// }
@@ -3381,7 +3381,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::buy_good pro_msg;
+			faith::ws2cs_proto::buy_good pro_msg;
 			buy_good.to_proto(pro_msg);
 			session->send_to_cs_lua(&pro_msg, e_msgindex_cs2ws_buy_good);
 		}

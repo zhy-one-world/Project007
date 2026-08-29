@@ -15,7 +15,7 @@
 #include "element_war_msg.hpp"
 #include "db_manager.hpp"
 
-namespace hld
+namespace faith
 {
 	//加载玩家信息
 	void Load_element_war_load_info(uint32 connindex, const void *data_ptr, size_t data_len);

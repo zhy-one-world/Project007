@@ -1,6 +1,6 @@
 #include "LegionConstructionsTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void LegionConstructionsTemplateSize()
     {

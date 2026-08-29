@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -218,7 +218,7 @@ void protobuf_AddDesc_title_2eproto() {
     "template_id\030\002 \001(\005\022\024\n\014operate_type\030\003 \001(\005\032"
     "$\n\016title_info_one\022\022\n\ntitle_data\030\001 \003(\005\032L\n"
     "\021own_title_msg_all\0227\n\016title_info_arr\030\001 \003"
-    "(\0132\037.hld.title_proto.title_info_one\032M\n\023t"
+    "(\0132\037.faith.title_proto.title_info_one\032M\n\023t"
     "itle_add_title_end\022\021\n\tunit_guid\030\001 \003(\005\022\023\n"
     "\013template_id\030\002 \001(\005\022\016\n\006result\030\003 \001(\005\0320\n\033ti"
     "tle_open_title_system_end\022\021\n\tunit_guid\030\001"
@@ -825,7 +825,7 @@ bool title_proto_own_title_msg_all::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.title_proto.title_info_one title_info_arr = 1;
+      // repeated .faith.title_proto.title_info_one title_info_arr = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -858,7 +858,7 @@ bool title_proto_own_title_msg_all::MergePartialFromCodedStream(
 
 void title_proto_own_title_msg_all::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.title_proto.title_info_one title_info_arr = 1;
+  // repeated .faith.title_proto.title_info_one title_info_arr = 1;
   for (int i = 0; i < this->title_info_arr_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->title_info_arr(i), output);
@@ -872,7 +872,7 @@ void title_proto_own_title_msg_all::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* title_proto_own_title_msg_all::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.title_proto.title_info_one title_info_arr = 1;
+  // repeated .faith.title_proto.title_info_one title_info_arr = 1;
   for (int i = 0; i < this->title_info_arr_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -889,7 +889,7 @@ void title_proto_own_title_msg_all::SerializeWithCachedSizes(
 int title_proto_own_title_msg_all::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.title_proto.title_info_one title_info_arr = 1;
+  // repeated .faith.title_proto.title_info_one title_info_arr = 1;
   total_size += 1 * this->title_info_arr_size();
   for (int i = 0; i < this->title_info_arr_size(); i++) {
     total_size +=
@@ -1838,6 +1838,6 @@ void title_proto::Swap(title_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

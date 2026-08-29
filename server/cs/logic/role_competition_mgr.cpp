@@ -9,7 +9,7 @@
 #include "internet/cross_ladder.pb.h"
 #include "internet/net.pb.h"
 
-namespace hld
+namespace faith
 {
 	role_competition_mgr::role_competition_mgr()
 	{
@@ -75,7 +75,7 @@ namespace hld
 	{
 		switch (cur_state)
 		{
-			case hld::e_competition_manual_state_before_begining:
+			case faith::e_competition_manual_state_before_begining:
 			{
 				if ((new_time / 1000) >= m_cur_competition_info.competition_begin_time)
 				{
@@ -87,7 +87,7 @@ namespace hld
 				}
 			}
 				break;
-			case hld::e_competition_manual_state_begining:
+			case faith::e_competition_manual_state_begining:
 			{
 				if ((new_time / 1000) >= m_cur_competition_info.competition_end_time)
 				{
@@ -99,7 +99,7 @@ namespace hld
 				}
 			}
 				break;
-			case hld::e_competition_manual_state_over:
+			case faith::e_competition_manual_state_over:
 			{
 				calcu_cur_competition();
 			}
@@ -167,7 +167,7 @@ namespace hld
 			return 0;
 		}
 
-		hld::cs2dp_proto::role_competition_db msg;
+		faith::cs2dp_proto::role_competition_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -263,12 +263,12 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_competition msg;
+			faith::cs2dp_proto::save_role_competition msg;
 			msg.set_role_guid(player_ref.get_unit_guid().server_64);
 			msg.set_unit_array_index(m_array_index);
 			msg.set_save_type_ex(eType);
 
-			hld::cs2dp_proto::role_competition_db *db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_competition_db *db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return;
@@ -296,7 +296,7 @@ namespace hld
 	void role_competition_mgr::sync_competition_info()
 	{
 		player& player_ref = unit_man::get_player(m_array_index);
-		hld::cross_ladder_sync_role_competition msg;
+		faith::cross_ladder_sync_role_competition msg;
 		msg.set_is_buy(m_cur_competition_info.is_buy);
 		msg.set_season(m_cur_competition_info.season);
 		msg.set_buy_manual_type(m_cur_competition_info.buy_manual_type);
@@ -381,7 +381,7 @@ namespace hld
 		}
 		if (m_success == true)
 		{
-			hld::cross_ladder_get_competition_lv_reward_end msg;
+			faith::cross_ladder_get_competition_lv_reward_end msg;
 			msg.add_manual_id_list(id);
 			msg.add_manual_type_list(type);
 			msg.set_get_type(type);
@@ -451,7 +451,7 @@ namespace hld
 		if (true == player_ref.is_valid() && player_ref.get_session_state() == e_session_status_in_gaming)
 		{	
 			//同步手册等级和经验
-			hld::cross_ladder_buy_competition_lv_end msg;
+			faith::cross_ladder_buy_competition_lv_end msg;
 			msg.set_level(m_cur_competition_info.level);
 			msg.set_cur_exp(m_cur_competition_info.cur_exp);
 			player_ref.send_message_to_self(&msg, e_msgindex_s2c_buy_competition_lv_end);
@@ -509,7 +509,7 @@ namespace hld
 		}
 		int32 cur_level = m_cur_competition_info.level;
 		int32 cur_first_id = template_manager::get_instance().get_competition_first_id(cell_server::getInstance().get_ladder_world_level());
-		hld::cross_ladder_get_competition_lv_reward_end msg;
+		faith::cross_ladder_get_competition_lv_reward_end msg;
 		for (int32 i = 0 ; i  < role_competition_max;i++)
 		{
 			int32 m_id = i + cur_first_id;
@@ -640,13 +640,13 @@ namespace hld
 				int32 money_num = 0;
 				switch (manual_type)
 				{
-				case hld::e_competition_manual_type_normal:
+				case faith::e_competition_manual_type_normal:
 					money_num = GAMECONFIG->NormalManualByDiamond;
 					break;
-				case hld::e_competition_manual_type_special:
+				case faith::e_competition_manual_type_special:
 					money_num = GAMECONFIG->LuxurylManualByDiamond;
 					break;
-				case hld::e_competition_manual_type_add_special:
+				case faith::e_competition_manual_type_add_special:
 					money_num = GAMECONFIG->AddLuxurylManualByDiamond;
 					break;
 				default:
@@ -661,7 +661,7 @@ namespace hld
 				m_cur_competition_info.buy_manual_type = manual_type;
 				//触发特权
 				activati_manual(manual_type);
-				hld::cross_ladder_buy_speical_manual_end msg;
+				faith::cross_ladder_buy_speical_manual_end msg;
 				msg.set_is_buy(1);
 				msg.set_manual_type(manual_type);
 				player_ref.send_message_to_self(&msg, e_msgindex_s2c_buy_speical_manual_end);
@@ -737,14 +737,14 @@ namespace hld
 		{
 			switch ((e_manual_reward_type)active_type)
 			{
-				case hld::e_manual_reward_type_add_item:
+				case faith::e_manual_reward_type_add_item:
 				{
 					std::vector<s_item_template_info> promp_item_data;
 					promp_item_data.push_back({ active_ext0 ,active_ext1 , 1 });
 					player_ref.get_item_set().put_in_bag(e_server_log_add_item_competition, 0, promp_item_data);
 					break;
 				}
-				case hld::e_manual_reward_type_manual_level:
+				case faith::e_manual_reward_type_manual_level:
 				{
 					//手册升级
 					CompetitionSeasonTemplate *aim_temp = template_manager::get_instance().get_template_by_competition_level(active_ext0, cell_server::getInstance().get_ladder_world_level());
@@ -755,7 +755,7 @@ namespace hld
 					player_ref.add_money(e_money_type_season_point, aim_temp->exp, e_server_log_add_money_competition, -1, false);
 					break;
 				}
-				case hld::e_manual_reward_type_add_point:
+				case faith::e_manual_reward_type_add_point:
 				{
 					//增加积分获取比例
 					m_cur_competition_info.point_add_percent += active_ext0;

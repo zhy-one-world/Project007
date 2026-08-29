@@ -13,7 +13,7 @@ purpose:
 #include "Logic/legion_def.hpp"
 #include "Logic/char_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	

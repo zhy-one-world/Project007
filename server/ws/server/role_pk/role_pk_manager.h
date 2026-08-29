@@ -33,7 +33,7 @@
 //	Class Declare
 //
 //////////////////////////////////////////////////////////////////////////
-namespace hld
+namespace faith
 {
 	typedef std::unordered_map<ui64, c_role_pk_info> all_role_pk_map;
 	typedef all_role_pk_map::iterator all_role_pk_map_it;
@@ -46,9 +46,9 @@ namespace hld
 	typedef all_team_map::iterator all_team_map_it;
 
 
-	class role_pk_manager : public hld::singleton<role_pk_manager>
+	class role_pk_manager : public faith::singleton<role_pk_manager>
 	{
-		friend class hld::singleton<role_pk_manager>;
+		friend class faith::singleton<role_pk_manager>;
 	public:
 		role_pk_manager();
 		~role_pk_manager();

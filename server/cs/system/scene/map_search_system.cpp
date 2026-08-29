@@ -4,7 +4,7 @@
 #include "template/template_manager.h"
 #include "logic/player.hpp"
 
-using namespace hld;
+using namespace faith;
 
 bool  map_search_system::start_up(int32 player_index)
 {

@@ -72,7 +72,7 @@ const Table_Filed TABLE_FILEDS[] = {
 
 };
 
-namespace hld
+namespace faith
 {
 	void log_cache::init()
 	{
@@ -296,7 +296,7 @@ namespace hld
 
 		xstring str_log = writer.write(json);
 
-		hld::server2dp_save_log req;
+		faith::server2dp_save_log req;
 		memcpy(req.sql_table_name, TABLE_NAME_LOGOUT.c_str(), TABLE_NAME_LOGOUT.size());
 		int32 cpy_size = str_log.size() > max_log_char_num ? max_log_char_num : str_log.size();
 		memcpy(req.save_string, str_log.c_str(), cpy_size);
@@ -339,7 +339,7 @@ namespace hld
 
 		xstring str_log = writer.write(json);
 
-		hld::server2dp_save_log req;
+		faith::server2dp_save_log req;
 		memcpy(req.sql_table_name, TABLE_NAME_CREATE.c_str(), TABLE_NAME_CREATE.size());
 		int32 cpy_size = str_log.size() > max_log_char_num ? max_log_char_num : str_log.size();
 		memcpy(req.save_string, str_log.c_str(), cpy_size);
@@ -368,7 +368,7 @@ namespace hld
 
 		xstring str_log = writer.write(json);
 
-		hld::server2dp_save_log req;
+		faith::server2dp_save_log req;
 		memcpy(req.sql_table_name, TABLE_NAME_LEVELCHANGE.c_str(), TABLE_NAME_LEVELCHANGE.size());
 		int32 cpy_size = str_log.size() > max_log_char_num ? max_log_char_num : str_log.size();
 		memcpy(req.save_string, str_log.c_str(), cpy_size);
@@ -397,7 +397,7 @@ namespace hld
 
 		xstring str_log = writer.write(json);
 
-		hld::server2dp_save_log req;
+		faith::server2dp_save_log req;
 		memcpy(req.sql_table_name, TABLE_NAME_TASK.c_str(), TABLE_NAME_TASK.size());
 		int32 cpy_size = str_log.size() > max_log_char_num ? max_log_char_num : str_log.size();
 		memcpy(req.save_string, str_log.c_str(), cpy_size);
@@ -430,7 +430,7 @@ namespace hld
 
 		xstring str_log = writer.write(json);
 
-		hld::server2dp_save_log req;
+		faith::server2dp_save_log req;
 		memcpy(req.sql_table_name, TABLE_NAME_MONEYCHANGE.c_str(), TABLE_NAME_MONEYCHANGE.size());
 		int32 cpy_size = str_log.size() > max_log_char_num ? max_log_char_num : str_log.size();
 		memcpy(req.save_string, str_log.c_str(), cpy_size);
@@ -456,7 +456,7 @@ namespace hld
 
 		xstring str_log = writer.write(json);
 
-		hld::server2dp_save_log req;
+		faith::server2dp_save_log req;
 		memcpy(req.sql_table_name, TABLE_NAME_NEWGUIDE.c_str(), TABLE_NAME_NEWGUIDE.size());
 		int32 cpy_size = str_log.size() > max_log_char_num ? max_log_char_num : str_log.size();
 		memcpy(req.save_string, str_log.c_str(), cpy_size);
@@ -479,7 +479,7 @@ namespace hld
 
 		xstring str_log = writer.write(json);
 
-		hld::server2dp_save_log req;
+		faith::server2dp_save_log req;
 		memcpy(req.sql_table_name, TABLE_NAME_RECHARGE_STEP.c_str(), TABLE_NAME_RECHARGE_STEP.size());
 		int32 cpy_size = str_log.size() > max_log_char_num ? max_log_char_num : str_log.size();
 		memcpy(req.save_string, str_log.c_str(), cpy_size);
@@ -499,7 +499,7 @@ namespace hld
 
 		xstring str_log = writer.write(json);
 
-		hld::server2dp_save_log req;
+		faith::server2dp_save_log req;
 		memcpy(req.sql_table_name, TABLE_NAME_PLAYERCOUNT.c_str(), TABLE_NAME_PLAYERCOUNT.size());
 		int32 cpy_size = str_log.size() > max_log_char_num ? max_log_char_num : str_log.size();
 		memcpy(req.save_string, str_log.c_str(), cpy_size);
@@ -553,7 +553,7 @@ namespace hld
 
 		xstring str_log = writer.write(json);
 
-		hld::server2dp_save_log req;
+		faith::server2dp_save_log req;
 		memcpy(req.sql_table_name, TABLE_NAME_RECHARGE_SUCCESS.c_str(), TABLE_NAME_RECHARGE_SUCCESS.size());
 		int32 cpy_size = str_log.size() > max_log_char_num ? max_log_char_num : str_log.size();
 		memcpy(req.save_string, str_log.c_str(), cpy_size);

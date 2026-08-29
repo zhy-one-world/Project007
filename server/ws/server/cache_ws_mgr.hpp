@@ -13,7 +13,7 @@ purpose: 缓存管理系统
 #include "legion/legion_ws_applicant.h"
 #include "red_package/red_package_ws.h"
 
-namespace hld
+namespace faith
 {
 	class map_ws;
 	class cache_ws_mgr

@@ -11,7 +11,7 @@ purpose: csv同步信息管理器
 #include "net.pb.h"
 #include "template/template_manager.h"
 
-namespace hld
+namespace faith
 {
 
 	csv_synchronization_mgr::csv_synchronization_mgr()

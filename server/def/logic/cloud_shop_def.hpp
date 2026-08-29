@@ -10,7 +10,7 @@ purpose:
 #define _CLOUD_SHOP_DEF_HPP_
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 

@@ -14,7 +14,7 @@ purpose:
 #include "logic/type_def.hpp"
 #include "char_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
@@ -84,7 +84,7 @@ namespace hld
 	struct s_title_info_db
 	{
 		guid_64 role_guid;
-		int32 data_info[hld::e_title_info_max];
+		int32 data_info[faith::e_title_info_max];
 	};
 
 	enum e_title_equip_id

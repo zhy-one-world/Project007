@@ -16,7 +16,7 @@ purpose:
 #include "dp2cs.pb.h"
 #include "buff.pb.h"
 
-namespace hld
+namespace faith
 {
 	static void cs2dp_load_role_buff_send_lua(uint32 connindex, packet_s2s *p_db)
 	{
@@ -24,7 +24,7 @@ namespace hld
 		{
 			return;
 		}
-		hld::dp2cs_proto::load_role_db_data msg;
+		faith::dp2cs_proto::load_role_db_data msg;
 		msg.set_role_guid(p_db->logic_guid.server_64);
 		msg.set_unit_array_index(p_db->logic_index);
 		msg.set_db_data(p_db->google_data, p_db->google_data_len);

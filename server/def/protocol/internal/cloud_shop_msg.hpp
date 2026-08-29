@@ -14,13 +14,13 @@ purpose:
 #include "Logic/cloud_shop_def.hpp"
 #include "internet/ws2cs.pb.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_ws2dp_load_cloud_shop_players_info = hld::e_msg_base_cloud_shop,
+		e_msgindex_ws2dp_load_cloud_shop_players_info = faith::e_msg_base_cloud_shop,
 		e_msgindex_dp2ws_load_cloud_shop_players_info_end,
 		e_msgindex_ws2dp_save_cloud_shop_players_info,
 		e_msgindex_ws2dp_clear_cloud_shop_player_info,
@@ -36,7 +36,7 @@ namespace hld
 		e_msgindex_ws2gws_get_cloud_shop,
 	};
 
-	struct ws2dp_clear_cloud_shop_player_info : public hld::packet_base
+	struct ws2dp_clear_cloud_shop_player_info : public faith::packet_base
 	{
 		int32 clear_type;
 		ws2dp_clear_cloud_shop_player_info()
@@ -46,7 +46,7 @@ namespace hld
 		}
 	};
 
-	struct ws2dp_save_cloud_shop_role_info : public hld::packet_base
+	struct ws2dp_save_cloud_shop_role_info : public faith::packet_base
 	{
 		cloud_shop_role_record_data player_role_info;
 		ws2dp_save_cloud_shop_role_info()
@@ -56,7 +56,7 @@ namespace hld
 		}
 	};
 
-	struct ws2dp_load_cloud_shop_players_info : public hld::packet_base
+	struct ws2dp_load_cloud_shop_players_info : public faith::packet_base
 	{
 		ws2dp_load_cloud_shop_players_info()
 		{
@@ -89,7 +89,7 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_cloud_shop_buy_req;
 		}
-		void to_proto(hld::ws2cs_proto::cloud_shop_buy_req& msg)
+		void to_proto(faith::ws2cs_proto::cloud_shop_buy_req& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_buy_type(buy_type);
@@ -97,7 +97,7 @@ namespace hld
 			msg.set_need_money_type(need_money_type);
 			msg.set_need_money_count(need_money_count);
 		}
-		void from_proto(hld::ws2cs_proto::cloud_shop_buy_req& msg)
+		void from_proto(faith::ws2cs_proto::cloud_shop_buy_req& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			buy_type = msg.buy_type();

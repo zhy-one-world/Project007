@@ -17,12 +17,12 @@ purpose: ¿ç·şPK
 #include "Logic/fake_player_def.hpp"
 #include "internet/ws2cs.pb.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	enum
 	{
-		e_msgindex_ws2dp_save_cross_server_harry_info = hld::e_msg_base_cross_server_harry,
+		e_msgindex_ws2dp_save_cross_server_harry_info = faith::e_msg_base_cross_server_harry,
 		e_msgindex_ws2dp_load_cross_server_harry_info,
 		e_msgindex_dp2ws_load_cross_server_harry_info,
 		e_msgindex_ws2ws_send_cross_server_harry_info,
@@ -50,7 +50,7 @@ namespace hld
 		e_msgindex_ws2dp_send_del_one_server_msg,
 	};
 
-	struct ws2dp_save_cross_server_harry_msg_all : public hld::packet_base
+	struct ws2dp_save_cross_server_harry_msg_all : public faith::packet_base
 	{
 		s_server_harry_msg	server_harry_msg;
 		ws2dp_save_cross_server_harry_msg_all()
@@ -60,7 +60,7 @@ namespace hld
 		}
 	};
 
-	struct ws2dp_load_cross_server_harry_msg_all : public hld::packet_base
+	struct ws2dp_load_cross_server_harry_msg_all : public faith::packet_base
 	{
 		ws2dp_load_cross_server_harry_msg_all()
 		{
@@ -69,7 +69,7 @@ namespace hld
 		}
 	};
 
-	struct ws2dp_del_one_server_msg : public hld::packet_base
+	struct ws2dp_del_one_server_msg : public faith::packet_base
 	{
 		int32 server_id;
 		ws2dp_del_one_server_msg()
@@ -79,7 +79,7 @@ namespace hld
 		}
 	};
 
-	struct dp2ws_load_cross_server_harry_msg_all : public hld::packet_base
+	struct dp2ws_load_cross_server_harry_msg_all : public faith::packet_base
 	{
 		bool is_empty_msg;
 		int32 data_num;
@@ -96,7 +96,7 @@ namespace hld
 		}
 	};
 
-	struct ws2ws_send_cross_server_harry_msg_all : public hld::packet_base
+	struct ws2ws_send_cross_server_harry_msg_all : public faith::packet_base
 	{
 		s_server_harry_msg	harry_msg[max_server_num];
 		int32 data_num;
@@ -108,7 +108,7 @@ namespace hld
 		}
 	};
 
-	struct ws2ws_send_cross_server_harry_msg_one : public hld::packet_base
+	struct ws2ws_send_cross_server_harry_msg_one : public faith::packet_base
 	{
 		s_harry_money_change	harry_msg[max_server_num];
 		int32					data_num;
@@ -119,7 +119,7 @@ namespace hld
 		}
 	};
 
-	struct ws2ws_send_server_harry_player_msg : public hld::packet_base
+	struct ws2ws_send_server_harry_player_msg : public faith::packet_base
 	{
 		int32			server_id;
 		int64			player_guid_arr[3];
@@ -131,7 +131,7 @@ namespace hld
 		}
 	};
 
-	struct ws2ws_send_server_harry_award : public hld::packet_base
+	struct ws2ws_send_server_harry_award : public faith::packet_base
 	{
 		int32			server_rank;
 		ws2ws_send_server_harry_award()
@@ -141,7 +141,7 @@ namespace hld
 		}
 	};
 
-	struct cs2dp_save_role_harry_info : public hld::packet_base
+	struct cs2dp_save_role_harry_info : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -159,7 +159,7 @@ namespace hld
 		}
 	};
 
-	struct dp2cs_load_role_harry_info : public hld::packet_base
+	struct dp2cs_load_role_harry_info : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -179,11 +179,11 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_send_cur_server_harry_info;
 		}
-		bool to_proto(hld::ws2cs_proto::send_cur_server_harry_msg& msg)
+		bool to_proto(faith::ws2cs_proto::send_cur_server_harry_msg& msg)
 		{
 			for (int32 i = 0; i < max_server_num; i++)
 			{
-				hld::st_proto::st_server_harry_msg* st_harry_ptr = msg.add_server_harry_msg();
+				faith::st_proto::st_server_harry_msg* st_harry_ptr = msg.add_server_harry_msg();
 				if (st_harry_ptr == nullptr)
 				{
 					return false;
@@ -192,7 +192,7 @@ namespace hld
 			}
 			return true;
 		}
-		void from_proto(const hld::ws2cs_proto::send_cur_server_harry_msg& msg)
+		void from_proto(const faith::ws2cs_proto::send_cur_server_harry_msg& msg)
 		{
 			for (int32 i = 0; i < max_server_num && i < msg.server_harry_msg_size(); i++)
 			{
@@ -353,11 +353,11 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_send_create_normal_player;
 		}
-		void to_proto(hld::ws2cs_proto::send_create_normal_player& msg)
+		void to_proto(faith::ws2cs_proto::send_create_normal_player& msg)
 		{
 			msg.set_crate_num(crate_num);
 		}
-		void from_proto(const hld::ws2cs_proto::send_create_normal_player& msg)
+		void from_proto(const faith::ws2cs_proto::send_create_normal_player& msg)
 		{
 			crate_num = msg.crate_num();
 		}
@@ -373,9 +373,9 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_send_create_first_harry_player;
 		}
-		bool to_proto(hld::ws2cs_proto::create_harry_player_statue& msg)
+		bool to_proto(faith::ws2cs_proto::create_harry_player_statue& msg)
 		{
-			hld::st_proto::st_fake_player_info *st_fake_ptr = msg.mutable_big_player_info();
+			faith::st_proto::st_fake_player_info *st_fake_ptr = msg.mutable_big_player_info();
 			if (st_fake_ptr == nullptr)
 			{
 				return false;
@@ -385,7 +385,7 @@ namespace hld
 			msg.set_map_guid(map_guid.server_64);
 			return true;
 		}
-		void from_proto(const hld::ws2cs_proto::create_harry_player_statue& msg)
+		void from_proto(const faith::ws2cs_proto::create_harry_player_statue& msg)
 		{
 			big_player_info.from_proto(msg.big_player_info());
 			big_type = msg.big_type();
@@ -401,12 +401,12 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_send_clear_harry_player;
 		}
-		void to_proto(hld::ws2cs_proto::claer_all_harry_player& msg)
+		void to_proto(faith::ws2cs_proto::claer_all_harry_player& msg)
 		{
 			msg.set_need_clear(need_clear);
 
 		}
-		void from_proto(const hld::ws2cs_proto::claer_all_harry_player& msg)
+		void from_proto(const faith::ws2cs_proto::claer_all_harry_player& msg)
 		{
 			need_clear = msg.need_clear();
 		}

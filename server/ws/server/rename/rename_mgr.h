@@ -10,7 +10,7 @@ purpose: about role's treasure_mgr
 #define _RENAME_MGR_H_
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class client_session;
 

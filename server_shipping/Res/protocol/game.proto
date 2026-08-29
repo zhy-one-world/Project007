@@ -1,0 +1,1479 @@
+syntax = "proto2";
+package hld;
+
+message game_proto
+{	
+	///////////////////////// 消息和消息回?//////////////////////////
+	message enter_game
+	{
+		optional int64	                role_guid			= 1;
+		optional string					account				= 2;
+		optional int32					line_id				= 3;
+	}
+
+	message enter_game_end
+	{
+		optional uint32			result				= 1;
+		optional int32			server_type			= 2;
+	}
+
+	message pos_vector
+	{
+		optional float			x					= 1;
+		optional float			y					= 2;
+		optional float			z					= 3;
+	}
+
+	message rot_angle
+	{
+		optional float			x					= 1;
+		optional float			y					= 2;
+		optional float			z					= 3;
+	}
+
+	message pawn_att
+	{
+		
+	}
+
+	enum enter_scene_type
+	{
+		enter     = 0;   //进入游戏 
+		transfer  = 1;   //传送
+ 	}
+
+	message enter_scene
+	{	
+		optional enter_scene_type       type             = 1 [default = enter];          // 0:游戏登陆 1 		
+	}
+
+	message enter_scene_end
+	{
+		optional uint32 result = 1 [default = 1];  
+	}
+
+	message transfer_scene
+	{
+		optional uint32 map_template_id = 1; // 目标地图id
+		optional uint32 line_id = 2;//线id
+		optional uint32 group_id = 3;
+		repeated uint32 map_guid = 4;
+		optional int32	war_index = 5;
+	}
+	
+	message transfer_scene_pos
+	{
+		optional uint32 map_template_id = 1; // 目标地图id
+		optional uint32 line_id = 2;//线id
+		repeated uint32 map_guid = 3;
+		repeated int32	location = 4;
+		repeated int32	rotation = 5;
+	}
+	
+	message transfer_scene_born
+	{
+	}
+	
+	message reconnect_enter_scene_end
+	{
+		optional int32 result = 1;  
+	}
+	
+	message line_list
+	{
+		repeated	int32	line_id = 1;
+	}
+	
+	message transfer_scene_end
+	{
+		optional uint32			result				= 1 [default = 1];  // 成功的话返回后续信息      
+		optional uint32			scene_uid			= 2;	             // 角色所在场景id
+		optional pos_vector		position			= 3;	             // 角色的位置坐标
+		optional rot_angle		rotator_angle		= 4;	             // 角色的朝向
+	}
+	
+	message trans_local_scene_end
+	{
+		optional int64	        role_guid			= 1;
+		optional pos_vector		position			= 2; // 角色的位置坐标
+		optional rot_angle		rotator_angle		= 3; // 角色的朝向
+	}
+	
+	message client2fep_ping
+	{
+		optional int64	client_time = 1;
+	}
+
+	message fep2client_ping
+	{
+		optional int64	client_time = 1;
+		optional int64	server_time = 2;
+	}
+
+	message client2cs_ping
+	{
+		optional	int64	trace_time = 1;
+		optional 	int64	trace_time_2 = 2;
+		optional 	int64	trace_time_3 = 3;
+	}
+
+	message cs2client_ping
+	{
+		optional	int64	trace_time = 1;
+		optional 	int64	trace_time_2 = 2;
+		optional 	int64	trace_time_3 = 3;
+	}
+
+	message version_wrong
+	{
+	}
+	
+	
+	message set_timekeeping
+	{
+		optional int32          time            = 1;        // 准备计时的时间
+		optional int32			prefix_text		= 2;		// 前缀说明文字(为0表示不改变)
+	}
+	
+	message wave_trigger_message
+	{
+		optional int32          message         = 1;        // 某一波怪能够触发的消息代号
+	}
+
+	message game_state
+	{
+		optional int32          state				= 1;
+		optional int32          state_time			= 2;
+		optional int32          cur_server_time		= 3;
+	}
+
+	message boss_state
+	{
+		optional int32			boss_id         = 1;        // boss的模板ID
+		optional int32			boss_state_code = 2;        // boss的状态代?0表示BOSS没出?1表示BOSS出现 2表示BOSS被杀死而消?3表示BOSS未被杀死而消?
+		optional bool			is_final_boss   = 3;        // 是否是最终BOSS
+	}
+
+	message bosses_state
+	{
+		repeated boss_state		created_bosses = 1;
+	}
+	
+	message protect_npc_state
+	{
+		optional int32			npc_id          = 1 [default = 0];        // 被保护的NPC的ID
+		optional int64			npc_guid        = 2 [default = 0];        // 被保护的NPC的GUID
+		optional int32			npc_state_code  = 3 [default = 0];        // 被保护的NPC的状?
+	}
+	
+	message update_map_record_end
+	{
+		repeated int32          role_guid             = 1;   // 角色guid
+		repeated int32          map_record_info_data  = 2;   // 地图记录的数?
+	}
+	
+	message update_map_record_all_end
+	{
+		repeated int32          map_record_info_array = 1;   	 // 地图记录的数?
+		optional int32			is_end_record  	  	  = 2;   	 // 1代表发送完毕
+		optional int32			map_num			  	  = 3;		 // 地图记录地图个数
+	}
+	
+	message update_demons_tower_info_end
+	{
+		repeated int32          role_guid             = 1;   // 角色的GUID
+		repeated int32          demons_tower_info     = 2;   // 万魔塔的数据
+		optional bool			is_in_mopping_up	  = 3;	 // 是否在扫荡状态
+	}
+	
+	message score_record
+	{
+		repeated int32			role_guid		= 1;
+		optional string			role_name		= 2;
+		optional int64			score			= 3;
+	}
+	
+	message score_record_list
+	{
+		optional int32			score_list_len	= 1;
+		repeated score_record	score_list		= 2;
+		optional score_record	extra_score		= 3;
+		optional int32			extra_rank		= 4;
+		optional bool			is_legion_score = 5;
+		optional int32			npc_id			= 6;
+	}
+	
+	message temple_game_over
+	{
+		optional int32			npc_score			= 1;
+		optional int32			win_money_id_1		= 2;
+		optional int32			win_money_num_1		= 3;
+		optional int32			win_money_id_2		= 4;
+		optional int32			win_money_num_2		= 5;
+	}
+	message get_temple_over_gift
+	{
+		optional int32			get_over_num		= 1;
+	}
+	
+	message get_temple_over_gift_end
+	{
+	}
+	
+	message pop_plot_tip
+	{
+		optional int32			str_id				= 1; // 要弹出的提示字符串的ID
+		optional int32			str_id_type			= 2; // 弹出类型0是提示文字 1是弹出触发引导
+	}
+	
+	message get_best_record
+	{
+		optional int32	map_template_id			= 1;
+	}
+	
+	message get_best_record_end
+	{
+		optional int32	map_template_id			= 1;
+		repeated string	best_record_role_name	= 2;
+		repeated int64	best_record_value		= 3;
+	}
+
+	message transfer_error
+	{
+		optional int32	error_code				= 1; // 错误代码
+	}
+
+	message transfer_to_pk_king_map
+	{
+	}
+
+	message pk_king_game_over
+	{
+		optional int32	award_exp				= 1;
+		optional int32	award_money 			= 2;
+	}
+
+	message transfer_to_broken_sky_map
+	{
+		optional int32	map_id					= 1;
+		optional int64	role_guid				= 2;
+	}
+
+	message broken_sky_boss_dead
+	{
+		optional int64	boss_guid				= 1;
+	}
+
+	message leave_map
+	{
+	}
+	
+	message get_one_map_info
+	{
+		optional int32 map_template_id			= 1;
+	}
+	
+	message get_one_map_info_end
+	{
+		optional int32 map_template_id			= 1;
+		repeated int64 map_info_arr				= 2;//包含BOSS血量，所以统一改成int64
+	}
+	message server_exp_level
+	{
+		optional int32 exp_level			= 1;
+		optional float exp_percent			= 2;
+		optional int32 exp_last_level		= 3;
+	}
+	message	need_hot_update
+	{
+		optional int32					update_type					= 1;
+	}
+	
+	message gain_treasure_info_one
+	{
+		optional int32 info_type				= 1;
+		optional int32 info_value				= 2;	
+	}
+	
+	message gain_treasure_info_all
+	{
+		repeated gain_treasure_info_one info_arr = 1;
+	}
+	
+	message add_exp_raid_buff
+	{
+		optional int32 add_count				= 1;
+	}
+	
+	message add_exp_raid_buff_end
+	{
+		optional int32 add_count				= 1;
+	}
+	
+	message add_legion_boss_buff_end
+	{
+		optional int32 add_count				= 1;
+		optional int32 demon_count				= 2;
+		optional int32 gold_count				= 3;
+	}
+	
+	message add_legion_boss_big_player_info
+	{
+		optional int32 class_type				= 1;
+		optional int32 add_count				= 2;
+		optional string player_name				= 3;
+	}
+	
+	message gain_treasure_req_kill_record
+	{
+		optional int32 boss_spawn_point_template_id			= 1;
+	}
+	
+	message gain_treasure_kill_record_one
+	{
+		optional int32 killed_stamp				= 1;
+		repeated string role_name 				= 2;
+	}
+	
+	message gain_treasure_kill_record_end
+	{
+		optional int32 boss_spawn_point_template_id 		= 1;
+		repeated gain_treasure_kill_record_one record_arr 	= 2;
+	}
+	
+	message gain_treasure_req_gain_item_record
+	{
+		optional int32 record_index				= 1;
+	}
+	
+	message gain_treasure_gain_item_record_info_one
+	{
+		optional string role_name				= 1; 
+		optional int32 boss_spawn_point_template_id			= 2;
+		optional int32 item_template_id			= 3;
+		optional int32 killed_stamp				= 4;
+		optional int32 record_index				= 5;
+		optional int64 role_guid				= 6;
+	}
+	
+	message gain_treasure_gain_item_record_end
+	{
+		repeated gain_treasure_gain_item_record_info_one record_arr = 1;
+	}
+	
+	message gain_treasure_boss_info_one
+	{
+		optional int32 boss_spawn_point_template_id			= 1;
+		optional int64 boss_guid				= 2;
+		optional int32 next_refresh_stamp		= 3;
+		optional string first_player_name		= 4; 
+		repeated int64 player_guid				= 5;
+		optional int32 map_type					= 6;
+	} 
+	
+	message gain_treasure_boss_info_all
+	{
+		repeated gain_treasure_boss_info_one boss_info		= 1;
+	}
+	
+	message buy_raid_count
+	{
+		optional int32 map_temp_id				= 1;
+		optional int32 buy_count				= 2;
+	}
+	
+	message buy_raid_count_end
+	{
+		optional int32 map_temp_id				= 1;
+		optional int32 buy_count				= 2;
+	}
+	
+	message boss_island_info_one
+	{
+		optional int32 info_type				= 1;
+		optional int32 info_value				= 2;	
+	}
+	
+	message boss_island_info_all
+	{
+		repeated	int32	info_value		= 1;
+	}
+	
+	message server_config_all
+	{
+		repeated	int32	server_id		= 1;
+		repeated	int32	is_cross_server = 2;
+		repeated	string	server_ip		= 3;
+		repeated	string	server_name		= 4;
+	}
+	
+	message gm_begin_cross
+	{
+		optional	bool	is_begin_cross	= 1;
+		optional	int32	gate_server_id	= 2;
+	}
+	
+	message gm_begin_cross_one
+	{
+		optional	int32	gm_type 		= 1;
+		optional	bool	is_begin		= 2;
+	}
+	
+	message gm_begin_cross_all
+	{
+		repeated	bool	is_begin_arr	= 1;
+	}
+	
+	message is_close_exchange
+	{
+		optional	bool	is_close		= 1;
+	}
+	
+	message gm_begin_cross_pk
+	{		
+		optional	bool	is_begin_cross	= 1;
+	}
+	
+	message gm_begin_cross_harry
+	{
+		optional	bool	is_begin_cross	= 1;
+	}
+	message gm_begin_cross_territory_war
+	{
+		optional	bool	is_begin_cross	= 1;
+	}
+	message gm_begin_cross_world_boss
+	{
+		optional	bool	is_begin_cross	= 1;
+	}
+
+	message gm_begin_cross_ladder
+	{
+		optional	bool	is_begin_cross	= 1;
+	}
+
+	message pk_one_player_msg
+	{
+		optional	int32	player_guidA	= 1;
+		optional	int32	player_guidB	= 2;
+		optional	string	player_name		= 3;
+		optional	int32	win_num			= 4;
+		optional	int32	server_id		= 5;
+		optional	int32	is_winner		= 6;
+	}
+	
+	message cross_server_one_island_msg
+	{
+		optional	int32	war_idex		= 1;
+		optional	int32	island_pk_state	= 2;
+		repeated	pk_one_player_msg	player_msg	=3;
+		optional	int32	winner_guidA		= 4;
+		optional	int32	winner_guidB		= 5;
+		optional	int32	is_end_war			= 6;
+		optional	int32	pk_count			= 7;
+	}
+	
+	message cross_server_all_msg	
+	{
+		repeated	cross_server_one_island_msg island_msg = 1;
+	}
+	
+	message cross_server_map_msg
+	{
+		optional	int32	map_state		= 1;
+		optional	int32	left_time		= 2;
+		optional	bool	is_in_the_war	= 3;
+	}
+	
+	message cross_server_pk_map_island_msg
+	{
+		optional	int32	map_state		= 1;
+		optional	int32	island_idex		= 2;
+		optional	int32	left_time		= 3;
+		optional	int32	war_idex		= 4;
+	}
+	
+	message cross_server_pk_map_transfer
+	{
+		
+	}
+	
+	message cross_server_pk_state_end_msg
+	{
+		optional	int32	pk_state		= 1;
+	}
+
+	message get_world_boss_damage
+	{
+		optional	int32	boss_id		=1;
+	}
+	
+	message template_table_param_string
+	{
+		optional string	param_name		=1;
+		optional string	param_date		=2;
+	}
+
+	message template_table_param_int
+	{
+		optional string	param_name		=1;
+		optional int32	param_date		=2;
+	}
+	
+	message template_table_data
+	{				
+		repeated template_table_param_string	param_string		=1;
+		repeated template_table_param_int		param_int			=2;		
+		optional int32							attribute_id		=3;
+	}
+	
+	message set_template_table
+	{		
+		repeated template_table_data				template_data 	=1;
+		optional string								tabel_name		=2;	
+		optional int32								if_first_send	=3;
+	}
+	
+	message get_world_level 
+	{
+
+	}
+
+	message send_world_level
+	{
+	   optional int32                              server_level  =1; //服务器的等级
+	}
+	
+	message cross_server_harry_one_msg
+	{
+		optional int32		server_id 		   = 1;
+		optional int32		server_money       = 2;
+		optional int32		special_money 	   = 3;	
+		optional int32		first_player_guidA = 4;
+		optional int32		first_player_guidB = 5;
+		optional int32		second_player_guidA = 6;
+		optional int32		second_player_guidB = 7;
+		optional int32		third_player_guidA = 8;
+		optional int32		third_player_guidB = 9;
+		optional string		first_player_name	= 10;	
+	}
+	
+	message cross_server_harry_all_msg
+	{
+		repeated cross_server_harry_one_msg	all_harry_msg = 1;
+	}
+	
+	message give_server_item_msg 
+	{
+
+	}
+	
+	message role_harry_msg_info_one
+	{
+		optional int32		harry_idex		= 1;
+		optional int32		harry_value		= 2;
+	}
+	
+	message role_harry_msg_info_all
+	{
+		repeated int32		harry_value_arr	= 1;
+	}
+	
+	message transfer_to_harry_map
+	{
+		optional int32		server_id		= 1;
+	}
+	
+	message random_array
+	{
+		repeated int32		random_num	= 1;
+	}
+	
+
+	//cross_server_world_boss
+	message cross_server_world_boss_map_transfer
+	{
+		optional int32		boss_map_type		= 1;//传送到哪个boss地图的索引
+	}
+	
+	message get_cross_boss_show_info
+	{
+	}
+
+	message set_cross_boss_show_info
+	{
+		repeated string	player_name				= 2;	//玩家名字
+		repeated string	legion_name				= 3;	//军团名
+		repeated int32	boss_residue_num		= 4;	//boss剩余数量
+	}
+
+	message get_cross_boss_damage_list
+	{
+	}
+
+	message cross_boss_rank_info
+	{
+		optional int32		legion_value		= 1;	//军团排名
+		optional string		legion_name			= 2;	//军团名
+		optional string		legion_damage		= 3;	//军团伤害
+	}
+
+	message cross_boss_legion_rank_list
+	{	
+		repeated cross_boss_rank_info rank_info	= 1;	//军团伤害列表
+		optional int32		legion_rank			= 2;	//自己的军团排名
+		optional string		legion_damage		= 3;	//自己的军团伤害
+		optional int32		boss_tmp_id			= 4;	//需要显示的bossid
+	}
+	
+	message cross_boss_legion_rank_list_all
+	{	
+		repeated cross_boss_legion_rank_list rank_info_all	= 1;	//军团伤害列表
+	}
+	
+	message cross_boss_is_dead
+	{
+		repeated int32		boss_tmp_id			= 1;	//boss在地图位置的索引
+		repeated int32		boss_is_dead		= 2;	//boss是否死亡
+	}
+	
+	message send_boss_god_begin_time
+	{
+		optional int32		boss_id				= 2;	//bossid
+	}
+	
+	message get_boss_god_time
+	{
+		optional int32		boss_id				= 1;	//bossid
+	}
+	
+	message send_boss_god_time
+	{
+		optional int32		god_time			= 1;	//boss无敌技能的开始时间
+		optional int32		boss_id				= 2;	//bossid
+	}
+	
+	message get_map_boss_is_dead
+	{
+		optional int32		map_template_id		= 1;	//地图模板id
+	}
+	
+	message oracle_trial_customs_info
+	{
+		optional int32		customs_state			= 1;	//关卡状态
+		optional int32		reward_stat				= 2;	//奖励领取状态
+	}
+	message oracle_trial_info_all
+	{
+		optional int32		hight_rank				= 1;	//最高通关关卡
+		optional int32		max_tier				= 2;	//当前开放最大关卡
+		optional int32		max_commping			= 3;	//每日最大扫荡次数
+		repeated oracle_trial_customs_info all_info = 4;	//所有关卡信息
+		optional bool		show_prompt				= 5;	//是否显示红点
+	}
+	
+	message send_oracle_trial_commpingup
+	{
+	}
+	
+	message oracle_trial_commpingup_end
+	{
+		optional int32		error_index				= 1;	//扫荡结果提示	
+	}
+	
+	message get_oracle_trial_customs_award
+	{
+		optional int32		tier_num				= 1;	//想要领取奖励的层数
+		optional int32		award_num				= 2;	//想要领取奖励奖励索引
+	}
+	message send_oracle_trial_customs_award_end
+	{
+		optional int32		error_index				= 1;	//领取奖励结果提示	
+	}
+	
+	message get_oracle_trial_rank
+	{
+	}
+	
+	message send_oracle_trial_funben_over_info
+	{
+		optional int32		map_id				= 1;	//地图id
+		optional int32		old_statr			= 2;	//通关前该地图的状态
+		optional int32		new_statr			= 3;	//通关后该地图的状态
+	}
+
+	message send_server_name
+	{
+	   optional bool		is_self_server		= 1;	//	是否是自己的服务器
+	   optional string		server_name			= 2;	//	服务器名字
+	}
+	
+	message send_transfer_new_map_error
+	{
+	}
+	
+	message boss_damage_list_item
+	{
+		optional string		role_name			= 1;	// 名字
+		optional int32		role_guid_a			= 2;
+		optional int32		role_guid_b			= 3;
+		optional string		damage_value		= 4;	// 伤害
+		optional int32		damage_rate			= 5;	// 比例
+		optional int32		is_team				= 6;
+		optional int32		legion_guid_a		= 7;
+		optional int32		legion_guid_b		= 8;
+
+	}
+	message send_boss_damage_list_msg
+	{
+		repeated boss_damage_list_item ranking_list = 1;
+		repeated boss_damage_list_item helper_list	= 2;
+		optional string		my_damage				= 3;
+		optional int32		damage_rate				= 4;
+		optional int32		is_end					= 5;
+		optional int32		boss_template_id		= 6;
+	}
+
+	message send_leave_boss_damage_list_msg
+	{
+	}
+
+	message help_succes_list_item
+	{
+		optional string		role_name			= 1;	// 名字
+		optional int32		role_guid_a			= 2;
+		optional int32		role_guid_b			= 3;
+		optional int32		template_id			= 4;
+	}
+	message send_help_success_msg
+	{
+		repeated help_succes_list_item help_list = 1;
+		optional int32		helper_reward		 = 2;
+		optional int32		my_reward			 = 3;
+	}
+
+	message send_the_attacker_info
+	{
+		optional string		role_name			= 1;	// 名字
+		optional int32		role_guid_a			= 2;
+		optional int32		role_guid_b			= 3;
+		optional int32		template_id			= 4;
+		optional int32		role_level			= 5;
+		optional bool 		is_npc				= 6;
+	}
+	
+	message buy_simple_boss_num
+	{
+		optional int32		map_type			= 1;
+	}
+	
+	message buy_simple_boss_num_end
+	{
+		optional int32		error_index			= 1;
+	}
+	
+	message is_can_transfer_other_line
+	{
+		optional int32		transfer_state		= 1;
+	}
+	
+	message legion_auction_item_show
+	{
+		repeated legion_aunction_item_one	item_all	= 1;
+	}
+	
+	message legion_aunction_item_one
+	{
+		optional int32		item_temp_id		= 1;
+		optional int32		item_num			= 2;
+		optional int32		item_lock			= 3;
+	}
+	
+	message pk_king_player_info
+	{
+		optional int32            	    kill_num				= 1;	//当前击杀总数
+		optional int32					high_kill_num			= 2;	//最高连杀数
+		optional int32					cur_rank				= 3;	//当前排名
+		optional int32					cur_score				= 4;	//当前积分
+		optional int32					is_dead					= 5;	//是否死亡
+	}
+	
+	message pk_king_kill_num_info
+	{	
+		optional string					role_name				= 1;	//名称
+		optional int32            	    kill_num				= 2;	//连杀数
+		optional int32            	    class_type				= 3;	//职业类型
+	}
+	
+	message pk_king_map_state_info
+	{	
+		optional int32					map_time				= 1;	//地图阶段
+		optional int32            	    map_time_remaing		= 2;	//地图阶段剩余时间
+		optional int32					map_time_state			= 3;	//地图阶段状态
+		optional int32            	    map_time_state_remaing	= 4;	//地图阶段状态剩余时间
+	}
+	
+	message pk_king_map_game_over
+	{	
+		optional int32					end_type				= 1;	//结束类型
+	}
+	
+	message pk_king_rank_list
+	{	
+		repeated pk_king_rank_info		rank_list				= 1;	//排名列表
+		optional int32					rank_num				= 2;	//数量
+	}
+	
+	message pk_king_rank_info
+	{	
+		optional int32					guid_A					= 1;	
+		optional int32					guid_B					= 2;	
+		optional string					role_name				= 3;	//名称
+		optional int32					score_num				= 4;	//分数
+		optional int32					rank_num				= 5;	//排名
+		optional int32					is_sur					= 6;	//幸存者	
+	}
+	
+	message send_need_break_line_login
+	{	
+		optional int32					map_template_id			= 1;	//地图Id
+		optional int32					active_type				= 2;	//活动类型
+	}
+	message send_need_break_line_login_end
+	{	
+		optional bool					is_login				= 1;	//是否重连
+		optional int32					active_type				= 2;	//活动类型
+	}
+	message create_pk_end_time
+	{	
+		optional int32					begin_time				= 1;	//开始时间
+		optional int32					end_time				= 2;	//结束时间
+		optional int32					end_str_type			= 3;	//结束显示文字类型
+	}	
+
+	message send_to_server_special_msg
+	{
+		optional string					special_msg				= 1;
+	}
+	
+	message pk_king_target_list_msg
+	{
+		repeated int32					guid_a_list		= 1;
+		repeated int32					guid_b_list		= 2;
+		optional int32					data_num		= 3;
+	}
+	
+	message server_act_is_open_end
+	{
+		optional bool					is_hiden				= 1;
+	}
+	
+	message element_war_send_upgrade_notify
+	{
+		optional int32 upgrade_id			= 1;
+	}
+	
+	message element_war_send_sign_up
+	{
+	}
+	
+	message element_war_send_sign_up_end
+	{
+		optional int32 ret_index      		= 1;
+		optional int32 guid_a				= 2;
+		optional int32 guid_b				= 3;
+	}
+	
+	message element_war_send_sign_up_team_ready
+	{
+		optional int32 is_ready				= 1;
+	}
+	
+	message element_war_send_sign_up_team_ready_end
+	{
+		optional int32 ret_index			= 1;
+		optional int32 guid_a				= 2;
+		optional int32 guid_b				= 3;
+	}
+	
+	message element_war_send_close_sign_up
+	{
+	}
+
+	message element_war_send_close_sign_up_end
+	{
+		optional int32 ret_index			= 1;
+		optional int32 guid_a				= 2;
+		optional int32 guid_b				= 3;
+	}
+	
+	message element_match_info
+	{
+		optional int32 	guid_a				= 1;
+		optional int32 	guid_b				= 2;
+		optional string	role_name			= 3;
+		optional bool	is_robot			= 4;
+		optional int32	template_id			= 5;
+		optional int32	score_num			= 6;
+		optional int32	vip_level			= 7;
+	}
+	
+	message element_war_send_match_success_msg
+	{
+		repeated element_match_info my_team_info			= 1;
+		repeated element_match_info other_team_info			= 2;
+	}
+	
+	message element_war_role_info
+	{
+		repeated int32 	info_data			= 1;
+		optional int32	max_index			= 2;
+		optional int32	cross_result		= 3;
+		optional int32	last_score			= 4;
+		optional int32	is_online			= 5;
+		optional bool	is_sign				= 6;
+	}
+
+	message element_war_map_role_info
+	{
+		optional int32	cur_score_num		= 1;
+		optional int32	team_score_num		= 2;
+		optional int32	team_index			= 3;
+		optional int32	kill_monster		= 4;
+		optional int32	kill_player			= 5;
+	}
+	
+	message element_war_boss_info
+	{
+		optional int32	boss_id				= 1;	
+		optional int32	pos_x				= 2;	
+		optional int32	pos_y				= 3;	
+		optional int32	pos_z				= 4;	
+	}
+	
+
+	message element_war_map_info
+	{
+		optional int32	first_score_num		= 1;
+		optional int32	secord_score_num	= 2;
+		optional int32	map_state			= 3;
+		optional element_war_boss_info	first_boss		= 4;
+		optional element_war_boss_info	secord_boss		= 5;
+		optional element_war_boss_info	target_boss		= 6;
+		repeated int32 	buff_have_team		= 7;
+		repeated string buff_have_name		= 8;
+	}
+	
+	message element_war_map_end_role_info
+	{
+		optional string	role_name			= 1;	//名称
+		optional int32	cur_element_score	= 2;	//当前段位分数
+		optional int32	cur_rank			= 3;	//当前在队伍中排名
+		optional int32	add_score			= 4;	//积分奖励	
+		optional int32	score_num			= 5;	//积分贡献
+		optional bool	is_escape			= 6;	//是否逃跑
+		optional bool	is_kill_boss		= 7;	//是否击杀boss
+		optional int32	team_index			= 8;	//队伍索引
+	}
+	
+	message element_war_map_end_info
+	{
+		repeated element_war_map_end_role_info	first_team		= 1;
+		repeated element_war_map_end_role_info	secord_team		= 2;
+		optional bool	is_win									= 3;
+	}
+	
+	message element_war_send_boss_be_attack
+	{
+		optional int32	pos_x				= 1;	//x轴坐标
+		optional int32	pos_y				= 2;	//y轴坐标
+		optional int32	pos_z				= 3;	//z轴坐标
+		optional bool	is_open				= 4;	//是否创建
+		optional string attack_name			= 5;	//攻击者名称
+		optional int32 	attack_class		= 6;	//攻击者职业
+		optional int32 	attack_level		= 7;	//攻击者等级
+	}
+	
+	message element_war_get_mission_reward
+	{	
+		optional int32	mission_index		= 1;	//任务类型
+	}
+	
+	message element_war_get_mission_reward_end
+	{
+		optional int32	ret_index			= 1;	//结果类型
+	}
+	
+	message element_war_request_role_info
+	{
+	
+	}
+
+	message element_war_buy_ticket
+	{
+	
+	}
+
+	message element_war_buy_ticket_end
+	{
+		optional int32	ret_index			= 1;	//结果类型
+	}
+	
+	message element_war_send_create_ready_ui
+	{
+	
+	}
+	
+	message element_war_create_boss_dead
+	{
+		optional int32	class_type			= 1;	//角色职业
+		optional string	role_name			= 2;	//角色名称
+		optional int32	string_id			= 3;	//文字id
+		optional int32	boss_id				= 4;	//boss_id
+	}
+	
+	
+	message boss_rank_item
+	{
+		optional string		role_name			= 1;	// 名字
+		optional int32		role_guid_a			= 2;
+		optional int32		role_guid_b			= 3;
+		optional string		damage_value		= 4;	// 伤害
+		optional int32      rank                = 5;
+		
+	}
+	message boss_result_rank_list_end
+	{
+		repeated boss_rank_item top_list = 1;
+		optional int32   top_num         = 2;
+		optional boss_rank_item my_rank	 = 3;
+		optional int32	boss_template_id = 4;
+	}
+	message element_map_rank_role_info
+	{
+		optional string role_name 		 = 1;
+		optional int32  score_num        = 2;
+		optional int32	team_index		 = 3;
+		optional int32	guid_a			 = 4;
+		optional int32	guid_b			 = 5;
+	}
+	message element_map_rank_info
+	{
+		repeated element_map_rank_role_info rank_info  = 1;
+	}
+	
+	message map_target_show_info
+	{
+		optional int32	guid_a			= 1;
+		optional int32	guid_b			= 2;
+		optional int32	image_index		= 3;
+	}
+	
+	message map_target_show_info_list
+	{
+		repeated map_target_show_info info_list = 1;
+	}
+	
+	message get_map_target_show_info_list
+	{
+	}
+	
+	message refresh_lucky_card_info
+	{
+		optional int32 activity_guid	= 1;
+		optional int32 state_info		= 2;
+		optional int32 is_have_free		= 3;
+		optional int32 end_item_id		= 4;
+		optional int32 lucky_card_info	= 5;
+	}
+	
+	message refresh_lucky_card
+	{
+		optional int32 card_index		= 1;
+	}
+	
+	message lucky_card_operate
+	{
+		optional int32 touch_index		= 1;
+		optional int32 is_jump			= 2;
+	}
+	
+	message lucky_card_operate_end
+	{
+		optional int32 error_index		= 1;
+	}
+	
+	message get_element_competition
+	{
+	}
+	
+	message get_competition_lv_reward
+	{
+		optional int32 manual_id = 1;
+		optional int32 manual_type = 2;
+	}
+	message get_competition_lv_reward_end
+	{
+		repeated int32 manual_id_list = 1;
+		repeated int32 manual_type_list = 2;
+		optional int32 get_type = 3;
+	}
+	
+	message get_competition_lv_reward_all
+	{
+	}
+	
+	message buy_competition_lv
+	{
+		optional int32 level = 1;
+	}
+	
+	message buy_competition_lv_end
+	{
+		optional int32 level = 1;
+		optional int32 cur_exp = 2;
+	}
+	
+	message buy_speical_manual
+	{	
+		optional int32 manual_type = 1;
+	}
+	
+	message buy_speical_manual_end
+	{
+		optional int32 is_buy = 1;
+		optional int32 manual_type = 2;
+	}
+	
+	message sync_role_competition
+	{
+		optional int32 is_buy = 1;
+		optional int32 season = 2;
+		optional int32 buy_manual_type = 3;
+		optional int32 competition_begin_time = 4;
+		optional int32 competition_end_time = 5;
+		optional int32 level = 6;
+		optional int32 cur_exp = 7;
+		repeated int32 normal_reward = 8;
+		repeated int32 special_reward = 9;
+		optional int32 cur_state = 10;
+		optional int32 world_level = 11;
+	}
+
+	message send_new_server_treasure_finish
+	{
+	
+	}
+	
+	// 传送到地图
+	message transfer_attack_city_map
+	{
+	
+	}
+	
+	// 获取军团信息
+	message get_attack_city_info
+	{
+		optional int32 	guid_a 			= 1;	// GuidA
+		optional int32 	guid_b 			= 2;	// GuidB
+	}
+	
+	// 军团信息
+	message attack_city_info_level_info
+	{
+		optional int32 	guid_a 			= 1;	// GuidA
+		optional int32 	guid_b 			= 2;	// GuidB
+		optional string legion_name 	= 3;	// 军团名称
+		optional int32  group_level		= 4;	// 军团排名
+	}
+	
+	// 军团信息列表
+	message attack_city_info_list
+	{
+		optional int32 		legion_level	 				= 1;	// 军团排名等级
+		optional int32 		tem_level	 					= 2;	// 军团排名等级
+		optional int32 		gs_rank			 				= 3;	// 军团战力排名
+		optional int32 		is_have_rank	 				= 4;	// 是否有排名记录
+		optional string 	win_num_legion_name	 			= 5;	// 连胜军团
+		optional int32 		win_num				 			= 6;	// 连胜次数
+		repeated attack_city_info_level_info list_info 		= 7;
+		optional int32		is_in_game_time					= 8;
+	}
+	
+	
+	// 获取战况列表
+	message get_attack_city_rank_list
+	{
+	
+	}
+	
+	// 地图中获取战况列表
+	message get_attack_city_map_rank_list
+	{
+	
+	}
+	
+	// 战况排名信息
+	message attack_city_rank_info
+	{
+		optional int32 	guid_a 			= 1;	// GuidA
+		optional int32 	guid_b 			= 2;	// GuidB
+		optional string role_name 		= 3;	// 玩家名称
+		optional int32 	role_source 	= 4;	// 玩家分数
+		optional int32 	kill_player 	= 5;	// 击杀玩家数量
+		optional int32 	kill_statue 	= 6;	// 摧毁雕像数量
+		optional int32 	kill_door 		= 7;	// 摧毁城门数量
+		optional int32 	repair_statue 	= 8;	// 修复雕像数量
+		optional int32 	kill_boss 		= 9;	// 击杀boss数量
+		optional int32 	show_index		= 10;	// 显示索引
+	}
+	
+	// 战况军团信息
+	message attack_city_rank_info_list
+	{
+		optional string 	legion_name 			= 1;	// 军团名称
+		optional int32 		legion_source			= 2;	// 军团分数
+		repeated attack_city_rank_info info_list 	= 3; 	// 玩家排名数据
+		optional int32		guid_a					= 4;	// 军团GUidA
+		optional int32		guid_b					= 5;	// 军团GUidB
+		optional int32		mode_index				= 6;	// 军团GUidB
+		optional int32		show_index				= 7;	// 显示索引
+	}
+	
+	// 战况军团排名列表
+	message get_attack_city_rank_list_end
+	{
+		repeated attack_city_rank_info_list rank_list = 1;
+	}
+	
+	// 地图信息列表
+	message attack_city_map_legion_info
+	{
+		optional int32 	server_id 		= 1;	// 服务器id
+		optional string legion_name 	= 2;	// 军团名称
+		optional string legion_damage 	= 3;	// 军团伤害
+	}
+	
+	// 地图信息列表
+	message send_attack_city_map_legion_info
+	{
+		repeated attack_city_map_legion_info info_list 	= 1;	// 军团信息列表
+		optional int32 	map_state 						= 2;	// 地图状态
+		optional int32 	next_refresh_time	 			= 3;	// 地图刷新时间
+		optional int32 	guid_a	 						= 4;	// 防守军团guid
+		optional int32 	guid_b		 					= 5;	// 防守军团guid
+		
+	}
+	
+	// 玩家操作
+	message attack_city_operate
+	{
+		optional int32	operate_type			= 1; // 操作类型
+		optional uint64	prop_npc_guid			= 2; // NPC的GUID
+	}
+	
+	// 操作反馈
+	message attack_city_operate_end
+	{
+		optional int32	result					= 1; // 操作结果
+		optional uint64	prop_npc_guid			= 2; // 道具NPC的GUID
+		optional int32	npc_id					= 3; // NPC模板ID
+	}
+
+	// NPC信息
+	message attack_city_npc_info
+	{
+		optional int32		npc_type				= 1; // NPC类型.
+		optional int32		npc_id					= 2; // NPCid
+		optional int32		cur_life				= 3; // 血量百分比
+		optional int32		buff_pile				= 4; // buff层数	
+		optional int32		guid_a					= 5; // GuidA
+		optional int32		guid_b					= 6; // GuidB
+	}
+
+	// NPC信息列表
+	message attack_city_npc_list
+	{
+		repeated attack_city_npc_info	info_list	= 1; // NPC列表
+	}
+	
+	// 攻守转换
+	message attack_city_camp_cut
+	{
+		repeated string		attack_name		= 1; // 进攻方名称.
+		optional string		guard_name		= 2; // 防守方名称
+	}
+
+	// 传送到复活点 
+	message transfer_to_bron_pos
+	{
+		
+	}
+	
+	// 玩家信息
+	message	attack_city_map_end_player_info
+	{
+		optional int32 	guid_a 			= 1;	// GuidA
+		optional int32 	guid_b 			= 2;	// GuidB
+		optional string role_name 		= 3;	// 玩家名称
+		optional int32 	role_source 	= 4;	// 玩家分数
+		optional int32 	role_group		= 5;	// 玩家职业
+		optional int32 	kill_1 			= 6;	// 击杀玩家数量
+		optional int32 	kill_2 			= 7;	// 击杀玩家数量
+		optional int32 	kill_3 			= 8;	// 击杀玩家数量
+		optional int32 	kill_statue 	= 9;	// 摧毁雕像数量
+		optional int32 	kill_door 		= 10;	// 摧毁城门数量
+		optional int32 	repair_statue 	= 11;	// 修复雕像数量
+	}
+	// 物品信息
+	message attack_city_map_end_item_info
+	{
+		optional int32 	item_id 			= 1;	// 物品id
+		optional int32 	item_num			= 2;	// 物品数量
+		optional int32 	show_type			= 3;	// 展示类型（连胜奖励、终结奖励）	
+	}
+	
+	message attack_city_map_end_info
+	{
+		repeated attack_city_map_end_player_info 	play_list	= 1;
+		repeated attack_city_map_end_item_info 		item_list	= 2;
+		optional int32 	role_source  	= 3;
+		optional int32 	role_rank  		= 4;
+	}
+
+	message attack_legion_call
+	{
+	}
+	
+	
+	message reset_camera
+	{
+	}
+		
+	message attack_transfer_info
+	{
+		optional int32	result					= 1; // 操作结果
+	}
+
+	message end_attack_transfer_info
+	{
+	}
+	// NPC状态改变发送信息
+	message	attack_city_npc_state_change_info
+	{
+		optional string		notice_content 			= 1; // 提示文本
+	}
+	
+	
+	message	time_feed_back_operation
+	{
+		optional int32	operation_type					= 1; // 操作结果
+		optional int32	main_tem_id						= 2; // 主表Id
+		optional int32	sub_tem_id						= 3; // 子表Id
+	}
+			
+	message	time_feed_back_operation_end
+	{
+		optional int32	result							= 1; // 操作结果
+	}
+		
+	message	send_time_feed_back_info
+	{
+		optional int32	template_id			= 1;	// 活动主表Id	
+		optional int32	sub_template_id		= 2;	// 活动主表Id	
+		optional int32	info_state			= 3;	// 活动状态
+		optional int32	get_time			= 4;	// 可领取奖励时间
+		optional int32	end_time			= 5;	// 活动结束时间
+		optional int32	money_type			= 6;	// 奖励货币Id
+		optional int32	money_num			= 7;	// 奖励货币数量
+	}
+	
+	message	send_time_feed_back_info_list
+	{
+		repeated	send_time_feed_back_info info_list	= 1; // 数据列表
+	}
+	
+	
+	message	time_limit_gift_operation
+	{
+		optional int32	operation_type					= 1; // 操作结果
+		optional int32	template_id						= 2; // 表Id
+	}
+			
+	message	time_limit_gift_operation_end
+	{
+		optional int32	result							= 1; // 操作结果
+		optional int32	template_id						= 2; // 操作表格
+	}
+		
+	message	time_limit_gift_info
+	{
+		optional int32	template_id			= 1;	// 表Id	
+		optional int32	state_info			= 2;	// 进行状态	
+		optional int32	begin_time			= 3;	// 触发开始时间
+		optional int32	end_time			= 4;	// 结束时间
+		optional int32	trigger_num			= 5;	// 触发次数
+		optional int32	buy_num				= 6;	// 购买次数
+	}
+	
+	message	update_time_limit_gift_info
+	{
+		repeated	time_limit_gift_info info_list	= 1; // 数据列表
+	}
+
+	message	initiative_time_limit_gift
+	{
+		optional int32	template_id			= 1; // 表格ID
+	}
+
+	message	limit_time_notice_info
+	{
+		optional int32	template_id			= 1; // 表格ID
+		optional int32	weight_num			= 2; // 权重
+	}
+
+	message	limit_time_notice_info_list
+	{
+		repeated limit_time_notice_info	info_list	= 1; // 信息数组
+		repeated int32	black_show_notice			= 2; // 不显示数组
+	}
+	
+	message	fuben_vip_mopping
+	{
+		optional int32	fuben_template_id	= 1; // 地图id
+		optional int32	settlement			= 2; // 评级
+	}
+	
+	message	fuben_vip_mopping_end
+	{
+		optional int32	result	= 1;	
+	}
+	message	kill_boss
+	{	
+	}
+	message	kill_boss_end
+	{	
+		optional int32	result	= 1;
+	}
+	
+	message	map_search
+	{	
+		optional int32	multiplier	= 1;		
+	}
+	message	map_search_end
+	{	
+		optional int32	result	= 1;
+	}
+	message	upgrade_searche_level
+	{	
+		optional int32	multiplier	= 1;		
+	}
+	message	upgrade_searche_level_end
+	{	
+		optional int32	result	= 1;
+	}
+
+}
+
+
+

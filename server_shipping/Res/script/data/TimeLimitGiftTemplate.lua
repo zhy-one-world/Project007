@@ -1,0 +1,8 @@
+local data = { 
+    [166000001] = {["TriggerTime"]= 0,["MaxTriggerNum"]= 1,["MaxBuyTime"]= 1,["LifeTime"]= 21600,["ChangeTime"]= 3600,["TextImage"] = {91293759,91293757,90097513,91293747,90097503},["Reward"] = {164000700},["ConsumeType"]= 1,["MoneyList"] = {3,240},["TriggerType"]= 1,["NeedLevel"] = {},["NeedMission"] = {},["MapWinList"] = {71211008,71211032,71211056,71211080},["FuncLock"] = '',["GradeLevel"] = 0,["SpecialTriggerArray"] = {},},
+    [166000002] = {["TriggerTime"]= 0,["MaxTriggerNum"]= 1,["MaxBuyTime"]= 1,["LifeTime"]= 86400,["ChangeTime"]= 3600,["TextImage"] = {91293649,91293646,90097514,90097507,90097508},["Reward"] = {164000701},["ConsumeType"]= 1,["MoneyList"] = {3,800},["TriggerType"]= 0,["NeedLevel"] = {100,150},["NeedMission"] = {},["MapWinList"] = {},["FuncLock"] = '',["GradeLevel"] = 0,["SpecialTriggerArray"] = {},},
+    [166000003] = {["TriggerTime"]= 0,["MaxTriggerNum"]= 1,["MaxBuyTime"]= 1,["LifeTime"]= 432000,["ChangeTime"]= 86400,["TextImage"] = {91293758,91293742,90097515,91293735,90097510},["Reward"] = {164000702},["ConsumeType"]= 1,["MoneyList"] = {3,1500},["TriggerType"]= 1,["NeedLevel"] = {},["NeedMission"] = {},["MapWinList"] = {71020012},["FuncLock"] = '',["GradeLevel"] = 0,["SpecialTriggerArray"] = {},},
+    [166000004] = {["TriggerTime"]= 0,["MaxTriggerNum"]= 1,["MaxBuyTime"]= 1,["LifeTime"]= 432000,["ChangeTime"]= 86400,["TextImage"] = {91293649,91293645,90097516,90097511,90097512},["Reward"] = {164000703},["ConsumeType"]= 1,["MoneyList"] = {3,3000},["TriggerType"]= 0,["NeedLevel"] = {200,240},["NeedMission"] = {},["MapWinList"] = {},["FuncLock"] = '',["GradeLevel"] = 0,["SpecialTriggerArray"] = {},},
+
+ }
+return data

@@ -10,7 +10,7 @@
 #include "game_log.hpp"
 #include "logic_logger.h"
 
-namespace hld
+namespace faith
 {
 
 	// private--------------------------------------------------------

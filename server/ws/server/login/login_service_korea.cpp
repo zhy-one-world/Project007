@@ -20,7 +20,7 @@ purpose:
 #include <time.hpp>
 #include "server_log.hpp"
 #include "server_log_msg.hpp"
-namespace hld
+namespace faith
 {
 	const xstring sdk_password = "googlesdk";		// πÃ∂®√‹¬Î
 
@@ -65,7 +65,7 @@ namespace hld
 		{
 			return;
 		}
-		//CONSOLE_INFO(" sdk : dp to ls login end : state = " << pdata->e_result << time_helper::get_current_time() << " , " << hld::utility::get_tick_count() );
+		//CONSOLE_INFO(" sdk : dp to ls login end : state = " << pdata->e_result << time_helper::get_current_time() << " , " << faith::utility::get_tick_count() );
 
 		ls2fep_client_login request;
 		request.eResult = pdata->e_result;
@@ -89,7 +89,7 @@ namespace hld
 
 		//CONSOLE_INFO(" on_login_result_handle: " << http_error_code << ","
 		//	<< http_error_info << "," << http_result << "," << time_helper::get_current_time()
-		//	<< " , " << hld::utility::get_tick_count());
+		//	<< " , " << faith::utility::get_tick_count());
 		s_client_uid client_uid(uid);
 		http_access_mgr::get_instance().remove_http(client_uid);
 		if (http_result.size() > 0)
@@ -152,8 +152,8 @@ namespace hld
 				}
 
 				xstring account = value["userCode"].asString();
-				int64 ban_role_array[hld::max_character_num];
-				int64 ban_chat_array[hld::max_character_num];
+				int64 ban_role_array[faith::max_character_num];
+				int64 ban_chat_array[faith::max_character_num];
 				memset(ban_role_array, 0, sizeof(ban_role_array));
 				memset(ban_chat_array, 0, sizeof(ban_chat_array));
 				//Json::Value& ban_role = data_value["banRoles"];
@@ -161,7 +161,7 @@ namespace hld
 				// ºÏ≤Èµ«¬Ω◊¥Ã¨
 				if (account.size() > 0)
 				{
-					//CONSOLE_INFO("sdk read json data : " << json_data.c_str() << " ," << time_helper::get_current_time() << " , " << hld::utility::get_tick_count());
+					//CONSOLE_INFO("sdk read json data : " << json_data.c_str() << " ," << time_helper::get_current_time() << " , " << faith::utility::get_tick_count());
 					// ¥Ê≈Ã
 					save_account(account, json_data, client_uid, ban_role_array, ban_chat_array);
 					return true;
@@ -246,7 +246,7 @@ namespace hld
 
 	void login_service_korea::ls2dp_save_server_log(const xstring & log_sql_name, const xstring & sql_param_string)
 	{
-		hld::server2dp_save_log req;
+		faith::server2dp_save_log req;
 		int32 cpy_size = log_sql_name.size() > max_name_size ? max_name_size : log_sql_name.size();
 		memcpy(req.sql_table_name, log_sql_name.c_str(), cpy_size);
 		cpy_size = sql_param_string.size() > max_log_char_num ? max_log_char_num : sql_param_string.size();

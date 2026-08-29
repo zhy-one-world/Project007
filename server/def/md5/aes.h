@@ -17,7 +17,7 @@
 #include "logic/type_def.hpp"
 using namespace std;
 
-namespace hld {
+namespace faith {
 	class AES
 	{
 	public:

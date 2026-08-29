@@ -26,7 +26,7 @@
 #include "internal/core.hpp"
 #include "internal/char_msg.hpp"
 
-namespace hld
+namespace faith
 {
 	map_object::map_object()
 	{
@@ -477,17 +477,17 @@ namespace hld
 		float passed_time = 0.f;
 		switch (m_map_state)
 		{
-		case hld::e_map_state_join:
-		case hld::e_map_state_game:
+		case faith::e_map_state_join:
+		case faith::e_map_state_game:
 			break;
-		case hld::e_map_state_in_game:
+		case faith::e_map_state_in_game:
 		{
 			float left_time = get_time_left();
 			passed_time = map_template_ptr->TimeRequire - left_time;
 			break;
 		}
-		case hld::e_map_state_over:
-		case hld::e_map_state_return_data:
+		case faith::e_map_state_over:
+		case faith::e_map_state_return_data:
 		{
 			passed_time = map_template_ptr->TimeRequire;
 			break;
@@ -539,7 +539,7 @@ namespace hld
 		{
 			return false;
 		}
-		if (map_temp_ptr->Type == hld::e_map_type_big_map)
+		if (map_temp_ptr->Type == faith::e_map_type_big_map)
 		{
 			player_ref.set_main_line_id(get_line_id());
 		}
@@ -626,11 +626,11 @@ namespace hld
 		{
 			int32 map_type = get_map_type();
 			int32 map_sub_type = m_map_template_ptr != nullptr ? m_map_template_ptr->SubType : e_map_type_ui;
-			server_log::map_change_log(player_ref.get_third_info(), player_ref.get_unit_info_inst(), player_ref.get_login_type(), get_map_template_id(), map_type, map_sub_type, hld::e_map_change_enter, m_map_template_ptr->Difficulty);
+			server_log::map_change_log(player_ref.get_third_info(), player_ref.get_unit_info_inst(), player_ref.get_login_type(), get_map_template_id(), map_type, map_sub_type, faith::e_map_change_enter, m_map_template_ptr->Difficulty);
 
 			set_log_var(log_head);
 			player_ref.get_log_common_head_info(log_head);
-			server_log::serverMapChange(log_head, get_map_template_id(), map_type, map_sub_type, hld::e_map_change_enter, m_map_template_ptr->Difficulty);
+			server_log::serverMapChange(log_head, get_map_template_id(), map_type, map_sub_type, faith::e_map_change_enter, m_map_template_ptr->Difficulty);
 		}
 		if (m_first_player_join_time <= 0)
 		{
@@ -653,11 +653,11 @@ namespace hld
 		{
 			int32 map_type = get_map_type();
 			int32 map_sub_type = m_map_template_ptr != nullptr ? m_map_template_ptr->SubType : e_map_type_ui;
-			server_log::map_change_log(player_ref.get_third_info(), player_ref.get_unit_info_inst(), player_ref.get_login_type(), get_map_template_id(), map_type, map_sub_type, hld::e_map_change_leave, m_map_template_ptr->Difficulty);
+			server_log::map_change_log(player_ref.get_third_info(), player_ref.get_unit_info_inst(), player_ref.get_login_type(), get_map_template_id(), map_type, map_sub_type, faith::e_map_change_leave, m_map_template_ptr->Difficulty);
 
 			set_log_var(log_head);
 			player_ref.get_log_common_head_info(log_head);
-			server_log::serverMapChange(log_head, get_map_template_id(), map_type, map_sub_type, hld::e_map_change_leave, m_map_template_ptr->Difficulty);
+			server_log::serverMapChange(log_head, get_map_template_id(), map_type, map_sub_type, faith::e_map_change_leave, m_map_template_ptr->Difficulty);
 		}
 	}
 	

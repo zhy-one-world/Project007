@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -173,7 +173,7 @@ void protobuf_AddDesc_first_5ftime_5fdo_2eproto() {
     "ld.first_time_do_proto.first_do_record\032+"
     "\n\030add_first_time_do_record\022\017\n\007do_type\030\001 "
     "\001(\005\032U\n\031sync_first_time_do_record\0228\n\006reco"
-    "rd\030\001 \001(\0132(.hld.first_time_do_proto.first"
+    "rd\030\001 \001(\0132(.faith.first_time_do_proto.first"
     "_do_record", 330);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "first_time_do.proto", &protobuf_RegisterTypes);
@@ -492,7 +492,7 @@ bool first_time_do_proto_update_first_time_do_records::MergePartialFromCodedStre
         break;
       }
 
-      // repeated .hld.first_time_do_proto.first_do_record records = 2;
+      // repeated .faith.first_time_do_proto.first_do_record records = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -530,7 +530,7 @@ void first_time_do_proto_update_first_time_do_records::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->records_num(), output);
   }
 
-  // repeated .hld.first_time_do_proto.first_do_record records = 2;
+  // repeated .faith.first_time_do_proto.first_do_record records = 2;
   for (int i = 0; i < this->records_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->records(i), output);
@@ -549,7 +549,7 @@ void first_time_do_proto_update_first_time_do_records::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->records_num(), target);
   }
 
-  // repeated .hld.first_time_do_proto.first_do_record records = 2;
+  // repeated .faith.first_time_do_proto.first_do_record records = 2;
   for (int i = 0; i < this->records_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -575,7 +575,7 @@ int first_time_do_proto_update_first_time_do_records::ByteSize() const {
     }
 
   }
-  // repeated .hld.first_time_do_proto.first_do_record records = 2;
+  // repeated .faith.first_time_do_proto.first_do_record records = 2;
   total_size += 1 * this->records_size();
   for (int i = 0; i < this->records_size(); i++) {
     total_size +=
@@ -873,7 +873,7 @@ first_time_do_proto_sync_first_time_do_record::first_time_do_proto_sync_first_ti
 }
 
 void first_time_do_proto_sync_first_time_do_record::InitAsDefaultInstance() {
-  record_ = const_cast< ::hld::first_time_do_proto_first_do_record*>(&::hld::first_time_do_proto_first_do_record::default_instance());
+  record_ = const_cast< ::faith::first_time_do_proto_first_do_record*>(&::faith::first_time_do_proto_first_do_record::default_instance());
 }
 
 first_time_do_proto_sync_first_time_do_record::first_time_do_proto_sync_first_time_do_record(const first_time_do_proto_sync_first_time_do_record& from)
@@ -922,7 +922,7 @@ first_time_do_proto_sync_first_time_do_record* first_time_do_proto_sync_first_ti
 void first_time_do_proto_sync_first_time_do_record::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_record()) {
-      if (record_ != NULL) record_->::hld::first_time_do_proto_first_do_record::Clear();
+      if (record_ != NULL) record_->::faith::first_time_do_proto_first_do_record::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -935,7 +935,7 @@ bool first_time_do_proto_sync_first_time_do_record::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.first_time_do_proto.first_do_record record = 1;
+      // optional .faith.first_time_do_proto.first_do_record record = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -966,7 +966,7 @@ bool first_time_do_proto_sync_first_time_do_record::MergePartialFromCodedStream(
 
 void first_time_do_proto_sync_first_time_do_record::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.first_time_do_proto.first_do_record record = 1;
+  // optional .faith.first_time_do_proto.first_do_record record = 1;
   if (has_record()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->record(), output);
@@ -980,7 +980,7 @@ void first_time_do_proto_sync_first_time_do_record::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* first_time_do_proto_sync_first_time_do_record::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.first_time_do_proto.first_do_record record = 1;
+  // optional .faith.first_time_do_proto.first_do_record record = 1;
   if (has_record()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -998,7 +998,7 @@ int first_time_do_proto_sync_first_time_do_record::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.first_time_do_proto.first_do_record record = 1;
+    // optional .faith.first_time_do_proto.first_do_record record = 1;
     if (has_record()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -1033,7 +1033,7 @@ void first_time_do_proto_sync_first_time_do_record::MergeFrom(const first_time_d
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_record()) {
-      mutable_record()->::hld::first_time_do_proto_first_do_record::MergeFrom(from.record());
+      mutable_record()->::faith::first_time_do_proto_first_do_record::MergeFrom(from.record());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -1232,6 +1232,6 @@ void first_time_do_proto::Swap(first_time_do_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

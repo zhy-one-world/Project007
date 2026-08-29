@@ -10,7 +10,7 @@ purpose:
 #include "logic/type_def.hpp"
 #include "skill.h"
 
-namespace hld
+namespace faith
 {
     class unit;
     class skill_effect;

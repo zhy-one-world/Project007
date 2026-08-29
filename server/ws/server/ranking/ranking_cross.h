@@ -11,7 +11,7 @@ purpose: about arena system's arena_mgr
 
 #include "Logic/ranking_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class  ranking_cross
 	{

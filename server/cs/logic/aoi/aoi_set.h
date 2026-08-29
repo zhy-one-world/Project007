@@ -11,7 +11,7 @@ purpose:
 #include "aoi_tower.h"
 #include "logic/aoi_def.h"
 
-namespace hld
+namespace faith
 {
 	enum e_aoi_move_type;
 

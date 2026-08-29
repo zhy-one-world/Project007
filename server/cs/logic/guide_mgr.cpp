@@ -12,7 +12,7 @@
 #include "utility/init_unit.h"
 #include "utility/parse_msg.h"
 
-namespace hld
+namespace faith
 {
 	guide_mgr::guide_mgr()
 	{
@@ -23,7 +23,7 @@ namespace hld
 
 	void guide_mgr::clear_data()
 	{
-		for (int32 i = 0; i < hld::max_guide_record_num; i++)
+		for (int32 i = 0; i < faith::max_guide_record_num; i++)
 		{
 			m_record_info_list[i].clear_data();
 		}
@@ -73,10 +73,10 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_guide msg;
+			faith::cs2dp_proto::save_role_guide msg;
 			msg.set_role_guid(player_ref.get_unit_guid().server_64);
 			msg.set_unit_array_index(player_ref.get_array_index());
-			hld::cs2dp_proto::role_guide_db *db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_guide_db *db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return;
@@ -108,7 +108,7 @@ namespace hld
 		save_guide_record(record_info);
 	}
 
-	void guide_mgr::load_guide_record(const int32 record_num, const s_record_info record_info_list[hld::max_guide_record_num])
+	void guide_mgr::load_guide_record(const int32 record_num, const s_record_info record_info_list[faith::max_guide_record_num])
 	{
 		player& player_ref = unit_man::get_player(m_unit_index);
 		if (false == player_ref.is_valid())
@@ -130,7 +130,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::db_proto::load_role_guide_db msg;
+		faith::db_proto::load_role_guide_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -145,7 +145,7 @@ namespace hld
 		s_record_info *p_row = (s_record_info *)p_data;
 		for (int32 i = 0; i < msg.row_count(); i++)
 		{
-			hld::db_proto::load_role_guide_row db_row = msg.row_data(i);
+			faith::db_proto::load_role_guide_row db_row = msg.row_data(i);
 			p_row->guide_trigger_id = db_row.guide_trigger_id();
 			p_row->state = db_row.state();
 			p_row++;
@@ -156,9 +156,9 @@ namespace hld
 
 	}
 
-	void guide_mgr::load_guide_record_reset(const int32 record_num, const s_record_info record_info_list[hld::max_guide_record_num])
+	void guide_mgr::load_guide_record_reset(const int32 record_num, const s_record_info record_info_list[faith::max_guide_record_num])
 	{
-		if (record_num >= hld::max_guide_record_num)
+		if (record_num >= faith::max_guide_record_num)
 		{
 			return;
 		}
@@ -167,10 +167,10 @@ namespace hld
 			add_once_guide_recond(record_info_list[i]);
 		}
 
-		s_record_info add_record_info_arr[hld::max_guide_record_num];
+		s_record_info add_record_info_arr[faith::max_guide_record_num];
 		int32 add_record_info_num = 0;
 		get_add_guide_record(add_record_info_num, add_record_info_arr);
-		if (add_record_info_num >= hld::max_guide_record_num)
+		if (add_record_info_num >= faith::max_guide_record_num)
 		{
 			return;
 		}
@@ -189,7 +189,7 @@ namespace hld
 		}
 		check_guide();
 		character_proto_update_guide_record update_guide_record_msg;
-		for (int32 i = 0; i < m_record_num && i < hld::max_guide_record_num; ++i)
+		for (int32 i = 0; i < m_record_num && i < faith::max_guide_record_num; ++i)
 		{
 			character_proto_guide_record_one* record_one = update_guide_record_msg.add_record_list();
 			if (record_one == nullptr)
@@ -202,13 +202,13 @@ namespace hld
 		player_ref.send_message_to_self(&update_guide_record_msg, e_msgindex_s2c_update_guide_record);
 	}
 
-	void guide_mgr::get_add_guide_record(int32& add_record_info_num, s_record_info add_record_info_arr[hld::max_guide_record_num])
+	void guide_mgr::get_add_guide_record(int32& add_record_info_num, s_record_info add_record_info_arr[faith::max_guide_record_num])
 	{
 		for (int32 i = 0; i < m_record_num; i++)
 		{
 			int32 guide_trigger_template_id = m_record_info_list[i].guide_trigger_id / 100 * 100;
 			int32 record_state = m_record_info_list[i].state;
-			for (int32 j = 0; j < hld::guide_interval; j++)
+			for (int32 j = 0; j < faith::guide_interval; j++)
 			{
 				GuideTriggerTemplate* guide_trigger_template_ptr = GET_TEMPLATE(GuideTriggerTemplate, guide_trigger_template_id + j);
 				if (guide_trigger_template_ptr == nullptr)
@@ -217,7 +217,7 @@ namespace hld
 				}
 				else
 				{
-					if (add_record_info_num < hld::max_guide_record_num)
+					if (add_record_info_num < faith::max_guide_record_num)
 					{
 						add_record_info_arr[add_record_info_num].guide_trigger_id = guide_trigger_template_id + j;
 						add_record_info_arr[add_record_info_num].state = record_state;
@@ -230,7 +230,7 @@ namespace hld
 
 	bool guide_mgr::if_exist_guide_record(s_record_info record_info)
 	{
-		if (m_record_num >= hld::max_guide_record_num)
+		if (m_record_num >= faith::max_guide_record_num)
 		{
 			return true;
 		}
@@ -277,13 +277,13 @@ namespace hld
 		//}
 		//int32 cur_mission_id = main_mission_ptr->get_mission_id();
 
-		//hld::template_manager::template_type* table = template_manager::get_instance().get_templates(e_GuideTriggerTemplate);
+		//faith::template_manager::template_type* table = template_manager::get_instance().get_templates(e_GuideTriggerTemplate);
 		//if (nullptr == table)
 		//{
 		//	return;
 		//}
 
-		//hld::template_manager::template_type::iterator ite;
+		//faith::template_manager::template_type::iterator ite;
 		//for (ite = table->begin(); ite != table->end(); ++ite)
 		//{
 		//	GuideTriggerTemplate* guide_trigger_template_ptr = (GuideTriggerTemplate*)(ite->second);
@@ -375,7 +375,7 @@ namespace hld
 
 	void guide_mgr::add_once_guide_recond(s_record_info record_info, bool need_save)
 	{
-		if (if_exist_guide_record(record_info) || m_record_num >= hld::max_guide_record_num)
+		if (if_exist_guide_record(record_info) || m_record_num >= faith::max_guide_record_num)
 		{
 			return;
 		}

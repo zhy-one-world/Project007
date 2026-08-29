@@ -10,7 +10,7 @@
 #include "log_db_proxy.hpp"
 #include "internal/dp.hpp"
 
-namespace hld
+namespace faith
 {
 
 	void clog_db_proxy::init_sender(sender_handler_type sender)

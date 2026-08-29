@@ -11,7 +11,7 @@
 
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class random_gen
 	{

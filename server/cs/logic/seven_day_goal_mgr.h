@@ -10,7 +10,7 @@ purpose: 七日目标头文件
 #define _SEVEN_DAY_GOAL_MGR_H_
 #include "Logic/seven_day_goal_def.hpp"
 #include "seven_day_goal.h"
-namespace hld
+namespace faith
 {
 	class player;
 	class service_goal_proto_seven_day_goal_one;

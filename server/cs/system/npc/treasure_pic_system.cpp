@@ -13,7 +13,7 @@
 #include "internet/map.pb.h"
 #include "internet/net.pb.h"
 
-using namespace hld;
+using namespace faith;
 
 void treasure_pic_system::start_up(player* player_ptr, npc* npc_ptr)
 {

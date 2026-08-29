@@ -14,18 +14,18 @@ purpose:
 #include "Logic/char_def.hpp"
 #include "Logic/spirit_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_dp2cs_load_char_spirit = hld::e_msg_base_spirit,
+		e_msgindex_dp2cs_load_char_spirit = faith::e_msg_base_spirit,
 		e_msgindex_cs2dp_save_char_spirit,
 	};
 
 	// DP2CS 分批发送玩家的所有物品信息
-	struct dp2cs_load_char_spirit : public hld::packet_base
+	struct dp2cs_load_char_spirit : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32							unit_array_index;
@@ -45,7 +45,7 @@ namespace hld
 
 	};
 
-	struct cs2dp_save_char_spirit : public hld::packet_base
+	struct cs2dp_save_char_spirit : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;

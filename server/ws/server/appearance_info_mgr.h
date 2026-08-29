@@ -5,7 +5,7 @@
 #include "server_def.hpp"
 #include "base.hpp"
 
-namespace hld
+namespace faith
 {
 	class appearance_info_mgr
 	{

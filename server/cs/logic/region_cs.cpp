@@ -10,7 +10,7 @@
 
 #include "region_cs.h"
 
-namespace hld
+namespace faith
 {
 
 	region_cs::region_cs()

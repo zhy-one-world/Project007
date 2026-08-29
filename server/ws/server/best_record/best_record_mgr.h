@@ -6,7 +6,7 @@
 #include "ws_client.hpp"
 
 
-namespace hld
+namespace faith
 {
 	class best_record_mgr
 	{

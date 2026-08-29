@@ -1,0 +1,62 @@
+syntax = "proto2";
+package hld;
+
+message goods_proto
+{
+	message goods_id
+	{
+		optional int32 goods_id			=1;
+	}
+	message goods_info
+	{
+		repeated int32 goods_info		=1;
+	}
+	message store_goods
+	{
+		optional int32 store_id		   =1;
+		repeated goods_info	goods_list =2;
+	}
+	message goods_all
+	{
+		optional int32 goods_id		=1;
+		repeated goods_info goods_array  =2;
+		optional int32 store_id		=3;
+	}
+	message goods_purchase_record
+	{
+		optional int32 goods_id		=1;
+		optional int32 goods_num	=2;
+		optional int32 time			=3;
+	}
+	message goods_operate
+	{
+		optional int32 goods_id			=1;
+		optional int32 goods_num		=2;
+		optional int32 store_id			=3;	
+		optional bool  is_auto_buy		=4;
+		optional uint64	role_guid		=5; // 角色GUID
+	}
+	message goods_operate_end
+	{
+		optional int32 goods_id			=1;
+		optional int32 goods_num		=2;
+		optional int32 store_id			=3;
+		optional int32 operation_end_state		=4;
+		optional bool  is_auto_buy		=5;
+	}
+
+	message update_store_goods
+	{
+		repeated store_goods store_list =1;
+	}
+	message request_update_store
+	{
+		optional int32	request_type =1;
+		repeated int32 role_guid =2;
+		optional int32 update_time =3;
+	}
+	message	goods_get_server_opent_time
+	{
+		optional int32	server_open_time = 1;
+	}
+}

@@ -13,7 +13,7 @@ purpose:
 #include "utility/guid_gen.h"
 #include "template/template_manager.h"
 
-namespace hld
+namespace faith
 {
 	cpokedex::cpokedex()
 	{

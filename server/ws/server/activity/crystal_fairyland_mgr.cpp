@@ -13,7 +13,7 @@
 #include "system/scene/cs_map_system.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 { 
 
 	crystal_fairyland_mgr::crystal_fairyland_mgr()
@@ -56,7 +56,7 @@ namespace hld
 
 	void	crystal_fairyland_mgr::init_data()
 	{
-		int32 ActTemplateID = hld::first_activity_common_template_id + e_activity_type_crystal_fairyland;
+		int32 ActTemplateID = faith::first_activity_common_template_id + e_activity_type_crystal_fairyland;
 		m_act_template_ptr = GET_TEMPLATE(ActivityCommonConfigTemplate, ActTemplateID);
 	}
 
@@ -159,10 +159,10 @@ namespace hld
 		{
 			return;
 		}
-		int32 BeginStamp1 = hld::time_helper::get_stamp_by_hour_min(open_time[4], open_time[5]);
-		int32 EndStamp1 = hld::time_helper::get_stamp_by_hour_min(open_time[6], open_time[7]);
-		int32 BeginStamp2 = hld::time_helper::get_stamp_by_hour_min(m_act_template_ptr->ActivityOpenTime1[4], m_act_template_ptr->ActivityOpenTime1[5]);
-		int32 EndStamp2 = hld::time_helper::get_stamp_by_hour_min(m_act_template_ptr->ActivityOpenTime1[6], m_act_template_ptr->ActivityOpenTime1[7]);
+		int32 BeginStamp1 = faith::time_helper::get_stamp_by_hour_min(open_time[4], open_time[5]);
+		int32 EndStamp1 = faith::time_helper::get_stamp_by_hour_min(open_time[6], open_time[7]);
+		int32 BeginStamp2 = faith::time_helper::get_stamp_by_hour_min(m_act_template_ptr->ActivityOpenTime1[4], m_act_template_ptr->ActivityOpenTime1[5]);
+		int32 EndStamp2 = faith::time_helper::get_stamp_by_hour_min(m_act_template_ptr->ActivityOpenTime1[6], m_act_template_ptr->ActivityOpenTime1[7]);
 		int64 cur_time = time_helper::get_cur_time_new().second;
 
 		if (BeginStamp1 < cur_time && cur_time <= EndStamp1)

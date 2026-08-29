@@ -17,7 +17,7 @@ purpose: about mail
 #include "item_def.hpp"
 #include "internet/db.pb.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
@@ -174,7 +174,7 @@ namespace hld
 				data_ary[i] = 0;
 			}
 		}
-		bool to_proto(hld::db_proto::role_mail_row* db_mail_ptr)
+		bool to_proto(faith::db_proto::role_mail_row* db_mail_ptr)
 		{
 			if (db_mail_ptr == nullptr)
 			{
@@ -199,7 +199,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::db_proto::role_mail_row& db_mail_ref)
+		void from_proto(const faith::db_proto::role_mail_row& db_mail_ref)
 		{
 			mail_guid.server_64 = db_mail_ref.mail_guid();
 			for (int32 i = 0; i < db_mail_ref.data_ary_size() && i < EMailInfo_max; i++)

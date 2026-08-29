@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -234,7 +234,7 @@ void protobuf_AddDesc_buff_2eproto() {
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\nbuff.proto\022\003hld\"\322\005\n\nbuff_proto\032=\n\016buff"
-    "_save_load\022+\n\010data_ary\030\001 \003(\0132\031.hld.buff_"
+    "_save_load\022+\n\010data_ary\030\001 \003(\0132\031.faith.buff_"
     "proto.buff_info\032;\n\016buff_operation\022\026\n\016ope"
     "ration_type\030\001 \001(\005\022\021\n\tbuff_guid\030\005 \001(\003\032\330\001\n"
     "\022buff_operation_end\022\026\n\016operation_type\030\001 "
@@ -381,7 +381,7 @@ bool buff_proto_buff_save_load::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.buff_proto.buff_info data_ary = 1;
+      // repeated .faith.buff_proto.buff_info data_ary = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -414,7 +414,7 @@ bool buff_proto_buff_save_load::MergePartialFromCodedStream(
 
 void buff_proto_buff_save_load::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.buff_proto.buff_info data_ary = 1;
+  // repeated .faith.buff_proto.buff_info data_ary = 1;
   for (int i = 0; i < this->data_ary_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->data_ary(i), output);
@@ -428,7 +428,7 @@ void buff_proto_buff_save_load::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* buff_proto_buff_save_load::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.buff_proto.buff_info data_ary = 1;
+  // repeated .faith.buff_proto.buff_info data_ary = 1;
   for (int i = 0; i < this->data_ary_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -445,7 +445,7 @@ void buff_proto_buff_save_load::SerializeWithCachedSizes(
 int buff_proto_buff_save_load::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.buff_proto.buff_info data_ary = 1;
+  // repeated .faith.buff_proto.buff_info data_ary = 1;
   total_size += 1 * this->data_ary_size();
   for (int i = 0; i < this->data_ary_size(); i++) {
     total_size +=
@@ -2212,7 +2212,7 @@ bool buff_proto_buff_info_all::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.buff_proto.buff_info buff_info = 2;
+      // repeated .faith.buff_proto.buff_info buff_info = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2250,7 +2250,7 @@ void buff_proto_buff_info_all::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->target(), output);
   }
 
-  // repeated .hld.buff_proto.buff_info buff_info = 2;
+  // repeated .faith.buff_proto.buff_info buff_info = 2;
   for (int i = 0; i < this->buff_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->buff_info(i), output);
@@ -2269,7 +2269,7 @@ void buff_proto_buff_info_all::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->target(), target);
   }
 
-  // repeated .hld.buff_proto.buff_info buff_info = 2;
+  // repeated .faith.buff_proto.buff_info buff_info = 2;
   for (int i = 0; i < this->buff_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -2295,7 +2295,7 @@ int buff_proto_buff_info_all::ByteSize() const {
     }
 
   }
-  // repeated .hld.buff_proto.buff_info buff_info = 2;
+  // repeated .faith.buff_proto.buff_info buff_info = 2;
   total_size += 1 * this->buff_info_size();
   for (int i = 0; i < this->buff_info_size(); i++) {
     total_size +=
@@ -2531,6 +2531,6 @@ void buff_proto::Swap(buff_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

@@ -22,7 +22,7 @@ purpose: 七日目标实现文件
 #include "utility/parse_msg.h"
 #include "utility/init_unit.h"
 
-namespace hld
+namespace faith
 {
 	
 	cseven_day_goal_mgr::cseven_day_goal_mgr()
@@ -214,7 +214,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_seven_day_goal_db msg;
+		faith::cs2dp_proto::role_seven_day_goal_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -229,7 +229,7 @@ namespace hld
 		s_seven_day_goal_info *p_row = (s_seven_day_goal_info *)p_data;
 		for (int32 i = 0; i < msg.row_count(); i++)
 		{
-			hld::cs2dp_proto::role_seven_day_goal_row db_row = msg.row_data(i);
+			faith::cs2dp_proto::role_seven_day_goal_row db_row = msg.row_data(i);
 			for (int32 j = 0; j < db_row.data_ary_size(); j++)
 			{
 				p_row->data_ary[j] = db_row.data_ary(j);
@@ -268,12 +268,12 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_seven_day_goal msg;
+			faith::cs2dp_proto::save_role_seven_day_goal msg;
 			msg.set_role_guid(player_ref.get_unit_guid().server_64);
 			msg.set_unit_array_index(m_player_index);
 			msg.set_save_type_ex(save_type);
 
-			hld::cs2dp_proto::role_seven_day_goal_db *db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_seven_day_goal_db *db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return;
@@ -283,7 +283,7 @@ namespace hld
 			{
 				cseven_day_goal& temp_seven_day_goal_obj = get_seven_day_goal_obj_by_index(i);
 				const s_seven_day_goal_info& tmp = temp_seven_day_goal_obj.get_seven_day_goal_info();
-				hld::cs2dp_proto::role_seven_day_goal_row *db_row = db_data->add_row_data();
+				faith::cs2dp_proto::role_seven_day_goal_row *db_row = db_data->add_row_data();
 				if (db_row == nullptr)
 				{
 					return;

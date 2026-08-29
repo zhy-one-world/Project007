@@ -7,7 +7,7 @@
 #include "system/item/item_system.h"
 #include "components/item/item_base_component.h"
 
-using namespace hld;
+using namespace faith;
 
 bool  online_award_system::start_up(player* player_ptr)
 {
@@ -20,7 +20,7 @@ void online_award_system::shut_down(player* player_ptr)
 void online_award_system::heart_tick(player* player_ptr, const int64& new_time, const int32& tick_time)
 {
 	ZoneScoped;
-	auto map_template_id = player_ptr->get_unit_info(hld::e_role_info_main_map_id);
+	auto map_template_id = player_ptr->get_unit_info(faith::e_role_info_main_map_id);
 	auto class_type = player_ptr->get_unit_info(e_role_info_class_type);
 	auto exp_level = player_ptr->get_unit_info(e_role_info_exp_level);
 

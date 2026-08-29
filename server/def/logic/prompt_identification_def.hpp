@@ -16,7 +16,7 @@ purpose:
 #include "logic/type_def.hpp"
 #include "char_def.hpp"
 #include "template/template_base.h"
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	const int32 prompt_skill_base_num = 3;

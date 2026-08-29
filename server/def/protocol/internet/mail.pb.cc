@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -358,8 +358,8 @@ void protobuf_AddDesc_mail_2eproto() {
     "\n\013sender_name\030\004 \001(\t\022\022\n\nmail_title\030\005 \001(\t\032"
     "1\n\titem_info\022\021\n\titem_guid\030\001 \003(\005\022\021\n\titem_"
     "data\030\002 \003(\005\032o\n\021mail_sending_info\022,\n\tmail_"
-    "info\030\001 \001(\0132\031.hld.mail_proto.mail_info\022,\n"
-    "\titem_info\030\002 \003(\0132\031.hld.mail_proto.item_i"
+    "info\030\001 \001(\0132\031.faith.mail_proto.mail_info\022,\n"
+    "\titem_info\030\002 \003(\0132\031.faith.mail_proto.item_i"
     "nfo\032\272\001\n\016mail_send_mail\022\026\n\016mail_item_guid"
     "\030\001 \003(\005\022\026\n\016addressee_guid\030\002 \003(\005\022\023\n\013monye_"
     "typ_1\030\003 \001(\005\022\025\n\rmonye_value_1\030\004 \001(\005\022\023\n\013mo"
@@ -373,7 +373,7 @@ void protobuf_AddDesc_mail_2eproto() {
     "ration_state\030\001 \001(\005\022\025\n\roperation_typ\030\002 \001("
     "\005\022\021\n\tmail_guid\030\003 \003(\005\022\021\n\trole_guid\030\004 \003(\005\032"
     "\221\001\n\013update_mail\022\021\n\trole_guid\030\001 \003(\005\022\022\n\nma"
-    "il_error\030\002 \001(\r\022,\n\tmail_list\030\003 \003(\0132\031.hld."
+    "il_error\030\002 \001(\r\022,\n\tmail_list\030\003 \003(\0132\031.faith."
     "mail_proto.mail_info\022\017\n\007is_over\030\004 \001(\010\022\034\n"
     "\ris_need_clear\030\005 \001(\010:\005false\032B\n\021mail_cont"
     "ents_get\022\026\n\016money_get_info\030\001 \003(\003\022\025\n\ritem"
@@ -1847,7 +1847,7 @@ mail_proto_mail_sending_info::mail_proto_mail_sending_info()
 }
 
 void mail_proto_mail_sending_info::InitAsDefaultInstance() {
-  mail_info_ = const_cast< ::hld::mail_proto_mail_info*>(&::hld::mail_proto_mail_info::default_instance());
+  mail_info_ = const_cast< ::faith::mail_proto_mail_info*>(&::faith::mail_proto_mail_info::default_instance());
 }
 
 mail_proto_mail_sending_info::mail_proto_mail_sending_info(const mail_proto_mail_sending_info& from)
@@ -1896,7 +1896,7 @@ mail_proto_mail_sending_info* mail_proto_mail_sending_info::New() const {
 void mail_proto_mail_sending_info::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_mail_info()) {
-      if (mail_info_ != NULL) mail_info_->::hld::mail_proto_mail_info::Clear();
+      if (mail_info_ != NULL) mail_info_->::faith::mail_proto_mail_info::Clear();
     }
   }
   item_info_.Clear();
@@ -1910,7 +1910,7 @@ bool mail_proto_mail_sending_info::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.mail_proto.mail_info mail_info = 1;
+      // optional .faith.mail_proto.mail_info mail_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1923,7 +1923,7 @@ bool mail_proto_mail_sending_info::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.mail_proto.item_info item_info = 2;
+      // repeated .faith.mail_proto.item_info item_info = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1956,13 +1956,13 @@ bool mail_proto_mail_sending_info::MergePartialFromCodedStream(
 
 void mail_proto_mail_sending_info::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.mail_proto.mail_info mail_info = 1;
+  // optional .faith.mail_proto.mail_info mail_info = 1;
   if (has_mail_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->mail_info(), output);
   }
 
-  // repeated .hld.mail_proto.item_info item_info = 2;
+  // repeated .faith.mail_proto.item_info item_info = 2;
   for (int i = 0; i < this->item_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->item_info(i), output);
@@ -1976,14 +1976,14 @@ void mail_proto_mail_sending_info::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* mail_proto_mail_sending_info::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.mail_proto.mail_info mail_info = 1;
+  // optional .faith.mail_proto.mail_info mail_info = 1;
   if (has_mail_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         1, this->mail_info(), target);
   }
 
-  // repeated .hld.mail_proto.item_info item_info = 2;
+  // repeated .faith.mail_proto.item_info item_info = 2;
   for (int i = 0; i < this->item_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -2001,7 +2001,7 @@ int mail_proto_mail_sending_info::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.mail_proto.mail_info mail_info = 1;
+    // optional .faith.mail_proto.mail_info mail_info = 1;
     if (has_mail_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -2009,7 +2009,7 @@ int mail_proto_mail_sending_info::ByteSize() const {
     }
 
   }
-  // repeated .hld.mail_proto.item_info item_info = 2;
+  // repeated .faith.mail_proto.item_info item_info = 2;
   total_size += 1 * this->item_info_size();
   for (int i = 0; i < this->item_info_size(); i++) {
     total_size +=
@@ -2045,7 +2045,7 @@ void mail_proto_mail_sending_info::MergeFrom(const mail_proto_mail_sending_info&
   item_info_.MergeFrom(from.item_info_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_mail_info()) {
-      mutable_mail_info()->::hld::mail_proto_mail_info::MergeFrom(from.mail_info());
+      mutable_mail_info()->::faith::mail_proto_mail_info::MergeFrom(from.mail_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -3579,7 +3579,7 @@ bool mail_proto_update_mail::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.mail_proto.mail_info mail_list = 3;
+      // repeated .faith.mail_proto.mail_info mail_list = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -3655,7 +3655,7 @@ void mail_proto_update_mail::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->mail_error(), output);
   }
 
-  // repeated .hld.mail_proto.mail_info mail_list = 3;
+  // repeated .faith.mail_proto.mail_info mail_list = 3;
   for (int i = 0; i < this->mail_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->mail_list(i), output);
@@ -3690,7 +3690,7 @@ void mail_proto_update_mail::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->mail_error(), target);
   }
 
-  // repeated .hld.mail_proto.mail_info mail_list = 3;
+  // repeated .faith.mail_proto.mail_info mail_list = 3;
   for (int i = 0; i < this->mail_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -3746,7 +3746,7 @@ int mail_proto_update_mail::ByteSize() const {
     total_size += 1 * this->role_guid_size() + data_size;
   }
 
-  // repeated .hld.mail_proto.mail_info mail_list = 3;
+  // repeated .faith.mail_proto.mail_info mail_list = 3;
   total_size += 1 * this->mail_list_size();
   for (int i = 0; i < this->mail_list_size(); i++) {
     total_size +=
@@ -4251,6 +4251,6 @@ void mail_proto::Swap(mail_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

@@ -3,7 +3,7 @@
 #define __UNIT_MOVE_MGR_H__
 
 #include "logic/type_def.hpp"
-namespace hld
+namespace faith
 {
 	class unit_move_mgr
 	{

@@ -66,7 +66,7 @@
 #include "server/arena/arena_mgr_ws.h"
 #include "server/login_role/login_role_mgr.h"
 #include "net.pb.h"
-namespace hld
+namespace faith
 {
 	world_server::world_server(void)
 	{	
@@ -218,7 +218,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::server_clear_all_config pro_msg;
+			faith::ws2cs_proto::server_clear_all_config pro_msg;
 			broadcast_lua(&pro_msg, e_msg_index_ws2cs_clear_server_config, e_server_type_cs);
 		}
 		world_server::getInstance().send_server_config_all_to_client(nullptr);
@@ -246,7 +246,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::server_config pro_msg;
+			faith::ws2cs_proto::server_config pro_msg;
 
 			msg.to_proto(pro_msg);
 
@@ -436,7 +436,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::cs_gm_open_time pro_msg;
+			faith::ws2cs_proto::cs_gm_open_time pro_msg;
 			pro_msg.set_open_time(begin_time);
 			world_server::getInstance().broadcast_lua(&pro_msg, e_msgindex_ws2dp_gm_open_time, e_server_type_cs);
 		}
@@ -477,7 +477,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::server_need_cross pro_msg;
+			faith::ws2cs_proto::server_need_cross pro_msg;
 			pro_msg.set_gm_type(gm_type);
 			pro_msg.set_need_begin_cross(m_need_begin_cross_config[gm_type]);
 			broadcast_lua(&pro_msg, e_msg_index_ws2cs_need_cross, e_server_type_cs);
@@ -524,7 +524,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::server_info_all pro_msg;
+			faith::ws2cs_proto::server_info_all pro_msg;
 			for (int32 i = 0 ; i < e_server_info_type_max; i++)
 			{
 				pro_msg.add_server_info_arr(m_server_info_arr[i]);
@@ -550,7 +550,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::server_info_arr pro_msg;
+			faith::ws2cs_proto::server_info_arr pro_msg;
 			pro_msg.set_server_info_type(server_info_type);
 			pro_msg.set_server_info_value(m_server_info_arr[server_info_type]);
 			broadcast_lua(&pro_msg, e_msg_index_ws2cs_server_Info_arr, e_server_type_cs);
@@ -624,7 +624,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::server_need_cross pro_msg;
+				faith::ws2cs_proto::server_need_cross pro_msg;
 				pro_msg.set_gm_type(i);
 				pro_msg.set_need_begin_cross(m_need_begin_cross_config[i]);
 				broadcast_lua(&pro_msg, e_msg_index_ws2cs_need_cross, e_server_type_cs);
@@ -941,10 +941,10 @@ namespace hld
 			{
 				CONSOLE_INFO("res svn code : {}", globle_data::get_instance().get_version_template_ptr()->Version);
 			}
-			hld::int32 dp_num = net_client_mgr::getInstance().get_server_count(e_server_type_dp);
-			hld::int32 fep_num = net_server_mgr::getInstance().get_server_count(e_server_type_fep);
-			hld::int32 gate_num = net_client_mgr::getInstance().get_server_count(e_server_type_gate);
-			hld::int32 cs_num = net_server_mgr::getInstance().get_server_count(e_server_type_cs);
+			faith::int32 dp_num = net_client_mgr::getInstance().get_server_count(e_server_type_dp);
+			faith::int32 fep_num = net_server_mgr::getInstance().get_server_count(e_server_type_fep);
+			faith::int32 gate_num = net_client_mgr::getInstance().get_server_count(e_server_type_gate);
+			faith::int32 cs_num = net_server_mgr::getInstance().get_server_count(e_server_type_cs);
 			CONSOLE_INFO(
 				"dp {}/{} cs {}/{} fep {}/{} gate {}/{}",dp_num, SERVER_DP_COUNT
 				,cs_num, SERVER_CS_COUNT
@@ -1239,7 +1239,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::reload_csv msg;
+				faith::ws2cs_proto::reload_csv msg;
 				broadcast_lua(&msg, e_msg_index_reload_csv);
 			}
 

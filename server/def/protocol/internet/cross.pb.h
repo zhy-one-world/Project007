@@ -27,7 +27,7 @@
 #include "login.pb.h"
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_cross_2eproto();
@@ -158,7 +158,7 @@ class cross_proto_cross_transfer : public ::google::protobuf::Message {
   inline ::std::string* release_out_port();
   inline void set_allocated_out_port(::std::string* out_port);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_proto.cross_transfer)
+  // @@protoc_insertion_point(class_scope:faith.cross_proto.cross_transfer)
  private:
   inline void set_has_server_id();
   inline void clear_has_server_id();
@@ -295,16 +295,16 @@ class cross_proto_cross_transfer_to_server : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 server_id() const;
   inline void set_server_id(::google::protobuf::int32 value);
 
-  // optional .hld.login_proto.login login_info = 7;
+  // optional .faith.login_proto.login login_info = 7;
   inline bool has_login_info() const;
   inline void clear_login_info();
   static const int kLoginInfoFieldNumber = 7;
-  inline const ::hld::login_proto_login& login_info() const;
-  inline ::hld::login_proto_login* mutable_login_info();
-  inline ::hld::login_proto_login* release_login_info();
-  inline void set_allocated_login_info(::hld::login_proto_login* login_info);
+  inline const ::faith::login_proto_login& login_info() const;
+  inline ::faith::login_proto_login* mutable_login_info();
+  inline ::faith::login_proto_login* release_login_info();
+  inline void set_allocated_login_info(::faith::login_proto_login* login_info);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_proto.cross_transfer_to_server)
+  // @@protoc_insertion_point(class_scope:faith.cross_proto.cross_transfer_to_server)
  private:
   inline void set_has_account();
   inline void clear_has_account();
@@ -327,7 +327,7 @@ class cross_proto_cross_transfer_to_server : public ::google::protobuf::Message 
   ::google::protobuf::uint64 map_guid_;
   ::google::protobuf::uint32 war_index_;
   ::google::protobuf::int32 server_id_;
-  ::hld::login_proto_login* login_info_;
+  ::faith::login_proto_login* login_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(7 + 31) / 32];
@@ -426,7 +426,7 @@ class cross_proto_cross_role_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.cross_proto.cross_role_info)
+  // @@protoc_insertion_point(class_scope:faith.cross_proto.cross_role_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -512,7 +512,7 @@ class cross_proto_cross_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 cross_type() const;
   inline void set_cross_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_proto.cross_info)
+  // @@protoc_insertion_point(class_scope:faith.cross_proto.cross_info)
  private:
   inline void set_has_cross_type();
   inline void clear_has_cross_type();
@@ -594,26 +594,26 @@ class cross_proto_cross_info_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 cross_result() const;
   inline void set_cross_result(::google::protobuf::int32 value);
 
-  // repeated .hld.cross_proto.cross_role_info role_info_ary = 2;
+  // repeated .faith.cross_proto.cross_role_info role_info_ary = 2;
   inline int role_info_ary_size() const;
   inline void clear_role_info_ary();
   static const int kRoleInfoAryFieldNumber = 2;
-  inline const ::hld::cross_proto_cross_role_info& role_info_ary(int index) const;
-  inline ::hld::cross_proto_cross_role_info* mutable_role_info_ary(int index);
-  inline ::hld::cross_proto_cross_role_info* add_role_info_ary();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cross_proto_cross_role_info >&
+  inline const ::faith::cross_proto_cross_role_info& role_info_ary(int index) const;
+  inline ::faith::cross_proto_cross_role_info* mutable_role_info_ary(int index);
+  inline ::faith::cross_proto_cross_role_info* add_role_info_ary();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cross_proto_cross_role_info >&
       role_info_ary() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cross_proto_cross_role_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cross_proto_cross_role_info >*
       mutable_role_info_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.cross_proto.cross_info_end)
+  // @@protoc_insertion_point(class_scope:faith.cross_proto.cross_info_end)
  private:
   inline void set_has_cross_result();
   inline void clear_has_cross_result();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cross_proto_cross_role_info > role_info_ary_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cross_proto_cross_role_info > role_info_ary_;
   ::google::protobuf::int32 cross_result_;
 
   mutable int _cached_size_;
@@ -696,7 +696,7 @@ class cross_proto_sign_up : public ::google::protobuf::Message {
   inline bool is_join() const;
   inline void set_is_join(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_proto.sign_up)
+  // @@protoc_insertion_point(class_scope:faith.cross_proto.sign_up)
  private:
   inline void set_has_sign_type();
   inline void clear_has_sign_type();
@@ -788,7 +788,7 @@ class cross_proto_sign_up_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 sign_end() const;
   inline void set_sign_end(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_proto.sign_up_end)
+  // @@protoc_insertion_point(class_scope:faith.cross_proto.sign_up_end)
  private:
   inline void set_has_sign_type();
   inline void clear_has_sign_type();
@@ -887,7 +887,7 @@ class cross_proto_begin_war : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 template_id() const;
   inline void set_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_proto.begin_war)
+  // @@protoc_insertion_point(class_scope:faith.cross_proto.begin_war)
  private:
   inline void set_has_map_guid();
   inline void clear_has_map_guid();
@@ -975,7 +975,7 @@ class cross_proto_join_war : public ::google::protobuf::Message {
   inline bool join_type() const;
   inline void set_join_type(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_proto.join_war)
+  // @@protoc_insertion_point(class_scope:faith.cross_proto.join_war)
  private:
   inline void set_has_join_type();
   inline void clear_has_join_type();
@@ -1057,7 +1057,7 @@ class cross_proto_join_war_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 join_end() const;
   inline void set_join_end(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_proto.join_war_end)
+  // @@protoc_insertion_point(class_scope:faith.cross_proto.join_war_end)
  private:
   inline void set_has_join_end();
   inline void clear_has_join_end();
@@ -1146,7 +1146,7 @@ class cross_proto_war_state_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 state_time() const;
   inline void set_state_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_proto.war_state_end)
+  // @@protoc_insertion_point(class_scope:faith.cross_proto.war_state_end)
  private:
   inline void set_has_war_state();
   inline void clear_has_war_state();
@@ -1245,7 +1245,7 @@ class cross_proto_war_result : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 war_result() const;
   inline void set_war_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_proto.war_result)
+  // @@protoc_insertion_point(class_scope:faith.cross_proto.war_result)
  private:
   inline void set_has_ladder_score();
   inline void clear_has_ladder_score();
@@ -1326,7 +1326,7 @@ class cross_proto_role_pk_log : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.cross_proto.role_pk_log)
+  // @@protoc_insertion_point(class_scope:faith.cross_proto.role_pk_log)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1455,7 +1455,7 @@ class cross_proto_role_pk_log_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 win_result() const;
   inline void set_win_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_proto.role_pk_log_end)
+  // @@protoc_insertion_point(class_scope:faith.cross_proto.role_pk_log_end)
  private:
   inline void set_has_target_name_1();
   inline void clear_has_target_name_1();
@@ -1545,24 +1545,24 @@ class cross_proto_role_pk_log_array : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.cross_proto.role_pk_log_end pk_log_array = 1;
+  // repeated .faith.cross_proto.role_pk_log_end pk_log_array = 1;
   inline int pk_log_array_size() const;
   inline void clear_pk_log_array();
   static const int kPkLogArrayFieldNumber = 1;
-  inline const ::hld::cross_proto_role_pk_log_end& pk_log_array(int index) const;
-  inline ::hld::cross_proto_role_pk_log_end* mutable_pk_log_array(int index);
-  inline ::hld::cross_proto_role_pk_log_end* add_pk_log_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cross_proto_role_pk_log_end >&
+  inline const ::faith::cross_proto_role_pk_log_end& pk_log_array(int index) const;
+  inline ::faith::cross_proto_role_pk_log_end* mutable_pk_log_array(int index);
+  inline ::faith::cross_proto_role_pk_log_end* add_pk_log_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cross_proto_role_pk_log_end >&
       pk_log_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cross_proto_role_pk_log_end >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cross_proto_role_pk_log_end >*
       mutable_pk_log_array();
 
-  // @@protoc_insertion_point(class_scope:hld.cross_proto.role_pk_log_array)
+  // @@protoc_insertion_point(class_scope:faith.cross_proto.role_pk_log_array)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::cross_proto_role_pk_log_end > pk_log_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cross_proto_role_pk_log_end > pk_log_array_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -1637,7 +1637,7 @@ class cross_proto_bossisland_info_all : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 cur_server_id() const;
   inline void set_cur_server_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_proto.bossisland_info_all)
+  // @@protoc_insertion_point(class_scope:faith.cross_proto.bossisland_info_all)
  private:
   inline void set_has_cur_server_id();
   inline void clear_has_cur_server_id();
@@ -1729,7 +1729,7 @@ class cross_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.cross_proto)
+  // @@protoc_insertion_point(class_scope:faith.cross_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2148,7 +2148,7 @@ inline void cross_proto_cross_transfer_to_server::set_server_id(::google::protob
   server_id_ = value;
 }
 
-// optional .hld.login_proto.login login_info = 7;
+// optional .faith.login_proto.login login_info = 7;
 inline bool cross_proto_cross_transfer_to_server::has_login_info() const {
   return (_has_bits_[0] & 0x00000040u) != 0;
 }
@@ -2159,24 +2159,24 @@ inline void cross_proto_cross_transfer_to_server::clear_has_login_info() {
   _has_bits_[0] &= ~0x00000040u;
 }
 inline void cross_proto_cross_transfer_to_server::clear_login_info() {
-  if (login_info_ != NULL) login_info_->::hld::login_proto_login::Clear();
+  if (login_info_ != NULL) login_info_->::faith::login_proto_login::Clear();
   clear_has_login_info();
 }
-inline const ::hld::login_proto_login& cross_proto_cross_transfer_to_server::login_info() const {
+inline const ::faith::login_proto_login& cross_proto_cross_transfer_to_server::login_info() const {
   return login_info_ != NULL ? *login_info_ : *default_instance_->login_info_;
 }
-inline ::hld::login_proto_login* cross_proto_cross_transfer_to_server::mutable_login_info() {
+inline ::faith::login_proto_login* cross_proto_cross_transfer_to_server::mutable_login_info() {
   set_has_login_info();
-  if (login_info_ == NULL) login_info_ = new ::hld::login_proto_login;
+  if (login_info_ == NULL) login_info_ = new ::faith::login_proto_login;
   return login_info_;
 }
-inline ::hld::login_proto_login* cross_proto_cross_transfer_to_server::release_login_info() {
+inline ::faith::login_proto_login* cross_proto_cross_transfer_to_server::release_login_info() {
   clear_has_login_info();
-  ::hld::login_proto_login* temp = login_info_;
+  ::faith::login_proto_login* temp = login_info_;
   login_info_ = NULL;
   return temp;
 }
-inline void cross_proto_cross_transfer_to_server::set_allocated_login_info(::hld::login_proto_login* login_info) {
+inline void cross_proto_cross_transfer_to_server::set_allocated_login_info(::faith::login_proto_login* login_info) {
   delete login_info_;
   login_info_ = login_info;
   if (login_info) {
@@ -2359,27 +2359,27 @@ inline void cross_proto_cross_info_end::set_cross_result(::google::protobuf::int
   cross_result_ = value;
 }
 
-// repeated .hld.cross_proto.cross_role_info role_info_ary = 2;
+// repeated .faith.cross_proto.cross_role_info role_info_ary = 2;
 inline int cross_proto_cross_info_end::role_info_ary_size() const {
   return role_info_ary_.size();
 }
 inline void cross_proto_cross_info_end::clear_role_info_ary() {
   role_info_ary_.Clear();
 }
-inline const ::hld::cross_proto_cross_role_info& cross_proto_cross_info_end::role_info_ary(int index) const {
+inline const ::faith::cross_proto_cross_role_info& cross_proto_cross_info_end::role_info_ary(int index) const {
   return role_info_ary_.Get(index);
 }
-inline ::hld::cross_proto_cross_role_info* cross_proto_cross_info_end::mutable_role_info_ary(int index) {
+inline ::faith::cross_proto_cross_role_info* cross_proto_cross_info_end::mutable_role_info_ary(int index) {
   return role_info_ary_.Mutable(index);
 }
-inline ::hld::cross_proto_cross_role_info* cross_proto_cross_info_end::add_role_info_ary() {
+inline ::faith::cross_proto_cross_role_info* cross_proto_cross_info_end::add_role_info_ary() {
   return role_info_ary_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cross_proto_cross_role_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cross_proto_cross_role_info >&
 cross_proto_cross_info_end::role_info_ary() const {
   return role_info_ary_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cross_proto_cross_role_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cross_proto_cross_role_info >*
 cross_proto_cross_info_end::mutable_role_info_ary() {
   return &role_info_ary_;
 }
@@ -3008,27 +3008,27 @@ inline void cross_proto_role_pk_log_end::set_win_result(::google::protobuf::int3
 
 // cross_proto_role_pk_log_array
 
-// repeated .hld.cross_proto.role_pk_log_end pk_log_array = 1;
+// repeated .faith.cross_proto.role_pk_log_end pk_log_array = 1;
 inline int cross_proto_role_pk_log_array::pk_log_array_size() const {
   return pk_log_array_.size();
 }
 inline void cross_proto_role_pk_log_array::clear_pk_log_array() {
   pk_log_array_.Clear();
 }
-inline const ::hld::cross_proto_role_pk_log_end& cross_proto_role_pk_log_array::pk_log_array(int index) const {
+inline const ::faith::cross_proto_role_pk_log_end& cross_proto_role_pk_log_array::pk_log_array(int index) const {
   return pk_log_array_.Get(index);
 }
-inline ::hld::cross_proto_role_pk_log_end* cross_proto_role_pk_log_array::mutable_pk_log_array(int index) {
+inline ::faith::cross_proto_role_pk_log_end* cross_proto_role_pk_log_array::mutable_pk_log_array(int index) {
   return pk_log_array_.Mutable(index);
 }
-inline ::hld::cross_proto_role_pk_log_end* cross_proto_role_pk_log_array::add_pk_log_array() {
+inline ::faith::cross_proto_role_pk_log_end* cross_proto_role_pk_log_array::add_pk_log_array() {
   return pk_log_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cross_proto_role_pk_log_end >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cross_proto_role_pk_log_end >&
 cross_proto_role_pk_log_array::pk_log_array() const {
   return pk_log_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cross_proto_role_pk_log_end >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cross_proto_role_pk_log_end >*
 cross_proto_role_pk_log_array::mutable_pk_log_array() {
   return &pk_log_array_;
 }
@@ -3066,7 +3066,7 @@ inline void cross_proto_bossisland_info_all::set_cur_server_id(::google::protobu
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

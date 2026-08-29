@@ -1,0 +1,1289 @@
+syntax = "proto2";
+package hld;
+
+message character_proto
+
+{
+	message enum_character	
+	{			
+		optional string				account = 1;
+		optional int32				area_id = 2;
+	}
+	
+	message enum_character_end_info
+	{
+		optional int32				last_role				= 1  [default = 0];	// 是否是最后一个角色
+		optional int64				role_guid				= 2;			// 角色guid
+		optional string				name					= 3;			// 名字
+		optional string				appearance				= 4;			// 名字
+		optional uint32				gender					= 5  [default = 1];	// 性别
+		optional uint32				char_class				= 6  [default = 1];	// 职业 枚举值见玩家属性头文件
+		optional uint32				template_id				= 7  [default = 1];	// 模板id
+		optional uint32				exp_level				= 8  [default = 1];	// 经验等级
+		optional uint32				is_select				= 9  [default = 0];	// 是否被选中
+		optional uint32				del_time				= 10  [default = 0];	// 删除时间
+		optional uint32				wing_id					= 11  [default = 0];	// 删除时间
+		optional uint32				mount_id				= 12  [default = 0];	// 删除时间
+		repeated int32				buff_info				= 13; //buff实例数据
+		optional int64				spirit_guid				= 14;	//精灵GUID
+		optional int32				spirit_template_id		= 15;	//精灵ID
+		optional int32				spirit_illusion_index	= 16;	//精灵幻化
+		optional int32				spirit_upgrade_count	= 17;	//精灵升级
+		repeated enum_character_item		item_info		= 18;	// 物品实例数据
+		optional int64				login_out_time			= 19;	//最后下线时间
+		optional int32				show_fashion			= 20;
+		optional int32				head_frame_id			= 21;
+		optional int32				appearance_id			= 22;	//id
+		optional int32              is_only_create_role     = 23;   // 开启创建角色
+	}
+	
+	message enum_character_item
+	{
+		repeated int64				item_guid				= 1; //物品guid
+		repeated int32				item_ary				= 2; //物品实例数据
+	}
+	message create_character
+	{
+		optional string				account					= 1;
+		optional int32				area_id					= 2;
+		optional string				name					= 3;					// 名字
+		optional uint32				gender					= 4 [default = 1];		// 性别
+		optional uint32				race					= 6 [default = 1];		// 种族 枚举值见玩家属性头文件
+		optional uint32				hair_style				= 7 [default = 1];		// 头型
+		optional uint32				face_style				= 8 [default = 1];		// 脸型
+		optional uint32				img_id					= 9 [default = 1];		// 头像id
+		optional uint32				template_id				= 10 [default = 1];		// 模板id
+		optional uint32				frame_quality			= 11;					// 画质设置
+		optional string				appearance				= 12;					// 外观数据
+	}
+
+	message create_character_end
+	{
+		optional uint32				result					= 1;
+		optional int64				role_guid				= 2;
+		optional int64				create_time				= 3;
+		optional string				role_name				= 4;
+		repeated int32				role_info				= 5;
+	}
+	
+	message delete_character
+	{
+		optional string				account					= 1;
+		optional int64				role_guid				= 2;
+		optional int32				del_type				= 3;
+		optional int32				server_id				= 4;
+	}
+
+	message delete_character_end
+	{
+		optional int64				role_guid				= 1;
+		optional uint32				del_time				= 2;
+		optional uint32				del_type				= 3;
+	}
+	
+	message unit_info_msg
+	{
+		optional int64				role_guid					= 1;	// 角色ID
+		optional string				role_name					= 2;	// 名字
+		optional string				role_appearance				= 3;	// 外形数据
+		repeated int32				data_ary					= 4;	// 角色数据
+		optional bool				is_refresh_by_zero			= 5;	// 零点刷新的推消息
+		optional bool				is_refresh_by_special_time	= 6;	// 特殊时间刷新的推消息
+		repeated string				data_str_ary				= 7;	// 战力
+	}
+	
+	message unit_info_body_att
+	{
+		repeated int32				role_base_body_att			= 1;	// 力量 敏捷 智力 耐力
+	}
+	
+	message role_info_one
+	{
+		optional int64				unit_guid				= 1;	//角色ID
+		optional int32				info_type				= 2; 	//类型
+		optional int32				info_value				= 3; 	//值
+	
+	}
+		
+	message role_i64_info_one
+	{
+		optional int64				unit_guid				= 1;	//角色ID
+		optional int64				info_value				= 2; 	//战力值
+		optional int32				info_type				= 3;	//类型
+	}	
+		
+	message	att_one_level
+	{
+		repeated float				att_ary					= 1;	// 人物属性数组
+	}
+	
+	message character_all_att
+	{
+		optional int64				unit_guid				= 1;	// 角色ID
+		repeated double				attack_att				= 2;	// 战斗属性数组
+		repeated float				game_att				= 3;	// 游戏内单个数据数值
+		repeated bool				attack_state			= 4;	// 状态数组			
+	}
+
+	message	base_att_all
+	{
+		optional int64				unit_guid				= 1;	// 角色ID
+		repeated int64				att_ary					= 2;	// 人物属性数组
+	}
+	
+	message base_att_one
+	{
+		optional int64				unit_guid				= 1;	//角色ID
+		optional int32				att_type				= 2; 	//类型
+		optional int64				att_value				= 3; 	//值			
+	}
+	
+	message	character_one_att_change
+	{
+		optional int32				attack_att_index		= 1;	//key
+		optional double				attack_att_value		= 2;	//具体值
+	}
+	
+	message character_one_att
+	{
+		optional int64				unit_guid				= 1;	//角色guid
+		repeated int32				attack_att_index		= 2;	//key
+		repeated double				attack_att_value		= 3;	//具体值
+	}
+	message unit_dead
+	{
+		optional int64				unit_guid				= 1;	//被杀者ID
+		optional int64				killer_guid				= 2;	//凶手ID
+		optional int32				skill_template_id		= 3;	//凶手使用的技能
+		optional bool				is_dead					= 4;	//是否死亡
+		optional bool				is_critical				= 5;	//是否暴击死亡
+	}
+	message ask_unit_dead
+	{
+		optional int64				unit_guid				= 1;	//被杀者ID
+		optional int32				runtime_id				= 2;	//运行时数组下标
+	}
+	message character_money_all
+	{
+		optional int64				role_guid				= 1;	//角色guid
+		repeated int64				money_value				= 2;	//货币的数量
+	}
+	
+	message character_money_one
+	{
+		optional int64				role_guid				= 1;	//角色guid
+		optional int32				money_id				= 2;	//货币类型
+		optional int64				money_value				= 3;	//货币数量
+	}
+	
+	message character_get_money
+	{
+		repeated int32				money_type_array		= 1;	//钱类型数组
+		repeated string				money_num_array			= 2;	//钱数量数组
+	}
+	message character_time_all
+	{
+		optional int64				role_guid				= 1;	//角色guid
+		repeated int64				time_value				= 2;	//时间
+	}
+	
+	message character_time_one
+	{
+		optional int64				role_guid				= 1;	//角色guid
+		optional int32				time_id					= 2;	//时间类型
+		optional int64				time_value				= 3;	//时间
+	}
+	message character_logic_all
+	{
+		optional int64				role_guid				= 1;	//角色guid
+		repeated int32				logic_value				= 2;	//逻辑数据
+	}
+	
+	message character_logic_one
+	{
+		optional int64				role_guid				= 1;	//角色guid
+		optional int32				logic_id				= 2;	//逻辑类型
+		optional int32				logic_value				= 3;	//逻辑数值
+	}
+	message pos_vector
+	{
+		optional float			x				= 1;
+		optional float			y				= 2;
+		optional float			z				= 3;
+	}
+
+	message rot_angle
+	{
+		optional float			r				= 1;
+		optional float			y				= 2;
+		optional float			p				= 3;
+	}
+	
+	message character_move
+	{
+		optional int64			unit_guid					= 1;			// 角色ID	
+		optional pos_vector		position					= 2;			// 角色的位置坐标
+		optional pos_vector		direction					= 3;			// 角色的速度
+		optional rot_angle		rotator_angle				= 4;			// 角色的方向
+	}
+
+	message load_role_info_end
+	{
+		optional unit_info_msg		role_info				= 1;
+		optional sint32 runtime_id  						= 2;
+	}
+	message character_warning
+	{
+		optional int64				unit_guid				= 1; 	// 人物guid
+		optional int32       		warn_type	 		    = 2;	// 警告的类型
+		optional int32       		warn_value	 		    = 3;	// 其他参数
+		optional bool       		warn_show	 		    = 4;	// 显示1或隐藏0
+	}
+	
+	message character_gmorder_message
+	{
+		optional int32        		command_type         = 1;  // 命令名称
+		optional int32        		sub_command_type     = 2;  // 子命令
+		repeated int32        		arg_int              = 3;  // int 参数数组
+		repeated string       		arg_string           = 4;  // string 参数数组
+		optional string       		command_string       = 5;  // string类型命令名称
+	}
+	
+	message character_fuhuo
+	{
+		optional int32				mode					= 1;	// 复活参数( 原地复活和回城复活 );
+	}
+
+	message character_fuhuo_s2c
+	{
+		optional int64				role_guid				= 1;	// 人物guid
+		optional int32				mode					= 2;	// 复活参数( 原地复活和回城复活 );
+		optional int32				pos_x					= 3;
+		optional int32				pos_y					= 4;
+		optional int32				pos_z					= 5;
+		optional int32				roll					= 6;
+		optional int32				yaw						= 7;
+		optional int32				pitch					= 8;
+		optional int32				worldid					= 9;
+		optional int32				lineid					= 10;		
+	}
+	
+	message character_levelup
+	{
+		optional int64 role_guid	= 1; //人物guid
+		optional int32 level_old	= 2;
+		optional int32 level_new	= 3;
+	}
+	
+	message map_fuben_over
+	{
+		optional int32				fuben_template_id		= 1;	// 副本的模板ID
+		optional int32				pass_time				= 2;	// 通关时间
+		optional int32				dead_count				= 3;	// 死亡次数
+		optional int32				settle_level			= 4;	// 副本评级
+		optional int32				assist_state			= 5;	// 助战状态(0不是助战 1是助战)
+		repeated int32				reward_moneys			= 6;	// 通关金钱奖励(包括经验)
+		optional int32				sub_type				= 7;	// 结算子类型
+	}
+	
+	message map_money_bonus
+	{
+		optional int32				type 					= 1;
+		optional int32				count 					= 2;
+	}
+	
+	message map_arena_fuben_over
+	{
+		optional int64				role_guid 				= 1;	// 人物guid
+		optional int32				fuben_template_id		= 2;	// 副本的模板ID
+		optional int32				end_result				= 3;
+		optional int32				final_rank				= 4;	// 新排名
+		optional int32				exp_bonus				= 5;	// 经验
+		optional int32				money_bonus				= 6;	// 金币
+		optional int32				reputation_bonus		= 7;	// 声望
+		optional int32				first_high_reward		= 8;	// 首创新高绑金
+		optional int32				old_rank				= 9;	// 老排名
+	}
+	
+	message map_fuben_send_notice
+	{
+		optional string				notice_content 			= 1;
+	}
+	
+	message map_fuben_info_to_client
+	{
+		optional int32				wave_id					= 1;
+		optional int32				cur_wave 				= 2;
+		optional int32				total_wave 				= 3;
+		optional int32				cur_npc 				= 4;
+		optional int32				total_npc				= 5;
+		optional int32				cur_map_state			= 6;
+		optional int32				cur_player_num			= 7;
+		optional int32				kill_monster_num		= 8;
+	}
+	
+	message map_tigger_volume
+	{
+		optional int32				tigger_volume_id		= 1;
+	}
+	message s2c_game_over
+	{
+		optional int32				game_result				= 1;
+	}
+	message c2s_game_over
+	{
+		optional int32				unit_result				= 1;
+	}
+	
+	message pick_drop_box
+	{
+		optional int64				drop_box_guid			= 1; 	//掉落包guid
+		optional int32				runtime_id				= 2; 	//掉落包guid
+	}
+	
+	message receive_reward
+	{
+		optional int64				role_guid				= 1; 	//人物guid
+		optional int32				map_id					= 2; 	//人物所在地图guid
+	}
+	
+	message bag_slot_open_info
+	{
+		optional int64              role_guid              		 = 1;    //人物guid
+		optional int32              bag_slot_open_num      		 = 2;    //已经开启的物品栏格子数目
+		optional int32              open_next_need_time    		 = 3;    //开启下一个物品栏格子需要的事件
+		optional int32				storage_slot_open_num  		 = 4;
+		optional int32   			open_storage_next_need_time  = 5;
+	}
+	
+	message bag_unlock_slot_req
+	{
+		optional int64              role_guid                        	= 1;
+		optional int32              bag_slot_index_want_to_unlock   	= 2;
+		optional int32				storage_slot_index_want_to_unlock   = 3;
+	}
+	message spirit_info
+	{
+		optional int64	spirit_guid			= 1;			// 精灵guid
+		repeated int32  spirit_data			= 2;	
+	}
+	
+	message spirit_system_info
+	{
+		optional int32	crystal				= 1;			// 灵晶
+		optional int32	score				= 2;			// 兑换积分
+		optional int32  last_free_time  	= 3;			// 上次免费抽奖时间
+	}
+	
+	message update_spirit
+	{
+		optional int64	role_guid			= 1;
+		optional uint32	spirit_error		= 2;
+		repeated spirit_info	spirit_list	= 3;			// 精灵列表
+	}
+	
+	message update_free_hunt_time
+	{
+		optional int64	role_guid			= 1;
+		optional int32	last_free_hunt_time	= 2;
+	}
+	
+	message spirit_system_operation
+	{
+		optional int64	role_guid			= 1;
+		optional uint32	operation_type		= 2;
+		optional int32	operation_value		= 3;
+	}
+	
+	message spirit_qiyuan_level
+	{
+		optional int64	role_guid			= 1;
+		optional int32	grade_qiyuan		= 2;
+		optional int32	flair_qiyuan		= 3;
+	}
+	
+	message spirit_jiban_list
+	{
+		optional int64	role_guid			= 1;
+		repeated int32	jiban_trigger_list	= 2;
+		repeated int32	jiban_almost_list	= 3;
+	}
+	
+	message spirit_auto_sell_reward
+	{
+		optional int64	role_guid			= 1;
+		repeated int32	money_list			= 2;
+	}
+	
+	message spirit_operation
+	{
+		optional uint32	operation_type		= 1;
+		repeated int32	spirit_guid			= 2;
+		optional int32	target_slot			= 3;
+	}
+	
+	message spirit_operation_end
+	{
+		repeated int32	role_guid			= 1 ;
+		repeated int32	spirit_guid			= 2 ;
+		optional int32	operation_type		= 3 ;
+		optional int32  operation_result    = 4 ;
+		optional int32	target_operate_slot	= 5 ;
+	}
+	message money_operation
+	{
+		optional int32	operation_target	= 1;
+		optional int32	operation_value		= 2;	
+	}
+	
+	message money_operation_end
+	{
+		optional int32	operation_target	= 1;
+		optional int32	operation_value		= 2;	
+		optional bool	operation_state		= 3;
+	}
+	
+	message spirit_operation_tidy
+	{
+		repeated int32 spirit_guid_list         = 1;
+	}
+	
+	message exchange_item
+	{
+		optional int32	spirit_exchange_id		= 1;
+		optional int32	spirit_exchange_index	= 2;
+	}
+	
+	message exchange_report
+	{
+		optional int32	exchange_state			= 1;
+		optional int32	exchange_fail_msg		= 2;
+		optional int32	item_template_id		= 3;
+	}
+
+	message addition_buff_all
+	{
+		repeated int32              role_guid                	= 1;   // 人物guid
+		repeated int32              buff_id         		= 2;   // 加持BUFF的模板id
+	}
+	
+	message addition_buff
+	{
+		repeated int32              role_guid                = 1;   // 人物guid
+		optional int32              addition_buff_type       = 2;   // 背包界面中加持BUFF的类型
+		optional int32              addition_buff_id         = 3;   // 加持BUFF的模板id
+	}
+	
+	message character_grade_up
+	{
+		optional int32              class_change                = 1;   // 转职到哪个系
+		optional int32				skill_template_id		 	= 2;   // 选择的技能
+		optional int32 				grade_type					= 3;   // 转职类型
+	}
+	
+	message character_grade_up_end
+	{
+		optional int64              role_guid                = 1;   // 人物guid
+		optional int32              result_code              = 2;   // 操作的结果代码，用来反馈操作成功或错误
+		optional int32              old_equip_buff_id        = 3;   // 旧装备buff ID
+		optional int32              new_equip_buff_id        = 4;   // 新装备buff ID
+		optional int32 				skill_template_id		 = 5;	// 获得的技能 ID
+	}
+	
+	message character_error
+	{
+		repeated int32              role_guid                = 1;   // 人物guid
+		optional int32              error                    = 2;   // 错误代码
+	}
+	
+	message lucky_draw
+	{
+		optional int32              fuben_template_id        = 1;   // 副本模板ID
+	}
+	
+	message lucky_draw_end
+	{
+		optional int32              item_template_id         = 1;   // 抽到的物品的模板ID
+		optional int32              item_num                 = 2;   // 物品的数量
+		optional bool				send_mail				 = 3;	// 物品是否是通过邮件发送的
+	}
+	
+	message mopping_up
+	{
+		repeated int32              role_guid                           = 1;   // 角色GUID
+		optional int32              raid_template_id                    = 2;   // 副本GUID
+		optional int32              auto_convert_equip_to_magic_crystal = 3;   // 是否自动将扫荡获得的装备转化为魔晶(0不转化 1转化)
+		optional int32              mopping_up_count                    = 4;   // 扫荡次数
+	}
+	
+	message all_mopping_up
+	{
+		repeated int32              raid_template_id                    = 1;   // 副本id
+		repeated int32              mopping_up_count					= 2;   // 扫荡次数
+	}
+	
+	message mopping_up_award
+	{
+		repeated int32				item_info_array				= 1;	// 扫荡得到的物品
+		repeated int32				money_info_array			= 2;	// 扫荡得到的钱币
+		optional bool				is_send_mail				= 3;	// 奖励是否是通过邮件发送的
+	}
+	
+	message mopping_up_end
+	{
+		optional int32              result                   = 1;   // 扫荡结果
+	}
+	
+	message mopping_up_demons_tower
+	{
+		repeated int32              role_guid                = 1;   // 角色GUID
+	}
+	
+	message mopping_up_demons_tower_get_award
+	{
+		repeated int32              role_guid                = 1;   // 角色GUID
+		optional bool				is_resolve				 = 2;	//是否自动分解
+		
+	}
+	
+	message mopping_up_demons_tower_get_award_end
+	{
+		optional int32              result                   = 1;   // 操作结果码
+	}
+	
+	message pk_mode_change
+	{
+		repeated int32              role_guid                = 1;   // 角色GUID
+		optional int32				pk_info_type			 = 2;	// 1-pk模式,2-阵营
+		optional int32              pk_info_value          	 = 3;   // 
+	}
+	
+	message pk_mode_change_end
+	{
+		repeated int32              role_guid                = 1;   // 角色GUID
+		optional int32				pk_info_type			 = 2;	// 1-pk模式,2-阵营
+		optional int32              pk_info_value          	 = 3;   // 
+	}
+	
+	message pk_fight_back_sync
+	{
+		optional int32				fight_back_state		 = 1;	// 反击状态
+	}
+	
+	message update_communities
+	{
+		repeated int32              role_guid                = 1;   // 角色GUID
+		repeated int32				community_state			 = 2;	//是否加入了此阵营
+	}
+		
+	message start_meditation
+	{
+		repeated int32              role_guid                = 1;   // 角色GUID
+	}
+	
+	message start_meditation_end
+	{
+		repeated int32              role_guid                = 1;   // 角色GUID
+		optional bool				is_player_active		 = 2;	// 是否是玩家点击冥想按钮主动触发
+	}
+	
+	message stop_meditation
+	{
+		repeated int32              role_guid                = 1;   // 角色GUID
+	}
+	
+	
+	
+	message get_meditation_reward
+	{
+		repeated int32              role_guid                = 1;   // 角色GUID
+		optional int32				get_type			 	 = 2;	// 获取奖励类型
+	}
+	
+	message get_meditation_reward_end
+	{
+		repeated int32              role_guid                = 1;   // 角色GUID
+		optional int32				get_type			 	 = 2;	// 获取奖励类型
+		optional int32				endType			 	 	 = 3;	// 返回结果
+	}
+	
+	message daily_must_do_remain_info
+	{
+		repeated int32              role_guid				 = 1;    //角色GUID
+		optional int32				role_level				 = 2;	// 角色等级
+		optional int32				save_time				 = 3;	// 存储时间
+		optional int32				vip_level 				 = 4;	// VIP等级
+		optional int32              arena_rank               = 5;   // 竞技场排名
+		repeated int32              data_array               = 6; 	// 数据数组
+	}
+	
+	message update_three_day_must_do_remain
+	{
+		repeated int32                        role_guid				             = 1;    //角色GUID
+		repeated daily_must_do_remain_info    remain_three_day_must_do           = 2;	 //剩余每日必做
+	}
+	
+	message daily_must_do_count
+	{
+		repeated int32              role_guid                = 1;   // 角色GUID
+		optional int32							must_do_type	 	         = 2;	 // 类型
+		optional int32							must_do_value						 = 3;  //值
+		repeated int32              data_array               = 4; 	// 数据数组
+	}
+	
+	message daily_must_do_count_all
+	{
+		repeated int32              role_guid                = 1;   // 角色GUID
+		repeated int32              data_array               = 2; 	// 数据数组
+	}
+	
+	message find_back_must_do_resource
+	{
+		repeated int32              role_guid                = 1;   // 角色GUID
+		optional int32				must_do_typ				 = 2;	// 每日必做类型，同时也是下标
+		optional bool				is_diamond_find			 = 3;	// 是否是钻石找回
+		optional int32				only_find_back_several   = 4;	// 是否只找回其中几次
+	}
+	
+	message find_back_must_do_resource_end
+	{
+		repeated int64              money_reward             = 1;   // 最后拿到多少钱
+		optional int32				must_do_typ				 = 2;	// 每日必做类型，同时也是下标
+		optional int32				operate_stat			 = 3;	// 操作结果
+		optional bool				is_diamond_find			 = 4;	// 是否是钻石找回
+		repeated int32              item_reward             = 5;   // 最后拿到多少物品
+	}	
+	
+	message get_vip_item
+	{
+		repeated int32              role_guid                = 1;   // 角色GUID
+		optional int32				vip_level				 = 2;	// 要获取的奖励级别
+	}
+	
+	message get_vip_item_end
+	{
+		repeated int32              role_guid                = 1;   // 角色GUID
+		optional int32				vip_level				 = 2;	// 要获取的奖励级别
+		optional int32				get_result				 = 3;	// 获取结果
+	}
+	
+	message recharge
+	{
+		repeated int32              role_guid                = 1;   // 角色GUID
+		optional int32				recharge_typ			 = 2;	// 充值类型
+	}
+	
+	message recharge_end
+	{
+		optional string 			order_id				= 1;
+		optional int32 				goods_id				= 2;
+		optional int32 				payment_type			= 3;
+		optional int64 				role_guid				= 4;
+		optional int32 				end_result				= 5;
+		optional bool				is_first_recharge		= 6;	// 是否是首次充值该档位
+	}
+	
+	message recharge_widget_type
+	{
+		optional bool				is_dead_recharge		= 1;	//是否是死亡界面充值
+	}
+	
+	message dead_recharge_end
+	{
+		repeated int32	role_guid							= 1;	//角色Guid
+	}
+	
+	message showed_message
+	{
+		repeated int32	role_guid							= 1;	//角色Guid
+		optional int32	message_id							= 2;	//消息ID
+	}
+	
+	message world_boss_data
+	{
+		optional int32	npc_respawn_point_template_id				= 1;	//NPC刷新表ID
+		optional int32	is_alive							= 2;	//是否存活
+		optional string	killer_name						= 3;	//击杀者名字
+		optional int32	line_id							= 4;	//刷新在几线
+		optional string	first_killer_name						= 5;	//首杀者名字
+		optional int32  	first_killed_time						= 6;	//首杀时间
+		optional int32 	is_get_prize						= 7;	//是否领取奖励
+		optional int32	random_pos_id						= 8;	//随机位置ID
+		optional int32  boss_daily_refresh  				= 9;	//boss未刷新还是死亡状态
+	}
+
+	message update_world_boss
+	{
+		optional bool			 is_need_show				= 1;	//是否要显示滚屏
+		repeated world_boss_data world_boss_array			= 2;	//世界boss data array
+	}
+
+	message purchase_growup_fund
+	{
+		repeated int32	role_guid							= 1;	//角色Guid
+		optional int32	fund_type							= 2;	//要买的基金类型
+	}
+	message purchase_growup_fund_end
+	{
+		repeated int32	role_guid							= 1;	//角色Guid
+		optional int32	fund_type							= 2;	//要买的基金类型
+		optional int32	purchase_result						= 3;	//购买结果
+	}
+	
+	message get_growup_fund
+	{
+		repeated int32	role_guid							= 1;	//角色Guid
+		optional int32	fund_template_id					= 2;	//要买的基金表格Id
+	}
+	message get_growup_fund_end
+	{
+		repeated int32	role_guid							= 1;	//角色Guid
+		optional int32	fund_template_id					= 2;	//要买的基金表格Id
+		optional int32	get_result							= 3;	//领取结果
+	}
+	
+	message update_big_player_statue_guid
+	{
+		repeated int32	statue_guid							= 1;	//雕像Guid
+	}
+	
+	message worship
+	{
+		repeated int32	role_guid							= 1;	//角色Guid
+		optional int32	worship_type						= 2;	//膜拜的对象类型
+		optional int32	is_cost_diamond						= 3;	//花费钻石
+	}
+	
+	message worship_end
+	{
+		repeated int32	role_guid							= 1;	//角色Guid
+		optional int32	worship_type						= 2;	//膜拜的对象类型
+		optional int32	worship_result						= 3;	//膜拜结果
+		repeated int32	money_get_id_array					= 4;	//钱ID
+		repeated int32	money_get_num_array					= 5;	//钱数量
+	}
+	
+	message char_rotation
+	{
+		repeated int32 							unit_guid = 1;
+		repeated int32 							dest_pos = 2;
+		optional float							duration  = 3;
+	}
+	
+	message find_other_unit
+	{
+		optional int64	target_guid							= 1;
+		optional int32	server_id							= 2;
+	}	
+	
+	message find_other_unit_lua
+	{
+		optional int32	target_guid_a						= 1;
+		optional int32	target_guid_b						= 2;
+		optional int32	server_id							= 3;		
+	}	
+	
+	message find_other_unit_base_end
+	{
+		optional int64	target_guid							= 1;
+		optional string account								= 2;
+		optional string role_name							= 3;
+		optional string	role_appearance						= 4;
+		repeated int32  data_array							= 5;
+		optional int64  team_guid							= 6;
+		repeated string data_str_array						= 7;
+	}
+	
+	message find_other_unit_item_one
+	{
+		optional int64  item_guid							= 1;
+		repeated int32  data_array							= 2;
+	}
+	
+	message find_other_unit_equiping_end
+	{
+		optional int64	target_guid							= 1;
+		repeated find_other_unit_item_one  equiping_info	= 2;
+		optional bool	is_finish							= 3;
+	}
+	
+	message find_other_unit_buff_equip_end
+	{
+		optional int64	target_guid							= 1;
+		repeated int32  buff_id								= 2;
+	}
+		
+	message find_other_unit_special_name_end
+	{
+		optional int64	target_guid							= 1;
+		repeated int32  special_name_level					= 2;
+	}
+		
+	message find_other_unit_base_group_end
+	{
+		optional int64	target_guid							= 1;
+		optional int32	group_job							= 2;
+		optional string group_name							= 3;
+	}
+	
+	message find_other_unit_spirit_end
+	{
+		optional int64	target_guid							= 1;
+		optional int64  sprite_guid							= 2;
+		repeated int32  data_array							= 3;
+	}
+	
+	message find_other_unit_wing_or_mount_end
+	{
+		optional int64  target_guid								= 1;
+		repeated find_other_unit_item_one  mount_or_wing_info	= 2;
+		optional bool	is_wing									= 3;
+		optional bool	is_finish								= 4;
+	}
+	
+	
+	message find_other_unit_buff_end
+	{
+		optional int64	target_guid							= 1;
+		repeated int32	buff_info							= 2;
+	}
+	
+	message find_other_unit_belief_end
+	{
+		optional int64	target_guid							= 1;
+		repeated int32	belief_info							= 2;
+	}
+
+	message show_money_get
+	{
+		optional float	money_percent						= 1;
+		optional int32  money_type								= 2;
+		optional int64  money_num								= 3;
+		optional float	extra_percent							= 4;
+		optional bool   is_add_by_kill_monster					= 5;
+		optional bool   is_need_show_toptip						= 6;
+}
+	
+	message send_red_package
+	{
+		optional int32	red_package_id						= 1;
+		optional string	send_text							= 2;
+		repeated int32	item_guid							= 3;
+	}
+	
+	message send_red_package_end
+	{
+		optional int32	red_package_id						= 1;
+		optional int32	send_result							= 2;
+	}
+	
+	message load_role_ws_info_end
+	{
+		repeated int32	role_guid							= 1;
+		repeated int32	data_array							= 2;
+	}
+	
+	message update_role_ws_info_one
+	{
+		repeated int32	role_guid							= 1;
+		optional int32	info_index							= 2;
+		optional int32	info_value							= 3;
+	}
+	
+	message get_red_package
+	{
+		repeated int32	red_package_guid					= 1;
+	}
+	
+	message del_red_package
+	{
+		repeated int32	red_package_guid					= 1;
+	}
+	
+	message get_red_package_end
+	{
+		optional int32	get_result							= 1;
+		optional int32	money_type							= 2  [default = 0];
+		optional int32	money_num							= 3  [default = 0];
+		repeated int32	red_pack_guid						= 4;
+	}
+	
+	message red_pack_receiver_info
+	{
+		repeated int32	receiver_guid						= 1;
+		optional string	receiver_name						= 2;
+		optional int32	money_num							= 3;
+	}
+	
+	message red_pack_info
+	{
+		repeated int32	red_pack_guid						= 1;
+		optional int32	template_id							= 2;
+		repeated int32	sender_guid							= 3;
+		optional int32	create_time							= 4;
+		optional string	sender_name							= 5;
+		optional string	send_text							= 6;
+		optional int32	remain_times						= 7;
+		optional int32	remain_money_num					= 8;
+		repeated red_pack_receiver_info receiver_list		= 9;
+	}
+	
+	message update_red_pack_info
+	{
+		repeated red_pack_info	info_list					= 1;
+	}
+	
+	message update_new_draw_info
+	{
+		repeated int32	red_package_guid					= 1;
+		optional int32	remain_money_num					= 2;
+		optional int32	remain_get_times					= 3;
+		repeated int32	receiver_guid						= 4;
+		optional string	receiver_name						= 5;
+		optional int32	draw_num							= 6;
+	}
+	
+	message add_guide_record
+	{
+		optional int32	guide_trigger_id 					= 1;
+		optional int32	state								= 2;
+	}
+	
+	message	guide_record_one
+	{
+		optional int32	guide_trigger_id					= 1;
+		optional int32	state								= 2;
+	}
+	
+	message update_guide_record
+	{
+		repeated guide_record_one	record_list				= 1;
+	}
+	
+	message syn_tick_time
+	{
+		optional int32	cur_server_time						= 1; // 当前服务器时间
+		optional int32	cur_server_green_time				= 2; // 当前服务器格林时间
+	}
+	
+	message transfer_buff
+	{
+		optional int32 operate_type							= 1; // 1-添加 2-删除
+	}
+	
+	message get_func_unlock_award
+	{
+		optional int32	func_unlock_template_id				= 1; // 功能解锁表的ID
+	}
+	
+	message get_func_unlock_award_end
+	{
+		optional int32	func_unlock_template_id				= 1; // 功能解锁表的ID
+	}
+	
+	message interact_with_npc
+	{
+		optional int64	npc_guid							= 1; // 交互的NPC的GUID
+	}
+	
+	message interact_with_npc_state
+	{
+		optional int32	interact_state						= 1; // 交互状态代号
+		optional int32	npc_template_id						= 2; // 交互的NPC的模板ID
+		optional int64	npc_guid							= 3; // 交互的NPC的guid
+	}
+	
+	message aoi_npc_gather_state
+	{
+		optional int32	interact_state						= 1; // 交互状态代号
+		optional int64	npc_guid							= 3; // 交互的NPC的guid
+	}
+	
+	message finish_gather_result
+	{
+		optional int32	finish_result						= 1; // 采集结果
+	}
+	
+	message req_hit_and_get
+	{
+		optional int64	npc_guid							= 1; // 碰撞的npc
+	}
+	
+	message update_highest_record_all
+	{
+		repeated string	info_array							= 1;
+	}
+	
+	message update_highest_record_one
+	{
+		optional int32	info_index							= 1;
+		optional string	info_value							= 2;
+	}
+	
+	message purchase_parton_saint_mark_slot
+	{
+		//就是啥都不要
+	}
+	message purchase_parton_saint_mark_slot_end
+	{
+		optional int32	purchase_result						= 1;
+	}
+	message grade_up_level_ani_finish
+	{
+		optional int64	role_guid							= 1;   // 目标guid
+		optional int32	old_equip_buff_id					= 2;   // 旧Buff ID
+		optional int32	new_equip_buff_id					= 3;   // 新Buff ID
+	}
+
+	message open_server_time
+	{
+		optional string  open_server_time					= 1;	//开服时间
+		optional string	 open_server_activity_end_time		= 2;	//开服活动结束时间
+		optional int32   interval_days						= 3;	//开服到现在的间隔天数
+	}
+	
+	message daily_must_do_count_one_info_package
+	{
+		repeated int32              role_guid                = 1;   // 角色GUID
+		optional int32				must_do_type	 	     = 2;	 // 类型
+		optional int32				must_do_value			 = 3;  //值
+		repeated int32              data_array               = 4; 	// 数据数组
+	}
+	
+	message daily_must_do_count_all_info_package
+	{
+		repeated int32              role_guid                = 1;   // 角色GUID
+		repeated int32              data_array               = 2; 	// 数据数组
+	}
+	
+	message npc_left_hp_per
+	{
+		optional int32              npc_spawn_point_template_id = 1; // Npc刷新配置ID
+		optional int32              left_hp_per               	= 2; // 数据数组
+	}
+	
+	message treasure_get_prize
+	{
+		optional int32 operate_type		= 1;
+		optional int32 prize_type		= 2;
+	}
+	message treasure_get_prize_end
+	{
+		optional int32 operate_type		= 1;
+		optional int32 prize_type		= 2;
+		repeated int32 prize_list		= 3;
+	}
+	message treasure_prize_record
+	{
+		repeated int32 record_list		= 1;
+	}
+	
+	message treasure_notice
+	{
+		optional int32 item_id			= 1;
+		optional int32 item_quality		= 2;
+		optional int32 operate_type		= 3;
+	}
+	
+	message jump_raid_animation
+	{
+	
+	}
+	
+	message guide_trigger_start
+	{
+		optional int32 guide_trigger_id = 1;
+	}
+	
+	message change_role_class
+	{
+		optional int32 class_change     = 1;
+	}
+	
+	message change_role_class_end
+	{
+		optional int32 result			= 1;
+	}
+	
+	//玩家角色改名
+	message change_player_name
+	{
+		optional string role_name = 1;
+	}
+	
+	message change_player_name_end
+	{
+		optional int32 ret = 1;
+	}
+	
+	//改名二次确认
+	message confirm_change_name
+	{
+		optional bool confirm_type = 1;
+		optional string role_name  = 2;
+	}
+	
+	message recharge_success_by_sdk
+	{
+		optional string order_id			= 1;
+		optional string token				= 2;
+		optional int32 	goods_id			= 3;
+		optional int32 	payment_type		= 4;
+		optional int64 	role_guid			= 5;
+		optional int32 	cur_package_part	= 6;
+		optional int32 	max_package_part	= 7;
+		optional string package_name		= 8;
+	}
+	
+	
+	//玩家当前所在服务器id
+	message player_cur_server_id
+	{
+		optional int32 server_id = 1;
+		optional int32 gate_server_id = 2;
+	}
+	
+	message get_first_raid_award
+	{
+		optional int32 map_temp_id = 1;
+	}
+	
+	message auto_use_hp_medicine
+	{
+		optional float health_percent = 1;
+		optional bool is_auto_buy_medicine = 2;
+	}
+	
+	message kill_prompt_info
+	{
+		optional int32 kill_num_now 			= 1;
+		optional bool is_end					= 2;
+		optional string kill_player_name 		= 3;
+		optional int32 kill_player_class_type	= 4;
+	}
+	message	composit_failed_num
+	{
+		optional int32 error_num				= 1;
+	}
+	
+	message addition_buff_arr
+	{
+		repeated int32              role_guid                = 1;   // 人物guid
+		optional int32              addition_buff_type       = 2;   // 背包界面中加持BUFF的类型
+		repeated int32              addition_buff_id_arr     = 3;   // 加持BUFF的模板id数组
+	}
+	message get_main_person_information
+	{
+		
+	}
+	message sync_person_information
+	{
+		optional bool is_main_player = 1;
+		optional int32 infor_state = 2;
+		optional int32 reward_state = 3;
+		optional string gender = 4;
+		optional string personalized_signature = 5;
+		optional int32 birthday_year = 6;
+		optional int32 birthday_mouth = 7;
+		optional int32 birthday_day = 8;
+		optional string city = 9;
+        optional string hometown = 10;
+		optional string online_state = 11;
+		repeated int32 tags = 12;
+		optional bool in_role_info_panel = 13;
+	}
+	
+	message modify_person_information
+	{
+		optional string gender = 1;
+		optional string personalized_signature = 2;
+		optional int32 birthday_year = 3;
+		optional int32 birthday_mouth = 4;
+		optional int32 birthday_day = 5;
+		optional string city = 6;
+        optional string hometown = 7;
+		optional string online_state = 8;
+		repeated int32 tags = 9;
+	}
+	message sync_other_person_couple_info
+	{
+		optional int64 role_guid = 1;
+		optional string role_name = 2;
+		optional int64 marry_time = 3;
+	}
+	message get_other_person_information
+	{
+		optional int32 	role_guid_a			= 1;
+		optional int32 	role_guid_b			= 2;
+	}	
+	message get_person_infor_reward
+	{
+		
+	}	
+	message get_person_infor_reward_end
+	{
+		optional int32 reward_state = 1;
+	}
+
+	message find_other_unit_appearance_info_end
+	{
+		optional int64  target_guid			= 1;
+		optional int32  appearance_id		= 2;
+	}
+	
+	message save_customize_appearance_info
+	{
+		optional string  appearance		= 1;
+	}
+	
+	message save_appearance_info_to_id
+	{
+		optional string appearance_info_string = 1;
+	}
+
+	message save_appearance_info_to_id_end
+	{
+		optional string appearance_info_string = 1;
+		optional int32	appearance_info_id = 2;
+	}
+
+	message load_appearance_info_by_id
+	{
+		optional int32	appearance_info_id = 1;
+	}
+
+	message load_appearance_info_by_id_end
+	{
+		optional string	appearance_info_string = 1;
+		optional int32	appearance_info_id = 2;
+	}
+	message show_vip
+	{
+		optional int32 is_show_vip = 1;
+	}
+	message buy_tip
+	{
+	    optional int32 tip_type = 1;
+	}
+	
+	message break_map_over
+	{
+	
+	}
+	
+	message change_enchant_show_type
+	{
+		 optional int32 show_type = 1;
+	}
+}
+message character_s2s
+{
+	message sl_logic_data
+	{
+		repeated int32 data_ary = 1;		
+	}
+}
+message character
+{
+	
+}

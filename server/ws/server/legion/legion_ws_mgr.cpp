@@ -19,7 +19,7 @@
 #include "globle_data.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	legion_ws_mgr::legion_ws_mgr()
 	{
@@ -453,7 +453,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::create_legion pro_msg;
+			faith::ws2cs_proto::create_legion pro_msg;
 			create_legion_end_to_cs_msg.to_proto(pro_msg);
 			session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_create_legion);
 		}
@@ -771,7 +771,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::clear_player_legion_info pro_msg;
+				faith::ws2cs_proto::clear_player_legion_info pro_msg;
 				pro_msg.set_role_guid(player_guid.server_64);
 				legion_member_session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_clear_player_legion_info);
 			}
@@ -1299,7 +1299,7 @@ namespace hld
 	{
 		switch (rank_type)
 		{
-		case hld::e_legion_act_type_raid:
+		case faith::e_legion_act_type_raid:
 		{
 			legion_rank_list& _rank_list = m_legion_act_ranks[e_legion_act_type_raid];
 			int32 create_time = time_helper::get_cur_time_new().second;
@@ -1339,7 +1339,7 @@ namespace hld
 			}
 			break;
 		}
-		case hld::e_legion_act_type_bonfire:
+		case faith::e_legion_act_type_bonfire:
 		{
 			legion_rank_list& _rank_list = m_legion_act_ranks[e_legion_act_type_bonfire];
 			int32 create_time = time_helper::get_cur_time_new().second;
@@ -1372,7 +1372,7 @@ namespace hld
 			}
 			break;
 		}
-		case hld::e_legion_act_type_max:
+		case faith::e_legion_act_type_max:
 			break;
 		default:
 			break;
@@ -1507,18 +1507,18 @@ namespace hld
 	{
 		switch (rank_type)
 		{
-		case hld::e_legion_rank_type_fighting_power:
+		case faith::e_legion_rank_type_fighting_power:
 		{
 			return &m_legion_fight_power_rank;
 		}
 		break;
-		case hld::e_legion_rank_type_city_war:
+		case faith::e_legion_rank_type_city_war:
 		{
 			return &m_legion_city_war_rank;
 		}
 		break;
-		case hld::e_legion_rank_type_world_elite:
-		case hld::e_legion_rank_type_world_boss:
+		case faith::e_legion_rank_type_world_elite:
+		case faith::e_legion_rank_type_world_boss:
 		{
 			if (rank_sub_id <= 0)
 			{
@@ -1527,17 +1527,17 @@ namespace hld
 			return &m_legion_monster_rank_map[rank_sub_id];
 		}
 		break;
-		case hld::e_legion_rank_type_raid:
+		case faith::e_legion_rank_type_raid:
 		{
 			return &m_legion_act_ranks[e_legion_act_type_raid];
 		}
 		break;
-		case hld::e_legion_rank_type_bonfire:
+		case faith::e_legion_rank_type_bonfire:
 		{
 			return &m_legion_act_ranks[e_legion_act_type_bonfire];
 		}
 		break;
-		case hld::e_legion_rank_type_cross_world_boss:
+		case faith::e_legion_rank_type_cross_world_boss:
 		{
 			if (rank_sub_id <= 0)
 			{
@@ -1563,33 +1563,33 @@ namespace hld
 
 		switch (ranking_type)
 		{
-		case hld::e_RankingIndex_legion_core:
+		case faith::e_RankingIndex_legion_core:
 			return &m_legion_fight_power_rank;
 			break;
-		case hld::e_RankingIndex_legion_territory:
+		case faith::e_RankingIndex_legion_territory:
 			return &m_legion_city_war_rank;
 			break;
-		case hld::e_RankingIndex_legion_boss:
+		case faith::e_RankingIndex_legion_boss:
 			return &m_legion_act_ranks[e_legion_act_type_raid];
 			break;
-		case hld::e_RankingIndex_legion_bonfire:
+		case faith::e_RankingIndex_legion_bonfire:
 			return &m_legion_act_ranks[e_legion_act_type_bonfire];
 			break;
-		case hld::e_RankingIndex_world_boss_one:
-		case hld::e_RankingIndex_world_boss_two:
-		case hld::e_RankingIndex_world_boss_three:
-		case hld::e_RankingIndex_world_boss_four:
-		case hld::e_RankingIndex_world_boss_five:
-		case hld::e_RankingIndex_world_boss_six:
-		case hld::e_RankingIndex_world_boss_seven:
-		case hld::e_RankingIndex_world_elite_one:
-		case hld::e_RankingIndex_world_elite_two:
-		case hld::e_RankingIndex_world_elite_three:
-		case hld::e_RankingIndex_world_elite_four:
-		case hld::e_RankingIndex_world_elite_five:
-		case hld::e_RankingIndex_world_elite_six:
-		case hld::e_RankingIndex_world_elite_seven:
-		case hld::e_RankingIndex_world_elite_eight:
+		case faith::e_RankingIndex_world_boss_one:
+		case faith::e_RankingIndex_world_boss_two:
+		case faith::e_RankingIndex_world_boss_three:
+		case faith::e_RankingIndex_world_boss_four:
+		case faith::e_RankingIndex_world_boss_five:
+		case faith::e_RankingIndex_world_boss_six:
+		case faith::e_RankingIndex_world_boss_seven:
+		case faith::e_RankingIndex_world_elite_one:
+		case faith::e_RankingIndex_world_elite_two:
+		case faith::e_RankingIndex_world_elite_three:
+		case faith::e_RankingIndex_world_elite_four:
+		case faith::e_RankingIndex_world_elite_five:
+		case faith::e_RankingIndex_world_elite_six:
+		case faith::e_RankingIndex_world_elite_seven:
+		case faith::e_RankingIndex_world_elite_eight:
 		{
 			return get_legion_rank(e_legion_rank_type_world_boss, templates_ptr->RankingBossID);
 		}

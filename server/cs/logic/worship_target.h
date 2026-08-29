@@ -13,7 +13,7 @@ purpose: about rankings
 
 #include "Logic/ranking_def.hpp"
 
-namespace hld
+namespace faith
 {
 
 

@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_welfare_2eproto();
@@ -121,7 +121,7 @@ class welfare_proto_welfare_info_one : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 info_value() const;
   inline void set_info_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.welfare_proto.welfare_info_one)
+  // @@protoc_insertion_point(class_scope:faith.welfare_proto.welfare_info_one)
  private:
   inline void set_has_info_type();
   inline void clear_has_info_type();
@@ -225,7 +225,7 @@ class welfare_proto_welfare_info_all : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 today_data() const;
   inline void set_today_data(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.welfare_proto.welfare_info_all)
+  // @@protoc_insertion_point(class_scope:faith.welfare_proto.welfare_info_all)
  private:
   inline void set_has_days_num();
   inline void clear_has_days_num();
@@ -316,7 +316,7 @@ class welfare_proto_active_degree_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_info_value();
 
-  // @@protoc_insertion_point(class_scope:hld.welfare_proto.active_degree_info)
+  // @@protoc_insertion_point(class_scope:faith.welfare_proto.active_degree_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -413,7 +413,7 @@ class welfare_proto_random_get_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_index();
 
-  // @@protoc_insertion_point(class_scope:hld.welfare_proto.random_get_info)
+  // @@protoc_insertion_point(class_scope:faith.welfare_proto.random_get_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -494,7 +494,7 @@ class welfare_proto_get_reward : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 template_id() const;
   inline void set_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.welfare_proto.get_reward)
+  // @@protoc_insertion_point(class_scope:faith.welfare_proto.get_reward)
  private:
   inline void set_has_template_id();
   inline void clear_has_template_id();
@@ -614,7 +614,7 @@ class welfare_proto_get_reward_end : public ::google::protobuf::Message {
   inline bool is_replacement() const;
   inline void set_is_replacement(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.welfare_proto.get_reward_end)
+  // @@protoc_insertion_point(class_scope:faith.welfare_proto.get_reward_end)
  private:
   inline void set_has_template_id();
   inline void clear_has_template_id();
@@ -704,7 +704,7 @@ class welfare_proto_get_reward_check_in : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 info_data() const;
   inline void set_info_data(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.welfare_proto.get_reward_check_in)
+  // @@protoc_insertion_point(class_scope:faith.welfare_proto.get_reward_check_in)
  private:
   inline void set_has_info_data();
   inline void clear_has_info_data();
@@ -805,7 +805,7 @@ class welfare_proto_get_reward_activatecode : public ::google::protobuf::Message
   inline ::google::protobuf::int32 login_type() const;
   inline void set_login_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.welfare_proto.get_reward_activatecode)
+  // @@protoc_insertion_point(class_scope:faith.welfare_proto.get_reward_activatecode)
  private:
   inline void set_has_activatecode();
   inline void clear_has_activatecode();
@@ -893,7 +893,7 @@ class welfare_proto_activity_degree_finish : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 activity_template_id() const;
   inline void set_activity_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.welfare_proto.activity_degree_finish)
+  // @@protoc_insertion_point(class_scope:faith.welfare_proto.activity_degree_finish)
  private:
   inline void set_has_activity_template_id();
   inline void clear_has_activity_template_id();
@@ -982,7 +982,7 @@ class welfare_proto_req_frist_kill_world_boss_prize : public ::google::protobuf:
   inline ::google::protobuf::int64 first_killer_guid() const;
   inline void set_first_killer_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.welfare_proto.req_frist_kill_world_boss_prize)
+  // @@protoc_insertion_point(class_scope:faith.welfare_proto.req_frist_kill_world_boss_prize)
  private:
   inline void set_has_npc_respawn_point_template_id();
   inline void clear_has_npc_respawn_point_template_id();
@@ -1060,7 +1060,7 @@ class welfare_proto_get_first_recharge_time : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.welfare_proto.get_first_recharge_time)
+  // @@protoc_insertion_point(class_scope:faith.welfare_proto.get_first_recharge_time)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1153,7 +1153,7 @@ class welfare_proto_get_first_recharge_time_end : public ::google::protobuf::Mes
   inline ::google::protobuf::int32 is_third_recharge_time() const;
   inline void set_is_third_recharge_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.welfare_proto.get_first_recharge_time_end)
+  // @@protoc_insertion_point(class_scope:faith.welfare_proto.get_first_recharge_time_end)
  private:
   inline void set_has_is_first_recharge_time();
   inline void clear_has_is_first_recharge_time();
@@ -1241,7 +1241,7 @@ class welfare_proto_get_cumulative_sign_in_reward : public ::google::protobuf::M
   inline ::google::protobuf::int32 reward_index() const;
   inline void set_reward_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.welfare_proto.get_cumulative_sign_in_reward)
+  // @@protoc_insertion_point(class_scope:faith.welfare_proto.get_cumulative_sign_in_reward)
  private:
   inline void set_has_reward_index();
   inline void clear_has_reward_index();
@@ -1323,7 +1323,7 @@ class welfare_proto_get_cumulative_sign_in_reward_end : public ::google::protobu
   inline ::google::protobuf::int32 get_result() const;
   inline void set_get_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.welfare_proto.get_cumulative_sign_in_reward_end)
+  // @@protoc_insertion_point(class_scope:faith.welfare_proto.get_cumulative_sign_in_reward_end)
  private:
   inline void set_has_get_result();
   inline void clear_has_get_result();
@@ -1398,7 +1398,7 @@ class welfare_proto_retroactive_all_days : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.welfare_proto.retroactive_all_days)
+  // @@protoc_insertion_point(class_scope:faith.welfare_proto.retroactive_all_days)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1477,7 +1477,7 @@ class welfare_proto_retroactive_all_days_end : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 get_result() const;
   inline void set_get_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.welfare_proto.retroactive_all_days_end)
+  // @@protoc_insertion_point(class_scope:faith.welfare_proto.retroactive_all_days_end)
  private:
   inline void set_has_get_result();
   inline void clear_has_get_result();
@@ -1569,7 +1569,7 @@ class welfare_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.welfare_proto)
+  // @@protoc_insertion_point(class_scope:faith.welfare_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2319,7 +2319,7 @@ inline void welfare_proto_retroactive_all_days_end::set_get_result(::google::pro
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

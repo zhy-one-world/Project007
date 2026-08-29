@@ -7,7 +7,7 @@
 #include "utility/init_unit.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	legion_ws_applicant::legion_ws_applicant() {}
 

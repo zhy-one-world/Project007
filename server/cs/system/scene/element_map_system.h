@@ -2,7 +2,7 @@
 
 #include "base/ecs_world.h"
 
-namespace hld
+namespace faith
 {
 	class player;
 	class npc;

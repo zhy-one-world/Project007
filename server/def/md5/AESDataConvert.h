@@ -7,7 +7,7 @@
 #include <string.h>
 #include "server_log.hpp"
 
-namespace hld {
+namespace faith {
 	
 	class AESDataConvert {
 

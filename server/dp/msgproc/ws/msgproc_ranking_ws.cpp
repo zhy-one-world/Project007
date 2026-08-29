@@ -15,7 +15,7 @@ purpose:
 #include "dp2s.pb.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	
 
@@ -25,7 +25,7 @@ namespace hld
 
 	void save_arena_rank(uint32 connindex, const void *data_ptr, size_t data_len)
 	{
-		hld::server2dp_proto::ws2dp_save_arena_rank request;
+		faith::server2dp_proto::ws2dp_save_arena_rank request;
 		if (!parse_msg::getInstance().parse_message_server(&request, data_ptr, data_len))
 		{
 			return;
@@ -37,7 +37,7 @@ namespace hld
 	}
 	void save_arena_rank_(uint32 connindex, const void * data_ptr, size_t data_len)
 	{
-		const hld::ws2dp_save_arena_rank* pdata = static_cast<const hld::ws2dp_save_arena_rank*>(data_ptr);
+		const faith::ws2dp_save_arena_rank* pdata = static_cast<const faith::ws2dp_save_arena_rank*>(data_ptr);
 		if (nullptr == pdata)
 		{
 			return;
@@ -435,7 +435,7 @@ namespace hld
 
 	void save_one_ranking_list(uint32 connindex, const void *data_ptr, size_t data_len)
 	{
-		const hld::ws2dp_save_one_total_ranking_info* pdata = static_cast<const hld::ws2dp_save_one_total_ranking_info*>(data_ptr);
+		const faith::ws2dp_save_one_total_ranking_info* pdata = static_cast<const faith::ws2dp_save_one_total_ranking_info*>(data_ptr);
 		if (nullptr == pdata)
 		{
 			return;
@@ -488,7 +488,7 @@ namespace hld
 
 	void save_one_service_rank_list(uint32 connindex, const void *data_ptr, size_t data_len)
 	{
-		const hld::ws2dp_save_one_service_rank_info* pdata = static_cast<const hld::ws2dp_save_one_service_rank_info*>(data_ptr);
+		const faith::ws2dp_save_one_service_rank_info* pdata = static_cast<const faith::ws2dp_save_one_service_rank_info*>(data_ptr);
 		if (nullptr == pdata)
 		{
 			return;
@@ -818,7 +818,7 @@ namespace hld
 	void add_robot_worship(uint32 connindex, const void *data_ptr, size_t data_len)
 	{
 		//以下注释部分是 当竞技场排行无数据时创建机器人 ，新需求是 机器人不加入排行榜
-		//const hld::ws2dp_add_robot_worship* pdata = static_cast<const hld::ws2dp_add_robot_worship*>(data_ptr);
+		//const faith::ws2dp_add_robot_worship* pdata = static_cast<const faith::ws2dp_add_robot_worship*>(data_ptr);
 		//if (nullptr == pdata)
 		//{
 		//	return;

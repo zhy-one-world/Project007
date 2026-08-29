@@ -12,7 +12,7 @@
 #include <json/json.h>
 #include <daemon.hpp>
 
-namespace hld
+namespace faith
 {
 	struct s_recharge_temp_info
 	{

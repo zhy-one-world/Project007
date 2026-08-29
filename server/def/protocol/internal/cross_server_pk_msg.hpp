@@ -15,12 +15,12 @@ purpose: ¿ç·þPK
 #include "Logic/char_def.hpp"
 #include "Logic/cross_server_pk_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	enum 
 	{
-		e_msgindex_ws2dp_save_cross_server_pk_info = hld::e_msg_base_cross_server_pk,
+		e_msgindex_ws2dp_save_cross_server_pk_info = faith::e_msg_base_cross_server_pk,
 		e_msgindex_ws2dp_load_cross_server_pk_info,
 		e_msgindex_dp2ws_load_cross_server_pk_info,
 		e_msgindex_ws2dp_clear_cross_server_pk_info,
@@ -33,7 +33,7 @@ namespace hld
 		e_msgindex_ws2ws_pk_fake_player_msg
 	};
 
-	struct ws2dp_save_cross_server_pk_msg_all : public hld::packet_base
+	struct ws2dp_save_cross_server_pk_msg_all : public faith::packet_base
 	{
 		s_pk_island_simple_msg	island_simple_msg;
 		ws2dp_save_cross_server_pk_msg_all()
@@ -43,7 +43,7 @@ namespace hld
 		}
 	};
 
-	struct ws2dp_clear_cross_server_pk_msg_all : public hld::packet_base
+	struct ws2dp_clear_cross_server_pk_msg_all : public faith::packet_base
 	{
 		ws2dp_clear_cross_server_pk_msg_all()
 		{
@@ -52,7 +52,7 @@ namespace hld
 		}
 	};
 
-	struct ws2dp_load_cross_server_pk_msg_all : public hld::packet_base
+	struct ws2dp_load_cross_server_pk_msg_all : public faith::packet_base
 	{
 		ws2dp_load_cross_server_pk_msg_all()
 		{
@@ -74,7 +74,7 @@ namespace hld
 		}
 	};
 
-	struct dp2ws_load_cross_server_pk_msg_all : public hld::packet_base
+	struct dp2ws_load_cross_server_pk_msg_all : public faith::packet_base
 	{
 		int32 data_num;
 		s_dp2ws_island_simple_msg	simple_msg[max_cross_server_all_class_war_count];
@@ -90,7 +90,7 @@ namespace hld
 		}
 	};
 
-	struct ws2ws_transfer_cross_pk_map : public hld::packet_base
+	struct ws2ws_transfer_cross_pk_map : public faith::packet_base
 	{
 		int32						class_type;
 		guid_64						role_guid;
@@ -106,7 +106,7 @@ namespace hld
 		}
 	};
 
-	struct ws2ws_transfer_cross_pk_map_result : public hld::packet_base
+	struct ws2ws_transfer_cross_pk_map_result : public faith::packet_base
 	{
 		int32						result;
 		guid_64						role_guid;
@@ -121,7 +121,7 @@ namespace hld
 			wheader = e_msgindex_ws2ws_cross_pk_map_result;
 		}
 	};
-	struct cs2ws_update_one_island_msg : public hld::packet_base
+	struct cs2ws_update_one_island_msg : public faith::packet_base
 	{
 		s_pk_island_all_msg		island_msg;
 		int32					war_num;
@@ -148,7 +148,7 @@ namespace hld
 		}
 	};
 
-	struct ws2ws_pk_harry_player : public hld::packet_base
+	struct ws2ws_pk_harry_player : public faith::packet_base
 	{
 		s_pk_player_msg			pk_player_msg[max_branch_type];
 		int32					data_num;

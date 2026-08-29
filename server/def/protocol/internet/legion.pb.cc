@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -3927,12 +3927,12 @@ void protobuf_AddDesc_legion_2eproto() {
     "uel_times\030\004 \001(\005\022\020\n\010gs_value\030\005 \001(\t\022\032\n\022con"
     "tribution_value\030\006 \001(\t\022\037\n\027week_contributi"
     "on_value\030\007 \001(\t\032I\n\021members_info_list\0224\n\rm"
-    "ems_info_arr\030\001 \003(\0132\035.hld.legion_proto.me"
+    "ems_info_arr\030\001 \003(\0132\035.faith.legion_proto.me"
     "mber_info\032\337\001\n\013legion_info\022\023\n\013legion_guid"
     "\030\001 \001(\004\022\023\n\013legion_name\030\002 \001(\t\022\024\n\014announcem"
     "ent\030\003 \001(\t\022\027\n\017legion_gs_value\030\004 \001(\t\022\023\n\013le"
     "gion_data\030\005 \003(\005\022\022\n\nmember_num\030\006 \001(\005\0222\n\013m"
-    "ember_list\030\007 \003(\0132\035.hld.legion_proto.memb"
+    "ember_list\030\007 \003(\0132\035.faith.legion_proto.memb"
     "er_info\022\032\n\022next_recruit_stamp\030\010 \001(\005\032\312\001\n\021"
     "legion_brief_info\022\023\n\013legion_guid\030\001 \001(\004\022\023"
     "\n\013legion_name\030\002 \001(\t\022\022\n\nchief_guid\030\003 \001(\004\022"
@@ -3943,7 +3943,7 @@ void protobuf_AddDesc_legion_2eproto() {
     "legion_name\030\002 \001(\t\022\024\n\014legion_level\030\003 \001(\005\022"
     "\036\n\026auto_accept_new_member\030\004 \001(\005\032L\n\021creat"
     "e_legion_end\0227\n\020legion_info_data\030\001 \001(\0132\035"
-    ".hld.legion_proto.legion_info\0326\n\026update_"
+    ".faith.legion_proto.legion_info\0326\n\026update_"
     "legion_info_all\022\034\n\024legion_info_data_arr\030"
     "\001 \003(\005\032N\n\026update_legion_info_one\022\031\n\021legio"
     "n_info_index\030\001 \001(\005\022\031\n\021legion_info_value\030"
@@ -3967,7 +3967,7 @@ void protobuf_AddDesc_legion_2eproto() {
     "ting_power\030\003 \001(\003\022\'\n\037only_get_auto_accept"
     "_new_member\030\004 \001(\005\032h\n\023get_legion_list_end"
     "\022\027\n\017legion_list_len\030\001 \001(\005\0228\n\013legion_list"
-    "\030\002 \003(\0132#.hld.legion_proto.legion_brief_i"
+    "\030\002 \003(\0132#.faith.legion_proto.legion_brief_i"
     "nfo\032>\n\024apply_to_join_legion\022\021\n\trole_guid"
     "\030\001 \001(\004\022\023\n\013legion_guid\030\002 \001(\004\032/\n\030apply_to_"
     "join_legion_end\022\023\n\013apply_stage\030\001 \001(\005\032e\n\r"
@@ -3976,7 +3976,7 @@ void protobuf_AddDesc_legion_2eproto() {
     "\n\013invite_guid\030\004 \001(\004\032\243\001\n\021invite_player_en"
     "d\022\030\n\020invite_role_guid\030\001 \001(\004\022\030\n\020invite_ro"
     "le_name\030\002 \001(\t\022\031\n\021invite_role_level\030\003 \001(\005"
-    "\022\?\n\022invite_legion_info\030\004 \001(\0132#.hld.legio"
+    "\022\?\n\022invite_legion_info\030\004 \001(\0132#.faith.legio"
     "n_proto.legion_brief_info\032\027\n\025invite_play"
     "er_succeed\032j\n\016applicant_info\022\026\n\016applican"
     "t_guid\030\001 \001(\004\022\026\n\016applicant_name\030\002 \001(\t\022\020\n\010"
@@ -3984,13 +3984,13 @@ void protobuf_AddDesc_legion_2eproto() {
     "\n\027get_applicant_info_list\022\021\n\trole_guid\030\001"
     " \001(\004\032i\n\033get_applicant_info_list_end\022\020\n\010l"
     "ist_len\030\001 \001(\005\0228\n\016applicant_list\030\002 \003(\0132 ."
-    "hld.legion_proto.applicant_info\032M\n\rproce"
+    "faith.legion_proto.applicant_info\032M\n\rproce"
     "ss_apply\022\021\n\trole_guid\030\001 \001(\004\022\026\n\016applicant"
     "_guid\030\002 \001(\004\022\021\n\tis_accept\030\003 \001(\005\032>\n\021proces"
     "s_apply_end\022\026\n\016applicant_guid\030\001 \001(\004\022\021\n\ti"
     "s_accept\030\002 \001(\005\032\030\n\026convenient_join_legion"
     "\032\034\n\032convenient_join_legion_end\032H\n\016add_me"
-    "mber_end\0226\n\017new_member_info\030\001 \001(\0132\035.hld."
+    "mber_end\0226\n\017new_member_info\030\001 \001(\0132\035.faith."
     "legion_proto.member_info\0328\n\ndel_member\022\021"
     "\n\trole_guid\030\001 \001(\004\022\027\n\017del_member_guid\030\002 \001"
     "(\004\032)\n\016del_member_end\022\027\n\017del_member_guid\030"
@@ -4014,12 +4014,12 @@ void protobuf_AddDesc_legion_2eproto() {
     "\021\n\trole_guid\030\001 \001(\004\022\030\n\020from_happen_time\030\002"
     " \001(\r\032g\n\031get_legion_event_list_end\022\026\n\016eve"
     "nt_list_len\030\001 \001(\005\0222\n\nevent_list\030\002 \003(\0132\036."
-    "hld.legion_proto.legion_event\032=\n\021legion_"
+    "faith.legion_proto.legion_event\032=\n\021legion_"
     "bonus_info\022\022\n\nmission_id\030\001 \001(\005\022\024\n\014finish"
     "_count\030\002 \001(\005\032Q\n\025get_legion_bonus_info\022\022\n"
     "\nmission_id\030\001 \001(\005\022\023\n\013sub_type_id\030\002 \001(\005\022\017"
     "\n\007get_all\030\003 \001(\010\032g\n\031get_legion_bonus_info"
-    "_end\0227\n\nbonus_info\030\001 \003(\0132#.hld.legion_pr"
+    "_end\0227\n\nbonus_info\030\001 \003(\0132#.faith.legion_pr"
     "oto.legion_bonus_info\022\021\n\tbonus_num\030\002 \001(\005"
     "\032\034\n\032get_legion_bonus_award_end\032*\n\024send_s"
     "timulate_bonus\022\022\n\nmission_id\030\001 \001(\005\032\?\n\025ki"
@@ -4036,7 +4036,7 @@ void protobuf_AddDesc_legion_2eproto() {
     "\030\002 \001(\t\032;\n\022legion_boss_record\022\023\n\013killer_n"
     "ame\030\001 \001(\t\022\020\n\010data_ary\030\002 \003(\005\032d\n\027legion_bo"
     "ss_record_list\022\022\n\nrecord_num\030\001 \001(\005\0225\n\007re"
-    "cords\030\002 \003(\0132$.hld.legion_proto.legion_bo"
+    "cords\030\002 \003(\0132$.faith.legion_proto.legion_bo"
     "ss_record\032H\n\025get_legion_boss_award\022\021\n\tro"
     "le_guid\030\001 \001(\004\022\034\n\024boss_map_template_id\030\002 "
     "\001(\005\032Y\n\031get_legion_boss_award_end\022\034\n\024boss"
@@ -4062,10 +4062,10 @@ void protobuf_AddDesc_legion_2eproto() {
     "plate_id\030\010 \001(\005\022\031\n\021occupy_time_stamp\030\t \001("
     "\005\032z\n\027city_war_territory_info\022\024\n\014territor"
     "y_id\030\001 \001(\005\022\021\n\tis_in_war\030\002 \001(\010\0226\n\tbid_inf"
-    "os\030\003 \003(\0132#.hld.legion_proto.city_war_bid"
+    "os\030\003 \003(\0132#.faith.legion_proto.city_war_bid"
     "_info\032&\n\021get_city_war_info\022\021\n\trole_guid\030"
     "\001 \001(\004\032Z\n\025get_city_war_info_end\022A\n\016territ"
-    "ory_info\030\001 \003(\0132).hld.legion_proto.city_w"
+    "ory_info\030\001 \003(\0132).faith.legion_proto.city_w"
     "ar_territory_info\032H\n\033get_abstention_city"
     "_war_end\022\024\n\014territory_id\030\001 \003(\005\022\023\n\013legion"
     "_name\030\002 \003(\t\032M\n\022apply_city_war_bid\022\021\n\trol"
@@ -4081,7 +4081,7 @@ void protobuf_AddDesc_legion_2eproto() {
     "err_score\030\005 \001(\005\022!\n\031occupy_terr_highest_s"
     "core\030\006 \001(\005\032+\n\026req_city_war_rank_info\022\021\n\t"
     "role_guid\030\001 \001(\004\032U\n\032req_city_war_rank_inf"
-    "o_end\0227\n\trank_info\030\001 \003(\0132$.hld.legion_pr"
+    "o_end\0227\n\trank_info\030\001 \003(\0132$.faith.legion_pr"
     "oto.city_war_rank_info\032C\n\034set_territory_"
     "prior_maintain\022\021\n\trole_guid\030\001 \001(\004\022\020\n\010ter"
     "r_ids\030\002 \003(\005\032G\n set_territory_prior_maint"
@@ -4102,12 +4102,12 @@ void protobuf_AddDesc_legion_2eproto() {
     "role_guid\030\001 \001(\004\022\021\n\trole_name\030\002 \001(\t\022\023\n\013le"
     "gion_guid\030\003 \001(\004\022\022\n\nrole_score\030\004 \001(\005\032\351\002\n\022"
     "city_war_raid_info\022\033\n\023join_war_legion_nu"
-    "m\030\001 \001(\005\022O\n\021legion_score_list\030\002 \003(\01324.hld"
+    "m\030\001 \001(\005\022O\n\021legion_score_list\030\002 \003(\01324.faith"
     ".legion_proto.city_war_raid_info_of_legi"
     "on_score\022\026\n\016stronghold_num\030\003 \001(\005\022K\n\017stro"
-    "nghold_list\030\004 \003(\01322.hld.legion_proto.cit"
+    "nghold_list\030\004 \003(\01322.faith.legion_proto.cit"
     "y_war_raid_info_of_stronghold\022\020\n\010role_nu"
-    "m\030\005 \001(\005\022T\n\017role_score_list\030\006 \003(\0132;.hld.l"
+    "m\030\005 \001(\005\022T\n\017role_score_list\030\006 \003(\0132;.faith.l"
     "egion_proto.city_war_raid_info_of_legion"
     "_member_score\022\030\n\020cur_territory_id\030\007 \001(\005\032"
     "9\n\032city_war_update_role_score\022\r\n\005score\030\001"
@@ -4173,7 +4173,7 @@ void protobuf_AddDesc_legion_2eproto() {
     "\022\026\n\016operation_type\030\004 \001(\005\022\031\n\021EItemInfo_in"
     "fo_id\030\005 \001(\005\032 \n\036req_legion_warehouse_item"
     "_info\032\211\001\n\"req_legion_warehouse_item_info"
-    "_end\022\?\n\titem_list\030\001 \003(\0132,.hld.legion_pro"
+    "_end\022\?\n\titem_list\030\001 \003(\0132,.faith.legion_pro"
     "to.legion_warehouse_item_info\022\020\n\010is_fina"
     "l\030\002 \001(\005\022\020\n\010is_clean\030\003 \001(\005\032]\n\037operation_l"
     "egion_warehouse_item\022\021\n\titem_guid\030\001 \003(\005\022"
@@ -4181,7 +4181,7 @@ void protobuf_AddDesc_legion_2eproto() {
     "\0329\n#operation_legion_warehouse_item_end\022"
     "\022\n\nerror_code\030\001 \001(\003\032\032\n\030req_legion_wareho"
     "use_log\032X\n\034req_legion_warehouse_log_end\022"
-    "8\n\010log_list\030\001 \003(\0132&.hld.legion_proto.leg"
+    "8\n\010log_list\030\001 \003(\0132&.faith.legion_proto.leg"
     "ion_warehouse_log\032-\n\026req_change_legion_n"
     "ame\022\023\n\013legion_name\030\001 \001(\t\032)\n\032req_change_l"
     "egion_name_end\022\013\n\003ret\030\001 \001(\005\032K\n\036req_confi"
@@ -4192,7 +4192,7 @@ void protobuf_AddDesc_legion_2eproto() {
     "ef_guid_a\030\004 \001(\005\022\024\n\014chief_guid_b\030\005 \001(\005\022\023\n"
     "\013legion_rank\030\006 \001(\005\022\023\n\013legion_name\030\007 \001(\t\032"
     "\246\001\n\023cross_city_info_all\022<\n\rcity_info_all"
-    "\030\001 \003(\0132%.hld.legion_proto.cross_city_inf"
+    "\030\001 \003(\0132%.faith.legion_proto.cross_city_inf"
     "o_one\022\033\n\023overload_chief_name\030\002 \001(\t\022\031\n\021ov"
     "er_chief_guid_a\030\003 \001(\005\022\031\n\021over_chief_guid"
     "_b\030\004 \001(\005\032\025\n\023join_cross_city_war\032\023\n\021legio"
@@ -4206,7 +4206,7 @@ void protobuf_AddDesc_legion_2eproto() {
     "a\030\001 \001(\005\022\023\n\013play_guid_b\030\002 \001(\005\022\021\n\tplay_nam"
     "e\030\003 \001(\t\022\022\n\nplay_level\030\004 \001(\005\022\030\n\020play_temp"
     "late_id\030\005 \001(\005\032m\n\026send_map_legion_player\022"
-    "A\n\rplay_info_arr\030\001 \003(\0132*.hld.legion_prot"
+    "A\n\rplay_info_arr\030\001 \003(\0132*.faith.legion_prot"
     "o.legion_dance_player_info\022\020\n\010play_num\030\002"
     " \001(\005\032\?\n\023invite_legion_dance\022\023\n\013play_guid"
     "_a\030\001 \001(\005\022\023\n\013play_guid_b\030\002 \001(\005\032.\n\027invite_"
@@ -4228,10 +4228,10 @@ void protobuf_AddDesc_legion_2eproto() {
     "\001(\005\022\021\n\trole_name\030\003 \001(\t\022\026\n\016player_temp_id"
     "\030\004 \001(\005\022\031\n\021week_contribution\030\005 \001(\t\022\021\n\tjob"
     "_title\030\006 \001(\005\032m\n\032city_war_members_info_li"
-    "st\022=\n\rmems_info_arr\030\001 \003(\0132&.hld.legion_p"
+    "st\022=\n\rmems_info_arr\030\001 \003(\0132&.faith.legion_p"
     "roto.city_war_member_info\022\020\n\010is_first\030\002 "
     "\001(\010\032y\n legion_welfare_members_info_list\022"
-    "C\n\rmems_info_arr\030\001 \003(\0132,.hld.legion_prot"
+    "C\n\rmems_info_arr\030\001 \003(\0132,.faith.legion_prot"
     "o.legion_welfare_member_info\022\020\n\010is_first"
     "\030\002 \001(\010\032l\n\037legion_strategy_world_boss_inf"
     "o\022\023\n\013low_boss_id\030\001 \001(\005\022\034\n\024intermediate_b"
@@ -4241,18 +4241,18 @@ void protobuf_AddDesc_legion_2eproto() {
     "\032U\n\023one_world_boss_info\022\022\n\nboss_level\030\001 "
     "\001(\005\022\017\n\007boss_id\030\002 \001(\005\022\031\n\021legion_player_nu"
     "m\030\003 \001(\005\032\222\001\n\023all_world_boss_info\022B\n\023world"
-    "_boss_info_arr\030\001 \003(\0132%.hld.legion_proto."
+    "_boss_info_arr\030\001 \003(\0132%.faith.legion_proto."
     "one_world_boss_info\0227\n\010all_info\030\002 \003(\0132%."
-    "hld.legion_proto.one_world_boss_info\032Q\n\025"
+    "faith.legion_proto.one_world_boss_info\032Q\n\025"
     "world_boss_score_info\022\021\n\trole_guid\030\001 \001(\004"
     "\022\021\n\trole_name\030\002 \001(\t\022\022\n\nrole_score\030\003 \001(\003\032"
     "\310\002\n\032world_boss_strategy_result\022B\n\021legion"
-    "_score_info\030\001 \003(\0132\'.hld.legion_proto.wor"
+    "_score_info\030\001 \003(\0132\'.faith.legion_proto.wor"
     "ld_boss_score_info\022D\n\023personal_score_inf"
-    "o\030\002 \003(\0132\'.hld.legion_proto.world_boss_sc"
+    "o\030\002 \003(\0132\'.faith.legion_proto.world_boss_sc"
     "ore_info\022C\n\022legion_extra_score\030\003 \001(\0132\'.h"
     "ld.legion_proto.world_boss_score_info\022E\n"
-    "\024personal_extra_score\030\004 \001(\0132\'.hld.legion"
+    "\024personal_extra_score\030\004 \001(\0132\'.faith.legion"
     "_proto.world_boss_score_info\022\024\n\014reward_l"
     "evel\030\005 \001(\005", 13330);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
@@ -5192,7 +5192,7 @@ bool legion_proto_members_info_list::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.legion_proto.member_info mems_info_arr = 1;
+      // repeated .faith.legion_proto.member_info mems_info_arr = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -5225,7 +5225,7 @@ bool legion_proto_members_info_list::MergePartialFromCodedStream(
 
 void legion_proto_members_info_list::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.legion_proto.member_info mems_info_arr = 1;
+  // repeated .faith.legion_proto.member_info mems_info_arr = 1;
   for (int i = 0; i < this->mems_info_arr_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->mems_info_arr(i), output);
@@ -5239,7 +5239,7 @@ void legion_proto_members_info_list::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* legion_proto_members_info_list::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.legion_proto.member_info mems_info_arr = 1;
+  // repeated .faith.legion_proto.member_info mems_info_arr = 1;
   for (int i = 0; i < this->mems_info_arr_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -5256,7 +5256,7 @@ void legion_proto_members_info_list::SerializeWithCachedSizes(
 int legion_proto_members_info_list::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.legion_proto.member_info mems_info_arr = 1;
+  // repeated .faith.legion_proto.member_info mems_info_arr = 1;
   total_size += 1 * this->mems_info_arr_size();
   for (int i = 0; i < this->mems_info_arr_size(); i++) {
     total_size +=
@@ -5542,7 +5542,7 @@ bool legion_proto_legion_info::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.legion_proto.member_info member_list = 7;
+      // repeated .faith.legion_proto.member_info member_list = 7;
       case 7: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -5634,7 +5634,7 @@ void legion_proto_legion_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->member_num(), output);
   }
 
-  // repeated .hld.legion_proto.member_info member_list = 7;
+  // repeated .faith.legion_proto.member_info member_list = 7;
   for (int i = 0; i < this->member_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       7, this->member_list(i), output);
@@ -5699,7 +5699,7 @@ void legion_proto_legion_info::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->member_num(), target);
   }
 
-  // repeated .hld.legion_proto.member_info member_list = 7;
+  // repeated .faith.legion_proto.member_info member_list = 7;
   for (int i = 0; i < this->member_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -5775,7 +5775,7 @@ int legion_proto_legion_info::ByteSize() const {
     total_size += 1 * this->legion_data_size() + data_size;
   }
 
-  // repeated .hld.legion_proto.member_info member_list = 7;
+  // repeated .faith.legion_proto.member_info member_list = 7;
   total_size += 1 * this->member_list_size();
   for (int i = 0; i < this->member_list_size(); i++) {
     total_size +=
@@ -6771,7 +6771,7 @@ legion_proto_create_legion_end::legion_proto_create_legion_end()
 }
 
 void legion_proto_create_legion_end::InitAsDefaultInstance() {
-  legion_info_data_ = const_cast< ::hld::legion_proto_legion_info*>(&::hld::legion_proto_legion_info::default_instance());
+  legion_info_data_ = const_cast< ::faith::legion_proto_legion_info*>(&::faith::legion_proto_legion_info::default_instance());
 }
 
 legion_proto_create_legion_end::legion_proto_create_legion_end(const legion_proto_create_legion_end& from)
@@ -6820,7 +6820,7 @@ legion_proto_create_legion_end* legion_proto_create_legion_end::New() const {
 void legion_proto_create_legion_end::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_legion_info_data()) {
-      if (legion_info_data_ != NULL) legion_info_data_->::hld::legion_proto_legion_info::Clear();
+      if (legion_info_data_ != NULL) legion_info_data_->::faith::legion_proto_legion_info::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -6833,7 +6833,7 @@ bool legion_proto_create_legion_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.legion_proto.legion_info legion_info_data = 1;
+      // optional .faith.legion_proto.legion_info legion_info_data = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -6864,7 +6864,7 @@ bool legion_proto_create_legion_end::MergePartialFromCodedStream(
 
 void legion_proto_create_legion_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.legion_proto.legion_info legion_info_data = 1;
+  // optional .faith.legion_proto.legion_info legion_info_data = 1;
   if (has_legion_info_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->legion_info_data(), output);
@@ -6878,7 +6878,7 @@ void legion_proto_create_legion_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* legion_proto_create_legion_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.legion_proto.legion_info legion_info_data = 1;
+  // optional .faith.legion_proto.legion_info legion_info_data = 1;
   if (has_legion_info_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -6896,7 +6896,7 @@ int legion_proto_create_legion_end::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.legion_proto.legion_info legion_info_data = 1;
+    // optional .faith.legion_proto.legion_info legion_info_data = 1;
     if (has_legion_info_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -6931,7 +6931,7 @@ void legion_proto_create_legion_end::MergeFrom(const legion_proto_create_legion_
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_legion_info_data()) {
-      mutable_legion_info_data()->::hld::legion_proto_legion_info::MergeFrom(from.legion_info_data());
+      mutable_legion_info_data()->::faith::legion_proto_legion_info::MergeFrom(from.legion_info_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -10101,7 +10101,7 @@ bool legion_proto_get_legion_list_end::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.legion_proto.legion_brief_info legion_list = 2;
+      // repeated .faith.legion_proto.legion_brief_info legion_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -10139,7 +10139,7 @@ void legion_proto_get_legion_list_end::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->legion_list_len(), output);
   }
 
-  // repeated .hld.legion_proto.legion_brief_info legion_list = 2;
+  // repeated .faith.legion_proto.legion_brief_info legion_list = 2;
   for (int i = 0; i < this->legion_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->legion_list(i), output);
@@ -10158,7 +10158,7 @@ void legion_proto_get_legion_list_end::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->legion_list_len(), target);
   }
 
-  // repeated .hld.legion_proto.legion_brief_info legion_list = 2;
+  // repeated .faith.legion_proto.legion_brief_info legion_list = 2;
   for (int i = 0; i < this->legion_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -10184,7 +10184,7 @@ int legion_proto_get_legion_list_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.legion_proto.legion_brief_info legion_list = 2;
+  // repeated .faith.legion_proto.legion_brief_info legion_list = 2;
   total_size += 1 * this->legion_list_size();
   for (int i = 0; i < this->legion_list_size(); i++) {
     total_size +=
@@ -11078,7 +11078,7 @@ legion_proto_invite_player_end::legion_proto_invite_player_end()
 }
 
 void legion_proto_invite_player_end::InitAsDefaultInstance() {
-  invite_legion_info_ = const_cast< ::hld::legion_proto_legion_brief_info*>(&::hld::legion_proto_legion_brief_info::default_instance());
+  invite_legion_info_ = const_cast< ::faith::legion_proto_legion_brief_info*>(&::faith::legion_proto_legion_brief_info::default_instance());
 }
 
 legion_proto_invite_player_end::legion_proto_invite_player_end(const legion_proto_invite_player_end& from)
@@ -11140,7 +11140,7 @@ void legion_proto_invite_player_end::Clear() {
     }
     invite_role_level_ = 0;
     if (has_invite_legion_info()) {
-      if (invite_legion_info_ != NULL) invite_legion_info_->::hld::legion_proto_legion_brief_info::Clear();
+      if (invite_legion_info_ != NULL) invite_legion_info_->::faith::legion_proto_legion_brief_info::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -11201,7 +11201,7 @@ bool legion_proto_invite_player_end::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.legion_proto.legion_brief_info invite_legion_info = 4;
+      // optional .faith.legion_proto.legion_brief_info invite_legion_info = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -11252,7 +11252,7 @@ void legion_proto_invite_player_end::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->invite_role_level(), output);
   }
 
-  // optional .hld.legion_proto.legion_brief_info invite_legion_info = 4;
+  // optional .faith.legion_proto.legion_brief_info invite_legion_info = 4;
   if (has_invite_legion_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->invite_legion_info(), output);
@@ -11286,7 +11286,7 @@ void legion_proto_invite_player_end::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->invite_role_level(), target);
   }
 
-  // optional .hld.legion_proto.legion_brief_info invite_legion_info = 4;
+  // optional .faith.legion_proto.legion_brief_info invite_legion_info = 4;
   if (has_invite_legion_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -11325,7 +11325,7 @@ int legion_proto_invite_player_end::ByteSize() const {
           this->invite_role_level());
     }
 
-    // optional .hld.legion_proto.legion_brief_info invite_legion_info = 4;
+    // optional .faith.legion_proto.legion_brief_info invite_legion_info = 4;
     if (has_invite_legion_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -11369,7 +11369,7 @@ void legion_proto_invite_player_end::MergeFrom(const legion_proto_invite_player_
       set_invite_role_level(from.invite_role_level());
     }
     if (from.has_invite_legion_info()) {
-      mutable_invite_legion_info()->::hld::legion_proto_legion_brief_info::MergeFrom(from.invite_legion_info());
+      mutable_invite_legion_info()->::faith::legion_proto_legion_brief_info::MergeFrom(from.invite_legion_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -12234,7 +12234,7 @@ bool legion_proto_get_applicant_info_list_end::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.legion_proto.applicant_info applicant_list = 2;
+      // repeated .faith.legion_proto.applicant_info applicant_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -12272,7 +12272,7 @@ void legion_proto_get_applicant_info_list_end::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->list_len(), output);
   }
 
-  // repeated .hld.legion_proto.applicant_info applicant_list = 2;
+  // repeated .faith.legion_proto.applicant_info applicant_list = 2;
   for (int i = 0; i < this->applicant_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->applicant_list(i), output);
@@ -12291,7 +12291,7 @@ void legion_proto_get_applicant_info_list_end::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->list_len(), target);
   }
 
-  // repeated .hld.legion_proto.applicant_info applicant_list = 2;
+  // repeated .faith.legion_proto.applicant_info applicant_list = 2;
   for (int i = 0; i < this->applicant_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -12317,7 +12317,7 @@ int legion_proto_get_applicant_info_list_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.legion_proto.applicant_info applicant_list = 2;
+  // repeated .faith.legion_proto.applicant_info applicant_list = 2;
   total_size += 1 * this->applicant_list_size();
   for (int i = 0; i < this->applicant_list_size(); i++) {
     total_size +=
@@ -13255,7 +13255,7 @@ legion_proto_add_member_end::legion_proto_add_member_end()
 }
 
 void legion_proto_add_member_end::InitAsDefaultInstance() {
-  new_member_info_ = const_cast< ::hld::legion_proto_member_info*>(&::hld::legion_proto_member_info::default_instance());
+  new_member_info_ = const_cast< ::faith::legion_proto_member_info*>(&::faith::legion_proto_member_info::default_instance());
 }
 
 legion_proto_add_member_end::legion_proto_add_member_end(const legion_proto_add_member_end& from)
@@ -13304,7 +13304,7 @@ legion_proto_add_member_end* legion_proto_add_member_end::New() const {
 void legion_proto_add_member_end::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_new_member_info()) {
-      if (new_member_info_ != NULL) new_member_info_->::hld::legion_proto_member_info::Clear();
+      if (new_member_info_ != NULL) new_member_info_->::faith::legion_proto_member_info::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -13317,7 +13317,7 @@ bool legion_proto_add_member_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.legion_proto.member_info new_member_info = 1;
+      // optional .faith.legion_proto.member_info new_member_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -13348,7 +13348,7 @@ bool legion_proto_add_member_end::MergePartialFromCodedStream(
 
 void legion_proto_add_member_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.legion_proto.member_info new_member_info = 1;
+  // optional .faith.legion_proto.member_info new_member_info = 1;
   if (has_new_member_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->new_member_info(), output);
@@ -13362,7 +13362,7 @@ void legion_proto_add_member_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* legion_proto_add_member_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.legion_proto.member_info new_member_info = 1;
+  // optional .faith.legion_proto.member_info new_member_info = 1;
   if (has_new_member_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -13380,7 +13380,7 @@ int legion_proto_add_member_end::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.legion_proto.member_info new_member_info = 1;
+    // optional .faith.legion_proto.member_info new_member_info = 1;
     if (has_new_member_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -13415,7 +13415,7 @@ void legion_proto_add_member_end::MergeFrom(const legion_proto_add_member_end& f
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_new_member_info()) {
-      mutable_new_member_info()->::hld::legion_proto_member_info::MergeFrom(from.new_member_info());
+      mutable_new_member_info()->::faith::legion_proto_member_info::MergeFrom(from.new_member_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -16738,7 +16738,7 @@ bool legion_proto_get_legion_event_list_end::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.legion_proto.legion_event event_list = 2;
+      // repeated .faith.legion_proto.legion_event event_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -16776,7 +16776,7 @@ void legion_proto_get_legion_event_list_end::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->event_list_len(), output);
   }
 
-  // repeated .hld.legion_proto.legion_event event_list = 2;
+  // repeated .faith.legion_proto.legion_event event_list = 2;
   for (int i = 0; i < this->event_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->event_list(i), output);
@@ -16795,7 +16795,7 @@ void legion_proto_get_legion_event_list_end::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->event_list_len(), target);
   }
 
-  // repeated .hld.legion_proto.legion_event event_list = 2;
+  // repeated .faith.legion_proto.legion_event event_list = 2;
   for (int i = 0; i < this->event_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -16821,7 +16821,7 @@ int legion_proto_get_legion_event_list_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.legion_proto.legion_event event_list = 2;
+  // repeated .faith.legion_proto.legion_event event_list = 2;
   total_size += 1 * this->event_list_size();
   for (int i = 0; i < this->event_list_size(); i++) {
     total_size +=
@@ -17505,7 +17505,7 @@ bool legion_proto_get_legion_bonus_info_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.legion_proto.legion_bonus_info bonus_info = 1;
+      // repeated .faith.legion_proto.legion_bonus_info bonus_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -17554,7 +17554,7 @@ bool legion_proto_get_legion_bonus_info_end::MergePartialFromCodedStream(
 
 void legion_proto_get_legion_bonus_info_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.legion_proto.legion_bonus_info bonus_info = 1;
+  // repeated .faith.legion_proto.legion_bonus_info bonus_info = 1;
   for (int i = 0; i < this->bonus_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->bonus_info(i), output);
@@ -17573,7 +17573,7 @@ void legion_proto_get_legion_bonus_info_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* legion_proto_get_legion_bonus_info_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.legion_proto.legion_bonus_info bonus_info = 1;
+  // repeated .faith.legion_proto.legion_bonus_info bonus_info = 1;
   for (int i = 0; i < this->bonus_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -17604,7 +17604,7 @@ int legion_proto_get_legion_bonus_info_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.legion_proto.legion_bonus_info bonus_info = 1;
+  // repeated .faith.legion_proto.legion_bonus_info bonus_info = 1;
   total_size += 1 * this->bonus_info_size();
   for (int i = 0; i < this->bonus_info_size(); i++) {
     total_size +=
@@ -19949,7 +19949,7 @@ bool legion_proto_legion_boss_record_list::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.legion_proto.legion_boss_record records = 2;
+      // repeated .faith.legion_proto.legion_boss_record records = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -19987,7 +19987,7 @@ void legion_proto_legion_boss_record_list::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->record_num(), output);
   }
 
-  // repeated .hld.legion_proto.legion_boss_record records = 2;
+  // repeated .faith.legion_proto.legion_boss_record records = 2;
   for (int i = 0; i < this->records_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->records(i), output);
@@ -20006,7 +20006,7 @@ void legion_proto_legion_boss_record_list::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->record_num(), target);
   }
 
-  // repeated .hld.legion_proto.legion_boss_record records = 2;
+  // repeated .faith.legion_proto.legion_boss_record records = 2;
   for (int i = 0; i < this->records_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -20032,7 +20032,7 @@ int legion_proto_legion_boss_record_list::ByteSize() const {
     }
 
   }
-  // repeated .hld.legion_proto.legion_boss_record records = 2;
+  // repeated .faith.legion_proto.legion_boss_record records = 2;
   total_size += 1 * this->records_size();
   for (int i = 0; i < this->records_size(); i++) {
     total_size +=
@@ -22830,7 +22830,7 @@ bool legion_proto_city_war_territory_info::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.legion_proto.city_war_bid_info bid_infos = 3;
+      // repeated .faith.legion_proto.city_war_bid_info bid_infos = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -22873,7 +22873,7 @@ void legion_proto_city_war_territory_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->is_in_war(), output);
   }
 
-  // repeated .hld.legion_proto.city_war_bid_info bid_infos = 3;
+  // repeated .faith.legion_proto.city_war_bid_info bid_infos = 3;
   for (int i = 0; i < this->bid_infos_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->bid_infos(i), output);
@@ -22897,7 +22897,7 @@ void legion_proto_city_war_territory_info::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->is_in_war(), target);
   }
 
-  // repeated .hld.legion_proto.city_war_bid_info bid_infos = 3;
+  // repeated .faith.legion_proto.city_war_bid_info bid_infos = 3;
   for (int i = 0; i < this->bid_infos_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -22928,7 +22928,7 @@ int legion_proto_city_war_territory_info::ByteSize() const {
     }
 
   }
-  // repeated .hld.legion_proto.city_war_bid_info bid_infos = 3;
+  // repeated .faith.legion_proto.city_war_bid_info bid_infos = 3;
   total_size += 1 * this->bid_infos_size();
   for (int i = 0; i < this->bid_infos_size(); i++) {
     total_size +=
@@ -23285,7 +23285,7 @@ bool legion_proto_get_city_war_info_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.legion_proto.city_war_territory_info territory_info = 1;
+      // repeated .faith.legion_proto.city_war_territory_info territory_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -23318,7 +23318,7 @@ bool legion_proto_get_city_war_info_end::MergePartialFromCodedStream(
 
 void legion_proto_get_city_war_info_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.legion_proto.city_war_territory_info territory_info = 1;
+  // repeated .faith.legion_proto.city_war_territory_info territory_info = 1;
   for (int i = 0; i < this->territory_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->territory_info(i), output);
@@ -23332,7 +23332,7 @@ void legion_proto_get_city_war_info_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* legion_proto_get_city_war_info_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.legion_proto.city_war_territory_info territory_info = 1;
+  // repeated .faith.legion_proto.city_war_territory_info territory_info = 1;
   for (int i = 0; i < this->territory_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -23349,7 +23349,7 @@ void legion_proto_get_city_war_info_end::SerializeWithCachedSizes(
 int legion_proto_get_city_war_info_end::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.legion_proto.city_war_territory_info territory_info = 1;
+  // repeated .faith.legion_proto.city_war_territory_info territory_info = 1;
   total_size += 1 * this->territory_info_size();
   for (int i = 0; i < this->territory_info_size(); i++) {
     total_size +=
@@ -24436,7 +24436,7 @@ legion_proto_req_territory_info_end::legion_proto_req_territory_info_end()
 }
 
 void legion_proto_req_territory_info_end::InitAsDefaultInstance() {
-  terr_info_ = const_cast< ::hld::legion_proto_city_war_territory_info*>(&::hld::legion_proto_city_war_territory_info::default_instance());
+  terr_info_ = const_cast< ::faith::legion_proto_city_war_territory_info*>(&::faith::legion_proto_city_war_territory_info::default_instance());
 }
 
 legion_proto_req_territory_info_end::legion_proto_req_territory_info_end(const legion_proto_req_territory_info_end& from)
@@ -24485,7 +24485,7 @@ legion_proto_req_territory_info_end* legion_proto_req_territory_info_end::New() 
 void legion_proto_req_territory_info_end::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_terr_info()) {
-      if (terr_info_ != NULL) terr_info_->::hld::legion_proto_city_war_territory_info::Clear();
+      if (terr_info_ != NULL) terr_info_->::faith::legion_proto_city_war_territory_info::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -24498,7 +24498,7 @@ bool legion_proto_req_territory_info_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.legion_proto.city_war_territory_info terr_info = 1;
+      // optional .faith.legion_proto.city_war_territory_info terr_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -24529,7 +24529,7 @@ bool legion_proto_req_territory_info_end::MergePartialFromCodedStream(
 
 void legion_proto_req_territory_info_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.legion_proto.city_war_territory_info terr_info = 1;
+  // optional .faith.legion_proto.city_war_territory_info terr_info = 1;
   if (has_terr_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->terr_info(), output);
@@ -24543,7 +24543,7 @@ void legion_proto_req_territory_info_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* legion_proto_req_territory_info_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.legion_proto.city_war_territory_info terr_info = 1;
+  // optional .faith.legion_proto.city_war_territory_info terr_info = 1;
   if (has_terr_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -24561,7 +24561,7 @@ int legion_proto_req_territory_info_end::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.legion_proto.city_war_territory_info terr_info = 1;
+    // optional .faith.legion_proto.city_war_territory_info terr_info = 1;
     if (has_terr_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -24596,7 +24596,7 @@ void legion_proto_req_territory_info_end::MergeFrom(const legion_proto_req_terri
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_terr_info()) {
-      mutable_terr_info()->::hld::legion_proto_city_war_territory_info::MergeFrom(from.terr_info());
+      mutable_terr_info()->::faith::legion_proto_city_war_territory_info::MergeFrom(from.terr_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -25337,7 +25337,7 @@ bool legion_proto_req_city_war_rank_info_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.legion_proto.city_war_rank_info rank_info = 1;
+      // repeated .faith.legion_proto.city_war_rank_info rank_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -25370,7 +25370,7 @@ bool legion_proto_req_city_war_rank_info_end::MergePartialFromCodedStream(
 
 void legion_proto_req_city_war_rank_info_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.legion_proto.city_war_rank_info rank_info = 1;
+  // repeated .faith.legion_proto.city_war_rank_info rank_info = 1;
   for (int i = 0; i < this->rank_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->rank_info(i), output);
@@ -25384,7 +25384,7 @@ void legion_proto_req_city_war_rank_info_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* legion_proto_req_city_war_rank_info_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.legion_proto.city_war_rank_info rank_info = 1;
+  // repeated .faith.legion_proto.city_war_rank_info rank_info = 1;
   for (int i = 0; i < this->rank_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -25401,7 +25401,7 @@ void legion_proto_req_city_war_rank_info_end::SerializeWithCachedSizes(
 int legion_proto_req_city_war_rank_info_end::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.legion_proto.city_war_rank_info rank_info = 1;
+  // repeated .faith.legion_proto.city_war_rank_info rank_info = 1;
   total_size += 1 * this->rank_info_size();
   for (int i = 0; i < this->rank_info_size(); i++) {
     total_size +=
@@ -28055,7 +28055,7 @@ bool legion_proto_city_war_raid_info::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.legion_proto.city_war_raid_info_of_legion_score legion_score_list = 2;
+      // repeated .faith.legion_proto.city_war_raid_info_of_legion_score legion_score_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -28086,7 +28086,7 @@ bool legion_proto_city_war_raid_info::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.legion_proto.city_war_raid_info_of_stronghold stronghold_list = 4;
+      // repeated .faith.legion_proto.city_war_raid_info_of_stronghold stronghold_list = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -28117,7 +28117,7 @@ bool legion_proto_city_war_raid_info::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.legion_proto.city_war_raid_info_of_legion_member_score role_score_list = 6;
+      // repeated .faith.legion_proto.city_war_raid_info_of_legion_member_score role_score_list = 6;
       case 6: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -28171,7 +28171,7 @@ void legion_proto_city_war_raid_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->join_war_legion_num(), output);
   }
 
-  // repeated .hld.legion_proto.city_war_raid_info_of_legion_score legion_score_list = 2;
+  // repeated .faith.legion_proto.city_war_raid_info_of_legion_score legion_score_list = 2;
   for (int i = 0; i < this->legion_score_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->legion_score_list(i), output);
@@ -28182,7 +28182,7 @@ void legion_proto_city_war_raid_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->stronghold_num(), output);
   }
 
-  // repeated .hld.legion_proto.city_war_raid_info_of_stronghold stronghold_list = 4;
+  // repeated .faith.legion_proto.city_war_raid_info_of_stronghold stronghold_list = 4;
   for (int i = 0; i < this->stronghold_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->stronghold_list(i), output);
@@ -28193,7 +28193,7 @@ void legion_proto_city_war_raid_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->role_num(), output);
   }
 
-  // repeated .hld.legion_proto.city_war_raid_info_of_legion_member_score role_score_list = 6;
+  // repeated .faith.legion_proto.city_war_raid_info_of_legion_member_score role_score_list = 6;
   for (int i = 0; i < this->role_score_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       6, this->role_score_list(i), output);
@@ -28217,7 +28217,7 @@ void legion_proto_city_war_raid_info::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->join_war_legion_num(), target);
   }
 
-  // repeated .hld.legion_proto.city_war_raid_info_of_legion_score legion_score_list = 2;
+  // repeated .faith.legion_proto.city_war_raid_info_of_legion_score legion_score_list = 2;
   for (int i = 0; i < this->legion_score_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -28229,7 +28229,7 @@ void legion_proto_city_war_raid_info::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->stronghold_num(), target);
   }
 
-  // repeated .hld.legion_proto.city_war_raid_info_of_stronghold stronghold_list = 4;
+  // repeated .faith.legion_proto.city_war_raid_info_of_stronghold stronghold_list = 4;
   for (int i = 0; i < this->stronghold_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -28241,7 +28241,7 @@ void legion_proto_city_war_raid_info::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->role_num(), target);
   }
 
-  // repeated .hld.legion_proto.city_war_raid_info_of_legion_member_score role_score_list = 6;
+  // repeated .faith.legion_proto.city_war_raid_info_of_legion_member_score role_score_list = 6;
   for (int i = 0; i < this->role_score_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -28293,7 +28293,7 @@ int legion_proto_city_war_raid_info::ByteSize() const {
     }
 
   }
-  // repeated .hld.legion_proto.city_war_raid_info_of_legion_score legion_score_list = 2;
+  // repeated .faith.legion_proto.city_war_raid_info_of_legion_score legion_score_list = 2;
   total_size += 1 * this->legion_score_list_size();
   for (int i = 0; i < this->legion_score_list_size(); i++) {
     total_size +=
@@ -28301,7 +28301,7 @@ int legion_proto_city_war_raid_info::ByteSize() const {
         this->legion_score_list(i));
   }
 
-  // repeated .hld.legion_proto.city_war_raid_info_of_stronghold stronghold_list = 4;
+  // repeated .faith.legion_proto.city_war_raid_info_of_stronghold stronghold_list = 4;
   total_size += 1 * this->stronghold_list_size();
   for (int i = 0; i < this->stronghold_list_size(); i++) {
     total_size +=
@@ -28309,7 +28309,7 @@ int legion_proto_city_war_raid_info::ByteSize() const {
         this->stronghold_list(i));
   }
 
-  // repeated .hld.legion_proto.city_war_raid_info_of_legion_member_score role_score_list = 6;
+  // repeated .faith.legion_proto.city_war_raid_info_of_legion_member_score role_score_list = 6;
   total_size += 1 * this->role_score_list_size();
   for (int i = 0; i < this->role_score_list_size(); i++) {
     total_size +=
@@ -37875,7 +37875,7 @@ bool legion_proto_req_legion_warehouse_item_info_end::MergePartialFromCodedStrea
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.legion_proto.legion_warehouse_item_info item_list = 1;
+      // repeated .faith.legion_proto.legion_warehouse_item_info item_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -37940,7 +37940,7 @@ bool legion_proto_req_legion_warehouse_item_info_end::MergePartialFromCodedStrea
 
 void legion_proto_req_legion_warehouse_item_info_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.legion_proto.legion_warehouse_item_info item_list = 1;
+  // repeated .faith.legion_proto.legion_warehouse_item_info item_list = 1;
   for (int i = 0; i < this->item_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->item_list(i), output);
@@ -37964,7 +37964,7 @@ void legion_proto_req_legion_warehouse_item_info_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* legion_proto_req_legion_warehouse_item_info_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.legion_proto.legion_warehouse_item_info item_list = 1;
+  // repeated .faith.legion_proto.legion_warehouse_item_info item_list = 1;
   for (int i = 0; i < this->item_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -38007,7 +38007,7 @@ int legion_proto_req_legion_warehouse_item_info_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.legion_proto.legion_warehouse_item_info item_list = 1;
+  // repeated .faith.legion_proto.legion_warehouse_item_info item_list = 1;
   total_size += 1 * this->item_list_size();
   for (int i = 0; i < this->item_list_size(); i++) {
     total_size +=
@@ -38817,7 +38817,7 @@ bool legion_proto_req_legion_warehouse_log_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.legion_proto.legion_warehouse_log log_list = 1;
+      // repeated .faith.legion_proto.legion_warehouse_log log_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -38850,7 +38850,7 @@ bool legion_proto_req_legion_warehouse_log_end::MergePartialFromCodedStream(
 
 void legion_proto_req_legion_warehouse_log_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.legion_proto.legion_warehouse_log log_list = 1;
+  // repeated .faith.legion_proto.legion_warehouse_log log_list = 1;
   for (int i = 0; i < this->log_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->log_list(i), output);
@@ -38864,7 +38864,7 @@ void legion_proto_req_legion_warehouse_log_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* legion_proto_req_legion_warehouse_log_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.legion_proto.legion_warehouse_log log_list = 1;
+  // repeated .faith.legion_proto.legion_warehouse_log log_list = 1;
   for (int i = 0; i < this->log_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -38881,7 +38881,7 @@ void legion_proto_req_legion_warehouse_log_end::SerializeWithCachedSizes(
 int legion_proto_req_legion_warehouse_log_end::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.legion_proto.legion_warehouse_log log_list = 1;
+  // repeated .faith.legion_proto.legion_warehouse_log log_list = 1;
   total_size += 1 * this->log_list_size();
   for (int i = 0; i < this->log_list_size(); i++) {
     total_size +=
@@ -40199,7 +40199,7 @@ bool legion_proto_cross_city_info_all::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.legion_proto.cross_city_info_one city_info_all = 1;
+      // repeated .faith.legion_proto.cross_city_info_one city_info_all = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -40281,7 +40281,7 @@ bool legion_proto_cross_city_info_all::MergePartialFromCodedStream(
 
 void legion_proto_cross_city_info_all::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.legion_proto.cross_city_info_one city_info_all = 1;
+  // repeated .faith.legion_proto.cross_city_info_one city_info_all = 1;
   for (int i = 0; i < this->city_info_all_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->city_info_all(i), output);
@@ -40314,7 +40314,7 @@ void legion_proto_cross_city_info_all::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* legion_proto_cross_city_info_all::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.legion_proto.cross_city_info_one city_info_all = 1;
+  // repeated .faith.legion_proto.cross_city_info_one city_info_all = 1;
   for (int i = 0; i < this->city_info_all_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -40374,7 +40374,7 @@ int legion_proto_cross_city_info_all::ByteSize() const {
     }
 
   }
-  // repeated .hld.legion_proto.cross_city_info_one city_info_all = 1;
+  // repeated .faith.legion_proto.cross_city_info_one city_info_all = 1;
   total_size += 1 * this->city_info_all_size();
   for (int i = 0; i < this->city_info_all_size(); i++) {
     total_size +=
@@ -42250,7 +42250,7 @@ bool legion_proto_send_map_legion_player::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.legion_proto.legion_dance_player_info play_info_arr = 1;
+      // repeated .faith.legion_proto.legion_dance_player_info play_info_arr = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -42299,7 +42299,7 @@ bool legion_proto_send_map_legion_player::MergePartialFromCodedStream(
 
 void legion_proto_send_map_legion_player::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.legion_proto.legion_dance_player_info play_info_arr = 1;
+  // repeated .faith.legion_proto.legion_dance_player_info play_info_arr = 1;
   for (int i = 0; i < this->play_info_arr_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->play_info_arr(i), output);
@@ -42318,7 +42318,7 @@ void legion_proto_send_map_legion_player::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* legion_proto_send_map_legion_player::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.legion_proto.legion_dance_player_info play_info_arr = 1;
+  // repeated .faith.legion_proto.legion_dance_player_info play_info_arr = 1;
   for (int i = 0; i < this->play_info_arr_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -42349,7 +42349,7 @@ int legion_proto_send_map_legion_player::ByteSize() const {
     }
 
   }
-  // repeated .hld.legion_proto.legion_dance_player_info play_info_arr = 1;
+  // repeated .faith.legion_proto.legion_dance_player_info play_info_arr = 1;
   total_size += 1 * this->play_info_arr_size();
   for (int i = 0; i < this->play_info_arr_size(); i++) {
     total_size +=
@@ -45250,7 +45250,7 @@ bool legion_proto_city_war_members_info_list::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.legion_proto.city_war_member_info mems_info_arr = 1;
+      // repeated .faith.legion_proto.city_war_member_info mems_info_arr = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -45299,7 +45299,7 @@ bool legion_proto_city_war_members_info_list::MergePartialFromCodedStream(
 
 void legion_proto_city_war_members_info_list::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.legion_proto.city_war_member_info mems_info_arr = 1;
+  // repeated .faith.legion_proto.city_war_member_info mems_info_arr = 1;
   for (int i = 0; i < this->mems_info_arr_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->mems_info_arr(i), output);
@@ -45318,7 +45318,7 @@ void legion_proto_city_war_members_info_list::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* legion_proto_city_war_members_info_list::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.legion_proto.city_war_member_info mems_info_arr = 1;
+  // repeated .faith.legion_proto.city_war_member_info mems_info_arr = 1;
   for (int i = 0; i < this->mems_info_arr_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -45347,7 +45347,7 @@ int legion_proto_city_war_members_info_list::ByteSize() const {
     }
 
   }
-  // repeated .hld.legion_proto.city_war_member_info mems_info_arr = 1;
+  // repeated .faith.legion_proto.city_war_member_info mems_info_arr = 1;
   total_size += 1 * this->mems_info_arr_size();
   for (int i = 0; i < this->mems_info_arr_size(); i++) {
     total_size +=
@@ -45497,7 +45497,7 @@ bool legion_proto_legion_welfare_members_info_list::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.legion_proto.legion_welfare_member_info mems_info_arr = 1;
+      // repeated .faith.legion_proto.legion_welfare_member_info mems_info_arr = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -45546,7 +45546,7 @@ bool legion_proto_legion_welfare_members_info_list::MergePartialFromCodedStream(
 
 void legion_proto_legion_welfare_members_info_list::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.legion_proto.legion_welfare_member_info mems_info_arr = 1;
+  // repeated .faith.legion_proto.legion_welfare_member_info mems_info_arr = 1;
   for (int i = 0; i < this->mems_info_arr_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->mems_info_arr(i), output);
@@ -45565,7 +45565,7 @@ void legion_proto_legion_welfare_members_info_list::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* legion_proto_legion_welfare_members_info_list::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.legion_proto.legion_welfare_member_info mems_info_arr = 1;
+  // repeated .faith.legion_proto.legion_welfare_member_info mems_info_arr = 1;
   for (int i = 0; i < this->mems_info_arr_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -45594,7 +45594,7 @@ int legion_proto_legion_welfare_members_info_list::ByteSize() const {
     }
 
   }
-  // repeated .hld.legion_proto.legion_welfare_member_info mems_info_arr = 1;
+  // repeated .faith.legion_proto.legion_welfare_member_info mems_info_arr = 1;
   total_size += 1 * this->mems_info_arr_size();
   for (int i = 0; i < this->mems_info_arr_size(); i++) {
     total_size +=
@@ -46605,7 +46605,7 @@ bool legion_proto_all_world_boss_info::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.legion_proto.one_world_boss_info world_boss_info_arr = 1;
+      // repeated .faith.legion_proto.one_world_boss_info world_boss_info_arr = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -46620,7 +46620,7 @@ bool legion_proto_all_world_boss_info::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.legion_proto.one_world_boss_info all_info = 2;
+      // repeated .faith.legion_proto.one_world_boss_info all_info = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -46653,13 +46653,13 @@ bool legion_proto_all_world_boss_info::MergePartialFromCodedStream(
 
 void legion_proto_all_world_boss_info::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.legion_proto.one_world_boss_info world_boss_info_arr = 1;
+  // repeated .faith.legion_proto.one_world_boss_info world_boss_info_arr = 1;
   for (int i = 0; i < this->world_boss_info_arr_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->world_boss_info_arr(i), output);
   }
 
-  // repeated .hld.legion_proto.one_world_boss_info all_info = 2;
+  // repeated .faith.legion_proto.one_world_boss_info all_info = 2;
   for (int i = 0; i < this->all_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->all_info(i), output);
@@ -46673,14 +46673,14 @@ void legion_proto_all_world_boss_info::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* legion_proto_all_world_boss_info::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.legion_proto.one_world_boss_info world_boss_info_arr = 1;
+  // repeated .faith.legion_proto.one_world_boss_info world_boss_info_arr = 1;
   for (int i = 0; i < this->world_boss_info_arr_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         1, this->world_boss_info_arr(i), target);
   }
 
-  // repeated .hld.legion_proto.one_world_boss_info all_info = 2;
+  // repeated .faith.legion_proto.one_world_boss_info all_info = 2;
   for (int i = 0; i < this->all_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -46697,7 +46697,7 @@ void legion_proto_all_world_boss_info::SerializeWithCachedSizes(
 int legion_proto_all_world_boss_info::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.legion_proto.one_world_boss_info world_boss_info_arr = 1;
+  // repeated .faith.legion_proto.one_world_boss_info world_boss_info_arr = 1;
   total_size += 1 * this->world_boss_info_arr_size();
   for (int i = 0; i < this->world_boss_info_arr_size(); i++) {
     total_size +=
@@ -46705,7 +46705,7 @@ int legion_proto_all_world_boss_info::ByteSize() const {
         this->world_boss_info_arr(i));
   }
 
-  // repeated .hld.legion_proto.one_world_boss_info all_info = 2;
+  // repeated .faith.legion_proto.one_world_boss_info all_info = 2;
   total_size += 1 * this->all_info_size();
   for (int i = 0; i < this->all_info_size(); i++) {
     total_size +=
@@ -47100,8 +47100,8 @@ legion_proto_world_boss_strategy_result::legion_proto_world_boss_strategy_result
 }
 
 void legion_proto_world_boss_strategy_result::InitAsDefaultInstance() {
-  legion_extra_score_ = const_cast< ::hld::legion_proto_world_boss_score_info*>(&::hld::legion_proto_world_boss_score_info::default_instance());
-  personal_extra_score_ = const_cast< ::hld::legion_proto_world_boss_score_info*>(&::hld::legion_proto_world_boss_score_info::default_instance());
+  legion_extra_score_ = const_cast< ::faith::legion_proto_world_boss_score_info*>(&::faith::legion_proto_world_boss_score_info::default_instance());
+  personal_extra_score_ = const_cast< ::faith::legion_proto_world_boss_score_info*>(&::faith::legion_proto_world_boss_score_info::default_instance());
 }
 
 legion_proto_world_boss_strategy_result::legion_proto_world_boss_strategy_result(const legion_proto_world_boss_strategy_result& from)
@@ -47153,10 +47153,10 @@ legion_proto_world_boss_strategy_result* legion_proto_world_boss_strategy_result
 void legion_proto_world_boss_strategy_result::Clear() {
   if (_has_bits_[2 / 32] & (0xffu << (2 % 32))) {
     if (has_legion_extra_score()) {
-      if (legion_extra_score_ != NULL) legion_extra_score_->::hld::legion_proto_world_boss_score_info::Clear();
+      if (legion_extra_score_ != NULL) legion_extra_score_->::faith::legion_proto_world_boss_score_info::Clear();
     }
     if (has_personal_extra_score()) {
-      if (personal_extra_score_ != NULL) personal_extra_score_->::hld::legion_proto_world_boss_score_info::Clear();
+      if (personal_extra_score_ != NULL) personal_extra_score_->::faith::legion_proto_world_boss_score_info::Clear();
     }
     reward_level_ = 0;
   }
@@ -47172,7 +47172,7 @@ bool legion_proto_world_boss_strategy_result::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.legion_proto.world_boss_score_info legion_score_info = 1;
+      // repeated .faith.legion_proto.world_boss_score_info legion_score_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -47187,7 +47187,7 @@ bool legion_proto_world_boss_strategy_result::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.legion_proto.world_boss_score_info personal_score_info = 2;
+      // repeated .faith.legion_proto.world_boss_score_info personal_score_info = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -47202,7 +47202,7 @@ bool legion_proto_world_boss_strategy_result::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.legion_proto.world_boss_score_info legion_extra_score = 3;
+      // optional .faith.legion_proto.world_boss_score_info legion_extra_score = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -47216,7 +47216,7 @@ bool legion_proto_world_boss_strategy_result::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.legion_proto.world_boss_score_info personal_extra_score = 4;
+      // optional .faith.legion_proto.world_boss_score_info personal_extra_score = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -47264,25 +47264,25 @@ bool legion_proto_world_boss_strategy_result::MergePartialFromCodedStream(
 
 void legion_proto_world_boss_strategy_result::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.legion_proto.world_boss_score_info legion_score_info = 1;
+  // repeated .faith.legion_proto.world_boss_score_info legion_score_info = 1;
   for (int i = 0; i < this->legion_score_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->legion_score_info(i), output);
   }
 
-  // repeated .hld.legion_proto.world_boss_score_info personal_score_info = 2;
+  // repeated .faith.legion_proto.world_boss_score_info personal_score_info = 2;
   for (int i = 0; i < this->personal_score_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->personal_score_info(i), output);
   }
 
-  // optional .hld.legion_proto.world_boss_score_info legion_extra_score = 3;
+  // optional .faith.legion_proto.world_boss_score_info legion_extra_score = 3;
   if (has_legion_extra_score()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->legion_extra_score(), output);
   }
 
-  // optional .hld.legion_proto.world_boss_score_info personal_extra_score = 4;
+  // optional .faith.legion_proto.world_boss_score_info personal_extra_score = 4;
   if (has_personal_extra_score()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->personal_extra_score(), output);
@@ -47301,28 +47301,28 @@ void legion_proto_world_boss_strategy_result::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* legion_proto_world_boss_strategy_result::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.legion_proto.world_boss_score_info legion_score_info = 1;
+  // repeated .faith.legion_proto.world_boss_score_info legion_score_info = 1;
   for (int i = 0; i < this->legion_score_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         1, this->legion_score_info(i), target);
   }
 
-  // repeated .hld.legion_proto.world_boss_score_info personal_score_info = 2;
+  // repeated .faith.legion_proto.world_boss_score_info personal_score_info = 2;
   for (int i = 0; i < this->personal_score_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         2, this->personal_score_info(i), target);
   }
 
-  // optional .hld.legion_proto.world_boss_score_info legion_extra_score = 3;
+  // optional .faith.legion_proto.world_boss_score_info legion_extra_score = 3;
   if (has_legion_extra_score()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         3, this->legion_extra_score(), target);
   }
 
-  // optional .hld.legion_proto.world_boss_score_info personal_extra_score = 4;
+  // optional .faith.legion_proto.world_boss_score_info personal_extra_score = 4;
   if (has_personal_extra_score()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -47345,14 +47345,14 @@ int legion_proto_world_boss_strategy_result::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[2 / 32] & (0xffu << (2 % 32))) {
-    // optional .hld.legion_proto.world_boss_score_info legion_extra_score = 3;
+    // optional .faith.legion_proto.world_boss_score_info legion_extra_score = 3;
     if (has_legion_extra_score()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->legion_extra_score());
     }
 
-    // optional .hld.legion_proto.world_boss_score_info personal_extra_score = 4;
+    // optional .faith.legion_proto.world_boss_score_info personal_extra_score = 4;
     if (has_personal_extra_score()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -47367,7 +47367,7 @@ int legion_proto_world_boss_strategy_result::ByteSize() const {
     }
 
   }
-  // repeated .hld.legion_proto.world_boss_score_info legion_score_info = 1;
+  // repeated .faith.legion_proto.world_boss_score_info legion_score_info = 1;
   total_size += 1 * this->legion_score_info_size();
   for (int i = 0; i < this->legion_score_info_size(); i++) {
     total_size +=
@@ -47375,7 +47375,7 @@ int legion_proto_world_boss_strategy_result::ByteSize() const {
         this->legion_score_info(i));
   }
 
-  // repeated .hld.legion_proto.world_boss_score_info personal_score_info = 2;
+  // repeated .faith.legion_proto.world_boss_score_info personal_score_info = 2;
   total_size += 1 * this->personal_score_info_size();
   for (int i = 0; i < this->personal_score_info_size(); i++) {
     total_size +=
@@ -47412,10 +47412,10 @@ void legion_proto_world_boss_strategy_result::MergeFrom(const legion_proto_world
   personal_score_info_.MergeFrom(from.personal_score_info_);
   if (from._has_bits_[2 / 32] & (0xffu << (2 % 32))) {
     if (from.has_legion_extra_score()) {
-      mutable_legion_extra_score()->::hld::legion_proto_world_boss_score_info::MergeFrom(from.legion_extra_score());
+      mutable_legion_extra_score()->::faith::legion_proto_world_boss_score_info::MergeFrom(from.legion_extra_score());
     }
     if (from.has_personal_extra_score()) {
-      mutable_personal_extra_score()->::hld::legion_proto_world_boss_score_info::MergeFrom(from.personal_extra_score());
+      mutable_personal_extra_score()->::faith::legion_proto_world_boss_score_info::MergeFrom(from.personal_extra_score());
     }
     if (from.has_reward_level()) {
       set_reward_level(from.reward_level());
@@ -47621,6 +47621,6 @@ void legion_proto::Swap(legion_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

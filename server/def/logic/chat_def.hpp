@@ -17,7 +17,7 @@ purpose:
 #include "item_def.hpp"
 #include "template/template_base.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	const uint32 globel_message_max_size = 200;											// 全局公告最大字节数 100X2

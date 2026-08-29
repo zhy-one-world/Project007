@@ -15,7 +15,7 @@ purpose: ¿ç·şÌìÌİ
 #include "cross_group/cross_transfer_logic.hpp"
 #include "cross_ladder_msg.hpp"
 
-namespace hld
+namespace faith
 {
 	class c_cross_ladder_role_info
 	{

@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_interaction_2eproto();
@@ -114,7 +114,7 @@ class interaction_proto_c_s_interaction_invite : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 interaction_type() const;
   inline void set_interaction_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.interaction_proto.c_s_interaction_invite)
+  // @@protoc_insertion_point(class_scope:faith.interaction_proto.c_s_interaction_invite)
  private:
   inline void set_has_be_invited_guid();
   inline void clear_has_be_invited_guid();
@@ -206,7 +206,7 @@ class interaction_proto_s_c_interaction_invite : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 interaction_type() const;
   inline void set_interaction_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.interaction_proto.s_c_interaction_invite)
+  // @@protoc_insertion_point(class_scope:faith.interaction_proto.s_c_interaction_invite)
  private:
   inline void set_has_invite_guid();
   inline void clear_has_invite_guid();
@@ -305,7 +305,7 @@ class interaction_proto_c_s_interaction_invite_reply : public ::google::protobuf
   inline ::google::protobuf::int32 reply_result() const;
   inline void set_reply_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.interaction_proto.c_s_interaction_invite_reply)
+  // @@protoc_insertion_point(class_scope:faith.interaction_proto.c_s_interaction_invite_reply)
  private:
   inline void set_has_invite_guid();
   inline void clear_has_invite_guid();
@@ -414,7 +414,7 @@ class interaction_proto_s_c_interaction_invite_reply : public ::google::protobuf
   inline ::google::protobuf::int32 reply_result() const;
   inline void set_reply_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.interaction_proto.s_c_interaction_invite_reply)
+  // @@protoc_insertion_point(class_scope:faith.interaction_proto.s_c_interaction_invite_reply)
  private:
   inline void set_has_invite_guid();
   inline void clear_has_invite_guid();
@@ -519,7 +519,7 @@ class interaction_proto_c_s_real_start_interaction : public ::google::protobuf::
   inline ::google::protobuf::int32 interaction_type() const;
   inline void set_interaction_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.interaction_proto.c_s_real_start_interaction)
+  // @@protoc_insertion_point(class_scope:faith.interaction_proto.c_s_real_start_interaction)
  private:
   inline void set_has_invite_guid();
   inline void clear_has_invite_guid();
@@ -621,7 +621,7 @@ class interaction_proto_s_c_real_start_interaction : public ::google::protobuf::
   inline ::google::protobuf::int32 interaction_type() const;
   inline void set_interaction_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.interaction_proto.s_c_real_start_interaction)
+  // @@protoc_insertion_point(class_scope:faith.interaction_proto.s_c_real_start_interaction)
  private:
   inline void set_has_invite_guid();
   inline void clear_has_invite_guid();
@@ -709,7 +709,7 @@ class interaction_proto_c_s_stop_interaction : public ::google::protobuf::Messag
   inline ::google::protobuf::int64 target_guid() const;
   inline void set_target_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.interaction_proto.c_s_stop_interaction)
+  // @@protoc_insertion_point(class_scope:faith.interaction_proto.c_s_stop_interaction)
  private:
   inline void set_has_target_guid();
   inline void clear_has_target_guid();
@@ -798,7 +798,7 @@ class interaction_proto_s_c_stop_interaction : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 interaction_type() const;
   inline void set_interaction_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.interaction_proto.s_c_stop_interaction)
+  // @@protoc_insertion_point(class_scope:faith.interaction_proto.s_c_stop_interaction)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -911,7 +911,7 @@ class interaction_proto_interaction_invite_end : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 interaction_result() const;
   inline void set_interaction_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.interaction_proto.interaction_invite_end)
+  // @@protoc_insertion_point(class_scope:faith.interaction_proto.interaction_invite_end)
  private:
   inline void set_has_interaction_be_invited_guid();
   inline void clear_has_interaction_be_invited_guid();
@@ -1008,7 +1008,7 @@ class interaction_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.interaction_proto)
+  // @@protoc_insertion_point(class_scope:faith.interaction_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1620,7 +1620,7 @@ inline void interaction_proto_interaction_invite_end::set_interaction_result(::g
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

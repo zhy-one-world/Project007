@@ -16,7 +16,7 @@
 #include <list>
 #include <singleton.hpp>
 
-namespace hld
+namespace faith
 {
 
 	class queued_login_mgr : public singleton<queued_login_mgr>

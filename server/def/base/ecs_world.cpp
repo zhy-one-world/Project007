@@ -2,7 +2,7 @@
 
 #include "ecs_world.h"
 #include "server_log.hpp"
-namespace hld
+namespace faith
 {
 	using namespace ECS;
 

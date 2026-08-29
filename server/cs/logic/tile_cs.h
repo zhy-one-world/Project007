@@ -9,7 +9,7 @@
 *********************************************************************/
 #pragma once
 
-namespace hld
+namespace faith
 {
 	class tile_cs
 	{

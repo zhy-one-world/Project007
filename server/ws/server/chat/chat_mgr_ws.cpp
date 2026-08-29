@@ -10,7 +10,7 @@
 #include "utility/init_unit.h"
 #include "invalid_word/trie_filter.h"
 
-namespace hld
+namespace faith
 {
 	chat_mgr_ws::chat_mgr_ws()
 	{

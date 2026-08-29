@@ -10,7 +10,7 @@
 
 
 
-namespace hld
+namespace faith
 {
 	mail_ws_mgr::mail_ws_mgr()
 	{
@@ -105,7 +105,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::send_mail pro_msg;
+				faith::ws2cs_proto::send_mail pro_msg;
 				request.to_proto(pro_msg);
 				temp_session->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_recive_mail);
 			}

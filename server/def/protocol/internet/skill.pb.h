@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_skill_2eproto();
@@ -127,7 +127,7 @@ class skill_proto_skill_save_load : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.skill_save_load)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.skill_save_load)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -235,7 +235,7 @@ class skill_proto_skill_spell : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 skill_order() const;
   inline void set_skill_order(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.skill_spell)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.skill_spell)
  private:
   inline void set_has_skill_template_id();
   inline void clear_has_skill_template_id();
@@ -343,7 +343,7 @@ class skill_proto_skill_spell_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 skill_template_id() const;
   inline void set_skill_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.skill_spell_end)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.skill_spell_end)
  private:
   inline void set_has_attack_unit_guid();
   inline void clear_has_attack_unit_guid();
@@ -459,7 +459,7 @@ class skill_proto_skill_cast : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 skill_order() const;
   inline void set_skill_order(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.skill_cast)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.skill_cast)
  private:
   inline void set_has_skill_template_id();
   inline void clear_has_skill_template_id();
@@ -593,7 +593,7 @@ class skill_proto_skill_cast_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 skill_order() const;
   inline void set_skill_order(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.skill_cast_end)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.skill_cast_end)
  private:
   inline void set_has_attack_unit_guid();
   inline void clear_has_attack_unit_guid();
@@ -723,7 +723,7 @@ class skill_proto_skill_fly_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 skill_order() const;
   inline void set_skill_order(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.skill_fly_end)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.skill_fly_end)
  private:
   inline void set_has_attack_unit_guid();
   inline void clear_has_attack_unit_guid();
@@ -881,7 +881,7 @@ class skill_proto_skill_hurt : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_postion();
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.skill_hurt)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.skill_hurt)
  private:
   inline void set_has_skill_template_id();
   inline void clear_has_skill_template_id();
@@ -1062,7 +1062,7 @@ class skill_proto_skill_operation : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 param_guid() const;
   inline void set_param_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.skill_operation)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.skill_operation)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -1245,7 +1245,7 @@ class skill_proto_skill_operation_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 skill_order() const;
   inline void set_skill_order(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.skill_operation_end)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.skill_operation_end)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -1364,7 +1364,7 @@ class skill_proto_skill_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.skill_info)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.skill_info)
  private:
   inline void set_has_unit_guid();
   inline void clear_has_unit_guid();
@@ -1447,16 +1447,16 @@ class skill_proto_skill_info_all : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 unit_guid() const;
   inline void set_unit_guid(::google::protobuf::int64 value);
 
-  // repeated .hld.skill_proto.skill_info skill_list = 2;
+  // repeated .faith.skill_proto.skill_info skill_list = 2;
   inline int skill_list_size() const;
   inline void clear_skill_list();
   static const int kSkillListFieldNumber = 2;
-  inline const ::hld::skill_proto_skill_info& skill_list(int index) const;
-  inline ::hld::skill_proto_skill_info* mutable_skill_list(int index);
-  inline ::hld::skill_proto_skill_info* add_skill_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::skill_proto_skill_info >&
+  inline const ::faith::skill_proto_skill_info& skill_list(int index) const;
+  inline ::faith::skill_proto_skill_info* mutable_skill_list(int index);
+  inline ::faith::skill_proto_skill_info* add_skill_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::skill_proto_skill_info >&
       skill_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::skill_proto_skill_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::skill_proto_skill_info >*
       mutable_skill_list();
 
   // optional bool is_clear = 3;
@@ -1466,7 +1466,7 @@ class skill_proto_skill_info_all : public ::google::protobuf::Message {
   inline bool is_clear() const;
   inline void set_is_clear(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.skill_info_all)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.skill_info_all)
  private:
   inline void set_has_unit_guid();
   inline void clear_has_unit_guid();
@@ -1476,7 +1476,7 @@ class skill_proto_skill_info_all : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 unit_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::skill_proto_skill_info > skill_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::skill_proto_skill_info > skill_list_;
   bool is_clear_;
 
   mutable int _cached_size_;
@@ -1559,7 +1559,7 @@ class skill_proto_sub_cd : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 sub_cd_time() const;
   inline void set_sub_cd_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.sub_cd)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.sub_cd)
  private:
   inline void set_has_skill_template_id();
   inline void clear_has_skill_template_id();
@@ -1644,7 +1644,7 @@ class skill_proto_change_skill : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 skill_template_id() const;
   inline void set_skill_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.change_skill)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.change_skill)
  private:
   inline void set_has_skill_template_id();
   inline void clear_has_skill_template_id();
@@ -1738,7 +1738,7 @@ class skill_proto_skill_fixed_param : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< float >*
       mutable_fixed_params();
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.skill_fixed_param)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.skill_fixed_param)
  private:
   inline void set_has_skill_template_id();
   inline void clear_has_skill_template_id();
@@ -1828,7 +1828,7 @@ class skill_proto_change_skill_index : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 pos_index() const;
   inline void set_pos_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.change_skill_index)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.change_skill_index)
  private:
   inline void set_has_skill_template_id();
   inline void clear_has_skill_template_id();
@@ -1920,7 +1920,7 @@ class skill_proto_skill_patron_saint_effect : public ::google::protobuf::Message
   inline ::google::protobuf::int32 skill_template_id() const;
   inline void set_skill_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.skill_patron_saint_effect)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.skill_patron_saint_effect)
  private:
   inline void set_has_unit_guid();
   inline void clear_has_unit_guid();
@@ -2005,7 +2005,7 @@ class skill_proto_trigger_passive_skill : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 skill_template_id() const;
   inline void set_skill_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.trigger_passive_skill)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.trigger_passive_skill)
  private:
   inline void set_has_skill_template_id();
   inline void clear_has_skill_template_id();
@@ -2087,7 +2087,7 @@ class skill_proto_passive_skill_up_level : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 passive_skill_id() const;
   inline void set_passive_skill_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.passive_skill_up_level)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.passive_skill_up_level)
  private:
   inline void set_has_passive_skill_id();
   inline void clear_has_passive_skill_id();
@@ -2176,7 +2176,7 @@ class skill_proto_passive_skill_up_level_end : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 passive_skill_id() const;
   inline void set_passive_skill_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.passive_skill_up_level_end)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.passive_skill_up_level_end)
  private:
   inline void set_has_res();
   inline void clear_has_res();
@@ -2268,7 +2268,7 @@ class skill_proto_passive_skill_equip : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 slot() const;
   inline void set_slot(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.passive_skill_equip)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.passive_skill_equip)
  private:
   inline void set_has_passive_skill_id();
   inline void clear_has_passive_skill_id();
@@ -2367,7 +2367,7 @@ class skill_proto_passive_skill_equip_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 new_passive_skill_id() const;
   inline void set_new_passive_skill_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto.passive_skill_equip_end)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto.passive_skill_equip_end)
  private:
   inline void set_has_res();
   inline void clear_has_res();
@@ -2470,7 +2470,7 @@ class skill_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.skill_proto)
+  // @@protoc_insertion_point(class_scope:faith.skill_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2554,7 +2554,7 @@ class skill_s2s_passive_skill_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.skill_s2s.passive_skill_info)
+  // @@protoc_insertion_point(class_scope:faith.skill_s2s.passive_skill_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2627,24 +2627,24 @@ class skill_s2s_sl_passive_skill_info : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.skill_s2s.passive_skill_info data_list = 1;
+  // repeated .faith.skill_s2s.passive_skill_info data_list = 1;
   inline int data_list_size() const;
   inline void clear_data_list();
   static const int kDataListFieldNumber = 1;
-  inline const ::hld::skill_s2s_passive_skill_info& data_list(int index) const;
-  inline ::hld::skill_s2s_passive_skill_info* mutable_data_list(int index);
-  inline ::hld::skill_s2s_passive_skill_info* add_data_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::skill_s2s_passive_skill_info >&
+  inline const ::faith::skill_s2s_passive_skill_info& data_list(int index) const;
+  inline ::faith::skill_s2s_passive_skill_info* mutable_data_list(int index);
+  inline ::faith::skill_s2s_passive_skill_info* add_data_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::skill_s2s_passive_skill_info >&
       data_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::skill_s2s_passive_skill_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::skill_s2s_passive_skill_info >*
       mutable_data_list();
 
-  // @@protoc_insertion_point(class_scope:hld.skill_s2s.sl_passive_skill_info)
+  // @@protoc_insertion_point(class_scope:faith.skill_s2s.sl_passive_skill_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::skill_s2s_passive_skill_info > data_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::skill_s2s_passive_skill_info > data_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -2715,7 +2715,7 @@ class skill_s2s : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.skill_s2s)
+  // @@protoc_insertion_point(class_scope:faith.skill_s2s)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -4113,27 +4113,27 @@ inline void skill_proto_skill_info_all::set_unit_guid(::google::protobuf::int64 
   unit_guid_ = value;
 }
 
-// repeated .hld.skill_proto.skill_info skill_list = 2;
+// repeated .faith.skill_proto.skill_info skill_list = 2;
 inline int skill_proto_skill_info_all::skill_list_size() const {
   return skill_list_.size();
 }
 inline void skill_proto_skill_info_all::clear_skill_list() {
   skill_list_.Clear();
 }
-inline const ::hld::skill_proto_skill_info& skill_proto_skill_info_all::skill_list(int index) const {
+inline const ::faith::skill_proto_skill_info& skill_proto_skill_info_all::skill_list(int index) const {
   return skill_list_.Get(index);
 }
-inline ::hld::skill_proto_skill_info* skill_proto_skill_info_all::mutable_skill_list(int index) {
+inline ::faith::skill_proto_skill_info* skill_proto_skill_info_all::mutable_skill_list(int index) {
   return skill_list_.Mutable(index);
 }
-inline ::hld::skill_proto_skill_info* skill_proto_skill_info_all::add_skill_list() {
+inline ::faith::skill_proto_skill_info* skill_proto_skill_info_all::add_skill_list() {
   return skill_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::skill_proto_skill_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::skill_proto_skill_info >&
 skill_proto_skill_info_all::skill_list() const {
   return skill_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::skill_proto_skill_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::skill_proto_skill_info >*
 skill_proto_skill_info_all::mutable_skill_list() {
   return &skill_list_;
 }
@@ -4636,27 +4636,27 @@ skill_s2s_passive_skill_info::mutable_data_ary() {
 
 // skill_s2s_sl_passive_skill_info
 
-// repeated .hld.skill_s2s.passive_skill_info data_list = 1;
+// repeated .faith.skill_s2s.passive_skill_info data_list = 1;
 inline int skill_s2s_sl_passive_skill_info::data_list_size() const {
   return data_list_.size();
 }
 inline void skill_s2s_sl_passive_skill_info::clear_data_list() {
   data_list_.Clear();
 }
-inline const ::hld::skill_s2s_passive_skill_info& skill_s2s_sl_passive_skill_info::data_list(int index) const {
+inline const ::faith::skill_s2s_passive_skill_info& skill_s2s_sl_passive_skill_info::data_list(int index) const {
   return data_list_.Get(index);
 }
-inline ::hld::skill_s2s_passive_skill_info* skill_s2s_sl_passive_skill_info::mutable_data_list(int index) {
+inline ::faith::skill_s2s_passive_skill_info* skill_s2s_sl_passive_skill_info::mutable_data_list(int index) {
   return data_list_.Mutable(index);
 }
-inline ::hld::skill_s2s_passive_skill_info* skill_s2s_sl_passive_skill_info::add_data_list() {
+inline ::faith::skill_s2s_passive_skill_info* skill_s2s_sl_passive_skill_info::add_data_list() {
   return data_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::skill_s2s_passive_skill_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::skill_s2s_passive_skill_info >&
 skill_s2s_sl_passive_skill_info::data_list() const {
   return data_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::skill_s2s_passive_skill_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::skill_s2s_passive_skill_info >*
 skill_s2s_sl_passive_skill_info::mutable_data_list() {
   return &data_list_;
 }
@@ -4668,7 +4668,7 @@ skill_s2s_sl_passive_skill_info::mutable_data_list() {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

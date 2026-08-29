@@ -12,7 +12,7 @@
 /*#include <winsock2.h>
 #include <windows.h>*/    
 
-namespace hld
+namespace faith
 {
 	class server_data
 	{

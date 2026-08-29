@@ -16,7 +16,7 @@ author: zhaoyuming
 
 
 
-namespace hld
+namespace faith
 {
 	star_trip_mgr::star_trip_mgr()
 	{

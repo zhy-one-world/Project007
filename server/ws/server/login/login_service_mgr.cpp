@@ -25,7 +25,7 @@
 #include "ws_client.hpp"
 #include "game_cfg/servers_config.h"
 
-namespace hld
+namespace faith
 {
 
 	login_service_mgr::login_service_mgr()

@@ -1,6 +1,6 @@
 #include "ProtectTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void ProtectTemplateSize()
     {

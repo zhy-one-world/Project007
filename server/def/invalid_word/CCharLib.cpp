@@ -1,6 +1,6 @@
 #include "CCharLib.hpp"
 #include "template/template_manager.h"
-namespace hld
+namespace faith
 {
 	WordSet& CCharLib::GetWordSet(void)
 	{

@@ -15,7 +15,7 @@ purpose:define the type of sepcial_name, define the type and the length of sepci
 #include "char_def.hpp"
 #include "template/template_base.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	enum e_special_name_type

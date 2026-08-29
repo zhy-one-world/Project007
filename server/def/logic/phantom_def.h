@@ -1,7 +1,7 @@
 #ifndef PHANTOM_DEF_H
 #define PHANTOM_DEF_H
 #include "logic/type_def.hpp"
-namespace hld
+namespace faith
 {
 #pragma pack(push, 1)
 	const int32 MAX_PHANTOM_NUM = 100;

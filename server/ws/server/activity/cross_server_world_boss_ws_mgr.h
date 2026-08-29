@@ -15,7 +15,7 @@ purpose:
 #include "utility/score_indicator.h"
 
 
-namespace hld
+namespace faith
 {
 	class cross_server_world_boss_ws_mgr
 	{

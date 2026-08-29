@@ -17,7 +17,7 @@
 #include "logic/type_def.hpp"
 
 
-namespace hld
+namespace faith
 {
 	bool dp2cs_load_role_info_lua(int32 unit_array_index,const char *data_ptr, int32 data_len);
 	void dp2cs_rep_load_char_info(uint32 conn_index, const void* data_ptr, size_t data_len);

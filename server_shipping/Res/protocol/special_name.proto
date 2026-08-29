@@ -1,0 +1,35 @@
+syntax = "proto2";
+package hld;
+
+message special_name_proto
+{	
+	message	special_name_operate
+	{
+		optional int32 special_name_type		=1; //称号类型
+		optional int32 special_name_level		=2; //称号等级
+		optional int32 operation_type			=4; //操作类型
+	}
+	
+	message	special_name_operate_end
+	{
+		optional int32 special_name_type		=1; //称号类型
+		optional int32 special_name_level		=2; //称号等级
+		optional int32 special_name_star		=3; //称号星级	
+		optional int32 operation_type			=4; //操作类型
+		optional int32 operation_end_state		=5; //操作结果
+		optional int64 role_guid				=6; //操作者的guid
+	}
+	
+	message	special_name_person_names
+	{
+		optional int64 role_guid				=1;//role_guid
+		repeated int32 special_name_level		=2;//称号等级
+		repeated int32 special_name_star		=3;//称号星级
+	}
+	message	special_name_request_person_names
+	{
+		repeated int32 target_guid			=1;//需要的到的角色id
+	}
+	
+	
+}

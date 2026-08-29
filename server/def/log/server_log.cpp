@@ -20,7 +20,7 @@
 #include "utility/init_unit.h"
 
 
-namespace hld
+namespace faith
 {
 	server_log::sender_handler_type server_log::log_db_sender_handler = NULL;
 	logger_base g_game_logger;
@@ -4255,8 +4255,8 @@ namespace hld
 
 		switch (auction_state)
 		{
-		case hld::e_auction_state_start_sell:
-		case hld::e_auction_state_cancel:
+		case faith::e_auction_state_start_sell:
+		case faith::e_auction_state_cancel:
 		{
 			server_log::push_log_string(log_string, role_info.account, "seller_account_id");
 			server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "seller_role_level");
@@ -4270,8 +4270,8 @@ namespace hld
 			}
 		}
 		break;
-		case hld::e_auction_state_deal:
-		case hld::e_auction_state_bid:
+		case faith::e_auction_state_deal:
+		case faith::e_auction_state_bid:
 		{
 			server_log::push_log_string(log_string, role_info.account, "buyer_account_id");
 			server_log::push_log_string(log_string, auction_info.cur_bid_money, "money_value");
@@ -4321,8 +4321,8 @@ namespace hld
 
 		switch (auction_state)
 		{
-		case hld::e_auction_state_start_sell:
-		case hld::e_auction_state_cancel:
+		case faith::e_auction_state_start_sell:
+		case faith::e_auction_state_cancel:
 		{
 			json["seller_account_id"] = role_info.account;
 			json["seller_role_level"] = role_info.data_ary[e_role_info_exp_level];
@@ -4336,8 +4336,8 @@ namespace hld
 			}
 		}
 		break;
-		case hld::e_auction_state_deal:
-		case hld::e_auction_state_bid:
+		case faith::e_auction_state_deal:
+		case faith::e_auction_state_bid:
 		{
 			json["buyer_account_id"] = role_info.account;
 			json["money_value"] = auction_info.cur_bid_money;

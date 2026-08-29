@@ -20,7 +20,7 @@
 #define DEFALUT_CHARSET_NAME		"latin1"
 #define DEFALUT_CHARSET_MAX_LEN		1
 
-namespace hld
+namespace faith
 {
 	inline int32 mysql_driver::get_type_size(MYSQL_FIELD* field, int32& real_len)
 	{

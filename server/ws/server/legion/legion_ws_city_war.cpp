@@ -17,7 +17,7 @@
 #include "system/scene/cs_map_system.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	legion_ws_city_war::legion_ws_city_war()
 	{
@@ -372,7 +372,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::get_city_master_stuff pro_msg;
+			faith::ws2cs_proto::get_city_master_stuff pro_msg;
 			get_city_master_stuff_msg.to_proto(pro_msg);
 			session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_get_city_master_stuff);
 		}
@@ -395,7 +395,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::del_city_master_stuff pro_msg;
+			faith::ws2cs_proto::del_city_master_stuff pro_msg;
 			del_city_master_stuff_msg.to_proto(pro_msg);
 			session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_del_city_master_stuff);
 		}
@@ -415,7 +415,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::add_city_war_winner_stuff pro_msg;
+			faith::ws2cs_proto::add_city_war_winner_stuff pro_msg;
 			add_pak.to_proto(pro_msg);
 			member_session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_add_city_war_winner_stuff);
 		}
@@ -437,7 +437,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::del_city_war_winner_stuff pro_msg;
+			faith::ws2cs_proto::del_city_war_winner_stuff pro_msg;
 			add_pak.to_proto(pro_msg);
 			member_session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_del_city_war_winner_stuff);
 		}
@@ -538,11 +538,11 @@ namespace hld
 		int32 activityId = 0;
 		if (world_server::getInstance().is_sky_island_server() || world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_legion_territory_war))
 		{
-			activityId = hld::e_activity_type_city_war_cross_server;
+			activityId = faith::e_activity_type_city_war_cross_server;
 		}
 		else
 		{
-			activityId = hld::e_activity_type_city_war;
+			activityId = faith::e_activity_type_city_war;
 		}
 
 		std::vector<int32> open_data = world_server::getInstance().get_activity_open_data(activityId);
@@ -867,7 +867,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::begin_city_war pro_msg;
+			faith::ws2cs_proto::begin_city_war pro_msg;
 			begin_war_msg.to_proto(pro_msg);
 			cs_map_system::send_message_to_cs_lua(map_ent, &pro_msg, e_msg_index_ws2cs_begin_city_war);
 		}
@@ -967,11 +967,11 @@ namespace hld
 		int32 activityId = 0;
 		if (world_server::getInstance().is_sky_island_server() || world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_legion_territory_war)) 
 		{
-			activityId = hld::e_activity_type_city_war_cross_server;
+			activityId = faith::e_activity_type_city_war_cross_server;
 		}
 		else
 		{
-			activityId = hld::e_activity_type_city_war;
+			activityId = faith::e_activity_type_city_war;
 		}
 		std::vector<int32> open_time = world_server::getInstance().get_activity_open_time(activityId);
 		if (open_time.size() < once_activity_open_time_array_size)
@@ -995,17 +995,17 @@ namespace hld
 		int32 activityId = 0;
 		if (world_server::getInstance().is_sky_island_server() || world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_legion_territory_war)) 
 		{
-			activityId = hld::e_activity_type_city_war_cross_server;
+			activityId = faith::e_activity_type_city_war_cross_server;
 		}
 		else
 		{
-			activityId = hld::e_activity_type_city_war;
+			activityId = faith::e_activity_type_city_war;
 		}
 
-		ActivityCommonConfigTemplate* act_com_ptr =GET_TEMPLATE(ActivityCommonConfigTemplate, hld::first_activity_common_template_id + activityId);
-		if (terr_id == hld::overlord_war_territory_flag)
+		ActivityCommonConfigTemplate* act_com_ptr =GET_TEMPLATE(ActivityCommonConfigTemplate, faith::first_activity_common_template_id + activityId);
+		if (terr_id == faith::overlord_war_territory_flag)
 		{
-			int32 ActTemplateID = hld::first_activity_common_template_id + hld::e_activity_type_overlord_city_war;
+			int32 ActTemplateID = faith::first_activity_common_template_id + faith::e_activity_type_overlord_city_war;
 			act_com_ptr = GET_TEMPLATE(ActivityCommonConfigTemplate, ActTemplateID);
 		}
 
@@ -1026,16 +1026,16 @@ namespace hld
 		int32 activityId = 0;
 		if (world_server::getInstance().is_sky_island_server() || world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_legion_territory_war)) 
 		{
-			activityId = hld::e_activity_type_city_war_cross_server;
+			activityId = faith::e_activity_type_city_war_cross_server;
 		}
 		else
 		{
-			activityId = hld::e_activity_type_city_war;
+			activityId = faith::e_activity_type_city_war;
 		}
-		ActivityCommonConfigTemplate* act_com_ptr = GET_TEMPLATE(ActivityCommonConfigTemplate, hld::first_activity_common_template_id + activityId);
-		if (terr_id == hld::overlord_war_territory_flag)
+		ActivityCommonConfigTemplate* act_com_ptr = GET_TEMPLATE(ActivityCommonConfigTemplate, faith::first_activity_common_template_id + activityId);
+		if (terr_id == faith::overlord_war_territory_flag)
 		{
-			int32 ActTemplateID = hld::first_activity_common_template_id + hld::e_activity_type_overlord_city_war;
+			int32 ActTemplateID = faith::first_activity_common_template_id + faith::e_activity_type_overlord_city_war;
 			act_com_ptr = GET_TEMPLATE(ActivityCommonConfigTemplate, ActTemplateID);
 		}
 		std::vector<int32> open_time = world_server::getInstance().get_activity_open_time(activityId);
@@ -1059,16 +1059,16 @@ namespace hld
 		int32 activityId = 0;
 		if (world_server::getInstance().is_sky_island_server() || world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_legion_territory_war)) 
 		{
-			activityId = hld::e_activity_type_city_war_cross_server;
+			activityId = faith::e_activity_type_city_war_cross_server;
 		}
 		else
 		{
-			activityId = hld::e_activity_type_city_war;
+			activityId = faith::e_activity_type_city_war;
 		}
-		ActivityCommonConfigTemplate* act_com_ptr = GET_TEMPLATE(ActivityCommonConfigTemplate, hld::first_activity_common_template_id + activityId);
-		if (terr_id == hld::overlord_war_territory_flag)
+		ActivityCommonConfigTemplate* act_com_ptr = GET_TEMPLATE(ActivityCommonConfigTemplate, faith::first_activity_common_template_id + activityId);
+		if (terr_id == faith::overlord_war_territory_flag)
 		{
-			int32 ActTemplateID = hld::first_activity_common_template_id + hld::e_activity_type_overlord_city_war;
+			int32 ActTemplateID = faith::first_activity_common_template_id + faith::e_activity_type_overlord_city_war;
 			act_com_ptr = GET_TEMPLATE(ActivityCommonConfigTemplate, ActTemplateID);
 		}
 		std::vector<int32> open_time = world_server::getInstance().get_activity_open_time(activityId);
@@ -1101,17 +1101,17 @@ namespace hld
 		int32 activityId = 0;
 		if (world_server::getInstance().is_sky_island_server() || world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_legion_territory_war))
 		{
-			activityId = hld::e_activity_type_city_war_cross_server;
+			activityId = faith::e_activity_type_city_war_cross_server;
 		}
 		else
 		{
-			activityId = hld::e_activity_type_city_war;
+			activityId = faith::e_activity_type_city_war;
 		}
 
-		ActivityCommonConfigTemplate* act_com_ptr = GET_TEMPLATE(ActivityCommonConfigTemplate, hld::first_activity_common_template_id + activityId);
-		if (terr_id == hld::overlord_war_territory_flag)
+		ActivityCommonConfigTemplate* act_com_ptr = GET_TEMPLATE(ActivityCommonConfigTemplate, faith::first_activity_common_template_id + activityId);
+		if (terr_id == faith::overlord_war_territory_flag)
 		{
-			int32 ActTemplateID = hld::first_activity_common_template_id + hld::e_activity_type_overlord_city_war;
+			int32 ActTemplateID = faith::first_activity_common_template_id + faith::e_activity_type_overlord_city_war;
 			act_com_ptr = GET_TEMPLATE(ActivityCommonConfigTemplate, ActTemplateID);
 		}
 		std::vector<int32> open_time = world_server::getInstance().get_activity_open_time(activityId);

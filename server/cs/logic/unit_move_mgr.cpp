@@ -5,7 +5,7 @@
 #include "internet/aoi.pb.h"
 #include "internet/net.pb.h"
 
-namespace hld
+namespace faith
 {
 	unit_move_mgr::unit_move_mgr()
 	{
@@ -150,13 +150,13 @@ namespace hld
 		s_map_pos unit_map_pos = unit_ref.get_new_map_pos();
 		if (m_be_back)
 		{
-			unit_map_pos.unit_location.x -= move_length * cos(m_move_yaw * hld::RADIAN);
-			unit_map_pos.unit_location.y -= move_length * sin(m_move_yaw * hld::RADIAN);
+			unit_map_pos.unit_location.x -= move_length * cos(m_move_yaw * faith::RADIAN);
+			unit_map_pos.unit_location.y -= move_length * sin(m_move_yaw * faith::RADIAN);
 		}
 		else
 		{
-			unit_map_pos.unit_location.x += move_length * cos(m_move_yaw * hld::RADIAN);
-			unit_map_pos.unit_location.y += move_length * sin(m_move_yaw * hld::RADIAN);
+			unit_map_pos.unit_location.x += move_length * cos(m_move_yaw * faith::RADIAN);
+			unit_map_pos.unit_location.y += move_length * sin(m_move_yaw * faith::RADIAN);
 		}
 
 		unit_ref.set_new_map_pos(unit_map_pos);

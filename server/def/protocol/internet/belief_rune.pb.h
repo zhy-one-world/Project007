@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_belief_5frune_2eproto();
@@ -115,7 +115,7 @@ class belief_rune_proto_belief_rune_equip_on : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 item_slot() const;
   inline void set_item_slot(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.belief_rune_proto.belief_rune_equip_on)
+  // @@protoc_insertion_point(class_scope:faith.belief_rune_proto.belief_rune_equip_on)
  private:
   inline void set_has_item_slot();
   inline void clear_has_item_slot();
@@ -203,7 +203,7 @@ class belief_rune_proto_belief_rune_level_up : public ::google::protobuf::Messag
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_item_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.belief_rune_proto.belief_rune_level_up)
+  // @@protoc_insertion_point(class_scope:faith.belief_rune_proto.belief_rune_level_up)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -295,7 +295,7 @@ class belief_rune_proto_belief_rune_equip_decompose : public ::google::protobuf:
   inline ::google::protobuf::int32 decompose_type() const;
   inline void set_decompose_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.belief_rune_proto.belief_rune_equip_decompose)
+  // @@protoc_insertion_point(class_scope:faith.belief_rune_proto.belief_rune_equip_decompose)
  private:
   inline void set_has_decompose_type();
   inline void clear_has_decompose_type();
@@ -392,7 +392,7 @@ class belief_rune_proto_belief_rune_operate_result : public ::google::protobuf::
   inline ::google::protobuf::int32 rune_piece() const;
   inline void set_rune_piece(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.belief_rune_proto.belief_rune_operate_result)
+  // @@protoc_insertion_point(class_scope:faith.belief_rune_proto.belief_rune_operate_result)
  private:
   inline void set_has_operate_type();
   inline void clear_has_operate_type();
@@ -480,7 +480,7 @@ class belief_rune_proto_belief_cloister_point_update : public ::google::protobuf
   inline ::google::protobuf::int32 point_value() const;
   inline void set_point_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.belief_rune_proto.belief_cloister_point_update)
+  // @@protoc_insertion_point(class_scope:faith.belief_rune_proto.belief_cloister_point_update)
  private:
   inline void set_has_point_value();
   inline void clear_has_point_value();
@@ -561,7 +561,7 @@ class belief_rune_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.belief_rune_proto)
+  // @@protoc_insertion_point(class_scope:faith.belief_rune_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -814,7 +814,7 @@ inline void belief_rune_proto_belief_cloister_point_update::set_point_value(::go
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

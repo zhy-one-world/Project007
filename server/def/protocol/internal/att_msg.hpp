@@ -13,17 +13,17 @@
 #include "base.hpp"
 #include "Logic/att_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	enum
 	{
-		e_msgindex_dp2cs_load_char_att					= hld::e_msg_base_att,
+		e_msgindex_dp2cs_load_char_att					= faith::e_msg_base_att,
 		e_msgindex_cs2dp_save_char_att,
 	};
 
 	// DP2CS 分批发送玩家的所有物品信息
-	struct dp2cs_load_char_att : public hld::packet_base
+	struct dp2cs_load_char_att : public faith::packet_base
 	{
 		guid_64							role_guid;
 		int32							unit_array_index;
@@ -34,7 +34,7 @@ namespace hld
 			wheader	= e_msgindex_dp2cs_load_char_att;
 		}
 	};
-	struct cs2dp_save_char_att : public hld::packet_base
+	struct cs2dp_save_char_att : public faith::packet_base
 	{
 		guid_64							role_guid;
 		int32							unit_array_index;

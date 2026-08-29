@@ -2,7 +2,7 @@
 #include "template/template_manager.h"
 #include "internet/time_activity.pb.h"
 
-using namespace hld;
+using namespace faith;
 c_time_activity::c_time_activity()
 {
 	m_activity_id = 0;

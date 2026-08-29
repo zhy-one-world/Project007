@@ -11,7 +11,7 @@
 #define _WS_MSGPROC_DP_H_
 #include "logic/type_def.hpp"
 #include "Logic/world_def.hpp"
-namespace hld
+namespace faith
 {
 	void dp2ws_rep_get_game_info_ws_lua(uint32 conn_index, int32 server_id, int32 begin_time, int32 server_info_arr[e_server_info_type_max], int32 gm_commond_arr[e_need_server_cross_max - 1]);
 	void dp2ws_rep_get_role_info_ws_lua(uint32 conn_index, int64 role_guid, xstring account,xstring role_name,xstring role_appearance,xstring role_first_kill_npc_id_arr,int64 map_guid

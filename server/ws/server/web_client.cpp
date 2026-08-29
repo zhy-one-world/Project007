@@ -32,7 +32,7 @@
 #include "mail/mail_event_ws.h"
 
 
-namespace hld
+namespace faith
 {
 	web_client::web_client()
 	{
@@ -239,7 +239,7 @@ namespace hld
 		{
 			return;
 		}
-		hld::web_proto::login msg;
+		faith::web_proto::login msg;
 		msg.ParseFromArray(data_ptr, length);
 		int32 test = msg.biggroupid();
 		int32 test2 = msg.servergroupid();
@@ -252,7 +252,7 @@ namespace hld
 		{
 			return;
 		}
-		hld::web_proto::json_str_http_to_ws msg;
+		faith::web_proto::json_str_http_to_ws msg;
 		msg.ParseFromArray(data_ptr, length);
 		CONSOLE_INFO(" gm_json_string : {}", msg.datastr());
 		Json::Reader reader;
@@ -731,7 +731,7 @@ namespace hld
 
 	void web_client::send_server_state_to_gm(const server_info_gm& srv_info)
 	{
-		//hld::web_proto::json_str_ws_to_http msg;
+		//faith::web_proto::json_str_ws_to_http msg;
 		//msg.set_jsontype(-1);
 
 		//Json::Value server_info_json;
@@ -747,7 +747,7 @@ namespace hld
 		//msg.set_biggroupid(world_server::getInstance().get_big_group_id());
 		//msg.set_servergroupid(world_server::getInstance().get_server_group_id());
 		//msg.set_ordernum(0);
-		//serialze_and_send(&msg, hld::e_ws2w_pi_server_state);
+		//serialze_and_send(&msg, faith::e_ws2w_pi_server_state);
 
 		Json::Value server_info_json;
 		server_info_json["serverId"] = world_server::getInstance().get_server_id();
@@ -1825,7 +1825,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::spawn_npc pro_msg;
+				faith::ws2cs_proto::spawn_npc pro_msg;
 				ws2cs_spawn_npc_msg.to_proto(pro_msg);
 				cs_map_system::send_message_to_cs_lua(map_ent, &pro_msg, e_msgindex_ws2cs_spawn_npc);
 			}
@@ -1873,7 +1873,7 @@ namespace hld
 				}
 				else
 				{
-					hld::ws2cs_proto::add_guide_record msg;
+					faith::ws2cs_proto::add_guide_record msg;
 					msg.set_cs_unit_index(client_session_ptr->m_cs_array_index);
 					msg.set_guide_trigger_id(guide_trigger_id);
 					client_session_ptr->send_to_cs_lua(&msg, e_msgindex_ws2cs_add_guide_record);
@@ -1988,7 +1988,7 @@ namespace hld
 		{
 			xstring role_guid_str = "";
 			xstring money_command = "";
-			e_money_type money_type = hld::e_money_type_exp;
+			e_money_type money_type = faith::e_money_type_exp;
 			int64 money_value = 0;
 			bool is_add_money = false;
 
@@ -2070,7 +2070,7 @@ namespace hld
 				}
 				else
 				{
-					hld::ws2cs_proto::modify_money pro_msg;
+					faith::ws2cs_proto::modify_money pro_msg;
 					req.to_proto(pro_msg);
 					client_session_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_modify_money);
 				}
@@ -3097,7 +3097,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::send_mail pro_msg;
+				faith::ws2cs_proto::send_mail pro_msg;
 				request.to_proto(pro_msg);
 				target_session->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_recive_mail);
 			}
@@ -3536,7 +3536,7 @@ namespace hld
 			}
 		}
 
-		recharge_mgr_ws::get_instance().check_and_save_recharge(order_id, role_guid, game_goods_id, pay_price, callback_info.handle_index, payment_type, hld::s_client_uid(), "", 0, direct_diamond);
+		recharge_mgr_ws::get_instance().check_and_save_recharge(order_id, role_guid, game_goods_id, pay_price, callback_info.handle_index, payment_type, faith::s_client_uid(), "", 0, direct_diamond);
 	}
 	void web_client::parse_json_robot_op(Json::Value& json_value, int64 order_num)
 	{
@@ -3587,7 +3587,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::del_unit_item msg;
+			faith::ws2cs_proto::del_unit_item msg;
 			msg.set_cs_unit_index(cs_unit_index);
 			msg.set_bag_type(bag_type);
 			msg.set_bag_slot_begin(bag_slot_begin);
@@ -3609,7 +3609,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::change_unit_vip msg;
+			faith::ws2cs_proto::change_unit_vip msg;
 			msg.set_cs_unit_index(cs_unit_index);
 			msg.set_vip_value(vip_value);
 			world_server::getInstance().broadcast_lua(&msg, e_msg_index_ws2cs_change_unit_vip, e_server_type_cs);
@@ -3645,7 +3645,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::del_unit_specified_item msg;
+			faith::ws2cs_proto::del_unit_specified_item msg;
 			msg.set_cs_unit_index(cs_unit_index);
 			msg.set_bag_type(bag_type);
 			msg.set_item_id(item_id);
@@ -3720,7 +3720,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::gm_del_cache msg;
+			faith::ws2cs_proto::gm_del_cache msg;
 			msg.set_role_guid(role_guid.server_64);
 			world_server::getInstance().broadcast_lua(&msg, e_msgindex_ws2dp_gm_del_cache, e_server_type_cs);
 		}
@@ -4191,7 +4191,7 @@ namespace hld
 			}
 
 			recharge_mgr_ws::get_instance().check_and_save_recharge(json_value["order_id"].asString().c_str(), guid_64(init_unit::change_string_to_i64(json_value["user_id"].asString()))
-				, custom_recharge_template_ptr->attribute_id, money, receive_info.m_req_handle_index, payment_type, hld::s_client_uid(), json_value["sign"].asString(), 0, 0);
+				, custom_recharge_template_ptr->attribute_id, money, receive_info.m_req_handle_index, payment_type, faith::s_client_uid(), json_value["sign"].asString(), 0, 0);
 		}
 		else
 		{
@@ -4318,42 +4318,42 @@ namespace hld
 		server_info_json["code"] = real_code;
 		switch (real_code)
 		{
-		case hld::e_recharge_end_msg_error_code_success:
+		case faith::e_recharge_end_msg_error_code_success:
 		{
 			server_info_json["msg"] = "SUCCESS";
 		}
 		break;
-		case hld::e_recharge_end_msg_error_code_perpeat_order:
+		case faith::e_recharge_end_msg_error_code_perpeat_order:
 		{
 			server_info_json["msg"] = "PERPEAT_ORDER";
 		}
 		break;
-		case hld::e_recharge_end_msg_error_code_sign_error:
+		case faith::e_recharge_end_msg_error_code_sign_error:
 		{
 			server_info_json["msg"] = "SIGN_ERROR";
 		}
 		break;
-		case hld::e_recharge_end_msg_error_code_price_error:
+		case faith::e_recharge_end_msg_error_code_price_error:
 		{
 			server_info_json["msg"] = "PRICE_ERROR";
 		}
 		break;
-		case hld::e_recharge_end_msg_error_code_user_error:
+		case faith::e_recharge_end_msg_error_code_user_error:
 		{
 			server_info_json["msg"] = "USER_ERROR";
 		}
 		break;
-		case hld::e_recharge_end_msg_error_code_platform_error:
+		case faith::e_recharge_end_msg_error_code_platform_error:
 		{
 			server_info_json["msg"] = "PLATFORM_ERROR";
 		}
 		break;
-		case hld::e_recharge_end_msg_error_code_order_timeout:
+		case faith::e_recharge_end_msg_error_code_order_timeout:
 		{
 			server_info_json["msg"] = "ORDER_TIMEOUT";
 		}
 		break;
-		case hld::e_recharge_end_msg_error_code_failed:
+		case faith::e_recharge_end_msg_error_code_failed:
 		{
 			server_info_json["msg"] = "FAILED";
 		}

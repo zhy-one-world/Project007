@@ -4,7 +4,7 @@
 #include "Logic/recycle_def.h"
 
 
-namespace hld
+namespace faith
 {
 	class player;
 	class unit;

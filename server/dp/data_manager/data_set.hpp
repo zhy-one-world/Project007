@@ -11,7 +11,7 @@
 
 #include "data_info.hpp"
 
-namespace hld
+namespace faith
 {
 	class data_set
 	{

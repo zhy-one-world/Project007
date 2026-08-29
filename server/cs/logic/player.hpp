@@ -79,7 +79,7 @@ purpose: about role and role's operation
 /************************************************************************/
 /*                            Maroc Define                              */
 /************************************************************************/
-namespace hld
+namespace faith
 {
 	class npc;
 	class citem;
@@ -194,7 +194,7 @@ namespace hld
 		/*                            ·¢ËÍÏûÏ¢									*/
 		/************************************************************************/
 	public:
-		virtual	void								get_aoi_msg(hld::aoi_proto_unit_aoi_all& msg);
+		virtual	void								get_aoi_msg(faith::aoi_proto_unit_aoi_all& msg);
 		virtual void								send_message_to_dp(const void* data, uint32 date_len);
 		virtual void								send_message_to_dp(google::protobuf::Message* net_pro, uint32 heade, int32 save_type_ex = 0);
 		virtual void								send_message_to_dp(google::protobuf::Message* net_pro, uint32 heade, int64 save_flag, int32 save_type_ex = 0);

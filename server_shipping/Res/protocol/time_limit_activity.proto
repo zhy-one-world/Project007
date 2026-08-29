@@ -1,0 +1,193 @@
+syntax = "proto2";
+package hld;
+import "ranking.proto";
+
+message time_limit_activity_proto
+{		
+	message all_open_activity_message
+	{
+		repeated one_open_activity_message		activity_message =1;
+	}
+	
+	message one_open_activity_message	//总活动包   两个排行走这个，不需要单发sub包
+	{
+		optional int32 activity_temp_id				= 1;
+		optional int32 activity_type 				= 2;
+		optional int32 activity_start_time			= 3;
+		optional int32 activity_end_time			= 4;		
+		optional int32 activity_order				= 5;
+		optional int32 activity_start_sub_temp_id	= 6;
+	}
+	
+	message activity_tempid_and_flag
+	{
+		optional int32 activity_temp_id				= 1;
+		optional int32 activity_reward_flag			= 2;
+	}
+	
+	message norank_type_activity_message	//对应限时活动类型为 2原初宝箱 14天天充值 15累积充值 4个派送 16启示之路活跃度 不用遍历
+	{
+		optional int32 activity_type				= 1;
+		optional int32 activity_value				= 2;
+		repeated activity_tempid_and_flag act_msg	= 3;
+		optional int32 act_guid						= 4;
+	}
+		
+	message rank_type_activity_message  	//对应限时活动类型为 0充值排行 1消费排行 2提升比拼排行
+	{
+		optional int32 activity_type				= 1;
+		optional int32 rank_value					= 2;
+		repeated ranking_proto.ranking_player_info top_info_arr		= 3;		//前三名玩家排行信息
+		repeated ranking_proto.ranking_player_info self_info_arr	= 4;
+		optional int32 act_guid						= 5;
+	}
+	
+	message get_rank_type_activity_message  	//对应限时活动类型为 0充值排行 1消费排行 发送活动类型
+	{
+		optional int32 activity_type				= 1;
+	}
+	
+	message all_behavior_type_activity_message  	//对应限时活动类型为启示之路
+	{
+		optional int32 activity_type				= 1;	//总类型
+		optional int32 activity_sub_id				= 2;	//子表id
+		repeated one_behavior_message all_msg		= 3;	//所有的启示之路信息
+		optional int32 act_guid						= 4;
+	}
+	
+	message one_behavior_message 					//对应限时活动类型为启示之路
+	{
+		optional int32 behavior_idex				= 1;	//对应第几个，从0开始
+		optional int32 behavior_value				= 2;
+	}
+	
+	message one_behavior_type_activity_message		//对应限时活动类型为启示之路，拆开是因为需要判断是否为启示之路类型
+	{
+		optional int32 activity_type				= 1;
+		optional int32 activity_sub_id				= 2;
+		optional int32 behavior_idex				= 3;
+		optional int32 behavior_value				= 4;
+		optional int32 act_guid						= 5;
+	}	
+	
+	message time_limit_activity_send_get_award
+	{
+		optional int32 activity_id 	= 1;
+		optional int32 act_guid		= 2;
+		optional int32 param_int_1	= 3;		//预留参数
+	}
+	message get_all_common_data_message
+	{
+
+	}
+	message all_common_data_message
+	{
+		repeated	common_data_message	data_list = 1;
+	}
+	message common_data_message
+	{
+		optional	int32	data_id	= 1;
+		optional	int32	data_num	= 2;
+	}
+	
+	message add_activity_schedule
+	{
+		optional	int32 add_type 				= 1;
+		optional	int32 add_value 			= 2;
+		optional	int32 schedule_index 		= 3[default = 0];
+	}
+	
+	message buy_time_limit_item
+	{
+		optional	int32 activity_type 		= 1;
+		optional	int32 buy_num	 			= 2;
+	}
+	
+	message buy_time_limit_item_end
+	{
+		optional	int32 activity_type 		= 1;
+		optional	int32 result				= 2;
+	}
+	
+	message diamond_shop_info
+	{
+		repeated	diamond_shop_sub_info goods_info = 1;
+		optional	int32 is_free				= 2;
+	}
+	
+	message diamond_shop_sub_info
+	{
+		optional	int32 goods_index	 		= 1;
+		optional	int32 goods_state			= 2;
+	}
+	
+	message buy_diamond_shop
+	{
+		optional	int32 buy_index 			= 1;
+	}
+	
+	message buy_diamond_shop_end
+	{
+		optional	int32 result 				= 1;
+	}
+	
+	
+	message star_trip_goods_info
+	{
+		optional	int32 show_index			= 1;
+		optional	int32 item_id 				= 2;
+		optional	int32 item_num				= 3;
+		optional	int32 is_lock				= 4;
+		optional	int32 need_money			= 5;
+		optional	int32 max_num				= 6;
+		optional	int32 buy_num				= 7;
+	}	
+	
+	message star_trip_mission_info
+	{
+		optional	int32 show_index			= 1;
+		optional	int32 mission_type 			= 2;
+		optional	int32 target_type			= 3;
+		optional	int32 target_param			= 4;
+		optional	int32 target_num			= 5;
+		optional	int32 finish_num			= 6;
+		optional	int32 award_num				= 7;
+		optional	int32 is_get				= 8;
+	}	
+		
+	message send_star_trip_goods_info_one
+	{
+		optional	star_trip_goods_info	goods_info = 1;
+		optional	int32 					cur_source = 2;				
+	}	
+	
+	message send_star_trip_mission_info_one
+	{
+		optional	star_trip_mission_info	mission_info = 1;
+		optional	int32 					cur_source 	 = 2;
+	}	
+	
+	message send_star_trip_info_all
+	{
+		repeated 	star_trip_goods_info	goods_list		= 1;
+		repeated 	star_trip_mission_info 	mission_list	= 2;
+		optional 	int32	 				need_tip		= 3;
+		optional	int32					target_day		= 4;
+		optional	int32					cur_source		= 5;
+	}	
+	
+	message star_trip_operate
+	{
+		optional 	int32					operate_type	= 1;
+		optional 	int32	 				parame1			= 2;
+		optional	int32					parame2			= 3;
+	}
+	
+	message star_trip_operate_end
+	{
+		optional 	int32					operate_type	= 1;
+		optional 	int32	 				parame1			= 2;
+		optional	int32					parame2			= 3;
+		optional	int32					result			= 4;
+	}	
+}

@@ -3,7 +3,7 @@
 #include <singleton.hpp>
 #include <boost/function.hpp>
 
-namespace hld
+namespace faith
 {
 	class app_server : public singleton<app_server>
 	{

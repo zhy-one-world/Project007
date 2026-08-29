@@ -7,7 +7,7 @@
 #include "utility/globle_data.h"
 #include "utility/init_unit.h"
 
-namespace hld
+namespace faith
 {
 
     template_manager::template_manager()
@@ -230,7 +230,7 @@ namespace hld
     template <class T>
     void template_manager::register_template(e_template template_name, std::string&& file_name)
    {
-        hld::csv_parser parser;
+        faith::csv_parser parser;
         parser.load(file_name);
         int32 row_num = parser.get_row_count();
 		if (row_num <= 0)
@@ -538,7 +538,7 @@ namespace hld
 		return template_ptr;
 	}
 
-	hld::MapTemplate* template_manager::get_map_template_map_id(const int32 map_template_id)
+	faith::MapTemplate* template_manager::get_map_template_map_id(const int32 map_template_id)
 	{
 		if (0 > map_template_id)
 		{
@@ -980,7 +980,7 @@ namespace hld
 		return nullptr;
 	}
 
-	hld::RechargeTemplate* template_manager::get_template_by_recharge_offline_item(int32 offline_item)
+	faith::RechargeTemplate* template_manager::get_template_by_recharge_offline_item(int32 offline_item)
 	{
 		template_type* recharge_template_table = get_templates(e_RechargeTemplate);
 		if (nullptr == recharge_template_table)
@@ -1488,22 +1488,22 @@ namespace hld
 
 		switch (target_color)
 		{
-		//case hld::e_item_color_green:
+		//case faith::e_item_color_green:
 		//	return equip_template_ptr->GreenExcellentRatio;
 		//	break;
-		//case hld::e_item_color_blue:
+		//case faith::e_item_color_blue:
 		//	return equip_template_ptr->BlueExcellentRatio;
 		//	break;
-		//case hld::e_item_color_purple:
+		//case faith::e_item_color_purple:
 		//	return equip_template_ptr->PurpleExcellentRatio;
 		//	break;
-		//case hld::e_item_color_orange:
+		//case faith::e_item_color_orange:
 		//	return equip_template_ptr->OrangeExcellentRatio;
 		//	break;
-		//case hld::e_item_color_red:
+		//case faith::e_item_color_red:
 		//	return equip_template_ptr->RedExcellentRatio;
 		//	break;
-		//case hld::e_item_color_pink:
+		//case faith::e_item_color_pink:
 		//	return equip_template_ptr->PinkExcellentRatio;
 		//	break;
 		default:
@@ -1524,22 +1524,22 @@ namespace hld
 
 		switch (target_color)
 		{
-		case hld::e_item_color_green:
+		case faith::e_item_color_green:
 			return spirit_template_ptr->GreenExcellentRatio;
 			break;
-		case hld::e_item_color_blue:
+		case faith::e_item_color_blue:
 			return spirit_template_ptr->BlueExcellentRatio;
 			break;
-		case hld::e_item_color_purple:
+		case faith::e_item_color_purple:
 			return spirit_template_ptr->PurpleExcellentRatio;
 			break;
-		case hld::e_item_color_orange:
+		case faith::e_item_color_orange:
 			return spirit_template_ptr->OrangeExcellentRatio;
 			break;
-		case hld::e_item_color_red:
+		case faith::e_item_color_red:
 			return spirit_template_ptr->RedExcellentRatio;
 			break;
-		case hld::e_item_color_pink:
+		case faith::e_item_color_pink:
 			return spirit_template_ptr->PinkExcellentRatio;
 			break;
 		default:
@@ -1572,12 +1572,12 @@ namespace hld
 	EquipEnchantTemplate* template_manager::get_equip_enchant_template_ptr(int32 level, int32 type, int32 slot)
 	{
 		int32 enchant_template_id = -1;
-		hld::template_manager::template_type* enchant_table = get_templates(e_EquipEnchantTemplate);
+		faith::template_manager::template_type* enchant_table = get_templates(e_EquipEnchantTemplate);
 		if (nullptr == enchant_table)
 		{
 			return nullptr;
 		}
-		hld::template_manager::template_type::iterator ite;
+		faith::template_manager::template_type::iterator ite;
 		for (ite = enchant_table->begin(); ite != enchant_table->end(); ++ite)
 		{
 			EquipEnchantTemplate* temp_enchant_template_ptr = (EquipEnchantTemplate*)(ite->second);

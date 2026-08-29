@@ -4,7 +4,7 @@
 #include "Logic/legion_def.hpp"
 #include "../client_session.hpp"
 
-namespace hld
+namespace faith
 {
 	class legion_proto_get_city_war_info_end;
 	class legion_proto_city_war_territory_info;

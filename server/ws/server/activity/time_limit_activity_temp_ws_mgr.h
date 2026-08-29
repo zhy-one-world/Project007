@@ -14,7 +14,7 @@
 #include "template/template_manager.h"
 #include "game.pb.h"
 
-namespace hld
+namespace faith
 {
 	class time_limit_activity_temp_ws_mgr
 	{

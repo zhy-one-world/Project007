@@ -29,7 +29,7 @@
 //
 //////////////////////////////////////////////////////////////////////////
 
-namespace hld
+namespace faith
 {
 	class skill_proto_skill_save_load;
 	struct SkillTemplate;

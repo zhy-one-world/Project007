@@ -12,7 +12,7 @@
 
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 	void ws2fep_broadcast_msg_fun(uint32 connindex, const void *data_ptr, size_t data_len);
 	void ws2fep_client_login_queue_status(uint32 connindex, const void* data_ptr, size_t data_len);

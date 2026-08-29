@@ -1,6 +1,6 @@
 #include "SuitTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void SuitTemplateSize()
     {

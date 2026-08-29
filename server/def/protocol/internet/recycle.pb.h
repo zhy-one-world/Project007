@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_recycle_2eproto();
@@ -114,7 +114,7 @@ class recycle_proto_recycle_reward_one : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 state() const;
   inline void set_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.recycle_proto.recycle_reward_one)
+  // @@protoc_insertion_point(class_scope:faith.recycle_proto.recycle_reward_one)
  private:
   inline void set_has_recycle_id();
   inline void clear_has_recycle_id();
@@ -213,7 +213,7 @@ class recycle_proto_recycle_item_one : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 state() const;
   inline void set_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.recycle_proto.recycle_item_one)
+  // @@protoc_insertion_point(class_scope:faith.recycle_proto.recycle_item_one)
  private:
   inline void set_has_recycle_id();
   inline void clear_has_recycle_id();
@@ -301,52 +301,52 @@ class recycle_proto_recycle_data_all : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 start_time() const;
   inline void set_start_time(::google::protobuf::int32 value);
 
-  // repeated .hld.recycle_proto.recycle_item_one task_array = 2;
+  // repeated .faith.recycle_proto.recycle_item_one task_array = 2;
   inline int task_array_size() const;
   inline void clear_task_array();
   static const int kTaskArrayFieldNumber = 2;
-  inline const ::hld::recycle_proto_recycle_item_one& task_array(int index) const;
-  inline ::hld::recycle_proto_recycle_item_one* mutable_task_array(int index);
-  inline ::hld::recycle_proto_recycle_item_one* add_task_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_item_one >&
+  inline const ::faith::recycle_proto_recycle_item_one& task_array(int index) const;
+  inline ::faith::recycle_proto_recycle_item_one* mutable_task_array(int index);
+  inline ::faith::recycle_proto_recycle_item_one* add_task_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_item_one >&
       task_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_item_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_item_one >*
       mutable_task_array();
 
-  // repeated .hld.recycle_proto.recycle_reward_one login_array = 3;
+  // repeated .faith.recycle_proto.recycle_reward_one login_array = 3;
   inline int login_array_size() const;
   inline void clear_login_array();
   static const int kLoginArrayFieldNumber = 3;
-  inline const ::hld::recycle_proto_recycle_reward_one& login_array(int index) const;
-  inline ::hld::recycle_proto_recycle_reward_one* mutable_login_array(int index);
-  inline ::hld::recycle_proto_recycle_reward_one* add_login_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_reward_one >&
+  inline const ::faith::recycle_proto_recycle_reward_one& login_array(int index) const;
+  inline ::faith::recycle_proto_recycle_reward_one* mutable_login_array(int index);
+  inline ::faith::recycle_proto_recycle_reward_one* add_login_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_reward_one >&
       login_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_reward_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_reward_one >*
       mutable_login_array();
 
-  // repeated .hld.recycle_proto.recycle_reward_one buy_array = 4;
+  // repeated .faith.recycle_proto.recycle_reward_one buy_array = 4;
   inline int buy_array_size() const;
   inline void clear_buy_array();
   static const int kBuyArrayFieldNumber = 4;
-  inline const ::hld::recycle_proto_recycle_reward_one& buy_array(int index) const;
-  inline ::hld::recycle_proto_recycle_reward_one* mutable_buy_array(int index);
-  inline ::hld::recycle_proto_recycle_reward_one* add_buy_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_reward_one >&
+  inline const ::faith::recycle_proto_recycle_reward_one& buy_array(int index) const;
+  inline ::faith::recycle_proto_recycle_reward_one* mutable_buy_array(int index);
+  inline ::faith::recycle_proto_recycle_reward_one* add_buy_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_reward_one >&
       buy_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_reward_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_reward_one >*
       mutable_buy_array();
 
-  // repeated .hld.recycle_proto.recycle_reward_one invited_level_array = 5;
+  // repeated .faith.recycle_proto.recycle_reward_one invited_level_array = 5;
   inline int invited_level_array_size() const;
   inline void clear_invited_level_array();
   static const int kInvitedLevelArrayFieldNumber = 5;
-  inline const ::hld::recycle_proto_recycle_reward_one& invited_level_array(int index) const;
-  inline ::hld::recycle_proto_recycle_reward_one* mutable_invited_level_array(int index);
-  inline ::hld::recycle_proto_recycle_reward_one* add_invited_level_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_reward_one >&
+  inline const ::faith::recycle_proto_recycle_reward_one& invited_level_array(int index) const;
+  inline ::faith::recycle_proto_recycle_reward_one* mutable_invited_level_array(int index);
+  inline ::faith::recycle_proto_recycle_reward_one* add_invited_level_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_reward_one >&
       invited_level_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_reward_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_reward_one >*
       mutable_invited_level_array();
 
   // repeated int32 params = 6;
@@ -361,17 +361,17 @@ class recycle_proto_recycle_data_all : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_params();
 
-  // @@protoc_insertion_point(class_scope:hld.recycle_proto.recycle_data_all)
+  // @@protoc_insertion_point(class_scope:faith.recycle_proto.recycle_data_all)
  private:
   inline void set_has_start_time();
   inline void clear_has_start_time();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_item_one > task_array_;
-  ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_reward_one > login_array_;
-  ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_reward_one > buy_array_;
-  ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_reward_one > invited_level_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_item_one > task_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_reward_one > login_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_reward_one > buy_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_reward_one > invited_level_array_;
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > params_;
   ::google::protobuf::int32 start_time_;
 
@@ -455,7 +455,7 @@ class recycle_proto_recycle_operate : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 oper_type() const;
   inline void set_oper_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.recycle_proto.recycle_operate)
+  // @@protoc_insertion_point(class_scope:faith.recycle_proto.recycle_operate)
  private:
   inline void set_has_recycle_id();
   inline void clear_has_recycle_id();
@@ -554,7 +554,7 @@ class recycle_proto_recycle_operate_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.recycle_proto.recycle_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.recycle_proto.recycle_operate_end)
  private:
   inline void set_has_recycle_id();
   inline void clear_has_recycle_id();
@@ -647,7 +647,7 @@ class recycle_proto_recycle_invited_reward : public ::google::protobuf::Message 
   inline ::std::string* release_inviter_guid();
   inline void set_allocated_inviter_guid(::std::string* inviter_guid);
 
-  // @@protoc_insertion_point(class_scope:hld.recycle_proto.recycle_invited_reward)
+  // @@protoc_insertion_point(class_scope:faith.recycle_proto.recycle_invited_reward)
  private:
   inline void set_has_inviter_guid();
   inline void clear_has_inviter_guid();
@@ -729,7 +729,7 @@ class recycle_proto_recycle_invited_reward_end : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.recycle_proto.recycle_invited_reward_end)
+  // @@protoc_insertion_point(class_scope:faith.recycle_proto.recycle_invited_reward_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -849,7 +849,7 @@ class recycle_proto_recycle_invited_one : public ::google::protobuf::Message {
   inline ::std::string* release_invited_name();
   inline void set_allocated_invited_name(::std::string* invited_name);
 
-  // @@protoc_insertion_point(class_scope:hld.recycle_proto.recycle_invited_one)
+  // @@protoc_insertion_point(class_scope:faith.recycle_proto.recycle_invited_one)
  private:
   inline void set_has_level();
   inline void clear_has_level();
@@ -934,24 +934,24 @@ class recycle_proto_recycle_invited_list : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.recycle_proto.recycle_invited_one invited_array = 1;
+  // repeated .faith.recycle_proto.recycle_invited_one invited_array = 1;
   inline int invited_array_size() const;
   inline void clear_invited_array();
   static const int kInvitedArrayFieldNumber = 1;
-  inline const ::hld::recycle_proto_recycle_invited_one& invited_array(int index) const;
-  inline ::hld::recycle_proto_recycle_invited_one* mutable_invited_array(int index);
-  inline ::hld::recycle_proto_recycle_invited_one* add_invited_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_invited_one >&
+  inline const ::faith::recycle_proto_recycle_invited_one& invited_array(int index) const;
+  inline ::faith::recycle_proto_recycle_invited_one* mutable_invited_array(int index);
+  inline ::faith::recycle_proto_recycle_invited_one* add_invited_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_invited_one >&
       invited_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_invited_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_invited_one >*
       mutable_invited_array();
 
-  // @@protoc_insertion_point(class_scope:hld.recycle_proto.recycle_invited_list)
+  // @@protoc_insertion_point(class_scope:faith.recycle_proto.recycle_invited_list)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_invited_one > invited_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_invited_one > invited_array_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -1029,7 +1029,7 @@ class recycle_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.recycle_proto)
+  // @@protoc_insertion_point(class_scope:faith.recycle_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1192,102 +1192,102 @@ inline void recycle_proto_recycle_data_all::set_start_time(::google::protobuf::i
   start_time_ = value;
 }
 
-// repeated .hld.recycle_proto.recycle_item_one task_array = 2;
+// repeated .faith.recycle_proto.recycle_item_one task_array = 2;
 inline int recycle_proto_recycle_data_all::task_array_size() const {
   return task_array_.size();
 }
 inline void recycle_proto_recycle_data_all::clear_task_array() {
   task_array_.Clear();
 }
-inline const ::hld::recycle_proto_recycle_item_one& recycle_proto_recycle_data_all::task_array(int index) const {
+inline const ::faith::recycle_proto_recycle_item_one& recycle_proto_recycle_data_all::task_array(int index) const {
   return task_array_.Get(index);
 }
-inline ::hld::recycle_proto_recycle_item_one* recycle_proto_recycle_data_all::mutable_task_array(int index) {
+inline ::faith::recycle_proto_recycle_item_one* recycle_proto_recycle_data_all::mutable_task_array(int index) {
   return task_array_.Mutable(index);
 }
-inline ::hld::recycle_proto_recycle_item_one* recycle_proto_recycle_data_all::add_task_array() {
+inline ::faith::recycle_proto_recycle_item_one* recycle_proto_recycle_data_all::add_task_array() {
   return task_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_item_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_item_one >&
 recycle_proto_recycle_data_all::task_array() const {
   return task_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_item_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_item_one >*
 recycle_proto_recycle_data_all::mutable_task_array() {
   return &task_array_;
 }
 
-// repeated .hld.recycle_proto.recycle_reward_one login_array = 3;
+// repeated .faith.recycle_proto.recycle_reward_one login_array = 3;
 inline int recycle_proto_recycle_data_all::login_array_size() const {
   return login_array_.size();
 }
 inline void recycle_proto_recycle_data_all::clear_login_array() {
   login_array_.Clear();
 }
-inline const ::hld::recycle_proto_recycle_reward_one& recycle_proto_recycle_data_all::login_array(int index) const {
+inline const ::faith::recycle_proto_recycle_reward_one& recycle_proto_recycle_data_all::login_array(int index) const {
   return login_array_.Get(index);
 }
-inline ::hld::recycle_proto_recycle_reward_one* recycle_proto_recycle_data_all::mutable_login_array(int index) {
+inline ::faith::recycle_proto_recycle_reward_one* recycle_proto_recycle_data_all::mutable_login_array(int index) {
   return login_array_.Mutable(index);
 }
-inline ::hld::recycle_proto_recycle_reward_one* recycle_proto_recycle_data_all::add_login_array() {
+inline ::faith::recycle_proto_recycle_reward_one* recycle_proto_recycle_data_all::add_login_array() {
   return login_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_reward_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_reward_one >&
 recycle_proto_recycle_data_all::login_array() const {
   return login_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_reward_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_reward_one >*
 recycle_proto_recycle_data_all::mutable_login_array() {
   return &login_array_;
 }
 
-// repeated .hld.recycle_proto.recycle_reward_one buy_array = 4;
+// repeated .faith.recycle_proto.recycle_reward_one buy_array = 4;
 inline int recycle_proto_recycle_data_all::buy_array_size() const {
   return buy_array_.size();
 }
 inline void recycle_proto_recycle_data_all::clear_buy_array() {
   buy_array_.Clear();
 }
-inline const ::hld::recycle_proto_recycle_reward_one& recycle_proto_recycle_data_all::buy_array(int index) const {
+inline const ::faith::recycle_proto_recycle_reward_one& recycle_proto_recycle_data_all::buy_array(int index) const {
   return buy_array_.Get(index);
 }
-inline ::hld::recycle_proto_recycle_reward_one* recycle_proto_recycle_data_all::mutable_buy_array(int index) {
+inline ::faith::recycle_proto_recycle_reward_one* recycle_proto_recycle_data_all::mutable_buy_array(int index) {
   return buy_array_.Mutable(index);
 }
-inline ::hld::recycle_proto_recycle_reward_one* recycle_proto_recycle_data_all::add_buy_array() {
+inline ::faith::recycle_proto_recycle_reward_one* recycle_proto_recycle_data_all::add_buy_array() {
   return buy_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_reward_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_reward_one >&
 recycle_proto_recycle_data_all::buy_array() const {
   return buy_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_reward_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_reward_one >*
 recycle_proto_recycle_data_all::mutable_buy_array() {
   return &buy_array_;
 }
 
-// repeated .hld.recycle_proto.recycle_reward_one invited_level_array = 5;
+// repeated .faith.recycle_proto.recycle_reward_one invited_level_array = 5;
 inline int recycle_proto_recycle_data_all::invited_level_array_size() const {
   return invited_level_array_.size();
 }
 inline void recycle_proto_recycle_data_all::clear_invited_level_array() {
   invited_level_array_.Clear();
 }
-inline const ::hld::recycle_proto_recycle_reward_one& recycle_proto_recycle_data_all::invited_level_array(int index) const {
+inline const ::faith::recycle_proto_recycle_reward_one& recycle_proto_recycle_data_all::invited_level_array(int index) const {
   return invited_level_array_.Get(index);
 }
-inline ::hld::recycle_proto_recycle_reward_one* recycle_proto_recycle_data_all::mutable_invited_level_array(int index) {
+inline ::faith::recycle_proto_recycle_reward_one* recycle_proto_recycle_data_all::mutable_invited_level_array(int index) {
   return invited_level_array_.Mutable(index);
 }
-inline ::hld::recycle_proto_recycle_reward_one* recycle_proto_recycle_data_all::add_invited_level_array() {
+inline ::faith::recycle_proto_recycle_reward_one* recycle_proto_recycle_data_all::add_invited_level_array() {
   return invited_level_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_reward_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_reward_one >&
 recycle_proto_recycle_data_all::invited_level_array() const {
   return invited_level_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_reward_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_reward_one >*
 recycle_proto_recycle_data_all::mutable_invited_level_array() {
   return &invited_level_array_;
 }
@@ -1704,27 +1704,27 @@ inline void recycle_proto_recycle_invited_one::set_allocated_invited_name(::std:
 
 // recycle_proto_recycle_invited_list
 
-// repeated .hld.recycle_proto.recycle_invited_one invited_array = 1;
+// repeated .faith.recycle_proto.recycle_invited_one invited_array = 1;
 inline int recycle_proto_recycle_invited_list::invited_array_size() const {
   return invited_array_.size();
 }
 inline void recycle_proto_recycle_invited_list::clear_invited_array() {
   invited_array_.Clear();
 }
-inline const ::hld::recycle_proto_recycle_invited_one& recycle_proto_recycle_invited_list::invited_array(int index) const {
+inline const ::faith::recycle_proto_recycle_invited_one& recycle_proto_recycle_invited_list::invited_array(int index) const {
   return invited_array_.Get(index);
 }
-inline ::hld::recycle_proto_recycle_invited_one* recycle_proto_recycle_invited_list::mutable_invited_array(int index) {
+inline ::faith::recycle_proto_recycle_invited_one* recycle_proto_recycle_invited_list::mutable_invited_array(int index) {
   return invited_array_.Mutable(index);
 }
-inline ::hld::recycle_proto_recycle_invited_one* recycle_proto_recycle_invited_list::add_invited_array() {
+inline ::faith::recycle_proto_recycle_invited_one* recycle_proto_recycle_invited_list::add_invited_array() {
   return invited_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_invited_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_invited_one >&
 recycle_proto_recycle_invited_list::invited_array() const {
   return invited_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::recycle_proto_recycle_invited_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::recycle_proto_recycle_invited_one >*
 recycle_proto_recycle_invited_list::mutable_invited_array() {
   return &invited_array_;
 }
@@ -1736,7 +1736,7 @@ recycle_proto_recycle_invited_list::mutable_invited_array() {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

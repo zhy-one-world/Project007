@@ -19,7 +19,7 @@
 #include "net.pb.h"
 
 
-namespace hld
+namespace faith
 {
 	relation_set::relation_set()
 	{

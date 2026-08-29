@@ -6,7 +6,7 @@
 
 //add by leo
 #include <string>
-namespace hld
+namespace faith
 {
 	typedef	std::vector<std::wstring>		WideWordSet;
 	typedef	WideWordSet::iterator			WideWordSetIt;
@@ -19,10 +19,10 @@ namespace hld
 	/*
 	*	ÓÎÏ·µÄÆÁ±Î×Ö¿â
 	*/
-	class CInvalidWord : public hld::singleton< CInvalidWord >
+	class CInvalidWord : public faith::singleton< CInvalidWord >
 	{
 	private:
-		friend class hld::singleton< CInvalidWord >;
+		friend class faith::singleton< CInvalidWord >;
 
 
 	private:

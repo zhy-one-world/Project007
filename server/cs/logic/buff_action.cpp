@@ -28,7 +28,7 @@
 #include "utility/vector3d.h"
 #include "npc.hpp"
 
-namespace hld
+namespace faith
 {
 	/************************************************************************/
 	/* tool function                                                        */
@@ -1441,8 +1441,8 @@ namespace hld
 				int32 effect_radius = rand() % rand_radius;
 				int32 effect_angle = rand() % 360;
 
-				fvector effect_offset(rand_radius* cos(effect_angle*hld::math::DEGTORAD),
-					rand_radius* sin(effect_angle*hld::math::DEGTORAD));
+				fvector effect_offset(rand_radius* cos(effect_angle*faith::math::DEGTORAD),
+					rand_radius* sin(effect_angle*faith::math::DEGTORAD));
 
 				effect_location = offset + effect_offset;
 				s_map_pos effect_born_pos(effect_location, target_ptr.get_new_map_pos().unit_rotation);

@@ -22,7 +22,7 @@ namespace std
 	}
 }
 
-namespace hld 
+namespace faith 
 {
 	logger_base::logger_base()
 	{

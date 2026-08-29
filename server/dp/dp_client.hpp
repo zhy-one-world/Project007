@@ -25,7 +25,7 @@
 #include <singleton.hpp>
 #include <net/net_client_mgr.hpp>
 
-namespace hld
+namespace faith
 {
 	using namespace net;
 

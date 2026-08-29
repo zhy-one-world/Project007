@@ -7,19 +7,19 @@
 #include "core.hpp"
 #include "utility/score_indicator.h"
 #include "Logic/chat_def.hpp"
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	const int MAX_APPEARANCE_INFO_LENGTH = 1000;
 	enum
 	{
-		e_msgindex_ws2dp_save_appearance_info_to_id = hld::e_msg_appearance_info,
+		e_msgindex_ws2dp_save_appearance_info_to_id = faith::e_msg_appearance_info,
 		e_msgindex_dp2ws_save_appearance_info_to_id_end,
 		e_msgindex_ws2dp_load_appearance_info_by_id,
 		e_msgindex_dp2ws_load_appearance_info_by_id_end,
 	};
 
-	struct ws2dp_save_appearance_info_to_id : public hld::packet_base
+	struct ws2dp_save_appearance_info_to_id : public faith::packet_base
 	{
 		s_client_uid client_uid;
 		xchar appearance_info[MAX_APPEARANCE_INFO_LENGTH+1];
@@ -30,7 +30,7 @@ namespace hld
 		}
 	};
 
-	struct dp2ws_save_appearance_info_to_id_end : public hld::packet_base
+	struct dp2ws_save_appearance_info_to_id_end : public faith::packet_base
 	{
 		s_client_uid client_uid;
 		xchar appearance_info[MAX_APPEARANCE_INFO_LENGTH+1];
@@ -42,7 +42,7 @@ namespace hld
 		}
 	};
 
-	struct ws2dp_load_appearance_info_by_id : public hld::packet_base
+	struct ws2dp_load_appearance_info_by_id : public faith::packet_base
 	{
 		s_client_uid client_uid;
 		int32 appearance_id;
@@ -53,7 +53,7 @@ namespace hld
 		}
 	};
 
-	struct dp2ws_load_appearance_info_by_id_end : public hld::packet_base
+	struct dp2ws_load_appearance_info_by_id_end : public faith::packet_base
 	{
 		s_client_uid client_uid;
 		xchar appearance_info[MAX_APPEARANCE_INFO_LENGTH+1];

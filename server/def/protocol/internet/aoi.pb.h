@@ -28,7 +28,7 @@
 #include "item.pb.h"
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_aoi_2eproto();
@@ -131,7 +131,7 @@ class aoi_proto_unit_location : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 pos_z() const;
   inline void set_pos_z(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.aoi_proto.unit_location)
+  // @@protoc_insertion_point(class_scope:faith.aoi_proto.unit_location)
  private:
   inline void set_has_pos_x();
   inline void clear_has_pos_x();
@@ -219,7 +219,7 @@ class aoi_proto_unit_rotation : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 yaw() const;
   inline void set_yaw(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.aoi_proto.unit_rotation)
+  // @@protoc_insertion_point(class_scope:faith.aoi_proto.unit_rotation)
  private:
   inline void set_has_yaw();
   inline void clear_has_yaw();
@@ -308,7 +308,7 @@ class aoi_proto_unit_rotation_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 yaw() const;
   inline void set_yaw(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.aoi_proto.unit_rotation_end)
+  // @@protoc_insertion_point(class_scope:faith.aoi_proto.unit_rotation_end)
  private:
   inline void set_has_unit_guid();
   inline void clear_has_unit_guid();
@@ -405,7 +405,7 @@ class aoi_proto_aoi_pos_update : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_move_vector();
 
-  // @@protoc_insertion_point(class_scope:hld.aoi_proto.aoi_pos_update)
+  // @@protoc_insertion_point(class_scope:faith.aoi_proto.aoi_pos_update)
  private:
   inline void set_has_unit_guid();
   inline void clear_has_unit_guid();
@@ -507,7 +507,7 @@ class aoi_proto_player_legion_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 job_title() const;
   inline void set_job_title(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.aoi_proto.player_legion_info)
+  // @@protoc_insertion_point(class_scope:faith.aoi_proto.player_legion_info)
  private:
   inline void set_has_legion_guid();
   inline void clear_has_legion_guid();
@@ -609,7 +609,7 @@ class aoi_proto_player_team_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 member_num() const;
   inline void set_member_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.aoi_proto.player_team_info)
+  // @@protoc_insertion_point(class_scope:faith.aoi_proto.player_team_info)
  private:
   inline void set_has_team_guid();
   inline void clear_has_team_guid();
@@ -874,23 +874,23 @@ class aoi_proto_unit_aoi_all : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_att_base();
 
-  // optional .hld.aoi_proto.player_legion_info legion_info = 23;
+  // optional .faith.aoi_proto.player_legion_info legion_info = 23;
   inline bool has_legion_info() const;
   inline void clear_legion_info();
   static const int kLegionInfoFieldNumber = 23;
-  inline const ::hld::aoi_proto_player_legion_info& legion_info() const;
-  inline ::hld::aoi_proto_player_legion_info* mutable_legion_info();
-  inline ::hld::aoi_proto_player_legion_info* release_legion_info();
-  inline void set_allocated_legion_info(::hld::aoi_proto_player_legion_info* legion_info);
+  inline const ::faith::aoi_proto_player_legion_info& legion_info() const;
+  inline ::faith::aoi_proto_player_legion_info* mutable_legion_info();
+  inline ::faith::aoi_proto_player_legion_info* release_legion_info();
+  inline void set_allocated_legion_info(::faith::aoi_proto_player_legion_info* legion_info);
 
-  // optional .hld.aoi_proto.player_team_info team_info = 24;
+  // optional .faith.aoi_proto.player_team_info team_info = 24;
   inline bool has_team_info() const;
   inline void clear_team_info();
   static const int kTeamInfoFieldNumber = 24;
-  inline const ::hld::aoi_proto_player_team_info& team_info() const;
-  inline ::hld::aoi_proto_player_team_info* mutable_team_info();
-  inline ::hld::aoi_proto_player_team_info* release_team_info();
-  inline void set_allocated_team_info(::hld::aoi_proto_player_team_info* team_info);
+  inline const ::faith::aoi_proto_player_team_info& team_info() const;
+  inline ::faith::aoi_proto_player_team_info* mutable_team_info();
+  inline ::faith::aoi_proto_player_team_info* release_team_info();
+  inline void set_allocated_team_info(::faith::aoi_proto_player_team_info* team_info);
 
   // repeated int32 special_name = 25;
   inline int special_name_size() const;
@@ -911,26 +911,26 @@ class aoi_proto_unit_aoi_all : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 title_template_id() const;
   inline void set_title_template_id(::google::protobuf::int32 value);
 
-  // repeated .hld.item_proto.item_info item_list = 27;
+  // repeated .faith.item_proto.item_info item_list = 27;
   inline int item_list_size() const;
   inline void clear_item_list();
   static const int kItemListFieldNumber = 27;
-  inline const ::hld::item_proto_item_info& item_list(int index) const;
-  inline ::hld::item_proto_item_info* mutable_item_list(int index);
-  inline ::hld::item_proto_item_info* add_item_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::item_proto_item_info >&
+  inline const ::faith::item_proto_item_info& item_list(int index) const;
+  inline ::faith::item_proto_item_info* mutable_item_list(int index);
+  inline ::faith::item_proto_item_info* add_item_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::item_proto_item_info >&
       item_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::item_proto_item_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::item_proto_item_info >*
       mutable_item_list();
 
-  // optional .hld.character_proto.spirit_info spirit_info = 28;
+  // optional .faith.character_proto.spirit_info spirit_info = 28;
   inline bool has_spirit_info() const;
   inline void clear_spirit_info();
   static const int kSpiritInfoFieldNumber = 28;
-  inline const ::hld::character_proto_spirit_info& spirit_info() const;
-  inline ::hld::character_proto_spirit_info* mutable_spirit_info();
-  inline ::hld::character_proto_spirit_info* release_spirit_info();
-  inline void set_allocated_spirit_info(::hld::character_proto_spirit_info* spirit_info);
+  inline const ::faith::character_proto_spirit_info& spirit_info() const;
+  inline ::faith::character_proto_spirit_info* mutable_spirit_info();
+  inline ::faith::character_proto_spirit_info* release_spirit_info();
+  inline void set_allocated_spirit_info(::faith::character_proto_spirit_info* spirit_info);
 
   // optional int32 robot_template_id = 29;
   inline bool has_robot_template_id() const;
@@ -1116,7 +1116,7 @@ class aoi_proto_unit_aoi_all : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_extra_award_list();
 
-  // @@protoc_insertion_point(class_scope:hld.aoi_proto.unit_aoi_all)
+  // @@protoc_insertion_point(class_scope:faith.aoi_proto.unit_aoi_all)
  private:
   inline void set_has_unit_guid();
   inline void clear_has_unit_guid();
@@ -1221,13 +1221,13 @@ class aoi_proto_unit_aoi_all : public ::google::protobuf::Message {
   ::google::protobuf::RepeatedField< float > att_info_;
   ::google::protobuf::RepeatedField< bool > att_state_;
   ::google::protobuf::RepeatedField< ::google::protobuf::int64 > att_base_;
-  ::hld::aoi_proto_player_legion_info* legion_info_;
-  ::hld::aoi_proto_player_team_info* team_info_;
+  ::faith::aoi_proto_player_legion_info* legion_info_;
+  ::faith::aoi_proto_player_team_info* team_info_;
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > special_name_;
-  ::google::protobuf::RepeatedPtrField< ::hld::item_proto_item_info > item_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::item_proto_item_info > item_list_;
   ::google::protobuf::int32 title_template_id_;
   ::google::protobuf::int32 robot_template_id_;
-  ::hld::character_proto_spirit_info* spirit_info_;
+  ::faith::character_proto_spirit_info* spirit_info_;
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > special_star_;
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > belief_info_;
   ::google::protobuf::int32 tinder_template_id_;
@@ -1316,24 +1316,24 @@ class aoi_proto_unit_aoi_in : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.aoi_proto.unit_aoi_all unit_list = 1;
+  // repeated .faith.aoi_proto.unit_aoi_all unit_list = 1;
   inline int unit_list_size() const;
   inline void clear_unit_list();
   static const int kUnitListFieldNumber = 1;
-  inline const ::hld::aoi_proto_unit_aoi_all& unit_list(int index) const;
-  inline ::hld::aoi_proto_unit_aoi_all* mutable_unit_list(int index);
-  inline ::hld::aoi_proto_unit_aoi_all* add_unit_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::aoi_proto_unit_aoi_all >&
+  inline const ::faith::aoi_proto_unit_aoi_all& unit_list(int index) const;
+  inline ::faith::aoi_proto_unit_aoi_all* mutable_unit_list(int index);
+  inline ::faith::aoi_proto_unit_aoi_all* add_unit_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::aoi_proto_unit_aoi_all >&
       unit_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::aoi_proto_unit_aoi_all >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::aoi_proto_unit_aoi_all >*
       mutable_unit_list();
 
-  // @@protoc_insertion_point(class_scope:hld.aoi_proto.unit_aoi_in)
+  // @@protoc_insertion_point(class_scope:faith.aoi_proto.unit_aoi_in)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::aoi_proto_unit_aoi_all > unit_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::aoi_proto_unit_aoi_all > unit_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -1420,7 +1420,7 @@ class aoi_proto_unit_aoi_out : public ::google::protobuf::Message {
   inline bool is_dissolve() const;
   inline void set_is_dissolve(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.aoi_proto.unit_aoi_out)
+  // @@protoc_insertion_point(class_scope:faith.aoi_proto.unit_aoi_out)
  private:
   inline void set_has_is_dissolve();
   inline void clear_has_is_dissolve();
@@ -1569,7 +1569,7 @@ class aoi_proto_aoi_move : public ::google::protobuf::Message {
   inline bool is_client_driver() const;
   inline void set_is_client_driver(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.aoi_proto.aoi_move)
+  // @@protoc_insertion_point(class_scope:faith.aoi_proto.aoi_move)
  private:
   inline void set_has_unit_guid();
   inline void clear_has_unit_guid();
@@ -1671,7 +1671,7 @@ class aoi_proto_show_player : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 show_num() const;
   inline void set_show_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.aoi_proto.show_player)
+  // @@protoc_insertion_point(class_scope:faith.aoi_proto.show_player)
  private:
   inline void set_has_show_num();
   inline void clear_has_show_num();
@@ -1760,7 +1760,7 @@ class aoi_proto_face_unit : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 move_yaw() const;
   inline void set_move_yaw(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.aoi_proto.face_unit)
+  // @@protoc_insertion_point(class_scope:faith.aoi_proto.face_unit)
  private:
   inline void set_has_unit_guid();
   inline void clear_has_unit_guid();
@@ -1864,7 +1864,7 @@ class aoi_proto_marry_unit : public ::google::protobuf::Message {
   inline ::std::string* release_couple_name();
   inline void set_allocated_couple_name(::std::string* couple_name);
 
-  // @@protoc_insertion_point(class_scope:hld.aoi_proto.marry_unit)
+  // @@protoc_insertion_point(class_scope:faith.aoi_proto.marry_unit)
  private:
   inline void set_has_is_marry();
   inline void clear_has_is_marry();
@@ -1969,7 +1969,7 @@ class aoi_proto_simple_unit_pos : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_runtime_id();
 
-  // @@protoc_insertion_point(class_scope:hld.aoi_proto.simple_unit_pos)
+  // @@protoc_insertion_point(class_scope:faith.aoi_proto.simple_unit_pos)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2105,7 +2105,7 @@ class aoi_proto_simple_unit_pos_end : public ::google::protobuf::Message {
   inline float att_info() const;
   inline void set_att_info(float value);
 
-  // @@protoc_insertion_point(class_scope:hld.aoi_proto.simple_unit_pos_end)
+  // @@protoc_insertion_point(class_scope:faith.aoi_proto.simple_unit_pos_end)
  private:
   inline void set_has_att_state();
   inline void clear_has_att_state();
@@ -2201,7 +2201,7 @@ class aoi_proto_unit_change_appearance : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 unit_guid() const;
   inline void set_unit_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.aoi_proto.unit_change_appearance)
+  // @@protoc_insertion_point(class_scope:faith.aoi_proto.unit_change_appearance)
  private:
   inline void set_has_appearance_id();
   inline void clear_has_appearance_id();
@@ -2293,7 +2293,7 @@ class aoi_proto_update_can_show_head : public ::google::protobuf::Message {
   inline bool can_show() const;
   inline void set_can_show(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.aoi_proto.update_can_show_head)
+  // @@protoc_insertion_point(class_scope:faith.aoi_proto.update_can_show_head)
  private:
   inline void set_has_unit_guid();
   inline void clear_has_unit_guid();
@@ -2389,7 +2389,7 @@ class aoi_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.aoi_proto)
+  // @@protoc_insertion_point(class_scope:faith.aoi_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -3342,7 +3342,7 @@ aoi_proto_unit_aoi_all::mutable_att_base() {
   return &att_base_;
 }
 
-// optional .hld.aoi_proto.player_legion_info legion_info = 23;
+// optional .faith.aoi_proto.player_legion_info legion_info = 23;
 inline bool aoi_proto_unit_aoi_all::has_legion_info() const {
   return (_has_bits_[0] & 0x00400000u) != 0;
 }
@@ -3353,24 +3353,24 @@ inline void aoi_proto_unit_aoi_all::clear_has_legion_info() {
   _has_bits_[0] &= ~0x00400000u;
 }
 inline void aoi_proto_unit_aoi_all::clear_legion_info() {
-  if (legion_info_ != NULL) legion_info_->::hld::aoi_proto_player_legion_info::Clear();
+  if (legion_info_ != NULL) legion_info_->::faith::aoi_proto_player_legion_info::Clear();
   clear_has_legion_info();
 }
-inline const ::hld::aoi_proto_player_legion_info& aoi_proto_unit_aoi_all::legion_info() const {
+inline const ::faith::aoi_proto_player_legion_info& aoi_proto_unit_aoi_all::legion_info() const {
   return legion_info_ != NULL ? *legion_info_ : *default_instance_->legion_info_;
 }
-inline ::hld::aoi_proto_player_legion_info* aoi_proto_unit_aoi_all::mutable_legion_info() {
+inline ::faith::aoi_proto_player_legion_info* aoi_proto_unit_aoi_all::mutable_legion_info() {
   set_has_legion_info();
-  if (legion_info_ == NULL) legion_info_ = new ::hld::aoi_proto_player_legion_info;
+  if (legion_info_ == NULL) legion_info_ = new ::faith::aoi_proto_player_legion_info;
   return legion_info_;
 }
-inline ::hld::aoi_proto_player_legion_info* aoi_proto_unit_aoi_all::release_legion_info() {
+inline ::faith::aoi_proto_player_legion_info* aoi_proto_unit_aoi_all::release_legion_info() {
   clear_has_legion_info();
-  ::hld::aoi_proto_player_legion_info* temp = legion_info_;
+  ::faith::aoi_proto_player_legion_info* temp = legion_info_;
   legion_info_ = NULL;
   return temp;
 }
-inline void aoi_proto_unit_aoi_all::set_allocated_legion_info(::hld::aoi_proto_player_legion_info* legion_info) {
+inline void aoi_proto_unit_aoi_all::set_allocated_legion_info(::faith::aoi_proto_player_legion_info* legion_info) {
   delete legion_info_;
   legion_info_ = legion_info;
   if (legion_info) {
@@ -3380,7 +3380,7 @@ inline void aoi_proto_unit_aoi_all::set_allocated_legion_info(::hld::aoi_proto_p
   }
 }
 
-// optional .hld.aoi_proto.player_team_info team_info = 24;
+// optional .faith.aoi_proto.player_team_info team_info = 24;
 inline bool aoi_proto_unit_aoi_all::has_team_info() const {
   return (_has_bits_[0] & 0x00800000u) != 0;
 }
@@ -3391,24 +3391,24 @@ inline void aoi_proto_unit_aoi_all::clear_has_team_info() {
   _has_bits_[0] &= ~0x00800000u;
 }
 inline void aoi_proto_unit_aoi_all::clear_team_info() {
-  if (team_info_ != NULL) team_info_->::hld::aoi_proto_player_team_info::Clear();
+  if (team_info_ != NULL) team_info_->::faith::aoi_proto_player_team_info::Clear();
   clear_has_team_info();
 }
-inline const ::hld::aoi_proto_player_team_info& aoi_proto_unit_aoi_all::team_info() const {
+inline const ::faith::aoi_proto_player_team_info& aoi_proto_unit_aoi_all::team_info() const {
   return team_info_ != NULL ? *team_info_ : *default_instance_->team_info_;
 }
-inline ::hld::aoi_proto_player_team_info* aoi_proto_unit_aoi_all::mutable_team_info() {
+inline ::faith::aoi_proto_player_team_info* aoi_proto_unit_aoi_all::mutable_team_info() {
   set_has_team_info();
-  if (team_info_ == NULL) team_info_ = new ::hld::aoi_proto_player_team_info;
+  if (team_info_ == NULL) team_info_ = new ::faith::aoi_proto_player_team_info;
   return team_info_;
 }
-inline ::hld::aoi_proto_player_team_info* aoi_proto_unit_aoi_all::release_team_info() {
+inline ::faith::aoi_proto_player_team_info* aoi_proto_unit_aoi_all::release_team_info() {
   clear_has_team_info();
-  ::hld::aoi_proto_player_team_info* temp = team_info_;
+  ::faith::aoi_proto_player_team_info* temp = team_info_;
   team_info_ = NULL;
   return temp;
 }
-inline void aoi_proto_unit_aoi_all::set_allocated_team_info(::hld::aoi_proto_player_team_info* team_info) {
+inline void aoi_proto_unit_aoi_all::set_allocated_team_info(::faith::aoi_proto_player_team_info* team_info) {
   delete team_info_;
   team_info_ = team_info;
   if (team_info) {
@@ -3465,32 +3465,32 @@ inline void aoi_proto_unit_aoi_all::set_title_template_id(::google::protobuf::in
   title_template_id_ = value;
 }
 
-// repeated .hld.item_proto.item_info item_list = 27;
+// repeated .faith.item_proto.item_info item_list = 27;
 inline int aoi_proto_unit_aoi_all::item_list_size() const {
   return item_list_.size();
 }
 inline void aoi_proto_unit_aoi_all::clear_item_list() {
   item_list_.Clear();
 }
-inline const ::hld::item_proto_item_info& aoi_proto_unit_aoi_all::item_list(int index) const {
+inline const ::faith::item_proto_item_info& aoi_proto_unit_aoi_all::item_list(int index) const {
   return item_list_.Get(index);
 }
-inline ::hld::item_proto_item_info* aoi_proto_unit_aoi_all::mutable_item_list(int index) {
+inline ::faith::item_proto_item_info* aoi_proto_unit_aoi_all::mutable_item_list(int index) {
   return item_list_.Mutable(index);
 }
-inline ::hld::item_proto_item_info* aoi_proto_unit_aoi_all::add_item_list() {
+inline ::faith::item_proto_item_info* aoi_proto_unit_aoi_all::add_item_list() {
   return item_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::item_proto_item_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::item_proto_item_info >&
 aoi_proto_unit_aoi_all::item_list() const {
   return item_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::item_proto_item_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::item_proto_item_info >*
 aoi_proto_unit_aoi_all::mutable_item_list() {
   return &item_list_;
 }
 
-// optional .hld.character_proto.spirit_info spirit_info = 28;
+// optional .faith.character_proto.spirit_info spirit_info = 28;
 inline bool aoi_proto_unit_aoi_all::has_spirit_info() const {
   return (_has_bits_[0] & 0x08000000u) != 0;
 }
@@ -3501,24 +3501,24 @@ inline void aoi_proto_unit_aoi_all::clear_has_spirit_info() {
   _has_bits_[0] &= ~0x08000000u;
 }
 inline void aoi_proto_unit_aoi_all::clear_spirit_info() {
-  if (spirit_info_ != NULL) spirit_info_->::hld::character_proto_spirit_info::Clear();
+  if (spirit_info_ != NULL) spirit_info_->::faith::character_proto_spirit_info::Clear();
   clear_has_spirit_info();
 }
-inline const ::hld::character_proto_spirit_info& aoi_proto_unit_aoi_all::spirit_info() const {
+inline const ::faith::character_proto_spirit_info& aoi_proto_unit_aoi_all::spirit_info() const {
   return spirit_info_ != NULL ? *spirit_info_ : *default_instance_->spirit_info_;
 }
-inline ::hld::character_proto_spirit_info* aoi_proto_unit_aoi_all::mutable_spirit_info() {
+inline ::faith::character_proto_spirit_info* aoi_proto_unit_aoi_all::mutable_spirit_info() {
   set_has_spirit_info();
-  if (spirit_info_ == NULL) spirit_info_ = new ::hld::character_proto_spirit_info;
+  if (spirit_info_ == NULL) spirit_info_ = new ::faith::character_proto_spirit_info;
   return spirit_info_;
 }
-inline ::hld::character_proto_spirit_info* aoi_proto_unit_aoi_all::release_spirit_info() {
+inline ::faith::character_proto_spirit_info* aoi_proto_unit_aoi_all::release_spirit_info() {
   clear_has_spirit_info();
-  ::hld::character_proto_spirit_info* temp = spirit_info_;
+  ::faith::character_proto_spirit_info* temp = spirit_info_;
   spirit_info_ = NULL;
   return temp;
 }
-inline void aoi_proto_unit_aoi_all::set_allocated_spirit_info(::hld::character_proto_spirit_info* spirit_info) {
+inline void aoi_proto_unit_aoi_all::set_allocated_spirit_info(::faith::character_proto_spirit_info* spirit_info) {
   delete spirit_info_;
   spirit_info_ = spirit_info;
   if (spirit_info) {
@@ -4124,27 +4124,27 @@ aoi_proto_unit_aoi_all::mutable_extra_award_list() {
 
 // aoi_proto_unit_aoi_in
 
-// repeated .hld.aoi_proto.unit_aoi_all unit_list = 1;
+// repeated .faith.aoi_proto.unit_aoi_all unit_list = 1;
 inline int aoi_proto_unit_aoi_in::unit_list_size() const {
   return unit_list_.size();
 }
 inline void aoi_proto_unit_aoi_in::clear_unit_list() {
   unit_list_.Clear();
 }
-inline const ::hld::aoi_proto_unit_aoi_all& aoi_proto_unit_aoi_in::unit_list(int index) const {
+inline const ::faith::aoi_proto_unit_aoi_all& aoi_proto_unit_aoi_in::unit_list(int index) const {
   return unit_list_.Get(index);
 }
-inline ::hld::aoi_proto_unit_aoi_all* aoi_proto_unit_aoi_in::mutable_unit_list(int index) {
+inline ::faith::aoi_proto_unit_aoi_all* aoi_proto_unit_aoi_in::mutable_unit_list(int index) {
   return unit_list_.Mutable(index);
 }
-inline ::hld::aoi_proto_unit_aoi_all* aoi_proto_unit_aoi_in::add_unit_list() {
+inline ::faith::aoi_proto_unit_aoi_all* aoi_proto_unit_aoi_in::add_unit_list() {
   return unit_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::aoi_proto_unit_aoi_all >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::aoi_proto_unit_aoi_all >&
 aoi_proto_unit_aoi_in::unit_list() const {
   return unit_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::aoi_proto_unit_aoi_all >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::aoi_proto_unit_aoi_all >*
 aoi_proto_unit_aoi_in::mutable_unit_list() {
   return &unit_list_;
 }
@@ -4905,7 +4905,7 @@ inline void aoi_proto_update_can_show_head::set_can_show(bool value) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

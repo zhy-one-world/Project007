@@ -14,7 +14,7 @@
 #include "mysql_async_mgr_impl.hpp"
 #include "recvbuffer.hpp"
 
-namespace hld
+namespace faith
 {
 	struct mysql_conn_params;
 	struct db_result_type;

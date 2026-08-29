@@ -1,6 +1,6 @@
 #include "ItemSuccinctTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void ItemSuccinctTemplateSize()
     {

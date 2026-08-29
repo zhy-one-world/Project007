@@ -12,7 +12,7 @@ purpose: 七日目标头文件
 #include "Logic/service_goal_def.hpp"
 #include "service_goal.hpp"
 
-namespace hld
+namespace faith
 {
 	class player;
 	class cservice_goal_mgr

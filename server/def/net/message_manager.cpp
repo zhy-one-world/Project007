@@ -16,7 +16,7 @@
 #include "server_log.hpp"
 
 
-namespace hld
+namespace faith
 {
 	TOLUA_API int  tolua_logic_open(lua_State* tolua_S);
 

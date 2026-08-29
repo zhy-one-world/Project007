@@ -9,7 +9,7 @@ purpose:
 #include "msgproc_cross_server_world_boss_ws.hpp"
 #include <cross_server_world_boss_msg.hpp>
 #include "dbproxy_service.hpp"
-namespace hld
+namespace faith
 {
 	void save_cross_server_world_boss_ws_info(uint32 connindex, const void * data_ptr, size_t data_len)
 	{

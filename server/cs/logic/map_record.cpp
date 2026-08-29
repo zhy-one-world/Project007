@@ -5,7 +5,7 @@
 #include "system/scene/element_map_system.h"
 #include "system/scene/battle_map_system.h"
 
-using namespace hld;
+using namespace faith;
 map_record::map_record()
 {
 	m_map_record_data = nullptr;

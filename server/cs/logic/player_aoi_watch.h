@@ -5,7 +5,7 @@
 #include "logic/type_def.hpp"
 #include "Logic/team_def.hpp"
 
-namespace hld
+namespace faith
 {
 	const int32 aoi_watch_num = 30;
 	const int32 aoi_watch_max = aoi_watch_num + max_team_member_num;//最大30人 + 队员

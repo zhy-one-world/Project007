@@ -14,7 +14,7 @@ purpose: about pk and community system's store_mgr
 #include "Logic/skill_def.hpp"
 #include "Logic/game_enum_def_s.h"
 
-namespace hld
+namespace faith
 {
 	typedef std::unordered_map<ui64, int32> c_fight_back_map;
 	typedef c_fight_back_map::iterator c_fight_back_map_ite;
@@ -56,7 +56,7 @@ namespace hld
 		void	check_first_hurt_add_pk_vaule();
 
 		bool	check_if_can_attack_target_by_region(unit* target_unit);
-		bool	is_skill_target(int32 target_unit_index, int32 skill_target_type = hld::eskilltarget_enemy);
+		bool	is_skill_target(int32 target_unit_index, int32 skill_target_type = faith::eskilltarget_enemy);
 
 		bool	is_in_not_peace_and_kindevil();
 		bool	is_in_peace_pk_mode();

@@ -11,7 +11,7 @@
 
 #include <Logic/item_def.hpp>
 
-namespace hld
+namespace faith
 {
 	class item_proto_item_info;
 	class item_proto_update_character_item;

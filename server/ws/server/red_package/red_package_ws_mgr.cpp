@@ -13,7 +13,7 @@
 #include "internet/character.pb.h"
 #include "event_msg.hpp"
 #include "net.pb.h"
-namespace hld
+namespace faith
 {
 	red_package_ws_mgr*	red_package_ws_mgr::s_red_package_ws_mgr_ptr = nullptr;
 

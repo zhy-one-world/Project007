@@ -17,7 +17,7 @@ purpose: about world boss
 #include "char_def.hpp"
 #include "template/template_base.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	const int32 max_world_boss_and_gold_army_num = 30;

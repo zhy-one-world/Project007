@@ -16,7 +16,7 @@
 #include "Logic/count_def.hpp"
 #include "core.hpp"
 
-namespace hld
+namespace faith
 {
 	//	
 	//	客户端会话管理器

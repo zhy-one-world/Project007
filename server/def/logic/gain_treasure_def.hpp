@@ -13,7 +13,7 @@ purpose: 打宝相关
 #include "char_def.hpp"
 #include "team_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	const int32 gain_treasure_gain_item_max_num = 5;//单个boss最高掉落需要记录的物品数量
@@ -81,7 +81,7 @@ namespace hld
 		{
 			memset(this, 0, sizeof(s_gain_treasure_record_player_info_db));
 		}
-		void to_proto(hld::st_proto::st_gain_treasure_record_player_info_db* st_player_ptr)
+		void to_proto(faith::st_proto::st_gain_treasure_record_player_info_db* st_player_ptr)
 		{
 			if (st_player_ptr == nullptr)
 			{
@@ -100,7 +100,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::st_proto::st_gain_treasure_record_player_info_db& st_player_ref)
+		void from_proto(const faith::st_proto::st_gain_treasure_record_player_info_db& st_player_ref)
 		{
 			my_memcopy_string(role_name, max_name_size, st_player_ref.role_name());
 			my_memcopy_string(gain_item_template_id, gain_treasure_gain_item_id_max_size, st_player_ref.gain_item_template_id());
@@ -128,7 +128,7 @@ namespace hld
 				player_info_arr[i].clear_data();
 			}
 		}
-		bool to_proto(hld::st_proto::st_gain_treasure_record_info_one_db* st_treasure_ptr)
+		bool to_proto(faith::st_proto::st_gain_treasure_record_info_one_db* st_treasure_ptr)
 		{
 			if (st_treasure_ptr == nullptr)
 			{
@@ -138,7 +138,7 @@ namespace hld
 			st_treasure_ptr->set_killed_stamp(killed_stamp);
 			for (int32 i = 0; i < gain_treasure_gain_team_num; i++)
 			{
-				hld::st_proto::st_gain_treasure_record_player_info_db * st_player_ptr = st_treasure_ptr->add_player_info_arr();
+				faith::st_proto::st_gain_treasure_record_player_info_db * st_player_ptr = st_treasure_ptr->add_player_info_arr();
 				if (st_player_ptr == nullptr)
 				{
 					return false;
@@ -147,7 +147,7 @@ namespace hld
 			}
 			return true;
 		}
-		void from_proto(const hld::st_proto::st_gain_treasure_record_info_one_db& st_treasure_ref)
+		void from_proto(const faith::st_proto::st_gain_treasure_record_info_one_db& st_treasure_ref)
 		{
 			boss_spawn_point_template_id = st_treasure_ref.boss_spawn_point_template_id();
 			killed_stamp = st_treasure_ref.killed_stamp();
@@ -172,7 +172,7 @@ namespace hld
 		{
 			memset(this, 0, sizeof(s_gain_treasure_record_player_info));
 		}
-		void to_proto(hld::st_proto::st_gain_treasure_record_player_info* st_player_ptr)
+		void to_proto(faith::st_proto::st_gain_treasure_record_player_info* st_player_ptr)
 		{
 			if (st_player_ptr == nullptr)
 			{
@@ -194,7 +194,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::st_proto::st_gain_treasure_record_player_info& st_player_ref)
+		void from_proto(const faith::st_proto::st_gain_treasure_record_player_info& st_player_ref)
 		{
 			my_memcopy_string(role_name, max_name_size, st_player_ref.role_name());
 			for (int32 i = 0; i < gain_treasure_gain_item_max_num && i < st_player_ref.gain_item_template_id_size(); i++)
@@ -241,7 +241,7 @@ namespace hld
 			player_info_arr[i].clear_data();
 			}
 		}
-		void to_proto(hld::st_proto::st_gain_treasure_record_info_one* st_treasure_ptr)
+		void to_proto(faith::st_proto::st_gain_treasure_record_info_one* st_treasure_ptr)
 		{
 			if (st_treasure_ptr == nullptr)
 			{
@@ -251,7 +251,7 @@ namespace hld
 			st_treasure_ptr->set_killed_stamp(killed_stamp);
 			for (int32 i = 0; i < max_team_member_num; i++)
 			{
-				hld::st_proto::st_gain_treasure_record_player_info *st_player_ptr = st_treasure_ptr->add_player_info_arr();
+				faith::st_proto::st_gain_treasure_record_player_info *st_player_ptr = st_treasure_ptr->add_player_info_arr();
 				if (st_player_ptr == nullptr)
 				{
 					return;
@@ -334,7 +334,7 @@ namespace hld
 			memset(player_name, 0, sizeof(player_name));
 			memcpy(player_name, p_role_name.c_str(), p_role_name.size() > max_name_size ? max_name_size : p_role_name.size());
 		}
-		void to_proto(hld::st_proto::st_gain_treasure_player_info* st_player_ptr)
+		void to_proto(faith::st_proto::st_gain_treasure_player_info* st_player_ptr)
 		{
 			if (st_player_ptr == nullptr)
 			{
@@ -352,7 +352,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::st_proto::st_gain_treasure_player_info& st_player_ref)
+		void from_proto(const faith::st_proto::st_gain_treasure_player_info& st_player_ref)
 		{
 			player_guid.server_64 = st_player_ref.player_guid();
 			my_memcopy_string(player_name, max_name_size, st_player_ref.player_name());
@@ -373,7 +373,7 @@ namespace hld
 		{
 			memset(this, 0, sizeof(s_gain_treasure_boss_info));
 		}
-		void to_proto(hld::st_proto::st_gain_treasure_boss_info* st_boss_ptr)
+		void to_proto(faith::st_proto::st_gain_treasure_boss_info* st_boss_ptr)
 		{
 			if (st_boss_ptr == nullptr)
 			{
@@ -384,7 +384,7 @@ namespace hld
 			st_boss_ptr->set_next_refresh_stamp(next_refresh_stamp);
 			for (int32 i = 0; i < max_team_member_num; i++)
 			{
-				hld::st_proto::st_gain_treasure_player_info * st_player_ptr = st_boss_ptr->add_player_info();
+				faith::st_proto::st_gain_treasure_player_info * st_player_ptr = st_boss_ptr->add_player_info();
 				if (st_player_ptr == nullptr)
 				{
 					return;
@@ -392,7 +392,7 @@ namespace hld
 				player_info[i].to_proto(st_player_ptr);
 			}
 		}
-		void from_proto(const hld::st_proto::st_gain_treasure_boss_info& st_boss_ref)
+		void from_proto(const faith::st_proto::st_gain_treasure_boss_info& st_boss_ref)
 		{
 			boss_spawn_point_template_id = st_boss_ref.boss_spawn_point_template_id();
 			boss_guid.server_64 = st_boss_ref.boss_guid();

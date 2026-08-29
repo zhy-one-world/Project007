@@ -22,7 +22,7 @@
 #include "utility/init_unit.h"
 
 
-namespace hld
+namespace faith
 {
 	cauction_mgr::cauction_mgr()
 	{
@@ -354,7 +354,7 @@ namespace hld
 			return;
 		}
 		remove_from_selling_list(sell_info.item_info.item_guid);
-		hld::auction_proto_receieve_sell_success_info msg;
+		faith::auction_proto_receieve_sell_success_info msg;
 		msg.set_item_template_id(sell_info.item_info.data_ary[e_item_info_info_id]);
 		temp_player.send_message_to_self(&msg, e_msgindex_s2c_receieve_sell_success);
 	}
@@ -477,7 +477,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::db_proto::auction_db msg;
+		faith::db_proto::auction_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -492,7 +492,7 @@ namespace hld
 		s_auction_info *p_row = (s_auction_info *)p_data;
 		for (int32 i = 0; i < msg.row_count(); i++)
 		{
-			hld::db_proto::auction_row db_row = msg.row_data(i);
+			faith::db_proto::auction_row db_row = msg.row_data(i);
 
 			p_row->seller_guid.server_64 = db_row.seller_guid();
 			parse_msg::getInstance().my_memcopy_string(p_row->seller_name, max_name_size, db_row.seller_name());
@@ -520,7 +520,7 @@ namespace hld
 			p_row->is_sky_order = db_row.is_sky_order();
 			p_row->show_guid.server_64 = db_row.show_guid();
 
-			hld::db_proto::item_info_db item_ref = db_row.item_info();
+			faith::db_proto::item_info_db item_ref = db_row.item_info();
 
 			p_row->item_info.item_guid.server_64 = item_ref.item_guid();
 

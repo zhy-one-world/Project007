@@ -21,7 +21,7 @@
 #include "game_cfg/servers_config.h"
 
 
-namespace hld
+namespace faith
 {
 #define set_log_var(head)  s_log_common_head head;  
 

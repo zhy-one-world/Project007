@@ -10,7 +10,7 @@
 #include <legion_msg.hpp>
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	legion_ws_event_logger::legion_ws_event_logger()
 	{

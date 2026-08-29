@@ -16,20 +16,20 @@
 #include "dp2cs.pb.h"
 #include "cs2dp.pb.h"
 
-namespace hld
+namespace faith
 {
 	static void cs2dp_role_yesterday_must_do_remain_send_lua(uint32 connindex, const dp2cs_load_character_yesterday_remain_must_do & msgData)
 	{
-		hld::dp2cs_proto::load_role_db_data msg;
+		faith::dp2cs_proto::load_role_db_data msg;
 		msg.set_role_guid(msgData.role_guid.server_64);
 		msg.set_unit_array_index(msgData.unit_array_index);
 
-		hld::cs2dp_proto::role_yesterday_must_do_remain_db msg_db;
+		faith::cs2dp_proto::role_yesterday_must_do_remain_db msg_db;
 		msg_db.set_row_count(resource_find_back_day);
 	
 		for (int32 i  = 0; i < resource_find_back_day; i++)
 		{
-			hld::cs2dp_proto::role_yesterday_must_do_remain_row *db_row = msg_db.add_row_data();
+			faith::cs2dp_proto::role_yesterday_must_do_remain_row *db_row = msg_db.add_row_data();
 			if (db_row == nullptr)
 			{
 				return;
@@ -144,7 +144,7 @@ namespace hld
 		guid_64 role_guid;
 		role_guid.server_64 = role_id;
 
-		hld::cs2dp_proto::role_yesterday_must_do_remain_db msg;
+		faith::cs2dp_proto::role_yesterday_must_do_remain_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -163,7 +163,7 @@ namespace hld
 
 		for (int32 i = 0; i < row_count; i++)
 		{
-			hld::cs2dp_proto::role_yesterday_must_do_remain_row one_row = msg.row_data(i);
+			faith::cs2dp_proto::role_yesterday_must_do_remain_row one_row = msg.row_data(i);
 			p_row->role_guid.server_64 = one_row.role_guid();
 			p_row->role_exp_level_yesterday = one_row.role_exp_level_yesterday();
 			p_row->save_date = one_row.save_date();
@@ -271,11 +271,11 @@ namespace hld
 
 	static void cs2dp_load_role_daily_must_do_count_send_lua(uint32 connindex, const dp2cs_load_character_daily_must_do_count & msgData)
 	{
-		hld::dp2cs_proto::load_role_db_data msg;
+		faith::dp2cs_proto::load_role_db_data msg;
 		msg.set_role_guid(msgData.role_guid.server_64);
 		msg.set_unit_array_index(msgData.unit_array_index);
 
-		hld::cs2dp_proto::role_daily_must_do_count_db msg_db;
+		faith::cs2dp_proto::role_daily_must_do_count_db msg_db;
 		for (int32 i = 0; i < e_daily_must_do_typ_max; i++)
 		{
 			msg_db.add_data_ary(msgData.data_info.data_ary[i]);
@@ -380,7 +380,7 @@ namespace hld
 
 		s_role_daily_must_do_count db_row_info;
 
-		hld::cs2dp_proto_role_daily_must_do_count_db msg;
+		faith::cs2dp_proto_role_daily_must_do_count_db msg;
 
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)

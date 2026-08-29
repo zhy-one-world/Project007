@@ -29,7 +29,7 @@
 #include "cross.pb.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	namespace cross
 	{

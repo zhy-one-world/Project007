@@ -25,7 +25,7 @@
 #include "message_manager.hpp"
 #include "utility/random.h"
 
-namespace hld
+namespace faith
 {
 	//////////////////////////////////////////////////////////////////////////
 	//

@@ -10,7 +10,7 @@
 #include "utility/init_unit.h"
 #include "world_server.hpp"
 
-namespace hld
+namespace faith
 {
 	broken_sky_mgr::broken_sky_mgr()
 	{
@@ -213,7 +213,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::broken_sky_info_sync pro_msg;
+			faith::ws2cs_proto::broken_sky_info_sync pro_msg;
 			pro_msg.set_map_template_id(map_id);
 			pro_msg.set_broken_sky_inst_guid(from_map_inst_guid.server_64);
 			pro_msg.set_damage(m_all_damage);
@@ -244,7 +244,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::broken_sky_kill_boss pro_msg;
+			faith::ws2cs_proto::broken_sky_kill_boss pro_msg;
 			pro_msg.set_map_template_id(map_id);
 			pro_msg.set_killer_unit_index(killer_unit_index);
 			pro_msg.set_killer_guid(killer_guid.server_64);
@@ -461,7 +461,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::broken_sky_creat_boss pro_msg;
+			faith::ws2cs_proto::broken_sky_creat_boss pro_msg;
 			pro_msg.set_boss_level(get_boss_level());
 			pro_msg.set_all_damage(m_all_damage);
 			pro_msg.set_from_map_guid(from_map_guid.server_64);

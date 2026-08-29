@@ -6,7 +6,7 @@
 #include "Logic/event_def.hpp"
 #include "Logic/item_def.hpp"
 
-namespace hld
+namespace faith
 {
 	typedef std::vector<uint32> notice_time_array;
 	typedef notice_time_array::iterator notice_time_array_ite;

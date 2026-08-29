@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -315,9 +315,9 @@ void protobuf_AddDesc_goods_2eproto() {
     "\n\013goods.proto\022\003hld\"\223\006\n\013goods_proto\032\034\n\010go"
     "ods_id\022\020\n\010goods_id\030\001 \001(\005\032 \n\ngoods_info\022\022"
     "\n\ngoods_info\030\001 \003(\005\032P\n\013store_goods\022\020\n\010sto"
-    "re_id\030\001 \001(\005\022/\n\ngoods_list\030\002 \003(\0132\033.hld.go"
+    "re_id\030\001 \001(\005\022/\n\ngoods_list\030\002 \003(\0132\033.faith.go"
     "ods_proto.goods_info\032a\n\tgoods_all\022\020\n\010goo"
-    "ds_id\030\001 \001(\005\0220\n\013goods_array\030\002 \003(\0132\033.hld.g"
+    "ds_id\030\001 \001(\005\0220\n\013goods_array\030\002 \003(\0132\033.faith.g"
     "oods_proto.goods_info\022\020\n\010store_id\030\003 \001(\005\032"
     "J\n\025goods_purchase_record\022\020\n\010goods_id\030\001 \001"
     "(\005\022\021\n\tgoods_num\030\002 \001(\005\022\014\n\004time\030\003 \001(\005\032n\n\rg"
@@ -873,7 +873,7 @@ bool goods_proto_store_goods::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.goods_proto.goods_info goods_list = 2;
+      // repeated .faith.goods_proto.goods_info goods_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -911,7 +911,7 @@ void goods_proto_store_goods::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->store_id(), output);
   }
 
-  // repeated .hld.goods_proto.goods_info goods_list = 2;
+  // repeated .faith.goods_proto.goods_info goods_list = 2;
   for (int i = 0; i < this->goods_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->goods_list(i), output);
@@ -930,7 +930,7 @@ void goods_proto_store_goods::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->store_id(), target);
   }
 
-  // repeated .hld.goods_proto.goods_info goods_list = 2;
+  // repeated .faith.goods_proto.goods_info goods_list = 2;
   for (int i = 0; i < this->goods_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -956,7 +956,7 @@ int goods_proto_store_goods::ByteSize() const {
     }
 
   }
-  // repeated .hld.goods_proto.goods_info goods_list = 2;
+  // repeated .faith.goods_proto.goods_info goods_list = 2;
   total_size += 1 * this->goods_list_size();
   for (int i = 0; i < this->goods_list_size(); i++) {
     total_size +=
@@ -1124,7 +1124,7 @@ bool goods_proto_goods_all::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.goods_proto.goods_info goods_array = 2;
+      // repeated .faith.goods_proto.goods_info goods_array = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1178,7 +1178,7 @@ void goods_proto_goods_all::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->goods_id(), output);
   }
 
-  // repeated .hld.goods_proto.goods_info goods_array = 2;
+  // repeated .faith.goods_proto.goods_info goods_array = 2;
   for (int i = 0; i < this->goods_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->goods_array(i), output);
@@ -1202,7 +1202,7 @@ void goods_proto_goods_all::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->goods_id(), target);
   }
 
-  // repeated .hld.goods_proto.goods_info goods_array = 2;
+  // repeated .faith.goods_proto.goods_info goods_array = 2;
   for (int i = 0; i < this->goods_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1240,7 +1240,7 @@ int goods_proto_goods_all::ByteSize() const {
     }
 
   }
-  // repeated .hld.goods_proto.goods_info goods_array = 2;
+  // repeated .faith.goods_proto.goods_info goods_array = 2;
   total_size += 1 * this->goods_array_size();
   for (int i = 0; i < this->goods_array_size(); i++) {
     total_size +=
@@ -2409,7 +2409,7 @@ bool goods_proto_update_store_goods::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.goods_proto.store_goods store_list = 1;
+      // repeated .faith.goods_proto.store_goods store_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2442,7 +2442,7 @@ bool goods_proto_update_store_goods::MergePartialFromCodedStream(
 
 void goods_proto_update_store_goods::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.goods_proto.store_goods store_list = 1;
+  // repeated .faith.goods_proto.store_goods store_list = 1;
   for (int i = 0; i < this->store_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->store_list(i), output);
@@ -2456,7 +2456,7 @@ void goods_proto_update_store_goods::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* goods_proto_update_store_goods::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.goods_proto.store_goods store_list = 1;
+  // repeated .faith.goods_proto.store_goods store_list = 1;
   for (int i = 0; i < this->store_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -2473,7 +2473,7 @@ void goods_proto_update_store_goods::SerializeWithCachedSizes(
 int goods_proto_update_store_goods::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.goods_proto.store_goods store_list = 1;
+  // repeated .faith.goods_proto.store_goods store_list = 1;
   total_size += 1 * this->store_list_size();
   for (int i = 0; i < this->store_list_size(); i++) {
     total_size +=
@@ -3207,6 +3207,6 @@ void goods_proto::Swap(goods_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

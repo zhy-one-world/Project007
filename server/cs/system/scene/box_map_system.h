@@ -2,7 +2,7 @@
 
 #include "base/ecs_world.h"
 
-namespace hld
+namespace faith
 {
 	const int32 g_box_born_group_len = 4;//宝箱出生点组长度
 	class map_s2s_box_map_info;

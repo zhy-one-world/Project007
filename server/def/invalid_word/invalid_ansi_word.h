@@ -7,7 +7,7 @@
 #include "CInvalidWord.hpp"
 #include "CCharLib.hpp"
 
-namespace hld
+namespace faith
 {
 	class invalid_ansi_word
 	{

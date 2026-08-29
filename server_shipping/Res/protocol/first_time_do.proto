@@ -1,0 +1,26 @@
+syntax = "proto2";
+package hld;
+
+message first_time_do_proto
+{
+	message first_do_record
+	{
+		optional int32				do_type					= 1;
+	}
+
+	message update_first_time_do_records
+	{
+		optional int32				records_num				= 1;
+		repeated first_do_record	records					= 2;
+	}
+
+	message add_first_time_do_record
+	{
+		optional int32				do_type					= 1;
+	}
+	
+	message sync_first_time_do_record
+	{
+		optional first_do_record	record					= 1;
+	}
+}

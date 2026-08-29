@@ -16,15 +16,15 @@
 #include "dp2cs.pb.h"
 #include "cs2dp.pb.h"
 
-namespace hld
+namespace faith
 {
 	static void cs2dp_load_role_money_send_lua(uint32 connindex, const  dp2cs_load_money_info & msgData)
 	{
-		hld::dp2cs_proto::load_role_db_data msg;
+		faith::dp2cs_proto::load_role_db_data msg;
 		msg.set_role_guid(msgData.role_guid.server_64);
 		msg.set_unit_array_index(msgData.unit_array_index);
 
-		hld::cs2dp_proto::role_money_db msg_db;
+		faith::cs2dp_proto::role_money_db msg_db;
 
 		for (int32  i = 0 ; i < e_money_type_max ; i++)
 		{
@@ -140,7 +140,7 @@ namespace hld
 
 		s_money_info db_row_info;
 
-		hld::cs2dp_proto_role_money_db msg;
+		faith::cs2dp_proto_role_money_db msg;
 
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)

@@ -8,7 +8,7 @@
 #include "utility/init_unit.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	legion_ws_warehouse::legion_ws_warehouse()
 	{
@@ -389,15 +389,15 @@ namespace hld
 		int32 score = 0;
 		switch (operation_type)
 		{
-		case hld::e_legion_warehouse_operation_store:
+		case faith::e_legion_warehouse_operation_store:
 			notice_id = legion_warehouse_store_notice_id;
 			score = item_template_ptr->LegionDonateAddIntegral;
 			break;
-		case hld::e_legion_warehouse_operation_out:
+		case faith::e_legion_warehouse_operation_out:
 			notice_id = legion_warehouse_get_notice_id;
 			score = item_template_ptr->LegionDonateReduceIntegral;
 			break;
-		case hld::e_legion_warehouse_operation_destroy:
+		case faith::e_legion_warehouse_operation_destroy:
 			break;
 		default:
 			break;

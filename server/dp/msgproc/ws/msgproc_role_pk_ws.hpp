@@ -12,7 +12,7 @@
 #include "db_manager.hpp"
 #include "utility/parse_msg.h"
 
-namespace hld
+namespace faith
 {
 	void load_role_pk_top(uint32 connindex, const void *data_ptr, size_t data_len);
 	void load_role_pk_top_end(db_result_type result, uint32 connindex);

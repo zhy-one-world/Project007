@@ -5,7 +5,7 @@
 #include "ws_client.hpp"
 #include "Logic/cloud_shop_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class cloud_shop_proto_cloud_shop_resp;
 	class game_proto_gain_treasure_boss_info_one;

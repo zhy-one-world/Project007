@@ -16,7 +16,7 @@ purpose:
 
 #define  NPC_NUM_AROUND_PLAYER	32	// 围绕玩家一圈的怪物点数
 
-namespace hld
+namespace faith
 {
 	// player 模板数据
 	//struct player_template_info : public base_info

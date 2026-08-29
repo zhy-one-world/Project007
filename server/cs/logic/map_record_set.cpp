@@ -9,7 +9,7 @@
 #include "internet/net.pb.h"
 #include "map_record.h"
 
-using namespace hld;
+using namespace faith;
 
 map_record_set::map_record_set()
 {

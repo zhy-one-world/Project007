@@ -11,7 +11,7 @@ purpose: 军团传功
 #include <Logic/legion_dance_def.hpp>
 
 
-namespace hld
+namespace faith
 {
 	class player;
 	class legion_dance_mgr

@@ -1,0 +1,151 @@
+syntax = "proto2";
+package hld;
+
+message login_proto
+{	
+	//此消息会在服务器(FEP)初始化或者更新客户端连接的加密信息时，发送到客户端
+	//客户端收到后必须立刻初始化或更新相关信息，然后通过[RDE加密]方法收发数据
+	message rde_encryption
+	{
+		optional	bool			is_gm						= 1;
+	}
+
+	// Client 加密数据包后，通过此消息发送给服务器
+	message encryped_data
+	{
+		optional uint32				index						= 1;	
+		optional uint32				data_len					= 2;	
+		optional string				data						= 3;					// 长度限制为e_max_len
+	}
+
+	// 服务器加密数据包后，通过此消息发送给客户端
+	message encryped_data_end
+	{
+		optional uint32				index						= 1;	
+		optional string				data						= 2;					// 长度限制为e_max_len
+	}
+	
+	message get_server_list
+	{
+		optional	string			account						= 1;
+	}
+	message server_list_info
+	{
+		optional uint32				server_id					= 1;
+		optional uint32				server_name					= 2;
+		optional string				ip_addr						= 3;
+		optional uint32				port						= 4;
+		optional uint32				server_state				= 5;
+		optional uint32				recommend_state				= 6;
+		optional uint32				begin_time					= 7;	
+		
+	}
+	message get_server_list_end
+	{
+		repeated	server_list_info			server_list		= 1;
+	}
+	message role_list_info
+	{
+		optional uint32				server_id					= 1;
+		optional uint32				template_id					= 2;
+		optional uint32				exp_level					= 3;
+		optional string				role_name					= 4;
+	
+	}
+	message get_role_list_end
+	{
+		repeated 	role_list_info			role_list			= 1;
+	}
+	
+	message login_reconnect
+	{
+		optional	string			account						= 1;
+		optional	int32			cur_map_id					= 2;
+		optional	int32			cur_map_line_id				= 3;
+	}
+	message login_reconnect_end
+	{
+		optional	int32			reconnect_res				= 1;
+	}
+	
+	message login
+	{
+		optional	string			client_account				= 1;
+		optional	string			logic_account				= 2;
+		optional	string			password					= 3;
+		optional	int32			login_type					= 4 [default = 1];
+		optional	string			client_version				= 5;
+		optional	uint32			buildTimes					= 6;
+		optional	uint32			switch_cluster				= 7;
+		optional	uint32			server_id					= 8;
+		optional	string			captcha_str					= 9;
+		optional	string			ip							= 10;
+		optional	string			device_type					= 11;
+		optional	string			custom_info					= 12;
+		optional	sdk_login_data	sdk_data					= 13;	
+	}
+	
+	message sdk_login_data
+	{
+		optional	bytes			data						= 1; 
+		optional	uint32			data_size					= 2; 
+		optional	string			channel_id					= 3;
+		optional	string			app_key						= 4;
+		optional	string			app_secret					= 5;
+		optional	string			device_id					= 6;
+		optional	string			opcode						= 7;
+		optional	string			model						= 8;
+		optional	string			idfa						= 9;
+		optional	string			imei						= 10;
+		optional	string			android_id					= 11;
+		optional	string			mac							= 12;
+		optional	string			sn							= 13;
+		optional	string			os							= 14;
+		optional	string			os_version					= 15;
+		optional	string			sdk_version					= 16;
+		optional	string			lang						= 17;
+		optional	string			recharge_type				= 18;
+	}
+	
+	message login_end
+	{
+		optional	uint32			result						= 1;
+		optional	string			account						= 2;
+		optional	string			server_msg					= 4;
+
+		optional	uint32			login_type					= 5 [default = 1];
+		optional	uint32			login_type_plus				= 6 [default = 1];
+		optional	uint32			queue_pos					= 7;
+		optional	uint32			left_time_in_sec			= 8;
+		optional	int32			radio_host					= 9;
+		optional	bool			is_create_account			= 10;
+		optional	int32			online_duration				= 11;
+		optional	int32			online_time					= 12;
+		optional	int32			age							= 13;
+		optional	int32			month_recharge_num			= 14;
+		optional	int32			month_recharge_time			= 15;
+	}
+
+	message login_queue_status
+	{
+		optional	uint32			left_time_in_sec			= 1;
+		optional	uint32			position					= 2;
+	}
+
+	message kickout_account_end
+	{
+		optional	string			account						= 1;
+		optional	string			desc						= 2;
+		optional	int32			reason						= 3;				
+	}
+
+	message logout
+	{
+		optional   uint32			type						= 1;
+	}
+
+	message logout_end
+	{
+		optional   uint32			result						= 1;
+	}
+}

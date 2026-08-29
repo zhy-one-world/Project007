@@ -13,7 +13,7 @@ author: zhaoyuming
 #include "template/ServerTemplateHead.h"
 
 
-namespace hld
+namespace faith
 {
 	class lucky_card_mgr
 	{

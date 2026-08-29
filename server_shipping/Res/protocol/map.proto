@@ -1,0 +1,106 @@
+syntax = "proto2";
+package hld;
+
+message map_s2s
+{
+	message map_record
+	{
+		optional int32 map_template_id = 1;
+		optional box_map_info box_map_data = 2;
+		optional element_map_info element_map_data = 3;
+	}
+	message sl_map_record
+	{
+		repeated map_record map_record_list = 1;
+	}
+	message box_map_info
+	{
+		message npc_point_info
+		{
+			optional int32 npc_id = 1;
+			optional int32 spawn_point_id = 2;
+		}
+		message flip_box
+		{
+			repeated int32 award_list = 1;
+			optional int32 open_index = 2;
+		}
+		repeated int32 data_array = 1;
+		repeated npc_point_info npc_point_array = 2;
+		optional flip_box flip_box_info = 3;
+	}
+	message element_map_info
+	{
+		repeated int32 data_array = 1;
+	}
+}
+
+message map
+{
+	message s2c_flip_box
+	{
+		repeated int32 award_list = 1;
+		optional int32 open_index = 2;
+	}
+	message box_map_info
+	{
+		repeated int32 data_array = 1;
+	}
+	message element_map_info
+	{
+		repeated int32 data_array = 1;
+	}
+	message s2c_map_record
+	{
+		optional int32 map_template_id = 1;
+		optional box_map_info box_map_data = 2;
+		optional element_map_info element_map_data = 3;
+	}
+	message s2c_map_record_all
+	{
+		repeated s2c_map_record  map_record_array = 1;
+		optional int32 is_end_record = 2; // 1代表发送完毕
+	}
+	message c2s_get_npc_award
+	{
+		optional int32 npc_index = 1;
+	}
+	message s2c_get_npc_award_end
+	{
+		optional int32 award_type = 1;
+		repeated int32 treasure_select_list = 2;
+	}
+	message c2s_get_treasure_award
+	{
+		optional int32 npc_index = 1;
+		optional int32 treasure_index = 2;
+	}
+	message c2s_open_treasure_pic
+	{
+	
+	}
+	message s2c_map_settlement
+	{
+		optional int32 next_map_id = 1;
+	}
+	message c2s_map_anim_end
+	{
+	}
+	message c2s_refrush_award_npc
+	{
+	}
+	message c2s_search_award_npc
+	{
+	}
+	message s2c_search_award_npc_end
+	{
+		optional int64 npc_guid = 1;
+	}
+	message s2c_wave_info
+	{
+		optional int32 wave_index = 1;
+	}
+	message s2c_element_map_end
+	{
+	}
+}

@@ -3,7 +3,7 @@
 #include "logic/type_def.hpp"
 #include "base/ecs_world.h"
 
-namespace hld
+namespace faith
 {
 	struct NpcSpawnPointTemplate;
 	struct target_time_spawn_info;

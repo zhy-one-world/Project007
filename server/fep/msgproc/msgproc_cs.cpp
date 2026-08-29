@@ -16,7 +16,7 @@
 #include <Utility/serialize_msg.h>
 #include <time.hpp>
 
-namespace hld
+namespace faith
 {
 	void cs2fep_aoi_msg_func(uint32 connindex, const void *data_ptr, size_t data_len)
 	{

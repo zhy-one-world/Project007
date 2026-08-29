@@ -4,7 +4,7 @@
 #include "logic/type_def.hpp"
 #include "char_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
@@ -117,7 +117,7 @@ namespace hld
 			team_one_stop_flags = -1;
 			clear_mems_guid();
 		}
-		bool to_proto(hld::st_proto::st_player_team_info *st_team_ptr)
+		bool to_proto(faith::st_proto::st_player_team_info *st_team_ptr)
 		{
 			if (st_team_ptr == nullptr)
 			{
@@ -136,7 +136,7 @@ namespace hld
 			}
 			return true;
 		}
-		void from_proto(const hld::st_proto::st_player_team_info& st_team_ref)
+		void from_proto(const faith::st_proto::st_player_team_info& st_team_ref)
 		{
 			team_guid.server_64 = st_team_ref.team_guid();
 			captain_guid.server_64 = st_team_ref.captain_guid();

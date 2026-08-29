@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_finger_5fguess_2eproto();
@@ -95,7 +95,7 @@ class finger_guess_s2s : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.finger_guess_s2s)
+  // @@protoc_insertion_point(class_scope:faith.finger_guess_s2s)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -174,7 +174,7 @@ class finger_guess_s2c_finger_guess_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 win_end() const;
   inline void set_win_end(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.finger_guess.s2c_finger_guess_info)
+  // @@protoc_insertion_point(class_scope:faith.finger_guess.s2c_finger_guess_info)
  private:
   inline void set_has_win_end();
   inline void clear_has_win_end();
@@ -249,7 +249,7 @@ class finger_guess_c2s_finger_guess_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.finger_guess.c2s_finger_guess_end)
+  // @@protoc_insertion_point(class_scope:faith.finger_guess.c2s_finger_guess_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -342,7 +342,7 @@ class finger_guess_s2c_finger_guess_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 money_count() const;
   inline void set_money_count(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.finger_guess.s2c_finger_guess_end)
+  // @@protoc_insertion_point(class_scope:faith.finger_guess.s2c_finger_guess_end)
  private:
   inline void set_has_win_end();
   inline void clear_has_win_end();
@@ -427,7 +427,7 @@ class finger_guess : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.finger_guess)
+  // @@protoc_insertion_point(class_scope:faith.finger_guess)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -557,7 +557,7 @@ inline void finger_guess_s2c_finger_guess_end::set_money_count(::google::protobu
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

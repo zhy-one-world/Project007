@@ -13,7 +13,7 @@
 #include "server_log.hpp"
 #include "template/template_manager.h"
 
-using namespace hld;
+using namespace faith;
 
 void item_system::load_data_over(unit* unit_ptr)
 {

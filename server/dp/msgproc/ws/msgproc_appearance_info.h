@@ -3,7 +3,7 @@
 
 #include "db_manager.hpp"
 
-namespace hld
+namespace faith
 {
 	struct s_client_uid;
 

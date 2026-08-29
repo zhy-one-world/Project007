@@ -17,7 +17,7 @@
 #include "../mail/event_ws_mgr.h"
 
 
-namespace hld
+namespace faith
 {
 	relation::relation()
 	{

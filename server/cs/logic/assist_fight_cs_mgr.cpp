@@ -12,7 +12,7 @@
 #include "internet/assist_fight.pb.h"
 #include "internet/net.pb.h"
 
-namespace hld
+namespace faith
 {
 	assist_fight_cs_mgr::assist_fight_cs_mgr()
 	{
@@ -111,7 +111,7 @@ namespace hld
 		guid_64 map_guid = player_ref.get_map_guid();
 		int32 boss_id = 0;
 		guid_64 boss_guid;
-		hld::s_map_pos m_pos;
+		faith::s_map_pos m_pos;
 
 		auto map_type = base_map_system::get_map_type(player_ref.get_map_ent());
 		auto map_template_id = base_map_system::get_map_template_id(player_ref.get_map_ent());
@@ -136,7 +136,7 @@ namespace hld
 				NpcTemplate * npc_temp_ptr = aim_boss.get_npc_template();
 				if (npc_temp_ptr != nullptr && npc_temp_ptr->PathFindLocation.size() >= 3)
 				{
-					m_pos.set_location(player_ref.get_unit_info(hld::e_role_info_move_pos_x), player_ref.get_unit_info(hld::e_role_info_move_pos_y), player_ref.get_unit_info(hld::e_role_info_move_pos_z));
+					m_pos.set_location(player_ref.get_unit_info(faith::e_role_info_move_pos_x), player_ref.get_unit_info(faith::e_role_info_move_pos_y), player_ref.get_unit_info(faith::e_role_info_move_pos_z));
 				}
 				boss_guid = aim_boss.get_unit_guid();
 				if (map_type == e_map_type_boss_island)
@@ -277,7 +277,7 @@ namespace hld
 		//if (need_transfer)
 		//{
 		//	//´«³öµØÍ¼
-		//	player_ref.transfer_by_template(player_ref.get_unit_info(hld::e_role_info_main_map_id), player_ref.get_main_line_id(), 0, guid_64(), 0);
+		//	player_ref.transfer_by_template(player_ref.get_unit_info(faith::e_role_info_main_map_id), player_ref.get_main_line_id(), 0, guid_64(), 0);
 		//}
 		msg.cancel_type = cancel_type;
 		msg.role_guid = player_ref.get_unit_guid();
@@ -325,8 +325,8 @@ namespace hld
 	{
 
 		player& player_ref = unit_man::get_player(m_array_index);
-		hld::assist_fight_proto_assist_fight_end_to_show_reward msg;
-		hld::assist_fight_proto_assist_fight_end_to_show_thank_reward thank_msg;
+		faith::assist_fight_proto_assist_fight_end_to_show_reward msg;
+		faith::assist_fight_proto_assist_fight_end_to_show_thank_reward thank_msg;
 		
 		thank_msg.set_role_guid_a(m_assist_fight_info.asssit_fight_guid.A);
 		thank_msg.set_role_guid_b(m_assist_fight_info.asssit_fight_guid.B);
@@ -352,7 +352,7 @@ namespace hld
 			player& helper_ref = unit_man::get_player(help_guid);
 			if (helper_ref.m_status == e_session_status_in_gaming)
 			{
-				hld::assist_fight_proto_assist_helper_info *help_info = msg.add_helper_list();
+				faith::assist_fight_proto_assist_helper_info *help_info = msg.add_helper_list();
 				help_info->set_role_guid_a(help_guid.A);
 				help_info->set_role_guid_b(help_guid.B);
 				help_info->set_role_name(helper_ref.get_name());
@@ -614,7 +614,7 @@ namespace hld
 	{
 		player& player_ref = unit_man::get_player(m_array_index);
 		int32 state = 0;
-		hld::assist_fight_proto_sync_assist_fight_state m_info_msg;
+		faith::assist_fight_proto_sync_assist_fight_state m_info_msg;
 		m_info_msg.set_assist_fight_guid(0);
 		m_info_msg.set_boss_id(0);
 		m_info_msg.set_map_id(0);

@@ -16,7 +16,7 @@
 #include <login_msg.hpp>
 #include "Internet/character.pb.h"
 
-namespace hld
+namespace faith
 {
 	class db_object;
 

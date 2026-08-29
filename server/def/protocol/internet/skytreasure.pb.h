@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_skytreasure_2eproto();
@@ -116,7 +116,7 @@ class skytreasure_proto_skytreasure_info_one : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 skytreasure_pos_in_array() const;
   inline void set_skytreasure_pos_in_array(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.skytreasure_proto.skytreasure_info_one)
+  // @@protoc_insertion_point(class_scope:faith.skytreasure_proto.skytreasure_info_one)
  private:
   inline void set_has_skytreasure_layer_num();
   inline void clear_has_skytreasure_layer_num();
@@ -197,24 +197,24 @@ class skytreasure_proto_skytreasure_all : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.skytreasure_proto.skytreasure_info_one skytreasure_list = 1;
+  // repeated .faith.skytreasure_proto.skytreasure_info_one skytreasure_list = 1;
   inline int skytreasure_list_size() const;
   inline void clear_skytreasure_list();
   static const int kSkytreasureListFieldNumber = 1;
-  inline const ::hld::skytreasure_proto_skytreasure_info_one& skytreasure_list(int index) const;
-  inline ::hld::skytreasure_proto_skytreasure_info_one* mutable_skytreasure_list(int index);
-  inline ::hld::skytreasure_proto_skytreasure_info_one* add_skytreasure_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::skytreasure_proto_skytreasure_info_one >&
+  inline const ::faith::skytreasure_proto_skytreasure_info_one& skytreasure_list(int index) const;
+  inline ::faith::skytreasure_proto_skytreasure_info_one* mutable_skytreasure_list(int index);
+  inline ::faith::skytreasure_proto_skytreasure_info_one* add_skytreasure_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::skytreasure_proto_skytreasure_info_one >&
       skytreasure_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::skytreasure_proto_skytreasure_info_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::skytreasure_proto_skytreasure_info_one >*
       mutable_skytreasure_list();
 
-  // @@protoc_insertion_point(class_scope:hld.skytreasure_proto.skytreasure_all)
+  // @@protoc_insertion_point(class_scope:faith.skytreasure_proto.skytreasure_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::skytreasure_proto_skytreasure_info_one > skytreasure_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::skytreasure_proto_skytreasure_info_one > skytreasure_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -303,7 +303,7 @@ class skytreasure_proto_skytreasure_operate : public ::google::protobuf::Message
   inline ::google::protobuf::int32 operation_param2() const;
   inline void set_operation_param2(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.skytreasure_proto.skytreasure_operate)
+  // @@protoc_insertion_point(class_scope:faith.skytreasure_proto.skytreasure_operate)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -398,7 +398,7 @@ class skytreasure_proto_skytreasure_operate_end : public ::google::protobuf::Mes
   inline ::google::protobuf::int32 operation_result() const;
   inline void set_operation_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.skytreasure_proto.skytreasure_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.skytreasure_proto.skytreasure_operate_end)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -481,7 +481,7 @@ class skytreasure_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.skytreasure_proto)
+  // @@protoc_insertion_point(class_scope:faith.skytreasure_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -574,27 +574,27 @@ inline void skytreasure_proto_skytreasure_info_one::set_skytreasure_pos_in_array
 
 // skytreasure_proto_skytreasure_all
 
-// repeated .hld.skytreasure_proto.skytreasure_info_one skytreasure_list = 1;
+// repeated .faith.skytreasure_proto.skytreasure_info_one skytreasure_list = 1;
 inline int skytreasure_proto_skytreasure_all::skytreasure_list_size() const {
   return skytreasure_list_.size();
 }
 inline void skytreasure_proto_skytreasure_all::clear_skytreasure_list() {
   skytreasure_list_.Clear();
 }
-inline const ::hld::skytreasure_proto_skytreasure_info_one& skytreasure_proto_skytreasure_all::skytreasure_list(int index) const {
+inline const ::faith::skytreasure_proto_skytreasure_info_one& skytreasure_proto_skytreasure_all::skytreasure_list(int index) const {
   return skytreasure_list_.Get(index);
 }
-inline ::hld::skytreasure_proto_skytreasure_info_one* skytreasure_proto_skytreasure_all::mutable_skytreasure_list(int index) {
+inline ::faith::skytreasure_proto_skytreasure_info_one* skytreasure_proto_skytreasure_all::mutable_skytreasure_list(int index) {
   return skytreasure_list_.Mutable(index);
 }
-inline ::hld::skytreasure_proto_skytreasure_info_one* skytreasure_proto_skytreasure_all::add_skytreasure_list() {
+inline ::faith::skytreasure_proto_skytreasure_info_one* skytreasure_proto_skytreasure_all::add_skytreasure_list() {
   return skytreasure_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::skytreasure_proto_skytreasure_info_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::skytreasure_proto_skytreasure_info_one >&
 skytreasure_proto_skytreasure_all::skytreasure_list() const {
   return skytreasure_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::skytreasure_proto_skytreasure_info_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::skytreasure_proto_skytreasure_info_one >*
 skytreasure_proto_skytreasure_all::mutable_skytreasure_list() {
   return &skytreasure_list_;
 }
@@ -724,7 +724,7 @@ inline void skytreasure_proto_skytreasure_operate_end::set_operation_result(::go
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

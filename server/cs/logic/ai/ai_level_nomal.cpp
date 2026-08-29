@@ -18,7 +18,7 @@
 #include "internet/aoi.pb.h"
 #include "internet/net.pb.h"
 
-namespace hld
+namespace faith
 {
 	void s_npc_skill::clear()
 	{
@@ -2012,12 +2012,12 @@ namespace hld
 		if (direction > 0)
 		{
 			int64 length_diff = init_unit::get_distance(m_patrol_location, m_npc_ptr->get_new_map_pos().unit_location);
-			return (length_diff < hld::m_patrol_reach_judge_distance);
+			return (length_diff < faith::m_patrol_reach_judge_distance);
 		}
 		else
 		{
 			int64 length_diff = init_unit::get_distance(m_born_location, m_npc_ptr->get_new_map_pos().unit_location);
-			return (length_diff < hld::m_patrol_reach_judge_distance);
+			return (length_diff < faith::m_patrol_reach_judge_distance);
 		}
 	}
 	void ai_level_nomal::is_need_gather(const int64& new_time)

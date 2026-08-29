@@ -3,7 +3,7 @@
 
 #include "phantom.h"
 
-namespace hld
+namespace faith
 {
 	typedef std::map<int32, cphantom> phantom_map;
 	typedef std::map<int32, cphantom>::iterator  phantom_map_it;

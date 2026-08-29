@@ -10,7 +10,7 @@
 #include "../client_session_mgr.hpp"
 #include "base/ecs_world.h"
 
-namespace hld
+namespace faith
 {
 	class game_proto_legion_aunction_item_one;
 
@@ -70,7 +70,7 @@ namespace hld
 		void								send_mail_to_all_member_with_master_city_war(bool is_winner = false);//霸主战所有人都发邮件奖励
 		void								send_mail_to_officer_with_city_bid(int32 ter_id);//被超标后发邮件给军团长和副军团长
 
-		const LegionConstructionsTemplate*	get_legion_cfg(hld::ELegionInfo construction_index = ELegionInfo_construction_level_main) const;
+		const LegionConstructionsTemplate*	get_legion_cfg(faith::ELegionInfo construction_index = ELegionInfo_construction_level_main) const;
 		void								recalcu_legion_fighting_power();
 		bool								cost_maintain_money();
 		void								add_asset_money(int32 add_val);

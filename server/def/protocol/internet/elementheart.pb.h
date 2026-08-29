@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_elementheart_2eproto();
@@ -119,7 +119,7 @@ class element_heart_proto_element_heart_one : public ::google::protobuf::Message
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_element_heart_info();
 
-  // @@protoc_insertion_point(class_scope:hld.element_heart_proto.element_heart_one)
+  // @@protoc_insertion_point(class_scope:faith.element_heart_proto.element_heart_one)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -205,25 +205,25 @@ class element_heart_proto_element_heart_all : public ::google::protobuf::Message
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // repeated .hld.element_heart_proto.element_heart_one element_heart_array = 2;
+  // repeated .faith.element_heart_proto.element_heart_one element_heart_array = 2;
   inline int element_heart_array_size() const;
   inline void clear_element_heart_array();
   static const int kElementHeartArrayFieldNumber = 2;
-  inline const ::hld::element_heart_proto_element_heart_one& element_heart_array(int index) const;
-  inline ::hld::element_heart_proto_element_heart_one* mutable_element_heart_array(int index);
-  inline ::hld::element_heart_proto_element_heart_one* add_element_heart_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::element_heart_proto_element_heart_one >&
+  inline const ::faith::element_heart_proto_element_heart_one& element_heart_array(int index) const;
+  inline ::faith::element_heart_proto_element_heart_one* mutable_element_heart_array(int index);
+  inline ::faith::element_heart_proto_element_heart_one* add_element_heart_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::element_heart_proto_element_heart_one >&
       element_heart_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::element_heart_proto_element_heart_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::element_heart_proto_element_heart_one >*
       mutable_element_heart_array();
 
-  // @@protoc_insertion_point(class_scope:hld.element_heart_proto.element_heart_all)
+  // @@protoc_insertion_point(class_scope:faith.element_heart_proto.element_heart_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > role_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::element_heart_proto_element_heart_one > element_heart_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::element_heart_proto_element_heart_one > element_heart_array_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -324,7 +324,7 @@ class element_heart_proto_element_heart_operate : public ::google::protobuf::Mes
   inline ::google::protobuf::int32 use_up_item() const;
   inline void set_use_up_item(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.element_heart_proto.element_heart_operate)
+  // @@protoc_insertion_point(class_scope:faith.element_heart_proto.element_heart_operate)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -467,7 +467,7 @@ class element_heart_proto_element_heart_operate_end : public ::google::protobuf:
   inline ::google::protobuf::int32 is_raise() const;
   inline void set_is_raise(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.element_heart_proto.element_heart_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.element_heart_proto.element_heart_operate_end)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -566,7 +566,7 @@ class element_heart_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.element_heart_proto)
+  // @@protoc_insertion_point(class_scope:faith.element_heart_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -668,27 +668,27 @@ element_heart_proto_element_heart_all::mutable_role_guid() {
   return &role_guid_;
 }
 
-// repeated .hld.element_heart_proto.element_heart_one element_heart_array = 2;
+// repeated .faith.element_heart_proto.element_heart_one element_heart_array = 2;
 inline int element_heart_proto_element_heart_all::element_heart_array_size() const {
   return element_heart_array_.size();
 }
 inline void element_heart_proto_element_heart_all::clear_element_heart_array() {
   element_heart_array_.Clear();
 }
-inline const ::hld::element_heart_proto_element_heart_one& element_heart_proto_element_heart_all::element_heart_array(int index) const {
+inline const ::faith::element_heart_proto_element_heart_one& element_heart_proto_element_heart_all::element_heart_array(int index) const {
   return element_heart_array_.Get(index);
 }
-inline ::hld::element_heart_proto_element_heart_one* element_heart_proto_element_heart_all::mutable_element_heart_array(int index) {
+inline ::faith::element_heart_proto_element_heart_one* element_heart_proto_element_heart_all::mutable_element_heart_array(int index) {
   return element_heart_array_.Mutable(index);
 }
-inline ::hld::element_heart_proto_element_heart_one* element_heart_proto_element_heart_all::add_element_heart_array() {
+inline ::faith::element_heart_proto_element_heart_one* element_heart_proto_element_heart_all::add_element_heart_array() {
   return element_heart_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::element_heart_proto_element_heart_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::element_heart_proto_element_heart_one >&
 element_heart_proto_element_heart_all::element_heart_array() const {
   return element_heart_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::element_heart_proto_element_heart_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::element_heart_proto_element_heart_one >*
 element_heart_proto_element_heart_all::mutable_element_heart_array() {
   return &element_heart_array_;
 }
@@ -978,7 +978,7 @@ inline void element_heart_proto_element_heart_operate_end::set_is_raise(::google
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

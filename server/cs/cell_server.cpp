@@ -31,10 +31,10 @@
 #include "internet/eye_proto.pb.h"
 #include "internet/net.pb.h"
 #include "logic/time_limit_activity_temp_mgr.hpp"
-namespace hld
+namespace faith
 {
-	using namespace hld::net;
-	using namespace hld::utility;
+	using namespace faith::net;
+	using namespace faith::utility;
 
 	cell_server::cell_server()
 	{
@@ -146,7 +146,7 @@ namespace hld
 	void cell_server::on_req_login(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
 		//存下这台服务器的信息
-		const hld::req_login* msg = static_cast<const hld::req_login*>(data_ptr);
+		const faith::req_login* msg = static_cast<const faith::req_login*>(data_ptr);
 		if (NULL == msg)
 		{
 			return;
@@ -184,7 +184,7 @@ namespace hld
 
 	void cell_server::on_req_stop(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
-		const hld::req_stop* msg = static_cast<const hld::req_stop*>(data_ptr);
+		const faith::req_stop* msg = static_cast<const faith::req_stop*>(data_ptr);
 		if (NULL == msg)
 		{
 			return;
@@ -267,13 +267,13 @@ namespace hld
 			{
 				CONSOLE_INFO("res svn code : {}", globle_data::get_instance().get_version_template_ptr()->Version);
 			}
-			hld::int32 session_count = unit_man::get_player_num();
-			hld::int32 robot_count = unit_man::get_robot_num();
-			hld::int32 npc_count = unit_man::get_npc_num();
-			hld::int32 ws_num = net_client_mgr::getInstance().get_server_count(e_server_type_ws);
-			hld::int32 dp_num = net_client_mgr::getInstance().get_server_count(e_server_type_dp);
-			hld::int32 fep_num = net_server_mgr::getInstance().get_server_count(e_server_type_fep);
-			hld::int32 gate_num = net_client_mgr::getInstance().get_server_count(e_server_type_gate);
+			faith::int32 session_count = unit_man::get_player_num();
+			faith::int32 robot_count = unit_man::get_robot_num();
+			faith::int32 npc_count = unit_man::get_npc_num();
+			faith::int32 ws_num = net_client_mgr::getInstance().get_server_count(e_server_type_ws);
+			faith::int32 dp_num = net_client_mgr::getInstance().get_server_count(e_server_type_dp);
+			faith::int32 fep_num = net_server_mgr::getInstance().get_server_count(e_server_type_fep);
+			faith::int32 gate_num = net_client_mgr::getInstance().get_server_count(e_server_type_gate);
 			CONSOLE_INFO("ws {}/{} dp {}/{} fep {}/{} gate {}/{}", ws_num, SERVER_WS_COUNT, dp_num, SERVER_DP_COUNT, fep_num, SERVER_FEP_COUNT, gate_num, SERVER_GATE_COUNT);
 			CONSOLE_INFO("session num {} session {}", session_count, SERVERCONFIG->init_player_num);
 			CONSOLE_INFO("robot num {} ", robot_count);
@@ -303,7 +303,7 @@ namespace hld
 		if (time_now >= sync_cs_data)
 		{
 			sync_cs_data = time_now + server_player_to_ws;
-			hld::app_server_update	req;
+			faith::app_server_update	req;
 			req.player_count = unit_man::get_player_num() - unit_man::get_robot_num();
 			req.max_player_count = init_player_max;
 			connection_mgr::getInstance().send_to_ws(&req, sizeof(req));

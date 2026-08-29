@@ -1,0 +1,1052 @@
+syntax = "proto2";
+package hld;
+
+message legion_proto
+{
+	message member_info
+	{
+		optional uint64			role_guid	= 1;  // 军团成员的角色GUID
+		optional string			role_name	= 2;  // 军团成员的角色名字
+		repeated int32			member_data	= 3;  // 军团成员的数据
+		optional int32			add_fuel_times= 4;// 篝火中加火次数
+		optional string			gs_value	= 5;  // 军团成员战斗力
+		optional string			contribution_value = 6;// 军团成员贡献值
+		optional string         week_contribution_value = 7;// 军团成员周贡献值
+	}
+
+	message members_info_list
+	{
+		repeated member_info	mems_info_arr	= 1;
+	}
+	
+	message legion_info
+	{
+		optional uint64			legion_guid		= 1;	// 军团的GUID
+		optional string			legion_name		= 2;	// 军团的名称
+		optional string			announcement	= 3;	// 军团的公告
+		optional string			legion_gs_value	= 4;	// 军团战斗力
+		repeated int32			legion_data		= 5;	// 军团的数据
+		optional int32			member_num		= 6;	// 军团的成员数量
+		repeated member_info	member_list		= 7;	// 军团的各成员的数据
+		optional int32			next_recruit_stamp= 8;	// 上次招募时间戳
+	}
+	
+	message legion_brief_info
+	{
+		optional uint64			legion_guid 			= 1; // 军团的GUID
+		optional string			legion_name 			= 2; // 军团的名称
+		optional uint64			chief_guid              = 3; // 军团长得GUID
+		optional string			chief_name				= 4; // 军团长的名字
+		optional int32			cur_member_num 			= 5; // 军团的成员人数
+		optional int32			max_member_num 			= 6; // 军团的成员人数上限
+		optional string         legion_fighting_power 	= 7; // 军团的战斗力
+		optional int32			legion_level 			= 8; // 军团的等级
+	}
+	
+	message create_legion
+	{
+		optional uint64			role_guid				= 1; // 请求创建军团的角色的GUID
+		optional string			legion_name				= 2; // 军团的名字
+		optional int32			legion_level			= 3; // 军团的等级
+		optional int32			auto_accept_new_member	= 4; // 是否自动接受入团申请
+	}
+	
+	message create_legion_end
+	{
+		optional legion_info legion_info_data	= 1;
+	}
+	
+	// 更新军团的所有数据(不包括军团成员的数据哦,上面那个legion_info才是更新整个军团数据的)
+	message update_legion_info_all
+	{
+		repeated int32 legion_info_data_arr		= 1; // 军团的信息数组
+	}
+	
+	// 更新军团数据的某一条
+	message update_legion_info_one
+	{
+		optional int32	legion_info_index	= 1; // 军团信息下表
+		optional int32	legion_info_value	= 2; // 相应信息的新值
+	}
+	
+	message update_legion_gs_value
+	{
+		optional string	gs_value			= 1;
+	}
+	
+	// 更新军团某名成员的信息
+	message update_legion_member_info_all
+	{
+		optional uint64	member_guid			= 1; // 要更新的成员的GUID
+		optional string gs_value			= 2; // 成员的战力
+		optional string contribution_value	= 3; // 成员的贡献值
+		repeated int32	data_arr		 	= 4; // 成员的数据数组
+		optional string week_contribution_value	= 5; // 成员的周贡献值
+	}
+	
+	// 更新军团某名成员的某条信息
+	message update_legion_member_info_one
+	{
+		optional uint64	member_guid			= 1; // 要更新的成员你的GUID
+		optional int32	info_index			= 2; // 要更新的信息的下表
+		optional int32	info_value			= 3; // 要更新的信息的新值
+	}
+	
+	// 更新军团某名成员的战力值
+	message update_legion_member_gs_value
+	{
+		optional uint64	member_guid			= 1; // 要更新的成员你的GUID
+		optional string	gs_value			= 2; // 要更新的战力值
+	}
+	
+	// 更新军团某名成员的贡献值
+	message update_legion_member_contribution_value
+	{
+		optional uint64	member_guid			= 1; // 要更新的成员你的GUID
+		optional string	contribution_value	= 2; // 要更新的贡献值
+		optional string week_contribution_value	= 3; // 要更新的周贡献值
+	}
+	
+	
+	message dissolve_legion
+	{
+		optional uint64 role_guid = 1; // 发起解散请求的角色的GUID
+	}
+	
+	message dissolve_legion_end
+	{
+	}
+	
+	message leave_legion
+	{
+		optional uint64 role_guid = 1; // 发起退团请求的角色的GUID
+	}
+	
+	message leave_legion_end
+	{
+	}
+	
+	message get_legion_list
+	{
+		optional uint64 role_guid						= 1; // 发起查询请求的角色GUID
+		optional int32 start_index						= 2; // 上次查询的最后一条记录的下表
+		optional int64 base_fighting_power				= 3; // 基准战斗力,查询的军团战斗力不能高于这个值
+		optional int32 only_get_auto_accept_new_member	= 4; // 是否只获取自动接受入团申请的军团
+	}
+	
+	message get_legion_list_end
+	{
+		optional int32				legion_list_len = 1; // 本次查询返回的军团列表的长度
+		repeated legion_brief_info 	legion_list		= 2; // 本次查询返回的军团列表
+	}
+	
+	message apply_to_join_legion
+	{
+		optional uint64 role_guid	= 1; // 发送入团申请的玩家的GUID
+		optional uint64 legion_guid	= 2; // 接受入团申请的军团GUID
+	}
+	
+	message apply_to_join_legion_end
+	{
+		optional int32 apply_stage		= 1; // 申请结果 1对方军团已收到申请 2对方已接受申请 3对方已无情决绝 4对方自动接收新成员
+	}
+
+	message invite_player
+	{
+		optional uint64				role_guid			= 1;
+		optional uint64				legion_guid			= 2; // 邀请来自哪个军团
+		optional string				new_member_name		= 3; // 被邀请人的名字
+		optional uint64				invite_guid			= 4; // 被邀请人的GUID
+	}
+	
+	message invite_player_end
+	{
+		optional uint64				invite_role_guid		= 1; // 邀请人的GUID
+		optional string 			invite_role_name		= 2; // 邀请人的名字
+		optional int32 				invite_role_level		= 3; // 邀请人的等级
+		optional legion_brief_info  invite_legion_info		= 4; // 邀请人的军团信息
+	}
+	
+	message invite_player_succeed
+	{
+	}
+	
+	message applicant_info
+	{
+		optional uint64 applicant_guid	= 1; // 申请者的GUID
+		optional string applicant_name	= 2; // 申请者的名字
+		optional string	gs_value		= 3; // 战力值
+		repeated int32 applicant_data	= 4; // 申请者的其他数据
+	}
+	
+	message get_applicant_info_list
+	{
+		optional uint64	role_guid	= 1;
+	}
+	
+	message get_applicant_info_list_end
+	{
+		optional int32			list_len		= 1;
+		repeated applicant_info	applicant_list	= 2;
+	}
+	
+	message process_apply
+	{
+		optional uint64			role_guid		= 1; // 发起处理的角色的GUID
+		optional uint64			applicant_guid	= 2; // 处理的申请者的GUID
+		optional int32			is_accept		= 3; // 是否接受入团申请 1->接受 0->拒绝
+	}
+	
+	message process_apply_end
+	{
+		optional uint64			applicant_guid	= 1; //	处理的申请者的GUID
+		optional int32			is_accept		= 2; // 是否接受了入团申请
+	}
+	
+	message convenient_join_legion
+	{
+	}
+	
+	message convenient_join_legion_end
+	{
+	}
+	
+	message add_member_end
+	{
+		optional member_info	new_member_info	= 1;
+	}
+	
+	message del_member
+	{
+		optional uint64	role_guid			= 1;
+		optional uint64	del_member_guid		= 2;
+	}
+	
+	message del_member_end
+	{
+		optional uint64	del_member_guid		= 1;
+	}
+	
+	message construction_level_up
+	{
+		optional uint64	role_guid			= 1; // 发起升级军团建筑的角色GUID
+		optional int32	construction_index	= 2; // 要升级的军团建筑
+	}
+	
+	message construction_level_up_end
+	{
+		optional int32	construction_index	= 1; // 升级的军团建筑
+	}
+	
+	message get_construction_buff
+	{
+		optional uint64	role_guid			= 1;
+		optional int32	construction_index	= 2;
+	}
+	
+	message get_construction_buff_end
+	{
+		optional int32	construction_index	= 1;
+	}
+	
+	message donate_money
+	{
+		optional uint64	role_guid			= 1; // 角色GUID
+		optional int32	donate_times		= 2; // 捐献次数
+	}
+	
+	message donate_item
+	{
+		optional uint64	role_guid			= 1; // 角色GUID
+		optional int32	donate_item_index	= 2; // 捐献物品的索引
+		optional int32	donate_times		= 3; // 捐献次数
+	}
+	
+	message donate_end
+	{
+		optional int32	add_legion_money		= 1; // 增加的军团资金
+		optional int32	add_battle_achievement	= 2; // 增加的战功
+	}
+	
+	message update_announcement
+	{
+		optional uint64	role_guid			= 1; // 发起公告更新的角色的GUID
+		optional string	content				= 2; // 新的军团公告内容
+	}
+	
+	message update_announcement_end
+	{
+		optional string content				= 1; // 新的军团公告内容
+	}
+	
+	message legion_event
+	{
+		optional uint32	event_idx			 	= 1;
+		optional string   extra_data	  		= 2;
+		optional uint32	happen_time			= 3;
+	}
+	
+	message get_legion_event_list
+	{
+		optional uint64	role_guid					= 1; // 发起查询的角色的GUID
+		optional uint32  from_happen_time   	= 2; // 开始继续查询的事件时间
+	}
+	
+	message get_legion_event_list_end
+	{
+		optional int32			event_list_len		= 1; // 查询获得的军团事件列表的长度
+		repeated legion_event	event_list			= 2; // 查询获得的军团事件列表
+	}
+	
+	message legion_bonus_info
+	{
+		optional int32			mission_id			= 1;
+		optional int32			finish_count		= 2;
+	}
+	
+	message get_legion_bonus_info
+	{
+		optional int32 				mission_id			=1;//想要获得物品的任务id
+		optional int32 				sub_type_id			= 2;//任务子id
+		optional bool 				get_all				=3;//全部获取
+	}
+	
+	message get_legion_bonus_info_end
+	{
+		repeated legion_bonus_info	bonus_info		= 1;//查询获得的分红信息
+		optional int32				bonus_num		= 2;//数量
+	}
+	
+	message get_legion_bonus_award_end
+	{
+		
+	}
+	
+	message send_stimulate_bonus
+	{
+		optional int32				mission_id			=1;//想要激励的任务id
+	}
+	
+	message kickout_legion_member
+	{
+		optional uint64	role_guid			= 1; // 发起踢人请求的角色的GUID
+		optional uint64	leaver_guid			= 2; // 要踢出的成员的GUID
+	}
+	
+	message kickout_legion_member_end
+	{
+		optional uint64	leaver_guid			= 1; // 被踢者的GUID
+	}
+	
+	message appoint_job_title
+	{
+		optional uint64	role_guid			= 1; // 发起任命请求的玩家的GUID
+		optional uint64	member_guid			= 2; // 被任命的成员的GUID
+		optional int32	job_title			= 3; // 赋予的职位
+	}
+	
+	// 军团长和被委任的成员都会受到这个消息以供弹出反馈消息
+	message appoint_job_title_end
+	{
+		optional int32	result				= 1; // 委任操作结构
+		optional int32	job_title			= 2; // 本次操作委任的职务(军团长/副军团长/指挥官/普通成员)
+		optional bool	is_to_chief			= 3; // 是否是给团长的反馈
+	}
+	
+	message enter_legion_boss_map
+	{
+		optional uint64	role_guid				= 1;
+		optional int32	boss_map_id				= 2;
+	}
+	
+	message kill_legion_boss
+	{
+		optional int32	boss_map_template_id	= 1; // 击杀的军团BOSS对应的副本ID
+		optional string	killer_name				= 2; // 击杀者的名字
+	}
+	
+	message legion_boss_record
+	{
+		optional string	killer_name				= 1; // 击杀者的名字
+		repeated int32	data_ary				= 2; // BOSS记录的数据
+	}
+	
+	message legion_boss_record_list
+	{
+		optional int32				record_num	= 1;
+		repeated legion_boss_record	records		= 2;
+	}
+	
+	message get_legion_boss_award
+	{
+		optional uint64	role_guid				= 1;
+		optional int32	boss_map_template_id	= 2; // 要领取奖励的军团BOSS副本的ID
+	}
+	
+	message get_legion_boss_award_end
+	{
+		optional int32	boss_map_template_id	= 1;
+		optional int32	get_battle_achievement	= 2; // 领取的战功值
+	}
+	
+	message get_banquet_info
+	{
+		optional uint64	role_guid				= 1; // 发起查询的角色的GUID
+	}
+	
+	message get_banquet_info_end
+	{
+		optional uint64	occupy_legion_guid		= 1; // 当前占领王城的军团的GUID
+		optional bool	is_banquet_holding		= 2; // 是否正在举行王城舞会
+		optional bool	request_hold_banquet	= 3; // 举办日期
+		optional int32	banquet_level			= 4; // 舞会的级别
+		optional int32	participant_num			= 5; // 已经参与宴会的人数
+		optional int32	participant_max			= 6; // 能够参与宴会的最大人数
+		optional int32	role_take_part_in_num	= 7; // 该名玩家参与宴会的次数
+	}
+	
+	message request_hold_banquet
+	{
+		optional uint64 	role_guid				= 1;
+		optional int32	banquet_level			= 2; // 要举办的舞会的等级
+	}
+	
+	message request_hold_banquet_end
+	{
+	}
+	
+	message take_part_in_banquet
+	{
+		optional uint64	role_guid				= 1; // 参与者的GUID
+	}
+	
+	message take_part_in_banquet_end
+	{
+		optional int32	participant_num			= 1; // 已经参与宴会的人数
+		optional int32	participant_max			= 2; // 能够参与宴会的最大人数
+		optional int32	role_take_part_in_num	= 3; // 该名玩家参与宴会的次数
+	}
+	
+	message city_war_bid_info
+	{
+		optional int32	territory_id				= 1;
+		optional int32	index_in_terr				= 2;
+		optional uint64	legion_guid					= 3;
+		optional int32	cur_bid_price				= 4;
+		optional bool	is_prior_maintain			= 5;
+		optional string	legion_name					= 6;
+		optional string	legion_chief_name			= 7;
+		optional int32  legion_chief_template_id 	= 8;
+		optional int32  occupy_time_stamp   		= 9;
+	}
+	
+	message city_war_territory_info
+	{
+		optional int32				territory_id= 1;
+		optional bool				is_in_war	= 2;
+		repeated city_war_bid_info	bid_infos	= 3;
+	}
+	
+	message get_city_war_info
+	{
+		optional uint64	role_guid				= 1;
+	}
+	
+	message get_city_war_info_end
+	{
+		repeated city_war_territory_info	territory_info	= 1; // 所有城战领地信息
+	}
+	
+	message get_abstention_city_war_end
+	{
+		repeated int32 territory_id					=1;
+		repeated string legion_name					=2;//因资金不足而导致放弃领土的公会名称
+	}
+	
+	//霸主之战的逻辑
+	//message get_overlord_city_war_info_end
+	//{
+	//	optional bool				is_war_begin	= 1;
+	//	optional int32				bid_num			= 2;
+	//	repeated city_war_bid_info	bid_info		= 3; 
+	//}
+
+	message apply_city_war_bid
+	{
+		optional uint64	role_guid				= 1; // 发起竞标的角色的GUID
+		optional int32	terr_id					= 2;
+		optional int32	in_terr_idx				= 3;
+	}
+	
+	message apply_city_war_bid_end
+	{
+		optional int32				result		= 1; // 竞标结果
+	}
+	
+	message req_territory_info
+	{
+		optional uint64	role_guid				= 1;
+		optional int32	terr_id					= 2;
+	}
+	message req_territory_info_end
+	{
+		optional city_war_territory_info terr_info = 1;
+	}
+	
+	message city_war_rank_info
+	{
+		optional uint64	legion_guid					= 1;
+		optional string	legion_name					= 2;
+		optional int32	glory_glow					= 3;
+		optional int32	occupy_terr_num				= 4;
+		optional int32	occupy_terr_score			= 5;
+		optional int32	occupy_terr_highest_score	= 6;
+	}
+	message req_city_war_rank_info
+	{
+		optional uint64	role_guid					= 1;
+	}
+	message req_city_war_rank_info_end
+	{
+		repeated city_war_rank_info rank_info		= 1;
+	}
+	
+	message set_territory_prior_maintain
+	{
+		optional uint64	role_guid					= 1;
+		repeated int32	terr_ids					= 2;
+	}
+	message set_territory_prior_maintain_end
+	{
+		repeated int32	terr_ids					= 1;
+		repeated bool	is_priors					= 2;
+	}
+	
+	message entry_city_war_map
+	{
+		optional uint64	role_guid				= 1; // 请求参战角色的GUID
+		optional int32	terr_id					= 2;
+	}
+	
+	message entry_city_war_map_end
+	{
+		optional int32	terr_id					= 1;
+	}
+	
+	message city_war_operate
+	{
+		optional uint64	role_guid				= 1;
+		optional int32	operate_type			= 2; // 操作类型
+		optional uint64	prop_npc_guid			= 3; // 道具NPC的GUID
+		optional int32	terr_id					= 4;
+	}
+	
+	message city_war_operate_end
+	{
+		optional int32	result					= 1; // 操作结果
+		optional uint64	prop_npc_guid			= 2; // 道具NPC的GUID
+		optional int32	npc_id					= 3; // NPC模板ID
+	}
+	
+	// 城战副本里的军团分数信息
+	message city_war_raid_info_of_legion_score
+	{
+		optional uint64	legion_guid				= 1;
+		optional string legion_name				= 2;
+		optional int32	legion_score			= 3;
+	}
+	
+	// 城战副本里的据点占领信息
+	message city_war_raid_info_of_stronghold
+	{
+		optional uint64	stronghold_guid			= 1;
+		optional uint64	occupant_guid			= 2;
+	}
+	
+	// 城战副本里的军团成员信息
+	message city_war_raid_info_of_legion_member_score
+	{
+		optional uint64	role_guid				= 1;
+		optional string	role_name				= 2;
+		optional uint64	legion_guid				= 3;
+		optional int32	role_score				= 4;
+	}
+	
+	// 用来向客户端同步城战副本的信息
+	message city_war_raid_info
+	{
+		optional int32										join_war_legion_num		= 1;
+		repeated city_war_raid_info_of_legion_score			legion_score_list		= 2;
+		
+		optional int32										stronghold_num			= 3;
+		repeated city_war_raid_info_of_stronghold			stronghold_list			= 4;
+		
+		optional int32										role_num				= 5;
+		repeated city_war_raid_info_of_legion_member_score	role_score_list			= 6;
+		
+		optional int32										cur_territory_id		= 7;
+	}
+	
+	message city_war_update_role_score
+	{
+		optional int32	score					= 1; // 玩家的得分
+		optional int32	rank					= 2; // 玩家的排名
+	}
+	
+	message city_war_over
+	{
+		optional uint64	winner_legion_guid		= 1; // 胜利军团的GUID
+	}
+	
+	message set_auto_accept_new_member_setting
+	{
+		optional uint64	role_guid				= 1; // 角色的GUIDs
+		optional bool	is_auto_accept			= 2; // 是否自动接受
+	}
+	
+	message set_player_legion_aoi_info
+	{
+		optional uint64	role_guid				= 1;
+		optional uint64	legion_guid				= 2;
+		optional string legion_name				= 3;
+		optional int32	job_title				= 4;
+	}
+	
+	message clear_player_legion_aoi_info
+	{
+		optional uint64	role_guid				= 1;
+	}
+	
+	message set_player_legion_boss_award_get_log
+	{
+		optional uint64	role_guid				= 1;
+		optional int32	get_logs_num			= 2;
+		repeated int32	get_logs				= 3;
+	}
+	
+	message get_city_master_info
+	{
+		optional uint64	role_guid				= 1;
+	}
+	
+	message get_city_master_info_end
+	{
+		optional uint64	master_guid				= 1; // 城主的GUID
+		optional string	master_name				= 2; // 城主的名字
+		optional uint64	legion_guid				= 3;
+		optional string	legion_name				= 4; // 城主所在军团的名字
+	}
+	
+	message get_occupation_daily_award
+	{
+		optional uint64	role_guid				= 1;
+		optional int32	terr_id					= 2;
+	}
+	
+	message get_occupation_daily_award_end
+	{
+		optional int32	terr_id					= 1;
+	}
+	
+	message get_legion_rank
+	{
+		optional uint64	role_guid				= 1;
+	}
+	
+	message get_legion_rank_end
+	{
+		optional int32	rank					= 1;
+	}
+	
+	message legion_error
+	{
+		optional int32 error_type				= 1;
+	}
+	
+	message create_bonfire_npc
+	{
+		optional uint64	role_guid				= 1; // 角色GUID
+	}
+	
+	message bonfire_info
+	{
+		optional int32	map_line_id				= 1;
+		optional int32	create_stamp			= 2;
+		optional int32	end_stamp				= 3;
+		repeated int32	postion					= 4;
+		optional int32	is_init					= 5;
+		optional uint64 bonfire_guid            = 6;
+	}
+	
+	message add_fuel_to_fire
+	{
+		optional uint64	role_guid				= 1; // 角色GUID
+	}
+	
+	message member_add_fuel_to_fire
+	{
+		optional uint64	fire_member_guid		= 1; // 加火的公会成员GUID
+		optional int32	fire_times				= 2; // 加火次数
+		optional int32	fire_times_history		= 3; // 加火总次数
+	}
+	
+	message recruit_in_world
+	{
+		optional uint64	role_guid				= 1; // 角色GUID
+		optional bool	is_rm_cd				= 2; // 角色GUID
+	}
+	
+	message recruit_in_world_end
+	{
+		optional int32	next_recruit_stamp		= 1; // 上次招募时间戳
+	}
+	
+	message draw_mem_daily_award
+	{
+	}
+	
+	message draw_bonfire_daily_award
+	{
+	}
+	
+	message bonfire_dead
+	{
+		optional uint64				legion_guid			= 1; // 篝火所在军团GUID
+	}
+	
+	message legion_call_operate
+	{
+		optional uint64				role_guid			= 1;
+		optional int32				call_type			= 2;
+		repeated int32				operate_params		= 3;
+	}
+	
+	message legion_call_operate_end
+	{
+		optional uint64				role_guid			= 1;
+		optional int32				call_type			= 2;
+		repeated int32				operate_params		= 3;
+	}
+	
+	message level_up_legion_skill
+	{
+		optional uint64				role_guid			= 1;
+		optional int32				skill_id			= 2;
+	}
+	
+	message level_up_legion_skill_end
+	{
+		optional int32				skill_id			= 2;
+	}
+	
+	message auction_is_selling
+	{
+		optional bool				is_selling			= 1;
+	}
+	
+	message legion_territory_buff_operate
+	{
+		optional int32				operate_type		= 1;
+		optional int32				territory_id		= 2;
+	}
+	
+	message legion_bonfire_map_info
+	{
+		repeated int32				map_info			= 1;
+		optional int32				cur_stage			= 2;
+	}
+	
+	message goto_next_stage_of_bonfire_map
+	{
+	}
+	
+	message transfer_to_bonfire_map
+	{
+	}
+	
+	message notice_new_item_in_legion_auction
+	{
+	}
+
+	message get_all_legion_skill_level_end
+	{
+		repeated int32	legion_skill_level				= 1;
+	}
+	
+	message get_legion_answer_question_info
+	{
+		optional uint32 role_guid = 1;
+	}
+	
+	message get_legion_answer_question_info_end
+	{
+		optional int32 question_template_id = 1;		//答题模板id
+		optional int32 question_index       = 2;		//第几道题
+		optional int32 time_left			= 3;		//剩余答题时间
+		optional int32 succeed_num			= 4;		//军团答题成功次数
+		optional bool  is_answer			= 5;		//是否有人抢答的成功
+		optional string play_name			= 6;		//抢答成功人的名字
+	}
+	
+	message legion_answer_result
+	{
+	}
+	
+	message legion_warehouse_item_info
+	{
+		optional int32						item_guid_A				    = 1;
+		optional int32						item_guid_B					= 2;
+		optional int64						add_time					= 3;
+		repeated int32						item_info					= 4;
+	}
+
+	message legion_warehouse_log
+	{
+		optional int64						add_time				    = 1;
+		optional int32						job					        = 2;
+		optional string						role_name					= 3;
+		optional int32						operation_type			    = 4;
+		optional int32						EItemInfo_info_id			= 5;
+	}
+
+	message req_legion_warehouse_item_info
+	{
+		
+	}
+
+	
+	message req_legion_warehouse_item_info_end
+	{
+		repeated legion_warehouse_item_info item_list                   = 1;
+		optional int32						is_final					= 2; // 0:没有结束 1:结束
+		optional int32                      is_clean                    = 3; // 0:需要清空 1:不需要
+	}
+
+	message operation_legion_warehouse_item
+	{
+		repeated int32						item_guid					= 1;
+		optional int32                      operation_type              = 2; // 操作类型 0:存入 1:取出 2:销毁
+		optional int64                      item_id                     = 3; // 道具id
+	}
+
+	message operation_legion_warehouse_item_end
+	{
+		optional int64						error_code					= 1; // 非0 表示操作有错误
+	}
+
+	message req_legion_warehouse_log
+	{
+		
+	}
+
+	message req_legion_warehouse_log_end
+	{
+		repeated legion_warehouse_log log_list                   = 1;
+	}
+
+	message req_change_legion_name			// 发送名字确实是否可以更改
+	{
+		optional string			legion_name				= 1; // 更改后军团的名字 
+	}
+
+	message req_change_legion_name_end			//告诉客户端可以进行修改
+	{
+		optional int32			ret						= 1;  // 返回错误原因
+	}
+
+	message req_confirm_change_legion_name		//确认修改军团名
+	{
+		optional bool			confirm_type			= 1;	// 确定改名
+		optional string			legion_name				= 2;	// 更改后军团的名字 
+	}
+	
+	message cross_city_info_one		
+	{
+		optional int32			legion_guid_a			= 1;	
+		optional int32			legion_guid_b			= 2;	
+		optional int32			server_id				= 3;	
+		optional int32			chief_guid_a			= 4;	
+		optional int32			chief_guid_b			= 5;	
+		optional int32			legion_rank				= 6;	
+		optional string			legion_name				= 7;
+	}
+	
+	message cross_city_info_all	
+	{
+		repeated cross_city_info_one	city_info_all			= 1;	
+		optional string					overload_chief_name		= 2;	
+		optional int32					over_chief_guid_a		= 3;
+		optional int32					over_chief_guid_b		= 4;
+	}
+	
+	message join_cross_city_war
+	{
+
+	}
+	
+	message legion_answer_end
+	{
+	
+	}
+	
+	message get_legion_answer_rank
+	{
+	
+	}
+	
+	message legion_answer_info_list
+	{
+		repeated string			legion_name				= 1;	//军团名称
+		repeated int32			score					= 2;	//军团分数
+		optional int32			m_rank					= 4;	//本军团排名
+		optional int32			m_score					= 3;	//本军团所答对题数
+	}
+	
+	message legion_answer_award_refresh
+	{
+		optional int32			award_num				= 1;
+	}
+	
+	
+	message go_to_legion_station_map
+	{
+	}
+	
+	message get_map_legion_player
+	{
+	}
+	
+	message legion_dance_player_info
+	{
+		optional int32			play_guid_a			= 1;	
+		optional int32			play_guid_b			= 2;	
+		optional string			play_name			= 3;
+		optional int32			play_level			= 4;
+		optional int32			play_template_id	= 5;
+	}
+	
+	message send_map_legion_player
+	{
+		repeated	legion_dance_player_info	play_info_arr	= 1;
+		optional	int32		play_num						= 2;
+	}
+	
+	message invite_legion_dance
+	{
+		optional int32			play_guid_a			= 1;	
+		optional int32			play_guid_b			= 2;	
+	}
+	
+	message invite_legion_dance_end
+	{
+		optional int32			error_index			= 1;	
+	}
+	
+	message	be_invite_legion_dance
+	{
+		optional int32			play_guid_a			= 1;	//邀请玩家信息	
+		optional int32			play_guid_b			= 2;	
+		optional string			play_name			= 3;
+		optional int32			play_level			= 4;
+		optional int32			play_template_id	= 5;
+	}
+	
+	message	be_invite_legion_dance_end
+	{
+		optional int32			play_guid_a			= 1;	
+		optional int32			play_guid_b			= 2;
+		optional bool			is_reception		= 3;	//是否接受邀请		
+	}
+	
+	message	legion_dance_end
+	{
+	}	
+	
+	message legion_dance_interaction_begin
+	{
+	}
+	
+	message legion_dance_interaction_end
+	{
+	}
+	message	legion_Dance_clear_data
+	{
+	}
+	message	add_bonfire_end				//用于客户端打日志
+	{
+	}
+	
+	message city_war_member_info
+	{
+		optional uint64			role_guid	= 1;  // 军团成员的角色GUID
+		optional string			role_name	= 2;  // 军团成员的角色名字
+		optional int32			player_temp_id	= 3;  // 军团成员模板
+		optional string			week_contribution= 4;// 周贡献
+		optional int32			job_title	= 5;  // 军团成员职位
+	}
+	
+	message legion_welfare_member_info
+	{
+		optional int32			role_guid_a	= 1;  // 军团成员的角色GUID
+		optional int32			role_guid_b	= 2;  // 军团成员的角色GUID
+		optional string			role_name	= 3;  // 军团成员的角色名字
+		optional int32			player_temp_id	= 4;  // 军团成员模板
+		optional string			week_contribution = 5;// 周贡献
+		optional int32			job_title	= 6;  // 军团成员职位
+	}
+
+	message city_war_members_info_list
+	{
+		repeated city_war_member_info	mems_info_arr	= 1;
+		optional bool					is_first		= 2;
+	}
+	
+	message legion_welfare_members_info_list
+	{
+		repeated legion_welfare_member_info	mems_info_arr	= 1;
+		optional bool					is_first		= 2;
+	}
+	
+	message legion_strategy_world_boss_info						
+	{
+		optional int32			low_boss_id	= 1;
+		optional int32			intermediate_boss_id		= 2;
+		optional int32			senior_boss_id	= 3;		
+	}
+	
+	message legion_strategy_info					
+	{
+		optional uint64			legion_guid			= 1; // 玩家所在军团GUID
+		optional uint64			role_guid				= 2; // 玩家GUID
+		optional int32			boss_level				= 3; //boss阶段
+	}
+	
+	message one_world_boss_info
+	{
+		optional int32			boss_level		= 1;		//boss等级(低中高)
+		optional int32			boss_id		= 2;		//boss_id
+		optional int32			legion_player_num	= 3;		//军团攻打成员数量
+	}
+	
+	message all_world_boss_info
+	{
+		repeated one_world_boss_info		world_boss_info_arr	= 1;
+		repeated one_world_boss_info		all_info = 2;
+	}
+	
+	message world_boss_score_info
+	{
+		optional uint64			role_guid		= 1;
+		optional string			role_name		= 2; 		
+		optional int64			role_score		= 3;				
+	}
+
+	message world_boss_strategy_result
+	{
+		repeated world_boss_score_info	legion_score_info		= 1;
+		repeated world_boss_score_info	personal_score_info		= 2;
+		optional world_boss_score_info		legion_extra_score		= 3;
+		optional world_boss_score_info		personal_extra_score		= 4;
+		optional int32			reward_level		= 5;
+	}
+}

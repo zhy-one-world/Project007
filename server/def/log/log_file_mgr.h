@@ -6,7 +6,7 @@
 #include "logger_base.hpp"
 #include "utility/cs_date.hpp"
 
-namespace hld
+namespace faith
 {
 	typedef std::unordered_map<xstring, std::shared_ptr<logger_base>>  file_log_map;
 

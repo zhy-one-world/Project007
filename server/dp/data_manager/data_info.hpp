@@ -11,7 +11,7 @@
 
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 	const int64 save_data_time = 300000;
 	class data_info

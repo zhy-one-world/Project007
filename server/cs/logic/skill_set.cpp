@@ -17,7 +17,7 @@
 #include "skill_effect.h"
 #include "template/SkillTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     skill_set::~skill_set()
 	{
@@ -605,7 +605,7 @@ namespace hld
 				skill_effect_msg.set_skill_template_id(msg_real_skill_id);
 				sender_unit.send_message_to_self(&skill_effect_msg, e_msgindex_s2c_skill_patron_saint_effect);
 			}
-			if (skill_template_ptr->Type == est_world_sky_sky_to_floor && sender_unit.get_pawn_att().get_game_att(e_unit_game_att_movement) != hld::e_move_ment_mount_fly)
+			if (skill_template_ptr->Type == est_world_sky_sky_to_floor && sender_unit.get_pawn_att().get_game_att(e_unit_game_att_movement) != faith::e_move_ment_mount_fly)
 			{
 				return;
 			}

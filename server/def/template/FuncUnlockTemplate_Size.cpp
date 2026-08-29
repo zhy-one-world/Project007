@@ -1,6 +1,6 @@
 #include "FuncUnlockTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void FuncUnlockTemplateSize()
     {

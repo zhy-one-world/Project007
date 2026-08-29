@@ -11,7 +11,7 @@
 #include "server_log.hpp"
 #include "parse_msg.h"
 
-namespace hld
+namespace faith
 {
 
 	parse_msg::parse_msg()

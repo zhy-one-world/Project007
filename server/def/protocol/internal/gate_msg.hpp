@@ -21,7 +21,7 @@
 #include "Logic/legion_def.hpp"
 
 
-namespace hld 
+namespace faith 
 {
 #pragma pack(push,1)
 	//-----------------------------------------------------------------------------------

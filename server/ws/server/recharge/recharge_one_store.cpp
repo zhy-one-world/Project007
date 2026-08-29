@@ -13,7 +13,7 @@ purpose:
 #include "md5/md5.h"
 #include <json/json.h>
 #include "server_log.hpp"
-namespace hld
+namespace faith
 {
 	void recharge_one_store::req_recharge(const s_recharge_info& recharge_info)
 	{

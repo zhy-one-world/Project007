@@ -31,7 +31,7 @@
 #include "game.pb.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	legion_ws::legion_ws(guid_64 legion_guid)
 	{
@@ -1272,7 +1272,7 @@ namespace hld
 		}
 	}
 
-	const LegionConstructionsTemplate* legion_ws::get_legion_cfg(hld::ELegionInfo construction_index) const
+	const LegionConstructionsTemplate* legion_ws::get_legion_cfg(faith::ELegionInfo construction_index) const
 	{
 		int32 cur_legion_level = get_legion_info(construction_index);
 		int32 legion_template_id = first_legion_template_id + cur_legion_level - 1;
@@ -1761,7 +1761,7 @@ namespace hld
 			}
 		}
 
-		const LegionConstructionsTemplate* legion_template_ptr = get_legion_cfg((hld::ELegionInfo)construction_index);
+		const LegionConstructionsTemplate* legion_template_ptr = get_legion_cfg((faith::ELegionInfo)construction_index);
 		if (nullptr == legion_template_ptr)
 		{
 			return e_legion_construction_level_up_error_table_data_error;
@@ -2569,7 +2569,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::set_player_legion_info pro_msg;
+			faith::ws2cs_proto::set_player_legion_info pro_msg;
 			set_player_legion_info_msg.to_proto(pro_msg);
 			mem_session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_set_player_legion_info);
 
@@ -2602,7 +2602,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::set_player_legion_info pro_msg;
+				faith::ws2cs_proto::set_player_legion_info pro_msg;
 				set_player_legion_info_msg.to_proto(pro_msg);
 				session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_set_player_legion_info);
 			}
@@ -3314,13 +3314,13 @@ namespace hld
 
 	void legion_ws::notice_on_create_bonfire()
 	{
-		hld::template_manager::template_type* map_table = template_manager::get_instance().get_templates(e_MapTemplate);
+		faith::template_manager::template_type* map_table = template_manager::get_instance().get_templates(e_MapTemplate);
 		if (nullptr == map_table)
 		{
 			return;
 		}
 		int32 bornfire_map_id = 0;
-		hld::template_manager::template_type::iterator ite;
+		faith::template_manager::template_type::iterator ite;
 		for (ite = map_table->begin(); ite != map_table->end(); ++ite)
 		{
 			MapTemplate* map_template_ptr = (MapTemplate*)(ite->second);
@@ -3328,7 +3328,7 @@ namespace hld
 			{
 				continue;
 			}
-			if (map_template_ptr->Type == hld::e_map_type_legion_bonfire)
+			if (map_template_ptr->Type == faith::e_map_type_legion_bonfire)
 			{
 				bornfire_map_id = map_template_ptr->attribute_id;
 				break;
@@ -3447,7 +3447,7 @@ namespace hld
 		msg.set_is_when_create(is_send_when_create);
 		msg.set_legion_master_name(get_chief_name());
 		msg.set_legion_level(get_legion_info(ELegionInfo_construction_level_main));
-		msg.set_sender_template_id(session->get_role_info_data(hld::e_role_info_template_id));
+		msg.set_sender_template_id(session->get_role_info_data(faith::e_role_info_template_id));
 		client_session_mgr::getInstance().send_message_to_all_client(&msg, e_msgindex_s2c_reveive_legion_recruit);
 	}
 
@@ -3492,7 +3492,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::get_map_info_from_cs pro_msg;
+			faith::ws2cs_proto::get_map_info_from_cs pro_msg;
 
 			get_map_info_from_cs_msg.to_proto(pro_msg);
 			cs_map_system::send_message_to_cs_lua(map_ent, &pro_msg, e_msg_index_ws2cs_get_map_info_from_cs);
@@ -3538,7 +3538,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::set_legion_average_lv_to_map pro_msg;
+			faith::ws2cs_proto::set_legion_average_lv_to_map pro_msg;
 			msg.to_proto(pro_msg);
 			cs_map_system::send_message_to_cs_lua(map_ent ,&pro_msg, e_msg_index_ws2cs_set_legion_average_lv_to_map);
 		}
@@ -3581,7 +3581,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::level_up_legion_skill pro_msg;
+			faith::ws2cs_proto::level_up_legion_skill pro_msg;
 			level_up_legion_skill_msg.to_proto(pro_msg);
 			player_session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_level_up_legion_skill);
 		}
@@ -3859,14 +3859,14 @@ namespace hld
 	{
 		switch (legion_type)
 		{
-		case hld::e_legion_rank_type_fighting_power:
+		case faith::e_legion_rank_type_fighting_power:
 			return e_RankingIndex_legion_core;
 			break;
-		case hld::e_legion_rank_type_city_war:
+		case faith::e_legion_rank_type_city_war:
 			return e_RankingIndex_legion_territory;
 			break;
-		case hld::e_legion_rank_type_world_elite:
-		case hld::e_legion_rank_type_world_boss:
+		case faith::e_legion_rank_type_world_elite:
+		case faith::e_legion_rank_type_world_boss:
 		{
 			if (-1 != sub_id)
 			{
@@ -3878,17 +3878,17 @@ namespace hld
 			}
 		}
 		break;
-		case hld::e_legion_rank_type_raid:
+		case faith::e_legion_rank_type_raid:
 		{
 			return e_RankingIndex_legion_boss;
 		}
 		break;
-		case hld::e_legion_rank_type_bonfire:
+		case faith::e_legion_rank_type_bonfire:
 		{
 			return e_RankingIndex_legion_bonfire;
 		}
 		break;
-		case hld::e_legion_rank_type_max:
+		case faith::e_legion_rank_type_max:
 			break;
 		default:
 			break;
@@ -3966,7 +3966,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::transfer_this_map_all_player pro_msg;
+			faith::ws2cs_proto::transfer_this_map_all_player pro_msg;
 			msg.to_proto(pro_msg);
 			cs_map_system::send_message_to_cs_lua(map_ent, &pro_msg, e_msg_index_ws2cs_transfer_all_player_this_map);
 		}
@@ -4001,7 +4001,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::set_legion_guid_to_map pro_msg;
+			faith::ws2cs_proto::set_legion_guid_to_map pro_msg;
 			msg.to_proto(pro_msg);
 			cs_map_system::send_message_to_cs_lua(map_ent, &pro_msg, e_msg_index_ws2cs_set_legion_guid_to_map);
 		}
@@ -4052,7 +4052,7 @@ namespace hld
 		m_kill_legion_boss_name = _killer_name;
 	}
 
-	int32 hld::legion_ws::get_job_title_num(int32 job_title)
+	int32 faith::legion_ws::get_job_title_num(int32 job_title)
 	{
 		int32 job_num = 0;
 		for (s_legion_member_info& legion_member_data : m_member_list)
@@ -4065,7 +4065,7 @@ namespace hld
 		return job_num;
 	}
 
-	int64 hld::legion_ws::get_last_stimulated_stamp_by_guid(guid_64 player_guid)
+	int64 faith::legion_ws::get_last_stimulated_stamp_by_guid(guid_64 player_guid)
 	{
 		unit_guid_map_it ite;
 		ite = m_last_stimulate_bonus_stamp.find(player_guid.server_64);
@@ -4076,29 +4076,29 @@ namespace hld
 		return ite->second;
 	}
 
-	void hld::legion_ws::insert_last_stimulated_stamp(guid_64 player_guid, int64 stmp)
+	void faith::legion_ws::insert_last_stimulated_stamp(guid_64 player_guid, int64 stmp)
 	{
 		m_last_stimulate_bonus_stamp[player_guid.server_64] = stmp;
 	}
 
-	void hld::legion_ws::join_voice_channel(guid_64 role_guid)
+	void faith::legion_ws::join_voice_channel(guid_64 role_guid)
 	{
 		bool is_first_join = true;
 		for (s_legion_member_info& legion_member_info : m_member_list)
 		{
-			if (legion_member_info.data_ary[hld::e_legion_member_info_agora_id] != 0)
+			if (legion_member_info.data_ary[faith::e_legion_member_info_agora_id] != 0)
 			{
 				is_first_join = false;
 			}
 		}
 
-		update_member_info_one(role_guid, hld::e_legion_member_info_agora_id, 1, true);
+		update_member_info_one(role_guid, faith::e_legion_member_info_agora_id, 1, true);
 
 		if (is_first_join == true)
 		{
-			hld::chat_proto_invite_join_voice_channel msg;
+			faith::chat_proto_invite_join_voice_channel msg;
 			msg.set_role_guid(role_guid.server_64);
-			msg.set_channel_type(hld::e_chat_type_legion);
+			msg.set_channel_type(faith::e_chat_type_legion);
 			send_message_to_all_member_except(&msg, e_msgindex_s2c_invite_join_voice_channel, role_guid);
 		}
 		else
@@ -4108,15 +4108,15 @@ namespace hld
 			{
 				return;
 			}
-			hld::chat_proto_join_or_leave_voice_channel_notice msg;
-			msg.set_channel_type(hld::e_chat_type_legion);
+			faith::chat_proto_join_or_leave_voice_channel_notice msg;
+			msg.set_channel_type(faith::e_chat_type_legion);
 			msg.set_role_name(member_info->role_name);
 			msg.set_is_join(true);
 			send_message_to_all_member_except(&msg, e_msgindex_s2c_join_or_leave_voice_channel_notice, role_guid);
 		}
 	}
 
-	void hld::legion_ws::leave_voie_channel(guid_64 role_guid)
+	void faith::legion_ws::leave_voie_channel(guid_64 role_guid)
 	{
 		s_legion_member_info* member_info = get_member(role_guid);
 		if (member_info == nullptr)
@@ -4124,15 +4124,15 @@ namespace hld
 			return;
 		}
 
-		int32 agora_id = member_info->data_ary[hld::e_legion_member_info_agora_id];
+		int32 agora_id = member_info->data_ary[faith::e_legion_member_info_agora_id];
 		if (agora_id == 0)
 		{
 			return;
 		}
-		update_member_info_one(role_guid, hld::e_legion_member_info_agora_id, 0, true);
+		update_member_info_one(role_guid, faith::e_legion_member_info_agora_id, 0, true);
 
-		hld::chat_proto_join_or_leave_voice_channel_notice msg;
-		msg.set_channel_type(hld::e_chat_type_legion);
+		faith::chat_proto_join_or_leave_voice_channel_notice msg;
+		msg.set_channel_type(faith::e_chat_type_legion);
 		msg.set_role_name(member_info->role_name);
 		msg.set_is_join(false);
 		send_message_to_all_member_except(&msg, e_msgindex_s2c_join_or_leave_voice_channel_notice, role_guid);
@@ -4512,7 +4512,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::rem_item_change_legion_name_care pro_msg;
+			faith::ws2cs_proto::rem_item_change_legion_name_care pro_msg;
 			msg.to_proto(pro_msg);
 			session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_rem_item_change_legion_name_care);
 		}
@@ -4564,7 +4564,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::confirm_change_legion_name pro_msg;
+				faith::ws2cs_proto::confirm_change_legion_name pro_msg;
 				msg.to_proto(pro_msg);
 				legion_session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_confirm_change_legion_name);
 			}

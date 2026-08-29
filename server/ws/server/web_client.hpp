@@ -8,7 +8,7 @@
 #include <net/net_client_mgr.hpp>
 #include "recharge_mgr_ws.hpp"
 
-namespace hld
+namespace faith
 {
 	class web_client
 	{

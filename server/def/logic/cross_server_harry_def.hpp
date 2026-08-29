@@ -11,7 +11,7 @@
 #include "char_def.hpp"
 #include "game_enum_def_s.h"
 
-namespace hld 
+namespace faith 
 {
 #pragma pack(push,1)
 
@@ -99,7 +99,7 @@ namespace hld
 		{
 			memset(first_player_name, 0, sizeof(first_player_name));
 		}
-		bool to_proto(hld::st_proto::st_server_harry_msg* st_harry_ptr)
+		bool to_proto(faith::st_proto::st_server_harry_msg* st_harry_ptr)
 		{
 			if (st_harry_ptr == nullptr)
 			{
@@ -123,7 +123,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::st_proto::st_server_harry_msg& st_harry_ref)
+		void from_proto(const faith::st_proto::st_server_harry_msg& st_harry_ref)
 		{
 			server_id = st_harry_ref.server_id();
 			server_money = st_harry_ref.server_money();

@@ -1,6 +1,6 @@
 #include "WaveTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void WaveTemplateSize()
     {

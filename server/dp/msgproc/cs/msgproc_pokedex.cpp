@@ -16,20 +16,20 @@ purpose:
 #include "dp2cs.pb.h"
 #include "cs2dp.pb.h"
 
-namespace hld
+namespace faith
 {
 	static void cs2dp_load_role_pokedex_send_lua(uint32 connindex, const dp2cs_load_char_pokedex & msgData)
 	{
-		hld::dp2cs_proto::load_role_db_data msg;
+		faith::dp2cs_proto::load_role_db_data msg;
 		msg.set_role_guid(msgData.role_guid.server_64);
 		msg.set_unit_array_index(msgData.unit_array_index);
 
-		hld::cs2dp_proto::role_pokedex_db msg_db;
+		faith::cs2dp_proto::role_pokedex_db msg_db;
 		msg_db.set_row_count(msgData.data_num);
 
 		for (int32 i = 0; i < msg_db.row_count(); i++)
 		{
-			hld::cs2dp_proto::role_pokedex_row *db_row = msg_db.add_row_data();
+			faith::cs2dp_proto::role_pokedex_row *db_row = msg_db.add_row_data();
 			if (db_row == nullptr)
 			{
 				return;
@@ -140,7 +140,7 @@ namespace hld
 		guid_64 role_guid;
 		role_guid.server_64 = role_id;
 
-		hld::cs2dp_proto::role_pokedex_db msg;
+		faith::cs2dp_proto::role_pokedex_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -159,7 +159,7 @@ namespace hld
 
 		for (int32 i = 0; i < row_count; i++)
 		{
-			hld::cs2dp_proto::role_pokedex_row one_row = msg.row_data(i);
+			faith::cs2dp_proto::role_pokedex_row one_row = msg.row_data(i);
 			for (int32 j = 0; j < one_row.data_ary_size(); j++)
 			{
 				p_row->data_ary[j] = one_row.data_ary(j);
@@ -244,11 +244,11 @@ namespace hld
 
 	static void cs2dp_load_role_tinder_send_lua(uint32 connindex, const dp2cs_load_char_tinder& msgData)
 	{
-		hld::dp2cs_proto::load_role_db_data msg;
+		faith::dp2cs_proto::load_role_db_data msg;
 		msg.set_role_guid(msgData.role_guid.server_64);
 		msg.set_unit_array_index(msgData.unit_array_index);
 
-		hld::cs2dp_proto::role_tinder_db  msg_db;
+		faith::cs2dp_proto::role_tinder_db  msg_db;
 		for (int32 i = 0; i < e_tinder_info_max; i++)
 		{
 			msg_db.add_data_ary(msgData.tinder_data.data_ary[i]);
@@ -351,7 +351,7 @@ namespace hld
 
 		s_tinder_info db_row_info;
 
-		hld::cs2dp_proto::role_tinder_db msg;
+		faith::cs2dp_proto::role_tinder_db msg;
 
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)

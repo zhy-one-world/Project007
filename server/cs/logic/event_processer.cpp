@@ -17,7 +17,7 @@ purpose:
 #include "internet/net.pb.h"
 #include "utility/random.h"
 
-namespace hld
+namespace faith
 {
 	void game_event_handler::change_event_param(int32 owner_index, int32 skill_template_id, int64 skill_cd, bool apply, const std::vector<int32>& event_condition)
 	{

@@ -13,7 +13,7 @@
 #include "logic/type_def.hpp"
 #include "server_def.hpp"
 
-namespace hld 
+namespace faith 
 {
 #pragma pack(push,1)
 

@@ -1,0 +1,97 @@
+syntax = "proto2";
+package hld;
+
+message pokedex_proto
+{
+
+    message pokedex_info
+	{
+		repeated int32 pokedex_data			= 1;
+		repeated int32 collect_num			= 2;
+	}
+	
+	message pokedex_operate
+	{
+		optional uint32 operation_type			= 1;
+        optional int32 pokedex_template_id      = 2;
+		optional int32 operate_index			= 3;
+	}
+	
+	message pokedex_operate_result_end
+	{
+		optional int32 operate_type				= 1;
+		optional int32 operate_result			= 2;
+	}
+	
+    message update_character_pokedex_one
+	{
+		repeated int32 			role_guid				= 1;
+		repeated int32 			pokedex_data			= 2;
+		repeated int32 			collect_num				= 3;
+	}
+
+	message update_tinder_info_all
+	{
+		repeated int32 tinder_info						= 1;
+	}
+	
+	message update_tinder_info_one
+	{
+		optional int32 info_index						= 1;
+		optional int32 info_value						= 2;
+	}
+
+     message pokedex_operate_end
+	{
+        optional int32 pokedex_template_id              = 1;
+		optional int32 end_result			        	= 2;    
+		repeated int32 submit_item_array				= 3;
+	}
+
+    message update_character_pokedex_all
+	{
+		repeated int32 role_guid		        = 1;
+		repeated pokedex_info pokedex_list		= 2;
+	}
+
+	message protect_operate
+	{
+		optional uint32 operation_type			= 1;
+		repeated int32 	item_guid		        = 2;
+        optional int32 	item_solt				= 3;   	
+	}
+	
+    message tinder_operate
+	{
+		optional int32 operation_type			= 1;	
+	}
+	
+	message tinder_operate_end
+	{
+		optional int32 operation_type			= 1;
+		optional int32 result					= 2;
+	}
+	
+	message patron_saint_operate_end
+	{
+		optional int32  operation_type			= 1;
+		optional int32  operation_state			= 2;
+	}
+	
+    message protect_spirit_operation_end
+	{
+		optional int32  operation_state          = 1;		
+	}   		
+
+	message psyche_recovery
+	{	
+		repeated int32 item_guid_ary		= 1;
+		optional int32 item_num				= 2;
+	}
+
+ 	message psyche_recovery_end
+	{
+		optional int32  operation_state          = 1;	
+	}
+	
+}

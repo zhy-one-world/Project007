@@ -1,6 +1,6 @@
 #include "ResourceTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void ResourceTemplateSize()
     {

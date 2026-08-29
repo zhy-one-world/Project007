@@ -11,7 +11,7 @@
 #include "utility/init_unit.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	legion_ws_answer::legion_ws_answer()
 	{
@@ -447,7 +447,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::legion_answer_question_right pro_msg;
+			faith::ws2cs_proto::legion_answer_question_right pro_msg;
 			msg.to_proto(pro_msg);
 			player_session->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_legion_answer_question_right);
 		}

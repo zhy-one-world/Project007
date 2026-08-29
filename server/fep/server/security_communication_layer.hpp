@@ -14,7 +14,7 @@
 #include "logic/type_def.hpp"
 #include "base.hpp"
 
-namespace hld
+namespace faith
 {
 	//	基于RDE方法的“通信安全层”（SCL）实现
 	//	实现 FEP 和 Client 之间的通信安全层

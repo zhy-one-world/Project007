@@ -15,7 +15,7 @@
 #include "time_limit_activity_temp_mgr.hpp"
 #include "utility/init_unit.h"
 
-namespace hld
+namespace faith
 {
 	skytreasure_mgr::skytreasure_mgr()
 	{

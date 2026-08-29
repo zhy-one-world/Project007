@@ -26,7 +26,7 @@
 #include "../server/csv_synchronization_fep_mgr.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	void ws2fep_broadcast_msg_fun(uint32 connindex, const void *data_ptr, size_t data_len)
 	{

@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_starark_2eproto();
@@ -120,7 +120,7 @@ class starark_proto_starark_all : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_round_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.starark_proto.starark_all)
+  // @@protoc_insertion_point(class_scope:faith.starark_proto.starark_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -222,7 +222,7 @@ class starark_proto_starark_operate : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 oper_param3() const;
   inline void set_oper_param3(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.starark_proto.starark_operate)
+  // @@protoc_insertion_point(class_scope:faith.starark_proto.starark_operate)
  private:
   inline void set_has_oper_type();
   inline void clear_has_oper_type();
@@ -334,7 +334,7 @@ class starark_proto_starark_operate_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 num() const;
   inline void set_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.starark_proto.starark_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.starark_proto.starark_operate_end)
  private:
   inline void set_has_oper_type();
   inline void clear_has_oper_type();
@@ -418,24 +418,24 @@ class starark_proto_starark_five_round_rewad_list : public ::google::protobuf::M
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.starark_proto.starark_rewad_item item_list = 1;
+  // repeated .faith.starark_proto.starark_rewad_item item_list = 1;
   inline int item_list_size() const;
   inline void clear_item_list();
   static const int kItemListFieldNumber = 1;
-  inline const ::hld::starark_proto_starark_rewad_item& item_list(int index) const;
-  inline ::hld::starark_proto_starark_rewad_item* mutable_item_list(int index);
-  inline ::hld::starark_proto_starark_rewad_item* add_item_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::starark_proto_starark_rewad_item >&
+  inline const ::faith::starark_proto_starark_rewad_item& item_list(int index) const;
+  inline ::faith::starark_proto_starark_rewad_item* mutable_item_list(int index);
+  inline ::faith::starark_proto_starark_rewad_item* add_item_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::starark_proto_starark_rewad_item >&
       item_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::starark_proto_starark_rewad_item >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::starark_proto_starark_rewad_item >*
       mutable_item_list();
 
-  // @@protoc_insertion_point(class_scope:hld.starark_proto.starark_five_round_rewad_list)
+  // @@protoc_insertion_point(class_scope:faith.starark_proto.starark_five_round_rewad_list)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::starark_proto_starark_rewad_item > item_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::starark_proto_starark_rewad_item > item_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -517,7 +517,7 @@ class starark_proto_starark_rewad_item : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 item_num() const;
   inline void set_item_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.starark_proto.starark_rewad_item)
+  // @@protoc_insertion_point(class_scope:faith.starark_proto.starark_rewad_item)
  private:
   inline void set_has_item_id();
   inline void clear_has_item_id();
@@ -601,7 +601,7 @@ class starark_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.starark_proto)
+  // @@protoc_insertion_point(class_scope:faith.starark_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -862,27 +862,27 @@ inline void starark_proto_starark_operate_end::set_num(::google::protobuf::int32
 
 // starark_proto_starark_five_round_rewad_list
 
-// repeated .hld.starark_proto.starark_rewad_item item_list = 1;
+// repeated .faith.starark_proto.starark_rewad_item item_list = 1;
 inline int starark_proto_starark_five_round_rewad_list::item_list_size() const {
   return item_list_.size();
 }
 inline void starark_proto_starark_five_round_rewad_list::clear_item_list() {
   item_list_.Clear();
 }
-inline const ::hld::starark_proto_starark_rewad_item& starark_proto_starark_five_round_rewad_list::item_list(int index) const {
+inline const ::faith::starark_proto_starark_rewad_item& starark_proto_starark_five_round_rewad_list::item_list(int index) const {
   return item_list_.Get(index);
 }
-inline ::hld::starark_proto_starark_rewad_item* starark_proto_starark_five_round_rewad_list::mutable_item_list(int index) {
+inline ::faith::starark_proto_starark_rewad_item* starark_proto_starark_five_round_rewad_list::mutable_item_list(int index) {
   return item_list_.Mutable(index);
 }
-inline ::hld::starark_proto_starark_rewad_item* starark_proto_starark_five_round_rewad_list::add_item_list() {
+inline ::faith::starark_proto_starark_rewad_item* starark_proto_starark_five_round_rewad_list::add_item_list() {
   return item_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::starark_proto_starark_rewad_item >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::starark_proto_starark_rewad_item >&
 starark_proto_starark_five_round_rewad_list::item_list() const {
   return item_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::starark_proto_starark_rewad_item >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::starark_proto_starark_rewad_item >*
 starark_proto_starark_five_round_rewad_list::mutable_item_list() {
   return &item_list_;
 }
@@ -942,7 +942,7 @@ inline void starark_proto_starark_rewad_item::set_item_num(::google::protobuf::i
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

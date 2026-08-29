@@ -10,7 +10,7 @@ purpose:
 #include "aoi_tower.h"
 #include "count_def.hpp"
 
-namespace hld
+namespace faith
 {
 	aoi_tower::aoi_tower()
 	{

@@ -8,7 +8,7 @@
 #include <singleton.hpp>
 #include "logic/type_def.hpp"
 #include <string.h>
-namespace hld {
+namespace faith {
 	class Base64 {
 	private:
 		static std::string _base64_table;

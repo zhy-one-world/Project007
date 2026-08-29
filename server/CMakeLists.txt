@@ -12,6 +12,13 @@ list(APPEND ComponentAllSubDir "ws")
 # 设置 PROJECT_COMPONENT_DIR 变量为 ZhyServer 路径. 方便其他访问
 set(PROJECT_COMPONENT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 
+# SeverBase 公共头文件目录
+set(SERVER_BASE_PUBLIC_DIR "E:/Project/SeverBase/include/public")
+include_directories(
+    ${SERVER_BASE_PUBLIC_DIR}
+    ${SERVER_BASE_PUBLIC_DIR}/common
+)
+
 # 遍历每个组件目录. 调用生成
 foreach(dirname ${ComponentAllSubDir}) 
     add_subdirectory(${dirname})

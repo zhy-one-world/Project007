@@ -11,7 +11,7 @@ purpose: about title
 
 #include "title.h"
 
-namespace hld
+namespace faith
 {
 	typedef std::map<int32, ctitle> title_map;
 	typedef title_map::iterator title_map_it;
@@ -43,7 +43,7 @@ namespace hld
 		int32			get_title_template_id_by_type(e_title_type title_type);
 		int32			get_template_id_by_type_and_value(e_title_type title_type, int32 value1, int32  value2);
 		void			add_loading_finish_title_type(e_title_type title_type, e_title_special_handle handle_type);
-		void			add_loading_ranking_finish_title_type( const bool(&loading_title_flag)[hld::e_title_type_max]);
+		void			add_loading_ranking_finish_title_type( const bool(&loading_title_flag)[faith::e_title_type_max]);
 
 		int32 get_first_active_title_template_id();
 

@@ -3,7 +3,7 @@
 
 #include "recycle.h"
 
-namespace hld
+namespace faith
 {
 	class player;
 	class unit;

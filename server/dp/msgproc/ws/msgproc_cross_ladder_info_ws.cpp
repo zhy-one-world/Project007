@@ -13,7 +13,7 @@ purpose: ¿ç·şÌìÌİ
 #include <cross_ladder_msg.hpp>
 #include <char_msg.hpp>
 
-namespace hld
+namespace faith
 {
 	void ws2dp_cross_ladder_load_info_proc(uint32 connindex, const void *data_ptr, size_t data_len)
 	{

@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_character_2eproto();
@@ -303,7 +303,7 @@ class character_proto_enum_character : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 area_id() const;
   inline void set_area_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.enum_character)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.enum_character)
  private:
   inline void set_has_account();
   inline void clear_has_account();
@@ -515,16 +515,16 @@ class character_proto_enum_character_end_info : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 spirit_upgrade_count() const;
   inline void set_spirit_upgrade_count(::google::protobuf::int32 value);
 
-  // repeated .hld.character_proto.enum_character_item item_info = 18;
+  // repeated .faith.character_proto.enum_character_item item_info = 18;
   inline int item_info_size() const;
   inline void clear_item_info();
   static const int kItemInfoFieldNumber = 18;
-  inline const ::hld::character_proto_enum_character_item& item_info(int index) const;
-  inline ::hld::character_proto_enum_character_item* mutable_item_info(int index);
-  inline ::hld::character_proto_enum_character_item* add_item_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::character_proto_enum_character_item >&
+  inline const ::faith::character_proto_enum_character_item& item_info(int index) const;
+  inline ::faith::character_proto_enum_character_item* mutable_item_info(int index);
+  inline ::faith::character_proto_enum_character_item* add_item_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::character_proto_enum_character_item >&
       item_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::character_proto_enum_character_item >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::character_proto_enum_character_item >*
       mutable_item_info();
 
   // optional int64 login_out_time = 19;
@@ -562,7 +562,7 @@ class character_proto_enum_character_end_info : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 is_only_create_role() const;
   inline void set_is_only_create_role(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.enum_character_end_info)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.enum_character_end_info)
  private:
   inline void set_has_last_role();
   inline void clear_has_last_role();
@@ -626,7 +626,7 @@ class character_proto_enum_character_end_info : public ::google::protobuf::Messa
   ::google::protobuf::int64 spirit_guid_;
   ::google::protobuf::int32 spirit_illusion_index_;
   ::google::protobuf::int32 spirit_upgrade_count_;
-  ::google::protobuf::RepeatedPtrField< ::hld::character_proto_enum_character_item > item_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::character_proto_enum_character_item > item_info_;
   ::google::protobuf::int64 login_out_time_;
   ::google::protobuf::int32 show_fashion_;
   ::google::protobuf::int32 head_frame_id_;
@@ -723,7 +723,7 @@ class character_proto_enum_character_item : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_item_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.enum_character_item)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.enum_character_item)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -889,7 +889,7 @@ class character_proto_create_character : public ::google::protobuf::Message {
   inline ::std::string* release_appearance();
   inline void set_allocated_appearance(::std::string* appearance);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.create_character)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.create_character)
  private:
   inline void set_has_account();
   inline void clear_has_account();
@@ -1039,7 +1039,7 @@ class character_proto_create_character_end : public ::google::protobuf::Message 
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_info();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.create_character_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.create_character_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -1157,7 +1157,7 @@ class character_proto_delete_character : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 server_id() const;
   inline void set_server_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.delete_character)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.delete_character)
  private:
   inline void set_has_account();
   inline void clear_has_account();
@@ -1262,7 +1262,7 @@ class character_proto_delete_character_end : public ::google::protobuf::Message 
   inline ::google::protobuf::uint32 del_type() const;
   inline void set_del_type(::google::protobuf::uint32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.delete_character_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.delete_character_end)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -1416,7 +1416,7 @@ class character_proto_unit_info_msg : public ::google::protobuf::Message {
   inline const ::google::protobuf::RepeatedPtrField< ::std::string>& data_str_ary() const;
   inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_data_str_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.unit_info_msg)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.unit_info_msg)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -1517,7 +1517,7 @@ class character_proto_unit_info_body_att : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_base_body_att();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.unit_info_body_att)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.unit_info_body_att)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1611,7 +1611,7 @@ class character_proto_role_info_one : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 info_value() const;
   inline void set_info_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.role_info_one)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.role_info_one)
  private:
   inline void set_has_unit_guid();
   inline void clear_has_unit_guid();
@@ -1713,7 +1713,7 @@ class character_proto_role_i64_info_one : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 info_type() const;
   inline void set_info_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.role_i64_info_one)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.role_i64_info_one)
  private:
   inline void set_has_unit_guid();
   inline void clear_has_unit_guid();
@@ -1806,7 +1806,7 @@ class character_proto_att_one_level : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< float >*
       mutable_att_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.att_one_level)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.att_one_level)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1922,7 +1922,7 @@ class character_proto_character_all_att : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< bool >*
       mutable_attack_state();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.character_all_att)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.character_all_att)
  private:
   inline void set_has_unit_guid();
   inline void clear_has_unit_guid();
@@ -2019,7 +2019,7 @@ class character_proto_base_att_all : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_att_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.base_att_all)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.base_att_all)
  private:
   inline void set_has_unit_guid();
   inline void clear_has_unit_guid();
@@ -2116,7 +2116,7 @@ class character_proto_base_att_one : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 att_value() const;
   inline void set_att_value(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.base_att_one)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.base_att_one)
  private:
   inline void set_has_unit_guid();
   inline void clear_has_unit_guid();
@@ -2211,7 +2211,7 @@ class character_proto_character_one_att_change : public ::google::protobuf::Mess
   inline double attack_att_value() const;
   inline void set_attack_att_value(double value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.character_one_att_change)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.character_one_att_change)
  private:
   inline void set_has_attack_att_index();
   inline void clear_has_attack_att_index();
@@ -2320,7 +2320,7 @@ class character_proto_character_one_att : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< double >*
       mutable_attack_att_value();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.character_one_att)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.character_one_att)
  private:
   inline void set_has_unit_guid();
   inline void clear_has_unit_guid();
@@ -2432,7 +2432,7 @@ class character_proto_unit_dead : public ::google::protobuf::Message {
   inline bool is_critical() const;
   inline void set_is_critical(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.unit_dead)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.unit_dead)
  private:
   inline void set_has_unit_guid();
   inline void clear_has_unit_guid();
@@ -2533,7 +2533,7 @@ class character_proto_ask_unit_dead : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 runtime_id() const;
   inline void set_runtime_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.ask_unit_dead)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.ask_unit_dead)
  private:
   inline void set_has_unit_guid();
   inline void clear_has_unit_guid();
@@ -2630,7 +2630,7 @@ class character_proto_character_money_all : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_money_value();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.character_money_all)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.character_money_all)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -2727,7 +2727,7 @@ class character_proto_character_money_one : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 money_value() const;
   inline void set_money_value(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.character_money_one)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.character_money_one)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -2836,7 +2836,7 @@ class character_proto_character_get_money : public ::google::protobuf::Message {
   inline const ::google::protobuf::RepeatedPtrField< ::std::string>& money_num_array() const;
   inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_money_num_array();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.character_get_money)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.character_get_money)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2929,7 +2929,7 @@ class character_proto_character_time_all : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_time_value();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.character_time_all)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.character_time_all)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3026,7 +3026,7 @@ class character_proto_character_time_one : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 time_value() const;
   inline void set_time_value(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.character_time_one)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.character_time_one)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3126,7 +3126,7 @@ class character_proto_character_logic_all : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_logic_value();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.character_logic_all)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.character_logic_all)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3223,7 +3223,7 @@ class character_proto_character_logic_one : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 logic_value() const;
   inline void set_logic_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.character_logic_one)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.character_logic_one)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3325,7 +3325,7 @@ class character_proto_pos_vector : public ::google::protobuf::Message {
   inline float z() const;
   inline void set_z(float value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.pos_vector)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.pos_vector)
  private:
   inline void set_has_x();
   inline void clear_has_x();
@@ -3427,7 +3427,7 @@ class character_proto_rot_angle : public ::google::protobuf::Message {
   inline float p() const;
   inline void set_p(float value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.rot_angle)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.rot_angle)
  private:
   inline void set_has_r();
   inline void clear_has_r();
@@ -3515,34 +3515,34 @@ class character_proto_character_move : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 unit_guid() const;
   inline void set_unit_guid(::google::protobuf::int64 value);
 
-  // optional .hld.character_proto.pos_vector position = 2;
+  // optional .faith.character_proto.pos_vector position = 2;
   inline bool has_position() const;
   inline void clear_position();
   static const int kPositionFieldNumber = 2;
-  inline const ::hld::character_proto_pos_vector& position() const;
-  inline ::hld::character_proto_pos_vector* mutable_position();
-  inline ::hld::character_proto_pos_vector* release_position();
-  inline void set_allocated_position(::hld::character_proto_pos_vector* position);
+  inline const ::faith::character_proto_pos_vector& position() const;
+  inline ::faith::character_proto_pos_vector* mutable_position();
+  inline ::faith::character_proto_pos_vector* release_position();
+  inline void set_allocated_position(::faith::character_proto_pos_vector* position);
 
-  // optional .hld.character_proto.pos_vector direction = 3;
+  // optional .faith.character_proto.pos_vector direction = 3;
   inline bool has_direction() const;
   inline void clear_direction();
   static const int kDirectionFieldNumber = 3;
-  inline const ::hld::character_proto_pos_vector& direction() const;
-  inline ::hld::character_proto_pos_vector* mutable_direction();
-  inline ::hld::character_proto_pos_vector* release_direction();
-  inline void set_allocated_direction(::hld::character_proto_pos_vector* direction);
+  inline const ::faith::character_proto_pos_vector& direction() const;
+  inline ::faith::character_proto_pos_vector* mutable_direction();
+  inline ::faith::character_proto_pos_vector* release_direction();
+  inline void set_allocated_direction(::faith::character_proto_pos_vector* direction);
 
-  // optional .hld.character_proto.rot_angle rotator_angle = 4;
+  // optional .faith.character_proto.rot_angle rotator_angle = 4;
   inline bool has_rotator_angle() const;
   inline void clear_rotator_angle();
   static const int kRotatorAngleFieldNumber = 4;
-  inline const ::hld::character_proto_rot_angle& rotator_angle() const;
-  inline ::hld::character_proto_rot_angle* mutable_rotator_angle();
-  inline ::hld::character_proto_rot_angle* release_rotator_angle();
-  inline void set_allocated_rotator_angle(::hld::character_proto_rot_angle* rotator_angle);
+  inline const ::faith::character_proto_rot_angle& rotator_angle() const;
+  inline ::faith::character_proto_rot_angle* mutable_rotator_angle();
+  inline ::faith::character_proto_rot_angle* release_rotator_angle();
+  inline void set_allocated_rotator_angle(::faith::character_proto_rot_angle* rotator_angle);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.character_move)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.character_move)
  private:
   inline void set_has_unit_guid();
   inline void clear_has_unit_guid();
@@ -3556,9 +3556,9 @@ class character_proto_character_move : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 unit_guid_;
-  ::hld::character_proto_pos_vector* position_;
-  ::hld::character_proto_pos_vector* direction_;
-  ::hld::character_proto_rot_angle* rotator_angle_;
+  ::faith::character_proto_pos_vector* position_;
+  ::faith::character_proto_pos_vector* direction_;
+  ::faith::character_proto_rot_angle* rotator_angle_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -3626,14 +3626,14 @@ class character_proto_load_role_info_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .hld.character_proto.unit_info_msg role_info = 1;
+  // optional .faith.character_proto.unit_info_msg role_info = 1;
   inline bool has_role_info() const;
   inline void clear_role_info();
   static const int kRoleInfoFieldNumber = 1;
-  inline const ::hld::character_proto_unit_info_msg& role_info() const;
-  inline ::hld::character_proto_unit_info_msg* mutable_role_info();
-  inline ::hld::character_proto_unit_info_msg* release_role_info();
-  inline void set_allocated_role_info(::hld::character_proto_unit_info_msg* role_info);
+  inline const ::faith::character_proto_unit_info_msg& role_info() const;
+  inline ::faith::character_proto_unit_info_msg* mutable_role_info();
+  inline ::faith::character_proto_unit_info_msg* release_role_info();
+  inline void set_allocated_role_info(::faith::character_proto_unit_info_msg* role_info);
 
   // optional sint32 runtime_id = 2;
   inline bool has_runtime_id() const;
@@ -3642,7 +3642,7 @@ class character_proto_load_role_info_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 runtime_id() const;
   inline void set_runtime_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.load_role_info_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.load_role_info_end)
  private:
   inline void set_has_role_info();
   inline void clear_has_role_info();
@@ -3651,7 +3651,7 @@ class character_proto_load_role_info_end : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::character_proto_unit_info_msg* role_info_;
+  ::faith::character_proto_unit_info_msg* role_info_;
   ::google::protobuf::int32 runtime_id_;
 
   mutable int _cached_size_;
@@ -3748,7 +3748,7 @@ class character_proto_character_warning : public ::google::protobuf::Message {
   inline bool warn_show() const;
   inline void set_warn_show(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.character_warning)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.character_warning)
  private:
   inline void set_has_unit_guid();
   inline void clear_has_unit_guid();
@@ -3886,7 +3886,7 @@ class character_proto_character_gmorder_message : public ::google::protobuf::Mes
   inline ::std::string* release_command_string();
   inline void set_allocated_command_string(::std::string* command_string);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.character_gmorder_message)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.character_gmorder_message)
  private:
   inline void set_has_command_type();
   inline void clear_has_command_type();
@@ -3976,7 +3976,7 @@ class character_proto_character_fuhuo : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 mode() const;
   inline void set_mode(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.character_fuhuo)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.character_fuhuo)
  private:
   inline void set_has_mode();
   inline void clear_has_mode();
@@ -4121,7 +4121,7 @@ class character_proto_character_fuhuo_s2c : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 lineid() const;
   inline void set_lineid(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.character_fuhuo_s2c)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.character_fuhuo_s2c)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4244,7 +4244,7 @@ class character_proto_character_levelup : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 level_new() const;
   inline void set_level_new(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.character_levelup)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.character_levelup)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4379,7 +4379,7 @@ class character_proto_map_fuben_over : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 sub_type() const;
   inline void set_sub_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.map_fuben_over)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.map_fuben_over)
  private:
   inline void set_has_fuben_template_id();
   inline void clear_has_fuben_template_id();
@@ -4484,7 +4484,7 @@ class character_proto_map_money_bonus : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 count() const;
   inline void set_count(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.map_money_bonus)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.map_money_bonus)
  private:
   inline void set_has_type();
   inline void clear_has_type();
@@ -4625,7 +4625,7 @@ class character_proto_map_arena_fuben_over : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 old_rank() const;
   inline void set_old_rank(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.map_arena_fuben_over)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.map_arena_fuben_over)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4736,7 +4736,7 @@ class character_proto_map_fuben_send_notice : public ::google::protobuf::Message
   inline ::std::string* release_notice_content();
   inline void set_allocated_notice_content(::std::string* notice_content);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.map_fuben_send_notice)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.map_fuben_send_notice)
  private:
   inline void set_has_notice_content();
   inline void clear_has_notice_content();
@@ -4867,7 +4867,7 @@ class character_proto_map_fuben_info_to_client : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 kill_monster_num() const;
   inline void set_kill_monster_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.map_fuben_info_to_client)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.map_fuben_info_to_client)
  private:
   inline void set_has_wave_id();
   inline void clear_has_wave_id();
@@ -4970,7 +4970,7 @@ class character_proto_map_tigger_volume : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 tigger_volume_id() const;
   inline void set_tigger_volume_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.map_tigger_volume)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.map_tigger_volume)
  private:
   inline void set_has_tigger_volume_id();
   inline void clear_has_tigger_volume_id();
@@ -5052,7 +5052,7 @@ class character_proto_s2c_game_over : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 game_result() const;
   inline void set_game_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.s2c_game_over)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.s2c_game_over)
  private:
   inline void set_has_game_result();
   inline void clear_has_game_result();
@@ -5134,7 +5134,7 @@ class character_proto_c2s_game_over : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 unit_result() const;
   inline void set_unit_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.c2s_game_over)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.c2s_game_over)
  private:
   inline void set_has_unit_result();
   inline void clear_has_unit_result();
@@ -5223,7 +5223,7 @@ class character_proto_pick_drop_box : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 runtime_id() const;
   inline void set_runtime_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.pick_drop_box)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.pick_drop_box)
  private:
   inline void set_has_drop_box_guid();
   inline void clear_has_drop_box_guid();
@@ -5315,7 +5315,7 @@ class character_proto_receive_reward : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 map_id() const;
   inline void set_map_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.receive_reward)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.receive_reward)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -5428,7 +5428,7 @@ class character_proto_bag_slot_open_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 open_storage_next_need_time() const;
   inline void set_open_storage_next_need_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.bag_slot_open_info)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.bag_slot_open_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -5536,7 +5536,7 @@ class character_proto_bag_unlock_slot_req : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 storage_slot_index_want_to_unlock() const;
   inline void set_storage_slot_index_want_to_unlock(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.bag_unlock_slot_req)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.bag_unlock_slot_req)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -5636,7 +5636,7 @@ class character_proto_spirit_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_spirit_data();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.spirit_info)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.spirit_info)
  private:
   inline void set_has_spirit_guid();
   inline void clear_has_spirit_guid();
@@ -5733,7 +5733,7 @@ class character_proto_spirit_system_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 last_free_time() const;
   inline void set_last_free_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.spirit_system_info)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.spirit_system_info)
  private:
   inline void set_has_crystal();
   inline void clear_has_crystal();
@@ -5828,19 +5828,19 @@ class character_proto_update_spirit : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 spirit_error() const;
   inline void set_spirit_error(::google::protobuf::uint32 value);
 
-  // repeated .hld.character_proto.spirit_info spirit_list = 3;
+  // repeated .faith.character_proto.spirit_info spirit_list = 3;
   inline int spirit_list_size() const;
   inline void clear_spirit_list();
   static const int kSpiritListFieldNumber = 3;
-  inline const ::hld::character_proto_spirit_info& spirit_list(int index) const;
-  inline ::hld::character_proto_spirit_info* mutable_spirit_list(int index);
-  inline ::hld::character_proto_spirit_info* add_spirit_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::character_proto_spirit_info >&
+  inline const ::faith::character_proto_spirit_info& spirit_list(int index) const;
+  inline ::faith::character_proto_spirit_info* mutable_spirit_list(int index);
+  inline ::faith::character_proto_spirit_info* add_spirit_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::character_proto_spirit_info >&
       spirit_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::character_proto_spirit_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::character_proto_spirit_info >*
       mutable_spirit_list();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.update_spirit)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.update_spirit)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -5850,7 +5850,7 @@ class character_proto_update_spirit : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 role_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::character_proto_spirit_info > spirit_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::character_proto_spirit_info > spirit_list_;
   ::google::protobuf::uint32 spirit_error_;
 
   mutable int _cached_size_;
@@ -5933,7 +5933,7 @@ class character_proto_update_free_hunt_time : public ::google::protobuf::Message
   inline ::google::protobuf::int32 last_free_hunt_time() const;
   inline void set_last_free_hunt_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.update_free_hunt_time)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.update_free_hunt_time)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6032,7 +6032,7 @@ class character_proto_spirit_system_operation : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 operation_value() const;
   inline void set_operation_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.spirit_system_operation)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.spirit_system_operation)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6134,7 +6134,7 @@ class character_proto_spirit_qiyuan_level : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 flair_qiyuan() const;
   inline void set_flair_qiyuan(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.spirit_qiyuan_level)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.spirit_qiyuan_level)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6246,7 +6246,7 @@ class character_proto_spirit_jiban_list : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_jiban_almost_list();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.spirit_jiban_list)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.spirit_jiban_list)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6342,7 +6342,7 @@ class character_proto_spirit_auto_sell_reward : public ::google::protobuf::Messa
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_money_list();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.spirit_auto_sell_reward)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.spirit_auto_sell_reward)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6444,7 +6444,7 @@ class character_proto_spirit_operation : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 target_slot() const;
   inline void set_target_slot(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.spirit_operation)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.spirit_operation)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -6568,7 +6568,7 @@ class character_proto_spirit_operation_end : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 target_operate_slot() const;
   inline void set_target_operate_slot(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.spirit_operation_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.spirit_operation_end)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -6665,7 +6665,7 @@ class character_proto_money_operation : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 operation_value() const;
   inline void set_operation_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.money_operation)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.money_operation)
  private:
   inline void set_has_operation_target();
   inline void clear_has_operation_target();
@@ -6764,7 +6764,7 @@ class character_proto_money_operation_end : public ::google::protobuf::Message {
   inline bool operation_state() const;
   inline void set_operation_state(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.money_operation_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.money_operation_end)
  private:
   inline void set_has_operation_target();
   inline void clear_has_operation_target();
@@ -6857,7 +6857,7 @@ class character_proto_spirit_operation_tidy : public ::google::protobuf::Message
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_spirit_guid_list();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.spirit_operation_tidy)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.spirit_operation_tidy)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -6944,7 +6944,7 @@ class character_proto_exchange_item : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 spirit_exchange_index() const;
   inline void set_spirit_exchange_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.exchange_item)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.exchange_item)
  private:
   inline void set_has_spirit_exchange_id();
   inline void clear_has_spirit_exchange_id();
@@ -7043,7 +7043,7 @@ class character_proto_exchange_report : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 item_template_id() const;
   inline void set_item_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.exchange_report)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.exchange_report)
  private:
   inline void set_has_exchange_state();
   inline void clear_has_exchange_state();
@@ -7148,7 +7148,7 @@ class character_proto_addition_buff_all : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_buff_id();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.addition_buff_all)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.addition_buff_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -7248,7 +7248,7 @@ class character_proto_addition_buff : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 addition_buff_id() const;
   inline void set_addition_buff_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.addition_buff)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.addition_buff)
  private:
   inline void set_has_addition_buff_type();
   inline void clear_has_addition_buff_type();
@@ -7348,7 +7348,7 @@ class character_proto_character_grade_up : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 grade_type() const;
   inline void set_grade_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.character_grade_up)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.character_grade_up)
  private:
   inline void set_has_class_change();
   inline void clear_has_class_change();
@@ -7464,7 +7464,7 @@ class character_proto_character_grade_up_end : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 skill_template_id() const;
   inline void set_skill_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.character_grade_up_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.character_grade_up_end)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -7570,7 +7570,7 @@ class character_proto_character_error : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 error() const;
   inline void set_error(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.character_error)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.character_error)
  private:
   inline void set_has_error();
   inline void clear_has_error();
@@ -7653,7 +7653,7 @@ class character_proto_lucky_draw : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 fuben_template_id() const;
   inline void set_fuben_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.lucky_draw)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.lucky_draw)
  private:
   inline void set_has_fuben_template_id();
   inline void clear_has_fuben_template_id();
@@ -7749,7 +7749,7 @@ class character_proto_lucky_draw_end : public ::google::protobuf::Message {
   inline bool send_mail() const;
   inline void set_send_mail(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.lucky_draw_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.lucky_draw_end)
  private:
   inline void set_has_item_template_id();
   inline void clear_has_item_template_id();
@@ -7863,7 +7863,7 @@ class character_proto_mopping_up : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 mopping_up_count() const;
   inline void set_mopping_up_count(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.mopping_up)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.mopping_up)
  private:
   inline void set_has_raid_template_id();
   inline void clear_has_raid_template_id();
@@ -7969,7 +7969,7 @@ class character_proto_all_mopping_up : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_mopping_up_count();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.all_mopping_up)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.all_mopping_up)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -8074,7 +8074,7 @@ class character_proto_mopping_up_award : public ::google::protobuf::Message {
   inline bool is_send_mail() const;
   inline void set_is_send_mail(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.mopping_up_award)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.mopping_up_award)
  private:
   inline void set_has_is_send_mail();
   inline void clear_has_is_send_mail();
@@ -8158,7 +8158,7 @@ class character_proto_mopping_up_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.mopping_up_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.mopping_up_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -8245,7 +8245,7 @@ class character_proto_mopping_up_demons_tower : public ::google::protobuf::Messa
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.mopping_up_demons_tower)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.mopping_up_demons_tower)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -8337,7 +8337,7 @@ class character_proto_mopping_up_demons_tower_get_award : public ::google::proto
   inline bool is_resolve() const;
   inline void set_is_resolve(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.mopping_up_demons_tower_get_award)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.mopping_up_demons_tower_get_award)
  private:
   inline void set_has_is_resolve();
   inline void clear_has_is_resolve();
@@ -8420,7 +8420,7 @@ class character_proto_mopping_up_demons_tower_get_award_end : public ::google::p
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.mopping_up_demons_tower_get_award_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.mopping_up_demons_tower_get_award_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -8521,7 +8521,7 @@ class character_proto_pk_mode_change : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 pk_info_value() const;
   inline void set_pk_info_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.pk_mode_change)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.pk_mode_change)
  private:
   inline void set_has_pk_info_type();
   inline void clear_has_pk_info_type();
@@ -8626,7 +8626,7 @@ class character_proto_pk_mode_change_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 pk_info_value() const;
   inline void set_pk_info_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.pk_mode_change_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.pk_mode_change_end)
  private:
   inline void set_has_pk_info_type();
   inline void clear_has_pk_info_type();
@@ -8712,7 +8712,7 @@ class character_proto_pk_fight_back_sync : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 fight_back_state() const;
   inline void set_fight_back_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.pk_fight_back_sync)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.pk_fight_back_sync)
  private:
   inline void set_has_fight_back_state();
   inline void clear_has_fight_back_state();
@@ -8811,7 +8811,7 @@ class character_proto_update_communities : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_community_state();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.update_communities)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.update_communities)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -8897,7 +8897,7 @@ class character_proto_start_meditation : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.start_meditation)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.start_meditation)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -8989,7 +8989,7 @@ class character_proto_start_meditation_end : public ::google::protobuf::Message 
   inline bool is_player_active() const;
   inline void set_is_player_active(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.start_meditation_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.start_meditation_end)
  private:
   inline void set_has_is_player_active();
   inline void clear_has_is_player_active();
@@ -9077,7 +9077,7 @@ class character_proto_stop_meditation : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.stop_meditation)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.stop_meditation)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -9169,7 +9169,7 @@ class character_proto_get_meditation_reward : public ::google::protobuf::Message
   inline ::google::protobuf::int32 get_type() const;
   inline void set_get_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.get_meditation_reward)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.get_meditation_reward)
  private:
   inline void set_has_get_type();
   inline void clear_has_get_type();
@@ -9271,7 +9271,7 @@ class character_proto_get_meditation_reward_end : public ::google::protobuf::Mes
   inline ::google::protobuf::int32 endtype() const;
   inline void set_endtype(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.get_meditation_reward_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.get_meditation_reward_end)
  private:
   inline void set_has_get_type();
   inline void clear_has_get_type();
@@ -9402,7 +9402,7 @@ class character_proto_daily_must_do_remain_info : public ::google::protobuf::Mes
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.daily_must_do_remain_info)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.daily_must_do_remain_info)
  private:
   inline void set_has_role_level();
   inline void clear_has_role_level();
@@ -9500,25 +9500,25 @@ class character_proto_update_three_day_must_do_remain : public ::google::protobu
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // repeated .hld.character_proto.daily_must_do_remain_info remain_three_day_must_do = 2;
+  // repeated .faith.character_proto.daily_must_do_remain_info remain_three_day_must_do = 2;
   inline int remain_three_day_must_do_size() const;
   inline void clear_remain_three_day_must_do();
   static const int kRemainThreeDayMustDoFieldNumber = 2;
-  inline const ::hld::character_proto_daily_must_do_remain_info& remain_three_day_must_do(int index) const;
-  inline ::hld::character_proto_daily_must_do_remain_info* mutable_remain_three_day_must_do(int index);
-  inline ::hld::character_proto_daily_must_do_remain_info* add_remain_three_day_must_do();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::character_proto_daily_must_do_remain_info >&
+  inline const ::faith::character_proto_daily_must_do_remain_info& remain_three_day_must_do(int index) const;
+  inline ::faith::character_proto_daily_must_do_remain_info* mutable_remain_three_day_must_do(int index);
+  inline ::faith::character_proto_daily_must_do_remain_info* add_remain_three_day_must_do();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::character_proto_daily_must_do_remain_info >&
       remain_three_day_must_do() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::character_proto_daily_must_do_remain_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::character_proto_daily_must_do_remain_info >*
       mutable_remain_three_day_must_do();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.update_three_day_must_do_remain)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.update_three_day_must_do_remain)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > role_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::character_proto_daily_must_do_remain_info > remain_three_day_must_do_;
+  ::google::protobuf::RepeatedPtrField< ::faith::character_proto_daily_must_do_remain_info > remain_three_day_must_do_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -9624,7 +9624,7 @@ class character_proto_daily_must_do_count : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.daily_must_do_count)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.daily_must_do_count)
  private:
   inline void set_has_must_do_type();
   inline void clear_has_must_do_type();
@@ -9728,7 +9728,7 @@ class character_proto_daily_must_do_count_all : public ::google::protobuf::Messa
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.daily_must_do_count_all)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.daily_must_do_count_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -9835,7 +9835,7 @@ class character_proto_find_back_must_do_resource : public ::google::protobuf::Me
   inline ::google::protobuf::int32 only_find_back_several() const;
   inline void set_only_find_back_several(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.find_back_must_do_resource)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.find_back_must_do_resource)
  private:
   inline void set_has_must_do_typ();
   inline void clear_has_must_do_typ();
@@ -9962,7 +9962,7 @@ class character_proto_find_back_must_do_resource_end : public ::google::protobuf
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_item_reward();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.find_back_must_do_resource_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.find_back_must_do_resource_end)
  private:
   inline void set_has_must_do_typ();
   inline void clear_has_must_do_typ();
@@ -10064,7 +10064,7 @@ class character_proto_get_vip_item : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 vip_level() const;
   inline void set_vip_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.get_vip_item)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.get_vip_item)
  private:
   inline void set_has_vip_level();
   inline void clear_has_vip_level();
@@ -10166,7 +10166,7 @@ class character_proto_get_vip_item_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 get_result() const;
   inline void set_get_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.get_vip_item_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.get_vip_item_end)
  private:
   inline void set_has_vip_level();
   inline void clear_has_vip_level();
@@ -10264,7 +10264,7 @@ class character_proto_recharge : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 recharge_typ() const;
   inline void set_recharge_typ(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.recharge)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.recharge)
  private:
   inline void set_has_recharge_typ();
   inline void clear_has_recharge_typ();
@@ -10387,7 +10387,7 @@ class character_proto_recharge_end : public ::google::protobuf::Message {
   inline bool is_first_recharge() const;
   inline void set_is_first_recharge(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.recharge_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.recharge_end)
  private:
   inline void set_has_order_id();
   inline void clear_has_order_id();
@@ -10484,7 +10484,7 @@ class character_proto_recharge_widget_type : public ::google::protobuf::Message 
   inline bool is_dead_recharge() const;
   inline void set_is_dead_recharge(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.recharge_widget_type)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.recharge_widget_type)
  private:
   inline void set_has_is_dead_recharge();
   inline void clear_has_is_dead_recharge();
@@ -10571,7 +10571,7 @@ class character_proto_dead_recharge_end : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.dead_recharge_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.dead_recharge_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -10663,7 +10663,7 @@ class character_proto_showed_message : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 message_id() const;
   inline void set_message_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.showed_message)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.showed_message)
  private:
   inline void set_has_message_id();
   inline void clear_has_message_id();
@@ -10812,7 +10812,7 @@ class character_proto_world_boss_data : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 boss_daily_refresh() const;
   inline void set_boss_daily_refresh(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.world_boss_data)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.world_boss_data)
  private:
   inline void set_has_npc_respawn_point_template_id();
   inline void clear_has_npc_respawn_point_template_id();
@@ -10918,26 +10918,26 @@ class character_proto_update_world_boss : public ::google::protobuf::Message {
   inline bool is_need_show() const;
   inline void set_is_need_show(bool value);
 
-  // repeated .hld.character_proto.world_boss_data world_boss_array = 2;
+  // repeated .faith.character_proto.world_boss_data world_boss_array = 2;
   inline int world_boss_array_size() const;
   inline void clear_world_boss_array();
   static const int kWorldBossArrayFieldNumber = 2;
-  inline const ::hld::character_proto_world_boss_data& world_boss_array(int index) const;
-  inline ::hld::character_proto_world_boss_data* mutable_world_boss_array(int index);
-  inline ::hld::character_proto_world_boss_data* add_world_boss_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::character_proto_world_boss_data >&
+  inline const ::faith::character_proto_world_boss_data& world_boss_array(int index) const;
+  inline ::faith::character_proto_world_boss_data* mutable_world_boss_array(int index);
+  inline ::faith::character_proto_world_boss_data* add_world_boss_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::character_proto_world_boss_data >&
       world_boss_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::character_proto_world_boss_data >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::character_proto_world_boss_data >*
       mutable_world_boss_array();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.update_world_boss)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.update_world_boss)
  private:
   inline void set_has_is_need_show();
   inline void clear_has_is_need_show();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::character_proto_world_boss_data > world_boss_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::character_proto_world_boss_data > world_boss_array_;
   bool is_need_show_;
 
   mutable int _cached_size_;
@@ -11025,7 +11025,7 @@ class character_proto_purchase_growup_fund : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 fund_type() const;
   inline void set_fund_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.purchase_growup_fund)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.purchase_growup_fund)
  private:
   inline void set_has_fund_type();
   inline void clear_has_fund_type();
@@ -11127,7 +11127,7 @@ class character_proto_purchase_growup_fund_end : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 purchase_result() const;
   inline void set_purchase_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.purchase_growup_fund_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.purchase_growup_fund_end)
  private:
   inline void set_has_fund_type();
   inline void clear_has_fund_type();
@@ -11225,7 +11225,7 @@ class character_proto_get_growup_fund : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 fund_template_id() const;
   inline void set_fund_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.get_growup_fund)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.get_growup_fund)
  private:
   inline void set_has_fund_template_id();
   inline void clear_has_fund_template_id();
@@ -11327,7 +11327,7 @@ class character_proto_get_growup_fund_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 get_result() const;
   inline void set_get_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.get_growup_fund_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.get_growup_fund_end)
  private:
   inline void set_has_fund_template_id();
   inline void clear_has_fund_template_id();
@@ -11418,7 +11418,7 @@ class character_proto_update_big_player_statue_guid : public ::google::protobuf:
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_statue_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.update_big_player_statue_guid)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.update_big_player_statue_guid)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -11517,7 +11517,7 @@ class character_proto_worship : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 is_cost_diamond() const;
   inline void set_is_cost_diamond(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.worship)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.worship)
  private:
   inline void set_has_worship_type();
   inline void clear_has_worship_type();
@@ -11646,7 +11646,7 @@ class character_proto_worship_end : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_money_get_num_array();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.worship_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.worship_end)
  private:
   inline void set_has_worship_type();
   inline void clear_has_worship_type();
@@ -11758,7 +11758,7 @@ class character_proto_char_rotation : public ::google::protobuf::Message {
   inline float duration() const;
   inline void set_duration(float value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.char_rotation)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.char_rotation)
  private:
   inline void set_has_duration();
   inline void clear_has_duration();
@@ -11849,7 +11849,7 @@ class character_proto_find_other_unit : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 server_id() const;
   inline void set_server_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.find_other_unit)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.find_other_unit)
  private:
   inline void set_has_target_guid();
   inline void clear_has_target_guid();
@@ -11948,7 +11948,7 @@ class character_proto_find_other_unit_lua : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 server_id() const;
   inline void set_server_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.find_other_unit_lua)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.find_other_unit_lua)
  private:
   inline void set_has_target_guid_a();
   inline void clear_has_target_guid_a();
@@ -12107,7 +12107,7 @@ class character_proto_find_other_unit_base_end : public ::google::protobuf::Mess
   inline const ::google::protobuf::RepeatedPtrField< ::std::string>& data_str_array() const;
   inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_data_str_array();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.find_other_unit_base_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.find_other_unit_base_end)
  private:
   inline void set_has_target_guid();
   inline void clear_has_target_guid();
@@ -12215,7 +12215,7 @@ class character_proto_find_other_unit_item_one : public ::google::protobuf::Mess
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.find_other_unit_item_one)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.find_other_unit_item_one)
  private:
   inline void set_has_item_guid();
   inline void clear_has_item_guid();
@@ -12298,16 +12298,16 @@ class character_proto_find_other_unit_equiping_end : public ::google::protobuf::
   inline ::google::protobuf::int64 target_guid() const;
   inline void set_target_guid(::google::protobuf::int64 value);
 
-  // repeated .hld.character_proto.find_other_unit_item_one equiping_info = 2;
+  // repeated .faith.character_proto.find_other_unit_item_one equiping_info = 2;
   inline int equiping_info_size() const;
   inline void clear_equiping_info();
   static const int kEquipingInfoFieldNumber = 2;
-  inline const ::hld::character_proto_find_other_unit_item_one& equiping_info(int index) const;
-  inline ::hld::character_proto_find_other_unit_item_one* mutable_equiping_info(int index);
-  inline ::hld::character_proto_find_other_unit_item_one* add_equiping_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::character_proto_find_other_unit_item_one >&
+  inline const ::faith::character_proto_find_other_unit_item_one& equiping_info(int index) const;
+  inline ::faith::character_proto_find_other_unit_item_one* mutable_equiping_info(int index);
+  inline ::faith::character_proto_find_other_unit_item_one* add_equiping_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::character_proto_find_other_unit_item_one >&
       equiping_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::character_proto_find_other_unit_item_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::character_proto_find_other_unit_item_one >*
       mutable_equiping_info();
 
   // optional bool is_finish = 3;
@@ -12317,7 +12317,7 @@ class character_proto_find_other_unit_equiping_end : public ::google::protobuf::
   inline bool is_finish() const;
   inline void set_is_finish(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.find_other_unit_equiping_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.find_other_unit_equiping_end)
  private:
   inline void set_has_target_guid();
   inline void clear_has_target_guid();
@@ -12327,7 +12327,7 @@ class character_proto_find_other_unit_equiping_end : public ::google::protobuf::
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 target_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::character_proto_find_other_unit_item_one > equiping_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::character_proto_find_other_unit_item_one > equiping_info_;
   bool is_finish_;
 
   mutable int _cached_size_;
@@ -12415,7 +12415,7 @@ class character_proto_find_other_unit_buff_equip_end : public ::google::protobuf
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_buff_id();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.find_other_unit_buff_equip_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.find_other_unit_buff_equip_end)
  private:
   inline void set_has_target_guid();
   inline void clear_has_target_guid();
@@ -12510,7 +12510,7 @@ class character_proto_find_other_unit_special_name_end : public ::google::protob
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_special_name_level();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.find_other_unit_special_name_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.find_other_unit_special_name_end)
  private:
   inline void set_has_target_guid();
   inline void clear_has_target_guid();
@@ -12612,7 +12612,7 @@ class character_proto_find_other_unit_base_group_end : public ::google::protobuf
   inline ::std::string* release_group_name();
   inline void set_allocated_group_name(::std::string* group_name);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.find_other_unit_base_group_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.find_other_unit_base_group_end)
  private:
   inline void set_has_target_guid();
   inline void clear_has_target_guid();
@@ -12719,7 +12719,7 @@ class character_proto_find_other_unit_spirit_end : public ::google::protobuf::Me
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.find_other_unit_spirit_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.find_other_unit_spirit_end)
  private:
   inline void set_has_target_guid();
   inline void clear_has_target_guid();
@@ -12805,16 +12805,16 @@ class character_proto_find_other_unit_wing_or_mount_end : public ::google::proto
   inline ::google::protobuf::int64 target_guid() const;
   inline void set_target_guid(::google::protobuf::int64 value);
 
-  // repeated .hld.character_proto.find_other_unit_item_one mount_or_wing_info = 2;
+  // repeated .faith.character_proto.find_other_unit_item_one mount_or_wing_info = 2;
   inline int mount_or_wing_info_size() const;
   inline void clear_mount_or_wing_info();
   static const int kMountOrWingInfoFieldNumber = 2;
-  inline const ::hld::character_proto_find_other_unit_item_one& mount_or_wing_info(int index) const;
-  inline ::hld::character_proto_find_other_unit_item_one* mutable_mount_or_wing_info(int index);
-  inline ::hld::character_proto_find_other_unit_item_one* add_mount_or_wing_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::character_proto_find_other_unit_item_one >&
+  inline const ::faith::character_proto_find_other_unit_item_one& mount_or_wing_info(int index) const;
+  inline ::faith::character_proto_find_other_unit_item_one* mutable_mount_or_wing_info(int index);
+  inline ::faith::character_proto_find_other_unit_item_one* add_mount_or_wing_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::character_proto_find_other_unit_item_one >&
       mount_or_wing_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::character_proto_find_other_unit_item_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::character_proto_find_other_unit_item_one >*
       mutable_mount_or_wing_info();
 
   // optional bool is_wing = 3;
@@ -12831,7 +12831,7 @@ class character_proto_find_other_unit_wing_or_mount_end : public ::google::proto
   inline bool is_finish() const;
   inline void set_is_finish(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.find_other_unit_wing_or_mount_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.find_other_unit_wing_or_mount_end)
  private:
   inline void set_has_target_guid();
   inline void clear_has_target_guid();
@@ -12843,7 +12843,7 @@ class character_proto_find_other_unit_wing_or_mount_end : public ::google::proto
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 target_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::character_proto_find_other_unit_item_one > mount_or_wing_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::character_proto_find_other_unit_item_one > mount_or_wing_info_;
   bool is_wing_;
   bool is_finish_;
 
@@ -12932,7 +12932,7 @@ class character_proto_find_other_unit_buff_end : public ::google::protobuf::Mess
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_buff_info();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.find_other_unit_buff_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.find_other_unit_buff_end)
  private:
   inline void set_has_target_guid();
   inline void clear_has_target_guid();
@@ -13027,7 +13027,7 @@ class character_proto_find_other_unit_belief_end : public ::google::protobuf::Me
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_belief_info();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.find_other_unit_belief_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.find_other_unit_belief_end)
  private:
   inline void set_has_target_guid();
   inline void clear_has_target_guid();
@@ -13145,7 +13145,7 @@ class character_proto_show_money_get : public ::google::protobuf::Message {
   inline bool is_need_show_toptip() const;
   inline void set_is_need_show_toptip(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.show_money_get)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.show_money_get)
  private:
   inline void set_has_money_percent();
   inline void clear_has_money_percent();
@@ -13266,7 +13266,7 @@ class character_proto_send_red_package : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_item_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.send_red_package)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.send_red_package)
  private:
   inline void set_has_red_package_id();
   inline void clear_has_red_package_id();
@@ -13359,7 +13359,7 @@ class character_proto_send_red_package_end : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 send_result() const;
   inline void set_send_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.send_red_package_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.send_red_package_end)
  private:
   inline void set_has_red_package_id();
   inline void clear_has_red_package_id();
@@ -13461,7 +13461,7 @@ class character_proto_load_role_ws_info_end : public ::google::protobuf::Message
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.load_role_ws_info_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.load_role_ws_info_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -13561,7 +13561,7 @@ class character_proto_update_role_ws_info_one : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 info_value() const;
   inline void set_info_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.update_role_ws_info_one)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.update_role_ws_info_one)
  private:
   inline void set_has_info_index();
   inline void clear_has_info_index();
@@ -13652,7 +13652,7 @@ class character_proto_get_red_package : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_red_package_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.get_red_package)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.get_red_package)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -13737,7 +13737,7 @@ class character_proto_del_red_package : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_red_package_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.del_red_package)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.del_red_package)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -13843,7 +13843,7 @@ class character_proto_get_red_package_end : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_red_pack_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.get_red_package_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.get_red_package_end)
  private:
   inline void set_has_get_result();
   inline void clear_has_get_result();
@@ -13956,7 +13956,7 @@ class character_proto_red_pack_receiver_info : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 money_num() const;
   inline void set_money_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.red_pack_receiver_info)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.red_pack_receiver_info)
  private:
   inline void set_has_receiver_name();
   inline void clear_has_receiver_name();
@@ -14111,19 +14111,19 @@ class character_proto_red_pack_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 remain_money_num() const;
   inline void set_remain_money_num(::google::protobuf::int32 value);
 
-  // repeated .hld.character_proto.red_pack_receiver_info receiver_list = 9;
+  // repeated .faith.character_proto.red_pack_receiver_info receiver_list = 9;
   inline int receiver_list_size() const;
   inline void clear_receiver_list();
   static const int kReceiverListFieldNumber = 9;
-  inline const ::hld::character_proto_red_pack_receiver_info& receiver_list(int index) const;
-  inline ::hld::character_proto_red_pack_receiver_info* mutable_receiver_list(int index);
-  inline ::hld::character_proto_red_pack_receiver_info* add_receiver_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::character_proto_red_pack_receiver_info >&
+  inline const ::faith::character_proto_red_pack_receiver_info& receiver_list(int index) const;
+  inline ::faith::character_proto_red_pack_receiver_info* mutable_receiver_list(int index);
+  inline ::faith::character_proto_red_pack_receiver_info* add_receiver_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::character_proto_red_pack_receiver_info >&
       receiver_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::character_proto_red_pack_receiver_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::character_proto_red_pack_receiver_info >*
       mutable_receiver_list();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.red_pack_info)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.red_pack_info)
  private:
   inline void set_has_template_id();
   inline void clear_has_template_id();
@@ -14148,7 +14148,7 @@ class character_proto_red_pack_info : public ::google::protobuf::Message {
   ::std::string* send_text_;
   ::google::protobuf::int32 remain_times_;
   ::google::protobuf::int32 remain_money_num_;
-  ::google::protobuf::RepeatedPtrField< ::hld::character_proto_red_pack_receiver_info > receiver_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::character_proto_red_pack_receiver_info > receiver_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(9 + 31) / 32];
@@ -14216,24 +14216,24 @@ class character_proto_update_red_pack_info : public ::google::protobuf::Message 
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.character_proto.red_pack_info info_list = 1;
+  // repeated .faith.character_proto.red_pack_info info_list = 1;
   inline int info_list_size() const;
   inline void clear_info_list();
   static const int kInfoListFieldNumber = 1;
-  inline const ::hld::character_proto_red_pack_info& info_list(int index) const;
-  inline ::hld::character_proto_red_pack_info* mutable_info_list(int index);
-  inline ::hld::character_proto_red_pack_info* add_info_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::character_proto_red_pack_info >&
+  inline const ::faith::character_proto_red_pack_info& info_list(int index) const;
+  inline ::faith::character_proto_red_pack_info* mutable_info_list(int index);
+  inline ::faith::character_proto_red_pack_info* add_info_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::character_proto_red_pack_info >&
       info_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::character_proto_red_pack_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::character_proto_red_pack_info >*
       mutable_info_list();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.update_red_pack_info)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.update_red_pack_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::character_proto_red_pack_info > info_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::character_proto_red_pack_info > info_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -14358,7 +14358,7 @@ class character_proto_update_new_draw_info : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 draw_num() const;
   inline void set_draw_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.update_new_draw_info)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.update_new_draw_info)
  private:
   inline void set_has_remain_money_num();
   inline void clear_has_remain_money_num();
@@ -14458,7 +14458,7 @@ class character_proto_add_guide_record : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 state() const;
   inline void set_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.add_guide_record)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.add_guide_record)
  private:
   inline void set_has_guide_trigger_id();
   inline void clear_has_guide_trigger_id();
@@ -14550,7 +14550,7 @@ class character_proto_guide_record_one : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 state() const;
   inline void set_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.guide_record_one)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.guide_record_one)
  private:
   inline void set_has_guide_trigger_id();
   inline void clear_has_guide_trigger_id();
@@ -14628,24 +14628,24 @@ class character_proto_update_guide_record : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.character_proto.guide_record_one record_list = 1;
+  // repeated .faith.character_proto.guide_record_one record_list = 1;
   inline int record_list_size() const;
   inline void clear_record_list();
   static const int kRecordListFieldNumber = 1;
-  inline const ::hld::character_proto_guide_record_one& record_list(int index) const;
-  inline ::hld::character_proto_guide_record_one* mutable_record_list(int index);
-  inline ::hld::character_proto_guide_record_one* add_record_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::character_proto_guide_record_one >&
+  inline const ::faith::character_proto_guide_record_one& record_list(int index) const;
+  inline ::faith::character_proto_guide_record_one* mutable_record_list(int index);
+  inline ::faith::character_proto_guide_record_one* add_record_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::character_proto_guide_record_one >&
       record_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::character_proto_guide_record_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::character_proto_guide_record_one >*
       mutable_record_list();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.update_guide_record)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.update_guide_record)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::character_proto_guide_record_one > record_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::character_proto_guide_record_one > record_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -14727,7 +14727,7 @@ class character_proto_syn_tick_time : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 cur_server_green_time() const;
   inline void set_cur_server_green_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.syn_tick_time)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.syn_tick_time)
  private:
   inline void set_has_cur_server_time();
   inline void clear_has_cur_server_time();
@@ -14812,7 +14812,7 @@ class character_proto_transfer_buff : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 operate_type() const;
   inline void set_operate_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.transfer_buff)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.transfer_buff)
  private:
   inline void set_has_operate_type();
   inline void clear_has_operate_type();
@@ -14894,7 +14894,7 @@ class character_proto_get_func_unlock_award : public ::google::protobuf::Message
   inline ::google::protobuf::int32 func_unlock_template_id() const;
   inline void set_func_unlock_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.get_func_unlock_award)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.get_func_unlock_award)
  private:
   inline void set_has_func_unlock_template_id();
   inline void clear_has_func_unlock_template_id();
@@ -14976,7 +14976,7 @@ class character_proto_get_func_unlock_award_end : public ::google::protobuf::Mes
   inline ::google::protobuf::int32 func_unlock_template_id() const;
   inline void set_func_unlock_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.get_func_unlock_award_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.get_func_unlock_award_end)
  private:
   inline void set_has_func_unlock_template_id();
   inline void clear_has_func_unlock_template_id();
@@ -15058,7 +15058,7 @@ class character_proto_interact_with_npc : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 npc_guid() const;
   inline void set_npc_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.interact_with_npc)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.interact_with_npc)
  private:
   inline void set_has_npc_guid();
   inline void clear_has_npc_guid();
@@ -15154,7 +15154,7 @@ class character_proto_interact_with_npc_state : public ::google::protobuf::Messa
   inline ::google::protobuf::int64 npc_guid() const;
   inline void set_npc_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.interact_with_npc_state)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.interact_with_npc_state)
  private:
   inline void set_has_interact_state();
   inline void clear_has_interact_state();
@@ -15249,7 +15249,7 @@ class character_proto_aoi_npc_gather_state : public ::google::protobuf::Message 
   inline ::google::protobuf::int64 npc_guid() const;
   inline void set_npc_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.aoi_npc_gather_state)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.aoi_npc_gather_state)
  private:
   inline void set_has_interact_state();
   inline void clear_has_interact_state();
@@ -15334,7 +15334,7 @@ class character_proto_finish_gather_result : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 finish_result() const;
   inline void set_finish_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.finish_gather_result)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.finish_gather_result)
  private:
   inline void set_has_finish_result();
   inline void clear_has_finish_result();
@@ -15416,7 +15416,7 @@ class character_proto_req_hit_and_get : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 npc_guid() const;
   inline void set_npc_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.req_hit_and_get)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.req_hit_and_get)
  private:
   inline void set_has_npc_guid();
   inline void clear_has_npc_guid();
@@ -15507,7 +15507,7 @@ class character_proto_update_highest_record_all : public ::google::protobuf::Mes
   inline const ::google::protobuf::RepeatedPtrField< ::std::string>& info_array() const;
   inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_info_array();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.update_highest_record_all)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.update_highest_record_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -15599,7 +15599,7 @@ class character_proto_update_highest_record_one : public ::google::protobuf::Mes
   inline ::std::string* release_info_value();
   inline void set_allocated_info_value(::std::string* info_value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.update_highest_record_one)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.update_highest_record_one)
  private:
   inline void set_has_info_index();
   inline void clear_has_info_index();
@@ -15677,7 +15677,7 @@ class character_proto_purchase_parton_saint_mark_slot : public ::google::protobu
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.purchase_parton_saint_mark_slot)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.purchase_parton_saint_mark_slot)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -15756,7 +15756,7 @@ class character_proto_purchase_parton_saint_mark_slot_end : public ::google::pro
   inline ::google::protobuf::int32 purchase_result() const;
   inline void set_purchase_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.purchase_parton_saint_mark_slot_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.purchase_parton_saint_mark_slot_end)
  private:
   inline void set_has_purchase_result();
   inline void clear_has_purchase_result();
@@ -15852,7 +15852,7 @@ class character_proto_grade_up_level_ani_finish : public ::google::protobuf::Mes
   inline ::google::protobuf::int32 new_equip_buff_id() const;
   inline void set_new_equip_buff_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.grade_up_level_ani_finish)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.grade_up_level_ani_finish)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -15964,7 +15964,7 @@ class character_proto_open_server_time : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 interval_days() const;
   inline void set_interval_days(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.open_server_time)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.open_server_time)
  private:
   inline void set_has_open_server_time();
   inline void clear_has_open_server_time();
@@ -16083,7 +16083,7 @@ class character_proto_daily_must_do_count_one_info_package : public ::google::pr
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.daily_must_do_count_one_info_package)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.daily_must_do_count_one_info_package)
  private:
   inline void set_has_must_do_type();
   inline void clear_has_must_do_type();
@@ -16187,7 +16187,7 @@ class character_proto_daily_must_do_count_all_info_package : public ::google::pr
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.daily_must_do_count_all_info_package)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.daily_must_do_count_all_info_package)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -16275,7 +16275,7 @@ class character_proto_npc_left_hp_per : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 left_hp_per() const;
   inline void set_left_hp_per(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.npc_left_hp_per)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.npc_left_hp_per)
  private:
   inline void set_has_npc_spawn_point_template_id();
   inline void clear_has_npc_spawn_point_template_id();
@@ -16367,7 +16367,7 @@ class character_proto_treasure_get_prize : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 prize_type() const;
   inline void set_prize_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.treasure_get_prize)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.treasure_get_prize)
  private:
   inline void set_has_operate_type();
   inline void clear_has_operate_type();
@@ -16471,7 +16471,7 @@ class character_proto_treasure_get_prize_end : public ::google::protobuf::Messag
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_prize_list();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.treasure_get_prize_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.treasure_get_prize_end)
  private:
   inline void set_has_operate_type();
   inline void clear_has_operate_type();
@@ -16562,7 +16562,7 @@ class character_proto_treasure_prize_record : public ::google::protobuf::Message
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_record_list();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.treasure_prize_record)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.treasure_prize_record)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -16656,7 +16656,7 @@ class character_proto_treasure_notice : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 operate_type() const;
   inline void set_operate_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.treasure_notice)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.treasure_notice)
  private:
   inline void set_has_item_id();
   inline void clear_has_item_id();
@@ -16737,7 +16737,7 @@ class character_proto_jump_raid_animation : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.jump_raid_animation)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.jump_raid_animation)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -16816,7 +16816,7 @@ class character_proto_guide_trigger_start : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 guide_trigger_id() const;
   inline void set_guide_trigger_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.guide_trigger_start)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.guide_trigger_start)
  private:
   inline void set_has_guide_trigger_id();
   inline void clear_has_guide_trigger_id();
@@ -16898,7 +16898,7 @@ class character_proto_change_role_class : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 class_change() const;
   inline void set_class_change(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.change_role_class)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.change_role_class)
  private:
   inline void set_has_class_change();
   inline void clear_has_class_change();
@@ -16980,7 +16980,7 @@ class character_proto_change_role_class_end : public ::google::protobuf::Message
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.change_role_class_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.change_role_class_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -17067,7 +17067,7 @@ class character_proto_change_player_name : public ::google::protobuf::Message {
   inline ::std::string* release_role_name();
   inline void set_allocated_role_name(::std::string* role_name);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.change_player_name)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.change_player_name)
  private:
   inline void set_has_role_name();
   inline void clear_has_role_name();
@@ -17149,7 +17149,7 @@ class character_proto_change_player_name_end : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 ret() const;
   inline void set_ret(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.change_player_name_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.change_player_name_end)
  private:
   inline void set_has_ret();
   inline void clear_has_ret();
@@ -17243,7 +17243,7 @@ class character_proto_confirm_change_name : public ::google::protobuf::Message {
   inline ::std::string* release_role_name();
   inline void set_allocated_role_name(::std::string* role_name);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.confirm_change_name)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.confirm_change_name)
  private:
   inline void set_has_confirm_type();
   inline void clear_has_confirm_type();
@@ -17392,7 +17392,7 @@ class character_proto_recharge_success_by_sdk : public ::google::protobuf::Messa
   inline ::std::string* release_package_name();
   inline void set_allocated_package_name(::std::string* package_name);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.recharge_success_by_sdk)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.recharge_success_by_sdk)
  private:
   inline void set_has_order_id();
   inline void clear_has_order_id();
@@ -17502,7 +17502,7 @@ class character_proto_player_cur_server_id : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 gate_server_id() const;
   inline void set_gate_server_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.player_cur_server_id)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.player_cur_server_id)
  private:
   inline void set_has_server_id();
   inline void clear_has_server_id();
@@ -17587,7 +17587,7 @@ class character_proto_get_first_raid_award : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 map_temp_id() const;
   inline void set_map_temp_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.get_first_raid_award)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.get_first_raid_award)
  private:
   inline void set_has_map_temp_id();
   inline void clear_has_map_temp_id();
@@ -17676,7 +17676,7 @@ class character_proto_auto_use_hp_medicine : public ::google::protobuf::Message 
   inline bool is_auto_buy_medicine() const;
   inline void set_is_auto_buy_medicine(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.auto_use_hp_medicine)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.auto_use_hp_medicine)
  private:
   inline void set_has_health_percent();
   inline void clear_has_health_percent();
@@ -17787,7 +17787,7 @@ class character_proto_kill_prompt_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 kill_player_class_type() const;
   inline void set_kill_player_class_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.kill_prompt_info)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.kill_prompt_info)
  private:
   inline void set_has_kill_num_now();
   inline void clear_has_kill_num_now();
@@ -17878,7 +17878,7 @@ class character_proto_composit_failed_num : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 error_num() const;
   inline void set_error_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.composit_failed_num)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.composit_failed_num)
  private:
   inline void set_has_error_num();
   inline void clear_has_error_num();
@@ -17984,7 +17984,7 @@ class character_proto_addition_buff_arr : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_addition_buff_id_arr();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.addition_buff_arr)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.addition_buff_arr)
  private:
   inline void set_has_addition_buff_type();
   inline void clear_has_addition_buff_type();
@@ -18061,7 +18061,7 @@ class character_proto_get_main_person_information : public ::google::protobuf::M
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.get_main_person_information)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.get_main_person_information)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -18254,7 +18254,7 @@ class character_proto_sync_person_information : public ::google::protobuf::Messa
   inline bool in_role_info_panel() const;
   inline void set_in_role_info_panel(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.sync_person_information)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.sync_person_information)
  private:
   inline void set_has_is_main_player();
   inline void clear_has_is_main_player();
@@ -18456,7 +18456,7 @@ class character_proto_modify_person_information : public ::google::protobuf::Mes
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_tags();
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.modify_person_information)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.modify_person_information)
  private:
   inline void set_has_gender();
   inline void clear_has_gender();
@@ -18579,7 +18579,7 @@ class character_proto_sync_other_person_couple_info : public ::google::protobuf:
   inline ::google::protobuf::int64 marry_time() const;
   inline void set_marry_time(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.sync_other_person_couple_info)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.sync_other_person_couple_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -18674,7 +18674,7 @@ class character_proto_get_other_person_information : public ::google::protobuf::
   inline ::google::protobuf::int32 role_guid_b() const;
   inline void set_role_guid_b(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.get_other_person_information)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.get_other_person_information)
  private:
   inline void set_has_role_guid_a();
   inline void clear_has_role_guid_a();
@@ -18752,7 +18752,7 @@ class character_proto_get_person_infor_reward : public ::google::protobuf::Messa
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.get_person_infor_reward)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.get_person_infor_reward)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -18831,7 +18831,7 @@ class character_proto_get_person_infor_reward_end : public ::google::protobuf::M
   inline ::google::protobuf::int32 reward_state() const;
   inline void set_reward_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.get_person_infor_reward_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.get_person_infor_reward_end)
  private:
   inline void set_has_reward_state();
   inline void clear_has_reward_state();
@@ -18920,7 +18920,7 @@ class character_proto_find_other_unit_appearance_info_end : public ::google::pro
   inline ::google::protobuf::int32 appearance_id() const;
   inline void set_appearance_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.find_other_unit_appearance_info_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.find_other_unit_appearance_info_end)
  private:
   inline void set_has_target_guid();
   inline void clear_has_target_guid();
@@ -19010,7 +19010,7 @@ class character_proto_save_customize_appearance_info : public ::google::protobuf
   inline ::std::string* release_appearance();
   inline void set_allocated_appearance(::std::string* appearance);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.save_customize_appearance_info)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.save_customize_appearance_info)
  private:
   inline void set_has_appearance();
   inline void clear_has_appearance();
@@ -19097,7 +19097,7 @@ class character_proto_save_appearance_info_to_id : public ::google::protobuf::Me
   inline ::std::string* release_appearance_info_string();
   inline void set_allocated_appearance_info_string(::std::string* appearance_info_string);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.save_appearance_info_to_id)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.save_appearance_info_to_id)
  private:
   inline void set_has_appearance_info_string();
   inline void clear_has_appearance_info_string();
@@ -19191,7 +19191,7 @@ class character_proto_save_appearance_info_to_id_end : public ::google::protobuf
   inline ::google::protobuf::int32 appearance_info_id() const;
   inline void set_appearance_info_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.save_appearance_info_to_id_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.save_appearance_info_to_id_end)
  private:
   inline void set_has_appearance_info_string();
   inline void clear_has_appearance_info_string();
@@ -19276,7 +19276,7 @@ class character_proto_load_appearance_info_by_id : public ::google::protobuf::Me
   inline ::google::protobuf::int32 appearance_info_id() const;
   inline void set_appearance_info_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.load_appearance_info_by_id)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.load_appearance_info_by_id)
  private:
   inline void set_has_appearance_info_id();
   inline void clear_has_appearance_info_id();
@@ -19370,7 +19370,7 @@ class character_proto_load_appearance_info_by_id_end : public ::google::protobuf
   inline ::google::protobuf::int32 appearance_info_id() const;
   inline void set_appearance_info_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.load_appearance_info_by_id_end)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.load_appearance_info_by_id_end)
  private:
   inline void set_has_appearance_info_string();
   inline void clear_has_appearance_info_string();
@@ -19455,7 +19455,7 @@ class character_proto_show_vip : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 is_show_vip() const;
   inline void set_is_show_vip(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.show_vip)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.show_vip)
  private:
   inline void set_has_is_show_vip();
   inline void clear_has_is_show_vip();
@@ -19537,7 +19537,7 @@ class character_proto_buy_tip : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 tip_type() const;
   inline void set_tip_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.buy_tip)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.buy_tip)
  private:
   inline void set_has_tip_type();
   inline void clear_has_tip_type();
@@ -19612,7 +19612,7 @@ class character_proto_break_map_over : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.break_map_over)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.break_map_over)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -19691,7 +19691,7 @@ class character_proto_change_enchant_show_type : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 show_type() const;
   inline void set_show_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto.change_enchant_show_type)
+  // @@protoc_insertion_point(class_scope:faith.character_proto.change_enchant_show_type)
  private:
   inline void set_has_show_type();
   inline void clear_has_show_type();
@@ -19955,7 +19955,7 @@ class character_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.character_proto)
+  // @@protoc_insertion_point(class_scope:faith.character_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -20039,7 +20039,7 @@ class character_s2s_sl_logic_data : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.character_s2s.sl_logic_data)
+  // @@protoc_insertion_point(class_scope:faith.character_s2s.sl_logic_data)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -20124,7 +20124,7 @@ class character_s2s_sl_time_data : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.character_s2s.sl_time_data)
+  // @@protoc_insertion_point(class_scope:faith.character_s2s.sl_time_data)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -20209,7 +20209,7 @@ class character_s2s_sl_money_data : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.character_s2s.sl_money_data)
+  // @@protoc_insertion_point(class_scope:faith.character_s2s.sl_money_data)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -20286,7 +20286,7 @@ class character_s2s : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.character_s2s)
+  // @@protoc_insertion_point(class_scope:faith.character_s2s)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -20358,7 +20358,7 @@ class character : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.character)
+  // @@protoc_insertion_point(class_scope:faith.character)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -20950,27 +20950,27 @@ inline void character_proto_enum_character_end_info::set_spirit_upgrade_count(::
   spirit_upgrade_count_ = value;
 }
 
-// repeated .hld.character_proto.enum_character_item item_info = 18;
+// repeated .faith.character_proto.enum_character_item item_info = 18;
 inline int character_proto_enum_character_end_info::item_info_size() const {
   return item_info_.size();
 }
 inline void character_proto_enum_character_end_info::clear_item_info() {
   item_info_.Clear();
 }
-inline const ::hld::character_proto_enum_character_item& character_proto_enum_character_end_info::item_info(int index) const {
+inline const ::faith::character_proto_enum_character_item& character_proto_enum_character_end_info::item_info(int index) const {
   return item_info_.Get(index);
 }
-inline ::hld::character_proto_enum_character_item* character_proto_enum_character_end_info::mutable_item_info(int index) {
+inline ::faith::character_proto_enum_character_item* character_proto_enum_character_end_info::mutable_item_info(int index) {
   return item_info_.Mutable(index);
 }
-inline ::hld::character_proto_enum_character_item* character_proto_enum_character_end_info::add_item_info() {
+inline ::faith::character_proto_enum_character_item* character_proto_enum_character_end_info::add_item_info() {
   return item_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::character_proto_enum_character_item >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::character_proto_enum_character_item >&
 character_proto_enum_character_end_info::item_info() const {
   return item_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::character_proto_enum_character_item >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::character_proto_enum_character_item >*
 character_proto_enum_character_end_info::mutable_item_info() {
   return &item_info_;
 }
@@ -23491,7 +23491,7 @@ inline void character_proto_character_move::set_unit_guid(::google::protobuf::in
   unit_guid_ = value;
 }
 
-// optional .hld.character_proto.pos_vector position = 2;
+// optional .faith.character_proto.pos_vector position = 2;
 inline bool character_proto_character_move::has_position() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -23502,24 +23502,24 @@ inline void character_proto_character_move::clear_has_position() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void character_proto_character_move::clear_position() {
-  if (position_ != NULL) position_->::hld::character_proto_pos_vector::Clear();
+  if (position_ != NULL) position_->::faith::character_proto_pos_vector::Clear();
   clear_has_position();
 }
-inline const ::hld::character_proto_pos_vector& character_proto_character_move::position() const {
+inline const ::faith::character_proto_pos_vector& character_proto_character_move::position() const {
   return position_ != NULL ? *position_ : *default_instance_->position_;
 }
-inline ::hld::character_proto_pos_vector* character_proto_character_move::mutable_position() {
+inline ::faith::character_proto_pos_vector* character_proto_character_move::mutable_position() {
   set_has_position();
-  if (position_ == NULL) position_ = new ::hld::character_proto_pos_vector;
+  if (position_ == NULL) position_ = new ::faith::character_proto_pos_vector;
   return position_;
 }
-inline ::hld::character_proto_pos_vector* character_proto_character_move::release_position() {
+inline ::faith::character_proto_pos_vector* character_proto_character_move::release_position() {
   clear_has_position();
-  ::hld::character_proto_pos_vector* temp = position_;
+  ::faith::character_proto_pos_vector* temp = position_;
   position_ = NULL;
   return temp;
 }
-inline void character_proto_character_move::set_allocated_position(::hld::character_proto_pos_vector* position) {
+inline void character_proto_character_move::set_allocated_position(::faith::character_proto_pos_vector* position) {
   delete position_;
   position_ = position;
   if (position) {
@@ -23529,7 +23529,7 @@ inline void character_proto_character_move::set_allocated_position(::hld::charac
   }
 }
 
-// optional .hld.character_proto.pos_vector direction = 3;
+// optional .faith.character_proto.pos_vector direction = 3;
 inline bool character_proto_character_move::has_direction() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -23540,24 +23540,24 @@ inline void character_proto_character_move::clear_has_direction() {
   _has_bits_[0] &= ~0x00000004u;
 }
 inline void character_proto_character_move::clear_direction() {
-  if (direction_ != NULL) direction_->::hld::character_proto_pos_vector::Clear();
+  if (direction_ != NULL) direction_->::faith::character_proto_pos_vector::Clear();
   clear_has_direction();
 }
-inline const ::hld::character_proto_pos_vector& character_proto_character_move::direction() const {
+inline const ::faith::character_proto_pos_vector& character_proto_character_move::direction() const {
   return direction_ != NULL ? *direction_ : *default_instance_->direction_;
 }
-inline ::hld::character_proto_pos_vector* character_proto_character_move::mutable_direction() {
+inline ::faith::character_proto_pos_vector* character_proto_character_move::mutable_direction() {
   set_has_direction();
-  if (direction_ == NULL) direction_ = new ::hld::character_proto_pos_vector;
+  if (direction_ == NULL) direction_ = new ::faith::character_proto_pos_vector;
   return direction_;
 }
-inline ::hld::character_proto_pos_vector* character_proto_character_move::release_direction() {
+inline ::faith::character_proto_pos_vector* character_proto_character_move::release_direction() {
   clear_has_direction();
-  ::hld::character_proto_pos_vector* temp = direction_;
+  ::faith::character_proto_pos_vector* temp = direction_;
   direction_ = NULL;
   return temp;
 }
-inline void character_proto_character_move::set_allocated_direction(::hld::character_proto_pos_vector* direction) {
+inline void character_proto_character_move::set_allocated_direction(::faith::character_proto_pos_vector* direction) {
   delete direction_;
   direction_ = direction;
   if (direction) {
@@ -23567,7 +23567,7 @@ inline void character_proto_character_move::set_allocated_direction(::hld::chara
   }
 }
 
-// optional .hld.character_proto.rot_angle rotator_angle = 4;
+// optional .faith.character_proto.rot_angle rotator_angle = 4;
 inline bool character_proto_character_move::has_rotator_angle() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -23578,24 +23578,24 @@ inline void character_proto_character_move::clear_has_rotator_angle() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void character_proto_character_move::clear_rotator_angle() {
-  if (rotator_angle_ != NULL) rotator_angle_->::hld::character_proto_rot_angle::Clear();
+  if (rotator_angle_ != NULL) rotator_angle_->::faith::character_proto_rot_angle::Clear();
   clear_has_rotator_angle();
 }
-inline const ::hld::character_proto_rot_angle& character_proto_character_move::rotator_angle() const {
+inline const ::faith::character_proto_rot_angle& character_proto_character_move::rotator_angle() const {
   return rotator_angle_ != NULL ? *rotator_angle_ : *default_instance_->rotator_angle_;
 }
-inline ::hld::character_proto_rot_angle* character_proto_character_move::mutable_rotator_angle() {
+inline ::faith::character_proto_rot_angle* character_proto_character_move::mutable_rotator_angle() {
   set_has_rotator_angle();
-  if (rotator_angle_ == NULL) rotator_angle_ = new ::hld::character_proto_rot_angle;
+  if (rotator_angle_ == NULL) rotator_angle_ = new ::faith::character_proto_rot_angle;
   return rotator_angle_;
 }
-inline ::hld::character_proto_rot_angle* character_proto_character_move::release_rotator_angle() {
+inline ::faith::character_proto_rot_angle* character_proto_character_move::release_rotator_angle() {
   clear_has_rotator_angle();
-  ::hld::character_proto_rot_angle* temp = rotator_angle_;
+  ::faith::character_proto_rot_angle* temp = rotator_angle_;
   rotator_angle_ = NULL;
   return temp;
 }
-inline void character_proto_character_move::set_allocated_rotator_angle(::hld::character_proto_rot_angle* rotator_angle) {
+inline void character_proto_character_move::set_allocated_rotator_angle(::faith::character_proto_rot_angle* rotator_angle) {
   delete rotator_angle_;
   rotator_angle_ = rotator_angle;
   if (rotator_angle) {
@@ -23609,7 +23609,7 @@ inline void character_proto_character_move::set_allocated_rotator_angle(::hld::c
 
 // character_proto_load_role_info_end
 
-// optional .hld.character_proto.unit_info_msg role_info = 1;
+// optional .faith.character_proto.unit_info_msg role_info = 1;
 inline bool character_proto_load_role_info_end::has_role_info() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -23620,24 +23620,24 @@ inline void character_proto_load_role_info_end::clear_has_role_info() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void character_proto_load_role_info_end::clear_role_info() {
-  if (role_info_ != NULL) role_info_->::hld::character_proto_unit_info_msg::Clear();
+  if (role_info_ != NULL) role_info_->::faith::character_proto_unit_info_msg::Clear();
   clear_has_role_info();
 }
-inline const ::hld::character_proto_unit_info_msg& character_proto_load_role_info_end::role_info() const {
+inline const ::faith::character_proto_unit_info_msg& character_proto_load_role_info_end::role_info() const {
   return role_info_ != NULL ? *role_info_ : *default_instance_->role_info_;
 }
-inline ::hld::character_proto_unit_info_msg* character_proto_load_role_info_end::mutable_role_info() {
+inline ::faith::character_proto_unit_info_msg* character_proto_load_role_info_end::mutable_role_info() {
   set_has_role_info();
-  if (role_info_ == NULL) role_info_ = new ::hld::character_proto_unit_info_msg;
+  if (role_info_ == NULL) role_info_ = new ::faith::character_proto_unit_info_msg;
   return role_info_;
 }
-inline ::hld::character_proto_unit_info_msg* character_proto_load_role_info_end::release_role_info() {
+inline ::faith::character_proto_unit_info_msg* character_proto_load_role_info_end::release_role_info() {
   clear_has_role_info();
-  ::hld::character_proto_unit_info_msg* temp = role_info_;
+  ::faith::character_proto_unit_info_msg* temp = role_info_;
   role_info_ = NULL;
   return temp;
 }
-inline void character_proto_load_role_info_end::set_allocated_role_info(::hld::character_proto_unit_info_msg* role_info) {
+inline void character_proto_load_role_info_end::set_allocated_role_info(::faith::character_proto_unit_info_msg* role_info) {
   delete role_info_;
   role_info_ = role_info;
   if (role_info) {
@@ -25460,27 +25460,27 @@ inline void character_proto_update_spirit::set_spirit_error(::google::protobuf::
   spirit_error_ = value;
 }
 
-// repeated .hld.character_proto.spirit_info spirit_list = 3;
+// repeated .faith.character_proto.spirit_info spirit_list = 3;
 inline int character_proto_update_spirit::spirit_list_size() const {
   return spirit_list_.size();
 }
 inline void character_proto_update_spirit::clear_spirit_list() {
   spirit_list_.Clear();
 }
-inline const ::hld::character_proto_spirit_info& character_proto_update_spirit::spirit_list(int index) const {
+inline const ::faith::character_proto_spirit_info& character_proto_update_spirit::spirit_list(int index) const {
   return spirit_list_.Get(index);
 }
-inline ::hld::character_proto_spirit_info* character_proto_update_spirit::mutable_spirit_list(int index) {
+inline ::faith::character_proto_spirit_info* character_proto_update_spirit::mutable_spirit_list(int index) {
   return spirit_list_.Mutable(index);
 }
-inline ::hld::character_proto_spirit_info* character_proto_update_spirit::add_spirit_list() {
+inline ::faith::character_proto_spirit_info* character_proto_update_spirit::add_spirit_list() {
   return spirit_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::character_proto_spirit_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::character_proto_spirit_info >&
 character_proto_update_spirit::spirit_list() const {
   return spirit_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::character_proto_spirit_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::character_proto_spirit_info >*
 character_proto_update_spirit::mutable_spirit_list() {
   return &spirit_list_;
 }
@@ -27703,27 +27703,27 @@ character_proto_update_three_day_must_do_remain::mutable_role_guid() {
   return &role_guid_;
 }
 
-// repeated .hld.character_proto.daily_must_do_remain_info remain_three_day_must_do = 2;
+// repeated .faith.character_proto.daily_must_do_remain_info remain_three_day_must_do = 2;
 inline int character_proto_update_three_day_must_do_remain::remain_three_day_must_do_size() const {
   return remain_three_day_must_do_.size();
 }
 inline void character_proto_update_three_day_must_do_remain::clear_remain_three_day_must_do() {
   remain_three_day_must_do_.Clear();
 }
-inline const ::hld::character_proto_daily_must_do_remain_info& character_proto_update_three_day_must_do_remain::remain_three_day_must_do(int index) const {
+inline const ::faith::character_proto_daily_must_do_remain_info& character_proto_update_three_day_must_do_remain::remain_three_day_must_do(int index) const {
   return remain_three_day_must_do_.Get(index);
 }
-inline ::hld::character_proto_daily_must_do_remain_info* character_proto_update_three_day_must_do_remain::mutable_remain_three_day_must_do(int index) {
+inline ::faith::character_proto_daily_must_do_remain_info* character_proto_update_three_day_must_do_remain::mutable_remain_three_day_must_do(int index) {
   return remain_three_day_must_do_.Mutable(index);
 }
-inline ::hld::character_proto_daily_must_do_remain_info* character_proto_update_three_day_must_do_remain::add_remain_three_day_must_do() {
+inline ::faith::character_proto_daily_must_do_remain_info* character_proto_update_three_day_must_do_remain::add_remain_three_day_must_do() {
   return remain_three_day_must_do_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::character_proto_daily_must_do_remain_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::character_proto_daily_must_do_remain_info >&
 character_proto_update_three_day_must_do_remain::remain_three_day_must_do() const {
   return remain_three_day_must_do_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::character_proto_daily_must_do_remain_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::character_proto_daily_must_do_remain_info >*
 character_proto_update_three_day_must_do_remain::mutable_remain_three_day_must_do() {
   return &remain_three_day_must_do_;
 }
@@ -28884,27 +28884,27 @@ inline void character_proto_update_world_boss::set_is_need_show(bool value) {
   is_need_show_ = value;
 }
 
-// repeated .hld.character_proto.world_boss_data world_boss_array = 2;
+// repeated .faith.character_proto.world_boss_data world_boss_array = 2;
 inline int character_proto_update_world_boss::world_boss_array_size() const {
   return world_boss_array_.size();
 }
 inline void character_proto_update_world_boss::clear_world_boss_array() {
   world_boss_array_.Clear();
 }
-inline const ::hld::character_proto_world_boss_data& character_proto_update_world_boss::world_boss_array(int index) const {
+inline const ::faith::character_proto_world_boss_data& character_proto_update_world_boss::world_boss_array(int index) const {
   return world_boss_array_.Get(index);
 }
-inline ::hld::character_proto_world_boss_data* character_proto_update_world_boss::mutable_world_boss_array(int index) {
+inline ::faith::character_proto_world_boss_data* character_proto_update_world_boss::mutable_world_boss_array(int index) {
   return world_boss_array_.Mutable(index);
 }
-inline ::hld::character_proto_world_boss_data* character_proto_update_world_boss::add_world_boss_array() {
+inline ::faith::character_proto_world_boss_data* character_proto_update_world_boss::add_world_boss_array() {
   return world_boss_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::character_proto_world_boss_data >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::character_proto_world_boss_data >&
 character_proto_update_world_boss::world_boss_array() const {
   return world_boss_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::character_proto_world_boss_data >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::character_proto_world_boss_data >*
 character_proto_update_world_boss::mutable_world_boss_array() {
   return &world_boss_array_;
 }
@@ -29980,27 +29980,27 @@ inline void character_proto_find_other_unit_equiping_end::set_target_guid(::goog
   target_guid_ = value;
 }
 
-// repeated .hld.character_proto.find_other_unit_item_one equiping_info = 2;
+// repeated .faith.character_proto.find_other_unit_item_one equiping_info = 2;
 inline int character_proto_find_other_unit_equiping_end::equiping_info_size() const {
   return equiping_info_.size();
 }
 inline void character_proto_find_other_unit_equiping_end::clear_equiping_info() {
   equiping_info_.Clear();
 }
-inline const ::hld::character_proto_find_other_unit_item_one& character_proto_find_other_unit_equiping_end::equiping_info(int index) const {
+inline const ::faith::character_proto_find_other_unit_item_one& character_proto_find_other_unit_equiping_end::equiping_info(int index) const {
   return equiping_info_.Get(index);
 }
-inline ::hld::character_proto_find_other_unit_item_one* character_proto_find_other_unit_equiping_end::mutable_equiping_info(int index) {
+inline ::faith::character_proto_find_other_unit_item_one* character_proto_find_other_unit_equiping_end::mutable_equiping_info(int index) {
   return equiping_info_.Mutable(index);
 }
-inline ::hld::character_proto_find_other_unit_item_one* character_proto_find_other_unit_equiping_end::add_equiping_info() {
+inline ::faith::character_proto_find_other_unit_item_one* character_proto_find_other_unit_equiping_end::add_equiping_info() {
   return equiping_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::character_proto_find_other_unit_item_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::character_proto_find_other_unit_item_one >&
 character_proto_find_other_unit_equiping_end::equiping_info() const {
   return equiping_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::character_proto_find_other_unit_item_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::character_proto_find_other_unit_item_one >*
 character_proto_find_other_unit_equiping_end::mutable_equiping_info() {
   return &equiping_info_;
 }
@@ -30346,27 +30346,27 @@ inline void character_proto_find_other_unit_wing_or_mount_end::set_target_guid(:
   target_guid_ = value;
 }
 
-// repeated .hld.character_proto.find_other_unit_item_one mount_or_wing_info = 2;
+// repeated .faith.character_proto.find_other_unit_item_one mount_or_wing_info = 2;
 inline int character_proto_find_other_unit_wing_or_mount_end::mount_or_wing_info_size() const {
   return mount_or_wing_info_.size();
 }
 inline void character_proto_find_other_unit_wing_or_mount_end::clear_mount_or_wing_info() {
   mount_or_wing_info_.Clear();
 }
-inline const ::hld::character_proto_find_other_unit_item_one& character_proto_find_other_unit_wing_or_mount_end::mount_or_wing_info(int index) const {
+inline const ::faith::character_proto_find_other_unit_item_one& character_proto_find_other_unit_wing_or_mount_end::mount_or_wing_info(int index) const {
   return mount_or_wing_info_.Get(index);
 }
-inline ::hld::character_proto_find_other_unit_item_one* character_proto_find_other_unit_wing_or_mount_end::mutable_mount_or_wing_info(int index) {
+inline ::faith::character_proto_find_other_unit_item_one* character_proto_find_other_unit_wing_or_mount_end::mutable_mount_or_wing_info(int index) {
   return mount_or_wing_info_.Mutable(index);
 }
-inline ::hld::character_proto_find_other_unit_item_one* character_proto_find_other_unit_wing_or_mount_end::add_mount_or_wing_info() {
+inline ::faith::character_proto_find_other_unit_item_one* character_proto_find_other_unit_wing_or_mount_end::add_mount_or_wing_info() {
   return mount_or_wing_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::character_proto_find_other_unit_item_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::character_proto_find_other_unit_item_one >&
 character_proto_find_other_unit_wing_or_mount_end::mount_or_wing_info() const {
   return mount_or_wing_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::character_proto_find_other_unit_item_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::character_proto_find_other_unit_item_one >*
 character_proto_find_other_unit_wing_or_mount_end::mutable_mount_or_wing_info() {
   return &mount_or_wing_info_;
 }
@@ -31505,27 +31505,27 @@ inline void character_proto_red_pack_info::set_remain_money_num(::google::protob
   remain_money_num_ = value;
 }
 
-// repeated .hld.character_proto.red_pack_receiver_info receiver_list = 9;
+// repeated .faith.character_proto.red_pack_receiver_info receiver_list = 9;
 inline int character_proto_red_pack_info::receiver_list_size() const {
   return receiver_list_.size();
 }
 inline void character_proto_red_pack_info::clear_receiver_list() {
   receiver_list_.Clear();
 }
-inline const ::hld::character_proto_red_pack_receiver_info& character_proto_red_pack_info::receiver_list(int index) const {
+inline const ::faith::character_proto_red_pack_receiver_info& character_proto_red_pack_info::receiver_list(int index) const {
   return receiver_list_.Get(index);
 }
-inline ::hld::character_proto_red_pack_receiver_info* character_proto_red_pack_info::mutable_receiver_list(int index) {
+inline ::faith::character_proto_red_pack_receiver_info* character_proto_red_pack_info::mutable_receiver_list(int index) {
   return receiver_list_.Mutable(index);
 }
-inline ::hld::character_proto_red_pack_receiver_info* character_proto_red_pack_info::add_receiver_list() {
+inline ::faith::character_proto_red_pack_receiver_info* character_proto_red_pack_info::add_receiver_list() {
   return receiver_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::character_proto_red_pack_receiver_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::character_proto_red_pack_receiver_info >&
 character_proto_red_pack_info::receiver_list() const {
   return receiver_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::character_proto_red_pack_receiver_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::character_proto_red_pack_receiver_info >*
 character_proto_red_pack_info::mutable_receiver_list() {
   return &receiver_list_;
 }
@@ -31534,27 +31534,27 @@ character_proto_red_pack_info::mutable_receiver_list() {
 
 // character_proto_update_red_pack_info
 
-// repeated .hld.character_proto.red_pack_info info_list = 1;
+// repeated .faith.character_proto.red_pack_info info_list = 1;
 inline int character_proto_update_red_pack_info::info_list_size() const {
   return info_list_.size();
 }
 inline void character_proto_update_red_pack_info::clear_info_list() {
   info_list_.Clear();
 }
-inline const ::hld::character_proto_red_pack_info& character_proto_update_red_pack_info::info_list(int index) const {
+inline const ::faith::character_proto_red_pack_info& character_proto_update_red_pack_info::info_list(int index) const {
   return info_list_.Get(index);
 }
-inline ::hld::character_proto_red_pack_info* character_proto_update_red_pack_info::mutable_info_list(int index) {
+inline ::faith::character_proto_red_pack_info* character_proto_update_red_pack_info::mutable_info_list(int index) {
   return info_list_.Mutable(index);
 }
-inline ::hld::character_proto_red_pack_info* character_proto_update_red_pack_info::add_info_list() {
+inline ::faith::character_proto_red_pack_info* character_proto_update_red_pack_info::add_info_list() {
   return info_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::character_proto_red_pack_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::character_proto_red_pack_info >&
 character_proto_update_red_pack_info::info_list() const {
   return info_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::character_proto_red_pack_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::character_proto_red_pack_info >*
 character_proto_update_red_pack_info::mutable_info_list() {
   return &info_list_;
 }
@@ -31849,27 +31849,27 @@ inline void character_proto_guide_record_one::set_state(::google::protobuf::int3
 
 // character_proto_update_guide_record
 
-// repeated .hld.character_proto.guide_record_one record_list = 1;
+// repeated .faith.character_proto.guide_record_one record_list = 1;
 inline int character_proto_update_guide_record::record_list_size() const {
   return record_list_.size();
 }
 inline void character_proto_update_guide_record::clear_record_list() {
   record_list_.Clear();
 }
-inline const ::hld::character_proto_guide_record_one& character_proto_update_guide_record::record_list(int index) const {
+inline const ::faith::character_proto_guide_record_one& character_proto_update_guide_record::record_list(int index) const {
   return record_list_.Get(index);
 }
-inline ::hld::character_proto_guide_record_one* character_proto_update_guide_record::mutable_record_list(int index) {
+inline ::faith::character_proto_guide_record_one* character_proto_update_guide_record::mutable_record_list(int index) {
   return record_list_.Mutable(index);
 }
-inline ::hld::character_proto_guide_record_one* character_proto_update_guide_record::add_record_list() {
+inline ::faith::character_proto_guide_record_one* character_proto_update_guide_record::add_record_list() {
   return record_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::character_proto_guide_record_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::character_proto_guide_record_one >&
 character_proto_update_guide_record::record_list() const {
   return record_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::character_proto_guide_record_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::character_proto_guide_record_one >*
 character_proto_update_guide_record::mutable_record_list() {
   return &record_list_;
 }
@@ -35768,7 +35768,7 @@ character_s2s_sl_money_data::mutable_data_ary() {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

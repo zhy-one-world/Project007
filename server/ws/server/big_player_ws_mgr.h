@@ -10,7 +10,7 @@
 #include "ws_client.hpp"
 
 
-namespace hld
+namespace faith
 {
 	class big_player_ws_mgr
 	{
@@ -45,7 +45,7 @@ namespace hld
 		void				load_statue_by_ws_proc(guid_64 request_player_guid); //Эт
 
 		void				send_big_player_msg_to_other_server(bool is_load_flag, int32 server_id = 0); //Эт
-		void				set_title_session_login(const guid_64& role_guid, bool(&loading_title_flag)[hld::e_title_type_max]);
+		void				set_title_session_login(const guid_64& role_guid, bool(&loading_title_flag)[faith::e_title_type_max]);
 		int32				get_big_player_title_type(int32 player_type);
 
 		void				clear_title_with_big_player_clear(int32 big_player_type); //Эт

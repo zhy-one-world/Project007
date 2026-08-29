@@ -3,7 +3,7 @@
 #include "logic/skill_manager.h"
 #include "skill_def.hpp"
 
-namespace hld
+namespace faith
 {
 	void send_skill::send_skill_spell_cast(s_unit_identifier const& attacker_idf,
 		int32 skill_id,

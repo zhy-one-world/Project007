@@ -1,6 +1,6 @@
 #include "log_file_mgr.h"
 #include "game_cfg/servers_config.h"
-namespace hld
+namespace faith
 {
 	logger_base    g_default_logger;
 	void log_file_mgr::init_server_id(int32 in_server_id)

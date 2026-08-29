@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_auction_2eproto();
@@ -147,7 +147,7 @@ class auction_proto_operate : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 money_num() const;
   inline void set_money_num(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.operate)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.operate)
  private:
   inline void set_has_item_guid();
   inline void clear_has_item_guid();
@@ -276,7 +276,7 @@ class auction_proto_operate_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 operate_result() const;
   inline void set_operate_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.operate_end)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.operate_end)
  private:
   inline void set_has_item_guid();
   inline void clear_has_item_guid();
@@ -540,7 +540,7 @@ class auction_proto_auction_item_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 is_show() const;
   inline void set_is_show(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.auction_item_info)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.auction_item_info)
  private:
   inline void set_has_seller_guid();
   inline void clear_has_seller_guid();
@@ -683,26 +683,26 @@ class auction_proto_update_selling_auction_list : public ::google::protobuf::Mes
   inline bool is_need_clean() const;
   inline void set_is_need_clean(bool value);
 
-  // repeated .hld.auction_proto.auction_item_info item_list = 2;
+  // repeated .faith.auction_proto.auction_item_info item_list = 2;
   inline int item_list_size() const;
   inline void clear_item_list();
   static const int kItemListFieldNumber = 2;
-  inline const ::hld::auction_proto_auction_item_info& item_list(int index) const;
-  inline ::hld::auction_proto_auction_item_info* mutable_item_list(int index);
-  inline ::hld::auction_proto_auction_item_info* add_item_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_info >&
+  inline const ::faith::auction_proto_auction_item_info& item_list(int index) const;
+  inline ::faith::auction_proto_auction_item_info* mutable_item_list(int index);
+  inline ::faith::auction_proto_auction_item_info* add_item_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_info >&
       item_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_info >*
       mutable_item_list();
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.update_selling_auction_list)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.update_selling_auction_list)
  private:
   inline void set_has_is_need_clean();
   inline void clear_has_is_need_clean();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_info > item_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_info > item_list_;
   bool is_need_clean_;
 
   mutable int _cached_size_;
@@ -778,7 +778,7 @@ class auction_proto_receieve_sell_success_info : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 item_template_id() const;
   inline void set_item_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.receieve_sell_success_info)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.receieve_sell_success_info)
  private:
   inline void set_has_item_template_id();
   inline void clear_has_item_template_id();
@@ -942,7 +942,7 @@ class auction_proto_req_auction_list : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 career_type() const;
   inline void set_career_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.req_auction_list)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.req_auction_list)
  private:
   inline void set_has_main_type();
   inline void clear_has_main_type();
@@ -1050,16 +1050,16 @@ class auction_proto_req_auction_list_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.auction_proto.auction_item_info item_list = 1;
+  // repeated .faith.auction_proto.auction_item_info item_list = 1;
   inline int item_list_size() const;
   inline void clear_item_list();
   static const int kItemListFieldNumber = 1;
-  inline const ::hld::auction_proto_auction_item_info& item_list(int index) const;
-  inline ::hld::auction_proto_auction_item_info* mutable_item_list(int index);
-  inline ::hld::auction_proto_auction_item_info* add_item_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_info >&
+  inline const ::faith::auction_proto_auction_item_info& item_list(int index) const;
+  inline ::faith::auction_proto_auction_item_info* mutable_item_list(int index);
+  inline ::faith::auction_proto_auction_item_info* add_item_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_info >&
       item_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_info >*
       mutable_item_list();
 
   // optional int32 cur_page = 2;
@@ -1090,7 +1090,7 @@ class auction_proto_req_auction_list_end : public ::google::protobuf::Message {
   inline bool is_need_clear() const;
   inline void set_is_need_clear(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.req_auction_list_end)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.req_auction_list_end)
  private:
   inline void set_has_cur_page();
   inline void clear_has_cur_page();
@@ -1103,7 +1103,7 @@ class auction_proto_req_auction_list_end : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_info > item_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_info > item_list_;
   ::google::protobuf::int32 cur_page_;
   ::google::protobuf::int32 max_info_num_;
   bool is_final_;
@@ -1189,7 +1189,7 @@ class auction_proto_req_trade_record : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 page_index() const;
   inline void set_page_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.req_trade_record)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.req_trade_record)
  private:
   inline void set_has_trade_type();
   inline void clear_has_trade_type();
@@ -1281,19 +1281,19 @@ class auction_proto_req_trade_record_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 cur_page_index() const;
   inline void set_cur_page_index(::google::protobuf::int32 value);
 
-  // repeated .hld.auction_proto.auction_item_info item_list = 3;
+  // repeated .faith.auction_proto.auction_item_info item_list = 3;
   inline int item_list_size() const;
   inline void clear_item_list();
   static const int kItemListFieldNumber = 3;
-  inline const ::hld::auction_proto_auction_item_info& item_list(int index) const;
-  inline ::hld::auction_proto_auction_item_info* mutable_item_list(int index);
-  inline ::hld::auction_proto_auction_item_info* add_item_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_info >&
+  inline const ::faith::auction_proto_auction_item_info& item_list(int index) const;
+  inline ::faith::auction_proto_auction_item_info* mutable_item_list(int index);
+  inline ::faith::auction_proto_auction_item_info* add_item_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_info >&
       item_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_info >*
       mutable_item_list();
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.req_trade_record_end)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.req_trade_record_end)
  private:
   inline void set_has_total_record_num();
   inline void clear_has_total_record_num();
@@ -1304,7 +1304,7 @@ class auction_proto_req_trade_record_end : public ::google::protobuf::Message {
 
   ::google::protobuf::int32 total_record_num_;
   ::google::protobuf::int32 cur_page_index_;
-  ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_info > item_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_info > item_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(3 + 31) / 32];
@@ -1386,7 +1386,7 @@ class auction_proto_req_another_sell_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 item_template_id() const;
   inline void set_item_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.req_another_sell_info)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.req_another_sell_info)
  private:
   inline void set_has_sell_money_type();
   inline void clear_has_sell_money_type();
@@ -1478,16 +1478,16 @@ class auction_proto_req_another_sell_info_end : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 item_template_id() const;
   inline void set_item_template_id(::google::protobuf::int32 value);
 
-  // repeated .hld.auction_proto.auction_item_info item_list = 3;
+  // repeated .faith.auction_proto.auction_item_info item_list = 3;
   inline int item_list_size() const;
   inline void clear_item_list();
   static const int kItemListFieldNumber = 3;
-  inline const ::hld::auction_proto_auction_item_info& item_list(int index) const;
-  inline ::hld::auction_proto_auction_item_info* mutable_item_list(int index);
-  inline ::hld::auction_proto_auction_item_info* add_item_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_info >&
+  inline const ::faith::auction_proto_auction_item_info& item_list(int index) const;
+  inline ::faith::auction_proto_auction_item_info* mutable_item_list(int index);
+  inline ::faith::auction_proto_auction_item_info* add_item_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_info >&
       item_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_info >*
       mutable_item_list();
 
   // optional bool is_final = 4;
@@ -1504,7 +1504,7 @@ class auction_proto_req_another_sell_info_end : public ::google::protobuf::Messa
   inline bool is_need_clear() const;
   inline void set_is_need_clear(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.req_another_sell_info_end)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.req_another_sell_info_end)
  private:
   inline void set_has_sell_money_type();
   inline void clear_has_sell_money_type();
@@ -1519,7 +1519,7 @@ class auction_proto_req_another_sell_info_end : public ::google::protobuf::Messa
 
   ::google::protobuf::int32 sell_money_type_;
   ::google::protobuf::int32 item_template_id_;
-  ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_info > item_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_info > item_list_;
   bool is_final_;
   bool is_need_clear_;
 
@@ -1617,7 +1617,7 @@ class auction_proto_trade_operate : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 price_money_value() const;
   inline void set_price_money_value(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.trade_operate)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.trade_operate)
  private:
   inline void set_has_trade_guid();
   inline void clear_has_trade_guid();
@@ -1722,7 +1722,7 @@ class auction_proto_trade_operate_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 operate_result() const;
   inline void set_operate_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.trade_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.trade_operate_end)
  private:
   inline void set_has_trade_guid();
   inline void clear_has_trade_guid();
@@ -1817,7 +1817,7 @@ class auction_proto_req_self_bid_list : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 page_index() const;
   inline void set_page_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.req_self_bid_list)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.req_self_bid_list)
  private:
   inline void set_has_trade_type();
   inline void clear_has_trade_type();
@@ -1909,7 +1909,7 @@ class auction_proto_bid_are_overtaken : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 item_num() const;
   inline void set_item_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.bid_are_overtaken)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.bid_are_overtaken)
  private:
   inline void set_has_item_id();
   inline void clear_has_item_id();
@@ -1994,7 +1994,7 @@ class auction_proto_auction_sell_flag : public ::google::protobuf::Message {
   inline bool sell_flag() const;
   inline void set_sell_flag(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.auction_sell_flag)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.auction_sell_flag)
  private:
   inline void set_has_sell_flag();
   inline void clear_has_sell_flag();
@@ -2147,7 +2147,7 @@ class auction_proto_auction_item_single : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_item_info();
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.auction_item_single)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.auction_item_single)
  private:
   inline void set_has_create_time();
   inline void clear_has_create_time();
@@ -2242,24 +2242,24 @@ class auction_proto_auction_bid_record_failure : public ::google::protobuf::Mess
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.auction_proto.auction_item_single auction_record_array = 1;
+  // repeated .faith.auction_proto.auction_item_single auction_record_array = 1;
   inline int auction_record_array_size() const;
   inline void clear_auction_record_array();
   static const int kAuctionRecordArrayFieldNumber = 1;
-  inline const ::hld::auction_proto_auction_item_single& auction_record_array(int index) const;
-  inline ::hld::auction_proto_auction_item_single* mutable_auction_record_array(int index);
-  inline ::hld::auction_proto_auction_item_single* add_auction_record_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_single >&
+  inline const ::faith::auction_proto_auction_item_single& auction_record_array(int index) const;
+  inline ::faith::auction_proto_auction_item_single* mutable_auction_record_array(int index);
+  inline ::faith::auction_proto_auction_item_single* add_auction_record_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_single >&
       auction_record_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_single >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_single >*
       mutable_auction_record_array();
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.auction_bid_record_failure)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.auction_bid_record_failure)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_single > auction_record_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_single > auction_record_array_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -2412,7 +2412,7 @@ class auction_proto_auction_bid_single : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 is_read() const;
   inline void set_is_read(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.auction_bid_single)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.auction_bid_single)
  private:
   inline void set_has_create_time();
   inline void clear_has_create_time();
@@ -2522,25 +2522,25 @@ class auction_proto_auction_bid_notice : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // repeated .hld.auction_proto.auction_bid_single bid_notice_array = 2;
+  // repeated .faith.auction_proto.auction_bid_single bid_notice_array = 2;
   inline int bid_notice_array_size() const;
   inline void clear_bid_notice_array();
   static const int kBidNoticeArrayFieldNumber = 2;
-  inline const ::hld::auction_proto_auction_bid_single& bid_notice_array(int index) const;
-  inline ::hld::auction_proto_auction_bid_single* mutable_bid_notice_array(int index);
-  inline ::hld::auction_proto_auction_bid_single* add_bid_notice_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_bid_single >&
+  inline const ::faith::auction_proto_auction_bid_single& bid_notice_array(int index) const;
+  inline ::faith::auction_proto_auction_bid_single* mutable_bid_notice_array(int index);
+  inline ::faith::auction_proto_auction_bid_single* add_bid_notice_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_bid_single >&
       bid_notice_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_bid_single >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_bid_single >*
       mutable_bid_notice_array();
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.auction_bid_notice)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.auction_bid_notice)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > role_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_bid_single > bid_notice_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_bid_single > bid_notice_array_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -2632,7 +2632,7 @@ class auction_proto_auction_bid_notice_red : public ::google::protobuf::Message 
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_is_red();
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto.auction_bid_notice_red)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto.auction_bid_notice_red)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2728,7 +2728,7 @@ class auction_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.auction_proto)
+  // @@protoc_insertion_point(class_scope:faith.auction_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -3658,27 +3658,27 @@ inline void auction_proto_update_selling_auction_list::set_is_need_clean(bool va
   is_need_clean_ = value;
 }
 
-// repeated .hld.auction_proto.auction_item_info item_list = 2;
+// repeated .faith.auction_proto.auction_item_info item_list = 2;
 inline int auction_proto_update_selling_auction_list::item_list_size() const {
   return item_list_.size();
 }
 inline void auction_proto_update_selling_auction_list::clear_item_list() {
   item_list_.Clear();
 }
-inline const ::hld::auction_proto_auction_item_info& auction_proto_update_selling_auction_list::item_list(int index) const {
+inline const ::faith::auction_proto_auction_item_info& auction_proto_update_selling_auction_list::item_list(int index) const {
   return item_list_.Get(index);
 }
-inline ::hld::auction_proto_auction_item_info* auction_proto_update_selling_auction_list::mutable_item_list(int index) {
+inline ::faith::auction_proto_auction_item_info* auction_proto_update_selling_auction_list::mutable_item_list(int index) {
   return item_list_.Mutable(index);
 }
-inline ::hld::auction_proto_auction_item_info* auction_proto_update_selling_auction_list::add_item_list() {
+inline ::faith::auction_proto_auction_item_info* auction_proto_update_selling_auction_list::add_item_list() {
   return item_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_info >&
 auction_proto_update_selling_auction_list::item_list() const {
   return item_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_info >*
 auction_proto_update_selling_auction_list::mutable_item_list() {
   return &item_list_;
 }
@@ -4029,27 +4029,27 @@ inline void auction_proto_req_auction_list::set_career_type(::google::protobuf::
 
 // auction_proto_req_auction_list_end
 
-// repeated .hld.auction_proto.auction_item_info item_list = 1;
+// repeated .faith.auction_proto.auction_item_info item_list = 1;
 inline int auction_proto_req_auction_list_end::item_list_size() const {
   return item_list_.size();
 }
 inline void auction_proto_req_auction_list_end::clear_item_list() {
   item_list_.Clear();
 }
-inline const ::hld::auction_proto_auction_item_info& auction_proto_req_auction_list_end::item_list(int index) const {
+inline const ::faith::auction_proto_auction_item_info& auction_proto_req_auction_list_end::item_list(int index) const {
   return item_list_.Get(index);
 }
-inline ::hld::auction_proto_auction_item_info* auction_proto_req_auction_list_end::mutable_item_list(int index) {
+inline ::faith::auction_proto_auction_item_info* auction_proto_req_auction_list_end::mutable_item_list(int index) {
   return item_list_.Mutable(index);
 }
-inline ::hld::auction_proto_auction_item_info* auction_proto_req_auction_list_end::add_item_list() {
+inline ::faith::auction_proto_auction_item_info* auction_proto_req_auction_list_end::add_item_list() {
   return item_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_info >&
 auction_proto_req_auction_list_end::item_list() const {
   return item_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_info >*
 auction_proto_req_auction_list_end::mutable_item_list() {
   return &item_list_;
 }
@@ -4238,27 +4238,27 @@ inline void auction_proto_req_trade_record_end::set_cur_page_index(::google::pro
   cur_page_index_ = value;
 }
 
-// repeated .hld.auction_proto.auction_item_info item_list = 3;
+// repeated .faith.auction_proto.auction_item_info item_list = 3;
 inline int auction_proto_req_trade_record_end::item_list_size() const {
   return item_list_.size();
 }
 inline void auction_proto_req_trade_record_end::clear_item_list() {
   item_list_.Clear();
 }
-inline const ::hld::auction_proto_auction_item_info& auction_proto_req_trade_record_end::item_list(int index) const {
+inline const ::faith::auction_proto_auction_item_info& auction_proto_req_trade_record_end::item_list(int index) const {
   return item_list_.Get(index);
 }
-inline ::hld::auction_proto_auction_item_info* auction_proto_req_trade_record_end::mutable_item_list(int index) {
+inline ::faith::auction_proto_auction_item_info* auction_proto_req_trade_record_end::mutable_item_list(int index) {
   return item_list_.Mutable(index);
 }
-inline ::hld::auction_proto_auction_item_info* auction_proto_req_trade_record_end::add_item_list() {
+inline ::faith::auction_proto_auction_item_info* auction_proto_req_trade_record_end::add_item_list() {
   return item_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_info >&
 auction_proto_req_trade_record_end::item_list() const {
   return item_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_info >*
 auction_proto_req_trade_record_end::mutable_item_list() {
   return &item_list_;
 }
@@ -4359,27 +4359,27 @@ inline void auction_proto_req_another_sell_info_end::set_item_template_id(::goog
   item_template_id_ = value;
 }
 
-// repeated .hld.auction_proto.auction_item_info item_list = 3;
+// repeated .faith.auction_proto.auction_item_info item_list = 3;
 inline int auction_proto_req_another_sell_info_end::item_list_size() const {
   return item_list_.size();
 }
 inline void auction_proto_req_another_sell_info_end::clear_item_list() {
   item_list_.Clear();
 }
-inline const ::hld::auction_proto_auction_item_info& auction_proto_req_another_sell_info_end::item_list(int index) const {
+inline const ::faith::auction_proto_auction_item_info& auction_proto_req_another_sell_info_end::item_list(int index) const {
   return item_list_.Get(index);
 }
-inline ::hld::auction_proto_auction_item_info* auction_proto_req_another_sell_info_end::mutable_item_list(int index) {
+inline ::faith::auction_proto_auction_item_info* auction_proto_req_another_sell_info_end::mutable_item_list(int index) {
   return item_list_.Mutable(index);
 }
-inline ::hld::auction_proto_auction_item_info* auction_proto_req_another_sell_info_end::add_item_list() {
+inline ::faith::auction_proto_auction_item_info* auction_proto_req_another_sell_info_end::add_item_list() {
   return item_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_info >&
 auction_proto_req_another_sell_info_end::item_list() const {
   return item_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_info >*
 auction_proto_req_another_sell_info_end::mutable_item_list() {
   return &item_list_;
 }
@@ -4972,27 +4972,27 @@ auction_proto_auction_item_single::mutable_item_info() {
 
 // auction_proto_auction_bid_record_failure
 
-// repeated .hld.auction_proto.auction_item_single auction_record_array = 1;
+// repeated .faith.auction_proto.auction_item_single auction_record_array = 1;
 inline int auction_proto_auction_bid_record_failure::auction_record_array_size() const {
   return auction_record_array_.size();
 }
 inline void auction_proto_auction_bid_record_failure::clear_auction_record_array() {
   auction_record_array_.Clear();
 }
-inline const ::hld::auction_proto_auction_item_single& auction_proto_auction_bid_record_failure::auction_record_array(int index) const {
+inline const ::faith::auction_proto_auction_item_single& auction_proto_auction_bid_record_failure::auction_record_array(int index) const {
   return auction_record_array_.Get(index);
 }
-inline ::hld::auction_proto_auction_item_single* auction_proto_auction_bid_record_failure::mutable_auction_record_array(int index) {
+inline ::faith::auction_proto_auction_item_single* auction_proto_auction_bid_record_failure::mutable_auction_record_array(int index) {
   return auction_record_array_.Mutable(index);
 }
-inline ::hld::auction_proto_auction_item_single* auction_proto_auction_bid_record_failure::add_auction_record_array() {
+inline ::faith::auction_proto_auction_item_single* auction_proto_auction_bid_record_failure::add_auction_record_array() {
   return auction_record_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_single >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_single >&
 auction_proto_auction_bid_record_failure::auction_record_array() const {
   return auction_record_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_item_single >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_item_single >*
 auction_proto_auction_bid_record_failure::mutable_auction_record_array() {
   return &auction_record_array_;
 }
@@ -5304,27 +5304,27 @@ auction_proto_auction_bid_notice::mutable_role_guid() {
   return &role_guid_;
 }
 
-// repeated .hld.auction_proto.auction_bid_single bid_notice_array = 2;
+// repeated .faith.auction_proto.auction_bid_single bid_notice_array = 2;
 inline int auction_proto_auction_bid_notice::bid_notice_array_size() const {
   return bid_notice_array_.size();
 }
 inline void auction_proto_auction_bid_notice::clear_bid_notice_array() {
   bid_notice_array_.Clear();
 }
-inline const ::hld::auction_proto_auction_bid_single& auction_proto_auction_bid_notice::bid_notice_array(int index) const {
+inline const ::faith::auction_proto_auction_bid_single& auction_proto_auction_bid_notice::bid_notice_array(int index) const {
   return bid_notice_array_.Get(index);
 }
-inline ::hld::auction_proto_auction_bid_single* auction_proto_auction_bid_notice::mutable_bid_notice_array(int index) {
+inline ::faith::auction_proto_auction_bid_single* auction_proto_auction_bid_notice::mutable_bid_notice_array(int index) {
   return bid_notice_array_.Mutable(index);
 }
-inline ::hld::auction_proto_auction_bid_single* auction_proto_auction_bid_notice::add_bid_notice_array() {
+inline ::faith::auction_proto_auction_bid_single* auction_proto_auction_bid_notice::add_bid_notice_array() {
   return bid_notice_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_bid_single >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_bid_single >&
 auction_proto_auction_bid_notice::bid_notice_array() const {
   return bid_notice_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::auction_proto_auction_bid_single >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::auction_proto_auction_bid_single >*
 auction_proto_auction_bid_notice::mutable_bid_notice_array() {
   return &bid_notice_array_;
 }
@@ -5390,7 +5390,7 @@ auction_proto_auction_bid_notice_red::mutable_is_red() {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

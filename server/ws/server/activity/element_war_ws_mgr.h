@@ -16,7 +16,7 @@
 #include "element_war_msg.hpp"
 #include "server_log.hpp"
 
-namespace hld
+namespace faith
 {
 	class c_element_war_role_info
 	{

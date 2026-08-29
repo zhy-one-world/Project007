@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_cross_5fladder_2eproto();
@@ -113,7 +113,7 @@ class cross_ladder_request_role_info : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.request_role_info)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.request_role_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -218,7 +218,7 @@ class cross_ladder_send_role_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 last_season_ranking() const;
   inline void set_last_season_ranking(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.send_role_info)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.send_role_info)
  private:
   inline void set_has_cross_result();
   inline void clear_has_cross_result();
@@ -307,7 +307,7 @@ class cross_ladder_request_sign_up : public ::google::protobuf::Message {
   inline bool is_join() const;
   inline void set_is_join(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.request_sign_up)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.request_sign_up)
  private:
   inline void set_has_is_join();
   inline void clear_has_is_join();
@@ -389,7 +389,7 @@ class cross_ladder_respond_sign_up : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 sign_up_result() const;
   inline void set_sign_up_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.respond_sign_up)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.respond_sign_up)
  private:
   inline void set_has_sign_up_result();
   inline void clear_has_sign_up_result();
@@ -530,7 +530,7 @@ class cross_ladder_send_match_success : public ::google::protobuf::Message {
   inline ::std::string* release_opponent_server_name();
   inline void set_allocated_opponent_server_name(::std::string* opponent_server_name);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.send_match_success)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.send_match_success)
  private:
   inline void set_has_opponent_name();
   inline void clear_has_opponent_name();
@@ -633,7 +633,7 @@ class cross_ladder_request_buy_join_ticket : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 num() const;
   inline void set_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.request_buy_join_ticket)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.request_buy_join_ticket)
  private:
   inline void set_has_num();
   inline void clear_has_num();
@@ -729,7 +729,7 @@ class cross_ladder_respond_buy_join_ticket : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 can_buy_num() const;
   inline void set_can_buy_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.respond_buy_join_ticket)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.respond_buy_join_ticket)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -829,7 +829,7 @@ class cross_ladder_map_member_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 score() const;
   inline void set_score(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.map_member_info)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.map_member_info)
  private:
   inline void set_has_role_name();
   inline void clear_has_role_name();
@@ -942,19 +942,19 @@ class cross_ladder_update_map_game_state : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 winner_guid_b() const;
   inline void set_winner_guid_b(::google::protobuf::int32 value);
 
-  // repeated .hld.cross_ladder.map_member_info member_vec = 6;
+  // repeated .faith.cross_ladder.map_member_info member_vec = 6;
   inline int member_vec_size() const;
   inline void clear_member_vec();
   static const int kMemberVecFieldNumber = 6;
-  inline const ::hld::cross_ladder_map_member_info& member_vec(int index) const;
-  inline ::hld::cross_ladder_map_member_info* mutable_member_vec(int index);
-  inline ::hld::cross_ladder_map_member_info* add_member_vec();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::cross_ladder_map_member_info >&
+  inline const ::faith::cross_ladder_map_member_info& member_vec(int index) const;
+  inline ::faith::cross_ladder_map_member_info* mutable_member_vec(int index);
+  inline ::faith::cross_ladder_map_member_info* add_member_vec();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::cross_ladder_map_member_info >&
       member_vec() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::cross_ladder_map_member_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::cross_ladder_map_member_info >*
       mutable_member_vec();
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.update_map_game_state)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.update_map_game_state)
  private:
   inline void set_has_game_state();
   inline void clear_has_game_state();
@@ -973,7 +973,7 @@ class cross_ladder_update_map_game_state : public ::google::protobuf::Message {
   ::google::protobuf::int32 state_end_time_;
   ::google::protobuf::int32 cur_turn_;
   ::google::protobuf::int32 winner_guid_a_;
-  ::google::protobuf::RepeatedPtrField< ::hld::cross_ladder_map_member_info > member_vec_;
+  ::google::protobuf::RepeatedPtrField< ::faith::cross_ladder_map_member_info > member_vec_;
   ::google::protobuf::int32 winner_guid_b_;
 
   mutable int _cached_size_;
@@ -1049,7 +1049,7 @@ class cross_ladder_req_mission_reward : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 index() const;
   inline void set_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.req_mission_reward)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.req_mission_reward)
  private:
   inline void set_has_index();
   inline void clear_has_index();
@@ -1138,7 +1138,7 @@ class cross_ladder_ret_mission_reward : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.ret_mission_reward)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.ret_mission_reward)
  private:
   inline void set_has_index();
   inline void clear_has_index();
@@ -1216,7 +1216,7 @@ class cross_ladder_get_role_competition : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.get_role_competition)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.get_role_competition)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1375,7 +1375,7 @@ class cross_ladder_sync_role_competition : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 world_level() const;
   inline void set_world_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.sync_role_competition)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.sync_role_competition)
  private:
   inline void set_has_is_buy();
   inline void clear_has_is_buy();
@@ -1490,7 +1490,7 @@ class cross_ladder_get_competition_lv_reward : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 manual_type() const;
   inline void set_manual_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.get_competition_lv_reward)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.get_competition_lv_reward)
  private:
   inline void set_has_manual_id();
   inline void clear_has_manual_id();
@@ -1599,7 +1599,7 @@ class cross_ladder_get_competition_lv_reward_end : public ::google::protobuf::Me
   inline ::google::protobuf::int32 get_type() const;
   inline void set_get_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.get_competition_lv_reward_end)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.get_competition_lv_reward_end)
  private:
   inline void set_has_get_type();
   inline void clear_has_get_type();
@@ -1676,7 +1676,7 @@ class cross_ladder_get_competition_lv_reward_all : public ::google::protobuf::Me
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.get_competition_lv_reward_all)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.get_competition_lv_reward_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1755,7 +1755,7 @@ class cross_ladder_buy_competition_lv : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 level() const;
   inline void set_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.buy_competition_lv)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.buy_competition_lv)
  private:
   inline void set_has_level();
   inline void clear_has_level();
@@ -1844,7 +1844,7 @@ class cross_ladder_buy_competition_lv_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 cur_exp() const;
   inline void set_cur_exp(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.buy_competition_lv_end)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.buy_competition_lv_end)
  private:
   inline void set_has_level();
   inline void clear_has_level();
@@ -1929,7 +1929,7 @@ class cross_ladder_buy_speical_manual : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 manual_type() const;
   inline void set_manual_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.buy_speical_manual)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.buy_speical_manual)
  private:
   inline void set_has_manual_type();
   inline void clear_has_manual_type();
@@ -2018,7 +2018,7 @@ class cross_ladder_buy_speical_manual_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 manual_type() const;
   inline void set_manual_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.buy_speical_manual_end)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.buy_speical_manual_end)
  private:
   inline void set_has_is_buy();
   inline void clear_has_is_buy();
@@ -2103,7 +2103,7 @@ class cross_ladder_send_upgrade_notify : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 upgrade_id() const;
   inline void set_upgrade_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.send_upgrade_notify)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.send_upgrade_notify)
  private:
   inline void set_has_upgrade_id();
   inline void clear_has_upgrade_id();
@@ -2178,7 +2178,7 @@ class cross_ladder_return_to_source_zone : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder.return_to_source_zone)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder.return_to_source_zone)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2273,7 +2273,7 @@ class cross_ladder : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.cross_ladder)
+  // @@protoc_insertion_point(class_scope:faith.cross_ladder)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -3025,27 +3025,27 @@ inline void cross_ladder_update_map_game_state::set_winner_guid_b(::google::prot
   winner_guid_b_ = value;
 }
 
-// repeated .hld.cross_ladder.map_member_info member_vec = 6;
+// repeated .faith.cross_ladder.map_member_info member_vec = 6;
 inline int cross_ladder_update_map_game_state::member_vec_size() const {
   return member_vec_.size();
 }
 inline void cross_ladder_update_map_game_state::clear_member_vec() {
   member_vec_.Clear();
 }
-inline const ::hld::cross_ladder_map_member_info& cross_ladder_update_map_game_state::member_vec(int index) const {
+inline const ::faith::cross_ladder_map_member_info& cross_ladder_update_map_game_state::member_vec(int index) const {
   return member_vec_.Get(index);
 }
-inline ::hld::cross_ladder_map_member_info* cross_ladder_update_map_game_state::mutable_member_vec(int index) {
+inline ::faith::cross_ladder_map_member_info* cross_ladder_update_map_game_state::mutable_member_vec(int index) {
   return member_vec_.Mutable(index);
 }
-inline ::hld::cross_ladder_map_member_info* cross_ladder_update_map_game_state::add_member_vec() {
+inline ::faith::cross_ladder_map_member_info* cross_ladder_update_map_game_state::add_member_vec() {
   return member_vec_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::cross_ladder_map_member_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::cross_ladder_map_member_info >&
 cross_ladder_update_map_game_state::member_vec() const {
   return member_vec_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::cross_ladder_map_member_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::cross_ladder_map_member_info >*
 cross_ladder_update_map_game_state::mutable_member_vec() {
   return &member_vec_;
 }
@@ -3693,7 +3693,7 @@ inline void cross_ladder_send_upgrade_notify::set_upgrade_id(::google::protobuf:
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

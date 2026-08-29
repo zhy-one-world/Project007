@@ -3,7 +3,7 @@
 #include "logic/type_def.hpp"
 #include "template_base.h"
  
-namespace hld
+namespace faith
 {
 	//////////////////////////////////item提示信息////////////////////////////////////////
 	const int32 e_item_string_bind = 90028001;									// 已绑定

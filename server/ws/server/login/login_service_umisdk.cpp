@@ -21,7 +21,7 @@ purpose:
 #include <time.hpp>
 #include "server_log.hpp"
 #include "server_log_msg.hpp"
-namespace hld
+namespace faith
 {
 	const xstring sdk_password = "googlesdk";
 
@@ -150,8 +150,8 @@ namespace hld
 					return false;
 				}
 				xstring account = data_value["userId"].asString();
-				int64 ban_role_array[hld::max_character_num];
-				int64 ban_chat_array[hld::max_character_num];
+				int64 ban_role_array[faith::max_character_num];
+				int64 ban_chat_array[faith::max_character_num];
 				memset(ban_role_array, 0, sizeof(ban_role_array));
 				memset(ban_chat_array, 0, sizeof(ban_role_array));
 
@@ -194,7 +194,7 @@ namespace hld
 
 	void login_service_umisdk::ls2dp_save_server_log(const xstring& log_sql_name, const xstring& sql_param_string)
 	{
-		hld::server2dp_save_log req;
+		faith::server2dp_save_log req;
 		int32 cpy_size = log_sql_name.size() > max_name_size ? max_name_size : log_sql_name.size();
 		memcpy(req.sql_table_name, log_sql_name.c_str(), cpy_size);
 		cpy_size = sql_param_string.size() > max_log_char_num ? max_log_char_num : sql_param_string.size();

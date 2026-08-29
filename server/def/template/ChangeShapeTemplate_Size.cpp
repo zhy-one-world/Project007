@@ -1,6 +1,6 @@
 #include "ChangeShapeTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void ChangeShapeTemplateSize()
     {

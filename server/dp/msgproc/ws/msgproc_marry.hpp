@@ -10,7 +10,7 @@
 #include "db_manager.hpp"
 
 
-namespace hld
+namespace faith
 {
 	//½ÇÉ«¹ØÏµ
 	void req_load_marry_info(uint32 connindex, int32 start_pos);

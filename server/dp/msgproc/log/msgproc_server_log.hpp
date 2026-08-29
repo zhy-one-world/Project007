@@ -9,7 +9,7 @@ time: 2017 11 30
 #include "db_manager.hpp"
 #include <server_log_msg.hpp>
 
-namespace hld
+namespace faith
 {
 	void dp_save_log_info(xstring& log_string, xstring& table_name);
 	void dp_save_log_info_end(db_result_type result);

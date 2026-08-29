@@ -12,7 +12,7 @@ author: zhaoyuming
 #include "char_def.hpp"
 #include "time_limit_activity_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push, 1)
 

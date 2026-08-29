@@ -1,0 +1,64 @@
+syntax = "proto2";
+package hld;
+
+message interaction_proto
+{
+	message c_s_interaction_invite
+	{
+		optional int64 be_invited_guid = 1;						// 被邀请者 guid
+		optional int32 interaction_type = 2;					// 发起者的交互动作类型
+	}
+	message s_c_interaction_invite
+	{
+		optional int64 invite_guid = 1;							// 邀请者 guid
+		optional int32 interaction_type = 2;					// 发起者的交互动作类型
+	}
+	
+	message c_s_interaction_invite_reply
+	{
+		optional int64 invite_guid = 1;						//邀请者 guid
+		optional int32 interaction_type = 2;				//交互类型
+		optional int32 reply_result	= 3;					//回复结果
+	}
+
+	message s_c_interaction_invite_reply
+	{
+		optional int64 invite_guid = 1;						// 邀请者 guid
+		optional int64 be_invited_guid = 2;					// 被邀请者 guid
+		optional int32 interaction_type = 3;				// 交互类型
+		optional int32 reply_result = 4;					// 回复结果
+	}
+	
+	message	c_s_real_start_interaction
+	{
+		optional int64 invite_guid = 1;						//邀请方 guid
+		optional int64 be_invited_guid = 2;					//被邀请方 guid
+		optional int32 interaction_type = 3;				//交互类型
+	}
+	
+	message s_c_real_start_interaction
+	{
+		optional int64 invite_guid = 1;						//邀请方 guid
+		optional int64 be_invited_guid = 2;					//被邀请方 guid
+		optional int32 interaction_type	= 3;				//交互类型
+	}
+	
+	message	c_s_stop_interaction
+	{
+		optional int64	target_guid = 1;					//停止交互
+	}
+	message	s_c_stop_interaction
+	{
+		optional int64	role_guid = 1;					//停止交互
+		optional int32	interaction_type = 2;			//交互类型
+	}
+	
+	message interaction_invite_end
+	{
+		optional int64 interaction_be_invited_guid = 1;						// 被邀请对象 guid
+		optional int64 interaction_initiator_guid = 2;						// 发起者 guid
+		optional int32 interaction_be_invited_interaction_type = 3;			// 被邀请者的交互动作类型
+		optional int32 interaction_initiator_interaction_type = 4;			// 发起者的交互动作类型
+		optional int32 interaction_result = 5;								// 交互邀请回复	
+	}
+}

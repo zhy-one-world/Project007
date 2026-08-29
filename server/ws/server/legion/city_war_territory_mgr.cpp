@@ -13,7 +13,7 @@
 #include "../ws/server/ranking/ranking_mgr_ws.h"
 #include "server_log.hpp"
 #include "net.pb.h"
-namespace hld
+namespace faith
 {
 	
 	city_war_territory_mgr::city_war_territory_mgr()
@@ -703,7 +703,7 @@ namespace hld
 
 		ranking_list* legion_rank = legion_ws_mgr::get_instance().get_legion_ranking_by_ranking_type(e_RankingIndex_legion_core);
 
-		ActivityCommonConfigTemplate* act_com_ptr = GET_TEMPLATE(ActivityCommonConfigTemplate, first_activity_common_template_id + hld::e_activity_type_overlord_city_war);
+		ActivityCommonConfigTemplate* act_com_ptr = GET_TEMPLATE(ActivityCommonConfigTemplate, first_activity_common_template_id + faith::e_activity_type_overlord_city_war);
 		if (nullptr != act_com_ptr)
 		{
 			if (nullptr != legion_rank)
@@ -1769,7 +1769,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::get_occupation_daily_award pro_msg;
+			faith::ws2cs_proto::get_occupation_daily_award pro_msg;
 			get_occupation_daily_award_msg.to_proto(pro_msg);
 			session_cur->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_get_occupation_daily_award);
 		}

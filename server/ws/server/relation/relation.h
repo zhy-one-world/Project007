@@ -12,7 +12,7 @@
 
 
 
-namespace hld
+namespace faith
 {
 	class client_session;
 	//关系人数据

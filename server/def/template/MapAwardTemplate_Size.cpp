@@ -1,6 +1,6 @@
 #include "MapAwardTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void MapAwardTemplateSize()
     {

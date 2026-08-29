@@ -21,7 +21,7 @@ purpose: about role's pokedex_mgr
 #include "internet/cs2dp.pb.h"
 #include "utility/parse_msg.h"
 #include "internet/pokedex.pb.h"
-namespace hld
+namespace faith
 {
 	cpatron_saint_mgr::cpatron_saint_mgr()
 	{
@@ -63,7 +63,7 @@ namespace hld
 		}
 		/////////////////////////
 		int32 cur_unlock_order = tinder_template_ptr_unlock->CurrentOrder;
-		if (cur_unlock_order > hld::tinder_old_num_max)
+		if (cur_unlock_order > faith::tinder_old_num_max)
 		{
 			cur_unlock_order += 2; // 后面只有4个
 		}
@@ -106,7 +106,7 @@ namespace hld
 		//}
 		///////////////////////////////////////////////////////
 		//int32 cur_unlock_order = tinder_template_ptr_unlock->CurrentOrder;
-		//if (cur_unlock_order > hld::tinder_old_num_max)
+		//if (cur_unlock_order > faith::tinder_old_num_max)
 		//{
 		//	cur_unlock_order += 2; // 后面只有4个
 		//}
@@ -210,13 +210,13 @@ namespace hld
 		int32 operate_sult = e_item_string_unkown;
 		switch (operate_type)
 		{
-		case hld::e_patron_saint_mark_operate_type_equip_prop:
+		case faith::e_patron_saint_mark_operate_type_equip_prop:
 			operate_sult = prop_equip(mark_guid, target_slot);
 			break;
-		case hld::e_patron_saint_mark_operate_type_unequip_prop:
+		case faith::e_patron_saint_mark_operate_type_unequip_prop:
 			operate_sult = prop_unequip(mark_guid);
 			break;
-		case hld::e_patron_saint_mark_operate_type_purchase_prop_new_slot:
+		case faith::e_patron_saint_mark_operate_type_purchase_prop_new_slot:
 			operate_sult = purchase_prop_slot();
 			break;
 		default:
@@ -349,12 +349,12 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_tinder msg;
+			faith::cs2dp_proto::save_role_tinder msg;
 			msg.set_role_guid(player_ref.get_unit_guid().server_64);
 			msg.set_unit_array_index(m_unit_array_index);
 			msg.set_save_type_ex(save_type);
 
-			hld::cs2dp_proto::role_tinder_db *db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_tinder_db *db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return;
@@ -385,7 +385,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_tinder_db msg;
+		faith::cs2dp_proto::role_tinder_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -496,8 +496,8 @@ namespace hld
 				return 0;
 			}
 			if (skill_ptr->get_data_info(e_skill_info_activated) <= 0 && 
-				(tinder_template_ptr_unlock->CurrentOrder >= (hld::tinder_order_num_one_canto * i) ||
-				 tinder_template_ptr_unlock->CurrentOrder == hld::tinder_new_order_max))
+				(tinder_template_ptr_unlock->CurrentOrder >= (faith::tinder_order_num_one_canto * i) ||
+				 tinder_template_ptr_unlock->CurrentOrder == faith::tinder_new_order_max))
 			{
 				skill_set_ptr.activate_skill(GAMECONFIG->PatronSaintSkillStartId[i]);
 				return 1;
@@ -540,7 +540,7 @@ namespace hld
 		{
 			return false;
 		}
-		if (new_tinder_template_ptr->attribute_id <= hld::tinder_old_end_id)
+		if (new_tinder_template_ptr->attribute_id <= faith::tinder_old_end_id)
 		{
 			return true;
 		}
@@ -573,7 +573,7 @@ namespace hld
 		{
 			return false;
 		}
-		if (new_tinder_template_ptr->attribute_id <= hld::tinder_old_end_id)
+		if (new_tinder_template_ptr->attribute_id <= faith::tinder_old_end_id)
 		{
 			return true;
 		}

@@ -9,7 +9,7 @@
 #include "connection_mgr.hpp"
 #include "utility/init_unit.h"
 
-namespace hld
+namespace faith
 {
 	marry_mgr::marry_mgr()
 	{

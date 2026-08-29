@@ -16,7 +16,7 @@ purpose:
 //#include "template/template_manager.h"
 
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
@@ -101,7 +101,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		bool to_proto(hld::st_proto::st_player_arena_rank * st_arena_ptr)
+		bool to_proto(faith::st_proto::st_player_arena_rank * st_arena_ptr)
 		{
 			if (st_arena_ptr == nullptr)
 			{
@@ -119,7 +119,7 @@ namespace hld
 			st_arena_ptr->set_game_channel(game_channel);
 			return true;
 		}
-		void from_proto(const hld::st_proto::st_player_arena_rank& st_arena_ref)
+		void from_proto(const faith::st_proto::st_player_arena_rank& st_arena_ref)
 		{
 			rank_pos = st_arena_ref.rank_pos();
 			role_guid.server_64 = st_arena_ref.role_guid();
@@ -166,7 +166,7 @@ namespace hld
 			memset(game_channel, 0, sizeof(game_channel));
 			memcpy(game_channel, p_game_channel.c_str(), p_game_channel.size() > e_login_fixed_data_lenght ? e_login_fixed_data_lenght : p_game_channel.size());
 		}
-		void to_proto(hld::server2dp_proto::s_arena_rank* arena_rank_ptr)
+		void to_proto(faith::server2dp_proto::s_arena_rank* arena_rank_ptr)
 		{
 			arena_rank_ptr->set_rank_pos(rank_pos);
 			arena_rank_ptr->set_role_guid(role_guid.server_64);
@@ -188,7 +188,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::server2dp_proto::s_arena_rank& arena_rank_ref)
+		void from_proto(const faith::server2dp_proto::s_arena_rank& arena_rank_ref)
 		{
 			rank_pos = arena_rank_ref.rank_pos();
 			role_guid.server_64 = arena_rank_ref.role_guid();
@@ -257,7 +257,7 @@ namespace hld
 		{
 			memset(this, 0, sizeof(*this));
 		}
-		bool to_proto(hld::st_proto::st_arena_char_fight_att* st_arean_ptr)
+		bool to_proto(faith::st_proto::st_arena_char_fight_att* st_arean_ptr)
 		{
 			if (st_arean_ptr == nullptr)
 			{
@@ -270,7 +270,7 @@ namespace hld
 			}
 			return true;
 		}
-		void from_proto(const hld::st_proto::st_arena_char_fight_att& st_arean_ref)
+		void from_proto(const faith::st_proto::st_arena_char_fight_att& st_arean_ref)
 		{
 			role_guid.server_64 = st_arean_ref.role_guid();
 			for (int32 i = 0; i < e_unit_attack_att_max && i < st_arean_ref.att_value_size(); i++)

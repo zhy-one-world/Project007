@@ -20,7 +20,7 @@ purpose:about role's Special_name_mgr
 #include "internet/special_name.pb.h"
 #include "internet/net.pb.h"
 
-namespace hld
+namespace faith
 {
 
 	special_name_mgr::special_name_mgr()
@@ -41,7 +41,7 @@ namespace hld
 	
 	int32 special_name_mgr::get_value_by_id(int32 id)
 	{
-		if (id < 0 || id >= hld::e_special_name_type_max)
+		if (id < 0 || id >= faith::e_special_name_type_max)
 		{
 			return 0;
 		}
@@ -50,7 +50,7 @@ namespace hld
 
 	bool special_name_mgr::set_value_by_id(int32 id, int32 value)
 	{
-		if (id < 0 || id >= hld::e_special_name_type_max)
+		if (id < 0 || id >= faith::e_special_name_type_max)
 		{
 			return false;
 		}
@@ -75,7 +75,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_special_name_db msg;
+		faith::cs2dp_proto::role_special_name_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -113,12 +113,12 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_special_name msg;
+			faith::cs2dp_proto::save_role_special_name msg;
 			msg.set_role_guid(player_ref.get_unit_guid().server_64);
 			msg.set_unit_array_index(m_array_index);
 			msg.set_save_type_ex(save_type);
 
-			hld::cs2dp_proto::role_special_name_db *db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_special_name_db *db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return;
@@ -229,7 +229,7 @@ namespace hld
 
 	bool special_name_mgr::promote_special_name(int32 name_type)
 	{
-		if ((name_type < 0) || (name_type >= hld::e_special_name_type_max))
+		if ((name_type < 0) || (name_type >= faith::e_special_name_type_max))
 		{
 			return false;
 		}

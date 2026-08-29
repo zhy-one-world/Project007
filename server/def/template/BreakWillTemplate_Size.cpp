@@ -1,6 +1,6 @@
 #include "BreakWillTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void BreakWillTemplateSize()
     {

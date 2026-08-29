@@ -11,7 +11,7 @@
 
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class mail_proto_mail_operation;
 	class chat_proto_notice_info_with_param;

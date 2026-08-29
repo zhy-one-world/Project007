@@ -12,7 +12,7 @@ purpose: time limit activity
 #include "Logic/time_limit_activity_def.hpp"
 #include "time_limit_activity_object.h"
 
-namespace hld
+namespace faith
 {
 	typedef std::map<int32, time_limit_activity_object>		time_limit_act_map;
 	class player;

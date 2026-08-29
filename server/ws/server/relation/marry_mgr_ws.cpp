@@ -22,7 +22,7 @@ purpose:
 #include "net.pb.h"
 #include "world_boss_def.hpp"
 
-namespace hld
+namespace faith
 { 
 	marry_mgr_ws::marry_mgr_ws()
 	{
@@ -486,7 +486,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::marry_get_reward pro_msg;
+			faith::ws2cs_proto::marry_get_reward pro_msg;
 			pak.to_proto(pro_msg);
 			role_session_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_marry_get_reward);
 		}
@@ -777,7 +777,7 @@ namespace hld
 			return;
 		}
 		//发送cs 检查是否可以结婚， 道具 和功能 是否解锁
-		hld::ws2cs_check_item_enough pack;
+		faith::ws2cs_check_item_enough pack;
 		pack.item_id = marry_item; 
 		pack.main_guid = main_guid;
 		pack.sub_guid = sub_guid;
@@ -790,7 +790,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::check_item_enough pro_msg;
+			faith::ws2cs_proto::check_item_enough pro_msg;
 			pack.to_proto(pro_msg);
 			main_session_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_check_item_enough);
 		}
@@ -875,7 +875,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::check_item_enough pro_msg;
+			faith::ws2cs_proto::check_item_enough pro_msg;
 			pack.to_proto(pro_msg);
 			main_session_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_check_item_enough);
 		}
@@ -1216,7 +1216,7 @@ namespace hld
 			else
 			{
 				//扣钱 
-				hld::ws2cs_check_item_enough pack;
+				faith::ws2cs_check_item_enough pack;
 				pack.item_id = 1;		//从配表里获取
 				pack.main_guid = role_guid; 
 				pack.is_cost_item = true;
@@ -1234,7 +1234,7 @@ namespace hld
 				}
 				else
 				{
-					hld::ws2cs_proto::check_item_enough pro_msg;
+					faith::ws2cs_proto::check_item_enough pro_msg;
 					pack.to_proto(pro_msg);
 					main_session_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_check_item_enough);
 				}
@@ -1323,7 +1323,7 @@ namespace hld
 			return;
 		} 
 		int64 now_time = time_helper::get_cur_time_new().second;
-		int32 inter_day = (now_time - last_login_time) / hld::day_time_second;
+		int32 inter_day = (now_time - last_login_time) / faith::day_time_second;
 		if (inter_day >=  7)
 		{
 			marry_record_data divorce_data = *data_ptr;
@@ -1342,7 +1342,7 @@ namespace hld
 			}
 
 			//需要花钱 发送给cs 检测金币够不够
-			hld::ws2cs_check_item_enough pack;
+			faith::ws2cs_check_item_enough pack;
 			pack.item_id = 1;		//随便给一个 cs 以gameconfig 为准
 			pack.main_guid = role_guid; 
 			if (role_guid == data_ptr->main_couple_guid)
@@ -1362,7 +1362,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::check_item_enough pro_msg;
+				faith::ws2cs_proto::check_item_enough pro_msg;
 				pack.to_proto(pro_msg);
 				main_session_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_check_item_enough);
 			}
@@ -1407,7 +1407,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::marry_result_end pro_msg;
+			faith::ws2cs_proto::marry_result_end pro_msg;
 			pack.to_proto(pro_msg);
 			main_session_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_marry_result);
 		}
@@ -1433,7 +1433,7 @@ namespace hld
 
 		std::vector<int32> param_arr;
 		param_arr.reserve(5);
-		param_arr.push_back(hld::world_boss_line);
+		param_arr.push_back(faith::world_boss_line);
 		param_arr.push_back(npc_spawn_point_template_ptr->MapId);
 		param_arr.push_back(npc_spawn_point_template_ptr->PosX);
 		param_arr.push_back(npc_spawn_point_template_ptr->PosY);
@@ -1565,7 +1565,7 @@ namespace hld
 				}
 				else
 				{
-					hld::ws2cs_proto::update_wedding_ring_state pro_msg;
+					faith::ws2cs_proto::update_wedding_ring_state pro_msg;
 					msg.to_proto(pro_msg);
 					main_session->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_update_wedding_ring_state);
 				}
@@ -1604,7 +1604,7 @@ namespace hld
 				}
 				else
 				{
-					hld::ws2cs_proto::sync_marry_task pro_msg;
+					faith::ws2cs_proto::sync_marry_task pro_msg;
 					msg.to_proto(pro_msg);
 					main_session->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_sync_marry_task);
 				}
@@ -1670,7 +1670,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::update_wedding_ring_level pro_msg;
+				faith::ws2cs_proto::update_wedding_ring_level pro_msg;
 				msg.to_proto(pro_msg);
 				mate_session->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_update_wedding_ring_level);
 			}
@@ -1719,7 +1719,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::refresh_heart_value pro_msg;
+				faith::ws2cs_proto::refresh_heart_value pro_msg;
 				msg.to_proto(pro_msg);
 				main_session->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_refresh_heart_value);
 			}
@@ -1737,7 +1737,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::refresh_heart_value pro_msg;
+				faith::ws2cs_proto::refresh_heart_value pro_msg;
 				msg.to_proto(pro_msg);
 				mate_session->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_refresh_heart_value);
 			}

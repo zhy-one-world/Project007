@@ -1,6 +1,6 @@
 #include "ServiceGoalTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void ServiceGoalTemplateSize()
     {

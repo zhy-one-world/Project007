@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -487,7 +487,7 @@ void protobuf_AddDesc_arena_2eproto() {
     "robot_template_id\030\005 \001(\005\022\025\n\rarena_ranking"
     "\030\006 \001(\005\022\025\n\rmilitary_rank\030\007 \001(\005\032%\n\020get_mat"
     "ch_player\022\021\n\trole_guid\030\001 \003(\005\032P\n\024get_matc"
-    "h_player_end\0228\n\014match_playrs\030\001 \003(\0132\".hld"
+    "h_player_end\0228\n\014match_playrs\030\001 \003(\0132\".faith"
     ".arena_proto.arena_player_info\032\026\n\024get_to"
     "p_three_player\032-\n\030get_top_three_player_e"
     "nd\022\021\n\trole_guid\030\001 \003(\005\032|\n\rreq_challenge\022\021"
@@ -1798,7 +1798,7 @@ bool arena_proto_get_match_player_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.arena_proto.arena_player_info match_playrs = 1;
+      // repeated .faith.arena_proto.arena_player_info match_playrs = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1831,7 +1831,7 @@ bool arena_proto_get_match_player_end::MergePartialFromCodedStream(
 
 void arena_proto_get_match_player_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.arena_proto.arena_player_info match_playrs = 1;
+  // repeated .faith.arena_proto.arena_player_info match_playrs = 1;
   for (int i = 0; i < this->match_playrs_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->match_playrs(i), output);
@@ -1845,7 +1845,7 @@ void arena_proto_get_match_player_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* arena_proto_get_match_player_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.arena_proto.arena_player_info match_playrs = 1;
+  // repeated .faith.arena_proto.arena_player_info match_playrs = 1;
   for (int i = 0; i < this->match_playrs_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1862,7 +1862,7 @@ void arena_proto_get_match_player_end::SerializeWithCachedSizes(
 int arena_proto_get_match_player_end::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.arena_proto.arena_player_info match_playrs = 1;
+  // repeated .faith.arena_proto.arena_player_info match_playrs = 1;
   total_size += 1 * this->match_playrs_size();
   for (int i = 0; i < this->match_playrs_size(); i++) {
     total_size +=
@@ -4687,7 +4687,7 @@ bool arena_proto_req_get_challenge_log_end::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.arena_proto.challenge_log my_challenge_logs = 2;
+      // repeated .faith.arena_proto.challenge_log my_challenge_logs = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -4741,7 +4741,7 @@ void arena_proto_req_get_challenge_log_end::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->role_guid(), output);
   }
 
-  // repeated .hld.arena_proto.challenge_log my_challenge_logs = 2;
+  // repeated .faith.arena_proto.challenge_log my_challenge_logs = 2;
   for (int i = 0; i < this->my_challenge_logs_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->my_challenge_logs(i), output);
@@ -4765,7 +4765,7 @@ void arena_proto_req_get_challenge_log_end::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->role_guid(), target);
   }
 
-  // repeated .hld.arena_proto.challenge_log my_challenge_logs = 2;
+  // repeated .faith.arena_proto.challenge_log my_challenge_logs = 2;
   for (int i = 0; i < this->my_challenge_logs_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -4801,7 +4801,7 @@ int arena_proto_req_get_challenge_log_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.arena_proto.challenge_log my_challenge_logs = 2;
+  // repeated .faith.arena_proto.challenge_log my_challenge_logs = 2;
   total_size += 1 * this->my_challenge_logs_size();
   for (int i = 0; i < this->my_challenge_logs_size(); i++) {
     total_size +=
@@ -5453,6 +5453,6 @@ void arena_proto::Swap(arena_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

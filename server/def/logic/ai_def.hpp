@@ -11,7 +11,7 @@
 #include "logic/type_def.hpp"
 #include "unit_def.hpp"
 #include "char_def.hpp"
-namespace hld
+namespace faith
 {
 	const int32 m_SkillMaxDistance = 200;
 	const int32 npc_use_skill_len = 4;
@@ -69,7 +69,7 @@ namespace hld
 	struct out_data
 	{
 		int32					m_monster_state;//npc所在的状态
-		hld::guid_64		m_TargetGuid;//目标guid
+		faith::guid_64		m_TargetGuid;//目标guid
 		fvector				m_TargetPosition;//目标位置
 
 		int32			m_skill_id;//技能id

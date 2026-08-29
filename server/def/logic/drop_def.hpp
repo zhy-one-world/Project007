@@ -2,7 +2,7 @@
 
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	constexpr int32  DROP_MAX_WEIGHT = 1000000;

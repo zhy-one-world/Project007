@@ -1,0 +1,37 @@
+syntax = "proto2";
+package hld;
+
+message starark_proto
+{
+
+	message starark_all
+	{
+	    repeated int32  data_ary           = 1;
+		repeated int32  round_ary          = 2;
+	}
+	message starark_operate
+	{
+		optional int32 oper_type			 = 1;
+		optional int32 oper_param1           = 2;
+		optional int32 oper_param2           = 3;
+		optional int32 oper_param3           = 4;
+	}
+	message starark_operate_end
+	{
+		optional int32 oper_type           = 1;
+		optional int32 result	           = 2;
+		optional int32 pos                 = 3;
+		optional int32 num                 = 4;
+	}
+	
+	message starark_five_round_rewad_list
+	{
+		repeated starark_rewad_item item_list 	  = 1;
+	}
+	
+	message starark_rewad_item
+	{
+		optional int32 item_id 	  	       = 1;
+		optional int32 item_num	           = 2;
+	}
+}

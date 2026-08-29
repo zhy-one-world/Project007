@@ -15,7 +15,7 @@ purpose: csv同步信息管理器
 #include "client_session.hpp"
 
 
-namespace hld
+namespace faith
 {
 	class csv_synchronization_mgr
 	{

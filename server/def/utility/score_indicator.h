@@ -3,7 +3,7 @@
 #include "logic/type_def.hpp"
 #include "Logic/map_def.hpp"
 
-namespace hld
+namespace faith
 {
 	static const int32 sync_record_count_max = 50;
 	class game_proto_score_record_list;

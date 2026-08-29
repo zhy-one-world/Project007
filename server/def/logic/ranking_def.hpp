@@ -15,7 +15,7 @@ purpose:define ranking
 #include "char_def.hpp"
 #include "login_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	
@@ -219,7 +219,7 @@ namespace hld
 				}
 			}
 		}
-		void to_proto(hld::st_proto::st_ranking_player_info * st_rank_ptr)
+		void to_proto(faith::st_proto::st_ranking_player_info * st_rank_ptr)
 		{
 			if (st_rank_ptr == nullptr)
 			{
@@ -249,7 +249,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::st_proto::st_ranking_player_info& st_rank_ref)
+		void from_proto(const faith::st_proto::st_ranking_player_info& st_rank_ref)
 		{
 
 			role_guid.server_64 = st_rank_ref.role_guid();

@@ -1,0 +1,375 @@
+syntax = "proto2";
+package hld;
+
+message relation_proto
+{
+
+	//#client req add friend
+	//@cg
+	message c2s_addfriend
+	{
+		optional uint64 guid = 1;			//玩家guid
+		optional int32 relation_type = 2;	//添加类型
+		optional int32 server_id = 3;		//服务器id
+	}
+
+	message c2s_operate_other_add_req
+	{
+		optional uint64 sender_guid	= 1;	//发送者的guid
+		optional bool  is_add = 2 ;			//是否添加
+		repeated uint64 operate_guid = 3;			//玩家guid
+	}
+
+	//#server ret add friend
+	//@gc
+	message s2c_addfriend
+	{
+		optional uint64 guid = 1;			//玩家guid
+		optional string name = 2;			//名字
+		repeated int32 	data_array = 3;		//其他信息
+	}
+
+	message s2c_otheraddfriend
+	{
+		optional uint64 guid = 1;			//玩家guid
+		optional string name = 2;			//名字
+		optional string gs_value = 3;		//战力
+		repeated int32 	data_array = 4;		//其他信息
+	}
+
+	//#client req del friend
+	//@cg
+	message c2s_delfriend
+	{
+		optional uint64 guid = 1;			//玩家guid
+		optional uint32 friendtype = 2;		//好友类型
+	}
+
+	//#client req update friend userinfo
+	//@cg
+	message c2s_req_friend_userinfo
+	{
+		optional int32 sub_type = 1;
+		optional string name = 2;			//名字
+	}
+
+	//#server ret update friend userinfo
+	//@gc
+	message friend_user_info
+	{
+		optional uint64 guid = 1;			//玩家guid
+		optional string name = 2;			//名字
+		optional string gs_value = 3;		//战力
+		repeated int32 data_array = 4;		//好友数据
+	}
+	message s2c_ret_friend_userinfo
+	{
+		optional bool is_search 			  = 1;//是否是搜索好友
+		repeated friend_user_info friend_list = 2;//好友列表
+	}
+
+	//#server ret del friend
+	//@gc
+	message s2c_delfriend
+	{
+		optional uint64 guid = 1;			//被删掉的guid
+	}
+
+	//#server syc one friend state
+	//@gc
+	message s2c_syc_friend_state
+	{
+		optional uint64 guid = 1;			//玩家guid
+		optional int32 state = 2;			//状态
+	}
+
+	//#server syc full friends list
+	//@gc
+	message s2c_syc_full_friendlist
+	{
+		repeated friend_user_info friend_full_list_info = 1;		//好友列表满了
+	}
+
+	//#server syn lover info
+	//@gc
+	message s2c_syn_loverinfo
+	{
+		optional uint64 loverguid = 1;		// guid
+		optional uint64 sender_guid	= 2;	//发送者的guid
+	}
+
+	message s2c_syc_full_other_req_list
+	{
+		repeated friend_user_info  	full_other_req_list_info = 1;
+	}
+	
+
+	//#client req add friendliness
+	//@cg
+	message c2s_add_friendliness_value
+	{
+		optional uint64 sender_guid      	 = 1;			//发送者的guid
+		optional uint64 addreessee_guid	 	 = 2;			//接收方的guid
+		optional uint64 gift_id	 	 		 = 3;			//发送的礼物ID
+		optional uint64 gift_count		 	 = 4;			//发送的礼物数量
+		optional string chat_message         = 5;			//sender的留言
+	}
+
+	//#server ret add friendliness
+	//@gc
+	message s2c_ret_friendliness_value
+	{
+		optional uint64 relation_guid	 	 	= 1;			//好友的guid
+		optional uint64 relation_friendliness 	= 2;			//好友的友好度
+		optional uint64 gift_id	 	 		 	= 3;			//发送的礼物ID
+		optional uint64 gift_count		 		= 4;			//发送的礼物数量
+	}
+
+	message c2s_req_syc_relation_state
+	{
+		optional uint64 sender_guid				= 1;			//请求者guid
+	}
+	message ret_relation_state
+	{
+		optional	uint64 relation_guid		= 1;			//好友guid
+		optional	uint64 relation_state       = 2;			//状态
+		optional    uint64 relation_login_time  = 3;			//最后一次登陆时间
+		optional 	int32 exp_level 			= 4;			//好友数据
+	}
+	message s2c_ret_relation_state
+	{
+		repeated ret_relation_state full_relation_state = 1;	//列表中所有人的状态
+	}
+
+
+	//先临时这么处理陌生人的状态更新
+	message c2s_req_syc_nearly_state
+	{
+		optional uint64 sender_guid 	= 1;	
+		repeated uint64 stranger_guid 	= 2;	//更新最近中陌生人的状态
+	}
+	message s2c_ret_syc_nearly_state
+	{
+		repeated ret_relation_state full_stranger_state = 1;	//更新最近中陌生人的状态
+	}
+
+	message s2c_ret_operate_relation_result
+	{
+		optional int32 result_id =  1;					//进行好友操作相关的结果id返回，0是成功。
+	}
+
+
+	//-----------------------------------------------------------
+	//#server send add relation
+	//gc
+	message s2c_add_relation_info
+	{
+		optional int32	relation_list_type = 1;			//关系列表的类型
+		optional uint64 guid = 2;			//玩家guid
+		optional string name = 3;			//名字
+		optional string gs_value = 4;		//战力
+		repeated int32 	data_array = 5;		//其他信息
+	}
+
+	//#server send del relation
+	//gc
+	message s2c_del_relation_info
+	{
+		optional int32		relation_list_type = 1;		//关系列表的类型
+		optional uint64 	guid = 2;					//玩家guid
+	}
+
+	//#server send full relation list info
+	//gc
+	message s2c_syc_full_relation_list
+	{
+		repeated friend_user_info  	full_relation_list_info = 1;	//列表中全部关系人的信息
+	}
+
+
+	//------------------- marry ----------------------------------------
+	message s2c_marry_operate_result
+	{
+		optional int32 operate_result_type = 1;				//操作结果
+		optional int32 support_id		   = 2;
+	}
+
+	//#client ask about marrage
+	//@cg
+	message c2s_req_marrage
+	{ 
+		optional uint64 main_guid	= 1;	//队长的guid 
+		optional uint64 sub_guid	= 2;	//couple guid 
+		optional int32	marry_item	= 3;	//结婚道具id
+	}
+
+	//#server ret about marrage
+	//@gc
+	message s2c_ret_marrage
+	{
+		optional uint64		couple_guid			= 1;
+		optional string		couple_name			= 2;
+		optional int32		marry_state			= 3;
+		optional int32		save_event_time		= 4;
+	}
+
+	message c2s_reply_choose
+	{ 
+		optional uint64 role_guid	= 1;	 
+		optional bool   is_agree	= 2; 
+		optional bool   is_divorce	= 3;
+		optional bool	is_force    = 4;	
+	}
+	//申请情侣信息
+	message c2s_req_couple
+	{
+		optional uint64 role_guid	= 1;	//sender
+	}
+	//回复情侣信息
+	message s2c_ret_couple_info
+	{ 		
+		optional uint64 main_guid		= 1;	//  
+		optional string main_name		= 2;	// 
+		optional int32  main_class_id	= 3;	// 
+		optional int32  main_level		= 4;	// 
+		optional uint64 couple_guid		= 5;	//  
+		optional string couple_name		= 6;	// 
+		optional int32  couple_class_id	= 7;	// 
+		optional int32  couple_level	= 8;	// 
+		optional int32  save_time		= 9;	// 
+		optional int32  marry_state		= 10;	// 
+	}
+
+	message c2s_req_divorce
+	{ 
+		optional bool	is_force	= 1;	//是否强制离婚
+		optional uint64 main_guid	= 2;	//队长的guid 
+		optional uint64 sub_guid	= 3;	//couple guid  
+	}
+  
+	message c2s_req_marry_get_reward	
+	{  
+		optional uint64 role_guid	= 1; 
+	}
+   
+   	message s2c_send_marry_effect_notice	
+	{
+		optional int32 effect_level	= 1;		//特效等级是信物的品质
+	}
+	message c2s_req_get_marry_mission
+	{
+		optional int32 is_near	= 1;
+	}
+	message s2c_confirm_receive_marry_mission
+	{
+	
+	}
+	message c2s_confirm_receive_marry_mission
+	{
+		optional int32 is_receive= 1;
+	}
+	message c2s_req_upgrade_wedding_ring	
+	{
+		optional int32 use_item_id	= 1;		//使用的物品
+	}
+
+	message s2c_upgrade_wedding_ring_result	
+	{
+		optional int32 result	= 1;		//操作结果
+	}
+
+	message s2c_update_marry_info
+	{
+		optional string couple_name		= 1;
+		optional int32  marry_time		= 2;
+	}
+
+	message c2s_req_bless_one_couple
+	{
+		optional int32 target_guid_a	= 1;	//其中一个玩家的id
+		optional int32 target_guid_b	= 2;	//其中一个玩家的id
+	}
+
+	message s2c_bless_one_couple_result	
+	{
+		optional int32 result	= 1;		//操作结果
+	}
+	message c2s_get_marry_examination
+	{
+		optional int32 is_near= 1;
+	}
+	message s2c_confirm_marry_examination
+	{
+	
+	}
+	message c2s_confirm_marry_examination
+	{
+		optional int32 is_receive= 1;
+	}
+	message c2s_operate_marry_examination
+	{
+		optional int32 operate_type= 1;
+		optional int32 ext_param_1 = 2;
+		optional int32 ext_param_2 = 3;
+	}
+	message s2c_sync_marry_examination
+	{
+		optional int32 dati_id= 1;
+		optional int32 dati_num= 2;
+		optional int32 dati_right_num= 3;
+		optional int32 heart_value = 4;
+		optional int32 dati_stage = 5;
+	}
+	message s2c_sync_marry_heart_value
+	{
+		optional int32 heart_value = 1;
+	}
+	message s2c_operate_marry_examination
+	{
+		optional int32 operate_type = 1;
+		optional int32 result = 2;
+		optional int32 couple_answer = 3;
+		optional int32 my_answer = 4;
+	}
+
+	message c2s_req_use_fireworks
+	{
+		optional int32 obj_guid_a = 1;
+		optional int32 obj_guid_b = 2;
+		optional string target_name = 3;
+		optional string target_blessing = 4;
+	}
+
+	message c2s_req_lucky_info
+	{
+		optional int32 req_type = 1;	//请求结缘信息 1:请求推荐列表 2:请求获取命中注定 3:购买次数
+	}
+
+	message lucky_role_info
+	{
+		optional int32 role_guid_a	= 1;
+		optional int32 role_guid_b	= 2;
+		optional string role_name	= 3;
+		optional int32 role_vip		= 4;
+		optional int32 role_template= 5;
+		optional int32 role_level	= 6;
+		optional string role_fight	= 7;
+		optional string role_time	= 8;
+		optional string role_desc	= 9;
+	}
+
+	message s2c_ret_lucky_info_vec
+	{
+		repeated lucky_role_info user_info = 1;
+	}
+
+	message s2c_ret_special_lucky_info
+	{
+		optional int32 role_guid_a	= 1;
+		optional int32 role_guid_b	= 2;
+		optional string role_name	= 3;
+		optional int32 role_template= 4;
+	}
+
+
+}	 

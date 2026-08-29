@@ -6,7 +6,7 @@
 #include <json/json.h>
 #include <singleton.hpp>
 
-namespace hld 
+namespace faith 
 {
 	class server_base_config
 	{
@@ -181,11 +181,11 @@ namespace hld
 	};
 
 }
-#define SERVERCONFIG hld::servers_config_manager::getInstance().get_server_config()
-#define FEPCONFIG ((fep_config*)(hld::servers_config_manager::getInstance().get_server_config(e_server_type_fep)))
-#define GATECONFIG ((gate_config*)(hld::servers_config_manager::getInstance().get_server_config(e_server_type_gate)))
-#define CSCONFIG ((cs_config*)(hld::servers_config_manager::getInstance().get_server_config(e_server_type_cs)))
-#define WSCONFIG ((ws_config*)(hld::servers_config_manager::getInstance().get_server_config(e_server_type_ws)))
-#define DPCONFIG ((dp_config*)(hld::servers_config_manager::getInstance().get_server_config(e_server_type_dp)))
+#define SERVERCONFIG faith::servers_config_manager::getInstance().get_server_config()
+#define FEPCONFIG ((fep_config*)(faith::servers_config_manager::getInstance().get_server_config(e_server_type_fep)))
+#define GATECONFIG ((gate_config*)(faith::servers_config_manager::getInstance().get_server_config(e_server_type_gate)))
+#define CSCONFIG ((cs_config*)(faith::servers_config_manager::getInstance().get_server_config(e_server_type_cs)))
+#define WSCONFIG ((ws_config*)(faith::servers_config_manager::getInstance().get_server_config(e_server_type_ws)))
+#define DPCONFIG ((dp_config*)(faith::servers_config_manager::getInstance().get_server_config(e_server_type_dp)))
 
 #endif //! __SERVERS_CONFIG_H__

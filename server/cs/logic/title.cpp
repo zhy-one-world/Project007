@@ -11,7 +11,7 @@ purpose: µ¥¸ö³ÆºÅ
 #include "achievement_def.h"
 #include "logic/player.hpp"
 
-namespace hld
+namespace faith
 {
 	ctitle::ctitle()
 	{

@@ -15,7 +15,7 @@ purpose:
 #include "char_def.hpp"
 #include "template/template_base.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 #define STORE_START_TEMPLATE_ID		28000001	//	商品起始id

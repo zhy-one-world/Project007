@@ -14,7 +14,7 @@
 
 #define INTERACTIVE_TIMEOUT	30000
 
-namespace hld
+namespace faith
 {
 	struct db_query_type;
 	struct mysql_conn_info;

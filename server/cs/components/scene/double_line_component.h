@@ -2,7 +2,7 @@
 
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 	struct double_line_component
 	{

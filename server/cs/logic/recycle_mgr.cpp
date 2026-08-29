@@ -13,7 +13,7 @@
 #include "connection_mgr.hpp"
 
 
-namespace hld
+namespace faith
 {
 	recycle_mgr::recycle_mgr()
 	{
@@ -66,14 +66,14 @@ namespace hld
 
 
 
-		hld::cs2dp_proto::save_role_recycle msg;
+		faith::cs2dp_proto::save_role_recycle msg;
 		msg.set_role_guid(player_ref.get_unit_guid().server_64);
 		msg.set_unit_array_index(m_array_index);
 		msg.set_save_type_ex(save_type);
 
-		//hld::cs2dp_proto::role_recycle_db test;
+		//faith::cs2dp_proto::role_recycle_db test;
 
-		hld::cs2dp_proto::role_recycle_db *db_info = msg.mutable_db_data();
+		faith::cs2dp_proto::role_recycle_db *db_info = msg.mutable_db_data();
 
 		const s_recycle_info& tmp = m_recycle_obj.get_db_data();
 
@@ -110,7 +110,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_recycle_db msg;
+		faith::cs2dp_proto::role_recycle_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -166,13 +166,13 @@ namespace hld
 		}
 
 
-		hld::cs2dp_proto::save_role_recycle_task msg;
+		faith::cs2dp_proto::save_role_recycle_task msg;
 
 		msg.set_role_guid(player_ref.get_unit_guid().server_64);
 		msg.set_unit_array_index(m_array_index);
 		msg.set_save_type_ex(save_type);
 
-		hld::cs2dp_proto::role_recycle_task_db *db_info = msg.mutable_db_data();
+		faith::cs2dp_proto::role_recycle_task_db *db_info = msg.mutable_db_data();
 		if (db_info == nullptr)
 		{
 			return;
@@ -189,7 +189,7 @@ namespace hld
 			{
 				continue;
 			}
-			hld::cs2dp_proto::role_recycle_task_row *db_row = db_info->add_row_data();
+			faith::cs2dp_proto::role_recycle_task_row *db_row = db_info->add_row_data();
 			if (db_row == nullptr)
 			{
 				return;
@@ -206,7 +206,7 @@ namespace hld
 			db_info->add_row_data();
 		}
 
-		//hld::cs2dp_proto::role_recycle_task_db db_test;
+		//faith::cs2dp_proto::role_recycle_task_db db_test;
 
 		//db_test.set_row_count(-1);
 
@@ -235,7 +235,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_recycle_task_db msg;
+		faith::cs2dp_proto::role_recycle_task_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -250,7 +250,7 @@ namespace hld
 		s_recycle_task_info *p_row = (s_recycle_task_info *)p_data;
 		for (int32 i = 0; i < msg.row_count(); i++)
 		{
-			hld::cs2dp_proto::role_recycle_task_row db_row = msg.row_data(i);
+			faith::cs2dp_proto::role_recycle_task_row db_row = msg.row_data(i);
 			for (int32 j = 0; j < db_row.data_ary_size(); j++)
 			{
 				p_row->data_ary[j] = db_row.data_ary(j);
@@ -313,8 +313,8 @@ namespace hld
 			return -1;
 		}
 	
-		int32 start_days = (start_time  + get_time_zone())/ hld::day_time_second;
-		int32 now_days = (time_helper::get_time()+ get_time_zone()) / hld::day_time_second;
+		int32 start_days = (start_time  + get_time_zone())/ faith::day_time_second;
+		int32 now_days = (time_helper::get_time()+ get_time_zone()) / faith::day_time_second;
 		int32 delta = now_days - start_days;
 		if (delta < get_config_param(e_recycle_param_days))
 		{
@@ -344,7 +344,7 @@ namespace hld
 		}
 		if (timestamp < 0)
 		{
-			int32 value  = time_helper::get_time() + timestamp * hld::day_time_second;
+			int32 value  = time_helper::get_time() + timestamp * faith::day_time_second;
 			m_recycle_obj.set_start_time(value);
 			sync_all_message_to_client();
 			return;
@@ -383,8 +383,8 @@ namespace hld
 		{
 			return false;
 		}
-		int32 offline_days = (get_offine_time  + get_time_zone()) / hld::day_time_second;
-		int32 now_days = (time_helper::get_time() + get_time_zone()) / hld::day_time_second;
+		int32 offline_days = (get_offine_time  + get_time_zone()) / faith::day_time_second;
+		int32 now_days = (time_helper::get_time() + get_time_zone()) / faith::day_time_second;
 
 		int32 delta = now_days - offline_days;
 		if (delta < get_config_param(e_recycle_param_restart_days))
@@ -421,7 +421,7 @@ namespace hld
 		{
 			return;
 		}
-		hld::recycle_proto_recycle_data_all msg_all;
+		faith::recycle_proto_recycle_data_all msg_all;
 
 		msg_all.set_start_time(m_recycle_obj.get_start_time());
 
@@ -489,7 +489,7 @@ namespace hld
 			return;
 		}
 
-		hld::recycle_proto_recycle_reward_one one_login_msg;
+		faith::recycle_proto_recycle_reward_one one_login_msg;
 		one_login_msg.set_recycle_id(recycle_id);
 
 		bool flag = m_recycle_obj.get_login_flag_bit(recycle_template_ptr->Pos);
@@ -507,7 +507,7 @@ namespace hld
 		{
 			return;
 		}
-		hld::recycle_proto_recycle_item_one one_task_msg;
+		faith::recycle_proto_recycle_item_one one_task_msg;
 		one_task_msg.set_recycle_id(task_info.get_inst_data(e_recycle_tk_config_id));
 		one_task_msg.set_finish_num(task_info.get_inst_data(e_recycle_tk_finish_num));
 		one_task_msg.set_state(task_info.get_inst_data(e_recycle_tk_state));
@@ -528,7 +528,7 @@ namespace hld
 			return;
 		}
 
-		hld::recycle_proto_recycle_reward_one one_buy_msg;
+		faith::recycle_proto_recycle_reward_one one_buy_msg;
 		one_buy_msg.set_recycle_id(recycle_id);
 
 		bool flag = m_recycle_obj.get_prop_flag_bit(recycle_template_ptr->Pos);
@@ -632,7 +632,7 @@ namespace hld
 		{
 			return;
 		}
-		hld::recycle_proto_recycle_operate_end msg;
+		faith::recycle_proto_recycle_operate_end msg;
 		msg.set_recycle_id(recycle_id);
 		msg.set_oper_type(type);
 		msg.set_result(result);
@@ -905,7 +905,7 @@ namespace hld
 		{
 			return;
 		}
-		hld::recycle_proto_recycle_invited_reward_end msg;
+		faith::recycle_proto_recycle_invited_reward_end msg;
 		msg.set_result(result);
 		temp_player.send_message_to_self(&msg, e_msgindex_s2c_recycle_invited_reward_end);
 	}
@@ -981,7 +981,7 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_recycle_invited msg;
+			faith::cs2dp_proto::save_recycle_invited msg;
 			msg.set_role_guid(invited_guid.server_64);
 			msg.set_target_guid(target_guid.server_64);
 			connection_mgr::getInstance().send_to_dp_lua(&msg, e_msgindex_cs2dp_recycle_inviter_add, 0);
@@ -1009,7 +1009,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::db_proto::role_proc_recycle_invited_db msg;
+		faith::db_proto::role_proc_recycle_invited_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -1024,7 +1024,7 @@ namespace hld
 		s_recycle_invited_info *p_row = (s_recycle_invited_info *)p_data;
 		for (int32 i = 0; i < msg.row_count(); i++)
 		{
-			hld::db_proto::role_proc_recycle_invited_row db_row = msg.row_data(i);
+			faith::db_proto::role_proc_recycle_invited_row db_row = msg.row_data(i);
 			p_row->role_guid.server_64 = db_row.role_guid();
 			p_row->level = db_row.level();
 			p_row->head_id = db_row.head_id();
@@ -1055,7 +1055,7 @@ namespace hld
 			return;
 		}
 
-		hld::recycle_proto_recycle_reward_one one_invited_msg;
+		faith::recycle_proto_recycle_reward_one one_invited_msg;
 		one_invited_msg.set_recycle_id(recycle_id);
 
 		bool flag = m_recycle_obj.get_invited_level_flag_bit(recycle_template_ptr->Pos);

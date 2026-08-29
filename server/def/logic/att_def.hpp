@@ -18,7 +18,7 @@
 /*        基本数据类型、常量和数据结构的定义，客户端和服务器共用        */
 /************************************************************************/
 
-namespace hld 
+namespace faith 
 {
 #pragma pack(push,1)
 
@@ -146,7 +146,7 @@ namespace hld
 		{
 			memset(data_ary, 0, sizeof(data_ary));
 		}
-		bool to_proto(hld::st_proto::st_base_att_info * st_base_ptr)
+		bool to_proto(faith::st_proto::st_base_att_info * st_base_ptr)
 		{
 			if (st_base_ptr == nullptr)
 			{
@@ -158,7 +158,7 @@ namespace hld
 			}
 			return true;
 		}
-		void from_proto(const hld::st_proto::st_base_att_info& st_base_ref)
+		void from_proto(const faith::st_proto::st_base_att_info& st_base_ref)
 		{
 			for (int32 i = 0; i < e_base_att_info_max && i < st_base_ref.data_ary_size(); i++)
 			{

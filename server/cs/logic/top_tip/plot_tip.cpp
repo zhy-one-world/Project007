@@ -6,7 +6,7 @@
 #include "internet/game.pb.h"
 #include "internet/net.pb.h"
 
-namespace hld
+namespace faith
 {
 	plot_tip::plot_tip()
 	{

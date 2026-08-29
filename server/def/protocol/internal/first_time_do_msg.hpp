@@ -5,13 +5,13 @@
 #include "Logic/first_time_do_def.hpp"
 #include "base.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_cs2dp_save_first_time_do_record = hld::e_msg_base_first_time_do,
+		e_msgindex_cs2dp_save_first_time_do_record = faith::e_msg_base_first_time_do,
 		e_msgindex_dp2cs_load_first_time_do_record
 	};
 

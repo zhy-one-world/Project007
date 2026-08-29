@@ -1,6 +1,6 @@
 #include "PassiveSkillTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void PassiveSkillTemplateSize()
     {

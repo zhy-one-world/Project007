@@ -3,7 +3,7 @@
 #include "logic/item_set.h"
 #include "count_def.hpp"
 
-namespace hld
+namespace faith
 {
 	item_set m_empty_item_set;
 	item_set* m_item_player_ary[init_player_max];

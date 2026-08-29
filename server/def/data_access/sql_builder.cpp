@@ -10,7 +10,7 @@
 #include "db_config.hpp"
 #include "sql_builder.hpp"
 
-namespace hld
+namespace faith
 {
 	xchar sql_builder::m_buffer[SQL_BUILDER_BUFF_SIZE];
 	i64 sql_builder::m_wpos = 0;

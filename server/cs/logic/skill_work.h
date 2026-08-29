@@ -4,7 +4,7 @@
 #include "Logic/skill_def.hpp"
 #include "unit_def.hpp"
 
-namespace hld
+namespace faith
 {
 	struct SkillTemplate;
 

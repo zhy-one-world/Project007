@@ -13,7 +13,7 @@
 #include <Utility/guid_gen.h>
 #include "lua/lua_script.h"
 
-namespace hld
+namespace faith
 {
 	#define LUA_SCRIPE_FILE_NAME 128
 	class script_mgr
@@ -71,7 +71,7 @@ namespace hld
 	    //int32						get_event_id(const xchar* event_type);
 	private:
 		xstring						m_script_name;
-		hld::lua::lua_script		m_script;
+		faith::lua::lua_script		m_script;
 	};
 }
 

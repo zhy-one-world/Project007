@@ -17,7 +17,7 @@
 #include "arena_def.hpp"
 #include "belief_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
@@ -25,7 +25,7 @@ namespace hld
 	{
 		int32 player_type;
 		guid_64 role_guid;
-		void to_proto(hld::st_proto::st_big_player_db* st_big_ptr)
+		void to_proto(faith::st_proto::st_big_player_db* st_big_ptr)
 		{
 			if (st_big_ptr == nullptr)
 			{
@@ -34,7 +34,7 @@ namespace hld
 			st_big_ptr->set_player_type(player_type);
 			st_big_ptr->set_role_guid(role_guid.server_64);
 		}
-		void from_proto(const hld::st_proto::st_big_player_db& st_big_ref)
+		void from_proto(const faith::st_proto::st_big_player_db& st_big_ref)
 		{
 			player_type = st_big_ref.player_type();
 			role_guid.server_64 = st_big_ref.role_guid();
@@ -106,7 +106,7 @@ namespace hld
 		s_spirit_info			spirit_data;
 		s_belief_info			belief_data[e_belief_series_type_max];
 		int32					belief_num;
-		bool to_proto(hld::st_proto::st_fake_player_info *st_fake_ptr)
+		bool to_proto(faith::st_proto::st_fake_player_info *st_fake_ptr)
 		{
 			if (st_fake_ptr == nullptr)
 			{
@@ -114,7 +114,7 @@ namespace hld
 			}
 			st_fake_ptr->set_data_block_mask(data_block_mask);
 			st_fake_ptr->set_guid(guid.server_64);
-			hld::st_proto::st_unit_info* st_unit_ptr = st_fake_ptr->mutable_role_info();
+			faith::st_proto::st_unit_info* st_unit_ptr = st_fake_ptr->mutable_role_info();
 			if (st_unit_ptr == nullptr)
 			{
 				return false;
@@ -122,7 +122,7 @@ namespace hld
 			role_info.to_proto(st_unit_ptr);
 
 
-			hld::st_proto::st_base_att_info* st_base_ptr = st_fake_ptr->mutable_att_info();
+			faith::st_proto::st_base_att_info* st_base_ptr = st_fake_ptr->mutable_att_info();
 			if (st_base_ptr == nullptr)
 			{
 				return false;
@@ -133,7 +133,7 @@ namespace hld
 			st_fake_ptr->set_skill_num(skill_num);
 			for (int32 i = 0 ; i < skill_num ; i++)
 			{
-				hld::st_proto::st_skill_info *st_skill_ptr = st_fake_ptr->add_skill_data();
+				faith::st_proto::st_skill_info *st_skill_ptr = st_fake_ptr->add_skill_data();
 				if (st_skill_ptr == nullptr)
 				{
 					return false;
@@ -144,7 +144,7 @@ namespace hld
 			st_fake_ptr->set_item_num(item_num);
 			for (int32 i = 0; i < item_num; i++)
 			{
-				hld::st_proto::st_item_info *st_item_ptr = st_fake_ptr->add_item_data();
+				faith::st_proto::st_item_info *st_item_ptr = st_fake_ptr->add_item_data();
 				if (st_item_ptr == nullptr)
 				{
 					return false;
@@ -155,7 +155,7 @@ namespace hld
 			st_fake_ptr->set_buff_num(buff_num);
 			for (int32 i = 0; i < buff_num; i++)
 			{
-				hld::st_proto::st_buff_info *st_buff_ptr = st_fake_ptr->add_buff_data();
+				faith::st_proto::st_buff_info *st_buff_ptr = st_fake_ptr->add_buff_data();
 				if (st_buff_ptr == nullptr)
 				{
 					return false;
@@ -163,14 +163,14 @@ namespace hld
 				buff_data[i].to_proto(st_buff_ptr);
 			}
 
-			hld::st_proto::st_arena_char_fight_att* st_arena_ptr = st_fake_ptr->mutable_m_fight_att();
+			faith::st_proto::st_arena_char_fight_att* st_arena_ptr = st_fake_ptr->mutable_m_fight_att();
 			if (st_arena_ptr == nullptr)
 			{
 				return false;
 			}
 			m_fight_att.to_proto(st_arena_ptr);
 
-			hld::st_proto::st_spirit_info* st_spirit_ptr = st_fake_ptr->mutable_spirit_data();
+			faith::st_proto::st_spirit_info* st_spirit_ptr = st_fake_ptr->mutable_spirit_data();
 			if (st_spirit_ptr == nullptr)
 			{
 				return false;
@@ -180,7 +180,7 @@ namespace hld
 			st_fake_ptr->set_belief_num(belief_num);
 			for (int32 i = 0; i < e_belief_series_type_max; i++)
 			{
-				hld::st_proto::st_belief_info *st_belief_ptr = st_fake_ptr->add_belief_data();
+				faith::st_proto::st_belief_info *st_belief_ptr = st_fake_ptr->add_belief_data();
 				if (st_belief_ptr == nullptr)
 				{
 					return false;
@@ -189,7 +189,7 @@ namespace hld
 			}
 			return true;
 		}
-		void from_proto(const hld::st_proto::st_fake_player_info & st_fake_ref)
+		void from_proto(const faith::st_proto::st_fake_player_info & st_fake_ref)
 		{
 
 			data_block_mask = st_fake_ref.data_block_mask();

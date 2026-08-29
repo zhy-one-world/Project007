@@ -11,7 +11,7 @@
 #include "ws_client.hpp"
 #include "client_session_mgr.hpp"
 
-namespace hld
+namespace faith
 {
 	re_login_mgr::re_login_mgr(void)
 	{

@@ -15,7 +15,7 @@
 #define	INIT_BUFF_SIZE 4194304
 #define	INC_BUFF_SIZE  13072
 
-namespace hld
+namespace faith
 {
 	//自增长的循环存取连续块缓冲区
 	class recvbuffer

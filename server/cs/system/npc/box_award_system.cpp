@@ -16,7 +16,7 @@
 #include "internet/aoi.pb.h"
 
 
-using namespace hld;
+using namespace faith;
 
 void box_award_system::start_up(player* player_ptr, npc* npc_ptr)
 {

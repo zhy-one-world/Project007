@@ -13,7 +13,7 @@ purpose: about role's Special_name_mgr
 #include "template/ServerTemplateHead.h"
 #include "Logic/char_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class player;
 	enum e_convert_end_type

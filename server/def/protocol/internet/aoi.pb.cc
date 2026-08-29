@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -527,8 +527,8 @@ void protobuf_AddDesc_aoi_2eproto() {
   already_here = true;
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  ::hld::protobuf_AddDesc_character_2eproto();
-  ::hld::protobuf_AddDesc_item_2eproto();
+  ::faith::protobuf_AddDesc_character_2eproto();
+  ::faith::protobuf_AddDesc_item_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\taoi.proto\022\003hld\032\017character.proto\032\nitem."
     "proto\"\336\022\n\taoi_proto\032<\n\runit_location\022\r\n\005"
@@ -552,12 +552,12 @@ void protobuf_AddDesc_aoi_2eproto() {
     "guid\030\020 \001(\003\022\020\n\010location\030\021 \003(\005\022\013\n\003yaw\030\022 \001("
     "\005\022\022\n\natt_attack\030\023 \003(\002\022\020\n\010att_info\030\024 \003(\002\022"
     "\021\n\tatt_state\030\025 \003(\010\022\020\n\010att_base\030\026 \003(\003\0226\n\013"
-    "legion_info\030\027 \001(\0132!.hld.aoi_proto.player"
-    "_legion_info\0222\n\tteam_info\030\030 \001(\0132\037.hld.ao"
+    "legion_info\030\027 \001(\0132!.faith.aoi_proto.player"
+    "_legion_info\0222\n\tteam_info\030\030 \001(\0132\037.faith.ao"
     "i_proto.player_team_info\022\024\n\014special_name"
     "\030\031 \003(\005\022\031\n\021title_template_id\030\032 \001(\005\022,\n\tite"
-    "m_list\030\033 \003(\0132\031.hld.item_proto.item_info\022"
-    "5\n\013spirit_info\030\034 \001(\0132 .hld.character_pro"
+    "m_list\030\033 \003(\0132\031.faith.item_proto.item_info\022"
+    "5\n\013spirit_info\030\034 \001(\0132 .faith.character_pro"
     "to.spirit_info\022\031\n\021robot_template_id\030\035 \001("
     "\005\022\024\n\014special_star\030\036 \003(\005\022\032\n\022tinder_templa"
     "te_id\030\037 \001(\005\022\023\n\013belief_info\030  \003(\005\022\023\n\013is_d"
@@ -572,7 +572,7 @@ void protobuf_AddDesc_aoi_2eproto() {
     "\n\032is_mission_see_player_guid\030/ \001(\003\022\020\n\010sp"
     "awn_id\0300 \001(\005\022\027\n\017self_award_list\0301 \003(\005\022\030\n"
     "\020extra_award_list\0302 \003(\005\032=\n\013unit_aoi_in\022."
-    "\n\tunit_list\030\001 \003(\0132\033.hld.aoi_proto.unit_a"
+    "\n\tunit_list\030\001 \003(\0132\033.faith.aoi_proto.unit_a"
     "oi_all\0326\n\014unit_aoi_out\022\021\n\tunit_guid\030\001 \003("
     "\003\022\023\n\013is_dissolve\030\002 \001(\010\032\303\001\n\010aoi_move\022\021\n\tu"
     "nit_guid\030\001 \001(\003\022\017\n\007cur_pos\030\002 \003(\005\022\020\n\010dest_"
@@ -2294,9 +2294,9 @@ aoi_proto_unit_aoi_all::aoi_proto_unit_aoi_all()
 }
 
 void aoi_proto_unit_aoi_all::InitAsDefaultInstance() {
-  legion_info_ = const_cast< ::hld::aoi_proto_player_legion_info*>(&::hld::aoi_proto_player_legion_info::default_instance());
-  team_info_ = const_cast< ::hld::aoi_proto_player_team_info*>(&::hld::aoi_proto_player_team_info::default_instance());
-  spirit_info_ = const_cast< ::hld::character_proto_spirit_info*>(&::hld::character_proto_spirit_info::default_instance());
+  legion_info_ = const_cast< ::faith::aoi_proto_player_legion_info*>(&::faith::aoi_proto_player_legion_info::default_instance());
+  team_info_ = const_cast< ::faith::aoi_proto_player_team_info*>(&::faith::aoi_proto_player_team_info::default_instance());
+  spirit_info_ = const_cast< ::faith::character_proto_spirit_info*>(&::faith::character_proto_spirit_info::default_instance());
 }
 
 aoi_proto_unit_aoi_all::aoi_proto_unit_aoi_all(const aoi_proto_unit_aoi_all& from)
@@ -2419,16 +2419,16 @@ void aoi_proto_unit_aoi_all::Clear() {
   if (_has_bits_[17 / 32] & (0xffu << (17 % 32))) {
     yaw_ = 0;
     if (has_legion_info()) {
-      if (legion_info_ != NULL) legion_info_->::hld::aoi_proto_player_legion_info::Clear();
+      if (legion_info_ != NULL) legion_info_->::faith::aoi_proto_player_legion_info::Clear();
     }
     if (has_team_info()) {
-      if (team_info_ != NULL) team_info_->::hld::aoi_proto_player_team_info::Clear();
+      if (team_info_ != NULL) team_info_->::faith::aoi_proto_player_team_info::Clear();
     }
   }
   if (_has_bits_[25 / 32] & (0xffu << (25 % 32))) {
     title_template_id_ = 0;
     if (has_spirit_info()) {
-      if (spirit_info_ != NULL) spirit_info_->::hld::character_proto_spirit_info::Clear();
+      if (spirit_info_ != NULL) spirit_info_->::faith::character_proto_spirit_info::Clear();
     }
     robot_template_id_ = 0;
     tinder_template_id_ = 0;
@@ -2864,7 +2864,7 @@ bool aoi_proto_unit_aoi_all::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.aoi_proto.player_legion_info legion_info = 23;
+      // optional .faith.aoi_proto.player_legion_info legion_info = 23;
       case 23: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2878,7 +2878,7 @@ bool aoi_proto_unit_aoi_all::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.aoi_proto.player_team_info team_info = 24;
+      // optional .faith.aoi_proto.player_team_info team_info = 24;
       case 24: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2930,7 +2930,7 @@ bool aoi_proto_unit_aoi_all::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.item_proto.item_info item_list = 27;
+      // repeated .faith.item_proto.item_info item_list = 27;
       case 27: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2945,7 +2945,7 @@ bool aoi_proto_unit_aoi_all::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.character_proto.spirit_info spirit_info = 28;
+      // optional .faith.character_proto.spirit_info spirit_info = 28;
       case 28: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -3474,13 +3474,13 @@ void aoi_proto_unit_aoi_all::SerializeWithCachedSizes(
       22, this->att_base(i), output);
   }
 
-  // optional .hld.aoi_proto.player_legion_info legion_info = 23;
+  // optional .faith.aoi_proto.player_legion_info legion_info = 23;
   if (has_legion_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       23, this->legion_info(), output);
   }
 
-  // optional .hld.aoi_proto.player_team_info team_info = 24;
+  // optional .faith.aoi_proto.player_team_info team_info = 24;
   if (has_team_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       24, this->team_info(), output);
@@ -3497,13 +3497,13 @@ void aoi_proto_unit_aoi_all::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(26, this->title_template_id(), output);
   }
 
-  // repeated .hld.item_proto.item_info item_list = 27;
+  // repeated .faith.item_proto.item_info item_list = 27;
   for (int i = 0; i < this->item_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       27, this->item_list(i), output);
   }
 
-  // optional .hld.character_proto.spirit_info spirit_info = 28;
+  // optional .faith.character_proto.spirit_info spirit_info = 28;
   if (has_spirit_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       28, this->spirit_info(), output);
@@ -3759,14 +3759,14 @@ void aoi_proto_unit_aoi_all::SerializeWithCachedSizes(
       WriteInt64ToArray(22, this->att_base(i), target);
   }
 
-  // optional .hld.aoi_proto.player_legion_info legion_info = 23;
+  // optional .faith.aoi_proto.player_legion_info legion_info = 23;
   if (has_legion_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         23, this->legion_info(), target);
   }
 
-  // optional .hld.aoi_proto.player_team_info team_info = 24;
+  // optional .faith.aoi_proto.player_team_info team_info = 24;
   if (has_team_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -3784,14 +3784,14 @@ void aoi_proto_unit_aoi_all::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(26, this->title_template_id(), target);
   }
 
-  // repeated .hld.item_proto.item_info item_list = 27;
+  // repeated .faith.item_proto.item_info item_list = 27;
   for (int i = 0; i < this->item_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         27, this->item_list(i), target);
   }
 
-  // optional .hld.character_proto.spirit_info spirit_info = 28;
+  // optional .faith.character_proto.spirit_info spirit_info = 28;
   if (has_spirit_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -4056,14 +4056,14 @@ int aoi_proto_unit_aoi_all::ByteSize() const {
           this->yaw());
     }
 
-    // optional .hld.aoi_proto.player_legion_info legion_info = 23;
+    // optional .faith.aoi_proto.player_legion_info legion_info = 23;
     if (has_legion_info()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->legion_info());
     }
 
-    // optional .hld.aoi_proto.player_team_info team_info = 24;
+    // optional .faith.aoi_proto.player_team_info team_info = 24;
     if (has_team_info()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -4079,7 +4079,7 @@ int aoi_proto_unit_aoi_all::ByteSize() const {
           this->title_template_id());
     }
 
-    // optional .hld.character_proto.spirit_info spirit_info = 28;
+    // optional .faith.character_proto.spirit_info spirit_info = 28;
     if (has_spirit_info()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -4264,7 +4264,7 @@ int aoi_proto_unit_aoi_all::ByteSize() const {
     total_size += 2 * this->special_name_size() + data_size;
   }
 
-  // repeated .hld.item_proto.item_info item_list = 27;
+  // repeated .faith.item_proto.item_info item_list = 27;
   total_size += 2 * this->item_list_size();
   for (int i = 0; i < this->item_list_size(); i++) {
     total_size +=
@@ -4405,10 +4405,10 @@ void aoi_proto_unit_aoi_all::MergeFrom(const aoi_proto_unit_aoi_all& from) {
       set_yaw(from.yaw());
     }
     if (from.has_legion_info()) {
-      mutable_legion_info()->::hld::aoi_proto_player_legion_info::MergeFrom(from.legion_info());
+      mutable_legion_info()->::faith::aoi_proto_player_legion_info::MergeFrom(from.legion_info());
     }
     if (from.has_team_info()) {
-      mutable_team_info()->::hld::aoi_proto_player_team_info::MergeFrom(from.team_info());
+      mutable_team_info()->::faith::aoi_proto_player_team_info::MergeFrom(from.team_info());
     }
   }
   if (from._has_bits_[25 / 32] & (0xffu << (25 % 32))) {
@@ -4416,7 +4416,7 @@ void aoi_proto_unit_aoi_all::MergeFrom(const aoi_proto_unit_aoi_all& from) {
       set_title_template_id(from.title_template_id());
     }
     if (from.has_spirit_info()) {
-      mutable_spirit_info()->::hld::character_proto_spirit_info::MergeFrom(from.spirit_info());
+      mutable_spirit_info()->::faith::character_proto_spirit_info::MergeFrom(from.spirit_info());
     }
     if (from.has_robot_template_id()) {
       set_robot_template_id(from.robot_template_id());
@@ -4632,7 +4632,7 @@ bool aoi_proto_unit_aoi_in::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.aoi_proto.unit_aoi_all unit_list = 1;
+      // repeated .faith.aoi_proto.unit_aoi_all unit_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -4665,7 +4665,7 @@ bool aoi_proto_unit_aoi_in::MergePartialFromCodedStream(
 
 void aoi_proto_unit_aoi_in::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.aoi_proto.unit_aoi_all unit_list = 1;
+  // repeated .faith.aoi_proto.unit_aoi_all unit_list = 1;
   for (int i = 0; i < this->unit_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->unit_list(i), output);
@@ -4679,7 +4679,7 @@ void aoi_proto_unit_aoi_in::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* aoi_proto_unit_aoi_in::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.aoi_proto.unit_aoi_all unit_list = 1;
+  // repeated .faith.aoi_proto.unit_aoi_all unit_list = 1;
   for (int i = 0; i < this->unit_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -4696,7 +4696,7 @@ void aoi_proto_unit_aoi_in::SerializeWithCachedSizes(
 int aoi_proto_unit_aoi_in::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.aoi_proto.unit_aoi_all unit_list = 1;
+  // repeated .faith.aoi_proto.unit_aoi_all unit_list = 1;
   total_size += 1 * this->unit_list_size();
   for (int i = 0; i < this->unit_list_size(); i++) {
     total_size +=
@@ -7668,6 +7668,6 @@ void aoi_proto::Swap(aoi_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

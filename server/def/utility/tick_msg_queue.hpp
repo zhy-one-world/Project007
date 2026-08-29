@@ -13,7 +13,7 @@
 #include <queue>
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 	const int32 MAX_MSG_SIZE = 1024 * 8;
 

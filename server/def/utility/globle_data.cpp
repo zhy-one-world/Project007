@@ -20,7 +20,7 @@ purpose:
 #include "internal/core.hpp"
 
 
-namespace hld
+namespace faith
 {
 	void globle_data::init_manager()
 	{

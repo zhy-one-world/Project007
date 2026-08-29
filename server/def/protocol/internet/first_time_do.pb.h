@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_first_5ftime_5fdo_2eproto();
@@ -102,7 +102,7 @@ class first_time_do_proto_first_do_record : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 do_type() const;
   inline void set_do_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.first_time_do_proto.first_do_record)
+  // @@protoc_insertion_point(class_scope:faith.first_time_do_proto.first_do_record)
  private:
   inline void set_has_do_type();
   inline void clear_has_do_type();
@@ -184,26 +184,26 @@ class first_time_do_proto_update_first_time_do_records : public ::google::protob
   inline ::google::protobuf::int32 records_num() const;
   inline void set_records_num(::google::protobuf::int32 value);
 
-  // repeated .hld.first_time_do_proto.first_do_record records = 2;
+  // repeated .faith.first_time_do_proto.first_do_record records = 2;
   inline int records_size() const;
   inline void clear_records();
   static const int kRecordsFieldNumber = 2;
-  inline const ::hld::first_time_do_proto_first_do_record& records(int index) const;
-  inline ::hld::first_time_do_proto_first_do_record* mutable_records(int index);
-  inline ::hld::first_time_do_proto_first_do_record* add_records();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::first_time_do_proto_first_do_record >&
+  inline const ::faith::first_time_do_proto_first_do_record& records(int index) const;
+  inline ::faith::first_time_do_proto_first_do_record* mutable_records(int index);
+  inline ::faith::first_time_do_proto_first_do_record* add_records();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::first_time_do_proto_first_do_record >&
       records() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::first_time_do_proto_first_do_record >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::first_time_do_proto_first_do_record >*
       mutable_records();
 
-  // @@protoc_insertion_point(class_scope:hld.first_time_do_proto.update_first_time_do_records)
+  // @@protoc_insertion_point(class_scope:faith.first_time_do_proto.update_first_time_do_records)
  private:
   inline void set_has_records_num();
   inline void clear_has_records_num();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::first_time_do_proto_first_do_record > records_;
+  ::google::protobuf::RepeatedPtrField< ::faith::first_time_do_proto_first_do_record > records_;
   ::google::protobuf::int32 records_num_;
 
   mutable int _cached_size_;
@@ -279,7 +279,7 @@ class first_time_do_proto_add_first_time_do_record : public ::google::protobuf::
   inline ::google::protobuf::int32 do_type() const;
   inline void set_do_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.first_time_do_proto.add_first_time_do_record)
+  // @@protoc_insertion_point(class_scope:faith.first_time_do_proto.add_first_time_do_record)
  private:
   inline void set_has_do_type();
   inline void clear_has_do_type();
@@ -354,23 +354,23 @@ class first_time_do_proto_sync_first_time_do_record : public ::google::protobuf:
 
   // accessors -------------------------------------------------------
 
-  // optional .hld.first_time_do_proto.first_do_record record = 1;
+  // optional .faith.first_time_do_proto.first_do_record record = 1;
   inline bool has_record() const;
   inline void clear_record();
   static const int kRecordFieldNumber = 1;
-  inline const ::hld::first_time_do_proto_first_do_record& record() const;
-  inline ::hld::first_time_do_proto_first_do_record* mutable_record();
-  inline ::hld::first_time_do_proto_first_do_record* release_record();
-  inline void set_allocated_record(::hld::first_time_do_proto_first_do_record* record);
+  inline const ::faith::first_time_do_proto_first_do_record& record() const;
+  inline ::faith::first_time_do_proto_first_do_record* mutable_record();
+  inline ::faith::first_time_do_proto_first_do_record* release_record();
+  inline void set_allocated_record(::faith::first_time_do_proto_first_do_record* record);
 
-  // @@protoc_insertion_point(class_scope:hld.first_time_do_proto.sync_first_time_do_record)
+  // @@protoc_insertion_point(class_scope:faith.first_time_do_proto.sync_first_time_do_record)
  private:
   inline void set_has_record();
   inline void clear_has_record();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::first_time_do_proto_first_do_record* record_;
+  ::faith::first_time_do_proto_first_do_record* record_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -443,7 +443,7 @@ class first_time_do_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.first_time_do_proto)
+  // @@protoc_insertion_point(class_scope:faith.first_time_do_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -514,27 +514,27 @@ inline void first_time_do_proto_update_first_time_do_records::set_records_num(::
   records_num_ = value;
 }
 
-// repeated .hld.first_time_do_proto.first_do_record records = 2;
+// repeated .faith.first_time_do_proto.first_do_record records = 2;
 inline int first_time_do_proto_update_first_time_do_records::records_size() const {
   return records_.size();
 }
 inline void first_time_do_proto_update_first_time_do_records::clear_records() {
   records_.Clear();
 }
-inline const ::hld::first_time_do_proto_first_do_record& first_time_do_proto_update_first_time_do_records::records(int index) const {
+inline const ::faith::first_time_do_proto_first_do_record& first_time_do_proto_update_first_time_do_records::records(int index) const {
   return records_.Get(index);
 }
-inline ::hld::first_time_do_proto_first_do_record* first_time_do_proto_update_first_time_do_records::mutable_records(int index) {
+inline ::faith::first_time_do_proto_first_do_record* first_time_do_proto_update_first_time_do_records::mutable_records(int index) {
   return records_.Mutable(index);
 }
-inline ::hld::first_time_do_proto_first_do_record* first_time_do_proto_update_first_time_do_records::add_records() {
+inline ::faith::first_time_do_proto_first_do_record* first_time_do_proto_update_first_time_do_records::add_records() {
   return records_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::first_time_do_proto_first_do_record >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::first_time_do_proto_first_do_record >&
 first_time_do_proto_update_first_time_do_records::records() const {
   return records_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::first_time_do_proto_first_do_record >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::first_time_do_proto_first_do_record >*
 first_time_do_proto_update_first_time_do_records::mutable_records() {
   return &records_;
 }
@@ -569,7 +569,7 @@ inline void first_time_do_proto_add_first_time_do_record::set_do_type(::google::
 
 // first_time_do_proto_sync_first_time_do_record
 
-// optional .hld.first_time_do_proto.first_do_record record = 1;
+// optional .faith.first_time_do_proto.first_do_record record = 1;
 inline bool first_time_do_proto_sync_first_time_do_record::has_record() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -580,24 +580,24 @@ inline void first_time_do_proto_sync_first_time_do_record::clear_has_record() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void first_time_do_proto_sync_first_time_do_record::clear_record() {
-  if (record_ != NULL) record_->::hld::first_time_do_proto_first_do_record::Clear();
+  if (record_ != NULL) record_->::faith::first_time_do_proto_first_do_record::Clear();
   clear_has_record();
 }
-inline const ::hld::first_time_do_proto_first_do_record& first_time_do_proto_sync_first_time_do_record::record() const {
+inline const ::faith::first_time_do_proto_first_do_record& first_time_do_proto_sync_first_time_do_record::record() const {
   return record_ != NULL ? *record_ : *default_instance_->record_;
 }
-inline ::hld::first_time_do_proto_first_do_record* first_time_do_proto_sync_first_time_do_record::mutable_record() {
+inline ::faith::first_time_do_proto_first_do_record* first_time_do_proto_sync_first_time_do_record::mutable_record() {
   set_has_record();
-  if (record_ == NULL) record_ = new ::hld::first_time_do_proto_first_do_record;
+  if (record_ == NULL) record_ = new ::faith::first_time_do_proto_first_do_record;
   return record_;
 }
-inline ::hld::first_time_do_proto_first_do_record* first_time_do_proto_sync_first_time_do_record::release_record() {
+inline ::faith::first_time_do_proto_first_do_record* first_time_do_proto_sync_first_time_do_record::release_record() {
   clear_has_record();
-  ::hld::first_time_do_proto_first_do_record* temp = record_;
+  ::faith::first_time_do_proto_first_do_record* temp = record_;
   record_ = NULL;
   return temp;
 }
-inline void first_time_do_proto_sync_first_time_do_record::set_allocated_record(::hld::first_time_do_proto_first_do_record* record) {
+inline void first_time_do_proto_sync_first_time_do_record::set_allocated_record(::faith::first_time_do_proto_first_do_record* record) {
   delete record_;
   record_ = record;
   if (record) {
@@ -614,7 +614,7 @@ inline void first_time_do_proto_sync_first_time_do_record::set_allocated_record(
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

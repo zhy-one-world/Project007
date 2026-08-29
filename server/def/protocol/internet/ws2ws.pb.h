@@ -27,7 +27,7 @@
 #include "st.pb.h"
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_ws2ws_2eproto();
@@ -93,16 +93,16 @@ class ws2ws_proto_send_big_player_msg : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.st_proto.st_big_player_db data_info = 1;
+  // repeated .faith.st_proto.st_big_player_db data_info = 1;
   inline int data_info_size() const;
   inline void clear_data_info();
   static const int kDataInfoFieldNumber = 1;
-  inline const ::hld::st_proto_st_big_player_db& data_info(int index) const;
-  inline ::hld::st_proto_st_big_player_db* mutable_data_info(int index);
-  inline ::hld::st_proto_st_big_player_db* add_data_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_big_player_db >&
+  inline const ::faith::st_proto_st_big_player_db& data_info(int index) const;
+  inline ::faith::st_proto_st_big_player_db* mutable_data_info(int index);
+  inline ::faith::st_proto_st_big_player_db* add_data_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_big_player_db >&
       data_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_big_player_db >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_big_player_db >*
       mutable_data_info();
 
   // optional bool is_load_flag = 2;
@@ -112,14 +112,14 @@ class ws2ws_proto_send_big_player_msg : public ::google::protobuf::Message {
   inline bool is_load_flag() const;
   inline void set_is_load_flag(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2ws_proto.send_big_player_msg)
+  // @@protoc_insertion_point(class_scope:faith.ws2ws_proto.send_big_player_msg)
  private:
   inline void set_has_is_load_flag();
   inline void clear_has_is_load_flag();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_big_player_db > data_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_big_player_db > data_info_;
   bool is_load_flag_;
 
   mutable int _cached_size_;
@@ -190,7 +190,7 @@ class ws2ws_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.ws2ws_proto)
+  // @@protoc_insertion_point(class_scope:faith.ws2ws_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -213,27 +213,27 @@ class ws2ws_proto : public ::google::protobuf::Message {
 
 // ws2ws_proto_send_big_player_msg
 
-// repeated .hld.st_proto.st_big_player_db data_info = 1;
+// repeated .faith.st_proto.st_big_player_db data_info = 1;
 inline int ws2ws_proto_send_big_player_msg::data_info_size() const {
   return data_info_.size();
 }
 inline void ws2ws_proto_send_big_player_msg::clear_data_info() {
   data_info_.Clear();
 }
-inline const ::hld::st_proto_st_big_player_db& ws2ws_proto_send_big_player_msg::data_info(int index) const {
+inline const ::faith::st_proto_st_big_player_db& ws2ws_proto_send_big_player_msg::data_info(int index) const {
   return data_info_.Get(index);
 }
-inline ::hld::st_proto_st_big_player_db* ws2ws_proto_send_big_player_msg::mutable_data_info(int index) {
+inline ::faith::st_proto_st_big_player_db* ws2ws_proto_send_big_player_msg::mutable_data_info(int index) {
   return data_info_.Mutable(index);
 }
-inline ::hld::st_proto_st_big_player_db* ws2ws_proto_send_big_player_msg::add_data_info() {
+inline ::faith::st_proto_st_big_player_db* ws2ws_proto_send_big_player_msg::add_data_info() {
   return data_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_big_player_db >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_big_player_db >&
 ws2ws_proto_send_big_player_msg::data_info() const {
   return data_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_big_player_db >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_big_player_db >*
 ws2ws_proto_send_big_player_msg::mutable_data_info() {
   return &data_info_;
 }
@@ -267,7 +267,7 @@ inline void ws2ws_proto_send_big_player_msg::set_is_load_flag(bool value) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

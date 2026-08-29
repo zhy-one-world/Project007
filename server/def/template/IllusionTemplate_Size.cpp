@@ -1,6 +1,6 @@
 #include "IllusionTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void IllusionTemplateSize()
     {

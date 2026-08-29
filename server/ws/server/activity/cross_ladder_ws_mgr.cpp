@@ -26,7 +26,7 @@ purpose: ¿ç·şÌìÌİ
 #include "game.pb.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	c_cross_ladder_role_info::c_cross_ladder_role_info()
 	{

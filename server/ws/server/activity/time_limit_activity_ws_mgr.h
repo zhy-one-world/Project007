@@ -13,7 +13,7 @@ purpose: time limit activity
 
 #include "Logic/time_limit_activity_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class client_session;
 

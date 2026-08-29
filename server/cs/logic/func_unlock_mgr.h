@@ -3,7 +3,7 @@
 
 #include "../../def/template/template_manager.h"
 
-namespace hld
+namespace faith
 {
 	typedef std::map<std::string, FuncUnlockTemplate*> func_unlock_template_map;
 	typedef func_unlock_template_map::iterator func_unlock_template_map_it;

@@ -22,7 +22,7 @@ purpose:
 #include "net.pb.h"
 #include "game.pb.h"
 
-namespace hld
+namespace faith
 {
 	cross_server_world_boss_ws_mgr::cross_server_world_boss_ws_mgr()
 	{
@@ -226,18 +226,18 @@ namespace hld
 		std::string notice_id = "";
 		switch (ret)
 		{
-		case hld::e_error_code_success:
+		case faith::e_error_code_success:
 			break;
-		case hld::e_error_code_map_init_map_err:
+		case faith::e_error_code_map_init_map_err:
 			notice_id = "90090579";
 			break;
-		case hld::e_error_code_map_cross_server_world_boss_begin:
+		case faith::e_error_code_map_cross_server_world_boss_begin:
 			notice_id = "90090360";//跨服世界boss活动未开始
 			break;
-		case hld::e_error_code_map_cross_server_world_boss_end:
+		case faith::e_error_code_map_cross_server_world_boss_end:
 			notice_id = "90090360";//跨服世界boss活动已结束
 			break;
-		case hld::e_error_code_map_cross_server_world_boss_not_start:
+		case faith::e_error_code_map_cross_server_world_boss_not_start:
 			notice_id = "90305015";//跨服世界boss活动未开启
 			break;
 		default:
@@ -993,7 +993,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::cross_server_world_boss_creat_boss pro_msg;
+			faith::ws2cs_proto::cross_server_world_boss_creat_boss pro_msg;
 			creat_boss_msg.to_proto(pro_msg);
 			world_server::getInstance().broadcast_lua(&pro_msg, e_msgindex_ws2cs_cross_server_world_boss_creat_boss, e_server_type_cs);
 		}
@@ -1047,7 +1047,7 @@ namespace hld
 	}
 
 	//发送服务器等级
-	void hld::cross_server_world_boss_ws_mgr::send_server_level(int32 server_id)
+	void faith::cross_server_world_boss_ws_mgr::send_server_level(int32 server_id)
 	{
 		ActivityCommonConfigTemplate* cross_server_boss_config_ptr = GET_TEMPLATE(ActivityCommonConfigTemplate, first_activity_common_template_id + e_activity_type_cross_server_world_boss);
 		if (false == world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_boss) || cross_server_boss_config_ptr == nullptr)

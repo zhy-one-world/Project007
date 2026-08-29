@@ -17,7 +17,7 @@ purpose:about role's convert_mgr
 #include "internal/convert_msg.hpp"
 #include "utility/init_unit.h"
 
-namespace hld
+namespace faith
 {
 
 	convert_mgr::convert_mgr()
@@ -38,7 +38,7 @@ namespace hld
 	
 	void convert_mgr::clear_data()
 	{
-		for (int32 i = 0; i < hld::e_convert_type_max;++i)
+		for (int32 i = 0; i < faith::e_convert_type_max;++i)
 		{
 			m_all_convert_time[i] = 0;
 			m_vip_convert_time[i] = 0;
@@ -127,7 +127,7 @@ namespace hld
 
 	void convert_mgr::load_data_from_db(const int32* alltime)
 	{
-		for (int32 i = 0; i < hld::e_convert_type_max; i++)
+		for (int32 i = 0; i < faith::e_convert_type_max; i++)
 		{
 			m_all_convert_time[i] = alltime[i];
 		}
@@ -141,7 +141,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_convert_db msg;
+		faith::cs2dp_proto::role_convert_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -168,12 +168,12 @@ namespace hld
 			return;
 		}
 		convert_proto_convert_info_all msg;
-		for (int32 i = 0; i < hld::e_convert_type_max; i++)
+		for (int32 i = 0; i < faith::e_convert_type_max; i++)
 		{
 			msg.add_convert_times(m_all_convert_time[i]);
 		}
 
-		for (int32 i = 0; i < hld::e_convert_type_max; i++)
+		for (int32 i = 0; i < faith::e_convert_type_max; i++)
 		{
 			msg.add_convert_max_times(m_vip_convert_time[i]);
 		}
@@ -219,11 +219,11 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_convert msg;
+			faith::cs2dp_proto::save_role_convert msg;
 			msg.set_role_guid(m_player_ptr->get_unit_guid().server_64);
 			msg.set_unit_array_index(m_player_ptr->get_array_index());
 			msg.set_save_type_ex(save_type);
-			hld::cs2dp_proto::role_convert_db *db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_convert_db *db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return;

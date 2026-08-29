@@ -16,18 +16,18 @@
 #include "Logic/item_def.hpp"
 #include "net/http_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_dp2cs_load_char_item					= hld::e_msg_base_item,
+		e_msgindex_dp2cs_load_char_item					= faith::e_msg_base_item,
 		e_msgindex_cs2dp_save_char_item,
 	};
 
 	// DP2CS 分批发送玩家的所有物品信息
-	struct dp2cs_load_char_item : public hld::packet_base
+	struct dp2cs_load_char_item : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -60,7 +60,7 @@ namespace hld
 
 
 
-	struct cs2dp_save_char_item : public hld::packet_base
+	struct cs2dp_save_char_item : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;

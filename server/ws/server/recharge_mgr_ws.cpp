@@ -14,7 +14,7 @@
 #include "net.pb.h"
 #include "character.pb.h"
 
-namespace hld
+namespace faith
 {
 
 	const int32 custom_recharge_id = 104099999;
@@ -338,7 +338,7 @@ namespace hld
 		client_session* session = client_session_mgr::getInstance().get_session(role_guid);
 		if (session)
 		{
-			hld::character_proto_recharge_end msg;
+			faith::character_proto_recharge_end msg;
 			msg.set_order_id(order_id);
 			msg.set_goods_id(goods_id);
 			msg.set_role_guid(role_guid.server_64);

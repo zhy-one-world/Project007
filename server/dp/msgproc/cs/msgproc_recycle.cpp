@@ -7,15 +7,15 @@
 #include "cs2dp.pb.h"
 #include "dp2cs.pb.h"
 
-namespace hld
+namespace faith
 {
 	static void cs2dp_load_role_recycle_send_lua(uint32 connindex, const dp2cs_load_char_recycle& msgData)
 	{
-		hld::dp2cs_proto::load_role_recycle msg;
+		faith::dp2cs_proto::load_role_recycle msg;
 		msg.set_role_guid(msgData.role_guid.server_64);
 		msg.set_unit_array_index(msgData.unit_array_index);
 
-		hld::cs2dp_proto::role_recycle_db msg_db;
+		faith::cs2dp_proto::role_recycle_db msg_db;
 		msg_db.set_e_start_time_1(msgData.data_info.e_start_time_1);
 		msg_db.set_e_login_state_2(msgData.data_info.e_login_state_2);
 		msg_db.set_e_prop_state_3(msgData.data_info.e_prop_state_3);
@@ -118,7 +118,7 @@ namespace hld
 
 		s_recycle_info db_row_info;
 
-		hld::cs2dp_proto_role_recycle_db msg;
+		faith::cs2dp_proto_role_recycle_db msg;
 
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
@@ -189,15 +189,15 @@ namespace hld
 	////////////////////////////////////////////////////////////////////////////////////
 	void cs2dp_load_role_recycle_task_send_lua(uint32 connindex, const dp2cs_load_char_recycle_task & msgData)
 	{
-		hld::dp2cs_proto::load_role_recycle_task msg;
+		faith::dp2cs_proto::load_role_recycle_task msg;
 		msg.set_role_guid(msgData.role_guid.server_64);
 		msg.set_unit_array_index(msgData.unit_array_index);
 
-		hld::cs2dp_proto::role_recycle_task_db msg_db;
+		faith::cs2dp_proto::role_recycle_task_db msg_db;
 		msg_db.set_row_count(msgData.data_num);
 		for (int32 i = 0; i < msg_db.row_count(); i++)
 		{
-			hld::cs2dp_proto::role_recycle_task_row *db_row = msg_db.add_row_data();
+			faith::cs2dp_proto::role_recycle_task_row *db_row = msg_db.add_row_data();
 			if (db_row == nullptr)
 			{
 				return;
@@ -313,7 +313,7 @@ namespace hld
 		guid_64 role_guid;
 		role_guid.server_64 = role_id;
 
-		hld::cs2dp_proto::role_recycle_task_db msg;
+		faith::cs2dp_proto::role_recycle_task_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -332,7 +332,7 @@ namespace hld
 
 		for (int32 i = 0 ; i < row_count; i++)
 		{
-			hld::cs2dp_proto::role_recycle_task_row one_row = msg.row_data(i);
+			faith::cs2dp_proto::role_recycle_task_row one_row = msg.row_data(i);
 			for (int32 j = 0; j < one_row.data_ary_size(); j++)
 			{
 				p_row->data_ary[j] = one_row.data_ary(j);
@@ -438,15 +438,15 @@ namespace hld
 
 	static void cs2dp_load_role_recycle_invited_send_lua(uint32 connindex, const dp2cs_load_char_recycle_invited &reply_data)
 	{
-		hld::dp2cs_proto::load_role_db_data msg;
+		faith::dp2cs_proto::load_role_db_data msg;
 		msg.set_role_guid(reply_data.role_guid.server_64);
 		msg.set_unit_array_index(reply_data.unit_array_index);
 
-		hld::db_proto::role_proc_recycle_invited_db msg_db;
+		faith::db_proto::role_proc_recycle_invited_db msg_db;
 		msg_db.set_row_count(reply_data.data_num);
 		for (int32 i = 0; i < msg_db.row_count(); i++)
 		{
-			hld::db_proto::role_proc_recycle_invited_row* db_row = msg_db.add_row_data();
+			faith::db_proto::role_proc_recycle_invited_row* db_row = msg_db.add_row_data();
 			if (db_row == nullptr)
 			{
 				return;

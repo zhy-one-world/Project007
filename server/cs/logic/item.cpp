@@ -18,7 +18,7 @@
 #include "internet/item.pb.h"
 #include "utility/init_unit.h"
 
-namespace hld
+namespace faith
 {
 	citem::citem(void)
 	{
@@ -222,7 +222,7 @@ namespace hld
 			{
 				return have_att_num;
 			}
-			total_att_num = spirit_template_ptr->BaseExcellentAtt.size() / hld::e_att_one_max;
+			total_att_num = spirit_template_ptr->BaseExcellentAtt.size() / faith::e_att_one_max;
 			if (total_att_num != spirit_template_ptr->GreenExcellentRatio.size() / 2
 				|| total_att_num != spirit_template_ptr->BlueExcellentRatio.size() / 2
 				|| total_att_num != spirit_template_ptr->PurpleExcellentRatio.size() / 2
@@ -241,7 +241,7 @@ namespace hld
 			//{
 			//	return have_att_num;
 			//}
-			//total_att_num = equip_template_ptr->BaseExcellentAtt.size() / hld::e_att_one_max;
+			//total_att_num = equip_template_ptr->BaseExcellentAtt.size() / faith::e_att_one_max;
 			//if (total_att_num != equip_template_ptr->GreenExcellentRatio.size() / 2
 			//	|| total_att_num != equip_template_ptr->BlueExcellentRatio.size() / 2
 			//	|| total_att_num != equip_template_ptr->PurpleExcellentRatio.size() / 2
@@ -506,7 +506,7 @@ namespace hld
 		{
 			SpiritTemplate* spirit_template_ptr = get_sprite_info_ptr();
 			if (nullptr == spirit_template_ptr
-				|| spirit_template_ptr->BaseExcellentAtt.size() % hld::e_att_one_max != 0
+				|| spirit_template_ptr->BaseExcellentAtt.size() % faith::e_att_one_max != 0
 				|| spirit_template_ptr->GreenExcellentRatio.size() % 2 != 0
 				|| spirit_template_ptr->BlueExcellentRatio.size() % 2 != 0
 				|| spirit_template_ptr->PurpleExcellentRatio.size() % 2 != 0
@@ -516,7 +516,7 @@ namespace hld
 			{
 				return;
 			}
-			total_att_num = spirit_template_ptr->BaseExcellentAtt.size() / hld::e_att_one_max;
+			total_att_num = spirit_template_ptr->BaseExcellentAtt.size() / faith::e_att_one_max;
 			if (total_att_num != spirit_template_ptr->GreenExcellentRatio.size() / 2
 				|| total_att_num != spirit_template_ptr->BlueExcellentRatio.size() / 2
 				|| total_att_num != spirit_template_ptr->PurpleExcellentRatio.size() / 2
@@ -537,7 +537,7 @@ namespace hld
 		{
 			//EquipTemplate* equip_template_ptr = get_equip_info_ptr();
 			//if (nullptr == equip_template_ptr
-			//	|| equip_template_ptr->BaseExcellentAtt.size() % hld::e_att_one_max != 0
+			//	|| equip_template_ptr->BaseExcellentAtt.size() % faith::e_att_one_max != 0
 			//	|| equip_template_ptr->GreenExcellentRatio.size() % 2 != 0
 			//	|| equip_template_ptr->BlueExcellentRatio.size() % 2 != 0
 			//	|| equip_template_ptr->PurpleExcellentRatio.size() % 2 != 0
@@ -547,7 +547,7 @@ namespace hld
 			//{
 			//	return;
 			//}
-			//total_att_num = equip_template_ptr->BaseExcellentAtt.size() / hld::e_att_one_max;
+			//total_att_num = equip_template_ptr->BaseExcellentAtt.size() / faith::e_att_one_max;
 			//if (total_att_num != equip_template_ptr->GreenExcellentRatio.size() / 2
 			//	|| total_att_num != equip_template_ptr->BlueExcellentRatio.size() / 2
 			//	|| total_att_num != equip_template_ptr->PurpleExcellentRatio.size() / 2
@@ -1062,8 +1062,8 @@ namespace hld
 
 		//¸½Ä§
 		int32 enchant_num = get_data_info(e_item_info_illusion_had_byte);
-		int32 enchant_level = enchant_num / hld::max_enchant_type_num;
-		int32 enchant_type = enchant_num % hld::max_enchant_type_num;
+		int32 enchant_level = enchant_num / faith::max_enchant_type_num;
+		int32 enchant_type = enchant_num % faith::max_enchant_type_num;
 		int32 enchant_slot = get_data_info(e_item_info_slot) - 1;
 		EquipEnchantTemplate* enchant_template_ptr = template_manager::get_instance().get_equip_enchant_template_ptr(enchant_level, enchant_type, enchant_slot);
 		if (enchant_template_ptr != nullptr)

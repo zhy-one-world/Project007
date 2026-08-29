@@ -1,6 +1,6 @@
 #include "RoleRewardTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void RoleRewardTemplateSize()
     {

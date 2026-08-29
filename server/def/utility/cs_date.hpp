@@ -12,7 +12,7 @@
 
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 	//const int32 update_data_time = 5;			//代表24h中的5点
 

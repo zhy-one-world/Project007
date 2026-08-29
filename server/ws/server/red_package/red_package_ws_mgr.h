@@ -5,7 +5,7 @@
 #include "Logic/event_def.hpp"
 #include "red_package_ws.h"
 
-namespace hld
+namespace faith
 {
 	class character_proto_update_red_pack_info;
 

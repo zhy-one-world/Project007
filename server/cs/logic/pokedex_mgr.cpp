@@ -19,7 +19,7 @@ purpose:
 #include "internet/net.pb.h"
 #include "internal/pokedex_msg.hpp"
 #include "internet/cs2dp.pb.h"
-namespace hld
+namespace faith
 {
 	cpokedex_mgr::cpokedex_mgr()
 	{

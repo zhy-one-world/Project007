@@ -3,7 +3,7 @@
 
 #include "legion_ws_applicant.h"
 
-namespace hld
+namespace faith
 {
 	class legion_ws_applicant_list
 	{

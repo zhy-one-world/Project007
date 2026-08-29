@@ -17,7 +17,7 @@
 #include "jwtcpp/jwt.h"
 #include "Base64.h"
 
-namespace hld
+namespace faith
 {
 	const xstring sdk_password = "googlesdk";		// πÃ∂®√‹¬Î
 	const xstring apple_login_private_key =	"-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgMMKLzlrbVd9ezpLR\nnOiLE3iiB7ucbWVw6F4OwYi1JHygCgYIKoZIzj0DAQehRANCAASO/33LDPplMKcE\nORrE38AGiX67hlFRcvjgWJcKM0Hlmj1vSzhpqUEvJZR+bE0HXcKPWPodZa51PWvG\nrhYgsWKy\n-----END PRIVATE KEY-----";
@@ -68,7 +68,7 @@ namespace hld
 		{
 			return;
 		}
-		//CONSOLE_INFO(" sdk : dp to ls login end : state = " << pdata->e_result << time_helper::get_current_time() << " , " << hld::utility::get_tick_count() );
+		//CONSOLE_INFO(" sdk : dp to ls login end : state = " << pdata->e_result << time_helper::get_current_time() << " , " << faith::utility::get_tick_count() );
 
 		ls2fep_client_login request;
 		request.eResult = pdata->e_result;
@@ -92,7 +92,7 @@ namespace hld
 
 		//CONSOLE_INFO(" on_login_result_handle: " << http_error_code << ","
 		//	<< http_error_info << "," << http_result << "," << time_helper::get_current_time()
-		//	<< " , " << hld::utility::get_tick_count());
+		//	<< " , " << faith::utility::get_tick_count());
 		s_client_uid client_uid(uid);
 		http_access_mgr::get_instance().remove_http(client_uid);
 
@@ -148,8 +148,8 @@ namespace hld
 				}
 
 				xstring id_token = data_value["id_token"].asString();
-				int64 ban_role_array[hld::max_character_num];
-				int64 ban_chat_array[hld::max_character_num];
+				int64 ban_role_array[faith::max_character_num];
+				int64 ban_chat_array[faith::max_character_num];
 				memset(ban_role_array, 0, sizeof(ban_role_array));
 				memset(ban_chat_array, 0, sizeof(ban_chat_array));
 
@@ -159,7 +159,7 @@ namespace hld
 				// ºÏ≤Èµ«¬Ω◊¥Ã¨
 				if (account.size() > 0)
 				{
-					//CONSOLE_INFO("sdk read json data : " << json_data.c_str() << " ," << time_helper::get_current_time() << " , " << hld::utility::get_tick_count());
+					//CONSOLE_INFO("sdk read json data : " << json_data.c_str() << " ," << time_helper::get_current_time() << " , " << faith::utility::get_tick_count());
 					// ¥Ê≈Ã
 					save_account(account, json_data, client_uid, ban_role_array, ban_chat_array);
 					return true;

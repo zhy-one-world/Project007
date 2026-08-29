@@ -1,6 +1,6 @@
 #include "BeliefRunesUpgradeTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void BeliefRunesUpgradeTemplateSize()
     {

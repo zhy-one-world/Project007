@@ -1,6 +1,6 @@
 #include "BuffResourceTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void BuffResourceTemplateSize()
     {

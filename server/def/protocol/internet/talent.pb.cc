@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -215,7 +215,7 @@ void protobuf_AddDesc_talent_2eproto() {
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\014talent.proto\022\003hld\"\227\003\n\014talent_proto\032#\n\017"
     "talent_info_one\022\020\n\010data_ary\030\001 \003(\005\032J\n\017tal"
-    "ent_info_all\0227\n\014talent_array\030\001 \003(\0132!.hld"
+    "ent_info_all\0227\n\014talent_array\030\001 \003(\0132!.faith"
     ".talent_proto.talent_info_one\032\\\n\010level_u"
     "p\022\032\n\022talent_template_id\030\001 \001(\005\022\037\n\027talent_"
     "list_template_id\030\002 \001(\005\022\023\n\013layer_index\030\003 "
@@ -528,7 +528,7 @@ bool talent_proto_talent_info_all::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.talent_proto.talent_info_one talent_array = 1;
+      // repeated .faith.talent_proto.talent_info_one talent_array = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -561,7 +561,7 @@ bool talent_proto_talent_info_all::MergePartialFromCodedStream(
 
 void talent_proto_talent_info_all::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.talent_proto.talent_info_one talent_array = 1;
+  // repeated .faith.talent_proto.talent_info_one talent_array = 1;
   for (int i = 0; i < this->talent_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->talent_array(i), output);
@@ -575,7 +575,7 @@ void talent_proto_talent_info_all::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* talent_proto_talent_info_all::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.talent_proto.talent_info_one talent_array = 1;
+  // repeated .faith.talent_proto.talent_info_one talent_array = 1;
   for (int i = 0; i < this->talent_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -592,7 +592,7 @@ void talent_proto_talent_info_all::SerializeWithCachedSizes(
 int talent_proto_talent_info_all::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.talent_proto.talent_info_one talent_array = 1;
+  // repeated .faith.talent_proto.talent_info_one talent_array = 1;
   total_size += 1 * this->talent_array_size();
   for (int i = 0; i < this->talent_array_size(); i++) {
     total_size +=
@@ -1802,6 +1802,6 @@ void talent_proto::Swap(talent_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

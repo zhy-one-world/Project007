@@ -11,7 +11,7 @@ purpose: about mail
 #include "utility/guid_gen.h"
 #include "template/template_manager.h"
 
-namespace hld
+namespace faith
 {
 
 	cmail::cmail(void)

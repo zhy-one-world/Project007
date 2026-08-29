@@ -1,0 +1,711 @@
+syntax = "proto2";
+package hld;
+import "db.proto";
+
+message cs2dp_proto
+{
+
+    message save_role_starark
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional db_proto.role_starark_db db_data = 4;
+	}
+	message role_recycle_db
+	{
+	    optional int32 e_start_time_1 = 1;
+		optional int32 e_login_state_2 = 2;
+		optional int32 e_prop_state_3 = 3;
+		optional int64 inviter_guid = 4;
+		optional int32 invited_state = 5;
+	}
+	message save_role_recycle
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_recycle_db db_data = 4;
+	}
+	
+	message role_recycle_task_row
+	{
+	   repeated int32 data_ary = 1;
+	}
+	message role_recycle_task_db
+	{
+	   optional int32 row_count = 1;
+	   repeated role_recycle_task_row row_data = 2;
+	}
+    message save_role_recycle_task
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_recycle_task_db db_data = 4;
+	}
+	
+	message role_dragontrip_db
+	{
+	   repeated int32 data_ary = 1;
+	}
+	
+	message save_role_dragontrip
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_dragontrip_db db_data = 4;
+	}
+	
+	message role_phantom_row
+	{
+	   repeated int32 data_ary = 1;
+	}
+	message role_phantom_db
+	{
+	   optional int32 row_count = 1;
+	   repeated role_phantom_row row_data = 2;
+	}
+    message save_role_phantom
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_phantom_db db_data = 4;
+	} 
+	message role_chat_record_row
+	{
+	   optional int32  pos = 1;
+	   optional string record = 2;
+	}
+	message role_chat_record_db
+	{
+	   optional int32 row_count = 1;
+	   repeated role_chat_record_row row_data = 2;
+	}
+    message save_role_chat_record
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_chat_record_db db_data = 4;
+	} 
+    message role_oracle_trial_row
+	{
+	   optional int64  role_guid = 1;
+	   optional	int32  tier_num = 2;
+	   optional	int32  customs_state = 3;											
+	   optional	int32  reward_stat = 4;
+	}
+	message role_oracle_trial_db
+	{
+	   optional int32 row_count = 1;
+	   repeated role_oracle_trial_row row_data = 2;
+	}
+    message save_role_oracle_trial
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_oracle_trial_db db_data = 4;
+	} 
+	message role_person_information_db
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 infor_state = 2;
+	   optional int32 reward_state = 3;
+	   optional	string	gender = 4;
+	   optional	string  personalized_signature = 5;
+	   optional	int32	birthday_year = 6;
+	   optional	int32	birthday_mouth = 7;
+	   optional	int32	birthday_day = 8;
+	   optional	string	city = 9;
+	   optional	string	hometown = 10;
+	   optional string	online_state = 11;
+	   repeated	int32	tags = 12;
+	}
+
+	message save_role_person_information
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_person_information_db db_data = 4;
+	} 
+	
+	message role_competition_db
+	{	
+	   optional	 int64   role_guid = 1;
+	   optional	 int32	 is_buy = 2;
+	   optional  int32	 buy_manual_type = 3;
+	   optional  int32	 point_add_percent = 4;
+	   optional  int32	 season = 5;
+	   optional  int32	 competition_begin_time = 6;
+	   optional  int32	 competition_end_time = 7;
+	   optional  int32	 level = 8;
+	   optional  int64	 cur_exp = 9;	
+	   optional	 int32	 need_reset = 10;
+	   optional	 int64   assist_fight_guid = 11;
+	   repeated	 int32   reward_state = 12;
+	   optional	 int32	 have_type = 13;
+	}
+	message save_role_competition
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_competition_db db_data = 4;
+	} 
+	message role_legion_skill_row
+	{
+	   repeated int32 data_ary  = 1;
+
+	}
+	message role_legion_skill_db
+	{
+	   optional int32 row_count = 1;
+	   repeated role_legion_skill_row row_data = 2;
+	}
+    message save_role_legion_skill
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_legion_skill_db db_data = 4;
+	} 
+	
+	message role_skytreasure_db
+    {
+	   optional	int32 skytreasure_layer_num = 1;        
+	   optional	int32 skytreasure_pos = 2;               
+	   optional	int32 skytreasure_pos_in_array = 3;    	
+    }	
+	message save_role_skytreasure 
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_skytreasure_db db_data = 4;
+	}
+	
+	message role_harry_record_db 
+	{
+	   repeated int32 data_ary = 1;
+	}
+	message save_role_harry_record
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_harry_record_db db_data = 4;
+	}
+	
+	message role_seven_day_goal_row
+	{
+	   repeated int32 data_ary = 1;
+	}
+	
+	message role_seven_day_goal_db
+	{
+	   optional int32 row_count = 1;
+	   repeated role_seven_day_goal_row row_data = 2;
+	}
+	message save_role_seven_day_goal
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_seven_day_goal_db db_data = 4;
+	}
+	
+	message role_passive_skill_row
+	{
+	   repeated int32 data_ary = 1;
+	}
+	message role_passive_skill_db
+	{
+	   optional int32 row_count = 1;
+	   repeated role_passive_skill_row row_data = 2;
+	}
+	message save_role_passive_skill
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_passive_skill_db db_data = 4;
+	}
+	
+	message role_boss_island_db
+	{
+	   repeated int32 data_ary = 1;
+	}
+	
+	message save_role_boss_island
+	{  
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_boss_island_db db_data = 4;
+	}
+	
+	message role_time_limit_activity_row
+	{
+	   repeated int32 data_ary  = 1;
+	   repeated int32 activity_schedule = 2;
+	   optional string schedule_str = 3;
+	   optional int64 reward_flag = 4;
+	}
+	message role_time_limit_activity_db
+	{
+	   optional int32 row_count = 1;
+	   repeated role_time_limit_activity_row row_data = 2;
+	}
+
+	message save_role_time_limit_activity
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional bool  is_self_server = 4;
+	   optional role_time_limit_activity_db db_data = 5;
+	
+	}
+	
+	message role_gain_treasure_db
+	{
+	   repeated int32 data_ary = 1;
+	}
+	message save_role_gain_treasure
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_gain_treasure_db db_data = 4;
+	}
+	
+	message role_logic_db
+	{
+	   repeated int32 data_ary = 1;
+	}	
+	message save_role_logic
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_logic_db  db_data = 4;
+	}
+	
+	message role_service_rank_reward_row
+	{
+	   optional int32 rank_type = 1;
+	   optional int32 reward_state = 2;
+	}
+	
+	message role_service_rank_reward_db
+	{
+	   optional int32 row_count = 1;
+	   repeated role_service_rank_reward_row row_data = 2;
+	}
+	message save_role_service_rank_reward
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_service_rank_reward_db db_data = 4;
+	}
+	message role_highest_record_db 
+	{
+	   repeated int64 data_ary = 1;
+	}
+
+	message save_role_highest_record
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_highest_record_db db_data = 4;
+	}
+	
+	
+	message role_daily_must_do_count_db
+	{
+	  repeated int32 data_ary = 1;
+	}
+	message save_role_daily_must_do_count
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_daily_must_do_count_db db_data = 4;
+	}
+	
+	message role_talent_row
+	{
+	  repeated int32 data_ary = 1;
+	}
+	message role_talent_db
+	{
+	   optional int32 row_count = 1;
+	   repeated role_talent_row row_data = 2;  
+	}
+	message save_role_talent
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_talent_db db_data = 4;   
+	}
+	
+	message role_title_row
+	{
+	  repeated int32 data_ary = 1;
+	}
+	message role_title_db
+	{
+	   optional int32 row_count = 1;
+	   repeated role_title_row row_data = 2;  
+	}
+	
+	message save_role_title
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_title_db db_data = 4;   
+	}
+	
+	
+	message role_active_degree_db
+	{
+	  repeated int32 data_ary = 1;
+	}
+	
+	message save_role_active_degree
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_active_degree_db db_data = 4;   
+	}
+	
+	message role_welfare_db
+	{
+	  repeated int32 data_ary = 1;
+	}
+	
+	message save_role_welfare
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_welfare_db db_data = 4;   
+	}
+	
+	message role_convert_db
+	{
+	
+	   repeated int32 data_ary = 1;
+	}
+	
+	message save_role_convert
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_convert_db db_data = 4;  
+	}
+	
+	
+	message role_yesterday_must_do_remain_row
+	{
+	   optional	int64		role_guid = 1;
+	   optional	int32		role_exp_level_yesterday = 2;
+	   optional	int32		save_date = 3;
+	   optional	int32		role_vip_level_yesterday = 4;
+	   optional	int32       distance_today_day_count = 5;
+	   optional	int32       role_arena_rank = 6;
+	   repeated int32       data_ary = 7;
+	}
+	
+	message role_yesterday_must_do_remain_db
+	{
+	   optional int32 row_count = 1;
+
+	   repeated role_yesterday_must_do_remain_row row_data = 2;
+	}
+	message save_role_yesterday_must_do_remain
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_yesterday_must_do_remain_db db_data = 4; 
+	}
+	
+	message role_worship_row 
+	{
+	   	optional int32		ranking_index = 1;
+		optional int64      target_guid = 2;
+	}
+	message role_worship_db
+	{
+	  optional int32 row_count = 1;
+	  repeated role_worship_row row_data = 2;
+	}
+	message save_role_worship
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_worship_db db_data =4; 
+	}
+	
+	message role_tinder_db
+	{
+	   repeated int32 data_ary = 1;
+	}
+	
+	message save_role_tinder
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_tinder_db db_data =4;
+	}
+	
+	message role_pokedex_row
+	{
+	   repeated int32 data_ary = 1;
+	   repeated int32 collect_num = 2;
+	}
+	message role_pokedex_db
+	{  
+	  optional int32 row_count = 1;
+	  repeated role_pokedex_row row_data = 2;
+	}
+	message save_role_pokedex
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_pokedex_db db_data =4;
+	}
+	
+	message role_achievement_row
+	{
+	   repeated int32 data_ary = 1;
+	}
+	
+	message role_achievement_db
+	{
+	  optional int32 row_count = 1;
+	  repeated role_achievement_row row_data = 2; 
+	}
+	
+	message save_role_achievement
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_achievement_db db_data =4;
+	}
+	
+	
+	message role_special_name_db
+	{
+	   repeated int32 data_ary = 1;
+	}
+		
+	message save_role_special_name
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_special_name_db db_data =4;
+	}
+	
+	message role_service_goal_row
+	{
+	  repeated int32 data_ary = 1;
+	}
+	message role_service_goal_db
+	{
+	  optional int32 row_count = 1;
+	  repeated role_service_goal_row row_data = 2; 
+	}
+	
+	message save_role_service_goal
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_service_goal_db db_data =4;
+	}
+	
+    message role_map_record_row
+	{
+	  repeated int32 data_ary = 1;
+	}
+	
+	message role_map_record_db
+	{
+	  optional int32 row_count = 1;
+	  repeated role_map_record_row row_data = 2; 
+	}
+	
+	message save_role_map_record
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;
+	   optional role_map_record_db db_data =4;
+	}
+	
+	
+	message role_goods_row
+	{
+	  repeated int32 data_ary = 1;
+	}
+	
+	message role_goods_db
+	{
+	  optional int32 row_count = 1;
+	  repeated role_goods_row row_data = 2; 
+	}
+	
+	
+	message save_role_goods
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;   
+	   optional role_goods_db db_data =4;
+	}
+	
+	message role_mission_row
+	{
+	  repeated int32 data_ary = 1;
+	}
+	
+	message role_mission_db
+	{
+	  optional int32 row_count = 1;
+	  repeated role_mission_row row_data = 2; 
+	}
+	
+	message save_role_mission
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;   
+	   optional role_mission_db db_data =4;
+	}
+	
+	
+	message role_belief_row
+	{
+	  repeated int32 data_ary = 1;
+	}
+	
+	message role_belief_db
+	{
+	  optional int32 row_count = 1;
+	  repeated role_belief_row row_data = 2; 
+	}
+	
+	message save_role_belief
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;   
+	   optional role_belief_db db_data =4;
+	}
+	message role_money_db
+	{
+	   repeated int64 cur_data_ary = 1;
+	   repeated int64 all_data_ary = 2;
+	   repeated int64 cost_data_ary = 3;
+	
+	}
+	message save_role_money
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;   
+	   optional role_money_db db_data =4;
+	}
+	message role_time_db
+	{
+	   repeated int64 data_ary = 1;
+	}
+	message save_role_time
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;   
+	   optional role_time_db db_data =4;
+	}
+
+	message role_info_db
+	{
+	   optional int64  role_guid = 1;
+	   optional string account = 2;
+	   optional string role_name = 3;
+	   optional string role_appearance = 4;
+	   optional string role_first_kill_ary = 5;
+	   optional int64  map_guid = 6;
+	   repeated int64  data_i64_ary = 7;
+	   repeated int32  data_ary = 8;
+	}
+	message save_role_info
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;   
+	   optional role_info_db db_data =4;
+	}
+	
+	message role_att_db
+	{
+	   repeated int64 data_ary = 1;
+	   repeated float attack_att = 2;
+	
+	}
+	message save_role_att
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 save_type_ex = 3;   
+	   optional role_att_db db_data =4;
+	}
+	
+	message save_recycle_invited
+	{
+	   optional int64 role_guid = 1;
+	   optional int64 target_guid = 2;
+	}
+	
+	
+	message role_guide_db
+	{
+	  optional int32 guide_trigger_id = 1;
+	  optional int32 state = 2;
+	}
+	
+	
+	message save_role_guide
+	{
+	  optional int64 role_guid = 1;
+	  optional int32 unit_array_index = 2;
+	  optional int32 save_type_ex = 3;  
+	  optional role_guide_db db_data = 4; 
+	}
+	
+	message save_role_db_data
+	{
+	  optional int64 role_guid = 1;
+	  optional int32 unit_array_index = 2;
+	  optional int32 save_type_ex = 3;
+	  optional bytes db_data = 4;
+	}
+}

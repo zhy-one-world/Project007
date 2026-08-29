@@ -13,7 +13,7 @@
 #include "utility/random.h"
 #include "wheel_plate_system.h"
 
-using namespace hld;
+using namespace faith;
 
 void wheel_plate_system::start_up(player* player_ptr, npc* npc_ptr)
 {

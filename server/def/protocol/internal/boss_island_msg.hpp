@@ -7,17 +7,17 @@
 #include "Logic/boss_island_def.hpp"
 #include "Logic/gain_treasure_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	enum 
 	{
-		e_msgindex_dp2cs_load_boss_island_info = hld::e_msg_base_boss_island,
+		e_msgindex_dp2cs_load_boss_island_info = faith::e_msg_base_boss_island,
 		e_msgindex_cs2dp_save_boss_island_info,
 		e_msgindex_cs2ws_update_boss_island_info,
 
 	};
-	struct dp2cs_load_boss_island_info : public hld::packet_base
+	struct dp2cs_load_boss_island_info : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -29,7 +29,7 @@ namespace hld
 		}
 	};
 
-	struct cs2dp_save_boss_island_info : public hld::packet_base
+	struct cs2dp_save_boss_island_info : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -47,7 +47,7 @@ namespace hld
 		}
 	};
 
-	struct cs2ws_update_boss_island_info : public hld::packet_base
+	struct cs2ws_update_boss_island_info : public faith::packet_base
 	{
 		s_gain_treasure_boss_info			boss_info;
 

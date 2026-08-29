@@ -26,7 +26,7 @@
 #include <gate_msg.hpp>
 #include "../server/client_session.hpp"
 
-namespace hld
+namespace faith
 {
 	namespace cross
 	{

@@ -7,7 +7,7 @@
 #include "event_processer.h"
 
 
-namespace hld
+namespace faith
 {
 	class feather_heart_mgr;
 	struct FeatherTemplate;

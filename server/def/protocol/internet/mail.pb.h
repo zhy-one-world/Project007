@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_mail_2eproto();
@@ -121,7 +121,7 @@ class mail_proto_mail_operation : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 operation_typ() const;
   inline void set_operation_typ(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.mail_proto.mail_operation)
+  // @@protoc_insertion_point(class_scope:faith.mail_proto.mail_operation)
  private:
   inline void set_has_operation_typ();
   inline void clear_has_operation_typ();
@@ -209,7 +209,7 @@ class mail_proto_mail_delete_these_mail : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_mail_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.mail_proto.mail_delete_these_mail)
+  // @@protoc_insertion_point(class_scope:faith.mail_proto.mail_delete_these_mail)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -301,7 +301,7 @@ class mail_proto_mail_del_by_live_time_info : public ::google::protobuf::Message
   inline ::google::protobuf::int32 mail_num() const;
   inline void set_mail_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.mail_proto.mail_del_by_live_time_info)
+  // @@protoc_insertion_point(class_scope:faith.mail_proto.mail_del_by_live_time_info)
  private:
   inline void set_has_mail_num();
   inline void clear_has_mail_num();
@@ -437,7 +437,7 @@ class mail_proto_mail_info : public ::google::protobuf::Message {
   inline ::std::string* release_mail_title();
   inline void set_allocated_mail_title(::std::string* mail_title);
 
-  // @@protoc_insertion_point(class_scope:hld.mail_proto.mail_info)
+  // @@protoc_insertion_point(class_scope:faith.mail_proto.mail_info)
  private:
   inline void set_has_text_contents();
   inline void clear_has_text_contents();
@@ -544,7 +544,7 @@ class mail_proto_item_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_item_data();
 
-  // @@protoc_insertion_point(class_scope:hld.mail_proto.item_info)
+  // @@protoc_insertion_point(class_scope:faith.mail_proto.item_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -618,36 +618,36 @@ class mail_proto_mail_sending_info : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .hld.mail_proto.mail_info mail_info = 1;
+  // optional .faith.mail_proto.mail_info mail_info = 1;
   inline bool has_mail_info() const;
   inline void clear_mail_info();
   static const int kMailInfoFieldNumber = 1;
-  inline const ::hld::mail_proto_mail_info& mail_info() const;
-  inline ::hld::mail_proto_mail_info* mutable_mail_info();
-  inline ::hld::mail_proto_mail_info* release_mail_info();
-  inline void set_allocated_mail_info(::hld::mail_proto_mail_info* mail_info);
+  inline const ::faith::mail_proto_mail_info& mail_info() const;
+  inline ::faith::mail_proto_mail_info* mutable_mail_info();
+  inline ::faith::mail_proto_mail_info* release_mail_info();
+  inline void set_allocated_mail_info(::faith::mail_proto_mail_info* mail_info);
 
-  // repeated .hld.mail_proto.item_info item_info = 2;
+  // repeated .faith.mail_proto.item_info item_info = 2;
   inline int item_info_size() const;
   inline void clear_item_info();
   static const int kItemInfoFieldNumber = 2;
-  inline const ::hld::mail_proto_item_info& item_info(int index) const;
-  inline ::hld::mail_proto_item_info* mutable_item_info(int index);
-  inline ::hld::mail_proto_item_info* add_item_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::mail_proto_item_info >&
+  inline const ::faith::mail_proto_item_info& item_info(int index) const;
+  inline ::faith::mail_proto_item_info* mutable_item_info(int index);
+  inline ::faith::mail_proto_item_info* add_item_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::mail_proto_item_info >&
       item_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::mail_proto_item_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::mail_proto_item_info >*
       mutable_item_info();
 
-  // @@protoc_insertion_point(class_scope:hld.mail_proto.mail_sending_info)
+  // @@protoc_insertion_point(class_scope:faith.mail_proto.mail_sending_info)
  private:
   inline void set_has_mail_info();
   inline void clear_has_mail_info();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::mail_proto_mail_info* mail_info_;
-  ::google::protobuf::RepeatedPtrField< ::hld::mail_proto_item_info > item_info_;
+  ::faith::mail_proto_mail_info* mail_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::mail_proto_item_info > item_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -791,7 +791,7 @@ class mail_proto_mail_send_mail : public ::google::protobuf::Message {
   inline ::std::string* release_text();
   inline void set_allocated_text(::std::string* text);
 
-  // @@protoc_insertion_point(class_scope:hld.mail_proto.mail_send_mail)
+  // @@protoc_insertion_point(class_scope:faith.mail_proto.mail_send_mail)
  private:
   inline void set_has_monye_typ_1();
   inline void clear_has_monye_typ_1();
@@ -947,7 +947,7 @@ class mail_proto_mail_send_mail_to_all_player : public ::google::protobuf::Messa
   inline ::std::string* release_text();
   inline void set_allocated_text(::std::string* text);
 
-  // @@protoc_insertion_point(class_scope:hld.mail_proto.mail_send_mail_to_all_player)
+  // @@protoc_insertion_point(class_scope:faith.mail_proto.mail_send_mail_to_all_player)
  private:
   inline void set_has_monye_typ_1();
   inline void clear_has_monye_typ_1();
@@ -1076,7 +1076,7 @@ class mail_proto_mail_operation_end : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.mail_proto.mail_operation_end)
+  // @@protoc_insertion_point(class_scope:faith.mail_proto.mail_operation_end)
  private:
   inline void set_has_operation_state();
   inline void clear_has_operation_state();
@@ -1175,16 +1175,16 @@ class mail_proto_update_mail : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 mail_error() const;
   inline void set_mail_error(::google::protobuf::uint32 value);
 
-  // repeated .hld.mail_proto.mail_info mail_list = 3;
+  // repeated .faith.mail_proto.mail_info mail_list = 3;
   inline int mail_list_size() const;
   inline void clear_mail_list();
   static const int kMailListFieldNumber = 3;
-  inline const ::hld::mail_proto_mail_info& mail_list(int index) const;
-  inline ::hld::mail_proto_mail_info* mutable_mail_list(int index);
-  inline ::hld::mail_proto_mail_info* add_mail_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::mail_proto_mail_info >&
+  inline const ::faith::mail_proto_mail_info& mail_list(int index) const;
+  inline ::faith::mail_proto_mail_info* mutable_mail_list(int index);
+  inline ::faith::mail_proto_mail_info* add_mail_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::mail_proto_mail_info >&
       mail_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::mail_proto_mail_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::mail_proto_mail_info >*
       mutable_mail_list();
 
   // optional bool is_over = 4;
@@ -1201,7 +1201,7 @@ class mail_proto_update_mail : public ::google::protobuf::Message {
   inline bool is_need_clear() const;
   inline void set_is_need_clear(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.mail_proto.update_mail)
+  // @@protoc_insertion_point(class_scope:faith.mail_proto.update_mail)
  private:
   inline void set_has_mail_error();
   inline void clear_has_mail_error();
@@ -1213,7 +1213,7 @@ class mail_proto_update_mail : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > role_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::mail_proto_mail_info > mail_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::mail_proto_mail_info > mail_list_;
   ::google::protobuf::uint32 mail_error_;
   bool is_over_;
   bool is_need_clear_;
@@ -1308,7 +1308,7 @@ class mail_proto_mail_contents_get : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_item_get_info();
 
-  // @@protoc_insertion_point(class_scope:hld.mail_proto.mail_contents_get)
+  // @@protoc_insertion_point(class_scope:faith.mail_proto.mail_contents_get)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1394,7 +1394,7 @@ class mail_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.mail_proto)
+  // @@protoc_insertion_point(class_scope:faith.mail_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1866,7 +1866,7 @@ mail_proto_item_info::mutable_item_data() {
 
 // mail_proto_mail_sending_info
 
-// optional .hld.mail_proto.mail_info mail_info = 1;
+// optional .faith.mail_proto.mail_info mail_info = 1;
 inline bool mail_proto_mail_sending_info::has_mail_info() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -1877,24 +1877,24 @@ inline void mail_proto_mail_sending_info::clear_has_mail_info() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void mail_proto_mail_sending_info::clear_mail_info() {
-  if (mail_info_ != NULL) mail_info_->::hld::mail_proto_mail_info::Clear();
+  if (mail_info_ != NULL) mail_info_->::faith::mail_proto_mail_info::Clear();
   clear_has_mail_info();
 }
-inline const ::hld::mail_proto_mail_info& mail_proto_mail_sending_info::mail_info() const {
+inline const ::faith::mail_proto_mail_info& mail_proto_mail_sending_info::mail_info() const {
   return mail_info_ != NULL ? *mail_info_ : *default_instance_->mail_info_;
 }
-inline ::hld::mail_proto_mail_info* mail_proto_mail_sending_info::mutable_mail_info() {
+inline ::faith::mail_proto_mail_info* mail_proto_mail_sending_info::mutable_mail_info() {
   set_has_mail_info();
-  if (mail_info_ == NULL) mail_info_ = new ::hld::mail_proto_mail_info;
+  if (mail_info_ == NULL) mail_info_ = new ::faith::mail_proto_mail_info;
   return mail_info_;
 }
-inline ::hld::mail_proto_mail_info* mail_proto_mail_sending_info::release_mail_info() {
+inline ::faith::mail_proto_mail_info* mail_proto_mail_sending_info::release_mail_info() {
   clear_has_mail_info();
-  ::hld::mail_proto_mail_info* temp = mail_info_;
+  ::faith::mail_proto_mail_info* temp = mail_info_;
   mail_info_ = NULL;
   return temp;
 }
-inline void mail_proto_mail_sending_info::set_allocated_mail_info(::hld::mail_proto_mail_info* mail_info) {
+inline void mail_proto_mail_sending_info::set_allocated_mail_info(::faith::mail_proto_mail_info* mail_info) {
   delete mail_info_;
   mail_info_ = mail_info;
   if (mail_info) {
@@ -1904,27 +1904,27 @@ inline void mail_proto_mail_sending_info::set_allocated_mail_info(::hld::mail_pr
   }
 }
 
-// repeated .hld.mail_proto.item_info item_info = 2;
+// repeated .faith.mail_proto.item_info item_info = 2;
 inline int mail_proto_mail_sending_info::item_info_size() const {
   return item_info_.size();
 }
 inline void mail_proto_mail_sending_info::clear_item_info() {
   item_info_.Clear();
 }
-inline const ::hld::mail_proto_item_info& mail_proto_mail_sending_info::item_info(int index) const {
+inline const ::faith::mail_proto_item_info& mail_proto_mail_sending_info::item_info(int index) const {
   return item_info_.Get(index);
 }
-inline ::hld::mail_proto_item_info* mail_proto_mail_sending_info::mutable_item_info(int index) {
+inline ::faith::mail_proto_item_info* mail_proto_mail_sending_info::mutable_item_info(int index) {
   return item_info_.Mutable(index);
 }
-inline ::hld::mail_proto_item_info* mail_proto_mail_sending_info::add_item_info() {
+inline ::faith::mail_proto_item_info* mail_proto_mail_sending_info::add_item_info() {
   return item_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::mail_proto_item_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::mail_proto_item_info >&
 mail_proto_mail_sending_info::item_info() const {
   return item_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::mail_proto_item_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::mail_proto_item_info >*
 mail_proto_mail_sending_info::mutable_item_info() {
   return &item_info_;
 }
@@ -2617,27 +2617,27 @@ inline void mail_proto_update_mail::set_mail_error(::google::protobuf::uint32 va
   mail_error_ = value;
 }
 
-// repeated .hld.mail_proto.mail_info mail_list = 3;
+// repeated .faith.mail_proto.mail_info mail_list = 3;
 inline int mail_proto_update_mail::mail_list_size() const {
   return mail_list_.size();
 }
 inline void mail_proto_update_mail::clear_mail_list() {
   mail_list_.Clear();
 }
-inline const ::hld::mail_proto_mail_info& mail_proto_update_mail::mail_list(int index) const {
+inline const ::faith::mail_proto_mail_info& mail_proto_update_mail::mail_list(int index) const {
   return mail_list_.Get(index);
 }
-inline ::hld::mail_proto_mail_info* mail_proto_update_mail::mutable_mail_list(int index) {
+inline ::faith::mail_proto_mail_info* mail_proto_update_mail::mutable_mail_list(int index) {
   return mail_list_.Mutable(index);
 }
-inline ::hld::mail_proto_mail_info* mail_proto_update_mail::add_mail_list() {
+inline ::faith::mail_proto_mail_info* mail_proto_update_mail::add_mail_list() {
   return mail_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::mail_proto_mail_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::mail_proto_mail_info >&
 mail_proto_update_mail::mail_list() const {
   return mail_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::mail_proto_mail_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::mail_proto_mail_info >*
 mail_proto_update_mail::mutable_mail_list() {
   return &mail_list_;
 }
@@ -2747,7 +2747,7 @@ mail_proto_mail_contents_get::mutable_item_get_info() {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

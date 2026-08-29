@@ -12,7 +12,7 @@
 #include "cross_server_pk_msg.hpp"
 
 
-namespace hld
+namespace faith
 {
 	class legion_proto_cross_city_info_one;
 

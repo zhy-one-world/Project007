@@ -9,7 +9,7 @@ purpose:
 *********************************************************************/
 #include "logic/type_def.hpp"
 #include <postmortem.hpp>
-namespace hld
+namespace faith
 {
 	class dump
 	{

@@ -14,7 +14,7 @@
 #include "server/team/team_ws_mgr.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	event_ws_mgr::event_ws_mgr()
 	{
@@ -428,7 +428,7 @@ namespace hld
 				}
 				else
 				{
-					hld::ws2cs_proto::had_new_globel_mail pro_msg;
+					faith::ws2cs_proto::had_new_globel_mail pro_msg;
 					msg.to_proto(pro_msg);
 					client_session_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_had_new_globel_mail);
 				}
@@ -678,7 +678,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::send_mail pro_msg;
+				faith::ws2cs_proto::send_mail pro_msg;
 				request.to_proto(pro_msg);
 				client_session_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_recive_mail);
 			}

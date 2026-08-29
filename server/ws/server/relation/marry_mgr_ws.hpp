@@ -11,7 +11,7 @@
 #include "Logic/game_enum_def_s.h" 
 #include "../client_session.hpp"
 
-namespace hld
+namespace faith
 { 
 
 	class marry_mgr_ws 

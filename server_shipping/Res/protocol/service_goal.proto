@@ -1,0 +1,52 @@
+syntax = "proto2";
+package hld;
+
+message service_goal_proto
+{
+	message service_goal_one
+	{
+		repeated int32 service_goal_info				 = 1;
+	}
+	
+	message service_goal_all
+	{
+		repeated int32 role_guid		 				 = 1;
+		repeated service_goal_one service_goal_array	 = 2;
+	}
+	
+	message service_goal_operate
+	{
+		optional int32 service_goal_id 					 = 1;
+		optional int32 operate_type						 = 2;
+	}
+	
+	message service_goal_operate_end
+	{
+		optional service_goal_one service_goal_one	 = 1;
+		optional int32 operation_type					 = 2;
+		optional int32 operation_end_state				 = 3;
+	}
+	
+	message seven_day_goal_one
+	{
+		repeated int32 seven_day_goal_info				 = 1;
+	}
+	
+	message seven_day_goal_all
+	{
+		repeated seven_day_goal_one seven_day_goal_array = 1;
+	}
+	
+	message seven_day_goal_operate
+	{
+		optional int32 seven_day_goal_id 				 = 1;
+		optional int32 operate_type						 = 2;
+	}
+	
+	message seven_day_goal_operate_end
+	{
+		optional seven_day_goal_one seven_day_goal_data	 = 1;
+		optional int32 operation_type					 = 2;
+		optional int32 operation_end_state				 = 3;
+	}
+}

@@ -4,7 +4,7 @@
 #include "Logic/boss_island_def.hpp"
 #include "Logic/gain_treasure_def.hpp"
 #include "../client_session_mgr.hpp"
-namespace hld
+namespace faith
 {
 	class game_proto_gain_treasure_boss_info_one;
 	class game_proto_gain_treasure_boss_info_all;

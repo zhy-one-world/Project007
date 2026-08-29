@@ -3,7 +3,7 @@
 #include "logic/type_def.hpp"
 #include "template_base.h"
 
-namespace hld
+namespace faith
 {
     void NpcTemplateSize();
 #pragma pack(push, 1)

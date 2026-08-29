@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -99,11 +99,11 @@ void protobuf_AddDesc_ws2ws_2eproto() {
   already_here = true;
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  ::hld::protobuf_AddDesc_st_2eproto();
+  ::faith::protobuf_AddDesc_st_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\013ws2ws.proto\022\003hld\032\010st.proto\"m\n\013ws2ws_pr"
     "oto\032^\n\023send_big_player_msg\0221\n\tdata_info\030"
-    "\001 \003(\0132\036.hld.st_proto.st_big_player_db\022\024\n"
+    "\001 \003(\0132\036.faith.st_proto.st_big_player_db\022\024\n"
     "\014is_load_flag\030\002 \001(\010", 139);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "ws2ws.proto", &protobuf_RegisterTypes);
@@ -193,7 +193,7 @@ bool ws2ws_proto_send_big_player_msg::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.st_proto.st_big_player_db data_info = 1;
+      // repeated .faith.st_proto.st_big_player_db data_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -242,7 +242,7 @@ bool ws2ws_proto_send_big_player_msg::MergePartialFromCodedStream(
 
 void ws2ws_proto_send_big_player_msg::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.st_proto.st_big_player_db data_info = 1;
+  // repeated .faith.st_proto.st_big_player_db data_info = 1;
   for (int i = 0; i < this->data_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->data_info(i), output);
@@ -261,7 +261,7 @@ void ws2ws_proto_send_big_player_msg::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* ws2ws_proto_send_big_player_msg::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.st_proto.st_big_player_db data_info = 1;
+  // repeated .faith.st_proto.st_big_player_db data_info = 1;
   for (int i = 0; i < this->data_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -290,7 +290,7 @@ int ws2ws_proto_send_big_player_msg::ByteSize() const {
     }
 
   }
-  // repeated .hld.st_proto.st_big_player_db data_info = 1;
+  // repeated .faith.st_proto.st_big_player_db data_info = 1;
   total_size += 1 * this->data_info_size();
   for (int i = 0; i < this->data_info_size(); i++) {
     total_size +=
@@ -526,6 +526,6 @@ void ws2ws_proto::Swap(ws2ws_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

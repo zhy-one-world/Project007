@@ -12,7 +12,7 @@
 #include "logic/buff_man.h"
 #include "utility/init_unit.h"
 
-namespace hld
+namespace faith
 {
 	void lua_call_handle(e_lua_call_event_type event_type)
 	{

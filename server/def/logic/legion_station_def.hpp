@@ -13,7 +13,7 @@ purpose:
 #include "utility/cs_date.hpp"
 #include "game_enum_def_s.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	const int32							legion_friend_spawn_id = 82072065;//¾üÍÅBOSSÓÑ·½NPC

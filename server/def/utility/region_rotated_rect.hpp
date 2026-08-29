@@ -5,7 +5,7 @@
 #include "region.hpp"
 #include "vector3d.h"
 
-namespace hld
+namespace faith
 {
     class region_rotated_rect : public region
     {

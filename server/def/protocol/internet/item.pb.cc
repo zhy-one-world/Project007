@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -1917,7 +1917,7 @@ void protobuf_AddDesc_item_2eproto() {
     "item_data\030\002 \003(\005\032.\n\031equip_end_load_new_ef"
     "fect\022\021\n\titem_guid\030\001 \003(\005\032\201\001\n\025update_chara"
     "cter_item\022\021\n\trole_guid\030\001 \003(\005\022\022\n\nitem_err"
-    "or\030\002 \001(\r\022,\n\titem_list\030\003 \003(\0132\031.hld.item_p"
+    "or\030\002 \001(\r\022,\n\titem_list\030\003 \003(\0132\031.faith.item_p"
     "roto.item_info\022\023\n\013update_mode\030\004 \001(\r\032\242\001\n\016"
     "item_operation\022\026\n\016operation_type\030\001 \001(\r\022\021"
     "\n\titem_guid\030\002 \003(\005\022\021\n\titem_slot\030\003 \001(\005\022\023\n\013"
@@ -1970,7 +1970,7 @@ void protobuf_AddDesc_item_2eproto() {
     "em_guid\030\001 \003(\005\022\020\n\010item_num\030\002 \001(\005\032x\n\016item_"
     "merge_end\022\021\n\trole_guid\030\001 \003(\005\022\030\n\020merge_it"
     "em_count\030\002 \001(\005\0229\n\017merge_item_list\030\003 \003(\0132"
-    " .hld.item_proto.item_merge_entry\032;\n\021ite"
+    " .faith.item_proto.item_merge_entry\032;\n\021ite"
     "m_auto_inherit\022\023\n\013auto_result\030\001 \001(\005\022\021\n\ti"
     "tem_guid\030\002 \003(\005\032 \n\013hunt_spirit\022\021\n\thunt_ty"
     "pe\030\001 \001(\005\032c\n\017hunt_spirit_end\022\021\n\thunt_type"
@@ -1985,10 +1985,10 @@ void protobuf_AddDesc_item_2eproto() {
     "ole_name\030\003 \001(\t\022\030\n\020item_template_id\030\004 \001(\005"
     "\022\020\n\010get_type\030\005 \001(\005\022\023\n\013record_type\030\006 \001(\005\022"
     "\023\n\013record_time\030\007 \001(\003\032S\n\032load_lucky_draw_"
-    "record_end\0225\n\ndata_array\030\001 \003(\0132!.hld.ite"
+    "record_end\0225\n\ndata_array\030\001 \003(\0132!.faith.ite"
     "m_proto.lucky_draw_record\032d\n\031lucky_draw_"
     "record_operate\022\021\n\tdel_array\030\001 \003(\003\0224\n\tadd"
-    "_array\030\002 \003(\0132!.hld.item_proto.lucky_draw"
+    "_array\030\002 \003(\0132!.faith.item_proto.lucky_draw"
     "_record\032p\n\031patron_saint_mark_operate\022\023\n\013"
     "mark_guid_a\030\001 \001(\005\022\023\n\013mark_guid_b\030\002 \001(\005\022\023"
     "\n\013target_slot\030\003 \001(\005\022\024\n\014operate_type\030\004 \001("
@@ -2028,38 +2028,38 @@ void protobuf_AddDesc_item_2eproto() {
     "\n\titem_guid\030\001 \003(\005\022\021\n\toper_type\030\002 \001(\005\022\016\n\006"
     "result\030\003 \001(\005\"\252\005\n\010item_s2s\032(\n\022sprite_fett"
     "er_info\022\022\n\ndata_array\030\001 \003(\005\032L\n\025sl_sprite"
-    "_fetter_list\0223\n\tdata_list\030\001 \003(\0132 .hld.it"
+    "_fetter_list\0223\n\tdata_list\030\001 \003(\0132 .faith.it"
     "em_s2s.sprite_fetter_info\032%\n\017sl_item_upg"
     "rade\022\022\n\ndata_array\030\001 \003(\005\032\227\002\n\titem_data\022\021"
     "\n\titem_guid\030\001 \001(\003\022\017\n\007item_id\030\002 \001(\005\022*\n\tba"
-    "se_data\030\003 \001(\0132\027.hld.item_s2s.item_base\022,"
-    "\n\nequip_data\030\004 \001(\0132\030.hld.item_s2s.item_e"
-    "quip\022.\n\013sprite_data\030\005 \001(\0132\031.hld.item_s2s"
-    ".item_sprite\022*\n\tprop_data\030\006 \001(\0132\027.hld.it"
+    "se_data\030\003 \001(\0132\027.faith.item_s2s.item_base\022,"
+    "\n\nequip_data\030\004 \001(\0132\030.faith.item_s2s.item_e"
+    "quip\022.\n\013sprite_data\030\005 \001(\0132\031.faith.item_s2s"
+    ".item_sprite\022*\n\tprop_data\030\006 \001(\0132\027.faith.it"
     "em_s2s.item_prop\0220\n\014element_data\030\007 \001(\0132\032"
-    ".hld.item_s2s.item_element\032:\n\014sl_item_in"
-    "fo\022*\n\titem_list\030\001 \003(\0132\027.hld.item_s2s.ite"
+    ".faith.item_s2s.item_element\032:\n\014sl_item_in"
+    "fo\022*\n\titem_list\030\001 \003(\0132\027.faith.item_s2s.ite"
     "m_data\032\037\n\titem_base\022\022\n\ndata_array\030\001 \003(\005\032"
     " \n\nitem_equip\022\022\n\ndata_array\030\001 \003(\005\032!\n\013ite"
     "m_sprite\022\022\n\ndata_array\030\001 \003(\005\032\037\n\titem_pro"
     "p\022\022\n\ndata_array\030\001 \003(\005\032\"\n\014item_element\022\022\n"
     "\ndata_array\030\001 \003(\005\"\377\006\n\004item\032N\n\rs2c_item_l"
     "ist\022\021\n\tunit_guid\030\001 \001(\003\022*\n\titem_list\030\002 \003("
-    "\0132\027.hld.item.s2c_item_data\032\233\002\n\rs2c_item_"
+    "\0132\027.faith.item.s2c_item_data\032\233\002\n\rs2c_item_"
     "data\022\021\n\titem_guid\030\001 \001(\003\022\017\n\007item_id\030\002 \001(\005"
-    "\022*\n\tbase_data\030\003 \001(\0132\027.hld.item.s2c_item_"
-    "base\022,\n\nequip_data\030\004 \001(\0132\030.hld.item.s2c_"
-    "item_equip\022.\n\013sprite_data\030\005 \001(\0132\031.hld.it"
+    "\022*\n\tbase_data\030\003 \001(\0132\027.faith.item.s2c_item_"
+    "base\022,\n\nequip_data\030\004 \001(\0132\030.faith.item.s2c_"
+    "item_equip\022.\n\013sprite_data\030\005 \001(\0132\031.faith.it"
     "em.s2c_item_sprite\022*\n\tprop_data\030\006 \001(\0132\027."
-    "hld.item.s2c_item_prop\0220\n\014element_data\030\007"
-    " \001(\0132\032.hld.item.s2c_item_element\032#\n\rs2c_"
+    "faith.item.s2c_item_prop\0220\n\014element_data\030\007"
+    " \001(\0132\032.faith.item.s2c_item_element\032#\n\rs2c_"
     "item_base\022\022\n\ndata_array\030\001 \003(\005\032$\n\016s2c_ite"
     "m_equip\022\022\n\ndata_array\030\001 \003(\005\032%\n\017s2c_item_"
     "sprite\022\022\n\ndata_array\030\001 \003(\005\032#\n\rs2c_item_p"
     "rop\022\022\n\ndata_array\030\001 \003(\005\032&\n\020s2c_item_elem"
     "ent\022\022\n\ndata_array\030\001 \003(\005\032(\n\022sprite_fetter"
     "_info\022\022\n\ndata_array\030\001 \003(\005\032I\n\026s2c_sprite_"
-    "fetter_info\022/\n\tdata_list\030\001 \003(\0132\034.hld.ite"
+    "fetter_info\022/\n\tdata_list\030\001 \003(\0132\034.faith.ite"
     "m.sprite_fetter_info\0325\n\031c2s_sprite_fette"
     "r_upgrade\022\030\n\020sprite_fetter_id\030\001 \001(\005\032B\n\031s"
     "2c_sprite_fetter_upgrade\022\013\n\003res\030\001 \001(\005\022\030\n"
@@ -3171,7 +3171,7 @@ bool item_proto_update_character_item::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.item_proto.item_info item_list = 3;
+      // repeated .faith.item_proto.item_info item_list = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -3231,7 +3231,7 @@ void item_proto_update_character_item::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->item_error(), output);
   }
 
-  // repeated .hld.item_proto.item_info item_list = 3;
+  // repeated .faith.item_proto.item_info item_list = 3;
   for (int i = 0; i < this->item_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->item_list(i), output);
@@ -3261,7 +3261,7 @@ void item_proto_update_character_item::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->item_error(), target);
   }
 
-  // repeated .hld.item_proto.item_info item_list = 3;
+  // repeated .faith.item_proto.item_info item_list = 3;
   for (int i = 0; i < this->item_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -3309,7 +3309,7 @@ int item_proto_update_character_item::ByteSize() const {
     total_size += 1 * this->role_guid_size() + data_size;
   }
 
-  // repeated .hld.item_proto.item_info item_list = 3;
+  // repeated .faith.item_proto.item_info item_list = 3;
   total_size += 1 * this->item_list_size();
   for (int i = 0; i < this->item_list_size(); i++) {
     total_size +=
@@ -10116,7 +10116,7 @@ bool item_proto_item_merge_end::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.item_proto.item_merge_entry merge_item_list = 3;
+      // repeated .faith.item_proto.item_merge_entry merge_item_list = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -10160,7 +10160,7 @@ void item_proto_item_merge_end::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->merge_item_count(), output);
   }
 
-  // repeated .hld.item_proto.item_merge_entry merge_item_list = 3;
+  // repeated .faith.item_proto.item_merge_entry merge_item_list = 3;
   for (int i = 0; i < this->merge_item_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->merge_item_list(i), output);
@@ -10185,7 +10185,7 @@ void item_proto_item_merge_end::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->merge_item_count(), target);
   }
 
-  // repeated .hld.item_proto.item_merge_entry merge_item_list = 3;
+  // repeated .faith.item_proto.item_merge_entry merge_item_list = 3;
   for (int i = 0; i < this->merge_item_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -10221,7 +10221,7 @@ int item_proto_item_merge_end::ByteSize() const {
     total_size += 1 * this->role_guid_size() + data_size;
   }
 
-  // repeated .hld.item_proto.item_merge_entry merge_item_list = 3;
+  // repeated .faith.item_proto.item_merge_entry merge_item_list = 3;
   total_size += 1 * this->merge_item_list_size();
   for (int i = 0; i < this->merge_item_list_size(); i++) {
     total_size +=
@@ -12415,7 +12415,7 @@ bool item_proto_load_lucky_draw_record_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.item_proto.lucky_draw_record data_array = 1;
+      // repeated .faith.item_proto.lucky_draw_record data_array = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -12448,7 +12448,7 @@ bool item_proto_load_lucky_draw_record_end::MergePartialFromCodedStream(
 
 void item_proto_load_lucky_draw_record_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.item_proto.lucky_draw_record data_array = 1;
+  // repeated .faith.item_proto.lucky_draw_record data_array = 1;
   for (int i = 0; i < this->data_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->data_array(i), output);
@@ -12462,7 +12462,7 @@ void item_proto_load_lucky_draw_record_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* item_proto_load_lucky_draw_record_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.item_proto.lucky_draw_record data_array = 1;
+  // repeated .faith.item_proto.lucky_draw_record data_array = 1;
   for (int i = 0; i < this->data_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -12479,7 +12479,7 @@ void item_proto_load_lucky_draw_record_end::SerializeWithCachedSizes(
 int item_proto_load_lucky_draw_record_end::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.item_proto.lucky_draw_record data_array = 1;
+  // repeated .faith.item_proto.lucky_draw_record data_array = 1;
   total_size += 1 * this->data_array_size();
   for (int i = 0; i < this->data_array_size(); i++) {
     total_size +=
@@ -12642,7 +12642,7 @@ bool item_proto_lucky_draw_record_operate::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.item_proto.lucky_draw_record add_array = 2;
+      // repeated .faith.item_proto.lucky_draw_record add_array = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -12681,7 +12681,7 @@ void item_proto_lucky_draw_record_operate::SerializeWithCachedSizes(
       1, this->del_array(i), output);
   }
 
-  // repeated .hld.item_proto.lucky_draw_record add_array = 2;
+  // repeated .faith.item_proto.lucky_draw_record add_array = 2;
   for (int i = 0; i < this->add_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->add_array(i), output);
@@ -12701,7 +12701,7 @@ void item_proto_lucky_draw_record_operate::SerializeWithCachedSizes(
       WriteInt64ToArray(1, this->del_array(i), target);
   }
 
-  // repeated .hld.item_proto.lucky_draw_record add_array = 2;
+  // repeated .faith.item_proto.lucky_draw_record add_array = 2;
   for (int i = 0; i < this->add_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -12728,7 +12728,7 @@ int item_proto_lucky_draw_record_operate::ByteSize() const {
     total_size += 1 * this->del_array_size() + data_size;
   }
 
-  // repeated .hld.item_proto.lucky_draw_record add_array = 2;
+  // repeated .faith.item_proto.lucky_draw_record add_array = 2;
   total_size += 1 * this->add_array_size();
   for (int i = 0; i < this->add_array_size(); i++) {
     total_size +=
@@ -18216,7 +18216,7 @@ bool item_s2s_sl_sprite_fetter_list::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.item_s2s.sprite_fetter_info data_list = 1;
+      // repeated .faith.item_s2s.sprite_fetter_info data_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -18249,7 +18249,7 @@ bool item_s2s_sl_sprite_fetter_list::MergePartialFromCodedStream(
 
 void item_s2s_sl_sprite_fetter_list::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.item_s2s.sprite_fetter_info data_list = 1;
+  // repeated .faith.item_s2s.sprite_fetter_info data_list = 1;
   for (int i = 0; i < this->data_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->data_list(i), output);
@@ -18263,7 +18263,7 @@ void item_s2s_sl_sprite_fetter_list::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* item_s2s_sl_sprite_fetter_list::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.item_s2s.sprite_fetter_info data_list = 1;
+  // repeated .faith.item_s2s.sprite_fetter_info data_list = 1;
   for (int i = 0; i < this->data_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -18280,7 +18280,7 @@ void item_s2s_sl_sprite_fetter_list::SerializeWithCachedSizes(
 int item_s2s_sl_sprite_fetter_list::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.item_s2s.sprite_fetter_info data_list = 1;
+  // repeated .faith.item_s2s.sprite_fetter_info data_list = 1;
   total_size += 1 * this->data_list_size();
   for (int i = 0; i < this->data_list_size(); i++) {
     total_size +=
@@ -18581,11 +18581,11 @@ item_s2s_item_data::item_s2s_item_data()
 }
 
 void item_s2s_item_data::InitAsDefaultInstance() {
-  base_data_ = const_cast< ::hld::item_s2s_item_base*>(&::hld::item_s2s_item_base::default_instance());
-  equip_data_ = const_cast< ::hld::item_s2s_item_equip*>(&::hld::item_s2s_item_equip::default_instance());
-  sprite_data_ = const_cast< ::hld::item_s2s_item_sprite*>(&::hld::item_s2s_item_sprite::default_instance());
-  prop_data_ = const_cast< ::hld::item_s2s_item_prop*>(&::hld::item_s2s_item_prop::default_instance());
-  element_data_ = const_cast< ::hld::item_s2s_item_element*>(&::hld::item_s2s_item_element::default_instance());
+  base_data_ = const_cast< ::faith::item_s2s_item_base*>(&::faith::item_s2s_item_base::default_instance());
+  equip_data_ = const_cast< ::faith::item_s2s_item_equip*>(&::faith::item_s2s_item_equip::default_instance());
+  sprite_data_ = const_cast< ::faith::item_s2s_item_sprite*>(&::faith::item_s2s_item_sprite::default_instance());
+  prop_data_ = const_cast< ::faith::item_s2s_item_prop*>(&::faith::item_s2s_item_prop::default_instance());
+  element_data_ = const_cast< ::faith::item_s2s_item_element*>(&::faith::item_s2s_item_element::default_instance());
 }
 
 item_s2s_item_data::item_s2s_item_data(const item_s2s_item_data& from)
@@ -18646,19 +18646,19 @@ void item_s2s_item_data::Clear() {
     item_guid_ = GOOGLE_LONGLONG(0);
     item_id_ = 0;
     if (has_base_data()) {
-      if (base_data_ != NULL) base_data_->::hld::item_s2s_item_base::Clear();
+      if (base_data_ != NULL) base_data_->::faith::item_s2s_item_base::Clear();
     }
     if (has_equip_data()) {
-      if (equip_data_ != NULL) equip_data_->::hld::item_s2s_item_equip::Clear();
+      if (equip_data_ != NULL) equip_data_->::faith::item_s2s_item_equip::Clear();
     }
     if (has_sprite_data()) {
-      if (sprite_data_ != NULL) sprite_data_->::hld::item_s2s_item_sprite::Clear();
+      if (sprite_data_ != NULL) sprite_data_->::faith::item_s2s_item_sprite::Clear();
     }
     if (has_prop_data()) {
-      if (prop_data_ != NULL) prop_data_->::hld::item_s2s_item_prop::Clear();
+      if (prop_data_ != NULL) prop_data_->::faith::item_s2s_item_prop::Clear();
     }
     if (has_element_data()) {
-      if (element_data_ != NULL) element_data_->::hld::item_s2s_item_element::Clear();
+      if (element_data_ != NULL) element_data_->::faith::item_s2s_item_element::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -18702,7 +18702,7 @@ bool item_s2s_item_data::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.item_s2s.item_base base_data = 3;
+      // optional .faith.item_s2s.item_base base_data = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -18716,7 +18716,7 @@ bool item_s2s_item_data::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.item_s2s.item_equip equip_data = 4;
+      // optional .faith.item_s2s.item_equip equip_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -18730,7 +18730,7 @@ bool item_s2s_item_data::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.item_s2s.item_sprite sprite_data = 5;
+      // optional .faith.item_s2s.item_sprite sprite_data = 5;
       case 5: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -18744,7 +18744,7 @@ bool item_s2s_item_data::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.item_s2s.item_prop prop_data = 6;
+      // optional .faith.item_s2s.item_prop prop_data = 6;
       case 6: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -18758,7 +18758,7 @@ bool item_s2s_item_data::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.item_s2s.item_element element_data = 7;
+      // optional .faith.item_s2s.item_element element_data = 7;
       case 7: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -18800,31 +18800,31 @@ void item_s2s_item_data::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->item_id(), output);
   }
 
-  // optional .hld.item_s2s.item_base base_data = 3;
+  // optional .faith.item_s2s.item_base base_data = 3;
   if (has_base_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->base_data(), output);
   }
 
-  // optional .hld.item_s2s.item_equip equip_data = 4;
+  // optional .faith.item_s2s.item_equip equip_data = 4;
   if (has_equip_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->equip_data(), output);
   }
 
-  // optional .hld.item_s2s.item_sprite sprite_data = 5;
+  // optional .faith.item_s2s.item_sprite sprite_data = 5;
   if (has_sprite_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       5, this->sprite_data(), output);
   }
 
-  // optional .hld.item_s2s.item_prop prop_data = 6;
+  // optional .faith.item_s2s.item_prop prop_data = 6;
   if (has_prop_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       6, this->prop_data(), output);
   }
 
-  // optional .hld.item_s2s.item_element element_data = 7;
+  // optional .faith.item_s2s.item_element element_data = 7;
   if (has_element_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       7, this->element_data(), output);
@@ -18848,35 +18848,35 @@ void item_s2s_item_data::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->item_id(), target);
   }
 
-  // optional .hld.item_s2s.item_base base_data = 3;
+  // optional .faith.item_s2s.item_base base_data = 3;
   if (has_base_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         3, this->base_data(), target);
   }
 
-  // optional .hld.item_s2s.item_equip equip_data = 4;
+  // optional .faith.item_s2s.item_equip equip_data = 4;
   if (has_equip_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         4, this->equip_data(), target);
   }
 
-  // optional .hld.item_s2s.item_sprite sprite_data = 5;
+  // optional .faith.item_s2s.item_sprite sprite_data = 5;
   if (has_sprite_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         5, this->sprite_data(), target);
   }
 
-  // optional .hld.item_s2s.item_prop prop_data = 6;
+  // optional .faith.item_s2s.item_prop prop_data = 6;
   if (has_prop_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         6, this->prop_data(), target);
   }
 
-  // optional .hld.item_s2s.item_element element_data = 7;
+  // optional .faith.item_s2s.item_element element_data = 7;
   if (has_element_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -18908,35 +18908,35 @@ int item_s2s_item_data::ByteSize() const {
           this->item_id());
     }
 
-    // optional .hld.item_s2s.item_base base_data = 3;
+    // optional .faith.item_s2s.item_base base_data = 3;
     if (has_base_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->base_data());
     }
 
-    // optional .hld.item_s2s.item_equip equip_data = 4;
+    // optional .faith.item_s2s.item_equip equip_data = 4;
     if (has_equip_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->equip_data());
     }
 
-    // optional .hld.item_s2s.item_sprite sprite_data = 5;
+    // optional .faith.item_s2s.item_sprite sprite_data = 5;
     if (has_sprite_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->sprite_data());
     }
 
-    // optional .hld.item_s2s.item_prop prop_data = 6;
+    // optional .faith.item_s2s.item_prop prop_data = 6;
     if (has_prop_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->prop_data());
     }
 
-    // optional .hld.item_s2s.item_element element_data = 7;
+    // optional .faith.item_s2s.item_element element_data = 7;
     if (has_element_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -18977,19 +18977,19 @@ void item_s2s_item_data::MergeFrom(const item_s2s_item_data& from) {
       set_item_id(from.item_id());
     }
     if (from.has_base_data()) {
-      mutable_base_data()->::hld::item_s2s_item_base::MergeFrom(from.base_data());
+      mutable_base_data()->::faith::item_s2s_item_base::MergeFrom(from.base_data());
     }
     if (from.has_equip_data()) {
-      mutable_equip_data()->::hld::item_s2s_item_equip::MergeFrom(from.equip_data());
+      mutable_equip_data()->::faith::item_s2s_item_equip::MergeFrom(from.equip_data());
     }
     if (from.has_sprite_data()) {
-      mutable_sprite_data()->::hld::item_s2s_item_sprite::MergeFrom(from.sprite_data());
+      mutable_sprite_data()->::faith::item_s2s_item_sprite::MergeFrom(from.sprite_data());
     }
     if (from.has_prop_data()) {
-      mutable_prop_data()->::hld::item_s2s_item_prop::MergeFrom(from.prop_data());
+      mutable_prop_data()->::faith::item_s2s_item_prop::MergeFrom(from.prop_data());
     }
     if (from.has_element_data()) {
-      mutable_element_data()->::hld::item_s2s_item_element::MergeFrom(from.element_data());
+      mutable_element_data()->::faith::item_s2s_item_element::MergeFrom(from.element_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -19103,7 +19103,7 @@ bool item_s2s_sl_item_info::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.item_s2s.item_data item_list = 1;
+      // repeated .faith.item_s2s.item_data item_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -19136,7 +19136,7 @@ bool item_s2s_sl_item_info::MergePartialFromCodedStream(
 
 void item_s2s_sl_item_info::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.item_s2s.item_data item_list = 1;
+  // repeated .faith.item_s2s.item_data item_list = 1;
   for (int i = 0; i < this->item_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->item_list(i), output);
@@ -19150,7 +19150,7 @@ void item_s2s_sl_item_info::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* item_s2s_sl_item_info::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.item_s2s.item_data item_list = 1;
+  // repeated .faith.item_s2s.item_data item_list = 1;
   for (int i = 0; i < this->item_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -19167,7 +19167,7 @@ void item_s2s_sl_item_info::SerializeWithCachedSizes(
 int item_s2s_sl_item_info::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.item_s2s.item_data item_list = 1;
+  // repeated .faith.item_s2s.item_data item_list = 1;
   total_size += 1 * this->item_list_size();
   for (int i = 0; i < this->item_list_size(); i++) {
     total_size +=
@@ -20537,7 +20537,7 @@ bool item_s2c_item_list::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.item.s2c_item_data item_list = 2;
+      // repeated .faith.item.s2c_item_data item_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -20575,7 +20575,7 @@ void item_s2c_item_list::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->unit_guid(), output);
   }
 
-  // repeated .hld.item.s2c_item_data item_list = 2;
+  // repeated .faith.item.s2c_item_data item_list = 2;
   for (int i = 0; i < this->item_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->item_list(i), output);
@@ -20594,7 +20594,7 @@ void item_s2c_item_list::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->unit_guid(), target);
   }
 
-  // repeated .hld.item.s2c_item_data item_list = 2;
+  // repeated .faith.item.s2c_item_data item_list = 2;
   for (int i = 0; i < this->item_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -20620,7 +20620,7 @@ int item_s2c_item_list::ByteSize() const {
     }
 
   }
-  // repeated .hld.item.s2c_item_data item_list = 2;
+  // repeated .faith.item.s2c_item_data item_list = 2;
   total_size += 1 * this->item_list_size();
   for (int i = 0; i < this->item_list_size(); i++) {
     total_size +=
@@ -20716,11 +20716,11 @@ item_s2c_item_data::item_s2c_item_data()
 }
 
 void item_s2c_item_data::InitAsDefaultInstance() {
-  base_data_ = const_cast< ::hld::item_s2c_item_base*>(&::hld::item_s2c_item_base::default_instance());
-  equip_data_ = const_cast< ::hld::item_s2c_item_equip*>(&::hld::item_s2c_item_equip::default_instance());
-  sprite_data_ = const_cast< ::hld::item_s2c_item_sprite*>(&::hld::item_s2c_item_sprite::default_instance());
-  prop_data_ = const_cast< ::hld::item_s2c_item_prop*>(&::hld::item_s2c_item_prop::default_instance());
-  element_data_ = const_cast< ::hld::item_s2c_item_element*>(&::hld::item_s2c_item_element::default_instance());
+  base_data_ = const_cast< ::faith::item_s2c_item_base*>(&::faith::item_s2c_item_base::default_instance());
+  equip_data_ = const_cast< ::faith::item_s2c_item_equip*>(&::faith::item_s2c_item_equip::default_instance());
+  sprite_data_ = const_cast< ::faith::item_s2c_item_sprite*>(&::faith::item_s2c_item_sprite::default_instance());
+  prop_data_ = const_cast< ::faith::item_s2c_item_prop*>(&::faith::item_s2c_item_prop::default_instance());
+  element_data_ = const_cast< ::faith::item_s2c_item_element*>(&::faith::item_s2c_item_element::default_instance());
 }
 
 item_s2c_item_data::item_s2c_item_data(const item_s2c_item_data& from)
@@ -20781,19 +20781,19 @@ void item_s2c_item_data::Clear() {
     item_guid_ = GOOGLE_LONGLONG(0);
     item_id_ = 0;
     if (has_base_data()) {
-      if (base_data_ != NULL) base_data_->::hld::item_s2c_item_base::Clear();
+      if (base_data_ != NULL) base_data_->::faith::item_s2c_item_base::Clear();
     }
     if (has_equip_data()) {
-      if (equip_data_ != NULL) equip_data_->::hld::item_s2c_item_equip::Clear();
+      if (equip_data_ != NULL) equip_data_->::faith::item_s2c_item_equip::Clear();
     }
     if (has_sprite_data()) {
-      if (sprite_data_ != NULL) sprite_data_->::hld::item_s2c_item_sprite::Clear();
+      if (sprite_data_ != NULL) sprite_data_->::faith::item_s2c_item_sprite::Clear();
     }
     if (has_prop_data()) {
-      if (prop_data_ != NULL) prop_data_->::hld::item_s2c_item_prop::Clear();
+      if (prop_data_ != NULL) prop_data_->::faith::item_s2c_item_prop::Clear();
     }
     if (has_element_data()) {
-      if (element_data_ != NULL) element_data_->::hld::item_s2c_item_element::Clear();
+      if (element_data_ != NULL) element_data_->::faith::item_s2c_item_element::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -20837,7 +20837,7 @@ bool item_s2c_item_data::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.item.s2c_item_base base_data = 3;
+      // optional .faith.item.s2c_item_base base_data = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -20851,7 +20851,7 @@ bool item_s2c_item_data::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.item.s2c_item_equip equip_data = 4;
+      // optional .faith.item.s2c_item_equip equip_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -20865,7 +20865,7 @@ bool item_s2c_item_data::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.item.s2c_item_sprite sprite_data = 5;
+      // optional .faith.item.s2c_item_sprite sprite_data = 5;
       case 5: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -20879,7 +20879,7 @@ bool item_s2c_item_data::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.item.s2c_item_prop prop_data = 6;
+      // optional .faith.item.s2c_item_prop prop_data = 6;
       case 6: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -20893,7 +20893,7 @@ bool item_s2c_item_data::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.item.s2c_item_element element_data = 7;
+      // optional .faith.item.s2c_item_element element_data = 7;
       case 7: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -20935,31 +20935,31 @@ void item_s2c_item_data::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->item_id(), output);
   }
 
-  // optional .hld.item.s2c_item_base base_data = 3;
+  // optional .faith.item.s2c_item_base base_data = 3;
   if (has_base_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->base_data(), output);
   }
 
-  // optional .hld.item.s2c_item_equip equip_data = 4;
+  // optional .faith.item.s2c_item_equip equip_data = 4;
   if (has_equip_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->equip_data(), output);
   }
 
-  // optional .hld.item.s2c_item_sprite sprite_data = 5;
+  // optional .faith.item.s2c_item_sprite sprite_data = 5;
   if (has_sprite_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       5, this->sprite_data(), output);
   }
 
-  // optional .hld.item.s2c_item_prop prop_data = 6;
+  // optional .faith.item.s2c_item_prop prop_data = 6;
   if (has_prop_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       6, this->prop_data(), output);
   }
 
-  // optional .hld.item.s2c_item_element element_data = 7;
+  // optional .faith.item.s2c_item_element element_data = 7;
   if (has_element_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       7, this->element_data(), output);
@@ -20983,35 +20983,35 @@ void item_s2c_item_data::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->item_id(), target);
   }
 
-  // optional .hld.item.s2c_item_base base_data = 3;
+  // optional .faith.item.s2c_item_base base_data = 3;
   if (has_base_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         3, this->base_data(), target);
   }
 
-  // optional .hld.item.s2c_item_equip equip_data = 4;
+  // optional .faith.item.s2c_item_equip equip_data = 4;
   if (has_equip_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         4, this->equip_data(), target);
   }
 
-  // optional .hld.item.s2c_item_sprite sprite_data = 5;
+  // optional .faith.item.s2c_item_sprite sprite_data = 5;
   if (has_sprite_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         5, this->sprite_data(), target);
   }
 
-  // optional .hld.item.s2c_item_prop prop_data = 6;
+  // optional .faith.item.s2c_item_prop prop_data = 6;
   if (has_prop_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         6, this->prop_data(), target);
   }
 
-  // optional .hld.item.s2c_item_element element_data = 7;
+  // optional .faith.item.s2c_item_element element_data = 7;
   if (has_element_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -21043,35 +21043,35 @@ int item_s2c_item_data::ByteSize() const {
           this->item_id());
     }
 
-    // optional .hld.item.s2c_item_base base_data = 3;
+    // optional .faith.item.s2c_item_base base_data = 3;
     if (has_base_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->base_data());
     }
 
-    // optional .hld.item.s2c_item_equip equip_data = 4;
+    // optional .faith.item.s2c_item_equip equip_data = 4;
     if (has_equip_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->equip_data());
     }
 
-    // optional .hld.item.s2c_item_sprite sprite_data = 5;
+    // optional .faith.item.s2c_item_sprite sprite_data = 5;
     if (has_sprite_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->sprite_data());
     }
 
-    // optional .hld.item.s2c_item_prop prop_data = 6;
+    // optional .faith.item.s2c_item_prop prop_data = 6;
     if (has_prop_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->prop_data());
     }
 
-    // optional .hld.item.s2c_item_element element_data = 7;
+    // optional .faith.item.s2c_item_element element_data = 7;
     if (has_element_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -21112,19 +21112,19 @@ void item_s2c_item_data::MergeFrom(const item_s2c_item_data& from) {
       set_item_id(from.item_id());
     }
     if (from.has_base_data()) {
-      mutable_base_data()->::hld::item_s2c_item_base::MergeFrom(from.base_data());
+      mutable_base_data()->::faith::item_s2c_item_base::MergeFrom(from.base_data());
     }
     if (from.has_equip_data()) {
-      mutable_equip_data()->::hld::item_s2c_item_equip::MergeFrom(from.equip_data());
+      mutable_equip_data()->::faith::item_s2c_item_equip::MergeFrom(from.equip_data());
     }
     if (from.has_sprite_data()) {
-      mutable_sprite_data()->::hld::item_s2c_item_sprite::MergeFrom(from.sprite_data());
+      mutable_sprite_data()->::faith::item_s2c_item_sprite::MergeFrom(from.sprite_data());
     }
     if (from.has_prop_data()) {
-      mutable_prop_data()->::hld::item_s2c_item_prop::MergeFrom(from.prop_data());
+      mutable_prop_data()->::faith::item_s2c_item_prop::MergeFrom(from.prop_data());
     }
     if (from.has_element_data()) {
-      mutable_element_data()->::hld::item_s2c_item_element::MergeFrom(from.element_data());
+      mutable_element_data()->::faith::item_s2c_item_element::MergeFrom(from.element_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -22504,7 +22504,7 @@ bool item_s2c_sprite_fetter_info::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.item.sprite_fetter_info data_list = 1;
+      // repeated .faith.item.sprite_fetter_info data_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -22537,7 +22537,7 @@ bool item_s2c_sprite_fetter_info::MergePartialFromCodedStream(
 
 void item_s2c_sprite_fetter_info::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.item.sprite_fetter_info data_list = 1;
+  // repeated .faith.item.sprite_fetter_info data_list = 1;
   for (int i = 0; i < this->data_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->data_list(i), output);
@@ -22551,7 +22551,7 @@ void item_s2c_sprite_fetter_info::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* item_s2c_sprite_fetter_info::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.item.sprite_fetter_info data_list = 1;
+  // repeated .faith.item.sprite_fetter_info data_list = 1;
   for (int i = 0; i < this->data_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -22568,7 +22568,7 @@ void item_s2c_sprite_fetter_info::SerializeWithCachedSizes(
 int item_s2c_sprite_fetter_info::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.item.sprite_fetter_info data_list = 1;
+  // repeated .faith.item.sprite_fetter_info data_list = 1;
   total_size += 1 * this->data_list_size();
   for (int i = 0; i < this->data_list_size(); i++) {
     total_size +=
@@ -23706,6 +23706,6 @@ void item::Swap(item* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

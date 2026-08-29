@@ -18,7 +18,7 @@
 #include "globle_data.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	void cs2ws_req_create_legion_result(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{

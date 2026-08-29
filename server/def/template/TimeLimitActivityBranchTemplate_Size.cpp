@@ -1,6 +1,6 @@
 #include "TimeLimitActivityBranchTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void TimeLimitActivityBranchTemplateSize()
     {

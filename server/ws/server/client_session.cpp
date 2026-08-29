@@ -51,7 +51,7 @@
 #include "char_msg.hpp"
 #include "game.pb.h"
 
-namespace hld
+namespace faith
 {
 	client_session::client_session(void):m_relation_mgr(this)
 	{
@@ -195,7 +195,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::client_logout pro_msg;
+				faith::ws2cs_proto::client_logout pro_msg;
 				pro_msg.set_role_guid(get_role_guid().server_64);
 				pro_msg.set_client_uid(get_client_uid().fep_uid_64);
 				pro_msg.set_need_send_save_end(m_is_need_send_save_end);
@@ -285,7 +285,7 @@ namespace hld
 			auto map_template = cs_map_system::get_map_template(get_map_guid());
 			if (map_template != nullptr)
 			{
-				if(map_template->Type == hld::e_map_type_cross_ladder)
+				if(map_template->Type == faith::e_map_type_cross_ladder)
 					m_logout_time = utility::get_tick_count() + 10 * second_tick_time;
 			}
 		}
@@ -366,7 +366,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::role_right pro_msg;
+			faith::ws2cs_proto::role_right pro_msg;
 			msg.to_proto(pro_msg);
 			send_to_cs_lua(&pro_msg, e_msgindex_cs2ws_role_right);
 		}
@@ -385,7 +385,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::role_info_change pro_msg;
+			faith::ws2cs_proto::role_info_change pro_msg;
 			msg.to_proto(pro_msg);
 			send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_role_info_change);
 		}
@@ -674,7 +674,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::map_dynamic_params pro_msg;
+			faith::ws2cs_proto::map_dynamic_params pro_msg;
 			map_dynamic_params_msg.to_proto(pro_msg);
 			send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_map_dynamic_params);
 		}
@@ -841,7 +841,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::recharge pro_msg;
+			faith::ws2cs_proto::recharge pro_msg;
 			msg.to_proto(pro_msg);
 			send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_recharge);
 		}

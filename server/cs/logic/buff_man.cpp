@@ -7,7 +7,7 @@
 #include "logic/unit.hpp"
 #include "utility/parse_msg.h"
 
-using namespace hld;
+using namespace faith;
 
 buff_set m_empty_buff_set;
 buff_set* m_buff_player_ary[init_player_max];
@@ -111,7 +111,7 @@ void buff_man::handle_msg(const int32& unit_array_index, buff_proto_buff_operati
 	ZoneScoped;
 	switch (msg.operation_type())
 	{
-	case hld::e_buff_operation_type_del:
+	case faith::e_buff_operation_type_del:
 	{
 		guid_64 buff_guid(msg.buff_guid());
 		del_buff_by_inst_id(-1, unit_array_index, buff_guid, false, false);

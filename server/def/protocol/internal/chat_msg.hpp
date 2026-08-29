@@ -17,13 +17,13 @@
 #include "Logic/relation_def.h"
 #include "internet/ws2cs.pb.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_cs2ws_send_chat_to_ws = hld::e_msg_base_chat,
+		e_msgindex_cs2ws_send_chat_to_ws = faith::e_msg_base_chat,
 		e_msgindex_ws2cs_send_chat_end,
 		e_msgindex_ws2cs_receive_chat,
 		e_msgindex_cs2ws_send_chat_end,
@@ -43,7 +43,7 @@ namespace hld
 		e_msgindex_ws2ws_load_offline_other_relation_end,
 	};
 
-	struct cs2ws_send_chat_to_ws : public hld::packet_base
+	struct cs2ws_send_chat_to_ws : public faith::packet_base
 	{
 		guid_64		sender_guid;
 		guid_64		addressee_guid;
@@ -64,7 +64,7 @@ namespace hld
 		}
 	};
 
-	struct cs2ws_send_chat_to_ws_new : public hld::packet_base
+	struct cs2ws_send_chat_to_ws_new : public faith::packet_base
 	{
 		guid_64					sender_guid;
 		int32					sender_template_id;
@@ -91,7 +91,7 @@ namespace hld
 		}
 	};
 	
-	struct ws2cs_send_chat_end : public hld::packet_base
+	struct ws2cs_send_chat_end : public faith::packet_base
 	{
 		guid_64 sender_guid;
 		int32 send_result;
@@ -101,21 +101,21 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_send_chat_end;
 		}
-		void to_proto(hld::ws2cs_proto::send_chat_end& msg)
+		void to_proto(faith::ws2cs_proto::send_chat_end& msg)
 		{
 			msg.set_sender_guid(sender_guid.server_64);
 			msg.set_send_result(send_result);
 			msg.set_chat_type(chat_type);
 
 		}
-		void from_proto(const hld::ws2cs_proto::send_chat_end& msg)
+		void from_proto(const faith::ws2cs_proto::send_chat_end& msg)
 		{
 			sender_guid.server_64 = msg.sender_guid();
 			send_result = msg.send_result();
 			chat_type = msg.chat_type();
 		}
 	};
-	struct cs2ws_send_chat_end : public hld::packet_base
+	struct cs2ws_send_chat_end : public faith::packet_base
 	{
 		guid_64 sender_guid;
 		int32 send_result;
@@ -126,7 +126,7 @@ namespace hld
 		}
 	};
 
-	struct ws2cs_receive_chat : public hld::packet_base
+	struct ws2cs_receive_chat : public faith::packet_base
 	{
 		guid_64		sender_guid;
 		guid_64		addressee_guid;
@@ -148,7 +148,7 @@ namespace hld
 		}
 	};
 
-	struct ws2cs_receive_chat_new : public hld::packet_base
+	struct ws2cs_receive_chat_new : public faith::packet_base
 	{
 		guid_64					sender_guid;
 		int32					sender_template_id;
@@ -170,7 +170,7 @@ namespace hld
 		}
 	};
 
-	struct cs2ws_send_quick_chat_to_ws : public hld::packet_base
+	struct cs2ws_send_quick_chat_to_ws : public faith::packet_base
 	{
 		guid_64					sender_guid;
 		guid_64					addressee_guid;
@@ -186,7 +186,7 @@ namespace hld
 		
 	};
 
-	struct ws2cs_receive_quick_chat : public hld::packet_base
+	struct ws2cs_receive_quick_chat : public faith::packet_base
 	{
 		guid_64					sender_guid;
 		guid_64					addressee_guid;
@@ -203,7 +203,7 @@ namespace hld
 		
 	};
 
-	struct cs2ws_send_notice_with_param : public hld::packet_base
+	struct cs2ws_send_notice_with_param : public faith::packet_base
 	{
 		guid_64					sender_guid;
 		int32					chat_typ;
@@ -224,7 +224,7 @@ namespace hld
 		}
 	};
 
-	struct ws2dp_save_chat_with_offline : public hld::packet_base
+	struct ws2dp_save_chat_with_offline : public faith::packet_base
 	{
 		int64					chat_guid;
 		guid_64					address_guid;
@@ -259,7 +259,7 @@ namespace hld
 
 	};
 
-	struct ws2dp_load_chat_with_offline : public hld::packet_base
+	struct ws2dp_load_chat_with_offline : public faith::packet_base
 	{
 		guid_64				role_guid;
 
@@ -270,7 +270,7 @@ namespace hld
 		}
 	};
 
-	struct dp2ws_load_chat_with_offline : public hld::packet_base
+	struct dp2ws_load_chat_with_offline : public faith::packet_base
 	{
 		guid_64				role_guid;
 		int32				data_num;
@@ -301,7 +301,7 @@ namespace hld
 	};
 
 
-	struct dp2cs_load_chat_record : public hld::packet_base
+	struct dp2cs_load_chat_record : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -320,7 +320,7 @@ namespace hld
 		}
 	};
 
-	struct cs2dp_save_chat_record : public hld::packet_base
+	struct cs2dp_save_chat_record : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;

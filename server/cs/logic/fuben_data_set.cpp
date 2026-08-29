@@ -9,7 +9,7 @@ purpose:
 
 #include "fuben_data_set.h"
 
-namespace hld 
+namespace faith 
 {
     tag_fuben_data* fuben_data_set::get_fuben_data(int32 fuben_id)
     {

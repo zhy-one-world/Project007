@@ -10,7 +10,7 @@ purpose:
 
 #include "tile_cs.h"
 
-namespace hld
+namespace faith
 {
 
 	tile_cs::tile_cs()

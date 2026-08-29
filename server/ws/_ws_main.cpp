@@ -41,7 +41,7 @@
 #include "lua/script_mgr.h"
 #include "system/scene/cs_map_mgr_system.h"
 
-namespace hld
+namespace faith
 {
 	using net::scheduler;
 
@@ -109,33 +109,33 @@ namespace hld
 	}
 }
 
-hld::int32 _XMAIN(hld::int32 argc, xchar* argv[])
+faith::int32 _XMAIN(faith::int32 argc, xchar* argv[])
 {
-	srand(hld::utility::time());
+	srand(faith::utility::time());
 	setlocale(LC_ALL, "utf8");
-	hld::set_root_directory();
-	if (!hld::servers_config_manager::getInstance().init_config())
+	faith::set_root_directory();
+	if (!faith::servers_config_manager::getInstance().init_config())
 	{
 		std::cout << "servers_config init fail!" << std::endl;
 		return -1;
 	}
 
-	hld::app_set_console_title();
+	faith::app_set_console_title();
 
-	hld::server_log::init_new_log(SERVERCONFIG->game_id, "ws");
+	faith::server_log::init_new_log(SERVERCONFIG->game_id, "ws");
 
 	//	setup postmortem module
-	hld::dump postmortem(_XTEXT("ws.exe"), _XTEXT("ws-v") + hld::app_get_pgroduct_version_string());
+	faith::dump postmortem(_XTEXT("ws.exe"), _XTEXT("ws-v") + faith::app_get_pgroduct_version_string());
 
-	hld::ecs_world::get_instance().init();
+	faith::ecs_world::get_instance().init();
 
-	using hld::net::scheduler;
+	using faith::net::scheduler;
 
-	hld::scheduler::getInstance().set_option(scheduler::options::thread_num(WS_SERVER_SCHEDULER_THREAD_COUNT));
+	faith::scheduler::getInstance().set_option(scheduler::options::thread_num(WS_SERVER_SCHEDULER_THREAD_COUNT));
 
-	hld::app_server::getInstance().run(hld::init,hld::release);
+	faith::app_server::getInstance().run(faith::init,faith::release);
 
-	hld::postmortem::getInstance().release();
+	faith::postmortem::getInstance().release();
 
 	return 0;
 }

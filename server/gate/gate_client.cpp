@@ -31,7 +31,7 @@
 #include "server_log.hpp"
 #include "net/message_manager.hpp"
 
-namespace hld
+namespace faith
 {
 	//////////////////////////////////////////////////////////////////////////
 	//

@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_featherheart_2eproto();
@@ -133,7 +133,7 @@ class feather_heart_proto_feather_heart_operate : public ::google::protobuf::Mes
   inline ::google::protobuf::int32 skill_b() const;
   inline void set_skill_b(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.feather_heart_proto.feather_heart_operate)
+  // @@protoc_insertion_point(class_scope:faith.feather_heart_proto.feather_heart_operate)
  private:
   inline void set_has_oper_type();
   inline void clear_has_oper_type();
@@ -251,7 +251,7 @@ class feather_heart_proto_feather_heart_operate_end : public ::google::protobuf:
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.feather_heart_proto.feather_heart_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.feather_heart_proto.feather_heart_operate_end)
  private:
   inline void set_has_oper_type();
   inline void clear_has_oper_type();
@@ -336,7 +336,7 @@ class feather_heart_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.feather_heart_proto)
+  // @@protoc_insertion_point(class_scope:faith.feather_heart_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -574,7 +574,7 @@ inline void feather_heart_proto_feather_heart_operate_end::set_result(::google::
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

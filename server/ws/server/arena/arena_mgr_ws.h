@@ -14,7 +14,7 @@ purpose: about arena system's arena_mgr
 #include "Logic/special_name_def.hpp"
 #include "Internal/char_msg.hpp"
 
-namespace hld
+namespace faith
 {
 	const int32 k_rand_name_dic_chinese_male_first_begin = 90086001;
 	const int32 k_rand_name_dic_chinese_male_first_end = 90086142;

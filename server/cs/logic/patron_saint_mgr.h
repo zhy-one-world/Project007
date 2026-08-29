@@ -11,7 +11,7 @@ purpose: about role's pokedex_mgr
 
 #include "pokedex.h"
 #include "Logic/pokedex_def.hpp"
-namespace hld
+namespace faith
 {
 	class cpatron_saint_mgr
 	{

@@ -10,7 +10,7 @@
 #ifndef _HTTP_SEND_
 #define _HTTP_SEND_
 #include "server_def.hpp"
-namespace hld
+namespace faith
 {
 	struct server_info_gm;
 	struct s_unit_info;

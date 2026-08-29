@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -348,14 +348,14 @@ void protobuf_AddDesc_time_5factivity_2eproto() {
     "\n\023time_activity.proto\022\003hld\"\347\001\n\021time_acti"
     "vity_s2s\032!\n\013wheel_plate\022\022\n\ndata_array\030\001 "
     "\003(\005\032b\n\ractivity_info\022\023\n\013activity_id\030\001 \001("
-    "\005\022<\n\020wheel_plate_data\030\002 \001(\0132\".hld.time_a"
+    "\005\022<\n\020wheel_plate_data\030\002 \001(\0132\".faith.time_a"
     "ctivity_s2s.wheel_plate\032K\n\020sl_activity_i"
-    "nfo\0227\n\tdata_list\030\001 \003(\0132$.hld.time_activi"
+    "nfo\0227\n\tdata_list\030\001 \003(\0132$.faith.time_activi"
     "ty_s2s.activity_info\"\371\003\n\rtime_activity\032!"
     "\n\013wheel_plate\022\022\n\ndata_array\030\001 \003(\005\032t\n\021s2c"
     "_activity_info\022\023\n\013activity_id\030\001 \001(\005\022\020\n\010e"
     "nd_time\030\002 \001(\003\0228\n\020wheel_plate_data\030\003 \001(\0132"
-    "\036.hld.time_activity.wheel_plate\032P\n\025s2c_a"
+    "\036.faith.time_activity.wheel_plate\032P\n\025s2c_a"
     "ctivity_info_all\0227\n\tdata_list\030\001 \003(\0132$.hl"
     "d.time_activity.s2c_activity_info\032,\n\025s2c"
     "_activity_info_del\022\023\n\013activity_id\030\001 \001(\005\032"
@@ -627,7 +627,7 @@ time_activity_s2s_activity_info::time_activity_s2s_activity_info()
 }
 
 void time_activity_s2s_activity_info::InitAsDefaultInstance() {
-  wheel_plate_data_ = const_cast< ::hld::time_activity_s2s_wheel_plate*>(&::hld::time_activity_s2s_wheel_plate::default_instance());
+  wheel_plate_data_ = const_cast< ::faith::time_activity_s2s_wheel_plate*>(&::faith::time_activity_s2s_wheel_plate::default_instance());
 }
 
 time_activity_s2s_activity_info::time_activity_s2s_activity_info(const time_activity_s2s_activity_info& from)
@@ -678,7 +678,7 @@ void time_activity_s2s_activity_info::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     activity_id_ = 0;
     if (has_wheel_plate_data()) {
-      if (wheel_plate_data_ != NULL) wheel_plate_data_->::hld::time_activity_s2s_wheel_plate::Clear();
+      if (wheel_plate_data_ != NULL) wheel_plate_data_->::faith::time_activity_s2s_wheel_plate::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -706,7 +706,7 @@ bool time_activity_s2s_activity_info::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.time_activity_s2s.wheel_plate wheel_plate_data = 2;
+      // optional .faith.time_activity_s2s.wheel_plate wheel_plate_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -743,7 +743,7 @@ void time_activity_s2s_activity_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->activity_id(), output);
   }
 
-  // optional .hld.time_activity_s2s.wheel_plate wheel_plate_data = 2;
+  // optional .faith.time_activity_s2s.wheel_plate wheel_plate_data = 2;
   if (has_wheel_plate_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->wheel_plate_data(), output);
@@ -762,7 +762,7 @@ void time_activity_s2s_activity_info::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->activity_id(), target);
   }
 
-  // optional .hld.time_activity_s2s.wheel_plate wheel_plate_data = 2;
+  // optional .faith.time_activity_s2s.wheel_plate wheel_plate_data = 2;
   if (has_wheel_plate_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -787,7 +787,7 @@ int time_activity_s2s_activity_info::ByteSize() const {
           this->activity_id());
     }
 
-    // optional .hld.time_activity_s2s.wheel_plate wheel_plate_data = 2;
+    // optional .faith.time_activity_s2s.wheel_plate wheel_plate_data = 2;
     if (has_wheel_plate_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -825,7 +825,7 @@ void time_activity_s2s_activity_info::MergeFrom(const time_activity_s2s_activity
       set_activity_id(from.activity_id());
     }
     if (from.has_wheel_plate_data()) {
-      mutable_wheel_plate_data()->::hld::time_activity_s2s_wheel_plate::MergeFrom(from.wheel_plate_data());
+      mutable_wheel_plate_data()->::faith::time_activity_s2s_wheel_plate::MergeFrom(from.wheel_plate_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -934,7 +934,7 @@ bool time_activity_s2s_sl_activity_info::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.time_activity_s2s.activity_info data_list = 1;
+      // repeated .faith.time_activity_s2s.activity_info data_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -967,7 +967,7 @@ bool time_activity_s2s_sl_activity_info::MergePartialFromCodedStream(
 
 void time_activity_s2s_sl_activity_info::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.time_activity_s2s.activity_info data_list = 1;
+  // repeated .faith.time_activity_s2s.activity_info data_list = 1;
   for (int i = 0; i < this->data_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->data_list(i), output);
@@ -981,7 +981,7 @@ void time_activity_s2s_sl_activity_info::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* time_activity_s2s_sl_activity_info::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.time_activity_s2s.activity_info data_list = 1;
+  // repeated .faith.time_activity_s2s.activity_info data_list = 1;
   for (int i = 0; i < this->data_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -998,7 +998,7 @@ void time_activity_s2s_sl_activity_info::SerializeWithCachedSizes(
 int time_activity_s2s_sl_activity_info::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.time_activity_s2s.activity_info data_list = 1;
+  // repeated .faith.time_activity_s2s.activity_info data_list = 1;
   total_size += 1 * this->data_list_size();
   for (int i = 0; i < this->data_list_size(); i++) {
     total_size +=
@@ -1451,7 +1451,7 @@ time_activity_s2c_activity_info::time_activity_s2c_activity_info()
 }
 
 void time_activity_s2c_activity_info::InitAsDefaultInstance() {
-  wheel_plate_data_ = const_cast< ::hld::time_activity_wheel_plate*>(&::hld::time_activity_wheel_plate::default_instance());
+  wheel_plate_data_ = const_cast< ::faith::time_activity_wheel_plate*>(&::faith::time_activity_wheel_plate::default_instance());
 }
 
 time_activity_s2c_activity_info::time_activity_s2c_activity_info(const time_activity_s2c_activity_info& from)
@@ -1504,7 +1504,7 @@ void time_activity_s2c_activity_info::Clear() {
     activity_id_ = 0;
     end_time_ = GOOGLE_LONGLONG(0);
     if (has_wheel_plate_data()) {
-      if (wheel_plate_data_ != NULL) wheel_plate_data_->::hld::time_activity_wheel_plate::Clear();
+      if (wheel_plate_data_ != NULL) wheel_plate_data_->::faith::time_activity_wheel_plate::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -1548,7 +1548,7 @@ bool time_activity_s2c_activity_info::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.time_activity.wheel_plate wheel_plate_data = 3;
+      // optional .faith.time_activity.wheel_plate wheel_plate_data = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1590,7 +1590,7 @@ void time_activity_s2c_activity_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->end_time(), output);
   }
 
-  // optional .hld.time_activity.wheel_plate wheel_plate_data = 3;
+  // optional .faith.time_activity.wheel_plate wheel_plate_data = 3;
   if (has_wheel_plate_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->wheel_plate_data(), output);
@@ -1614,7 +1614,7 @@ void time_activity_s2c_activity_info::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->end_time(), target);
   }
 
-  // optional .hld.time_activity.wheel_plate wheel_plate_data = 3;
+  // optional .faith.time_activity.wheel_plate wheel_plate_data = 3;
   if (has_wheel_plate_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1646,7 +1646,7 @@ int time_activity_s2c_activity_info::ByteSize() const {
           this->end_time());
     }
 
-    // optional .hld.time_activity.wheel_plate wheel_plate_data = 3;
+    // optional .faith.time_activity.wheel_plate wheel_plate_data = 3;
     if (has_wheel_plate_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -1687,7 +1687,7 @@ void time_activity_s2c_activity_info::MergeFrom(const time_activity_s2c_activity
       set_end_time(from.end_time());
     }
     if (from.has_wheel_plate_data()) {
-      mutable_wheel_plate_data()->::hld::time_activity_wheel_plate::MergeFrom(from.wheel_plate_data());
+      mutable_wheel_plate_data()->::faith::time_activity_wheel_plate::MergeFrom(from.wheel_plate_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -1797,7 +1797,7 @@ bool time_activity_s2c_activity_info_all::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.time_activity.s2c_activity_info data_list = 1;
+      // repeated .faith.time_activity.s2c_activity_info data_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1830,7 +1830,7 @@ bool time_activity_s2c_activity_info_all::MergePartialFromCodedStream(
 
 void time_activity_s2c_activity_info_all::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.time_activity.s2c_activity_info data_list = 1;
+  // repeated .faith.time_activity.s2c_activity_info data_list = 1;
   for (int i = 0; i < this->data_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->data_list(i), output);
@@ -1844,7 +1844,7 @@ void time_activity_s2c_activity_info_all::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* time_activity_s2c_activity_info_all::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.time_activity.s2c_activity_info data_list = 1;
+  // repeated .faith.time_activity.s2c_activity_info data_list = 1;
   for (int i = 0; i < this->data_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1861,7 +1861,7 @@ void time_activity_s2c_activity_info_all::SerializeWithCachedSizes(
 int time_activity_s2c_activity_info_all::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.time_activity.s2c_activity_info data_list = 1;
+  // repeated .faith.time_activity.s2c_activity_info data_list = 1;
   total_size += 1 * this->data_list_size();
   for (int i = 0; i < this->data_list_size(); i++) {
     total_size +=
@@ -3220,6 +3220,6 @@ void time_activity::Swap(time_activity* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

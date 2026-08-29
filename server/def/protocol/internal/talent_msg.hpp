@@ -11,17 +11,17 @@ purpose:
 #include "base.hpp"
 #include "Logic/talent_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_dp2cs_load_char_talent = hld::e_msg_base_talent,
+		e_msgindex_dp2cs_load_char_talent = faith::e_msg_base_talent,
 		e_msgindex_cs2dp_save_char_talent,
 	};
 
-	struct dp2cs_load_char_talent : public hld::packet_base
+	struct dp2cs_load_char_talent : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32							unit_array_index;
@@ -39,7 +39,7 @@ namespace hld
 			return (basic_len + data_num * sizeof(s_talent_info));
 		}
 	};
-	struct cs2dp_save_char_talent : public hld::packet_base
+	struct cs2dp_save_char_talent : public faith::packet_base
 	{
 		guid_64							role_guid;
 		int32							unit_array_index;

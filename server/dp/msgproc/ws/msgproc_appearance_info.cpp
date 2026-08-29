@@ -2,7 +2,7 @@
 #include "dbproxy_service.hpp"
 #include <appearance_info_msg.hpp>
 
-namespace hld
+namespace faith
 {
 	void save_appearance_info_to_id(uint32 connindex, const void *data_ptr, size_t data_len)
 	{

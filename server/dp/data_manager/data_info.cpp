@@ -8,7 +8,7 @@
 *********************************************************************/
 #include "data_info.hpp"
 
-namespace hld
+namespace faith
 {
 	data_info::data_info()
 	{

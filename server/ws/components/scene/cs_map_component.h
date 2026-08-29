@@ -3,7 +3,7 @@
 #include "Logic/map_def.hpp"
 #include "template/MapTemplate_S.h"
 
-namespace hld
+namespace faith
 {
 	struct cs_map_component
 	{

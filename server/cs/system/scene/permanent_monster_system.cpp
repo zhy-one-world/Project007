@@ -7,7 +7,7 @@
 #include "logic/scene/map_cs.h"
 #include "logic/npc.hpp"
 
-using namespace hld;
+using namespace faith;
 
 void permanent_monster_system::start_up(Entity* map_ent, int32 spawn_point_id)
 {

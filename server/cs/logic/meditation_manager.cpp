@@ -23,7 +23,7 @@ purpose: about meditation
 
 
 
-namespace hld
+namespace faith
 {
 	meditation_manager::meditation_manager()
 	{

@@ -15,7 +15,7 @@
 #include "Logic/att_def.hpp"
 #include "Logic/buff_def.hpp"
 
-namespace hld
+namespace faith
 {
 	namespace buff_str
 	{

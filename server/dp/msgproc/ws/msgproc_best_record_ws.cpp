@@ -12,7 +12,7 @@ purpose:
 #include "dbproxy_service.hpp"
 #include "utility/parse_msg.h"
 
-namespace hld
+namespace faith
 {
 	
 
@@ -24,10 +24,10 @@ namespace hld
 			return;
 		}
 		int32 map_template_id = request.record_info().map_template_id();
-		int64 role_guid[hld::single_map_record_num];
-		xstring role_name[hld::single_map_record_num];
-		int32 role_value[hld::single_map_record_num];
-		for (int32 i = 0; i < hld::single_map_record_num; i++)
+		int64 role_guid[faith::single_map_record_num];
+		xstring role_name[faith::single_map_record_num];
+		int32 role_value[faith::single_map_record_num];
+		for (int32 i = 0; i < faith::single_map_record_num; i++)
 		{
 			if (i >= request.record_info().role_guid_size())
 			{
@@ -92,11 +92,11 @@ namespace hld
 			}
 		}
 	}
-	void save_best_record_lua(uint32 connindex, uint32 map_template_id, int64 role_guid[hld::single_map_record_num], xstring role_name[hld::single_map_record_num], int32 role_value[hld::single_map_record_num])
+	void save_best_record_lua(uint32 connindex, uint32 map_template_id, int64 role_guid[faith::single_map_record_num], xstring role_name[faith::single_map_record_num], int32 role_value[faith::single_map_record_num])
 	{
 		sql_builder sql(db_manager::getInstance().get_db_link().game_db);
 		int32 best_record_num = -1;
-		for (int32 i = 0; i < hld::single_map_record_num; i++)
+		for (int32 i = 0; i < faith::single_map_record_num; i++)
 		{
 			if (role_guid[i] <= 0)
 			{

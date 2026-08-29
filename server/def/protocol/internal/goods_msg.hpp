@@ -14,17 +14,17 @@ purpose:
 #include "base.hpp"
 #include "Logic/char_def.hpp"
 #include "Logic/goods_def.hpp"
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_dp2cs_load_char_goods = hld::e_msg_base_goods,
+		e_msgindex_dp2cs_load_char_goods = faith::e_msg_base_goods,
 		e_msgindex_cs2dp_save_char_goods,
 	};
 	// DP2CS 分批发送玩家的所有商品信息
-	struct dp2cs_load_char_goods : public hld::packet_base
+	struct dp2cs_load_char_goods : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32							unit_array_index;
@@ -42,7 +42,7 @@ namespace hld
 			return (basic_len + data_num * sizeof(s_goods_info));
 		}
 	};
-	struct cs2dp_save_char_goods : public hld::packet_base
+	struct cs2dp_save_char_goods : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;

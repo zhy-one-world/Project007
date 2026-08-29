@@ -29,7 +29,7 @@ purpose: about arena system's arena_mgr_ws
 #include "net.pb.h"
 
 
-namespace hld
+namespace faith
 {
 	void arena_mgr_ws::init_manager()
 	{
@@ -222,7 +222,7 @@ namespace hld
 			return;
 		}
 		ws2dp_save_arena_rank request_db;
-		hld::server2dp_proto::ws2dp_save_arena_rank proto_msg;
+		faith::server2dp_proto::ws2dp_save_arena_rank proto_msg;
 		request_db.is_first = true;
 		int32 temp_count = 0;
 		for (int32 i = 0; i < rank_max; ++i)
@@ -422,7 +422,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::sync_first_rank_end pro_msg;
+				faith::ws2cs_proto::sync_first_rank_end pro_msg;
 				resp.to_proto(pro_msg);
 				old_client_session_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_sync_first_rank_end);
 			}
@@ -441,7 +441,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::sync_first_rank_end pro_msg;
+				faith::ws2cs_proto::sync_first_rank_end pro_msg;
 				resp.to_proto(pro_msg);
 				new_client_session_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_sync_first_rank_end);
 			}
@@ -502,7 +502,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::req_challenge_msg pro_msg;
+			faith::ws2cs_proto::req_challenge_msg pro_msg;
 			response.to_proto(pro_msg);
 			client_session_ptr->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_req_challenge);
 		}
@@ -705,7 +705,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::req_choose_list pro_msg;
+			faith::ws2cs_proto::req_choose_list pro_msg;
 			response.to_proto(pro_msg);
 			client_session_ptr->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_req_challenge_list);
 		}
@@ -905,7 +905,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::rep_get_arena_rank pro_msg;
+				faith::ws2cs_proto::rep_get_arena_rank pro_msg;
 				resp.to_proto(pro_msg);
 				client_session_ptr->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_rep_get_arena_rank);
 			}
@@ -973,7 +973,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::rep_get_arena_rank pro_msg;
+			faith::ws2cs_proto::rep_get_arena_rank pro_msg;
 			resp.to_proto(pro_msg);
 			client_session_ptr->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_rep_get_arena_rank);
 		}

@@ -13,7 +13,7 @@ purpose: ÃÏ∆Ù ‘¡∂
 #include "drop_def.hpp"
 
 
-namespace hld
+namespace faith
 {
 	class player;
 	class oracle_trial_mgr

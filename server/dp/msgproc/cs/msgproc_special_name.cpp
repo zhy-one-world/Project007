@@ -17,7 +17,7 @@
 #include "dp2cs.pb.h"
 #include "cs2dp.pb.h"
 
-namespace hld
+namespace faith
 {
 	static void  cs2dp_load_role_special_name_send_lua(uint32 connindex, const dp2cs_load_char_special_name & msgData)
 	{

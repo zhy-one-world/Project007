@@ -9,7 +9,7 @@
 #include "item.pb.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	lucky_draw_record_ws_mgr::lucky_draw_record_ws_mgr()
 	{
@@ -80,7 +80,7 @@ namespace hld
 			}
 			switch (record_info[i].record_type)
 			{
-			case hld::e_luck_draw_record_type_sprite:
+			case faith::e_luck_draw_record_type_sprite:
 			{
 				if (m_sprite_record_array.size() < hope_and_hunt_record_num)
 				{
@@ -88,7 +88,7 @@ namespace hld
 				}
 			}
 			break;
-			case hld::e_luck_draw_record_type_hope_item:
+			case faith::e_luck_draw_record_type_hope_item:
 			{
 				if (m_sprite_record_array.size() < hope_and_hunt_record_num)
 				{
@@ -123,7 +123,7 @@ namespace hld
 
 		switch (record_info.record_type)
 		{
-		case hld::e_luck_draw_record_type_sprite:
+		case faith::e_luck_draw_record_type_sprite:
 		{
 			if (m_sprite_record_array.size() >= hope_and_hunt_record_num)
 			{
@@ -152,7 +152,7 @@ namespace hld
 			m_sprite_record_array.push_back(record_info);
 		}
 			break;
-		case hld::e_luck_draw_record_type_hope_item:
+		case faith::e_luck_draw_record_type_hope_item:
 		{
 			if (m_hope_item_record_array.size() >= hope_and_hunt_record_num)
 			{

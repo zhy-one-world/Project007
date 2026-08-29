@@ -10,7 +10,7 @@ purpose:
 #define _AOI_EVENT_H_
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 	enum e_aoi_move_type;
 

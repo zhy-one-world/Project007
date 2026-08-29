@@ -1,6 +1,6 @@
 #include "ArenaRankRewardTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void ArenaRankRewardTemplateSize()
     {

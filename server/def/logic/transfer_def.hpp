@@ -14,7 +14,7 @@
 #include <string>
 #include "world_def.hpp"
 
-namespace hld 
+namespace faith 
 {
 #pragma pack(push,1)
 

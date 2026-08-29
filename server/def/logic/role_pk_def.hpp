@@ -29,7 +29,7 @@
 //	Macro And Struct Define
 //
 //////////////////////////////////////////////////////////////////////////
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	const int32 ROLE_PK_RANKING_TOP_TIME = 600000;

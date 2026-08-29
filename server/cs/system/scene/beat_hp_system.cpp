@@ -10,7 +10,7 @@
 #include "template/template_manager.h"
 #include "utility/random.h"
 
-using namespace hld;
+using namespace faith;
 
 void beat_hp_system::start_up(Entity* map_ent, int32 flip_box_id, player* player_ptr)
 {

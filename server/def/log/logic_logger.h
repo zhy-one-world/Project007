@@ -14,7 +14,7 @@
 #include <singleton.hpp>
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 
 	typedef uint32 unix_time;

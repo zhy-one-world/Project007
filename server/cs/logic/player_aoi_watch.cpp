@@ -4,7 +4,7 @@
 #include "logic/player.hpp"
 #include "utility/init_unit.h"
 
-namespace hld
+namespace faith
 {
 	//cs2fep_aoi_msg m_aoi_msg;
 	player_aoi_watch::player_aoi_watch()

@@ -18,13 +18,13 @@ purpose:
 #include "att_msg.hpp"
 #include "skill_msg.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_ws2dp_load_arena_rank = hld::e_msg_base_arena,
+		e_msgindex_ws2dp_load_arena_rank = faith::e_msg_base_arena,
 		e_msgindex_dp2ws_load_arena_rank,
 
 		e_msgindex_ws2dp_save_arena_rank,
@@ -57,7 +57,7 @@ namespace hld
 	};
 
 	// 请求读取
-	struct ws2dp_load_arena_rank : public hld::packet_base
+	struct ws2dp_load_arena_rank : public faith::packet_base
 	{
 		ws2dp_load_arena_rank()
 		{
@@ -68,7 +68,7 @@ namespace hld
 
 
 	//DP2ws 读取所有竞技场排名
-	struct dp2ws_load_arena_rank : public hld::packet_base
+	struct dp2ws_load_arena_rank : public faith::packet_base
 	{
 		int32							start_index;
 		int32							data_num;
@@ -85,7 +85,7 @@ namespace hld
 		}
 	};
 
-	struct dp2ws_create_robot : public hld::packet_base
+	struct dp2ws_create_robot : public faith::packet_base
 	{
 		dp2ws_create_robot()
 		{
@@ -94,7 +94,7 @@ namespace hld
 		}
 	};
 
-	struct dp2ws_arena_load_finish : public hld::packet_base
+	struct dp2ws_arena_load_finish : public faith::packet_base
 	{
 		dp2ws_arena_load_finish()
 		{
@@ -105,7 +105,7 @@ namespace hld
 
 
 	//ws2dp	请求存储排名信息
-	struct ws2dp_save_arena_rank : public hld::packet_base
+	struct ws2dp_save_arena_rank : public faith::packet_base
 	{
 		bool								is_first;
 		s_arena_rank						data_list[rank_save_per_time_max];
@@ -118,12 +118,12 @@ namespace hld
 		{
 			memset(data_list, 0, sizeof(s_arena_rank) * rank_save_per_time_max);
 		}
-		bool to_proto(hld::server2dp_proto::ws2dp_save_arena_rank& msg)
+		bool to_proto(faith::server2dp_proto::ws2dp_save_arena_rank& msg)
 		{
 			msg.set_is_first(is_first);
 			for (int32  i = 0; i < rank_save_per_time_max; i++)
 			{
-				hld::server2dp_proto::s_arena_rank* arena_rank_ptr = msg.add_data_list();
+				faith::server2dp_proto::s_arena_rank* arena_rank_ptr = msg.add_data_list();
 				if (arena_rank_ptr == nullptr)
 				{
 					return false;
@@ -132,7 +132,7 @@ namespace hld
 			}
 			return true;
 		}
-		void from_proto(const hld::server2dp_proto::ws2dp_save_arena_rank& msg)
+		void from_proto(const faith::server2dp_proto::ws2dp_save_arena_rank& msg)
 		{
 			is_first = msg.is_first();
 			for (int32 i = 0; i < rank_save_per_time_max && i < msg.data_list_size(); i++)
@@ -142,7 +142,7 @@ namespace hld
 		}
 	};
 
-	struct ws2dp_save_arena_rank_change : public hld::packet_base
+	struct ws2dp_save_arena_rank_change : public faith::packet_base
 	{
 		s_arena_rank						my_new_data;
 		s_arena_rank						target_new_data;
@@ -156,7 +156,7 @@ namespace hld
 
 
 	//cs2dp 请求添加挑战记录
-	struct cs2dp_add_arena_log : public hld::packet_base
+	struct cs2dp_add_arena_log : public faith::packet_base
 	{
 		s_chanllenge_log_info   log_data;
 		int32					data_num;
@@ -173,7 +173,7 @@ namespace hld
 	};
 
 	//cs2dp 请求读取挑战记录
-	struct cs2dp_load_arena_log : public hld::packet_base
+	struct cs2dp_load_arena_log : public faith::packet_base
 	{
 		guid_64		role_guid;
 		int32		array_index;
@@ -184,7 +184,7 @@ namespace hld
 		}
 	};
 	//dp2cs响应读取记录
-	struct dp2cs_resp_load_arena_log : public hld::packet_base
+	struct dp2cs_resp_load_arena_log : public faith::packet_base
 	{
 		guid_64		role_guid;
 		int32		array_index;
@@ -205,7 +205,7 @@ namespace hld
 	};
 
 
-	struct dp2cs_load_arena_data_error : public hld::packet_base
+	struct dp2cs_load_arena_data_error : public faith::packet_base
 	{
 		guid_64		role_guid;
 		int32		error_code;
@@ -218,7 +218,7 @@ namespace hld
 	};
 
 	//ws2dp	请求更新所有排名信息
-	struct ws2dp_fresh_all_rank : public hld::packet_base
+	struct ws2dp_fresh_all_rank : public faith::packet_base
 	{
 		ws2dp_fresh_all_rank()
 		{
@@ -227,7 +227,7 @@ namespace hld
 		}
 	};
 	
-	struct dp2cs_load_arena_char_error : public hld::packet_base
+	struct dp2cs_load_arena_char_error : public faith::packet_base
 	{
 		guid_64		role_guid;
 		guid_64		map_guid;
@@ -288,7 +288,7 @@ namespace hld
 		}
 	};
 
-	struct dp2cs_arena_load_char_item : public hld::packet_base
+	struct dp2cs_arena_load_char_item : public faith::packet_base
 	{
 		guid_64 map_guid;
 		guid_64 role_guid;
@@ -314,7 +314,7 @@ namespace hld
 		}
 	};
 
-	struct dp2cs_arena_load_char_spirit : public hld::packet_base
+	struct dp2cs_arena_load_char_spirit : public faith::packet_base
 	{
 		guid_64			map_guid;
 		guid_64			role_guid;
@@ -327,7 +327,7 @@ namespace hld
 		}
 	};
 
-	struct dp2cs_arena_load_char_fight_att : public hld::packet_base
+	struct dp2cs_arena_load_char_fight_att : public faith::packet_base
 	{
 		guid_64					map_guid;
 		s_arena_char_fight_att	m_fight_att;
@@ -339,7 +339,7 @@ namespace hld
 		}
 	};
 
-	struct dp2cs_arena_load_char_buff : public hld::packet_base
+	struct dp2cs_arena_load_char_buff : public faith::packet_base
 	{
 		guid_64			map_guid;
 		uint32			data_num;
@@ -362,7 +362,7 @@ namespace hld
 			return (basic_len + data_num * sizeof(s_buff_info));
 		}
 	};
-	struct dp2cs_arena_load_char_belief : public hld::packet_base
+	struct dp2cs_arena_load_char_belief : public faith::packet_base
 	{
 		guid_64 map_guid;
 		guid_64 role_guid;

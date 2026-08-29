@@ -19,7 +19,7 @@ author: zhaoyuming
 
 
 
-namespace hld
+namespace faith
 {
 	lucky_card_mgr::lucky_card_mgr()
 	{

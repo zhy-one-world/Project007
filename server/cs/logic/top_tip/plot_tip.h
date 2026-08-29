@@ -2,7 +2,7 @@
 
 #include "Logic/top_tip_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class player;
 

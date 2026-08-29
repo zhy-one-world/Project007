@@ -12,7 +12,7 @@
 
  #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 	// 	class client_session;
 	void cs2ws_rep_reconnect_game(uint32 conn_index, const void* data_ptr, size_t data_len);

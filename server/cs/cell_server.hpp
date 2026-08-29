@@ -23,13 +23,13 @@
 /************************************************************************/
 /*                            Maroc Define                              */
 /************************************************************************/
-namespace hld
+namespace faith
 {
 //#define OPEN_LUA_DATA
 //#define OPEN_LUA_TICK
-	class cell_server : public hld::singleton<cell_server>
+	class cell_server : public faith::singleton<cell_server>
 	{
-		friend class hld::singleton<cell_server>;
+		friend class faith::singleton<cell_server>;
 	protected:
 		cell_server();
 	public:

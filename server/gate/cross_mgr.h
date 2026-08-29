@@ -31,7 +31,7 @@
 //	Class Declare
 //
 //////////////////////////////////////////////////////////////////////////
-namespace hld
+namespace faith
 {
 	typedef std::map<int32, game_server*> game_server_map;
 	typedef game_server_map::iterator game_server_map_it;

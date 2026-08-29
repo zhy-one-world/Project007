@@ -12,7 +12,7 @@ created:	2016Äê10ÔÂ27ÈÕ
 #include "db_manager.hpp"
 
 
-namespace hld
+namespace faith
 {
 	//big_player
 	void ws2dp_req_load_big_player_base_info(uint32 connindex, const guid_64& role_guid, int32 big_type);

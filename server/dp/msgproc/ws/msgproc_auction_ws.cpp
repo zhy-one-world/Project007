@@ -13,7 +13,7 @@ purpose:
 #include "template/StringConst_S.h"
 #include "utility/parse_msg.h"
 
-namespace hld
+namespace faith
 {
 	void auction_add_item_into_db_proc_lua(uint32 connindex, const char * data_ptr, size_t data_len)
 	{

@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_mission_2eproto();
@@ -110,7 +110,7 @@ class mission_proto_mission_id : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 mission_id() const;
   inline void set_mission_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.mission_proto.mission_id)
+  // @@protoc_insertion_point(class_scope:faith.mission_proto.mission_id)
  private:
   inline void set_has_mission_id();
   inline void clear_has_mission_id();
@@ -197,7 +197,7 @@ class mission_proto_mission_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_mission_info();
 
-  // @@protoc_insertion_point(class_scope:hld.mission_proto.mission_info)
+  // @@protoc_insertion_point(class_scope:faith.mission_proto.mission_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -282,16 +282,16 @@ class mission_proto_mission_all : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // repeated .hld.mission_proto.mission_info mission_array = 2;
+  // repeated .faith.mission_proto.mission_info mission_array = 2;
   inline int mission_array_size() const;
   inline void clear_mission_array();
   static const int kMissionArrayFieldNumber = 2;
-  inline const ::hld::mission_proto_mission_info& mission_array(int index) const;
-  inline ::hld::mission_proto_mission_info* mutable_mission_array(int index);
-  inline ::hld::mission_proto_mission_info* add_mission_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::mission_proto_mission_info >&
+  inline const ::faith::mission_proto_mission_info& mission_array(int index) const;
+  inline ::faith::mission_proto_mission_info* mutable_mission_array(int index);
+  inline ::faith::mission_proto_mission_info* add_mission_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::mission_proto_mission_info >&
       mission_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::mission_proto_mission_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::mission_proto_mission_info >*
       mutable_mission_array();
 
   // optional int32 daily_mission_done_num = 3;
@@ -315,7 +315,7 @@ class mission_proto_mission_all : public ::google::protobuf::Message {
   inline bool is_finish() const;
   inline void set_is_finish(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.mission_proto.mission_all)
+  // @@protoc_insertion_point(class_scope:faith.mission_proto.mission_all)
  private:
   inline void set_has_daily_mission_done_num();
   inline void clear_has_daily_mission_done_num();
@@ -327,7 +327,7 @@ class mission_proto_mission_all : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > role_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::mission_proto_mission_info > mission_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::mission_proto_mission_info > mission_array_;
   ::google::protobuf::int32 daily_mission_done_num_;
   ::google::protobuf::int32 against_mission_done_num_;
   bool is_finish_;
@@ -426,7 +426,7 @@ class mission_proto_mission_operate : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 operate_npc_id() const;
   inline void set_operate_npc_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.mission_proto.mission_operate)
+  // @@protoc_insertion_point(class_scope:faith.mission_proto.mission_operate)
  private:
   inline void set_has_mission_id();
   inline void clear_has_mission_id();
@@ -538,16 +538,16 @@ class mission_proto_mission_operate_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 mission_slot() const;
   inline void set_mission_slot(::google::protobuf::int32 value);
 
-  // repeated .hld.mission_proto.mission_info mission_array = 5;
+  // repeated .faith.mission_proto.mission_info mission_array = 5;
   inline int mission_array_size() const;
   inline void clear_mission_array();
   static const int kMissionArrayFieldNumber = 5;
-  inline const ::hld::mission_proto_mission_info& mission_array(int index) const;
-  inline ::hld::mission_proto_mission_info* mutable_mission_array(int index);
-  inline ::hld::mission_proto_mission_info* add_mission_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::mission_proto_mission_info >&
+  inline const ::faith::mission_proto_mission_info& mission_array(int index) const;
+  inline ::faith::mission_proto_mission_info* mutable_mission_array(int index);
+  inline ::faith::mission_proto_mission_info* add_mission_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::mission_proto_mission_info >&
       mission_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::mission_proto_mission_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::mission_proto_mission_info >*
       mutable_mission_array();
 
   // optional int32 daily_mission_done_num = 6;
@@ -564,7 +564,7 @@ class mission_proto_mission_operate_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 against_mission_done_num() const;
   inline void set_against_mission_done_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.mission_proto.mission_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.mission_proto.mission_operate_end)
  private:
   inline void set_has_mission_id();
   inline void clear_has_mission_id();
@@ -585,7 +585,7 @@ class mission_proto_mission_operate_end : public ::google::protobuf::Message {
   ::google::protobuf::int32 operation_type_;
   ::google::protobuf::int32 operation_end_state_;
   ::google::protobuf::int32 mission_slot_;
-  ::google::protobuf::RepeatedPtrField< ::hld::mission_proto_mission_info > mission_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::mission_proto_mission_info > mission_array_;
   ::google::protobuf::int32 daily_mission_done_num_;
   ::google::protobuf::int32 against_mission_done_num_;
 
@@ -669,7 +669,7 @@ class mission_proto_mission_alien_kill_npc : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 npc_num() const;
   inline void set_npc_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.mission_proto.mission_alien_kill_npc)
+  // @@protoc_insertion_point(class_scope:faith.mission_proto.mission_alien_kill_npc)
  private:
   inline void set_has_npc_id();
   inline void clear_has_npc_id();
@@ -754,7 +754,7 @@ class mission_proto_mission_finish : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 mission_id() const;
   inline void set_mission_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.mission_proto.mission_finish)
+  // @@protoc_insertion_point(class_scope:faith.mission_proto.mission_finish)
  private:
   inline void set_has_mission_id();
   inline void clear_has_mission_id();
@@ -829,7 +829,7 @@ class mission_proto_reset_mission_test : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.mission_proto.reset_mission_test)
+  // @@protoc_insertion_point(class_scope:faith.mission_proto.reset_mission_test)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -927,7 +927,7 @@ class mission_proto_mission_create_npc_info : public ::google::protobuf::Message
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_npc_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.mission_proto.mission_create_npc_info)
+  // @@protoc_insertion_point(class_scope:faith.mission_proto.mission_create_npc_info)
  private:
   inline void set_has_mission_type();
   inline void clear_has_mission_type();
@@ -1013,7 +1013,7 @@ class mission_proto_get_monster_item : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 monster_item_name_id() const;
   inline void set_monster_item_name_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.mission_proto.get_monster_item)
+  // @@protoc_insertion_point(class_scope:faith.mission_proto.get_monster_item)
  private:
   inline void set_has_monster_item_name_id();
   inline void clear_has_monster_item_name_id();
@@ -1095,7 +1095,7 @@ class mission_proto_show_chapter_over : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 chapter_template_id() const;
   inline void set_chapter_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.mission_proto.show_chapter_over)
+  // @@protoc_insertion_point(class_scope:faith.mission_proto.show_chapter_over)
  private:
   inline void set_has_chapter_template_id();
   inline void clear_has_chapter_template_id();
@@ -1177,7 +1177,7 @@ class mission_proto_use_power_up : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 power_up_type() const;
   inline void set_power_up_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.mission_proto.use_power_up)
+  // @@protoc_insertion_point(class_scope:faith.mission_proto.use_power_up)
  private:
   inline void set_has_power_up_type();
   inline void clear_has_power_up_type();
@@ -1265,7 +1265,7 @@ class mission_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.mission_proto)
+  // @@protoc_insertion_point(class_scope:faith.mission_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1368,27 +1368,27 @@ mission_proto_mission_all::mutable_role_guid() {
   return &role_guid_;
 }
 
-// repeated .hld.mission_proto.mission_info mission_array = 2;
+// repeated .faith.mission_proto.mission_info mission_array = 2;
 inline int mission_proto_mission_all::mission_array_size() const {
   return mission_array_.size();
 }
 inline void mission_proto_mission_all::clear_mission_array() {
   mission_array_.Clear();
 }
-inline const ::hld::mission_proto_mission_info& mission_proto_mission_all::mission_array(int index) const {
+inline const ::faith::mission_proto_mission_info& mission_proto_mission_all::mission_array(int index) const {
   return mission_array_.Get(index);
 }
-inline ::hld::mission_proto_mission_info* mission_proto_mission_all::mutable_mission_array(int index) {
+inline ::faith::mission_proto_mission_info* mission_proto_mission_all::mutable_mission_array(int index) {
   return mission_array_.Mutable(index);
 }
-inline ::hld::mission_proto_mission_info* mission_proto_mission_all::add_mission_array() {
+inline ::faith::mission_proto_mission_info* mission_proto_mission_all::add_mission_array() {
   return mission_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::mission_proto_mission_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::mission_proto_mission_info >&
 mission_proto_mission_all::mission_array() const {
   return mission_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::mission_proto_mission_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::mission_proto_mission_info >*
 mission_proto_mission_all::mutable_mission_array() {
   return &mission_array_;
 }
@@ -1643,27 +1643,27 @@ inline void mission_proto_mission_operate_end::set_mission_slot(::google::protob
   mission_slot_ = value;
 }
 
-// repeated .hld.mission_proto.mission_info mission_array = 5;
+// repeated .faith.mission_proto.mission_info mission_array = 5;
 inline int mission_proto_mission_operate_end::mission_array_size() const {
   return mission_array_.size();
 }
 inline void mission_proto_mission_operate_end::clear_mission_array() {
   mission_array_.Clear();
 }
-inline const ::hld::mission_proto_mission_info& mission_proto_mission_operate_end::mission_array(int index) const {
+inline const ::faith::mission_proto_mission_info& mission_proto_mission_operate_end::mission_array(int index) const {
   return mission_array_.Get(index);
 }
-inline ::hld::mission_proto_mission_info* mission_proto_mission_operate_end::mutable_mission_array(int index) {
+inline ::faith::mission_proto_mission_info* mission_proto_mission_operate_end::mutable_mission_array(int index) {
   return mission_array_.Mutable(index);
 }
-inline ::hld::mission_proto_mission_info* mission_proto_mission_operate_end::add_mission_array() {
+inline ::faith::mission_proto_mission_info* mission_proto_mission_operate_end::add_mission_array() {
   return mission_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::mission_proto_mission_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::mission_proto_mission_info >&
 mission_proto_mission_operate_end::mission_array() const {
   return mission_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::mission_proto_mission_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::mission_proto_mission_info >*
 mission_proto_mission_operate_end::mutable_mission_array() {
   return &mission_array_;
 }
@@ -1948,7 +1948,7 @@ inline void mission_proto_use_power_up::set_power_up_type(::google::protobuf::in
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

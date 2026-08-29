@@ -16,7 +16,7 @@
 #include "chat.pb.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	team_ws::team_ws(e_team_type tm_type)
 	{
@@ -785,7 +785,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::sync_team_start_aim pro_msg;
+				faith::ws2cs_proto::sync_team_start_aim pro_msg;
 				sync_team_start_aim_msg.to_proto(pro_msg);
 				session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_sync_team_start_aim);
 			}
@@ -903,7 +903,7 @@ namespace hld
 		set_team_state(e_team_state_game);
 		set_ready_transfer_info(get_team_map_tempalte_id());
 
-		hld::team_proto_ready_to_transfer_team_end ready_transfer_team_end_msg;
+		faith::team_proto_ready_to_transfer_team_end ready_transfer_team_end_msg;
 		ready_transfer_team_end_msg.set_team_guid(team_guid.server_64);
 		ready_transfer_team_end_msg.set_sec(ready_transfer_sec);
 		send_message_to_all_member(&ready_transfer_team_end_msg, e_msgindex_s2c_ready_to_transfer_team_end);
@@ -964,7 +964,7 @@ namespace hld
 
 		//switch (m_team_type)
 		//{
-		//case hld::e_team_type_act_broken_sky:
+		//case faith::e_team_type_act_broken_sky:
 		//{
 		//	if (e_error_code_success != broken_sky_mgr::get_instance().is_can_join())
 		//	{
@@ -1041,7 +1041,7 @@ namespace hld
 				}
 				else
 				{
-					hld::ws2cs_proto::transfer_team_member_to_scene pro_msg;
+					faith::ws2cs_proto::transfer_team_member_to_scene pro_msg;
 					transfer_team_to_scene_msg.to_proto(pro_msg);
 					session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_transfer_team_member_to_scene);
 				}
@@ -1606,7 +1606,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::clear_player_team_info pro_msg;
+				faith::ws2cs_proto::clear_player_team_info pro_msg;
 				clear_player_team_info_msg.to_proto(pro_msg);
 				leave_member_session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_clear_player_team_info);
 			}
@@ -1661,7 +1661,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::set_player_team_info pro_msg;
+			faith::ws2cs_proto::set_player_team_info pro_msg;
 			set_player_team_info_msg.to_proto(pro_msg);
 			session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_set_player_team_info);
 		}
@@ -1794,7 +1794,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::apply_to_join_team pro_msg;
+			faith::ws2cs_proto::apply_to_join_team pro_msg;
 			app_join_team_msg.to_proto(pro_msg);
 			session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_apply_to_join_team);
 		}
@@ -1826,8 +1826,8 @@ namespace hld
 		}
 		switch (m_team_type)
 		{
-		case hld::e_team_type_mission_daily:
-		case hld::e_team_type_mission_against:
+		case faith::e_team_type_mission_daily:
+		case faith::e_team_type_mission_against:
 			return false;
 		default:
 			break;
@@ -2004,9 +2004,9 @@ namespace hld
 
 		if (is_first_join == true)
 		{
-			hld::chat_proto_invite_join_voice_channel msg;
+			faith::chat_proto_invite_join_voice_channel msg;
 			msg.set_role_guid(role_guid.server_64);
-			msg.set_channel_type(hld::e_chat_type_team);
+			msg.set_channel_type(faith::e_chat_type_team);
 			send_message_to_all_member_except(&msg, e_msgindex_s2c_invite_join_voice_channel, role_guid);
 		}
 		else
@@ -2016,8 +2016,8 @@ namespace hld
 			{
 				return;
 			}
-			hld::chat_proto_join_or_leave_voice_channel_notice msg;
-			msg.set_channel_type(hld::e_chat_type_team);
+			faith::chat_proto_join_or_leave_voice_channel_notice msg;
+			msg.set_channel_type(faith::e_chat_type_team);
 			msg.set_role_name(member_info->role_name);
 			msg.set_is_join(true);
 			send_message_to_all_member_except(&msg, e_msgindex_s2c_join_or_leave_voice_channel_notice, role_guid);
@@ -2039,8 +2039,8 @@ namespace hld
 
 		update_team_member_info_one(role_guid, ETeamMemberInfo_agora_id, 0, true);
 
-		hld::chat_proto_join_or_leave_voice_channel_notice msg;
-		msg.set_channel_type(hld::e_chat_type_team);
+		faith::chat_proto_join_or_leave_voice_channel_notice msg;
+		msg.set_channel_type(faith::e_chat_type_team);
 		msg.set_role_name(member_info->role_name);
 		msg.set_is_join(false);
 		send_message_to_all_member_except(&msg, e_msgindex_s2c_join_or_leave_voice_channel_notice, role_guid);

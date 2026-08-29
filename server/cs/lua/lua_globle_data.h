@@ -11,7 +11,7 @@
 #include "logic/type_def.hpp"
 #include "cell_server.hpp"
 
-namespace hld
+namespace faith
 {
 	class unit;
 	class npc;

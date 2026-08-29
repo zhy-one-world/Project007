@@ -12,7 +12,7 @@ purpose :
 #include <char_msg.hpp>
 #include <arena_msg.hpp>
 
-namespace hld
+namespace faith
 {
 	//¾º¼¼³¡
 	

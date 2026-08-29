@@ -8,7 +8,7 @@
 #include "relation.pb.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	person_infor_ws_mgr::person_infor_ws_mgr()
 	{
@@ -203,7 +203,7 @@ namespace hld
 			const auto& tmpVec = get_relation_person(role_guid);
 			if (tmpVec.empty())
 				return;
-			hld::relation_proto_s2c_ret_lucky_info_vec msg;
+			faith::relation_proto_s2c_ret_lucky_info_vec msg;
 			for (auto iter = tmpVec.begin(); iter != tmpVec.end(); ++iter)
 			{
 				client_session* tmp_session = client_session_mgr::getInstance().get_session(*iter);
@@ -237,7 +237,7 @@ namespace hld
 			client_session* tmp_session = client_session_mgr::getInstance().get_session(get_one_relation_person(role_guid));
 			if (nullptr != tmp_session && tmp_session->get_role_guid() != role_guid)
 			{
-				hld::relation_proto_s2c_ret_special_lucky_info msg;
+				faith::relation_proto_s2c_ret_special_lucky_info msg;
 				msg.set_role_guid_a(tmp_session->get_role_guid().A);
 				msg.set_role_guid_b(tmp_session->get_role_guid().B);
 				msg.set_role_name(tmp_session->m_role_info.role_name);
@@ -248,7 +248,7 @@ namespace hld
 				return;
 			}
 			session->send_notice("90096795");
-			hld::ws2cs_return_special_item_times ret_msg;
+			faith::ws2cs_return_special_item_times ret_msg;
 			ret_msg.target_guid = role_guid;
 			bool is_use = proto_by_lua(e_msgindex_ws2cs_return_special_item_times);
 			if (is_use == false)
@@ -257,7 +257,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::return_special_item_times pro_msg;
+				faith::ws2cs_proto::return_special_item_times pro_msg;
 				ret_msg.to_proto(pro_msg);
 				session->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_return_special_item_times);
 			}

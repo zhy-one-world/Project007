@@ -1,6 +1,6 @@
 #include "ActiveDegreeTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void ActiveDegreeTemplateSize()
     {

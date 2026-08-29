@@ -1,0 +1,100 @@
+syntax = "proto2";
+package hld;
+
+message assist_fight_proto
+{
+	message get_assist_fight_info
+	{
+	}
+	message sycn_assist_fight_info
+	{
+	    repeated assist_fight_info assist_fight_list = 1;
+		optional bool is_finish = 2;
+		optional bool is_login = 3;
+		optional bool is_sync = 4;
+	}
+	message assist_fight_info
+	{
+		optional int32 assist_fight_guid_a = 1;
+		optional int32 assist_fight_guid_b = 2;
+		optional string role_name = 3;
+		optional int32 role_lv = 4;
+		optional int32 role_professional= 5;
+		optional int32 map_id = 6;
+		optional int32 boss_id = 7;
+		optional int32 assist_fight_type = 8;//0军团  1 全服
+		optional int32 assist_fight_tag = 9;
+		optional int32 head_icon = 10;
+		optional int32 start_assist_time = 11;
+	}
+	message start_assist_fight
+	{
+		optional int32 assist_fight_type = 1;
+		optional int32 assist_fight_tag = 2;//0 boss  1 多人副本
+	}
+	
+	message req_assist_fight
+	{
+		optional int32 assist_fight_guid_a = 1;
+		optional int32 assist_fight_guid_b = 2;
+	}
+	
+	message cancel_assist_fight
+	{
+	}
+	message sync_assist_fight_state
+	{
+		optional int64 assist_fight_guid = 1;
+		optional string role_name = 2;
+		optional int32 role_lv = 3;
+		optional int32 role_professional= 4;
+		optional int32 map_id = 5;
+		optional int32 boss_id = 6;
+		optional int32 state = 7; //0 未助战 1-发起者  2-助战者
+		optional int32 head_icon = 8;
+		repeated int64 helper_list = 9;
+	}
+	message assist_fight_end_to_show_reward
+	{
+		optional int32 role_guid_a = 1;
+		optional int32 role_guid_b = 2;
+		repeated assist_helper_info helper_list = 3;
+		optional int32 reward_id1 = 4;
+		optional int32 reward_id2 = 5;
+		optional int32 map_id = 6;
+		repeated int32 drop_id_list = 7;
+		optional string first_name = 8;
+	}
+	message assist_fight_end_to_show_thank_reward
+	{
+		optional int32 role_guid_a = 1;
+		optional int32 role_guid_b = 2;
+		optional string role_name = 3;
+		optional int32 role_lv = 4;
+		optional int32 role_professional= 5;
+		optional int32 reward_id = 6;
+		optional int32 head_icon = 7;
+		optional string first_name = 8;
+		
+	}
+	message assist_helper_info
+	{
+		optional int32 role_guid_a = 1;
+		optional int32 role_guid_b = 2;
+		optional string role_name = 3;
+		optional int32 role_professional = 4;
+		optional int32 role_lv = 5;
+		optional int32 head_icon = 6;
+	}
+	message create_assist_fight_npc
+	{
+	}
+	message send_be_assist_fight_tip
+	{
+		optional string role_name = 1;
+		optional int32 head_icon = 2;
+		optional bool is_master = 3;
+	}
+	
+	
+}

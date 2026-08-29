@@ -11,7 +11,7 @@ purpose:
 #ifndef _MISC_DEF_HPP_
 #define _MISC_DEF_HPP_
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	const int32 regular_notification_max_count = 1;		//定时推送最大次数

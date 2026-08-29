@@ -3,7 +3,7 @@
 #include "logic/type_def.hpp"
 #include "template/BrushStrangeTemplate_S.h"
 
-namespace hld
+namespace faith
 {
 	struct award_map_component
 	{

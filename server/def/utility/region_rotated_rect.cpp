@@ -1,7 +1,7 @@
 
 #include "region_rotated_rect.hpp"
 
-namespace hld
+namespace faith
 {
     region_rotated_rect::region_rotated_rect()
     {

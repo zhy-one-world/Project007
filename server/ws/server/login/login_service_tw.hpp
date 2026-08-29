@@ -17,7 +17,7 @@
 #include <login_msg.hpp>
 #include <net.pb.h>
 
-namespace hld
+namespace faith
 {
 	class login_service_tw : public login_service , public singleton<login_service_tw>
 	{

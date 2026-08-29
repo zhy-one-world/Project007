@@ -11,7 +11,7 @@
 #include <psapi.h>    
 #pragma comment(lib,"psapi.lib")
 
-namespace hld 
+namespace faith 
 {
 
 	void server_data::heart_tick(int64& tick_time, xstring server_name, int64 other_data)

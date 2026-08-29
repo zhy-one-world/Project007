@@ -6,7 +6,7 @@
 #include "../cache_ws_mgr.hpp"
 #include "lua/script_mgr.h"
 
-namespace hld
+namespace faith
 {
 	legion_ws_applicant_list::legion_ws_applicant_list()
 	{

@@ -12,7 +12,7 @@
 
 #include "../server/client_session.hpp"
 
-namespace hld
+namespace faith
 {
 	void c2fep_logout(uint32 array_index, const void *data_ptr, size_t data_len);
 	void c2fep_create_character(uint32 array_index, const void *data_ptr, size_t data_len);

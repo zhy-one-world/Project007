@@ -3,7 +3,7 @@
 #include "logic/type_def.hpp"
 #include "template/FlipBoxTemplate_S.h"
 
-namespace hld
+namespace faith
 {
 	struct flip_box_component
 	{

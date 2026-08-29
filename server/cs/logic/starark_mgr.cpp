@@ -14,7 +14,7 @@
 
 
 
-namespace hld
+namespace faith
 {
 	/////////////////////////////////////////////////////////////
 	my_iterator::my_iterator(int32 step, s_starark_memory_info *p_array)

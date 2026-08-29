@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -612,7 +612,7 @@ void protobuf_AddDesc_cross_5fladder_2eproto() {
     "me_state\030\001 \001(\005\022\026\n\016state_end_time\030\002 \001(\005\022\020"
     "\n\010cur_turn\030\003 \001(\005\022\025\n\rwinner_guid_A\030\004 \001(\005\022"
     "\025\n\rwinner_guid_B\030\005 \001(\005\0225\n\nmember_vec\030\006 \003"
-    "(\0132!.hld.cross_ladder.map_member_info\032#\n"
+    "(\0132!.faith.cross_ladder.map_member_info\032#\n"
     "\022req_mission_reward\022\r\n\005index\030\001 \001(\005\0323\n\022re"
     "t_mission_reward\022\r\n\005index\030\001 \001(\005\022\016\n\006resul"
     "t\030\002 \001(\005\032\026\n\024get_role_competition\032\205\002\n\025sync"
@@ -3043,7 +3043,7 @@ bool cross_ladder_update_map_game_state::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cross_ladder.map_member_info member_vec = 6;
+      // repeated .faith.cross_ladder.map_member_info member_vec = 6;
       case 6: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -3101,7 +3101,7 @@ void cross_ladder_update_map_game_state::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->winner_guid_b(), output);
   }
 
-  // repeated .hld.cross_ladder.map_member_info member_vec = 6;
+  // repeated .faith.cross_ladder.map_member_info member_vec = 6;
   for (int i = 0; i < this->member_vec_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       6, this->member_vec(i), output);
@@ -3140,7 +3140,7 @@ void cross_ladder_update_map_game_state::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->winner_guid_b(), target);
   }
 
-  // repeated .hld.cross_ladder.map_member_info member_vec = 6;
+  // repeated .faith.cross_ladder.map_member_info member_vec = 6;
   for (int i = 0; i < this->member_vec_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -3194,7 +3194,7 @@ int cross_ladder_update_map_game_state::ByteSize() const {
     }
 
   }
-  // repeated .hld.cross_ladder.map_member_info member_vec = 6;
+  // repeated .faith.cross_ladder.map_member_info member_vec = 6;
   total_size += 1 * this->member_vec_size();
   for (int i = 0; i < this->member_vec_size(); i++) {
     total_size +=
@@ -6673,6 +6673,6 @@ void cross_ladder::Swap(cross_ladder* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

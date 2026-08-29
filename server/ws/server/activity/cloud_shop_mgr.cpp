@@ -16,7 +16,7 @@
 #include "server/mail/mail_event_ws.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	cloud_shop_mgr::cloud_shop_mgr()
 	{
@@ -91,15 +91,15 @@ namespace hld
 		e_time_limit_activity_type activity_type = time_limit_activity_ws_mgr::get_instance().get_can_begin_cloud_shop_type_in_this_server();
 		switch (req_type)
 		{
-		case hld::e_client_req_type_info:
+		case faith::e_client_req_type_info:
 		{
 			cloud_shop_proto_cloud_shop_resp resp_msg;
 			get_activity_info(activity_type, resp_msg, role_guid);
 			client_session_mgr::getInstance().send_msg_to_cross_player(&resp_msg, sender_server_id, role_guid, e_msgindex_s2c_cloud_shop_resp);
 		}
 		break;
-		case hld::e_client_req_type_buy:
-		case hld::e_client_req_type_robber:
+		case faith::e_client_req_type_buy:
+		case faith::e_client_req_type_robber:
 		{	
 			if (is_in_sell_time((e_client_req_type)req_type, activity_type))
 			{
@@ -150,15 +150,15 @@ namespace hld
 			e_time_limit_activity_type activity_type = time_limit_activity_ws_mgr::get_instance().get_can_begin_cloud_shop_type_in_this_server();
 			switch (req_type)
 			{
-				case hld::e_client_req_type_info:
+				case faith::e_client_req_type_info:
 				{
 					cloud_shop_proto_cloud_shop_resp resp_msg;
 					get_activity_info(activity_type, resp_msg, role_guid);
 					pSession->send_to_client(&resp_msg, e_msgindex_s2c_cloud_shop_resp);
 				}
 					break;
-				case hld::e_client_req_type_buy:
-				case hld::e_client_req_type_robber:
+				case faith::e_client_req_type_buy:
+				case faith::e_client_req_type_robber:
 				{
 					if (is_in_sell_time((e_client_req_type)req_type, activity_type))
 					{
@@ -486,7 +486,7 @@ namespace hld
 					}
 					else
 					{
-						hld::ws2cs_proto::cloud_shop_buy_req pro_msg;
+						faith::ws2cs_proto::cloud_shop_buy_req pro_msg;
 						req.to_proto(pro_msg);
 						pSession->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_cloud_shop_buy_req);
 					}

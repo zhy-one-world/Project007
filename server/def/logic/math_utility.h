@@ -3,7 +3,7 @@
 #ifndef __MATH_UTILITY_H__
 #define __MATH_UTILITY_H__
 
-namespace hld
+namespace faith
 {
 	namespace math
 	{

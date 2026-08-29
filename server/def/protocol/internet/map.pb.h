@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_map_2eproto();
@@ -129,34 +129,34 @@ class map_s2s_map_record : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 map_template_id() const;
   inline void set_map_template_id(::google::protobuf::int32 value);
 
-  // optional .hld.map_s2s.box_map_info box_map_data = 2;
+  // optional .faith.map_s2s.box_map_info box_map_data = 2;
   inline bool has_box_map_data() const;
   inline void clear_box_map_data();
   static const int kBoxMapDataFieldNumber = 2;
-  inline const ::hld::map_s2s_box_map_info& box_map_data() const;
-  inline ::hld::map_s2s_box_map_info* mutable_box_map_data();
-  inline ::hld::map_s2s_box_map_info* release_box_map_data();
-  inline void set_allocated_box_map_data(::hld::map_s2s_box_map_info* box_map_data);
+  inline const ::faith::map_s2s_box_map_info& box_map_data() const;
+  inline ::faith::map_s2s_box_map_info* mutable_box_map_data();
+  inline ::faith::map_s2s_box_map_info* release_box_map_data();
+  inline void set_allocated_box_map_data(::faith::map_s2s_box_map_info* box_map_data);
 
-  // optional .hld.map_s2s.element_map_info element_map_data = 3;
+  // optional .faith.map_s2s.element_map_info element_map_data = 3;
   inline bool has_element_map_data() const;
   inline void clear_element_map_data();
   static const int kElementMapDataFieldNumber = 3;
-  inline const ::hld::map_s2s_element_map_info& element_map_data() const;
-  inline ::hld::map_s2s_element_map_info* mutable_element_map_data();
-  inline ::hld::map_s2s_element_map_info* release_element_map_data();
-  inline void set_allocated_element_map_data(::hld::map_s2s_element_map_info* element_map_data);
+  inline const ::faith::map_s2s_element_map_info& element_map_data() const;
+  inline ::faith::map_s2s_element_map_info* mutable_element_map_data();
+  inline ::faith::map_s2s_element_map_info* release_element_map_data();
+  inline void set_allocated_element_map_data(::faith::map_s2s_element_map_info* element_map_data);
 
-  // optional .hld.map_s2s.battle_map_info battle_map_data = 4;
+  // optional .faith.map_s2s.battle_map_info battle_map_data = 4;
   inline bool has_battle_map_data() const;
   inline void clear_battle_map_data();
   static const int kBattleMapDataFieldNumber = 4;
-  inline const ::hld::map_s2s_battle_map_info& battle_map_data() const;
-  inline ::hld::map_s2s_battle_map_info* mutable_battle_map_data();
-  inline ::hld::map_s2s_battle_map_info* release_battle_map_data();
-  inline void set_allocated_battle_map_data(::hld::map_s2s_battle_map_info* battle_map_data);
+  inline const ::faith::map_s2s_battle_map_info& battle_map_data() const;
+  inline ::faith::map_s2s_battle_map_info* mutable_battle_map_data();
+  inline ::faith::map_s2s_battle_map_info* release_battle_map_data();
+  inline void set_allocated_battle_map_data(::faith::map_s2s_battle_map_info* battle_map_data);
 
-  // @@protoc_insertion_point(class_scope:hld.map_s2s.map_record)
+  // @@protoc_insertion_point(class_scope:faith.map_s2s.map_record)
  private:
   inline void set_has_map_template_id();
   inline void clear_has_map_template_id();
@@ -169,9 +169,9 @@ class map_s2s_map_record : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::map_s2s_box_map_info* box_map_data_;
-  ::hld::map_s2s_element_map_info* element_map_data_;
-  ::hld::map_s2s_battle_map_info* battle_map_data_;
+  ::faith::map_s2s_box_map_info* box_map_data_;
+  ::faith::map_s2s_element_map_info* element_map_data_;
+  ::faith::map_s2s_battle_map_info* battle_map_data_;
   ::google::protobuf::int32 map_template_id_;
 
   mutable int _cached_size_;
@@ -240,24 +240,24 @@ class map_s2s_sl_map_record : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.map_s2s.map_record map_record_list = 1;
+  // repeated .faith.map_s2s.map_record map_record_list = 1;
   inline int map_record_list_size() const;
   inline void clear_map_record_list();
   static const int kMapRecordListFieldNumber = 1;
-  inline const ::hld::map_s2s_map_record& map_record_list(int index) const;
-  inline ::hld::map_s2s_map_record* mutable_map_record_list(int index);
-  inline ::hld::map_s2s_map_record* add_map_record_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::map_s2s_map_record >&
+  inline const ::faith::map_s2s_map_record& map_record_list(int index) const;
+  inline ::faith::map_s2s_map_record* mutable_map_record_list(int index);
+  inline ::faith::map_s2s_map_record* add_map_record_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::map_s2s_map_record >&
       map_record_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::map_s2s_map_record >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::map_s2s_map_record >*
       mutable_map_record_list();
 
-  // @@protoc_insertion_point(class_scope:hld.map_s2s.sl_map_record)
+  // @@protoc_insertion_point(class_scope:faith.map_s2s.sl_map_record)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::map_s2s_map_record > map_record_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::map_s2s_map_record > map_record_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -339,7 +339,7 @@ class map_s2s_box_map_info_npc_point_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 spawn_point_id() const;
   inline void set_spawn_point_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.map_s2s.box_map_info.npc_point_info)
+  // @@protoc_insertion_point(class_scope:faith.map_s2s.box_map_info.npc_point_info)
  private:
   inline void set_has_npc_id();
   inline void clear_has_npc_id();
@@ -448,7 +448,7 @@ class map_s2s_box_map_info_flip_box : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 flip_box_id() const;
   inline void set_flip_box_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.map_s2s.box_map_info.flip_box)
+  // @@protoc_insertion_point(class_scope:faith.map_s2s.box_map_info.flip_box)
  private:
   inline void set_has_flip_box_id();
   inline void clear_has_flip_box_id();
@@ -540,28 +540,28 @@ class map_s2s_box_map_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // repeated .hld.map_s2s.box_map_info.npc_point_info npc_point_array = 2;
+  // repeated .faith.map_s2s.box_map_info.npc_point_info npc_point_array = 2;
   inline int npc_point_array_size() const;
   inline void clear_npc_point_array();
   static const int kNpcPointArrayFieldNumber = 2;
-  inline const ::hld::map_s2s_box_map_info_npc_point_info& npc_point_array(int index) const;
-  inline ::hld::map_s2s_box_map_info_npc_point_info* mutable_npc_point_array(int index);
-  inline ::hld::map_s2s_box_map_info_npc_point_info* add_npc_point_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::map_s2s_box_map_info_npc_point_info >&
+  inline const ::faith::map_s2s_box_map_info_npc_point_info& npc_point_array(int index) const;
+  inline ::faith::map_s2s_box_map_info_npc_point_info* mutable_npc_point_array(int index);
+  inline ::faith::map_s2s_box_map_info_npc_point_info* add_npc_point_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::map_s2s_box_map_info_npc_point_info >&
       npc_point_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::map_s2s_box_map_info_npc_point_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::map_s2s_box_map_info_npc_point_info >*
       mutable_npc_point_array();
 
-  // optional .hld.map_s2s.box_map_info.flip_box flip_box_info = 3;
+  // optional .faith.map_s2s.box_map_info.flip_box flip_box_info = 3;
   inline bool has_flip_box_info() const;
   inline void clear_flip_box_info();
   static const int kFlipBoxInfoFieldNumber = 3;
-  inline const ::hld::map_s2s_box_map_info_flip_box& flip_box_info() const;
-  inline ::hld::map_s2s_box_map_info_flip_box* mutable_flip_box_info();
-  inline ::hld::map_s2s_box_map_info_flip_box* release_flip_box_info();
-  inline void set_allocated_flip_box_info(::hld::map_s2s_box_map_info_flip_box* flip_box_info);
+  inline const ::faith::map_s2s_box_map_info_flip_box& flip_box_info() const;
+  inline ::faith::map_s2s_box_map_info_flip_box* mutable_flip_box_info();
+  inline ::faith::map_s2s_box_map_info_flip_box* release_flip_box_info();
+  inline void set_allocated_flip_box_info(::faith::map_s2s_box_map_info_flip_box* flip_box_info);
 
-  // @@protoc_insertion_point(class_scope:hld.map_s2s.box_map_info)
+  // @@protoc_insertion_point(class_scope:faith.map_s2s.box_map_info)
  private:
   inline void set_has_flip_box_info();
   inline void clear_has_flip_box_info();
@@ -569,8 +569,8 @@ class map_s2s_box_map_info : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > data_array_;
-  ::google::protobuf::RepeatedPtrField< ::hld::map_s2s_box_map_info_npc_point_info > npc_point_array_;
-  ::hld::map_s2s_box_map_info_flip_box* flip_box_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::map_s2s_box_map_info_npc_point_info > npc_point_array_;
+  ::faith::map_s2s_box_map_info_flip_box* flip_box_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(3 + 31) / 32];
@@ -650,7 +650,7 @@ class map_s2s_element_map_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.map_s2s.element_map_info)
+  // @@protoc_insertion_point(class_scope:faith.map_s2s.element_map_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -735,7 +735,7 @@ class map_s2s_battle_map_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.map_s2s.battle_map_info)
+  // @@protoc_insertion_point(class_scope:faith.map_s2s.battle_map_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -814,7 +814,7 @@ class map_s2s : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.map_s2s)
+  // @@protoc_insertion_point(class_scope:faith.map_s2s)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -898,7 +898,7 @@ class map_element_map_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.map.element_map_info)
+  // @@protoc_insertion_point(class_scope:faith.map.element_map_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -983,7 +983,7 @@ class map_battle_map_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.map.battle_map_info)
+  // @@protoc_insertion_point(class_scope:faith.map.battle_map_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1063,25 +1063,25 @@ class map_s2c_map_record : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 map_template_id() const;
   inline void set_map_template_id(::google::protobuf::int32 value);
 
-  // optional .hld.map.element_map_info element_map_data = 2;
+  // optional .faith.map.element_map_info element_map_data = 2;
   inline bool has_element_map_data() const;
   inline void clear_element_map_data();
   static const int kElementMapDataFieldNumber = 2;
-  inline const ::hld::map_element_map_info& element_map_data() const;
-  inline ::hld::map_element_map_info* mutable_element_map_data();
-  inline ::hld::map_element_map_info* release_element_map_data();
-  inline void set_allocated_element_map_data(::hld::map_element_map_info* element_map_data);
+  inline const ::faith::map_element_map_info& element_map_data() const;
+  inline ::faith::map_element_map_info* mutable_element_map_data();
+  inline ::faith::map_element_map_info* release_element_map_data();
+  inline void set_allocated_element_map_data(::faith::map_element_map_info* element_map_data);
 
-  // optional .hld.map.battle_map_info battle_map_data = 3;
+  // optional .faith.map.battle_map_info battle_map_data = 3;
   inline bool has_battle_map_data() const;
   inline void clear_battle_map_data();
   static const int kBattleMapDataFieldNumber = 3;
-  inline const ::hld::map_battle_map_info& battle_map_data() const;
-  inline ::hld::map_battle_map_info* mutable_battle_map_data();
-  inline ::hld::map_battle_map_info* release_battle_map_data();
-  inline void set_allocated_battle_map_data(::hld::map_battle_map_info* battle_map_data);
+  inline const ::faith::map_battle_map_info& battle_map_data() const;
+  inline ::faith::map_battle_map_info* mutable_battle_map_data();
+  inline ::faith::map_battle_map_info* release_battle_map_data();
+  inline void set_allocated_battle_map_data(::faith::map_battle_map_info* battle_map_data);
 
-  // @@protoc_insertion_point(class_scope:hld.map.s2c_map_record)
+  // @@protoc_insertion_point(class_scope:faith.map.s2c_map_record)
  private:
   inline void set_has_map_template_id();
   inline void clear_has_map_template_id();
@@ -1092,8 +1092,8 @@ class map_s2c_map_record : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::map_element_map_info* element_map_data_;
-  ::hld::map_battle_map_info* battle_map_data_;
+  ::faith::map_element_map_info* element_map_data_;
+  ::faith::map_battle_map_info* battle_map_data_;
   ::google::protobuf::int32 map_template_id_;
 
   mutable int _cached_size_;
@@ -1162,16 +1162,16 @@ class map_s2c_map_record_all : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.map.s2c_map_record map_record_array = 1;
+  // repeated .faith.map.s2c_map_record map_record_array = 1;
   inline int map_record_array_size() const;
   inline void clear_map_record_array();
   static const int kMapRecordArrayFieldNumber = 1;
-  inline const ::hld::map_s2c_map_record& map_record_array(int index) const;
-  inline ::hld::map_s2c_map_record* mutable_map_record_array(int index);
-  inline ::hld::map_s2c_map_record* add_map_record_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::map_s2c_map_record >&
+  inline const ::faith::map_s2c_map_record& map_record_array(int index) const;
+  inline ::faith::map_s2c_map_record* mutable_map_record_array(int index);
+  inline ::faith::map_s2c_map_record* add_map_record_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::map_s2c_map_record >&
       map_record_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::map_s2c_map_record >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::map_s2c_map_record >*
       mutable_map_record_array();
 
   // optional int32 is_end_record = 2;
@@ -1181,14 +1181,14 @@ class map_s2c_map_record_all : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 is_end_record() const;
   inline void set_is_end_record(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.map.s2c_map_record_all)
+  // @@protoc_insertion_point(class_scope:faith.map.s2c_map_record_all)
  private:
   inline void set_has_is_end_record();
   inline void clear_has_is_end_record();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::map_s2c_map_record > map_record_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::map_s2c_map_record > map_record_array_;
   ::google::protobuf::int32 is_end_record_;
 
   mutable int _cached_size_;
@@ -1264,7 +1264,7 @@ class map_c2s_get_npc_award : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 npc_index() const;
   inline void set_npc_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.map.c2s_get_npc_award)
+  // @@protoc_insertion_point(class_scope:faith.map.c2s_get_npc_award)
  private:
   inline void set_has_npc_index();
   inline void clear_has_npc_index();
@@ -1372,7 +1372,7 @@ class map_s2c_get_npc_award_end : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_treasure_select_list();
 
-  // @@protoc_insertion_point(class_scope:hld.map.s2c_get_npc_award_end)
+  // @@protoc_insertion_point(class_scope:faith.map.s2c_get_npc_award_end)
  private:
   inline void set_has_award_type();
   inline void clear_has_award_type();
@@ -1461,7 +1461,7 @@ class map_c2s_kill_award_npc : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 npc_index() const;
   inline void set_npc_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.map.c2s_kill_award_npc)
+  // @@protoc_insertion_point(class_scope:faith.map.c2s_kill_award_npc)
  private:
   inline void set_has_npc_index();
   inline void clear_has_npc_index();
@@ -1548,7 +1548,7 @@ class map_s2c_kill_award_npc_end : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_npc_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.map.s2c_kill_award_npc_end)
+  // @@protoc_insertion_point(class_scope:faith.map.s2c_kill_award_npc_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1635,7 +1635,7 @@ class map_c2s_get_treasure_award : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 treasure_index() const;
   inline void set_treasure_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.map.c2s_get_treasure_award)
+  // @@protoc_insertion_point(class_scope:faith.map.c2s_get_treasure_award)
  private:
   inline void set_has_npc_index();
   inline void clear_has_npc_index();
@@ -1713,7 +1713,7 @@ class map_s2c_get_treasure_award_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.map.s2c_get_treasure_award_end)
+  // @@protoc_insertion_point(class_scope:faith.map.s2c_get_treasure_award_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1785,7 +1785,7 @@ class map_c2s_open_treasure_pic : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.map.c2s_open_treasure_pic)
+  // @@protoc_insertion_point(class_scope:faith.map.c2s_open_treasure_pic)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1864,7 +1864,7 @@ class map_s2c_map_settlement : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 next_map_id() const;
   inline void set_next_map_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.map.s2c_map_settlement)
+  // @@protoc_insertion_point(class_scope:faith.map.s2c_map_settlement)
  private:
   inline void set_has_next_map_id();
   inline void clear_has_next_map_id();
@@ -1939,7 +1939,7 @@ class map_c2s_map_anim_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.map.c2s_map_anim_end)
+  // @@protoc_insertion_point(class_scope:faith.map.c2s_map_anim_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2018,7 +2018,7 @@ class map_s2c_map_anim_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 next_map_id() const;
   inline void set_next_map_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.map.s2c_map_anim_end)
+  // @@protoc_insertion_point(class_scope:faith.map.s2c_map_anim_end)
  private:
   inline void set_has_next_map_id();
   inline void clear_has_next_map_id();
@@ -2093,7 +2093,7 @@ class map_c2s_refrush_award_npc : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.map.c2s_refrush_award_npc)
+  // @@protoc_insertion_point(class_scope:faith.map.c2s_refrush_award_npc)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2165,7 +2165,7 @@ class map_c2s_search_award_npc : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.map.c2s_search_award_npc)
+  // @@protoc_insertion_point(class_scope:faith.map.c2s_search_award_npc)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2244,7 +2244,7 @@ class map_s2c_search_award_npc_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 npc_guid() const;
   inline void set_npc_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.map.s2c_search_award_npc_end)
+  // @@protoc_insertion_point(class_scope:faith.map.s2c_search_award_npc_end)
  private:
   inline void set_has_npc_guid();
   inline void clear_has_npc_guid();
@@ -2326,7 +2326,7 @@ class map_s2c_wave_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 wave_index() const;
   inline void set_wave_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.map.s2c_wave_info)
+  // @@protoc_insertion_point(class_scope:faith.map.s2c_wave_info)
  private:
   inline void set_has_wave_index();
   inline void clear_has_wave_index();
@@ -2401,7 +2401,7 @@ class map_s2c_element_map_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.map.s2c_element_map_end)
+  // @@protoc_insertion_point(class_scope:faith.map.s2c_element_map_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2504,7 +2504,7 @@ class map_s2c_flip_box_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 flip_box_id() const;
   inline void set_flip_box_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.map.s2c_flip_box_info)
+  // @@protoc_insertion_point(class_scope:faith.map.s2c_flip_box_info)
  private:
   inline void set_has_flip_box_id();
   inline void clear_has_flip_box_id();
@@ -2588,7 +2588,7 @@ class map_c2s_flip_box_open : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 open_index() const;
   inline void set_open_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.map.c2s_flip_box_open)
+  // @@protoc_insertion_point(class_scope:faith.map.c2s_flip_box_open)
  private:
   inline void set_has_open_index();
   inline void clear_has_open_index();
@@ -2670,7 +2670,7 @@ class map_s2c_flip_box_open_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 open_index() const;
   inline void set_open_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.map.s2c_flip_box_open_end)
+  // @@protoc_insertion_point(class_scope:faith.map.s2c_flip_box_open_end)
  private:
   inline void set_has_open_index();
   inline void clear_has_open_index();
@@ -2752,7 +2752,7 @@ class map_c2s_mop_up_map : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 map_id() const;
   inline void set_map_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.map.c2s_mop_up_map)
+  // @@protoc_insertion_point(class_scope:faith.map.c2s_mop_up_map)
  private:
   inline void set_has_map_id();
   inline void clear_has_map_id();
@@ -2851,7 +2851,7 @@ class map : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.map)
+  // @@protoc_insertion_point(class_scope:faith.map)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2896,7 +2896,7 @@ inline void map_s2s_map_record::set_map_template_id(::google::protobuf::int32 va
   map_template_id_ = value;
 }
 
-// optional .hld.map_s2s.box_map_info box_map_data = 2;
+// optional .faith.map_s2s.box_map_info box_map_data = 2;
 inline bool map_s2s_map_record::has_box_map_data() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -2907,24 +2907,24 @@ inline void map_s2s_map_record::clear_has_box_map_data() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void map_s2s_map_record::clear_box_map_data() {
-  if (box_map_data_ != NULL) box_map_data_->::hld::map_s2s_box_map_info::Clear();
+  if (box_map_data_ != NULL) box_map_data_->::faith::map_s2s_box_map_info::Clear();
   clear_has_box_map_data();
 }
-inline const ::hld::map_s2s_box_map_info& map_s2s_map_record::box_map_data() const {
+inline const ::faith::map_s2s_box_map_info& map_s2s_map_record::box_map_data() const {
   return box_map_data_ != NULL ? *box_map_data_ : *default_instance_->box_map_data_;
 }
-inline ::hld::map_s2s_box_map_info* map_s2s_map_record::mutable_box_map_data() {
+inline ::faith::map_s2s_box_map_info* map_s2s_map_record::mutable_box_map_data() {
   set_has_box_map_data();
-  if (box_map_data_ == NULL) box_map_data_ = new ::hld::map_s2s_box_map_info;
+  if (box_map_data_ == NULL) box_map_data_ = new ::faith::map_s2s_box_map_info;
   return box_map_data_;
 }
-inline ::hld::map_s2s_box_map_info* map_s2s_map_record::release_box_map_data() {
+inline ::faith::map_s2s_box_map_info* map_s2s_map_record::release_box_map_data() {
   clear_has_box_map_data();
-  ::hld::map_s2s_box_map_info* temp = box_map_data_;
+  ::faith::map_s2s_box_map_info* temp = box_map_data_;
   box_map_data_ = NULL;
   return temp;
 }
-inline void map_s2s_map_record::set_allocated_box_map_data(::hld::map_s2s_box_map_info* box_map_data) {
+inline void map_s2s_map_record::set_allocated_box_map_data(::faith::map_s2s_box_map_info* box_map_data) {
   delete box_map_data_;
   box_map_data_ = box_map_data;
   if (box_map_data) {
@@ -2934,7 +2934,7 @@ inline void map_s2s_map_record::set_allocated_box_map_data(::hld::map_s2s_box_ma
   }
 }
 
-// optional .hld.map_s2s.element_map_info element_map_data = 3;
+// optional .faith.map_s2s.element_map_info element_map_data = 3;
 inline bool map_s2s_map_record::has_element_map_data() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -2945,24 +2945,24 @@ inline void map_s2s_map_record::clear_has_element_map_data() {
   _has_bits_[0] &= ~0x00000004u;
 }
 inline void map_s2s_map_record::clear_element_map_data() {
-  if (element_map_data_ != NULL) element_map_data_->::hld::map_s2s_element_map_info::Clear();
+  if (element_map_data_ != NULL) element_map_data_->::faith::map_s2s_element_map_info::Clear();
   clear_has_element_map_data();
 }
-inline const ::hld::map_s2s_element_map_info& map_s2s_map_record::element_map_data() const {
+inline const ::faith::map_s2s_element_map_info& map_s2s_map_record::element_map_data() const {
   return element_map_data_ != NULL ? *element_map_data_ : *default_instance_->element_map_data_;
 }
-inline ::hld::map_s2s_element_map_info* map_s2s_map_record::mutable_element_map_data() {
+inline ::faith::map_s2s_element_map_info* map_s2s_map_record::mutable_element_map_data() {
   set_has_element_map_data();
-  if (element_map_data_ == NULL) element_map_data_ = new ::hld::map_s2s_element_map_info;
+  if (element_map_data_ == NULL) element_map_data_ = new ::faith::map_s2s_element_map_info;
   return element_map_data_;
 }
-inline ::hld::map_s2s_element_map_info* map_s2s_map_record::release_element_map_data() {
+inline ::faith::map_s2s_element_map_info* map_s2s_map_record::release_element_map_data() {
   clear_has_element_map_data();
-  ::hld::map_s2s_element_map_info* temp = element_map_data_;
+  ::faith::map_s2s_element_map_info* temp = element_map_data_;
   element_map_data_ = NULL;
   return temp;
 }
-inline void map_s2s_map_record::set_allocated_element_map_data(::hld::map_s2s_element_map_info* element_map_data) {
+inline void map_s2s_map_record::set_allocated_element_map_data(::faith::map_s2s_element_map_info* element_map_data) {
   delete element_map_data_;
   element_map_data_ = element_map_data;
   if (element_map_data) {
@@ -2972,7 +2972,7 @@ inline void map_s2s_map_record::set_allocated_element_map_data(::hld::map_s2s_el
   }
 }
 
-// optional .hld.map_s2s.battle_map_info battle_map_data = 4;
+// optional .faith.map_s2s.battle_map_info battle_map_data = 4;
 inline bool map_s2s_map_record::has_battle_map_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -2983,24 +2983,24 @@ inline void map_s2s_map_record::clear_has_battle_map_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void map_s2s_map_record::clear_battle_map_data() {
-  if (battle_map_data_ != NULL) battle_map_data_->::hld::map_s2s_battle_map_info::Clear();
+  if (battle_map_data_ != NULL) battle_map_data_->::faith::map_s2s_battle_map_info::Clear();
   clear_has_battle_map_data();
 }
-inline const ::hld::map_s2s_battle_map_info& map_s2s_map_record::battle_map_data() const {
+inline const ::faith::map_s2s_battle_map_info& map_s2s_map_record::battle_map_data() const {
   return battle_map_data_ != NULL ? *battle_map_data_ : *default_instance_->battle_map_data_;
 }
-inline ::hld::map_s2s_battle_map_info* map_s2s_map_record::mutable_battle_map_data() {
+inline ::faith::map_s2s_battle_map_info* map_s2s_map_record::mutable_battle_map_data() {
   set_has_battle_map_data();
-  if (battle_map_data_ == NULL) battle_map_data_ = new ::hld::map_s2s_battle_map_info;
+  if (battle_map_data_ == NULL) battle_map_data_ = new ::faith::map_s2s_battle_map_info;
   return battle_map_data_;
 }
-inline ::hld::map_s2s_battle_map_info* map_s2s_map_record::release_battle_map_data() {
+inline ::faith::map_s2s_battle_map_info* map_s2s_map_record::release_battle_map_data() {
   clear_has_battle_map_data();
-  ::hld::map_s2s_battle_map_info* temp = battle_map_data_;
+  ::faith::map_s2s_battle_map_info* temp = battle_map_data_;
   battle_map_data_ = NULL;
   return temp;
 }
-inline void map_s2s_map_record::set_allocated_battle_map_data(::hld::map_s2s_battle_map_info* battle_map_data) {
+inline void map_s2s_map_record::set_allocated_battle_map_data(::faith::map_s2s_battle_map_info* battle_map_data) {
   delete battle_map_data_;
   battle_map_data_ = battle_map_data;
   if (battle_map_data) {
@@ -3014,27 +3014,27 @@ inline void map_s2s_map_record::set_allocated_battle_map_data(::hld::map_s2s_bat
 
 // map_s2s_sl_map_record
 
-// repeated .hld.map_s2s.map_record map_record_list = 1;
+// repeated .faith.map_s2s.map_record map_record_list = 1;
 inline int map_s2s_sl_map_record::map_record_list_size() const {
   return map_record_list_.size();
 }
 inline void map_s2s_sl_map_record::clear_map_record_list() {
   map_record_list_.Clear();
 }
-inline const ::hld::map_s2s_map_record& map_s2s_sl_map_record::map_record_list(int index) const {
+inline const ::faith::map_s2s_map_record& map_s2s_sl_map_record::map_record_list(int index) const {
   return map_record_list_.Get(index);
 }
-inline ::hld::map_s2s_map_record* map_s2s_sl_map_record::mutable_map_record_list(int index) {
+inline ::faith::map_s2s_map_record* map_s2s_sl_map_record::mutable_map_record_list(int index) {
   return map_record_list_.Mutable(index);
 }
-inline ::hld::map_s2s_map_record* map_s2s_sl_map_record::add_map_record_list() {
+inline ::faith::map_s2s_map_record* map_s2s_sl_map_record::add_map_record_list() {
   return map_record_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::map_s2s_map_record >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::map_s2s_map_record >&
 map_s2s_sl_map_record::map_record_list() const {
   return map_record_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::map_s2s_map_record >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::map_s2s_map_record >*
 map_s2s_sl_map_record::mutable_map_record_list() {
   return &map_record_list_;
 }
@@ -3192,32 +3192,32 @@ map_s2s_box_map_info::mutable_data_array() {
   return &data_array_;
 }
 
-// repeated .hld.map_s2s.box_map_info.npc_point_info npc_point_array = 2;
+// repeated .faith.map_s2s.box_map_info.npc_point_info npc_point_array = 2;
 inline int map_s2s_box_map_info::npc_point_array_size() const {
   return npc_point_array_.size();
 }
 inline void map_s2s_box_map_info::clear_npc_point_array() {
   npc_point_array_.Clear();
 }
-inline const ::hld::map_s2s_box_map_info_npc_point_info& map_s2s_box_map_info::npc_point_array(int index) const {
+inline const ::faith::map_s2s_box_map_info_npc_point_info& map_s2s_box_map_info::npc_point_array(int index) const {
   return npc_point_array_.Get(index);
 }
-inline ::hld::map_s2s_box_map_info_npc_point_info* map_s2s_box_map_info::mutable_npc_point_array(int index) {
+inline ::faith::map_s2s_box_map_info_npc_point_info* map_s2s_box_map_info::mutable_npc_point_array(int index) {
   return npc_point_array_.Mutable(index);
 }
-inline ::hld::map_s2s_box_map_info_npc_point_info* map_s2s_box_map_info::add_npc_point_array() {
+inline ::faith::map_s2s_box_map_info_npc_point_info* map_s2s_box_map_info::add_npc_point_array() {
   return npc_point_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::map_s2s_box_map_info_npc_point_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::map_s2s_box_map_info_npc_point_info >&
 map_s2s_box_map_info::npc_point_array() const {
   return npc_point_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::map_s2s_box_map_info_npc_point_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::map_s2s_box_map_info_npc_point_info >*
 map_s2s_box_map_info::mutable_npc_point_array() {
   return &npc_point_array_;
 }
 
-// optional .hld.map_s2s.box_map_info.flip_box flip_box_info = 3;
+// optional .faith.map_s2s.box_map_info.flip_box flip_box_info = 3;
 inline bool map_s2s_box_map_info::has_flip_box_info() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -3228,24 +3228,24 @@ inline void map_s2s_box_map_info::clear_has_flip_box_info() {
   _has_bits_[0] &= ~0x00000004u;
 }
 inline void map_s2s_box_map_info::clear_flip_box_info() {
-  if (flip_box_info_ != NULL) flip_box_info_->::hld::map_s2s_box_map_info_flip_box::Clear();
+  if (flip_box_info_ != NULL) flip_box_info_->::faith::map_s2s_box_map_info_flip_box::Clear();
   clear_has_flip_box_info();
 }
-inline const ::hld::map_s2s_box_map_info_flip_box& map_s2s_box_map_info::flip_box_info() const {
+inline const ::faith::map_s2s_box_map_info_flip_box& map_s2s_box_map_info::flip_box_info() const {
   return flip_box_info_ != NULL ? *flip_box_info_ : *default_instance_->flip_box_info_;
 }
-inline ::hld::map_s2s_box_map_info_flip_box* map_s2s_box_map_info::mutable_flip_box_info() {
+inline ::faith::map_s2s_box_map_info_flip_box* map_s2s_box_map_info::mutable_flip_box_info() {
   set_has_flip_box_info();
-  if (flip_box_info_ == NULL) flip_box_info_ = new ::hld::map_s2s_box_map_info_flip_box;
+  if (flip_box_info_ == NULL) flip_box_info_ = new ::faith::map_s2s_box_map_info_flip_box;
   return flip_box_info_;
 }
-inline ::hld::map_s2s_box_map_info_flip_box* map_s2s_box_map_info::release_flip_box_info() {
+inline ::faith::map_s2s_box_map_info_flip_box* map_s2s_box_map_info::release_flip_box_info() {
   clear_has_flip_box_info();
-  ::hld::map_s2s_box_map_info_flip_box* temp = flip_box_info_;
+  ::faith::map_s2s_box_map_info_flip_box* temp = flip_box_info_;
   flip_box_info_ = NULL;
   return temp;
 }
-inline void map_s2s_box_map_info::set_allocated_flip_box_info(::hld::map_s2s_box_map_info_flip_box* flip_box_info) {
+inline void map_s2s_box_map_info::set_allocated_flip_box_info(::faith::map_s2s_box_map_info_flip_box* flip_box_info) {
   delete flip_box_info_;
   flip_box_info_ = flip_box_info;
   if (flip_box_info) {
@@ -3401,7 +3401,7 @@ inline void map_s2c_map_record::set_map_template_id(::google::protobuf::int32 va
   map_template_id_ = value;
 }
 
-// optional .hld.map.element_map_info element_map_data = 2;
+// optional .faith.map.element_map_info element_map_data = 2;
 inline bool map_s2c_map_record::has_element_map_data() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -3412,24 +3412,24 @@ inline void map_s2c_map_record::clear_has_element_map_data() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void map_s2c_map_record::clear_element_map_data() {
-  if (element_map_data_ != NULL) element_map_data_->::hld::map_element_map_info::Clear();
+  if (element_map_data_ != NULL) element_map_data_->::faith::map_element_map_info::Clear();
   clear_has_element_map_data();
 }
-inline const ::hld::map_element_map_info& map_s2c_map_record::element_map_data() const {
+inline const ::faith::map_element_map_info& map_s2c_map_record::element_map_data() const {
   return element_map_data_ != NULL ? *element_map_data_ : *default_instance_->element_map_data_;
 }
-inline ::hld::map_element_map_info* map_s2c_map_record::mutable_element_map_data() {
+inline ::faith::map_element_map_info* map_s2c_map_record::mutable_element_map_data() {
   set_has_element_map_data();
-  if (element_map_data_ == NULL) element_map_data_ = new ::hld::map_element_map_info;
+  if (element_map_data_ == NULL) element_map_data_ = new ::faith::map_element_map_info;
   return element_map_data_;
 }
-inline ::hld::map_element_map_info* map_s2c_map_record::release_element_map_data() {
+inline ::faith::map_element_map_info* map_s2c_map_record::release_element_map_data() {
   clear_has_element_map_data();
-  ::hld::map_element_map_info* temp = element_map_data_;
+  ::faith::map_element_map_info* temp = element_map_data_;
   element_map_data_ = NULL;
   return temp;
 }
-inline void map_s2c_map_record::set_allocated_element_map_data(::hld::map_element_map_info* element_map_data) {
+inline void map_s2c_map_record::set_allocated_element_map_data(::faith::map_element_map_info* element_map_data) {
   delete element_map_data_;
   element_map_data_ = element_map_data;
   if (element_map_data) {
@@ -3439,7 +3439,7 @@ inline void map_s2c_map_record::set_allocated_element_map_data(::hld::map_elemen
   }
 }
 
-// optional .hld.map.battle_map_info battle_map_data = 3;
+// optional .faith.map.battle_map_info battle_map_data = 3;
 inline bool map_s2c_map_record::has_battle_map_data() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -3450,24 +3450,24 @@ inline void map_s2c_map_record::clear_has_battle_map_data() {
   _has_bits_[0] &= ~0x00000004u;
 }
 inline void map_s2c_map_record::clear_battle_map_data() {
-  if (battle_map_data_ != NULL) battle_map_data_->::hld::map_battle_map_info::Clear();
+  if (battle_map_data_ != NULL) battle_map_data_->::faith::map_battle_map_info::Clear();
   clear_has_battle_map_data();
 }
-inline const ::hld::map_battle_map_info& map_s2c_map_record::battle_map_data() const {
+inline const ::faith::map_battle_map_info& map_s2c_map_record::battle_map_data() const {
   return battle_map_data_ != NULL ? *battle_map_data_ : *default_instance_->battle_map_data_;
 }
-inline ::hld::map_battle_map_info* map_s2c_map_record::mutable_battle_map_data() {
+inline ::faith::map_battle_map_info* map_s2c_map_record::mutable_battle_map_data() {
   set_has_battle_map_data();
-  if (battle_map_data_ == NULL) battle_map_data_ = new ::hld::map_battle_map_info;
+  if (battle_map_data_ == NULL) battle_map_data_ = new ::faith::map_battle_map_info;
   return battle_map_data_;
 }
-inline ::hld::map_battle_map_info* map_s2c_map_record::release_battle_map_data() {
+inline ::faith::map_battle_map_info* map_s2c_map_record::release_battle_map_data() {
   clear_has_battle_map_data();
-  ::hld::map_battle_map_info* temp = battle_map_data_;
+  ::faith::map_battle_map_info* temp = battle_map_data_;
   battle_map_data_ = NULL;
   return temp;
 }
-inline void map_s2c_map_record::set_allocated_battle_map_data(::hld::map_battle_map_info* battle_map_data) {
+inline void map_s2c_map_record::set_allocated_battle_map_data(::faith::map_battle_map_info* battle_map_data) {
   delete battle_map_data_;
   battle_map_data_ = battle_map_data;
   if (battle_map_data) {
@@ -3481,27 +3481,27 @@ inline void map_s2c_map_record::set_allocated_battle_map_data(::hld::map_battle_
 
 // map_s2c_map_record_all
 
-// repeated .hld.map.s2c_map_record map_record_array = 1;
+// repeated .faith.map.s2c_map_record map_record_array = 1;
 inline int map_s2c_map_record_all::map_record_array_size() const {
   return map_record_array_.size();
 }
 inline void map_s2c_map_record_all::clear_map_record_array() {
   map_record_array_.Clear();
 }
-inline const ::hld::map_s2c_map_record& map_s2c_map_record_all::map_record_array(int index) const {
+inline const ::faith::map_s2c_map_record& map_s2c_map_record_all::map_record_array(int index) const {
   return map_record_array_.Get(index);
 }
-inline ::hld::map_s2c_map_record* map_s2c_map_record_all::mutable_map_record_array(int index) {
+inline ::faith::map_s2c_map_record* map_s2c_map_record_all::mutable_map_record_array(int index) {
   return map_record_array_.Mutable(index);
 }
-inline ::hld::map_s2c_map_record* map_s2c_map_record_all::add_map_record_array() {
+inline ::faith::map_s2c_map_record* map_s2c_map_record_all::add_map_record_array() {
   return map_record_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::map_s2c_map_record >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::map_s2c_map_record >&
 map_s2c_map_record_all::map_record_array() const {
   return map_record_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::map_s2c_map_record >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::map_s2c_map_record >*
 map_s2c_map_record_all::mutable_map_record_array() {
   return &map_record_array_;
 }
@@ -4041,7 +4041,7 @@ inline void map_c2s_mop_up_map::set_map_id(::google::protobuf::int32 value) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

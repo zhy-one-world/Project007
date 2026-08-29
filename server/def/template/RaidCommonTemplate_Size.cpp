@@ -1,6 +1,6 @@
 #include "RaidCommonTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void RaidCommonTemplateSize()
     {

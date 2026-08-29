@@ -3,7 +3,7 @@
 
 #include "logic/type_def.hpp"
 
-namespace hld {
+namespace faith {
 	namespace app {
 
 #pragma pack(push,1)
@@ -104,7 +104,7 @@ namespace hld {
 	};
 
 
-}	// end of namespace hld
+}	// end of namespace faith
 
 
 #endif//#define __OMP_DEF_UNITDEF_HEADER_FILE__

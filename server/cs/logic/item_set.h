@@ -15,7 +15,7 @@
 #include "utility/globle_data.h"
 
 
-namespace hld
+namespace faith
 {
 	class unit;
 	class player;

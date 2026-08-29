@@ -11,7 +11,7 @@ purpose: legion mgr in cs
 #include "Logic/legion_def.hpp"
 #include "Logic/skill_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class legion_cs_mgr
 	{

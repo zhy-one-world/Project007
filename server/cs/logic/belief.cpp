@@ -12,7 +12,7 @@ purpose:
 #include "utility/guid_gen.h"
 #include "template/template_manager.h"
 
-namespace hld
+namespace faith
 {
 	cbelief::cbelief(void)
 	{
@@ -33,7 +33,7 @@ namespace hld
 
 	int32 cbelief::get_belief_ins_data(int32 eIndex)
 	{
-		if (eIndex < 0 || eIndex >= hld::e_belief_info_max)
+		if (eIndex < 0 || eIndex >= faith::e_belief_info_max)
 		{
 			return 0;
 		}

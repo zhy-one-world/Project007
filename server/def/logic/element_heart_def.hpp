@@ -15,7 +15,7 @@ purpose:
 #include "char_def.hpp"
 #include "template/template_base.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 #define			FIRST_ELEMENT_HEART_DROP_GROUP				55000001										//初始元素之心抽取组id

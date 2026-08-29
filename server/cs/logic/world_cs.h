@@ -13,7 +13,7 @@
 #include "Logic/fake_player_def.hpp"
 
 
-namespace hld
+namespace faith
 {
 	class world_cs
 	{
@@ -61,7 +61,7 @@ namespace hld
 		static void	update_aoi_pos(Entity* map_ent, const int32& unit_index, const fvector& old_location, const fvector& new_location);
 		static void	create_big_player_statue(const s_fake_player_info& player_info, const int32& big_type, const guid_64& map_guid);
 		static void	create_harry_player_statue(const s_fake_player_info& player_info, const int32& big_type, const guid_64& map_guid);
-		static void	send_notice_with_param(hld::guid_64 sender_guid, std::string sender_name,std::string content_text, std::vector<int32> param_array, int32 param_type, int32 chat_type, int32 sender_template_id = 0, int32 notice_id = 0);
+		static void	send_notice_with_param(faith::guid_64 sender_guid, std::string sender_name,std::string content_text, std::vector<int32> param_array, int32 param_type, int32 chat_type, int32 sender_template_id = 0, int32 notice_id = 0);
 		static void ws2cs_get_map_info_from_cs_fun(uint32 conn_index, const void* data_ptr, size_t data_len);
 		static void set_fake_player_idex(int32 map_line_id, int32 fakse_type, int32 idex);
 	};

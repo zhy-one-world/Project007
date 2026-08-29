@@ -18,7 +18,7 @@ purpose: about event
 #include "mail_def.hpp"
 #include "internet/dp2s.pb.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	const uint32 auto_save_time = 5;																		// 自动存储间隔分钟数
@@ -59,7 +59,7 @@ namespace hld
 			memset(role_name, 0, sizeof(role_name));
 			memcpy(role_name, _role_name.c_str(), _role_name.size() > max_name_size ? max_name_size : _role_name.size());
 		}
-		void to_proto(hld::dp2s_proto::s_red_package_receiver* red_receiver_ptr)
+		void to_proto(faith::dp2s_proto::s_red_package_receiver* red_receiver_ptr)
 		{
 			if (red_receiver_ptr == nullptr)
 			{
@@ -80,7 +80,7 @@ namespace hld
 			memcpy(dst, str.c_str(), len);
 		}
 
-		void from_proto(const hld::dp2s_proto::s_red_package_receiver& red_receiver_ref)
+		void from_proto(const faith::dp2s_proto::s_red_package_receiver& red_receiver_ref)
 		{
 			red_package_guid.server_64 = red_receiver_ref.red_package_guid();
 			receiver_guid.server_64 = red_receiver_ref.receiver_guid();
@@ -116,7 +116,7 @@ namespace hld
 			memset(sender_name, 0, sizeof(role_name));
 			memcpy(sender_name, role_name.c_str(), role_name.size() > max_name_size ? max_name_size : role_name.size());
 		}
-		void to_proto(hld::dp2s_proto::s_red_package_base* red_base_ptr)
+		void to_proto(faith::dp2s_proto::s_red_package_base* red_base_ptr)
 		{
 			if (red_base_ptr == nullptr)
 			{
@@ -141,7 +141,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::dp2s_proto::s_red_package_base& red_base_ref)
+		void from_proto(const faith::dp2s_proto::s_red_package_base& red_base_ref)
 		{
 			red_package_guid.server_64 = red_base_ref.red_package_guid();
 			red_package_template_id = red_base_ref.red_package_template_id();

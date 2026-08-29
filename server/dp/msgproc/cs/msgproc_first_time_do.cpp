@@ -7,7 +7,7 @@
 #include "parse_msg.h"
 #include "template/template_manager.h"
 
-namespace hld
+namespace faith
 {
 	void cs2dp_req_load_char_first_time_do(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index)
 	{
@@ -24,15 +24,15 @@ namespace hld
 
 	static void cs2dp_load_role_first_time_do_send_lua(uint32 connindex, const dp2cs_load_first_time_do_record& load_msg)
 	{
-		hld::dp2cs_proto::load_role_db_data msg;
+		faith::dp2cs_proto::load_role_db_data msg;
 		msg.set_role_guid(load_msg.role_guid.server_64);
 		msg.set_unit_array_index(load_msg.unit_array_index);
 
-		hld::db_proto::role_first_time_do_db msg_db;
+		faith::db_proto::role_first_time_do_db msg_db;
 		msg_db.set_row_count(load_msg.data_num);
 		for (int32 i = 0; i < msg_db.row_count(); i++)
 		{
-			hld::db_proto::role_first_time_do_row *db_row = msg_db.add_row_data();
+			faith::db_proto::role_first_time_do_row *db_row = msg_db.add_row_data();
 			if (db_row == nullptr)
 			{
 				return;

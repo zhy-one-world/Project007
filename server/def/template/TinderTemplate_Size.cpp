@@ -1,6 +1,6 @@
 #include "TinderTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void TinderTemplateSize()
     {

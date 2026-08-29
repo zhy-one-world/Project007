@@ -15,17 +15,17 @@ purpose: WSloading链用数据包
 #include "Logic/char_def.hpp"
 #include "Logic/world_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	enum 
 	{
-		e_msgindex_ws2ws_get_gate_msg = hld::e_msg_base_world_server,
+		e_msgindex_ws2ws_get_gate_msg = faith::e_msg_base_world_server,
 		e_msgindex_cs2ws_cross_player_save_end,
 		e_msgindex_ws2ws_server_info_msg,
 	};
 
-	struct ws2ws_get_big_player_from_gate : public hld::packet_base
+	struct ws2ws_get_big_player_from_gate : public faith::packet_base
 	{
 		int32 server_id;
 		int64 data_flag;
@@ -36,7 +36,7 @@ namespace hld
 		}
 	};
 
-	struct cs2ws_player_save_end : public hld::packet_base
+	struct cs2ws_player_save_end : public faith::packet_base
 	{
 		guid_64	role_guid;
 		cs2ws_player_save_end()
@@ -46,7 +46,7 @@ namespace hld
 		}
 	};
 
-	struct ws2ws_send_server_info : public hld::packet_base
+	struct ws2ws_send_server_info : public faith::packet_base
 	{
 		int32 gm_commond_arr[e_need_server_cross_max];
 		int32 data_num;

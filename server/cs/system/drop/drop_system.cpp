@@ -4,7 +4,7 @@
 #include "template/template_manager.h"
 #include "utility/random.h"
 
-using namespace hld;
+using namespace faith;
 
 std::vector<s_item_template_info> drop_system::get_drop_list(int32 drop_id)
 {

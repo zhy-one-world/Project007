@@ -11,7 +11,7 @@
 #include "serialize_msg.h"
 
 
-namespace hld
+namespace faith
 {
 	serialize_msg::serialize_msg()
 	{

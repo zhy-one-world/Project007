@@ -3,7 +3,7 @@
 
 #include "Logic/gain_treasure_def.hpp"
 #include "../client_session_mgr.hpp"
-namespace hld
+namespace faith
 {
 	class game_proto_gain_treasure_kill_record_end;
 	class game_proto_gain_treasure_gain_item_record_end;

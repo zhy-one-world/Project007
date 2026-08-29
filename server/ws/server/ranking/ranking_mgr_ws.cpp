@@ -26,7 +26,7 @@
 #include "game.pb.h"
 #include "net.pb.h"
 
-using namespace hld;
+using namespace faith;
 
 bool m_flag_save_ranking[e_RankingIndex_max];
 std::list<s_ranking_player_info> m_ranking_all[e_RankingIndex_max];
@@ -65,14 +65,14 @@ void  ranking_mgr_ws::heart_tick(int64& time_now)
 	static int64 m_sec_tick = 0;
 	if (m_sec_tick < time_now )
 	{
-		m_sec_tick = time_now + hld::minute_tick_time;			//分钟tick
+		m_sec_tick = time_now + faith::minute_tick_time;			//分钟tick
 		open_server_first_day_proc();
 	}
 	static int64 m_ranking_tick = 0;
 	if (m_ranking_tick < time_now && true == gate_proxy::getInstance().is_gate_run()  && world_server::getInstance().get_server_id() != world_server::getInstance().get_cross_id())
 	{
 		//两分钟刷新一次
-		m_ranking_tick = time_now + hld::minute_tick_time * 2;			//秒钟tick 
+		m_ranking_tick = time_now + faith::minute_tick_time * 2;			//秒钟tick 
 		send_gs_ranking(e_RankingIndex_gs, e_RankingIndex_gs_all);
 		send_gs_ranking(e_RankingIndex_legion_core, e_RankingIndex_legion_gs_all);
 		send_gs_ranking(e_RankingIndex_level, e_RankingIndex_level_all);
@@ -80,7 +80,7 @@ void  ranking_mgr_ws::heart_tick(int64& time_now)
 	static int64 m_next_save_tick = 0;
 	if (m_next_save_tick < time_now)
 	{
-		m_next_save_tick = time_now + hld::thrity_second_tick_time + random_gen::get_random(0, thrity_second_tick_time);
+		m_next_save_tick = time_now + faith::thrity_second_tick_time + random_gen::get_random(0, thrity_second_tick_time);
 		tick_save_ranking_list();
 	}
 
@@ -208,7 +208,7 @@ void ranking_mgr_ws::tick_save_ranking_list()
 			req.data_type = ranking_type;
 			for (auto ite_list = m_ranking_all[ranking_type].begin(); ite_list != m_ranking_all[ranking_type].end();++ite_list)
 			{
-				if (req.data_num >= hld::TopMaxNum)
+				if (req.data_num >= faith::TopMaxNum)
 				{
 					break;
 				}
@@ -232,7 +232,7 @@ void ranking_mgr_ws::save_service_rank_list_to_db_by_type(e_service_rank_type se
 	req.data_num = 0;
 	for (auto ite_map = m_service_rank_all[service_rank_type].begin(); ite_map !=m_service_rank_all[service_rank_type].end(); ++ite_map)
 	{
-		if (req.data_num >= hld::ShowTopMaxNum)
+		if (req.data_num >= faith::ShowTopMaxNum)
 		{
 			break;
 		}
@@ -618,7 +618,7 @@ void ranking_mgr_ws::load_one_worship_ranking_from_db(const guid_64& sender, con
 		}
 		else
 		{
-			hld::ws2cs_proto::req_worship_player_end pro_msg;
+			faith::ws2cs_proto::req_worship_player_end pro_msg;
 			pak.to_proto(pro_msg);
 			sender_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_req_worship_player_end);
 		}
@@ -888,7 +888,7 @@ void ranking_mgr_ws::sync_player_arena_lua(const char * my_str, int32 my_len, co
 	{
 		return;
 	}
-	hld::st_proto::st_ranking_player_info st_tmp;
+	faith::st_proto::st_ranking_player_info st_tmp;
 	bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&st_tmp, my_str, my_len, false);
 	if (is_sucess == false)
 	{
@@ -956,25 +956,25 @@ ranking_list* ranking_mgr_ws::get_ranking_list_by_type(e_RankingIndex ranking_in
 {
 	switch (ranking_index)
 	{
-	case hld::e_RankingIndex_legion_core:
-	case hld::e_RankingIndex_legion_territory:
-	case hld::e_RankingIndex_legion_boss:
-	case hld::e_RankingIndex_legion_bonfire:
-	case hld::e_RankingIndex_world_boss_one:	
-	case hld::e_RankingIndex_world_boss_two:
-	case hld::e_RankingIndex_world_boss_three:
-	case hld::e_RankingIndex_world_boss_four:
-	case hld::e_RankingIndex_world_boss_five:
-	case hld::e_RankingIndex_world_boss_six:
-	case hld::e_RankingIndex_world_boss_seven:
-	case hld::e_RankingIndex_world_elite_one:
-	case hld::e_RankingIndex_world_elite_two:
-	case hld::e_RankingIndex_world_elite_three:
-	case hld::e_RankingIndex_world_elite_four:
-	case hld::e_RankingIndex_world_elite_five:
-	case hld::e_RankingIndex_world_elite_six:
-	case hld::e_RankingIndex_world_elite_seven:
-	case hld::e_RankingIndex_world_elite_eight:
+	case faith::e_RankingIndex_legion_core:
+	case faith::e_RankingIndex_legion_territory:
+	case faith::e_RankingIndex_legion_boss:
+	case faith::e_RankingIndex_legion_bonfire:
+	case faith::e_RankingIndex_world_boss_one:	
+	case faith::e_RankingIndex_world_boss_two:
+	case faith::e_RankingIndex_world_boss_three:
+	case faith::e_RankingIndex_world_boss_four:
+	case faith::e_RankingIndex_world_boss_five:
+	case faith::e_RankingIndex_world_boss_six:
+	case faith::e_RankingIndex_world_boss_seven:
+	case faith::e_RankingIndex_world_elite_one:
+	case faith::e_RankingIndex_world_elite_two:
+	case faith::e_RankingIndex_world_elite_three:
+	case faith::e_RankingIndex_world_elite_four:
+	case faith::e_RankingIndex_world_elite_five:
+	case faith::e_RankingIndex_world_elite_six:
+	case faith::e_RankingIndex_world_elite_seven:
+	case faith::e_RankingIndex_world_elite_eight:
 	{
 		return legion_ws_mgr::get_instance().get_legion_ranking_by_ranking_type(ranking_index);
 	}
@@ -1018,38 +1018,38 @@ bool ranking_mgr_ws::is_legion_ranking(e_RankingIndex ranking_index)
 {
 	switch (ranking_index)
 	{ 
-	case hld::e_RankingIndex_legion_core:
-	case hld::e_RankingIndex_legion_territory:
-	case hld::e_RankingIndex_legion_boss:
-	case hld::e_RankingIndex_legion_bonfire:
-	case hld::e_RankingIndex_world_boss_one:
-	case hld::e_RankingIndex_world_boss_two:
-	case hld::e_RankingIndex_world_boss_three:
-	case hld::e_RankingIndex_world_boss_four:
-	case hld::e_RankingIndex_world_boss_five:
-	case hld::e_RankingIndex_world_boss_six:
-	case hld::e_RankingIndex_world_boss_seven:
-	case hld::e_RankingIndex_world_elite_one:
-	case hld::e_RankingIndex_world_elite_two:
-	case hld::e_RankingIndex_world_elite_three:
-	case hld::e_RankingIndex_world_elite_four:
-	case hld::e_RankingIndex_world_elite_five:
-	case hld::e_RankingIndex_world_elite_six:
-	case hld::e_RankingIndex_world_elite_seven:
-	case hld::e_RankingIndex_world_elite_eight:
+	case faith::e_RankingIndex_legion_core:
+	case faith::e_RankingIndex_legion_territory:
+	case faith::e_RankingIndex_legion_boss:
+	case faith::e_RankingIndex_legion_bonfire:
+	case faith::e_RankingIndex_world_boss_one:
+	case faith::e_RankingIndex_world_boss_two:
+	case faith::e_RankingIndex_world_boss_three:
+	case faith::e_RankingIndex_world_boss_four:
+	case faith::e_RankingIndex_world_boss_five:
+	case faith::e_RankingIndex_world_boss_six:
+	case faith::e_RankingIndex_world_boss_seven:
+	case faith::e_RankingIndex_world_elite_one:
+	case faith::e_RankingIndex_world_elite_two:
+	case faith::e_RankingIndex_world_elite_three:
+	case faith::e_RankingIndex_world_elite_four:
+	case faith::e_RankingIndex_world_elite_five:
+	case faith::e_RankingIndex_world_elite_six:
+	case faith::e_RankingIndex_world_elite_seven:
+	case faith::e_RankingIndex_world_elite_eight:
 
-	case hld::e_RankingIndex_cross_boss_one: //跨服世界boss1
-	case hld::e_RankingIndex_cross_boss_two: //`跨服世界boss2
-	case hld::e_RankingIndex_cross_boss_three: //跨服世界boss3
-	case hld::e_RankingIndex_cross_boss_four: //跨服世界boss4
-	case hld::e_RankingIndex_cross_boss_five: //跨服世界boss5
-	case hld::e_RankingIndex_cross_boss_six: //跨服世界boss6
-	case hld::e_RankingIndex_cross_boss_seven: //跨服世界boss7
-	case hld::e_RankingIndex_cross_boss_eight: //跨服世界boss8
-	case hld::e_RankingIndex_cross_boss_nine: //跨服世界boss9
-	case hld::e_RankingIndex_cross_boss_ten: //跨服世界boss10
-	case hld::e_RankingIndex_cross_boss_eleven: //跨服世界boss11
-	case hld::e_RankingIndex_cross_boss_tweleve: //跨服世界boss12
+	case faith::e_RankingIndex_cross_boss_one: //跨服世界boss1
+	case faith::e_RankingIndex_cross_boss_two: //`跨服世界boss2
+	case faith::e_RankingIndex_cross_boss_three: //跨服世界boss3
+	case faith::e_RankingIndex_cross_boss_four: //跨服世界boss4
+	case faith::e_RankingIndex_cross_boss_five: //跨服世界boss5
+	case faith::e_RankingIndex_cross_boss_six: //跨服世界boss6
+	case faith::e_RankingIndex_cross_boss_seven: //跨服世界boss7
+	case faith::e_RankingIndex_cross_boss_eight: //跨服世界boss8
+	case faith::e_RankingIndex_cross_boss_nine: //跨服世界boss9
+	case faith::e_RankingIndex_cross_boss_ten: //跨服世界boss10
+	case faith::e_RankingIndex_cross_boss_eleven: //跨服世界boss11
+	case faith::e_RankingIndex_cross_boss_tweleve: //跨服世界boss12
 	{
 		return true;
 	}
@@ -1391,8 +1391,8 @@ void ranking_mgr_ws::get_player_worship_value_end(bool is_load, const guid_64& s
 		return;
 	}
 
-	hld::ranking_proto_get_player_ranking_value_end  response;
-	hld::ranking_proto_ranking_player_info* target_player_info = response.mutable_target_player_info();
+	faith::ranking_proto_get_player_ranking_value_end  response;
+	faith::ranking_proto_ranking_player_info* target_player_info = response.mutable_target_player_info();
 	if (false == make_ranking_data(target_player_info, ranking_info))
 	{
 		return;
@@ -1943,7 +1943,7 @@ void ranking_mgr_ws::cs2ws_req_add_worship_func(e_RankingIndex ranking_index, in
 		}
 		else
 		{
-			hld::ws2cs_proto::req_worship_player_end pro_msg;
+			faith::ws2cs_proto::req_worship_player_end pro_msg;
 			msg.to_proto(pro_msg);
 			sender_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_req_worship_player_end);
 
@@ -2017,28 +2017,28 @@ int32 ranking_mgr_ws::get_ranking_title_type(int32  ranking_type)
 	switch (ranking_type)
 	{
 	case e_RankingIndex_gs:
-		return hld::e_title_type_gs_rank_first;
+		return faith::e_title_type_gs_rank_first;
 		break;
 	case e_RankingIndex_box_map_level:
-		return hld::e_title_type_money_rank_first;
+		return faith::e_title_type_money_rank_first;
 		break;
 	case e_RankingIndex_worship:
-		return hld::e_title_type_worship_rank_first;
+		return faith::e_title_type_worship_rank_first;
 		break;
 	case e_RankingIndex_arena:
-		return hld::e_title_type_arena_rank_first;
+		return faith::e_title_type_arena_rank_first;
 		break;
 	case e_RankingIndex_gs_barserker:
-		return hld::e_title_type_gs_ranking_barserker;
+		return faith::e_title_type_gs_ranking_barserker;
 		break;
 	case e_RankingIndex_gs_wizard:
-		return hld::e_title_type_gs_ranking_wizard;
+		return faith::e_title_type_gs_ranking_wizard;
 		break;
 	case e_RankingIndex_gs_guardian:
-		return hld::e_title_type_gs_ranking_guardian;
+		return faith::e_title_type_gs_ranking_guardian;
 		break;
 	case e_RankingIndex_gs_assassinator:
-		return hld::e_title_type_gs_ranking_assassinator;
+		return faith::e_title_type_gs_ranking_assassinator;
 		break;
 	default:
 		return -1;
@@ -2047,7 +2047,7 @@ int32 ranking_mgr_ws::get_ranking_title_type(int32  ranking_type)
 	return -1;
 }
 
-void ranking_mgr_ws::first_ranking_player_online_func( const guid_64& role_guid, bool(&loading_title_flag)[hld::e_title_type_max])
+void ranking_mgr_ws::first_ranking_player_online_func( const guid_64& role_guid, bool(&loading_title_flag)[faith::e_title_type_max])
 {
 	if (globle_data::get_instance().get_server_on_days() > 1)
 	{ 
@@ -2102,7 +2102,7 @@ void ranking_mgr_ws::sync_first_rank_player_info(const s_ranking_player_info& ol
 		}
 		else
 		{
-			hld::ws2cs_proto::sync_first_rank_end pro_msg;
+			faith::ws2cs_proto::sync_first_rank_end pro_msg;
 			resp.to_proto(pro_msg);
 			old_session->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_sync_first_rank_end);
 		}
@@ -2122,7 +2122,7 @@ void ranking_mgr_ws::sync_first_rank_player_info(const s_ranking_player_info& ol
 		}
 		else
 		{
-			hld::ws2cs_proto::sync_first_rank_end pro_msg;
+			faith::ws2cs_proto::sync_first_rank_end pro_msg;
 			resp.to_proto(pro_msg);
 			new_session->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_sync_first_rank_end);
 		}
@@ -2315,7 +2315,7 @@ void ranking_mgr_ws::send_world_srv_lv_info_all(int32 conn_index)
 	}
 	else
 	{
-		hld::ws2cs_proto::sync_server_avg_lv pro_msg;
+		faith::ws2cs_proto::sync_server_avg_lv pro_msg;
 		sync_msg.to_proto(pro_msg);
 		world_server::getInstance().broadcast_lua(&pro_msg, e_msgindex_ws2cs_sync_server_avg_lv, e_server_type_cs);
 	}

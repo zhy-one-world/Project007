@@ -10,7 +10,7 @@
 
 #include "server_def.hpp"
 
-namespace hld
+namespace faith
 {
 	using namespace net;
 	class net_client;

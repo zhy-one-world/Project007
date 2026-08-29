@@ -25,7 +25,7 @@
 #include <singleton.hpp>
 #include <time.hpp>
 
-namespace hld
+namespace faith
 {
  	static bool init()
 	{
@@ -77,34 +77,34 @@ namespace hld
  	void app_set_console_title(void);
 }
 
- hld::int32 _XMAIN(hld::int32 argc, xchar* argv[])
+ faith::int32 _XMAIN(faith::int32 argc, xchar* argv[])
  {
-	hld::set_root_directory();
+	faith::set_root_directory();
 
- 	using hld::net::scheduler;	
+ 	using faith::net::scheduler;	
  
- 	srand( hld::utility::time() );
- 	hld::app_set_console_title();
+ 	srand( faith::utility::time() );
+ 	faith::app_set_console_title();
  
 
- 	if(!hld::servers_config_manager::getInstance().init_config())
+ 	if(!faith::servers_config_manager::getInstance().init_config())
  	{
  		return -1;
  	}
 
 	//====Add for logger====
-	hld::server_log::init_new_log(SERVERCONFIG->game_id, "dp");
+	faith::server_log::init_new_log(SERVERCONFIG->game_id, "dp");
 	//====Add for logger====
 
  	//	setup postmortem module
-	hld::dump postmortem(_XTEXT("dp.exe"), _XTEXT("dp-v") + hld::app_get_pgroduct_version_string());
+	faith::dump postmortem(_XTEXT("dp.exe"), _XTEXT("dp-v") + faith::app_get_pgroduct_version_string());
 
-	using hld::net::scheduler;
+	using faith::net::scheduler;
 	scheduler::getInstance().set_option(scheduler::options::thread_num(DP_SERVER_SCHEDULER_THREAD_COUNT));
  
- 	hld::app_server::getInstance().run(hld::init,hld::release);	
+ 	faith::app_server::getInstance().run(faith::init,faith::release);	
  
- 	hld::postmortem::getInstance().release();
+ 	faith::postmortem::getInstance().release();
  
  	return 0;
  }

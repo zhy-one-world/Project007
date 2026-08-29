@@ -22,7 +22,7 @@ purpose: about role's welfare_mgr
 #include "internet/net.pb.h"
 #include "utility/parse_msg.h"
 
-namespace hld
+namespace faith
 {
 	cwelfare_mgr::cwelfare_mgr()
 	{
@@ -52,12 +52,12 @@ namespace hld
 		else
 		{
 			int64 pass_mill_second = new_time - m_online_time;
-			int64 pass_second = pass_mill_second / hld::second_tick_time;
+			int64 pass_second = pass_mill_second / faith::second_tick_time;
 			if (pass_second >= 1)
 			{
 				int32 old_time = get_active_degree_info(e_daily_active_degree_type_online_30_minutes);
 				set_active_degree_info(e_daily_active_degree_type_online_30_minutes, old_time + pass_second);
-				m_online_time = new_time - (pass_mill_second - pass_second * hld::second_tick_time);
+				m_online_time = new_time - (pass_mill_second - pass_second * faith::second_tick_time);
 			}
 		}
 
@@ -117,7 +117,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_welfare_db msg;
+		faith::cs2dp_proto::role_welfare_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -150,12 +150,12 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_welfare msg;
+			faith::cs2dp_proto::save_role_welfare msg;
 			msg.set_role_guid(player_ref.get_unit_guid().server_64);
 			msg.set_unit_array_index(player_ref.get_array_index());
 			msg.set_save_type_ex(save_type);
 
-			hld::cs2dp_proto::role_welfare_db *db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_welfare_db *db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return;
@@ -306,7 +306,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_active_degree_db msg;
+		faith::cs2dp_proto::role_active_degree_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -344,12 +344,12 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_active_degree msg;
+			faith::cs2dp_proto::save_role_active_degree msg;
 			msg.set_role_guid(player_ref.get_unit_guid().server_64);
 			msg.set_unit_array_index(player_ref.get_array_index());
 			msg.set_save_type_ex(save_type);
 
-			hld::cs2dp_proto::role_active_degree_db *db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_active_degree_db *db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return;
@@ -981,17 +981,17 @@ namespace hld
 		return false;
 	}
 
-	hld::s_welfare_info& cwelfare_mgr::get_welfare_info_ref()
+	faith::s_welfare_info& cwelfare_mgr::get_welfare_info_ref()
 	{
 		return m_welfare_info;
 	}
 
-	hld::s_active_degree_info& cwelfare_mgr::get_active_degree_info_ref()
+	faith::s_active_degree_info& cwelfare_mgr::get_active_degree_info_ref()
 	{
 		return m_active_degree_info;
 	}
 
-	hld::s_welfare_random_get_info& cwelfare_mgr::get_random_get_info_ref()
+	faith::s_welfare_random_get_info& cwelfare_mgr::get_random_get_info_ref()
 	{
 		return m_random_get_info;
 	}
@@ -1528,7 +1528,7 @@ namespace hld
 		int32 check_in_times = 0;
 		for (int32 i = 0; i < 31; i++)
 		{
-			if (false == is_welfare_geted(hld::e_welfare_type_regular_check_in, i))
+			if (false == is_welfare_geted(faith::e_welfare_type_regular_check_in, i))
 			{
 				return check_in_times;
 			}

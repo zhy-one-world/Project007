@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_login_2eproto();
@@ -324,7 +324,7 @@ class sdk_login_data : public ::google::protobuf::Message {
   inline ::std::string* release_recharge_type();
   inline void set_allocated_recharge_type(::std::string* recharge_type);
 
-  // @@protoc_insertion_point(class_scope:hld.sdk_login_data)
+  // @@protoc_insertion_point(class_scope:faith.sdk_login_data)
  private:
   inline void set_has_data();
   inline void clear_has_data();
@@ -457,7 +457,7 @@ class login_proto_rde_encryption : public ::google::protobuf::Message {
   inline bool is_gm() const;
   inline void set_is_gm(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.login_proto.rde_encryption)
+  // @@protoc_insertion_point(class_scope:faith.login_proto.rde_encryption)
  private:
   inline void set_has_is_gm();
   inline void clear_has_is_gm();
@@ -558,7 +558,7 @@ class login_proto_encryped_data : public ::google::protobuf::Message {
   inline ::std::string* release_data();
   inline void set_allocated_data(::std::string* data);
 
-  // @@protoc_insertion_point(class_scope:hld.login_proto.encryped_data)
+  // @@protoc_insertion_point(class_scope:faith.login_proto.encryped_data)
  private:
   inline void set_has_index();
   inline void clear_has_index();
@@ -658,7 +658,7 @@ class login_proto_encryped_data_end : public ::google::protobuf::Message {
   inline ::std::string* release_data();
   inline void set_allocated_data(::std::string* data);
 
-  // @@protoc_insertion_point(class_scope:hld.login_proto.encryped_data_end)
+  // @@protoc_insertion_point(class_scope:faith.login_proto.encryped_data_end)
  private:
   inline void set_has_index();
   inline void clear_has_index();
@@ -748,7 +748,7 @@ class login_proto_get_server_list : public ::google::protobuf::Message {
   inline ::std::string* release_account();
   inline void set_allocated_account(::std::string* account);
 
-  // @@protoc_insertion_point(class_scope:hld.login_proto.get_server_list)
+  // @@protoc_insertion_point(class_scope:faith.login_proto.get_server_list)
  private:
   inline void set_has_account();
   inline void clear_has_account();
@@ -877,7 +877,7 @@ class login_proto_server_list_info : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 begin_time() const;
   inline void set_begin_time(::google::protobuf::uint32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.login_proto.server_list_info)
+  // @@protoc_insertion_point(class_scope:faith.login_proto.server_list_info)
  private:
   inline void set_has_server_id();
   inline void clear_has_server_id();
@@ -970,24 +970,24 @@ class login_proto_get_server_list_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.login_proto.server_list_info server_list = 1;
+  // repeated .faith.login_proto.server_list_info server_list = 1;
   inline int server_list_size() const;
   inline void clear_server_list();
   static const int kServerListFieldNumber = 1;
-  inline const ::hld::login_proto_server_list_info& server_list(int index) const;
-  inline ::hld::login_proto_server_list_info* mutable_server_list(int index);
-  inline ::hld::login_proto_server_list_info* add_server_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::login_proto_server_list_info >&
+  inline const ::faith::login_proto_server_list_info& server_list(int index) const;
+  inline ::faith::login_proto_server_list_info* mutable_server_list(int index);
+  inline ::faith::login_proto_server_list_info* add_server_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::login_proto_server_list_info >&
       server_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::login_proto_server_list_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::login_proto_server_list_info >*
       mutable_server_list();
 
-  // @@protoc_insertion_point(class_scope:hld.login_proto.get_server_list_end)
+  // @@protoc_insertion_point(class_scope:faith.login_proto.get_server_list_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::login_proto_server_list_info > server_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::login_proto_server_list_info > server_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -1088,7 +1088,7 @@ class login_proto_role_list_info : public ::google::protobuf::Message {
   inline ::std::string* release_role_name();
   inline void set_allocated_role_name(::std::string* role_name);
 
-  // @@protoc_insertion_point(class_scope:hld.login_proto.role_list_info)
+  // @@protoc_insertion_point(class_scope:faith.login_proto.role_list_info)
  private:
   inline void set_has_server_id();
   inline void clear_has_server_id();
@@ -1172,24 +1172,24 @@ class login_proto_get_role_list_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.login_proto.role_list_info role_list = 1;
+  // repeated .faith.login_proto.role_list_info role_list = 1;
   inline int role_list_size() const;
   inline void clear_role_list();
   static const int kRoleListFieldNumber = 1;
-  inline const ::hld::login_proto_role_list_info& role_list(int index) const;
-  inline ::hld::login_proto_role_list_info* mutable_role_list(int index);
-  inline ::hld::login_proto_role_list_info* add_role_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::login_proto_role_list_info >&
+  inline const ::faith::login_proto_role_list_info& role_list(int index) const;
+  inline ::faith::login_proto_role_list_info* mutable_role_list(int index);
+  inline ::faith::login_proto_role_list_info* add_role_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::login_proto_role_list_info >&
       role_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::login_proto_role_list_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::login_proto_role_list_info >*
       mutable_role_list();
 
-  // @@protoc_insertion_point(class_scope:hld.login_proto.get_role_list_end)
+  // @@protoc_insertion_point(class_scope:faith.login_proto.get_role_list_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::login_proto_role_list_info > role_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::login_proto_role_list_info > role_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -1283,7 +1283,7 @@ class login_proto_login_reconnect : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 cur_map_line_id() const;
   inline void set_cur_map_line_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.login_proto.login_reconnect)
+  // @@protoc_insertion_point(class_scope:faith.login_proto.login_reconnect)
  private:
   inline void set_has_account();
   inline void clear_has_account();
@@ -1371,7 +1371,7 @@ class login_proto_login_reconnect_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 reconnect_res() const;
   inline void set_reconnect_res(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.login_proto.login_reconnect_end)
+  // @@protoc_insertion_point(class_scope:faith.login_proto.login_reconnect_end)
  private:
   inline void set_has_reconnect_res();
   inline void clear_has_reconnect_res();
@@ -1570,16 +1570,16 @@ class login_proto_login : public ::google::protobuf::Message {
   inline ::std::string* release_custom_info();
   inline void set_allocated_custom_info(::std::string* custom_info);
 
-  // optional .hld.sdk_login_data sdk_data = 13;
+  // optional .faith.sdk_login_data sdk_data = 13;
   inline bool has_sdk_data() const;
   inline void clear_sdk_data();
   static const int kSdkDataFieldNumber = 13;
-  inline const ::hld::sdk_login_data& sdk_data() const;
-  inline ::hld::sdk_login_data* mutable_sdk_data();
-  inline ::hld::sdk_login_data* release_sdk_data();
-  inline void set_allocated_sdk_data(::hld::sdk_login_data* sdk_data);
+  inline const ::faith::sdk_login_data& sdk_data() const;
+  inline ::faith::sdk_login_data* mutable_sdk_data();
+  inline ::faith::sdk_login_data* release_sdk_data();
+  inline void set_allocated_sdk_data(::faith::sdk_login_data* sdk_data);
 
-  // @@protoc_insertion_point(class_scope:hld.login_proto.login)
+  // @@protoc_insertion_point(class_scope:faith.login_proto.login)
  private:
   inline void set_has_client_account();
   inline void clear_has_client_account();
@@ -1622,7 +1622,7 @@ class login_proto_login : public ::google::protobuf::Message {
   ::std::string* ip_;
   ::std::string* device_type_;
   ::std::string* custom_info_;
-  ::hld::sdk_login_data* sdk_data_;
+  ::faith::sdk_login_data* sdk_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(13 + 31) / 32];
@@ -1798,7 +1798,7 @@ class login_proto_login_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 month_recharge_time() const;
   inline void set_month_recharge_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.login_proto.login_end)
+  // @@protoc_insertion_point(class_scope:faith.login_proto.login_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -1926,7 +1926,7 @@ class login_proto_login_queue_status : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 position() const;
   inline void set_position(::google::protobuf::uint32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.login_proto.login_queue_status)
+  // @@protoc_insertion_point(class_scope:faith.login_proto.login_queue_status)
  private:
   inline void set_has_left_time_in_sec();
   inline void clear_has_left_time_in_sec();
@@ -2035,7 +2035,7 @@ class login_proto_kickout_account_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 reason() const;
   inline void set_reason(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.login_proto.kickout_account_end)
+  // @@protoc_insertion_point(class_scope:faith.login_proto.kickout_account_end)
  private:
   inline void set_has_account();
   inline void clear_has_account();
@@ -2123,7 +2123,7 @@ class login_proto_logout : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 type() const;
   inline void set_type(::google::protobuf::uint32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.login_proto.logout)
+  // @@protoc_insertion_point(class_scope:faith.login_proto.logout)
  private:
   inline void set_has_type();
   inline void clear_has_type();
@@ -2205,7 +2205,7 @@ class login_proto_logout_end : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 result() const;
   inline void set_result(::google::protobuf::uint32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.login_proto.logout_end)
+  // @@protoc_insertion_point(class_scope:faith.login_proto.logout_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -2297,7 +2297,7 @@ class login_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.login_proto)
+  // @@protoc_insertion_point(class_scope:faith.login_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2501,7 +2501,7 @@ class login_fep_ls_client_login : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 month_recharge_time() const;
   inline void set_month_recharge_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.login.fep_ls.client_login)
+  // @@protoc_insertion_point(class_scope:faith.login.fep_ls.client_login)
  private:
   inline void set_has_e_result();
   inline void clear_has_e_result();
@@ -2619,7 +2619,7 @@ class login_fep_ls : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.login.fep_ls)
+  // @@protoc_insertion_point(class_scope:faith.login.fep_ls)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2724,14 +2724,14 @@ class login_fep_ws_client_login : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 login_type_plus() const;
   inline void set_login_type_plus(::google::protobuf::int32 value);
 
-  // optional .hld.sdk_login_data fixed_data = 5;
+  // optional .faith.sdk_login_data fixed_data = 5;
   inline bool has_fixed_data() const;
   inline void clear_fixed_data();
   static const int kFixedDataFieldNumber = 5;
-  inline const ::hld::sdk_login_data& fixed_data() const;
-  inline ::hld::sdk_login_data* mutable_fixed_data();
-  inline ::hld::sdk_login_data* release_fixed_data();
-  inline void set_allocated_fixed_data(::hld::sdk_login_data* fixed_data);
+  inline const ::faith::sdk_login_data& fixed_data() const;
+  inline ::faith::sdk_login_data* mutable_fixed_data();
+  inline ::faith::sdk_login_data* release_fixed_data();
+  inline void set_allocated_fixed_data(::faith::sdk_login_data* fixed_data);
 
   // optional uint64 role_guid = 6;
   inline bool has_role_guid() const;
@@ -2792,7 +2792,7 @@ class login_fep_ws_client_login : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_ban_chat_array();
 
-  // @@protoc_insertion_point(class_scope:hld.login.fep_ws.client_login)
+  // @@protoc_insertion_point(class_scope:faith.login.fep_ws.client_login)
  private:
   inline void set_has_client_uid();
   inline void clear_has_client_uid();
@@ -2821,7 +2821,7 @@ class login_fep_ws_client_login : public ::google::protobuf::Message {
   ::std::string* account_;
   ::google::protobuf::int32 login_type_;
   ::google::protobuf::int32 login_type_plus_;
-  ::hld::sdk_login_data* fixed_data_;
+  ::faith::sdk_login_data* fixed_data_;
   ::google::protobuf::uint64 role_guid_;
   ::google::protobuf::uint64 map_guid_;
   ::google::protobuf::int32 war_index_;
@@ -2898,7 +2898,7 @@ class login_fep_ws : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.login.fep_ws)
+  // @@protoc_insertion_point(class_scope:faith.login.fep_ws)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2973,7 +2973,7 @@ class login : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.login)
+  // @@protoc_insertion_point(class_scope:faith.login)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -4732,27 +4732,27 @@ inline void login_proto_server_list_info::set_begin_time(::google::protobuf::uin
 
 // login_proto_get_server_list_end
 
-// repeated .hld.login_proto.server_list_info server_list = 1;
+// repeated .faith.login_proto.server_list_info server_list = 1;
 inline int login_proto_get_server_list_end::server_list_size() const {
   return server_list_.size();
 }
 inline void login_proto_get_server_list_end::clear_server_list() {
   server_list_.Clear();
 }
-inline const ::hld::login_proto_server_list_info& login_proto_get_server_list_end::server_list(int index) const {
+inline const ::faith::login_proto_server_list_info& login_proto_get_server_list_end::server_list(int index) const {
   return server_list_.Get(index);
 }
-inline ::hld::login_proto_server_list_info* login_proto_get_server_list_end::mutable_server_list(int index) {
+inline ::faith::login_proto_server_list_info* login_proto_get_server_list_end::mutable_server_list(int index) {
   return server_list_.Mutable(index);
 }
-inline ::hld::login_proto_server_list_info* login_proto_get_server_list_end::add_server_list() {
+inline ::faith::login_proto_server_list_info* login_proto_get_server_list_end::add_server_list() {
   return server_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::login_proto_server_list_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::login_proto_server_list_info >&
 login_proto_get_server_list_end::server_list() const {
   return server_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::login_proto_server_list_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::login_proto_server_list_info >*
 login_proto_get_server_list_end::mutable_server_list() {
   return &server_list_;
 }
@@ -4901,27 +4901,27 @@ inline void login_proto_role_list_info::set_allocated_role_name(::std::string* r
 
 // login_proto_get_role_list_end
 
-// repeated .hld.login_proto.role_list_info role_list = 1;
+// repeated .faith.login_proto.role_list_info role_list = 1;
 inline int login_proto_get_role_list_end::role_list_size() const {
   return role_list_.size();
 }
 inline void login_proto_get_role_list_end::clear_role_list() {
   role_list_.Clear();
 }
-inline const ::hld::login_proto_role_list_info& login_proto_get_role_list_end::role_list(int index) const {
+inline const ::faith::login_proto_role_list_info& login_proto_get_role_list_end::role_list(int index) const {
   return role_list_.Get(index);
 }
-inline ::hld::login_proto_role_list_info* login_proto_get_role_list_end::mutable_role_list(int index) {
+inline ::faith::login_proto_role_list_info* login_proto_get_role_list_end::mutable_role_list(int index) {
   return role_list_.Mutable(index);
 }
-inline ::hld::login_proto_role_list_info* login_proto_get_role_list_end::add_role_list() {
+inline ::faith::login_proto_role_list_info* login_proto_get_role_list_end::add_role_list() {
   return role_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::login_proto_role_list_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::login_proto_role_list_info >&
 login_proto_get_role_list_end::role_list() const {
   return role_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::login_proto_role_list_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::login_proto_role_list_info >*
 login_proto_get_role_list_end::mutable_role_list() {
   return &role_list_;
 }
@@ -5722,7 +5722,7 @@ inline void login_proto_login::set_allocated_custom_info(::std::string* custom_i
   }
 }
 
-// optional .hld.sdk_login_data sdk_data = 13;
+// optional .faith.sdk_login_data sdk_data = 13;
 inline bool login_proto_login::has_sdk_data() const {
   return (_has_bits_[0] & 0x00001000u) != 0;
 }
@@ -5733,24 +5733,24 @@ inline void login_proto_login::clear_has_sdk_data() {
   _has_bits_[0] &= ~0x00001000u;
 }
 inline void login_proto_login::clear_sdk_data() {
-  if (sdk_data_ != NULL) sdk_data_->::hld::sdk_login_data::Clear();
+  if (sdk_data_ != NULL) sdk_data_->::faith::sdk_login_data::Clear();
   clear_has_sdk_data();
 }
-inline const ::hld::sdk_login_data& login_proto_login::sdk_data() const {
+inline const ::faith::sdk_login_data& login_proto_login::sdk_data() const {
   return sdk_data_ != NULL ? *sdk_data_ : *default_instance_->sdk_data_;
 }
-inline ::hld::sdk_login_data* login_proto_login::mutable_sdk_data() {
+inline ::faith::sdk_login_data* login_proto_login::mutable_sdk_data() {
   set_has_sdk_data();
-  if (sdk_data_ == NULL) sdk_data_ = new ::hld::sdk_login_data;
+  if (sdk_data_ == NULL) sdk_data_ = new ::faith::sdk_login_data;
   return sdk_data_;
 }
-inline ::hld::sdk_login_data* login_proto_login::release_sdk_data() {
+inline ::faith::sdk_login_data* login_proto_login::release_sdk_data() {
   clear_has_sdk_data();
-  ::hld::sdk_login_data* temp = sdk_data_;
+  ::faith::sdk_login_data* temp = sdk_data_;
   sdk_data_ = NULL;
   return temp;
 }
-inline void login_proto_login::set_allocated_sdk_data(::hld::sdk_login_data* sdk_data) {
+inline void login_proto_login::set_allocated_sdk_data(::faith::sdk_login_data* sdk_data) {
   delete sdk_data_;
   sdk_data_ = sdk_data;
   if (sdk_data) {
@@ -7040,7 +7040,7 @@ inline void login_fep_ws_client_login::set_login_type_plus(::google::protobuf::i
   login_type_plus_ = value;
 }
 
-// optional .hld.sdk_login_data fixed_data = 5;
+// optional .faith.sdk_login_data fixed_data = 5;
 inline bool login_fep_ws_client_login::has_fixed_data() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
@@ -7051,24 +7051,24 @@ inline void login_fep_ws_client_login::clear_has_fixed_data() {
   _has_bits_[0] &= ~0x00000010u;
 }
 inline void login_fep_ws_client_login::clear_fixed_data() {
-  if (fixed_data_ != NULL) fixed_data_->::hld::sdk_login_data::Clear();
+  if (fixed_data_ != NULL) fixed_data_->::faith::sdk_login_data::Clear();
   clear_has_fixed_data();
 }
-inline const ::hld::sdk_login_data& login_fep_ws_client_login::fixed_data() const {
+inline const ::faith::sdk_login_data& login_fep_ws_client_login::fixed_data() const {
   return fixed_data_ != NULL ? *fixed_data_ : *default_instance_->fixed_data_;
 }
-inline ::hld::sdk_login_data* login_fep_ws_client_login::mutable_fixed_data() {
+inline ::faith::sdk_login_data* login_fep_ws_client_login::mutable_fixed_data() {
   set_has_fixed_data();
-  if (fixed_data_ == NULL) fixed_data_ = new ::hld::sdk_login_data;
+  if (fixed_data_ == NULL) fixed_data_ = new ::faith::sdk_login_data;
   return fixed_data_;
 }
-inline ::hld::sdk_login_data* login_fep_ws_client_login::release_fixed_data() {
+inline ::faith::sdk_login_data* login_fep_ws_client_login::release_fixed_data() {
   clear_has_fixed_data();
-  ::hld::sdk_login_data* temp = fixed_data_;
+  ::faith::sdk_login_data* temp = fixed_data_;
   fixed_data_ = NULL;
   return temp;
 }
-inline void login_fep_ws_client_login::set_allocated_fixed_data(::hld::sdk_login_data* fixed_data) {
+inline void login_fep_ws_client_login::set_allocated_fixed_data(::faith::sdk_login_data* fixed_data) {
   delete fixed_data_;
   fixed_data_ = fixed_data;
   if (fixed_data) {
@@ -7249,7 +7249,7 @@ login_fep_ws_client_login::mutable_ban_chat_array() {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

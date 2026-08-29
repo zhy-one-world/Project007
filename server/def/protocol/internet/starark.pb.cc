@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -203,7 +203,7 @@ void protobuf_AddDesc_starark_2eproto() {
     "rk_operate_end\022\021\n\toper_type\030\001 \001(\005\022\016\n\006res"
     "ult\030\002 \001(\005\022\013\n\003pos\030\003 \001(\005\022\013\n\003num\030\004 \001(\005\032Y\n\035s"
     "tarark_five_round_rewad_list\0228\n\titem_lis"
-    "t\030\001 \003(\0132%.hld.starark_proto.starark_rewa"
+    "t\030\001 \003(\0132%.faith.starark_proto.starark_rewa"
     "d_item\0327\n\022starark_rewad_item\022\017\n\007item_id\030"
     "\001 \001(\005\022\020\n\010item_num\030\002 \001(\005", 423);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
@@ -1212,7 +1212,7 @@ bool starark_proto_starark_five_round_rewad_list::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.starark_proto.starark_rewad_item item_list = 1;
+      // repeated .faith.starark_proto.starark_rewad_item item_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1245,7 +1245,7 @@ bool starark_proto_starark_five_round_rewad_list::MergePartialFromCodedStream(
 
 void starark_proto_starark_five_round_rewad_list::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.starark_proto.starark_rewad_item item_list = 1;
+  // repeated .faith.starark_proto.starark_rewad_item item_list = 1;
   for (int i = 0; i < this->item_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->item_list(i), output);
@@ -1259,7 +1259,7 @@ void starark_proto_starark_five_round_rewad_list::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* starark_proto_starark_five_round_rewad_list::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.starark_proto.starark_rewad_item item_list = 1;
+  // repeated .faith.starark_proto.starark_rewad_item item_list = 1;
   for (int i = 0; i < this->item_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1276,7 +1276,7 @@ void starark_proto_starark_five_round_rewad_list::SerializeWithCachedSizes(
 int starark_proto_starark_five_round_rewad_list::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.starark_proto.starark_rewad_item item_list = 1;
+  // repeated .faith.starark_proto.starark_rewad_item item_list = 1;
   total_size += 1 * this->item_list_size();
   for (int i = 0; i < this->item_list_size(); i++) {
     total_size +=
@@ -1754,6 +1754,6 @@ void starark_proto::Swap(starark_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

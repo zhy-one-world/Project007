@@ -1,6 +1,6 @@
 #include "GrowUpFundTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void GrowUpFundTemplateSize()
     {

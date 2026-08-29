@@ -10,7 +10,7 @@ purpose: about role's treasure_mgr
 #define _TREASURE_MGR_H_
 #include "Logic/treasure_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class ctreasure_mgr
 	{

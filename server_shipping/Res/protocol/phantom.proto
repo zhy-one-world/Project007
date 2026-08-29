@@ -1,0 +1,28 @@
+syntax = "proto2";
+package hld;
+
+message phantom_proto
+{
+
+	message phantom_one
+	{
+		repeated int32 phantom_info		= 1;
+	}
+	message phantom_all
+	{
+		repeated int32	role_guid				= 1;
+		repeated phantom_one phantom_array		= 2;
+	}
+	message phantom_operate
+	{
+		optional int32 phantom_id			= 1;
+		optional int32 oper_type			= 2;
+	}
+	message phantom_operate_end
+	{
+	    optional int32 phantom_id          = 1;
+		optional int32 oper_type           = 2;
+		optional int32 result	           = 3;
+	}
+	
+}

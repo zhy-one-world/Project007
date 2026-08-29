@@ -11,7 +11,7 @@ author: zhaoyuming
 #include "template/ServerTemplateHead.h"
 #include "time_limit_activity_mgr.h"
 
-namespace hld
+namespace faith
 {
 	class time_feed_back_mgr
 	{

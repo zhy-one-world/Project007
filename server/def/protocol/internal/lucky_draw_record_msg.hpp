@@ -13,13 +13,13 @@ purpose:
 #include "base.hpp"
 #include "Logic/item_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_ws2dp_add_draw_info_to_db = hld::e_msg_base_lucky_draw_record,
+		e_msgindex_ws2dp_add_draw_info_to_db = faith::e_msg_base_lucky_draw_record,
 		e_msgindex_ws2dp_del_draw_info_to_db,
 		e_msgindex_ws2dp_load_info_from_db,
 		e_msgindex_dp2ws_load_info_from_db_end,

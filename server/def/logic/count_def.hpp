@@ -15,7 +15,7 @@
 /*        控制玩家登陆的基本数量限制							        */
 /************************************************************************/
 
-namespace hld 
+namespace faith 
 {
 #pragma pack(push,1)
 #ifdef _DEBUG

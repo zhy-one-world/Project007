@@ -11,7 +11,7 @@
 #include "dbproxy_service.hpp"
 #include "utility/parse_msg.h"
 
-namespace hld
+namespace faith
 {
 	void save_cross_server_pk_ws_info_lua(uint32 connindex, int32 pk_state, int32 war_index, int64 player_guid[max_island_player_num], xstring role_name[max_island_player_num], int32 is_winner[max_island_player_num], int32 server_id[max_island_player_num], int32 win_num[max_island_player_num])
 	{

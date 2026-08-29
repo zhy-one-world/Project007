@@ -3,7 +3,7 @@
 #include "base/ecs_world.h"
 #include "google/protobuf/message.h"
 
-namespace hld
+namespace faith
 {
 	struct cs_map_component;
 	struct s_fake_player_info;

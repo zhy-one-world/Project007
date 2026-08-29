@@ -12,7 +12,7 @@
 #include "db_manager.hpp"
 #include "utility/parse_msg.h"
 
-namespace hld
+namespace faith
 {
 	void del_draw_info_from_db(uint32 connindex, const void *data_ptr, size_t data_len);
 	void add_draw_info_to_db(uint32 connindex, const void *data_ptr, size_t data_len);

@@ -13,7 +13,7 @@ purpose:
 #include "logic/type_def.hpp"
 #include "Logic/att_def.hpp"
 
-namespace hld
+namespace faith
 {
 	enum instance_type
 	{

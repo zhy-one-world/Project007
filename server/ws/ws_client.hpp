@@ -26,7 +26,7 @@
 #include "server_def.hpp"
 #include "server/client_session.hpp"
 #include <gate_msg.hpp>
-namespace hld
+namespace faith
 {
 	using namespace net;
 

@@ -13,7 +13,7 @@
 #include "logic/type_def.hpp"
 #include "base.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	const int32 role_db_data_len = 256 * 1024 * 1024;
@@ -71,7 +71,7 @@ namespace hld
 	};
 
 #define PROTO_FUNC_TO_PACKET(FUNC, NAME)                \
-	hld::ws2cs_proto::##NAME msg;          \
+	faith::ws2cs_proto::##NAME msg;          \
 	bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len,false); \
 	if (is_sucess == false)   \
 	{                        \
@@ -102,7 +102,7 @@ namespace hld
 
 
 #define PROTO_FUNC_CS_WS_PACKET(FUNC, NAME)                \
-	hld::cs2ws_proto::##NAME msg;          \
+	faith::cs2ws_proto::##NAME msg;          \
 	bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len, false); \
 	if (is_sucess == false)   \
 	{                        \

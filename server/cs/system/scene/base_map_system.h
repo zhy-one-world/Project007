@@ -4,7 +4,7 @@
 #include "base/ecs_world.h"
 #include "google/protobuf/message.h"
 
-namespace hld
+namespace faith
 {
 	class player;
 	class npc;

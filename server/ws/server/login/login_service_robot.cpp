@@ -29,7 +29,7 @@
 #include <Utility/parse_msg.h>
 #include "utility/init_unit.h"
 
-namespace hld
+namespace faith
 {
 
 	void login_service_robot::req_login(const s_client_uid client_uid, const login_proto_login proto_data)

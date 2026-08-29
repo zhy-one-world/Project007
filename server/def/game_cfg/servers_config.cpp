@@ -3,7 +3,7 @@
 #include <fstream>
 #include "server_log.hpp"
 
-namespace hld 
+namespace faith 
 {
 
 	void server_base_config::clear_data()
@@ -431,22 +431,22 @@ namespace hld
 	{
 		switch (server_type)
 		{
-		case hld::e_server_type_gate:
+		case faith::e_server_type_gate:
 			return new gate_config();
 			break;
-		case hld::e_server_type_ws:
+		case faith::e_server_type_ws:
 			return new ws_config();
 			break;
-		case hld::e_server_type_fep:
+		case faith::e_server_type_fep:
 			return new fep_config();
 			break;
-		case hld::e_server_type_cs:
+		case faith::e_server_type_cs:
 			return new cs_config();
 			break;
-		case hld::e_server_type_dp:
+		case faith::e_server_type_dp:
 			return new dp_config();
 			break;
-		case hld::e_server_type_max:
+		case faith::e_server_type_max:
 			break;
 		default:
 			break;

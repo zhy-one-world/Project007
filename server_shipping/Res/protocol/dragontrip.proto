@@ -1,0 +1,37 @@
+syntax = "proto2";
+package hld;
+
+message dragontrip_proto
+{
+
+	message dragontrip_all
+	{
+	    repeated int32  data_ary           = 1;
+		repeated int32  reward_ary         = 2;
+		repeated int32  params             = 3;
+	}
+	
+	message dragontrip_operate
+	{
+		optional int32 oper_type			= 1;
+		optional int32 oper_param           = 2;
+	}
+	
+	message dragontrip_operate_end
+	{
+		optional int32 oper_type           = 1;
+		optional int32 result	           = 2;
+		optional int32 roll_num            = 3;
+		optional int32 item_id             = 4;
+		optional int32 item_num            = 5;
+		repeated dragontrip_item_info item_list		   = 6;
+	}
+	
+	message dragontrip_item_info
+	{
+		optional int32 item_id             = 1;
+		optional int32 item_num            = 2;
+		optional int32 end_pos             = 3;
+	}
+	
+}

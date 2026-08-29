@@ -1,6 +1,6 @@
 #include "WordTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void WordTemplateSize()
     {

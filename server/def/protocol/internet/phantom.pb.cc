@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -172,7 +172,7 @@ void protobuf_AddDesc_phantom_2eproto() {
     "\n\rphantom.proto\022\003hld\"\225\002\n\rphantom_proto\032#"
     "\n\013phantom_one\022\024\n\014phantom_info\030\001 \003(\005\032W\n\013p"
     "hantom_all\022\021\n\trole_guid\030\001 \003(\005\0225\n\rphantom"
-    "_array\030\002 \003(\0132\036.hld.phantom_proto.phantom"
+    "_array\030\002 \003(\0132\036.faith.phantom_proto.phantom"
     "_one\0328\n\017phantom_operate\022\022\n\nphantom_id\030\001 "
     "\001(\005\022\021\n\toper_type\030\002 \001(\005\032L\n\023phantom_operat"
     "e_end\022\022\n\nphantom_id\030\001 \001(\005\022\021\n\toper_type\030\002"
@@ -501,7 +501,7 @@ bool phantom_proto_phantom_all::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.phantom_proto.phantom_one phantom_array = 2;
+      // repeated .faith.phantom_proto.phantom_one phantom_array = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -540,7 +540,7 @@ void phantom_proto_phantom_all::SerializeWithCachedSizes(
       1, this->role_guid(i), output);
   }
 
-  // repeated .hld.phantom_proto.phantom_one phantom_array = 2;
+  // repeated .faith.phantom_proto.phantom_one phantom_array = 2;
   for (int i = 0; i < this->phantom_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->phantom_array(i), output);
@@ -560,7 +560,7 @@ void phantom_proto_phantom_all::SerializeWithCachedSizes(
       WriteInt32ToArray(1, this->role_guid(i), target);
   }
 
-  // repeated .hld.phantom_proto.phantom_one phantom_array = 2;
+  // repeated .faith.phantom_proto.phantom_one phantom_array = 2;
   for (int i = 0; i < this->phantom_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -587,7 +587,7 @@ int phantom_proto_phantom_all::ByteSize() const {
     total_size += 1 * this->role_guid_size() + data_size;
   }
 
-  // repeated .hld.phantom_proto.phantom_one phantom_array = 2;
+  // repeated .faith.phantom_proto.phantom_one phantom_array = 2;
   total_size += 1 * this->phantom_array_size();
   for (int i = 0; i < this->phantom_array_size(); i++) {
     total_size +=
@@ -1355,6 +1355,6 @@ void phantom_proto::Swap(phantom_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

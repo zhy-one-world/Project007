@@ -14,7 +14,7 @@
 #include <Utility/cs_date.hpp>
 #include "server_def.hpp"
 
-namespace hld
+namespace faith
 {
 
 	uint32 guid_gen::server_id = 0;

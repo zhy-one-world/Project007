@@ -17,25 +17,25 @@ purpose:
 #include "Logic/char_def.hpp"
 #include "Logic/pokedex_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_dp2cs_load_char_pokedexs = hld::e_msg_base_pokedex,
+		e_msgindex_dp2cs_load_char_pokedexs = faith::e_msg_base_pokedex,
 		e_msgindex_cs2dp_save_char_pokedexs,
 		e_msgindex_cs2fep_send_pokedexs_all_info,
 	};
 
 	enum
 	{
-		e_msgindex_dp2cs_load_char_tinder = hld::e_msg_base_tinder,
+		e_msgindex_dp2cs_load_char_tinder = faith::e_msg_base_tinder,
 		e_msgindex_cs2dp_save_char_tinder,
 	};
 
 	// DP2CS 分批发送玩家的所有信仰信息
-	struct dp2cs_load_char_pokedex : public hld::packet_base
+	struct dp2cs_load_char_pokedex : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -48,7 +48,7 @@ namespace hld
 		}
 	};
 
-	struct cs2dp_save_char_pokedex : public hld::packet_base
+	struct cs2dp_save_char_pokedex : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -72,7 +72,7 @@ namespace hld
 		int32								pokedex_data[e_pokedex_Info_max];
 	};
 
-	struct dp2cs_load_char_tinder : public hld::packet_base
+	struct dp2cs_load_char_tinder : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -85,7 +85,7 @@ namespace hld
 		}
 	};
 
-	struct cs2dp_save_char_tinder : public hld::packet_base
+	struct cs2dp_save_char_tinder : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;

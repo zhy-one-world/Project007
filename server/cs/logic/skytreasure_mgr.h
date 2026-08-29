@@ -4,7 +4,7 @@
 #include "Logic/skytreasure_def.h"
 #include "template/ServerTemplateHead.h"
 
-namespace hld
+namespace faith
 {
 	class skytreasure_mgr
 	{

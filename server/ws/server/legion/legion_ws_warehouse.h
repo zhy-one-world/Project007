@@ -5,7 +5,7 @@
 #include "legion.pb.h"
 #include <core.hpp>
 
-namespace hld
+namespace faith
 {
 	class legion_ws_warehouse
 	{

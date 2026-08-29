@@ -13,7 +13,7 @@
 #define LUA_CALL_PARAM_NUM_MAX	10
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 	enum e_lua_call_event_type
 	{

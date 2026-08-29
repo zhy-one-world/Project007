@@ -17,7 +17,7 @@
 
 struct buff_event;
 
-namespace hld
+namespace faith
 {
 	// buff Event
 	struct event_trigger_buf

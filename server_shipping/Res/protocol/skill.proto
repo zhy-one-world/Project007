@@ -1,0 +1,165 @@
+syntax = "proto2";
+package hld;
+
+message skill_proto
+{	
+	message skill_save_load
+	{
+		repeated 	int32	data_ary = 1;					// 存读档数据
+	}
+	message skill_spell
+	{
+		optional	int32	skill_template_id= 1;           // 学习哪个技能
+		optional	int64	target_id = 2;               	// 对谁施放技能，不需要目标的技能可不填
+		optional 	int32	target_runtime_id = 3;			// 目标运行时id
+		optional 	int32	yaw = 4;						// 朝向
+		optional 	int32	skill_order = 5;				// 技能顺序
+	}
+
+	message skill_spell_end
+	{
+		optional	int64						attack_unit_guid = 1;             	// 谁施放的
+		optional	int32						yaw = 2;                 			// 施法技能的位置，如通道攻击
+		optional	int32						skill_template_id = 3;              // 使用哪个技能
+	}
+	
+	message skill_cast
+	{
+		optional	int32	skill_template_id= 1;           // 学习哪个技能
+		optional	int64	target_id = 2;               	// 对谁施放技能，不需要目标的技能可不填
+		optional 	int32	target_runtime_id = 3;			// 目标运行时id
+		optional 	int32	yaw = 4;						// 朝向
+		optional 	int32	skill_order = 5;				// 技能顺序
+	}
+
+	message skill_cast_end
+	{
+		optional	int64						attack_unit_guid = 1;             	// 谁施放的
+		optional	int64						target_unit_guid = 2;            	// 对谁产生的
+		repeated	int32						postion = 3;                 		// 施法技能的位置，如通道攻击
+		optional	int32						yaw = 4;                 			// 施法技能的位置，如通道攻击
+		optional	int32						skill_template_id = 5;              // 使用哪个技能
+		optional 	int32						skill_order = 6;					// 技能顺序
+	}
+
+	message skill_fly_end
+	{
+		optional	int64						attack_unit_guid = 1;             	// 谁施放的
+		optional	int64						target_unit_guid = 2;            	// 对谁产生的
+		optional	int32						skill_template_id = 3;              // 使用哪个技能
+		optional	int32						Bullet_template_id = 4;             // 技能盒子的名称
+		optional	int32						effect_index = 5;             		// 技能盒子的位置
+		optional 	int32						skill_order = 6;					// 技能顺序
+	}
+	message skill_hurt
+	{
+		optional	int32	skill_template_id= 1;           // 学习哪个技能
+		optional	int64	target_id = 2;               	// 对谁施放技能，不需要目标的技能可不填
+		optional 	int32	target_runtime_id = 3;			// 目标运行时id
+		optional 	int32	effect_index = 4;				// 那个effect产生的
+		optional 	int32	skill_order = 5;				// 技能顺序
+		optional 	bool	be_hit = 6;						// 是否命中
+		optional 	bool	be_critical = 7;				// 是否暴击
+		optional 	int32	hit_random = 8;				// 随机伤害
+		repeated	int32   postion = 9;                 	// 施法技能的位置，如通道攻击
+	}
+	message skill_operation
+	{
+		optional	int32	operation_type	= 1;
+		optional	int32	skill_index= 2;               	// 施放哪个位置的技能
+		optional	int32	skill_template_id= 3;           // 学习哪个技能
+		optional	int64	target_id = 4;               	// 对谁施放技能，不需要目标的技能可不填
+		optional 	int32	target_runtime_id = 5;			// 目标运行时id
+		optional 	int32	yaw = 6;						// 朝向
+		optional 	int32	effect_index = 7;				// 那个effect产生的
+		optional 	int32	skill_order = 8;				// 技能顺序
+		optional 	bool	be_hit = 9;						// 是否命中
+		optional 	bool	be_critical = 10;				// 是否暴击
+		optional 	int32	hit_random = 11;				// 随机伤害
+		optional 	int64	param_guid = 12;				// 参数guid
+	}
+
+	message skill_operation_end
+	{
+		optional	int32						operation_type	= 1;
+		optional	int64						attack_unit_guid = 2;             	// 谁施放的
+		optional	int64						target_unit_guid = 3;            	// 对谁产生的
+		repeated	int32						postion = 4;                 		// 施法技能的位置，如通道攻击
+		optional	int32						yaw = 5;                 			// 施法技能的位置，如通道攻击
+		optional	int32						skill_index = 6;              		// 使用哪个位置
+		optional	int32						skill_template_id = 7;              // 使用哪个技能
+		optional	int32						Bullet_template_id = 8;             // 技能盒子的名称
+		optional	int32						effect_index = 9;             		// 技能盒子的位置
+		optional 	int32						skill_order = 10;					// 技能顺序
+	}
+	message skill_info
+	{
+		optional	int64						unit_guid= 1; 
+		repeated	int32						data_ary = 2;
+	}
+	message skill_info_all
+	{
+		optional	int64						unit_guid	= 1; 
+		repeated	skill_info					skill_list	= 2;
+		optional	bool						is_clear	= 3; 
+	}
+	message sub_cd
+	{
+		optional int32 							skill_template_id = 1;
+		optional int32 							sub_cd_time = 2;
+	}
+	message change_skill
+	{
+		optional int32 							skill_template_id = 1;
+	}
+	message skill_fixed_param
+	{
+		optional int32 							skill_template_id = 1;
+		repeated float 							fixed_params = 2;
+	}
+	message change_skill_index
+	{
+		optional int32 							skill_template_id = 1;
+		optional int32 							pos_index = 2;
+	}
+	message skill_patron_saint_effect
+	{
+		optional int64							unit_guid= 1; 
+		optional int32 							skill_template_id = 2;
+	}
+	message trigger_passive_skill
+	{
+		optional int32 							skill_template_id = 1;
+	}
+	message passive_skill_up_level
+	{
+		optional int32 							passive_skill_id = 1;
+	}
+	message passive_skill_up_level_end
+	{
+		optional int32 							res = 1;
+		optional int32 							passive_skill_id = 2;
+	}
+	message passive_skill_equip
+	{
+		optional int32 							passive_skill_id = 1;
+		optional int32 							slot = 2;
+	}
+	message passive_skill_equip_end
+	{
+		optional int32 							res = 1;
+		optional int32 							old_passive_skill_id = 2;
+		optional int32 							new_passive_skill_id = 3;
+	}
+}
+message skill_s2s
+{
+	message passive_skill_info
+	{
+		repeated int32 data_ary = 1;		
+	}
+	message sl_passive_skill_info
+	{
+		repeated passive_skill_info data_list = 1;
+	}
+}

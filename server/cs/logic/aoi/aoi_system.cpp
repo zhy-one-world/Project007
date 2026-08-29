@@ -6,7 +6,7 @@
 #include "logic/player.hpp"
 #include "utility/init_unit.h"
 
-using namespace hld;
+using namespace faith;
 
 //static cs2fep_aoi_msg g_aoi_msg;
 static int32 g_aoi_tower_ary[init_player_max];

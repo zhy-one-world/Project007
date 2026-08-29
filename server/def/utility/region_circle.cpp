@@ -1,7 +1,7 @@
 #include <cmath>
 #include "region_circle.hpp"
 
-namespace hld
+namespace faith
 {
     region_circle::region_circle(const fvector& center, const i32 radius):
         m_center(center),

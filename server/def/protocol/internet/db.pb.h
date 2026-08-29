@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_db_2eproto();
@@ -129,7 +129,7 @@ class db_proto_role_starark_db : public ::google::protobuf::Message {
   inline ::std::string* release_body();
   inline void set_allocated_body(::std::string* body);
 
-  // @@protoc_insertion_point(class_scope:hld.db_proto.role_starark_db)
+  // @@protoc_insertion_point(class_scope:faith.db_proto.role_starark_db)
  private:
   inline void set_has_body();
   inline void clear_has_body();
@@ -245,7 +245,7 @@ class db_proto_role_proc_recycle_invited_row : public ::google::protobuf::Messag
   inline ::std::string* release_invited_name();
   inline void set_allocated_invited_name(::std::string* invited_name);
 
-  // @@protoc_insertion_point(class_scope:hld.db_proto.role_proc_recycle_invited_row)
+  // @@protoc_insertion_point(class_scope:faith.db_proto.role_proc_recycle_invited_row)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -339,26 +339,26 @@ class db_proto_role_proc_recycle_invited_db : public ::google::protobuf::Message
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.db_proto.role_proc_recycle_invited_row row_data = 2;
+  // repeated .faith.db_proto.role_proc_recycle_invited_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::db_proto_role_proc_recycle_invited_row& row_data(int index) const;
-  inline ::hld::db_proto_role_proc_recycle_invited_row* mutable_row_data(int index);
-  inline ::hld::db_proto_role_proc_recycle_invited_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::db_proto_role_proc_recycle_invited_row >&
+  inline const ::faith::db_proto_role_proc_recycle_invited_row& row_data(int index) const;
+  inline ::faith::db_proto_role_proc_recycle_invited_row* mutable_row_data(int index);
+  inline ::faith::db_proto_role_proc_recycle_invited_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::db_proto_role_proc_recycle_invited_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::db_proto_role_proc_recycle_invited_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::db_proto_role_proc_recycle_invited_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.db_proto.role_proc_recycle_invited_db)
+  // @@protoc_insertion_point(class_scope:faith.db_proto.role_proc_recycle_invited_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::db_proto_role_proc_recycle_invited_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::db_proto_role_proc_recycle_invited_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -439,7 +439,7 @@ class db_proto_role_event_db : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.db_proto.role_event_db)
+  // @@protoc_insertion_point(class_scope:faith.db_proto.role_event_db)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -543,7 +543,7 @@ class db_proto_item_info_db : public ::google::protobuf::Message {
   inline ::std::string* release_param_str();
   inline void set_allocated_param_str(::std::string* param_str);
 
-  // @@protoc_insertion_point(class_scope:hld.db_proto.item_info_db)
+  // @@protoc_insertion_point(class_scope:faith.db_proto.item_info_db)
  private:
   inline void set_has_item_guid();
   inline void clear_has_item_guid();
@@ -791,16 +791,16 @@ class db_proto_auction_row : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 show_guid() const;
   inline void set_show_guid(::google::protobuf::int64 value);
 
-  // optional .hld.db_proto.item_info_db item_info = 23;
+  // optional .faith.db_proto.item_info_db item_info = 23;
   inline bool has_item_info() const;
   inline void clear_item_info();
   static const int kItemInfoFieldNumber = 23;
-  inline const ::hld::db_proto_item_info_db& item_info() const;
-  inline ::hld::db_proto_item_info_db* mutable_item_info();
-  inline ::hld::db_proto_item_info_db* release_item_info();
-  inline void set_allocated_item_info(::hld::db_proto_item_info_db* item_info);
+  inline const ::faith::db_proto_item_info_db& item_info() const;
+  inline ::faith::db_proto_item_info_db* mutable_item_info();
+  inline ::faith::db_proto_item_info_db* release_item_info();
+  inline void set_allocated_item_info(::faith::db_proto_item_info_db* item_info);
 
-  // @@protoc_insertion_point(class_scope:hld.db_proto.auction_row)
+  // @@protoc_insertion_point(class_scope:faith.db_proto.auction_row)
  private:
   inline void set_has_seller_guid();
   inline void clear_has_seller_guid();
@@ -872,7 +872,7 @@ class db_proto_auction_row : public ::google::protobuf::Message {
   ::google::protobuf::int32 is_show_;
   ::google::protobuf::int32 add_time_;
   ::google::protobuf::int64 show_guid_;
-  ::hld::db_proto_item_info_db* item_info_;
+  ::faith::db_proto_item_info_db* item_info_;
   ::google::protobuf::int32 is_sky_order_;
 
   mutable int _cached_size_;
@@ -948,26 +948,26 @@ class db_proto_auction_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.db_proto.auction_row row_data = 2;
+  // repeated .faith.db_proto.auction_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::db_proto_auction_row& row_data(int index) const;
-  inline ::hld::db_proto_auction_row* mutable_row_data(int index);
-  inline ::hld::db_proto_auction_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::db_proto_auction_row >&
+  inline const ::faith::db_proto_auction_row& row_data(int index) const;
+  inline ::faith::db_proto_auction_row* mutable_row_data(int index);
+  inline ::faith::db_proto_auction_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::db_proto_auction_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::db_proto_auction_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::db_proto_auction_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.db_proto.auction_db)
+  // @@protoc_insertion_point(class_scope:faith.db_proto.auction_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::db_proto_auction_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::db_proto_auction_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -1043,7 +1043,7 @@ class db_proto_role_first_time_do_row : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 do_type() const;
   inline void set_do_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.db_proto.role_first_time_do_row)
+  // @@protoc_insertion_point(class_scope:faith.db_proto.role_first_time_do_row)
  private:
   inline void set_has_do_type();
   inline void clear_has_do_type();
@@ -1125,26 +1125,26 @@ class db_proto_role_first_time_do_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.db_proto.role_first_time_do_row row_data = 2;
+  // repeated .faith.db_proto.role_first_time_do_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::db_proto_role_first_time_do_row& row_data(int index) const;
-  inline ::hld::db_proto_role_first_time_do_row* mutable_row_data(int index);
-  inline ::hld::db_proto_role_first_time_do_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::db_proto_role_first_time_do_row >&
+  inline const ::faith::db_proto_role_first_time_do_row& row_data(int index) const;
+  inline ::faith::db_proto_role_first_time_do_row* mutable_row_data(int index);
+  inline ::faith::db_proto_role_first_time_do_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::db_proto_role_first_time_do_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::db_proto_role_first_time_do_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::db_proto_role_first_time_do_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.db_proto.role_first_time_do_db)
+  // @@protoc_insertion_point(class_scope:faith.db_proto.role_first_time_do_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::db_proto_role_first_time_do_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::db_proto_role_first_time_do_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -1227,7 +1227,7 @@ class db_proto_load_role_guide_row : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 state() const;
   inline void set_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.db_proto.load_role_guide_row)
+  // @@protoc_insertion_point(class_scope:faith.db_proto.load_role_guide_row)
  private:
   inline void set_has_guide_trigger_id();
   inline void clear_has_guide_trigger_id();
@@ -1312,26 +1312,26 @@ class db_proto_load_role_guide_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.db_proto.load_role_guide_row row_data = 2;
+  // repeated .faith.db_proto.load_role_guide_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::db_proto_load_role_guide_row& row_data(int index) const;
-  inline ::hld::db_proto_load_role_guide_row* mutable_row_data(int index);
-  inline ::hld::db_proto_load_role_guide_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::db_proto_load_role_guide_row >&
+  inline const ::faith::db_proto_load_role_guide_row& row_data(int index) const;
+  inline ::faith::db_proto_load_role_guide_row* mutable_row_data(int index);
+  inline ::faith::db_proto_load_role_guide_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::db_proto_load_role_guide_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::db_proto_load_role_guide_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::db_proto_load_role_guide_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.db_proto.load_role_guide_db)
+  // @@protoc_insertion_point(class_scope:faith.db_proto.load_role_guide_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::db_proto_load_role_guide_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::db_proto_load_role_guide_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -1455,7 +1455,7 @@ class db_proto_role_mail_row : public ::google::protobuf::Message {
   inline ::std::string* release_mail_title();
   inline void set_allocated_mail_title(::std::string* mail_title);
 
-  // @@protoc_insertion_point(class_scope:hld.db_proto.role_mail_row)
+  // @@protoc_insertion_point(class_scope:faith.db_proto.role_mail_row)
  private:
   inline void set_has_mail_guid();
   inline void clear_has_mail_guid();
@@ -1547,26 +1547,26 @@ class db_proto_role_mail_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.db_proto.role_mail_row row_data = 2;
+  // repeated .faith.db_proto.role_mail_row row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::db_proto_role_mail_row& row_data(int index) const;
-  inline ::hld::db_proto_role_mail_row* mutable_row_data(int index);
-  inline ::hld::db_proto_role_mail_row* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::db_proto_role_mail_row >&
+  inline const ::faith::db_proto_role_mail_row& row_data(int index) const;
+  inline ::faith::db_proto_role_mail_row* mutable_row_data(int index);
+  inline ::faith::db_proto_role_mail_row* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::db_proto_role_mail_row >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::db_proto_role_mail_row >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::db_proto_role_mail_row >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.db_proto.role_mail_db)
+  // @@protoc_insertion_point(class_scope:faith.db_proto.role_mail_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::db_proto_role_mail_row > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::db_proto_role_mail_row > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -1642,26 +1642,26 @@ class db_proto_role_mail_item_db : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 row_count() const;
   inline void set_row_count(::google::protobuf::int32 value);
 
-  // repeated .hld.db_proto.item_info_db row_data = 2;
+  // repeated .faith.db_proto.item_info_db row_data = 2;
   inline int row_data_size() const;
   inline void clear_row_data();
   static const int kRowDataFieldNumber = 2;
-  inline const ::hld::db_proto_item_info_db& row_data(int index) const;
-  inline ::hld::db_proto_item_info_db* mutable_row_data(int index);
-  inline ::hld::db_proto_item_info_db* add_row_data();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::db_proto_item_info_db >&
+  inline const ::faith::db_proto_item_info_db& row_data(int index) const;
+  inline ::faith::db_proto_item_info_db* mutable_row_data(int index);
+  inline ::faith::db_proto_item_info_db* add_row_data();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::db_proto_item_info_db >&
       row_data() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::db_proto_item_info_db >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::db_proto_item_info_db >*
       mutable_row_data();
 
-  // @@protoc_insertion_point(class_scope:hld.db_proto.role_mail_item_db)
+  // @@protoc_insertion_point(class_scope:faith.db_proto.role_mail_item_db)
  private:
   inline void set_has_row_count();
   inline void clear_has_row_count();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::db_proto_item_info_db > row_data_;
+  ::google::protobuf::RepeatedPtrField< ::faith::db_proto_item_info_db > row_data_;
   ::google::protobuf::int32 row_count_;
 
   mutable int _cached_size_;
@@ -1745,7 +1745,7 @@ class db_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.db_proto)
+  // @@protoc_insertion_point(class_scope:faith.db_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2051,27 +2051,27 @@ inline void db_proto_role_proc_recycle_invited_db::set_row_count(::google::proto
   row_count_ = value;
 }
 
-// repeated .hld.db_proto.role_proc_recycle_invited_row row_data = 2;
+// repeated .faith.db_proto.role_proc_recycle_invited_row row_data = 2;
 inline int db_proto_role_proc_recycle_invited_db::row_data_size() const {
   return row_data_.size();
 }
 inline void db_proto_role_proc_recycle_invited_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::db_proto_role_proc_recycle_invited_row& db_proto_role_proc_recycle_invited_db::row_data(int index) const {
+inline const ::faith::db_proto_role_proc_recycle_invited_row& db_proto_role_proc_recycle_invited_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::db_proto_role_proc_recycle_invited_row* db_proto_role_proc_recycle_invited_db::mutable_row_data(int index) {
+inline ::faith::db_proto_role_proc_recycle_invited_row* db_proto_role_proc_recycle_invited_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::db_proto_role_proc_recycle_invited_row* db_proto_role_proc_recycle_invited_db::add_row_data() {
+inline ::faith::db_proto_role_proc_recycle_invited_row* db_proto_role_proc_recycle_invited_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::db_proto_role_proc_recycle_invited_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::db_proto_role_proc_recycle_invited_row >&
 db_proto_role_proc_recycle_invited_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::db_proto_role_proc_recycle_invited_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::db_proto_role_proc_recycle_invited_row >*
 db_proto_role_proc_recycle_invited_db::mutable_row_data() {
   return &row_data_;
 }
@@ -2858,7 +2858,7 @@ inline void db_proto_auction_row::set_show_guid(::google::protobuf::int64 value)
   show_guid_ = value;
 }
 
-// optional .hld.db_proto.item_info_db item_info = 23;
+// optional .faith.db_proto.item_info_db item_info = 23;
 inline bool db_proto_auction_row::has_item_info() const {
   return (_has_bits_[0] & 0x00400000u) != 0;
 }
@@ -2869,24 +2869,24 @@ inline void db_proto_auction_row::clear_has_item_info() {
   _has_bits_[0] &= ~0x00400000u;
 }
 inline void db_proto_auction_row::clear_item_info() {
-  if (item_info_ != NULL) item_info_->::hld::db_proto_item_info_db::Clear();
+  if (item_info_ != NULL) item_info_->::faith::db_proto_item_info_db::Clear();
   clear_has_item_info();
 }
-inline const ::hld::db_proto_item_info_db& db_proto_auction_row::item_info() const {
+inline const ::faith::db_proto_item_info_db& db_proto_auction_row::item_info() const {
   return item_info_ != NULL ? *item_info_ : *default_instance_->item_info_;
 }
-inline ::hld::db_proto_item_info_db* db_proto_auction_row::mutable_item_info() {
+inline ::faith::db_proto_item_info_db* db_proto_auction_row::mutable_item_info() {
   set_has_item_info();
-  if (item_info_ == NULL) item_info_ = new ::hld::db_proto_item_info_db;
+  if (item_info_ == NULL) item_info_ = new ::faith::db_proto_item_info_db;
   return item_info_;
 }
-inline ::hld::db_proto_item_info_db* db_proto_auction_row::release_item_info() {
+inline ::faith::db_proto_item_info_db* db_proto_auction_row::release_item_info() {
   clear_has_item_info();
-  ::hld::db_proto_item_info_db* temp = item_info_;
+  ::faith::db_proto_item_info_db* temp = item_info_;
   item_info_ = NULL;
   return temp;
 }
-inline void db_proto_auction_row::set_allocated_item_info(::hld::db_proto_item_info_db* item_info) {
+inline void db_proto_auction_row::set_allocated_item_info(::faith::db_proto_item_info_db* item_info) {
   delete item_info_;
   item_info_ = item_info;
   if (item_info) {
@@ -2922,27 +2922,27 @@ inline void db_proto_auction_db::set_row_count(::google::protobuf::int32 value) 
   row_count_ = value;
 }
 
-// repeated .hld.db_proto.auction_row row_data = 2;
+// repeated .faith.db_proto.auction_row row_data = 2;
 inline int db_proto_auction_db::row_data_size() const {
   return row_data_.size();
 }
 inline void db_proto_auction_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::db_proto_auction_row& db_proto_auction_db::row_data(int index) const {
+inline const ::faith::db_proto_auction_row& db_proto_auction_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::db_proto_auction_row* db_proto_auction_db::mutable_row_data(int index) {
+inline ::faith::db_proto_auction_row* db_proto_auction_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::db_proto_auction_row* db_proto_auction_db::add_row_data() {
+inline ::faith::db_proto_auction_row* db_proto_auction_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::db_proto_auction_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::db_proto_auction_row >&
 db_proto_auction_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::db_proto_auction_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::db_proto_auction_row >*
 db_proto_auction_db::mutable_row_data() {
   return &row_data_;
 }
@@ -2999,27 +2999,27 @@ inline void db_proto_role_first_time_do_db::set_row_count(::google::protobuf::in
   row_count_ = value;
 }
 
-// repeated .hld.db_proto.role_first_time_do_row row_data = 2;
+// repeated .faith.db_proto.role_first_time_do_row row_data = 2;
 inline int db_proto_role_first_time_do_db::row_data_size() const {
   return row_data_.size();
 }
 inline void db_proto_role_first_time_do_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::db_proto_role_first_time_do_row& db_proto_role_first_time_do_db::row_data(int index) const {
+inline const ::faith::db_proto_role_first_time_do_row& db_proto_role_first_time_do_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::db_proto_role_first_time_do_row* db_proto_role_first_time_do_db::mutable_row_data(int index) {
+inline ::faith::db_proto_role_first_time_do_row* db_proto_role_first_time_do_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::db_proto_role_first_time_do_row* db_proto_role_first_time_do_db::add_row_data() {
+inline ::faith::db_proto_role_first_time_do_row* db_proto_role_first_time_do_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::db_proto_role_first_time_do_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::db_proto_role_first_time_do_row >&
 db_proto_role_first_time_do_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::db_proto_role_first_time_do_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::db_proto_role_first_time_do_row >*
 db_proto_role_first_time_do_db::mutable_row_data() {
   return &row_data_;
 }
@@ -3098,27 +3098,27 @@ inline void db_proto_load_role_guide_db::set_row_count(::google::protobuf::int32
   row_count_ = value;
 }
 
-// repeated .hld.db_proto.load_role_guide_row row_data = 2;
+// repeated .faith.db_proto.load_role_guide_row row_data = 2;
 inline int db_proto_load_role_guide_db::row_data_size() const {
   return row_data_.size();
 }
 inline void db_proto_load_role_guide_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::db_proto_load_role_guide_row& db_proto_load_role_guide_db::row_data(int index) const {
+inline const ::faith::db_proto_load_role_guide_row& db_proto_load_role_guide_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::db_proto_load_role_guide_row* db_proto_load_role_guide_db::mutable_row_data(int index) {
+inline ::faith::db_proto_load_role_guide_row* db_proto_load_role_guide_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::db_proto_load_role_guide_row* db_proto_load_role_guide_db::add_row_data() {
+inline ::faith::db_proto_load_role_guide_row* db_proto_load_role_guide_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::db_proto_load_role_guide_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::db_proto_load_role_guide_row >&
 db_proto_load_role_guide_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::db_proto_load_role_guide_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::db_proto_load_role_guide_row >*
 db_proto_load_role_guide_db::mutable_row_data() {
   return &row_data_;
 }
@@ -3410,27 +3410,27 @@ inline void db_proto_role_mail_db::set_row_count(::google::protobuf::int32 value
   row_count_ = value;
 }
 
-// repeated .hld.db_proto.role_mail_row row_data = 2;
+// repeated .faith.db_proto.role_mail_row row_data = 2;
 inline int db_proto_role_mail_db::row_data_size() const {
   return row_data_.size();
 }
 inline void db_proto_role_mail_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::db_proto_role_mail_row& db_proto_role_mail_db::row_data(int index) const {
+inline const ::faith::db_proto_role_mail_row& db_proto_role_mail_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::db_proto_role_mail_row* db_proto_role_mail_db::mutable_row_data(int index) {
+inline ::faith::db_proto_role_mail_row* db_proto_role_mail_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::db_proto_role_mail_row* db_proto_role_mail_db::add_row_data() {
+inline ::faith::db_proto_role_mail_row* db_proto_role_mail_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::db_proto_role_mail_row >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::db_proto_role_mail_row >&
 db_proto_role_mail_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::db_proto_role_mail_row >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::db_proto_role_mail_row >*
 db_proto_role_mail_db::mutable_row_data() {
   return &row_data_;
 }
@@ -3461,27 +3461,27 @@ inline void db_proto_role_mail_item_db::set_row_count(::google::protobuf::int32 
   row_count_ = value;
 }
 
-// repeated .hld.db_proto.item_info_db row_data = 2;
+// repeated .faith.db_proto.item_info_db row_data = 2;
 inline int db_proto_role_mail_item_db::row_data_size() const {
   return row_data_.size();
 }
 inline void db_proto_role_mail_item_db::clear_row_data() {
   row_data_.Clear();
 }
-inline const ::hld::db_proto_item_info_db& db_proto_role_mail_item_db::row_data(int index) const {
+inline const ::faith::db_proto_item_info_db& db_proto_role_mail_item_db::row_data(int index) const {
   return row_data_.Get(index);
 }
-inline ::hld::db_proto_item_info_db* db_proto_role_mail_item_db::mutable_row_data(int index) {
+inline ::faith::db_proto_item_info_db* db_proto_role_mail_item_db::mutable_row_data(int index) {
   return row_data_.Mutable(index);
 }
-inline ::hld::db_proto_item_info_db* db_proto_role_mail_item_db::add_row_data() {
+inline ::faith::db_proto_item_info_db* db_proto_role_mail_item_db::add_row_data() {
   return row_data_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::db_proto_item_info_db >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::db_proto_item_info_db >&
 db_proto_role_mail_item_db::row_data() const {
   return row_data_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::db_proto_item_info_db >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::db_proto_item_info_db >*
 db_proto_role_mail_item_db::mutable_row_data() {
   return &row_data_;
 }
@@ -3493,7 +3493,7 @@ db_proto_role_mail_item_db::mutable_row_data() {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

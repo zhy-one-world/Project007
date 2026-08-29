@@ -15,12 +15,12 @@ purpose: ¥Ú±¶œ‡πÿ
 #include "Logic/gain_treasure_def.hpp"
 #include "internet/dp2s.pb.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	enum
 	{
-		e_msgindex_dp2cs_load_gain_treasure_info = hld::e_msg_base_gain_treasure,
+		e_msgindex_dp2cs_load_gain_treasure_info = faith::e_msg_base_gain_treasure,
 		e_msgindex_cs2dp_save_gain_treasure_info,
 
 		e_msgindex_ws2dp_load_all_gain_treasure_record_info,
@@ -31,7 +31,7 @@ namespace hld
 		e_msgindex_cs2ws_add_gain_treasure_record_info,
 	};
 
-	struct dp2cs_load_gain_treasure_info : public hld::packet_base
+	struct dp2cs_load_gain_treasure_info : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -44,7 +44,7 @@ namespace hld
 		}
 	};
 
-	struct cs2dp_save_gain_treasure_info : public hld::packet_base
+	struct cs2dp_save_gain_treasure_info : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -62,7 +62,7 @@ namespace hld
 		}
 	};
 
-	struct ws2dp_load_all_gain_treasure_record_info : public hld::packet_base
+	struct ws2dp_load_all_gain_treasure_record_info : public faith::packet_base
 	{
 		int32								boss_spawn_point_id;
 		ws2dp_load_all_gain_treasure_record_info()
@@ -72,7 +72,7 @@ namespace hld
 		}
 	};
 
-	struct dp2ws_load_all_gain_treasure_record_info : public hld::packet_base
+	struct dp2ws_load_all_gain_treasure_record_info : public faith::packet_base
 	{
 		int32								data_num;
 		s_gain_treasure_record_info_one_db	record_infos[gain_treasure_killed_record_one_boss_max_size];
@@ -87,12 +87,12 @@ namespace hld
 			const int32 basic_len = (ULONG_PTR)&record_infos - (ULONG_PTR)&wheader;
 			return (basic_len + data_num * sizeof(s_gain_treasure_record_info_one_db));
 		}
-		bool  to_proto(hld::dp2s_proto::load_all_gain_treasure_record_info& msg)
+		bool  to_proto(faith::dp2s_proto::load_all_gain_treasure_record_info& msg)
 		{
 			msg.set_data_num(data_num);
 			for (int32 i = 0; i < data_num &&  i < gain_treasure_record_info_max_size; i++)
 			{
-				hld::st_proto::st_gain_treasure_record_info_one_db * st_treasure_ptr = msg.add_record_infos();
+				faith::st_proto::st_gain_treasure_record_info_one_db * st_treasure_ptr = msg.add_record_infos();
 				if (st_treasure_ptr == nullptr)
 				{
 					return false;
@@ -101,7 +101,7 @@ namespace hld
 			}
 			return true;
 		}
-		void  from_proto(const hld::dp2s_proto::load_all_gain_treasure_record_info& msg)
+		void  from_proto(const faith::dp2s_proto::load_all_gain_treasure_record_info& msg)
 		{
 			data_num = msg.data_num();
 			for (int32 i = 0;  i < gain_treasure_record_info_max_size && i < msg.record_infos_size(); i++)
@@ -111,7 +111,7 @@ namespace hld
 		}
 	};
 
-	struct ws2dp_save_gain_treasure_record_info : public hld::packet_base
+	struct ws2dp_save_gain_treasure_record_info : public faith::packet_base
 	{
 		int32								del_stamp;
 		s_gain_treasure_record_info_one_db	record_info;
@@ -123,7 +123,7 @@ namespace hld
 		}
 	};
 
-	struct cs2ws_update_gain_treasure_boss_info : public hld::packet_base
+	struct cs2ws_update_gain_treasure_boss_info : public faith::packet_base
 	{
 		s_gain_treasure_boss_info			boss_info;
 
@@ -134,7 +134,7 @@ namespace hld
 		}
 	};
 	
-	struct cs2ws_add_gain_treasure_record_info : public hld::packet_base
+	struct cs2ws_add_gain_treasure_record_info : public faith::packet_base
 	{
 		//s_gain_treasure_record_info_one		record_info;
 		int32 boss_spawn_point_temp_id;

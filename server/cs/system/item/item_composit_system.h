@@ -3,7 +3,7 @@
 #include "logic/type_def.hpp"
 #include "base/ecs_world.h"
 
-namespace hld
+namespace faith
 {
 	class item_proto_item_composit;
 	class player;

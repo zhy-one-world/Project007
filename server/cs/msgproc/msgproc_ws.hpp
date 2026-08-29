@@ -14,7 +14,7 @@
 
 
 
-namespace hld
+namespace faith
 {
 
 	void ws2cs_req_reload_csv(uint32 conn_index, const void* data_ptr, size_t data_len);

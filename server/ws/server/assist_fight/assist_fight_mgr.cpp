@@ -11,7 +11,7 @@
 #include "system/scene/cs_map_system.h"
 #include "assist_fight.pb.h"
 #include "net.pb.h"
-namespace hld
+namespace faith
 {
 	assist_fight_mgr::assist_fight_mgr()
 	{
@@ -24,7 +24,7 @@ namespace hld
 	{
 		if (is_use_lua())
 		{
-			hld::st_proto::st_assist_fight_info st_info;
+			faith::st_proto::st_assist_fight_info st_info;
 			s_assist_fight_info& tmp = const_cast<s_assist_fight_info &>(m_in_info);
 			tmp.to_proto(&st_info);
 			packet_s2s *p_s2s = parse_msg::getInstance().serialze_buffer(&st_info);
@@ -349,7 +349,7 @@ namespace hld
 					continue;
 				}
 			}
-			hld::assist_fight_proto_assist_fight_info *m_info_msg = msg.add_assist_fight_list();
+			faith::assist_fight_proto_assist_fight_info *m_info_msg = msg.add_assist_fight_list();
 			m_info_msg->set_assist_fight_guid_a(m_info_data.asssit_fight_guid.A);
 			m_info_msg->set_assist_fight_guid_b(m_info_data.asssit_fight_guid.B);
 			m_info_msg->set_assist_fight_type(m_info_data.assist_fight_type);
@@ -494,7 +494,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::sync_assist_fight_info pro_msg;
+				faith::ws2cs_proto::sync_assist_fight_info pro_msg;
 				cs_msg.to_proto(pro_msg);
 				helper_session->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_sync_assist_fight_info);
 			}
@@ -525,7 +525,7 @@ namespace hld
 		for (; iterter != m_assist_fight_list.end(); iterter++)
 		{
 			s_assist_fight_info m_info_data = iterter->second;
-			hld::assist_fight_proto_assist_fight_info* m_info_msg = msg.add_assist_fight_list();
+			faith::assist_fight_proto_assist_fight_info* m_info_msg = msg.add_assist_fight_list();
 			m_info_msg->set_assist_fight_guid_a(m_info_data.asssit_fight_guid.A);
 			m_info_msg->set_assist_fight_guid_b(m_info_data.asssit_fight_guid.B);
 			m_info_msg->set_assist_fight_type(m_info_data.assist_fight_type);

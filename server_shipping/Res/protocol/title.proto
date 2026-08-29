@@ -1,0 +1,39 @@
+syntax = "proto2";
+package hld;
+
+message title_proto
+{
+	message title_equip_operate
+	{
+		repeated int32				unit_guid				= 1;	//角色ID
+		optional int32				template_id				= 2;	//称号表ID
+		optional int32				operate_type			= 3;	//操作类型0--装备,1--卸下
+	}
+	
+	message title_info_one
+	{
+		repeated int32				title_data		= 1;	//称号data
+	}
+	
+	message own_title_msg_all
+	{
+		repeated title_info_one		title_info_arr			= 1;	//单个称号消息信息
+	}
+	
+	message title_add_title_end
+	{
+		repeated int32				unit_guid				= 1;	//角色ID
+		optional int32				template_id				= 2;	//获取称号id
+		optional int32				result					= 3;	//获取结果
+	}
+	
+	message title_open_title_system_end
+	{
+		repeated int32				unit_guid				= 1;	//角色ID
+	}	
+		
+	message title_set_title_no_need_see
+	{
+		repeated int32				unit_guid				= 1;	//角色ID
+	}	
+}

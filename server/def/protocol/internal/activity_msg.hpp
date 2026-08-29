@@ -6,13 +6,13 @@
 #include "Logic/best_record_def.hpp"
 #include "dp2s.pb.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_ws2dp_load_all_best_record = hld::e_msg_base_best_record,
+		e_msgindex_ws2dp_load_all_best_record = faith::e_msg_base_best_record,
 		e_msgindex_dp2ws_load_all_best_record,
 		e_msgindex_ws2dp_save_best_record
 	};
@@ -36,7 +36,7 @@ namespace hld
 		{
 			memset(this, 0, sizeof(*this));
 		}
-		void to_proto(hld::st_proto::st_db_best_record * st_db_best_ptr)
+		void to_proto(faith::st_proto::st_db_best_record * st_db_best_ptr)
 		{
 			if (st_db_best_ptr == nullptr)
 			{
@@ -56,7 +56,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::st_proto::st_db_best_record& st_db_best_ref)
+		void from_proto(const faith::st_proto::st_db_best_record& st_db_best_ref)
 		{
 			map_template_id = st_db_best_ref.map_template_id();
 			role_guid.server_64 = st_db_best_ref.role_guid();
@@ -68,7 +68,7 @@ namespace hld
 	struct dp2ws_load_all_best_record : public packet_base
 	{
 		int32					db_record_num;
-		s_db_best_record		db_record_list[hld::max_best_record_num];
+		s_db_best_record		db_record_list[faith::max_best_record_num];
 		dp2ws_load_all_best_record()
 		{
 			memset(this, 0, sizeof(*this));
@@ -79,12 +79,12 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_dp2ws_load_all_best_record;
 		}
-		bool to_proto(hld::dp2s_proto::load_all_best_record& msg)
+		bool to_proto(faith::dp2s_proto::load_all_best_record& msg)
 		{
 			msg.set_db_record_num(db_record_num);
 			for (int32 i = 0;  i < db_record_num && i < max_best_record_num; i++)
 			{
-				hld::st_proto::st_db_best_record *st_db_best_ptr = msg.add_db_record_list();
+				faith::st_proto::st_db_best_record *st_db_best_ptr = msg.add_db_record_list();
 				if (st_db_best_ptr == nullptr)
 				{
 					return false;
@@ -93,7 +93,7 @@ namespace hld
 			}
 			return true;
 		}
-		void from_proto(const hld::dp2s_proto::load_all_best_record& msg)
+		void from_proto(const faith::dp2s_proto::load_all_best_record& msg)
 		{
 			db_record_num = msg.db_record_num();
 			for (int32 i = 0; i < max_best_record_num && i < msg.db_record_list_size(); i++)

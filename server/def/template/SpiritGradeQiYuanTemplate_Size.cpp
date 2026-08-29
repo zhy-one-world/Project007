@@ -1,6 +1,6 @@
 #include "SpiritGradeQiYuanTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void SpiritGradeQiYuanTemplateSize()
     {

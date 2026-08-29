@@ -14,7 +14,7 @@
 #include <Logic/char_def.hpp>
 #include "csv_synchronization_mgr.h"
 
-namespace hld
+namespace faith
 {
 	queued_login_mgr::queued_login_mgr(void)
 	{

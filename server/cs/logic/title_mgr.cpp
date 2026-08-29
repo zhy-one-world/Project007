@@ -21,7 +21,7 @@ purpose: about role's title_mgr
 #include "utility/parse_msg.h"
 #include "utility/globle_data.h"
 
-namespace hld
+namespace faith
 {
 	ctitle_mgr::ctitle_mgr()
 	{
@@ -49,7 +49,7 @@ namespace hld
 				{
 					return;
 				}
-				if (title_template_ptr->EndTimeType == hld::e_title_end_type_time || title_template_ptr->EndTimeType == hld::e_title_end_type_condition_1)
+				if (title_template_ptr->EndTimeType == faith::e_title_end_type_time || title_template_ptr->EndTimeType == faith::e_title_end_type_condition_1)
 				{
 					int32 remain_time = title_ref.get_inst_data(e_title_info_end_time) - current_time;
 					if (remain_time <= 0)
@@ -72,7 +72,7 @@ namespace hld
 		title_proto_own_title_msg_all resp;
 		for (title_map_it it = m_title_info.begin(); it != m_title_info.end(); ++it)
 		{
-			if (it->second.get_inst_data(hld::e_title_info_if_geted) > 0)
+			if (it->second.get_inst_data(faith::e_title_info_if_geted) > 0)
 			{
 				title_proto_title_info_one* title_info_one_resp = resp.add_title_info_arr();
 				for (int32 i = 0; i < e_title_info_max; ++i)
@@ -162,12 +162,12 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_title msg;
+			faith::cs2dp_proto::save_role_title msg;
 			msg.set_role_guid(player_ref.get_unit_guid().server_64);
 			msg.set_unit_array_index(player_ref.get_array_index());
 			msg.set_save_type_ex(save_type);
 
-			hld::cs2dp_proto::role_title_db *db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_title_db *db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return;
@@ -179,7 +179,7 @@ namespace hld
 				{
 					break;
 				}
-				hld::cs2dp_proto::role_title_row *db_row = db_data->add_row_data();
+				faith::cs2dp_proto::role_title_row *db_row = db_data->add_row_data();
 				if (db_row == nullptr)
 				{
 					return;
@@ -213,12 +213,12 @@ namespace hld
 		{
 			add_title_by_info(title_data[i]);
 		}
-		hld::template_manager::template_type* title_table = template_manager::get_instance().get_templates(e_TitleTemplate);
+		faith::template_manager::template_type* title_table = template_manager::get_instance().get_templates(e_TitleTemplate);
 		if (nullptr == title_table)
 		{
 			return;
 		}
-		hld::template_manager::template_type::iterator ite;
+		faith::template_manager::template_type::iterator ite;
 		int32 title_count = 0;
 		for (ite = title_table->begin(); ite != title_table->end(); ++ite)
 		{
@@ -304,11 +304,11 @@ namespace hld
 			e_title_special_handle handle_type = m_loading_finish_need_add_title_type_arr[i];
 			switch (handle_type)
 			{
-			case hld::e_title_special_handle_none:
+			case faith::e_title_special_handle_none:
 			{
 				break;
 			}
-			case hld::e_title_special_handle_add:
+			case faith::e_title_special_handle_add:
 			{
 				const int32 title_template_id = get_template_id_by_type_and_value(e_title_type(i), 0, 0);
 				if (is_have_title(title_template_id) == false)
@@ -317,7 +317,7 @@ namespace hld
 				}
 				break;
 			}
-			case hld::e_title_special_handle_remove:
+			case faith::e_title_special_handle_remove:
 			{
 				const int32 title_template_id = get_title_template_id_by_type(e_title_type(i));
 				remove_title_by_template_id(title_template_id);
@@ -335,7 +335,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_title_db msg;
+		faith::cs2dp_proto::role_title_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -350,7 +350,7 @@ namespace hld
 		s_title_info *p_row = (s_title_info *)p_data;
 		for (int32 i = 0; i < msg.row_count(); i++)
 		{
-			hld::cs2dp_proto::role_title_row db_row = msg.row_data(i);
+			faith::cs2dp_proto::role_title_row db_row = msg.row_data(i);
 			for (int32 j = 0; j < db_row.data_ary_size(); j++)
 			{
 				p_row->data_ary[j] = db_row.data_ary(j);
@@ -377,7 +377,7 @@ namespace hld
 		{
 			return false;
 		}
-		if (player_ref.get_pawn_att().get_unit_base_att(hld::e_base_att_info_equip_title_id) == title_template_id)
+		if (player_ref.get_pawn_att().get_unit_base_att(faith::e_base_att_info_equip_title_id) == title_template_id)
 		{
 			return true;
 		}
@@ -386,12 +386,12 @@ namespace hld
 
 	int32 ctitle_mgr::get_title_template_id_by_type(e_title_type title_type)
 	{
-		hld::template_manager::template_type* title_table = template_manager::get_instance().get_templates(e_TitleTemplate);
+		faith::template_manager::template_type* title_table = template_manager::get_instance().get_templates(e_TitleTemplate);
 		if (nullptr == title_table)
 		{
 			return -1;
 		}
-		hld::template_manager::template_type::iterator ite;
+		faith::template_manager::template_type::iterator ite;
 		int32 title_count = 0;
 		for (ite = title_table->begin(); ite != title_table->end(); ++ite)
 		{
@@ -405,13 +405,13 @@ namespace hld
 	}
 	int32 ctitle_mgr::get_template_id_by_type_and_value(e_title_type title_type, int32 value1, int32  value2)
 	{
-		hld::template_manager::template_type* title_table = template_manager::get_instance().get_templates(e_TitleTemplate);
+		faith::template_manager::template_type* title_table = template_manager::get_instance().get_templates(e_TitleTemplate);
 		if (nullptr == title_table)
 		{
 			return -1;
 		}
 		int32 title_template_id = -1;
-		hld::template_manager::template_type::iterator ite;
+		faith::template_manager::template_type::iterator ite;
 		for (ite = title_table->begin(); ite != title_table->end(); ++ite)	// 特殊处理
 		{
 			TitleTemplate *title_template_ptr = title_template_ptr = (TitleTemplate*)(ite->second);
@@ -433,14 +433,14 @@ namespace hld
 	}
 	void ctitle_mgr::add_loading_finish_title_type(e_title_type title_type, e_title_special_handle handle_type)
 	{
-		if (title_type >= hld::e_title_type_max)
+		if (title_type >= faith::e_title_type_max)
 		{
 			return;
 		}
 		m_loading_finish_need_add_title_type_arr[title_type] = handle_type;
 	}
 
-	void ctitle_mgr::add_loading_ranking_finish_title_type( const bool(&loading_title_flag)[hld::e_title_type_max])
+	void ctitle_mgr::add_loading_ranking_finish_title_type( const bool(&loading_title_flag)[faith::e_title_type_max])
 	{ 
 		player& player_ref = unit_man::get_player(m_unit_array_index);
 		if (player_ref.is_valid() == false)
@@ -501,7 +501,7 @@ namespace hld
 		{
 			return -1;
 		}
-		e_title_add_result_type result = hld::e_title_add_result_type_none;
+		e_title_add_result_type result = faith::e_title_add_result_type_none;
 		TitleTemplate* title_template_ptr = GET_TEMPLATE(TitleTemplate, title_template_id);
 		if (title_template_ptr == nullptr)
 		{
@@ -517,8 +517,8 @@ namespace hld
 		{
 			return 0;
 		}
-		if (title_template_ptr->EndTimeType == hld::e_title_end_type_forever ||
-			title_template_ptr->EndTimeType == hld::e_title_end_type_condition_2)
+		if (title_template_ptr->EndTimeType == faith::e_title_end_type_forever ||
+			title_template_ptr->EndTimeType == faith::e_title_end_type_condition_2)
 		{
 			return -1;
 		}
@@ -538,7 +538,7 @@ namespace hld
 		{
 			return;
 		}
-		e_title_add_result_type result = hld::e_title_add_result_type_none;
+		e_title_add_result_type result = faith::e_title_add_result_type_none;
 		TitleTemplate* title_template_ptr = GET_TEMPLATE(TitleTemplate, title_template_id);
 		if (title_template_ptr == nullptr)
 		{
@@ -554,14 +554,14 @@ namespace hld
 
 		switch (title_template_ptr->EndTimeType)
 		{
-		case hld::e_title_end_type_forever:
-		case hld::e_title_end_type_condition_2:
+		case faith::e_title_end_type_forever:
+		case faith::e_title_end_type_condition_2:
 		{
 			if (it != m_title_info.end())
 			{
 				if (it->second.get_inst_data(e_title_info_if_geted))
 				{
-					result = hld::e_title_add_result_type_cannot_use_again;
+					result = faith::e_title_add_result_type_cannot_use_again;
 				}
 				else
 				{
@@ -571,17 +571,17 @@ namespace hld
 			}
 			else
 			{
-				result = hld::e_title_add_result_type_normal;
+				result = faith::e_title_add_result_type_normal;
 			}
 			break;
 		}
-		case hld::e_title_end_type_time:
+		case faith::e_title_end_type_time:
 		{
 			if (1 == title_template_ptr->DeadActiveLine)
 			{
 				if (it != m_title_info.end() && it->second.get_inst_data(e_title_info_if_geted))
 				{
-					result = hld::e_title_add_result_type_none;
+					result = faith::e_title_add_result_type_none;
 				}
 				else
 				{
@@ -595,7 +595,7 @@ namespace hld
 						if (nullptr != activity_common_config_template_ptr && once_activity_open_time_array_size < open_time.size())
 						{
 							int32 cur_stamp = time_helper::get_cur_time_new().second;
-							int32 begin_stamp = time_helper::get_stamp_by_hour_min(open_time[2], open_time[3]) + hld::day_time_second;
+							int32 begin_stamp = time_helper::get_stamp_by_hour_min(open_time[2], open_time[3]) + faith::day_time_second;
 							add_time = begin_stamp - cur_stamp;
 						}
 					}
@@ -605,7 +605,7 @@ namespace hld
 					//添加该称号
 					title_info.data_ary[e_title_info_start_time] = time_helper::get_cur_time_new().second;
 					title_info.data_ary[e_title_info_end_time] = time_helper::get_cur_time_new().second + add_time;
-					result = hld::e_title_add_result_type_normal;
+					result = faith::e_title_add_result_type_normal;
 				}
 			}
 			else if (0 < title_template_ptr->LastTime)
@@ -615,45 +615,45 @@ namespace hld
 					//叠加时间(start_time后推持续时间)
 					int32 end_time = it->second.get_inst_data(e_title_info_end_time) + title_template_ptr->LastTime * 60;
 					it->second.set_inst_data(e_title_info_end_time, end_time);
-					result = hld::e_title_add_result_type_add_time;
+					result = faith::e_title_add_result_type_add_time;
 				}
 				else
 				{
 					//添加该称号
 					title_info.data_ary[e_title_info_start_time] = time_helper::get_cur_time_new().second;
 					title_info.data_ary[e_title_info_end_time] = time_helper::get_cur_time_new().second + title_template_ptr->LastTime * 60;
-					result = hld::e_title_add_result_type_normal;
+					result = faith::e_title_add_result_type_normal;
 				}
 			}
 			break;
 		}
-		case hld::e_title_end_type_condition_1:
+		case faith::e_title_end_type_condition_1:
 		{
 			title_info.data_ary[e_title_info_start_time] = time_helper::get_cur_time_new().second;
 			title_info.data_ary[e_title_info_end_time] = time_helper::get_cur_time_new().second;
-			result = hld::e_title_add_result_type_normal;
+			result = faith::e_title_add_result_type_normal;
 		}
 		break;
 		}
-		if (result == hld::e_title_add_result_type_normal)
+		if (result == faith::e_title_add_result_type_normal)
 		{
 			add_title_by_info(title_info);
 		}
 		push_msg_one_title(title_template_id);
 		add_title_msg_send(title_template_id, result);
-		if (player_ref.get_pawn_att().get_unit_base_att(hld::e_base_att_info_equip_title_id) == 0)
+		if (player_ref.get_pawn_att().get_unit_base_att(faith::e_base_att_info_equip_title_id) == 0)
 		{
-			player_ref.get_pawn_att().set_unit_base_att(hld::e_base_att_info_equip_title_id, -1);
-			player_ref.get_pawn_att().send_base_att_one(hld::e_base_att_info_equip_title_id);
+			player_ref.get_pawn_att().set_unit_base_att(faith::e_base_att_info_equip_title_id, -1);
+			player_ref.get_pawn_att().send_base_att_one(faith::e_base_att_info_equip_title_id);
 			open_title_system_send();
 		}
 
-		if (hld::e_title_add_result_type_none == result)
+		if (faith::e_title_add_result_type_none == result)
 		{
 			return;
 		}
 
-		if (hld::e_title_add_result_type_cannot_use_again != result)
+		if (faith::e_title_add_result_type_cannot_use_again != result)
 		{
 			// 解锁称号公告
 			int32 notice_id = title_template_ptr->Noticeld;	//93000035
@@ -716,8 +716,8 @@ namespace hld
 			return;
 		}
 		equip_off_title();
-		player_ref.get_pawn_att().set_unit_base_att(hld::e_base_att_info_equip_title_id, title_template_id);
-		player_ref.get_pawn_att().send_base_att_one(hld::e_base_att_info_equip_title_id);
+		player_ref.get_pawn_att().set_unit_base_att(faith::e_base_att_info_equip_title_id, title_template_id);
+		player_ref.get_pawn_att().send_base_att_one(faith::e_base_att_info_equip_title_id);
 		it->second.set_title_equiping_att(m_unit_array_index, true);*/
 	}
 	void ctitle_mgr::equip_off_title()
@@ -729,7 +729,7 @@ namespace hld
 		{
 			return;
 		}
-		int32 title_template_id = player_ref.get_pawn_att().get_unit_base_att(hld::e_base_att_info_equip_title_id);
+		int32 title_template_id = player_ref.get_pawn_att().get_unit_base_att(faith::e_base_att_info_equip_title_id);
 		if (title_template_id <= 0)
 		{
 			return;
@@ -740,8 +740,8 @@ namespace hld
 			return;
 		}
 		it->second.set_title_equiping_att(m_unit_array_index, false);
-		player_ref.get_pawn_att().set_unit_base_att(hld::e_base_att_info_equip_title_id, -1);
-		player_ref.get_pawn_att().send_base_att_one(hld::e_base_att_info_equip_title_id);*/
+		player_ref.get_pawn_att().set_unit_base_att(faith::e_base_att_info_equip_title_id, -1);
+		player_ref.get_pawn_att().send_base_att_one(faith::e_base_att_info_equip_title_id);*/
 	}
 
 	//添加称号各个情况
@@ -762,28 +762,28 @@ namespace hld
 		switch (ranking_type)
 		{ 
 		case e_RankingIndex_arena:
-			title_type = hld::e_title_type_arena_rank_first;
+			title_type = faith::e_title_type_arena_rank_first;
 			break;
 		case e_RankingIndex_worship:
-			title_type = hld::e_title_type_worship_rank_first;
+			title_type = faith::e_title_type_worship_rank_first;
 			break;
 		case e_RankingIndex_gs:
-			title_type = hld::e_title_type_gs_rank_first;
+			title_type = faith::e_title_type_gs_rank_first;
 			break;
 		case e_RankingIndex_box_map_level:
-			title_type = hld::e_title_type_money_rank_first;
+			title_type = faith::e_title_type_money_rank_first;
 			break;
 		case e_RankingIndex_gs_barserker:
-			title_type = hld::e_title_type_gs_ranking_barserker;
+			title_type = faith::e_title_type_gs_ranking_barserker;
 			break;
 		case e_RankingIndex_gs_wizard:
-			title_type = hld::e_title_type_gs_ranking_wizard;
+			title_type = faith::e_title_type_gs_ranking_wizard;
 			break;
 		case e_RankingIndex_gs_guardian:
-			title_type = hld::e_title_type_gs_ranking_guardian;
+			title_type = faith::e_title_type_gs_ranking_guardian;
 			break;
 		case e_RankingIndex_gs_assassinator:
-			title_type = hld::e_title_type_gs_ranking_assassinator;
+			title_type = faith::e_title_type_gs_ranking_assassinator;
 			break;  
 		default:
 			break;
@@ -809,10 +809,10 @@ namespace hld
 				{
 					player_ref.get_chat_mgr().send_change_first_ranking_notice(ranking_type, is_first);
 				}
-				if (player_ref.get_pawn_att().get_unit_base_att(hld::e_base_att_info_equip_title_id) <= 0)
+				if (player_ref.get_pawn_att().get_unit_base_att(faith::e_base_att_info_equip_title_id) <= 0)
 				{
-					player_ref.get_pawn_att().set_unit_base_att(hld::e_base_att_info_equip_title_id, title_template_id);
-					player_ref.get_pawn_att().send_base_att_one(hld::e_base_att_info_equip_title_id);
+					player_ref.get_pawn_att().set_unit_base_att(faith::e_base_att_info_equip_title_id, title_template_id);
+					player_ref.get_pawn_att().send_base_att_one(faith::e_base_att_info_equip_title_id);
 					open_title_system_send();
 				}
 			}

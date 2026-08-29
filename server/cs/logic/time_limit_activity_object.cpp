@@ -22,7 +22,7 @@ purpose: time limit object
 #include "internet/net.pb.h"
 #include "internet/time_limit_activity.pb.h"
 
-namespace hld
+namespace faith
 {
 	time_limit_activity_object::time_limit_activity_object()
 	{
@@ -46,7 +46,7 @@ namespace hld
 			int32 highest_record_type = 0;
 			if (activity_type >= e_time_limit_activity_type_cross_gs_up && activity_type <= e_time_limit_activity_type_cross_spirit_up)
 			{
-				int32 last_time = get_data_info(hld::e_time_limit_activity_info_end_time) - time_helper::get_cur_time_new().second;
+				int32 last_time = get_data_info(faith::e_time_limit_activity_info_end_time) - time_helper::get_cur_time_new().second;
 				if (last_time > second_tick_time * 60 * 15)
 				{
 					m_interval_time = new_time + second_tick_time * 60 * 5;		//5·ÖÖÓ
@@ -65,7 +65,7 @@ namespace hld
 
 			//m_interval_time = new_time + second_tick_time * 1;					//1ÃëÖÓ
 
-			int32 ranking_index = activity_type - hld::e_time_limit_activity_type_gs_up + hld::e_RankingIndex_time_limit_activity_gs_up;
+			int32 ranking_index = activity_type - faith::e_time_limit_activity_type_gs_up + faith::e_RankingIndex_time_limit_activity_gs_up;
 			int64 ranking_value = m_player_ptr->get_highest_record(highest_record_type);
 			int64 save_value = get_activity_schedule() + get_activity_schedule(5);
 			int32 peak_value = m_player_ptr->get_highest_record(highest_record_type) - save_value;
@@ -103,11 +103,11 @@ namespace hld
 		}
 		int32 activity_type = get_act_type();
 		int32 highest_record_type = -1;
-		if (activity_type >= hld::e_time_limit_activity_type_gs_up && activity_type <= hld::e_time_limit_activity_type_spirit_up)
+		if (activity_type >= faith::e_time_limit_activity_type_gs_up && activity_type <= faith::e_time_limit_activity_type_spirit_up)
 		{
 			highest_record_type = activity_type - e_time_limit_activity_type_gs_up + e_role_history_highest_record_gs_value;
 		}
-		if (activity_type >= hld::e_time_limit_activity_type_cross_gs_up && activity_type <= hld::e_time_limit_activity_type_cross_spirit_up)
+		if (activity_type >= faith::e_time_limit_activity_type_cross_gs_up && activity_type <= faith::e_time_limit_activity_type_cross_spirit_up)
 		{
 			highest_record_type = activity_type - e_time_limit_activity_type_cross_gs_up + e_role_history_highest_record_gs_value;
 		}

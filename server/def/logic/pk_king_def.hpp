@@ -11,7 +11,7 @@ purpose:
 #include "char_def.hpp"
 #include "game_enum_def_s.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 

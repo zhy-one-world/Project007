@@ -18,7 +18,7 @@ purpose: 七日目标头文件
 #include "utility/globle_data.h"
 #include "utility/init_unit.h"
 
-namespace hld
+namespace faith
 {
 	
 	cservice_goal::cservice_goal()
@@ -146,19 +146,19 @@ namespace hld
 		int32 current_value = 0;
 		switch (service_goal_type)
 		{
-		case hld::e_service_goal_type_role_level:
+		case faith::e_service_goal_type_role_level:
 		{
 			current_value = temp_player.get_unit_info(e_role_info_exp_level);
 			break;
 		}
 
-		case hld::e_service_goal_type_role_gs:
+		case faith::e_service_goal_type_role_gs:
 		{
 			current_value = temp_player.get_role_gs();
 			break;
 		}
 
-		case hld::e_service_goal_type_big_reward:
+		case faith::e_service_goal_type_big_reward:
 		{
 			const int32 active_data = value2;
 			const int32 active_type = value3;
@@ -166,21 +166,21 @@ namespace hld
 			break;
 		}
 
-		case hld::e_service_goal_type_strength_any:
+		case faith::e_service_goal_type_strength_any:
 		{
 			const int32 strength_item_level = value2;
 			//current_value = temp_player.get_item_set().get_equip_num_by_strength_limit(strength_item_level);
 			break;
 		}
 
-		case hld::e_service_goal_type_addition_the_body:
+		case faith::e_service_goal_type_addition_the_body:
 		{
 			const int32 addition_item_leve = value2;
 			//current_value = temp_player.get_item_set().get_equip_num_by_addition_limie(addition_item_leve);
 			break;
 		}
 			
-		case hld::e_service_goal_type_mount_level:
+		case faith::e_service_goal_type_mount_level:
 		{
 			const int32 order_num = value2;
 			int32 current_mount_grade = 0;
@@ -190,14 +190,14 @@ namespace hld
 			break;
 		}
 
-		case hld::e_service_goal_type_mount_num:
+		case faith::e_service_goal_type_mount_num:
 		{
 			target_value = value1;
 			//current_value = temp_player.get_item_set().get_total_mount_activate_num();
 			break;
 		}
 
-		case hld::e_service_goal_type_friend_num:
+		case faith::e_service_goal_type_friend_num:
 		{
 			target_value = value1;
 			if (is_self_add)
@@ -207,14 +207,14 @@ namespace hld
 			break;
 		}
 
-		case hld::e_service_goal_type_friendliness:
+		case faith::e_service_goal_type_friendliness:
 		{
 			target_value = value1;
 			current_value = temp_player.get_highest_record(e_role_history_highest_record_higest_friendliness_value);
 			break;
 		}
 
-		case hld::e_service_goal_type_clearance_fuben:
+		case faith::e_service_goal_type_clearance_fuben:
 		{
 			const int32 fuben_id = value2;
 			if (true == temp_player.is_fuben_clearance(fuben_id))
@@ -228,7 +228,7 @@ namespace hld
 			break;
 		}
 
-		case hld::e_service_goal_type_body_has_color_equip:
+		case faith::e_service_goal_type_body_has_color_equip:
 		{
 			const int32 target_item_grade = value2;
 			const int32 target_item_color = value3;
@@ -236,13 +236,13 @@ namespace hld
 			break;
 		}
 
-		case hld::e_service_goal_type_legion_donate_num:
+		case faith::e_service_goal_type_legion_donate_num:
 		{
 			current_value = temp_player.get_unit_info(e_role_info_legion_donate_num);
 			break;
 		}
 
-		case hld::e_service_goal_type_soldier_rank_level:
+		case faith::e_service_goal_type_soldier_rank_level:
 		{
 			int32 current_level = temp_player.get_special_name_mgr().get_solider_rank_level();
 			int32 current_star = temp_player.get_special_name_mgr().get_solider_rank_star();
@@ -250,7 +250,7 @@ namespace hld
 			break;
 		}
 
-		case hld::e_service_goal_type_arena_rank_level:
+		case faith::e_service_goal_type_arena_rank_level:
 		{
 			const int32 target_rank_level = value1;
 			const int32 current_rank_level = temp_player.get_arena_mgr().current_rank();
@@ -267,34 +267,34 @@ namespace hld
 			break;
 		}
 
-		case hld::e_service_goal_type_actived_illustration_num:
+		case faith::e_service_goal_type_actived_illustration_num:
 		{
 			target_value = value1;
 			current_value = temp_player.get_pokedex_mgr().get_all_active_pokedex_num();
 			break;
 		}
 
-		case hld::e_service_goal_type_actived_any_chapter_illustration:
+		case faith::e_service_goal_type_actived_any_chapter_illustration:
 		{
 			current_value = temp_player.get_pokedex_mgr().get_all_active_pokedex_num();
 			break;
 		}
 
-		case hld::e_service_goal_type_demons_tower_layer_num:
+		case faith::e_service_goal_type_demons_tower_layer_num:
 		{
 			target_value = value1;
 			current_value = temp_player.get_highest_record(e_role_history_highest_record_demon_tower_highest_level);
 			break;
 		}
 
-		case hld::e_service_goal_type_achievement_title:
+		case faith::e_service_goal_type_achievement_title:
 		{
 			target_value = value1;
 			current_value = temp_player.get_special_name_mgr().get_achievement_title_level();
 			break;
 		}
 
-		case hld::e_service_goal_type_wing_level:
+		case faith::e_service_goal_type_wing_level:
 		{
 			int32 current_wing_grade = 0;
 			int32 current_wing_level = 0;
@@ -303,14 +303,14 @@ namespace hld
 			
 			break;
 		}
-		case hld::e_service_goal_type_element_heart_total_level:
+		case faith::e_service_goal_type_element_heart_total_level:
 		{
 			target_value = value1;
 			//current_value = temp_player.get_item_set().get_total_element_heart_level();
 			break;
 		}
 
-		case hld::e_service_goal_type_equiped_element_heart_num:
+		case faith::e_service_goal_type_equiped_element_heart_num:
 		{
 			target_value = value1;
 			const int32 element_heart_quality = value2;
@@ -318,14 +318,14 @@ namespace hld
 			break;
 		}
 
-		case hld::e_service_goal_type_equiped_spirit_total_level:
+		case faith::e_service_goal_type_equiped_spirit_total_level:
 		{
 			target_value = value1;
 			//current_value = temp_player.get_spirit_mgr().get_spirit_total_level();
 			break;
 		}
 
-		case hld::e_service_goal_type_equiped_spirit_num:
+		case faith::e_service_goal_type_equiped_spirit_num:
 		{
 			target_value = value1;
 			const int32 m_condition_color = value2;
@@ -333,7 +333,7 @@ namespace hld
 			break;
 		}
 
-		case hld::e_service_goal_type_belief_rank:
+		case faith::e_service_goal_type_belief_rank:
 		{
 			target_value = value1;
 			const int32 target_star = value2;
@@ -357,7 +357,7 @@ namespace hld
 			break;
 		}
 
-		case hld::e_service_goal_type_final:
+		case faith::e_service_goal_type_final:
 		{
 			current_value = temp_player.get_service_goal_mgr().get_specify_reward_num();
 			break;
@@ -379,7 +379,7 @@ namespace hld
 			//current_value = temp_player.get_item_set().get_equip_num_by_awaken_limit(strength_item_level);
 			break;
 		}
-		case hld::e_service_goal_type_max:
+		case faith::e_service_goal_type_max:
 			break;
 		default:
 			break;
@@ -390,7 +390,7 @@ namespace hld
 		}
 	}
 
-	void cservice_goal::make_service_goal_one_proto(hld::service_goal_proto_service_goal_one* proto_service_goal_one)
+	void cservice_goal::make_service_goal_one_proto(faith::service_goal_proto_service_goal_one* proto_service_goal_one)
 	{
 		if (nullptr == proto_service_goal_one)
 		{
@@ -499,7 +499,7 @@ namespace hld
 		for (int32 array_index = 0; array_index < item_array_size; array_index += 2)
 		{
 			ItemTemplate* item_template_ptr = GET_TEMPLATE(ItemTemplate, item_array[array_index]);
-			if (nullptr == item_template_ptr || item_template_ptr->item_color < hld::e_item_color_orange)
+			if (nullptr == item_template_ptr || item_template_ptr->item_color < faith::e_item_color_orange)
 			{
 				continue;
 			}
@@ -543,15 +543,15 @@ namespace hld
 
 	void cservice_goal::send_service_goal_one_to_self()
 	{
-		hld::service_goal_proto_service_goal_one temp_proto;
+		faith::service_goal_proto_service_goal_one temp_proto;
 		make_service_goal_one_proto(&temp_proto);
 		send_message_to_self(&temp_proto, e_msgindex_s2c_service_goal_one);
 	}
 
 	void cservice_goal::send_service_goal_operate_result_to_self(const int32 operate_type, const int32 operate_end_state)
 	{
-		hld::service_goal_proto_service_goal_operate_end msg;
-		hld::service_goal_proto_service_goal_one* temp_proto = msg.mutable_service_goal_one();
+		faith::service_goal_proto_service_goal_operate_end msg;
+		faith::service_goal_proto_service_goal_one* temp_proto = msg.mutable_service_goal_one();
 		make_service_goal_one_proto(temp_proto);
 
 		//msg.set_allocated_service_goal_one(*temp_proto);

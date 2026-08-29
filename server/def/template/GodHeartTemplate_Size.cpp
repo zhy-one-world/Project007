@@ -1,6 +1,6 @@
 #include "GodHeartTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void GodHeartTemplateSize()
     {

@@ -13,7 +13,7 @@ purpose:
 #include "Logic/attack_city_def.hpp"
 #include <attack_city_msg.hpp>
 
-namespace hld
+namespace faith
 {
 	class attack_city_ws_mgr
 	{

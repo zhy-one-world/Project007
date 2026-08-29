@@ -14,7 +14,7 @@ purpose:
 #include "internet/server2dp.pb.h"
 #include "internet/st.pb.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
@@ -692,7 +692,7 @@ namespace hld
 				}
 			}
 		}
-		bool to_proto(hld::st_proto::st_unit_info *st_unit_ptr)
+		bool to_proto(faith::st_proto::st_unit_info *st_unit_ptr)
 		{
 			if (st_unit_ptr == nullptr)
 			{
@@ -713,7 +713,7 @@ namespace hld
 			}
 			return true;
 		}
-		void from_proto(const hld::st_proto::st_unit_info& st_unit_ref)
+		void from_proto(const faith::st_proto::st_unit_info& st_unit_ref)
 		{
 			role_guid.server_64 = st_unit_ref.role_guid();
 			set_role_account(st_unit_ref.account());
@@ -1077,7 +1077,7 @@ namespace hld
 		}
 		void clear_data()
 		{
-			for (int32 i = 0; i < hld::e_role_history_highest_record_max; ++i)
+			for (int32 i = 0; i < faith::e_role_history_highest_record_max; ++i)
 			{
 				data_ary[i] = -1;
 			}
@@ -1342,7 +1342,7 @@ namespace hld
 			memset(role_name, 0, sizeof(role_name));
 			memcpy(role_name, temp_name.c_str(), temp_name.size() > max_name_size ? max_name_size : temp_name.size());
 		}
-		bool to_proto(hld::st_proto::st_assist_fight_info* st_assist_ptr)
+		bool to_proto(faith::st_proto::st_assist_fight_info* st_assist_ptr)
 		{
 			if (st_assist_ptr == nullptr)
 			{
@@ -1386,7 +1386,7 @@ namespace hld
 			memcpy(dst, str.c_str(), len);
 		}
 
-		void from_proto(const hld::st_proto::st_assist_fight_info& st_assist_ref)
+		void from_proto(const faith::st_proto::st_assist_fight_info& st_assist_ref)
 		{
 			if (st_assist_ref.unit_location_size() < 3 || st_assist_ref.unit_rotation_size() < 3)
 			{

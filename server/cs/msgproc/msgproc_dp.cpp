@@ -65,7 +65,7 @@
 #include "internal/gain_treasure_msg.hpp"
 #include "internal/time_limit_activity_msg.hpp"
 
-namespace hld
+namespace faith
 {
 
 #define RECV_DB_DATA(packet_name)  ZoneScoped;\
@@ -146,7 +146,7 @@ namespace hld
 		{
 			unit_info.data_i64_ary[e_role_i64_info_gs_value] = unit_info.data_ary[e_role_info_GS_value];
 		}
-		if (move_map_template_ptr->Type != hld::e_map_type_big_map && map_object_ptr->get_map_type() == hld::e_map_type_big_map)
+		if (move_map_template_ptr->Type != faith::e_map_type_big_map && map_object_ptr->get_map_type() == faith::e_map_type_big_map)
 		{
 			// 从副本里退出游戏 又上线后 副本已经被回收的话 会走这里
 			unit_info.data_ary[e_role_info_move_pos_x] = unit_info.data_ary[e_role_info_main_pos_x];
@@ -186,7 +186,7 @@ namespace hld
 			CONSOLE_INFO("NULL == packet");
 			return false;
 		}
-		hld::cs2dp_proto::role_info_db msg;
+		faith::cs2dp_proto::role_info_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -277,7 +277,7 @@ namespace hld
 		{
 			unit_info.data_i64_ary[e_role_i64_info_gs_value] = unit_info.data_ary[e_role_info_GS_value];
 		}
-		if (move_map_template_ptr->Type != hld::e_map_type_big_map && base_map_cp->m_map_template->Type == hld::e_map_type_big_map)
+		if (move_map_template_ptr->Type != faith::e_map_type_big_map && base_map_cp->m_map_template->Type == faith::e_map_type_big_map)
 		{
 			// 从副本里退出游戏 又上线后 副本已经被回收的话 会走这里
 			unit_info.data_ary[e_role_info_move_pos_x] = unit_info.data_ary[e_role_info_main_pos_x];

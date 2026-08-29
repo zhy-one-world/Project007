@@ -28,7 +28,7 @@
 #include "game.pb.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	cross_server_harry_ws_mgr::cross_server_harry_ws_mgr()
 	{
@@ -808,7 +808,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::send_cur_server_harry_msg pro_msg;
+			faith::ws2cs_proto::send_cur_server_harry_msg pro_msg;
 			harry_msg.to_proto(pro_msg);
 			world_server::getInstance().broadcast_lua(&pro_msg, e_msgindex_ws2cs_send_cur_server_harry_info, e_server_type_cs);
 		}
@@ -1436,7 +1436,7 @@ namespace hld
 					}
 					else
 					{
-						hld::ws2cs_proto::send_create_normal_player pro_msg;
+						faith::ws2cs_proto::send_create_normal_player pro_msg;
 						msg.to_proto(pro_msg);
 						world_server::getInstance().broadcast_lua(&pro_msg, e_msgindex_ws2cs_send_create_normal_player, e_server_type_cs);
 

@@ -13,7 +13,7 @@ purpose: ”¿∫„µ∫
 #include "char_def.hpp"
 #include "team_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 

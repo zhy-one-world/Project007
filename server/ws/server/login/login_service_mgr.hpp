@@ -17,7 +17,7 @@
 #include <login_msg.hpp>
 #include "login.pb.h"
 
-namespace hld
+namespace faith
 {
 
 	struct login_keep_info

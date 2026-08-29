@@ -7,12 +7,12 @@
 #include "logic/player.hpp" 
 
 
-namespace hld
+namespace faith
 {
     class cdrop 
     {
     public:
-		static void gen_drop_id_list(int32 drop_template_id, std::vector<s_item_template_info>& item_drop_with_att, int32 drop_weight, int32 curstep, int32 class_type = hld::e_class_type_none, int32 exp_level = -1);
+		static void gen_drop_id_list(int32 drop_template_id, std::vector<s_item_template_info>& item_drop_with_att, int32 drop_weight, int32 curstep, int32 class_type = faith::e_class_type_none, int32 exp_level = -1);
 		
 		static void merge_drop_bag(const std::vector<s_item_template_info>& drop_list_in, std::vector<s_item_template_info>& drop_list_out, int32 class_type = e_class_type_none, int32 exp_level = -1);
 		static int32 get_drop_id(int32 drop_template_id);
@@ -27,8 +27,8 @@ namespace hld
 
     private:
         static bool rand_trigger(int32 drop_weight, int32 drop_denominator);
-		static void sub_drop_rand_one(int32 drop_template_id, std::vector<s_item_template_info>& item_drop_with_att, int32 curstep, int32 class_type = hld::e_class_type_none, int32 exp_level = -1);
-		static void sub_drop_rand_all(int32 drop_template_id, std::vector<s_item_template_info>& item_drop_with_att, int32 curstep, int32 class_type = hld::e_class_type_none, int32 exp_level = -1);
+		static void sub_drop_rand_one(int32 drop_template_id, std::vector<s_item_template_info>& item_drop_with_att, int32 curstep, int32 class_type = faith::e_class_type_none, int32 exp_level = -1);
+		static void sub_drop_rand_all(int32 drop_template_id, std::vector<s_item_template_info>& item_drop_with_att, int32 curstep, int32 class_type = faith::e_class_type_none, int32 exp_level = -1);
 		static void add_item_id_to_drop_list(int32 item_template_id, std::vector<s_item_template_info>& drop_list, int32 item_const_att, int32 class_type = e_class_type_none, int32 exp_level = -1);
     };
 }

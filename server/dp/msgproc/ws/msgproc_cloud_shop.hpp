@@ -10,7 +10,7 @@
 #include "db_manager.hpp"
 
 
-namespace hld
+namespace faith
 {
 	//ÔÆ¹º
 	void ws2dp_req_load_cloud_role_record(uint32 connindex, const void* data_ptr, size_t data_len);

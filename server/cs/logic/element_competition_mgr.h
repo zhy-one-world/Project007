@@ -11,7 +11,7 @@ purpose:
 
 #include "item.h"
 
-namespace hld
+namespace faith
 {
 	class element_competition_mgr
 	{

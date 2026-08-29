@@ -6,7 +6,7 @@
 #include "server/client_session_mgr.hpp"
 #include "ws_client.hpp"
 
-namespace hld
+namespace faith
 {
 	// 宝箱降临活动的管理器
 	class chest_arrival_mgr

@@ -3,7 +3,7 @@
 
 #include "item.h"
 
-namespace hld
+namespace faith
 {
 	class goddess_mgr
 	{

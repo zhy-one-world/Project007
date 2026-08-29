@@ -67,7 +67,7 @@
 #include "Logic/game_enum_def_s.h"
 
 
-namespace hld
+namespace faith
 {
 	// 跨平台类型定义
 	typedef boost::int8_t		i8;

@@ -17,7 +17,7 @@
 #include "net/net_server_mgr.hpp"
 #include "data_manager/data_manager.hpp"
 
-namespace hld
+namespace faith
 {
 	//
 	//	singleton services class

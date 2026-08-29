@@ -13,7 +13,7 @@ purpose: sdk login
 #include <singleton.hpp>
 #include "login_service.hpp"
 #include "http/http_access_mgr.hpp"
-namespace hld
+namespace faith
 {
 	//////////////////////////////////////////////////////////////////////////
 	//

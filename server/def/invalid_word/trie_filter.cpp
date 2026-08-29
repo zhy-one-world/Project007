@@ -1,7 +1,7 @@
 #include<string>
 #include"trie_filter.h"
 #include"template/template_manager.h"
-namespace hld
+namespace faith
 {
 	trie_filter::trie_filter()
 	{

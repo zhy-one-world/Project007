@@ -26,7 +26,7 @@
 //
 //////////////////////////////////////////////////////////////////////////
 
-namespace hld
+namespace faith
 {
 	class skill_s2s_sl_passive_skill_info;
 	class player;

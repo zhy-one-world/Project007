@@ -3,7 +3,7 @@
 #include "logic/type_def.hpp"
 #include "server_log.hpp"
 
-namespace hld
+namespace faith
 {
 	class time_activity_s2s_activity_info;
 	class time_activity_s2c_activity_info;

@@ -26,7 +26,7 @@ Change List :
 #include "base.hpp"
 #include "net_server.hpp"
 
-namespace hld
+namespace faith
 {
 	using namespace net;
 

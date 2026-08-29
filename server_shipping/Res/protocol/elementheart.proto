@@ -1,0 +1,35 @@
+syntax = "proto2";
+package hld;
+
+message element_heart_proto
+{
+
+	message element_heart_one
+	{
+		repeated int32 element_heart_guid				= 1;
+		repeated int32 element_heart_info		= 2;
+	}
+	message element_heart_all
+	{
+		repeated int32	role_guid				= 1;
+		repeated element_heart_one element_heart_array		= 2;
+	}
+	message element_heart_operate
+	{
+		repeated int32 element_heart_guid			= 1;
+		optional int32 operation_type				= 2;
+		optional int32 target_equip_slot			= 3;
+		optional int32 use_up_item					=4;
+	}
+	message element_heart_operate_end
+	{
+		repeated int32 rune_get_id_array					= 1;
+		optional int32 operation_type						= 2;
+		optional int32 operation_end_state					= 3;
+		optional int64 target_guid							= 4;
+		optional int32 old_drop_group						= 5;
+		optional int32 new_drop_group						= 6;
+		optional int32 highest_group						= 7;
+		optional int32 is_raise								= 8;
+	}
+}

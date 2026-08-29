@@ -8,7 +8,7 @@
 #include "msgproc_element_war_info_ws.hpp"
 #include <element_heart_msg.hpp>
 #include "dbproxy_service.hpp"
-namespace hld
+namespace faith
 {
 	void save_element_war_add_role_info(uint32 connindex, const void * data_ptr, size_t data_len)
 	{

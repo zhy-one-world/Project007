@@ -14,13 +14,13 @@ purpose:
 #include "utility/parse_msg.h"
 #include "server_log.hpp"
 
-namespace hld
+namespace faith
 {
 	
 
 	void check_player_is_exist(uint32 connindex, const void *data_ptr, size_t data_len)
 	{
-		const hld::ws2dp_add_mail_to_sql* pdata = static_cast<const hld::ws2dp_add_mail_to_sql*>(data_ptr);
+		const faith::ws2dp_add_mail_to_sql* pdata = static_cast<const faith::ws2dp_add_mail_to_sql*>(data_ptr);
 		if (nullptr == pdata)
 		{
 			return;
@@ -47,11 +47,11 @@ namespace hld
 		db_manager::getInstance().get_db_link().game_db.add_query(query);
 	}
 
-	void player_exist_check_end(db_result_type result, uint32 connindex, const hld::ws2dp_add_mail_to_sql mail_msg)
+	void player_exist_check_end(db_result_type result, uint32 connindex, const faith::ws2dp_add_mail_to_sql mail_msg)
 	{
 		if (!result.error && result.query.data_select.row_count > 0)
 		{
-			s_unit_info data[hld::max_character_num];
+			s_unit_info data[faith::max_character_num];
 			//s_unit_info data[160];
 			memset(&data, 0, sizeof(data));
 			int32 data_num = max_character_num > result.query.data_select.row_count ? result.query.data_select.row_count : max_character_num;
@@ -88,7 +88,7 @@ namespace hld
 		}
 	}
 
-	void del_mail_item_batch_for_add_new(uint32 connindex, guid_64 role_guid, const hld::ws2dp_add_mail_to_sql mail_msg)
+	void del_mail_item_batch_for_add_new(uint32 connindex, guid_64 role_guid, const faith::ws2dp_add_mail_to_sql mail_msg)
 	{
 		if (!role_guid.is_valid())
 		{
@@ -137,7 +137,7 @@ namespace hld
 		}
 	}
 
-	void del_mail_item_batch_for_add_new_finish(db_result_type result, uint32 connindex, guid_64 role_guid, const hld::ws2dp_add_mail_to_sql mail_msg)
+	void del_mail_item_batch_for_add_new_finish(db_result_type result, uint32 connindex, guid_64 role_guid, const faith::ws2dp_add_mail_to_sql mail_msg)
 	{
 		//²åÈëÎïÆ·
 		if (!result.error)
@@ -150,7 +150,7 @@ namespace hld
 		}
 	}
 
-	void add_mail_item_batch(uint32 connindex, guid_64 role_guid, const hld::ws2dp_add_mail_to_sql mail_msg)
+	void add_mail_item_batch(uint32 connindex, guid_64 role_guid, const faith::ws2dp_add_mail_to_sql mail_msg)
 	{
 		if (!role_guid.is_valid())
 		{
@@ -205,7 +205,7 @@ namespace hld
 		db_manager::getInstance().get_db_link().game_db.add_query(query);
 	}
 
-	void add_new_item_finish(db_result_type result, uint32 connindex, guid_64 role_guid, const hld::ws2dp_add_mail_to_sql mail_msg)
+	void add_new_item_finish(db_result_type result, uint32 connindex, guid_64 role_guid, const faith::ws2dp_add_mail_to_sql mail_msg)
 	{
 
 		CONSOLE_INFO("add_new_item_finish result = {} Mail Guid = {}", result.error, mail_msg.mail_info.mail_guid.server_64);
@@ -221,7 +221,7 @@ namespace hld
 		}
 	}
 
-	void add_mail(uint32 connindex, guid_64 role_guid, const hld::ws2dp_add_mail_to_sql mail_msg)
+	void add_mail(uint32 connindex, guid_64 role_guid, const faith::ws2dp_add_mail_to_sql mail_msg)
 	{
 		if (!role_guid.is_valid())
 		{
@@ -278,7 +278,7 @@ namespace hld
 		db_manager::getInstance().get_db_link().game_db.add_query(query);
 	}
 
-	void add_mail_finish(db_result_type result, uint32 connindex, hld::ws2dp_add_mail_to_sql mail_msg, guid_64 role_guid)
+	void add_mail_finish(db_result_type result, uint32 connindex, faith::ws2dp_add_mail_to_sql mail_msg, guid_64 role_guid)
 	{
 		if (mail_msg.item_list[0].is_valid())
 		{
@@ -294,7 +294,7 @@ namespace hld
 		}
 	}
 
-	void resend_mail_to_sender(uint32 connindex, const hld::ws2dp_add_mail_to_sql mail_msg)
+	void resend_mail_to_sender(uint32 connindex, const faith::ws2dp_add_mail_to_sql mail_msg)
 	{
 		CONSOLE_INFO("Mail Guid = {}", mail_msg.mail_info.mail_guid.server_64);
 		if (mail_msg.resend_times > 5)
@@ -303,7 +303,7 @@ namespace hld
 			return;
 		}
 		guid_64 sender_guid = guid_64(mail_msg.mail_info.data_ary[EMailInfo_SenderGuid1], mail_msg.mail_info.data_ary[EMailInfo_SenderGuid2]);
-		hld::ws2dp_add_mail_to_sql resend_msg;
+		faith::ws2dp_add_mail_to_sql resend_msg;
 		memcpy(&resend_msg, &mail_msg, sizeof(ws2dp_add_mail_to_sql));
 		std::string role_guid_str = init_unit::change_i64_to_string(sender_guid.server_64);
 		memcpy(resend_msg.role_mark, role_guid_str.c_str(), role_guid_str.size());

@@ -17,7 +17,7 @@
 #include "template/template_manager.h"
 #include "time_def.hpp"
 
-namespace hld
+namespace faith
 {
 	time_limit_activity_temp_mgr::time_limit_activity_temp_mgr()
 	{

@@ -18,7 +18,7 @@
 #ifndef _MSGPROC_GATE_HPP_
 #define _MSGPROC_GATE_HPP_
 #include "logic/type_def.hpp"
-namespace hld
+namespace faith
 {
 	// gate msg
 	void gate2ws_rep_register(uint32 conn_index, const void* data_ptr, size_t data_len);

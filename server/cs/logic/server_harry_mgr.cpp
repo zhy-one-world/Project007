@@ -23,7 +23,7 @@ purpose: ¿ç·þÂÓ¶á
 #include "internet/game.pb.h"
 #include "internet/net.pb.h"
 
-namespace hld
+namespace faith
 {
 	server_harry_mgr::server_harry_mgr()
 	{
@@ -76,12 +76,12 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_harry_record msg;
+			faith::cs2dp_proto::save_role_harry_record msg;
 			msg.set_role_guid(m_player_ptr->get_unit_guid().server_64);
 			msg.set_unit_array_index(m_player_ptr->get_array_index());
 			msg.set_save_type_ex(type);
 
-			hld::cs2dp_proto::role_harry_record_db *db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_harry_record_db *db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return;
@@ -108,7 +108,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_harry_record_db msg;
+		faith::cs2dp_proto::role_harry_record_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -179,13 +179,13 @@ namespace hld
 		set_harry_data_info(e_harry_record_harry_item_server_id, item_server_id);
 		if (m_player_ptr)
 		{
-			server_log::cross_server_harry_log(m_player_ptr->get_third_info(), m_player_ptr->get_unit_info_inst(), m_player_ptr->get_login_type(), hld::e_cross_server_harry_oper_get, is_special_item ? 1 : 0, server_id, get_harry_data_info(e_harry_record_normal_harry_count), get_harry_data_info(e_harry_record_special_harry_count));
+			server_log::cross_server_harry_log(m_player_ptr->get_third_info(), m_player_ptr->get_unit_info_inst(), m_player_ptr->get_login_type(), faith::e_cross_server_harry_oper_get, is_special_item ? 1 : 0, server_id, get_harry_data_info(e_harry_record_normal_harry_count), get_harry_data_info(e_harry_record_special_harry_count));
 
 			set_log_var(log_head);
 
 			m_player_ptr->get_log_common_head_info(log_head);
 
-			server_log::serverCrossServerHarry(log_head, hld::e_cross_server_harry_oper_get, is_special_item ? 1 : 0, server_id, get_harry_data_info(e_harry_record_normal_harry_count), get_harry_data_info(e_harry_record_special_harry_count));
+			server_log::serverCrossServerHarry(log_head, faith::e_cross_server_harry_oper_get, is_special_item ? 1 : 0, server_id, get_harry_data_info(e_harry_record_normal_harry_count), get_harry_data_info(e_harry_record_special_harry_count));
 		}
 	}
 
@@ -274,13 +274,13 @@ namespace hld
 
 		if (m_player_ptr)
 		{
-			server_log::cross_server_harry_log(m_player_ptr->get_third_info(), m_player_ptr->get_unit_info_inst(), m_player_ptr->get_login_type(), hld::e_cross_server_harry_oper_dead_drop, is_special_value > 0 ? 1 : 0, item_server_id, get_harry_data_info(e_harry_record_normal_harry_count), get_harry_data_info(e_harry_record_special_harry_count));
+			server_log::cross_server_harry_log(m_player_ptr->get_third_info(), m_player_ptr->get_unit_info_inst(), m_player_ptr->get_login_type(), faith::e_cross_server_harry_oper_dead_drop, is_special_value > 0 ? 1 : 0, item_server_id, get_harry_data_info(e_harry_record_normal_harry_count), get_harry_data_info(e_harry_record_special_harry_count));
 
 			set_log_var(log_head);
 
 			m_player_ptr->get_log_common_head_info(log_head);
 
-			server_log::serverCrossServerHarry(log_head, hld::e_cross_server_harry_oper_dead_drop, is_special_value > 0 ? 1 : 0, item_server_id, get_harry_data_info(e_harry_record_normal_harry_count), get_harry_data_info(e_harry_record_special_harry_count));
+			server_log::serverCrossServerHarry(log_head, faith::e_cross_server_harry_oper_dead_drop, is_special_value > 0 ? 1 : 0, item_server_id, get_harry_data_info(e_harry_record_normal_harry_count), get_harry_data_info(e_harry_record_special_harry_count));
 		}
 	}
 
@@ -611,13 +611,13 @@ namespace hld
 
 		if (m_player_ptr)
 		{
-			server_log::cross_server_harry_log(m_player_ptr->get_third_info(), m_player_ptr->get_unit_info_inst(), m_player_ptr->get_login_type(), hld::e_cross_server_harry_oper_commit, is_special_item ? 1 : 0, item_server_id, get_harry_data_info(e_harry_record_normal_harry_count), get_harry_data_info(e_harry_record_special_harry_count));
+			server_log::cross_server_harry_log(m_player_ptr->get_third_info(), m_player_ptr->get_unit_info_inst(), m_player_ptr->get_login_type(), faith::e_cross_server_harry_oper_commit, is_special_item ? 1 : 0, item_server_id, get_harry_data_info(e_harry_record_normal_harry_count), get_harry_data_info(e_harry_record_special_harry_count));
 
 			set_log_var(log_head);
 
 			m_player_ptr->get_log_common_head_info(log_head);
 
-			server_log::serverCrossServerHarry(log_head, hld::e_cross_server_harry_oper_commit, is_special_item ? 1 : 0, item_server_id, get_harry_data_info(e_harry_record_normal_harry_count), get_harry_data_info(e_harry_record_special_harry_count));
+			server_log::serverCrossServerHarry(log_head, faith::e_cross_server_harry_oper_commit, is_special_item ? 1 : 0, item_server_id, get_harry_data_info(e_harry_record_normal_harry_count), get_harry_data_info(e_harry_record_special_harry_count));
 
 		}
 	}

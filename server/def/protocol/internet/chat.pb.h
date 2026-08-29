@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_chat_2eproto();
@@ -143,7 +143,7 @@ class chat_proto_chat_item_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_item_data();
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.chat_item_info)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.chat_item_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -274,7 +274,7 @@ class chat_proto_notice_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_item_data();
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.notice_info)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.notice_info)
  private:
   inline void set_has_notice_id();
   inline void clear_has_notice_id();
@@ -415,16 +415,16 @@ class chat_proto_chat_text : public ::google::protobuf::Message {
   inline ::std::string* release_addressee_name();
   inline void set_allocated_addressee_name(::std::string* addressee_name);
 
-  // repeated .hld.chat_proto.chat_item_info item_list = 6;
+  // repeated .faith.chat_proto.chat_item_info item_list = 6;
   inline int item_list_size() const;
   inline void clear_item_list();
   static const int kItemListFieldNumber = 6;
-  inline const ::hld::chat_proto_chat_item_info& item_list(int index) const;
-  inline ::hld::chat_proto_chat_item_info* mutable_item_list(int index);
-  inline ::hld::chat_proto_chat_item_info* add_item_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_chat_item_info >&
+  inline const ::faith::chat_proto_chat_item_info& item_list(int index) const;
+  inline ::faith::chat_proto_chat_item_info* mutable_item_list(int index);
+  inline ::faith::chat_proto_chat_item_info* add_item_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_chat_item_info >&
       item_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_chat_item_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_chat_item_info >*
       mutable_item_list();
 
   // optional string sender_name = 7;
@@ -446,7 +446,7 @@ class chat_proto_chat_text : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 text_num() const;
   inline void set_text_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.chat_text)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.chat_text)
  private:
   inline void set_has_text();
   inline void clear_has_text();
@@ -467,7 +467,7 @@ class chat_proto_chat_text : public ::google::protobuf::Message {
   ::std::string* addressee_name_;
   ::google::protobuf::int32 chat_typ_;
   ::google::protobuf::int32 text_num_;
-  ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_chat_item_info > item_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_chat_item_info > item_list_;
   ::std::string* sender_name_;
 
   mutable int _cached_size_;
@@ -560,19 +560,19 @@ class chat_proto_chat_text_and_item : public ::google::protobuf::Message {
   inline ::std::string* release_text();
   inline void set_allocated_text(::std::string* text);
 
-  // repeated .hld.chat_proto.chat_item_info item_list = 3;
+  // repeated .faith.chat_proto.chat_item_info item_list = 3;
   inline int item_list_size() const;
   inline void clear_item_list();
   static const int kItemListFieldNumber = 3;
-  inline const ::hld::chat_proto_chat_item_info& item_list(int index) const;
-  inline ::hld::chat_proto_chat_item_info* mutable_item_list(int index);
-  inline ::hld::chat_proto_chat_item_info* add_item_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_chat_item_info >&
+  inline const ::faith::chat_proto_chat_item_info& item_list(int index) const;
+  inline ::faith::chat_proto_chat_item_info* mutable_item_list(int index);
+  inline ::faith::chat_proto_chat_item_info* add_item_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_chat_item_info >&
       item_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_chat_item_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_chat_item_info >*
       mutable_item_list();
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.chat_text_and_item)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.chat_text_and_item)
  private:
   inline void set_has_text();
   inline void clear_has_text();
@@ -581,7 +581,7 @@ class chat_proto_chat_text_and_item : public ::google::protobuf::Message {
 
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > role_guid_;
   ::std::string* text_;
-  ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_chat_item_info > item_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_chat_item_info > item_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(3 + 31) / 32];
@@ -663,7 +663,7 @@ class chat_proto_chat_result : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 chat_type() const;
   inline void set_chat_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.chat_result)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.chat_result)
  private:
   inline void set_has_chat_result_id();
   inline void clear_has_chat_result_id();
@@ -824,7 +824,7 @@ class chat_proto_chat_content_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 face_finish_img_id() const;
   inline void set_face_finish_img_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.chat_content_info)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.chat_content_info)
  private:
   inline void set_has_commontext();
   inline void clear_has_commontext();
@@ -933,16 +933,16 @@ class chat_proto_chat_content : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 sender_template_id() const;
   inline void set_sender_template_id(::google::protobuf::int32 value);
 
-  // repeated .hld.chat_proto.chat_content_info content_info_array = 3;
+  // repeated .faith.chat_proto.chat_content_info content_info_array = 3;
   inline int content_info_array_size() const;
   inline void clear_content_info_array();
   static const int kContentInfoArrayFieldNumber = 3;
-  inline const ::hld::chat_proto_chat_content_info& content_info_array(int index) const;
-  inline ::hld::chat_proto_chat_content_info* mutable_content_info_array(int index);
-  inline ::hld::chat_proto_chat_content_info* add_content_info_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_chat_content_info >&
+  inline const ::faith::chat_proto_chat_content_info& content_info_array(int index) const;
+  inline ::faith::chat_proto_chat_content_info* mutable_content_info_array(int index);
+  inline ::faith::chat_proto_chat_content_info* add_content_info_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_chat_content_info >&
       content_info_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_chat_content_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_chat_content_info >*
       mutable_content_info_array();
 
   // optional int32 chat_typ = 4;
@@ -1084,7 +1084,7 @@ class chat_proto_chat_content : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 chat_guid_b() const;
   inline void set_chat_guid_b(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.chat_content)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.chat_content)
  private:
   inline void set_has_sender_guid();
   inline void clear_has_sender_guid();
@@ -1126,7 +1126,7 @@ class chat_proto_chat_content : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 sender_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_chat_content_info > content_info_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_chat_content_info > content_info_array_;
   ::google::protobuf::int32 sender_template_id_;
   ::google::protobuf::int32 chat_typ_;
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > addressee_guid_;
@@ -1247,7 +1247,7 @@ class chat_proto_recruit_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 one_dragon_flag() const;
   inline void set_one_dragon_flag(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.recruit_info)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.recruit_info)
  private:
   inline void set_has_team_guid();
   inline void clear_has_team_guid();
@@ -1423,7 +1423,7 @@ class chat_proto_receive_recruit_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 one_dragon_flag() const;
   inline void set_one_dragon_flag(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.receive_recruit_info)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.receive_recruit_info)
  private:
   inline void set_has_team_guid();
   inline void clear_has_team_guid();
@@ -1552,7 +1552,7 @@ class chat_proto_recruit_team_member_num : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 max_member_num() const;
   inline void set_max_member_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.recruit_team_member_num)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.recruit_team_member_num)
  private:
   inline void set_has_team_guid();
   inline void clear_has_team_guid();
@@ -1647,7 +1647,7 @@ class chat_proto_recruit_end_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 recruit_type() const;
   inline void set_recruit_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.recruit_end_info)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.recruit_end_info)
  private:
   inline void set_has_recruit_result();
   inline void clear_has_recruit_result();
@@ -1796,7 +1796,7 @@ class chat_proto_receive_legion_recruit_info : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 sender_template_id() const;
   inline void set_sender_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.receive_legion_recruit_info)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.receive_legion_recruit_info)
  private:
   inline void set_has_legion_guid();
   inline void clear_has_legion_guid();
@@ -1911,7 +1911,7 @@ class chat_proto_audio_info : public ::google::protobuf::Message {
   inline ::std::string* release_audio_content();
   inline void set_allocated_audio_content(::std::string* audio_content);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.audio_info)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.audio_info)
  private:
   inline void set_has_audio_guid();
   inline void clear_has_audio_guid();
@@ -2041,7 +2041,7 @@ class chat_proto_quick_chat_content : public ::google::protobuf::Message {
   inline ::std::string* release_sender_name();
   inline void set_allocated_sender_name(::std::string* sender_name);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.quick_chat_content)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.quick_chat_content)
  private:
   inline void set_has_sender_guid();
   inline void clear_has_sender_guid();
@@ -2209,7 +2209,7 @@ class chat_proto_notice_info_with_param : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 create_time() const;
   inline void set_create_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.notice_info_with_param)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.notice_info_with_param)
  private:
   inline void set_has_sender_name();
   inline void clear_has_sender_name();
@@ -2320,7 +2320,7 @@ class chat_proto_receive_top_tip : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 top_tip_type() const;
   inline void set_top_tip_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.receive_top_tip)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.receive_top_tip)
  private:
   inline void set_has_string_id();
   inline void clear_has_string_id();
@@ -2405,7 +2405,7 @@ class chat_proto_join_voice_channel : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 channel_type() const;
   inline void set_channel_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.join_voice_channel)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.join_voice_channel)
  private:
   inline void set_has_channel_type();
   inline void clear_has_channel_type();
@@ -2487,7 +2487,7 @@ class chat_proto_join_voice_channel_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 channel_type() const;
   inline void set_channel_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.join_voice_channel_end)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.join_voice_channel_end)
  private:
   inline void set_has_channel_type();
   inline void clear_has_channel_type();
@@ -2576,7 +2576,7 @@ class chat_proto_invite_join_voice_channel : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 channel_type() const;
   inline void set_channel_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.invite_join_voice_channel)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.invite_join_voice_channel)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -2680,7 +2680,7 @@ class chat_proto_join_or_leave_voice_channel_notice : public ::google::protobuf:
   inline bool is_join() const;
   inline void set_is_join(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.join_or_leave_voice_channel_notice)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.join_or_leave_voice_channel_notice)
  private:
   inline void set_has_channel_type();
   inline void clear_has_channel_type();
@@ -2780,7 +2780,7 @@ class chat_proto_chat_one_record : public ::google::protobuf::Message {
   inline ::std::string* release_record();
   inline void set_allocated_record(::std::string* record);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.chat_one_record)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.chat_one_record)
  private:
   inline void set_has_pos();
   inline void clear_has_pos();
@@ -2870,25 +2870,25 @@ class chat_proto_chat_all_record : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // repeated .hld.chat_proto.chat_one_record chat_array = 2;
+  // repeated .faith.chat_proto.chat_one_record chat_array = 2;
   inline int chat_array_size() const;
   inline void clear_chat_array();
   static const int kChatArrayFieldNumber = 2;
-  inline const ::hld::chat_proto_chat_one_record& chat_array(int index) const;
-  inline ::hld::chat_proto_chat_one_record* mutable_chat_array(int index);
-  inline ::hld::chat_proto_chat_one_record* add_chat_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_chat_one_record >&
+  inline const ::faith::chat_proto_chat_one_record& chat_array(int index) const;
+  inline ::faith::chat_proto_chat_one_record* mutable_chat_array(int index);
+  inline ::faith::chat_proto_chat_one_record* add_chat_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_chat_one_record >&
       chat_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_chat_one_record >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_chat_one_record >*
       mutable_chat_array();
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.chat_all_record)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.chat_all_record)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > role_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_chat_one_record > chat_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_chat_one_record > chat_array_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -2975,7 +2975,7 @@ class chat_proto_chat_record_oper : public ::google::protobuf::Message {
   inline ::std::string* release_record();
   inline void set_allocated_record(::std::string* record);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.chat_record_oper)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.chat_record_oper)
  private:
   inline void set_has_pos();
   inline void clear_has_pos();
@@ -3067,7 +3067,7 @@ class chat_proto_chat_record_oper_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.chat_record_oper_end)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.chat_record_oper_end)
  private:
   inline void set_has_pos();
   inline void clear_has_pos();
@@ -3152,7 +3152,7 @@ class chat_proto_send_subscribe_daily : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 must_do_type() const;
   inline void set_must_do_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.send_subscribe_daily)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.send_subscribe_daily)
  private:
   inline void set_has_must_do_type();
   inline void clear_has_must_do_type();
@@ -3234,7 +3234,7 @@ class chat_proto_send_subscribe_daily_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.send_subscribe_daily_end)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.send_subscribe_daily_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -3309,24 +3309,24 @@ class chat_proto_send_subscribe_daily_info : public ::google::protobuf::Message 
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.chat_proto.subscribe_daily_info info_list = 1;
+  // repeated .faith.chat_proto.subscribe_daily_info info_list = 1;
   inline int info_list_size() const;
   inline void clear_info_list();
   static const int kInfoListFieldNumber = 1;
-  inline const ::hld::chat_proto_subscribe_daily_info& info_list(int index) const;
-  inline ::hld::chat_proto_subscribe_daily_info* mutable_info_list(int index);
-  inline ::hld::chat_proto_subscribe_daily_info* add_info_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_subscribe_daily_info >&
+  inline const ::faith::chat_proto_subscribe_daily_info& info_list(int index) const;
+  inline ::faith::chat_proto_subscribe_daily_info* mutable_info_list(int index);
+  inline ::faith::chat_proto_subscribe_daily_info* add_info_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_subscribe_daily_info >&
       info_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_subscribe_daily_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_subscribe_daily_info >*
       mutable_info_list();
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.send_subscribe_daily_info)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.send_subscribe_daily_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_subscribe_daily_info > info_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_subscribe_daily_info > info_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -3408,7 +3408,7 @@ class chat_proto_subscribe_daily_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 info_state() const;
   inline void set_info_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto.subscribe_daily_info)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto.subscribe_daily_info)
  private:
   inline void set_has_dailt_type();
   inline void clear_has_dailt_type();
@@ -3515,7 +3515,7 @@ class chat_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.chat_proto)
+  // @@protoc_insertion_point(class_scope:faith.chat_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -3994,27 +3994,27 @@ inline void chat_proto_chat_text::set_allocated_addressee_name(::std::string* ad
   }
 }
 
-// repeated .hld.chat_proto.chat_item_info item_list = 6;
+// repeated .faith.chat_proto.chat_item_info item_list = 6;
 inline int chat_proto_chat_text::item_list_size() const {
   return item_list_.size();
 }
 inline void chat_proto_chat_text::clear_item_list() {
   item_list_.Clear();
 }
-inline const ::hld::chat_proto_chat_item_info& chat_proto_chat_text::item_list(int index) const {
+inline const ::faith::chat_proto_chat_item_info& chat_proto_chat_text::item_list(int index) const {
   return item_list_.Get(index);
 }
-inline ::hld::chat_proto_chat_item_info* chat_proto_chat_text::mutable_item_list(int index) {
+inline ::faith::chat_proto_chat_item_info* chat_proto_chat_text::mutable_item_list(int index) {
   return item_list_.Mutable(index);
 }
-inline ::hld::chat_proto_chat_item_info* chat_proto_chat_text::add_item_list() {
+inline ::faith::chat_proto_chat_item_info* chat_proto_chat_text::add_item_list() {
   return item_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_chat_item_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_chat_item_info >&
 chat_proto_chat_text::item_list() const {
   return item_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_chat_item_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_chat_item_info >*
 chat_proto_chat_text::mutable_item_list() {
   return &item_list_;
 }
@@ -4210,27 +4210,27 @@ inline void chat_proto_chat_text_and_item::set_allocated_text(::std::string* tex
   }
 }
 
-// repeated .hld.chat_proto.chat_item_info item_list = 3;
+// repeated .faith.chat_proto.chat_item_info item_list = 3;
 inline int chat_proto_chat_text_and_item::item_list_size() const {
   return item_list_.size();
 }
 inline void chat_proto_chat_text_and_item::clear_item_list() {
   item_list_.Clear();
 }
-inline const ::hld::chat_proto_chat_item_info& chat_proto_chat_text_and_item::item_list(int index) const {
+inline const ::faith::chat_proto_chat_item_info& chat_proto_chat_text_and_item::item_list(int index) const {
   return item_list_.Get(index);
 }
-inline ::hld::chat_proto_chat_item_info* chat_proto_chat_text_and_item::mutable_item_list(int index) {
+inline ::faith::chat_proto_chat_item_info* chat_proto_chat_text_and_item::mutable_item_list(int index) {
   return item_list_.Mutable(index);
 }
-inline ::hld::chat_proto_chat_item_info* chat_proto_chat_text_and_item::add_item_list() {
+inline ::faith::chat_proto_chat_item_info* chat_proto_chat_text_and_item::add_item_list() {
   return item_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_chat_item_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_chat_item_info >&
 chat_proto_chat_text_and_item::item_list() const {
   return item_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_chat_item_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_chat_item_info >*
 chat_proto_chat_text_and_item::mutable_item_list() {
   return &item_list_;
 }
@@ -4635,27 +4635,27 @@ inline void chat_proto_chat_content::set_sender_template_id(::google::protobuf::
   sender_template_id_ = value;
 }
 
-// repeated .hld.chat_proto.chat_content_info content_info_array = 3;
+// repeated .faith.chat_proto.chat_content_info content_info_array = 3;
 inline int chat_proto_chat_content::content_info_array_size() const {
   return content_info_array_.size();
 }
 inline void chat_proto_chat_content::clear_content_info_array() {
   content_info_array_.Clear();
 }
-inline const ::hld::chat_proto_chat_content_info& chat_proto_chat_content::content_info_array(int index) const {
+inline const ::faith::chat_proto_chat_content_info& chat_proto_chat_content::content_info_array(int index) const {
   return content_info_array_.Get(index);
 }
-inline ::hld::chat_proto_chat_content_info* chat_proto_chat_content::mutable_content_info_array(int index) {
+inline ::faith::chat_proto_chat_content_info* chat_proto_chat_content::mutable_content_info_array(int index) {
   return content_info_array_.Mutable(index);
 }
-inline ::hld::chat_proto_chat_content_info* chat_proto_chat_content::add_content_info_array() {
+inline ::faith::chat_proto_chat_content_info* chat_proto_chat_content::add_content_info_array() {
   return content_info_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_chat_content_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_chat_content_info >&
 chat_proto_chat_content::content_info_array() const {
   return content_info_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_chat_content_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_chat_content_info >*
 chat_proto_chat_content::mutable_content_info_array() {
   return &content_info_array_;
 }
@@ -7073,27 +7073,27 @@ chat_proto_chat_all_record::mutable_role_guid() {
   return &role_guid_;
 }
 
-// repeated .hld.chat_proto.chat_one_record chat_array = 2;
+// repeated .faith.chat_proto.chat_one_record chat_array = 2;
 inline int chat_proto_chat_all_record::chat_array_size() const {
   return chat_array_.size();
 }
 inline void chat_proto_chat_all_record::clear_chat_array() {
   chat_array_.Clear();
 }
-inline const ::hld::chat_proto_chat_one_record& chat_proto_chat_all_record::chat_array(int index) const {
+inline const ::faith::chat_proto_chat_one_record& chat_proto_chat_all_record::chat_array(int index) const {
   return chat_array_.Get(index);
 }
-inline ::hld::chat_proto_chat_one_record* chat_proto_chat_all_record::mutable_chat_array(int index) {
+inline ::faith::chat_proto_chat_one_record* chat_proto_chat_all_record::mutable_chat_array(int index) {
   return chat_array_.Mutable(index);
 }
-inline ::hld::chat_proto_chat_one_record* chat_proto_chat_all_record::add_chat_array() {
+inline ::faith::chat_proto_chat_one_record* chat_proto_chat_all_record::add_chat_array() {
   return chat_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_chat_one_record >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_chat_one_record >&
 chat_proto_chat_all_record::chat_array() const {
   return chat_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_chat_one_record >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_chat_one_record >*
 chat_proto_chat_all_record::mutable_chat_array() {
   return &chat_array_;
 }
@@ -7298,27 +7298,27 @@ inline void chat_proto_send_subscribe_daily_end::set_result(::google::protobuf::
 
 // chat_proto_send_subscribe_daily_info
 
-// repeated .hld.chat_proto.subscribe_daily_info info_list = 1;
+// repeated .faith.chat_proto.subscribe_daily_info info_list = 1;
 inline int chat_proto_send_subscribe_daily_info::info_list_size() const {
   return info_list_.size();
 }
 inline void chat_proto_send_subscribe_daily_info::clear_info_list() {
   info_list_.Clear();
 }
-inline const ::hld::chat_proto_subscribe_daily_info& chat_proto_send_subscribe_daily_info::info_list(int index) const {
+inline const ::faith::chat_proto_subscribe_daily_info& chat_proto_send_subscribe_daily_info::info_list(int index) const {
   return info_list_.Get(index);
 }
-inline ::hld::chat_proto_subscribe_daily_info* chat_proto_send_subscribe_daily_info::mutable_info_list(int index) {
+inline ::faith::chat_proto_subscribe_daily_info* chat_proto_send_subscribe_daily_info::mutable_info_list(int index) {
   return info_list_.Mutable(index);
 }
-inline ::hld::chat_proto_subscribe_daily_info* chat_proto_send_subscribe_daily_info::add_info_list() {
+inline ::faith::chat_proto_subscribe_daily_info* chat_proto_send_subscribe_daily_info::add_info_list() {
   return info_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_subscribe_daily_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_subscribe_daily_info >&
 chat_proto_send_subscribe_daily_info::info_list() const {
   return info_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::chat_proto_subscribe_daily_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::chat_proto_subscribe_daily_info >*
 chat_proto_send_subscribe_daily_info::mutable_info_list() {
   return &info_list_;
 }
@@ -7378,7 +7378,7 @@ inline void chat_proto_subscribe_daily_info::set_info_state(::google::protobuf::
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

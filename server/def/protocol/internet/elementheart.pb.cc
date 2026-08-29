@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -564,7 +564,7 @@ bool element_heart_proto_element_heart_all::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.element_heart_proto.element_heart_one element_heart_array = 2;
+      // repeated .faith.element_heart_proto.element_heart_one element_heart_array = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -603,7 +603,7 @@ void element_heart_proto_element_heart_all::SerializeWithCachedSizes(
       1, this->role_guid(i), output);
   }
 
-  // repeated .hld.element_heart_proto.element_heart_one element_heart_array = 2;
+  // repeated .faith.element_heart_proto.element_heart_one element_heart_array = 2;
   for (int i = 0; i < this->element_heart_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->element_heart_array(i), output);
@@ -623,7 +623,7 @@ void element_heart_proto_element_heart_all::SerializeWithCachedSizes(
       WriteInt32ToArray(1, this->role_guid(i), target);
   }
 
-  // repeated .hld.element_heart_proto.element_heart_one element_heart_array = 2;
+  // repeated .faith.element_heart_proto.element_heart_one element_heart_array = 2;
   for (int i = 0; i < this->element_heart_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -650,7 +650,7 @@ int element_heart_proto_element_heart_all::ByteSize() const {
     total_size += 1 * this->role_guid_size() + data_size;
   }
 
-  // repeated .hld.element_heart_proto.element_heart_one element_heart_array = 2;
+  // repeated .faith.element_heart_proto.element_heart_one element_heart_array = 2;
   total_size += 1 * this->element_heart_array_size();
   for (int i = 0; i < this->element_heart_array_size(); i++) {
     total_size +=
@@ -1716,6 +1716,6 @@ void element_heart_proto::Swap(element_heart_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

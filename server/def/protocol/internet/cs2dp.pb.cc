@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -2593,45 +2593,45 @@ void protobuf_AddDesc_cs2dp_2eproto() {
   already_here = true;
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  ::hld::protobuf_AddDesc_db_2eproto();
+  ::faith::protobuf_AddDesc_db_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\013cs2dp.proto\022\003hld\032\010db.proto\"\216X\n\013cs2dp_p"
     "roto\032\206\001\n\021save_role_starark\022\021\n\trole_guid\030"
     "\001 \001(\003\022\030\n\020unit_array_index\030\002 \001(\005\022\024\n\014save_"
-    "type_ex\030\003 \001(\005\022.\n\007db_data\030\004 \001(\0132\035.hld.db_"
+    "type_ex\030\003 \001(\005\022.\n\007db_data\030\004 \001(\0132\035.faith.db_"
     "proto.role_starark_db\032\207\001\n\017role_recycle_d"
     "b\022\026\n\016e_start_time_1\030\001 \001(\005\022\027\n\017e_login_sta"
     "te_2\030\002 \001(\005\022\026\n\016e_prop_state_3\030\003 \001(\005\022\024\n\014in"
     "viter_guid\030\004 \001(\003\022\025\n\rinvited_state\030\005 \001(\005\032"
     "\211\001\n\021save_role_recycle\022\021\n\trole_guid\030\001 \001(\003"
     "\022\030\n\020unit_array_index\030\002 \001(\005\022\024\n\014save_type_"
-    "ex\030\003 \001(\005\0221\n\007db_data\030\004 \001(\0132 .hld.cs2dp_pr"
+    "ex\030\003 \001(\005\0221\n\007db_data\030\004 \001(\0132 .faith.cs2dp_pr"
     "oto.role_recycle_db\032)\n\025role_recycle_task"
     "_row\022\020\n\010data_ary\030\001 \003(\005\032c\n\024role_recycle_t"
     "ask_db\022\021\n\trow_count\030\001 \001(\005\0228\n\010row_data\030\002 "
-    "\003(\0132&.hld.cs2dp_proto.role_recycle_task_"
+    "\003(\0132&.faith.cs2dp_proto.role_recycle_task_"
     "row\032\223\001\n\026save_role_recycle_task\022\021\n\trole_g"
     "uid\030\001 \001(\003\022\030\n\020unit_array_index\030\002 \001(\005\022\024\n\014s"
-    "ave_type_ex\030\003 \001(\005\0226\n\007db_data\030\004 \001(\0132%.hld"
+    "ave_type_ex\030\003 \001(\005\0226\n\007db_data\030\004 \001(\0132%.faith"
     ".cs2dp_proto.role_recycle_task_db\032&\n\022rol"
     "e_dragontrip_db\022\020\n\010data_ary\030\001 \003(\005\032\217\001\n\024sa"
     "ve_role_dragontrip\022\021\n\trole_guid\030\001 \001(\003\022\030\n"
     "\020unit_array_index\030\002 \001(\005\022\024\n\014save_type_ex\030"
-    "\003 \001(\005\0224\n\007db_data\030\004 \001(\0132#.hld.cs2dp_proto"
+    "\003 \001(\005\0224\n\007db_data\030\004 \001(\0132#.faith.cs2dp_proto"
     ".role_dragontrip_db\032$\n\020role_phantom_row\022"
     "\020\n\010data_ary\030\001 \003(\005\032Y\n\017role_phantom_db\022\021\n\t"
-    "row_count\030\001 \001(\005\0223\n\010row_data\030\002 \003(\0132!.hld."
+    "row_count\030\001 \001(\005\0223\n\010row_data\030\002 \003(\0132!.faith."
     "cs2dp_proto.role_phantom_row\032\211\001\n\021save_ro"
     "le_phantom\022\021\n\trole_guid\030\001 \001(\003\022\030\n\020unit_ar"
     "ray_index\030\002 \001(\005\022\024\n\014save_type_ex\030\003 \001(\005\0221\n"
-    "\007db_data\030\004 \001(\0132 .hld.cs2dp_proto.role_ph"
+    "\007db_data\030\004 \001(\0132 .faith.cs2dp_proto.role_ph"
     "antom_db\0323\n\024role_chat_record_row\022\013\n\003pos\030"
     "\001 \001(\005\022\016\n\006record\030\002 \001(\t\032a\n\023role_chat_recor"
     "d_db\022\021\n\trow_count\030\001 \001(\005\0227\n\010row_data\030\002 \003("
-    "\0132%.hld.cs2dp_proto.role_chat_record_row"
+    "\0132%.faith.cs2dp_proto.role_chat_record_row"
     "\032\221\001\n\025save_role_chat_record\022\021\n\trole_guid\030"
     "\001 \001(\003\022\030\n\020unit_array_index\030\002 \001(\005\022\024\n\014save_"
-    "type_ex\030\003 \001(\005\0225\n\007db_data\030\004 \001(\0132$.hld.cs2"
+    "type_ex\030\003 \001(\005\0225\n\007db_data\030\004 \001(\0132$.faith.cs2"
     "dp_proto.role_chat_record_db\032h\n\025role_ora"
     "cle_trial_row\022\021\n\trole_guid\030\001 \001(\003\022\020\n\010tier"
     "_num\030\002 \001(\005\022\025\n\rcustoms_state\030\003 \001(\005\022\023\n\013rew"
@@ -2640,7 +2640,7 @@ void protobuf_AddDesc_cs2dp_2eproto() {
     "d.cs2dp_proto.role_oracle_trial_row\032\223\001\n\026"
     "save_role_oracle_trial\022\021\n\trole_guid\030\001 \001("
     "\003\022\030\n\020unit_array_index\030\002 \001(\005\022\024\n\014save_type"
-    "_ex\030\003 \001(\005\0226\n\007db_data\030\004 \001(\0132%.hld.cs2dp_p"
+    "_ex\030\003 \001(\005\0226\n\007db_data\030\004 \001(\0132%.faith.cs2dp_p"
     "roto.role_oracle_trial_db\032\223\002\n\032role_perso"
     "n_information_db\022\021\n\trole_guid\030\001 \001(\003\022\023\n\013i"
     "nfor_state\030\002 \001(\005\022\024\n\014reward_state\030\003 \001(\005\022\016"
@@ -2651,7 +2651,7 @@ void protobuf_AddDesc_cs2dp_2eproto() {
     "ate\030\013 \001(\t\022\014\n\004tags\030\014 \003(\005\032\237\001\n\034save_role_pe"
     "rson_information\022\021\n\trole_guid\030\001 \001(\003\022\030\n\020u"
     "nit_array_index\030\002 \001(\005\022\024\n\014save_type_ex\030\003 "
-    "\001(\005\022<\n\007db_data\030\004 \001(\0132+.hld.cs2dp_proto.r"
+    "\001(\005\022<\n\007db_data\030\004 \001(\0132+.faith.cs2dp_proto.r"
     "ole_person_information_db\032\262\002\n\023role_compe"
     "tition_db\022\021\n\trole_guid\030\001 \001(\003\022\016\n\006is_buy\030\002"
     " \001(\005\022\027\n\017buy_manual_type\030\003 \001(\005\022\031\n\021point_a"
@@ -2663,69 +2663,69 @@ void protobuf_AddDesc_cs2dp_2eproto() {
     "ave_type\030\r \001(\005\032\221\001\n\025save_role_competition"
     "\022\021\n\trole_guid\030\001 \001(\003\022\030\n\020unit_array_index\030"
     "\002 \001(\005\022\024\n\014save_type_ex\030\003 \001(\005\0225\n\007db_data\030\004"
-    " \001(\0132$.hld.cs2dp_proto.role_competition_"
+    " \001(\0132$.faith.cs2dp_proto.role_competition_"
     "db\032)\n\025role_legion_skill_row\022\020\n\010data_ary\030"
     "\001 \003(\005\032c\n\024role_legion_skill_db\022\021\n\trow_cou"
-    "nt\030\001 \001(\005\0228\n\010row_data\030\002 \003(\0132&.hld.cs2dp_p"
+    "nt\030\001 \001(\005\0228\n\010row_data\030\002 \003(\0132&.faith.cs2dp_p"
     "roto.role_legion_skill_row\032\223\001\n\026save_role"
     "_legion_skill\022\021\n\trole_guid\030\001 \001(\003\022\030\n\020unit"
     "_array_index\030\002 \001(\005\022\024\n\014save_type_ex\030\003 \001(\005"
-    "\0226\n\007db_data\030\004 \001(\0132%.hld.cs2dp_proto.role"
+    "\0226\n\007db_data\030\004 \001(\0132%.faith.cs2dp_proto.role"
     "_legion_skill_db\032o\n\023role_skytreasure_db\022"
     "\035\n\025skytreasure_layer_num\030\001 \001(\005\022\027\n\017skytre"
     "asure_pos\030\002 \001(\005\022 \n\030skytreasure_pos_in_ar"
     "ray\030\003 \001(\005\032\221\001\n\025save_role_skytreasure\022\021\n\tr"
     "ole_guid\030\001 \001(\003\022\030\n\020unit_array_index\030\002 \001(\005"
     "\022\024\n\014save_type_ex\030\003 \001(\005\0225\n\007db_data\030\004 \001(\0132"
-    "$.hld.cs2dp_proto.role_skytreasure_db\032(\n"
+    "$.faith.cs2dp_proto.role_skytreasure_db\032(\n"
     "\024role_harry_record_db\022\020\n\010data_ary\030\001 \003(\005\032"
     "\223\001\n\026save_role_harry_record\022\021\n\trole_guid\030"
     "\001 \001(\003\022\030\n\020unit_array_index\030\002 \001(\005\022\024\n\014save_"
-    "type_ex\030\003 \001(\005\0226\n\007db_data\030\004 \001(\0132%.hld.cs2"
+    "type_ex\030\003 \001(\005\0226\n\007db_data\030\004 \001(\0132%.faith.cs2"
     "dp_proto.role_harry_record_db\032+\n\027role_se"
     "ven_day_goal_row\022\020\n\010data_ary\030\001 \003(\005\032g\n\026ro"
     "le_seven_day_goal_db\022\021\n\trow_count\030\001 \001(\005\022"
-    ":\n\010row_data\030\002 \003(\0132(.hld.cs2dp_proto.role"
+    ":\n\010row_data\030\002 \003(\0132(.faith.cs2dp_proto.role"
     "_seven_day_goal_row\032\227\001\n\030save_role_seven_"
     "day_goal\022\021\n\trole_guid\030\001 \001(\003\022\030\n\020unit_arra"
     "y_index\030\002 \001(\005\022\024\n\014save_type_ex\030\003 \001(\005\0228\n\007d"
-    "b_data\030\004 \001(\0132\'.hld.cs2dp_proto.role_seve"
+    "b_data\030\004 \001(\0132\'.faith.cs2dp_proto.role_seve"
     "n_day_goal_db\032*\n\026role_passive_skill_row\022"
     "\020\n\010data_ary\030\001 \003(\005\032e\n\025role_passive_skill_"
     "db\022\021\n\trow_count\030\001 \001(\005\0229\n\010row_data\030\002 \003(\0132"
-    "\'.hld.cs2dp_proto.role_passive_skill_row"
+    "\'.faith.cs2dp_proto.role_passive_skill_row"
     "\032\225\001\n\027save_role_passive_skill\022\021\n\trole_gui"
     "d\030\001 \001(\003\022\030\n\020unit_array_index\030\002 \001(\005\022\024\n\014sav"
-    "e_type_ex\030\003 \001(\005\0227\n\007db_data\030\004 \001(\0132&.hld.c"
+    "e_type_ex\030\003 \001(\005\0227\n\007db_data\030\004 \001(\0132&.faith.c"
     "s2dp_proto.role_passive_skill_db\032\'\n\023role"
     "_boss_island_db\022\020\n\010data_ary\030\001 \003(\005\032\221\001\n\025sa"
     "ve_role_boss_island\022\021\n\trole_guid\030\001 \001(\003\022\030"
     "\n\020unit_array_index\030\002 \001(\005\022\024\n\014save_type_ex"
-    "\030\003 \001(\005\0225\n\007db_data\030\004 \001(\0132$.hld.cs2dp_prot"
+    "\030\003 \001(\005\0225\n\007db_data\030\004 \001(\0132$.faith.cs2dp_prot"
     "o.role_boss_island_db\032v\n\034role_time_limit"
     "_activity_row\022\020\n\010data_ary\030\001 \003(\005\022\031\n\021activ"
     "ity_schedule\030\002 \003(\005\022\024\n\014schedule_str\030\003 \001(\t"
     "\022\023\n\013reward_flag\030\004 \001(\003\032q\n\033role_time_limit"
     "_activity_db\022\021\n\trow_count\030\001 \001(\005\022\?\n\010row_d"
-    "ata\030\002 \003(\0132-.hld.cs2dp_proto.role_time_li"
+    "ata\030\002 \003(\0132-.faith.cs2dp_proto.role_time_li"
     "mit_activity_row\032\271\001\n\035save_role_time_limi"
     "t_activity\022\021\n\trole_guid\030\001 \001(\003\022\030\n\020unit_ar"
     "ray_index\030\002 \001(\005\022\024\n\014save_type_ex\030\003 \001(\005\022\026\n"
     "\016is_self_server\030\004 \001(\010\022=\n\007db_data\030\005 \001(\0132,"
-    ".hld.cs2dp_proto.role_time_limit_activit"
+    ".faith.cs2dp_proto.role_time_limit_activit"
     "y_db\032)\n\025role_gain_treasure_db\022\020\n\010data_ar"
     "y\030\001 \003(\005\032\225\001\n\027save_role_gain_treasure\022\021\n\tr"
     "ole_guid\030\001 \001(\003\022\030\n\020unit_array_index\030\002 \001(\005"
     "\022\024\n\014save_type_ex\030\003 \001(\005\0227\n\007db_data\030\004 \001(\0132"
-    "&.hld.cs2dp_proto.role_gain_treasure_db\032"
+    "&.faith.cs2dp_proto.role_gain_treasure_db\032"
     "!\n\rrole_logic_db\022\020\n\010data_ary\030\001 \003(\005\032\205\001\n\017s"
     "ave_role_logic\022\021\n\trole_guid\030\001 \001(\003\022\030\n\020uni"
     "t_array_index\030\002 \001(\005\022\024\n\014save_type_ex\030\003 \001("
-    "\005\022/\n\007db_data\030\004 \001(\0132\036.hld.cs2dp_proto.rol"
+    "\005\022/\n\007db_data\030\004 \001(\0132\036.faith.cs2dp_proto.rol"
     "e_logic_db\032G\n\034role_service_rank_reward_r"
     "ow\022\021\n\trank_type\030\001 \001(\005\022\024\n\014reward_state\030\002 "
     "\001(\005\032q\n\033role_service_rank_reward_db\022\021\n\tro"
-    "w_count\030\001 \001(\005\022\?\n\010row_data\030\002 \003(\0132-.hld.cs"
+    "w_count\030\001 \001(\005\022\?\n\010row_data\030\002 \003(\0132-.faith.cs"
     "2dp_proto.role_service_rank_reward_row\032\241"
     "\001\n\035save_role_service_rank_reward\022\021\n\trole"
     "_guid\030\001 \001(\003\022\030\n\020unit_array_index\030\002 \001(\005\022\024\n"
@@ -2735,39 +2735,39 @@ void protobuf_AddDesc_cs2dp_2eproto() {
     "\030\001 \003(\003\032\227\001\n\030save_role_highest_record\022\021\n\tr"
     "ole_guid\030\001 \001(\003\022\030\n\020unit_array_index\030\002 \001(\005"
     "\022\024\n\014save_type_ex\030\003 \001(\005\0228\n\007db_data\030\004 \001(\0132"
-    "\'.hld.cs2dp_proto.role_highest_record_db"
+    "\'.faith.cs2dp_proto.role_highest_record_db"
     "\032/\n\033role_daily_must_do_count_db\022\020\n\010data_"
     "ary\030\001 \003(\005\032\241\001\n\035save_role_daily_must_do_co"
     "unt\022\021\n\trole_guid\030\001 \001(\003\022\030\n\020unit_array_ind"
     "ex\030\002 \001(\005\022\024\n\014save_type_ex\030\003 \001(\005\022=\n\007db_dat"
-    "a\030\004 \001(\0132,.hld.cs2dp_proto.role_daily_mus"
+    "a\030\004 \001(\0132,.faith.cs2dp_proto.role_daily_mus"
     "t_do_count_db\032#\n\017role_talent_row\022\020\n\010data"
     "_ary\030\001 \003(\005\032W\n\016role_talent_db\022\021\n\trow_coun"
-    "t\030\001 \001(\005\0222\n\010row_data\030\002 \003(\0132 .hld.cs2dp_pr"
+    "t\030\001 \001(\005\0222\n\010row_data\030\002 \003(\0132 .faith.cs2dp_pr"
     "oto.role_talent_row\032\207\001\n\020save_role_talent"
     "\022\021\n\trole_guid\030\001 \001(\003\022\030\n\020unit_array_index\030"
     "\002 \001(\005\022\024\n\014save_type_ex\030\003 \001(\005\0220\n\007db_data\030\004"
-    " \001(\0132\037.hld.cs2dp_proto.role_talent_db\032\"\n"
+    " \001(\0132\037.faith.cs2dp_proto.role_talent_db\032\"\n"
     "\016role_title_row\022\020\n\010data_ary\030\001 \003(\005\032U\n\rrol"
     "e_title_db\022\021\n\trow_count\030\001 \001(\005\0221\n\010row_dat"
-    "a\030\002 \003(\0132\037.hld.cs2dp_proto.role_title_row"
+    "a\030\002 \003(\0132\037.faith.cs2dp_proto.role_title_row"
     "\032\205\001\n\017save_role_title\022\021\n\trole_guid\030\001 \001(\003\022"
     "\030\n\020unit_array_index\030\002 \001(\005\022\024\n\014save_type_e"
-    "x\030\003 \001(\005\022/\n\007db_data\030\004 \001(\0132\036.hld.cs2dp_pro"
+    "x\030\003 \001(\005\022/\n\007db_data\030\004 \001(\0132\036.faith.cs2dp_pro"
     "to.role_title_db\032)\n\025role_active_degree_d"
     "b\022\020\n\010data_ary\030\001 \003(\005\032\225\001\n\027save_role_active"
     "_degree\022\021\n\trole_guid\030\001 \001(\003\022\030\n\020unit_array"
     "_index\030\002 \001(\005\022\024\n\014save_type_ex\030\003 \001(\005\0227\n\007db"
-    "_data\030\004 \001(\0132&.hld.cs2dp_proto.role_activ"
+    "_data\030\004 \001(\0132&.faith.cs2dp_proto.role_activ"
     "e_degree_db\032#\n\017role_welfare_db\022\020\n\010data_a"
     "ry\030\001 \003(\005\032\211\001\n\021save_role_welfare\022\021\n\trole_g"
     "uid\030\001 \001(\003\022\030\n\020unit_array_index\030\002 \001(\005\022\024\n\014s"
-    "ave_type_ex\030\003 \001(\005\0221\n\007db_data\030\004 \001(\0132 .hld"
+    "ave_type_ex\030\003 \001(\005\0221\n\007db_data\030\004 \001(\0132 .faith"
     ".cs2dp_proto.role_welfare_db\032#\n\017role_con"
     "vert_db\022\020\n\010data_ary\030\001 \003(\005\032\211\001\n\021save_role_"
     "convert\022\021\n\trole_guid\030\001 \001(\003\022\030\n\020unit_array"
     "_index\030\002 \001(\005\022\024\n\014save_type_ex\030\003 \001(\005\0221\n\007db"
-    "_data\030\004 \001(\0132 .hld.cs2dp_proto.role_conve"
+    "_data\030\004 \001(\0132 .faith.cs2dp_proto.role_conve"
     "rt_db\032\332\001\n!role_yesterday_must_do_remain_"
     "row\022\021\n\trole_guid\030\001 \001(\003\022 \n\030role_exp_level"
     "_yesterday\030\002 \001(\005\022\021\n\tsave_date\030\003 \001(\005\022 \n\030r"
@@ -2775,87 +2775,87 @@ void protobuf_AddDesc_cs2dp_2eproto() {
     "e_today_day_count\030\005 \001(\005\022\027\n\017role_arena_ra"
     "nk\030\006 \001(\005\022\020\n\010data_ary\030\007 \003(\005\032{\n role_yeste"
     "rday_must_do_remain_db\022\021\n\trow_count\030\001 \001("
-    "\005\022D\n\010row_data\030\002 \003(\01322.hld.cs2dp_proto.ro"
+    "\005\022D\n\010row_data\030\002 \003(\01322.faith.cs2dp_proto.ro"
     "le_yesterday_must_do_remain_row\032\253\001\n\"save"
     "_role_yesterday_must_do_remain\022\021\n\trole_g"
     "uid\030\001 \001(\003\022\030\n\020unit_array_index\030\002 \001(\005\022\024\n\014s"
-    "ave_type_ex\030\003 \001(\005\022B\n\007db_data\030\004 \001(\01321.hld"
+    "ave_type_ex\030\003 \001(\005\022B\n\007db_data\030\004 \001(\01321.faith"
     ".cs2dp_proto.role_yesterday_must_do_rema"
     "in_db\032>\n\020role_worship_row\022\025\n\rranking_ind"
     "ex\030\001 \001(\005\022\023\n\013target_guid\030\002 \001(\003\032Y\n\017role_wo"
     "rship_db\022\021\n\trow_count\030\001 \001(\005\0223\n\010row_data\030"
-    "\002 \003(\0132!.hld.cs2dp_proto.role_worship_row"
+    "\002 \003(\0132!.faith.cs2dp_proto.role_worship_row"
     "\032\211\001\n\021save_role_worship\022\021\n\trole_guid\030\001 \001("
     "\003\022\030\n\020unit_array_index\030\002 \001(\005\022\024\n\014save_type"
-    "_ex\030\003 \001(\005\0221\n\007db_data\030\004 \001(\0132 .hld.cs2dp_p"
+    "_ex\030\003 \001(\005\0221\n\007db_data\030\004 \001(\0132 .faith.cs2dp_p"
     "roto.role_worship_db\032\"\n\016role_tinder_db\022\020"
     "\n\010data_ary\030\001 \003(\005\032\207\001\n\020save_role_tinder\022\021\n"
     "\trole_guid\030\001 \001(\003\022\030\n\020unit_array_index\030\002 \001"
     "(\005\022\024\n\014save_type_ex\030\003 \001(\005\0220\n\007db_data\030\004 \001("
-    "\0132\037.hld.cs2dp_proto.role_tinder_db\0329\n\020ro"
+    "\0132\037.faith.cs2dp_proto.role_tinder_db\0329\n\020ro"
     "le_pokedex_row\022\020\n\010data_ary\030\001 \003(\005\022\023\n\013coll"
     "ect_num\030\002 \003(\005\032Y\n\017role_pokedex_db\022\021\n\trow_"
-    "count\030\001 \001(\005\0223\n\010row_data\030\002 \003(\0132!.hld.cs2d"
+    "count\030\001 \001(\005\0223\n\010row_data\030\002 \003(\0132!.faith.cs2d"
     "p_proto.role_pokedex_row\032\211\001\n\021save_role_p"
     "okedex\022\021\n\trole_guid\030\001 \001(\003\022\030\n\020unit_array_"
     "index\030\002 \001(\005\022\024\n\014save_type_ex\030\003 \001(\005\0221\n\007db_"
-    "data\030\004 \001(\0132 .hld.cs2dp_proto.role_pokede"
+    "data\030\004 \001(\0132 .faith.cs2dp_proto.role_pokede"
     "x_db\032(\n\024role_achievement_row\022\020\n\010data_ary"
     "\030\001 \003(\005\032a\n\023role_achievement_db\022\021\n\trow_cou"
-    "nt\030\001 \001(\005\0227\n\010row_data\030\002 \003(\0132%.hld.cs2dp_p"
+    "nt\030\001 \001(\005\0227\n\010row_data\030\002 \003(\0132%.faith.cs2dp_p"
     "roto.role_achievement_row\032\221\001\n\025save_role_"
     "achievement\022\021\n\trole_guid\030\001 \001(\003\022\030\n\020unit_a"
     "rray_index\030\002 \001(\005\022\024\n\014save_type_ex\030\003 \001(\005\0225"
-    "\n\007db_data\030\004 \001(\0132$.hld.cs2dp_proto.role_a"
+    "\n\007db_data\030\004 \001(\0132$.faith.cs2dp_proto.role_a"
     "chievement_db\032(\n\024role_special_name_db\022\020\n"
     "\010data_ary\030\001 \003(\005\032\223\001\n\026save_role_special_na"
     "me\022\021\n\trole_guid\030\001 \001(\003\022\030\n\020unit_array_inde"
     "x\030\002 \001(\005\022\024\n\014save_type_ex\030\003 \001(\005\0226\n\007db_data"
-    "\030\004 \001(\0132%.hld.cs2dp_proto.role_special_na"
+    "\030\004 \001(\0132%.faith.cs2dp_proto.role_special_na"
     "me_db\032)\n\025role_service_goal_row\022\020\n\010data_a"
     "ry\030\001 \003(\005\032c\n\024role_service_goal_db\022\021\n\trow_"
-    "count\030\001 \001(\005\0228\n\010row_data\030\002 \003(\0132&.hld.cs2d"
+    "count\030\001 \001(\005\0228\n\010row_data\030\002 \003(\0132&.faith.cs2d"
     "p_proto.role_service_goal_row\032\223\001\n\026save_r"
     "ole_service_goal\022\021\n\trole_guid\030\001 \001(\003\022\030\n\020u"
     "nit_array_index\030\002 \001(\005\022\024\n\014save_type_ex\030\003 "
-    "\001(\005\0226\n\007db_data\030\004 \001(\0132%.hld.cs2dp_proto.r"
+    "\001(\005\0226\n\007db_data\030\004 \001(\0132%.faith.cs2dp_proto.r"
     "ole_service_goal_db\032\'\n\023role_map_record_r"
     "ow\022\020\n\010data_ary\030\001 \003(\005\032_\n\022role_map_record_"
     "db\022\021\n\trow_count\030\001 \001(\005\0226\n\010row_data\030\002 \003(\0132"
-    "$.hld.cs2dp_proto.role_map_record_row\032\217\001"
+    "$.faith.cs2dp_proto.role_map_record_row\032\217\001"
     "\n\024save_role_map_record\022\021\n\trole_guid\030\001 \001("
     "\003\022\030\n\020unit_array_index\030\002 \001(\005\022\024\n\014save_type"
-    "_ex\030\003 \001(\005\0224\n\007db_data\030\004 \001(\0132#.hld.cs2dp_p"
+    "_ex\030\003 \001(\005\0224\n\007db_data\030\004 \001(\0132#.faith.cs2dp_p"
     "roto.role_map_record_db\032\"\n\016role_goods_ro"
     "w\022\020\n\010data_ary\030\001 \003(\005\032U\n\rrole_goods_db\022\021\n\t"
-    "row_count\030\001 \001(\005\0221\n\010row_data\030\002 \003(\0132\037.hld."
+    "row_count\030\001 \001(\005\0221\n\010row_data\030\002 \003(\0132\037.faith."
     "cs2dp_proto.role_goods_row\032\205\001\n\017save_role"
     "_goods\022\021\n\trole_guid\030\001 \001(\003\022\030\n\020unit_array_"
     "index\030\002 \001(\005\022\024\n\014save_type_ex\030\003 \001(\005\022/\n\007db_"
-    "data\030\004 \001(\0132\036.hld.cs2dp_proto.role_goods_"
+    "data\030\004 \001(\0132\036.faith.cs2dp_proto.role_goods_"
     "db\032$\n\020role_mission_row\022\020\n\010data_ary\030\001 \003(\005"
     "\032Y\n\017role_mission_db\022\021\n\trow_count\030\001 \001(\005\0223"
-    "\n\010row_data\030\002 \003(\0132!.hld.cs2dp_proto.role_"
+    "\n\010row_data\030\002 \003(\0132!.faith.cs2dp_proto.role_"
     "mission_row\032\211\001\n\021save_role_mission\022\021\n\trol"
     "e_guid\030\001 \001(\003\022\030\n\020unit_array_index\030\002 \001(\005\022\024"
     "\n\014save_type_ex\030\003 \001(\005\0221\n\007db_data\030\004 \001(\0132 ."
-    "hld.cs2dp_proto.role_mission_db\032#\n\017role_"
+    "faith.cs2dp_proto.role_mission_db\032#\n\017role_"
     "belief_row\022\020\n\010data_ary\030\001 \003(\005\032W\n\016role_bel"
     "ief_db\022\021\n\trow_count\030\001 \001(\005\0222\n\010row_data\030\002 "
-    "\003(\0132 .hld.cs2dp_proto.role_belief_row\032\207\001"
+    "\003(\0132 .faith.cs2dp_proto.role_belief_row\032\207\001"
     "\n\020save_role_belief\022\021\n\trole_guid\030\001 \001(\003\022\030\n"
     "\020unit_array_index\030\002 \001(\005\022\024\n\014save_type_ex\030"
-    "\003 \001(\005\0220\n\007db_data\030\004 \001(\0132\037.hld.cs2dp_proto"
+    "\003 \001(\005\0220\n\007db_data\030\004 \001(\0132\037.faith.cs2dp_proto"
     ".role_belief_db\032R\n\rrole_money_db\022\024\n\014cur_"
     "data_ary\030\001 \003(\003\022\024\n\014all_data_ary\030\002 \003(\003\022\025\n\r"
     "cost_data_ary\030\003 \003(\003\032\205\001\n\017save_role_money\022"
     "\021\n\trole_guid\030\001 \001(\003\022\030\n\020unit_array_index\030\002"
     " \001(\005\022\024\n\014save_type_ex\030\003 \001(\005\022/\n\007db_data\030\004 "
-    "\001(\0132\036.hld.cs2dp_proto.role_money_db\032 \n\014r"
+    "\001(\0132\036.faith.cs2dp_proto.role_money_db\032 \n\014r"
     "ole_time_db\022\020\n\010data_ary\030\001 \003(\003\032\203\001\n\016save_r"
     "ole_time\022\021\n\trole_guid\030\001 \001(\003\022\030\n\020unit_arra"
     "y_index\030\002 \001(\005\022\024\n\014save_type_ex\030\003 \001(\005\022.\n\007d"
-    "b_data\030\004 \001(\0132\035.hld.cs2dp_proto.role_time"
+    "b_data\030\004 \001(\0132\035.faith.cs2dp_proto.role_time"
     "_db\032\265\001\n\014role_info_db\022\021\n\trole_guid\030\001 \001(\003\022"
     "\017\n\007account\030\002 \001(\t\022\021\n\trole_name\030\003 \001(\t\022\027\n\017r"
     "ole_appearance\030\004 \001(\t\022\033\n\023role_first_kill_"
@@ -2863,7 +2863,7 @@ void protobuf_AddDesc_cs2dp_2eproto() {
     "ary\030\007 \003(\003\022\020\n\010data_ary\030\010 \003(\005\032\203\001\n\016save_rol"
     "e_info\022\021\n\trole_guid\030\001 \001(\003\022\030\n\020unit_array_"
     "index\030\002 \001(\005\022\024\n\014save_type_ex\030\003 \001(\005\022.\n\007db_"
-    "data\030\004 \001(\0132\035.hld.cs2dp_proto.role_info_d"
+    "data\030\004 \001(\0132\035.faith.cs2dp_proto.role_info_d"
     "b\0323\n\013role_att_db\022\020\n\010data_ary\030\001 \003(\003\022\022\n\nat"
     "tack_att\030\002 \003(\002\032\201\001\n\rsave_role_att\022\021\n\trole"
     "_guid\030\001 \001(\003\022\030\n\020unit_array_index\030\002 \001(\005\022\024\n"
@@ -2874,7 +2874,7 @@ void protobuf_AddDesc_cs2dp_2eproto() {
     "gger_id\030\001 \001(\005\022\r\n\005state\030\002 \001(\005\032\205\001\n\017save_ro"
     "le_guide\022\021\n\trole_guid\030\001 \001(\003\022\030\n\020unit_arra"
     "y_index\030\002 \001(\005\022\024\n\014save_type_ex\030\003 \001(\005\022/\n\007d"
-    "b_data\030\004 \001(\0132\036.hld.cs2dp_proto.role_guid"
+    "b_data\030\004 \001(\0132\036.faith.cs2dp_proto.role_guid"
     "e_db\032g\n\021save_role_db_data\022\021\n\trole_guid\030\001"
     " \001(\003\022\030\n\020unit_array_index\030\002 \001(\005\022\024\n\014save_t"
     "ype_ex\030\003 \001(\005\022\017\n\007db_data\030\004 \001(\014", 11309);
@@ -3117,7 +3117,7 @@ cs2dp_proto_save_role_starark::cs2dp_proto_save_role_starark()
 }
 
 void cs2dp_proto_save_role_starark::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::db_proto_role_starark_db*>(&::hld::db_proto_role_starark_db::default_instance());
+  db_data_ = const_cast< ::faith::db_proto_role_starark_db*>(&::faith::db_proto_role_starark_db::default_instance());
 }
 
 cs2dp_proto_save_role_starark::cs2dp_proto_save_role_starark(const cs2dp_proto_save_role_starark& from)
@@ -3172,7 +3172,7 @@ void cs2dp_proto_save_role_starark::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::db_proto_role_starark_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::db_proto_role_starark_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -3232,7 +3232,7 @@ bool cs2dp_proto_save_role_starark::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.db_proto.role_starark_db db_data = 4;
+      // optional .faith.db_proto.role_starark_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -3279,7 +3279,7 @@ void cs2dp_proto_save_role_starark::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.db_proto.role_starark_db db_data = 4;
+  // optional .faith.db_proto.role_starark_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -3308,7 +3308,7 @@ void cs2dp_proto_save_role_starark::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.db_proto.role_starark_db db_data = 4;
+  // optional .faith.db_proto.role_starark_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -3347,7 +3347,7 @@ int cs2dp_proto_save_role_starark::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.db_proto.role_starark_db db_data = 4;
+    // optional .faith.db_proto.role_starark_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -3391,7 +3391,7 @@ void cs2dp_proto_save_role_starark::MergeFrom(const cs2dp_proto_save_role_starar
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::db_proto_role_starark_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::db_proto_role_starark_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -3818,7 +3818,7 @@ cs2dp_proto_save_role_recycle::cs2dp_proto_save_role_recycle()
 }
 
 void cs2dp_proto_save_role_recycle::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_recycle_db*>(&::hld::cs2dp_proto_role_recycle_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_recycle_db*>(&::faith::cs2dp_proto_role_recycle_db::default_instance());
 }
 
 cs2dp_proto_save_role_recycle::cs2dp_proto_save_role_recycle(const cs2dp_proto_save_role_recycle& from)
@@ -3873,7 +3873,7 @@ void cs2dp_proto_save_role_recycle::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_recycle_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_recycle_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -3933,7 +3933,7 @@ bool cs2dp_proto_save_role_recycle::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_recycle_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_recycle_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -3980,7 +3980,7 @@ void cs2dp_proto_save_role_recycle::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_recycle_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_recycle_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -4009,7 +4009,7 @@ void cs2dp_proto_save_role_recycle::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_recycle_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_recycle_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -4048,7 +4048,7 @@ int cs2dp_proto_save_role_recycle::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_recycle_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_recycle_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -4092,7 +4092,7 @@ void cs2dp_proto_save_role_recycle::MergeFrom(const cs2dp_proto_save_role_recycl
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_recycle_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_recycle_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -4434,7 +4434,7 @@ bool cs2dp_proto_role_recycle_task_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cs2dp_proto.role_recycle_task_row row_data = 2;
+      // repeated .faith.cs2dp_proto.role_recycle_task_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -4472,7 +4472,7 @@ void cs2dp_proto_role_recycle_task_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.cs2dp_proto.role_recycle_task_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_recycle_task_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -4491,7 +4491,7 @@ void cs2dp_proto_role_recycle_task_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.cs2dp_proto.role_recycle_task_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_recycle_task_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -4517,7 +4517,7 @@ int cs2dp_proto_role_recycle_task_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.cs2dp_proto.role_recycle_task_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_recycle_task_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -4610,7 +4610,7 @@ cs2dp_proto_save_role_recycle_task::cs2dp_proto_save_role_recycle_task()
 }
 
 void cs2dp_proto_save_role_recycle_task::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_recycle_task_db*>(&::hld::cs2dp_proto_role_recycle_task_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_recycle_task_db*>(&::faith::cs2dp_proto_role_recycle_task_db::default_instance());
 }
 
 cs2dp_proto_save_role_recycle_task::cs2dp_proto_save_role_recycle_task(const cs2dp_proto_save_role_recycle_task& from)
@@ -4665,7 +4665,7 @@ void cs2dp_proto_save_role_recycle_task::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_recycle_task_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_recycle_task_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -4725,7 +4725,7 @@ bool cs2dp_proto_save_role_recycle_task::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_recycle_task_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_recycle_task_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -4772,7 +4772,7 @@ void cs2dp_proto_save_role_recycle_task::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_recycle_task_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_recycle_task_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -4801,7 +4801,7 @@ void cs2dp_proto_save_role_recycle_task::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_recycle_task_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_recycle_task_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -4840,7 +4840,7 @@ int cs2dp_proto_save_role_recycle_task::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_recycle_task_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_recycle_task_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -4884,7 +4884,7 @@ void cs2dp_proto_save_role_recycle_task::MergeFrom(const cs2dp_proto_save_role_r
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_recycle_task_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_recycle_task_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -5154,7 +5154,7 @@ cs2dp_proto_save_role_dragontrip::cs2dp_proto_save_role_dragontrip()
 }
 
 void cs2dp_proto_save_role_dragontrip::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_dragontrip_db*>(&::hld::cs2dp_proto_role_dragontrip_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_dragontrip_db*>(&::faith::cs2dp_proto_role_dragontrip_db::default_instance());
 }
 
 cs2dp_proto_save_role_dragontrip::cs2dp_proto_save_role_dragontrip(const cs2dp_proto_save_role_dragontrip& from)
@@ -5209,7 +5209,7 @@ void cs2dp_proto_save_role_dragontrip::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_dragontrip_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_dragontrip_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -5269,7 +5269,7 @@ bool cs2dp_proto_save_role_dragontrip::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_dragontrip_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_dragontrip_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -5316,7 +5316,7 @@ void cs2dp_proto_save_role_dragontrip::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_dragontrip_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_dragontrip_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -5345,7 +5345,7 @@ void cs2dp_proto_save_role_dragontrip::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_dragontrip_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_dragontrip_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -5384,7 +5384,7 @@ int cs2dp_proto_save_role_dragontrip::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_dragontrip_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_dragontrip_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -5428,7 +5428,7 @@ void cs2dp_proto_save_role_dragontrip::MergeFrom(const cs2dp_proto_save_role_dra
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_dragontrip_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_dragontrip_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -5770,7 +5770,7 @@ bool cs2dp_proto_role_phantom_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cs2dp_proto.role_phantom_row row_data = 2;
+      // repeated .faith.cs2dp_proto.role_phantom_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -5808,7 +5808,7 @@ void cs2dp_proto_role_phantom_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.cs2dp_proto.role_phantom_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_phantom_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -5827,7 +5827,7 @@ void cs2dp_proto_role_phantom_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.cs2dp_proto.role_phantom_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_phantom_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -5853,7 +5853,7 @@ int cs2dp_proto_role_phantom_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.cs2dp_proto.role_phantom_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_phantom_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -5946,7 +5946,7 @@ cs2dp_proto_save_role_phantom::cs2dp_proto_save_role_phantom()
 }
 
 void cs2dp_proto_save_role_phantom::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_phantom_db*>(&::hld::cs2dp_proto_role_phantom_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_phantom_db*>(&::faith::cs2dp_proto_role_phantom_db::default_instance());
 }
 
 cs2dp_proto_save_role_phantom::cs2dp_proto_save_role_phantom(const cs2dp_proto_save_role_phantom& from)
@@ -6001,7 +6001,7 @@ void cs2dp_proto_save_role_phantom::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_phantom_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_phantom_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -6061,7 +6061,7 @@ bool cs2dp_proto_save_role_phantom::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_phantom_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_phantom_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -6108,7 +6108,7 @@ void cs2dp_proto_save_role_phantom::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_phantom_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_phantom_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -6137,7 +6137,7 @@ void cs2dp_proto_save_role_phantom::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_phantom_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_phantom_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -6176,7 +6176,7 @@ int cs2dp_proto_save_role_phantom::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_phantom_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_phantom_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -6220,7 +6220,7 @@ void cs2dp_proto_save_role_phantom::MergeFrom(const cs2dp_proto_save_role_phanto
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_phantom_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_phantom_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -6616,7 +6616,7 @@ bool cs2dp_proto_role_chat_record_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cs2dp_proto.role_chat_record_row row_data = 2;
+      // repeated .faith.cs2dp_proto.role_chat_record_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -6654,7 +6654,7 @@ void cs2dp_proto_role_chat_record_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.cs2dp_proto.role_chat_record_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_chat_record_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -6673,7 +6673,7 @@ void cs2dp_proto_role_chat_record_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.cs2dp_proto.role_chat_record_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_chat_record_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -6699,7 +6699,7 @@ int cs2dp_proto_role_chat_record_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.cs2dp_proto.role_chat_record_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_chat_record_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -6792,7 +6792,7 @@ cs2dp_proto_save_role_chat_record::cs2dp_proto_save_role_chat_record()
 }
 
 void cs2dp_proto_save_role_chat_record::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_chat_record_db*>(&::hld::cs2dp_proto_role_chat_record_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_chat_record_db*>(&::faith::cs2dp_proto_role_chat_record_db::default_instance());
 }
 
 cs2dp_proto_save_role_chat_record::cs2dp_proto_save_role_chat_record(const cs2dp_proto_save_role_chat_record& from)
@@ -6847,7 +6847,7 @@ void cs2dp_proto_save_role_chat_record::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_chat_record_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_chat_record_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -6907,7 +6907,7 @@ bool cs2dp_proto_save_role_chat_record::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_chat_record_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_chat_record_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -6954,7 +6954,7 @@ void cs2dp_proto_save_role_chat_record::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_chat_record_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_chat_record_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -6983,7 +6983,7 @@ void cs2dp_proto_save_role_chat_record::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_chat_record_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_chat_record_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -7022,7 +7022,7 @@ int cs2dp_proto_save_role_chat_record::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_chat_record_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_chat_record_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -7066,7 +7066,7 @@ void cs2dp_proto_save_role_chat_record::MergeFrom(const cs2dp_proto_save_role_ch
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_chat_record_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_chat_record_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -7525,7 +7525,7 @@ bool cs2dp_proto_role_oracle_trial_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cs2dp_proto.role_oracle_trial_row row_data = 2;
+      // repeated .faith.cs2dp_proto.role_oracle_trial_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -7563,7 +7563,7 @@ void cs2dp_proto_role_oracle_trial_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.cs2dp_proto.role_oracle_trial_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_oracle_trial_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -7582,7 +7582,7 @@ void cs2dp_proto_role_oracle_trial_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.cs2dp_proto.role_oracle_trial_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_oracle_trial_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -7608,7 +7608,7 @@ int cs2dp_proto_role_oracle_trial_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.cs2dp_proto.role_oracle_trial_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_oracle_trial_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -7701,7 +7701,7 @@ cs2dp_proto_save_role_oracle_trial::cs2dp_proto_save_role_oracle_trial()
 }
 
 void cs2dp_proto_save_role_oracle_trial::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_oracle_trial_db*>(&::hld::cs2dp_proto_role_oracle_trial_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_oracle_trial_db*>(&::faith::cs2dp_proto_role_oracle_trial_db::default_instance());
 }
 
 cs2dp_proto_save_role_oracle_trial::cs2dp_proto_save_role_oracle_trial(const cs2dp_proto_save_role_oracle_trial& from)
@@ -7756,7 +7756,7 @@ void cs2dp_proto_save_role_oracle_trial::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_oracle_trial_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_oracle_trial_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -7816,7 +7816,7 @@ bool cs2dp_proto_save_role_oracle_trial::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_oracle_trial_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_oracle_trial_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -7863,7 +7863,7 @@ void cs2dp_proto_save_role_oracle_trial::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_oracle_trial_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_oracle_trial_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -7892,7 +7892,7 @@ void cs2dp_proto_save_role_oracle_trial::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_oracle_trial_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_oracle_trial_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -7931,7 +7931,7 @@ int cs2dp_proto_save_role_oracle_trial::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_oracle_trial_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_oracle_trial_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -7975,7 +7975,7 @@ void cs2dp_proto_save_role_oracle_trial::MergeFrom(const cs2dp_proto_save_role_o
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_oracle_trial_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_oracle_trial_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -8781,7 +8781,7 @@ cs2dp_proto_save_role_person_information::cs2dp_proto_save_role_person_informati
 }
 
 void cs2dp_proto_save_role_person_information::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_person_information_db*>(&::hld::cs2dp_proto_role_person_information_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_person_information_db*>(&::faith::cs2dp_proto_role_person_information_db::default_instance());
 }
 
 cs2dp_proto_save_role_person_information::cs2dp_proto_save_role_person_information(const cs2dp_proto_save_role_person_information& from)
@@ -8836,7 +8836,7 @@ void cs2dp_proto_save_role_person_information::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_person_information_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_person_information_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -8896,7 +8896,7 @@ bool cs2dp_proto_save_role_person_information::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_person_information_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_person_information_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -8943,7 +8943,7 @@ void cs2dp_proto_save_role_person_information::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_person_information_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_person_information_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -8972,7 +8972,7 @@ void cs2dp_proto_save_role_person_information::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_person_information_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_person_information_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -9011,7 +9011,7 @@ int cs2dp_proto_save_role_person_information::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_person_information_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_person_information_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -9055,7 +9055,7 @@ void cs2dp_proto_save_role_person_information::MergeFrom(const cs2dp_proto_save_
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_person_information_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_person_information_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -9816,7 +9816,7 @@ cs2dp_proto_save_role_competition::cs2dp_proto_save_role_competition()
 }
 
 void cs2dp_proto_save_role_competition::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_competition_db*>(&::hld::cs2dp_proto_role_competition_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_competition_db*>(&::faith::cs2dp_proto_role_competition_db::default_instance());
 }
 
 cs2dp_proto_save_role_competition::cs2dp_proto_save_role_competition(const cs2dp_proto_save_role_competition& from)
@@ -9871,7 +9871,7 @@ void cs2dp_proto_save_role_competition::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_competition_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_competition_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -9931,7 +9931,7 @@ bool cs2dp_proto_save_role_competition::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_competition_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_competition_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -9978,7 +9978,7 @@ void cs2dp_proto_save_role_competition::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_competition_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_competition_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -10007,7 +10007,7 @@ void cs2dp_proto_save_role_competition::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_competition_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_competition_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -10046,7 +10046,7 @@ int cs2dp_proto_save_role_competition::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_competition_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_competition_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -10090,7 +10090,7 @@ void cs2dp_proto_save_role_competition::MergeFrom(const cs2dp_proto_save_role_co
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_competition_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_competition_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -10432,7 +10432,7 @@ bool cs2dp_proto_role_legion_skill_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cs2dp_proto.role_legion_skill_row row_data = 2;
+      // repeated .faith.cs2dp_proto.role_legion_skill_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -10470,7 +10470,7 @@ void cs2dp_proto_role_legion_skill_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.cs2dp_proto.role_legion_skill_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_legion_skill_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -10489,7 +10489,7 @@ void cs2dp_proto_role_legion_skill_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.cs2dp_proto.role_legion_skill_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_legion_skill_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -10515,7 +10515,7 @@ int cs2dp_proto_role_legion_skill_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.cs2dp_proto.role_legion_skill_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_legion_skill_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -10608,7 +10608,7 @@ cs2dp_proto_save_role_legion_skill::cs2dp_proto_save_role_legion_skill()
 }
 
 void cs2dp_proto_save_role_legion_skill::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_legion_skill_db*>(&::hld::cs2dp_proto_role_legion_skill_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_legion_skill_db*>(&::faith::cs2dp_proto_role_legion_skill_db::default_instance());
 }
 
 cs2dp_proto_save_role_legion_skill::cs2dp_proto_save_role_legion_skill(const cs2dp_proto_save_role_legion_skill& from)
@@ -10663,7 +10663,7 @@ void cs2dp_proto_save_role_legion_skill::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_legion_skill_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_legion_skill_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -10723,7 +10723,7 @@ bool cs2dp_proto_save_role_legion_skill::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_legion_skill_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_legion_skill_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -10770,7 +10770,7 @@ void cs2dp_proto_save_role_legion_skill::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_legion_skill_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_legion_skill_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -10799,7 +10799,7 @@ void cs2dp_proto_save_role_legion_skill::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_legion_skill_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_legion_skill_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -10838,7 +10838,7 @@ int cs2dp_proto_save_role_legion_skill::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_legion_skill_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_legion_skill_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -10882,7 +10882,7 @@ void cs2dp_proto_save_role_legion_skill::MergeFrom(const cs2dp_proto_save_role_l
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_legion_skill_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_legion_skill_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -11229,7 +11229,7 @@ cs2dp_proto_save_role_skytreasure::cs2dp_proto_save_role_skytreasure()
 }
 
 void cs2dp_proto_save_role_skytreasure::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_skytreasure_db*>(&::hld::cs2dp_proto_role_skytreasure_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_skytreasure_db*>(&::faith::cs2dp_proto_role_skytreasure_db::default_instance());
 }
 
 cs2dp_proto_save_role_skytreasure::cs2dp_proto_save_role_skytreasure(const cs2dp_proto_save_role_skytreasure& from)
@@ -11284,7 +11284,7 @@ void cs2dp_proto_save_role_skytreasure::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_skytreasure_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_skytreasure_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -11344,7 +11344,7 @@ bool cs2dp_proto_save_role_skytreasure::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_skytreasure_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_skytreasure_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -11391,7 +11391,7 @@ void cs2dp_proto_save_role_skytreasure::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_skytreasure_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_skytreasure_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -11420,7 +11420,7 @@ void cs2dp_proto_save_role_skytreasure::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_skytreasure_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_skytreasure_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -11459,7 +11459,7 @@ int cs2dp_proto_save_role_skytreasure::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_skytreasure_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_skytreasure_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -11503,7 +11503,7 @@ void cs2dp_proto_save_role_skytreasure::MergeFrom(const cs2dp_proto_save_role_sk
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_skytreasure_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_skytreasure_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -11773,7 +11773,7 @@ cs2dp_proto_save_role_harry_record::cs2dp_proto_save_role_harry_record()
 }
 
 void cs2dp_proto_save_role_harry_record::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_harry_record_db*>(&::hld::cs2dp_proto_role_harry_record_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_harry_record_db*>(&::faith::cs2dp_proto_role_harry_record_db::default_instance());
 }
 
 cs2dp_proto_save_role_harry_record::cs2dp_proto_save_role_harry_record(const cs2dp_proto_save_role_harry_record& from)
@@ -11828,7 +11828,7 @@ void cs2dp_proto_save_role_harry_record::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_harry_record_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_harry_record_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -11888,7 +11888,7 @@ bool cs2dp_proto_save_role_harry_record::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_harry_record_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_harry_record_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -11935,7 +11935,7 @@ void cs2dp_proto_save_role_harry_record::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_harry_record_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_harry_record_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -11964,7 +11964,7 @@ void cs2dp_proto_save_role_harry_record::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_harry_record_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_harry_record_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -12003,7 +12003,7 @@ int cs2dp_proto_save_role_harry_record::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_harry_record_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_harry_record_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -12047,7 +12047,7 @@ void cs2dp_proto_save_role_harry_record::MergeFrom(const cs2dp_proto_save_role_h
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_harry_record_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_harry_record_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -12389,7 +12389,7 @@ bool cs2dp_proto_role_seven_day_goal_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cs2dp_proto.role_seven_day_goal_row row_data = 2;
+      // repeated .faith.cs2dp_proto.role_seven_day_goal_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -12427,7 +12427,7 @@ void cs2dp_proto_role_seven_day_goal_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.cs2dp_proto.role_seven_day_goal_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_seven_day_goal_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -12446,7 +12446,7 @@ void cs2dp_proto_role_seven_day_goal_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.cs2dp_proto.role_seven_day_goal_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_seven_day_goal_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -12472,7 +12472,7 @@ int cs2dp_proto_role_seven_day_goal_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.cs2dp_proto.role_seven_day_goal_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_seven_day_goal_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -12565,7 +12565,7 @@ cs2dp_proto_save_role_seven_day_goal::cs2dp_proto_save_role_seven_day_goal()
 }
 
 void cs2dp_proto_save_role_seven_day_goal::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_seven_day_goal_db*>(&::hld::cs2dp_proto_role_seven_day_goal_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_seven_day_goal_db*>(&::faith::cs2dp_proto_role_seven_day_goal_db::default_instance());
 }
 
 cs2dp_proto_save_role_seven_day_goal::cs2dp_proto_save_role_seven_day_goal(const cs2dp_proto_save_role_seven_day_goal& from)
@@ -12620,7 +12620,7 @@ void cs2dp_proto_save_role_seven_day_goal::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_seven_day_goal_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_seven_day_goal_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -12680,7 +12680,7 @@ bool cs2dp_proto_save_role_seven_day_goal::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_seven_day_goal_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_seven_day_goal_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -12727,7 +12727,7 @@ void cs2dp_proto_save_role_seven_day_goal::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_seven_day_goal_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_seven_day_goal_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -12756,7 +12756,7 @@ void cs2dp_proto_save_role_seven_day_goal::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_seven_day_goal_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_seven_day_goal_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -12795,7 +12795,7 @@ int cs2dp_proto_save_role_seven_day_goal::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_seven_day_goal_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_seven_day_goal_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -12839,7 +12839,7 @@ void cs2dp_proto_save_role_seven_day_goal::MergeFrom(const cs2dp_proto_save_role
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_seven_day_goal_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_seven_day_goal_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -13181,7 +13181,7 @@ bool cs2dp_proto_role_passive_skill_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cs2dp_proto.role_passive_skill_row row_data = 2;
+      // repeated .faith.cs2dp_proto.role_passive_skill_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -13219,7 +13219,7 @@ void cs2dp_proto_role_passive_skill_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.cs2dp_proto.role_passive_skill_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_passive_skill_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -13238,7 +13238,7 @@ void cs2dp_proto_role_passive_skill_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.cs2dp_proto.role_passive_skill_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_passive_skill_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -13264,7 +13264,7 @@ int cs2dp_proto_role_passive_skill_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.cs2dp_proto.role_passive_skill_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_passive_skill_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -13357,7 +13357,7 @@ cs2dp_proto_save_role_passive_skill::cs2dp_proto_save_role_passive_skill()
 }
 
 void cs2dp_proto_save_role_passive_skill::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_passive_skill_db*>(&::hld::cs2dp_proto_role_passive_skill_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_passive_skill_db*>(&::faith::cs2dp_proto_role_passive_skill_db::default_instance());
 }
 
 cs2dp_proto_save_role_passive_skill::cs2dp_proto_save_role_passive_skill(const cs2dp_proto_save_role_passive_skill& from)
@@ -13412,7 +13412,7 @@ void cs2dp_proto_save_role_passive_skill::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_passive_skill_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_passive_skill_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -13472,7 +13472,7 @@ bool cs2dp_proto_save_role_passive_skill::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_passive_skill_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_passive_skill_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -13519,7 +13519,7 @@ void cs2dp_proto_save_role_passive_skill::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_passive_skill_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_passive_skill_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -13548,7 +13548,7 @@ void cs2dp_proto_save_role_passive_skill::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_passive_skill_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_passive_skill_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -13587,7 +13587,7 @@ int cs2dp_proto_save_role_passive_skill::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_passive_skill_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_passive_skill_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -13631,7 +13631,7 @@ void cs2dp_proto_save_role_passive_skill::MergeFrom(const cs2dp_proto_save_role_
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_passive_skill_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_passive_skill_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -13901,7 +13901,7 @@ cs2dp_proto_save_role_boss_island::cs2dp_proto_save_role_boss_island()
 }
 
 void cs2dp_proto_save_role_boss_island::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_boss_island_db*>(&::hld::cs2dp_proto_role_boss_island_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_boss_island_db*>(&::faith::cs2dp_proto_role_boss_island_db::default_instance());
 }
 
 cs2dp_proto_save_role_boss_island::cs2dp_proto_save_role_boss_island(const cs2dp_proto_save_role_boss_island& from)
@@ -13956,7 +13956,7 @@ void cs2dp_proto_save_role_boss_island::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_boss_island_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_boss_island_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -14016,7 +14016,7 @@ bool cs2dp_proto_save_role_boss_island::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_boss_island_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_boss_island_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -14063,7 +14063,7 @@ void cs2dp_proto_save_role_boss_island::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_boss_island_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_boss_island_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -14092,7 +14092,7 @@ void cs2dp_proto_save_role_boss_island::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_boss_island_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_boss_island_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -14131,7 +14131,7 @@ int cs2dp_proto_save_role_boss_island::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_boss_island_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_boss_island_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -14175,7 +14175,7 @@ void cs2dp_proto_save_role_boss_island::MergeFrom(const cs2dp_proto_save_role_bo
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_boss_island_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_boss_island_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -14668,7 +14668,7 @@ bool cs2dp_proto_role_time_limit_activity_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cs2dp_proto.role_time_limit_activity_row row_data = 2;
+      // repeated .faith.cs2dp_proto.role_time_limit_activity_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -14706,7 +14706,7 @@ void cs2dp_proto_role_time_limit_activity_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.cs2dp_proto.role_time_limit_activity_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_time_limit_activity_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -14725,7 +14725,7 @@ void cs2dp_proto_role_time_limit_activity_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.cs2dp_proto.role_time_limit_activity_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_time_limit_activity_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -14751,7 +14751,7 @@ int cs2dp_proto_role_time_limit_activity_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.cs2dp_proto.role_time_limit_activity_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_time_limit_activity_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -14845,7 +14845,7 @@ cs2dp_proto_save_role_time_limit_activity::cs2dp_proto_save_role_time_limit_acti
 }
 
 void cs2dp_proto_save_role_time_limit_activity::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_time_limit_activity_db*>(&::hld::cs2dp_proto_role_time_limit_activity_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_time_limit_activity_db*>(&::faith::cs2dp_proto_role_time_limit_activity_db::default_instance());
 }
 
 cs2dp_proto_save_role_time_limit_activity::cs2dp_proto_save_role_time_limit_activity(const cs2dp_proto_save_role_time_limit_activity& from)
@@ -14902,7 +14902,7 @@ void cs2dp_proto_save_role_time_limit_activity::Clear() {
     save_type_ex_ = 0;
     is_self_server_ = false;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_time_limit_activity_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_time_limit_activity_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -14978,7 +14978,7 @@ bool cs2dp_proto_save_role_time_limit_activity::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_time_limit_activity_db db_data = 5;
+      // optional .faith.cs2dp_proto.role_time_limit_activity_db db_data = 5;
       case 5: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -15030,7 +15030,7 @@ void cs2dp_proto_save_role_time_limit_activity::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(4, this->is_self_server(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_time_limit_activity_db db_data = 5;
+  // optional .faith.cs2dp_proto.role_time_limit_activity_db db_data = 5;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       5, this->db_data(), output);
@@ -15064,7 +15064,7 @@ void cs2dp_proto_save_role_time_limit_activity::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(4, this->is_self_server(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_time_limit_activity_db db_data = 5;
+  // optional .faith.cs2dp_proto.role_time_limit_activity_db db_data = 5;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -15108,7 +15108,7 @@ int cs2dp_proto_save_role_time_limit_activity::ByteSize() const {
       total_size += 1 + 1;
     }
 
-    // optional .hld.cs2dp_proto.role_time_limit_activity_db db_data = 5;
+    // optional .faith.cs2dp_proto.role_time_limit_activity_db db_data = 5;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -15155,7 +15155,7 @@ void cs2dp_proto_save_role_time_limit_activity::MergeFrom(const cs2dp_proto_save
       set_is_self_server(from.is_self_server());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_time_limit_activity_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_time_limit_activity_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -15426,7 +15426,7 @@ cs2dp_proto_save_role_gain_treasure::cs2dp_proto_save_role_gain_treasure()
 }
 
 void cs2dp_proto_save_role_gain_treasure::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_gain_treasure_db*>(&::hld::cs2dp_proto_role_gain_treasure_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_gain_treasure_db*>(&::faith::cs2dp_proto_role_gain_treasure_db::default_instance());
 }
 
 cs2dp_proto_save_role_gain_treasure::cs2dp_proto_save_role_gain_treasure(const cs2dp_proto_save_role_gain_treasure& from)
@@ -15481,7 +15481,7 @@ void cs2dp_proto_save_role_gain_treasure::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_gain_treasure_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_gain_treasure_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -15541,7 +15541,7 @@ bool cs2dp_proto_save_role_gain_treasure::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_gain_treasure_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_gain_treasure_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -15588,7 +15588,7 @@ void cs2dp_proto_save_role_gain_treasure::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_gain_treasure_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_gain_treasure_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -15617,7 +15617,7 @@ void cs2dp_proto_save_role_gain_treasure::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_gain_treasure_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_gain_treasure_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -15656,7 +15656,7 @@ int cs2dp_proto_save_role_gain_treasure::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_gain_treasure_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_gain_treasure_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -15700,7 +15700,7 @@ void cs2dp_proto_save_role_gain_treasure::MergeFrom(const cs2dp_proto_save_role_
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_gain_treasure_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_gain_treasure_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -15970,7 +15970,7 @@ cs2dp_proto_save_role_logic::cs2dp_proto_save_role_logic()
 }
 
 void cs2dp_proto_save_role_logic::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_logic_db*>(&::hld::cs2dp_proto_role_logic_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_logic_db*>(&::faith::cs2dp_proto_role_logic_db::default_instance());
 }
 
 cs2dp_proto_save_role_logic::cs2dp_proto_save_role_logic(const cs2dp_proto_save_role_logic& from)
@@ -16025,7 +16025,7 @@ void cs2dp_proto_save_role_logic::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_logic_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_logic_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -16085,7 +16085,7 @@ bool cs2dp_proto_save_role_logic::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_logic_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_logic_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -16132,7 +16132,7 @@ void cs2dp_proto_save_role_logic::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_logic_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_logic_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -16161,7 +16161,7 @@ void cs2dp_proto_save_role_logic::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_logic_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_logic_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -16200,7 +16200,7 @@ int cs2dp_proto_save_role_logic::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_logic_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_logic_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -16244,7 +16244,7 @@ void cs2dp_proto_save_role_logic::MergeFrom(const cs2dp_proto_save_role_logic& f
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_logic_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_logic_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -16623,7 +16623,7 @@ bool cs2dp_proto_role_service_rank_reward_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cs2dp_proto.role_service_rank_reward_row row_data = 2;
+      // repeated .faith.cs2dp_proto.role_service_rank_reward_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -16661,7 +16661,7 @@ void cs2dp_proto_role_service_rank_reward_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.cs2dp_proto.role_service_rank_reward_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_service_rank_reward_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -16680,7 +16680,7 @@ void cs2dp_proto_role_service_rank_reward_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.cs2dp_proto.role_service_rank_reward_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_service_rank_reward_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -16706,7 +16706,7 @@ int cs2dp_proto_role_service_rank_reward_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.cs2dp_proto.role_service_rank_reward_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_service_rank_reward_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -16799,7 +16799,7 @@ cs2dp_proto_save_role_service_rank_reward::cs2dp_proto_save_role_service_rank_re
 }
 
 void cs2dp_proto_save_role_service_rank_reward::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_service_rank_reward_db*>(&::hld::cs2dp_proto_role_service_rank_reward_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_service_rank_reward_db*>(&::faith::cs2dp_proto_role_service_rank_reward_db::default_instance());
 }
 
 cs2dp_proto_save_role_service_rank_reward::cs2dp_proto_save_role_service_rank_reward(const cs2dp_proto_save_role_service_rank_reward& from)
@@ -16854,7 +16854,7 @@ void cs2dp_proto_save_role_service_rank_reward::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_service_rank_reward_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_service_rank_reward_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -16914,7 +16914,7 @@ bool cs2dp_proto_save_role_service_rank_reward::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_service_rank_reward_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_service_rank_reward_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -16961,7 +16961,7 @@ void cs2dp_proto_save_role_service_rank_reward::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_service_rank_reward_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_service_rank_reward_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -16990,7 +16990,7 @@ void cs2dp_proto_save_role_service_rank_reward::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_service_rank_reward_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_service_rank_reward_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -17029,7 +17029,7 @@ int cs2dp_proto_save_role_service_rank_reward::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_service_rank_reward_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_service_rank_reward_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -17073,7 +17073,7 @@ void cs2dp_proto_save_role_service_rank_reward::MergeFrom(const cs2dp_proto_save
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_service_rank_reward_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_service_rank_reward_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -17343,7 +17343,7 @@ cs2dp_proto_save_role_highest_record::cs2dp_proto_save_role_highest_record()
 }
 
 void cs2dp_proto_save_role_highest_record::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_highest_record_db*>(&::hld::cs2dp_proto_role_highest_record_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_highest_record_db*>(&::faith::cs2dp_proto_role_highest_record_db::default_instance());
 }
 
 cs2dp_proto_save_role_highest_record::cs2dp_proto_save_role_highest_record(const cs2dp_proto_save_role_highest_record& from)
@@ -17398,7 +17398,7 @@ void cs2dp_proto_save_role_highest_record::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_highest_record_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_highest_record_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -17458,7 +17458,7 @@ bool cs2dp_proto_save_role_highest_record::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_highest_record_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_highest_record_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -17505,7 +17505,7 @@ void cs2dp_proto_save_role_highest_record::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_highest_record_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_highest_record_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -17534,7 +17534,7 @@ void cs2dp_proto_save_role_highest_record::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_highest_record_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_highest_record_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -17573,7 +17573,7 @@ int cs2dp_proto_save_role_highest_record::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_highest_record_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_highest_record_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -17617,7 +17617,7 @@ void cs2dp_proto_save_role_highest_record::MergeFrom(const cs2dp_proto_save_role
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_highest_record_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_highest_record_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -17887,7 +17887,7 @@ cs2dp_proto_save_role_daily_must_do_count::cs2dp_proto_save_role_daily_must_do_c
 }
 
 void cs2dp_proto_save_role_daily_must_do_count::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_daily_must_do_count_db*>(&::hld::cs2dp_proto_role_daily_must_do_count_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_daily_must_do_count_db*>(&::faith::cs2dp_proto_role_daily_must_do_count_db::default_instance());
 }
 
 cs2dp_proto_save_role_daily_must_do_count::cs2dp_proto_save_role_daily_must_do_count(const cs2dp_proto_save_role_daily_must_do_count& from)
@@ -17942,7 +17942,7 @@ void cs2dp_proto_save_role_daily_must_do_count::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_daily_must_do_count_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_daily_must_do_count_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -18002,7 +18002,7 @@ bool cs2dp_proto_save_role_daily_must_do_count::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_daily_must_do_count_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_daily_must_do_count_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -18049,7 +18049,7 @@ void cs2dp_proto_save_role_daily_must_do_count::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_daily_must_do_count_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_daily_must_do_count_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -18078,7 +18078,7 @@ void cs2dp_proto_save_role_daily_must_do_count::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_daily_must_do_count_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_daily_must_do_count_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -18117,7 +18117,7 @@ int cs2dp_proto_save_role_daily_must_do_count::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_daily_must_do_count_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_daily_must_do_count_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -18161,7 +18161,7 @@ void cs2dp_proto_save_role_daily_must_do_count::MergeFrom(const cs2dp_proto_save
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_daily_must_do_count_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_daily_must_do_count_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -18503,7 +18503,7 @@ bool cs2dp_proto_role_talent_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cs2dp_proto.role_talent_row row_data = 2;
+      // repeated .faith.cs2dp_proto.role_talent_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -18541,7 +18541,7 @@ void cs2dp_proto_role_talent_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.cs2dp_proto.role_talent_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_talent_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -18560,7 +18560,7 @@ void cs2dp_proto_role_talent_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.cs2dp_proto.role_talent_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_talent_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -18586,7 +18586,7 @@ int cs2dp_proto_role_talent_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.cs2dp_proto.role_talent_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_talent_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -18679,7 +18679,7 @@ cs2dp_proto_save_role_talent::cs2dp_proto_save_role_talent()
 }
 
 void cs2dp_proto_save_role_talent::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_talent_db*>(&::hld::cs2dp_proto_role_talent_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_talent_db*>(&::faith::cs2dp_proto_role_talent_db::default_instance());
 }
 
 cs2dp_proto_save_role_talent::cs2dp_proto_save_role_talent(const cs2dp_proto_save_role_talent& from)
@@ -18734,7 +18734,7 @@ void cs2dp_proto_save_role_talent::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_talent_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_talent_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -18794,7 +18794,7 @@ bool cs2dp_proto_save_role_talent::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_talent_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_talent_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -18841,7 +18841,7 @@ void cs2dp_proto_save_role_talent::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_talent_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_talent_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -18870,7 +18870,7 @@ void cs2dp_proto_save_role_talent::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_talent_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_talent_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -18909,7 +18909,7 @@ int cs2dp_proto_save_role_talent::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_talent_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_talent_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -18953,7 +18953,7 @@ void cs2dp_proto_save_role_talent::MergeFrom(const cs2dp_proto_save_role_talent&
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_talent_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_talent_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -19295,7 +19295,7 @@ bool cs2dp_proto_role_title_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cs2dp_proto.role_title_row row_data = 2;
+      // repeated .faith.cs2dp_proto.role_title_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -19333,7 +19333,7 @@ void cs2dp_proto_role_title_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.cs2dp_proto.role_title_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_title_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -19352,7 +19352,7 @@ void cs2dp_proto_role_title_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.cs2dp_proto.role_title_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_title_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -19378,7 +19378,7 @@ int cs2dp_proto_role_title_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.cs2dp_proto.role_title_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_title_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -19471,7 +19471,7 @@ cs2dp_proto_save_role_title::cs2dp_proto_save_role_title()
 }
 
 void cs2dp_proto_save_role_title::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_title_db*>(&::hld::cs2dp_proto_role_title_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_title_db*>(&::faith::cs2dp_proto_role_title_db::default_instance());
 }
 
 cs2dp_proto_save_role_title::cs2dp_proto_save_role_title(const cs2dp_proto_save_role_title& from)
@@ -19526,7 +19526,7 @@ void cs2dp_proto_save_role_title::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_title_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_title_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -19586,7 +19586,7 @@ bool cs2dp_proto_save_role_title::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_title_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_title_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -19633,7 +19633,7 @@ void cs2dp_proto_save_role_title::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_title_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_title_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -19662,7 +19662,7 @@ void cs2dp_proto_save_role_title::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_title_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_title_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -19701,7 +19701,7 @@ int cs2dp_proto_save_role_title::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_title_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_title_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -19745,7 +19745,7 @@ void cs2dp_proto_save_role_title::MergeFrom(const cs2dp_proto_save_role_title& f
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_title_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_title_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -20015,7 +20015,7 @@ cs2dp_proto_save_role_active_degree::cs2dp_proto_save_role_active_degree()
 }
 
 void cs2dp_proto_save_role_active_degree::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_active_degree_db*>(&::hld::cs2dp_proto_role_active_degree_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_active_degree_db*>(&::faith::cs2dp_proto_role_active_degree_db::default_instance());
 }
 
 cs2dp_proto_save_role_active_degree::cs2dp_proto_save_role_active_degree(const cs2dp_proto_save_role_active_degree& from)
@@ -20070,7 +20070,7 @@ void cs2dp_proto_save_role_active_degree::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_active_degree_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_active_degree_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -20130,7 +20130,7 @@ bool cs2dp_proto_save_role_active_degree::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_active_degree_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_active_degree_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -20177,7 +20177,7 @@ void cs2dp_proto_save_role_active_degree::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_active_degree_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_active_degree_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -20206,7 +20206,7 @@ void cs2dp_proto_save_role_active_degree::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_active_degree_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_active_degree_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -20245,7 +20245,7 @@ int cs2dp_proto_save_role_active_degree::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_active_degree_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_active_degree_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -20289,7 +20289,7 @@ void cs2dp_proto_save_role_active_degree::MergeFrom(const cs2dp_proto_save_role_
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_active_degree_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_active_degree_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -20559,7 +20559,7 @@ cs2dp_proto_save_role_welfare::cs2dp_proto_save_role_welfare()
 }
 
 void cs2dp_proto_save_role_welfare::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_welfare_db*>(&::hld::cs2dp_proto_role_welfare_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_welfare_db*>(&::faith::cs2dp_proto_role_welfare_db::default_instance());
 }
 
 cs2dp_proto_save_role_welfare::cs2dp_proto_save_role_welfare(const cs2dp_proto_save_role_welfare& from)
@@ -20614,7 +20614,7 @@ void cs2dp_proto_save_role_welfare::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_welfare_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_welfare_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -20674,7 +20674,7 @@ bool cs2dp_proto_save_role_welfare::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_welfare_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_welfare_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -20721,7 +20721,7 @@ void cs2dp_proto_save_role_welfare::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_welfare_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_welfare_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -20750,7 +20750,7 @@ void cs2dp_proto_save_role_welfare::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_welfare_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_welfare_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -20789,7 +20789,7 @@ int cs2dp_proto_save_role_welfare::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_welfare_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_welfare_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -20833,7 +20833,7 @@ void cs2dp_proto_save_role_welfare::MergeFrom(const cs2dp_proto_save_role_welfar
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_welfare_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_welfare_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -21103,7 +21103,7 @@ cs2dp_proto_save_role_convert::cs2dp_proto_save_role_convert()
 }
 
 void cs2dp_proto_save_role_convert::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_convert_db*>(&::hld::cs2dp_proto_role_convert_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_convert_db*>(&::faith::cs2dp_proto_role_convert_db::default_instance());
 }
 
 cs2dp_proto_save_role_convert::cs2dp_proto_save_role_convert(const cs2dp_proto_save_role_convert& from)
@@ -21158,7 +21158,7 @@ void cs2dp_proto_save_role_convert::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_convert_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_convert_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -21218,7 +21218,7 @@ bool cs2dp_proto_save_role_convert::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_convert_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_convert_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -21265,7 +21265,7 @@ void cs2dp_proto_save_role_convert::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_convert_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_convert_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -21294,7 +21294,7 @@ void cs2dp_proto_save_role_convert::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_convert_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_convert_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -21333,7 +21333,7 @@ int cs2dp_proto_save_role_convert::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_convert_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_convert_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -21377,7 +21377,7 @@ void cs2dp_proto_save_role_convert::MergeFrom(const cs2dp_proto_save_role_conver
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_convert_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_convert_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -21964,7 +21964,7 @@ bool cs2dp_proto_role_yesterday_must_do_remain_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cs2dp_proto.role_yesterday_must_do_remain_row row_data = 2;
+      // repeated .faith.cs2dp_proto.role_yesterday_must_do_remain_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -22002,7 +22002,7 @@ void cs2dp_proto_role_yesterday_must_do_remain_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.cs2dp_proto.role_yesterday_must_do_remain_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_yesterday_must_do_remain_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -22021,7 +22021,7 @@ void cs2dp_proto_role_yesterday_must_do_remain_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.cs2dp_proto.role_yesterday_must_do_remain_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_yesterday_must_do_remain_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -22047,7 +22047,7 @@ int cs2dp_proto_role_yesterday_must_do_remain_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.cs2dp_proto.role_yesterday_must_do_remain_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_yesterday_must_do_remain_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -22140,7 +22140,7 @@ cs2dp_proto_save_role_yesterday_must_do_remain::cs2dp_proto_save_role_yesterday_
 }
 
 void cs2dp_proto_save_role_yesterday_must_do_remain::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_yesterday_must_do_remain_db*>(&::hld::cs2dp_proto_role_yesterday_must_do_remain_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_yesterday_must_do_remain_db*>(&::faith::cs2dp_proto_role_yesterday_must_do_remain_db::default_instance());
 }
 
 cs2dp_proto_save_role_yesterday_must_do_remain::cs2dp_proto_save_role_yesterday_must_do_remain(const cs2dp_proto_save_role_yesterday_must_do_remain& from)
@@ -22195,7 +22195,7 @@ void cs2dp_proto_save_role_yesterday_must_do_remain::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_yesterday_must_do_remain_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_yesterday_must_do_remain_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -22255,7 +22255,7 @@ bool cs2dp_proto_save_role_yesterday_must_do_remain::MergePartialFromCodedStream
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_yesterday_must_do_remain_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_yesterday_must_do_remain_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -22302,7 +22302,7 @@ void cs2dp_proto_save_role_yesterday_must_do_remain::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_yesterday_must_do_remain_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_yesterday_must_do_remain_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -22331,7 +22331,7 @@ void cs2dp_proto_save_role_yesterday_must_do_remain::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_yesterday_must_do_remain_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_yesterday_must_do_remain_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -22370,7 +22370,7 @@ int cs2dp_proto_save_role_yesterday_must_do_remain::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_yesterday_must_do_remain_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_yesterday_must_do_remain_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -22414,7 +22414,7 @@ void cs2dp_proto_save_role_yesterday_must_do_remain::MergeFrom(const cs2dp_proto
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_yesterday_must_do_remain_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_yesterday_must_do_remain_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -22793,7 +22793,7 @@ bool cs2dp_proto_role_worship_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cs2dp_proto.role_worship_row row_data = 2;
+      // repeated .faith.cs2dp_proto.role_worship_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -22831,7 +22831,7 @@ void cs2dp_proto_role_worship_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.cs2dp_proto.role_worship_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_worship_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -22850,7 +22850,7 @@ void cs2dp_proto_role_worship_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.cs2dp_proto.role_worship_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_worship_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -22876,7 +22876,7 @@ int cs2dp_proto_role_worship_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.cs2dp_proto.role_worship_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_worship_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -22969,7 +22969,7 @@ cs2dp_proto_save_role_worship::cs2dp_proto_save_role_worship()
 }
 
 void cs2dp_proto_save_role_worship::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_worship_db*>(&::hld::cs2dp_proto_role_worship_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_worship_db*>(&::faith::cs2dp_proto_role_worship_db::default_instance());
 }
 
 cs2dp_proto_save_role_worship::cs2dp_proto_save_role_worship(const cs2dp_proto_save_role_worship& from)
@@ -23024,7 +23024,7 @@ void cs2dp_proto_save_role_worship::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_worship_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_worship_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -23084,7 +23084,7 @@ bool cs2dp_proto_save_role_worship::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_worship_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_worship_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -23131,7 +23131,7 @@ void cs2dp_proto_save_role_worship::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_worship_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_worship_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -23160,7 +23160,7 @@ void cs2dp_proto_save_role_worship::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_worship_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_worship_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -23199,7 +23199,7 @@ int cs2dp_proto_save_role_worship::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_worship_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_worship_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -23243,7 +23243,7 @@ void cs2dp_proto_save_role_worship::MergeFrom(const cs2dp_proto_save_role_worshi
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_worship_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_worship_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -23513,7 +23513,7 @@ cs2dp_proto_save_role_tinder::cs2dp_proto_save_role_tinder()
 }
 
 void cs2dp_proto_save_role_tinder::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_tinder_db*>(&::hld::cs2dp_proto_role_tinder_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_tinder_db*>(&::faith::cs2dp_proto_role_tinder_db::default_instance());
 }
 
 cs2dp_proto_save_role_tinder::cs2dp_proto_save_role_tinder(const cs2dp_proto_save_role_tinder& from)
@@ -23568,7 +23568,7 @@ void cs2dp_proto_save_role_tinder::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_tinder_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_tinder_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -23628,7 +23628,7 @@ bool cs2dp_proto_save_role_tinder::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_tinder_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_tinder_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -23675,7 +23675,7 @@ void cs2dp_proto_save_role_tinder::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_tinder_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_tinder_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -23704,7 +23704,7 @@ void cs2dp_proto_save_role_tinder::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_tinder_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_tinder_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -23743,7 +23743,7 @@ int cs2dp_proto_save_role_tinder::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_tinder_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_tinder_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -23787,7 +23787,7 @@ void cs2dp_proto_save_role_tinder::MergeFrom(const cs2dp_proto_save_role_tinder&
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_tinder_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_tinder_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -24177,7 +24177,7 @@ bool cs2dp_proto_role_pokedex_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cs2dp_proto.role_pokedex_row row_data = 2;
+      // repeated .faith.cs2dp_proto.role_pokedex_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -24215,7 +24215,7 @@ void cs2dp_proto_role_pokedex_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.cs2dp_proto.role_pokedex_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_pokedex_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -24234,7 +24234,7 @@ void cs2dp_proto_role_pokedex_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.cs2dp_proto.role_pokedex_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_pokedex_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -24260,7 +24260,7 @@ int cs2dp_proto_role_pokedex_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.cs2dp_proto.role_pokedex_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_pokedex_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -24353,7 +24353,7 @@ cs2dp_proto_save_role_pokedex::cs2dp_proto_save_role_pokedex()
 }
 
 void cs2dp_proto_save_role_pokedex::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_pokedex_db*>(&::hld::cs2dp_proto_role_pokedex_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_pokedex_db*>(&::faith::cs2dp_proto_role_pokedex_db::default_instance());
 }
 
 cs2dp_proto_save_role_pokedex::cs2dp_proto_save_role_pokedex(const cs2dp_proto_save_role_pokedex& from)
@@ -24408,7 +24408,7 @@ void cs2dp_proto_save_role_pokedex::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_pokedex_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_pokedex_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -24468,7 +24468,7 @@ bool cs2dp_proto_save_role_pokedex::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_pokedex_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_pokedex_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -24515,7 +24515,7 @@ void cs2dp_proto_save_role_pokedex::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_pokedex_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_pokedex_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -24544,7 +24544,7 @@ void cs2dp_proto_save_role_pokedex::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_pokedex_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_pokedex_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -24583,7 +24583,7 @@ int cs2dp_proto_save_role_pokedex::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_pokedex_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_pokedex_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -24627,7 +24627,7 @@ void cs2dp_proto_save_role_pokedex::MergeFrom(const cs2dp_proto_save_role_pokede
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_pokedex_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_pokedex_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -24969,7 +24969,7 @@ bool cs2dp_proto_role_achievement_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cs2dp_proto.role_achievement_row row_data = 2;
+      // repeated .faith.cs2dp_proto.role_achievement_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -25007,7 +25007,7 @@ void cs2dp_proto_role_achievement_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.cs2dp_proto.role_achievement_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_achievement_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -25026,7 +25026,7 @@ void cs2dp_proto_role_achievement_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.cs2dp_proto.role_achievement_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_achievement_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -25052,7 +25052,7 @@ int cs2dp_proto_role_achievement_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.cs2dp_proto.role_achievement_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_achievement_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -25145,7 +25145,7 @@ cs2dp_proto_save_role_achievement::cs2dp_proto_save_role_achievement()
 }
 
 void cs2dp_proto_save_role_achievement::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_achievement_db*>(&::hld::cs2dp_proto_role_achievement_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_achievement_db*>(&::faith::cs2dp_proto_role_achievement_db::default_instance());
 }
 
 cs2dp_proto_save_role_achievement::cs2dp_proto_save_role_achievement(const cs2dp_proto_save_role_achievement& from)
@@ -25200,7 +25200,7 @@ void cs2dp_proto_save_role_achievement::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_achievement_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_achievement_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -25260,7 +25260,7 @@ bool cs2dp_proto_save_role_achievement::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_achievement_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_achievement_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -25307,7 +25307,7 @@ void cs2dp_proto_save_role_achievement::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_achievement_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_achievement_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -25336,7 +25336,7 @@ void cs2dp_proto_save_role_achievement::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_achievement_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_achievement_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -25375,7 +25375,7 @@ int cs2dp_proto_save_role_achievement::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_achievement_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_achievement_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -25419,7 +25419,7 @@ void cs2dp_proto_save_role_achievement::MergeFrom(const cs2dp_proto_save_role_ac
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_achievement_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_achievement_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -25689,7 +25689,7 @@ cs2dp_proto_save_role_special_name::cs2dp_proto_save_role_special_name()
 }
 
 void cs2dp_proto_save_role_special_name::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_special_name_db*>(&::hld::cs2dp_proto_role_special_name_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_special_name_db*>(&::faith::cs2dp_proto_role_special_name_db::default_instance());
 }
 
 cs2dp_proto_save_role_special_name::cs2dp_proto_save_role_special_name(const cs2dp_proto_save_role_special_name& from)
@@ -25744,7 +25744,7 @@ void cs2dp_proto_save_role_special_name::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_special_name_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_special_name_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -25804,7 +25804,7 @@ bool cs2dp_proto_save_role_special_name::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_special_name_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_special_name_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -25851,7 +25851,7 @@ void cs2dp_proto_save_role_special_name::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_special_name_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_special_name_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -25880,7 +25880,7 @@ void cs2dp_proto_save_role_special_name::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_special_name_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_special_name_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -25919,7 +25919,7 @@ int cs2dp_proto_save_role_special_name::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_special_name_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_special_name_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -25963,7 +25963,7 @@ void cs2dp_proto_save_role_special_name::MergeFrom(const cs2dp_proto_save_role_s
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_special_name_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_special_name_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -26305,7 +26305,7 @@ bool cs2dp_proto_role_service_goal_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cs2dp_proto.role_service_goal_row row_data = 2;
+      // repeated .faith.cs2dp_proto.role_service_goal_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -26343,7 +26343,7 @@ void cs2dp_proto_role_service_goal_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.cs2dp_proto.role_service_goal_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_service_goal_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -26362,7 +26362,7 @@ void cs2dp_proto_role_service_goal_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.cs2dp_proto.role_service_goal_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_service_goal_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -26388,7 +26388,7 @@ int cs2dp_proto_role_service_goal_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.cs2dp_proto.role_service_goal_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_service_goal_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -26481,7 +26481,7 @@ cs2dp_proto_save_role_service_goal::cs2dp_proto_save_role_service_goal()
 }
 
 void cs2dp_proto_save_role_service_goal::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_service_goal_db*>(&::hld::cs2dp_proto_role_service_goal_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_service_goal_db*>(&::faith::cs2dp_proto_role_service_goal_db::default_instance());
 }
 
 cs2dp_proto_save_role_service_goal::cs2dp_proto_save_role_service_goal(const cs2dp_proto_save_role_service_goal& from)
@@ -26536,7 +26536,7 @@ void cs2dp_proto_save_role_service_goal::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_service_goal_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_service_goal_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -26596,7 +26596,7 @@ bool cs2dp_proto_save_role_service_goal::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_service_goal_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_service_goal_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -26643,7 +26643,7 @@ void cs2dp_proto_save_role_service_goal::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_service_goal_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_service_goal_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -26672,7 +26672,7 @@ void cs2dp_proto_save_role_service_goal::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_service_goal_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_service_goal_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -26711,7 +26711,7 @@ int cs2dp_proto_save_role_service_goal::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_service_goal_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_service_goal_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -26755,7 +26755,7 @@ void cs2dp_proto_save_role_service_goal::MergeFrom(const cs2dp_proto_save_role_s
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_service_goal_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_service_goal_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -27097,7 +27097,7 @@ bool cs2dp_proto_role_map_record_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cs2dp_proto.role_map_record_row row_data = 2;
+      // repeated .faith.cs2dp_proto.role_map_record_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -27135,7 +27135,7 @@ void cs2dp_proto_role_map_record_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.cs2dp_proto.role_map_record_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_map_record_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -27154,7 +27154,7 @@ void cs2dp_proto_role_map_record_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.cs2dp_proto.role_map_record_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_map_record_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -27180,7 +27180,7 @@ int cs2dp_proto_role_map_record_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.cs2dp_proto.role_map_record_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_map_record_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -27273,7 +27273,7 @@ cs2dp_proto_save_role_map_record::cs2dp_proto_save_role_map_record()
 }
 
 void cs2dp_proto_save_role_map_record::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_map_record_db*>(&::hld::cs2dp_proto_role_map_record_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_map_record_db*>(&::faith::cs2dp_proto_role_map_record_db::default_instance());
 }
 
 cs2dp_proto_save_role_map_record::cs2dp_proto_save_role_map_record(const cs2dp_proto_save_role_map_record& from)
@@ -27328,7 +27328,7 @@ void cs2dp_proto_save_role_map_record::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_map_record_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_map_record_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -27388,7 +27388,7 @@ bool cs2dp_proto_save_role_map_record::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_map_record_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_map_record_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -27435,7 +27435,7 @@ void cs2dp_proto_save_role_map_record::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_map_record_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_map_record_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -27464,7 +27464,7 @@ void cs2dp_proto_save_role_map_record::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_map_record_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_map_record_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -27503,7 +27503,7 @@ int cs2dp_proto_save_role_map_record::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_map_record_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_map_record_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -27547,7 +27547,7 @@ void cs2dp_proto_save_role_map_record::MergeFrom(const cs2dp_proto_save_role_map
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_map_record_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_map_record_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -27889,7 +27889,7 @@ bool cs2dp_proto_role_goods_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cs2dp_proto.role_goods_row row_data = 2;
+      // repeated .faith.cs2dp_proto.role_goods_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -27927,7 +27927,7 @@ void cs2dp_proto_role_goods_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.cs2dp_proto.role_goods_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_goods_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -27946,7 +27946,7 @@ void cs2dp_proto_role_goods_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.cs2dp_proto.role_goods_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_goods_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -27972,7 +27972,7 @@ int cs2dp_proto_role_goods_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.cs2dp_proto.role_goods_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_goods_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -28065,7 +28065,7 @@ cs2dp_proto_save_role_goods::cs2dp_proto_save_role_goods()
 }
 
 void cs2dp_proto_save_role_goods::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_goods_db*>(&::hld::cs2dp_proto_role_goods_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_goods_db*>(&::faith::cs2dp_proto_role_goods_db::default_instance());
 }
 
 cs2dp_proto_save_role_goods::cs2dp_proto_save_role_goods(const cs2dp_proto_save_role_goods& from)
@@ -28120,7 +28120,7 @@ void cs2dp_proto_save_role_goods::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_goods_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_goods_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -28180,7 +28180,7 @@ bool cs2dp_proto_save_role_goods::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_goods_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_goods_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -28227,7 +28227,7 @@ void cs2dp_proto_save_role_goods::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_goods_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_goods_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -28256,7 +28256,7 @@ void cs2dp_proto_save_role_goods::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_goods_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_goods_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -28295,7 +28295,7 @@ int cs2dp_proto_save_role_goods::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_goods_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_goods_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -28339,7 +28339,7 @@ void cs2dp_proto_save_role_goods::MergeFrom(const cs2dp_proto_save_role_goods& f
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_goods_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_goods_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -28681,7 +28681,7 @@ bool cs2dp_proto_role_mission_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cs2dp_proto.role_mission_row row_data = 2;
+      // repeated .faith.cs2dp_proto.role_mission_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -28719,7 +28719,7 @@ void cs2dp_proto_role_mission_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.cs2dp_proto.role_mission_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_mission_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -28738,7 +28738,7 @@ void cs2dp_proto_role_mission_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.cs2dp_proto.role_mission_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_mission_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -28764,7 +28764,7 @@ int cs2dp_proto_role_mission_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.cs2dp_proto.role_mission_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_mission_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -28857,7 +28857,7 @@ cs2dp_proto_save_role_mission::cs2dp_proto_save_role_mission()
 }
 
 void cs2dp_proto_save_role_mission::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_mission_db*>(&::hld::cs2dp_proto_role_mission_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_mission_db*>(&::faith::cs2dp_proto_role_mission_db::default_instance());
 }
 
 cs2dp_proto_save_role_mission::cs2dp_proto_save_role_mission(const cs2dp_proto_save_role_mission& from)
@@ -28912,7 +28912,7 @@ void cs2dp_proto_save_role_mission::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_mission_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_mission_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -28972,7 +28972,7 @@ bool cs2dp_proto_save_role_mission::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_mission_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_mission_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -29019,7 +29019,7 @@ void cs2dp_proto_save_role_mission::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_mission_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_mission_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -29048,7 +29048,7 @@ void cs2dp_proto_save_role_mission::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_mission_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_mission_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -29087,7 +29087,7 @@ int cs2dp_proto_save_role_mission::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_mission_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_mission_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -29131,7 +29131,7 @@ void cs2dp_proto_save_role_mission::MergeFrom(const cs2dp_proto_save_role_missio
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_mission_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_mission_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -29473,7 +29473,7 @@ bool cs2dp_proto_role_belief_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cs2dp_proto.role_belief_row row_data = 2;
+      // repeated .faith.cs2dp_proto.role_belief_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -29511,7 +29511,7 @@ void cs2dp_proto_role_belief_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.cs2dp_proto.role_belief_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_belief_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -29530,7 +29530,7 @@ void cs2dp_proto_role_belief_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.cs2dp_proto.role_belief_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_belief_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -29556,7 +29556,7 @@ int cs2dp_proto_role_belief_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.cs2dp_proto.role_belief_row row_data = 2;
+  // repeated .faith.cs2dp_proto.role_belief_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -29649,7 +29649,7 @@ cs2dp_proto_save_role_belief::cs2dp_proto_save_role_belief()
 }
 
 void cs2dp_proto_save_role_belief::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_belief_db*>(&::hld::cs2dp_proto_role_belief_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_belief_db*>(&::faith::cs2dp_proto_role_belief_db::default_instance());
 }
 
 cs2dp_proto_save_role_belief::cs2dp_proto_save_role_belief(const cs2dp_proto_save_role_belief& from)
@@ -29704,7 +29704,7 @@ void cs2dp_proto_save_role_belief::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_belief_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_belief_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -29764,7 +29764,7 @@ bool cs2dp_proto_save_role_belief::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_belief_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_belief_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -29811,7 +29811,7 @@ void cs2dp_proto_save_role_belief::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_belief_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_belief_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -29840,7 +29840,7 @@ void cs2dp_proto_save_role_belief::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_belief_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_belief_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -29879,7 +29879,7 @@ int cs2dp_proto_save_role_belief::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_belief_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_belief_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -29923,7 +29923,7 @@ void cs2dp_proto_save_role_belief::MergeFrom(const cs2dp_proto_save_role_belief&
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_belief_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_belief_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -30289,7 +30289,7 @@ cs2dp_proto_save_role_money::cs2dp_proto_save_role_money()
 }
 
 void cs2dp_proto_save_role_money::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_money_db*>(&::hld::cs2dp_proto_role_money_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_money_db*>(&::faith::cs2dp_proto_role_money_db::default_instance());
 }
 
 cs2dp_proto_save_role_money::cs2dp_proto_save_role_money(const cs2dp_proto_save_role_money& from)
@@ -30344,7 +30344,7 @@ void cs2dp_proto_save_role_money::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_money_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_money_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -30404,7 +30404,7 @@ bool cs2dp_proto_save_role_money::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_money_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_money_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -30451,7 +30451,7 @@ void cs2dp_proto_save_role_money::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_money_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_money_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -30480,7 +30480,7 @@ void cs2dp_proto_save_role_money::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_money_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_money_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -30519,7 +30519,7 @@ int cs2dp_proto_save_role_money::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_money_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_money_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -30563,7 +30563,7 @@ void cs2dp_proto_save_role_money::MergeFrom(const cs2dp_proto_save_role_money& f
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_money_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_money_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -30833,7 +30833,7 @@ cs2dp_proto_save_role_time::cs2dp_proto_save_role_time()
 }
 
 void cs2dp_proto_save_role_time::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_time_db*>(&::hld::cs2dp_proto_role_time_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_time_db*>(&::faith::cs2dp_proto_role_time_db::default_instance());
 }
 
 cs2dp_proto_save_role_time::cs2dp_proto_save_role_time(const cs2dp_proto_save_role_time& from)
@@ -30888,7 +30888,7 @@ void cs2dp_proto_save_role_time::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_time_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_time_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -30948,7 +30948,7 @@ bool cs2dp_proto_save_role_time::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_time_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_time_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -30995,7 +30995,7 @@ void cs2dp_proto_save_role_time::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_time_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_time_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -31024,7 +31024,7 @@ void cs2dp_proto_save_role_time::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_time_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_time_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -31063,7 +31063,7 @@ int cs2dp_proto_save_role_time::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_time_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_time_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -31107,7 +31107,7 @@ void cs2dp_proto_save_role_time::MergeFrom(const cs2dp_proto_save_role_time& fro
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_time_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_time_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -31738,7 +31738,7 @@ cs2dp_proto_save_role_info::cs2dp_proto_save_role_info()
 }
 
 void cs2dp_proto_save_role_info::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_info_db*>(&::hld::cs2dp_proto_role_info_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_info_db*>(&::faith::cs2dp_proto_role_info_db::default_instance());
 }
 
 cs2dp_proto_save_role_info::cs2dp_proto_save_role_info(const cs2dp_proto_save_role_info& from)
@@ -31793,7 +31793,7 @@ void cs2dp_proto_save_role_info::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_info_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_info_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -31853,7 +31853,7 @@ bool cs2dp_proto_save_role_info::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_info_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_info_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -31900,7 +31900,7 @@ void cs2dp_proto_save_role_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_info_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_info_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -31929,7 +31929,7 @@ void cs2dp_proto_save_role_info::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_info_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_info_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -31968,7 +31968,7 @@ int cs2dp_proto_save_role_info::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_info_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_info_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -32012,7 +32012,7 @@ void cs2dp_proto_save_role_info::MergeFrom(const cs2dp_proto_save_role_info& fro
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_info_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_info_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -32327,7 +32327,7 @@ cs2dp_proto_save_role_att::cs2dp_proto_save_role_att()
 }
 
 void cs2dp_proto_save_role_att::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_att_db*>(&::hld::cs2dp_proto_role_att_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_att_db*>(&::faith::cs2dp_proto_role_att_db::default_instance());
 }
 
 cs2dp_proto_save_role_att::cs2dp_proto_save_role_att(const cs2dp_proto_save_role_att& from)
@@ -32382,7 +32382,7 @@ void cs2dp_proto_save_role_att::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_att_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_att_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -32442,7 +32442,7 @@ bool cs2dp_proto_save_role_att::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_att_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_att_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -32489,7 +32489,7 @@ void cs2dp_proto_save_role_att::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_att_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_att_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -32518,7 +32518,7 @@ void cs2dp_proto_save_role_att::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_att_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_att_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -32557,7 +32557,7 @@ int cs2dp_proto_save_role_att::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_att_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_att_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -32601,7 +32601,7 @@ void cs2dp_proto_save_role_att::MergeFrom(const cs2dp_proto_save_role_att& from)
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_att_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_att_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -33156,7 +33156,7 @@ cs2dp_proto_save_role_guide::cs2dp_proto_save_role_guide()
 }
 
 void cs2dp_proto_save_role_guide::InitAsDefaultInstance() {
-  db_data_ = const_cast< ::hld::cs2dp_proto_role_guide_db*>(&::hld::cs2dp_proto_role_guide_db::default_instance());
+  db_data_ = const_cast< ::faith::cs2dp_proto_role_guide_db*>(&::faith::cs2dp_proto_role_guide_db::default_instance());
 }
 
 cs2dp_proto_save_role_guide::cs2dp_proto_save_role_guide(const cs2dp_proto_save_role_guide& from)
@@ -33211,7 +33211,7 @@ void cs2dp_proto_save_role_guide::Clear() {
     unit_array_index_ = 0;
     save_type_ex_ = 0;
     if (has_db_data()) {
-      if (db_data_ != NULL) db_data_->::hld::cs2dp_proto_role_guide_db::Clear();
+      if (db_data_ != NULL) db_data_->::faith::cs2dp_proto_role_guide_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -33271,7 +33271,7 @@ bool cs2dp_proto_save_role_guide::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.cs2dp_proto.role_guide_db db_data = 4;
+      // optional .faith.cs2dp_proto.role_guide_db db_data = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -33318,7 +33318,7 @@ void cs2dp_proto_save_role_guide::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->save_type_ex(), output);
   }
 
-  // optional .hld.cs2dp_proto.role_guide_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_guide_db db_data = 4;
   if (has_db_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->db_data(), output);
@@ -33347,7 +33347,7 @@ void cs2dp_proto_save_role_guide::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->save_type_ex(), target);
   }
 
-  // optional .hld.cs2dp_proto.role_guide_db db_data = 4;
+  // optional .faith.cs2dp_proto.role_guide_db db_data = 4;
   if (has_db_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -33386,7 +33386,7 @@ int cs2dp_proto_save_role_guide::ByteSize() const {
           this->save_type_ex());
     }
 
-    // optional .hld.cs2dp_proto.role_guide_db db_data = 4;
+    // optional .faith.cs2dp_proto.role_guide_db db_data = 4;
     if (has_db_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -33430,7 +33430,7 @@ void cs2dp_proto_save_role_guide::MergeFrom(const cs2dp_proto_save_role_guide& f
       set_save_type_ex(from.save_type_ex());
     }
     if (from.has_db_data()) {
-      mutable_db_data()->::hld::cs2dp_proto_role_guide_db::MergeFrom(from.db_data());
+      mutable_db_data()->::faith::cs2dp_proto_role_guide_db::MergeFrom(from.db_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -33968,6 +33968,6 @@ void cs2dp_proto::Swap(cs2dp_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

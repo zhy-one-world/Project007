@@ -1,6 +1,6 @@
 #include "NpcTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void NpcTemplateSize()
     {

@@ -17,7 +17,7 @@ purpose: 军团传功
 #include "internet/legion.pb.h"
 #include "internet/net.pb.h"
 
-namespace hld
+namespace faith
 {
 	legion_dance_mgr::legion_dance_mgr()
 	{	

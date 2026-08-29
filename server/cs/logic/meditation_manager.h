@@ -10,7 +10,7 @@ purpose: about meditation
 #define _MEDITATION_MANAGER_H_
 
 #include "Logic/char_def.hpp"
-namespace hld
+namespace faith
 {
 	class player;
 	class meditation_manager

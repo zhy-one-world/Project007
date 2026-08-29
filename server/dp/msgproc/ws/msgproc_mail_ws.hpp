@@ -14,18 +14,18 @@
 #include "Logic/event_def.hpp"
 
 
-namespace hld
+namespace faith
 {
 	void check_player_is_exist(uint32 connindex, const void *data_ptr, size_t data_len);
-	void player_exist_check_end(db_result_type result, uint32 connindex, const hld::ws2dp_add_mail_to_sql mail_msg);
+	void player_exist_check_end(db_result_type result, uint32 connindex, const faith::ws2dp_add_mail_to_sql mail_msg);
 
-	void del_mail_item_batch_for_add_new(uint32 connindex, guid_64 role_guid, const hld::ws2dp_add_mail_to_sql mail_msg);
-	void del_mail_item_batch_for_add_new_finish(db_result_type result, uint32 connindex, guid_64 role_guid, const hld::ws2dp_add_mail_to_sql mail_msg);
-	void add_mail_item_batch(uint32 connindex, guid_64 role_guid, const hld::ws2dp_add_mail_to_sql mail_msg);
-	void add_new_item_finish(db_result_type result, uint32 connindex, guid_64 role_guid, const hld::ws2dp_add_mail_to_sql mail_msg);
-	void add_mail(uint32 connindex, guid_64 role_guid, const hld::ws2dp_add_mail_to_sql mail_msg);
-	void add_mail_finish(db_result_type result, uint32 connindex, hld::ws2dp_add_mail_to_sql mail_msg, guid_64 role_guid);
-	void resend_mail_to_sender(uint32 connindex, const hld::ws2dp_add_mail_to_sql mail_msg);
+	void del_mail_item_batch_for_add_new(uint32 connindex, guid_64 role_guid, const faith::ws2dp_add_mail_to_sql mail_msg);
+	void del_mail_item_batch_for_add_new_finish(db_result_type result, uint32 connindex, guid_64 role_guid, const faith::ws2dp_add_mail_to_sql mail_msg);
+	void add_mail_item_batch(uint32 connindex, guid_64 role_guid, const faith::ws2dp_add_mail_to_sql mail_msg);
+	void add_new_item_finish(db_result_type result, uint32 connindex, guid_64 role_guid, const faith::ws2dp_add_mail_to_sql mail_msg);
+	void add_mail(uint32 connindex, guid_64 role_guid, const faith::ws2dp_add_mail_to_sql mail_msg);
+	void add_mail_finish(db_result_type result, uint32 connindex, faith::ws2dp_add_mail_to_sql mail_msg, guid_64 role_guid);
+	void resend_mail_to_sender(uint32 connindex, const faith::ws2dp_add_mail_to_sql mail_msg);
 
 	void check_id_mail_proc(uint32 connindex, const void *data_ptr, size_t data_len);
 	void check_id_mail_proc_end(db_result_type result, uint32 connindex, guid_64 role_guid, int32 server_id, std::string param_str);

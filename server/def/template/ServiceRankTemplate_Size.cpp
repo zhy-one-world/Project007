@@ -1,6 +1,6 @@
 #include "ServiceRankTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void ServiceRankTemplateSize()
     {

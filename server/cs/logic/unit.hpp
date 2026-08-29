@@ -9,7 +9,7 @@
 #include "legion_cs_mgr.h"
 #include "team_cs_mgr.h"
 
-namespace hld
+namespace faith
 {
 	class aoi_proto_unit_aoi_all;
 	struct s_map_block;
@@ -101,7 +101,7 @@ namespace hld
 		/************************************************************************/
 		/*							  角色背包BUFF	   					        */
 		/************************************************************************/
-		int32							m_addition_buff[e_addition_buff_max][hld::max_each_type_addition_buff_num];           // 背包界面的4个加持buff的当前生效的模板Buff ID
+		int32							m_addition_buff[e_addition_buff_max][faith::max_each_type_addition_buff_num];           // 背包界面的4个加持buff的当前生效的模板Buff ID
 		std::vector<int32>				get_addition_buff_id_arr(e_addition_buff addition_buff_type);
 		void                            add_addition_buff_id_arr(e_addition_buff addition_buff_type, int32 buff_id);
 		void							reset_addition_buff_id_by_type(e_addition_buff addition_buff_type);
@@ -149,7 +149,7 @@ namespace hld
 		const s_map_pos&				get_old_map_pos() const { return m_old_map_pos; }
 		void							set_time_stamp(const int64& time_stamp) { m_time_stamp = time_stamp; }
 		int64&							get_time_stamp() { return m_time_stamp; }
-		virtual void					get_aoi_msg(hld::aoi_proto_unit_aoi_all& msg) {}
+		virtual void					get_aoi_msg(faith::aoi_proto_unit_aoi_all& msg) {}
 		virtual int32					send_message(const void* data, uint32 date_len) { return 0; }
 		virtual int32					send_message(google::protobuf::Message* net_pro, uint32 header) { return 0; }
 		virtual void					send_message_to_self(void* data, uint32 date_len) {}

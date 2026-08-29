@@ -10,7 +10,7 @@
 
 #include "script_mgr.h"
 
-namespace hld
+namespace faith
 {
 	script_mgr::script_mgr()
 	{

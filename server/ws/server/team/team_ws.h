@@ -7,7 +7,7 @@
 #include "Logic/team_def.hpp"
 #include "Logic/game_enum_def_s.h"
 
-namespace hld
+namespace faith
 {
 	struct team_ready_transfer_info
 	{

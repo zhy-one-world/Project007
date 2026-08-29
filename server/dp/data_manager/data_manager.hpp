@@ -13,7 +13,7 @@
 #include "data_set.hpp"
 #include "sql_builder.hpp"
 
-namespace hld
+namespace faith
 {
 	typedef std::map<int64, data_set> data_set_map;
 	typedef data_set_map::iterator data_set_map_it;

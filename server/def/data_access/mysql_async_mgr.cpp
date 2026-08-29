@@ -12,7 +12,7 @@
 #include "mysql_async_mgr_impl.hpp"
 #include "utility/guid_gen.h"
 
-namespace hld
+namespace faith
 {
 	mysql_async_mgr::mysql_async_mgr():
 		impl_(new mysql_async_mgr_impl())

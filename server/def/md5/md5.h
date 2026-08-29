@@ -5,7 +5,7 @@
 #include <fstream>
 
 /* Type define */
-namespace hld
+namespace faith
 {
 	typedef unsigned char byte;
 	typedef unsigned long ulong;

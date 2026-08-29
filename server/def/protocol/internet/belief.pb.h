@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_belief_2eproto();
@@ -108,7 +108,7 @@ class belief_proto_belief_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_belief_data();
 
-  // @@protoc_insertion_point(class_scope:hld.belief_proto.belief_info)
+  // @@protoc_insertion_point(class_scope:faith.belief_proto.belief_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -193,16 +193,16 @@ class belief_proto_update_character_belief_one : public ::google::protobuf::Mess
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // repeated .hld.belief_proto.belief_info belief_list = 2;
+  // repeated .faith.belief_proto.belief_info belief_list = 2;
   inline int belief_list_size() const;
   inline void clear_belief_list();
   static const int kBeliefListFieldNumber = 2;
-  inline const ::hld::belief_proto_belief_info& belief_list(int index) const;
-  inline ::hld::belief_proto_belief_info* mutable_belief_list(int index);
-  inline ::hld::belief_proto_belief_info* add_belief_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::belief_proto_belief_info >&
+  inline const ::faith::belief_proto_belief_info& belief_list(int index) const;
+  inline ::faith::belief_proto_belief_info* mutable_belief_list(int index);
+  inline ::faith::belief_proto_belief_info* add_belief_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::belief_proto_belief_info >&
       belief_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::belief_proto_belief_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::belief_proto_belief_info >*
       mutable_belief_list();
 
   // optional int32 belief_type = 3;
@@ -212,7 +212,7 @@ class belief_proto_update_character_belief_one : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 belief_type() const;
   inline void set_belief_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.belief_proto.update_character_belief_one)
+  // @@protoc_insertion_point(class_scope:faith.belief_proto.update_character_belief_one)
  private:
   inline void set_has_belief_type();
   inline void clear_has_belief_type();
@@ -220,7 +220,7 @@ class belief_proto_update_character_belief_one : public ::google::protobuf::Mess
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > role_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::belief_proto_belief_info > belief_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::belief_proto_belief_info > belief_list_;
   ::google::protobuf::int32 belief_type_;
 
   mutable int _cached_size_;
@@ -301,25 +301,25 @@ class belief_proto_update_character_belief_all : public ::google::protobuf::Mess
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // repeated .hld.belief_proto.belief_info belief_list = 2;
+  // repeated .faith.belief_proto.belief_info belief_list = 2;
   inline int belief_list_size() const;
   inline void clear_belief_list();
   static const int kBeliefListFieldNumber = 2;
-  inline const ::hld::belief_proto_belief_info& belief_list(int index) const;
-  inline ::hld::belief_proto_belief_info* mutable_belief_list(int index);
-  inline ::hld::belief_proto_belief_info* add_belief_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::belief_proto_belief_info >&
+  inline const ::faith::belief_proto_belief_info& belief_list(int index) const;
+  inline ::faith::belief_proto_belief_info* mutable_belief_list(int index);
+  inline ::faith::belief_proto_belief_info* add_belief_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::belief_proto_belief_info >&
       belief_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::belief_proto_belief_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::belief_proto_belief_info >*
       mutable_belief_list();
 
-  // @@protoc_insertion_point(class_scope:hld.belief_proto.update_character_belief_all)
+  // @@protoc_insertion_point(class_scope:faith.belief_proto.update_character_belief_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > role_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::belief_proto_belief_info > belief_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::belief_proto_belief_info > belief_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -401,7 +401,7 @@ class belief_proto_belief_operation : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 belief_type() const;
   inline void set_belief_type(::google::protobuf::uint32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.belief_proto.belief_operation)
+  // @@protoc_insertion_point(class_scope:faith.belief_proto.belief_operation)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -512,7 +512,7 @@ class belief_proto_belief_operation_end : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.belief_proto.belief_operation_end)
+  // @@protoc_insertion_point(class_scope:faith.belief_proto.belief_operation_end)
  private:
   inline void set_has_operation_state();
   inline void clear_has_operation_state();
@@ -600,7 +600,7 @@ class belief_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.belief_proto)
+  // @@protoc_insertion_point(class_scope:faith.belief_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -677,27 +677,27 @@ belief_proto_update_character_belief_one::mutable_role_guid() {
   return &role_guid_;
 }
 
-// repeated .hld.belief_proto.belief_info belief_list = 2;
+// repeated .faith.belief_proto.belief_info belief_list = 2;
 inline int belief_proto_update_character_belief_one::belief_list_size() const {
   return belief_list_.size();
 }
 inline void belief_proto_update_character_belief_one::clear_belief_list() {
   belief_list_.Clear();
 }
-inline const ::hld::belief_proto_belief_info& belief_proto_update_character_belief_one::belief_list(int index) const {
+inline const ::faith::belief_proto_belief_info& belief_proto_update_character_belief_one::belief_list(int index) const {
   return belief_list_.Get(index);
 }
-inline ::hld::belief_proto_belief_info* belief_proto_update_character_belief_one::mutable_belief_list(int index) {
+inline ::faith::belief_proto_belief_info* belief_proto_update_character_belief_one::mutable_belief_list(int index) {
   return belief_list_.Mutable(index);
 }
-inline ::hld::belief_proto_belief_info* belief_proto_update_character_belief_one::add_belief_list() {
+inline ::faith::belief_proto_belief_info* belief_proto_update_character_belief_one::add_belief_list() {
   return belief_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::belief_proto_belief_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::belief_proto_belief_info >&
 belief_proto_update_character_belief_one::belief_list() const {
   return belief_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::belief_proto_belief_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::belief_proto_belief_info >*
 belief_proto_update_character_belief_one::mutable_belief_list() {
   return &belief_list_;
 }
@@ -753,27 +753,27 @@ belief_proto_update_character_belief_all::mutable_role_guid() {
   return &role_guid_;
 }
 
-// repeated .hld.belief_proto.belief_info belief_list = 2;
+// repeated .faith.belief_proto.belief_info belief_list = 2;
 inline int belief_proto_update_character_belief_all::belief_list_size() const {
   return belief_list_.size();
 }
 inline void belief_proto_update_character_belief_all::clear_belief_list() {
   belief_list_.Clear();
 }
-inline const ::hld::belief_proto_belief_info& belief_proto_update_character_belief_all::belief_list(int index) const {
+inline const ::faith::belief_proto_belief_info& belief_proto_update_character_belief_all::belief_list(int index) const {
   return belief_list_.Get(index);
 }
-inline ::hld::belief_proto_belief_info* belief_proto_update_character_belief_all::mutable_belief_list(int index) {
+inline ::faith::belief_proto_belief_info* belief_proto_update_character_belief_all::mutable_belief_list(int index) {
   return belief_list_.Mutable(index);
 }
-inline ::hld::belief_proto_belief_info* belief_proto_update_character_belief_all::add_belief_list() {
+inline ::faith::belief_proto_belief_info* belief_proto_update_character_belief_all::add_belief_list() {
   return belief_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::belief_proto_belief_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::belief_proto_belief_info >&
 belief_proto_update_character_belief_all::belief_list() const {
   return belief_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::belief_proto_belief_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::belief_proto_belief_info >*
 belief_proto_update_character_belief_all::mutable_belief_list() {
   return &belief_list_;
 }
@@ -928,7 +928,7 @@ belief_proto_belief_operation_end::mutable_role_guid() {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

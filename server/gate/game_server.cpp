@@ -29,7 +29,7 @@
 //	Class Implement
 //
 //////////////////////////////////////////////////////////////////////////
-namespace hld
+namespace faith
 {
 	game_server::game_server()
 	{
@@ -77,13 +77,13 @@ namespace hld
 	{
 		switch (server_type)
 		{
-		case hld::e_server_type_dp:
+		case faith::e_server_type_dp:
 			m_dp_conn_index = conn_index;
 			break;
-		case hld::e_server_type_ws:
+		case faith::e_server_type_ws:
 			m_ws_conn_index = conn_index;
 			break;
-		case hld::e_server_type_cs:
+		case faith::e_server_type_cs:
 		{
 			if (server_index >= SERVER_CS_COUNT)
 			{
@@ -121,17 +121,17 @@ namespace hld
 	{
 		switch (server_type)
 		{
-		case hld::e_server_type_dp:
+		case faith::e_server_type_dp:
 		{
 			net_server_mgr::getInstance().send_message(data_ptr, data_len, m_dp_conn_index);
 		}
 			break;
-		case hld::e_server_type_ws:
+		case faith::e_server_type_ws:
 		{
 			net_server_mgr::getInstance().send_message(data_ptr, data_len, m_ws_conn_index);
 		}
 			break;
-		case hld::e_server_type_cs:
+		case faith::e_server_type_cs:
 		{
 			if (server_index >= SERVER_CS_COUNT)
 			{
@@ -140,7 +140,7 @@ namespace hld
 			net_server_mgr::getInstance().send_message(data_ptr, data_len, m_cs_conn_index[server_index]);
 		}
 		break;
-		case hld::e_server_type_gate:
+		case faith::e_server_type_gate:
 		{
 			if (server_index == 0)
 			{

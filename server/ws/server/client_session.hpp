@@ -18,7 +18,7 @@
 #include "server_log.hpp"
 #include "base.hpp"
 
-namespace hld
+namespace faith
 {
 	class client_session
 	{
@@ -201,8 +201,8 @@ namespace hld
 		int64									m_update_time_count;
 		int32									m_out_send_count;
 		double									m_role_data_ws_ex[e_role_data_ws_ex_max];
-		int64									m_ban_role_array[hld::max_character_num];
-		int64									m_ban_chat_array[hld::max_character_num];
+		int64									m_ban_role_array[faith::max_character_num];
+		int64									m_ban_chat_array[faith::max_character_num];
 		int64									m_login_time;
 		int32									m_jewel_num;
 

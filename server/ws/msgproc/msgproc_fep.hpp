@@ -13,7 +13,7 @@
 // #include "../server/client_session.hpp"
  #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 	void fep2ls_request_client_login(uint32 conn_index, const void* data_ptr, size_t data_len);
 	void fep2ls_enum_character_func(uint32 conn_index, const void* data_ptr, size_t data_len);

@@ -3,7 +3,7 @@
 
 #include "Logic/chat_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class chat_mgr_ws
 	{

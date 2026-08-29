@@ -11,7 +11,7 @@
 #include "char_def.hpp"
 #include "chat_def.hpp"
 
-namespace hld 
+namespace faith 
 {
 #pragma pack(push,1)	
 	const int32							m_map_max_boss = 3;										//每个地图生成的boss数量

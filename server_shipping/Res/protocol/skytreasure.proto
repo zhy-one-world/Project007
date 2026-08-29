@@ -1,0 +1,27 @@
+syntax = "proto2";
+package hld;
+
+message skytreasure_proto
+{
+	message skytreasure_info_one
+	{
+		optional int32 skytreasure_layer_num                   = 1;
+		optional int32 skytreasure_pos	                       = 2;
+		optional int32 skytreasure_pos_in_array	               = 3;
+	}
+	message skytreasure_all
+	{
+		repeated skytreasure_info_one  skytreasure_list        = 1;
+	}
+	message skytreasure_operate
+	{
+		optional int32 operation_type	              = 1;
+		optional int32 operation_param1               = 2;
+		optional int32 operation_param2               = 3;
+	}
+	message skytreasure_operate_end
+	{
+		optional int32 operation_type                   = 1;
+		optional int32 operation_result	                = 2;
+	}
+}

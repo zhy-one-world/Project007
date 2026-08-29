@@ -14,7 +14,7 @@
 #include "utility/cs_date.hpp"
 #include "logic/time_def.hpp"
 
-namespace hld
+namespace faith
 {
 
 	void none_fuction(uint32 array_index, const void* data_ptr, size_t data_len)
@@ -436,7 +436,7 @@ namespace hld
 
 		if (cur_time >= time_stamp)
 		{
-			time_stamp = time_stamp + hld::day_time_second;
+			time_stamp = time_stamp + faith::day_time_second;
 		}
 
 		return time_stamp;

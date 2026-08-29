@@ -23,7 +23,7 @@
 #include "server_log.hpp"
 #include "net_server_mgr.hpp"
 
-namespace hld
+namespace faith
 {
 	//////////////////////////////////////////////////////////////////////////
 	//

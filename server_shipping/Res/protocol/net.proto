@@ -1,0 +1,1429 @@
+syntax = "proto2";
+package hld;
+
+enum proto_header
+{
+	e_msgindex_s2c_proto_version_wrong					= 10000;
+	e_msgindex_s2c_common_error 						= 10001;
+	e_msgindex_c2fep_ping								= 10002;
+	e_msgindex_fep2c_ping								= 10003;
+	e_msgindex_c2cs_ping								= 10004;
+	e_msgindex_cs2c_ping								= 10005;
+	e_msgindex_c2sp_server_list							= 10006;
+	e_msgindex_sp2c_server_list							= 10007;
+	e_msgindex_sp2c_role_list							= 10008;
+
+	// ConnectServer
+	e_msgindex_s2c_rdeencryption						= 10100;
+	e_msgindex_c2s_encryption_data						= 10101;
+	e_msgindex_s2c_encryption_data						= 10102;
+
+	// Login Queue Logout
+	e_msgindex_c2s_client_login							= 10200;
+	e_msgindex_s2c_client_login							= 10201;
+	e_msgindex_s2c_login_queue_status					= 10202;
+	e_msgindex_c2s_logout								= 10203;
+	e_msgindex_s2c_logout								= 10204;
+	e_msgindex_s2c_kickout_account						= 10205;
+	e_msgindex_c2s_enum_char							= 10206;
+	e_msgindex_s2c_enum_char							= 10207;
+	e_msgindex_c2s_create_char							= 10208;
+	e_msgindex_s2c_create_char							= 10209;
+	e_msgindex_c2s_del_char								= 10210;
+	e_msgindex_s2c_del_char								= 10211;
+	e_msgindex_c2s_login_reconnect						= 10212;
+	e_msgindex_s2c_login_reconnect						= 10213;
+
+
+	// World
+	e_msgindex_c2s_enter_game							= 10301;
+	e_msgindex_s2c_enter_game							= 10302;
+	e_msgindex_c2s_enter_scene							= 10303;
+	e_msgindex_s2c_enter_scene							= 10304;
+	e_msgindex_c2s_transfer_scene						= 10305;
+	e_msgindex_s2c_transfer_scene						= 10306;
+    e_msgindex_s2c_map_sync_all_unit_info				= 10307;
+    e_msgindex_s2c_map_sync_one_unit_info				= 10308;
+    e_msgindex_s2c_map_line_ary							= 10309;
+    e_msgindex_c2s_transfer_scene_pos					= 10310;
+	e_msgindex_c2s_map_load_finish						= 10311;
+	e_msgindex_s2c_set_timekeeping						= 10312;
+	e_msgindex_s2c_wave_trigger_message					= 10313;
+	e_msgindex_s2c_boss_state							= 10314;
+	e_msgindex_s2c_update_map_record					= 10315;
+	e_msgindex_s2c_update_map_record_all				= 10316;
+	e_msgindex_s2c_protect_npc_state					= 10317;
+	e_msgindex_s2c_map_game_state						= 10318;
+	e_msgindex_s2c_map_game_over						= 10319;
+	e_msgindex_c2s_map_game_gift						= 10320;
+	e_msgindex_s2c_map_game_gift						= 10321;
+	e_msgindex_s2c_pop_plot_tip							= 10322;
+	e_msgindex_s2c_send_msg_to_insert_player			= 10323;
+	e_msgindex_c2s_get_best_record						= 10324;
+	e_msgindex_s2c_get_best_record_end					= 10325;
+	e_msgindex_s2c_transfer_error						= 10328;
+	e_msgindex_c2s_transfer_to_pk_king_map				= 10329;
+	e_msgindex_s2c_pk_king_game_over					= 10330;
+	e_msgindex_c2s_transfer_to_broken_sky_map			= 10331;
+	e_msgindex_s2c_broken_sky_boss_dead					= 10332;
+	e_msgindex_s2c_broken_sky_game_over					= 10333;
+	e_msgindex_c2s_leave_map							= 10334;
+	e_msgindex_s2c_bosses_state							= 10335;
+	e_msgindex_s2c_transfer_local_scene_end				= 10336;
+	e_msgindex_c2s_get_one_map_info						= 10337;
+	e_msgindex_s2c_get_one_map_info_end					= 10338;
+	e_msgindex_c2s_transfer_scene_born					= 10339;
+	e_msgindex_s2c_server_exp_level						= 10340;
+	e_msgindex_s2c_reconnect_enter_scene				= 10341;
+	e_msgindex_s2c_need_hot_update						= 10342;
+	e_msgindex_s2c_gain_treasure_info_update_one		= 10343;
+	e_msgindex_s2c_gain_treasure_info_update_all		= 10344;
+	e_msgindex_c2s_gain_treasure_req_kill_record		= 10345;
+	e_msgindex_s2c_gain_treasure_kill_record_end		= 10346;
+	e_msgindex_c2s_gain_treasure_req_gain_item_record   = 10347;
+	e_msgindex_s2c_gain_treasure_gain_item_record_end 	= 10348;
+	e_msgindex_s2c_gain_treasure_boss_info_one			= 10349;
+	e_msgindex_s2c_gain_treasure_boss_info_all			= 10350;
+	e_msgindex_s2c_boss_island_info_one					= 10351;
+	e_msgindex_s2c_boss_island_info_all					= 10352;
+	e_msgindex_s2c_player_boss_island_info_one			= 10353;
+	e_msgindex_s2c_player_boss_island_info_all			= 10354;
+	e_msgindex_s2c_player_server_config					= 10355;
+	e_msgindex_c2s_get_first_raid_award					= 10356;
+	e_msgindex_s2c_need_cross_server					= 10357;
+	e_msgindex_s2c_need_cross_server_pk					= 10358;
+	e_msgindex_s2c_need_cross_server_activity			= 10359;
+	e_msgindex_c2s_transfer_to_shui_jing_map			= 10360;
+	e_msgindex_c2s_get_world_level						= 10361;
+    e_msgindex_s2c_send_world_level                     = 10362;
+	e_msgindex_s2c_need_cross_server_harry				= 10363;
+	e_msgindex_s2c_random_array							= 10364;
+	e_msgindex_s2c_need_cross_server_city_war			= 10365;
+	e_msgindex_s2c_need_cross_server_territory_war		= 10366;
+	e_msgindex_s2c_need_cross_server_world_boss			= 10367;
+	e_msgindex_s2c_need_cross_server_ladder				= 10368;
+	e_msgindex_s2c_need_cross_gm_one					= 10369;
+	e_msgindex_s2c_need_cross_gm_all					= 10370;
+	e_msgindex_s2c_send_server_name						= 10371;
+	e_mgsindex_s2c_transfer_new_map_error				= 10372;
+	e_mgsindex_s2c_send_boss_damage_list_msg			= 10373;
+	e_msgindex_s2c_send_leave_boss_damage_list_msg		= 10374;
+	e_msgindex_s2c_send_help_success_msg				= 10375;
+	e_msgindex_s2c_send_the_attacker_info				= 10376;
+	e_msgindex_c2s_send_buy_simage_boss_num				= 10377;
+	e_msgindex_s2c_send_buy_simage_boss_num_end			= 10378;
+	e_msgindex_s2c_can_transfer_other_line				= 10379;
+	e_msgindex_s2c_legion_auction_item_tip				= 10380;
+	e_msgindex_s2c_is_close_exchange					= 10381;
+	e_msgindex_s2c_reset_camera							= 10382;
+	e_msgindex_c2s_fuben_vip_mopping					= 10383;
+	e_msgindex_s2c_fuben_vip_mopping_end				= 10384;
+	// Character
+	e_msgindex_c2s_load_character_att					= 10407;
+    e_msgindex_s2c_load_role_info						= 10408;
+	e_msgindex_s2c_character_all_att					= 10409;
+	e_msgindex_c2s_character_one_att					= 10410;
+	e_msgindex_s2c_character_one_att					= 10411;
+    e_msgindex_s2c_sync_unit_create_info                = 10412;
+    e_msgindex_s2c_sync_unit_world_info                	= 10413;
+    e_msgindex_s2c_sync_unit_other_info                	= 10414;
+	e_msgindex_c2s_character_position					= 10415;
+	e_msgindex_s2c_character_position					= 10416;
+	e_msgindex_c2s_spawn_npc							= 10417;
+	e_msgindex_c2s_map_targger_volume					= 10418;
+	e_msgindex_c2s_game_over							= 10419;
+	e_msgindex_s2c_game_over							= 10420;
+	e_msgindex_c2s_character_fuhuo						= 10421;
+	e_msgindex_s2c_character_fuhuo						= 10422;
+	e_msgindex_s2c_unit_dead							= 10423;
+	e_msgindex_s2c_player_levelup						= 10424;
+	e_msgindex_s2c_character_money_all					= 10425;
+	e_msgindex_s2c_character_money_one					= 10426;
+	e_msgindex_s2c_map_fuben_over					    = 10427;
+	e_msgindex_s2c_fuben_send_notice					= 10428;
+	e_msgindex_s2c_fuben_info_to_client                 = 10429;
+	e_msgindex_c2s_receive_reward      					= 10430;
+	e_msgindex_s2c_bag_open_slot_num                    = 10431;
+	e_msgindex_c2s_bag_unlock_slot_req                  = 10432;
+	e_msgindex_c2s_character_gmorder_message            = 10433;
+	e_msgindex_s2c_character_gmorder_message            = 10434;
+	e_msgindex_c2s_character_pick_drop_box              = 10435;
+	e_msgindex_s2c_addition_buff                        = 10436;
+	e_msgindex_s2c_character_info_one					= 10437;
+	e_msgindex_s2c_character_pick_drop_box              = 10438;
+	e_msgindex_s2c_character_base_att_all				= 10439;
+	e_msgindex_s2c_character_base_att_one				= 10440;
+	e_msgindex_c2s_character_grade_up                   = 10441;
+	e_msgindex_s2c_character_grade_up                   = 10442;
+	e_msgindex_s2c_character_warning                    = 10443;
+	e_msgindex_s2c_character_error                      = 10444;
+	e_msgindex_c2s_lucky_draw                           = 10445;
+	e_msgindex_s2c_lucky_draw                           = 10446;
+	e_msgindex_c2s_mopping_up                           = 10447;
+	e_msgindex_s2c_mopping_up_award                     = 10448;
+	e_msgindex_s2c_mopping_up_end                       = 10449;
+	e_msgindex_c2s_mopping_up_demons_tower              = 10450;
+	e_msgindex_c2s_mopping_up_demons_tower_get_award    = 10451;
+	e_msgindex_s2c_mopping_up_demons_tower_get_award_end= 10452;
+	e_msgindex_s2c_update_demons_tower_info_end         = 10453;
+	e_msgindex_c2s_change_pk_mode        				= 10454;
+	e_msgindex_s2c_change_pk_mode_end        			= 10455;
+	e_msgindex_s2c_update_community        				= 10456;
+	e_msgindex_s2c_enum_char_item						= 10457;
+	e_msgindex_c2s_get_meditation_reward         		= 10458;
+	e_msgindex_s2c_get_meditation_reward_end       		= 10459;
+	e_msgindex_s2c_stop_mediation         				= 10460;
+	e_msgindex_s2c_start_meditation_end		       		= 10461;
+	e_msgindex_c2s_stop_mediation         				= 10462;
+	e_msgindex_c2s_start_meditation		         		= 10463;
+	e_msgindex_s2c_character_time_all					= 10464;
+	e_msgindex_s2c_character_time_one					= 10465;
+	e_msgindex_s2c_character_info_all					= 10466;
+	e_msgindex_s2c_show_message							= 10467;
+	e_msgindex_s2c_score_record_list					= 10468;
+	e_msgindex_s2c_broadcast_character_info_one			= 10469;
+	e_msgindex_s2c_addition_buff_all                    = 10470;
+	e_msgindex_s2c_map_arena_fuben_over					= 10471;
+	e_msgindex_s2c_find_other_unit_spirit_end			= 10472;
+	e_msgindex_s2c_find_other_unit_wing_or_mount_one_end= 10473;
+	e_msgindex_s2c_find_other_unit_buff_end				= 10474;
+	e_msgindex_s2c_show_money_get						= 10475;
+	e_msgindex_c2s_add_guide_record						= 10476;
+	e_msgindex_s2c_update_guide_record					= 10477;
+	e_msgindex_s2c_syn_tick_time						= 10478;
+	e_msgindex_c2s_transfer_buff						= 10479;
+	e_msgindex_c2s_get_func_unlock_award				= 10480;
+	e_msgindex_s2c_get_func_unlock_award_end			= 10481;
+	e_msgindex_c2s_interact_with_npc					= 10482;
+	e_msgindex_s2c_interact_with_npc_state				= 10483;
+	e_msgindex_s2c_aoi_npc_gather_state					= 10484;
+	e_msgindex_s2c_finish_gather_result					= 10485;
+	e_msgindex_c2s_req_hit_and_get_npc					= 10486;
+	e_msgindex_s2c_send_highest_record_all				= 10487;
+	e_msgindex_s2c_send_highest_record_one				= 10488;
+	e_msgindex_c2s_purchase_patron_saint_mark_slot		= 10489;
+	e_msgindex_s2c_purchase_patron_saint_mark_slot_end	= 10490;
+	e_msgindex_c2s_grade_up_level_ani_finish			= 10491;
+	e_msgindex_s2c_grade_up_level_ani_finish			= 10492;
+	e_msgindex_s2c_open_server_time						= 10493;
+	e_msgindex_s2c_find_other_unit_belief_end			= 10494;
+	e_msgindex_s2c_character_get_money					= 10495;
+	e_msgindex_s2c_pk_fight_back_sync					= 10496;
+	e_msgindex_s2c_npc_left_hp_per						= 10497;
+	e_msgindex_c2s_body_base_att						= 10498;
+	e_msgindex_c2s_refresh_body_base_att				= 10499;
+	e_msgindex_s2c_character_logic_all					= 10500;
+	e_msgindex_s2c_character_logic_one					= 10501;
+	e_msgindex_c2s_treasure_get_przie					= 10502;
+	e_msgindex_s2c_treasure_get_przie					= 10503;
+	e_msgindex_s2c_treasure_record_list					= 10504;
+	e_msgindex_c2s_guide_trigger_start					= 10505;
+	e_msgindex_c2s_treasure_notice						= 10506;
+	e_msgindex_c2s_jump_raid_animation					= 10507;
+	e_msgindex_c2s_change_role_class					= 10508;
+	e_msgindex_s2c_change_role_class_end				= 10509;	
+	e_msgindex_c2s_change_player_name					= 10510;
+	e_msgindex_s2c_change_player_name_end				= 10511;
+	e_msgindex_c2s_confirm_change_name					= 10512;
+	e_msgindex_c2s_recharge_success_by_sdk				= 10513;
+	e_msgindex_s2c_cur_server_id						= 10514;
+	e_msgindex_c2s_character_legion_look_first			= 10515;
+	e_msgindex_c2s_character_auto_use_hp_pot			= 10516;
+	e_msgindex_s2c_kill_prompt							= 10517;
+	e_msgindex_c2s_ask_unit_dead						= 10518;
+	e_msgindex_s2c_find_other_unit_feather_end			= 10519;
+	e_msgindex_c2s_change_sky_suit_shape				= 10520;
+	e_msgindex_s2c_change_sky_suit_shape_end			= 10521;
+	e_msgindex_s2c_addition_buff_arr                    = 10522;
+	e_msgindex_c2s_get_person_information				= 10523;
+	e_msgindex_s2c_sync_person_information				= 10524;
+	e_msgindex_c2s_modify_person_information			= 10525;
+	e_msgindex_c2s_get_other_person_information			= 10526;
+	e_msgindex_c2s_get_person_infor_reward				= 10527;
+	e_msgindex_s2c_get_person_infor_reward_end			= 10528;
+	e_msgindex_s2c_sync_other_person_couple_data		= 10529;
+	e_msgindex_s2c_character_gs_value					= 10530;
+	e_msgindex_s2c_character_find_other_appearance_info = 10531;
+	e_msgindex_c2s_character_save_appearance_info		= 10532;
+	e_msgindex_c2s_save_appearance_info_to_id			= 10533;
+	e_msgindex_s2c_save_appearance_info_to_id_end		= 10534;
+	e_msgindex_c2s_load_appearance_info_by_id			= 10535;
+	e_msgindex_s2c_load_appearance_info_by_id_end		= 10536;
+	e_msgindex_c2s_show_vip								= 10537;
+	e_msgindex_s2c_show_vip								= 10538;
+	e_msgindex_s2c_break_map_over						= 10539;
+	e_msgindex_c2s_change_enchant_show_type				= 10540;
+	e_msgindex_c2s_all_mopping_up						= 10541;
+	
+	//Competition
+	e_msgindex_c2s_get_role_competition 				= 10550;
+	e_msgindex_s2c_sync_role_competition 				= 10551;
+	e_msgindex_c2s_get_competition_lv_reward			= 10552;
+	e_msgindex_s2c_get_competition_lv_reward_end		= 10553;
+	e_msgindex_c2s_get_competition_lv_reward_all		= 10554;
+	e_msgindex_c2s_buy_competition_lv					= 10555;
+	e_msgindex_s2c_buy_competition_lv_end				= 10556;
+	e_msgindex_c2s_buy_speical_manual					= 10557;
+	e_msgindex_s2c_buy_speical_manual_end				= 10558;
+	e_msgindex_c2s_send_special_server_msg				= 10559;
+	
+	//ElementCompetition
+	e_msgindex_c2s_get_element_competition				= 10560;
+	e_msgindex_s2c_sync_element_competition 			= 10561;
+	e_msgindex_c2s_get_element_competition_lv_reward	= 10562;
+	e_msgindex_s2c_get_element_competition_lv_reward_end= 10563;
+	e_msgindex_c2s_get_element_competition_lv_reward_all= 10564;
+	e_msgindex_c2s_buy_element_competition_lv			= 10565;
+	e_msgindex_s2c_buy_element_competition_lv_end		= 10566;
+	e_msgindex_c2s_buy_element_speical_manual			= 10567;
+	e_msgindex_s2c_buy_element_speical_manual_end		= 10568;
+	
+	// Skill
+	e_msgindex_c2s_skill_operation						= 10601;
+	e_msgindex_s2c_skill_operation						= 10602;
+	e_msgindex_s2c_skill_info_one						= 10603;
+	e_msgindex_s2c_skill_info_all						= 10604;
+	e_msgindex_s2c_skill_sub_cd							= 10607;
+	e_msgindex_s2c_skill_change_skill					= 10608;
+	e_msgindex_c2s_skill_change_index					= 10609;
+	e_msgindex_s2c_skill_sync_fixed_param				= 10610;
+	e_msgindex_c2s_skill_spell							= 10611;
+	e_msgindex_s2c_skill_spell							= 10612;
+	e_msgindex_c2s_skill_cast							= 10613;
+	e_msgindex_s2c_skill_cast							= 10614;
+	e_msgindex_s2c_skill_fly							= 10615;
+	e_msgindex_c2s_skill_hurt							= 10616;
+	e_msgindex_s2c_skill_patron_saint_effect			= 10617;
+	e_msgindex_s2c_update_passive_skill					= 10618;
+	e_msgindex_s2c_trigger_passive_skill				= 10619;
+	e_msgindex_s2c_passive_skill_up_leve				= 10620;
+	e_msgindex_c2s_passive_skill_up_leve				= 10621;
+	e_msgindex_s2c_passive_skill_equip					= 10622;
+	e_msgindex_c2s_passive_skill_equip					= 10623;
+	
+	
+	// Item
+	e_msgindex_c2s_item_operation						= 10701;
+	e_msgindex_s2c_item_operation						= 10702;
+	e_msgindex_s2c_item_update_character			    = 10703;
+	e_msgindex_s2c_item_tidy                            = 10704;
+	e_msgindex_s2c_item_recovery_earn_info              = 10705;
+	e_msgindex_s2c_item_sell_earn_info                  = 10706;
+	e_msgindex_s2c_item_composit                        = 10707;
+	e_msgindex_c2s_item_composit                        = 10708;
+	e_msgindex_s2c_item_succinct_temp_property_value    = 10709;
+	e_msgindex_s2c_show_this_whig					    = 10710;
+	e_msgindex_s2c_get_item							    = 10711;
+	e_msgindex_s2c_change_mount_shape					= 10712;
+	e_msgindex_s2c_item_cd								= 10713;
+	e_msgindex_c2s_equip_end_load_new_shape				= 10714;
+	e_msgindex_c2s_set_quick_call_mount					= 10715;
+	e_msgindex_s2c_update_quick_call_mount				= 10716;
+	e_msgindex_c2s_get_hope_item						= 10717;
+	e_msgindex_s2c_get_hope_item_end					= 10718;
+	e_msgindex_s2c_item_use_end							= 10719;
+	e_msgindex_s2c_item_delete							= 10720;
+	e_msgindex_s2c_item_merge_end						= 10721;
+	e_msgindex_s2c_auto_inherit_result					= 10722;
+	e_msgindex_s2c_show_item_upgrade_effect				= 10723;
+	e_msgindex_s2c_add_money							= 10724;
+	e_msgindex_s2c_add_item								= 10725;
+	e_msgindex_s2c_load_record_info						= 10726;
+	e_msgindex_s2c_operate_record_info					= 10727;
+	e_msgindex_c2s_patron_saint_mark_upgrade			= 10728;
+	e_msgindex_s2c_patron_saint_mark_upgrade_end		= 10729;
+	e_msgindex_c2s_patron_saint_mark_operate			= 10730;
+	e_msgindex_s2c_patron_saint_mark_operate_end		= 10731;
+	e_msgindex_s2c_item_one_key_use_end					= 10732;
+	e_msgindex_s2c_item_show_goto_bag					= 10733;
+	e_msgindex_s2c_update_quickly_hp					= 10734;
+	e_msgindex_s2c_show_fashion                         = 10735;
+	e_msgindex_c2s_show_fashion                         = 10736;
+	e_msgindex_s2c_unlock_skill_end                     = 10737;
+	e_msgindex_c2s_unlock_skill                         = 10738;	
+	e_msgindex_c2s_item_forge 							= 10739;
+    e_msgindex_s2c_item_forge_end 						= 10740;
+	e_msgindex_c2s_item_forge_begin 					= 10741;
+	e_msgindex_c2s_spirit_forge 						= 10742;
+    e_msgindex_s2c_spirit_forge_end 					= 10743;
+	e_msgindex_c2s_spirit_forge_begin 					= 10744;
+	e_msgindex_c2s_tinder_prop_operate 					= 10745;
+	e_msgindex_s2c_tinder_prop_operate_end 				= 10746;
+	e_msgindex_s2c_get_meditation_item                  = 10747;
+	e_msgindex_s2c_composit_failed_num					= 10748;
+	e_msgindex_c2s_wing_feather_skill                   = 10749;
+	e_msgindex_s2c_wing_feather_skill_end               = 10750;
+	e_msgindex_c2s_goddess_operation					= 10751;
+	e_msgindex_s2c_goddess_operation_end				= 10752;
+	e_msgindex_c2s_item_awaken                          = 10753;
+	e_msgindex_s2c_item_awaken_end                      = 10754;
+	e_msgindex_c2s_item_jewel_carve_oper                = 10755;
+	e_msgindex_s2c_item_jewel_carve_oper_end            = 10756;
+	e_msgindex_s2c_item_upgrade_data		            = 10757;
+	e_msgindex_c2s_item_upgrade				            = 10758;
+
+	// aoi
+	e_msgindex_s2c_aoi_update							= 10802;
+	e_msgindex_s2c_aoi_simple_all						= 10803;
+	e_msgindex_s2c_aoi_simple_one						= 10804;
+	e_msgindex_c2s_aoi_get_all							= 10805;
+	e_msgindex_c2s_aoi_get_all_end						= 10806;
+	e_msgindex_s2c_aoi_out								= 10807;
+	e_msgindex_c2s_aoi_show_player						= 10808;
+	e_msgindex_s2c_aoi_face_unit						= 10809;
+	e_msgindex_s2c_aoi_marry_unit						= 10810;
+	e_msgindex_c2s_aoi_simple_pos						= 10811;
+	e_msgindex_s2c_aoi_simple_pos_end					= 10812;
+	e_msgindex_c2s_aoi_location							= 10813;
+	e_msgindex_c2s_aoi_rotation							= 10814;
+	e_msgindex_s2c_aoi_rotation							= 10815;
+	e_msgindex_s2c_aoi_change_appearance				= 10816;
+	e_mgsindex_s2c_update_can_show_head					= 10817;
+
+	// belief
+	e_msgindex_c2s_belief_operation						= 10901;
+	e_msgindex_s2c_belief_operation						= 10902;
+	e_msgindex_s2c_belief_update_character_all			= 10903;
+	e_msgindex_s2c_belief_update_character_one			= 10904;
+
+	// mission
+	e_msgindex_s2c_mission_one							= 11001;
+	e_msgindex_s2c_mission_all							= 11002;
+	e_msgindex_s2c_mission_operate						= 11003;
+	e_msgindex_c2s_mission_operate						= 11004;
+	e_msgindex_c2s_mission_alien_kill_npc				= 11005;
+	e_msgindex_s2c_mission_finish						= 11006;
+	e_msgindex_c2s_reset_test							= 11007;
+	e_msgindex_s2c_mission_create_npc_info				= 11008;
+	e_msgindex_s2c_mission_get_monster_item				= 11009;
+	e_msgindex_s2c_mission_show_chapter_finish			= 11010;
+
+	// Spirit
+	e_msgindex_c2s_spirit_operation						= 11101;
+	e_msgindex_s2c_spirit_update						= 11102;
+	e_msgindex_s2c_spirit_tidy                          = 11103;
+	e_msgindex_s2c_spirit_operation						= 11104;
+	e_msgindex_s2c_spirit_update_free_hunt_time			= 11105;
+	e_msgindex_s2c_spirit_qiyuan_level					= 11106;
+	e_msgindex_s2c_spirit_jiban_list					= 11107;
+	e_msgindex_c2s_exchange_item						= 11108;
+	e_msgindex_s2c_exchange_report						= 11109;
+	e_msgindex_s2c_spirit_auto_sell_display				= 11110;
+	e_msgindex_c2s_spirit_hunt							= 11111;
+	e_msgindex_s2c_spirit_hunt_end						= 11112;
+	e_msgindex_s2c_spirit_fetter_info					= 11113;
+	e_msgindex_c2s_spirit_fetter_upgrade				= 11114;
+	e_msgindex_s2c_spirit_fetter_upgrade				= 11115;
+
+	//Goods
+	e_msgindex_s2c_goods_one							= 11201;
+	e_msgindex_s2c_goods_all							= 11202;
+	e_msgindex_s2c_goods_operate						= 11203;
+	e_msgindex_c2s_goods_operate						= 11204;
+	e_msgindex_s2c_update_store							= 11205;
+	e_msgindex_c2s_update_store							= 11206;
+	e_msgindex_s2c_server_open_time						= 11207;
+
+	//elementheart
+	e_msgindex_s2c_element_heart_one					= 11301;
+	e_msgindex_s2c_element_heart_all					= 11302;
+	e_msgindex_s2c_element_heart_operate				= 11303;
+	e_msgindex_c2s_element_heart_operate				= 11304;
+	e_msgindex_s2c_element_heart_delete					= 11305;
+	e_msgindex_s2c_element_heart_tidy					= 11306;
+
+	//special_name
+	e_msgindex_s2c_special_name_operate					= 11401;
+	e_msgindex_c2s_special_name_operate					= 11402;
+	e_msgindex_s2c_special_name_get_all					= 11403;
+	e_msgindex_c2s_special_name_get_all				    = 11404;
+
+	// pokedex
+	e_msgindex_c2s_pokedex_operate 						= 11501;
+	e_msgindex_s2c_pokedex_operate_end 					= 11502;
+	e_msgindex_s2c_pokedex_update_character_all		 	= 11503;
+	e_msgindex_s2c_pokedex_update_character_one 		= 11504;
+	e_msgindex_s2c_protect_spirit_operation_end 		= 11506;
+	e_msgindex_s2c_tinder_info_all 						= 11508;
+	e_msgindex_c2s_tinder_operate 						= 11509;
+	e_msgindex_s2c_patron_saint_operated 				= 11510;
+	e_msgindex_c2s_psyche_recovery_operation 			= 11511;
+	e_msgindex_s2c_psyche_recovery_operation_end 		= 11512;
+	e_msgindex_s2c_tinder_info_one 						= 11513;
+	e_msgindex_s2c_tinder_operate_end 					= 11514;
+
+	// achievement
+	e_msgindex_s2c_achievement_one						= 11601;
+	e_msgindex_s2c_achievement_all						= 11602;
+	e_msgindex_s2c_achievement_operate					= 11603;
+	e_msgindex_c2s_achievement_operate					= 11604;
+	e_msgindex_c2s_achievement_finish					= 11605;
+	
+	// phantom
+	e_msgindex_s2c_phantom_one                          = 11630;
+	e_msgindex_s2c_phantom_all                          = 11631;
+	e_msgindex_c2s_phantom_operate                      = 11632;
+	e_msgindex_s2c_phantom_operate_end                  = 11634;
+	
+	//chat record
+	e_msgindex_s2c_chat_record_one                      = 11640;
+	e_msgindex_s2c_chat_record_all                      = 11641;
+	e_msgindex_c2s_chat_record_oper                     = 11642;
+	e_msgindex_s2c_chat_record_end                      = 11643;
+	
+	//recycle
+    e_msgindex_s2c_recycle_invited_level_one            = 11649;
+	e_msgindex_s2c_recycle_data_all                     = 11650;
+	e_msgindex_s2c_recycle_login_one                    = 11651;
+	e_msgindex_c2s_recycle_oper                         = 11652;
+	e_msgindex_s2c_recycle_oper_end                     = 11653;
+	e_msgindex_s2c_recycle_item_one                     = 11654;
+	e_msgindex_s2c_recycle_buy_one                      = 11655;
+	
+	e_msgindex_s2c_recycle_invited_all                  = 11656;
+	e_msgindex_s2c_recycle_invited_one                  = 11657;
+	e_msgindex_c2s_recycle_invited_reward               = 11658;
+	e_msgindex_s2c_recycle_invited_reward_end           = 11659;
+	
+	e_msgindex_s2c_buy_tip                              = 11660;
+	
+	e_msgindex_s2c_boss_result_rank_end                 = 11661;
+	
+	// dragontrip 
+	
+	e_mgsindex_s2c_dragontrip_all                       = 11665;
+	e_msgindex_c2s_dragontrip_operate                   = 11666;
+	e_msgindex_s2c_dragontrip_operate_end               = 11667;
+	
+	
+	// mountpower
+	e_msgindex_c2s_mountpower_operate                   = 11668;
+	e_msgindex_s2c_mountpower_operate_end               = 11669;
+	
+	
+	
+	
+
+	// team
+	e_msgindex_s2c_update_team_member_info				= 11701;
+	e_msgindex_s2c_update_team_info						= 11702;
+	e_msgindex_c2s_create_team							= 11703;
+	e_msgindex_s2c_create_team_end						= 11704;
+	e_msgindex_c2s_join_team							= 11705;
+	e_msgindex_c2s_apply_to_join_team					= 11706;
+	e_msgindex_s2c_join_team_apply_end					= 11707;
+	e_msgindex_s2c_join_team_applicant_info				= 11708;
+	e_msgindex_c2s_let_role_join_team					= 11709;
+	e_msgindex_s2c_add_team_member						= 11710;
+	e_msgindex_s2c_del_team_member						= 11711;
+	e_msgindex_c2s_leave_team							= 11712;
+	e_msgindex_s2c_leave_team_end						= 11713;
+	e_msgindex_c2s_ready								= 11714;
+	e_msgindex_s2c_ready_end							= 11715;
+	e_msgindex_c2s_kickout_team_member					= 11716;
+	e_msgindex_s2c_kickout_team_member_end				= 11717;
+	e_msgindex_c2s_search_team_by_map_id				= 11718;
+	e_msgindex_s2c_search_team_by_map_id_end			= 11719;
+	e_msgindex_c2s_ready_to_transfer_team				= 11720;
+	e_msgindex_s2c_ready_to_transfer_team_end			= 11721;
+	e_msgindex_c2s_transfer_team_to_scene				= 11722;
+	e_msgindex_c2s_invite_player						= 11723;
+	e_msgindex_s2c_invite_player_success				= 11724;
+	e_msgindex_s2c_invite_player_end					= 11725;
+	e_msgindex_c2s_set_captain							= 11726;
+	e_msgindex_s2c_set_captain_end						= 11727;
+	e_msgindex_s2c_set_player_team_aoi_info				= 11728;
+	e_msgindex_s2c_clear_player_team_aoi_info			= 11729;
+	e_msgindex_s2c_update_team_member_info_one			= 11730;
+	e_msgindex_s2c_team_error							= 11731;
+	e_msgindex_s2c_team_member_pos_info					= 11732;
+	e_msgindex_s2c_team_pos_info						= 11733;
+	e_msgindex_c2s_get_no_team_legionmate_list			= 11734;
+	e_msgindex_s2c_get_no_team_legionmate_list_end		= 11735;
+	e_msgindex_c2s_get_aim_team_list					= 11736;
+	e_msgindex_s2c_get_aim_team_list_end				= 11737;
+	e_msgindex_c2s_auto_match_team						= 11738;
+	e_msgindex_s2c_auto_match_team_end					= 11739;
+	e_msgindex_c2s_update_team_attribute				= 11740;
+	e_msgindex_s2c_update_team_attribute_end			= 11741;
+	e_msgindex_c2s_update_team_mem_operate				= 11742;
+	e_msgindex_s2c_update_team_mem_operate_end			= 11743;
+	e_msgindex_s2c_notice_create_new_team				= 11744;
+	e_msgindex_s2c_self_os_flags_update					= 11745;
+	e_msgindex_c2s_refused_join_team					= 11746;
+	e_msgindex_s2c_refused_join_team_end				= 11747;
+	e_msgindex_s2c_update_team_gs_value					= 11748;
+
+	// mail
+	e_msgindex_c2s_mail_operation						= 11801;
+	e_msgindex_s2c_mail_update							= 11802;
+	e_msgindex_c2s_mail_sort							= 11803;
+	e_msgindex_s2c_mail_operation						= 11804;
+	e_msgindex_s2c_mail_operation_end					= 11805;
+	e_msgindex_c2s_mail_send_mail						= 11806;
+	e_msgindex_s2c_mail_contents_get					= 11807;
+	e_msgindex_s2c_mail_delete_mail_by_live_time		= 11808;
+	e_msgindex_s2c_mail_send_to_all_player				= 11809;
+	e_msgindex_s2c_mail_item_update						= 11810;
+	e_msgindex_s2c_mail_delete_these_mail				= 11811;
+
+	//arena
+	e_msgindex_c2s_get_rank								= 11901;
+	e_msgindex_s2c_get_rank_end							= 11902;
+	e_msgindex_c2s_get_match_player						= 11903;
+	e_msgindex_s2c_get_match_player_end				    = 11904;
+	e_msgindex_c2s_get_top_three_player					= 11905;
+	e_msgindex_s2c_get_top_three_player_end				= 11906;
+	e_msgindex_c2s_req_challenge						= 11907;
+	e_msgindex_s2c_req_challenge_end					= 11908;
+	e_msgindex_c2s_challenge_over						= 11909;
+	e_msgindex_c2s_req_get_challenge_log				= 11910;
+	e_msgindex_s2c_req_get_challenge_log_end			= 11911;
+	e_msgindex_c2s_get_arena_reward						= 11912;
+	e_msgindex_s2c_get_arena_reward_end					= 11913;
+	e_msgindex_c2s_req_mopping_remain_times				= 11914;
+	e_msgindex_s2c_req_mopping_remain_times_end			= 11915;
+
+
+	//ranking
+	e_msgindex_c2s_ranking_get_top						= 12001;
+	e_msgindex_s2c_ranking_get_top_end					= 12002;
+	e_msgindex_c2s_ranking_worship						= 12003;
+	e_msgindex_s2c_ranking_worship_end					= 12004;
+	e_msgindex_c2s_ranking_get_my_rank					= 12005;
+	e_msgindex_s2c_ranking_get_my_rank_end				= 12006;
+	//e_msgindex_c2s_ranking_sync_player_data				= 12007;
+	e_msgindex_s2c_ranking_worship_record_one			= 12007;
+	e_msgindex_s2c_ranking_worship_record				= 12008;
+	e_msgindex_s2c_ranking_operate_result				= 12009;
+	e_msgindex_c2s_get_player_ranking_value				= 12010;
+	e_msgindex_s2c_get_player_ranking_value_end			= 12011;
+	e_msgindex_s2c_service_rank_info_one				= 12012;
+	e_msgindex_s2c_service_rank_info_all				= 12013;
+	e_msgindex_c2s_service_rank_recevice_reward		    = 12014;
+	e_msgindex_s2c_service_rank_reward_state_one	 	= 12015;
+	e_msgindex_s2c_service_rank_reward_state_all		= 12016;
+	e_msgindex_c2s_service_rank_get_first_player		= 12017;
+	e_msgindex_s2c_service_rank_get_first_player_end	= 12018;
+	e_msgindex_c2s_ranking_get_my_rank_lua				= 12019;
+	e_msgindex_s2c_ranking_get_top_end_lua				= 12020;
+
+	// legion
+	e_msgindex_c2s_get_city_war_territory_info			= 12051;
+	e_msgindex_s2c_get_city_war_territory_info_end		= 12052;
+	e_msgindex_c2s_get_city_war_rank_info				= 12053;
+	e_msgindex_s2c_get_city_war_rank_info_end			= 12054;
+	e_msgindex_c2s_set_territory_prior_maintain			= 12055;
+	e_msgindex_s2c_set_territory_prior_maintain_end		= 12056;
+	e_msgindex_c2s_invite_player_to_join_legion			= 12057;
+	e_msgindex_s2c_invite_player_to_join_legion_end		= 12058;
+	e_msgindex_c2s_draw_mem_daily_award					= 12059;
+	e_msgindex_c2s_draw_bonfire_daily_award				= 12060;
+	e_msgindex_c2s_level_up_legion_skill				= 12061;
+	e_msgindex_s2c_level_up_legion_skill_end			= 12062;
+	e_msgindex_s2c_invite_player_succeed				= 12063;
+	e_msgindex_s2c_members_info_list_end				= 12064;
+	e_msgindex_s2c_get_legion_skill_level_end			= 12065;
+	e_msgindex_c2s_get_legion_answer_question_info		= 12066;
+	e_msgindex_s2c_get_legion_answer_question_info_end  = 12067;
+	e_msgindex_s2c_legion_answer_result					= 12068;
+	e_msgindex_c2s_get_legion_warehouse_item_info       = 12069;
+	e_msgindex_s2c_get_legion_warehouse_item_info_end   = 12070;
+	e_msgindex_c2s_operation_legion_warehouse_item      = 12071;
+	e_msgindex_s2c_operation_legion_warehouse_item_end  = 12072;
+	e_msgindex_c2s_get_legion_warehouse_log             = 12073;
+	e_msgindex_s2c_get_legion_warehouse_log_end         = 12074;
+	e_msgindex_c2s_change_legion_name					= 12075;
+	e_msgindex_s2c_change_legion_name_end				= 12076;
+	e_msgindex_c2s_confirm_change_legion_name			= 12077;
+	e_msgindex_s2c_cross_city_info_all					= 12078;
+	e_msgindex_c2s_join_cross_overload_city_war			= 12079;
+	e_msgindex_s2c_send_legion_answer_rank_list			= 12080;
+	e_msgindex_c2s_get_legion_answer_rank_list			= 12081;
+	e_msgindex_s2c_legion_answer_end					= 12082;
+	e_mgsindex_s2c_send_legion_answer_box_reward		= 12083;
+	e_msgindex_s2c_city_war_members_info_list_end		= 12084;
+	e_msgindex_s2c_legion_welfare_members_info_list_end	= 12085;
+	
+	e_msgindex_s2c_update_legion_member_info			= 12101;
+	e_msgindex_s2c_update_legion_info					= 12102;
+	e_msgindex_s2c_update_legion_brief_info				= 12103;
+	e_msgindex_c2s_create_legion						= 12104;
+	e_msgindex_s2c_create_legion_end					= 12105;
+	e_msgindex_s2c_update_legion_info_all				= 12106;
+	e_msgindex_s2c_update_legion_info_one				= 12107;
+	e_msgindex_s2c_update_legion_member_info_all		= 12108;
+	e_msgindex_s2c_update_legion_member_info_one		= 12109;
+	e_msgindex_c2s_dissolve_legion						= 12110;
+	e_msgindex_s2c_dissolve_legion_end					= 12111;
+	e_msgindex_c2s_leave_legion							= 12112;
+	e_msgindex_s2c_leave_legion_end						= 12113;
+	e_msgindex_c2s_get_legion_list						= 12114;
+	e_msgindex_s2c_get_legion_list_end					= 12115;
+	e_msgindex_c2s_apply_to_join_legion					= 12116;
+	e_msgindex_s2c_apply_to_join_legion_end				= 12117;
+	e_msgindex_s2c_update_legion_applicant_info			= 12118;
+	e_msgindex_c2s_get_legion_applicant_info_list		= 12119;
+	e_msgindex_s2c_get_legion_applicant_info_list_end	= 12120;
+	e_msgindex_c2s_process_legion_apply					= 12121;
+	e_msgindex_s2c_process_legion_apply_end				= 12122;
+	e_msgindex_c2s_convenient_join_legion				= 12123;
+	e_msgindex_s2c_convenient_join_legion_end			= 12124;
+	e_msgindex_s2c_add_legion_member_end				= 12126;
+	e_msgindex_c2s_del_legion_member					= 12127;
+	e_msgindex_s2c_del_legion_member_end				= 12128;
+	e_msgindex_c2s_legion_construction_level_up			= 12129;
+	e_msgindex_s2c_legion_construction_level_up_end		= 12130;
+	e_msgindex_c2s_legion_get_construction_buff			= 12131;
+	e_msgindex_s2c_legion_get_construction_buff_end		= 12132;
+	e_msgindex_c2s_legion_donate_money					= 12133;
+	e_msgindex_c2s_legion_donate_item					= 12134;
+	e_msgindex_s2c_legion_donate_end					= 12135;
+	e_msgindex_c2s_update_legion_announcement			= 12136;
+	e_msgindex_s2c_update_legion_announcement_end		= 12137;
+	e_msgindex_c2s_get_legion_event_list				= 12138;
+	e_msgindex_s2c_get_legion_event_list_end			= 12139;
+	e_msgindex_c2s_kickout_legion_member				= 12140;
+	e_msgindex_s2c_kickout_legion_member_end			= 12141;
+	e_msgindex_c2s_appoint_legion_member_job_title		= 12142;
+	e_msgindex_s2c_appoint_legion_member_job_title_end	= 12143;
+	e_msgindex_c2s_enter_legion_boss_map				= 12144;
+	e_msgindex_s2c_kill_legion_boss						= 12145;
+	e_msgindex_s2c_legion_boss_record					= 12146;
+	e_msgindex_s2c_legion_boss_record_list				= 12147;
+	e_msgindex_c2s_get_legion_boss_award				= 12148;
+	e_msgindex_s2c_get_legion_boss_award_end			= 12149;
+	e_msgindex_c2s_get_banquet_info						= 12150;
+	e_msgindex_s2c_get_banquet_info_end					= 12151;
+	e_msgindex_c2s_request_hold_banquet					= 12152;
+	e_msgindex_s2c_request_hold_banquet_end				= 12153;
+	e_msgindex_c2s_take_part_in_banquet					= 12154;
+	e_msgindex_s2c_take_part_in_banquet_end				= 12155;
+	e_msgindex_c2s_get_city_war_info					= 12156;
+	e_msgindex_s2c_get_city_war_info_end				= 12157;
+	e_msgindex_c2s_apply_city_war_bid					= 12158;
+	e_msgindex_s2c_apply_city_war_bid_end				= 12159;
+	e_msgindex_c2s_entry_city_war_map					= 12160;
+	e_msgindex_c2s_city_war_operate						= 12161;
+	e_msgindex_s2c_city_war_operate_end					= 12162;
+	e_msgindex_s2c_city_war_raid_info					= 12163;
+	e_msgindex_s2c_city_war_update_role_score			= 12164;
+	e_msgindex_s2c_city_war_over						= 12165;
+	e_msgindex_c2s_set_auto_accept_new_member_setting	= 12166;
+	e_msgindex_s2c_set_player_legion_aoi_info			= 12167;
+	e_msgindex_s2c_clear_player_legion_aoi_info			= 12168;
+	e_msgindex_s2c_set_player_legion_boss_award_get_log	= 12169;
+	e_msgindex_c2s_get_city_master_info					= 12170;
+	e_msgindex_s2c_get_city_master_info_end				= 12171;
+	e_msgindex_c2s_get_occupation_daily_award			= 12172;
+	e_msgindex_s2c_get_occupation_daily_award_end		= 12173;
+	e_msgindex_c2s_get_legion_rank						= 12174;
+	e_msgindex_s2c_get_legion_rank_end					= 12175;
+	e_msgindex_s2c_legion_error							= 12176;
+	e_msgindex_c2s_create_bonfire						= 12177;
+	e_msgindex_s2c_bonfire_info							= 12178;
+	e_msgindex_c2s_add_fuel_to_bonfire					= 12179;
+	e_msgindex_s2c_member_add_fuel_info					= 12180;
+	e_msgindex_c2s_legion_recruit_in_world				= 12181;
+	e_msgindex_s2c_legion_recruit_in_world_end			= 12182;
+	e_msgindex_c2s_legion_call_operate					= 12183;
+	e_msgindex_s2c_legion_call_operate_end				= 12184;
+	e_msgindex_s2c_bonfire_dead							= 12185;
+	e_msgindex_s2c_suck_blood_value						= 12186;
+	e_msgindex_s2c_update_legion_auction_selling		= 12187;
+	e_msgindex_c2s_legion_territory_buff_operate		= 12188;
+	e_msgindex_s2c_legion_bonfire_map_info				= 12189;
+	e_msgindex_c2s_goto_next_stage_of_bonfire_map		= 12190;
+	e_msgindex_c2s_transfer_to_bonfire_map				= 12191;
+	e_msgindex_s2c_entry_city_war_map_end				= 12192;
+	e_msgindex_s2c_notice_new_item_in_legion_auction	= 12193;
+	e_msgindex_c2s_get_bonus_rewards					= 12194;
+	e_msgindex_s2c_get_bonus_rewards_end				= 12195;
+	e_msgindex_s2c_legion_bonus_info					= 12196;
+	e_msgindex_s2c_legion_bonus_info_one				= 12197;
+	e_msgindex_s2c_abstention_city_msg					= 12198;
+	e_msgindex_c2s_stimulate_bonus_msg					= 12199;
+	e_msgindex_s2c_update_legion_gs_value				= 12200;
+
+	// chat
+	e_msgindex_c2s_send_globel_message					= 12201;
+	e_msgindex_c2s_send_chat_message					= 12202;
+	e_msgindex_c2s_send_chat_message_with_item_info		= 12203;
+	e_msgindex_s2c_receive_globel_message				= 12204;
+	e_msgindex_s2c_receive_chat_message					= 12205;
+	e_msgindex_s2c_receive_chat_message_with_item_info	= 12206;
+	e_msgindex_c2s_send_notice							= 12207;
+	e_msgindex_s2c_receive_notice						= 12208;
+	e_msgindex_c2s_send_chat							= 12209;
+	e_msgindex_s2c_receive_chat							= 12210;
+	e_msgindex_s2c_send_chat_result						= 12211;
+	e_msgindex_c2s_send_chat_message_new				= 12212;
+	e_msgindex_s2c_receive_chat_new						= 12213;
+	e_msgindex_c2s_send_recruit_message					= 12214;
+	e_msgindex_s2c_receive_recruit_message				= 12215;
+	e_msgindex_s2c_update_recruit_member_num			= 12216;
+	e_msgindex_s2c_send_recruit_result					= 12217;
+	e_msgindex_s2c_reveive_legion_recruit				= 12218;
+	e_msgindex_c2s_send_audio							= 12219;
+	e_msgindex_s2c_receive_audio						= 12220;
+	e_msgindex_c2s_send_quick_chat						= 12221;
+	e_msgindex_s2c_receive_quick_chat					= 12222;
+	e_msgindex_c2s_send_notice_with_param				= 12223;
+	e_msgindex_s2c_receive_notice_with_param			= 12224;
+	e_msgindex_s2c_receive_top_tip						= 12225;
+	e_msgindex_c2s_join_voice_channel					= 12226;
+	e_msgindex_s2c_join_voice_channel_end				= 12227;
+	e_msgindex_s2c_invite_join_voice_channel			= 12228;
+	e_msgindex_s2c_join_or_leave_voice_channel_notice	= 12229;
+
+
+	//daily_must_do
+	e_msgindex_s2c_update_three_day_must_do_remain		= 12301;
+	e_msgindex_c2s_find_back_must_do_resource			= 12302;
+	e_msgindex_s2c_find_back_must_do_resource_end		= 12303;
+	e_msgindex_s2c_update_daily_must_do_count_one		= 12304;
+	e_msgindex_s2c_update_daily_must_do_count_all = 12305;
+
+	//convert
+	e_msgindex_s2c_convert_update_one					= 12401;
+	e_msgindex_s2c_convert_update_all					= 12402;
+	e_msgindex_c2s_convert_opereate						= 12403;
+	e_msgindex_s2c_convert_operate_end					= 12404;
+
+	//vip
+	e_msgindex_c2s_get_vip_item							= 12501;
+	e_msgindex_s2c_get_vip_item_end						= 12502;
+	e_msgindex_c2s_recharge								= 12503;
+	e_msgindex_s2c_recharge_end							= 12504;
+	e_msgindex_c2s_recharge_widget_type					= 12505;
+	e_msgindex_s2c_dead_recharge_end					= 12506;
+
+	//talent
+	e_msgindex_s2c_talent_info_all						= 12551;
+	e_msgindex_s2c_talent_info_one						= 12552;
+	e_msgindex_c2s_talent_level_up						= 12553;
+	e_msgindex_s2c_talent_level_up_end					= 12554;
+	e_msgindex_c2s_talent_reset							= 12555;
+
+	//welfare
+	e_msgindex_s2c_send_welfare_info_one				= 12601;
+	e_msgindex_s2c_send_welfare_info_all				= 12602;
+	e_msgindex_s2c_send_active_degree_info				= 12603;
+	e_msgindex_c2s_get_welfare							= 12604;
+	e_msgindex_s2c_get_welfare_end						= 12605;
+	e_msgindex_c2s_get_welfare_activatecode				= 12606;
+	e_msgindex_s2c_send_random_get_info					= 12607;
+	e_msgindex_s2c_active_degree_finish					= 12608;
+	e_msgindex_c2s_get_reward_check_in					= 12609;
+	e_msgindex_c2s_req_frist_kill_world_boss_prize      = 12610;
+	e_msgindex_c2s_get_first_recharge_time              = 12611;
+	e_msgindex_s2c_get_first_recharge_time_end          = 12612;
+
+
+	//cross
+	e_msgindex_s2c_cross_transfer	                    = 12701;
+	e_msgindex_c2s_cross_transfer	                    = 12702;
+	e_msgindex_c2s_cross_cross_info						= 12703;
+	e_msgindex_s2c_cross_cross_info						= 12704;
+	e_msgindex_c2s_cross_sign_up						= 12705;
+	e_msgindex_s2c_cross_sign_up						= 12706;
+	e_msgindex_s2c_cross_begin_war						= 12707;
+	e_msgindex_c2s_cross_join_war						= 12708;
+	e_msgindex_s2c_cross_join_war						= 12709;
+	e_msgindex_s2c_cross_war_result						= 12710;
+	e_msgindex_c2s_cross_war_log						= 12711;
+	e_msgindex_s2c_cross_war_log						= 12712;
+	e_msgindex_s2c_cross_game_state						= 12713;
+
+	//move
+	e_msgindex_s2c_move									= 12800;
+	e_msgindex_s2c_rotation								= 12801;
+
+	//world_boss
+	e_msgindex_s2c_update_world_boss					= 12901;
+	e_msgindex_c2s_get_world_boss_rank					= 12902;
+	e_msgindex_s2c_kill_boss							= 12903;
+	e_msgindex_c2s_kill_boss							= 12904;
+
+	//growup_fund
+	e_msgindex_c2s_get_growup_fund						= 13001;
+	e_msgindex_s2c_get_growup_fund_end					= 13002;
+	e_msgindex_c2s_purchase_growup_fund					= 13003;
+	e_msgindex_s2c_purchase_growup_fund_end				= 13004;
+
+	//title
+	e_msgindex_c2s_title_equip_operate					= 13201;
+	e_msgindex_s2c_title_title_info_one					= 13202;
+	e_msgindex_s2c_title_title_msg_one					= 13203;
+	e_msgindex_s2c_title_own_title_msg_all				= 13204;
+	e_msgindex_s2c_title_add_title_end					= 13205;
+	e_msgindex_s2c_title_open_title_system_end			= 13206;
+	e_msgindex_c2s_title_set_title_no_need_see			= 13207;
+
+	//big_player
+	e_msgindex_s2c_update_big_player_statue_guid		= 13301;
+	e_msgindex_c2s_worship								= 13302;
+	e_msgindex_s2c_worship_end							= 13303;
+
+	//red_package
+	e_msgindex_c2s_send_red_package						= 13401;
+	e_msgindex_s2c_send_red_package_end					= 13402;
+	e_msgindex_s2c_load_role_ws_info_end				= 13403;
+	e_msgindex_s2c_update_role_ws_info_one				= 13404;
+	e_msgindex_c2s_get_red_package						= 13405;
+	e_msgindex_s2c_get_red_package_end					= 13406;
+	e_msgindex_s2c_update_red_bag_info					= 13407;
+	e_msgindex_s2c_del_red_bag_info						= 13408;
+	e_msgindex_s2c_update_new_draw_info					= 13409;
+
+	// first_time_do
+	e_msgindex_s2c_first_do_record						= 13501;
+	e_msgindex_s2c_update_first_time_do_records			= 13502;
+	e_msgindex_c2s_add_first_time_do_record				= 13503;
+	e_msgindex_s2c_sync_first_time_do_record			= 13504;
+
+	// ralation
+	e_msgindex_c2s_req_friend_userinfo		= 13601;
+	e_msgindex_s2c_ret_friend_userinfo		= 13602;
+	e_msgindex_c2s_addfriend				= 13603;
+	e_msgindex_s2c_addfriend				= 13604;
+	e_msgindex_s2c_otheraddfriend			= 13605;
+	e_msgindex_c2s_delfriend				= 13606;
+	e_msgindex_s2c_delfriend				= 13607;
+	e_msgindex_s2c_syc_full_friend_list		= 13608;
+	e_msgindex_c2s_addblacklist				= 13609;
+	e_msgindex_s2c_addblacklist				= 13610;
+	e_msgindex_c2s_delblacklist				= 13611;
+	e_msgindex_s2c_delblacklist				= 13612;
+	e_msgindex_s2c_syc_full_black_list		= 13613;
+	e_msgindex_s2c_syn_loverinfo			= 13614;
+	e_msgindex_c2s_req_marrage				= 13615;
+	e_msgindex_s2c_ret_marrage				= 13616;
+	e_msgindex_c2s_addhatelist				= 13617;
+	e_msgindex_s2c_addhatelist				= 13618;
+	e_msgindex_c2s_delhatelist				= 13619;
+	e_msgindex_s2c_delhatelist				= 13620;
+	e_msgindex_s2c_syc_full_hate_list		= 13621;
+	e_msgindex_s2c_syc_full_other_req_list   = 13622;
+	e_msgindex_s2c_syc_friend_state			= 13623;
+	e_msgindex_c2s_add_friendliness_value	= 13624;
+	e_msgindex_s2c_ret_friendliness_value	= 13625;
+	e_msgindex_c2s_req_syc_relation_state	= 13626;
+	e_msgindex_s2c_ret_relation_state		= 13627;
+	e_msgindex_c2s_req_syc_nearly_state		= 13628;
+	e_msgindex_s2c_ret_syc_nearly_state		= 13629;
+	e_msgindex_s2c_ret_operate_relation_result = 13630;
+	e_msgindex_c2s_operate_other_add_req	= 13631;
+	e_msgindex_s2c_marry_operate_result		= 13632;
+	e_msgindex_c2s_reply_marry_choice		= 13633;
+	e_msgindex_c2s_req_couple_info			= 13634;
+	e_msgindex_s2c_ret_couple_info			= 13635;
+	e_msgindex_c2s_req_divorce				= 13636;
+	e_msgindex_c2s_req_marry_get_reward		= 13637;
+	e_msgindex_s2c_send_marry_effect_notice	= 13638;
+	e_msgindex_c2s_req_upgrade_wedding_ring	= 13639;
+	e_msgindex_s2c_upgrade_wedding_ring_result	= 13640;
+	e_msgindex_s2c_update_marry_info		= 13641;
+	e_msgindex_c2s_req_get_marry_mission		= 13642;
+	e_msgindex_s2c_confirm_receive_marry_mission	= 13643;
+	e_msgindex_c2s_confirm_receive_marry_mission	= 13644;
+	e_msgindex_c2s_req_bless_one_couple		= 13645;
+	e_msgindex_s2c_bless_one_couple_result	= 13646;
+	
+	e_msgindex_c2s_get_marry_examination	= 13647;
+	e_msgindex_s2c_confirm_marry_examination = 13648;
+	e_msgindex_c2s_confirm_marry_examination = 13649;
+	e_msgindex_c2s_operate_marry_examination = 13650;
+	e_msgindex_s2c_sync_marry_examination = 13651;
+	e_msgindex_s2c_operate_marry_examination = 13652;
+	e_msgindex_c2s_req_use_fireworks = 13653;
+	e_msgindex_c2s_req_lucky_info = 13654;
+	e_msgindex_s2c_ret_lucky_info_vec = 13655;
+	e_mgsindex_s2c_ret_special_lucky_info = 13656;
+	e_mgsindex_s2c_sync_marry_heart_value = 13657;
+	e_mgsindex_c2s_add_use_power_up			= 13658;
+	
+	//auction
+	e_msgindex_c2s_auction_operate			= 13701;
+	e_msgindex_s2c_auction_operate_end		= 13702;
+	e_msgindex_c2s_auction_seach			= 13703;
+	e_msgindex_s2c_update_selling_info		= 13704;
+	e_msgindex_s2c_receieve_sell_success	= 13705;
+	e_msgindex_c2s_req_auction_list			= 13706;
+	e_msgindex_s2c_req_auction_list_end		= 13707;
+	e_msgindex_c2s_req_trade_record			= 13708;
+	e_msgindex_s2c_req_trade_record_end		= 13709;
+	e_msgindex_c2s_req_another_sell_info	= 13710;
+	e_msgindex_s2c_req_another_sell_info_end= 13711;
+	e_msgindex_c2s_req_self_bid_list		= 13712;
+	e_msgindex_s2c_bid_are_overtaken		= 13713;
+	e_msgindex_s2c_auction_sell_flag		= 13714;
+	e_mgsindex_s2c_update_bid_record_failure   = 13715;
+	e_msgindex_s2c_update_bid_notice           = 13716;
+	e_msgindex_s2c_update_bid_notice_red       = 13717;
+
+
+	// service_goal
+	e_msgindex_s2c_service_goal_one				= 13801;
+	e_msgindex_s2c_service_goal_all				= 13802;
+	e_msgindex_c2s_service_goal_operate			= 13803;
+	e_msgindex_s2c_service_goal_operate_end		= 13804;
+	e_msgindex_s2c_seven_day_goal_one			= 13805;
+	e_msgindex_s2c_seven_day_goal_all			= 13806;
+	e_msgindex_c2s_seven_day_goal_operate		= 13807;
+	e_msgindex_s2c_seven_day_goal_operate_end	= 13808;
+
+	//trade
+	e_msgindex_c2s_trade_operate			= 13901;
+	e_msgindex_s2c_trade_operate_end		= 13902;
+
+	// interaction_proto
+	e_msgindex_c2s_c_s_interaction_invite			= 14001;
+	e_msgindex_s2c_s_c_interaction_invite			= 14002;
+	e_msgindex_c2s_c_s_interaction_invite_reply		= 14003;
+	e_msgindex_s2c_s_c_interaction_invite_reply		= 14004;
+	e_msgindex_c2s_c_s_real_start_interaction		= 14005;
+	e_msgindex_s2c_s_c_real_start_interaction		= 14006;
+	e_msgindex_c2s_c_s_stop_interaction				= 14007;
+	e_msgindex_s2c_s_c_stop_interaction				= 14008;
+	e_msgindex_s2c_interaction_invite_end			= 14009;
+	e_msgindex_c2s_interaction_invite_start			= 14010;
+	
+	// Buff
+	e_msgindex_c2s_buff_operation						= 14101;
+	e_msgindex_s2c_buff_operation						= 14102;
+	e_msgindex_s2c_buff_damage							= 14103;
+	e_msgindex_s2c_buff_info_all						= 14104;
+
+	// OtherUnit
+	e_msgindex_c2s_find_other_unit						= 14151;
+	e_msgindex_s2c_find_other_unit_base_end				= 14152;
+	e_msgindex_s2c_find_other_unit_equiping_one			= 14153;
+	e_msgindex_s2c_find_other_unit_equiping_end			= 14154;
+	e_msgindex_s2c_find_other_unit_buff_equip_end		= 14155;
+	e_msgindex_s2c_find_other_unit_special_name_end		= 14156;
+	e_msgindex_s2c_find_other_unit_base_group_end		= 14157;
+	e_msgindex_c2s_find_other_unit_lua 					= 14158;
+	
+	// ExpRaid
+	e_msgindex_c2s_add_damage_buff_in_expraid			= 14200;
+	e_msgindex_s2c_add_damage_buff_in_expraid_end		= 14201;
+	
+	//RaidCount
+	e_msgindex_c2s_buy_raid_count						= 14250;
+	e_msgindex_s2c_buy_raid_count_end					= 14251;
+
+	//cloud shop
+	e_msgindex_c2s_cloud_shop_req						= 14301;
+	e_msgindex_s2c_cloud_shop_resp						= 14302;
+
+	//time limit activity
+	e_msgindex_s2c_time_limit_activity_template			= 14357;
+	e_msgindex_c2s_buy_time_limit_item					= 14358;
+	e_msgindex_s2c_buy_time_limit_item_end				= 14359;
+
+	// belief rune
+	e_msgindex_c2s_belief_rune_equip_on                 = 14400;
+	e_msgindex_c2s_belief_rune_equip_levelup            = 14401;
+	e_msgindex_c2s_belief_rune_equip_decompose          = 14402;
+	e_msgindex_s2c_belief_rune_operate_result			= 14403;
+	e_msgindex_s2c_belief_cloister_point_update 		= 14404;
+	
+	//reply client
+	e_msgindex_s2c_reply_map_targger_volume				= 14500;
+	
+	//cross_server_pk
+	e_msgindex_c2s_transfer_to_cross_server_pk_map   	= 14600;
+	e_msgindex_s2c_cross_server_pk_msg_info_one			= 14601;
+	e_msgindex_s2c_cross_server_pk_msg_info_all			= 14602;
+	e_msgindex_s2c_cross_pk_map_msg						= 14603;
+	e_msgindex_s2c_pk_map_island_state_msg				= 14604;
+	e_msgindex_s2c_clear_pk_msg_all						= 14605;
+	e_msgindex_s2c_pk_state_end							= 14606;
+	e_msgindex_c2s_back_to_self_server					= 14607;
+	
+	//time limit activity new
+	e_msgindex_s2c_time_limit_update_all_behavior 		= 14700;
+	e_msgindex_s2c_time_limit_update_one_behavior		= 14701;
+	e_msgindex_s2c_time_limit_update_sub_rank	 		= 14702;
+	e_msgindex_s2c_time_limit_update_sub_no_rank 		= 14703;
+	e_msgindex_s2c_time_limit_update_all_open_act 		= 14704;
+	e_msgindex_c2s_time_limit_get_act_reward	 		= 14705;
+	e_msgindex_c2s_time_limit_get_my_rank		 		= 14706;
+	e_msgindex_s2c_time_limit_update_common_data		= 14707;
+	e_msgindex_c2s_time_limit_get_common_data 			= 14708;
+	e_msgindex_c2s_time_limit_add_schedule				= 14709;
+	e_msgindex_s2c_time_limit_send_diamond_shop_info	= 14712;
+	e_msgindex_c2s_time_limit_buy_diamond_shop			= 14713;
+	e_msgindex_s2c_time_limit_buy_diamond_shop_end		= 14714;
+	e_msgindex_s2c_send_star_trip_info_all				= 14715;
+	e_msgindex_s2c_send_star_trip_goods_info_one		= 14716;
+	e_msgindex_s2c_send_star_trip_mission_info_one		= 14717;
+	e_msgindex_c2s_star_trip_operate					= 14718;
+	e_msgindex_s2c_star_trip_operate_end				= 14719;
+	
+	//cross_server_harry
+	e_msgindex_s2c_cross_server_harry_msg_info_all		= 14800;
+	e_msgindex_s2c_cross_server_harry_msg_info_one		= 14801;
+	e_msgindex_s2c_role_harry_msg_info_one				= 14802;
+	e_msgindex_s2c_role_harry_msg_info_all				= 14803;
+	e_msgindex_c2s_give_server_item_to_npc				= 14804;
+	e_msgindex_c2s_transfer_to_harry_map				= 14805;
+
+	//cross_ladder
+	e_msgindex_c2s_cross_ladder_request_role_info		= 14900;
+	e_msgindex_s2c_cross_ladder_send_role_info			= 14901;
+	e_msgindex_c2s_cross_ladder_request_sign_up			= 14902;
+	e_msgindex_s2c_cross_ladder_respond_sign_up			= 14903;
+	e_msgindex_s2c_cross_ladder_send_match_success		= 14904;
+	e_msgindex_c2s_cross_ladder_request_buy_join_ticket	= 14905;
+	e_msgindex_s2c_cross_ladder_respond_buy_join_ticket	= 14906;
+	e_msgindex_s2c_cross_ladder_update_map_game_state	= 14907;
+	e_msgindex_c2s_cross_ladder_req_mission_reward		= 14908;
+	e_msgindex_s2c_cross_ladder_ret_mission_reward		= 14909;
+	e_msgindex_s2c_cross_ladder_send_upgrade_notify		= 14910;
+	e_msgindex_c2s_cross_ladder_return_to_source_zone	= 14911;
+
+	//cross_server_world_boss
+	e_msgindex_s2c_world_boss_map_transfer_with_gate_msg	= 15100;
+	e_msgindex_c2s_transfer_to_cross_server_world_boss_map	= 15101;
+	e_msgindex_c2s_get_cross_boss_show_info					= 15102;
+	e_msgindex_s2c_set_cross_boss_show_info					= 15103;
+	e_msgindex_c2s_get_cross_boss_damage_list				= 15104;
+	e_msgindex_s2c_send_cross_boss_damage_list				= 15105;
+	e_msgindex_s2c_send_boss_god_begin_time					= 15106;
+	e_msgindex_s2c_send_boss_is_dead						= 15107;
+	e_msgindex_c2s_send_get_boss_is_dead					= 15108;
+	e_msgindex_s2c_send_boss_god_time						= 15109;
+	e_msgindex_c2s_get_boss_god_time						= 15110;
+	
+	//oracle_trial(天启试炼)
+	e_msgindex_s2c_send_oracle_trial_info_all				= 15300;
+	e_msgindex_c2s_send_oracle_trial_commpingup				= 15301;
+	e_msgindex_s2c_oracle_trial_commpingup_end				= 15302;
+	e_msgindex_c2s_get_oracle_trial_customs_award			= 15303;
+	e_msgindex_s2c_send_oracle_trial_customs_award_end		= 15304;
+	e_msgindex_c2s_get_oracle_trial_rank					= 15305;
+	e_msgindex_s2c_get_oracle_trial_rank_end				= 15306;
+	e_msgindex_s2c_send_oracle_trial_funben_over_info		= 15307;
+	e_msgindex_s2c_oracle_trial_template					= 15308;
+	
+	//legion_station
+	e_msgindex_c2s_join_legion_station_map					= 15400;
+	e_msgindex_c2s_add_legion_boss_damage					= 15401;
+	e_msgindex_s2c_add_legion_boss_damage_end				= 15402;
+	e_msgindex_s2c_add_legion_damage_big_player				= 15403;
+	
+	
+	//assist_fight
+	e_msgindex_c2s_start_assist_fight           			= 15601;
+	e_msgindex_c2s_get_assist_fight_info           			= 15602;
+	e_msgindex_s2c_sycn_assist_fight_info           	    = 15603;
+	e_msgindex_c2s_req_assist_fight                  	    = 15604;
+	e_msgindex_c2s_cancel_assist_fight                 	    = 15605;
+	e_msgindex_s2c_sync_assist_fight_state            	    = 15606;
+	e_msgindex_s2c_assist_fight_end_to_show_reward          = 15607;
+	e_msgindex_s2c_assist_fight_end_to_show_thank_reward    = 15608;
+	e_msgindex_c2s_create_assist_fight_npc					= 15609;
+	e_msgindex_s2c_send_be_assist_fight_tip					= 15610;
+	
+	//daemon
+	e_msgindex_s2d_send_server_info_to_daemon				= 65000;
+	e_msgindex_d2s_close_process							= 65001;
+	e_msgindex_d2s_gm_order									= 65002;
+	e_msgindex_s2d_order_end								= 65003;
+	e_msgindex_s2d_send_string_to_eye						= 65004;
+	
+
+	
+	//legion_dance
+	e_msgindex_c2s_get_map_legion_player					= 15500;	//获取共舞玩家列表
+	e_msgindex_s2c_send_map_legion_player					= 15501;	//发送共舞玩家列表
+	e_mgsindex_c2s_invite_legion_dance						= 15502;	//邀请玩家进行共舞
+	e_mgsindex_s2c_invite_legion_dance_end					= 15503;	//邀请共舞结果返回
+	e_mgsindex_s2c_be_invite_legion_dance					= 15504;	//向被邀请玩家发送请求共舞邀请
+	e_mgsindex_c2s_be_invite_legion_dance_end				= 15505;	//被邀请玩家返回邀请
+	e_mgsindex_c2s_legion_dance_end							= 15506;	//共舞结束
+	e_mgsindex_s2c_legion_dance_interaction_begin			= 15507;	//军团共舞交互开始
+	e_mgsindex_c2s_legion_dance_interaction_end				= 15508;	//军团共舞交互结束
+	e_mgsindex_s2c_legion_Dance_clear_data					= 15509;	//进入军团地图时发送一次清理拒绝信息
+	
+	
+	e_mgsindex_s2c_legion_add_bonfire_end					= 15510;
+	
+	//legion
+	e_mgsindex_s2c_legion_pdate_legion_member_gs_value		= 15700;
+	e_mgsindex_s2c_legion_pdate_legion_member_contribution	= 15701;
+	
+	//check_in
+	e_mgsindex_c2s_get_cumulative_sign_in_reward			= 15800;
+	e_mgsindex_s2c_get_cumulative_sign_in_reward_end		= 15801;				
+	e_mgsindex_c2s_retroactive_all_days						= 15802;
+	e_mgsindex_s2c_retroactive_all_days_end					= 15803;
+
+	//pk_king
+	e_mgsindex_s2c_send_player_check_kill_num				= 15900;	//发送玩家连杀提示
+	e_mgsindex_s2c_refresh_player_pk_king_info				= 15901;	//刷新玩家信息
+	e_mgsindex_s2c_refresh_pk_king_map_state				= 15902;	//刷新地图状态
+	e_mgsindex_s2c_send_pk_king_rank_info					= 15903;	//发送游戏排名列表
+	e_mgsindex_s2c_send_need_break_line_login				= 15904;	//是否需要重连
+	e_mgsindex_c2s_send_need_break_line_login_end			= 15905;	//是否进行重连
+	e_mgsindex_s2c_send_create_pk_end_time					= 15906;	//发送创建倒计时消息	//server_act_hid
+	e_mgsindex_s2c_send_pk_king_target_list_msg				= 15907;	//发送目标列表	
+	
+	e_mgsindex_s2c_send_server_act_is_open					= 16000;	//特殊逻辑
+	
+	//ElementWar
+	e_mgsindex_s2c_element_war_send_upgrade_notify			= 16100;	//发送段位提升提示
+	e_mgsindex_c2s_element_war_send_sign_up					= 16101;	//发送开始匹配
+	e_mgsindex_s2c_element_war_send_sign_up_end				= 16102;	//匹配结果回复
+	e_mgsindex_c2s_element_war_send_sign_up_team_ready		= 16103;	//发送准备完毕
+	e_mgsindex_s2c_element_war_send_sign_up_team_ready_end	= 16104;	//准备完成提示
+	e_mgsindex_c2s_element_war_send_close_sign_up			= 16105;	//取消匹配
+	e_mgsindex_s2c_element_war_send_close_sign_up_end		= 16106;	//取消匹配结果
+	e_mgsindex_s2c_element_war_send_role_info				= 16107;	//发送角色信息
+	e_msgindex_s2c_element_war_send_match_success			= 16108;	//发送匹配成功提示
+	e_msgindex_s2c_element_war_send_map_info				= 16109;	//发送地图信息
+	e_msgindex_s2c_element_war_send_map_role_info			= 16110;	//发送地图个人信息
+	e_msgindex_s2c_element_war_end_info						= 16111;	//发送地图比赛结果
+	e_msgindex_s2c_element_war_send_boss_be_attack			= 16112;	//发送boss被攻击
+	e_mgsindex_c2s_element_war_get_mission_reward			= 16113;	//获取每日任务奖励
+	e_mgsindex_s2c_element_war_get_mission_reward_end		= 16114;	//获取奖励结果
+	e_mgsindex_c2s_element_war_get_role_info				= 16115;	//获取个人信息
+	e_mgsindex_c2s_element_war_buy_ticket					= 16116;	//购买次数
+	e_mgsindex_s2c_element_war_buy_ticket_end				= 16117;	//购买次数结果
+	e_mgsindex_s2c_element_war_send_create_ready_ui			= 16118;	//发送创建准备Ui
+	e_mgsindex_s2c_element_war_create_boss_dead				= 16119;	//创建boss死亡提示Ui
+	e_mgsindex_s2c_element_war_send_map_rank_info			= 16120;	//发送地图排名信息
+	e_mgsindex_s2c_send_map_target_show_info				= 16121;	//发送地图标记信息
+	e_mgsindex_c2s_get_map_target_show_info					= 16122;	//发送地图标记信息
+	
+	//skytreasure
+	e_msgindex_s2c_skytreasure_all							= 16200;	//天空宝库获得物品信息
+	e_msgindex_c2s_skytreasure_operate						= 16201;	//发送宝库操作
+	e_msgindex_s2c_skytreasure_operate_end					= 16202;	//获取宝库操作结果
+	
+	//starark
+	e_msgindex_s2c_starark_all							    = 16203;	
+	e_msgindex_c2s_starark_operate						    = 16204;	
+	e_msgindex_s2c_starark_operate_end					    = 16205;	
+	
+	//legion_world_boss
+	e_msgindex_s2c_legion_strategy_world_boss_info			=16206;	//军团世界boss攻略信息
+	e_msgindex_c2s_request_legion_strategy_world_boss_info		=16207;	//请求攻略世界boss信息
+	e_msgindex_s2c_send_legion_strategy_world_boss_info		=16208;	//发送世界boss攻略信息
+	e_msgindex_s2c_all_world_boss_info				=16209;	//对应阶段所有世界boss信息
+	e_msgindex_s2c_world_boss_strategy_result			=16210;	//军团世界boss攻略结果	
+	e_msgindex_c2s_request_world_boss_info				=16211;	//请求世界boss信息
+	
+	e_msgindex_s2c_starark_five_round_rewad_list			= 16212;
+
+	
+	//server message-------
+	e_msg_dp2ws_get_game_info							= 1311;
+	e_msg_dp2ws_load_character							= 1337;
+	e_msg_dp2ws_load_arena_rank							= 32901;
+	e_msg_dp2ws_create_robot							= 32919;
+	e_msg_dp2ws_load_finish								= 32920;
+	e_msg_dp2ws_load_all_ranking_info					= 33101;
+	e_msg_dp2ws_load_ranking_info_one					= 33107;
+	e_msg_dp2ws_get_worship_value_end					= 33111;
+	e_msg_dp2ws_load_all_service_rank_info				= 33116;
+	e_msg_dp2ws_load_server_list_end					= 1335;
+	e_msg_dp2ws_gm_set_result							= 1332;
+	e_msg_dp2ws_save_recharge							= 1319;
+	e_msg_dp2ws_send_recharge_end						= 1321;
+	e_msg_dp2ws_rep_query_server_info_gm				= 3003;
+	e_msg_dp2ws_gm_change_name							= 1327;
+	e_msg_dp2ws_gm_get_role_info						= 1314;
+	e_msg_dp2ws_gm_modify_role_info						= 1317;
+	
+	
+	//test serverws2dp
+	e_msg_s2s_test_msg									= 20001;
+	e_msg_ws2dp_gm_open_time							= 1323;
+	e_msg_ws2dp_set_cross_time							= 1331;
+	e_msg_ws2dp_gm_change_password						= 1324;
+	e_msg_ws2dp_gm_begin_cross							= 1325;
+	e_msg_ws2dp_save_server_list						= 1333;
+	e_msg_ws2dp_load_server_list						= 1334;
+	e_msg_ws2dp_set_role_right							= 1312;
+	e_msg_ws2dp_gm_change_name							= 1326;
+	e_msg_ws2dp_gm_del_cache							= 1328;
+	e_msg_ws2dp_gm_del_role								= 1329;
+	e_msg_ws2dp_gm_stop_login							= 1330;
+	e_msg_ws2dp_load_character							= 1336;
+	e_msg_ws2dp_gm_get_role_info						= 1313;
+	e_msg_ws2dp_gm_modify_role_info						= 1316;
+	e_msg_ws2dp_gm_get_role_items_info					= 1322;
+	e_msg_ws2dp_load_relation_info						= 1371;
+	e_msg_ws2dp_req_load_relation_list					= 1373;
+	e_msg_ws2dp_add_relation							= 1377;
+	e_msg_ws2dp_del_relation							= 1379;
+	e_msg_ws2dp_check_id_mail							= 32804;
+	e_msg_ws2dp_save_arena_rank_change					= 32904;
+	e_msg_ws2dp_save_other_server_mail_record			= 32819;
+	e_msg_ws2dp_load_other_server_mail					= 32814;
+	e_msg_ws2dp_del_other_server_mail					= 32818;
+	e_msg_ws2dp_load_all_ranking_info					= 33100;
+	e_msg_ws2dp_save_ranking_info_one					= 33108;
+	e_msg_ws2dp_load_all_service_rank_info				= 33115;
+	e_msg_ws2dp_save_ranking_worship					= 33102;
+	e_msg_ws2dp_get_worship_value						= 33110;
+	e_msg_ws2dp_save_legion_info						= 33502;
+	e_msg_ws2dp_save_legion_member_info					= 33510;
+	e_msg_ws2dp_save_legion_city_war_member_info		= 33511;
+	e_msg_ws2dp_delete_legion_info						= 33503;
+	e_msg_ws2dp_delete_legion_member_info				= 33504;
+	e_msg_ws2dp_delete_legion_city_war_member_info		= 33505;
+	e_msg_ws2dp_del_legion_applicant_one				= 33515;
+	e_msg_ws2dp_save_legion_applicant					= 33514;
+	e_msg_ws2dp_save_legion_boss_award_get_log			= 33522;
+	e_msg_ws2dp_load_all_legion_boss_award_get_log		= 33520;
+	e_msg_ws2dp_save_city_info							= 33525;
+	e_msg_ws2dp_save_war_bid_info						= 33528;
+	e_msg_ws2dp_clear_war_bid_info						= 33529;
+	e_msg_ws2dp_clear_overlord_legion_stuff				= 33530;
+	e_msg_ws2dp_save_legion_event						= 33533;
+	e_msg_ws2dp_clear_legion_event						= 33535;
+	e_msg_ws2dp_save_legion_bonus_info					= 33536;
+	e_msg_ws2dp_clear_legion_bonus_info					= 33539;	
+	e_msg_ws2dp_save_server_attr_val					= 1695;
+	e_msg_ws2dp_load_server_attr_val					= 1693;
+	e_msg_ws2dp_load_cross_city_info					= 33548;
+	e_msg_ws2dp_save_cross_city_info					= 33552;
+	e_msg_ws2dp_clear_cross_city_info					= 33555;
+	e_msg_ws2dp_save_best_record						= 33902;
+	e_msg_ws2dp_load_all_best_record					= 33900;		
+	e_msg_ws2dp_save_gain_treasure_record_info			= 35104;
+	e_msg_ws2dp_ws2dp_load_all_gain_treasure_record_info= 35102;
+	e_msg_ws2dp_save_cross_server_pk_info				= 35800;
+	e_msg_ws2dp_save_load_cross_server_pk_info			= 35801;
+	e_msg_ws2dp_save_clear_cross_server_pk_info			= 35803;
+	e_msg_ws2dp_save_cross_server_harry_info			= 36000;
+	e_msg_ws2dp_save_load_cross_server_harry_info		= 36001;
+	e_msg_ws2dp_save_send_del_one_server_msg			= 36024;
+	e_msg_ws2dp_save_load_load_harry_player_detail		= 36012;
+	e_msg_ws2dp_load_role_pk_top						= 33700;
+	e_msg_ws2dp_load_role_pk_info						= 33702;
+	e_msg_ws2dp_save_role_pk_info						= 33705;
+	e_msg_ws2dp_save_role_pk_honor_refresh				= 33706;
+	e_msg_ws2dp_load_role_pk_log						= 33707;
+	e_msg_ws2dp_save_mail_event							= 33002;
+	e_msg_ws2dp_save_red_pack							= 33015;
+	e_msg_ws2dp_load_red_pack							= 33016;
+	e_msg_ws2dp_load_red_pack_receiver					= 33017;
+	e_msg_ws2dp_add_red_pack_to_sql						= 33018;
+	e_msg_ws2dp_add_red_pack_receiver_to_sql			= 33019;
+	e_msg_ws2dp_del_red_pack_by_sql						= 33020;
+	e_msg_ws2dp_save_mail_event_item					= 33003;
+	e_msg_ws2dp_load_mail_event							= 33004;
+	e_msg_ws2dp_load_mail_event_item					= 33005;
+	e_msg_ws2dp_save_new_globel_mail_had_info			= 33009;
+	
+	e_msg_ws2dp_save_world_boss							= 33800;
+	e_msg_ws2dp_load_world_boss							= 33801;
+	e_msg_ws2dp_del_draw_info_to_db						= 34501;
+	e_msg_ws2dp_add_draw_info_to_db						= 34500;
+	e_msg_ws2dp_load_info_from_db						= 34502;
+	e_msg_ws2dp_save_big_player							= 34000;
+	e_msg_ws2dp_load_big_player							= 34001;
+	e_msg_ws2dp_load_big_player_detail					= 34002;
+	e_msg_ws2dp_add_auction_into_db						= 34701;
+	e_msg_ws2dp_auction_find_buy_target					= 34705;
+	e_msg_ws2dp_auction_cancel_sell						= 34714;
+	e_msg_ws2dp_auction_find_bid_target					= 34725;
+	e_msg_ws2dp_bid_success								= 34730;
+	e_msg_ws2dp_auction_clear_old_item					= 34732;
+	e_msg_ws2dp_auction_add_share_list					= 34734;
+	e_msg_ws2dp_auction_add_purchase_record				= 34710;
+	e_msg_ws2dp_auction_req_share_list					= 34735;
+	e_msg_ws2dp_auction_check_legion_selling			= 34738;
+	e_msg_ws2dp_auction_del_bid_record					= 34741;
+	e_msg_ws2dp_auction_clear_old_bid_record			= 34742;
+	e_msg_ws2dp_auction_show_sell						= 34745;
+	e_msg_ws2dp_auction_time_out						= 34747;
+	
+	e_msg_ws2dp_save_marry_info							= 34900;
+	e_msg_ws2dp_load_marry_info							= 34902;
+	e_msg_ws2dp_marry_get_last_login_time				= 34909;
+	e_msg_ws2dp_load_marry_info_cross_server			= 34916;
+	e_msg_ws2dp_load_cloud_shop_players_info			= 35300;
+	e_msg_ws2dp_save_cloud_shop_players_info			= 35302;
+	e_msg_ws2dp_clear_cloud_shop_player_info			= 35303;
+	e_msg_ws2dp_check_player_name						= 1385;
+	e_msg_ws2dp_change_player_name						= 1387;
+	e_msg_ws2dp_save_chat_with_offline					= 33310;
+	e_msg_ws2dp_load_chat_with_offline					= 33311;
+	e_msg_ws2dp_eliminate_chat_with_offline				= 33313;
+	e_msg_ws2dp_auction_check_world_sell				= 34743;
+	e_msg_ws2dp_update_role_time_limit					= 35414;
+	e_msg_ws2dp_delete_time_limit_temp					= 35415;
+	e_msg_ws2dp_delete_time_limit_branch_temp			= 35416;
+	e_msg_ws2dp_refresh_role_time_limit_guid			= 35417;
+	
+	
+	e_msgindex_s2c_refresh_lucky_card_info				= 16300;	// 刷新福牌所有信息
+	e_msgindex_s2c_refresh_lucky_card					= 16301;	// 刷新指定牌
+	e_msgindex_c2s_lucky_card_operate					= 16302;	// 客户端发送操作请求
+	e_msgindex_s2c_lucky_card_operate_end				= 16303;	// 服务器返回操作结果
+	
+		
+	e_msgindex_s2c_send_new_server_treasure_finish		= 16400;
+	
+	e_msgindex_c2s_transfer_attack_city_map				= 16500;	// 传送到地图
+	e_msgindex_s2c_send_attack_city_map_legion_info		= 16501;	// 发送地图军团信息
+	e_msgindex_c2s_get_attack_city_info					= 16502;	// 获取活动信息
+	e_msgindex_c2s_get_attack_city_rank_list			= 16503;	// 获取排名
+	e_msgindex_c2s_get_attack_city_map_rank_list		= 16504;	// 获取排名
+	e_msgindex_c2s_attack_city_operate					= 16505;	// 玩家交互
+	e_msgindex_s2c_attack_city_operate_end				= 16506;	// 交互结果
+	e_msgindex_s2c_attack_city_npc_list					= 16507;	// npc信息
+	e_msgindex_s2c_attack_city_camp_cut					= 16508;	// 转换信息
+	e_msgindex_c2s_transfer_to_bron_pos					= 16509;	// 传送到复活点
+	e_msgindex_s2c_attack_city_legion_info				= 16510;	// 发送军团
+	e_msgindex_s2c_attack_city_end_info					= 16511;	// 发送结束信息
+	e_msgindex_s2c_attack_city_legion_rank_info			= 16512;	// 发送军团排名信息
+	e_msgindex_s2c_attack_city_legion_map_end			= 16513;	// 地图结算信息
+	e_msgindex_c2s_attack_legion_call					= 16514;	// 发送军团召集
+	e_msgindex_s2c_attack_transfer_info					= 16515;	// 传送结束
+	e_msgindex_c2s_end_attack_transfer_info				= 16516;	// 中断传送
+	e_msgindex_s2c_attack_city_npc_state_change_info	= 16517;	// 发送NPC状态信息
+	
+	e_msgindex_c2s_time_feed_back_operation				= 16520;	// 时光回溯操作
+	e_msgindex_s2c_time_feed_back_operation_end			= 16521;	// 时光回溯操作结果
+	e_msgindex_s2c_send_time_feed_back_info				= 16522;	// 发送时光回溯数据
+	
+	e_msgindex_c2s_time_limit_gift_operation			= 16530;	// 限时礼包操作
+	e_msgindex_s2c_time_limit_gift_operation_end		= 16531;	// 限时礼包操作结果
+	e_msgindex_s2c_update_time_limit_gift				= 16532;	// 发送限时礼包数据
+	e_msgindex_s2c_initiative_time_limit_gift			= 16533;	// 主动触发礼包
+	
+	e_msgindex_s2c_limit_time_notice_info_list			= 16540;	// 发送限时公告信息
+	
+	e_msgindex_c2s_send_subscribe_daily					= 16550;	
+	e_msgindex_s2c_send_subscribe_daily_end				= 16551;
+	e_msgindex_s2c_send_subscribe_daily_info			= 16552;
+	
+	e_msgindex_s2c_send_offline_award					= 16600;	// 发送离线奖励
+	e_msgindex_c2s_get_offline_award					= 16601;	// 获取离线奖励
+	e_msgindex_c2s_get_online_award						= 16602;	// 获取在线奖励
+	
+	
+	e_msgindex_c2s_map_search							= 16700;	// 发送探索地图
+	e_msgindex_s2c_map_search_end						= 16701;	// 获取探索地图结果
+	e_msgindex_c2s_upgrade_search_level					= 16702;	// 发送升级探索等级
+	e_msgindex_s2c_upgrade_search_level_end				= 16703;	// 升级探索等级结果
+	e_msgindex_c2s_get_npc_award						= 16704;	// 发送获取NPC奖励
+	e_msgindex_c2s_get_npc_award_end					= 16705;	// 获取奖励结果
+	e_msgindex_s2c_box_map_info							= 16706;	// 宝箱获取数量
+	e_msgindex_c2s_open_treasuer_pic					= 16707;	// 开启藏宝图
+	e_msgindex_c2s_get_treasuer_award					= 16708;	// 发送选择宝藏选项
+	e_msgindex_s2c_map_settlement						= 16709;	// 地图结算
+	e_msgindex_c2s_map_anim_end							= 16710;	// 动画完毕加载新的npc
+	e_msgindex_c2s_refrush_award_npc					= 16711;	// 重刷所有的奖励NPC
+	e_msgindex_c2s_search_award_npc						= 16712;	// 获取下一个奖励NPC
+	e_msgindex_s2c_search_award_npc_end					= 16713;	// 获取下一个奖励NPC结果
+	
+
+}

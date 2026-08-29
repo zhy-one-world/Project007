@@ -14,7 +14,7 @@
 #include <unordered_map>
 #include <login_msg.hpp>
 
-namespace hld
+namespace faith
 {
 	struct s_re_login_info
 	{

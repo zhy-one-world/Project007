@@ -1,7 +1,7 @@
 #pragma once
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class skill_set;
 	class skill_proto_skill_operation;

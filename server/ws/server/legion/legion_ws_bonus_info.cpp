@@ -4,7 +4,7 @@
 #include <legion_msg.hpp>
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	legion_ws_bonus_info::legion_ws_bonus_info()
 	{

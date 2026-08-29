@@ -1,6 +1,6 @@
 #include "SkillResTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void SkillResTemplateSize()
     {

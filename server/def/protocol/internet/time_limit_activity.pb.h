@@ -27,7 +27,7 @@
 #include "ranking.pb.h"
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_time_5flimit_5factivity_2eproto();
@@ -119,24 +119,24 @@ class time_limit_activity_proto_all_open_activity_message : public ::google::pro
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.time_limit_activity_proto.one_open_activity_message activity_message = 1;
+  // repeated .faith.time_limit_activity_proto.one_open_activity_message activity_message = 1;
   inline int activity_message_size() const;
   inline void clear_activity_message();
   static const int kActivityMessageFieldNumber = 1;
-  inline const ::hld::time_limit_activity_proto_one_open_activity_message& activity_message(int index) const;
-  inline ::hld::time_limit_activity_proto_one_open_activity_message* mutable_activity_message(int index);
-  inline ::hld::time_limit_activity_proto_one_open_activity_message* add_activity_message();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_one_open_activity_message >&
+  inline const ::faith::time_limit_activity_proto_one_open_activity_message& activity_message(int index) const;
+  inline ::faith::time_limit_activity_proto_one_open_activity_message* mutable_activity_message(int index);
+  inline ::faith::time_limit_activity_proto_one_open_activity_message* add_activity_message();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_one_open_activity_message >&
       activity_message() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_one_open_activity_message >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_one_open_activity_message >*
       mutable_activity_message();
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.all_open_activity_message)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.all_open_activity_message)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_one_open_activity_message > activity_message_;
+  ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_one_open_activity_message > activity_message_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -246,7 +246,7 @@ class time_limit_activity_proto_one_open_activity_message : public ::google::pro
   inline ::google::protobuf::int32 activity_start_sub_temp_id() const;
   inline void set_activity_start_sub_temp_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.one_open_activity_message)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.one_open_activity_message)
  private:
   inline void set_has_activity_temp_id();
   inline void clear_has_activity_temp_id();
@@ -350,7 +350,7 @@ class time_limit_activity_proto_activity_tempid_and_flag : public ::google::prot
   inline ::google::protobuf::int32 activity_reward_flag() const;
   inline void set_activity_reward_flag(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.activity_tempid_and_flag)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.activity_tempid_and_flag)
  private:
   inline void set_has_activity_temp_id();
   inline void clear_has_activity_temp_id();
@@ -442,16 +442,16 @@ class time_limit_activity_proto_norank_type_activity_message : public ::google::
   inline ::google::protobuf::int32 activity_value() const;
   inline void set_activity_value(::google::protobuf::int32 value);
 
-  // repeated .hld.time_limit_activity_proto.activity_tempid_and_flag act_msg = 3;
+  // repeated .faith.time_limit_activity_proto.activity_tempid_and_flag act_msg = 3;
   inline int act_msg_size() const;
   inline void clear_act_msg();
   static const int kActMsgFieldNumber = 3;
-  inline const ::hld::time_limit_activity_proto_activity_tempid_and_flag& act_msg(int index) const;
-  inline ::hld::time_limit_activity_proto_activity_tempid_and_flag* mutable_act_msg(int index);
-  inline ::hld::time_limit_activity_proto_activity_tempid_and_flag* add_act_msg();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_activity_tempid_and_flag >&
+  inline const ::faith::time_limit_activity_proto_activity_tempid_and_flag& act_msg(int index) const;
+  inline ::faith::time_limit_activity_proto_activity_tempid_and_flag* mutable_act_msg(int index);
+  inline ::faith::time_limit_activity_proto_activity_tempid_and_flag* add_act_msg();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_activity_tempid_and_flag >&
       act_msg() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_activity_tempid_and_flag >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_activity_tempid_and_flag >*
       mutable_act_msg();
 
   // optional int32 act_guid = 4;
@@ -461,7 +461,7 @@ class time_limit_activity_proto_norank_type_activity_message : public ::google::
   inline ::google::protobuf::int32 act_guid() const;
   inline void set_act_guid(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.norank_type_activity_message)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.norank_type_activity_message)
  private:
   inline void set_has_activity_type();
   inline void clear_has_activity_type();
@@ -474,7 +474,7 @@ class time_limit_activity_proto_norank_type_activity_message : public ::google::
 
   ::google::protobuf::int32 activity_type_;
   ::google::protobuf::int32 activity_value_;
-  ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_activity_tempid_and_flag > act_msg_;
+  ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_activity_tempid_and_flag > act_msg_;
   ::google::protobuf::int32 act_guid_;
 
   mutable int _cached_size_;
@@ -557,28 +557,28 @@ class time_limit_activity_proto_rank_type_activity_message : public ::google::pr
   inline ::google::protobuf::int32 rank_value() const;
   inline void set_rank_value(::google::protobuf::int32 value);
 
-  // repeated .hld.ranking_proto.ranking_player_info top_info_arr = 3;
+  // repeated .faith.ranking_proto.ranking_player_info top_info_arr = 3;
   inline int top_info_arr_size() const;
   inline void clear_top_info_arr();
   static const int kTopInfoArrFieldNumber = 3;
-  inline const ::hld::ranking_proto_ranking_player_info& top_info_arr(int index) const;
-  inline ::hld::ranking_proto_ranking_player_info* mutable_top_info_arr(int index);
-  inline ::hld::ranking_proto_ranking_player_info* add_top_info_arr();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info >&
+  inline const ::faith::ranking_proto_ranking_player_info& top_info_arr(int index) const;
+  inline ::faith::ranking_proto_ranking_player_info* mutable_top_info_arr(int index);
+  inline ::faith::ranking_proto_ranking_player_info* add_top_info_arr();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info >&
       top_info_arr() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info >*
       mutable_top_info_arr();
 
-  // repeated .hld.ranking_proto.ranking_player_info self_info_arr = 4;
+  // repeated .faith.ranking_proto.ranking_player_info self_info_arr = 4;
   inline int self_info_arr_size() const;
   inline void clear_self_info_arr();
   static const int kSelfInfoArrFieldNumber = 4;
-  inline const ::hld::ranking_proto_ranking_player_info& self_info_arr(int index) const;
-  inline ::hld::ranking_proto_ranking_player_info* mutable_self_info_arr(int index);
-  inline ::hld::ranking_proto_ranking_player_info* add_self_info_arr();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info >&
+  inline const ::faith::ranking_proto_ranking_player_info& self_info_arr(int index) const;
+  inline ::faith::ranking_proto_ranking_player_info* mutable_self_info_arr(int index);
+  inline ::faith::ranking_proto_ranking_player_info* add_self_info_arr();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info >&
       self_info_arr() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info >*
       mutable_self_info_arr();
 
   // optional int32 act_guid = 5;
@@ -588,7 +588,7 @@ class time_limit_activity_proto_rank_type_activity_message : public ::google::pr
   inline ::google::protobuf::int32 act_guid() const;
   inline void set_act_guid(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.rank_type_activity_message)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.rank_type_activity_message)
  private:
   inline void set_has_activity_type();
   inline void clear_has_activity_type();
@@ -601,8 +601,8 @@ class time_limit_activity_proto_rank_type_activity_message : public ::google::pr
 
   ::google::protobuf::int32 activity_type_;
   ::google::protobuf::int32 rank_value_;
-  ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info > top_info_arr_;
-  ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info > self_info_arr_;
+  ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info > top_info_arr_;
+  ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info > self_info_arr_;
   ::google::protobuf::int32 act_guid_;
 
   mutable int _cached_size_;
@@ -678,7 +678,7 @@ class time_limit_activity_proto_get_rank_type_activity_message : public ::google
   inline ::google::protobuf::int32 activity_type() const;
   inline void set_activity_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.get_rank_type_activity_message)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.get_rank_type_activity_message)
  private:
   inline void set_has_activity_type();
   inline void clear_has_activity_type();
@@ -767,16 +767,16 @@ class time_limit_activity_proto_all_behavior_type_activity_message : public ::go
   inline ::google::protobuf::int32 activity_sub_id() const;
   inline void set_activity_sub_id(::google::protobuf::int32 value);
 
-  // repeated .hld.time_limit_activity_proto.one_behavior_message all_msg = 3;
+  // repeated .faith.time_limit_activity_proto.one_behavior_message all_msg = 3;
   inline int all_msg_size() const;
   inline void clear_all_msg();
   static const int kAllMsgFieldNumber = 3;
-  inline const ::hld::time_limit_activity_proto_one_behavior_message& all_msg(int index) const;
-  inline ::hld::time_limit_activity_proto_one_behavior_message* mutable_all_msg(int index);
-  inline ::hld::time_limit_activity_proto_one_behavior_message* add_all_msg();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_one_behavior_message >&
+  inline const ::faith::time_limit_activity_proto_one_behavior_message& all_msg(int index) const;
+  inline ::faith::time_limit_activity_proto_one_behavior_message* mutable_all_msg(int index);
+  inline ::faith::time_limit_activity_proto_one_behavior_message* add_all_msg();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_one_behavior_message >&
       all_msg() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_one_behavior_message >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_one_behavior_message >*
       mutable_all_msg();
 
   // optional int32 act_guid = 4;
@@ -786,7 +786,7 @@ class time_limit_activity_proto_all_behavior_type_activity_message : public ::go
   inline ::google::protobuf::int32 act_guid() const;
   inline void set_act_guid(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.all_behavior_type_activity_message)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.all_behavior_type_activity_message)
  private:
   inline void set_has_activity_type();
   inline void clear_has_activity_type();
@@ -799,7 +799,7 @@ class time_limit_activity_proto_all_behavior_type_activity_message : public ::go
 
   ::google::protobuf::int32 activity_type_;
   ::google::protobuf::int32 activity_sub_id_;
-  ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_one_behavior_message > all_msg_;
+  ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_one_behavior_message > all_msg_;
   ::google::protobuf::int32 act_guid_;
 
   mutable int _cached_size_;
@@ -882,7 +882,7 @@ class time_limit_activity_proto_one_behavior_message : public ::google::protobuf
   inline ::google::protobuf::int32 behavior_value() const;
   inline void set_behavior_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.one_behavior_message)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.one_behavior_message)
  private:
   inline void set_has_behavior_idex();
   inline void clear_has_behavior_idex();
@@ -995,7 +995,7 @@ class time_limit_activity_proto_one_behavior_type_activity_message : public ::go
   inline ::google::protobuf::int32 act_guid() const;
   inline void set_act_guid(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.one_behavior_type_activity_message)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.one_behavior_type_activity_message)
  private:
   inline void set_has_activity_type();
   inline void clear_has_activity_type();
@@ -1103,7 +1103,7 @@ class time_limit_activity_proto_time_limit_activity_send_get_award : public ::go
   inline ::google::protobuf::int32 param_int_1() const;
   inline void set_param_int_1(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.time_limit_activity_send_get_award)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.time_limit_activity_send_get_award)
  private:
   inline void set_has_activity_id();
   inline void clear_has_activity_id();
@@ -1184,7 +1184,7 @@ class time_limit_activity_proto_get_all_common_data_message : public ::google::p
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.get_all_common_data_message)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.get_all_common_data_message)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1256,24 +1256,24 @@ class time_limit_activity_proto_all_common_data_message : public ::google::proto
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.time_limit_activity_proto.common_data_message data_list = 1;
+  // repeated .faith.time_limit_activity_proto.common_data_message data_list = 1;
   inline int data_list_size() const;
   inline void clear_data_list();
   static const int kDataListFieldNumber = 1;
-  inline const ::hld::time_limit_activity_proto_common_data_message& data_list(int index) const;
-  inline ::hld::time_limit_activity_proto_common_data_message* mutable_data_list(int index);
-  inline ::hld::time_limit_activity_proto_common_data_message* add_data_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_common_data_message >&
+  inline const ::faith::time_limit_activity_proto_common_data_message& data_list(int index) const;
+  inline ::faith::time_limit_activity_proto_common_data_message* mutable_data_list(int index);
+  inline ::faith::time_limit_activity_proto_common_data_message* add_data_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_common_data_message >&
       data_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_common_data_message >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_common_data_message >*
       mutable_data_list();
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.all_common_data_message)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.all_common_data_message)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_common_data_message > data_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_common_data_message > data_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -1355,7 +1355,7 @@ class time_limit_activity_proto_common_data_message : public ::google::protobuf:
   inline ::google::protobuf::int32 data_num() const;
   inline void set_data_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.common_data_message)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.common_data_message)
  private:
   inline void set_has_data_id();
   inline void clear_has_data_id();
@@ -1454,7 +1454,7 @@ class time_limit_activity_proto_add_activity_schedule : public ::google::protobu
   inline ::google::protobuf::int32 schedule_index() const;
   inline void set_schedule_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.add_activity_schedule)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.add_activity_schedule)
  private:
   inline void set_has_add_type();
   inline void clear_has_add_type();
@@ -1549,7 +1549,7 @@ class time_limit_activity_proto_buy_time_limit_item : public ::google::protobuf:
   inline ::google::protobuf::int32 buy_num() const;
   inline void set_buy_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.buy_time_limit_item)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.buy_time_limit_item)
  private:
   inline void set_has_activity_type();
   inline void clear_has_activity_type();
@@ -1641,7 +1641,7 @@ class time_limit_activity_proto_buy_time_limit_item_end : public ::google::proto
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.buy_time_limit_item_end)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.buy_time_limit_item_end)
  private:
   inline void set_has_activity_type();
   inline void clear_has_activity_type();
@@ -1719,16 +1719,16 @@ class time_limit_activity_proto_diamond_shop_info : public ::google::protobuf::M
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.time_limit_activity_proto.diamond_shop_sub_info goods_info = 1;
+  // repeated .faith.time_limit_activity_proto.diamond_shop_sub_info goods_info = 1;
   inline int goods_info_size() const;
   inline void clear_goods_info();
   static const int kGoodsInfoFieldNumber = 1;
-  inline const ::hld::time_limit_activity_proto_diamond_shop_sub_info& goods_info(int index) const;
-  inline ::hld::time_limit_activity_proto_diamond_shop_sub_info* mutable_goods_info(int index);
-  inline ::hld::time_limit_activity_proto_diamond_shop_sub_info* add_goods_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_diamond_shop_sub_info >&
+  inline const ::faith::time_limit_activity_proto_diamond_shop_sub_info& goods_info(int index) const;
+  inline ::faith::time_limit_activity_proto_diamond_shop_sub_info* mutable_goods_info(int index);
+  inline ::faith::time_limit_activity_proto_diamond_shop_sub_info* add_goods_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_diamond_shop_sub_info >&
       goods_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_diamond_shop_sub_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_diamond_shop_sub_info >*
       mutable_goods_info();
 
   // optional int32 is_free = 2;
@@ -1738,14 +1738,14 @@ class time_limit_activity_proto_diamond_shop_info : public ::google::protobuf::M
   inline ::google::protobuf::int32 is_free() const;
   inline void set_is_free(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.diamond_shop_info)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.diamond_shop_info)
  private:
   inline void set_has_is_free();
   inline void clear_has_is_free();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_diamond_shop_sub_info > goods_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_diamond_shop_sub_info > goods_info_;
   ::google::protobuf::int32 is_free_;
 
   mutable int _cached_size_;
@@ -1828,7 +1828,7 @@ class time_limit_activity_proto_diamond_shop_sub_info : public ::google::protobu
   inline ::google::protobuf::int32 goods_state() const;
   inline void set_goods_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.diamond_shop_sub_info)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.diamond_shop_sub_info)
  private:
   inline void set_has_goods_index();
   inline void clear_has_goods_index();
@@ -1913,7 +1913,7 @@ class time_limit_activity_proto_buy_diamond_shop : public ::google::protobuf::Me
   inline ::google::protobuf::int32 buy_index() const;
   inline void set_buy_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.buy_diamond_shop)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.buy_diamond_shop)
  private:
   inline void set_has_buy_index();
   inline void clear_has_buy_index();
@@ -1995,7 +1995,7 @@ class time_limit_activity_proto_buy_diamond_shop_end : public ::google::protobuf
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.buy_diamond_shop_end)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.buy_diamond_shop_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -2119,7 +2119,7 @@ class time_limit_activity_proto_star_trip_goods_info : public ::google::protobuf
   inline ::google::protobuf::int32 buy_num() const;
   inline void set_buy_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.star_trip_goods_info)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.star_trip_goods_info)
  private:
   inline void set_has_show_index();
   inline void clear_has_show_index();
@@ -2268,7 +2268,7 @@ class time_limit_activity_proto_star_trip_mission_info : public ::google::protob
   inline ::google::protobuf::int32 is_get() const;
   inline void set_is_get(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.star_trip_mission_info)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.star_trip_mission_info)
  private:
   inline void set_has_show_index();
   inline void clear_has_show_index();
@@ -2364,14 +2364,14 @@ class time_limit_activity_proto_send_star_trip_goods_info_one : public ::google:
 
   // accessors -------------------------------------------------------
 
-  // optional .hld.time_limit_activity_proto.star_trip_goods_info goods_info = 1;
+  // optional .faith.time_limit_activity_proto.star_trip_goods_info goods_info = 1;
   inline bool has_goods_info() const;
   inline void clear_goods_info();
   static const int kGoodsInfoFieldNumber = 1;
-  inline const ::hld::time_limit_activity_proto_star_trip_goods_info& goods_info() const;
-  inline ::hld::time_limit_activity_proto_star_trip_goods_info* mutable_goods_info();
-  inline ::hld::time_limit_activity_proto_star_trip_goods_info* release_goods_info();
-  inline void set_allocated_goods_info(::hld::time_limit_activity_proto_star_trip_goods_info* goods_info);
+  inline const ::faith::time_limit_activity_proto_star_trip_goods_info& goods_info() const;
+  inline ::faith::time_limit_activity_proto_star_trip_goods_info* mutable_goods_info();
+  inline ::faith::time_limit_activity_proto_star_trip_goods_info* release_goods_info();
+  inline void set_allocated_goods_info(::faith::time_limit_activity_proto_star_trip_goods_info* goods_info);
 
   // optional int32 cur_source = 2;
   inline bool has_cur_source() const;
@@ -2380,7 +2380,7 @@ class time_limit_activity_proto_send_star_trip_goods_info_one : public ::google:
   inline ::google::protobuf::int32 cur_source() const;
   inline void set_cur_source(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.send_star_trip_goods_info_one)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.send_star_trip_goods_info_one)
  private:
   inline void set_has_goods_info();
   inline void clear_has_goods_info();
@@ -2389,7 +2389,7 @@ class time_limit_activity_proto_send_star_trip_goods_info_one : public ::google:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::time_limit_activity_proto_star_trip_goods_info* goods_info_;
+  ::faith::time_limit_activity_proto_star_trip_goods_info* goods_info_;
   ::google::protobuf::int32 cur_source_;
 
   mutable int _cached_size_;
@@ -2458,14 +2458,14 @@ class time_limit_activity_proto_send_star_trip_mission_info_one : public ::googl
 
   // accessors -------------------------------------------------------
 
-  // optional .hld.time_limit_activity_proto.star_trip_mission_info mission_info = 1;
+  // optional .faith.time_limit_activity_proto.star_trip_mission_info mission_info = 1;
   inline bool has_mission_info() const;
   inline void clear_mission_info();
   static const int kMissionInfoFieldNumber = 1;
-  inline const ::hld::time_limit_activity_proto_star_trip_mission_info& mission_info() const;
-  inline ::hld::time_limit_activity_proto_star_trip_mission_info* mutable_mission_info();
-  inline ::hld::time_limit_activity_proto_star_trip_mission_info* release_mission_info();
-  inline void set_allocated_mission_info(::hld::time_limit_activity_proto_star_trip_mission_info* mission_info);
+  inline const ::faith::time_limit_activity_proto_star_trip_mission_info& mission_info() const;
+  inline ::faith::time_limit_activity_proto_star_trip_mission_info* mutable_mission_info();
+  inline ::faith::time_limit_activity_proto_star_trip_mission_info* release_mission_info();
+  inline void set_allocated_mission_info(::faith::time_limit_activity_proto_star_trip_mission_info* mission_info);
 
   // optional int32 cur_source = 2;
   inline bool has_cur_source() const;
@@ -2474,7 +2474,7 @@ class time_limit_activity_proto_send_star_trip_mission_info_one : public ::googl
   inline ::google::protobuf::int32 cur_source() const;
   inline void set_cur_source(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.send_star_trip_mission_info_one)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.send_star_trip_mission_info_one)
  private:
   inline void set_has_mission_info();
   inline void clear_has_mission_info();
@@ -2483,7 +2483,7 @@ class time_limit_activity_proto_send_star_trip_mission_info_one : public ::googl
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::time_limit_activity_proto_star_trip_mission_info* mission_info_;
+  ::faith::time_limit_activity_proto_star_trip_mission_info* mission_info_;
   ::google::protobuf::int32 cur_source_;
 
   mutable int _cached_size_;
@@ -2552,28 +2552,28 @@ class time_limit_activity_proto_send_star_trip_info_all : public ::google::proto
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.time_limit_activity_proto.star_trip_goods_info goods_list = 1;
+  // repeated .faith.time_limit_activity_proto.star_trip_goods_info goods_list = 1;
   inline int goods_list_size() const;
   inline void clear_goods_list();
   static const int kGoodsListFieldNumber = 1;
-  inline const ::hld::time_limit_activity_proto_star_trip_goods_info& goods_list(int index) const;
-  inline ::hld::time_limit_activity_proto_star_trip_goods_info* mutable_goods_list(int index);
-  inline ::hld::time_limit_activity_proto_star_trip_goods_info* add_goods_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_star_trip_goods_info >&
+  inline const ::faith::time_limit_activity_proto_star_trip_goods_info& goods_list(int index) const;
+  inline ::faith::time_limit_activity_proto_star_trip_goods_info* mutable_goods_list(int index);
+  inline ::faith::time_limit_activity_proto_star_trip_goods_info* add_goods_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_star_trip_goods_info >&
       goods_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_star_trip_goods_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_star_trip_goods_info >*
       mutable_goods_list();
 
-  // repeated .hld.time_limit_activity_proto.star_trip_mission_info mission_list = 2;
+  // repeated .faith.time_limit_activity_proto.star_trip_mission_info mission_list = 2;
   inline int mission_list_size() const;
   inline void clear_mission_list();
   static const int kMissionListFieldNumber = 2;
-  inline const ::hld::time_limit_activity_proto_star_trip_mission_info& mission_list(int index) const;
-  inline ::hld::time_limit_activity_proto_star_trip_mission_info* mutable_mission_list(int index);
-  inline ::hld::time_limit_activity_proto_star_trip_mission_info* add_mission_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_star_trip_mission_info >&
+  inline const ::faith::time_limit_activity_proto_star_trip_mission_info& mission_list(int index) const;
+  inline ::faith::time_limit_activity_proto_star_trip_mission_info* mutable_mission_list(int index);
+  inline ::faith::time_limit_activity_proto_star_trip_mission_info* add_mission_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_star_trip_mission_info >&
       mission_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_star_trip_mission_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_star_trip_mission_info >*
       mutable_mission_list();
 
   // optional int32 need_tip = 3;
@@ -2597,7 +2597,7 @@ class time_limit_activity_proto_send_star_trip_info_all : public ::google::proto
   inline ::google::protobuf::int32 cur_source() const;
   inline void set_cur_source(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.send_star_trip_info_all)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.send_star_trip_info_all)
  private:
   inline void set_has_need_tip();
   inline void clear_has_need_tip();
@@ -2608,8 +2608,8 @@ class time_limit_activity_proto_send_star_trip_info_all : public ::google::proto
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_star_trip_goods_info > goods_list_;
-  ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_star_trip_mission_info > mission_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_star_trip_goods_info > goods_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_star_trip_mission_info > mission_list_;
   ::google::protobuf::int32 need_tip_;
   ::google::protobuf::int32 target_day_;
   ::google::protobuf::int32 cur_source_;
@@ -2701,7 +2701,7 @@ class time_limit_activity_proto_star_trip_operate : public ::google::protobuf::M
   inline ::google::protobuf::int32 parame2() const;
   inline void set_parame2(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.star_trip_operate)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.star_trip_operate)
  private:
   inline void set_has_operate_type();
   inline void clear_has_operate_type();
@@ -2810,7 +2810,7 @@ class time_limit_activity_proto_star_trip_operate_end : public ::google::protobu
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto.star_trip_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto.star_trip_operate_end)
  private:
   inline void set_has_operate_type();
   inline void clear_has_operate_type();
@@ -2922,7 +2922,7 @@ class time_limit_activity_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.time_limit_activity_proto)
+  // @@protoc_insertion_point(class_scope:faith.time_limit_activity_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2945,27 +2945,27 @@ class time_limit_activity_proto : public ::google::protobuf::Message {
 
 // time_limit_activity_proto_all_open_activity_message
 
-// repeated .hld.time_limit_activity_proto.one_open_activity_message activity_message = 1;
+// repeated .faith.time_limit_activity_proto.one_open_activity_message activity_message = 1;
 inline int time_limit_activity_proto_all_open_activity_message::activity_message_size() const {
   return activity_message_.size();
 }
 inline void time_limit_activity_proto_all_open_activity_message::clear_activity_message() {
   activity_message_.Clear();
 }
-inline const ::hld::time_limit_activity_proto_one_open_activity_message& time_limit_activity_proto_all_open_activity_message::activity_message(int index) const {
+inline const ::faith::time_limit_activity_proto_one_open_activity_message& time_limit_activity_proto_all_open_activity_message::activity_message(int index) const {
   return activity_message_.Get(index);
 }
-inline ::hld::time_limit_activity_proto_one_open_activity_message* time_limit_activity_proto_all_open_activity_message::mutable_activity_message(int index) {
+inline ::faith::time_limit_activity_proto_one_open_activity_message* time_limit_activity_proto_all_open_activity_message::mutable_activity_message(int index) {
   return activity_message_.Mutable(index);
 }
-inline ::hld::time_limit_activity_proto_one_open_activity_message* time_limit_activity_proto_all_open_activity_message::add_activity_message() {
+inline ::faith::time_limit_activity_proto_one_open_activity_message* time_limit_activity_proto_all_open_activity_message::add_activity_message() {
   return activity_message_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_one_open_activity_message >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_one_open_activity_message >&
 time_limit_activity_proto_all_open_activity_message::activity_message() const {
   return activity_message_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_one_open_activity_message >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_one_open_activity_message >*
 time_limit_activity_proto_all_open_activity_message::mutable_activity_message() {
   return &activity_message_;
 }
@@ -3202,27 +3202,27 @@ inline void time_limit_activity_proto_norank_type_activity_message::set_activity
   activity_value_ = value;
 }
 
-// repeated .hld.time_limit_activity_proto.activity_tempid_and_flag act_msg = 3;
+// repeated .faith.time_limit_activity_proto.activity_tempid_and_flag act_msg = 3;
 inline int time_limit_activity_proto_norank_type_activity_message::act_msg_size() const {
   return act_msg_.size();
 }
 inline void time_limit_activity_proto_norank_type_activity_message::clear_act_msg() {
   act_msg_.Clear();
 }
-inline const ::hld::time_limit_activity_proto_activity_tempid_and_flag& time_limit_activity_proto_norank_type_activity_message::act_msg(int index) const {
+inline const ::faith::time_limit_activity_proto_activity_tempid_and_flag& time_limit_activity_proto_norank_type_activity_message::act_msg(int index) const {
   return act_msg_.Get(index);
 }
-inline ::hld::time_limit_activity_proto_activity_tempid_and_flag* time_limit_activity_proto_norank_type_activity_message::mutable_act_msg(int index) {
+inline ::faith::time_limit_activity_proto_activity_tempid_and_flag* time_limit_activity_proto_norank_type_activity_message::mutable_act_msg(int index) {
   return act_msg_.Mutable(index);
 }
-inline ::hld::time_limit_activity_proto_activity_tempid_and_flag* time_limit_activity_proto_norank_type_activity_message::add_act_msg() {
+inline ::faith::time_limit_activity_proto_activity_tempid_and_flag* time_limit_activity_proto_norank_type_activity_message::add_act_msg() {
   return act_msg_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_activity_tempid_and_flag >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_activity_tempid_and_flag >&
 time_limit_activity_proto_norank_type_activity_message::act_msg() const {
   return act_msg_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_activity_tempid_and_flag >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_activity_tempid_and_flag >*
 time_limit_activity_proto_norank_type_activity_message::mutable_act_msg() {
   return &act_msg_;
 }
@@ -3297,52 +3297,52 @@ inline void time_limit_activity_proto_rank_type_activity_message::set_rank_value
   rank_value_ = value;
 }
 
-// repeated .hld.ranking_proto.ranking_player_info top_info_arr = 3;
+// repeated .faith.ranking_proto.ranking_player_info top_info_arr = 3;
 inline int time_limit_activity_proto_rank_type_activity_message::top_info_arr_size() const {
   return top_info_arr_.size();
 }
 inline void time_limit_activity_proto_rank_type_activity_message::clear_top_info_arr() {
   top_info_arr_.Clear();
 }
-inline const ::hld::ranking_proto_ranking_player_info& time_limit_activity_proto_rank_type_activity_message::top_info_arr(int index) const {
+inline const ::faith::ranking_proto_ranking_player_info& time_limit_activity_proto_rank_type_activity_message::top_info_arr(int index) const {
   return top_info_arr_.Get(index);
 }
-inline ::hld::ranking_proto_ranking_player_info* time_limit_activity_proto_rank_type_activity_message::mutable_top_info_arr(int index) {
+inline ::faith::ranking_proto_ranking_player_info* time_limit_activity_proto_rank_type_activity_message::mutable_top_info_arr(int index) {
   return top_info_arr_.Mutable(index);
 }
-inline ::hld::ranking_proto_ranking_player_info* time_limit_activity_proto_rank_type_activity_message::add_top_info_arr() {
+inline ::faith::ranking_proto_ranking_player_info* time_limit_activity_proto_rank_type_activity_message::add_top_info_arr() {
   return top_info_arr_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info >&
 time_limit_activity_proto_rank_type_activity_message::top_info_arr() const {
   return top_info_arr_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info >*
 time_limit_activity_proto_rank_type_activity_message::mutable_top_info_arr() {
   return &top_info_arr_;
 }
 
-// repeated .hld.ranking_proto.ranking_player_info self_info_arr = 4;
+// repeated .faith.ranking_proto.ranking_player_info self_info_arr = 4;
 inline int time_limit_activity_proto_rank_type_activity_message::self_info_arr_size() const {
   return self_info_arr_.size();
 }
 inline void time_limit_activity_proto_rank_type_activity_message::clear_self_info_arr() {
   self_info_arr_.Clear();
 }
-inline const ::hld::ranking_proto_ranking_player_info& time_limit_activity_proto_rank_type_activity_message::self_info_arr(int index) const {
+inline const ::faith::ranking_proto_ranking_player_info& time_limit_activity_proto_rank_type_activity_message::self_info_arr(int index) const {
   return self_info_arr_.Get(index);
 }
-inline ::hld::ranking_proto_ranking_player_info* time_limit_activity_proto_rank_type_activity_message::mutable_self_info_arr(int index) {
+inline ::faith::ranking_proto_ranking_player_info* time_limit_activity_proto_rank_type_activity_message::mutable_self_info_arr(int index) {
   return self_info_arr_.Mutable(index);
 }
-inline ::hld::ranking_proto_ranking_player_info* time_limit_activity_proto_rank_type_activity_message::add_self_info_arr() {
+inline ::faith::ranking_proto_ranking_player_info* time_limit_activity_proto_rank_type_activity_message::add_self_info_arr() {
   return self_info_arr_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info >&
 time_limit_activity_proto_rank_type_activity_message::self_info_arr() const {
   return self_info_arr_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info >*
 time_limit_activity_proto_rank_type_activity_message::mutable_self_info_arr() {
   return &self_info_arr_;
 }
@@ -3443,27 +3443,27 @@ inline void time_limit_activity_proto_all_behavior_type_activity_message::set_ac
   activity_sub_id_ = value;
 }
 
-// repeated .hld.time_limit_activity_proto.one_behavior_message all_msg = 3;
+// repeated .faith.time_limit_activity_proto.one_behavior_message all_msg = 3;
 inline int time_limit_activity_proto_all_behavior_type_activity_message::all_msg_size() const {
   return all_msg_.size();
 }
 inline void time_limit_activity_proto_all_behavior_type_activity_message::clear_all_msg() {
   all_msg_.Clear();
 }
-inline const ::hld::time_limit_activity_proto_one_behavior_message& time_limit_activity_proto_all_behavior_type_activity_message::all_msg(int index) const {
+inline const ::faith::time_limit_activity_proto_one_behavior_message& time_limit_activity_proto_all_behavior_type_activity_message::all_msg(int index) const {
   return all_msg_.Get(index);
 }
-inline ::hld::time_limit_activity_proto_one_behavior_message* time_limit_activity_proto_all_behavior_type_activity_message::mutable_all_msg(int index) {
+inline ::faith::time_limit_activity_proto_one_behavior_message* time_limit_activity_proto_all_behavior_type_activity_message::mutable_all_msg(int index) {
   return all_msg_.Mutable(index);
 }
-inline ::hld::time_limit_activity_proto_one_behavior_message* time_limit_activity_proto_all_behavior_type_activity_message::add_all_msg() {
+inline ::faith::time_limit_activity_proto_one_behavior_message* time_limit_activity_proto_all_behavior_type_activity_message::add_all_msg() {
   return all_msg_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_one_behavior_message >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_one_behavior_message >&
 time_limit_activity_proto_all_behavior_type_activity_message::all_msg() const {
   return all_msg_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_one_behavior_message >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_one_behavior_message >*
 time_limit_activity_proto_all_behavior_type_activity_message::mutable_all_msg() {
   return &all_msg_;
 }
@@ -3730,27 +3730,27 @@ inline void time_limit_activity_proto_time_limit_activity_send_get_award::set_pa
 
 // time_limit_activity_proto_all_common_data_message
 
-// repeated .hld.time_limit_activity_proto.common_data_message data_list = 1;
+// repeated .faith.time_limit_activity_proto.common_data_message data_list = 1;
 inline int time_limit_activity_proto_all_common_data_message::data_list_size() const {
   return data_list_.size();
 }
 inline void time_limit_activity_proto_all_common_data_message::clear_data_list() {
   data_list_.Clear();
 }
-inline const ::hld::time_limit_activity_proto_common_data_message& time_limit_activity_proto_all_common_data_message::data_list(int index) const {
+inline const ::faith::time_limit_activity_proto_common_data_message& time_limit_activity_proto_all_common_data_message::data_list(int index) const {
   return data_list_.Get(index);
 }
-inline ::hld::time_limit_activity_proto_common_data_message* time_limit_activity_proto_all_common_data_message::mutable_data_list(int index) {
+inline ::faith::time_limit_activity_proto_common_data_message* time_limit_activity_proto_all_common_data_message::mutable_data_list(int index) {
   return data_list_.Mutable(index);
 }
-inline ::hld::time_limit_activity_proto_common_data_message* time_limit_activity_proto_all_common_data_message::add_data_list() {
+inline ::faith::time_limit_activity_proto_common_data_message* time_limit_activity_proto_all_common_data_message::add_data_list() {
   return data_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_common_data_message >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_common_data_message >&
 time_limit_activity_proto_all_common_data_message::data_list() const {
   return data_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_common_data_message >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_common_data_message >*
 time_limit_activity_proto_all_common_data_message::mutable_data_list() {
   return &data_list_;
 }
@@ -3973,27 +3973,27 @@ inline void time_limit_activity_proto_buy_time_limit_item_end::set_result(::goog
 
 // time_limit_activity_proto_diamond_shop_info
 
-// repeated .hld.time_limit_activity_proto.diamond_shop_sub_info goods_info = 1;
+// repeated .faith.time_limit_activity_proto.diamond_shop_sub_info goods_info = 1;
 inline int time_limit_activity_proto_diamond_shop_info::goods_info_size() const {
   return goods_info_.size();
 }
 inline void time_limit_activity_proto_diamond_shop_info::clear_goods_info() {
   goods_info_.Clear();
 }
-inline const ::hld::time_limit_activity_proto_diamond_shop_sub_info& time_limit_activity_proto_diamond_shop_info::goods_info(int index) const {
+inline const ::faith::time_limit_activity_proto_diamond_shop_sub_info& time_limit_activity_proto_diamond_shop_info::goods_info(int index) const {
   return goods_info_.Get(index);
 }
-inline ::hld::time_limit_activity_proto_diamond_shop_sub_info* time_limit_activity_proto_diamond_shop_info::mutable_goods_info(int index) {
+inline ::faith::time_limit_activity_proto_diamond_shop_sub_info* time_limit_activity_proto_diamond_shop_info::mutable_goods_info(int index) {
   return goods_info_.Mutable(index);
 }
-inline ::hld::time_limit_activity_proto_diamond_shop_sub_info* time_limit_activity_proto_diamond_shop_info::add_goods_info() {
+inline ::faith::time_limit_activity_proto_diamond_shop_sub_info* time_limit_activity_proto_diamond_shop_info::add_goods_info() {
   return goods_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_diamond_shop_sub_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_diamond_shop_sub_info >&
 time_limit_activity_proto_diamond_shop_info::goods_info() const {
   return goods_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_diamond_shop_sub_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_diamond_shop_sub_info >*
 time_limit_activity_proto_diamond_shop_info::mutable_goods_info() {
   return &goods_info_;
 }
@@ -4462,7 +4462,7 @@ inline void time_limit_activity_proto_star_trip_mission_info::set_is_get(::googl
 
 // time_limit_activity_proto_send_star_trip_goods_info_one
 
-// optional .hld.time_limit_activity_proto.star_trip_goods_info goods_info = 1;
+// optional .faith.time_limit_activity_proto.star_trip_goods_info goods_info = 1;
 inline bool time_limit_activity_proto_send_star_trip_goods_info_one::has_goods_info() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -4473,24 +4473,24 @@ inline void time_limit_activity_proto_send_star_trip_goods_info_one::clear_has_g
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void time_limit_activity_proto_send_star_trip_goods_info_one::clear_goods_info() {
-  if (goods_info_ != NULL) goods_info_->::hld::time_limit_activity_proto_star_trip_goods_info::Clear();
+  if (goods_info_ != NULL) goods_info_->::faith::time_limit_activity_proto_star_trip_goods_info::Clear();
   clear_has_goods_info();
 }
-inline const ::hld::time_limit_activity_proto_star_trip_goods_info& time_limit_activity_proto_send_star_trip_goods_info_one::goods_info() const {
+inline const ::faith::time_limit_activity_proto_star_trip_goods_info& time_limit_activity_proto_send_star_trip_goods_info_one::goods_info() const {
   return goods_info_ != NULL ? *goods_info_ : *default_instance_->goods_info_;
 }
-inline ::hld::time_limit_activity_proto_star_trip_goods_info* time_limit_activity_proto_send_star_trip_goods_info_one::mutable_goods_info() {
+inline ::faith::time_limit_activity_proto_star_trip_goods_info* time_limit_activity_proto_send_star_trip_goods_info_one::mutable_goods_info() {
   set_has_goods_info();
-  if (goods_info_ == NULL) goods_info_ = new ::hld::time_limit_activity_proto_star_trip_goods_info;
+  if (goods_info_ == NULL) goods_info_ = new ::faith::time_limit_activity_proto_star_trip_goods_info;
   return goods_info_;
 }
-inline ::hld::time_limit_activity_proto_star_trip_goods_info* time_limit_activity_proto_send_star_trip_goods_info_one::release_goods_info() {
+inline ::faith::time_limit_activity_proto_star_trip_goods_info* time_limit_activity_proto_send_star_trip_goods_info_one::release_goods_info() {
   clear_has_goods_info();
-  ::hld::time_limit_activity_proto_star_trip_goods_info* temp = goods_info_;
+  ::faith::time_limit_activity_proto_star_trip_goods_info* temp = goods_info_;
   goods_info_ = NULL;
   return temp;
 }
-inline void time_limit_activity_proto_send_star_trip_goods_info_one::set_allocated_goods_info(::hld::time_limit_activity_proto_star_trip_goods_info* goods_info) {
+inline void time_limit_activity_proto_send_star_trip_goods_info_one::set_allocated_goods_info(::faith::time_limit_activity_proto_star_trip_goods_info* goods_info) {
   delete goods_info_;
   goods_info_ = goods_info;
   if (goods_info) {
@@ -4526,7 +4526,7 @@ inline void time_limit_activity_proto_send_star_trip_goods_info_one::set_cur_sou
 
 // time_limit_activity_proto_send_star_trip_mission_info_one
 
-// optional .hld.time_limit_activity_proto.star_trip_mission_info mission_info = 1;
+// optional .faith.time_limit_activity_proto.star_trip_mission_info mission_info = 1;
 inline bool time_limit_activity_proto_send_star_trip_mission_info_one::has_mission_info() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -4537,24 +4537,24 @@ inline void time_limit_activity_proto_send_star_trip_mission_info_one::clear_has
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void time_limit_activity_proto_send_star_trip_mission_info_one::clear_mission_info() {
-  if (mission_info_ != NULL) mission_info_->::hld::time_limit_activity_proto_star_trip_mission_info::Clear();
+  if (mission_info_ != NULL) mission_info_->::faith::time_limit_activity_proto_star_trip_mission_info::Clear();
   clear_has_mission_info();
 }
-inline const ::hld::time_limit_activity_proto_star_trip_mission_info& time_limit_activity_proto_send_star_trip_mission_info_one::mission_info() const {
+inline const ::faith::time_limit_activity_proto_star_trip_mission_info& time_limit_activity_proto_send_star_trip_mission_info_one::mission_info() const {
   return mission_info_ != NULL ? *mission_info_ : *default_instance_->mission_info_;
 }
-inline ::hld::time_limit_activity_proto_star_trip_mission_info* time_limit_activity_proto_send_star_trip_mission_info_one::mutable_mission_info() {
+inline ::faith::time_limit_activity_proto_star_trip_mission_info* time_limit_activity_proto_send_star_trip_mission_info_one::mutable_mission_info() {
   set_has_mission_info();
-  if (mission_info_ == NULL) mission_info_ = new ::hld::time_limit_activity_proto_star_trip_mission_info;
+  if (mission_info_ == NULL) mission_info_ = new ::faith::time_limit_activity_proto_star_trip_mission_info;
   return mission_info_;
 }
-inline ::hld::time_limit_activity_proto_star_trip_mission_info* time_limit_activity_proto_send_star_trip_mission_info_one::release_mission_info() {
+inline ::faith::time_limit_activity_proto_star_trip_mission_info* time_limit_activity_proto_send_star_trip_mission_info_one::release_mission_info() {
   clear_has_mission_info();
-  ::hld::time_limit_activity_proto_star_trip_mission_info* temp = mission_info_;
+  ::faith::time_limit_activity_proto_star_trip_mission_info* temp = mission_info_;
   mission_info_ = NULL;
   return temp;
 }
-inline void time_limit_activity_proto_send_star_trip_mission_info_one::set_allocated_mission_info(::hld::time_limit_activity_proto_star_trip_mission_info* mission_info) {
+inline void time_limit_activity_proto_send_star_trip_mission_info_one::set_allocated_mission_info(::faith::time_limit_activity_proto_star_trip_mission_info* mission_info) {
   delete mission_info_;
   mission_info_ = mission_info;
   if (mission_info) {
@@ -4590,52 +4590,52 @@ inline void time_limit_activity_proto_send_star_trip_mission_info_one::set_cur_s
 
 // time_limit_activity_proto_send_star_trip_info_all
 
-// repeated .hld.time_limit_activity_proto.star_trip_goods_info goods_list = 1;
+// repeated .faith.time_limit_activity_proto.star_trip_goods_info goods_list = 1;
 inline int time_limit_activity_proto_send_star_trip_info_all::goods_list_size() const {
   return goods_list_.size();
 }
 inline void time_limit_activity_proto_send_star_trip_info_all::clear_goods_list() {
   goods_list_.Clear();
 }
-inline const ::hld::time_limit_activity_proto_star_trip_goods_info& time_limit_activity_proto_send_star_trip_info_all::goods_list(int index) const {
+inline const ::faith::time_limit_activity_proto_star_trip_goods_info& time_limit_activity_proto_send_star_trip_info_all::goods_list(int index) const {
   return goods_list_.Get(index);
 }
-inline ::hld::time_limit_activity_proto_star_trip_goods_info* time_limit_activity_proto_send_star_trip_info_all::mutable_goods_list(int index) {
+inline ::faith::time_limit_activity_proto_star_trip_goods_info* time_limit_activity_proto_send_star_trip_info_all::mutable_goods_list(int index) {
   return goods_list_.Mutable(index);
 }
-inline ::hld::time_limit_activity_proto_star_trip_goods_info* time_limit_activity_proto_send_star_trip_info_all::add_goods_list() {
+inline ::faith::time_limit_activity_proto_star_trip_goods_info* time_limit_activity_proto_send_star_trip_info_all::add_goods_list() {
   return goods_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_star_trip_goods_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_star_trip_goods_info >&
 time_limit_activity_proto_send_star_trip_info_all::goods_list() const {
   return goods_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_star_trip_goods_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_star_trip_goods_info >*
 time_limit_activity_proto_send_star_trip_info_all::mutable_goods_list() {
   return &goods_list_;
 }
 
-// repeated .hld.time_limit_activity_proto.star_trip_mission_info mission_list = 2;
+// repeated .faith.time_limit_activity_proto.star_trip_mission_info mission_list = 2;
 inline int time_limit_activity_proto_send_star_trip_info_all::mission_list_size() const {
   return mission_list_.size();
 }
 inline void time_limit_activity_proto_send_star_trip_info_all::clear_mission_list() {
   mission_list_.Clear();
 }
-inline const ::hld::time_limit_activity_proto_star_trip_mission_info& time_limit_activity_proto_send_star_trip_info_all::mission_list(int index) const {
+inline const ::faith::time_limit_activity_proto_star_trip_mission_info& time_limit_activity_proto_send_star_trip_info_all::mission_list(int index) const {
   return mission_list_.Get(index);
 }
-inline ::hld::time_limit_activity_proto_star_trip_mission_info* time_limit_activity_proto_send_star_trip_info_all::mutable_mission_list(int index) {
+inline ::faith::time_limit_activity_proto_star_trip_mission_info* time_limit_activity_proto_send_star_trip_info_all::mutable_mission_list(int index) {
   return mission_list_.Mutable(index);
 }
-inline ::hld::time_limit_activity_proto_star_trip_mission_info* time_limit_activity_proto_send_star_trip_info_all::add_mission_list() {
+inline ::faith::time_limit_activity_proto_star_trip_mission_info* time_limit_activity_proto_send_star_trip_info_all::add_mission_list() {
   return mission_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_star_trip_mission_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_star_trip_mission_info >&
 time_limit_activity_proto_send_star_trip_info_all::mission_list() const {
   return mission_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::time_limit_activity_proto_star_trip_mission_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::time_limit_activity_proto_star_trip_mission_info >*
 time_limit_activity_proto_send_star_trip_info_all::mutable_mission_list() {
   return &mission_list_;
 }
@@ -4875,7 +4875,7 @@ inline void time_limit_activity_proto_star_trip_operate_end::set_result(::google
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

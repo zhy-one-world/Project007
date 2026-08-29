@@ -1,7 +1,7 @@
 #ifndef _GAME_ENUM_DEF_S_HPP_
 #define _GAME_ENUM_DEF_S_HPP_
  
-namespace hld
+namespace faith
 {
      enum e_role_pk_map_state
      {

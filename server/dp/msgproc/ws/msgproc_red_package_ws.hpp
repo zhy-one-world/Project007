@@ -12,7 +12,7 @@
 #include "db_manager.hpp"
 #include <mail_msg.hpp>
 #include <event_msg.hpp>
-namespace hld
+namespace faith
 {
 	void save_red_package_to_sql(uint32 connindex, const void *data_ptr, size_t data_len);
 	void load_red_package_by_sql(uint32 connindex, const void *data_ptr, size_t data_len);

@@ -3,7 +3,7 @@
 #include "logic/type_def.hpp"
 #include "item_def.hpp"
 
-namespace hld
+namespace faith
 {
 	struct box_award_component
 	{

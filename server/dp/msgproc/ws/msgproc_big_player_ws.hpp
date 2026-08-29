@@ -12,7 +12,7 @@
 #include "db_manager.hpp"
 
 
-namespace hld
+namespace faith
 {
 	void load_big_player(uint32 connindex, const void *data_ptr, size_t data_len);
 	void load_big_player_end(db_result_type result, uint32 connindex);

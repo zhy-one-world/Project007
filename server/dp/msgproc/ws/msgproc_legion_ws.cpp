@@ -14,7 +14,7 @@ purpose:
 #include "msgproc_ranking_ws.hpp"
 #include "utility/parse_msg.h"
 
-namespace hld
+namespace faith
 {
 	void save_legion_info_lua(uint32 connindex, int64 legion_guid, xstring legion_name, xstring announcement, int64 gs_value, int64 data_ary[ELegionInfo_max])
 	{

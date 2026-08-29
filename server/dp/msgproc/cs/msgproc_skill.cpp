@@ -17,7 +17,7 @@
 #include "dp2cs.pb.h"
 #include "skill.pb.h"
 
-namespace hld
+namespace faith
 {
 
 	static void cs2dp_load_role_skill_send_lua(uint32 connindex, packet_s2s *p_db)
@@ -26,7 +26,7 @@ namespace hld
 		{
 			return;
 		}
-		hld::dp2cs_proto::load_role_db_data msg;
+		faith::dp2cs_proto::load_role_db_data msg;
 		msg.set_role_guid(p_db->logic_guid.server_64);
 		msg.set_unit_array_index(p_db->logic_index);
 		msg.set_db_data(p_db->google_data, p_db->google_data_len);
@@ -183,14 +183,14 @@ namespace hld
 
 	static void cs2dp_load_role_legion_skill_send_lua(uint32 connindex, const dp2cs_load_char_legion_skill& msgData)
 	{
-		hld::dp2cs_proto::load_role_db_data msg;
+		faith::dp2cs_proto::load_role_db_data msg;
 		msg.set_role_guid(msgData.role_guid.server_64);
 		msg.set_unit_array_index(msgData.unit_array_index);
-		hld::cs2dp_proto::role_legion_skill_db  msg_db;
+		faith::cs2dp_proto::role_legion_skill_db  msg_db;
 		msg_db.set_row_count(msgData.data_num);
 		for (int32 i = 0; i < msg_db.row_count(); i++)
 		{
-			hld::cs2dp_proto::role_legion_skill_row *db_row = msg_db.add_row_data();
+			faith::cs2dp_proto::role_legion_skill_row *db_row = msg_db.add_row_data();
 			if (db_row == nullptr)
 			{
 				return;
@@ -298,7 +298,7 @@ namespace hld
 		guid_64 role_guid;
 		role_guid.server_64 = role_id;
 
-		hld::cs2dp_proto::role_legion_skill_db msg;
+		faith::cs2dp_proto::role_legion_skill_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -317,7 +317,7 @@ namespace hld
 
 		for (int32 i = 0; i < row_count; i++)
 		{
-			hld::cs2dp_proto::role_legion_skill_row one_row = msg.row_data(i);
+			faith::cs2dp_proto::role_legion_skill_row one_row = msg.row_data(i);
 			for (int32 j = 0; j < one_row.data_ary_size(); j++)
 			{
 				p_row->data_ary[j] = one_row.data_ary(j);

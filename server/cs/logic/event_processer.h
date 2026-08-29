@@ -11,7 +11,7 @@ purpose:
 #include "logic/type_def.hpp"
 #include "Logic/count_def.hpp"
 
-namespace hld
+namespace faith
 {
 	//ÓÎÏ·Ìõ¼ş
 	enum e_game_condition_type

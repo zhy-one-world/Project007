@@ -17,7 +17,7 @@
 * Code : ZeGuo.G
 * 游戏Log模块: Log设定XML读取
 */
-namespace hld
+namespace faith
 {
 
 	//开启后记录各个模块UPDATE的调用时间

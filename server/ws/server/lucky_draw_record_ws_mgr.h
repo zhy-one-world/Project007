@@ -4,7 +4,7 @@
 #include "logic/type_def.hpp"
 #include "Logic/item_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class lucky_draw_record_ws_mgr
 	{

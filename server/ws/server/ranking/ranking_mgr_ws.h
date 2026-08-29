@@ -3,7 +3,7 @@
 #include "Logic/ranking_def.hpp"
 #include "title_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class ranking_proto_ranking_player_info_lua;
 	class ranking_proto_ranking_player_info;
@@ -68,7 +68,7 @@ namespace hld
 		static void get_player_rank_level(int32 ranking_index, const guid_64& player_guid, int32& rank_level, int64& rank_value);
 		static guid_64 get_ranking_player_guid(e_RankingIndex ranking_index, int32 ranking_pos);
 		static int32 get_ranking_title_type(int32  ranking_type);
-		static void first_ranking_player_online_func(const guid_64& role_guid, bool(&loading_title_flag)[hld::e_title_type_max]);
+		static void first_ranking_player_online_func(const guid_64& role_guid, bool(&loading_title_flag)[faith::e_title_type_max]);
 
 	public:
 		static void sync_first_rank_player_info(const s_ranking_player_info& old_first_player_info, const s_ranking_player_info& new_first_player_info, bool is_notice = true);

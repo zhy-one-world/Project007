@@ -1,6 +1,6 @@
 #include "PersonalSignatureTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void PersonalSignatureTemplateSize()
     {

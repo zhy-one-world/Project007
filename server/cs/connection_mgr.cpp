@@ -25,7 +25,7 @@
 #include "utility/guid_gen.h"
 #include "utility/parse_msg.h"
 
-namespace hld
+namespace faith
 {
 	connection_mgr::connection_mgr(void)
 	{

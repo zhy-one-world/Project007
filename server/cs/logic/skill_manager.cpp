@@ -10,7 +10,7 @@
 #include "internet/skill.pb.h"
 #include "utility/parse_msg.h"
 
-using namespace hld;
+using namespace faith;
 const int32 k_max_event_num = 2000;
 skill_set m_empty_skill_set;
 skill_set* m_skill_player_ary[init_player_max];

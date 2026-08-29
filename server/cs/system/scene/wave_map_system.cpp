@@ -12,7 +12,7 @@
 #include "internet/net.pb.h"
 #include "gm_order_def.hpp"
 
-using namespace hld;
+using namespace faith;
 
 void wave_map_system::start_up(Entity* map_ent, int32 brush_id)
 {

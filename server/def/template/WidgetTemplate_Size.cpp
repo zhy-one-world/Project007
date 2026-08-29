@@ -1,6 +1,6 @@
 #include "WidgetTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void WidgetTemplateSize()
     {

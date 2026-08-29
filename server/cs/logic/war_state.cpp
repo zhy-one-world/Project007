@@ -13,7 +13,7 @@ purpose:
 #include "war_state.h"
 #include "utility/init_unit.h"
 
-namespace hld
+namespace faith
 {
 	c_war_state::c_war_state(void)
 	{

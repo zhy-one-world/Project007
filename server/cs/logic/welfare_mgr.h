@@ -10,7 +10,7 @@ purpose: about welfare
 #define _WELFARE_MGR_H_
 
 #include "Logic/welfare_def.hpp"
-namespace hld
+namespace faith
 {
 	class player;
 	class welfare_proto_get_reward_end;

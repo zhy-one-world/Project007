@@ -1,7 +1,7 @@
 #ifndef _ASSIST_FIGHT_CS_MGR_H_
 #define _ASSIST_FIGHT_CS_MGR_H_
 
-namespace hld
+namespace faith
 {
 	class assist_fight_cs_mgr
 	{

@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_service_5fgoal_2eproto();
@@ -111,7 +111,7 @@ class service_goal_proto_service_goal_one : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_service_goal_info();
 
-  // @@protoc_insertion_point(class_scope:hld.service_goal_proto.service_goal_one)
+  // @@protoc_insertion_point(class_scope:faith.service_goal_proto.service_goal_one)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -196,25 +196,25 @@ class service_goal_proto_service_goal_all : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // repeated .hld.service_goal_proto.service_goal_one service_goal_array = 2;
+  // repeated .faith.service_goal_proto.service_goal_one service_goal_array = 2;
   inline int service_goal_array_size() const;
   inline void clear_service_goal_array();
   static const int kServiceGoalArrayFieldNumber = 2;
-  inline const ::hld::service_goal_proto_service_goal_one& service_goal_array(int index) const;
-  inline ::hld::service_goal_proto_service_goal_one* mutable_service_goal_array(int index);
-  inline ::hld::service_goal_proto_service_goal_one* add_service_goal_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::service_goal_proto_service_goal_one >&
+  inline const ::faith::service_goal_proto_service_goal_one& service_goal_array(int index) const;
+  inline ::faith::service_goal_proto_service_goal_one* mutable_service_goal_array(int index);
+  inline ::faith::service_goal_proto_service_goal_one* add_service_goal_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::service_goal_proto_service_goal_one >&
       service_goal_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::service_goal_proto_service_goal_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::service_goal_proto_service_goal_one >*
       mutable_service_goal_array();
 
-  // @@protoc_insertion_point(class_scope:hld.service_goal_proto.service_goal_all)
+  // @@protoc_insertion_point(class_scope:faith.service_goal_proto.service_goal_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > role_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::service_goal_proto_service_goal_one > service_goal_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::service_goal_proto_service_goal_one > service_goal_array_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -296,7 +296,7 @@ class service_goal_proto_service_goal_operate : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 operate_type() const;
   inline void set_operate_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.service_goal_proto.service_goal_operate)
+  // @@protoc_insertion_point(class_scope:faith.service_goal_proto.service_goal_operate)
  private:
   inline void set_has_service_goal_id();
   inline void clear_has_service_goal_id();
@@ -374,14 +374,14 @@ class service_goal_proto_service_goal_operate_end : public ::google::protobuf::M
 
   // accessors -------------------------------------------------------
 
-  // optional .hld.service_goal_proto.service_goal_one service_goal_one = 1;
+  // optional .faith.service_goal_proto.service_goal_one service_goal_one = 1;
   inline bool has_service_goal_one() const;
   inline void clear_service_goal_one();
   static const int kServiceGoalOneFieldNumber = 1;
-  inline const ::hld::service_goal_proto_service_goal_one& service_goal_one() const;
-  inline ::hld::service_goal_proto_service_goal_one* mutable_service_goal_one();
-  inline ::hld::service_goal_proto_service_goal_one* release_service_goal_one();
-  inline void set_allocated_service_goal_one(::hld::service_goal_proto_service_goal_one* service_goal_one);
+  inline const ::faith::service_goal_proto_service_goal_one& service_goal_one() const;
+  inline ::faith::service_goal_proto_service_goal_one* mutable_service_goal_one();
+  inline ::faith::service_goal_proto_service_goal_one* release_service_goal_one();
+  inline void set_allocated_service_goal_one(::faith::service_goal_proto_service_goal_one* service_goal_one);
 
   // optional int32 operation_type = 2;
   inline bool has_operation_type() const;
@@ -397,7 +397,7 @@ class service_goal_proto_service_goal_operate_end : public ::google::protobuf::M
   inline ::google::protobuf::int32 operation_end_state() const;
   inline void set_operation_end_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.service_goal_proto.service_goal_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.service_goal_proto.service_goal_operate_end)
  private:
   inline void set_has_service_goal_one();
   inline void clear_has_service_goal_one();
@@ -408,7 +408,7 @@ class service_goal_proto_service_goal_operate_end : public ::google::protobuf::M
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::service_goal_proto_service_goal_one* service_goal_one_;
+  ::faith::service_goal_proto_service_goal_one* service_goal_one_;
   ::google::protobuf::int32 operation_type_;
   ::google::protobuf::int32 operation_end_state_;
 
@@ -490,7 +490,7 @@ class service_goal_proto_seven_day_goal_one : public ::google::protobuf::Message
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_seven_day_goal_info();
 
-  // @@protoc_insertion_point(class_scope:hld.service_goal_proto.seven_day_goal_one)
+  // @@protoc_insertion_point(class_scope:faith.service_goal_proto.seven_day_goal_one)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -563,24 +563,24 @@ class service_goal_proto_seven_day_goal_all : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.service_goal_proto.seven_day_goal_one seven_day_goal_array = 1;
+  // repeated .faith.service_goal_proto.seven_day_goal_one seven_day_goal_array = 1;
   inline int seven_day_goal_array_size() const;
   inline void clear_seven_day_goal_array();
   static const int kSevenDayGoalArrayFieldNumber = 1;
-  inline const ::hld::service_goal_proto_seven_day_goal_one& seven_day_goal_array(int index) const;
-  inline ::hld::service_goal_proto_seven_day_goal_one* mutable_seven_day_goal_array(int index);
-  inline ::hld::service_goal_proto_seven_day_goal_one* add_seven_day_goal_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::service_goal_proto_seven_day_goal_one >&
+  inline const ::faith::service_goal_proto_seven_day_goal_one& seven_day_goal_array(int index) const;
+  inline ::faith::service_goal_proto_seven_day_goal_one* mutable_seven_day_goal_array(int index);
+  inline ::faith::service_goal_proto_seven_day_goal_one* add_seven_day_goal_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::service_goal_proto_seven_day_goal_one >&
       seven_day_goal_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::service_goal_proto_seven_day_goal_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::service_goal_proto_seven_day_goal_one >*
       mutable_seven_day_goal_array();
 
-  // @@protoc_insertion_point(class_scope:hld.service_goal_proto.seven_day_goal_all)
+  // @@protoc_insertion_point(class_scope:faith.service_goal_proto.seven_day_goal_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::service_goal_proto_seven_day_goal_one > seven_day_goal_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::service_goal_proto_seven_day_goal_one > seven_day_goal_array_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -662,7 +662,7 @@ class service_goal_proto_seven_day_goal_operate : public ::google::protobuf::Mes
   inline ::google::protobuf::int32 operate_type() const;
   inline void set_operate_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.service_goal_proto.seven_day_goal_operate)
+  // @@protoc_insertion_point(class_scope:faith.service_goal_proto.seven_day_goal_operate)
  private:
   inline void set_has_seven_day_goal_id();
   inline void clear_has_seven_day_goal_id();
@@ -740,14 +740,14 @@ class service_goal_proto_seven_day_goal_operate_end : public ::google::protobuf:
 
   // accessors -------------------------------------------------------
 
-  // optional .hld.service_goal_proto.seven_day_goal_one seven_day_goal_data = 1;
+  // optional .faith.service_goal_proto.seven_day_goal_one seven_day_goal_data = 1;
   inline bool has_seven_day_goal_data() const;
   inline void clear_seven_day_goal_data();
   static const int kSevenDayGoalDataFieldNumber = 1;
-  inline const ::hld::service_goal_proto_seven_day_goal_one& seven_day_goal_data() const;
-  inline ::hld::service_goal_proto_seven_day_goal_one* mutable_seven_day_goal_data();
-  inline ::hld::service_goal_proto_seven_day_goal_one* release_seven_day_goal_data();
-  inline void set_allocated_seven_day_goal_data(::hld::service_goal_proto_seven_day_goal_one* seven_day_goal_data);
+  inline const ::faith::service_goal_proto_seven_day_goal_one& seven_day_goal_data() const;
+  inline ::faith::service_goal_proto_seven_day_goal_one* mutable_seven_day_goal_data();
+  inline ::faith::service_goal_proto_seven_day_goal_one* release_seven_day_goal_data();
+  inline void set_allocated_seven_day_goal_data(::faith::service_goal_proto_seven_day_goal_one* seven_day_goal_data);
 
   // optional int32 operation_type = 2;
   inline bool has_operation_type() const;
@@ -763,7 +763,7 @@ class service_goal_proto_seven_day_goal_operate_end : public ::google::protobuf:
   inline ::google::protobuf::int32 operation_end_state() const;
   inline void set_operation_end_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.service_goal_proto.seven_day_goal_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.service_goal_proto.seven_day_goal_operate_end)
  private:
   inline void set_has_seven_day_goal_data();
   inline void clear_has_seven_day_goal_data();
@@ -774,7 +774,7 @@ class service_goal_proto_seven_day_goal_operate_end : public ::google::protobuf:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::service_goal_proto_seven_day_goal_one* seven_day_goal_data_;
+  ::faith::service_goal_proto_seven_day_goal_one* seven_day_goal_data_;
   ::google::protobuf::int32 operation_type_;
   ::google::protobuf::int32 operation_end_state_;
 
@@ -853,7 +853,7 @@ class service_goal_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.service_goal_proto)
+  // @@protoc_insertion_point(class_scope:faith.service_goal_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -930,27 +930,27 @@ service_goal_proto_service_goal_all::mutable_role_guid() {
   return &role_guid_;
 }
 
-// repeated .hld.service_goal_proto.service_goal_one service_goal_array = 2;
+// repeated .faith.service_goal_proto.service_goal_one service_goal_array = 2;
 inline int service_goal_proto_service_goal_all::service_goal_array_size() const {
   return service_goal_array_.size();
 }
 inline void service_goal_proto_service_goal_all::clear_service_goal_array() {
   service_goal_array_.Clear();
 }
-inline const ::hld::service_goal_proto_service_goal_one& service_goal_proto_service_goal_all::service_goal_array(int index) const {
+inline const ::faith::service_goal_proto_service_goal_one& service_goal_proto_service_goal_all::service_goal_array(int index) const {
   return service_goal_array_.Get(index);
 }
-inline ::hld::service_goal_proto_service_goal_one* service_goal_proto_service_goal_all::mutable_service_goal_array(int index) {
+inline ::faith::service_goal_proto_service_goal_one* service_goal_proto_service_goal_all::mutable_service_goal_array(int index) {
   return service_goal_array_.Mutable(index);
 }
-inline ::hld::service_goal_proto_service_goal_one* service_goal_proto_service_goal_all::add_service_goal_array() {
+inline ::faith::service_goal_proto_service_goal_one* service_goal_proto_service_goal_all::add_service_goal_array() {
   return service_goal_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::service_goal_proto_service_goal_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::service_goal_proto_service_goal_one >&
 service_goal_proto_service_goal_all::service_goal_array() const {
   return service_goal_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::service_goal_proto_service_goal_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::service_goal_proto_service_goal_one >*
 service_goal_proto_service_goal_all::mutable_service_goal_array() {
   return &service_goal_array_;
 }
@@ -1007,7 +1007,7 @@ inline void service_goal_proto_service_goal_operate::set_operate_type(::google::
 
 // service_goal_proto_service_goal_operate_end
 
-// optional .hld.service_goal_proto.service_goal_one service_goal_one = 1;
+// optional .faith.service_goal_proto.service_goal_one service_goal_one = 1;
 inline bool service_goal_proto_service_goal_operate_end::has_service_goal_one() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -1018,24 +1018,24 @@ inline void service_goal_proto_service_goal_operate_end::clear_has_service_goal_
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void service_goal_proto_service_goal_operate_end::clear_service_goal_one() {
-  if (service_goal_one_ != NULL) service_goal_one_->::hld::service_goal_proto_service_goal_one::Clear();
+  if (service_goal_one_ != NULL) service_goal_one_->::faith::service_goal_proto_service_goal_one::Clear();
   clear_has_service_goal_one();
 }
-inline const ::hld::service_goal_proto_service_goal_one& service_goal_proto_service_goal_operate_end::service_goal_one() const {
+inline const ::faith::service_goal_proto_service_goal_one& service_goal_proto_service_goal_operate_end::service_goal_one() const {
   return service_goal_one_ != NULL ? *service_goal_one_ : *default_instance_->service_goal_one_;
 }
-inline ::hld::service_goal_proto_service_goal_one* service_goal_proto_service_goal_operate_end::mutable_service_goal_one() {
+inline ::faith::service_goal_proto_service_goal_one* service_goal_proto_service_goal_operate_end::mutable_service_goal_one() {
   set_has_service_goal_one();
-  if (service_goal_one_ == NULL) service_goal_one_ = new ::hld::service_goal_proto_service_goal_one;
+  if (service_goal_one_ == NULL) service_goal_one_ = new ::faith::service_goal_proto_service_goal_one;
   return service_goal_one_;
 }
-inline ::hld::service_goal_proto_service_goal_one* service_goal_proto_service_goal_operate_end::release_service_goal_one() {
+inline ::faith::service_goal_proto_service_goal_one* service_goal_proto_service_goal_operate_end::release_service_goal_one() {
   clear_has_service_goal_one();
-  ::hld::service_goal_proto_service_goal_one* temp = service_goal_one_;
+  ::faith::service_goal_proto_service_goal_one* temp = service_goal_one_;
   service_goal_one_ = NULL;
   return temp;
 }
-inline void service_goal_proto_service_goal_operate_end::set_allocated_service_goal_one(::hld::service_goal_proto_service_goal_one* service_goal_one) {
+inline void service_goal_proto_service_goal_operate_end::set_allocated_service_goal_one(::faith::service_goal_proto_service_goal_one* service_goal_one) {
   delete service_goal_one_;
   service_goal_one_ = service_goal_one;
   if (service_goal_one) {
@@ -1122,27 +1122,27 @@ service_goal_proto_seven_day_goal_one::mutable_seven_day_goal_info() {
 
 // service_goal_proto_seven_day_goal_all
 
-// repeated .hld.service_goal_proto.seven_day_goal_one seven_day_goal_array = 1;
+// repeated .faith.service_goal_proto.seven_day_goal_one seven_day_goal_array = 1;
 inline int service_goal_proto_seven_day_goal_all::seven_day_goal_array_size() const {
   return seven_day_goal_array_.size();
 }
 inline void service_goal_proto_seven_day_goal_all::clear_seven_day_goal_array() {
   seven_day_goal_array_.Clear();
 }
-inline const ::hld::service_goal_proto_seven_day_goal_one& service_goal_proto_seven_day_goal_all::seven_day_goal_array(int index) const {
+inline const ::faith::service_goal_proto_seven_day_goal_one& service_goal_proto_seven_day_goal_all::seven_day_goal_array(int index) const {
   return seven_day_goal_array_.Get(index);
 }
-inline ::hld::service_goal_proto_seven_day_goal_one* service_goal_proto_seven_day_goal_all::mutable_seven_day_goal_array(int index) {
+inline ::faith::service_goal_proto_seven_day_goal_one* service_goal_proto_seven_day_goal_all::mutable_seven_day_goal_array(int index) {
   return seven_day_goal_array_.Mutable(index);
 }
-inline ::hld::service_goal_proto_seven_day_goal_one* service_goal_proto_seven_day_goal_all::add_seven_day_goal_array() {
+inline ::faith::service_goal_proto_seven_day_goal_one* service_goal_proto_seven_day_goal_all::add_seven_day_goal_array() {
   return seven_day_goal_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::service_goal_proto_seven_day_goal_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::service_goal_proto_seven_day_goal_one >&
 service_goal_proto_seven_day_goal_all::seven_day_goal_array() const {
   return seven_day_goal_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::service_goal_proto_seven_day_goal_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::service_goal_proto_seven_day_goal_one >*
 service_goal_proto_seven_day_goal_all::mutable_seven_day_goal_array() {
   return &seven_day_goal_array_;
 }
@@ -1199,7 +1199,7 @@ inline void service_goal_proto_seven_day_goal_operate::set_operate_type(::google
 
 // service_goal_proto_seven_day_goal_operate_end
 
-// optional .hld.service_goal_proto.seven_day_goal_one seven_day_goal_data = 1;
+// optional .faith.service_goal_proto.seven_day_goal_one seven_day_goal_data = 1;
 inline bool service_goal_proto_seven_day_goal_operate_end::has_seven_day_goal_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -1210,24 +1210,24 @@ inline void service_goal_proto_seven_day_goal_operate_end::clear_has_seven_day_g
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void service_goal_proto_seven_day_goal_operate_end::clear_seven_day_goal_data() {
-  if (seven_day_goal_data_ != NULL) seven_day_goal_data_->::hld::service_goal_proto_seven_day_goal_one::Clear();
+  if (seven_day_goal_data_ != NULL) seven_day_goal_data_->::faith::service_goal_proto_seven_day_goal_one::Clear();
   clear_has_seven_day_goal_data();
 }
-inline const ::hld::service_goal_proto_seven_day_goal_one& service_goal_proto_seven_day_goal_operate_end::seven_day_goal_data() const {
+inline const ::faith::service_goal_proto_seven_day_goal_one& service_goal_proto_seven_day_goal_operate_end::seven_day_goal_data() const {
   return seven_day_goal_data_ != NULL ? *seven_day_goal_data_ : *default_instance_->seven_day_goal_data_;
 }
-inline ::hld::service_goal_proto_seven_day_goal_one* service_goal_proto_seven_day_goal_operate_end::mutable_seven_day_goal_data() {
+inline ::faith::service_goal_proto_seven_day_goal_one* service_goal_proto_seven_day_goal_operate_end::mutable_seven_day_goal_data() {
   set_has_seven_day_goal_data();
-  if (seven_day_goal_data_ == NULL) seven_day_goal_data_ = new ::hld::service_goal_proto_seven_day_goal_one;
+  if (seven_day_goal_data_ == NULL) seven_day_goal_data_ = new ::faith::service_goal_proto_seven_day_goal_one;
   return seven_day_goal_data_;
 }
-inline ::hld::service_goal_proto_seven_day_goal_one* service_goal_proto_seven_day_goal_operate_end::release_seven_day_goal_data() {
+inline ::faith::service_goal_proto_seven_day_goal_one* service_goal_proto_seven_day_goal_operate_end::release_seven_day_goal_data() {
   clear_has_seven_day_goal_data();
-  ::hld::service_goal_proto_seven_day_goal_one* temp = seven_day_goal_data_;
+  ::faith::service_goal_proto_seven_day_goal_one* temp = seven_day_goal_data_;
   seven_day_goal_data_ = NULL;
   return temp;
 }
-inline void service_goal_proto_seven_day_goal_operate_end::set_allocated_seven_day_goal_data(::hld::service_goal_proto_seven_day_goal_one* seven_day_goal_data) {
+inline void service_goal_proto_seven_day_goal_operate_end::set_allocated_seven_day_goal_data(::faith::service_goal_proto_seven_day_goal_one* seven_day_goal_data) {
   delete seven_day_goal_data_;
   seven_day_goal_data_ = seven_day_goal_data;
   if (seven_day_goal_data) {
@@ -1288,7 +1288,7 @@ inline void service_goal_proto_seven_day_goal_operate_end::set_operation_end_sta
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_special_5fname_2eproto();
@@ -116,7 +116,7 @@ class special_name_proto_special_name_operate : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 operation_type() const;
   inline void set_operation_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.special_name_proto.special_name_operate)
+  // @@protoc_insertion_point(class_scope:faith.special_name_proto.special_name_operate)
  private:
   inline void set_has_special_name_type();
   inline void clear_has_special_name_type();
@@ -239,7 +239,7 @@ class special_name_proto_special_name_operate_end : public ::google::protobuf::M
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.special_name_proto.special_name_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.special_name_proto.special_name_operate_end)
  private:
   inline void set_has_special_name_type();
   inline void clear_has_special_name_type();
@@ -360,7 +360,7 @@ class special_name_proto_special_name_person_names : public ::google::protobuf::
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_special_name_star();
 
-  // @@protoc_insertion_point(class_scope:hld.special_name_proto.special_name_person_names)
+  // @@protoc_insertion_point(class_scope:faith.special_name_proto.special_name_person_names)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -449,7 +449,7 @@ class special_name_proto_special_name_request_person_names : public ::google::pr
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_target_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.special_name_proto.special_name_request_person_names)
+  // @@protoc_insertion_point(class_scope:faith.special_name_proto.special_name_request_person_names)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -527,7 +527,7 @@ class special_name_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.special_name_proto)
+  // @@protoc_insertion_point(class_scope:faith.special_name_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -864,7 +864,7 @@ special_name_proto_special_name_request_person_names::mutable_target_guid() {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

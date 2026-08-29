@@ -84,7 +84,7 @@
 #include "game.pb.h"
 #include "character.pb.h"
 
-namespace hld
+namespace faith
 {
 	void cs2ws_rep_reconnect_game(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
@@ -111,7 +111,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::client_logout pro_msg;
+				faith::ws2cs_proto::client_logout pro_msg;
 				pro_msg.set_role_guid(packet->role_guid.server_64);
 				pro_msg.set_client_uid(packet->client_uid.fep_uid_64);
 				pro_msg.set_need_send_save_end(false);
@@ -178,7 +178,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::client_logout pro_msg;
+				faith::ws2cs_proto::client_logout pro_msg;
 				pro_msg.set_role_guid(packet->char_info_to_ws.role_guid.server_64);
 				pro_msg.set_client_uid(packet->client_uid.fep_uid_64);
 				pro_msg.set_need_send_save_end(false);
@@ -236,14 +236,14 @@ namespace hld
 		case cs2ws_enter_scene::e_enter_ret_already_in:
 		{
 			game_proto_enter_scene_end enter_scene_end;
-			enter_scene_end.set_result(hld::e_error_code_repeated);
+			enter_scene_end.set_result(faith::e_error_code_repeated);
 			session->send_to_client(&enter_scene_end, e_msgindex_s2c_enter_scene);
 		}
 		break;
 		case cs2ws_enter_scene::e_enter_ret_success:
 		{
 			game_proto_enter_scene_end enter_scene_end;
-			enter_scene_end.set_result(hld::e_error_code_success);
+			enter_scene_end.set_result(faith::e_error_code_success);
 			session->send_to_client(&enter_scene_end, e_msgindex_s2c_enter_scene);
 			session->enter_scene_logic_proc();
 		}
@@ -273,7 +273,7 @@ namespace hld
 	}
 	void cs2ws_rep_role_info(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
-		const hld::cs2ws_role_info* packet = static_cast<const cs2ws_role_info*>(data_ptr);
+		const faith::cs2ws_role_info* packet = static_cast<const cs2ws_role_info*>(data_ptr);
 		if (packet == NULL)
 		{
 			return;
@@ -292,7 +292,7 @@ namespace hld
 
 	void cs2ws_rep_map_state(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
-		const hld::cs2ws_map_state* packet = static_cast<const cs2ws_map_state*>(data_ptr);
+		const faith::cs2ws_map_state* packet = static_cast<const cs2ws_map_state*>(data_ptr);
 		if (packet == NULL)
 		{
 			return;
@@ -302,7 +302,7 @@ namespace hld
 	}
 	void cs2ws_req_transfer_player(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
-		const hld::cs2ws_tansfer_player* packet = static_cast<const cs2ws_tansfer_player*>(data_ptr);
+		const faith::cs2ws_tansfer_player* packet = static_cast<const cs2ws_tansfer_player*>(data_ptr);
 		if (packet == NULL)
 		{
 			CONSOLE_ERROR("cs2ws_req_transfer_player packet is null");
@@ -990,7 +990,7 @@ namespace hld
 		if (best_record_mgr::get_instance().is_use_lua())
 		{
 			cs2ws_set_best_record * tmp = const_cast<cs2ws_set_best_record *>(packet);
-			hld::cs2ws_proto::set_best_record pro_msg;
+			faith::cs2ws_proto::set_best_record pro_msg;
 			tmp->to_proto(pro_msg);
 			packet_s2s* p_s2s = parse_msg::getInstance().serialze_buffer(&pro_msg);
 			if (p_s2s == nullptr)
@@ -1382,7 +1382,7 @@ namespace hld
 
 	void cs2ws_sync_ranking_info_proc(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
-		const hld::cs2ws_sync_ranking_info* packet = static_cast<const cs2ws_sync_ranking_info*>(data_ptr);
+		const faith::cs2ws_sync_ranking_info* packet = static_cast<const cs2ws_sync_ranking_info*>(data_ptr);
 		if (nullptr == packet)
 		{
 			return;
@@ -1411,7 +1411,7 @@ namespace hld
 
 	void cs2ws_sync_ranking_player_vip_proc(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
-		const hld::cs2ws_sync_vip_level_data* packet = static_cast<const cs2ws_sync_vip_level_data*>(data_ptr);
+		const faith::cs2ws_sync_vip_level_data* packet = static_cast<const cs2ws_sync_vip_level_data*>(data_ptr);
 		if (nullptr == packet)
 		{
 			return;
@@ -1425,7 +1425,7 @@ namespace hld
 
 	void cs2ws_req_service_rank_info_proc(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
-		const hld::cs2ws_req_service_rank_info* packet = static_cast<const cs2ws_req_service_rank_info*>(data_ptr);
+		const faith::cs2ws_req_service_rank_info* packet = static_cast<const cs2ws_req_service_rank_info*>(data_ptr);
 		if (nullptr == packet)
 		{
 			return;
@@ -1451,7 +1451,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::req_service_rank_info_end pro_msg;
+			faith::ws2cs_proto::req_service_rank_info_end pro_msg;
 			result.to_proto(pro_msg);
 			session_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_req_service_rank_info_end);
 		}
@@ -1598,7 +1598,7 @@ namespace hld
 		}
 		const cs2ws_fuben_add_friendliness_value* msg_pak = static_cast<const cs2ws_fuben_add_friendliness_value*>(data_ptr);
 
-		for (int32 i = 0; i < hld::max_team_member_num; i++)
+		for (int32 i = 0; i < faith::max_team_member_num; i++)
 		{
 			client_session* sender_ptr = client_session_mgr::getInstance().get_session(msg_pak->team_member_guid[i]);
 			if (nullptr == sender_ptr)
@@ -1780,7 +1780,7 @@ namespace hld
 				std::vector<s_item_info> item_list;
 				if (red_pack_template_ptr->LogicID != 0)
 				{
-					bool result = hld::init_unit::init_item_data(gift_item, red_pack_template_ptr->LogicID, -1, 1, e_bag_type_bag, 1);
+					bool result = faith::init_unit::init_item_data(gift_item, red_pack_template_ptr->LogicID, -1, 1, e_bag_type_bag, 1);
 					if (result)
 					{
 						item_list.push_back(gift_item);
@@ -1808,7 +1808,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::send_red_package_end pro_msg;
+				faith::ws2cs_proto::send_red_package_end pro_msg;
 				end_msg.to_proto(pro_msg);
 				session->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_send_red_pack_end);
 			}
@@ -2015,7 +2015,7 @@ namespace hld
 					}
 					else
 					{
-						hld::ws2cs_proto::send_chat_end pro_msg;
+						faith::ws2cs_proto::send_chat_end pro_msg;
 						failed_msg.to_proto(pro_msg);
 						sender_session->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_send_chat_end);
 					}
@@ -2116,7 +2116,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::send_chat_end pro_msg;
+			faith::ws2cs_proto::send_chat_end pro_msg;
 			msg.to_proto(pro_msg);
 			sender_session->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_send_chat_end);
 		}
@@ -2173,7 +2173,7 @@ namespace hld
 		}
 		if (auction_mgr_ws::get_instance().is_use_lua())
 		{
-			hld::cs2ws_proto::auction_add_item_into_db pro_msg;
+			faith::cs2ws_proto::auction_add_item_into_db pro_msg;
 			cs2ws_auction_add_item_into_db* tmp = const_cast<cs2ws_auction_add_item_into_db*>(packet);
 			tmp->to_proto(pro_msg);
 			packet_s2s* p_s2s = parse_msg::getInstance().serialze_buffer(&pro_msg);
@@ -2551,7 +2551,7 @@ namespace hld
 			return;
 		}
 		int32 data_num = packet->data_num;
-		hld::s_gain_treasure_record_info_one record_info;
+		faith::s_gain_treasure_record_info_one record_info;
 		record_info.clear_data();
 		record_info.boss_spawn_point_template_id = packet->boss_spawn_point_temp_id;
 		record_info.killed_stamp = packet->killed_stamp;
@@ -2608,7 +2608,7 @@ namespace hld
 		server_log::boss_home_battle_from_boss_log(record_info);
 		if (gain_treasure_ws_mgr::get_instance().is_use_lua())
 		{
-			hld::st_proto::st_gain_treasure_record_info_one pro_msg;
+			faith::st_proto::st_gain_treasure_record_info_one pro_msg;
 			record_info.to_proto(&pro_msg);
 			packet_s2s* p_s2s = parse_msg::getInstance().serialze_buffer(&pro_msg);
 			if (p_s2s == nullptr)
@@ -2962,7 +2962,7 @@ namespace hld
 		if (nullptr != tmp_session && tmp_session->is_self_server())
 		{
 			marry_couple_data couple_data = marry_mgr_ws::get_instance().get_couple_data(packek->target_guid);
-			hld::character_proto_sync_other_person_couple_info msg;
+			faith::character_proto_sync_other_person_couple_info msg;
 
 			msg.set_role_guid(couple_data.role_guid);
 			msg.set_role_name(couple_data.role_name);

@@ -1,6 +1,6 @@
 #include "PlayerUpgradeTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void PlayerUpgradeTemplateSize()
     {

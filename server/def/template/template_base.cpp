@@ -1,7 +1,7 @@
 #include "template_base.h"
 #include "ServerTemplateHead.h"
 
-namespace hld
+namespace faith
 {
     void template_size::init_template_size()
     {

@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -723,12 +723,12 @@ void protobuf_AddDesc_time_5flimit_5factivity_2eproto() {
   already_here = true;
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  ::hld::protobuf_AddDesc_ranking_2eproto();
+  ::faith::protobuf_AddDesc_ranking_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\031time_limit_activity.proto\022\003hld\032\rrankin"
     "g.proto\"\327\027\n\031time_limit_activity_proto\032o\n"
     "\031all_open_activity_message\022R\n\020activity_m"
-    "essage\030\001 \003(\01328.hld.time_limit_activity_p"
+    "essage\030\001 \003(\01328.faith.time_limit_activity_p"
     "roto.one_open_activity_message\032\300\001\n\031one_o"
     "pen_activity_message\022\030\n\020activity_temp_id"
     "\030\001 \001(\005\022\025\n\ractivity_type\030\002 \001(\005\022\033\n\023activit"
@@ -739,18 +739,18 @@ void protobuf_AddDesc_time_5flimit_5factivity_2eproto() {
     "\034\n\024activity_reward_flag\030\002 \001(\005\032\251\001\n\034norank"
     "_type_activity_message\022\025\n\ractivity_type\030"
     "\001 \001(\005\022\026\n\016activity_value\030\002 \001(\005\022H\n\007act_msg"
-    "\030\003 \003(\01327.hld.time_limit_activity_proto.a"
+    "\030\003 \003(\01327.faith.time_limit_activity_proto.a"
     "ctivity_tempid_and_flag\022\020\n\010act_guid\030\004 \001("
     "\005\032\326\001\n\032rank_type_activity_message\022\025\n\racti"
     "vity_type\030\001 \001(\005\022\022\n\nrank_value\030\002 \001(\005\022<\n\014t"
-    "op_info_arr\030\003 \003(\0132&.hld.ranking_proto.ra"
+    "op_info_arr\030\003 \003(\0132&.faith.ranking_proto.ra"
     "nking_player_info\022=\n\rself_info_arr\030\004 \003(\013"
-    "2&.hld.ranking_proto.ranking_player_info"
+    "2&.faith.ranking_proto.ranking_player_info"
     "\022\020\n\010act_guid\030\005 \001(\005\0327\n\036get_rank_type_acti"
     "vity_message\022\025\n\ractivity_type\030\001 \001(\005\032\254\001\n\""
     "all_behavior_type_activity_message\022\025\n\rac"
     "tivity_type\030\001 \001(\005\022\027\n\017activity_sub_id\030\002 \001"
-    "(\005\022D\n\007all_msg\030\003 \003(\01323.hld.time_limit_act"
+    "(\005\022D\n\007all_msg\030\003 \003(\01323.faith.time_limit_act"
     "ivity_proto.one_behavior_message\022\020\n\010act_"
     "guid\030\004 \001(\005\032E\n\024one_behavior_message\022\025\n\rbe"
     "havior_idex\030\001 \001(\005\022\026\n\016behavior_value\030\002 \001("
@@ -762,7 +762,7 @@ void protobuf_AddDesc_time_5flimit_5factivity_2eproto() {
     "ity_id\030\001 \001(\005\022\020\n\010act_guid\030\002 \001(\005\022\023\n\013param_"
     "int_1\030\003 \001(\005\032\035\n\033get_all_common_data_messa"
     "ge\032`\n\027all_common_data_message\022E\n\tdata_li"
-    "st\030\001 \003(\01322.hld.time_limit_activity_proto"
+    "st\030\001 \003(\01322.faith.time_limit_activity_proto"
     ".common_data_message\0328\n\023common_data_mess"
     "age\022\017\n\007data_id\030\001 \001(\005\022\020\n\010data_num\030\002 \001(\005\032W"
     "\n\025add_activity_schedule\022\020\n\010add_type\030\001 \001("
@@ -771,7 +771,7 @@ void protobuf_AddDesc_time_5flimit_5factivity_2eproto() {
     "ty_type\030\001 \001(\005\022\017\n\007buy_num\030\002 \001(\005\032@\n\027buy_ti"
     "me_limit_item_end\022\025\n\ractivity_type\030\001 \001(\005"
     "\022\016\n\006result\030\002 \001(\005\032n\n\021diamond_shop_info\022H\n"
-    "\ngoods_info\030\001 \003(\01324.hld.time_limit_activ"
+    "\ngoods_info\030\001 \003(\01324.faith.time_limit_activ"
     "ity_proto.diamond_shop_sub_info\022\017\n\007is_fr"
     "ee\030\002 \001(\005\032A\n\025diamond_shop_sub_info\022\023\n\013goo"
     "ds_index\030\001 \001(\005\022\023\n\013goods_state\030\002 \001(\005\032%\n\020b"
@@ -786,15 +786,15 @@ void protobuf_AddDesc_time_5flimit_5factivity_2eproto() {
     "arget_param\030\004 \001(\005\022\022\n\ntarget_num\030\005 \001(\005\022\022\n"
     "\nfinish_num\030\006 \001(\005\022\021\n\taward_num\030\007 \001(\005\022\016\n\006"
     "is_get\030\010 \001(\005\032|\n\035send_star_trip_goods_inf"
-    "o_one\022G\n\ngoods_info\030\001 \001(\01323.hld.time_lim"
+    "o_one\022G\n\ngoods_info\030\001 \001(\01323.faith.time_lim"
     "it_activity_proto.star_trip_goods_info\022\022"
     "\n\ncur_source\030\002 \001(\005\032\202\001\n\037send_star_trip_mi"
     "ssion_info_one\022K\n\014mission_info\030\001 \001(\01325.h"
     "ld.time_limit_activity_proto.star_trip_m"
     "ission_info\022\022\n\ncur_source\030\002 \001(\005\032\351\001\n\027send"
     "_star_trip_info_all\022G\n\ngoods_list\030\001 \003(\0132"
-    "3.hld.time_limit_activity_proto.star_tri"
-    "p_goods_info\022K\n\014mission_list\030\002 \003(\01325.hld"
+    "3.faith.time_limit_activity_proto.star_tri"
+    "p_goods_info\022K\n\014mission_list\030\002 \003(\01325.faith"
     ".time_limit_activity_proto.star_trip_mis"
     "sion_info\022\020\n\010need_tip\030\003 \001(\005\022\022\n\ntarget_da"
     "y\030\004 \001(\005\022\022\n\ncur_source\030\005 \001(\005\032K\n\021star_trip"
@@ -938,7 +938,7 @@ bool time_limit_activity_proto_all_open_activity_message::MergePartialFromCodedS
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.time_limit_activity_proto.one_open_activity_message activity_message = 1;
+      // repeated .faith.time_limit_activity_proto.one_open_activity_message activity_message = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -971,7 +971,7 @@ bool time_limit_activity_proto_all_open_activity_message::MergePartialFromCodedS
 
 void time_limit_activity_proto_all_open_activity_message::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.time_limit_activity_proto.one_open_activity_message activity_message = 1;
+  // repeated .faith.time_limit_activity_proto.one_open_activity_message activity_message = 1;
   for (int i = 0; i < this->activity_message_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->activity_message(i), output);
@@ -985,7 +985,7 @@ void time_limit_activity_proto_all_open_activity_message::SerializeWithCachedSiz
 
 ::google::protobuf::uint8* time_limit_activity_proto_all_open_activity_message::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.time_limit_activity_proto.one_open_activity_message activity_message = 1;
+  // repeated .faith.time_limit_activity_proto.one_open_activity_message activity_message = 1;
   for (int i = 0; i < this->activity_message_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1002,7 +1002,7 @@ void time_limit_activity_proto_all_open_activity_message::SerializeWithCachedSiz
 int time_limit_activity_proto_all_open_activity_message::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.time_limit_activity_proto.one_open_activity_message activity_message = 1;
+  // repeated .faith.time_limit_activity_proto.one_open_activity_message activity_message = 1;
   total_size += 1 * this->activity_message_size();
   for (int i = 0; i < this->activity_message_size(); i++) {
     total_size +=
@@ -1839,7 +1839,7 @@ bool time_limit_activity_proto_norank_type_activity_message::MergePartialFromCod
         break;
       }
 
-      // repeated .hld.time_limit_activity_proto.activity_tempid_and_flag act_msg = 3;
+      // repeated .faith.time_limit_activity_proto.activity_tempid_and_flag act_msg = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1898,7 +1898,7 @@ void time_limit_activity_proto_norank_type_activity_message::SerializeWithCached
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->activity_value(), output);
   }
 
-  // repeated .hld.time_limit_activity_proto.activity_tempid_and_flag act_msg = 3;
+  // repeated .faith.time_limit_activity_proto.activity_tempid_and_flag act_msg = 3;
   for (int i = 0; i < this->act_msg_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->act_msg(i), output);
@@ -1927,7 +1927,7 @@ void time_limit_activity_proto_norank_type_activity_message::SerializeWithCached
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->activity_value(), target);
   }
 
-  // repeated .hld.time_limit_activity_proto.activity_tempid_and_flag act_msg = 3;
+  // repeated .faith.time_limit_activity_proto.activity_tempid_and_flag act_msg = 3;
   for (int i = 0; i < this->act_msg_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1972,7 +1972,7 @@ int time_limit_activity_proto_norank_type_activity_message::ByteSize() const {
     }
 
   }
-  // repeated .hld.time_limit_activity_proto.activity_tempid_and_flag act_msg = 3;
+  // repeated .faith.time_limit_activity_proto.activity_tempid_and_flag act_msg = 3;
   total_size += 1 * this->act_msg_size();
   for (int i = 0; i < this->act_msg_size(); i++) {
     total_size +=
@@ -2169,7 +2169,7 @@ bool time_limit_activity_proto_rank_type_activity_message::MergePartialFromCoded
         break;
       }
 
-      // repeated .hld.ranking_proto.ranking_player_info top_info_arr = 3;
+      // repeated .faith.ranking_proto.ranking_player_info top_info_arr = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2184,7 +2184,7 @@ bool time_limit_activity_proto_rank_type_activity_message::MergePartialFromCoded
         break;
       }
 
-      // repeated .hld.ranking_proto.ranking_player_info self_info_arr = 4;
+      // repeated .faith.ranking_proto.ranking_player_info self_info_arr = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2243,13 +2243,13 @@ void time_limit_activity_proto_rank_type_activity_message::SerializeWithCachedSi
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->rank_value(), output);
   }
 
-  // repeated .hld.ranking_proto.ranking_player_info top_info_arr = 3;
+  // repeated .faith.ranking_proto.ranking_player_info top_info_arr = 3;
   for (int i = 0; i < this->top_info_arr_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->top_info_arr(i), output);
   }
 
-  // repeated .hld.ranking_proto.ranking_player_info self_info_arr = 4;
+  // repeated .faith.ranking_proto.ranking_player_info self_info_arr = 4;
   for (int i = 0; i < this->self_info_arr_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->self_info_arr(i), output);
@@ -2278,14 +2278,14 @@ void time_limit_activity_proto_rank_type_activity_message::SerializeWithCachedSi
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->rank_value(), target);
   }
 
-  // repeated .hld.ranking_proto.ranking_player_info top_info_arr = 3;
+  // repeated .faith.ranking_proto.ranking_player_info top_info_arr = 3;
   for (int i = 0; i < this->top_info_arr_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         3, this->top_info_arr(i), target);
   }
 
-  // repeated .hld.ranking_proto.ranking_player_info self_info_arr = 4;
+  // repeated .faith.ranking_proto.ranking_player_info self_info_arr = 4;
   for (int i = 0; i < this->self_info_arr_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -2330,7 +2330,7 @@ int time_limit_activity_proto_rank_type_activity_message::ByteSize() const {
     }
 
   }
-  // repeated .hld.ranking_proto.ranking_player_info top_info_arr = 3;
+  // repeated .faith.ranking_proto.ranking_player_info top_info_arr = 3;
   total_size += 1 * this->top_info_arr_size();
   for (int i = 0; i < this->top_info_arr_size(); i++) {
     total_size +=
@@ -2338,7 +2338,7 @@ int time_limit_activity_proto_rank_type_activity_message::ByteSize() const {
         this->top_info_arr(i));
   }
 
-  // repeated .hld.ranking_proto.ranking_player_info self_info_arr = 4;
+  // repeated .faith.ranking_proto.ranking_player_info self_info_arr = 4;
   total_size += 1 * this->self_info_arr_size();
   for (int i = 0; i < this->self_info_arr_size(); i++) {
     total_size +=
@@ -2743,7 +2743,7 @@ bool time_limit_activity_proto_all_behavior_type_activity_message::MergePartialF
         break;
       }
 
-      // repeated .hld.time_limit_activity_proto.one_behavior_message all_msg = 3;
+      // repeated .faith.time_limit_activity_proto.one_behavior_message all_msg = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2802,7 +2802,7 @@ void time_limit_activity_proto_all_behavior_type_activity_message::SerializeWith
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->activity_sub_id(), output);
   }
 
-  // repeated .hld.time_limit_activity_proto.one_behavior_message all_msg = 3;
+  // repeated .faith.time_limit_activity_proto.one_behavior_message all_msg = 3;
   for (int i = 0; i < this->all_msg_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->all_msg(i), output);
@@ -2831,7 +2831,7 @@ void time_limit_activity_proto_all_behavior_type_activity_message::SerializeWith
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->activity_sub_id(), target);
   }
 
-  // repeated .hld.time_limit_activity_proto.one_behavior_message all_msg = 3;
+  // repeated .faith.time_limit_activity_proto.one_behavior_message all_msg = 3;
   for (int i = 0; i < this->all_msg_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -2876,7 +2876,7 @@ int time_limit_activity_proto_all_behavior_type_activity_message::ByteSize() con
     }
 
   }
-  // repeated .hld.time_limit_activity_proto.one_behavior_message all_msg = 3;
+  // repeated .faith.time_limit_activity_proto.one_behavior_message all_msg = 3;
   total_size += 1 * this->all_msg_size();
   for (int i = 0; i < this->all_msg_size(); i++) {
     total_size +=
@@ -4089,7 +4089,7 @@ bool time_limit_activity_proto_all_common_data_message::MergePartialFromCodedStr
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.time_limit_activity_proto.common_data_message data_list = 1;
+      // repeated .faith.time_limit_activity_proto.common_data_message data_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -4122,7 +4122,7 @@ bool time_limit_activity_proto_all_common_data_message::MergePartialFromCodedStr
 
 void time_limit_activity_proto_all_common_data_message::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.time_limit_activity_proto.common_data_message data_list = 1;
+  // repeated .faith.time_limit_activity_proto.common_data_message data_list = 1;
   for (int i = 0; i < this->data_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->data_list(i), output);
@@ -4136,7 +4136,7 @@ void time_limit_activity_proto_all_common_data_message::SerializeWithCachedSizes
 
 ::google::protobuf::uint8* time_limit_activity_proto_all_common_data_message::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.time_limit_activity_proto.common_data_message data_list = 1;
+  // repeated .faith.time_limit_activity_proto.common_data_message data_list = 1;
   for (int i = 0; i < this->data_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -4153,7 +4153,7 @@ void time_limit_activity_proto_all_common_data_message::SerializeWithCachedSizes
 int time_limit_activity_proto_all_common_data_message::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.time_limit_activity_proto.common_data_message data_list = 1;
+  // repeated .faith.time_limit_activity_proto.common_data_message data_list = 1;
   total_size += 1 * this->data_list_size();
   for (int i = 0; i < this->data_list_size(); i++) {
     total_size +=
@@ -5329,7 +5329,7 @@ bool time_limit_activity_proto_diamond_shop_info::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.time_limit_activity_proto.diamond_shop_sub_info goods_info = 1;
+      // repeated .faith.time_limit_activity_proto.diamond_shop_sub_info goods_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -5378,7 +5378,7 @@ bool time_limit_activity_proto_diamond_shop_info::MergePartialFromCodedStream(
 
 void time_limit_activity_proto_diamond_shop_info::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.time_limit_activity_proto.diamond_shop_sub_info goods_info = 1;
+  // repeated .faith.time_limit_activity_proto.diamond_shop_sub_info goods_info = 1;
   for (int i = 0; i < this->goods_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->goods_info(i), output);
@@ -5397,7 +5397,7 @@ void time_limit_activity_proto_diamond_shop_info::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* time_limit_activity_proto_diamond_shop_info::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.time_limit_activity_proto.diamond_shop_sub_info goods_info = 1;
+  // repeated .faith.time_limit_activity_proto.diamond_shop_sub_info goods_info = 1;
   for (int i = 0; i < this->goods_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -5428,7 +5428,7 @@ int time_limit_activity_proto_diamond_shop_info::ByteSize() const {
     }
 
   }
-  // repeated .hld.time_limit_activity_proto.diamond_shop_sub_info goods_info = 1;
+  // repeated .faith.time_limit_activity_proto.diamond_shop_sub_info goods_info = 1;
   total_size += 1 * this->goods_info_size();
   for (int i = 0; i < this->goods_info_size(); i++) {
     total_size +=
@@ -7119,7 +7119,7 @@ time_limit_activity_proto_send_star_trip_goods_info_one::time_limit_activity_pro
 }
 
 void time_limit_activity_proto_send_star_trip_goods_info_one::InitAsDefaultInstance() {
-  goods_info_ = const_cast< ::hld::time_limit_activity_proto_star_trip_goods_info*>(&::hld::time_limit_activity_proto_star_trip_goods_info::default_instance());
+  goods_info_ = const_cast< ::faith::time_limit_activity_proto_star_trip_goods_info*>(&::faith::time_limit_activity_proto_star_trip_goods_info::default_instance());
 }
 
 time_limit_activity_proto_send_star_trip_goods_info_one::time_limit_activity_proto_send_star_trip_goods_info_one(const time_limit_activity_proto_send_star_trip_goods_info_one& from)
@@ -7169,7 +7169,7 @@ time_limit_activity_proto_send_star_trip_goods_info_one* time_limit_activity_pro
 void time_limit_activity_proto_send_star_trip_goods_info_one::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_goods_info()) {
-      if (goods_info_ != NULL) goods_info_->::hld::time_limit_activity_proto_star_trip_goods_info::Clear();
+      if (goods_info_ != NULL) goods_info_->::faith::time_limit_activity_proto_star_trip_goods_info::Clear();
     }
     cur_source_ = 0;
   }
@@ -7183,7 +7183,7 @@ bool time_limit_activity_proto_send_star_trip_goods_info_one::MergePartialFromCo
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.time_limit_activity_proto.star_trip_goods_info goods_info = 1;
+      // optional .faith.time_limit_activity_proto.star_trip_goods_info goods_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -7230,7 +7230,7 @@ bool time_limit_activity_proto_send_star_trip_goods_info_one::MergePartialFromCo
 
 void time_limit_activity_proto_send_star_trip_goods_info_one::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.time_limit_activity_proto.star_trip_goods_info goods_info = 1;
+  // optional .faith.time_limit_activity_proto.star_trip_goods_info goods_info = 1;
   if (has_goods_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->goods_info(), output);
@@ -7249,7 +7249,7 @@ void time_limit_activity_proto_send_star_trip_goods_info_one::SerializeWithCache
 
 ::google::protobuf::uint8* time_limit_activity_proto_send_star_trip_goods_info_one::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.time_limit_activity_proto.star_trip_goods_info goods_info = 1;
+  // optional .faith.time_limit_activity_proto.star_trip_goods_info goods_info = 1;
   if (has_goods_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -7272,7 +7272,7 @@ int time_limit_activity_proto_send_star_trip_goods_info_one::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.time_limit_activity_proto.star_trip_goods_info goods_info = 1;
+    // optional .faith.time_limit_activity_proto.star_trip_goods_info goods_info = 1;
     if (has_goods_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -7314,7 +7314,7 @@ void time_limit_activity_proto_send_star_trip_goods_info_one::MergeFrom(const ti
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_goods_info()) {
-      mutable_goods_info()->::hld::time_limit_activity_proto_star_trip_goods_info::MergeFrom(from.goods_info());
+      mutable_goods_info()->::faith::time_limit_activity_proto_star_trip_goods_info::MergeFrom(from.goods_info());
     }
     if (from.has_cur_source()) {
       set_cur_source(from.cur_source());
@@ -7372,7 +7372,7 @@ time_limit_activity_proto_send_star_trip_mission_info_one::time_limit_activity_p
 }
 
 void time_limit_activity_proto_send_star_trip_mission_info_one::InitAsDefaultInstance() {
-  mission_info_ = const_cast< ::hld::time_limit_activity_proto_star_trip_mission_info*>(&::hld::time_limit_activity_proto_star_trip_mission_info::default_instance());
+  mission_info_ = const_cast< ::faith::time_limit_activity_proto_star_trip_mission_info*>(&::faith::time_limit_activity_proto_star_trip_mission_info::default_instance());
 }
 
 time_limit_activity_proto_send_star_trip_mission_info_one::time_limit_activity_proto_send_star_trip_mission_info_one(const time_limit_activity_proto_send_star_trip_mission_info_one& from)
@@ -7422,7 +7422,7 @@ time_limit_activity_proto_send_star_trip_mission_info_one* time_limit_activity_p
 void time_limit_activity_proto_send_star_trip_mission_info_one::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_mission_info()) {
-      if (mission_info_ != NULL) mission_info_->::hld::time_limit_activity_proto_star_trip_mission_info::Clear();
+      if (mission_info_ != NULL) mission_info_->::faith::time_limit_activity_proto_star_trip_mission_info::Clear();
     }
     cur_source_ = 0;
   }
@@ -7436,7 +7436,7 @@ bool time_limit_activity_proto_send_star_trip_mission_info_one::MergePartialFrom
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.time_limit_activity_proto.star_trip_mission_info mission_info = 1;
+      // optional .faith.time_limit_activity_proto.star_trip_mission_info mission_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -7483,7 +7483,7 @@ bool time_limit_activity_proto_send_star_trip_mission_info_one::MergePartialFrom
 
 void time_limit_activity_proto_send_star_trip_mission_info_one::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.time_limit_activity_proto.star_trip_mission_info mission_info = 1;
+  // optional .faith.time_limit_activity_proto.star_trip_mission_info mission_info = 1;
   if (has_mission_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->mission_info(), output);
@@ -7502,7 +7502,7 @@ void time_limit_activity_proto_send_star_trip_mission_info_one::SerializeWithCac
 
 ::google::protobuf::uint8* time_limit_activity_proto_send_star_trip_mission_info_one::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.time_limit_activity_proto.star_trip_mission_info mission_info = 1;
+  // optional .faith.time_limit_activity_proto.star_trip_mission_info mission_info = 1;
   if (has_mission_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -7525,7 +7525,7 @@ int time_limit_activity_proto_send_star_trip_mission_info_one::ByteSize() const 
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.time_limit_activity_proto.star_trip_mission_info mission_info = 1;
+    // optional .faith.time_limit_activity_proto.star_trip_mission_info mission_info = 1;
     if (has_mission_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -7567,7 +7567,7 @@ void time_limit_activity_proto_send_star_trip_mission_info_one::MergeFrom(const 
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_mission_info()) {
-      mutable_mission_info()->::hld::time_limit_activity_proto_star_trip_mission_info::MergeFrom(from.mission_info());
+      mutable_mission_info()->::faith::time_limit_activity_proto_star_trip_mission_info::MergeFrom(from.mission_info());
     }
     if (from.has_cur_source()) {
       set_cur_source(from.cur_source());
@@ -7692,7 +7692,7 @@ bool time_limit_activity_proto_send_star_trip_info_all::MergePartialFromCodedStr
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.time_limit_activity_proto.star_trip_goods_info goods_list = 1;
+      // repeated .faith.time_limit_activity_proto.star_trip_goods_info goods_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -7707,7 +7707,7 @@ bool time_limit_activity_proto_send_star_trip_info_all::MergePartialFromCodedStr
         break;
       }
 
-      // repeated .hld.time_limit_activity_proto.star_trip_mission_info mission_list = 2;
+      // repeated .faith.time_limit_activity_proto.star_trip_mission_info mission_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -7788,13 +7788,13 @@ bool time_limit_activity_proto_send_star_trip_info_all::MergePartialFromCodedStr
 
 void time_limit_activity_proto_send_star_trip_info_all::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.time_limit_activity_proto.star_trip_goods_info goods_list = 1;
+  // repeated .faith.time_limit_activity_proto.star_trip_goods_info goods_list = 1;
   for (int i = 0; i < this->goods_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->goods_list(i), output);
   }
 
-  // repeated .hld.time_limit_activity_proto.star_trip_mission_info mission_list = 2;
+  // repeated .faith.time_limit_activity_proto.star_trip_mission_info mission_list = 2;
   for (int i = 0; i < this->mission_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->mission_list(i), output);
@@ -7823,14 +7823,14 @@ void time_limit_activity_proto_send_star_trip_info_all::SerializeWithCachedSizes
 
 ::google::protobuf::uint8* time_limit_activity_proto_send_star_trip_info_all::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.time_limit_activity_proto.star_trip_goods_info goods_list = 1;
+  // repeated .faith.time_limit_activity_proto.star_trip_goods_info goods_list = 1;
   for (int i = 0; i < this->goods_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         1, this->goods_list(i), target);
   }
 
-  // repeated .hld.time_limit_activity_proto.star_trip_mission_info mission_list = 2;
+  // repeated .faith.time_limit_activity_proto.star_trip_mission_info mission_list = 2;
   for (int i = 0; i < this->mission_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -7885,7 +7885,7 @@ int time_limit_activity_proto_send_star_trip_info_all::ByteSize() const {
     }
 
   }
-  // repeated .hld.time_limit_activity_proto.star_trip_goods_info goods_list = 1;
+  // repeated .faith.time_limit_activity_proto.star_trip_goods_info goods_list = 1;
   total_size += 1 * this->goods_list_size();
   for (int i = 0; i < this->goods_list_size(); i++) {
     total_size +=
@@ -7893,7 +7893,7 @@ int time_limit_activity_proto_send_star_trip_info_all::ByteSize() const {
         this->goods_list(i));
   }
 
-  // repeated .hld.time_limit_activity_proto.star_trip_mission_info mission_list = 2;
+  // repeated .faith.time_limit_activity_proto.star_trip_mission_info mission_list = 2;
   total_size += 1 * this->mission_list_size();
   for (int i = 0; i < this->mission_list_size(); i++) {
     total_size +=
@@ -8755,6 +8755,6 @@ void time_limit_activity_proto::Swap(time_limit_activity_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

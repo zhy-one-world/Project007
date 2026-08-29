@@ -7,7 +7,7 @@
 #include "internet/map_award.pb.h"
 #include "internet/net.pb.h"
 
-using namespace hld;
+using namespace faith;
 
 bool  offline_award_system::start_up(player* player_ptr)
 {
@@ -71,7 +71,7 @@ s_offline_res offline_award_system::get_drop_item(player* player_ptr)
 	}
 	int32 money_offline_count = sum_offline_time / GAMECONFIG->OfflineTime[0];
 	int32 item_offline_count = sum_offline_time / GAMECONFIG->OfflineTime[1];
-	auto map_template_id = player_ptr->get_unit_info(hld::e_role_info_main_map_id);
+	auto map_template_id = player_ptr->get_unit_info(faith::e_role_info_main_map_id);
 	auto map_template = GET_TEMPLATE(MapTemplate, map_template_id);
 	if (map_template == nullptr)
 	{

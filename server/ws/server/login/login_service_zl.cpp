@@ -18,7 +18,7 @@
 #include <Utility/cs_date.hpp>
 #include <time.hpp>
 #include "server_log.hpp"
-namespace hld
+namespace faith
 {
 	const xstring sdk_password = "sdk";		// ¹Ì¶¨ÃÜÂë
 
@@ -69,7 +69,7 @@ namespace hld
 		//// GET/POST ²ÎÊı
 		//xstring url_para = create_post_data(login.sdk_data().data());
 
- 	//	CONSOLE_INFO("sdk login data : " << time_helper::get_current_time() << " , " << hld::utility::get_tick_count()
+ 	//	CONSOLE_INFO("sdk login data : " << time_helper::get_current_time() << " , " << faith::utility::get_tick_count()
  	//		<< ","<< appkey << "," << sign_str << "," << tag_str << "," << opcode_str << "," << channel_id_str << "," << client_ip_str << ","
  	//		<< login.sdk_data().app_secret() << "," << url_para);
 

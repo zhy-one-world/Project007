@@ -26,7 +26,7 @@
 #include "game_cfg/servers_config.h"
 #include "server_log.hpp"
 
-namespace hld
+namespace faith
 {
 	//////////////////////////////////////////////////////////////////////////
 	//

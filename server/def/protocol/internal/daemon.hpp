@@ -6,12 +6,12 @@
 #include "logic/type_def.hpp"
 #include "base.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum {
-		e_msg_index_ws2dp_request_query_role_list_match = hld::e_msg_base_daemon_ws,
+		e_msg_index_ws2dp_request_query_role_list_match = faith::e_msg_base_daemon_ws,
 		e_msg_index_dp2ws_response_query_role_list_match,
 		e_msg_index_ws2dp_req_query_server_info_gm,
 		e_msg_index_dp2ws_rep_query_server_info_gm,
@@ -22,7 +22,7 @@ namespace hld
 	/************************************************************************/
 	/*                           shop                                       */
 	/************************************************************************/
-	struct ws2dp_request_query_role_list_match : public hld::packet_base
+	struct ws2dp_request_query_role_list_match : public faith::packet_base
 	{
 		xchar	name_mode[max_name_size + 1];
 
@@ -72,7 +72,7 @@ namespace hld
 		}
 	};
 
-	struct dp2ws_response_query_role_list_match : public hld::packet_base
+	struct dp2ws_response_query_role_list_match : public faith::packet_base
 	{
 		ui8 role_num;
 		role_info_in_list_match role_arr[10];  //最多返回10个角色信息
@@ -111,7 +111,7 @@ namespace hld
 		int32			role_num;
 	};
 	
-	struct ws2dp_query_server_info_gm : public hld::packet_base
+	struct ws2dp_query_server_info_gm : public faith::packet_base
 	{
 		ws2dp_query_server_info_gm()
 		{
@@ -120,7 +120,7 @@ namespace hld
 		}
 	};
 	
-	struct dp2ws_query_server_info_gm : public hld::packet_base
+	struct dp2ws_query_server_info_gm : public faith::packet_base
 	{
 		server_info_gm srv_gm_info;
 		dp2ws_query_server_info_gm()

@@ -14,7 +14,7 @@
 #include <strstream>
 #include <Utility/guid_gen.h>
 
-namespace hld
+namespace faith
 {
 
 	log_field log_null;

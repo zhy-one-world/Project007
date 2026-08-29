@@ -16,7 +16,7 @@
 /************************************************************************/
 /*                           Struct Define                              */
 /************************************************************************/
-namespace hld
+namespace faith
 {
 	enum e_transfer_type
 	{
@@ -33,7 +33,7 @@ namespace hld
 		{
 			memset(this, 0, sizeof(*this));
 		}
-		hld::e_scene_type					desc_type;
+		faith::e_scene_type					desc_type;
 		int32 								desc_map_template_id;
 		int32								desc_line_id;
 		s_map_pos							desc_map_pos;
@@ -86,8 +86,8 @@ namespace hld
 		bool						get_dynamic_param_int(int32 idx, int32& value) const;
 	private:
 		player&						get_player()						{ return *m_player_ptr; }
-		void						set_teleport_dest_info(hld::e_scene_type desc_type, int32 desc_map_type_id, s_map_pos map_pos);
-		void						req_start_teleport(hld::e_scene_type desc_type, int32 desc_map_type_id, int32 line_id, s_map_pos map_pos, guid_64 map_guid, int32 war_index = 0, bool force = false, uint32 dest_group_id = 0);
+		void						set_teleport_dest_info(faith::e_scene_type desc_type, int32 desc_map_type_id, s_map_pos map_pos);
+		void						req_start_teleport(faith::e_scene_type desc_type, int32 desc_map_type_id, int32 line_id, s_map_pos map_pos, guid_64 map_guid, int32 war_index = 0, bool force = false, uint32 dest_group_id = 0);
 	
 
 	private:

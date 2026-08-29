@@ -2,7 +2,7 @@
 #include "logic/type_def.hpp"
 #include "base/ecs_world.h"
 #include "google/protobuf/message.h"
-namespace hld
+namespace faith
 {
 	enum e_aoi_move_type;
 	struct MapTemplate;

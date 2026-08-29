@@ -14,7 +14,7 @@
 TOLUA_API int  tolua_logic_open (lua_State* tolua_S);
 
 #include "lua_call_handle.h"
-using namespace hld;
+using namespace faith;
 
 /* function to register type */
 static void tolua_reg_types (lua_State* tolua_S)

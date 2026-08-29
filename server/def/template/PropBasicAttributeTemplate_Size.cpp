@@ -1,6 +1,6 @@
 #include "PropBasicAttributeTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void PropBasicAttributeTemplateSize()
     {

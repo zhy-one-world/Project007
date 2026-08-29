@@ -18,7 +18,7 @@
 #include "net.pb.h"
 #include "login_msg.hpp"
 
-namespace hld
+namespace faith
 {
 	using namespace net;
 	bool check_packet_size(const void* data_ptr, size_t data_len)
@@ -179,7 +179,7 @@ namespace hld
 		request.client_uid = client_session_ptr->get_client_uid();
 		request.eReason = logout_result;
 
-		if ((client_session_ptr->get_login_proto_login().login_type() == hld::e_login_type_new_zw || client_session_ptr->get_login_proto_login().login_type() == hld::e_login_type_new_account_and_password)
+		if ((client_session_ptr->get_login_proto_login().login_type() == faith::e_login_type_new_zw || client_session_ptr->get_login_proto_login().login_type() == faith::e_login_type_new_account_and_password)
 			&& client_session_ptr->get_age() < 18)
 		{
 			request.need_save_online_time = true;

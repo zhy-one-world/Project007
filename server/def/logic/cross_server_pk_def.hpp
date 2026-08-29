@@ -11,7 +11,7 @@
 #include "char_def.hpp"
 #include "game_enum_def_s.h"
 
-namespace hld 
+namespace faith 
 {
 #pragma pack(push,1)
 	const int32 max_island_player_num = 2;//一个小岛最大人数

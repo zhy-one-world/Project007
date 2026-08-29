@@ -8,7 +8,7 @@
 #include "Logic/item_def.hpp"
 #include "template/template_manager.h"
 
-namespace hld
+namespace faith
 {
 	struct s_single_mail_info
 	{

@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -175,7 +175,7 @@ void protobuf_AddDesc_skytreasure_2eproto() {
     "asure_layer_num\030\001 \001(\005\022\027\n\017skytreasure_pos"
     "\030\002 \001(\005\022 \n\030skytreasure_pos_in_array\030\003 \001(\005"
     "\032X\n\017skytreasure_all\022E\n\020skytreasure_list\030"
-    "\001 \003(\0132+.hld.skytreasure_proto.skytreasur"
+    "\001 \003(\0132+.faith.skytreasure_proto.skytreasur"
     "e_info_one\032a\n\023skytreasure_operate\022\026\n\016ope"
     "ration_type\030\001 \001(\005\022\030\n\020operation_param1\030\002 "
     "\001(\005\022\030\n\020operation_param2\030\003 \001(\005\032K\n\027skytrea"
@@ -558,7 +558,7 @@ bool skytreasure_proto_skytreasure_all::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.skytreasure_proto.skytreasure_info_one skytreasure_list = 1;
+      // repeated .faith.skytreasure_proto.skytreasure_info_one skytreasure_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -591,7 +591,7 @@ bool skytreasure_proto_skytreasure_all::MergePartialFromCodedStream(
 
 void skytreasure_proto_skytreasure_all::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.skytreasure_proto.skytreasure_info_one skytreasure_list = 1;
+  // repeated .faith.skytreasure_proto.skytreasure_info_one skytreasure_list = 1;
   for (int i = 0; i < this->skytreasure_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->skytreasure_list(i), output);
@@ -605,7 +605,7 @@ void skytreasure_proto_skytreasure_all::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* skytreasure_proto_skytreasure_all::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.skytreasure_proto.skytreasure_info_one skytreasure_list = 1;
+  // repeated .faith.skytreasure_proto.skytreasure_info_one skytreasure_list = 1;
   for (int i = 0; i < this->skytreasure_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -622,7 +622,7 @@ void skytreasure_proto_skytreasure_all::SerializeWithCachedSizes(
 int skytreasure_proto_skytreasure_all::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.skytreasure_proto.skytreasure_info_one skytreasure_list = 1;
+  // repeated .faith.skytreasure_proto.skytreasure_info_one skytreasure_list = 1;
   total_size += 1 * this->skytreasure_list_size();
   for (int i = 0; i < this->skytreasure_list_size(); i++) {
     total_size +=
@@ -1388,6 +1388,6 @@ void skytreasure_proto::Swap(skytreasure_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

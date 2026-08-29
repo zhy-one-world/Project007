@@ -4,7 +4,7 @@
 #include "logic/type_def.hpp"
 #include "Logic/guide_def.hpp"
 
-namespace hld
+namespace faith
 {
 	struct SkillTemplate;
 
@@ -18,12 +18,12 @@ namespace hld
 
 		void		save_guide_record(s_record_info& record_info);
 		void        save_guide_record_lua(int32 guide_trigger_id);
-		void		load_guide_record(const int32 record_num, const s_record_info record_info_list[hld::max_guide_record_num]);
+		void		load_guide_record(const int32 record_num, const s_record_info record_info_list[faith::max_guide_record_num]);
 		bool        load_guide_record_by_db_lua(const char *data_ptr, int32 data_len);
-		void		load_guide_record_reset(const int32 record_num, const s_record_info record_info_list[hld::max_guide_record_num]);
+		void		load_guide_record_reset(const int32 record_num, const s_record_info record_info_list[faith::max_guide_record_num]);
 		void		send_all_guide_record();
 
-		void		get_add_guide_record(int32& add_record_info_num, s_record_info add_record_info_arr[hld::max_guide_record_num]);
+		void		get_add_guide_record(int32& add_record_info_num, s_record_info add_record_info_arr[faith::max_guide_record_num]);
 		bool		if_exist_guide_record(s_record_info record_info);
 		bool		if_guide_triggered(int32 guide_trigger_id);
 	
@@ -35,7 +35,7 @@ namespace hld
 		void		check_guide();
 	private:
 		int32				m_unit_index;
-		s_record_info		m_record_info_list[hld::max_guide_record_num];
+		s_record_info		m_record_info_list[faith::max_guide_record_num];
 		int32				m_record_num;
 		SkillTemplate* m_skill_template_ptr;
 	};

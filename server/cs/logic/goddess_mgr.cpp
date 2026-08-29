@@ -8,7 +8,7 @@
 #include "lua/script_mgr.h"
 #include "npc.hpp"
 
-namespace hld
+namespace faith
 {
 	goddess_mgr::goddess_mgr()
 	{

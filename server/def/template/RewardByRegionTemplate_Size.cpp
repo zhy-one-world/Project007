@@ -1,6 +1,6 @@
 #include "RewardByRegionTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void RewardByRegionTemplateSize()
     {

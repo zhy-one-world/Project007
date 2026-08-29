@@ -8,7 +8,7 @@
 #include "internet/net.pb.h"
 #include "internet/first_time_do.pb.h"
 
-namespace hld
+namespace faith
 {
 	first_time_do_mgr::first_time_do_mgr()
 	{
@@ -100,7 +100,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::db_proto::role_first_time_do_db msg;
+		faith::db_proto::role_first_time_do_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -115,7 +115,7 @@ namespace hld
 		s_first_time_do_record *p_row = (s_first_time_do_record *)p_data;
 		for (int32 i = 0; i < msg.row_count(); i++)
 		{
-			hld::db_proto::role_first_time_do_row db_row = msg.row_data(i);
+			faith::db_proto::role_first_time_do_row db_row = msg.row_data(i);
 			p_row->do_type = db_row.do_type();
 
 			p_row++;

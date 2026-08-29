@@ -11,7 +11,7 @@ purpose:
 #include "char_def.hpp"
 #include "game_enum_def_s.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)	
 	const int32							max_tier_num = 30;			//天启试炼最大层数

@@ -11,7 +11,7 @@ author: zhaoyuming
 #include "template/ServerTemplateHead.h"
 #include "Logic/star_trip_def.h"
 
-namespace hld
+namespace faith
 {
 	class star_trip_mgr
 	{

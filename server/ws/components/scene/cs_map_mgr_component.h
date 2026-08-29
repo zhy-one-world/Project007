@@ -4,7 +4,7 @@
 #include "base/ecs_world.h"
 #include "map_def.hpp"
 
-namespace hld
+namespace faith
 {	
 	struct cs_map_mgr_component
 	{

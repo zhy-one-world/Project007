@@ -152,9 +152,9 @@
 #include <welfare_msg.hpp>
 #include <world_boss_msg.hpp>
 
-namespace hld
+namespace faith
 {
-	using namespace hld::net;
+	using namespace faith::net;
 
 	dbproxy_service::dbproxy_service()
 	{
@@ -193,22 +193,22 @@ namespace hld
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_req_load_relation_list, ws2dp_req_load_player_relation);
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_add_relation, ws2dp_req_add_relation);
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_del_relation, ws2dp_req_del_relation);
-		message_manager::getInstance().register_handler(hld::e_msg_index_ws2dp_add_mail_to_sql, check_player_is_exist);
+		message_manager::getInstance().register_handler(faith::e_msg_index_ws2dp_add_mail_to_sql, check_player_is_exist);
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_check_id_mail, check_id_mail_proc);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_save_arena_rank, save_arena_rank);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_save_arena_rank, save_arena_rank);
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_save_arena_rank_change, save_arena_rank_first);
-		//message_manager::getInstance().register_handler(hld::e_mgsindex_ws2dp_msg_test, load_arena_rank);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_save_other_server_mail_record, save_other_server_mail_record);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_load_other_server_mail, load_other_server_mail);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_del_other_server_mail, del_other_server_mail);
+		//message_manager::getInstance().register_handler(faith::e_mgsindex_ws2dp_msg_test, load_arena_rank);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_save_other_server_mail_record, save_other_server_mail_record);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_load_other_server_mail, load_other_server_mail);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_del_other_server_mail, del_other_server_mail);
 		//ranking
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_load_all_ranking_info, load_all_ranking_info);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_save_ranking_info_one, save_ranking_info_one);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_save_one_total_ranking_info, save_one_ranking_list);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_save_one_service_rank_info, save_one_service_rank_list);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_load_all_service_rank_info, load_all_service_rank_info);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_save_ranking_worship, save_ranking_worship);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_get_worship_value, load_player_worship_value);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_load_all_ranking_info, load_all_ranking_info);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_save_ranking_info_one, save_ranking_info_one);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_save_one_total_ranking_info, save_one_ranking_list);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_save_one_service_rank_info, save_one_service_rank_list);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_load_all_service_rank_info, load_all_service_rank_info);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_save_ranking_worship, save_ranking_worship);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_get_worship_value, load_player_worship_value);
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_add_ranking_worship, add_robot_worship);
 		// legion
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_save_legion_info, save_legion_info);
@@ -267,30 +267,30 @@ namespace hld
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_del_red_pack_by_sql, del_red_package_by_sql_proc);
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_save_mail_event_item, save_globel_mail_item_to_sql);
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_load_mail_event, load_mail_event);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_load_mail_event_item, load_mail_event_item);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_save_new_globel_mail_had_info, save_globel_mail_new_get_info_proc);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_save_world_boss, save_world_boss_to_sql);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_load_world_boss, load_world_boss);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_load_mail_event_item, load_mail_event_item);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_save_new_globel_mail_had_info, save_globel_mail_new_get_info_proc);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_save_world_boss, save_world_boss_to_sql);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_load_world_boss, load_world_boss);
 
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_del_draw_info_to_db, del_draw_info_from_db);
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_add_draw_info_to_db, add_draw_info_to_db);
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_load_info_from_db, load_draw_info_by_db);
 
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_save_big_player, save_big_player_to_sql);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_load_big_player, load_big_player);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_load_big_player_detail, load_big_player_detail);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_add_auction_into_db, auction_add_item_into_db_proc);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_auction_find_buy_target, auction_find_buy_target_proc);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_auction_cancel_sell, auction_find_cancel_target_proc);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_auction_find_bid_target, auction_find_bid_target_proc);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_bid_success, auction_bid_success_proc);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_auction_clear_old_item, auction_get_and_clear_old_item_proc);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_auction_add_share_list, auction_add_share_list_proc);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_auction_add_purchase_record, auction_add_trade_record_proc);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_auction_req_share_list, auction_req_share_list_proc);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_auction_check_legion_selling, auction_check_legion_selling_proc);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_auction_del_bid_record, auction_del_bid_record_proc);
-		message_manager::getInstance().register_handler(hld::e_msgindex_ws2dp_auction_clear_old_bid_record, auction_clear_old_bid_record_proc);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_save_big_player, save_big_player_to_sql);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_load_big_player, load_big_player);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_load_big_player_detail, load_big_player_detail);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_add_auction_into_db, auction_add_item_into_db_proc);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_auction_find_buy_target, auction_find_buy_target_proc);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_auction_cancel_sell, auction_find_cancel_target_proc);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_auction_find_bid_target, auction_find_bid_target_proc);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_bid_success, auction_bid_success_proc);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_auction_clear_old_item, auction_get_and_clear_old_item_proc);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_auction_add_share_list, auction_add_share_list_proc);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_auction_add_purchase_record, auction_add_trade_record_proc);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_auction_req_share_list, auction_req_share_list_proc);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_auction_check_legion_selling, auction_check_legion_selling_proc);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_auction_del_bid_record, auction_del_bid_record_proc);
+		message_manager::getInstance().register_handler(faith::e_msgindex_ws2dp_auction_clear_old_bid_record, auction_clear_old_bid_record_proc);
 
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_auction_show_sell, auction_update_sell_show_proc);
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_auction_time_out, auction_time_out_proc);
@@ -527,7 +527,7 @@ namespace hld
 	void dbproxy_service::on_req_login(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
 		//存下这台服务器的信息
-		const hld::req_login* pdata = static_cast<const hld::req_login*>(data_ptr);
+		const faith::req_login* pdata = static_cast<const faith::req_login*>(data_ptr);
 		if (NULL == pdata)
 		{
 			return;
@@ -551,7 +551,7 @@ namespace hld
 	}
 	void dbproxy_service::on_req_stop(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
-		const hld::req_stop* msg = static_cast<const hld::req_stop*>(data_ptr);
+		const faith::req_stop* msg = static_cast<const faith::req_stop*>(data_ptr);
 		if (NULL == msg)
 		{
 			return;

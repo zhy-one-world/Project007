@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -264,20 +264,20 @@ void protobuf_AddDesc_service_5fgoal_2eproto() {
     "al_proto\032-\n\020service_goal_one\022\031\n\021service_"
     "goal_info\030\001 \003(\005\032k\n\020service_goal_all\022\021\n\tr"
     "ole_guid\030\001 \003(\005\022D\n\022service_goal_array\030\002 \003"
-    "(\0132(.hld.service_goal_proto.service_goal"
+    "(\0132(.faith.service_goal_proto.service_goal"
     "_one\032E\n\024service_goal_operate\022\027\n\017service_"
     "goal_id\030\001 \001(\005\022\024\n\014operate_type\030\002 \001(\005\032\223\001\n\030"
     "service_goal_operate_end\022B\n\020service_goal"
-    "_one\030\001 \001(\0132(.hld.service_goal_proto.serv"
+    "_one\030\001 \001(\0132(.faith.service_goal_proto.serv"
     "ice_goal_one\022\026\n\016operation_type\030\002 \001(\005\022\033\n\023"
     "operation_end_state\030\003 \001(\005\0321\n\022seven_day_g"
     "oal_one\022\033\n\023seven_day_goal_info\030\001 \003(\005\032^\n\022"
     "seven_day_goal_all\022H\n\024seven_day_goal_arr"
-    "ay\030\001 \003(\0132*.hld.service_goal_proto.seven_"
+    "ay\030\001 \003(\0132*.faith.service_goal_proto.seven_"
     "day_goal_one\032I\n\026seven_day_goal_operate\022\031"
     "\n\021seven_day_goal_id\030\001 \001(\005\022\024\n\014operate_typ"
     "e\030\002 \001(\005\032\232\001\n\032seven_day_goal_operate_end\022G"
-    "\n\023seven_day_goal_data\030\001 \001(\0132*.hld.servic"
+    "\n\023seven_day_goal_data\030\001 \001(\0132*.faith.servic"
     "e_goal_proto.seven_day_goal_one\022\026\n\016opera"
     "tion_type\030\002 \001(\005\022\033\n\023operation_end_state\030\003"
     " \001(\005", 804);
@@ -613,7 +613,7 @@ bool service_goal_proto_service_goal_all::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.service_goal_proto.service_goal_one service_goal_array = 2;
+      // repeated .faith.service_goal_proto.service_goal_one service_goal_array = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -652,7 +652,7 @@ void service_goal_proto_service_goal_all::SerializeWithCachedSizes(
       1, this->role_guid(i), output);
   }
 
-  // repeated .hld.service_goal_proto.service_goal_one service_goal_array = 2;
+  // repeated .faith.service_goal_proto.service_goal_one service_goal_array = 2;
   for (int i = 0; i < this->service_goal_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->service_goal_array(i), output);
@@ -672,7 +672,7 @@ void service_goal_proto_service_goal_all::SerializeWithCachedSizes(
       WriteInt32ToArray(1, this->role_guid(i), target);
   }
 
-  // repeated .hld.service_goal_proto.service_goal_one service_goal_array = 2;
+  // repeated .faith.service_goal_proto.service_goal_one service_goal_array = 2;
   for (int i = 0; i < this->service_goal_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -699,7 +699,7 @@ int service_goal_proto_service_goal_all::ByteSize() const {
     total_size += 1 * this->role_guid_size() + data_size;
   }
 
-  // repeated .hld.service_goal_proto.service_goal_one service_goal_array = 2;
+  // repeated .faith.service_goal_proto.service_goal_one service_goal_array = 2;
   total_size += 1 * this->service_goal_array_size();
   for (int i = 0; i < this->service_goal_array_size(); i++) {
     total_size +=
@@ -1035,7 +1035,7 @@ service_goal_proto_service_goal_operate_end::service_goal_proto_service_goal_ope
 }
 
 void service_goal_proto_service_goal_operate_end::InitAsDefaultInstance() {
-  service_goal_one_ = const_cast< ::hld::service_goal_proto_service_goal_one*>(&::hld::service_goal_proto_service_goal_one::default_instance());
+  service_goal_one_ = const_cast< ::faith::service_goal_proto_service_goal_one*>(&::faith::service_goal_proto_service_goal_one::default_instance());
 }
 
 service_goal_proto_service_goal_operate_end::service_goal_proto_service_goal_operate_end(const service_goal_proto_service_goal_operate_end& from)
@@ -1086,7 +1086,7 @@ service_goal_proto_service_goal_operate_end* service_goal_proto_service_goal_ope
 void service_goal_proto_service_goal_operate_end::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_service_goal_one()) {
-      if (service_goal_one_ != NULL) service_goal_one_->::hld::service_goal_proto_service_goal_one::Clear();
+      if (service_goal_one_ != NULL) service_goal_one_->::faith::service_goal_proto_service_goal_one::Clear();
     }
     operation_type_ = 0;
     operation_end_state_ = 0;
@@ -1101,7 +1101,7 @@ bool service_goal_proto_service_goal_operate_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.service_goal_proto.service_goal_one service_goal_one = 1;
+      // optional .faith.service_goal_proto.service_goal_one service_goal_one = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1164,7 +1164,7 @@ bool service_goal_proto_service_goal_operate_end::MergePartialFromCodedStream(
 
 void service_goal_proto_service_goal_operate_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.service_goal_proto.service_goal_one service_goal_one = 1;
+  // optional .faith.service_goal_proto.service_goal_one service_goal_one = 1;
   if (has_service_goal_one()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->service_goal_one(), output);
@@ -1188,7 +1188,7 @@ void service_goal_proto_service_goal_operate_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* service_goal_proto_service_goal_operate_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.service_goal_proto.service_goal_one service_goal_one = 1;
+  // optional .faith.service_goal_proto.service_goal_one service_goal_one = 1;
   if (has_service_goal_one()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1216,7 +1216,7 @@ int service_goal_proto_service_goal_operate_end::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.service_goal_proto.service_goal_one service_goal_one = 1;
+    // optional .faith.service_goal_proto.service_goal_one service_goal_one = 1;
     if (has_service_goal_one()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -1265,7 +1265,7 @@ void service_goal_proto_service_goal_operate_end::MergeFrom(const service_goal_p
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_service_goal_one()) {
-      mutable_service_goal_one()->::hld::service_goal_proto_service_goal_one::MergeFrom(from.service_goal_one());
+      mutable_service_goal_one()->::faith::service_goal_proto_service_goal_one::MergeFrom(from.service_goal_one());
     }
     if (from.has_operation_type()) {
       set_operation_type(from.operation_type());
@@ -1592,7 +1592,7 @@ bool service_goal_proto_seven_day_goal_all::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.service_goal_proto.seven_day_goal_one seven_day_goal_array = 1;
+      // repeated .faith.service_goal_proto.seven_day_goal_one seven_day_goal_array = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1625,7 +1625,7 @@ bool service_goal_proto_seven_day_goal_all::MergePartialFromCodedStream(
 
 void service_goal_proto_seven_day_goal_all::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.service_goal_proto.seven_day_goal_one seven_day_goal_array = 1;
+  // repeated .faith.service_goal_proto.seven_day_goal_one seven_day_goal_array = 1;
   for (int i = 0; i < this->seven_day_goal_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->seven_day_goal_array(i), output);
@@ -1639,7 +1639,7 @@ void service_goal_proto_seven_day_goal_all::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* service_goal_proto_seven_day_goal_all::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.service_goal_proto.seven_day_goal_one seven_day_goal_array = 1;
+  // repeated .faith.service_goal_proto.seven_day_goal_one seven_day_goal_array = 1;
   for (int i = 0; i < this->seven_day_goal_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1656,7 +1656,7 @@ void service_goal_proto_seven_day_goal_all::SerializeWithCachedSizes(
 int service_goal_proto_seven_day_goal_all::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.service_goal_proto.seven_day_goal_one seven_day_goal_array = 1;
+  // repeated .faith.service_goal_proto.seven_day_goal_one seven_day_goal_array = 1;
   total_size += 1 * this->seven_day_goal_array_size();
   for (int i = 0; i < this->seven_day_goal_array_size(); i++) {
     total_size +=
@@ -1990,7 +1990,7 @@ service_goal_proto_seven_day_goal_operate_end::service_goal_proto_seven_day_goal
 }
 
 void service_goal_proto_seven_day_goal_operate_end::InitAsDefaultInstance() {
-  seven_day_goal_data_ = const_cast< ::hld::service_goal_proto_seven_day_goal_one*>(&::hld::service_goal_proto_seven_day_goal_one::default_instance());
+  seven_day_goal_data_ = const_cast< ::faith::service_goal_proto_seven_day_goal_one*>(&::faith::service_goal_proto_seven_day_goal_one::default_instance());
 }
 
 service_goal_proto_seven_day_goal_operate_end::service_goal_proto_seven_day_goal_operate_end(const service_goal_proto_seven_day_goal_operate_end& from)
@@ -2041,7 +2041,7 @@ service_goal_proto_seven_day_goal_operate_end* service_goal_proto_seven_day_goal
 void service_goal_proto_seven_day_goal_operate_end::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_seven_day_goal_data()) {
-      if (seven_day_goal_data_ != NULL) seven_day_goal_data_->::hld::service_goal_proto_seven_day_goal_one::Clear();
+      if (seven_day_goal_data_ != NULL) seven_day_goal_data_->::faith::service_goal_proto_seven_day_goal_one::Clear();
     }
     operation_type_ = 0;
     operation_end_state_ = 0;
@@ -2056,7 +2056,7 @@ bool service_goal_proto_seven_day_goal_operate_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.service_goal_proto.seven_day_goal_one seven_day_goal_data = 1;
+      // optional .faith.service_goal_proto.seven_day_goal_one seven_day_goal_data = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2119,7 +2119,7 @@ bool service_goal_proto_seven_day_goal_operate_end::MergePartialFromCodedStream(
 
 void service_goal_proto_seven_day_goal_operate_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.service_goal_proto.seven_day_goal_one seven_day_goal_data = 1;
+  // optional .faith.service_goal_proto.seven_day_goal_one seven_day_goal_data = 1;
   if (has_seven_day_goal_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->seven_day_goal_data(), output);
@@ -2143,7 +2143,7 @@ void service_goal_proto_seven_day_goal_operate_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* service_goal_proto_seven_day_goal_operate_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.service_goal_proto.seven_day_goal_one seven_day_goal_data = 1;
+  // optional .faith.service_goal_proto.seven_day_goal_one seven_day_goal_data = 1;
   if (has_seven_day_goal_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -2171,7 +2171,7 @@ int service_goal_proto_seven_day_goal_operate_end::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.service_goal_proto.seven_day_goal_one seven_day_goal_data = 1;
+    // optional .faith.service_goal_proto.seven_day_goal_one seven_day_goal_data = 1;
     if (has_seven_day_goal_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -2220,7 +2220,7 @@ void service_goal_proto_seven_day_goal_operate_end::MergeFrom(const service_goal
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_seven_day_goal_data()) {
-      mutable_seven_day_goal_data()->::hld::service_goal_proto_seven_day_goal_one::MergeFrom(from.seven_day_goal_data());
+      mutable_seven_day_goal_data()->::faith::service_goal_proto_seven_day_goal_one::MergeFrom(from.seven_day_goal_data());
     }
     if (from.has_operation_type()) {
       set_operation_type(from.operation_type());
@@ -2427,6 +2427,6 @@ void service_goal_proto::Swap(service_goal_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

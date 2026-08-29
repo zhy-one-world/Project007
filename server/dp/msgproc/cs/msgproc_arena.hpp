@@ -12,7 +12,7 @@ purpose :
 #include "logic/type_def.hpp"
 #include "db_manager.hpp"
 
-namespace hld
+namespace faith
 {
 	//¾º¼¼³¡
 	void cs2dp_req_add_arena_log(uint32 connindex, const void* data_ptr, size_t data_len);

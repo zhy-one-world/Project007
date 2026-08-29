@@ -10,7 +10,7 @@
 
 #include "lua_call_handle.h"
 
-namespace hld
+namespace faith
 {
 	void lua_call_handle(e_lua_call_event_type event_type)
 	{

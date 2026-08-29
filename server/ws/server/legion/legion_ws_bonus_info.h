@@ -4,7 +4,7 @@
 #include "Logic/legion_def.hpp"
 #include "legion.pb.h"
 
-namespace hld
+namespace faith
 {
 	class legion_ws_bonus_info
 	{

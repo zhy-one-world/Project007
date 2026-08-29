@@ -1,6 +1,6 @@
 #include "MissionTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void MissionTemplateSize()
     {

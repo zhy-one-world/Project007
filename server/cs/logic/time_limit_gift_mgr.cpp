@@ -18,7 +18,7 @@ author: zhaoyuming
 #include "utility/init_unit.h"
 
 
-namespace hld
+namespace faith
 {
 	time_limit_gift_mgr::time_limit_gift_mgr()
 	{
@@ -367,7 +367,7 @@ namespace hld
 			return;
 		}
 
-		hld::template_manager::template_type* template_list = template_manager::get_instance().get_templates(e_TimeLimitGiftTemplate);
+		faith::template_manager::template_type* template_list = template_manager::get_instance().get_templates(e_TimeLimitGiftTemplate);
 		if (nullptr == template_list)
 		{
 			return;

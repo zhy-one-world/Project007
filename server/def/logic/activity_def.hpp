@@ -4,7 +4,7 @@
 #include "game_enum_def_s.h"
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	

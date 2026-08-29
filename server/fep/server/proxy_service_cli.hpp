@@ -18,7 +18,7 @@
 #include "security_communication_layer.hpp"
 #include <random.hpp>
 
-namespace hld
+namespace faith
 {
 	//
 	//	singleton class, connection-proxy services for clients

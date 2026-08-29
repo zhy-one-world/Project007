@@ -16,13 +16,13 @@ purpose: 跨服天梯
 #include "Logic/cross_ladder_def.hpp"
 #include "internet/ws2cs.pb.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push, 1)
 
 	enum
 	{
-		e_msgindex_ws2cs_cross_ladder_refresh_ticket_info = hld::e_msg_base_cross_ladder,
+		e_msgindex_ws2cs_cross_ladder_refresh_ticket_info = faith::e_msg_base_cross_ladder,
 		e_msgindex_cs2ws_cross_ladder_req_buy_ticket,
 		e_msgindex_cs2ws_cross_ladder_send_game_result,
 		e_msgindex_ws2ws_cross_ladder_send_match_success,
@@ -47,7 +47,7 @@ namespace hld
 	};
 
 	//ws向cs同步可购买次数
-	struct ws2cs_cross_ladder_refresh_ticket_info : public hld::packet_base
+	struct ws2cs_cross_ladder_refresh_ticket_info : public faith::packet_base
 	{
 		guid_64		role_guid;
 		int32		can_buy_ticket_num;
@@ -56,13 +56,13 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_cross_ladder_refresh_ticket_info;
 		}
-		void to_proto(hld::ws2cs_proto::cross_ladder_refresh_ticket_info& msg)
+		void to_proto(faith::ws2cs_proto::cross_ladder_refresh_ticket_info& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_can_buy_ticket_num(can_buy_ticket_num);
 
 		}
-		void from_proto(const hld::ws2cs_proto::cross_ladder_refresh_ticket_info& msg)
+		void from_proto(const faith::ws2cs_proto::cross_ladder_refresh_ticket_info& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			can_buy_ticket_num = msg.can_buy_ticket_num();
@@ -71,7 +71,7 @@ namespace hld
 	};
 
 	//cs向ws请求购买（已经扣款）
-	struct cs2ws_cross_ladder_req_buy_ticket : public hld::packet_base
+	struct cs2ws_cross_ladder_req_buy_ticket : public faith::packet_base
 	{
 		guid_64		role_guid;
 		cs2ws_cross_ladder_req_buy_ticket()
@@ -86,7 +86,7 @@ namespace hld
 	};
 
 	//cs向ws发送比赛结果
-	struct cs2ws_cross_ladder_send_game_result : public hld::packet_base
+	struct cs2ws_cross_ladder_send_game_result : public faith::packet_base
 	{
 		guid_64		map_guid;
 		guid_64		winner_guid;
@@ -98,7 +98,7 @@ namespace hld
 	};
 
 	//比赛服ws向原区ws发送比赛匹配成功
-	struct ws2ws_cross_ladder_send_match_success : public hld::packet_base
+	struct ws2ws_cross_ladder_send_match_success : public faith::packet_base
 	{
 		int32		server_id;
 		guid_64		map_id;
@@ -130,7 +130,7 @@ namespace hld
 	};
 
 	//比赛服务区向gate服ws发送比赛结果
-	struct ws2ws_cross_ladder_send_game_result : public hld::packet_base
+	struct ws2ws_cross_ladder_send_game_result : public faith::packet_base
 	{
 		bool		draw;
 		guid_64		winner_guid;
@@ -143,7 +143,7 @@ namespace hld
 	};
 
 	//原区ws向gate服ws发送请求角色信息
-	struct ws2ws_cross_ladder_req_role_info : public hld::packet_base
+	struct ws2ws_cross_ladder_req_role_info : public faith::packet_base
 	{
 		xchar		role_name[max_name_size + 1];
 		xchar		server_name[max_name_size + 1];
@@ -170,7 +170,7 @@ namespace hld
 	};
 
 	//原区ws向gate服发送报名请求
-	struct ws2ws_cross_ladder_sign_up : public hld::packet_base
+	struct ws2ws_cross_ladder_sign_up : public faith::packet_base
 	{
 		bool		is_join;
 		int32		server_id;
@@ -185,7 +185,7 @@ namespace hld
 	};
 
 	//gate服向原区发送比赛结果
-	struct ws2ws_cross_ladder_sync_game_result : public hld::packet_base
+	struct ws2ws_cross_ladder_sync_game_result : public faith::packet_base
 	{
 		xchar		role_name[max_name_size + 1];
 		int32		ladder_score;
@@ -200,7 +200,7 @@ namespace hld
 	};
 
 	//gate服向dp请求数据
-	struct ws2dp_cross_ladder_load_info : public hld::packet_base
+	struct ws2dp_cross_ladder_load_info : public faith::packet_base
 	{
 		ws2dp_cross_ladder_load_info()
 		{
@@ -209,7 +209,7 @@ namespace hld
 	};
 
 	//gate服向dp更新数据（新建数据后)
-	struct ws2dp_cross_ladder_add_role_info : public hld::packet_base
+	struct ws2dp_cross_ladder_add_role_info : public faith::packet_base
 	{
 		s_cross_ladder_role_info	role_info;
 		ws2dp_cross_ladder_add_role_info()
@@ -220,7 +220,7 @@ namespace hld
 	};
 
 	//gate服向dp更新数据（比赛后）
-	struct ws2dp_cross_ladder_update_info : public hld::packet_base
+	struct ws2dp_cross_ladder_update_info : public faith::packet_base
 	{
 		guid_64		role_guid;
 		int32		total_win_num;
@@ -236,7 +236,7 @@ namespace hld
 		}
 	};
 	//gate服向dp更新门票数据（购买后）
-	struct ws2dp_cross_ladder_update_ticket_info : public hld::packet_base
+	struct ws2dp_cross_ladder_update_ticket_info : public faith::packet_base
 	{
 		guid_64		role_guid;
 		int32		ticket_num;
@@ -249,7 +249,7 @@ namespace hld
 	};
 
 	//gate服向dp刷新role_name
-	struct ws2dp_cross_ladder_update_role_info : public hld::packet_base
+	struct ws2dp_cross_ladder_update_role_info : public faith::packet_base
 	{
 		guid_64		role_guid;
 		xchar		role_name[max_name_size + 1];
@@ -266,7 +266,7 @@ namespace hld
 	};
 
 	//gate服通知dp刷新每日数据
-	struct ws2dp_cross_ladder_refresh_ticket_info : public hld::packet_base
+	struct ws2dp_cross_ladder_refresh_ticket_info : public faith::packet_base
 	{
 		int32		ticket_num;
 		int32		can_buy_num;
@@ -277,7 +277,7 @@ namespace hld
 		}
 	};
 
-	struct dp2ws_cross_ladder_load_role_info : public hld::packet_base
+	struct dp2ws_cross_ladder_load_role_info : public faith::packet_base
 	{
 		bool		is_load_all;
 		int32		cur_data_num;
@@ -300,7 +300,7 @@ namespace hld
 		}
 	};
 
-	struct ws2ws_cross_ladder_create_map : public hld::packet_base
+	struct ws2ws_cross_ladder_create_map : public faith::packet_base
 	{
 		s_cross_ladder_match_info match_info;
 		ws2ws_cross_ladder_create_map()
@@ -310,7 +310,7 @@ namespace hld
 		}
 	};
 
-	struct ws2ws_cross_ladder_create_map_failed : public hld::packet_base
+	struct ws2ws_cross_ladder_create_map_failed : public faith::packet_base
 	{
 		guid_64		first_role_guid;
 		guid_64		second_role_guid;
@@ -321,7 +321,7 @@ namespace hld
 		}
 	};
 
-	struct ws2dp_cross_ladder_refresh_season_info : public hld::packet_base
+	struct ws2dp_cross_ladder_refresh_season_info : public faith::packet_base
 	{
 		guid_64		role_guid;
 		int32		ladder_score;
@@ -337,7 +337,7 @@ namespace hld
 		}
 	};
 
-	struct cs2ws_cross_ladder_req_last_score : public hld::packet_base
+	struct cs2ws_cross_ladder_req_last_score : public faith::packet_base
 	{
 		guid_64		role_guid;
 		int32		server_id;
@@ -348,7 +348,7 @@ namespace hld
 		}
 	};
 
-	struct ws2ws_cross_ladder_send_last_score : public hld::packet_base
+	struct ws2ws_cross_ladder_send_last_score : public faith::packet_base
 	{
 		guid_64		role_guid;
 		int32		last_score;
@@ -360,7 +360,7 @@ namespace hld
 		}
 	};
 
-	struct ws2cs_cross_ladder_send_last_score : public hld::packet_base
+	struct ws2cs_cross_ladder_send_last_score : public faith::packet_base
 	{
 		guid_64		role_guid;
 		int32		last_score;
@@ -370,14 +370,14 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_cross_ladder_send_last_score;
 		}
-		void to_proto(hld::ws2cs_proto::cross_ladder_send_last_score& msg)
+		void to_proto(faith::ws2cs_proto::cross_ladder_send_last_score& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_last_score(last_score);
 			msg.set_last_ranking(last_ranking);
 
 		}
-		void from_proto(const hld::ws2cs_proto::cross_ladder_send_last_score& msg)
+		void from_proto(const faith::ws2cs_proto::cross_ladder_send_last_score& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			last_score = msg.last_score();
@@ -385,7 +385,7 @@ namespace hld
 		}
 	};
 
-	struct ws2ws_cross_ladder_notify_season_reward : public hld::packet_base
+	struct ws2ws_cross_ladder_notify_season_reward : public faith::packet_base
 	{
 		ws2ws_cross_ladder_notify_season_reward()
 		{

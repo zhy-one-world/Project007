@@ -8,7 +8,7 @@
 #include "template/template_manager.h"
 #include "utility/random.h"
 
-using namespace hld;
+using namespace faith;
 
 bool finger_guess_system::start_up(player* player_ptr)
 {

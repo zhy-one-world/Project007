@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -317,7 +317,7 @@ void protobuf_AddDesc_cs2ws_2eproto() {
   already_here = true;
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  ::hld::protobuf_AddDesc_st_2eproto();
+  ::faith::protobuf_AddDesc_st_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\013cs2ws.proto\022\003hld\032\010st.proto\"\216\010\n\013cs2ws_p"
     "roto\032p\n\020send_red_package\022\023\n\013sender_guid\030"
@@ -334,17 +334,17 @@ void protobuf_AddDesc_cs2ws_2eproto() {
     "\007cur_pos\030\002 \001(\005\032 \n\013first_three\022\021\n\trole_gu"
     "id\030\001 \001(\003\032\236\001\n\016chellenge_over\022\021\n\trole_guid"
     "\030\001 \001(\003\022\023\n\013target_guid\030\002 \001(\003\0225\n\trole_info"
-    "\030\003 \001(\0132\".hld.st_proto.st_player_arena_ra"
+    "\030\003 \001(\0132\".faith.st_proto.st_player_arena_ra"
     "nk\022\030\n\020chellenge_result\030\004 \001(\005\022\023\n\013target_r"
     "ank\030\005 \001(\005\032K\n\023arena_sync_gs_value\022\021\n\trole"
     "_guid\030\001 \001(\003\022\017\n\007cur_pos\030\002 \001(\005\022\020\n\010gs_value"
     "\030\003 \001(\003\032\314\001\n\030auction_add_item_into_db\022-\n\tr"
-    "ole_info\030\001 \001(\0132\032.hld.st_proto.st_unit_in"
-    "fo\0223\n\014auction_info\030\002 \001(\0132\035.hld.st_proto."
+    "ole_info\030\001 \001(\0132\032.faith.st_proto.st_unit_in"
+    "fo\0223\n\014auction_info\030\002 \001(\0132\035.faith.st_proto."
     "st_auction_info\022\025\n\rold_item_guid\030\003 \001(\003\0225"
-    "\n\nthird_info\030\004 \001(\0132!.hld.st_proto.st_log"
+    "\n\nthird_info\030\004 \001(\0132!.faith.st_proto.st_log"
     "in_fixed_data\032^\n\017set_best_record\022\027\n\017map_"
-    "template_id\030\001 \001(\005\0222\n\006record\030\002 \001(\0132\".hld."
+    "template_id\030\001 \001(\005\0222\n\006record\030\002 \001(\0132\".faith."
     "st_proto.st_single_map_record", 1069);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "cs2ws.proto", &protobuf_RegisterTypes);
@@ -2135,7 +2135,7 @@ cs2ws_proto_chellenge_over::cs2ws_proto_chellenge_over()
 }
 
 void cs2ws_proto_chellenge_over::InitAsDefaultInstance() {
-  role_info_ = const_cast< ::hld::st_proto_st_player_arena_rank*>(&::hld::st_proto_st_player_arena_rank::default_instance());
+  role_info_ = const_cast< ::faith::st_proto_st_player_arena_rank*>(&::faith::st_proto_st_player_arena_rank::default_instance());
 }
 
 cs2ws_proto_chellenge_over::cs2ws_proto_chellenge_over(const cs2ws_proto_chellenge_over& from)
@@ -2190,7 +2190,7 @@ void cs2ws_proto_chellenge_over::Clear() {
     role_guid_ = GOOGLE_LONGLONG(0);
     target_guid_ = GOOGLE_LONGLONG(0);
     if (has_role_info()) {
-      if (role_info_ != NULL) role_info_->::hld::st_proto_st_player_arena_rank::Clear();
+      if (role_info_ != NULL) role_info_->::faith::st_proto_st_player_arena_rank::Clear();
     }
     chellenge_result_ = 0;
     target_rank_ = 0;
@@ -2236,7 +2236,7 @@ bool cs2ws_proto_chellenge_over::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.st_proto.st_player_arena_rank role_info = 3;
+      // optional .faith.st_proto.st_player_arena_rank role_info = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2310,7 +2310,7 @@ void cs2ws_proto_chellenge_over::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->target_guid(), output);
   }
 
-  // optional .hld.st_proto.st_player_arena_rank role_info = 3;
+  // optional .faith.st_proto.st_player_arena_rank role_info = 3;
   if (has_role_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->role_info(), output);
@@ -2344,7 +2344,7 @@ void cs2ws_proto_chellenge_over::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->target_guid(), target);
   }
 
-  // optional .hld.st_proto.st_player_arena_rank role_info = 3;
+  // optional .faith.st_proto.st_player_arena_rank role_info = 3;
   if (has_role_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -2386,7 +2386,7 @@ int cs2ws_proto_chellenge_over::ByteSize() const {
           this->target_guid());
     }
 
-    // optional .hld.st_proto.st_player_arena_rank role_info = 3;
+    // optional .faith.st_proto.st_player_arena_rank role_info = 3;
     if (has_role_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -2441,7 +2441,7 @@ void cs2ws_proto_chellenge_over::MergeFrom(const cs2ws_proto_chellenge_over& fro
       set_target_guid(from.target_guid());
     }
     if (from.has_role_info()) {
-      mutable_role_info()->::hld::st_proto_st_player_arena_rank::MergeFrom(from.role_info());
+      mutable_role_info()->::faith::st_proto_st_player_arena_rank::MergeFrom(from.role_info());
     }
     if (from.has_chellenge_result()) {
       set_chellenge_result(from.chellenge_result());
@@ -2795,9 +2795,9 @@ cs2ws_proto_auction_add_item_into_db::cs2ws_proto_auction_add_item_into_db()
 }
 
 void cs2ws_proto_auction_add_item_into_db::InitAsDefaultInstance() {
-  role_info_ = const_cast< ::hld::st_proto_st_unit_info*>(&::hld::st_proto_st_unit_info::default_instance());
-  auction_info_ = const_cast< ::hld::st_proto_st_auction_info*>(&::hld::st_proto_st_auction_info::default_instance());
-  third_info_ = const_cast< ::hld::st_proto_st_login_fixed_data*>(&::hld::st_proto_st_login_fixed_data::default_instance());
+  role_info_ = const_cast< ::faith::st_proto_st_unit_info*>(&::faith::st_proto_st_unit_info::default_instance());
+  auction_info_ = const_cast< ::faith::st_proto_st_auction_info*>(&::faith::st_proto_st_auction_info::default_instance());
+  third_info_ = const_cast< ::faith::st_proto_st_login_fixed_data*>(&::faith::st_proto_st_login_fixed_data::default_instance());
 }
 
 cs2ws_proto_auction_add_item_into_db::cs2ws_proto_auction_add_item_into_db(const cs2ws_proto_auction_add_item_into_db& from)
@@ -2851,14 +2851,14 @@ cs2ws_proto_auction_add_item_into_db* cs2ws_proto_auction_add_item_into_db::New(
 void cs2ws_proto_auction_add_item_into_db::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_role_info()) {
-      if (role_info_ != NULL) role_info_->::hld::st_proto_st_unit_info::Clear();
+      if (role_info_ != NULL) role_info_->::faith::st_proto_st_unit_info::Clear();
     }
     if (has_auction_info()) {
-      if (auction_info_ != NULL) auction_info_->::hld::st_proto_st_auction_info::Clear();
+      if (auction_info_ != NULL) auction_info_->::faith::st_proto_st_auction_info::Clear();
     }
     old_item_guid_ = GOOGLE_LONGLONG(0);
     if (has_third_info()) {
-      if (third_info_ != NULL) third_info_->::hld::st_proto_st_login_fixed_data::Clear();
+      if (third_info_ != NULL) third_info_->::faith::st_proto_st_login_fixed_data::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -2871,7 +2871,7 @@ bool cs2ws_proto_auction_add_item_into_db::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.st_proto.st_unit_info role_info = 1;
+      // optional .faith.st_proto.st_unit_info role_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2884,7 +2884,7 @@ bool cs2ws_proto_auction_add_item_into_db::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.st_proto.st_auction_info auction_info = 2;
+      // optional .faith.st_proto.st_auction_info auction_info = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2914,7 +2914,7 @@ bool cs2ws_proto_auction_add_item_into_db::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.st_proto.st_login_fixed_data third_info = 4;
+      // optional .faith.st_proto.st_login_fixed_data third_info = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2946,13 +2946,13 @@ bool cs2ws_proto_auction_add_item_into_db::MergePartialFromCodedStream(
 
 void cs2ws_proto_auction_add_item_into_db::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.st_proto.st_unit_info role_info = 1;
+  // optional .faith.st_proto.st_unit_info role_info = 1;
   if (has_role_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->role_info(), output);
   }
 
-  // optional .hld.st_proto.st_auction_info auction_info = 2;
+  // optional .faith.st_proto.st_auction_info auction_info = 2;
   if (has_auction_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->auction_info(), output);
@@ -2963,7 +2963,7 @@ void cs2ws_proto_auction_add_item_into_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(3, this->old_item_guid(), output);
   }
 
-  // optional .hld.st_proto.st_login_fixed_data third_info = 4;
+  // optional .faith.st_proto.st_login_fixed_data third_info = 4;
   if (has_third_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->third_info(), output);
@@ -2977,14 +2977,14 @@ void cs2ws_proto_auction_add_item_into_db::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* cs2ws_proto_auction_add_item_into_db::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.st_proto.st_unit_info role_info = 1;
+  // optional .faith.st_proto.st_unit_info role_info = 1;
   if (has_role_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         1, this->role_info(), target);
   }
 
-  // optional .hld.st_proto.st_auction_info auction_info = 2;
+  // optional .faith.st_proto.st_auction_info auction_info = 2;
   if (has_auction_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -2996,7 +2996,7 @@ void cs2ws_proto_auction_add_item_into_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(3, this->old_item_guid(), target);
   }
 
-  // optional .hld.st_proto.st_login_fixed_data third_info = 4;
+  // optional .faith.st_proto.st_login_fixed_data third_info = 4;
   if (has_third_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -3014,14 +3014,14 @@ int cs2ws_proto_auction_add_item_into_db::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.st_proto.st_unit_info role_info = 1;
+    // optional .faith.st_proto.st_unit_info role_info = 1;
     if (has_role_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->role_info());
     }
 
-    // optional .hld.st_proto.st_auction_info auction_info = 2;
+    // optional .faith.st_proto.st_auction_info auction_info = 2;
     if (has_auction_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -3035,7 +3035,7 @@ int cs2ws_proto_auction_add_item_into_db::ByteSize() const {
           this->old_item_guid());
     }
 
-    // optional .hld.st_proto.st_login_fixed_data third_info = 4;
+    // optional .faith.st_proto.st_login_fixed_data third_info = 4;
     if (has_third_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -3070,16 +3070,16 @@ void cs2ws_proto_auction_add_item_into_db::MergeFrom(const cs2ws_proto_auction_a
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_role_info()) {
-      mutable_role_info()->::hld::st_proto_st_unit_info::MergeFrom(from.role_info());
+      mutable_role_info()->::faith::st_proto_st_unit_info::MergeFrom(from.role_info());
     }
     if (from.has_auction_info()) {
-      mutable_auction_info()->::hld::st_proto_st_auction_info::MergeFrom(from.auction_info());
+      mutable_auction_info()->::faith::st_proto_st_auction_info::MergeFrom(from.auction_info());
     }
     if (from.has_old_item_guid()) {
       set_old_item_guid(from.old_item_guid());
     }
     if (from.has_third_info()) {
-      mutable_third_info()->::hld::st_proto_st_login_fixed_data::MergeFrom(from.third_info());
+      mutable_third_info()->::faith::st_proto_st_login_fixed_data::MergeFrom(from.third_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -3136,7 +3136,7 @@ cs2ws_proto_set_best_record::cs2ws_proto_set_best_record()
 }
 
 void cs2ws_proto_set_best_record::InitAsDefaultInstance() {
-  record_ = const_cast< ::hld::st_proto_st_single_map_record*>(&::hld::st_proto_st_single_map_record::default_instance());
+  record_ = const_cast< ::faith::st_proto_st_single_map_record*>(&::faith::st_proto_st_single_map_record::default_instance());
 }
 
 cs2ws_proto_set_best_record::cs2ws_proto_set_best_record(const cs2ws_proto_set_best_record& from)
@@ -3187,7 +3187,7 @@ void cs2ws_proto_set_best_record::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     map_template_id_ = 0;
     if (has_record()) {
-      if (record_ != NULL) record_->::hld::st_proto_st_single_map_record::Clear();
+      if (record_ != NULL) record_->::faith::st_proto_st_single_map_record::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -3215,7 +3215,7 @@ bool cs2ws_proto_set_best_record::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.st_proto.st_single_map_record record = 2;
+      // optional .faith.st_proto.st_single_map_record record = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -3252,7 +3252,7 @@ void cs2ws_proto_set_best_record::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->map_template_id(), output);
   }
 
-  // optional .hld.st_proto.st_single_map_record record = 2;
+  // optional .faith.st_proto.st_single_map_record record = 2;
   if (has_record()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->record(), output);
@@ -3271,7 +3271,7 @@ void cs2ws_proto_set_best_record::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->map_template_id(), target);
   }
 
-  // optional .hld.st_proto.st_single_map_record record = 2;
+  // optional .faith.st_proto.st_single_map_record record = 2;
   if (has_record()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -3296,7 +3296,7 @@ int cs2ws_proto_set_best_record::ByteSize() const {
           this->map_template_id());
     }
 
-    // optional .hld.st_proto.st_single_map_record record = 2;
+    // optional .faith.st_proto.st_single_map_record record = 2;
     if (has_record()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -3334,7 +3334,7 @@ void cs2ws_proto_set_best_record::MergeFrom(const cs2ws_proto_set_best_record& f
       set_map_template_id(from.map_template_id());
     }
     if (from.has_record()) {
-      mutable_record()->::hld::st_proto_st_single_map_record::MergeFrom(from.record());
+      mutable_record()->::faith::st_proto_st_single_map_record::MergeFrom(from.record());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -3534,6 +3534,6 @@ void cs2ws_proto::Swap(cs2ws_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

@@ -13,7 +13,7 @@
 #include "server_def.hpp"
 #include "cross_server_harry_msg.hpp"
 
-namespace hld
+namespace faith
 {
 	class game_proto_cross_server_harry_one_msg;
 

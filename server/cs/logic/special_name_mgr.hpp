@@ -13,7 +13,7 @@ purpose: about role's Special_name_mgr
 #include <Logic/special_name_def.hpp>
 #include "template/ServerTemplateHead.h"
 
-namespace hld
+namespace faith
 {
 	class unit;
 

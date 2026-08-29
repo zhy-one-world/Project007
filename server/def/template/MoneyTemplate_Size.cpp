@@ -1,6 +1,6 @@
 #include "MoneyTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void MoneyTemplateSize()
     {

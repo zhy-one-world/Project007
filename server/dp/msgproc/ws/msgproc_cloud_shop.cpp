@@ -9,7 +9,7 @@ purpose:
 #include "dbproxy_service.hpp"
 #include <cloud_shop_msg.hpp>
 
-namespace hld
+namespace faith
 {
 	void  req_load_cloud_shop_role_record(uint32 connindex, int32 start_pos)
 	{
@@ -26,7 +26,7 @@ namespace hld
 
 	void ws2dp_req_load_cloud_role_record(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
-		const hld::ws2dp_load_cloud_shop_players_info* pdata = static_cast<const hld::ws2dp_load_cloud_shop_players_info*>(data_ptr);
+		const faith::ws2dp_load_cloud_shop_players_info* pdata = static_cast<const faith::ws2dp_load_cloud_shop_players_info*>(data_ptr);
 		if (nullptr == pdata)
 		{
 			return;
@@ -82,7 +82,7 @@ namespace hld
 
 	void ws2dp_req_save_cloud_role_record(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
-		const hld::ws2dp_save_cloud_shop_role_info* pdata = static_cast<const hld::ws2dp_save_cloud_shop_role_info*>(data_ptr);
+		const faith::ws2dp_save_cloud_shop_role_info* pdata = static_cast<const faith::ws2dp_save_cloud_shop_role_info*>(data_ptr);
 		if (nullptr == pdata)
 		{
 			return;
@@ -116,7 +116,7 @@ namespace hld
 	
 	void ws2dp_req_clear_cloud_shop_player_info(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
-		const hld::ws2dp_clear_cloud_shop_player_info* pdata = static_cast<const hld::ws2dp_clear_cloud_shop_player_info*>(data_ptr);
+		const faith::ws2dp_clear_cloud_shop_player_info* pdata = static_cast<const faith::ws2dp_clear_cloud_shop_player_info*>(data_ptr);
 		if (nullptr == pdata)
 		{
 			return;

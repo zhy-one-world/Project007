@@ -19,7 +19,7 @@
 #include <loop_int.hpp>
 #include "login.pb.h"
 
-namespace hld
+namespace faith
 {
 	class client_session : private boost::noncopyable
 	{
@@ -91,9 +91,9 @@ namespace hld
 
 
 	public:
-		xchar				m_account[hld::max_account_length + 1];			//	account for login
-		xchar				m_server_msg[hld::max_server_msg_length + 1];			//	server_msg for login
-		xchar				m_ipaddr[hld::max_ip_address_length + 1];
+		xchar				m_account[faith::max_account_length + 1];			//	account for login
+		xchar				m_server_msg[faith::max_server_msg_length + 1];			//	server_msg for login
+		xchar				m_ipaddr[faith::max_ip_address_length + 1];
 		bool				m_is_create_account;
 		int64				m_heart_beat_time;					//上次心跳时间(上次收到客户端消息时间)
 		int64				m_heart_login_time;					//玩家在登陆界面的时间，时间过长就踢掉

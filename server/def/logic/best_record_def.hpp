@@ -4,7 +4,7 @@
 #include "logic/type_def.hpp"
 #include "char_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
@@ -37,7 +37,7 @@ namespace hld
 		{
 			memset(this, 0, sizeof(*this));
 		}
-		void to_proto(hld::st_proto::st_single_map_record* st_single_ptr)
+		void to_proto(faith::st_proto::st_single_map_record* st_single_ptr)
 		{
 			if (st_single_ptr == nullptr)
 			{
@@ -56,7 +56,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::st_proto::st_single_map_record& st_single_ref)
+		void from_proto(const faith::st_proto::st_single_map_record& st_single_ref)
 		{
 			role_guid.server_64 = st_single_ref.role_guid();
 			my_memcopy_string(role_name, max_name_size, st_single_ref.role_name());
@@ -67,7 +67,7 @@ namespace hld
 	struct s_best_record
 	{
 		int32	map_template_id;
-		s_single_map_record		single_map_best_record[hld::single_map_record_num];
+		s_single_map_record		single_map_best_record[faith::single_map_record_num];
 
 		s_best_record()
 		{

@@ -4,7 +4,7 @@
 #include "template/ServerTemplateHead.h"
 #include "time.hpp"
 
-namespace hld
+namespace faith
 {
 	class csv_row;
 

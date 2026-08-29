@@ -26,7 +26,7 @@
 #include "net.pb.h"
 #include "character.pb.h"
 
-namespace hld
+namespace faith
 {
 	void fep2c_ping(client_session* client_session_ptr, const int64& client_time)
 	{
@@ -195,8 +195,8 @@ namespace hld
 		client_session_ptr->set_login_proto_login(clientReq.login_info());
 		client_session_ptr->set_account(req_account);
 
-		int64 ban_role_array[hld::max_character_num];
-		int64 ban_chat_array[hld::max_character_num];
+		int64 ban_role_array[faith::max_character_num];
+		int64 ban_chat_array[faith::max_character_num];
 
 		memset(ban_role_array, 0, sizeof(ban_role_array));
 		memset(ban_chat_array, 0, sizeof(ban_chat_array));

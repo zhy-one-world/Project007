@@ -14,21 +14,21 @@ purpose:
 #include "Logic/char_def.hpp"
 #include "Logic/title_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	enum
 	{
-		e_msgindex_dp2cs_load_char_title = hld::e_msg_base_title,
+		e_msgindex_dp2cs_load_char_title = faith::e_msg_base_title,
 		e_msgindex_cs2dp_save_char_title,
 	};
 
-	struct dp2cs_load_char_title : public hld::packet_base
+	struct dp2cs_load_char_title : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
 		int32								data_num;
-		s_title_info						data_list[hld::MAX_TITLE_NUM];
+		s_title_info						data_list[faith::MAX_TITLE_NUM];
 		dp2cs_load_char_title()
 		{
 			memset(this, 0, sizeof(*this));
@@ -41,13 +41,13 @@ namespace hld
 		}
 	};
 
-	struct cs2dp_save_char_title : public hld::packet_base
+	struct cs2dp_save_char_title : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
 		int32								save_type_ex;
 		int32								data_num;
-		s_title_info						data_list[hld::MAX_TITLE_NUM];
+		s_title_info						data_list[faith::MAX_TITLE_NUM];
 
 		cs2dp_save_char_title()
 		{

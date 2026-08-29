@@ -11,7 +11,7 @@ purpose: ¥Ú±¶œ‡πÿ
 
 #include "gain_treasure_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class player;
 	class gain_treasure_mgr

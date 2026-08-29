@@ -30,7 +30,7 @@
 #include "utility/init_unit.h"
 #include "template/template_manager.h"
 
-namespace hld
+namespace faith
 {
 
 	void login_service_pc::req_login(const s_client_uid client_uid, const login_proto_login proto_data)

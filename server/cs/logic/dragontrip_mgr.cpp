@@ -11,7 +11,7 @@
 #include "internet/cs2dp.pb.h"
 #include "internal/char_msg.hpp"
 
-namespace hld
+namespace faith
 {
 	dragontrip_mgr::dragontrip_mgr()
 	{
@@ -67,13 +67,13 @@ namespace hld
 		else
 		{
 
-			hld::cs2dp_proto::save_role_dragontrip msg;
+			faith::cs2dp_proto::save_role_dragontrip msg;
 
 			msg.set_role_guid(player_ref.get_unit_guid().server_64);
 			msg.set_unit_array_index(m_array_index);
 			msg.set_save_type_ex(save_type);
 
-			hld::cs2dp_proto::role_dragontrip_db* db_row = msg.mutable_db_data();
+			faith::cs2dp_proto::role_dragontrip_db* db_row = msg.mutable_db_data();
 			for (int32 i = 0; i < e_dragontrip_max; i++)
 			{
 				db_row->add_data_ary(m_data.data_ary[i]);
@@ -105,7 +105,7 @@ namespace hld
 
 		s_dragontrip_info row_info;
 
-		hld::cs2dp_proto::role_dragontrip_db msg;
+		faith::cs2dp_proto::role_dragontrip_db msg;
 
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
@@ -131,7 +131,7 @@ namespace hld
 		{
 			return;
 		}
-		hld::dragontrip_proto::dragontrip_all msg_all;
+		faith::dragontrip_proto::dragontrip_all msg_all;
 
 		for (int32 i = e_dragontrip_free_time; i < e_dragontrip_max; i++)
 		{

@@ -9,7 +9,7 @@
 #include <char_msg.hpp>
 #include "Logic/relation_def.h"
 #include "utility/parse_msg.h"
-namespace hld
+namespace faith
 {
 	void ws2dp_req_load_player_relation_lua(uint32 connindex, int64 sender_guid)
 	{

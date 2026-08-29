@@ -1,7 +1,7 @@
 #include "md5.h"
 
 using namespace std;
-namespace hld
+namespace faith
 {
 	/* Constants for MD5Transform routine. */
 #define S11 7

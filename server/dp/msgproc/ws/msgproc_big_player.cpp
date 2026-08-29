@@ -12,7 +12,7 @@ purpose:
 #include "msgproc_big_player.hpp"
 #include <big_player_msg.hpp>
 
-namespace hld
+namespace faith
 {
 	
 

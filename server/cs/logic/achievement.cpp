@@ -9,7 +9,7 @@ purpose: 单个成就
 #include "template/template_manager.h"
 #include "logic/player.hpp"
 
-namespace hld
+namespace faith
 {
 	cachievement::cachievement()
 	{

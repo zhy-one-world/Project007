@@ -20,7 +20,7 @@
 #include "server/client_session_mgr.hpp"
 #include "cross_group/gate_proxy.hpp"
 
-namespace hld
+namespace faith
 {
 	using namespace net;
 //#define OPEN_LUA_TICK

@@ -1,0 +1,137 @@
+syntax = "proto2";
+package hld;
+
+message cross_ladder
+{
+	message request_role_info
+	{
+	}
+	
+	message send_role_info
+	{
+		optional int32	cross_result		= 1;
+		repeated int32  data_array			= 2;
+		optional bool	is_online			= 3;
+		optional int32	last_season_ranking = 4;
+	}
+
+	message request_sign_up
+	{
+		optional bool	is_join				= 1;
+	}
+
+	message respond_sign_up
+	{
+		optional int32	sign_up_result		= 1;
+	}
+
+	message send_match_success
+	{
+		optional string opponent_name		    = 1;
+		optional int32	opponent_server_id	    = 2;
+		optional int32	opponent_template_id    = 3;
+		optional int32  opponent_ladder_score   = 4;
+		optional int32  opponent_total_join_num = 5;
+		optional int32  opponent_total_win_num  = 6;
+		optional int32  opponent_last_win_num   = 7;
+		optional string opponent_server_name    = 8;
+	}
+
+	message request_buy_join_ticket
+	{
+		optional int32	num					= 1;                   
+	}
+
+	message respond_buy_join_ticket
+	{
+		optional int32	result				= 1;
+		optional int32	ticket_num			= 2;
+		optional int32	can_buy_num			= 3;
+	}
+
+	message map_member_info
+	{
+		optional string role_name			= 1;
+		optional int32	score				= 2;
+	}
+
+	message update_map_game_state
+	{
+		optional int32 game_state			= 1;
+		optional int32 state_end_time		= 2;
+		optional int32 cur_turn				= 3;
+		optional int32 winner_guid_A		= 4;
+		optional int32 winner_guid_B		= 5;
+		repeated map_member_info member_vec = 6;
+	}
+
+	message req_mission_reward
+	{
+		optional int32 index				= 1;
+	}
+
+	message ret_mission_reward
+	{
+		optional int32 index				= 1;
+		optional int32 result				= 2;
+	}
+	message get_role_competition
+	{
+	}
+	message sync_role_competition
+	{
+		optional int32 is_buy = 1;
+		optional int32 season = 2;
+		optional int32 buy_manual_type = 3;
+		optional int32 competition_begin_time = 4;
+		optional int32 competition_end_time = 5;
+		optional int32 level = 6;
+		optional int32 cur_exp = 7;
+		repeated int32 normal_reward = 8;
+		repeated int32 special_reward = 9;
+		optional int32 cur_state = 10;
+		optional int32 world_level = 11;
+	}
+	message get_competition_lv_reward
+	{
+		optional int32 manual_id = 1;
+		optional int32 manual_type = 2;
+	}
+	message get_competition_lv_reward_end
+	{
+		repeated int32 manual_id_list = 1;
+		repeated int32 manual_type_list = 2;
+		optional int32 get_type = 3;
+	}
+	message get_competition_lv_reward_all
+	{
+	}
+	message buy_competition_lv
+	{
+		optional int32 level = 1;
+	}
+	message buy_competition_lv_end
+	{
+		optional int32 level = 1;
+		optional int32 cur_exp = 2;
+	}
+	
+	message buy_speical_manual
+	{	
+		optional int32 manual_type = 1;
+	}
+	message buy_speical_manual_end
+	{
+		optional int32 is_buy = 1;
+		optional int32 manual_type = 2;
+	}
+
+	message send_upgrade_notify
+	{
+		optional int32 upgrade_id			= 1;
+	}
+
+	message return_to_source_zone
+	{
+	}
+}

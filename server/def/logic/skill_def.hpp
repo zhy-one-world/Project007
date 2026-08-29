@@ -16,7 +16,7 @@
 #include "unit_def.hpp"
 
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	#define MAX_SKILL_SERIES_NUM	1000      // 技能系列上限
@@ -538,7 +538,7 @@ namespace hld
 			}
 		}
 		int32 data_ary[e_skill_info_max];
-		bool to_proto(hld::st_proto::st_skill_info * st_skill_ptr)
+		bool to_proto(faith::st_proto::st_skill_info * st_skill_ptr)
 		{
 			if (st_skill_ptr == nullptr)
 			{
@@ -550,7 +550,7 @@ namespace hld
 			}
 			return true;
 		}
-		void from_proto(const hld::st_proto::st_skill_info& st_skill_ref)
+		void from_proto(const faith::st_proto::st_skill_info& st_skill_ref)
 		{
 			for (int32 i = 0; i < e_skill_info_max &&  i < st_skill_ref.data_ary_size(); i++)
 			{

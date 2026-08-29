@@ -1,6 +1,6 @@
 #include "PreloadCacheTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void PreloadCacheTemplateSize()
     {

@@ -1,6 +1,6 @@
 #include "ConvertTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void ConvertTemplateSize()
     {

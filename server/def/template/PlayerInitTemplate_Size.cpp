@@ -1,6 +1,6 @@
 #include "PlayerInitTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void PlayerInitTemplateSize()
     {

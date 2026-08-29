@@ -16,7 +16,7 @@
 #include "http/http_access_mgr.hpp"
 #include <login_msg.hpp>
 
-namespace hld
+namespace faith
 {
 	class login_service_google : public login_service , public singleton<login_service_google>
 	{

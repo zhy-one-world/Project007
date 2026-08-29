@@ -9,7 +9,7 @@
 
 #include "char_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	//最大好友数量

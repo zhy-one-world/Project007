@@ -10,7 +10,7 @@
 #include <cross_server_harry_msg.hpp>
 #include "dbproxy_service.hpp"
 #include "utility/parse_msg.h"
-namespace hld
+namespace faith
 {
 	void save_cross_server_harry_ws_info_lua(uint32 connindex, int32 server_id, int32 server_money, int32 special_money, int64 first_player_guid, int64 second_player_guid, int64 third_player_guid, xstring first_player_name)
 	{

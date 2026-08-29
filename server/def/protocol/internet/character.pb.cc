@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -4679,7 +4679,7 @@ void protobuf_AddDesc_character_2eproto() {
     "guid\030\016 \001(\003\022\032\n\022spirit_template_id\030\017 \001(\005\022\035"
     "\n\025spirit_illusion_index\030\020 \001(\005\022\034\n\024spirit_"
     "upgrade_count\030\021 \001(\005\022;\n\titem_info\030\022 \003(\0132("
-    ".hld.character_proto.enum_character_item"
+    ".faith.character_proto.enum_character_item"
     "\022\026\n\016login_out_time\030\023 \001(\003\022\024\n\014show_fashion"
     "\030\024 \001(\005\022\025\n\rhead_frame_id\030\025 \001(\005\022\025\n\rappeara"
     "nce_id\030\026 \001(\005\022\033\n\023is_only_create_role\030\027 \001("
@@ -4738,12 +4738,12 @@ void protobuf_AddDesc_character_2eproto() {
     "(\005\032-\n\npos_vector\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t"
     "\n\001z\030\003 \001(\002\032,\n\trot_angle\022\t\n\001r\030\001 \001(\002\022\t\n\001y\030\002"
     " \001(\002\022\t\n\001p\030\003 \001(\002\032\301\001\n\016character_move\022\021\n\tun"
-    "it_guid\030\001 \001(\003\0221\n\010position\030\002 \001(\0132\037.hld.ch"
+    "it_guid\030\001 \001(\003\0221\n\010position\030\002 \001(\0132\037.faith.ch"
     "aracter_proto.pos_vector\0222\n\tdirection\030\003 "
-    "\001(\0132\037.hld.character_proto.pos_vector\0225\n\r"
-    "rotator_angle\030\004 \001(\0132\036.hld.character_prot"
+    "\001(\0132\037.faith.character_proto.pos_vector\0225\n\r"
+    "rotator_angle\030\004 \001(\0132\036.faith.character_prot"
     "o.rot_angle\032_\n\022load_role_info_end\0225\n\trol"
-    "e_info\030\001 \001(\0132\".hld.character_proto.unit_"
+    "e_info\030\001 \001(\0132\".faith.character_proto.unit_"
     "info_msg\022\022\n\nruntime_id\030\002 \001(\021\032`\n\021characte"
     "r_warning\022\021\n\tunit_guid\030\001 \001(\003\022\021\n\twarn_typ"
     "e\030\002 \001(\005\022\022\n\nwarn_value\030\003 \001(\005\022\021\n\twarn_show"
@@ -4793,7 +4793,7 @@ void protobuf_AddDesc_character_2eproto() {
     "\022\017\n\007crystal\030\001 \001(\005\022\r\n\005score\030\002 \001(\005\022\026\n\016last"
     "_free_time\030\003 \001(\005\032o\n\rupdate_spirit\022\021\n\trol"
     "e_guid\030\001 \001(\003\022\024\n\014spirit_error\030\002 \001(\r\0225\n\013sp"
-    "irit_list\030\003 \003(\0132 .hld.character_proto.sp"
+    "irit_list\030\003 \003(\0132 .faith.character_proto.sp"
     "irit_info\032G\n\025update_free_hunt_time\022\021\n\tro"
     "le_guid\030\001 \001(\003\022\033\n\023last_free_hunt_time\030\002 \001"
     "(\005\032]\n\027spirit_system_operation\022\021\n\trole_gu"
@@ -4867,7 +4867,7 @@ void protobuf_AddDesc_character_2eproto() {
     "ena_rank\030\005 \001(\005\022\022\n\ndata_array\030\006 \003(\005\032\206\001\n\037u"
     "pdate_three_day_must_do_remain\022\021\n\trole_g"
     "uid\030\001 \003(\005\022P\n\030remain_three_day_must_do\030\002 "
-    "\003(\0132..hld.character_proto.daily_must_do_"
+    "\003(\0132..faith.character_proto.daily_must_do_"
     "remain_info\032i\n\023daily_must_do_count\022\021\n\tro"
     "le_guid\030\001 \003(\005\022\024\n\014must_do_type\030\002 \001(\005\022\025\n\rm"
     "ust_do_value\030\003 \001(\005\022\022\n\ndata_array\030\004 \003(\005\032@"
@@ -4899,7 +4899,7 @@ void protobuf_AddDesc_character_2eproto() {
     "\005\022\025\n\rrandom_pos_id\030\010 \001(\005\022\032\n\022boss_daily_r"
     "efresh\030\t \001(\005\032i\n\021update_world_boss\022\024\n\014is_"
     "need_show\030\001 \001(\010\022>\n\020world_boss_array\030\002 \003("
-    "\0132$.hld.character_proto.world_boss_data\032"
+    "\0132$.faith.character_proto.world_boss_data\032"
     "<\n\024purchase_growup_fund\022\021\n\trole_guid\030\001 \003"
     "(\005\022\021\n\tfund_type\030\002 \001(\005\032Y\n\030purchase_growup"
     "_fund_end\022\021\n\trole_guid\030\001 \003(\005\022\021\n\tfund_typ"
@@ -4927,7 +4927,7 @@ void protobuf_AddDesc_character_2eproto() {
     "\030\007 \003(\t\032A\n\030find_other_unit_item_one\022\021\n\tit"
     "em_guid\030\001 \001(\003\022\022\n\ndata_array\030\002 \003(\005\032\214\001\n\034fi"
     "nd_other_unit_equiping_end\022\023\n\013target_gui"
-    "d\030\001 \001(\003\022D\n\requiping_info\030\002 \003(\0132-.hld.cha"
+    "d\030\001 \001(\003\022D\n\requiping_info\030\002 \003(\0132-.faith.cha"
     "racter_proto.find_other_unit_item_one\022\021\n"
     "\tis_finish\030\003 \001(\010\032F\n\036find_other_unit_buff"
     "_equip_end\022\023\n\013target_guid\030\001 \001(\003\022\017\n\007buff_"
@@ -4940,7 +4940,7 @@ void protobuf_AddDesc_character_2eproto() {
     "\n\013sprite_guid\030\002 \001(\003\022\022\n\ndata_array\030\003 \003(\005\032"
     "\247\001\n!find_other_unit_wing_or_mount_end\022\023\n"
     "\013target_guid\030\001 \001(\003\022I\n\022mount_or_wing_info"
-    "\030\002 \003(\0132-.hld.character_proto.find_other_"
+    "\030\002 \003(\0132-.faith.character_proto.find_other_"
     "unit_item_one\022\017\n\007is_wing\030\003 \001(\010\022\021\n\tis_fin"
     "ish\030\004 \001(\010\032B\n\030find_other_unit_buff_end\022\023\n"
     "\013target_guid\030\001 \001(\003\022\021\n\tbuff_info\030\002 \003(\005\032F\n"
@@ -4970,9 +4970,9 @@ void protobuf_AddDesc_character_2eproto() {
     "_time\030\004 \001(\005\022\023\n\013sender_name\030\005 \001(\t\022\021\n\tsend"
     "_text\030\006 \001(\t\022\024\n\014remain_times\030\007 \001(\005\022\030\n\020rem"
     "ain_money_num\030\010 \001(\005\022B\n\rreceiver_list\030\t \003"
-    "(\0132+.hld.character_proto.red_pack_receiv"
+    "(\0132+.faith.character_proto.red_pack_receiv"
     "er_info\032M\n\024update_red_pack_info\0225\n\tinfo_"
-    "list\030\001 \003(\0132\".hld.character_proto.red_pac"
+    "list\030\001 \003(\0132\".faith.character_proto.red_pac"
     "k_info\032\244\001\n\024update_new_draw_info\022\030\n\020red_p"
     "ackage_guid\030\001 \003(\005\022\030\n\020remain_money_num\030\002 "
     "\001(\005\022\030\n\020remain_get_times\030\003 \001(\005\022\025\n\rreceive"
@@ -4981,7 +4981,7 @@ void protobuf_AddDesc_character_2eproto() {
     "de_trigger_id\030\001 \001(\005\022\r\n\005state\030\002 \001(\005\032;\n\020gu"
     "ide_record_one\022\030\n\020guide_trigger_id\030\001 \001(\005"
     "\022\r\n\005state\030\002 \001(\005\032Q\n\023update_guide_record\022:"
-    "\n\013record_list\030\001 \003(\0132%.hld.character_prot"
+    "\n\013record_list\030\001 \003(\0132%.faith.character_prot"
     "o.guide_record_one\032G\n\rsyn_tick_time\022\027\n\017c"
     "ur_server_time\030\001 \001(\005\022\035\n\025cur_server_green"
     "_time\030\002 \001(\005\032%\n\rtransfer_buff\022\024\n\014operate_"
@@ -6178,7 +6178,7 @@ bool character_proto_enum_character_end_info::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.character_proto.enum_character_item item_info = 18;
+      // repeated .faith.character_proto.enum_character_item item_info = 18;
       case 18: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -6385,7 +6385,7 @@ void character_proto_enum_character_end_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(17, this->spirit_upgrade_count(), output);
   }
 
-  // repeated .hld.character_proto.enum_character_item item_info = 18;
+  // repeated .faith.character_proto.enum_character_item item_info = 18;
   for (int i = 0; i < this->item_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       18, this->item_info(i), output);
@@ -6520,7 +6520,7 @@ void character_proto_enum_character_end_info::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(17, this->spirit_upgrade_count(), target);
   }
 
-  // repeated .hld.character_proto.enum_character_item item_info = 18;
+  // repeated .faith.character_proto.enum_character_item item_info = 18;
   for (int i = 0; i < this->item_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -6725,7 +6725,7 @@ int character_proto_enum_character_end_info::ByteSize() const {
     total_size += 1 * this->buff_info_size() + data_size;
   }
 
-  // repeated .hld.character_proto.enum_character_item item_info = 18;
+  // repeated .faith.character_proto.enum_character_item item_info = 18;
   total_size += 2 * this->item_info_size();
   for (int i = 0; i < this->item_info_size(); i++) {
     total_size +=
@@ -14844,9 +14844,9 @@ character_proto_character_move::character_proto_character_move()
 }
 
 void character_proto_character_move::InitAsDefaultInstance() {
-  position_ = const_cast< ::hld::character_proto_pos_vector*>(&::hld::character_proto_pos_vector::default_instance());
-  direction_ = const_cast< ::hld::character_proto_pos_vector*>(&::hld::character_proto_pos_vector::default_instance());
-  rotator_angle_ = const_cast< ::hld::character_proto_rot_angle*>(&::hld::character_proto_rot_angle::default_instance());
+  position_ = const_cast< ::faith::character_proto_pos_vector*>(&::faith::character_proto_pos_vector::default_instance());
+  direction_ = const_cast< ::faith::character_proto_pos_vector*>(&::faith::character_proto_pos_vector::default_instance());
+  rotator_angle_ = const_cast< ::faith::character_proto_rot_angle*>(&::faith::character_proto_rot_angle::default_instance());
 }
 
 character_proto_character_move::character_proto_character_move(const character_proto_character_move& from)
@@ -14901,13 +14901,13 @@ void character_proto_character_move::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     unit_guid_ = GOOGLE_LONGLONG(0);
     if (has_position()) {
-      if (position_ != NULL) position_->::hld::character_proto_pos_vector::Clear();
+      if (position_ != NULL) position_->::faith::character_proto_pos_vector::Clear();
     }
     if (has_direction()) {
-      if (direction_ != NULL) direction_->::hld::character_proto_pos_vector::Clear();
+      if (direction_ != NULL) direction_->::faith::character_proto_pos_vector::Clear();
     }
     if (has_rotator_angle()) {
-      if (rotator_angle_ != NULL) rotator_angle_->::hld::character_proto_rot_angle::Clear();
+      if (rotator_angle_ != NULL) rotator_angle_->::faith::character_proto_rot_angle::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -14935,7 +14935,7 @@ bool character_proto_character_move::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.character_proto.pos_vector position = 2;
+      // optional .faith.character_proto.pos_vector position = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -14949,7 +14949,7 @@ bool character_proto_character_move::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.character_proto.pos_vector direction = 3;
+      // optional .faith.character_proto.pos_vector direction = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -14963,7 +14963,7 @@ bool character_proto_character_move::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.character_proto.rot_angle rotator_angle = 4;
+      // optional .faith.character_proto.rot_angle rotator_angle = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -15000,19 +15000,19 @@ void character_proto_character_move::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->unit_guid(), output);
   }
 
-  // optional .hld.character_proto.pos_vector position = 2;
+  // optional .faith.character_proto.pos_vector position = 2;
   if (has_position()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->position(), output);
   }
 
-  // optional .hld.character_proto.pos_vector direction = 3;
+  // optional .faith.character_proto.pos_vector direction = 3;
   if (has_direction()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->direction(), output);
   }
 
-  // optional .hld.character_proto.rot_angle rotator_angle = 4;
+  // optional .faith.character_proto.rot_angle rotator_angle = 4;
   if (has_rotator_angle()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->rotator_angle(), output);
@@ -15031,21 +15031,21 @@ void character_proto_character_move::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->unit_guid(), target);
   }
 
-  // optional .hld.character_proto.pos_vector position = 2;
+  // optional .faith.character_proto.pos_vector position = 2;
   if (has_position()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         2, this->position(), target);
   }
 
-  // optional .hld.character_proto.pos_vector direction = 3;
+  // optional .faith.character_proto.pos_vector direction = 3;
   if (has_direction()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         3, this->direction(), target);
   }
 
-  // optional .hld.character_proto.rot_angle rotator_angle = 4;
+  // optional .faith.character_proto.rot_angle rotator_angle = 4;
   if (has_rotator_angle()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -15070,21 +15070,21 @@ int character_proto_character_move::ByteSize() const {
           this->unit_guid());
     }
 
-    // optional .hld.character_proto.pos_vector position = 2;
+    // optional .faith.character_proto.pos_vector position = 2;
     if (has_position()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->position());
     }
 
-    // optional .hld.character_proto.pos_vector direction = 3;
+    // optional .faith.character_proto.pos_vector direction = 3;
     if (has_direction()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->direction());
     }
 
-    // optional .hld.character_proto.rot_angle rotator_angle = 4;
+    // optional .faith.character_proto.rot_angle rotator_angle = 4;
     if (has_rotator_angle()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -15122,13 +15122,13 @@ void character_proto_character_move::MergeFrom(const character_proto_character_m
       set_unit_guid(from.unit_guid());
     }
     if (from.has_position()) {
-      mutable_position()->::hld::character_proto_pos_vector::MergeFrom(from.position());
+      mutable_position()->::faith::character_proto_pos_vector::MergeFrom(from.position());
     }
     if (from.has_direction()) {
-      mutable_direction()->::hld::character_proto_pos_vector::MergeFrom(from.direction());
+      mutable_direction()->::faith::character_proto_pos_vector::MergeFrom(from.direction());
     }
     if (from.has_rotator_angle()) {
-      mutable_rotator_angle()->::hld::character_proto_rot_angle::MergeFrom(from.rotator_angle());
+      mutable_rotator_angle()->::faith::character_proto_rot_angle::MergeFrom(from.rotator_angle());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -15185,7 +15185,7 @@ character_proto_load_role_info_end::character_proto_load_role_info_end()
 }
 
 void character_proto_load_role_info_end::InitAsDefaultInstance() {
-  role_info_ = const_cast< ::hld::character_proto_unit_info_msg*>(&::hld::character_proto_unit_info_msg::default_instance());
+  role_info_ = const_cast< ::faith::character_proto_unit_info_msg*>(&::faith::character_proto_unit_info_msg::default_instance());
 }
 
 character_proto_load_role_info_end::character_proto_load_role_info_end(const character_proto_load_role_info_end& from)
@@ -15235,7 +15235,7 @@ character_proto_load_role_info_end* character_proto_load_role_info_end::New() co
 void character_proto_load_role_info_end::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_role_info()) {
-      if (role_info_ != NULL) role_info_->::hld::character_proto_unit_info_msg::Clear();
+      if (role_info_ != NULL) role_info_->::faith::character_proto_unit_info_msg::Clear();
     }
     runtime_id_ = 0;
   }
@@ -15249,7 +15249,7 @@ bool character_proto_load_role_info_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.character_proto.unit_info_msg role_info = 1;
+      // optional .faith.character_proto.unit_info_msg role_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -15296,7 +15296,7 @@ bool character_proto_load_role_info_end::MergePartialFromCodedStream(
 
 void character_proto_load_role_info_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.character_proto.unit_info_msg role_info = 1;
+  // optional .faith.character_proto.unit_info_msg role_info = 1;
   if (has_role_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->role_info(), output);
@@ -15315,7 +15315,7 @@ void character_proto_load_role_info_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* character_proto_load_role_info_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.character_proto.unit_info_msg role_info = 1;
+  // optional .faith.character_proto.unit_info_msg role_info = 1;
   if (has_role_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -15338,7 +15338,7 @@ int character_proto_load_role_info_end::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.character_proto.unit_info_msg role_info = 1;
+    // optional .faith.character_proto.unit_info_msg role_info = 1;
     if (has_role_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -15380,7 +15380,7 @@ void character_proto_load_role_info_end::MergeFrom(const character_proto_load_ro
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_role_info()) {
-      mutable_role_info()->::hld::character_proto_unit_info_msg::MergeFrom(from.role_info());
+      mutable_role_info()->::faith::character_proto_unit_info_msg::MergeFrom(from.role_info());
     }
     if (from.has_runtime_id()) {
       set_runtime_id(from.runtime_id());
@@ -21599,7 +21599,7 @@ bool character_proto_update_spirit::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.character_proto.spirit_info spirit_list = 3;
+      // repeated .faith.character_proto.spirit_info spirit_list = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -21642,7 +21642,7 @@ void character_proto_update_spirit::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->spirit_error(), output);
   }
 
-  // repeated .hld.character_proto.spirit_info spirit_list = 3;
+  // repeated .faith.character_proto.spirit_info spirit_list = 3;
   for (int i = 0; i < this->spirit_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->spirit_list(i), output);
@@ -21666,7 +21666,7 @@ void character_proto_update_spirit::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->spirit_error(), target);
   }
 
-  // repeated .hld.character_proto.spirit_info spirit_list = 3;
+  // repeated .faith.character_proto.spirit_info spirit_list = 3;
   for (int i = 0; i < this->spirit_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -21699,7 +21699,7 @@ int character_proto_update_spirit::ByteSize() const {
     }
 
   }
-  // repeated .hld.character_proto.spirit_info spirit_list = 3;
+  // repeated .faith.character_proto.spirit_info spirit_list = 3;
   total_size += 1 * this->spirit_list_size();
   for (int i = 0; i < this->spirit_list_size(); i++) {
     total_size +=
@@ -31679,7 +31679,7 @@ bool character_proto_update_three_day_must_do_remain::MergePartialFromCodedStrea
         break;
       }
 
-      // repeated .hld.character_proto.daily_must_do_remain_info remain_three_day_must_do = 2;
+      // repeated .faith.character_proto.daily_must_do_remain_info remain_three_day_must_do = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -31718,7 +31718,7 @@ void character_proto_update_three_day_must_do_remain::SerializeWithCachedSizes(
       1, this->role_guid(i), output);
   }
 
-  // repeated .hld.character_proto.daily_must_do_remain_info remain_three_day_must_do = 2;
+  // repeated .faith.character_proto.daily_must_do_remain_info remain_three_day_must_do = 2;
   for (int i = 0; i < this->remain_three_day_must_do_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->remain_three_day_must_do(i), output);
@@ -31738,7 +31738,7 @@ void character_proto_update_three_day_must_do_remain::SerializeWithCachedSizes(
       WriteInt32ToArray(1, this->role_guid(i), target);
   }
 
-  // repeated .hld.character_proto.daily_must_do_remain_info remain_three_day_must_do = 2;
+  // repeated .faith.character_proto.daily_must_do_remain_info remain_three_day_must_do = 2;
   for (int i = 0; i < this->remain_three_day_must_do_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -31765,7 +31765,7 @@ int character_proto_update_three_day_must_do_remain::ByteSize() const {
     total_size += 1 * this->role_guid_size() + data_size;
   }
 
-  // repeated .hld.character_proto.daily_must_do_remain_info remain_three_day_must_do = 2;
+  // repeated .faith.character_proto.daily_must_do_remain_info remain_three_day_must_do = 2;
   total_size += 1 * this->remain_three_day_must_do_size();
   for (int i = 0; i < this->remain_three_day_must_do_size(); i++) {
     total_size +=
@@ -35724,7 +35724,7 @@ bool character_proto_update_world_boss::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.character_proto.world_boss_data world_boss_array = 2;
+      // repeated .faith.character_proto.world_boss_data world_boss_array = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -35762,7 +35762,7 @@ void character_proto_update_world_boss::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->is_need_show(), output);
   }
 
-  // repeated .hld.character_proto.world_boss_data world_boss_array = 2;
+  // repeated .faith.character_proto.world_boss_data world_boss_array = 2;
   for (int i = 0; i < this->world_boss_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->world_boss_array(i), output);
@@ -35781,7 +35781,7 @@ void character_proto_update_world_boss::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->is_need_show(), target);
   }
 
-  // repeated .hld.character_proto.world_boss_data world_boss_array = 2;
+  // repeated .faith.character_proto.world_boss_data world_boss_array = 2;
   for (int i = 0; i < this->world_boss_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -35805,7 +35805,7 @@ int character_proto_update_world_boss::ByteSize() const {
     }
 
   }
-  // repeated .hld.character_proto.world_boss_data world_boss_array = 2;
+  // repeated .faith.character_proto.world_boss_data world_boss_array = 2;
   total_size += 1 * this->world_boss_array_size();
   for (int i = 0; i < this->world_boss_array_size(); i++) {
     total_size +=
@@ -39592,7 +39592,7 @@ bool character_proto_find_other_unit_equiping_end::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.character_proto.find_other_unit_item_one equiping_info = 2;
+      // repeated .faith.character_proto.find_other_unit_item_one equiping_info = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -39646,7 +39646,7 @@ void character_proto_find_other_unit_equiping_end::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->target_guid(), output);
   }
 
-  // repeated .hld.character_proto.find_other_unit_item_one equiping_info = 2;
+  // repeated .faith.character_proto.find_other_unit_item_one equiping_info = 2;
   for (int i = 0; i < this->equiping_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->equiping_info(i), output);
@@ -39670,7 +39670,7 @@ void character_proto_find_other_unit_equiping_end::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->target_guid(), target);
   }
 
-  // repeated .hld.character_proto.find_other_unit_item_one equiping_info = 2;
+  // repeated .faith.character_proto.find_other_unit_item_one equiping_info = 2;
   for (int i = 0; i < this->equiping_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -39706,7 +39706,7 @@ int character_proto_find_other_unit_equiping_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.character_proto.find_other_unit_item_one equiping_info = 2;
+  // repeated .faith.character_proto.find_other_unit_item_one equiping_info = 2;
   total_size += 1 * this->equiping_info_size();
   for (int i = 0; i < this->equiping_info_size(); i++) {
     total_size +=
@@ -40994,7 +40994,7 @@ bool character_proto_find_other_unit_wing_or_mount_end::MergePartialFromCodedStr
         break;
       }
 
-      // repeated .hld.character_proto.find_other_unit_item_one mount_or_wing_info = 2;
+      // repeated .faith.character_proto.find_other_unit_item_one mount_or_wing_info = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -41064,7 +41064,7 @@ void character_proto_find_other_unit_wing_or_mount_end::SerializeWithCachedSizes
     ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->target_guid(), output);
   }
 
-  // repeated .hld.character_proto.find_other_unit_item_one mount_or_wing_info = 2;
+  // repeated .faith.character_proto.find_other_unit_item_one mount_or_wing_info = 2;
   for (int i = 0; i < this->mount_or_wing_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->mount_or_wing_info(i), output);
@@ -41093,7 +41093,7 @@ void character_proto_find_other_unit_wing_or_mount_end::SerializeWithCachedSizes
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->target_guid(), target);
   }
 
-  // repeated .hld.character_proto.find_other_unit_item_one mount_or_wing_info = 2;
+  // repeated .faith.character_proto.find_other_unit_item_one mount_or_wing_info = 2;
   for (int i = 0; i < this->mount_or_wing_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -41139,7 +41139,7 @@ int character_proto_find_other_unit_wing_or_mount_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.character_proto.find_other_unit_item_one mount_or_wing_info = 2;
+  // repeated .faith.character_proto.find_other_unit_item_one mount_or_wing_info = 2;
   total_size += 1 * this->mount_or_wing_info_size();
   for (int i = 0; i < this->mount_or_wing_info_size(); i++) {
     total_size +=
@@ -44573,7 +44573,7 @@ bool character_proto_red_pack_info::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.character_proto.red_pack_receiver_info receiver_list = 9;
+      // repeated .faith.character_proto.red_pack_receiver_info receiver_list = 9;
       case 9: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -44656,7 +44656,7 @@ void character_proto_red_pack_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(8, this->remain_money_num(), output);
   }
 
-  // repeated .hld.character_proto.red_pack_receiver_info receiver_list = 9;
+  // repeated .faith.character_proto.red_pack_receiver_info receiver_list = 9;
   for (int i = 0; i < this->receiver_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       9, this->receiver_list(i), output);
@@ -44722,7 +44722,7 @@ void character_proto_red_pack_info::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(8, this->remain_money_num(), target);
   }
 
-  // repeated .hld.character_proto.red_pack_receiver_info receiver_list = 9;
+  // repeated .faith.character_proto.red_pack_receiver_info receiver_list = 9;
   for (int i = 0; i < this->receiver_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -44803,7 +44803,7 @@ int character_proto_red_pack_info::ByteSize() const {
     total_size += 1 * this->sender_guid_size() + data_size;
   }
 
-  // repeated .hld.character_proto.red_pack_receiver_info receiver_list = 9;
+  // repeated .faith.character_proto.red_pack_receiver_info receiver_list = 9;
   total_size += 1 * this->receiver_list_size();
   for (int i = 0; i < this->receiver_list_size(); i++) {
     total_size +=
@@ -44972,7 +44972,7 @@ bool character_proto_update_red_pack_info::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.character_proto.red_pack_info info_list = 1;
+      // repeated .faith.character_proto.red_pack_info info_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -45005,7 +45005,7 @@ bool character_proto_update_red_pack_info::MergePartialFromCodedStream(
 
 void character_proto_update_red_pack_info::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.character_proto.red_pack_info info_list = 1;
+  // repeated .faith.character_proto.red_pack_info info_list = 1;
   for (int i = 0; i < this->info_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->info_list(i), output);
@@ -45019,7 +45019,7 @@ void character_proto_update_red_pack_info::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* character_proto_update_red_pack_info::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.character_proto.red_pack_info info_list = 1;
+  // repeated .faith.character_proto.red_pack_info info_list = 1;
   for (int i = 0; i < this->info_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -45036,7 +45036,7 @@ void character_proto_update_red_pack_info::SerializeWithCachedSizes(
 int character_proto_update_red_pack_info::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.character_proto.red_pack_info info_list = 1;
+  // repeated .faith.character_proto.red_pack_info info_list = 1;
   total_size += 1 * this->info_list_size();
   for (int i = 0; i < this->info_list_size(); i++) {
     total_size +=
@@ -46113,7 +46113,7 @@ bool character_proto_update_guide_record::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.character_proto.guide_record_one record_list = 1;
+      // repeated .faith.character_proto.guide_record_one record_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -46146,7 +46146,7 @@ bool character_proto_update_guide_record::MergePartialFromCodedStream(
 
 void character_proto_update_guide_record::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.character_proto.guide_record_one record_list = 1;
+  // repeated .faith.character_proto.guide_record_one record_list = 1;
   for (int i = 0; i < this->record_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->record_list(i), output);
@@ -46160,7 +46160,7 @@ void character_proto_update_guide_record::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* character_proto_update_guide_record::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.character_proto.guide_record_one record_list = 1;
+  // repeated .faith.character_proto.guide_record_one record_list = 1;
   for (int i = 0; i < this->record_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -46177,7 +46177,7 @@ void character_proto_update_guide_record::SerializeWithCachedSizes(
 int character_proto_update_guide_record::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.character_proto.guide_record_one record_list = 1;
+  // repeated .faith.character_proto.guide_record_one record_list = 1;
   total_size += 1 * this->record_list_size();
   for (int i = 0; i < this->record_list_size(); i++) {
     total_size +=
@@ -60993,6 +60993,6 @@ void character::Swap(character* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

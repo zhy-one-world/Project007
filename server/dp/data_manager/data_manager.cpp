@@ -13,7 +13,7 @@
 #include "db_manager.hpp"
 #include "dbproxy_service.hpp"
 #include "legion_def.hpp"
-namespace hld
+namespace faith
 {
 	std::unordered_map<int64, xstring> g_table_map;
 

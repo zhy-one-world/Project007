@@ -16,7 +16,7 @@
 #include "utility/init_unit.h"
 #include <net/scheduler.hpp>
 
-namespace hld
+namespace faith
 {
 	net_client::net_client(void)
 	{
@@ -66,16 +66,16 @@ namespace hld
 		CONSOLE_INFO(" info = {} status = {}", info, (int32)status);
 		switch (status)
 		{
-		case hld::net::tcp_client::e_ci_common_error:
-		case hld::net::tcp_client::e_ci_addr_resovle_failed:
-		case hld::net::tcp_client::e_ci_connection_failed:
+		case faith::net::tcp_client::e_ci_common_error:
+		case faith::net::tcp_client::e_ci_addr_resovle_failed:
+		case faith::net::tcp_client::e_ci_connection_failed:
 		{
 			m_timerindex_connect = scheduler::getInstance().add_timer(10000, boost::bind(&net_client::retry_connect, this, _1));
 		}
 			break;
-		case hld::net::tcp_client::e_ci_addr_resovle_successed:
+		case faith::net::tcp_client::e_ci_addr_resovle_successed:
 			break;
-		case hld::net::tcp_client::e_ci_connection_successed:
+		case faith::net::tcp_client::e_ci_connection_successed:
 		{
 			m_server_status = e_serverstatus_working;
 

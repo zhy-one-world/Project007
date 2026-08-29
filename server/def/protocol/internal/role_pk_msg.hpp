@@ -13,13 +13,13 @@
 #include "base.hpp"
 #include "Logic/role_pk_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_ws2dp_load_role_pk_top = hld::e_msg_base_role_pk,
+		e_msgindex_ws2dp_load_role_pk_top = faith::e_msg_base_role_pk,
 		e_msgindex_dp2ws_load_role_pk_top,
 		e_msgindex_ws2dp_load_role_pk_info,
 		e_msgindex_dp2ws_load_role_pk_info,
@@ -29,7 +29,7 @@ namespace hld
 		e_msgindex_ws2dp_load_role_pk_log,
 		e_msgindex_dp2ws_load_role_pk_log,
 	};
-	struct ws2dp_load_role_pk_top : public hld::packet_base
+	struct ws2dp_load_role_pk_top : public faith::packet_base
 	{
 		ws2dp_load_role_pk_top()
 		{
@@ -37,7 +37,7 @@ namespace hld
 			wheader = e_msgindex_ws2dp_load_role_pk_top;
 		}
 	}; 
-	struct dp2ws_load_role_pk_top : public hld::packet_base
+	struct dp2ws_load_role_pk_top : public faith::packet_base
 	{
 		s_role_pk_info						pk_top_array[PK_RANKING_TOP_NUM];
 
@@ -49,7 +49,7 @@ namespace hld
 	};
 
 
-	struct ws2dp_load_role_pk_info : public hld::packet_base
+	struct ws2dp_load_role_pk_info : public faith::packet_base
 	{
 		guid_64								role_guid;
 		xchar								role_name[max_name_size + 1];
@@ -62,7 +62,7 @@ namespace hld
 			wheader	= e_msgindex_ws2dp_load_role_pk_info;
 		}
 	};
-	struct dp2ws_load_role_pk_info : public hld::packet_base
+	struct dp2ws_load_role_pk_info : public faith::packet_base
 	{
 		s_role_pk_info						role_pk_info;
 
@@ -83,7 +83,7 @@ namespace hld
 			wheader = e_msgindex_cs2ws_role_pk_result;
 		}
 	};
-	struct ws2dp_save_role_pk_info : public hld::packet_base
+	struct ws2dp_save_role_pk_info : public faith::packet_base
 	{
 		guid_64			role_guid;
 		s_cross_war_db	cross_war_db;
@@ -94,7 +94,7 @@ namespace hld
 			wheader = e_msgindex_ws2dp_save_role_pk_info;
 		}
 	};
-	struct ws2dp_save_role_pk_honor_refresh : public hld::packet_base
+	struct ws2dp_save_role_pk_honor_refresh : public faith::packet_base
 	{
 		guid_64			role_guid;
 		int32			refresh_time;
@@ -105,7 +105,7 @@ namespace hld
 			wheader = e_msgindex_ws2dp_save_role_pk_honor_refresh;
 		}
 	};
-	struct ws2dp_load_role_pk_log : public hld::packet_base
+	struct ws2dp_load_role_pk_log : public faith::packet_base
 	{
 		guid_64			role_guid;
 		int32			server_id;
@@ -115,7 +115,7 @@ namespace hld
 			wheader = e_msgindex_ws2dp_load_role_pk_log;
 		}
 	};
-	struct dp2ws_load_role_pk_log : public hld::packet_base
+	struct dp2ws_load_role_pk_log : public faith::packet_base
 	{
 		guid_64			role_guid;
 		int32			server_id;

@@ -13,7 +13,7 @@ purpose:
 #include "server_log.hpp"
 #include "utility/random.h"
 
-namespace hld
+namespace faith
 {
 	int32 cdrop::get_drop_id(int32 drop_template_id)
 	{
@@ -176,7 +176,7 @@ namespace hld
 		}
 
 		//职业限制
-		if (line_ptr->ClassType > hld::e_class_type_none && class_type > hld::e_class_type_none)
+		if (line_ptr->ClassType > faith::e_class_type_none && class_type > faith::e_class_type_none)
 		{
 			if (class_type != line_ptr->ClassType)
 			{

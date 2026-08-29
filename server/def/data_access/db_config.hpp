@@ -17,7 +17,7 @@
 #include "data_access/mysql_async_mgr.hpp"
 #include "data_access/recvbuffer.hpp"
 
-namespace hld
+namespace faith
 {
 	typedef	mysql_async_mgr		db_accessor;
 	typedef db_query_type		db_query_type;
@@ -27,7 +27,7 @@ namespace hld
 	typedef _time_type			db_time_type;
 	typedef field_type			db_field_type;
 
-	using namespace hld;
+	using namespace faith;
 
 	inline void db_read_data(db_result_type* result_ptr, void * out, int32 size)
 	{	

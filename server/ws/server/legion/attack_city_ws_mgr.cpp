@@ -25,7 +25,7 @@ purpose:
 #include "system/scene/cs_map_system.h"
 #include "game.pb.h"
 #include "net.pb.h"
-namespace hld
+namespace faith
 {
 	attack_city_ws_mgr::attack_city_ws_mgr()
 	{
@@ -810,24 +810,24 @@ namespace hld
 		std::string notice_id = "";
 		switch (ret)
 		{
-		case hld::e_error_code_success:
+		case faith::e_error_code_success:
 			break;
-		case hld::e_error_code_map_attack_city_game_not_open:
+		case faith::e_error_code_map_attack_city_game_not_open:
 			notice_id = "90306347";//活动未开启
 			break;
-		case hld::e_error_code_map_attack_city_game_not_begin:
+		case faith::e_error_code_map_attack_city_game_not_begin:
 			notice_id = "90306348";//活动未开始
 			break;
-		case hld::e_error_code_map_attack_city_map_not_join:
+		case faith::e_error_code_map_attack_city_map_not_join:
 			notice_id = "90306349";//活动地图未创建
 			break;
-		case hld::e_error_code_map_attack_city_legion_not_join:
+		case faith::e_error_code_map_attack_city_legion_not_join:
 			notice_id = "90306350";//军团无法参与
 			break;
-		case hld::e_error_code_map_attack_city_player_max:
+		case faith::e_error_code_map_attack_city_player_max:
 			notice_id = "90306351";//地图玩家已满
 			break;
-		case hld::e_error_code_map_attack_city_game_end:
+		case faith::e_error_code_map_attack_city_game_end:
 			notice_id = "90306352";//活动已结束
 			break;
 		default:

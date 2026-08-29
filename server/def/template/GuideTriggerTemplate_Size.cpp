@@ -1,6 +1,6 @@
 #include "GuideTriggerTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void GuideTriggerTemplateSize()
     {

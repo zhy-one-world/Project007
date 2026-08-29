@@ -3,7 +3,7 @@
 #include "logic/unit_man.h"
 #include "logic/world_cs.h"
 
-namespace hld
+namespace faith
 {
 	ai_unit::ai_unit()
 	{

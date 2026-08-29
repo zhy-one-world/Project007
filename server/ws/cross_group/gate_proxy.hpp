@@ -29,7 +29,7 @@
 #include "server_def.hpp"
 #include "Logic/gate_def.hpp"
 
-namespace hld
+namespace faith
 {
 	using namespace net;
 

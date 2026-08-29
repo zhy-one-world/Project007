@@ -44,14 +44,14 @@
 //	Macro And Struct Define
 //
 //////////////////////////////////////////////////////////////////////////
-namespace hld
+namespace faith
 {
 	//////////////////////////////////////////////////////////////////////////
 	//
 	//	Class Implement
 	//
 	//////////////////////////////////////////////////////////////////////////
-	using namespace hld::utility;
+	using namespace faith::utility;
 	game_mgr::game_mgr()
 	{
 		m_timer_index_game_loop = scheduler::scheduler_invalid_timer_index;
@@ -117,11 +117,11 @@ namespace hld
 		int64 time_now = get_tick_count();
 		if (time_now > last_log_time)
 		{
-			hld::int32 ws_num = net_server_mgr::getInstance().get_server_count(e_server_type_ws);
-			hld::int32 dp_num = net_server_mgr::getInstance().get_server_count(e_server_type_dp);
-			hld::int32 cs_num = net_server_mgr::getInstance().get_server_count(e_server_type_cs);
-			hld::int32 gate_num = net_server_mgr::getInstance().get_server_count(e_server_type_gate);
-			hld::int32 gate_client_num = net_client_mgr::getInstance().get_server_count(e_server_type_gate);
+			faith::int32 ws_num = net_server_mgr::getInstance().get_server_count(e_server_type_ws);
+			faith::int32 dp_num = net_server_mgr::getInstance().get_server_count(e_server_type_dp);
+			faith::int32 cs_num = net_server_mgr::getInstance().get_server_count(e_server_type_cs);
+			faith::int32 gate_num = net_server_mgr::getInstance().get_server_count(e_server_type_gate);
+			faith::int32 gate_client_num = net_client_mgr::getInstance().get_server_count(e_server_type_gate);
 			CONSOLE_INFO("ws:{} dp:{} cs:{} gate:{}", ws_num, dp_num, cs_num, gate_num + gate_client_num);
 			CONSOLE_INFO("tick:{}", (time_now - tick_time) / loop_counter);
 			last_log_time = time_now + server_console_time;
@@ -153,7 +153,7 @@ namespace hld
 
 	void game_mgr::on_req_login(unsigned int connindex, const void* data_ptr, size_t data_len)
 	{
-		const hld::req_login* msg = static_cast<const hld::req_login*>(data_ptr);
+		const faith::req_login* msg = static_cast<const faith::req_login*>(data_ptr);
 		if (NULL == msg)
 		{
 			return;
@@ -197,7 +197,7 @@ namespace hld
 	}
 	void game_mgr::on_req_stop(unsigned int connindex, const void* data_ptr, size_t data_len)
 	{
-		const hld::req_stop* msg = static_cast<const hld::req_stop*>(data_ptr);
+		const faith::req_stop* msg = static_cast<const faith::req_stop*>(data_ptr);
 		if (NULL == msg)
 		{
 			return;

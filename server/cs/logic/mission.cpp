@@ -27,7 +27,7 @@ purpose: 单个任务
 #include "utility/random.h"
 #include "internet/aoi.pb.h"
 
-namespace hld
+namespace faith
 {
 	cmission::cmission()
 	{
@@ -834,7 +834,7 @@ namespace hld
 
 			// 刷出需要的NPC
 			auto map_type = base_map_system::get_map_type(m_player_ptr->get_map_ent());
-			if (map_type != hld::e_map_type_big_map)
+			if (map_type != faith::e_map_type_big_map)
 			{
 				continue;
 			}
@@ -2157,7 +2157,7 @@ namespace hld
 				}
 				auto map_type = base_map_system::get_map_type(m_player_ptr->get_map_ent());
 
-				if (map_type != hld::e_map_type_big_map)
+				if (map_type != faith::e_map_type_big_map)
 				{
 					return;
 				}

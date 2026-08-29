@@ -24,7 +24,7 @@
 #include "system/scene/cs_map_mgr_system.h"
 #include "system/scene/cs_map_system.h"
 #include "net.pb.h"
-namespace hld
+namespace faith
 {
 	cross_server_city_war_ws_mgr::cross_server_city_war_ws_mgr()
 	{
@@ -595,7 +595,7 @@ namespace hld
 					}
 					else
 					{
-						hld::ws2cs_proto::get_city_master_stuff pro_msg;
+						faith::ws2cs_proto::get_city_master_stuff pro_msg;
 						get_city_master_stuff_msg.to_proto(pro_msg);
 						new_city_master_session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_get_city_master_stuff);
 					}
@@ -824,7 +824,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::begin_city_war pro_msg;
+				faith::ws2cs_proto::begin_city_war pro_msg;
 				begin_war_msg.to_proto(pro_msg);
 				cs_map_system::send_message_to_cs_lua(map_ent, &pro_msg, e_msg_index_ws2cs_begin_city_war);
 			}

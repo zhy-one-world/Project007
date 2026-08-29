@@ -19,7 +19,7 @@ purpose: 七日目标实现文件
 #include "internet/net.pb.h"
 #include "utility/parse_msg.h"
 
-namespace hld
+namespace faith
 {
 	
 	cservice_goal_mgr::cservice_goal_mgr()
@@ -84,7 +84,7 @@ namespace hld
 		}
 		if (service_goal_msg_all.service_goal_array_size() > 0)
 		{
-			send_message_to_self(&service_goal_msg_all, hld::e_msgindex_s2c_service_goal_all);
+			send_message_to_self(&service_goal_msg_all, faith::e_msgindex_s2c_service_goal_all);
 		}
 	}
 
@@ -178,7 +178,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_service_goal_db msg;
+		faith::cs2dp_proto::role_service_goal_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -193,7 +193,7 @@ namespace hld
 		s_service_goal_info *p_row = (s_service_goal_info *)p_data;
 		for (int32 i = 0; i < msg.row_count(); i++)
 		{
-			hld::cs2dp_proto::role_service_goal_row db_row = msg.row_data(i);
+			faith::cs2dp_proto::role_service_goal_row db_row = msg.row_data(i);
 			for (int32 j = 0; j < db_row.data_ary_size(); j++)
 			{
 				p_row->data_ary[j] = db_row.data_ary(j);
@@ -227,11 +227,11 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_service_goal msg;
+			faith::cs2dp_proto::save_role_service_goal msg;
 			msg.set_role_guid(player_ref.get_unit_guid().server_64);
 			msg.set_unit_array_index(m_player_index);
 			msg.set_save_type_ex(save_type);
-			hld::cs2dp_proto::role_service_goal_db *db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_service_goal_db *db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return;
@@ -242,7 +242,7 @@ namespace hld
 				cservice_goal& temp_service_goal_obj = get_service_goal_obj_by_index(service_goal_index);
 				const s_service_goal_info& tmp = temp_service_goal_obj.get_service_goal_info();
 				
-				hld::cs2dp_proto::role_service_goal_row *row_data = db_data->add_row_data();
+				faith::cs2dp_proto::role_service_goal_row *row_data = db_data->add_row_data();
 				if (row_data == nullptr)
 				{
 					return;
@@ -267,9 +267,9 @@ namespace hld
 		e_service_goal_operate_type temp_operate = (e_service_goal_operate_type)operate_type;
 		switch (temp_operate)
 		{
-		case hld::e_service_goal_operate_type_none:
+		case faith::e_service_goal_operate_type_none:
 			break;
-		case hld::e_service_goal_operate_type_receive:
+		case faith::e_service_goal_operate_type_receive:
 			receive_service_goal(service_goal_id);
 			break;
 		default:

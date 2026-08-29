@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -360,7 +360,7 @@ void protobuf_AddDesc_mission_2eproto() {
     "\n\nmission_id\022\022\n\nmission_id\030\001 \001(\005\032$\n\014miss"
     "ion_info\022\024\n\014mission_info\030\001 \003(\005\032\255\001\n\013missi"
     "on_all\022\021\n\trole_guid\030\001 \003(\005\0226\n\rmission_arr"
-    "ay\030\002 \003(\0132\037.hld.mission_proto.mission_inf"
+    "ay\030\002 \003(\0132\037.faith.mission_proto.mission_inf"
     "o\022\036\n\026daily_mission_done_num\030\003 \001(\005\022 \n\030aga"
     "inst_mission_done_num\030\004 \001(\005\022\021\n\tis_finish"
     "\030\005 \001(\010\032k\n\017mission_operate\022\022\n\nmission_id\030"
@@ -369,7 +369,7 @@ void protobuf_AddDesc_mission_2eproto() {
     "mission_operate_end\022\022\n\nmission_id\030\001 \001(\005\022"
     "\026\n\016operation_type\030\002 \001(\005\022\033\n\023operation_end"
     "_state\030\003 \001(\005\022\024\n\014mission_slot\030\004 \001(\005\0226\n\rmi"
-    "ssion_array\030\005 \003(\0132\037.hld.mission_proto.mi"
+    "ssion_array\030\005 \003(\0132\037.faith.mission_proto.mi"
     "ssion_info\022\036\n\026daily_mission_done_num\030\006 \001"
     "(\005\022 \n\030against_mission_done_num\030\007 \001(\005\0329\n\026"
     "mission_alien_kill_npc\022\016\n\006npc_id\030\001 \001(\005\022\017"
@@ -940,7 +940,7 @@ bool mission_proto_mission_all::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.mission_proto.mission_info mission_array = 2;
+      // repeated .faith.mission_proto.mission_info mission_array = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1027,7 +1027,7 @@ void mission_proto_mission_all::SerializeWithCachedSizes(
       1, this->role_guid(i), output);
   }
 
-  // repeated .hld.mission_proto.mission_info mission_array = 2;
+  // repeated .faith.mission_proto.mission_info mission_array = 2;
   for (int i = 0; i < this->mission_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->mission_array(i), output);
@@ -1062,7 +1062,7 @@ void mission_proto_mission_all::SerializeWithCachedSizes(
       WriteInt32ToArray(1, this->role_guid(i), target);
   }
 
-  // repeated .hld.mission_proto.mission_info mission_array = 2;
+  // repeated .faith.mission_proto.mission_info mission_array = 2;
   for (int i = 0; i < this->mission_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1125,7 +1125,7 @@ int mission_proto_mission_all::ByteSize() const {
     total_size += 1 * this->role_guid_size() + data_size;
   }
 
-  // repeated .hld.mission_proto.mission_info mission_array = 2;
+  // repeated .faith.mission_proto.mission_info mission_array = 2;
   total_size += 1 * this->mission_array_size();
   for (int i = 0; i < this->mission_array_size(); i++) {
     total_size +=
@@ -1691,7 +1691,7 @@ bool mission_proto_mission_operate_end::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.mission_proto.mission_info mission_array = 5;
+      // repeated .faith.mission_proto.mission_info mission_array = 5;
       case 5: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1776,7 +1776,7 @@ void mission_proto_mission_operate_end::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->mission_slot(), output);
   }
 
-  // repeated .hld.mission_proto.mission_info mission_array = 5;
+  // repeated .faith.mission_proto.mission_info mission_array = 5;
   for (int i = 0; i < this->mission_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       5, this->mission_array(i), output);
@@ -1820,7 +1820,7 @@ void mission_proto_mission_operate_end::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->mission_slot(), target);
   }
 
-  // repeated .hld.mission_proto.mission_info mission_array = 5;
+  // repeated .faith.mission_proto.mission_info mission_array = 5;
   for (int i = 0; i < this->mission_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1891,7 +1891,7 @@ int mission_proto_mission_operate_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.mission_proto.mission_info mission_array = 5;
+  // repeated .faith.mission_proto.mission_info mission_array = 5;
   total_size += 1 * this->mission_array_size();
   for (int i = 0; i < this->mission_array_size(); i++) {
     total_size +=
@@ -3679,6 +3679,6 @@ void mission_proto::Swap(mission_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

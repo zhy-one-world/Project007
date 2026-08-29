@@ -12,7 +12,7 @@ purpose: ¿ç·şÌìÌİ
 
 #include "db_manager.hpp"
 
-namespace hld
+namespace faith
 {
 	void ws2dp_cross_ladder_load_info_proc(uint32 connindex, const void *data_ptr, size_t data_len);
 	void ws2dp_cross_ladder_load_info_proc_end(db_result_type result, uint32 connindex, int32 cur_num);

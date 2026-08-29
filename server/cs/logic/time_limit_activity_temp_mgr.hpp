@@ -11,7 +11,7 @@
 
 #include "Logic/time_limit_activity_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class time_limit_activity_temp_mgr
 	{

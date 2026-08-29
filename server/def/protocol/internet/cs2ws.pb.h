@@ -27,7 +27,7 @@
 #include "st.pb.h"
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_cs2ws_2eproto();
@@ -140,7 +140,7 @@ class cs2ws_proto_send_red_package : public ::google::protobuf::Message {
   inline ::std::string* release_sender_name();
   inline void set_allocated_sender_name(::std::string* sender_name);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2ws_proto.send_red_package)
+  // @@protoc_insertion_point(class_scope:faith.cs2ws_proto.send_red_package)
  private:
   inline void set_has_sender_guid();
   inline void clear_has_sender_guid();
@@ -250,7 +250,7 @@ class cs2ws_proto_get_red_package : public ::google::protobuf::Message {
   inline ::std::string* release_role_name();
   inline void set_allocated_role_name(::std::string* role_name);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2ws_proto.get_red_package)
+  // @@protoc_insertion_point(class_scope:faith.cs2ws_proto.get_red_package)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -338,7 +338,7 @@ class cs2ws_proto_req_get_arena_rank : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2ws_proto.req_get_arena_rank)
+  // @@protoc_insertion_point(class_scope:faith.cs2ws_proto.req_get_arena_rank)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -455,7 +455,7 @@ class cs2ws_proto_req_challenge_msg : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 self_cur_pos() const;
   inline void set_self_cur_pos(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2ws_proto.req_challenge_msg)
+  // @@protoc_insertion_point(class_scope:faith.cs2ws_proto.req_challenge_msg)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -559,7 +559,7 @@ class cs2ws_proto_req_choose_list : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 cur_pos() const;
   inline void set_cur_pos(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2ws_proto.req_choose_list)
+  // @@protoc_insertion_point(class_scope:faith.cs2ws_proto.req_choose_list)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -644,7 +644,7 @@ class cs2ws_proto_first_three : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2ws_proto.first_three)
+  // @@protoc_insertion_point(class_scope:faith.cs2ws_proto.first_three)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -733,14 +733,14 @@ class cs2ws_proto_chellenge_over : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 target_guid() const;
   inline void set_target_guid(::google::protobuf::int64 value);
 
-  // optional .hld.st_proto.st_player_arena_rank role_info = 3;
+  // optional .faith.st_proto.st_player_arena_rank role_info = 3;
   inline bool has_role_info() const;
   inline void clear_role_info();
   static const int kRoleInfoFieldNumber = 3;
-  inline const ::hld::st_proto_st_player_arena_rank& role_info() const;
-  inline ::hld::st_proto_st_player_arena_rank* mutable_role_info();
-  inline ::hld::st_proto_st_player_arena_rank* release_role_info();
-  inline void set_allocated_role_info(::hld::st_proto_st_player_arena_rank* role_info);
+  inline const ::faith::st_proto_st_player_arena_rank& role_info() const;
+  inline ::faith::st_proto_st_player_arena_rank* mutable_role_info();
+  inline ::faith::st_proto_st_player_arena_rank* release_role_info();
+  inline void set_allocated_role_info(::faith::st_proto_st_player_arena_rank* role_info);
 
   // optional int32 chellenge_result = 4;
   inline bool has_chellenge_result() const;
@@ -756,7 +756,7 @@ class cs2ws_proto_chellenge_over : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 target_rank() const;
   inline void set_target_rank(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2ws_proto.chellenge_over)
+  // @@protoc_insertion_point(class_scope:faith.cs2ws_proto.chellenge_over)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -773,7 +773,7 @@ class cs2ws_proto_chellenge_over : public ::google::protobuf::Message {
 
   ::google::protobuf::int64 role_guid_;
   ::google::protobuf::int64 target_guid_;
-  ::hld::st_proto_st_player_arena_rank* role_info_;
+  ::faith::st_proto_st_player_arena_rank* role_info_;
   ::google::protobuf::int32 chellenge_result_;
   ::google::protobuf::int32 target_rank_;
 
@@ -864,7 +864,7 @@ class cs2ws_proto_arena_sync_gs_value : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 gs_value() const;
   inline void set_gs_value(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2ws_proto.arena_sync_gs_value)
+  // @@protoc_insertion_point(class_scope:faith.cs2ws_proto.arena_sync_gs_value)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -945,23 +945,23 @@ class cs2ws_proto_auction_add_item_into_db : public ::google::protobuf::Message 
 
   // accessors -------------------------------------------------------
 
-  // optional .hld.st_proto.st_unit_info role_info = 1;
+  // optional .faith.st_proto.st_unit_info role_info = 1;
   inline bool has_role_info() const;
   inline void clear_role_info();
   static const int kRoleInfoFieldNumber = 1;
-  inline const ::hld::st_proto_st_unit_info& role_info() const;
-  inline ::hld::st_proto_st_unit_info* mutable_role_info();
-  inline ::hld::st_proto_st_unit_info* release_role_info();
-  inline void set_allocated_role_info(::hld::st_proto_st_unit_info* role_info);
+  inline const ::faith::st_proto_st_unit_info& role_info() const;
+  inline ::faith::st_proto_st_unit_info* mutable_role_info();
+  inline ::faith::st_proto_st_unit_info* release_role_info();
+  inline void set_allocated_role_info(::faith::st_proto_st_unit_info* role_info);
 
-  // optional .hld.st_proto.st_auction_info auction_info = 2;
+  // optional .faith.st_proto.st_auction_info auction_info = 2;
   inline bool has_auction_info() const;
   inline void clear_auction_info();
   static const int kAuctionInfoFieldNumber = 2;
-  inline const ::hld::st_proto_st_auction_info& auction_info() const;
-  inline ::hld::st_proto_st_auction_info* mutable_auction_info();
-  inline ::hld::st_proto_st_auction_info* release_auction_info();
-  inline void set_allocated_auction_info(::hld::st_proto_st_auction_info* auction_info);
+  inline const ::faith::st_proto_st_auction_info& auction_info() const;
+  inline ::faith::st_proto_st_auction_info* mutable_auction_info();
+  inline ::faith::st_proto_st_auction_info* release_auction_info();
+  inline void set_allocated_auction_info(::faith::st_proto_st_auction_info* auction_info);
 
   // optional int64 old_item_guid = 3;
   inline bool has_old_item_guid() const;
@@ -970,16 +970,16 @@ class cs2ws_proto_auction_add_item_into_db : public ::google::protobuf::Message 
   inline ::google::protobuf::int64 old_item_guid() const;
   inline void set_old_item_guid(::google::protobuf::int64 value);
 
-  // optional .hld.st_proto.st_login_fixed_data third_info = 4;
+  // optional .faith.st_proto.st_login_fixed_data third_info = 4;
   inline bool has_third_info() const;
   inline void clear_third_info();
   static const int kThirdInfoFieldNumber = 4;
-  inline const ::hld::st_proto_st_login_fixed_data& third_info() const;
-  inline ::hld::st_proto_st_login_fixed_data* mutable_third_info();
-  inline ::hld::st_proto_st_login_fixed_data* release_third_info();
-  inline void set_allocated_third_info(::hld::st_proto_st_login_fixed_data* third_info);
+  inline const ::faith::st_proto_st_login_fixed_data& third_info() const;
+  inline ::faith::st_proto_st_login_fixed_data* mutable_third_info();
+  inline ::faith::st_proto_st_login_fixed_data* release_third_info();
+  inline void set_allocated_third_info(::faith::st_proto_st_login_fixed_data* third_info);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2ws_proto.auction_add_item_into_db)
+  // @@protoc_insertion_point(class_scope:faith.cs2ws_proto.auction_add_item_into_db)
  private:
   inline void set_has_role_info();
   inline void clear_has_role_info();
@@ -992,10 +992,10 @@ class cs2ws_proto_auction_add_item_into_db : public ::google::protobuf::Message 
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::st_proto_st_unit_info* role_info_;
-  ::hld::st_proto_st_auction_info* auction_info_;
+  ::faith::st_proto_st_unit_info* role_info_;
+  ::faith::st_proto_st_auction_info* auction_info_;
   ::google::protobuf::int64 old_item_guid_;
-  ::hld::st_proto_st_login_fixed_data* third_info_;
+  ::faith::st_proto_st_login_fixed_data* third_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -1070,16 +1070,16 @@ class cs2ws_proto_set_best_record : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 map_template_id() const;
   inline void set_map_template_id(::google::protobuf::int32 value);
 
-  // optional .hld.st_proto.st_single_map_record record = 2;
+  // optional .faith.st_proto.st_single_map_record record = 2;
   inline bool has_record() const;
   inline void clear_record();
   static const int kRecordFieldNumber = 2;
-  inline const ::hld::st_proto_st_single_map_record& record() const;
-  inline ::hld::st_proto_st_single_map_record* mutable_record();
-  inline ::hld::st_proto_st_single_map_record* release_record();
-  inline void set_allocated_record(::hld::st_proto_st_single_map_record* record);
+  inline const ::faith::st_proto_st_single_map_record& record() const;
+  inline ::faith::st_proto_st_single_map_record* mutable_record();
+  inline ::faith::st_proto_st_single_map_record* release_record();
+  inline void set_allocated_record(::faith::st_proto_st_single_map_record* record);
 
-  // @@protoc_insertion_point(class_scope:hld.cs2ws_proto.set_best_record)
+  // @@protoc_insertion_point(class_scope:faith.cs2ws_proto.set_best_record)
  private:
   inline void set_has_map_template_id();
   inline void clear_has_map_template_id();
@@ -1088,7 +1088,7 @@ class cs2ws_proto_set_best_record : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::st_proto_st_single_map_record* record_;
+  ::faith::st_proto_st_single_map_record* record_;
   ::google::protobuf::int32 map_template_id_;
 
   mutable int _cached_size_;
@@ -1168,7 +1168,7 @@ class cs2ws_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.cs2ws_proto)
+  // @@protoc_insertion_point(class_scope:faith.cs2ws_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1777,7 +1777,7 @@ inline void cs2ws_proto_chellenge_over::set_target_guid(::google::protobuf::int6
   target_guid_ = value;
 }
 
-// optional .hld.st_proto.st_player_arena_rank role_info = 3;
+// optional .faith.st_proto.st_player_arena_rank role_info = 3;
 inline bool cs2ws_proto_chellenge_over::has_role_info() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -1788,24 +1788,24 @@ inline void cs2ws_proto_chellenge_over::clear_has_role_info() {
   _has_bits_[0] &= ~0x00000004u;
 }
 inline void cs2ws_proto_chellenge_over::clear_role_info() {
-  if (role_info_ != NULL) role_info_->::hld::st_proto_st_player_arena_rank::Clear();
+  if (role_info_ != NULL) role_info_->::faith::st_proto_st_player_arena_rank::Clear();
   clear_has_role_info();
 }
-inline const ::hld::st_proto_st_player_arena_rank& cs2ws_proto_chellenge_over::role_info() const {
+inline const ::faith::st_proto_st_player_arena_rank& cs2ws_proto_chellenge_over::role_info() const {
   return role_info_ != NULL ? *role_info_ : *default_instance_->role_info_;
 }
-inline ::hld::st_proto_st_player_arena_rank* cs2ws_proto_chellenge_over::mutable_role_info() {
+inline ::faith::st_proto_st_player_arena_rank* cs2ws_proto_chellenge_over::mutable_role_info() {
   set_has_role_info();
-  if (role_info_ == NULL) role_info_ = new ::hld::st_proto_st_player_arena_rank;
+  if (role_info_ == NULL) role_info_ = new ::faith::st_proto_st_player_arena_rank;
   return role_info_;
 }
-inline ::hld::st_proto_st_player_arena_rank* cs2ws_proto_chellenge_over::release_role_info() {
+inline ::faith::st_proto_st_player_arena_rank* cs2ws_proto_chellenge_over::release_role_info() {
   clear_has_role_info();
-  ::hld::st_proto_st_player_arena_rank* temp = role_info_;
+  ::faith::st_proto_st_player_arena_rank* temp = role_info_;
   role_info_ = NULL;
   return temp;
 }
-inline void cs2ws_proto_chellenge_over::set_allocated_role_info(::hld::st_proto_st_player_arena_rank* role_info) {
+inline void cs2ws_proto_chellenge_over::set_allocated_role_info(::faith::st_proto_st_player_arena_rank* role_info) {
   delete role_info_;
   role_info_ = role_info;
   if (role_info) {
@@ -1933,7 +1933,7 @@ inline void cs2ws_proto_arena_sync_gs_value::set_gs_value(::google::protobuf::in
 
 // cs2ws_proto_auction_add_item_into_db
 
-// optional .hld.st_proto.st_unit_info role_info = 1;
+// optional .faith.st_proto.st_unit_info role_info = 1;
 inline bool cs2ws_proto_auction_add_item_into_db::has_role_info() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -1944,24 +1944,24 @@ inline void cs2ws_proto_auction_add_item_into_db::clear_has_role_info() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void cs2ws_proto_auction_add_item_into_db::clear_role_info() {
-  if (role_info_ != NULL) role_info_->::hld::st_proto_st_unit_info::Clear();
+  if (role_info_ != NULL) role_info_->::faith::st_proto_st_unit_info::Clear();
   clear_has_role_info();
 }
-inline const ::hld::st_proto_st_unit_info& cs2ws_proto_auction_add_item_into_db::role_info() const {
+inline const ::faith::st_proto_st_unit_info& cs2ws_proto_auction_add_item_into_db::role_info() const {
   return role_info_ != NULL ? *role_info_ : *default_instance_->role_info_;
 }
-inline ::hld::st_proto_st_unit_info* cs2ws_proto_auction_add_item_into_db::mutable_role_info() {
+inline ::faith::st_proto_st_unit_info* cs2ws_proto_auction_add_item_into_db::mutable_role_info() {
   set_has_role_info();
-  if (role_info_ == NULL) role_info_ = new ::hld::st_proto_st_unit_info;
+  if (role_info_ == NULL) role_info_ = new ::faith::st_proto_st_unit_info;
   return role_info_;
 }
-inline ::hld::st_proto_st_unit_info* cs2ws_proto_auction_add_item_into_db::release_role_info() {
+inline ::faith::st_proto_st_unit_info* cs2ws_proto_auction_add_item_into_db::release_role_info() {
   clear_has_role_info();
-  ::hld::st_proto_st_unit_info* temp = role_info_;
+  ::faith::st_proto_st_unit_info* temp = role_info_;
   role_info_ = NULL;
   return temp;
 }
-inline void cs2ws_proto_auction_add_item_into_db::set_allocated_role_info(::hld::st_proto_st_unit_info* role_info) {
+inline void cs2ws_proto_auction_add_item_into_db::set_allocated_role_info(::faith::st_proto_st_unit_info* role_info) {
   delete role_info_;
   role_info_ = role_info;
   if (role_info) {
@@ -1971,7 +1971,7 @@ inline void cs2ws_proto_auction_add_item_into_db::set_allocated_role_info(::hld:
   }
 }
 
-// optional .hld.st_proto.st_auction_info auction_info = 2;
+// optional .faith.st_proto.st_auction_info auction_info = 2;
 inline bool cs2ws_proto_auction_add_item_into_db::has_auction_info() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -1982,24 +1982,24 @@ inline void cs2ws_proto_auction_add_item_into_db::clear_has_auction_info() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void cs2ws_proto_auction_add_item_into_db::clear_auction_info() {
-  if (auction_info_ != NULL) auction_info_->::hld::st_proto_st_auction_info::Clear();
+  if (auction_info_ != NULL) auction_info_->::faith::st_proto_st_auction_info::Clear();
   clear_has_auction_info();
 }
-inline const ::hld::st_proto_st_auction_info& cs2ws_proto_auction_add_item_into_db::auction_info() const {
+inline const ::faith::st_proto_st_auction_info& cs2ws_proto_auction_add_item_into_db::auction_info() const {
   return auction_info_ != NULL ? *auction_info_ : *default_instance_->auction_info_;
 }
-inline ::hld::st_proto_st_auction_info* cs2ws_proto_auction_add_item_into_db::mutable_auction_info() {
+inline ::faith::st_proto_st_auction_info* cs2ws_proto_auction_add_item_into_db::mutable_auction_info() {
   set_has_auction_info();
-  if (auction_info_ == NULL) auction_info_ = new ::hld::st_proto_st_auction_info;
+  if (auction_info_ == NULL) auction_info_ = new ::faith::st_proto_st_auction_info;
   return auction_info_;
 }
-inline ::hld::st_proto_st_auction_info* cs2ws_proto_auction_add_item_into_db::release_auction_info() {
+inline ::faith::st_proto_st_auction_info* cs2ws_proto_auction_add_item_into_db::release_auction_info() {
   clear_has_auction_info();
-  ::hld::st_proto_st_auction_info* temp = auction_info_;
+  ::faith::st_proto_st_auction_info* temp = auction_info_;
   auction_info_ = NULL;
   return temp;
 }
-inline void cs2ws_proto_auction_add_item_into_db::set_allocated_auction_info(::hld::st_proto_st_auction_info* auction_info) {
+inline void cs2ws_proto_auction_add_item_into_db::set_allocated_auction_info(::faith::st_proto_st_auction_info* auction_info) {
   delete auction_info_;
   auction_info_ = auction_info;
   if (auction_info) {
@@ -2031,7 +2031,7 @@ inline void cs2ws_proto_auction_add_item_into_db::set_old_item_guid(::google::pr
   old_item_guid_ = value;
 }
 
-// optional .hld.st_proto.st_login_fixed_data third_info = 4;
+// optional .faith.st_proto.st_login_fixed_data third_info = 4;
 inline bool cs2ws_proto_auction_add_item_into_db::has_third_info() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -2042,24 +2042,24 @@ inline void cs2ws_proto_auction_add_item_into_db::clear_has_third_info() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void cs2ws_proto_auction_add_item_into_db::clear_third_info() {
-  if (third_info_ != NULL) third_info_->::hld::st_proto_st_login_fixed_data::Clear();
+  if (third_info_ != NULL) third_info_->::faith::st_proto_st_login_fixed_data::Clear();
   clear_has_third_info();
 }
-inline const ::hld::st_proto_st_login_fixed_data& cs2ws_proto_auction_add_item_into_db::third_info() const {
+inline const ::faith::st_proto_st_login_fixed_data& cs2ws_proto_auction_add_item_into_db::third_info() const {
   return third_info_ != NULL ? *third_info_ : *default_instance_->third_info_;
 }
-inline ::hld::st_proto_st_login_fixed_data* cs2ws_proto_auction_add_item_into_db::mutable_third_info() {
+inline ::faith::st_proto_st_login_fixed_data* cs2ws_proto_auction_add_item_into_db::mutable_third_info() {
   set_has_third_info();
-  if (third_info_ == NULL) third_info_ = new ::hld::st_proto_st_login_fixed_data;
+  if (third_info_ == NULL) third_info_ = new ::faith::st_proto_st_login_fixed_data;
   return third_info_;
 }
-inline ::hld::st_proto_st_login_fixed_data* cs2ws_proto_auction_add_item_into_db::release_third_info() {
+inline ::faith::st_proto_st_login_fixed_data* cs2ws_proto_auction_add_item_into_db::release_third_info() {
   clear_has_third_info();
-  ::hld::st_proto_st_login_fixed_data* temp = third_info_;
+  ::faith::st_proto_st_login_fixed_data* temp = third_info_;
   third_info_ = NULL;
   return temp;
 }
-inline void cs2ws_proto_auction_add_item_into_db::set_allocated_third_info(::hld::st_proto_st_login_fixed_data* third_info) {
+inline void cs2ws_proto_auction_add_item_into_db::set_allocated_third_info(::faith::st_proto_st_login_fixed_data* third_info) {
   delete third_info_;
   third_info_ = third_info;
   if (third_info) {
@@ -2095,7 +2095,7 @@ inline void cs2ws_proto_set_best_record::set_map_template_id(::google::protobuf:
   map_template_id_ = value;
 }
 
-// optional .hld.st_proto.st_single_map_record record = 2;
+// optional .faith.st_proto.st_single_map_record record = 2;
 inline bool cs2ws_proto_set_best_record::has_record() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -2106,24 +2106,24 @@ inline void cs2ws_proto_set_best_record::clear_has_record() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void cs2ws_proto_set_best_record::clear_record() {
-  if (record_ != NULL) record_->::hld::st_proto_st_single_map_record::Clear();
+  if (record_ != NULL) record_->::faith::st_proto_st_single_map_record::Clear();
   clear_has_record();
 }
-inline const ::hld::st_proto_st_single_map_record& cs2ws_proto_set_best_record::record() const {
+inline const ::faith::st_proto_st_single_map_record& cs2ws_proto_set_best_record::record() const {
   return record_ != NULL ? *record_ : *default_instance_->record_;
 }
-inline ::hld::st_proto_st_single_map_record* cs2ws_proto_set_best_record::mutable_record() {
+inline ::faith::st_proto_st_single_map_record* cs2ws_proto_set_best_record::mutable_record() {
   set_has_record();
-  if (record_ == NULL) record_ = new ::hld::st_proto_st_single_map_record;
+  if (record_ == NULL) record_ = new ::faith::st_proto_st_single_map_record;
   return record_;
 }
-inline ::hld::st_proto_st_single_map_record* cs2ws_proto_set_best_record::release_record() {
+inline ::faith::st_proto_st_single_map_record* cs2ws_proto_set_best_record::release_record() {
   clear_has_record();
-  ::hld::st_proto_st_single_map_record* temp = record_;
+  ::faith::st_proto_st_single_map_record* temp = record_;
   record_ = NULL;
   return temp;
 }
-inline void cs2ws_proto_set_best_record::set_allocated_record(::hld::st_proto_st_single_map_record* record) {
+inline void cs2ws_proto_set_best_record::set_allocated_record(::faith::st_proto_st_single_map_record* record) {
   delete record_;
   record_ = record;
   if (record) {
@@ -2140,7 +2140,7 @@ inline void cs2ws_proto_set_best_record::set_allocated_record(::hld::st_proto_st
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -262,8 +262,8 @@ void protobuf_AddDesc_map_5faward_2eproto() {
     "tt\030\003 \001(\005\022\021\n\titem_lock\030\004 \001(\005\0324\n\013award_mon"
     "ey\022\022\n\nmoney_type\030\001 \001(\005\022\021\n\tmoney_num\030\002 \001("
     "\005\032\224\001\n\naward_list\022\024\n\014offline_time\030\001 \001(\005\0226"
-    "\n\titem_list\030\002 \003(\0132#.hld.offline_award_pr"
-    "oto.award_item\0228\n\nmoney_list\030\003 \003(\0132$.hld"
+    "\n\titem_list\030\002 \003(\0132#.faith.offline_award_pr"
+    "oto.award_item\0228\n\nmoney_list\030\003 \003(\0132$.faith"
     ".offline_award_proto.award_money\032\013\n\tget_"
     "award\032\034\n\rget_award_end\022\013\n\003res\030\001 \001(\005\"\?\n\022o"
     "nline_award_proto\032\013\n\tget_award\032\034\n\rget_aw"
@@ -963,7 +963,7 @@ bool offline_award_proto_award_list::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.offline_award_proto.award_item item_list = 2;
+      // repeated .faith.offline_award_proto.award_item item_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -978,7 +978,7 @@ bool offline_award_proto_award_list::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.offline_award_proto.award_money money_list = 3;
+      // repeated .faith.offline_award_proto.award_money money_list = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1016,13 +1016,13 @@ void offline_award_proto_award_list::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->offline_time(), output);
   }
 
-  // repeated .hld.offline_award_proto.award_item item_list = 2;
+  // repeated .faith.offline_award_proto.award_item item_list = 2;
   for (int i = 0; i < this->item_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->item_list(i), output);
   }
 
-  // repeated .hld.offline_award_proto.award_money money_list = 3;
+  // repeated .faith.offline_award_proto.award_money money_list = 3;
   for (int i = 0; i < this->money_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->money_list(i), output);
@@ -1041,14 +1041,14 @@ void offline_award_proto_award_list::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->offline_time(), target);
   }
 
-  // repeated .hld.offline_award_proto.award_item item_list = 2;
+  // repeated .faith.offline_award_proto.award_item item_list = 2;
   for (int i = 0; i < this->item_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         2, this->item_list(i), target);
   }
 
-  // repeated .hld.offline_award_proto.award_money money_list = 3;
+  // repeated .faith.offline_award_proto.award_money money_list = 3;
   for (int i = 0; i < this->money_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1074,7 +1074,7 @@ int offline_award_proto_award_list::ByteSize() const {
     }
 
   }
-  // repeated .hld.offline_award_proto.award_item item_list = 2;
+  // repeated .faith.offline_award_proto.award_item item_list = 2;
   total_size += 1 * this->item_list_size();
   for (int i = 0; i < this->item_list_size(); i++) {
     total_size +=
@@ -1082,7 +1082,7 @@ int offline_award_proto_award_list::ByteSize() const {
         this->item_list(i));
   }
 
-  // repeated .hld.offline_award_proto.award_money money_list = 3;
+  // repeated .faith.offline_award_proto.award_money money_list = 3;
   total_size += 1 * this->money_list_size();
   for (int i = 0; i < this->money_list_size(); i++) {
     total_size +=
@@ -2204,6 +2204,6 @@ void online_award_proto::Swap(online_award_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

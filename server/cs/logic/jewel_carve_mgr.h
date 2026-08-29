@@ -4,7 +4,7 @@
 #include "logic/type_def.hpp"
 
 
-namespace hld
+namespace faith
 {
 	const int32 jewel_carve_error_sucess = 0;
 	const int32 jewel_carve_error_unknow = -99;

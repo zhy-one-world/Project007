@@ -18,7 +18,7 @@ purpose:
 #include "buff_def.hpp"
 #include "internal/char_msg.hpp"
 
-using namespace hld;
+using namespace faith;
 passive_skill::passive_skill()
 {
 	ZoneScoped;

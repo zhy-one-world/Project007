@@ -15,7 +15,7 @@
 #include "internet/item.pb.h"
 #include "utility/init_unit.h"
 
-using namespace hld;
+using namespace faith;
 void item_equip_system::start_up(Entity* item_ent, ItemTemplate* item_template, EquipTemplate* equip_template, const item_s2s_item_data& msg)
 {
 	ZoneScoped;

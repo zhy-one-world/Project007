@@ -27,7 +27,7 @@
 #include "db.pb.h"
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_dp2cs_2eproto();
@@ -111,16 +111,16 @@ class dp2cs_proto_load_role_starark : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 unit_array_index() const;
   inline void set_unit_array_index(::google::protobuf::int32 value);
 
-  // optional .hld.db_proto.role_starark_db db_data = 4;
+  // optional .faith.db_proto.role_starark_db db_data = 4;
   inline bool has_db_data() const;
   inline void clear_db_data();
   static const int kDbDataFieldNumber = 4;
-  inline const ::hld::db_proto_role_starark_db& db_data() const;
-  inline ::hld::db_proto_role_starark_db* mutable_db_data();
-  inline ::hld::db_proto_role_starark_db* release_db_data();
-  inline void set_allocated_db_data(::hld::db_proto_role_starark_db* db_data);
+  inline const ::faith::db_proto_role_starark_db& db_data() const;
+  inline ::faith::db_proto_role_starark_db* mutable_db_data();
+  inline ::faith::db_proto_role_starark_db* release_db_data();
+  inline void set_allocated_db_data(::faith::db_proto_role_starark_db* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.dp2cs_proto.load_role_starark)
+  // @@protoc_insertion_point(class_scope:faith.dp2cs_proto.load_role_starark)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -132,7 +132,7 @@ class dp2cs_proto_load_role_starark : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 role_guid_;
-  ::hld::db_proto_role_starark_db* db_data_;
+  ::faith::db_proto_role_starark_db* db_data_;
   ::google::protobuf::int32 unit_array_index_;
 
   mutable int _cached_size_;
@@ -234,7 +234,7 @@ class dp2cs_proto_load_role_skytreasure : public ::google::protobuf::Message {
   inline ::std::string* release_db_data();
   inline void set_allocated_db_data(::std::string* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.dp2cs_proto.load_role_skytreasure)
+  // @@protoc_insertion_point(class_scope:faith.dp2cs_proto.load_role_skytreasure)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -344,7 +344,7 @@ class dp2cs_proto_load_role_recycle : public ::google::protobuf::Message {
   inline ::std::string* release_db_data();
   inline void set_allocated_db_data(::std::string* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.dp2cs_proto.load_role_recycle)
+  // @@protoc_insertion_point(class_scope:faith.dp2cs_proto.load_role_recycle)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -451,7 +451,7 @@ class dp2cs_proto_load_role_recycle_task : public ::google::protobuf::Message {
   inline ::std::string* release_db_data();
   inline void set_allocated_db_data(::std::string* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.dp2cs_proto.load_role_recycle_task)
+  // @@protoc_insertion_point(class_scope:faith.dp2cs_proto.load_role_recycle_task)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -558,7 +558,7 @@ class dp2cs_proto_load_role_db_data : public ::google::protobuf::Message {
   inline ::std::string* release_db_data();
   inline void set_allocated_db_data(::std::string* db_data);
 
-  // @@protoc_insertion_point(class_scope:hld.dp2cs_proto.load_role_db_data)
+  // @@protoc_insertion_point(class_scope:faith.dp2cs_proto.load_role_db_data)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -645,7 +645,7 @@ class dp2cs_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.dp2cs_proto)
+  // @@protoc_insertion_point(class_scope:faith.dp2cs_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -712,7 +712,7 @@ inline void dp2cs_proto_load_role_starark::set_unit_array_index(::google::protob
   unit_array_index_ = value;
 }
 
-// optional .hld.db_proto.role_starark_db db_data = 4;
+// optional .faith.db_proto.role_starark_db db_data = 4;
 inline bool dp2cs_proto_load_role_starark::has_db_data() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -723,24 +723,24 @@ inline void dp2cs_proto_load_role_starark::clear_has_db_data() {
   _has_bits_[0] &= ~0x00000004u;
 }
 inline void dp2cs_proto_load_role_starark::clear_db_data() {
-  if (db_data_ != NULL) db_data_->::hld::db_proto_role_starark_db::Clear();
+  if (db_data_ != NULL) db_data_->::faith::db_proto_role_starark_db::Clear();
   clear_has_db_data();
 }
-inline const ::hld::db_proto_role_starark_db& dp2cs_proto_load_role_starark::db_data() const {
+inline const ::faith::db_proto_role_starark_db& dp2cs_proto_load_role_starark::db_data() const {
   return db_data_ != NULL ? *db_data_ : *default_instance_->db_data_;
 }
-inline ::hld::db_proto_role_starark_db* dp2cs_proto_load_role_starark::mutable_db_data() {
+inline ::faith::db_proto_role_starark_db* dp2cs_proto_load_role_starark::mutable_db_data() {
   set_has_db_data();
-  if (db_data_ == NULL) db_data_ = new ::hld::db_proto_role_starark_db;
+  if (db_data_ == NULL) db_data_ = new ::faith::db_proto_role_starark_db;
   return db_data_;
 }
-inline ::hld::db_proto_role_starark_db* dp2cs_proto_load_role_starark::release_db_data() {
+inline ::faith::db_proto_role_starark_db* dp2cs_proto_load_role_starark::release_db_data() {
   clear_has_db_data();
-  ::hld::db_proto_role_starark_db* temp = db_data_;
+  ::faith::db_proto_role_starark_db* temp = db_data_;
   db_data_ = NULL;
   return temp;
 }
-inline void dp2cs_proto_load_role_starark::set_allocated_db_data(::hld::db_proto_role_starark_db* db_data) {
+inline void dp2cs_proto_load_role_starark::set_allocated_db_data(::faith::db_proto_role_starark_db* db_data) {
   delete db_data_;
   db_data_ = db_data;
   if (db_data) {
@@ -1251,7 +1251,7 @@ inline void dp2cs_proto_load_role_db_data::set_allocated_db_data(::std::string* 
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

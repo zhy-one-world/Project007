@@ -30,7 +30,7 @@
 #include "net/message_manager.hpp"
 #include "utility/serialize_msg.h"
 
-namespace hld
+namespace faith
 {
 	//////////////////////////////////////////////////////////////////////////
 	//

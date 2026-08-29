@@ -18,7 +18,7 @@ purpose: about spirit
 #include "template/template_base.h"
 
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
@@ -52,7 +52,7 @@ namespace hld
 		}
 		void set_data_ary(e_spirit_info eIndex, int32 value) { data_ary[eIndex] = value; };
 
-		bool  to_proto(hld::st_proto::st_spirit_info* st_spirit_ptr)
+		bool  to_proto(faith::st_proto::st_spirit_info* st_spirit_ptr)
 		{
 			if (st_spirit_ptr == nullptr)
 			{
@@ -65,7 +65,7 @@ namespace hld
 			}
 			return true;
 		}
-		void from_proto(const hld::st_proto::st_spirit_info& st_spirit_ref)
+		void from_proto(const faith::st_proto::st_spirit_info& st_spirit_ref)
 		{
 			spirit_guid.server_64 =	st_spirit_ref.spirit_guid();
 			for (int32 i = 0; i < e_spirit_info_max && i < st_spirit_ref.data_ary_size(); i++)

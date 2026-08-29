@@ -30,7 +30,7 @@
 #include "utility/random.h"
 #include "internet/talent.pb.h"
 
-namespace hld
+namespace faith
 {
 	/************************************************************************/
 	/*                           Class Implement                            */
@@ -138,7 +138,7 @@ namespace hld
 		{
 			return;
 		}
-		for (int32 i = 0;i < hld::max_each_type_addition_buff_num;i++)
+		for (int32 i = 0;i < faith::max_each_type_addition_buff_num;i++)
 		{
 			if (m_addition_buff[addition_buff_type][i] == 0)
 			{
@@ -150,7 +150,7 @@ namespace hld
 
 	void unit::reset_addition_buff_id_by_type(e_addition_buff addition_buff_type)
 	{
-		for (int32 i = 0;i < hld::max_each_type_addition_buff_num;i++)
+		for (int32 i = 0;i < faith::max_each_type_addition_buff_num;i++)
 		{
 			m_addition_buff[addition_buff_type][i] = 0;
 		}
@@ -258,7 +258,7 @@ namespace hld
 		{
 			return;
 		}
-		if (m_cur_map_template_ptr->Type == hld::e_map_type_big_map && m_status == e_session_status_in_gaming)
+		if (m_cur_map_template_ptr->Type == faith::e_map_type_big_map && m_status == e_session_status_in_gaming)
 		{
 			set_main_pos(map_pos);
 		}
@@ -272,7 +272,7 @@ namespace hld
 		{
 			return;
 		}
-		if (temp_map_template_ptr->Type == hld::e_map_type_big_map)
+		if (temp_map_template_ptr->Type == faith::e_map_type_big_map)
 		{
 			m_role_info.data_ary[e_role_info_main_pos_yaw] = map_angel;
 		}
@@ -357,12 +357,12 @@ namespace hld
 	/************************************************************************/
 	void unit::send_warning(e_warning_type warn_type, int32 warn_value, bool warn_show)
 	{
-		hld::character_proto_character_warning warn_msg;
+		faith::character_proto_character_warning warn_msg;
 		warn_msg.set_unit_guid(get_unit_guid().server_64);
 		warn_msg.set_warn_type(warn_type);
 		warn_msg.set_warn_value(warn_value);
 		warn_msg.set_warn_show(warn_show);
-		send_message_to_aoi(&warn_msg, hld::e_msgindex_s2c_character_warning);
+		send_message_to_aoi(&warn_msg, faith::e_msgindex_s2c_character_warning);
 	}
 	bool	unit::is_dead()
 	{
@@ -543,12 +543,12 @@ namespace hld
 			trigger_unit_event(e_game_event_type_unit_dead, m_array_index);
 		}
 
-		if (get_unit_type() == hld::e_unit_type_monster)
+		if (get_unit_type() == faith::e_unit_type_monster)
 		{
 			player& attacker_ref = unit_man::get_player(array_index);
 			if (attacker_ref.is_valid() == true)
 			{
-				int32 npc_id = get_unit_info(hld::e_role_info_template_id);
+				int32 npc_id = get_unit_info(faith::e_role_info_template_id);
 				attacker_ref.get_mission_mgr().target_check(e_mission_end_type_npc_attacked_num, npc_id);
 			}
 		}
@@ -600,7 +600,7 @@ namespace hld
 			return;
 		}
 		
-		hld::talent_proto_suck_blood_value suck_pak;
+		faith::talent_proto_suck_blood_value suck_pak;
 		suck_pak.set_sender_guid(m_role_info.role_guid.server_64);
 		suck_pak.set_suck_blood_value(suck_value);
 		send_message_to_self(&suck_pak, e_msgindex_s2c_suck_blood_value);
@@ -619,17 +619,17 @@ namespace hld
 		{
 			return;
 		}
-		hld::character_proto_role_i64_info_one role_info_one_msg;
+		faith::character_proto_role_i64_info_one role_info_one_msg;
 		role_info_one_msg.set_unit_guid(get_unit_guid().server_64);
 		role_info_one_msg.set_info_type(idex);
 		role_info_one_msg.set_info_value(m_role_info.data_i64_ary[idex]);
 		if (is_to_aoi)
 		{
-			send_message_to_aoi(&role_info_one_msg, hld::e_msgindex_s2c_character_gs_value, true);
+			send_message_to_aoi(&role_info_one_msg, faith::e_msgindex_s2c_character_gs_value, true);
 		}
 		else
 		{
-			send_message_to_self(&role_info_one_msg, hld::e_msgindex_s2c_character_gs_value);
+			send_message_to_self(&role_info_one_msg, faith::e_msgindex_s2c_character_gs_value);
 		}
 	}
 
@@ -639,23 +639,23 @@ namespace hld
 		{
 			return;
 		}
-		hld::character_proto_role_info_one role_info_one_msg;
+		faith::character_proto_role_info_one role_info_one_msg;
 		role_info_one_msg.set_unit_guid(get_unit_guid().server_64);
 		role_info_one_msg.set_info_type(info_index);
 		role_info_one_msg.set_info_value(m_role_info.data_ary[info_index]);
 		if (is_to_aoi)
 		{
-			send_message_to_aoi(&role_info_one_msg, hld::e_msgindex_s2c_character_info_one, true);
+			send_message_to_aoi(&role_info_one_msg, faith::e_msgindex_s2c_character_info_one, true);
 		}
 		else
 		{
-			send_message_to_self(&role_info_one_msg, hld::e_msgindex_s2c_character_info_one);
+			send_message_to_self(&role_info_one_msg, faith::e_msgindex_s2c_character_info_one);
 		}
 	}
 
 	void unit::send_info_all(bool is_refresh_by_zero, bool is_refresh_by_special_time)
 	{
-		hld::character_proto_unit_info_msg unit_info_msg;
+		faith::character_proto_unit_info_msg unit_info_msg;
 		unit_info_msg.set_role_guid(get_unit_guid().server_64);
 		unit_info_msg.set_role_name(m_role_info.role_name);
 		unit_info_msg.set_role_appearance(m_role_info.role_appearance);
@@ -669,7 +669,7 @@ namespace hld
 		{
 			unit_info_msg.add_data_str_ary(to_string(m_role_info.data_i64_ary[i]));
 		}
-		send_message_to_self(&unit_info_msg, hld::e_msgindex_s2c_character_info_all);
+		send_message_to_self(&unit_info_msg, faith::e_msgindex_s2c_character_info_all);
 	}
 
 	void unit::broadcast_info_one(e_role_info info_index)
@@ -678,16 +678,16 @@ namespace hld
 		{
 			return;
 		}
-		hld::character_proto_role_info_one role_info_one_msg;
+		faith::character_proto_role_info_one role_info_one_msg;
 		role_info_one_msg.set_unit_guid(get_unit_guid().server_64);
 		role_info_one_msg.set_info_type(info_index);
 		role_info_one_msg.set_info_value(m_role_info.data_ary[info_index]);
-		send_message_to_aoi(&role_info_one_msg, hld::e_msgindex_s2c_broadcast_character_info_one);
+		send_message_to_aoi(&role_info_one_msg, faith::e_msgindex_s2c_broadcast_character_info_one);
 	}
 
 	void unit::send_unit_begin_info()
 	{
-		hld::character_proto_load_role_info_end load_role_info_end_msg;
+		faith::character_proto_load_role_info_end load_role_info_end_msg;
 		load_role_info_end_msg.set_runtime_id(get_array_index());
 		character_proto_unit_info_msg* role_info_msg = load_role_info_end_msg.mutable_role_info();
 		role_info_msg->set_role_guid(get_unit_guid().server_64);
@@ -701,7 +701,7 @@ namespace hld
 		{
 			role_info_msg->add_data_ary(m_role_info.data_ary[i]);
 		}
-		send_message_to_self(&load_role_info_end_msg, hld::e_msgindex_s2c_load_role_info);
+		send_message_to_self(&load_role_info_end_msg, faith::e_msgindex_s2c_load_role_info);
 	}
 	
 	guid_64& unit::get_legion_guid()
@@ -744,17 +744,17 @@ namespace hld
 			return;
 		}
 
-		hld::character_proto_daily_must_do_count daily_must_do_count;	
+		faith::character_proto_daily_must_do_count daily_must_do_count;	
 		daily_must_do_count.add_role_guid(get_unit_guid().A);
 		daily_must_do_count.add_role_guid(get_unit_guid().B);
 		daily_must_do_count.set_must_do_type(info_index);
 		daily_must_do_count.set_must_do_value(m_daily_must_do_count.data_ary[info_index]);
-		send_message_to_self(&daily_must_do_count, hld::e_msgindex_s2c_update_daily_must_do_count_one);
+		send_message_to_self(&daily_must_do_count, faith::e_msgindex_s2c_update_daily_must_do_count_one);
 	}
 
 	void unit::send_daily_must_do_count_info_all()
 	{
-		hld::character_proto_daily_must_do_count_all daily_must_do_count;
+		faith::character_proto_daily_must_do_count_all daily_must_do_count;
 		daily_must_do_count.add_role_guid(get_unit_guid().A);
 		daily_must_do_count.add_role_guid(get_unit_guid().B);
 
@@ -762,7 +762,7 @@ namespace hld
 		{
 			daily_must_do_count.add_data_array(m_daily_must_do_count.data_ary[i]);
 		}
-		send_message_to_self(&daily_must_do_count, hld::e_msgindex_s2c_update_daily_must_do_count_all);
+		send_message_to_self(&daily_must_do_count, faith::e_msgindex_s2c_update_daily_must_do_count_all);
 
 
 		daily_must_do_count.clear_data_array();
@@ -770,7 +770,7 @@ namespace hld
 		{
 			daily_must_do_count.add_data_array(m_daily_must_do_count.data_ary[i]);
 		}
-		send_message_to_self(&daily_must_do_count, hld::e_msgindex_s2c_update_daily_must_do_count_all);
+		send_message_to_self(&daily_must_do_count, faith::e_msgindex_s2c_update_daily_must_do_count_all);
 	}
 	void unit::trigger_unit_event(int32 event_type, int64 param1, int64 param2, int64 param3)
 	{

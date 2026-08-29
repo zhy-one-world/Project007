@@ -32,7 +32,7 @@
 #include "internal/core.hpp"
 
 
-namespace hld
+namespace faith
 {
 	static int32 m_pk_player_idex_array[map_lind_max_num][e_fake_type_max];
 
@@ -258,7 +258,7 @@ namespace hld
 		{
 			//set_log_var(log_head);
 			//player_ptr->get_log_common_head_info(log_head);
-			//server_log::serverMapChange(log_head, get_map_template_id(), map_type, map_sub_type, hld::e_map_change_leave, m_map_template_ptr->Difficulty);
+			//server_log::serverMapChange(log_head, get_map_template_id(), map_type, map_sub_type, faith::e_map_change_leave, m_map_template_ptr->Difficulty);
 		}
 	}
 	void world_cs::player_reconnect(Entity* map_ent, player* player_ptr)
@@ -680,7 +680,7 @@ namespace hld
 		//}
 	}
 
-	void world_cs::send_notice_with_param(hld::guid_64 sender_guid, std::string sender_name, 
+	void world_cs::send_notice_with_param(faith::guid_64 sender_guid, std::string sender_name, 
 		std::string content_text, std::vector<int32> param_array, int32 param_type,
 		int32 chat_type, int32 sender_template_id, int32 notice_id)
 	{
@@ -746,7 +746,7 @@ namespace hld
 		e_map_type operate_map_type = (e_map_type)map_object_ptr->get_map_type();
 		switch (operate_map_type)
 		{
-		case hld::e_map_type_legion_station:
+		case faith::e_map_type_legion_station:
 		{
 			//auto map_cs_ptr = dynamic_cast<legion_station_map_cs*>(map_object_ptr);
 			//if (nullptr == map_cs_ptr)
@@ -838,7 +838,7 @@ namespace hld
 			{
 				return;
 			}
-			if (map_template_ptr->Type != hld::e_map_type_big_map)
+			if (map_template_ptr->Type != faith::e_map_type_big_map)
 			{
 				return;
 			}

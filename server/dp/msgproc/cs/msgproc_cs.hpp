@@ -6,7 +6,7 @@
 #include "utility/parse_msg.h"
 #include  "../../def/template/template_manager.h"
 
-namespace hld
+namespace faith
 {
 	/*
 	 * 角色上线统一LOADINDG链处理

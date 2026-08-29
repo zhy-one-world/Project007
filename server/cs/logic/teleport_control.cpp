@@ -25,7 +25,7 @@
 #include "utility/init_unit.h"
 #include "utility/random.h"
 
-namespace hld
+namespace faith
 {
 	/************************************************************************/
 	/*                           Class Implement                            */
@@ -57,7 +57,7 @@ namespace hld
 		if (map_ptr == NULL)
 		{
 			CONSOLE_ERROR("map_ptr is nullptr map_tempate_id:{}", map_tempate_id);
-			send_transfer_error_message(hld::e_error_code_template_param);
+			send_transfer_error_message(faith::e_error_code_template_param);
 			return;
 		}
 		
@@ -82,7 +82,7 @@ namespace hld
 		MapTemplate* map_ptr = GET_TEMPLATE(MapTemplate, map_tempate_id);
 		if (map_ptr == NULL)
 		{
-			send_transfer_error_message(hld::e_error_code_template_param);
+			send_transfer_error_message(faith::e_error_code_template_param);
 			return;
 		}
 		s_map_pos temp_pos;
@@ -94,7 +94,7 @@ namespace hld
 		{
 			if (map_ptr->BornLocation.size() < 3 || map_ptr->BornRotation.size() < 3)
 			{
-				send_transfer_error_message(hld::e_error_code_template_param);
+				send_transfer_error_message(faith::e_error_code_template_param);
 				return;
 			}
 
@@ -102,7 +102,7 @@ namespace hld
 			{
 				if (map_ptr->BornLocation.size() < war_index * 3 || map_ptr->BornRotation.size() < war_index * 3)
 				{
-					send_transfer_error_message(hld::e_error_code_template_param);
+					send_transfer_error_message(faith::e_error_code_template_param);
 					return;
 				}
 			}
@@ -123,7 +123,7 @@ namespace hld
 			// 此接口不支持 同地图传送
 			//return;跨服传送，支持同地图传送
 		}
-		if (map_ptr->Type == hld::e_map_type_king_of_pk && map_ptr->SubType == e_pk_king_map_sub_type_combat)
+		if (map_ptr->Type == faith::e_map_type_king_of_pk && map_ptr->SubType == e_pk_king_map_sub_type_combat)
 		{
 			m_player_ptr->get_pk_king_bron_pos(map_guid, temp_pos);
 		}
@@ -134,7 +134,7 @@ namespace hld
 		//	map_obj_ptr->get_transfer_map_pos(m_player_ptr->get_array_index(), temp_pos, war_index);
 		//}
 
-		if (map_ptr->Type == hld::e_map_type_big_map && map_tempate_id == m_player_ptr->get_unit_info(e_role_info_main_map_id))
+		if (map_ptr->Type == faith::e_map_type_big_map && map_tempate_id == m_player_ptr->get_unit_info(e_role_info_main_map_id))
 		{
 			temp_pos = m_player_ptr->get_main_pos();//从副本传回大世界会走到这
 		}
@@ -257,7 +257,7 @@ namespace hld
 		ZoneScoped;
 		m_delay_teleport	= true;
 	}
-	void teleport_control::set_teleport_dest_info(hld::e_scene_type desc_type, int32 desc_map_template_id, s_map_pos map_pos)
+	void teleport_control::set_teleport_dest_info(faith::e_scene_type desc_type, int32 desc_map_template_id, s_map_pos map_pos)
 	{
 		ZoneScoped;
 		m_teleport_dest.transfer_type_id = desc_type;
@@ -265,7 +265,7 @@ namespace hld
 		m_teleport_dest.map_pos = map_pos;
 	}
 
-	void teleport_control::req_start_teleport(hld::e_scene_type desc_type, int32 desc_map_template_id, int32 line_id, s_map_pos map_pos, guid_64 map_guid, int32 war_index, bool force, uint32 dest_group_id)
+	void teleport_control::req_start_teleport(faith::e_scene_type desc_type, int32 desc_map_template_id, int32 line_id, s_map_pos map_pos, guid_64 map_guid, int32 war_index, bool force, uint32 dest_group_id)
 	{
 		ZoneScoped;
 		auto map_template_ptr = GET_TEMPLATE(MapTemplate, desc_map_template_id);
@@ -346,7 +346,7 @@ namespace hld
 			return;
 		}
 
-		hld::e_scene_type desc_type				= m_teleport_param.desc_type;
+		faith::e_scene_type desc_type				= m_teleport_param.desc_type;
 		int32 desc_map_template_id					= m_teleport_param.desc_map_template_id;
 		int32 desc_line_id							= m_teleport_param.desc_line_id;
 		s_map_pos temp_pos							= m_teleport_param.desc_map_pos;
@@ -355,7 +355,7 @@ namespace hld
 
 		set_teleport_dest_info(desc_type, desc_map_template_id, temp_pos);
 
-		hld::cs2ws_tansfer_player send_msg;
+		faith::cs2ws_tansfer_player send_msg;
 		send_msg.role_guid = m_player_ptr->get_unit_guid();
 		send_msg.transfer_info.scene_type = desc_type;
 		send_msg.transfer_info.map_id = desc_map_template_id;

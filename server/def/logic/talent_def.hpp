@@ -9,7 +9,7 @@ author: zhy
 
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	const int32 TALENT_NUM_MAX = 200;//总共多少天赋

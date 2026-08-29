@@ -11,7 +11,7 @@ purpose: 成就管理系统
 
 #include "achievement.hpp"
 
-namespace hld
+namespace faith
 {
 	class player;
 	class npc;

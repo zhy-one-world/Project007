@@ -11,7 +11,7 @@ purpose:
 #include <lucky_draw_record_msg.hpp>
 #include "msgproc_big_player.hpp"
 
-namespace hld
+namespace faith
 {
 	
 	void del_draw_info_from_db(uint32 connindex, const void *data_ptr, size_t data_len)

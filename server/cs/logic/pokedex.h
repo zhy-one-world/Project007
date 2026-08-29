@@ -13,7 +13,7 @@ purpose:
 #include <Logic/pokedex_def.hpp>
 #include "template/ServerTemplateHead.h"
 
-namespace hld
+namespace faith
 {
 	class cpokedex
 	{

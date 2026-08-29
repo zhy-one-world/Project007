@@ -13,7 +13,7 @@
 #include <Logic/team_def.hpp>
 #include <Logic/world_boss_def.hpp>
 
-namespace hld
+namespace faith
 {
 	void load_world_boss(uint32 connindex, const void *data_ptr, size_t data_len);
 	void load_world_boss_end(db_result_type result, uint32 connindex);

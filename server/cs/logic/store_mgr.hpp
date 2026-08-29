@@ -11,7 +11,7 @@ purpose: about store system's store_mgr
 #include "goods.h"
 #include "Logic/goods_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class goods_proto_update_store_goods;
 	typedef	std::vector<int32>    fresh_vec;//Ë¢ÐÂÊý×é

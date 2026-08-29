@@ -4,7 +4,7 @@
 #include "legion.pb.h"
 #include "Logic/legion_def.hpp"
 #include "utility/score_indicator.h"
-namespace hld
+namespace faith
 {
 	class legion_ws_answer
 	{

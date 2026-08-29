@@ -20,7 +20,7 @@ purpose: about rankings
 #include "utility/parse_msg.h"
 #include "worship_target.h"
 
-namespace hld
+namespace faith
 {
 	cworship_target::cworship_target()
 	{
@@ -67,7 +67,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_worship_db msg;
+		faith::cs2dp_proto::role_worship_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -82,7 +82,7 @@ namespace hld
 		worship_record *p_row = (worship_record *)p_data;
 		for (int32 i = 0; i < msg.row_count(); i++)
 		{
-			hld::cs2dp_proto::role_worship_row db_row = msg.row_data(i);
+			faith::cs2dp_proto::role_worship_row db_row = msg.row_data(i);
 			p_row->ranking_index = db_row.ranking_index();
 			p_row->target_guid.server_64 = db_row.target_guid();
 
@@ -142,12 +142,12 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_worship msg;
+			faith::cs2dp_proto::save_role_worship msg;
 			msg.set_role_guid(m_player_ptr->get_unit_guid().server_64);
 			msg.set_unit_array_index(m_player_ptr->get_array_index());
 			msg.set_save_type_ex(save_type);
 
-			hld::cs2dp_proto::role_worship_db *db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_worship_db *db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return;
@@ -161,7 +161,7 @@ namespace hld
 				{
 					continue;
 				}
-				hld::cs2dp_proto::role_worship_row *db_row = db_data->add_row_data();
+				faith::cs2dp_proto::role_worship_row *db_row = db_data->add_row_data();
 				if (db_row == nullptr)
 				{
 					return;

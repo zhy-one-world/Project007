@@ -21,7 +21,7 @@ purpose: 任务管理系统
 #include "internet/cs2dp.pb.h"
 #include "internal/mission_msg.hpp"
 
-namespace hld
+namespace faith
 {
 	cmission_mgr::cmission_mgr()
 	{
@@ -196,7 +196,7 @@ namespace hld
 		int32 old_mission_id = m_got_mission_array[target_slot].get_inst_data(e_mission_inst_data_id);
 		switch (mission_template_ptr->MissionShowType)
 		{
-		case hld::e_mission_type_main:
+		case faith::e_mission_type_main:
 		{
 			m_got_mission_array[target_slot].init_mission_by_template(mission_id, e_mission_slot_main, &temp_player);
 			temp_player.get_service_goal_mgr().refresh_over_time_all();
@@ -213,7 +213,7 @@ namespace hld
 			}			
 		}
 			break;
-		case hld::e_mission_type_daily:
+		case faith::e_mission_type_daily:
 		{
 			int32 cur_done_num = temp_player.get_unit_info(e_role_info_daily_done_num);
 			if (cur_done_num >= DAILY_MISSION_MAX)
@@ -227,7 +227,7 @@ namespace hld
 			random_daily_mission(mission_id);
 		}
 			break;
-		case hld::e_mission_type_against:
+		case faith::e_mission_type_against:
 		{
 			int32 cur_done_num = temp_player.get_unit_info(e_role_info_against_done_num);
 			if (cur_done_num >= AGAINST_MISSION_MAX)
@@ -242,14 +242,14 @@ namespace hld
 			random_against_mission(mission_id);
 		}
 			break;
-		case hld::e_mission_type_side:
-		case hld::e_mission_type_grade_up:
+		case faith::e_mission_type_side:
+		case faith::e_mission_type_grade_up:
 		{
 			m_got_mission_array[target_slot].init_mission_by_template(mission_id, target_slot, &temp_player);
 			send_one_mission(m_got_mission_array[target_slot]);
 		}
 			break;
-		case hld::e_mission_type_marry:
+		case faith::e_mission_type_marry:
 			{
 				int32 cur_done_num = temp_player.get_unit_info(e_role_info_marry_done_num);
 				if (cur_done_num >= MARRY_MISSION_MAX)
@@ -667,7 +667,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_mission_db msg;
+		faith::cs2dp_proto::role_mission_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -682,7 +682,7 @@ namespace hld
 		s_mission_info *p_row = (s_mission_info *)p_data;
 		for (int32 i = 0; i < msg.row_count(); i++)
 		{
-			hld::cs2dp_proto::role_mission_row db_row = msg.row_data(i);
+			faith::cs2dp_proto::role_mission_row db_row = msg.row_data(i);
 			for (int32 j = 0; j < db_row.data_ary_size(); j++)
 			{
 				p_row->data_ary[j] = db_row.data_ary(j);

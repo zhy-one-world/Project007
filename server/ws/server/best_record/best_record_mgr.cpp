@@ -8,7 +8,7 @@
 #include "server/team/team_ws_mgr.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	void best_record_mgr::save_best_record_to_db(const s_best_record& best_record)
 	{
@@ -19,7 +19,7 @@ namespace hld
 		server2dp_proto_ws2dp_save_best_record msg;
 		server2dp_proto_s_best_record* record_info = msg.mutable_record_info();
 		record_info->set_map_template_id(best_record.map_template_id);
-		for (int32 i = 0; i < hld::single_map_record_num; i++)
+		for (int32 i = 0; i < faith::single_map_record_num; i++)
 		{
 			record_info->add_role_guid(best_record.single_map_best_record[i].role_guid.server_64);
 			record_info->add_role_name(best_record.single_map_best_record[i].role_name);
@@ -94,7 +94,7 @@ namespace hld
 		{
 			return -1;
 		}
-		if (map_template_ptr->Type == hld::e_map_type_broken_sky || map_template_ptr->Type == hld::e_map_type_king_of_pk || map_template_ptr->Type == e_map_type_temple || map_template_ptr->Type == e_map_type_empire_treasure)
+		if (map_template_ptr->Type == faith::e_map_type_broken_sky || map_template_ptr->Type == faith::e_map_type_king_of_pk || map_template_ptr->Type == e_map_type_temple || map_template_ptr->Type == e_map_type_empire_treasure)
 		{
 			return (map_template_id / 100 * 100 + 1);
 		}
@@ -107,17 +107,17 @@ namespace hld
 		{
 			return -1;
 		}
-		if (order_type <= 0 || order_type >= hld::e_best_record_order_max)
+		if (order_type <= 0 || order_type >= faith::e_best_record_order_max)
 		{
 			return -1;
 		}
-		for (int32 i = hld::single_map_record_num - 1; i >= 0; i--)
+		for (int32 i = faith::single_map_record_num - 1; i >= 0; i--)
 		{
 			if (best_record->single_map_best_record[i].role_guid.is_valid() == false)
 			{
 				continue;
 			}
-			if (order_type == hld::e_best_record_order_by_bigger)
+			if (order_type == faith::e_best_record_order_by_bigger)
 			{
 				if (best_record->single_map_best_record[i].value >= new_record.value)
 				{
@@ -147,20 +147,20 @@ namespace hld
 			return false;
 		}
 		int32 order_type = get_order_type_by_template_id(best_record->map_template_id);
-		if (order_type <= 0 || order_type >= hld::e_best_record_order_max)
+		if (order_type <= 0 || order_type >= faith::e_best_record_order_max)
 		{
 			return false;
 		}
 		int32 insert_index = get_insert_index(best_record, new_record, order_type);
-		if (insert_index < 0 || insert_index >= hld::single_map_record_num)
+		if (insert_index < 0 || insert_index >= faith::single_map_record_num)
 		{
 			return false;
 		}
-		for (int32 i = 0; i < hld::single_map_record_num; i++)
+		for (int32 i = 0; i < faith::single_map_record_num; i++)
 		{
 			if (best_record->single_map_best_record[i].role_guid == new_record.role_guid)
 			{
-				if (order_type == hld::e_best_record_order_by_bigger)
+				if (order_type == faith::e_best_record_order_by_bigger)
 				{
 					if (new_record.value <= best_record->single_map_best_record[i].value)
 					{
@@ -171,7 +171,7 @@ namespace hld
 						return true;
 					}
 				}
-				else if (order_type == hld::e_best_record_order_by_smaller)
+				else if (order_type == faith::e_best_record_order_by_smaller)
 				{
 					if (new_record.value >= best_record->single_map_best_record[i].value)
 					{
@@ -203,7 +203,7 @@ namespace hld
 		{
 			return;
 		}
-		for (int32 i = hld::single_map_record_num - 1; i > insert_index; i--)
+		for (int32 i = faith::single_map_record_num - 1; i > insert_index; i--)
 		{
 			best_record->single_map_best_record[i] = best_record->single_map_best_record[i - 1];
 		}
@@ -224,7 +224,7 @@ namespace hld
 		{
 			return;
 		}
-		for (int32 i = 0; i < hld::single_map_record_num; i++)
+		for (int32 i = 0; i < faith::single_map_record_num; i++)
 		{
 			if (best_record->single_map_best_record[i].role_guid == new_record.role_guid)
 			{
@@ -236,14 +236,14 @@ namespace hld
 		{
 			return;
 		}
-		if (del_index < hld::single_map_record_num - 1)
+		if (del_index < faith::single_map_record_num - 1)
 		{
-			for (int32 i = del_index; i < hld::single_map_record_num - 1; i++)
+			for (int32 i = del_index; i < faith::single_map_record_num - 1; i++)
 			{
 				best_record->single_map_best_record[i] = best_record->single_map_best_record[i + 1];
 			}
 		}
-		best_record->single_map_best_record[hld::single_map_record_num - 1].clear_data();
+		best_record->single_map_best_record[faith::single_map_record_num - 1].clear_data();
 	}
 
 	void best_record_mgr::set_best_record(int32 map_template_id, s_single_map_record new_record, bool is_from_db)
@@ -360,7 +360,7 @@ namespace hld
 		}
 		switch ((e_map_order_type)map_template_ptr->Order)
 		{
-		case hld::e_map_order_type_story_raid:
+		case faith::e_map_order_type_story_raid:
 			{
 				switch ((e_map_difficulty)map_template_ptr->Difficulty)
 				{
@@ -387,7 +387,7 @@ namespace hld
 				}
 			}
 			break;
-		case hld::e_map_order_type_multiplayer_raid:
+		case faith::e_map_order_type_multiplayer_raid:
 			{
 				switch ((e_map_difficulty_for_multiplayer)map_template_ptr->Difficulty)
 				{
@@ -474,7 +474,7 @@ namespace hld
 		auto iter_record = m_activity_record_list.begin();
 		for (; iter_record != m_activity_record_list.end(); ++iter_record)
 		{
-			for (int32 i = 0; i < hld::single_map_record_num; ++i)
+			for (int32 i = 0; i < faith::single_map_record_num; ++i)
 			{
 				if (iter_record->single_map_best_record[i].role_guid == role_guid)
 				{

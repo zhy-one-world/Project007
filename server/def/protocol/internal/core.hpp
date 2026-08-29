@@ -31,7 +31,7 @@
 #include "internet/cs2ws.pb.h"
 #include "internet/error.pb.h"
 
-namespace hld 
+namespace faith 
 {
 #pragma pack(push,1)
 
@@ -399,9 +399,9 @@ namespace hld
 		bool					is_city_master;
 		bool					m_is_city_war_winner_legion_member;
 		bool					is_already_login;
-		bool					bflag_loading_title[hld::e_title_type_max];
+		bool					bflag_loading_title[faith::e_title_type_max];
 		guid_64					couple_guid;
-		xchar					couple_name[hld::max_name_size + 1];
+		xchar					couple_name[faith::max_name_size + 1];
 		s_player_team_info		team_info;
 		s_player_legion_info	legion_info;
 		int64					login_time;
@@ -410,7 +410,7 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_enter_game;
 		}
-		bool to_proto(hld::ws2cs_proto::enter_game & msg)
+		bool to_proto(faith::ws2cs_proto::enter_game & msg)
 		{
 			msg.set_client_uid(client_uid.fep_uid_64);
 			msg.set_account(account);
@@ -426,7 +426,7 @@ namespace hld
 			msg.set_map_guid(map_guid.server_64);
 			msg.set_line_id(line_id);
 			msg.set_war_index(war_index);
-			hld::st_proto::st_login_fixed_data* st_login_ptr = msg.mutable_fixed_data();
+			faith::st_proto::st_login_fixed_data* st_login_ptr = msg.mutable_fixed_data();
 			if (st_login_ptr == nullptr)
 			{
 				return false;
@@ -437,21 +437,21 @@ namespace hld
 			msg.set_is_city_master(is_city_master);
 			msg.set_m_is_city_war_winner_legion_member(m_is_city_war_winner_legion_member);
 			msg.set_is_already_login(is_already_login);
-			for (int32 i = 0; i <hld::e_title_type_max; i++)
+			for (int32 i = 0; i <faith::e_title_type_max; i++)
 			{
 				msg.add_bflag_loading_title(bflag_loading_title[i]);
 			}
 			msg.set_couple_guid(couple_guid.server_64);
 			msg.set_couple_name(couple_name);
 			
-			hld::st_proto::st_player_team_info *st_team_ptr = msg.mutable_team_info();
+			faith::st_proto::st_player_team_info *st_team_ptr = msg.mutable_team_info();
 			if (st_team_ptr == nullptr)
 			{
 				return false;
 			}
 			team_info.to_proto(st_team_ptr);
 
-			hld::st_proto::st_player_legion_info *st_legion_ptr = msg.mutable_legion_info();
+			faith::st_proto::st_player_legion_info *st_legion_ptr = msg.mutable_legion_info();
 			if (st_legion_ptr == nullptr)
 			{
 				return false;
@@ -470,7 +470,7 @@ namespace hld
 			memcpy(dst, str.c_str(), len);
 		}
 
-		void from_proto(hld::ws2cs_proto::enter_game & msg)
+		void from_proto(faith::ws2cs_proto::enter_game & msg)
 		{
 			client_uid.fep_uid_64 =	msg.client_uid();
 			my_memcopy_string(account, max_account_length, msg.account());
@@ -487,7 +487,7 @@ namespace hld
 			map_guid.server_64 = msg.map_guid();
 			line_id = msg.line_id();
 			war_index = msg.war_index();
-			const hld::st_proto::st_login_fixed_data& st_login_ref = msg.fixed_data();
+			const faith::st_proto::st_login_fixed_data& st_login_ref = msg.fixed_data();
 	
 			fixed_data.from_proto(st_login_ref);
 			is_send_chat = msg.is_send_chat();
@@ -495,7 +495,7 @@ namespace hld
 			is_city_master = msg.is_city_master();
 			m_is_city_war_winner_legion_member = msg.m_is_city_war_winner_legion_member();
 			is_already_login =  msg.is_already_login();
-			for (int32 i = 0; i < hld::e_title_type_max; i++)
+			for (int32 i = 0; i < faith::e_title_type_max; i++)
 			{
 				bflag_loading_title[i] = msg.bflag_loading_title(i);
 			}
@@ -503,11 +503,11 @@ namespace hld
 			my_memcopy_string(couple_name, max_name_size, msg.couple_name());
 
 
-			const hld::st_proto::st_player_team_info& st_team_ref = msg.team_info();
+			const faith::st_proto::st_player_team_info& st_team_ref = msg.team_info();
 	
 			team_info.from_proto(st_team_ref);
 
-		    const hld::st_proto::st_player_legion_info& st_legion_ref = msg.legion_info();
+		    const faith::st_proto::st_player_legion_info& st_legion_ref = msg.legion_info();
 	
 			legion_info.from_proto(st_legion_ref);
 			login_time = msg.login_time();
@@ -574,9 +574,9 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_server_config;
 		}
-		bool to_proto(hld::ws2cs_proto::server_config& msg)
+		bool to_proto(faith::ws2cs_proto::server_config& msg)
 		{
-			hld::st_proto::st_game_info *st_game_ptr = msg.mutable_game_info();
+			faith::st_proto::st_game_info *st_game_ptr = msg.mutable_game_info();
 			if (st_game_ptr == nullptr)
 			{
 				return false;
@@ -585,9 +585,9 @@ namespace hld
 			msg.set_is_add(is_add);
 			return true;
 		}
-		void from_proto(hld::ws2cs_proto::server_config& msg)
+		void from_proto(faith::ws2cs_proto::server_config& msg)
 		{
-			const hld::st_proto::st_game_info & st_game_ref = msg.game_info();
+			const faith::st_proto::st_game_info & st_game_ref = msg.game_info();
 	
 			game_info.from_proto(st_game_ref);
 			is_add = msg.is_add();
@@ -1014,7 +1014,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void to_proto(hld::ws2cs_proto::map_dynamic_params& msg)
+		void to_proto(faith::ws2cs_proto::map_dynamic_params& msg)
 		{
 			msg.set_map_guid(map_guid.server_64);
 			msg.set_dynamic_params_map_type(dynamic_params_map_type);
@@ -1024,7 +1024,7 @@ namespace hld
 			}
 			msg.set_dynamic_params_name(dynamic_params_name);
 		}
-		void from_proto(hld::ws2cs_proto::map_dynamic_params& msg)
+		void from_proto(faith::ws2cs_proto::map_dynamic_params& msg)
 		{
 			map_guid.server_64 = msg.map_guid();
 			dynamic_params_map_type = msg.dynamic_params_map_type();
@@ -1049,7 +1049,7 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_get_map_info_from_cs;
 		}
-		void to_proto(hld::ws2cs_proto::get_map_info_from_cs& msg)
+		void to_proto(faith::ws2cs_proto::get_map_info_from_cs& msg)
 		{
 			msg.set_map_guid(map_guid.server_64);
 			msg.set_role_guid(role_guid.server_64);
@@ -1059,7 +1059,7 @@ namespace hld
 				msg.add_map_info(map_info[i]);
 			}
 		}
-		void from_proto(const hld::ws2cs_proto::get_map_info_from_cs& msg)
+		void from_proto(const faith::ws2cs_proto::get_map_info_from_cs& msg)
 		{
 			map_guid.server_64 = msg.map_guid();
 			role_guid.server_64 = msg.role_guid();
@@ -1200,10 +1200,10 @@ namespace hld
 			wheader = e_msg_index_ws2cs_set_player_team_info;
 		}
 
-		bool to_proto(hld::ws2cs_proto::set_player_team_info &msg)
+		bool to_proto(faith::ws2cs_proto::set_player_team_info &msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
-			hld::st_proto::st_player_team_info* st_team_ptr = msg.mutable_player_team_info();
+			faith::st_proto::st_player_team_info* st_team_ptr = msg.mutable_player_team_info();
 			if (st_team_ptr == nullptr)
 			{
 				return false;
@@ -1211,10 +1211,10 @@ namespace hld
 			player_team_info.to_proto(st_team_ptr);
 			return true;
 		}
-		void  from_proto(const hld::ws2cs_proto::set_player_team_info& msg)
+		void  from_proto(const faith::ws2cs_proto::set_player_team_info& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
-			const hld::st_proto::st_player_team_info& st_team_ref = msg.player_team_info();
+			const faith::st_proto::st_player_team_info& st_team_ref = msg.player_team_info();
 			player_team_info.from_proto(st_team_ref);
 		}
 	};
@@ -1228,11 +1228,11 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_clear_player_team_info;
 		}
-		void to_proto(hld::ws2cs_proto::clear_player_team_info& msg)
+		void to_proto(faith::ws2cs_proto::clear_player_team_info& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 		}
-		void from_proto(const hld::ws2cs_proto::clear_player_team_info& msg)
+		void from_proto(const faith::ws2cs_proto::clear_player_team_info& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 		}
@@ -1315,14 +1315,14 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_apply_to_join_team;
 		}
-		void to_proto(hld::ws2cs_proto::apply_to_join_team& msg)
+		void to_proto(faith::ws2cs_proto::apply_to_join_team& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_team_guid(team_guid.server_64);
 			msg.set_team_type_id(team_type_id);
 			msg.set_team_sub_type_id(team_sub_type_id);
 		}
-		void from_proto(const hld::ws2cs_proto::apply_to_join_team& msg)
+		void from_proto(const faith::ws2cs_proto::apply_to_join_team& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			team_guid.server_64 = msg.team_guid();
@@ -1379,14 +1379,14 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_transfer_team_member_to_scene;
 		}
-		void to_proto( hld::ws2cs_proto::transfer_team_member_to_scene& msg)
+		void to_proto( faith::ws2cs_proto::transfer_team_member_to_scene& msg)
 		{
 			msg.set_team_guid(team_guid.server_64);
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_map_template_id(map_template_id);
 			msg.set_map_guid(map_guid.server_64);
 		}
-		void from_proto(const hld::ws2cs_proto::transfer_team_member_to_scene& msg)
+		void from_proto(const faith::ws2cs_proto::transfer_team_member_to_scene& msg)
 		{
 			team_guid.server_64 = msg.team_guid();
 			role_guid.server_64 = msg.role_guid();
@@ -1436,7 +1436,7 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_team_common_check_in_cs;
 		}
-		void to_proto(hld::ws2cs_proto::team_common_check_in_cs& msg)
+		void to_proto(faith::ws2cs_proto::team_common_check_in_cs& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_team_guid(team_guid.server_64);
@@ -1444,7 +1444,7 @@ namespace hld
 			msg.set_team_sub_type_id(team_sub_type_id);
 			msg.set_check_invoker(check_invoker);
 		}
-		void from_proto(const hld::ws2cs_proto::team_common_check_in_cs& msg)
+		void from_proto(const faith::ws2cs_proto::team_common_check_in_cs& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			team_guid.server_64 = msg.team_guid();
@@ -1482,11 +1482,11 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_sync_team_start_aim;
 		}
-		void to_proto(hld::ws2cs_proto::sync_team_start_aim& msg)
+		void to_proto(faith::ws2cs_proto::sync_team_start_aim& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 		}
-		void from_proto(const hld::ws2cs_proto::sync_team_start_aim& msg)
+		void from_proto(const faith::ws2cs_proto::sync_team_start_aim& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 		}
@@ -1542,10 +1542,10 @@ namespace hld
 			wheader = e_msg_index_ws2cs_set_player_legion_info;
 			is_new_join_legion = false;
 		}
-		void to_proto(hld::ws2cs_proto::set_player_legion_info& msg)
+		void to_proto(faith::ws2cs_proto::set_player_legion_info& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
-			hld::st_proto::st_player_legion_info* st_legion_ptr = msg.mutable_player_legion_info();
+			faith::st_proto::st_player_legion_info* st_legion_ptr = msg.mutable_player_legion_info();
 			if (st_legion_ptr == nullptr)
 			{
 				return;
@@ -1553,7 +1553,7 @@ namespace hld
 			player_legion_info.to_proto(st_legion_ptr);
 			msg.set_is_new_join_legion(is_new_join_legion);
 		}
-		void from_proto(const hld::ws2cs_proto::set_player_legion_info& msg)
+		void from_proto(const faith::ws2cs_proto::set_player_legion_info& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			player_legion_info.from_proto(msg.player_legion_info());
@@ -1586,13 +1586,13 @@ namespace hld
 			wheader = e_msg_index_ws2cs_create_legion;
 			legion_level = 1;
 		}
-		bool to_proto(hld::ws2cs_proto::create_legion& msg)
+		bool to_proto(faith::ws2cs_proto::create_legion& msg)
 		{
 			msg.set_legion_guid(legion_guid.server_64);
 			msg.set_legion_name(legion_name);
 			msg.set_legion_level(legion_level);
 			msg.set_auto_accept_new_member(auto_accept_new_member);
-			hld::st_proto::st_legion_member_info* st_member_ptr = msg.mutable_chief_info();
+			faith::st_proto::st_legion_member_info* st_member_ptr = msg.mutable_chief_info();
 			if (st_member_ptr == nullptr)
 			{
 				return false;
@@ -1609,7 +1609,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::ws2cs_proto::create_legion& msg)
+		void from_proto(const faith::ws2cs_proto::create_legion& msg)
 		{
 			legion_guid.server_64 = msg.legion_guid();
 			my_memcopy_string(legion_name, max_name_size, msg.legion_name());
@@ -1674,12 +1674,12 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_donate_legion_money;
 		}
-		void to_proto(hld::ws2cs_proto::donate_legion_money& msg)
+		void to_proto(faith::ws2cs_proto::donate_legion_money& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_donate_times(donate_times);
 		}
-		void from_proto(const hld::ws2cs_proto::donate_legion_money& msg)
+		void from_proto(const faith::ws2cs_proto::donate_legion_money& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			donate_times = msg.donate_times();
@@ -1711,13 +1711,13 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_donate_legion_item;
 		}
-		void to_proto(hld::ws2cs_proto::donate_legion_item& msg)
+		void to_proto(faith::ws2cs_proto::donate_legion_item& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_donate_item_index(donate_item_index);
 			msg.set_donate_item_num(donate_item_num);
 		}
-		void from_proto(const hld::ws2cs_proto::donate_legion_item& msg)
+		void from_proto(const faith::ws2cs_proto::donate_legion_item& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			donate_item_index = msg.donate_item_index();
@@ -1751,13 +1751,13 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_enter_legion_boss_map;
 		}
-		void to_proto(hld::ws2cs_proto::enter_legion_boss_map& msg)
+		void to_proto(faith::ws2cs_proto::enter_legion_boss_map& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_boss_map_id(boss_map_id);
 			msg.set_boss_map_guid(boss_map_guid.server_64);
 		}
-		void from_proto(const hld::ws2cs_proto::enter_legion_boss_map& msg)
+		void from_proto(const faith::ws2cs_proto::enter_legion_boss_map& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			boss_map_id = msg.boss_map_id();
@@ -1834,14 +1834,14 @@ namespace hld
 			memset(this, 0, sizeof(ws2cs_level_up_legion_skill));
 			wheader = e_msg_index_ws2cs_level_up_legion_skill;
 		}
-		void to_proto(hld::ws2cs_proto::level_up_legion_skill& msg)
+		void to_proto(faith::ws2cs_proto::level_up_legion_skill& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_skill_template_id(skill_template_id);
 			msg.set_donate_contribution(donate_contribution);
 
 		}
-		void from_proto(const hld::ws2cs_proto::level_up_legion_skill& msg)
+		void from_proto(const faith::ws2cs_proto::level_up_legion_skill& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			skill_template_id = msg.skill_template_id();
@@ -1859,12 +1859,12 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_get_legion_boss_award;
 		}
-		void to_proto(hld::ws2cs_proto::get_legion_boss_award& msg)
+		void to_proto(faith::ws2cs_proto::get_legion_boss_award& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_boss_map_id(boss_map_id);
 		}
-		void from_proto(const hld::ws2cs_proto::get_legion_boss_award& msg)
+		void from_proto(const faith::ws2cs_proto::get_legion_boss_award& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			boss_map_id = msg.boss_map_id();
@@ -1906,14 +1906,14 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_begin_city_war;
 		}
-		bool to_proto(hld::ws2cs_proto::begin_city_war& msg)
+		bool to_proto(faith::ws2cs_proto::begin_city_war& msg)
 		{
 			msg.set_city_war_map_guid(city_war_map_guid.server_64);
 			msg.set_cur_terr_id(cur_terr_id);
 
 			for (int32 i = 0; i < max_apply_city_war_legion_num; i++)
 			{
-				hld::st_proto::st_city_war_legion_score *st_city_war_ptr = msg.add_join_war_legions();
+				faith::st_proto::st_city_war_legion_score *st_city_war_ptr = msg.add_join_war_legions();
 				if (st_city_war_ptr == nullptr)
 				{
 					return false;
@@ -1923,13 +1923,13 @@ namespace hld
 			msg.set_cross_city_idex(cross_city_idex);
 			return true;
 		}
-		void from_proto(const hld::ws2cs_proto::begin_city_war& msg)
+		void from_proto(const faith::ws2cs_proto::begin_city_war& msg)
 		{
 			city_war_map_guid.server_64 = msg.city_war_map_guid();
 			cur_terr_id = msg.cur_terr_id();
 			for (int32 i = 0; i < msg.join_war_legions_size(); i++)
 			{
-				const hld::st_proto::st_city_war_legion_score& st_city_war_ref = msg.join_war_legions(i);
+				const faith::st_proto::st_city_war_legion_score& st_city_war_ref = msg.join_war_legions(i);
 				join_war_legions[i].from_proto(st_city_war_ref);
 			}
 			cross_city_idex = msg.cross_city_idex();
@@ -1947,13 +1947,13 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_enter_city_war_map;
 		}
-		void to_proto(hld::ws2cs_proto::enter_city_war_map& msg)
+		void to_proto(faith::ws2cs_proto::enter_city_war_map& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_map_guid(map_guid.server_64);
 			msg.set_war_index(war_index);
 		}
-		void from_proto(const hld::ws2cs_proto::enter_city_war_map& msg)
+		void from_proto(const faith::ws2cs_proto::enter_city_war_map& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			map_guid.server_64 = msg.map_guid();
@@ -1974,7 +1974,7 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_city_war_operate;
 		}
-		void to_proto(hld::ws2cs_proto::city_war_operate& msg)
+		void to_proto(faith::ws2cs_proto::city_war_operate& msg)
 		{
 			msg.set_city_war_map_guid(city_war_map_guid.server_64);
 			msg.set_legion_guid(legion_guid.server_64);
@@ -1982,7 +1982,7 @@ namespace hld
 			msg.set_operate_type(operate_type);
 			msg.set_prop_npc_guid(prop_npc_guid.server_64);
 		}
-		void from_proto(const hld::ws2cs_proto::city_war_operate& msg)
+		void from_proto(const faith::ws2cs_proto::city_war_operate& msg)
 		{
 			city_war_map_guid.server_64 = msg.city_war_map_guid();
 			legion_guid.server_64 = msg.legion_guid();
@@ -2034,9 +2034,9 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_set_get_legion_boss_award_log;
 		}
-		bool to_proto(hld::ws2cs_proto::set_get_legion_boss_award_log& msg)
+		bool to_proto(faith::ws2cs_proto::set_get_legion_boss_award_log& msg)
 		{
-			hld::st_proto::st_legion_boss_award_get_log* st_log_ptr = msg.mutable_legion_boss_award_get_log();
+			faith::st_proto::st_legion_boss_award_get_log* st_log_ptr = msg.mutable_legion_boss_award_get_log();
 			if (st_log_ptr == nullptr)
 			{
 				return false;
@@ -2044,9 +2044,9 @@ namespace hld
 			legion_boss_award_get_log.to_proto(st_log_ptr);
 			return true;		
 		}
-		void from_proto(const hld::ws2cs_proto::set_get_legion_boss_award_log& msg)
+		void from_proto(const faith::ws2cs_proto::set_get_legion_boss_award_log& msg)
 		{
-			const hld::st_proto::st_legion_boss_award_get_log& st_log_ref = msg.legion_boss_award_get_log();
+			const faith::st_proto::st_legion_boss_award_get_log& st_log_ref = msg.legion_boss_award_get_log();
 
 			legion_boss_award_get_log.from_proto(st_log_ref);
 		}
@@ -2075,13 +2075,13 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_get_occupation_daily_award;
 		}
-		void to_proto(hld::ws2cs_proto::get_occupation_daily_award& msg)
+		void to_proto(faith::ws2cs_proto::get_occupation_daily_award& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_territory_id(territory_id);
 
 		}
-		void from_proto(const hld::ws2cs_proto::get_occupation_daily_award& msg)
+		void from_proto(const faith::ws2cs_proto::get_occupation_daily_award& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			territory_id = msg.territory_id();
@@ -2101,7 +2101,7 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_get_bonus_award;
 		}
-		void to_proto(hld::ws2cs_proto::get_bonus_award& msg)
+		void to_proto(faith::ws2cs_proto::get_bonus_award& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_mission_enum(mission_enum);
@@ -2114,7 +2114,7 @@ namespace hld
 			msg.set_get_all(get_all);
 
 		}
-		void from_proto(const hld::ws2cs_proto::get_bonus_award& msg)
+		void from_proto(const faith::ws2cs_proto::get_bonus_award& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			mission_enum = msg.mission_enum();
@@ -2164,11 +2164,11 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_get_city_master_stuff;
 		}
-		void to_proto(hld::ws2cs_proto::get_city_master_stuff& msg)
+		void to_proto(faith::ws2cs_proto::get_city_master_stuff& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 		}
-		void from_proto(const hld::ws2cs_proto::get_city_master_stuff& msg)
+		void from_proto(const faith::ws2cs_proto::get_city_master_stuff& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 		}
@@ -2183,11 +2183,11 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_del_city_master_stuff;
 		}
-		void to_proto(hld::ws2cs_proto::del_city_master_stuff& msg)
+		void to_proto(faith::ws2cs_proto::del_city_master_stuff& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 		}
-		void from_proto(const hld::ws2cs_proto::del_city_master_stuff& msg)
+		void from_proto(const faith::ws2cs_proto::del_city_master_stuff& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 		}
@@ -2202,11 +2202,11 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_add_city_war_winner_stuff;
 		}
-		void to_proto(hld::ws2cs_proto::add_city_war_winner_stuff& msg)
+		void to_proto(faith::ws2cs_proto::add_city_war_winner_stuff& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 		}
-		void from_proto(const hld::ws2cs_proto::add_city_war_winner_stuff& msg)
+		void from_proto(const faith::ws2cs_proto::add_city_war_winner_stuff& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 		}
@@ -2221,11 +2221,11 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_del_city_war_winner_stuff;
 		}
-		void to_proto(hld::ws2cs_proto::del_city_war_winner_stuff& msg)
+		void to_proto(faith::ws2cs_proto::del_city_war_winner_stuff& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 		}
-		void from_proto(const hld::ws2cs_proto::del_city_war_winner_stuff& msg)
+		void from_proto(const faith::ws2cs_proto::del_city_war_winner_stuff& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 		}
@@ -2269,13 +2269,13 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_add_fuel_to_bonfire;
 		}
-		void to_proto(hld::ws2cs_proto::bonfire_add_fuel& msg)
+		void to_proto(faith::ws2cs_proto::bonfire_add_fuel& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_bonfire_map_guid(bonfire_map_guid.server_64);
 			msg.set_add_fuel_times(add_fuel_times);
 		}
-		void from_proto(const hld::ws2cs_proto::bonfire_add_fuel& msg)
+		void from_proto(const faith::ws2cs_proto::bonfire_add_fuel& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			bonfire_map_guid.server_64 = msg.bonfire_map_guid();
@@ -2316,13 +2316,13 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_draw_bonfire_daily_rwd;
 		}
-		void to_proto(hld::ws2cs_proto::draw_bonfire_daily_rwd& msg)
+		void to_proto(faith::ws2cs_proto::draw_bonfire_daily_rwd& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_bonfire_map_guid(bonfire_map_guid.server_64);
 
 		}
-		void from_proto(const hld::ws2cs_proto::draw_bonfire_daily_rwd& msg)
+		void from_proto(const faith::ws2cs_proto::draw_bonfire_daily_rwd& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			bonfire_map_guid.server_64 = msg.bonfire_map_guid();
@@ -2361,12 +2361,12 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_legion_rm_recruit_cd;
 		}
-		void to_proto(hld::ws2cs_proto::legion_remove_recruit_cd& msg)
+		void to_proto(faith::ws2cs_proto::legion_remove_recruit_cd& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 
 		}
-		void from_proto(const hld::ws2cs_proto::legion_remove_recruit_cd& msg)
+		void from_proto(const faith::ws2cs_proto::legion_remove_recruit_cd& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 		}
@@ -2458,12 +2458,12 @@ namespace hld
 		{
 			return sizeof(*this);
 		}
-		void to_proto(hld::ws2cs_proto::set_legion_average_lv_to_map& msg)
+		void to_proto(faith::ws2cs_proto::set_legion_average_lv_to_map& msg)
 		{
 			msg.set_map_guid(map_guid.server_64);
 			msg.set_legion_average_lv(legion_average_lv);
 		}
-		void from_proto(const hld::ws2cs_proto::set_legion_average_lv_to_map& msg)
+		void from_proto(const faith::ws2cs_proto::set_legion_average_lv_to_map& msg)
 		{
 			map_guid.server_64 = msg.map_guid();
 			legion_average_lv = msg.legion_average_lv();
@@ -2479,12 +2479,12 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_set_legion_guid_to_map;
 		}
-		void to_proto(hld::ws2cs_proto::set_legion_guid_to_map& msg)
+		void to_proto(faith::ws2cs_proto::set_legion_guid_to_map& msg)
 		{
 			msg.set_map_guid(map_guid.server_64);
 			msg.set_legion_guid(legion_guid.server_64);
 		}
-		void from_proto(const hld::ws2cs_proto::set_legion_guid_to_map& msg)
+		void from_proto(const faith::ws2cs_proto::set_legion_guid_to_map& msg)
 		{
 			map_guid.server_64 = msg.map_guid();
 			legion_guid.server_64 = msg.legion_guid();
@@ -2505,7 +2505,7 @@ namespace hld
 		{
 			memcpy(legion_name, name.c_str(), name.size() > max_name_size ? max_name_size : name.size());
 		}
-		void to_proto(hld::ws2cs_proto::confirm_change_legion_name& msg)
+		void to_proto(faith::ws2cs_proto::confirm_change_legion_name& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_legion_name(legion_name);
@@ -2521,7 +2521,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::ws2cs_proto::confirm_change_legion_name& msg)
+		void from_proto(const faith::ws2cs_proto::confirm_change_legion_name& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			my_memcopy_string(legion_name, max_name_size, msg.legion_name());
@@ -2538,11 +2538,11 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_rem_item_change_legion_name_care;
 		}
-		void to_proto(hld::ws2cs_proto::rem_item_change_legion_name_care& msg)
+		void to_proto(faith::ws2cs_proto::rem_item_change_legion_name_care& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 		}
-		void from_proto(const hld::ws2cs_proto::rem_item_change_legion_name_care& msg)
+		void from_proto(const faith::ws2cs_proto::rem_item_change_legion_name_care& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 		}
@@ -2575,7 +2575,7 @@ namespace hld
 		}
 
 
-		void to_proto(hld::ws2cs_proto::change_gate_legion_name& msg)
+		void to_proto(faith::ws2cs_proto::change_gate_legion_name& msg)
 		{
 			msg.set_legion_guid(legion_guid.server_64);
 			msg.set_legion_name(legion_name);
@@ -2589,7 +2589,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::ws2cs_proto::change_gate_legion_name& msg)
+		void from_proto(const faith::ws2cs_proto::change_gate_legion_name& msg)
 		{
 			legion_guid.server_64 = msg.legion_guid();
 			my_memcopy_string(legion_name, max_name_size, msg.legion_name());
@@ -2609,10 +2609,10 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_cs2ws_set_best_record;
 		}
-		bool to_proto(hld::cs2ws_proto::set_best_record& msg)
+		bool to_proto(faith::cs2ws_proto::set_best_record& msg)
 		{
 			msg.set_map_template_id(map_template_id);
-			hld::st_proto::st_single_map_record *st_single_ptr = msg.mutable_record();
+			faith::st_proto::st_single_map_record *st_single_ptr = msg.mutable_record();
 			if (st_single_ptr == nullptr)
 			{
 				return false;
@@ -2620,7 +2620,7 @@ namespace hld
 			record.to_proto(st_single_ptr);
 			return true;
 		}
-		void from_proto(const hld::cs2ws_proto::set_best_record& msg)
+		void from_proto(const faith::cs2ws_proto::set_best_record& msg)
 		{
 			map_template_id = msg.map_template_id();
 			record.from_proto(msg.record());
@@ -2667,11 +2667,11 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_cs2ws_req_get_arena_rank;
 		}
-		void to_proto(hld::cs2ws_proto::req_get_arena_rank& msg)
+		void to_proto(faith::cs2ws_proto::req_get_arena_rank& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 		}
-		void from_proto(const hld::cs2ws_proto::req_get_arena_rank& msg)
+		void from_proto(const faith::cs2ws_proto::req_get_arena_rank& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 		}
@@ -2688,13 +2688,13 @@ namespace hld
 			wheader = e_msg_index_ws2cs_rep_get_arena_rank;
 		}
 
-		void to_proto(hld::ws2cs_proto::rep_get_arena_rank& msg)
+		void to_proto(faith::ws2cs_proto::rep_get_arena_rank& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_arena_rank(arena_rank);
 			msg.set_is_request(is_request);
 		}
-		void from_proto(const hld::ws2cs_proto::rep_get_arena_rank& msg)
+		void from_proto(const faith::ws2cs_proto::rep_get_arena_rank& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			arena_rank = msg.arena_rank();
@@ -2715,7 +2715,7 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_cs2ws_req_challenge;
 		}
-		void to_proto(hld::cs2ws_proto::req_challenge_msg& msg)
+		void to_proto(faith::cs2ws_proto::req_challenge_msg& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_target_guid(target_guid.server_64);
@@ -2724,7 +2724,7 @@ namespace hld
 			msg.set_target_cur_pos(target_cur_pos);
 			msg.set_self_cur_pos(self_cur_pos);
 		}
-		void from_proto(const hld::cs2ws_proto::req_challenge_msg& msg)
+		void from_proto(const faith::cs2ws_proto::req_challenge_msg& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			target_guid.server_64 = msg.target_guid();
@@ -2750,7 +2750,7 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_req_challenge;
 		}
-		void to_proto(hld::ws2cs_proto::req_challenge_msg& msg)
+		void to_proto(faith::ws2cs_proto::req_challenge_msg& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_target_guid(target_guid.server_64);
@@ -2761,7 +2761,7 @@ namespace hld
 			msg.set_target_cur_pos(target_cur_pos);
 			msg.set_self_cur_pos(self_cur_pos);
 		}
-		void from_proto(const hld::ws2cs_proto::req_challenge_msg& msg)
+		void from_proto(const faith::ws2cs_proto::req_challenge_msg& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			target_guid.server_64 = msg.target_guid();
@@ -2783,12 +2783,12 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_cs2ws_req_challenge_list;
 		}
-		void to_proto(hld::cs2ws_proto::req_choose_list& msg)
+		void to_proto(faith::cs2ws_proto::req_choose_list& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_cur_pos(cur_pos);
 		}
-		void from_proto(const hld::cs2ws_proto::req_choose_list& msg)
+		void from_proto(const faith::cs2ws_proto::req_choose_list& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			cur_pos = msg.cur_pos();
@@ -2805,12 +2805,12 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_req_challenge_list;
 		}
-		bool to_proto(hld::ws2cs_proto::req_choose_list& msg)
+		bool to_proto(faith::ws2cs_proto::req_choose_list& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			for (int32 i = 0; i < 3; i++)
 			{
-				hld::st_proto::st_player_arena_rank* st_arena_ptr = msg.add_target_player();
+				faith::st_proto::st_player_arena_rank* st_arena_ptr = msg.add_target_player();
 				if (st_arena_ptr == nullptr)
 				{
 					return false;
@@ -2819,7 +2819,7 @@ namespace hld
 			}
 			return true;
 		}
-		void from_proto(const hld::ws2cs_proto::req_choose_list& msg)
+		void from_proto(const faith::ws2cs_proto::req_choose_list& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 
@@ -2840,11 +2840,11 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_cs2ws_first_three;
 		}
-		void to_proto(hld::cs2ws_proto::first_three& msg)
+		void to_proto(faith::cs2ws_proto::first_three& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 		}
-		void from_proto(const hld::cs2ws_proto::first_three& msg)
+		void from_proto(const faith::cs2ws_proto::first_three& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 		}
@@ -2862,11 +2862,11 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_cs2ws_chellenge_over;
 		}
-		bool to_proto(hld::cs2ws_proto::chellenge_over& msg)
+		bool to_proto(faith::cs2ws_proto::chellenge_over& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_target_guid(target_guid.server_64);
-			hld::st_proto::st_player_arena_rank *st_arena_ptr = msg.mutable_role_info();
+			faith::st_proto::st_player_arena_rank *st_arena_ptr = msg.mutable_role_info();
 			if (st_arena_ptr == nullptr)
 			{
 				return false;
@@ -2876,7 +2876,7 @@ namespace hld
 			msg.set_target_rank(target_rank);
 			return true;
 		}
-		void from_proto(const hld::cs2ws_proto::chellenge_over& msg)
+		void from_proto(const faith::cs2ws_proto::chellenge_over& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			target_guid.server_64 = msg.target_guid();
@@ -2904,7 +2904,7 @@ namespace hld
 		}
 	};
 
-	struct cs2ws_sync_ranking_info : public hld::packet_base
+	struct cs2ws_sync_ranking_info : public faith::packet_base
 	{
 		s_ranking_player_info			role_info;
 		int32							server_id;
@@ -2932,7 +2932,7 @@ namespace hld
 		}
 	};
 
-	struct ws2ws_get_oracle_ranking_info : public hld::packet_base
+	struct ws2ws_get_oracle_ranking_info : public faith::packet_base
 	{
 		int32							server_id;
 		ws2ws_get_oracle_ranking_info()
@@ -2942,7 +2942,7 @@ namespace hld
 		}
 	};
 
-	struct ws2ws_send_oracle_ranking_notice : public hld::packet_base
+	struct ws2ws_send_oracle_ranking_notice : public faith::packet_base
 	{
 		guid_64							player_guid;
 		xchar							play_name[max_name_size];
@@ -2966,7 +2966,7 @@ namespace hld
 		}
 	};
 
-	struct cs2ws_sync_vip_level_data : public hld::packet_base
+	struct cs2ws_sync_vip_level_data : public faith::packet_base
 	{
 		guid_64				role_guid;
 		int32				vip_level;
@@ -2999,7 +2999,7 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_req_worship_player_end;
 		}
-		void to_proto(hld::ws2cs_proto::req_worship_player_end& msg)
+		void to_proto(faith::ws2cs_proto::req_worship_player_end& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_target_guid(target_guid.server_64);
@@ -3008,7 +3008,7 @@ namespace hld
 			msg.set_worship_result(worship_result);
 			msg.set_target_worship_value(target_worship_value);
 		}
-		void from_proto(const hld::ws2cs_proto::req_worship_player_end& msg)
+		void from_proto(const faith::ws2cs_proto::req_worship_player_end& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			target_guid.server_64 = msg.target_guid();
@@ -3030,14 +3030,14 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_sync_first_rank_end;
 		}
-		void to_proto(hld::ws2cs_proto::sync_first_rank_end& msg)
+		void to_proto(faith::ws2cs_proto::sync_first_rank_end& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_ranking_type(ranking_type);
 			msg.set_is_first(is_first);
 			msg.set_is_notice(is_notice);
 		}
-		void from_proto(const hld::ws2cs_proto::sync_first_rank_end& msg)
+		void from_proto(const faith::ws2cs_proto::sync_first_rank_end& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			ranking_type = msg.ranking_type();
@@ -3060,13 +3060,13 @@ namespace hld
 			world_lv_last = -1;
 			wheader = e_msgindex_ws2cs_sync_server_avg_lv;
 		}
-		void to_proto(hld::ws2cs_proto::sync_server_avg_lv& msg)
+		void to_proto(faith::ws2cs_proto::sync_server_avg_lv& msg)
 		{
 			msg.set_srv_avg_lv(srv_avg_lv);
 			msg.set_world_lv_cur(world_lv_cur);
 			msg.set_world_lv_last(world_lv_last);
 		}
-		void from_proto(const hld::ws2cs_proto::sync_server_avg_lv& msg)
+		void from_proto(const faith::ws2cs_proto::sync_server_avg_lv& msg)
 		{
 			srv_avg_lv = msg.srv_avg_lv();
 			world_lv_cur = msg.world_lv_cur();
@@ -3102,14 +3102,14 @@ namespace hld
 			rank_type = 0;
 			wheader = e_msgindex_ws2cs_req_service_rank_info_end;
 		}
-		void to_proto(hld::ws2cs_proto::req_service_rank_info_end& msg)
+		void to_proto(faith::ws2cs_proto::req_service_rank_info_end& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_rank_type(rank_type);
 			msg.set_rank_num(rank_num);
 
 		}
-		void from_proto(const hld::ws2cs_proto::req_service_rank_info_end& msg)
+		void from_proto(const faith::ws2cs_proto::req_service_rank_info_end& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			rank_type = msg.rank_type();
@@ -3167,20 +3167,20 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_recive_mail;
 		}
-		bool  to_proto(hld::ws2cs_proto::send_mail& msg)
+		bool  to_proto(faith::ws2cs_proto::send_mail& msg)
 		{
 			msg.set_client_uid(client_uid.fep_uid_64);
 
 			for (int32 i = 0; i < max_item_per_mail; i++)
 			{
-				hld::db_proto::item_info_db *db_item_ptr = msg.add_item_list();
+				faith::db_proto::item_info_db *db_item_ptr = msg.add_item_list();
 				if (db_item_ptr == nullptr)
 				{
 					return false;
 				}
 				//item_list[i].to_proto(db_item_ptr);
 			}
-			hld::db_proto::role_mail_row *db_mail_ptr = msg.mutable_mail_info();
+			faith::db_proto::role_mail_row *db_mail_ptr = msg.mutable_mail_info();
 			if (db_mail_ptr == nullptr)
 			{
 				return false;
@@ -3192,7 +3192,7 @@ namespace hld
 
 			return true; 	
 		}
-		void from_proto(const hld::ws2cs_proto::send_mail& msg)
+		void from_proto(const faith::ws2cs_proto::send_mail& msg)
 		{
 			client_uid.fep_uid_64 = msg.client_uid();
 			for (int32 i = 0; i <  msg.item_list_size() && i < max_item_per_mail; i++)
@@ -3268,7 +3268,7 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_receive_notice;
 		}
-		bool to_proto(hld::ws2cs_proto::receive_notice& msg)
+		bool to_proto(faith::ws2cs_proto::receive_notice& msg)
 		{
 			msg.set_client_uid(client_uid.fep_uid_64);
 			msg.set_sender_guid(sender_guid.server_64);
@@ -3277,7 +3277,7 @@ namespace hld
 			msg.set_create_time(create_time);
 			for (int32 i = 0; i < chat_max_item; i++)
 			{
-				hld::db_proto::item_info_db *db_item_ptr = msg.add_data_ary();
+				faith::db_proto::item_info_db *db_item_ptr = msg.add_data_ary();
 				if (db_item_ptr == nullptr)
 				{
 					return false;
@@ -3286,7 +3286,7 @@ namespace hld
 			}
 			return true;
 		}
-		void from_proto(const hld::ws2cs_proto::receive_notice& msg)
+		void from_proto(const faith::ws2cs_proto::receive_notice& msg)
 		{
 			client_uid.fep_uid_64 = msg.client_uid();
 			sender_guid.server_64 = msg.sender_guid();
@@ -3310,14 +3310,14 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_role_info_change;
 		}
-		void to_proto(hld::ws2cs_proto::role_info_change& msg)
+		void to_proto(faith::ws2cs_proto::role_info_change& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_role_type(role_type);
 			msg.set_role_value(role_value);
 
 		}
-		void from_proto(const hld::ws2cs_proto::role_info_change& msg)
+		void from_proto(const faith::ws2cs_proto::role_info_change& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			role_type = msg.role_type();
@@ -3337,7 +3337,7 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_cs2ws_role_right;
 		}
-		void to_proto(hld::ws2cs_proto::role_right& msg)
+		void to_proto(faith::ws2cs_proto::role_right& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_right_type(right_type);
@@ -3345,7 +3345,7 @@ namespace hld
 			msg.set_right_time(right_time);
 
 		}
-		void from_proto(const hld::ws2cs_proto::role_right& msg)
+		void from_proto(const faith::ws2cs_proto::role_right& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			right_type = (e_role_right)msg.right_type();
@@ -3367,7 +3367,7 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_cs2ws_buy_good;
 		}
-		void to_proto(hld::ws2cs_proto::buy_good& msg)
+		void to_proto(faith::ws2cs_proto::buy_good& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_goods_id(goods_id);
@@ -3376,7 +3376,7 @@ namespace hld
 			msg.set_is_auto_buy(is_auto_buy);
 			msg.set_back_string(back_string);
 		}
-		void from_proto(const hld::ws2cs_proto::buy_good& msg)
+		void from_proto(const faith::ws2cs_proto::buy_good& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			goods_id = msg.goods_id();
@@ -3518,7 +3518,7 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_recharge;
 		}
-		void to_proto(hld::ws2cs_proto::recharge& msg)
+		void to_proto(faith::ws2cs_proto::recharge& msg)
 		{
 			msg.set_order_id(order_id);
 			msg.set_role_guid(role_guid.server_64);
@@ -3539,7 +3539,7 @@ namespace hld
 			memcpy(dst, str.c_str(), len);
 		}
 
-		void from_proto(const hld::ws2cs_proto::recharge& msg)
+		void from_proto(const faith::ws2cs_proto::recharge& msg)
 		{
 			my_memcopy_string(order_id, max_recharge_order_length, msg.order_id());
 			role_guid.server_64 = msg.role_guid();
@@ -3593,13 +3593,13 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_cs2ws_arena_sync_gs_value;
 		}
-		void to_proto(hld::cs2ws_proto::arena_sync_gs_value& msg)
+		void to_proto(faith::cs2ws_proto::arena_sync_gs_value& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_cur_pos(cur_pos);
 			msg.set_gs_value(gs_value);
 		}
-		void from_proto(const hld::cs2ws_proto::arena_sync_gs_value& msg)
+		void from_proto(const faith::cs2ws_proto::arena_sync_gs_value& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			cur_pos = msg.cur_pos();
@@ -3621,7 +3621,7 @@ namespace hld
 
 			wheader = e_msgindex_ws2cs_legion_answer_question_right;
 		}
-		void to_proto(hld::ws2cs_proto::legion_answer_question_right& msg)
+		void to_proto(faith::ws2cs_proto::legion_answer_question_right& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_question_template_id(question_template_id);
@@ -3632,7 +3632,7 @@ namespace hld
 				msg.add_legion_play_guid(legion_play_guid[i]);
 			}
 		}
-		void from_proto(const hld::ws2cs_proto::legion_answer_question_right& msg)
+		void from_proto(const faith::ws2cs_proto::legion_answer_question_right& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			question_template_id = msg.question_template_id();
@@ -3656,7 +3656,7 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_spawn_npc;
 		}
-		void to_proto(hld::ws2cs_proto::spawn_npc& msg)
+		void to_proto(faith::ws2cs_proto::spawn_npc& msg)
 		{
 			msg.set_map_guid(map_guid.server_64);
 			msg.set_npc_template_id(npc_template_id);
@@ -3667,7 +3667,7 @@ namespace hld
 			msg.add_unit_rotation(pos.unit_rotation.pitch);
 			msg.add_unit_rotation(pos.unit_rotation.yaw);
 		}
-		void from_proto(const hld::ws2cs_proto::spawn_npc& msg)
+		void from_proto(const faith::ws2cs_proto::spawn_npc& msg)
 		{
 			if (msg.unit_location_size() < 3 || msg.unit_rotation_size() < 3)
 			{
@@ -3695,14 +3695,14 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_modify_money;
 		}
-		void to_proto(hld::ws2cs_proto::modify_money& msg)
+		void to_proto(faith::ws2cs_proto::modify_money& msg)
 		{
 			msg.set_cs_unit_index(cs_unit_index);
 			msg.set_is_add_money(is_add_money);
 			msg.set_money_type(money_type);
 			msg.set_money_value(money_value);
 		}
-		void from_proto(const hld::ws2cs_proto::modify_money& msg)
+		void from_proto(const faith::ws2cs_proto::modify_money& msg)
 		{
 			cs_unit_index = msg.cs_unit_index();
 			is_add_money = msg.is_add_money();
@@ -3805,14 +3805,14 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_check_time_limit_activity_common_data;
 		}
-		void to_proto(hld::ws2cs_proto::check_time_limit_activity_common_data& msg)
+		void to_proto(faith::ws2cs_proto::check_time_limit_activity_common_data& msg)
 		{
 			msg.set_user_guid(user_guid.server_64);
 			msg.set_activity_id(activity_id);
 			msg.set_is_achieve(is_achieve);
 
 		}
-		void from_proto(const hld::ws2cs_proto::check_time_limit_activity_common_data& msg)
+		void from_proto(const faith::ws2cs_proto::check_time_limit_activity_common_data& msg)
 		{
 			user_guid.server_64 = msg.user_guid();
 			activity_id = msg.activity_id();
@@ -3907,11 +3907,11 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msg_index_ws2cs_transfer_all_player_this_map;
 		}
-		void to_proto(hld::ws2cs_proto::transfer_this_map_all_player& msg)
+		void to_proto(faith::ws2cs_proto::transfer_this_map_all_player& msg)
 		{
 			msg.set_map_guid(map_guid.server_64);
 		}
-		void from_proto(const hld::ws2cs_proto::transfer_this_map_all_player& msg)
+		void from_proto(const faith::ws2cs_proto::transfer_this_map_all_player& msg)
 		{
 			map_guid.server_64 = msg.map_guid();
 		}

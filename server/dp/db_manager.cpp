@@ -12,7 +12,7 @@ purpose:
 #include "data_manager/data_manager.hpp"
 #include "sql_builder.hpp"
 
-namespace hld
+namespace faith
 {
 	db_manager::db_manager()
 	{

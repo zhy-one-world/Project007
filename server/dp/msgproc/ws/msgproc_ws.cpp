@@ -31,7 +31,7 @@ purpose:
 #include "utility/parse_msg.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	void get_game_info_ws(uint32 connindex, const void *data_ptr, size_t data_len)
 	{
@@ -795,7 +795,7 @@ namespace hld
 	void ws2dp_req_check_player_name(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
 
-		hld::server2dp_proto::ws2dp_check_player_name request;
+		faith::server2dp_proto::ws2dp_check_player_name request;
 		if (!parse_msg::getInstance().parse_message_server(&request, data_ptr, data_len))
 		{
 			return;
@@ -857,7 +857,7 @@ namespace hld
 	void ws2dp_req_change_player_name(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
 
-		hld::server2dp_proto::ws2dp_change_player_name request;
+		faith::server2dp_proto::ws2dp_change_player_name request;
 		if (!parse_msg::getInstance().parse_message_server(&request, data_ptr, data_len))
 		{
 			return;
@@ -1186,8 +1186,8 @@ namespace hld
 	{
 		if (result.error == 0 && result.query.data_select.row_count > 0 && sizeof(s_unit_info) == result.query.data_select.row_size)
 		{
-			s_unit_info		role_info[hld::max_character_num];
-			int32 count_num = result.query.data_select.row_count > hld::max_character_num ? hld::max_character_num : result.query.data_select.row_count;
+			s_unit_info		role_info[faith::max_character_num];
+			int32 count_num = result.query.data_select.row_count > faith::max_character_num ? faith::max_character_num : result.query.data_select.row_count;
 			db_read_data(&result, role_info, sizeof(s_unit_info) *  count_num );
 		
 			for (int32 i = 0; i < count_num; ++i)
@@ -1210,7 +1210,7 @@ namespace hld
 			{
 				return;
 			}
-			int32 data_num = unit_info_vec.size() > hld::max_character_num * 10 ? hld::max_character_num * 10 : unit_info_vec.size();
+			int32 data_num = unit_info_vec.size() > faith::max_character_num * 10 ? faith::max_character_num * 10 : unit_info_vec.size();
 			arr_msg->set_data_num(data_num);
 			for (int32 i = 0; i < data_num; i++)
 			{

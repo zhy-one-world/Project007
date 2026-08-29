@@ -13,7 +13,7 @@ purpose: 七日目标头文件
 #include "Logic/service_goal_def.hpp"
 #include "google/protobuf/message.h"
 
-namespace hld
+namespace faith
 {
 	class player;
 	class service_goal_proto_service_goal_one;

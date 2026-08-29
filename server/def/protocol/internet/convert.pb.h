@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_convert_2eproto();
@@ -119,7 +119,7 @@ class convert_proto_convert_info_all : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_convert_max_times();
 
-  // @@protoc_insertion_point(class_scope:hld.convert_proto.convert_info_all)
+  // @@protoc_insertion_point(class_scope:faith.convert_proto.convert_info_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -207,7 +207,7 @@ class convert_proto_convert_info_one : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 convert_times() const;
   inline void set_convert_times(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.convert_proto.convert_info_one)
+  // @@protoc_insertion_point(class_scope:faith.convert_proto.convert_info_one)
  private:
   inline void set_has_convert_type();
   inline void clear_has_convert_type();
@@ -299,7 +299,7 @@ class convert_proto_convert_operate : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 convert_num() const;
   inline void set_convert_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.convert_proto.convert_operate)
+  // @@protoc_insertion_point(class_scope:faith.convert_proto.convert_operate)
  private:
   inline void set_has_convert_type();
   inline void clear_has_convert_type();
@@ -429,7 +429,7 @@ class convert_proto_convert_operate_end : public ::google::protobuf::Message {
   inline ::std::string* release_str_exp();
   inline void set_allocated_str_exp(::std::string* str_exp);
 
-  // @@protoc_insertion_point(class_scope:hld.convert_proto.convert_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.convert_proto.convert_operate_end)
  private:
   inline void set_has_opereate_result();
   inline void clear_has_opereate_result();
@@ -522,7 +522,7 @@ class convert_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.convert_proto)
+  // @@protoc_insertion_point(class_scope:faith.convert_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -885,7 +885,7 @@ inline void convert_proto_convert_operate_end::set_allocated_str_exp(::std::stri
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

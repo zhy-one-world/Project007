@@ -24,7 +24,7 @@ Change List :
 #include <singleton.hpp>
 #include "server_def.hpp"
 
-namespace hld
+namespace faith
 {
 	using namespace net;
 

@@ -15,7 +15,7 @@
 
 
 
-namespace hld
+namespace faith
 {
 #define Lua_g_var_num(type,name, num)    type  g_lua_##name##_array[num];  int32 g_##name##_idx = 0; \
        static  type*   get_##name##_var()                                 \
@@ -141,7 +141,7 @@ namespace hld
 
 	s_item_info* get_item_info_by_str(const char *msg, int32 msg_len)
 	{
-		hld::st_proto::st_item_info pro_msg;
+		faith::st_proto::st_item_info pro_msg;
 		bool is_suecss = parse_msg::getInstance().parse_buffer_to_proto(&pro_msg, msg, msg_len, false);
 		if (is_suecss == false)
 		{
@@ -163,7 +163,7 @@ namespace hld
 		{
 			return nullptr;
 		}
-		hld::st_proto::st_auction_info pro_msg;
+		faith::st_proto::st_auction_info pro_msg;
 		bool is_suecss = parse_msg::getInstance().parse_buffer_to_proto(&pro_msg, msg, msg_len, false);
 		if (is_suecss == false)
 		{
@@ -178,7 +178,7 @@ namespace hld
 
 	char * get_auction_buffer(s_auction_info *auction_ptr)
 	{
-		hld::st_proto::st_auction_info pro_msg;
+		faith::st_proto::st_auction_info pro_msg;
 		auction_ptr->to_proto(&pro_msg);
 		packet_s2s* p_s2s = parse_msg::getInstance().serialze_buffer(&pro_msg);
 		if (p_s2s == nullptr)
@@ -210,7 +210,7 @@ namespace hld
 		{
 			return nullptr;
 		}
-		hld::st_proto::st_unit_info pro_msg;
+		faith::st_proto::st_unit_info pro_msg;
 		bool is_suecss = parse_msg::getInstance().parse_buffer_to_proto(&pro_msg, msg, msg_len, false);
 		if (is_suecss == false)
 		{
@@ -232,7 +232,7 @@ namespace hld
 		{
 			return nullptr;
 		}
-		hld::st_proto::st_login_fixed_data pro_msg;
+		faith::st_proto::st_login_fixed_data pro_msg;
 		bool is_suecss = parse_msg::getInstance().parse_buffer_to_proto(&pro_msg, msg, msg_len, false);
 		if (is_suecss == false)
 		{
@@ -308,7 +308,7 @@ namespace hld
 		{
 			return nullptr;
 		}
-		hld::db_proto::role_mail_row pro_msg;
+		faith::db_proto::role_mail_row pro_msg;
 		bool is_suecss = parse_msg::getInstance().parse_buffer_to_proto(&pro_msg, msg, msg_len, false);
 		if (is_suecss == false)
 		{
@@ -328,7 +328,7 @@ namespace hld
 		{
 			return nullptr;
 		}
-		hld::st_proto::st_fake_player_info pro_msg;
+		faith::st_proto::st_fake_player_info pro_msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&pro_msg, msg, msg_len, false);
 		if (is_sucess == false)
 		{
@@ -349,7 +349,7 @@ namespace hld
 		{
 			return nullptr;
 		}
-		hld::ws2ws_proto::send_big_player_msg pro_msg;
+		faith::ws2ws_proto::send_big_player_msg pro_msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&pro_msg, msg, msg_len, false);
 		if (is_sucess == false)
 		{

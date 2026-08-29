@@ -9,7 +9,7 @@ purpose: 单个任务
 
 #include "Logic/mission_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class player;
 	struct s_item_template_info;

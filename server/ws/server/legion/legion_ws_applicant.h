@@ -5,7 +5,7 @@
 #include "legion.pb.h"
 #include "Logic/legion_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class legion_ws_applicant
 	{

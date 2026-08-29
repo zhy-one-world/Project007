@@ -1,6 +1,6 @@
 #include "LegionSkillTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void LegionSkillTemplateSize()
     {

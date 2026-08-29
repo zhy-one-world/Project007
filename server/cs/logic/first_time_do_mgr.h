@@ -4,7 +4,7 @@
 #include "logic/type_def.hpp"
 #include "Logic/first_time_do_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class first_time_do_mgr
 	{

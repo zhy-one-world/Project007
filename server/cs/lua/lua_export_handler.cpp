@@ -22,7 +22,7 @@ TOLUA_API int  tolua_faith_open (lua_State* tolua_S);
 
 static int tolua_collect_faith__script_mgr (lua_State* tolua_S)
 {
- hld::script_mgr* self = (hld::script_mgr*) tolua_tousertype(tolua_S,1,0);
+ faith::script_mgr* self = (faith::script_mgr*) tolua_tousertype(tolua_S,1,0);
 	Mtolua_delete(self);
 	return 0;
 }
@@ -32,17 +32,17 @@ static int tolua_collect_faith__script_mgr (lua_State* tolua_S)
 /* function to register type */
 static void tolua_reg_types (lua_State* tolua_S)
 {
- tolua_usertype(tolua_S,"hld::script_mgr");
+ tolua_usertype(tolua_S,"faith::script_mgr");
 }
 
-/* method: new of class  hld::script_mgr */
+/* method: new of class  faith::script_mgr */
 #ifndef TOLUA_DISABLE_tolua_faith_faith_script_mgr_new00
 static int tolua_faith_faith_script_mgr_new00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
  tolua_Error tolua_err;
  if (
-     !tolua_isusertable(tolua_S,1,"hld::script_mgr",0,&tolua_err) ||
+     !tolua_isusertable(tolua_S,1,"faith::script_mgr",0,&tolua_err) ||
      !tolua_isnoobj(tolua_S,2,&tolua_err)
  )
   goto tolua_lerror;
@@ -50,8 +50,8 @@ static int tolua_faith_faith_script_mgr_new00(lua_State* tolua_S)
 #endif
  {
   {
-   hld::script_mgr* tolua_ret = (hld::script_mgr*)  Mtolua_new((hld::script_mgr)());
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"hld::script_mgr");
+   faith::script_mgr* tolua_ret = (faith::script_mgr*)  Mtolua_new((faith::script_mgr)());
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"faith::script_mgr");
   }
  }
  return 1;
@@ -63,14 +63,14 @@ static int tolua_faith_faith_script_mgr_new00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: new_local of class  hld::script_mgr */
+/* method: new_local of class  faith::script_mgr */
 #ifndef TOLUA_DISABLE_tolua_faith_faith_script_mgr_new00_local
 static int tolua_faith_faith_script_mgr_new00_local(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
  tolua_Error tolua_err;
  if (
-     !tolua_isusertable(tolua_S,1,"hld::script_mgr",0,&tolua_err) ||
+     !tolua_isusertable(tolua_S,1,"faith::script_mgr",0,&tolua_err) ||
      !tolua_isnoobj(tolua_S,2,&tolua_err)
  )
   goto tolua_lerror;
@@ -78,8 +78,8 @@ static int tolua_faith_faith_script_mgr_new00_local(lua_State* tolua_S)
 #endif
  {
   {
-   hld::script_mgr* tolua_ret = (hld::script_mgr*)  Mtolua_new((hld::script_mgr)());
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"hld::script_mgr");
+   faith::script_mgr* tolua_ret = (faith::script_mgr*)  Mtolua_new((faith::script_mgr)());
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"faith::script_mgr");
     tolua_register_gc(tolua_S,lua_gettop(tolua_S));
   }
  }
@@ -92,21 +92,21 @@ static int tolua_faith_faith_script_mgr_new00_local(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: delete of class  hld::script_mgr */
+/* method: delete of class  faith::script_mgr */
 #ifndef TOLUA_DISABLE_tolua_faith_faith_script_mgr_delete00
 static int tolua_faith_faith_script_mgr_delete00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
  tolua_Error tolua_err;
  if (
-     !tolua_isusertype(tolua_S,1,"hld::script_mgr",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,1,"faith::script_mgr",0,&tolua_err) ||
      !tolua_isnoobj(tolua_S,2,&tolua_err)
  )
   goto tolua_lerror;
  else
 #endif
  {
-  hld::script_mgr* self = (hld::script_mgr*)  tolua_tousertype(tolua_S,1,0);
+  faith::script_mgr* self = (faith::script_mgr*)  tolua_tousertype(tolua_S,1,0);
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'delete'", NULL);
 #endif
@@ -121,14 +121,14 @@ static int tolua_faith_faith_script_mgr_delete00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: get_instance of class  hld::script_mgr */
+/* method: get_instance of class  faith::script_mgr */
 #ifndef TOLUA_DISABLE_tolua_faith_faith_script_mgr_get_instance00
 static int tolua_faith_faith_script_mgr_get_instance00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
  tolua_Error tolua_err;
  if (
-     !tolua_isusertable(tolua_S,1,"hld::script_mgr",0,&tolua_err) ||
+     !tolua_isusertable(tolua_S,1,"faith::script_mgr",0,&tolua_err) ||
      !tolua_isnoobj(tolua_S,2,&tolua_err)
  )
   goto tolua_lerror;
@@ -136,8 +136,8 @@ static int tolua_faith_faith_script_mgr_get_instance00(lua_State* tolua_S)
 #endif
  {
   {
-   hld::script_mgr& tolua_ret = (hld::script_mgr&)  hld::script_mgr::get_instance();
-    tolua_pushusertype(tolua_S,(void*)&tolua_ret,"hld::script_mgr");
+   faith::script_mgr& tolua_ret = (faith::script_mgr&)  faith::script_mgr::get_instance();
+    tolua_pushusertype(tolua_S,(void*)&tolua_ret,"faith::script_mgr");
   }
  }
  return 1;
@@ -159,9 +159,9 @@ TOLUA_API int tolua_faith_open (lua_State* tolua_S)
   tolua_module(tolua_S,"faith",0);
   tolua_beginmodule(tolua_S,"faith");
    #ifdef __cplusplus
-   tolua_cclass(tolua_S,"script_mgr","hld::script_mgr","",tolua_collect_faith__script_mgr);
+   tolua_cclass(tolua_S,"script_mgr","faith::script_mgr","",tolua_collect_faith__script_mgr);
    #else
-   tolua_cclass(tolua_S,"script_mgr","hld::script_mgr","",NULL);
+   tolua_cclass(tolua_S,"script_mgr","faith::script_mgr","",NULL);
    #endif
    tolua_beginmodule(tolua_S,"script_mgr");
     tolua_function(tolua_S,"new",tolua_faith_faith_script_mgr_new00);

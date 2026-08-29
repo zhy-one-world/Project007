@@ -11,7 +11,7 @@ purpose: about service rank
 
 #include "Logic/ranking_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class player;
 	class service_rank_mgr

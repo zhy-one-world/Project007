@@ -48,7 +48,7 @@
 #include <Utility/parse_msg.h>
 
 
-namespace hld
+namespace faith
 {
 	/////////////////////////////////////////team/////////////////////////////////////////
 
@@ -1138,7 +1138,7 @@ namespace hld
 		//}
 		//switch (operate_type)
 		//{
-		//case hld::e_team_operate_follow_cap:
+		//case faith::e_team_operate_follow_cap:
 		//{
 		//	s_team_member_info* team_member = team_ws_ptr->get_member(team_mem_guid);
 		//	if (nullptr == team_member)
@@ -1152,13 +1152,13 @@ namespace hld
 		//	team_member->data_ary[ETeamMemberInfo_follow_state] = req.operate_params(0);
 		//	break;
 		//}
-		//case hld::e_team_operate_urge_cap:
+		//case faith::e_team_operate_urge_cap:
 		//	break;
-		//case hld::e_team_operate_urge_together:
+		//case faith::e_team_operate_urge_together:
 		//	break;
-		//case hld::e_team_operate_call_together:
+		//case faith::e_team_operate_call_together:
 		//	break;		
-		//case hld::e_team_operate_max:
+		//case faith::e_team_operate_max:
 		//	break;
 		//default:
 		//	break;
@@ -1196,7 +1196,7 @@ namespace hld
 		}
 		switch (operate_type)
 		{
-		case hld::e_team_operate_follow_cap:
+		case faith::e_team_operate_follow_cap:
 		{
 			s_team_member_info* team_member = team_ws_ptr->get_member(team_mem_guid);
 			if (nullptr == team_member)
@@ -1210,13 +1210,13 @@ namespace hld
 			team_member->data_ary[ETeamMemberInfo_follow_state] = req.operate_params(0);
 			break;
 		}
-		case hld::e_team_operate_urge_cap:
+		case faith::e_team_operate_urge_cap:
 			break;
-		case hld::e_team_operate_urge_together:
+		case faith::e_team_operate_urge_together:
 			break;
-		case hld::e_team_operate_call_together:
+		case faith::e_team_operate_call_together:
 			break;
-		case hld::e_team_operate_max:
+		case faith::e_team_operate_max:
 			break;
 		default:
 			break;
@@ -1262,7 +1262,7 @@ namespace hld
 		//else
 		//{
 		//	get_best_record_end_msg.set_map_template_id(record->map_template_id);
-		//	for (int32 i = 0; i < hld::single_map_record_num; i++)
+		//	for (int32 i = 0; i < faith::single_map_record_num; i++)
 		//	{
 		//		if (record->single_map_best_record[i].role_guid.is_valid() == false)
 		//		{
@@ -1300,7 +1300,7 @@ namespace hld
 		else
 		{
 			get_best_record_end_msg.set_map_template_id(record->map_template_id);
-			for (int32 i = 0; i < hld::single_map_record_num; i++)
+			for (int32 i = 0; i < faith::single_map_record_num; i++)
 			{
 				if (record->single_map_best_record[i].role_guid.is_valid() == false)
 				{
@@ -1607,8 +1607,8 @@ namespace hld
 		e_map_type operate_map_type = (e_map_type)map_template_ptr->Type;
 		switch (operate_map_type)
 		{
-		case hld::e_map_type_legion_boss:
-		case hld::e_map_type_legion_station:
+		case faith::e_map_type_legion_boss:
+		case faith::e_map_type_legion_station:
 		{
 			legion_ws_mgr& legion_ws_mgr_ref = legion_ws_mgr::get_instance();
 			legion_ws* legion_ws_ptr = legion_ws_mgr_ref.get_unit_legion(role_guid);
@@ -1619,7 +1619,7 @@ namespace hld
 			legion_ws_ptr->send_legion_boss_map_info(role_guid);
 			break;
 		}
-		case hld::e_map_type_king_of_pk:
+		case faith::e_map_type_king_of_pk:
 		{
 			pk_king_mgr& pk_king_mgr_ref = pk_king_mgr::get_instance();
 			pk_king_mgr_ref.send_player_num_in_map_to_client(role_guid);
@@ -1664,7 +1664,7 @@ namespace hld
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::relation_proto_c2s_addfriend request;
+		faith::relation_proto_c2s_addfriend request;
 		bool suc = parse_msg::getInstance().parse_message_new(&request, data_ptr, data_len);
 		if (!suc)
 		{
@@ -1700,7 +1700,7 @@ namespace hld
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::relation_proto_c2s_delfriend request;
+		faith::relation_proto_c2s_delfriend request;
 		bool suc = parse_msg::getInstance().parse_message_new(&request, data_ptr, data_len);
 		if (!suc)
 		{
@@ -1744,7 +1744,7 @@ namespace hld
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::relation_proto_c2s_req_friend_userinfo request;
+		faith::relation_proto_c2s_req_friend_userinfo request;
 		bool suc = parse_msg::getInstance().parse_message_new(&request, data_ptr, data_len);
 		if (!suc)
 		{
@@ -1784,7 +1784,7 @@ namespace hld
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::relation_proto_c2s_req_syc_nearly_state request;
+		faith::relation_proto_c2s_req_syc_nearly_state request;
 		bool suc = parse_msg::getInstance().parse_message_new(&request, data_ptr, data_len);
 		if (!suc)
 		{
@@ -1801,13 +1801,13 @@ namespace hld
 			return;
 		}
 		c2ws_req_syc_nearly_state_logic(client_session_ptr, request);
-	/*	hld::relation_proto_s2c_ret_syc_nearly_state ret_pak;
+	/*	faith::relation_proto_s2c_ret_syc_nearly_state ret_pak;
 		for (int32 count = 0; count < request.stranger_guid_size(); count++)
 		{
 			guid_64 nearly;
 			nearly.server_64 = request.stranger_guid(count);
 			client_session* nearly_ptr = client_session_mgr::getInstance().get_session(nearly);
-			hld::relation_proto_ret_relation_state* pak = ret_pak.add_full_stranger_state();
+			faith::relation_proto_ret_relation_state* pak = ret_pak.add_full_stranger_state();
 			pak->set_relation_guid(nearly.server_64);
 			if (nullptr != nearly_ptr)
 			{
@@ -1830,13 +1830,13 @@ namespace hld
 			return;
 		}
 
-		hld::relation_proto_s2c_ret_syc_nearly_state ret_pak;
+		faith::relation_proto_s2c_ret_syc_nearly_state ret_pak;
 		for (int32 count = 0; count < request.stranger_guid_size(); count++)
 		{
 			guid_64 nearly;
 			nearly.server_64 = request.stranger_guid(count);
 			client_session* nearly_ptr = client_session_mgr::getInstance().get_session(nearly);
-			hld::relation_proto_ret_relation_state* pak = ret_pak.add_full_stranger_state();
+			faith::relation_proto_ret_relation_state* pak = ret_pak.add_full_stranger_state();
 			pak->set_relation_guid(nearly.server_64);
 			if (nullptr != nearly_ptr)
 			{
@@ -1865,7 +1865,7 @@ namespace hld
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::relation_proto_c2s_operate_other_add_req request;
+		faith::relation_proto_c2s_operate_other_add_req request;
 		bool suc = parse_msg::getInstance().parse_message_new(&request, data_ptr, data_len);
 		if (!suc)
 		{
@@ -1910,7 +1910,7 @@ namespace hld
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::relation_proto_c2s_req_marrage request;
+		faith::relation_proto_c2s_req_marrage request;
 		bool suc = parse_msg::getInstance().parse_message_new(&request, data_ptr, data_len);
 		if (!suc)
 		{
@@ -1940,7 +1940,7 @@ namespace hld
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::relation_proto_c2s_reply_choose request;
+		faith::relation_proto_c2s_reply_choose request;
 		bool suc = parse_msg::getInstance().parse_message_new(&request, data_ptr, data_len);
 		if (!suc)
 		{
@@ -1977,7 +1977,7 @@ namespace hld
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::relation_proto_c2s_req_couple request;
+		faith::relation_proto_c2s_req_couple request;
 		bool suc = parse_msg::getInstance().parse_message_new(&request, data_ptr, data_len);
 		if (!suc)
 		{
@@ -1996,7 +1996,7 @@ namespace hld
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::relation_proto_c2s_req_divorce request;
+		faith::relation_proto_c2s_req_divorce request;
 		bool suc = parse_msg::getInstance().parse_message_new(&request, data_ptr, data_len);
 		if (!suc)
 		{
@@ -2026,7 +2026,7 @@ namespace hld
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::relation_proto_c2s_req_marry_get_reward request;
+		faith::relation_proto_c2s_req_marry_get_reward request;
 		bool suc = parse_msg::getInstance().parse_message_new(&request, data_ptr, data_len);
 		if (!suc)
 		{
@@ -2057,7 +2057,7 @@ namespace hld
 		{
 			return;
 		}
-		hld::relation_proto_c2s_req_get_marry_mission request;
+		faith::relation_proto_c2s_req_get_marry_mission request;
 		bool suc = parse_msg::getInstance().parse_message_new(&request, data_ptr, data_len);
 		if (!suc)
 		{
@@ -2111,7 +2111,7 @@ namespace hld
 		//}
 		//else
 		//{
-		//	hld::ws2cs_proto::marry_get_marry_task pro_msg;
+		//	faith::ws2cs_proto::marry_get_marry_task pro_msg;
 		//	msg.to_proto(pro_msg);
 		//	client_session_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_marry_get_marry_task);
 		//}
@@ -2126,7 +2126,7 @@ namespace hld
 		//}
 		//else
 		//{
-		//	hld::ws2cs_proto::marry_get_marry_task pro_msg;
+		//	faith::ws2cs_proto::marry_get_marry_task pro_msg;
 		//	couple_msg.to_proto(pro_msg);
 		//	couple_session_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_marry_get_marry_task);
 		//}
@@ -2158,7 +2158,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::marry_get_marry_task pro_msg;
+			faith::ws2cs_proto::marry_get_marry_task pro_msg;
 			msg.to_proto(pro_msg);
 			client_session_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_marry_get_marry_task);
 		}
@@ -2173,7 +2173,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::marry_get_marry_task pro_msg;
+			faith::ws2cs_proto::marry_get_marry_task pro_msg;
 			couple_msg.to_proto(pro_msg);
 			couple_session_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_marry_get_marry_task);
 		}
@@ -2192,7 +2192,7 @@ namespace hld
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::relation_proto_c2s_req_bless_one_couple request;
+		faith::relation_proto_c2s_req_bless_one_couple request;
 		bool suc = parse_msg::getInstance().parse_message_new(&request, data_ptr, data_len);
 		if (!suc)
 		{
@@ -2220,7 +2220,7 @@ namespace hld
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::ranking_proto_get_top_list req;
+		faith::ranking_proto_get_top_list req;
 		bool suc = parse_msg::getInstance().parse_message_new(&req, data_ptr, data_len);
 		if (!suc)
 		{
@@ -2240,7 +2240,7 @@ namespace hld
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::ranking_proto_get_my_rank req;
+		faith::ranking_proto_get_my_rank req;
 		bool suc = parse_msg::getInstance().parse_message_new(&req, data_ptr, data_len);
 		if (!suc)
 		{
@@ -2260,7 +2260,7 @@ namespace hld
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::ranking_proto_get_player_ranking_value req;
+		faith::ranking_proto_get_player_ranking_value req;
 		bool suc = parse_msg::getInstance().parse_message_new(&req, data_ptr, data_len);
 		if (!suc)
 		{
@@ -2279,7 +2279,7 @@ namespace hld
 
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::ranking_proto_service_rank_get_first_player req;
+		faith::ranking_proto_service_rank_get_first_player req;
 		bool suc = parse_msg::getInstance().parse_message_new(&req, data_ptr, data_len);
 		if (!suc)
 		{
@@ -2302,7 +2302,7 @@ namespace hld
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::welfare_proto_req_frist_kill_world_boss_prize req_prize;
+		faith::welfare_proto_req_frist_kill_world_boss_prize req_prize;
 		bool suc = parse_msg::getInstance().parse_message_new(&req_prize, data_ptr, data_len);
 		if (!suc)
 		{
@@ -2323,7 +2323,7 @@ namespace hld
 
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::game_proto_get_world_level req;
+		faith::game_proto_get_world_level req;
 		bool suc = parse_msg::getInstance().parse_message_new(&req, data_ptr, data_len);
 		if (!suc)
 		{
@@ -2336,9 +2336,9 @@ namespace hld
 			return;
 		}
 
-		hld::game_proto_send_world_level msg;
+		faith::game_proto_send_world_level msg;
 		int32 WorldLevel = 0;
-		WorldLevel = hld::ranking_mgr_ws::get_srv_avg_level();
+		WorldLevel = faith::ranking_mgr_ws::get_srv_avg_level();
 		msg.set_server_level(WorldLevel);
 
 		client_session_ptr->send_to_client(&msg, e_msgindex_s2c_send_world_level);	
@@ -2352,7 +2352,7 @@ namespace hld
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::legion_proto_legion_strategy_info req;
+		faith::legion_proto_legion_strategy_info req;
 		bool suc = parse_msg::getInstance().parse_message_new(&req, data_ptr, data_len);
 		if (!suc)
 		{
@@ -2374,7 +2374,7 @@ namespace hld
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::legion_proto_legion_strategy_info req;
+		faith::legion_proto_legion_strategy_info req;
 		bool suc = parse_msg::getInstance().parse_message_new(&req, data_ptr, data_len);
 		if (!suc)
 		{
@@ -2396,7 +2396,7 @@ namespace hld
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::game_proto_gain_treasure_req_kill_record req;
+		faith::game_proto_gain_treasure_req_kill_record req;
 		bool suc = parse_msg::getInstance().parse_message_new(&req, data_ptr, data_len);
 		if (!suc)
 		{
@@ -2424,7 +2424,7 @@ namespace hld
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::game_proto_gain_treasure_req_gain_item_record req;
+		faith::game_proto_gain_treasure_req_gain_item_record req;
 		bool suc = parse_msg::getInstance().parse_message_new(&req, data_ptr, data_len);
 		if (!suc)
 		{
@@ -2452,7 +2452,7 @@ namespace hld
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::chat_proto_join_voice_channel req;
+		faith::chat_proto_join_voice_channel req;
 		bool suc = parse_msg::getInstance().parse_message_new(&req, data_ptr, data_len);
 		if (!suc)
 		{
@@ -2467,11 +2467,11 @@ namespace hld
 		guid_64 role_guid = client_session_ptr->get_role_guid();
 		int32 channel_type = req.channel_type();
 
-		hld::chat_proto_join_voice_channel_end msg;
+		faith::chat_proto_join_voice_channel_end msg;
 		msg.set_channel_type(channel_type);
 		client_session_ptr->send_to_client(&msg, e_msgindex_s2c_join_voice_channel_end);
 
-		if (channel_type == hld::e_chat_type_legion)
+		if (channel_type == faith::e_chat_type_legion)
 		{
 			guid_64 legion_guid = client_session_ptr->get_legion_guid();
 			legion_ws* legion_ws_ptr = legion_ws_mgr::get_instance().get_legion(legion_guid);
@@ -2481,7 +2481,7 @@ namespace hld
 			}
 			legion_ws_ptr->join_voice_channel(role_guid);
 		}
-		else if (channel_type == hld::e_chat_type_team)
+		else if (channel_type == faith::e_chat_type_team)
 		{
 			guid_64 team_guid = client_session_ptr->get_team_guid();
 			team_ws* team_ws_ptr = team_ws_mgr::get_instance().get_team(team_guid);
@@ -2491,7 +2491,7 @@ namespace hld
 			}
 			team_ws_ptr->join_voice_channel(role_guid);
 		}
-		else if (channel_type == hld::e_chat_type_none)
+		else if (channel_type == faith::e_chat_type_none)
 		{
 			legion_ws* legion_ws_ptr = legion_ws_mgr::get_instance().get_unit_legion(role_guid);
 			if (legion_ws_ptr != nullptr)
@@ -2556,7 +2556,7 @@ namespace hld
 	{
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::character_proto_change_player_name req;
+		faith::character_proto_change_player_name req;
 		bool is_suc = parse_msg::getInstance().parse_message_new(&req, data_ptr, data_len);
 		if (false == is_suc)
 		{
@@ -2578,7 +2578,7 @@ namespace hld
 	{
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::character_proto_confirm_change_name req;
+		faith::character_proto_confirm_change_name req;
 		bool is_suc = parse_msg::getInstance().parse_message_new(&req, data_ptr, data_len);
 		if (false == is_suc)
 		{
@@ -2597,7 +2597,7 @@ namespace hld
 	{
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::legion_proto_join_cross_city_war req;
+		faith::legion_proto_join_cross_city_war req;
 		bool is_suc = parse_msg::getInstance().parse_message_new(&req, data_ptr, data_len);
 		if (false == is_suc)
 		{
@@ -2631,53 +2631,53 @@ namespace hld
 		//	std::string notice_id = "";
 		//	switch (ret)
 		//	{
-		//	case hld::e_error_code_success:
+		//	case faith::e_error_code_success:
 		//		break;
-		//	case hld::e_error_code_map_init_map_err:
+		//	case faith::e_error_code_map_init_map_err:
 		//		notice_id = "90090579";
 		//		break;
-		//	case hld::e_error_code_map_max_players:
+		//	case faith::e_error_code_map_max_players:
 		//		break;
-		//	case hld::e_error_code_map_enter_map_cd:
+		//	case faith::e_error_code_map_enter_map_cd:
 		//		break;
-		//	case hld::e_error_code_map_pk_king_not_begin:
+		//	case faith::e_error_code_map_pk_king_not_begin:
 		//		break;
-		//	case hld::e_error_code_map_pk_king_no_eligibility:
+		//	case faith::e_error_code_map_pk_king_no_eligibility:
 		//		break;
-		//	case hld::e_error_code_map_broken_sky_not_begin:
+		//	case faith::e_error_code_map_broken_sky_not_begin:
 		//		break;
-		//	case hld::e_error_code_map_broken_sky_game_over:
+		//	case faith::e_error_code_map_broken_sky_game_over:
 		//		break;
-		//	case hld::e_error_code_map_cross_server_pk_not_begin:
+		//	case faith::e_error_code_map_cross_server_pk_not_begin:
 		//		notice_id = "90090360";
 		//		break;
-		//	case hld::e_error_code_map_cross_server_pk_session_error:
+		//	case faith::e_error_code_map_cross_server_pk_session_error:
 		//		break;
-		//	case hld::e_error_code_map_cross_server_pk_end:
+		//	case faith::e_error_code_map_cross_server_pk_end:
 		//		notice_id = "90201845";
 		//		break;
-		//	case hld::e_error_code_map_cross_server_pk_not_start:
+		//	case faith::e_error_code_map_cross_server_pk_not_start:
 		//		notice_id = "90305015";
 		//		break;
-		//	case hld::e_error_code_map_cross_city_war_not_begin:
+		//	case faith::e_error_code_map_cross_city_war_not_begin:
 		//		notice_id = "90201806";
 		//		break;
-		//	case hld::e_error_code_map_cross_city_war_map_error:
+		//	case faith::e_error_code_map_cross_city_war_map_error:
 		//		notice_id = "90209394";
 		//		break;
-		//	case hld::e_error_code_map_cross_city_war_map_not_find:
+		//	case faith::e_error_code_map_cross_city_war_map_not_find:
 		//		notice_id = "90203651";
 		//		break;
-		//	case hld::e_error_code_map_cross_city_war_map_end:
+		//	case faith::e_error_code_map_cross_city_war_map_end:
 		//		notice_id = "90203604";
 		//		break;
-		//	case hld::e_error_code_map_cross_territory_war_not_begin:
+		//	case faith::e_error_code_map_cross_territory_war_not_begin:
 		//		notice_id = "90203650";
 		//		break;
-		//	case hld::e_error_code_map_no_territory_war_qualification:
+		//	case faith::e_error_code_map_no_territory_war_qualification:
 		//		notice_id = "90203651";
 		//		break;
-		//	case hld::e_error_code_map_max:
+		//	case faith::e_error_code_map_max:
 		//		break;
 		//	default:
 		//		break;
@@ -2726,50 +2726,50 @@ namespace hld
 			std::string notice_id = "";
 			switch (ret)
 			{
-			case hld::e_error_code_success:
+			case faith::e_error_code_success:
 				break;
-			case hld::e_error_code_map_init_map_err:
+			case faith::e_error_code_map_init_map_err:
 				notice_id = "90090579";
 				break;
-			case hld::e_error_code_map_max_players:
+			case faith::e_error_code_map_max_players:
 				break;
-			case hld::e_error_code_map_enter_map_cd:
+			case faith::e_error_code_map_enter_map_cd:
 				break;
-			case hld::e_error_code_map_pk_king_not_begin:
+			case faith::e_error_code_map_pk_king_not_begin:
 				break;
-			case hld::e_error_code_map_pk_king_no_eligibility:
+			case faith::e_error_code_map_pk_king_no_eligibility:
 				break;
-			case hld::e_error_code_map_broken_sky_not_begin:
+			case faith::e_error_code_map_broken_sky_not_begin:
 				break;
-			case hld::e_error_code_map_broken_sky_game_over:
+			case faith::e_error_code_map_broken_sky_game_over:
 				break;
-			case hld::e_error_code_map_cross_server_pk_not_begin:
+			case faith::e_error_code_map_cross_server_pk_not_begin:
 				notice_id = "90090360";
 				break;
-			case hld::e_error_code_map_cross_server_pk_session_error:
+			case faith::e_error_code_map_cross_server_pk_session_error:
 				break;
-			case hld::e_error_code_map_cross_server_pk_end:
+			case faith::e_error_code_map_cross_server_pk_end:
 				notice_id = "90201845";
 				break;
-			case hld::e_error_code_map_cross_server_pk_not_start:
+			case faith::e_error_code_map_cross_server_pk_not_start:
 				notice_id = "90305015";
 				break;
-			case hld::e_error_code_map_cross_city_war_not_begin:
+			case faith::e_error_code_map_cross_city_war_not_begin:
 				notice_id = "90201806";
 				break;
-			case hld::e_error_code_map_cross_city_war_map_error:
+			case faith::e_error_code_map_cross_city_war_map_error:
 				notice_id = "90209394";
 				break;
-			case hld::e_error_code_map_cross_city_war_map_not_find:
+			case faith::e_error_code_map_cross_city_war_map_not_find:
 				notice_id = "90203651";
 				break;
-			case hld::e_error_code_map_cross_city_war_map_end:
+			case faith::e_error_code_map_cross_city_war_map_end:
 				notice_id = "90203604";
 				break;
-			case hld::e_error_code_map_cross_territory_war_not_begin:
+			case faith::e_error_code_map_cross_territory_war_not_begin:
 				notice_id = "90203650";
 				break;
-			case hld::e_error_code_map_no_territory_war_qualification:
+			case faith::e_error_code_map_no_territory_war_qualification:
 				notice_id = "90203651";
 				break;
 			default:
@@ -2799,7 +2799,7 @@ namespace hld
 	{
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		hld::legion_proto_get_legion_answer_rank req;
+		faith::legion_proto_get_legion_answer_rank req;
 		bool is_suc = parse_msg::getInstance().parse_message_new(&req, data_ptr, data_len);
 		if (false == is_suc)
 		{

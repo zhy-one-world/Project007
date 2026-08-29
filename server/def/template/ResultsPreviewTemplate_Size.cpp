@@ -1,6 +1,6 @@
 #include "ResultsPreviewTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void ResultsPreviewTemplateSize()
     {

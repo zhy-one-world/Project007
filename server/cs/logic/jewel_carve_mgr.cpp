@@ -9,7 +9,7 @@
 #include "utility/random.h"
 #include "utility/init_unit.h"
 
-namespace hld
+namespace faith
 {
 	jewel_carve_mgr::jewel_carve_mgr()
 	{

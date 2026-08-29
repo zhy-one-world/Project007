@@ -22,7 +22,7 @@
 #pragma comment (lib, "version.lib")
 
 
-namespace hld
+namespace faith
 {
 #ifdef UNICODE
 	std::wstring 

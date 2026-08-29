@@ -5,7 +5,7 @@
 #include "template/template_manager.h"
 #include "world_server.hpp"
 
-namespace hld
+namespace faith
 {
 	chest_arrival_mgr::chest_arrival_mgr()
 	{
@@ -85,7 +85,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::chest_arrivai_spawn_chest_wave pro_msg;
+			faith::ws2cs_proto::chest_arrivai_spawn_chest_wave pro_msg;
 			pro_msg.set_chest_disappear_time(chest_disappear_time);
 			world_server::getInstance().broadcast_lua(&pro_msg, e_msg_index_ws2cs_chest_arrivai_spawn_chest_wave, e_server_type_cs);
 		}

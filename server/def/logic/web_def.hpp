@@ -14,7 +14,7 @@
 #include "item_def.hpp"
 #include "mail_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 

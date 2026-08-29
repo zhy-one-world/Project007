@@ -14,7 +14,7 @@
 #include "template/template_manager.h"
 #include "dp2cs.pb.h"
 
-namespace hld
+namespace faith
 {
 	
 
@@ -33,15 +33,15 @@ namespace hld
 
 	static void cs2dp_load_auction_self_selling_send_lua(uint32 connindex, const dp2cs_auction_load_self_selling_end& reply_data)
 	{
-		hld::dp2cs_proto::load_role_db_data msg;
+		faith::dp2cs_proto::load_role_db_data msg;
 		msg.set_role_guid(reply_data.role_guid);
 		msg.set_unit_array_index(reply_data.unit_array_index);
 
-		hld::db_proto::auction_db  msg_db;
+		faith::db_proto::auction_db  msg_db;
 		msg_db.set_row_count(reply_data.data_num);
 		for (int32 i = 0; i < msg_db.row_count(); i++)
 		{
-			hld::db_proto::auction_row *db_row = msg_db.add_row_data();
+			faith::db_proto::auction_row *db_row = msg_db.add_row_data();
 			if (db_row == nullptr)
 			{
 				return;
@@ -69,7 +69,7 @@ namespace hld
 			db_row->set_is_sky_order(reply_data.auction_info[i].is_sky_order);
 			db_row->set_show_guid(reply_data.auction_info[i].show_guid.server_64);
 
-			hld::db_proto::item_info_db* item_info = db_row->mutable_item_info();
+			faith::db_proto::item_info_db* item_info = db_row->mutable_item_info();
 			if (item_info == nullptr)
 			{
 				return;

@@ -1,6 +1,6 @@
 #include "DailyActivitiesTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void DailyActivitiesTemplateSize()
     {

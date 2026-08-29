@@ -2,7 +2,7 @@
 
 #include "logic/type_def.hpp"
 #include "base/ecs_world.h"
-namespace hld
+namespace faith
 {
 	struct item_manager_component
 	{

@@ -8,7 +8,7 @@
 #include "character.pb.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	appearance_info_mgr::appearance_info_mgr()
 	{

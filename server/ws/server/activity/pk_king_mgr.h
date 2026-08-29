@@ -5,7 +5,7 @@
 #include <Logic/pk_king_def.hpp>
 #include <pk_king_msg.hpp>
 
-namespace hld
+namespace faith
 {
 	class pk_king_mgr
 	{

@@ -22,7 +22,7 @@
 #include "utility/init_unit.h"
 #include "world_server.hpp"
 #include "ws_client.hpp"
-namespace hld
+namespace faith
 {
 	cross_server_pk_ws_mgr::cross_server_pk_ws_mgr()
 	{
@@ -169,53 +169,53 @@ namespace hld
 		std::string notice_id = "";
 		switch (ret)
 		{
-		case hld::e_error_code_success:
+		case faith::e_error_code_success:
 			break;
-		case hld::e_error_code_map_init_map_err:
+		case faith::e_error_code_map_init_map_err:
 			notice_id = "90090579";
 			break;
-		case hld::e_error_code_map_max_players:
+		case faith::e_error_code_map_max_players:
 			break;
-		case hld::e_error_code_map_enter_map_cd:
+		case faith::e_error_code_map_enter_map_cd:
 			break;
-		case hld::e_error_code_map_pk_king_not_begin:
+		case faith::e_error_code_map_pk_king_not_begin:
 			break;
-		case hld::e_error_code_map_pk_king_no_eligibility:
+		case faith::e_error_code_map_pk_king_no_eligibility:
 			break;
-		case hld::e_error_code_map_broken_sky_not_begin:
+		case faith::e_error_code_map_broken_sky_not_begin:
 			break;
-		case hld::e_error_code_map_broken_sky_game_over:
+		case faith::e_error_code_map_broken_sky_game_over:
 			break;
-		case hld::e_error_code_map_cross_server_pk_not_begin:
+		case faith::e_error_code_map_cross_server_pk_not_begin:
 			notice_id = "90090360";
 			break;
-		case hld::e_error_code_map_cross_server_pk_session_error:
+		case faith::e_error_code_map_cross_server_pk_session_error:
 			break;
-		case hld::e_error_code_map_cross_server_pk_end:
+		case faith::e_error_code_map_cross_server_pk_end:
 			notice_id = "90201845";
 			break;
-		case hld::e_error_code_map_cross_server_pk_not_start:
+		case faith::e_error_code_map_cross_server_pk_not_start:
 			notice_id = "90305015";
 			break;
-		case hld::e_error_code_map_cross_city_war_not_begin:
+		case faith::e_error_code_map_cross_city_war_not_begin:
 			notice_id = "90201806";
 			break;
-		case hld::e_error_code_map_cross_city_war_map_error:
+		case faith::e_error_code_map_cross_city_war_map_error:
 			notice_id = "90209394";
 			break;
-		case hld::e_error_code_map_cross_city_war_map_not_find:
+		case faith::e_error_code_map_cross_city_war_map_not_find:
 			notice_id = "90203651";
 			break;
-		case hld::e_error_code_map_cross_city_war_map_end:
+		case faith::e_error_code_map_cross_city_war_map_end:
 			notice_id = "90203604";
 			break;
-		case hld::e_error_code_map_cross_territory_war_not_begin:
+		case faith::e_error_code_map_cross_territory_war_not_begin:
 			notice_id = "90203650";
 			break;
-		case hld::e_error_code_map_no_territory_war_qualification:
+		case faith::e_error_code_map_no_territory_war_qualification:
 			notice_id = "90203651";
 			break;
-		case hld::e_error_code_map_pk_king_ready_not_join_time:
+		case faith::e_error_code_map_pk_king_ready_not_join_time:
 			notice_id = "90305000";
 			break;
 		default:

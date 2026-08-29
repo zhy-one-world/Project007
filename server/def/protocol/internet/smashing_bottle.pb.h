@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_smashing_5fbottle_2eproto();
@@ -95,7 +95,7 @@ class smashing_bottle_s2s : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.smashing_bottle_s2s)
+  // @@protoc_insertion_point(class_scope:faith.smashing_bottle_s2s)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -188,7 +188,7 @@ class smashing_bottle_s2c_smashing_bottle_info : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 flip_box_id() const;
   inline void set_flip_box_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.smashing_bottle.s2c_smashing_bottle_info)
+  // @@protoc_insertion_point(class_scope:faith.smashing_bottle.s2c_smashing_bottle_info)
  private:
   inline void set_has_bottle_num();
   inline void clear_has_bottle_num();
@@ -269,7 +269,7 @@ class smashing_bottle_c2s_smashing_bottle_end : public ::google::protobuf::Messa
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.smashing_bottle.c2s_smashing_bottle_end)
+  // @@protoc_insertion_point(class_scope:faith.smashing_bottle.c2s_smashing_bottle_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -362,7 +362,7 @@ class smashing_bottle_s2c_smashing_bottle_end : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 money_count() const;
   inline void set_money_count(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.smashing_bottle.s2c_smashing_bottle_end)
+  // @@protoc_insertion_point(class_scope:faith.smashing_bottle.s2c_smashing_bottle_end)
  private:
   inline void set_has_win_end();
   inline void clear_has_win_end();
@@ -447,7 +447,7 @@ class smashing_bottle : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.smashing_bottle)
+  // @@protoc_insertion_point(class_scope:faith.smashing_bottle)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -621,7 +621,7 @@ inline void smashing_bottle_s2c_smashing_bottle_end::set_money_count(::google::p
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

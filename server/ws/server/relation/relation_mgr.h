@@ -9,7 +9,7 @@
 
 #include "relation_set.h"
 
-namespace hld
+namespace faith
 {
 	class client_session;
 	class relation_proto_c2s_operate_other_add_req;
@@ -77,7 +77,7 @@ namespace hld
 		void							sync_relation_list_to_client();										//同步全部好友列表给客户端
 
 		bool							add_player_from_other_req(const guid_64& guid);
-		void							operate_player_from_other_req(const hld::relation_proto_c2s_operate_other_add_req& packet);
+		void							operate_player_from_other_req(const faith::relation_proto_c2s_operate_other_add_req& packet);
 		bool							send_other_add_msg_to_self(relation* req_player);
 
 		void							req_relation_info_from_db(int32 relation_type, const guid_64& other_guid);									//从db中请求玩家数据

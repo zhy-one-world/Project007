@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -385,7 +385,7 @@ void protobuf_AddDesc_assist_5ffight_2eproto() {
     "\n\022assist_fight.proto\022\003hld\"\226\014\n\022assist_fig"
     "ht_proto\032\027\n\025get_assist_fight_info\032\224\001\n\026sy"
     "cn_assist_fight_info\022D\n\021assist_fight_lis"
-    "t\030\001 \003(\0132).hld.assist_fight_proto.assist_"
+    "t\030\001 \003(\0132).faith.assist_fight_proto.assist_"
     "fight_info\022\021\n\tis_finish\030\002 \001(\010\022\020\n\010is_logi"
     "n\030\003 \001(\010\022\017\n\007is_sync\030\004 \001(\010\032\220\002\n\021assist_figh"
     "t_info\022\033\n\023assist_fight_guid_a\030\001 \001(\005\022\033\n\023a"
@@ -406,7 +406,7 @@ void protobuf_AddDesc_assist_5ffight_2eproto() {
     "\005\022\021\n\thead_icon\030\010 \001(\005\022\023\n\013helper_list\030\t \003("
     "\003\032\356\001\n\037assist_fight_end_to_show_reward\022\023\n"
     "\013role_guid_a\030\001 \001(\005\022\023\n\013role_guid_b\030\002 \001(\005\022"
-    "\?\n\013helper_list\030\003 \003(\0132*.hld.assist_fight_"
+    "\?\n\013helper_list\030\003 \003(\0132*.faith.assist_fight_"
     "proto.assist_helper_info\022\022\n\nreward_id1\030\004"
     " \001(\005\022\022\n\nreward_id2\030\005 \001(\005\022\016\n\006map_id\030\006 \001(\005"
     "\022\024\n\014drop_id_list\030\007 \003(\005\022\022\n\nfirst_name\030\010 \001"
@@ -694,7 +694,7 @@ bool assist_fight_proto_sycn_assist_fight_info::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.assist_fight_proto.assist_fight_info assist_fight_list = 1;
+      // repeated .faith.assist_fight_proto.assist_fight_info assist_fight_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -775,7 +775,7 @@ bool assist_fight_proto_sycn_assist_fight_info::MergePartialFromCodedStream(
 
 void assist_fight_proto_sycn_assist_fight_info::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.assist_fight_proto.assist_fight_info assist_fight_list = 1;
+  // repeated .faith.assist_fight_proto.assist_fight_info assist_fight_list = 1;
   for (int i = 0; i < this->assist_fight_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->assist_fight_list(i), output);
@@ -804,7 +804,7 @@ void assist_fight_proto_sycn_assist_fight_info::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* assist_fight_proto_sycn_assist_fight_info::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.assist_fight_proto.assist_fight_info assist_fight_list = 1;
+  // repeated .faith.assist_fight_proto.assist_fight_info assist_fight_list = 1;
   for (int i = 0; i < this->assist_fight_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -853,7 +853,7 @@ int assist_fight_proto_sycn_assist_fight_info::ByteSize() const {
     }
 
   }
-  // repeated .hld.assist_fight_proto.assist_fight_info assist_fight_list = 1;
+  // repeated .faith.assist_fight_proto.assist_fight_info assist_fight_list = 1;
   total_size += 1 * this->assist_fight_list_size();
   for (int i = 0; i < this->assist_fight_list_size(); i++) {
     total_size +=
@@ -2902,7 +2902,7 @@ bool assist_fight_proto_assist_fight_end_to_show_reward::MergePartialFromCodedSt
         break;
       }
 
-      // repeated .hld.assist_fight_proto.assist_helper_info helper_list = 3;
+      // repeated .faith.assist_fight_proto.assist_helper_info helper_list = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -3032,7 +3032,7 @@ void assist_fight_proto_assist_fight_end_to_show_reward::SerializeWithCachedSize
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->role_guid_b(), output);
   }
 
-  // repeated .hld.assist_fight_proto.assist_helper_info helper_list = 3;
+  // repeated .faith.assist_fight_proto.assist_helper_info helper_list = 3;
   for (int i = 0; i < this->helper_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->helper_list(i), output);
@@ -3086,7 +3086,7 @@ void assist_fight_proto_assist_fight_end_to_show_reward::SerializeWithCachedSize
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->role_guid_b(), target);
   }
 
-  // repeated .hld.assist_fight_proto.assist_helper_info helper_list = 3;
+  // repeated .faith.assist_fight_proto.assist_helper_info helper_list = 3;
   for (int i = 0; i < this->helper_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -3178,7 +3178,7 @@ int assist_fight_proto_assist_fight_end_to_show_reward::ByteSize() const {
     }
 
   }
-  // repeated .hld.assist_fight_proto.assist_helper_info helper_list = 3;
+  // repeated .faith.assist_fight_proto.assist_helper_info helper_list = 3;
   total_size += 1 * this->helper_list_size();
   for (int i = 0; i < this->helper_list_size(); i++) {
     total_size +=
@@ -4852,6 +4852,6 @@ void assist_fight_proto::Swap(assist_fight_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

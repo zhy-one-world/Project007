@@ -21,7 +21,7 @@
 #include "md5/Base64.h"
 #include "buff_def.hpp"
 
-namespace hld
+namespace faith
 {
 	void ls2dp_client_login_func(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
@@ -507,7 +507,7 @@ namespace hld
 	{
 		if (!result.error && result.query.data_select.row_count >= 0 )
 		{
-			s_unit_info data[hld::max_character_num];
+			s_unit_info data[faith::max_character_num];
 			memset(&data, 0, sizeof(data));
 			int32 data_num = max_character_num > result.query.data_select.row_count ? result.query.data_select.row_count : max_character_num;
 			db_read_data(&result, &data, sizeof(s_unit_info)*data_num);
@@ -569,9 +569,9 @@ namespace hld
 				WingTemplate* wing_template_ptr = GET_TEMPLATE(WingTemplate, item_wing_template_ptr->logic_id);
 				if (wing_template_ptr != nullptr)
 				{
-					if (wing_template_ptr->IllusionOriginalIdRange.size() == hld::e_wing_illusion_originalid_range_max)
+					if (wing_template_ptr->IllusionOriginalIdRange.size() == faith::e_wing_illusion_originalid_range_max)
 					{
-						ItemTemplate* item_wing_real_template_ptr = template_manager::get_instance().get_item_template_ptr_by_logic_id(wing_template_ptr->IllusionOriginalIdRange[hld::e_wing_illusion_originalid_range_low]);
+						ItemTemplate* item_wing_real_template_ptr = template_manager::get_instance().get_item_template_ptr_by_logic_id(wing_template_ptr->IllusionOriginalIdRange[faith::e_wing_illusion_originalid_range_low]);
 						if (item_wing_real_template_ptr != nullptr)
 						{
 							wing_illusion_range_id = item_wing_real_template_ptr->attribute_id;

@@ -11,7 +11,7 @@ purpose:
 #include "md5/Base64.h"
 #include "character.pb.h"
 
-namespace hld
+namespace faith
 {
 	void  req_load_marry_info(uint32 connindex, int32 start_pos)
 	{ 
@@ -79,7 +79,7 @@ namespace hld
 
 	void ws2dp_req_save_marry_info(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
-		const hld::ws2dp_save_marry_couple_info* pdata = static_cast<const hld::ws2dp_save_marry_couple_info*>(data_ptr);
+		const faith::ws2dp_save_marry_couple_info* pdata = static_cast<const faith::ws2dp_save_marry_couple_info*>(data_ptr);
 		if (nullptr == pdata)
 		{
 			return;
@@ -127,7 +127,7 @@ namespace hld
 
 	void ws2dp_req_load_couple_login_time(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
-		const hld::ws2dp_marry_get_last_login_time* pdata = static_cast<const hld::ws2dp_marry_get_last_login_time*>(data_ptr);
+		const faith::ws2dp_marry_get_last_login_time* pdata = static_cast<const faith::ws2dp_marry_get_last_login_time*>(data_ptr);
 		if (nullptr == pdata)
 		{
 			return;
@@ -181,7 +181,7 @@ namespace hld
 
 	void ws2dp_load_marry_info_cross_server_proc(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
-		const hld::ws2dp_load_marry_info_cross_server* pdata = static_cast<const hld::ws2dp_load_marry_info_cross_server*>(data_ptr);
+		const faith::ws2dp_load_marry_info_cross_server* pdata = static_cast<const faith::ws2dp_load_marry_info_cross_server*>(data_ptr);
 		if (nullptr == pdata)
 			return;
 

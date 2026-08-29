@@ -15,7 +15,7 @@ purpose: about role's mail_mgr
 #include "Logic/event_def.hpp"
 #include "utility/cs_date.hpp"
 
-namespace hld
+namespace faith
 {
 	class player;
 	class mail_proto_update_mail;

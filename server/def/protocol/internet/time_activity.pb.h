@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_time_5factivity_2eproto();
@@ -115,7 +115,7 @@ class time_activity_s2s_wheel_plate : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.time_activity_s2s.wheel_plate)
+  // @@protoc_insertion_point(class_scope:faith.time_activity_s2s.wheel_plate)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -195,16 +195,16 @@ class time_activity_s2s_activity_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 activity_id() const;
   inline void set_activity_id(::google::protobuf::int32 value);
 
-  // optional .hld.time_activity_s2s.wheel_plate wheel_plate_data = 2;
+  // optional .faith.time_activity_s2s.wheel_plate wheel_plate_data = 2;
   inline bool has_wheel_plate_data() const;
   inline void clear_wheel_plate_data();
   static const int kWheelPlateDataFieldNumber = 2;
-  inline const ::hld::time_activity_s2s_wheel_plate& wheel_plate_data() const;
-  inline ::hld::time_activity_s2s_wheel_plate* mutable_wheel_plate_data();
-  inline ::hld::time_activity_s2s_wheel_plate* release_wheel_plate_data();
-  inline void set_allocated_wheel_plate_data(::hld::time_activity_s2s_wheel_plate* wheel_plate_data);
+  inline const ::faith::time_activity_s2s_wheel_plate& wheel_plate_data() const;
+  inline ::faith::time_activity_s2s_wheel_plate* mutable_wheel_plate_data();
+  inline ::faith::time_activity_s2s_wheel_plate* release_wheel_plate_data();
+  inline void set_allocated_wheel_plate_data(::faith::time_activity_s2s_wheel_plate* wheel_plate_data);
 
-  // @@protoc_insertion_point(class_scope:hld.time_activity_s2s.activity_info)
+  // @@protoc_insertion_point(class_scope:faith.time_activity_s2s.activity_info)
  private:
   inline void set_has_activity_id();
   inline void clear_has_activity_id();
@@ -213,7 +213,7 @@ class time_activity_s2s_activity_info : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::time_activity_s2s_wheel_plate* wheel_plate_data_;
+  ::faith::time_activity_s2s_wheel_plate* wheel_plate_data_;
   ::google::protobuf::int32 activity_id_;
 
   mutable int _cached_size_;
@@ -282,24 +282,24 @@ class time_activity_s2s_sl_activity_info : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.time_activity_s2s.activity_info data_list = 1;
+  // repeated .faith.time_activity_s2s.activity_info data_list = 1;
   inline int data_list_size() const;
   inline void clear_data_list();
   static const int kDataListFieldNumber = 1;
-  inline const ::hld::time_activity_s2s_activity_info& data_list(int index) const;
-  inline ::hld::time_activity_s2s_activity_info* mutable_data_list(int index);
-  inline ::hld::time_activity_s2s_activity_info* add_data_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::time_activity_s2s_activity_info >&
+  inline const ::faith::time_activity_s2s_activity_info& data_list(int index) const;
+  inline ::faith::time_activity_s2s_activity_info* mutable_data_list(int index);
+  inline ::faith::time_activity_s2s_activity_info* add_data_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::time_activity_s2s_activity_info >&
       data_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::time_activity_s2s_activity_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::time_activity_s2s_activity_info >*
       mutable_data_list();
 
-  // @@protoc_insertion_point(class_scope:hld.time_activity_s2s.sl_activity_info)
+  // @@protoc_insertion_point(class_scope:faith.time_activity_s2s.sl_activity_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::time_activity_s2s_activity_info > data_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::time_activity_s2s_activity_info > data_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -371,7 +371,7 @@ class time_activity_s2s : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.time_activity_s2s)
+  // @@protoc_insertion_point(class_scope:faith.time_activity_s2s)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -455,7 +455,7 @@ class time_activity_wheel_plate : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.time_activity.wheel_plate)
+  // @@protoc_insertion_point(class_scope:faith.time_activity.wheel_plate)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -542,16 +542,16 @@ class time_activity_s2c_activity_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 end_time() const;
   inline void set_end_time(::google::protobuf::int64 value);
 
-  // optional .hld.time_activity.wheel_plate wheel_plate_data = 3;
+  // optional .faith.time_activity.wheel_plate wheel_plate_data = 3;
   inline bool has_wheel_plate_data() const;
   inline void clear_wheel_plate_data();
   static const int kWheelPlateDataFieldNumber = 3;
-  inline const ::hld::time_activity_wheel_plate& wheel_plate_data() const;
-  inline ::hld::time_activity_wheel_plate* mutable_wheel_plate_data();
-  inline ::hld::time_activity_wheel_plate* release_wheel_plate_data();
-  inline void set_allocated_wheel_plate_data(::hld::time_activity_wheel_plate* wheel_plate_data);
+  inline const ::faith::time_activity_wheel_plate& wheel_plate_data() const;
+  inline ::faith::time_activity_wheel_plate* mutable_wheel_plate_data();
+  inline ::faith::time_activity_wheel_plate* release_wheel_plate_data();
+  inline void set_allocated_wheel_plate_data(::faith::time_activity_wheel_plate* wheel_plate_data);
 
-  // @@protoc_insertion_point(class_scope:hld.time_activity.s2c_activity_info)
+  // @@protoc_insertion_point(class_scope:faith.time_activity.s2c_activity_info)
  private:
   inline void set_has_activity_id();
   inline void clear_has_activity_id();
@@ -563,7 +563,7 @@ class time_activity_s2c_activity_info : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 end_time_;
-  ::hld::time_activity_wheel_plate* wheel_plate_data_;
+  ::faith::time_activity_wheel_plate* wheel_plate_data_;
   ::google::protobuf::int32 activity_id_;
 
   mutable int _cached_size_;
@@ -632,24 +632,24 @@ class time_activity_s2c_activity_info_all : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.time_activity.s2c_activity_info data_list = 1;
+  // repeated .faith.time_activity.s2c_activity_info data_list = 1;
   inline int data_list_size() const;
   inline void clear_data_list();
   static const int kDataListFieldNumber = 1;
-  inline const ::hld::time_activity_s2c_activity_info& data_list(int index) const;
-  inline ::hld::time_activity_s2c_activity_info* mutable_data_list(int index);
-  inline ::hld::time_activity_s2c_activity_info* add_data_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::time_activity_s2c_activity_info >&
+  inline const ::faith::time_activity_s2c_activity_info& data_list(int index) const;
+  inline ::faith::time_activity_s2c_activity_info* mutable_data_list(int index);
+  inline ::faith::time_activity_s2c_activity_info* add_data_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::time_activity_s2c_activity_info >&
       data_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::time_activity_s2c_activity_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::time_activity_s2c_activity_info >*
       mutable_data_list();
 
-  // @@protoc_insertion_point(class_scope:hld.time_activity.s2c_activity_info_all)
+  // @@protoc_insertion_point(class_scope:faith.time_activity.s2c_activity_info_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::time_activity_s2c_activity_info > data_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::time_activity_s2c_activity_info > data_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -724,7 +724,7 @@ class time_activity_s2c_activity_info_del : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 activity_id() const;
   inline void set_activity_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_activity.s2c_activity_info_del)
+  // @@protoc_insertion_point(class_scope:faith.time_activity.s2c_activity_info_del)
  private:
   inline void set_has_activity_id();
   inline void clear_has_activity_id();
@@ -806,7 +806,7 @@ class time_activity_c2s_get_activity : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 activity_id() const;
   inline void set_activity_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_activity.c2s_get_activity)
+  // @@protoc_insertion_point(class_scope:faith.time_activity.c2s_get_activity)
  private:
   inline void set_has_activity_id();
   inline void clear_has_activity_id();
@@ -900,7 +900,7 @@ class time_activity_s2c_wheel_plate_begin : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 win_index() const;
   inline void set_win_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_activity.s2c_wheel_plate_begin)
+  // @@protoc_insertion_point(class_scope:faith.time_activity.s2c_wheel_plate_begin)
  private:
   inline void set_has_win_index();
   inline void clear_has_win_index();
@@ -983,7 +983,7 @@ class time_activity_c2s_wheel_plate_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 activity_id() const;
   inline void set_activity_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_activity.c2s_wheel_plate_end)
+  // @@protoc_insertion_point(class_scope:faith.time_activity.c2s_wheel_plate_end)
  private:
   inline void set_has_activity_id();
   inline void clear_has_activity_id();
@@ -1072,7 +1072,7 @@ class time_activity_s2c_wheel_plate_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 item_count() const;
   inline void set_item_count(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.time_activity.s2c_wheel_plate_end)
+  // @@protoc_insertion_point(class_scope:faith.time_activity.s2c_wheel_plate_end)
  private:
   inline void set_has_item_id();
   inline void clear_has_item_id();
@@ -1159,7 +1159,7 @@ class time_activity : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.time_activity)
+  // @@protoc_insertion_point(class_scope:faith.time_activity)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1233,7 +1233,7 @@ inline void time_activity_s2s_activity_info::set_activity_id(::google::protobuf:
   activity_id_ = value;
 }
 
-// optional .hld.time_activity_s2s.wheel_plate wheel_plate_data = 2;
+// optional .faith.time_activity_s2s.wheel_plate wheel_plate_data = 2;
 inline bool time_activity_s2s_activity_info::has_wheel_plate_data() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -1244,24 +1244,24 @@ inline void time_activity_s2s_activity_info::clear_has_wheel_plate_data() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void time_activity_s2s_activity_info::clear_wheel_plate_data() {
-  if (wheel_plate_data_ != NULL) wheel_plate_data_->::hld::time_activity_s2s_wheel_plate::Clear();
+  if (wheel_plate_data_ != NULL) wheel_plate_data_->::faith::time_activity_s2s_wheel_plate::Clear();
   clear_has_wheel_plate_data();
 }
-inline const ::hld::time_activity_s2s_wheel_plate& time_activity_s2s_activity_info::wheel_plate_data() const {
+inline const ::faith::time_activity_s2s_wheel_plate& time_activity_s2s_activity_info::wheel_plate_data() const {
   return wheel_plate_data_ != NULL ? *wheel_plate_data_ : *default_instance_->wheel_plate_data_;
 }
-inline ::hld::time_activity_s2s_wheel_plate* time_activity_s2s_activity_info::mutable_wheel_plate_data() {
+inline ::faith::time_activity_s2s_wheel_plate* time_activity_s2s_activity_info::mutable_wheel_plate_data() {
   set_has_wheel_plate_data();
-  if (wheel_plate_data_ == NULL) wheel_plate_data_ = new ::hld::time_activity_s2s_wheel_plate;
+  if (wheel_plate_data_ == NULL) wheel_plate_data_ = new ::faith::time_activity_s2s_wheel_plate;
   return wheel_plate_data_;
 }
-inline ::hld::time_activity_s2s_wheel_plate* time_activity_s2s_activity_info::release_wheel_plate_data() {
+inline ::faith::time_activity_s2s_wheel_plate* time_activity_s2s_activity_info::release_wheel_plate_data() {
   clear_has_wheel_plate_data();
-  ::hld::time_activity_s2s_wheel_plate* temp = wheel_plate_data_;
+  ::faith::time_activity_s2s_wheel_plate* temp = wheel_plate_data_;
   wheel_plate_data_ = NULL;
   return temp;
 }
-inline void time_activity_s2s_activity_info::set_allocated_wheel_plate_data(::hld::time_activity_s2s_wheel_plate* wheel_plate_data) {
+inline void time_activity_s2s_activity_info::set_allocated_wheel_plate_data(::faith::time_activity_s2s_wheel_plate* wheel_plate_data) {
   delete wheel_plate_data_;
   wheel_plate_data_ = wheel_plate_data;
   if (wheel_plate_data) {
@@ -1275,27 +1275,27 @@ inline void time_activity_s2s_activity_info::set_allocated_wheel_plate_data(::hl
 
 // time_activity_s2s_sl_activity_info
 
-// repeated .hld.time_activity_s2s.activity_info data_list = 1;
+// repeated .faith.time_activity_s2s.activity_info data_list = 1;
 inline int time_activity_s2s_sl_activity_info::data_list_size() const {
   return data_list_.size();
 }
 inline void time_activity_s2s_sl_activity_info::clear_data_list() {
   data_list_.Clear();
 }
-inline const ::hld::time_activity_s2s_activity_info& time_activity_s2s_sl_activity_info::data_list(int index) const {
+inline const ::faith::time_activity_s2s_activity_info& time_activity_s2s_sl_activity_info::data_list(int index) const {
   return data_list_.Get(index);
 }
-inline ::hld::time_activity_s2s_activity_info* time_activity_s2s_sl_activity_info::mutable_data_list(int index) {
+inline ::faith::time_activity_s2s_activity_info* time_activity_s2s_sl_activity_info::mutable_data_list(int index) {
   return data_list_.Mutable(index);
 }
-inline ::hld::time_activity_s2s_activity_info* time_activity_s2s_sl_activity_info::add_data_list() {
+inline ::faith::time_activity_s2s_activity_info* time_activity_s2s_sl_activity_info::add_data_list() {
   return data_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::time_activity_s2s_activity_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::time_activity_s2s_activity_info >&
 time_activity_s2s_sl_activity_info::data_list() const {
   return data_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::time_activity_s2s_activity_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::time_activity_s2s_activity_info >*
 time_activity_s2s_sl_activity_info::mutable_data_list() {
   return &data_list_;
 }
@@ -1381,7 +1381,7 @@ inline void time_activity_s2c_activity_info::set_end_time(::google::protobuf::in
   end_time_ = value;
 }
 
-// optional .hld.time_activity.wheel_plate wheel_plate_data = 3;
+// optional .faith.time_activity.wheel_plate wheel_plate_data = 3;
 inline bool time_activity_s2c_activity_info::has_wheel_plate_data() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -1392,24 +1392,24 @@ inline void time_activity_s2c_activity_info::clear_has_wheel_plate_data() {
   _has_bits_[0] &= ~0x00000004u;
 }
 inline void time_activity_s2c_activity_info::clear_wheel_plate_data() {
-  if (wheel_plate_data_ != NULL) wheel_plate_data_->::hld::time_activity_wheel_plate::Clear();
+  if (wheel_plate_data_ != NULL) wheel_plate_data_->::faith::time_activity_wheel_plate::Clear();
   clear_has_wheel_plate_data();
 }
-inline const ::hld::time_activity_wheel_plate& time_activity_s2c_activity_info::wheel_plate_data() const {
+inline const ::faith::time_activity_wheel_plate& time_activity_s2c_activity_info::wheel_plate_data() const {
   return wheel_plate_data_ != NULL ? *wheel_plate_data_ : *default_instance_->wheel_plate_data_;
 }
-inline ::hld::time_activity_wheel_plate* time_activity_s2c_activity_info::mutable_wheel_plate_data() {
+inline ::faith::time_activity_wheel_plate* time_activity_s2c_activity_info::mutable_wheel_plate_data() {
   set_has_wheel_plate_data();
-  if (wheel_plate_data_ == NULL) wheel_plate_data_ = new ::hld::time_activity_wheel_plate;
+  if (wheel_plate_data_ == NULL) wheel_plate_data_ = new ::faith::time_activity_wheel_plate;
   return wheel_plate_data_;
 }
-inline ::hld::time_activity_wheel_plate* time_activity_s2c_activity_info::release_wheel_plate_data() {
+inline ::faith::time_activity_wheel_plate* time_activity_s2c_activity_info::release_wheel_plate_data() {
   clear_has_wheel_plate_data();
-  ::hld::time_activity_wheel_plate* temp = wheel_plate_data_;
+  ::faith::time_activity_wheel_plate* temp = wheel_plate_data_;
   wheel_plate_data_ = NULL;
   return temp;
 }
-inline void time_activity_s2c_activity_info::set_allocated_wheel_plate_data(::hld::time_activity_wheel_plate* wheel_plate_data) {
+inline void time_activity_s2c_activity_info::set_allocated_wheel_plate_data(::faith::time_activity_wheel_plate* wheel_plate_data) {
   delete wheel_plate_data_;
   wheel_plate_data_ = wheel_plate_data;
   if (wheel_plate_data) {
@@ -1423,27 +1423,27 @@ inline void time_activity_s2c_activity_info::set_allocated_wheel_plate_data(::hl
 
 // time_activity_s2c_activity_info_all
 
-// repeated .hld.time_activity.s2c_activity_info data_list = 1;
+// repeated .faith.time_activity.s2c_activity_info data_list = 1;
 inline int time_activity_s2c_activity_info_all::data_list_size() const {
   return data_list_.size();
 }
 inline void time_activity_s2c_activity_info_all::clear_data_list() {
   data_list_.Clear();
 }
-inline const ::hld::time_activity_s2c_activity_info& time_activity_s2c_activity_info_all::data_list(int index) const {
+inline const ::faith::time_activity_s2c_activity_info& time_activity_s2c_activity_info_all::data_list(int index) const {
   return data_list_.Get(index);
 }
-inline ::hld::time_activity_s2c_activity_info* time_activity_s2c_activity_info_all::mutable_data_list(int index) {
+inline ::faith::time_activity_s2c_activity_info* time_activity_s2c_activity_info_all::mutable_data_list(int index) {
   return data_list_.Mutable(index);
 }
-inline ::hld::time_activity_s2c_activity_info* time_activity_s2c_activity_info_all::add_data_list() {
+inline ::faith::time_activity_s2c_activity_info* time_activity_s2c_activity_info_all::add_data_list() {
   return data_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::time_activity_s2c_activity_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::time_activity_s2c_activity_info >&
 time_activity_s2c_activity_info_all::data_list() const {
   return data_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::time_activity_s2c_activity_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::time_activity_s2c_activity_info >*
 time_activity_s2c_activity_info_all::mutable_data_list() {
   return &data_list_;
 }
@@ -1632,7 +1632,7 @@ inline void time_activity_s2c_wheel_plate_end::set_item_count(::google::protobuf
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

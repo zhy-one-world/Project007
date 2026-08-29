@@ -9,7 +9,7 @@
 
 #include "db_manager.hpp"
 
-namespace hld
+namespace faith
 {
 	//½ÇÉ«¹ØÏµ
 	void ws2dp_req_load_player_relation(uint32 connindex, const void* data_ptr, size_t data_len);

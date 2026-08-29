@@ -19,7 +19,7 @@
 /************************************************************************/
 /*                            Maroc Define                              */
 /************************************************************************/
-namespace hld
+namespace faith
 {
 	enum e_dropbox_owner_type;
 	struct s_fake_player_info;
@@ -51,7 +51,7 @@ namespace hld
 		void			init_att_over();
 		virtual void	send_message_to_self(void* data, uint32 date_len) {}
 		virtual void	send_message_to_aoi(google::protobuf::Message* net_pro, uint32 header, bool to_self = true, bool use_length = false);
-		virtual void	get_aoi_msg(hld::aoi_proto_unit_aoi_all& msg);
+		virtual void	get_aoi_msg(faith::aoi_proto_unit_aoi_all& msg);
 		virtual void	be_attacked(const int32& attack_index, const double hp);
 		virtual	void	be_dead(bool is_auto_put_into_bag = false);
 		virtual	bool	can_become_target();

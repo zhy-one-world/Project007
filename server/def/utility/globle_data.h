@@ -16,7 +16,7 @@
 #include "Logic/chat_def.hpp"
 #include "Logic/auction_def.h"
 
-namespace hld
+namespace faith
 {
 	typedef std::vector<fvector> map_point_vec ;
 	struct RegionTemplate;

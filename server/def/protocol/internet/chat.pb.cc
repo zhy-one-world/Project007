@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -793,10 +793,10 @@ void protobuf_AddDesc_chat_2eproto() {
     "t_text\022\023\n\013sender_guid\030\001 \003(\005\022\014\n\004text\030\002 \001("
     "\t\022\020\n\010chat_typ\030\003 \001(\005\022\026\n\016addressee_guid\030\004 "
     "\003(\005\022\026\n\016addressee_name\030\005 \001(\t\0221\n\titem_list"
-    "\030\006 \003(\0132\036.hld.chat_proto.chat_item_info\022\023"
+    "\030\006 \003(\0132\036.faith.chat_proto.chat_item_info\022\023"
     "\n\013sender_name\030\007 \001(\t\022\020\n\010text_num\030\010 \001(\005\032h\n"
     "\022chat_text_and_item\022\021\n\trole_guid\030\001 \003(\005\022\014"
-    "\n\004text\030\002 \001(\t\0221\n\titem_list\030\003 \003(\0132\036.hld.ch"
+    "\n\004text\030\002 \001(\t\0221\n\titem_list\030\003 \003(\0132\036.faith.ch"
     "at_proto.chat_item_info\0328\n\013chat_result\022\026"
     "\n\016chat_result_id\030\001 \001(\005\022\021\n\tchat_type\030\002 \001("
     "\005\032\317\001\n\021chat_content_info\022\024\n\nCommonText\030\001 "
@@ -806,7 +806,7 @@ void protobuf_AddDesc_chat_2eproto() {
     "(\005\022\023\n\013template_id\030\010 \001(\005\022\032\n\022face_finish_i"
     "mg_id\030\t \001(\005\032\205\004\n\014chat_content\022\023\n\013sender_g"
     "uid\030\001 \001(\003\022\032\n\022sender_template_id\030\002 \001(\005\022=\n"
-    "\022content_info_array\030\003 \003(\0132!.hld.chat_pro"
+    "\022content_info_array\030\003 \003(\0132!.faith.chat_pro"
     "to.chat_content_info\022\020\n\010chat_typ\030\004 \001(\005\022\026"
     "\n\016addressee_guid\030\005 \003(\005\022\026\n\016addressee_name"
     "\030\006 \001(\t\022\023\n\013sender_name\030\007 \001(\t\022\034\n\024relation_"
@@ -858,14 +858,14 @@ void protobuf_AddDesc_chat_2eproto() {
     "\030\001 \001(\005\022\021\n\trole_name\030\002 \001(\t\022\017\n\007is_join\030\003 \001"
     "(\010\032.\n\017chat_one_record\022\013\n\003pos\030\001 \001(\005\022\016\n\006re"
     "cord\030\002 \001(\t\032Y\n\017chat_all_record\022\021\n\trole_gu"
-    "id\030\001 \003(\005\0223\n\nchat_array\030\002 \003(\0132\037.hld.chat_"
+    "id\030\001 \003(\005\0223\n\nchat_array\030\002 \003(\0132\037.faith.chat_"
     "proto.chat_one_record\032/\n\020chat_record_ope"
     "r\022\013\n\003pos\030\001 \001(\005\022\016\n\006record\030\002 \001(\t\0323\n\024chat_r"
     "ecord_oper_end\022\013\n\003pos\030\001 \001(\005\022\016\n\006result\030\002 "
     "\001(\005\032,\n\024send_subscribe_daily\022\024\n\014must_do_t"
     "ype\030\001 \001(\005\032*\n\030send_subscribe_daily_end\022\016\n"
     "\006result\030\001 \001(\005\032T\n\031send_subscribe_daily_in"
-    "fo\0227\n\tinfo_list\030\001 \003(\0132$.hld.chat_proto.s"
+    "fo\0227\n\tinfo_list\030\001 \003(\0132$.faith.chat_proto.s"
     "ubscribe_daily_info\032>\n\024subscribe_daily_i"
     "nfo\022\022\n\ndailt_type\030\001 \001(\005\022\022\n\ninfo_state\030\002 "
     "\001(\005", 3363);
@@ -1843,7 +1843,7 @@ bool chat_proto_chat_text::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.chat_proto.chat_item_info item_list = 6;
+      // repeated .faith.chat_proto.chat_item_info item_list = 6;
       case 6: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1944,7 +1944,7 @@ void chat_proto_chat_text::SerializeWithCachedSizes(
       5, this->addressee_name(), output);
   }
 
-  // repeated .hld.chat_proto.chat_item_info item_list = 6;
+  // repeated .faith.chat_proto.chat_item_info item_list = 6;
   for (int i = 0; i < this->item_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       6, this->item_list(i), output);
@@ -2009,7 +2009,7 @@ void chat_proto_chat_text::SerializeWithCachedSizes(
         5, this->addressee_name(), target);
   }
 
-  // repeated .hld.chat_proto.chat_item_info item_list = 6;
+  // repeated .faith.chat_proto.chat_item_info item_list = 6;
   for (int i = 0; i < this->item_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -2098,7 +2098,7 @@ int chat_proto_chat_text::ByteSize() const {
     total_size += 1 * this->addressee_guid_size() + data_size;
   }
 
-  // repeated .hld.chat_proto.chat_item_info item_list = 6;
+  // repeated .faith.chat_proto.chat_item_info item_list = 6;
   total_size += 1 * this->item_list_size();
   for (int i = 0; i < this->item_list_size(); i++) {
     total_size +=
@@ -2316,7 +2316,7 @@ bool chat_proto_chat_text_and_item::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.chat_proto.chat_item_info item_list = 3;
+      // repeated .faith.chat_proto.chat_item_info item_list = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2364,7 +2364,7 @@ void chat_proto_chat_text_and_item::SerializeWithCachedSizes(
       2, this->text(), output);
   }
 
-  // repeated .hld.chat_proto.chat_item_info item_list = 3;
+  // repeated .faith.chat_proto.chat_item_info item_list = 3;
   for (int i = 0; i < this->item_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->item_list(i), output);
@@ -2394,7 +2394,7 @@ void chat_proto_chat_text_and_item::SerializeWithCachedSizes(
         2, this->text(), target);
   }
 
-  // repeated .hld.chat_proto.chat_item_info item_list = 3;
+  // repeated .faith.chat_proto.chat_item_info item_list = 3;
   for (int i = 0; i < this->item_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -2430,7 +2430,7 @@ int chat_proto_chat_text_and_item::ByteSize() const {
     total_size += 1 * this->role_guid_size() + data_size;
   }
 
-  // repeated .hld.chat_proto.chat_item_info item_list = 3;
+  // repeated .faith.chat_proto.chat_item_info item_list = 3;
   total_size += 1 * this->item_list_size();
   for (int i = 0; i < this->item_list_size(); i++) {
     total_size +=
@@ -3520,7 +3520,7 @@ bool chat_proto_chat_content::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.chat_proto.chat_content_info content_info_array = 3;
+      // repeated .faith.chat_proto.chat_content_info content_info_array = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -3844,7 +3844,7 @@ void chat_proto_chat_content::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->sender_template_id(), output);
   }
 
-  // repeated .hld.chat_proto.chat_content_info content_info_array = 3;
+  // repeated .faith.chat_proto.chat_content_info content_info_array = 3;
   for (int i = 0; i < this->content_info_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->content_info_array(i), output);
@@ -3966,7 +3966,7 @@ void chat_proto_chat_content::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->sender_template_id(), target);
   }
 
-  // repeated .hld.chat_proto.chat_content_info content_info_array = 3;
+  // repeated .faith.chat_proto.chat_content_info content_info_array = 3;
   for (int i = 0; i < this->content_info_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -4214,7 +4214,7 @@ int chat_proto_chat_content::ByteSize() const {
     }
 
   }
-  // repeated .hld.chat_proto.chat_content_info content_info_array = 3;
+  // repeated .faith.chat_proto.chat_content_info content_info_array = 3;
   total_size += 1 * this->content_info_array_size();
   for (int i = 0; i < this->content_info_array_size(); i++) {
     total_size +=
@@ -9342,7 +9342,7 @@ bool chat_proto_chat_all_record::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.chat_proto.chat_one_record chat_array = 2;
+      // repeated .faith.chat_proto.chat_one_record chat_array = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -9381,7 +9381,7 @@ void chat_proto_chat_all_record::SerializeWithCachedSizes(
       1, this->role_guid(i), output);
   }
 
-  // repeated .hld.chat_proto.chat_one_record chat_array = 2;
+  // repeated .faith.chat_proto.chat_one_record chat_array = 2;
   for (int i = 0; i < this->chat_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->chat_array(i), output);
@@ -9401,7 +9401,7 @@ void chat_proto_chat_all_record::SerializeWithCachedSizes(
       WriteInt32ToArray(1, this->role_guid(i), target);
   }
 
-  // repeated .hld.chat_proto.chat_one_record chat_array = 2;
+  // repeated .faith.chat_proto.chat_one_record chat_array = 2;
   for (int i = 0; i < this->chat_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -9428,7 +9428,7 @@ int chat_proto_chat_all_record::ByteSize() const {
     total_size += 1 * this->role_guid_size() + data_size;
   }
 
-  // repeated .hld.chat_proto.chat_one_record chat_array = 2;
+  // repeated .faith.chat_proto.chat_one_record chat_array = 2;
   total_size += 1 * this->chat_array_size();
   for (int i = 0; i < this->chat_array_size(); i++) {
     total_size +=
@@ -10498,7 +10498,7 @@ bool chat_proto_send_subscribe_daily_info::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.chat_proto.subscribe_daily_info info_list = 1;
+      // repeated .faith.chat_proto.subscribe_daily_info info_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -10531,7 +10531,7 @@ bool chat_proto_send_subscribe_daily_info::MergePartialFromCodedStream(
 
 void chat_proto_send_subscribe_daily_info::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.chat_proto.subscribe_daily_info info_list = 1;
+  // repeated .faith.chat_proto.subscribe_daily_info info_list = 1;
   for (int i = 0; i < this->info_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->info_list(i), output);
@@ -10545,7 +10545,7 @@ void chat_proto_send_subscribe_daily_info::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* chat_proto_send_subscribe_daily_info::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.chat_proto.subscribe_daily_info info_list = 1;
+  // repeated .faith.chat_proto.subscribe_daily_info info_list = 1;
   for (int i = 0; i < this->info_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -10562,7 +10562,7 @@ void chat_proto_send_subscribe_daily_info::SerializeWithCachedSizes(
 int chat_proto_send_subscribe_daily_info::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.chat_proto.subscribe_daily_info info_list = 1;
+  // repeated .faith.chat_proto.subscribe_daily_info info_list = 1;
   total_size += 1 * this->info_list_size();
   for (int i = 0; i < this->info_list_size(); i++) {
     total_size +=
@@ -11040,6 +11040,6 @@ void chat_proto::Swap(chat_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

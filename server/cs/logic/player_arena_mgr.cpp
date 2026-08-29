@@ -25,7 +25,7 @@ purpose: about arena system's arena_mgr
 #include "internal/arena_msg.hpp"
 #include "utility/globle_data.h"
 
-namespace hld
+namespace faith
 {
 	player_arena_mgr::challenge_name_map   player_arena_mgr::name_map;
 
@@ -67,7 +67,7 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2ws_proto::req_get_arena_rank pro_msg;
+			faith::cs2ws_proto::req_get_arena_rank pro_msg;
 			req.to_proto(pro_msg);
 
 			connection_mgr::getInstance().send_to_ws_lua(&pro_msg, e_msg_index_cs2ws_req_get_arena_rank, 0);
@@ -131,7 +131,7 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2ws_proto::chellenge_over pro_msg;
+			faith::cs2ws_proto::chellenge_over pro_msg;
 			req.to_proto(pro_msg);
 			connection_mgr::getInstance().send_to_ws_lua(&pro_msg, e_msg_index_cs2ws_chellenge_over);
 		}
@@ -293,7 +293,7 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2ws_proto::req_choose_list pro_msg;
+			faith::cs2ws_proto::req_choose_list pro_msg;
 			req.to_proto(pro_msg);
 			connection_mgr::getInstance().send_to_ws_lua(&pro_msg, e_msg_index_cs2ws_req_challenge_list);
 		}
@@ -317,7 +317,7 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2ws_proto::first_three pro_msg;
+			faith::cs2ws_proto::first_three pro_msg;
 			req.to_proto(pro_msg);
 			connection_mgr::getInstance().send_to_ws_lua(&pro_msg, e_msg_index_cs2ws_first_three);
 		}
@@ -362,7 +362,7 @@ namespace hld
 	void player_arena_mgr::lua_req_match_player_end(const char *data_ptr, int32 data_len)
 	{
 
-		hld::ws2cs_proto::req_choose_list msg;
+		faith::ws2cs_proto::req_choose_list msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (is_sucess == false)
 		{
@@ -472,7 +472,7 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2ws_proto::req_challenge_msg pro_msg;
+			faith::cs2ws_proto::req_challenge_msg pro_msg;
 			req.to_proto(pro_msg);
 			connection_mgr::getInstance().send_to_ws_lua(&pro_msg, e_msg_index_cs2ws_req_challenge);
 		}
@@ -839,7 +839,7 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2ws_proto::arena_sync_gs_value pro_msg;
+			faith::cs2ws_proto::arena_sync_gs_value pro_msg;
 			req.to_proto(pro_msg);
 			connection_mgr::getInstance().send_to_ws_lua(&pro_msg, e_msg_index_cs2ws_arena_sync_gs_value);
 		}
@@ -881,7 +881,7 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2ws_proto::req_challenge_msg pro_msg;
+			faith::cs2ws_proto::req_challenge_msg pro_msg;
 			req.to_proto(pro_msg);
 			connection_mgr::getInstance().send_to_ws_lua(&pro_msg, e_msg_index_cs2ws_req_challenge);
 		}

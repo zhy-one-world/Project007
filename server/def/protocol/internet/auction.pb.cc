@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -640,7 +640,7 @@ void protobuf_AddDesc_auction_2eproto() {
     "(\003\022\021\n\titem_info\030\024 \003(\005\022\017\n\007is_sell\030\025 \001(\010\022\017"
     "\n\007is_show\030\026 \001(\005\032m\n\033update_selling_auctio"
     "n_list\022\025\n\ris_need_clean\030\001 \001(\010\0227\n\titem_li"
-    "st\030\002 \003(\0132$.hld.auction_proto.auction_ite"
+    "st\030\002 \003(\0132$.faith.auction_proto.auction_ite"
     "m_info\0326\n\032receieve_sell_success_info\022\030\n\020"
     "item_template_id\030\001 \001(\005\032\236\002\n\020req_auction_l"
     "ist\022\021\n\tmain_type\030\001 \001(\005\022\020\n\010sub_type\030\002 \001(\005"
@@ -657,13 +657,13 @@ void protobuf_AddDesc_auction_2eproto() {
     "q_trade_record\022\022\n\ntrade_type\030\001 \001(\005\022\022\n\npa"
     "ge_index\030\002 \001(\005\032\201\001\n\024req_trade_record_end\022"
     "\030\n\020total_record_num\030\001 \001(\005\022\026\n\016cur_page_in"
-    "dex\030\002 \001(\005\0227\n\titem_list\030\003 \003(\0132$.hld.aucti"
+    "dex\030\002 \001(\005\0227\n\titem_list\030\003 \003(\0132$.faith.aucti"
     "on_proto.auction_item_info\032J\n\025req_anothe"
     "r_sell_info\022\027\n\017sell_money_type\030\001 \001(\005\022\030\n\020"
     "item_template_id\030\002 \001(\005\032\260\001\n\031req_another_s"
     "ell_info_end\022\027\n\017sell_money_type\030\001 \001(\005\022\030\n"
     "\020item_template_id\030\002 \001(\005\0227\n\titem_list\030\003 \003"
-    "(\0132$.hld.auction_proto.auction_item_info"
+    "(\0132$.faith.auction_proto.auction_item_info"
     "\022\020\n\010is_final\030\004 \001(\010\022\025\n\ris_need_clear\030\005 \001("
     "\010\032n\n\rtrade_operate\022\022\n\ntrade_guid\030\001 \001(\003\022\024"
     "\n\014operate_type\030\002 \001(\005\022\030\n\020price_money_type"
@@ -680,7 +680,7 @@ void protobuf_AddDesc_auction_2eproto() {
     "\017sell_money_type\030\006 \001(\005\022\031\n\021cur_bid_money_"
     "str\030\007 \001(\t\022\025\n\rcur_bid_money\030\010 \003(\005\022\021\n\titem"
     "_info\030\t \003(\005\032b\n\032auction_bid_record_failur"
-    "e\022D\n\024auction_record_array\030\001 \003(\0132&.hld.au"
+    "e\022D\n\024auction_record_array\030\001 \003(\0132&.faith.au"
     "ction_proto.auction_item_single\032\331\001\n\022auct"
     "ion_bid_single\022\021\n\titem_guid\030\001 \003(\005\022\023\n\013cre"
     "ate_time\030\002 \001(\005\022\023\n\013template_id\030\003 \001(\005\022\024\n\014t"
@@ -689,7 +689,7 @@ void protobuf_AddDesc_auction_2eproto() {
     "er_guid\030\010 \003(\005\022\023\n\013update_time\030\t \001(\005\022\017\n\007is"
     "_read\030\n \001(\005\032h\n\022auction_bid_notice\022\021\n\trol"
     "e_guid\030\001 \003(\005\022\?\n\020bid_notice_array\030\002 \003(\0132%"
-    ".hld.auction_proto.auction_bid_single\032;\n"
+    ".faith.auction_proto.auction_bid_single\032;\n"
     "\026auction_bid_notice_red\022\021\n\trole_guid\030\001 \003"
     "(\005\022\016\n\006is_red\030\002 \003(\005", 2898);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
@@ -2728,7 +2728,7 @@ bool auction_proto_update_selling_auction_list::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.auction_proto.auction_item_info item_list = 2;
+      // repeated .faith.auction_proto.auction_item_info item_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2766,7 +2766,7 @@ void auction_proto_update_selling_auction_list::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->is_need_clean(), output);
   }
 
-  // repeated .hld.auction_proto.auction_item_info item_list = 2;
+  // repeated .faith.auction_proto.auction_item_info item_list = 2;
   for (int i = 0; i < this->item_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->item_list(i), output);
@@ -2785,7 +2785,7 @@ void auction_proto_update_selling_auction_list::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->is_need_clean(), target);
   }
 
-  // repeated .hld.auction_proto.auction_item_info item_list = 2;
+  // repeated .faith.auction_proto.auction_item_info item_list = 2;
   for (int i = 0; i < this->item_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -2809,7 +2809,7 @@ int auction_proto_update_selling_auction_list::ByteSize() const {
     }
 
   }
-  // repeated .hld.auction_proto.auction_item_info item_list = 2;
+  // repeated .faith.auction_proto.auction_item_info item_list = 2;
   total_size += 1 * this->item_list_size();
   for (int i = 0; i < this->item_list_size(); i++) {
     total_size +=
@@ -3843,7 +3843,7 @@ bool auction_proto_req_auction_list_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.auction_proto.auction_item_info item_list = 1;
+      // repeated .faith.auction_proto.auction_item_info item_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -3940,7 +3940,7 @@ bool auction_proto_req_auction_list_end::MergePartialFromCodedStream(
 
 void auction_proto_req_auction_list_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.auction_proto.auction_item_info item_list = 1;
+  // repeated .faith.auction_proto.auction_item_info item_list = 1;
   for (int i = 0; i < this->item_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->item_list(i), output);
@@ -3974,7 +3974,7 @@ void auction_proto_req_auction_list_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* auction_proto_req_auction_list_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.auction_proto.auction_item_info item_list = 1;
+  // repeated .faith.auction_proto.auction_item_info item_list = 1;
   for (int i = 0; i < this->item_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -4037,7 +4037,7 @@ int auction_proto_req_auction_list_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.auction_proto.auction_item_info item_list = 1;
+  // repeated .faith.auction_proto.auction_item_info item_list = 1;
   total_size += 1 * this->item_list_size();
   for (int i = 0; i < this->item_list_size(); i++) {
     total_size +=
@@ -4481,7 +4481,7 @@ bool auction_proto_req_trade_record_end::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.auction_proto.auction_item_info item_list = 3;
+      // repeated .faith.auction_proto.auction_item_info item_list = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -4524,7 +4524,7 @@ void auction_proto_req_trade_record_end::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->cur_page_index(), output);
   }
 
-  // repeated .hld.auction_proto.auction_item_info item_list = 3;
+  // repeated .faith.auction_proto.auction_item_info item_list = 3;
   for (int i = 0; i < this->item_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->item_list(i), output);
@@ -4548,7 +4548,7 @@ void auction_proto_req_trade_record_end::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->cur_page_index(), target);
   }
 
-  // repeated .hld.auction_proto.auction_item_info item_list = 3;
+  // repeated .faith.auction_proto.auction_item_info item_list = 3;
   for (int i = 0; i < this->item_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -4581,7 +4581,7 @@ int auction_proto_req_trade_record_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.auction_proto.auction_item_info item_list = 3;
+  // repeated .faith.auction_proto.auction_item_info item_list = 3;
   total_size += 1 * this->item_list_size();
   for (int i = 0; i < this->item_list_size(); i++) {
     total_size +=
@@ -5023,7 +5023,7 @@ bool auction_proto_req_another_sell_info_end::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.auction_proto.auction_item_info item_list = 3;
+      // repeated .faith.auction_proto.auction_item_info item_list = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -5098,7 +5098,7 @@ void auction_proto_req_another_sell_info_end::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->item_template_id(), output);
   }
 
-  // repeated .hld.auction_proto.auction_item_info item_list = 3;
+  // repeated .faith.auction_proto.auction_item_info item_list = 3;
   for (int i = 0; i < this->item_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->item_list(i), output);
@@ -5132,7 +5132,7 @@ void auction_proto_req_another_sell_info_end::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->item_template_id(), target);
   }
 
-  // repeated .hld.auction_proto.auction_item_info item_list = 3;
+  // repeated .faith.auction_proto.auction_item_info item_list = 3;
   for (int i = 0; i < this->item_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -5185,7 +5185,7 @@ int auction_proto_req_another_sell_info_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.auction_proto.auction_item_info item_list = 3;
+  // repeated .faith.auction_proto.auction_item_info item_list = 3;
   total_size += 1 * this->item_list_size();
   for (int i = 0; i < this->item_list_size(); i++) {
     total_size +=
@@ -7221,7 +7221,7 @@ bool auction_proto_auction_bid_record_failure::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.auction_proto.auction_item_single auction_record_array = 1;
+      // repeated .faith.auction_proto.auction_item_single auction_record_array = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -7254,7 +7254,7 @@ bool auction_proto_auction_bid_record_failure::MergePartialFromCodedStream(
 
 void auction_proto_auction_bid_record_failure::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.auction_proto.auction_item_single auction_record_array = 1;
+  // repeated .faith.auction_proto.auction_item_single auction_record_array = 1;
   for (int i = 0; i < this->auction_record_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->auction_record_array(i), output);
@@ -7268,7 +7268,7 @@ void auction_proto_auction_bid_record_failure::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* auction_proto_auction_bid_record_failure::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.auction_proto.auction_item_single auction_record_array = 1;
+  // repeated .faith.auction_proto.auction_item_single auction_record_array = 1;
   for (int i = 0; i < this->auction_record_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -7285,7 +7285,7 @@ void auction_proto_auction_bid_record_failure::SerializeWithCachedSizes(
 int auction_proto_auction_bid_record_failure::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.auction_proto.auction_item_single auction_record_array = 1;
+  // repeated .faith.auction_proto.auction_item_single auction_record_array = 1;
   total_size += 1 * this->auction_record_array_size();
   for (int i = 0; i < this->auction_record_array_size(); i++) {
     total_size +=
@@ -8056,7 +8056,7 @@ bool auction_proto_auction_bid_notice::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.auction_proto.auction_bid_single bid_notice_array = 2;
+      // repeated .faith.auction_proto.auction_bid_single bid_notice_array = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -8095,7 +8095,7 @@ void auction_proto_auction_bid_notice::SerializeWithCachedSizes(
       1, this->role_guid(i), output);
   }
 
-  // repeated .hld.auction_proto.auction_bid_single bid_notice_array = 2;
+  // repeated .faith.auction_proto.auction_bid_single bid_notice_array = 2;
   for (int i = 0; i < this->bid_notice_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->bid_notice_array(i), output);
@@ -8115,7 +8115,7 @@ void auction_proto_auction_bid_notice::SerializeWithCachedSizes(
       WriteInt32ToArray(1, this->role_guid(i), target);
   }
 
-  // repeated .hld.auction_proto.auction_bid_single bid_notice_array = 2;
+  // repeated .faith.auction_proto.auction_bid_single bid_notice_array = 2;
   for (int i = 0; i < this->bid_notice_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -8142,7 +8142,7 @@ int auction_proto_auction_bid_notice::ByteSize() const {
     total_size += 1 * this->role_guid_size() + data_size;
   }
 
-  // repeated .hld.auction_proto.auction_bid_single bid_notice_array = 2;
+  // repeated .faith.auction_proto.auction_bid_single bid_notice_array = 2;
   total_size += 1 * this->bid_notice_array_size();
   for (int i = 0; i < this->bid_notice_array_size(); i++) {
     total_size +=
@@ -8633,6 +8633,6 @@ void auction_proto::Swap(auction_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

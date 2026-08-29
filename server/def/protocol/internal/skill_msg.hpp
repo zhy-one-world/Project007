@@ -14,7 +14,7 @@
 #include "Logic/skill_def.hpp"
 #include "base.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	enum

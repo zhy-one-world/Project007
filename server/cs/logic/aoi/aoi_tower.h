@@ -10,7 +10,7 @@ purpose:
 #define _AOI_TOWER_H_
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class aoi_tower
 	{

@@ -18,7 +18,7 @@
 #include <Logic/transfer_def.hpp>
 #include <net/net_client_mgr.hpp>
 #include "utility/serialize_msg.h"
-namespace hld
+namespace faith
 {
 	/************************************************************************/
 	/*							  Class Declare                             */

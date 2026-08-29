@@ -23,7 +23,7 @@ change list :
 //
 //////////////////////////////////////////////////////////////////////////
 
-namespace hld
+namespace faith
 {
 	typedef std::map<int32, s_legion_skill_info> legion_skill_map;
 	typedef legion_skill_map::iterator legion_skill_map_it;

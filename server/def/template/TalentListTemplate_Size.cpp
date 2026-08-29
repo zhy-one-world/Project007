@@ -1,6 +1,6 @@
 #include "TalentListTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void TalentListTemplateSize()
     {

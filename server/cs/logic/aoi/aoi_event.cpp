@@ -16,7 +16,7 @@ purpose:
 #include "internet/net.pb.h"
 #include "server_log.hpp"
 #include "aoi_def.h"
-namespace hld
+namespace faith
 {
 	int32 m_aoi_tower_ary[init_player_max];
 	aoi_proto_aoi_pos_update m_aoi_update_msg;

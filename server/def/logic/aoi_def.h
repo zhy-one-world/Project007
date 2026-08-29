@@ -13,7 +13,7 @@ purpose:
 #include "logic/type_def.hpp"
 #include "Logic/char_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	const int32 AOI_SEE_TOWER_NUM = 10;

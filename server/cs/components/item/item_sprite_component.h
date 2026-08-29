@@ -3,7 +3,7 @@
 #include "logic/type_def.hpp"
 #include "template/SpiritTemplate_S.h"
 
-namespace hld
+namespace faith
 {
 	struct item_sprite_component
 	{

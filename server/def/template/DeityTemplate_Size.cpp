@@ -1,6 +1,6 @@
 #include "DeityTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void DeityTemplateSize()
     {

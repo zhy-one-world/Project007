@@ -9,7 +9,7 @@
 #include "game.pb.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	gain_treasure_ws_mgr::gain_treasure_ws_mgr()
 	{
@@ -441,7 +441,7 @@ namespace hld
 		if (is_use_lua())
 		{
 			s_gain_treasure_boss_info& tmp = const_cast<s_gain_treasure_boss_info& >(boss_info);
-			hld::st_proto::st_gain_treasure_boss_info pro_msg;
+			faith::st_proto::st_gain_treasure_boss_info pro_msg;
 			tmp.to_proto(&pro_msg);
 			packet_s2s * p_s2s = parse_msg::getInstance().serialze_buffer(&pro_msg);
 			if (p_s2s == nullptr)

@@ -11,7 +11,7 @@
 #include "utility/parse_msg.h"
 #include "internet/cs2dp.pb.h"
 
-namespace hld
+namespace faith
 {
 	person_information_mgr::person_information_mgr()
 	{
@@ -104,7 +104,7 @@ namespace hld
 		{
 			//ÔÚÏß
 			s_role_person_information role_info = target_ref.get_person_infor_mgr().get_person_info();
-			hld::character_proto_sync_person_information msg;
+			faith::character_proto_sync_person_information msg;
 			msg.set_is_main_player(false);
 			msg.set_infor_state(role_info.infor_state);
 			msg.set_reward_state(role_info.reward_state);
@@ -140,7 +140,7 @@ namespace hld
 	}
 	void person_information_mgr::get_other_person_information_to_dp_end(guid_64 target_guid, s_role_person_information role_info,bool is_ask_player_base_info)
 	{
-		hld::character_proto_sync_person_information msg;
+		faith::character_proto_sync_person_information msg;
 		msg.set_is_main_player(false);
 		msg.set_infor_state(role_info.infor_state);
 		msg.set_reward_state(role_info.reward_state);
@@ -182,7 +182,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_person_information_db msg;
+		faith::cs2dp_proto::role_person_information_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -231,11 +231,11 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_person_information msg;
+			faith::cs2dp_proto::save_role_person_information msg;
 			msg.set_role_guid(player_ref.get_unit_guid().server_64);
 			msg.set_unit_array_index(m_array_index);
 			msg.set_save_type_ex(eType);
-			hld::cs2dp_proto::role_person_information_db *db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_person_information_db *db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return;
@@ -266,7 +266,7 @@ namespace hld
 	}
 	void person_information_mgr::sync_to_client()
 	{
-		hld::character_proto_sync_person_information msg;
+		faith::character_proto_sync_person_information msg;
 		msg.set_is_main_player(true);
 		msg.set_infor_state(m_cur_person_info.infor_state);
 		msg.set_reward_state(m_cur_person_info.reward_state);

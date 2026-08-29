@@ -22,7 +22,7 @@
 #include "login_msg.hpp"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	client_session_mgr::client_session_mgr(void)
 	{

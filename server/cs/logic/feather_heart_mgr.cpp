@@ -6,7 +6,7 @@
 #include "utility/globle_data.h"
 #include "utility/init_unit.h"
 
-namespace hld
+namespace faith
 {
 	feather_heart_mgr::feather_heart_mgr()
 	{

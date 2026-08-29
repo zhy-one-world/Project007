@@ -8,7 +8,7 @@
 #include "count_def.hpp"
 #include "template/ServerTemplateHead.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
@@ -345,7 +345,7 @@ namespace hld
 			return data_ary[e_legion_member_info_week_contribution] > other_info.data_ary[e_legion_member_info_week_contribution];
 		}
 
-		bool to_proto(hld::st_proto::st_legion_member_info *st_member_ptr)
+		bool to_proto(faith::st_proto::st_legion_member_info *st_member_ptr)
 		{
 			if (st_member_ptr == nullptr)
 			{
@@ -371,7 +371,7 @@ namespace hld
 			memcpy(dst, str.c_str(), len);
 		}
 
-		void  from_proto(const hld::st_proto::st_legion_member_info& st_member_ref)
+		void  from_proto(const faith::st_proto::st_legion_member_info& st_member_ref)
 		{
 			role_guid.server_64 = st_member_ref.role_guid();
 			my_memcopy_string(role_name, max_name_size, st_member_ref.role_name());
@@ -645,7 +645,7 @@ namespace hld
 		{
 			return score > other.score;
 		}
-		bool to_proto(hld::st_proto::st_city_war_legion_score* st_city_war_ptr)
+		bool to_proto(faith::st_proto::st_city_war_legion_score* st_city_war_ptr)
 		{
 			if (st_city_war_ptr == nullptr)
 			{
@@ -666,7 +666,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::st_proto::st_city_war_legion_score& st_city_war_ref)
+		void from_proto(const faith::st_proto::st_city_war_legion_score& st_city_war_ref)
 		{
 			legion_guid.server_64 = st_city_war_ref.legion_guid();
 			my_memcopy_string(legion_name, max_name_size, st_city_war_ref.legion_name());
@@ -914,7 +914,7 @@ namespace hld
 		{
 			memcpy(legion_name, name.c_str(), name.size() > max_name_size ? max_name_size : name.size());
 		}
-		bool to_proto(hld::st_proto::st_player_legion_info *st_legion_ptr)
+		bool to_proto(faith::st_proto::st_player_legion_info *st_legion_ptr)
 		{
 			if (st_legion_ptr == nullptr)
 			{
@@ -944,7 +944,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::st_proto::st_player_legion_info& st_legion_ref)
+		void from_proto(const faith::st_proto::st_player_legion_info& st_legion_ref)
 		{
 			legion_guid.server_64 = st_legion_ref.legion_guid();
 			my_memcopy_string(legion_name, max_name_size, st_legion_ref.legion_name());
@@ -990,7 +990,7 @@ namespace hld
 		{
 			memset(this, 0, sizeof(s_legion_boss_award_get_log));
 		}
-		bool to_proto(hld::st_proto::st_legion_boss_award_get_log* st_log_ptr)
+		bool to_proto(faith::st_proto::st_legion_boss_award_get_log* st_log_ptr)
 		{
 			if (st_log_ptr == nullptr)
 			{
@@ -1004,7 +1004,7 @@ namespace hld
 			}
 			return true;
 		}
-		void from_proto(const hld::st_proto::st_legion_boss_award_get_log& st_log_ref)
+		void from_proto(const faith::st_proto::st_legion_boss_award_get_log& st_log_ref)
 		{
 			role_guid.server_64 = st_log_ref.role_guid();
 			get_logs_num = st_log_ref.get_logs_num();

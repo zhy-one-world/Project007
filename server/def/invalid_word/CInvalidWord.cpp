@@ -7,7 +7,7 @@
 #include "common\random.hpp"
 #include "template/template_manager.h"
 
-namespace hld
+namespace faith
 {
 	WideWordSet& CInvalidWord::GetInvalidWideWordSet(void)
 	{

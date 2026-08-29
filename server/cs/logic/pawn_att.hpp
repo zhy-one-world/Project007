@@ -3,7 +3,7 @@
 #include <Logic/att_def.hpp>
 #include "arena_def.hpp"
 
-namespace hld
+namespace faith
 {
 	struct s_adversity_aid
 	{
@@ -219,7 +219,7 @@ namespace hld
 	{
 		switch (att_type)
 		{
-		case hld::e_pawn_att_type_attack:
+		case faith::e_pawn_att_type_attack:
 		{
 			if (att_index < e_unit_attack_att_none || att_index >= e_unit_attack_att_max)
 			{
@@ -228,7 +228,7 @@ namespace hld
 			m_update_att_mask[att_index] = true;
 		}
 			break;
-		case hld::e_pawn_att_type_game:
+		case faith::e_pawn_att_type_game:
 		{
 			if (att_index < e_unit_game_att_movement || att_index >= e_unit_game_att_max)
 			{
@@ -237,7 +237,7 @@ namespace hld
 			m_update_att_mask[att_index + e_unit_attack_att_max] = true;
 		}
 			break;
-		case hld::e_pawn_att_type_state:
+		case faith::e_pawn_att_type_state:
 		{
 			if (att_index < e_unit_attack_state_dead || att_index >= e_unit_attack_state_max)
 			{
@@ -246,7 +246,7 @@ namespace hld
 			m_update_att_mask[att_index + e_unit_attack_att_max + e_unit_game_att_max] = true;
 		}
 		break;
-		case hld::e_pawn_att_type_sign:
+		case faith::e_pawn_att_type_sign:
 		{
 			if (att_index < e_unit_attack_state_dead || att_index >= e_unit_attack_state_max)
 			{

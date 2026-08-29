@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_map_5faward_2eproto();
@@ -127,7 +127,7 @@ class offline_award_proto_award_item : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 item_lock() const;
   inline void set_item_lock(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.offline_award_proto.award_item)
+  // @@protoc_insertion_point(class_scope:faith.offline_award_proto.award_item)
  private:
   inline void set_has_item_template_id();
   inline void clear_has_item_template_id();
@@ -225,7 +225,7 @@ class offline_award_proto_award_money : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 money_num() const;
   inline void set_money_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.offline_award_proto.award_money)
+  // @@protoc_insertion_point(class_scope:faith.offline_award_proto.award_money)
  private:
   inline void set_has_money_type();
   inline void clear_has_money_type();
@@ -310,39 +310,39 @@ class offline_award_proto_award_list : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 offline_time() const;
   inline void set_offline_time(::google::protobuf::int32 value);
 
-  // repeated .hld.offline_award_proto.award_item item_list = 2;
+  // repeated .faith.offline_award_proto.award_item item_list = 2;
   inline int item_list_size() const;
   inline void clear_item_list();
   static const int kItemListFieldNumber = 2;
-  inline const ::hld::offline_award_proto_award_item& item_list(int index) const;
-  inline ::hld::offline_award_proto_award_item* mutable_item_list(int index);
-  inline ::hld::offline_award_proto_award_item* add_item_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::offline_award_proto_award_item >&
+  inline const ::faith::offline_award_proto_award_item& item_list(int index) const;
+  inline ::faith::offline_award_proto_award_item* mutable_item_list(int index);
+  inline ::faith::offline_award_proto_award_item* add_item_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::offline_award_proto_award_item >&
       item_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::offline_award_proto_award_item >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::offline_award_proto_award_item >*
       mutable_item_list();
 
-  // repeated .hld.offline_award_proto.award_money money_list = 3;
+  // repeated .faith.offline_award_proto.award_money money_list = 3;
   inline int money_list_size() const;
   inline void clear_money_list();
   static const int kMoneyListFieldNumber = 3;
-  inline const ::hld::offline_award_proto_award_money& money_list(int index) const;
-  inline ::hld::offline_award_proto_award_money* mutable_money_list(int index);
-  inline ::hld::offline_award_proto_award_money* add_money_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::offline_award_proto_award_money >&
+  inline const ::faith::offline_award_proto_award_money& money_list(int index) const;
+  inline ::faith::offline_award_proto_award_money* mutable_money_list(int index);
+  inline ::faith::offline_award_proto_award_money* add_money_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::offline_award_proto_award_money >&
       money_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::offline_award_proto_award_money >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::offline_award_proto_award_money >*
       mutable_money_list();
 
-  // @@protoc_insertion_point(class_scope:hld.offline_award_proto.award_list)
+  // @@protoc_insertion_point(class_scope:faith.offline_award_proto.award_list)
  private:
   inline void set_has_offline_time();
   inline void clear_has_offline_time();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::offline_award_proto_award_item > item_list_;
-  ::google::protobuf::RepeatedPtrField< ::hld::offline_award_proto_award_money > money_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::offline_award_proto_award_item > item_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::offline_award_proto_award_money > money_list_;
   ::google::protobuf::int32 offline_time_;
 
   mutable int _cached_size_;
@@ -411,7 +411,7 @@ class offline_award_proto_get_award : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.offline_award_proto.get_award)
+  // @@protoc_insertion_point(class_scope:faith.offline_award_proto.get_award)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -490,7 +490,7 @@ class offline_award_proto_get_award_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 res() const;
   inline void set_res(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.offline_award_proto.get_award_end)
+  // @@protoc_insertion_point(class_scope:faith.offline_award_proto.get_award_end)
  private:
   inline void set_has_res();
   inline void clear_has_res();
@@ -571,7 +571,7 @@ class offline_award_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.offline_award_proto)
+  // @@protoc_insertion_point(class_scope:faith.offline_award_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -643,7 +643,7 @@ class online_award_proto_get_award : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.online_award_proto.get_award)
+  // @@protoc_insertion_point(class_scope:faith.online_award_proto.get_award)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -722,7 +722,7 @@ class online_award_proto_get_award_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 res() const;
   inline void set_res(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.online_award_proto.get_award_end)
+  // @@protoc_insertion_point(class_scope:faith.online_award_proto.get_award_end)
  private:
   inline void set_has_res();
   inline void clear_has_res();
@@ -800,7 +800,7 @@ class online_award_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.online_award_proto)
+  // @@protoc_insertion_point(class_scope:faith.online_award_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -985,52 +985,52 @@ inline void offline_award_proto_award_list::set_offline_time(::google::protobuf:
   offline_time_ = value;
 }
 
-// repeated .hld.offline_award_proto.award_item item_list = 2;
+// repeated .faith.offline_award_proto.award_item item_list = 2;
 inline int offline_award_proto_award_list::item_list_size() const {
   return item_list_.size();
 }
 inline void offline_award_proto_award_list::clear_item_list() {
   item_list_.Clear();
 }
-inline const ::hld::offline_award_proto_award_item& offline_award_proto_award_list::item_list(int index) const {
+inline const ::faith::offline_award_proto_award_item& offline_award_proto_award_list::item_list(int index) const {
   return item_list_.Get(index);
 }
-inline ::hld::offline_award_proto_award_item* offline_award_proto_award_list::mutable_item_list(int index) {
+inline ::faith::offline_award_proto_award_item* offline_award_proto_award_list::mutable_item_list(int index) {
   return item_list_.Mutable(index);
 }
-inline ::hld::offline_award_proto_award_item* offline_award_proto_award_list::add_item_list() {
+inline ::faith::offline_award_proto_award_item* offline_award_proto_award_list::add_item_list() {
   return item_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::offline_award_proto_award_item >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::offline_award_proto_award_item >&
 offline_award_proto_award_list::item_list() const {
   return item_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::offline_award_proto_award_item >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::offline_award_proto_award_item >*
 offline_award_proto_award_list::mutable_item_list() {
   return &item_list_;
 }
 
-// repeated .hld.offline_award_proto.award_money money_list = 3;
+// repeated .faith.offline_award_proto.award_money money_list = 3;
 inline int offline_award_proto_award_list::money_list_size() const {
   return money_list_.size();
 }
 inline void offline_award_proto_award_list::clear_money_list() {
   money_list_.Clear();
 }
-inline const ::hld::offline_award_proto_award_money& offline_award_proto_award_list::money_list(int index) const {
+inline const ::faith::offline_award_proto_award_money& offline_award_proto_award_list::money_list(int index) const {
   return money_list_.Get(index);
 }
-inline ::hld::offline_award_proto_award_money* offline_award_proto_award_list::mutable_money_list(int index) {
+inline ::faith::offline_award_proto_award_money* offline_award_proto_award_list::mutable_money_list(int index) {
   return money_list_.Mutable(index);
 }
-inline ::hld::offline_award_proto_award_money* offline_award_proto_award_list::add_money_list() {
+inline ::faith::offline_award_proto_award_money* offline_award_proto_award_list::add_money_list() {
   return money_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::offline_award_proto_award_money >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::offline_award_proto_award_money >&
 offline_award_proto_award_list::money_list() const {
   return money_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::offline_award_proto_award_money >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::offline_award_proto_award_money >*
 offline_award_proto_award_list::mutable_money_list() {
   return &money_list_;
 }
@@ -1106,7 +1106,7 @@ inline void online_award_proto_get_award_end::set_res(::google::protobuf::int32 
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

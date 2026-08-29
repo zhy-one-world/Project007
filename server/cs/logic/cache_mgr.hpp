@@ -10,7 +10,7 @@ purpose: 缓存管理系统
 #include "logic/type_def.hpp"
 #include "Logic/legion_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class player;
 	class npc;

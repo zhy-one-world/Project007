@@ -14,7 +14,7 @@
 #include "logic/type_def.hpp"
 #include <base.hpp>
 
-namespace hld
+namespace faith
 {
 	class msg_dispatch : public singleton<msg_dispatch>
 	{

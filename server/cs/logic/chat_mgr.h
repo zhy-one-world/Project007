@@ -13,7 +13,7 @@ purpose: about chat
 #include "Logic/item_def.hpp"
 #include "Logic/aoi_def.h"
 
-namespace hld
+namespace faith
 {
 	class player;
 

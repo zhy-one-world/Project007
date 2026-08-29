@@ -1,0 +1,74 @@
+{	
+	"server_base": {
+		"app_key": "10001",
+		"game_id": 10200,
+		"game_name": "hy",
+		"gm_state": true,
+		"init_player_num": 10,
+		"robot_account": "Faithrobot",
+		"web_address": "127.0.0.1",
+		"web_port": 9917,
+		"daemon_address": "127.0.0.1",
+		"daemon_port": 20000,
+		"billing_url": "http://127.0.0.1:1235/login",
+		"recharge_url": "http://127.0.0.1:1235/recharge",
+		"one_store_recharge_url": "http://127.0.0.1:1235/recharge",
+		"login_url": "http://billing.playtai.com/service-user/server/verify/form",
+		"server_state_url": "http://192.168.0.51:8077/fullServiceMange/managerServerStatus.action",
+		"account_info_url": "http://192.168.0.51:8077/fullServiceMange/pushAcountInfo.action"
+	},
+	"fep": {
+		"server_type": 3,
+		"external_host": "192.168.1.59",
+		"external_port": 2200
+	},
+	"gate": {
+		"server_type": 1,
+		"internal_host": "127.0.0.1",
+		"internal_port": 8000,
+		"gate_id": 19999
+	},
+	"ws": {
+		"server_type": 2,
+		"internal_host": "192.168.1.59",
+		"internal_port": 1000,
+		"http_port": 9918,	
+		"max_team_user_num": 2,
+		"max_room_team_num": 2,
+		"max_room_user_num": 4,
+		"sdk_url": "http://cn-gs.umi-game.cn/service-user/server/verify?",
+		"ds_url" : "http://192.168.0.192:8090/"
+	},
+	"cs": {
+		"server_type": 3,
+		"internal_host": "127.0.0.1",
+		"internal_port": 2100
+	},
+	"dp": {
+		"server_type": 5,
+		"internal_host": "127.0.0.1",
+		"internal_port": 3330,
+		"mysql_conn": [
+			{
+				"mysql_id": 0,
+				"ip_addr": "127.0.0.1",
+				"ip_port": 3306,
+				"user_name": "root",
+				"user_password": "123456",
+				"schema_name": "low_game_schema",
+				"thread_num": 18
+			},
+			{
+				"mysql_id": 1,
+				"ip_addr": "127.0.0.1",
+				"ip_port": 3306,
+				"user_name": "root",
+				"user_password": "123456",
+				"schema_name": "low_log_schema",
+				"thread_num": 18
+			}
+		],
+		"save_open" : 1,
+		"save_interval": 3600
+	}
+}

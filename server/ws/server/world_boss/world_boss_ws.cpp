@@ -2,7 +2,7 @@
 #include "utility/cs_date.hpp"
 #include "template/template_manager.h"
 
-namespace hld
+namespace faith
 {
 
 	world_boss_ws::world_boss_ws()

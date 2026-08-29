@@ -4,7 +4,7 @@
 #include "logic/type_def.hpp"
 #include "../server/client_session_mgr.hpp"
 
-namespace hld
+namespace faith
 {
 	class legion_proto_legion_call_operate;
 	class goods_proto_goods_operate;

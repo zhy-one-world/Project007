@@ -9,7 +9,7 @@ purpose: 缓存管理系统
 
 
 
-namespace hld
+namespace faith
 {
 	cache_ws_mgr::cache_ws_mgr()
 	{

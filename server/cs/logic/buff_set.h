@@ -15,7 +15,7 @@ purpose:
 #include "Logic/buff_def.hpp"
 #include "buff_item.h"
 
-namespace hld
+namespace faith
 {
 	class buff_proto_buff_save_load;
 

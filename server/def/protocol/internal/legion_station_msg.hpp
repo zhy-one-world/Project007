@@ -17,12 +17,12 @@ purpose:
 #include "utility/score_indicator.h"
 #include "Logic/chat_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	enum
 	{
-		e_msgindex_cs2ws_bonfire_create = hld::e_msg_legion_station,				//发送创建篝火成功到cs
+		e_msgindex_cs2ws_bonfire_create = faith::e_msg_legion_station,				//发送创建篝火成功到cs
 		e_msgindex_cs2ws_bonfire_end,
 		e_msgindex_ws2cs_send_bonfire_level,
 		e_msgindex_cs2ws_legion_boss_create,
@@ -30,7 +30,7 @@ namespace hld
 	};
 
 
-	struct cs2ws_bonfire_create : public hld::packet_base
+	struct cs2ws_bonfire_create : public faith::packet_base
 	{
 		guid_64		legion_guid;
 		cs2ws_bonfire_create()
@@ -40,7 +40,7 @@ namespace hld
 		}
 	};
 
-	struct cs2ws_bonfire_end : public hld::packet_base
+	struct cs2ws_bonfire_end : public faith::packet_base
 	{
 		guid_64		legion_guid;
 		cs2ws_bonfire_end()
@@ -50,7 +50,7 @@ namespace hld
 		}
 	};
 
-	struct ws2cs_send_bonfire_level : public hld::packet_base
+	struct ws2cs_send_bonfire_level : public faith::packet_base
 	{
 		guid_64		map_guid;
 		int32		bonfire_level;
@@ -59,12 +59,12 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_send_bonfire_level;
 		}
-		void to_proto(hld::ws2cs_proto::send_bonfire_level& msg)
+		void to_proto(faith::ws2cs_proto::send_bonfire_level& msg)
 		{
 			msg.set_map_guid(map_guid.server_64);
 			msg.set_bonfire_level(bonfire_level);
 		}
-		void from_proto(const hld::ws2cs_proto::send_bonfire_level& msg)
+		void from_proto(const faith::ws2cs_proto::send_bonfire_level& msg)
 		{
 			map_guid.server_64 = msg.map_guid();
 			bonfire_level = msg.bonfire_level();
@@ -72,7 +72,7 @@ namespace hld
 		}
 	};
 
-	struct cs2ws_legion_boss_create : public hld::packet_base
+	struct cs2ws_legion_boss_create : public faith::packet_base
 	{
 		guid_64		legion_guid;
 		int32		boss_template_id;

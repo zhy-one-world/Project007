@@ -5,7 +5,7 @@
 #include "logic/unit.hpp"
 #include "server_log.hpp"
 
-using namespace hld;
+using namespace faith;
 
 void item_base_system::start_up(unit* unit_ptr, Entity* item_ent, ItemTemplate* item_template, const item_s2s_item_data& msg)
 {

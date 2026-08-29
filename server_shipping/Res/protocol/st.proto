@@ -1,0 +1,401 @@
+syntax = "proto2";
+package hld;
+
+message st_proto
+{
+    
+	message st_login_fixed_data
+	{
+		optional string 		param1				= 1;
+		optional string 		param2 				= 2;	
+		optional string 		param3 				= 3;	
+		optional string 		param4 				= 4;	
+		optional string 		param5 				= 5;	
+		optional string 		param6 				= 6;	
+		optional string 		param7 				= 7;	
+		optional string 		param8 				= 8;	
+		optional string 		param9 				= 9;	
+		optional string 		param10				= 10;	
+		optional string 		param11 			= 11;
+		optional string			param12 			= 12;	
+		optional string 		param13 			= 13;	
+		optional string 		param14 			= 14;
+		optional string			param15				= 15;
+	}
+	
+	message st_player_team_info
+	{
+	   	optional  int64	team_guid = 1;
+		optional  int64	captain_guid = 2;
+		optional  int32	member_num = 3;
+		optional  int32	team_map_id = 4;
+		optional  int32	team_type = 5;
+		optional  int32	team_sub_type_id = 6;
+		optional  int32	team_one_stop_flags = 7;
+		repeated  int64	team_mems_guid = 8;
+	}
+	
+	message st_player_legion_info
+	{
+		optional int64		legion_guid = 1;
+	 	optional string		legion_name = 2;
+		optional int32		legion_level = 3;
+		optional int32		legion_role_num = 4;
+		optional int32	    job_title = 5;
+		repeated int32		occupied_territorys = 6;
+		repeated int32		legion_construction_level = 7;
+		optional int64      legion_power = 8;
+	}
+	
+	message st_game_info
+	{
+	   optional	int32  server_id = 1;
+	   optional	string out_ip = 2;
+	   optional int32  out_port = 3;
+	   optional	string server_name = 4;
+	   optional	int32  cross_id = 5;
+	};
+	
+	message st_legion_member_info
+	{
+	  optional int64  role_guid = 1;
+	  optional string role_name = 2;
+	  optional int64  gs_value = 3;
+	  repeated int64  data_ary = 4;
+	}
+	
+	message st_legion_boss_award_get_log
+	{
+	  optional	int64  role_guid = 1;
+	  optional  int32  get_logs_num = 2;
+	  repeated  int32  get_logs = 3;
+	};
+	
+	message st_city_war_legion_score
+	{
+	  optional int64	legion_guid = 1;
+	  optional string	legion_name = 2;
+	  optional int32	score = 3;
+	  optional int32	bid_price = 4;
+	}
+	
+	message st_player_arena_rank
+	{
+	  optional  int32	rank_pos = 1;
+	  optional  int64	role_guid = 2;
+	  optional  string	role_name = 3;
+	  optional	int64	gs_value = 4;
+	  optional  int32	role_template_id = 5;
+	  optional	int64	challenge_end_time = 6;
+	  optional	int32	robot_template_id = 7;
+	  optional	int32	military_level = 8;
+	  optional	int32	vip_level = 9;
+	  optional	string	game_channel = 10;
+	}
+	
+	message st_unit_info
+	{
+	   optional int64  role_guid = 1;
+	   optional string account = 2;
+	   optional string role_name = 3;
+	   optional string role_appearance = 4;
+	   optional string role_first_kill_ary = 5;
+	   optional int64  map_guid = 6;
+	   repeated int64  data_i64_ary = 7;
+	   repeated int32  data_ary = 8;
+	 
+	}
+	
+	message st_base_att_info
+	{
+	   repeated int64 data_ary = 1;
+	}
+	
+	message st_skill_info
+	{
+	   repeated int32 data_ary = 1;
+	}
+	
+	message st_item_info
+	{
+	   optional int64  item_guid = 1;
+	   repeated int32  data_ary = 2;
+	   optional string param_str = 3;
+	}
+	
+	message st_buff_info
+	{
+	    optional	int64	buff_guid = 1;
+		optional    int64	sender_guid = 2;
+		repeated    int32	data_ary = 3;
+	}
+	message st_arena_char_fight_att
+	{
+	  	optional	int64	role_guid = 1;
+		repeated    double	att_value = 2;
+	}
+	
+	message st_spirit_info
+	{
+	   optional 	int64	spirit_guid = 1;								// guid		
+	   repeated	    int32	data_ary = 2;
+	}
+	message st_belief_info
+	{
+	   repeated	   int32	data_ary = 1;		
+	}
+	message st_fake_player_info
+	{
+	
+		optional  int32			data_block_mask = 1;
+		optional  int64			guid = 2;
+		optional  st_unit_info	role_info = 3;
+		optional  st_base_att_info	att_info = 4;
+		optional  int32				skill_num = 5;
+		repeated  st_skill_info		skill_data = 6;
+		optional  int32				item_num = 7;
+		repeated  st_item_info		item_data = 8;
+		optional  int32				buff_num = 9;
+		repeated  st_buff_info		buff_data = 10;
+		optional  st_arena_char_fight_att   m_fight_att = 11;
+		optional  st_spirit_info			   spirit_data = 12;
+		repeated  st_belief_info			   belief_data = 13;
+		optional  int32					   belief_num = 14;
+	};
+	
+	message st_auction_info
+	{
+	   optional int64  seller_guid = 1;
+	   optional string seller_name = 2;
+	   optional int64  buyer_guid = 3;
+	   optional string buyer_name = 4;
+	   optional int32  trade_type = 5;
+	   optional	int32  seller_vip_level = 6;
+	   optional	int32  auction_type = 7;
+	   optional	int32  auction_sub_type = 8;
+	   optional int32  item_color = 9;
+	   optional	int32  quality_level = 10;
+	   optional	int32  class_limit = 11;
+	   optional string item_name = 12;
+	   optional	int64  sell_time = 13;
+	   optional	int64  deal_time = 14;
+	   optional	int32  sell_money_type = 15;
+       optional	int64  sell_total_money = 16;
+	   optional	int64  sell_single_money =17;
+	   optional	int64  cur_bid_money = 18;
+	   optional	int32  is_show = 19;
+	   optional	int32  add_time = 20;
+	   optional	int32  is_sky_order = 21;
+	   optional int64  show_guid = 22;
+	   optional st_item_info item_info = 23;
+	}
+	
+	
+	message st_server_harry_msg
+	{
+	  optional	 int32		server_id = 1;
+      optional	 int32		server_money = 2;
+	  optional	 int32		special_money = 3;
+	  optional	 int64		first_player_guid = 4;
+	  optional	 int64		second_player_guid = 5;
+	  optional	 int64		third_player_guid = 6;
+	  optional	 string		first_player_name = 7;
+	}
+	
+	message st_time_limit_activity_temp_db
+	{
+	   optional  int32		ActGuid = 1;
+	   optional	 int32		AttributeId = 2;
+	   optional	 int32		ActivityType = 3;
+	   optional	 int32		CycleParamType = 4;
+	   optional	 string		CycleParamNum = 5;
+	   optional	 string		CycleFirstId = 6;
+	   optional	 int32		OpenType = 7;
+	   optional	 int32		OpenServerDate = 8;
+	   optional	 string		OpenSpencificDate = 9;
+	   optional	 int32		FirstOpenDayOfWeek = 10;
+	   optional	 int32		DurationDays = 11;
+	   optional	 int32		CycleDays = 12;
+	   optional	 int32		ShowType = 13;
+	   optional	 string		TextImage = 14;
+	   optional	 string		ParamArr1 = 15;
+	   optional	 string		ParamArr2 = 16;
+	   optional	 string		ParamArr3 = 17;
+       optional  string		ParamArr4 = 18;
+	   optional	 string		ParamArr5 = 19;
+	   optional	 int32		IsEndAct = 20;
+	   optional	 string		OriginalCycleFirstId = 21;
+	   optional	 string		OldCycleFirstId = 22;
+	   optional	 int32		CreateTime = 23;
+	   optional	 int32		EndTime = 24;
+	   optional	 int32		TemplateFromType = 25;
+	   optional	 int32		RefreshTime = 26;
+	}
+	
+	message st_time_limit_activity_branch_temp_db
+	{
+	  optional	int32		ActGuid = 1;
+	  optional	int32		AttributeId = 2;
+	  optional	int32		ActivityType = 3;
+	  optional	int32		CycleIndex = 4;
+	  optional	string		Condition = 5;
+	  optional	string		Reward = 6;
+	  optional	string		TextImage = 7;
+	  optional	string	    ParamArr1 = 8;
+	  optional	string		ParamArr2 = 9;
+	  optional	string		ParamArr3 = 10;
+	  optional	string		ParamArr4 = 11;
+	  optional	string		ParamArr5 = 12;
+	}
+	
+	message st_assist_fight_info 
+	{
+	  optional	int32	    assist_fight_type = 1;
+	  optional	int64		asssit_fight_guid = 2;
+	  optional	string		role_name = 3;
+	  optional	int32		role_lv = 4;
+	  optional	int32       role_professional = 5;
+	  optional	int32       role_head_icon = 6;
+	  optional	int32		boss_id = 7;
+	  optional	int64       boss_guid = 8;
+	  optional	int32		map_id = 9;
+	  optional	int64		map_guid = 10;
+	  repeated  float       unit_location = 11;
+	  repeated  float       unit_rotation = 12;
+	  repeated	int64       assist_guid_list = 13;
+	  optional	int32       assist_fight_tag = 14;
+	  optional	int64       legion_guid = 15;
+	  optional	int32       start_assist_time = 16;
+	}
+	
+	message st_element_war_match_role_info
+	{
+	  optional	int64		role_guid = 1;
+	  optional	string		role_name = 2;
+	  optional	string		server_name = 3;
+	  optional	int32		server_id = 4;
+	  optional	int32		template_id = 5;
+	  optional	int32		role_level = 6;
+	  optional  int32		score_num = 7;
+	  optional	int32		total_join_num = 8;
+	  optional	int32		total_win_num = 9;
+	  optional	int32		last_win_num = 10;
+	  optional	int32		vip_level = 11;
+      optional	string		role_server_out_ip = 12;
+	  optional	int32		role_server_out_port = 13;
+	  optional	bool		is_robor = 14;
+	  optional	int32		robor_template_id = 15;
+	 }
+	
+	message st_element_war_match_info
+	{
+	  repeated	st_element_war_match_role_info first_role_info = 1;
+	  repeated	st_element_war_match_role_info second_role_info = 2;
+	  optional	int32	map_level = 3;
+
+	};
+	
+	
+	message st_ranking_player_info
+	{
+	  optional	int64	role_guid = 1;
+	  optional	string	role_name = 2;
+	  optional	int64	ranking_type = 3;
+	  optional	int64	ranking_value = 4;
+	  optional	int64	save_time = 5;
+	  optional	int64	supporting_guid = 6;						
+	  optional	string	supporting_name = 7;
+	  optional	int32	vip_level  = 8;
+	  optional	int32	Peak = 9;
+	  optional	int32	server_id = 10;
+	  optional	string	game_channel = 11;
+	  optional	int64	standby_parameter = 12;						
+	}
+	
+	message st_auction_share_info
+	{
+		optional int64	item_guid = 1;
+		optional int64	role_guid = 2;
+		optional float	share_rate = 3;
+		optional string	share_mail_title = 4;
+		optional string	share_mail_content = 5;
+	};
+	
+	message st_gain_treasure_record_player_info_db
+	{
+		optional string		role_name = 1;
+		optional string		gain_item_template_id = 2;
+		optional int64      role_guid = 3;
+	
+	};
+	
+	message st_gain_treasure_record_info_one_db
+	{
+		optional int32	boss_spawn_point_template_id = 1;
+		optional int32	killed_stamp = 2;
+		repeated st_gain_treasure_record_player_info_db	player_info_arr = 3;	
+	};
+	
+	message st_gain_treasure_record_player_info
+	{
+		optional string	 role_name = 1;
+	    repeated int32	 gain_item_template_id = 2;
+		optional int64	 role_guid = 3;
+	
+	};
+	
+	message st_gain_treasure_record_info_one
+	{
+		optional int32	 boss_spawn_point_template_id = 1;
+		optional int32	 killed_stamp = 2;
+		repeated st_gain_treasure_record_player_info	player_info_arr = 3;
+	};
+	
+	message st_gain_treasure_player_info
+	{
+		optional int64					player_guid = 1;
+		optional string					player_name = 2;
+	
+	};
+	
+	
+	
+	message st_gain_treasure_boss_info
+	{
+		optional int32			boss_spawn_point_template_id = 1;
+		optional int64			boss_guid = 2;							//boss死亡时guid为0
+		optional int32			next_refresh_stamp = 3;
+		repeated st_gain_treasure_player_info			player_info = 4;
+		
+	};
+	
+	
+	message st_single_map_record
+	{
+		optional int64	role_guid = 1;
+		optional string	role_name = 2;
+		optional int32	value = 3;
+	};
+	
+	message st_db_best_record
+	{
+		optional int32	map_template_id = 1;
+		optional int64  role_guid = 2;
+		optional string	role_name = 3;
+		optional int32	value = 4;
+
+	};
+	
+	message st_big_player_db
+	{
+		optional int32 player_type = 1;
+		optional int64 role_guid  = 2;
+	};
+	
+	
+	
+	
+	
+	
+	
+}

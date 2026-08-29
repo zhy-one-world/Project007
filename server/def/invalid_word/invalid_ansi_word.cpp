@@ -13,7 +13,7 @@
 
 #include <iostream>
 
-namespace hld
+namespace faith
 {
 	WordSet invalid_ansi_word::m_invalid_db_chars;
 

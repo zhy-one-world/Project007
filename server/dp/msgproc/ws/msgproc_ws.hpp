@@ -14,7 +14,7 @@
 #include <char_msg.hpp>
 #include "db_manager.hpp"
 
-namespace hld
+namespace faith
 {
 	// 获取游戏配置信息给ws
 	void get_game_info_ws(uint32 connindex, const void *data_ptr, size_t data_len);

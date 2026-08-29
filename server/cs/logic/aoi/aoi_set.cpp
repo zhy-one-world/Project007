@@ -12,7 +12,7 @@ purpose:
 #include "logic/unit_man.h"
 #include "server_log.hpp"
 #include "logic/npc.hpp"
-namespace hld
+namespace faith
 {
 	aoi_set::aoi_set()
 	{

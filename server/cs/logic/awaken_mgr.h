@@ -4,7 +4,7 @@
 #include "logic/type_def.hpp"
 
 
-namespace hld
+namespace faith
 {
 	class citem;
 	struct AwakenTemplate;

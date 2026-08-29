@@ -1,6 +1,6 @@
 #include "EquipEnchantTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void EquipEnchantTemplateSize()
     {

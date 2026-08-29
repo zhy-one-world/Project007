@@ -20,7 +20,7 @@
 #include "server_log.hpp"
 #include "../connection/daemon_client.hpp"
 
-namespace hld
+namespace faith
 {
 
 	net_client_mgr::net_client_mgr(void)
@@ -49,11 +49,11 @@ namespace hld
 	}
 	bool net_client_mgr::set_netpara_option(uint32 send_buf_size, uint32 recv_buf_size, uint32 max_packet_size, uint32 client_num)
 	{
-		hld::net::tcp_client& client = hld::net::tcp_client::get_instance();
+		faith::net::tcp_client& client = faith::net::tcp_client::get_instance();
 
-		if (!client.set_option(hld::net::tcp_client::options::send_buffer_size(send_buf_size))) return false;
-		if (!client.set_option(hld::net::tcp_client::options::recv_buffer_size(recv_buf_size))) return false;
-		if (!client.set_option(hld::net::tcp_client::options::max_packet_size(max_packet_size))) return false;
+		if (!client.set_option(faith::net::tcp_client::options::send_buffer_size(send_buf_size))) return false;
+		if (!client.set_option(faith::net::tcp_client::options::recv_buffer_size(recv_buf_size))) return false;
+		if (!client.set_option(faith::net::tcp_client::options::max_packet_size(max_packet_size))) return false;
 		client.init_client_server(client_num);
 		m_client_connmap = new net_client[client_num];
 		m_client_num = client_num;

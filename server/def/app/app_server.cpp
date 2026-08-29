@@ -11,7 +11,7 @@
 #include "app_server.hpp"
 #include "server_log.hpp"
 
-namespace hld
+namespace faith
 {
 	app_server::app_server():
 		m_running(false),
@@ -53,7 +53,7 @@ namespace hld
 		}
 		m_stopping = true;
 
-		hld::net::scheduler::getInstance().post(boost::bind(&app_server::call_release_handler,this));
+		faith::net::scheduler::getInstance().post(boost::bind(&app_server::call_release_handler,this));
 	}
 
 	void app_server::call_init_handler()

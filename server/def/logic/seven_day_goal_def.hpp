@@ -9,7 +9,7 @@
 #define _SEVEN_DAY_GOAL_DEF_HPP_
 #include "logic/type_def.hpp"
 #include "game_enum_def_s.h"
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 

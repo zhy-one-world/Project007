@@ -17,7 +17,7 @@ purpose:define the type of belief, define the type and the length of pokedex ins
 #include "template/template_base.h"
 #include "game_enum_def_s.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	const int32 POKEDEX_PSYCHE_MAX = 20;

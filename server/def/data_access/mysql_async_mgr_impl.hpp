@@ -17,7 +17,7 @@
 #include "recvbuffer.hpp"
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 	struct db_result_type;
 	struct mysql_conn_params;

@@ -18,17 +18,17 @@ purpose:
 #include "utility/score_indicator.h"
 #include "Logic/chat_def.hpp"
 #include <Logic/oracle_trial_def.hpp>
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	enum
 	{
-		e_msgindex_dp2cs_load_oracle_trial_all_info = hld::e_msg_oracle_trial,
+		e_msgindex_dp2cs_load_oracle_trial_all_info = faith::e_msg_oracle_trial,
 		e_msgindex_dp2cs_save_oracle_trial_info_nil,
 		e_msgindex_cs2dp_save_oracle_trial_info
 	};
 
-	struct dp2cs_load_oracle_trial_all_info : public hld::packet_base
+	struct dp2cs_load_oracle_trial_all_info : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -42,7 +42,7 @@ namespace hld
 		
 	};
 
-	struct dp2cs_save_oracle_trial_info_nil : public hld::packet_base
+	struct dp2cs_save_oracle_trial_info_nil : public faith::packet_base
 	{
 		guid_64								role_guid;
 		dp2cs_save_oracle_trial_info_nil()
@@ -53,7 +53,7 @@ namespace hld
 
 	};
 
-	struct cs2dp_save_oracle_trial_info : public hld::packet_base
+	struct cs2dp_save_oracle_trial_info : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;

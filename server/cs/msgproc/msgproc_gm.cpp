@@ -25,7 +25,7 @@
 #include "gm_order_def.hpp"
 #include "logic/npc.hpp"
 
-namespace hld
+namespace faith
 {
 	typedef boost::function<void(player& player_ref, const std::vector<int>& arg_int, const std::vector<std::string>& arg_string)>	gm_function;
 

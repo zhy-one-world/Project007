@@ -10,7 +10,7 @@
 #include "buff_def.hpp"
 #include "gm_order_def.hpp"
 
-using namespace hld;
+using namespace faith;
 
 void base_map_system::start_up(Entity* map_ent, int32 line_id, MapTemplate* map_template)
 {
@@ -175,7 +175,7 @@ void base_map_system::on_player_enter_scene(Entity* entity, player* player_ptr)
 	add_map_buff(base_map_cp.get(), player_ptr->get_array_index());
 	add_vip_map_buff(base_map_cp.get(), player_ptr->get_array_index());
 	set_default_pk_mode(base_map_cp.get(), player_ptr->get_array_index());
-	map_change_log(base_map_cp.get(), player_ptr->get_array_index(), hld::e_map_change_enter);
+	map_change_log(base_map_cp.get(), player_ptr->get_array_index(), faith::e_map_change_enter);
 }
 void base_map_system::on_player_leave_scene(Entity* entity, player* player_ptr)
 {
@@ -185,7 +185,7 @@ void base_map_system::on_player_leave_scene(Entity* entity, player* player_ptr)
 		return;
 	}
 	auto base_map_cp = entity->get_component<base_map_component>();
-	map_change_log(base_map_cp.get(), player_ptr->get_array_index(), hld::e_map_change_leave);
+	map_change_log(base_map_cp.get(), player_ptr->get_array_index(), faith::e_map_change_leave);
 }
 void base_map_system::on_player_dead(Entity* entity, player* player_ptr)
 {

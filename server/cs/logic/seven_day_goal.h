@@ -12,7 +12,7 @@ purpose: 七日目标头文件
 #include "Logic/seven_day_goal_def.hpp"
 #include "template/template_manager.h"
 
-namespace hld
+namespace faith
 {
 	class player;
 	class cseven_day_goal

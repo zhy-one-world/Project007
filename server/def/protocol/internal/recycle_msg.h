@@ -4,12 +4,12 @@
 #include "base.hpp"
 #include "Logic/recycle_def.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	enum
 	{
-		e_msgindex_dp2cs_load_char_recycle = hld::e_msg_base_recycle,
+		e_msgindex_dp2cs_load_char_recycle = faith::e_msg_base_recycle,
 		e_msgindex_cs2dp_save_char_recycle,
 		e_msgindex_dp2cs_load_char_recycle_task,
 		e_msgindex_cs2dp_save_char_recycle_task,
@@ -20,7 +20,7 @@ namespace hld
 		e_msgindex_dp2cs_recycle_get_inviter_info_end,
 		e_msgindex_cs2dp_recycle_inviter_add,
 	};
-	struct dp2cs_load_char_recycle : public hld::packet_base
+	struct dp2cs_load_char_recycle : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -31,7 +31,7 @@ namespace hld
 			wheader = e_msgindex_dp2cs_load_char_recycle;
 		}
 	};
-	struct cs2dp_save_char_recycle : public hld::packet_base
+	struct cs2dp_save_char_recycle : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -45,7 +45,7 @@ namespace hld
 		}
 	};
 	//////////////////////////////////////////////////////
-	struct dp2cs_load_char_recycle_task : public hld::packet_base
+	struct dp2cs_load_char_recycle_task : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -64,7 +64,7 @@ namespace hld
 		}
 	};
 	/////////////////////////////////////////////////////
-	struct cs2dp_save_char_recycle_task : public hld::packet_base
+	struct cs2dp_save_char_recycle_task : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -85,7 +85,7 @@ namespace hld
 
 	};
 
-	struct dp2cs_load_char_recycle_invited : public hld::packet_base
+	struct dp2cs_load_char_recycle_invited : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -127,7 +127,7 @@ namespace hld
 		}
 	};
 
-	struct cs2dp_save_char_recycle_invited : public hld::packet_base
+	struct cs2dp_save_char_recycle_invited : public faith::packet_base
 	{
 		guid_64				role_guid;
 		guid_64				target_guid;

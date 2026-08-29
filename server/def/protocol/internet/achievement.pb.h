@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_achievement_2eproto();
@@ -109,7 +109,7 @@ class achievement_proto_achievement_one : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_achievement_info();
 
-  // @@protoc_insertion_point(class_scope:hld.achievement_proto.achievement_one)
+  // @@protoc_insertion_point(class_scope:faith.achievement_proto.achievement_one)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -194,25 +194,25 @@ class achievement_proto_achievement_all : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // repeated .hld.achievement_proto.achievement_one achievement_array = 2;
+  // repeated .faith.achievement_proto.achievement_one achievement_array = 2;
   inline int achievement_array_size() const;
   inline void clear_achievement_array();
   static const int kAchievementArrayFieldNumber = 2;
-  inline const ::hld::achievement_proto_achievement_one& achievement_array(int index) const;
-  inline ::hld::achievement_proto_achievement_one* mutable_achievement_array(int index);
-  inline ::hld::achievement_proto_achievement_one* add_achievement_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::achievement_proto_achievement_one >&
+  inline const ::faith::achievement_proto_achievement_one& achievement_array(int index) const;
+  inline ::faith::achievement_proto_achievement_one* mutable_achievement_array(int index);
+  inline ::faith::achievement_proto_achievement_one* add_achievement_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::achievement_proto_achievement_one >&
       achievement_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::achievement_proto_achievement_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::achievement_proto_achievement_one >*
       mutable_achievement_array();
 
-  // @@protoc_insertion_point(class_scope:hld.achievement_proto.achievement_all)
+  // @@protoc_insertion_point(class_scope:faith.achievement_proto.achievement_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > role_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::achievement_proto_achievement_one > achievement_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::achievement_proto_achievement_one > achievement_array_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -294,7 +294,7 @@ class achievement_proto_achievement_operate : public ::google::protobuf::Message
   inline ::google::protobuf::int32 operation_type() const;
   inline void set_operation_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.achievement_proto.achievement_operate)
+  // @@protoc_insertion_point(class_scope:faith.achievement_proto.achievement_operate)
  private:
   inline void set_has_achievement_id();
   inline void clear_has_achievement_id();
@@ -372,16 +372,16 @@ class achievement_proto_achievement_operate_end : public ::google::protobuf::Mes
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.achievement_proto.achievement_one achievement_array = 1;
+  // repeated .faith.achievement_proto.achievement_one achievement_array = 1;
   inline int achievement_array_size() const;
   inline void clear_achievement_array();
   static const int kAchievementArrayFieldNumber = 1;
-  inline const ::hld::achievement_proto_achievement_one& achievement_array(int index) const;
-  inline ::hld::achievement_proto_achievement_one* mutable_achievement_array(int index);
-  inline ::hld::achievement_proto_achievement_one* add_achievement_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::achievement_proto_achievement_one >&
+  inline const ::faith::achievement_proto_achievement_one& achievement_array(int index) const;
+  inline ::faith::achievement_proto_achievement_one* mutable_achievement_array(int index);
+  inline ::faith::achievement_proto_achievement_one* add_achievement_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::achievement_proto_achievement_one >&
       achievement_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::achievement_proto_achievement_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::achievement_proto_achievement_one >*
       mutable_achievement_array();
 
   // optional int32 operation_type = 2;
@@ -398,7 +398,7 @@ class achievement_proto_achievement_operate_end : public ::google::protobuf::Mes
   inline ::google::protobuf::int32 operation_end_state() const;
   inline void set_operation_end_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.achievement_proto.achievement_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.achievement_proto.achievement_operate_end)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -407,7 +407,7 @@ class achievement_proto_achievement_operate_end : public ::google::protobuf::Mes
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::achievement_proto_achievement_one > achievement_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::achievement_proto_achievement_one > achievement_array_;
   ::google::protobuf::int32 operation_type_;
   ::google::protobuf::int32 operation_end_state_;
 
@@ -491,7 +491,7 @@ class achievement_proto_achievement_finish : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 achievement_state() const;
   inline void set_achievement_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.achievement_proto.achievement_finish)
+  // @@protoc_insertion_point(class_scope:faith.achievement_proto.achievement_finish)
  private:
   inline void set_has_achievement_id();
   inline void clear_has_achievement_id();
@@ -576,7 +576,7 @@ class achievement_proto_achievement_all_finish : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 achievement_reward() const;
   inline void set_achievement_reward(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.achievement_proto.achievement_all_finish)
+  // @@protoc_insertion_point(class_scope:faith.achievement_proto.achievement_all_finish)
  private:
   inline void set_has_achievement_reward();
   inline void clear_has_achievement_reward();
@@ -658,7 +658,7 @@ class achievement_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.achievement_proto)
+  // @@protoc_insertion_point(class_scope:faith.achievement_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -735,27 +735,27 @@ achievement_proto_achievement_all::mutable_role_guid() {
   return &role_guid_;
 }
 
-// repeated .hld.achievement_proto.achievement_one achievement_array = 2;
+// repeated .faith.achievement_proto.achievement_one achievement_array = 2;
 inline int achievement_proto_achievement_all::achievement_array_size() const {
   return achievement_array_.size();
 }
 inline void achievement_proto_achievement_all::clear_achievement_array() {
   achievement_array_.Clear();
 }
-inline const ::hld::achievement_proto_achievement_one& achievement_proto_achievement_all::achievement_array(int index) const {
+inline const ::faith::achievement_proto_achievement_one& achievement_proto_achievement_all::achievement_array(int index) const {
   return achievement_array_.Get(index);
 }
-inline ::hld::achievement_proto_achievement_one* achievement_proto_achievement_all::mutable_achievement_array(int index) {
+inline ::faith::achievement_proto_achievement_one* achievement_proto_achievement_all::mutable_achievement_array(int index) {
   return achievement_array_.Mutable(index);
 }
-inline ::hld::achievement_proto_achievement_one* achievement_proto_achievement_all::add_achievement_array() {
+inline ::faith::achievement_proto_achievement_one* achievement_proto_achievement_all::add_achievement_array() {
   return achievement_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::achievement_proto_achievement_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::achievement_proto_achievement_one >&
 achievement_proto_achievement_all::achievement_array() const {
   return achievement_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::achievement_proto_achievement_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::achievement_proto_achievement_one >*
 achievement_proto_achievement_all::mutable_achievement_array() {
   return &achievement_array_;
 }
@@ -812,27 +812,27 @@ inline void achievement_proto_achievement_operate::set_operation_type(::google::
 
 // achievement_proto_achievement_operate_end
 
-// repeated .hld.achievement_proto.achievement_one achievement_array = 1;
+// repeated .faith.achievement_proto.achievement_one achievement_array = 1;
 inline int achievement_proto_achievement_operate_end::achievement_array_size() const {
   return achievement_array_.size();
 }
 inline void achievement_proto_achievement_operate_end::clear_achievement_array() {
   achievement_array_.Clear();
 }
-inline const ::hld::achievement_proto_achievement_one& achievement_proto_achievement_operate_end::achievement_array(int index) const {
+inline const ::faith::achievement_proto_achievement_one& achievement_proto_achievement_operate_end::achievement_array(int index) const {
   return achievement_array_.Get(index);
 }
-inline ::hld::achievement_proto_achievement_one* achievement_proto_achievement_operate_end::mutable_achievement_array(int index) {
+inline ::faith::achievement_proto_achievement_one* achievement_proto_achievement_operate_end::mutable_achievement_array(int index) {
   return achievement_array_.Mutable(index);
 }
-inline ::hld::achievement_proto_achievement_one* achievement_proto_achievement_operate_end::add_achievement_array() {
+inline ::faith::achievement_proto_achievement_one* achievement_proto_achievement_operate_end::add_achievement_array() {
   return achievement_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::achievement_proto_achievement_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::achievement_proto_achievement_one >&
 achievement_proto_achievement_operate_end::achievement_array() const {
   return achievement_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::achievement_proto_achievement_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::achievement_proto_achievement_one >*
 achievement_proto_achievement_operate_end::mutable_achievement_array() {
   return &achievement_array_;
 }
@@ -962,7 +962,7 @@ inline void achievement_proto_achievement_all_finish::set_achievement_reward(::g
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

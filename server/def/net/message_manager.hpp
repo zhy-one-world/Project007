@@ -14,7 +14,7 @@
 #include "logic/type_def.hpp"
 #include <base.hpp>
 
-namespace hld
+namespace faith
 {
 	void none_msg_fuction(uint32 conn_index, const void* data_ptr, size_t data_len);
 	typedef boost::function<void(uint32, const void*, size_t)>	on_recv_handler_type;

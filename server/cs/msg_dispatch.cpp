@@ -66,7 +66,7 @@
 #include "net/message_manager.hpp"
 
 
-namespace hld
+namespace faith
 {
 	msg_dispatch::msg_dispatch() 
 	{

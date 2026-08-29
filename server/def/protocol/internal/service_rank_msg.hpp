@@ -15,16 +15,16 @@ purpose: about service rank
 #include "Logic/char_def.hpp"
 #include "Logic/ranking_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	enum 
 	{
-		e_msgindex_dp2cs_load_service_rank_reward_state = hld::e_msg_base_service_rank,
+		e_msgindex_dp2cs_load_service_rank_reward_state = faith::e_msg_base_service_rank,
 		e_msgindex_cs2dp_save_service_rank_reward_state,
 	};
 
-	struct dp2cs_load_service_rank_reward_state : public hld::packet_base
+	struct dp2cs_load_service_rank_reward_state : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -38,7 +38,7 @@ namespace hld
 		}
 	};
 
-	struct cs2dp_save_service_rank_reward_state : public hld::packet_base
+	struct cs2dp_save_service_rank_reward_state : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;

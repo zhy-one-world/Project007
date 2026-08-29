@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -3597,9 +3597,9 @@ void protobuf_AddDesc_server2dp_2eproto() {
     "late_id\030\006 \001(\005\022\033\n\023military_rank_level\030\007 \001"
     "(\005\022\021\n\tvip_level\030\010 \001(\005\022\024\n\014game_channel\030\t "
     "\001(\t\032\222\001\n\034ws2dp_save_arena_rank_change\0226\n\013"
-    "my_new_data\030\001 \001(\0132!.hld.server2dp_proto."
+    "my_new_data\030\001 \001(\0132!.faith.server2dp_proto."
     "s_arena_rank\022:\n\017target_new_data\030\002 \001(\0132!."
-    "hld.server2dp_proto.s_arena_rank\032\177\n#ws2d"
+    "faith.server2dp_proto.s_arena_rank\032\177\n#ws2d"
     "p_save_other_server_mail_record\022\030\n\020sourc"
     "e_server_id\030\001 \001(\005\022\030\n\020target_server_id\030\002 "
     "\001(\005\022\021\n\tmail_guid\030\003 \001(\003\022\021\n\trole_guid\030\004 \001("
@@ -3617,11 +3617,11 @@ void protobuf_AddDesc_server2dp_2eproto() {
     "(\005\022\014\n\004peak\030\t \001(\005\022\021\n\tserver_id\030\n \001(\005\022\024\n\014g"
     "ame_channel\030\013 \001(\t\022\031\n\021standby_parameter\030\014"
     " \001(\003\032_\n\033ws2dp_save_ranking_info_one\022@\n\014r"
-    "anking_info\030\001 \001(\0132*.hld.server2dp_proto."
+    "anking_info\030\001 \001(\0132*.faith.server2dp_proto."
     "s_ranking_player_info\0325\n ws2dp_load_all_"
     "service_rank_info\022\021\n\trank_type\030\001 \001(\005\032\243\001\n"
     "\032ws2dp_save_ranking_worship\022\023\n\013sender_gu"
-    "id\030\001 \001(\003\022\?\n\013target_data\030\002 \001(\0132*.hld.serv"
+    "id\030\001 \001(\003\022\?\n\013target_data\030\002 \001(\0132*.faith.serv"
     "er2dp_proto.s_ranking_player_info\022\031\n\021wor"
     "ship_add_value\030\003 \001(\003\022\024\n\014worship_type\030\004 \001"
     "(\005\0329\n\027ws2dp_get_worship_value\022\016\n\006sender\030"
@@ -3629,20 +3629,20 @@ void protobuf_AddDesc_server2dp_2eproto() {
     "\n\013legion_guid\030\001 \001(\003\022\023\n\013legion_name\030\002 \001(\t"
     "\022\024\n\014announcement\030\003 \001(\t\022\020\n\010gs_value\030\004 \001(\003"
     "\022\020\n\010data_ary\030\005 \003(\003\032Q\n\026ws2dp_save_legion_"
-    "info\0227\n\013legion_info\030\001 \001(\0132\".hld.server2d"
+    "info\0227\n\013legion_info\030\001 \001(\0132\".faith.server2d"
     "p_proto.s_legion_info\032`\n\024s_legion_member"
     "_info\022\021\n\trole_guid\030\001 \001(\003\022\021\n\trole_name\030\002 "
     "\001(\t\022\020\n\010gs_value\030\003 \001(\003\022\020\n\010data_ary\030\004 \003(\003\032"
     "{\n\035ws2dp_save_legion_member_info\022\023\n\013legi"
     "on_guid\030\001 \001(\003\022E\n\022legion_member_info\030\002 \001("
-    "\0132).hld.server2dp_proto.s_legion_member_"
+    "\0132).faith.server2dp_proto.s_legion_member_"
     "info\032\235\001\n\035s_legion_city_war_member_info\022\021"
     "\n\trole_guid\030\001 \001(\003\022\020\n\010use_type\030\002 \001(\003\022\021\n\tr"
     "ole_name\030\003 \001(\t\022\026\n\016player_temp_id\030\004 \001(\003\022\031"
     "\n\021week_contribution\030\005 \001(\003\022\021\n\tjob_title\030\006"
     " \001(\003\032\215\001\n&ws2dp_save_legion_city_war_memb"
     "er_info\022\023\n\013legion_guid\030\001 \001(\003\022N\n\022legion_m"
-    "ember_info\030\002 \001(\01322.hld.server2dp_proto.s"
+    "ember_info\030\002 \001(\01322.faith.server2dp_proto.s"
     "_legion_city_war_member_info\032/\n\030ws2dp_de"
     "lete_legion_info\022\023\n\013legion_guid\030\001 \001(\003\0324\n"
     "\037ws2dp_delete_legion_member_info\022\021\n\trole"
@@ -3664,7 +3664,7 @@ void protobuf_AddDesc_server2dp_2eproto() {
     "price\030\004 \001(\005\022\031\n\021is_prior_maintain\030\005 \001(\005\022\031"
     "\n\021occupy_time_stamp\030\006 \001(\005\022\021\n\tserver_id\030\007"
     " \001(\005\022\023\n\013legion_name\030\010 \001(\t\032U\n\027ws2dp_save_"
-    "war_bid_info\022:\n\010bid_info\030\001 \001(\0132(.hld.ser"
+    "war_bid_info\022:\n\010bid_info\030\001 \001(\0132(.faith.ser"
     "ver2dp_proto.s_city_war_bid_info\032.\n\030ws2d"
     "p_clear_war_bid_info\022\022\n\nclear_type\030\001 \001(\005"
     "\032P\n!ws2dp_clear_overlord_legion_stuff\022\026\n"
@@ -3672,7 +3672,7 @@ void protobuf_AddDesc_server2dp_2eproto() {
     "(\003\032a\n\016s_legion_event\022\023\n\013legion_guid\030\001 \001("
     "\003\022\021\n\tevent_idx\030\002 \001(\005\022\022\n\nextra_data\030\003 \001(\t"
     "\022\023\n\013happen_time\030\004 \001(\005\032R\n\027ws2dp_save_legi"
-    "on_event\0227\n\nevent_data\030\001 \001(\0132#.hld.serve"
+    "on_event\0227\n\nevent_data\030\001 \001(\0132#.faith.serve"
     "r2dp_proto.s_legion_event\032/\n\030ws2dp_clear"
     "_legion_event\022\023\n\013legion_guid\030\001 \001(\003\032]\n\034ws"
     "2dp_save_legion_bonus_info\022\023\n\013legion_gui"
@@ -3686,13 +3686,13 @@ void protobuf_AddDesc_server2dp_2eproto() {
     "er_id\030\002 \001(\005\022\022\n\nchief_guid\030\003 \001(\003\022\023\n\013legio"
     "n_name\030\004 \001(\t\022\022\n\nchief_name\030\005 \001(\t\032n\n\032ws2d"
     "p_save_cross_city_info\022=\n\rcity_info_msg\030"
-    "\001 \001(\0132&.hld.server2dp_proto.s_cross_city"
+    "\001 \001(\0132&.faith.server2dp_proto.s_cross_city"
     "_info\022\021\n\trank_idex\030\002 \001(\005\032\035\n\033ws2dp_clear_"
     "cross_city_info\032b\n\rs_best_record\022\027\n\017map_"
     "template_id\030\001 \001(\005\022\021\n\trole_guid\030\002 \003(\003\022\021\n\t"
     "role_name\030\003 \003(\t\022\022\n\nrole_value\030\004 \003(\005\032Q\n\026w"
     "s2dp_save_best_record\0227\n\013record_info\030\001 \001"
-    "(\0132\".hld.server2dp_proto.s_best_record\032\034"
+    "(\0132\".faith.server2dp_proto.s_best_record\032\034"
     "\n\032ws2dp_load_all_best_record\032\272\001\n$ws2dp_s"
     "ave_gain_treasure_record_info\022\021\n\tdel_sta"
     "mp\030\001 \001(\005\022$\n\034boss_spawn_point_template_id"
@@ -3735,7 +3735,7 @@ void protobuf_AddDesc_server2dp_2eproto() {
     "(\005\022\025\n\rtext_contents\030\003 \001(\t\022\023\n\013sender_name"
     "\030\004 \001(\t\022\022\n\nmail_title\030\005 \001(\t\032u\n\033ws2dp_save"
     "_mail_event_to_db\022\017\n\007is_over\030\001 \001(\010\022\020\n\010ma"
-    "il_num\030\002 \001(\005\0223\n\tmail_info\030\003 \003(\0132 .hld.se"
+    "il_num\030\002 \001(\005\0223\n\tmail_info\030\003 \003(\0132 .faith.se"
     "rver2dp_proto.s_mail_info\032\346\001\n\022s_red_pack"
     "age_base\022\030\n\020red_package_guid\030\001 \001(\003\022\037\n\027re"
     "d_package_template_id\030\002 \001(\005\022\023\n\013sender_gu"
@@ -3746,25 +3746,25 @@ void protobuf_AddDesc_server2dp_2eproto() {
     "iver\022\030\n\020red_package_guid\030\001 \001(\003\022\025\n\rreceiv"
     "er_guid\030\002 \001(\003\022\021\n\trole_name\030\003 \001(\t\022\021\n\tmone"
     "y_num\030\004 \001(\005\032\213\001\n\rs_red_package\022:\n\tbase_in"
-    "fo\030\001 \001(\0132\'.hld.server2dp_proto.s_red_pac"
-    "kage_base\022>\n\tinfo_list\030\002 \003(\0132+.hld.serve"
+    "fo\030\001 \001(\0132\'.faith.server2dp_proto.s_red_pac"
+    "kage_base\022>\n\tinfo_list\030\002 \003(\0132+.faith.serve"
     "r2dp_proto.s_red_package_receiver\032`\n\026ws2"
     "dp_save_red_package\022\020\n\010data_num\030\001 \001(\005\0224\n"
-    "\010data_ary\030\002 \003(\0132\".hld.server2dp_proto.s_"
+    "\010data_ary\030\002 \003(\0132\".faith.server2dp_proto.s_"
     "red_package\032\030\n\026ws2dp_load_red_package\032;\n"
     "\037ws2dp_load_red_package_receiver\022\030\n\020red_"
     "package_guid\030\001 \001(\003\032Y\n\034ws2dp_add_red_pack"
-    "age_to_sql\0229\n\010red_info\030\001 \001(\0132\'.hld.serve"
+    "age_to_sql\0229\n\010red_info\030\001 \001(\0132\'.faith.serve"
     "r2dp_proto.s_red_package_base\032f\n%ws2dp_a"
     "dd_red_package_receiver_to_sql\022=\n\010red_in"
-    "fo\030\001 \001(\0132+.hld.server2dp_proto.s_red_pac"
+    "fo\030\001 \001(\0132+.faith.server2dp_proto.s_red_pac"
     "kage_receiver\0328\n\034ws2dp_del_red_package_b"
     "y_sql\022\030\n\020red_package_guid\030\001 \001(\003\032E\n\013s_ite"
     "m_info\022\021\n\titem_guid\030\001 \001(\003\022\020\n\010data_ary\030\002 "
     "\003(\005\022\021\n\tparam_str\030\003 \001(\t\032\215\001\n ws2dp_save_ma"
     "il_event_item_to_db\022\021\n\tmail_guid\030\001 \001(\003\022\017"
     "\n\007is_over\030\002 \001(\010\022\020\n\010item_num\030\003 \001(\005\0223\n\tite"
-    "m_list\030\004 \003(\0132 .hld.server2dp_proto.s_ite"
+    "m_list\030\004 \003(\0132 .faith.server2dp_proto.s_ite"
     "m_info\032(\n\025ws2dp_load_mail_event\022\017\n\007is_ov"
     "er\030\001 \001(\010\032-\n\032ws2dp_load_mail_event_item\022\017"
     "\n\007is_over\030\001 \001(\010\032K\n#ws2dp_save_new_globel"
@@ -3799,7 +3799,7 @@ void protobuf_AddDesc_server2dp_2eproto() {
     "\n\021sell_single_money\030\021 \001(\003\022\025\n\rcur_bid_mon"
     "ey\030\022 \001(\003\022\017\n\007is_show\030\023 \001(\005\022\020\n\010add_time\030\024 "
     "\001(\005\022\024\n\014is_sky_order\030\025 \001(\005\022\021\n\tshow_guid\030\026"
-    " \001(\003\0223\n\titem_info\030\027 \001(\0132 .hld.server2dp_"
+    " \001(\003\0223\n\titem_info\030\027 \001(\0132 .faith.server2dp_"
     "proto.s_item_info\032\263\001\n\013s_unit_info\022\021\n\trol"
     "e_guid\030\001 \001(\003\022\017\n\007account\030\002 \001(\t\022\021\n\trole_na"
     "me\030\003 \001(\t\022\027\n\017role_appearance\030\004 \001(\t\022\032\n\022fir"
@@ -3814,9 +3814,9 @@ void protobuf_AddDesc_server2dp_2eproto() {
     "m14\030\016 \001(\t\022\017\n\007param15\030\017 \001(\t\032\361\001\n\036ws2dp_auc"
     "tion_add_item_into_db\0221\n\004info\030\001 \001(\0132#.hl"
     "d.server2dp_proto.s_auction_info\0223\n\trole"
-    "_info\030\002 \001(\0132 .hld.server2dp_proto.s_unit"
+    "_info\030\002 \001(\0132 .faith.server2dp_proto.s_unit"
     "_info\022\025\n\ris_add_to_log\030\003 \001(\010\022\025\n\rold_item"
-    "_guid\030\004 \001(\003\0229\n\nthird_info\030\005 \001(\0132%.hld.se"
+    "_guid\030\004 \001(\003\0229\n\nthird_info\030\005 \001(\0132%.faith.se"
     "rver2dp_proto.login_fixed_data\032=\n\025ws2dp_"
     "find_buy_target\022\021\n\trole_guid\030\001 \001(\003\022\021\n\tit"
     "em_guid\030\002 \001(\003\032A\n\031ws2dp_auction_cancel_se"
@@ -3826,7 +3826,7 @@ void protobuf_AddDesc_server2dp_2eproto() {
     "_money_type\030\003 \001(\005\022\031\n\021price_money_value\030\004"
     " \001(\005\032\205\001\n\031ws2dp_auction_bid_success\022\025\n\rne"
     "w_record_id\030\001 \001(\003\022\026\n\016old_buyer_guid\030\002 \001("
-    "\003\0229\n\014auction_info\030\003 \001(\0132#.hld.server2dp_"
+    "\003\0229\n\014auction_info\030\003 \001(\0132#.faith.server2dp_"
     "proto.s_auction_info\032D\n\034ws2dp_auction_cl"
     "ear_old_item\022\022\n\ntrade_type\030\001 \001(\005\022\020\n\010cur_"
     "time\030\002 \001(\003\032\206\001\n\024s_auction_share_info\022\021\n\ti"
@@ -3839,7 +3839,7 @@ void protobuf_AddDesc_server2dp_2eproto() {
     "ontent\030\005 \003(\t\032\227\001\n!ws2dp_auction_add_purch"
     "ase_record\022\023\n\013record_guid\030\001 \001(\003\022\021\n\trole_"
     "guid\030\002 \001(\003\022\017\n\007is_sell\030\003 \001(\010\0229\n\014auction_i"
-    "nfo\030\004 \001(\0132#.hld.server2dp_proto.s_auctio"
+    "nfo\030\004 \001(\0132#.faith.server2dp_proto.s_auctio"
     "n_info\032\210\001\n\034ws2dp_auction_req_share_list\022"
     "\021\n\titem_guid\030\001 \001(\003\022\030\n\020item_template_id\030\002"
     " \001(\005\022\022\n\nbuyer_guid\030\003 \001(\003\022\022\n\nmoney_type\030\004"
@@ -3850,7 +3850,7 @@ void protobuf_AddDesc_server2dp_2eproto() {
     "dp_auction_clear_old_bid_record\032 \n\036ws2dp"
     "_auction_check_world_sell\032c\n\027ws2dp_aucti"
     "on_show_sell\022\020\n\010end_time\030\001 \001(\005\0226\n\tdata_i"
-    "nfo\030\002 \001(\0132#.hld.server2dp_proto.s_auctio"
+    "nfo\030\002 \001(\0132#.faith.server2dp_proto.s_auctio"
     "n_info\032e\n\026ws2dp_auction_time_out\022\023\n\013cur_"
     "mil_sec\030\001 \001(\003\022\021\n\tsell_time\030\002 \001(\003\022\021\n\tdeal"
     "_time\030\003 \001(\003\022\020\n\010is_first\030\004 \001(\005\032\333\002\n\034ws2dp_"
@@ -3901,7 +3901,7 @@ void protobuf_AddDesc_server2dp_2eproto() {
     "(\005\022\017\n\007EndTime\030\027 \001(\005\022\030\n\020TemplateFromType\030"
     "\030 \001(\005\022\023\n\013RefreshTime\030\031 \001(\005\032f\n\032ws2dp_save"
     "_time_limit_temp\022H\n\014temp_db_info\030\001 \001(\01322"
-    ".hld.server2dp_proto.s_time_limit_activi"
+    ".faith.server2dp_proto.s_time_limit_activi"
     "ty_temp_db\032\210\002\n!ws2dp_save_time_limit_bra"
     "nch_temp\022\017\n\007ActGuid\030\001 \001(\005\022\023\n\013AttributeId"
     "\030\002 \001(\005\022\024\n\014ActivityType\030\003 \001(\005\022\022\n\nCycleInd"
@@ -11105,8 +11105,8 @@ server2dp_proto_ws2dp_save_arena_rank_change::server2dp_proto_ws2dp_save_arena_r
 }
 
 void server2dp_proto_ws2dp_save_arena_rank_change::InitAsDefaultInstance() {
-  my_new_data_ = const_cast< ::hld::server2dp_proto_s_arena_rank*>(&::hld::server2dp_proto_s_arena_rank::default_instance());
-  target_new_data_ = const_cast< ::hld::server2dp_proto_s_arena_rank*>(&::hld::server2dp_proto_s_arena_rank::default_instance());
+  my_new_data_ = const_cast< ::faith::server2dp_proto_s_arena_rank*>(&::faith::server2dp_proto_s_arena_rank::default_instance());
+  target_new_data_ = const_cast< ::faith::server2dp_proto_s_arena_rank*>(&::faith::server2dp_proto_s_arena_rank::default_instance());
 }
 
 server2dp_proto_ws2dp_save_arena_rank_change::server2dp_proto_ws2dp_save_arena_rank_change(const server2dp_proto_ws2dp_save_arena_rank_change& from)
@@ -11157,10 +11157,10 @@ server2dp_proto_ws2dp_save_arena_rank_change* server2dp_proto_ws2dp_save_arena_r
 void server2dp_proto_ws2dp_save_arena_rank_change::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_my_new_data()) {
-      if (my_new_data_ != NULL) my_new_data_->::hld::server2dp_proto_s_arena_rank::Clear();
+      if (my_new_data_ != NULL) my_new_data_->::faith::server2dp_proto_s_arena_rank::Clear();
     }
     if (has_target_new_data()) {
-      if (target_new_data_ != NULL) target_new_data_->::hld::server2dp_proto_s_arena_rank::Clear();
+      if (target_new_data_ != NULL) target_new_data_->::faith::server2dp_proto_s_arena_rank::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -11173,7 +11173,7 @@ bool server2dp_proto_ws2dp_save_arena_rank_change::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.server2dp_proto.s_arena_rank my_new_data = 1;
+      // optional .faith.server2dp_proto.s_arena_rank my_new_data = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -11186,7 +11186,7 @@ bool server2dp_proto_ws2dp_save_arena_rank_change::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.server2dp_proto.s_arena_rank target_new_data = 2;
+      // optional .faith.server2dp_proto.s_arena_rank target_new_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -11218,13 +11218,13 @@ bool server2dp_proto_ws2dp_save_arena_rank_change::MergePartialFromCodedStream(
 
 void server2dp_proto_ws2dp_save_arena_rank_change::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.server2dp_proto.s_arena_rank my_new_data = 1;
+  // optional .faith.server2dp_proto.s_arena_rank my_new_data = 1;
   if (has_my_new_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->my_new_data(), output);
   }
 
-  // optional .hld.server2dp_proto.s_arena_rank target_new_data = 2;
+  // optional .faith.server2dp_proto.s_arena_rank target_new_data = 2;
   if (has_target_new_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->target_new_data(), output);
@@ -11238,14 +11238,14 @@ void server2dp_proto_ws2dp_save_arena_rank_change::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* server2dp_proto_ws2dp_save_arena_rank_change::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.server2dp_proto.s_arena_rank my_new_data = 1;
+  // optional .faith.server2dp_proto.s_arena_rank my_new_data = 1;
   if (has_my_new_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         1, this->my_new_data(), target);
   }
 
-  // optional .hld.server2dp_proto.s_arena_rank target_new_data = 2;
+  // optional .faith.server2dp_proto.s_arena_rank target_new_data = 2;
   if (has_target_new_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -11263,14 +11263,14 @@ int server2dp_proto_ws2dp_save_arena_rank_change::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.server2dp_proto.s_arena_rank my_new_data = 1;
+    // optional .faith.server2dp_proto.s_arena_rank my_new_data = 1;
     if (has_my_new_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->my_new_data());
     }
 
-    // optional .hld.server2dp_proto.s_arena_rank target_new_data = 2;
+    // optional .faith.server2dp_proto.s_arena_rank target_new_data = 2;
     if (has_target_new_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -11305,10 +11305,10 @@ void server2dp_proto_ws2dp_save_arena_rank_change::MergeFrom(const server2dp_pro
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_my_new_data()) {
-      mutable_my_new_data()->::hld::server2dp_proto_s_arena_rank::MergeFrom(from.my_new_data());
+      mutable_my_new_data()->::faith::server2dp_proto_s_arena_rank::MergeFrom(from.my_new_data());
     }
     if (from.has_target_new_data()) {
-      mutable_target_new_data()->::hld::server2dp_proto_s_arena_rank::MergeFrom(from.target_new_data());
+      mutable_target_new_data()->::faith::server2dp_proto_s_arena_rank::MergeFrom(from.target_new_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -13179,7 +13179,7 @@ server2dp_proto_ws2dp_save_ranking_info_one::server2dp_proto_ws2dp_save_ranking_
 }
 
 void server2dp_proto_ws2dp_save_ranking_info_one::InitAsDefaultInstance() {
-  ranking_info_ = const_cast< ::hld::server2dp_proto_s_ranking_player_info*>(&::hld::server2dp_proto_s_ranking_player_info::default_instance());
+  ranking_info_ = const_cast< ::faith::server2dp_proto_s_ranking_player_info*>(&::faith::server2dp_proto_s_ranking_player_info::default_instance());
 }
 
 server2dp_proto_ws2dp_save_ranking_info_one::server2dp_proto_ws2dp_save_ranking_info_one(const server2dp_proto_ws2dp_save_ranking_info_one& from)
@@ -13228,7 +13228,7 @@ server2dp_proto_ws2dp_save_ranking_info_one* server2dp_proto_ws2dp_save_ranking_
 void server2dp_proto_ws2dp_save_ranking_info_one::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_ranking_info()) {
-      if (ranking_info_ != NULL) ranking_info_->::hld::server2dp_proto_s_ranking_player_info::Clear();
+      if (ranking_info_ != NULL) ranking_info_->::faith::server2dp_proto_s_ranking_player_info::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -13241,7 +13241,7 @@ bool server2dp_proto_ws2dp_save_ranking_info_one::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.server2dp_proto.s_ranking_player_info ranking_info = 1;
+      // optional .faith.server2dp_proto.s_ranking_player_info ranking_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -13272,7 +13272,7 @@ bool server2dp_proto_ws2dp_save_ranking_info_one::MergePartialFromCodedStream(
 
 void server2dp_proto_ws2dp_save_ranking_info_one::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.server2dp_proto.s_ranking_player_info ranking_info = 1;
+  // optional .faith.server2dp_proto.s_ranking_player_info ranking_info = 1;
   if (has_ranking_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->ranking_info(), output);
@@ -13286,7 +13286,7 @@ void server2dp_proto_ws2dp_save_ranking_info_one::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* server2dp_proto_ws2dp_save_ranking_info_one::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.server2dp_proto.s_ranking_player_info ranking_info = 1;
+  // optional .faith.server2dp_proto.s_ranking_player_info ranking_info = 1;
   if (has_ranking_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -13304,7 +13304,7 @@ int server2dp_proto_ws2dp_save_ranking_info_one::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.server2dp_proto.s_ranking_player_info ranking_info = 1;
+    // optional .faith.server2dp_proto.s_ranking_player_info ranking_info = 1;
     if (has_ranking_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -13339,7 +13339,7 @@ void server2dp_proto_ws2dp_save_ranking_info_one::MergeFrom(const server2dp_prot
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_ranking_info()) {
-      mutable_ranking_info()->::hld::server2dp_proto_s_ranking_player_info::MergeFrom(from.ranking_info());
+      mutable_ranking_info()->::faith::server2dp_proto_s_ranking_player_info::MergeFrom(from.ranking_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -13603,7 +13603,7 @@ server2dp_proto_ws2dp_save_ranking_worship::server2dp_proto_ws2dp_save_ranking_w
 }
 
 void server2dp_proto_ws2dp_save_ranking_worship::InitAsDefaultInstance() {
-  target_data_ = const_cast< ::hld::server2dp_proto_s_ranking_player_info*>(&::hld::server2dp_proto_s_ranking_player_info::default_instance());
+  target_data_ = const_cast< ::faith::server2dp_proto_s_ranking_player_info*>(&::faith::server2dp_proto_s_ranking_player_info::default_instance());
 }
 
 server2dp_proto_ws2dp_save_ranking_worship::server2dp_proto_ws2dp_save_ranking_worship(const server2dp_proto_ws2dp_save_ranking_worship& from)
@@ -13656,7 +13656,7 @@ void server2dp_proto_ws2dp_save_ranking_worship::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     sender_guid_ = GOOGLE_LONGLONG(0);
     if (has_target_data()) {
-      if (target_data_ != NULL) target_data_->::hld::server2dp_proto_s_ranking_player_info::Clear();
+      if (target_data_ != NULL) target_data_->::faith::server2dp_proto_s_ranking_player_info::Clear();
     }
     worship_add_value_ = GOOGLE_LONGLONG(0);
     worship_type_ = 0;
@@ -13686,7 +13686,7 @@ bool server2dp_proto_ws2dp_save_ranking_worship::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.server2dp_proto.s_ranking_player_info target_data = 2;
+      // optional .faith.server2dp_proto.s_ranking_player_info target_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -13755,7 +13755,7 @@ void server2dp_proto_ws2dp_save_ranking_worship::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->sender_guid(), output);
   }
 
-  // optional .hld.server2dp_proto.s_ranking_player_info target_data = 2;
+  // optional .faith.server2dp_proto.s_ranking_player_info target_data = 2;
   if (has_target_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->target_data(), output);
@@ -13784,7 +13784,7 @@ void server2dp_proto_ws2dp_save_ranking_worship::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->sender_guid(), target);
   }
 
-  // optional .hld.server2dp_proto.s_ranking_player_info target_data = 2;
+  // optional .faith.server2dp_proto.s_ranking_player_info target_data = 2;
   if (has_target_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -13819,7 +13819,7 @@ int server2dp_proto_ws2dp_save_ranking_worship::ByteSize() const {
           this->sender_guid());
     }
 
-    // optional .hld.server2dp_proto.s_ranking_player_info target_data = 2;
+    // optional .faith.server2dp_proto.s_ranking_player_info target_data = 2;
     if (has_target_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -13871,7 +13871,7 @@ void server2dp_proto_ws2dp_save_ranking_worship::MergeFrom(const server2dp_proto
       set_sender_guid(from.sender_guid());
     }
     if (from.has_target_data()) {
-      mutable_target_data()->::hld::server2dp_proto_s_ranking_player_info::MergeFrom(from.target_data());
+      mutable_target_data()->::faith::server2dp_proto_s_ranking_player_info::MergeFrom(from.target_data());
     }
     if (from.has_worship_add_value()) {
       set_worship_add_value(from.worship_add_value());
@@ -14591,7 +14591,7 @@ server2dp_proto_ws2dp_save_legion_info::server2dp_proto_ws2dp_save_legion_info()
 }
 
 void server2dp_proto_ws2dp_save_legion_info::InitAsDefaultInstance() {
-  legion_info_ = const_cast< ::hld::server2dp_proto_s_legion_info*>(&::hld::server2dp_proto_s_legion_info::default_instance());
+  legion_info_ = const_cast< ::faith::server2dp_proto_s_legion_info*>(&::faith::server2dp_proto_s_legion_info::default_instance());
 }
 
 server2dp_proto_ws2dp_save_legion_info::server2dp_proto_ws2dp_save_legion_info(const server2dp_proto_ws2dp_save_legion_info& from)
@@ -14640,7 +14640,7 @@ server2dp_proto_ws2dp_save_legion_info* server2dp_proto_ws2dp_save_legion_info::
 void server2dp_proto_ws2dp_save_legion_info::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_legion_info()) {
-      if (legion_info_ != NULL) legion_info_->::hld::server2dp_proto_s_legion_info::Clear();
+      if (legion_info_ != NULL) legion_info_->::faith::server2dp_proto_s_legion_info::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -14653,7 +14653,7 @@ bool server2dp_proto_ws2dp_save_legion_info::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.server2dp_proto.s_legion_info legion_info = 1;
+      // optional .faith.server2dp_proto.s_legion_info legion_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -14684,7 +14684,7 @@ bool server2dp_proto_ws2dp_save_legion_info::MergePartialFromCodedStream(
 
 void server2dp_proto_ws2dp_save_legion_info::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.server2dp_proto.s_legion_info legion_info = 1;
+  // optional .faith.server2dp_proto.s_legion_info legion_info = 1;
   if (has_legion_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->legion_info(), output);
@@ -14698,7 +14698,7 @@ void server2dp_proto_ws2dp_save_legion_info::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* server2dp_proto_ws2dp_save_legion_info::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.server2dp_proto.s_legion_info legion_info = 1;
+  // optional .faith.server2dp_proto.s_legion_info legion_info = 1;
   if (has_legion_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -14716,7 +14716,7 @@ int server2dp_proto_ws2dp_save_legion_info::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.server2dp_proto.s_legion_info legion_info = 1;
+    // optional .faith.server2dp_proto.s_legion_info legion_info = 1;
     if (has_legion_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -14751,7 +14751,7 @@ void server2dp_proto_ws2dp_save_legion_info::MergeFrom(const server2dp_proto_ws2
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_legion_info()) {
-      mutable_legion_info()->::hld::server2dp_proto_s_legion_info::MergeFrom(from.legion_info());
+      mutable_legion_info()->::faith::server2dp_proto_s_legion_info::MergeFrom(from.legion_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -15158,7 +15158,7 @@ server2dp_proto_ws2dp_save_legion_member_info::server2dp_proto_ws2dp_save_legion
 }
 
 void server2dp_proto_ws2dp_save_legion_member_info::InitAsDefaultInstance() {
-  legion_member_info_ = const_cast< ::hld::server2dp_proto_s_legion_member_info*>(&::hld::server2dp_proto_s_legion_member_info::default_instance());
+  legion_member_info_ = const_cast< ::faith::server2dp_proto_s_legion_member_info*>(&::faith::server2dp_proto_s_legion_member_info::default_instance());
 }
 
 server2dp_proto_ws2dp_save_legion_member_info::server2dp_proto_ws2dp_save_legion_member_info(const server2dp_proto_ws2dp_save_legion_member_info& from)
@@ -15209,7 +15209,7 @@ void server2dp_proto_ws2dp_save_legion_member_info::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     legion_guid_ = GOOGLE_LONGLONG(0);
     if (has_legion_member_info()) {
-      if (legion_member_info_ != NULL) legion_member_info_->::hld::server2dp_proto_s_legion_member_info::Clear();
+      if (legion_member_info_ != NULL) legion_member_info_->::faith::server2dp_proto_s_legion_member_info::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -15237,7 +15237,7 @@ bool server2dp_proto_ws2dp_save_legion_member_info::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.server2dp_proto.s_legion_member_info legion_member_info = 2;
+      // optional .faith.server2dp_proto.s_legion_member_info legion_member_info = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -15274,7 +15274,7 @@ void server2dp_proto_ws2dp_save_legion_member_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->legion_guid(), output);
   }
 
-  // optional .hld.server2dp_proto.s_legion_member_info legion_member_info = 2;
+  // optional .faith.server2dp_proto.s_legion_member_info legion_member_info = 2;
   if (has_legion_member_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->legion_member_info(), output);
@@ -15293,7 +15293,7 @@ void server2dp_proto_ws2dp_save_legion_member_info::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->legion_guid(), target);
   }
 
-  // optional .hld.server2dp_proto.s_legion_member_info legion_member_info = 2;
+  // optional .faith.server2dp_proto.s_legion_member_info legion_member_info = 2;
   if (has_legion_member_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -15318,7 +15318,7 @@ int server2dp_proto_ws2dp_save_legion_member_info::ByteSize() const {
           this->legion_guid());
     }
 
-    // optional .hld.server2dp_proto.s_legion_member_info legion_member_info = 2;
+    // optional .faith.server2dp_proto.s_legion_member_info legion_member_info = 2;
     if (has_legion_member_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -15356,7 +15356,7 @@ void server2dp_proto_ws2dp_save_legion_member_info::MergeFrom(const server2dp_pr
       set_legion_guid(from.legion_guid());
     }
     if (from.has_legion_member_info()) {
-      mutable_legion_member_info()->::hld::server2dp_proto_s_legion_member_info::MergeFrom(from.legion_member_info());
+      mutable_legion_member_info()->::faith::server2dp_proto_s_legion_member_info::MergeFrom(from.legion_member_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -15836,7 +15836,7 @@ server2dp_proto_ws2dp_save_legion_city_war_member_info::server2dp_proto_ws2dp_sa
 }
 
 void server2dp_proto_ws2dp_save_legion_city_war_member_info::InitAsDefaultInstance() {
-  legion_member_info_ = const_cast< ::hld::server2dp_proto_s_legion_city_war_member_info*>(&::hld::server2dp_proto_s_legion_city_war_member_info::default_instance());
+  legion_member_info_ = const_cast< ::faith::server2dp_proto_s_legion_city_war_member_info*>(&::faith::server2dp_proto_s_legion_city_war_member_info::default_instance());
 }
 
 server2dp_proto_ws2dp_save_legion_city_war_member_info::server2dp_proto_ws2dp_save_legion_city_war_member_info(const server2dp_proto_ws2dp_save_legion_city_war_member_info& from)
@@ -15887,7 +15887,7 @@ void server2dp_proto_ws2dp_save_legion_city_war_member_info::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     legion_guid_ = GOOGLE_LONGLONG(0);
     if (has_legion_member_info()) {
-      if (legion_member_info_ != NULL) legion_member_info_->::hld::server2dp_proto_s_legion_city_war_member_info::Clear();
+      if (legion_member_info_ != NULL) legion_member_info_->::faith::server2dp_proto_s_legion_city_war_member_info::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -15915,7 +15915,7 @@ bool server2dp_proto_ws2dp_save_legion_city_war_member_info::MergePartialFromCod
         break;
       }
 
-      // optional .hld.server2dp_proto.s_legion_city_war_member_info legion_member_info = 2;
+      // optional .faith.server2dp_proto.s_legion_city_war_member_info legion_member_info = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -15952,7 +15952,7 @@ void server2dp_proto_ws2dp_save_legion_city_war_member_info::SerializeWithCached
     ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->legion_guid(), output);
   }
 
-  // optional .hld.server2dp_proto.s_legion_city_war_member_info legion_member_info = 2;
+  // optional .faith.server2dp_proto.s_legion_city_war_member_info legion_member_info = 2;
   if (has_legion_member_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->legion_member_info(), output);
@@ -15971,7 +15971,7 @@ void server2dp_proto_ws2dp_save_legion_city_war_member_info::SerializeWithCached
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->legion_guid(), target);
   }
 
-  // optional .hld.server2dp_proto.s_legion_city_war_member_info legion_member_info = 2;
+  // optional .faith.server2dp_proto.s_legion_city_war_member_info legion_member_info = 2;
   if (has_legion_member_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -15996,7 +15996,7 @@ int server2dp_proto_ws2dp_save_legion_city_war_member_info::ByteSize() const {
           this->legion_guid());
     }
 
-    // optional .hld.server2dp_proto.s_legion_city_war_member_info legion_member_info = 2;
+    // optional .faith.server2dp_proto.s_legion_city_war_member_info legion_member_info = 2;
     if (has_legion_member_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -16034,7 +16034,7 @@ void server2dp_proto_ws2dp_save_legion_city_war_member_info::MergeFrom(const ser
       set_legion_guid(from.legion_guid());
     }
     if (from.has_legion_member_info()) {
-      mutable_legion_member_info()->::hld::server2dp_proto_s_legion_city_war_member_info::MergeFrom(from.legion_member_info());
+      mutable_legion_member_info()->::faith::server2dp_proto_s_legion_city_war_member_info::MergeFrom(from.legion_member_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -18577,7 +18577,7 @@ server2dp_proto_ws2dp_save_war_bid_info::server2dp_proto_ws2dp_save_war_bid_info
 }
 
 void server2dp_proto_ws2dp_save_war_bid_info::InitAsDefaultInstance() {
-  bid_info_ = const_cast< ::hld::server2dp_proto_s_city_war_bid_info*>(&::hld::server2dp_proto_s_city_war_bid_info::default_instance());
+  bid_info_ = const_cast< ::faith::server2dp_proto_s_city_war_bid_info*>(&::faith::server2dp_proto_s_city_war_bid_info::default_instance());
 }
 
 server2dp_proto_ws2dp_save_war_bid_info::server2dp_proto_ws2dp_save_war_bid_info(const server2dp_proto_ws2dp_save_war_bid_info& from)
@@ -18626,7 +18626,7 @@ server2dp_proto_ws2dp_save_war_bid_info* server2dp_proto_ws2dp_save_war_bid_info
 void server2dp_proto_ws2dp_save_war_bid_info::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_bid_info()) {
-      if (bid_info_ != NULL) bid_info_->::hld::server2dp_proto_s_city_war_bid_info::Clear();
+      if (bid_info_ != NULL) bid_info_->::faith::server2dp_proto_s_city_war_bid_info::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -18639,7 +18639,7 @@ bool server2dp_proto_ws2dp_save_war_bid_info::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.server2dp_proto.s_city_war_bid_info bid_info = 1;
+      // optional .faith.server2dp_proto.s_city_war_bid_info bid_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -18670,7 +18670,7 @@ bool server2dp_proto_ws2dp_save_war_bid_info::MergePartialFromCodedStream(
 
 void server2dp_proto_ws2dp_save_war_bid_info::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.server2dp_proto.s_city_war_bid_info bid_info = 1;
+  // optional .faith.server2dp_proto.s_city_war_bid_info bid_info = 1;
   if (has_bid_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->bid_info(), output);
@@ -18684,7 +18684,7 @@ void server2dp_proto_ws2dp_save_war_bid_info::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* server2dp_proto_ws2dp_save_war_bid_info::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.server2dp_proto.s_city_war_bid_info bid_info = 1;
+  // optional .faith.server2dp_proto.s_city_war_bid_info bid_info = 1;
   if (has_bid_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -18702,7 +18702,7 @@ int server2dp_proto_ws2dp_save_war_bid_info::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.server2dp_proto.s_city_war_bid_info bid_info = 1;
+    // optional .faith.server2dp_proto.s_city_war_bid_info bid_info = 1;
     if (has_bid_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -18737,7 +18737,7 @@ void server2dp_proto_ws2dp_save_war_bid_info::MergeFrom(const server2dp_proto_ws
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_bid_info()) {
-      mutable_bid_info()->::hld::server2dp_proto_s_city_war_bid_info::MergeFrom(from.bid_info());
+      mutable_bid_info()->::faith::server2dp_proto_s_city_war_bid_info::MergeFrom(from.bid_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -19591,7 +19591,7 @@ server2dp_proto_ws2dp_save_legion_event::server2dp_proto_ws2dp_save_legion_event
 }
 
 void server2dp_proto_ws2dp_save_legion_event::InitAsDefaultInstance() {
-  event_data_ = const_cast< ::hld::server2dp_proto_s_legion_event*>(&::hld::server2dp_proto_s_legion_event::default_instance());
+  event_data_ = const_cast< ::faith::server2dp_proto_s_legion_event*>(&::faith::server2dp_proto_s_legion_event::default_instance());
 }
 
 server2dp_proto_ws2dp_save_legion_event::server2dp_proto_ws2dp_save_legion_event(const server2dp_proto_ws2dp_save_legion_event& from)
@@ -19640,7 +19640,7 @@ server2dp_proto_ws2dp_save_legion_event* server2dp_proto_ws2dp_save_legion_event
 void server2dp_proto_ws2dp_save_legion_event::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_event_data()) {
-      if (event_data_ != NULL) event_data_->::hld::server2dp_proto_s_legion_event::Clear();
+      if (event_data_ != NULL) event_data_->::faith::server2dp_proto_s_legion_event::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -19653,7 +19653,7 @@ bool server2dp_proto_ws2dp_save_legion_event::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.server2dp_proto.s_legion_event event_data = 1;
+      // optional .faith.server2dp_proto.s_legion_event event_data = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -19684,7 +19684,7 @@ bool server2dp_proto_ws2dp_save_legion_event::MergePartialFromCodedStream(
 
 void server2dp_proto_ws2dp_save_legion_event::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.server2dp_proto.s_legion_event event_data = 1;
+  // optional .faith.server2dp_proto.s_legion_event event_data = 1;
   if (has_event_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->event_data(), output);
@@ -19698,7 +19698,7 @@ void server2dp_proto_ws2dp_save_legion_event::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* server2dp_proto_ws2dp_save_legion_event::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.server2dp_proto.s_legion_event event_data = 1;
+  // optional .faith.server2dp_proto.s_legion_event event_data = 1;
   if (has_event_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -19716,7 +19716,7 @@ int server2dp_proto_ws2dp_save_legion_event::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.server2dp_proto.s_legion_event event_data = 1;
+    // optional .faith.server2dp_proto.s_legion_event event_data = 1;
     if (has_event_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -19751,7 +19751,7 @@ void server2dp_proto_ws2dp_save_legion_event::MergeFrom(const server2dp_proto_ws
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_event_data()) {
-      mutable_event_data()->::hld::server2dp_proto_s_legion_event::MergeFrom(from.event_data());
+      mutable_event_data()->::faith::server2dp_proto_s_legion_event::MergeFrom(from.event_data());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -21471,7 +21471,7 @@ server2dp_proto_ws2dp_save_cross_city_info::server2dp_proto_ws2dp_save_cross_cit
 }
 
 void server2dp_proto_ws2dp_save_cross_city_info::InitAsDefaultInstance() {
-  city_info_msg_ = const_cast< ::hld::server2dp_proto_s_cross_city_info*>(&::hld::server2dp_proto_s_cross_city_info::default_instance());
+  city_info_msg_ = const_cast< ::faith::server2dp_proto_s_cross_city_info*>(&::faith::server2dp_proto_s_cross_city_info::default_instance());
 }
 
 server2dp_proto_ws2dp_save_cross_city_info::server2dp_proto_ws2dp_save_cross_city_info(const server2dp_proto_ws2dp_save_cross_city_info& from)
@@ -21521,7 +21521,7 @@ server2dp_proto_ws2dp_save_cross_city_info* server2dp_proto_ws2dp_save_cross_cit
 void server2dp_proto_ws2dp_save_cross_city_info::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_city_info_msg()) {
-      if (city_info_msg_ != NULL) city_info_msg_->::hld::server2dp_proto_s_cross_city_info::Clear();
+      if (city_info_msg_ != NULL) city_info_msg_->::faith::server2dp_proto_s_cross_city_info::Clear();
     }
     rank_idex_ = 0;
   }
@@ -21535,7 +21535,7 @@ bool server2dp_proto_ws2dp_save_cross_city_info::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.server2dp_proto.s_cross_city_info city_info_msg = 1;
+      // optional .faith.server2dp_proto.s_cross_city_info city_info_msg = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -21582,7 +21582,7 @@ bool server2dp_proto_ws2dp_save_cross_city_info::MergePartialFromCodedStream(
 
 void server2dp_proto_ws2dp_save_cross_city_info::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.server2dp_proto.s_cross_city_info city_info_msg = 1;
+  // optional .faith.server2dp_proto.s_cross_city_info city_info_msg = 1;
   if (has_city_info_msg()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->city_info_msg(), output);
@@ -21601,7 +21601,7 @@ void server2dp_proto_ws2dp_save_cross_city_info::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* server2dp_proto_ws2dp_save_cross_city_info::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.server2dp_proto.s_cross_city_info city_info_msg = 1;
+  // optional .faith.server2dp_proto.s_cross_city_info city_info_msg = 1;
   if (has_city_info_msg()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -21624,7 +21624,7 @@ int server2dp_proto_ws2dp_save_cross_city_info::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.server2dp_proto.s_cross_city_info city_info_msg = 1;
+    // optional .faith.server2dp_proto.s_cross_city_info city_info_msg = 1;
     if (has_city_info_msg()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -21666,7 +21666,7 @@ void server2dp_proto_ws2dp_save_cross_city_info::MergeFrom(const server2dp_proto
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_city_info_msg()) {
-      mutable_city_info_msg()->::hld::server2dp_proto_s_cross_city_info::MergeFrom(from.city_info_msg());
+      mutable_city_info_msg()->::faith::server2dp_proto_s_cross_city_info::MergeFrom(from.city_info_msg());
     }
     if (from.has_rank_idex()) {
       set_rank_idex(from.rank_idex());
@@ -22231,7 +22231,7 @@ server2dp_proto_ws2dp_save_best_record::server2dp_proto_ws2dp_save_best_record()
 }
 
 void server2dp_proto_ws2dp_save_best_record::InitAsDefaultInstance() {
-  record_info_ = const_cast< ::hld::server2dp_proto_s_best_record*>(&::hld::server2dp_proto_s_best_record::default_instance());
+  record_info_ = const_cast< ::faith::server2dp_proto_s_best_record*>(&::faith::server2dp_proto_s_best_record::default_instance());
 }
 
 server2dp_proto_ws2dp_save_best_record::server2dp_proto_ws2dp_save_best_record(const server2dp_proto_ws2dp_save_best_record& from)
@@ -22280,7 +22280,7 @@ server2dp_proto_ws2dp_save_best_record* server2dp_proto_ws2dp_save_best_record::
 void server2dp_proto_ws2dp_save_best_record::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_record_info()) {
-      if (record_info_ != NULL) record_info_->::hld::server2dp_proto_s_best_record::Clear();
+      if (record_info_ != NULL) record_info_->::faith::server2dp_proto_s_best_record::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -22293,7 +22293,7 @@ bool server2dp_proto_ws2dp_save_best_record::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.server2dp_proto.s_best_record record_info = 1;
+      // optional .faith.server2dp_proto.s_best_record record_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -22324,7 +22324,7 @@ bool server2dp_proto_ws2dp_save_best_record::MergePartialFromCodedStream(
 
 void server2dp_proto_ws2dp_save_best_record::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.server2dp_proto.s_best_record record_info = 1;
+  // optional .faith.server2dp_proto.s_best_record record_info = 1;
   if (has_record_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->record_info(), output);
@@ -22338,7 +22338,7 @@ void server2dp_proto_ws2dp_save_best_record::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* server2dp_proto_ws2dp_save_best_record::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.server2dp_proto.s_best_record record_info = 1;
+  // optional .faith.server2dp_proto.s_best_record record_info = 1;
   if (has_record_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -22356,7 +22356,7 @@ int server2dp_proto_ws2dp_save_best_record::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.server2dp_proto.s_best_record record_info = 1;
+    // optional .faith.server2dp_proto.s_best_record record_info = 1;
     if (has_record_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -22391,7 +22391,7 @@ void server2dp_proto_ws2dp_save_best_record::MergeFrom(const server2dp_proto_ws2
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_record_info()) {
-      mutable_record_info()->::hld::server2dp_proto_s_best_record::MergeFrom(from.record_info());
+      mutable_record_info()->::faith::server2dp_proto_s_best_record::MergeFrom(from.record_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -27559,7 +27559,7 @@ bool server2dp_proto_ws2dp_save_mail_event_to_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.server2dp_proto.s_mail_info mail_info = 3;
+      // repeated .faith.server2dp_proto.s_mail_info mail_info = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -27602,7 +27602,7 @@ void server2dp_proto_ws2dp_save_mail_event_to_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->mail_num(), output);
   }
 
-  // repeated .hld.server2dp_proto.s_mail_info mail_info = 3;
+  // repeated .faith.server2dp_proto.s_mail_info mail_info = 3;
   for (int i = 0; i < this->mail_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->mail_info(i), output);
@@ -27626,7 +27626,7 @@ void server2dp_proto_ws2dp_save_mail_event_to_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->mail_num(), target);
   }
 
-  // repeated .hld.server2dp_proto.s_mail_info mail_info = 3;
+  // repeated .faith.server2dp_proto.s_mail_info mail_info = 3;
   for (int i = 0; i < this->mail_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -27657,7 +27657,7 @@ int server2dp_proto_ws2dp_save_mail_event_to_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.server2dp_proto.s_mail_info mail_info = 3;
+  // repeated .faith.server2dp_proto.s_mail_info mail_info = 3;
   total_size += 1 * this->mail_info_size();
   for (int i = 0; i < this->mail_info_size(); i++) {
     total_size +=
@@ -28665,7 +28665,7 @@ server2dp_proto_s_red_package::server2dp_proto_s_red_package()
 }
 
 void server2dp_proto_s_red_package::InitAsDefaultInstance() {
-  base_info_ = const_cast< ::hld::server2dp_proto_s_red_package_base*>(&::hld::server2dp_proto_s_red_package_base::default_instance());
+  base_info_ = const_cast< ::faith::server2dp_proto_s_red_package_base*>(&::faith::server2dp_proto_s_red_package_base::default_instance());
 }
 
 server2dp_proto_s_red_package::server2dp_proto_s_red_package(const server2dp_proto_s_red_package& from)
@@ -28714,7 +28714,7 @@ server2dp_proto_s_red_package* server2dp_proto_s_red_package::New() const {
 void server2dp_proto_s_red_package::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_base_info()) {
-      if (base_info_ != NULL) base_info_->::hld::server2dp_proto_s_red_package_base::Clear();
+      if (base_info_ != NULL) base_info_->::faith::server2dp_proto_s_red_package_base::Clear();
     }
   }
   info_list_.Clear();
@@ -28728,7 +28728,7 @@ bool server2dp_proto_s_red_package::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.server2dp_proto.s_red_package_base base_info = 1;
+      // optional .faith.server2dp_proto.s_red_package_base base_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -28741,7 +28741,7 @@ bool server2dp_proto_s_red_package::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.server2dp_proto.s_red_package_receiver info_list = 2;
+      // repeated .faith.server2dp_proto.s_red_package_receiver info_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -28774,13 +28774,13 @@ bool server2dp_proto_s_red_package::MergePartialFromCodedStream(
 
 void server2dp_proto_s_red_package::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.server2dp_proto.s_red_package_base base_info = 1;
+  // optional .faith.server2dp_proto.s_red_package_base base_info = 1;
   if (has_base_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->base_info(), output);
   }
 
-  // repeated .hld.server2dp_proto.s_red_package_receiver info_list = 2;
+  // repeated .faith.server2dp_proto.s_red_package_receiver info_list = 2;
   for (int i = 0; i < this->info_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->info_list(i), output);
@@ -28794,14 +28794,14 @@ void server2dp_proto_s_red_package::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* server2dp_proto_s_red_package::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.server2dp_proto.s_red_package_base base_info = 1;
+  // optional .faith.server2dp_proto.s_red_package_base base_info = 1;
   if (has_base_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         1, this->base_info(), target);
   }
 
-  // repeated .hld.server2dp_proto.s_red_package_receiver info_list = 2;
+  // repeated .faith.server2dp_proto.s_red_package_receiver info_list = 2;
   for (int i = 0; i < this->info_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -28819,7 +28819,7 @@ int server2dp_proto_s_red_package::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.server2dp_proto.s_red_package_base base_info = 1;
+    // optional .faith.server2dp_proto.s_red_package_base base_info = 1;
     if (has_base_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -28827,7 +28827,7 @@ int server2dp_proto_s_red_package::ByteSize() const {
     }
 
   }
-  // repeated .hld.server2dp_proto.s_red_package_receiver info_list = 2;
+  // repeated .faith.server2dp_proto.s_red_package_receiver info_list = 2;
   total_size += 1 * this->info_list_size();
   for (int i = 0; i < this->info_list_size(); i++) {
     total_size +=
@@ -28863,7 +28863,7 @@ void server2dp_proto_s_red_package::MergeFrom(const server2dp_proto_s_red_packag
   info_list_.MergeFrom(from.info_list_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_base_info()) {
-      mutable_base_info()->::hld::server2dp_proto_s_red_package_base::MergeFrom(from.base_info());
+      mutable_base_info()->::faith::server2dp_proto_s_red_package_base::MergeFrom(from.base_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -28992,7 +28992,7 @@ bool server2dp_proto_ws2dp_save_red_package::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.server2dp_proto.s_red_package data_ary = 2;
+      // repeated .faith.server2dp_proto.s_red_package data_ary = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -29030,7 +29030,7 @@ void server2dp_proto_ws2dp_save_red_package::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->data_num(), output);
   }
 
-  // repeated .hld.server2dp_proto.s_red_package data_ary = 2;
+  // repeated .faith.server2dp_proto.s_red_package data_ary = 2;
   for (int i = 0; i < this->data_ary_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->data_ary(i), output);
@@ -29049,7 +29049,7 @@ void server2dp_proto_ws2dp_save_red_package::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->data_num(), target);
   }
 
-  // repeated .hld.server2dp_proto.s_red_package data_ary = 2;
+  // repeated .faith.server2dp_proto.s_red_package data_ary = 2;
   for (int i = 0; i < this->data_ary_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -29075,7 +29075,7 @@ int server2dp_proto_ws2dp_save_red_package::ByteSize() const {
     }
 
   }
-  // repeated .hld.server2dp_proto.s_red_package data_ary = 2;
+  // repeated .faith.server2dp_proto.s_red_package data_ary = 2;
   total_size += 1 * this->data_ary_size();
   for (int i = 0; i < this->data_ary_size(); i++) {
     total_size +=
@@ -29529,7 +29529,7 @@ server2dp_proto_ws2dp_add_red_package_to_sql::server2dp_proto_ws2dp_add_red_pack
 }
 
 void server2dp_proto_ws2dp_add_red_package_to_sql::InitAsDefaultInstance() {
-  red_info_ = const_cast< ::hld::server2dp_proto_s_red_package_base*>(&::hld::server2dp_proto_s_red_package_base::default_instance());
+  red_info_ = const_cast< ::faith::server2dp_proto_s_red_package_base*>(&::faith::server2dp_proto_s_red_package_base::default_instance());
 }
 
 server2dp_proto_ws2dp_add_red_package_to_sql::server2dp_proto_ws2dp_add_red_package_to_sql(const server2dp_proto_ws2dp_add_red_package_to_sql& from)
@@ -29578,7 +29578,7 @@ server2dp_proto_ws2dp_add_red_package_to_sql* server2dp_proto_ws2dp_add_red_pack
 void server2dp_proto_ws2dp_add_red_package_to_sql::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_red_info()) {
-      if (red_info_ != NULL) red_info_->::hld::server2dp_proto_s_red_package_base::Clear();
+      if (red_info_ != NULL) red_info_->::faith::server2dp_proto_s_red_package_base::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -29591,7 +29591,7 @@ bool server2dp_proto_ws2dp_add_red_package_to_sql::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.server2dp_proto.s_red_package_base red_info = 1;
+      // optional .faith.server2dp_proto.s_red_package_base red_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -29622,7 +29622,7 @@ bool server2dp_proto_ws2dp_add_red_package_to_sql::MergePartialFromCodedStream(
 
 void server2dp_proto_ws2dp_add_red_package_to_sql::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.server2dp_proto.s_red_package_base red_info = 1;
+  // optional .faith.server2dp_proto.s_red_package_base red_info = 1;
   if (has_red_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->red_info(), output);
@@ -29636,7 +29636,7 @@ void server2dp_proto_ws2dp_add_red_package_to_sql::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* server2dp_proto_ws2dp_add_red_package_to_sql::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.server2dp_proto.s_red_package_base red_info = 1;
+  // optional .faith.server2dp_proto.s_red_package_base red_info = 1;
   if (has_red_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -29654,7 +29654,7 @@ int server2dp_proto_ws2dp_add_red_package_to_sql::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.server2dp_proto.s_red_package_base red_info = 1;
+    // optional .faith.server2dp_proto.s_red_package_base red_info = 1;
     if (has_red_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -29689,7 +29689,7 @@ void server2dp_proto_ws2dp_add_red_package_to_sql::MergeFrom(const server2dp_pro
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_red_info()) {
-      mutable_red_info()->::hld::server2dp_proto_s_red_package_base::MergeFrom(from.red_info());
+      mutable_red_info()->::faith::server2dp_proto_s_red_package_base::MergeFrom(from.red_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -29742,7 +29742,7 @@ server2dp_proto_ws2dp_add_red_package_receiver_to_sql::server2dp_proto_ws2dp_add
 }
 
 void server2dp_proto_ws2dp_add_red_package_receiver_to_sql::InitAsDefaultInstance() {
-  red_info_ = const_cast< ::hld::server2dp_proto_s_red_package_receiver*>(&::hld::server2dp_proto_s_red_package_receiver::default_instance());
+  red_info_ = const_cast< ::faith::server2dp_proto_s_red_package_receiver*>(&::faith::server2dp_proto_s_red_package_receiver::default_instance());
 }
 
 server2dp_proto_ws2dp_add_red_package_receiver_to_sql::server2dp_proto_ws2dp_add_red_package_receiver_to_sql(const server2dp_proto_ws2dp_add_red_package_receiver_to_sql& from)
@@ -29791,7 +29791,7 @@ server2dp_proto_ws2dp_add_red_package_receiver_to_sql* server2dp_proto_ws2dp_add
 void server2dp_proto_ws2dp_add_red_package_receiver_to_sql::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_red_info()) {
-      if (red_info_ != NULL) red_info_->::hld::server2dp_proto_s_red_package_receiver::Clear();
+      if (red_info_ != NULL) red_info_->::faith::server2dp_proto_s_red_package_receiver::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -29804,7 +29804,7 @@ bool server2dp_proto_ws2dp_add_red_package_receiver_to_sql::MergePartialFromCode
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.server2dp_proto.s_red_package_receiver red_info = 1;
+      // optional .faith.server2dp_proto.s_red_package_receiver red_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -29835,7 +29835,7 @@ bool server2dp_proto_ws2dp_add_red_package_receiver_to_sql::MergePartialFromCode
 
 void server2dp_proto_ws2dp_add_red_package_receiver_to_sql::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.server2dp_proto.s_red_package_receiver red_info = 1;
+  // optional .faith.server2dp_proto.s_red_package_receiver red_info = 1;
   if (has_red_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->red_info(), output);
@@ -29849,7 +29849,7 @@ void server2dp_proto_ws2dp_add_red_package_receiver_to_sql::SerializeWithCachedS
 
 ::google::protobuf::uint8* server2dp_proto_ws2dp_add_red_package_receiver_to_sql::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.server2dp_proto.s_red_package_receiver red_info = 1;
+  // optional .faith.server2dp_proto.s_red_package_receiver red_info = 1;
   if (has_red_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -29867,7 +29867,7 @@ int server2dp_proto_ws2dp_add_red_package_receiver_to_sql::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.server2dp_proto.s_red_package_receiver red_info = 1;
+    // optional .faith.server2dp_proto.s_red_package_receiver red_info = 1;
     if (has_red_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -29902,7 +29902,7 @@ void server2dp_proto_ws2dp_add_red_package_receiver_to_sql::MergeFrom(const serv
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_red_info()) {
-      mutable_red_info()->::hld::server2dp_proto_s_red_package_receiver::MergeFrom(from.red_info());
+      mutable_red_info()->::faith::server2dp_proto_s_red_package_receiver::MergeFrom(from.red_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -30589,7 +30589,7 @@ bool server2dp_proto_ws2dp_save_mail_event_item_to_db::MergePartialFromCodedStre
         break;
       }
 
-      // repeated .hld.server2dp_proto.s_item_info item_list = 4;
+      // repeated .faith.server2dp_proto.s_item_info item_list = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -30637,7 +30637,7 @@ void server2dp_proto_ws2dp_save_mail_event_item_to_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->item_num(), output);
   }
 
-  // repeated .hld.server2dp_proto.s_item_info item_list = 4;
+  // repeated .faith.server2dp_proto.s_item_info item_list = 4;
   for (int i = 0; i < this->item_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->item_list(i), output);
@@ -30666,7 +30666,7 @@ void server2dp_proto_ws2dp_save_mail_event_item_to_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->item_num(), target);
   }
 
-  // repeated .hld.server2dp_proto.s_item_info item_list = 4;
+  // repeated .faith.server2dp_proto.s_item_info item_list = 4;
   for (int i = 0; i < this->item_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -30704,7 +30704,7 @@ int server2dp_proto_ws2dp_save_mail_event_item_to_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.server2dp_proto.s_item_info item_list = 4;
+  // repeated .faith.server2dp_proto.s_item_info item_list = 4;
   total_size += 1 * this->item_list_size();
   for (int i = 0; i < this->item_list_size(); i++) {
     total_size +=
@@ -33783,7 +33783,7 @@ server2dp_proto_s_auction_info::server2dp_proto_s_auction_info()
 }
 
 void server2dp_proto_s_auction_info::InitAsDefaultInstance() {
-  item_info_ = const_cast< ::hld::server2dp_proto_s_item_info*>(&::hld::server2dp_proto_s_item_info::default_instance());
+  item_info_ = const_cast< ::faith::server2dp_proto_s_item_info*>(&::faith::server2dp_proto_s_item_info::default_instance());
 }
 
 server2dp_proto_s_auction_info::server2dp_proto_s_auction_info(const server2dp_proto_s_auction_info& from)
@@ -33901,7 +33901,7 @@ void server2dp_proto_s_auction_info::Clear() {
     is_sky_order_ = 0;
     show_guid_ = GOOGLE_LONGLONG(0);
     if (has_item_info()) {
-      if (item_info_ != NULL) item_info_->::hld::server2dp_proto_s_item_info::Clear();
+      if (item_info_ != NULL) item_info_->::faith::server2dp_proto_s_item_info::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -34268,7 +34268,7 @@ bool server2dp_proto_s_auction_info::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.server2dp_proto.s_item_info item_info = 23;
+      // optional .faith.server2dp_proto.s_item_info item_info = 23;
       case 23: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -34422,7 +34422,7 @@ void server2dp_proto_s_auction_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(22, this->show_guid(), output);
   }
 
-  // optional .hld.server2dp_proto.s_item_info item_info = 23;
+  // optional .faith.server2dp_proto.s_item_info item_info = 23;
   if (has_item_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       23, this->item_info(), output);
@@ -34561,7 +34561,7 @@ void server2dp_proto_s_auction_info::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(22, this->show_guid(), target);
   }
 
-  // optional .hld.server2dp_proto.s_item_info item_info = 23;
+  // optional .faith.server2dp_proto.s_item_info item_info = 23;
   if (has_item_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -34737,7 +34737,7 @@ int server2dp_proto_s_auction_info::ByteSize() const {
           this->show_guid());
     }
 
-    // optional .hld.server2dp_proto.s_item_info item_info = 23;
+    // optional .faith.server2dp_proto.s_item_info item_info = 23;
     if (has_item_info()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -34842,7 +34842,7 @@ void server2dp_proto_s_auction_info::MergeFrom(const server2dp_proto_s_auction_i
       set_show_guid(from.show_guid());
     }
     if (from.has_item_info()) {
-      mutable_item_info()->::hld::server2dp_proto_s_item_info::MergeFrom(from.item_info());
+      mutable_item_info()->::faith::server2dp_proto_s_item_info::MergeFrom(from.item_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -36522,9 +36522,9 @@ server2dp_proto_ws2dp_auction_add_item_into_db::server2dp_proto_ws2dp_auction_ad
 }
 
 void server2dp_proto_ws2dp_auction_add_item_into_db::InitAsDefaultInstance() {
-  info_ = const_cast< ::hld::server2dp_proto_s_auction_info*>(&::hld::server2dp_proto_s_auction_info::default_instance());
-  role_info_ = const_cast< ::hld::server2dp_proto_s_unit_info*>(&::hld::server2dp_proto_s_unit_info::default_instance());
-  third_info_ = const_cast< ::hld::server2dp_proto_login_fixed_data*>(&::hld::server2dp_proto_login_fixed_data::default_instance());
+  info_ = const_cast< ::faith::server2dp_proto_s_auction_info*>(&::faith::server2dp_proto_s_auction_info::default_instance());
+  role_info_ = const_cast< ::faith::server2dp_proto_s_unit_info*>(&::faith::server2dp_proto_s_unit_info::default_instance());
+  third_info_ = const_cast< ::faith::server2dp_proto_login_fixed_data*>(&::faith::server2dp_proto_login_fixed_data::default_instance());
 }
 
 server2dp_proto_ws2dp_auction_add_item_into_db::server2dp_proto_ws2dp_auction_add_item_into_db(const server2dp_proto_ws2dp_auction_add_item_into_db& from)
@@ -36579,15 +36579,15 @@ server2dp_proto_ws2dp_auction_add_item_into_db* server2dp_proto_ws2dp_auction_ad
 void server2dp_proto_ws2dp_auction_add_item_into_db::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_info()) {
-      if (info_ != NULL) info_->::hld::server2dp_proto_s_auction_info::Clear();
+      if (info_ != NULL) info_->::faith::server2dp_proto_s_auction_info::Clear();
     }
     if (has_role_info()) {
-      if (role_info_ != NULL) role_info_->::hld::server2dp_proto_s_unit_info::Clear();
+      if (role_info_ != NULL) role_info_->::faith::server2dp_proto_s_unit_info::Clear();
     }
     is_add_to_log_ = false;
     old_item_guid_ = GOOGLE_LONGLONG(0);
     if (has_third_info()) {
-      if (third_info_ != NULL) third_info_->::hld::server2dp_proto_login_fixed_data::Clear();
+      if (third_info_ != NULL) third_info_->::faith::server2dp_proto_login_fixed_data::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -36600,7 +36600,7 @@ bool server2dp_proto_ws2dp_auction_add_item_into_db::MergePartialFromCodedStream
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.server2dp_proto.s_auction_info info = 1;
+      // optional .faith.server2dp_proto.s_auction_info info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -36613,7 +36613,7 @@ bool server2dp_proto_ws2dp_auction_add_item_into_db::MergePartialFromCodedStream
         break;
       }
 
-      // optional .hld.server2dp_proto.s_unit_info role_info = 2;
+      // optional .faith.server2dp_proto.s_unit_info role_info = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -36659,7 +36659,7 @@ bool server2dp_proto_ws2dp_auction_add_item_into_db::MergePartialFromCodedStream
         break;
       }
 
-      // optional .hld.server2dp_proto.login_fixed_data third_info = 5;
+      // optional .faith.server2dp_proto.login_fixed_data third_info = 5;
       case 5: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -36691,13 +36691,13 @@ bool server2dp_proto_ws2dp_auction_add_item_into_db::MergePartialFromCodedStream
 
 void server2dp_proto_ws2dp_auction_add_item_into_db::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.server2dp_proto.s_auction_info info = 1;
+  // optional .faith.server2dp_proto.s_auction_info info = 1;
   if (has_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->info(), output);
   }
 
-  // optional .hld.server2dp_proto.s_unit_info role_info = 2;
+  // optional .faith.server2dp_proto.s_unit_info role_info = 2;
   if (has_role_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->role_info(), output);
@@ -36713,7 +36713,7 @@ void server2dp_proto_ws2dp_auction_add_item_into_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(4, this->old_item_guid(), output);
   }
 
-  // optional .hld.server2dp_proto.login_fixed_data third_info = 5;
+  // optional .faith.server2dp_proto.login_fixed_data third_info = 5;
   if (has_third_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       5, this->third_info(), output);
@@ -36727,14 +36727,14 @@ void server2dp_proto_ws2dp_auction_add_item_into_db::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* server2dp_proto_ws2dp_auction_add_item_into_db::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.server2dp_proto.s_auction_info info = 1;
+  // optional .faith.server2dp_proto.s_auction_info info = 1;
   if (has_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         1, this->info(), target);
   }
 
-  // optional .hld.server2dp_proto.s_unit_info role_info = 2;
+  // optional .faith.server2dp_proto.s_unit_info role_info = 2;
   if (has_role_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -36751,7 +36751,7 @@ void server2dp_proto_ws2dp_auction_add_item_into_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(4, this->old_item_guid(), target);
   }
 
-  // optional .hld.server2dp_proto.login_fixed_data third_info = 5;
+  // optional .faith.server2dp_proto.login_fixed_data third_info = 5;
   if (has_third_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -36769,14 +36769,14 @@ int server2dp_proto_ws2dp_auction_add_item_into_db::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.server2dp_proto.s_auction_info info = 1;
+    // optional .faith.server2dp_proto.s_auction_info info = 1;
     if (has_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->info());
     }
 
-    // optional .hld.server2dp_proto.s_unit_info role_info = 2;
+    // optional .faith.server2dp_proto.s_unit_info role_info = 2;
     if (has_role_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -36795,7 +36795,7 @@ int server2dp_proto_ws2dp_auction_add_item_into_db::ByteSize() const {
           this->old_item_guid());
     }
 
-    // optional .hld.server2dp_proto.login_fixed_data third_info = 5;
+    // optional .faith.server2dp_proto.login_fixed_data third_info = 5;
     if (has_third_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -36830,10 +36830,10 @@ void server2dp_proto_ws2dp_auction_add_item_into_db::MergeFrom(const server2dp_p
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_info()) {
-      mutable_info()->::hld::server2dp_proto_s_auction_info::MergeFrom(from.info());
+      mutable_info()->::faith::server2dp_proto_s_auction_info::MergeFrom(from.info());
     }
     if (from.has_role_info()) {
-      mutable_role_info()->::hld::server2dp_proto_s_unit_info::MergeFrom(from.role_info());
+      mutable_role_info()->::faith::server2dp_proto_s_unit_info::MergeFrom(from.role_info());
     }
     if (from.has_is_add_to_log()) {
       set_is_add_to_log(from.is_add_to_log());
@@ -36842,7 +36842,7 @@ void server2dp_proto_ws2dp_auction_add_item_into_db::MergeFrom(const server2dp_p
       set_old_item_guid(from.old_item_guid());
     }
     if (from.has_third_info()) {
-      mutable_third_info()->::hld::server2dp_proto_login_fixed_data::MergeFrom(from.third_info());
+      mutable_third_info()->::faith::server2dp_proto_login_fixed_data::MergeFrom(from.third_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -37725,7 +37725,7 @@ server2dp_proto_ws2dp_auction_bid_success::server2dp_proto_ws2dp_auction_bid_suc
 }
 
 void server2dp_proto_ws2dp_auction_bid_success::InitAsDefaultInstance() {
-  auction_info_ = const_cast< ::hld::server2dp_proto_s_auction_info*>(&::hld::server2dp_proto_s_auction_info::default_instance());
+  auction_info_ = const_cast< ::faith::server2dp_proto_s_auction_info*>(&::faith::server2dp_proto_s_auction_info::default_instance());
 }
 
 server2dp_proto_ws2dp_auction_bid_success::server2dp_proto_ws2dp_auction_bid_success(const server2dp_proto_ws2dp_auction_bid_success& from)
@@ -37778,7 +37778,7 @@ void server2dp_proto_ws2dp_auction_bid_success::Clear() {
     new_record_id_ = GOOGLE_LONGLONG(0);
     old_buyer_guid_ = GOOGLE_LONGLONG(0);
     if (has_auction_info()) {
-      if (auction_info_ != NULL) auction_info_->::hld::server2dp_proto_s_auction_info::Clear();
+      if (auction_info_ != NULL) auction_info_->::faith::server2dp_proto_s_auction_info::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -37822,7 +37822,7 @@ bool server2dp_proto_ws2dp_auction_bid_success::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.server2dp_proto.s_auction_info auction_info = 3;
+      // optional .faith.server2dp_proto.s_auction_info auction_info = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -37864,7 +37864,7 @@ void server2dp_proto_ws2dp_auction_bid_success::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->old_buyer_guid(), output);
   }
 
-  // optional .hld.server2dp_proto.s_auction_info auction_info = 3;
+  // optional .faith.server2dp_proto.s_auction_info auction_info = 3;
   if (has_auction_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->auction_info(), output);
@@ -37888,7 +37888,7 @@ void server2dp_proto_ws2dp_auction_bid_success::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->old_buyer_guid(), target);
   }
 
-  // optional .hld.server2dp_proto.s_auction_info auction_info = 3;
+  // optional .faith.server2dp_proto.s_auction_info auction_info = 3;
   if (has_auction_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -37920,7 +37920,7 @@ int server2dp_proto_ws2dp_auction_bid_success::ByteSize() const {
           this->old_buyer_guid());
     }
 
-    // optional .hld.server2dp_proto.s_auction_info auction_info = 3;
+    // optional .faith.server2dp_proto.s_auction_info auction_info = 3;
     if (has_auction_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -37961,7 +37961,7 @@ void server2dp_proto_ws2dp_auction_bid_success::MergeFrom(const server2dp_proto_
       set_old_buyer_guid(from.old_buyer_guid());
     }
     if (from.has_auction_info()) {
-      mutable_auction_info()->::hld::server2dp_proto_s_auction_info::MergeFrom(from.auction_info());
+      mutable_auction_info()->::faith::server2dp_proto_s_auction_info::MergeFrom(from.auction_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -39067,7 +39067,7 @@ server2dp_proto_ws2dp_auction_add_purchase_record::server2dp_proto_ws2dp_auction
 }
 
 void server2dp_proto_ws2dp_auction_add_purchase_record::InitAsDefaultInstance() {
-  auction_info_ = const_cast< ::hld::server2dp_proto_s_auction_info*>(&::hld::server2dp_proto_s_auction_info::default_instance());
+  auction_info_ = const_cast< ::faith::server2dp_proto_s_auction_info*>(&::faith::server2dp_proto_s_auction_info::default_instance());
 }
 
 server2dp_proto_ws2dp_auction_add_purchase_record::server2dp_proto_ws2dp_auction_add_purchase_record(const server2dp_proto_ws2dp_auction_add_purchase_record& from)
@@ -39122,7 +39122,7 @@ void server2dp_proto_ws2dp_auction_add_purchase_record::Clear() {
     role_guid_ = GOOGLE_LONGLONG(0);
     is_sell_ = false;
     if (has_auction_info()) {
-      if (auction_info_ != NULL) auction_info_->::hld::server2dp_proto_s_auction_info::Clear();
+      if (auction_info_ != NULL) auction_info_->::faith::server2dp_proto_s_auction_info::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -39182,7 +39182,7 @@ bool server2dp_proto_ws2dp_auction_add_purchase_record::MergePartialFromCodedStr
         break;
       }
 
-      // optional .hld.server2dp_proto.s_auction_info auction_info = 4;
+      // optional .faith.server2dp_proto.s_auction_info auction_info = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -39229,7 +39229,7 @@ void server2dp_proto_ws2dp_auction_add_purchase_record::SerializeWithCachedSizes
     ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->is_sell(), output);
   }
 
-  // optional .hld.server2dp_proto.s_auction_info auction_info = 4;
+  // optional .faith.server2dp_proto.s_auction_info auction_info = 4;
   if (has_auction_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->auction_info(), output);
@@ -39258,7 +39258,7 @@ void server2dp_proto_ws2dp_auction_add_purchase_record::SerializeWithCachedSizes
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->is_sell(), target);
   }
 
-  // optional .hld.server2dp_proto.s_auction_info auction_info = 4;
+  // optional .faith.server2dp_proto.s_auction_info auction_info = 4;
   if (has_auction_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -39295,7 +39295,7 @@ int server2dp_proto_ws2dp_auction_add_purchase_record::ByteSize() const {
       total_size += 1 + 1;
     }
 
-    // optional .hld.server2dp_proto.s_auction_info auction_info = 4;
+    // optional .faith.server2dp_proto.s_auction_info auction_info = 4;
     if (has_auction_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -39339,7 +39339,7 @@ void server2dp_proto_ws2dp_auction_add_purchase_record::MergeFrom(const server2d
       set_is_sell(from.is_sell());
     }
     if (from.has_auction_info()) {
-      mutable_auction_info()->::hld::server2dp_proto_s_auction_info::MergeFrom(from.auction_info());
+      mutable_auction_info()->::faith::server2dp_proto_s_auction_info::MergeFrom(from.auction_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -40532,7 +40532,7 @@ server2dp_proto_ws2dp_auction_show_sell::server2dp_proto_ws2dp_auction_show_sell
 }
 
 void server2dp_proto_ws2dp_auction_show_sell::InitAsDefaultInstance() {
-  data_info_ = const_cast< ::hld::server2dp_proto_s_auction_info*>(&::hld::server2dp_proto_s_auction_info::default_instance());
+  data_info_ = const_cast< ::faith::server2dp_proto_s_auction_info*>(&::faith::server2dp_proto_s_auction_info::default_instance());
 }
 
 server2dp_proto_ws2dp_auction_show_sell::server2dp_proto_ws2dp_auction_show_sell(const server2dp_proto_ws2dp_auction_show_sell& from)
@@ -40583,7 +40583,7 @@ void server2dp_proto_ws2dp_auction_show_sell::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     end_time_ = 0;
     if (has_data_info()) {
-      if (data_info_ != NULL) data_info_->::hld::server2dp_proto_s_auction_info::Clear();
+      if (data_info_ != NULL) data_info_->::faith::server2dp_proto_s_auction_info::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -40611,7 +40611,7 @@ bool server2dp_proto_ws2dp_auction_show_sell::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.server2dp_proto.s_auction_info data_info = 2;
+      // optional .faith.server2dp_proto.s_auction_info data_info = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -40648,7 +40648,7 @@ void server2dp_proto_ws2dp_auction_show_sell::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->end_time(), output);
   }
 
-  // optional .hld.server2dp_proto.s_auction_info data_info = 2;
+  // optional .faith.server2dp_proto.s_auction_info data_info = 2;
   if (has_data_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->data_info(), output);
@@ -40667,7 +40667,7 @@ void server2dp_proto_ws2dp_auction_show_sell::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->end_time(), target);
   }
 
-  // optional .hld.server2dp_proto.s_auction_info data_info = 2;
+  // optional .faith.server2dp_proto.s_auction_info data_info = 2;
   if (has_data_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -40692,7 +40692,7 @@ int server2dp_proto_ws2dp_auction_show_sell::ByteSize() const {
           this->end_time());
     }
 
-    // optional .hld.server2dp_proto.s_auction_info data_info = 2;
+    // optional .faith.server2dp_proto.s_auction_info data_info = 2;
     if (has_data_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -40730,7 +40730,7 @@ void server2dp_proto_ws2dp_auction_show_sell::MergeFrom(const server2dp_proto_ws
       set_end_time(from.end_time());
     }
     if (from.has_data_info()) {
-      mutable_data_info()->::hld::server2dp_proto_s_auction_info::MergeFrom(from.data_info());
+      mutable_data_info()->::faith::server2dp_proto_s_auction_info::MergeFrom(from.data_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -46330,7 +46330,7 @@ server2dp_proto_ws2dp_save_time_limit_temp::server2dp_proto_ws2dp_save_time_limi
 }
 
 void server2dp_proto_ws2dp_save_time_limit_temp::InitAsDefaultInstance() {
-  temp_db_info_ = const_cast< ::hld::server2dp_proto_s_time_limit_activity_temp_db*>(&::hld::server2dp_proto_s_time_limit_activity_temp_db::default_instance());
+  temp_db_info_ = const_cast< ::faith::server2dp_proto_s_time_limit_activity_temp_db*>(&::faith::server2dp_proto_s_time_limit_activity_temp_db::default_instance());
 }
 
 server2dp_proto_ws2dp_save_time_limit_temp::server2dp_proto_ws2dp_save_time_limit_temp(const server2dp_proto_ws2dp_save_time_limit_temp& from)
@@ -46379,7 +46379,7 @@ server2dp_proto_ws2dp_save_time_limit_temp* server2dp_proto_ws2dp_save_time_limi
 void server2dp_proto_ws2dp_save_time_limit_temp::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (has_temp_db_info()) {
-      if (temp_db_info_ != NULL) temp_db_info_->::hld::server2dp_proto_s_time_limit_activity_temp_db::Clear();
+      if (temp_db_info_ != NULL) temp_db_info_->::faith::server2dp_proto_s_time_limit_activity_temp_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -46392,7 +46392,7 @@ bool server2dp_proto_ws2dp_save_time_limit_temp::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.server2dp_proto.s_time_limit_activity_temp_db temp_db_info = 1;
+      // optional .faith.server2dp_proto.s_time_limit_activity_temp_db temp_db_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -46423,7 +46423,7 @@ bool server2dp_proto_ws2dp_save_time_limit_temp::MergePartialFromCodedStream(
 
 void server2dp_proto_ws2dp_save_time_limit_temp::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.server2dp_proto.s_time_limit_activity_temp_db temp_db_info = 1;
+  // optional .faith.server2dp_proto.s_time_limit_activity_temp_db temp_db_info = 1;
   if (has_temp_db_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->temp_db_info(), output);
@@ -46437,7 +46437,7 @@ void server2dp_proto_ws2dp_save_time_limit_temp::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* server2dp_proto_ws2dp_save_time_limit_temp::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.server2dp_proto.s_time_limit_activity_temp_db temp_db_info = 1;
+  // optional .faith.server2dp_proto.s_time_limit_activity_temp_db temp_db_info = 1;
   if (has_temp_db_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -46455,7 +46455,7 @@ int server2dp_proto_ws2dp_save_time_limit_temp::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.server2dp_proto.s_time_limit_activity_temp_db temp_db_info = 1;
+    // optional .faith.server2dp_proto.s_time_limit_activity_temp_db temp_db_info = 1;
     if (has_temp_db_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -46490,7 +46490,7 @@ void server2dp_proto_ws2dp_save_time_limit_temp::MergeFrom(const server2dp_proto
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_temp_db_info()) {
-      mutable_temp_db_info()->::hld::server2dp_proto_s_time_limit_activity_temp_db::MergeFrom(from.temp_db_info());
+      mutable_temp_db_info()->::faith::server2dp_proto_s_time_limit_activity_temp_db::MergeFrom(from.temp_db_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -48320,7 +48320,7 @@ bool server2dp_proto_ws2dp_save_arena_rank::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.server2dp_proto.s_arena_rank data_list = 2;
+      // repeated .faith.server2dp_proto.s_arena_rank data_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -48358,7 +48358,7 @@ void server2dp_proto_ws2dp_save_arena_rank::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->is_first(), output);
   }
 
-  // repeated .hld.server2dp_proto.s_arena_rank data_list = 2;
+  // repeated .faith.server2dp_proto.s_arena_rank data_list = 2;
   for (int i = 0; i < this->data_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->data_list(i), output);
@@ -48377,7 +48377,7 @@ void server2dp_proto_ws2dp_save_arena_rank::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->is_first(), target);
   }
 
-  // repeated .hld.server2dp_proto.s_arena_rank data_list = 2;
+  // repeated .faith.server2dp_proto.s_arena_rank data_list = 2;
   for (int i = 0; i < this->data_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -48401,7 +48401,7 @@ int server2dp_proto_ws2dp_save_arena_rank::ByteSize() const {
     }
 
   }
-  // repeated .hld.server2dp_proto.s_arena_rank data_list = 2;
+  // repeated .faith.server2dp_proto.s_arena_rank data_list = 2;
   total_size += 1 * this->data_list_size();
   for (int i = 0; i < this->data_list_size(); i++) {
     total_size +=
@@ -48637,6 +48637,6 @@ void server2dp_proto::Swap(server2dp_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

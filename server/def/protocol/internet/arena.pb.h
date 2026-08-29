@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_arena_2eproto();
@@ -120,7 +120,7 @@ class arena_proto_get_arena_rank : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.arena_proto.get_arena_rank)
+  // @@protoc_insertion_point(class_scope:faith.arena_proto.get_arena_rank)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -212,7 +212,7 @@ class arena_proto_get_arena_rank_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 arena_rank() const;
   inline void set_arena_rank(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.arena_proto.get_arena_rank_end)
+  // @@protoc_insertion_point(class_scope:faith.arena_proto.get_arena_rank_end)
  private:
   inline void set_has_arena_rank();
   inline void clear_has_arena_rank();
@@ -352,7 +352,7 @@ class arena_proto_arena_player_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 military_rank() const;
   inline void set_military_rank(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.arena_proto.arena_player_info)
+  // @@protoc_insertion_point(class_scope:faith.arena_proto.arena_player_info)
  private:
   inline void set_has_role_name();
   inline void clear_has_role_name();
@@ -455,7 +455,7 @@ class arena_proto_get_match_player : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.arena_proto.get_match_player)
+  // @@protoc_insertion_point(class_scope:faith.arena_proto.get_match_player)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -528,24 +528,24 @@ class arena_proto_get_match_player_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.arena_proto.arena_player_info match_playrs = 1;
+  // repeated .faith.arena_proto.arena_player_info match_playrs = 1;
   inline int match_playrs_size() const;
   inline void clear_match_playrs();
   static const int kMatchPlayrsFieldNumber = 1;
-  inline const ::hld::arena_proto_arena_player_info& match_playrs(int index) const;
-  inline ::hld::arena_proto_arena_player_info* mutable_match_playrs(int index);
-  inline ::hld::arena_proto_arena_player_info* add_match_playrs();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::arena_proto_arena_player_info >&
+  inline const ::faith::arena_proto_arena_player_info& match_playrs(int index) const;
+  inline ::faith::arena_proto_arena_player_info* mutable_match_playrs(int index);
+  inline ::faith::arena_proto_arena_player_info* add_match_playrs();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::arena_proto_arena_player_info >&
       match_playrs() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::arena_proto_arena_player_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::arena_proto_arena_player_info >*
       mutable_match_playrs();
 
-  // @@protoc_insertion_point(class_scope:hld.arena_proto.get_match_player_end)
+  // @@protoc_insertion_point(class_scope:faith.arena_proto.get_match_player_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::arena_proto_arena_player_info > match_playrs_;
+  ::google::protobuf::RepeatedPtrField< ::faith::arena_proto_arena_player_info > match_playrs_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -613,7 +613,7 @@ class arena_proto_get_top_three_player : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.arena_proto.get_top_three_player)
+  // @@protoc_insertion_point(class_scope:faith.arena_proto.get_top_three_player)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -697,7 +697,7 @@ class arena_proto_get_top_three_player_end : public ::google::protobuf::Message 
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.arena_proto.get_top_three_player_end)
+  // @@protoc_insertion_point(class_scope:faith.arena_proto.get_top_three_player_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -815,7 +815,7 @@ class arena_proto_req_challenge : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 self_cur_pos() const;
   inline void set_self_cur_pos(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.arena_proto.req_challenge)
+  // @@protoc_insertion_point(class_scope:faith.arena_proto.req_challenge)
  private:
   inline void set_has_is_cost_money();
   inline void clear_has_is_cost_money();
@@ -936,7 +936,7 @@ class arena_proto_req_challenge_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 new_pos() const;
   inline void set_new_pos(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.arena_proto.req_challenge_end)
+  // @@protoc_insertion_point(class_scope:faith.arena_proto.req_challenge_end)
  private:
   inline void set_has_req_end();
   inline void clear_has_req_end();
@@ -1061,7 +1061,7 @@ class arena_proto_challenge_over : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.arena_proto.challenge_over)
+  // @@protoc_insertion_point(class_scope:faith.arena_proto.challenge_over)
  private:
   inline void set_has_role_rank();
   inline void clear_has_role_rank();
@@ -1217,7 +1217,7 @@ class arena_proto_challenge_log : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 date() const;
   inline void set_date(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.arena_proto.challenge_log)
+  // @@protoc_insertion_point(class_scope:faith.arena_proto.challenge_log)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -1328,7 +1328,7 @@ class arena_proto_req_get_challenge_log : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.arena_proto.req_get_challenge_log)
+  // @@protoc_insertion_point(class_scope:faith.arena_proto.req_get_challenge_log)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1401,7 +1401,7 @@ class arena_proto_get_arena_reward : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.arena_proto.get_arena_reward)
+  // @@protoc_insertion_point(class_scope:faith.arena_proto.get_arena_reward)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1487,7 +1487,7 @@ class arena_proto_get_arena_reward_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 get_result() const;
   inline void set_get_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.arena_proto.get_arena_reward_end)
+  // @@protoc_insertion_point(class_scope:faith.arena_proto.get_arena_reward_end)
  private:
   inline void set_has_reward_template_id();
   inline void clear_has_reward_template_id();
@@ -1572,16 +1572,16 @@ class arena_proto_req_get_challenge_log_end : public ::google::protobuf::Message
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // repeated .hld.arena_proto.challenge_log my_challenge_logs = 2;
+  // repeated .faith.arena_proto.challenge_log my_challenge_logs = 2;
   inline int my_challenge_logs_size() const;
   inline void clear_my_challenge_logs();
   static const int kMyChallengeLogsFieldNumber = 2;
-  inline const ::hld::arena_proto_challenge_log& my_challenge_logs(int index) const;
-  inline ::hld::arena_proto_challenge_log* mutable_my_challenge_logs(int index);
-  inline ::hld::arena_proto_challenge_log* add_my_challenge_logs();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::arena_proto_challenge_log >&
+  inline const ::faith::arena_proto_challenge_log& my_challenge_logs(int index) const;
+  inline ::faith::arena_proto_challenge_log* mutable_my_challenge_logs(int index);
+  inline ::faith::arena_proto_challenge_log* add_my_challenge_logs();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::arena_proto_challenge_log >&
       my_challenge_logs() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::arena_proto_challenge_log >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::arena_proto_challenge_log >*
       mutable_my_challenge_logs();
 
   // optional bool is_need_clear = 3;
@@ -1591,7 +1591,7 @@ class arena_proto_req_get_challenge_log_end : public ::google::protobuf::Message
   inline bool is_need_clear() const;
   inline void set_is_need_clear(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.arena_proto.req_get_challenge_log_end)
+  // @@protoc_insertion_point(class_scope:faith.arena_proto.req_get_challenge_log_end)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -1601,7 +1601,7 @@ class arena_proto_req_get_challenge_log_end : public ::google::protobuf::Message
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 role_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::arena_proto_challenge_log > my_challenge_logs_;
+  ::google::protobuf::RepeatedPtrField< ::faith::arena_proto_challenge_log > my_challenge_logs_;
   bool is_need_clear_;
 
   mutable int _cached_size_;
@@ -1670,7 +1670,7 @@ class arena_proto_req_mopping_remain_times : public ::google::protobuf::Message 
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.arena_proto.req_mopping_remain_times)
+  // @@protoc_insertion_point(class_scope:faith.arena_proto.req_mopping_remain_times)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1761,7 +1761,7 @@ class arena_proto_req_mopping_remain_times_end : public ::google::protobuf::Mess
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_mopping_reward();
 
-  // @@protoc_insertion_point(class_scope:hld.arena_proto.req_mopping_remain_times_end)
+  // @@protoc_insertion_point(class_scope:faith.arena_proto.req_mopping_remain_times_end)
  private:
   inline void set_has_mopping_result();
   inline void clear_has_mopping_result();
@@ -1855,7 +1855,7 @@ class arena_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.arena_proto)
+  // @@protoc_insertion_point(class_scope:faith.arena_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2244,27 +2244,27 @@ arena_proto_get_match_player::mutable_role_guid() {
 
 // arena_proto_get_match_player_end
 
-// repeated .hld.arena_proto.arena_player_info match_playrs = 1;
+// repeated .faith.arena_proto.arena_player_info match_playrs = 1;
 inline int arena_proto_get_match_player_end::match_playrs_size() const {
   return match_playrs_.size();
 }
 inline void arena_proto_get_match_player_end::clear_match_playrs() {
   match_playrs_.Clear();
 }
-inline const ::hld::arena_proto_arena_player_info& arena_proto_get_match_player_end::match_playrs(int index) const {
+inline const ::faith::arena_proto_arena_player_info& arena_proto_get_match_player_end::match_playrs(int index) const {
   return match_playrs_.Get(index);
 }
-inline ::hld::arena_proto_arena_player_info* arena_proto_get_match_player_end::mutable_match_playrs(int index) {
+inline ::faith::arena_proto_arena_player_info* arena_proto_get_match_player_end::mutable_match_playrs(int index) {
   return match_playrs_.Mutable(index);
 }
-inline ::hld::arena_proto_arena_player_info* arena_proto_get_match_player_end::add_match_playrs() {
+inline ::faith::arena_proto_arena_player_info* arena_proto_get_match_player_end::add_match_playrs() {
   return match_playrs_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::arena_proto_arena_player_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::arena_proto_arena_player_info >&
 arena_proto_get_match_player_end::match_playrs() const {
   return match_playrs_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::arena_proto_arena_player_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::arena_proto_arena_player_info >*
 arena_proto_get_match_player_end::mutable_match_playrs() {
   return &match_playrs_;
 }
@@ -3045,27 +3045,27 @@ inline void arena_proto_req_get_challenge_log_end::set_role_guid(::google::proto
   role_guid_ = value;
 }
 
-// repeated .hld.arena_proto.challenge_log my_challenge_logs = 2;
+// repeated .faith.arena_proto.challenge_log my_challenge_logs = 2;
 inline int arena_proto_req_get_challenge_log_end::my_challenge_logs_size() const {
   return my_challenge_logs_.size();
 }
 inline void arena_proto_req_get_challenge_log_end::clear_my_challenge_logs() {
   my_challenge_logs_.Clear();
 }
-inline const ::hld::arena_proto_challenge_log& arena_proto_req_get_challenge_log_end::my_challenge_logs(int index) const {
+inline const ::faith::arena_proto_challenge_log& arena_proto_req_get_challenge_log_end::my_challenge_logs(int index) const {
   return my_challenge_logs_.Get(index);
 }
-inline ::hld::arena_proto_challenge_log* arena_proto_req_get_challenge_log_end::mutable_my_challenge_logs(int index) {
+inline ::faith::arena_proto_challenge_log* arena_proto_req_get_challenge_log_end::mutable_my_challenge_logs(int index) {
   return my_challenge_logs_.Mutable(index);
 }
-inline ::hld::arena_proto_challenge_log* arena_proto_req_get_challenge_log_end::add_my_challenge_logs() {
+inline ::faith::arena_proto_challenge_log* arena_proto_req_get_challenge_log_end::add_my_challenge_logs() {
   return my_challenge_logs_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::arena_proto_challenge_log >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::arena_proto_challenge_log >&
 arena_proto_req_get_challenge_log_end::my_challenge_logs() const {
   return my_challenge_logs_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::arena_proto_challenge_log >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::arena_proto_challenge_log >*
 arena_proto_req_get_challenge_log_end::mutable_my_challenge_logs() {
   return &my_challenge_logs_;
 }
@@ -3154,7 +3154,7 @@ arena_proto_req_mopping_remain_times_end::mutable_mopping_reward() {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

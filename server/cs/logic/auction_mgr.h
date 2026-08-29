@@ -12,7 +12,7 @@
 #include "Internet/auction.pb.h"
 #include "utility/cs_date.hpp"
 
-namespace hld
+namespace faith
 {
 	class player;
 	class citem;

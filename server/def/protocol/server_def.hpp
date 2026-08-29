@@ -16,7 +16,7 @@
 #include "logic/char_def.hpp"
 #include "internet/st.pb.h"
 
-namespace hld 
+namespace faith 
 {
 #pragma pack(push,1)
 
@@ -188,7 +188,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		bool to_proto(hld::st_proto::st_game_info *st_game_ptr)
+		bool to_proto(faith::st_proto::st_game_info *st_game_ptr)
 		{
 			if (st_game_ptr == nullptr)
 			{
@@ -202,7 +202,7 @@ namespace hld
 			return true;
 
 		}
-		void from_proto(const hld::st_proto::st_game_info &st_game_ref)
+		void from_proto(const faith::st_proto::st_game_info &st_game_ref)
 		{
 			server_id = st_game_ref.server_id();
 			my_memcopy_string(out_ip, max_ip_address_length, st_game_ref.out_ip());

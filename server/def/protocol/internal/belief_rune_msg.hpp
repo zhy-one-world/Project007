@@ -12,13 +12,13 @@ author: shangxiaoliang
 #include "Logic/char_def.hpp"
 #include "Logic/belief_rune_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	//enum
 	//{
-	//	e_msgindex_c2cs_belief_rune_base = hld::e_msg_base_belief_rune,
+	//	e_msgindex_c2cs_belief_rune_base = faith::e_msg_base_belief_rune,
 	//};
 
 #pragma pack(pop)

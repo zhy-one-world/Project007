@@ -9,7 +9,7 @@
 *********************************************************************/
 #include "tick_msg_queue.hpp"
 
-namespace hld
+namespace faith
 {
 
 	boost::pool<> tick_msg_queue::m_msg_pool(MAX_MSG_SIZE);

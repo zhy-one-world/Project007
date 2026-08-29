@@ -12,7 +12,7 @@
 #include "Logic/cross_server_pk_def.hpp"
 #include "cross_server_pk_msg.hpp"
 
-namespace hld
+namespace faith
 {
 	class game_proto_cross_server_one_island_msg;
 	class game_proto_pk_one_player_msg;

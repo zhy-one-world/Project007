@@ -11,7 +11,7 @@
 #include "json/json.h"
 #include "server_log.hpp"
 
-namespace hld
+namespace faith
 {
 	http_access_mgr::http_access_mgr()
 	{

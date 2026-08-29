@@ -14,7 +14,7 @@ purpose:define ranking
 #include "logic/type_def.hpp"
 #include "char_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	//const int32 ClientStart				= 1;	//ok

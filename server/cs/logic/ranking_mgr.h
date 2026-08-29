@@ -15,7 +15,7 @@ purpose: about rankings
 #include "item.h"
 
 
-namespace hld
+namespace faith
 {
 	class player;
 

@@ -12,7 +12,7 @@ purpose:
 #include "logic/buff_man.h"
 #include "logic/skill_manager.h"
 #include "buff_def.hpp"
-namespace hld
+namespace faith
 {
 	ctalent::ctalent(void)
 	{

@@ -3,7 +3,7 @@
 
 #include "Logic/char_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class assist_fight_mgr
 	{

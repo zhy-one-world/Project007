@@ -1,6 +1,6 @@
 #include "VIPTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void VIPTemplateSize()
     {

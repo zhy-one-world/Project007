@@ -4,7 +4,7 @@
 #include "logic/type_def.hpp"
 #include "unit_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class send_skill
 	{

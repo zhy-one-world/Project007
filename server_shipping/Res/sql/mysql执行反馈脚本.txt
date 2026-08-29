@@ -1,0 +1,55 @@
+--------------------------------------------------------------------
+dbhost				数据库IP地址	
+dbuser				数据库账号
+dbpasswd			数据库密码
+outputfolder		sql脚本输出结果存放文件夹
+sqlfile				sql脚本文件所在路径
+outputfile			sql脚本输出结果存放路径
+compressedpath		输出结果压缩存放路径
+fileformat			压缩格式(7z/zip)
+ftpip				ftp上传服务器ip地址
+ftpport				ftp上传服务器端口号
+ipuser				ftp上传服务器账号
+ippasswd			ftp上传服务器密码
+ftpdirectory		ftp上传文件路径
+SET var_ftpdir=ftp://%ftpip%:%ftpport%/%ftpdirectory%/%date_time%/	使用端口号
+SET var_ftpdir=ftp://%ftpip%/%ftpdirectory%/%date_time%/			不使用端口号
+---------------------------------------------------------------------
+SET dbhost=127.0.0.1
+SET dbuser=root
+SET dbpasswd=root123
+SET sqlfile=D:\Zhenshi2\test.sql
+SET outputfolder=D:\Zhenshi2\
+SET outputfile=D:\Zhenshi3\
+SET compressedpath=D:\Zhensh4\
+if not exist %outputfolder:~0,-1% (md %outputfolder:~0,-1%)
+if not exist %outputfile:~0,-1% (md %outputfile:~0,-1%)
+if not exist %compressedpath:~0,-1% (md %compressedpath:~0,-1%)
+SET fileformat=7z
+SET ftpip=10.27.139.39:30030
+SET ftpport=23
+SET ipuser=umiftp
+SET ippasswd=umiftp
+SET ftpdirectory=/data/tomcat/apache-tomcat-9.0.12/webapps/upload/sqldata
+for /f "tokens=4" %%i in ('route print ^| findstr 0.0.0.0.*0.0.0.0') do (set InternalIP=%%i)
+set "InternalIP=%InternalIP:.=_%"
+SET var_date=%date:~0,4%%date:~5,2%%date:~8,2%
+set Hour=%time:~0,2%
+if /i %Hour% LSS 10 (set Hour=0%time:~1,1%)
+SET var_time=%Hour%%time:~3,2%%time:~6,2%
+SET date_time=%InternalIP%_%var_date%_%var_time%
+SET outputfilename=%outputfile%%date_time%.txt
+SET compressedpathname=%compressedpath%%date_time%.7z
+SET sqlstatemen=use low_game_schema;SELECT big_group_id*10000 + server_group_id from server_info;select * from role_info;select * from role_item;select * from role_mission;
+echo %sqlstatemen% > %sqlfile%
+mysql -h%dbhost% -u%dbuser% -p%dbpasswd% --default-character-set=utf8 < %sqlfile% > %outputfilename%
+7z a -t%fileformat% %compressedpathname% %outputfilename%
+SET var_ftpdir=ftp://%ftpip%/%ftpdirectory%/
+curl --ftp-create-dirs %var_ftpdir% -u %ipuser%:%ippasswd%
+curl %var_ftpdir%  -u %ipuser%:%ippasswd% -T %compressedpathname%
+
+
+-----------------------------------------------------------------------
+真正执行的适配平台的命令
+
+SET dbhost=127.0.0.1\r\nSET dbuser=root\r\nSET dbpasswd=jaUyGNYMqrET\r\nSET sqlfile=D:\query\test.sql\r\nSET outputfolder=D:\query\\r\nSET outputfile=D:\result\\r\nSET compressedpath=D:\result\\r\nif not exist %outputfolder:~0,-1% (md %outputfolder:~0,-1%)\r\nif not exist %outputfile:~0,-1% (md %outputfile:~0,-1%)\r\nif not exist %compressedpath:~0,-1% (md %compressedpath:~0,-1%)\r\nSET fileformat=7z\r\nSET ftpip=10.27.139.39:30030\r\nSET ftpport=30030\r\nSET ipuser=umiftp\r\nSET ippasswd=umiftp\r\nSET ftpdirectory=/data/tomcat/apache-tomcat-9.0.12/webapps/upload/sqldata/20200328\r\nfor /f "tokens=4" %%i in ('route print ^| findstr 0.0.0.0.*0.0.0.0') do (set InternalIP=%%i)\r\nset "InternalIP=%InternalIP:.=_%"\r\nSET var_date=%date:~0,4%%date:~5,2%%date:~8,2%\r\nset Hour=%time:~0,2%\r\nif /i %Hour% LSS 10 (set Hour=0%time:~1,1%)\r\nSET var_time=%Hour%%time:~3,2%%time:~6,2%\r\nSET date_time=%InternalIP%_%var_date%_%var_time%\r\nSET outputfilename=%outputfile%%date_time%.txt\r\nSET compressedpathname=%compressedpath%%date_time%.7z\r\nSET sqlstatemen=use low_game_schema;SELECT big_group_id*10000 + server_group_id from server_info;select * from role_info;SELECT * from server_info;\r\necho %sqlstatemen% > %sqlfile%\r\nmysql -h%dbhost% -u%dbuser% -p%dbpasswd% --default-character-set=utf8 < %sqlfile% > %outputfilename%\r\n7z a -t%fileformat% %compressedpathname% %outputfilename%\r\nSET var_ftpdir=ftp://%ftpip%/%ftpdirectory%/\r\ncurl --ftp-create-dirs %var_ftpdir% -u %ipuser%:%ippasswd%\r\ncurl %var_ftpdir%  -u %ipuser%:%ippasswd% -T %compressedpathname%\r\n

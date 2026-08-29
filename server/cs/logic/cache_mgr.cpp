@@ -13,7 +13,7 @@ purpose: 缓存管理系统
 #include "skill.h"
 #include "skill_effect.h"
 
-namespace hld
+namespace faith
 {
 	cache_mgr::cache_mgr()
 	{

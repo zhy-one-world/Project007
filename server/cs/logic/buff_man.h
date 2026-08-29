@@ -1,7 +1,7 @@
 #pragma once
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class buff_set;
 	class buff_item;

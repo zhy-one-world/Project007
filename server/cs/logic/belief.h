@@ -13,7 +13,7 @@ purpose: about role's belief
 #include <Logic/belief_def.hpp>
 #include "template/ServerTemplateHead.h"
 
-namespace hld
+namespace faith
 {
 	class cbelief
 	{

@@ -15,7 +15,7 @@
 #include "http/http_access_mgr.hpp"
 #include "../recharge_mgr_ws.hpp"
 
-namespace hld
+namespace faith
 {
 	struct s_recharge_info
 	{

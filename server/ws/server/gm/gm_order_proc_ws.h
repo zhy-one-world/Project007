@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace hld
+namespace faith
 {
 	class gm_order_proc_ws 
 	{

@@ -1,0 +1,46 @@
+syntax = "proto2";
+package hld;
+import "db.proto";
+
+message dp2cs_proto
+{
+    message load_role_starark
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional db_proto.role_starark_db db_data = 4;
+	}
+	
+	message load_role_skytreasure
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional int32 row_count = 3;
+	   optional bytes db_data = 4;
+	}
+	
+    message load_role_recycle
+    {
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   
+	   optional bytes db_data = 3;
+    }
+	
+	message load_role_recycle_task
+    {
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional bytes db_data = 3;
+    }
+	
+	
+	
+	message load_role_db_data
+	{
+	   optional int64 role_guid = 1;
+	   optional int32 unit_array_index = 2;
+	   optional bytes db_data = 3;
+	}
+	
+}

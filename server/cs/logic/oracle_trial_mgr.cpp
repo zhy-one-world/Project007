@@ -22,7 +22,7 @@ purpose: ÃÏ∆Ù ‘¡∂
 #include "internet/net.pb.h"
 #include "internal/ranking_msg.hpp"
 
-namespace hld
+namespace faith
 {
 	oracle_trial_mgr::oracle_trial_mgr()
 	{
@@ -61,7 +61,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_oracle_trial_db msg;
+		faith::cs2dp_proto::role_oracle_trial_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -76,7 +76,7 @@ namespace hld
 		s_oracle_trial_info_db *p_row = (s_oracle_trial_info_db *)p_data;
 		for (int32 i = 0; i < msg.row_count(); i++)
 		{
-			hld::cs2dp_proto::role_oracle_trial_row db_row = msg.row_data(i);
+			faith::cs2dp_proto::role_oracle_trial_row db_row = msg.row_data(i);
 			p_row->role_guid.server_64 = db_row.role_guid();
 			p_row->tier_num = db_row.tier_num();
 			p_row->customs_state = db_row.customs_state();
@@ -122,13 +122,13 @@ namespace hld
 			player_ref.send_message_to_dp(&req, sizeof(cs2dp_save_oracle_trial_info));
 			return;
 		}
-		hld::cs2dp_proto::save_role_oracle_trial msg;
+		faith::cs2dp_proto::save_role_oracle_trial msg;
 
 		msg.set_role_guid(player_ref.get_unit_guid().server_64);
 		msg.set_unit_array_index(player_ref.get_array_index());
 		msg.set_save_type_ex(save_type);
 
-		hld::cs2dp_proto::role_oracle_trial_db *db_data = msg.mutable_db_data();
+		faith::cs2dp_proto::role_oracle_trial_db *db_data = msg.mutable_db_data();
 		if (db_data == nullptr)
 		{
 			return;
@@ -138,7 +138,7 @@ namespace hld
 		int32 row_count = 0;
 		for (int32 i = 0; i < _index; ++i)
 		{
-			hld::cs2dp_proto::role_oracle_trial_row * db_row = db_data->add_row_data();
+			faith::cs2dp_proto::role_oracle_trial_row * db_row = db_data->add_row_data();
 			if (db_row == nullptr)
 			{
 				return;

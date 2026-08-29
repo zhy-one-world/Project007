@@ -39,7 +39,7 @@ purpose:
 #include "internal/char_msg.hpp"
 #include "internal/lucky_draw_record_msg.hpp"
 
-using namespace hld;
+using namespace faith;
 
 item_set::item_set()
 {
@@ -212,49 +212,49 @@ void item_set::load_item_by_db(const item_proto_item_save_load& load_proto)
 			int32 init_len = 0;
 			switch (init_bag_type)
 			{
-			case hld::e_bag_type_wing:
+			case faith::e_bag_type_wing:
 				init_data = player_init_template_ptr->InitWing.data();
 				init_len = player_init_template_ptr->InitWing.size();
 				break;
-			case hld::e_bag_type_mount:
+			case faith::e_bag_type_mount:
 				init_data = player_init_template_ptr->InitMount.data();
 				init_len = player_init_template_ptr->InitMount.size();
 				break;
-			case hld::e_bag_type_spirit_upgrade_promote:
+			case faith::e_bag_type_spirit_upgrade_promote:
 				init_data = player_init_template_ptr->InitStarMapSpirit.data();
 				init_len = player_init_template_ptr->InitStarMapSpirit.size();
 				break;
-			case hld::e_bag_type_equip_protect:
+			case faith::e_bag_type_equip_protect:
 				init_data = player_init_template_ptr->InitProtectMark.data();
 				init_len = player_init_template_ptr->InitProtectMark.size();
 				init_bag_type = e_bag_type_protect;
 				break;
-			case hld::e_bag_type_equip_fasion:
+			case faith::e_bag_type_equip_fasion:
 				init_data = player_init_template_ptr->InitFashion.data();
 				init_len = player_init_template_ptr->InitFashion.size();
 				init_bag_type = e_bag_type_fasion;
 				break;
-			case hld::e_bag_type_goddess_equip:
+			case faith::e_bag_type_goddess_equip:
 				init_data = player_init_template_ptr->InitGoddess.data();
 				init_len = player_init_template_ptr->InitGoddess.size();
 				init_bag_type = e_bag_type_goddess_equip;
 				break;
-			case hld::e_bag_type_wedding_equip:
+			case faith::e_bag_type_wedding_equip:
 				init_data = player_init_template_ptr->InitWedding.data();
 				init_len = player_init_template_ptr->InitWedding.size();
 				init_bag_type = e_bag_type_wedding_equip;
 				break;
-			case hld::e_bag_type_core_element:
+			case faith::e_bag_type_core_element:
 				init_data = player_init_template_ptr->InitCoreElement.data();
 				init_len = player_init_template_ptr->InitCoreElement.size();
 				init_bag_type = e_bag_type_core_element;
 				break;
-			case hld::e_bag_type_break_will:
+			case faith::e_bag_type_break_will:
 				init_data = player_init_template_ptr->InitBreakWill.data();
 				init_len = player_init_template_ptr->InitBreakWill.size();
 				init_bag_type = e_bag_type_break_will;
 				break;
-			case hld::e_bag_type_awaken_item:
+			case faith::e_bag_type_awaken_item:
 				init_data = player_init_template_ptr->InitAwakenItem.data();
 				init_len = player_init_template_ptr->InitAwakenItem.size();
 				init_bag_type = e_bag_type_awaken_item;
@@ -278,7 +278,7 @@ void item_set::load_item_by_db(const item_proto_item_save_load& load_proto)
 					if (nullptr != item_temp_ptr)
 					{
 
-						if (init_bag_type == hld::e_bag_type_wing)
+						if (init_bag_type == faith::e_bag_type_wing)
 						{
 							WingTemplate* wing_temp_ptr = GET_TEMPLATE(WingTemplate, item_temp_ptr->logic_id);
 							if (nullptr != wing_temp_ptr)
@@ -286,7 +286,7 @@ void item_set::load_item_by_db(const item_proto_item_save_load& load_proto)
 								region_limit_arr = wing_temp_ptr->RegionArr;
 							}
 						}
-						else if (init_bag_type == hld::e_bag_type_mount)
+						else if (init_bag_type == faith::e_bag_type_mount)
 						{
 							MountTemplate* mount_temp_ptr = GET_TEMPLATE(MountTemplate, item_temp_ptr->logic_id);
 							if (nullptr != mount_temp_ptr)
@@ -294,7 +294,7 @@ void item_set::load_item_by_db(const item_proto_item_save_load& load_proto)
 								region_limit_arr = mount_temp_ptr->RegionArr;
 							}
 						}
-						else if (init_bag_type == hld::e_bag_type_fasion)
+						else if (init_bag_type == faith::e_bag_type_fasion)
 						{
 							FasionTemplate* fasion_temp_ptr = GET_TEMPLATE(FasionTemplate, item_temp_ptr->logic_id);
 							if (nullptr != fasion_temp_ptr)
@@ -302,7 +302,7 @@ void item_set::load_item_by_db(const item_proto_item_save_load& load_proto)
 								region_limit_arr = fasion_temp_ptr->RegionArr;
 							}
 						}
-						else if (init_bag_type == hld::e_bag_type_protect)
+						else if (init_bag_type == faith::e_bag_type_protect)
 						{
 							ProtectSpiritTemplate* protect_temp_ptr = GET_TEMPLATE(ProtectSpiritTemplate, item_temp_ptr->logic_id);
 							if (nullptr != protect_temp_ptr)
@@ -340,7 +340,7 @@ void item_set::load_item_by_db(const item_proto_item_save_load& load_proto)
 						{
 							create_item_by_info(item_info, e_server_log_add_item_load_create, 0, false);
 						}
-						if (init_bag_type == hld::e_bag_type_fasion)
+						if (init_bag_type == faith::e_bag_type_fasion)
 						{
 							citem* new_item_ptr = get_item_by_template_id(init_data[i]);
 							if (new_item_ptr != nullptr)
@@ -1001,7 +1001,7 @@ void item_set::set_show_fashion_buff()
 	player& player_ref = unit_man::get_player(m_unit_array_index);
 	if (!player_ref.is_valid())
 		return;
-	int32 show_fashion = player_ref.get_unit_info(hld::e_role_info_show_fashion);
+	int32 show_fashion = player_ref.get_unit_info(faith::e_role_info_show_fashion);
 	citem* normal_weapon_ptr = get_item_by_slot(e_bag_type_equip, e_role_equip_slot_weapon_1);
 	if (normal_weapon_ptr == nullptr)
 	{
@@ -1454,8 +1454,8 @@ void item_set::set_equip_enchant_att(citem& equip_ptr, const int32& enchant_num,
 	{
 		return;
 	}
-	int32 enchant_level = enchant_num / hld::max_enchant_type_num;
-	int32 enchant_type = enchant_num % hld::max_enchant_type_num;
+	int32 enchant_level = enchant_num / faith::max_enchant_type_num;
+	int32 enchant_type = enchant_num % faith::max_enchant_type_num;
 	int32 enchant_slot = equip_ptr.get_data_info(e_item_info_slot) - 1;
 	EquipEnchantTemplate* enchant_template_ptr = template_manager::get_instance().get_equip_enchant_template_ptr(enchant_level, enchant_type, enchant_slot);
 	if (enchant_template_ptr == nullptr)
@@ -2720,7 +2720,7 @@ bool item_set::put_item_into_bag(citem* item_ptr, e_bag_type bag_type, bool merg
 		CONSOLE_ERROR("item max_pile_num is invalid max_pile_num:{}", item_template_ptr->max_pile_num);
 		return false;
 	}
-	if (item_template_ptr->item_type == hld::e_item_type_stone && item_template_ptr->sub_type == hld::e_stone_sub_type_psyche)
+	if (item_template_ptr->item_type == faith::e_item_type_stone && item_template_ptr->sub_type == faith::e_stone_sub_type_psyche)
 	{//为应对客户端自动分解的问题，强制把更新类型调整了
 		update_mode = e_update_item_info_mode_default;
 	}
@@ -3085,7 +3085,7 @@ std::vector<s_item_template_info> item_set::get_item_template_info_array(const s
 	const int32 item_array_size = item_array.size();
 	switch (item_transform_type)
 	{
-	case hld::e_item_transform_type_two:
+	case faith::e_item_transform_type_two:
 	{
 		if (item_array_size % 2 != 0)
 		{
@@ -3097,7 +3097,7 @@ std::vector<s_item_template_info> item_set::get_item_template_info_array(const s
 		}
 		break;
 	}
-	case hld::e_item_transform_type_three:
+	case faith::e_item_transform_type_three:
 	{
 		if (item_array_size % 3 != 0)
 		{
@@ -3109,7 +3109,7 @@ std::vector<s_item_template_info> item_set::get_item_template_info_array(const s
 		}
 		break;
 	}
-	case hld::e_item_transform_type_four:
+	case faith::e_item_transform_type_four:
 	{
 		if (item_array_size % 4 != 0)
 		{
@@ -3902,13 +3902,13 @@ bool item_set::can_put_items_into_bag(e_bag_type bag_type, const std::vector<s_i
 	}
 	switch (bag_type)
 	{
-	case hld::e_bag_type_bag:
+	case faith::e_bag_type_bag:
 		if (need_slot > player_ref.get_logic_data(e_role_logic_info_bag_open))
 		{
 			return false;
 		}
 		break;
-	case hld::e_bag_type_storage:
+	case faith::e_bag_type_storage:
 		if (need_slot > player_ref.get_logic_data(e_role_logic_info_storage_open))
 		{
 			return false;
@@ -4442,13 +4442,13 @@ void item_set::calcu_addition_with_fake_player(e_addition_buff addition_buff_typ
 	{
 		return;
 	}
-	hld::template_manager::template_type* addition_buff_tmpl_table = template_manager::get_instance().get_templates(e_AdditionBuffTemplate);
+	faith::template_manager::template_type* addition_buff_tmpl_table = template_manager::get_instance().get_templates(e_AdditionBuffTemplate);
 	if (nullptr == addition_buff_tmpl_table)
 	{
 		return;
 	}
 
-	hld::template_manager::template_type::iterator ite;
+	faith::template_manager::template_type::iterator ite;
 	AdditionBuffTemplate* addition_tmpl_ptr = nullptr;
 	std::vector<int32> new_buff_id_arr;          // 当前能生效的最大效果的BUFF模板的ID
 	std::vector<int32> new_buff_equip_num_arr;   // 当前生效的最大效果的BUFF模板的要求装备个数
@@ -4482,13 +4482,13 @@ void item_set::calcu_addition(e_addition_buff addition_buff_type, bool need_send
 	// BUFF给撤掉
 	std::vector<int32> old_buff_id_arr = temp_player.get_addition_buff_id_arr(addition_buff_type);
 
-	hld::template_manager::template_type* addition_buff_tmpl_table = template_manager::get_instance().get_templates(e_AdditionBuffTemplate);
+	faith::template_manager::template_type* addition_buff_tmpl_table = template_manager::get_instance().get_templates(e_AdditionBuffTemplate);
 	if (nullptr == addition_buff_tmpl_table)
 	{
 		return;
 	}
 
-	hld::template_manager::template_type::iterator ite;
+	faith::template_manager::template_type::iterator ite;
 	AdditionBuffTemplate* addition_tmpl_ptr = nullptr;
 	std::vector<int32> new_buff_id_arr;          // 当前能生效的最大效果的BUFF模板的ID
 	std::vector<int32> new_buff_equip_num_arr;   // 当前生效的最大效果的BUFF模板的要求装备个数
@@ -4585,10 +4585,10 @@ void item_set::calcu_addition(e_addition_buff addition_buff_type, bool need_send
 		}
 	}
 
-	if (addition_buff_type == hld::e_addition_buff_enchant)
+	if (addition_buff_type == faith::e_addition_buff_enchant)
 	{
-		std::vector<int32> buff_id_arr = temp_player.get_addition_buff_id_arr(hld::e_addition_buff_enchant);
-		temp_player.send_addition_buff_info_arr(temp_player.get_unit_guid(), hld::e_addition_buff_enchant, buff_id_arr);
+		std::vector<int32> buff_id_arr = temp_player.get_addition_buff_id_arr(faith::e_addition_buff_enchant);
+		temp_player.send_addition_buff_info_arr(temp_player.get_unit_guid(), faith::e_addition_buff_enchant, buff_id_arr);
 	}
 }
 
@@ -4656,7 +4656,7 @@ void item_set::calcu_addition_by_one(AdditionBuffTemplate* addition_tmpl_ptr, st
 		if (addition_tmpl_ptr != nullptr)
 		{
 			int32 equip_num = 0;
-			for (int32 i = 0; i < hld::e_role_equip_slot_amulet; ++i)
+			for (int32 i = 0; i < faith::e_role_equip_slot_amulet; ++i)
 			{
 				citem* item_ptr = get_item(GET_BAG(e_bag_type_equip)[i]);
 				if (item_ptr)
@@ -4926,8 +4926,8 @@ void item_set::calcu_addition_by_one(AdditionBuffTemplate* addition_tmpl_ptr, st
 				citem* item_ptr = get_item(GET_BAG(e_bag_type_equip)[i]);
 				if (item_ptr)
 				{
-					int32 enchant_level = item_ptr->get_data_info(e_item_info_illusion_had_byte) / hld::max_enchant_type_num;
-					int32 enchant_type = item_ptr->get_data_info(e_item_info_illusion_had_byte) % hld::max_enchant_type_num;
+					int32 enchant_level = item_ptr->get_data_info(e_item_info_illusion_had_byte) / faith::max_enchant_type_num;
+					int32 enchant_type = item_ptr->get_data_info(e_item_info_illusion_had_byte) % faith::max_enchant_type_num;
 
 					if (enchant_level >= addition_tmpl_ptr->AdditionBuffLevel && enchant_type == addition_tmpl_ptr->AdditionBuffSubType)
 					{
@@ -5850,7 +5850,7 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 		if (item_template_ptr->sub_type == e_fashion_show_type_weapon || item_template_ptr->sub_type == e_fashion_show_type_cloth)
 		{
 			item_proto_show_fashion show_request_end;
-			show_request_end.set_is_show_fashion(player_ref.get_unit_info(hld::e_role_info_show_fashion));
+			show_request_end.set_is_show_fashion(player_ref.get_unit_info(faith::e_role_info_show_fashion));
 			show_request_end.add_role_guid(player_ref.get_unit_guid().A);
 			show_request_end.add_role_guid(player_ref.get_unit_guid().B);
 			player_ref.send_message_to_aoi(&show_request_end, e_msgindex_s2c_show_fashion, true);
@@ -6231,7 +6231,7 @@ bool item_set::equip_off(const guid_64& item_guid, int32 item_slot, bool is_auto
 		temp_player.send_info_one(e_role_info_show_sky_suit_shape, true);
 
 
-		hld::item_proto_change_sky_suit_shape request;
+		faith::item_proto_change_sky_suit_shape request;
 		request.set_operate_state(0);
 		temp_player.send_message_to_self(&request, e_msgindex_s2c_change_sky_suit_shape_end);
 		return true;
@@ -6278,7 +6278,7 @@ bool item_set::equip_off(const guid_64& item_guid, int32 item_slot, bool is_auto
 		temp_player.send_info_one(e_role_info_show_sky_suit_shape, true);
 
 
-		hld::item_proto_change_sky_suit_shape request;
+		faith::item_proto_change_sky_suit_shape request;
 		request.set_operate_state(0);
 		temp_player.send_message_to_self(&request, e_msgindex_s2c_change_sky_suit_shape_end);
 		return true;
@@ -6324,7 +6324,7 @@ bool item_set::equip_off(const guid_64& item_guid, int32 item_slot, bool is_auto
 		temp_player.send_info_one(e_role_info_show_sky_suit_shape, true);
 
 
-		hld::item_proto_change_sky_suit_shape request;
+		faith::item_proto_change_sky_suit_shape request;
 		request.set_operate_state(0);
 		temp_player.send_message_to_self(&request, e_msgindex_s2c_change_sky_suit_shape_end);
 		return true;
@@ -6441,7 +6441,7 @@ void item_set::reset_weapon_fashion_effect()
 	player& player_ref = unit_man::get_player(m_unit_array_index);
 	if (!player_ref.is_valid())
 		return;
-	int32 show_fashion = player_ref.get_unit_info(hld::e_role_info_show_fashion);
+	int32 show_fashion = player_ref.get_unit_info(faith::e_role_info_show_fashion);
 	citem* normal_weapon_ptr = get_item_by_slot(e_bag_type_equip, e_role_equip_slot_weapon_1);
 	if (normal_weapon_ptr == nullptr)
 	{
@@ -6665,7 +6665,7 @@ bool item_set::check_equip_by_item_id(int32 item_id)
 	return false;
 }
 
-hld::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_template_id, int32 first_use_lock)
+faith::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_template_id, int32 first_use_lock)
 {
 	//条件判断 模板数据 是否是下一级 材料足够
 	//扣除物品
@@ -6702,11 +6702,11 @@ hld::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_templa
 
 	//模板数据
 	int32 enchant_num = item_ptr->get_data_info(e_item_info_illusion_had_byte);
-	if (enchant_num / hld::max_enchant_type_num != (enchant_template_ptr->Level - 1))
+	if (enchant_num / faith::max_enchant_type_num != (enchant_template_ptr->Level - 1))
 	{
 		return e_item_string_unkown;
 	}
-	if (enchant_num != 0 && enchant_num % hld::max_enchant_type_num != enchant_template_ptr->Type)
+	if (enchant_num != 0 && enchant_num % faith::max_enchant_type_num != enchant_template_ptr->Type)
 	{
 		return e_item_string_unkown;
 	}
@@ -6716,7 +6716,7 @@ hld::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_templa
 	}
 
 	//装备品质
-	if (item_template_ptr->item_color < hld::e_item_color_purple)
+	if (item_template_ptr->item_color < faith::e_item_color_purple)
 	{
 		return e_item_string_unkown;
 	}
@@ -6749,12 +6749,12 @@ hld::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_templa
 	}
 
 	//删除数值加成
-	hld::template_manager::template_type* enchant_table = template_manager::get_instance().get_templates(e_EquipEnchantTemplate);
+	faith::template_manager::template_type* enchant_table = template_manager::get_instance().get_templates(e_EquipEnchantTemplate);
 	if (nullptr == enchant_table)
 	{
 		return e_item_string_unkown;
 	}
-	hld::template_manager::template_type::iterator ite;
+	faith::template_manager::template_type::iterator ite;
 	int32 title_count = 0;
 	for (ite = enchant_table->begin(); ite != enchant_table->end(); ++ite)
 	{
@@ -6769,7 +6769,7 @@ hld::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_templa
 		}
 	}
 	//增加装备附魔级数
-	item_ptr->set_data_info(e_item_info_illusion_had_byte, enchant_template_ptr->Level * hld::max_enchant_type_num + enchant_template_ptr->Type);
+	item_ptr->set_data_info(e_item_info_illusion_had_byte, enchant_template_ptr->Level * faith::max_enchant_type_num + enchant_template_ptr->Type);
 
 	//加上数值加成 增加所有套装buff
 	calcu_addition(e_addition_buff_enchant);
@@ -6783,7 +6783,7 @@ hld::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_templa
 	return e_item_string_succeed;
 }
 
-hld::int32 item_set::item_unenchant(const guid_64& item_guid)
+faith::int32 item_set::item_unenchant(const guid_64& item_guid)
 {
 	//条件判断 是否是附魔物品
 	//减去原有数值加成 删除所有套装buff
@@ -6816,17 +6816,17 @@ hld::int32 item_set::item_unenchant(const guid_64& item_guid)
 	{
 		return e_item_string_unkown;
 	}
-	int32 enchant_level = enchant_value / hld::max_enchant_type_num;
-	int32 enchant_type = enchant_value % hld::max_enchant_type_num;
+	int32 enchant_level = enchant_value / faith::max_enchant_type_num;
+	int32 enchant_type = enchant_value % faith::max_enchant_type_num;
 	int32 enchant_slot = equip_template_ptr->EquipSlot - 22000002;
 
 	int32 enchant_template_id = -1;
-	hld::template_manager::template_type* enchant_table = template_manager::get_instance().get_templates(e_EquipEnchantTemplate);
+	faith::template_manager::template_type* enchant_table = template_manager::get_instance().get_templates(e_EquipEnchantTemplate);
 	if (nullptr == enchant_table)
 	{
 		return e_item_string_unkown;
 	}
-	hld::template_manager::template_type::iterator ite;
+	faith::template_manager::template_type::iterator ite;
 	for (ite = enchant_table->begin(); ite != enchant_table->end(); ++ite)
 	{
 		EquipEnchantTemplate* temp_enchant_template_ptr = (EquipEnchantTemplate*)(ite->second);
@@ -7946,7 +7946,7 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 	std::vector<int32> need_material_list;
 	for (int32 j = 0; j < equiptemplate_ptr->GodAssembledSpend.size() / 2; j++)
 	{
-		if ((equiptemplate_ptr->GodAssembledSpend[j * 2] >= 0) && (equiptemplate_ptr->GodAssembledSpend[j * 2] < hld::e_money_type_max))
+		if ((equiptemplate_ptr->GodAssembledSpend[j * 2] >= 0) && (equiptemplate_ptr->GodAssembledSpend[j * 2] < faith::e_money_type_max))
 		{
 			need_money_list.push_back(equiptemplate_ptr->GodAssembledSpend[j * 2]);
 			need_money_list.push_back(equiptemplate_ptr->GodAssembledSpend[j * 2 + 1]);
@@ -8978,7 +8978,7 @@ int32 item_set::item_buy_and_use(int32 goods_id)
 	}
 
 
-	hld::goods_proto_goods_operate_end msg;
+	faith::goods_proto_goods_operate_end msg;
 	msg.set_goods_id(goods_id);
 	msg.set_goods_num(goods_template->GoodsNum);
 	msg.set_store_id(e_store_type_medicine);
@@ -9562,7 +9562,7 @@ bool item_set::item_recovery(const std::vector<guid_64>& item_guid, bool is_spri
 			continue;
 		}
 
-		if (item_template_ptr->item_type == hld::e_item_type_spirit)
+		if (item_template_ptr->item_type == faith::e_item_type_spirit)
 		{
 			if (temp_item->get_data_info(e_item_info_container_type) == e_bag_type_equip_spirit)
 			{
@@ -9622,7 +9622,7 @@ bool item_set::item_recovery(const std::vector<guid_64>& item_guid, bool is_spri
 				init_unit::get_item_recovery_money_info(temp_item_info, money_get_array, money_cost_array, false, is_sprite_use_diamond);
 			}
 		}
-		else if (item_template_ptr->item_type == hld::e_item_type_goddess_equip)
+		else if (item_template_ptr->item_type == faith::e_item_type_goddess_equip)
 		{
 			del_guid_array.push_back(item_guid[i]);
 			if (temp_item->get_data_info(e_item_info_container_type) == e_bag_type_goddess_equip)
@@ -9645,7 +9645,7 @@ bool item_set::item_recovery(const std::vector<guid_64>& item_guid, bool is_spri
 			}
 
 		}
-		else if (item_template_ptr->item_type == hld::e_item_type_mount_equip)
+		else if (item_template_ptr->item_type == faith::e_item_type_mount_equip)
 		{
 			del_guid_array.push_back(item_guid[i]);
 
@@ -12243,7 +12243,7 @@ bool item_set::judge_can_recovery(citem* item_ptr)
 }
 citem* item_set::creat_spirit_stone_by_spirit_template_id(int32 spirit_templateid)
 {
-	hld::template_manager::template_type* p_table = template_manager::get_instance().get_templates(e_ItemTemplate);
+	faith::template_manager::template_type* p_table = template_manager::get_instance().get_templates(e_ItemTemplate);
 	SpiritTemplate* spirit_template = GET_TEMPLATE(SpiritTemplate, spirit_templateid);
 	if (nullptr == p_table)
 	{
@@ -13008,7 +13008,7 @@ citem* item_set::get_cur_level_wing()
 		}
 		if (temp_item_ptr->get_wing_template_ptr())
 		{
-			if (temp_item_ptr->get_wing_template_ptr()->Type == hld::e_item_wing_type_normal)
+			if (temp_item_ptr->get_wing_template_ptr()->Type == faith::e_item_wing_type_normal)
 			{
 				cur_item_ptr = temp_item_ptr;
 			}
@@ -14688,11 +14688,11 @@ void  item_set::sync_ranking_mount()
 				MountTemplate* mount_template_ptr = temp_mount_item->get_mount_template_ptr();
 				if (nullptr != mount_template_ptr)
 				{
-					if (mount_template_ptr->Type != hld::mount_type_non)
+					if (mount_template_ptr->Type != faith::mount_type_non)
 					{
 						int32 temp = temp_mount_item->calcu_single_item_fighting_power(m_unit_array_index);
 						sum_fight_num += temp;
-						if (mount_template_ptr->Type == hld::mount_type_normal || mount_template_ptr->Type == hld::mount_type_special)
+						if (mount_template_ptr->Type == faith::mount_type_normal || mount_template_ptr->Type == faith::mount_type_special)
 						{
 							if (temp >= max_fight_num)
 							{
@@ -15061,7 +15061,7 @@ citem* item_set::get_illusion_range_mount_or_wing(citem* item_mount_or_wing)
 
 		if (mount_template_ptr->IllusionOriginalIdRange.size() >= e_mount_illusion_originalid_range_max)
 		{
-			ItemTemplate* item_mount_illusion_template_ptr = template_manager::get_instance().get_item_template_ptr_by_logic_id(mount_template_ptr->IllusionOriginalIdRange[hld::e_mount_illusion_originalid_range_low]);
+			ItemTemplate* item_mount_illusion_template_ptr = template_manager::get_instance().get_item_template_ptr_by_logic_id(mount_template_ptr->IllusionOriginalIdRange[faith::e_mount_illusion_originalid_range_low]);
 			if (nullptr == item_mount_illusion_template_ptr)
 			{
 				return nullptr;
@@ -15092,7 +15092,7 @@ citem* item_set::get_illusion_range_mount_or_wing(citem* item_mount_or_wing)
 
 		if (wing_template_ptr->IllusionOriginalIdRange.size() >= e_wing_illusion_originalid_range_max)
 		{
-			ItemTemplate* item_wing_illusion_template_ptr = template_manager::get_instance().get_item_template_ptr_by_logic_id(wing_template_ptr->IllusionOriginalIdRange[hld::e_wing_illusion_originalid_range_low]);
+			ItemTemplate* item_wing_illusion_template_ptr = template_manager::get_instance().get_item_template_ptr_by_logic_id(wing_template_ptr->IllusionOriginalIdRange[faith::e_wing_illusion_originalid_range_low]);
 			if (nullptr == item_wing_illusion_template_ptr)
 			{
 				return nullptr;
@@ -15781,7 +15781,7 @@ void item_set::get_hope_item(int32 get_typ)
 		for (int32 index = 0; index < final_list.size(); index++)
 		{
 			ItemTemplate* item_template_ptr = GET_TEMPLATE(ItemTemplate, final_list[index].m_item_id);
-			if (nullptr == item_template_ptr || item_template_ptr->item_color < hld::e_item_color_orange)
+			if (nullptr == item_template_ptr || item_template_ptr->item_color < faith::e_item_color_orange)
 			{
 				continue;
 			}
@@ -16211,9 +16211,9 @@ int32 item_set::calcu_beast_sprite_fighting_power(int32 bag_type)
 
 	switch (bag_type)
 	{
-	case hld::e_bag_type_mount_beast_spirit:
-	case hld::e_bag_type_wing_beast_spirit:
-	case hld::e_bag_type_spirit_beast_spirit:
+	case faith::e_bag_type_mount_beast_spirit:
+	case faith::e_bag_type_wing_beast_spirit:
+	case faith::e_bag_type_spirit_beast_spirit:
 	{
 		auto& guid_array = GET_BAG(bag_type);
 		const double* att_array = self_ref.m_pawn_att.get_attack_att_all();
@@ -16796,7 +16796,7 @@ int32 item_set::open_package_elementbag(const int32 drop_template_id, const int3
 			const int32 item_num = item_drop.m_item_num;
 			const int32 item_const_att_lev = 0;
 
-			citem* new_item = create_item_by_template(e_server_log_add_item_item_use, 0, item_template_id, item_num, 0, 0, hld::e_bag_type_none, item_const_att_lev);
+			citem* new_item = create_item_by_template(e_server_log_add_item_item_use, 0, item_template_id, item_num, 0, 0, faith::e_bag_type_none, item_const_att_lev);
 			if (nullptr == new_item)
 			{
 				item_use_end_result = e_error_code_item_invalid_item_template;
@@ -16931,7 +16931,7 @@ int32 item_set::open_package_wingbag(const int32 drop_template_id, item_proto_it
 	return 1;
 }
 
-hld::int32 item_set::open_package_mountbag(const int32 drop_template_id, item_proto_item_use_end& item_use_end_msg, int32 over_time)
+faith::int32 item_set::open_package_mountbag(const int32 drop_template_id, item_proto_item_use_end& item_use_end_msg, int32 over_time)
 {
 	player& temp_player = unit_man::get_player(m_unit_array_index);
 	if (temp_player.is_valid() == false)
@@ -17199,7 +17199,7 @@ int32 item_set::open_package_time_limit_prop(const int32 drop_template_id, item_
 	return 1;
 }
 
-int32 hld::item_set::open_const_att_equip_bag(const int32 drop_template_id, const int32 package_num, e_error_code& item_use_end_result, std::vector<s_item_template_info>& get_item_list, citem*& end_item)
+int32 faith::item_set::open_const_att_equip_bag(const int32 drop_template_id, const int32 package_num, e_error_code& item_use_end_result, std::vector<s_item_template_info>& get_item_list, citem*& end_item)
 {
 	//开自动使用的装备福利盒 只有一件装备
 	player& player_ref = unit_man::get_player(m_unit_array_index);
@@ -17231,7 +17231,7 @@ int32 hld::item_set::open_const_att_equip_bag(const int32 drop_template_id, cons
 			const int32 item_num = item_drop.m_item_num;
 			const int32 item_const_att_lev = 0;
 
-			citem* new_item = create_item_by_template(e_server_log_add_item_item_use, 0, item_template_id, item_num, 1, 0, hld::e_bag_type_none, item_const_att_lev);
+			citem* new_item = create_item_by_template(e_server_log_add_item_item_use, 0, item_template_id, item_num, 1, 0, faith::e_bag_type_none, item_const_att_lev);
 			if (nullptr == new_item)
 			{
 				item_use_end_result = e_error_code_item_invalid_item_template;
@@ -17279,7 +17279,7 @@ int32 item_set::open_rand_equip_package_bag(const int32 drop_template_id, const 
 			const int32 item_num = item_drop.m_item_num;
 			const int32 item_const_att_lev = 0;
 
-			citem* new_item = create_item_by_template(e_server_log_add_item_item_use, 0, item_template_id, item_num, 1, 0, hld::e_bag_type_none, item_const_att_lev);
+			citem* new_item = create_item_by_template(e_server_log_add_item_item_use, 0, item_template_id, item_num, 1, 0, faith::e_bag_type_none, item_const_att_lev);
 			if (nullptr == new_item)
 			{
 				item_use_end_result = e_error_code_item_invalid_item_template;
@@ -17549,7 +17549,7 @@ void item_set::get_item_send_promp_msg_to_client(const std::vector<s_item_templa
 	{
 		return;
 	}
-	hld::item_proto_item_get_item_msg client_pak;
+	faith::item_proto_item_get_item_msg client_pak;
 	client_pak.add_role_guid(self_player.get_unit_guid().A);
 	client_pak.add_role_guid(self_player.get_unit_guid().B);
 	client_pak.set_is_continue_add(is_continue_get);
@@ -17591,7 +17591,7 @@ void item_set::get_item_send_promp_msg_to_client(const std::vector<s_item_templa
 	self_player.send_message(&client_pak, e_msgindex_s2c_get_item);
 }
 
-hld::int32 item_set::get_mount_illusion_slot(const int32 mount_illusion_template_id)
+faith::int32 item_set::get_mount_illusion_slot(const int32 mount_illusion_template_id)
 {
 	MountTemplate* item_mount_illustion_template_ptr = GET_TEMPLATE(MountTemplate, mount_illusion_template_id);
 	if (nullptr == item_mount_illustion_template_ptr)
@@ -18060,7 +18060,7 @@ int32 item_set::get_equip_smallest_enchant_level(bool is_jewelry)
 		check_equip_slot.push_back(e_role_equip_slot_boot);
 	}
 
-	int32 level_number[hld::max_enchant_type_num + 1];
+	int32 level_number[faith::max_enchant_type_num + 1];
 	memset(level_number, 0, sizeof(level_number));
 	for (auto iter = check_equip_slot.begin(); iter != check_equip_slot.end(); ++iter)
 	{
@@ -18079,11 +18079,11 @@ int32 item_set::get_equip_smallest_enchant_level(bool is_jewelry)
 		//有一件没附魔也不行
 		if (enchant_value <= 0)
 			return 0;
-		int32 enchant_type = enchant_value % hld::max_enchant_type_num;
+		int32 enchant_type = enchant_value % faith::max_enchant_type_num;
 		level_number[enchant_type] += 1;
 	}
 
-	for (int32 i = 0; i <= hld::max_enchant_type_num; ++i)
+	for (int32 i = 0; i <= faith::max_enchant_type_num; ++i)
 	{
 		if (level_number[i] >= 2)
 		{
@@ -18097,14 +18097,14 @@ int32 item_set::get_equip_smallest_enchant_level(bool is_jewelry)
 
 int32 item_set::get_equip_smallest_enchant_level_by_type(int32 show_type)
 {
-	hld::template_manager::template_type* enchant_table = template_manager::get_instance().get_templates(e_EquipEnchantTemplate);
+	faith::template_manager::template_type* enchant_table = template_manager::get_instance().get_templates(e_EquipEnchantTemplate);
 	if (nullptr == enchant_table)
 	{
 		return 0;
 	}
 	std::vector<int32> check_equip_slot;
 	check_equip_slot.clear();
-	hld::template_manager::template_type::iterator ite;
+	faith::template_manager::template_type::iterator ite;
 	for (ite = enchant_table->begin(); ite != enchant_table->end(); ++ite)
 	{
 		EquipEnchantTemplate* temp_enchant_template_ptr = (EquipEnchantTemplate*)(ite->second);
@@ -18143,7 +18143,7 @@ int32 item_set::get_equip_smallest_enchant_level_by_type(int32 show_type)
 			return 0;
 		}
 
-		if ((enchant_value % hld::max_enchant_type_num) != show_type)
+		if ((enchant_value % faith::max_enchant_type_num) != show_type)
 		{
 			return 0;
 		}
@@ -18316,12 +18316,12 @@ int32 item_set::refresh_enchant_buff_show_type()
 int32 item_set::get_enchant_max_level()
 {
 	int32 max_level = 0;
-	hld::template_manager::template_type* enchant_table = template_manager::get_instance().get_templates(e_EquipEnchantTemplate);
+	faith::template_manager::template_type* enchant_table = template_manager::get_instance().get_templates(e_EquipEnchantTemplate);
 	if (nullptr == enchant_table)
 	{
 		return max_level;
 	}
-	hld::template_manager::template_type::iterator ite;
+	faith::template_manager::template_type::iterator ite;
 	for (ite = enchant_table->begin(); ite != enchant_table->end(); ++ite)
 	{
 		EquipEnchantTemplate* temp_enchant_template_ptr = (EquipEnchantTemplate*)(ite->second);

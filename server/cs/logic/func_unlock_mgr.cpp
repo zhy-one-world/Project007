@@ -8,7 +8,7 @@
 #include "logic/item_set.h"
 #include "logic/player.hpp"
 
-namespace hld
+namespace faith
 {
 	func_unlock_mgr::func_unlock_mgr()
 	{
@@ -30,13 +30,13 @@ namespace hld
 	void func_unlock_mgr::load_func_unlock_template_map()
 	{
 		m_func_unlock_template_map.clear();
-		hld::template_manager::template_type* table = template_manager::get_instance().get_templates(e_FuncUnlockTemplate);
+		faith::template_manager::template_type* table = template_manager::get_instance().get_templates(e_FuncUnlockTemplate);
 		if (nullptr == table)
 		{
 			return;
 		}
 
-		hld::template_manager::template_type::iterator ite;
+		faith::template_manager::template_type::iterator ite;
 		FuncUnlockTemplate* func_unlock_template_ptr = nullptr;
 		for (ite = table->begin(); ite != table->end(); ++ite)
 		{

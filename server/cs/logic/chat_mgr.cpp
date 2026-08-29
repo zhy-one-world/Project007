@@ -26,7 +26,7 @@ purpose: about role's chat_mgr
 #include "internet/cs2dp.pb.h"
 #include "utility/parse_msg.h"
 
-namespace hld
+namespace faith
 {
 	cchat_mgr::cchat_mgr()
 	{
@@ -197,12 +197,12 @@ namespace hld
 		{
 			switch (e_notice_param_type(notice_template_ptr->ParseTypeArrray[param_type_index]))
 			{
-			case hld::e_notice_param_type_unit_name:
+			case faith::e_notice_param_type_unit_name:
 			{
 				notice_str_params_vec.push_back(unit_name);
 			}
 			break;
-			case hld::e_notice_param_type_item_name:
+			case faith::e_notice_param_type_item_name:
 			{
 				if (item_name_index >= item_name.size())
 				{
@@ -211,7 +211,7 @@ namespace hld
 				notice_str_params_vec.push_back(item_name[item_name_index++]);
 			}
 			break;
-			case hld::e_notice_param_type_num_data:
+			case faith::e_notice_param_type_num_data:
 			{
 				if (num_type_data_index >= num_type_data.size())
 				{
@@ -220,7 +220,7 @@ namespace hld
 				notice_str_params_vec.push_back(template_manager::get_instance().int_to_string(num_type_data[num_type_data_index++]));
 			}
 			break;
-			case hld::e_notice_param_type_item_data:
+			case faith::e_notice_param_type_item_data:
 			{
 				if (!is_had_item_link)
 				{
@@ -234,7 +234,7 @@ namespace hld
 				}
 			}
 				break;
-			case hld::e_notice_param_type_describe_str:
+			case faith::e_notice_param_type_describe_str:
 			{
 				if (describe_str_index >= describe_str.size())
 				{
@@ -243,7 +243,7 @@ namespace hld
 				notice_str_params_vec.push_back(describe_str[describe_str_index++]);
 			}
 			break;
-			case hld::e_notice_param_type_other_name:
+			case faith::e_notice_param_type_other_name:
 			{
 				if (other_name_index >= unit_name.size())
 				{
@@ -253,7 +253,7 @@ namespace hld
 			}
 			break;
 
-			case hld::e_notice_param_type_max:
+			case faith::e_notice_param_type_max:
 				break;
 			default:
 				break;
@@ -713,7 +713,7 @@ namespace hld
 			cs2ws_send_chat_to_ws_new msg;
 			msg.sender_guid = m_player_ptr->get_unit_guid();
 			msg.sender_server_id = m_player_ptr->get_unit_info(e_role_info_server_id);
-			msg.sender_template_id = m_player_ptr->get_unit_info(hld::e_role_info_template_id);
+			msg.sender_template_id = m_player_ptr->get_unit_info(faith::e_role_info_template_id);
 			msg.sender_exp_level = m_player_ptr->get_unit_info(e_role_info_exp_level);
 			// add by wangsonghao : 玩家VIP爵位信息通过 chat_content 同步给客户端
 			msg.sender_vip_title_template_id = -1;
@@ -1010,13 +1010,13 @@ namespace hld
 			m_player_ptr->send_message_to_dp(&req, req.get_pak_length());
 			return;
 		}
-		hld::cs2dp_proto::save_role_chat_record msg;
+		faith::cs2dp_proto::save_role_chat_record msg;
 
 		msg.set_role_guid(m_player_ptr->get_unit_guid().server_64);
 		msg.set_unit_array_index(m_player_ptr->get_array_index());
 		msg.set_save_type_ex(save_type);
 
-		hld::cs2dp_proto::role_chat_record_db * db_data = msg.mutable_db_data();
+		faith::cs2dp_proto::role_chat_record_db * db_data = msg.mutable_db_data();
 
 		int32 data_count = 0;
 		for (int32 i = 0; i < chat_record_max_num; i++)
@@ -1025,7 +1025,7 @@ namespace hld
 			{
 				continue;
 			}
-			hld::cs2dp_proto::role_chat_record_row * db_row = db_data->add_row_data();
+			faith::cs2dp_proto::role_chat_record_row * db_row = db_data->add_row_data();
 			db_row->set_pos(m_chat_record_array[i].pos);
 			db_row->set_record(m_chat_record_array[i].record);
 			data_count++;
@@ -1059,7 +1059,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_chat_record_db msg;
+		faith::cs2dp_proto::role_chat_record_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -1074,7 +1074,7 @@ namespace hld
 		s_chat_record *p_row = (s_chat_record *)p_data;
 		for (int32 i = 0; i < msg.row_count(); i++)
 		{
-			hld::cs2dp_proto::role_chat_record_row db_row = msg.row_data(i);
+			faith::cs2dp_proto::role_chat_record_row db_row = msg.row_data(i);
 			p_row->pos = db_row.pos();
 			parse_msg::getInstance().my_memcopy_string(p_row->record, chat_record_max_len, db_row.record());
 			p_row++;

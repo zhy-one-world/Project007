@@ -1,6 +1,6 @@
 #include "WelfareTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void WelfareTemplateSize()
     {

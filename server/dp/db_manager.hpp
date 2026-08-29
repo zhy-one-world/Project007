@@ -14,7 +14,7 @@ purpose:
 #include "sql_builder.hpp"
 #include <singleton.hpp>
 
-namespace hld
+namespace faith
 {
 #define DB_TYPE_LOG		0
 #define DB_TYPE_GAME	1

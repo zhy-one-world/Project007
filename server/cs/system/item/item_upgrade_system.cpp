@@ -10,7 +10,7 @@
 #include "lua/script_mgr.h"
 #include "server_log.hpp"
 
-using namespace hld;
+using namespace faith;
 
 
 void item_upgrade_system::start_up(player* player_ptr)

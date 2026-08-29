@@ -14,13 +14,13 @@
 #include "base.hpp"
 #include "Logic/map_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_dp2cs_load_char_map = hld::e_msg_base_map,
+		e_msgindex_dp2cs_load_char_map = faith::e_msg_base_map,
 		e_msgindex_cs2dp_save_char_map,
 
 		e_msgindex_dp2cs_load_char_demons_tower,

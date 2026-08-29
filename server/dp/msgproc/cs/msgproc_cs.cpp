@@ -63,7 +63,7 @@
 #include "buff_def.hpp"
 
 
-namespace hld
+namespace faith
 {
 
 
@@ -197,10 +197,10 @@ namespace hld
 
 	static void cs2dp_load_role_info_send_lua(uint32 connindex, const dp2cs_load_role_info& msgData)
 	{
-		hld::dp2cs_proto::load_role_db_data msg;
+		faith::dp2cs_proto::load_role_db_data msg;
 		msg.set_unit_array_index(msgData.unit_array_index);
 
-		hld::cs2dp_proto::role_info_db msg_db;
+		faith::cs2dp_proto::role_info_db msg_db;
 		msg_db.set_role_guid(msgData.data_info.role_guid.server_64);
 		msg_db.set_account(msgData.data_info.account);
 		msg_db.set_role_name(msgData.data_info.role_name);
@@ -483,11 +483,11 @@ namespace hld
 	}
 	static void cs2dp_load_role_event_send_lua(uint32 connindex, const dp2cs_load_player_had_globel_mail_end & reply_event)
 	{
-		hld::dp2cs_proto::load_role_db_data msg;
+		faith::dp2cs_proto::load_role_db_data msg;
 		msg.set_role_guid(reply_event.role_guid.server_64);
 		msg.set_unit_array_index(reply_event.unit_index);
 
-		hld::db_proto::role_event_db msg_db;
+		faith::db_proto::role_event_db msg_db;
 		for (int32 i = 0; i < max_globel_mail_in_same_time; i++)
 		{
 			msg_db.add_data_ary(reply_event.data_info[i].server_64);
@@ -581,7 +581,7 @@ namespace hld
 	{
 		if (!result.error && result.query.data_select.row_count == 1)
 		{
-			hld::dp2cs_get_other_player_info_base_end msgData;
+			faith::dp2cs_get_other_player_info_base_end msgData;
 			msgData.role_guid = role_guid;
 			db_read_data(&result, &(msgData.data_info), sizeof(msgData.data_info));
 			dbproxy_service::getInstance().send_message(connindex, &msgData, sizeof(msgData));
@@ -602,7 +602,7 @@ namespace hld
 	}
 	void cs2dp_req_get_other_player_info_equiping_end(db_result_type result, uint32 connindex, const guid_64& role_guid, const guid_64& target_guid, const s_unit_info& unit_info)
 	{
-		hld::dp2cs_get_other_player_info_equiping_end msgData;
+		faith::dp2cs_get_other_player_info_equiping_end msgData;
 		int32	table_len = result.query.data_select.row_count;
 		if (!result.error && table_len <= role_show_item_num)
 		{
@@ -629,7 +629,7 @@ namespace hld
 	{
 		if (!result.error)
 		{
-			hld::dp2cs_get_other_player_info_special_name_end msgData;
+			faith::dp2cs_get_other_player_info_special_name_end msgData;
 			msgData.role_guid = role_guid;
 			db_read_data(&result, &(msgData.data_info), sizeof(msgData.data_info));
 			msgData.data_info.role_guid = target_guid;	//防止没有找到任何称号时返回到客户端的角色guid为空
@@ -653,7 +653,7 @@ namespace hld
 	{
 		if (!result.error)
 		{
-			hld::dp2cs_get_other_player_info_base_group_end msgData;
+			faith::dp2cs_get_other_player_info_base_group_end msgData;
 			msgData.role_guid = role_guid;
 			msgData.target_guid = target_guid;
 			db_read_data(&result, &(msgData.data_info), sizeof(msgData.data_info));
@@ -677,7 +677,7 @@ namespace hld
 	{
 		if (!result.error)
 		{
-			hld::dp2cs_get_other_player_info_spirit_end msgData;
+			faith::dp2cs_get_other_player_info_spirit_end msgData;
 			msgData.role_guid = role_guid;
 			db_read_data(&result, &(msgData.data_info), sizeof(msgData.data_info));
 			msgData.data_info.role_guid = target_guid;	//防止没有找到任何精灵时返回到客户端的角色guid为空
@@ -698,9 +698,9 @@ namespace hld
 				WingTemplate* wing_template_ptr = GET_TEMPLATE(WingTemplate, item_wing_template_ptr->logic_id);
 				if (wing_template_ptr != nullptr)
 				{
-					if (wing_template_ptr->IllusionOriginalIdRange.size() == hld::e_wing_illusion_originalid_range_max)
+					if (wing_template_ptr->IllusionOriginalIdRange.size() == faith::e_wing_illusion_originalid_range_max)
 					{
-						ItemTemplate* item_wing_real_template_ptr = template_manager::get_instance().get_item_template_ptr_by_logic_id(wing_template_ptr->IllusionOriginalIdRange[hld::e_wing_illusion_originalid_range_low]);
+						ItemTemplate* item_wing_real_template_ptr = template_manager::get_instance().get_item_template_ptr_by_logic_id(wing_template_ptr->IllusionOriginalIdRange[faith::e_wing_illusion_originalid_range_low]);
 						if (item_wing_real_template_ptr != nullptr)
 						{
 							wing_illusion_range_id = item_wing_real_template_ptr->attribute_id;
@@ -755,7 +755,7 @@ namespace hld
 	}
 	void cs2dp_req_get_other_player_info_wing_or_mount_end(db_result_type result, uint32 connindex, const guid_64& role_guid, const guid_64& target_guid, const s_unit_info& unit_info, bool is_wing)
 	{
-		hld::dp2cs_get_other_player_info_wing_or_mount_end msgData;
+		faith::dp2cs_get_other_player_info_wing_or_mount_end msgData;
 		int sql_count = result.query.data_select.row_count;
 
 		if (!result.error && sql_count <= role_show_item_num)
@@ -765,7 +765,7 @@ namespace hld
 
 			msgData.data_info[0].role_guid = target_guid;	//防止没有找到任何翅膀或坐骑时返回到客户端的角色guid为空
 			msgData.is_wing = is_wing;						//防止没有找到任何翅膀或坐骑时返回到客户端的包类型为空
-			//msgData.data_info[0].data_info.data_ary[hld::e_item_info_container_type] = bag_type;	//防止没有找到任何翅膀或坐骑时返回到客户端的包类型为空
+			//msgData.data_info[0].data_info.data_ary[faith::e_item_info_container_type] = bag_type;	//防止没有找到任何翅膀或坐骑时返回到客户端的包类型为空
 
 			dbproxy_service::getInstance().send_message(connindex, &msgData, sizeof(msgData));
 
@@ -795,9 +795,9 @@ namespace hld
 	}
 	void cs2dp_req_get_other_player_info_buff_end(db_result_type result, uint32 connindex, const guid_64& role_guid, const guid_64& target_guid)
 	{
-		hld::dp2cs_get_other_player_info_buff_end msgData;
+		faith::dp2cs_get_other_player_info_buff_end msgData;
 		int32	table_len = result.query.data_select.row_count;
-		if (!result.error && table_len <= hld::MAX_LS_ENUM_BUFF)
+		if (!result.error && table_len <= faith::MAX_LS_ENUM_BUFF)
 		{
 			int32 data_size = sizeof(s_buff_save_db);
 			s_buff_save_db sql_data[MAX_LS_ENUM_BUFF];
@@ -830,7 +830,7 @@ namespace hld
 	}
 	void cs2dp_req_get_other_player_info_feather_end(db_result_type result, uint32 connindex, const guid_64& role_guid, const guid_64& target_guid, const s_unit_info& unit_info)
 	{
-		hld::dp2cs_get_other_player_info_feather_end msgData;
+		faith::dp2cs_get_other_player_info_feather_end msgData;
 		int32	table_len = result.query.data_select.row_count;
 		if (!result.error)
 		{
@@ -865,7 +865,7 @@ namespace hld
 
 	void cs2dp_req_get_other_player_info_appearance_end(db_result_type result, uint32 connindex, const guid_64& role_guid, const guid_64& target_guid)
 	{
-		hld::dp2cs_get_other_player_info_appearance_end msgData;
+		faith::dp2cs_get_other_player_info_appearance_end msgData;
 		msgData.role_guid = role_guid;
 		msgData.target_guid = target_guid;
 		int32	table_len = result.query.data_select.row_count;
@@ -881,10 +881,10 @@ namespace hld
 
 	static void cs2dp_load_role_person_information_send_lua(uint32 connindex, const dp2cs_get_person_information& msgData)
 	{
-		hld::dp2cs_proto::load_role_db_data msg;
+		faith::dp2cs_proto::load_role_db_data msg;
 		msg.set_role_guid(msgData.role_guid.server_64);
 		msg.set_unit_array_index(msgData.unit_array_index);
-		hld::cs2dp_proto::role_person_information_db msg_db;
+		faith::cs2dp_proto::role_person_information_db msg_db;
 		
 		msg_db.set_role_guid(msgData.person_info.role_guid.server_64);
 		msg_db.set_infor_state(msgData.person_info.infor_state);
@@ -997,7 +997,7 @@ namespace hld
 
 		s_role_person_information db_row_info;
 
-		hld::cs2dp_proto_role_person_information_db msg;
+		faith::cs2dp_proto_role_person_information_db msg;
 
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
@@ -1495,11 +1495,11 @@ namespace hld
 	}
 	static void  cs2dp_load_role_competition_send_lua(uint32 connindex, const dp2cs_get_role_competition& msgData)
 	{
-		hld::dp2cs_proto::load_role_db_data msg;
+		faith::dp2cs_proto::load_role_db_data msg;
 		msg.set_role_guid(msgData.role_guid.server_64);
 		msg.set_unit_array_index(msgData.unit_array_index);
 
-		hld::cs2dp_proto::role_competition_db msg_db;
+		faith::cs2dp_proto::role_competition_db msg_db;
 
 		msg_db.set_role_guid(msgData.competition_info.role_guid.server_64);
 		msg_db.set_have_type(msgData.competition_info.have_type);
@@ -1629,7 +1629,7 @@ namespace hld
 
 		s_role_competition_info db_row_info;
 
-		hld::cs2dp_proto_role_competition_db msg;
+		faith::cs2dp_proto_role_competition_db msg;
 
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
@@ -1756,11 +1756,11 @@ namespace hld
 
 	static void cs2dp_load_role_dragontrip_send_lua(uint32 connindex, const dp2cs_get_role_dragontrip& msgData)
 	{
-		hld::dp2cs_proto_load_role_db_data msg;
+		faith::dp2cs_proto_load_role_db_data msg;
 		msg.set_role_guid(msgData.role_guid.server_64);
 		msg.set_unit_array_index(msgData.unit_array_index);
 
-		hld::cs2dp_proto::role_dragontrip_db db_msg;
+		faith::cs2dp_proto::role_dragontrip_db db_msg;
 		for (int32 i = 0; i < e_dragontrip_max; i++ )
 		{
 			db_msg.add_data_ary(msgData.dragontrip_info.data_ary[i]);
@@ -1861,7 +1861,7 @@ namespace hld
 
 		s_dragontrip_info row_info;
 
-		hld::cs2dp_proto_role_dragontrip_db msg;
+		faith::cs2dp_proto_role_dragontrip_db msg;
 
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
@@ -1952,7 +1952,7 @@ namespace hld
 
 	static void cs2dp_load_role_skytreasure_send_lua(uint32 connindex, const dp2cs_get_role_skytreasure& msgData)
 	{
-		hld::dp2cs_proto::load_role_skytreasure msg;
+		faith::dp2cs_proto::load_role_skytreasure msg;
 		msg.set_role_guid(msgData.role_guid.server_64);
 		msg.set_unit_array_index(msgData.unit_array_index);
 		msg.set_row_count(msgData.data_num);
@@ -1966,11 +1966,11 @@ namespace hld
 		{
 			guid_64 role_guid;
 			s_skytreasure_info skytreasure_info;
-		}sql_data[hld::max_skytreasure_num];
+		}sql_data[faith::max_skytreasure_num];
 
 		int32 row_size = sizeof(s_skytreasure_db_row);
 		int32 row_count = result.query.data_select.row_count;
-		if (result.error || row_size != result.query.data_select.row_size || row_count > hld::max_skytreasure_num)
+		if (result.error || row_size != result.query.data_select.row_size || row_count > faith::max_skytreasure_num)
 		{
 			dp2cs_load_data_error error;
 			error.role_guid = role_guid;
@@ -2040,10 +2040,10 @@ namespace hld
 
 	void cs2dp_load_role_starark_send_lua(uint32 connindex, const dp2cs_get_role_starark& msgData)
 	{
-		hld::dp2cs_proto::load_role_starark msg;
+		faith::dp2cs_proto::load_role_starark msg;
 		msg.set_role_guid(msgData.role_guid.server_64);
 		msg.set_unit_array_index(msgData.unit_array_index);
-		hld::db_proto::role_starark_db *db_data = msg.mutable_db_data();
+		faith::db_proto::role_starark_db *db_data = msg.mutable_db_data();
 		if (db_data == nullptr)
 		{
 			return;
@@ -2142,7 +2142,7 @@ namespace hld
 
 		s_starark_info starark_info;
 
-		hld::db_proto::role_starark_db msg;
+		faith::db_proto::role_starark_db msg;
 
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)

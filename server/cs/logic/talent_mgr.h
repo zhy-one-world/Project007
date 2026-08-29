@@ -11,7 +11,7 @@ purpose: about role's talent_mgr
 
 #include "talent.h"
 
-namespace hld
+namespace faith
 {
 	class ctalent_mgr
 	{

@@ -12,7 +12,7 @@
 #include "recharge_google.hpp"
 #include "recharge_one_store.hpp"
 #include "recharge_samsung.hpp"
-namespace hld
+namespace faith
 {
 	void recharge_service::req_recharge(const guid_64& role_guid, const xstring& goods_token, const int32 goods_id, const xstring order_id, const int32 payment_type, const xstring& packge_name)
 	{

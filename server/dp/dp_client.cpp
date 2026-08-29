@@ -29,7 +29,7 @@
 #include "dbproxy_service.hpp"
 #include "net/message_manager.hpp"
 
-namespace hld
+namespace faith
 {
 	//////////////////////////////////////////////////////////////////////////
 	//

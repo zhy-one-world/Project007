@@ -22,7 +22,7 @@ purpose:
 #include "utility/init_unit.h"
 #include "utility/parse_msg.h"
 
-namespace hld
+namespace faith
 {
 	buff_set::buff_set()
 	{
@@ -191,7 +191,7 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_db_data msg;
+			faith::cs2dp_proto::save_role_db_data msg;
 			msg.set_role_guid(player_ref.get_unit_guid().server_64);
 			msg.set_unit_array_index(player_ref.get_array_index());
 			msg.set_save_type_ex(save_type_ex);
@@ -302,19 +302,19 @@ namespace hld
 			e_buff_add_judge judge_result = buff_item_ptr->add_buff_type(sender_index, buff_template_id);
 			switch (judge_result)
 			{
-			case hld::e_buff_add_judge_can_cover:
+			case faith::e_buff_add_judge_can_cover:
 				return cover_buff(sender_index, buff_item_ptr->get_buff_guid(), buff_template_id, pEnv, effect_index);
 				break;
-			case hld::e_buff_add_judge_can_wrap:
+			case faith::e_buff_add_judge_can_wrap:
 				return wrap_buff(sender_index, buff_item_ptr->get_buff_guid(), buff_template_id, pEnv);
 				break;
-			case hld::e_buff_add_judge_can_cumulative:
+			case faith::e_buff_add_judge_can_cumulative:
 				return cumulative_buff(sender_index, buff_item_ptr->get_buff_guid(), buff_template_id, pEnv);
 				break;
-			case hld::e_buff_add_judge_direct_add:
+			case faith::e_buff_add_judge_direct_add:
 				return tile_buff(sender_index, buff_template_id, pEnv, is_ignore_att, effect_index);
 				break;
-			case hld::e_buff_add_judge_can_percent:
+			case faith::e_buff_add_judge_can_percent:
 				return percent_buff(sender_index, buff_item_ptr->get_buff_guid(), buff_template_id, pEnv);
 				break;
 			default:

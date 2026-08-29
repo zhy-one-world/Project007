@@ -5,7 +5,7 @@
 #include "Logic/cross_server_pk_def.hpp"
 #include "map_object.h"
 
-namespace hld
+namespace faith
 {
 
 	class cross_arena_island

@@ -1,6 +1,6 @@
 #include "OutboardTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void OutboardTemplateSize()
     {

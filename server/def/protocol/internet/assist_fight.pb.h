@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_assist_5ffight_2eproto();
@@ -103,7 +103,7 @@ class assist_fight_proto_get_assist_fight_info : public ::google::protobuf::Mess
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.assist_fight_proto.get_assist_fight_info)
+  // @@protoc_insertion_point(class_scope:faith.assist_fight_proto.get_assist_fight_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -175,16 +175,16 @@ class assist_fight_proto_sycn_assist_fight_info : public ::google::protobuf::Mes
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.assist_fight_proto.assist_fight_info assist_fight_list = 1;
+  // repeated .faith.assist_fight_proto.assist_fight_info assist_fight_list = 1;
   inline int assist_fight_list_size() const;
   inline void clear_assist_fight_list();
   static const int kAssistFightListFieldNumber = 1;
-  inline const ::hld::assist_fight_proto_assist_fight_info& assist_fight_list(int index) const;
-  inline ::hld::assist_fight_proto_assist_fight_info* mutable_assist_fight_list(int index);
-  inline ::hld::assist_fight_proto_assist_fight_info* add_assist_fight_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::assist_fight_proto_assist_fight_info >&
+  inline const ::faith::assist_fight_proto_assist_fight_info& assist_fight_list(int index) const;
+  inline ::faith::assist_fight_proto_assist_fight_info* mutable_assist_fight_list(int index);
+  inline ::faith::assist_fight_proto_assist_fight_info* add_assist_fight_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::assist_fight_proto_assist_fight_info >&
       assist_fight_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::assist_fight_proto_assist_fight_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::assist_fight_proto_assist_fight_info >*
       mutable_assist_fight_list();
 
   // optional bool is_finish = 2;
@@ -208,7 +208,7 @@ class assist_fight_proto_sycn_assist_fight_info : public ::google::protobuf::Mes
   inline bool is_sync() const;
   inline void set_is_sync(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.assist_fight_proto.sycn_assist_fight_info)
+  // @@protoc_insertion_point(class_scope:faith.assist_fight_proto.sycn_assist_fight_info)
  private:
   inline void set_has_is_finish();
   inline void clear_has_is_finish();
@@ -219,7 +219,7 @@ class assist_fight_proto_sycn_assist_fight_info : public ::google::protobuf::Mes
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::assist_fight_proto_assist_fight_info > assist_fight_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::assist_fight_proto_assist_fight_info > assist_fight_list_;
   bool is_finish_;
   bool is_login_;
   bool is_sync_;
@@ -372,7 +372,7 @@ class assist_fight_proto_assist_fight_info : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 start_assist_time() const;
   inline void set_start_assist_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.assist_fight_proto.assist_fight_info)
+  // @@protoc_insertion_point(class_scope:faith.assist_fight_proto.assist_fight_info)
  private:
   inline void set_has_assist_fight_guid_a();
   inline void clear_has_assist_fight_guid_a();
@@ -491,7 +491,7 @@ class assist_fight_proto_start_assist_fight : public ::google::protobuf::Message
   inline ::google::protobuf::int32 assist_fight_tag() const;
   inline void set_assist_fight_tag(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.assist_fight_proto.start_assist_fight)
+  // @@protoc_insertion_point(class_scope:faith.assist_fight_proto.start_assist_fight)
  private:
   inline void set_has_assist_fight_type();
   inline void clear_has_assist_fight_type();
@@ -583,7 +583,7 @@ class assist_fight_proto_req_assist_fight : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 assist_fight_guid_b() const;
   inline void set_assist_fight_guid_b(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.assist_fight_proto.req_assist_fight)
+  // @@protoc_insertion_point(class_scope:faith.assist_fight_proto.req_assist_fight)
  private:
   inline void set_has_assist_fight_guid_a();
   inline void clear_has_assist_fight_guid_a();
@@ -661,7 +661,7 @@ class assist_fight_proto_cancel_assist_fight : public ::google::protobuf::Messag
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.assist_fight_proto.cancel_assist_fight)
+  // @@protoc_insertion_point(class_scope:faith.assist_fight_proto.cancel_assist_fight)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -806,7 +806,7 @@ class assist_fight_proto_sync_assist_fight_state : public ::google::protobuf::Me
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_helper_list();
 
-  // @@protoc_insertion_point(class_scope:hld.assist_fight_proto.sync_assist_fight_state)
+  // @@protoc_insertion_point(class_scope:faith.assist_fight_proto.sync_assist_fight_state)
  private:
   inline void set_has_assist_fight_guid();
   inline void clear_has_assist_fight_guid();
@@ -917,16 +917,16 @@ class assist_fight_proto_assist_fight_end_to_show_reward : public ::google::prot
   inline ::google::protobuf::int32 role_guid_b() const;
   inline void set_role_guid_b(::google::protobuf::int32 value);
 
-  // repeated .hld.assist_fight_proto.assist_helper_info helper_list = 3;
+  // repeated .faith.assist_fight_proto.assist_helper_info helper_list = 3;
   inline int helper_list_size() const;
   inline void clear_helper_list();
   static const int kHelperListFieldNumber = 3;
-  inline const ::hld::assist_fight_proto_assist_helper_info& helper_list(int index) const;
-  inline ::hld::assist_fight_proto_assist_helper_info* mutable_helper_list(int index);
-  inline ::hld::assist_fight_proto_assist_helper_info* add_helper_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::assist_fight_proto_assist_helper_info >&
+  inline const ::faith::assist_fight_proto_assist_helper_info& helper_list(int index) const;
+  inline ::faith::assist_fight_proto_assist_helper_info* mutable_helper_list(int index);
+  inline ::faith::assist_fight_proto_assist_helper_info* add_helper_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::assist_fight_proto_assist_helper_info >&
       helper_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::assist_fight_proto_assist_helper_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::assist_fight_proto_assist_helper_info >*
       mutable_helper_list();
 
   // optional int32 reward_id1 = 4;
@@ -974,7 +974,7 @@ class assist_fight_proto_assist_fight_end_to_show_reward : public ::google::prot
   inline ::std::string* release_first_name();
   inline void set_allocated_first_name(::std::string* first_name);
 
-  // @@protoc_insertion_point(class_scope:hld.assist_fight_proto.assist_fight_end_to_show_reward)
+  // @@protoc_insertion_point(class_scope:faith.assist_fight_proto.assist_fight_end_to_show_reward)
  private:
   inline void set_has_role_guid_a();
   inline void clear_has_role_guid_a();
@@ -993,7 +993,7 @@ class assist_fight_proto_assist_fight_end_to_show_reward : public ::google::prot
 
   ::google::protobuf::int32 role_guid_a_;
   ::google::protobuf::int32 role_guid_b_;
-  ::google::protobuf::RepeatedPtrField< ::hld::assist_fight_proto_assist_helper_info > helper_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::assist_fight_proto_assist_helper_info > helper_list_;
   ::google::protobuf::int32 reward_id1_;
   ::google::protobuf::int32 reward_id2_;
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > drop_id_list_;
@@ -1132,7 +1132,7 @@ class assist_fight_proto_assist_fight_end_to_show_thank_reward : public ::google
   inline ::std::string* release_first_name();
   inline void set_allocated_first_name(::std::string* first_name);
 
-  // @@protoc_insertion_point(class_scope:hld.assist_fight_proto.assist_fight_end_to_show_thank_reward)
+  // @@protoc_insertion_point(class_scope:faith.assist_fight_proto.assist_fight_end_to_show_thank_reward)
  private:
   inline void set_has_role_guid_a();
   inline void clear_has_role_guid_a();
@@ -1275,7 +1275,7 @@ class assist_fight_proto_assist_helper_info : public ::google::protobuf::Message
   inline ::google::protobuf::int32 head_icon() const;
   inline void set_head_icon(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.assist_fight_proto.assist_helper_info)
+  // @@protoc_insertion_point(class_scope:faith.assist_fight_proto.assist_helper_info)
  private:
   inline void set_has_role_guid_a();
   inline void clear_has_role_guid_a();
@@ -1365,7 +1365,7 @@ class assist_fight_proto_create_assist_fight_npc : public ::google::protobuf::Me
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.assist_fight_proto.create_assist_fight_npc)
+  // @@protoc_insertion_point(class_scope:faith.assist_fight_proto.create_assist_fight_npc)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1463,7 +1463,7 @@ class assist_fight_proto_send_be_assist_fight_tip : public ::google::protobuf::M
   inline bool is_master() const;
   inline void set_is_master(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.assist_fight_proto.send_be_assist_fight_tip)
+  // @@protoc_insertion_point(class_scope:faith.assist_fight_proto.send_be_assist_fight_tip)
  private:
   inline void set_has_role_name();
   inline void clear_has_role_name();
@@ -1557,7 +1557,7 @@ class assist_fight_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.assist_fight_proto)
+  // @@protoc_insertion_point(class_scope:faith.assist_fight_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1584,27 +1584,27 @@ class assist_fight_proto : public ::google::protobuf::Message {
 
 // assist_fight_proto_sycn_assist_fight_info
 
-// repeated .hld.assist_fight_proto.assist_fight_info assist_fight_list = 1;
+// repeated .faith.assist_fight_proto.assist_fight_info assist_fight_list = 1;
 inline int assist_fight_proto_sycn_assist_fight_info::assist_fight_list_size() const {
   return assist_fight_list_.size();
 }
 inline void assist_fight_proto_sycn_assist_fight_info::clear_assist_fight_list() {
   assist_fight_list_.Clear();
 }
-inline const ::hld::assist_fight_proto_assist_fight_info& assist_fight_proto_sycn_assist_fight_info::assist_fight_list(int index) const {
+inline const ::faith::assist_fight_proto_assist_fight_info& assist_fight_proto_sycn_assist_fight_info::assist_fight_list(int index) const {
   return assist_fight_list_.Get(index);
 }
-inline ::hld::assist_fight_proto_assist_fight_info* assist_fight_proto_sycn_assist_fight_info::mutable_assist_fight_list(int index) {
+inline ::faith::assist_fight_proto_assist_fight_info* assist_fight_proto_sycn_assist_fight_info::mutable_assist_fight_list(int index) {
   return assist_fight_list_.Mutable(index);
 }
-inline ::hld::assist_fight_proto_assist_fight_info* assist_fight_proto_sycn_assist_fight_info::add_assist_fight_list() {
+inline ::faith::assist_fight_proto_assist_fight_info* assist_fight_proto_sycn_assist_fight_info::add_assist_fight_list() {
   return assist_fight_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::assist_fight_proto_assist_fight_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::assist_fight_proto_assist_fight_info >&
 assist_fight_proto_sycn_assist_fight_info::assist_fight_list() const {
   return assist_fight_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::assist_fight_proto_assist_fight_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::assist_fight_proto_assist_fight_info >*
 assist_fight_proto_sycn_assist_fight_info::mutable_assist_fight_list() {
   return &assist_fight_list_;
 }
@@ -2370,27 +2370,27 @@ inline void assist_fight_proto_assist_fight_end_to_show_reward::set_role_guid_b(
   role_guid_b_ = value;
 }
 
-// repeated .hld.assist_fight_proto.assist_helper_info helper_list = 3;
+// repeated .faith.assist_fight_proto.assist_helper_info helper_list = 3;
 inline int assist_fight_proto_assist_fight_end_to_show_reward::helper_list_size() const {
   return helper_list_.size();
 }
 inline void assist_fight_proto_assist_fight_end_to_show_reward::clear_helper_list() {
   helper_list_.Clear();
 }
-inline const ::hld::assist_fight_proto_assist_helper_info& assist_fight_proto_assist_fight_end_to_show_reward::helper_list(int index) const {
+inline const ::faith::assist_fight_proto_assist_helper_info& assist_fight_proto_assist_fight_end_to_show_reward::helper_list(int index) const {
   return helper_list_.Get(index);
 }
-inline ::hld::assist_fight_proto_assist_helper_info* assist_fight_proto_assist_fight_end_to_show_reward::mutable_helper_list(int index) {
+inline ::faith::assist_fight_proto_assist_helper_info* assist_fight_proto_assist_fight_end_to_show_reward::mutable_helper_list(int index) {
   return helper_list_.Mutable(index);
 }
-inline ::hld::assist_fight_proto_assist_helper_info* assist_fight_proto_assist_fight_end_to_show_reward::add_helper_list() {
+inline ::faith::assist_fight_proto_assist_helper_info* assist_fight_proto_assist_fight_end_to_show_reward::add_helper_list() {
   return helper_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::assist_fight_proto_assist_helper_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::assist_fight_proto_assist_helper_info >&
 assist_fight_proto_assist_fight_end_to_show_reward::helper_list() const {
   return helper_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::assist_fight_proto_assist_helper_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::assist_fight_proto_assist_helper_info >*
 assist_fight_proto_assist_fight_end_to_show_reward::mutable_helper_list() {
   return &helper_list_;
 }
@@ -3145,7 +3145,7 @@ inline void assist_fight_proto_send_be_assist_fight_tip::set_is_master(bool valu
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

@@ -84,7 +84,7 @@ purpose:
 #include <Logic/time_def.hpp>
 #include <memory>
 
-namespace hld
+namespace faith
 {
 #define DEBUG_MAIL  false
 
@@ -104,7 +104,7 @@ namespace hld
 	player* player::cast(unit* o)
 	{
 		ZoneScoped;
-		if (o && hld::e_unit_type_player == o->m_unit_type)
+		if (o && faith::e_unit_type_player == o->m_unit_type)
 		{
 			return static_cast<player*>(o);
 		}
@@ -126,7 +126,7 @@ namespace hld
 		m_min_tick = 0;
 		m_min_10_tick = 0;
 		fuhuo_cut_hp = false;
-		m_unit_type = hld::e_unit_type_player;
+		m_unit_type = faith::e_unit_type_player;
 		m_status = e_session_status_create_player;
 		refresh_heart_beat();
 		m_is_in_ancient_battlefield = false;
@@ -438,7 +438,7 @@ namespace hld
 		bool is_have = get_title_mgr().is_have_title(title_id);
 		if (is_have == true)
 		{
-			int32 show_title = get_pawn_att().get_unit_base_att(hld::e_base_att_info_equip_title_id);
+			int32 show_title = get_pawn_att().get_unit_base_att(faith::e_base_att_info_equip_title_id);
 			get_title_mgr().remove_title_by_template_id(pk_king_title_id);
 			if (show_title == pk_king_title_id)
 			{
@@ -473,7 +473,7 @@ namespace hld
 		//	buff_man::add_buff_inst(role_array_index, role_array_index, GAMECONFIG->DoubleLineBuffId);
 		//}
 		MapTemplate* move_map_template_ptr = GET_TEMPLATE(MapTemplate, get_unit_info(e_role_info_move_map_id));
-		if (move_map_template_ptr && move_map_template_ptr->Type == hld::e_map_type_big_map)
+		if (move_map_template_ptr && move_map_template_ptr->Type == faith::e_map_type_big_map)
 		{
 			if (get_unit_info(e_role_info_move_line_id) == 1)
 			{
@@ -1163,7 +1163,7 @@ namespace hld
 			grade_level = init_unit::get_max_grade_level() * player_grade_up_stage_nums;
 		}
 
-		int32 player_index = grade_level / hld::player_grade_up_stage_nums;
+		int32 player_index = grade_level / faith::player_grade_up_stage_nums;
 		int32 player_class = get_unit_info(e_role_info_class_type);
 		if (player_class < 1 || player_class > GAMECONFIG->InitRoleAry.size())
 		{
@@ -1219,7 +1219,7 @@ namespace hld
 		PlayerInitTemplate* temp_player_init_template_ptr = GET_TEMPLATE(PlayerInitTemplate, temp_player_init_template_id);
 		if (nullptr != temp_player_init_template_ptr)
 		{
-			int32 temp_value = grade_level % hld::player_grade_up_stage_nums;
+			int32 temp_value = grade_level % faith::player_grade_up_stage_nums;
 			if (temp_value == 0)
 			{
 				PlayerInitTemplate* old_player_init_template_ptr = GET_TEMPLATE(PlayerInitTemplate, temp_player_init_template_id - 1);
@@ -2066,7 +2066,7 @@ namespace hld
 							{
 								if (get_unit_info(e_role_info_exp_level) >= next_mission_ptr->NeedLevel)
 								{
-									transfer_by_template(get_unit_info(hld::e_role_info_main_map_id), 0, 0, guid_64(), 0);
+									transfer_by_template(get_unit_info(faith::e_role_info_main_map_id), 0, 0, guid_64(), 0);
 								}
 							}
 						}
@@ -2236,7 +2236,7 @@ namespace hld
 			int32 old_exp_level = get_unit_info(e_role_info_exp_level);
 
 			//等级增加查看是否有可获得称号
-			m_title_mgr.add_title_by_type_and_value(hld::e_title_type_level, get_unit_info(e_role_info_exp_level));
+			m_title_mgr.add_title_by_type_and_value(faith::e_title_type_level, get_unit_info(e_role_info_exp_level));
 
 			set_unit_info(e_role_info_upgrade_id, old_upgrade_id + 1);
 			set_unit_info(e_role_info_exp_level, old_exp_level + 1);
@@ -2771,7 +2771,7 @@ namespace hld
 		notice_data.num_type_data.push_back(equip_num);
 		switch (addition_buff_type)
 		{
-		case hld::e_addition_buff_upgrade:
+		case faith::e_addition_buff_upgrade:
 			addtion_num = cur_addtion_temp_ptr->UpgradeNum;
 			notice_data.num_type_data.push_back(addtion_num);
 			for (int32 i = 0; i < how_many_att; i++)
@@ -2782,7 +2782,7 @@ namespace hld
 				}
 			}
 			break;
-		case hld::e_addition_buff_quality:
+		case faith::e_addition_buff_quality:
 			for (int32 i = 0; i < how_many_att; i++)
 			{
 				if (att_arr[i] != 0)
@@ -2791,7 +2791,7 @@ namespace hld
 				}
 			}
 			break;
-		case hld::e_addition_buff_addon:
+		case faith::e_addition_buff_addon:
 			addtion_num = cur_addtion_temp_ptr->AddOnLevel;
 			notice_data.num_type_data.push_back(addtion_num);
 			for (int32 i = 0; i < how_many_att; i++)
@@ -2802,7 +2802,7 @@ namespace hld
 				}
 			}
 			break;
-		case hld::e_addition_buff_succinct:
+		case faith::e_addition_buff_succinct:
 			addtion_num = cur_addtion_temp_ptr->SuccinctFullQualityLevel;
 			switch (addtion_num)
 			{
@@ -2839,14 +2839,14 @@ namespace hld
 				}
 			}
 			break;
-		case hld::e_addition_buff_sky_equip:
-		case hld::e_addition_buff_skygod_equip:
-		case hld::e_addition_buff_supreme_equip:
+		case faith::e_addition_buff_sky_equip:
+		case faith::e_addition_buff_skygod_equip:
+		case faith::e_addition_buff_supreme_equip:
 			break;
-		case hld::e_addition_buff_max:
-		case hld::e_addition_buff_achievement:
-		case hld::e_addition_buff_rank:
-		case hld::e_addition_buff_feather:
+		case faith::e_addition_buff_max:
+		case faith::e_addition_buff_achievement:
+		case faith::e_addition_buff_rank:
+		case faith::e_addition_buff_feather:
 		default:
 			return;
 		}
@@ -2864,7 +2864,7 @@ namespace hld
 		}
 		auto map_type = (e_map_type)map_template_ptr->Type;
 		auto map_sub_type = map_template_ptr->SubType;
-		if (map_type == hld::e_map_type_big_map)
+		if (map_type == faith::e_map_type_big_map)
 		{
 			return true;
 		}
@@ -3026,9 +3026,9 @@ namespace hld
 		ZoneScoped;
 		switch (mission_slot)
 		{
-		case hld::e_mission_slot_daily:
+		case faith::e_mission_slot_daily:
 			return get_unit_info(e_role_info_daily_done_num) >= DAILY_MISSION_MAX;
-		case hld::e_mission_slot_against:
+		case faith::e_mission_slot_against:
 			return get_unit_info(e_role_info_against_done_num) >= AGAINST_MISSION_MAX;
 		default:
 			break;
@@ -3042,9 +3042,9 @@ namespace hld
 		ZoneScoped;
 		switch (mission_slot)
 		{
-		case hld::e_mission_slot_daily:
+		case faith::e_mission_slot_daily:
 			return get_func_unlock_mgr().is_func_unlock(daily_mission_unlock_id);
-		case hld::e_mission_slot_against:
+		case faith::e_mission_slot_against:
 			return get_func_unlock_mgr().is_func_unlock(against_mission_unlock_id);
 		default:
 			break;
@@ -3072,7 +3072,7 @@ namespace hld
 	//		{
 	//			return;
 	//		}
-	//		hld::interaction_proto_interaction_invite interaction_invite_proto;
+	//		faith::interaction_proto_interaction_invite interaction_invite_proto;
 	//		interaction_invite_proto.set_interaction_be_invited_guid(be_invited_interaction_guid.server_64);
 	//		interaction_invite_proto.set_interaction_initiator_guid(get_unit_guid().server_64);
 	//		interaction_invite_proto.set_interaction_be_invited_interaction_type(be_invited_interaction_type);
@@ -3111,7 +3111,7 @@ namespace hld
 
 	//	if (interaction_be_invited_player_ref.is_valid())
 	//	{
-	//		hld::interaction_proto_interaction_invite_end interaction_invite_end_proto;
+	//		faith::interaction_proto_interaction_invite_end interaction_invite_end_proto;
 	//		interaction_invite_end_proto.set_interaction_be_invited_guid(be_invited_interaction_guid.server_64);
 	//		interaction_invite_end_proto.set_interaction_initiator_guid(initiator_interaction_guid.server_64);
 	//		interaction_invite_end_proto.set_interaction_be_invited_interaction_type(be_invited_interaction_type);
@@ -3176,7 +3176,7 @@ namespace hld
 		//{
 		//	return false;
 		//}
-		//hld::cs2dp_proto::role_time_db msg;
+		//faith::cs2dp_proto::role_time_db msg;
 		//bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		//if (!is_sucess)
 		//{
@@ -3304,7 +3304,7 @@ namespace hld
 		//{
 		//	return false;
 		//}
-		//hld::cs2dp_proto::role_logic_db msg;
+		//faith::cs2dp_proto::role_logic_db msg;
 		//bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		//if (!is_sucess)
 		//{
@@ -3388,7 +3388,7 @@ namespace hld
 			cur_mission_id = mission_ptr->get_mission_template_ptr()->attribute_id;
 		}
 		int32 max_level = 0;
-		hld::template_manager::template_type* template_list = template_manager::get_instance().get_templates(e_DevelopOpenTemplate);
+		faith::template_manager::template_type* template_list = template_manager::get_instance().get_templates(e_DevelopOpenTemplate);
 		if (nullptr == template_list)
 		{
 			return 0;
@@ -3859,7 +3859,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_money_db msg;
+		faith::cs2dp_proto::role_money_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -3902,11 +3902,11 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_money msg;
+			faith::cs2dp_proto::save_role_money msg;
 			msg.set_role_guid(get_unit_guid().server_64);
 			msg.set_unit_array_index(m_array_index);
 			msg.set_save_type_ex(save_type_ex);
-			hld::cs2dp_proto::role_money_db* db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_money_db* db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return;
@@ -4361,7 +4361,7 @@ namespace hld
 				merge_array.push_back(it);
 			}
 		}
-		hld::item_proto_item_get_item_msg client_pak;
+		faith::item_proto_item_get_item_msg client_pak;
 		client_pak.add_role_guid(get_unit_guid().A);
 		client_pak.add_role_guid(get_unit_guid().B);
 
@@ -4448,7 +4448,7 @@ namespace hld
 		return true;
 	}
 
-	void player::get_aoi_msg(hld::aoi_proto_unit_aoi_all& msg)
+	void player::get_aoi_msg(faith::aoi_proto_unit_aoi_all& msg)
 	{
 		ZoneScoped;
 		msg.set_unit_guid(get_unit_guid().server_64);
@@ -4699,13 +4699,13 @@ namespace hld
 			if (player_belief_stage_point < ActivityCommonConfigTemplatePtr->ParamInt1)
 			{
 				get_belief_rune_mgr().add_stage_point(ActivityCommonConfigTemplatePtr->ParamInt3);
-				hld::belief_rune_proto_belief_cloister_point_update msg;
+				faith::belief_rune_proto_belief_cloister_point_update msg;
 				msg.set_point_value(get_belief_rune_mgr().get_stage_point());
 				send_message_to_self(&msg, e_msgindex_s2c_belief_cloister_point_update);
 			}
 			else
 			{
-				transfer_by_template(get_unit_info(hld::e_role_info_main_map_id), 0, get_unit_info(e_role_info_server_id), guid_64(), 0);
+				transfer_by_template(get_unit_info(faith::e_role_info_main_map_id), 0, get_unit_info(e_role_info_server_id), guid_64(), 0);
 			}
 		}
 		if (m_notice_id != 0)
@@ -4951,7 +4951,7 @@ namespace hld
 						int64 max_exp_raid_time = get_daily_exp_raid_time() * second_tick_time + (add_exp_raid_time * second_tick_time);
 						if (last_exp_raid_time >= max_exp_raid_time)
 						{
-							transfer_by_template(get_unit_info(hld::e_role_info_main_map_id), 0, 0, guid_64(), 0);
+							transfer_by_template(get_unit_info(faith::e_role_info_main_map_id), 0, 0, guid_64(), 0);
 						}
 						else if (last_exp_raid_time < max_exp_raid_time)
 						{
@@ -4984,7 +4984,7 @@ namespace hld
 		int64 last_battlefield_time = get_time_data(e_time_type_ancient_battelfield);
 		if (m_is_in_ancient_battlefield && last_battlefield_time <= 0)
 		{
-			transfer_by_template(get_unit_info(hld::e_role_info_main_map_id), 0, 0, guid_64(), 0);
+			transfer_by_template(get_unit_info(faith::e_role_info_main_map_id), 0, 0, guid_64(), 0);
 		}
 		else if (m_is_in_ancient_battlefield && last_battlefield_time > 0)
 		{
@@ -5310,11 +5310,11 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_info msg;
+			faith::cs2dp_proto::save_role_info msg;
 			msg.set_role_guid(get_unit_guid().server_64);
 			msg.set_unit_array_index(m_array_index);
 			msg.set_save_type_ex(save_type_ex);
-			hld::cs2dp_proto::role_info_db* db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_info_db* db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return;
@@ -5687,12 +5687,12 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_yesterday_must_do_remain msg;
+			faith::cs2dp_proto::save_role_yesterday_must_do_remain msg;
 			msg.set_role_guid(get_unit_guid().server_64);
 			msg.set_unit_array_index(m_array_index);
 			msg.set_save_type_ex(save_typ);
 
-			hld::cs2dp_proto::role_yesterday_must_do_remain_db* db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_yesterday_must_do_remain_db* db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return;
@@ -5701,7 +5701,7 @@ namespace hld
 			int32 row_count = 0;
 			for (int32 i = 0; i < resource_find_back_day; i++)
 			{
-				hld::cs2dp_proto::role_yesterday_must_do_remain_row* db_row = db_data->add_row_data();
+				faith::cs2dp_proto::role_yesterday_must_do_remain_row* db_row = db_data->add_row_data();
 				if (db_row == nullptr)
 				{
 					return;
@@ -6573,12 +6573,12 @@ namespace hld
 			//map_record_set& map_record_set_ref = map_record_mgr::get_instance().get_map_record_set(get_array_index());
 			//if (map_record_set_ref.is_valid() == true)
 			//{
-			//	hld::template_manager::template_type* map_table_ptr = template_manager::get_instance().get_templates(e_MapTemplate);
+			//	faith::template_manager::template_type* map_table_ptr = template_manager::get_instance().get_templates(e_MapTemplate);
 			//	if (nullptr == map_table_ptr)
 			//	{
 			//		return;
 			//	}
-			//	hld::template_manager::template_type::iterator ite;
+			//	faith::template_manager::template_type::iterator ite;
 			//	MapTemplate* map_template_ptr = nullptr;
 			//	for (ite = map_table_ptr->begin(); ite != map_table_ptr->end(); ++ite)
 			//	{
@@ -6644,7 +6644,7 @@ namespace hld
 		break;
 		case egot_open_mobile_gm_web_require:
 		{
-			hld::character_proto_character_gmorder_message gm_msg;
+			faith::character_proto_character_gmorder_message gm_msg;
 
 			gm_msg.set_command_type(egot_open_mobile_gm_web_response);
 			gm_msg.set_sub_command_type(0);
@@ -6857,7 +6857,7 @@ namespace hld
 	void player::game_over()
 	{
 		ZoneScoped;
-		hld::character_proto_s2c_game_over game_over_msg;
+		faith::character_proto_s2c_game_over game_over_msg;
 		game_over_msg.set_game_result(1);
 		send_message_to_self(&game_over_msg, e_msgindex_s2c_game_over);
 	}
@@ -6884,7 +6884,7 @@ namespace hld
 		}
 
 		//发给客户端副本结算数据
-		hld::character_proto_map_fuben_over fuben_over_msg;
+		faith::character_proto_map_fuben_over fuben_over_msg;
 		fuben_over_msg.set_fuben_template_id(fuben_template_id);
 		fuben_over_msg.set_pass_time(settlement.pass_time);
 		fuben_over_msg.set_dead_count(settlement.dead_count);
@@ -7068,7 +7068,7 @@ namespace hld
 
 		if (finished && map_template_ptr->Type == e_map_type_battle && map_template_ptr->ResultDialogType == e_map_result_dialog_type_arena)
 		{
-			hld::character_proto_break_map_over break_map_over_msg;
+			faith::character_proto_break_map_over break_map_over_msg;
 			send_message_to_self(&break_map_over_msg, e_msgindex_s2c_break_map_over);
 		}
 	}
@@ -7206,7 +7206,7 @@ namespace hld
 		trie_filter::get_instance().find_forbidden(chat_message);
 		append_gift_mail_system_string(mail_title, mail_context, get_name(), gift_ptr->ItemName, gift_count, add_friendliness_value, chat_message, receive_item_id);
 		bool is_clear = false;
-		s_item_info gift_item_array[hld::max_item_per_mail];
+		s_item_info gift_item_array[faith::max_item_per_mail];
 		int32 item_pos = 0;
 		for (int32 create_count = 0; total_gift_num > 0;)
 		{
@@ -7222,17 +7222,17 @@ namespace hld
 				total_gift_num = 0;
 			}
 			//先发一波
-			if (item_pos >= hld::max_item_per_mail)
+			if (item_pos >= faith::max_item_per_mail)
 			{
 				get_mail_mgr().send_mail_to_another_player_by_system(addreessee_guid, 0, mail_title, mail_context, 0, 0, 0, 0, gift_item_array, item_pos);
 				item_pos = 0;
-				for (int32 index = 0; index < hld::max_item_per_mail; index++)
+				for (int32 index = 0; index < faith::max_item_per_mail; index++)
 				{
 					gift_item_array[index].clear_data();
 				}
 				is_clear = true;
 			}
-			bool OK = hld::init_unit::init_item_data(gift_item_array[item_pos++], receive_item_id, -1, create_count, e_bag_type_bag, 1);
+			bool OK = faith::init_unit::init_item_data(gift_item_array[item_pos++], receive_item_id, -1, create_count, e_bag_type_bag, 1);
 			if (OK == false)
 			{
 				return;
@@ -7421,7 +7421,7 @@ namespace hld
 
 		for (auto& award_item_with_num : award_items_with_num_list)
 		{
-			citem* award_item = temp_item_set.create_item_by_template(e_server_log_add_item_raid_reward, fuben_template_id, award_item_with_num.m_item_id, award_item_with_num.m_item_num, 1, 0, hld::e_bag_type_none, 0);
+			citem* award_item = temp_item_set.create_item_by_template(e_server_log_add_item_raid_reward, fuben_template_id, award_item_with_num.m_item_id, award_item_with_num.m_item_num, 1, 0, faith::e_bag_type_none, 0);
 			if (nullptr == award_item)
 			{
 				return;
@@ -7607,7 +7607,7 @@ namespace hld
 	void player::send_fuben_info_to_client(s_fuben_info_to_client& info)
 	{
 		ZoneScoped;
-		hld::character_proto_map_fuben_info_to_client msg;
+		faith::character_proto_map_fuben_info_to_client msg;
 		msg.set_wave_id(info.wave_id);
 		msg.set_cur_npc(info.cur_npc);
 		msg.set_cur_wave(info.cur_wave);
@@ -7710,14 +7710,14 @@ namespace hld
 				temp_send_player.set_last_kill_player_guid(get_unit_guid());
 				temp_send_player.send_kill_prompt(m_array_index, is_end);
 				MapTemplate* map_template_ptr = GET_TEMPLATE(MapTemplate, get_unit_info(e_role_info_move_map_id));
-				if (map_template_ptr && map_template_ptr->Type == hld::e_map_type_big_map && temp_send_unit.get_unit_guid() != get_unit_guid())
+				if (map_template_ptr && map_template_ptr->Type == faith::e_map_type_big_map && temp_send_unit.get_unit_guid() != get_unit_guid())
 				{
 					//增加杀人数
-					int32 kill_player_num = temp_send_player.get_unit_info(hld::e_role_info_kill_player_num);
-					temp_send_player.set_unit_info(hld::e_role_info_kill_player_num, ++kill_player_num);
-					temp_send_player.send_info_one(hld::e_role_info_kill_player_num);
+					int32 kill_player_num = temp_send_player.get_unit_info(faith::e_role_info_kill_player_num);
+					temp_send_player.set_unit_info(faith::e_role_info_kill_player_num, ++kill_player_num);
+					temp_send_player.send_info_one(faith::e_role_info_kill_player_num);
 					//增加杀人称号
-					temp_send_player.get_title_mgr().add_title_by_type_and_value(hld::e_title_type_kill_player_num, kill_player_num);
+					temp_send_player.get_title_mgr().add_title_by_type_and_value(faith::e_title_type_kill_player_num, kill_player_num);
 				}
 				MapTemplate* send_player_map_ptr = temp_send_player.m_cur_map_template_ptr;
 				if (nullptr == send_player_map_ptr)
@@ -8065,7 +8065,7 @@ namespace hld
 		//转职需要完成的任务
 
 		int32 cur_grade_num = get_logic_data(e_role_logic_info_god_hood_grade);
-		int32 temp_num = cur_grade_num / hld::player_grade_up_one_mission_num;
+		int32 temp_num = cur_grade_num / faith::player_grade_up_one_mission_num;
 		if (temp_num == 0)
 		{
 			int32 mission_flag = 1 << (cur_grade_num + 1);
@@ -8076,7 +8076,7 @@ namespace hld
 		}
 		else
 		{
-			int32 mission_flag = 1 << ((cur_grade_num + 1) % hld::player_grade_up_one_mission_num);
+			int32 mission_flag = 1 << ((cur_grade_num + 1) % faith::player_grade_up_one_mission_num);
 			if ((mission_flag & get_logic_data((e_role_logic_info)(e_role_logic_info_done_grade_mission_1 + temp_num - 1))) == 0 && grade_god_hood_template_ptr->GradeUpMission != 0)
 			{
 				return;
@@ -8260,7 +8260,7 @@ namespace hld
 				int32 miss_done_index = -1;
 				if (init_config_ptr->GradeUpMission == mission_template_id)
 				{
-					miss_done_index = (index + 1) * hld::player_grade_up_stage_nums;
+					miss_done_index = (index + 1) * faith::player_grade_up_stage_nums;
 				}
 				else
 				{
@@ -8274,7 +8274,7 @@ namespace hld
 
 						if (mission_template_id == grade_god_hod_ptr->GradeUpMission)
 						{
-							miss_done_index = index * hld::player_grade_up_stage_nums + i + 1;
+							miss_done_index = index * faith::player_grade_up_stage_nums + i + 1;
 							break;
 						}
 					}
@@ -8285,7 +8285,7 @@ namespace hld
 					continue;
 				}
 
-				int32 temp_num = (miss_done_index - 1) / hld::player_grade_up_one_mission_num;
+				int32 temp_num = (miss_done_index - 1) / faith::player_grade_up_one_mission_num;
 				int32 flag_index = e_role_logic_info_done_grade_mission;
 				int32 miss_done_flag = 0;
 				if (temp_num == 0)
@@ -8294,7 +8294,7 @@ namespace hld
 				}
 				else
 				{
-					miss_done_flag = 1 << (miss_done_index % hld::player_grade_up_one_mission_num);
+					miss_done_flag = 1 << (miss_done_index % faith::player_grade_up_one_mission_num);
 					flag_index = e_role_logic_info_done_grade_mission_1 + temp_num - 1;
 				}
 
@@ -8316,7 +8316,7 @@ namespace hld
 		{
 			end_state = m_store_helper.buy_goods(goods_id, goods_num, store_id, is_auto_buy);
 		}
-		hld::goods_proto_goods_operate_end msg;
+		faith::goods_proto_goods_operate_end msg;
 		msg.set_goods_id(goods_id);
 		msg.set_goods_num(goods_num);
 		msg.set_store_id(store_id);
@@ -8368,7 +8368,7 @@ namespace hld
 		{
 			return;
 		}
-		if ((map_template_ptr->Type == hld::e_map_type_big_map) && (m_func_unlock_mgr.is_func_unlock("Fly") == false))
+		if ((map_template_ptr->Type == faith::e_map_type_big_map) && (m_func_unlock_mgr.is_func_unlock("Fly") == false))
 		{
 			if (map_template_ptr->BornLocation.size() < 3 || map_template_ptr->BornRotation.size() < 3)
 			{
@@ -8777,9 +8777,9 @@ namespace hld
 		cs2ws_update_team_member_pos_info_one update_team_member_pos_info_one_msg;
 		update_team_member_pos_info_one_msg.team_guid = get_team_guid();
 		update_team_member_pos_info_one_msg.role_guid = get_unit_guid();
-		update_team_member_pos_info_one_msg.pos_x = get_unit_info(hld::e_role_info_move_pos_x);
-		update_team_member_pos_info_one_msg.pos_y = get_unit_info(hld::e_role_info_move_pos_y);
-		update_team_member_pos_info_one_msg.pos_z = get_unit_info(hld::e_role_info_move_pos_z);
+		update_team_member_pos_info_one_msg.pos_x = get_unit_info(faith::e_role_info_move_pos_x);
+		update_team_member_pos_info_one_msg.pos_y = get_unit_info(faith::e_role_info_move_pos_y);
+		update_team_member_pos_info_one_msg.pos_z = get_unit_info(faith::e_role_info_move_pos_z);
 		connection_mgr::getInstance().send_to_ws(&update_team_member_pos_info_one_msg, sizeof(update_team_member_pos_info_one_msg));
 	}
 
@@ -8937,7 +8937,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_yesterday_must_do_remain_db msg;
+		faith::cs2dp_proto::role_yesterday_must_do_remain_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -8952,7 +8952,7 @@ namespace hld
 		s_unit_yesterday_must_do_remain* p_row = (s_unit_yesterday_must_do_remain*)p_data;
 		for (int32 i = 0; i < msg.row_count(); i++)
 		{
-			hld::cs2dp_proto::role_yesterday_must_do_remain_row db_row = msg.row_data(i);
+			faith::cs2dp_proto::role_yesterday_must_do_remain_row db_row = msg.row_data(i);
 			p_row->role_guid.server_64 = db_row.role_guid();
 			p_row->role_exp_level_yesterday = db_row.role_exp_level_yesterday();
 			p_row->save_date = db_row.save_date();
@@ -9886,7 +9886,7 @@ namespace hld
 		}
 
 		//月充值数量
-		if (get_login_type() == hld::e_login_type_new_account_and_password || get_login_type() == hld::e_login_type_new_zw)
+		if (get_login_type() == faith::e_login_type_new_account_and_password || get_login_type() == faith::e_login_type_new_zw)
 		{
 			cs2fep_month_recharge_num msg;
 			memcpy(msg.account, get_account(), max_account_length);
@@ -9908,12 +9908,12 @@ namespace hld
 	{
 		ZoneScoped;
 		//死亡界面充值 自动领取奖励 装备武器 激活时装 装备时装 免费复活
-		hld::template_manager::template_type* table = template_manager::get_instance().get_templates(e_WelfareTemplate);
+		faith::template_manager::template_type* table = template_manager::get_instance().get_templates(e_WelfareTemplate);
 		if (nullptr == table)
 		{
 			return;
 		}
-		hld::template_manager::template_type::iterator ite;
+		faith::template_manager::template_type::iterator ite;
 		for (ite = table->begin(); ite != table->end(); ++ite)
 		{
 			WelfareTemplate* welfare_template_ptr = (WelfareTemplate*)(ite->second);
@@ -9921,7 +9921,7 @@ namespace hld
 			{
 				continue;
 			}
-			if (welfare_template_ptr->Type == hld::e_welfare_type_first_recharge_reward)
+			if (welfare_template_ptr->Type == faith::e_welfare_type_first_recharge_reward)
 			{
 				get_welfare_mgr().get_welfare_by_id(welfare_template_ptr->attribute_id);
 
@@ -9958,9 +9958,9 @@ namespace hld
 						{
 							continue;
 						}
-						if (item_template_ptr->item_type == hld::e_item_type_weapon)
+						if (item_template_ptr->item_type == faith::e_item_type_weapon)
 						{
-							int32 temp_item_slot = hld::e_role_equip_slot_weapon_1;
+							int32 temp_item_slot = faith::e_role_equip_slot_weapon_1;
 							get_item_set().equip_on(temp_item_ptr->get_item_guid(), temp_item_slot);
 						}
 						break;
@@ -9988,7 +9988,7 @@ namespace hld
 						continue;
 					}
 
-					citem* cur_equip_fashion_ptr = get_item_set().get_item_by_slot(hld::e_bag_type_equip_fasion, fashion_item_template_ptr->sub_type);
+					citem* cur_equip_fashion_ptr = get_item_set().get_item_by_slot(faith::e_bag_type_equip_fasion, fashion_item_template_ptr->sub_type);
 					if (cur_equip_fashion_ptr == nullptr)
 					{
 						get_item_set().equip_on(temp_item_ptr->get_item_guid(), fashion_item_template_ptr->sub_type);
@@ -9996,7 +9996,7 @@ namespace hld
 					break;
 				}
 
-				back_to_life(hld::e_revive_type_same_pos, true);
+				back_to_life(faith::e_revive_type_same_pos, true);
 			}
 		}
 		character_proto_dead_recharge_end msg;
@@ -10484,7 +10484,7 @@ namespace hld
 		set_unit_info(e_role_info_total_login_days, cur_total_login_num + 1);
 
 		//累计登录天数增加查看是否有可获得称号
-		m_title_mgr.add_title_by_type_and_value(hld::e_title_type_login_day_num, cur_total_login_num + 1);
+		m_title_mgr.add_title_by_type_and_value(faith::e_title_type_login_day_num, cur_total_login_num + 1);
 
 		//福利相关
 		m_welfare_mgr.refresh_daily_info();
@@ -10882,9 +10882,9 @@ namespace hld
 		int32 cur_flag = 0;
 		switch (fund_type)
 		{
-		case hld::e_grow_up_fund_type_reborn:
+		case faith::e_grow_up_fund_type_reborn:
 		{
-			cur_flag = get_unit_info(hld::e_role_info_fund_reborn_get_flag);
+			cur_flag = get_unit_info(faith::e_role_info_fund_reborn_get_flag);
 			if (cur_flag & temp_flag)
 			{
 				return true;
@@ -10895,9 +10895,9 @@ namespace hld
 			}
 		}
 		break;
-		case hld::e_grow_up_fund_type_time:
+		case faith::e_grow_up_fund_type_time:
 		{
-			cur_flag = get_unit_info(hld::e_role_info_fund_time_get_flag);
+			cur_flag = get_unit_info(faith::e_role_info_fund_time_get_flag);
 			if (cur_flag & temp_flag)
 			{
 				return true;
@@ -10908,9 +10908,9 @@ namespace hld
 			}
 		}
 		break;
-		case hld::e_grow_up_fund_type_pride:
+		case faith::e_grow_up_fund_type_pride:
 		{
-			cur_flag = get_unit_info(hld::e_role_info_fund_pride_get_flag);
+			cur_flag = get_unit_info(faith::e_role_info_fund_pride_get_flag);
 			if (cur_flag & temp_flag)
 			{
 				return true;
@@ -10937,27 +10937,27 @@ namespace hld
 		int32 fund_type = grow_up_fund_template_ptr->Type;
 		switch (fund_type)
 		{
-		case hld::e_grow_up_fund_type_reborn:
+		case faith::e_grow_up_fund_type_reborn:
 		{
-			int32 cur_value = get_unit_info(hld::e_role_info_exp_level);
+			int32 cur_value = get_unit_info(faith::e_role_info_exp_level);
 			if (cur_value >= grow_up_fund_template_ptr->TargetValue)
 			{
 				return true;
 			}
 		}
 		break;
-		case hld::e_grow_up_fund_type_time:
+		case faith::e_grow_up_fund_type_time:
 		{
-			int32 cur_value = get_unit_info(hld::e_role_info_total_login_days);
+			int32 cur_value = get_unit_info(faith::e_role_info_total_login_days);
 			if (cur_value >= grow_up_fund_template_ptr->TargetValue)
 			{
 				return true;
 			}
 		}
 		break;
-		case hld::e_grow_up_fund_type_pride:
+		case faith::e_grow_up_fund_type_pride:
 		{
-			int64 cost_value = get_unit_i64_info_data(hld::e_role_i64_info_gs_value);
+			int64 cost_value = get_unit_i64_info_data(faith::e_role_i64_info_gs_value);
 			if (cost_value >= grow_up_fund_template_ptr->TargetValue)
 			{
 				return true;
@@ -10989,7 +10989,7 @@ namespace hld
 		//先查看个人名片信息
 		get_person_infor_mgr().get_other_person_information_to_dp(target_guid, true);
 
-		hld::cs2dp_get_other_player_info get_other_player_info_msg;
+		faith::cs2dp_get_other_player_info get_other_player_info_msg;
 		get_other_player_info_msg.role_guid = get_unit_guid();
 		get_other_player_info_msg.target_guid = target_guid;
 		connection_mgr::getInstance().send_to_dp(&get_other_player_info_msg, sizeof(get_other_player_info_msg), server_id);
@@ -11002,7 +11002,7 @@ namespace hld
 		{
 			other_player_info.data_i64_ary[e_role_i64_info_gs_value] = other_player_info.data_ary[e_role_i64_info_gs_value];
 		}
-		hld::character_proto_find_other_unit_base_end find_other_unit_base_end_msg;
+		faith::character_proto_find_other_unit_base_end find_other_unit_base_end_msg;
 		find_other_unit_base_end_msg.set_target_guid(other_player_info.role_guid.server_64);
 		find_other_unit_base_end_msg.set_account(other_player_info.account);
 		find_other_unit_base_end_msg.set_role_name(other_player_info.role_name);
@@ -11030,17 +11030,17 @@ namespace hld
 	void player::find_other_player_info_equiping_end(const s_item_info_db* other_player_info)
 	{
 		ZoneScoped;
-		hld::character_proto_find_other_unit_equiping_end find_other_unit_equiping_end_msg;
+		faith::character_proto_find_other_unit_equiping_end find_other_unit_equiping_end_msg;
 		find_other_unit_equiping_end_msg.set_target_guid(other_player_info[0].role_guid.server_64);
 		find_other_unit_equiping_end_msg.set_is_finish(false);
-		for (int32 index = 0; index < hld::role_show_item_num; index++)
+		for (int32 index = 0; index < faith::role_show_item_num; index++)
 		{
 			if (!other_player_info[index].data_info.item_guid.is_valid())
 			{
 				break;
 			}
 
-			hld::character_proto_find_other_unit_item_one* find_other_unit_equiping_one_msg = find_other_unit_equiping_end_msg.add_equiping_info();
+			faith::character_proto_find_other_unit_item_one* find_other_unit_equiping_one_msg = find_other_unit_equiping_end_msg.add_equiping_info();
 			find_other_unit_equiping_one_msg->set_item_guid(other_player_info[index].data_info.item_guid.server_64);
 			for (int32 i = 0; i < e_item_info_max; i++)
 			{
@@ -11068,19 +11068,19 @@ namespace hld
 		{
 			return;
 		}
-		hld::character_proto_find_other_unit_buff_equip_end find_other_unit_buff_end_msg;
+		faith::character_proto_find_other_unit_buff_equip_end find_other_unit_buff_end_msg;
 		find_other_unit_buff_end_msg.set_target_guid(other_player_info[0].role_guid.server_64);
 
 		//计算强化和卓越buff的模板id
 		//强化buff
 		int32 current_buff_id = -1;
-		hld::template_manager::template_type* addition_buff_tmpl_table = template_manager::get_instance().get_templates(e_AdditionBuffTemplate);
+		faith::template_manager::template_type* addition_buff_tmpl_table = template_manager::get_instance().get_templates(e_AdditionBuffTemplate);
 		if (nullptr == addition_buff_tmpl_table)
 		{
 			return;
 		}
 
-		hld::template_manager::template_type::iterator ite;
+		faith::template_manager::template_type::iterator ite;
 		int32 max_id = 0;          // 当前能生效的最大效果的BUFF模板的ID
 		int32 max_equip_num = 0;   // 当前生效的最大效果的BUFF模板的要求装备个数
 		int32 max_upgrade_num = 0; // 当前生效的最大效果的BUFF模板的要求强化次数
@@ -11099,7 +11099,7 @@ namespace hld
 				{
 					continue;
 				}
-				if ((other_player_info[i].data_info.data_ary[hld::e_item_info_slot] < e_role_equip_slot_amulet) && (other_player_info[i].data_info.data_ary[hld::e_item_info_upgrade_count] >= addition_tmpl_ptr->UpgradeNum))
+				if ((other_player_info[i].data_info.data_ary[faith::e_item_info_slot] < e_role_equip_slot_amulet) && (other_player_info[i].data_info.data_ary[faith::e_item_info_upgrade_count] >= addition_tmpl_ptr->UpgradeNum))
 				{
 					equip_num++;
 				}
@@ -11136,12 +11136,12 @@ namespace hld
 				{
 					continue;
 				}
-				ItemTemplate* item_template_ptr = GET_TEMPLATE(ItemTemplate, other_player_info[i].data_info.data_ary[hld::e_item_info_info_id]);
+				ItemTemplate* item_template_ptr = GET_TEMPLATE(ItemTemplate, other_player_info[i].data_info.data_ary[faith::e_item_info_info_id]);
 				if (item_template_ptr == nullptr)
 				{
 					continue;
 				}
-				if ((other_player_info[i].data_info.data_ary[hld::e_item_info_slot] < e_role_equip_slot_amulet) && item_template_ptr->item_color >= addition_tmpl_ptr->EquipQuality)
+				if ((other_player_info[i].data_info.data_ary[faith::e_item_info_slot] < e_role_equip_slot_amulet) && item_template_ptr->item_color >= addition_tmpl_ptr->EquipQuality)
 				{
 					equip_num++;
 				}
@@ -11178,7 +11178,7 @@ namespace hld
 				{
 					continue;
 				}
-				if ((other_player_info[i].data_info.data_ary[hld::e_item_info_slot] < e_role_equip_slot_amulet) && (other_player_info[i].data_info.data_ary[hld::e_item_info_add_on] >= addition_tmpl_ptr->AddOnLevel))
+				if ((other_player_info[i].data_info.data_ary[faith::e_item_info_slot] < e_role_equip_slot_amulet) && (other_player_info[i].data_info.data_ary[faith::e_item_info_add_on] >= addition_tmpl_ptr->AddOnLevel))
 				{
 					equip_num++;
 				}
@@ -11215,7 +11215,7 @@ namespace hld
 				{
 					continue;
 				}
-				if ((other_player_info[i].data_info.data_ary[hld::e_item_info_slot] < e_role_equip_slot_amulet) && (other_player_info[i].data_info.data_ary[hld::e_item_info_succinct_level] >= addition_tmpl_ptr->SuccinctFullQualityLevel))
+				if ((other_player_info[i].data_info.data_ary[faith::e_item_info_slot] < e_role_equip_slot_amulet) && (other_player_info[i].data_info.data_ary[faith::e_item_info_succinct_level] >= addition_tmpl_ptr->SuccinctFullQualityLevel))
 				{
 					equip_num++;
 				}
@@ -11238,9 +11238,9 @@ namespace hld
 	void player::find_other_player_info_special_name_end(const s_special_name_info_db other_player_info)
 	{
 		ZoneScoped;
-		hld::character_proto_find_other_unit_special_name_end find_other_unit_special_name_end_msg;
+		faith::character_proto_find_other_unit_special_name_end find_other_unit_special_name_end_msg;
 		find_other_unit_special_name_end_msg.set_target_guid(other_player_info.role_guid.server_64);
-		for (int32 i = 0; i < hld::e_special_name_type_max; i++)
+		for (int32 i = 0; i < faith::e_special_name_type_max; i++)
 		{
 			find_other_unit_special_name_end_msg.add_special_name_level(other_player_info.data_info.data_ary[i]);
 		}
@@ -11250,7 +11250,7 @@ namespace hld
 	void player::find_other_player_info_base_group_end(int32 group_job, std::string group_name, guid_64 target_guid)
 	{
 		ZoneScoped;
-		hld::character_proto_find_other_unit_base_group_end find_other_unit_base_group_end_msg;
+		faith::character_proto_find_other_unit_base_group_end find_other_unit_base_group_end_msg;
 		find_other_unit_base_group_end_msg.set_target_guid(target_guid.server_64);
 		find_other_unit_base_group_end_msg.set_group_job(group_job);
 		find_other_unit_base_group_end_msg.set_group_name(group_name);
@@ -11260,7 +11260,7 @@ namespace hld
 	void player::find_other_player_info_spirit_end(const s_item_info_db other_player_info)
 	{
 		ZoneScoped;
-		hld::character_proto_find_other_unit_spirit_end find_other_unit_spirit_end_msg;
+		faith::character_proto_find_other_unit_spirit_end find_other_unit_spirit_end_msg;
 		find_other_unit_spirit_end_msg.set_target_guid(other_player_info.role_guid.server_64);
 		find_other_unit_spirit_end_msg.set_sprite_guid(other_player_info.data_info.item_guid.server_64);
 		//s_spirit_info temp_spirit_info = get_spirit_mgr().make_fake_spirit_info(other_player_info.data_info);
@@ -11273,20 +11273,20 @@ namespace hld
 	void player::find_other_player_info_wing_or_mount_end(const s_item_info_db* other_player_info_array, bool is_wing)
 	{
 		ZoneScoped;
-		hld::character_proto_find_other_unit_wing_or_mount_end find_other_unit_wing_or_mount_end_msg;
+		faith::character_proto_find_other_unit_wing_or_mount_end find_other_unit_wing_or_mount_end_msg;
 
 		find_other_unit_wing_or_mount_end_msg.set_target_guid(other_player_info_array[0].role_guid.server_64);
 		find_other_unit_wing_or_mount_end_msg.set_is_wing(is_wing);
 		find_other_unit_wing_or_mount_end_msg.set_is_finish(false);
 
-		for (int32 i = 0; i < hld::role_show_item_num; i++)
+		for (int32 i = 0; i < faith::role_show_item_num; i++)
 		{
 			if (!other_player_info_array[i].data_info.item_guid.is_valid())
 			{
 				break;
 			}
 
-			hld::character_proto_find_other_unit_item_one* find_other_unit_wing_or_mount_one_msg = find_other_unit_wing_or_mount_end_msg.add_mount_or_wing_info();
+			faith::character_proto_find_other_unit_item_one* find_other_unit_wing_or_mount_one_msg = find_other_unit_wing_or_mount_end_msg.add_mount_or_wing_info();
 			find_other_unit_wing_or_mount_one_msg->set_item_guid(other_player_info_array[i].data_info.item_guid.server_64);
 			for (int32 index = 0; index < e_item_info_max; index++)
 			{
@@ -11314,7 +11314,7 @@ namespace hld
 		int32 data_group_num = data_num / e_enum_buff_info_max;
 		int32 max_group_num = max_enum_buff_data_num / e_enum_buff_info_max;
 
-		hld::character_proto_find_other_unit_buff_end find_other_unit_buff_end_msg;
+		faith::character_proto_find_other_unit_buff_end find_other_unit_buff_end_msg;
 		find_other_unit_buff_end_msg.set_target_guid(target_guid.server_64);
 
 		for (int32 index = 0; index < data_group_num; index++)
@@ -11331,17 +11331,17 @@ namespace hld
 	void player::find_other_player_info_feather_end(const s_item_info_db* feather_info)
 	{
 		ZoneScoped;
-		hld::character_proto_find_other_unit_equiping_end find_other_unit_feather_end_msg;
+		faith::character_proto_find_other_unit_equiping_end find_other_unit_feather_end_msg;
 		find_other_unit_feather_end_msg.set_target_guid(feather_info[0].role_guid.server_64);
 		find_other_unit_feather_end_msg.set_is_finish(false);
-		for (int32 index = 0; index < hld::e_feather_sub_type_feather4; index++)
+		for (int32 index = 0; index < faith::e_feather_sub_type_feather4; index++)
 		{
 			if (!feather_info[index].data_info.item_guid.is_valid())
 			{
 				break;
 			}
 
-			hld::character_proto_find_other_unit_item_one* find_other_unit_feather_one_msg = find_other_unit_feather_end_msg.add_equiping_info();
+			faith::character_proto_find_other_unit_item_one* find_other_unit_feather_one_msg = find_other_unit_feather_end_msg.add_equiping_info();
 			find_other_unit_feather_one_msg->set_item_guid(feather_info[index].data_info.item_guid.server_64);
 			for (int32 i = 0; i < e_item_info_max; i++)
 			{
@@ -11502,7 +11502,7 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2ws_proto::send_red_package pro_msg;
+			faith::cs2ws_proto::send_red_package pro_msg;
 
 			send_msg.to_proto(pro_msg);
 
@@ -11575,7 +11575,7 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2ws_proto::get_red_package pro_msg;
+			faith::cs2ws_proto::get_red_package pro_msg;
 
 			msg.to_proto(pro_msg);
 
@@ -11623,7 +11623,7 @@ namespace hld
 	void player::send_role_info_to_gm()
 	{
 		ZoneScoped;
-		hld::cs2ws_send_role_info_to_gm ret;
+		faith::cs2ws_send_role_info_to_gm ret;
 		ret.client_uid = get_client_uid();
 		ret.role_info = get_unit_info_inst();
 		connection_mgr::getInstance().send_to_ws(&ret, sizeof(ret));
@@ -11738,27 +11738,27 @@ namespace hld
 		bool result = false;
 		switch (recharge_type)
 		{
-		case hld::e_recharge_type_none:
+		case faith::e_recharge_type_none:
 			break;
-		case hld::e_recharge_type_vip:
+		case faith::e_recharge_type_vip:
 			if (0 < get_vip_level())
 			{
 				result = true;
 			}
 			break;
-		case hld::e_recharge_type_month_card:
+		case faith::e_recharge_type_month_card:
 			if (0 < get_time_data(e_time_type_month_card_activity_time))
 			{
 				result = true;
 			}
 			break;
-		case hld::e_recharge_type_exclusive:
+		case faith::e_recharge_type_exclusive:
 			if (0 < get_unit_info(e_role_info_exclusive_flag))
 			{
 				result = true;
 			}
 			break;
-		case hld::e_recharge_type_max:
+		case faith::e_recharge_type_max:
 			break;
 		default:
 			break;
@@ -12006,7 +12006,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_highest_record_db msg;
+		faith::cs2dp_proto::role_highest_record_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -12076,12 +12076,12 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_highest_record msg;
+			faith::cs2dp_proto::save_role_highest_record msg;
 			msg.set_role_guid(get_unit_guid().server_64);
 			msg.set_unit_array_index(get_array_index());
 			msg.set_save_type_ex(save_type_ex);
 
-			hld::cs2dp_proto::role_highest_record_db* db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_highest_record_db* db_data = msg.mutable_db_data();
 
 			for (int32 i = 0; i < e_role_history_highest_record_max; i++)
 			{
@@ -12157,10 +12157,10 @@ namespace hld
 		}
 		switch (record_type)
 		{
-		case hld::e_role_history_highest_record_single_equip_upgrade:
+		case faith::e_role_history_highest_record_single_equip_upgrade:
 			return_value = single_type_target_level;
 			break;
-		case hld::e_role_history_highest_record_total_equip_upgrade_num:
+		case faith::e_role_history_highest_record_total_equip_upgrade_num:
 		{
 			for (int32 temp_equip_index = e_role_equip_slot_weapon_1; temp_equip_index < e_role_equip_slot_amulet; ++temp_equip_index)
 			{
@@ -12172,7 +12172,7 @@ namespace hld
 			}
 		}
 		break;
-		case hld::e_role_history_highest_record_total_equip_addon_num:
+		case faith::e_role_history_highest_record_total_equip_addon_num:
 		{
 			for (int32 temp_equip_index = e_role_equip_slot_weapon_1; temp_equip_index < e_role_equip_slot_amulet; ++temp_equip_index)
 			{
@@ -12184,7 +12184,7 @@ namespace hld
 			}
 		}
 		break;
-		case hld::e_role_history_highest_record_weapon_full_succinct_grade:
+		case faith::e_role_history_highest_record_weapon_full_succinct_grade:
 		{
 
 			citem* temp_equip_ptr = get_item_set().get_equip_item_by_slot((e_role_equip_slot)e_role_equip_slot_weapon_1);
@@ -12196,7 +12196,7 @@ namespace hld
 
 		}
 		break;
-		case hld::e_role_history_highest_record_equip_full_succinct_grade:
+		case faith::e_role_history_highest_record_equip_full_succinct_grade:
 		{
 			int32 array_size = GAMECONFIG->SuccinctEquipBuffIdArray.size();
 			if (array_size < 0)
@@ -12224,7 +12224,7 @@ namespace hld
 			return_value = addon_lowest_level;
 		}
 		break;
-		case hld::e_role_history_highest_record_item_succinct_reach_mark_level:
+		case faith::e_role_history_highest_record_item_succinct_reach_mark_level:
 		{
 			for (int32 i = 0; i < succinct_mark_req_type_num; ++i)
 			{
@@ -12240,7 +12240,7 @@ namespace hld
 			}
 		}
 		break;
-		case hld::e_role_history_highest_record_total_sprite_equip_level:
+		case faith::e_role_history_highest_record_total_sprite_equip_level:
 		{
 			for (int32 i = 0; i < sprite_bag_num; ++i)
 			{
@@ -12252,7 +12252,7 @@ namespace hld
 			}
 		}
 		break;
-		case hld::e_role_history_highest_record_total_element_heart_equip_level:
+		case faith::e_role_history_highest_record_total_element_heart_equip_level:
 		{
 			for (int32 i = 0; i < element_heart_equip_num; ++i)
 			{
@@ -12264,23 +12264,23 @@ namespace hld
 			}
 		}
 		break;
-		case hld::e_role_history_highest_record_demon_tower_highest_level:
+		case faith::e_role_history_highest_record_demon_tower_highest_level:
 		{
 			return_value = single_type_target_level;
 		}
 		break;
-		//case hld::e_role_history_highest_record_higest_weapon_upgrade:
+		//case faith::e_role_history_highest_record_higest_weapon_upgrade:
 		//{
 		//	return_value = single_type_target_level;
 		//}
 		//break;
 
-		case hld::e_role_history_highest_record_addon_equip:
+		case faith::e_role_history_highest_record_addon_equip:
 		{
 			return_value = init_unit::get_addon_phase_level(get_item_set().get_equip_smallest_addon_level());
 		}
 		break;
-		case hld::e_role_history_highest_record_addon_weapon:
+		case faith::e_role_history_highest_record_addon_weapon:
 		{
 			int32 array_size = GAMECONFIG->AddonBuffLevelArray.size();
 			if (array_size < 0)
@@ -12300,7 +12300,7 @@ namespace hld
 			}
 		}
 		break;
-		case hld::e_role_history_highest_record_rune_total_level:
+		case faith::e_role_history_highest_record_rune_total_level:
 		{
 			int32 array_size = GAMECONFIG->RuneBuffLevelArray.size();
 			if (array_size < 0)
@@ -12317,10 +12317,10 @@ namespace hld
 			//}
 		}
 		break;
-		case hld::e_role_history_highest_record_belief_spring:
-		case hld::e_role_history_highest_record_belief_summer:
-		case hld::e_role_history_highest_record_belief_autumn:
-		case hld::e_role_history_highest_record_belief_winter:
+		case faith::e_role_history_highest_record_belief_spring:
+		case faith::e_role_history_highest_record_belief_summer:
+		case faith::e_role_history_highest_record_belief_autumn:
+		case faith::e_role_history_highest_record_belief_winter:
 		{
 			for (int32 index = 0; index < e_belief_buff_level_max; index++)
 			{
@@ -12332,31 +12332,31 @@ namespace hld
 		}
 
 		break;
-		case hld::e_role_history_highest_record_gs_value:
-		case hld::e_role_history_highest_record_mount_value:
-		case hld::e_role_history_highest_record_wing_value:
-		case hld::e_role_history_highest_record_equip_value:
-		case hld::e_role_history_highest_record_spirit_value:
+		case faith::e_role_history_highest_record_gs_value:
+		case faith::e_role_history_highest_record_mount_value:
+		case faith::e_role_history_highest_record_wing_value:
+		case faith::e_role_history_highest_record_equip_value:
+		case faith::e_role_history_highest_record_spirit_value:
 		{
 			return_value = single_type_target_level;
 		}
 		break;
-		case hld::e_role_history_highest_record_max_awaken_level:
+		case faith::e_role_history_highest_record_max_awaken_level:
 		{
 			return_value = get_item_set().get_awaken_fetter_max_num();
 		}
 		break;
-		case hld::e_role_history_highest_record_max_forge_level:
+		case faith::e_role_history_highest_record_max_forge_level:
 		{
 			return_value = get_item_set().get_equip_smallest_forge_level() - 1; //颜色是从白=1开始的
 		}
 		break;
-		case hld::e_role_history_highest_record_max_equip_enchant_level:
+		case faith::e_role_history_highest_record_max_equip_enchant_level:
 		{
 			return_value = get_item_set().get_equip_smallest_enchant_level();
 		}
 		break;
-		case hld::e_role_history_highest_record_max_jewelry_enchant_level:
+		case faith::e_role_history_highest_record_max_jewelry_enchant_level:
 		{
 			return_value = get_item_set().get_equip_smallest_enchant_level(true);
 		}
@@ -12371,7 +12371,7 @@ namespace hld
 	void player::check_can_marry(const guid_64& sub_guid, int32 marry_item_id, bool is_cost)
 	{
 		ZoneScoped;
-		hld::cs2ws_operate_result_end ret;
+		faith::cs2ws_operate_result_end ret;
 		ret.sub_guid = sub_guid;
 		ret.is_cost_item = is_cost;
 		ret.item_id = marry_item_id;
@@ -12418,7 +12418,7 @@ namespace hld
 	void  player::check_can_divorce(bool is_cost)
 	{
 		ZoneScoped;
-		hld::cs2ws_operate_result_end ret;
+		faith::cs2ws_operate_result_end ret;
 		ret.is_cost_item = is_cost;
 		ret.is_divorce = true;
 
@@ -12492,7 +12492,7 @@ namespace hld
 	void player::sync_married_info_guid_to_aoi(const guid_64& role_guid, const xchar* couple_name, bool is_marry)
 	{
 		ZoneScoped;
-		hld::aoi_proto_marry_unit pak;
+		faith::aoi_proto_marry_unit pak;
 		pak.set_is_marry(is_marry);
 		pak.set_unit_guid(role_guid.server_64);
 		pak.set_couple_name(couple_name);
@@ -12691,12 +12691,12 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_daily_must_do_count msg;
+			faith::cs2dp_proto::save_role_daily_must_do_count msg;
 			msg.set_role_guid(get_unit_guid().server_64);
 			msg.set_unit_array_index(m_array_index);
 			msg.set_save_type_ex(save_typ);
 
-			hld::cs2dp_proto::role_daily_must_do_count_db* db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_daily_must_do_count_db* db_data = msg.mutable_db_data();
 
 			for (int32 i = 0; i < e_daily_must_do_typ_max; i++)
 			{
@@ -12721,7 +12721,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_daily_must_do_count_db msg;
+		faith::cs2dp_proto::role_daily_must_do_count_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -12760,11 +12760,11 @@ namespace hld
 			return;
 		}
 
-		if (item_template_ptr->item_color < hld::e_item_color_orange)
+		if (item_template_ptr->item_color < faith::e_item_color_orange)
 		{
 			return;
 		}
-		//if (item_template_ptr->item_color < hld::e_item_color_orange && item_template_ptr->item_type != 1 && item_template_ptr->item_type != 2)
+		//if (item_template_ptr->item_color < faith::e_item_color_orange && item_template_ptr->item_type != 1 && item_template_ptr->item_type != 2)
 		//{
 		//	return;
 		//}
@@ -13709,7 +13709,7 @@ namespace hld
 			else
 			{
 				//称号不同
-				int32 show_title = get_pawn_att().get_unit_base_att(hld::e_base_att_info_equip_title_id);
+				int32 show_title = get_pawn_att().get_unit_base_att(faith::e_base_att_info_equip_title_id);
 				get_title_mgr().remove_title_by_template_id(title_id);
 				if (show_title == title_id)
 				{
@@ -13739,7 +13739,7 @@ namespace hld
 			int32 title_id = get_title_mgr().get_title_template_id_by_type(e_title_type_cross_ladder_ranking);
 			if (get_title_mgr().is_have_title(title_id))
 			{
-				int32 show_title = get_pawn_att().get_unit_base_att(hld::e_base_att_info_equip_title_id);
+				int32 show_title = get_pawn_att().get_unit_base_att(faith::e_base_att_info_equip_title_id);
 				get_title_mgr().remove_title_by_template_id(title_id);
 				if (show_title == title_id)
 				{
@@ -13763,7 +13763,7 @@ namespace hld
 			int32 title_id = get_title_mgr().get_title_template_id_by_type((e_title_type)iter);
 			if (get_title_mgr().is_have_title(title_id))
 			{
-				int32 show_title = get_pawn_att().get_unit_base_att(hld::e_base_att_info_equip_title_id);
+				int32 show_title = get_pawn_att().get_unit_base_att(faith::e_base_att_info_equip_title_id);
 				get_title_mgr().remove_title_by_template_id(title_id);
 				if (show_title == title_id)
 				{
@@ -13809,7 +13809,7 @@ namespace hld
 			else
 			{
 				//称号不同
-				int32 show_title = get_pawn_att().get_unit_base_att(hld::e_base_att_info_equip_title_id);
+				int32 show_title = get_pawn_att().get_unit_base_att(faith::e_base_att_info_equip_title_id);
 				get_title_mgr().remove_title_by_template_id(title_id);
 				if (show_title == title_id)
 				{
@@ -13841,7 +13841,7 @@ namespace hld
 			int32 title_id = get_title_mgr().get_title_template_id_by_type(e_title_type_element_war_ranking);
 			if (get_title_mgr().is_have_title(title_id))
 			{
-				int32 show_title = get_pawn_att().get_unit_base_att(hld::e_base_att_info_equip_title_id);
+				int32 show_title = get_pawn_att().get_unit_base_att(faith::e_base_att_info_equip_title_id);
 				get_title_mgr().remove_title_by_template_id(title_id);
 				if (show_title == title_id)
 				{
@@ -13865,7 +13865,7 @@ namespace hld
 			int32 title_id = get_title_mgr().get_title_template_id_by_type((e_title_type)iter);
 			if (get_title_mgr().is_have_title(title_id))
 			{
-				int32 show_title = get_pawn_att().get_unit_base_att(hld::e_base_att_info_equip_title_id);
+				int32 show_title = get_pawn_att().get_unit_base_att(faith::e_base_att_info_equip_title_id);
 				get_title_mgr().remove_title_by_template_id(title_id);
 				if (show_title == title_id)
 				{
@@ -14416,13 +14416,13 @@ namespace hld
 		ZoneScoped;
 		if (is_show_vip < 0 || is_show_vip > 1)
 		{
-			set_unit_info(hld::e_role_info_is_show_vip, 1);
+			set_unit_info(faith::e_role_info_is_show_vip, 1);
 		}
 		else
 		{
-			set_unit_info(hld::e_role_info_is_show_vip, is_show_vip);
+			set_unit_info(faith::e_role_info_is_show_vip, is_show_vip);
 		}
-		send_info_one(hld::e_role_info_is_show_vip, true);
+		send_info_one(faith::e_role_info_is_show_vip, true);
 		sync_data_to_ws(e_sync_cs2ws_data_is_show_vip, is_show_vip);
 	}
 	void player::enchant_show_type(int32 show_type)
@@ -14433,7 +14433,7 @@ namespace hld
 			return;
 		}
 		get_item_set().equip_off_enchant_show_buff();
-		set_unit_info(hld::e_role_info_enchant_show_type, show_type);
+		set_unit_info(faith::e_role_info_enchant_show_type, show_type);
 		get_item_set().equip_on_enchant_show_buff();
 		send_info_one(e_role_info_enchant_show_type);
 	}

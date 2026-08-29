@@ -1,6 +1,6 @@
 #include "SpiritTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void SpiritTemplateSize()
     {

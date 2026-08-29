@@ -12,7 +12,7 @@ purpose: about role's war_state
 #include <Logic/war_state_def.hpp>
 #include "template/ServerTemplateHead.h"
 
-namespace hld
+namespace faith
 {
 	struct s_unit_war_time
 	{

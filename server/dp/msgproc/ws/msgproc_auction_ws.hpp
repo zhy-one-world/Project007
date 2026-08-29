@@ -14,7 +14,7 @@
 #include "internal/auction_msg.hpp"
 #include "db_manager.hpp"
 
-namespace hld
+namespace faith
 {
 	
 	void auction_add_item_into_db_proc(uint32 connindex, const void *data_ptr, size_t data_len);

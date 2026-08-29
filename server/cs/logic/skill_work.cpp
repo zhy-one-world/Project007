@@ -25,7 +25,7 @@
 #include "skill_effect.h"
 #include "template/SkillTemplate_S.h"
 
-namespace hld
+namespace faith
 {
 	skill_work::skill_work()
 	{

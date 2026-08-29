@@ -11,7 +11,7 @@
 #include "template/template_manager.h"
 
 
-namespace hld
+namespace faith
 {
 	awaken_mgr::awaken_mgr()
 	{

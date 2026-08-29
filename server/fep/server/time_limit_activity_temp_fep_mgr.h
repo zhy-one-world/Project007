@@ -13,7 +13,7 @@
 #include "Logic/time_limit_activity_def.hpp"
 #include "game.pb.h"
 
-namespace hld
+namespace faith
 {
 	class time_limit_activity_temp_fep_mgr
 	{

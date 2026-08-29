@@ -15,7 +15,7 @@ purpose:
 #include "char_def.hpp"
 #include "template/template_base.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	const int32  GM_DAMAGE_BUFF_ID = 10010013;

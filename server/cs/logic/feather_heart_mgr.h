@@ -3,7 +3,7 @@
 
 #include"feather_heart.h"
 
-namespace hld
+namespace faith
 {
 	class player;
 	class citem;

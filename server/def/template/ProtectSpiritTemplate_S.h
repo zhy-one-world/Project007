@@ -3,7 +3,7 @@
 #include "logic/type_def.hpp"
 #include "template_base.h"
 
-namespace hld
+namespace faith
 {
     void ProtectSpiritTemplateSize();
 #pragma pack(push, 1)

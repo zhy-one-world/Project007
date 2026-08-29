@@ -9,7 +9,7 @@ purpose: 信仰符文管理系统
 
 #include"item.h"
 
-namespace hld
+namespace faith
 {
 	typedef std::vector<guid_64> ITEM_ARRAY;
 

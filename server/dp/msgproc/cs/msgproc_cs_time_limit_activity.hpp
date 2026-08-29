@@ -11,7 +11,7 @@
 
 #include "db_manager.hpp"
 
-namespace hld
+namespace faith
 {
 	//限时活动
 	void cs2dp_req_load_char_time_limit_activity_info(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index);

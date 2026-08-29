@@ -1,6 +1,6 @@
 #include "WheelPlateTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void WheelPlateTemplateSize()
     {

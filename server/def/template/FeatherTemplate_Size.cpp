@@ -1,6 +1,6 @@
 #include "FeatherTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void FeatherTemplateSize()
     {

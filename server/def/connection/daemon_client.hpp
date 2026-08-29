@@ -18,7 +18,7 @@
 
 
 
-namespace hld
+namespace faith
 {
 	const int32 process_check_max_num = 400;
 

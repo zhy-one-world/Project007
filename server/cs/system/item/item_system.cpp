@@ -16,7 +16,7 @@
 #include "server_log.hpp"
 #include "template/template_manager.h"
 
-using namespace hld;
+using namespace faith;
 
 void item_system::heart_tick(const int64& new_time)
 {
@@ -463,16 +463,16 @@ int32 item_system::get_item_count(unit* unit_ptr, e_bag_type bag_type, int32 ite
 		{
 			switch (lock_state)
 			{	
-			case hld::e_item_lock_all:
+			case faith::e_item_lock_all:
 				item_count += item_base_cp->m_data_array[e_item_base_count];
 				break;
-			case hld::e_item_lock_lock:
+			case faith::e_item_lock_lock:
 				if (item_base_cp->m_data_array[e_item_base_locked] > 0)
 				{
 					item_count += item_base_cp->m_data_array[e_item_base_count];
 				}
 				break;
-			case hld::e_item_lock_un_lock:
+			case faith::e_item_lock_un_lock:
 				if (item_base_cp->m_data_array[e_item_base_locked] == 0)
 				{
 					item_count += item_base_cp->m_data_array[e_item_base_count];
@@ -539,7 +539,7 @@ void item_system::send_promp_msg_to_client(player* player_ptr, const std::vector
 			merge_array.push_back({ item_id, item_num });
 		}
 	}
-	hld::item_proto_item_get_item_msg client_pak;
+	faith::item_proto_item_get_item_msg client_pak;
 	client_pak.add_role_guid(player_ptr->get_unit_guid().A);
 	client_pak.add_role_guid(player_ptr->get_unit_guid().B);
 

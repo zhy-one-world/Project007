@@ -8,7 +8,7 @@
 #define	PROTOCOL_MSG_TYPE	ui16
 #define PROTOCOL_MSG_SIZE	(sizeof(PROTOCOL_MSG_TYPE))
 
-namespace hld
+namespace faith
 {
 	// server -> daemon -> eye protocol
 	enum daemon2eye_proto_def {

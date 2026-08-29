@@ -10,7 +10,7 @@
 #include "game.pb.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	boss_island_ws_mgr::boss_island_ws_mgr()
 	{

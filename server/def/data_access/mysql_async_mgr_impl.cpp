@@ -15,7 +15,7 @@
 #include "mysql_async_mgr_impl.hpp"
 
 //	global logger obj.
-namespace hld
+namespace faith
 {
 	bool mysql_async_mgr_impl::mlb_init(size_t workerthread_num, xstring host, xstring user, xstring password, xstring db, uint32 port, int32 max_rows, int32 max_row_size)
 	{

@@ -18,13 +18,13 @@ purpose:
 #include "internet/cs2ws.pb.h"
 #include "internet/ws2cs.pb.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_cs2ws_add_auction_into_db = hld::e_msg_base_auction,
+		e_msgindex_cs2ws_add_auction_into_db = faith::e_msg_base_auction,
 		e_msgindex_ws2dp_add_auction_into_db,
 		e_msgindex_dp2ws_auction_sell_end,
 		e_msgindex_ws2cs_auction_sell_end,
@@ -112,15 +112,15 @@ namespace hld
 			auction_info.clear_data();
 			wheader = e_msgindex_cs2ws_add_auction_into_db;
 		}
-		bool to_proto(hld::cs2ws_proto::auction_add_item_into_db& msg)
+		bool to_proto(faith::cs2ws_proto::auction_add_item_into_db& msg)
 		{
-			hld::st_proto::st_unit_info* st_unit_ptr = msg.mutable_role_info();
+			faith::st_proto::st_unit_info* st_unit_ptr = msg.mutable_role_info();
 			if (st_unit_ptr == nullptr)
 			{
 				return false;
 			}
 			role_info.to_proto(st_unit_ptr);
-			hld::st_proto::st_auction_info* st_auction_ptr = msg.mutable_auction_info();
+			faith::st_proto::st_auction_info* st_auction_ptr = msg.mutable_auction_info();
 			if (st_auction_ptr == nullptr)
 			{
 				return false;
@@ -128,7 +128,7 @@ namespace hld
 			auction_info.to_proto(st_auction_ptr);
 			msg.set_old_item_guid(old_item_guid.server_64);
 
-			hld::st_proto::st_login_fixed_data* st_login_ptr = msg.mutable_third_info();
+			faith::st_proto::st_login_fixed_data* st_login_ptr = msg.mutable_third_info();
 			if (st_login_ptr == nullptr)
 			{
 				return false;
@@ -136,7 +136,7 @@ namespace hld
 			third_info.to_proto(st_login_ptr);
 			return true;
 		}
-		void from_proto(const hld::cs2ws_proto::auction_add_item_into_db& msg)
+		void from_proto(const faith::cs2ws_proto::auction_add_item_into_db& msg)
 		{
 			role_info.from_proto(msg.role_info());
 			auction_info.from_proto(msg.auction_info());
@@ -171,23 +171,23 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_dp2ws_auction_sell_end;
 		}
-		bool to_proto(hld::dp2s_proto::auction_sell_end& msg)
+		bool to_proto(faith::dp2s_proto::auction_sell_end& msg)
 		{
 			msg.set_operate_result(operate_result);
-			hld::st_proto::st_auction_info* st_auciton_ptr = msg.mutable_info();
+			faith::st_proto::st_auction_info* st_auciton_ptr = msg.mutable_info();
 			if (st_auciton_ptr == nullptr)
 			{
 				return false;
 			}
 			info.to_proto(st_auciton_ptr);
-			hld::st_proto::st_unit_info* st_unit_ptr = msg.mutable_role_info();
+			faith::st_proto::st_unit_info* st_unit_ptr = msg.mutable_role_info();
 			if (st_unit_ptr == nullptr)
 			{
 				return false;
 			}
 			role_info.to_proto(st_unit_ptr);
 			msg.set_is_add_to_log(is_add_to_log);
-			hld::st_proto::st_login_fixed_data * st_login_ptr = msg.mutable_third_info();
+			faith::st_proto::st_login_fixed_data * st_login_ptr = msg.mutable_third_info();
 			if (st_login_ptr == nullptr)
 			{
 				return false;
@@ -195,7 +195,7 @@ namespace hld
 			third_info.to_proto(st_login_ptr);
 			return true;
 		}
-		void from_proto(const hld::dp2s_proto::auction_sell_end& msg)
+		void from_proto(const faith::dp2s_proto::auction_sell_end& msg)
 		{
 			operate_result = msg.operate_result();
 			info.from_proto(msg.info());
@@ -214,10 +214,10 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_auction_sell_end;
 		}
-		bool  to_proto(hld::ws2cs_proto::auction_sell_end& msg)
+		bool  to_proto(faith::ws2cs_proto::auction_sell_end& msg)
 		{
 			msg.set_operate_result(operate_result);
-			hld::st_proto::st_auction_info* st_auction_ptr = msg.mutable_info();
+			faith::st_proto::st_auction_info* st_auction_ptr = msg.mutable_info();
 			if (st_auction_ptr == nullptr)
 			{
 				return false;
@@ -225,7 +225,7 @@ namespace hld
 		    info.to_proto(st_auction_ptr);
 			return true;
 		}
-		void from_proto(const hld::ws2cs_proto::auction_sell_end& msg)
+		void from_proto(const faith::ws2cs_proto::auction_sell_end& msg)
 		{
 			operate_result = msg.operate_result();
 			info.from_proto(msg.info());
@@ -264,11 +264,11 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_dp2ws_auction_find_buy_target_end;
 		}
-		bool to_proto(hld::dp2s_proto::auction_find_buy_target_end& msg)
+		bool to_proto(faith::dp2s_proto::auction_find_buy_target_end& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_item_guid(item_guid.server_64);
-			hld::st_proto::st_auction_info *st_auction_ptr = msg.mutable_auction_info();
+			faith::st_proto::st_auction_info *st_auction_ptr = msg.mutable_auction_info();
 			if (st_auction_ptr == nullptr)
 			{
 				return false;
@@ -276,7 +276,7 @@ namespace hld
 			auction_info.to_proto(st_auction_ptr);
 			return true;
 		}
-		void from_proto(const hld::dp2s_proto::auction_find_buy_target_end& msg)
+		void from_proto(const faith::dp2s_proto::auction_find_buy_target_end& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			item_guid.server_64 = msg.item_guid();
@@ -294,10 +294,10 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_auction_purchase_success;
 		}
-		bool  to_proto(hld::ws2cs_proto::auction_purchase_success& msg)
+		bool  to_proto(faith::ws2cs_proto::auction_purchase_success& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
-			hld::st_proto::st_auction_info* st_auction_ptr = msg.mutable_auction_info();
+			faith::st_proto::st_auction_info* st_auction_ptr = msg.mutable_auction_info();
 			if (st_auction_ptr == nullptr)
 			{
 				return false;
@@ -305,7 +305,7 @@ namespace hld
 			auction_info.to_proto(st_auction_ptr);
 			return true;
 		}
-		void from_proto(const hld::ws2cs_proto::auction_purchase_success& msg)
+		void from_proto(const faith::ws2cs_proto::auction_purchase_success& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			auction_info.from_proto(msg.auction_info());
@@ -366,9 +366,9 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_auction_sell_success_info;
 		}
-		bool to_proto(hld::ws2cs_proto::auction_send_sell_success_info& msg)
+		bool to_proto(faith::ws2cs_proto::auction_send_sell_success_info& msg)
 		{
-			hld::st_proto::st_auction_info* st_auction_ptr = msg.mutable_auction_info();
+			faith::st_proto::st_auction_info* st_auction_ptr = msg.mutable_auction_info();
 			if (st_auction_ptr == nullptr)
 			{
 				return false;
@@ -376,7 +376,7 @@ namespace hld
 			auction_info.to_proto(st_auction_ptr);
 			return true;
 		}
-		void from_proto(const hld::ws2cs_proto::auction_send_sell_success_info& msg)
+		void from_proto(const faith::ws2cs_proto::auction_send_sell_success_info& msg)
 		{
 			auction_info.from_proto(msg.auction_info());
 		}
@@ -413,10 +413,10 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_dp2ws_auction_cancel_sell;
 		}
-		bool  to_proto(hld::dp2s_proto::auction_cancel_sell& msg)
+		bool  to_proto(faith::dp2s_proto::auction_cancel_sell& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
-			hld::st_proto::st_auction_info* st_auction_ptr = msg.mutable_auction_info();
+			faith::st_proto::st_auction_info* st_auction_ptr = msg.mutable_auction_info();
 			if (st_auction_ptr == nullptr)
 			{
 				return false;
@@ -424,7 +424,7 @@ namespace hld
 			auction_info.to_proto(st_auction_ptr);
 			return true;
 		}
-		void from_proto(const hld::dp2s_proto::auction_cancel_sell& msg)
+		void from_proto(const faith::dp2s_proto::auction_cancel_sell& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			auction_info.from_proto(msg.auction_info());
@@ -441,10 +441,10 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_auction_cancel_sell;
 		}
-		bool  to_proto(hld::ws2cs_proto::auction_cancel_sell& msg)
+		bool  to_proto(faith::ws2cs_proto::auction_cancel_sell& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
-			hld::st_proto::st_auction_info* st_auction_ptr = msg.mutable_auction_info();
+			faith::st_proto::st_auction_info* st_auction_ptr = msg.mutable_auction_info();
 			if (st_auction_ptr == nullptr)
 			{
 				return false;
@@ -452,7 +452,7 @@ namespace hld
 			auction_info.to_proto(st_auction_ptr);
 			return true;
 		}
-		void from_proto(const hld::ws2cs_proto::auction_cancel_sell& msg)
+		void from_proto(const faith::ws2cs_proto::auction_cancel_sell& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			auction_info.from_proto(msg.auction_info());
@@ -613,13 +613,13 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_dp2ws_auction_find_bid_target_end;
 		}
-		bool to_proto(hld::dp2s_proto::auction_find_bid_target_end& msg)
+		bool to_proto(faith::dp2s_proto::auction_find_bid_target_end& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_item_guid(item_guid.server_64);
 			msg.set_price_money_type(price_money_type);
 			msg.set_price_money_value(price_money_value);
-			hld::st_proto::st_auction_info * st_auction_ptr = msg.mutable_auction_info();
+			faith::st_proto::st_auction_info * st_auction_ptr = msg.mutable_auction_info();
 			if (st_auction_ptr == nullptr)
 			{
 				return false;
@@ -627,7 +627,7 @@ namespace hld
 			auction_info.to_proto(st_auction_ptr);
 			return true;
 		}
-		void from_proto(const hld::dp2s_proto::auction_find_bid_target_end& msg)
+		void from_proto(const faith::dp2s_proto::auction_find_bid_target_end& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			item_guid.server_64 = msg.item_guid();
@@ -647,10 +647,10 @@ namespace hld
 			wheader = e_msgindex_ws2cs_auction_find_bid_target_end;
 		}
 
-		bool  to_proto(hld::ws2cs_proto::auction_find_bid_target_end& msg)
+		bool  to_proto(faith::ws2cs_proto::auction_find_bid_target_end& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
-			hld::st_proto::st_auction_info* st_auction_ptr = msg.mutable_auction_info();
+			faith::st_proto::st_auction_info* st_auction_ptr = msg.mutable_auction_info();
 			if (st_auction_ptr == nullptr)
 			{
 				return false;
@@ -658,7 +658,7 @@ namespace hld
 			auction_info.to_proto(st_auction_ptr);
 			return true;
 		}
-		void from_proto(const hld::ws2cs_proto::auction_find_bid_target_end& msg)
+		void from_proto(const faith::ws2cs_proto::auction_find_bid_target_end& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			auction_info.from_proto(msg.auction_info());
@@ -740,12 +740,12 @@ namespace hld
 			return (basic_len + data_num * sizeof(s_auction_info));
 		}
 
-		bool to_proto(hld::dp2s_proto::auction_clear_old_item_end& msg)
+		bool to_proto(faith::dp2s_proto::auction_clear_old_item_end& msg)
 		{
 			msg.set_data_num(data_num);
 			for (int32 i = 0; i < data_num && i < auction_clear_item_num_per_time; i++)
 			{
-				hld::st_proto::st_auction_info * auction_ptr = msg.add_data_info();
+				faith::st_proto::st_auction_info * auction_ptr = msg.add_data_info();
 				if (auction_ptr == nullptr)
 				{
 					return false;
@@ -756,7 +756,7 @@ namespace hld
 
 
 		}
-		void from_proto(const hld::dp2s_proto::auction_clear_old_item_end& msg)
+		void from_proto(const faith::dp2s_proto::auction_clear_old_item_end& msg)
 		{
 			data_num = msg.data_num();
 			for (int32 i = 0; i < data_num && i < auction_clear_item_num_per_time; i++)
@@ -826,7 +826,7 @@ namespace hld
 			const int32 basic_len = (ULONG_PTR)&data_info - (ULONG_PTR)&wheader;
 			return (basic_len + data_num * sizeof(s_auction_share_info));
 		}
-		bool  to_proto(hld::dp2s_proto::auction_req_share_list_end& msg)
+		bool  to_proto(faith::dp2s_proto::auction_req_share_list_end& msg)
 		{
 			msg.set_buyer_guid(buyer_guid.server_64);
 			msg.set_money_type(money_type);
@@ -835,7 +835,7 @@ namespace hld
 			msg.set_data_num(data_num);
 			for (int32 i = 0; i < data_num && i < auction_share_list_max_num; i++)
 			{
-				hld::st_proto::st_auction_share_info * st_share_ptr = msg.add_data_info();
+				faith::st_proto::st_auction_share_info * st_share_ptr = msg.add_data_info();
 				if (st_share_ptr == nullptr)
 				{
 					return false;
@@ -844,7 +844,7 @@ namespace hld
 			}
 			return true;
 		}
-		void from_proto(const hld::dp2s_proto::auction_req_share_list_end& msg)
+		void from_proto(const faith::dp2s_proto::auction_req_share_list_end& msg)
 		{
 			buyer_guid.server_64 = msg.buyer_guid();
 			money_type = msg.money_type();
@@ -994,12 +994,12 @@ namespace hld
 			const int32 basic_len = (ULONG_PTR)&data_info - (ULONG_PTR)&wheader;
 			return (basic_len + data_num * sizeof(s_auction_info));
 		}
-		bool to_proto(hld::dp2s_proto::aution_time_out_end& msg)
+		bool to_proto(faith::dp2s_proto::aution_time_out_end& msg)
 		{
 			msg.set_data_num(data_num);
 			for (int32 i = 0 ; i < data_num && i < auction_time_out_sell_num; i++)
 			{
-				hld::st_proto::st_auction_info * auction_ptr = msg.add_data_info();
+				faith::st_proto::st_auction_info * auction_ptr = msg.add_data_info();
 				if (auction_ptr == nullptr)
 				{
 					return false;
@@ -1010,7 +1010,7 @@ namespace hld
 			 
 
 		}
-		void from_proto(const hld::dp2s_proto::aution_time_out_end& msg)
+		void from_proto(const faith::dp2s_proto::aution_time_out_end& msg)
 		{
 			data_num = msg.data_num();
 			for (int32 i = 0; i < data_num && i < auction_time_out_sell_num; i++)
@@ -1078,10 +1078,10 @@ namespace hld
 		}
 
 
-		bool  to_proto(hld::ws2cs_proto::auction_time_out_del& msg)
+		bool  to_proto(faith::ws2cs_proto::auction_time_out_del& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
-			hld::st_proto::st_auction_info* st_auction_ptr = msg.mutable_auction_info();
+			faith::st_proto::st_auction_info* st_auction_ptr = msg.mutable_auction_info();
 			if (st_auction_ptr == nullptr)
 			{
 				return false;
@@ -1089,7 +1089,7 @@ namespace hld
 			auction_info.to_proto(st_auction_ptr);
 			return true;
 		}
-		void from_proto(const hld::ws2cs_proto::auction_time_out_del& msg)
+		void from_proto(const faith::ws2cs_proto::auction_time_out_del& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			auction_info.from_proto(msg.auction_info());

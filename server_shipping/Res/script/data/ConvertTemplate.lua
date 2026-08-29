@@ -1,0 +1,9 @@
+local data = { 
+    [126000001] = {["ConvertType"]= 0,["CostMoneyArray"] = {3,10,12,14,16,20,25,30,40,45,50,60,65,70,80,90,90,90,90},["StaticRewardMoneyArray"] = {4,100},["DyamicRewardMoneyArray"] = {},["AdditionalMoneyArray"] = {},["RegionArr"] = {0,1,2,3,4,5,6,7,8},["ExperienceConversionTimes"] = {},["RedDiamondFreeConvert"] = {},["FreeChangeGoldDistanceSecond"]= 86400,},
+    [126000002] = {["ConvertType"]= 1,["CostMoneyArray"] = {3,10,12,14,16,20,25,30,40,45,50,60,65,70,80,90,90,90,90},["StaticRewardMoneyArray"] = {},["DyamicRewardMoneyArray"] = {0,1500},["AdditionalMoneyArray"] = {},["RegionArr"] = {0,1,2,3,4,5,6,7,8},["ExperienceConversionTimes"] = {},["RedDiamondFreeConvert"] = {},["FreeChangeGoldDistanceSecond"] = 0,},
+    [126000003] = {["ConvertType"]= 0,["CostMoneyArray"] = {3,50,50,50,50,60,60,60,70,70,70,80,80,80,90,90,90,90,90},["StaticRewardMoneyArray"] = {4,100},["DyamicRewardMoneyArray"] = {},["AdditionalMoneyArray"] = {},["RegionArr"] = {2,3,4},["ExperienceConversionTimes"] = {},["RedDiamondFreeConvert"] = {},["FreeChangeGoldDistanceSecond"]= 172800,},
+    [126000004] = {["ConvertType"]= 2,["CostMoneyArray"] = {3,20,20,40,40,60,60,80,80,90,90,90,90,90,90,90,90,90,90,90,90},["StaticRewardMoneyArray"] = {25,100},["DyamicRewardMoneyArray"] = {},["AdditionalMoneyArray"] = {},["RegionArr"] = {0,1,2,3,4,5,6,7,8},["ExperienceConversionTimes"] = {},["RedDiamondFreeConvert"] = {},["FreeChangeGoldDistanceSecond"]= 172800,},
+    [126000005] = {["ConvertType"]= 3,["CostMoneyArray"] = {3,10,10,10,20,20,20,30,30,30,40,40,40,50,50,50,50,50,50},["StaticRewardMoneyArray"] = {2,50000},["DyamicRewardMoneyArray"] = {},["AdditionalMoneyArray"] = {},["RegionArr"] = {0,1,2,3,4,5,6,7,8},["ExperienceConversionTimes"] = {0,3,1,3,2,3,3,3,4,6,5,6,6,6,7,9,8,9,9,9,10,12,11,12,12,12,13,15,14,15,15,15,16,18,17,18},["RedDiamondFreeConvert"] = {},["FreeChangeGoldDistanceSecond"] = 0,},
+
+ }
+return data

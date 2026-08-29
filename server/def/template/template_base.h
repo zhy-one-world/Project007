@@ -10,7 +10,7 @@ purpose:
 #pragma once
 #include "logic/type_def.hpp"
 #include "template/ServerTemplateEnum.h"
-namespace hld
+namespace faith
 {
 #pragma pack(push, 1)
 	struct template_base

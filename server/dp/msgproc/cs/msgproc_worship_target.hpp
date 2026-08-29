@@ -12,7 +12,7 @@ purpose:
 
 #include "db_manager.hpp"
 
-namespace hld
+namespace faith
 {
 	//½ÇÉ«³ç°Ý¼ÇÂ¼
 	void cs2dp_req_load_char_worship_target(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index);

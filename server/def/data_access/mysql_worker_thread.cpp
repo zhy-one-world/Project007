@@ -13,7 +13,7 @@
 #include <time.hpp>
 
 //	global logger obj.
-namespace hld
+namespace faith
 {
 	worker_thread::worker_thread(mysql_async_mgr_impl* ptr, int32 thread_no)
 	{

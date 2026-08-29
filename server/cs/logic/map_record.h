@@ -4,7 +4,7 @@
 #include "server_log.hpp"
 #include "base/ecs_world.h"
 
-namespace hld
+namespace faith
 {
 	class map_s2s_map_record;
 	class map_s2c_map_record;

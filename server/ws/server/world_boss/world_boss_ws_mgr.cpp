@@ -18,7 +18,7 @@
 #include "game.pb.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	world_boss_ws_mgr::world_boss_ws_mgr()
 	{
@@ -190,7 +190,7 @@ namespace hld
 						}
 						else
 						{
-							hld::ws2cs_proto::remove_world_boss pro_msg;
+							faith::ws2cs_proto::remove_world_boss pro_msg;
 							remove_msg.to_proto(pro_msg);
 							cs_map_system::send_message_to_cs_lua(map_ent, &pro_msg, e_msgindex_ws2cs_remove_world_boss);
 						}
@@ -271,7 +271,7 @@ namespace hld
 				CONSOLE_ERROR("map_template_ptr is null map_guid:{}", session->get_map_guid().server_64);
 				return;
 			}
-			if (map_template_ptr->Type != hld::e_map_type_big_map)
+			if (map_template_ptr->Type != faith::e_map_type_big_map)
 			{
 				CONSOLE_ERROR("map_template_ptr->Type is not e_map_type_big_map Type:{}", map_template_ptr->Type);
 				return;
@@ -342,7 +342,7 @@ namespace hld
 				CONSOLE_ERROR("map_template_ptr is null map_guid:{}", session->get_map_guid().server_64);
 				return;
 			}
-			if (map_template_ptr->Type != hld::e_map_type_legion_station)
+			if (map_template_ptr->Type != faith::e_map_type_legion_station)
 			{
 				CONSOLE_ERROR("map_template_ptr->Type is not e_map_type_legion_station Type:{}", map_template_ptr->Type);
 				return;
@@ -519,7 +519,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::create_first_kill_prize pro_msg;
+				faith::ws2cs_proto::create_first_kill_prize pro_msg;
 				pak.to_proto(pro_msg);
 				frist_killer->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_create_first_kill_prize);
 			}
@@ -704,7 +704,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::create_world_boss pro_msg;
+				faith::ws2cs_proto::create_world_boss pro_msg;
 				create_msg.to_proto(pro_msg);
 				cs_map_system::send_message_to_cs_lua(map_ent, &pro_msg, e_msgindex_ws2cs_create_world_boss);
 			}
@@ -1151,7 +1151,7 @@ namespace hld
 			CONSOLE_ERROR("map_template_ptr is nullptr map_guid:{}", session->get_map_guid().server_64);
 			return;
 		}
-		if (map_template_ptr->Type != hld::e_map_type_big_map)
+		if (map_template_ptr->Type != faith::e_map_type_big_map)
 		{
 			CONSOLE_ERROR("map_template_ptr->Type:{} ", map_template_ptr->Type);
 			return;

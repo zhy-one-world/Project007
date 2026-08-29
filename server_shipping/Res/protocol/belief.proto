@@ -1,0 +1,37 @@
+syntax = "proto2";
+package hld;
+
+message belief_proto
+{
+	message belief_info
+	{
+		repeated int32 belief_data				= 1;
+	}
+
+	message update_character_belief_one
+	{
+		repeated int32 role_guid				= 1;
+		repeated belief_info	belief_list		= 2;
+		optional int32 belief_type				= 3;
+	}
+
+	message update_character_belief_all
+	{
+		repeated int32 role_guid				= 1;
+		repeated belief_info	belief_list		= 2;
+	}
+
+	message belief_operation
+	{
+		optional uint32 operation_type			= 1;
+		optional uint32 belief_type				= 2;
+	}
+
+	message belief_operation_end
+	{
+		optional uint32 operation_state			= 1;
+		optional uint32 operation_type			= 2;
+		optional uint32 belief_type				= 3;
+		repeated int32	role_guid				= 4;
+	}
+}

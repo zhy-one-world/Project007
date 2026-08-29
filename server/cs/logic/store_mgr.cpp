@@ -25,7 +25,7 @@ purpose: about store system's store_mgr
 #include "utility/init_unit.h"
 
 
-namespace hld
+namespace faith
 {
 	void store_mgr::init_manager()
 	{
@@ -281,7 +281,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_goods_db msg;
+		faith::cs2dp_proto::role_goods_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -296,7 +296,7 @@ namespace hld
 		s_goods_info *p_row = (s_goods_info *)p_data;
 		for (int32 i = 0; i < msg.row_count(); i++)
 		{
-			hld::cs2dp_proto::role_goods_row db_row = msg.row_data(i);
+			faith::cs2dp_proto::role_goods_row db_row = msg.row_data(i);
 			for (int32 j = 0; j < db_row.data_ary_size(); j++)
 			{
 				p_row->data_ary[j] = db_row.data_ary(j);
@@ -437,11 +437,11 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_goods msg;
+			faith::cs2dp_proto::save_role_goods msg;
 			msg.set_role_guid(player_ref.get_unit_guid().server_64);
 			msg.set_unit_array_index(m_unit_array_index);
 			msg.set_save_type_ex(save_type);
-			hld::cs2dp_proto::role_goods_db *db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_goods_db *db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return ;
@@ -461,7 +461,7 @@ namespace hld
 					if (goods_ref.is_data_use())
 					{
 						const s_goods_info& tmp = goods_ref.get_goods_inst();
-						hld::cs2dp_proto::role_goods_row *db_row = db_data->add_row_data();
+						faith::cs2dp_proto::role_goods_row *db_row = db_data->add_row_data();
 						if (db_row == nullptr)
 						{
 							return;
@@ -933,7 +933,7 @@ namespace hld
 	}
 	int32 player_store_helper::GetTimeSecond(int32 day, int32 hour, int32 min, int32 sec)
 	{
-		return ((day * (hld::day_time_second)) + (hour * 3600) + (min * 60) + sec);
+		return ((day * (faith::day_time_second)) + (hour * 3600) + (min * 60) + sec);
 	}
 
 	int32 player_store_helper::get_goods_buy_count(int32 goods_id, int32 store_id)

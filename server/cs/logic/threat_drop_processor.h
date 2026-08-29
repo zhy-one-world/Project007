@@ -7,7 +7,7 @@
 #include "logic/player.hpp"
 #include "logic/npc.hpp"
 
-namespace hld
+namespace faith
 {
 	class player_score_info
 	{

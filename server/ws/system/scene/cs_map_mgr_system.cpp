@@ -10,7 +10,7 @@
 #include "game.pb.h"
 #include "net.pb.h"
 
-using namespace hld;
+using namespace faith;
 cs_map_mgr_component g_cs_mgr_cp;
 bool cs_map_mgr_system::start_up()
 {

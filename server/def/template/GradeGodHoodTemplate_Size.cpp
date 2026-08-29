@@ -1,6 +1,6 @@
 #include "GradeGodHoodTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void GradeGodHoodTemplateSize()
     {

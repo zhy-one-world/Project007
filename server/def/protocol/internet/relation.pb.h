@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_relation_2eproto();
@@ -165,7 +165,7 @@ class relation_proto_c2s_addfriend : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 server_id() const;
   inline void set_server_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_addfriend)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_addfriend)
  private:
   inline void set_has_guid();
   inline void clear_has_guid();
@@ -272,7 +272,7 @@ class relation_proto_c2s_operate_other_add_req : public ::google::protobuf::Mess
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint64 >*
       mutable_operate_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_operate_other_add_req)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_operate_other_add_req)
  private:
   inline void set_has_sender_guid();
   inline void clear_has_sender_guid();
@@ -382,7 +382,7 @@ class relation_proto_s2c_addfriend : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_addfriend)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_addfriend)
  private:
   inline void set_has_guid();
   inline void clear_has_guid();
@@ -504,7 +504,7 @@ class relation_proto_s2c_otheraddfriend : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_otheraddfriend)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_otheraddfriend)
  private:
   inline void set_has_guid();
   inline void clear_has_guid();
@@ -600,7 +600,7 @@ class relation_proto_c2s_delfriend : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 friendtype() const;
   inline void set_friendtype(::google::protobuf::uint32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_delfriend)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_delfriend)
  private:
   inline void set_has_guid();
   inline void clear_has_guid();
@@ -697,7 +697,7 @@ class relation_proto_c2s_req_friend_userinfo : public ::google::protobuf::Messag
   inline ::std::string* release_name();
   inline void set_allocated_name(::std::string* name);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_req_friend_userinfo)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_req_friend_userinfo)
  private:
   inline void set_has_sub_type();
   inline void clear_has_sub_type();
@@ -818,7 +818,7 @@ class relation_proto_friend_user_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.friend_user_info)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.friend_user_info)
  private:
   inline void set_has_guid();
   inline void clear_has_guid();
@@ -907,26 +907,26 @@ class relation_proto_s2c_ret_friend_userinfo : public ::google::protobuf::Messag
   inline bool is_search() const;
   inline void set_is_search(bool value);
 
-  // repeated .hld.relation_proto.friend_user_info friend_list = 2;
+  // repeated .faith.relation_proto.friend_user_info friend_list = 2;
   inline int friend_list_size() const;
   inline void clear_friend_list();
   static const int kFriendListFieldNumber = 2;
-  inline const ::hld::relation_proto_friend_user_info& friend_list(int index) const;
-  inline ::hld::relation_proto_friend_user_info* mutable_friend_list(int index);
-  inline ::hld::relation_proto_friend_user_info* add_friend_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_friend_user_info >&
+  inline const ::faith::relation_proto_friend_user_info& friend_list(int index) const;
+  inline ::faith::relation_proto_friend_user_info* mutable_friend_list(int index);
+  inline ::faith::relation_proto_friend_user_info* add_friend_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_friend_user_info >&
       friend_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_friend_user_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_friend_user_info >*
       mutable_friend_list();
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_ret_friend_userinfo)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_ret_friend_userinfo)
  private:
   inline void set_has_is_search();
   inline void clear_has_is_search();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_friend_user_info > friend_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_friend_user_info > friend_list_;
   bool is_search_;
 
   mutable int _cached_size_;
@@ -1002,7 +1002,7 @@ class relation_proto_s2c_delfriend : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 guid() const;
   inline void set_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_delfriend)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_delfriend)
  private:
   inline void set_has_guid();
   inline void clear_has_guid();
@@ -1091,7 +1091,7 @@ class relation_proto_s2c_syc_friend_state : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 state() const;
   inline void set_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_syc_friend_state)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_syc_friend_state)
  private:
   inline void set_has_guid();
   inline void clear_has_guid();
@@ -1169,24 +1169,24 @@ class relation_proto_s2c_syc_full_friendlist : public ::google::protobuf::Messag
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.relation_proto.friend_user_info friend_full_list_info = 1;
+  // repeated .faith.relation_proto.friend_user_info friend_full_list_info = 1;
   inline int friend_full_list_info_size() const;
   inline void clear_friend_full_list_info();
   static const int kFriendFullListInfoFieldNumber = 1;
-  inline const ::hld::relation_proto_friend_user_info& friend_full_list_info(int index) const;
-  inline ::hld::relation_proto_friend_user_info* mutable_friend_full_list_info(int index);
-  inline ::hld::relation_proto_friend_user_info* add_friend_full_list_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_friend_user_info >&
+  inline const ::faith::relation_proto_friend_user_info& friend_full_list_info(int index) const;
+  inline ::faith::relation_proto_friend_user_info* mutable_friend_full_list_info(int index);
+  inline ::faith::relation_proto_friend_user_info* add_friend_full_list_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_friend_user_info >&
       friend_full_list_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_friend_user_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_friend_user_info >*
       mutable_friend_full_list_info();
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_syc_full_friendlist)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_syc_full_friendlist)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_friend_user_info > friend_full_list_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_friend_user_info > friend_full_list_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -1268,7 +1268,7 @@ class relation_proto_s2c_syn_loverinfo : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 sender_guid() const;
   inline void set_sender_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_syn_loverinfo)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_syn_loverinfo)
  private:
   inline void set_has_loverguid();
   inline void clear_has_loverguid();
@@ -1346,24 +1346,24 @@ class relation_proto_s2c_syc_full_other_req_list : public ::google::protobuf::Me
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.relation_proto.friend_user_info full_other_req_list_info = 1;
+  // repeated .faith.relation_proto.friend_user_info full_other_req_list_info = 1;
   inline int full_other_req_list_info_size() const;
   inline void clear_full_other_req_list_info();
   static const int kFullOtherReqListInfoFieldNumber = 1;
-  inline const ::hld::relation_proto_friend_user_info& full_other_req_list_info(int index) const;
-  inline ::hld::relation_proto_friend_user_info* mutable_full_other_req_list_info(int index);
-  inline ::hld::relation_proto_friend_user_info* add_full_other_req_list_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_friend_user_info >&
+  inline const ::faith::relation_proto_friend_user_info& full_other_req_list_info(int index) const;
+  inline ::faith::relation_proto_friend_user_info* mutable_full_other_req_list_info(int index);
+  inline ::faith::relation_proto_friend_user_info* add_full_other_req_list_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_friend_user_info >&
       full_other_req_list_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_friend_user_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_friend_user_info >*
       mutable_full_other_req_list_info();
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_syc_full_other_req_list)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_syc_full_other_req_list)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_friend_user_info > full_other_req_list_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_friend_user_info > full_other_req_list_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -1471,7 +1471,7 @@ class relation_proto_c2s_add_friendliness_value : public ::google::protobuf::Mes
   inline ::std::string* release_chat_message();
   inline void set_allocated_chat_message(::std::string* chat_message);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_add_friendliness_value)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_add_friendliness_value)
  private:
   inline void set_has_sender_guid();
   inline void clear_has_sender_guid();
@@ -1586,7 +1586,7 @@ class relation_proto_s2c_ret_friendliness_value : public ::google::protobuf::Mes
   inline ::google::protobuf::uint64 gift_count() const;
   inline void set_gift_count(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_ret_friendliness_value)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_ret_friendliness_value)
  private:
   inline void set_has_relation_guid();
   inline void clear_has_relation_guid();
@@ -1677,7 +1677,7 @@ class relation_proto_c2s_req_syc_relation_state : public ::google::protobuf::Mes
   inline ::google::protobuf::uint64 sender_guid() const;
   inline void set_sender_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_req_syc_relation_state)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_req_syc_relation_state)
  private:
   inline void set_has_sender_guid();
   inline void clear_has_sender_guid();
@@ -1780,7 +1780,7 @@ class relation_proto_ret_relation_state : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 exp_level() const;
   inline void set_exp_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.ret_relation_state)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.ret_relation_state)
  private:
   inline void set_has_relation_guid();
   inline void clear_has_relation_guid();
@@ -1864,24 +1864,24 @@ class relation_proto_s2c_ret_relation_state : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.relation_proto.ret_relation_state full_relation_state = 1;
+  // repeated .faith.relation_proto.ret_relation_state full_relation_state = 1;
   inline int full_relation_state_size() const;
   inline void clear_full_relation_state();
   static const int kFullRelationStateFieldNumber = 1;
-  inline const ::hld::relation_proto_ret_relation_state& full_relation_state(int index) const;
-  inline ::hld::relation_proto_ret_relation_state* mutable_full_relation_state(int index);
-  inline ::hld::relation_proto_ret_relation_state* add_full_relation_state();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_ret_relation_state >&
+  inline const ::faith::relation_proto_ret_relation_state& full_relation_state(int index) const;
+  inline ::faith::relation_proto_ret_relation_state* mutable_full_relation_state(int index);
+  inline ::faith::relation_proto_ret_relation_state* add_full_relation_state();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_ret_relation_state >&
       full_relation_state() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_ret_relation_state >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_ret_relation_state >*
       mutable_full_relation_state();
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_ret_relation_state)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_ret_relation_state)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_ret_relation_state > full_relation_state_;
+  ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_ret_relation_state > full_relation_state_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -1968,7 +1968,7 @@ class relation_proto_c2s_req_syc_nearly_state : public ::google::protobuf::Messa
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint64 >*
       mutable_stranger_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_req_syc_nearly_state)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_req_syc_nearly_state)
  private:
   inline void set_has_sender_guid();
   inline void clear_has_sender_guid();
@@ -2044,24 +2044,24 @@ class relation_proto_s2c_ret_syc_nearly_state : public ::google::protobuf::Messa
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.relation_proto.ret_relation_state full_stranger_state = 1;
+  // repeated .faith.relation_proto.ret_relation_state full_stranger_state = 1;
   inline int full_stranger_state_size() const;
   inline void clear_full_stranger_state();
   static const int kFullStrangerStateFieldNumber = 1;
-  inline const ::hld::relation_proto_ret_relation_state& full_stranger_state(int index) const;
-  inline ::hld::relation_proto_ret_relation_state* mutable_full_stranger_state(int index);
-  inline ::hld::relation_proto_ret_relation_state* add_full_stranger_state();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_ret_relation_state >&
+  inline const ::faith::relation_proto_ret_relation_state& full_stranger_state(int index) const;
+  inline ::faith::relation_proto_ret_relation_state* mutable_full_stranger_state(int index);
+  inline ::faith::relation_proto_ret_relation_state* add_full_stranger_state();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_ret_relation_state >&
       full_stranger_state() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_ret_relation_state >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_ret_relation_state >*
       mutable_full_stranger_state();
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_ret_syc_nearly_state)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_ret_syc_nearly_state)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_ret_relation_state > full_stranger_state_;
+  ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_ret_relation_state > full_stranger_state_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -2136,7 +2136,7 @@ class relation_proto_s2c_ret_operate_relation_result : public ::google::protobuf
   inline ::google::protobuf::int32 result_id() const;
   inline void set_result_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_ret_operate_relation_result)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_ret_operate_relation_result)
  private:
   inline void set_has_result_id();
   inline void clear_has_result_id();
@@ -2261,7 +2261,7 @@ class relation_proto_s2c_add_relation_info : public ::google::protobuf::Message 
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_add_relation_info)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_add_relation_info)
  private:
   inline void set_has_relation_list_type();
   inline void clear_has_relation_list_type();
@@ -2360,7 +2360,7 @@ class relation_proto_s2c_del_relation_info : public ::google::protobuf::Message 
   inline ::google::protobuf::uint64 guid() const;
   inline void set_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_del_relation_info)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_del_relation_info)
  private:
   inline void set_has_relation_list_type();
   inline void clear_has_relation_list_type();
@@ -2438,24 +2438,24 @@ class relation_proto_s2c_syc_full_relation_list : public ::google::protobuf::Mes
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.relation_proto.friend_user_info full_relation_list_info = 1;
+  // repeated .faith.relation_proto.friend_user_info full_relation_list_info = 1;
   inline int full_relation_list_info_size() const;
   inline void clear_full_relation_list_info();
   static const int kFullRelationListInfoFieldNumber = 1;
-  inline const ::hld::relation_proto_friend_user_info& full_relation_list_info(int index) const;
-  inline ::hld::relation_proto_friend_user_info* mutable_full_relation_list_info(int index);
-  inline ::hld::relation_proto_friend_user_info* add_full_relation_list_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_friend_user_info >&
+  inline const ::faith::relation_proto_friend_user_info& full_relation_list_info(int index) const;
+  inline ::faith::relation_proto_friend_user_info* mutable_full_relation_list_info(int index);
+  inline ::faith::relation_proto_friend_user_info* add_full_relation_list_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_friend_user_info >&
       full_relation_list_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_friend_user_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_friend_user_info >*
       mutable_full_relation_list_info();
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_syc_full_relation_list)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_syc_full_relation_list)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_friend_user_info > full_relation_list_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_friend_user_info > full_relation_list_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -2537,7 +2537,7 @@ class relation_proto_s2c_marry_operate_result : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 support_id() const;
   inline void set_support_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_marry_operate_result)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_marry_operate_result)
  private:
   inline void set_has_operate_result_type();
   inline void clear_has_operate_result_type();
@@ -2636,7 +2636,7 @@ class relation_proto_c2s_req_marrage : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 marry_item() const;
   inline void set_marry_item(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_req_marrage)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_req_marrage)
  private:
   inline void set_has_main_guid();
   inline void clear_has_main_guid();
@@ -2750,7 +2750,7 @@ class relation_proto_s2c_ret_marrage : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 save_event_time() const;
   inline void set_save_event_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_ret_marrage)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_ret_marrage)
  private:
   inline void set_has_couple_guid();
   inline void clear_has_couple_guid();
@@ -2862,7 +2862,7 @@ class relation_proto_c2s_reply_choose : public ::google::protobuf::Message {
   inline bool is_force() const;
   inline void set_is_force(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_reply_choose)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_reply_choose)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -2953,7 +2953,7 @@ class relation_proto_c2s_req_couple : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 role_guid() const;
   inline void set_role_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_req_couple)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_req_couple)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3108,7 +3108,7 @@ class relation_proto_s2c_ret_couple_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 marry_state() const;
   inline void set_marry_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_ret_couple_info)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_ret_couple_info)
  private:
   inline void set_has_main_guid();
   inline void clear_has_main_guid();
@@ -3231,7 +3231,7 @@ class relation_proto_c2s_req_divorce : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 sub_guid() const;
   inline void set_sub_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_req_divorce)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_req_divorce)
  private:
   inline void set_has_is_force();
   inline void clear_has_is_force();
@@ -3319,7 +3319,7 @@ class relation_proto_c2s_req_marry_get_reward : public ::google::protobuf::Messa
   inline ::google::protobuf::uint64 role_guid() const;
   inline void set_role_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_req_marry_get_reward)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_req_marry_get_reward)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3401,7 +3401,7 @@ class relation_proto_s2c_send_marry_effect_notice : public ::google::protobuf::M
   inline ::google::protobuf::int32 effect_level() const;
   inline void set_effect_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_send_marry_effect_notice)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_send_marry_effect_notice)
  private:
   inline void set_has_effect_level();
   inline void clear_has_effect_level();
@@ -3483,7 +3483,7 @@ class relation_proto_c2s_req_get_marry_mission : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 is_near() const;
   inline void set_is_near(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_req_get_marry_mission)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_req_get_marry_mission)
  private:
   inline void set_has_is_near();
   inline void clear_has_is_near();
@@ -3558,7 +3558,7 @@ class relation_proto_s2c_confirm_receive_marry_mission : public ::google::protob
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_confirm_receive_marry_mission)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_confirm_receive_marry_mission)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -3637,7 +3637,7 @@ class relation_proto_c2s_confirm_receive_marry_mission : public ::google::protob
   inline ::google::protobuf::int32 is_receive() const;
   inline void set_is_receive(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_confirm_receive_marry_mission)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_confirm_receive_marry_mission)
  private:
   inline void set_has_is_receive();
   inline void clear_has_is_receive();
@@ -3719,7 +3719,7 @@ class relation_proto_c2s_req_upgrade_wedding_ring : public ::google::protobuf::M
   inline ::google::protobuf::int32 use_item_id() const;
   inline void set_use_item_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_req_upgrade_wedding_ring)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_req_upgrade_wedding_ring)
  private:
   inline void set_has_use_item_id();
   inline void clear_has_use_item_id();
@@ -3801,7 +3801,7 @@ class relation_proto_s2c_upgrade_wedding_ring_result : public ::google::protobuf
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_upgrade_wedding_ring_result)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_upgrade_wedding_ring_result)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -3895,7 +3895,7 @@ class relation_proto_s2c_update_marry_info : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 marry_time() const;
   inline void set_marry_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_update_marry_info)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_update_marry_info)
  private:
   inline void set_has_couple_name();
   inline void clear_has_couple_name();
@@ -3987,7 +3987,7 @@ class relation_proto_c2s_req_bless_one_couple : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 target_guid_b() const;
   inline void set_target_guid_b(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_req_bless_one_couple)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_req_bless_one_couple)
  private:
   inline void set_has_target_guid_a();
   inline void clear_has_target_guid_a();
@@ -4072,7 +4072,7 @@ class relation_proto_s2c_bless_one_couple_result : public ::google::protobuf::Me
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_bless_one_couple_result)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_bless_one_couple_result)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -4154,7 +4154,7 @@ class relation_proto_c2s_get_marry_examination : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 is_near() const;
   inline void set_is_near(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_get_marry_examination)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_get_marry_examination)
  private:
   inline void set_has_is_near();
   inline void clear_has_is_near();
@@ -4229,7 +4229,7 @@ class relation_proto_s2c_confirm_marry_examination : public ::google::protobuf::
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_confirm_marry_examination)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_confirm_marry_examination)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -4308,7 +4308,7 @@ class relation_proto_c2s_confirm_marry_examination : public ::google::protobuf::
   inline ::google::protobuf::int32 is_receive() const;
   inline void set_is_receive(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_confirm_marry_examination)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_confirm_marry_examination)
  private:
   inline void set_has_is_receive();
   inline void clear_has_is_receive();
@@ -4404,7 +4404,7 @@ class relation_proto_c2s_operate_marry_examination : public ::google::protobuf::
   inline ::google::protobuf::int32 ext_param_2() const;
   inline void set_ext_param_2(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_operate_marry_examination)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_operate_marry_examination)
  private:
   inline void set_has_operate_type();
   inline void clear_has_operate_type();
@@ -4520,7 +4520,7 @@ class relation_proto_s2c_sync_marry_examination : public ::google::protobuf::Mes
   inline ::google::protobuf::int32 dati_stage() const;
   inline void set_dati_stage(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_sync_marry_examination)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_sync_marry_examination)
  private:
   inline void set_has_dati_id();
   inline void clear_has_dati_id();
@@ -4614,7 +4614,7 @@ class relation_proto_s2c_sync_marry_heart_value : public ::google::protobuf::Mes
   inline ::google::protobuf::int32 heart_value() const;
   inline void set_heart_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_sync_marry_heart_value)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_sync_marry_heart_value)
  private:
   inline void set_has_heart_value();
   inline void clear_has_heart_value();
@@ -4717,7 +4717,7 @@ class relation_proto_s2c_operate_marry_examination : public ::google::protobuf::
   inline ::google::protobuf::int32 my_answer() const;
   inline void set_my_answer(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_operate_marry_examination)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_operate_marry_examination)
  private:
   inline void set_has_operate_type();
   inline void clear_has_operate_type();
@@ -4839,7 +4839,7 @@ class relation_proto_c2s_req_use_fireworks : public ::google::protobuf::Message 
   inline ::std::string* release_target_blessing();
   inline void set_allocated_target_blessing(::std::string* target_blessing);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_req_use_fireworks)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_req_use_fireworks)
  private:
   inline void set_has_obj_guid_a();
   inline void clear_has_obj_guid_a();
@@ -4930,7 +4930,7 @@ class relation_proto_c2s_req_lucky_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 req_type() const;
   inline void set_req_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.c2s_req_lucky_info)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.c2s_req_lucky_info)
  private:
   inline void set_has_req_type();
   inline void clear_has_req_type();
@@ -5088,7 +5088,7 @@ class relation_proto_lucky_role_info : public ::google::protobuf::Message {
   inline ::std::string* release_role_desc();
   inline void set_allocated_role_desc(::std::string* role_desc);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.lucky_role_info)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.lucky_role_info)
  private:
   inline void set_has_role_guid_a();
   inline void clear_has_role_guid_a();
@@ -5187,24 +5187,24 @@ class relation_proto_s2c_ret_lucky_info_vec : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.relation_proto.lucky_role_info user_info = 1;
+  // repeated .faith.relation_proto.lucky_role_info user_info = 1;
   inline int user_info_size() const;
   inline void clear_user_info();
   static const int kUserInfoFieldNumber = 1;
-  inline const ::hld::relation_proto_lucky_role_info& user_info(int index) const;
-  inline ::hld::relation_proto_lucky_role_info* mutable_user_info(int index);
-  inline ::hld::relation_proto_lucky_role_info* add_user_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_lucky_role_info >&
+  inline const ::faith::relation_proto_lucky_role_info& user_info(int index) const;
+  inline ::faith::relation_proto_lucky_role_info* mutable_user_info(int index);
+  inline ::faith::relation_proto_lucky_role_info* add_user_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_lucky_role_info >&
       user_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_lucky_role_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_lucky_role_info >*
       mutable_user_info();
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_ret_lucky_info_vec)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_ret_lucky_info_vec)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_lucky_role_info > user_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_lucky_role_info > user_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -5305,7 +5305,7 @@ class relation_proto_s2c_ret_special_lucky_info : public ::google::protobuf::Mes
   inline ::google::protobuf::int32 role_template() const;
   inline void set_role_template(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto.s2c_ret_special_lucky_info)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto.s2c_ret_special_lucky_info)
  private:
   inline void set_has_role_guid_a();
   inline void clear_has_role_guid_a();
@@ -5443,7 +5443,7 @@ class relation_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.relation_proto)
+  // @@protoc_insertion_point(class_scope:faith.relation_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -6278,27 +6278,27 @@ inline void relation_proto_s2c_ret_friend_userinfo::set_is_search(bool value) {
   is_search_ = value;
 }
 
-// repeated .hld.relation_proto.friend_user_info friend_list = 2;
+// repeated .faith.relation_proto.friend_user_info friend_list = 2;
 inline int relation_proto_s2c_ret_friend_userinfo::friend_list_size() const {
   return friend_list_.size();
 }
 inline void relation_proto_s2c_ret_friend_userinfo::clear_friend_list() {
   friend_list_.Clear();
 }
-inline const ::hld::relation_proto_friend_user_info& relation_proto_s2c_ret_friend_userinfo::friend_list(int index) const {
+inline const ::faith::relation_proto_friend_user_info& relation_proto_s2c_ret_friend_userinfo::friend_list(int index) const {
   return friend_list_.Get(index);
 }
-inline ::hld::relation_proto_friend_user_info* relation_proto_s2c_ret_friend_userinfo::mutable_friend_list(int index) {
+inline ::faith::relation_proto_friend_user_info* relation_proto_s2c_ret_friend_userinfo::mutable_friend_list(int index) {
   return friend_list_.Mutable(index);
 }
-inline ::hld::relation_proto_friend_user_info* relation_proto_s2c_ret_friend_userinfo::add_friend_list() {
+inline ::faith::relation_proto_friend_user_info* relation_proto_s2c_ret_friend_userinfo::add_friend_list() {
   return friend_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_friend_user_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_friend_user_info >&
 relation_proto_s2c_ret_friend_userinfo::friend_list() const {
   return friend_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_friend_user_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_friend_user_info >*
 relation_proto_s2c_ret_friend_userinfo::mutable_friend_list() {
   return &friend_list_;
 }
@@ -6381,27 +6381,27 @@ inline void relation_proto_s2c_syc_friend_state::set_state(::google::protobuf::i
 
 // relation_proto_s2c_syc_full_friendlist
 
-// repeated .hld.relation_proto.friend_user_info friend_full_list_info = 1;
+// repeated .faith.relation_proto.friend_user_info friend_full_list_info = 1;
 inline int relation_proto_s2c_syc_full_friendlist::friend_full_list_info_size() const {
   return friend_full_list_info_.size();
 }
 inline void relation_proto_s2c_syc_full_friendlist::clear_friend_full_list_info() {
   friend_full_list_info_.Clear();
 }
-inline const ::hld::relation_proto_friend_user_info& relation_proto_s2c_syc_full_friendlist::friend_full_list_info(int index) const {
+inline const ::faith::relation_proto_friend_user_info& relation_proto_s2c_syc_full_friendlist::friend_full_list_info(int index) const {
   return friend_full_list_info_.Get(index);
 }
-inline ::hld::relation_proto_friend_user_info* relation_proto_s2c_syc_full_friendlist::mutable_friend_full_list_info(int index) {
+inline ::faith::relation_proto_friend_user_info* relation_proto_s2c_syc_full_friendlist::mutable_friend_full_list_info(int index) {
   return friend_full_list_info_.Mutable(index);
 }
-inline ::hld::relation_proto_friend_user_info* relation_proto_s2c_syc_full_friendlist::add_friend_full_list_info() {
+inline ::faith::relation_proto_friend_user_info* relation_proto_s2c_syc_full_friendlist::add_friend_full_list_info() {
   return friend_full_list_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_friend_user_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_friend_user_info >&
 relation_proto_s2c_syc_full_friendlist::friend_full_list_info() const {
   return friend_full_list_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_friend_user_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_friend_user_info >*
 relation_proto_s2c_syc_full_friendlist::mutable_friend_full_list_info() {
   return &friend_full_list_info_;
 }
@@ -6458,27 +6458,27 @@ inline void relation_proto_s2c_syn_loverinfo::set_sender_guid(::google::protobuf
 
 // relation_proto_s2c_syc_full_other_req_list
 
-// repeated .hld.relation_proto.friend_user_info full_other_req_list_info = 1;
+// repeated .faith.relation_proto.friend_user_info full_other_req_list_info = 1;
 inline int relation_proto_s2c_syc_full_other_req_list::full_other_req_list_info_size() const {
   return full_other_req_list_info_.size();
 }
 inline void relation_proto_s2c_syc_full_other_req_list::clear_full_other_req_list_info() {
   full_other_req_list_info_.Clear();
 }
-inline const ::hld::relation_proto_friend_user_info& relation_proto_s2c_syc_full_other_req_list::full_other_req_list_info(int index) const {
+inline const ::faith::relation_proto_friend_user_info& relation_proto_s2c_syc_full_other_req_list::full_other_req_list_info(int index) const {
   return full_other_req_list_info_.Get(index);
 }
-inline ::hld::relation_proto_friend_user_info* relation_proto_s2c_syc_full_other_req_list::mutable_full_other_req_list_info(int index) {
+inline ::faith::relation_proto_friend_user_info* relation_proto_s2c_syc_full_other_req_list::mutable_full_other_req_list_info(int index) {
   return full_other_req_list_info_.Mutable(index);
 }
-inline ::hld::relation_proto_friend_user_info* relation_proto_s2c_syc_full_other_req_list::add_full_other_req_list_info() {
+inline ::faith::relation_proto_friend_user_info* relation_proto_s2c_syc_full_other_req_list::add_full_other_req_list_info() {
   return full_other_req_list_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_friend_user_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_friend_user_info >&
 relation_proto_s2c_syc_full_other_req_list::full_other_req_list_info() const {
   return full_other_req_list_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_friend_user_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_friend_user_info >*
 relation_proto_s2c_syc_full_other_req_list::mutable_full_other_req_list_info() {
   return &full_other_req_list_info_;
 }
@@ -6859,27 +6859,27 @@ inline void relation_proto_ret_relation_state::set_exp_level(::google::protobuf:
 
 // relation_proto_s2c_ret_relation_state
 
-// repeated .hld.relation_proto.ret_relation_state full_relation_state = 1;
+// repeated .faith.relation_proto.ret_relation_state full_relation_state = 1;
 inline int relation_proto_s2c_ret_relation_state::full_relation_state_size() const {
   return full_relation_state_.size();
 }
 inline void relation_proto_s2c_ret_relation_state::clear_full_relation_state() {
   full_relation_state_.Clear();
 }
-inline const ::hld::relation_proto_ret_relation_state& relation_proto_s2c_ret_relation_state::full_relation_state(int index) const {
+inline const ::faith::relation_proto_ret_relation_state& relation_proto_s2c_ret_relation_state::full_relation_state(int index) const {
   return full_relation_state_.Get(index);
 }
-inline ::hld::relation_proto_ret_relation_state* relation_proto_s2c_ret_relation_state::mutable_full_relation_state(int index) {
+inline ::faith::relation_proto_ret_relation_state* relation_proto_s2c_ret_relation_state::mutable_full_relation_state(int index) {
   return full_relation_state_.Mutable(index);
 }
-inline ::hld::relation_proto_ret_relation_state* relation_proto_s2c_ret_relation_state::add_full_relation_state() {
+inline ::faith::relation_proto_ret_relation_state* relation_proto_s2c_ret_relation_state::add_full_relation_state() {
   return full_relation_state_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_ret_relation_state >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_ret_relation_state >&
 relation_proto_s2c_ret_relation_state::full_relation_state() const {
   return full_relation_state_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_ret_relation_state >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_ret_relation_state >*
 relation_proto_s2c_ret_relation_state::mutable_full_relation_state() {
   return &full_relation_state_;
 }
@@ -6939,27 +6939,27 @@ relation_proto_c2s_req_syc_nearly_state::mutable_stranger_guid() {
 
 // relation_proto_s2c_ret_syc_nearly_state
 
-// repeated .hld.relation_proto.ret_relation_state full_stranger_state = 1;
+// repeated .faith.relation_proto.ret_relation_state full_stranger_state = 1;
 inline int relation_proto_s2c_ret_syc_nearly_state::full_stranger_state_size() const {
   return full_stranger_state_.size();
 }
 inline void relation_proto_s2c_ret_syc_nearly_state::clear_full_stranger_state() {
   full_stranger_state_.Clear();
 }
-inline const ::hld::relation_proto_ret_relation_state& relation_proto_s2c_ret_syc_nearly_state::full_stranger_state(int index) const {
+inline const ::faith::relation_proto_ret_relation_state& relation_proto_s2c_ret_syc_nearly_state::full_stranger_state(int index) const {
   return full_stranger_state_.Get(index);
 }
-inline ::hld::relation_proto_ret_relation_state* relation_proto_s2c_ret_syc_nearly_state::mutable_full_stranger_state(int index) {
+inline ::faith::relation_proto_ret_relation_state* relation_proto_s2c_ret_syc_nearly_state::mutable_full_stranger_state(int index) {
   return full_stranger_state_.Mutable(index);
 }
-inline ::hld::relation_proto_ret_relation_state* relation_proto_s2c_ret_syc_nearly_state::add_full_stranger_state() {
+inline ::faith::relation_proto_ret_relation_state* relation_proto_s2c_ret_syc_nearly_state::add_full_stranger_state() {
   return full_stranger_state_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_ret_relation_state >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_ret_relation_state >&
 relation_proto_s2c_ret_syc_nearly_state::full_stranger_state() const {
   return full_stranger_state_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_ret_relation_state >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_ret_relation_state >*
 relation_proto_s2c_ret_syc_nearly_state::mutable_full_stranger_state() {
   return &full_stranger_state_;
 }
@@ -7255,27 +7255,27 @@ inline void relation_proto_s2c_del_relation_info::set_guid(::google::protobuf::u
 
 // relation_proto_s2c_syc_full_relation_list
 
-// repeated .hld.relation_proto.friend_user_info full_relation_list_info = 1;
+// repeated .faith.relation_proto.friend_user_info full_relation_list_info = 1;
 inline int relation_proto_s2c_syc_full_relation_list::full_relation_list_info_size() const {
   return full_relation_list_info_.size();
 }
 inline void relation_proto_s2c_syc_full_relation_list::clear_full_relation_list_info() {
   full_relation_list_info_.Clear();
 }
-inline const ::hld::relation_proto_friend_user_info& relation_proto_s2c_syc_full_relation_list::full_relation_list_info(int index) const {
+inline const ::faith::relation_proto_friend_user_info& relation_proto_s2c_syc_full_relation_list::full_relation_list_info(int index) const {
   return full_relation_list_info_.Get(index);
 }
-inline ::hld::relation_proto_friend_user_info* relation_proto_s2c_syc_full_relation_list::mutable_full_relation_list_info(int index) {
+inline ::faith::relation_proto_friend_user_info* relation_proto_s2c_syc_full_relation_list::mutable_full_relation_list_info(int index) {
   return full_relation_list_info_.Mutable(index);
 }
-inline ::hld::relation_proto_friend_user_info* relation_proto_s2c_syc_full_relation_list::add_full_relation_list_info() {
+inline ::faith::relation_proto_friend_user_info* relation_proto_s2c_syc_full_relation_list::add_full_relation_list_info() {
   return full_relation_list_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_friend_user_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_friend_user_info >&
 relation_proto_s2c_syc_full_relation_list::full_relation_list_info() const {
   return full_relation_list_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_friend_user_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_friend_user_info >*
 relation_proto_s2c_syc_full_relation_list::mutable_full_relation_list_info() {
   return &full_relation_list_info_;
 }
@@ -9346,27 +9346,27 @@ inline void relation_proto_lucky_role_info::set_allocated_role_desc(::std::strin
 
 // relation_proto_s2c_ret_lucky_info_vec
 
-// repeated .hld.relation_proto.lucky_role_info user_info = 1;
+// repeated .faith.relation_proto.lucky_role_info user_info = 1;
 inline int relation_proto_s2c_ret_lucky_info_vec::user_info_size() const {
   return user_info_.size();
 }
 inline void relation_proto_s2c_ret_lucky_info_vec::clear_user_info() {
   user_info_.Clear();
 }
-inline const ::hld::relation_proto_lucky_role_info& relation_proto_s2c_ret_lucky_info_vec::user_info(int index) const {
+inline const ::faith::relation_proto_lucky_role_info& relation_proto_s2c_ret_lucky_info_vec::user_info(int index) const {
   return user_info_.Get(index);
 }
-inline ::hld::relation_proto_lucky_role_info* relation_proto_s2c_ret_lucky_info_vec::mutable_user_info(int index) {
+inline ::faith::relation_proto_lucky_role_info* relation_proto_s2c_ret_lucky_info_vec::mutable_user_info(int index) {
   return user_info_.Mutable(index);
 }
-inline ::hld::relation_proto_lucky_role_info* relation_proto_s2c_ret_lucky_info_vec::add_user_info() {
+inline ::faith::relation_proto_lucky_role_info* relation_proto_s2c_ret_lucky_info_vec::add_user_info() {
   return user_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_lucky_role_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_lucky_role_info >&
 relation_proto_s2c_ret_lucky_info_vec::user_info() const {
   return user_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::relation_proto_lucky_role_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::relation_proto_lucky_role_info >*
 relation_proto_s2c_ret_lucky_info_vec::mutable_user_info() {
   return &user_info_;
 }
@@ -9518,7 +9518,7 @@ inline void relation_proto_s2c_ret_special_lucky_info::set_role_template(::googl
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

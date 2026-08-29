@@ -15,13 +15,13 @@ purpose:
 #include "Logic/mail_def.hpp"
 #include "Logic/item_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_dp2cs_load_char_mail = hld::e_msg_base_mail,
+		e_msgindex_dp2cs_load_char_mail = faith::e_msg_base_mail,
 		e_msgindex_dp2cs_load_char_mail_item,
 		e_msgindex_cs2dp_auto_load_mail_by_db,
 		e_msgindex_cs2ws_check_id_mail,
@@ -44,7 +44,7 @@ namespace hld
 	};
 
 	// DP2CS 分批发送玩家的所有物品信息
-	struct dp2cs_load_char_mail : public hld::packet_base
+	struct dp2cs_load_char_mail : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_index;
@@ -63,7 +63,7 @@ namespace hld
 		}
 	};
 
-	struct dp2cs_operate_load_lock_mail : public hld::packet_base
+	struct dp2cs_operate_load_lock_mail : public faith::packet_base
 	{
 		int32								unit_index;
 		guid_64								unit_guid;
@@ -75,7 +75,7 @@ namespace hld
 		}
 	};
 
-	struct dp2cs_load_char_mail_item : public hld::packet_base
+	struct dp2cs_load_char_mail_item : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -93,7 +93,7 @@ namespace hld
 		}
 	};
 
-	struct dp2cs_del_mail_end : public hld::packet_base
+	struct dp2cs_del_mail_end : public faith::packet_base
 	{
 		guid_64								unit_guid;
 		int32								unit_index;
@@ -105,7 +105,7 @@ namespace hld
 		}
 	};
 
-	struct cs2dp_add_char_mail : public hld::packet_base
+	struct cs2dp_add_char_mail : public faith::packet_base
 	{
 		guid_64								role_guid;
 		s_mail_info							mail_info;
@@ -116,7 +116,7 @@ namespace hld
 		}
 	};
 
-	struct cs2dp_del_char_mail : public hld::packet_base
+	struct cs2dp_del_char_mail : public faith::packet_base
 	{
 		guid_64								unit_guid;
 		int32								unit_index;
@@ -129,7 +129,7 @@ namespace hld
 		}
 	};
 
-	struct cs2dp_del_char_mail_item : public hld::packet_base
+	struct cs2dp_del_char_mail_item : public faith::packet_base
 	{
 		guid_64								unit_guid;
 		guid_64								item_guid;
@@ -140,7 +140,7 @@ namespace hld
 		}
 	};
 
-	struct cs2dp_auto_load_mail_by_db : public hld::packet_base
+	struct cs2dp_auto_load_mail_by_db : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -151,7 +151,7 @@ namespace hld
 		}
 	};
 
-	struct ws2dp_add_mail_to_sql : public hld::packet_base
+	struct ws2dp_add_mail_to_sql : public faith::packet_base
 	{
 		int32		address_server_id;
 		s_item_info item_list[max_item_per_mail];
@@ -168,7 +168,7 @@ namespace hld
 		}
 	};
 
-	struct dp2ws_add_mail_to_sql_failed : public hld::packet_base
+	struct dp2ws_add_mail_to_sql_failed : public faith::packet_base
 	{
 		s_item_info item_list[max_item_per_mail];
 		s_mail_info mail_info;
@@ -180,7 +180,7 @@ namespace hld
 		}
 	};
 
-	struct cs2ws_check_id_mail : public hld::packet_base
+	struct cs2ws_check_id_mail : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								cur_time;
@@ -192,7 +192,7 @@ namespace hld
 		}
 	};
 
-	struct ws2dp_check_id_mail : public hld::packet_base
+	struct ws2dp_check_id_mail : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								server_id;
@@ -204,7 +204,7 @@ namespace hld
 		}
 	};
 
-	struct dp2ws_check_id_mail_end : public hld::packet_base
+	struct dp2ws_check_id_mail_end : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								server_id;
@@ -217,7 +217,7 @@ namespace hld
 		}
 	};
 
-	struct dp2ws_load_other_server_mail_record_end : public hld::packet_base
+	struct dp2ws_load_other_server_mail_record_end : public faith::packet_base
 	{
 		int32 data_num;
 		s_other_server_mail_record mail_record[max_other_server_mail_record_num];
@@ -233,7 +233,7 @@ namespace hld
 			return (basic_len + data_num * sizeof(s_other_server_mail_record));
 		}
 	};
-	struct ws2dp_save_other_server_mail_record : public hld::packet_base
+	struct ws2dp_save_other_server_mail_record : public faith::packet_base
 	{
 		s_other_server_mail_record mail_record;
 
@@ -244,7 +244,7 @@ namespace hld
 		}
 	};
 
-	struct ws2dp_load_other_server_mail : public hld::packet_base
+	struct ws2dp_load_other_server_mail : public faith::packet_base
 	{
 		int32 server_id;
 		guid_64 mail_guid;
@@ -255,7 +255,7 @@ namespace hld
 		}
 	};
 
-	struct dp2ws_load_other_server_mail_end : public hld::packet_base
+	struct dp2ws_load_other_server_mail_end : public faith::packet_base
 	{
 		int32 data_num;
 		int32 server_id;
@@ -271,7 +271,7 @@ namespace hld
 			return (basic_len + data_num * sizeof(s_other_server_mail_info));
 		}
 	};
-	struct ws2dp_del_other_server_mail : public hld::packet_base
+	struct ws2dp_del_other_server_mail : public faith::packet_base
 	{
 		s_other_server_mail_record mail_record;
 		ws2dp_del_other_server_mail()
@@ -281,7 +281,7 @@ namespace hld
 		}
 	};
 
-	struct ws2ws_send_other_server_mail : public hld::packet_base
+	struct ws2ws_send_other_server_mail : public faith::packet_base
 	{
 		s_other_server_mail_record mail_record;
 		s_other_server_mail_info mail_info;
@@ -292,7 +292,7 @@ namespace hld
 		}
 	};
 
-	struct ws2ws_send_other_server_mail_end : public hld::packet_base
+	struct ws2ws_send_other_server_mail_end : public faith::packet_base
 	{
 		s_other_server_mail_record mail_record;
 		ws2ws_send_other_server_mail_end()

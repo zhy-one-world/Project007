@@ -62,7 +62,7 @@ target_include_directories(hld_def PUBLIC
 	${PROJECT_COMPONENT_DIR}/../../dep/vcpkg/installed/x64-windows/include/engine/net
 	${PROJECT_COMPONENT_DIR}/../../dep/vcpkg/installed/x64-windows/include/engine/lua
 	${PROJECT_COMPONENT_DIR}/../../dep/google/protocolbuff/src
-    ${PROJECT_COMPONENT_DIR}/../../dep/mysql/include
+    ${PROJECT_COMPONENT_DIR}/../../dep/vcpkg/installed/x64-windows/include/mysql
     ${PROJECT_COMPONENT_DIR}/../../dep/jwt
 )
 

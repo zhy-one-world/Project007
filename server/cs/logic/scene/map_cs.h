@@ -13,7 +13,7 @@
 #include "npc_spawner.h"
 #include "map_object.h"
 
-namespace hld
+namespace faith
 {
 	struct target_time_spawn_info
 	{

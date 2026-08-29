@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -438,7 +438,7 @@ void protobuf_AddDesc_pokedex_2eproto() {
     "d\030\001 \001(\005\022\022\n\nend_result\030\002 \001(\005\022\031\n\021submit_it"
     "em_array\030\003 \003(\005\032h\n\034update_character_poked"
     "ex_all\022\021\n\trole_guid\030\001 \003(\005\0225\n\014pokedex_lis"
-    "t\030\002 \003(\0132\037.hld.pokedex_proto.pokedex_info"
+    "t\030\002 \003(\0132\037.faith.pokedex_proto.pokedex_info"
     "\032O\n\017protect_operate\022\026\n\016operation_type\030\001 "
     "\001(\r\022\021\n\titem_guid\030\002 \003(\005\022\021\n\titem_solt\030\003 \001("
     "\005\032(\n\016tinder_operate\022\026\n\016operation_type\030\001 "
@@ -2442,7 +2442,7 @@ bool pokedex_proto_update_character_pokedex_all::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.pokedex_proto.pokedex_info pokedex_list = 2;
+      // repeated .faith.pokedex_proto.pokedex_info pokedex_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2481,7 +2481,7 @@ void pokedex_proto_update_character_pokedex_all::SerializeWithCachedSizes(
       1, this->role_guid(i), output);
   }
 
-  // repeated .hld.pokedex_proto.pokedex_info pokedex_list = 2;
+  // repeated .faith.pokedex_proto.pokedex_info pokedex_list = 2;
   for (int i = 0; i < this->pokedex_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->pokedex_list(i), output);
@@ -2501,7 +2501,7 @@ void pokedex_proto_update_character_pokedex_all::SerializeWithCachedSizes(
       WriteInt32ToArray(1, this->role_guid(i), target);
   }
 
-  // repeated .hld.pokedex_proto.pokedex_info pokedex_list = 2;
+  // repeated .faith.pokedex_proto.pokedex_info pokedex_list = 2;
   for (int i = 0; i < this->pokedex_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -2528,7 +2528,7 @@ int pokedex_proto_update_character_pokedex_all::ByteSize() const {
     total_size += 1 * this->role_guid_size() + data_size;
   }
 
-  // repeated .hld.pokedex_proto.pokedex_info pokedex_list = 2;
+  // repeated .faith.pokedex_proto.pokedex_info pokedex_list = 2;
   total_size += 1 * this->pokedex_list_size();
   for (int i = 0; i < this->pokedex_list_size(); i++) {
     total_size +=
@@ -4433,6 +4433,6 @@ void pokedex_proto::Swap(pokedex_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

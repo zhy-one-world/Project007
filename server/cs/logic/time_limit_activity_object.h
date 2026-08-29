@@ -12,7 +12,7 @@ purpose: time limit object
 
 #include "Logic/time_limit_activity_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class player;
 	class time_limit_activity_object

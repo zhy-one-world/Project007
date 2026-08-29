@@ -27,7 +27,7 @@
 #include "chat.pb.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 //=========== relation_mgr : code here =========================================
 
@@ -311,7 +311,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::req_relation_end pro_msg;
+			faith::ws2cs_proto::req_relation_end pro_msg;
 			to_cs_msg.to_proto(pro_msg);
 			m_client_session_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_req_relation_end);
 		}
@@ -593,7 +593,7 @@ namespace hld
 		{
 			return;
 		}
-		hld::relation_proto_s2c_ret_relation_state send_pak;
+		faith::relation_proto_s2c_ret_relation_state send_pak;
 		bool have_change = false;
 		for (int32 list_type = 0; list_type < e_relationlist_type_max; list_type++)
 		{
@@ -652,7 +652,7 @@ namespace hld
 					}
 					if (is_send_to_client && it_have_change)
 					{
-						hld::relation_proto_ret_relation_state* ret_pak = send_pak.add_full_relation_state();
+						faith::relation_proto_ret_relation_state* ret_pak = send_pak.add_full_relation_state();
 						if (nullptr != ret_pak)
 						{
 							ret_pak->set_relation_guid(relation_ref.get_data_guid().server_64);
@@ -1077,7 +1077,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::req_relation_end pro_msg;
+				faith::ws2cs_proto::req_relation_end pro_msg;
 				to_cs_msg.to_proto(pro_msg);
 				m_client_session_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_req_relation_end);
 			}
@@ -1085,7 +1085,7 @@ namespace hld
 		return result;
 	}
 
-	void relation_mgr::operate_player_from_other_req(const hld::relation_proto_c2s_operate_other_add_req& packet)
+	void relation_mgr::operate_player_from_other_req(const faith::relation_proto_c2s_operate_other_add_req& packet)
 	{
 		if (nullptr == m_client_session_ptr)
 		{
@@ -1247,7 +1247,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::full_friend_guid pro_msg;
+			faith::ws2cs_proto::full_friend_guid pro_msg;
 			full_friend_pak.to_proto(pro_msg);
 			m_client_session_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_full_friend_guid);
 		}
@@ -1329,7 +1329,7 @@ namespace hld
 			friend_member_name.push_back(friend_relation->get_data_name());
 			int32 old_friendliness = friend_relation->get_data_value(e_relation_data_friendliness);
 			friend_relation->set_data_value(e_relation_data_friendliness, old_friendliness + GAMECONFIG->MissionFriendlinessValue);
-			hld::relation_proto_s2c_ret_friendliness_value ret_pak;
+			faith::relation_proto_s2c_ret_friendliness_value ret_pak;
 			ret_pak.set_relation_guid(friend_relation->get_data_guid().server_64);
 			ret_pak.set_relation_friendliness(friend_relation->get_data_value(e_relation_data_friendliness));
 			m_client_session_ptr->send_to_client(&ret_pak, e_msgindex_s2c_ret_friendliness_value);
@@ -1389,7 +1389,7 @@ namespace hld
 		{
 			//如果不是好友,扣掉的礼物用邮件还回去
 			s_item_info gift_item;
-			bool result = hld::init_unit::init_item_data(gift_item, gift_id, -1, gift_count, e_bag_type_bag, 1);
+			bool result = faith::init_unit::init_item_data(gift_item, gift_id, -1, gift_count, e_bag_type_bag, 1);
 			if (false == result)
 			{
 				return;
@@ -1441,7 +1441,7 @@ namespace hld
 			lucky_relation->set_data_value(e_relation_data_friendliness, old_friendliness + gift_prop_ptr->FriendlinessAdd * gift_count);
 		}
 		//给自己回复一个消息
-		hld::relation_proto_s2c_ret_friendliness_value ret_pak;
+		faith::relation_proto_s2c_ret_friendliness_value ret_pak;
 		ret_pak.set_relation_guid(addreesee_relation->get_data_guid().server_64);
 		ret_pak.set_relation_friendliness(addreesee_relation->get_data_value(e_relation_data_friendliness));
 		ret_pak.set_gift_id(gift_id);
@@ -2342,7 +2342,7 @@ namespace hld
 		target_client_ptr->send_to_client(&msg, e_msgindex_s2c_receive_chat_new);
 	}
 
-	hld::int32 relation_mgr::get_vip_title_template_id(client_session* client_session_ptr)
+	faith::int32 relation_mgr::get_vip_title_template_id(client_session* client_session_ptr)
 	{
 		for (int32 vip_level = client_session_ptr->m_role_info.data_ary[e_role_info_vip_level]; vip_level >= 0; vip_level--)
 		{

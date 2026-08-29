@@ -17,7 +17,7 @@ purpose:
 #include "event_processer.h"
 #include "internet/buff.pb.h"
 
-namespace hld
+namespace faith
 {
 	struct event_trigger_buf;
 	class buff_proto_buff_info;

@@ -1,6 +1,6 @@
 #include "EquipTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void EquipTemplateSize()
     {

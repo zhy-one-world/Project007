@@ -13,7 +13,7 @@ purpose: about mail
 #include <Logic/item_def.hpp>
 #include "template/ServerTemplateHead.h"
 
-namespace hld
+namespace faith
 {
 	class cmail
 	{

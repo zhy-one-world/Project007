@@ -23,7 +23,7 @@ purpose: time limit activity
 #include "time_limit_activity.pb.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	time_limit_activity_ws_mgr::time_limit_activity_ws_mgr()
 	{
@@ -120,11 +120,11 @@ namespace hld
 		{
 			switch (activity_type)
 			{
-			case hld::e_time_limit_activity_type_total_charge:
-			case hld::e_time_limit_activity_type_cross_total_charge:
+			case faith::e_time_limit_activity_type_total_charge:
+			case faith::e_time_limit_activity_type_cross_total_charge:
 				return GAMECONFIG->MinimumRecharge;
 				break;
-			case hld::e_time_limit_activity_type_total_cost:
+			case faith::e_time_limit_activity_type_total_cost:
 				return GAMECONFIG->MinimumConsumption;
 				break;
 			default:
@@ -288,79 +288,79 @@ namespace hld
 		std::string mail_context = "";
 		switch (activity_type)
 		{
-		case hld::e_time_limit_activity_type_total_charge:
+		case faith::e_time_limit_activity_type_total_charge:
 		{
 			mail_title = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_total_recharge_title);
 			mail_context = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_total_recharge_context);
 		}
 		break;
-		case hld::e_time_limit_activity_type_cross_total_charge:
+		case faith::e_time_limit_activity_type_cross_total_charge:
 		{
 			mail_title = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_cross_total_recharge_title);
 			mail_context = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_cross_total_recharge_context);
 		}
 		break;
-		case hld::e_time_limit_activity_type_total_cost:
+		case faith::e_time_limit_activity_type_total_cost:
 		{
 			mail_title = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_total_cost_title);
 			mail_context = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_total_cost_context);
 		}
 		break;
-		case hld::e_time_limit_activity_type_gs_up:
+		case faith::e_time_limit_activity_type_gs_up:
 		{
 			mail_title = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_gs_up_title);
 			mail_context = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_gs_up_context);
 		}
 		break;
-		case hld::e_time_limit_activity_type_mount_up:
+		case faith::e_time_limit_activity_type_mount_up:
 		{
 			mail_title = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_mount_up_title);
 			mail_context = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_mount_up_context);
 		}
 		break;
-		case hld::e_time_limit_activity_type_wing_up:
+		case faith::e_time_limit_activity_type_wing_up:
 		{
 			mail_title = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_wing_up_title);
 			mail_context = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_wing_up_context);
 		}
 		break;
-		case hld::e_time_limit_activity_type_equip_up:
+		case faith::e_time_limit_activity_type_equip_up:
 		{
 			mail_title = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_equip_up_title);
 			mail_context = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_equip_up_context);
 		}
 		break;
-		case hld::e_time_limit_activity_type_spirit_up:
+		case faith::e_time_limit_activity_type_spirit_up:
 		{
 			mail_title = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_spirit_up_title);
 			mail_context = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_spirit_up_context);
 		}
 		break;
-		case hld::e_time_limit_activity_type_cross_gs_up:
+		case faith::e_time_limit_activity_type_cross_gs_up:
 		{
 			mail_title = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_cross_gs_up_title);
 			mail_context = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_cross_gs_up_context);
 		}
 		break;
-		case hld::e_time_limit_activity_type_cross_mount_up:
+		case faith::e_time_limit_activity_type_cross_mount_up:
 		{
 			mail_title = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_cross_mount_up_title);
 			mail_context = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_cross_mount_up_context);
 		}
 		break;
-		case hld::e_time_limit_activity_type_cross_wing_up:
+		case faith::e_time_limit_activity_type_cross_wing_up:
 		{
 			mail_title = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_cross_wing_up_title);
 			mail_context = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_cross_wing_up_context);
 		}
 		break;
-		case hld::e_time_limit_activity_type_cross_equip_up:
+		case faith::e_time_limit_activity_type_cross_equip_up:
 		{
 			mail_title = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_cross_equip_up_title);
 			mail_context = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_cross_equip_up_context);
 		}
 		break;
-		case hld::e_time_limit_activity_type_cross_spirit_up:
+		case faith::e_time_limit_activity_type_cross_spirit_up:
 		{
 			mail_title = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_cross_spirit_up_title);
 			mail_context = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_time_limit_activity_rank_reward_cross_spirit_up_context);
@@ -549,7 +549,7 @@ namespace hld
 
 	void time_limit_activity_ws_mgr::send_activity_common_data(std::vector<int32> data_type_list, std::vector<int32> data_num_list)
 	{
-		hld::time_limit_activity_proto_all_common_data_message msg;
+		faith::time_limit_activity_proto_all_common_data_message msg;
 		int32 list_size = data_type_list.size();
 		for (int32 i = 0; i < list_size; i++)
 		{
@@ -557,7 +557,7 @@ namespace hld
 			{
 				break;
 			}
-			hld::time_limit_activity_proto_common_data_message *common_data = msg.add_data_list();
+			faith::time_limit_activity_proto_common_data_message *common_data = msg.add_data_list();
 			common_data->set_data_id(data_type_list[i]);
 			common_data->set_data_num(data_num_list[i]);
 		}
@@ -619,7 +619,7 @@ namespace hld
 			}
 			else
 			{
-				hld::ws2cs_proto::check_time_limit_activity_common_data pro_msg;
+				faith::ws2cs_proto::check_time_limit_activity_common_data pro_msg;
 				resp.to_proto(pro_msg);
 				cur_session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_check_time_limit_activity_common_data);
 			}
@@ -673,7 +673,7 @@ namespace hld
 		{
 			return;
 		}
-		hld::time_limit_activity_proto_all_common_data_message msg;
+		faith::time_limit_activity_proto_all_common_data_message msg;
 
 		for (int32 idx = 0 ; idx < data_type_list.size();idx++)
 		{
@@ -681,7 +681,7 @@ namespace hld
 			{
 				break;
 			}
-			hld::time_limit_activity_proto_common_data_message *common_data = msg.add_data_list();
+			faith::time_limit_activity_proto_common_data_message *common_data = msg.add_data_list();
 			common_data->set_data_id(data_type_list[idx]);
 			common_data->set_data_num(data_num_list[idx]);
 		}

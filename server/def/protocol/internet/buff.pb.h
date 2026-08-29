@@ -27,7 +27,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_buff_2eproto();
@@ -138,24 +138,24 @@ class buff_proto_buff_save_load : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.buff_proto.buff_info data_ary = 1;
+  // repeated .faith.buff_proto.buff_info data_ary = 1;
   inline int data_ary_size() const;
   inline void clear_data_ary();
   static const int kDataAryFieldNumber = 1;
-  inline const ::hld::buff_proto_buff_info& data_ary(int index) const;
-  inline ::hld::buff_proto_buff_info* mutable_data_ary(int index);
-  inline ::hld::buff_proto_buff_info* add_data_ary();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::buff_proto_buff_info >&
+  inline const ::faith::buff_proto_buff_info& data_ary(int index) const;
+  inline ::faith::buff_proto_buff_info* mutable_data_ary(int index);
+  inline ::faith::buff_proto_buff_info* add_data_ary();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::buff_proto_buff_info >&
       data_ary() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::buff_proto_buff_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::buff_proto_buff_info >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.buff_proto.buff_save_load)
+  // @@protoc_insertion_point(class_scope:faith.buff_proto.buff_save_load)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::buff_proto_buff_info > data_ary_;
+  ::google::protobuf::RepeatedPtrField< ::faith::buff_proto_buff_info > data_ary_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -237,7 +237,7 @@ class buff_proto_buff_operation : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 buff_guid() const;
   inline void set_buff_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.buff_proto.buff_operation)
+  // @@protoc_insertion_point(class_scope:faith.buff_proto.buff_operation)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -378,7 +378,7 @@ class buff_proto_buff_operation_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 effect_index() const;
   inline void set_effect_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.buff_proto.buff_operation_end)
+  // @@protoc_insertion_point(class_scope:faith.buff_proto.buff_operation_end)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -540,7 +540,7 @@ class buff_proto_buff_damage : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 end_hp() const;
   inline void set_end_hp(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.buff_proto.buff_damage)
+  // @@protoc_insertion_point(class_scope:faith.buff_proto.buff_damage)
  private:
   inline void set_has_damage_type();
   inline void clear_has_damage_type();
@@ -665,7 +665,7 @@ class buff_proto_buff_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.buff_proto.buff_info)
+  // @@protoc_insertion_point(class_scope:faith.buff_proto.buff_info)
  private:
   inline void set_has_buff_guid();
   inline void clear_has_buff_guid();
@@ -751,19 +751,19 @@ class buff_proto_buff_info_all : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 target() const;
   inline void set_target(::google::protobuf::int64 value);
 
-  // repeated .hld.buff_proto.buff_info buff_info = 2;
+  // repeated .faith.buff_proto.buff_info buff_info = 2;
   inline int buff_info_size() const;
   inline void clear_buff_info();
   static const int kBuffInfoFieldNumber = 2;
-  inline const ::hld::buff_proto_buff_info& buff_info(int index) const;
-  inline ::hld::buff_proto_buff_info* mutable_buff_info(int index);
-  inline ::hld::buff_proto_buff_info* add_buff_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::buff_proto_buff_info >&
+  inline const ::faith::buff_proto_buff_info& buff_info(int index) const;
+  inline ::faith::buff_proto_buff_info* mutable_buff_info(int index);
+  inline ::faith::buff_proto_buff_info* add_buff_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::buff_proto_buff_info >&
       buff_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::buff_proto_buff_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::buff_proto_buff_info >*
       mutable_buff_info();
 
-  // @@protoc_insertion_point(class_scope:hld.buff_proto.buff_info_all)
+  // @@protoc_insertion_point(class_scope:faith.buff_proto.buff_info_all)
  private:
   inline void set_has_target();
   inline void clear_has_target();
@@ -771,7 +771,7 @@ class buff_proto_buff_info_all : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 target_;
-  ::google::protobuf::RepeatedPtrField< ::hld::buff_proto_buff_info > buff_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::buff_proto_buff_info > buff_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -846,7 +846,7 @@ class buff_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.buff_proto)
+  // @@protoc_insertion_point(class_scope:faith.buff_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -869,27 +869,27 @@ class buff_proto : public ::google::protobuf::Message {
 
 // buff_proto_buff_save_load
 
-// repeated .hld.buff_proto.buff_info data_ary = 1;
+// repeated .faith.buff_proto.buff_info data_ary = 1;
 inline int buff_proto_buff_save_load::data_ary_size() const {
   return data_ary_.size();
 }
 inline void buff_proto_buff_save_load::clear_data_ary() {
   data_ary_.Clear();
 }
-inline const ::hld::buff_proto_buff_info& buff_proto_buff_save_load::data_ary(int index) const {
+inline const ::faith::buff_proto_buff_info& buff_proto_buff_save_load::data_ary(int index) const {
   return data_ary_.Get(index);
 }
-inline ::hld::buff_proto_buff_info* buff_proto_buff_save_load::mutable_data_ary(int index) {
+inline ::faith::buff_proto_buff_info* buff_proto_buff_save_load::mutable_data_ary(int index) {
   return data_ary_.Mutable(index);
 }
-inline ::hld::buff_proto_buff_info* buff_proto_buff_save_load::add_data_ary() {
+inline ::faith::buff_proto_buff_info* buff_proto_buff_save_load::add_data_ary() {
   return data_ary_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::buff_proto_buff_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::buff_proto_buff_info >&
 buff_proto_buff_save_load::data_ary() const {
   return data_ary_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::buff_proto_buff_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::buff_proto_buff_info >*
 buff_proto_buff_save_load::mutable_data_ary() {
   return &data_ary_;
 }
@@ -1445,27 +1445,27 @@ inline void buff_proto_buff_info_all::set_target(::google::protobuf::int64 value
   target_ = value;
 }
 
-// repeated .hld.buff_proto.buff_info buff_info = 2;
+// repeated .faith.buff_proto.buff_info buff_info = 2;
 inline int buff_proto_buff_info_all::buff_info_size() const {
   return buff_info_.size();
 }
 inline void buff_proto_buff_info_all::clear_buff_info() {
   buff_info_.Clear();
 }
-inline const ::hld::buff_proto_buff_info& buff_proto_buff_info_all::buff_info(int index) const {
+inline const ::faith::buff_proto_buff_info& buff_proto_buff_info_all::buff_info(int index) const {
   return buff_info_.Get(index);
 }
-inline ::hld::buff_proto_buff_info* buff_proto_buff_info_all::mutable_buff_info(int index) {
+inline ::faith::buff_proto_buff_info* buff_proto_buff_info_all::mutable_buff_info(int index) {
   return buff_info_.Mutable(index);
 }
-inline ::hld::buff_proto_buff_info* buff_proto_buff_info_all::add_buff_info() {
+inline ::faith::buff_proto_buff_info* buff_proto_buff_info_all::add_buff_info() {
   return buff_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::buff_proto_buff_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::buff_proto_buff_info >&
 buff_proto_buff_info_all::buff_info() const {
   return buff_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::buff_proto_buff_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::buff_proto_buff_info >*
 buff_proto_buff_info_all::mutable_buff_info() {
   return &buff_info_;
 }
@@ -1477,19 +1477,19 @@ buff_proto_buff_info_all::mutable_buff_info() {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {
 namespace protobuf {
 
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::hld::e_buff_operation_type>() {
-  return ::hld::e_buff_operation_type_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::faith::e_buff_operation_type>() {
+  return ::faith::e_buff_operation_type_descriptor();
 }
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::hld::e_buff_damage_type>() {
-  return ::hld::e_buff_damage_type_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::faith::e_buff_damage_type>() {
+  return ::faith::e_buff_damage_type_descriptor();
 }
 
 }  // namespace google

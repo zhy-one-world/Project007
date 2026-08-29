@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -431,7 +431,7 @@ void protobuf_AddDesc_db_2eproto() {
     "_guid\030\001 \001(\003\022\r\n\005level\030\002 \001(\005\022\017\n\007head_id\030\003 "
     "\001(\005\022\022\n\nclass_type\030\004 \001(\005\022\024\n\014invited_name\030"
     "\005 \001(\t\032p\n\034role_proc_recycle_invited_db\022\021\n"
-    "\trow_count\030\001 \001(\005\022=\n\010row_data\030\002 \003(\0132+.hld"
+    "\trow_count\030\001 \001(\005\022=\n\010row_data\030\002 \003(\0132+.faith"
     ".db_proto.role_proc_recycle_invited_row\032"
     "!\n\rrole_event_db\022\020\n\010data_ary\030\001 \003(\003\032F\n\014it"
     "em_info_db\022\021\n\titem_guid\030\001 \001(\003\022\020\n\010data_ar"
@@ -448,24 +448,24 @@ void protobuf_AddDesc_db_2eproto() {
     "ingle_money\030\021 \001(\003\022\025\n\rcur_bid_money\030\022 \001(\003"
     "\022\017\n\007is_show\030\023 \001(\005\022\020\n\010add_time\030\024 \001(\005\022\024\n\014i"
     "s_sky_order\030\025 \001(\005\022\021\n\tshow_guid\030\026 \001(\003\022-\n\t"
-    "item_info\030\027 \001(\0132\032.hld.db_proto.item_info"
+    "item_info\030\027 \001(\0132\032.faith.db_proto.item_info"
     "_db\032L\n\nauction_db\022\021\n\trow_count\030\001 \001(\005\022+\n\010"
-    "row_data\030\002 \003(\0132\031.hld.db_proto.auction_ro"
+    "row_data\030\002 \003(\0132\031.faith.db_proto.auction_ro"
     "w\032)\n\026role_first_time_do_row\022\017\n\007do_type\030\001"
     " \001(\005\032b\n\025role_first_time_do_db\022\021\n\trow_cou"
-    "nt\030\001 \001(\005\0226\n\010row_data\030\002 \003(\0132$.hld.db_prot"
+    "nt\030\001 \001(\005\0226\n\010row_data\030\002 \003(\0132$.faith.db_prot"
     "o.role_first_time_do_row\032>\n\023load_role_gu"
     "ide_row\022\030\n\020guide_trigger_id\030\001 \001(\005\022\r\n\005sta"
     "te\030\002 \001(\005\032\\\n\022load_role_guide_db\022\021\n\trow_co"
-    "unt\030\001 \001(\005\0223\n\010row_data\030\002 \003(\0132!.hld.db_pro"
+    "unt\030\001 \001(\005\0223\n\010row_data\030\002 \003(\0132!.faith.db_pro"
     "to.load_role_guide_row\032t\n\rrole_mail_row\022"
     "\021\n\tmail_guid\030\001 \001(\003\022\020\n\010data_ary\030\002 \003(\005\022\025\n\r"
     "text_contents\030\003 \001(\t\022\023\n\013sender_name\030\004 \001(\t"
     "\022\022\n\nmail_title\030\005 \001(\t\032P\n\014role_mail_db\022\021\n\t"
-    "row_count\030\001 \001(\005\022-\n\010row_data\030\002 \003(\0132\033.hld."
+    "row_count\030\001 \001(\005\022-\n\010row_data\030\002 \003(\0132\033.faith."
     "db_proto.role_mail_row\032T\n\021role_mail_item"
     "_db\022\021\n\trow_count\030\001 \001(\005\022,\n\010row_data\030\002 \003(\013"
-    "2\032.hld.db_proto.item_info_db", 1628);
+    "2\032.faith.db_proto.item_info_db", 1628);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "db.proto", &protobuf_RegisterTypes);
   db_proto::default_instance_ = new db_proto();
@@ -1254,7 +1254,7 @@ bool db_proto_role_proc_recycle_invited_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.db_proto.role_proc_recycle_invited_row row_data = 2;
+      // repeated .faith.db_proto.role_proc_recycle_invited_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1292,7 +1292,7 @@ void db_proto_role_proc_recycle_invited_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.db_proto.role_proc_recycle_invited_row row_data = 2;
+  // repeated .faith.db_proto.role_proc_recycle_invited_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -1311,7 +1311,7 @@ void db_proto_role_proc_recycle_invited_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.db_proto.role_proc_recycle_invited_row row_data = 2;
+  // repeated .faith.db_proto.role_proc_recycle_invited_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1337,7 +1337,7 @@ int db_proto_role_proc_recycle_invited_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.db_proto.role_proc_recycle_invited_row row_data = 2;
+  // repeated .faith.db_proto.role_proc_recycle_invited_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -1973,7 +1973,7 @@ db_proto_auction_row::db_proto_auction_row()
 }
 
 void db_proto_auction_row::InitAsDefaultInstance() {
-  item_info_ = const_cast< ::hld::db_proto_item_info_db*>(&::hld::db_proto_item_info_db::default_instance());
+  item_info_ = const_cast< ::faith::db_proto_item_info_db*>(&::faith::db_proto_item_info_db::default_instance());
 }
 
 db_proto_auction_row::db_proto_auction_row(const db_proto_auction_row& from)
@@ -2091,7 +2091,7 @@ void db_proto_auction_row::Clear() {
     is_sky_order_ = 0;
     show_guid_ = GOOGLE_LONGLONG(0);
     if (has_item_info()) {
-      if (item_info_ != NULL) item_info_->::hld::db_proto_item_info_db::Clear();
+      if (item_info_ != NULL) item_info_->::faith::db_proto_item_info_db::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -2458,7 +2458,7 @@ bool db_proto_auction_row::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.db_proto.item_info_db item_info = 23;
+      // optional .faith.db_proto.item_info_db item_info = 23;
       case 23: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2612,7 +2612,7 @@ void db_proto_auction_row::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(22, this->show_guid(), output);
   }
 
-  // optional .hld.db_proto.item_info_db item_info = 23;
+  // optional .faith.db_proto.item_info_db item_info = 23;
   if (has_item_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       23, this->item_info(), output);
@@ -2751,7 +2751,7 @@ void db_proto_auction_row::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(22, this->show_guid(), target);
   }
 
-  // optional .hld.db_proto.item_info_db item_info = 23;
+  // optional .faith.db_proto.item_info_db item_info = 23;
   if (has_item_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -2927,7 +2927,7 @@ int db_proto_auction_row::ByteSize() const {
           this->show_guid());
     }
 
-    // optional .hld.db_proto.item_info_db item_info = 23;
+    // optional .faith.db_proto.item_info_db item_info = 23;
     if (has_item_info()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -3032,7 +3032,7 @@ void db_proto_auction_row::MergeFrom(const db_proto_auction_row& from) {
       set_show_guid(from.show_guid());
     }
     if (from.has_item_info()) {
-      mutable_item_info()->::hld::db_proto_item_info_db::MergeFrom(from.item_info());
+      mutable_item_info()->::faith::db_proto_item_info_db::MergeFrom(from.item_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -3182,7 +3182,7 @@ bool db_proto_auction_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.db_proto.auction_row row_data = 2;
+      // repeated .faith.db_proto.auction_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -3220,7 +3220,7 @@ void db_proto_auction_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.db_proto.auction_row row_data = 2;
+  // repeated .faith.db_proto.auction_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -3239,7 +3239,7 @@ void db_proto_auction_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.db_proto.auction_row row_data = 2;
+  // repeated .faith.db_proto.auction_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -3265,7 +3265,7 @@ int db_proto_auction_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.db_proto.auction_row row_data = 2;
+  // repeated .faith.db_proto.auction_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -3638,7 +3638,7 @@ bool db_proto_role_first_time_do_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.db_proto.role_first_time_do_row row_data = 2;
+      // repeated .faith.db_proto.role_first_time_do_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -3676,7 +3676,7 @@ void db_proto_role_first_time_do_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.db_proto.role_first_time_do_row row_data = 2;
+  // repeated .faith.db_proto.role_first_time_do_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -3695,7 +3695,7 @@ void db_proto_role_first_time_do_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.db_proto.role_first_time_do_row row_data = 2;
+  // repeated .faith.db_proto.role_first_time_do_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -3721,7 +3721,7 @@ int db_proto_role_first_time_do_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.db_proto.role_first_time_do_row row_data = 2;
+  // repeated .faith.db_proto.role_first_time_do_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -4134,7 +4134,7 @@ bool db_proto_load_role_guide_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.db_proto.load_role_guide_row row_data = 2;
+      // repeated .faith.db_proto.load_role_guide_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -4172,7 +4172,7 @@ void db_proto_load_role_guide_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.db_proto.load_role_guide_row row_data = 2;
+  // repeated .faith.db_proto.load_role_guide_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -4191,7 +4191,7 @@ void db_proto_load_role_guide_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.db_proto.load_role_guide_row row_data = 2;
+  // repeated .faith.db_proto.load_role_guide_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -4217,7 +4217,7 @@ int db_proto_load_role_guide_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.db_proto.load_role_guide_row row_data = 2;
+  // repeated .faith.db_proto.load_role_guide_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -4809,7 +4809,7 @@ bool db_proto_role_mail_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.db_proto.role_mail_row row_data = 2;
+      // repeated .faith.db_proto.role_mail_row row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -4847,7 +4847,7 @@ void db_proto_role_mail_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.db_proto.role_mail_row row_data = 2;
+  // repeated .faith.db_proto.role_mail_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -4866,7 +4866,7 @@ void db_proto_role_mail_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.db_proto.role_mail_row row_data = 2;
+  // repeated .faith.db_proto.role_mail_row row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -4892,7 +4892,7 @@ int db_proto_role_mail_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.db_proto.role_mail_row row_data = 2;
+  // repeated .faith.db_proto.role_mail_row row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -5057,7 +5057,7 @@ bool db_proto_role_mail_item_db::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.db_proto.item_info_db row_data = 2;
+      // repeated .faith.db_proto.item_info_db row_data = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -5095,7 +5095,7 @@ void db_proto_role_mail_item_db::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->row_count(), output);
   }
 
-  // repeated .hld.db_proto.item_info_db row_data = 2;
+  // repeated .faith.db_proto.item_info_db row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->row_data(i), output);
@@ -5114,7 +5114,7 @@ void db_proto_role_mail_item_db::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->row_count(), target);
   }
 
-  // repeated .hld.db_proto.item_info_db row_data = 2;
+  // repeated .faith.db_proto.item_info_db row_data = 2;
   for (int i = 0; i < this->row_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -5140,7 +5140,7 @@ int db_proto_role_mail_item_db::ByteSize() const {
     }
 
   }
-  // repeated .hld.db_proto.item_info_db row_data = 2;
+  // repeated .faith.db_proto.item_info_db row_data = 2;
   total_size += 1 * this->row_data_size();
   for (int i = 0; i < this->row_data_size(); i++) {
     total_size +=
@@ -5376,6 +5376,6 @@ void db_proto::Swap(db_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

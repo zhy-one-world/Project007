@@ -18,7 +18,7 @@
 #include "server_def.hpp"
 #include <template/ServerTemplateHead.h>
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
@@ -247,7 +247,7 @@ namespace hld
 			buff_guid.clear_data();
 			memset(data_ary, 0, sizeof(data_ary));
 		}
-		bool to_proto(hld::st_proto::st_buff_info * st_buff_ptr)
+		bool to_proto(faith::st_proto::st_buff_info * st_buff_ptr)
 		{
 			if (st_buff_ptr == nullptr)
 			{
@@ -261,7 +261,7 @@ namespace hld
 			}
 			return true;
 		}
-		void from_proto(const hld::st_proto::st_buff_info & st_buff_ref)
+		void from_proto(const faith::st_proto::st_buff_info & st_buff_ref)
 		{
 			buff_guid.server_64 = st_buff_ref.buff_guid();
 			sender_guid.server_64 = st_buff_ref.sender_guid();

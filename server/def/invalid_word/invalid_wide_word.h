@@ -6,7 +6,7 @@
 #include "CInvalidWord.hpp"
 #include "CCharLib.hpp"
 
-namespace hld
+namespace faith
 {
 	/**
 	 *	ÊÇ·ñ´æÔÚÆÁ±Î×Ö·û´®

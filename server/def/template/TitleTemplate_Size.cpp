@@ -1,6 +1,6 @@
 #include "TitleTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void TitleTemplateSize()
     {

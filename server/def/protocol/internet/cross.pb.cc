@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -452,7 +452,7 @@ void protobuf_AddDesc_cross_2eproto() {
   already_here = true;
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  ::hld::protobuf_AddDesc_login_2eproto();
+  ::faith::protobuf_AddDesc_login_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\013cross.proto\022\003hld\032\013login.proto\"\214\t\n\013cros"
     "s_proto\032g\n\016cross_transfer\022\021\n\tserver_id\030\001"
@@ -461,12 +461,12 @@ void protobuf_AddDesc_cross_2eproto() {
     "ss_transfer_to_server\022\r\n\005token\030\001 \003(\r\022\017\n\007"
     "account\030\002 \001(\t\022\021\n\trole_guid\030\003 \001(\004\022\020\n\010map_"
     "guid\030\004 \001(\004\022\021\n\twar_index\030\005 \001(\r\022\021\n\tserver_"
-    "id\030\006 \001(\005\022*\n\nlogin_info\030\007 \001(\0132\026.hld.login"
+    "id\030\006 \001(\005\022*\n\nlogin_info\030\007 \001(\0132\026.faith.login"
     "_proto.login\032K\n\017cross_role_info\022\021\n\trole_"
     "guid\030\001 \001(\004\022\021\n\trole_name\030\002 \001(\t\022\022\n\ndata_ar"
     "ray\030\003 \003(\005\032 \n\ncross_info\022\022\n\ncross_type\030\001 "
     "\001(\005\032_\n\016cross_info_end\022\024\n\014cross_result\030\001 "
-    "\001(\005\0227\n\rrole_info_ary\030\002 \003(\0132 .hld.cross_p"
+    "\001(\005\0227\n\rrole_info_ary\030\002 \003(\0132 .faith.cross_p"
     "roto.cross_role_info\032-\n\007sign_up\022\021\n\tsign_"
     "type\030\001 \001(\005\022\017\n\007is_join\030\002 \001(\010\0322\n\013sign_up_e"
     "nd\022\021\n\tsign_type\030\001 \001(\005\022\020\n\010sign_end\030\002 \001(\005\032"
@@ -482,7 +482,7 @@ void protobuf_AddDesc_cross_2eproto() {
     "name_3\030\003 \001(\t\022\024\n\014ladder_score\030\004 \001(\005\022\023\n\013cr"
     "oss_honor\030\005 \001(\005\022\022\n\nwin_result\030\006 \001(\005\032K\n\021r"
     "ole_pk_log_array\0226\n\014pk_log_array\030\001 \003(\0132 "
-    ".hld.cross_proto.role_pk_log_end\032,\n\023boss"
+    ".faith.cross_proto.role_pk_log_end\032,\n\023boss"
     "island_info_all\022\025\n\rcur_server_id\030\001 \001(\005", 1198);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "cross.proto", &protobuf_RegisterTypes);
@@ -958,7 +958,7 @@ cross_proto_cross_transfer_to_server::cross_proto_cross_transfer_to_server()
 }
 
 void cross_proto_cross_transfer_to_server::InitAsDefaultInstance() {
-  login_info_ = const_cast< ::hld::login_proto_login*>(&::hld::login_proto_login::default_instance());
+  login_info_ = const_cast< ::faith::login_proto_login*>(&::faith::login_proto_login::default_instance());
 }
 
 cross_proto_cross_transfer_to_server::cross_proto_cross_transfer_to_server(const cross_proto_cross_transfer_to_server& from)
@@ -1024,7 +1024,7 @@ void cross_proto_cross_transfer_to_server::Clear() {
     war_index_ = 0u;
     server_id_ = 0;
     if (has_login_info()) {
-      if (login_info_ != NULL) login_info_->::hld::login_proto_login::Clear();
+      if (login_info_ != NULL) login_info_->::faith::login_proto_login::Clear();
     }
   }
   token_.Clear();
@@ -1141,7 +1141,7 @@ bool cross_proto_cross_transfer_to_server::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.login_proto.login login_info = 7;
+      // optional .faith.login_proto.login login_info = 7;
       case 7: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1208,7 +1208,7 @@ void cross_proto_cross_transfer_to_server::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->server_id(), output);
   }
 
-  // optional .hld.login_proto.login login_info = 7;
+  // optional .faith.login_proto.login login_info = 7;
   if (has_login_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       7, this->login_info(), output);
@@ -1258,7 +1258,7 @@ void cross_proto_cross_transfer_to_server::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->server_id(), target);
   }
 
-  // optional .hld.login_proto.login login_info = 7;
+  // optional .faith.login_proto.login login_info = 7;
   if (has_login_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1311,7 +1311,7 @@ int cross_proto_cross_transfer_to_server::ByteSize() const {
           this->server_id());
     }
 
-    // optional .hld.login_proto.login login_info = 7;
+    // optional .faith.login_proto.login login_info = 7;
     if (has_login_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -1372,7 +1372,7 @@ void cross_proto_cross_transfer_to_server::MergeFrom(const cross_proto_cross_tra
       set_server_id(from.server_id());
     }
     if (from.has_login_info()) {
-      mutable_login_info()->::hld::login_proto_login::MergeFrom(from.login_info());
+      mutable_login_info()->::faith::login_proto_login::MergeFrom(from.login_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -2027,7 +2027,7 @@ bool cross_proto_cross_info_end::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.cross_proto.cross_role_info role_info_ary = 2;
+      // repeated .faith.cross_proto.cross_role_info role_info_ary = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -2065,7 +2065,7 @@ void cross_proto_cross_info_end::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->cross_result(), output);
   }
 
-  // repeated .hld.cross_proto.cross_role_info role_info_ary = 2;
+  // repeated .faith.cross_proto.cross_role_info role_info_ary = 2;
   for (int i = 0; i < this->role_info_ary_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->role_info_ary(i), output);
@@ -2084,7 +2084,7 @@ void cross_proto_cross_info_end::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->cross_result(), target);
   }
 
-  // repeated .hld.cross_proto.cross_role_info role_info_ary = 2;
+  // repeated .faith.cross_proto.cross_role_info role_info_ary = 2;
   for (int i = 0; i < this->role_info_ary_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -2110,7 +2110,7 @@ int cross_proto_cross_info_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.cross_proto.cross_role_info role_info_ary = 2;
+  // repeated .faith.cross_proto.cross_role_info role_info_ary = 2;
   total_size += 1 * this->role_info_ary_size();
   for (int i = 0; i < this->role_info_ary_size(); i++) {
     total_size +=
@@ -4602,7 +4602,7 @@ bool cross_proto_role_pk_log_array::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.cross_proto.role_pk_log_end pk_log_array = 1;
+      // repeated .faith.cross_proto.role_pk_log_end pk_log_array = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -4635,7 +4635,7 @@ bool cross_proto_role_pk_log_array::MergePartialFromCodedStream(
 
 void cross_proto_role_pk_log_array::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.cross_proto.role_pk_log_end pk_log_array = 1;
+  // repeated .faith.cross_proto.role_pk_log_end pk_log_array = 1;
   for (int i = 0; i < this->pk_log_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->pk_log_array(i), output);
@@ -4649,7 +4649,7 @@ void cross_proto_role_pk_log_array::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* cross_proto_role_pk_log_array::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.cross_proto.role_pk_log_end pk_log_array = 1;
+  // repeated .faith.cross_proto.role_pk_log_end pk_log_array = 1;
   for (int i = 0; i < this->pk_log_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -4666,7 +4666,7 @@ void cross_proto_role_pk_log_array::SerializeWithCachedSizes(
 int cross_proto_role_pk_log_array::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.cross_proto.role_pk_log_end pk_log_array = 1;
+  // repeated .faith.cross_proto.role_pk_log_end pk_log_array = 1;
   total_size += 1 * this->pk_log_array_size();
   for (int i = 0; i < this->pk_log_array_size(); i++) {
     total_size +=
@@ -5104,6 +5104,6 @@ void cross_proto::Swap(cross_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

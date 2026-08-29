@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_legion_2eproto();
@@ -331,7 +331,7 @@ class legion_proto_member_info : public ::google::protobuf::Message {
   inline ::std::string* release_week_contribution_value();
   inline void set_allocated_week_contribution_value(::std::string* week_contribution_value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.member_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.member_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -422,24 +422,24 @@ class legion_proto_members_info_list : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.legion_proto.member_info mems_info_arr = 1;
+  // repeated .faith.legion_proto.member_info mems_info_arr = 1;
   inline int mems_info_arr_size() const;
   inline void clear_mems_info_arr();
   static const int kMemsInfoArrFieldNumber = 1;
-  inline const ::hld::legion_proto_member_info& mems_info_arr(int index) const;
-  inline ::hld::legion_proto_member_info* mutable_mems_info_arr(int index);
-  inline ::hld::legion_proto_member_info* add_mems_info_arr();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_member_info >&
+  inline const ::faith::legion_proto_member_info& mems_info_arr(int index) const;
+  inline ::faith::legion_proto_member_info* mutable_mems_info_arr(int index);
+  inline ::faith::legion_proto_member_info* add_mems_info_arr();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_member_info >&
       mems_info_arr() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_member_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_member_info >*
       mutable_mems_info_arr();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.members_info_list)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.members_info_list)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_member_info > mems_info_arr_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_member_info > mems_info_arr_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -569,16 +569,16 @@ class legion_proto_legion_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 member_num() const;
   inline void set_member_num(::google::protobuf::int32 value);
 
-  // repeated .hld.legion_proto.member_info member_list = 7;
+  // repeated .faith.legion_proto.member_info member_list = 7;
   inline int member_list_size() const;
   inline void clear_member_list();
   static const int kMemberListFieldNumber = 7;
-  inline const ::hld::legion_proto_member_info& member_list(int index) const;
-  inline ::hld::legion_proto_member_info* mutable_member_list(int index);
-  inline ::hld::legion_proto_member_info* add_member_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_member_info >&
+  inline const ::faith::legion_proto_member_info& member_list(int index) const;
+  inline ::faith::legion_proto_member_info* mutable_member_list(int index);
+  inline ::faith::legion_proto_member_info* add_member_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_member_info >&
       member_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_member_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_member_info >*
       mutable_member_list();
 
   // optional int32 next_recruit_stamp = 8;
@@ -588,7 +588,7 @@ class legion_proto_legion_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 next_recruit_stamp() const;
   inline void set_next_recruit_stamp(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_info)
  private:
   inline void set_has_legion_guid();
   inline void clear_has_legion_guid();
@@ -610,7 +610,7 @@ class legion_proto_legion_info : public ::google::protobuf::Message {
   ::std::string* announcement_;
   ::std::string* legion_gs_value_;
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > legion_data_;
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_member_info > member_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_member_info > member_list_;
   ::google::protobuf::int32 member_num_;
   ::google::protobuf::int32 next_recruit_stamp_;
 
@@ -751,7 +751,7 @@ class legion_proto_legion_brief_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 legion_level() const;
   inline void set_legion_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_brief_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_brief_info)
  private:
   inline void set_has_legion_guid();
   inline void clear_has_legion_guid();
@@ -880,7 +880,7 @@ class legion_proto_create_legion : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 auto_accept_new_member() const;
   inline void set_auto_accept_new_member(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.create_legion)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.create_legion)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -964,23 +964,23 @@ class legion_proto_create_legion_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .hld.legion_proto.legion_info legion_info_data = 1;
+  // optional .faith.legion_proto.legion_info legion_info_data = 1;
   inline bool has_legion_info_data() const;
   inline void clear_legion_info_data();
   static const int kLegionInfoDataFieldNumber = 1;
-  inline const ::hld::legion_proto_legion_info& legion_info_data() const;
-  inline ::hld::legion_proto_legion_info* mutable_legion_info_data();
-  inline ::hld::legion_proto_legion_info* release_legion_info_data();
-  inline void set_allocated_legion_info_data(::hld::legion_proto_legion_info* legion_info_data);
+  inline const ::faith::legion_proto_legion_info& legion_info_data() const;
+  inline ::faith::legion_proto_legion_info* mutable_legion_info_data();
+  inline ::faith::legion_proto_legion_info* release_legion_info_data();
+  inline void set_allocated_legion_info_data(::faith::legion_proto_legion_info* legion_info_data);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.create_legion_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.create_legion_end)
  private:
   inline void set_has_legion_info_data();
   inline void clear_has_legion_info_data();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::legion_proto_legion_info* legion_info_data_;
+  ::faith::legion_proto_legion_info* legion_info_data_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -1060,7 +1060,7 @@ class legion_proto_update_legion_info_all : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_legion_info_data_arr();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.update_legion_info_all)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.update_legion_info_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1147,7 +1147,7 @@ class legion_proto_update_legion_info_one : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 legion_info_value() const;
   inline void set_legion_info_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.update_legion_info_one)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.update_legion_info_one)
  private:
   inline void set_has_legion_info_index();
   inline void clear_has_legion_info_index();
@@ -1237,7 +1237,7 @@ class legion_proto_update_legion_gs_value : public ::google::protobuf::Message {
   inline ::std::string* release_gs_value();
   inline void set_allocated_gs_value(::std::string* gs_value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.update_legion_gs_value)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.update_legion_gs_value)
  private:
   inline void set_has_gs_value();
   inline void clear_has_gs_value();
@@ -1367,7 +1367,7 @@ class legion_proto_update_legion_member_info_all : public ::google::protobuf::Me
   inline ::std::string* release_week_contribution_value();
   inline void set_allocated_week_contribution_value(::std::string* week_contribution_value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.update_legion_member_info_all)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.update_legion_member_info_all)
  private:
   inline void set_has_member_guid();
   inline void clear_has_member_guid();
@@ -1473,7 +1473,7 @@ class legion_proto_update_legion_member_info_one : public ::google::protobuf::Me
   inline ::google::protobuf::int32 info_value() const;
   inline void set_info_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.update_legion_member_info_one)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.update_legion_member_info_one)
  private:
   inline void set_has_member_guid();
   inline void clear_has_member_guid();
@@ -1573,7 +1573,7 @@ class legion_proto_update_legion_member_gs_value : public ::google::protobuf::Me
   inline ::std::string* release_gs_value();
   inline void set_allocated_gs_value(::std::string* gs_value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.update_legion_member_gs_value)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.update_legion_member_gs_value)
  private:
   inline void set_has_member_guid();
   inline void clear_has_member_guid();
@@ -1682,7 +1682,7 @@ class legion_proto_update_legion_member_contribution_value : public ::google::pr
   inline ::std::string* release_week_contribution_value();
   inline void set_allocated_week_contribution_value(::std::string* week_contribution_value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.update_legion_member_contribution_value)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.update_legion_member_contribution_value)
  private:
   inline void set_has_member_guid();
   inline void clear_has_member_guid();
@@ -1770,7 +1770,7 @@ class legion_proto_dissolve_legion : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 role_guid() const;
   inline void set_role_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.dissolve_legion)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.dissolve_legion)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -1845,7 +1845,7 @@ class legion_proto_dissolve_legion_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.dissolve_legion_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.dissolve_legion_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1924,7 +1924,7 @@ class legion_proto_leave_legion : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 role_guid() const;
   inline void set_role_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.leave_legion)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.leave_legion)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -1999,7 +1999,7 @@ class legion_proto_leave_legion_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.leave_legion_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.leave_legion_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2099,7 +2099,7 @@ class legion_proto_get_legion_list : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 only_get_auto_accept_new_member() const;
   inline void set_only_get_auto_accept_new_member(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_legion_list)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_legion_list)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -2190,26 +2190,26 @@ class legion_proto_get_legion_list_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 legion_list_len() const;
   inline void set_legion_list_len(::google::protobuf::int32 value);
 
-  // repeated .hld.legion_proto.legion_brief_info legion_list = 2;
+  // repeated .faith.legion_proto.legion_brief_info legion_list = 2;
   inline int legion_list_size() const;
   inline void clear_legion_list();
   static const int kLegionListFieldNumber = 2;
-  inline const ::hld::legion_proto_legion_brief_info& legion_list(int index) const;
-  inline ::hld::legion_proto_legion_brief_info* mutable_legion_list(int index);
-  inline ::hld::legion_proto_legion_brief_info* add_legion_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_brief_info >&
+  inline const ::faith::legion_proto_legion_brief_info& legion_list(int index) const;
+  inline ::faith::legion_proto_legion_brief_info* mutable_legion_list(int index);
+  inline ::faith::legion_proto_legion_brief_info* add_legion_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_brief_info >&
       legion_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_brief_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_brief_info >*
       mutable_legion_list();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_legion_list_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_legion_list_end)
  private:
   inline void set_has_legion_list_len();
   inline void clear_has_legion_list_len();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_brief_info > legion_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_brief_info > legion_list_;
   ::google::protobuf::int32 legion_list_len_;
 
   mutable int _cached_size_;
@@ -2292,7 +2292,7 @@ class legion_proto_apply_to_join_legion : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 legion_guid() const;
   inline void set_legion_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.apply_to_join_legion)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.apply_to_join_legion)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -2377,7 +2377,7 @@ class legion_proto_apply_to_join_legion_end : public ::google::protobuf::Message
   inline ::google::protobuf::int32 apply_stage() const;
   inline void set_apply_stage(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.apply_to_join_legion_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.apply_to_join_legion_end)
  private:
   inline void set_has_apply_stage();
   inline void clear_has_apply_stage();
@@ -2485,7 +2485,7 @@ class legion_proto_invite_player : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 invite_guid() const;
   inline void set_invite_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.invite_player)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.invite_player)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -2595,16 +2595,16 @@ class legion_proto_invite_player_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 invite_role_level() const;
   inline void set_invite_role_level(::google::protobuf::int32 value);
 
-  // optional .hld.legion_proto.legion_brief_info invite_legion_info = 4;
+  // optional .faith.legion_proto.legion_brief_info invite_legion_info = 4;
   inline bool has_invite_legion_info() const;
   inline void clear_invite_legion_info();
   static const int kInviteLegionInfoFieldNumber = 4;
-  inline const ::hld::legion_proto_legion_brief_info& invite_legion_info() const;
-  inline ::hld::legion_proto_legion_brief_info* mutable_invite_legion_info();
-  inline ::hld::legion_proto_legion_brief_info* release_invite_legion_info();
-  inline void set_allocated_invite_legion_info(::hld::legion_proto_legion_brief_info* invite_legion_info);
+  inline const ::faith::legion_proto_legion_brief_info& invite_legion_info() const;
+  inline ::faith::legion_proto_legion_brief_info* mutable_invite_legion_info();
+  inline ::faith::legion_proto_legion_brief_info* release_invite_legion_info();
+  inline void set_allocated_invite_legion_info(::faith::legion_proto_legion_brief_info* invite_legion_info);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.invite_player_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.invite_player_end)
  private:
   inline void set_has_invite_role_guid();
   inline void clear_has_invite_role_guid();
@@ -2619,7 +2619,7 @@ class legion_proto_invite_player_end : public ::google::protobuf::Message {
 
   ::google::protobuf::uint64 invite_role_guid_;
   ::std::string* invite_role_name_;
-  ::hld::legion_proto_legion_brief_info* invite_legion_info_;
+  ::faith::legion_proto_legion_brief_info* invite_legion_info_;
   ::google::protobuf::int32 invite_role_level_;
 
   mutable int _cached_size_;
@@ -2688,7 +2688,7 @@ class legion_proto_invite_player_succeed : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.invite_player_succeed)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.invite_player_succeed)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2803,7 +2803,7 @@ class legion_proto_applicant_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_applicant_data();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.applicant_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.applicant_info)
  private:
   inline void set_has_applicant_guid();
   inline void clear_has_applicant_guid();
@@ -2892,7 +2892,7 @@ class legion_proto_get_applicant_info_list : public ::google::protobuf::Message 
   inline ::google::protobuf::uint64 role_guid() const;
   inline void set_role_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_applicant_info_list)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_applicant_info_list)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -2974,26 +2974,26 @@ class legion_proto_get_applicant_info_list_end : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 list_len() const;
   inline void set_list_len(::google::protobuf::int32 value);
 
-  // repeated .hld.legion_proto.applicant_info applicant_list = 2;
+  // repeated .faith.legion_proto.applicant_info applicant_list = 2;
   inline int applicant_list_size() const;
   inline void clear_applicant_list();
   static const int kApplicantListFieldNumber = 2;
-  inline const ::hld::legion_proto_applicant_info& applicant_list(int index) const;
-  inline ::hld::legion_proto_applicant_info* mutable_applicant_list(int index);
-  inline ::hld::legion_proto_applicant_info* add_applicant_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_applicant_info >&
+  inline const ::faith::legion_proto_applicant_info& applicant_list(int index) const;
+  inline ::faith::legion_proto_applicant_info* mutable_applicant_list(int index);
+  inline ::faith::legion_proto_applicant_info* add_applicant_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_applicant_info >&
       applicant_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_applicant_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_applicant_info >*
       mutable_applicant_list();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_applicant_info_list_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_applicant_info_list_end)
  private:
   inline void set_has_list_len();
   inline void clear_has_list_len();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_applicant_info > applicant_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_applicant_info > applicant_list_;
   ::google::protobuf::int32 list_len_;
 
   mutable int _cached_size_;
@@ -3083,7 +3083,7 @@ class legion_proto_process_apply : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 is_accept() const;
   inline void set_is_accept(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.process_apply)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.process_apply)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3178,7 +3178,7 @@ class legion_proto_process_apply_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 is_accept() const;
   inline void set_is_accept(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.process_apply_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.process_apply_end)
  private:
   inline void set_has_applicant_guid();
   inline void clear_has_applicant_guid();
@@ -3256,7 +3256,7 @@ class legion_proto_convenient_join_legion : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.convenient_join_legion)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.convenient_join_legion)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -3328,7 +3328,7 @@ class legion_proto_convenient_join_legion_end : public ::google::protobuf::Messa
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.convenient_join_legion_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.convenient_join_legion_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -3400,23 +3400,23 @@ class legion_proto_add_member_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .hld.legion_proto.member_info new_member_info = 1;
+  // optional .faith.legion_proto.member_info new_member_info = 1;
   inline bool has_new_member_info() const;
   inline void clear_new_member_info();
   static const int kNewMemberInfoFieldNumber = 1;
-  inline const ::hld::legion_proto_member_info& new_member_info() const;
-  inline ::hld::legion_proto_member_info* mutable_new_member_info();
-  inline ::hld::legion_proto_member_info* release_new_member_info();
-  inline void set_allocated_new_member_info(::hld::legion_proto_member_info* new_member_info);
+  inline const ::faith::legion_proto_member_info& new_member_info() const;
+  inline ::faith::legion_proto_member_info* mutable_new_member_info();
+  inline ::faith::legion_proto_member_info* release_new_member_info();
+  inline void set_allocated_new_member_info(::faith::legion_proto_member_info* new_member_info);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.add_member_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.add_member_end)
  private:
   inline void set_has_new_member_info();
   inline void clear_has_new_member_info();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::legion_proto_member_info* new_member_info_;
+  ::faith::legion_proto_member_info* new_member_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -3498,7 +3498,7 @@ class legion_proto_del_member : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 del_member_guid() const;
   inline void set_del_member_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.del_member)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.del_member)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3583,7 +3583,7 @@ class legion_proto_del_member_end : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 del_member_guid() const;
   inline void set_del_member_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.del_member_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.del_member_end)
  private:
   inline void set_has_del_member_guid();
   inline void clear_has_del_member_guid();
@@ -3672,7 +3672,7 @@ class legion_proto_construction_level_up : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 construction_index() const;
   inline void set_construction_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.construction_level_up)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.construction_level_up)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3757,7 +3757,7 @@ class legion_proto_construction_level_up_end : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 construction_index() const;
   inline void set_construction_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.construction_level_up_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.construction_level_up_end)
  private:
   inline void set_has_construction_index();
   inline void clear_has_construction_index();
@@ -3846,7 +3846,7 @@ class legion_proto_get_construction_buff : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 construction_index() const;
   inline void set_construction_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_construction_buff)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_construction_buff)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3931,7 +3931,7 @@ class legion_proto_get_construction_buff_end : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 construction_index() const;
   inline void set_construction_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_construction_buff_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_construction_buff_end)
  private:
   inline void set_has_construction_index();
   inline void clear_has_construction_index();
@@ -4020,7 +4020,7 @@ class legion_proto_donate_money : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 donate_times() const;
   inline void set_donate_times(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.donate_money)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.donate_money)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4119,7 +4119,7 @@ class legion_proto_donate_item : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 donate_times() const;
   inline void set_donate_times(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.donate_item)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.donate_item)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4214,7 +4214,7 @@ class legion_proto_donate_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 add_battle_achievement() const;
   inline void set_add_battle_achievement(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.donate_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.donate_end)
  private:
   inline void set_has_add_legion_money();
   inline void clear_has_add_legion_money();
@@ -4311,7 +4311,7 @@ class legion_proto_update_announcement : public ::google::protobuf::Message {
   inline ::std::string* release_content();
   inline void set_allocated_content(::std::string* content);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.update_announcement)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.update_announcement)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4401,7 +4401,7 @@ class legion_proto_update_announcement_end : public ::google::protobuf::Message 
   inline ::std::string* release_content();
   inline void set_allocated_content(::std::string* content);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.update_announcement_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.update_announcement_end)
  private:
   inline void set_has_content();
   inline void clear_has_content();
@@ -4502,7 +4502,7 @@ class legion_proto_legion_event : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 happen_time() const;
   inline void set_happen_time(::google::protobuf::uint32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_event)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_event)
  private:
   inline void set_has_event_idx();
   inline void clear_has_event_idx();
@@ -4597,7 +4597,7 @@ class legion_proto_get_legion_event_list : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 from_happen_time() const;
   inline void set_from_happen_time(::google::protobuf::uint32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_legion_event_list)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_legion_event_list)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4682,26 +4682,26 @@ class legion_proto_get_legion_event_list_end : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 event_list_len() const;
   inline void set_event_list_len(::google::protobuf::int32 value);
 
-  // repeated .hld.legion_proto.legion_event event_list = 2;
+  // repeated .faith.legion_proto.legion_event event_list = 2;
   inline int event_list_size() const;
   inline void clear_event_list();
   static const int kEventListFieldNumber = 2;
-  inline const ::hld::legion_proto_legion_event& event_list(int index) const;
-  inline ::hld::legion_proto_legion_event* mutable_event_list(int index);
-  inline ::hld::legion_proto_legion_event* add_event_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_event >&
+  inline const ::faith::legion_proto_legion_event& event_list(int index) const;
+  inline ::faith::legion_proto_legion_event* mutable_event_list(int index);
+  inline ::faith::legion_proto_legion_event* add_event_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_event >&
       event_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_event >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_event >*
       mutable_event_list();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_legion_event_list_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_legion_event_list_end)
  private:
   inline void set_has_event_list_len();
   inline void clear_has_event_list_len();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_event > event_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_event > event_list_;
   ::google::protobuf::int32 event_list_len_;
 
   mutable int _cached_size_;
@@ -4784,7 +4784,7 @@ class legion_proto_legion_bonus_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 finish_count() const;
   inline void set_finish_count(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_bonus_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_bonus_info)
  private:
   inline void set_has_mission_id();
   inline void clear_has_mission_id();
@@ -4883,7 +4883,7 @@ class legion_proto_get_legion_bonus_info : public ::google::protobuf::Message {
   inline bool get_all() const;
   inline void set_get_all(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_legion_bonus_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_legion_bonus_info)
  private:
   inline void set_has_mission_id();
   inline void clear_has_mission_id();
@@ -4964,16 +4964,16 @@ class legion_proto_get_legion_bonus_info_end : public ::google::protobuf::Messag
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.legion_proto.legion_bonus_info bonus_info = 1;
+  // repeated .faith.legion_proto.legion_bonus_info bonus_info = 1;
   inline int bonus_info_size() const;
   inline void clear_bonus_info();
   static const int kBonusInfoFieldNumber = 1;
-  inline const ::hld::legion_proto_legion_bonus_info& bonus_info(int index) const;
-  inline ::hld::legion_proto_legion_bonus_info* mutable_bonus_info(int index);
-  inline ::hld::legion_proto_legion_bonus_info* add_bonus_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_bonus_info >&
+  inline const ::faith::legion_proto_legion_bonus_info& bonus_info(int index) const;
+  inline ::faith::legion_proto_legion_bonus_info* mutable_bonus_info(int index);
+  inline ::faith::legion_proto_legion_bonus_info* add_bonus_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_bonus_info >&
       bonus_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_bonus_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_bonus_info >*
       mutable_bonus_info();
 
   // optional int32 bonus_num = 2;
@@ -4983,14 +4983,14 @@ class legion_proto_get_legion_bonus_info_end : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 bonus_num() const;
   inline void set_bonus_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_legion_bonus_info_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_legion_bonus_info_end)
  private:
   inline void set_has_bonus_num();
   inline void clear_has_bonus_num();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_bonus_info > bonus_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_bonus_info > bonus_info_;
   ::google::protobuf::int32 bonus_num_;
 
   mutable int _cached_size_;
@@ -5059,7 +5059,7 @@ class legion_proto_get_legion_bonus_award_end : public ::google::protobuf::Messa
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_legion_bonus_award_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_legion_bonus_award_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -5138,7 +5138,7 @@ class legion_proto_send_stimulate_bonus : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 mission_id() const;
   inline void set_mission_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.send_stimulate_bonus)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.send_stimulate_bonus)
  private:
   inline void set_has_mission_id();
   inline void clear_has_mission_id();
@@ -5227,7 +5227,7 @@ class legion_proto_kickout_legion_member : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 leaver_guid() const;
   inline void set_leaver_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.kickout_legion_member)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.kickout_legion_member)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -5312,7 +5312,7 @@ class legion_proto_kickout_legion_member_end : public ::google::protobuf::Messag
   inline ::google::protobuf::uint64 leaver_guid() const;
   inline void set_leaver_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.kickout_legion_member_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.kickout_legion_member_end)
  private:
   inline void set_has_leaver_guid();
   inline void clear_has_leaver_guid();
@@ -5408,7 +5408,7 @@ class legion_proto_appoint_job_title : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 job_title() const;
   inline void set_job_title(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.appoint_job_title)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.appoint_job_title)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -5510,7 +5510,7 @@ class legion_proto_appoint_job_title_end : public ::google::protobuf::Message {
   inline bool is_to_chief() const;
   inline void set_is_to_chief(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.appoint_job_title_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.appoint_job_title_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -5605,7 +5605,7 @@ class legion_proto_enter_legion_boss_map : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 boss_map_id() const;
   inline void set_boss_map_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.enter_legion_boss_map)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.enter_legion_boss_map)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -5702,7 +5702,7 @@ class legion_proto_kill_legion_boss : public ::google::protobuf::Message {
   inline ::std::string* release_killer_name();
   inline void set_allocated_killer_name(::std::string* killer_name);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.kill_legion_boss)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.kill_legion_boss)
  private:
   inline void set_has_boss_map_template_id();
   inline void clear_has_boss_map_template_id();
@@ -5804,7 +5804,7 @@ class legion_proto_legion_boss_record : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_boss_record)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_boss_record)
  private:
   inline void set_has_killer_name();
   inline void clear_has_killer_name();
@@ -5887,26 +5887,26 @@ class legion_proto_legion_boss_record_list : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 record_num() const;
   inline void set_record_num(::google::protobuf::int32 value);
 
-  // repeated .hld.legion_proto.legion_boss_record records = 2;
+  // repeated .faith.legion_proto.legion_boss_record records = 2;
   inline int records_size() const;
   inline void clear_records();
   static const int kRecordsFieldNumber = 2;
-  inline const ::hld::legion_proto_legion_boss_record& records(int index) const;
-  inline ::hld::legion_proto_legion_boss_record* mutable_records(int index);
-  inline ::hld::legion_proto_legion_boss_record* add_records();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_boss_record >&
+  inline const ::faith::legion_proto_legion_boss_record& records(int index) const;
+  inline ::faith::legion_proto_legion_boss_record* mutable_records(int index);
+  inline ::faith::legion_proto_legion_boss_record* add_records();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_boss_record >&
       records() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_boss_record >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_boss_record >*
       mutable_records();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_boss_record_list)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_boss_record_list)
  private:
   inline void set_has_record_num();
   inline void clear_has_record_num();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_boss_record > records_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_boss_record > records_;
   ::google::protobuf::int32 record_num_;
 
   mutable int _cached_size_;
@@ -5989,7 +5989,7 @@ class legion_proto_get_legion_boss_award : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 boss_map_template_id() const;
   inline void set_boss_map_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_legion_boss_award)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_legion_boss_award)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6081,7 +6081,7 @@ class legion_proto_get_legion_boss_award_end : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 get_battle_achievement() const;
   inline void set_get_battle_achievement(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_legion_boss_award_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_legion_boss_award_end)
  private:
   inline void set_has_boss_map_template_id();
   inline void clear_has_boss_map_template_id();
@@ -6166,7 +6166,7 @@ class legion_proto_get_banquet_info : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 role_guid() const;
   inline void set_role_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_banquet_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_banquet_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6290,7 +6290,7 @@ class legion_proto_get_banquet_info_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 role_take_part_in_num() const;
   inline void set_role_take_part_in_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_banquet_info_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_banquet_info_end)
  private:
   inline void set_has_occupy_legion_guid();
   inline void clear_has_occupy_legion_guid();
@@ -6397,7 +6397,7 @@ class legion_proto_request_hold_banquet : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 banquet_level() const;
   inline void set_banquet_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.request_hold_banquet)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.request_hold_banquet)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6475,7 +6475,7 @@ class legion_proto_request_hold_banquet_end : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.request_hold_banquet_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.request_hold_banquet_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -6554,7 +6554,7 @@ class legion_proto_take_part_in_banquet : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 role_guid() const;
   inline void set_role_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.take_part_in_banquet)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.take_part_in_banquet)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6650,7 +6650,7 @@ class legion_proto_take_part_in_banquet_end : public ::google::protobuf::Message
   inline ::google::protobuf::int32 role_take_part_in_num() const;
   inline void set_role_take_part_in_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.take_part_in_banquet_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.take_part_in_banquet_end)
  private:
   inline void set_has_participant_num();
   inline void clear_has_participant_num();
@@ -6804,7 +6804,7 @@ class legion_proto_city_war_bid_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 occupy_time_stamp() const;
   inline void set_occupy_time_stamp(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.city_war_bid_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.city_war_bid_info)
  private:
   inline void set_has_territory_id();
   inline void clear_has_territory_id();
@@ -6917,19 +6917,19 @@ class legion_proto_city_war_territory_info : public ::google::protobuf::Message 
   inline bool is_in_war() const;
   inline void set_is_in_war(bool value);
 
-  // repeated .hld.legion_proto.city_war_bid_info bid_infos = 3;
+  // repeated .faith.legion_proto.city_war_bid_info bid_infos = 3;
   inline int bid_infos_size() const;
   inline void clear_bid_infos();
   static const int kBidInfosFieldNumber = 3;
-  inline const ::hld::legion_proto_city_war_bid_info& bid_infos(int index) const;
-  inline ::hld::legion_proto_city_war_bid_info* mutable_bid_infos(int index);
-  inline ::hld::legion_proto_city_war_bid_info* add_bid_infos();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_bid_info >&
+  inline const ::faith::legion_proto_city_war_bid_info& bid_infos(int index) const;
+  inline ::faith::legion_proto_city_war_bid_info* mutable_bid_infos(int index);
+  inline ::faith::legion_proto_city_war_bid_info* add_bid_infos();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_bid_info >&
       bid_infos() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_bid_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_bid_info >*
       mutable_bid_infos();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.city_war_territory_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.city_war_territory_info)
  private:
   inline void set_has_territory_id();
   inline void clear_has_territory_id();
@@ -6940,7 +6940,7 @@ class legion_proto_city_war_territory_info : public ::google::protobuf::Message 
 
   ::google::protobuf::int32 territory_id_;
   bool is_in_war_;
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_bid_info > bid_infos_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_bid_info > bid_infos_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(3 + 31) / 32];
@@ -7015,7 +7015,7 @@ class legion_proto_get_city_war_info : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 role_guid() const;
   inline void set_role_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_city_war_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_city_war_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -7090,24 +7090,24 @@ class legion_proto_get_city_war_info_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.legion_proto.city_war_territory_info territory_info = 1;
+  // repeated .faith.legion_proto.city_war_territory_info territory_info = 1;
   inline int territory_info_size() const;
   inline void clear_territory_info();
   static const int kTerritoryInfoFieldNumber = 1;
-  inline const ::hld::legion_proto_city_war_territory_info& territory_info(int index) const;
-  inline ::hld::legion_proto_city_war_territory_info* mutable_territory_info(int index);
-  inline ::hld::legion_proto_city_war_territory_info* add_territory_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_territory_info >&
+  inline const ::faith::legion_proto_city_war_territory_info& territory_info(int index) const;
+  inline ::faith::legion_proto_city_war_territory_info* mutable_territory_info(int index);
+  inline ::faith::legion_proto_city_war_territory_info* add_territory_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_territory_info >&
       territory_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_territory_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_territory_info >*
       mutable_territory_info();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_city_war_info_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_city_war_info_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_territory_info > territory_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_territory_info > territory_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -7203,7 +7203,7 @@ class legion_proto_get_abstention_city_war_end : public ::google::protobuf::Mess
   inline const ::google::protobuf::RepeatedPtrField< ::std::string>& legion_name() const;
   inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_legion_name();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_abstention_city_war_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_abstention_city_war_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -7298,7 +7298,7 @@ class legion_proto_apply_city_war_bid : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 in_terr_idx() const;
   inline void set_in_terr_idx(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.apply_city_war_bid)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.apply_city_war_bid)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -7386,7 +7386,7 @@ class legion_proto_apply_city_war_bid_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.apply_city_war_bid_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.apply_city_war_bid_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -7475,7 +7475,7 @@ class legion_proto_req_territory_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 terr_id() const;
   inline void set_terr_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.req_territory_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.req_territory_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -7553,23 +7553,23 @@ class legion_proto_req_territory_info_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .hld.legion_proto.city_war_territory_info terr_info = 1;
+  // optional .faith.legion_proto.city_war_territory_info terr_info = 1;
   inline bool has_terr_info() const;
   inline void clear_terr_info();
   static const int kTerrInfoFieldNumber = 1;
-  inline const ::hld::legion_proto_city_war_territory_info& terr_info() const;
-  inline ::hld::legion_proto_city_war_territory_info* mutable_terr_info();
-  inline ::hld::legion_proto_city_war_territory_info* release_terr_info();
-  inline void set_allocated_terr_info(::hld::legion_proto_city_war_territory_info* terr_info);
+  inline const ::faith::legion_proto_city_war_territory_info& terr_info() const;
+  inline ::faith::legion_proto_city_war_territory_info* mutable_terr_info();
+  inline ::faith::legion_proto_city_war_territory_info* release_terr_info();
+  inline void set_allocated_terr_info(::faith::legion_proto_city_war_territory_info* terr_info);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.req_territory_info_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.req_territory_info_end)
  private:
   inline void set_has_terr_info();
   inline void clear_has_terr_info();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::legion_proto_city_war_territory_info* terr_info_;
+  ::faith::legion_proto_city_war_territory_info* terr_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -7684,7 +7684,7 @@ class legion_proto_city_war_rank_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 occupy_terr_highest_score() const;
   inline void set_occupy_terr_highest_score(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.city_war_rank_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.city_war_rank_info)
  private:
   inline void set_has_legion_guid();
   inline void clear_has_legion_guid();
@@ -7781,7 +7781,7 @@ class legion_proto_req_city_war_rank_info : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 role_guid() const;
   inline void set_role_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.req_city_war_rank_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.req_city_war_rank_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -7856,24 +7856,24 @@ class legion_proto_req_city_war_rank_info_end : public ::google::protobuf::Messa
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.legion_proto.city_war_rank_info rank_info = 1;
+  // repeated .faith.legion_proto.city_war_rank_info rank_info = 1;
   inline int rank_info_size() const;
   inline void clear_rank_info();
   static const int kRankInfoFieldNumber = 1;
-  inline const ::hld::legion_proto_city_war_rank_info& rank_info(int index) const;
-  inline ::hld::legion_proto_city_war_rank_info* mutable_rank_info(int index);
-  inline ::hld::legion_proto_city_war_rank_info* add_rank_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_rank_info >&
+  inline const ::faith::legion_proto_city_war_rank_info& rank_info(int index) const;
+  inline ::faith::legion_proto_city_war_rank_info* mutable_rank_info(int index);
+  inline ::faith::legion_proto_city_war_rank_info* add_rank_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_rank_info >&
       rank_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_rank_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_rank_info >*
       mutable_rank_info();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.req_city_war_rank_info_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.req_city_war_rank_info_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_rank_info > rank_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_rank_info > rank_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -7960,7 +7960,7 @@ class legion_proto_set_territory_prior_maintain : public ::google::protobuf::Mes
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_terr_ids();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.set_territory_prior_maintain)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.set_territory_prior_maintain)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -8060,7 +8060,7 @@ class legion_proto_set_territory_prior_maintain_end : public ::google::protobuf:
   inline ::google::protobuf::RepeatedField< bool >*
       mutable_is_priors();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.set_territory_prior_maintain_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.set_territory_prior_maintain_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -8148,7 +8148,7 @@ class legion_proto_entry_city_war_map : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 terr_id() const;
   inline void set_terr_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.entry_city_war_map)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.entry_city_war_map)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -8233,7 +8233,7 @@ class legion_proto_entry_city_war_map_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 terr_id() const;
   inline void set_terr_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.entry_city_war_map_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.entry_city_war_map_end)
  private:
   inline void set_has_terr_id();
   inline void clear_has_terr_id();
@@ -8336,7 +8336,7 @@ class legion_proto_city_war_operate : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 terr_id() const;
   inline void set_terr_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.city_war_operate)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.city_war_operate)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -8441,7 +8441,7 @@ class legion_proto_city_war_operate_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 npc_id() const;
   inline void set_npc_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.city_war_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.city_war_operate_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -8548,7 +8548,7 @@ class legion_proto_city_war_raid_info_of_legion_score : public ::google::protobu
   inline ::google::protobuf::int32 legion_score() const;
   inline void set_legion_score(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.city_war_raid_info_of_legion_score)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.city_war_raid_info_of_legion_score)
  private:
   inline void set_has_legion_guid();
   inline void clear_has_legion_guid();
@@ -8643,7 +8643,7 @@ class legion_proto_city_war_raid_info_of_stronghold : public ::google::protobuf:
   inline ::google::protobuf::uint64 occupant_guid() const;
   inline void set_occupant_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.city_war_raid_info_of_stronghold)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.city_war_raid_info_of_stronghold)
  private:
   inline void set_has_stronghold_guid();
   inline void clear_has_stronghold_guid();
@@ -8754,7 +8754,7 @@ class legion_proto_city_war_raid_info_of_legion_member_score : public ::google::
   inline ::google::protobuf::int32 role_score() const;
   inline void set_role_score(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.city_war_raid_info_of_legion_member_score)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.city_war_raid_info_of_legion_member_score)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -8845,16 +8845,16 @@ class legion_proto_city_war_raid_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 join_war_legion_num() const;
   inline void set_join_war_legion_num(::google::protobuf::int32 value);
 
-  // repeated .hld.legion_proto.city_war_raid_info_of_legion_score legion_score_list = 2;
+  // repeated .faith.legion_proto.city_war_raid_info_of_legion_score legion_score_list = 2;
   inline int legion_score_list_size() const;
   inline void clear_legion_score_list();
   static const int kLegionScoreListFieldNumber = 2;
-  inline const ::hld::legion_proto_city_war_raid_info_of_legion_score& legion_score_list(int index) const;
-  inline ::hld::legion_proto_city_war_raid_info_of_legion_score* mutable_legion_score_list(int index);
-  inline ::hld::legion_proto_city_war_raid_info_of_legion_score* add_legion_score_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_raid_info_of_legion_score >&
+  inline const ::faith::legion_proto_city_war_raid_info_of_legion_score& legion_score_list(int index) const;
+  inline ::faith::legion_proto_city_war_raid_info_of_legion_score* mutable_legion_score_list(int index);
+  inline ::faith::legion_proto_city_war_raid_info_of_legion_score* add_legion_score_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_raid_info_of_legion_score >&
       legion_score_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_raid_info_of_legion_score >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_raid_info_of_legion_score >*
       mutable_legion_score_list();
 
   // optional int32 stronghold_num = 3;
@@ -8864,16 +8864,16 @@ class legion_proto_city_war_raid_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 stronghold_num() const;
   inline void set_stronghold_num(::google::protobuf::int32 value);
 
-  // repeated .hld.legion_proto.city_war_raid_info_of_stronghold stronghold_list = 4;
+  // repeated .faith.legion_proto.city_war_raid_info_of_stronghold stronghold_list = 4;
   inline int stronghold_list_size() const;
   inline void clear_stronghold_list();
   static const int kStrongholdListFieldNumber = 4;
-  inline const ::hld::legion_proto_city_war_raid_info_of_stronghold& stronghold_list(int index) const;
-  inline ::hld::legion_proto_city_war_raid_info_of_stronghold* mutable_stronghold_list(int index);
-  inline ::hld::legion_proto_city_war_raid_info_of_stronghold* add_stronghold_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_raid_info_of_stronghold >&
+  inline const ::faith::legion_proto_city_war_raid_info_of_stronghold& stronghold_list(int index) const;
+  inline ::faith::legion_proto_city_war_raid_info_of_stronghold* mutable_stronghold_list(int index);
+  inline ::faith::legion_proto_city_war_raid_info_of_stronghold* add_stronghold_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_raid_info_of_stronghold >&
       stronghold_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_raid_info_of_stronghold >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_raid_info_of_stronghold >*
       mutable_stronghold_list();
 
   // optional int32 role_num = 5;
@@ -8883,16 +8883,16 @@ class legion_proto_city_war_raid_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 role_num() const;
   inline void set_role_num(::google::protobuf::int32 value);
 
-  // repeated .hld.legion_proto.city_war_raid_info_of_legion_member_score role_score_list = 6;
+  // repeated .faith.legion_proto.city_war_raid_info_of_legion_member_score role_score_list = 6;
   inline int role_score_list_size() const;
   inline void clear_role_score_list();
   static const int kRoleScoreListFieldNumber = 6;
-  inline const ::hld::legion_proto_city_war_raid_info_of_legion_member_score& role_score_list(int index) const;
-  inline ::hld::legion_proto_city_war_raid_info_of_legion_member_score* mutable_role_score_list(int index);
-  inline ::hld::legion_proto_city_war_raid_info_of_legion_member_score* add_role_score_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_raid_info_of_legion_member_score >&
+  inline const ::faith::legion_proto_city_war_raid_info_of_legion_member_score& role_score_list(int index) const;
+  inline ::faith::legion_proto_city_war_raid_info_of_legion_member_score* mutable_role_score_list(int index);
+  inline ::faith::legion_proto_city_war_raid_info_of_legion_member_score* add_role_score_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_raid_info_of_legion_member_score >&
       role_score_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_raid_info_of_legion_member_score >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_raid_info_of_legion_member_score >*
       mutable_role_score_list();
 
   // optional int32 cur_territory_id = 7;
@@ -8902,7 +8902,7 @@ class legion_proto_city_war_raid_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 cur_territory_id() const;
   inline void set_cur_territory_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.city_war_raid_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.city_war_raid_info)
  private:
   inline void set_has_join_war_legion_num();
   inline void clear_has_join_war_legion_num();
@@ -8915,11 +8915,11 @@ class legion_proto_city_war_raid_info : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_raid_info_of_legion_score > legion_score_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_raid_info_of_legion_score > legion_score_list_;
   ::google::protobuf::int32 join_war_legion_num_;
   ::google::protobuf::int32 stronghold_num_;
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_raid_info_of_stronghold > stronghold_list_;
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_raid_info_of_legion_member_score > role_score_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_raid_info_of_stronghold > stronghold_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_raid_info_of_legion_member_score > role_score_list_;
   ::google::protobuf::int32 role_num_;
   ::google::protobuf::int32 cur_territory_id_;
 
@@ -9003,7 +9003,7 @@ class legion_proto_city_war_update_role_score : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 rank() const;
   inline void set_rank(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.city_war_update_role_score)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.city_war_update_role_score)
  private:
   inline void set_has_score();
   inline void clear_has_score();
@@ -9088,7 +9088,7 @@ class legion_proto_city_war_over : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 winner_legion_guid() const;
   inline void set_winner_legion_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.city_war_over)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.city_war_over)
  private:
   inline void set_has_winner_legion_guid();
   inline void clear_has_winner_legion_guid();
@@ -9177,7 +9177,7 @@ class legion_proto_set_auto_accept_new_member_setting : public ::google::protobu
   inline bool is_auto_accept() const;
   inline void set_is_auto_accept(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.set_auto_accept_new_member_setting)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.set_auto_accept_new_member_setting)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -9288,7 +9288,7 @@ class legion_proto_set_player_legion_aoi_info : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 job_title() const;
   inline void set_job_title(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.set_player_legion_aoi_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.set_player_legion_aoi_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -9379,7 +9379,7 @@ class legion_proto_clear_player_legion_aoi_info : public ::google::protobuf::Mes
   inline ::google::protobuf::uint64 role_guid() const;
   inline void set_role_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.clear_player_legion_aoi_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.clear_player_legion_aoi_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -9480,7 +9480,7 @@ class legion_proto_set_player_legion_boss_award_get_log : public ::google::proto
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_get_logs();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.set_player_legion_boss_award_get_log)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.set_player_legion_boss_award_get_log)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -9566,7 +9566,7 @@ class legion_proto_get_city_master_info : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 role_guid() const;
   inline void set_role_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_city_master_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_city_master_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -9679,7 +9679,7 @@ class legion_proto_get_city_master_info_end : public ::google::protobuf::Message
   inline ::std::string* release_legion_name();
   inline void set_allocated_legion_name(::std::string* legion_name);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_city_master_info_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_city_master_info_end)
  private:
   inline void set_has_master_guid();
   inline void clear_has_master_guid();
@@ -9777,7 +9777,7 @@ class legion_proto_get_occupation_daily_award : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 terr_id() const;
   inline void set_terr_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_occupation_daily_award)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_occupation_daily_award)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -9862,7 +9862,7 @@ class legion_proto_get_occupation_daily_award_end : public ::google::protobuf::M
   inline ::google::protobuf::int32 terr_id() const;
   inline void set_terr_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_occupation_daily_award_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_occupation_daily_award_end)
  private:
   inline void set_has_terr_id();
   inline void clear_has_terr_id();
@@ -9944,7 +9944,7 @@ class legion_proto_get_legion_rank : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 role_guid() const;
   inline void set_role_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_legion_rank)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_legion_rank)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -10026,7 +10026,7 @@ class legion_proto_get_legion_rank_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 rank() const;
   inline void set_rank(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_legion_rank_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_legion_rank_end)
  private:
   inline void set_has_rank();
   inline void clear_has_rank();
@@ -10108,7 +10108,7 @@ class legion_proto_legion_error : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 error_type() const;
   inline void set_error_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_error)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_error)
  private:
   inline void set_has_error_type();
   inline void clear_has_error_type();
@@ -10190,7 +10190,7 @@ class legion_proto_create_bonfire_npc : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 role_guid() const;
   inline void set_role_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.create_bonfire_npc)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.create_bonfire_npc)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -10312,7 +10312,7 @@ class legion_proto_bonfire_info : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 bonfire_guid() const;
   inline void set_bonfire_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.bonfire_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.bonfire_info)
  private:
   inline void set_has_map_line_id();
   inline void clear_has_map_line_id();
@@ -10407,7 +10407,7 @@ class legion_proto_add_fuel_to_fire : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 role_guid() const;
   inline void set_role_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.add_fuel_to_fire)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.add_fuel_to_fire)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -10503,7 +10503,7 @@ class legion_proto_member_add_fuel_to_fire : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 fire_times_history() const;
   inline void set_fire_times_history(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.member_add_fuel_to_fire)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.member_add_fuel_to_fire)
  private:
   inline void set_has_fire_member_guid();
   inline void clear_has_fire_member_guid();
@@ -10598,7 +10598,7 @@ class legion_proto_recruit_in_world : public ::google::protobuf::Message {
   inline bool is_rm_cd() const;
   inline void set_is_rm_cd(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.recruit_in_world)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.recruit_in_world)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -10683,7 +10683,7 @@ class legion_proto_recruit_in_world_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 next_recruit_stamp() const;
   inline void set_next_recruit_stamp(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.recruit_in_world_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.recruit_in_world_end)
  private:
   inline void set_has_next_recruit_stamp();
   inline void clear_has_next_recruit_stamp();
@@ -10758,7 +10758,7 @@ class legion_proto_draw_mem_daily_award : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.draw_mem_daily_award)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.draw_mem_daily_award)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -10830,7 +10830,7 @@ class legion_proto_draw_bonfire_daily_award : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.draw_bonfire_daily_award)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.draw_bonfire_daily_award)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -10909,7 +10909,7 @@ class legion_proto_bonfire_dead : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 legion_guid() const;
   inline void set_legion_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.bonfire_dead)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.bonfire_dead)
  private:
   inline void set_has_legion_guid();
   inline void clear_has_legion_guid();
@@ -11010,7 +11010,7 @@ class legion_proto_legion_call_operate : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_operate_params();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_call_operate)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_call_operate)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -11115,7 +11115,7 @@ class legion_proto_legion_call_operate_end : public ::google::protobuf::Message 
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_operate_params();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_call_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_call_operate_end)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -11208,7 +11208,7 @@ class legion_proto_level_up_legion_skill : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 skill_id() const;
   inline void set_skill_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.level_up_legion_skill)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.level_up_legion_skill)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -11293,7 +11293,7 @@ class legion_proto_level_up_legion_skill_end : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 skill_id() const;
   inline void set_skill_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.level_up_legion_skill_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.level_up_legion_skill_end)
  private:
   inline void set_has_skill_id();
   inline void clear_has_skill_id();
@@ -11375,7 +11375,7 @@ class legion_proto_auction_is_selling : public ::google::protobuf::Message {
   inline bool is_selling() const;
   inline void set_is_selling(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.auction_is_selling)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.auction_is_selling)
  private:
   inline void set_has_is_selling();
   inline void clear_has_is_selling();
@@ -11464,7 +11464,7 @@ class legion_proto_legion_territory_buff_operate : public ::google::protobuf::Me
   inline ::google::protobuf::int32 territory_id() const;
   inline void set_territory_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_territory_buff_operate)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_territory_buff_operate)
  private:
   inline void set_has_operate_type();
   inline void clear_has_operate_type();
@@ -11561,7 +11561,7 @@ class legion_proto_legion_bonfire_map_info : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 cur_stage() const;
   inline void set_cur_stage(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_bonfire_map_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_bonfire_map_info)
  private:
   inline void set_has_cur_stage();
   inline void clear_has_cur_stage();
@@ -11637,7 +11637,7 @@ class legion_proto_goto_next_stage_of_bonfire_map : public ::google::protobuf::M
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.goto_next_stage_of_bonfire_map)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.goto_next_stage_of_bonfire_map)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -11709,7 +11709,7 @@ class legion_proto_transfer_to_bonfire_map : public ::google::protobuf::Message 
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.transfer_to_bonfire_map)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.transfer_to_bonfire_map)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -11781,7 +11781,7 @@ class legion_proto_notice_new_item_in_legion_auction : public ::google::protobuf
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.notice_new_item_in_legion_auction)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.notice_new_item_in_legion_auction)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -11865,7 +11865,7 @@ class legion_proto_get_all_legion_skill_level_end : public ::google::protobuf::M
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_legion_skill_level();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_all_legion_skill_level_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_all_legion_skill_level_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -11945,7 +11945,7 @@ class legion_proto_get_legion_answer_question_info : public ::google::protobuf::
   inline ::google::protobuf::uint32 role_guid() const;
   inline void set_role_guid(::google::protobuf::uint32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_legion_answer_question_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_legion_answer_question_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -12067,7 +12067,7 @@ class legion_proto_get_legion_answer_question_info_end : public ::google::protob
   inline ::std::string* release_play_name();
   inline void set_allocated_play_name(::std::string* play_name);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_legion_answer_question_info_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_legion_answer_question_info_end)
  private:
   inline void set_has_question_template_id();
   inline void clear_has_question_template_id();
@@ -12157,7 +12157,7 @@ class legion_proto_legion_answer_result : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_answer_result)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_answer_result)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -12262,7 +12262,7 @@ class legion_proto_legion_warehouse_item_info : public ::google::protobuf::Messa
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_item_info();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_warehouse_item_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_warehouse_item_info)
  private:
   inline void set_has_item_guid_a();
   inline void clear_has_item_guid_a();
@@ -12384,7 +12384,7 @@ class legion_proto_legion_warehouse_log : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 eiteminfo_info_id() const;
   inline void set_eiteminfo_info_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_warehouse_log)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_warehouse_log)
  private:
   inline void set_has_add_time();
   inline void clear_has_add_time();
@@ -12471,7 +12471,7 @@ class legion_proto_req_legion_warehouse_item_info : public ::google::protobuf::M
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.req_legion_warehouse_item_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.req_legion_warehouse_item_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -12543,16 +12543,16 @@ class legion_proto_req_legion_warehouse_item_info_end : public ::google::protobu
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.legion_proto.legion_warehouse_item_info item_list = 1;
+  // repeated .faith.legion_proto.legion_warehouse_item_info item_list = 1;
   inline int item_list_size() const;
   inline void clear_item_list();
   static const int kItemListFieldNumber = 1;
-  inline const ::hld::legion_proto_legion_warehouse_item_info& item_list(int index) const;
-  inline ::hld::legion_proto_legion_warehouse_item_info* mutable_item_list(int index);
-  inline ::hld::legion_proto_legion_warehouse_item_info* add_item_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_warehouse_item_info >&
+  inline const ::faith::legion_proto_legion_warehouse_item_info& item_list(int index) const;
+  inline ::faith::legion_proto_legion_warehouse_item_info* mutable_item_list(int index);
+  inline ::faith::legion_proto_legion_warehouse_item_info* add_item_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_warehouse_item_info >&
       item_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_warehouse_item_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_warehouse_item_info >*
       mutable_item_list();
 
   // optional int32 is_final = 2;
@@ -12569,7 +12569,7 @@ class legion_proto_req_legion_warehouse_item_info_end : public ::google::protobu
   inline ::google::protobuf::int32 is_clean() const;
   inline void set_is_clean(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.req_legion_warehouse_item_info_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.req_legion_warehouse_item_info_end)
  private:
   inline void set_has_is_final();
   inline void clear_has_is_final();
@@ -12578,7 +12578,7 @@ class legion_proto_req_legion_warehouse_item_info_end : public ::google::protobu
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_warehouse_item_info > item_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_warehouse_item_info > item_list_;
   ::google::protobuf::int32 is_final_;
   ::google::protobuf::int32 is_clean_;
 
@@ -12674,7 +12674,7 @@ class legion_proto_operation_legion_warehouse_item : public ::google::protobuf::
   inline ::google::protobuf::int64 item_id() const;
   inline void set_item_id(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.operation_legion_warehouse_item)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.operation_legion_warehouse_item)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -12760,7 +12760,7 @@ class legion_proto_operation_legion_warehouse_item_end : public ::google::protob
   inline ::google::protobuf::int64 error_code() const;
   inline void set_error_code(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.operation_legion_warehouse_item_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.operation_legion_warehouse_item_end)
  private:
   inline void set_has_error_code();
   inline void clear_has_error_code();
@@ -12835,7 +12835,7 @@ class legion_proto_req_legion_warehouse_log : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.req_legion_warehouse_log)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.req_legion_warehouse_log)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -12907,24 +12907,24 @@ class legion_proto_req_legion_warehouse_log_end : public ::google::protobuf::Mes
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.legion_proto.legion_warehouse_log log_list = 1;
+  // repeated .faith.legion_proto.legion_warehouse_log log_list = 1;
   inline int log_list_size() const;
   inline void clear_log_list();
   static const int kLogListFieldNumber = 1;
-  inline const ::hld::legion_proto_legion_warehouse_log& log_list(int index) const;
-  inline ::hld::legion_proto_legion_warehouse_log* mutable_log_list(int index);
-  inline ::hld::legion_proto_legion_warehouse_log* add_log_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_warehouse_log >&
+  inline const ::faith::legion_proto_legion_warehouse_log& log_list(int index) const;
+  inline ::faith::legion_proto_legion_warehouse_log* mutable_log_list(int index);
+  inline ::faith::legion_proto_legion_warehouse_log* add_log_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_warehouse_log >&
       log_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_warehouse_log >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_warehouse_log >*
       mutable_log_list();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.req_legion_warehouse_log_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.req_legion_warehouse_log_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_warehouse_log > log_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_warehouse_log > log_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -13004,7 +13004,7 @@ class legion_proto_req_change_legion_name : public ::google::protobuf::Message {
   inline ::std::string* release_legion_name();
   inline void set_allocated_legion_name(::std::string* legion_name);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.req_change_legion_name)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.req_change_legion_name)
  private:
   inline void set_has_legion_name();
   inline void clear_has_legion_name();
@@ -13086,7 +13086,7 @@ class legion_proto_req_change_legion_name_end : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 ret() const;
   inline void set_ret(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.req_change_legion_name_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.req_change_legion_name_end)
  private:
   inline void set_has_ret();
   inline void clear_has_ret();
@@ -13180,7 +13180,7 @@ class legion_proto_req_confirm_change_legion_name : public ::google::protobuf::M
   inline ::std::string* release_legion_name();
   inline void set_allocated_legion_name(::std::string* legion_name);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.req_confirm_change_legion_name)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.req_confirm_change_legion_name)
  private:
   inline void set_has_confirm_type();
   inline void clear_has_confirm_type();
@@ -13312,7 +13312,7 @@ class legion_proto_cross_city_info_one : public ::google::protobuf::Message {
   inline ::std::string* release_legion_name();
   inline void set_allocated_legion_name(::std::string* legion_name);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.cross_city_info_one)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.cross_city_info_one)
  private:
   inline void set_has_legion_guid_a();
   inline void clear_has_legion_guid_a();
@@ -13405,16 +13405,16 @@ class legion_proto_cross_city_info_all : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.legion_proto.cross_city_info_one city_info_all = 1;
+  // repeated .faith.legion_proto.cross_city_info_one city_info_all = 1;
   inline int city_info_all_size() const;
   inline void clear_city_info_all();
   static const int kCityInfoAllFieldNumber = 1;
-  inline const ::hld::legion_proto_cross_city_info_one& city_info_all(int index) const;
-  inline ::hld::legion_proto_cross_city_info_one* mutable_city_info_all(int index);
-  inline ::hld::legion_proto_cross_city_info_one* add_city_info_all();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_cross_city_info_one >&
+  inline const ::faith::legion_proto_cross_city_info_one& city_info_all(int index) const;
+  inline ::faith::legion_proto_cross_city_info_one* mutable_city_info_all(int index);
+  inline ::faith::legion_proto_cross_city_info_one* add_city_info_all();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_cross_city_info_one >&
       city_info_all() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_cross_city_info_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_cross_city_info_one >*
       mutable_city_info_all();
 
   // optional string overload_chief_name = 2;
@@ -13443,7 +13443,7 @@ class legion_proto_cross_city_info_all : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 over_chief_guid_b() const;
   inline void set_over_chief_guid_b(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.cross_city_info_all)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.cross_city_info_all)
  private:
   inline void set_has_overload_chief_name();
   inline void clear_has_overload_chief_name();
@@ -13454,7 +13454,7 @@ class legion_proto_cross_city_info_all : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_cross_city_info_one > city_info_all_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_cross_city_info_one > city_info_all_;
   ::std::string* overload_chief_name_;
   ::google::protobuf::int32 over_chief_guid_a_;
   ::google::protobuf::int32 over_chief_guid_b_;
@@ -13525,7 +13525,7 @@ class legion_proto_join_cross_city_war : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.join_cross_city_war)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.join_cross_city_war)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -13597,7 +13597,7 @@ class legion_proto_legion_answer_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_answer_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_answer_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -13669,7 +13669,7 @@ class legion_proto_get_legion_answer_rank : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_legion_answer_rank)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_legion_answer_rank)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -13783,7 +13783,7 @@ class legion_proto_legion_answer_info_list : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 m_score() const;
   inline void set_m_score(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_answer_info_list)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_answer_info_list)
  private:
   inline void set_has_m_rank();
   inline void clear_has_m_rank();
@@ -13870,7 +13870,7 @@ class legion_proto_legion_answer_award_refresh : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 award_num() const;
   inline void set_award_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_answer_award_refresh)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_answer_award_refresh)
  private:
   inline void set_has_award_num();
   inline void clear_has_award_num();
@@ -13945,7 +13945,7 @@ class legion_proto_go_to_legion_station_map : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.go_to_legion_station_map)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.go_to_legion_station_map)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -14017,7 +14017,7 @@ class legion_proto_get_map_legion_player : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.get_map_legion_player)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.get_map_legion_player)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -14129,7 +14129,7 @@ class legion_proto_legion_dance_player_info : public ::google::protobuf::Message
   inline ::google::protobuf::int32 play_template_id() const;
   inline void set_play_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_dance_player_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_dance_player_info)
  private:
   inline void set_has_play_guid_a();
   inline void clear_has_play_guid_a();
@@ -14216,16 +14216,16 @@ class legion_proto_send_map_legion_player : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.legion_proto.legion_dance_player_info play_info_arr = 1;
+  // repeated .faith.legion_proto.legion_dance_player_info play_info_arr = 1;
   inline int play_info_arr_size() const;
   inline void clear_play_info_arr();
   static const int kPlayInfoArrFieldNumber = 1;
-  inline const ::hld::legion_proto_legion_dance_player_info& play_info_arr(int index) const;
-  inline ::hld::legion_proto_legion_dance_player_info* mutable_play_info_arr(int index);
-  inline ::hld::legion_proto_legion_dance_player_info* add_play_info_arr();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_dance_player_info >&
+  inline const ::faith::legion_proto_legion_dance_player_info& play_info_arr(int index) const;
+  inline ::faith::legion_proto_legion_dance_player_info* mutable_play_info_arr(int index);
+  inline ::faith::legion_proto_legion_dance_player_info* add_play_info_arr();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_dance_player_info >&
       play_info_arr() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_dance_player_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_dance_player_info >*
       mutable_play_info_arr();
 
   // optional int32 play_num = 2;
@@ -14235,14 +14235,14 @@ class legion_proto_send_map_legion_player : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 play_num() const;
   inline void set_play_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.send_map_legion_player)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.send_map_legion_player)
  private:
   inline void set_has_play_num();
   inline void clear_has_play_num();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_dance_player_info > play_info_arr_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_dance_player_info > play_info_arr_;
   ::google::protobuf::int32 play_num_;
 
   mutable int _cached_size_;
@@ -14325,7 +14325,7 @@ class legion_proto_invite_legion_dance : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 play_guid_b() const;
   inline void set_play_guid_b(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.invite_legion_dance)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.invite_legion_dance)
  private:
   inline void set_has_play_guid_a();
   inline void clear_has_play_guid_a();
@@ -14410,7 +14410,7 @@ class legion_proto_invite_legion_dance_end : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 error_index() const;
   inline void set_error_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.invite_legion_dance_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.invite_legion_dance_end)
  private:
   inline void set_has_error_index();
   inline void clear_has_error_index();
@@ -14525,7 +14525,7 @@ class legion_proto_be_invite_legion_dance : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 play_template_id() const;
   inline void set_play_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.be_invite_legion_dance)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.be_invite_legion_dance)
  private:
   inline void set_has_play_guid_a();
   inline void clear_has_play_guid_a();
@@ -14633,7 +14633,7 @@ class legion_proto_be_invite_legion_dance_end : public ::google::protobuf::Messa
   inline bool is_reception() const;
   inline void set_is_reception(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.be_invite_legion_dance_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.be_invite_legion_dance_end)
  private:
   inline void set_has_play_guid_a();
   inline void clear_has_play_guid_a();
@@ -14714,7 +14714,7 @@ class legion_proto_legion_dance_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_dance_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_dance_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -14786,7 +14786,7 @@ class legion_proto_legion_dance_interaction_begin : public ::google::protobuf::M
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_dance_interaction_begin)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_dance_interaction_begin)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -14858,7 +14858,7 @@ class legion_proto_legion_dance_interaction_end : public ::google::protobuf::Mes
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_dance_interaction_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_dance_interaction_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -14930,7 +14930,7 @@ class legion_proto_legion_Dance_clear_data : public ::google::protobuf::Message 
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_Dance_clear_data)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_Dance_clear_data)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -15002,7 +15002,7 @@ class legion_proto_add_bonfire_end : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.add_bonfire_end)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.add_bonfire_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -15119,7 +15119,7 @@ class legion_proto_city_war_member_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 job_title() const;
   inline void set_job_title(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.city_war_member_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.city_war_member_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -15258,7 +15258,7 @@ class legion_proto_legion_welfare_member_info : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 job_title() const;
   inline void set_job_title(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_welfare_member_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_welfare_member_info)
  private:
   inline void set_has_role_guid_a();
   inline void clear_has_role_guid_a();
@@ -15348,16 +15348,16 @@ class legion_proto_city_war_members_info_list : public ::google::protobuf::Messa
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.legion_proto.city_war_member_info mems_info_arr = 1;
+  // repeated .faith.legion_proto.city_war_member_info mems_info_arr = 1;
   inline int mems_info_arr_size() const;
   inline void clear_mems_info_arr();
   static const int kMemsInfoArrFieldNumber = 1;
-  inline const ::hld::legion_proto_city_war_member_info& mems_info_arr(int index) const;
-  inline ::hld::legion_proto_city_war_member_info* mutable_mems_info_arr(int index);
-  inline ::hld::legion_proto_city_war_member_info* add_mems_info_arr();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_member_info >&
+  inline const ::faith::legion_proto_city_war_member_info& mems_info_arr(int index) const;
+  inline ::faith::legion_proto_city_war_member_info* mutable_mems_info_arr(int index);
+  inline ::faith::legion_proto_city_war_member_info* add_mems_info_arr();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_member_info >&
       mems_info_arr() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_member_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_member_info >*
       mutable_mems_info_arr();
 
   // optional bool is_first = 2;
@@ -15367,14 +15367,14 @@ class legion_proto_city_war_members_info_list : public ::google::protobuf::Messa
   inline bool is_first() const;
   inline void set_is_first(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.city_war_members_info_list)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.city_war_members_info_list)
  private:
   inline void set_has_is_first();
   inline void clear_has_is_first();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_member_info > mems_info_arr_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_member_info > mems_info_arr_;
   bool is_first_;
 
   mutable int _cached_size_;
@@ -15443,16 +15443,16 @@ class legion_proto_legion_welfare_members_info_list : public ::google::protobuf:
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.legion_proto.legion_welfare_member_info mems_info_arr = 1;
+  // repeated .faith.legion_proto.legion_welfare_member_info mems_info_arr = 1;
   inline int mems_info_arr_size() const;
   inline void clear_mems_info_arr();
   static const int kMemsInfoArrFieldNumber = 1;
-  inline const ::hld::legion_proto_legion_welfare_member_info& mems_info_arr(int index) const;
-  inline ::hld::legion_proto_legion_welfare_member_info* mutable_mems_info_arr(int index);
-  inline ::hld::legion_proto_legion_welfare_member_info* add_mems_info_arr();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_welfare_member_info >&
+  inline const ::faith::legion_proto_legion_welfare_member_info& mems_info_arr(int index) const;
+  inline ::faith::legion_proto_legion_welfare_member_info* mutable_mems_info_arr(int index);
+  inline ::faith::legion_proto_legion_welfare_member_info* add_mems_info_arr();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_welfare_member_info >&
       mems_info_arr() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_welfare_member_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_welfare_member_info >*
       mutable_mems_info_arr();
 
   // optional bool is_first = 2;
@@ -15462,14 +15462,14 @@ class legion_proto_legion_welfare_members_info_list : public ::google::protobuf:
   inline bool is_first() const;
   inline void set_is_first(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_welfare_members_info_list)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_welfare_members_info_list)
  private:
   inline void set_has_is_first();
   inline void clear_has_is_first();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_welfare_member_info > mems_info_arr_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_welfare_member_info > mems_info_arr_;
   bool is_first_;
 
   mutable int _cached_size_;
@@ -15559,7 +15559,7 @@ class legion_proto_legion_strategy_world_boss_info : public ::google::protobuf::
   inline ::google::protobuf::int32 senior_boss_id() const;
   inline void set_senior_boss_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_strategy_world_boss_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_strategy_world_boss_info)
  private:
   inline void set_has_low_boss_id();
   inline void clear_has_low_boss_id();
@@ -15661,7 +15661,7 @@ class legion_proto_legion_strategy_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 boss_level() const;
   inline void set_boss_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.legion_strategy_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.legion_strategy_info)
  private:
   inline void set_has_legion_guid();
   inline void clear_has_legion_guid();
@@ -15763,7 +15763,7 @@ class legion_proto_one_world_boss_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 legion_player_num() const;
   inline void set_legion_player_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.one_world_boss_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.one_world_boss_info)
  private:
   inline void set_has_boss_level();
   inline void clear_has_boss_level();
@@ -15844,37 +15844,37 @@ class legion_proto_all_world_boss_info : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.legion_proto.one_world_boss_info world_boss_info_arr = 1;
+  // repeated .faith.legion_proto.one_world_boss_info world_boss_info_arr = 1;
   inline int world_boss_info_arr_size() const;
   inline void clear_world_boss_info_arr();
   static const int kWorldBossInfoArrFieldNumber = 1;
-  inline const ::hld::legion_proto_one_world_boss_info& world_boss_info_arr(int index) const;
-  inline ::hld::legion_proto_one_world_boss_info* mutable_world_boss_info_arr(int index);
-  inline ::hld::legion_proto_one_world_boss_info* add_world_boss_info_arr();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_one_world_boss_info >&
+  inline const ::faith::legion_proto_one_world_boss_info& world_boss_info_arr(int index) const;
+  inline ::faith::legion_proto_one_world_boss_info* mutable_world_boss_info_arr(int index);
+  inline ::faith::legion_proto_one_world_boss_info* add_world_boss_info_arr();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_one_world_boss_info >&
       world_boss_info_arr() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_one_world_boss_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_one_world_boss_info >*
       mutable_world_boss_info_arr();
 
-  // repeated .hld.legion_proto.one_world_boss_info all_info = 2;
+  // repeated .faith.legion_proto.one_world_boss_info all_info = 2;
   inline int all_info_size() const;
   inline void clear_all_info();
   static const int kAllInfoFieldNumber = 2;
-  inline const ::hld::legion_proto_one_world_boss_info& all_info(int index) const;
-  inline ::hld::legion_proto_one_world_boss_info* mutable_all_info(int index);
-  inline ::hld::legion_proto_one_world_boss_info* add_all_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_one_world_boss_info >&
+  inline const ::faith::legion_proto_one_world_boss_info& all_info(int index) const;
+  inline ::faith::legion_proto_one_world_boss_info* mutable_all_info(int index);
+  inline ::faith::legion_proto_one_world_boss_info* add_all_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_one_world_boss_info >&
       all_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_one_world_boss_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_one_world_boss_info >*
       mutable_all_info();
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.all_world_boss_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.all_world_boss_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_one_world_boss_info > world_boss_info_arr_;
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_one_world_boss_info > all_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_one_world_boss_info > world_boss_info_arr_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_one_world_boss_info > all_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -15968,7 +15968,7 @@ class legion_proto_world_boss_score_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 role_score() const;
   inline void set_role_score(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.world_boss_score_info)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.world_boss_score_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -16049,47 +16049,47 @@ class legion_proto_world_boss_strategy_result : public ::google::protobuf::Messa
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.legion_proto.world_boss_score_info legion_score_info = 1;
+  // repeated .faith.legion_proto.world_boss_score_info legion_score_info = 1;
   inline int legion_score_info_size() const;
   inline void clear_legion_score_info();
   static const int kLegionScoreInfoFieldNumber = 1;
-  inline const ::hld::legion_proto_world_boss_score_info& legion_score_info(int index) const;
-  inline ::hld::legion_proto_world_boss_score_info* mutable_legion_score_info(int index);
-  inline ::hld::legion_proto_world_boss_score_info* add_legion_score_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_world_boss_score_info >&
+  inline const ::faith::legion_proto_world_boss_score_info& legion_score_info(int index) const;
+  inline ::faith::legion_proto_world_boss_score_info* mutable_legion_score_info(int index);
+  inline ::faith::legion_proto_world_boss_score_info* add_legion_score_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_world_boss_score_info >&
       legion_score_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_world_boss_score_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_world_boss_score_info >*
       mutable_legion_score_info();
 
-  // repeated .hld.legion_proto.world_boss_score_info personal_score_info = 2;
+  // repeated .faith.legion_proto.world_boss_score_info personal_score_info = 2;
   inline int personal_score_info_size() const;
   inline void clear_personal_score_info();
   static const int kPersonalScoreInfoFieldNumber = 2;
-  inline const ::hld::legion_proto_world_boss_score_info& personal_score_info(int index) const;
-  inline ::hld::legion_proto_world_boss_score_info* mutable_personal_score_info(int index);
-  inline ::hld::legion_proto_world_boss_score_info* add_personal_score_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_world_boss_score_info >&
+  inline const ::faith::legion_proto_world_boss_score_info& personal_score_info(int index) const;
+  inline ::faith::legion_proto_world_boss_score_info* mutable_personal_score_info(int index);
+  inline ::faith::legion_proto_world_boss_score_info* add_personal_score_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_world_boss_score_info >&
       personal_score_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_world_boss_score_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_world_boss_score_info >*
       mutable_personal_score_info();
 
-  // optional .hld.legion_proto.world_boss_score_info legion_extra_score = 3;
+  // optional .faith.legion_proto.world_boss_score_info legion_extra_score = 3;
   inline bool has_legion_extra_score() const;
   inline void clear_legion_extra_score();
   static const int kLegionExtraScoreFieldNumber = 3;
-  inline const ::hld::legion_proto_world_boss_score_info& legion_extra_score() const;
-  inline ::hld::legion_proto_world_boss_score_info* mutable_legion_extra_score();
-  inline ::hld::legion_proto_world_boss_score_info* release_legion_extra_score();
-  inline void set_allocated_legion_extra_score(::hld::legion_proto_world_boss_score_info* legion_extra_score);
+  inline const ::faith::legion_proto_world_boss_score_info& legion_extra_score() const;
+  inline ::faith::legion_proto_world_boss_score_info* mutable_legion_extra_score();
+  inline ::faith::legion_proto_world_boss_score_info* release_legion_extra_score();
+  inline void set_allocated_legion_extra_score(::faith::legion_proto_world_boss_score_info* legion_extra_score);
 
-  // optional .hld.legion_proto.world_boss_score_info personal_extra_score = 4;
+  // optional .faith.legion_proto.world_boss_score_info personal_extra_score = 4;
   inline bool has_personal_extra_score() const;
   inline void clear_personal_extra_score();
   static const int kPersonalExtraScoreFieldNumber = 4;
-  inline const ::hld::legion_proto_world_boss_score_info& personal_extra_score() const;
-  inline ::hld::legion_proto_world_boss_score_info* mutable_personal_extra_score();
-  inline ::hld::legion_proto_world_boss_score_info* release_personal_extra_score();
-  inline void set_allocated_personal_extra_score(::hld::legion_proto_world_boss_score_info* personal_extra_score);
+  inline const ::faith::legion_proto_world_boss_score_info& personal_extra_score() const;
+  inline ::faith::legion_proto_world_boss_score_info* mutable_personal_extra_score();
+  inline ::faith::legion_proto_world_boss_score_info* release_personal_extra_score();
+  inline void set_allocated_personal_extra_score(::faith::legion_proto_world_boss_score_info* personal_extra_score);
 
   // optional int32 reward_level = 5;
   inline bool has_reward_level() const;
@@ -16098,7 +16098,7 @@ class legion_proto_world_boss_strategy_result : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 reward_level() const;
   inline void set_reward_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto.world_boss_strategy_result)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto.world_boss_strategy_result)
  private:
   inline void set_has_legion_extra_score();
   inline void clear_has_legion_extra_score();
@@ -16109,10 +16109,10 @@ class legion_proto_world_boss_strategy_result : public ::google::protobuf::Messa
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_world_boss_score_info > legion_score_info_;
-  ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_world_boss_score_info > personal_score_info_;
-  ::hld::legion_proto_world_boss_score_info* legion_extra_score_;
-  ::hld::legion_proto_world_boss_score_info* personal_extra_score_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_world_boss_score_info > legion_score_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_world_boss_score_info > personal_score_info_;
+  ::faith::legion_proto_world_boss_score_info* legion_extra_score_;
+  ::faith::legion_proto_world_boss_score_info* personal_extra_score_;
   ::google::protobuf::int32 reward_level_;
 
   mutable int _cached_size_;
@@ -16348,7 +16348,7 @@ class legion_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.legion_proto)
+  // @@protoc_insertion_point(class_scope:faith.legion_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -16724,27 +16724,27 @@ inline void legion_proto_member_info::set_allocated_week_contribution_value(::st
 
 // legion_proto_members_info_list
 
-// repeated .hld.legion_proto.member_info mems_info_arr = 1;
+// repeated .faith.legion_proto.member_info mems_info_arr = 1;
 inline int legion_proto_members_info_list::mems_info_arr_size() const {
   return mems_info_arr_.size();
 }
 inline void legion_proto_members_info_list::clear_mems_info_arr() {
   mems_info_arr_.Clear();
 }
-inline const ::hld::legion_proto_member_info& legion_proto_members_info_list::mems_info_arr(int index) const {
+inline const ::faith::legion_proto_member_info& legion_proto_members_info_list::mems_info_arr(int index) const {
   return mems_info_arr_.Get(index);
 }
-inline ::hld::legion_proto_member_info* legion_proto_members_info_list::mutable_mems_info_arr(int index) {
+inline ::faith::legion_proto_member_info* legion_proto_members_info_list::mutable_mems_info_arr(int index) {
   return mems_info_arr_.Mutable(index);
 }
-inline ::hld::legion_proto_member_info* legion_proto_members_info_list::add_mems_info_arr() {
+inline ::faith::legion_proto_member_info* legion_proto_members_info_list::add_mems_info_arr() {
   return mems_info_arr_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_member_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_member_info >&
 legion_proto_members_info_list::mems_info_arr() const {
   return mems_info_arr_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_member_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_member_info >*
 legion_proto_members_info_list::mutable_mems_info_arr() {
   return &mems_info_arr_;
 }
@@ -17032,27 +17032,27 @@ inline void legion_proto_legion_info::set_member_num(::google::protobuf::int32 v
   member_num_ = value;
 }
 
-// repeated .hld.legion_proto.member_info member_list = 7;
+// repeated .faith.legion_proto.member_info member_list = 7;
 inline int legion_proto_legion_info::member_list_size() const {
   return member_list_.size();
 }
 inline void legion_proto_legion_info::clear_member_list() {
   member_list_.Clear();
 }
-inline const ::hld::legion_proto_member_info& legion_proto_legion_info::member_list(int index) const {
+inline const ::faith::legion_proto_member_info& legion_proto_legion_info::member_list(int index) const {
   return member_list_.Get(index);
 }
-inline ::hld::legion_proto_member_info* legion_proto_legion_info::mutable_member_list(int index) {
+inline ::faith::legion_proto_member_info* legion_proto_legion_info::mutable_member_list(int index) {
   return member_list_.Mutable(index);
 }
-inline ::hld::legion_proto_member_info* legion_proto_legion_info::add_member_list() {
+inline ::faith::legion_proto_member_info* legion_proto_legion_info::add_member_list() {
   return member_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_member_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_member_info >&
 legion_proto_legion_info::member_list() const {
   return member_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_member_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_member_info >*
 legion_proto_legion_info::mutable_member_list() {
   return &member_list_;
 }
@@ -17547,7 +17547,7 @@ inline void legion_proto_create_legion::set_auto_accept_new_member(::google::pro
 
 // legion_proto_create_legion_end
 
-// optional .hld.legion_proto.legion_info legion_info_data = 1;
+// optional .faith.legion_proto.legion_info legion_info_data = 1;
 inline bool legion_proto_create_legion_end::has_legion_info_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -17558,24 +17558,24 @@ inline void legion_proto_create_legion_end::clear_has_legion_info_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void legion_proto_create_legion_end::clear_legion_info_data() {
-  if (legion_info_data_ != NULL) legion_info_data_->::hld::legion_proto_legion_info::Clear();
+  if (legion_info_data_ != NULL) legion_info_data_->::faith::legion_proto_legion_info::Clear();
   clear_has_legion_info_data();
 }
-inline const ::hld::legion_proto_legion_info& legion_proto_create_legion_end::legion_info_data() const {
+inline const ::faith::legion_proto_legion_info& legion_proto_create_legion_end::legion_info_data() const {
   return legion_info_data_ != NULL ? *legion_info_data_ : *default_instance_->legion_info_data_;
 }
-inline ::hld::legion_proto_legion_info* legion_proto_create_legion_end::mutable_legion_info_data() {
+inline ::faith::legion_proto_legion_info* legion_proto_create_legion_end::mutable_legion_info_data() {
   set_has_legion_info_data();
-  if (legion_info_data_ == NULL) legion_info_data_ = new ::hld::legion_proto_legion_info;
+  if (legion_info_data_ == NULL) legion_info_data_ = new ::faith::legion_proto_legion_info;
   return legion_info_data_;
 }
-inline ::hld::legion_proto_legion_info* legion_proto_create_legion_end::release_legion_info_data() {
+inline ::faith::legion_proto_legion_info* legion_proto_create_legion_end::release_legion_info_data() {
   clear_has_legion_info_data();
-  ::hld::legion_proto_legion_info* temp = legion_info_data_;
+  ::faith::legion_proto_legion_info* temp = legion_info_data_;
   legion_info_data_ = NULL;
   return temp;
 }
-inline void legion_proto_create_legion_end::set_allocated_legion_info_data(::hld::legion_proto_legion_info* legion_info_data) {
+inline void legion_proto_create_legion_end::set_allocated_legion_info_data(::faith::legion_proto_legion_info* legion_info_data) {
   delete legion_info_data_;
   legion_info_data_ = legion_info_data;
   if (legion_info_data) {
@@ -18507,27 +18507,27 @@ inline void legion_proto_get_legion_list_end::set_legion_list_len(::google::prot
   legion_list_len_ = value;
 }
 
-// repeated .hld.legion_proto.legion_brief_info legion_list = 2;
+// repeated .faith.legion_proto.legion_brief_info legion_list = 2;
 inline int legion_proto_get_legion_list_end::legion_list_size() const {
   return legion_list_.size();
 }
 inline void legion_proto_get_legion_list_end::clear_legion_list() {
   legion_list_.Clear();
 }
-inline const ::hld::legion_proto_legion_brief_info& legion_proto_get_legion_list_end::legion_list(int index) const {
+inline const ::faith::legion_proto_legion_brief_info& legion_proto_get_legion_list_end::legion_list(int index) const {
   return legion_list_.Get(index);
 }
-inline ::hld::legion_proto_legion_brief_info* legion_proto_get_legion_list_end::mutable_legion_list(int index) {
+inline ::faith::legion_proto_legion_brief_info* legion_proto_get_legion_list_end::mutable_legion_list(int index) {
   return legion_list_.Mutable(index);
 }
-inline ::hld::legion_proto_legion_brief_info* legion_proto_get_legion_list_end::add_legion_list() {
+inline ::faith::legion_proto_legion_brief_info* legion_proto_get_legion_list_end::add_legion_list() {
   return legion_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_brief_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_brief_info >&
 legion_proto_get_legion_list_end::legion_list() const {
   return legion_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_brief_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_brief_info >*
 legion_proto_get_legion_list_end::mutable_legion_list() {
   return &legion_list_;
 }
@@ -18864,7 +18864,7 @@ inline void legion_proto_invite_player_end::set_invite_role_level(::google::prot
   invite_role_level_ = value;
 }
 
-// optional .hld.legion_proto.legion_brief_info invite_legion_info = 4;
+// optional .faith.legion_proto.legion_brief_info invite_legion_info = 4;
 inline bool legion_proto_invite_player_end::has_invite_legion_info() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -18875,24 +18875,24 @@ inline void legion_proto_invite_player_end::clear_has_invite_legion_info() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void legion_proto_invite_player_end::clear_invite_legion_info() {
-  if (invite_legion_info_ != NULL) invite_legion_info_->::hld::legion_proto_legion_brief_info::Clear();
+  if (invite_legion_info_ != NULL) invite_legion_info_->::faith::legion_proto_legion_brief_info::Clear();
   clear_has_invite_legion_info();
 }
-inline const ::hld::legion_proto_legion_brief_info& legion_proto_invite_player_end::invite_legion_info() const {
+inline const ::faith::legion_proto_legion_brief_info& legion_proto_invite_player_end::invite_legion_info() const {
   return invite_legion_info_ != NULL ? *invite_legion_info_ : *default_instance_->invite_legion_info_;
 }
-inline ::hld::legion_proto_legion_brief_info* legion_proto_invite_player_end::mutable_invite_legion_info() {
+inline ::faith::legion_proto_legion_brief_info* legion_proto_invite_player_end::mutable_invite_legion_info() {
   set_has_invite_legion_info();
-  if (invite_legion_info_ == NULL) invite_legion_info_ = new ::hld::legion_proto_legion_brief_info;
+  if (invite_legion_info_ == NULL) invite_legion_info_ = new ::faith::legion_proto_legion_brief_info;
   return invite_legion_info_;
 }
-inline ::hld::legion_proto_legion_brief_info* legion_proto_invite_player_end::release_invite_legion_info() {
+inline ::faith::legion_proto_legion_brief_info* legion_proto_invite_player_end::release_invite_legion_info() {
   clear_has_invite_legion_info();
-  ::hld::legion_proto_legion_brief_info* temp = invite_legion_info_;
+  ::faith::legion_proto_legion_brief_info* temp = invite_legion_info_;
   invite_legion_info_ = NULL;
   return temp;
 }
-inline void legion_proto_invite_player_end::set_allocated_invite_legion_info(::hld::legion_proto_legion_brief_info* invite_legion_info) {
+inline void legion_proto_invite_player_end::set_allocated_invite_legion_info(::faith::legion_proto_legion_brief_info* invite_legion_info) {
   delete invite_legion_info_;
   invite_legion_info_ = invite_legion_info;
   if (invite_legion_info) {
@@ -19149,27 +19149,27 @@ inline void legion_proto_get_applicant_info_list_end::set_list_len(::google::pro
   list_len_ = value;
 }
 
-// repeated .hld.legion_proto.applicant_info applicant_list = 2;
+// repeated .faith.legion_proto.applicant_info applicant_list = 2;
 inline int legion_proto_get_applicant_info_list_end::applicant_list_size() const {
   return applicant_list_.size();
 }
 inline void legion_proto_get_applicant_info_list_end::clear_applicant_list() {
   applicant_list_.Clear();
 }
-inline const ::hld::legion_proto_applicant_info& legion_proto_get_applicant_info_list_end::applicant_list(int index) const {
+inline const ::faith::legion_proto_applicant_info& legion_proto_get_applicant_info_list_end::applicant_list(int index) const {
   return applicant_list_.Get(index);
 }
-inline ::hld::legion_proto_applicant_info* legion_proto_get_applicant_info_list_end::mutable_applicant_list(int index) {
+inline ::faith::legion_proto_applicant_info* legion_proto_get_applicant_info_list_end::mutable_applicant_list(int index) {
   return applicant_list_.Mutable(index);
 }
-inline ::hld::legion_proto_applicant_info* legion_proto_get_applicant_info_list_end::add_applicant_list() {
+inline ::faith::legion_proto_applicant_info* legion_proto_get_applicant_info_list_end::add_applicant_list() {
   return applicant_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_applicant_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_applicant_info >&
 legion_proto_get_applicant_info_list_end::applicant_list() const {
   return applicant_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_applicant_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_applicant_info >*
 legion_proto_get_applicant_info_list_end::mutable_applicant_list() {
   return &applicant_list_;
 }
@@ -19304,7 +19304,7 @@ inline void legion_proto_process_apply_end::set_is_accept(::google::protobuf::in
 
 // legion_proto_add_member_end
 
-// optional .hld.legion_proto.member_info new_member_info = 1;
+// optional .faith.legion_proto.member_info new_member_info = 1;
 inline bool legion_proto_add_member_end::has_new_member_info() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -19315,24 +19315,24 @@ inline void legion_proto_add_member_end::clear_has_new_member_info() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void legion_proto_add_member_end::clear_new_member_info() {
-  if (new_member_info_ != NULL) new_member_info_->::hld::legion_proto_member_info::Clear();
+  if (new_member_info_ != NULL) new_member_info_->::faith::legion_proto_member_info::Clear();
   clear_has_new_member_info();
 }
-inline const ::hld::legion_proto_member_info& legion_proto_add_member_end::new_member_info() const {
+inline const ::faith::legion_proto_member_info& legion_proto_add_member_end::new_member_info() const {
   return new_member_info_ != NULL ? *new_member_info_ : *default_instance_->new_member_info_;
 }
-inline ::hld::legion_proto_member_info* legion_proto_add_member_end::mutable_new_member_info() {
+inline ::faith::legion_proto_member_info* legion_proto_add_member_end::mutable_new_member_info() {
   set_has_new_member_info();
-  if (new_member_info_ == NULL) new_member_info_ = new ::hld::legion_proto_member_info;
+  if (new_member_info_ == NULL) new_member_info_ = new ::faith::legion_proto_member_info;
   return new_member_info_;
 }
-inline ::hld::legion_proto_member_info* legion_proto_add_member_end::release_new_member_info() {
+inline ::faith::legion_proto_member_info* legion_proto_add_member_end::release_new_member_info() {
   clear_has_new_member_info();
-  ::hld::legion_proto_member_info* temp = new_member_info_;
+  ::faith::legion_proto_member_info* temp = new_member_info_;
   new_member_info_ = NULL;
   return temp;
 }
-inline void legion_proto_add_member_end::set_allocated_new_member_info(::hld::legion_proto_member_info* new_member_info) {
+inline void legion_proto_add_member_end::set_allocated_new_member_info(::faith::legion_proto_member_info* new_member_info) {
   delete new_member_info_;
   new_member_info_ = new_member_info;
   if (new_member_info) {
@@ -20092,27 +20092,27 @@ inline void legion_proto_get_legion_event_list_end::set_event_list_len(::google:
   event_list_len_ = value;
 }
 
-// repeated .hld.legion_proto.legion_event event_list = 2;
+// repeated .faith.legion_proto.legion_event event_list = 2;
 inline int legion_proto_get_legion_event_list_end::event_list_size() const {
   return event_list_.size();
 }
 inline void legion_proto_get_legion_event_list_end::clear_event_list() {
   event_list_.Clear();
 }
-inline const ::hld::legion_proto_legion_event& legion_proto_get_legion_event_list_end::event_list(int index) const {
+inline const ::faith::legion_proto_legion_event& legion_proto_get_legion_event_list_end::event_list(int index) const {
   return event_list_.Get(index);
 }
-inline ::hld::legion_proto_legion_event* legion_proto_get_legion_event_list_end::mutable_event_list(int index) {
+inline ::faith::legion_proto_legion_event* legion_proto_get_legion_event_list_end::mutable_event_list(int index) {
   return event_list_.Mutable(index);
 }
-inline ::hld::legion_proto_legion_event* legion_proto_get_legion_event_list_end::add_event_list() {
+inline ::faith::legion_proto_legion_event* legion_proto_get_legion_event_list_end::add_event_list() {
   return event_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_event >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_event >&
 legion_proto_get_legion_event_list_end::event_list() const {
   return event_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_event >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_event >*
 legion_proto_get_legion_event_list_end::mutable_event_list() {
   return &event_list_;
 }
@@ -20239,27 +20239,27 @@ inline void legion_proto_get_legion_bonus_info::set_get_all(bool value) {
 
 // legion_proto_get_legion_bonus_info_end
 
-// repeated .hld.legion_proto.legion_bonus_info bonus_info = 1;
+// repeated .faith.legion_proto.legion_bonus_info bonus_info = 1;
 inline int legion_proto_get_legion_bonus_info_end::bonus_info_size() const {
   return bonus_info_.size();
 }
 inline void legion_proto_get_legion_bonus_info_end::clear_bonus_info() {
   bonus_info_.Clear();
 }
-inline const ::hld::legion_proto_legion_bonus_info& legion_proto_get_legion_bonus_info_end::bonus_info(int index) const {
+inline const ::faith::legion_proto_legion_bonus_info& legion_proto_get_legion_bonus_info_end::bonus_info(int index) const {
   return bonus_info_.Get(index);
 }
-inline ::hld::legion_proto_legion_bonus_info* legion_proto_get_legion_bonus_info_end::mutable_bonus_info(int index) {
+inline ::faith::legion_proto_legion_bonus_info* legion_proto_get_legion_bonus_info_end::mutable_bonus_info(int index) {
   return bonus_info_.Mutable(index);
 }
-inline ::hld::legion_proto_legion_bonus_info* legion_proto_get_legion_bonus_info_end::add_bonus_info() {
+inline ::faith::legion_proto_legion_bonus_info* legion_proto_get_legion_bonus_info_end::add_bonus_info() {
   return bonus_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_bonus_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_bonus_info >&
 legion_proto_get_legion_bonus_info_end::bonus_info() const {
   return bonus_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_bonus_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_bonus_info >*
 legion_proto_get_legion_bonus_info_end::mutable_bonus_info() {
   return &bonus_info_;
 }
@@ -20799,27 +20799,27 @@ inline void legion_proto_legion_boss_record_list::set_record_num(::google::proto
   record_num_ = value;
 }
 
-// repeated .hld.legion_proto.legion_boss_record records = 2;
+// repeated .faith.legion_proto.legion_boss_record records = 2;
 inline int legion_proto_legion_boss_record_list::records_size() const {
   return records_.size();
 }
 inline void legion_proto_legion_boss_record_list::clear_records() {
   records_.Clear();
 }
-inline const ::hld::legion_proto_legion_boss_record& legion_proto_legion_boss_record_list::records(int index) const {
+inline const ::faith::legion_proto_legion_boss_record& legion_proto_legion_boss_record_list::records(int index) const {
   return records_.Get(index);
 }
-inline ::hld::legion_proto_legion_boss_record* legion_proto_legion_boss_record_list::mutable_records(int index) {
+inline ::faith::legion_proto_legion_boss_record* legion_proto_legion_boss_record_list::mutable_records(int index) {
   return records_.Mutable(index);
 }
-inline ::hld::legion_proto_legion_boss_record* legion_proto_legion_boss_record_list::add_records() {
+inline ::faith::legion_proto_legion_boss_record* legion_proto_legion_boss_record_list::add_records() {
   return records_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_boss_record >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_boss_record >&
 legion_proto_legion_boss_record_list::records() const {
   return records_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_boss_record >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_boss_record >*
 legion_proto_legion_boss_record_list::mutable_records() {
   return &records_;
 }
@@ -21598,27 +21598,27 @@ inline void legion_proto_city_war_territory_info::set_is_in_war(bool value) {
   is_in_war_ = value;
 }
 
-// repeated .hld.legion_proto.city_war_bid_info bid_infos = 3;
+// repeated .faith.legion_proto.city_war_bid_info bid_infos = 3;
 inline int legion_proto_city_war_territory_info::bid_infos_size() const {
   return bid_infos_.size();
 }
 inline void legion_proto_city_war_territory_info::clear_bid_infos() {
   bid_infos_.Clear();
 }
-inline const ::hld::legion_proto_city_war_bid_info& legion_proto_city_war_territory_info::bid_infos(int index) const {
+inline const ::faith::legion_proto_city_war_bid_info& legion_proto_city_war_territory_info::bid_infos(int index) const {
   return bid_infos_.Get(index);
 }
-inline ::hld::legion_proto_city_war_bid_info* legion_proto_city_war_territory_info::mutable_bid_infos(int index) {
+inline ::faith::legion_proto_city_war_bid_info* legion_proto_city_war_territory_info::mutable_bid_infos(int index) {
   return bid_infos_.Mutable(index);
 }
-inline ::hld::legion_proto_city_war_bid_info* legion_proto_city_war_territory_info::add_bid_infos() {
+inline ::faith::legion_proto_city_war_bid_info* legion_proto_city_war_territory_info::add_bid_infos() {
   return bid_infos_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_bid_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_bid_info >&
 legion_proto_city_war_territory_info::bid_infos() const {
   return bid_infos_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_bid_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_bid_info >*
 legion_proto_city_war_territory_info::mutable_bid_infos() {
   return &bid_infos_;
 }
@@ -21653,27 +21653,27 @@ inline void legion_proto_get_city_war_info::set_role_guid(::google::protobuf::ui
 
 // legion_proto_get_city_war_info_end
 
-// repeated .hld.legion_proto.city_war_territory_info territory_info = 1;
+// repeated .faith.legion_proto.city_war_territory_info territory_info = 1;
 inline int legion_proto_get_city_war_info_end::territory_info_size() const {
   return territory_info_.size();
 }
 inline void legion_proto_get_city_war_info_end::clear_territory_info() {
   territory_info_.Clear();
 }
-inline const ::hld::legion_proto_city_war_territory_info& legion_proto_get_city_war_info_end::territory_info(int index) const {
+inline const ::faith::legion_proto_city_war_territory_info& legion_proto_get_city_war_info_end::territory_info(int index) const {
   return territory_info_.Get(index);
 }
-inline ::hld::legion_proto_city_war_territory_info* legion_proto_get_city_war_info_end::mutable_territory_info(int index) {
+inline ::faith::legion_proto_city_war_territory_info* legion_proto_get_city_war_info_end::mutable_territory_info(int index) {
   return territory_info_.Mutable(index);
 }
-inline ::hld::legion_proto_city_war_territory_info* legion_proto_get_city_war_info_end::add_territory_info() {
+inline ::faith::legion_proto_city_war_territory_info* legion_proto_get_city_war_info_end::add_territory_info() {
   return territory_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_territory_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_territory_info >&
 legion_proto_get_city_war_info_end::territory_info() const {
   return territory_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_territory_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_territory_info >*
 legion_proto_get_city_war_info_end::mutable_territory_info() {
   return &territory_info_;
 }
@@ -21899,7 +21899,7 @@ inline void legion_proto_req_territory_info::set_terr_id(::google::protobuf::int
 
 // legion_proto_req_territory_info_end
 
-// optional .hld.legion_proto.city_war_territory_info terr_info = 1;
+// optional .faith.legion_proto.city_war_territory_info terr_info = 1;
 inline bool legion_proto_req_territory_info_end::has_terr_info() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -21910,24 +21910,24 @@ inline void legion_proto_req_territory_info_end::clear_has_terr_info() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void legion_proto_req_territory_info_end::clear_terr_info() {
-  if (terr_info_ != NULL) terr_info_->::hld::legion_proto_city_war_territory_info::Clear();
+  if (terr_info_ != NULL) terr_info_->::faith::legion_proto_city_war_territory_info::Clear();
   clear_has_terr_info();
 }
-inline const ::hld::legion_proto_city_war_territory_info& legion_proto_req_territory_info_end::terr_info() const {
+inline const ::faith::legion_proto_city_war_territory_info& legion_proto_req_territory_info_end::terr_info() const {
   return terr_info_ != NULL ? *terr_info_ : *default_instance_->terr_info_;
 }
-inline ::hld::legion_proto_city_war_territory_info* legion_proto_req_territory_info_end::mutable_terr_info() {
+inline ::faith::legion_proto_city_war_territory_info* legion_proto_req_territory_info_end::mutable_terr_info() {
   set_has_terr_info();
-  if (terr_info_ == NULL) terr_info_ = new ::hld::legion_proto_city_war_territory_info;
+  if (terr_info_ == NULL) terr_info_ = new ::faith::legion_proto_city_war_territory_info;
   return terr_info_;
 }
-inline ::hld::legion_proto_city_war_territory_info* legion_proto_req_territory_info_end::release_terr_info() {
+inline ::faith::legion_proto_city_war_territory_info* legion_proto_req_territory_info_end::release_terr_info() {
   clear_has_terr_info();
-  ::hld::legion_proto_city_war_territory_info* temp = terr_info_;
+  ::faith::legion_proto_city_war_territory_info* temp = terr_info_;
   terr_info_ = NULL;
   return temp;
 }
-inline void legion_proto_req_territory_info_end::set_allocated_terr_info(::hld::legion_proto_city_war_territory_info* terr_info) {
+inline void legion_proto_req_territory_info_end::set_allocated_terr_info(::faith::legion_proto_city_war_territory_info* terr_info) {
   delete terr_info_;
   terr_info_ = terr_info;
   if (terr_info) {
@@ -22151,27 +22151,27 @@ inline void legion_proto_req_city_war_rank_info::set_role_guid(::google::protobu
 
 // legion_proto_req_city_war_rank_info_end
 
-// repeated .hld.legion_proto.city_war_rank_info rank_info = 1;
+// repeated .faith.legion_proto.city_war_rank_info rank_info = 1;
 inline int legion_proto_req_city_war_rank_info_end::rank_info_size() const {
   return rank_info_.size();
 }
 inline void legion_proto_req_city_war_rank_info_end::clear_rank_info() {
   rank_info_.Clear();
 }
-inline const ::hld::legion_proto_city_war_rank_info& legion_proto_req_city_war_rank_info_end::rank_info(int index) const {
+inline const ::faith::legion_proto_city_war_rank_info& legion_proto_req_city_war_rank_info_end::rank_info(int index) const {
   return rank_info_.Get(index);
 }
-inline ::hld::legion_proto_city_war_rank_info* legion_proto_req_city_war_rank_info_end::mutable_rank_info(int index) {
+inline ::faith::legion_proto_city_war_rank_info* legion_proto_req_city_war_rank_info_end::mutable_rank_info(int index) {
   return rank_info_.Mutable(index);
 }
-inline ::hld::legion_proto_city_war_rank_info* legion_proto_req_city_war_rank_info_end::add_rank_info() {
+inline ::faith::legion_proto_city_war_rank_info* legion_proto_req_city_war_rank_info_end::add_rank_info() {
   return rank_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_rank_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_rank_info >&
 legion_proto_req_city_war_rank_info_end::rank_info() const {
   return rank_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_rank_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_rank_info >*
 legion_proto_req_city_war_rank_info_end::mutable_rank_info() {
   return &rank_info_;
 }
@@ -22849,27 +22849,27 @@ inline void legion_proto_city_war_raid_info::set_join_war_legion_num(::google::p
   join_war_legion_num_ = value;
 }
 
-// repeated .hld.legion_proto.city_war_raid_info_of_legion_score legion_score_list = 2;
+// repeated .faith.legion_proto.city_war_raid_info_of_legion_score legion_score_list = 2;
 inline int legion_proto_city_war_raid_info::legion_score_list_size() const {
   return legion_score_list_.size();
 }
 inline void legion_proto_city_war_raid_info::clear_legion_score_list() {
   legion_score_list_.Clear();
 }
-inline const ::hld::legion_proto_city_war_raid_info_of_legion_score& legion_proto_city_war_raid_info::legion_score_list(int index) const {
+inline const ::faith::legion_proto_city_war_raid_info_of_legion_score& legion_proto_city_war_raid_info::legion_score_list(int index) const {
   return legion_score_list_.Get(index);
 }
-inline ::hld::legion_proto_city_war_raid_info_of_legion_score* legion_proto_city_war_raid_info::mutable_legion_score_list(int index) {
+inline ::faith::legion_proto_city_war_raid_info_of_legion_score* legion_proto_city_war_raid_info::mutable_legion_score_list(int index) {
   return legion_score_list_.Mutable(index);
 }
-inline ::hld::legion_proto_city_war_raid_info_of_legion_score* legion_proto_city_war_raid_info::add_legion_score_list() {
+inline ::faith::legion_proto_city_war_raid_info_of_legion_score* legion_proto_city_war_raid_info::add_legion_score_list() {
   return legion_score_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_raid_info_of_legion_score >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_raid_info_of_legion_score >&
 legion_proto_city_war_raid_info::legion_score_list() const {
   return legion_score_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_raid_info_of_legion_score >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_raid_info_of_legion_score >*
 legion_proto_city_war_raid_info::mutable_legion_score_list() {
   return &legion_score_list_;
 }
@@ -22896,27 +22896,27 @@ inline void legion_proto_city_war_raid_info::set_stronghold_num(::google::protob
   stronghold_num_ = value;
 }
 
-// repeated .hld.legion_proto.city_war_raid_info_of_stronghold stronghold_list = 4;
+// repeated .faith.legion_proto.city_war_raid_info_of_stronghold stronghold_list = 4;
 inline int legion_proto_city_war_raid_info::stronghold_list_size() const {
   return stronghold_list_.size();
 }
 inline void legion_proto_city_war_raid_info::clear_stronghold_list() {
   stronghold_list_.Clear();
 }
-inline const ::hld::legion_proto_city_war_raid_info_of_stronghold& legion_proto_city_war_raid_info::stronghold_list(int index) const {
+inline const ::faith::legion_proto_city_war_raid_info_of_stronghold& legion_proto_city_war_raid_info::stronghold_list(int index) const {
   return stronghold_list_.Get(index);
 }
-inline ::hld::legion_proto_city_war_raid_info_of_stronghold* legion_proto_city_war_raid_info::mutable_stronghold_list(int index) {
+inline ::faith::legion_proto_city_war_raid_info_of_stronghold* legion_proto_city_war_raid_info::mutable_stronghold_list(int index) {
   return stronghold_list_.Mutable(index);
 }
-inline ::hld::legion_proto_city_war_raid_info_of_stronghold* legion_proto_city_war_raid_info::add_stronghold_list() {
+inline ::faith::legion_proto_city_war_raid_info_of_stronghold* legion_proto_city_war_raid_info::add_stronghold_list() {
   return stronghold_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_raid_info_of_stronghold >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_raid_info_of_stronghold >&
 legion_proto_city_war_raid_info::stronghold_list() const {
   return stronghold_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_raid_info_of_stronghold >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_raid_info_of_stronghold >*
 legion_proto_city_war_raid_info::mutable_stronghold_list() {
   return &stronghold_list_;
 }
@@ -22943,27 +22943,27 @@ inline void legion_proto_city_war_raid_info::set_role_num(::google::protobuf::in
   role_num_ = value;
 }
 
-// repeated .hld.legion_proto.city_war_raid_info_of_legion_member_score role_score_list = 6;
+// repeated .faith.legion_proto.city_war_raid_info_of_legion_member_score role_score_list = 6;
 inline int legion_proto_city_war_raid_info::role_score_list_size() const {
   return role_score_list_.size();
 }
 inline void legion_proto_city_war_raid_info::clear_role_score_list() {
   role_score_list_.Clear();
 }
-inline const ::hld::legion_proto_city_war_raid_info_of_legion_member_score& legion_proto_city_war_raid_info::role_score_list(int index) const {
+inline const ::faith::legion_proto_city_war_raid_info_of_legion_member_score& legion_proto_city_war_raid_info::role_score_list(int index) const {
   return role_score_list_.Get(index);
 }
-inline ::hld::legion_proto_city_war_raid_info_of_legion_member_score* legion_proto_city_war_raid_info::mutable_role_score_list(int index) {
+inline ::faith::legion_proto_city_war_raid_info_of_legion_member_score* legion_proto_city_war_raid_info::mutable_role_score_list(int index) {
   return role_score_list_.Mutable(index);
 }
-inline ::hld::legion_proto_city_war_raid_info_of_legion_member_score* legion_proto_city_war_raid_info::add_role_score_list() {
+inline ::faith::legion_proto_city_war_raid_info_of_legion_member_score* legion_proto_city_war_raid_info::add_role_score_list() {
   return role_score_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_raid_info_of_legion_member_score >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_raid_info_of_legion_member_score >&
 legion_proto_city_war_raid_info::role_score_list() const {
   return role_score_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_raid_info_of_legion_member_score >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_raid_info_of_legion_member_score >*
 legion_proto_city_war_raid_info::mutable_role_score_list() {
   return &role_score_list_;
 }
@@ -24951,27 +24951,27 @@ inline void legion_proto_legion_warehouse_log::set_eiteminfo_info_id(::google::p
 
 // legion_proto_req_legion_warehouse_item_info_end
 
-// repeated .hld.legion_proto.legion_warehouse_item_info item_list = 1;
+// repeated .faith.legion_proto.legion_warehouse_item_info item_list = 1;
 inline int legion_proto_req_legion_warehouse_item_info_end::item_list_size() const {
   return item_list_.size();
 }
 inline void legion_proto_req_legion_warehouse_item_info_end::clear_item_list() {
   item_list_.Clear();
 }
-inline const ::hld::legion_proto_legion_warehouse_item_info& legion_proto_req_legion_warehouse_item_info_end::item_list(int index) const {
+inline const ::faith::legion_proto_legion_warehouse_item_info& legion_proto_req_legion_warehouse_item_info_end::item_list(int index) const {
   return item_list_.Get(index);
 }
-inline ::hld::legion_proto_legion_warehouse_item_info* legion_proto_req_legion_warehouse_item_info_end::mutable_item_list(int index) {
+inline ::faith::legion_proto_legion_warehouse_item_info* legion_proto_req_legion_warehouse_item_info_end::mutable_item_list(int index) {
   return item_list_.Mutable(index);
 }
-inline ::hld::legion_proto_legion_warehouse_item_info* legion_proto_req_legion_warehouse_item_info_end::add_item_list() {
+inline ::faith::legion_proto_legion_warehouse_item_info* legion_proto_req_legion_warehouse_item_info_end::add_item_list() {
   return item_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_warehouse_item_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_warehouse_item_info >&
 legion_proto_req_legion_warehouse_item_info_end::item_list() const {
   return item_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_warehouse_item_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_warehouse_item_info >*
 legion_proto_req_legion_warehouse_item_info_end::mutable_item_list() {
   return &item_list_;
 }
@@ -25127,27 +25127,27 @@ inline void legion_proto_operation_legion_warehouse_item_end::set_error_code(::g
 
 // legion_proto_req_legion_warehouse_log_end
 
-// repeated .hld.legion_proto.legion_warehouse_log log_list = 1;
+// repeated .faith.legion_proto.legion_warehouse_log log_list = 1;
 inline int legion_proto_req_legion_warehouse_log_end::log_list_size() const {
   return log_list_.size();
 }
 inline void legion_proto_req_legion_warehouse_log_end::clear_log_list() {
   log_list_.Clear();
 }
-inline const ::hld::legion_proto_legion_warehouse_log& legion_proto_req_legion_warehouse_log_end::log_list(int index) const {
+inline const ::faith::legion_proto_legion_warehouse_log& legion_proto_req_legion_warehouse_log_end::log_list(int index) const {
   return log_list_.Get(index);
 }
-inline ::hld::legion_proto_legion_warehouse_log* legion_proto_req_legion_warehouse_log_end::mutable_log_list(int index) {
+inline ::faith::legion_proto_legion_warehouse_log* legion_proto_req_legion_warehouse_log_end::mutable_log_list(int index) {
   return log_list_.Mutable(index);
 }
-inline ::hld::legion_proto_legion_warehouse_log* legion_proto_req_legion_warehouse_log_end::add_log_list() {
+inline ::faith::legion_proto_legion_warehouse_log* legion_proto_req_legion_warehouse_log_end::add_log_list() {
   return log_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_warehouse_log >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_warehouse_log >&
 legion_proto_req_legion_warehouse_log_end::log_list() const {
   return log_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_warehouse_log >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_warehouse_log >*
 legion_proto_req_legion_warehouse_log_end::mutable_log_list() {
   return &log_list_;
 }
@@ -25558,27 +25558,27 @@ inline void legion_proto_cross_city_info_one::set_allocated_legion_name(::std::s
 
 // legion_proto_cross_city_info_all
 
-// repeated .hld.legion_proto.cross_city_info_one city_info_all = 1;
+// repeated .faith.legion_proto.cross_city_info_one city_info_all = 1;
 inline int legion_proto_cross_city_info_all::city_info_all_size() const {
   return city_info_all_.size();
 }
 inline void legion_proto_cross_city_info_all::clear_city_info_all() {
   city_info_all_.Clear();
 }
-inline const ::hld::legion_proto_cross_city_info_one& legion_proto_cross_city_info_all::city_info_all(int index) const {
+inline const ::faith::legion_proto_cross_city_info_one& legion_proto_cross_city_info_all::city_info_all(int index) const {
   return city_info_all_.Get(index);
 }
-inline ::hld::legion_proto_cross_city_info_one* legion_proto_cross_city_info_all::mutable_city_info_all(int index) {
+inline ::faith::legion_proto_cross_city_info_one* legion_proto_cross_city_info_all::mutable_city_info_all(int index) {
   return city_info_all_.Mutable(index);
 }
-inline ::hld::legion_proto_cross_city_info_one* legion_proto_cross_city_info_all::add_city_info_all() {
+inline ::faith::legion_proto_cross_city_info_one* legion_proto_cross_city_info_all::add_city_info_all() {
   return city_info_all_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_cross_city_info_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_cross_city_info_one >&
 legion_proto_cross_city_info_all::city_info_all() const {
   return city_info_all_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_cross_city_info_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_cross_city_info_one >*
 legion_proto_cross_city_info_all::mutable_city_info_all() {
   return &city_info_all_;
 }
@@ -26026,27 +26026,27 @@ inline void legion_proto_legion_dance_player_info::set_play_template_id(::google
 
 // legion_proto_send_map_legion_player
 
-// repeated .hld.legion_proto.legion_dance_player_info play_info_arr = 1;
+// repeated .faith.legion_proto.legion_dance_player_info play_info_arr = 1;
 inline int legion_proto_send_map_legion_player::play_info_arr_size() const {
   return play_info_arr_.size();
 }
 inline void legion_proto_send_map_legion_player::clear_play_info_arr() {
   play_info_arr_.Clear();
 }
-inline const ::hld::legion_proto_legion_dance_player_info& legion_proto_send_map_legion_player::play_info_arr(int index) const {
+inline const ::faith::legion_proto_legion_dance_player_info& legion_proto_send_map_legion_player::play_info_arr(int index) const {
   return play_info_arr_.Get(index);
 }
-inline ::hld::legion_proto_legion_dance_player_info* legion_proto_send_map_legion_player::mutable_play_info_arr(int index) {
+inline ::faith::legion_proto_legion_dance_player_info* legion_proto_send_map_legion_player::mutable_play_info_arr(int index) {
   return play_info_arr_.Mutable(index);
 }
-inline ::hld::legion_proto_legion_dance_player_info* legion_proto_send_map_legion_player::add_play_info_arr() {
+inline ::faith::legion_proto_legion_dance_player_info* legion_proto_send_map_legion_player::add_play_info_arr() {
   return play_info_arr_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_dance_player_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_dance_player_info >&
 legion_proto_send_map_legion_player::play_info_arr() const {
   return play_info_arr_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_dance_player_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_dance_player_info >*
 legion_proto_send_map_legion_player::mutable_play_info_arr() {
   return &play_info_arr_;
 }
@@ -26845,27 +26845,27 @@ inline void legion_proto_legion_welfare_member_info::set_job_title(::google::pro
 
 // legion_proto_city_war_members_info_list
 
-// repeated .hld.legion_proto.city_war_member_info mems_info_arr = 1;
+// repeated .faith.legion_proto.city_war_member_info mems_info_arr = 1;
 inline int legion_proto_city_war_members_info_list::mems_info_arr_size() const {
   return mems_info_arr_.size();
 }
 inline void legion_proto_city_war_members_info_list::clear_mems_info_arr() {
   mems_info_arr_.Clear();
 }
-inline const ::hld::legion_proto_city_war_member_info& legion_proto_city_war_members_info_list::mems_info_arr(int index) const {
+inline const ::faith::legion_proto_city_war_member_info& legion_proto_city_war_members_info_list::mems_info_arr(int index) const {
   return mems_info_arr_.Get(index);
 }
-inline ::hld::legion_proto_city_war_member_info* legion_proto_city_war_members_info_list::mutable_mems_info_arr(int index) {
+inline ::faith::legion_proto_city_war_member_info* legion_proto_city_war_members_info_list::mutable_mems_info_arr(int index) {
   return mems_info_arr_.Mutable(index);
 }
-inline ::hld::legion_proto_city_war_member_info* legion_proto_city_war_members_info_list::add_mems_info_arr() {
+inline ::faith::legion_proto_city_war_member_info* legion_proto_city_war_members_info_list::add_mems_info_arr() {
   return mems_info_arr_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_member_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_member_info >&
 legion_proto_city_war_members_info_list::mems_info_arr() const {
   return mems_info_arr_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_city_war_member_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_city_war_member_info >*
 legion_proto_city_war_members_info_list::mutable_mems_info_arr() {
   return &mems_info_arr_;
 }
@@ -26896,27 +26896,27 @@ inline void legion_proto_city_war_members_info_list::set_is_first(bool value) {
 
 // legion_proto_legion_welfare_members_info_list
 
-// repeated .hld.legion_proto.legion_welfare_member_info mems_info_arr = 1;
+// repeated .faith.legion_proto.legion_welfare_member_info mems_info_arr = 1;
 inline int legion_proto_legion_welfare_members_info_list::mems_info_arr_size() const {
   return mems_info_arr_.size();
 }
 inline void legion_proto_legion_welfare_members_info_list::clear_mems_info_arr() {
   mems_info_arr_.Clear();
 }
-inline const ::hld::legion_proto_legion_welfare_member_info& legion_proto_legion_welfare_members_info_list::mems_info_arr(int index) const {
+inline const ::faith::legion_proto_legion_welfare_member_info& legion_proto_legion_welfare_members_info_list::mems_info_arr(int index) const {
   return mems_info_arr_.Get(index);
 }
-inline ::hld::legion_proto_legion_welfare_member_info* legion_proto_legion_welfare_members_info_list::mutable_mems_info_arr(int index) {
+inline ::faith::legion_proto_legion_welfare_member_info* legion_proto_legion_welfare_members_info_list::mutable_mems_info_arr(int index) {
   return mems_info_arr_.Mutable(index);
 }
-inline ::hld::legion_proto_legion_welfare_member_info* legion_proto_legion_welfare_members_info_list::add_mems_info_arr() {
+inline ::faith::legion_proto_legion_welfare_member_info* legion_proto_legion_welfare_members_info_list::add_mems_info_arr() {
   return mems_info_arr_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_welfare_member_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_welfare_member_info >&
 legion_proto_legion_welfare_members_info_list::mems_info_arr() const {
   return mems_info_arr_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_legion_welfare_member_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_legion_welfare_member_info >*
 legion_proto_legion_welfare_members_info_list::mutable_mems_info_arr() {
   return &mems_info_arr_;
 }
@@ -27157,52 +27157,52 @@ inline void legion_proto_one_world_boss_info::set_legion_player_num(::google::pr
 
 // legion_proto_all_world_boss_info
 
-// repeated .hld.legion_proto.one_world_boss_info world_boss_info_arr = 1;
+// repeated .faith.legion_proto.one_world_boss_info world_boss_info_arr = 1;
 inline int legion_proto_all_world_boss_info::world_boss_info_arr_size() const {
   return world_boss_info_arr_.size();
 }
 inline void legion_proto_all_world_boss_info::clear_world_boss_info_arr() {
   world_boss_info_arr_.Clear();
 }
-inline const ::hld::legion_proto_one_world_boss_info& legion_proto_all_world_boss_info::world_boss_info_arr(int index) const {
+inline const ::faith::legion_proto_one_world_boss_info& legion_proto_all_world_boss_info::world_boss_info_arr(int index) const {
   return world_boss_info_arr_.Get(index);
 }
-inline ::hld::legion_proto_one_world_boss_info* legion_proto_all_world_boss_info::mutable_world_boss_info_arr(int index) {
+inline ::faith::legion_proto_one_world_boss_info* legion_proto_all_world_boss_info::mutable_world_boss_info_arr(int index) {
   return world_boss_info_arr_.Mutable(index);
 }
-inline ::hld::legion_proto_one_world_boss_info* legion_proto_all_world_boss_info::add_world_boss_info_arr() {
+inline ::faith::legion_proto_one_world_boss_info* legion_proto_all_world_boss_info::add_world_boss_info_arr() {
   return world_boss_info_arr_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_one_world_boss_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_one_world_boss_info >&
 legion_proto_all_world_boss_info::world_boss_info_arr() const {
   return world_boss_info_arr_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_one_world_boss_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_one_world_boss_info >*
 legion_proto_all_world_boss_info::mutable_world_boss_info_arr() {
   return &world_boss_info_arr_;
 }
 
-// repeated .hld.legion_proto.one_world_boss_info all_info = 2;
+// repeated .faith.legion_proto.one_world_boss_info all_info = 2;
 inline int legion_proto_all_world_boss_info::all_info_size() const {
   return all_info_.size();
 }
 inline void legion_proto_all_world_boss_info::clear_all_info() {
   all_info_.Clear();
 }
-inline const ::hld::legion_proto_one_world_boss_info& legion_proto_all_world_boss_info::all_info(int index) const {
+inline const ::faith::legion_proto_one_world_boss_info& legion_proto_all_world_boss_info::all_info(int index) const {
   return all_info_.Get(index);
 }
-inline ::hld::legion_proto_one_world_boss_info* legion_proto_all_world_boss_info::mutable_all_info(int index) {
+inline ::faith::legion_proto_one_world_boss_info* legion_proto_all_world_boss_info::mutable_all_info(int index) {
   return all_info_.Mutable(index);
 }
-inline ::hld::legion_proto_one_world_boss_info* legion_proto_all_world_boss_info::add_all_info() {
+inline ::faith::legion_proto_one_world_boss_info* legion_proto_all_world_boss_info::add_all_info() {
   return all_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_one_world_boss_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_one_world_boss_info >&
 legion_proto_all_world_boss_info::all_info() const {
   return all_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_one_world_boss_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_one_world_boss_info >*
 legion_proto_all_world_boss_info::mutable_all_info() {
   return &all_info_;
 }
@@ -27329,57 +27329,57 @@ inline void legion_proto_world_boss_score_info::set_role_score(::google::protobu
 
 // legion_proto_world_boss_strategy_result
 
-// repeated .hld.legion_proto.world_boss_score_info legion_score_info = 1;
+// repeated .faith.legion_proto.world_boss_score_info legion_score_info = 1;
 inline int legion_proto_world_boss_strategy_result::legion_score_info_size() const {
   return legion_score_info_.size();
 }
 inline void legion_proto_world_boss_strategy_result::clear_legion_score_info() {
   legion_score_info_.Clear();
 }
-inline const ::hld::legion_proto_world_boss_score_info& legion_proto_world_boss_strategy_result::legion_score_info(int index) const {
+inline const ::faith::legion_proto_world_boss_score_info& legion_proto_world_boss_strategy_result::legion_score_info(int index) const {
   return legion_score_info_.Get(index);
 }
-inline ::hld::legion_proto_world_boss_score_info* legion_proto_world_boss_strategy_result::mutable_legion_score_info(int index) {
+inline ::faith::legion_proto_world_boss_score_info* legion_proto_world_boss_strategy_result::mutable_legion_score_info(int index) {
   return legion_score_info_.Mutable(index);
 }
-inline ::hld::legion_proto_world_boss_score_info* legion_proto_world_boss_strategy_result::add_legion_score_info() {
+inline ::faith::legion_proto_world_boss_score_info* legion_proto_world_boss_strategy_result::add_legion_score_info() {
   return legion_score_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_world_boss_score_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_world_boss_score_info >&
 legion_proto_world_boss_strategy_result::legion_score_info() const {
   return legion_score_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_world_boss_score_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_world_boss_score_info >*
 legion_proto_world_boss_strategy_result::mutable_legion_score_info() {
   return &legion_score_info_;
 }
 
-// repeated .hld.legion_proto.world_boss_score_info personal_score_info = 2;
+// repeated .faith.legion_proto.world_boss_score_info personal_score_info = 2;
 inline int legion_proto_world_boss_strategy_result::personal_score_info_size() const {
   return personal_score_info_.size();
 }
 inline void legion_proto_world_boss_strategy_result::clear_personal_score_info() {
   personal_score_info_.Clear();
 }
-inline const ::hld::legion_proto_world_boss_score_info& legion_proto_world_boss_strategy_result::personal_score_info(int index) const {
+inline const ::faith::legion_proto_world_boss_score_info& legion_proto_world_boss_strategy_result::personal_score_info(int index) const {
   return personal_score_info_.Get(index);
 }
-inline ::hld::legion_proto_world_boss_score_info* legion_proto_world_boss_strategy_result::mutable_personal_score_info(int index) {
+inline ::faith::legion_proto_world_boss_score_info* legion_proto_world_boss_strategy_result::mutable_personal_score_info(int index) {
   return personal_score_info_.Mutable(index);
 }
-inline ::hld::legion_proto_world_boss_score_info* legion_proto_world_boss_strategy_result::add_personal_score_info() {
+inline ::faith::legion_proto_world_boss_score_info* legion_proto_world_boss_strategy_result::add_personal_score_info() {
   return personal_score_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_world_boss_score_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_world_boss_score_info >&
 legion_proto_world_boss_strategy_result::personal_score_info() const {
   return personal_score_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::legion_proto_world_boss_score_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::legion_proto_world_boss_score_info >*
 legion_proto_world_boss_strategy_result::mutable_personal_score_info() {
   return &personal_score_info_;
 }
 
-// optional .hld.legion_proto.world_boss_score_info legion_extra_score = 3;
+// optional .faith.legion_proto.world_boss_score_info legion_extra_score = 3;
 inline bool legion_proto_world_boss_strategy_result::has_legion_extra_score() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -27390,24 +27390,24 @@ inline void legion_proto_world_boss_strategy_result::clear_has_legion_extra_scor
   _has_bits_[0] &= ~0x00000004u;
 }
 inline void legion_proto_world_boss_strategy_result::clear_legion_extra_score() {
-  if (legion_extra_score_ != NULL) legion_extra_score_->::hld::legion_proto_world_boss_score_info::Clear();
+  if (legion_extra_score_ != NULL) legion_extra_score_->::faith::legion_proto_world_boss_score_info::Clear();
   clear_has_legion_extra_score();
 }
-inline const ::hld::legion_proto_world_boss_score_info& legion_proto_world_boss_strategy_result::legion_extra_score() const {
+inline const ::faith::legion_proto_world_boss_score_info& legion_proto_world_boss_strategy_result::legion_extra_score() const {
   return legion_extra_score_ != NULL ? *legion_extra_score_ : *default_instance_->legion_extra_score_;
 }
-inline ::hld::legion_proto_world_boss_score_info* legion_proto_world_boss_strategy_result::mutable_legion_extra_score() {
+inline ::faith::legion_proto_world_boss_score_info* legion_proto_world_boss_strategy_result::mutable_legion_extra_score() {
   set_has_legion_extra_score();
-  if (legion_extra_score_ == NULL) legion_extra_score_ = new ::hld::legion_proto_world_boss_score_info;
+  if (legion_extra_score_ == NULL) legion_extra_score_ = new ::faith::legion_proto_world_boss_score_info;
   return legion_extra_score_;
 }
-inline ::hld::legion_proto_world_boss_score_info* legion_proto_world_boss_strategy_result::release_legion_extra_score() {
+inline ::faith::legion_proto_world_boss_score_info* legion_proto_world_boss_strategy_result::release_legion_extra_score() {
   clear_has_legion_extra_score();
-  ::hld::legion_proto_world_boss_score_info* temp = legion_extra_score_;
+  ::faith::legion_proto_world_boss_score_info* temp = legion_extra_score_;
   legion_extra_score_ = NULL;
   return temp;
 }
-inline void legion_proto_world_boss_strategy_result::set_allocated_legion_extra_score(::hld::legion_proto_world_boss_score_info* legion_extra_score) {
+inline void legion_proto_world_boss_strategy_result::set_allocated_legion_extra_score(::faith::legion_proto_world_boss_score_info* legion_extra_score) {
   delete legion_extra_score_;
   legion_extra_score_ = legion_extra_score;
   if (legion_extra_score) {
@@ -27417,7 +27417,7 @@ inline void legion_proto_world_boss_strategy_result::set_allocated_legion_extra_
   }
 }
 
-// optional .hld.legion_proto.world_boss_score_info personal_extra_score = 4;
+// optional .faith.legion_proto.world_boss_score_info personal_extra_score = 4;
 inline bool legion_proto_world_boss_strategy_result::has_personal_extra_score() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -27428,24 +27428,24 @@ inline void legion_proto_world_boss_strategy_result::clear_has_personal_extra_sc
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void legion_proto_world_boss_strategy_result::clear_personal_extra_score() {
-  if (personal_extra_score_ != NULL) personal_extra_score_->::hld::legion_proto_world_boss_score_info::Clear();
+  if (personal_extra_score_ != NULL) personal_extra_score_->::faith::legion_proto_world_boss_score_info::Clear();
   clear_has_personal_extra_score();
 }
-inline const ::hld::legion_proto_world_boss_score_info& legion_proto_world_boss_strategy_result::personal_extra_score() const {
+inline const ::faith::legion_proto_world_boss_score_info& legion_proto_world_boss_strategy_result::personal_extra_score() const {
   return personal_extra_score_ != NULL ? *personal_extra_score_ : *default_instance_->personal_extra_score_;
 }
-inline ::hld::legion_proto_world_boss_score_info* legion_proto_world_boss_strategy_result::mutable_personal_extra_score() {
+inline ::faith::legion_proto_world_boss_score_info* legion_proto_world_boss_strategy_result::mutable_personal_extra_score() {
   set_has_personal_extra_score();
-  if (personal_extra_score_ == NULL) personal_extra_score_ = new ::hld::legion_proto_world_boss_score_info;
+  if (personal_extra_score_ == NULL) personal_extra_score_ = new ::faith::legion_proto_world_boss_score_info;
   return personal_extra_score_;
 }
-inline ::hld::legion_proto_world_boss_score_info* legion_proto_world_boss_strategy_result::release_personal_extra_score() {
+inline ::faith::legion_proto_world_boss_score_info* legion_proto_world_boss_strategy_result::release_personal_extra_score() {
   clear_has_personal_extra_score();
-  ::hld::legion_proto_world_boss_score_info* temp = personal_extra_score_;
+  ::faith::legion_proto_world_boss_score_info* temp = personal_extra_score_;
   personal_extra_score_ = NULL;
   return temp;
 }
-inline void legion_proto_world_boss_strategy_result::set_allocated_personal_extra_score(::hld::legion_proto_world_boss_score_info* personal_extra_score) {
+inline void legion_proto_world_boss_strategy_result::set_allocated_personal_extra_score(::faith::legion_proto_world_boss_score_info* personal_extra_score) {
   delete personal_extra_score_;
   personal_extra_score_ = personal_extra_score;
   if (personal_extra_score) {
@@ -27484,7 +27484,7 @@ inline void legion_proto_world_boss_strategy_result::set_reward_level(::google::
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

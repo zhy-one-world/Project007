@@ -1,6 +1,6 @@
 #include "phantom.h"
 #include "template/template_manager.h"
-namespace hld
+namespace faith
 {
     cphantom::cphantom()
 	{

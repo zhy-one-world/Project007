@@ -4,7 +4,7 @@
 #include "logic/item_set.h"
 #include "logic/unit_man.h"
 #include "logic/buff_man.h"
-namespace hld
+namespace faith
 {
 	void feather_heart::clear_data()
 	{

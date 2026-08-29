@@ -7,7 +7,7 @@
 #include "utility/score_indicator.h"
 #include "legion_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class client_session;
 	struct s_item_info;

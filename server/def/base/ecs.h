@@ -236,7 +236,7 @@ namespace ECS
 #ifdef ECS_TICK_TYPE_VOID
 		virtual void tick(World* world)
 #else
-		virtual void tick(World* world, const hld::int32& tick_time)
+		virtual void tick(World* world, const faith::int32& tick_time)
 #endif
 		{
 		}
@@ -603,7 +603,7 @@ namespace ECS
 		/**
 		* Create a new entity. This will emit the OnEntityCreated event.
 		*/
-		Entity* create(hld::int64 entity_id)
+		Entity* create(faith::int64 entity_id)
 		{
 			auto temp_id = entity_id;
 			if (temp_id > 0)
@@ -616,7 +616,7 @@ namespace ECS
 			}
 			else
 			{
-				auto guid = hld::guid_gen::make_guid();
+				auto guid = faith::guid_gen::make_guid();
 				temp_id = guid.server_64;
 			}
 
@@ -804,7 +804,7 @@ namespace ECS
 			return entities.end();
 		}
 
-		Entity* getEntity(hld::int64 entity_id)
+		Entity* getEntity(faith::int64 entity_id)
 		{
 			auto it = entities.find(entity_id);
 			if (it != entities.end())
@@ -822,7 +822,7 @@ namespace ECS
 #ifdef ECS_TICK_TYPE_VOID
 		void tick()
 #else
-		void tick(const hld::int32& tick_time)
+		void tick(const faith::int32& tick_time)
 #endif
 		{
 #ifndef ECS_TICK_NO_CLEANUP

@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -222,7 +222,7 @@ void protobuf_AddDesc_achievement_2eproto() {
     "achievement_operate\022\026\n\016achievement_id\030\001 "
     "\001(\005\022\026\n\016operation_type\030\002 \001(\005\032\221\001\n\027achievem"
     "ent_operate_end\022A\n\021achievement_array\030\001 \003"
-    "(\0132&.hld.achievement_proto.achievement_o"
+    "(\0132&.faith.achievement_proto.achievement_o"
     "ne\022\026\n\016operation_type\030\002 \001(\005\022\033\n\023operation_"
     "end_state\030\003 \001(\005\032G\n\022achievement_finish\022\026\n"
     "\016achievement_id\030\001 \001(\005\022\031\n\021achievement_sta"
@@ -556,7 +556,7 @@ bool achievement_proto_achievement_all::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.achievement_proto.achievement_one achievement_array = 2;
+      // repeated .faith.achievement_proto.achievement_one achievement_array = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -595,7 +595,7 @@ void achievement_proto_achievement_all::SerializeWithCachedSizes(
       1, this->role_guid(i), output);
   }
 
-  // repeated .hld.achievement_proto.achievement_one achievement_array = 2;
+  // repeated .faith.achievement_proto.achievement_one achievement_array = 2;
   for (int i = 0; i < this->achievement_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->achievement_array(i), output);
@@ -615,7 +615,7 @@ void achievement_proto_achievement_all::SerializeWithCachedSizes(
       WriteInt32ToArray(1, this->role_guid(i), target);
   }
 
-  // repeated .hld.achievement_proto.achievement_one achievement_array = 2;
+  // repeated .faith.achievement_proto.achievement_one achievement_array = 2;
   for (int i = 0; i < this->achievement_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -642,7 +642,7 @@ int achievement_proto_achievement_all::ByteSize() const {
     total_size += 1 * this->role_guid_size() + data_size;
   }
 
-  // repeated .hld.achievement_proto.achievement_one achievement_array = 2;
+  // repeated .faith.achievement_proto.achievement_one achievement_array = 2;
   total_size += 1 * this->achievement_array_size();
   for (int i = 0; i < this->achievement_array_size(); i++) {
     total_size +=
@@ -1039,7 +1039,7 @@ bool achievement_proto_achievement_operate_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.achievement_proto.achievement_one achievement_array = 1;
+      // repeated .faith.achievement_proto.achievement_one achievement_array = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1104,7 +1104,7 @@ bool achievement_proto_achievement_operate_end::MergePartialFromCodedStream(
 
 void achievement_proto_achievement_operate_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.achievement_proto.achievement_one achievement_array = 1;
+  // repeated .faith.achievement_proto.achievement_one achievement_array = 1;
   for (int i = 0; i < this->achievement_array_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->achievement_array(i), output);
@@ -1128,7 +1128,7 @@ void achievement_proto_achievement_operate_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* achievement_proto_achievement_operate_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.achievement_proto.achievement_one achievement_array = 1;
+  // repeated .faith.achievement_proto.achievement_one achievement_array = 1;
   for (int i = 0; i < this->achievement_array_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1171,7 +1171,7 @@ int achievement_proto_achievement_operate_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.achievement_proto.achievement_one achievement_array = 1;
+  // repeated .faith.achievement_proto.achievement_one achievement_array = 1;
   total_size += 1 * this->achievement_array_size();
   for (int i = 0; i < this->achievement_array_size(); i++) {
     total_size +=
@@ -1867,6 +1867,6 @@ void achievement_proto::Swap(achievement_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

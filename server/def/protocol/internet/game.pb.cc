@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -5405,7 +5405,7 @@ void protobuf_AddDesc_game_2eproto() {
     "os_vector\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001"
     "(\002\032,\n\trot_angle\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n"
     "\001z\030\003 \001(\002\032\n\n\010pawn_att\032D\n\013enter_scene\0225\n\004t"
-    "ype\030\001 \001(\0162 .hld.game_proto.enter_scene_t"
+    "ype\030\001 \001(\0162 .faith.game_proto.enter_scene_t"
     "ype:\005enter\032$\n\017enter_scene_end\022\021\n\006result\030"
     "\001 \001(\r:\0011\032q\n\016transfer_scene\022\027\n\017map_templa"
     "te_id\030\001 \001(\r\022\017\n\007line_id\030\002 \001(\r\022\020\n\010group_id"
@@ -5417,12 +5417,12 @@ void protobuf_AddDesc_game_2eproto() {
     "ter_scene_end\022\016\n\006result\030\001 \001(\005\032\034\n\tline_li"
     "st\022\017\n\007line_id\030\001 \003(\005\032\232\001\n\022transfer_scene_e"
     "nd\022\021\n\006result\030\001 \001(\r:\0011\022\021\n\tscene_uid\030\002 \001(\r"
-    "\022,\n\010position\030\003 \001(\0132\032.hld.game_proto.pos_"
-    "vector\0220\n\rrotator_angle\030\004 \001(\0132\031.hld.game"
+    "\022,\n\010position\030\003 \001(\0132\032.faith.game_proto.pos_"
+    "vector\0220\n\rrotator_angle\030\004 \001(\0132\031.faith.game"
     "_proto.rot_angle\032\265\001\n\025trans_local_scene_e"
     "nd\022\021\n\trole_guid\030\001 \001(\003\022,\n\010position\030\002 \001(\0132"
-    "\032.hld.game_proto.pos_vector\0220\n\rrotator_a"
-    "ngle\030\003 \001(\0132\031.hld.game_proto.rot_angle\022\027\n"
+    "\032.faith.game_proto.pos_vector\0220\n\rrotator_a"
+    "ngle\030\003 \001(\0132\031.faith.game_proto.rot_angle\022\027\n"
     "\017transfer_reason\030\004 \001(\005\022\020\n\010use_anim\030\005 \001(\010"
     "\032&\n\017client2fep_ping\022\023\n\013client_time\030\001 \001(\003"
     "\032;\n\017fep2client_ping\022\023\n\013client_time\030\001 \001(\003"
@@ -5438,7 +5438,7 @@ void protobuf_AddDesc_game_2eproto() {
     "_time\030\003 \001(\005\032M\n\nboss_state\022\017\n\007boss_id\030\001 \001"
     "(\005\022\027\n\017boss_state_code\030\002 \001(\005\022\025\n\ris_final_"
     "boss\030\003 \001(\010\032B\n\014bosses_state\0222\n\016created_bo"
-    "sses\030\001 \003(\0132\032.hld.game_proto.boss_state\032V"
+    "sses\030\001 \003(\0132\032.faith.game_proto.boss_state\032V"
     "\n\021protect_npc_state\022\021\n\006npc_id\030\001 \001(\005:\0010\022\023"
     "\n\010npc_guid\030\002 \001(\003:\0010\022\031\n\016npc_state_code\030\003 "
     "\001(\005:\0010\032H\n\025update_map_record_end\022\021\n\trole_"
@@ -5451,8 +5451,8 @@ void protobuf_AddDesc_game_2eproto() {
     " \001(\010\032C\n\014score_record\022\021\n\trole_guid\030\001 \003(\005\022"
     "\021\n\trole_name\030\002 \001(\t\022\r\n\005score\030\003 \001(\003\032\315\001\n\021sc"
     "ore_record_list\022\026\n\016score_list_len\030\001 \001(\005\022"
-    "0\n\nscore_list\030\002 \003(\0132\034.hld.game_proto.sco"
-    "re_record\0221\n\013extra_score\030\003 \001(\0132\034.hld.gam"
+    "0\n\nscore_list\030\002 \003(\0132\034.faith.game_proto.sco"
+    "re_record\0221\n\013extra_score\030\003 \001(\0132\034.faith.gam"
     "e_proto.score_record\022\022\n\nextra_rank\030\004 \001(\005"
     "\022\027\n\017is_legion_score\030\005 \001(\010\022\016\n\006npc_id\030\006 \001("
     "\005\032\207\001\n\020temple_game_over\022\021\n\tnpc_score\030\001 \001("
@@ -5480,7 +5480,7 @@ void protobuf_AddDesc_game_2eproto() {
     "te\022\023\n\013update_type\030\001 \001(\005\032\?\n\026gain_treasure"
     "_info_one\022\021\n\tinfo_type\030\001 \001(\005\022\022\n\ninfo_val"
     "ue\030\002 \001(\005\032R\n\026gain_treasure_info_all\0228\n\010in"
-    "fo_arr\030\001 \003(\0132&.hld.game_proto.gain_treas"
+    "fo_arr\030\001 \003(\0132&.faith.game_proto.gain_treas"
     "ure_info_one\032&\n\021add_exp_raid_buff\022\021\n\tadd"
     "_count\030\001 \001(\005\032*\n\025add_exp_raid_buff_end\022\021\n"
     "\tadd_count\030\001 \001(\005\032V\n\030add_legion_boss_buff"
@@ -5502,7 +5502,7 @@ void protobuf_AddDesc_game_2eproto() {
     " \001(\005\022\030\n\020item_template_id\030\003 \001(\005\022\024\n\014killed"
     "_stamp\030\004 \001(\005\022\024\n\014record_index\030\005 \001(\005\022\021\n\tro"
     "le_guid\030\006 \001(\003\032q\n\"gain_treasure_gain_item"
-    "_record_end\022K\n\nrecord_arr\030\001 \003(\01327.hld.ga"
+    "_record_end\022K\n\nrecord_arr\030\001 \003(\01327.faith.ga"
     "me_proto.gain_treasure_gain_item_record_"
     "info_one\032\264\001\n\033gain_treasure_boss_info_one"
     "\022$\n\034boss_spawn_point_template_id\030\001 \001(\005\022\021"
@@ -5510,7 +5510,7 @@ void protobuf_AddDesc_game_2eproto() {
     "\003 \001(\005\022\031\n\021first_player_name\030\004 \001(\t\022\023\n\013play"
     "er_guid\030\005 \003(\003\022\020\n\010map_type\030\006 \001(\005\032]\n\033gain_"
     "treasure_boss_info_all\022>\n\tboss_info\030\001 \003("
-    "\0132+.hld.game_proto.gain_treasure_boss_in"
+    "\0132+.faith.game_proto.gain_treasure_boss_in"
     "fo_one\0328\n\016buy_raid_count\022\023\n\013map_temp_id\030"
     "\001 \001(\005\022\021\n\tbuy_count\030\002 \001(\005\032<\n\022buy_raid_cou"
     "nt_end\022\023\n\013map_temp_id\030\001 \001(\005\022\021\n\tbuy_count"
@@ -5536,11 +5536,11 @@ void protobuf_AddDesc_game_2eproto() {
     "(\t\022\017\n\007win_num\030\004 \001(\005\022\021\n\tserver_id\030\005 \001(\005\022\021"
     "\n\tis_winner\030\006 \001(\005\032\321\001\n\033cross_server_one_i"
     "sland_msg\022\020\n\010war_idex\030\001 \001(\005\022\027\n\017island_pk"
-    "_state\030\002 \001(\005\0225\n\nplayer_msg\030\003 \003(\0132!.hld.g"
+    "_state\030\002 \001(\005\0225\n\nplayer_msg\030\003 \003(\0132!.faith.g"
     "ame_proto.pk_one_player_msg\022\024\n\014winner_gu"
     "idA\030\004 \001(\005\022\024\n\014winner_guidB\030\005 \001(\005\022\022\n\nis_en"
     "d_war\030\006 \001(\005\022\020\n\010pk_count\030\007 \001(\005\032W\n\024cross_s"
-    "erver_all_msg\022\?\n\nisland_msg\030\001 \003(\0132+.hld."
+    "erver_all_msg\022\?\n\nisland_msg\030\001 \003(\0132+.faith."
     "game_proto.cross_server_one_island_msg\032S"
     "\n\024cross_server_map_msg\022\021\n\tmap_state\030\001 \001("
     "\005\022\021\n\tleft_time\030\002 \001(\005\022\025\n\ris_in_the_war\030\003 "
@@ -5554,12 +5554,12 @@ void protobuf_AddDesc_game_2eproto() {
     "name\030\001 \001(\t\022\022\n\nparam_date\030\002 \001(\t\032B\n\030templa"
     "te_table_param_int\022\022\n\nparam_name\030\001 \001(\t\022\022"
     "\n\nparam_date\030\002 \001(\005\032\253\001\n\023template_table_da"
-    "ta\022A\n\014param_string\030\001 \003(\0132+.hld.game_prot"
+    "ta\022A\n\014param_string\030\001 \003(\0132+.faith.game_prot"
     "o.template_table_param_string\022;\n\tparam_i"
-    "nt\030\002 \003(\0132(.hld.game_proto.template_table"
+    "nt\030\002 \003(\0132(.faith.game_proto.template_table"
     "_param_int\022\024\n\014attribute_id\030\003 \001(\005\032{\n\022set_"
     "template_table\022:\n\rtemplate_data\030\001 \003(\0132#."
-    "hld.game_proto.template_table_data\022\022\n\nta"
+    "faith.game_proto.template_table_data\022\022\n\nta"
     "bel_name\030\002 \001(\t\022\025\n\rif_first_send\030\003 \001(\005\032\021\n"
     "\017get_world_level\032(\n\020send_world_level\022\024\n\014"
     "server_level\030\001 \001(\005\032\241\002\n\032cross_server_harr"
@@ -5571,7 +5571,7 @@ void protobuf_AddDesc_game_2eproto() {
     "yer_guidA\030\010 \001(\005\022\032\n\022third_player_guidB\030\t "
     "\001(\005\022\031\n\021first_player_name\030\n \001(\t\032_\n\032cross_"
     "server_harry_all_msg\022A\n\rall_harry_msg\030\001 "
-    "\003(\0132*.hld.game_proto.cross_server_harry_"
+    "\003(\0132*.faith.game_proto.cross_server_harry_"
     "one_msg\032\026\n\024give_server_item_msg\032B\n\027role_"
     "harry_msg_info_one\022\022\n\nharry_idex\030\001 \001(\005\022\023"
     "\n\013harry_value\030\002 \001(\005\0322\n\027role_harry_msg_in"
@@ -5586,11 +5586,11 @@ void protobuf_AddDesc_game_2eproto() {
     "age_list\032X\n\024cross_boss_rank_info\022\024\n\014legi"
     "on_value\030\001 \001(\005\022\023\n\013legion_name\030\002 \001(\t\022\025\n\rl"
     "egion_damage\030\003 \001(\t\032\227\001\n\033cross_boss_legion"
-    "_rank_list\0227\n\trank_info\030\001 \003(\0132$.hld.game"
+    "_rank_list\0227\n\trank_info\030\001 \003(\0132$.faith.game"
     "_proto.cross_boss_rank_info\022\023\n\013legion_ra"
     "nk\030\002 \001(\005\022\025\n\rlegion_damage\030\003 \001(\t\022\023\n\013boss_"
     "tmp_id\030\004 \001(\005\032e\n\037cross_boss_legion_rank_l"
-    "ist_all\022B\n\rrank_info_all\030\001 \003(\0132+.hld.gam"
+    "ist_all\022B\n\rrank_info_all\030\001 \003(\0132+.faith.gam"
     "e_proto.cross_boss_legion_rank_list\032\?\n\022c"
     "ross_boss_is_dead\022\023\n\013boss_tmp_id\030\001 \003(\005\022\024"
     "\n\014boss_is_dead\030\002 \003(\005\032+\n\030send_boss_god_be"
@@ -5602,7 +5602,7 @@ void protobuf_AddDesc_game_2eproto() {
     "\n\rcustoms_state\030\001 \001(\005\022\023\n\013reward_stat\030\002 \001"
     "(\005\032\245\001\n\025oracle_trial_info_all\022\022\n\nhight_ra"
     "nk\030\001 \001(\005\022\020\n\010max_tier\030\002 \001(\005\022\024\n\014max_commpi"
-    "ng\030\003 \001(\005\022;\n\010all_info\030\004 \003(\0132).hld.game_pr"
+    "ng\030\003 \001(\005\022;\n\010all_info\030\004 \003(\0132).faith.game_pr"
     "oto.oracle_trial_customs_info\022\023\n\013show_pr"
     "ompt\030\005 \001(\010\032\036\n\034send_oracle_trial_commping"
     "up\0322\n\033oracle_trial_commpingup_end\022\023\n\013err"
@@ -5621,8 +5621,8 @@ void protobuf_AddDesc_game_2eproto() {
     "te\030\005 \001(\005\022\017\n\007is_team\030\006 \001(\005\022\025\n\rlegion_guid"
     "_a\030\007 \001(\005\022\025\n\rlegion_guid_b\030\010 \001(\005\032\346\001\n\031send"
     "_boss_damage_list_msg\022;\n\014ranking_list\030\001 "
-    "\003(\0132%.hld.game_proto.boss_damage_list_it"
-    "em\022:\n\013helper_list\030\002 \003(\0132%.hld.game_proto"
+    "\003(\0132%.faith.game_proto.boss_damage_list_it"
+    "em\022:\n\013helper_list\030\002 \003(\0132%.faith.game_proto"
     ".boss_damage_list_item\022\021\n\tmy_damage\030\003 \001("
     "\t\022\023\n\013damage_rate\030\004 \001(\005\022\016\n\006is_end\030\005 \001(\005\022\030"
     "\n\020boss_template_id\030\006 \001(\005\032!\n\037send_leave_b"
@@ -5630,7 +5630,7 @@ void protobuf_AddDesc_game_2eproto() {
     "item\022\021\n\trole_name\030\001 \001(\t\022\023\n\013role_guid_a\030\002"
     " \001(\005\022\023\n\013role_guid_b\030\003 \001(\005\022\023\n\013template_id"
     "\030\004 \001(\005\032{\n\025send_help_success_msg\0228\n\thelp_"
-    "list\030\001 \003(\0132%.hld.game_proto.help_succes_"
+    "list\030\001 \003(\0132%.faith.game_proto.help_succes_"
     "list_item\022\025\n\rhelper_reward\030\002 \001(\005\022\021\n\tmy_r"
     "eward\030\003 \001(\005\032\216\001\n\026send_the_attacker_info\022\021"
     "\n\trole_name\030\001 \001(\t\022\023\n\013role_guid_a\030\002 \001(\005\022\023"
@@ -5640,7 +5640,7 @@ void protobuf_AddDesc_game_2eproto() {
     "\027buy_simple_boss_num_end\022\023\n\013error_index\030"
     "\001 \001(\005\0324\n\032is_can_transfer_other_line\022\026\n\016t"
     "ransfer_state\030\001 \001(\005\032V\n\030legion_auction_it"
-    "em_show\022:\n\010item_all\030\001 \003(\0132(.hld.game_pro"
+    "em_show\022:\n\010item_all\030\001 \003(\0132(.faith.game_pro"
     "to.legion_aunction_item_one\032U\n\030legion_au"
     "nction_item_one\022\024\n\014item_temp_id\030\001 \001(\005\022\020\n"
     "\010item_num\030\002 \001(\005\022\021\n\titem_lock\030\003 \001(\005\032t\n\023pk"
@@ -5654,7 +5654,7 @@ void protobuf_AddDesc_game_2eproto() {
     "te\030\003 \001(\005\022\036\n\026map_time_state_remaing\030\004 \001(\005"
     "\032)\n\025pk_king_map_game_over\022\020\n\010end_type\030\001 "
     "\001(\005\032[\n\021pk_king_rank_list\0224\n\trank_list\030\001 "
-    "\003(\0132!.hld.game_proto.pk_king_rank_info\022\020"
+    "\003(\0132!.faith.game_proto.pk_king_rank_info\022\020"
     "\n\010rank_num\030\002 \001(\005\032{\n\021pk_king_rank_info\022\016\n"
     "\006guid_A\030\001 \001(\005\022\016\n\006guid_B\030\002 \001(\005\022\021\n\trole_na"
     "me\030\003 \001(\t\022\021\n\tscore_num\030\004 \001(\005\022\020\n\010rank_num\030"
@@ -5685,8 +5685,8 @@ void protobuf_AddDesc_game_2eproto() {
     "\030\004 \001(\010\022\023\n\013template_id\030\005 \001(\005\022\021\n\tscore_num"
     "\030\006 \001(\005\022\021\n\tvip_level\030\007 \001(\005\032\233\001\n\"element_wa"
     "r_send_match_success_msg\0228\n\014my_team_info"
-    "\030\001 \003(\0132\".hld.game_proto.element_match_in"
-    "fo\022;\n\017other_team_info\030\002 \003(\0132\".hld.game_p"
+    "\030\001 \003(\0132\".faith.game_proto.element_match_in"
+    "fo\022;\n\017other_team_info\030\002 \003(\0132\".faith.game_p"
     "roto.element_match_info\032\213\001\n\025element_war_"
     "role_info\022\021\n\tinfo_data\030\001 \003(\005\022\021\n\tmax_inde"
     "x\030\002 \001(\005\022\024\n\014cross_result\030\003 \001(\005\022\022\n\nlast_sc"
@@ -5699,10 +5699,10 @@ void protobuf_AddDesc_game_2eproto() {
     "(\005\022\r\n\005pos_y\030\003 \001(\005\022\r\n\005pos_z\030\004 \001(\005\032\277\002\n\024ele"
     "ment_war_map_info\022\027\n\017first_score_num\030\001 \001"
     "(\005\022\030\n\020secord_score_num\030\002 \001(\005\022\021\n\tmap_stat"
-    "e\030\003 \001(\005\0229\n\nfirst_boss\030\004 \001(\0132%.hld.game_p"
+    "e\030\003 \001(\005\0229\n\nfirst_boss\030\004 \001(\0132%.faith.game_p"
     "roto.element_war_boss_info\022:\n\013secord_bos"
-    "s\030\005 \001(\0132%.hld.game_proto.element_war_bos"
-    "s_info\022:\n\013target_boss\030\006 \001(\0132%.hld.game_p"
+    "s\030\005 \001(\0132%.faith.game_proto.element_war_bos"
+    "s_info\022:\n\013target_boss\030\006 \001(\0132%.faith.game_p"
     "roto.element_war_boss_info\022\026\n\016buff_have_"
     "team\030\007 \003(\005\022\026\n\016buff_have_name\030\010 \003(\t\032\302\001\n\035e"
     "lement_war_map_end_role_info\022\021\n\trole_nam"
@@ -5711,8 +5711,8 @@ void protobuf_AddDesc_game_2eproto() {
     "_num\030\005 \001(\005\022\021\n\tis_escape\030\006 \001(\010\022\024\n\014is_kill"
     "_boss\030\007 \001(\010\022\022\n\nteam_index\030\010 \001(\005\032\261\001\n\030elem"
     "ent_war_map_end_info\022A\n\nfirst_team\030\001 \003(\013"
-    "2-.hld.game_proto.element_war_map_end_ro"
-    "le_info\022B\n\013secord_team\030\002 \003(\0132-.hld.game_"
+    "2-.faith.game_proto.element_war_map_end_ro"
+    "le_info\022B\n\013secord_team\030\002 \003(\0132-.faith.game_"
     "proto.element_war_map_end_role_info\022\016\n\006i"
     "s_win\030\003 \001(\010\032\240\001\n\037element_war_send_boss_be"
     "_attack\022\r\n\005pos_x\030\001 \001(\005\022\r\n\005pos_y\030\002 \001(\005\022\r\n"
@@ -5731,19 +5731,19 @@ void protobuf_AddDesc_game_2eproto() {
     "\trole_name\030\001 \001(\t\022\023\n\013role_guid_a\030\002 \001(\005\022\023\n"
     "\013role_guid_b\030\003 \001(\005\022\024\n\014damage_value\030\004 \001(\t"
     "\022\014\n\004rank\030\005 \001(\005\032\251\001\n\031boss_result_rank_list"
-    "_end\0220\n\010top_list\030\001 \003(\0132\036.hld.game_proto."
+    "_end\0220\n\010top_list\030\001 \003(\0132\036.faith.game_proto."
     "boss_rank_item\022\017\n\007top_num\030\002 \001(\005\022/\n\007my_ra"
-    "nk\030\003 \001(\0132\036.hld.game_proto.boss_rank_item"
+    "nk\030\003 \001(\0132\036.faith.game_proto.boss_rank_item"
     "\022\030\n\020boss_template_id\030\004 \001(\005\032v\n\032element_ma"
     "p_rank_role_info\022\021\n\trole_name\030\001 \001(\t\022\021\n\ts"
     "core_num\030\002 \001(\005\022\022\n\nteam_index\030\003 \001(\005\022\016\n\006gu"
     "id_a\030\004 \001(\005\022\016\n\006guid_b\030\005 \001(\005\032V\n\025element_ma"
-    "p_rank_info\022=\n\trank_info\030\001 \003(\0132*.hld.gam"
+    "p_rank_info\022=\n\trank_info\030\001 \003(\0132*.faith.gam"
     "e_proto.element_map_rank_role_info\032K\n\024ma"
     "p_target_show_info\022\016\n\006guid_a\030\001 \001(\005\022\016\n\006gu"
     "id_b\030\002 \001(\005\022\023\n\013image_index\030\003 \001(\005\032T\n\031map_t"
     "arget_show_info_list\0227\n\tinfo_list\030\001 \003(\0132"
-    "$.hld.game_proto.map_target_show_info\032\037\n"
+    "$.faith.game_proto.map_target_show_info\032\037\n"
     "\035get_map_target_show_info_list\032\210\001\n\027refre"
     "sh_lucky_card_info\022\025\n\ractivity_guid\030\001 \001("
     "\005\022\022\n\nstate_info\030\002 \001(\005\022\024\n\014is_have_free\030\003 "
@@ -5779,7 +5779,7 @@ void protobuf_AddDesc_game_2eproto() {
     "\001 \001(\005\022\021\n\ttem_level\030\002 \001(\005\022\017\n\007gs_rank\030\003 \001("
     "\005\022\024\n\014is_have_rank\030\004 \001(\005\022\033\n\023win_num_legio"
     "n_name\030\005 \001(\t\022\017\n\007win_num\030\006 \001(\005\022>\n\tlist_in"
-    "fo\030\007 \003(\0132+.hld.game_proto.attack_city_in"
+    "fo\030\007 \003(\0132+.faith.game_proto.attack_city_in"
     "fo_level_info\022\027\n\017is_in_game_time\030\010 \001(\005\032\033"
     "\n\031get_attack_city_rank_list\032\037\n\035get_attac"
     "k_city_map_rank_list\032\332\001\n\025attack_city_ran"
@@ -5790,16 +5790,16 @@ void protobuf_AddDesc_game_2eproto() {
     "(\005\022\021\n\tkill_boss\030\t \001(\005\022\022\n\nshow_index\030\n \001("
     "\005\032\312\001\n\032attack_city_rank_info_list\022\023\n\013legi"
     "on_name\030\001 \001(\t\022\025\n\rlegion_source\030\002 \001(\005\0228\n\t"
-    "info_list\030\003 \003(\0132%.hld.game_proto.attack_"
+    "info_list\030\003 \003(\0132%.faith.game_proto.attack_"
     "city_rank_info\022\016\n\006guid_a\030\004 \001(\005\022\016\n\006guid_b"
     "\030\005 \001(\005\022\022\n\nmode_index\030\006 \001(\005\022\022\n\nshow_index"
     "\030\007 \001(\005\032^\n\035get_attack_city_rank_list_end\022"
-    "=\n\trank_list\030\001 \003(\0132*.hld.game_proto.atta"
+    "=\n\trank_list\030\001 \003(\0132*.faith.game_proto.atta"
     "ck_city_rank_info_list\032\\\n\033attack_city_ma"
     "p_legion_info\022\021\n\tserver_id\030\001 \001(\005\022\023\n\013legi"
     "on_name\030\002 \001(\t\022\025\n\rlegion_damage\030\003 \001(\t\032\260\001\n"
     " send_attack_city_map_legion_info\022>\n\tinf"
-    "o_list\030\001 \003(\0132+.hld.game_proto.attack_cit"
+    "o_list\030\001 \003(\0132+.faith.game_proto.attack_cit"
     "y_map_legion_info\022\021\n\tmap_state\030\002 \001(\005\022\031\n\021"
     "next_refresh_time\030\003 \001(\005\022\016\n\006guid_a\030\004 \001(\005\022"
     "\016\n\006guid_b\030\005 \001(\005\032B\n\023attack_city_operate\022\024"
@@ -5810,7 +5810,7 @@ void protobuf_AddDesc_game_2eproto() {
     "e\030\001 \001(\005\022\016\n\006npc_id\030\002 \001(\005\022\020\n\010cur_life\030\003 \001("
     "\005\022\021\n\tbuff_pile\030\004 \001(\005\022\016\n\006guid_a\030\005 \001(\005\022\016\n\006"
     "guid_b\030\006 \001(\005\032O\n\024attack_city_npc_list\0227\n\t"
-    "info_list\030\001 \003(\0132$.hld.game_proto.attack_"
+    "info_list\030\001 \003(\0132$.faith.game_proto.attack_"
     "city_npc_info\032\?\n\024attack_city_camp_cut\022\023\n"
     "\013attack_name\030\001 \003(\t\022\022\n\nguard_name\030\002 \001(\t\032\026"
     "\n\024transfer_to_bron_pos\032\354\001\n\037attack_city_m"
@@ -5824,7 +5824,7 @@ void protobuf_AddDesc_game_2eproto() {
     "num\030\002 \001(\005\022\021\n\tshow_type\030\003 \001(\005\032\310\001\n\030attack_"
     "city_map_end_info\022B\n\tplay_list\030\001 \003(\0132/.h"
     "ld.game_proto.attack_city_map_end_player"
-    "_info\022@\n\titem_list\030\002 \003(\0132-.hld.game_prot"
+    "_info\022@\n\titem_list\030\002 \003(\0132-.faith.game_prot"
     "o.attack_city_map_end_item_info\022\023\n\013role_"
     "source\030\003 \001(\005\022\021\n\trole_rank\030\004 \001(\005\032\024\n\022attac"
     "k_legion_call\032\016\n\014reset_camera\032&\n\024attack_"
@@ -5840,7 +5840,7 @@ void protobuf_AddDesc_game_2eproto() {
     "t_time\030\004 \001(\005\022\020\n\010end_time\030\005 \001(\005\022\022\n\nmoney_"
     "type\030\006 \001(\005\022\021\n\tmoney_num\030\007 \001(\005\032\\\n\035send_ti"
     "me_feed_back_info_list\022;\n\tinfo_list\030\001 \003("
-    "\0132(.hld.game_proto.send_time_feed_back_i"
+    "\0132(.faith.game_proto.send_time_feed_back_i"
     "nfo\032H\n\031time_limit_gift_operation\022\026\n\016oper"
     "ation_type\030\001 \001(\005\022\023\n\013template_id\030\002 \001(\005\032D\n"
     "\035time_limit_gift_operation_end\022\016\n\006result"
@@ -5849,12 +5849,12 @@ void protobuf_AddDesc_game_2eproto() {
     "te_info\030\002 \001(\005\022\022\n\nbegin_time\030\003 \001(\005\022\020\n\010end"
     "_time\030\004 \001(\005\022\023\n\013trigger_num\030\005 \001(\005\022\017\n\007buy_"
     "num\030\006 \001(\005\032V\n\033update_time_limit_gift_info"
-    "\0227\n\tinfo_list\030\001 \003(\0132$.hld.game_proto.tim"
+    "\0227\n\tinfo_list\030\001 \003(\0132$.faith.game_proto.tim"
     "e_limit_gift_info\0321\n\032initiative_time_lim"
     "it_gift\022\023\n\013template_id\030\001 \001(\005\032A\n\026limit_ti"
     "me_notice_info\022\023\n\013template_id\030\001 \001(\005\022\022\n\nw"
     "eight_num\030\002 \001(\005\032s\n\033limit_time_notice_inf"
-    "o_list\0229\n\tinfo_list\030\001 \003(\0132&.hld.game_pro"
+    "o_list\0229\n\tinfo_list\030\001 \003(\0132&.faith.game_pro"
     "to.limit_time_notice_info\022\031\n\021black_show_"
     "notice\030\002 \003(\005\032B\n\021fuben_vip_mopping\022\031\n\021fub"
     "en_template_id\030\001 \001(\005\022\022\n\nsettlement\030\002 \001(\005"
@@ -7700,7 +7700,7 @@ bool game_proto_enter_scene::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .hld.game_proto.enter_scene_type type = 1 [default = enter];
+      // optional .faith.game_proto.enter_scene_type type = 1 [default = enter];
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
@@ -7708,8 +7708,8 @@ bool game_proto_enter_scene::MergePartialFromCodedStream(
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          if (::hld::game_proto_enter_scene_type_IsValid(value)) {
-            set_type(static_cast< ::hld::game_proto_enter_scene_type >(value));
+          if (::faith::game_proto_enter_scene_type_IsValid(value)) {
+            set_type(static_cast< ::faith::game_proto_enter_scene_type >(value));
           } else {
             mutable_unknown_fields()->AddVarint(1, value);
           }
@@ -7738,7 +7738,7 @@ bool game_proto_enter_scene::MergePartialFromCodedStream(
 
 void game_proto_enter_scene::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional .hld.game_proto.enter_scene_type type = 1 [default = enter];
+  // optional .faith.game_proto.enter_scene_type type = 1 [default = enter];
   if (has_type()) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       1, this->type(), output);
@@ -7752,7 +7752,7 @@ void game_proto_enter_scene::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_enter_scene::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // optional .hld.game_proto.enter_scene_type type = 1 [default = enter];
+  // optional .faith.game_proto.enter_scene_type type = 1 [default = enter];
   if (has_type()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       1, this->type(), target);
@@ -7769,7 +7769,7 @@ int game_proto_enter_scene::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .hld.game_proto.enter_scene_type type = 1 [default = enter];
+    // optional .faith.game_proto.enter_scene_type type = 1 [default = enter];
     if (has_type()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
@@ -9410,8 +9410,8 @@ game_proto_transfer_scene_end::game_proto_transfer_scene_end()
 }
 
 void game_proto_transfer_scene_end::InitAsDefaultInstance() {
-  position_ = const_cast< ::hld::game_proto_pos_vector*>(&::hld::game_proto_pos_vector::default_instance());
-  rotator_angle_ = const_cast< ::hld::game_proto_rot_angle*>(&::hld::game_proto_rot_angle::default_instance());
+  position_ = const_cast< ::faith::game_proto_pos_vector*>(&::faith::game_proto_pos_vector::default_instance());
+  rotator_angle_ = const_cast< ::faith::game_proto_rot_angle*>(&::faith::game_proto_rot_angle::default_instance());
 }
 
 game_proto_transfer_scene_end::game_proto_transfer_scene_end(const game_proto_transfer_scene_end& from)
@@ -9466,10 +9466,10 @@ void game_proto_transfer_scene_end::Clear() {
     result_ = 1u;
     scene_uid_ = 0u;
     if (has_position()) {
-      if (position_ != NULL) position_->::hld::game_proto_pos_vector::Clear();
+      if (position_ != NULL) position_->::faith::game_proto_pos_vector::Clear();
     }
     if (has_rotator_angle()) {
-      if (rotator_angle_ != NULL) rotator_angle_->::hld::game_proto_rot_angle::Clear();
+      if (rotator_angle_ != NULL) rotator_angle_->::faith::game_proto_rot_angle::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -9513,7 +9513,7 @@ bool game_proto_transfer_scene_end::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.game_proto.pos_vector position = 3;
+      // optional .faith.game_proto.pos_vector position = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -9527,7 +9527,7 @@ bool game_proto_transfer_scene_end::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.game_proto.rot_angle rotator_angle = 4;
+      // optional .faith.game_proto.rot_angle rotator_angle = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -9569,13 +9569,13 @@ void game_proto_transfer_scene_end::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->scene_uid(), output);
   }
 
-  // optional .hld.game_proto.pos_vector position = 3;
+  // optional .faith.game_proto.pos_vector position = 3;
   if (has_position()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->position(), output);
   }
 
-  // optional .hld.game_proto.rot_angle rotator_angle = 4;
+  // optional .faith.game_proto.rot_angle rotator_angle = 4;
   if (has_rotator_angle()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->rotator_angle(), output);
@@ -9599,14 +9599,14 @@ void game_proto_transfer_scene_end::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->scene_uid(), target);
   }
 
-  // optional .hld.game_proto.pos_vector position = 3;
+  // optional .faith.game_proto.pos_vector position = 3;
   if (has_position()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         3, this->position(), target);
   }
 
-  // optional .hld.game_proto.rot_angle rotator_angle = 4;
+  // optional .faith.game_proto.rot_angle rotator_angle = 4;
   if (has_rotator_angle()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -9638,14 +9638,14 @@ int game_proto_transfer_scene_end::ByteSize() const {
           this->scene_uid());
     }
 
-    // optional .hld.game_proto.pos_vector position = 3;
+    // optional .faith.game_proto.pos_vector position = 3;
     if (has_position()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->position());
     }
 
-    // optional .hld.game_proto.rot_angle rotator_angle = 4;
+    // optional .faith.game_proto.rot_angle rotator_angle = 4;
     if (has_rotator_angle()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -9686,10 +9686,10 @@ void game_proto_transfer_scene_end::MergeFrom(const game_proto_transfer_scene_en
       set_scene_uid(from.scene_uid());
     }
     if (from.has_position()) {
-      mutable_position()->::hld::game_proto_pos_vector::MergeFrom(from.position());
+      mutable_position()->::faith::game_proto_pos_vector::MergeFrom(from.position());
     }
     if (from.has_rotator_angle()) {
-      mutable_rotator_angle()->::hld::game_proto_rot_angle::MergeFrom(from.rotator_angle());
+      mutable_rotator_angle()->::faith::game_proto_rot_angle::MergeFrom(from.rotator_angle());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -9749,8 +9749,8 @@ game_proto_trans_local_scene_end::game_proto_trans_local_scene_end()
 }
 
 void game_proto_trans_local_scene_end::InitAsDefaultInstance() {
-  position_ = const_cast< ::hld::game_proto_pos_vector*>(&::hld::game_proto_pos_vector::default_instance());
-  rotator_angle_ = const_cast< ::hld::game_proto_rot_angle*>(&::hld::game_proto_rot_angle::default_instance());
+  position_ = const_cast< ::faith::game_proto_pos_vector*>(&::faith::game_proto_pos_vector::default_instance());
+  rotator_angle_ = const_cast< ::faith::game_proto_rot_angle*>(&::faith::game_proto_rot_angle::default_instance());
 }
 
 game_proto_trans_local_scene_end::game_proto_trans_local_scene_end(const game_proto_trans_local_scene_end& from)
@@ -9805,10 +9805,10 @@ void game_proto_trans_local_scene_end::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     role_guid_ = GOOGLE_LONGLONG(0);
     if (has_position()) {
-      if (position_ != NULL) position_->::hld::game_proto_pos_vector::Clear();
+      if (position_ != NULL) position_->::faith::game_proto_pos_vector::Clear();
     }
     if (has_rotator_angle()) {
-      if (rotator_angle_ != NULL) rotator_angle_->::hld::game_proto_rot_angle::Clear();
+      if (rotator_angle_ != NULL) rotator_angle_->::faith::game_proto_rot_angle::Clear();
     }
     transfer_reason_ = 0;
     use_anim_ = false;
@@ -9838,7 +9838,7 @@ bool game_proto_trans_local_scene_end::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.game_proto.pos_vector position = 2;
+      // optional .faith.game_proto.pos_vector position = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -9852,7 +9852,7 @@ bool game_proto_trans_local_scene_end::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.game_proto.rot_angle rotator_angle = 3;
+      // optional .faith.game_proto.rot_angle rotator_angle = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -9921,13 +9921,13 @@ void game_proto_trans_local_scene_end::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->role_guid(), output);
   }
 
-  // optional .hld.game_proto.pos_vector position = 2;
+  // optional .faith.game_proto.pos_vector position = 2;
   if (has_position()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->position(), output);
   }
 
-  // optional .hld.game_proto.rot_angle rotator_angle = 3;
+  // optional .faith.game_proto.rot_angle rotator_angle = 3;
   if (has_rotator_angle()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->rotator_angle(), output);
@@ -9956,14 +9956,14 @@ void game_proto_trans_local_scene_end::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->role_guid(), target);
   }
 
-  // optional .hld.game_proto.pos_vector position = 2;
+  // optional .faith.game_proto.pos_vector position = 2;
   if (has_position()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         2, this->position(), target);
   }
 
-  // optional .hld.game_proto.rot_angle rotator_angle = 3;
+  // optional .faith.game_proto.rot_angle rotator_angle = 3;
   if (has_rotator_angle()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -9998,14 +9998,14 @@ int game_proto_trans_local_scene_end::ByteSize() const {
           this->role_guid());
     }
 
-    // optional .hld.game_proto.pos_vector position = 2;
+    // optional .faith.game_proto.pos_vector position = 2;
     if (has_position()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->position());
     }
 
-    // optional .hld.game_proto.rot_angle rotator_angle = 3;
+    // optional .faith.game_proto.rot_angle rotator_angle = 3;
     if (has_rotator_angle()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -10055,10 +10055,10 @@ void game_proto_trans_local_scene_end::MergeFrom(const game_proto_trans_local_sc
       set_role_guid(from.role_guid());
     }
     if (from.has_position()) {
-      mutable_position()->::hld::game_proto_pos_vector::MergeFrom(from.position());
+      mutable_position()->::faith::game_proto_pos_vector::MergeFrom(from.position());
     }
     if (from.has_rotator_angle()) {
-      mutable_rotator_angle()->::hld::game_proto_rot_angle::MergeFrom(from.rotator_angle());
+      mutable_rotator_angle()->::faith::game_proto_rot_angle::MergeFrom(from.rotator_angle());
     }
     if (from.has_transfer_reason()) {
       set_transfer_reason(from.transfer_reason());
@@ -12394,7 +12394,7 @@ bool game_proto_bosses_state::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.boss_state created_bosses = 1;
+      // repeated .faith.game_proto.boss_state created_bosses = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -12427,7 +12427,7 @@ bool game_proto_bosses_state::MergePartialFromCodedStream(
 
 void game_proto_bosses_state::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.boss_state created_bosses = 1;
+  // repeated .faith.game_proto.boss_state created_bosses = 1;
   for (int i = 0; i < this->created_bosses_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->created_bosses(i), output);
@@ -12441,7 +12441,7 @@ void game_proto_bosses_state::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_bosses_state::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.boss_state created_bosses = 1;
+  // repeated .faith.game_proto.boss_state created_bosses = 1;
   for (int i = 0; i < this->created_bosses_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -12458,7 +12458,7 @@ void game_proto_bosses_state::SerializeWithCachedSizes(
 int game_proto_bosses_state::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.game_proto.boss_state created_bosses = 1;
+  // repeated .faith.game_proto.boss_state created_bosses = 1;
   total_size += 1 * this->created_bosses_size();
   for (int i = 0; i < this->created_bosses_size(); i++) {
     total_size +=
@@ -14008,7 +14008,7 @@ game_proto_score_record_list::game_proto_score_record_list()
 }
 
 void game_proto_score_record_list::InitAsDefaultInstance() {
-  extra_score_ = const_cast< ::hld::game_proto_score_record*>(&::hld::game_proto_score_record::default_instance());
+  extra_score_ = const_cast< ::faith::game_proto_score_record*>(&::faith::game_proto_score_record::default_instance());
 }
 
 game_proto_score_record_list::game_proto_score_record_list(const game_proto_score_record_list& from)
@@ -14062,7 +14062,7 @@ void game_proto_score_record_list::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     score_list_len_ = 0;
     if (has_extra_score()) {
-      if (extra_score_ != NULL) extra_score_->::hld::game_proto_score_record::Clear();
+      if (extra_score_ != NULL) extra_score_->::faith::game_proto_score_record::Clear();
     }
     extra_rank_ = 0;
     is_legion_score_ = false;
@@ -14094,7 +14094,7 @@ bool game_proto_score_record_list::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.game_proto.score_record score_list = 2;
+      // repeated .faith.game_proto.score_record score_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -14109,7 +14109,7 @@ bool game_proto_score_record_list::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.game_proto.score_record extra_score = 3;
+      // optional .faith.game_proto.score_record extra_score = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -14194,13 +14194,13 @@ void game_proto_score_record_list::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->score_list_len(), output);
   }
 
-  // repeated .hld.game_proto.score_record score_list = 2;
+  // repeated .faith.game_proto.score_record score_list = 2;
   for (int i = 0; i < this->score_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->score_list(i), output);
   }
 
-  // optional .hld.game_proto.score_record extra_score = 3;
+  // optional .faith.game_proto.score_record extra_score = 3;
   if (has_extra_score()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->extra_score(), output);
@@ -14234,14 +14234,14 @@ void game_proto_score_record_list::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->score_list_len(), target);
   }
 
-  // repeated .hld.game_proto.score_record score_list = 2;
+  // repeated .faith.game_proto.score_record score_list = 2;
   for (int i = 0; i < this->score_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         2, this->score_list(i), target);
   }
 
-  // optional .hld.game_proto.score_record extra_score = 3;
+  // optional .faith.game_proto.score_record extra_score = 3;
   if (has_extra_score()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -14281,7 +14281,7 @@ int game_proto_score_record_list::ByteSize() const {
           this->score_list_len());
     }
 
-    // optional .hld.game_proto.score_record extra_score = 3;
+    // optional .faith.game_proto.score_record extra_score = 3;
     if (has_extra_score()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -14308,7 +14308,7 @@ int game_proto_score_record_list::ByteSize() const {
     }
 
   }
-  // repeated .hld.game_proto.score_record score_list = 2;
+  // repeated .faith.game_proto.score_record score_list = 2;
   total_size += 1 * this->score_list_size();
   for (int i = 0; i < this->score_list_size(); i++) {
     total_size +=
@@ -14347,7 +14347,7 @@ void game_proto_score_record_list::MergeFrom(const game_proto_score_record_list&
       set_score_list_len(from.score_list_len());
     }
     if (from.has_extra_score()) {
-      mutable_extra_score()->::hld::game_proto_score_record::MergeFrom(from.extra_score());
+      mutable_extra_score()->::faith::game_proto_score_record::MergeFrom(from.extra_score());
     }
     if (from.has_extra_rank()) {
       set_extra_rank(from.extra_rank());
@@ -18391,7 +18391,7 @@ bool game_proto_gain_treasure_info_all::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.gain_treasure_info_one info_arr = 1;
+      // repeated .faith.game_proto.gain_treasure_info_one info_arr = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -18424,7 +18424,7 @@ bool game_proto_gain_treasure_info_all::MergePartialFromCodedStream(
 
 void game_proto_gain_treasure_info_all::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.gain_treasure_info_one info_arr = 1;
+  // repeated .faith.game_proto.gain_treasure_info_one info_arr = 1;
   for (int i = 0; i < this->info_arr_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->info_arr(i), output);
@@ -18438,7 +18438,7 @@ void game_proto_gain_treasure_info_all::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_gain_treasure_info_all::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.gain_treasure_info_one info_arr = 1;
+  // repeated .faith.game_proto.gain_treasure_info_one info_arr = 1;
   for (int i = 0; i < this->info_arr_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -18455,7 +18455,7 @@ void game_proto_gain_treasure_info_all::SerializeWithCachedSizes(
 int game_proto_gain_treasure_info_all::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.game_proto.gain_treasure_info_one info_arr = 1;
+  // repeated .faith.game_proto.gain_treasure_info_one info_arr = 1;
   total_size += 1 * this->info_arr_size();
   for (int i = 0; i < this->info_arr_size(); i++) {
     total_size +=
@@ -20087,7 +20087,7 @@ bool game_proto_gain_treasure_kill_record_end::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.game_proto.gain_treasure_kill_record_one record_arr = 2;
+      // repeated .faith.game_proto.gain_treasure_kill_record_one record_arr = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -20125,7 +20125,7 @@ void game_proto_gain_treasure_kill_record_end::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->boss_spawn_point_template_id(), output);
   }
 
-  // repeated .hld.game_proto.gain_treasure_kill_record_one record_arr = 2;
+  // repeated .faith.game_proto.gain_treasure_kill_record_one record_arr = 2;
   for (int i = 0; i < this->record_arr_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->record_arr(i), output);
@@ -20144,7 +20144,7 @@ void game_proto_gain_treasure_kill_record_end::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->boss_spawn_point_template_id(), target);
   }
 
-  // repeated .hld.game_proto.gain_treasure_kill_record_one record_arr = 2;
+  // repeated .faith.game_proto.gain_treasure_kill_record_one record_arr = 2;
   for (int i = 0; i < this->record_arr_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -20170,7 +20170,7 @@ int game_proto_gain_treasure_kill_record_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.game_proto.gain_treasure_kill_record_one record_arr = 2;
+  // repeated .faith.game_proto.gain_treasure_kill_record_one record_arr = 2;
   total_size += 1 * this->record_arr_size();
   for (int i = 0; i < this->record_arr_size(); i++) {
     total_size +=
@@ -20948,7 +20948,7 @@ bool game_proto_gain_treasure_gain_item_record_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.gain_treasure_gain_item_record_info_one record_arr = 1;
+      // repeated .faith.game_proto.gain_treasure_gain_item_record_info_one record_arr = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -20981,7 +20981,7 @@ bool game_proto_gain_treasure_gain_item_record_end::MergePartialFromCodedStream(
 
 void game_proto_gain_treasure_gain_item_record_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.gain_treasure_gain_item_record_info_one record_arr = 1;
+  // repeated .faith.game_proto.gain_treasure_gain_item_record_info_one record_arr = 1;
   for (int i = 0; i < this->record_arr_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->record_arr(i), output);
@@ -20995,7 +20995,7 @@ void game_proto_gain_treasure_gain_item_record_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_gain_treasure_gain_item_record_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.gain_treasure_gain_item_record_info_one record_arr = 1;
+  // repeated .faith.game_proto.gain_treasure_gain_item_record_info_one record_arr = 1;
   for (int i = 0; i < this->record_arr_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -21012,7 +21012,7 @@ void game_proto_gain_treasure_gain_item_record_end::SerializeWithCachedSizes(
 int game_proto_gain_treasure_gain_item_record_end::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.game_proto.gain_treasure_gain_item_record_info_one record_arr = 1;
+  // repeated .faith.game_proto.gain_treasure_gain_item_record_info_one record_arr = 1;
   total_size += 1 * this->record_arr_size();
   for (int i = 0; i < this->record_arr_size(); i++) {
     total_size +=
@@ -21584,7 +21584,7 @@ bool game_proto_gain_treasure_boss_info_all::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.gain_treasure_boss_info_one boss_info = 1;
+      // repeated .faith.game_proto.gain_treasure_boss_info_one boss_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -21617,7 +21617,7 @@ bool game_proto_gain_treasure_boss_info_all::MergePartialFromCodedStream(
 
 void game_proto_gain_treasure_boss_info_all::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.gain_treasure_boss_info_one boss_info = 1;
+  // repeated .faith.game_proto.gain_treasure_boss_info_one boss_info = 1;
   for (int i = 0; i < this->boss_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->boss_info(i), output);
@@ -21631,7 +21631,7 @@ void game_proto_gain_treasure_boss_info_all::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_gain_treasure_boss_info_all::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.gain_treasure_boss_info_one boss_info = 1;
+  // repeated .faith.game_proto.gain_treasure_boss_info_one boss_info = 1;
   for (int i = 0; i < this->boss_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -21648,7 +21648,7 @@ void game_proto_gain_treasure_boss_info_all::SerializeWithCachedSizes(
 int game_proto_gain_treasure_boss_info_all::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.game_proto.gain_treasure_boss_info_one boss_info = 1;
+  // repeated .faith.game_proto.gain_treasure_boss_info_one boss_info = 1;
   total_size += 1 * this->boss_info_size();
   for (int i = 0; i < this->boss_info_size(); i++) {
     total_size +=
@@ -25509,7 +25509,7 @@ bool game_proto_cross_server_one_island_msg::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.game_proto.pk_one_player_msg player_msg = 3;
+      // repeated .faith.game_proto.pk_one_player_msg player_msg = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -25616,7 +25616,7 @@ void game_proto_cross_server_one_island_msg::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->island_pk_state(), output);
   }
 
-  // repeated .hld.game_proto.pk_one_player_msg player_msg = 3;
+  // repeated .faith.game_proto.pk_one_player_msg player_msg = 3;
   for (int i = 0; i < this->player_msg_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->player_msg(i), output);
@@ -25660,7 +25660,7 @@ void game_proto_cross_server_one_island_msg::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->island_pk_state(), target);
   }
 
-  // repeated .hld.game_proto.pk_one_player_msg player_msg = 3;
+  // repeated .faith.game_proto.pk_one_player_msg player_msg = 3;
   for (int i = 0; i < this->player_msg_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -25741,7 +25741,7 @@ int game_proto_cross_server_one_island_msg::ByteSize() const {
     }
 
   }
-  // repeated .hld.game_proto.pk_one_player_msg player_msg = 3;
+  // repeated .faith.game_proto.pk_one_player_msg player_msg = 3;
   total_size += 1 * this->player_msg_size();
   for (int i = 0; i < this->player_msg_size(); i++) {
     total_size +=
@@ -25906,7 +25906,7 @@ bool game_proto_cross_server_all_msg::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.cross_server_one_island_msg island_msg = 1;
+      // repeated .faith.game_proto.cross_server_one_island_msg island_msg = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -25939,7 +25939,7 @@ bool game_proto_cross_server_all_msg::MergePartialFromCodedStream(
 
 void game_proto_cross_server_all_msg::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.cross_server_one_island_msg island_msg = 1;
+  // repeated .faith.game_proto.cross_server_one_island_msg island_msg = 1;
   for (int i = 0; i < this->island_msg_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->island_msg(i), output);
@@ -25953,7 +25953,7 @@ void game_proto_cross_server_all_msg::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_cross_server_all_msg::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.cross_server_one_island_msg island_msg = 1;
+  // repeated .faith.game_proto.cross_server_one_island_msg island_msg = 1;
   for (int i = 0; i < this->island_msg_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -25970,7 +25970,7 @@ void game_proto_cross_server_all_msg::SerializeWithCachedSizes(
 int game_proto_cross_server_all_msg::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.game_proto.cross_server_one_island_msg island_msg = 1;
+  // repeated .faith.game_proto.cross_server_one_island_msg island_msg = 1;
   total_size += 1 * this->island_msg_size();
   for (int i = 0; i < this->island_msg_size(); i++) {
     total_size +=
@@ -27849,7 +27849,7 @@ bool game_proto_template_table_data::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.template_table_param_string param_string = 1;
+      // repeated .faith.game_proto.template_table_param_string param_string = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -27864,7 +27864,7 @@ bool game_proto_template_table_data::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.game_proto.template_table_param_int param_int = 2;
+      // repeated .faith.game_proto.template_table_param_int param_int = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -27913,13 +27913,13 @@ bool game_proto_template_table_data::MergePartialFromCodedStream(
 
 void game_proto_template_table_data::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.template_table_param_string param_string = 1;
+  // repeated .faith.game_proto.template_table_param_string param_string = 1;
   for (int i = 0; i < this->param_string_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->param_string(i), output);
   }
 
-  // repeated .hld.game_proto.template_table_param_int param_int = 2;
+  // repeated .faith.game_proto.template_table_param_int param_int = 2;
   for (int i = 0; i < this->param_int_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->param_int(i), output);
@@ -27938,14 +27938,14 @@ void game_proto_template_table_data::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_template_table_data::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.template_table_param_string param_string = 1;
+  // repeated .faith.game_proto.template_table_param_string param_string = 1;
   for (int i = 0; i < this->param_string_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         1, this->param_string(i), target);
   }
 
-  // repeated .hld.game_proto.template_table_param_int param_int = 2;
+  // repeated .faith.game_proto.template_table_param_int param_int = 2;
   for (int i = 0; i < this->param_int_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -27976,7 +27976,7 @@ int game_proto_template_table_data::ByteSize() const {
     }
 
   }
-  // repeated .hld.game_proto.template_table_param_string param_string = 1;
+  // repeated .faith.game_proto.template_table_param_string param_string = 1;
   total_size += 1 * this->param_string_size();
   for (int i = 0; i < this->param_string_size(); i++) {
     total_size +=
@@ -27984,7 +27984,7 @@ int game_proto_template_table_data::ByteSize() const {
         this->param_string(i));
   }
 
-  // repeated .hld.game_proto.template_table_param_int param_int = 2;
+  // repeated .faith.game_proto.template_table_param_int param_int = 2;
   total_size += 1 * this->param_int_size();
   for (int i = 0; i < this->param_int_size(); i++) {
     total_size +=
@@ -28146,7 +28146,7 @@ bool game_proto_set_template_table::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.template_table_data template_data = 1;
+      // repeated .faith.game_proto.template_table_data template_data = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -28212,7 +28212,7 @@ bool game_proto_set_template_table::MergePartialFromCodedStream(
 
 void game_proto_set_template_table::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.template_table_data template_data = 1;
+  // repeated .faith.game_proto.template_table_data template_data = 1;
   for (int i = 0; i < this->template_data_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->template_data(i), output);
@@ -28240,7 +28240,7 @@ void game_proto_set_template_table::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_set_template_table::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.template_table_data template_data = 1;
+  // repeated .faith.game_proto.template_table_data template_data = 1;
   for (int i = 0; i < this->template_data_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -28288,7 +28288,7 @@ int game_proto_set_template_table::ByteSize() const {
     }
 
   }
-  // repeated .hld.game_proto.template_table_data template_data = 1;
+  // repeated .faith.game_proto.template_table_data template_data = 1;
   total_size += 1 * this->template_data_size();
   for (int i = 0; i < this->template_data_size(); i++) {
     total_size +=
@@ -29392,7 +29392,7 @@ bool game_proto_cross_server_harry_all_msg::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.cross_server_harry_one_msg all_harry_msg = 1;
+      // repeated .faith.game_proto.cross_server_harry_one_msg all_harry_msg = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -29425,7 +29425,7 @@ bool game_proto_cross_server_harry_all_msg::MergePartialFromCodedStream(
 
 void game_proto_cross_server_harry_all_msg::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.cross_server_harry_one_msg all_harry_msg = 1;
+  // repeated .faith.game_proto.cross_server_harry_one_msg all_harry_msg = 1;
   for (int i = 0; i < this->all_harry_msg_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->all_harry_msg(i), output);
@@ -29439,7 +29439,7 @@ void game_proto_cross_server_harry_all_msg::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_cross_server_harry_all_msg::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.cross_server_harry_one_msg all_harry_msg = 1;
+  // repeated .faith.game_proto.cross_server_harry_one_msg all_harry_msg = 1;
   for (int i = 0; i < this->all_harry_msg_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -29456,7 +29456,7 @@ void game_proto_cross_server_harry_all_msg::SerializeWithCachedSizes(
 int game_proto_cross_server_harry_all_msg::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.game_proto.cross_server_harry_one_msg all_harry_msg = 1;
+  // repeated .faith.game_proto.cross_server_harry_one_msg all_harry_msg = 1;
   total_size += 1 * this->all_harry_msg_size();
   for (int i = 0; i < this->all_harry_msg_size(); i++) {
     total_size +=
@@ -31796,7 +31796,7 @@ bool game_proto_cross_boss_legion_rank_list::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.cross_boss_rank_info rank_info = 1;
+      // repeated .faith.game_proto.cross_boss_rank_info rank_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -31878,7 +31878,7 @@ bool game_proto_cross_boss_legion_rank_list::MergePartialFromCodedStream(
 
 void game_proto_cross_boss_legion_rank_list::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.cross_boss_rank_info rank_info = 1;
+  // repeated .faith.game_proto.cross_boss_rank_info rank_info = 1;
   for (int i = 0; i < this->rank_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->rank_info(i), output);
@@ -31911,7 +31911,7 @@ void game_proto_cross_boss_legion_rank_list::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_cross_boss_legion_rank_list::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.cross_boss_rank_info rank_info = 1;
+  // repeated .faith.game_proto.cross_boss_rank_info rank_info = 1;
   for (int i = 0; i < this->rank_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -31971,7 +31971,7 @@ int game_proto_cross_boss_legion_rank_list::ByteSize() const {
     }
 
   }
-  // repeated .hld.game_proto.cross_boss_rank_info rank_info = 1;
+  // repeated .faith.game_proto.cross_boss_rank_info rank_info = 1;
   total_size += 1 * this->rank_info_size();
   for (int i = 0; i < this->rank_info_size(); i++) {
     total_size +=
@@ -32124,7 +32124,7 @@ bool game_proto_cross_boss_legion_rank_list_all::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.cross_boss_legion_rank_list rank_info_all = 1;
+      // repeated .faith.game_proto.cross_boss_legion_rank_list rank_info_all = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -32157,7 +32157,7 @@ bool game_proto_cross_boss_legion_rank_list_all::MergePartialFromCodedStream(
 
 void game_proto_cross_boss_legion_rank_list_all::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.cross_boss_legion_rank_list rank_info_all = 1;
+  // repeated .faith.game_proto.cross_boss_legion_rank_list rank_info_all = 1;
   for (int i = 0; i < this->rank_info_all_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->rank_info_all(i), output);
@@ -32171,7 +32171,7 @@ void game_proto_cross_boss_legion_rank_list_all::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_cross_boss_legion_rank_list_all::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.cross_boss_legion_rank_list rank_info_all = 1;
+  // repeated .faith.game_proto.cross_boss_legion_rank_list rank_info_all = 1;
   for (int i = 0; i < this->rank_info_all_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -32188,7 +32188,7 @@ void game_proto_cross_boss_legion_rank_list_all::SerializeWithCachedSizes(
 int game_proto_cross_boss_legion_rank_list_all::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.game_proto.cross_boss_legion_rank_list rank_info_all = 1;
+  // repeated .faith.game_proto.cross_boss_legion_rank_list rank_info_all = 1;
   total_size += 1 * this->rank_info_all_size();
   for (int i = 0; i < this->rank_info_all_size(); i++) {
     total_size +=
@@ -33767,7 +33767,7 @@ bool game_proto_oracle_trial_info_all::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.game_proto.oracle_trial_customs_info all_info = 4;
+      // repeated .faith.game_proto.oracle_trial_customs_info all_info = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -33831,7 +33831,7 @@ void game_proto_oracle_trial_info_all::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->max_commping(), output);
   }
 
-  // repeated .hld.game_proto.oracle_trial_customs_info all_info = 4;
+  // repeated .faith.game_proto.oracle_trial_customs_info all_info = 4;
   for (int i = 0; i < this->all_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->all_info(i), output);
@@ -33865,7 +33865,7 @@ void game_proto_oracle_trial_info_all::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->max_commping(), target);
   }
 
-  // repeated .hld.game_proto.oracle_trial_customs_info all_info = 4;
+  // repeated .faith.game_proto.oracle_trial_customs_info all_info = 4;
   for (int i = 0; i < this->all_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -33915,7 +33915,7 @@ int game_proto_oracle_trial_info_all::ByteSize() const {
     }
 
   }
-  // repeated .hld.game_proto.oracle_trial_customs_info all_info = 4;
+  // repeated .faith.game_proto.oracle_trial_customs_info all_info = 4;
   total_size += 1 * this->all_info_size();
   for (int i = 0; i < this->all_info_size(); i++) {
     total_size +=
@@ -36300,7 +36300,7 @@ bool game_proto_send_boss_damage_list_msg::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.boss_damage_list_item ranking_list = 1;
+      // repeated .faith.game_proto.boss_damage_list_item ranking_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -36315,7 +36315,7 @@ bool game_proto_send_boss_damage_list_msg::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.game_proto.boss_damage_list_item helper_list = 2;
+      // repeated .faith.game_proto.boss_damage_list_item helper_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -36413,13 +36413,13 @@ bool game_proto_send_boss_damage_list_msg::MergePartialFromCodedStream(
 
 void game_proto_send_boss_damage_list_msg::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.boss_damage_list_item ranking_list = 1;
+  // repeated .faith.game_proto.boss_damage_list_item ranking_list = 1;
   for (int i = 0; i < this->ranking_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->ranking_list(i), output);
   }
 
-  // repeated .hld.game_proto.boss_damage_list_item helper_list = 2;
+  // repeated .faith.game_proto.boss_damage_list_item helper_list = 2;
   for (int i = 0; i < this->helper_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->helper_list(i), output);
@@ -36457,14 +36457,14 @@ void game_proto_send_boss_damage_list_msg::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_send_boss_damage_list_msg::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.boss_damage_list_item ranking_list = 1;
+  // repeated .faith.game_proto.boss_damage_list_item ranking_list = 1;
   for (int i = 0; i < this->ranking_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         1, this->ranking_list(i), target);
   }
 
-  // repeated .hld.game_proto.boss_damage_list_item helper_list = 2;
+  // repeated .faith.game_proto.boss_damage_list_item helper_list = 2;
   for (int i = 0; i < this->helper_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -36536,7 +36536,7 @@ int game_proto_send_boss_damage_list_msg::ByteSize() const {
     }
 
   }
-  // repeated .hld.game_proto.boss_damage_list_item ranking_list = 1;
+  // repeated .faith.game_proto.boss_damage_list_item ranking_list = 1;
   total_size += 1 * this->ranking_list_size();
   for (int i = 0; i < this->ranking_list_size(); i++) {
     total_size +=
@@ -36544,7 +36544,7 @@ int game_proto_send_boss_damage_list_msg::ByteSize() const {
         this->ranking_list(i));
   }
 
-  // repeated .hld.game_proto.boss_damage_list_item helper_list = 2;
+  // repeated .faith.game_proto.boss_damage_list_item helper_list = 2;
   total_size += 1 * this->helper_list_size();
   for (int i = 0; i < this->helper_list_size(); i++) {
     total_size +=
@@ -37212,7 +37212,7 @@ bool game_proto_send_help_success_msg::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.help_succes_list_item help_list = 1;
+      // repeated .faith.game_proto.help_succes_list_item help_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -37277,7 +37277,7 @@ bool game_proto_send_help_success_msg::MergePartialFromCodedStream(
 
 void game_proto_send_help_success_msg::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.help_succes_list_item help_list = 1;
+  // repeated .faith.game_proto.help_succes_list_item help_list = 1;
   for (int i = 0; i < this->help_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->help_list(i), output);
@@ -37301,7 +37301,7 @@ void game_proto_send_help_success_msg::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_send_help_success_msg::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.help_succes_list_item help_list = 1;
+  // repeated .faith.game_proto.help_succes_list_item help_list = 1;
   for (int i = 0; i < this->help_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -37344,7 +37344,7 @@ int game_proto_send_help_success_msg::ByteSize() const {
     }
 
   }
-  // repeated .hld.game_proto.help_succes_list_item help_list = 1;
+  // repeated .faith.game_proto.help_succes_list_item help_list = 1;
   total_size += 1 * this->help_list_size();
   for (int i = 0; i < this->help_list_size(); i++) {
     total_size +=
@@ -38540,7 +38540,7 @@ bool game_proto_legion_auction_item_show::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.legion_aunction_item_one item_all = 1;
+      // repeated .faith.game_proto.legion_aunction_item_one item_all = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -38573,7 +38573,7 @@ bool game_proto_legion_auction_item_show::MergePartialFromCodedStream(
 
 void game_proto_legion_auction_item_show::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.legion_aunction_item_one item_all = 1;
+  // repeated .faith.game_proto.legion_aunction_item_one item_all = 1;
   for (int i = 0; i < this->item_all_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->item_all(i), output);
@@ -38587,7 +38587,7 @@ void game_proto_legion_auction_item_show::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_legion_auction_item_show::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.legion_aunction_item_one item_all = 1;
+  // repeated .faith.game_proto.legion_aunction_item_one item_all = 1;
   for (int i = 0; i < this->item_all_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -38604,7 +38604,7 @@ void game_proto_legion_auction_item_show::SerializeWithCachedSizes(
 int game_proto_legion_auction_item_show::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.game_proto.legion_aunction_item_one item_all = 1;
+  // repeated .faith.game_proto.legion_aunction_item_one item_all = 1;
   total_size += 1 * this->item_all_size();
   for (int i = 0; i < this->item_all_size(); i++) {
     total_size +=
@@ -40245,7 +40245,7 @@ bool game_proto_pk_king_rank_list::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.pk_king_rank_info rank_list = 1;
+      // repeated .faith.game_proto.pk_king_rank_info rank_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -40294,7 +40294,7 @@ bool game_proto_pk_king_rank_list::MergePartialFromCodedStream(
 
 void game_proto_pk_king_rank_list::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.pk_king_rank_info rank_list = 1;
+  // repeated .faith.game_proto.pk_king_rank_info rank_list = 1;
   for (int i = 0; i < this->rank_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->rank_list(i), output);
@@ -40313,7 +40313,7 @@ void game_proto_pk_king_rank_list::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_pk_king_rank_list::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.pk_king_rank_info rank_list = 1;
+  // repeated .faith.game_proto.pk_king_rank_info rank_list = 1;
   for (int i = 0; i < this->rank_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -40344,7 +40344,7 @@ int game_proto_pk_king_rank_list::ByteSize() const {
     }
 
   }
-  // repeated .hld.game_proto.pk_king_rank_info rank_list = 1;
+  // repeated .faith.game_proto.pk_king_rank_info rank_list = 1;
   total_size += 1 * this->rank_list_size();
   for (int i = 0; i < this->rank_list_size(); i++) {
     total_size +=
@@ -44489,7 +44489,7 @@ bool game_proto_element_war_send_match_success_msg::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.element_match_info my_team_info = 1;
+      // repeated .faith.game_proto.element_match_info my_team_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -44504,7 +44504,7 @@ bool game_proto_element_war_send_match_success_msg::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.game_proto.element_match_info other_team_info = 2;
+      // repeated .faith.game_proto.element_match_info other_team_info = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -44537,13 +44537,13 @@ bool game_proto_element_war_send_match_success_msg::MergePartialFromCodedStream(
 
 void game_proto_element_war_send_match_success_msg::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.element_match_info my_team_info = 1;
+  // repeated .faith.game_proto.element_match_info my_team_info = 1;
   for (int i = 0; i < this->my_team_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->my_team_info(i), output);
   }
 
-  // repeated .hld.game_proto.element_match_info other_team_info = 2;
+  // repeated .faith.game_proto.element_match_info other_team_info = 2;
   for (int i = 0; i < this->other_team_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->other_team_info(i), output);
@@ -44557,14 +44557,14 @@ void game_proto_element_war_send_match_success_msg::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_element_war_send_match_success_msg::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.element_match_info my_team_info = 1;
+  // repeated .faith.game_proto.element_match_info my_team_info = 1;
   for (int i = 0; i < this->my_team_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         1, this->my_team_info(i), target);
   }
 
-  // repeated .hld.game_proto.element_match_info other_team_info = 2;
+  // repeated .faith.game_proto.element_match_info other_team_info = 2;
   for (int i = 0; i < this->other_team_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -44581,7 +44581,7 @@ void game_proto_element_war_send_match_success_msg::SerializeWithCachedSizes(
 int game_proto_element_war_send_match_success_msg::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.game_proto.element_match_info my_team_info = 1;
+  // repeated .faith.game_proto.element_match_info my_team_info = 1;
   total_size += 1 * this->my_team_info_size();
   for (int i = 0; i < this->my_team_info_size(); i++) {
     total_size +=
@@ -44589,7 +44589,7 @@ int game_proto_element_war_send_match_success_msg::ByteSize() const {
         this->my_team_info(i));
   }
 
-  // repeated .hld.game_proto.element_match_info other_team_info = 2;
+  // repeated .faith.game_proto.element_match_info other_team_info = 2;
   total_size += 1 * this->other_team_info_size();
   for (int i = 0; i < this->other_team_info_size(); i++) {
     total_size +=
@@ -45793,9 +45793,9 @@ game_proto_element_war_map_info::game_proto_element_war_map_info()
 }
 
 void game_proto_element_war_map_info::InitAsDefaultInstance() {
-  first_boss_ = const_cast< ::hld::game_proto_element_war_boss_info*>(&::hld::game_proto_element_war_boss_info::default_instance());
-  secord_boss_ = const_cast< ::hld::game_proto_element_war_boss_info*>(&::hld::game_proto_element_war_boss_info::default_instance());
-  target_boss_ = const_cast< ::hld::game_proto_element_war_boss_info*>(&::hld::game_proto_element_war_boss_info::default_instance());
+  first_boss_ = const_cast< ::faith::game_proto_element_war_boss_info*>(&::faith::game_proto_element_war_boss_info::default_instance());
+  secord_boss_ = const_cast< ::faith::game_proto_element_war_boss_info*>(&::faith::game_proto_element_war_boss_info::default_instance());
+  target_boss_ = const_cast< ::faith::game_proto_element_war_boss_info*>(&::faith::game_proto_element_war_boss_info::default_instance());
 }
 
 game_proto_element_war_map_info::game_proto_element_war_map_info(const game_proto_element_war_map_info& from)
@@ -45854,13 +45854,13 @@ void game_proto_element_war_map_info::Clear() {
     secord_score_num_ = 0;
     map_state_ = 0;
     if (has_first_boss()) {
-      if (first_boss_ != NULL) first_boss_->::hld::game_proto_element_war_boss_info::Clear();
+      if (first_boss_ != NULL) first_boss_->::faith::game_proto_element_war_boss_info::Clear();
     }
     if (has_secord_boss()) {
-      if (secord_boss_ != NULL) secord_boss_->::hld::game_proto_element_war_boss_info::Clear();
+      if (secord_boss_ != NULL) secord_boss_->::faith::game_proto_element_war_boss_info::Clear();
     }
     if (has_target_boss()) {
-      if (target_boss_ != NULL) target_boss_->::hld::game_proto_element_war_boss_info::Clear();
+      if (target_boss_ != NULL) target_boss_->::faith::game_proto_element_war_boss_info::Clear();
     }
   }
   buff_have_team_.Clear();
@@ -45922,7 +45922,7 @@ bool game_proto_element_war_map_info::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.game_proto.element_war_boss_info first_boss = 4;
+      // optional .faith.game_proto.element_war_boss_info first_boss = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -45936,7 +45936,7 @@ bool game_proto_element_war_map_info::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.game_proto.element_war_boss_info secord_boss = 5;
+      // optional .faith.game_proto.element_war_boss_info secord_boss = 5;
       case 5: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -45950,7 +45950,7 @@ bool game_proto_element_war_map_info::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.game_proto.element_war_boss_info target_boss = 6;
+      // optional .faith.game_proto.element_war_boss_info target_boss = 6;
       case 6: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -46038,19 +46038,19 @@ void game_proto_element_war_map_info::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->map_state(), output);
   }
 
-  // optional .hld.game_proto.element_war_boss_info first_boss = 4;
+  // optional .faith.game_proto.element_war_boss_info first_boss = 4;
   if (has_first_boss()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->first_boss(), output);
   }
 
-  // optional .hld.game_proto.element_war_boss_info secord_boss = 5;
+  // optional .faith.game_proto.element_war_boss_info secord_boss = 5;
   if (has_secord_boss()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       5, this->secord_boss(), output);
   }
 
-  // optional .hld.game_proto.element_war_boss_info target_boss = 6;
+  // optional .faith.game_proto.element_war_boss_info target_boss = 6;
   if (has_target_boss()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       6, this->target_boss(), output);
@@ -46094,21 +46094,21 @@ void game_proto_element_war_map_info::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->map_state(), target);
   }
 
-  // optional .hld.game_proto.element_war_boss_info first_boss = 4;
+  // optional .faith.game_proto.element_war_boss_info first_boss = 4;
   if (has_first_boss()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         4, this->first_boss(), target);
   }
 
-  // optional .hld.game_proto.element_war_boss_info secord_boss = 5;
+  // optional .faith.game_proto.element_war_boss_info secord_boss = 5;
   if (has_secord_boss()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         5, this->secord_boss(), target);
   }
 
-  // optional .hld.game_proto.element_war_boss_info target_boss = 6;
+  // optional .faith.game_proto.element_war_boss_info target_boss = 6;
   if (has_target_boss()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -46162,21 +46162,21 @@ int game_proto_element_war_map_info::ByteSize() const {
           this->map_state());
     }
 
-    // optional .hld.game_proto.element_war_boss_info first_boss = 4;
+    // optional .faith.game_proto.element_war_boss_info first_boss = 4;
     if (has_first_boss()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->first_boss());
     }
 
-    // optional .hld.game_proto.element_war_boss_info secord_boss = 5;
+    // optional .faith.game_proto.element_war_boss_info secord_boss = 5;
     if (has_secord_boss()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->secord_boss());
     }
 
-    // optional .hld.game_proto.element_war_boss_info target_boss = 6;
+    // optional .faith.game_proto.element_war_boss_info target_boss = 6;
     if (has_target_boss()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -46239,13 +46239,13 @@ void game_proto_element_war_map_info::MergeFrom(const game_proto_element_war_map
       set_map_state(from.map_state());
     }
     if (from.has_first_boss()) {
-      mutable_first_boss()->::hld::game_proto_element_war_boss_info::MergeFrom(from.first_boss());
+      mutable_first_boss()->::faith::game_proto_element_war_boss_info::MergeFrom(from.first_boss());
     }
     if (from.has_secord_boss()) {
-      mutable_secord_boss()->::hld::game_proto_element_war_boss_info::MergeFrom(from.secord_boss());
+      mutable_secord_boss()->::faith::game_proto_element_war_boss_info::MergeFrom(from.secord_boss());
     }
     if (from.has_target_boss()) {
-      mutable_target_boss()->::hld::game_proto_element_war_boss_info::MergeFrom(from.target_boss());
+      mutable_target_boss()->::faith::game_proto_element_war_boss_info::MergeFrom(from.target_boss());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -46868,7 +46868,7 @@ bool game_proto_element_war_map_end_info::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.element_war_map_end_role_info first_team = 1;
+      // repeated .faith.game_proto.element_war_map_end_role_info first_team = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -46883,7 +46883,7 @@ bool game_proto_element_war_map_end_info::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.game_proto.element_war_map_end_role_info secord_team = 2;
+      // repeated .faith.game_proto.element_war_map_end_role_info secord_team = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -46932,13 +46932,13 @@ bool game_proto_element_war_map_end_info::MergePartialFromCodedStream(
 
 void game_proto_element_war_map_end_info::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.element_war_map_end_role_info first_team = 1;
+  // repeated .faith.game_proto.element_war_map_end_role_info first_team = 1;
   for (int i = 0; i < this->first_team_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->first_team(i), output);
   }
 
-  // repeated .hld.game_proto.element_war_map_end_role_info secord_team = 2;
+  // repeated .faith.game_proto.element_war_map_end_role_info secord_team = 2;
   for (int i = 0; i < this->secord_team_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->secord_team(i), output);
@@ -46957,14 +46957,14 @@ void game_proto_element_war_map_end_info::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_element_war_map_end_info::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.element_war_map_end_role_info first_team = 1;
+  // repeated .faith.game_proto.element_war_map_end_role_info first_team = 1;
   for (int i = 0; i < this->first_team_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         1, this->first_team(i), target);
   }
 
-  // repeated .hld.game_proto.element_war_map_end_role_info secord_team = 2;
+  // repeated .faith.game_proto.element_war_map_end_role_info secord_team = 2;
   for (int i = 0; i < this->secord_team_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -46993,7 +46993,7 @@ int game_proto_element_war_map_end_info::ByteSize() const {
     }
 
   }
-  // repeated .hld.game_proto.element_war_map_end_role_info first_team = 1;
+  // repeated .faith.game_proto.element_war_map_end_role_info first_team = 1;
   total_size += 1 * this->first_team_size();
   for (int i = 0; i < this->first_team_size(); i++) {
     total_size +=
@@ -47001,7 +47001,7 @@ int game_proto_element_war_map_end_info::ByteSize() const {
         this->first_team(i));
   }
 
-  // repeated .hld.game_proto.element_war_map_end_role_info secord_team = 2;
+  // repeated .faith.game_proto.element_war_map_end_role_info secord_team = 2;
   total_size += 1 * this->secord_team_size();
   for (int i = 0; i < this->secord_team_size(); i++) {
     total_size +=
@@ -49398,7 +49398,7 @@ game_proto_boss_result_rank_list_end::game_proto_boss_result_rank_list_end()
 }
 
 void game_proto_boss_result_rank_list_end::InitAsDefaultInstance() {
-  my_rank_ = const_cast< ::hld::game_proto_boss_rank_item*>(&::hld::game_proto_boss_rank_item::default_instance());
+  my_rank_ = const_cast< ::faith::game_proto_boss_rank_item*>(&::faith::game_proto_boss_rank_item::default_instance());
 }
 
 game_proto_boss_result_rank_list_end::game_proto_boss_result_rank_list_end(const game_proto_boss_result_rank_list_end& from)
@@ -49450,7 +49450,7 @@ void game_proto_boss_result_rank_list_end::Clear() {
   if (_has_bits_[1 / 32] & (0xffu << (1 % 32))) {
     top_num_ = 0;
     if (has_my_rank()) {
-      if (my_rank_ != NULL) my_rank_->::hld::game_proto_boss_rank_item::Clear();
+      if (my_rank_ != NULL) my_rank_->::faith::game_proto_boss_rank_item::Clear();
     }
     boss_template_id_ = 0;
   }
@@ -49465,7 +49465,7 @@ bool game_proto_boss_result_rank_list_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.boss_rank_item top_list = 1;
+      // repeated .faith.game_proto.boss_rank_item top_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -49496,7 +49496,7 @@ bool game_proto_boss_result_rank_list_end::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .hld.game_proto.boss_rank_item my_rank = 3;
+      // optional .faith.game_proto.boss_rank_item my_rank = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -49544,7 +49544,7 @@ bool game_proto_boss_result_rank_list_end::MergePartialFromCodedStream(
 
 void game_proto_boss_result_rank_list_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.boss_rank_item top_list = 1;
+  // repeated .faith.game_proto.boss_rank_item top_list = 1;
   for (int i = 0; i < this->top_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->top_list(i), output);
@@ -49555,7 +49555,7 @@ void game_proto_boss_result_rank_list_end::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->top_num(), output);
   }
 
-  // optional .hld.game_proto.boss_rank_item my_rank = 3;
+  // optional .faith.game_proto.boss_rank_item my_rank = 3;
   if (has_my_rank()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->my_rank(), output);
@@ -49574,7 +49574,7 @@ void game_proto_boss_result_rank_list_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_boss_result_rank_list_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.boss_rank_item top_list = 1;
+  // repeated .faith.game_proto.boss_rank_item top_list = 1;
   for (int i = 0; i < this->top_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -49586,7 +49586,7 @@ void game_proto_boss_result_rank_list_end::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->top_num(), target);
   }
 
-  // optional .hld.game_proto.boss_rank_item my_rank = 3;
+  // optional .faith.game_proto.boss_rank_item my_rank = 3;
   if (has_my_rank()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -49616,7 +49616,7 @@ int game_proto_boss_result_rank_list_end::ByteSize() const {
           this->top_num());
     }
 
-    // optional .hld.game_proto.boss_rank_item my_rank = 3;
+    // optional .faith.game_proto.boss_rank_item my_rank = 3;
     if (has_my_rank()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -49631,7 +49631,7 @@ int game_proto_boss_result_rank_list_end::ByteSize() const {
     }
 
   }
-  // repeated .hld.game_proto.boss_rank_item top_list = 1;
+  // repeated .faith.game_proto.boss_rank_item top_list = 1;
   total_size += 1 * this->top_list_size();
   for (int i = 0; i < this->top_list_size(); i++) {
     total_size +=
@@ -49670,7 +49670,7 @@ void game_proto_boss_result_rank_list_end::MergeFrom(const game_proto_boss_resul
       set_top_num(from.top_num());
     }
     if (from.has_my_rank()) {
-      mutable_my_rank()->::hld::game_proto_boss_rank_item::MergeFrom(from.my_rank());
+      mutable_my_rank()->::faith::game_proto_boss_rank_item::MergeFrom(from.my_rank());
     }
     if (from.has_boss_template_id()) {
       set_boss_template_id(from.boss_template_id());
@@ -50169,7 +50169,7 @@ bool game_proto_element_map_rank_info::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.element_map_rank_role_info rank_info = 1;
+      // repeated .faith.game_proto.element_map_rank_role_info rank_info = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -50202,7 +50202,7 @@ bool game_proto_element_map_rank_info::MergePartialFromCodedStream(
 
 void game_proto_element_map_rank_info::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.element_map_rank_role_info rank_info = 1;
+  // repeated .faith.game_proto.element_map_rank_role_info rank_info = 1;
   for (int i = 0; i < this->rank_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->rank_info(i), output);
@@ -50216,7 +50216,7 @@ void game_proto_element_map_rank_info::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_element_map_rank_info::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.element_map_rank_role_info rank_info = 1;
+  // repeated .faith.game_proto.element_map_rank_role_info rank_info = 1;
   for (int i = 0; i < this->rank_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -50233,7 +50233,7 @@ void game_proto_element_map_rank_info::SerializeWithCachedSizes(
 int game_proto_element_map_rank_info::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.game_proto.element_map_rank_role_info rank_info = 1;
+  // repeated .faith.game_proto.element_map_rank_role_info rank_info = 1;
   total_size += 1 * this->rank_info_size();
   for (int i = 0; i < this->rank_info_size(); i++) {
     total_size +=
@@ -50660,7 +50660,7 @@ bool game_proto_map_target_show_info_list::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.map_target_show_info info_list = 1;
+      // repeated .faith.game_proto.map_target_show_info info_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -50693,7 +50693,7 @@ bool game_proto_map_target_show_info_list::MergePartialFromCodedStream(
 
 void game_proto_map_target_show_info_list::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.map_target_show_info info_list = 1;
+  // repeated .faith.game_proto.map_target_show_info info_list = 1;
   for (int i = 0; i < this->info_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->info_list(i), output);
@@ -50707,7 +50707,7 @@ void game_proto_map_target_show_info_list::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_map_target_show_info_list::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.map_target_show_info info_list = 1;
+  // repeated .faith.game_proto.map_target_show_info info_list = 1;
   for (int i = 0; i < this->info_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -50724,7 +50724,7 @@ void game_proto_map_target_show_info_list::SerializeWithCachedSizes(
 int game_proto_map_target_show_info_list::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.game_proto.map_target_show_info info_list = 1;
+  // repeated .faith.game_proto.map_target_show_info info_list = 1;
   total_size += 1 * this->info_list_size();
   for (int i = 0; i < this->info_list_size(); i++) {
     total_size +=
@@ -55489,7 +55489,7 @@ bool game_proto_attack_city_info_list::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.game_proto.attack_city_info_level_info list_info = 7;
+      // repeated .faith.game_proto.attack_city_info_level_info list_info = 7;
       case 7: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -55572,7 +55572,7 @@ void game_proto_attack_city_info_list::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->win_num(), output);
   }
 
-  // repeated .hld.game_proto.attack_city_info_level_info list_info = 7;
+  // repeated .faith.game_proto.attack_city_info_level_info list_info = 7;
   for (int i = 0; i < this->list_info_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       7, this->list_info(i), output);
@@ -55626,7 +55626,7 @@ void game_proto_attack_city_info_list::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->win_num(), target);
   }
 
-  // repeated .hld.game_proto.attack_city_info_level_info list_info = 7;
+  // repeated .faith.game_proto.attack_city_info_level_info list_info = 7;
   for (int i = 0; i < this->list_info_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -55699,7 +55699,7 @@ int game_proto_attack_city_info_list::ByteSize() const {
     }
 
   }
-  // repeated .hld.game_proto.attack_city_info_level_info list_info = 7;
+  // repeated .faith.game_proto.attack_city_info_level_info list_info = 7;
   total_size += 1 * this->list_info_size();
   for (int i = 0; i < this->list_info_size(); i++) {
     total_size +=
@@ -56830,7 +56830,7 @@ bool game_proto_attack_city_rank_info_list::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.game_proto.attack_city_rank_info info_list = 3;
+      // repeated .faith.game_proto.attack_city_rank_info info_list = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -56941,7 +56941,7 @@ void game_proto_attack_city_rank_info_list::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->legion_source(), output);
   }
 
-  // repeated .hld.game_proto.attack_city_rank_info info_list = 3;
+  // repeated .faith.game_proto.attack_city_rank_info info_list = 3;
   for (int i = 0; i < this->info_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->info_list(i), output);
@@ -56990,7 +56990,7 @@ void game_proto_attack_city_rank_info_list::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->legion_source(), target);
   }
 
-  // repeated .hld.game_proto.attack_city_rank_info info_list = 3;
+  // repeated .faith.game_proto.attack_city_rank_info info_list = 3;
   for (int i = 0; i < this->info_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -57071,7 +57071,7 @@ int game_proto_attack_city_rank_info_list::ByteSize() const {
     }
 
   }
-  // repeated .hld.game_proto.attack_city_rank_info info_list = 3;
+  // repeated .faith.game_proto.attack_city_rank_info info_list = 3;
   total_size += 1 * this->info_list_size();
   for (int i = 0; i < this->info_list_size(); i++) {
     total_size +=
@@ -57236,7 +57236,7 @@ bool game_proto_get_attack_city_rank_list_end::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.attack_city_rank_info_list rank_list = 1;
+      // repeated .faith.game_proto.attack_city_rank_info_list rank_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -57269,7 +57269,7 @@ bool game_proto_get_attack_city_rank_list_end::MergePartialFromCodedStream(
 
 void game_proto_get_attack_city_rank_list_end::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.attack_city_rank_info_list rank_list = 1;
+  // repeated .faith.game_proto.attack_city_rank_info_list rank_list = 1;
   for (int i = 0; i < this->rank_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->rank_list(i), output);
@@ -57283,7 +57283,7 @@ void game_proto_get_attack_city_rank_list_end::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_get_attack_city_rank_list_end::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.attack_city_rank_info_list rank_list = 1;
+  // repeated .faith.game_proto.attack_city_rank_info_list rank_list = 1;
   for (int i = 0; i < this->rank_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -57300,7 +57300,7 @@ void game_proto_get_attack_city_rank_list_end::SerializeWithCachedSizes(
 int game_proto_get_attack_city_rank_list_end::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.game_proto.attack_city_rank_info_list rank_list = 1;
+  // repeated .faith.game_proto.attack_city_rank_info_list rank_list = 1;
   total_size += 1 * this->rank_list_size();
   for (int i = 0; i < this->rank_list_size(); i++) {
     total_size +=
@@ -57775,7 +57775,7 @@ bool game_proto_send_attack_city_map_legion_info::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.attack_city_map_legion_info info_list = 1;
+      // repeated .faith.game_proto.attack_city_map_legion_info info_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -57872,7 +57872,7 @@ bool game_proto_send_attack_city_map_legion_info::MergePartialFromCodedStream(
 
 void game_proto_send_attack_city_map_legion_info::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.attack_city_map_legion_info info_list = 1;
+  // repeated .faith.game_proto.attack_city_map_legion_info info_list = 1;
   for (int i = 0; i < this->info_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->info_list(i), output);
@@ -57906,7 +57906,7 @@ void game_proto_send_attack_city_map_legion_info::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_send_attack_city_map_legion_info::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.attack_city_map_legion_info info_list = 1;
+  // repeated .faith.game_proto.attack_city_map_legion_info info_list = 1;
   for (int i = 0; i < this->info_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -57973,7 +57973,7 @@ int game_proto_send_attack_city_map_legion_info::ByteSize() const {
     }
 
   }
-  // repeated .hld.game_proto.attack_city_map_legion_info info_list = 1;
+  // repeated .faith.game_proto.attack_city_map_legion_info info_list = 1;
   total_size += 1 * this->info_list_size();
   for (int i = 0; i < this->info_list_size(); i++) {
     total_size +=
@@ -59074,7 +59074,7 @@ bool game_proto_attack_city_npc_list::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.attack_city_npc_info info_list = 1;
+      // repeated .faith.game_proto.attack_city_npc_info info_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -59107,7 +59107,7 @@ bool game_proto_attack_city_npc_list::MergePartialFromCodedStream(
 
 void game_proto_attack_city_npc_list::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.attack_city_npc_info info_list = 1;
+  // repeated .faith.game_proto.attack_city_npc_info info_list = 1;
   for (int i = 0; i < this->info_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->info_list(i), output);
@@ -59121,7 +59121,7 @@ void game_proto_attack_city_npc_list::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_attack_city_npc_list::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.attack_city_npc_info info_list = 1;
+  // repeated .faith.game_proto.attack_city_npc_info info_list = 1;
   for (int i = 0; i < this->info_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -59138,7 +59138,7 @@ void game_proto_attack_city_npc_list::SerializeWithCachedSizes(
 int game_proto_attack_city_npc_list::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.game_proto.attack_city_npc_info info_list = 1;
+  // repeated .faith.game_proto.attack_city_npc_info info_list = 1;
   total_size += 1 * this->info_list_size();
   for (int i = 0; i < this->info_list_size(); i++) {
     total_size +=
@@ -60636,7 +60636,7 @@ bool game_proto_attack_city_map_end_info::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.attack_city_map_end_player_info play_list = 1;
+      // repeated .faith.game_proto.attack_city_map_end_player_info play_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -60651,7 +60651,7 @@ bool game_proto_attack_city_map_end_info::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.game_proto.attack_city_map_end_item_info item_list = 2;
+      // repeated .faith.game_proto.attack_city_map_end_item_info item_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -60716,13 +60716,13 @@ bool game_proto_attack_city_map_end_info::MergePartialFromCodedStream(
 
 void game_proto_attack_city_map_end_info::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.attack_city_map_end_player_info play_list = 1;
+  // repeated .faith.game_proto.attack_city_map_end_player_info play_list = 1;
   for (int i = 0; i < this->play_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->play_list(i), output);
   }
 
-  // repeated .hld.game_proto.attack_city_map_end_item_info item_list = 2;
+  // repeated .faith.game_proto.attack_city_map_end_item_info item_list = 2;
   for (int i = 0; i < this->item_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->item_list(i), output);
@@ -60746,14 +60746,14 @@ void game_proto_attack_city_map_end_info::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_attack_city_map_end_info::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.attack_city_map_end_player_info play_list = 1;
+  // repeated .faith.game_proto.attack_city_map_end_player_info play_list = 1;
   for (int i = 0; i < this->play_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         1, this->play_list(i), target);
   }
 
-  // repeated .hld.game_proto.attack_city_map_end_item_info item_list = 2;
+  // repeated .faith.game_proto.attack_city_map_end_item_info item_list = 2;
   for (int i = 0; i < this->item_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -60796,7 +60796,7 @@ int game_proto_attack_city_map_end_info::ByteSize() const {
     }
 
   }
-  // repeated .hld.game_proto.attack_city_map_end_player_info play_list = 1;
+  // repeated .faith.game_proto.attack_city_map_end_player_info play_list = 1;
   total_size += 1 * this->play_list_size();
   for (int i = 0; i < this->play_list_size(); i++) {
     total_size +=
@@ -60804,7 +60804,7 @@ int game_proto_attack_city_map_end_info::ByteSize() const {
         this->play_list(i));
   }
 
-  // repeated .hld.game_proto.attack_city_map_end_item_info item_list = 2;
+  // repeated .faith.game_proto.attack_city_map_end_item_info item_list = 2;
   total_size += 1 * this->item_list_size();
   for (int i = 0; i < this->item_list_size(); i++) {
     total_size +=
@@ -62800,7 +62800,7 @@ bool game_proto_send_time_feed_back_info_list::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.send_time_feed_back_info info_list = 1;
+      // repeated .faith.game_proto.send_time_feed_back_info info_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -62833,7 +62833,7 @@ bool game_proto_send_time_feed_back_info_list::MergePartialFromCodedStream(
 
 void game_proto_send_time_feed_back_info_list::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.send_time_feed_back_info info_list = 1;
+  // repeated .faith.game_proto.send_time_feed_back_info info_list = 1;
   for (int i = 0; i < this->info_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->info_list(i), output);
@@ -62847,7 +62847,7 @@ void game_proto_send_time_feed_back_info_list::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_send_time_feed_back_info_list::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.send_time_feed_back_info info_list = 1;
+  // repeated .faith.game_proto.send_time_feed_back_info info_list = 1;
   for (int i = 0; i < this->info_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -62864,7 +62864,7 @@ void game_proto_send_time_feed_back_info_list::SerializeWithCachedSizes(
 int game_proto_send_time_feed_back_info_list::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.game_proto.send_time_feed_back_info info_list = 1;
+  // repeated .faith.game_proto.send_time_feed_back_info info_list = 1;
   total_size += 1 * this->info_list_size();
   for (int i = 0; i < this->info_list_size(); i++) {
     total_size +=
@@ -63907,7 +63907,7 @@ bool game_proto_update_time_limit_gift_info::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.time_limit_gift_info info_list = 1;
+      // repeated .faith.game_proto.time_limit_gift_info info_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -63940,7 +63940,7 @@ bool game_proto_update_time_limit_gift_info::MergePartialFromCodedStream(
 
 void game_proto_update_time_limit_gift_info::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.time_limit_gift_info info_list = 1;
+  // repeated .faith.game_proto.time_limit_gift_info info_list = 1;
   for (int i = 0; i < this->info_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->info_list(i), output);
@@ -63954,7 +63954,7 @@ void game_proto_update_time_limit_gift_info::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_update_time_limit_gift_info::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.time_limit_gift_info info_list = 1;
+  // repeated .faith.game_proto.time_limit_gift_info info_list = 1;
   for (int i = 0; i < this->info_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -63971,7 +63971,7 @@ void game_proto_update_time_limit_gift_info::SerializeWithCachedSizes(
 int game_proto_update_time_limit_gift_info::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.game_proto.time_limit_gift_info info_list = 1;
+  // repeated .faith.game_proto.time_limit_gift_info info_list = 1;
   total_size += 1 * this->info_list_size();
   for (int i = 0; i < this->info_list_size(); i++) {
     total_size +=
@@ -64568,7 +64568,7 @@ bool game_proto_limit_time_notice_info_list::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .hld.game_proto.limit_time_notice_info info_list = 1;
+      // repeated .faith.game_proto.limit_time_notice_info info_list = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -64623,7 +64623,7 @@ bool game_proto_limit_time_notice_info_list::MergePartialFromCodedStream(
 
 void game_proto_limit_time_notice_info_list::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // repeated .hld.game_proto.limit_time_notice_info info_list = 1;
+  // repeated .faith.game_proto.limit_time_notice_info info_list = 1;
   for (int i = 0; i < this->info_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->info_list(i), output);
@@ -64643,7 +64643,7 @@ void game_proto_limit_time_notice_info_list::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* game_proto_limit_time_notice_info_list::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // repeated .hld.game_proto.limit_time_notice_info info_list = 1;
+  // repeated .faith.game_proto.limit_time_notice_info info_list = 1;
   for (int i = 0; i < this->info_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -64666,7 +64666,7 @@ void game_proto_limit_time_notice_info_list::SerializeWithCachedSizes(
 int game_proto_limit_time_notice_info_list::ByteSize() const {
   int total_size = 0;
 
-  // repeated .hld.game_proto.limit_time_notice_info info_list = 1;
+  // repeated .faith.game_proto.limit_time_notice_info info_list = 1;
   total_size += 1 * this->info_list_size();
   for (int i = 0; i < this->info_list_size(); i++) {
     total_size +=
@@ -66560,6 +66560,6 @@ void game_proto::Swap(game_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

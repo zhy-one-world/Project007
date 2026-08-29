@@ -2,7 +2,7 @@
 
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 	enum e_error_code;
 	enum e_role_equip_slot;

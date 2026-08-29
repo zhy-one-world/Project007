@@ -1,0 +1,189 @@
+syntax = "proto2";
+package hld;
+
+message auction_proto
+{
+	message operate
+	{
+		optional int64				item_guid					= 1;
+		optional int32				item_num					= 2;
+		optional int32				operate_type				= 3;
+		optional int32				money_type					= 4;
+		optional int64				money_num					= 5;
+	}
+	
+	message operate_end
+	{
+		optional int64				item_guid					= 1;
+		optional int32				item_num					= 2;
+		optional int32				operate_type				= 3;
+		optional int32				money_type					= 4;
+		optional int64				money_num					= 5;
+		optional int32				operate_result				= 6;
+	}
+	
+	message auction_item_info
+	{
+		optional int64						seller_guid					= 1;
+		optional string						seller_name					= 2;
+		optional int64						buyer_guid					= 3;
+		optional string						buyer_name					= 4;
+		optional int32						trade_type					= 5;
+		optional int32						seller_vip_level			= 6;
+		optional int32						auction_tab					= 7;
+		optional int32						auction_sub_tab				= 8;
+		optional int32						item_color					= 9;
+		optional int32						quality_level				= 10;
+		optional int32						class_limit					= 11;
+		optional string						item_name					= 12;
+		optional int64						sell_time					= 13;
+		optional int64						deal_time					= 14;
+		optional int32						sell_money_type				= 15;
+		optional int64						sell_total_money			= 16;
+		optional int64						sell_single_money			= 17;
+		optional int64						cur_bid_money				= 18;
+		optional int64						item_guid					= 19;
+		repeated int32						item_info					= 20;
+		optional bool						is_sell						= 21;
+		optional int32                      is_show                     = 22;
+	}
+	
+	message update_selling_auction_list
+	{
+		optional bool						is_need_clean				= 1;	
+		repeated auction_item_info			item_list					= 2;
+	}
+	
+	message receieve_sell_success_info
+	{
+		optional int32						item_template_id			= 1;
+	}
+	
+	message req_auction_list
+	{
+		optional int32						main_type					= 1;
+		optional int32						sub_type					= 2;
+		optional int32						item_color					= 3;
+		optional int32						quality_level				= 4;
+		optional int32						single_money_sort_type		= 5;
+		optional int32						total_money_sort_type		= 6;
+		optional bool						is_show_gold				= 7;
+		optional bool						is_show_diamond				= 8;
+		optional int32						show_page					= 9;
+		optional string						key_word					= 10;
+		optional int32						trade_type					= 11;
+		optional int32                      career_type                 = 12;
+	}
+	
+	message req_auction_list_end
+	{
+		repeated auction_item_info			item_list					= 1;
+		optional int32						cur_page					= 2;
+		optional int32						max_info_num				= 3;
+		optional bool						is_final					= 4;
+		optional bool						is_need_clear				= 5;
+	}
+	
+	message req_trade_record
+	{
+		optional int32						trade_type					= 1; 
+		optional int32						page_index					= 2;
+	}
+	
+	message req_trade_record_end
+	{
+		optional int32						total_record_num			= 1; 
+		optional int32						cur_page_index				= 2; 
+		repeated auction_item_info			item_list					= 3;
+	}
+	
+	message req_another_sell_info
+	{
+		optional int32						sell_money_type				= 1;
+		optional int32						item_template_id			= 2;
+	}
+	
+	message req_another_sell_info_end
+	{
+		optional int32						sell_money_type				= 1;
+		optional int32						item_template_id			= 2;
+		repeated auction_item_info			item_list					= 3;
+		optional bool						is_final					= 4;
+		optional bool						is_need_clear				= 5;
+	}
+	
+	message trade_operate
+	{
+		optional int64				trade_guid							= 1;
+		optional int32				operate_type						= 2;
+		optional int32				price_money_type					= 3;
+		optional int64				price_money_value					= 4;
+	}
+	
+	message trade_operate_end
+	{
+		optional int64				trade_guid							= 1;
+		optional int32				operate_type						= 2;
+		optional int32				operate_result						= 3;
+	}
+	
+	message req_self_bid_list
+	{
+		optional int32						trade_type					= 1;
+		optional int32						page_index					= 2;
+	}
+	
+	message bid_are_overtaken
+	{
+		optional int32				item_id								= 1;
+		optional int32				item_num							= 2;
+	}
+	
+	message auction_sell_flag
+	{
+		optional bool				sell_flag							= 1;
+	}
+	
+	message auction_item_single
+	{
+	    optional int32                      create_time                 = 1;
+		optional int32                      is_read                     = 2;
+		optional int32						trade_type					= 3;
+		optional int32						sell_time					= 4;
+		optional int32						deal_time					= 5;
+		optional int32						sell_money_type				= 6;
+		optional string                     cur_bid_money_str           = 7;
+		repeated int32						cur_bid_money				= 8;
+		repeated int32						item_info					= 9;
+	}
+	message auction_bid_record_failure 
+	{
+	    repeated auction_item_single       auction_record_array         = 1;
+	}
+	
+	message auction_bid_single 
+	{
+	    repeated int32           item_guid                   = 1;
+		optional int32           create_time                 = 2;
+		optional int32           template_id                 = 3;
+		optional int32           template_num                = 4;
+		optional int32           money_type                  = 5;
+		optional string          bid_money                   = 6;
+		optional int32           is_sell                     = 7;
+		repeated int32           buyer_guid                  = 8;
+		optional int32           update_time                 = 9;
+		optional int32           is_read                     = 10;
+		
+	}
+	message auction_bid_notice
+	{
+	    repeated  int32                role_guid             = 1;
+	    repeated  auction_bid_single   bid_notice_array      = 2;
+	}
+	message auction_bid_notice_red
+	{
+	    repeated  int32               role_guid              = 1;
+		repeated  int32               is_red                 = 2;
+	}
+	
+}

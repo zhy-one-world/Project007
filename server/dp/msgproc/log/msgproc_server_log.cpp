@@ -18,7 +18,7 @@
 #include "log_cache.hpp"
 //#include "server_log.hpp"
 
-namespace hld
+namespace faith
 {
 	
 	

@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_item_2eproto();
@@ -216,7 +216,7 @@ class item_proto_item_save_load : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 bag_type() const;
   inline void set_bag_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_save_load)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_save_load)
  private:
   inline void set_has_bag_type();
   inline void clear_has_bag_type();
@@ -313,7 +313,7 @@ class item_proto_item_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_item_data();
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_info)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_info)
  private:
   inline void set_has_item_guid();
   inline void clear_has_item_guid();
@@ -401,7 +401,7 @@ class item_proto_equip_end_load_new_effect : public ::google::protobuf::Message 
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_item_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.equip_end_load_new_effect)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.equip_end_load_new_effect)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -493,16 +493,16 @@ class item_proto_update_character_item : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 item_error() const;
   inline void set_item_error(::google::protobuf::uint32 value);
 
-  // repeated .hld.item_proto.item_info item_list = 3;
+  // repeated .faith.item_proto.item_info item_list = 3;
   inline int item_list_size() const;
   inline void clear_item_list();
   static const int kItemListFieldNumber = 3;
-  inline const ::hld::item_proto_item_info& item_list(int index) const;
-  inline ::hld::item_proto_item_info* mutable_item_list(int index);
-  inline ::hld::item_proto_item_info* add_item_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::item_proto_item_info >&
+  inline const ::faith::item_proto_item_info& item_list(int index) const;
+  inline ::faith::item_proto_item_info* mutable_item_list(int index);
+  inline ::faith::item_proto_item_info* add_item_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::item_proto_item_info >&
       item_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::item_proto_item_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::item_proto_item_info >*
       mutable_item_list();
 
   // optional uint32 update_mode = 4;
@@ -512,7 +512,7 @@ class item_proto_update_character_item : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 update_mode() const;
   inline void set_update_mode(::google::protobuf::uint32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.update_character_item)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.update_character_item)
  private:
   inline void set_has_item_error();
   inline void clear_has_item_error();
@@ -522,7 +522,7 @@ class item_proto_update_character_item : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > role_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::item_proto_item_info > item_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::item_proto_item_info > item_list_;
   ::google::protobuf::uint32 item_error_;
   ::google::protobuf::uint32 update_mode_;
 
@@ -646,7 +646,7 @@ class item_proto_item_operation : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 force_do() const;
   inline void set_force_do(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_operation)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_operation)
  private:
   inline void set_has_operation_type();
   inline void clear_has_operation_type();
@@ -749,7 +749,7 @@ class item_proto_item_quick_call_mount : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_mount_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_quick_call_mount)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_quick_call_mount)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -834,7 +834,7 @@ class item_proto_item_show_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_mount_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_show_info)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_show_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -914,7 +914,7 @@ class item_proto_item_show_info_quickly_hp : public ::google::protobuf::Message 
   inline ::google::protobuf::int64 quickly_hp_guid() const;
   inline void set_quickly_hp_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_show_info_quickly_hp)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_show_info_quickly_hp)
  private:
   inline void set_has_quickly_hp_guid();
   inline void clear_has_quickly_hp_guid();
@@ -1041,7 +1041,7 @@ class item_proto_item_operation_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 item_num() const;
   inline void set_item_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_operation_end)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_operation_end)
  private:
   inline void set_has_operation_state();
   inline void clear_has_operation_state();
@@ -1139,7 +1139,7 @@ class item_proto_item_operation_tidy : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_item_guid_list();
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_operation_tidy)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_operation_tidy)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1236,7 +1236,7 @@ class item_proto_item_recovery_earn_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_item_array();
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_recovery_earn_info)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_recovery_earn_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1341,7 +1341,7 @@ class item_proto_item_delete : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_del_item_guid_arr();
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_delete)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_delete)
  private:
   inline void set_has_del_item_arr_len();
   inline void clear_has_del_item_arr_len();
@@ -1430,7 +1430,7 @@ class item_proto_element_heart_delete : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_item_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.element_heart_delete)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.element_heart_delete)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1517,7 +1517,7 @@ class item_proto_item_sell_earn_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 earn_money() const;
   inline void set_earn_money(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_sell_earn_info)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_sell_earn_info)
  private:
   inline void set_has_earn_money_id();
   inline void clear_has_earn_money_id();
@@ -1635,7 +1635,7 @@ class item_proto_pick_drop_box : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 item_guid() const;
   inline void set_item_guid(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.pick_drop_box)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.pick_drop_box)
  private:
   inline void set_has_item_template_id();
   inline void clear_has_item_template_id();
@@ -1753,7 +1753,7 @@ class item_proto_item_composit : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 composit_num() const;
   inline void set_composit_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_composit)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_composit)
  private:
   inline void set_has_composit_template_id();
   inline void clear_has_composit_template_id();
@@ -1866,7 +1866,7 @@ class item_proto_item_composit_end : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_result_code();
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_composit_end)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_composit_end)
  private:
   inline void set_has_composit_item_template_id();
   inline void clear_has_composit_item_template_id();
@@ -1974,7 +1974,7 @@ class item_proto_item_succinct_temp_value : public ::google::protobuf::Message {
   inline bool is_save_operate() const;
   inline void set_is_save_operate(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_succinct_temp_value)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_succinct_temp_value)
  private:
   inline void set_has_is_save_operate();
   inline void clear_has_is_save_operate();
@@ -2070,7 +2070,7 @@ class item_proto_show_this_wing : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 wing_template_id() const;
   inline void set_wing_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.show_this_wing)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.show_this_wing)
  private:
   inline void set_has_wing_template_id();
   inline void clear_has_wing_template_id();
@@ -2172,7 +2172,7 @@ class item_proto_change_mount_shape : public ::google::protobuf::Message {
   inline bool is_buff() const;
   inline void set_is_buff(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.change_mount_shape)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.change_mount_shape)
  private:
   inline void set_has_mount_template_id();
   inline void clear_has_mount_template_id();
@@ -2289,7 +2289,7 @@ class item_proto_item_get_item_msg : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 boss_id() const;
   inline void set_boss_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_get_item_msg)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_get_item_msg)
  private:
   inline void set_has_is_continue_add();
   inline void clear_has_is_continue_add();
@@ -2395,7 +2395,7 @@ class item_proto_item_cd : public ::google::protobuf::Message {
   inline float cd_time() const;
   inline void set_cd_time(float value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_cd)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_cd)
  private:
   inline void set_has_item_template_id();
   inline void clear_has_item_template_id();
@@ -2493,7 +2493,7 @@ class item_proto_item_hope_item_get : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 get_typ() const;
   inline void set_get_typ(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_hope_item_get)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_hope_item_get)
  private:
   inline void set_has_get_typ();
   inline void clear_has_get_typ();
@@ -2633,7 +2633,7 @@ class item_proto_item_hope_item_get_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 send_mail_num() const;
   inline void set_send_mail_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_hope_item_get_end)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_hope_item_get_end)
  private:
   inline void set_has_get_typ();
   inline void clear_has_get_typ();
@@ -2755,7 +2755,7 @@ class item_proto_item_use_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 illusion_unlock_teamplate_id() const;
   inline void set_illusion_unlock_teamplate_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_use_end)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_use_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -2861,7 +2861,7 @@ class item_proto_item_merge_entry : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 item_num() const;
   inline void set_item_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_merge_entry)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_merge_entry)
  private:
   inline void set_has_item_num();
   inline void clear_has_item_num();
@@ -2956,19 +2956,19 @@ class item_proto_item_merge_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 merge_item_count() const;
   inline void set_merge_item_count(::google::protobuf::int32 value);
 
-  // repeated .hld.item_proto.item_merge_entry merge_item_list = 3;
+  // repeated .faith.item_proto.item_merge_entry merge_item_list = 3;
   inline int merge_item_list_size() const;
   inline void clear_merge_item_list();
   static const int kMergeItemListFieldNumber = 3;
-  inline const ::hld::item_proto_item_merge_entry& merge_item_list(int index) const;
-  inline ::hld::item_proto_item_merge_entry* mutable_merge_item_list(int index);
-  inline ::hld::item_proto_item_merge_entry* add_merge_item_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::item_proto_item_merge_entry >&
+  inline const ::faith::item_proto_item_merge_entry& merge_item_list(int index) const;
+  inline ::faith::item_proto_item_merge_entry* mutable_merge_item_list(int index);
+  inline ::faith::item_proto_item_merge_entry* add_merge_item_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::item_proto_item_merge_entry >&
       merge_item_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::item_proto_item_merge_entry >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::item_proto_item_merge_entry >*
       mutable_merge_item_list();
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_merge_end)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_merge_end)
  private:
   inline void set_has_merge_item_count();
   inline void clear_has_merge_item_count();
@@ -2976,7 +2976,7 @@ class item_proto_item_merge_end : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > role_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::item_proto_item_merge_entry > merge_item_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::item_proto_item_merge_entry > merge_item_list_;
   ::google::protobuf::int32 merge_item_count_;
 
   mutable int _cached_size_;
@@ -3064,7 +3064,7 @@ class item_proto_item_auto_inherit : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_item_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_auto_inherit)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_auto_inherit)
  private:
   inline void set_has_auto_result();
   inline void clear_has_auto_result();
@@ -3147,7 +3147,7 @@ class item_proto_hunt_spirit : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 hunt_type() const;
   inline void set_hunt_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.hunt_spirit)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.hunt_spirit)
  private:
   inline void set_has_hunt_type();
   inline void clear_has_hunt_type();
@@ -3255,7 +3255,7 @@ class item_proto_hunt_spirit_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 send_mail_num() const;
   inline void set_send_mail_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.hunt_spirit_end)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.hunt_spirit_end)
  private:
   inline void set_has_hunt_type();
   inline void clear_has_hunt_type();
@@ -3351,7 +3351,7 @@ class item_proto_show_item_upgrade_effect : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 show_value() const;
   inline void set_show_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.show_item_upgrade_effect)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.show_item_upgrade_effect)
  private:
   inline void set_has_show_type();
   inline void clear_has_show_type();
@@ -3443,7 +3443,7 @@ class item_proto_add_money : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 money_num() const;
   inline void set_money_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.add_money)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.add_money)
  private:
   inline void set_has_money_id();
   inline void clear_has_money_id();
@@ -3542,7 +3542,7 @@ class item_proto_add_item : public ::google::protobuf::Message {
   inline bool send_by_mail() const;
   inline void set_send_by_mail(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.add_item)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.add_item)
  private:
   inline void set_has_item_id();
   inline void clear_has_item_id();
@@ -3677,7 +3677,7 @@ class item_proto_lucky_draw_record : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 record_time() const;
   inline void set_record_time(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.lucky_draw_record)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.lucky_draw_record)
  private:
   inline void set_has_info_guid();
   inline void clear_has_info_guid();
@@ -3770,24 +3770,24 @@ class item_proto_load_lucky_draw_record_end : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.item_proto.lucky_draw_record data_array = 1;
+  // repeated .faith.item_proto.lucky_draw_record data_array = 1;
   inline int data_array_size() const;
   inline void clear_data_array();
   static const int kDataArrayFieldNumber = 1;
-  inline const ::hld::item_proto_lucky_draw_record& data_array(int index) const;
-  inline ::hld::item_proto_lucky_draw_record* mutable_data_array(int index);
-  inline ::hld::item_proto_lucky_draw_record* add_data_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::item_proto_lucky_draw_record >&
+  inline const ::faith::item_proto_lucky_draw_record& data_array(int index) const;
+  inline ::faith::item_proto_lucky_draw_record* mutable_data_array(int index);
+  inline ::faith::item_proto_lucky_draw_record* add_data_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::item_proto_lucky_draw_record >&
       data_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::item_proto_lucky_draw_record >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::item_proto_lucky_draw_record >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.load_lucky_draw_record_end)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.load_lucky_draw_record_end)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::item_proto_lucky_draw_record > data_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::item_proto_lucky_draw_record > data_array_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -3867,25 +3867,25 @@ class item_proto_lucky_draw_record_operate : public ::google::protobuf::Message 
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_del_array();
 
-  // repeated .hld.item_proto.lucky_draw_record add_array = 2;
+  // repeated .faith.item_proto.lucky_draw_record add_array = 2;
   inline int add_array_size() const;
   inline void clear_add_array();
   static const int kAddArrayFieldNumber = 2;
-  inline const ::hld::item_proto_lucky_draw_record& add_array(int index) const;
-  inline ::hld::item_proto_lucky_draw_record* mutable_add_array(int index);
-  inline ::hld::item_proto_lucky_draw_record* add_add_array();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::item_proto_lucky_draw_record >&
+  inline const ::faith::item_proto_lucky_draw_record& add_array(int index) const;
+  inline ::faith::item_proto_lucky_draw_record* mutable_add_array(int index);
+  inline ::faith::item_proto_lucky_draw_record* add_add_array();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::item_proto_lucky_draw_record >&
       add_array() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::item_proto_lucky_draw_record >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::item_proto_lucky_draw_record >*
       mutable_add_array();
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.lucky_draw_record_operate)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.lucky_draw_record_operate)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::RepeatedField< ::google::protobuf::int64 > del_array_;
-  ::google::protobuf::RepeatedPtrField< ::hld::item_proto_lucky_draw_record > add_array_;
+  ::google::protobuf::RepeatedPtrField< ::faith::item_proto_lucky_draw_record > add_array_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -3981,7 +3981,7 @@ class item_proto_patron_saint_mark_operate : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 operate_type() const;
   inline void set_operate_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.patron_saint_mark_operate)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.patron_saint_mark_operate)
  private:
   inline void set_has_mark_guid_a();
   inline void clear_has_mark_guid_a();
@@ -4100,7 +4100,7 @@ class item_proto_patron_saint_mark_operate_end : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 operate_result() const;
   inline void set_operate_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.patron_saint_mark_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.patron_saint_mark_operate_end)
  private:
   inline void set_has_mark_guid_a();
   inline void clear_has_mark_guid_a();
@@ -4194,7 +4194,7 @@ class item_proto_item_one_key_use_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_one_key_use_end)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_one_key_use_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -4283,7 +4283,7 @@ class item_proto_simple_item_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 item_num() const;
   inline void set_item_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.simple_item_info)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.simple_item_info)
  private:
   inline void set_has_item_template_id();
   inline void clear_has_item_template_id();
@@ -4380,7 +4380,7 @@ class item_proto_show_fashion : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.show_fashion)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.show_fashion)
  private:
   inline void set_has_is_show_fashion();
   inline void clear_has_is_show_fashion();
@@ -4463,7 +4463,7 @@ class item_proto_unlock_skill_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.unlock_skill_end)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.unlock_skill_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -4573,7 +4573,7 @@ class item_proto_unlock_skill : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 open_need_level() const;
   inline void set_open_need_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.unlock_skill)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.unlock_skill)
  private:
   inline void set_has_choosed_guid();
   inline void clear_has_choosed_guid();
@@ -4693,7 +4693,7 @@ class item_proto_item_forge : public ::google::protobuf::Message {
   inline bool first_use_locked_item() const;
   inline void set_first_use_locked_item(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_forge)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_forge)
  private:
   inline void set_has_forge_lock_flag();
   inline void clear_has_forge_lock_flag();
@@ -4832,7 +4832,7 @@ class item_proto_item_forge_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 change_gs_value() const;
   inline void set_change_gs_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_forge_end)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_forge_end)
  private:
   inline void set_has_is_save_operate();
   inline void clear_has_is_save_operate();
@@ -4942,7 +4942,7 @@ class item_proto_tinder_prop_operate : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 operate_type() const;
   inline void set_operate_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.tinder_prop_operate)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.tinder_prop_operate)
  private:
   inline void set_has_target_slot();
   inline void clear_has_target_slot();
@@ -5056,7 +5056,7 @@ class item_proto_tinder_prop_operate_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 operate_result() const;
   inline void set_operate_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.tinder_prop_operate_end)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.tinder_prop_operate_end)
  private:
   inline void set_has_mark_guid_a();
   inline void clear_has_mark_guid_a();
@@ -5155,7 +5155,7 @@ class item_proto_get_meditation_item_msg : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_item_data();
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.get_meditation_item_msg)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.get_meditation_item_msg)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -5242,7 +5242,7 @@ class item_proto_change_sky_suit_shape : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 operate_type() const;
   inline void set_operate_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.change_sky_suit_shape)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.change_sky_suit_shape)
  private:
   inline void set_has_operate_state();
   inline void clear_has_operate_state();
@@ -5344,7 +5344,7 @@ class item_proto_item_awaken : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_need_item_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_awaken)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_awaken)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -5437,7 +5437,7 @@ class item_proto_item_awaken_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_awaken_end)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_awaken_end)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -5539,7 +5539,7 @@ class item_proto_item_jewel_carve_oper : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 param() const;
   inline void set_param(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_jewel_carve_oper)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_jewel_carve_oper)
  private:
   inline void set_has_oper_type();
   inline void clear_has_oper_type();
@@ -5644,7 +5644,7 @@ class item_proto_item_jewel_carve_oper_end : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto.item_jewel_carve_oper_end)
+  // @@protoc_insertion_point(class_scope:faith.item_proto.item_jewel_carve_oper_end)
  private:
   inline void set_has_oper_type();
   inline void clear_has_oper_type();
@@ -5777,7 +5777,7 @@ class item_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.item_proto)
+  // @@protoc_insertion_point(class_scope:faith.item_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -5861,7 +5861,7 @@ class item_s2s_sprite_fetter_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.item_s2s.sprite_fetter_info)
+  // @@protoc_insertion_point(class_scope:faith.item_s2s.sprite_fetter_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -5934,24 +5934,24 @@ class item_s2s_sl_sprite_fetter_list : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.item_s2s.sprite_fetter_info data_list = 1;
+  // repeated .faith.item_s2s.sprite_fetter_info data_list = 1;
   inline int data_list_size() const;
   inline void clear_data_list();
   static const int kDataListFieldNumber = 1;
-  inline const ::hld::item_s2s_sprite_fetter_info& data_list(int index) const;
-  inline ::hld::item_s2s_sprite_fetter_info* mutable_data_list(int index);
-  inline ::hld::item_s2s_sprite_fetter_info* add_data_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::item_s2s_sprite_fetter_info >&
+  inline const ::faith::item_s2s_sprite_fetter_info& data_list(int index) const;
+  inline ::faith::item_s2s_sprite_fetter_info* mutable_data_list(int index);
+  inline ::faith::item_s2s_sprite_fetter_info* add_data_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::item_s2s_sprite_fetter_info >&
       data_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::item_s2s_sprite_fetter_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::item_s2s_sprite_fetter_info >*
       mutable_data_list();
 
-  // @@protoc_insertion_point(class_scope:hld.item_s2s.sl_sprite_fetter_list)
+  // @@protoc_insertion_point(class_scope:faith.item_s2s.sl_sprite_fetter_list)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::item_s2s_sprite_fetter_info > data_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::item_s2s_sprite_fetter_info > data_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -6031,7 +6031,7 @@ class item_s2s_sl_item_upgrade : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.item_s2s.sl_item_upgrade)
+  // @@protoc_insertion_point(class_scope:faith.item_s2s.sl_item_upgrade)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -6118,52 +6118,52 @@ class item_s2s_item_data : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 item_id() const;
   inline void set_item_id(::google::protobuf::int32 value);
 
-  // optional .hld.item_s2s.item_base base_data = 3;
+  // optional .faith.item_s2s.item_base base_data = 3;
   inline bool has_base_data() const;
   inline void clear_base_data();
   static const int kBaseDataFieldNumber = 3;
-  inline const ::hld::item_s2s_item_base& base_data() const;
-  inline ::hld::item_s2s_item_base* mutable_base_data();
-  inline ::hld::item_s2s_item_base* release_base_data();
-  inline void set_allocated_base_data(::hld::item_s2s_item_base* base_data);
+  inline const ::faith::item_s2s_item_base& base_data() const;
+  inline ::faith::item_s2s_item_base* mutable_base_data();
+  inline ::faith::item_s2s_item_base* release_base_data();
+  inline void set_allocated_base_data(::faith::item_s2s_item_base* base_data);
 
-  // optional .hld.item_s2s.item_equip equip_data = 4;
+  // optional .faith.item_s2s.item_equip equip_data = 4;
   inline bool has_equip_data() const;
   inline void clear_equip_data();
   static const int kEquipDataFieldNumber = 4;
-  inline const ::hld::item_s2s_item_equip& equip_data() const;
-  inline ::hld::item_s2s_item_equip* mutable_equip_data();
-  inline ::hld::item_s2s_item_equip* release_equip_data();
-  inline void set_allocated_equip_data(::hld::item_s2s_item_equip* equip_data);
+  inline const ::faith::item_s2s_item_equip& equip_data() const;
+  inline ::faith::item_s2s_item_equip* mutable_equip_data();
+  inline ::faith::item_s2s_item_equip* release_equip_data();
+  inline void set_allocated_equip_data(::faith::item_s2s_item_equip* equip_data);
 
-  // optional .hld.item_s2s.item_sprite sprite_data = 5;
+  // optional .faith.item_s2s.item_sprite sprite_data = 5;
   inline bool has_sprite_data() const;
   inline void clear_sprite_data();
   static const int kSpriteDataFieldNumber = 5;
-  inline const ::hld::item_s2s_item_sprite& sprite_data() const;
-  inline ::hld::item_s2s_item_sprite* mutable_sprite_data();
-  inline ::hld::item_s2s_item_sprite* release_sprite_data();
-  inline void set_allocated_sprite_data(::hld::item_s2s_item_sprite* sprite_data);
+  inline const ::faith::item_s2s_item_sprite& sprite_data() const;
+  inline ::faith::item_s2s_item_sprite* mutable_sprite_data();
+  inline ::faith::item_s2s_item_sprite* release_sprite_data();
+  inline void set_allocated_sprite_data(::faith::item_s2s_item_sprite* sprite_data);
 
-  // optional .hld.item_s2s.item_prop prop_data = 6;
+  // optional .faith.item_s2s.item_prop prop_data = 6;
   inline bool has_prop_data() const;
   inline void clear_prop_data();
   static const int kPropDataFieldNumber = 6;
-  inline const ::hld::item_s2s_item_prop& prop_data() const;
-  inline ::hld::item_s2s_item_prop* mutable_prop_data();
-  inline ::hld::item_s2s_item_prop* release_prop_data();
-  inline void set_allocated_prop_data(::hld::item_s2s_item_prop* prop_data);
+  inline const ::faith::item_s2s_item_prop& prop_data() const;
+  inline ::faith::item_s2s_item_prop* mutable_prop_data();
+  inline ::faith::item_s2s_item_prop* release_prop_data();
+  inline void set_allocated_prop_data(::faith::item_s2s_item_prop* prop_data);
 
-  // optional .hld.item_s2s.item_element element_data = 7;
+  // optional .faith.item_s2s.item_element element_data = 7;
   inline bool has_element_data() const;
   inline void clear_element_data();
   static const int kElementDataFieldNumber = 7;
-  inline const ::hld::item_s2s_item_element& element_data() const;
-  inline ::hld::item_s2s_item_element* mutable_element_data();
-  inline ::hld::item_s2s_item_element* release_element_data();
-  inline void set_allocated_element_data(::hld::item_s2s_item_element* element_data);
+  inline const ::faith::item_s2s_item_element& element_data() const;
+  inline ::faith::item_s2s_item_element* mutable_element_data();
+  inline ::faith::item_s2s_item_element* release_element_data();
+  inline void set_allocated_element_data(::faith::item_s2s_item_element* element_data);
 
-  // @@protoc_insertion_point(class_scope:hld.item_s2s.item_data)
+  // @@protoc_insertion_point(class_scope:faith.item_s2s.item_data)
  private:
   inline void set_has_item_guid();
   inline void clear_has_item_guid();
@@ -6183,11 +6183,11 @@ class item_s2s_item_data : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 item_guid_;
-  ::hld::item_s2s_item_base* base_data_;
-  ::hld::item_s2s_item_equip* equip_data_;
-  ::hld::item_s2s_item_sprite* sprite_data_;
-  ::hld::item_s2s_item_prop* prop_data_;
-  ::hld::item_s2s_item_element* element_data_;
+  ::faith::item_s2s_item_base* base_data_;
+  ::faith::item_s2s_item_equip* equip_data_;
+  ::faith::item_s2s_item_sprite* sprite_data_;
+  ::faith::item_s2s_item_prop* prop_data_;
+  ::faith::item_s2s_item_element* element_data_;
   ::google::protobuf::int32 item_id_;
 
   mutable int _cached_size_;
@@ -6256,24 +6256,24 @@ class item_s2s_sl_item_info : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.item_s2s.item_data item_list = 1;
+  // repeated .faith.item_s2s.item_data item_list = 1;
   inline int item_list_size() const;
   inline void clear_item_list();
   static const int kItemListFieldNumber = 1;
-  inline const ::hld::item_s2s_item_data& item_list(int index) const;
-  inline ::hld::item_s2s_item_data* mutable_item_list(int index);
-  inline ::hld::item_s2s_item_data* add_item_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::item_s2s_item_data >&
+  inline const ::faith::item_s2s_item_data& item_list(int index) const;
+  inline ::faith::item_s2s_item_data* mutable_item_list(int index);
+  inline ::faith::item_s2s_item_data* add_item_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::item_s2s_item_data >&
       item_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::item_s2s_item_data >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::item_s2s_item_data >*
       mutable_item_list();
 
-  // @@protoc_insertion_point(class_scope:hld.item_s2s.sl_item_info)
+  // @@protoc_insertion_point(class_scope:faith.item_s2s.sl_item_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::item_s2s_item_data > item_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::item_s2s_item_data > item_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -6353,7 +6353,7 @@ class item_s2s_item_base : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.item_s2s.item_base)
+  // @@protoc_insertion_point(class_scope:faith.item_s2s.item_base)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -6438,7 +6438,7 @@ class item_s2s_item_equip : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.item_s2s.item_equip)
+  // @@protoc_insertion_point(class_scope:faith.item_s2s.item_equip)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -6523,7 +6523,7 @@ class item_s2s_item_sprite : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.item_s2s.item_sprite)
+  // @@protoc_insertion_point(class_scope:faith.item_s2s.item_sprite)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -6608,7 +6608,7 @@ class item_s2s_item_prop : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.item_s2s.item_prop)
+  // @@protoc_insertion_point(class_scope:faith.item_s2s.item_prop)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -6693,7 +6693,7 @@ class item_s2s_item_element : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.item_s2s.item_element)
+  // @@protoc_insertion_point(class_scope:faith.item_s2s.item_element)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -6777,7 +6777,7 @@ class item_s2s : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.item_s2s)
+  // @@protoc_insertion_point(class_scope:faith.item_s2s)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -6856,19 +6856,19 @@ class item_s2c_item_list : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 unit_guid() const;
   inline void set_unit_guid(::google::protobuf::int64 value);
 
-  // repeated .hld.item.s2c_item_data item_list = 2;
+  // repeated .faith.item.s2c_item_data item_list = 2;
   inline int item_list_size() const;
   inline void clear_item_list();
   static const int kItemListFieldNumber = 2;
-  inline const ::hld::item_s2c_item_data& item_list(int index) const;
-  inline ::hld::item_s2c_item_data* mutable_item_list(int index);
-  inline ::hld::item_s2c_item_data* add_item_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::item_s2c_item_data >&
+  inline const ::faith::item_s2c_item_data& item_list(int index) const;
+  inline ::faith::item_s2c_item_data* mutable_item_list(int index);
+  inline ::faith::item_s2c_item_data* add_item_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::item_s2c_item_data >&
       item_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::item_s2c_item_data >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::item_s2c_item_data >*
       mutable_item_list();
 
-  // @@protoc_insertion_point(class_scope:hld.item.s2c_item_list)
+  // @@protoc_insertion_point(class_scope:faith.item.s2c_item_list)
  private:
   inline void set_has_unit_guid();
   inline void clear_has_unit_guid();
@@ -6876,7 +6876,7 @@ class item_s2c_item_list : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 unit_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::item_s2c_item_data > item_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::item_s2c_item_data > item_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -6958,52 +6958,52 @@ class item_s2c_item_data : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 item_id() const;
   inline void set_item_id(::google::protobuf::int32 value);
 
-  // optional .hld.item.s2c_item_base base_data = 3;
+  // optional .faith.item.s2c_item_base base_data = 3;
   inline bool has_base_data() const;
   inline void clear_base_data();
   static const int kBaseDataFieldNumber = 3;
-  inline const ::hld::item_s2c_item_base& base_data() const;
-  inline ::hld::item_s2c_item_base* mutable_base_data();
-  inline ::hld::item_s2c_item_base* release_base_data();
-  inline void set_allocated_base_data(::hld::item_s2c_item_base* base_data);
+  inline const ::faith::item_s2c_item_base& base_data() const;
+  inline ::faith::item_s2c_item_base* mutable_base_data();
+  inline ::faith::item_s2c_item_base* release_base_data();
+  inline void set_allocated_base_data(::faith::item_s2c_item_base* base_data);
 
-  // optional .hld.item.s2c_item_equip equip_data = 4;
+  // optional .faith.item.s2c_item_equip equip_data = 4;
   inline bool has_equip_data() const;
   inline void clear_equip_data();
   static const int kEquipDataFieldNumber = 4;
-  inline const ::hld::item_s2c_item_equip& equip_data() const;
-  inline ::hld::item_s2c_item_equip* mutable_equip_data();
-  inline ::hld::item_s2c_item_equip* release_equip_data();
-  inline void set_allocated_equip_data(::hld::item_s2c_item_equip* equip_data);
+  inline const ::faith::item_s2c_item_equip& equip_data() const;
+  inline ::faith::item_s2c_item_equip* mutable_equip_data();
+  inline ::faith::item_s2c_item_equip* release_equip_data();
+  inline void set_allocated_equip_data(::faith::item_s2c_item_equip* equip_data);
 
-  // optional .hld.item.s2c_item_sprite sprite_data = 5;
+  // optional .faith.item.s2c_item_sprite sprite_data = 5;
   inline bool has_sprite_data() const;
   inline void clear_sprite_data();
   static const int kSpriteDataFieldNumber = 5;
-  inline const ::hld::item_s2c_item_sprite& sprite_data() const;
-  inline ::hld::item_s2c_item_sprite* mutable_sprite_data();
-  inline ::hld::item_s2c_item_sprite* release_sprite_data();
-  inline void set_allocated_sprite_data(::hld::item_s2c_item_sprite* sprite_data);
+  inline const ::faith::item_s2c_item_sprite& sprite_data() const;
+  inline ::faith::item_s2c_item_sprite* mutable_sprite_data();
+  inline ::faith::item_s2c_item_sprite* release_sprite_data();
+  inline void set_allocated_sprite_data(::faith::item_s2c_item_sprite* sprite_data);
 
-  // optional .hld.item.s2c_item_prop prop_data = 6;
+  // optional .faith.item.s2c_item_prop prop_data = 6;
   inline bool has_prop_data() const;
   inline void clear_prop_data();
   static const int kPropDataFieldNumber = 6;
-  inline const ::hld::item_s2c_item_prop& prop_data() const;
-  inline ::hld::item_s2c_item_prop* mutable_prop_data();
-  inline ::hld::item_s2c_item_prop* release_prop_data();
-  inline void set_allocated_prop_data(::hld::item_s2c_item_prop* prop_data);
+  inline const ::faith::item_s2c_item_prop& prop_data() const;
+  inline ::faith::item_s2c_item_prop* mutable_prop_data();
+  inline ::faith::item_s2c_item_prop* release_prop_data();
+  inline void set_allocated_prop_data(::faith::item_s2c_item_prop* prop_data);
 
-  // optional .hld.item.s2c_item_element element_data = 7;
+  // optional .faith.item.s2c_item_element element_data = 7;
   inline bool has_element_data() const;
   inline void clear_element_data();
   static const int kElementDataFieldNumber = 7;
-  inline const ::hld::item_s2c_item_element& element_data() const;
-  inline ::hld::item_s2c_item_element* mutable_element_data();
-  inline ::hld::item_s2c_item_element* release_element_data();
-  inline void set_allocated_element_data(::hld::item_s2c_item_element* element_data);
+  inline const ::faith::item_s2c_item_element& element_data() const;
+  inline ::faith::item_s2c_item_element* mutable_element_data();
+  inline ::faith::item_s2c_item_element* release_element_data();
+  inline void set_allocated_element_data(::faith::item_s2c_item_element* element_data);
 
-  // @@protoc_insertion_point(class_scope:hld.item.s2c_item_data)
+  // @@protoc_insertion_point(class_scope:faith.item.s2c_item_data)
  private:
   inline void set_has_item_guid();
   inline void clear_has_item_guid();
@@ -7023,11 +7023,11 @@ class item_s2c_item_data : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 item_guid_;
-  ::hld::item_s2c_item_base* base_data_;
-  ::hld::item_s2c_item_equip* equip_data_;
-  ::hld::item_s2c_item_sprite* sprite_data_;
-  ::hld::item_s2c_item_prop* prop_data_;
-  ::hld::item_s2c_item_element* element_data_;
+  ::faith::item_s2c_item_base* base_data_;
+  ::faith::item_s2c_item_equip* equip_data_;
+  ::faith::item_s2c_item_sprite* sprite_data_;
+  ::faith::item_s2c_item_prop* prop_data_;
+  ::faith::item_s2c_item_element* element_data_;
   ::google::protobuf::int32 item_id_;
 
   mutable int _cached_size_;
@@ -7108,7 +7108,7 @@ class item_s2c_item_base : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.item.s2c_item_base)
+  // @@protoc_insertion_point(class_scope:faith.item.s2c_item_base)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -7193,7 +7193,7 @@ class item_s2c_item_equip : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.item.s2c_item_equip)
+  // @@protoc_insertion_point(class_scope:faith.item.s2c_item_equip)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -7278,7 +7278,7 @@ class item_s2c_item_sprite : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.item.s2c_item_sprite)
+  // @@protoc_insertion_point(class_scope:faith.item.s2c_item_sprite)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -7363,7 +7363,7 @@ class item_s2c_item_prop : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.item.s2c_item_prop)
+  // @@protoc_insertion_point(class_scope:faith.item.s2c_item_prop)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -7448,7 +7448,7 @@ class item_s2c_item_element : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.item.s2c_item_element)
+  // @@protoc_insertion_point(class_scope:faith.item.s2c_item_element)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -7533,7 +7533,7 @@ class item_sprite_fetter_info : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.item.sprite_fetter_info)
+  // @@protoc_insertion_point(class_scope:faith.item.sprite_fetter_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -7606,24 +7606,24 @@ class item_s2c_sprite_fetter_info : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.item.sprite_fetter_info data_list = 1;
+  // repeated .faith.item.sprite_fetter_info data_list = 1;
   inline int data_list_size() const;
   inline void clear_data_list();
   static const int kDataListFieldNumber = 1;
-  inline const ::hld::item_sprite_fetter_info& data_list(int index) const;
-  inline ::hld::item_sprite_fetter_info* mutable_data_list(int index);
-  inline ::hld::item_sprite_fetter_info* add_data_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::item_sprite_fetter_info >&
+  inline const ::faith::item_sprite_fetter_info& data_list(int index) const;
+  inline ::faith::item_sprite_fetter_info* mutable_data_list(int index);
+  inline ::faith::item_sprite_fetter_info* add_data_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::item_sprite_fetter_info >&
       data_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::item_sprite_fetter_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::item_sprite_fetter_info >*
       mutable_data_list();
 
-  // @@protoc_insertion_point(class_scope:hld.item.s2c_sprite_fetter_info)
+  // @@protoc_insertion_point(class_scope:faith.item.s2c_sprite_fetter_info)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::item_sprite_fetter_info > data_list_;
+  ::google::protobuf::RepeatedPtrField< ::faith::item_sprite_fetter_info > data_list_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -7698,7 +7698,7 @@ class item_c2s_sprite_fetter_upgrade : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 sprite_fetter_id() const;
   inline void set_sprite_fetter_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item.c2s_sprite_fetter_upgrade)
+  // @@protoc_insertion_point(class_scope:faith.item.c2s_sprite_fetter_upgrade)
  private:
   inline void set_has_sprite_fetter_id();
   inline void clear_has_sprite_fetter_id();
@@ -7787,7 +7787,7 @@ class item_s2c_sprite_fetter_upgrade : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 sprite_fetter_id() const;
   inline void set_sprite_fetter_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.item.s2c_sprite_fetter_upgrade)
+  // @@protoc_insertion_point(class_scope:faith.item.s2c_sprite_fetter_upgrade)
  private:
   inline void set_has_res();
   inline void clear_has_res();
@@ -7891,7 +7891,7 @@ class item_s2c_item_upgrade : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_data_array();
 
-  // @@protoc_insertion_point(class_scope:hld.item.s2c_item_upgrade)
+  // @@protoc_insertion_point(class_scope:faith.item.s2c_item_upgrade)
  private:
   inline void set_has_res();
   inline void clear_has_res();
@@ -7970,7 +7970,7 @@ class item_c2s_item_upgrade : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.item.c2s_item_upgrade)
+  // @@protoc_insertion_point(class_scope:faith.item.c2s_item_upgrade)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -8056,7 +8056,7 @@ class item : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.item)
+  // @@protoc_insertion_point(class_scope:faith.item)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -8326,27 +8326,27 @@ inline void item_proto_update_character_item::set_item_error(::google::protobuf:
   item_error_ = value;
 }
 
-// repeated .hld.item_proto.item_info item_list = 3;
+// repeated .faith.item_proto.item_info item_list = 3;
 inline int item_proto_update_character_item::item_list_size() const {
   return item_list_.size();
 }
 inline void item_proto_update_character_item::clear_item_list() {
   item_list_.Clear();
 }
-inline const ::hld::item_proto_item_info& item_proto_update_character_item::item_list(int index) const {
+inline const ::faith::item_proto_item_info& item_proto_update_character_item::item_list(int index) const {
   return item_list_.Get(index);
 }
-inline ::hld::item_proto_item_info* item_proto_update_character_item::mutable_item_list(int index) {
+inline ::faith::item_proto_item_info* item_proto_update_character_item::mutable_item_list(int index) {
   return item_list_.Mutable(index);
 }
-inline ::hld::item_proto_item_info* item_proto_update_character_item::add_item_list() {
+inline ::faith::item_proto_item_info* item_proto_update_character_item::add_item_list() {
   return item_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::item_proto_item_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::item_proto_item_info >&
 item_proto_update_character_item::item_list() const {
   return item_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::item_proto_item_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::item_proto_item_info >*
 item_proto_update_character_item::mutable_item_list() {
   return &item_list_;
 }
@@ -10089,27 +10089,27 @@ inline void item_proto_item_merge_end::set_merge_item_count(::google::protobuf::
   merge_item_count_ = value;
 }
 
-// repeated .hld.item_proto.item_merge_entry merge_item_list = 3;
+// repeated .faith.item_proto.item_merge_entry merge_item_list = 3;
 inline int item_proto_item_merge_end::merge_item_list_size() const {
   return merge_item_list_.size();
 }
 inline void item_proto_item_merge_end::clear_merge_item_list() {
   merge_item_list_.Clear();
 }
-inline const ::hld::item_proto_item_merge_entry& item_proto_item_merge_end::merge_item_list(int index) const {
+inline const ::faith::item_proto_item_merge_entry& item_proto_item_merge_end::merge_item_list(int index) const {
   return merge_item_list_.Get(index);
 }
-inline ::hld::item_proto_item_merge_entry* item_proto_item_merge_end::mutable_merge_item_list(int index) {
+inline ::faith::item_proto_item_merge_entry* item_proto_item_merge_end::mutable_merge_item_list(int index) {
   return merge_item_list_.Mutable(index);
 }
-inline ::hld::item_proto_item_merge_entry* item_proto_item_merge_end::add_merge_item_list() {
+inline ::faith::item_proto_item_merge_entry* item_proto_item_merge_end::add_merge_item_list() {
   return merge_item_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::item_proto_item_merge_entry >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::item_proto_item_merge_entry >&
 item_proto_item_merge_end::merge_item_list() const {
   return merge_item_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::item_proto_item_merge_entry >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::item_proto_item_merge_entry >*
 item_proto_item_merge_end::mutable_merge_item_list() {
   return &merge_item_list_;
 }
@@ -10662,27 +10662,27 @@ inline void item_proto_lucky_draw_record::set_record_time(::google::protobuf::in
 
 // item_proto_load_lucky_draw_record_end
 
-// repeated .hld.item_proto.lucky_draw_record data_array = 1;
+// repeated .faith.item_proto.lucky_draw_record data_array = 1;
 inline int item_proto_load_lucky_draw_record_end::data_array_size() const {
   return data_array_.size();
 }
 inline void item_proto_load_lucky_draw_record_end::clear_data_array() {
   data_array_.Clear();
 }
-inline const ::hld::item_proto_lucky_draw_record& item_proto_load_lucky_draw_record_end::data_array(int index) const {
+inline const ::faith::item_proto_lucky_draw_record& item_proto_load_lucky_draw_record_end::data_array(int index) const {
   return data_array_.Get(index);
 }
-inline ::hld::item_proto_lucky_draw_record* item_proto_load_lucky_draw_record_end::mutable_data_array(int index) {
+inline ::faith::item_proto_lucky_draw_record* item_proto_load_lucky_draw_record_end::mutable_data_array(int index) {
   return data_array_.Mutable(index);
 }
-inline ::hld::item_proto_lucky_draw_record* item_proto_load_lucky_draw_record_end::add_data_array() {
+inline ::faith::item_proto_lucky_draw_record* item_proto_load_lucky_draw_record_end::add_data_array() {
   return data_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::item_proto_lucky_draw_record >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::item_proto_lucky_draw_record >&
 item_proto_load_lucky_draw_record_end::data_array() const {
   return data_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::item_proto_lucky_draw_record >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::item_proto_lucky_draw_record >*
 item_proto_load_lucky_draw_record_end::mutable_data_array() {
   return &data_array_;
 }
@@ -10716,27 +10716,27 @@ item_proto_lucky_draw_record_operate::mutable_del_array() {
   return &del_array_;
 }
 
-// repeated .hld.item_proto.lucky_draw_record add_array = 2;
+// repeated .faith.item_proto.lucky_draw_record add_array = 2;
 inline int item_proto_lucky_draw_record_operate::add_array_size() const {
   return add_array_.size();
 }
 inline void item_proto_lucky_draw_record_operate::clear_add_array() {
   add_array_.Clear();
 }
-inline const ::hld::item_proto_lucky_draw_record& item_proto_lucky_draw_record_operate::add_array(int index) const {
+inline const ::faith::item_proto_lucky_draw_record& item_proto_lucky_draw_record_operate::add_array(int index) const {
   return add_array_.Get(index);
 }
-inline ::hld::item_proto_lucky_draw_record* item_proto_lucky_draw_record_operate::mutable_add_array(int index) {
+inline ::faith::item_proto_lucky_draw_record* item_proto_lucky_draw_record_operate::mutable_add_array(int index) {
   return add_array_.Mutable(index);
 }
-inline ::hld::item_proto_lucky_draw_record* item_proto_lucky_draw_record_operate::add_add_array() {
+inline ::faith::item_proto_lucky_draw_record* item_proto_lucky_draw_record_operate::add_add_array() {
   return add_array_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::item_proto_lucky_draw_record >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::item_proto_lucky_draw_record >&
 item_proto_lucky_draw_record_operate::add_array() const {
   return add_array_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::item_proto_lucky_draw_record >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::item_proto_lucky_draw_record >*
 item_proto_lucky_draw_record_operate::mutable_add_array() {
   return &add_array_;
 }
@@ -12004,27 +12004,27 @@ item_s2s_sprite_fetter_info::mutable_data_array() {
 
 // item_s2s_sl_sprite_fetter_list
 
-// repeated .hld.item_s2s.sprite_fetter_info data_list = 1;
+// repeated .faith.item_s2s.sprite_fetter_info data_list = 1;
 inline int item_s2s_sl_sprite_fetter_list::data_list_size() const {
   return data_list_.size();
 }
 inline void item_s2s_sl_sprite_fetter_list::clear_data_list() {
   data_list_.Clear();
 }
-inline const ::hld::item_s2s_sprite_fetter_info& item_s2s_sl_sprite_fetter_list::data_list(int index) const {
+inline const ::faith::item_s2s_sprite_fetter_info& item_s2s_sl_sprite_fetter_list::data_list(int index) const {
   return data_list_.Get(index);
 }
-inline ::hld::item_s2s_sprite_fetter_info* item_s2s_sl_sprite_fetter_list::mutable_data_list(int index) {
+inline ::faith::item_s2s_sprite_fetter_info* item_s2s_sl_sprite_fetter_list::mutable_data_list(int index) {
   return data_list_.Mutable(index);
 }
-inline ::hld::item_s2s_sprite_fetter_info* item_s2s_sl_sprite_fetter_list::add_data_list() {
+inline ::faith::item_s2s_sprite_fetter_info* item_s2s_sl_sprite_fetter_list::add_data_list() {
   return data_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::item_s2s_sprite_fetter_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::item_s2s_sprite_fetter_info >&
 item_s2s_sl_sprite_fetter_list::data_list() const {
   return data_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::item_s2s_sprite_fetter_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::item_s2s_sprite_fetter_info >*
 item_s2s_sl_sprite_fetter_list::mutable_data_list() {
   return &data_list_;
 }
@@ -12106,7 +12106,7 @@ inline void item_s2s_item_data::set_item_id(::google::protobuf::int32 value) {
   item_id_ = value;
 }
 
-// optional .hld.item_s2s.item_base base_data = 3;
+// optional .faith.item_s2s.item_base base_data = 3;
 inline bool item_s2s_item_data::has_base_data() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -12117,24 +12117,24 @@ inline void item_s2s_item_data::clear_has_base_data() {
   _has_bits_[0] &= ~0x00000004u;
 }
 inline void item_s2s_item_data::clear_base_data() {
-  if (base_data_ != NULL) base_data_->::hld::item_s2s_item_base::Clear();
+  if (base_data_ != NULL) base_data_->::faith::item_s2s_item_base::Clear();
   clear_has_base_data();
 }
-inline const ::hld::item_s2s_item_base& item_s2s_item_data::base_data() const {
+inline const ::faith::item_s2s_item_base& item_s2s_item_data::base_data() const {
   return base_data_ != NULL ? *base_data_ : *default_instance_->base_data_;
 }
-inline ::hld::item_s2s_item_base* item_s2s_item_data::mutable_base_data() {
+inline ::faith::item_s2s_item_base* item_s2s_item_data::mutable_base_data() {
   set_has_base_data();
-  if (base_data_ == NULL) base_data_ = new ::hld::item_s2s_item_base;
+  if (base_data_ == NULL) base_data_ = new ::faith::item_s2s_item_base;
   return base_data_;
 }
-inline ::hld::item_s2s_item_base* item_s2s_item_data::release_base_data() {
+inline ::faith::item_s2s_item_base* item_s2s_item_data::release_base_data() {
   clear_has_base_data();
-  ::hld::item_s2s_item_base* temp = base_data_;
+  ::faith::item_s2s_item_base* temp = base_data_;
   base_data_ = NULL;
   return temp;
 }
-inline void item_s2s_item_data::set_allocated_base_data(::hld::item_s2s_item_base* base_data) {
+inline void item_s2s_item_data::set_allocated_base_data(::faith::item_s2s_item_base* base_data) {
   delete base_data_;
   base_data_ = base_data;
   if (base_data) {
@@ -12144,7 +12144,7 @@ inline void item_s2s_item_data::set_allocated_base_data(::hld::item_s2s_item_bas
   }
 }
 
-// optional .hld.item_s2s.item_equip equip_data = 4;
+// optional .faith.item_s2s.item_equip equip_data = 4;
 inline bool item_s2s_item_data::has_equip_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -12155,24 +12155,24 @@ inline void item_s2s_item_data::clear_has_equip_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void item_s2s_item_data::clear_equip_data() {
-  if (equip_data_ != NULL) equip_data_->::hld::item_s2s_item_equip::Clear();
+  if (equip_data_ != NULL) equip_data_->::faith::item_s2s_item_equip::Clear();
   clear_has_equip_data();
 }
-inline const ::hld::item_s2s_item_equip& item_s2s_item_data::equip_data() const {
+inline const ::faith::item_s2s_item_equip& item_s2s_item_data::equip_data() const {
   return equip_data_ != NULL ? *equip_data_ : *default_instance_->equip_data_;
 }
-inline ::hld::item_s2s_item_equip* item_s2s_item_data::mutable_equip_data() {
+inline ::faith::item_s2s_item_equip* item_s2s_item_data::mutable_equip_data() {
   set_has_equip_data();
-  if (equip_data_ == NULL) equip_data_ = new ::hld::item_s2s_item_equip;
+  if (equip_data_ == NULL) equip_data_ = new ::faith::item_s2s_item_equip;
   return equip_data_;
 }
-inline ::hld::item_s2s_item_equip* item_s2s_item_data::release_equip_data() {
+inline ::faith::item_s2s_item_equip* item_s2s_item_data::release_equip_data() {
   clear_has_equip_data();
-  ::hld::item_s2s_item_equip* temp = equip_data_;
+  ::faith::item_s2s_item_equip* temp = equip_data_;
   equip_data_ = NULL;
   return temp;
 }
-inline void item_s2s_item_data::set_allocated_equip_data(::hld::item_s2s_item_equip* equip_data) {
+inline void item_s2s_item_data::set_allocated_equip_data(::faith::item_s2s_item_equip* equip_data) {
   delete equip_data_;
   equip_data_ = equip_data;
   if (equip_data) {
@@ -12182,7 +12182,7 @@ inline void item_s2s_item_data::set_allocated_equip_data(::hld::item_s2s_item_eq
   }
 }
 
-// optional .hld.item_s2s.item_sprite sprite_data = 5;
+// optional .faith.item_s2s.item_sprite sprite_data = 5;
 inline bool item_s2s_item_data::has_sprite_data() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
@@ -12193,24 +12193,24 @@ inline void item_s2s_item_data::clear_has_sprite_data() {
   _has_bits_[0] &= ~0x00000010u;
 }
 inline void item_s2s_item_data::clear_sprite_data() {
-  if (sprite_data_ != NULL) sprite_data_->::hld::item_s2s_item_sprite::Clear();
+  if (sprite_data_ != NULL) sprite_data_->::faith::item_s2s_item_sprite::Clear();
   clear_has_sprite_data();
 }
-inline const ::hld::item_s2s_item_sprite& item_s2s_item_data::sprite_data() const {
+inline const ::faith::item_s2s_item_sprite& item_s2s_item_data::sprite_data() const {
   return sprite_data_ != NULL ? *sprite_data_ : *default_instance_->sprite_data_;
 }
-inline ::hld::item_s2s_item_sprite* item_s2s_item_data::mutable_sprite_data() {
+inline ::faith::item_s2s_item_sprite* item_s2s_item_data::mutable_sprite_data() {
   set_has_sprite_data();
-  if (sprite_data_ == NULL) sprite_data_ = new ::hld::item_s2s_item_sprite;
+  if (sprite_data_ == NULL) sprite_data_ = new ::faith::item_s2s_item_sprite;
   return sprite_data_;
 }
-inline ::hld::item_s2s_item_sprite* item_s2s_item_data::release_sprite_data() {
+inline ::faith::item_s2s_item_sprite* item_s2s_item_data::release_sprite_data() {
   clear_has_sprite_data();
-  ::hld::item_s2s_item_sprite* temp = sprite_data_;
+  ::faith::item_s2s_item_sprite* temp = sprite_data_;
   sprite_data_ = NULL;
   return temp;
 }
-inline void item_s2s_item_data::set_allocated_sprite_data(::hld::item_s2s_item_sprite* sprite_data) {
+inline void item_s2s_item_data::set_allocated_sprite_data(::faith::item_s2s_item_sprite* sprite_data) {
   delete sprite_data_;
   sprite_data_ = sprite_data;
   if (sprite_data) {
@@ -12220,7 +12220,7 @@ inline void item_s2s_item_data::set_allocated_sprite_data(::hld::item_s2s_item_s
   }
 }
 
-// optional .hld.item_s2s.item_prop prop_data = 6;
+// optional .faith.item_s2s.item_prop prop_data = 6;
 inline bool item_s2s_item_data::has_prop_data() const {
   return (_has_bits_[0] & 0x00000020u) != 0;
 }
@@ -12231,24 +12231,24 @@ inline void item_s2s_item_data::clear_has_prop_data() {
   _has_bits_[0] &= ~0x00000020u;
 }
 inline void item_s2s_item_data::clear_prop_data() {
-  if (prop_data_ != NULL) prop_data_->::hld::item_s2s_item_prop::Clear();
+  if (prop_data_ != NULL) prop_data_->::faith::item_s2s_item_prop::Clear();
   clear_has_prop_data();
 }
-inline const ::hld::item_s2s_item_prop& item_s2s_item_data::prop_data() const {
+inline const ::faith::item_s2s_item_prop& item_s2s_item_data::prop_data() const {
   return prop_data_ != NULL ? *prop_data_ : *default_instance_->prop_data_;
 }
-inline ::hld::item_s2s_item_prop* item_s2s_item_data::mutable_prop_data() {
+inline ::faith::item_s2s_item_prop* item_s2s_item_data::mutable_prop_data() {
   set_has_prop_data();
-  if (prop_data_ == NULL) prop_data_ = new ::hld::item_s2s_item_prop;
+  if (prop_data_ == NULL) prop_data_ = new ::faith::item_s2s_item_prop;
   return prop_data_;
 }
-inline ::hld::item_s2s_item_prop* item_s2s_item_data::release_prop_data() {
+inline ::faith::item_s2s_item_prop* item_s2s_item_data::release_prop_data() {
   clear_has_prop_data();
-  ::hld::item_s2s_item_prop* temp = prop_data_;
+  ::faith::item_s2s_item_prop* temp = prop_data_;
   prop_data_ = NULL;
   return temp;
 }
-inline void item_s2s_item_data::set_allocated_prop_data(::hld::item_s2s_item_prop* prop_data) {
+inline void item_s2s_item_data::set_allocated_prop_data(::faith::item_s2s_item_prop* prop_data) {
   delete prop_data_;
   prop_data_ = prop_data;
   if (prop_data) {
@@ -12258,7 +12258,7 @@ inline void item_s2s_item_data::set_allocated_prop_data(::hld::item_s2s_item_pro
   }
 }
 
-// optional .hld.item_s2s.item_element element_data = 7;
+// optional .faith.item_s2s.item_element element_data = 7;
 inline bool item_s2s_item_data::has_element_data() const {
   return (_has_bits_[0] & 0x00000040u) != 0;
 }
@@ -12269,24 +12269,24 @@ inline void item_s2s_item_data::clear_has_element_data() {
   _has_bits_[0] &= ~0x00000040u;
 }
 inline void item_s2s_item_data::clear_element_data() {
-  if (element_data_ != NULL) element_data_->::hld::item_s2s_item_element::Clear();
+  if (element_data_ != NULL) element_data_->::faith::item_s2s_item_element::Clear();
   clear_has_element_data();
 }
-inline const ::hld::item_s2s_item_element& item_s2s_item_data::element_data() const {
+inline const ::faith::item_s2s_item_element& item_s2s_item_data::element_data() const {
   return element_data_ != NULL ? *element_data_ : *default_instance_->element_data_;
 }
-inline ::hld::item_s2s_item_element* item_s2s_item_data::mutable_element_data() {
+inline ::faith::item_s2s_item_element* item_s2s_item_data::mutable_element_data() {
   set_has_element_data();
-  if (element_data_ == NULL) element_data_ = new ::hld::item_s2s_item_element;
+  if (element_data_ == NULL) element_data_ = new ::faith::item_s2s_item_element;
   return element_data_;
 }
-inline ::hld::item_s2s_item_element* item_s2s_item_data::release_element_data() {
+inline ::faith::item_s2s_item_element* item_s2s_item_data::release_element_data() {
   clear_has_element_data();
-  ::hld::item_s2s_item_element* temp = element_data_;
+  ::faith::item_s2s_item_element* temp = element_data_;
   element_data_ = NULL;
   return temp;
 }
-inline void item_s2s_item_data::set_allocated_element_data(::hld::item_s2s_item_element* element_data) {
+inline void item_s2s_item_data::set_allocated_element_data(::faith::item_s2s_item_element* element_data) {
   delete element_data_;
   element_data_ = element_data;
   if (element_data) {
@@ -12300,27 +12300,27 @@ inline void item_s2s_item_data::set_allocated_element_data(::hld::item_s2s_item_
 
 // item_s2s_sl_item_info
 
-// repeated .hld.item_s2s.item_data item_list = 1;
+// repeated .faith.item_s2s.item_data item_list = 1;
 inline int item_s2s_sl_item_info::item_list_size() const {
   return item_list_.size();
 }
 inline void item_s2s_sl_item_info::clear_item_list() {
   item_list_.Clear();
 }
-inline const ::hld::item_s2s_item_data& item_s2s_sl_item_info::item_list(int index) const {
+inline const ::faith::item_s2s_item_data& item_s2s_sl_item_info::item_list(int index) const {
   return item_list_.Get(index);
 }
-inline ::hld::item_s2s_item_data* item_s2s_sl_item_info::mutable_item_list(int index) {
+inline ::faith::item_s2s_item_data* item_s2s_sl_item_info::mutable_item_list(int index) {
   return item_list_.Mutable(index);
 }
-inline ::hld::item_s2s_item_data* item_s2s_sl_item_info::add_item_list() {
+inline ::faith::item_s2s_item_data* item_s2s_sl_item_info::add_item_list() {
   return item_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::item_s2s_item_data >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::item_s2s_item_data >&
 item_s2s_sl_item_info::item_list() const {
   return item_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::item_s2s_item_data >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::item_s2s_item_data >*
 item_s2s_sl_item_info::mutable_item_list() {
   return &item_list_;
 }
@@ -12500,27 +12500,27 @@ inline void item_s2c_item_list::set_unit_guid(::google::protobuf::int64 value) {
   unit_guid_ = value;
 }
 
-// repeated .hld.item.s2c_item_data item_list = 2;
+// repeated .faith.item.s2c_item_data item_list = 2;
 inline int item_s2c_item_list::item_list_size() const {
   return item_list_.size();
 }
 inline void item_s2c_item_list::clear_item_list() {
   item_list_.Clear();
 }
-inline const ::hld::item_s2c_item_data& item_s2c_item_list::item_list(int index) const {
+inline const ::faith::item_s2c_item_data& item_s2c_item_list::item_list(int index) const {
   return item_list_.Get(index);
 }
-inline ::hld::item_s2c_item_data* item_s2c_item_list::mutable_item_list(int index) {
+inline ::faith::item_s2c_item_data* item_s2c_item_list::mutable_item_list(int index) {
   return item_list_.Mutable(index);
 }
-inline ::hld::item_s2c_item_data* item_s2c_item_list::add_item_list() {
+inline ::faith::item_s2c_item_data* item_s2c_item_list::add_item_list() {
   return item_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::item_s2c_item_data >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::item_s2c_item_data >&
 item_s2c_item_list::item_list() const {
   return item_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::item_s2c_item_data >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::item_s2c_item_data >*
 item_s2c_item_list::mutable_item_list() {
   return &item_list_;
 }
@@ -12573,7 +12573,7 @@ inline void item_s2c_item_data::set_item_id(::google::protobuf::int32 value) {
   item_id_ = value;
 }
 
-// optional .hld.item.s2c_item_base base_data = 3;
+// optional .faith.item.s2c_item_base base_data = 3;
 inline bool item_s2c_item_data::has_base_data() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -12584,24 +12584,24 @@ inline void item_s2c_item_data::clear_has_base_data() {
   _has_bits_[0] &= ~0x00000004u;
 }
 inline void item_s2c_item_data::clear_base_data() {
-  if (base_data_ != NULL) base_data_->::hld::item_s2c_item_base::Clear();
+  if (base_data_ != NULL) base_data_->::faith::item_s2c_item_base::Clear();
   clear_has_base_data();
 }
-inline const ::hld::item_s2c_item_base& item_s2c_item_data::base_data() const {
+inline const ::faith::item_s2c_item_base& item_s2c_item_data::base_data() const {
   return base_data_ != NULL ? *base_data_ : *default_instance_->base_data_;
 }
-inline ::hld::item_s2c_item_base* item_s2c_item_data::mutable_base_data() {
+inline ::faith::item_s2c_item_base* item_s2c_item_data::mutable_base_data() {
   set_has_base_data();
-  if (base_data_ == NULL) base_data_ = new ::hld::item_s2c_item_base;
+  if (base_data_ == NULL) base_data_ = new ::faith::item_s2c_item_base;
   return base_data_;
 }
-inline ::hld::item_s2c_item_base* item_s2c_item_data::release_base_data() {
+inline ::faith::item_s2c_item_base* item_s2c_item_data::release_base_data() {
   clear_has_base_data();
-  ::hld::item_s2c_item_base* temp = base_data_;
+  ::faith::item_s2c_item_base* temp = base_data_;
   base_data_ = NULL;
   return temp;
 }
-inline void item_s2c_item_data::set_allocated_base_data(::hld::item_s2c_item_base* base_data) {
+inline void item_s2c_item_data::set_allocated_base_data(::faith::item_s2c_item_base* base_data) {
   delete base_data_;
   base_data_ = base_data;
   if (base_data) {
@@ -12611,7 +12611,7 @@ inline void item_s2c_item_data::set_allocated_base_data(::hld::item_s2c_item_bas
   }
 }
 
-// optional .hld.item.s2c_item_equip equip_data = 4;
+// optional .faith.item.s2c_item_equip equip_data = 4;
 inline bool item_s2c_item_data::has_equip_data() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -12622,24 +12622,24 @@ inline void item_s2c_item_data::clear_has_equip_data() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void item_s2c_item_data::clear_equip_data() {
-  if (equip_data_ != NULL) equip_data_->::hld::item_s2c_item_equip::Clear();
+  if (equip_data_ != NULL) equip_data_->::faith::item_s2c_item_equip::Clear();
   clear_has_equip_data();
 }
-inline const ::hld::item_s2c_item_equip& item_s2c_item_data::equip_data() const {
+inline const ::faith::item_s2c_item_equip& item_s2c_item_data::equip_data() const {
   return equip_data_ != NULL ? *equip_data_ : *default_instance_->equip_data_;
 }
-inline ::hld::item_s2c_item_equip* item_s2c_item_data::mutable_equip_data() {
+inline ::faith::item_s2c_item_equip* item_s2c_item_data::mutable_equip_data() {
   set_has_equip_data();
-  if (equip_data_ == NULL) equip_data_ = new ::hld::item_s2c_item_equip;
+  if (equip_data_ == NULL) equip_data_ = new ::faith::item_s2c_item_equip;
   return equip_data_;
 }
-inline ::hld::item_s2c_item_equip* item_s2c_item_data::release_equip_data() {
+inline ::faith::item_s2c_item_equip* item_s2c_item_data::release_equip_data() {
   clear_has_equip_data();
-  ::hld::item_s2c_item_equip* temp = equip_data_;
+  ::faith::item_s2c_item_equip* temp = equip_data_;
   equip_data_ = NULL;
   return temp;
 }
-inline void item_s2c_item_data::set_allocated_equip_data(::hld::item_s2c_item_equip* equip_data) {
+inline void item_s2c_item_data::set_allocated_equip_data(::faith::item_s2c_item_equip* equip_data) {
   delete equip_data_;
   equip_data_ = equip_data;
   if (equip_data) {
@@ -12649,7 +12649,7 @@ inline void item_s2c_item_data::set_allocated_equip_data(::hld::item_s2c_item_eq
   }
 }
 
-// optional .hld.item.s2c_item_sprite sprite_data = 5;
+// optional .faith.item.s2c_item_sprite sprite_data = 5;
 inline bool item_s2c_item_data::has_sprite_data() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
@@ -12660,24 +12660,24 @@ inline void item_s2c_item_data::clear_has_sprite_data() {
   _has_bits_[0] &= ~0x00000010u;
 }
 inline void item_s2c_item_data::clear_sprite_data() {
-  if (sprite_data_ != NULL) sprite_data_->::hld::item_s2c_item_sprite::Clear();
+  if (sprite_data_ != NULL) sprite_data_->::faith::item_s2c_item_sprite::Clear();
   clear_has_sprite_data();
 }
-inline const ::hld::item_s2c_item_sprite& item_s2c_item_data::sprite_data() const {
+inline const ::faith::item_s2c_item_sprite& item_s2c_item_data::sprite_data() const {
   return sprite_data_ != NULL ? *sprite_data_ : *default_instance_->sprite_data_;
 }
-inline ::hld::item_s2c_item_sprite* item_s2c_item_data::mutable_sprite_data() {
+inline ::faith::item_s2c_item_sprite* item_s2c_item_data::mutable_sprite_data() {
   set_has_sprite_data();
-  if (sprite_data_ == NULL) sprite_data_ = new ::hld::item_s2c_item_sprite;
+  if (sprite_data_ == NULL) sprite_data_ = new ::faith::item_s2c_item_sprite;
   return sprite_data_;
 }
-inline ::hld::item_s2c_item_sprite* item_s2c_item_data::release_sprite_data() {
+inline ::faith::item_s2c_item_sprite* item_s2c_item_data::release_sprite_data() {
   clear_has_sprite_data();
-  ::hld::item_s2c_item_sprite* temp = sprite_data_;
+  ::faith::item_s2c_item_sprite* temp = sprite_data_;
   sprite_data_ = NULL;
   return temp;
 }
-inline void item_s2c_item_data::set_allocated_sprite_data(::hld::item_s2c_item_sprite* sprite_data) {
+inline void item_s2c_item_data::set_allocated_sprite_data(::faith::item_s2c_item_sprite* sprite_data) {
   delete sprite_data_;
   sprite_data_ = sprite_data;
   if (sprite_data) {
@@ -12687,7 +12687,7 @@ inline void item_s2c_item_data::set_allocated_sprite_data(::hld::item_s2c_item_s
   }
 }
 
-// optional .hld.item.s2c_item_prop prop_data = 6;
+// optional .faith.item.s2c_item_prop prop_data = 6;
 inline bool item_s2c_item_data::has_prop_data() const {
   return (_has_bits_[0] & 0x00000020u) != 0;
 }
@@ -12698,24 +12698,24 @@ inline void item_s2c_item_data::clear_has_prop_data() {
   _has_bits_[0] &= ~0x00000020u;
 }
 inline void item_s2c_item_data::clear_prop_data() {
-  if (prop_data_ != NULL) prop_data_->::hld::item_s2c_item_prop::Clear();
+  if (prop_data_ != NULL) prop_data_->::faith::item_s2c_item_prop::Clear();
   clear_has_prop_data();
 }
-inline const ::hld::item_s2c_item_prop& item_s2c_item_data::prop_data() const {
+inline const ::faith::item_s2c_item_prop& item_s2c_item_data::prop_data() const {
   return prop_data_ != NULL ? *prop_data_ : *default_instance_->prop_data_;
 }
-inline ::hld::item_s2c_item_prop* item_s2c_item_data::mutable_prop_data() {
+inline ::faith::item_s2c_item_prop* item_s2c_item_data::mutable_prop_data() {
   set_has_prop_data();
-  if (prop_data_ == NULL) prop_data_ = new ::hld::item_s2c_item_prop;
+  if (prop_data_ == NULL) prop_data_ = new ::faith::item_s2c_item_prop;
   return prop_data_;
 }
-inline ::hld::item_s2c_item_prop* item_s2c_item_data::release_prop_data() {
+inline ::faith::item_s2c_item_prop* item_s2c_item_data::release_prop_data() {
   clear_has_prop_data();
-  ::hld::item_s2c_item_prop* temp = prop_data_;
+  ::faith::item_s2c_item_prop* temp = prop_data_;
   prop_data_ = NULL;
   return temp;
 }
-inline void item_s2c_item_data::set_allocated_prop_data(::hld::item_s2c_item_prop* prop_data) {
+inline void item_s2c_item_data::set_allocated_prop_data(::faith::item_s2c_item_prop* prop_data) {
   delete prop_data_;
   prop_data_ = prop_data;
   if (prop_data) {
@@ -12725,7 +12725,7 @@ inline void item_s2c_item_data::set_allocated_prop_data(::hld::item_s2c_item_pro
   }
 }
 
-// optional .hld.item.s2c_item_element element_data = 7;
+// optional .faith.item.s2c_item_element element_data = 7;
 inline bool item_s2c_item_data::has_element_data() const {
   return (_has_bits_[0] & 0x00000040u) != 0;
 }
@@ -12736,24 +12736,24 @@ inline void item_s2c_item_data::clear_has_element_data() {
   _has_bits_[0] &= ~0x00000040u;
 }
 inline void item_s2c_item_data::clear_element_data() {
-  if (element_data_ != NULL) element_data_->::hld::item_s2c_item_element::Clear();
+  if (element_data_ != NULL) element_data_->::faith::item_s2c_item_element::Clear();
   clear_has_element_data();
 }
-inline const ::hld::item_s2c_item_element& item_s2c_item_data::element_data() const {
+inline const ::faith::item_s2c_item_element& item_s2c_item_data::element_data() const {
   return element_data_ != NULL ? *element_data_ : *default_instance_->element_data_;
 }
-inline ::hld::item_s2c_item_element* item_s2c_item_data::mutable_element_data() {
+inline ::faith::item_s2c_item_element* item_s2c_item_data::mutable_element_data() {
   set_has_element_data();
-  if (element_data_ == NULL) element_data_ = new ::hld::item_s2c_item_element;
+  if (element_data_ == NULL) element_data_ = new ::faith::item_s2c_item_element;
   return element_data_;
 }
-inline ::hld::item_s2c_item_element* item_s2c_item_data::release_element_data() {
+inline ::faith::item_s2c_item_element* item_s2c_item_data::release_element_data() {
   clear_has_element_data();
-  ::hld::item_s2c_item_element* temp = element_data_;
+  ::faith::item_s2c_item_element* temp = element_data_;
   element_data_ = NULL;
   return temp;
 }
-inline void item_s2c_item_data::set_allocated_element_data(::hld::item_s2c_item_element* element_data) {
+inline void item_s2c_item_data::set_allocated_element_data(::faith::item_s2c_item_element* element_data) {
   delete element_data_;
   element_data_ = element_data;
   if (element_data) {
@@ -12941,27 +12941,27 @@ item_sprite_fetter_info::mutable_data_array() {
 
 // item_s2c_sprite_fetter_info
 
-// repeated .hld.item.sprite_fetter_info data_list = 1;
+// repeated .faith.item.sprite_fetter_info data_list = 1;
 inline int item_s2c_sprite_fetter_info::data_list_size() const {
   return data_list_.size();
 }
 inline void item_s2c_sprite_fetter_info::clear_data_list() {
   data_list_.Clear();
 }
-inline const ::hld::item_sprite_fetter_info& item_s2c_sprite_fetter_info::data_list(int index) const {
+inline const ::faith::item_sprite_fetter_info& item_s2c_sprite_fetter_info::data_list(int index) const {
   return data_list_.Get(index);
 }
-inline ::hld::item_sprite_fetter_info* item_s2c_sprite_fetter_info::mutable_data_list(int index) {
+inline ::faith::item_sprite_fetter_info* item_s2c_sprite_fetter_info::mutable_data_list(int index) {
   return data_list_.Mutable(index);
 }
-inline ::hld::item_sprite_fetter_info* item_s2c_sprite_fetter_info::add_data_list() {
+inline ::faith::item_sprite_fetter_info* item_s2c_sprite_fetter_info::add_data_list() {
   return data_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::item_sprite_fetter_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::item_sprite_fetter_info >&
 item_s2c_sprite_fetter_info::data_list() const {
   return data_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::item_sprite_fetter_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::item_sprite_fetter_info >*
 item_s2c_sprite_fetter_info::mutable_data_list() {
   return &data_list_;
 }
@@ -13124,7 +13124,7 @@ item_s2c_item_upgrade::mutable_data_array() {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

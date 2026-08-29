@@ -3,7 +3,7 @@
 #include "logic/type_def.hpp"
 #include "template/ElementHeartTemplate_S.h"
 
-namespace hld
+namespace faith
 {
 	struct item_element_component
 	{

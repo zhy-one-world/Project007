@@ -4,7 +4,7 @@
 #include "Logic/dragontrip_def.h"
 #include "template/ServerTemplateHead.h"
 
-namespace hld
+namespace faith
 {
 	class dragontrip_mgr
 	{

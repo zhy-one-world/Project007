@@ -33,7 +33,7 @@
 /************************************************************************/
 /*                           Class Implement                            */
 /************************************************************************/
-namespace hld
+namespace faith
 {
 
 	pawn_att::pawn_att()
@@ -176,7 +176,7 @@ namespace hld
 		calcu_unit_att_by_level(use_owner);
 		unit& unit_ref = unit_man::get_unit(m_unit_array_index);
 		MapTemplate* map_template_ptr = GET_TEMPLATE(MapTemplate, unit_ref.get_unit_info(e_role_info_move_map_id));
-		if (map_template_ptr && map_template_ptr->Type == hld::e_map_type_big_map)
+		if (map_template_ptr && map_template_ptr->Type == faith::e_map_type_big_map)
 		{
 			if (get_game_att(e_unit_game_att_movement) == e_move_ment_walk)
 			{
@@ -240,7 +240,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_att_db msg;
+		faith::cs2dp_proto::role_att_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -279,11 +279,11 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_att msg;
+			faith::cs2dp_proto::save_role_att msg;
 			msg.set_role_guid(player_ref.get_unit_guid().server_64);
 			msg.set_unit_array_index(player_ref.get_array_index());
 			msg.set_save_type_ex(save_type_ex);
-			hld::cs2dp_proto::role_att_db *db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_att_db *db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return;
@@ -335,7 +335,7 @@ namespace hld
 
 		unit& unit_ref = unit_man::get_unit(m_unit_array_index);
 		MapTemplate* map_template_ptr = GET_TEMPLATE(MapTemplate, unit_ref.get_unit_info(e_role_info_move_map_id));
-		if (map_template_ptr && map_template_ptr->Type == hld::e_map_type_big_map && att_index == e_base_att_info_hp_cur)
+		if (map_template_ptr && map_template_ptr->Type == faith::e_map_type_big_map && att_index == e_base_att_info_hp_cur)
 		{
 			m_unit_base_att.data_ary[e_base_att_info_hp_main] = iValue;
 		}
@@ -951,11 +951,11 @@ namespace hld
 		bool is_send = false;
 		switch (att_index)
 		{
-		case hld::e_unit_game_att_movement:
-		case hld::e_unit_game_att_war_state:
-		case hld::e_unit_game_att_fight_lock:
-		case hld::e_unit_game_att_jump:
-		case hld::e_unit_game_att_interaction:
+		case faith::e_unit_game_att_movement:
+		case faith::e_unit_game_att_war_state:
+		case faith::e_unit_game_att_fight_lock:
+		case faith::e_unit_game_att_jump:
+		case faith::e_unit_game_att_interaction:
 		{
 			if (att_index == e_unit_game_att_movement)
 			{
@@ -970,7 +970,7 @@ namespace hld
 			}
 		}
 		break;
-		case hld::e_unit_game_att_exp_only:
+		case faith::e_unit_game_att_exp_only:
 		{
 			if (apply)
 			{

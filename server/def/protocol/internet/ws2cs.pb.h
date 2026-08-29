@@ -28,7 +28,7 @@
 #include "db.pb.h"
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_ws2cs_2eproto();
@@ -218,7 +218,7 @@ class ws2cs_proto_reload_csv : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.reload_csv)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.reload_csv)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -297,7 +297,7 @@ class ws2cs_proto_gm_del_cache : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.gm_del_cache)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.gm_del_cache)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -400,7 +400,7 @@ class ws2cs_proto_del_unit_item : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 bag_slot_end() const;
   inline void set_bag_slot_end(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.del_unit_item)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.del_unit_item)
  private:
   inline void set_has_cs_unit_index();
   inline void clear_has_cs_unit_index();
@@ -498,7 +498,7 @@ class ws2cs_proto_change_unit_vip : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 vip_value() const;
   inline void set_vip_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.change_unit_vip)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.change_unit_vip)
  private:
   inline void set_has_cs_unit_index();
   inline void clear_has_cs_unit_index();
@@ -597,7 +597,7 @@ class ws2cs_proto_del_unit_specified_item : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 item_id() const;
   inline void set_item_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.del_unit_specified_item)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.del_unit_specified_item)
  private:
   inline void set_has_cs_unit_index();
   inline void clear_has_cs_unit_index();
@@ -692,7 +692,7 @@ class ws2cs_proto_add_guide_record : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 guide_trigger_id() const;
   inline void set_guide_trigger_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.add_guide_record)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.add_guide_record)
  private:
   inline void set_has_cs_unit_index();
   inline void clear_has_cs_unit_index();
@@ -784,7 +784,7 @@ class ws2cs_proto_time_out : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 cs_unit_index() const;
   inline void set_cs_unit_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.time_out)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.time_out)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -890,7 +890,7 @@ class ws2cs_proto_reconnect_game : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 cur_map_line_id() const;
   inline void set_cur_map_line_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.reconnect_game)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.reconnect_game)
  private:
   inline void set_has_client_uid();
   inline void clear_has_client_uid();
@@ -1061,14 +1061,14 @@ class ws2cs_proto_enter_game : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 war_index() const;
   inline void set_war_index(::google::protobuf::int32 value);
 
-  // optional .hld.st_proto.st_login_fixed_data fixed_data = 12;
+  // optional .faith.st_proto.st_login_fixed_data fixed_data = 12;
   inline bool has_fixed_data() const;
   inline void clear_fixed_data();
   static const int kFixedDataFieldNumber = 12;
-  inline const ::hld::st_proto_st_login_fixed_data& fixed_data() const;
-  inline ::hld::st_proto_st_login_fixed_data* mutable_fixed_data();
-  inline ::hld::st_proto_st_login_fixed_data* release_fixed_data();
-  inline void set_allocated_fixed_data(::hld::st_proto_st_login_fixed_data* fixed_data);
+  inline const ::faith::st_proto_st_login_fixed_data& fixed_data() const;
+  inline ::faith::st_proto_st_login_fixed_data* mutable_fixed_data();
+  inline ::faith::st_proto_st_login_fixed_data* release_fixed_data();
+  inline void set_allocated_fixed_data(::faith::st_proto_st_login_fixed_data* fixed_data);
 
   // optional int32 is_send_chat = 13;
   inline bool has_is_send_chat() const;
@@ -1136,23 +1136,23 @@ class ws2cs_proto_enter_game : public ::google::protobuf::Message {
   inline ::std::string* release_couple_name();
   inline void set_allocated_couple_name(::std::string* couple_name);
 
-  // optional .hld.st_proto.st_player_team_info team_info = 21;
+  // optional .faith.st_proto.st_player_team_info team_info = 21;
   inline bool has_team_info() const;
   inline void clear_team_info();
   static const int kTeamInfoFieldNumber = 21;
-  inline const ::hld::st_proto_st_player_team_info& team_info() const;
-  inline ::hld::st_proto_st_player_team_info* mutable_team_info();
-  inline ::hld::st_proto_st_player_team_info* release_team_info();
-  inline void set_allocated_team_info(::hld::st_proto_st_player_team_info* team_info);
+  inline const ::faith::st_proto_st_player_team_info& team_info() const;
+  inline ::faith::st_proto_st_player_team_info* mutable_team_info();
+  inline ::faith::st_proto_st_player_team_info* release_team_info();
+  inline void set_allocated_team_info(::faith::st_proto_st_player_team_info* team_info);
 
-  // optional .hld.st_proto.st_player_legion_info legion_info = 22;
+  // optional .faith.st_proto.st_player_legion_info legion_info = 22;
   inline bool has_legion_info() const;
   inline void clear_legion_info();
   static const int kLegionInfoFieldNumber = 22;
-  inline const ::hld::st_proto_st_player_legion_info& legion_info() const;
-  inline ::hld::st_proto_st_player_legion_info* mutable_legion_info();
-  inline ::hld::st_proto_st_player_legion_info* release_legion_info();
-  inline void set_allocated_legion_info(::hld::st_proto_st_player_legion_info* legion_info);
+  inline const ::faith::st_proto_st_player_legion_info& legion_info() const;
+  inline ::faith::st_proto_st_player_legion_info* mutable_legion_info();
+  inline ::faith::st_proto_st_player_legion_info* release_legion_info();
+  inline void set_allocated_legion_info(::faith::st_proto_st_player_legion_info* legion_info);
 
   // optional int64 login_time = 23;
   inline bool has_login_time() const;
@@ -1161,7 +1161,7 @@ class ws2cs_proto_enter_game : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 login_time() const;
   inline void set_login_time(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.enter_game)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.enter_game)
  private:
   inline void set_has_client_uid();
   inline void clear_has_client_uid();
@@ -1218,15 +1218,15 @@ class ws2cs_proto_enter_game : public ::google::protobuf::Message {
   ::google::protobuf::int64 map_guid_;
   ::google::protobuf::int32 login_type_;
   ::google::protobuf::int32 line_id_;
-  ::hld::st_proto_st_login_fixed_data* fixed_data_;
+  ::faith::st_proto_st_login_fixed_data* fixed_data_;
   ::google::protobuf::int32 war_index_;
   ::google::protobuf::int32 is_send_chat_;
   ::google::protobuf::int64 worship_value_;
   ::google::protobuf::RepeatedField< bool > bflag_loading_title_;
   ::google::protobuf::int64 couple_guid_;
   ::std::string* couple_name_;
-  ::hld::st_proto_st_player_team_info* team_info_;
-  ::hld::st_proto_st_player_legion_info* legion_info_;
+  ::faith::st_proto_st_player_team_info* team_info_;
+  ::faith::st_proto_st_player_legion_info* legion_info_;
   ::google::protobuf::int64 login_time_;
   bool is_city_master_;
   bool m_is_city_war_winner_legion_member_;
@@ -1319,7 +1319,7 @@ class ws2cs_proto_client_logout : public ::google::protobuf::Message {
   inline bool need_send_save_end() const;
   inline void set_need_send_save_end(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.client_logout)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.client_logout)
  private:
   inline void set_has_client_uid();
   inline void clear_has_client_uid();
@@ -1414,7 +1414,7 @@ class ws2cs_proto_enter_scene : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 cs_array_index() const;
   inline void set_cs_array_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.enter_scene)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.enter_scene)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -1492,14 +1492,14 @@ class ws2cs_proto_server_config : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .hld.st_proto.st_game_info game_info = 1;
+  // optional .faith.st_proto.st_game_info game_info = 1;
   inline bool has_game_info() const;
   inline void clear_game_info();
   static const int kGameInfoFieldNumber = 1;
-  inline const ::hld::st_proto_st_game_info& game_info() const;
-  inline ::hld::st_proto_st_game_info* mutable_game_info();
-  inline ::hld::st_proto_st_game_info* release_game_info();
-  inline void set_allocated_game_info(::hld::st_proto_st_game_info* game_info);
+  inline const ::faith::st_proto_st_game_info& game_info() const;
+  inline ::faith::st_proto_st_game_info* mutable_game_info();
+  inline ::faith::st_proto_st_game_info* release_game_info();
+  inline void set_allocated_game_info(::faith::st_proto_st_game_info* game_info);
 
   // optional bool is_add = 2;
   inline bool has_is_add() const;
@@ -1508,7 +1508,7 @@ class ws2cs_proto_server_config : public ::google::protobuf::Message {
   inline bool is_add() const;
   inline void set_is_add(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.server_config)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.server_config)
  private:
   inline void set_has_game_info();
   inline void clear_has_game_info();
@@ -1517,7 +1517,7 @@ class ws2cs_proto_server_config : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::st_proto_st_game_info* game_info_;
+  ::faith::st_proto_st_game_info* game_info_;
   bool is_add_;
 
   mutable int _cached_size_;
@@ -1586,7 +1586,7 @@ class ws2cs_proto_server_clear_all_config : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.server_clear_all_config)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.server_clear_all_config)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1686,7 +1686,7 @@ class ws2cs_proto_map_create : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 map_all_time() const;
   inline void set_map_all_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.map_create)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.map_create)
  private:
   inline void set_has_map_guid();
   inline void clear_has_map_guid();
@@ -1777,7 +1777,7 @@ class ws2cs_proto_map_delete : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 map_guid() const;
   inline void set_map_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.map_delete)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.map_delete)
  private:
   inline void set_has_map_guid();
   inline void clear_has_map_guid();
@@ -1866,7 +1866,7 @@ class ws2cs_proto_map_doule_line : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 is_double_line() const;
   inline void set_is_double_line(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.map_doule_line)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.map_doule_line)
  private:
   inline void set_has_map_guid();
   inline void clear_has_map_guid();
@@ -1982,7 +1982,7 @@ class ws2cs_proto_map_dynamic_params : public ::google::protobuf::Message {
   inline ::std::string* release_dynamic_params_name();
   inline void set_allocated_dynamic_params_name(::std::string* dynamic_params_name);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.map_dynamic_params)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.map_dynamic_params)
  private:
   inline void set_has_map_guid();
   inline void clear_has_map_guid();
@@ -2099,7 +2099,7 @@ class ws2cs_proto_transfer_to_map : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 server_id() const;
   inline void set_server_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.transfer_to_map)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.transfer_to_map)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -2219,7 +2219,7 @@ class ws2cs_proto_get_map_info_from_cs : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_map_info();
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.get_map_info_from_cs)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.get_map_info_from_cs)
  private:
   inline void set_has_map_guid();
   inline void clear_has_map_guid();
@@ -2308,7 +2308,7 @@ class ws2cs_proto_cs_gm_open_time : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 open_time() const;
   inline void set_open_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.cs_gm_open_time)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.cs_gm_open_time)
  private:
   inline void set_has_open_time();
   inline void clear_has_open_time();
@@ -2397,7 +2397,7 @@ class ws2cs_proto_server_need_cross : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 gm_type() const;
   inline void set_gm_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.server_need_cross)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.server_need_cross)
  private:
   inline void set_has_need_begin_cross();
   inline void clear_has_need_begin_cross();
@@ -2489,7 +2489,7 @@ class ws2cs_proto_server_info_arr : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 server_info_type() const;
   inline void set_server_info_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.server_info_arr)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.server_info_arr)
  private:
   inline void set_has_server_info_value();
   inline void clear_has_server_info_value();
@@ -2579,7 +2579,7 @@ class ws2cs_proto_server_info_all : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_server_info_arr();
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.server_info_all)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.server_info_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -2673,7 +2673,7 @@ class ws2cs_proto_broken_sky_creat_boss : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 from_map_guid() const;
   inline void set_from_map_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.broken_sky_creat_boss)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.broken_sky_creat_boss)
  private:
   inline void set_has_boss_level();
   inline void clear_has_boss_level();
@@ -2775,7 +2775,7 @@ class ws2cs_proto_broken_sky_info_sync : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 damage() const;
   inline void set_damage(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.broken_sky_info_sync)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.broken_sky_info_sync)
  private:
   inline void set_has_map_template_id();
   inline void clear_has_map_template_id();
@@ -2877,7 +2877,7 @@ class ws2cs_proto_broken_sky_kill_boss : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 killer_guid() const;
   inline void set_killer_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.broken_sky_kill_boss)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.broken_sky_kill_boss)
  private:
   inline void set_has_map_template_id();
   inline void clear_has_map_template_id();
@@ -2965,7 +2965,7 @@ class ws2cs_proto_chest_arrivai_spawn_chest_wave : public ::google::protobuf::Me
   inline ::google::protobuf::int32 chest_disappear_time() const;
   inline void set_chest_disappear_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.chest_arrivai_spawn_chest_wave)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.chest_arrivai_spawn_chest_wave)
  private:
   inline void set_has_chest_disappear_time();
   inline void clear_has_chest_disappear_time();
@@ -3054,7 +3054,7 @@ class ws2cs_proto_clear_big_player_title : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 title_type() const;
   inline void set_title_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.clear_big_player_title)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.clear_big_player_title)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3160,7 +3160,7 @@ class ws2cs_proto_apply_to_join_team : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 team_sub_type_id() const;
   inline void set_team_sub_type_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.apply_to_join_team)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.apply_to_join_team)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3251,16 +3251,16 @@ class ws2cs_proto_set_player_team_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // optional .hld.st_proto.st_player_team_info player_team_info = 2;
+  // optional .faith.st_proto.st_player_team_info player_team_info = 2;
   inline bool has_player_team_info() const;
   inline void clear_player_team_info();
   static const int kPlayerTeamInfoFieldNumber = 2;
-  inline const ::hld::st_proto_st_player_team_info& player_team_info() const;
-  inline ::hld::st_proto_st_player_team_info* mutable_player_team_info();
-  inline ::hld::st_proto_st_player_team_info* release_player_team_info();
-  inline void set_allocated_player_team_info(::hld::st_proto_st_player_team_info* player_team_info);
+  inline const ::faith::st_proto_st_player_team_info& player_team_info() const;
+  inline ::faith::st_proto_st_player_team_info* mutable_player_team_info();
+  inline ::faith::st_proto_st_player_team_info* release_player_team_info();
+  inline void set_allocated_player_team_info(::faith::st_proto_st_player_team_info* player_team_info);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.set_player_team_info)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.set_player_team_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3270,7 +3270,7 @@ class ws2cs_proto_set_player_team_info : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 role_guid_;
-  ::hld::st_proto_st_player_team_info* player_team_info_;
+  ::faith::st_proto_st_player_team_info* player_team_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -3345,7 +3345,7 @@ class ws2cs_proto_clear_player_team_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.clear_player_team_info)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.clear_player_team_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3448,7 +3448,7 @@ class ws2cs_proto_transfer_team_member_to_scene : public ::google::protobuf::Mes
   inline ::google::protobuf::int64 map_guid() const;
   inline void set_map_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.transfer_team_member_to_scene)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.transfer_team_member_to_scene)
  private:
   inline void set_has_team_guid();
   inline void clear_has_team_guid();
@@ -3567,7 +3567,7 @@ class ws2cs_proto_team_common_check_in_cs : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 check_invoker() const;
   inline void set_check_invoker(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.team_common_check_in_cs)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.team_common_check_in_cs)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3661,7 +3661,7 @@ class ws2cs_proto_sync_team_start_aim : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.sync_team_start_aim)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.sync_team_start_aim)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3743,14 +3743,14 @@ class ws2cs_proto_set_player_legion_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // optional .hld.st_proto.st_player_legion_info player_legion_info = 2;
+  // optional .faith.st_proto.st_player_legion_info player_legion_info = 2;
   inline bool has_player_legion_info() const;
   inline void clear_player_legion_info();
   static const int kPlayerLegionInfoFieldNumber = 2;
-  inline const ::hld::st_proto_st_player_legion_info& player_legion_info() const;
-  inline ::hld::st_proto_st_player_legion_info* mutable_player_legion_info();
-  inline ::hld::st_proto_st_player_legion_info* release_player_legion_info();
-  inline void set_allocated_player_legion_info(::hld::st_proto_st_player_legion_info* player_legion_info);
+  inline const ::faith::st_proto_st_player_legion_info& player_legion_info() const;
+  inline ::faith::st_proto_st_player_legion_info* mutable_player_legion_info();
+  inline ::faith::st_proto_st_player_legion_info* release_player_legion_info();
+  inline void set_allocated_player_legion_info(::faith::st_proto_st_player_legion_info* player_legion_info);
 
   // optional bool is_new_join_legion = 3;
   inline bool has_is_new_join_legion() const;
@@ -3759,7 +3759,7 @@ class ws2cs_proto_set_player_legion_info : public ::google::protobuf::Message {
   inline bool is_new_join_legion() const;
   inline void set_is_new_join_legion(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.set_player_legion_info)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.set_player_legion_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3771,7 +3771,7 @@ class ws2cs_proto_set_player_legion_info : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 role_guid_;
-  ::hld::st_proto_st_player_legion_info* player_legion_info_;
+  ::faith::st_proto_st_player_legion_info* player_legion_info_;
   bool is_new_join_legion_;
 
   mutable int _cached_size_;
@@ -3847,7 +3847,7 @@ class ws2cs_proto_clear_player_legion_info : public ::google::protobuf::Message 
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.clear_player_legion_info)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.clear_player_legion_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -3955,16 +3955,16 @@ class ws2cs_proto_create_legion : public ::google::protobuf::Message {
   inline bool auto_accept_new_member() const;
   inline void set_auto_accept_new_member(bool value);
 
-  // optional .hld.st_proto.st_legion_member_info chief_info = 5;
+  // optional .faith.st_proto.st_legion_member_info chief_info = 5;
   inline bool has_chief_info() const;
   inline void clear_chief_info();
   static const int kChiefInfoFieldNumber = 5;
-  inline const ::hld::st_proto_st_legion_member_info& chief_info() const;
-  inline ::hld::st_proto_st_legion_member_info* mutable_chief_info();
-  inline ::hld::st_proto_st_legion_member_info* release_chief_info();
-  inline void set_allocated_chief_info(::hld::st_proto_st_legion_member_info* chief_info);
+  inline const ::faith::st_proto_st_legion_member_info& chief_info() const;
+  inline ::faith::st_proto_st_legion_member_info* mutable_chief_info();
+  inline ::faith::st_proto_st_legion_member_info* release_chief_info();
+  inline void set_allocated_chief_info(::faith::st_proto_st_legion_member_info* chief_info);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.create_legion)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.create_legion)
  private:
   inline void set_has_legion_guid();
   inline void clear_has_legion_guid();
@@ -3983,7 +3983,7 @@ class ws2cs_proto_create_legion : public ::google::protobuf::Message {
   ::std::string* legion_name_;
   ::google::protobuf::int32 legion_level_;
   bool auto_accept_new_member_;
-  ::hld::st_proto_st_legion_member_info* chief_info_;
+  ::faith::st_proto_st_legion_member_info* chief_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(5 + 31) / 32];
@@ -4065,7 +4065,7 @@ class ws2cs_proto_donate_legion_money : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 donate_times() const;
   inline void set_donate_times(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.donate_legion_money)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.donate_legion_money)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4164,7 +4164,7 @@ class ws2cs_proto_donate_legion_item : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 donate_item_num() const;
   inline void set_donate_item_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.donate_legion_item)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.donate_legion_item)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4266,7 +4266,7 @@ class ws2cs_proto_enter_legion_boss_map : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 boss_map_guid() const;
   inline void set_boss_map_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.enter_legion_boss_map)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.enter_legion_boss_map)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4361,7 +4361,7 @@ class ws2cs_proto_get_legion_boss_award : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 boss_map_id() const;
   inline void set_boss_map_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.get_legion_boss_award)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.get_legion_boss_award)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4439,23 +4439,23 @@ class ws2cs_proto_set_get_legion_boss_award_log : public ::google::protobuf::Mes
 
   // accessors -------------------------------------------------------
 
-  // optional .hld.st_proto.st_legion_boss_award_get_log legion_boss_award_get_log = 1;
+  // optional .faith.st_proto.st_legion_boss_award_get_log legion_boss_award_get_log = 1;
   inline bool has_legion_boss_award_get_log() const;
   inline void clear_legion_boss_award_get_log();
   static const int kLegionBossAwardGetLogFieldNumber = 1;
-  inline const ::hld::st_proto_st_legion_boss_award_get_log& legion_boss_award_get_log() const;
-  inline ::hld::st_proto_st_legion_boss_award_get_log* mutable_legion_boss_award_get_log();
-  inline ::hld::st_proto_st_legion_boss_award_get_log* release_legion_boss_award_get_log();
-  inline void set_allocated_legion_boss_award_get_log(::hld::st_proto_st_legion_boss_award_get_log* legion_boss_award_get_log);
+  inline const ::faith::st_proto_st_legion_boss_award_get_log& legion_boss_award_get_log() const;
+  inline ::faith::st_proto_st_legion_boss_award_get_log* mutable_legion_boss_award_get_log();
+  inline ::faith::st_proto_st_legion_boss_award_get_log* release_legion_boss_award_get_log();
+  inline void set_allocated_legion_boss_award_get_log(::faith::st_proto_st_legion_boss_award_get_log* legion_boss_award_get_log);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.set_get_legion_boss_award_log)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.set_get_legion_boss_award_log)
  private:
   inline void set_has_legion_boss_award_get_log();
   inline void clear_has_legion_boss_award_get_log();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::st_proto_st_legion_boss_award_get_log* legion_boss_award_get_log_;
+  ::faith::st_proto_st_legion_boss_award_get_log* legion_boss_award_get_log_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -4544,7 +4544,7 @@ class ws2cs_proto_bonfire_add_fuel : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 add_fuel_times() const;
   inline void set_add_fuel_times(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.bonfire_add_fuel)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.bonfire_add_fuel)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4632,7 +4632,7 @@ class ws2cs_proto_legion_remove_recruit_cd : public ::google::protobuf::Message 
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.legion_remove_recruit_cd)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.legion_remove_recruit_cd)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4721,7 +4721,7 @@ class ws2cs_proto_draw_bonfire_daily_rwd : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 bonfire_map_guid() const;
   inline void set_bonfire_map_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.draw_bonfire_daily_rwd)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.draw_bonfire_daily_rwd)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4820,7 +4820,7 @@ class ws2cs_proto_level_up_legion_skill : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 donate_contribution() const;
   inline void set_donate_contribution(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.level_up_legion_skill)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.level_up_legion_skill)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -4927,7 +4927,7 @@ class ws2cs_proto_confirm_change_legion_name : public ::google::protobuf::Messag
   inline bool is_need_change() const;
   inline void set_is_need_change(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.confirm_change_legion_name)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.confirm_change_legion_name)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -5015,7 +5015,7 @@ class ws2cs_proto_rem_item_change_legion_name_care : public ::google::protobuf::
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.rem_item_change_legion_name_care)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.rem_item_change_legion_name_care)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -5109,7 +5109,7 @@ class ws2cs_proto_change_gate_legion_name : public ::google::protobuf::Message {
   inline ::std::string* release_legion_name();
   inline void set_allocated_legion_name(::std::string* legion_name);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.change_gate_legion_name)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.change_gate_legion_name)
  private:
   inline void set_has_legion_guid();
   inline void clear_has_legion_guid();
@@ -5201,16 +5201,16 @@ class ws2cs_proto_begin_city_war : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 cur_terr_id() const;
   inline void set_cur_terr_id(::google::protobuf::int32 value);
 
-  // repeated .hld.st_proto.st_city_war_legion_score join_war_legions = 3;
+  // repeated .faith.st_proto.st_city_war_legion_score join_war_legions = 3;
   inline int join_war_legions_size() const;
   inline void clear_join_war_legions();
   static const int kJoinWarLegionsFieldNumber = 3;
-  inline const ::hld::st_proto_st_city_war_legion_score& join_war_legions(int index) const;
-  inline ::hld::st_proto_st_city_war_legion_score* mutable_join_war_legions(int index);
-  inline ::hld::st_proto_st_city_war_legion_score* add_join_war_legions();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_city_war_legion_score >&
+  inline const ::faith::st_proto_st_city_war_legion_score& join_war_legions(int index) const;
+  inline ::faith::st_proto_st_city_war_legion_score* mutable_join_war_legions(int index);
+  inline ::faith::st_proto_st_city_war_legion_score* add_join_war_legions();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_city_war_legion_score >&
       join_war_legions() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_city_war_legion_score >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_city_war_legion_score >*
       mutable_join_war_legions();
 
   // optional int32 cross_city_idex = 4;
@@ -5220,7 +5220,7 @@ class ws2cs_proto_begin_city_war : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 cross_city_idex() const;
   inline void set_cross_city_idex(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.begin_city_war)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.begin_city_war)
  private:
   inline void set_has_city_war_map_guid();
   inline void clear_has_city_war_map_guid();
@@ -5232,7 +5232,7 @@ class ws2cs_proto_begin_city_war : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 city_war_map_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_city_war_legion_score > join_war_legions_;
+  ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_city_war_legion_score > join_war_legions_;
   ::google::protobuf::int32 cur_terr_id_;
   ::google::protobuf::int32 cross_city_idex_;
 
@@ -5323,7 +5323,7 @@ class ws2cs_proto_enter_city_war_map : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 war_index() const;
   inline void set_war_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.enter_city_war_map)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.enter_city_war_map)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -5439,7 +5439,7 @@ class ws2cs_proto_city_war_operate : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 prop_npc_guid() const;
   inline void set_prop_npc_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.city_war_operate)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.city_war_operate)
  private:
   inline void set_has_city_war_map_guid();
   inline void clear_has_city_war_map_guid();
@@ -5540,7 +5540,7 @@ class ws2cs_proto_get_occupation_daily_award : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 territory_id() const;
   inline void set_territory_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.get_occupation_daily_award)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.get_occupation_daily_award)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -5625,7 +5625,7 @@ class ws2cs_proto_get_city_master_stuff : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.get_city_master_stuff)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.get_city_master_stuff)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -5707,7 +5707,7 @@ class ws2cs_proto_del_city_master_stuff : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.del_city_master_stuff)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.del_city_master_stuff)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -5789,7 +5789,7 @@ class ws2cs_proto_add_city_war_winner_stuff : public ::google::protobuf::Message
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.add_city_war_winner_stuff)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.add_city_war_winner_stuff)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -5871,7 +5871,7 @@ class ws2cs_proto_del_city_war_winner_stuff : public ::google::protobuf::Message
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.del_city_war_winner_stuff)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.del_city_war_winner_stuff)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -5993,7 +5993,7 @@ class ws2cs_proto_get_bonus_award : public ::google::protobuf::Message {
   inline bool get_all() const;
   inline void set_get_all(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.get_bonus_award)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.get_bonus_award)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6121,7 +6121,7 @@ class ws2cs_proto_legion_answer_question_right : public ::google::protobuf::Mess
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_legion_play_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.legion_answer_question_right)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.legion_answer_question_right)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6220,7 +6220,7 @@ class ws2cs_proto_set_legion_average_lv_to_map : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 legion_average_lv() const;
   inline void set_legion_average_lv(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.set_legion_average_lv_to_map)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.set_legion_average_lv_to_map)
  private:
   inline void set_has_map_guid();
   inline void clear_has_map_guid();
@@ -6319,7 +6319,7 @@ class ws2cs_proto_rep_get_arena_rank : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 is_request() const;
   inline void set_is_request(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.rep_get_arena_rank)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.rep_get_arena_rank)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6456,7 +6456,7 @@ class ws2cs_proto_req_challenge_msg : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 self_cur_pos() const;
   inline void set_self_cur_pos(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.req_challenge_msg)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.req_challenge_msg)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6559,19 +6559,19 @@ class ws2cs_proto_req_choose_list : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // repeated .hld.st_proto.st_player_arena_rank target_player = 2;
+  // repeated .faith.st_proto.st_player_arena_rank target_player = 2;
   inline int target_player_size() const;
   inline void clear_target_player();
   static const int kTargetPlayerFieldNumber = 2;
-  inline const ::hld::st_proto_st_player_arena_rank& target_player(int index) const;
-  inline ::hld::st_proto_st_player_arena_rank* mutable_target_player(int index);
-  inline ::hld::st_proto_st_player_arena_rank* add_target_player();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_player_arena_rank >&
+  inline const ::faith::st_proto_st_player_arena_rank& target_player(int index) const;
+  inline ::faith::st_proto_st_player_arena_rank* mutable_target_player(int index);
+  inline ::faith::st_proto_st_player_arena_rank* add_target_player();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_player_arena_rank >&
       target_player() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_player_arena_rank >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_player_arena_rank >*
       mutable_target_player();
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.req_choose_list)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.req_choose_list)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6579,7 +6579,7 @@ class ws2cs_proto_req_choose_list : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 role_guid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_player_arena_rank > target_player_;
+  ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_player_arena_rank > target_player_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -6661,7 +6661,7 @@ class ws2cs_proto_fresh_challenge_time : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 is_need() const;
   inline void set_is_need(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.fresh_challenge_time)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.fresh_challenge_time)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6781,7 +6781,7 @@ class ws2cs_proto_req_worship_player_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 target_worship_value() const;
   inline void set_target_worship_value(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.req_worship_player_end)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.req_worship_player_end)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -6899,7 +6899,7 @@ class ws2cs_proto_sync_first_rank_end : public ::google::protobuf::Message {
   inline bool is_notice() const;
   inline void set_is_notice(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.sync_first_rank_end)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.sync_first_rank_end)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -7004,7 +7004,7 @@ class ws2cs_proto_sync_server_avg_lv : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 world_lv_last() const;
   inline void set_world_lv_last(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.sync_server_avg_lv)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.sync_server_avg_lv)
  private:
   inline void set_has_srv_avg_lv();
   inline void clear_has_srv_avg_lv();
@@ -7106,7 +7106,7 @@ class ws2cs_proto_req_service_rank_info_end : public ::google::protobuf::Message
   inline ::google::protobuf::int32 rank_num() const;
   inline void set_rank_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.req_service_rank_info_end)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.req_service_rank_info_end)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -7222,7 +7222,7 @@ class ws2cs_proto_check_item_enough : public ::google::protobuf::Message {
   inline bool is_divorce() const;
   inline void set_is_divorce(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.check_item_enough)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.check_item_enough)
  private:
   inline void set_has_main_guid();
   inline void clear_has_main_guid();
@@ -7368,7 +7368,7 @@ class ws2cs_proto_marry_result_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 marry_item_id() const;
   inline void set_marry_item_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.marry_result_end)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.marry_result_end)
  private:
   inline void set_has_main_guid();
   inline void clear_has_main_guid();
@@ -7475,7 +7475,7 @@ class ws2cs_proto_marry_get_reward : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 old_marry_state() const;
   inline void set_old_marry_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.marry_get_reward)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.marry_get_reward)
  private:
   inline void set_has_sender_guid();
   inline void clear_has_sender_guid();
@@ -7588,7 +7588,7 @@ class ws2cs_proto_update_wedding_ring_state : public ::google::protobuf::Message
   inline ::google::protobuf::int32 heart_value() const;
   inline void set_heart_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.update_wedding_ring_state)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.update_wedding_ring_state)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -7689,7 +7689,7 @@ class ws2cs_proto_update_wedding_ring_level : public ::google::protobuf::Message
   inline ::google::protobuf::int32 mate_ring_level() const;
   inline void set_mate_ring_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.update_wedding_ring_level)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.update_wedding_ring_level)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -7781,7 +7781,7 @@ class ws2cs_proto_refresh_heart_value : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 heart_value() const;
   inline void set_heart_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.refresh_heart_value)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.refresh_heart_value)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -7873,7 +7873,7 @@ class ws2cs_proto_req_cost_bless_money : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 target_guid() const;
   inline void set_target_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.req_cost_bless_money)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.req_cost_bless_money)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -7958,7 +7958,7 @@ class ws2cs_proto_return_special_item_times : public ::google::protobuf::Message
   inline ::google::protobuf::int64 target_guid() const;
   inline void set_target_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.return_special_item_times)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.return_special_item_times)
  private:
   inline void set_has_target_guid();
   inline void clear_has_target_guid();
@@ -8040,7 +8040,7 @@ class ws2cs_proto_marry_get_marry_task : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.marry_get_marry_task)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.marry_get_marry_task)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -8129,7 +8129,7 @@ class ws2cs_proto_sync_marry_task : public ::google::protobuf::Message {
   inline bool is_marry() const;
   inline void set_is_marry(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.sync_marry_task)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.sync_marry_task)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -8214,26 +8214,26 @@ class ws2cs_proto_send_mail : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 client_uid() const;
   inline void set_client_uid(::google::protobuf::int64 value);
 
-  // repeated .hld.db_proto.item_info_db item_list = 2;
+  // repeated .faith.db_proto.item_info_db item_list = 2;
   inline int item_list_size() const;
   inline void clear_item_list();
   static const int kItemListFieldNumber = 2;
-  inline const ::hld::db_proto_item_info_db& item_list(int index) const;
-  inline ::hld::db_proto_item_info_db* mutable_item_list(int index);
-  inline ::hld::db_proto_item_info_db* add_item_list();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::db_proto_item_info_db >&
+  inline const ::faith::db_proto_item_info_db& item_list(int index) const;
+  inline ::faith::db_proto_item_info_db* mutable_item_list(int index);
+  inline ::faith::db_proto_item_info_db* add_item_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::db_proto_item_info_db >&
       item_list() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::db_proto_item_info_db >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::db_proto_item_info_db >*
       mutable_item_list();
 
-  // optional .hld.db_proto.role_mail_row mail_info = 3;
+  // optional .faith.db_proto.role_mail_row mail_info = 3;
   inline bool has_mail_info() const;
   inline void clear_mail_info();
   static const int kMailInfoFieldNumber = 3;
-  inline const ::hld::db_proto_role_mail_row& mail_info() const;
-  inline ::hld::db_proto_role_mail_row* mutable_mail_info();
-  inline ::hld::db_proto_role_mail_row* release_mail_info();
-  inline void set_allocated_mail_info(::hld::db_proto_role_mail_row* mail_info);
+  inline const ::faith::db_proto_role_mail_row& mail_info() const;
+  inline ::faith::db_proto_role_mail_row* mutable_mail_info();
+  inline ::faith::db_proto_role_mail_row* release_mail_info();
+  inline void set_allocated_mail_info(::faith::db_proto_role_mail_row* mail_info);
 
   // optional int32 item_num = 4;
   inline bool has_item_num() const;
@@ -8256,7 +8256,7 @@ class ws2cs_proto_send_mail : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 send_times() const;
   inline void set_send_times(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.send_mail)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.send_mail)
  private:
   inline void set_has_client_uid();
   inline void clear_has_client_uid();
@@ -8272,8 +8272,8 @@ class ws2cs_proto_send_mail : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 client_uid_;
-  ::google::protobuf::RepeatedPtrField< ::hld::db_proto_item_info_db > item_list_;
-  ::hld::db_proto_role_mail_row* mail_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::db_proto_item_info_db > item_list_;
+  ::faith::db_proto_role_mail_row* mail_info_;
   ::google::protobuf::int64 addressee_guid_;
   ::google::protobuf::int32 item_num_;
   ::google::protobuf::int32 send_times_;
@@ -8370,7 +8370,7 @@ class ws2cs_proto_had_new_globel_mail : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
       mutable_data_info();
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.had_new_globel_mail)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.had_new_globel_mail)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -8484,19 +8484,19 @@ class ws2cs_proto_receive_notice : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 create_time() const;
   inline void set_create_time(::google::protobuf::int32 value);
 
-  // repeated .hld.db_proto.item_info_db data_ary = 6;
+  // repeated .faith.db_proto.item_info_db data_ary = 6;
   inline int data_ary_size() const;
   inline void clear_data_ary();
   static const int kDataAryFieldNumber = 6;
-  inline const ::hld::db_proto_item_info_db& data_ary(int index) const;
-  inline ::hld::db_proto_item_info_db* mutable_data_ary(int index);
-  inline ::hld::db_proto_item_info_db* add_data_ary();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::db_proto_item_info_db >&
+  inline const ::faith::db_proto_item_info_db& data_ary(int index) const;
+  inline ::faith::db_proto_item_info_db* mutable_data_ary(int index);
+  inline ::faith::db_proto_item_info_db* add_data_ary();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::db_proto_item_info_db >&
       data_ary() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::db_proto_item_info_db >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::db_proto_item_info_db >*
       mutable_data_ary();
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.receive_notice)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.receive_notice)
  private:
   inline void set_has_client_uid();
   inline void clear_has_client_uid();
@@ -8516,7 +8516,7 @@ class ws2cs_proto_receive_notice : public ::google::protobuf::Message {
   ::google::protobuf::int64 addressee_guid_;
   ::google::protobuf::int32 notice_id_;
   ::google::protobuf::int32 create_time_;
-  ::google::protobuf::RepeatedPtrField< ::hld::db_proto_item_info_db > data_ary_;
+  ::google::protobuf::RepeatedPtrField< ::faith::db_proto_item_info_db > data_ary_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(6 + 31) / 32];
@@ -8605,7 +8605,7 @@ class ws2cs_proto_send_chat_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 chat_type() const;
   inline void set_chat_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.send_chat_end)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.send_chat_end)
  private:
   inline void set_has_sender_guid();
   inline void clear_has_sender_guid();
@@ -8700,7 +8700,7 @@ class ws2cs_proto_create_world_boss : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 world_boss_random_pos_arr_id() const;
   inline void set_world_boss_random_pos_arr_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.create_world_boss)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.create_world_boss)
  private:
   inline void set_has_world_boss_spawn_template_id();
   inline void clear_has_world_boss_spawn_template_id();
@@ -8792,7 +8792,7 @@ class ws2cs_proto_remove_world_boss : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 world_boss_guid() const;
   inline void set_world_boss_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.remove_world_boss)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.remove_world_boss)
  private:
   inline void set_has_world_boss_npc_array_index();
   inline void clear_has_world_boss_npc_array_index();
@@ -8884,7 +8884,7 @@ class ws2cs_proto_create_first_kill_prize : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 first_kill_welfare_template_id() const;
   inline void set_first_kill_welfare_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.create_first_kill_prize)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.create_first_kill_prize)
  private:
   inline void set_has_first_killer_guid();
   inline void clear_has_first_killer_guid();
@@ -8962,14 +8962,14 @@ class ws2cs_proto_create_big_player_statue : public ::google::protobuf::Message 
 
   // accessors -------------------------------------------------------
 
-  // optional .hld.st_proto.st_fake_player_info big_player_info = 1;
+  // optional .faith.st_proto.st_fake_player_info big_player_info = 1;
   inline bool has_big_player_info() const;
   inline void clear_big_player_info();
   static const int kBigPlayerInfoFieldNumber = 1;
-  inline const ::hld::st_proto_st_fake_player_info& big_player_info() const;
-  inline ::hld::st_proto_st_fake_player_info* mutable_big_player_info();
-  inline ::hld::st_proto_st_fake_player_info* release_big_player_info();
-  inline void set_allocated_big_player_info(::hld::st_proto_st_fake_player_info* big_player_info);
+  inline const ::faith::st_proto_st_fake_player_info& big_player_info() const;
+  inline ::faith::st_proto_st_fake_player_info* mutable_big_player_info();
+  inline ::faith::st_proto_st_fake_player_info* release_big_player_info();
+  inline void set_allocated_big_player_info(::faith::st_proto_st_fake_player_info* big_player_info);
 
   // optional int32 big_type = 2;
   inline bool has_big_type() const;
@@ -8985,7 +8985,7 @@ class ws2cs_proto_create_big_player_statue : public ::google::protobuf::Message 
   inline ::google::protobuf::int64 map_guid() const;
   inline void set_map_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.create_big_player_statue)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.create_big_player_statue)
  private:
   inline void set_has_big_player_info();
   inline void clear_has_big_player_info();
@@ -8996,7 +8996,7 @@ class ws2cs_proto_create_big_player_statue : public ::google::protobuf::Message 
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::st_proto_st_fake_player_info* big_player_info_;
+  ::faith::st_proto_st_fake_player_info* big_player_info_;
   ::google::protobuf::int64 map_guid_;
   ::google::protobuf::int32 big_type_;
 
@@ -9094,7 +9094,7 @@ class ws2cs_proto_role_right : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 right_time() const;
   inline void set_right_time(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.role_right)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.role_right)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -9232,7 +9232,7 @@ class ws2cs_proto_recharge : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 direct_diamond() const;
   inline void set_direct_diamond(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.recharge)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.recharge)
  private:
   inline void set_has_order_id();
   inline void clear_has_order_id();
@@ -9346,7 +9346,7 @@ class ws2cs_proto_role_info_change : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 role_value() const;
   inline void set_role_value(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.role_info_change)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.role_info_change)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -9469,7 +9469,7 @@ class ws2cs_proto_buy_good : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 back_string() const;
   inline void set_back_string(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.buy_good)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.buy_good)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -9594,7 +9594,7 @@ class ws2cs_proto_get_red_package_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 money_num() const;
   inline void set_money_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.get_red_package_end)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.get_red_package_end)
  private:
   inline void set_has_receiver_guid();
   inline void clear_has_receiver_guid();
@@ -9702,7 +9702,7 @@ class ws2cs_proto_send_red_package_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 send_result() const;
   inline void set_send_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.send_red_package_end)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.send_red_package_end)
  private:
   inline void set_has_sender_guid();
   inline void clear_has_sender_guid();
@@ -9811,7 +9811,7 @@ class ws2cs_proto_full_friend_guid : public ::google::protobuf::Message {
   inline bool is_add() const;
   inline void set_is_add(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.full_friend_guid)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.full_friend_guid)
  private:
   inline void set_has_player_index();
   inline void clear_has_player_index();
@@ -9916,7 +9916,7 @@ class ws2cs_proto_req_relation_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 target_guid() const;
   inline void set_target_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.req_relation_end)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.req_relation_end)
  private:
   inline void set_has_relation_type();
   inline void clear_has_relation_type();
@@ -10004,16 +10004,16 @@ class ws2cs_proto_auction_purchase_success : public ::google::protobuf::Message 
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // optional .hld.st_proto.st_auction_info auction_info = 2;
+  // optional .faith.st_proto.st_auction_info auction_info = 2;
   inline bool has_auction_info() const;
   inline void clear_auction_info();
   static const int kAuctionInfoFieldNumber = 2;
-  inline const ::hld::st_proto_st_auction_info& auction_info() const;
-  inline ::hld::st_proto_st_auction_info* mutable_auction_info();
-  inline ::hld::st_proto_st_auction_info* release_auction_info();
-  inline void set_allocated_auction_info(::hld::st_proto_st_auction_info* auction_info);
+  inline const ::faith::st_proto_st_auction_info& auction_info() const;
+  inline ::faith::st_proto_st_auction_info* mutable_auction_info();
+  inline ::faith::st_proto_st_auction_info* release_auction_info();
+  inline void set_allocated_auction_info(::faith::st_proto_st_auction_info* auction_info);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.auction_purchase_success)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.auction_purchase_success)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -10023,7 +10023,7 @@ class ws2cs_proto_auction_purchase_success : public ::google::protobuf::Message 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 role_guid_;
-  ::hld::st_proto_st_auction_info* auction_info_;
+  ::faith::st_proto_st_auction_info* auction_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -10091,23 +10091,23 @@ class ws2cs_proto_auction_send_sell_success_info : public ::google::protobuf::Me
 
   // accessors -------------------------------------------------------
 
-  // optional .hld.st_proto.st_auction_info auction_info = 1;
+  // optional .faith.st_proto.st_auction_info auction_info = 1;
   inline bool has_auction_info() const;
   inline void clear_auction_info();
   static const int kAuctionInfoFieldNumber = 1;
-  inline const ::hld::st_proto_st_auction_info& auction_info() const;
-  inline ::hld::st_proto_st_auction_info* mutable_auction_info();
-  inline ::hld::st_proto_st_auction_info* release_auction_info();
-  inline void set_allocated_auction_info(::hld::st_proto_st_auction_info* auction_info);
+  inline const ::faith::st_proto_st_auction_info& auction_info() const;
+  inline ::faith::st_proto_st_auction_info* mutable_auction_info();
+  inline ::faith::st_proto_st_auction_info* release_auction_info();
+  inline void set_allocated_auction_info(::faith::st_proto_st_auction_info* auction_info);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.auction_send_sell_success_info)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.auction_send_sell_success_info)
  private:
   inline void set_has_auction_info();
   inline void clear_has_auction_info();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::st_proto_st_auction_info* auction_info_;
+  ::faith::st_proto_st_auction_info* auction_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -10182,16 +10182,16 @@ class ws2cs_proto_auction_cancel_sell : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // optional .hld.st_proto.st_auction_info auction_info = 2;
+  // optional .faith.st_proto.st_auction_info auction_info = 2;
   inline bool has_auction_info() const;
   inline void clear_auction_info();
   static const int kAuctionInfoFieldNumber = 2;
-  inline const ::hld::st_proto_st_auction_info& auction_info() const;
-  inline ::hld::st_proto_st_auction_info* mutable_auction_info();
-  inline ::hld::st_proto_st_auction_info* release_auction_info();
-  inline void set_allocated_auction_info(::hld::st_proto_st_auction_info* auction_info);
+  inline const ::faith::st_proto_st_auction_info& auction_info() const;
+  inline ::faith::st_proto_st_auction_info* mutable_auction_info();
+  inline ::faith::st_proto_st_auction_info* release_auction_info();
+  inline void set_allocated_auction_info(::faith::st_proto_st_auction_info* auction_info);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.auction_cancel_sell)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.auction_cancel_sell)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -10201,7 +10201,7 @@ class ws2cs_proto_auction_cancel_sell : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 role_guid_;
-  ::hld::st_proto_st_auction_info* auction_info_;
+  ::faith::st_proto_st_auction_info* auction_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -10276,16 +10276,16 @@ class ws2cs_proto_auction_sell_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 operate_result() const;
   inline void set_operate_result(::google::protobuf::int32 value);
 
-  // optional .hld.st_proto.st_auction_info info = 2;
+  // optional .faith.st_proto.st_auction_info info = 2;
   inline bool has_info() const;
   inline void clear_info();
   static const int kInfoFieldNumber = 2;
-  inline const ::hld::st_proto_st_auction_info& info() const;
-  inline ::hld::st_proto_st_auction_info* mutable_info();
-  inline ::hld::st_proto_st_auction_info* release_info();
-  inline void set_allocated_info(::hld::st_proto_st_auction_info* info);
+  inline const ::faith::st_proto_st_auction_info& info() const;
+  inline ::faith::st_proto_st_auction_info* mutable_info();
+  inline ::faith::st_proto_st_auction_info* release_info();
+  inline void set_allocated_info(::faith::st_proto_st_auction_info* info);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.auction_sell_end)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.auction_sell_end)
  private:
   inline void set_has_operate_result();
   inline void clear_has_operate_result();
@@ -10294,7 +10294,7 @@ class ws2cs_proto_auction_sell_end : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::st_proto_st_auction_info* info_;
+  ::faith::st_proto_st_auction_info* info_;
   ::google::protobuf::int32 operate_result_;
 
   mutable int _cached_size_;
@@ -10370,16 +10370,16 @@ class ws2cs_proto_auction_time_out_del : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // optional .hld.st_proto.st_auction_info auction_info = 2;
+  // optional .faith.st_proto.st_auction_info auction_info = 2;
   inline bool has_auction_info() const;
   inline void clear_auction_info();
   static const int kAuctionInfoFieldNumber = 2;
-  inline const ::hld::st_proto_st_auction_info& auction_info() const;
-  inline ::hld::st_proto_st_auction_info* mutable_auction_info();
-  inline ::hld::st_proto_st_auction_info* release_auction_info();
-  inline void set_allocated_auction_info(::hld::st_proto_st_auction_info* auction_info);
+  inline const ::faith::st_proto_st_auction_info& auction_info() const;
+  inline ::faith::st_proto_st_auction_info* mutable_auction_info();
+  inline ::faith::st_proto_st_auction_info* release_auction_info();
+  inline void set_allocated_auction_info(::faith::st_proto_st_auction_info* auction_info);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.auction_time_out_del)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.auction_time_out_del)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -10389,7 +10389,7 @@ class ws2cs_proto_auction_time_out_del : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 role_guid_;
-  ::hld::st_proto_st_auction_info* auction_info_;
+  ::faith::st_proto_st_auction_info* auction_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -10464,16 +10464,16 @@ class ws2cs_proto_auction_find_bid_target_end : public ::google::protobuf::Messa
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // optional .hld.st_proto.st_auction_info auction_info = 2;
+  // optional .faith.st_proto.st_auction_info auction_info = 2;
   inline bool has_auction_info() const;
   inline void clear_auction_info();
   static const int kAuctionInfoFieldNumber = 2;
-  inline const ::hld::st_proto_st_auction_info& auction_info() const;
-  inline ::hld::st_proto_st_auction_info* mutable_auction_info();
-  inline ::hld::st_proto_st_auction_info* release_auction_info();
-  inline void set_allocated_auction_info(::hld::st_proto_st_auction_info* auction_info);
+  inline const ::faith::st_proto_st_auction_info& auction_info() const;
+  inline ::faith::st_proto_st_auction_info* mutable_auction_info();
+  inline ::faith::st_proto_st_auction_info* release_auction_info();
+  inline void set_allocated_auction_info(::faith::st_proto_st_auction_info* auction_info);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.auction_find_bid_target_end)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.auction_find_bid_target_end)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -10483,7 +10483,7 @@ class ws2cs_proto_auction_find_bid_target_end : public ::google::protobuf::Messa
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 role_guid_;
-  ::hld::st_proto_st_auction_info* auction_info_;
+  ::faith::st_proto_st_auction_info* auction_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -10586,7 +10586,7 @@ class ws2cs_proto_cloud_shop_buy_req : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 need_money_count() const;
   inline void set_need_money_count(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.cloud_shop_buy_req)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.cloud_shop_buy_req)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -10687,7 +10687,7 @@ class ws2cs_proto_sub_player_rename_item : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 item_templete_id() const;
   inline void set_item_templete_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.sub_player_rename_item)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.sub_player_rename_item)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -10784,7 +10784,7 @@ class ws2cs_proto_change_player_name : public ::google::protobuf::Message {
   inline ::std::string* release_role_name();
   inline void set_allocated_role_name(::std::string* role_name);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.change_player_name)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.change_player_name)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -10900,7 +10900,7 @@ class ws2cs_proto_spawn_npc : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< float >*
       mutable_unit_rotation();
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.spawn_npc)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.spawn_npc)
  private:
   inline void set_has_map_guid();
   inline void clear_has_map_guid();
@@ -11008,7 +11008,7 @@ class ws2cs_proto_modify_money : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 money_value() const;
   inline void set_money_value(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.modify_money)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.modify_money)
  private:
   inline void set_has_cs_unit_index();
   inline void clear_has_cs_unit_index();
@@ -11092,24 +11092,24 @@ class ws2cs_proto_send_cur_server_harry_msg : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.st_proto.st_server_harry_msg server_harry_msg = 1;
+  // repeated .faith.st_proto.st_server_harry_msg server_harry_msg = 1;
   inline int server_harry_msg_size() const;
   inline void clear_server_harry_msg();
   static const int kServerHarryMsgFieldNumber = 1;
-  inline const ::hld::st_proto_st_server_harry_msg& server_harry_msg(int index) const;
-  inline ::hld::st_proto_st_server_harry_msg* mutable_server_harry_msg(int index);
-  inline ::hld::st_proto_st_server_harry_msg* add_server_harry_msg();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_server_harry_msg >&
+  inline const ::faith::st_proto_st_server_harry_msg& server_harry_msg(int index) const;
+  inline ::faith::st_proto_st_server_harry_msg* mutable_server_harry_msg(int index);
+  inline ::faith::st_proto_st_server_harry_msg* add_server_harry_msg();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_server_harry_msg >&
       server_harry_msg() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_server_harry_msg >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_server_harry_msg >*
       mutable_server_harry_msg();
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.send_cur_server_harry_msg)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.send_cur_server_harry_msg)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_server_harry_msg > server_harry_msg_;
+  ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_server_harry_msg > server_harry_msg_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -11184,7 +11184,7 @@ class ws2cs_proto_send_create_normal_player : public ::google::protobuf::Message
   inline ::google::protobuf::int32 crate_num() const;
   inline void set_crate_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.send_create_normal_player)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.send_create_normal_player)
  private:
   inline void set_has_crate_num();
   inline void clear_has_crate_num();
@@ -11259,14 +11259,14 @@ class ws2cs_proto_create_harry_player_statue : public ::google::protobuf::Messag
 
   // accessors -------------------------------------------------------
 
-  // optional .hld.st_proto.st_fake_player_info big_player_info = 1;
+  // optional .faith.st_proto.st_fake_player_info big_player_info = 1;
   inline bool has_big_player_info() const;
   inline void clear_big_player_info();
   static const int kBigPlayerInfoFieldNumber = 1;
-  inline const ::hld::st_proto_st_fake_player_info& big_player_info() const;
-  inline ::hld::st_proto_st_fake_player_info* mutable_big_player_info();
-  inline ::hld::st_proto_st_fake_player_info* release_big_player_info();
-  inline void set_allocated_big_player_info(::hld::st_proto_st_fake_player_info* big_player_info);
+  inline const ::faith::st_proto_st_fake_player_info& big_player_info() const;
+  inline ::faith::st_proto_st_fake_player_info* mutable_big_player_info();
+  inline ::faith::st_proto_st_fake_player_info* release_big_player_info();
+  inline void set_allocated_big_player_info(::faith::st_proto_st_fake_player_info* big_player_info);
 
   // optional int32 big_type = 2;
   inline bool has_big_type() const;
@@ -11282,7 +11282,7 @@ class ws2cs_proto_create_harry_player_statue : public ::google::protobuf::Messag
   inline ::google::protobuf::int64 map_guid() const;
   inline void set_map_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.create_harry_player_statue)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.create_harry_player_statue)
  private:
   inline void set_has_big_player_info();
   inline void clear_has_big_player_info();
@@ -11293,7 +11293,7 @@ class ws2cs_proto_create_harry_player_statue : public ::google::protobuf::Messag
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::st_proto_st_fake_player_info* big_player_info_;
+  ::faith::st_proto_st_fake_player_info* big_player_info_;
   ::google::protobuf::int64 map_guid_;
   ::google::protobuf::int32 big_type_;
 
@@ -11370,7 +11370,7 @@ class ws2cs_proto_claer_all_harry_player : public ::google::protobuf::Message {
   inline bool need_clear() const;
   inline void set_need_clear(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.claer_all_harry_player)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.claer_all_harry_player)
  private:
   inline void set_has_need_clear();
   inline void clear_has_need_clear();
@@ -11459,7 +11459,7 @@ class ws2cs_proto_cross_ladder_refresh_ticket_info : public ::google::protobuf::
   inline ::google::protobuf::int32 can_buy_ticket_num() const;
   inline void set_can_buy_ticket_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.cross_ladder_refresh_ticket_info)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.cross_ladder_refresh_ticket_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -11558,7 +11558,7 @@ class ws2cs_proto_cross_ladder_send_last_score : public ::google::protobuf::Mess
   inline ::google::protobuf::int32 last_ranking() const;
   inline void set_last_ranking(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.cross_ladder_send_last_score)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.cross_ladder_send_last_score)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -11660,7 +11660,7 @@ class ws2cs_proto_cross_server_world_boss_creat_boss : public ::google::protobuf
   inline ::google::protobuf::int64 from_map_guid() const;
   inline void set_from_map_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.cross_server_world_boss_creat_boss)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.cross_server_world_boss_creat_boss)
  private:
   inline void set_has_true_boss_level();
   inline void clear_has_true_boss_level();
@@ -11762,7 +11762,7 @@ class ws2cs_proto_check_time_limit_activity_common_data : public ::google::proto
   inline bool is_achieve() const;
   inline void set_is_achieve(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.check_time_limit_activity_common_data)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.check_time_limit_activity_common_data)
  private:
   inline void set_has_user_guid();
   inline void clear_has_user_guid();
@@ -11850,7 +11850,7 @@ class ws2cs_proto_set_time_limit_activity_pause_flag : public ::google::protobuf
   inline bool pause_flag() const;
   inline void set_pause_flag(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.set_time_limit_activity_pause_flag)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.set_time_limit_activity_pause_flag)
  private:
   inline void set_has_pause_flag();
   inline void clear_has_pause_flag();
@@ -11939,7 +11939,7 @@ class ws2cs_proto_end_act_type : public ::google::protobuf::Message {
   inline bool is_need_send_to_client() const;
   inline void set_is_need_send_to_client(bool value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.end_act_type)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.end_act_type)
  private:
   inline void set_has_act_type();
   inline void clear_has_act_type();
@@ -12017,16 +12017,16 @@ class ws2cs_proto_act_limit_temp : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.st_proto.st_time_limit_activity_temp_db temp_db_info = 1;
+  // repeated .faith.st_proto.st_time_limit_activity_temp_db temp_db_info = 1;
   inline int temp_db_info_size() const;
   inline void clear_temp_db_info();
   static const int kTempDbInfoFieldNumber = 1;
-  inline const ::hld::st_proto_st_time_limit_activity_temp_db& temp_db_info(int index) const;
-  inline ::hld::st_proto_st_time_limit_activity_temp_db* mutable_temp_db_info(int index);
-  inline ::hld::st_proto_st_time_limit_activity_temp_db* add_temp_db_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_time_limit_activity_temp_db >&
+  inline const ::faith::st_proto_st_time_limit_activity_temp_db& temp_db_info(int index) const;
+  inline ::faith::st_proto_st_time_limit_activity_temp_db* mutable_temp_db_info(int index);
+  inline ::faith::st_proto_st_time_limit_activity_temp_db* add_temp_db_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_time_limit_activity_temp_db >&
       temp_db_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_time_limit_activity_temp_db >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_time_limit_activity_temp_db >*
       mutable_temp_db_info();
 
   // optional bool is_begin = 2;
@@ -12043,7 +12043,7 @@ class ws2cs_proto_act_limit_temp : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 data_num() const;
   inline void set_data_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.act_limit_temp)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.act_limit_temp)
  private:
   inline void set_has_is_begin();
   inline void clear_has_is_begin();
@@ -12052,7 +12052,7 @@ class ws2cs_proto_act_limit_temp : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_time_limit_activity_temp_db > temp_db_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_time_limit_activity_temp_db > temp_db_info_;
   bool is_begin_;
   ::google::protobuf::int32 data_num_;
 
@@ -12122,16 +12122,16 @@ class ws2cs_proto_act_limit_branch_temp : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.st_proto.st_time_limit_activity_branch_temp_db temp_db_info = 1;
+  // repeated .faith.st_proto.st_time_limit_activity_branch_temp_db temp_db_info = 1;
   inline int temp_db_info_size() const;
   inline void clear_temp_db_info();
   static const int kTempDbInfoFieldNumber = 1;
-  inline const ::hld::st_proto_st_time_limit_activity_branch_temp_db& temp_db_info(int index) const;
-  inline ::hld::st_proto_st_time_limit_activity_branch_temp_db* mutable_temp_db_info(int index);
-  inline ::hld::st_proto_st_time_limit_activity_branch_temp_db* add_temp_db_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_time_limit_activity_branch_temp_db >&
+  inline const ::faith::st_proto_st_time_limit_activity_branch_temp_db& temp_db_info(int index) const;
+  inline ::faith::st_proto_st_time_limit_activity_branch_temp_db* mutable_temp_db_info(int index);
+  inline ::faith::st_proto_st_time_limit_activity_branch_temp_db* add_temp_db_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_time_limit_activity_branch_temp_db >&
       temp_db_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_time_limit_activity_branch_temp_db >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_time_limit_activity_branch_temp_db >*
       mutable_temp_db_info();
 
   // optional bool is_end = 2;
@@ -12148,7 +12148,7 @@ class ws2cs_proto_act_limit_branch_temp : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 data_num() const;
   inline void set_data_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.act_limit_branch_temp)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.act_limit_branch_temp)
  private:
   inline void set_has_is_end();
   inline void clear_has_is_end();
@@ -12157,7 +12157,7 @@ class ws2cs_proto_act_limit_branch_temp : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_time_limit_activity_branch_temp_db > temp_db_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_time_limit_activity_branch_temp_db > temp_db_info_;
   bool is_end_;
   ::google::protobuf::int32 data_num_;
 
@@ -12241,7 +12241,7 @@ class ws2cs_proto_send_bonfire_level : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 bonfire_level() const;
   inline void set_bonfire_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.send_bonfire_level)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.send_bonfire_level)
  private:
   inline void set_has_map_guid();
   inline void clear_has_map_guid();
@@ -12333,7 +12333,7 @@ class ws2cs_proto_set_legion_guid_to_map : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 legion_guid() const;
   inline void set_legion_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.set_legion_guid_to_map)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.set_legion_guid_to_map)
  private:
   inline void set_has_map_guid();
   inline void clear_has_map_guid();
@@ -12418,7 +12418,7 @@ class ws2cs_proto_transfer_this_map_all_player : public ::google::protobuf::Mess
   inline ::google::protobuf::int64 map_guid() const;
   inline void set_map_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.transfer_this_map_all_player)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.transfer_this_map_all_player)
  private:
   inline void set_has_map_guid();
   inline void clear_has_map_guid();
@@ -12500,16 +12500,16 @@ class ws2cs_proto_sync_assist_fight_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 role_guid() const;
   inline void set_role_guid(::google::protobuf::int64 value);
 
-  // optional .hld.st_proto.st_assist_fight_info m_assist_fight_info = 2;
+  // optional .faith.st_proto.st_assist_fight_info m_assist_fight_info = 2;
   inline bool has_m_assist_fight_info() const;
   inline void clear_m_assist_fight_info();
   static const int kMAssistFightInfoFieldNumber = 2;
-  inline const ::hld::st_proto_st_assist_fight_info& m_assist_fight_info() const;
-  inline ::hld::st_proto_st_assist_fight_info* mutable_m_assist_fight_info();
-  inline ::hld::st_proto_st_assist_fight_info* release_m_assist_fight_info();
-  inline void set_allocated_m_assist_fight_info(::hld::st_proto_st_assist_fight_info* m_assist_fight_info);
+  inline const ::faith::st_proto_st_assist_fight_info& m_assist_fight_info() const;
+  inline ::faith::st_proto_st_assist_fight_info* mutable_m_assist_fight_info();
+  inline ::faith::st_proto_st_assist_fight_info* release_m_assist_fight_info();
+  inline void set_allocated_m_assist_fight_info(::faith::st_proto_st_assist_fight_info* m_assist_fight_info);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.sync_assist_fight_info)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.sync_assist_fight_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -12519,7 +12519,7 @@ class ws2cs_proto_sync_assist_fight_info : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 role_guid_;
-  ::hld::st_proto_st_assist_fight_info* m_assist_fight_info_;
+  ::faith::st_proto_st_assist_fight_info* m_assist_fight_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -12613,7 +12613,7 @@ class ws2cs_proto_create_pk_king_combat_map_end : public ::google::protobuf::Mes
   inline ::google::protobuf::int32 map_num() const;
   inline void set_map_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.create_pk_king_combat_map_end)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.create_pk_king_combat_map_end)
  private:
   inline void set_has_map_guid();
   inline void clear_has_map_guid();
@@ -12699,16 +12699,16 @@ class ws2cs_proto_element_war_send_create_robot : public ::google::protobuf::Mes
   inline ::google::protobuf::int64 map_guid() const;
   inline void set_map_guid(::google::protobuf::int64 value);
 
-  // optional .hld.st_proto.st_element_war_match_info match_info = 2;
+  // optional .faith.st_proto.st_element_war_match_info match_info = 2;
   inline bool has_match_info() const;
   inline void clear_match_info();
   static const int kMatchInfoFieldNumber = 2;
-  inline const ::hld::st_proto_st_element_war_match_info& match_info() const;
-  inline ::hld::st_proto_st_element_war_match_info* mutable_match_info();
-  inline ::hld::st_proto_st_element_war_match_info* release_match_info();
-  inline void set_allocated_match_info(::hld::st_proto_st_element_war_match_info* match_info);
+  inline const ::faith::st_proto_st_element_war_match_info& match_info() const;
+  inline ::faith::st_proto_st_element_war_match_info* mutable_match_info();
+  inline ::faith::st_proto_st_element_war_match_info* release_match_info();
+  inline void set_allocated_match_info(::faith::st_proto_st_element_war_match_info* match_info);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.element_war_send_create_robot)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.element_war_send_create_robot)
  private:
   inline void set_has_map_guid();
   inline void clear_has_map_guid();
@@ -12718,7 +12718,7 @@ class ws2cs_proto_element_war_send_create_robot : public ::google::protobuf::Mes
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int64 map_guid_;
-  ::hld::st_proto_st_element_war_match_info* match_info_;
+  ::faith::st_proto_st_element_war_match_info* match_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
@@ -12814,7 +12814,7 @@ class ws2cs_proto_element_war_check_can_get_mission_reward_end : public ::google
   inline ::google::protobuf::int32 mission_id() const;
   inline void set_mission_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.element_war_check_can_get_mission_reward_end)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.element_war_check_can_get_mission_reward_end)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -12919,7 +12919,7 @@ class ws2cs_proto_element_war_send_last_score : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 last_ranking() const;
   inline void set_last_ranking(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto.element_war_send_last_score)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto.element_war_send_last_score)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -13126,7 +13126,7 @@ class ws2cs_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.ws2cs_proto)
+  // @@protoc_insertion_point(class_scope:faith.ws2cs_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -13870,7 +13870,7 @@ inline void ws2cs_proto_enter_game::set_war_index(::google::protobuf::int32 valu
   war_index_ = value;
 }
 
-// optional .hld.st_proto.st_login_fixed_data fixed_data = 12;
+// optional .faith.st_proto.st_login_fixed_data fixed_data = 12;
 inline bool ws2cs_proto_enter_game::has_fixed_data() const {
   return (_has_bits_[0] & 0x00000800u) != 0;
 }
@@ -13881,24 +13881,24 @@ inline void ws2cs_proto_enter_game::clear_has_fixed_data() {
   _has_bits_[0] &= ~0x00000800u;
 }
 inline void ws2cs_proto_enter_game::clear_fixed_data() {
-  if (fixed_data_ != NULL) fixed_data_->::hld::st_proto_st_login_fixed_data::Clear();
+  if (fixed_data_ != NULL) fixed_data_->::faith::st_proto_st_login_fixed_data::Clear();
   clear_has_fixed_data();
 }
-inline const ::hld::st_proto_st_login_fixed_data& ws2cs_proto_enter_game::fixed_data() const {
+inline const ::faith::st_proto_st_login_fixed_data& ws2cs_proto_enter_game::fixed_data() const {
   return fixed_data_ != NULL ? *fixed_data_ : *default_instance_->fixed_data_;
 }
-inline ::hld::st_proto_st_login_fixed_data* ws2cs_proto_enter_game::mutable_fixed_data() {
+inline ::faith::st_proto_st_login_fixed_data* ws2cs_proto_enter_game::mutable_fixed_data() {
   set_has_fixed_data();
-  if (fixed_data_ == NULL) fixed_data_ = new ::hld::st_proto_st_login_fixed_data;
+  if (fixed_data_ == NULL) fixed_data_ = new ::faith::st_proto_st_login_fixed_data;
   return fixed_data_;
 }
-inline ::hld::st_proto_st_login_fixed_data* ws2cs_proto_enter_game::release_fixed_data() {
+inline ::faith::st_proto_st_login_fixed_data* ws2cs_proto_enter_game::release_fixed_data() {
   clear_has_fixed_data();
-  ::hld::st_proto_st_login_fixed_data* temp = fixed_data_;
+  ::faith::st_proto_st_login_fixed_data* temp = fixed_data_;
   fixed_data_ = NULL;
   return temp;
 }
-inline void ws2cs_proto_enter_game::set_allocated_fixed_data(::hld::st_proto_st_login_fixed_data* fixed_data) {
+inline void ws2cs_proto_enter_game::set_allocated_fixed_data(::faith::st_proto_st_login_fixed_data* fixed_data) {
   delete fixed_data_;
   fixed_data_ = fixed_data;
   if (fixed_data) {
@@ -14135,7 +14135,7 @@ inline void ws2cs_proto_enter_game::set_allocated_couple_name(::std::string* cou
   }
 }
 
-// optional .hld.st_proto.st_player_team_info team_info = 21;
+// optional .faith.st_proto.st_player_team_info team_info = 21;
 inline bool ws2cs_proto_enter_game::has_team_info() const {
   return (_has_bits_[0] & 0x00100000u) != 0;
 }
@@ -14146,24 +14146,24 @@ inline void ws2cs_proto_enter_game::clear_has_team_info() {
   _has_bits_[0] &= ~0x00100000u;
 }
 inline void ws2cs_proto_enter_game::clear_team_info() {
-  if (team_info_ != NULL) team_info_->::hld::st_proto_st_player_team_info::Clear();
+  if (team_info_ != NULL) team_info_->::faith::st_proto_st_player_team_info::Clear();
   clear_has_team_info();
 }
-inline const ::hld::st_proto_st_player_team_info& ws2cs_proto_enter_game::team_info() const {
+inline const ::faith::st_proto_st_player_team_info& ws2cs_proto_enter_game::team_info() const {
   return team_info_ != NULL ? *team_info_ : *default_instance_->team_info_;
 }
-inline ::hld::st_proto_st_player_team_info* ws2cs_proto_enter_game::mutable_team_info() {
+inline ::faith::st_proto_st_player_team_info* ws2cs_proto_enter_game::mutable_team_info() {
   set_has_team_info();
-  if (team_info_ == NULL) team_info_ = new ::hld::st_proto_st_player_team_info;
+  if (team_info_ == NULL) team_info_ = new ::faith::st_proto_st_player_team_info;
   return team_info_;
 }
-inline ::hld::st_proto_st_player_team_info* ws2cs_proto_enter_game::release_team_info() {
+inline ::faith::st_proto_st_player_team_info* ws2cs_proto_enter_game::release_team_info() {
   clear_has_team_info();
-  ::hld::st_proto_st_player_team_info* temp = team_info_;
+  ::faith::st_proto_st_player_team_info* temp = team_info_;
   team_info_ = NULL;
   return temp;
 }
-inline void ws2cs_proto_enter_game::set_allocated_team_info(::hld::st_proto_st_player_team_info* team_info) {
+inline void ws2cs_proto_enter_game::set_allocated_team_info(::faith::st_proto_st_player_team_info* team_info) {
   delete team_info_;
   team_info_ = team_info;
   if (team_info) {
@@ -14173,7 +14173,7 @@ inline void ws2cs_proto_enter_game::set_allocated_team_info(::hld::st_proto_st_p
   }
 }
 
-// optional .hld.st_proto.st_player_legion_info legion_info = 22;
+// optional .faith.st_proto.st_player_legion_info legion_info = 22;
 inline bool ws2cs_proto_enter_game::has_legion_info() const {
   return (_has_bits_[0] & 0x00200000u) != 0;
 }
@@ -14184,24 +14184,24 @@ inline void ws2cs_proto_enter_game::clear_has_legion_info() {
   _has_bits_[0] &= ~0x00200000u;
 }
 inline void ws2cs_proto_enter_game::clear_legion_info() {
-  if (legion_info_ != NULL) legion_info_->::hld::st_proto_st_player_legion_info::Clear();
+  if (legion_info_ != NULL) legion_info_->::faith::st_proto_st_player_legion_info::Clear();
   clear_has_legion_info();
 }
-inline const ::hld::st_proto_st_player_legion_info& ws2cs_proto_enter_game::legion_info() const {
+inline const ::faith::st_proto_st_player_legion_info& ws2cs_proto_enter_game::legion_info() const {
   return legion_info_ != NULL ? *legion_info_ : *default_instance_->legion_info_;
 }
-inline ::hld::st_proto_st_player_legion_info* ws2cs_proto_enter_game::mutable_legion_info() {
+inline ::faith::st_proto_st_player_legion_info* ws2cs_proto_enter_game::mutable_legion_info() {
   set_has_legion_info();
-  if (legion_info_ == NULL) legion_info_ = new ::hld::st_proto_st_player_legion_info;
+  if (legion_info_ == NULL) legion_info_ = new ::faith::st_proto_st_player_legion_info;
   return legion_info_;
 }
-inline ::hld::st_proto_st_player_legion_info* ws2cs_proto_enter_game::release_legion_info() {
+inline ::faith::st_proto_st_player_legion_info* ws2cs_proto_enter_game::release_legion_info() {
   clear_has_legion_info();
-  ::hld::st_proto_st_player_legion_info* temp = legion_info_;
+  ::faith::st_proto_st_player_legion_info* temp = legion_info_;
   legion_info_ = NULL;
   return temp;
 }
-inline void ws2cs_proto_enter_game::set_allocated_legion_info(::hld::st_proto_st_player_legion_info* legion_info) {
+inline void ws2cs_proto_enter_game::set_allocated_legion_info(::faith::st_proto_st_player_legion_info* legion_info) {
   delete legion_info_;
   legion_info_ = legion_info;
   if (legion_info) {
@@ -14355,7 +14355,7 @@ inline void ws2cs_proto_enter_scene::set_cs_array_index(::google::protobuf::int3
 
 // ws2cs_proto_server_config
 
-// optional .hld.st_proto.st_game_info game_info = 1;
+// optional .faith.st_proto.st_game_info game_info = 1;
 inline bool ws2cs_proto_server_config::has_game_info() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -14366,24 +14366,24 @@ inline void ws2cs_proto_server_config::clear_has_game_info() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void ws2cs_proto_server_config::clear_game_info() {
-  if (game_info_ != NULL) game_info_->::hld::st_proto_st_game_info::Clear();
+  if (game_info_ != NULL) game_info_->::faith::st_proto_st_game_info::Clear();
   clear_has_game_info();
 }
-inline const ::hld::st_proto_st_game_info& ws2cs_proto_server_config::game_info() const {
+inline const ::faith::st_proto_st_game_info& ws2cs_proto_server_config::game_info() const {
   return game_info_ != NULL ? *game_info_ : *default_instance_->game_info_;
 }
-inline ::hld::st_proto_st_game_info* ws2cs_proto_server_config::mutable_game_info() {
+inline ::faith::st_proto_st_game_info* ws2cs_proto_server_config::mutable_game_info() {
   set_has_game_info();
-  if (game_info_ == NULL) game_info_ = new ::hld::st_proto_st_game_info;
+  if (game_info_ == NULL) game_info_ = new ::faith::st_proto_st_game_info;
   return game_info_;
 }
-inline ::hld::st_proto_st_game_info* ws2cs_proto_server_config::release_game_info() {
+inline ::faith::st_proto_st_game_info* ws2cs_proto_server_config::release_game_info() {
   clear_has_game_info();
-  ::hld::st_proto_st_game_info* temp = game_info_;
+  ::faith::st_proto_st_game_info* temp = game_info_;
   game_info_ = NULL;
   return temp;
 }
-inline void ws2cs_proto_server_config::set_allocated_game_info(::hld::st_proto_st_game_info* game_info) {
+inline void ws2cs_proto_server_config::set_allocated_game_info(::faith::st_proto_st_game_info* game_info) {
   delete game_info_;
   game_info_ = game_info;
   if (game_info) {
@@ -15490,7 +15490,7 @@ inline void ws2cs_proto_set_player_team_info::set_role_guid(::google::protobuf::
   role_guid_ = value;
 }
 
-// optional .hld.st_proto.st_player_team_info player_team_info = 2;
+// optional .faith.st_proto.st_player_team_info player_team_info = 2;
 inline bool ws2cs_proto_set_player_team_info::has_player_team_info() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -15501,24 +15501,24 @@ inline void ws2cs_proto_set_player_team_info::clear_has_player_team_info() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void ws2cs_proto_set_player_team_info::clear_player_team_info() {
-  if (player_team_info_ != NULL) player_team_info_->::hld::st_proto_st_player_team_info::Clear();
+  if (player_team_info_ != NULL) player_team_info_->::faith::st_proto_st_player_team_info::Clear();
   clear_has_player_team_info();
 }
-inline const ::hld::st_proto_st_player_team_info& ws2cs_proto_set_player_team_info::player_team_info() const {
+inline const ::faith::st_proto_st_player_team_info& ws2cs_proto_set_player_team_info::player_team_info() const {
   return player_team_info_ != NULL ? *player_team_info_ : *default_instance_->player_team_info_;
 }
-inline ::hld::st_proto_st_player_team_info* ws2cs_proto_set_player_team_info::mutable_player_team_info() {
+inline ::faith::st_proto_st_player_team_info* ws2cs_proto_set_player_team_info::mutable_player_team_info() {
   set_has_player_team_info();
-  if (player_team_info_ == NULL) player_team_info_ = new ::hld::st_proto_st_player_team_info;
+  if (player_team_info_ == NULL) player_team_info_ = new ::faith::st_proto_st_player_team_info;
   return player_team_info_;
 }
-inline ::hld::st_proto_st_player_team_info* ws2cs_proto_set_player_team_info::release_player_team_info() {
+inline ::faith::st_proto_st_player_team_info* ws2cs_proto_set_player_team_info::release_player_team_info() {
   clear_has_player_team_info();
-  ::hld::st_proto_st_player_team_info* temp = player_team_info_;
+  ::faith::st_proto_st_player_team_info* temp = player_team_info_;
   player_team_info_ = NULL;
   return temp;
 }
-inline void ws2cs_proto_set_player_team_info::set_allocated_player_team_info(::hld::st_proto_st_player_team_info* player_team_info) {
+inline void ws2cs_proto_set_player_team_info::set_allocated_player_team_info(::faith::st_proto_st_player_team_info* player_team_info) {
   delete player_team_info_;
   player_team_info_ = player_team_info;
   if (player_team_info) {
@@ -15812,7 +15812,7 @@ inline void ws2cs_proto_set_player_legion_info::set_role_guid(::google::protobuf
   role_guid_ = value;
 }
 
-// optional .hld.st_proto.st_player_legion_info player_legion_info = 2;
+// optional .faith.st_proto.st_player_legion_info player_legion_info = 2;
 inline bool ws2cs_proto_set_player_legion_info::has_player_legion_info() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -15823,24 +15823,24 @@ inline void ws2cs_proto_set_player_legion_info::clear_has_player_legion_info() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void ws2cs_proto_set_player_legion_info::clear_player_legion_info() {
-  if (player_legion_info_ != NULL) player_legion_info_->::hld::st_proto_st_player_legion_info::Clear();
+  if (player_legion_info_ != NULL) player_legion_info_->::faith::st_proto_st_player_legion_info::Clear();
   clear_has_player_legion_info();
 }
-inline const ::hld::st_proto_st_player_legion_info& ws2cs_proto_set_player_legion_info::player_legion_info() const {
+inline const ::faith::st_proto_st_player_legion_info& ws2cs_proto_set_player_legion_info::player_legion_info() const {
   return player_legion_info_ != NULL ? *player_legion_info_ : *default_instance_->player_legion_info_;
 }
-inline ::hld::st_proto_st_player_legion_info* ws2cs_proto_set_player_legion_info::mutable_player_legion_info() {
+inline ::faith::st_proto_st_player_legion_info* ws2cs_proto_set_player_legion_info::mutable_player_legion_info() {
   set_has_player_legion_info();
-  if (player_legion_info_ == NULL) player_legion_info_ = new ::hld::st_proto_st_player_legion_info;
+  if (player_legion_info_ == NULL) player_legion_info_ = new ::faith::st_proto_st_player_legion_info;
   return player_legion_info_;
 }
-inline ::hld::st_proto_st_player_legion_info* ws2cs_proto_set_player_legion_info::release_player_legion_info() {
+inline ::faith::st_proto_st_player_legion_info* ws2cs_proto_set_player_legion_info::release_player_legion_info() {
   clear_has_player_legion_info();
-  ::hld::st_proto_st_player_legion_info* temp = player_legion_info_;
+  ::faith::st_proto_st_player_legion_info* temp = player_legion_info_;
   player_legion_info_ = NULL;
   return temp;
 }
-inline void ws2cs_proto_set_player_legion_info::set_allocated_player_legion_info(::hld::st_proto_st_player_legion_info* player_legion_info) {
+inline void ws2cs_proto_set_player_legion_info::set_allocated_player_legion_info(::faith::st_proto_st_player_legion_info* player_legion_info) {
   delete player_legion_info_;
   player_legion_info_ = player_legion_info;
   if (player_legion_info) {
@@ -16038,7 +16038,7 @@ inline void ws2cs_proto_create_legion::set_auto_accept_new_member(bool value) {
   auto_accept_new_member_ = value;
 }
 
-// optional .hld.st_proto.st_legion_member_info chief_info = 5;
+// optional .faith.st_proto.st_legion_member_info chief_info = 5;
 inline bool ws2cs_proto_create_legion::has_chief_info() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
@@ -16049,24 +16049,24 @@ inline void ws2cs_proto_create_legion::clear_has_chief_info() {
   _has_bits_[0] &= ~0x00000010u;
 }
 inline void ws2cs_proto_create_legion::clear_chief_info() {
-  if (chief_info_ != NULL) chief_info_->::hld::st_proto_st_legion_member_info::Clear();
+  if (chief_info_ != NULL) chief_info_->::faith::st_proto_st_legion_member_info::Clear();
   clear_has_chief_info();
 }
-inline const ::hld::st_proto_st_legion_member_info& ws2cs_proto_create_legion::chief_info() const {
+inline const ::faith::st_proto_st_legion_member_info& ws2cs_proto_create_legion::chief_info() const {
   return chief_info_ != NULL ? *chief_info_ : *default_instance_->chief_info_;
 }
-inline ::hld::st_proto_st_legion_member_info* ws2cs_proto_create_legion::mutable_chief_info() {
+inline ::faith::st_proto_st_legion_member_info* ws2cs_proto_create_legion::mutable_chief_info() {
   set_has_chief_info();
-  if (chief_info_ == NULL) chief_info_ = new ::hld::st_proto_st_legion_member_info;
+  if (chief_info_ == NULL) chief_info_ = new ::faith::st_proto_st_legion_member_info;
   return chief_info_;
 }
-inline ::hld::st_proto_st_legion_member_info* ws2cs_proto_create_legion::release_chief_info() {
+inline ::faith::st_proto_st_legion_member_info* ws2cs_proto_create_legion::release_chief_info() {
   clear_has_chief_info();
-  ::hld::st_proto_st_legion_member_info* temp = chief_info_;
+  ::faith::st_proto_st_legion_member_info* temp = chief_info_;
   chief_info_ = NULL;
   return temp;
 }
-inline void ws2cs_proto_create_legion::set_allocated_chief_info(::hld::st_proto_st_legion_member_info* chief_info) {
+inline void ws2cs_proto_create_legion::set_allocated_chief_info(::faith::st_proto_st_legion_member_info* chief_info) {
   delete chief_info_;
   chief_info_ = chief_info;
   if (chief_info) {
@@ -16316,7 +16316,7 @@ inline void ws2cs_proto_get_legion_boss_award::set_boss_map_id(::google::protobu
 
 // ws2cs_proto_set_get_legion_boss_award_log
 
-// optional .hld.st_proto.st_legion_boss_award_get_log legion_boss_award_get_log = 1;
+// optional .faith.st_proto.st_legion_boss_award_get_log legion_boss_award_get_log = 1;
 inline bool ws2cs_proto_set_get_legion_boss_award_log::has_legion_boss_award_get_log() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -16327,24 +16327,24 @@ inline void ws2cs_proto_set_get_legion_boss_award_log::clear_has_legion_boss_awa
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void ws2cs_proto_set_get_legion_boss_award_log::clear_legion_boss_award_get_log() {
-  if (legion_boss_award_get_log_ != NULL) legion_boss_award_get_log_->::hld::st_proto_st_legion_boss_award_get_log::Clear();
+  if (legion_boss_award_get_log_ != NULL) legion_boss_award_get_log_->::faith::st_proto_st_legion_boss_award_get_log::Clear();
   clear_has_legion_boss_award_get_log();
 }
-inline const ::hld::st_proto_st_legion_boss_award_get_log& ws2cs_proto_set_get_legion_boss_award_log::legion_boss_award_get_log() const {
+inline const ::faith::st_proto_st_legion_boss_award_get_log& ws2cs_proto_set_get_legion_boss_award_log::legion_boss_award_get_log() const {
   return legion_boss_award_get_log_ != NULL ? *legion_boss_award_get_log_ : *default_instance_->legion_boss_award_get_log_;
 }
-inline ::hld::st_proto_st_legion_boss_award_get_log* ws2cs_proto_set_get_legion_boss_award_log::mutable_legion_boss_award_get_log() {
+inline ::faith::st_proto_st_legion_boss_award_get_log* ws2cs_proto_set_get_legion_boss_award_log::mutable_legion_boss_award_get_log() {
   set_has_legion_boss_award_get_log();
-  if (legion_boss_award_get_log_ == NULL) legion_boss_award_get_log_ = new ::hld::st_proto_st_legion_boss_award_get_log;
+  if (legion_boss_award_get_log_ == NULL) legion_boss_award_get_log_ = new ::faith::st_proto_st_legion_boss_award_get_log;
   return legion_boss_award_get_log_;
 }
-inline ::hld::st_proto_st_legion_boss_award_get_log* ws2cs_proto_set_get_legion_boss_award_log::release_legion_boss_award_get_log() {
+inline ::faith::st_proto_st_legion_boss_award_get_log* ws2cs_proto_set_get_legion_boss_award_log::release_legion_boss_award_get_log() {
   clear_has_legion_boss_award_get_log();
-  ::hld::st_proto_st_legion_boss_award_get_log* temp = legion_boss_award_get_log_;
+  ::faith::st_proto_st_legion_boss_award_get_log* temp = legion_boss_award_get_log_;
   legion_boss_award_get_log_ = NULL;
   return temp;
 }
-inline void ws2cs_proto_set_get_legion_boss_award_log::set_allocated_legion_boss_award_get_log(::hld::st_proto_st_legion_boss_award_get_log* legion_boss_award_get_log) {
+inline void ws2cs_proto_set_get_legion_boss_award_log::set_allocated_legion_boss_award_get_log(::faith::st_proto_st_legion_boss_award_get_log* legion_boss_award_get_log) {
   delete legion_boss_award_get_log_;
   legion_boss_award_get_log_ = legion_boss_award_get_log;
   if (legion_boss_award_get_log) {
@@ -16856,27 +16856,27 @@ inline void ws2cs_proto_begin_city_war::set_cur_terr_id(::google::protobuf::int3
   cur_terr_id_ = value;
 }
 
-// repeated .hld.st_proto.st_city_war_legion_score join_war_legions = 3;
+// repeated .faith.st_proto.st_city_war_legion_score join_war_legions = 3;
 inline int ws2cs_proto_begin_city_war::join_war_legions_size() const {
   return join_war_legions_.size();
 }
 inline void ws2cs_proto_begin_city_war::clear_join_war_legions() {
   join_war_legions_.Clear();
 }
-inline const ::hld::st_proto_st_city_war_legion_score& ws2cs_proto_begin_city_war::join_war_legions(int index) const {
+inline const ::faith::st_proto_st_city_war_legion_score& ws2cs_proto_begin_city_war::join_war_legions(int index) const {
   return join_war_legions_.Get(index);
 }
-inline ::hld::st_proto_st_city_war_legion_score* ws2cs_proto_begin_city_war::mutable_join_war_legions(int index) {
+inline ::faith::st_proto_st_city_war_legion_score* ws2cs_proto_begin_city_war::mutable_join_war_legions(int index) {
   return join_war_legions_.Mutable(index);
 }
-inline ::hld::st_proto_st_city_war_legion_score* ws2cs_proto_begin_city_war::add_join_war_legions() {
+inline ::faith::st_proto_st_city_war_legion_score* ws2cs_proto_begin_city_war::add_join_war_legions() {
   return join_war_legions_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_city_war_legion_score >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_city_war_legion_score >&
 ws2cs_proto_begin_city_war::join_war_legions() const {
   return join_war_legions_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_city_war_legion_score >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_city_war_legion_score >*
 ws2cs_proto_begin_city_war::mutable_join_war_legions() {
   return &join_war_legions_;
 }
@@ -17819,27 +17819,27 @@ inline void ws2cs_proto_req_choose_list::set_role_guid(::google::protobuf::int64
   role_guid_ = value;
 }
 
-// repeated .hld.st_proto.st_player_arena_rank target_player = 2;
+// repeated .faith.st_proto.st_player_arena_rank target_player = 2;
 inline int ws2cs_proto_req_choose_list::target_player_size() const {
   return target_player_.size();
 }
 inline void ws2cs_proto_req_choose_list::clear_target_player() {
   target_player_.Clear();
 }
-inline const ::hld::st_proto_st_player_arena_rank& ws2cs_proto_req_choose_list::target_player(int index) const {
+inline const ::faith::st_proto_st_player_arena_rank& ws2cs_proto_req_choose_list::target_player(int index) const {
   return target_player_.Get(index);
 }
-inline ::hld::st_proto_st_player_arena_rank* ws2cs_proto_req_choose_list::mutable_target_player(int index) {
+inline ::faith::st_proto_st_player_arena_rank* ws2cs_proto_req_choose_list::mutable_target_player(int index) {
   return target_player_.Mutable(index);
 }
-inline ::hld::st_proto_st_player_arena_rank* ws2cs_proto_req_choose_list::add_target_player() {
+inline ::faith::st_proto_st_player_arena_rank* ws2cs_proto_req_choose_list::add_target_player() {
   return target_player_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_player_arena_rank >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_player_arena_rank >&
 ws2cs_proto_req_choose_list::target_player() const {
   return target_player_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_player_arena_rank >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_player_arena_rank >*
 ws2cs_proto_req_choose_list::mutable_target_player() {
   return &target_player_;
 }
@@ -19060,32 +19060,32 @@ inline void ws2cs_proto_send_mail::set_client_uid(::google::protobuf::int64 valu
   client_uid_ = value;
 }
 
-// repeated .hld.db_proto.item_info_db item_list = 2;
+// repeated .faith.db_proto.item_info_db item_list = 2;
 inline int ws2cs_proto_send_mail::item_list_size() const {
   return item_list_.size();
 }
 inline void ws2cs_proto_send_mail::clear_item_list() {
   item_list_.Clear();
 }
-inline const ::hld::db_proto_item_info_db& ws2cs_proto_send_mail::item_list(int index) const {
+inline const ::faith::db_proto_item_info_db& ws2cs_proto_send_mail::item_list(int index) const {
   return item_list_.Get(index);
 }
-inline ::hld::db_proto_item_info_db* ws2cs_proto_send_mail::mutable_item_list(int index) {
+inline ::faith::db_proto_item_info_db* ws2cs_proto_send_mail::mutable_item_list(int index) {
   return item_list_.Mutable(index);
 }
-inline ::hld::db_proto_item_info_db* ws2cs_proto_send_mail::add_item_list() {
+inline ::faith::db_proto_item_info_db* ws2cs_proto_send_mail::add_item_list() {
   return item_list_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::db_proto_item_info_db >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::db_proto_item_info_db >&
 ws2cs_proto_send_mail::item_list() const {
   return item_list_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::db_proto_item_info_db >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::db_proto_item_info_db >*
 ws2cs_proto_send_mail::mutable_item_list() {
   return &item_list_;
 }
 
-// optional .hld.db_proto.role_mail_row mail_info = 3;
+// optional .faith.db_proto.role_mail_row mail_info = 3;
 inline bool ws2cs_proto_send_mail::has_mail_info() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -19096,24 +19096,24 @@ inline void ws2cs_proto_send_mail::clear_has_mail_info() {
   _has_bits_[0] &= ~0x00000004u;
 }
 inline void ws2cs_proto_send_mail::clear_mail_info() {
-  if (mail_info_ != NULL) mail_info_->::hld::db_proto_role_mail_row::Clear();
+  if (mail_info_ != NULL) mail_info_->::faith::db_proto_role_mail_row::Clear();
   clear_has_mail_info();
 }
-inline const ::hld::db_proto_role_mail_row& ws2cs_proto_send_mail::mail_info() const {
+inline const ::faith::db_proto_role_mail_row& ws2cs_proto_send_mail::mail_info() const {
   return mail_info_ != NULL ? *mail_info_ : *default_instance_->mail_info_;
 }
-inline ::hld::db_proto_role_mail_row* ws2cs_proto_send_mail::mutable_mail_info() {
+inline ::faith::db_proto_role_mail_row* ws2cs_proto_send_mail::mutable_mail_info() {
   set_has_mail_info();
-  if (mail_info_ == NULL) mail_info_ = new ::hld::db_proto_role_mail_row;
+  if (mail_info_ == NULL) mail_info_ = new ::faith::db_proto_role_mail_row;
   return mail_info_;
 }
-inline ::hld::db_proto_role_mail_row* ws2cs_proto_send_mail::release_mail_info() {
+inline ::faith::db_proto_role_mail_row* ws2cs_proto_send_mail::release_mail_info() {
   clear_has_mail_info();
-  ::hld::db_proto_role_mail_row* temp = mail_info_;
+  ::faith::db_proto_role_mail_row* temp = mail_info_;
   mail_info_ = NULL;
   return temp;
 }
-inline void ws2cs_proto_send_mail::set_allocated_mail_info(::hld::db_proto_role_mail_row* mail_info) {
+inline void ws2cs_proto_send_mail::set_allocated_mail_info(::faith::db_proto_role_mail_row* mail_info) {
   delete mail_info_;
   mail_info_ = mail_info;
   if (mail_info) {
@@ -19376,27 +19376,27 @@ inline void ws2cs_proto_receive_notice::set_create_time(::google::protobuf::int3
   create_time_ = value;
 }
 
-// repeated .hld.db_proto.item_info_db data_ary = 6;
+// repeated .faith.db_proto.item_info_db data_ary = 6;
 inline int ws2cs_proto_receive_notice::data_ary_size() const {
   return data_ary_.size();
 }
 inline void ws2cs_proto_receive_notice::clear_data_ary() {
   data_ary_.Clear();
 }
-inline const ::hld::db_proto_item_info_db& ws2cs_proto_receive_notice::data_ary(int index) const {
+inline const ::faith::db_proto_item_info_db& ws2cs_proto_receive_notice::data_ary(int index) const {
   return data_ary_.Get(index);
 }
-inline ::hld::db_proto_item_info_db* ws2cs_proto_receive_notice::mutable_data_ary(int index) {
+inline ::faith::db_proto_item_info_db* ws2cs_proto_receive_notice::mutable_data_ary(int index) {
   return data_ary_.Mutable(index);
 }
-inline ::hld::db_proto_item_info_db* ws2cs_proto_receive_notice::add_data_ary() {
+inline ::faith::db_proto_item_info_db* ws2cs_proto_receive_notice::add_data_ary() {
   return data_ary_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::db_proto_item_info_db >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::db_proto_item_info_db >&
 ws2cs_proto_receive_notice::data_ary() const {
   return data_ary_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::db_proto_item_info_db >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::db_proto_item_info_db >*
 ws2cs_proto_receive_notice::mutable_data_ary() {
   return &data_ary_;
 }
@@ -19619,7 +19619,7 @@ inline void ws2cs_proto_create_first_kill_prize::set_first_kill_welfare_template
 
 // ws2cs_proto_create_big_player_statue
 
-// optional .hld.st_proto.st_fake_player_info big_player_info = 1;
+// optional .faith.st_proto.st_fake_player_info big_player_info = 1;
 inline bool ws2cs_proto_create_big_player_statue::has_big_player_info() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -19630,24 +19630,24 @@ inline void ws2cs_proto_create_big_player_statue::clear_has_big_player_info() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void ws2cs_proto_create_big_player_statue::clear_big_player_info() {
-  if (big_player_info_ != NULL) big_player_info_->::hld::st_proto_st_fake_player_info::Clear();
+  if (big_player_info_ != NULL) big_player_info_->::faith::st_proto_st_fake_player_info::Clear();
   clear_has_big_player_info();
 }
-inline const ::hld::st_proto_st_fake_player_info& ws2cs_proto_create_big_player_statue::big_player_info() const {
+inline const ::faith::st_proto_st_fake_player_info& ws2cs_proto_create_big_player_statue::big_player_info() const {
   return big_player_info_ != NULL ? *big_player_info_ : *default_instance_->big_player_info_;
 }
-inline ::hld::st_proto_st_fake_player_info* ws2cs_proto_create_big_player_statue::mutable_big_player_info() {
+inline ::faith::st_proto_st_fake_player_info* ws2cs_proto_create_big_player_statue::mutable_big_player_info() {
   set_has_big_player_info();
-  if (big_player_info_ == NULL) big_player_info_ = new ::hld::st_proto_st_fake_player_info;
+  if (big_player_info_ == NULL) big_player_info_ = new ::faith::st_proto_st_fake_player_info;
   return big_player_info_;
 }
-inline ::hld::st_proto_st_fake_player_info* ws2cs_proto_create_big_player_statue::release_big_player_info() {
+inline ::faith::st_proto_st_fake_player_info* ws2cs_proto_create_big_player_statue::release_big_player_info() {
   clear_has_big_player_info();
-  ::hld::st_proto_st_fake_player_info* temp = big_player_info_;
+  ::faith::st_proto_st_fake_player_info* temp = big_player_info_;
   big_player_info_ = NULL;
   return temp;
 }
-inline void ws2cs_proto_create_big_player_statue::set_allocated_big_player_info(::hld::st_proto_st_fake_player_info* big_player_info) {
+inline void ws2cs_proto_create_big_player_statue::set_allocated_big_player_info(::faith::st_proto_st_fake_player_info* big_player_info) {
   delete big_player_info_;
   big_player_info_ = big_player_info;
   if (big_player_info) {
@@ -20577,7 +20577,7 @@ inline void ws2cs_proto_auction_purchase_success::set_role_guid(::google::protob
   role_guid_ = value;
 }
 
-// optional .hld.st_proto.st_auction_info auction_info = 2;
+// optional .faith.st_proto.st_auction_info auction_info = 2;
 inline bool ws2cs_proto_auction_purchase_success::has_auction_info() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -20588,24 +20588,24 @@ inline void ws2cs_proto_auction_purchase_success::clear_has_auction_info() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void ws2cs_proto_auction_purchase_success::clear_auction_info() {
-  if (auction_info_ != NULL) auction_info_->::hld::st_proto_st_auction_info::Clear();
+  if (auction_info_ != NULL) auction_info_->::faith::st_proto_st_auction_info::Clear();
   clear_has_auction_info();
 }
-inline const ::hld::st_proto_st_auction_info& ws2cs_proto_auction_purchase_success::auction_info() const {
+inline const ::faith::st_proto_st_auction_info& ws2cs_proto_auction_purchase_success::auction_info() const {
   return auction_info_ != NULL ? *auction_info_ : *default_instance_->auction_info_;
 }
-inline ::hld::st_proto_st_auction_info* ws2cs_proto_auction_purchase_success::mutable_auction_info() {
+inline ::faith::st_proto_st_auction_info* ws2cs_proto_auction_purchase_success::mutable_auction_info() {
   set_has_auction_info();
-  if (auction_info_ == NULL) auction_info_ = new ::hld::st_proto_st_auction_info;
+  if (auction_info_ == NULL) auction_info_ = new ::faith::st_proto_st_auction_info;
   return auction_info_;
 }
-inline ::hld::st_proto_st_auction_info* ws2cs_proto_auction_purchase_success::release_auction_info() {
+inline ::faith::st_proto_st_auction_info* ws2cs_proto_auction_purchase_success::release_auction_info() {
   clear_has_auction_info();
-  ::hld::st_proto_st_auction_info* temp = auction_info_;
+  ::faith::st_proto_st_auction_info* temp = auction_info_;
   auction_info_ = NULL;
   return temp;
 }
-inline void ws2cs_proto_auction_purchase_success::set_allocated_auction_info(::hld::st_proto_st_auction_info* auction_info) {
+inline void ws2cs_proto_auction_purchase_success::set_allocated_auction_info(::faith::st_proto_st_auction_info* auction_info) {
   delete auction_info_;
   auction_info_ = auction_info;
   if (auction_info) {
@@ -20619,7 +20619,7 @@ inline void ws2cs_proto_auction_purchase_success::set_allocated_auction_info(::h
 
 // ws2cs_proto_auction_send_sell_success_info
 
-// optional .hld.st_proto.st_auction_info auction_info = 1;
+// optional .faith.st_proto.st_auction_info auction_info = 1;
 inline bool ws2cs_proto_auction_send_sell_success_info::has_auction_info() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -20630,24 +20630,24 @@ inline void ws2cs_proto_auction_send_sell_success_info::clear_has_auction_info()
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void ws2cs_proto_auction_send_sell_success_info::clear_auction_info() {
-  if (auction_info_ != NULL) auction_info_->::hld::st_proto_st_auction_info::Clear();
+  if (auction_info_ != NULL) auction_info_->::faith::st_proto_st_auction_info::Clear();
   clear_has_auction_info();
 }
-inline const ::hld::st_proto_st_auction_info& ws2cs_proto_auction_send_sell_success_info::auction_info() const {
+inline const ::faith::st_proto_st_auction_info& ws2cs_proto_auction_send_sell_success_info::auction_info() const {
   return auction_info_ != NULL ? *auction_info_ : *default_instance_->auction_info_;
 }
-inline ::hld::st_proto_st_auction_info* ws2cs_proto_auction_send_sell_success_info::mutable_auction_info() {
+inline ::faith::st_proto_st_auction_info* ws2cs_proto_auction_send_sell_success_info::mutable_auction_info() {
   set_has_auction_info();
-  if (auction_info_ == NULL) auction_info_ = new ::hld::st_proto_st_auction_info;
+  if (auction_info_ == NULL) auction_info_ = new ::faith::st_proto_st_auction_info;
   return auction_info_;
 }
-inline ::hld::st_proto_st_auction_info* ws2cs_proto_auction_send_sell_success_info::release_auction_info() {
+inline ::faith::st_proto_st_auction_info* ws2cs_proto_auction_send_sell_success_info::release_auction_info() {
   clear_has_auction_info();
-  ::hld::st_proto_st_auction_info* temp = auction_info_;
+  ::faith::st_proto_st_auction_info* temp = auction_info_;
   auction_info_ = NULL;
   return temp;
 }
-inline void ws2cs_proto_auction_send_sell_success_info::set_allocated_auction_info(::hld::st_proto_st_auction_info* auction_info) {
+inline void ws2cs_proto_auction_send_sell_success_info::set_allocated_auction_info(::faith::st_proto_st_auction_info* auction_info) {
   delete auction_info_;
   auction_info_ = auction_info;
   if (auction_info) {
@@ -20683,7 +20683,7 @@ inline void ws2cs_proto_auction_cancel_sell::set_role_guid(::google::protobuf::i
   role_guid_ = value;
 }
 
-// optional .hld.st_proto.st_auction_info auction_info = 2;
+// optional .faith.st_proto.st_auction_info auction_info = 2;
 inline bool ws2cs_proto_auction_cancel_sell::has_auction_info() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -20694,24 +20694,24 @@ inline void ws2cs_proto_auction_cancel_sell::clear_has_auction_info() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void ws2cs_proto_auction_cancel_sell::clear_auction_info() {
-  if (auction_info_ != NULL) auction_info_->::hld::st_proto_st_auction_info::Clear();
+  if (auction_info_ != NULL) auction_info_->::faith::st_proto_st_auction_info::Clear();
   clear_has_auction_info();
 }
-inline const ::hld::st_proto_st_auction_info& ws2cs_proto_auction_cancel_sell::auction_info() const {
+inline const ::faith::st_proto_st_auction_info& ws2cs_proto_auction_cancel_sell::auction_info() const {
   return auction_info_ != NULL ? *auction_info_ : *default_instance_->auction_info_;
 }
-inline ::hld::st_proto_st_auction_info* ws2cs_proto_auction_cancel_sell::mutable_auction_info() {
+inline ::faith::st_proto_st_auction_info* ws2cs_proto_auction_cancel_sell::mutable_auction_info() {
   set_has_auction_info();
-  if (auction_info_ == NULL) auction_info_ = new ::hld::st_proto_st_auction_info;
+  if (auction_info_ == NULL) auction_info_ = new ::faith::st_proto_st_auction_info;
   return auction_info_;
 }
-inline ::hld::st_proto_st_auction_info* ws2cs_proto_auction_cancel_sell::release_auction_info() {
+inline ::faith::st_proto_st_auction_info* ws2cs_proto_auction_cancel_sell::release_auction_info() {
   clear_has_auction_info();
-  ::hld::st_proto_st_auction_info* temp = auction_info_;
+  ::faith::st_proto_st_auction_info* temp = auction_info_;
   auction_info_ = NULL;
   return temp;
 }
-inline void ws2cs_proto_auction_cancel_sell::set_allocated_auction_info(::hld::st_proto_st_auction_info* auction_info) {
+inline void ws2cs_proto_auction_cancel_sell::set_allocated_auction_info(::faith::st_proto_st_auction_info* auction_info) {
   delete auction_info_;
   auction_info_ = auction_info;
   if (auction_info) {
@@ -20747,7 +20747,7 @@ inline void ws2cs_proto_auction_sell_end::set_operate_result(::google::protobuf:
   operate_result_ = value;
 }
 
-// optional .hld.st_proto.st_auction_info info = 2;
+// optional .faith.st_proto.st_auction_info info = 2;
 inline bool ws2cs_proto_auction_sell_end::has_info() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -20758,24 +20758,24 @@ inline void ws2cs_proto_auction_sell_end::clear_has_info() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void ws2cs_proto_auction_sell_end::clear_info() {
-  if (info_ != NULL) info_->::hld::st_proto_st_auction_info::Clear();
+  if (info_ != NULL) info_->::faith::st_proto_st_auction_info::Clear();
   clear_has_info();
 }
-inline const ::hld::st_proto_st_auction_info& ws2cs_proto_auction_sell_end::info() const {
+inline const ::faith::st_proto_st_auction_info& ws2cs_proto_auction_sell_end::info() const {
   return info_ != NULL ? *info_ : *default_instance_->info_;
 }
-inline ::hld::st_proto_st_auction_info* ws2cs_proto_auction_sell_end::mutable_info() {
+inline ::faith::st_proto_st_auction_info* ws2cs_proto_auction_sell_end::mutable_info() {
   set_has_info();
-  if (info_ == NULL) info_ = new ::hld::st_proto_st_auction_info;
+  if (info_ == NULL) info_ = new ::faith::st_proto_st_auction_info;
   return info_;
 }
-inline ::hld::st_proto_st_auction_info* ws2cs_proto_auction_sell_end::release_info() {
+inline ::faith::st_proto_st_auction_info* ws2cs_proto_auction_sell_end::release_info() {
   clear_has_info();
-  ::hld::st_proto_st_auction_info* temp = info_;
+  ::faith::st_proto_st_auction_info* temp = info_;
   info_ = NULL;
   return temp;
 }
-inline void ws2cs_proto_auction_sell_end::set_allocated_info(::hld::st_proto_st_auction_info* info) {
+inline void ws2cs_proto_auction_sell_end::set_allocated_info(::faith::st_proto_st_auction_info* info) {
   delete info_;
   info_ = info;
   if (info) {
@@ -20811,7 +20811,7 @@ inline void ws2cs_proto_auction_time_out_del::set_role_guid(::google::protobuf::
   role_guid_ = value;
 }
 
-// optional .hld.st_proto.st_auction_info auction_info = 2;
+// optional .faith.st_proto.st_auction_info auction_info = 2;
 inline bool ws2cs_proto_auction_time_out_del::has_auction_info() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -20822,24 +20822,24 @@ inline void ws2cs_proto_auction_time_out_del::clear_has_auction_info() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void ws2cs_proto_auction_time_out_del::clear_auction_info() {
-  if (auction_info_ != NULL) auction_info_->::hld::st_proto_st_auction_info::Clear();
+  if (auction_info_ != NULL) auction_info_->::faith::st_proto_st_auction_info::Clear();
   clear_has_auction_info();
 }
-inline const ::hld::st_proto_st_auction_info& ws2cs_proto_auction_time_out_del::auction_info() const {
+inline const ::faith::st_proto_st_auction_info& ws2cs_proto_auction_time_out_del::auction_info() const {
   return auction_info_ != NULL ? *auction_info_ : *default_instance_->auction_info_;
 }
-inline ::hld::st_proto_st_auction_info* ws2cs_proto_auction_time_out_del::mutable_auction_info() {
+inline ::faith::st_proto_st_auction_info* ws2cs_proto_auction_time_out_del::mutable_auction_info() {
   set_has_auction_info();
-  if (auction_info_ == NULL) auction_info_ = new ::hld::st_proto_st_auction_info;
+  if (auction_info_ == NULL) auction_info_ = new ::faith::st_proto_st_auction_info;
   return auction_info_;
 }
-inline ::hld::st_proto_st_auction_info* ws2cs_proto_auction_time_out_del::release_auction_info() {
+inline ::faith::st_proto_st_auction_info* ws2cs_proto_auction_time_out_del::release_auction_info() {
   clear_has_auction_info();
-  ::hld::st_proto_st_auction_info* temp = auction_info_;
+  ::faith::st_proto_st_auction_info* temp = auction_info_;
   auction_info_ = NULL;
   return temp;
 }
-inline void ws2cs_proto_auction_time_out_del::set_allocated_auction_info(::hld::st_proto_st_auction_info* auction_info) {
+inline void ws2cs_proto_auction_time_out_del::set_allocated_auction_info(::faith::st_proto_st_auction_info* auction_info) {
   delete auction_info_;
   auction_info_ = auction_info;
   if (auction_info) {
@@ -20875,7 +20875,7 @@ inline void ws2cs_proto_auction_find_bid_target_end::set_role_guid(::google::pro
   role_guid_ = value;
 }
 
-// optional .hld.st_proto.st_auction_info auction_info = 2;
+// optional .faith.st_proto.st_auction_info auction_info = 2;
 inline bool ws2cs_proto_auction_find_bid_target_end::has_auction_info() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -20886,24 +20886,24 @@ inline void ws2cs_proto_auction_find_bid_target_end::clear_has_auction_info() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void ws2cs_proto_auction_find_bid_target_end::clear_auction_info() {
-  if (auction_info_ != NULL) auction_info_->::hld::st_proto_st_auction_info::Clear();
+  if (auction_info_ != NULL) auction_info_->::faith::st_proto_st_auction_info::Clear();
   clear_has_auction_info();
 }
-inline const ::hld::st_proto_st_auction_info& ws2cs_proto_auction_find_bid_target_end::auction_info() const {
+inline const ::faith::st_proto_st_auction_info& ws2cs_proto_auction_find_bid_target_end::auction_info() const {
   return auction_info_ != NULL ? *auction_info_ : *default_instance_->auction_info_;
 }
-inline ::hld::st_proto_st_auction_info* ws2cs_proto_auction_find_bid_target_end::mutable_auction_info() {
+inline ::faith::st_proto_st_auction_info* ws2cs_proto_auction_find_bid_target_end::mutable_auction_info() {
   set_has_auction_info();
-  if (auction_info_ == NULL) auction_info_ = new ::hld::st_proto_st_auction_info;
+  if (auction_info_ == NULL) auction_info_ = new ::faith::st_proto_st_auction_info;
   return auction_info_;
 }
-inline ::hld::st_proto_st_auction_info* ws2cs_proto_auction_find_bid_target_end::release_auction_info() {
+inline ::faith::st_proto_st_auction_info* ws2cs_proto_auction_find_bid_target_end::release_auction_info() {
   clear_has_auction_info();
-  ::hld::st_proto_st_auction_info* temp = auction_info_;
+  ::faith::st_proto_st_auction_info* temp = auction_info_;
   auction_info_ = NULL;
   return temp;
 }
-inline void ws2cs_proto_auction_find_bid_target_end::set_allocated_auction_info(::hld::st_proto_st_auction_info* auction_info) {
+inline void ws2cs_proto_auction_find_bid_target_end::set_allocated_auction_info(::faith::st_proto_st_auction_info* auction_info) {
   delete auction_info_;
   auction_info_ = auction_info;
   if (auction_info) {
@@ -21365,27 +21365,27 @@ inline void ws2cs_proto_modify_money::set_money_value(::google::protobuf::int64 
 
 // ws2cs_proto_send_cur_server_harry_msg
 
-// repeated .hld.st_proto.st_server_harry_msg server_harry_msg = 1;
+// repeated .faith.st_proto.st_server_harry_msg server_harry_msg = 1;
 inline int ws2cs_proto_send_cur_server_harry_msg::server_harry_msg_size() const {
   return server_harry_msg_.size();
 }
 inline void ws2cs_proto_send_cur_server_harry_msg::clear_server_harry_msg() {
   server_harry_msg_.Clear();
 }
-inline const ::hld::st_proto_st_server_harry_msg& ws2cs_proto_send_cur_server_harry_msg::server_harry_msg(int index) const {
+inline const ::faith::st_proto_st_server_harry_msg& ws2cs_proto_send_cur_server_harry_msg::server_harry_msg(int index) const {
   return server_harry_msg_.Get(index);
 }
-inline ::hld::st_proto_st_server_harry_msg* ws2cs_proto_send_cur_server_harry_msg::mutable_server_harry_msg(int index) {
+inline ::faith::st_proto_st_server_harry_msg* ws2cs_proto_send_cur_server_harry_msg::mutable_server_harry_msg(int index) {
   return server_harry_msg_.Mutable(index);
 }
-inline ::hld::st_proto_st_server_harry_msg* ws2cs_proto_send_cur_server_harry_msg::add_server_harry_msg() {
+inline ::faith::st_proto_st_server_harry_msg* ws2cs_proto_send_cur_server_harry_msg::add_server_harry_msg() {
   return server_harry_msg_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_server_harry_msg >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_server_harry_msg >&
 ws2cs_proto_send_cur_server_harry_msg::server_harry_msg() const {
   return server_harry_msg_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_server_harry_msg >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_server_harry_msg >*
 ws2cs_proto_send_cur_server_harry_msg::mutable_server_harry_msg() {
   return &server_harry_msg_;
 }
@@ -21420,7 +21420,7 @@ inline void ws2cs_proto_send_create_normal_player::set_crate_num(::google::proto
 
 // ws2cs_proto_create_harry_player_statue
 
-// optional .hld.st_proto.st_fake_player_info big_player_info = 1;
+// optional .faith.st_proto.st_fake_player_info big_player_info = 1;
 inline bool ws2cs_proto_create_harry_player_statue::has_big_player_info() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -21431,24 +21431,24 @@ inline void ws2cs_proto_create_harry_player_statue::clear_has_big_player_info() 
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void ws2cs_proto_create_harry_player_statue::clear_big_player_info() {
-  if (big_player_info_ != NULL) big_player_info_->::hld::st_proto_st_fake_player_info::Clear();
+  if (big_player_info_ != NULL) big_player_info_->::faith::st_proto_st_fake_player_info::Clear();
   clear_has_big_player_info();
 }
-inline const ::hld::st_proto_st_fake_player_info& ws2cs_proto_create_harry_player_statue::big_player_info() const {
+inline const ::faith::st_proto_st_fake_player_info& ws2cs_proto_create_harry_player_statue::big_player_info() const {
   return big_player_info_ != NULL ? *big_player_info_ : *default_instance_->big_player_info_;
 }
-inline ::hld::st_proto_st_fake_player_info* ws2cs_proto_create_harry_player_statue::mutable_big_player_info() {
+inline ::faith::st_proto_st_fake_player_info* ws2cs_proto_create_harry_player_statue::mutable_big_player_info() {
   set_has_big_player_info();
-  if (big_player_info_ == NULL) big_player_info_ = new ::hld::st_proto_st_fake_player_info;
+  if (big_player_info_ == NULL) big_player_info_ = new ::faith::st_proto_st_fake_player_info;
   return big_player_info_;
 }
-inline ::hld::st_proto_st_fake_player_info* ws2cs_proto_create_harry_player_statue::release_big_player_info() {
+inline ::faith::st_proto_st_fake_player_info* ws2cs_proto_create_harry_player_statue::release_big_player_info() {
   clear_has_big_player_info();
-  ::hld::st_proto_st_fake_player_info* temp = big_player_info_;
+  ::faith::st_proto_st_fake_player_info* temp = big_player_info_;
   big_player_info_ = NULL;
   return temp;
 }
-inline void ws2cs_proto_create_harry_player_statue::set_allocated_big_player_info(::hld::st_proto_st_fake_player_info* big_player_info) {
+inline void ws2cs_proto_create_harry_player_statue::set_allocated_big_player_info(::faith::st_proto_st_fake_player_info* big_player_info) {
   delete big_player_info_;
   big_player_info_ = big_player_info;
   if (big_player_info) {
@@ -21864,27 +21864,27 @@ inline void ws2cs_proto_end_act_type::set_is_need_send_to_client(bool value) {
 
 // ws2cs_proto_act_limit_temp
 
-// repeated .hld.st_proto.st_time_limit_activity_temp_db temp_db_info = 1;
+// repeated .faith.st_proto.st_time_limit_activity_temp_db temp_db_info = 1;
 inline int ws2cs_proto_act_limit_temp::temp_db_info_size() const {
   return temp_db_info_.size();
 }
 inline void ws2cs_proto_act_limit_temp::clear_temp_db_info() {
   temp_db_info_.Clear();
 }
-inline const ::hld::st_proto_st_time_limit_activity_temp_db& ws2cs_proto_act_limit_temp::temp_db_info(int index) const {
+inline const ::faith::st_proto_st_time_limit_activity_temp_db& ws2cs_proto_act_limit_temp::temp_db_info(int index) const {
   return temp_db_info_.Get(index);
 }
-inline ::hld::st_proto_st_time_limit_activity_temp_db* ws2cs_proto_act_limit_temp::mutable_temp_db_info(int index) {
+inline ::faith::st_proto_st_time_limit_activity_temp_db* ws2cs_proto_act_limit_temp::mutable_temp_db_info(int index) {
   return temp_db_info_.Mutable(index);
 }
-inline ::hld::st_proto_st_time_limit_activity_temp_db* ws2cs_proto_act_limit_temp::add_temp_db_info() {
+inline ::faith::st_proto_st_time_limit_activity_temp_db* ws2cs_proto_act_limit_temp::add_temp_db_info() {
   return temp_db_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_time_limit_activity_temp_db >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_time_limit_activity_temp_db >&
 ws2cs_proto_act_limit_temp::temp_db_info() const {
   return temp_db_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_time_limit_activity_temp_db >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_time_limit_activity_temp_db >*
 ws2cs_proto_act_limit_temp::mutable_temp_db_info() {
   return &temp_db_info_;
 }
@@ -21937,27 +21937,27 @@ inline void ws2cs_proto_act_limit_temp::set_data_num(::google::protobuf::int32 v
 
 // ws2cs_proto_act_limit_branch_temp
 
-// repeated .hld.st_proto.st_time_limit_activity_branch_temp_db temp_db_info = 1;
+// repeated .faith.st_proto.st_time_limit_activity_branch_temp_db temp_db_info = 1;
 inline int ws2cs_proto_act_limit_branch_temp::temp_db_info_size() const {
   return temp_db_info_.size();
 }
 inline void ws2cs_proto_act_limit_branch_temp::clear_temp_db_info() {
   temp_db_info_.Clear();
 }
-inline const ::hld::st_proto_st_time_limit_activity_branch_temp_db& ws2cs_proto_act_limit_branch_temp::temp_db_info(int index) const {
+inline const ::faith::st_proto_st_time_limit_activity_branch_temp_db& ws2cs_proto_act_limit_branch_temp::temp_db_info(int index) const {
   return temp_db_info_.Get(index);
 }
-inline ::hld::st_proto_st_time_limit_activity_branch_temp_db* ws2cs_proto_act_limit_branch_temp::mutable_temp_db_info(int index) {
+inline ::faith::st_proto_st_time_limit_activity_branch_temp_db* ws2cs_proto_act_limit_branch_temp::mutable_temp_db_info(int index) {
   return temp_db_info_.Mutable(index);
 }
-inline ::hld::st_proto_st_time_limit_activity_branch_temp_db* ws2cs_proto_act_limit_branch_temp::add_temp_db_info() {
+inline ::faith::st_proto_st_time_limit_activity_branch_temp_db* ws2cs_proto_act_limit_branch_temp::add_temp_db_info() {
   return temp_db_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_time_limit_activity_branch_temp_db >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_time_limit_activity_branch_temp_db >&
 ws2cs_proto_act_limit_branch_temp::temp_db_info() const {
   return temp_db_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::st_proto_st_time_limit_activity_branch_temp_db >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::st_proto_st_time_limit_activity_branch_temp_db >*
 ws2cs_proto_act_limit_branch_temp::mutable_temp_db_info() {
   return &temp_db_info_;
 }
@@ -22154,7 +22154,7 @@ inline void ws2cs_proto_sync_assist_fight_info::set_role_guid(::google::protobuf
   role_guid_ = value;
 }
 
-// optional .hld.st_proto.st_assist_fight_info m_assist_fight_info = 2;
+// optional .faith.st_proto.st_assist_fight_info m_assist_fight_info = 2;
 inline bool ws2cs_proto_sync_assist_fight_info::has_m_assist_fight_info() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -22165,24 +22165,24 @@ inline void ws2cs_proto_sync_assist_fight_info::clear_has_m_assist_fight_info() 
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void ws2cs_proto_sync_assist_fight_info::clear_m_assist_fight_info() {
-  if (m_assist_fight_info_ != NULL) m_assist_fight_info_->::hld::st_proto_st_assist_fight_info::Clear();
+  if (m_assist_fight_info_ != NULL) m_assist_fight_info_->::faith::st_proto_st_assist_fight_info::Clear();
   clear_has_m_assist_fight_info();
 }
-inline const ::hld::st_proto_st_assist_fight_info& ws2cs_proto_sync_assist_fight_info::m_assist_fight_info() const {
+inline const ::faith::st_proto_st_assist_fight_info& ws2cs_proto_sync_assist_fight_info::m_assist_fight_info() const {
   return m_assist_fight_info_ != NULL ? *m_assist_fight_info_ : *default_instance_->m_assist_fight_info_;
 }
-inline ::hld::st_proto_st_assist_fight_info* ws2cs_proto_sync_assist_fight_info::mutable_m_assist_fight_info() {
+inline ::faith::st_proto_st_assist_fight_info* ws2cs_proto_sync_assist_fight_info::mutable_m_assist_fight_info() {
   set_has_m_assist_fight_info();
-  if (m_assist_fight_info_ == NULL) m_assist_fight_info_ = new ::hld::st_proto_st_assist_fight_info;
+  if (m_assist_fight_info_ == NULL) m_assist_fight_info_ = new ::faith::st_proto_st_assist_fight_info;
   return m_assist_fight_info_;
 }
-inline ::hld::st_proto_st_assist_fight_info* ws2cs_proto_sync_assist_fight_info::release_m_assist_fight_info() {
+inline ::faith::st_proto_st_assist_fight_info* ws2cs_proto_sync_assist_fight_info::release_m_assist_fight_info() {
   clear_has_m_assist_fight_info();
-  ::hld::st_proto_st_assist_fight_info* temp = m_assist_fight_info_;
+  ::faith::st_proto_st_assist_fight_info* temp = m_assist_fight_info_;
   m_assist_fight_info_ = NULL;
   return temp;
 }
-inline void ws2cs_proto_sync_assist_fight_info::set_allocated_m_assist_fight_info(::hld::st_proto_st_assist_fight_info* m_assist_fight_info) {
+inline void ws2cs_proto_sync_assist_fight_info::set_allocated_m_assist_fight_info(::faith::st_proto_st_assist_fight_info* m_assist_fight_info) {
   delete m_assist_fight_info_;
   m_assist_fight_info_ = m_assist_fight_info;
   if (m_assist_fight_info) {
@@ -22291,7 +22291,7 @@ inline void ws2cs_proto_element_war_send_create_robot::set_map_guid(::google::pr
   map_guid_ = value;
 }
 
-// optional .hld.st_proto.st_element_war_match_info match_info = 2;
+// optional .faith.st_proto.st_element_war_match_info match_info = 2;
 inline bool ws2cs_proto_element_war_send_create_robot::has_match_info() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -22302,24 +22302,24 @@ inline void ws2cs_proto_element_war_send_create_robot::clear_has_match_info() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void ws2cs_proto_element_war_send_create_robot::clear_match_info() {
-  if (match_info_ != NULL) match_info_->::hld::st_proto_st_element_war_match_info::Clear();
+  if (match_info_ != NULL) match_info_->::faith::st_proto_st_element_war_match_info::Clear();
   clear_has_match_info();
 }
-inline const ::hld::st_proto_st_element_war_match_info& ws2cs_proto_element_war_send_create_robot::match_info() const {
+inline const ::faith::st_proto_st_element_war_match_info& ws2cs_proto_element_war_send_create_robot::match_info() const {
   return match_info_ != NULL ? *match_info_ : *default_instance_->match_info_;
 }
-inline ::hld::st_proto_st_element_war_match_info* ws2cs_proto_element_war_send_create_robot::mutable_match_info() {
+inline ::faith::st_proto_st_element_war_match_info* ws2cs_proto_element_war_send_create_robot::mutable_match_info() {
   set_has_match_info();
-  if (match_info_ == NULL) match_info_ = new ::hld::st_proto_st_element_war_match_info;
+  if (match_info_ == NULL) match_info_ = new ::faith::st_proto_st_element_war_match_info;
   return match_info_;
 }
-inline ::hld::st_proto_st_element_war_match_info* ws2cs_proto_element_war_send_create_robot::release_match_info() {
+inline ::faith::st_proto_st_element_war_match_info* ws2cs_proto_element_war_send_create_robot::release_match_info() {
   clear_has_match_info();
-  ::hld::st_proto_st_element_war_match_info* temp = match_info_;
+  ::faith::st_proto_st_element_war_match_info* temp = match_info_;
   match_info_ = NULL;
   return temp;
 }
-inline void ws2cs_proto_element_war_send_create_robot::set_allocated_match_info(::hld::st_proto_st_element_war_match_info* match_info) {
+inline void ws2cs_proto_element_war_send_create_robot::set_allocated_match_info(::faith::st_proto_st_element_war_match_info* match_info) {
   delete match_info_;
   match_info_ = match_info;
   if (match_info) {
@@ -22498,7 +22498,7 @@ inline void ws2cs_proto_element_war_send_last_score::set_last_ranking(::google::
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

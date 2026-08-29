@@ -22,7 +22,7 @@
 #include "net.pb.h"
 #include "eye_proto.pb.h"
 
-namespace hld
+namespace faith
 {
 	using namespace net;
 
@@ -129,8 +129,8 @@ namespace hld
 	void fep_client::server_loop(uint32 timer_index)
 	{
 		ZoneScoped;
-		static int64 game_time	= hld::utility::get_tick_count();
-		int64 time_now = hld::utility::get_tick_count();
+		static int64 game_time	= faith::utility::get_tick_count();
+		int64 time_now = faith::utility::get_tick_count();
 		static int32 loop_counter = 0;
 		static int64 loop_time = 0;
 		loop_counter++;
@@ -179,7 +179,7 @@ namespace hld
 		if(time_now >= sync_fep_data)
 		{
 			sync_fep_data = time_now + server_player_to_ws;
-			hld::app_server_update	req;
+			faith::app_server_update	req;
 			req.player_count = proxy_service_cli::getInstance().get_session_num();
 			req.max_player_count = init_socket_more;
 
@@ -200,7 +200,7 @@ namespace hld
 	}
 	void fep_client::internal_rep_stop(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
-		const hld::req_stop * msg = static_cast<const hld::req_stop*>(data_ptr);
+		const faith::req_stop * msg = static_cast<const faith::req_stop*>(data_ptr);
 		if (NULL == msg)
 		{
 			return;

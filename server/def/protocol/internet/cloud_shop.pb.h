@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_cloud_5fshop_2eproto();
@@ -100,7 +100,7 @@ class cloud_shop_proto_cloud_shop_req : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 req_type() const;
   inline void set_req_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cloud_shop_proto.cloud_shop_req)
+  // @@protoc_insertion_point(class_scope:faith.cloud_shop_proto.cloud_shop_req)
  private:
   inline void set_has_req_type();
   inline void clear_has_req_type();
@@ -257,7 +257,7 @@ class cloud_shop_proto_cloud_shop_resp : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 template_id() const;
   inline void set_template_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.cloud_shop_proto.cloud_shop_resp)
+  // @@protoc_insertion_point(class_scope:faith.cloud_shop_proto.cloud_shop_resp)
  private:
   inline void set_has_error_id();
   inline void clear_has_error_id();
@@ -365,7 +365,7 @@ class cloud_shop_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.cloud_shop_proto)
+  // @@protoc_insertion_point(class_scope:faith.cloud_shop_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -711,7 +711,7 @@ inline void cloud_shop_proto_cloud_shop_resp::set_template_id(::google::protobuf
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

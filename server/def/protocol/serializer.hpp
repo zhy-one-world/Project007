@@ -6,7 +6,7 @@
 #define MAX_DATASERIALIZER_LENGTH	( 1 * 256 * 1024 )
 #define MAX_ALLOCATE_PART	(128)
 
-namespace hld
+namespace faith
 {
 	//Notice: Send Net Data In One Thread
 	struct allocator {

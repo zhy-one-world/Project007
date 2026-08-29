@@ -12,7 +12,7 @@ purpose:
 #include "msgproc_big_player.hpp"
 #include "utility/parse_msg.h"
 
-namespace hld
+namespace faith
 {
 	
 	void load_big_player(uint32 connindex, const void *data_ptr, size_t data_len)

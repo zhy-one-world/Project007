@@ -1,6 +1,6 @@
 #include "VersionTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void VersionTemplateSize()
     {

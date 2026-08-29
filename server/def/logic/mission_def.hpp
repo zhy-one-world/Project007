@@ -14,7 +14,7 @@ purpose:
 #include "char_def.hpp"
 #include "template/template_base.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	const int32 MAX_MISSION_LINE_NUM = 4;					// 一共4种任务

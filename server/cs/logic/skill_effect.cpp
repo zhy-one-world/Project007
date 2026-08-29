@@ -20,7 +20,7 @@
 #include "internet/net.pb.h"
 #include "internet/skill.pb.h"
 
-namespace hld
+namespace faith
 {
 	void skill_effect::clear_data()
 	{

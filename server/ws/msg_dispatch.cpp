@@ -53,7 +53,7 @@
 #include <world_server_msg.hpp>
 
 
-namespace hld
+namespace faith
 {
 	msg_dispatch::msg_dispatch() 
 	{

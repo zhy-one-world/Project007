@@ -13,7 +13,7 @@ purpose: about arena system's arena_mgr
 
 #include "Logic/arena_def.hpp"
 #include "logic/type_def.hpp"
-namespace hld
+namespace faith
 {
 
 	class player_arena_mgr

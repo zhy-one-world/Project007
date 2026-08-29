@@ -11,7 +11,7 @@
 
 #include "db_manager.hpp"
 
-namespace hld
+namespace faith
 {
 	//½ÇÉ«ÏÔÊ¾£¨×øÆï³á°ò¿ì½İÕÙ»½É¶µÄ£©
 	void cs2dp_req_load_char_show(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index);

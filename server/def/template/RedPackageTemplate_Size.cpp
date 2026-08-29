@@ -1,6 +1,6 @@
 #include "RedPackageTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void RedPackageTemplateSize()
     {

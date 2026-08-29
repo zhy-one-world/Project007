@@ -5,7 +5,7 @@
 #include "Logic/ai_def.hpp"
 #include "base/ecs_world.h"
 
-namespace hld
+namespace faith
 {
 	class npc;
 	class unit;

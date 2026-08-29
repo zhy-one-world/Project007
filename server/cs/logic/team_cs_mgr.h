@@ -11,7 +11,7 @@ purpose: team mgr in cs
 #include "Logic/team_def.hpp"
 #include "Logic/ai_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class player;		
 	class team_proto_set_player_team_aoi_info;

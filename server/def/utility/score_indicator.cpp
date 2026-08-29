@@ -3,7 +3,7 @@
 #include "internet/game.pb.h"
 #include "world_boss_def.hpp"
 
-namespace hld
+namespace faith
 {
 	void score_indicator::clear_data()
 	{

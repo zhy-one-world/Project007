@@ -6,7 +6,7 @@
 #include "template/ServerTemplateHead.h"
 
 
-namespace hld
+namespace faith
 {
 
 

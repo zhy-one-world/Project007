@@ -20,7 +20,7 @@
 
 #pragma pack(push,1)
 
-namespace hld
+namespace faith
 {
 	const int32 max_auction_sell_num = 16;							// 同时出售物品最大数量
 	const int32 auction_show_num_per_page = 10;						// 交易行每页数量
@@ -160,7 +160,7 @@ namespace hld
 			is_sky_order = _info.is_sky_order();
 			show_guid.server_64 = _info.show_guid();
 		}
-		bool to_proto(hld::st_proto::st_auction_info* st_auction_ptr)
+		bool to_proto(faith::st_proto::st_auction_info* st_auction_ptr)
 		{
 			if (st_auction_ptr == nullptr)
 			{
@@ -188,7 +188,7 @@ namespace hld
 			st_auction_ptr->set_add_time(add_time);
 			st_auction_ptr->set_is_sky_order(is_sky_order);
 			st_auction_ptr->set_show_guid(show_guid);
-			hld::st_proto::st_item_info* st_item_ptr = st_auction_ptr->mutable_item_info();
+			faith::st_proto::st_item_info* st_item_ptr = st_auction_ptr->mutable_item_info();
 			if (st_item_ptr == nullptr)
 			{
 				return false;
@@ -204,7 +204,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::st_proto::st_auction_info& st_auction_ref)
+		void from_proto(const faith::st_proto::st_auction_info& st_auction_ref)
 		{
 			seller_guid.server_64 = st_auction_ref.seller_guid();
 			my_memcopy_string(seller_name, max_name_size, st_auction_ref.seller_name());
@@ -296,7 +296,7 @@ namespace hld
 		{
 			clear_data();
 		}
-		void to_proto(hld::st_proto::st_auction_share_info* st_share_ptr)
+		void to_proto(faith::st_proto::st_auction_share_info* st_share_ptr)
 		{
 			if (st_share_ptr == nullptr)
 			{
@@ -320,7 +320,7 @@ namespace hld
 		}
 
 
-		void from_proto(const hld::st_proto::st_auction_share_info& st_shar_ref)
+		void from_proto(const faith::st_proto::st_auction_share_info& st_shar_ref)
 		{
 			item_guid.server_64 = st_shar_ref.item_guid();
 			role_guid.server_64 = st_shar_ref.role_guid();

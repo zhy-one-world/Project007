@@ -10,7 +10,7 @@
 #include "system/scene/cs_map_mgr_system.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	//void legion_ws_boss_record_set::add_boss_record(const s_legion_boss_record& boss_record)
 	//{
@@ -303,7 +303,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::set_get_legion_boss_award_log pro_msg;
+			faith::ws2cs_proto::set_get_legion_boss_award_log pro_msg;
 			set_get_legion_boss_award_log_msg.to_proto(pro_msg);
 			session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_set_get_legion_boss_award_log);
 		}

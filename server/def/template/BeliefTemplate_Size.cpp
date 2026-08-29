@@ -1,6 +1,6 @@
 #include "BeliefTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void BeliefTemplateSize()
     {

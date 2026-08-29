@@ -4,7 +4,7 @@
 #include "Logic/map_def.hpp"
 #include "utility/score_indicator.h"
 
-namespace hld
+namespace faith
 {
 	enum e_error_code;
 	struct ActivityCommonConfigTemplate;

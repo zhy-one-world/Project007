@@ -9,7 +9,7 @@ purpose: 单个任务
 
 #include "Logic/achievement_def.h"
 
-namespace hld
+namespace faith
 {
 	class player;
 	class unit;

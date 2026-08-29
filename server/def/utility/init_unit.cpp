@@ -24,7 +24,7 @@
 #include "server_log.hpp"
 #include "Logic/time_limit_activity_def.hpp"
 
-namespace hld
+namespace faith
 {
 	init_unit::init_unit()
 	{
@@ -871,12 +871,12 @@ namespace hld
 	{
 		switch (item_type)
 		{
-		case hld::e_item_type_weapon:
-		case hld::e_item_type_armor:
-		case hld::e_item_type_fashion:
-		case hld::e_item_type_sky_equip: 
-		case hld::e_item_type_skygod_equip:
-		case hld::e_item_type_supreme_equip:
+		case faith::e_item_type_weapon:
+		case faith::e_item_type_armor:
+		case faith::e_item_type_fashion:
+		case faith::e_item_type_sky_equip: 
+		case faith::e_item_type_skygod_equip:
+		case faith::e_item_type_supreme_equip:
 			return true;
 		default:
 			return false;
@@ -885,7 +885,7 @@ namespace hld
 
 	bool init_unit::is_spirit_type(int32 item_type)
 	{
-		if (hld::e_item_type_spirit == item_type)
+		if (faith::e_item_type_spirit == item_type)
 		{
 			return true;
 		}
@@ -939,7 +939,7 @@ namespace hld
 		}
 		return false;
 	}
-	bool init_unit::init_item_data(hld::s_item_info& item_data, int32 template_id, int32 slot, int32 stack_count, e_bag_type container_type, int32 is_activate, int32 locked, int32 item_over_time, int32 item_const_att)
+	bool init_unit::init_item_data(faith::s_item_info& item_data, int32 template_id, int32 slot, int32 stack_count, e_bag_type container_type, int32 is_activate, int32 locked, int32 item_over_time, int32 item_const_att)
 	{
 		if (template_id == 0)
 		{
@@ -1041,7 +1041,7 @@ namespace hld
 		return true;
 	}
 
-	bool init_unit::init_spirit_data(hld::s_spirit_info& msg_data, int32 template_id, int32 slot, e_spirit_bag_type container_type, int32 is_activate)
+	bool init_unit::init_spirit_data(faith::s_spirit_info& msg_data, int32 template_id, int32 slot, e_spirit_bag_type container_type, int32 is_activate)
 	{
 		if (template_id == 0)
 		{
@@ -1069,7 +1069,7 @@ namespace hld
 
 		return true;
 	}
-	bool init_unit::init_skill_data(hld::s_skill_info& msg_data, int32 template_id, int32 activated)
+	bool init_unit::init_skill_data(faith::s_skill_info& msg_data, int32 template_id, int32 activated)
 	{
 		if (template_id == 0)
 		{
@@ -1395,7 +1395,7 @@ namespace hld
 		return false;
 	}
 	/*此接口在拍卖中重写,修改此处 在LUA中搜索init_mail_data_array*/
-	bool init_unit::init_mail_data_array(hld::s_mail_info& msg_data, const std::vector<guid_64>& item_guid, int32 money_typ1, int32 money_num1, int32 money_typ2, int32 money_num2, guid_64 sender_guid, int64 cur_time_sec)
+	bool init_unit::init_mail_data_array(faith::s_mail_info& msg_data, const std::vector<guid_64>& item_guid, int32 money_typ1, int32 money_num1, int32 money_typ2, int32 money_num2, guid_64 sender_guid, int64 cur_time_sec)
 	{
 		msg_data.mail_guid = guid_gen::make_guid(sender_guid);
 
@@ -1918,19 +1918,19 @@ namespace hld
 		{
 		case e_mission_finish_award_type_none:
 			break;
-		case hld::e_mission_finish_award_type_normal:
+		case faith::e_mission_finish_award_type_normal:
 		{
 			init_unit::merge_money_to_two_tuples(money_array, e_money_type_exp, mission_template_ptr->FinishEXP * get_times);
 			init_unit::merge_money_to_two_tuples(money_array, e_money_type_silver_bind, mission_template_ptr->FinishGold * get_times);
 		}
 		break;
-		case hld::e_mission_finish_award_type_rate:
+		case faith::e_mission_finish_award_type_rate:
 		{
 			init_unit::merge_money_to_two_tuples(money_array, e_money_type_exp, mission_template_ptr->FinishEXP * player_upgrade_template_ptr->BaseExp * get_times);
 			init_unit::merge_money_to_two_tuples(money_array, e_money_type_silver_bind, mission_template_ptr->FinishGold * player_upgrade_template_ptr->BaseCoin * get_times);
 		}
 		break;
-		case hld::e_mission_finish_award_type_world:
+		case faith::e_mission_finish_award_type_world:
 		{
 			init_unit::merge_money_to_two_tuples(money_array, e_money_type_exp, mission_template_ptr->FinishEXP * world_base_exp * get_times);
 			init_unit::merge_money_to_two_tuples(money_array, e_money_type_silver_bind, mission_template_ptr->FinishGold * player_upgrade_template_ptr->BaseCoin * get_times);
@@ -1980,20 +1980,20 @@ namespace hld
 
 		switch (mission_library_template_ptr->FinishAwardType)
 		{
-		case hld::e_mission_finish_award_type_none:
+		case faith::e_mission_finish_award_type_none:
 			break;
-		case hld::e_mission_finish_award_type_normal:
+		case faith::e_mission_finish_award_type_normal:
 		{
 			init_unit::merge_money_to_two_tuples(money_array, e_money_type_exp, mission_library_template_ptr->FinishEXP);
 			init_unit::merge_money_to_two_tuples(money_array, e_money_type_silver_bind, mission_library_template_ptr->FinishGold);
 		}
 		break;
-		case hld::e_mission_finish_award_type_rate:
+		case faith::e_mission_finish_award_type_rate:
 		{
 			init_unit::merge_money_to_two_tuples(money_array, e_money_type_exp, mission_library_template_ptr->FinishEXP * player_upgrade_template_ptr->BaseExp);
 			init_unit::merge_money_to_two_tuples(money_array, e_money_type_silver_bind, mission_library_template_ptr->FinishGold * player_upgrade_template_ptr->BaseCoin);
 		}
-		case hld::e_mission_finish_award_type_world:
+		case faith::e_mission_finish_award_type_world:
 		{
 			init_unit::merge_money_to_two_tuples(money_array, e_money_type_exp, mission_library_template_ptr->FinishEXP * world_base_exp);
 			init_unit::merge_money_to_two_tuples(money_array, e_money_type_silver_bind, mission_library_template_ptr->FinishGold * player_upgrade_template_ptr->BaseCoin);
@@ -2249,7 +2249,7 @@ namespace hld
 		}
 		return false;
 	}
-	void init_unit::get_item_recovery_money_info(const hld::s_item_info& item_inst_data, std::vector<s_item_template_info>& money_reward_array, std::vector<s_item_template_info>& money_cost_array, bool is_clear_array, bool is_sprite_use_diamond)
+	void init_unit::get_item_recovery_money_info(const faith::s_item_info& item_inst_data, std::vector<s_item_template_info>& money_reward_array, std::vector<s_item_template_info>& money_cost_array, bool is_clear_array, bool is_sprite_use_diamond)
 	{
 		if (is_clear_array)
 		{
@@ -2262,7 +2262,7 @@ namespace hld
 		{
 			return;
 		}
-		int32 item_num = item_inst_data.data_ary[hld::e_item_info_stack_count];
+		int32 item_num = item_inst_data.data_ary[faith::e_item_info_stack_count];
 
 		if (item_num <= 0)
 		{
@@ -2280,17 +2280,17 @@ namespace hld
 			int32 recovery_array_size = 0;
 			//recovery_array_size = equip_template_ptr->RecoveryMoney.size();
 
-			//if (recovery_array_size > 0 && recovery_array_size % hld::e_money_tuple_max == 0)
+			//if (recovery_array_size > 0 && recovery_array_size % faith::e_money_tuple_max == 0)
 			//{
-			//	for (int32 j = 0; j < recovery_array_size; j += hld::e_money_tuple_max)
+			//	for (int32 j = 0; j < recovery_array_size; j += faith::e_money_tuple_max)
 			//	{
-			//		int32 money_id = equip_template_ptr->RecoveryMoney[j + hld::e_money_tuple_id];
-			//		int32 money_num = equip_template_ptr->RecoveryMoney[j + hld::e_money_tuple_num] * item_num;
+			//		int32 money_id = equip_template_ptr->RecoveryMoney[j + faith::e_money_tuple_id];
+			//		int32 money_num = equip_template_ptr->RecoveryMoney[j + faith::e_money_tuple_num] * item_num;
 			//		merge_money_to_two_tuples(money_reward_array, money_id, money_num);
 			//	}
 			//}
 		}
-		else if (item_template_ptr->item_type == hld::e_item_type_spirit)
+		else if (item_template_ptr->item_type == faith::e_item_type_spirit)
 		{
 			SpiritTemplate* spirit_tmpl_ptr = GET_TEMPLATE(SpiritTemplate, item_template_ptr->logic_id + item_inst_data.data_ary[e_item_info_upgrade_count]);
 
@@ -2305,21 +2305,21 @@ namespace hld
 				recovery_reward_array_size = spirit_tmpl_ptr->DiamondRecoveryMoney.size();
 				recovery_cost_array_size = spirit_tmpl_ptr->DiamondRecoveryCost.size();
 
-				if (recovery_reward_array_size > 0 && recovery_reward_array_size % hld::e_money_tuple_max == 0)
+				if (recovery_reward_array_size > 0 && recovery_reward_array_size % faith::e_money_tuple_max == 0)
 				{
-					for (int32 j = 0; j < recovery_reward_array_size; j += hld::e_money_tuple_max)
+					for (int32 j = 0; j < recovery_reward_array_size; j += faith::e_money_tuple_max)
 					{
-						int32 money_id = spirit_tmpl_ptr->DiamondRecoveryMoney[j + hld::e_money_tuple_id];
-						int32 money_num = spirit_tmpl_ptr->DiamondRecoveryMoney[j + hld::e_money_tuple_num] * item_num;
+						int32 money_id = spirit_tmpl_ptr->DiamondRecoveryMoney[j + faith::e_money_tuple_id];
+						int32 money_num = spirit_tmpl_ptr->DiamondRecoveryMoney[j + faith::e_money_tuple_num] * item_num;
 						merge_money_to_two_tuples(money_reward_array, money_id, money_num);
 					}
 				}
-				if (recovery_cost_array_size > 0 && recovery_cost_array_size % hld::e_money_tuple_max == 0)
+				if (recovery_cost_array_size > 0 && recovery_cost_array_size % faith::e_money_tuple_max == 0)
 				{
-					for (int32 j = 0; j < recovery_cost_array_size; j += hld::e_money_tuple_max)
+					for (int32 j = 0; j < recovery_cost_array_size; j += faith::e_money_tuple_max)
 					{
-						int32 money_id = spirit_tmpl_ptr->DiamondRecoveryCost[j + hld::e_money_tuple_id];
-						int32 money_num = spirit_tmpl_ptr->DiamondRecoveryCost[j + hld::e_money_tuple_num] * item_num;
+						int32 money_id = spirit_tmpl_ptr->DiamondRecoveryCost[j + faith::e_money_tuple_id];
+						int32 money_num = spirit_tmpl_ptr->DiamondRecoveryCost[j + faith::e_money_tuple_num] * item_num;
 						merge_money_to_two_tuples(money_cost_array, money_id, money_num);
 					}
 				}
@@ -2329,12 +2329,12 @@ namespace hld
 				int32 recovery_reward_array_size = 0;
 				recovery_reward_array_size = spirit_tmpl_ptr->RecoveryMoney.size();
 
-				if (recovery_reward_array_size > 0 && recovery_reward_array_size % hld::e_money_tuple_max == 0)
+				if (recovery_reward_array_size > 0 && recovery_reward_array_size % faith::e_money_tuple_max == 0)
 				{
-					for (int32 j = 0; j < recovery_reward_array_size; j += hld::e_money_tuple_max)
+					for (int32 j = 0; j < recovery_reward_array_size; j += faith::e_money_tuple_max)
 					{
-						int32 money_id = spirit_tmpl_ptr->RecoveryMoney[j + hld::e_money_tuple_id];
-						int32 money_num = spirit_tmpl_ptr->RecoveryMoney[j + hld::e_money_tuple_num] * item_num;
+						int32 money_id = spirit_tmpl_ptr->RecoveryMoney[j + faith::e_money_tuple_id];
+						int32 money_num = spirit_tmpl_ptr->RecoveryMoney[j + faith::e_money_tuple_num] * item_num;
 						merge_money_to_two_tuples(money_reward_array, money_id, money_num);
 					}
 				}
@@ -2345,12 +2345,12 @@ namespace hld
 			int32 recovery_reward_array_size = 0;
 			recovery_reward_array_size = item_template_ptr->SellMoney.size();
 
-			if (recovery_reward_array_size > 0 && recovery_reward_array_size % hld::e_money_tuple_max == 0)
+			if (recovery_reward_array_size > 0 && recovery_reward_array_size % faith::e_money_tuple_max == 0)
 			{
-				for (int32 j = 0; j < recovery_reward_array_size; j += hld::e_money_tuple_max)
+				for (int32 j = 0; j < recovery_reward_array_size; j += faith::e_money_tuple_max)
 				{
-					int32 money_id = item_template_ptr->SellMoney[j + hld::e_money_tuple_id];
-					int32 money_num = item_template_ptr->SellMoney[j + hld::e_money_tuple_num] * item_num;
+					int32 money_id = item_template_ptr->SellMoney[j + faith::e_money_tuple_id];
+					int32 money_num = item_template_ptr->SellMoney[j + faith::e_money_tuple_num] * item_num;
 					init_unit::merge_money_to_two_tuples(money_reward_array, money_id, money_num);
 				}
 			}
@@ -3196,9 +3196,9 @@ namespace hld
 			return false;
 		}
 
-		if (param.target_unit_type == hld::e_unit_type_trap 
-			|| param.target_unit_type == hld::e_unit_type_drop_bag
-			|| param.target_unit_type == hld::e_unit_type_hide)
+		if (param.target_unit_type == faith::e_unit_type_trap 
+			|| param.target_unit_type == faith::e_unit_type_drop_bag
+			|| param.target_unit_type == faith::e_unit_type_hide)
 		{
 			return false;
 		}
@@ -3537,7 +3537,7 @@ namespace hld
 		return e_item_color_max;
 	}
 
-	void init_unit::make_new_excellent_att(EquipTemplate* equip_template_ptr, hld::s_item_info& item_data, int32 item_const_att)
+	void init_unit::make_new_excellent_att(EquipTemplate* equip_template_ptr, faith::s_item_info& item_data, int32 item_const_att)
 	{
 		if (nullptr == equip_template_ptr)
 		{
@@ -3552,7 +3552,7 @@ namespace hld
 		//	return;
 		//}
 
-		//if (equip_template_ptr->BaseExcellentAtt.size() % hld::e_att_one_max != 0
+		//if (equip_template_ptr->BaseExcellentAtt.size() % faith::e_att_one_max != 0
 		//	|| equip_template_ptr->GreenExcellentRatio.size() % 2 != 0
 		//	|| equip_template_ptr->BlueExcellentRatio.size() % 2 != 0
 		//	|| equip_template_ptr->PurpleExcellentRatio.size() % 2 != 0
@@ -3563,7 +3563,7 @@ namespace hld
 		//	return;
 		//}
 
-		//int32 total_att_num = equip_template_ptr->BaseExcellentAtt.size() / hld::e_att_one_max;
+		//int32 total_att_num = equip_template_ptr->BaseExcellentAtt.size() / faith::e_att_one_max;
 		//if (total_att_num != equip_template_ptr->GreenExcellentRatio.size() / 2
 		//	|| total_att_num != equip_template_ptr->BlueExcellentRatio.size() / 2
 		//	|| total_att_num != equip_template_ptr->PurpleExcellentRatio.size() / 2
@@ -3593,7 +3593,7 @@ namespace hld
 		//set_excellent_ratio_value(equip_template_ptr, item_data, item_const_att);
 	}
 
-	void init_unit::make_new_spirit_eccellent_att(SpiritTemplate* spirit_template_ptr, hld::s_item_info & item_data, int32 item_const_att)
+	void init_unit::make_new_spirit_eccellent_att(SpiritTemplate* spirit_template_ptr, faith::s_item_info & item_data, int32 item_const_att)
 	{
 		if (nullptr == spirit_template_ptr)
 		{
@@ -3608,7 +3608,7 @@ namespace hld
 			return;
 		}
 
-		if (spirit_template_ptr->BaseExcellentAtt.size() % hld::e_att_one_max != 0
+		if (spirit_template_ptr->BaseExcellentAtt.size() % faith::e_att_one_max != 0
 			|| spirit_template_ptr->GreenExcellentRatio.size() % 2 != 0
 			|| spirit_template_ptr->BlueExcellentRatio.size() % 2 != 0
 			|| spirit_template_ptr->PurpleExcellentRatio.size() % 2 != 0
@@ -3619,7 +3619,7 @@ namespace hld
 			return;
 		}
 
-		int32 total_att_num = spirit_template_ptr->BaseExcellentAtt.size() / hld::e_att_one_max;
+		int32 total_att_num = spirit_template_ptr->BaseExcellentAtt.size() / faith::e_att_one_max;
 		if (total_att_num != spirit_template_ptr->GreenExcellentRatio.size() / 2
 			|| total_att_num != spirit_template_ptr->BlueExcellentRatio.size() / 2
 			|| total_att_num != spirit_template_ptr->PurpleExcellentRatio.size() / 2
@@ -3693,7 +3693,7 @@ namespace hld
 		else
 		{
 			int32 ServerOpenDays = globle_data::get_instance().get_server_days();
-			int32 ActTemplateID = hld::first_activity_common_template_id + hld::e_activity_type_overlord_city_war;
+			int32 ActTemplateID = faith::first_activity_common_template_id + faith::e_activity_type_overlord_city_war;
 			ActivityCommonConfigTemplate* _activity_type_overlord_ptr = GET_TEMPLATE(ActivityCommonConfigTemplate, ActTemplateID);
 			if (nullptr == _activity_type_overlord_ptr)
 			{
@@ -3701,11 +3701,11 @@ namespace hld
 			}
 			int32 OverLoadCityWarDay = _activity_type_overlord_ptr->ParamInt1;
 
-			if (activity_type == hld::e_activity_type_overlord_city_war && ServerOpenDays < OverLoadCityWarDay && !is_cross_city_war)
+			if (activity_type == faith::e_activity_type_overlord_city_war && ServerOpenDays < OverLoadCityWarDay && !is_cross_city_war)
 			{
 				is_in_weekday = false;
 			}
-			//else if (activity_type == hld::e_activity_type_overlord_city_war && ServerOpenDays == OverLoadCityWarDay && !is_cross_city_war)
+			//else if (activity_type == faith::e_activity_type_overlord_city_war && ServerOpenDays == OverLoadCityWarDay && !is_cross_city_war)
 			//{
 			//	is_in_weekday = true;
 			//}
@@ -3733,19 +3733,19 @@ namespace hld
 		{
 			switch (time_get)
 			{
-			case hld::e_activity_time_get_ready:
+			case faith::e_activity_time_get_ready:
 				begin_stamp = time_helper::get_stamp_by_hour_min(ActivityOpenTime[2 + time_idx], ActivityOpenTime[3 + time_idx], now_stamp);
 				end_stamp = time_helper::get_stamp_by_hour_min(ActivityOpenTime[4 + time_idx], ActivityOpenTime[5 + time_idx], now_stamp);
 				break;
-			case hld::e_activity_time_get_gaming:
+			case faith::e_activity_time_get_gaming:
 				begin_stamp = time_helper::get_stamp_by_hour_min(ActivityOpenTime[4 + time_idx], ActivityOpenTime[5 + time_idx], now_stamp);
 				end_stamp = time_helper::get_stamp_by_hour_min(ActivityOpenTime[6 + time_idx], ActivityOpenTime[7 + time_idx], now_stamp);
 				break;
-			case hld::e_activity_time_get_all:
+			case faith::e_activity_time_get_all:
 				begin_stamp = time_helper::get_stamp_by_hour_min(ActivityOpenTime[2 + time_idx], ActivityOpenTime[3 + time_idx], now_stamp);
 				end_stamp = time_helper::get_stamp_by_hour_min(ActivityOpenTime[6 + time_idx], ActivityOpenTime[7 + time_idx], now_stamp);
 				break;
-			case hld::e_activity_time_get_notice:
+			case faith::e_activity_time_get_notice:
 				begin_stamp = time_helper::get_stamp_by_hour_min(ActivityOpenTime[0 + time_idx], ActivityOpenTime[1 + time_idx], now_stamp);
 				end_stamp = time_helper::get_stamp_by_hour_min(ActivityOpenTime[2 + time_idx], ActivityOpenTime[3 + time_idx], now_stamp);
 				break;
@@ -3769,20 +3769,20 @@ namespace hld
 		return left_sec;
 	}
 
-	TArray<float> init_unit::get_excellent_att_array(const TArray<float>&  base_att_array, const hld::s_item_info& item_data)
+	TArray<float> init_unit::get_excellent_att_array(const TArray<float>&  base_att_array, const faith::s_item_info& item_data)
 
 	{
 		TArray<float> return_array;
 		int32 base_att_array_size = 0;
 		base_att_array_size = base_att_array.size();
-		return_array.reserve(hld::e_att_one_max * 6);
+		return_array.reserve(faith::e_att_one_max * 6);
 
 		if (base_att_array_size == 0
-			|| base_att_array_size % hld::e_att_one_max != 0)
+			|| base_att_array_size % faith::e_att_one_max != 0)
 		{
 			return return_array;
 		}
-		int32 total_att_num = base_att_array_size / hld::e_att_one_max;
+		int32 total_att_num = base_att_array_size / faith::e_att_one_max;
 		int32 value_info_index = e_item_info_random_property1;
 		for (int32 i = 0; i < total_att_num; ++i)
 		{
@@ -3795,13 +3795,13 @@ namespace hld
 				continue;
 			}
 			
-			int32 info_start_index = i * hld::e_att_one_max;
+			int32 info_start_index = i * faith::e_att_one_max;
 
-			return_array.push_back(base_att_array[info_start_index + hld::e_att_one_level]);
-			return_array.push_back(base_att_array[info_start_index + hld::e_att_one_att_id]);
-			return_array.push_back(base_att_array[info_start_index + hld::e_att_one_value] * item_data.data_ary[value_info_index]);
-			return_array.push_back(base_att_array[info_start_index + hld::e_att_one_percent] * item_data.data_ary[value_info_index]);
-			return_array.push_back(base_att_array[info_start_index + hld::e_att_one_show]);
+			return_array.push_back(base_att_array[info_start_index + faith::e_att_one_level]);
+			return_array.push_back(base_att_array[info_start_index + faith::e_att_one_att_id]);
+			return_array.push_back(base_att_array[info_start_index + faith::e_att_one_value] * item_data.data_ary[value_info_index]);
+			return_array.push_back(base_att_array[info_start_index + faith::e_att_one_percent] * item_data.data_ary[value_info_index]);
+			return_array.push_back(base_att_array[info_start_index + faith::e_att_one_show]);
 
 			value_info_index++;
 		}
@@ -3816,10 +3816,10 @@ namespace hld
 		const TArray<int32>&  orange_color_standard_array,
 		const TArray<int32>&  red_color_standard_array,
 		const TArray<int32>&  pink_color_standard_array,
-		const hld::s_item_info& item_data)
+		const faith::s_item_info& item_data)
 	{
 		TArray<int32> return_array;
-		if (item_data.data_ary[hld::e_item_info_random_had_flag] == 0)
+		if (item_data.data_ary[faith::e_item_info_random_had_flag] == 0)
 		{
 			return return_array;
 		}
@@ -3841,7 +3841,7 @@ namespace hld
 		pink_color_array_size = pink_color_standard_array.size();
 
 		if (base_att_array_size == 0
-			|| base_att_array_size % hld::e_att_one_max != 0
+			|| base_att_array_size % faith::e_att_one_max != 0
 			|| green_color_array_size % 2 != 0
 			|| blue_color_array_size % 2 != 0
 			|| purple_color_array_size % 2 != 0
@@ -3852,7 +3852,7 @@ namespace hld
 			return return_array;
 		}
 
-		int32 total_att_num = base_att_array_size / hld::e_att_one_max;
+		int32 total_att_num = base_att_array_size / faith::e_att_one_max;
 		if (total_att_num != green_color_array_size / 2
 			|| total_att_num != blue_color_array_size / 2
 			|| total_att_num != purple_color_array_size / 2
@@ -3870,7 +3870,7 @@ namespace hld
 			{
 				break;
 			}
-			if (get_flag_data(item_data.data_ary[hld::e_item_info_random_had_flag], i + 1) <= 0)
+			if (get_flag_data(item_data.data_ary[faith::e_item_info_random_had_flag], i + 1) <= 0)
 			{
 				continue;
 			}
@@ -3896,32 +3896,32 @@ namespace hld
 
 			if (temp_real_value <= max_green)
 			{
-				return_array.push_back(hld::e_item_color_green);
+				return_array.push_back(faith::e_item_color_green);
 			}
 			else if(temp_real_value >= min_blue
 				&& temp_real_value <= max_blue)
 			{
-				return_array.push_back(hld::e_item_color_blue);
+				return_array.push_back(faith::e_item_color_blue);
 			}
 			else if (temp_real_value >= min_purple
 				&& temp_real_value <= max_purple)
 			{
-				return_array.push_back(hld::e_item_color_purple);
+				return_array.push_back(faith::e_item_color_purple);
 			}
 			else if (temp_real_value >= min_orange
 				&& temp_real_value <= max_orange)
 			{
-				return_array.push_back(hld::e_item_color_orange);
+				return_array.push_back(faith::e_item_color_orange);
 			}
 			else if (temp_real_value >= min_red
 				&& temp_real_value <= max_red)
 			{
-				return_array.push_back(hld::e_item_color_red);
+				return_array.push_back(faith::e_item_color_red);
 			}
 			else if (temp_real_value >= min_pink
 				&& temp_real_value <= max_pink)
 			{
-				return_array.push_back(hld::e_item_color_pink);
+				return_array.push_back(faith::e_item_color_pink);
 			}
 
 			att_ratio_index++;
@@ -3933,12 +3933,12 @@ namespace hld
 	bool init_unit::is_can_use_this_jewel_slot_on_this_equip_level(int32 equip_level, int32 slot_index)
 	{
 		int32 array_size = 0;
-		if (slot_index < hld::e_item_info_jewel_slot_0
-			|| slot_index >= hld::e_item_info_jewel_vip_slot_0)
+		if (slot_index < faith::e_item_info_jewel_slot_0
+			|| slot_index >= faith::e_item_info_jewel_vip_slot_0)
 		{
 			return false;
 		}
-		int32 temp_index = slot_index - hld::e_item_info_jewel_slot_0;
+		int32 temp_index = slot_index - faith::e_item_info_jewel_slot_0;
 		array_size = GAMECONFIG->JewelSlotReqEquipLevel.size();
 
 		if (temp_index >= array_size)
@@ -3951,12 +3951,12 @@ namespace hld
 
 	bool init_unit::is_can_use_this_jewel_slot_on_this_vip_level(int32 role_vip_level, int32 slot_index)
 	{
-		if (slot_index < hld::e_item_info_jewel_vip_slot_0
-			|| slot_index > hld::e_item_info_jewel_vip_slot_1)
+		if (slot_index < faith::e_item_info_jewel_vip_slot_0
+			|| slot_index > faith::e_item_info_jewel_vip_slot_1)
 		{
 			return false;
 		}
-		int32 temp_index = slot_index - hld::e_item_info_jewel_vip_slot_0;
+		int32 temp_index = slot_index - faith::e_item_info_jewel_vip_slot_0;
 		VIPTemplate* vip_template_ptr = template_manager::get_instance().get_template_by_vip_level(role_vip_level);
 		if (vip_template_ptr == nullptr)
 		{
@@ -4700,13 +4700,13 @@ namespace hld
 		//}
 		//if (att_base > 0)
 		//{
-		//	for (int32 i = 0; i < equip_template_ptr->AttArray.size() / hld::e_att_one_max; ++i)
+		//	for (int32 i = 0; i < equip_template_ptr->AttArray.size() / faith::e_att_one_max; ++i)
 		//	{
-		//		equip_att.push_back(equip_template_ptr->AttArray[i * hld::e_att_one_max + hld::e_att_one_level]);
-		//		equip_att.push_back(equip_template_ptr->AttArray[i * hld::e_att_one_max + hld::e_att_one_att_id]);
-		//		equip_att.push_back(upgrade_number_change(equip_template_ptr->AttArray[i * hld::e_att_one_max + hld::e_att_one_value] * att_base));
-		//		equip_att.push_back(equip_template_ptr->AttArray[i * hld::e_att_one_max + hld::e_att_one_percent]);
-		//		equip_att.push_back(equip_template_ptr->AttArray[i * hld::e_att_one_max + hld::e_att_one_show]);
+		//		equip_att.push_back(equip_template_ptr->AttArray[i * faith::e_att_one_max + faith::e_att_one_level]);
+		//		equip_att.push_back(equip_template_ptr->AttArray[i * faith::e_att_one_max + faith::e_att_one_att_id]);
+		//		equip_att.push_back(upgrade_number_change(equip_template_ptr->AttArray[i * faith::e_att_one_max + faith::e_att_one_value] * att_base));
+		//		equip_att.push_back(equip_template_ptr->AttArray[i * faith::e_att_one_max + faith::e_att_one_percent]);
+		//		equip_att.push_back(equip_template_ptr->AttArray[i * faith::e_att_one_max + faith::e_att_one_show]);
 		//	}
 		//}
 		return equip_att;

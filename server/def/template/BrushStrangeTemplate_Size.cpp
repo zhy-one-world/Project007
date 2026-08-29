@@ -1,6 +1,6 @@
 #include "BrushStrangeTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void BrushStrangeTemplateSize()
     {

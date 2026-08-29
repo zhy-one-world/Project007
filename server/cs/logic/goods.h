@@ -9,7 +9,7 @@ purpose: 单个商品
 
 #include <Logic/goods_def.hpp>
 #include "template/ServerTemplateHead.h"
-namespace hld
+namespace faith
 {
 	class cgoods
 	{

@@ -12,7 +12,7 @@ purpose: about role's pokedex_mgr
 #include "pokedex.h"
 #include "Logic/pokedex_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class player;
 	class cpokedex_mgr

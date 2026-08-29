@@ -18,7 +18,7 @@ purpose:
 #include "utility/init_unit.h"
 #include "utility/parse_msg.h"
 
-namespace hld
+namespace faith
 {
 
 	cbelief_mgr::cbelief_mgr()
@@ -90,7 +90,7 @@ namespace hld
 	BeliefTemplate* cbelief_mgr::get_cur_max_rank()
 	{
 		BeliefTemplate* BeliefTemplatePtr = nullptr;
-		for (uint32 i = 0; i < hld::e_belief_series_type_max; i++)
+		for (uint32 i = 0; i < faith::e_belief_series_type_max; i++)
 		{
 			if (m_belief_ary[i].get_belief_info_ptr() == nullptr)
 			{
@@ -237,19 +237,19 @@ namespace hld
 		xstring return_empty_string = "";
 		switch (belief_type)
 		{
-		case hld::e_belief_series_type_spring:
+		case faith::e_belief_series_type_spring:
 			name_id = 90095162;
 			break;
-		case hld::e_belief_series_type_summer:
+		case faith::e_belief_series_type_summer:
 			name_id = 90095163;
 			break;
-		case hld::e_belief_series_type_autumn:
+		case faith::e_belief_series_type_autumn:
 			name_id = 90095164;
 			break;
-		case hld::e_belief_series_type_winter:
+		case faith::e_belief_series_type_winter:
 			name_id = 90095165;
 			break;
-		case hld::e_belief_series_type_max:
+		case faith::e_belief_series_type_max:
 			break;
 		default:
 			break;
@@ -291,7 +291,7 @@ namespace hld
 		{
 			return name_str;
 		}
-		name_index = name_index + (belief_ptr->BeliefType * hld::e_belief_buff_level_max);
+		name_index = name_index + (belief_ptr->BeliefType * faith::e_belief_buff_level_max);
 	    const std::vector<std::string>& temp_array_list = template_manager::get_instance().get_string_list(90090833);
 		if (temp_array_list.empty())
 		{
@@ -357,7 +357,7 @@ namespace hld
 	int32 cbelief_mgr::get_total_rank()
 	{
 		int total_rank = 0;
-		for (uint32 i = 0; i < hld::e_belief_series_type_max; i++)
+		for (uint32 i = 0; i < faith::e_belief_series_type_max; i++)
 		{
 			if (m_belief_ary[i].get_belief_info_ptr() == nullptr
 				|| m_belief_ary[i].get_data_info(e_belief_info_upgrade_count) == 0)
@@ -398,11 +398,11 @@ namespace hld
 		//}
 		//else
 		//{
-		//	hld::cs2dp_proto::cs2dp_proto::save_role_belief msg;
+		//	faith::cs2dp_proto::cs2dp_proto::save_role_belief msg;
 		//	msg.set_role_guid(m_player_ptr->get_unit_guid().server_64);
 		//	msg.set_unit_array_index(m_player_ptr->get_array_index());
 		//	msg.set_save_type_ex(save_type);
-		//	hld::cs2dp_proto::cs2dp_proto::role_belief_db *db_data = msg.mutable_db_data();
+		//	faith::cs2dp_proto::cs2dp_proto::role_belief_db *db_data = msg.mutable_db_data();
 		//	if (db_data == nullptr)
 		//	{
 		//		return;
@@ -412,7 +412,7 @@ namespace hld
 		//	for (uint32 i = 0; i < e_belief_series_type_max; ++i)
 		//	{
 		//		const s_belief_info& tmp = m_belief_ary[i].get_belief_inst();
-		//		hld::cs2dp_proto::role_belief_row *db_row = db_data->add_row_data();
+		//		faith::cs2dp_proto::role_belief_row *db_row = db_data->add_row_data();
 		//		if (db_row == nullptr)
 		//		{
 		//			return;
@@ -466,7 +466,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_belief_db msg;
+		faith::cs2dp_proto::role_belief_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -481,7 +481,7 @@ namespace hld
 		s_belief_info *p_row = (s_belief_info *)p_data;
 		for (int32 i = 0; i < msg.row_count(); i++)
 		{
-			hld::cs2dp_proto::role_belief_row db_row = msg.row_data(i);
+			faith::cs2dp_proto::role_belief_row db_row = msg.row_data(i);
 			for (int32 j = 0; j < db_row.data_ary_size(); j++)
 			{
 				p_row->data_ary[j] = db_row.data_ary(j);

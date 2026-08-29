@@ -16,7 +16,7 @@
 #include "Logic/world_def.hpp"
 #include "base.hpp"
 
-namespace hld
+namespace faith
 {
 	class http_access_mgr
 	{

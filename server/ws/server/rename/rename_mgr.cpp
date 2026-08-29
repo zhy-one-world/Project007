@@ -11,7 +11,7 @@
 #include "character.pb.h"
 
 #define CHANGE_NAME_CARD_ID				31000159
-namespace hld
+namespace faith
 {
 	rename_mgr::rename_mgr()
 	{

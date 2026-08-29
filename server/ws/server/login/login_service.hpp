@@ -13,7 +13,7 @@
 #include "server_def.hpp"
 #include <login_msg.hpp>
 
-namespace hld
+namespace faith
 {
 	class login_proto_login;
 	class login_service

@@ -20,7 +20,7 @@ purpose:
 #include "template/template_manager.h"
 #include "utility/parse_msg.h"
 
-namespace hld
+namespace faith
 {
 
 	ctalent_mgr::ctalent_mgr()
@@ -240,7 +240,7 @@ namespace hld
 	}
 
 
-	hld::int32 ctalent_mgr::get_talent_cast(const int32 talent_type)
+	faith::int32 ctalent_mgr::get_talent_cast(const int32 talent_type)
 	{
 		int32 cast_num = 0;
 		int32 len = m_talent_vector.size();
@@ -284,12 +284,12 @@ namespace hld
 		}
 		else
 		{
-			hld::cs2dp_proto::save_role_talent msg;
+			faith::cs2dp_proto::save_role_talent msg;
 			msg.set_role_guid(player_ref.get_unit_guid().server_64);
 			msg.set_unit_array_index(m_unit_array_index);
 			msg.set_save_type_ex(save_type);
 
-			hld::cs2dp_proto::role_talent_db *db_data = msg.mutable_db_data();
+			faith::cs2dp_proto::role_talent_db *db_data = msg.mutable_db_data();
 			if (db_data == nullptr)
 			{
 				return;
@@ -306,7 +306,7 @@ namespace hld
 				}
 				if (nullptr != m_talent_vector[i] && m_talent_vector[i]->is_valid())
 				{
-					hld::cs2dp_proto::role_talent_row *db_row = db_data->add_row_data();
+					faith::cs2dp_proto::role_talent_row *db_row = db_data->add_row_data();
 					if (db_row == nullptr)
 					{
 						return;
@@ -342,7 +342,7 @@ namespace hld
 		{
 			return false;
 		}
-		hld::cs2dp_proto::role_talent_db msg;
+		faith::cs2dp_proto::role_talent_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
@@ -357,7 +357,7 @@ namespace hld
 		s_talent_info *p_row = (s_talent_info *)p_data;
 		for (int32 i = 0; i < msg.row_count(); i++)
 		{
-			hld::cs2dp_proto::role_talent_row db_row = msg.row_data(i);
+			faith::cs2dp_proto::role_talent_row db_row = msg.row_data(i);
 			for (int32 j = 0; j < db_row.data_ary_size(); j++)
 			{
 				p_row->data_ary[j] = db_row.data_ary(j);
@@ -414,7 +414,7 @@ namespace hld
 		{
 			return;
 		}
-		hld::talent_proto_level_up_end msg;
+		faith::talent_proto_level_up_end msg;
 		TalentTemplate* talent_template_ptr = GET_TEMPLATE(TalentTemplate, talent_template_id);
 		if (nullptr == talent_template_ptr)
 		{
@@ -458,13 +458,13 @@ namespace hld
 				std::vector<int32>& need_layer_data = get_data_by_layer_index(talent_list_template_id, layer_data[e_talent_layer_need_id]);
 				if (need_layer_data.size() < e_talent_layer_max)
 				{
-					msg.set_operate_result(hld::e_item_string_can_not_use);
+					msg.set_operate_result(faith::e_item_string_can_not_use);
 					player_ref.send_message_to_self(&msg, e_msgindex_s2c_talent_level_up_end);
 					return;
 				}
 				if (get_layer_talent_num(need_layer_data) < layer_data[e_talent_layer_need_num])
 				{
-					msg.set_operate_result(hld::e_item_string_can_not_use);
+					msg.set_operate_result(faith::e_item_string_can_not_use);
 					player_ref.send_message_to_self(&msg, e_msgindex_s2c_talent_level_up_end);
 					return;
 				}
@@ -473,7 +473,7 @@ namespace hld
 			{
 				if (get_talent_list_num(layer_data[e_talent_layer_need_id]) < layer_data[e_talent_layer_need_num])
 				{
-					msg.set_operate_result(hld::e_item_string_can_not_use);
+					msg.set_operate_result(faith::e_item_string_can_not_use);
 					player_ref.send_message_to_self(&msg, e_msgindex_s2c_talent_level_up_end);
 					return;
 				}
@@ -488,13 +488,13 @@ namespace hld
 				ctalent* talent_ptr = get_talent_by_series(open_talent_template_ptr->Series);
 				if (nullptr == talent_ptr)
 				{
-					msg.set_operate_result(hld::e_item_string_can_not_use);
+					msg.set_operate_result(faith::e_item_string_can_not_use);
 					player_ref.send_message_to_self(&msg, e_msgindex_s2c_talent_level_up_end);
 					return;
 				}
 				if (talent_ptr->get_talent_template_id() < can_open_id)
 				{
-					msg.set_operate_result(hld::e_item_string_can_not_use);
+					msg.set_operate_result(faith::e_item_string_can_not_use);
 					player_ref.send_message_to_self(&msg, e_msgindex_s2c_talent_level_up_end);
 					return;
 				}
@@ -503,13 +503,13 @@ namespace hld
 
 		// 开启的天赋页限制
 		const int32 OpenLayerLimitSize = talent_template_ptr->OpenrLayerLimit.size();
-		if (OpenLayerLimitSize == hld::e_open_layer_limit_max)
+		if (OpenLayerLimitSize == faith::e_open_layer_limit_max)
 		{
-			const int32 OpenLayerLimitType = talent_template_ptr->OpenrLayerLimit[hld::e_open_layer_limit_type];
-			const int32 OpenLayerLimitNum = talent_template_ptr->OpenrLayerLimit[hld::e_open_layer_limit_num];
+			const int32 OpenLayerLimitType = talent_template_ptr->OpenrLayerLimit[faith::e_open_layer_limit_type];
+			const int32 OpenLayerLimitNum = talent_template_ptr->OpenrLayerLimit[faith::e_open_layer_limit_num];
 			if (get_talent_cast(OpenLayerLimitType) < OpenLayerLimitNum)
 			{
-				msg.set_operate_result(hld::e_item_string_can_not_use);
+				msg.set_operate_result(faith::e_item_string_can_not_use);
 				player_ref.send_message_to_self(&msg, e_msgindex_s2c_talent_level_up_end);
 				return;
 			}
@@ -529,7 +529,7 @@ namespace hld
 			}
 			if (talent_ptr->get_talent_template_id() > talent_template_id)
 			{
-				msg.set_operate_result(hld::e_item_string_can_not_use);
+				msg.set_operate_result(faith::e_item_string_can_not_use);
 				player_ref.send_message_to_self(&msg, e_msgindex_s2c_talent_level_up_end);
 				return;
 			}
@@ -591,7 +591,7 @@ namespace hld
 
 		player_ref.set_unit_gs_change();//改变战力
 
-		msg.set_operate_result(hld::e_item_string_succeed);
+		msg.set_operate_result(faith::e_item_string_succeed);
 		msg.set_old_talent_template_id(old_data_ary[e_talent_info_template_id]);
 		msg.set_new_talent_template_id(new_talent_info.data_ary[e_talent_info_template_id]);
 		player_ref.send_message_to_self(&msg, e_msgindex_s2c_talent_level_up_end);

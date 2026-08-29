@@ -10,7 +10,7 @@ purpose: 七日目标头文件
 #include "template/StringConst_S.h"
 #include "utility/cs_date.hpp"
 
-namespace hld
+namespace faith
 {
 	
 	cseven_day_goal::cseven_day_goal()

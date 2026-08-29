@@ -14,7 +14,7 @@
 #include <xchar.hpp>
 #include "Logic/char_def.hpp"
 
-namespace hld
+namespace faith
 {
 	#define MAX_ROWS_LIMIT				100000
 	#define MAX_ROW_SIZE_LIMIT			13072	//13072 Byte

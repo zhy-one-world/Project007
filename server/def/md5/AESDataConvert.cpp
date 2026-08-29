@@ -5,7 +5,7 @@
 
 #pragma warning(disable: 26400 26451)
 
-namespace hld {
+namespace faith {
 	xstring AESDataConvert::g_key = "test";
 	xstring AESDataConvert::g_iv = "";
 

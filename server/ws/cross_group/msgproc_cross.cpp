@@ -78,7 +78,7 @@
 #include "cross.pb.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	void gate2ws_rep_register(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
@@ -822,7 +822,7 @@ namespace hld
 				client_session* session_ptr = client_session_mgr::getInstance().get_session(packet->role_guid);
 				if (nullptr == session_ptr)
 					return;
-				hld::cross_ladder_send_role_info msg;
+				faith::cross_ladder_send_role_info msg;
 				bool success = msg.ParseFromArray(packet->data, packet->dataLen);
 				if (success)
 				{
@@ -884,7 +884,7 @@ namespace hld
 				client_session* session_ptr = client_session_mgr::getInstance().get_session(packet->role_guid);
 				if (nullptr == session_ptr)
 					return;
-				hld::cross_ladder_respond_buy_join_ticket msg;
+				faith::cross_ladder_respond_buy_join_ticket msg;
 				bool success = msg.ParseFromArray(packet->data, packet->dataLen);
 				if (success)
 				{
@@ -1317,7 +1317,7 @@ namespace hld
 					}
 					else
 					{
-						hld::ws2cs_proto::cloud_shop_buy_req pro_msg;
+						faith::ws2cs_proto::cloud_shop_buy_req pro_msg;
 						req.to_proto(pro_msg);
 						pSession->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_cloud_shop_buy_req);
 					}
@@ -1433,7 +1433,7 @@ namespace hld
 				}
 				else
 				{
-					hld::ws2cs_proto::change_gate_legion_name pro_msg;
+					faith::ws2cs_proto::change_gate_legion_name pro_msg;
 					_msg.to_proto(pro_msg);
 					world_server::getInstance().broadcast_lua(&pro_msg, e_msg_index_ws2cs_change_gate_legion_name, e_server_type_cs);
 				}
@@ -1633,7 +1633,7 @@ namespace hld
 				{
 					return;
 				}
-				hld::game_proto_element_war_send_sign_up_end msg;
+				faith::game_proto_element_war_send_sign_up_end msg;
 				bool success = msg.ParseFromArray(packet->data, packet->dataLen);
 				if (success)
 				{
@@ -1649,7 +1649,7 @@ namespace hld
 				{
 					return;
 				}
-				hld::game_proto_element_war_send_close_sign_up_end msg;
+				faith::game_proto_element_war_send_close_sign_up_end msg;
 				bool success = msg.ParseFromArray(packet->data, packet->dataLen);
 				if (success)
 				{
@@ -1744,7 +1744,7 @@ namespace hld
 					}
 					else
 					{
-						hld::ws2cs_proto::element_war_check_can_get_mission_reward_end pro_msg;
+						faith::ws2cs_proto::element_war_check_can_get_mission_reward_end pro_msg;
 						msg.to_proto(pro_msg);
 						world_server::getInstance().broadcast_lua(&pro_msg, e_msgindex_ws2cs_element_war_check_can_get_mission_reward_end, e_server_type_cs);
 					}
@@ -1769,7 +1769,7 @@ namespace hld
 				{
 					return;
 				}
-				hld::game_proto_element_war_role_info msg;
+				faith::game_proto_element_war_role_info msg;
 				bool success = msg.ParseFromArray(packet->data, packet->dataLen);
 				if (success)
 				{
@@ -1790,7 +1790,7 @@ namespace hld
 						}
 						else
 						{
-							hld::ws2cs_proto::element_war_send_last_score pro_msg;
+							faith::ws2cs_proto::element_war_send_last_score pro_msg;
 							send_last_score.to_proto(pro_msg);
 							session_ptr->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_element_war_send_last_score);
 						}
@@ -1832,7 +1832,7 @@ namespace hld
 					}
 					else
 					{
-						hld::ws2cs_proto::element_war_send_last_score pro_msg;
+						faith::ws2cs_proto::element_war_send_last_score pro_msg;
 						msg.to_proto(pro_msg);
 						pSession->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_element_war_send_last_score);
 					}

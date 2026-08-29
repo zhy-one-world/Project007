@@ -13,12 +13,12 @@ typedef WordSet::iterator		WordSetIt;
 /*
  *	游戏允许的有效字库
  */
-namespace hld
+namespace faith
 {
-	class CCharLib : public hld::singleton<CCharLib>
+	class CCharLib : public faith::singleton<CCharLib>
 	{
 	private:
-		friend class hld::singleton< CCharLib >;
+		friend class faith::singleton< CCharLib >;
 
 	private:
 		WordSet		m_word_set;

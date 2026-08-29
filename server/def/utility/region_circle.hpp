@@ -3,7 +3,7 @@
 
 #include "region.hpp"
 
-namespace hld
+namespace faith
 {
     class region_circle
     {

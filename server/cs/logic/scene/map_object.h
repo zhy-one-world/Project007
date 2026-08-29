@@ -12,7 +12,7 @@
 #include "../player.hpp"
 #include "npc_def.hpp"
 
-namespace hld
+namespace faith
 {
 	struct ws2cs_map_dynamic_params;
 

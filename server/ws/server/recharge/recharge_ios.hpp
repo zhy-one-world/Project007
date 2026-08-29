@@ -12,7 +12,7 @@
 
 #include "recharge_service.hpp"
 
-namespace hld
+namespace faith
 {
 	class recharge_ios : public singleton<recharge_ios>
 	{

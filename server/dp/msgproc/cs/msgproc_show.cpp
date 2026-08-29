@@ -12,7 +12,7 @@
 #include <item_msg.hpp>
 #include <char_msg.hpp>
 
-namespace hld
+namespace faith
 {
 	
 

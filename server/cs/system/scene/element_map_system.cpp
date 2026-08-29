@@ -13,7 +13,7 @@
 #include "template/template_manager.h"
 #include "wave_monster_system.h"
 
-using namespace hld;
+using namespace faith;
 
 void element_map_system::start_up(Entity* map_ent, MapTemplate* map_template)
 {
@@ -239,7 +239,7 @@ void element_map_system::on_npc_delete(Entity* map_ent, npc* npc_ptr, bool is_de
 			//player_ref.get_element_heart_mgr().element_heart_unlock_equip_slot(base_map_cp->m_map_id);
 		}
 
-		hld::character_proto_map_fuben_over msg;
+		faith::character_proto_map_fuben_over msg;
 		msg.set_fuben_template_id(base_map_cp->m_map_id);
 		base_map_system::send_map_message(map_ent, &msg, e_msgindex_s2c_map_fuben_over);
 	}

@@ -32,7 +32,7 @@
 #include <time.hpp>
 #include "utility/globle_data.h"
 
-namespace hld
+namespace faith
 {
 	xstring app_get_pgroduct_version_string();
 	void app_set_console_title(void);
@@ -108,33 +108,33 @@ namespace hld
 
 }
 
-hld::int32 _XMAIN(hld::int32 argc, xchar* argv[])
+faith::int32 _XMAIN(faith::int32 argc, xchar* argv[])
 {
 	setlocale(LC_ALL, "utf8");
-	hld::set_root_directory();
-	srand(hld::utility::time());
-	hld::app_set_console_title();
-	if (!hld::servers_config_manager::getInstance().init_config())
+	faith::set_root_directory();
+	srand(faith::utility::time());
+	faith::app_set_console_title();
+	if (!faith::servers_config_manager::getInstance().init_config())
 	{
 		std::cout << "server config fail!!" << std::endl;
 		return -1;
 	}
 
 	//====Add for logger====
-	hld::server_log::init_new_log(SERVERCONFIG->game_id, "cs");
+	faith::server_log::init_new_log(SERVERCONFIG->game_id, "cs");
 	//====Add for logger====
 
 	//	setup postmortem module
-	hld::dump postmortem(_XTEXT("cs.exe"), _XTEXT("cs-v") + hld::app_get_pgroduct_version_string());
+	faith::dump postmortem(_XTEXT("cs.exe"), _XTEXT("cs-v") + faith::app_get_pgroduct_version_string());
 
-	hld::ecs_world::get_instance().init();
+	faith::ecs_world::get_instance().init();
 
-	using hld::net::scheduler;
+	using faith::net::scheduler;
 
-	hld::scheduler::getInstance().set_option(scheduler::options::thread_num(CS_SERVER_SCHEDULER_THREAD_COUNT));
+	faith::scheduler::getInstance().set_option(scheduler::options::thread_num(CS_SERVER_SCHEDULER_THREAD_COUNT));
 
-	hld::app_server::getInstance().run(hld::init, hld::release);
+	faith::app_server::getInstance().run(faith::init, faith::release);
 
-	hld::postmortem::getInstance().release();
+	faith::postmortem::getInstance().release();
 	return 0;
 }

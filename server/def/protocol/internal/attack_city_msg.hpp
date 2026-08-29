@@ -17,12 +17,12 @@ purpose:
 #include "Logic/attack_city_def.hpp"
 #include "core.hpp"
 #include "Logic/chat_def.hpp"
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	enum
 	{
-		e_msgindex_ws2ws_transfer_attack_city_map_result = hld::e_msg_base_attack_city,	// 传送到活动地图的返回结果
+		e_msgindex_ws2ws_transfer_attack_city_map_result = faith::e_msg_base_attack_city,	// 传送到活动地图的返回结果
 		e_msgindex_ws2cs_attack_city_init_data,												// 地图初始化军团数据		
 		e_msgindex_ws2ws_attack_city_legion_check,											// 活动开启前的活动检测
 		e_msgindex_ws2ws_attack_city_legion_check_end,										// 活动开启前的活动检测结果
@@ -46,7 +46,7 @@ namespace hld
 		e_msgindex_ws2ws_send_attack_city_group_mail,										// 发送分组信息
 	};	
 	// 活动地图传送
-	struct ws2ws_transfer_attack_city_map_result : public hld::packet_base
+	struct ws2ws_transfer_attack_city_map_result : public faith::packet_base
 	{
 		int32						result;								// 结果类型
 		guid_64						role_guid;							// 角色Guid
@@ -63,7 +63,7 @@ namespace hld
 		}
 	};
 	// 地图初始化
-	struct ws2cs_attack_city_init_data : public hld::packet_base
+	struct ws2cs_attack_city_init_data : public faith::packet_base
 	{
 		guid_64						map_guid;								// 地图Guid
 		int32						group_level;							// 分组等级
@@ -79,7 +79,7 @@ namespace hld
 		}
 	};
 	// 军团检查
-	struct ws2ws_attack_city_legion_check : public hld::packet_base
+	struct ws2ws_attack_city_legion_check : public faith::packet_base
 	{
 		guid_64						legion_guid;							// 军团Guid
 		ws2ws_attack_city_legion_check()
@@ -89,7 +89,7 @@ namespace hld
 		}
 	};
 	// 军团检查结果
-	struct ws2ws_attack_city_legion_check_end : public hld::packet_base
+	struct ws2ws_attack_city_legion_check_end : public faith::packet_base
 	{
 		guid_64						legion_guid;							// 军团Guid
 		ws2ws_attack_city_legion_check_end()	
@@ -99,7 +99,7 @@ namespace hld
 		}
 	};
 	// 保存军团信息
-	struct ws2dp_attack_city_save_legion_info : public hld::packet_base
+	struct ws2dp_attack_city_save_legion_info : public faith::packet_base
 	{
 		s_attack_city_legion_info					legion_info;
 		ws2dp_attack_city_save_legion_info()
@@ -109,7 +109,7 @@ namespace hld
 		}
 	};
 	// 保存排名信息
-	struct ws2dp_attack_city_save_rank_info : public hld::packet_base
+	struct ws2dp_attack_city_save_rank_info : public faith::packet_base
 	{
 		s_attack_city_rank_info						rank_info;
 		ws2dp_attack_city_save_rank_info()
@@ -119,7 +119,7 @@ namespace hld
 		}
 	};
 	// 请求加载军团信息
-	struct ws2dp_attack_city_load_legion_info : public hld::packet_base
+	struct ws2dp_attack_city_load_legion_info : public faith::packet_base
 	{
 		ws2dp_attack_city_load_legion_info()
 		{
@@ -128,7 +128,7 @@ namespace hld
 		}
 	};
 	// 加载军团信息
-	struct dp2ws_attack_city_load_legion_info_end : public hld::packet_base
+	struct dp2ws_attack_city_load_legion_info_end : public faith::packet_base
 	{
 		s_attack_city_legion_info	info_list[attack_city_save_dp_max_num];
 		int32						data_num;
@@ -139,7 +139,7 @@ namespace hld
 		}
 	};
 	// 请求加载排名信息
-	struct ws2dp_attack_city_load_rank_info : public hld::packet_base
+	struct ws2dp_attack_city_load_rank_info : public faith::packet_base
 	{
 		ws2dp_attack_city_load_rank_info()
 		{
@@ -148,7 +148,7 @@ namespace hld
 		}
 	};
 	// 加载排名信息
-	struct dp2ws_attack_city_load_rank_info_end : public hld::packet_base
+	struct dp2ws_attack_city_load_rank_info_end : public faith::packet_base
 	{
 		s_attack_city_rank_info		info_list[TopMaxNum];
 		int32						data_num;
@@ -159,7 +159,7 @@ namespace hld
 		}
 	};
 	// 清空排名信息
-	struct ws2dp_attack_city_clear_rank_info : public hld::packet_base
+	struct ws2dp_attack_city_clear_rank_info : public faith::packet_base
 	{
 		ws2dp_attack_city_clear_rank_info()
 		{
@@ -168,7 +168,7 @@ namespace hld
 		}
 	};
 	// 清空军团信息
-	struct ws2dp_attack_city_clear_legion_info : public hld::packet_base
+	struct ws2dp_attack_city_clear_legion_info : public faith::packet_base
 	{
 		ws2dp_attack_city_clear_legion_info()
 		{
@@ -177,7 +177,7 @@ namespace hld
 		}
 	};
 	// 获取军团信息
-	struct ws2ws_get_attack_city_legion_info : public hld::packet_base
+	struct ws2ws_get_attack_city_legion_info : public faith::packet_base
 	{
 		guid_64 role_guid;
 		guid_64 legion_guid;
@@ -189,7 +189,7 @@ namespace hld
 		}
 	};
 	// 获取排名信息
-	struct ws2ws_get_attack_city_legion_rank_info : public hld::packet_base
+	struct ws2ws_get_attack_city_legion_rank_info : public faith::packet_base
 	{
 		guid_64 role_guid;
 		guid_64 legion_guid;
@@ -201,7 +201,7 @@ namespace hld
 		}
 	};
 	// 发送攻城战初始化成功
-	struct ws2ws_sync_attack_city_legion_info : public hld::packet_base
+	struct ws2ws_sync_attack_city_legion_info : public faith::packet_base
 	{
 		ws2ws_sync_attack_city_legion_info()
 		{
@@ -211,7 +211,7 @@ namespace hld
 	};
 
 	// 发送军团结算结果
-	struct cs2ws_send_attack_city_legion_reward_info : public hld::packet_base
+	struct cs2ws_send_attack_city_legion_reward_info : public faith::packet_base
 	{
 		guid_64						legion_guid;
 		int32						rank_level;
@@ -225,7 +225,7 @@ namespace hld
 		}
 	};
 	// 发送军团结束信息
-	struct cs2ws_send_attack_city_legion_end_info : public hld::packet_base
+	struct cs2ws_send_attack_city_legion_end_info : public faith::packet_base
 	{
 		int32							group_level;
 		s_attack_city_map_legion_info	info_list[attack_city_group_max_num];
@@ -236,7 +236,7 @@ namespace hld
 		}
 	};
 	// 发送军团排名信息
-	struct cs2ws_send_attack_city_rank_end_info : public hld::packet_base
+	struct cs2ws_send_attack_city_rank_end_info : public faith::packet_base
 	{
 		s_attack_city_rank_info		info_list[max_legion_member_num];
 		s_attack_city_rank_info		legion_info;
@@ -247,7 +247,7 @@ namespace hld
 		}
 	};
 	// 发送军团排名信息
-	struct cs2ws_send_attack_city_legion_call : public hld::packet_base
+	struct cs2ws_send_attack_city_legion_call : public faith::packet_base
 	{
 		guid_64						play_guid;
 		guid_64						legion_guid;
@@ -258,7 +258,7 @@ namespace hld
 		}
 	};
 	// 发送军团分组信息
-	struct ws2ws_send_attack_city_group_mail : public hld::packet_base
+	struct ws2ws_send_attack_city_group_mail : public faith::packet_base
 	{
 		guid_64						legion_guid[e_attack_city_group_level_max * attack_city_group_max_num];
 		ws2ws_send_attack_city_group_mail()

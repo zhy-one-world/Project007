@@ -7,7 +7,7 @@
 #include "internet/net.pb.h"
 #include "utility/init_unit.h"
 
-namespace hld
+namespace faith
 {
 	belief_rune_mgr::belief_rune_mgr()
 	{
@@ -102,7 +102,7 @@ namespace hld
 	}
 	void belief_rune_mgr::response_operate_result(e_belief_rune_operate_type operate_type, int32 error_id)
 	{
-		hld::belief_rune_proto_belief_rune_operate_result resp;
+		faith::belief_rune_proto_belief_rune_operate_result resp;
 		resp.set_operate_type(operate_type);
 		resp.set_error_id(error_id);
 		if (operate_type == e_belief_rune_operate_type_decompose && m_decompose_rune_piece > 0) {

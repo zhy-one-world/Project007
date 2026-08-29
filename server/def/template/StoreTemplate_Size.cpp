@@ -1,6 +1,6 @@
 #include "StoreTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void StoreTemplateSize()
     {

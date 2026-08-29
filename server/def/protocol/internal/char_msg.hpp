@@ -29,7 +29,7 @@
 #include "logic/type_def.hpp"
 #include "Logic/world_def.hpp"
 
-namespace hld 
+namespace faith 
 {
 
 #pragma pack(push,1)
@@ -226,11 +226,11 @@ enum
 		}
 	};
 
-	struct dp2ls_enum_character : public hld::packet_base
+	struct dp2ls_enum_character : public faith::packet_base
 	{
-		hld::s_client_uid			client_uid;				//	unique client session identifier
+		faith::s_client_uid			client_uid;				//	unique client session identifier
 		int32						char_count;
-		s_unit_info					char_data[hld::max_character_num];
+		s_unit_info					char_data[faith::max_character_num];
 
 		dp2ls_enum_character()
 		{
@@ -244,9 +244,9 @@ enum
 		}
 	};
 
-	struct dp2ls_load_enum_item : public hld::packet_base
+	struct dp2ls_load_enum_item : public faith::packet_base
 	{
-		hld::s_client_uid					client_uid;
+		faith::s_client_uid					client_uid;
 		guid_64								role_guid;
 		int32								data_num; 
 		s_item_info							item_data[role_show_item_num];
@@ -262,9 +262,9 @@ enum
 			return (basic_len + data_num * sizeof(s_item_info));
 		}
 	};
-	struct dp2ls_load_enum_buff : public hld::packet_base
+	struct dp2ls_load_enum_buff : public faith::packet_base
 	{
-		hld::s_client_uid					client_uid;
+		faith::s_client_uid					client_uid;
 		guid_64								role_guid;
 		int32								data_num;
 		int32								buff_data[max_enum_buff_data_num];
@@ -281,9 +281,9 @@ enum
 			return (basic_len + data_num * sizeof(int32));
 		}
 	};
-	struct dp2ls_load_enum_spirit : public hld::packet_base
+	struct dp2ls_load_enum_spirit : public faith::packet_base
 	{
-		hld::s_client_uid					client_uid;
+		faith::s_client_uid					client_uid;
 		guid_64								role_guid;
 		s_item_info					temp_sprite_info;
 
@@ -293,9 +293,9 @@ enum
 			wheader = e_msgindex_dp2ls_load_enum_spirit;
 		}
 	};
-	struct dp2ls_load_enum_time : public hld::packet_base
+	struct dp2ls_load_enum_time : public faith::packet_base
 	{
-		hld::s_client_uid					client_uid;
+		faith::s_client_uid					client_uid;
 		guid_64								role_guid;
 		int64								login_out_time;
 
@@ -306,9 +306,9 @@ enum
 		}
 	};
 
-	struct dp2cs_load_char_show : public hld::packet_base
+	struct dp2cs_load_char_show : public faith::packet_base
 	{
-		hld::s_client_uid			client_uid;				//	unique client session identifier
+		faith::s_client_uid			client_uid;				//	unique client session identifier
 		s_char_show_info			show_info;		
 		int32						unit_array_index;
 
@@ -318,7 +318,7 @@ enum
 			wheader = e_msgindex_dp2cs_load_char_show;
 		}
 	};
-	struct cs2dp_save_char_show : public hld::packet_base
+	struct cs2dp_save_char_show : public faith::packet_base
 	{
 		s_char_show_info			show_info;
 
@@ -351,11 +351,11 @@ enum
 		int32								server_id;
 		s_unit_info			                init_role;
 		int32								item_num;
-		hld::s_item_info					init_item[init_item_num];
+		faith::s_item_info					init_item[init_item_num];
 		int32								skill_num;
-		hld::s_skill_info					init_skill[init_skill_num];
+		faith::s_skill_info					init_skill[init_skill_num];
 		int32								create_level_requirement;
-		s_record_info						record_info_list[hld::max_guide_record_num];
+		s_record_info						record_info_list[faith::max_guide_record_num];
 		int32								record_num;
 		int32								login_msg_len;
 		ui8									login_proto_msg[MAX_C2S_S2C_PACKAGE_SIZE];
@@ -365,10 +365,10 @@ enum
 			wheader = e_msgindex_ls2dp_create_character;
 		}
 	};
-	struct dp2ls_create_character : public hld::packet_base
+	struct dp2ls_create_character : public faith::packet_base
 	{
 		e_create_role_result eresult;
-		hld::s_client_uid		client_uid;				//	unique client session identifier
+		faith::s_client_uid		client_uid;				//	unique client session identifier
 		guid_64				role_guid;				//	only available when eResult==e_success
 		s_unit_info role_info;
 		int32 login_msg_len;
@@ -382,7 +382,7 @@ enum
 	struct ls2fep_create_role : public packet_base
 	{
 		e_create_role_result eresult;
-		hld::s_client_uid		client_uid;				//	unique client session identifier
+		faith::s_client_uid		client_uid;				//	unique client session identifier
 		guid_64				role_guid;				//	only available when eResult==e_success
 		s_unit_info role_info;
 		ls2fep_create_role()
@@ -483,7 +483,7 @@ enum
 	struct dp2ws_gm_get_role_info : public packet_base
 	{
 		s_daemon_callback_info callback_info;
-		s_unit_info		role_info[hld::max_character_num * 10];
+		s_unit_info		role_info[faith::max_character_num * 10];
 		int32			data_num;
 		int32			check_type;
 		dp2ws_gm_get_role_info()
@@ -799,7 +799,7 @@ enum
 
 
 	//角色load失败
-	struct dp2cs_load_data_error : public hld::packet_base
+	struct dp2cs_load_data_error : public faith::packet_base
 	{
 		guid_64		role_guid;
 		int32		array_index;
@@ -906,7 +906,7 @@ enum
 			wheader = e_msgindex_dp2cs_save_character;
 		}
 	};
-	struct cs2dp_save_money : public hld::packet_base
+	struct cs2dp_save_money : public faith::packet_base
 	{
 		guid_64							role_guid;								// guid	
 		int32							unit_array_index;
@@ -918,7 +918,7 @@ enum
 			wheader = e_msgindex_cs2dp_save_char_money;
 		}
 	};
-	struct cs2dp_save_time : public hld::packet_base
+	struct cs2dp_save_time : public faith::packet_base
 	{
 		guid_64								role_guid;								// guid	
 		int32								unit_array_index;
@@ -930,7 +930,7 @@ enum
 			wheader = e_msgindex_cs2dp_save_char_time;
 		}
 	};
-	struct cs2dp_save_logic : public hld::packet_base
+	struct cs2dp_save_logic : public faith::packet_base
 	{
 		guid_64								role_guid;								// guid	
 		int32								unit_array_index;
@@ -969,7 +969,7 @@ enum
 	struct	s_base_group_info_db
 	{
 		int64					group_job;
-		xchar					group_name[hld::max_name_size + 1];
+		xchar					group_name[faith::max_name_size + 1];
 		s_base_group_info_db()
 		{
 			clear_data();
@@ -1231,7 +1231,7 @@ enum
 		}
 	};
 
-	struct ws2dp_del_relation : public hld::packet_base
+	struct ws2dp_del_relation : public faith::packet_base
 	{
 		guid_64					role_guid;
 		guid_64					target_role_guid;
@@ -1247,7 +1247,7 @@ enum
 		}
 	}; 
 
-	struct cs2dp_save_hightest_record : public hld::packet_base
+	struct cs2dp_save_hightest_record : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -1298,14 +1298,14 @@ enum
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_full_friend_guid;
 		}
-		void to_proto(hld::ws2cs_proto::full_friend_guid& msg)
+		void to_proto(faith::ws2cs_proto::full_friend_guid& msg)
 		{
 			msg.set_player_index(player_index);
 			msg.set_highest_firendliness_value(highest_firendliness_value);
 			msg.set_friend_num(friend_num);
 			msg.set_is_add(is_add);
 		}
-		void from_proto(const hld::ws2cs_proto::full_friend_guid& msg)
+		void from_proto(const faith::ws2cs_proto::full_friend_guid& msg)
 		{
 			player_index = msg.player_index();
 			highest_firendliness_value = msg.has_highest_firendliness_value();
@@ -1318,7 +1318,7 @@ enum
 
 	struct cs2ws_fuben_add_friendliness_value : public packet_base
 	{
-		guid_64			team_member_guid[hld::max_team_member_num];
+		guid_64			team_member_guid[faith::max_team_member_num];
 		int32           team_num;
 		cs2ws_fuben_add_friendliness_value()
 		{
@@ -1383,7 +1383,7 @@ enum
 			memset(role_name, 0, sizeof(role_name));
 			memcpy(role_name, p_role_name.c_str(), p_role_name.size() > max_name_size ? max_name_size : p_role_name.size());
 		}
-		void to_proto(hld::server2dp_proto::ws2dp_check_player_name& msg)
+		void to_proto(faith::server2dp_proto::ws2dp_check_player_name& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_role_name(role_name);
@@ -1397,7 +1397,7 @@ enum
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::server2dp_proto::ws2dp_check_player_name& msg)
+		void from_proto(const faith::server2dp_proto::ws2dp_check_player_name& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			my_memcopy_string(role_name, max_name_size, msg.role_name());
@@ -1439,7 +1439,7 @@ enum
 			memset(role_name, 0, sizeof(role_name));
 			memcpy(role_name, p_role_name.c_str(), p_role_name.size() > max_name_size ? max_name_size : p_role_name.size());
 		}
-		void to_proto(hld::server2dp_proto::ws2dp_change_player_name& msg)
+		void to_proto(faith::server2dp_proto::ws2dp_change_player_name& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_role_name(role_name);
@@ -1453,7 +1453,7 @@ enum
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::server2dp_proto::ws2dp_change_player_name& msg)
+		void from_proto(const faith::server2dp_proto::ws2dp_change_player_name& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			my_memcopy_string(role_name, max_name_size, msg.role_name());
@@ -1494,7 +1494,7 @@ enum
 			memset(role_name, 0, sizeof(role_name));
 			memcpy(role_name, p_role_name.c_str(), p_role_name.size() > max_name_size ? max_name_size : p_role_name.size());
 		}
-		void to_proto(hld::ws2cs_proto::change_player_name& msg)
+		void to_proto(faith::ws2cs_proto::change_player_name& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_role_name(role_name);
@@ -1508,7 +1508,7 @@ enum
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::ws2cs_proto::change_player_name& msg)
+		void from_proto(const faith::ws2cs_proto::change_player_name& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			my_memcopy_string(role_name, max_name_size, msg.role_name());
@@ -1525,12 +1525,12 @@ enum
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_sub_player_rename_item;
 		}
-		void to_proto(hld::ws2cs_proto::sub_player_rename_item& msg)
+		void to_proto(faith::ws2cs_proto::sub_player_rename_item& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_item_templete_id(item_templete_id);
 		}
-		void from_proto(const hld::ws2cs_proto::sub_player_rename_item& msg)
+		void from_proto(const faith::ws2cs_proto::sub_player_rename_item& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			item_templete_id = msg.item_templete_id();
@@ -1559,14 +1559,14 @@ enum
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_req_relation_end;
 		}
-		void to_proto(hld::ws2cs_proto::req_relation_end& msg)
+		void to_proto(faith::ws2cs_proto::req_relation_end& msg)
 		{
 			msg.set_relation_type(relation_type);
 			msg.set_self_index(self_index);
 			msg.set_target_guid(target_guid.server_64);
 
 		}
-		void from_proto(const hld::ws2cs_proto::req_relation_end& msg)
+		void from_proto(const faith::ws2cs_proto::req_relation_end& msg)
 		{
 			relation_type = msg.relation_type();
 			self_index = msg.self_index();
@@ -1574,7 +1574,7 @@ enum
 		}
 	};
 
-	struct dp2cs_connect_success : public hld::packet_base
+	struct dp2cs_connect_success : public faith::packet_base
 	{
 		int32		connect_success;
 		dp2cs_connect_success()
@@ -1583,7 +1583,7 @@ enum
 			wheader = e_msgindex_dp2cs_send_connect_success;
 		}
 	};
-	struct cs2dp_save_person_information_to_db : public hld::packet_base
+	struct cs2dp_save_person_information_to_db : public faith::packet_base
 	{
 		guid_64 role_guid;
 		int32 unit_array_index;
@@ -1597,7 +1597,7 @@ enum
 			wheader = e_msgindex_cs2dp_save_person_information_to_db;
 		}
 	};
-	struct cs2dp_get_person_information : public hld::packet_base
+	struct cs2dp_get_person_information : public faith::packet_base
 	{
 		guid_64 role_guid;
 		int32 unit_array_index;
@@ -1607,7 +1607,7 @@ enum
 			wheader = e_msgindex_cs2dp_get_person_information;
 		}
 	};
-	struct dp2cs_get_person_information : public hld::packet_base
+	struct dp2cs_get_person_information : public faith::packet_base
 	{
 		guid_64 role_guid;
 		int32 unit_array_index;
@@ -1618,7 +1618,7 @@ enum
 			wheader = e_msgindex_dp2cs_get_person_information;
 		}
 	};
-	struct cs2dp_get_other_person_information : public hld::packet_base
+	struct cs2dp_get_other_person_information : public faith::packet_base
 	{
 		guid_64 role_guid;
 		int32 unit_array_index;
@@ -1630,7 +1630,7 @@ enum
 			wheader = e_msgindex_cs2dp_get_other_person_information;
 		}
 	};
-	struct dp2cs_get_other_person_information : public hld::packet_base
+	struct dp2cs_get_other_person_information : public faith::packet_base
 	{
 		guid_64 role_guid;
 		int32 unit_array_index;
@@ -1644,7 +1644,7 @@ enum
 		}
 	};
 
-	struct cs2ws_sync_person_information : public hld::packet_base
+	struct cs2ws_sync_person_information : public faith::packet_base
 	{
 		guid_64 role_guid;
 		s_role_person_information person_info;
@@ -1654,7 +1654,7 @@ enum
 			wheader = e_msgindex_cs2ws_sync_person_information;
 		}
 	};
-	struct cs2ws_delete_person_information : public hld::packet_base
+	struct cs2ws_delete_person_information : public faith::packet_base
 	{
 		guid_64 role_guid;
 		cs2ws_delete_person_information()
@@ -1663,7 +1663,7 @@ enum
 			wheader = e_msgindex_cs2ws_delete_person_information;
 		}
 	};
-	struct cs2ws_get_person_couple : public hld::packet_base
+	struct cs2ws_get_person_couple : public faith::packet_base
 	{
 		guid_64 role_guid;
 		guid_64 target_guid;
@@ -1673,7 +1673,7 @@ enum
 			wheader = e_msgindex_cs2ws_get_person_couple;
 		}
 	};
-	struct dp2cs_get_role_competition : public hld::packet_base
+	struct dp2cs_get_role_competition : public faith::packet_base
 	{
 		guid_64 role_guid;
 		int32 unit_array_index;
@@ -1685,7 +1685,7 @@ enum
 		}
 	};
 
-	struct cs2dp_save_role_competition_to_db : public hld::packet_base
+	struct cs2dp_save_role_competition_to_db : public faith::packet_base
 	{
 		guid_64 role_guid;
 		int32 unit_array_index;
@@ -1712,7 +1712,7 @@ enum
 		}
 	};
 
-	struct dp2cs_get_role_dragontrip : public hld::packet_base
+	struct dp2cs_get_role_dragontrip : public faith::packet_base
 	{
 		guid_64 role_guid;
 		int32 unit_array_index;
@@ -1724,7 +1724,7 @@ enum
 		}
 	};
 
-	struct cs2dp_save_role_dragontrip_to_db : public hld::packet_base
+	struct cs2dp_save_role_dragontrip_to_db : public faith::packet_base
 	{
 		guid_64 role_guid;
 		int32 unit_array_index;
@@ -1737,12 +1737,12 @@ enum
 		}
 	};
 
-	struct dp2cs_get_role_skytreasure : public hld::packet_base
+	struct dp2cs_get_role_skytreasure : public faith::packet_base
 	{
 		guid_64 role_guid;
 		int32 unit_array_index;
 		int32 data_num;
-		s_skytreasure_info skytreasure_data_list[hld::max_skytreasure_num];
+		s_skytreasure_info skytreasure_data_list[faith::max_skytreasure_num];
 		dp2cs_get_role_skytreasure()
 		{
 			memset(this, 0, sizeof(*this));
@@ -1750,7 +1750,7 @@ enum
 		}
 	};
 
-	struct cs2dp_save_role_skytreasure_to_db : public hld::packet_base
+	struct cs2dp_save_role_skytreasure_to_db : public faith::packet_base
 	{
 		guid_64 role_guid;
 		int32 unit_array_index;
@@ -1763,7 +1763,7 @@ enum
 		}
 	};
 
-	struct dp2cs_get_role_starark : public hld::packet_base
+	struct dp2cs_get_role_starark : public faith::packet_base
 	{
 		guid_64 role_guid;
 		int32 unit_array_index;
@@ -1775,7 +1775,7 @@ enum
 		}
 	};
 
-	struct cs2dp_save_role_starark_to_db : public hld::packet_base
+	struct cs2dp_save_role_starark_to_db : public faith::packet_base
 	{
 		guid_64 role_guid;
 		int32 unit_array_index;
@@ -1788,7 +1788,7 @@ enum
 		}
 	};
 
-	struct cs2dp_save_time_feed_back_to_db : public hld::packet_base
+	struct cs2dp_save_time_feed_back_to_db : public faith::packet_base
 	{
 		guid_64						role_guid;
 		int32						save_type_ex;
@@ -1803,7 +1803,7 @@ enum
 		}
 	};
 
-	struct dp2cs_get_time_feed_back_to_db_end : public hld::packet_base
+	struct dp2cs_get_time_feed_back_to_db_end : public faith::packet_base
 	{
 		guid_64						role_guid;
 		int32						unit_array_index;
@@ -1818,7 +1818,7 @@ enum
 	};
 
 
-	struct cs2dp_save_time_limit_gift_to_db : public hld::packet_base
+	struct cs2dp_save_time_limit_gift_to_db : public faith::packet_base
 	{
 		guid_64						role_guid;
 		int32						save_type_ex;
@@ -1833,7 +1833,7 @@ enum
 		}
 	};
 
-	struct dp2cs_get_time_limit_gift_to_db_end : public hld::packet_base
+	struct dp2cs_get_time_limit_gift_to_db_end : public faith::packet_base
 	{
 		guid_64						role_guid;
 		int32						unit_array_index;
@@ -1847,7 +1847,7 @@ enum
 		}
 	};
 
-	struct cs2dp_save_subscribe_daily_info_to_db : public hld::packet_base
+	struct cs2dp_save_subscribe_daily_info_to_db : public faith::packet_base
 	{
 		guid_64						role_guid;
 		int32						save_type_ex;
@@ -1862,7 +1862,7 @@ enum
 		}
 	};
 
-	struct dp2cs_get_subscribe_daily_info_to_db_end : public hld::packet_base
+	struct dp2cs_get_subscribe_daily_info_to_db_end : public faith::packet_base
 	{
 		guid_64						role_guid;
 		int32						unit_array_index;

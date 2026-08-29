@@ -12,7 +12,7 @@ purpose: ”¿∫„µ∫
 #include "boss_island_def.hpp"
 #include "gain_treasure_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class player;
 	class boss_island_mgr

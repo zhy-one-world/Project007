@@ -80,7 +80,7 @@
 #include <ranking_msg.hpp>
 #include <time_limit_activity_msg.hpp>
 
-namespace hld
+namespace faith
 {
 	void dp2ls_reply_client_login(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
@@ -898,11 +898,11 @@ namespace hld
 		{
 			return;
 		}
-		const hld::dp2ws_add_mail_to_sql_failed* packet = static_cast<const hld::dp2ws_add_mail_to_sql_failed*>(data_ptr);
+		const faith::dp2ws_add_mail_to_sql_failed* packet = static_cast<const faith::dp2ws_add_mail_to_sql_failed*>(data_ptr);
 		dp2ws_add_mail_to_sql_failed resp;
 		memcpy(&resp, packet, sizeof(dp2ws_add_mail_to_sql_failed));
 
-		guid_64 sender_guid = guid_64(resp.mail_info.data_ary[hld::EMailInfo_SenderGuid1], resp.mail_info.data_ary[hld::EMailInfo_SenderGuid2]);
+		guid_64 sender_guid = guid_64(resp.mail_info.data_ary[faith::EMailInfo_SenderGuid1], resp.mail_info.data_ary[faith::EMailInfo_SenderGuid2]);
 		client_session* session = client_session_mgr::getInstance().get_session(sender_guid);
 
 		if (session == nullptr)
@@ -931,7 +931,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::send_mail pro_msg;
+			faith::ws2cs_proto::send_mail pro_msg;
 			request.to_proto(pro_msg);
 			session->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_recive_mail);
 		}
@@ -947,7 +947,7 @@ namespace hld
 			return;
 		}
 
-		const hld::dp2ws_load_mail_event_end* packet = static_cast<const hld::dp2ws_load_mail_event_end*>(data_ptr);
+		const faith::dp2ws_load_mail_event_end* packet = static_cast<const faith::dp2ws_load_mail_event_end*>(data_ptr);
 		dp2ws_load_mail_event_end resp;
 		memcpy(&resp, packet, sizeof(dp2ws_load_mail_event_end));
 
@@ -962,7 +962,7 @@ namespace hld
 			return;
 		}
 
-		const hld::dp2ws_load_mail_event_item_end* packet = static_cast<const hld::dp2ws_load_mail_event_item_end*>(data_ptr);
+		const faith::dp2ws_load_mail_event_item_end* packet = static_cast<const faith::dp2ws_load_mail_event_item_end*>(data_ptr);
 		dp2ws_load_mail_event_item_end resp;
 		memcpy(&resp, packet, sizeof(dp2ws_load_mail_event_item_end));
 
@@ -1392,7 +1392,7 @@ namespace hld
 		if (best_record_mgr::get_instance().is_use_lua())
 		{
 			dp2ws_load_all_best_record* tmp = const_cast<dp2ws_load_all_best_record*>(packet);
-			hld::dp2s_proto::load_all_best_record pro_msg;
+			faith::dp2s_proto::load_all_best_record pro_msg;
 			tmp->to_proto(pro_msg);
 			packet_s2s* p_s2s = parse_msg::getInstance().serialze_buffer(&pro_msg);
 			if (p_s2s == nullptr)
@@ -1428,7 +1428,7 @@ namespace hld
 		if (big_player_ws_mgr::get_instance().is_use_lua())
 		{
 			dp2ws_load_big_player_end* tmp = const_cast<dp2ws_load_big_player_end*>(packet);
-			hld::dp2s_proto::load_big_player_end pro_msg;
+			faith::dp2s_proto::load_big_player_end pro_msg;
 			tmp->to_proto(pro_msg);
 			packet_s2s* p_s2s = parse_msg::getInstance().serialze_buffer(&pro_msg);
 			if (p_s2s == nullptr)
@@ -1640,7 +1640,7 @@ namespace hld
 	}
 	void lua_dp2ws_load_red_package_end_proc(uint32 conn_index, const char * data_ptr, int32 data_len)
 	{
-		hld::dp2s_proto::load_red_package_end msg;       
+		faith::dp2s_proto::load_red_package_end msg;       
 	    bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len); 
 	    if (is_sucess == false)   
 	    {                        
@@ -1665,7 +1665,7 @@ namespace hld
 
 	void lua_dp2ws_load_red_package_receiver_end_proc(uint32 conn_index, const char * data_ptr, int32 data_len)
 	{
-		hld::dp2s_proto::load_red_package_receiver_end msg;
+		faith::dp2s_proto::load_red_package_receiver_end msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (is_sucess == false)
 		{
@@ -1788,7 +1788,7 @@ namespace hld
 		}
 		if (auction_mgr_ws::get_instance().is_use_lua())
 		{
-			hld::dp2s_proto::auction_find_buy_target_end pro_msg;
+			faith::dp2s_proto::auction_find_buy_target_end pro_msg;
 			dp2ws_auction_find_buy_target_end* tmp = const_cast<dp2ws_auction_find_buy_target_end *>(find_msg_data);
 			tmp->to_proto(pro_msg);
 			packet_s2s *p_s2s = parse_msg::getInstance().serialze_buffer(&pro_msg);
@@ -1811,7 +1811,7 @@ namespace hld
 		}
 		if (auction_mgr_ws::get_instance().is_use_lua())
 		{
-			hld::dp2s_proto::auction_cancel_sell pro_msg;
+			faith::dp2s_proto::auction_cancel_sell pro_msg;
 			dp2ws_auction_cancel_sell* tmp = const_cast<dp2ws_auction_cancel_sell *>(find_msg_data);
 			tmp->to_proto(pro_msg);
 			packet_s2s *p_s2s = parse_msg::getInstance().serialze_buffer(&pro_msg);
@@ -1834,7 +1834,7 @@ namespace hld
 		}
 		if (auction_mgr_ws::get_instance().is_use_lua())
 		{
-			hld::dp2s_proto::auction_sell_end pro_msg;
+			faith::dp2s_proto::auction_sell_end pro_msg;
 			dp2ws_auction_sell_end* tmp = const_cast<dp2ws_auction_sell_end *>(send_end_msg);
 			tmp->to_proto(pro_msg);
 			packet_s2s *p_s2s = parse_msg::getInstance().serialze_buffer(&pro_msg);
@@ -1857,7 +1857,7 @@ namespace hld
 		}
 		if (auction_mgr_ws::get_instance().is_use_lua())
 		{
-			hld::dp2s_proto::auction_find_bid_target_end pro_msg;
+			faith::dp2s_proto::auction_find_bid_target_end pro_msg;
 			dp2ws_auction_find_bid_target_end* tmp = const_cast<dp2ws_auction_find_bid_target_end *>(send_end_msg);
 			tmp->to_proto(pro_msg);
 			packet_s2s *p_s2s = parse_msg::getInstance().serialze_buffer(&pro_msg);
@@ -1904,7 +1904,7 @@ namespace hld
 		}
 		if (auction_mgr_ws::get_instance().is_use_lua())
 		{
-			hld::dp2s_proto::auction_clear_old_item_end pro_msg;
+			faith::dp2s_proto::auction_clear_old_item_end pro_msg;
 			dp2ws_auction_clear_old_item_end* tmp = const_cast<dp2ws_auction_clear_old_item_end *>(packet);
 			tmp->to_proto(pro_msg);
 			packet_s2s *p_s2s = parse_msg::getInstance().serialze_buffer(&pro_msg);
@@ -1931,7 +1931,7 @@ namespace hld
 		}
 		if (auction_mgr_ws::get_instance().is_use_lua())
 		{
-			hld::dp2s_proto::auction_req_share_list_end pro_msg;
+			faith::dp2s_proto::auction_req_share_list_end pro_msg;
 			dp2ws_auction_req_share_list_end* tmp = const_cast<dp2ws_auction_req_share_list_end*>(packet);
 			tmp->to_proto(pro_msg);
 			packet_s2s *p_s2s = parse_msg::getInstance().serialze_buffer(&pro_msg);
@@ -2044,7 +2044,7 @@ namespace hld
 
 		if (auction_mgr_ws::get_instance().is_use_lua())
 		{
-			hld::dp2s_proto::aution_time_out_end pro_msg;
+			faith::dp2s_proto::aution_time_out_end pro_msg;
 			dp2ws_aution_time_out_end* tmp = const_cast<dp2ws_aution_time_out_end*>(packet);
 			tmp->to_proto(pro_msg);
 			packet_s2s *p_s2s = parse_msg::getInstance().serialze_buffer(&pro_msg);
@@ -2244,7 +2244,7 @@ namespace hld
 		if (gain_treasure_ws_mgr::get_instance().is_use_lua())
 		{
 			dp2ws_load_all_gain_treasure_record_info *tmp = const_cast<dp2ws_load_all_gain_treasure_record_info*>(packet);
-			hld::dp2s_proto::load_all_gain_treasure_record_info pro_msg;
+			faith::dp2s_proto::load_all_gain_treasure_record_info pro_msg;
 			tmp->to_proto(pro_msg);
 
 			packet_s2s *p_s2s = parse_msg::getInstance().serialze_buffer(&pro_msg);

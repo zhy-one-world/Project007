@@ -1,6 +1,6 @@
 #include "ElementHeartUpgradeTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void ElementHeartUpgradeTemplateSize()
     {

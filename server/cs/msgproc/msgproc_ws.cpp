@@ -53,7 +53,7 @@ purpose:
 #include "internet/net.pb.h"
 #include "internal/attack_city_msg.hpp"
 
-namespace hld
+namespace faith
 {
 	using namespace net;
 	void ws2cs_req_reload_csv(uint32 conn_index, const void* data_ptr, size_t data_len)
@@ -303,8 +303,8 @@ namespace hld
 		empty_player.set_couple_name(packet->couple_name);
 		empty_player.get_legion_cs_mgr().set_legion_info(packet->legion_info);
 		empty_player.get_team_cs_mgr().set_player_team_info(packet->team_info, true);
-		empty_player.get_legion_cs_mgr().set_is_city_master(packet->bflag_loading_title[hld::e_title_type_legion_city_win_chief]);
-		empty_player.get_legion_cs_mgr().set_is_win_city_war_member(packet->bflag_loading_title[hld::e_title_type_legion_city_win_member]);
+		empty_player.get_legion_cs_mgr().set_is_city_master(packet->bflag_loading_title[faith::e_title_type_legion_city_win_chief]);
+		empty_player.get_legion_cs_mgr().set_is_win_city_war_member(packet->bflag_loading_title[faith::e_title_type_legion_city_win_member]);
 		empty_player.set_is_already_login(packet->is_already_login);
 		// 如果是PK之王就获得PK之王的称号,如果不是就剥夺PK之王的称号s 
 		//如果是军团战胜利方成员,添加称号  
@@ -327,7 +327,7 @@ namespace hld
 	void lua_ws2cs_req_enter_game(uint32 conn_index, const char *data_ptr, int32 data_len)
 	{
 		ZoneScoped;
-		hld::ws2cs_proto::enter_game msg;
+		faith::ws2cs_proto::enter_game msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (is_sucess == false)
 		{
@@ -376,7 +376,7 @@ namespace hld
 	void lua_ws2cs_req_server_config(uint32 conn_index, const char* data_ptr, int32 data_len)
 	{
 		ZoneScoped;
-		hld::ws2cs_proto::server_config msg;
+		faith::ws2cs_proto::server_config msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (is_sucess == false)
 		{
@@ -565,7 +565,7 @@ namespace hld
 	void lua_ws2cs_get_map_info_from_cs_func(uint32 conn_index, const char * data_ptr, int32 data_len)
 	{
 		ZoneScoped;
-		hld::ws2cs_proto::get_map_info_from_cs msg;
+		faith::ws2cs_proto::get_map_info_from_cs msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (is_sucess == false)
 		{
@@ -842,7 +842,7 @@ namespace hld
 			int64 disappear_time = init_unit::get_end_time(left_time);
 
 			std::vector<map_object*> map_cs_arr;
-			world_cs::get_all_map_by_type(map_cs_arr, hld::e_map_type_big_map);
+			world_cs::get_all_map_by_type(map_cs_arr, faith::e_map_type_big_map);
 			for (const map_object* map_obj_ptr : map_cs_arr)
 			{
 				if (nullptr == map_obj_ptr)
@@ -890,7 +890,7 @@ namespace hld
 		int64 disappear_time = init_unit::get_end_time(left_time);
 
 		std::vector<map_cs*> map_cs_arr;
-		world_cs::get_all_map_by_type<map_cs>(map_cs_arr, hld::e_map_type_big_map);
+		world_cs::get_all_map_by_type<map_cs>(map_cs_arr, faith::e_map_type_big_map);
 		for (auto map_cs_ptr : map_cs_arr)
 		{
 			int32 spawn_id = chest_arrival_activity::spawn_chest_begin_template_id;
@@ -1011,7 +1011,7 @@ namespace hld
 	void lua_ws2cs_set_player_legion_guid_func(uint32 conn_index, const char * data_ptr, int32 data_len)
 	{
 		ZoneScoped;
-		hld::ws2cs_proto::set_player_legion_info msg;
+		faith::ws2cs_proto::set_player_legion_info msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (is_sucess == false)
 		{
@@ -2457,11 +2457,11 @@ namespace hld
 		{
 			if (packet->is_add_money)
 			{
-				player_ref.add_money(packet->money_type, packet->money_value, hld::e_server_log_add_money_gm_order, -1, false);
+				player_ref.add_money(packet->money_type, packet->money_value, faith::e_server_log_add_money_gm_order, -1, false);
 			}
 			else
 			{
-				player_ref.cut_money(packet->money_type, packet->money_value,hld::e_server_log_cut_money_gm_order);
+				player_ref.cut_money(packet->money_type, packet->money_value,faith::e_server_log_cut_money_gm_order);
 			}
 		}
 	}
@@ -2679,7 +2679,7 @@ namespace hld
 	void lua_ws2cs_time_limit_act_temp(uint32 conn_index, const char * data_ptr, int32 data_len)
 	{
 		ZoneScoped;
-		hld::ws2cs_proto::act_limit_temp msg;          
+		faith::ws2cs_proto::act_limit_temp msg;          
 	    bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len); 
 	    if (is_sucess == false)   
 		{                        

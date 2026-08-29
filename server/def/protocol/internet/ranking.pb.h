@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_ranking_2eproto();
@@ -195,7 +195,7 @@ class ranking_proto_ranking_player_info : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 standby_parameter() const;
   inline void set_standby_parameter(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.ranking_player_info)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.ranking_player_info)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -318,7 +318,7 @@ class ranking_proto_get_player_ranking_value : public ::google::protobuf::Messag
   inline ::google::protobuf::int32 ranking_type() const;
   inline void set_ranking_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.get_player_ranking_value)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.get_player_ranking_value)
  private:
   inline void set_has_sender_guid();
   inline void clear_has_sender_guid();
@@ -399,23 +399,23 @@ class ranking_proto_get_player_ranking_value_end : public ::google::protobuf::Me
 
   // accessors -------------------------------------------------------
 
-  // optional .hld.ranking_proto.ranking_player_info target_player_info = 1;
+  // optional .faith.ranking_proto.ranking_player_info target_player_info = 1;
   inline bool has_target_player_info() const;
   inline void clear_target_player_info();
   static const int kTargetPlayerInfoFieldNumber = 1;
-  inline const ::hld::ranking_proto_ranking_player_info& target_player_info() const;
-  inline ::hld::ranking_proto_ranking_player_info* mutable_target_player_info();
-  inline ::hld::ranking_proto_ranking_player_info* release_target_player_info();
-  inline void set_allocated_target_player_info(::hld::ranking_proto_ranking_player_info* target_player_info);
+  inline const ::faith::ranking_proto_ranking_player_info& target_player_info() const;
+  inline ::faith::ranking_proto_ranking_player_info* mutable_target_player_info();
+  inline ::faith::ranking_proto_ranking_player_info* release_target_player_info();
+  inline void set_allocated_target_player_info(::faith::ranking_proto_ranking_player_info* target_player_info);
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.get_player_ranking_value_end)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.get_player_ranking_value_end)
  private:
   inline void set_has_target_player_info();
   inline void clear_has_target_player_info();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::hld::ranking_proto_ranking_player_info* target_player_info_;
+  ::faith::ranking_proto_ranking_player_info* target_player_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -490,7 +490,7 @@ class ranking_proto_ranking_operate_result : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 operate_result() const;
   inline void set_operate_result(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.ranking_operate_result)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.ranking_operate_result)
  private:
   inline void set_has_operate_result();
   inline void clear_has_operate_result();
@@ -586,7 +586,7 @@ class ranking_proto_get_my_rank : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 legion_guid() const;
   inline void set_legion_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.get_my_rank)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.get_my_rank)
  private:
   inline void set_has_sender_guid();
   inline void clear_has_sender_guid();
@@ -688,7 +688,7 @@ class ranking_proto_get_my_rank_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 rank_value() const;
   inline void set_rank_value(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.get_my_rank_end)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.get_my_rank_end)
  private:
   inline void set_has_rank_type();
   inline void clear_has_rank_type();
@@ -783,7 +783,7 @@ class ranking_proto_get_top_list : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 index() const;
   inline void set_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.get_top_list)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.get_top_list)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -868,16 +868,16 @@ class ranking_proto_get_top_list_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 ranking_index() const;
   inline void set_ranking_index(::google::protobuf::int32 value);
 
-  // repeated .hld.ranking_proto.ranking_player_info top_player_info = 2;
+  // repeated .faith.ranking_proto.ranking_player_info top_player_info = 2;
   inline int top_player_info_size() const;
   inline void clear_top_player_info();
   static const int kTopPlayerInfoFieldNumber = 2;
-  inline const ::hld::ranking_proto_ranking_player_info& top_player_info(int index) const;
-  inline ::hld::ranking_proto_ranking_player_info* mutable_top_player_info(int index);
-  inline ::hld::ranking_proto_ranking_player_info* add_top_player_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info >&
+  inline const ::faith::ranking_proto_ranking_player_info& top_player_info(int index) const;
+  inline ::faith::ranking_proto_ranking_player_info* mutable_top_player_info(int index);
+  inline ::faith::ranking_proto_ranking_player_info* add_top_player_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info >&
       top_player_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info >*
       mutable_top_player_info();
 
   // optional int32 if_first_send = 3;
@@ -894,7 +894,7 @@ class ranking_proto_get_top_list_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 if_last_send() const;
   inline void set_if_last_send(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.get_top_list_end)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.get_top_list_end)
  private:
   inline void set_has_ranking_index();
   inline void clear_has_ranking_index();
@@ -905,7 +905,7 @@ class ranking_proto_get_top_list_end : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info > top_player_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info > top_player_info_;
   ::google::protobuf::int32 ranking_index_;
   ::google::protobuf::int32 if_first_send_;
   ::google::protobuf::int32 if_last_send_;
@@ -1004,7 +1004,7 @@ class ranking_proto_worship_player : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 worship_type() const;
   inline void set_worship_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.worship_player)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.worship_player)
  private:
   inline void set_has_role_guid();
   inline void clear_has_role_guid();
@@ -1123,7 +1123,7 @@ class ranking_proto_worship_player_end : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 worship_type() const;
   inline void set_worship_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.worship_player_end)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.worship_player_end)
  private:
   inline void set_has_target_guid();
   inline void clear_has_target_guid();
@@ -1222,7 +1222,7 @@ class ranking_proto_sync_player_data : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_role_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.sync_player_data)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.sync_player_data)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1309,7 +1309,7 @@ class ranking_proto_worship_record_one : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 target_guid() const;
   inline void set_target_guid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.worship_record_one)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.worship_record_one)
  private:
   inline void set_has_ranking_type();
   inline void clear_has_ranking_type();
@@ -1387,24 +1387,24 @@ class ranking_proto_worship_record : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.ranking_proto.worship_record_one record_one = 1;
+  // repeated .faith.ranking_proto.worship_record_one record_one = 1;
   inline int record_one_size() const;
   inline void clear_record_one();
   static const int kRecordOneFieldNumber = 1;
-  inline const ::hld::ranking_proto_worship_record_one& record_one(int index) const;
-  inline ::hld::ranking_proto_worship_record_one* mutable_record_one(int index);
-  inline ::hld::ranking_proto_worship_record_one* add_record_one();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_worship_record_one >&
+  inline const ::faith::ranking_proto_worship_record_one& record_one(int index) const;
+  inline ::faith::ranking_proto_worship_record_one* mutable_record_one(int index);
+  inline ::faith::ranking_proto_worship_record_one* add_record_one();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_worship_record_one >&
       record_one() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_worship_record_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_worship_record_one >*
       mutable_record_one();
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.worship_record)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.worship_record)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_worship_record_one > record_one_;
+  ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_worship_record_one > record_one_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -1486,7 +1486,7 @@ class ranking_proto_service_rank_info_one : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 rank_index() const;
   inline void set_rank_index(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.service_rank_info_one)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.service_rank_info_one)
  private:
   inline void set_has_service_rank_type();
   inline void clear_has_service_rank_type();
@@ -1564,24 +1564,24 @@ class ranking_proto_service_rank_info_all : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.ranking_proto.service_rank_info_one service_rank_info = 1;
+  // repeated .faith.ranking_proto.service_rank_info_one service_rank_info = 1;
   inline int service_rank_info_size() const;
   inline void clear_service_rank_info();
   static const int kServiceRankInfoFieldNumber = 1;
-  inline const ::hld::ranking_proto_service_rank_info_one& service_rank_info(int index) const;
-  inline ::hld::ranking_proto_service_rank_info_one* mutable_service_rank_info(int index);
-  inline ::hld::ranking_proto_service_rank_info_one* add_service_rank_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_service_rank_info_one >&
+  inline const ::faith::ranking_proto_service_rank_info_one& service_rank_info(int index) const;
+  inline ::faith::ranking_proto_service_rank_info_one* mutable_service_rank_info(int index);
+  inline ::faith::ranking_proto_service_rank_info_one* add_service_rank_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_service_rank_info_one >&
       service_rank_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_service_rank_info_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_service_rank_info_one >*
       mutable_service_rank_info();
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.service_rank_info_all)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.service_rank_info_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_service_rank_info_one > service_rank_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_service_rank_info_one > service_rank_info_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -1663,7 +1663,7 @@ class ranking_proto_service_rank_recevice_reward_state_one : public ::google::pr
   inline ::google::protobuf::int32 recevice_reward_state() const;
   inline void set_recevice_reward_state(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.service_rank_recevice_reward_state_one)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.service_rank_recevice_reward_state_one)
  private:
   inline void set_has_service_rank_type();
   inline void clear_has_service_rank_type();
@@ -1741,24 +1741,24 @@ class ranking_proto_service_rank_recevice_reward_state_all : public ::google::pr
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.ranking_proto.service_rank_recevice_reward_state_one service_rank_type = 1;
+  // repeated .faith.ranking_proto.service_rank_recevice_reward_state_one service_rank_type = 1;
   inline int service_rank_type_size() const;
   inline void clear_service_rank_type();
   static const int kServiceRankTypeFieldNumber = 1;
-  inline const ::hld::ranking_proto_service_rank_recevice_reward_state_one& service_rank_type(int index) const;
-  inline ::hld::ranking_proto_service_rank_recevice_reward_state_one* mutable_service_rank_type(int index);
-  inline ::hld::ranking_proto_service_rank_recevice_reward_state_one* add_service_rank_type();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_service_rank_recevice_reward_state_one >&
+  inline const ::faith::ranking_proto_service_rank_recevice_reward_state_one& service_rank_type(int index) const;
+  inline ::faith::ranking_proto_service_rank_recevice_reward_state_one* mutable_service_rank_type(int index);
+  inline ::faith::ranking_proto_service_rank_recevice_reward_state_one* add_service_rank_type();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_service_rank_recevice_reward_state_one >&
       service_rank_type() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_service_rank_recevice_reward_state_one >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_service_rank_recevice_reward_state_one >*
       mutable_service_rank_type();
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.service_rank_recevice_reward_state_all)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.service_rank_recevice_reward_state_all)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_service_rank_recevice_reward_state_one > service_rank_type_;
+  ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_service_rank_recevice_reward_state_one > service_rank_type_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
@@ -1833,7 +1833,7 @@ class ranking_proto_service_rank_get_first_player : public ::google::protobuf::M
   inline ::google::protobuf::int32 service_rank_type() const;
   inline void set_service_rank_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.service_rank_get_first_player)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.service_rank_get_first_player)
  private:
   inline void set_has_service_rank_type();
   inline void clear_has_service_rank_type();
@@ -1927,7 +1927,7 @@ class ranking_proto_service_rank_get_first_player_end : public ::google::protobu
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_first_player_guid();
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.service_rank_get_first_player_end)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.service_rank_get_first_player_end)
  private:
   inline void set_has_service_rank_type();
   inline void clear_has_service_rank_type();
@@ -2010,7 +2010,7 @@ class ranking_proto_service_rank_recevice_reward : public ::google::protobuf::Me
   inline ::google::protobuf::int32 service_rank_type() const;
   inline void set_service_rank_type(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.service_rank_recevice_reward)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.service_rank_recevice_reward)
  private:
   inline void set_has_service_rank_type();
   inline void clear_has_service_rank_type();
@@ -2179,7 +2179,7 @@ class ranking_proto_ranking_player_info_lua : public ::google::protobuf::Message
   inline ::google::protobuf::int64 standby_parameter() const;
   inline void set_standby_parameter(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.ranking_player_info_lua)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.ranking_player_info_lua)
  private:
   inline void set_has_role_guid_a();
   inline void clear_has_role_guid_a();
@@ -2294,16 +2294,16 @@ class ranking_proto_get_top_list_end_lua : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 ranking_index() const;
   inline void set_ranking_index(::google::protobuf::int32 value);
 
-  // repeated .hld.ranking_proto.ranking_player_info_lua top_player_info = 2;
+  // repeated .faith.ranking_proto.ranking_player_info_lua top_player_info = 2;
   inline int top_player_info_size() const;
   inline void clear_top_player_info();
   static const int kTopPlayerInfoFieldNumber = 2;
-  inline const ::hld::ranking_proto_ranking_player_info_lua& top_player_info(int index) const;
-  inline ::hld::ranking_proto_ranking_player_info_lua* mutable_top_player_info(int index);
-  inline ::hld::ranking_proto_ranking_player_info_lua* add_top_player_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info_lua >&
+  inline const ::faith::ranking_proto_ranking_player_info_lua& top_player_info(int index) const;
+  inline ::faith::ranking_proto_ranking_player_info_lua* mutable_top_player_info(int index);
+  inline ::faith::ranking_proto_ranking_player_info_lua* add_top_player_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info_lua >&
       top_player_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info_lua >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info_lua >*
       mutable_top_player_info();
 
   // optional int32 if_first_send = 3;
@@ -2320,7 +2320,7 @@ class ranking_proto_get_top_list_end_lua : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 if_last_send() const;
   inline void set_if_last_send(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.get_top_list_end_lua)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.get_top_list_end_lua)
  private:
   inline void set_has_ranking_index();
   inline void clear_has_ranking_index();
@@ -2331,7 +2331,7 @@ class ranking_proto_get_top_list_end_lua : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info_lua > top_player_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info_lua > top_player_info_;
   ::google::protobuf::int32 ranking_index_;
   ::google::protobuf::int32 if_first_send_;
   ::google::protobuf::int32 if_last_send_;
@@ -2437,7 +2437,7 @@ class ranking_proto_get_my_rank_lua : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 legion_guid_b() const;
   inline void set_legion_guid_b(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.get_my_rank_lua)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.get_my_rank_lua)
  private:
   inline void set_has_sender_guid_a();
   inline void clear_has_sender_guid_a();
@@ -2524,16 +2524,16 @@ class ranking_proto_get_oracle_trial_rank_end : public ::google::protobuf::Messa
 
   // accessors -------------------------------------------------------
 
-  // repeated .hld.ranking_proto.ranking_player_info_lua play_info = 1;
+  // repeated .faith.ranking_proto.ranking_player_info_lua play_info = 1;
   inline int play_info_size() const;
   inline void clear_play_info();
   static const int kPlayInfoFieldNumber = 1;
-  inline const ::hld::ranking_proto_ranking_player_info_lua& play_info(int index) const;
-  inline ::hld::ranking_proto_ranking_player_info_lua* mutable_play_info(int index);
-  inline ::hld::ranking_proto_ranking_player_info_lua* add_play_info();
-  inline const ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info_lua >&
+  inline const ::faith::ranking_proto_ranking_player_info_lua& play_info(int index) const;
+  inline ::faith::ranking_proto_ranking_player_info_lua* mutable_play_info(int index);
+  inline ::faith::ranking_proto_ranking_player_info_lua* add_play_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info_lua >&
       play_info() const;
-  inline ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info_lua >*
+  inline ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info_lua >*
       mutable_play_info();
 
   // optional int32 data_num = 2;
@@ -2543,14 +2543,14 @@ class ranking_proto_get_oracle_trial_rank_end : public ::google::protobuf::Messa
   inline ::google::protobuf::int32 data_num() const;
   inline void set_data_num(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto.get_oracle_trial_rank_end)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto.get_oracle_trial_rank_end)
  private:
   inline void set_has_data_num();
   inline void clear_has_data_num();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info_lua > play_info_;
+  ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info_lua > play_info_;
   ::google::protobuf::int32 data_num_;
 
   mutable int _cached_size_;
@@ -2644,7 +2644,7 @@ class ranking_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.ranking_proto)
+  // @@protoc_insertion_point(class_scope:faith.ranking_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -3057,7 +3057,7 @@ inline void ranking_proto_get_player_ranking_value::set_ranking_type(::google::p
 
 // ranking_proto_get_player_ranking_value_end
 
-// optional .hld.ranking_proto.ranking_player_info target_player_info = 1;
+// optional .faith.ranking_proto.ranking_player_info target_player_info = 1;
 inline bool ranking_proto_get_player_ranking_value_end::has_target_player_info() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -3068,24 +3068,24 @@ inline void ranking_proto_get_player_ranking_value_end::clear_has_target_player_
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void ranking_proto_get_player_ranking_value_end::clear_target_player_info() {
-  if (target_player_info_ != NULL) target_player_info_->::hld::ranking_proto_ranking_player_info::Clear();
+  if (target_player_info_ != NULL) target_player_info_->::faith::ranking_proto_ranking_player_info::Clear();
   clear_has_target_player_info();
 }
-inline const ::hld::ranking_proto_ranking_player_info& ranking_proto_get_player_ranking_value_end::target_player_info() const {
+inline const ::faith::ranking_proto_ranking_player_info& ranking_proto_get_player_ranking_value_end::target_player_info() const {
   return target_player_info_ != NULL ? *target_player_info_ : *default_instance_->target_player_info_;
 }
-inline ::hld::ranking_proto_ranking_player_info* ranking_proto_get_player_ranking_value_end::mutable_target_player_info() {
+inline ::faith::ranking_proto_ranking_player_info* ranking_proto_get_player_ranking_value_end::mutable_target_player_info() {
   set_has_target_player_info();
-  if (target_player_info_ == NULL) target_player_info_ = new ::hld::ranking_proto_ranking_player_info;
+  if (target_player_info_ == NULL) target_player_info_ = new ::faith::ranking_proto_ranking_player_info;
   return target_player_info_;
 }
-inline ::hld::ranking_proto_ranking_player_info* ranking_proto_get_player_ranking_value_end::release_target_player_info() {
+inline ::faith::ranking_proto_ranking_player_info* ranking_proto_get_player_ranking_value_end::release_target_player_info() {
   clear_has_target_player_info();
-  ::hld::ranking_proto_ranking_player_info* temp = target_player_info_;
+  ::faith::ranking_proto_ranking_player_info* temp = target_player_info_;
   target_player_info_ = NULL;
   return temp;
 }
-inline void ranking_proto_get_player_ranking_value_end::set_allocated_target_player_info(::hld::ranking_proto_ranking_player_info* target_player_info) {
+inline void ranking_proto_get_player_ranking_value_end::set_allocated_target_player_info(::faith::ranking_proto_ranking_player_info* target_player_info) {
   delete target_player_info_;
   target_player_info_ = target_player_info;
   if (target_player_info) {
@@ -3335,27 +3335,27 @@ inline void ranking_proto_get_top_list_end::set_ranking_index(::google::protobuf
   ranking_index_ = value;
 }
 
-// repeated .hld.ranking_proto.ranking_player_info top_player_info = 2;
+// repeated .faith.ranking_proto.ranking_player_info top_player_info = 2;
 inline int ranking_proto_get_top_list_end::top_player_info_size() const {
   return top_player_info_.size();
 }
 inline void ranking_proto_get_top_list_end::clear_top_player_info() {
   top_player_info_.Clear();
 }
-inline const ::hld::ranking_proto_ranking_player_info& ranking_proto_get_top_list_end::top_player_info(int index) const {
+inline const ::faith::ranking_proto_ranking_player_info& ranking_proto_get_top_list_end::top_player_info(int index) const {
   return top_player_info_.Get(index);
 }
-inline ::hld::ranking_proto_ranking_player_info* ranking_proto_get_top_list_end::mutable_top_player_info(int index) {
+inline ::faith::ranking_proto_ranking_player_info* ranking_proto_get_top_list_end::mutable_top_player_info(int index) {
   return top_player_info_.Mutable(index);
 }
-inline ::hld::ranking_proto_ranking_player_info* ranking_proto_get_top_list_end::add_top_player_info() {
+inline ::faith::ranking_proto_ranking_player_info* ranking_proto_get_top_list_end::add_top_player_info() {
   return top_player_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info >&
 ranking_proto_get_top_list_end::top_player_info() const {
   return top_player_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info >*
 ranking_proto_get_top_list_end::mutable_top_player_info() {
   return &top_player_info_;
 }
@@ -3691,27 +3691,27 @@ inline void ranking_proto_worship_record_one::set_target_guid(::google::protobuf
 
 // ranking_proto_worship_record
 
-// repeated .hld.ranking_proto.worship_record_one record_one = 1;
+// repeated .faith.ranking_proto.worship_record_one record_one = 1;
 inline int ranking_proto_worship_record::record_one_size() const {
   return record_one_.size();
 }
 inline void ranking_proto_worship_record::clear_record_one() {
   record_one_.Clear();
 }
-inline const ::hld::ranking_proto_worship_record_one& ranking_proto_worship_record::record_one(int index) const {
+inline const ::faith::ranking_proto_worship_record_one& ranking_proto_worship_record::record_one(int index) const {
   return record_one_.Get(index);
 }
-inline ::hld::ranking_proto_worship_record_one* ranking_proto_worship_record::mutable_record_one(int index) {
+inline ::faith::ranking_proto_worship_record_one* ranking_proto_worship_record::mutable_record_one(int index) {
   return record_one_.Mutable(index);
 }
-inline ::hld::ranking_proto_worship_record_one* ranking_proto_worship_record::add_record_one() {
+inline ::faith::ranking_proto_worship_record_one* ranking_proto_worship_record::add_record_one() {
   return record_one_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_worship_record_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_worship_record_one >&
 ranking_proto_worship_record::record_one() const {
   return record_one_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_worship_record_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_worship_record_one >*
 ranking_proto_worship_record::mutable_record_one() {
   return &record_one_;
 }
@@ -3768,27 +3768,27 @@ inline void ranking_proto_service_rank_info_one::set_rank_index(::google::protob
 
 // ranking_proto_service_rank_info_all
 
-// repeated .hld.ranking_proto.service_rank_info_one service_rank_info = 1;
+// repeated .faith.ranking_proto.service_rank_info_one service_rank_info = 1;
 inline int ranking_proto_service_rank_info_all::service_rank_info_size() const {
   return service_rank_info_.size();
 }
 inline void ranking_proto_service_rank_info_all::clear_service_rank_info() {
   service_rank_info_.Clear();
 }
-inline const ::hld::ranking_proto_service_rank_info_one& ranking_proto_service_rank_info_all::service_rank_info(int index) const {
+inline const ::faith::ranking_proto_service_rank_info_one& ranking_proto_service_rank_info_all::service_rank_info(int index) const {
   return service_rank_info_.Get(index);
 }
-inline ::hld::ranking_proto_service_rank_info_one* ranking_proto_service_rank_info_all::mutable_service_rank_info(int index) {
+inline ::faith::ranking_proto_service_rank_info_one* ranking_proto_service_rank_info_all::mutable_service_rank_info(int index) {
   return service_rank_info_.Mutable(index);
 }
-inline ::hld::ranking_proto_service_rank_info_one* ranking_proto_service_rank_info_all::add_service_rank_info() {
+inline ::faith::ranking_proto_service_rank_info_one* ranking_proto_service_rank_info_all::add_service_rank_info() {
   return service_rank_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_service_rank_info_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_service_rank_info_one >&
 ranking_proto_service_rank_info_all::service_rank_info() const {
   return service_rank_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_service_rank_info_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_service_rank_info_one >*
 ranking_proto_service_rank_info_all::mutable_service_rank_info() {
   return &service_rank_info_;
 }
@@ -3845,27 +3845,27 @@ inline void ranking_proto_service_rank_recevice_reward_state_one::set_recevice_r
 
 // ranking_proto_service_rank_recevice_reward_state_all
 
-// repeated .hld.ranking_proto.service_rank_recevice_reward_state_one service_rank_type = 1;
+// repeated .faith.ranking_proto.service_rank_recevice_reward_state_one service_rank_type = 1;
 inline int ranking_proto_service_rank_recevice_reward_state_all::service_rank_type_size() const {
   return service_rank_type_.size();
 }
 inline void ranking_proto_service_rank_recevice_reward_state_all::clear_service_rank_type() {
   service_rank_type_.Clear();
 }
-inline const ::hld::ranking_proto_service_rank_recevice_reward_state_one& ranking_proto_service_rank_recevice_reward_state_all::service_rank_type(int index) const {
+inline const ::faith::ranking_proto_service_rank_recevice_reward_state_one& ranking_proto_service_rank_recevice_reward_state_all::service_rank_type(int index) const {
   return service_rank_type_.Get(index);
 }
-inline ::hld::ranking_proto_service_rank_recevice_reward_state_one* ranking_proto_service_rank_recevice_reward_state_all::mutable_service_rank_type(int index) {
+inline ::faith::ranking_proto_service_rank_recevice_reward_state_one* ranking_proto_service_rank_recevice_reward_state_all::mutable_service_rank_type(int index) {
   return service_rank_type_.Mutable(index);
 }
-inline ::hld::ranking_proto_service_rank_recevice_reward_state_one* ranking_proto_service_rank_recevice_reward_state_all::add_service_rank_type() {
+inline ::faith::ranking_proto_service_rank_recevice_reward_state_one* ranking_proto_service_rank_recevice_reward_state_all::add_service_rank_type() {
   return service_rank_type_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_service_rank_recevice_reward_state_one >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_service_rank_recevice_reward_state_one >&
 ranking_proto_service_rank_recevice_reward_state_all::service_rank_type() const {
   return service_rank_type_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_service_rank_recevice_reward_state_one >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_service_rank_recevice_reward_state_one >*
 ranking_proto_service_rank_recevice_reward_state_all::mutable_service_rank_type() {
   return &service_rank_type_;
 }
@@ -4363,27 +4363,27 @@ inline void ranking_proto_get_top_list_end_lua::set_ranking_index(::google::prot
   ranking_index_ = value;
 }
 
-// repeated .hld.ranking_proto.ranking_player_info_lua top_player_info = 2;
+// repeated .faith.ranking_proto.ranking_player_info_lua top_player_info = 2;
 inline int ranking_proto_get_top_list_end_lua::top_player_info_size() const {
   return top_player_info_.size();
 }
 inline void ranking_proto_get_top_list_end_lua::clear_top_player_info() {
   top_player_info_.Clear();
 }
-inline const ::hld::ranking_proto_ranking_player_info_lua& ranking_proto_get_top_list_end_lua::top_player_info(int index) const {
+inline const ::faith::ranking_proto_ranking_player_info_lua& ranking_proto_get_top_list_end_lua::top_player_info(int index) const {
   return top_player_info_.Get(index);
 }
-inline ::hld::ranking_proto_ranking_player_info_lua* ranking_proto_get_top_list_end_lua::mutable_top_player_info(int index) {
+inline ::faith::ranking_proto_ranking_player_info_lua* ranking_proto_get_top_list_end_lua::mutable_top_player_info(int index) {
   return top_player_info_.Mutable(index);
 }
-inline ::hld::ranking_proto_ranking_player_info_lua* ranking_proto_get_top_list_end_lua::add_top_player_info() {
+inline ::faith::ranking_proto_ranking_player_info_lua* ranking_proto_get_top_list_end_lua::add_top_player_info() {
   return top_player_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info_lua >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info_lua >&
 ranking_proto_get_top_list_end_lua::top_player_info() const {
   return top_player_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info_lua >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info_lua >*
 ranking_proto_get_top_list_end_lua::mutable_top_player_info() {
   return &top_player_info_;
 }
@@ -4550,27 +4550,27 @@ inline void ranking_proto_get_my_rank_lua::set_legion_guid_b(::google::protobuf:
 
 // ranking_proto_get_oracle_trial_rank_end
 
-// repeated .hld.ranking_proto.ranking_player_info_lua play_info = 1;
+// repeated .faith.ranking_proto.ranking_player_info_lua play_info = 1;
 inline int ranking_proto_get_oracle_trial_rank_end::play_info_size() const {
   return play_info_.size();
 }
 inline void ranking_proto_get_oracle_trial_rank_end::clear_play_info() {
   play_info_.Clear();
 }
-inline const ::hld::ranking_proto_ranking_player_info_lua& ranking_proto_get_oracle_trial_rank_end::play_info(int index) const {
+inline const ::faith::ranking_proto_ranking_player_info_lua& ranking_proto_get_oracle_trial_rank_end::play_info(int index) const {
   return play_info_.Get(index);
 }
-inline ::hld::ranking_proto_ranking_player_info_lua* ranking_proto_get_oracle_trial_rank_end::mutable_play_info(int index) {
+inline ::faith::ranking_proto_ranking_player_info_lua* ranking_proto_get_oracle_trial_rank_end::mutable_play_info(int index) {
   return play_info_.Mutable(index);
 }
-inline ::hld::ranking_proto_ranking_player_info_lua* ranking_proto_get_oracle_trial_rank_end::add_play_info() {
+inline ::faith::ranking_proto_ranking_player_info_lua* ranking_proto_get_oracle_trial_rank_end::add_play_info() {
   return play_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info_lua >&
+inline const ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info_lua >&
 ranking_proto_get_oracle_trial_rank_end::play_info() const {
   return play_info_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::hld::ranking_proto_ranking_player_info_lua >*
+inline ::google::protobuf::RepeatedPtrField< ::faith::ranking_proto_ranking_player_info_lua >*
 ranking_proto_get_oracle_trial_rank_end::mutable_play_info() {
   return &play_info_;
 }
@@ -4604,7 +4604,7 @@ inline void ranking_proto_get_oracle_trial_rank_end::set_data_num(::google::prot
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

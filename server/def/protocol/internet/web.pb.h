@@ -26,7 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_web_2eproto();
@@ -108,7 +108,7 @@ class web_proto_login : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 servergroupid() const;
   inline void set_servergroupid(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:hld.web_proto.login)
+  // @@protoc_insertion_point(class_scope:faith.web_proto.login)
  private:
   inline void set_has_biggroupid();
   inline void clear_has_biggroupid();
@@ -212,7 +212,7 @@ class web_proto_json_str_http_to_ws : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 ordernum() const;
   inline void set_ordernum(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.web_proto.json_str_http_to_ws)
+  // @@protoc_insertion_point(class_scope:faith.web_proto.json_str_http_to_ws)
  private:
   inline void set_has_jsontype();
   inline void clear_has_jsontype();
@@ -333,7 +333,7 @@ class web_proto_json_str_ws_to_http : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 ordernum() const;
   inline void set_ordernum(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:hld.web_proto.json_str_ws_to_http)
+  // @@protoc_insertion_point(class_scope:faith.web_proto.json_str_ws_to_http)
  private:
   inline void set_has_jsontype();
   inline void clear_has_jsontype();
@@ -424,7 +424,7 @@ class web_proto : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:hld.web_proto)
+  // @@protoc_insertion_point(class_scope:faith.web_proto)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -778,7 +778,7 @@ inline void web_proto_json_str_ws_to_http::set_ordernum(::google::protobuf::int6
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {

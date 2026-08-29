@@ -26,7 +26,7 @@
 #include "game.pb.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	c_element_war_role_info::c_element_war_role_info()
 	{
@@ -1817,7 +1817,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::element_war_send_create_robot pro_msg;
+			faith::ws2cs_proto::element_war_send_create_robot pro_msg;
 			msg.to_proto(pro_msg);
 			world_server::getInstance().broadcast_lua(&pro_msg, e_msgindex_ws2cs_element_war_send_create_robot, e_server_type_cs);
 		}

@@ -9,7 +9,7 @@
 #include "chat.pb.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	team_ws_mgr::team_ws_mgr()
 	{
@@ -840,7 +840,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::team_common_check_in_cs pro_msg;
+			faith::ws2cs_proto::team_common_check_in_cs pro_msg;
 			team_common_check_in_cs_msg.to_proto(pro_msg);
 			session->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_team_common_check_in_cs);
 		}
@@ -924,11 +924,11 @@ namespace hld
 		int32 record_count = 0;
 		switch (mate_type)
 		{
-		case hld::e_team_req_mate_type_friend:
+		case faith::e_team_req_mate_type_friend:
 			{
 			}
 			break;
-		case hld::e_team_req_mate_type_legion:
+		case faith::e_team_req_mate_type_legion:
 			{
 				legion_ws* legion_ws_ptr = legion_ws_mgr::get_instance().get_unit_legion(role_guid);
 				if (nullptr == legion_ws_ptr)

@@ -10,7 +10,7 @@
 #include "time.hpp"
 #include "char_def.hpp"
 
-namespace hld
+namespace faith
 {
 	data_set::data_set()
 	{

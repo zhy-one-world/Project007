@@ -5,7 +5,7 @@
 #include "legion_ws_city_war.h"
 
 
-namespace hld
+namespace faith
 {
 	struct fighting_power_legion_pair
 	{

@@ -11,7 +11,7 @@ purpose:
 #include "logic/type_def.hpp"
 #include "char_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	const int32 time_limit_activity_schedule_num = 20;							//进度记录最大条目
@@ -194,7 +194,7 @@ namespace hld
 		{
 			memset(this, 0, sizeof(*this));
 		}
-		bool  to_proto(hld::st_proto::st_time_limit_activity_branch_temp_db* st_act_branch_ptr)
+		bool  to_proto(faith::st_proto::st_time_limit_activity_branch_temp_db* st_act_branch_ptr)
 		{
 			if (st_act_branch_ptr == nullptr)
 			{
@@ -224,7 +224,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::st_proto::st_time_limit_activity_branch_temp_db& st_act_branch_ref)
+		void from_proto(const faith::st_proto::st_time_limit_activity_branch_temp_db& st_act_branch_ref)
 		{
 			ActGuid = st_act_branch_ref.actguid();
 			AttributeId = st_act_branch_ref.attributeid();
@@ -332,7 +332,7 @@ namespace hld
 		{
 			memset(this, 0, sizeof(*this));
 		}
-		bool to_proto(hld::st_proto::st_time_limit_activity_temp_db* st_act_ptr)
+		bool to_proto(faith::st_proto::st_time_limit_activity_temp_db* st_act_ptr)
 		{
 			if (st_act_ptr == nullptr)
 			{
@@ -375,7 +375,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::st_proto::st_time_limit_activity_temp_db& st_act_ref)
+		void from_proto(const faith::st_proto::st_time_limit_activity_temp_db& st_act_ref)
 		{
 			ActGuid = st_act_ref.actguid();
 			AttributeId = st_act_ref.attributeid();

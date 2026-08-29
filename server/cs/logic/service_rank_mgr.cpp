@@ -21,7 +21,7 @@ purpose: about service rank
 #include "utility/init_unit.h"
 #include "utility/parse_msg.h"
 
-namespace hld
+namespace faith
 {
 	service_rank_mgr::service_rank_mgr()
 	{

@@ -1,6 +1,6 @@
 #include "RechargeTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void RechargeTemplateSize()
     {

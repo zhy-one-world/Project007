@@ -16,7 +16,7 @@
 #include "template/template_manager.h"
 #include "utility/random.h"
 
-using namespace hld;
+using namespace faith;
 
 void box_map_system::start_up(Entity* map_ent, MapTemplate* map_template)
 {
@@ -779,7 +779,7 @@ void box_map_system::kill_award_npc(Entity* map_ent, player* player_ptr, npc* np
 	map_s2c_kill_award_npc_end msg;
 	switch (award_level)
 	{
-	case hld::e_award_mark_level_small:
+	case faith::e_award_mark_level_small:
 	{
 		auto base_map_cp = map_ent->get_component<base_map_component>();
 		int32 middle_num = 0;
@@ -829,7 +829,7 @@ void box_map_system::kill_award_npc(Entity* map_ent, player* player_ptr, npc* np
 		}
 	}
 		break;
-	case hld::e_award_mark_level_middle:
+	case faith::e_award_mark_level_middle:
 	{
 		auto born_id = get_born_list(map_ent);
 		auto new_npc_ptr = world_cs::spawn_npc(born_id, map_ent, player_ptr);
@@ -837,7 +837,7 @@ void box_map_system::kill_award_npc(Entity* map_ent, player* player_ptr, npc* np
 		msg.add_npc_guid(new_npc_ptr->get_unit_guid().server_64);
 	}
 		break;
-	case hld::e_award_mark_level_big:
+	case faith::e_award_mark_level_big:
 	{
 		auto born_id = get_born_list(map_ent);
 		auto npc_id = box_map_cp->m_box_map_template->BigAward[random_gen::get_random(0, box_map_cp->m_box_map_template->BigAward.size() - 1)];
@@ -846,7 +846,7 @@ void box_map_system::kill_award_npc(Entity* map_ent, player* player_ptr, npc* np
 		msg.add_npc_guid(new_npc_ptr->get_unit_guid().server_64);
 	}
 		break;
-	case hld::e_award_mark_level_special:
+	case faith::e_award_mark_level_special:
 	{
 		auto base_map_cp = map_ent->get_component<base_map_component>();
 		auto npc_list = base_map_cp->m_npc_list;

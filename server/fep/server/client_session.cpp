@@ -22,7 +22,7 @@
 #include "error.pb.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	client_session::client_session()
 	{
@@ -134,12 +134,12 @@ namespace hld
 	void client_session::set_account(const xchar account[max_account_length + 1])
 	{
 		int32 size = strlen(account);
-		memcpy(m_account, account, size > hld::max_account_length ? hld::max_account_length : size);
+		memcpy(m_account, account, size > faith::max_account_length ? faith::max_account_length : size);
 	}
 	void client_session::set_account(const xstring& account)
 	{
 		memset(m_account, 0, sizeof(m_account));
-		memcpy(m_account, account.c_str(), account.size() > hld::max_account_length ? hld::max_account_length : account.size());
+		memcpy(m_account, account.c_str(), account.size() > faith::max_account_length ? faith::max_account_length : account.size());
 	}
 	void client_session::set_server_msg(const xchar server_msg[max_server_msg_length + 1])
 	{
@@ -275,17 +275,17 @@ namespace hld
 		m_age = age;
 	}
 
-	hld::int32 client_session::get_online_duration()
+	faith::int32 client_session::get_online_duration()
 	{
 		return m_online_duration;
 	}
 
-	hld::int32 client_session::get_online_time()
+	faith::int32 client_session::get_online_time()
 	{
 		return m_online_time;
 	}
 
-	hld::int32 client_session::get_age()
+	faith::int32 client_session::get_age()
 	{
 		return m_age;
 	}
@@ -295,7 +295,7 @@ namespace hld
 		m_month_recharge_num = month_recharge_num;
 	}
 
-	hld::int32 client_session::get_month_recharge_num()
+	faith::int32 client_session::get_month_recharge_num()
 	{
 		return m_month_recharge_num;
 	}
@@ -305,7 +305,7 @@ namespace hld
 		m_month_recharge_time = month_recharge_time;
 	}
 
-	hld::int32 client_session::get_month_recharge_time()
+	faith::int32 client_session::get_month_recharge_time()
 	{
 		return m_month_recharge_time;
 	}

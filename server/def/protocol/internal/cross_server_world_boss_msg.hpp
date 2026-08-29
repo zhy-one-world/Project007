@@ -17,12 +17,12 @@ purpose:
 #include "Logic/cross_server_world_boss_def.hpp"
 #include "legion_def.hpp"
 #include "internet/ws2cs.pb.h"
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	enum
 	{
-		e_msgindex_cs2ws_cross_server_world_boss_creat_boss_begin = hld::e_msg_base_cross_server_world_boss, 
+		e_msgindex_cs2ws_cross_server_world_boss_creat_boss_begin = faith::e_msg_base_cross_server_world_boss, 
 		e_msgindex_ws2cs_cross_server_world_boss_creat_boss,		
 		e_msgindex_ws2ws_get_cross_server_level,					//获得服务器组中的服务器等级
 		e_msgindex_ws2ws_get_cross_server_level_end,				//服务器组中的服务器返回自己的服务器等级,				
@@ -46,7 +46,7 @@ namespace hld
 		e_msg_ws2ws_send_legion_welfare_rank,
 	};	
 
-	struct ws2ws_transfer_cross_world_boss_map_result : public hld::packet_base
+	struct ws2ws_transfer_cross_world_boss_map_result : public faith::packet_base
 	{
 		int32						result;
 		guid_64						role_guid;
@@ -62,7 +62,7 @@ namespace hld
 		}
 	};
 
-	struct ws2dp_save_cross_server_world_boss_msg_all : public hld::packet_base
+	struct ws2dp_save_cross_server_world_boss_msg_all : public faith::packet_base
 	{
 		int32						boss_template_id;
 		int32						boss_is_dead;
@@ -90,7 +90,7 @@ namespace hld
 	};
 	
 
-	struct ws2dp_load_cross_server_world_boss_msg_all : public hld::packet_base
+	struct ws2dp_load_cross_server_world_boss_msg_all : public faith::packet_base
 	{
 		ws2dp_load_cross_server_world_boss_msg_all()
 		{
@@ -100,7 +100,7 @@ namespace hld
 	};
 
 
-	struct dp2ws_load_cross_server_world_boss_msg_all : public hld::packet_base
+	struct dp2ws_load_cross_server_world_boss_msg_all : public faith::packet_base
 	{
 		int32	data_num;
 		cross_world_boss_info_to_db dp_info[m_boss_max_num];
@@ -111,7 +111,7 @@ namespace hld
 		}
 	};
 
-	struct cs2ws_cross_server_kill_world_boss : public hld::packet_base
+	struct cs2ws_cross_server_kill_world_boss : public faith::packet_base
 	{
 		int32 be_kill_boss_guid;
 		guid_64 killer_guid;
@@ -121,7 +121,7 @@ namespace hld
 			wheader = e_msgindex_cs2ws_cross_server_kill_world_boss;
 		}
 	};
-	struct ws2cs_cross_server_world_boss_creat_boss : public hld::packet_base
+	struct ws2cs_cross_server_world_boss_creat_boss : public faith::packet_base
 	{
 		int32	true_boss_level;
 		int32	false_boss_level;
@@ -131,14 +131,14 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_cross_server_world_boss_creat_boss;
 		}
-		void to_proto(hld::ws2cs_proto::cross_server_world_boss_creat_boss& msg)
+		void to_proto(faith::ws2cs_proto::cross_server_world_boss_creat_boss& msg)
 		{
 			msg.set_true_boss_level(true_boss_level);
 			msg.set_false_boss_level(false_boss_level);
 			msg.set_from_map_guid(from_map_guid.server_64);
 
 		}
-		void from_proto(const hld::ws2cs_proto::cross_server_world_boss_creat_boss& msg)
+		void from_proto(const faith::ws2cs_proto::cross_server_world_boss_creat_boss& msg)
 		{
 			true_boss_level = msg.true_boss_level();
 			false_boss_level = msg.false_boss_level();
@@ -158,7 +158,7 @@ namespace hld
 	};
 
 	//获取服务器等级
-	struct ws2ws_get_cross_server_level : public hld::packet_base
+	struct ws2ws_get_cross_server_level : public faith::packet_base
 	{
 		int32	server_id;	//发送请求获得服务器等级的服务器id
 		ws2ws_get_cross_server_level()
@@ -167,7 +167,7 @@ namespace hld
 			wheader = e_msgindex_ws2ws_get_cross_server_level;
 		}
 	};
-	struct ws2ws_get_cross_server_level_end : public hld::packet_base
+	struct ws2ws_get_cross_server_level_end : public faith::packet_base
 	{
 		int32	true_server_level;	//服务器等级真boss
 		int32	false_server_level;	//服务器等级假boss
@@ -178,7 +178,7 @@ namespace hld
 			wheader = e_msgindex_ws2ws_get_cross_server_level_end;
 		}
 	};
-	struct cs2ws_make_cross_server_world_legion_award : public hld::packet_base
+	struct cs2ws_make_cross_server_world_legion_award : public faith::packet_base
 	{
 		int32 boss_id;
 		guid_64 kill_boss_play_guid;
@@ -193,7 +193,7 @@ namespace hld
 		}
 	};
 	
-	struct ws2ws_grant_kill_boss_legion_award : public hld::packet_base
+	struct ws2ws_grant_kill_boss_legion_award : public faith::packet_base
 	{
 		int32 boss_id;
 		guid_64 kill_boss_legion_guid;
@@ -207,7 +207,7 @@ namespace hld
 	};
 	
 
-	struct ws2ws_make_cross_server_world_legion_award : public hld::packet_base
+	struct ws2ws_make_cross_server_world_legion_award : public faith::packet_base
 	{
 		guid_64 legion_guid;
 		int32	boss_tem_id;
@@ -222,7 +222,7 @@ namespace hld
 	};
 
 
-	struct cs2ws_cross_boss_map_game_over : public hld::packet_base
+	struct cs2ws_cross_boss_map_game_over : public faith::packet_base
 	{
 		int32		map_template_id;
 		cs2ws_cross_boss_map_game_over()
@@ -231,7 +231,7 @@ namespace hld
 			wheader = e_msgindex_cs2ws_cross_boss_map_game_over;
 		}
 	};
-	struct ws2ws_cross_refresh_kill_boss_show_info : public hld::packet_base
+	struct ws2ws_cross_refresh_kill_boss_show_info : public faith::packet_base
 	{
 		cross_boss_info	boss_info;
 		ws2ws_cross_refresh_kill_boss_show_info()
@@ -241,7 +241,7 @@ namespace hld
 		}
 	};
 	
-	struct ws2ws_cross_refresh_kill_boss_show_info_all : public hld::packet_base
+	struct ws2ws_cross_refresh_kill_boss_show_info_all : public faith::packet_base
 	{
 		int32 data_num;
 		cross_boss_info	boss_info[m_boss_max_num];

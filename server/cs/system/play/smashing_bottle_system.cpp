@@ -8,7 +8,7 @@
 #include "template/template_manager.h"
 #include "utility/random.h"
 
-using namespace hld;
+using namespace faith;
 
 const int32 smashing_bottle_play_count = 3;//ÔÒ¾ÆÆ¿»ØºÏÊı
 

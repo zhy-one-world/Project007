@@ -1,6 +1,6 @@
 #include "WeddingRingTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void WeddingRingTemplateSize()
     {

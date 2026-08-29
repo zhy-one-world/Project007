@@ -7,7 +7,7 @@
 #include "../client_session.hpp"
 
 
-namespace hld
+namespace faith
 {
 	typedef std::unordered_map<ui64, s_legion_boss_award_get_log> legion_boss_award_get_log_map;
 

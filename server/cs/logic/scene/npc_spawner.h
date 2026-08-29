@@ -3,7 +3,7 @@
 #include "Logic/map_def.hpp"
 #include "../top_tip/plot_tip.h"
 
-namespace hld
+namespace faith
 {
 	enum e_respawn_period_tuple
 	{

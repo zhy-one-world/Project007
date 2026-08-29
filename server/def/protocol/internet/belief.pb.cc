@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 namespace {
 
@@ -197,10 +197,10 @@ void protobuf_AddDesc_belief_2eproto() {
     "\n\014belief.proto\022\003hld\"\305\003\n\014belief_proto\032\"\n\013"
     "belief_info\022\023\n\013belief_data\030\001 \003(\005\032y\n\033upda"
     "te_character_belief_one\022\021\n\trole_guid\030\001 \003"
-    "(\005\0222\n\013belief_list\030\002 \003(\0132\035.hld.belief_pro"
+    "(\005\0222\n\013belief_list\030\002 \003(\0132\035.faith.belief_pro"
     "to.belief_info\022\023\n\013belief_type\030\003 \001(\005\032d\n\033u"
     "pdate_character_belief_all\022\021\n\trole_guid\030"
-    "\001 \003(\005\0222\n\013belief_list\030\002 \003(\0132\035.hld.belief_"
+    "\001 \003(\005\0222\n\013belief_list\030\002 \003(\0132\035.faith.belief_"
     "proto.belief_info\032\?\n\020belief_operation\022\026\n"
     "\016operation_type\030\001 \001(\r\022\023\n\013belief_type\030\002 \001"
     "(\r\032o\n\024belief_operation_end\022\027\n\017operation_"
@@ -537,7 +537,7 @@ bool belief_proto_update_character_belief_one::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.belief_proto.belief_info belief_list = 2;
+      // repeated .faith.belief_proto.belief_info belief_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -592,7 +592,7 @@ void belief_proto_update_character_belief_one::SerializeWithCachedSizes(
       1, this->role_guid(i), output);
   }
 
-  // repeated .hld.belief_proto.belief_info belief_list = 2;
+  // repeated .faith.belief_proto.belief_info belief_list = 2;
   for (int i = 0; i < this->belief_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->belief_list(i), output);
@@ -617,7 +617,7 @@ void belief_proto_update_character_belief_one::SerializeWithCachedSizes(
       WriteInt32ToArray(1, this->role_guid(i), target);
   }
 
-  // repeated .hld.belief_proto.belief_info belief_list = 2;
+  // repeated .faith.belief_proto.belief_info belief_list = 2;
   for (int i = 0; i < this->belief_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -658,7 +658,7 @@ int belief_proto_update_character_belief_one::ByteSize() const {
     total_size += 1 * this->role_guid_size() + data_size;
   }
 
-  // repeated .hld.belief_proto.belief_info belief_list = 2;
+  // repeated .faith.belief_proto.belief_info belief_list = 2;
   total_size += 1 * this->belief_list_size();
   for (int i = 0; i < this->belief_list_size(); i++) {
     total_size +=
@@ -829,7 +829,7 @@ bool belief_proto_update_character_belief_all::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .hld.belief_proto.belief_info belief_list = 2;
+      // repeated .faith.belief_proto.belief_info belief_list = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -868,7 +868,7 @@ void belief_proto_update_character_belief_all::SerializeWithCachedSizes(
       1, this->role_guid(i), output);
   }
 
-  // repeated .hld.belief_proto.belief_info belief_list = 2;
+  // repeated .faith.belief_proto.belief_info belief_list = 2;
   for (int i = 0; i < this->belief_list_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->belief_list(i), output);
@@ -888,7 +888,7 @@ void belief_proto_update_character_belief_all::SerializeWithCachedSizes(
       WriteInt32ToArray(1, this->role_guid(i), target);
   }
 
-  // repeated .hld.belief_proto.belief_info belief_list = 2;
+  // repeated .faith.belief_proto.belief_info belief_list = 2;
   for (int i = 0; i < this->belief_list_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -915,7 +915,7 @@ int belief_proto_update_character_belief_all::ByteSize() const {
     total_size += 1 * this->role_guid_size() + data_size;
   }
 
-  // repeated .hld.belief_proto.belief_info belief_list = 2;
+  // repeated .faith.belief_proto.belief_info belief_list = 2;
   total_size += 1 * this->belief_list_size();
   for (int i = 0; i < this->belief_list_size(); i++) {
     total_size +=
@@ -1731,6 +1731,6 @@ void belief_proto::Swap(belief_proto* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 // @@protoc_insertion_point(global_scope)

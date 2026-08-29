@@ -7,7 +7,7 @@
 
 #include "logic/type_def.hpp"
 
-namespace hld
+namespace faith
 {
 	enum e_error_code;
 	struct ActivityCommonConfigTemplate;

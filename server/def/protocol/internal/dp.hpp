@@ -14,9 +14,9 @@
 #include <Logic/char_def.hpp>
 #include <base.hpp>
 
-using namespace hld;
+using namespace faith;
 
-namespace hld
+namespace faith
 {
 	const int32 msgindex_req_query_log_db	=			e_msg_base_all2dp;
 	const int32 msgindex_rep_query_log_db	=			e_msg_base_dp2all;

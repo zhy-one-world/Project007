@@ -25,7 +25,7 @@
 #include <google/protobuf/generated_enum_reflection.h>
 // @@protoc_insertion_point(includes)
 
-namespace hld {
+namespace faith {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_net_2eproto();
@@ -1314,15 +1314,15 @@ inline bool proto_header_Parse(
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace hld
+}  // namespace faith
 
 #ifndef SWIG
 namespace google {
 namespace protobuf {
 
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::hld::proto_header>() {
-  return ::hld::proto_header_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::faith::proto_header>() {
+  return ::faith::proto_header_descriptor();
 }
 
 }  // namespace google

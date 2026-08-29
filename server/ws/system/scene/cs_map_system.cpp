@@ -14,7 +14,7 @@
 #include "big_player_msg.hpp"
 #include "cross_server_harry_msg.hpp"
 
-using namespace hld;
+using namespace faith;
 
 void cs_map_system::start_up(Entity* map_ent, MapTemplate* map_template, int32 map_template_id, int32 line_id, int32 server_uid)
 {

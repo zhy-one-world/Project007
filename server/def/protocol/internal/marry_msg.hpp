@@ -14,7 +14,7 @@
 #include "Logic/marry_def.hpp"
 #include "internet/ws2cs.pb.h"
 
-namespace hld
+namespace faith
 {
 
 #pragma pack(push,1)
@@ -102,7 +102,7 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_check_item_enough;
 		}
-		void to_proto(hld::ws2cs_proto::check_item_enough& msg)
+		void to_proto(faith::ws2cs_proto::check_item_enough& msg)
 		{
 			msg.set_main_guid(main_guid.server_64);
 			msg.set_sub_guid(sub_guid.server_64);
@@ -110,7 +110,7 @@ namespace hld
 			msg.set_is_cost_item(is_cost_item);
 			msg.set_is_divorce(is_divorce);
 		}
-		void from_proto(const hld::ws2cs_proto::check_item_enough& msg)
+		void from_proto(const faith::ws2cs_proto::check_item_enough& msg)
 		{
 			main_guid.server_64 = msg.main_guid();
 			sub_guid.server_64 = msg.sub_guid();
@@ -149,7 +149,7 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_marry_result;
 		}
-		void to_proto(hld::ws2cs_proto::marry_result_end& msg)
+		void to_proto(faith::ws2cs_proto::marry_result_end& msg)
 		{
 			msg.set_main_guid(main_guid.server_64);
 			msg.set_main_name(main_name);
@@ -168,7 +168,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::ws2cs_proto::marry_result_end& msg)
+		void from_proto(const faith::ws2cs_proto::marry_result_end& msg)
 		{
 			main_guid.server_64 = msg.main_guid();
 			my_memcopy_string(main_name, max_name_size, msg.main_name());
@@ -215,12 +215,12 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_marry_get_reward;
 		}
-		void to_proto(hld::ws2cs_proto::marry_get_reward& msg)
+		void to_proto(faith::ws2cs_proto::marry_get_reward& msg)
 		{
 			msg.set_sender_guid(sender_guid.server_64);
 			msg.set_old_marry_state(old_marry_state);
 		}
-		void from_proto(const hld::ws2cs_proto::marry_get_reward& msg)
+		void from_proto(const faith::ws2cs_proto::marry_get_reward& msg)
 		{
 			sender_guid.server_64 = msg.sender_guid();
 			old_marry_state = msg.old_marry_state();
@@ -250,7 +250,7 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_update_wedding_ring_state;
 		}
-		void to_proto(hld::ws2cs_proto::update_wedding_ring_state& msg)
+		void to_proto(faith::ws2cs_proto::update_wedding_ring_state& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_is_marry(is_marry);
@@ -258,7 +258,7 @@ namespace hld
 			msg.set_mate_ring_level(mate_ring_level);
 			msg.set_heart_value(heart_value);
 		}
-		void from_proto(const hld::ws2cs_proto::update_wedding_ring_state& msg)
+		void from_proto(const faith::ws2cs_proto::update_wedding_ring_state& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			is_marry = msg.is_marry();
@@ -288,12 +288,12 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_update_wedding_ring_level;
 		}
-		void to_proto(hld::ws2cs_proto::update_wedding_ring_level& msg)
+		void to_proto(faith::ws2cs_proto::update_wedding_ring_level& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_mate_ring_level(mate_ring_level);
 		}
-		void from_proto(const hld::ws2cs_proto::update_wedding_ring_level& msg)
+		void from_proto(const faith::ws2cs_proto::update_wedding_ring_level& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			mate_ring_level = msg.mate_ring_level();
@@ -330,11 +330,11 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_marry_get_marry_task;
 		}
-		void to_proto(hld::ws2cs_proto::marry_get_marry_task& msg)
+		void to_proto(faith::ws2cs_proto::marry_get_marry_task& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 		}
-		void from_proto(const hld::ws2cs_proto::marry_get_marry_task& msg)
+		void from_proto(const faith::ws2cs_proto::marry_get_marry_task& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 		}
@@ -349,12 +349,12 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_sync_marry_task;
 		}
-		void to_proto(hld::ws2cs_proto::sync_marry_task& msg)
+		void to_proto(faith::ws2cs_proto::sync_marry_task& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_is_marry(is_marry);
 		}
-		void from_proto(const hld::ws2cs_proto::sync_marry_task& msg)
+		void from_proto(const faith::ws2cs_proto::sync_marry_task& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			is_marry = msg.is_marry();
@@ -381,12 +381,12 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_refresh_heart_value;
 		}
-		void to_proto(hld::ws2cs_proto::refresh_heart_value& msg)
+		void to_proto(faith::ws2cs_proto::refresh_heart_value& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_heart_value(heart_value);
 		}
-		void from_proto(const hld::ws2cs_proto::refresh_heart_value& msg)
+		void from_proto(const faith::ws2cs_proto::refresh_heart_value& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			heart_value = msg.heart_value();
@@ -402,12 +402,12 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_req_cost_bless_money;
 		}
-		void to_proto(hld::ws2cs_proto::req_cost_bless_money& msg)
+		void to_proto(faith::ws2cs_proto::req_cost_bless_money& msg)
 		{
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_target_guid(target_guid.server_64);
 		}
-		void from_proto(const hld::ws2cs_proto::req_cost_bless_money& msg)
+		void from_proto(const faith::ws2cs_proto::req_cost_bless_money& msg)
 		{
 			role_guid.server_64 = msg.role_guid();
 			target_guid.server_64 = msg.target_guid();
@@ -444,11 +444,11 @@ namespace hld
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2cs_return_special_item_times;
 		}
-		void to_proto(hld::ws2cs_proto::return_special_item_times& msg)
+		void to_proto(faith::ws2cs_proto::return_special_item_times& msg)
 		{
 			msg.set_target_guid(target_guid);
 		}
-		void from_proto(const hld::ws2cs_proto::return_special_item_times& msg)
+		void from_proto(const faith::ws2cs_proto::return_special_item_times& msg)
 		{
 			target_guid.server_64 = msg.target_guid();
 		}

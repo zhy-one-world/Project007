@@ -8,7 +8,7 @@
 #include "time_activity_system.h"
 #include "wheel_plate_system.h"
 
-using namespace hld;
+using namespace faith;
 
 bool time_activity_system::start_up()
 {

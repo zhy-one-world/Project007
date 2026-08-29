@@ -13,7 +13,7 @@
 #include <assert.h>
 #include <exception>
 
-namespace hld
+namespace faith
 {
 	int32 recvbuffer::get_used_size()
 	{

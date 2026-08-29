@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ecs.h"
-namespace hld
+namespace faith
 {
 	using namespace ECS;
 

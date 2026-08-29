@@ -11,7 +11,7 @@ purpose: about role's belief_mgr
 
 #include "belief.h"
 
-namespace hld
+namespace faith
 {
 	class player;
 	class cbelief_mgr

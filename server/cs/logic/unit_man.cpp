@@ -23,7 +23,7 @@
 #include "system/play/time_activity_system.h"
 #include "template/template_manager.h"
 
-namespace hld
+namespace faith
 {
 	struct s_msg_info
 	{

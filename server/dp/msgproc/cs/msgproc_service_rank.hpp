@@ -11,7 +11,7 @@ purpose: about service rank
 
 #include "db_manager.hpp"
 
-namespace hld
+namespace faith
 {
 	void cs2dp_req_load_service_rank_reward_state(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index);
 	void cs2dp_req_load_service_rank_reward_state_end(db_result_type result, uint32 connindex, const guid_64& role_guid, const int32& unit_array_index);

@@ -13,7 +13,7 @@
 #include "logic/type_def.hpp"
 #include "char_def.hpp"
 
-namespace hld 
+namespace faith 
 {
 #pragma pack(push,1)
 
@@ -112,7 +112,7 @@ namespace hld
 			memcpy(param14, _info.param14().c_str(), _info.param14().size() > e_login_fixed_data_lenght ? e_login_fixed_data_lenght : _info.param14().size());
 			memcpy(param15, _info.param15().c_str(), _info.param15().size() > e_login_fixed_data_lenght ? e_login_fixed_data_lenght : _info.param15().size());
 		}
-		bool to_proto(hld::st_proto::st_login_fixed_data* st_login_ptr)
+		bool to_proto(faith::st_proto::st_login_fixed_data* st_login_ptr)
 		{
 			if (st_login_ptr == nullptr)
 			{
@@ -144,7 +144,7 @@ namespace hld
 			}
 			memcpy(dst, str.c_str(), len);
 		}
-		void from_proto(const hld::st_proto::st_login_fixed_data&  st_login_ref)
+		void from_proto(const faith::st_proto::st_login_fixed_data&  st_login_ref)
 		{
 			clear_data();
 			my_memcopy_string(param1, e_login_fixed_data_lenght, st_login_ref.param1());

@@ -16,7 +16,7 @@
 
 const int32_t SQL_BUILDER_BUFF_SIZE = MAX_ROW_SIZE_LIMIT * 1024 * 4;	//dp允许最大行限制为MAX_ROW_SIZE_LIMIT， 那么一条sql文一般不可能超过BUFF_SIZE。
 
-namespace hld
+namespace faith
 {
 	
 	/*	通过重载<<，简化sql文的构造

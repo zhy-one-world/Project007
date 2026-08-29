@@ -15,7 +15,7 @@ purpose: about pk and community system's store_mgr
 #include "char_def.hpp"
 #include "template/template_base.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 #define PER_MIN_CLEAR_PK_VALUE		10

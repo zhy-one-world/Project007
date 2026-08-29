@@ -3,7 +3,7 @@
 
 #include "Logic/chat_def.hpp"
 
-namespace hld
+namespace faith
 {
 	class person_infor_ws_mgr
 	{

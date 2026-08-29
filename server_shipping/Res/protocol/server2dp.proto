@@ -1,0 +1,1086 @@
+syntax = "proto2";
+package hld;
+
+
+message server2dp_proto
+{
+	message test_ws2dp_load_arena_rank
+	{
+		optional int32 role_guid				= 1;
+	}
+	
+	message ws2dp_gm_open_time
+	{
+		optional int32 open_time				= 1;
+		optional int32 listen_port				= 2;
+		optional int64 handle_index				= 3;
+	}
+	
+	message ws2dp_gm_set_server_info
+	{
+		optional int32 server_info_value		= 1;
+		optional int32 server_info_type		= 2;
+		optional int32 listen_port				= 3;
+		optional int64 handle_index				= 4;
+	}
+	
+	message ws2dp_gm_change_password
+	{
+		optional string account					= 1;
+		optional string new_password			= 2;
+		optional int32 listen_port				= 3;
+		optional int64 handle_index				= 4;
+	}
+	
+	message ws2dp_gm_need_begin_cross
+	{
+		optional int32 need_begin_cross			= 1;
+		optional int32 gm_type					= 2;
+		optional int64 req_http_id				= 3;
+	}
+	
+	message ws2dp_save_last_server_list
+	{
+		optional int32 server_id				= 1;
+		optional string last_server_list		= 2;
+	}
+	
+	message ws2dp_load_last_server_list
+	{
+		optional int32 server_id				= 1;
+	}
+	
+	message ws2dp_set_role_right
+	{
+		optional string role_mark				= 1;
+		optional int32 right_type				= 2;
+		optional int32 right_value				= 3;
+		optional int32 right_time				= 4;
+		optional int32 listen_port				= 5;
+		optional int64 handle_index				= 6;
+	}
+	
+	message ws2dp_gm_change_account
+	{
+		optional string change_name				= 1;
+		optional string target_name				= 2;
+		optional int32 listen_port				= 3;
+		optional int64 handle_index				= 4;
+	}
+	
+	message ws2dp_gm_del_cache
+	{
+		optional int64 role_guid				= 1;
+	}
+	
+	message ws2dp_gm_del_role
+	{
+		optional int64 role_guid				= 1;
+		optional int32 is_del					= 2;
+		optional int32 listen_port				= 3;
+		optional int64 handle_index				= 4;
+	}
+	
+	message ws2dp_gm_stop_login
+	{
+		optional int32 is_stop					= 1;
+		optional int32 listen_port				= 2;
+		optional int64 handle_index				= 3;
+	}
+	
+	message ws2dp_load_character
+	{
+		optional int64 role_guid				= 1;
+		optional string role_account			= 2;
+	}
+	
+	message ws2dp_gm_get_role_info
+	{
+		optional string role_mark				= 1;
+		optional int32 get_type					= 2;
+		optional int32 listen_port				= 3;
+		optional int64 handle_index				= 4;
+		optional int32 check_type				= 5;			
+	}
+	
+	message ws2dp_gm_modify_role_info
+	{
+		optional int64 role_guid				= 1;
+		optional string sql_str					= 2;
+		optional int32 listen_port				= 3;
+		optional int64 handle_index				= 4;		
+	}
+	
+	message ws2dp_gm_get_role_items_info
+	{
+		optional int64 role_guid				= 1;
+		optional int32 listen_port				= 2;
+		optional int64 handle_index				= 3;		
+	}
+	
+	message ws2dp_load_relation_info
+	{
+		optional int64 sender_guid				= 1;
+		optional int32 list_type				= 2;
+		optional int64 other_guid				= 3;		
+	}
+	
+	message ws2dp_req_load_relation_list
+	{
+		optional int64 sender_guid				= 1;		
+	}
+	
+	message ws2dp_add_relation
+	{
+		optional int64 role_guid				= 1;		
+		optional int64 relation_guid			= 2;
+		optional string relation_name			= 3;
+		optional int64 relation_gs_value		= 4;
+		repeated int32 data_array				= 5;
+	}
+	
+	message ws2dp_del_relation
+	{
+		optional int64 role_guid				= 1;		
+		optional int64 target_role_guid			= 2;
+		optional int32 relation_type			= 3;
+	}
+	
+	message ws2dp_check_id_mail
+	{
+		optional int64 role_guid				= 1;		
+		optional int32 server_id				= 2;
+		optional int32 cur_time					= 3;
+	}
+	
+	message s_arena_rank
+	{
+		optional int32 rank_pos					= 1;		
+		optional int64 role_guid				= 2;
+		optional string role_name				= 3;
+		optional int64 gs_value					= 4;
+		optional int32 role_template_id			= 5;
+		optional int32 robot_template_id		= 6;
+		optional int32 military_rank_level		= 7;
+		optional int32 vip_level				= 8;
+		optional string game_channel			= 9;	
+	}
+	
+	message ws2dp_save_arena_rank_change
+	{
+		optional s_arena_rank my_new_data				= 1;		
+		optional s_arena_rank target_new_data			= 2;
+	}
+	
+	message ws2dp_save_other_server_mail_record
+	{
+		optional int32 source_server_id				= 1;		
+		optional int32 target_server_id				= 2;
+		optional int64 mail_guid					= 3;
+		optional int64 role_guid					= 4;
+	}	
+	
+	message ws2dp_load_other_server_mail
+	{
+		optional int32 server_id				= 1;		
+		optional int64 mail_guid				= 2;
+	}
+	
+	message ws2dp_del_other_server_mail
+	{
+		optional int32 source_server_id			= 1;		
+		optional int32 target_server_id			= 2;
+		optional int64 mail_guid				= 3;
+		optional int64 role_guid				= 4;
+	}
+	
+	message ws2dp_load_all_ranking_info
+	{
+		optional int32 ranking_type				= 1;		
+	}
+	
+	message s_ranking_player_info
+	{
+		optional int64 role_guid				= 1;	
+		optional string role_name				= 2;	
+		optional int64 ranking_type				= 3;
+		optional int64 ranking_value			= 4;
+		optional int64 save_time				= 5;
+		optional int64 supporting_guid			= 6;
+		optional string supporting_name			= 7;
+		optional int32 vip_level				= 8;
+		optional int32 peak						= 9;
+		optional int32 server_id				= 10;	
+		optional string game_channel			= 11;
+		optional int64 standby_parameter		= 12;		
+	}
+	
+	message ws2dp_save_ranking_info_one
+	{
+		optional s_ranking_player_info ranking_info				= 1;		
+	}
+	
+	message ws2dp_load_all_service_rank_info
+	{
+		optional int32 rank_type				= 1;		
+	}
+	
+	message ws2dp_save_ranking_worship
+	{
+		optional int64 sender_guid				= 1;	
+		optional s_ranking_player_info target_data				= 2;
+		optional int64 worship_add_value				= 3;
+		optional int32 worship_type				= 4;
+	}
+	
+	message ws2dp_get_worship_value
+	{
+		optional int64 sender				= 1;	
+		optional int64 target				= 2;		
+	}
+	
+	message s_legion_info
+	{
+		optional int64 legion_guid				= 1;	
+		optional string legion_name				= 2;		
+		optional string announcement			= 3;
+		optional int64 gs_value					= 4;
+		repeated int64 data_ary					= 5;
+	}
+	
+	message ws2dp_save_legion_info
+	{
+		optional s_legion_info legion_info		= 1;			
+	}
+	
+	message s_legion_member_info
+	{
+		optional int64 role_guid				= 1;	
+		optional string role_name				= 2;		
+		optional int64 gs_value					= 3;
+		repeated int64 data_ary					= 4;
+	}
+	
+	message ws2dp_save_legion_member_info
+	{
+		optional int64 legion_guid				= 1;	
+		optional s_legion_member_info legion_member_info		= 2;	
+	}
+	
+	message s_legion_city_war_member_info
+	{
+		optional int64 role_guid				= 1;	
+		optional int64 use_type					= 2;		
+		optional string role_name				= 3;
+		optional int64 player_temp_id			= 4;
+		optional int64 week_contribution		= 5;
+		optional int64 job_title				= 6;
+	}
+	
+	message ws2dp_save_legion_city_war_member_info
+	{
+		optional int64 legion_guid				= 1;	
+		optional s_legion_city_war_member_info legion_member_info		= 2;	
+	}
+	
+	message ws2dp_delete_legion_info
+	{
+		optional int64 legion_guid				= 1;	
+	}
+	
+	message ws2dp_delete_legion_member_info
+	{
+		optional int64 role_guid				= 1;	
+	}
+	
+	message ws2dp_delete_legion_city_war_member_info
+	{
+		optional int32 del_type				= 1;	
+	}
+	
+	message ws2dp_del_legion_applicant_one
+	{
+		optional int64 role_guid				= 1;	
+	}
+	
+	message ws2dp_save_legion_applicant
+	{
+		optional int64 legion_guid				= 1;
+		optional int64 role_guid				= 2;
+		optional string role_name				= 3;
+		optional float exist_time				= 4;
+		optional int64 gs_value				= 5;		
+		repeated int32 data_ary				= 6;		
+	}
+	
+	message ws2dp_save_legion_boss_award_get_log
+	{
+		optional int64 role_guid				= 1;	
+		optional int32 boss_map_id				= 2;
+	}
+	
+	message ws2dp_load_all_legion_boss_award_get_log
+	{
+		optional int64 role_guid				= 1;	
+	}
+	
+	message ws2dp_save_city_info
+	{
+		optional int64 occupation_legion_guid				= 1;	
+		optional string city_master_name				= 2;
+	}
+	
+	message s_city_war_bid_info
+	{
+		optional int32 territory_id				= 1;	
+		optional int32 index_in_terr						= 2;
+		optional int64 legion_guid				= 3;	
+		optional int32 cur_bid_price						= 4;
+		optional int32 is_prior_maintain				= 5;	
+		optional int32 occupy_time_stamp						= 6;
+		optional int32 server_id						= 7;
+		optional string legion_name							= 8;
+	}
+	
+	message ws2dp_save_war_bid_info
+	{
+		optional s_city_war_bid_info bid_info				= 1;	
+
+	}
+	
+	message ws2dp_clear_war_bid_info
+	{
+		optional int32 clear_type				= 1;	
+	}
+	
+	message ws2dp_clear_overlord_legion_stuff
+	{
+		optional int32 del_stuff_type				= 1;	
+		optional int64 target_guid				= 2;
+	}
+	
+	message s_legion_event
+	{
+		optional int64 legion_guid				= 1;	
+		optional int32 event_idx						= 2;
+		optional string extra_data				= 3;	
+		optional int32 happen_time						= 4;
+	}
+	
+	message ws2dp_save_legion_event
+	{
+		optional s_legion_event event_data				= 1;	
+	}
+	
+	message ws2dp_clear_legion_event
+	{
+		optional int64 legion_guid				= 1;	
+	}
+	
+	message ws2dp_save_legion_bonus_info
+	{
+		optional int64 legion_guid				= 1;	
+		optional int32 mission_id				= 2;
+		optional int32 finish_count				= 3;	
+	}
+	
+	message ws2dp_clear_legion_bonus_info
+	{
+		optional int64 legion_guid				= 1;	
+	}
+	
+	message ws2dp_save_server_attr_val
+	{
+		optional int32 attr_type				= 1;	
+		optional int64 attr_val					= 2;
+	}
+	
+	message ws2dp_load_server_attr_val
+	{
+	
+	}
+	
+	message ws2dp_load_cross_city_info
+	{
+	
+	}
+	
+	message s_cross_city_info
+	{
+		optional int64 legion_guid				= 1;
+		optional int32 server_id				= 2;
+		optional int64 chief_guid				= 3;
+		optional string legion_name				= 4;	
+		optional string chief_name				= 5;	
+	}
+	
+	message ws2dp_save_cross_city_info
+	{
+		optional s_cross_city_info	city_info_msg = 1;
+		optional int32				rank_idex	  = 2;
+	}
+	
+	message ws2dp_clear_cross_city_info
+	{
+	
+	}
+	
+	message s_best_record
+	{
+		optional int32				map_template_id	  = 1;
+		repeated int64				role_guid		  = 2;
+		repeated string				role_name		  = 3;
+		repeated int32				role_value	 	  = 4;
+	}
+	
+	message ws2dp_save_best_record
+	{
+		optional s_best_record	record_info = 1;
+	}
+	
+	message ws2dp_load_all_best_record
+	{
+
+	}
+	
+	message ws2dp_save_gain_treasure_record_info
+	{
+		optional int32				del_stamp						= 1;
+		optional int32				boss_spawn_point_template_id	= 2;
+		optional int32				killed_stamp		  			= 3;
+		repeated string				role_name		  				= 4;
+		repeated string				gain_item_template_id			= 5;
+		repeated int64				role_guid		  				= 6;
+	}
+	
+	message ws2dp_load_all_gain_treasure_record_info
+	{
+		optional int32				boss_spawn_point_id = 1;
+	}
+	
+	message s_pk_island_simple_player_msg
+	{
+		optional int64				player_guid	= 1;
+		optional string				role_name	= 2;
+		optional int32				win_num 	= 3;
+		optional int32				server_id 	= 4;
+		optional int32				is_winner 	= 5;
+	}
+	
+	message ws2dp_save_cross_server_pk_msg_all
+	{
+		optional int32				pk_state	= 1;
+		optional int32				war_idex	= 2;
+		repeated int64				player_guid	= 3;
+		repeated string				role_name	= 4;
+		repeated int32				win_num 	= 5;
+		repeated int32				server_id 	= 6;
+		repeated int32				is_winner 	= 7;
+	}
+	
+	message ws2dp_load_cross_server_pk_msg_all
+	{
+
+	}
+	
+	message ws2dp_clear_cross_server_pk_msg_all
+	{
+
+	}
+	
+	message ws2dp_save_cross_server_harry_msg_all
+	{
+		optional int32		server_id			= 1;
+		optional int32		server_money		= 2;
+		optional int32		special_money		= 3;
+		optional int64		first_player_guid	= 4;
+		optional int64		second_player_guid	= 5;
+		optional int64		third_player_guid	= 6;
+		optional string		first_player_name	= 7;
+	}
+	
+	
+	message ws2dp_load_cross_server_harry_msg_all
+	{
+
+	}
+	
+	
+	message ws2dp_del_one_server_msg
+	{
+		optional int32		server_id			= 1;
+	}
+	
+	
+	message ws2dp_load_harry_player_detail
+	{
+		optional int32		player_idex		= 1;
+		optional int64		role_guid		= 2;
+		optional int32		server_id		= 3;
+	}
+	
+	message ws2dp_load_role_pk_top
+	{
+
+	}
+	
+	message ws2dp_load_role_pk_info
+	{
+
+		optional int64		role_guid		= 1;
+		optional int32		template_id		= 2;
+		optional int32		role_gs			= 3;
+		optional string		role_name		= 4;
+	}
+	
+	message ws2dp_save_role_pk_info
+	{
+		optional int64		role_guid		= 1;
+		optional string		target_name_1	= 2;
+		optional string		target_name_2	= 3;
+		optional string		target_name_3	= 4;
+		optional int32		ladder_score	= 5;
+		optional int32		win_result		= 6;
+		optional int32		cross_honor		= 7;
+	}
+	
+	message ws2dp_save_role_pk_honor_refresh
+	{
+		optional int64		role_guid		= 1;
+		optional int32		refresh_time	= 2;
+	}
+	
+	message ws2dp_load_role_pk_log
+	{
+		optional int64		role_guid		= 1;
+		optional int32		server_id		= 2;
+	}
+	
+	message s_mail_info
+	{
+		optional int64		role_guid		= 1;
+		repeated int32		data_ary		= 2;
+		optional string		text_contents	= 3;
+		optional string		sender_name		= 4;
+		optional string		mail_title		= 5;
+	}
+	
+	message ws2dp_save_mail_event_to_db
+	{
+		optional bool			is_over		= 1;
+		optional int32			mail_num	= 2;
+		repeated s_mail_info	mail_info	= 3;
+	}
+	
+	message s_red_package_base
+	{
+		optional int64			red_package_guid		= 1;
+		optional int32			red_package_template_id = 2;
+		optional int64			sender_guid				= 3;
+		optional int32			create_time				= 4;
+		optional string			sender_name				= 5;
+		optional string			text					= 6;
+		optional int32			sender_vip_level		= 7;
+		optional int32			remain_times			= 8;
+		optional int32			remain_money_num		= 9;
+	}
+	
+	message s_red_package_receiver
+	{
+		optional int64		red_package_guid	= 1;
+		optional int64		receiver_guid		= 2;
+		optional string		role_name			= 3;
+		optional int32		money_num			= 4;
+	}
+	
+	message s_red_package
+	{
+		optional s_red_package_base			base_info		= 1;
+		repeated s_red_package_receiver		info_list		= 2;
+	}
+	
+	message ws2dp_save_red_package
+	{
+		optional int32			data_num	= 1;
+		repeated s_red_package	data_ary	= 2;
+	}
+	
+	message ws2dp_load_red_package
+	{
+	
+	}
+	
+	message ws2dp_load_red_package_receiver
+	{
+		optional int64	red_package_guid		= 1;
+	}
+	
+	message ws2dp_add_red_package_to_sql
+	{
+		optional s_red_package_base	red_info	= 1;
+	}
+	
+	message ws2dp_add_red_package_receiver_to_sql
+	{
+		optional s_red_package_receiver	red_info	= 1;
+	}
+	
+	message ws2dp_del_red_package_by_sql
+	{
+		optional int64	red_package_guid	= 1;
+	}
+	
+	message s_item_info
+	{
+		optional int64			item_guid	= 1;
+		repeated int32			data_ary	= 2;
+		optional string			param_str	= 3;
+	}
+	
+	message ws2dp_save_mail_event_item_to_db
+	{
+		optional int64			mail_guid	= 1;
+		optional bool			is_over		= 2;
+		optional int32			item_num	= 3;
+		repeated s_item_info	item_list	= 4;
+	}
+	
+	message ws2dp_load_mail_event
+	{
+		optional bool			is_over		= 1;
+	}
+	
+	message ws2dp_load_mail_event_item
+	{
+		optional bool			is_over		= 1;
+	}
+	
+	message ws2dp_save_new_globel_mail_had_info
+	{
+		optional int64			role_guid	= 1;
+		repeated int64			data_info	= 2;
+	}
+	
+	message ws2dp_save_world_boss_to_db
+	{
+		repeated int32			npc_index			= 1;
+		repeated int32			template_id 		= 2;
+		repeated int32			is_alive			= 3;
+		repeated int32			line_id				= 4;
+		repeated int64			last_respawn_time	= 5;
+		repeated int32			respawn_phase		= 6;
+		repeated string			killer_name			= 7;
+		repeated string			first_killer_name	= 8;
+		repeated int32			first_killed_time	= 9;
+		repeated int32			is_get_prize		= 10;
+	}
+	
+	message ws2dp_load_world_boss
+	{
+	
+	}
+
+	message ws2dp_del_draw_record
+	{
+		optional int64			info_guid	= 1;
+	}
+	
+	message ws2dp_add_new_draw_record
+	{
+		optional int64		info_guid			= 1;
+		optional int64		role_guid			= 2;
+		optional string		role_name			= 3;
+		optional int32		item_template_id	= 4;
+		optional int32		get_type			= 5;		
+		optional int32		record_type			= 6;		
+		optional int64		record_time			= 7;
+	}
+	
+	message ws2dp_load_draw_record_by_db
+	{
+	
+	}
+
+	message ws2dp_save_big_player_to_db
+	{
+		repeated int32 		player_type		= 1;
+		repeated int64 		role_guid		= 2;
+	}
+	
+	message ws2dp_load_big_player_by_db
+	{
+	
+	}
+	
+	message ws2dp_load_big_player_detail
+	{
+		optional int32 		big_type		= 1;
+		optional int64 		role_guid		= 2;
+	}
+	
+	message s_auction_info
+	{
+		optional int64 			seller_guid			= 1;
+		optional string		 	seller_name			= 2;
+		optional int64			buyer_guid			= 3;
+		optional string			buyer_name			= 4;
+		optional int32 			trade_type			= 5;
+		optional int32 			seller_vip_level	= 6;
+		optional int32 			auction_type		= 7;
+		optional int32 			auction_sub_type	= 8;
+		optional int32 			item_color			= 9;
+		optional int32 			quality_level		= 10;
+		optional int32 			class_limit			= 11;
+		optional string 		item_name			= 12;
+		optional int64 			sell_time			= 13;
+		optional int64 			deal_time			= 14;
+		optional int32 			sell_money_type		= 15;
+		optional int64 			sell_total_money	= 16;
+		optional int64 			sell_single_money	= 17;
+		optional int64 			cur_bid_money		= 18;
+		optional int32 			is_show				= 19;
+		optional int32 			add_time			= 20;
+		optional int32 			is_sky_order		= 21;
+		optional int64 			show_guid			= 22;
+		optional s_item_info	item_info			= 23;
+	}
+	
+	message s_unit_info
+	{
+		optional int64 			role_guid			= 1;
+		optional string		 	account				= 2;
+		optional string			role_name			= 3;
+		optional string			role_appearance		= 4;
+		optional string 		first_kill_npc_arr	= 5;
+		optional int64 			map_guid			= 6;
+		repeated int64 			data_i64_ary		= 7;
+		repeated int32 			data_ary			= 8;
+	}
+	
+	message login_fixed_data
+	{
+		optional string 		param1				= 1;
+		optional string 		param2 				= 2;	
+		optional string 		param3 				= 3;	
+		optional string 		param4 				= 4;	
+		optional string 		param5 				= 5;	
+		optional string 		param6 				= 6;	
+		optional string 		param7 				= 7;	
+		optional string 		param8 				= 8;	
+		optional string 		param9 				= 9;	
+		optional string 		param10				= 10;	
+		optional string 		param11 			= 11;
+		optional string			param12 			= 12;	
+		optional string 		param13 			= 13;	
+		optional string 		param14 			= 14;
+		optional string			param15				= 15;
+	}
+	
+	message ws2dp_auction_add_item_into_db
+	{
+		optional s_auction_info		info			= 1;
+		optional s_unit_info		role_info		= 2;
+		optional bool				is_add_to_log	= 3;
+		optional int64				old_item_guid	= 4;
+		optional login_fixed_data	third_info		= 5;
+	}
+	
+	message ws2dp_find_buy_target
+	{
+		optional int64 		role_guid		= 1;
+		optional int64 		item_guid		= 2;
+	}
+	
+	message ws2dp_auction_cancel_sell
+	{
+		optional int64 		role_guid		= 1;
+		optional int64 		item_guid		= 2;
+	}
+	
+	message ws2dp_auction_find_bid_target
+	{
+		optional int64 		role_guid			= 1;
+		optional int64 		item_guid			= 2;
+		optional int32 		price_money_type	= 3;
+		optional int32 		price_money_value	= 4;
+	}	
+	
+	message ws2dp_auction_bid_success
+	{
+		optional int64 			new_record_id	= 1;
+		optional int64 			old_buyer_guid	= 2;
+		optional s_auction_info auction_info	= 3;
+	}
+	
+	message ws2dp_auction_clear_old_item
+	{
+		optional int32 			trade_type			= 1;
+		optional int64 			cur_time			= 2;
+	}
+	
+	message s_auction_share_info
+	{
+		optional int64			item_guid			= 1;
+		optional int64			role_guid			= 2;
+		optional float			share_rate			= 3;
+		optional string			share_mail_title	= 4;
+		optional string			share_mail_content	= 5;
+	}
+	
+	message ws2dp_auction_add_share_list
+	{
+		repeated int64			item_guid			= 1;
+		repeated int64			role_guid			= 2;
+		repeated float			share_rate			= 3;
+		repeated string			share_mail_title	= 4;
+		repeated string			share_mail_content	= 5;
+	}
+	
+	message ws2dp_auction_add_purchase_record
+	{
+		optional int64			record_guid			= 1;
+		optional int64			role_guid			= 2;
+		optional bool			is_sell				= 3;
+		optional s_auction_info	auction_info		= 4;
+	}
+	
+	message ws2dp_auction_req_share_list
+	{
+		optional int64			item_guid			= 1;
+		optional int32			item_template_id	= 2;
+		optional int64			buyer_guid			= 3;
+		optional int32			money_type			= 4;
+		optional int32			money_value			= 5;
+	}
+	
+	message ws2dp_auction_check_legion_selling
+	{
+		optional int64 			legion_guid			= 1;
+		optional int64 			cur_time			= 2;
+	}
+	
+	message ws2dp_auction_del_bid_record
+	{
+		optional int64 			item_guid			= 1;
+	}
+	
+	message ws2dp_auction_clear_old_bid_record
+	{
+
+	}
+    message ws2dp_auction_check_world_sell
+	{
+
+	};	
+	
+	message ws2dp_auction_show_sell
+	{
+		optional int32 			end_time			= 1;
+		optional s_auction_info data_info			= 2;
+	}		
+	
+	message ws2dp_auction_time_out
+	{
+		optional int64			cur_mil_sec			= 1;
+		optional int64			sell_time			= 2;
+		optional int64			deal_time			= 3;
+		optional int32			is_first			= 4;
+	}
+	
+	message ws2dp_save_marry_couple_info
+	{
+		optional int64		main_guid				= 1;
+		optional string		main_name				= 2;
+		optional int64		sub_guid				= 3;
+		optional string		sub_name				= 4;
+		optional int32		marry_state				= 5;
+		optional int32		save_event_time			= 6;
+		optional int32		main_class_id			= 7;
+		optional int32		main_level				= 8;
+		optional int32		sub_class_id			= 9;
+		optional int32		sub_level				= 10;
+		optional int32		marry_item_id			= 11;
+		optional int32		main_ring_level			= 12;
+		optional int32		sub_ring_level			= 13;
+		optional int32		heart_value				= 14;
+		optional bool		is_divorce				= 15;		
+	}
+	
+	message ws2dp_load_marry_couple_info
+	{
+	
+	}
+	
+	
+	message ws2dp_marry_get_last_login_time
+	{
+		optional int64		sender_guid				= 1;
+		optional int64		target_guid				= 2;
+	}
+	
+	message ws2dp_load_marry_info_cross_server
+	{
+		optional int64		role_guid				= 1;
+	}
+	
+	message ws2dp_load_cloud_shop_players_info
+	{
+	
+	}
+	message ws2dp_save_cloud_shop_role_info
+	{
+		optional int64		role_guid				= 1;
+		optional string		role_name				= 2;
+		repeated int32		info_data				= 3;
+	}
+	
+	message ws2dp_clear_cloud_shop_player_info
+	{
+		optional int32		clear_type				= 3;
+		
+	}
+	
+	message ws2dp_check_player_name
+	{
+		optional int64		role_guid				= 1;
+		optional string		role_name				= 2;
+	}	
+	message ws2dp_change_player_name
+	{
+		optional int64		role_guid				= 1;
+		optional string		role_name				= 2;
+	}
+	
+	message ws2dp_save_chat_with_offline
+	{
+		optional int64		chat_guid    			= 1;
+		optional int64		address_guid      		= 2;
+		optional int64		sender_guid      		= 3;
+		optional string		sender_name     		= 4;
+		optional int64		chat_type      			= 5;
+		optional string		content_text      		= 6;
+		optional int64		sender_templete_id      = 7;
+		optional int64		relation_template_id    = 8;
+		optional int64		relation_level      	= 9;
+		optional int64		vip_title_template_id   = 10;
+		optional int64		head_frame_id      		= 11;
+	}	
+	
+	message ws2dp_load_chat_with_offline
+	{
+		optional int64		role_guid    			= 1;
+	}
+	
+	message ws2dp_eliminate_chat_with_offline
+	{
+		optional int64		role_guid    			= 1;
+	}	
+	
+	message ws2dp_load_time_limit_temp
+	{
+	
+	}
+	
+	message s_time_limit_activity_temp_db
+	{
+		optional int32				ActGuid				= 1;
+		optional int32				AttributeId			= 2;
+		optional int32				ActivityType		= 3;
+		optional int32				CycleParamType		= 4;
+		optional string				CycleParamNum		= 5;
+		optional string				CycleFirstId		= 6;
+		optional int32				OpenType			= 7;
+		optional int32				OpenServerDate		= 8;
+		optional string				OpenSpencificDate	= 9;
+		optional int32				FirstOpenDayOfWeek	= 10;
+		optional int32				DurationDays		= 11;
+		optional int32				CycleDays			= 12;
+		optional string				TextImage			= 13;
+		optional string				ParamArr1			= 14;
+		optional string				ParamArr2			= 15;
+		optional string				ParamArr3			= 16;
+		optional string				ParamArr4			= 17;
+		optional string				ParamArr5			= 18;
+		optional int32				IsEndAct			= 19;
+		optional string				OriginalCycleFirstId= 20;
+		optional string				OldCycleFirstId		= 21;
+		optional int32				CreateTime			= 22;
+		optional int32				EndTime				= 23;
+		optional int32				TemplateFromType	= 24;
+		optional int32				RefreshTime			= 25;
+
+	}
+	
+	message ws2dp_save_time_limit_temp
+	{
+		optional s_time_limit_activity_temp_db temp_db_info = 1;
+	}
+	
+	message ws2dp_save_time_limit_branch_temp
+	{
+		optional int32				ActGuid				= 1;
+		optional int32				AttributeId			= 2;
+		optional int32				ActivityType		= 3;
+		optional int32				CycleIndex			= 4;
+		optional string				Condition			= 5;
+		optional string				Reward				= 6;	
+		optional string				TextImage			= 7;
+		optional string				ParamArr1			= 8;
+		optional string				ParamArr2			= 9;
+		optional string				ParamArr3			= 10;
+		optional string				ParamArr4			= 11;
+		optional string				ParamArr5			= 12;
+	}
+	
+
+	
+	message ws2dp_update_role_time_limit
+	{
+		optional int32 			act_guid	= 1;
+		optional int32 			act_type	= 2;
+	}
+	
+	message ws2dp_delete_time_limit_temp
+	{
+		optional int32		 	act_guid	= 1;
+	}
+	
+	message ws2dp_delete_time_limit_branch_temp
+	{
+		optional int32		 	act_guid	= 1;
+	}
+	
+	message ws2dp_refresh_role_time_limit_guid
+	{
+		optional int32			old_act_guid = 1;
+		optional int32 			new_act_guid = 2;
+	}
+	
+	
+	
+	
+	
+	message ws2dp_save_arena_rank 
+	{
+	   optional	 bool	is_first = 1;
+	   repeated	 s_arena_rank	data_list = 2;
+	}
+	
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

@@ -11,17 +11,17 @@ purpose: 七日目标存档消息
 #include "base.hpp"
 #include "Logic/char_def.hpp"
 #include "Logic/service_goal_def.hpp"
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 
 	enum
 	{
-		e_msgindex_dp2cs_load_char_service_goal = hld::e_msg_base_service_goal,
+		e_msgindex_dp2cs_load_char_service_goal = faith::e_msg_base_service_goal,
 		e_msgindex_cs2dp_save_char_service_goal,
 	};
 
-	struct dp2cs_load_char_service_goal : public hld::packet_base
+	struct dp2cs_load_char_service_goal : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32							unit_array_index;
@@ -39,7 +39,7 @@ namespace hld
 			return (basic_len + data_num * sizeof(s_service_goal_info));
 		}
 	};
-	struct cs2dp_save_char_service_goal : public hld::packet_base
+	struct cs2dp_save_char_service_goal : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;

@@ -4,7 +4,7 @@
 #include "logic/type_def.hpp"
 #include "vector3d.h"
 
-namespace hld
+namespace faith
 {
     region_sector::region_sector(const fvector& center, const i32 radius, frotator rot, const i32 angle):
         m_center(center),

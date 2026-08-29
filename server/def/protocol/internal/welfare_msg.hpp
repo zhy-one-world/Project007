@@ -14,12 +14,12 @@ purpose:
 #include "Logic/char_def.hpp"
 #include "Logic/welfare_def.hpp"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	enum
 	{
-		e_msgindex_dp2cs_load_char_welfare = hld::e_msg_base_welfare,
+		e_msgindex_dp2cs_load_char_welfare = faith::e_msg_base_welfare,
 		e_msgindex_cs2dp_save_char_welfare,
 		e_msgindex_dp2cs_load_char_active_degree,
 		e_msgindex_cs2dp_save_char_active_degree,
@@ -27,7 +27,7 @@ namespace hld
 		e_msgindex_cs2dp_save_char_welfare_random_get
 	};
 
-	struct dp2cs_load_char_welfare : public hld::packet_base
+	struct dp2cs_load_char_welfare : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32							unit_array_index;
@@ -39,7 +39,7 @@ namespace hld
 		}
 	};
 
-	struct cs2dp_save_char_welfare : public hld::packet_base
+	struct cs2dp_save_char_welfare : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -52,7 +52,7 @@ namespace hld
 		}
 	};
 
-	struct dp2cs_load_char_active_degree : public hld::packet_base
+	struct dp2cs_load_char_active_degree : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32							unit_array_index;
@@ -64,7 +64,7 @@ namespace hld
 		}
 	};
 
-	struct cs2dp_save_char_active_degree : public hld::packet_base
+	struct cs2dp_save_char_active_degree : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -76,7 +76,7 @@ namespace hld
 			wheader = e_msgindex_cs2dp_save_char_active_degree;
 		}
 	};
-	struct cs2dp_save_char_welfare_random_get : public hld::packet_base
+	struct cs2dp_save_char_welfare_random_get : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -89,7 +89,7 @@ namespace hld
 		}
 	};
 
-	struct dp2cs_load_char_welfare_random_get : public hld::packet_base
+	struct dp2cs_load_char_welfare_random_get : public faith::packet_base
 	{
 		guid_64								role_guid;
 		s_welfare_random_get_info			random_get_data;

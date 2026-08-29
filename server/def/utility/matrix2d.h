@@ -14,7 +14,7 @@
 #include "logic/type_def.hpp"
 #include "vector3d.h"
 
-namespace hld
+namespace faith
 {
     namespace math
     {

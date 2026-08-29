@@ -1,6 +1,6 @@
 #include "LadderTemplate_S.h"
 
-namespace hld
+namespace faith
 {
     void LadderTemplateSize()
     {

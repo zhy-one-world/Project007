@@ -10,7 +10,7 @@
 #include "server/red_package/red_package_ws_mgr.h"
 #include "net.pb.h"
 
-namespace hld
+namespace faith
 {
 	red_package_ws::red_package_ws()
 	{

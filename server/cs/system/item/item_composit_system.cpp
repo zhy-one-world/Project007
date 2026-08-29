@@ -8,7 +8,7 @@
 #include "utility/random.h"
 #include "internet/net.pb.h"
 
-using namespace hld;
+using namespace faith;
 
 void item_composit_system::composit_operate_message(player* player_ptr, const item_proto_item_composit& msg)
 {

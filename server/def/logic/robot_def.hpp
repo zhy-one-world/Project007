@@ -15,7 +15,7 @@ purpose:
 #include "time_def.hpp"
 #include "template/template_base.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 

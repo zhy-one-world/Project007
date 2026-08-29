@@ -21,7 +21,7 @@
 #include "cloud_shop_mgr.h"
 #include "globle_data.h"
 
-namespace hld
+namespace faith
 {
 	time_limit_activity_temp_ws_mgr::time_limit_activity_temp_ws_mgr()
 	{
@@ -51,7 +51,7 @@ namespace hld
 		int32 data_num = 0;
 		ws2cs_act_limit_temp msg;
 
-		hld::ws2cs_proto::act_limit_temp pro_msg;
+		faith::ws2cs_proto::act_limit_temp pro_msg;
 		bool is_use = proto_by_lua(e_msgindex_ws2cs_time_limit_temp);
 
 		bool is_begin = true;
@@ -98,7 +98,7 @@ namespace hld
 		int32 branch_data_num = 0;
 		ws2cs_act_limit_branch_temp branch_msg;
 
-		hld::ws2cs_proto::act_limit_branch_temp pro_branch_msg;
+		faith::ws2cs_proto::act_limit_branch_temp pro_branch_msg;
 		is_use = proto_by_lua(e_msgindex_ws2cs_time_limit_branch_temp);
 
 		for (auto ite = m_time_limit_activity_branch_temp_map.begin(); ite != m_time_limit_activity_branch_temp_map.end();ite++)
@@ -276,7 +276,7 @@ namespace hld
 		}
 		else
 		{
-			hld::ws2cs_proto::end_act_type pro_msg;
+			faith::ws2cs_proto::end_act_type pro_msg;
 			msg.to_proto(pro_msg);
 			world_server::getInstance().broadcast_lua(&pro_msg, e_msgindex_ws2cs_end_act_type, e_server_type_cs);
 		}

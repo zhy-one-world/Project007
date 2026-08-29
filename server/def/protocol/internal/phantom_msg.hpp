@@ -4,15 +4,15 @@
 #include "base.hpp"
 #include "Logic/phantom_def.h"
 
-namespace hld
+namespace faith
 {
 #pragma pack(push,1)
 	enum
 	{
-		e_msgindex_dp2cs_load_char_phantom = hld::e_msg_base_phantom,
+		e_msgindex_dp2cs_load_char_phantom = faith::e_msg_base_phantom,
 		e_msgindex_cs2dp_save_char_phantom,
 	};
-	struct dp2cs_load_char_phantom : public hld::packet_base
+	struct dp2cs_load_char_phantom : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
@@ -31,7 +31,7 @@ namespace hld
 		}
 	};
 
-	struct cs2dp_save_char_phantom : public hld::packet_base
+	struct cs2dp_save_char_phantom : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;

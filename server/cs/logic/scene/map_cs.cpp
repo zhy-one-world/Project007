@@ -28,7 +28,7 @@
 #include "template/ActivityCommonConfigTemplate_S.h"
 #include "belief_rune_def.hpp"
 
-namespace hld
+namespace faith
 {
 	map_cs::map_cs() : map_object()
 	{
@@ -879,7 +879,7 @@ namespace hld
 		if (temp_player.is_valid() == false)
 			return;
 
-		hld::belief_rune_proto_belief_cloister_point_update msg;
+		faith::belief_rune_proto_belief_cloister_point_update msg;
 		msg.set_point_value(stage_point_value);
 		temp_player.send_message_to_self(&msg, e_msgindex_s2c_belief_cloister_point_update);
 	}

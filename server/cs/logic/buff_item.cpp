@@ -21,7 +21,7 @@ purpose:
 #include "internet/skill.pb.h"
 #include "internet/net.pb.h"
 
-namespace hld
+namespace faith
 {
 	buff_item::buff_item()
 	{

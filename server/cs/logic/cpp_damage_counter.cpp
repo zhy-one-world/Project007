@@ -38,7 +38,7 @@
 #include "utility/init_unit.h"
 #include "utility/random.h"
 
-namespace hld
+namespace faith
 {
 	//////////////////////////////////////////////////////////////////////////
 	//

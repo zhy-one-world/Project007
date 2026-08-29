@@ -18,7 +18,7 @@ purpose: about rankings
 #include "internal/core.hpp"
 #include "utility/init_unit.h"
 
-using namespace hld;
+using namespace faith;
 cranking_mgr::cranking_mgr()
 {
 	m_array_index = 0;
@@ -115,7 +115,7 @@ void	cranking_mgr::init_ranking_data()
 
 	// µÈ¼¶ÅÅÐÐ°ñ áÛ·å
 	int32 GradeNum = m_player_ref.get_grade_num();
-	if (GradeNum >= hld::player_grade_up_peakedness_num)
+	if (GradeNum >= faith::player_grade_up_peakedness_num)
 	{
 		m_ranking_data[e_RankingIndex_level].Peak = 1;
 		int32 sub_ranking_type = -1;
@@ -496,7 +496,7 @@ void cranking_mgr::set_sub_class_type_ranking_data(e_RankingIndex ranking_type, 
 	int32 sub_ranking_type = -1;
 	switch (ranking_type)
 	{
-	case hld::e_RankingIndex_gs:
+	case faith::e_RankingIndex_gs:
 	{
 		switch ((e_class_type)m_player_class_type)
 		{
@@ -517,7 +517,7 @@ void cranking_mgr::set_sub_class_type_ranking_data(e_RankingIndex ranking_type, 
 		}
 	}
 	break;
-	case hld::e_RankingIndex_level:
+	case faith::e_RankingIndex_level:
 	{
 		switch ((e_class_type)m_player_class_type)
 		{
