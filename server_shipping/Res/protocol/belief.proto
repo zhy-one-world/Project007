@@ -1,5 +1,5 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 
 message belief_proto
 {
@@ -12,7 +12,7 @@ message belief_proto
 	{
 		repeated int32 role_guid				= 1;
 		repeated belief_info	belief_list		= 2;
-		optional int32 belief_type				= 3;
+		int32 belief_type				= 3;
 	}
 
 	message update_character_belief_all
@@ -23,15 +23,16 @@ message belief_proto
 
 	message belief_operation
 	{
-		optional uint32 operation_type			= 1;
-		optional uint32 belief_type				= 2;
+		uint32 operation_type			= 1;
+		uint32 belief_type				= 2;
 	}
 
 	message belief_operation_end
 	{
-		optional uint32 operation_state			= 1;
-		optional uint32 operation_type			= 2;
-		optional uint32 belief_type				= 3;
+		uint32 operation_state			= 1;
+		uint32 operation_type			= 2;
+		uint32 belief_type				= 3;
 		repeated int32	role_guid				= 4;
 	}
 }
+

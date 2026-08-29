@@ -1,23 +1,23 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 
 message offline_award_proto
 {
 	message award_item
 	{
-		optional int32 item_template_id = 1;
-		optional int32 item_num = 2;
-		optional int32 item_const_att = 3;
-		optional int32 item_lock = 4;
+		int32 item_template_id = 1;
+		int32 item_num = 2;
+		int32 item_const_att = 3;
+		int32 item_lock = 4;
 	}
 	message award_money
 	{
-		optional int32 money_type = 1;
-		optional int32 money_num = 2;
+		int32 money_type = 1;
+		int32 money_num = 2;
 	}
 	message award_list
 	{
-		optional int32 offline_time = 1;
+		int32 offline_time = 1;
 		repeated award_item item_list = 2;
 		repeated award_money money_list = 3;		
 	}
@@ -27,7 +27,7 @@ message offline_award_proto
 	}
 	message get_award_end
 	{
-		optional int32 res = 1;	
+		int32 res = 1;	
 	}
 }
 
@@ -39,6 +39,7 @@ message online_award_proto
 	}
 	message get_award_end
 	{
-		optional int32 res = 1;	
+		int32 res = 1;	
 	}
 }
+

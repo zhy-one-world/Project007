@@ -1,5 +1,5 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 
 message feather_heart_proto
 {
@@ -8,16 +8,17 @@ message feather_heart_proto
 	message feather_heart_operate
 	{
 		repeated int32 item_guid			= 1;
-		optional int32 oper_type			= 2;
-		optional int32 slot			        = 3;
-		optional int32 skill_a			    = 4;
-		optional int32 skill_b              = 5;
+		int32 oper_type			= 2;
+		int32 slot			        = 3;
+		int32 skill_a			    = 4;
+		int32 skill_b              = 5;
 	}
 	message feather_heart_operate_end
 	{
 		repeated int32 item_guid					        = 1;
-		optional int32 oper_type						    = 2;
-		optional int32 slot                                 = 4;
-		optional int32 result                               = 3;
+		int32 oper_type						    = 2;
+		int32 slot                                 = 4;
+		int32 result                               = 3;
 	}
 }
+

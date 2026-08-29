@@ -1,5 +1,5 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 
 message dragontrip_proto
 {
@@ -13,25 +13,26 @@ message dragontrip_proto
 	
 	message dragontrip_operate
 	{
-		optional int32 oper_type			= 1;
-		optional int32 oper_param           = 2;
+		int32 oper_type			= 1;
+		int32 oper_param           = 2;
 	}
 	
 	message dragontrip_operate_end
 	{
-		optional int32 oper_type           = 1;
-		optional int32 result	           = 2;
-		optional int32 roll_num            = 3;
-		optional int32 item_id             = 4;
-		optional int32 item_num            = 5;
+		int32 oper_type           = 1;
+		int32 result	           = 2;
+		int32 roll_num            = 3;
+		int32 item_id             = 4;
+		int32 item_num            = 5;
 		repeated dragontrip_item_info item_list		   = 6;
 	}
 	
 	message dragontrip_item_info
 	{
-		optional int32 item_id             = 1;
-		optional int32 item_num            = 2;
-		optional int32 end_pos             = 3;
+		int32 item_id             = 1;
+		int32 item_num            = 2;
+		int32 end_pos             = 3;
 	}
 	
 }
+

@@ -1,24 +1,25 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 message web_proto
 {
 	message login
 	{
-		required int32 bigGroupId = 1;
-		required int32 serverGroupId = 2;
+		int32 bigGroupId = 1;
+		int32 serverGroupId = 2;
 	}
 	message json_str_http_to_ws
 	{
-		required int32 jsonType = 1;
-		required string dataStr = 2;		
-		required int64 orderNum = 3;
+		int32 jsonType = 1;
+		string dataStr = 2;		
+		int64 orderNum = 3;
 	}
 	message json_str_ws_to_http
 	{
-		optional int32 jsonType = 1;
-		required string dataStr = 2;	
-		required int32 bigGroupId = 3;
-		required int32 serverGroupId = 4;	
-		required int64 orderNum = 5;
+		int32 jsonType = 1;
+		string dataStr = 2;	
+		int32 bigGroupId = 3;
+		int32 serverGroupId = 4;	
+		int64 orderNum = 5;
 	}
 }
+

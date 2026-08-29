@@ -1,5 +1,5 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 
 message service_goal_proto
 {
@@ -16,15 +16,15 @@ message service_goal_proto
 	
 	message service_goal_operate
 	{
-		optional int32 service_goal_id 					 = 1;
-		optional int32 operate_type						 = 2;
+		int32 service_goal_id 					 = 1;
+		int32 operate_type						 = 2;
 	}
 	
 	message service_goal_operate_end
 	{
-		optional service_goal_one service_goal_one	 = 1;
-		optional int32 operation_type					 = 2;
-		optional int32 operation_end_state				 = 3;
+		service_goal_one service_goal_one	 = 1;
+		int32 operation_type					 = 2;
+		int32 operation_end_state				 = 3;
 	}
 	
 	message seven_day_goal_one
@@ -39,14 +39,15 @@ message service_goal_proto
 	
 	message seven_day_goal_operate
 	{
-		optional int32 seven_day_goal_id 				 = 1;
-		optional int32 operate_type						 = 2;
+		int32 seven_day_goal_id 				 = 1;
+		int32 operate_type						 = 2;
 	}
 	
 	message seven_day_goal_operate_end
 	{
-		optional seven_day_goal_one seven_day_goal_data	 = 1;
-		optional int32 operation_type					 = 2;
-		optional int32 operation_end_state				 = 3;
+		seven_day_goal_one seven_day_goal_data	 = 1;
+		int32 operation_type					 = 2;
+		int32 operation_end_state				 = 3;
 	}
 }
+

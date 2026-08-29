@@ -1,35 +1,36 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 
 message special_name_proto
 {	
 	message	special_name_operate
 	{
-		optional int32 special_name_type		=1; //³ÆºÅÀàÐÍ
-		optional int32 special_name_level		=2; //³ÆºÅµÈ¼¶
-		optional int32 operation_type			=4; //²Ù×÷ÀàÐÍ
+		int32 special_name_type		=1; //ï¿½Æºï¿½ï¿½ï¿½ï¿½ï¿½
+		int32 special_name_level		=2; //ï¿½ÆºÅµÈ¼ï¿½
+		int32 operation_type			=4; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 	
 	message	special_name_operate_end
 	{
-		optional int32 special_name_type		=1; //³ÆºÅÀàÐÍ
-		optional int32 special_name_level		=2; //³ÆºÅµÈ¼¶
-		optional int32 special_name_star		=3; //³ÆºÅÐÇ¼¶	
-		optional int32 operation_type			=4; //²Ù×÷ÀàÐÍ
-		optional int32 operation_end_state		=5; //²Ù×÷½á¹û
-		optional int64 role_guid				=6; //²Ù×÷ÕßµÄguid
+		int32 special_name_type		=1; //ï¿½Æºï¿½ï¿½ï¿½ï¿½ï¿½
+		int32 special_name_level		=2; //ï¿½ÆºÅµÈ¼ï¿½
+		int32 special_name_star		=3; //ï¿½Æºï¿½ï¿½Ç¼ï¿½	
+		int32 operation_type			=4; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		int32 operation_end_state		=5; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		int64 role_guid				=6; //ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½guid
 	}
 	
 	message	special_name_person_names
 	{
-		optional int64 role_guid				=1;//role_guid
-		repeated int32 special_name_level		=2;//³ÆºÅµÈ¼¶
-		repeated int32 special_name_star		=3;//³ÆºÅÐÇ¼¶
+		int64 role_guid				=1;//role_guid
+		repeated int32 special_name_level		=2;//ï¿½ÆºÅµÈ¼ï¿½
+		repeated int32 special_name_star		=3;//ï¿½Æºï¿½ï¿½Ç¼ï¿½
 	}
 	message	special_name_request_person_names
 	{
-		repeated int32 target_guid			=1;//ÐèÒªµÄµ½µÄ½ÇÉ«id
+		repeated int32 target_guid			=1;//ï¿½ï¿½Òªï¿½Äµï¿½ï¿½Ä½ï¿½É«id
 	}
 	
 	
 }
+

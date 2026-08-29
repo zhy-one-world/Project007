@@ -1,16 +1,18 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 
 enum e_buff_operation_type
 {
-	e_buff_operation_type_add	= 1;
+
+e_buff_operation_type_add	= 0;
 	e_buff_operation_type_del	= 2;
 	e_buff_operation_type_info	= 3;
 }
 
 enum e_buff_damage_type
 {
-	e_buff_damage_type_normal	= 1;//普通
+
+e_buff_damage_type_normal	= 0;//普通
 	e_buff_damage_type_critical	= 2;//暴击
 	e_buff_damage_type_dodge	= 3;//闪避
 }
@@ -25,49 +27,51 @@ message buff_proto
 	}
 	message buff_operation
 	{
-		optional	int32		operation_type	= 1;
-		optional	int64		buff_guid		= 5;
+		int32		operation_type	= 1;
+		int64		buff_guid		= 5;
 	}
 
 	message buff_operation_end
 	{
-		optional	int32		operation_type	= 1;
-		optional	int32		template_id		= 2;
-		optional	int32		pile_count		= 3;
-		optional	int32		time			= 4;
-		optional	int64		sender_guid		= 5;
-		optional	int64		target_guid		= 6;
-		optional	int64		buff_guid		= 7;
-		optional 	int32		skill_template_id	= 8 [default = 0];
-		optional 	int32		effect_index	= 9 [default = -1];
+		int32		operation_type	= 1;
+		int32		template_id		= 2;
+		int32		pile_count		= 3;
+		int32		time			= 4;
+		int64		sender_guid		= 5;
+		int64		target_guid		= 6;
+		int64		buff_guid		= 7;
+		int32		skill_template_id	= 8;
+		int32		effect_index	= 9;
 	}
 
 	message buff_damage
 	{
-		optional	int32		damage_type		= 1;
-		optional	int64		sender			= 2;
-		optional	int64		target			= 3;
-		optional	int64		damage_count	= 4;
-		optional	int64		elem_damage_count	= 5;
-		optional 	bool		is_double		= 6 [default = false];
-		optional 	bool		is_dead			= 7 [default = false];
-		optional 	int32		skill_template_id	= 8 [default = 0];
-		optional 	int64		end_hp			= 9 [default = 0];
+		int32		damage_type		= 1;
+		int64		sender			= 2;
+		int64		target			= 3;
+		int64		damage_count	= 4;
+		int64		elem_damage_count	= 5;
+		bool		is_double		= 6;
+		bool		is_dead			= 7;
+		int32		skill_template_id	= 8;
+		int64		end_hp			= 9;
 	}
 	
 	message buff_info
 	{
-		optional	int64		buff_guid			= 1;
-		optional	int64		sender_guid			= 2;
+		int64		buff_guid			= 1;
+		int64		sender_guid			= 2;
 		repeated	int32		data_ary			= 3;
 	}
 	
 	message buff_info_all
 	{
-		optional	int64				target			= 1;
+		int64				target			= 1;
 		repeated	buff_info 			buff_info		= 2;
 	}
 	
 
 }
+
+
 

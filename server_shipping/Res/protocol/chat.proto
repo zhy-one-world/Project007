@@ -1,5 +1,5 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 
 message chat_proto
 {
@@ -12,186 +12,186 @@ message chat_proto
 	message notice_info	
 	{			
 		repeated int32					role_guid		= 1;
-		optional int32					notice_id		= 2;
-		optional int64					sender_template_id	= 3;
-		optional int32					create_time		= 4;
-		optional string					final_string	= 5;
+		int32					notice_id		= 2;
+		int64					sender_template_id	= 3;
+		int32					create_time		= 4;
+		string					final_string	= 5;
 		repeated int32					item_data		= 6;
 	}
 	
 	message chat_text	
 	{			
 		repeated int32					sender_guid		= 1;
-		optional string					text			= 2;
-		optional int32					chat_typ	 	= 3;
+		string					text			= 2;
+		int32					chat_typ	 	= 3;
 		repeated int32					addressee_guid	= 4;
-		optional string					addressee_name	= 5;
+		string					addressee_name	= 5;
 		repeated chat_item_info			item_list		= 6;
-		optional string					sender_name	 	= 7;
-		optional int32					text_num		= 8;
+		string					sender_name	 	= 7;
+		int32					text_num		= 8;
 	}
 	
 
 	message chat_text_and_item	
 	{			
 		repeated int32					role_guid	= 1;
-		optional string					text		= 2;
+		string					text		= 2;
 		repeated chat_item_info			item_list	= 3;
 	}
 	
 	message chat_result	
 	{			
-		optional int32					chat_result_id	= 1;
-		optional int32					chat_type		= 2;
+		int32					chat_result_id	= 1;
+		int32					chat_type		= 2;
 	}
 	
 	
 	message chat_content_info
 	{
-		optional string					CommonText	= 1[default = ""];	// 普通文字		
+		string					CommonText	= 1;	// 普通文字		
 		repeated int32					item_data	= 2;				// 物品数据
 		repeated float					location	= 3;				// 位置信息
-		optional int32					line_id		= 4;				// 线路ID
-		optional int32					map_id		= 5;				// 坐标的地图ID	
-		optional string					audio_id    = 6; 				// 音频上传ID	
-		optional int32					audio_duration_time	= 7;		// 音频持续时间
-		optional int32					template_id = 8;				// 文本表id
-		optional int32					face_finish_img_id = 9;			// 表情结束图片id
+		int32					line_id		= 4;				// 线路ID
+		int32					map_id		= 5;				// 坐标的地图ID	
+		string					audio_id    = 6; 				// 音频上传ID	
+		int32					audio_duration_time	= 7;		// 音频持续时间
+		int32					template_id = 8;				// 文本表id
+		int32					face_finish_img_id = 9;			// 表情结束图片id
 	}
 	
 	message chat_content	
 	{
-		optional int64					sender_guid					= 1;
-		optional int32					sender_template_id			= 2;
+		int64					sender_guid					= 1;
+		int32					sender_template_id			= 2;
 		repeated chat_content_info		content_info_array			= 3;
-		optional int32					chat_typ	 				= 4;
+		int32					chat_typ	 				= 4;
 		repeated int32					addressee_guid				= 5;
-		optional string					addressee_name				= 6;
-		optional string					sender_name	 				= 7;
-		optional int32					relation_template_id	 	= 8;
-		optional int32					relation_level				= 9;
-		optional int64					chat_guid					= 10;
-		optional bool					is_finish_send				= 11;
-		optional int32					server_id					= 12;
-		optional int32					is_radio_host				= 13;
-		optional int32					vip_title_template_id		= 14;
-		optional int32					head_frame_id				= 15;
-		optional string					common_string				= 16;
-		optional int32					sender_guid_a				= 17;	//server
-		optional int32					sender_guid_b				= 18;	//server
-		optional int32					chat_guid_a					= 19;	//server
-		optional int32					chat_guid_b					= 20;	//server
+		string					addressee_name				= 6;
+		string					sender_name	 				= 7;
+		int32					relation_template_id	 	= 8;
+		int32					relation_level				= 9;
+		int64					chat_guid					= 10;
+		bool					is_finish_send				= 11;
+		int32					server_id					= 12;
+		int32					is_radio_host				= 13;
+		int32					vip_title_template_id		= 14;
+		int32					head_frame_id				= 15;
+		string					common_string				= 16;
+		int32					sender_guid_a				= 17;	//server
+		int32					sender_guid_b				= 18;	//server
+		int32					chat_guid_a					= 19;	//server
+		int32					chat_guid_b					= 20;	//server
 	}	
 	
 	
 	message recruit_info	
 	{
-		optional int64					team_guid					= 1;
-		optional int32					aim_type					= 2;
-		optional int32					aim_sub_id		 			= 3;
-		optional int32					recruit_type				= 4;
-		optional int32					one_dragon_flag				= 5;
+		int64					team_guid					= 1;
+		int32					aim_type					= 2;
+		int32					aim_sub_id		 			= 3;
+		int32					recruit_type				= 4;
+		int32					one_dragon_flag				= 5;
 	}
 	
 	message receive_recruit_info	
 	{
-		optional int64					team_guid					= 1;
-		optional int32					aim_type					= 2;
-		optional int32					aim_sub_id	 			    = 3;
-		optional int32					recruit_type				= 4;
-		optional int32					request_fighting_power		= 5;
-		optional int32					request_level						= 6;
-		optional int32					cur_member_num				= 7;
-		optional int32					max_member_num	 			= 8;
-		optional int64					sender_guid					= 9;
-		optional string					sender_name					= 10;
-		optional int32					sender_template_id			= 11;
-		optional int32					one_dragon_flag				= 12;
+		int64					team_guid					= 1;
+		int32					aim_type					= 2;
+		int32					aim_sub_id	 			    = 3;
+		int32					recruit_type				= 4;
+		int32					request_fighting_power		= 5;
+		int32					request_level						= 6;
+		int32					cur_member_num				= 7;
+		int32					max_member_num	 			= 8;
+		int64					sender_guid					= 9;
+		string					sender_name					= 10;
+		int32					sender_template_id			= 11;
+		int32					one_dragon_flag				= 12;
 	}
 	
 	message recruit_team_member_num	
 	{
-		optional int64					team_guid					= 1;
-		optional int32					cur_member_num				= 2;
-		optional int32					max_member_num	 			= 3;
+		int64					team_guid					= 1;
+		int32					cur_member_num				= 2;
+		int32					max_member_num	 			= 3;
 	}
 	
 	message recruit_end_info	
 	{
-		optional int32					recruit_result				= 1;
-		optional int32					recruit_type				= 2;
+		int32					recruit_result				= 1;
+		int32					recruit_type				= 2;
 	}
 	
 	message receive_legion_recruit_info	
 	{
-		optional int64					legion_guid					= 1;
-		optional string					legion_name					= 2;
-		optional int64					sender_guid					= 3;
-		optional string					sender_name					= 4;
-		optional bool					is_when_create				= 5;
-		optional string					legion_master_name			= 6;
-		optional int32					legion_level				= 7;
-		optional int32					sender_template_id			= 8;
+		int64					legion_guid					= 1;
+		string					legion_name					= 2;
+		int64					sender_guid					= 3;
+		string					sender_name					= 4;
+		bool					is_when_create				= 5;
+		string					legion_master_name			= 6;
+		int32					legion_level				= 7;
+		int32					sender_template_id			= 8;
 	}
 	
 	message audio_info
 	{
-		optional int64 					audio_guid					= 1;
-		optional string					audio_content				= 2;  // to be converted to byte[]
+		int64 					audio_guid					= 1;
+		string					audio_content				= 2;  // to be converted to byte[]
 	}
 
 	message quick_chat_content
 	{
-		optional int64					sender_guid					= 1;
-		optional int32					chat_template_id			= 2;
-		optional int32					chat_typ	 				= 3;
-		optional int64					addressee_guid				= 4;
-		optional string					addressee_name				= 5;
-		optional string					sender_name	 				= 6;
+		int64					sender_guid					= 1;
+		int32					chat_template_id			= 2;
+		int32					chat_typ	 				= 3;
+		int64					addressee_guid				= 4;
+		string					addressee_name				= 5;
+		string					sender_name	 				= 6;
 	}
 	
 	message notice_info_with_param
 	{
-		optional string					sender_name					= 1;
-		optional int64					sender_guid					= 2;
-		optional int64					sender_template_id			= 3;
-		optional string					content_text	 			= 4;
+		string					sender_name					= 1;
+		int64					sender_guid					= 2;
+		int64					sender_template_id			= 3;
+		string					content_text	 			= 4;
 		repeated int32					param_array	 				= 5;
-		optional int32					param_type	 				= 6;
-		optional int32					chat_type					= 7;
-		optional int32					notice_id					= 8;
-		optional int32					create_time					= 9;
+		int32					param_type	 				= 6;
+		int32					chat_type					= 7;
+		int32					notice_id					= 8;
+		int32					create_time					= 9;
 	}
 	
 	message receive_top_tip	
 	{
-		optional int32					string_id				= 1;
-		optional int32					top_tip_type			= 2;
+		int32					string_id				= 1;
+		int32					top_tip_type			= 2;
 	}
 	
 	message	join_voice_channel
 	{
-		optional int32					channel_type			= 1;
+		int32					channel_type			= 1;
 	}
 	message	join_voice_channel_end
 	{
-		optional int32					channel_type			= 1;
+		int32					channel_type			= 1;
 	}
 	message	invite_join_voice_channel
 	{
-		optional int64					role_guid				= 1;
-		optional int32					channel_type			= 2;
+		int64					role_guid				= 1;
+		int32					channel_type			= 2;
 	}
 	message	join_or_leave_voice_channel_notice
 	{
-		optional int32					channel_type			= 1;
-		optional string					role_name				= 2;
-		optional bool					is_join					= 3;
+		int32					channel_type			= 1;
+		string					role_name				= 2;
+		bool					is_join					= 3;
 	}
 	message chat_one_record
 	{
-		optional int32               pos		= 1;
-		optional string              record     = 2;
+		int32               pos		= 1;
+		string              record     = 2;
 	}
 	message chat_all_record
 	{
@@ -200,25 +200,25 @@ message chat_proto
 	}
 	message chat_record_oper
 	{
-	   optional int32              pos       = 1;
-	   optional string             record    = 2;
+	   int32              pos       = 1;
+	   string             record    = 2;
 	}
 	message chat_record_oper_end  
 	{
-	   optional int32             pos = 1;
-	   optional int32             result = 2;
+	   int32             pos = 1;
+	   int32             result = 2;
 	}
 	
 	// 发送预约
 	message send_subscribe_daily 
 	{
-	   optional int32  		  must_do_type = 1;
+	   int32  		  must_do_type = 1;
 	}
 	
 	// 预约返回结果
 	message send_subscribe_daily_end
 	{
-	   optional int32  		  result = 1;
+	   int32  		  result = 1;
 	}
 	
 	// 发送预约信息
@@ -230,7 +230,8 @@ message chat_proto
 	// 预约信息结构
 	message subscribe_daily_info  
 	{
-	   optional int32             dailt_type = 1;
-	   optional int32             info_state = 2;
+	   int32             dailt_type = 1;
+	   int32             info_state = 2;
 	}
 }
+

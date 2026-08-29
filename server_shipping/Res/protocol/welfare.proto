@@ -1,19 +1,19 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 
 message welfare_proto
 {
 	message welfare_info_one
     {
-		optional int32				info_type				= 1; 	//类型
-		optional int32				info_value				= 2; 	//值  
+		int32				info_type				= 1; 	//类型
+		int32				info_value				= 2; 	//值  
 	}
 	
 	message welfare_info_all
     {
 		repeated int32				info_value				= 1; 	//值  
-		optional int32				days_num				= 2; 	//天数
-		optional int32				today_data				= 3;	//今天日期
+		int32				days_num				= 2; 	//天数
+		int32				today_data				= 3;	//今天日期
 	}
 	
 	message active_degree_info
@@ -28,40 +28,40 @@ message welfare_proto
 	
 	message get_reward
     {
-		optional int32				template_id				= 1; 	//奖励表ID
+		int32				template_id				= 1; 	//奖励表ID
 	}
 	
 	message get_reward_end
     {
-		optional int32				template_id				= 1; 	//奖励表ID
-		optional int32				get_result				= 2; 	//领取结果
+		int32				template_id				= 1; 	//奖励表ID
+		int32				get_result				= 2; 	//领取结果
 		repeated int32				item_get				= 3;	//获得物品
 		repeated int32				money_get				= 4;	//获得货币
-		optional bool				is_replacement			= 5;	//是否是补领
+		bool				is_replacement			= 5;	//是否是补领
 	}
 	
 	message get_reward_check_in
 	{
-		optional int32				info_data				= 1;	//日期
+		int32				info_data				= 1;	//日期
 	}
 
 	
 	message get_reward_activatecode
 	{
-		optional string				activatecode			= 1;	//兑换码
-		optional int64				role_guid				= 2; 	//玩家guid
-		optional int32				login_type				= 3; 	//登录方式
+		string				activatecode			= 1;	//兑换码
+		int64				role_guid				= 2; 	//玩家guid
+		int32				login_type				= 3; 	//登录方式
 	}
 	
 	message activity_degree_finish
     {
-		optional int32				activity_template_id	= 1;	//活跃template id
+		int32				activity_template_id	= 1;	//活跃template id
 	}
 	
 	message req_frist_kill_world_boss_prize
 	{
-		optional int32	npc_respawn_point_template_id		= 1;	//NPC刷新表ID
-		optional int64	first_killer_guid					= 2;	//击杀者guid
+		int32	npc_respawn_point_template_id		= 1;	//NPC刷新表ID
+		int64	first_killer_guid					= 2;	//击杀者guid
 	}
 
 	message get_first_recharge_time
@@ -71,26 +71,27 @@ message welfare_proto
 	
 	message get_first_recharge_time_end
     {
-		optional int32				is_first_recharge_time				= 1; 	//第一档领奖剩余时间
-		optional int32				is_second_recharge_time				= 2; 	//第二档领奖剩余时间
-		optional int32				is_third_recharge_time				= 3; 	//第三档领奖剩余时间
+		int32				is_first_recharge_time				= 1; 	//第一档领奖剩余时间
+		int32				is_second_recharge_time				= 2; 	//第二档领奖剩余时间
+		int32				is_third_recharge_time				= 3; 	//第三档领奖剩余时间
 	}
 
 	message get_cumulative_sign_in_reward
 	{
-		optional int32 				reward_index		= 1;			//要领取奖励的索引
+		int32 				reward_index		= 1;			//要领取奖励的索引
 	}
 	message get_cumulative_sign_in_reward_end							
 	{
-		optional int32				get_result			= 1;			//奖励领取结果
+		int32				get_result			= 1;			//奖励领取结果
 	}
 	message retroactive_all_days
 	{
 	}
 	message retroactive_all_days_end
 	{
-		optional int32 				get_result			= 1;			//补签的结果
+		int32 				get_result			= 1;			//补签的结果
 	}
 	
 
 }
+

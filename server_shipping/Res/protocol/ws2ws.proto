@@ -1,5 +1,5 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 import "st.proto";
 
 message ws2ws_proto
@@ -8,7 +8,8 @@ message ws2ws_proto
     message send_big_player_msg 
 	{
 	    repeated st_proto.st_big_player_db		data_info = 1;
-		optional bool						    is_load_flag =2;
+		bool						    is_load_flag =2;
 	
 	};
 }
+

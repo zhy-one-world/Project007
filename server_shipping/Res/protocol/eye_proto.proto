@@ -1,37 +1,37 @@
-syntax = "proto2";
+syntax = "proto3";
 
 /////////////////////////////////////////
 // Eye To Daemon Protocol
 /////////////////////////////////////////
 message E2D_OPEN_FILE {
-	optional int32 nFlag 						= 1;
-	optional bool  bFullPath 				= 2;
-	optional string strFileName 		= 3;
+	int32 nFlag 						= 1;
+	bool  bFullPath 				= 2;
+	string strFileName 		= 3;
 }
 
 message E2D_READ_FILE {
-	optional int32 nDataLen 				= 1;
+	int32 nDataLen 				= 1;
 }
 
 message E2D_WRITE_FILE {
-	optional int32 nDataLen 				= 1;
-	optional bytes content 					= 2;
+	int32 nDataLen 				= 1;
+	bytes content 					= 2;
 }
 
 message E2D_SEEK_FILE {
-	optional bool  bKeep 						= 1;
-	optional int32 nOffset 					= 2;
+	bool  bKeep 						= 1;
+	int32 nOffset 					= 2;
 }
 
 message E2D_GET_PORT_INFO {
-	optional int32 port 						= 1;
-	optional int32 pid 							= 2;
-	optional int32 serverid					= 3;
+	int32 port 						= 1;
+	int32 pid 							= 2;
+	int32 serverid					= 3;
 }
 
 message SERVER_ID_MAP {
-	optional int32  nType						= 1;
-	optional int32  nServerID   		= 2;
+	int32  nType						= 1;
+	int32  nServerID   		= 2;
 }
 
 message E2D_SYNC_SERVERID {
@@ -43,52 +43,52 @@ message E2D_SERVER_PID{
 }
 
 message E2D_EXE_SYSCMD{
-	optional bool		bNeedOutput					= 1;
-	optional bool 	bNeedCN							= 2;
-	optional string strCommand					= 3;
-	optional string strInputBuffer			= 4;
-	optional string strMD5							= 5;					
+	bool		bNeedOutput					= 1;
+	bool 	bNeedCN							= 2;
+	string strCommand					= 3;
+	string strInputBuffer			= 4;
+	string strMD5							= 5;					
 }
 
 message E2D_EXE_SYSCMD_LARGE{
-	optional uint32	unNeedOutput				=1;
-	optional uint32 unNeedCN						=2;
-	optional bytes 	strCommand					=3;
-	optional string strInputBuffer			=4;
-	optional string strMD5							=5;					
+	uint32	unNeedOutput				=1;
+	uint32 unNeedCN						=2;
+	bytes 	strCommand					=3;
+	string strInputBuffer			=4;
+	string strMD5							=5;					
 }
 
 message E2D_UPDATE_SERVER{
-	optional string strPack							= 1;
-	optional string strMD5							= 2;
-	optional int32 nCheck								= 3;
+	string strPack							= 1;
+	string strMD5							= 2;
+	int32 nCheck								= 3;
 }
 
 message E2D_FILE{
-	optional uint32  unFileLen					= 1;
-	optional string strPath							= 2;
-	optional string strData							= 3;
+	uint32  unFileLen					= 1;
+	string strPath							= 2;
+	string strData							= 3;
 }
 
 message E2D_FTP_DOWNLOAD{
-	optional string strFtpHost						= 1;
-	optional string strFtpUser						= 2;
-	optional string strFtpPass						= 3;
-	optional string strFtpPath						= 4;
+	string strFtpHost						= 1;
+	string strFtpUser						= 2;
+	string strFtpPass						= 3;
+	string strFtpPath						= 4;
 }
 
 /////////////////////////////////////////
 // Eye To Server Protocol
 /////////////////////////////////////////
 message E2S_GM_CMD {
-	optional string gmCode							= 1;
-	optional string data								= 2;
+	string gmCode							= 1;
+	string data								= 2;
 }
 
 message E2S_MAIL_ATTACHMENT {
-	optional int32 itemType		= 1;
-	optional int32 itemId			= 2;
-	optional int32 itemNum 		= 3;
+	int32 itemType		= 1;
+	int32 itemId			= 2;
+	int32 itemNum 		= 3;
 }
 
 message E2S_MAIL_FILTER {
@@ -96,9 +96,9 @@ message E2S_MAIL_FILTER {
 }
 
 message E2S_SEND_MAIL{
-	optional string strTitle									= 1;
-	optional string strSender									= 2;
-	optional string strContent								= 3;
+	string strTitle									= 1;
+	string strSender									= 2;
+	string strContent								= 3;
 	repeated string strPlayerGUID							= 4;
 	repeated E2S_MAIL_ATTACHMENT attachment		= 5;
 	repeated E2S_MAIL_FILTER		filter				= 6;
@@ -109,127 +109,127 @@ message E2S_SEND_MAIL{
 // Daemon To Eye Protocol
 /////////////////////////////////////////
 message D2E_GET_SERVERID{
-	optional int32 nPId 								= 1;
-	optional int32 nGameServerId 				= 2;
+	int32 nPId 								= 1;
+	int32 nGameServerId 				= 2;
 }
 
 message D2E_FILE_OPERATION {
-	optional int32 nFileLen 			= 1;
-	optional int32 nRetCode 			= 2;
-	optional bytes content 				= 3;
+	int32 nFileLen 			= 1;
+	int32 nRetCode 			= 2;
+	bytes content 				= 3;
 }
 
 message D2E_GET_CPUBASEINFO{
-	optional string strCPUVendor			= 1;
-	optional string strCPUBrand				= 2;
+	string strCPUVendor			= 1;
+	string strCPUBrand				= 2;
 }
 
 message D2E_GET_CPULOAD{
 	repeated int32 nCoreLoad					= 1;
-	optional int32 nTotalLoad        	= 2;
+	int32 nTotalLoad        	= 2;
 }
 
 message D2E_GET_GAME_PROCINFO{
-	optional string strCpuRate					= 1;
-	optional string strVSZ       				= 2;
-	optional string strRSS       				= 3;
+	string strCpuRate					= 1;
+	string strVSZ       				= 2;
+	string strRSS       				= 3;
 }
 
 message D2E_GET_MEMINFO{
-	optional int32 nTotalMem					= 1;
-	optional int32  nFreeMem					= 2;
+	int32 nTotalMem					= 1;
+	int32  nFreeMem					= 2;
 }
 
 message PROC_INFO{
-	optional string  strProcName 				= 1;
-	optional uint32  unPID 							= 2;
-	optional uint32  unMemUse 					= 3;
-	optional uint32  unVMSize 					= 4;
-	optional uint32  unCPUTime 					= 5;
-	optional uint32  unThreadCount 			= 6;
+	string  strProcName 				= 1;
+	uint32  unPID 							= 2;
+	uint32  unMemUse 					= 3;
+	uint32  unVMSize 					= 4;
+	uint32  unCPUTime 					= 5;
+	uint32  unThreadCount 			= 6;
 }	
 
 message D2E_GET_PROCINFO{
-	optional uint32  unProcCount					=1;
+	uint32  unProcCount					=1;
 	repeated PROC_INFO ProcInfos					=2;
 }
 
 message D2E_GAME_PROCINFO{
-	optional bool  	 isAlive 						= 1;
-	optional uint32  unMemUse 					= 2;
-	optional uint32  unVMSize 					= 3;
-	optional uint32  unCPULoad 					= 4;
+	bool  	 isAlive 						= 1;
+	uint32  unMemUse 					= 2;
+	uint32  unVMSize 					= 3;
+	uint32  unCPULoad 					= 4;
 }
 
 message DISK_BASEINFO{
-	optional string strDiskDesc					=1;
-	optional int32  nTotalSize					=2;
-	optional int32  nFreeSize					=3;
+	string strDiskDesc					=1;
+	int32  nTotalSize					=2;
+	int32  nFreeSize					=3;
 }
 
 message D2E_GET_DISKINFO{
-	optional uint32	 unDiskCount					=1;
+	uint32	 unDiskCount					=1;
 	repeated DISK_BASEINFO	DiskInfos				=2;
 }
 message NET_CARDINFO{
-	optional string strCardDesc					=1;
-	optional string strIP						=2;
-	optional string strMask						=3;
-	optional string strMac						=4;
+	string strCardDesc					=1;
+	string strIP						=2;
+	string strMask						=3;
+	string strMac						=4;
 }
 message D2E_GET_NETINFO{
-	optional uint32 nCardCount						=1;
-	optional string strSystemName					=2;
-	optional string strHostName						=3;
+	uint32 nCardCount						=1;
+	string strSystemName					=2;
+	string strHostName						=3;
 	repeated NET_CARDINFO CardInfos					=4;
 }
 
 message NET_CARDLOAD{
-	optional uint32 unTXSize					=1;
-	optional uint32 unRXSize					=2;
-	optional uint32 unTXRate					=3;
-	optional uint32 unRXRate					=4;
+	uint32 unTXSize					=1;
+	uint32 unRXSize					=2;
+	uint32 unTXRate					=3;
+	uint32 unRXRate					=4;
 }
 
 message D2E_GET_CARDLOAD{
-	optional uint32 unCardCount					=1;
+	uint32 unCardCount					=1;
 	repeated NET_CARDLOAD CardLoads				=2;
 }
 
 message D2E_GET_GUARDDIR{
-	optional string strGuardDir					=1;
+	string strGuardDir					=1;
 }
 
 message D2E_EXE_SYSCMD{
-	optional int32 nReturnCode					=1;
-	optional bytes strOutputBuff				=2;
+	int32 nReturnCode					=1;
+	bytes strOutputBuff				=2;
 }
 
 message D2E_GET_PORT_INFO{
-	optional uint32	port						= 1;
-	optional uint32 count						= 2;
+	uint32	port						= 1;
+	uint32 count						= 2;
 }
 
 message D2E_UPDATE_SERVER{
-	optional int32 nCurrentStep					= 1;
-	optional int32 nStepCount					= 2;
-	optional int32 nResult					    = 3;
-	optional string strMessage					= 4;  
+	int32 nCurrentStep					= 1;
+	int32 nStepCount					= 2;
+	int32 nResult					    = 3;
+	string strMessage					= 4;  
 }
 
 message D2E_FTP_DOWNLOAD{
-	optional int32 nProgress						= 1;
-	optional int32 nRessult							= 2;
-	optional string strMessage					= 3;
+	int32 nProgress						= 1;
+	int32 nRessult							= 2;
+	string strMessage					= 3;
 }
 
 ////////////////////////////////////////
 // Server To Daemon Protocol
 /////////////////////////////////////////
 message S2D_GET_SERVER_INFO{
-	optional int32 nServerType  				= 1;
-	optional int32 nPid  								= 2;
-	optional int32 nGameServerId  			= 3;
+	int32 nServerType  				= 1;
+	int32 nPid  								= 2;
+	int32 nGameServerId  			= 3;
 }
 
 
@@ -237,49 +237,50 @@ message eye_proto
 {
 	message s2d_tick_server_connect
 	{
-		optional int32 server_id					= 1;
-		optional int32 server_type					= 2;
+		int32 server_id					= 1;
+		int32 server_type					= 2;
 	}
 
 	message s2d_send_server_info_to_daemon
 	{
-		optional int32 server_id  					= 1;
-		optional int32 server_type  				= 2;
-		optional int32 process_id  					= 3;
-		optional string param_string  				= 4;
+		int32 server_id  					= 1;
+		int32 server_type  				= 2;
+		int32 process_id  					= 3;
+		string param_string  				= 4;
 	}
 	
 	message d2s_close_process
 	{
-		optional int32 server_id					= 1;
-		optional int32 server_type					= 2;
+		int32 server_id					= 1;
+		int32 server_type					= 2;
 	}
 	
 	message d2s_gm_order
 	{
-		optional int32 listen_port					= 1;
-		optional int64 handle_index					= 2;
-		optional int32 server_id					= 3;
-		optional string gm_string					= 4;
+		int32 listen_port					= 1;
+		int64 handle_index					= 2;
+		int32 server_id					= 3;
+		string gm_string					= 4;
 	}
 	
 	message s2d_gm_order_end
 	{
-		optional int32 listen_port					= 1;
-		optional int64 handle_index					= 2;
-		optional int32 server_id					= 3;
-		optional int32 result_code					= 4;
-		optional string result_msg					= 5;
+		int32 listen_port					= 1;
+		int64 handle_index					= 2;
+		int32 server_id					= 3;
+		int32 result_code					= 4;
+		string result_msg					= 5;
 	}
 	
 	message s2d_send_string_to_eye
 	{
-		optional int32 server_id  					= 1;
-		optional int32 server_type  				= 2;
-		optional string param_string  				= 3;
+		int32 server_id  					= 1;
+		int32 server_type  				= 2;
+		string param_string  				= 3;
 	}
 	
 }
+
 
 
 

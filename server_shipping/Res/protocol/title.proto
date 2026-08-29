@@ -1,39 +1,40 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 
 message title_proto
 {
 	message title_equip_operate
 	{
-		repeated int32				unit_guid				= 1;	//½ÇÉ«ID
-		optional int32				template_id				= 2;	//³ÆºÅ±íID
-		optional int32				operate_type			= 3;	//²Ù×÷ÀàÐÍ0--×°±¸,1--Ð¶ÏÂ
+		repeated int32				unit_guid				= 1;	//ï¿½ï¿½É«ID
+		int32				template_id				= 2;	//ï¿½ÆºÅ±ï¿½ID
+		int32				operate_type			= 3;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0--×°ï¿½ï¿½,1--Ð¶ï¿½ï¿½
 	}
 	
 	message title_info_one
 	{
-		repeated int32				title_data		= 1;	//³ÆºÅdata
+		repeated int32				title_data		= 1;	//ï¿½Æºï¿½data
 	}
 	
 	message own_title_msg_all
 	{
-		repeated title_info_one		title_info_arr			= 1;	//µ¥¸ö³ÆºÅÏûÏ¢ÐÅÏ¢
+		repeated title_info_one		title_info_arr			= 1;	//ï¿½ï¿½ï¿½ï¿½ï¿½Æºï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Ï¢
 	}
 	
 	message title_add_title_end
 	{
-		repeated int32				unit_guid				= 1;	//½ÇÉ«ID
-		optional int32				template_id				= 2;	//»ñÈ¡³ÆºÅid
-		optional int32				result					= 3;	//»ñÈ¡½á¹û
+		repeated int32				unit_guid				= 1;	//ï¿½ï¿½É«ID
+		int32				template_id				= 2;	//ï¿½ï¿½È¡ï¿½Æºï¿½id
+		int32				result					= 3;	//ï¿½ï¿½È¡ï¿½ï¿½ï¿½
 	}
 	
 	message title_open_title_system_end
 	{
-		repeated int32				unit_guid				= 1;	//½ÇÉ«ID
+		repeated int32				unit_guid				= 1;	//ï¿½ï¿½É«ID
 	}	
 		
 	message title_set_title_no_need_see
 	{
-		repeated int32				unit_guid				= 1;	//½ÇÉ«ID
+		repeated int32				unit_guid				= 1;	//ï¿½ï¿½É«ID
 	}	
 }
+

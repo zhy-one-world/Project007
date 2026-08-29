@@ -1,68 +1,68 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 
 message item_proto
 {
 	message item_save_load
 	{
-		repeated 	int32	data_ary = 1;					// ´æ¶ÁµµÊý¾Ý
-		repeated 	int64	item_guid = 2;					// ÎïÆ·guid
-		repeated 	string	param_str = 3;					// ²¹µ¥¶©µãºÅ
-		optional 	int32	bag_type = 4;					// ±³°üÀàÐÍ
+		repeated 	int32	data_ary = 1;					// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		repeated 	int64	item_guid = 2;					// ï¿½ï¿½Æ·guid
+		repeated 	string	param_str = 3;					// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		int32	bag_type = 4;					// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 	message item_info
 	{
-		optional int64	item_guid			= 1;				// ÎïÆ·guid
-		repeated int32	item_data			= 2;				// ÎïÆ·Êý¾Ý
+		int64	item_guid			= 1;				// ï¿½ï¿½Æ·guid
+		repeated int32	item_data			= 2;				// ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½
 	}
 	
 	message equip_end_load_new_effect
 	{
-		repeated int32	item_guid			= 1;				// ÎïÆ·guid
+		repeated int32	item_guid			= 1;				// ï¿½ï¿½Æ·guid
 	}
 	
 	message update_character_item
 	{
 		repeated int32		role_guid		= 1;
-		optional uint32		item_error		= 2;
-		repeated item_info	item_list		= 3;				// ÎïÆ·ÁÐ±í
-		optional uint32		update_mode		= 4;
+		uint32		item_error		= 2;
+		repeated item_info	item_list		= 3;				// ï¿½ï¿½Æ·ï¿½Ð±ï¿½
+		uint32		update_mode		= 4;
 	}
 
 	message item_operation
 	{
-		optional uint32	operation_type		= 1;                // ÎïÆ·µÄ²Ù×÷ÀàÐÍ
-		repeated int32	item_guid			= 2;                // Òª²Ù×÷µÄÎïÆ·µÄguidÊý×é
-		optional int32	item_slot			= 3;                // ´«ÈëµÄÎïÆ·ËùÔÚ¸ñ×ÓÎ»ÖÃµÄÐÅÏ¢
-		optional int32	use_up_item			= 4;                // Ê¹ÓÃÌØÊâÎïÆ·
-		optional int32	first_use_lock		= 5;                // ÊÇ·ñÓÅÏÈÊ¹ÓÃËø¶¨ÎïÆ·
-		optional int32  item_num            = 6;                // ²Ù×÷ÎïÆ·µÄÊýÁ¿ÐÅÏ¢
-		optional int32  force_do            = 7[default = 0];   // Ç¿ÖÆ½øÐÐ£¨²¢²»ºöÂÔ¿ÉÐÐÐÔÅÐ¶Ï£©£¬ÏÖÔÚÖ»¶ÔÓ¦ È·ÈÏ¸²¸ÇBuff µÄ²Ù×÷
+		uint32	operation_type		= 1;                // ï¿½ï¿½Æ·ï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		repeated int32	item_guid			= 2;                // Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½guidï¿½ï¿½ï¿½ï¿½
+		int32	item_slot			= 3;                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½Î»ï¿½Ãµï¿½ï¿½ï¿½Ï¢
+		int32	use_up_item			= 4;                // Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·
+		int32	first_use_lock		= 5;                // ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·
+		int32  item_num            = 6;                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+		int32  force_do            = 7;   // Ç¿ï¿½Æ½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶Ï£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½Ó¦ È·ï¿½Ï¸ï¿½ï¿½ï¿½Buff ï¿½Ä²ï¿½ï¿½ï¿½
 	}
 	
 	message item_quick_call_mount
 	{
-		repeated int64	mount_guid			= 2;                // ×øÆïguid£¬Ò»´ÎÈ«´«£¨3¸öguid£©
+		repeated int64	mount_guid			= 2;                // ï¿½ï¿½ï¿½ï¿½guidï¿½ï¿½Ò»ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½guidï¿½ï¿½
 	}
 	
 	message item_show_info
 	{
-		repeated int32	mount_guid			= 1;                // ×øÆïguid£¬Ò»´ÎÈ«´«£¨3¸öguid 6¸öint32£©
+		repeated int32	mount_guid			= 1;                // ï¿½ï¿½ï¿½ï¿½guidï¿½ï¿½Ò»ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½guid 6ï¿½ï¿½int32ï¿½ï¿½
 	}
 	
 	message item_show_info_quickly_hp
 	{
-		optional int64  quickly_hp_guid     = 1;				// ¿ì½ÝÒ©Æ·guid
+		int64  quickly_hp_guid     = 1;				// ï¿½ï¿½ï¿½Ò©Æ·guid
 	}
 	
 	message item_operation_end
 	{
-		optional uint32	operation_state		= 1;
-		optional uint32	operation_type		= 2;
+		uint32	operation_state		= 1;
+		uint32	operation_type		= 2;
 		repeated int32	role_guid			= 3;
 		repeated int32	item_guid			= 4;
-		optional int32	item_slot			= 5;
-		optional int32  item_num            = 6;                // ·µ»ØÎïÆ·²Ù×÷½á¹ûµÄÊýÁ¿Ïà¹ØÐÅÏ¢
+		int32	item_slot			= 5;
+		int32  item_num            = 6;                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	}
 	
 	message item_operation_tidy
@@ -79,8 +79,8 @@ message item_proto
 	message item_delete
 	{
 		repeated int32	role_guid				= 1;
-		optional int32	del_item_arr_len		= 2; // ÒªÉ¾³ýµÄÎïÆ·µÄÊýÁ¿
-		repeated int32	del_item_guid_arr		= 3; // ÒªÉ¾³ýµÄÎïÆ·µÄGUIDÊý×é
+		int32	del_item_arr_len		= 2; // ÒªÉ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		repeated int32	del_item_guid_arr		= 3; // ÒªÉ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½GUIDï¿½ï¿½ï¿½ï¿½
 	}
 	
 	message element_heart_delete
@@ -90,155 +90,155 @@ message item_proto
 
 	message item_sell_earn_info
 	{
-		optional int32 earn_money_id         = 1;
-		optional int32 earn_money            = 2;
+		int32 earn_money_id         = 1;
+		int32 earn_money            = 2;
 	}
 	
 	message pick_drop_box
 	{
-		repeated int32              role_guid                = 1;   // ÈËÎïguid
-		optional int32              item_template_id     	 = 2;   // ÎïÆ·id
-		optional int32				pick_state				 = 3;	// Ê°È¡ÊÇ·ñ³É¹¦
-		optional int32				pick_fail_msg_id		 = 4;	// Ê°È¡²Ù×÷Ê§°ÜÌáÊ¾ID
-		optional uint64				item_guid				 = 5;	// µôÂäÎïÆ·µÄguid
+		repeated int32              role_guid                = 1;   // ï¿½ï¿½ï¿½ï¿½guid
+		int32              item_template_id     	 = 2;   // ï¿½ï¿½Æ·id
+		int32				pick_state				 = 3;	// Ê°È¡ï¿½Ç·ï¿½É¹ï¿½
+		int32				pick_fail_msg_id		 = 4;	// Ê°È¡ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½ï¿½ï¿½Ê¾ID
+		uint64				item_guid				 = 5;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½guid
 	}
 	
 	message item_composit
 	{
-		repeated int32 role_guid             = 1;     // ÈËÎïguid
-		optional int32 composit_template_id  = 2;     // ÒªºÏ³ÉµÄÅä·½µÄÄ£°åID
-		optional int32 first_use_locked_material = 3; // ÊÇ·ñÓÅÏÈÊ¹ÓÃ°ó¶¨²ÄÁÏ
-		optional int32 composit_num			 = 4;	  //ºÏ³ÉÊýÁ¿
+		repeated int32 role_guid             = 1;     // ï¿½ï¿½ï¿½ï¿½guid
+		int32 composit_template_id  = 2;     // Òªï¿½Ï³Éµï¿½ï¿½ä·½ï¿½ï¿½Ä£ï¿½ï¿½ID
+		int32 first_use_locked_material = 3; // ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã°ó¶¨²ï¿½ï¿½ï¿½
+		int32 composit_num			 = 4;	  //ï¿½Ï³ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 	
 	message item_composit_end
 	{
-		repeated int32 role_guid             = 1;       // ÈËÎïguid
-		optional int32 composit_item_template_id  = 2;  // ºÏ³ÉµÄÎïÆ·µÄÄ£°åID
-		repeated int32 result_code           = 3;       // ºÏ³É½á¹û
+		repeated int32 role_guid             = 1;       // ï¿½ï¿½ï¿½ï¿½guid
+		int32 composit_item_template_id  = 2;  // ï¿½Ï³Éµï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ä£ï¿½ï¿½ID
+		repeated int32 result_code           = 3;       // ï¿½Ï³É½ï¿½ï¿½
 	}
 	
 	message item_succinct_temp_value
 	{
-		repeated int32 item_guid             = 1;       // ÎïÆ·guid	
-		repeated int32 property_value        = 2;       // ÊôÐÔÖµ£¬±ØÐë4¸ö
-		optional bool  is_save_operate       = 3;       // ÊÇ·ñÊÇ±£´æ²Ù×÷
+		repeated int32 item_guid             = 1;       // ï¿½ï¿½Æ·guid	
+		repeated int32 property_value        = 2;       // ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½4ï¿½ï¿½
+		bool  is_save_operate       = 3;       // ï¿½Ç·ï¿½ï¿½Ç±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 	
 	message show_this_wing
 	{
-		repeated int32 role_guid             = 1;       // ÈËÎïguid	
-		optional int32 wing_template_id		 = 2;		//ÒªÏÔÊ¾µÄ³á°òµÄID
+		repeated int32 role_guid             = 1;       // ï¿½ï¿½ï¿½ï¿½guid	
+		int32 wing_template_id		 = 2;		//Òªï¿½ï¿½Ê¾ï¿½Ä³ï¿½ï¿½ï¿½ID
 	}
 	
 	message change_mount_shape
 	{
-		repeated int32 role_guid             = 1;       			// ÈËÎïguid	
-		optional int32 mount_template_id	 = 2;					// ÒªÏÔÊ¾µÄÄ£ÐÍID
-		optional bool is_buff				 = 3;					// ÊÇ·ñÒªµ÷ÓÃbuff
+		repeated int32 role_guid             = 1;       			// ï¿½ï¿½ï¿½ï¿½guid	
+		int32 mount_template_id	 = 2;					// Òªï¿½ï¿½Ê¾ï¿½ï¿½Ä£ï¿½ï¿½ID
+		bool is_buff				 = 3;					// ï¿½Ç·ï¿½Òªï¿½ï¿½ï¿½ï¿½buff
 	}
 	
 	message item_get_item_msg
 	{
-		repeated int32 role_guid			= 1;		// ÈËÎïguid	
-		repeated int32 item_data			= 2;		// »ñµÃµÄÎïÆ·ID
-		optional bool  is_continue_add		= 3;		// ÊÇ·ñÊÇÓÉÒ»Ñ­»·»ñÈ¡´¥·¢µÄÎïÆ·»ñµÃ
-		optional int32 boss_id				= 4;
+		repeated int32 role_guid			= 1;		// ï¿½ï¿½ï¿½ï¿½guid	
+		repeated int32 item_data			= 2;		// ï¿½ï¿½Ãµï¿½ï¿½ï¿½Æ·ID
+		bool  is_continue_add		= 3;		// ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Ñ­ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½
+		int32 boss_id				= 4;
 	}
 	
 	message item_cd
 	{
-		repeated int32 role_guid             = 1;       // ÈËÎïguid	
-		optional int32 item_template_id		 = 2;		// »ñµÃµÄÎïÆ·ID
-		optional float cd_time				 = 3;		// cdÊ±¼ä
+		repeated int32 role_guid             = 1;       // ï¿½ï¿½ï¿½ï¿½guid	
+		int32 item_template_id		 = 2;		// ï¿½ï¿½Ãµï¿½ï¿½ï¿½Æ·ID
+		float cd_time				 = 3;		// cdÊ±ï¿½ï¿½
 	}
 	
 	message item_hope_item_get
 	{
-		repeated int32 role_guid             = 1;       // ÈËÎïguid	
-		optional int32 get_typ				 = 2;		// »ñÈ¡ÀàÐÍ
+		repeated int32 role_guid             = 1;       // ï¿½ï¿½ï¿½ï¿½guid	
+		int32 get_typ				 = 2;		// ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
 	}
 	
 	message item_hope_item_get_end
 	{
-		repeated int32 role_guid             = 1;       // ÈËÎïguid	
-		optional int32 get_typ				 = 2;		// »ñÈ¡ÀàÐÍ
-		optional int32 get_result			 = 3;		// »ñÈ¡½á¹ûID
-		repeated int32 get_item_template_id	 = 4;		// »ñÈ¡ÎïÆ·ÁÐ±í
-		repeated int32 get_item_num			 = 5;		// »ñÈ¡ÎïÆ·ÊýÁ¿ÁÐ±í
-		optional int32 free_get_time		 = 6;		// Ãâ·Ñ³éÈ¡³É¹¦Ê±µÄÊ±¼ä
-		optional int32 send_mail_num		 = 7;		// Í¨¹ýÓÊ¼þ·¢ËÍµÄÊýÁ¿
+		repeated int32 role_guid             = 1;       // ï¿½ï¿½ï¿½ï¿½guid	
+		int32 get_typ				 = 2;		// ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
+		int32 get_result			 = 3;		// ï¿½ï¿½È¡ï¿½ï¿½ï¿½ID
+		repeated int32 get_item_template_id	 = 4;		// ï¿½ï¿½È¡ï¿½ï¿½Æ·ï¿½Ð±ï¿½
+		repeated int32 get_item_num			 = 5;		// ï¿½ï¿½È¡ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
+		int32 free_get_time		 = 6;		// ï¿½ï¿½Ñ³ï¿½È¡ï¿½É¹ï¿½Ê±ï¿½ï¿½Ê±ï¿½ï¿½
+		int32 send_mail_num		 = 7;		// Í¨ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 	
 	message item_use_end
 	{
-		optional int32	result				= 1; // Ê¹ÓÃ½á¹û
-		optional int32	item_template_id	= 2; // ÎïÆ·µÄÄ£°åID
-		optional int32	use_num				= 3; // Ê¹ÓÃÊýÁ¿
-		optional int32  effect_value		= 4; // Ï´pkÖµ£¬Êµ¼ÊÏ´µôµÄpkÖµ	
-		optional int32  illusion_unlock_teamplate_id = 5;	// ½âËø»Ã»¯id
+		int32	result				= 1; // Ê¹ï¿½Ã½ï¿½ï¿½
+		int32	item_template_id	= 2; // ï¿½ï¿½Æ·ï¿½ï¿½Ä£ï¿½ï¿½ID
+		int32	use_num				= 3; // Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		int32  effect_value		= 4; // Ï´pkÖµï¿½ï¿½Êµï¿½ï¿½Ï´ï¿½ï¿½ï¿½ï¿½pkÖµ	
+		int32  illusion_unlock_teamplate_id = 5;	// ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½id
 	}
 	
 	message item_merge_entry
 	{
 		repeated int32		item_guid			= 1;
-		optional int32		item_num			= 2;
+		int32		item_num			= 2;
 	}
 	
 	message item_merge_end
 	{
-		repeated int32				role_guid			= 1; // ½ÇÉ«GUID
-		optional int32				merge_item_count	= 2; // ÎïÆ·ºÏ²¢µÄ½á¹ûµÄÊýÁ¿
-		repeated item_merge_entry	merge_item_list		= 3; // ·¢ÉúºÏ²¢²Ù×÷µÄÎïÆ·µÄÁÐ±í
+		repeated int32				role_guid			= 1; // ï¿½ï¿½É«GUID
+		int32				merge_item_count	= 2; // ï¿½ï¿½Æ·ï¿½Ï²ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		repeated item_merge_entry	merge_item_list		= 3; // ï¿½ï¿½ï¿½ï¿½ï¿½Ï²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ð±ï¿½
 	}
 	
 	message item_auto_inherit
 	{
-		optional int32				auto_result			= 1; //0ÊÇ³É¹¦£¬ÓÐÊýÊÇ×Ö·ûID£¬Ö»ÓÐ ÄÜ´«³Ð µ«ÊÇ»áËðÊ§µãÊýÊ±ºò²ÅÓÐÊý
-		repeated int32				item_guid			= 2; //±»°þÀëºÍ±»´«³ÐµÄÎïÆ·ID
+		int32				auto_result			= 1; //0ï¿½Ç³É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½IDï¿½ï¿½Ö»ï¿½ï¿½ ï¿½Ü´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½Ê§ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		repeated int32				item_guid			= 2; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í±ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½Æ·ID
 	}
 	
 	message hunt_spirit
 	{
-		optional int32				hunt_type			= 1;
+		int32				hunt_type			= 1;
 	}
 	
 	message hunt_spirit_end
 	{
-		optional int32				hunt_type			= 1;
+		int32				hunt_type			= 1;
 		repeated int32				spirit_id			= 2;
-		optional int32				hunt_result			= 3;
-		optional int32 				send_mail_num		= 4;		// Í¨¹ýÓÊ¼þ·¢ËÍµÄÊýÁ¿
+		int32				hunt_result			= 3;
+		int32 				send_mail_num		= 4;		// Í¨ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 	
 	message show_item_upgrade_effect
 	{
-		optional int32				show_type			= 1;		//ÀàÐÍ£¬ÓÃÓÚÏÔÊ¾ Ç°×ººó×º
-		optional int32				show_value			= 2;		//Éýµ½ÁË¶àÉÙ¼¶
+		int32				show_type			= 1;		//ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ Ç°×ºï¿½ï¿½×º
+		int32				show_value			= 2;		//ï¿½ï¿½ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½Ù¼ï¿½
 	}
 	
 	message add_money
 	{
-		optional int32				money_id			= 1;
-		optional int32				money_num			= 2;
+		int32				money_id			= 1;
+		int32				money_num			= 2;
 	}
 	
 	message add_item
 	{
-		optional int32				item_id				= 1;
-		optional int32				item_num			= 2;
-		optional bool				send_by_mail		= 3;
+		int32				item_id				= 1;
+		int32				item_num			= 2;
+		bool				send_by_mail		= 3;
 	}
 	
 	message lucky_draw_record
 	{
-		optional int64				info_guid			= 1;		//ÏûÏ¢Guid
-		optional int64				role_guid			= 2;		//³é½±ÈËGuid
-		optional string				role_name			= 3;		//³é½±ÈËÐÕÃû
-		optional int32				item_template_id	= 4;		//³éµ½µÄÎïÆ·id
-		optional int32				get_type			= 5;		//»ñÈ¡·½Ê½£¬Ê®Á¬»¹ÊÇµ¥³é
-		optional int32				record_type			= 6;		//¼ÇÂ¼ÀàÐÍ£¬Æí¸£»¹ÊÇ¾«Áé
-		optional int64				record_time			= 7;		//³é½±Ê±¼ä
+		int64				info_guid			= 1;		//ï¿½ï¿½Ï¢Guid
+		int64				role_guid			= 2;		//ï¿½é½±ï¿½ï¿½Guid
+		string				role_name			= 3;		//ï¿½é½±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		int32				item_template_id	= 4;		//ï¿½éµ½ï¿½ï¿½ï¿½ï¿½Æ·id
+		int32				get_type			= 5;		//ï¿½ï¿½È¡ï¿½ï¿½Ê½ï¿½ï¿½Ê®ï¿½ï¿½ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½
+		int32				record_type			= 6;		//ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½
+		int64				record_time			= 7;		//ï¿½é½±Ê±ï¿½ï¿½
 	}
 	
 	message load_lucky_draw_record_end
@@ -254,94 +254,94 @@ message item_proto
 	
 	message patron_saint_mark_operate
 	{
-		optional int32				mark_guid_a				= 1;
-		optional int32				mark_guid_b				= 2;
-		optional int32				target_slot				= 3;
-		optional int32				operate_type			= 4;
+		int32				mark_guid_a				= 1;
+		int32				mark_guid_b				= 2;
+		int32				target_slot				= 3;
+		int32				operate_type			= 4;
 	}
 	
 	message patron_saint_mark_operate_end
 	{
-		optional int32				mark_guid_a				= 1;
-		optional int32				mark_guid_b				= 2;
-		optional int32				target_slot				= 3;
-		optional int32				operate_type			= 4;
-		optional int32				operate_result			= 5;
+		int32				mark_guid_a				= 1;
+		int32				mark_guid_b				= 2;
+		int32				target_slot				= 3;
+		int32				operate_type			= 4;
+		int32				operate_result			= 5;
 	}
 	
 	message item_one_key_use_end
 	{
-		optional int32	result				= 1; 			// Ê¹ÓÃ½á¹û
+		int32	result				= 1; 			// Ê¹ï¿½Ã½ï¿½ï¿½
 	}
 	
 	message simple_item_info
 	{
-		optional int32	item_template_id				= 1; 
-		optional int32	item_num						= 2;
+		int32	item_template_id				= 1; 
+		int32	item_num						= 2;
 	}
 	
 	message show_fashion
 	{
-		optional int32 is_show_fashion					= 1;
+		int32 is_show_fashion					= 1;
 		repeated int32 role_guid 						= 2;
 	}
 	
 	message unlock_skill_end
 	{
-		optional int32 				result				= 1;
+		int32 				result				= 1;
 	}
 	message unlock_skill
 	{
-		optional int64 				choosed_guid		= 1;
-		optional int32				choosed_index		= 2;
-		optional int32				buff_template_id	= 3;
-		optional int32				choosed_type		= 4;
-		optional int32				open_need_level		= 5;
+		int64 				choosed_guid		= 1;
+		int32				choosed_index		= 2;
+		int32				buff_template_id	= 3;
+		int32				choosed_type		= 4;
+		int32				open_need_level		= 5;
 	}
 	
 	
 	message item_forge
 	{
-		repeated int32 item_guid             = 1;       // ÎïÆ·guid	
-		optional int32 forge_lock_flag       = 2;       // 
-		optional bool  is_save_operate       = 3;       // ÊÇ·ñÊÇ±£´æ²Ù×÷
-		optional bool  first_use_locked_item = 4; 
+		repeated int32 item_guid             = 1;       // ï¿½ï¿½Æ·guid	
+		int32 forge_lock_flag       = 2;       // 
+		bool  is_save_operate       = 3;       // ï¿½Ç·ï¿½ï¿½Ç±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		bool  first_use_locked_item = 4; 
 	}
 	
 	message item_forge_end
 	{	
-		repeated int32 property_name         = 1;       // ÊôÐÔÃû	
-		repeated int32 property_value        = 2;       // ÊôÐÔÖµ
-		optional bool  is_save_operate       = 3;       // ÊÇ·ñÊÇ±£´æ²Ù×÷
-		optional bool  in_is_enabled         = 4;       // ÊÇ·ñÊÇ±£´æ²Ù×÷
-		repeated int32 property_index		 = 5;		// ÊôÐÔË÷Òý
-		optional int32 change_gs_value     	 = 6;       // ±ä»¯ÊôÐÔ
+		repeated int32 property_name         = 1;       // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	
+		repeated int32 property_value        = 2;       // ï¿½ï¿½ï¿½ï¿½Öµ
+		bool  is_save_operate       = 3;       // ï¿½Ç·ï¿½ï¿½Ç±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		bool  in_is_enabled         = 4;       // ï¿½Ç·ï¿½ï¿½Ç±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		repeated int32 property_index		 = 5;		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		int32 change_gs_value     	 = 6;       // ï¿½ä»¯ï¿½ï¿½ï¿½ï¿½
 	}
 	message tinder_prop_operate
 	{
 		repeated int32				mark_guid				= 1;
-		optional int32				target_slot				= 2;
-		optional int32				operate_type			= 3;
+		int32				target_slot				= 2;
+		int32				operate_type			= 3;
 	}
 	
 	message tinder_prop_operate_end
 	{
-		optional int32				mark_guid_a				= 1;
-		optional int32				mark_guid_b				= 2;
-		optional int32				target_slot				= 3;
-		optional int32				operate_type			= 4;
-		optional int32				operate_result			= 5;
+		int32				mark_guid_a				= 1;
+		int32				mark_guid_b				= 2;
+		int32				target_slot				= 3;
+		int32				operate_type			= 4;
+		int32				operate_result			= 5;
 	}
 	
 	message get_meditation_item_msg
 	{
-		repeated int64              item_data			    = 1;		// »ñµÃµÄÎïÆ·
+		repeated int64              item_data			    = 1;		// ï¿½ï¿½Ãµï¿½ï¿½ï¿½Æ·
 	}
 	
 	message change_sky_suit_shape	
 	{
-		optional int32 				operate_state			= 1;
-		optional int32 				operate_type			= 2;
+		int32 				operate_state			= 1;
+		int32 				operate_type			= 2;
 	}
 	message item_awaken
 	{
@@ -351,21 +351,21 @@ message item_proto
 	message item_awaken_end
 	{
 	    repeated int32 item_guid					        = 1; 
-        optional int32 result                               = 2;			
+        int32 result                               = 2;			
 	}
 	
 	message item_jewel_carve_oper
 	{
 		repeated int32           item_guid                 =1;
-		optional int32           oper_type                 =2;
-		optional int32           param                     =3;
+		int32           oper_type                 =2;
+		int32           param                     =3;
 	}
 	
 	message item_jewel_carve_oper_end
 	{
 	    repeated int32          item_guid                  =1;
-		optional int32          oper_type                  =2;
-		optional int32          result                     =3;
+		int32          oper_type                  =2;
+		int32          result                     =3;
 	}
 }
 
@@ -397,20 +397,21 @@ message item
 	}
 	message c2s_sprite_fetter_upgrade
 	{
-		optional int32 sprite_fetter_id = 1;		
+		int32 sprite_fetter_id = 1;		
 	}
 	message s2c_sprite_fetter_upgrade
 	{
-		optional int32 res = 1;		
-		optional int32 sprite_fetter_id = 2;		
+		int32 res = 1;		
+		int32 sprite_fetter_id = 2;		
 	}
 	message s2c_item_upgrade
 	{	
-		optional int32 res = 1;
-		optional int64 unit_guid = 2;
+		int32 res = 1;
+		int64 unit_guid = 2;
 		repeated int32 data_array = 3;
 	}
 	message c2s_item_upgrade
 	{	
 	}
 }
+

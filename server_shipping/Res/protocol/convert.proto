@@ -1,5 +1,5 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 
 message convert_proto
 {
@@ -11,24 +11,25 @@ message convert_proto
 
 	message convert_info_one
 	{
-		optional	int32	convert_type	= 1;
-		optional	int32	convert_times	= 2;
+		int32	convert_type	= 1;
+		int32	convert_times	= 2;
 	}
 
 	message convert_operate
 	{
-		optional	int32	convert_type	= 1;
-		optional	int32	convert_num	= 2;
+		int32	convert_type	= 1;
+		int32	convert_num	= 2;
 	}
 
 	message convert_operate_end
 	{
-		optional	int32	opereate_result	= 1;
-		optional	int32	convert_type	= 2;
-		optional	int32	convert_num		= 3;
+		int32	opereate_result	= 1;
+		int32	convert_type	= 2;
+		int32	convert_num		= 3;
 		repeated	int32	convert_reward	= 4;
-		optional    int32   is_tip          = 5;
-		optional    string  str_exp         = 6;
+		int32   is_tip          = 5;
+		string  str_exp         = 6;
 	}
 }
 	
+

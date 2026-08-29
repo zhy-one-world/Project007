@@ -1,5 +1,5 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 
 message element_heart_proto
 {
@@ -17,19 +17,20 @@ message element_heart_proto
 	message element_heart_operate
 	{
 		repeated int32 element_heart_guid			= 1;
-		optional int32 operation_type				= 2;
-		optional int32 target_equip_slot			= 3;
-		optional int32 use_up_item					=4;
+		int32 operation_type				= 2;
+		int32 target_equip_slot			= 3;
+		int32 use_up_item					=4;
 	}
 	message element_heart_operate_end
 	{
 		repeated int32 rune_get_id_array					= 1;
-		optional int32 operation_type						= 2;
-		optional int32 operation_end_state					= 3;
-		optional int64 target_guid							= 4;
-		optional int32 old_drop_group						= 5;
-		optional int32 new_drop_group						= 6;
-		optional int32 highest_group						= 7;
-		optional int32 is_raise								= 8;
+		int32 operation_type						= 2;
+		int32 operation_end_state					= 3;
+		int64 target_guid							= 4;
+		int32 old_drop_group						= 5;
+		int32 new_drop_group						= 6;
+		int32 highest_group						= 7;
+		int32 is_raise								= 8;
 	}
 }
+

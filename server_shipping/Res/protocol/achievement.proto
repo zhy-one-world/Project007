@@ -1,5 +1,5 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 
 message achievement_proto
 {
@@ -15,24 +15,25 @@ message achievement_proto
 	}
 	message achievement_operate
 	{
-		optional int32 achievement_id			= 1;
-		optional int32 operation_type				= 2;
+		int32 achievement_id			= 1;
+		int32 operation_type				= 2;
 	}
 	message achievement_operate_end
 	{
 		repeated achievement_one achievement_array		= 1;
-		optional int32 operation_type				= 2;
-		optional int32 operation_end_state			= 3;
+		int32 operation_type				= 2;
+		int32 operation_end_state			= 3;
 	}
 	
 	message achievement_finish
 	{
-		optional int32 achievement_id		= 1;
-		optional int32 achievement_state	= 2;
+		int32 achievement_id		= 1;
+		int32 achievement_state	= 2;
 	}
 	
 	message achievement_all_finish
 	{
-		optional int32 achievement_reward	= 1;
+		int32 achievement_reward	= 1;
 	}
 }
+

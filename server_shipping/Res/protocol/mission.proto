@@ -1,11 +1,11 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 
 message mission_proto
 {
 	message mission_id
 	{
-		optional int32 mission_id					= 1;
+		int32 mission_id					= 1;
 	}
 	
 	message mission_info
@@ -17,40 +17,40 @@ message mission_proto
 	{
 		repeated int32	role_guid					= 1;
 		repeated mission_info mission_array			= 2;
-		optional int32 daily_mission_done_num		= 3;
-		optional int32 against_mission_done_num		= 4;
-		optional bool	is_finish					= 5;
+		int32 daily_mission_done_num		= 3;
+		int32 against_mission_done_num		= 4;
+		bool	is_finish					= 5;
 	}
 	
 	message mission_operate
 	{
-		optional int32 mission_id					= 1;
-		optional int32 mission_slot					= 2;
-		optional int32 operation_type				= 3;
-		optional int32 operate_npc_id				= 4;
+		int32 mission_id					= 1;
+		int32 mission_slot					= 2;
+		int32 operation_type				= 3;
+		int32 operate_npc_id				= 4;
 	}
 	
 	message mission_operate_end
 	{
-		optional int32 mission_id					= 1;
-		optional int32 operation_type				= 2;
-		optional int32 operation_end_state			= 3;
-		optional int32 mission_slot					= 4;
+		int32 mission_id					= 1;
+		int32 operation_type				= 2;
+		int32 operation_end_state			= 3;
+		int32 mission_slot					= 4;
 		
 		repeated mission_info mission_array			= 5;
-		optional int32 daily_mission_done_num		= 6;
-		optional int32 against_mission_done_num		= 7;
+		int32 daily_mission_done_num		= 6;
+		int32 against_mission_done_num		= 7;
 	}
 		
 	message mission_alien_kill_npc
 	{
-		optional int32 npc_id						= 1;
-		optional int32 npc_num						= 2;
+		int32 npc_id						= 1;
+		int32 npc_num						= 2;
 	}
 	
 	message mission_finish
 	{
-		optional int32 mission_id					= 1;
+		int32 mission_id					= 1;
 	}
 	
 	message reset_mission_test
@@ -60,23 +60,24 @@ message mission_proto
 	
 	message mission_create_npc_info
 	{
-		optional int32 mission_type					= 1 [default = 0];
-		optional int32 npc_count					= 2 [default = 0];
+		int32 mission_type					= 1;
+		int32 npc_count					= 2;
 		repeated int64 npc_guid						= 3;
 	}
 	
 	message get_monster_item
 	{
-		optional int32 monster_item_name_id			= 1;
+		int32 monster_item_name_id			= 1;
 	}
 	
 	message show_chapter_over
 	{
-		optional int32 chapter_template_id			= 1;
+		int32 chapter_template_id			= 1;
 	}
 	
 	message use_power_up
 	{
-		optional int32 power_up_type				= 1;
+		int32 power_up_type				= 1;
 	}
 }
+

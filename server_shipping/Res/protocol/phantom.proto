@@ -1,5 +1,5 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 
 message phantom_proto
 {
@@ -15,14 +15,15 @@ message phantom_proto
 	}
 	message phantom_operate
 	{
-		optional int32 phantom_id			= 1;
-		optional int32 oper_type			= 2;
+		int32 phantom_id			= 1;
+		int32 oper_type			= 2;
 	}
 	message phantom_operate_end
 	{
-	    optional int32 phantom_id          = 1;
-		optional int32 oper_type           = 2;
-		optional int32 result	           = 3;
+	    int32 phantom_id          = 1;
+		int32 oper_type           = 2;
+		int32 result	           = 3;
 	}
 	
 }
+

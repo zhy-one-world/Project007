@@ -1,5 +1,5 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 import "st.proto";
 import "db.proto";
 
@@ -10,93 +10,93 @@ message ws2cs_proto
 	}
 	message gm_del_cache
 	{
-	   optional int64 role_guid = 1;
+	   int64 role_guid = 1;
 	}
 	message del_unit_item
 	{
-	   optional int32 cs_unit_index = 1;
-	   optional int32 bag_type = 2;
-	   optional int32 bag_slot_begin = 3;
-	   optional int32 bag_slot_end = 4;
+	   int32 cs_unit_index = 1;
+	   int32 bag_type = 2;
+	   int32 bag_slot_begin = 3;
+	   int32 bag_slot_end = 4;
 	}
 	
 	message change_unit_vip 
 	{ 
-	   optional int32 cs_unit_index = 1;
-	   optional int32 vip_value = 2;
+	   int32 cs_unit_index = 1;
+	   int32 vip_value = 2;
 	}
 	
 	message del_unit_specified_item
 	{
-	   optional int32 cs_unit_index = 1;
-	   optional int32 bag_type = 2;
-	   optional int32 item_id = 3;
+	   int32 cs_unit_index = 1;
+	   int32 bag_type = 2;
+	   int32 item_id = 3;
 	}
 	
 	message add_guide_record 
 	{
-	   optional int32 cs_unit_index = 1;
-	   optional int32 guide_trigger_id = 2;
+	   int32 cs_unit_index = 1;
+	   int32 guide_trigger_id = 2;
 	}
 	
 	message time_out 
 	{
-	   optional int64 role_guid = 1;
-	   optional int32 cs_unit_index = 2;
+	   int64 role_guid = 1;
+	   int32 cs_unit_index = 2;
 	}
 	
 	message reconnect_game
 	{
-	   optional int64 client_uid = 1;
-	   optional int64 role_guid = 2;
-	   optional int32 cur_map_id = 3;
-	   optional int32 cur_map_line_id = 4;
+	   int64 client_uid = 1;
+	   int64 role_guid = 2;
+	   int32 cur_map_id = 3;
+	   int32 cur_map_line_id = 4;
 	}
 	
 	message enter_game
 	{
-	    optional int64			client_uid = 1;
-		optional string			account = 2;
-		optional int64			role_guid = 3;
-		optional int64			up_role_guid = 4;
-		optional int32			exp_level = 5;
-		optional int32			server_id = 6;
+	    int64			client_uid = 1;
+		string			account = 2;
+		int64			role_guid = 3;
+		int64			up_role_guid = 4;
+		int32			exp_level = 5;
+		int32			server_id = 6;
 		repeated int32			cross_callback_val = 7;
-		optional int32			login_type = 8;
-		optional int64			map_guid = 9;
-		optional int32			line_id = 10;
-		optional int32			war_index = 11;
-		optional st_proto.st_login_fixed_data	fixed_data = 12;
-		optional int32			is_send_chat = 13;
-		optional int64			worship_value = 14;
-		optional bool		    is_city_master = 15;
-		optional bool			m_is_city_war_winner_legion_member = 16;
-		optional bool			is_already_login = 17;
+		int32			login_type = 8;
+		int64			map_guid = 9;
+		int32			line_id = 10;
+		int32			war_index = 11;
+		st_proto.st_login_fixed_data	fixed_data = 12;
+		int32			is_send_chat = 13;
+		int64			worship_value = 14;
+		bool		    is_city_master = 15;
+		bool			m_is_city_war_winner_legion_member = 16;
+		bool			is_already_login = 17;
 		repeated bool			bflag_loading_title = 18;
-		optional int64			couple_guid = 19;
-		optional string			couple_name = 20;
-		optional st_proto.st_player_team_info	team_info = 21;
-		optional st_proto.st_player_legion_info	legion_info = 22;
-		optional int64					login_time = 23;
+		int64			couple_guid = 19;
+		string			couple_name = 20;
+		st_proto.st_player_team_info	team_info = 21;
+		st_proto.st_player_legion_info	legion_info = 22;
+		int64					login_time = 23;
 	}
 	
 	message client_logout
 	{
-	   optional int64  client_uid = 1;
-	   optional int64  role_guid = 2;
-	   optional bool   need_send_save_end = 3;
+	   int64  client_uid = 1;
+	   int64  role_guid = 2;
+	   bool   need_send_save_end = 3;
 	}
 	
 	message enter_scene
 	{
-	    optional int64 role_guid = 1;
-		optional int32 cs_array_index = 2;
+	    int64 role_guid = 1;
+		int32 cs_array_index = 2;
 	}
 	
 	message server_config
 	{
-	    optional st_proto.st_game_info  game_info = 1;
-		optional bool                   is_add = 2;
+	    st_proto.st_game_info  game_info = 1;
+		bool                   is_add = 2;
 	}
 	
 	message server_clear_all_config
@@ -105,62 +105,62 @@ message ws2cs_proto
 	
 	message map_create 
 	{
-	  optional 	int64		map_guid = 1;
-	  optional	int32		line_id = 2;
-	  optional	int32		map_template_id = 3;
-	  optional	int32		map_all_time = 4;
+	  int64		map_guid = 1;
+	  int32		line_id = 2;
+	  int32		map_template_id = 3;
+	  int32		map_all_time = 4;
 	}
 	
 	message map_delete
 	{
-	  optional int64   map_guid = 1;
+	  int64   map_guid = 1;
 	}
 	
 	message map_doule_line
 	{
-	  optional int64 map_guid = 1;
-	  optional int32 is_double_line = 2;
+	  int64 map_guid = 1;
+	  int32 is_double_line = 2;
 	}
 	
 	message map_dynamic_params
 	{
-	   optional int64		map_guid = 1;
-	   optional int32		dynamic_params_map_type = 2;
+	   int64		map_guid = 1;
+	   int32		dynamic_params_map_type = 2;
 	   repeated	int32		dynamic_params_int = 3;
-	   optional string		dynamic_params_name = 4;
+	   string		dynamic_params_name = 4;
 	}
 	
 	message transfer_to_map 
 	{
-	  optional	int64	role_guid = 1;
-	  optional	int32	map_template_id = 2;
-	  optional	int64	map_guid = 3;
-	  optional	int32	war_idx = 4;
-	  optional	int32	server_id = 5;
+	  int64	role_guid = 1;
+	  int32	map_template_id = 2;
+	  int64	map_guid = 3;
+	  int32	war_idx = 4;
+	  int32	server_id = 5;
 	};
 	
 	message get_map_info_from_cs 
 	{
-	  optional	int64	map_guid = 1;
-	  optional	int64	role_guid = 2;
-	  optional  int32	map_template_id = 3 ;
+	  int64	map_guid = 1;
+	  int64	role_guid = 2;
+	  int32	map_template_id = 3 ;
 	  repeated	int32	map_info = 4;
 	};
 	
 	message cs_gm_open_time 
 	{
-	  optional	int32  open_time = 1;
+	  int32  open_time = 1;
 	};
 	
 	message server_need_cross 
 	{
-	   optional int32 need_begin_cross = 1;
-	   optional int32 gm_type = 2;
+	   int32 need_begin_cross = 1;
+	   int32 gm_type = 2;
 	};
 	message server_info_arr 
 	{
-	  optional int32	server_info_value = 1;
-	  optional int32	server_info_type = 2;
+	  int32	server_info_value = 1;
+	  int32	server_info_type = 2;
 	
 	};
 	
@@ -172,586 +172,586 @@ message ws2cs_proto
 	
 	message broken_sky_creat_boss 
 	{
-	   optional	int32	boss_level = 1;
-	   optional	int64	all_damage = 2;
-	   optional	int64   from_map_guid = 3;
+	   int32	boss_level = 1;
+	   int64	all_damage = 2;
+	   int64   from_map_guid = 3;
     }
 	
 	message broken_sky_info_sync 
 	{
-	    optional	int32	map_template_id = 1;
-		optional    int64   broken_sky_inst_guid = 2;
-		optional    int64	damage = 3;
+	    int32	map_template_id = 1;
+		int64   broken_sky_inst_guid = 2;
+		int64	damage = 3;
 	}
 	
 	message broken_sky_kill_boss 
 	{
-		optional  int32	map_template_id = 1;
-		optional  int32	killer_unit_index = 2;
-		optional  int64	killer_guid = 3;
+		int32	map_template_id = 1;
+		int32	killer_unit_index = 2;
+		int64	killer_guid = 3;
 	}
 	
 	message chest_arrivai_spawn_chest_wave 
 	{
-		optional int32 chest_disappear_time = 1;
+		int32 chest_disappear_time = 1;
 	}
 	
 	message clear_big_player_title 
 	{
-		optional int64	role_guid = 1;
-		optional int32	title_type = 2;
+		int64	role_guid = 1;
+		int32	title_type = 2;
 	}
 	
 	
 	message apply_to_join_team 
 	{
-	  optional	int64 role_guid = 1;
-	  optional	int64 team_guid = 2;
-	  optional	int32 team_type_id = 3;
-      optional	int32 team_sub_type_id =4;
+	  int64 role_guid = 1;
+	  int64 team_guid = 2;
+	  int32 team_type_id = 3;
+      int32 team_sub_type_id =4;
 	}
 	
 	message set_player_team_info 
 	{
-	   optional	 int64 	role_guid = 1;
-	   optional  st_proto.st_player_team_info	player_team_info = 2;
+	   int64 	role_guid = 1;
+	   st_proto.st_player_team_info	player_team_info = 2;
 	}
 	
 	message clear_player_team_info 
 	{
-	   optional int64	role_guid = 1;
+	   int64	role_guid = 1;
 	}
 	
 	message transfer_team_member_to_scene 
 	{
-	   optional	 int64	team_guid = 1;
-	   optional	 int64	role_guid = 2;
-	   optional	 int32	map_template_id = 3;
-	   optional  int64	map_guid = 4;
+	   int64	team_guid = 1;
+	   int64	role_guid = 2;
+	   int32	map_template_id = 3;
+	   int64	map_guid = 4;
 	}
 	
 	message team_common_check_in_cs 
 	{
-	  optional	int64	role_guid = 1;
-	  optional	int64	team_guid = 2;
-	  optional	int32	team_type_id = 3;
-	  optional	int32	team_sub_type_id = 4;
-	  optional  int32   check_invoker = 5;
+	  int64	role_guid = 1;
+	  int64	team_guid = 2;
+	  int32	team_type_id = 3;
+	  int32	team_sub_type_id = 4;
+	  int32   check_invoker = 5;
     }
 	
 	message sync_team_start_aim
 	{
-	  optional	 int64	role_guid = 1;
+	  int64	role_guid = 1;
 	}
 	
 	message set_player_legion_info 
 	{
-		optional  int64	 role_guid = 1;
-		optional  st_proto.st_player_legion_info player_legion_info = 2;
-		optional  bool	 is_new_join_legion = 3;
+		int64	 role_guid = 1;
+		st_proto.st_player_legion_info player_legion_info = 2;
+		bool	 is_new_join_legion = 3;
 	}
 	
 	message clear_player_legion_info 
 	{
-		optional int64	role_guid = 1;
+		int64	role_guid = 1;
 	}
 	
 	message create_legion 
 	{
-	  optional	int64	legion_guid = 1;
-	  optional	string	legion_name = 2;
-	  optional	int32	legion_level = 3;
-	  optional	bool	auto_accept_new_member = 4;
-	  optional 	st_proto.st_legion_member_info	chief_info = 5;
+	  int64	legion_guid = 1;
+	  string	legion_name = 2;
+	  int32	legion_level = 3;
+	  bool	auto_accept_new_member = 4;
+	  st_proto.st_legion_member_info	chief_info = 5;
 	}
 	
 	message donate_legion_money
 	{
-	   optional	int64	role_guid = 1;
-	   optional int32	donate_times = 2;
+	   int64	role_guid = 1;
+	   int32	donate_times = 2;
 	};
 	
 	message donate_legion_item 
 	{
-	   optional int64	role_guid = 1;
-	   optional int32	donate_item_index = 2;
-	   optional int32	donate_item_num =3;
+	   int64	role_guid = 1;
+	   int32	donate_item_index = 2;
+	   int32	donate_item_num =3;
 	};
 	
 	message enter_legion_boss_map 
 	{
-	   optional int64	role_guid = 1;
-	   optional int32	boss_map_id = 2;
-	   optional int64   boss_map_guid = 3;
+	   int64	role_guid = 1;
+	   int32	boss_map_id = 2;
+	   int64   boss_map_guid = 3;
 	};
 	
 	message get_legion_boss_award 
 	{
-	   optional int64	role_guid = 1;
-	   optional	int32	boss_map_id = 2;
+	   int64	role_guid = 1;
+	   int32	boss_map_id = 2;
 	};
 	
 	message set_get_legion_boss_award_log 
 	{
-	   optional st_proto.st_legion_boss_award_get_log legion_boss_award_get_log = 1;
+	   st_proto.st_legion_boss_award_get_log legion_boss_award_get_log = 1;
 	};
 	
 	message bonfire_add_fuel
 	{
-	  optional	int64 role_guid = 1;
-	  optional	int64 bonfire_map_guid = 2;
-	  optional	int32 add_fuel_times = 3;
+	  int64 role_guid = 1;
+	  int64 bonfire_map_guid = 2;
+	  int32 add_fuel_times = 3;
 	};
 	
 	message legion_remove_recruit_cd 
 	{
-	  optional	int64 role_guid = 1;
+	  int64 role_guid = 1;
     }	
 	
 	message draw_bonfire_daily_rwd 
 	{
-	  optional	int64 role_guid = 1;
-	  optional  int64 bonfire_map_guid = 2;
+	  int64 role_guid = 1;
+	  int64 bonfire_map_guid = 2;
     }
 	
 	message level_up_legion_skill 
 	{
-	  optional	int64	role_guid = 1;
-	  optional	int32	skill_template_id = 2;
-	  optional	int64	donate_contribution =3;
+	  int64	role_guid = 1;
+	  int32	skill_template_id = 2;
+	  int64	donate_contribution =3;
 	}
 	
 	message confirm_change_legion_name 
 	{
-	  optional	int64	role_guid = 1;
-	  optional	string	legion_name = 2;
-	  optional	bool	is_need_change = 3;
+	  int64	role_guid = 1;
+	  string	legion_name = 2;
+	  bool	is_need_change = 3;
 	}
 	
 	message rem_item_change_legion_name_care 
 	{
-	  optional	int64	role_guid = 1;
+	  int64	role_guid = 1;
 
 	}
 	message change_gate_legion_name 
 	{
-	  optional  int64   legion_guid = 1;
-	  optional  string	legion_name = 2;
+	  int64   legion_guid = 1;
+	  string	legion_name = 2;
 	}
 	
 	message begin_city_war 
 	{
-	  optional  int64		city_war_map_guid = 1;
-	  optional  int32		cur_terr_id = 2;
+	  int64		city_war_map_guid = 1;
+	  int32		cur_terr_id = 2;
 	  repeated	st_proto.st_city_war_legion_score	join_war_legions = 3;
-	  optional	int32		cross_city_idex = 4;
+	  int32		cross_city_idex = 4;
 	}
 	
 	message enter_city_war_map 
 	{
-	  optional	int64	role_guid = 1;
-	  optional	int64   map_guid = 2;
-	  optional  int32	war_index = 3;
+	  int64	role_guid = 1;
+	  int64   map_guid = 2;
+	  int32	war_index = 3;
 	}
 	
 	message city_war_operate 
 	{
-	  optional	int64	city_war_map_guid = 1;
-	  optional	int64	legion_guid = 2;
-	  optional  int64	role_guid = 3;
-	  optional	int32	operate_type = 4;
-	  optional	int64	prop_npc_guid = 5;
+	  int64	city_war_map_guid = 1;
+	  int64	legion_guid = 2;
+	  int64	role_guid = 3;
+	  int32	operate_type = 4;
+	  int64	prop_npc_guid = 5;
 	}
 	
 	message get_occupation_daily_award 
 	{
-	  optional	int64	role_guid = 1;
-	  optional	int32	territory_id = 2;
+	  int64	role_guid = 1;
+	  int32	territory_id = 2;
 	}
 	
 	message get_city_master_stuff 
 	{
-	  optional	int64 role_guid = 1;
+	  int64 role_guid = 1;
 	}
 	
 	message del_city_master_stuff 
 	{
-	  optional	int64 role_guid = 1;
+	  int64 role_guid = 1;
 	}
 	
 	message add_city_war_winner_stuff 
 	{
-	  optional	int64 role_guid = 1;
+	  int64 role_guid = 1;
 	}
 	
 	message del_city_war_winner_stuff 
 	{
-	  optional	int64 role_guid = 1;
+	  int64 role_guid = 1;
 	}
 	
 	message get_bonus_award 
 	{
-	  optional	int64	role_guid = 1;
-	  optional	int32	mission_enum = 2;
-	  optional	int32	sub_type_id = 3;
+	  int64	role_guid = 1;
+	  int32	mission_enum = 2;
+	  int32	sub_type_id = 3;
 	  repeated	int32	finish_count = 4;
-	  optional	int32	legion_job = 5;
- 	  optional	bool	get_all = 6;
+	  int32	legion_job = 5;
+ 	  bool	get_all = 6;
 	}
 	
 	
 	message legion_answer_question_right 
 	{
-	  optional	int64	 role_guid = 1;
-	  optional	int32	 question_template_id = 2;
-	  optional	bool	 is_answer = 3;				
-	  optional	int32	 data_num = 4;
+	  int64	 role_guid = 1;
+	  int32	 question_template_id = 2;
+	  bool	 is_answer = 3;				
+	  int32	 data_num = 4;
 	  repeated	int64	 legion_play_guid = 5;
 	}
 	
 	message set_legion_average_lv_to_map
 	{
-	   optional     int64		map_guid = 1;
-	   optional	    int32		legion_average_lv = 2;
+	   int64		map_guid = 1;
+	   int32		legion_average_lv = 2;
 	}
 	
 	message rep_get_arena_rank 
 	{
-	  optional	int64 role_guid = 1;
-	  optional	int32 arena_rank = 2;
-	  optional	int32 is_request = 3;
+	  int64 role_guid = 1;
+	  int32 arena_rank = 2;
+	  int32 is_request = 3;
 	}
 	
 	message req_challenge_msg 
 	{
-	 optional int64 role_guid = 1;
-	 optional int64 target_guid = 2;
-	 optional int32 req_result = 3;
-	 optional int32	robot_id = 4;
-	 optional int32	cost_money_type = 5;
-	 optional int32	cost_money_value = 6;
-	 optional int32	target_cur_pos = 7;
-	 optional int32	self_cur_pos = 8;
+	 int64 role_guid = 1;
+	 int64 target_guid = 2;
+	 int32 req_result = 3;
+	 int32	robot_id = 4;
+	 int32	cost_money_type = 5;
+	 int32	cost_money_value = 6;
+	 int32	target_cur_pos = 7;
+	 int32	self_cur_pos = 8;
 	}
 	
 	message req_choose_list
 	{
-	  optional int64 role_guid = 1;
+	  int64 role_guid = 1;
 	  repeated st_proto.st_player_arena_rank target_player = 2;
 	}
 	
 	message fresh_challenge_time
 	{
-	  optional	int64 role_guid = 1;
-	  optional	int32 is_need = 2;
+	  int64 role_guid = 1;
+	  int32 is_need = 2;
 	}
 	
 	message req_worship_player_end 
 	{
-	  optional	int64	role_guid = 1;
-	  optional	int64   target_guid = 2; 
-	  optional	int32	ranking_type = 3;
-	  optional	int32	worship_type = 4;
-	  optional	int32	worship_result = 5;
-	  optional	int64	target_worship_value = 6;
+	  int64	role_guid = 1;
+	  int64   target_guid = 2; 
+	  int32	ranking_type = 3;
+	  int32	worship_type = 4;
+	  int32	worship_result = 5;
+	  int64	target_worship_value = 6;
 	}
 	
 	message  sync_first_rank_end 
 	{
-	  optional	int64	role_guid = 1;
-	  optional	int32	ranking_type = 2;
-	  optional	bool    is_first = 3;
-	  optional	bool	is_notice = 4;
+	  int64	role_guid = 1;
+	  int32	ranking_type = 2;
+	  bool    is_first = 3;
+	  bool	is_notice = 4;
 	}
 	
 	message  sync_server_avg_lv
 	{
-	  optional	int32	srv_avg_lv = 1;
-	  optional	int32	world_lv_cur = 2;
-	  optional	int32	world_lv_last = 3;
+	  int32	srv_avg_lv = 1;
+	  int32	world_lv_cur = 2;
+	  int32	world_lv_last = 3;
 	}
 	
 	
 	message req_service_rank_info_end 
 	{
-	  optional	int64	role_guid = 1;
-	  optional	int32	rank_type = 2;
-	  optional	int32	rank_num = 3;
+	  int64	role_guid = 1;
+	  int32	rank_type = 2;
+	  int32	rank_num = 3;
 	}
 	
 	
 	message check_item_enough 
 	{
-	  optional	int64	main_guid = 1; 
-	  optional	int64	sub_guid = 2;
-	  optional	int32	item_id = 3;
-	  optional	bool	is_cost_item = 4;
-	  optional	bool	is_divorce = 5;
+	  int64	main_guid = 1; 
+	  int64	sub_guid = 2;
+	  int32	item_id = 3;
+	  bool	is_cost_item = 4;
+	  bool	is_divorce = 5;
 	}
 	
 	message marry_result_end 
 	{
-	  optional	int64	main_guid = 1;
-	  optional	string	main_name = 2;
-	  optional	int64	sub_guid = 3;
-	  optional	string	sub_name = 4;
-	  optional	int32	result_type = 5;
-	  optional	bool	is_marry = 6;
-	  optional	int32	marry_item_id = 7;
+	  int64	main_guid = 1;
+	  string	main_name = 2;
+	  int64	sub_guid = 3;
+	  string	sub_name = 4;
+	  int32	result_type = 5;
+	  bool	is_marry = 6;
+	  int32	marry_item_id = 7;
 	}
 	
 	message marry_get_reward 
 	{
-	  optional	 int64	 sender_guid = 1;
-	  optional	 int32   old_marry_state = 2;
+	  int64	 sender_guid = 1;
+	  int32   old_marry_state = 2;
 	}
 	
 	message update_wedding_ring_state 
 	{
-	  optional	int64	role_guid = 1;
-	  optional	bool	is_marry = 2;
-	  optional	int32	marry_item_id = 3;
-	  optional	int32	mate_ring_level = 4;
-	  optional	int32	heart_value = 5;
+	  int64	role_guid = 1;
+	  bool	is_marry = 2;
+	  int32	marry_item_id = 3;
+	  int32	mate_ring_level = 4;
+	  int32	heart_value = 5;
 	};
 	
 	
 	message update_wedding_ring_level 
 	{
-		optional int64	 role_guid = 1;
-		optional int32	 mate_ring_level = 2;
+		int64	 role_guid = 1;
+		int32	 mate_ring_level = 2;
 	}
 	
 	message refresh_heart_value 
 	{
-	  optional	 int64		role_guid = 1;
-	  optional	 int32		heart_value = 2;
+	  int64		role_guid = 1;
+	  int32		heart_value = 2;
 	}
 	
 	message  req_cost_bless_money 
 	{
-	  optional	int64	 role_guid = 1;  
-	  optional	int64	 target_guid = 2;
+	  int64	 role_guid = 1;  
+	  int64	 target_guid = 2;
 	}
 	
 	message  return_special_item_times 
 	{
-	  optional	int64	target_guid = 1;
+	  int64	target_guid = 1;
 	}
 	
 	message marry_get_marry_task 
 	{
-	   optional	  int64	 role_guid = 1;
+	   int64	 role_guid = 1;
 	}
 	
 	message sync_marry_task 
 	{
-	  optional	int64	role_guid = 1;
-	  optional	bool	is_marry = 2;
+	  int64	role_guid = 1;
+	  bool	is_marry = 2;
 	}
 	
     message send_mail 
 	{
-	  optional	int64  client_uid = 1;
+	  int64  client_uid = 1;
 	  repeated 	db_proto.item_info_db   item_list = 2;
-	  optional	db_proto.role_mail_row   mail_info = 3;
-	  optional	int32	item_num = 4;
-      optional	int64	addressee_guid = 5;
-	  optional	int32	send_times = 6;
+	  db_proto.role_mail_row   mail_info = 3;
+	  int32	item_num = 4;
+      int64	addressee_guid = 5;
+	  int32	send_times = 6;
 	}
 	
 	message had_new_globel_mail 
 	{
-	  optional	int64	role_guid = 1;
-	  optional	int32	data_num = 2;
+	  int64	role_guid = 1;
+	  int32	data_num = 2;
 	  repeated	int64	data_info = 3;
 	}
 	
 	
 	message receive_notice 
 	{
-	  optional	int64  client_uid = 1;
-	  optional	int64  sender_guid = 2;
-	  optional	int64  addressee_guid = 3;
-	  optional	int32  notice_id = 4;
-      optional	int32  create_time = 5;
+	  int64  client_uid = 1;
+	  int64  sender_guid = 2;
+	  int64  addressee_guid = 3;
+	  int32  notice_id = 4;
+      int32  create_time = 5;
 	  repeated	db_proto.item_info_db		data_ary = 6;
 	}
 	
 	message send_chat_end 
 	{
-	  optional	int64 sender_guid = 1;
-	  optional	int32 send_result = 2;
-	  optional	int32 chat_type = 3;
+	  int64 sender_guid = 1;
+	  int32 send_result = 2;
+	  int32 chat_type = 3;
 	}
 	
 	message create_world_boss 
 	{
-	  optional	int32	world_boss_spawn_template_id = 1;
-	  optional	int32	world_boss_random_pos_arr_id = 2;
+	  int32	world_boss_spawn_template_id = 1;
+	  int32	world_boss_random_pos_arr_id = 2;
 	}
 	
 	message remove_world_boss 
 	{
-	  optional	 int32	world_boss_npc_array_index = 1;
-	  optional	 int64	world_boss_guid = 2;
+	  int32	world_boss_npc_array_index = 1;
+	  int64	world_boss_guid = 2;
 	}
 	
 	message create_first_kill_prize 
 	{
-	  optional	int64	first_killer_guid = 1;
-	  optional	int32	first_kill_welfare_template_id = 2;
+	  int64	first_killer_guid = 1;
+	  int32	first_kill_welfare_template_id = 2;
 	}
 	
 
 	message create_big_player_statue
 	{
-	  optional	st_proto.st_fake_player_info	 big_player_info =1;
-      optional	int32				 big_type = 2;
-	  optional	int64				 map_guid = 3;
+	  st_proto.st_fake_player_info	 big_player_info =1;
+      int32				 big_type = 2;
+	  int64				 map_guid = 3;
 	}
 	
 	message  role_right 
 	{
-	  optional	int64			    role_guid = 1;
-	  optional  int32				right_type = 2;
-	  optional	int32				right_value = 3;
-	  optional	int32				right_time = 4;
+	  int64			    role_guid = 1;
+	  int32				right_type = 2;
+	  int32				right_value = 3;
+	  int32				right_time = 4;
 	}
 	
 	message recharge 
 	{
-	  optional	string				order_id = 1;
-	  optional	int64				role_guid = 2;
-	  optional	int32				goods_id = 3;
-	  optional	float				pay_price = 4;
-	  optional	int64				order_num = 5;
-	  optional	int32				payment_type = 6;
-	  optional	int32				direct_diamond = 7;
+	  string				order_id = 1;
+	  int64				role_guid = 2;
+	  int32				goods_id = 3;
+	  float				pay_price = 4;
+	  int64				order_num = 5;
+	  int32				payment_type = 6;
+	  int32				direct_diamond = 7;
 	}
 	
 	message role_info_change 
 	{
-	  optional	int64 role_guid = 1;
-	  optional	int32 role_type = 2;
-	  optional	int32 role_value = 3;
+	  int64 role_guid = 1;
+	  int32 role_type = 2;
+	  int32 role_value = 3;
 	}
 	
 	message buy_good 
 	{
-	  optional	int64		role_guid = 1;
-	  optional	int32		goods_id = 2;
-	  optional	int32		goods_num = 3;
-	  optional	int32		store_id = 4;
-	  optional	bool		is_auto_buy = 5;
-	  optional	int32		back_string = 6;
+	  int64		role_guid = 1;
+	  int32		goods_id = 2;
+	  int32		goods_num = 3;
+	  int32		store_id = 4;
+	  bool		is_auto_buy = 5;
+	  int32		back_string = 6;
 	}
 	
 	message get_red_package_end 
 	{
-	  optional	int64	receiver_guid = 1;
-	  optional	int64	red_package_guid = 2;
-	  optional	int32	get_result = 3;
-	  optional	int32	money_type = 4;
-	  optional	int32	money_num = 5;
+	  int64	receiver_guid = 1;
+	  int64	red_package_guid = 2;
+	  int32	get_result = 3;
+	  int32	money_type = 4;
+	  int32	money_num = 5;
 	};
 	
 	
 	message send_red_package_end
 	{
-	  optional	int64		sender_guid = 1;
-	  optional	int32		red_package_template_id = 2;
-	  optional	int32		send_result = 3;
+	  int64		sender_guid = 1;
+	  int32		red_package_template_id = 2;
+	  int32		send_result = 3;
 	}
 	
 	message full_friend_guid
 	{
-	  optional	int32	player_index = 1;
-	  optional	int32	highest_firendliness_value = 2;
-	  optional	int32	friend_num = 3;
-	  optional	bool	is_add = 4;
+	  int32	player_index = 1;
+	  int32	highest_firendliness_value = 2;
+	  int32	friend_num = 3;
+	  bool	is_add = 4;
 	};
 	
 	
 	message req_relation_end 
 	{
-	  optional	int32	relation_type = 1;
-	  optional	int32	self_index = 2;
-	  optional	int64	target_guid = 3;
+	  int32	relation_type = 1;
+	  int32	self_index = 2;
+	  int64	target_guid = 3;
 	}
 	
 	message auction_purchase_success 
 	{
-	  optional int64 role_guid = 1;
-	  optional st_proto.st_auction_info auction_info = 2;
+	  int64 role_guid = 1;
+	  st_proto.st_auction_info auction_info = 2;
 	};
 	
 	
 	message auction_send_sell_success_info 
 	{
-	   optional st_proto.st_auction_info auction_info = 1;
+	   st_proto.st_auction_info auction_info = 1;
 	};
 	
 	message auction_cancel_sell 
 	{
-	  optional int64 role_guid = 1;
-	  optional st_proto.st_auction_info auction_info = 2;
+	  int64 role_guid = 1;
+	  st_proto.st_auction_info auction_info = 2;
 	};
 	
 	message auction_sell_end 
 	{
-		optional int32	operate_result = 1;
-		optional st_proto.st_auction_info	info = 2;
+		int32	operate_result = 1;
+		st_proto.st_auction_info	info = 2;
 	}
 	
 	message auction_time_out_del 
 	{
-	   optional int64 role_guid = 1;
-	   optional st_proto.st_auction_info auction_info = 2;
+	   int64 role_guid = 1;
+	   st_proto.st_auction_info auction_info = 2;
 	};
 	
 	message auction_find_bid_target_end 
 	{
-	   optional int64 role_guid = 1;
-	   optional st_proto.st_auction_info auction_info = 2;
+	   int64 role_guid = 1;
+	   st_proto.st_auction_info auction_info = 2;
 	};
 	
 	
 	message cloud_shop_buy_req 
 	{
-	  optional	int64 role_guid = 1;
-	  optional	int32 buy_type = 2;			
-	  optional	int32 have_buy_count = 3;	
-	  optional	int32 need_money_type = 4;
-	  optional	int32 need_money_count = 5;
+	  int64 role_guid = 1;
+	  int32 buy_type = 2;			
+	  int32 have_buy_count = 3;	
+	  int32 need_money_type = 4;
+	  int32 need_money_count = 5;
 	};
 	
 	message sub_player_rename_item 
 	{
-	   optional   int64		role_guid = 1;
-       optional	  int32	    item_templete_id = 2;
+	   int64		role_guid = 1;
+       int32	    item_templete_id = 2;
 	}
 	
 	message change_player_name 
 	{
-	   optional	int64	 role_guid = 1;
-	   optional string	 role_name = 2;
+	   int64	 role_guid = 1;
+	   string	 role_name = 2;
 	}
 	
 	message spawn_npc 
 	{
-	   optional	int64			map_guid = 1;
-	   optional	int32			npc_template_id = 2;
+	   int64			map_guid = 1;
+	   int32			npc_template_id = 2;
 	   repeated float		    unit_location = 3;
 	   repeated float           unit_rotation = 4;
     }
 
     message modify_money 
 	{
-	  optional int32 cs_unit_index = 1;
-	  optional bool  is_add_money = 2;
-	  optional int32 money_type = 3;
-	  optional int64 money_value = 4;
+	  int32 cs_unit_index = 1;
+	  bool  is_add_money = 2;
+	  int32 money_type = 3;
+	  int64 money_value = 4;
     }
 	
 	message send_cur_server_harry_msg
@@ -762,125 +762,125 @@ message ws2cs_proto
 	
 	message send_create_normal_player
 	{
-	   optional	 int32	crate_num = 1; 
+	   int32	crate_num = 1; 
 	}
 	
 	message create_harry_player_statue 
 	{
-	  optional	st_proto.st_fake_player_info	big_player_info = 1;
-	  optional	int32							big_type = 2;
-	  optional	int64							map_guid = 3;
+	  st_proto.st_fake_player_info	big_player_info = 1;
+	  int32							big_type = 2;
+	  int64							map_guid = 3;
 	}
 	
 	message claer_all_harry_player 
 	{
-	  optional	bool	need_clear = 1;
+	  bool	need_clear = 1;
 	}
 	
 	message cross_ladder_refresh_ticket_info 
 	{
-	  optional  int64	role_guid = 1;
-	  optional	int32	can_buy_ticket_num = 2;
+	  int64	role_guid = 1;
+	  int32	can_buy_ticket_num = 2;
 	}
 	
 	message cross_ladder_send_last_score 
 	{
-	  optional	 int64	role_guid = 1;
-	  optional	 int32	last_score = 2;
-	  optional	 int32	last_ranking = 3;
+	  int64	role_guid = 1;
+	  int32	last_score = 2;
+	  int32	last_ranking = 3;
 	}
 	
 	message cross_server_world_boss_creat_boss 
 	{
-	  optional	int32	true_boss_level = 1;
-	  optional	int32	false_boss_level = 2;
-	  optional	int64   from_map_guid = 3;
+	  int32	true_boss_level = 1;
+	  int32	false_boss_level = 2;
+	  int64   from_map_guid = 3;
 	}
 	
 	message check_time_limit_activity_common_data 
 	{
-	  optional	int64  user_guid = 1;
-	  optional	int32  activity_id = 2;
-	  optional	bool   is_achieve = 3;
+	  int64  user_guid = 1;
+	  int32  activity_id = 2;
+	  bool   is_achieve = 3;
 	}
 	
 	message set_time_limit_activity_pause_flag 
 	{
-	   optional	bool pause_flag = 1;
+	   bool pause_flag = 1;
 	}
 	
 	message end_act_type 
 	{
-	  optional	int32 act_type = 1;
-	  optional	bool is_need_send_to_client = 2;
+	  int32 act_type = 1;
+	  bool is_need_send_to_client = 2;
 	}
 	
 	message act_limit_temp 
 	{
 	   repeated	 st_proto.st_time_limit_activity_temp_db temp_db_info = 1;
-	   optional	 bool				is_begin = 2;
-	   optional	 int32				data_num = 3;
+	   bool				is_begin = 2;
+	   int32				data_num = 3;
 	}
 	
 	message act_limit_branch_temp 
 	{
 	   repeated st_proto.st_time_limit_activity_branch_temp_db temp_db_info = 1;
-	   optional	bool				is_end = 2;
-	   optional	int32				data_num = 3;
+	   bool				is_end = 2;
+	   int32				data_num = 3;
 	}
 	
 	message send_bonfire_level
 	{
-	    optional int64		map_guid = 1;
-		optional int32		bonfire_level = 2;
+	    int64		map_guid = 1;
+		int32		bonfire_level = 2;
 	
 	};
 	
 	message set_legion_guid_to_map 
 	{
-	  optional	 int64		map_guid = 1;
-	  optional	 int64	    legion_guid = 2;
+	  int64		map_guid = 1;
+	  int64	    legion_guid = 2;
 	};
 	
 	message transfer_this_map_all_player
 	{
-	  optional	 int64		map_guid = 1;
+	  int64		map_guid = 1;
 	}
 	
 	message  sync_assist_fight_info
 	{
-	  optional	 int64 role_guid = 1;
-	  optional   st_proto.st_assist_fight_info m_assist_fight_info = 2; 
+	  int64 role_guid = 1;
+	  st_proto.st_assist_fight_info m_assist_fight_info = 2; 
 
 	};
 	
 	message create_pk_king_combat_map_end 
 	{
-	  optional	int64  map_guid = 1;
+	  int64  map_guid = 1;
 	  repeated	int64  map_array = 2;
-	  optional	int32  map_num = 3;
+	  int32  map_num = 3;
 	};
 	
 	message element_war_send_create_robot 
 	{
-	  optional	 int64		map_guid = 1;
-	  optional	 st_proto.st_element_war_match_info match_info = 2;
+	  int64		map_guid = 1;
+	  st_proto.st_element_war_match_info match_info = 2;
 	}
 	
 	message element_war_check_can_get_mission_reward_end 
 	{
-	  optional	int64 role_guid = 1;
-	  optional	int32 ret_index = 2;
-	  optional	int32 mission_index = 3;
-	  optional	int32 mission_id = 4;
+	  int64 role_guid = 1;
+	  int32 ret_index = 2;
+	  int32 mission_index = 3;
+	  int32 mission_id = 4;
 	
 	};
 	
 	message element_war_send_last_score 
 	{
-	  optional	int64		role_guid = 1;
-	  optional	int32		last_score = 2;
-	  optional	int32		last_ranking = 3;
+	  int64		role_guid = 1;
+	  int32		last_score = 2;
+	  int32		last_ranking = 3;
 	}
 	
 	
@@ -890,3 +890,4 @@ message ws2cs_proto
 	
 
 }
+

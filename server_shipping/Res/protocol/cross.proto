@@ -1,91 +1,91 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 import "login.proto";
 
 message cross_proto
 {
 	message cross_transfer
 	{
-		optional int32			server_id		= 1;
+		int32			server_id		= 1;
 		repeated uint32			token			= 2;
-		optional uint64			role_guid		= 3;
-		optional string			out_ip			= 4;
-		optional string			out_port		= 5;
+		uint64			role_guid		= 3;
+		string			out_ip			= 4;
+		string			out_port		= 5;
 	}
 
 	message cross_transfer_to_server
 	{
 		repeated uint32			token			= 1;
-		optional string			account			= 2;
-		optional uint64			role_guid		= 3;
-		optional uint64			map_guid		= 4;
-		optional uint32			war_index		= 5;
-		optional int32			server_id		= 6;
-		optional login_proto.login	login_info		= 7;
+		string			account			= 2;
+		uint64			role_guid		= 3;
+		uint64			map_guid		= 4;
+		uint32			war_index		= 5;
+		int32			server_id		= 6;
+		login_proto.login	login_info		= 7;
 	}
 
 	message cross_role_info
 	{
-		optional uint64			role_guid		= 1;
-		optional string			role_name		= 2;
+		uint64			role_guid		= 1;
+		string			role_name		= 2;
 		repeated int32			data_array		= 3;		
 	}
 	
 	message cross_info
     {
-		optional int32			cross_type		= 1;
+		int32			cross_type		= 1;
 	}	
 	message cross_info_end
     {
-		optional int32				cross_result	= 1;
+		int32				cross_result	= 1;
 		repeated cross_role_info	role_info_ary	= 2;
 	}
 	message sign_up
     {
-		optional int32			sign_type		= 1;
-		optional bool			is_join			= 2;
+		int32			sign_type		= 1;
+		bool			is_join			= 2;
 	}	
 	message sign_up_end
     {
-		optional int32			sign_type		= 1;
-		optional int32			sign_end		= 2;
+		int32			sign_type		= 1;
+		int32			sign_end		= 2;
 	}	
 	message begin_war
     {
-		optional uint64			map_guid		= 1;
-		optional int32			war_index		= 2;
-		optional int32			template_id		= 3;
+		uint64			map_guid		= 1;
+		int32			war_index		= 2;
+		int32			template_id		= 3;
 	}
 	message join_war
     {
-		optional bool			join_type		= 1;
+		bool			join_type		= 1;
 	}	
 	message join_war_end
     {
-		optional int32			join_end		= 1;
+		int32			join_end		= 1;
 	}
 	message war_state_end
     {
-		optional int32			war_state		= 1;
-		optional int32			state_time		= 2;
+		int32			war_state		= 1;
+		int32			state_time		= 2;
 	}
 	message war_result
     {
-		optional int32			ladder_score		= 1;
-		optional int32			cross_honor			= 2;
-		optional int32			war_result			= 3;
+		int32			ladder_score		= 1;
+		int32			cross_honor			= 2;
+		int32			war_result			= 3;
 	}
 	message role_pk_log
 	{
 	}
 	message role_pk_log_end
 	{
-		optional string			target_name_1		= 1;
-		optional string			target_name_2		= 2;
-		optional string			target_name_3		= 3;
-		optional int32			ladder_score		= 4;
-		optional int32			cross_honor			= 5;
-		optional int32			win_result			= 6;
+		string			target_name_1		= 1;
+		string			target_name_2		= 2;
+		string			target_name_3		= 3;
+		int32			ladder_score		= 4;
+		int32			cross_honor			= 5;
+		int32			win_result			= 6;
 		
 	}
 	message role_pk_log_array
@@ -95,7 +95,8 @@ message cross_proto
 	
 	message bossisland_info_all
 	{
-		optional int32			cur_server_id		=1;
+		int32			cur_server_id		=1;
 	}
 	
 }
+

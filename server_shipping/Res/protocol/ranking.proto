@@ -1,82 +1,82 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 
 message ranking_proto
 {
 	message ranking_player_info
 	{
-        optional int64		role_guid				= 1;
-        optional string		player_name				= 2;
-		optional int32		ranking_type			= 3;
-		optional int64		ranking_value           = 4;
-		optional int64		supporting_guid         = 5;
-		optional string		supporting_name         = 6;
-		optional int32		vip_level		        = 7;
-		optional int32		peak			        = 8;
-		optional int32		server_id			    = 9;
-		optional int64		standby_parameter		= 10;
+        int64		role_guid				= 1;
+        string		player_name				= 2;
+		int32		ranking_type			= 3;
+		int64		ranking_value           = 4;
+		int64		supporting_guid         = 5;
+		string		supporting_name         = 6;
+		int32		vip_level		        = 7;
+		int32		peak			        = 8;
+		int32		server_id			    = 9;
+		int64		standby_parameter		= 10;
 	}
 
 
 	message get_player_ranking_value
 	{
-		optional int64		sender_guid				= 1;		//发送者
-		optional int64		target_guid				= 2;		//请求某玩家的怕排行榜的数据
-		optional int32		ranking_type			= 3;		//排行榜类型
+		int64		sender_guid				= 1;		//发送者
+		int64		target_guid				= 2;		//请求某玩家的怕排行榜的数据
+		int32		ranking_type			= 3;		//排行榜类型
 	}
 	
 	message get_player_ranking_value_end
 	{
-		optional ranking_player_info	target_player_info = 1;		//某玩家的怕排行榜的数据
+		ranking_player_info	target_player_info = 1;		//某玩家的怕排行榜的数据
 	}
 
 	message ranking_operate_result
 	{
-		optional int32		operate_result			= 1;		//排行榜消息结果回复
+		int32		operate_result			= 1;		//排行榜消息结果回复
 	}
 	
 	message get_my_rank
 	{
-		optional int64		sender_guid				= 1;
-		optional int32		rank_type				= 2;
-		optional int64		legion_guid				= 3;
+		int64		sender_guid				= 1;
+		int32		rank_type				= 2;
+		int64		legion_guid				= 3;
 	}
 	
 	message get_my_rank_end
 	{
-		optional int32		rank_type				= 1;
-		optional int32		rank_level				= 2;
+		int32		rank_type				= 1;
+		int32		rank_level				= 2;
 	}
 	
 	message get_top_list
 	{
-		optional int64		role_guid				= 1;
-		optional int32		index					= 2;
+		int64		role_guid				= 1;
+		int32		index					= 2;
 	}
 	
 	message get_top_list_end
 	{
-		optional int32						ranking_index		= 1;
+		int32						ranking_index		= 1;
         repeated ranking_player_info		top_player_info		= 2;
-		optional int32						if_first_send		= 3;	//是否是最后一次发送
-		optional int32						if_last_send		= 4;	//是否是最后一次发送	
+		int32						if_first_send		= 3;	//是否是最后一次发送
+		int32						if_last_send		= 4;	//是否是最后一次发送	
 	}
 
 	message worship_player
 	{
-		optional int64		role_guid		= 1;
-		optional int64		target_guid		= 2;
-		optional int32      ranking_index   = 3;			//在哪个榜上进行的崇拜
-		optional int32		worship_type	= 4;			//崇拜类型是否花钱
+		int64		role_guid		= 1;
+		int64		target_guid		= 2;
+		int32      ranking_index   = 3;			//在哪个榜上进行的崇拜
+		int32		worship_type	= 4;			//崇拜类型是否花钱
 	}
 
     message worship_player_end
 	{
-		optional int64						target_guid		= 1;
-		optional int32      				ranking_index   = 2;
-		optional int64      				worship_value   = 3;
-		optional int32      				worship_endType = 4;
-		optional int32						worship_type	= 5;
+		int64						target_guid		= 1;
+		int32      				ranking_index   = 2;
+		int64      				worship_value   = 3;
+		int32      				worship_endType = 4;
+		int32						worship_type	= 5;
 	}
 
 	message sync_player_data
@@ -86,8 +86,8 @@ message ranking_proto
 	
 	message worship_record_one
 	{
-		optional int32  					ranking_type	= 1;
-		optional int64						target_guid		= 2;
+		int32  					ranking_type	= 1;
+		int64						target_guid		= 2;
 	}
 	
 	message worship_record
@@ -97,8 +97,8 @@ message ranking_proto
 	
 	message service_rank_info_one
 	{
-		optional	int32					service_rank_type       = 1;	//全民冲榜类型
-		optional	int32					rank_index				= 2;	//结算后名次
+		int32					service_rank_type       = 1;	//全民冲榜类型
+		int32					rank_index				= 2;	//结算后名次
 	}
 	
 	message	service_rank_info_all	
@@ -108,8 +108,8 @@ message ranking_proto
 	
 	message service_rank_recevice_reward_state_one
 	{
-		optional	int32					service_rank_type       = 1;	//全民冲榜类型
-		optional	int32					recevice_reward_state	= 2;	//结算奖励领取状态
+		int32					service_rank_type       = 1;	//全民冲榜类型
+		int32					recevice_reward_state	= 2;	//结算奖励领取状态
 	}
 	
 	message service_rank_recevice_reward_state_all
@@ -119,56 +119,57 @@ message ranking_proto
 	
 	message service_rank_get_first_player
 	{
-		optional	int32					service_rank_type       = 1;
+		int32					service_rank_type       = 1;
 	}
 	
 	message service_rank_get_first_player_end
 	{
-		optional	int32					service_rank_type       = 1;
+		int32					service_rank_type       = 1;
 		repeated	int32					first_player_guid		= 2;	//第一名玩家id
 	}
 	
 	message service_rank_recevice_reward
 	{
-		optional	int32				 	service_rank_type		= 1;
+		int32				 	service_rank_type		= 1;
 	}
 	
 	message ranking_player_info_lua
 	{
-        optional int32		role_guid_a				= 1;
-        optional int32		role_guid_b				= 2;  
-		optional string		player_name				= 3;
-		optional int32		ranking_type			= 4;
-		optional int64		ranking_value           = 5;
-		optional int32		supporting_guid_a       = 6;
-		optional int32		supporting_guid_b       = 7;	
-		optional string		supporting_name         = 8;
-		optional int32		vip_level		        = 9;
-		optional int32		peak			        = 10;
-		optional int32		server_id			    = 11;
-		optional int64		standby_parameter		= 12;
+        int32		role_guid_a				= 1;
+        int32		role_guid_b				= 2;  
+		string		player_name				= 3;
+		int32		ranking_type			= 4;
+		int64		ranking_value           = 5;
+		int32		supporting_guid_a       = 6;
+		int32		supporting_guid_b       = 7;	
+		string		supporting_name         = 8;
+		int32		vip_level		        = 9;
+		int32		peak			        = 10;
+		int32		server_id			    = 11;
+		int64		standby_parameter		= 12;
 	}
 	
 	message get_top_list_end_lua
 	{
-		optional int32						ranking_index		= 1;
+		int32						ranking_index		= 1;
         repeated ranking_player_info_lua	top_player_info		= 2;
-		optional int32						if_first_send		= 3;	//是否是最后一次发送
-		optional int32						if_last_send		= 4;	//是否是最后一次发送	
+		int32						if_first_send		= 3;	//是否是最后一次发送
+		int32						if_last_send		= 4;	//是否是最后一次发送	
 	}
 
 	message get_my_rank_lua
 	{
-		optional int32		sender_guid_a				= 1;
-		optional int32		sender_guid_b				= 2;
-		optional int32		rank_type					= 3;
-		optional int32		legion_guid_a				= 4;
-		optional int32		legion_guid_b				= 5;		
+		int32		sender_guid_a				= 1;
+		int32		sender_guid_b				= 2;
+		int32		rank_type					= 3;
+		int32		legion_guid_a				= 4;
+		int32		legion_guid_b				= 5;		
 	}
 	
 	message get_oracle_trial_rank_end
 	{
 		repeated ranking_player_info_lua play_info		= 1;
-		optional int32		data_num					= 2;
+		int32		data_num					= 2;
 	}
 }
+

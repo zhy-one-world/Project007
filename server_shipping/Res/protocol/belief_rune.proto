@@ -1,12 +1,12 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 
 message belief_rune_proto
 {
 	message belief_rune_equip_on
 	{
 		repeated int32 item_guid				    = 1;
-		optional int32 item_slot					= 2;
+		int32 item_slot					= 2;
 	}
 
 	message belief_rune_level_up
@@ -17,18 +17,19 @@ message belief_rune_proto
 	message belief_rune_equip_decompose
 	{
 		repeated int32 item_guid_array				= 1;
-		optional int32 decompose_type				= 2[default = 0];  //0:普通分解 1:保值分解
+		int32 decompose_type				= 2;  //0:普通分解 1:保值分解
 	}
 
 	message belief_rune_operate_result
 	{
-		optional int32 operate_type 				= 1;   // 1:装备/替换  2:升级  3:分解
-		optional int32 error_id						= 2;
-		optional int32 rune_piece                   = 3;   // 分解获得的符文碎片
+		int32 operate_type 				= 1;   // 1:装备/替换  2:升级  3:分解
+		int32 error_id						= 2;
+		int32 rune_piece                   = 3;   // 分解获得的符文碎片
 	}
 
 	message belief_cloister_point_update
 	{
-		optional int32 point_value					= 1; 	//回廊之息数值
+		int32 point_value					= 1; 	//回廊之息数值
 	}
 }
+

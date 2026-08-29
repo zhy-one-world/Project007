@@ -1,9 +1,10 @@
-syntax = "proto2";
-package hld;
+syntax = "proto3";
+package faith;
 
 enum proto_header
 {
-	e_msgindex_s2c_proto_version_wrong					= 10000;
+
+e_msgindex_s2c_proto_version_wrong					= 0;
 	e_msgindex_s2c_common_error 						= 10001;
 	e_msgindex_c2fep_ping								= 10002;
 	e_msgindex_fep2c_ping								= 10003;
@@ -1097,7 +1098,7 @@ enum proto_header
 	e_msgindex_s2c_send_boss_god_time						= 15109;
 	e_msgindex_c2s_get_boss_god_time						= 15110;
 	
-	//oracle_trial(ÌìÆôÊÔÁ¶)
+	//oracle_trial(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 	e_msgindex_s2c_send_oracle_trial_info_all				= 15300;
 	e_msgindex_c2s_send_oracle_trial_commpingup				= 15301;
 	e_msgindex_s2c_oracle_trial_commpingup_end				= 15302;
@@ -1137,16 +1138,16 @@ enum proto_header
 
 	
 	//legion_dance
-	e_msgindex_c2s_get_map_legion_player					= 15500;	//»ñÈ¡¹²ÎèÍæ¼ÒÁÐ±í
-	e_msgindex_s2c_send_map_legion_player					= 15501;	//·¢ËÍ¹²ÎèÍæ¼ÒÁÐ±í
-	e_mgsindex_c2s_invite_legion_dance						= 15502;	//ÑûÇëÍæ¼Ò½øÐÐ¹²Îè
-	e_mgsindex_s2c_invite_legion_dance_end					= 15503;	//ÑûÇë¹²Îè½á¹û·µ»Ø
-	e_mgsindex_s2c_be_invite_legion_dance					= 15504;	//Ïò±»ÑûÇëÍæ¼Ò·¢ËÍÇëÇó¹²ÎèÑûÇë
-	e_mgsindex_c2s_be_invite_legion_dance_end				= 15505;	//±»ÑûÇëÍæ¼Ò·µ»ØÑûÇë
-	e_mgsindex_c2s_legion_dance_end							= 15506;	//¹²Îè½áÊø
-	e_mgsindex_s2c_legion_dance_interaction_begin			= 15507;	//¾üÍÅ¹²Îè½»»¥¿ªÊ¼
-	e_mgsindex_c2s_legion_dance_interaction_end				= 15508;	//¾üÍÅ¹²Îè½»»¥½áÊø
-	e_mgsindex_s2c_legion_Dance_clear_data					= 15509;	//½øÈë¾üÍÅµØÍ¼Ê±·¢ËÍÒ»´ÎÇåÀí¾Ü¾øÐÅÏ¢
+	e_msgindex_c2s_get_map_legion_player					= 15500;	//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
+	e_msgindex_s2c_send_map_legion_player					= 15501;	//ï¿½ï¿½ï¿½Í¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
+	e_mgsindex_c2s_invite_legion_dance						= 15502;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò½ï¿½ï¿½Ð¹ï¿½ï¿½ï¿½
+	e_mgsindex_s2c_invite_legion_dance_end					= 15503;	//ï¿½ï¿½ï¿½ë¹²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_mgsindex_s2c_be_invite_legion_dance					= 15504;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_mgsindex_c2s_be_invite_legion_dance_end				= 15505;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_mgsindex_c2s_legion_dance_end							= 15506;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_mgsindex_s2c_legion_dance_interaction_begin			= 15507;	//ï¿½ï¿½ï¿½Å¹ï¿½ï¿½è½»ï¿½ï¿½ï¿½ï¿½Ê¼
+	e_mgsindex_c2s_legion_dance_interaction_end				= 15508;	//ï¿½ï¿½ï¿½Å¹ï¿½ï¿½è½»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_mgsindex_s2c_legion_Dance_clear_data					= 15509;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Í¼Ê±ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¾ï¿½ï¿½ï¿½Ï¢
 	
 	
 	e_mgsindex_s2c_legion_add_bonfire_end					= 15510;
@@ -1162,46 +1163,46 @@ enum proto_header
 	e_mgsindex_s2c_retroactive_all_days_end					= 15803;
 
 	//pk_king
-	e_mgsindex_s2c_send_player_check_kill_num				= 15900;	//·¢ËÍÍæ¼ÒÁ¬É±ÌáÊ¾
-	e_mgsindex_s2c_refresh_player_pk_king_info				= 15901;	//Ë¢ÐÂÍæ¼ÒÐÅÏ¢
-	e_mgsindex_s2c_refresh_pk_king_map_state				= 15902;	//Ë¢ÐÂµØÍ¼×´Ì¬
-	e_mgsindex_s2c_send_pk_king_rank_info					= 15903;	//·¢ËÍÓÎÏ·ÅÅÃûÁÐ±í
-	e_mgsindex_s2c_send_need_break_line_login				= 15904;	//ÊÇ·ñÐèÒªÖØÁ¬
-	e_mgsindex_c2s_send_need_break_line_login_end			= 15905;	//ÊÇ·ñ½øÐÐÖØÁ¬
-	e_mgsindex_s2c_send_create_pk_end_time					= 15906;	//·¢ËÍ´´½¨µ¹¼ÆÊ±ÏûÏ¢	//server_act_hid
-	e_mgsindex_s2c_send_pk_king_target_list_msg				= 15907;	//·¢ËÍÄ¿±êÁÐ±í	
+	e_mgsindex_s2c_send_player_check_kill_num				= 15900;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É±ï¿½ï¿½Ê¾
+	e_mgsindex_s2c_refresh_player_pk_king_info				= 15901;	//Ë¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+	e_mgsindex_s2c_refresh_pk_king_map_state				= 15902;	//Ë¢ï¿½Âµï¿½Í¼×´Ì¬
+	e_mgsindex_s2c_send_pk_king_rank_info					= 15903;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
+	e_mgsindex_s2c_send_need_break_line_login				= 15904;	//ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½
+	e_mgsindex_c2s_send_need_break_line_login_end			= 15905;	//ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_mgsindex_s2c_send_create_pk_end_time					= 15906;	//ï¿½ï¿½ï¿½Í´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ï¢	//server_act_hid
+	e_mgsindex_s2c_send_pk_king_target_list_msg				= 15907;	//ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Ð±ï¿½	
 	
-	e_mgsindex_s2c_send_server_act_is_open					= 16000;	//ÌØÊâÂß¼­
+	e_mgsindex_s2c_send_server_act_is_open					= 16000;	//ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½
 	
 	//ElementWar
-	e_mgsindex_s2c_element_war_send_upgrade_notify			= 16100;	//·¢ËÍ¶ÎÎ»ÌáÉýÌáÊ¾
-	e_mgsindex_c2s_element_war_send_sign_up					= 16101;	//·¢ËÍ¿ªÊ¼Æ¥Åä
-	e_mgsindex_s2c_element_war_send_sign_up_end				= 16102;	//Æ¥Åä½á¹û»Ø¸´
-	e_mgsindex_c2s_element_war_send_sign_up_team_ready		= 16103;	//·¢ËÍ×¼±¸Íê±Ï
-	e_mgsindex_s2c_element_war_send_sign_up_team_ready_end	= 16104;	//×¼±¸Íê³ÉÌáÊ¾
-	e_mgsindex_c2s_element_war_send_close_sign_up			= 16105;	//È¡ÏûÆ¥Åä
-	e_mgsindex_s2c_element_war_send_close_sign_up_end		= 16106;	//È¡ÏûÆ¥Åä½á¹û
-	e_mgsindex_s2c_element_war_send_role_info				= 16107;	//·¢ËÍ½ÇÉ«ÐÅÏ¢
-	e_msgindex_s2c_element_war_send_match_success			= 16108;	//·¢ËÍÆ¥Åä³É¹¦ÌáÊ¾
-	e_msgindex_s2c_element_war_send_map_info				= 16109;	//·¢ËÍµØÍ¼ÐÅÏ¢
-	e_msgindex_s2c_element_war_send_map_role_info			= 16110;	//·¢ËÍµØÍ¼¸öÈËÐÅÏ¢
-	e_msgindex_s2c_element_war_end_info						= 16111;	//·¢ËÍµØÍ¼±ÈÈü½á¹û
-	e_msgindex_s2c_element_war_send_boss_be_attack			= 16112;	//·¢ËÍboss±»¹¥»÷
-	e_mgsindex_c2s_element_war_get_mission_reward			= 16113;	//»ñÈ¡Ã¿ÈÕÈÎÎñ½±Àø
-	e_mgsindex_s2c_element_war_get_mission_reward_end		= 16114;	//»ñÈ¡½±Àø½á¹û
-	e_mgsindex_c2s_element_war_get_role_info				= 16115;	//»ñÈ¡¸öÈËÐÅÏ¢
-	e_mgsindex_c2s_element_war_buy_ticket					= 16116;	//¹ºÂò´ÎÊý
-	e_mgsindex_s2c_element_war_buy_ticket_end				= 16117;	//¹ºÂò´ÎÊý½á¹û
-	e_mgsindex_s2c_element_war_send_create_ready_ui			= 16118;	//·¢ËÍ´´½¨×¼±¸Ui
-	e_mgsindex_s2c_element_war_create_boss_dead				= 16119;	//´´½¨bossËÀÍöÌáÊ¾Ui
-	e_mgsindex_s2c_element_war_send_map_rank_info			= 16120;	//·¢ËÍµØÍ¼ÅÅÃûÐÅÏ¢
-	e_mgsindex_s2c_send_map_target_show_info				= 16121;	//·¢ËÍµØÍ¼±ê¼ÇÐÅÏ¢
-	e_mgsindex_c2s_get_map_target_show_info					= 16122;	//·¢ËÍµØÍ¼±ê¼ÇÐÅÏ¢
+	e_mgsindex_s2c_element_war_send_upgrade_notify			= 16100;	//ï¿½ï¿½ï¿½Í¶ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾
+	e_mgsindex_c2s_element_war_send_sign_up					= 16101;	//ï¿½ï¿½ï¿½Í¿ï¿½Ê¼Æ¥ï¿½ï¿½
+	e_mgsindex_s2c_element_war_send_sign_up_end				= 16102;	//Æ¥ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½
+	e_mgsindex_c2s_element_war_send_sign_up_team_ready		= 16103;	//ï¿½ï¿½ï¿½ï¿½×¼ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_mgsindex_s2c_element_war_send_sign_up_team_ready_end	= 16104;	//×¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾
+	e_mgsindex_c2s_element_war_send_close_sign_up			= 16105;	//È¡ï¿½ï¿½Æ¥ï¿½ï¿½
+	e_mgsindex_s2c_element_war_send_close_sign_up_end		= 16106;	//È¡ï¿½ï¿½Æ¥ï¿½ï¿½ï¿½ï¿½
+	e_mgsindex_s2c_element_war_send_role_info				= 16107;	//ï¿½ï¿½ï¿½Í½ï¿½É«ï¿½ï¿½Ï¢
+	e_msgindex_s2c_element_war_send_match_success			= 16108;	//ï¿½ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½É¹ï¿½ï¿½ï¿½Ê¾
+	e_msgindex_s2c_element_war_send_map_info				= 16109;	//ï¿½ï¿½ï¿½Íµï¿½Í¼ï¿½ï¿½Ï¢
+	e_msgindex_s2c_element_war_send_map_role_info			= 16110;	//ï¿½ï¿½ï¿½Íµï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+	e_msgindex_s2c_element_war_end_info						= 16111;	//ï¿½ï¿½ï¿½Íµï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_msgindex_s2c_element_war_send_boss_be_attack			= 16112;	//ï¿½ï¿½ï¿½ï¿½bossï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_mgsindex_c2s_element_war_get_mission_reward			= 16113;	//ï¿½ï¿½È¡Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_mgsindex_s2c_element_war_get_mission_reward_end		= 16114;	//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_mgsindex_c2s_element_war_get_role_info				= 16115;	//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+	e_mgsindex_c2s_element_war_buy_ticket					= 16116;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_mgsindex_s2c_element_war_buy_ticket_end				= 16117;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_mgsindex_s2c_element_war_send_create_ready_ui			= 16118;	//ï¿½ï¿½ï¿½Í´ï¿½ï¿½ï¿½×¼ï¿½ï¿½Ui
+	e_mgsindex_s2c_element_war_create_boss_dead				= 16119;	//ï¿½ï¿½ï¿½ï¿½bossï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾Ui
+	e_mgsindex_s2c_element_war_send_map_rank_info			= 16120;	//ï¿½ï¿½ï¿½Íµï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+	e_mgsindex_s2c_send_map_target_show_info				= 16121;	//ï¿½ï¿½ï¿½Íµï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+	e_mgsindex_c2s_get_map_target_show_info					= 16122;	//ï¿½ï¿½ï¿½Íµï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	
 	//skytreasure
-	e_msgindex_s2c_skytreasure_all							= 16200;	//Ìì¿Õ±¦¿â»ñµÃÎïÆ·ÐÅÏ¢
-	e_msgindex_c2s_skytreasure_operate						= 16201;	//·¢ËÍ±¦¿â²Ù×÷
-	e_msgindex_s2c_skytreasure_operate_end					= 16202;	//»ñÈ¡±¦¿â²Ù×÷½á¹û
+	e_msgindex_s2c_skytreasure_all							= 16200;	//ï¿½ï¿½Õ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ï¢
+	e_msgindex_c2s_skytreasure_operate						= 16201;	//ï¿½ï¿½ï¿½Í±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_msgindex_s2c_skytreasure_operate_end					= 16202;	//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 	//starark
 	e_msgindex_s2c_starark_all							    = 16203;	
@@ -1209,12 +1210,12 @@ enum proto_header
 	e_msgindex_s2c_starark_operate_end					    = 16205;	
 	
 	//legion_world_boss
-	e_msgindex_s2c_legion_strategy_world_boss_info			=16206;	//¾üÍÅÊÀ½çboss¹¥ÂÔÐÅÏ¢
-	e_msgindex_c2s_request_legion_strategy_world_boss_info		=16207;	//ÇëÇó¹¥ÂÔÊÀ½çbossÐÅÏ¢
-	e_msgindex_s2c_send_legion_strategy_world_boss_info		=16208;	//·¢ËÍÊÀ½çboss¹¥ÂÔÐÅÏ¢
-	e_msgindex_s2c_all_world_boss_info				=16209;	//¶ÔÓ¦½×¶ÎËùÓÐÊÀ½çbossÐÅÏ¢
-	e_msgindex_s2c_world_boss_strategy_result			=16210;	//¾üÍÅÊÀ½çboss¹¥ÂÔ½á¹û	
-	e_msgindex_c2s_request_world_boss_info				=16211;	//ÇëÇóÊÀ½çbossÐÅÏ¢
+	e_msgindex_s2c_legion_strategy_world_boss_info			=16206;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½bossï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+	e_msgindex_c2s_request_legion_strategy_world_boss_info		=16207;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½bossï¿½ï¿½Ï¢
+	e_msgindex_s2c_send_legion_strategy_world_boss_info		=16208;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½bossï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+	e_msgindex_s2c_all_world_boss_info				=16209;	//ï¿½ï¿½Ó¦ï¿½×¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½bossï¿½ï¿½Ï¢
+	e_msgindex_s2c_world_boss_strategy_result			=16210;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½bossï¿½ï¿½ï¿½Ô½ï¿½ï¿½	
+	e_msgindex_c2s_request_world_boss_info				=16211;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½bossï¿½ï¿½Ï¢
 	
 	e_msgindex_s2c_starark_five_round_rewad_list			= 16212;
 
@@ -1363,67 +1364,68 @@ enum proto_header
 	e_msg_ws2dp_refresh_role_time_limit_guid			= 35417;
 	
 	
-	e_msgindex_s2c_refresh_lucky_card_info				= 16300;	// Ë¢ÐÂ¸£ÅÆËùÓÐÐÅÏ¢
-	e_msgindex_s2c_refresh_lucky_card					= 16301;	// Ë¢ÐÂÖ¸¶¨ÅÆ
-	e_msgindex_c2s_lucky_card_operate					= 16302;	// ¿Í»§¶Ë·¢ËÍ²Ù×÷ÇëÇó
-	e_msgindex_s2c_lucky_card_operate_end				= 16303;	// ·þÎñÆ÷·µ»Ø²Ù×÷½á¹û
+	e_msgindex_s2c_refresh_lucky_card_info				= 16300;	// Ë¢ï¿½Â¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+	e_msgindex_s2c_refresh_lucky_card					= 16301;	// Ë¢ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½
+	e_msgindex_c2s_lucky_card_operate					= 16302;	// ï¿½Í»ï¿½ï¿½Ë·ï¿½ï¿½Í²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_msgindex_s2c_lucky_card_operate_end				= 16303;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 		
 	e_msgindex_s2c_send_new_server_treasure_finish		= 16400;
 	
-	e_msgindex_c2s_transfer_attack_city_map				= 16500;	// ´«ËÍµ½µØÍ¼
-	e_msgindex_s2c_send_attack_city_map_legion_info		= 16501;	// ·¢ËÍµØÍ¼¾üÍÅÐÅÏ¢
-	e_msgindex_c2s_get_attack_city_info					= 16502;	// »ñÈ¡»î¶¯ÐÅÏ¢
-	e_msgindex_c2s_get_attack_city_rank_list			= 16503;	// »ñÈ¡ÅÅÃû
-	e_msgindex_c2s_get_attack_city_map_rank_list		= 16504;	// »ñÈ¡ÅÅÃû
-	e_msgindex_c2s_attack_city_operate					= 16505;	// Íæ¼Ò½»»¥
-	e_msgindex_s2c_attack_city_operate_end				= 16506;	// ½»»¥½á¹û
-	e_msgindex_s2c_attack_city_npc_list					= 16507;	// npcÐÅÏ¢
-	e_msgindex_s2c_attack_city_camp_cut					= 16508;	// ×ª»»ÐÅÏ¢
-	e_msgindex_c2s_transfer_to_bron_pos					= 16509;	// ´«ËÍµ½¸´»îµã
-	e_msgindex_s2c_attack_city_legion_info				= 16510;	// ·¢ËÍ¾üÍÅ
-	e_msgindex_s2c_attack_city_end_info					= 16511;	// ·¢ËÍ½áÊøÐÅÏ¢
-	e_msgindex_s2c_attack_city_legion_rank_info			= 16512;	// ·¢ËÍ¾üÍÅÅÅÃûÐÅÏ¢
-	e_msgindex_s2c_attack_city_legion_map_end			= 16513;	// µØÍ¼½áËãÐÅÏ¢
-	e_msgindex_c2s_attack_legion_call					= 16514;	// ·¢ËÍ¾üÍÅÕÙ¼¯
-	e_msgindex_s2c_attack_transfer_info					= 16515;	// ´«ËÍ½áÊø
-	e_msgindex_c2s_end_attack_transfer_info				= 16516;	// ÖÐ¶Ï´«ËÍ
-	e_msgindex_s2c_attack_city_npc_state_change_info	= 16517;	// ·¢ËÍNPC×´Ì¬ÐÅÏ¢
+	e_msgindex_c2s_transfer_attack_city_map				= 16500;	// ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½Í¼
+	e_msgindex_s2c_send_attack_city_map_legion_info		= 16501;	// ï¿½ï¿½ï¿½Íµï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+	e_msgindex_c2s_get_attack_city_info					= 16502;	// ï¿½ï¿½È¡ï¿½î¶¯ï¿½ï¿½Ï¢
+	e_msgindex_c2s_get_attack_city_rank_list			= 16503;	// ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
+	e_msgindex_c2s_get_attack_city_map_rank_list		= 16504;	// ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
+	e_msgindex_c2s_attack_city_operate					= 16505;	// ï¿½ï¿½Ò½ï¿½ï¿½ï¿½
+	e_msgindex_s2c_attack_city_operate_end				= 16506;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_msgindex_s2c_attack_city_npc_list					= 16507;	// npcï¿½ï¿½Ï¢
+	e_msgindex_s2c_attack_city_camp_cut					= 16508;	// ×ªï¿½ï¿½ï¿½ï¿½Ï¢
+	e_msgindex_c2s_transfer_to_bron_pos					= 16509;	// ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_msgindex_s2c_attack_city_legion_info				= 16510;	// ï¿½ï¿½ï¿½Í¾ï¿½ï¿½ï¿½
+	e_msgindex_s2c_attack_city_end_info					= 16511;	// ï¿½ï¿½ï¿½Í½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+	e_msgindex_s2c_attack_city_legion_rank_info			= 16512;	// ï¿½ï¿½ï¿½Í¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+	e_msgindex_s2c_attack_city_legion_map_end			= 16513;	// ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+	e_msgindex_c2s_attack_legion_call					= 16514;	// ï¿½ï¿½ï¿½Í¾ï¿½ï¿½ï¿½ï¿½Ù¼ï¿½
+	e_msgindex_s2c_attack_transfer_info					= 16515;	// ï¿½ï¿½ï¿½Í½ï¿½ï¿½ï¿½
+	e_msgindex_c2s_end_attack_transfer_info				= 16516;	// ï¿½Ð¶Ï´ï¿½ï¿½ï¿½
+	e_msgindex_s2c_attack_city_npc_state_change_info	= 16517;	// ï¿½ï¿½ï¿½ï¿½NPC×´Ì¬ï¿½ï¿½Ï¢
 	
-	e_msgindex_c2s_time_feed_back_operation				= 16520;	// Ê±¹â»ØËÝ²Ù×÷
-	e_msgindex_s2c_time_feed_back_operation_end			= 16521;	// Ê±¹â»ØËÝ²Ù×÷½á¹û
-	e_msgindex_s2c_send_time_feed_back_info				= 16522;	// ·¢ËÍÊ±¹â»ØËÝÊý¾Ý
+	e_msgindex_c2s_time_feed_back_operation				= 16520;	// Ê±ï¿½ï¿½ï¿½ï¿½Ý²ï¿½ï¿½ï¿½
+	e_msgindex_s2c_time_feed_back_operation_end			= 16521;	// Ê±ï¿½ï¿½ï¿½ï¿½Ý²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_msgindex_s2c_send_time_feed_back_info				= 16522;	// ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
-	e_msgindex_c2s_time_limit_gift_operation			= 16530;	// ÏÞÊ±Àñ°ü²Ù×÷
-	e_msgindex_s2c_time_limit_gift_operation_end		= 16531;	// ÏÞÊ±Àñ°ü²Ù×÷½á¹û
-	e_msgindex_s2c_update_time_limit_gift				= 16532;	// ·¢ËÍÏÞÊ±Àñ°üÊý¾Ý
-	e_msgindex_s2c_initiative_time_limit_gift			= 16533;	// Ö÷¶¯´¥·¢Àñ°ü
+	e_msgindex_c2s_time_limit_gift_operation			= 16530;	// ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_msgindex_s2c_time_limit_gift_operation_end		= 16531;	// ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_msgindex_s2c_update_time_limit_gift				= 16532;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_msgindex_s2c_initiative_time_limit_gift			= 16533;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
-	e_msgindex_s2c_limit_time_notice_info_list			= 16540;	// ·¢ËÍÏÞÊ±¹«¸æÐÅÏ¢
+	e_msgindex_s2c_limit_time_notice_info_list			= 16540;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	
 	e_msgindex_c2s_send_subscribe_daily					= 16550;	
 	e_msgindex_s2c_send_subscribe_daily_end				= 16551;
 	e_msgindex_s2c_send_subscribe_daily_info			= 16552;
 	
-	e_msgindex_s2c_send_offline_award					= 16600;	// ·¢ËÍÀëÏß½±Àø
-	e_msgindex_c2s_get_offline_award					= 16601;	// »ñÈ¡ÀëÏß½±Àø
-	e_msgindex_c2s_get_online_award						= 16602;	// »ñÈ¡ÔÚÏß½±Àø
+	e_msgindex_s2c_send_offline_award					= 16600;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½ï¿½
+	e_msgindex_c2s_get_offline_award					= 16601;	// ï¿½ï¿½È¡ï¿½ï¿½ï¿½ß½ï¿½ï¿½ï¿½
+	e_msgindex_c2s_get_online_award						= 16602;	// ï¿½ï¿½È¡ï¿½ï¿½ï¿½ß½ï¿½ï¿½ï¿½
 	
 	
-	e_msgindex_c2s_map_search							= 16700;	// ·¢ËÍÌ½Ë÷µØÍ¼
-	e_msgindex_s2c_map_search_end						= 16701;	// »ñÈ¡Ì½Ë÷µØÍ¼½á¹û
-	e_msgindex_c2s_upgrade_search_level					= 16702;	// ·¢ËÍÉý¼¶Ì½Ë÷µÈ¼¶
-	e_msgindex_s2c_upgrade_search_level_end				= 16703;	// Éý¼¶Ì½Ë÷µÈ¼¶½á¹û
-	e_msgindex_c2s_get_npc_award						= 16704;	// ·¢ËÍ»ñÈ¡NPC½±Àø
-	e_msgindex_c2s_get_npc_award_end					= 16705;	// »ñÈ¡½±Àø½á¹û
-	e_msgindex_s2c_box_map_info							= 16706;	// ±¦Ïä»ñÈ¡ÊýÁ¿
-	e_msgindex_c2s_open_treasuer_pic					= 16707;	// ¿ªÆô²Ø±¦Í¼
-	e_msgindex_c2s_get_treasuer_award					= 16708;	// ·¢ËÍÑ¡Ôñ±¦²ØÑ¡Ïî
-	e_msgindex_s2c_map_settlement						= 16709;	// µØÍ¼½áËã
-	e_msgindex_c2s_map_anim_end							= 16710;	// ¶¯»­Íê±Ï¼ÓÔØÐÂµÄnpc
-	e_msgindex_c2s_refrush_award_npc					= 16711;	// ÖØË¢ËùÓÐµÄ½±ÀøNPC
-	e_msgindex_c2s_search_award_npc						= 16712;	// »ñÈ¡ÏÂÒ»¸ö½±ÀøNPC
-	e_msgindex_s2c_search_award_npc_end					= 16713;	// »ñÈ¡ÏÂÒ»¸ö½±ÀøNPC½á¹û
+	e_msgindex_c2s_map_search							= 16700;	// ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ï¿½ï¿½ï¿½Í¼
+	e_msgindex_s2c_map_search_end						= 16701;	// ï¿½ï¿½È¡Ì½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½
+	e_msgindex_c2s_upgrade_search_level					= 16702;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ï¿½ï¿½È¼ï¿½
+	e_msgindex_s2c_upgrade_search_level_end				= 16703;	// ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½
+	e_msgindex_c2s_get_npc_award						= 16704;	// ï¿½ï¿½ï¿½Í»ï¿½È¡NPCï¿½ï¿½ï¿½ï¿½
+	e_msgindex_c2s_get_npc_award_end					= 16705;	// ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	e_msgindex_s2c_box_map_info							= 16706;	// ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
+	e_msgindex_c2s_open_treasuer_pic					= 16707;	// ï¿½ï¿½ï¿½ï¿½ï¿½Ø±ï¿½Í¼
+	e_msgindex_c2s_get_treasuer_award					= 16708;	// ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ñ±¦²ï¿½Ñ¡ï¿½ï¿½
+	e_msgindex_s2c_map_settlement						= 16709;	// ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½
+	e_msgindex_c2s_map_anim_end							= 16710;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ï¿½Âµï¿½npc
+	e_msgindex_c2s_refrush_award_npc					= 16711;	// ï¿½ï¿½Ë¢ï¿½ï¿½ï¿½ÐµÄ½ï¿½ï¿½ï¿½NPC
+	e_msgindex_c2s_search_award_npc						= 16712;	// ï¿½ï¿½È¡ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½NPC
+	e_msgindex_s2c_search_award_npc_end					= 16713;	// ï¿½ï¿½È¡ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½NPCï¿½ï¿½ï¿½
 	
 
 }
+
