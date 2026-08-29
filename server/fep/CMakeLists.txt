@@ -84,7 +84,6 @@ target_link_libraries(fep PUBLIC
 	libcurl
 	zlib
 	lua
-	tolua++
 	libprotobuf
 	jsoncpp
 	spdlog
