@@ -166,7 +166,7 @@ namespace faith
 		new_session_ptr->set_client_uid();
 		new_session_ptr->refresh_heart_beat();
 		new_session_ptr->m_heart_login_time = utility::get_tick_count() + client_session_login_time;
-		new_session_ptr->set_data_use(true);
+		new_session_ptr->start_update_timer();
 		m_session_array[connindex] = new_session_ptr;
 		++m_session_array_num;
 		_RLOG_(MINFO, "client session allocated, connindex:" << connindex
@@ -219,7 +219,7 @@ namespace faith
 	{
 		auto client_session_ptr =
 			get_session_by_connect(connindex);
-		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false)
+		if (nullptr == client_session_ptr)
 		{
 			return false;
 		}
@@ -261,7 +261,7 @@ namespace faith
 				new_session_ptr->set_array_index(i + 1);
 				new_session_ptr->set_scheduler_thread_id(
 					net::scheduler::getInstance().get_current_thread_id());
-				new_session_ptr->set_data_use(true);
+				new_session_ptr->start_update_timer();
 				m_session_array[i] = new_session_ptr;
 				m_session_array_num++;
 				return new_session_ptr;
@@ -283,7 +283,7 @@ namespace faith
 	{
 		auto client_session_ptr =
 			get_session_by_id(array_index);
-		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false)
+		if (nullptr == client_session_ptr)
 		{
 			return nullptr;
 		}
@@ -392,7 +392,7 @@ namespace faith
 		{
 			auto client_session_ptr =
 				get_session_by_connect(i);
-			if (client_session_ptr && client_session_ptr->is_vaild())
+			if (client_session_ptr)
 			{
 				security_communication_layer::getInstance().send_to_session(
 					client_session_ptr->get_conn_index(), header, data_ptr, data_len);
@@ -405,7 +405,7 @@ namespace faith
 		{
 			auto client_session_ptr =
 				get_session_by_connect(i);
-			if (client_session_ptr && client_session_ptr->is_vaild())
+			if (client_session_ptr)
 			{
 				security_communication_layer::getInstance().send_to_session(
 					client_session_ptr->get_conn_index(), data_ptr, data_len);
@@ -439,14 +439,14 @@ namespace faith
 	{
 		auto client_session_ptr =
 			get_session_by_connect(conn_index);
-		return client_session_ptr != nullptr && client_session_ptr->is_vaild();
+		return client_session_ptr != nullptr;
 	}
 
 	client_session_ptr proxy_service_cli::get_session_by_fep_uid_64(ui64 uid)
 	{
 		auto client_session_ptr =
 			get_session_by_id(s_client_uid(uid).fepsession_uid);
-		if (client_session_ptr == nullptr || !client_session_ptr->is_vaild() || client_session_ptr->get_client_uid().fep_uid_64 != uid)
+		if (client_session_ptr == nullptr || client_session_ptr->get_client_uid().fep_uid_64 != uid)
 		{
 			return nullptr;
 		}

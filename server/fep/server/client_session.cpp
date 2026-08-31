@@ -39,23 +39,9 @@ namespace faith
 		clear_data();
 	}
 
-	void client_session::set_data_use(bool is_use)
-	{
-		if (!is_use && m_update_timer_index != net::scheduler::scheduler_invalid_timer_index)
-		{
-			net::scheduler::getInstance().remove_timer(m_update_timer_index);
-			m_update_timer_index = net::scheduler::scheduler_invalid_timer_index;
-		}
-		m_data_is_use = is_use;
-		if (m_data_is_use)
-		{
-			start_update_timer();
-		}
-	}
-
 	void client_session::start_update_timer()
 	{
-		if (!m_data_is_use || m_update_timer_index != net::scheduler::scheduler_invalid_timer_index)
+		if (m_update_timer_index != net::scheduler::scheduler_invalid_timer_index)
 		{
 			return;
 		}
@@ -67,10 +53,7 @@ namespace faith
 
 	void client_session::on_update_timer(uint32 timer_index)
 	{
-		if (m_data_is_use)
-		{
-			update(utility::get_tick_count());
-		}
+		update(utility::get_tick_count());
 	}
 
 	void client_session::clear_data()
@@ -80,7 +63,6 @@ namespace faith
 			net::scheduler::getInstance().remove_timer(m_update_timer_index);
 			m_update_timer_index = net::scheduler::scheduler_invalid_timer_index;
 		}
-		m_data_is_use = false;
 		memset(m_account, 0, sizeof(m_account));
 		memset(m_server_msg, 0, sizeof(m_server_msg));
 		memset(m_ipaddr, 0, sizeof(m_ipaddr));
@@ -127,7 +109,6 @@ namespace faith
 			_RLOG_(MINFO, "client_session update, connindex:" << m_conn_index
 				<< " arrayindex:" << m_array_index
 				<< " scheduler thread:" << m_scheduler_thread_id
-				<< " valid:" << m_data_is_use
 				<< " logout:" << m_is_logout
 				<< " account:" << m_account
 				<< " msg count:" << m_client_send_msg_count

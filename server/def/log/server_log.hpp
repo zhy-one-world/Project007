@@ -15,15 +15,78 @@
 
 #include "Logic/login_def.hpp"
 #include "Logic/item_def.hpp"
-#include "logger_base.hpp"
+#include <common/rlog.hpp>
 #include "Logic/ranking_def.hpp"
 #include "Logic/auction_def.h"
 #include "Logic/gain_treasure_def.hpp"
 #include "game_cfg/servers_config.h"
+#include <sstream>
+#include <string>
+#include <utility>
 
 
 namespace faith
 {
+	namespace log_detail
+	{
+		inline void format_message(
+			std::ostringstream& output,
+			const std::string& format,
+			std::size_t& offset)
+		{
+			output << format.substr(offset);
+		}
+
+		template <typename T, typename... Args>
+		void format_message(
+			std::ostringstream& output,
+			const std::string& format,
+			std::size_t& offset,
+			T&& value,
+			Args&&... args)
+		{
+			const std::size_t marker = format.find("{}", offset);
+			if (marker == std::string::npos)
+			{
+				output << format.substr(offset) << ' ' << std::forward<T>(value);
+				((output << ' ' << std::forward<Args>(args)), ...);
+				offset = format.size();
+				return;
+			}
+
+			output << format.substr(offset, marker - offset);
+			output << std::forward<T>(value);
+			offset = marker + 2;
+			format_message(output, format, offset, std::forward<Args>(args)...);
+		}
+
+		template <typename... Args>
+		std::string format_message(const char* format, Args&&... args)
+		{
+			std::ostringstream output;
+			std::size_t offset = 0;
+			format_message(output, std::string(format), offset,
+				std::forward<Args>(args)...);
+			return output.str();
+		}
+
+		inline void write(::faith::rlog::level level, const std::string& message)
+		{
+			::faith::rlog::write(level, message);
+		}
+
+		template <typename... Args>
+		void write(
+			::faith::rlog::level level,
+			const char* format,
+			Args&&... args)
+		{
+			::faith::rlog::write(
+				level,
+				format_message(format, std::forward<Args>(args)...));
+		}
+	}
+
 #define set_log_var(head)  s_log_common_head head;  
 
 #define set_log_common_head_part1(head, game_id, channel_id, media_id, device_id) \
@@ -114,7 +177,6 @@ namespace faith
 		typedef boost::function<void(const void*, size_t, int32)>	sender_handler_type;
 	public:
 		static sender_handler_type	log_db_sender_handler;
-		static logger_base& get_game_log();
 	public:
 		static void init_new_log(int32 server_id, xstring process_name);
 
@@ -327,10 +389,14 @@ namespace faith
 		static void serverEarlyWarning(s_log_common_head &lg_common_head, int32 onlineTime);
 		
 	};
-#define PROJECT_RECORD_LOG(OBJ, MSG, ...)			PROJECT_RECORD_LOG_PRIVATE(OBJ, MSG, __VA_ARGS__)
-#define SERVER_RUNING_LOG(MSG, ...)					SERVER_RUNING_LOG_PRIVATE(server_log::get_game_log(), MSG, __VA_ARGS__)
-#define CONSOLE_INFO(MSG, ...)						{console_info("{}({})|| "##MSG, __FUNCTION__, __LINE__, __VA_ARGS__); SERVER_RUNING_LOG(MSG, __VA_ARGS__)}
-#define CONSOLE_ERROR(MSG, ...)						{console_error("{}({})|| "##MSG, __FUNCTION__, __LINE__, __VA_ARGS__); SERVER_RUNING_LOG(MSG, __VA_ARGS__)}
+#define PROJECT_RECORD_LOG(OBJ, MSG, ...) \
+	{ ::faith::log_detail::write(::faith::rlog::MINFO, MSG, __VA_ARGS__); }
+#define SERVER_RUNING_LOG(MSG, ...) \
+	{ ::faith::log_detail::write(::faith::rlog::MINFO, MSG, __VA_ARGS__); }
+#define CONSOLE_INFO(MSG, ...) \
+	{ ::faith::log_detail::write(::faith::rlog::MINFO, "{}({})|| " MSG, __FUNCTION__, __LINE__, __VA_ARGS__); }
+#define CONSOLE_ERROR(MSG, ...) \
+	{ ::faith::log_detail::write(::faith::rlog::MERROR, "{}({})|| " MSG, __FUNCTION__, __LINE__, __VA_ARGS__); }
 }
 
 #endif // _SERVER_LOG_HPP_

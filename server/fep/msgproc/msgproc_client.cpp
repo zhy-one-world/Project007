@@ -38,7 +38,13 @@ namespace faith
 		game_proto_fep2client_ping server_ping;
 		server_ping.set_client_time(client_time);
 		server_ping.set_server_time(utility::get_tick_count());
-		security_communication_layer::getInstance().send_to_session(client_session_ptr->get_conn_index(), &server_ping, e_msgindex_fep2c_ping);
+		security_communication_layer::getInstance().send_to_session(
+			client_session_ptr->get_conn_index(),
+			&server_ping,
+			e_msgindex_fep2c_ping);
+		_RLOG_(MINFO, "fep ping response sent, connindex:"
+			<< client_session_ptr->get_conn_index()
+			<< " client_time:" << client_time);
 	}
 
 	void c2fep_ping(uint32 array_index,const void *data_ptr,size_t data_len)
@@ -46,18 +52,22 @@ namespace faith
 		game_proto_client2fep_ping ping_msg;
 		parse_msg::getInstance().parse_message_new(&ping_msg, data_ptr, data_len);
 		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(array_index);
-		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false)
+		if (nullptr == client_session_ptr)
 		{
 			return;
 		}
 		
+		_RLOG_(MINFO, "fep ping received, connindex:"
+			<< client_session_ptr->get_conn_index()
+			<< " arrayindex:" << array_index
+			<< " client_time:" << ping_msg.client_time());
 		client_session_ptr->refresh_heart_beat();
 		fep2c_ping(client_session_ptr.get(), ping_msg.client_time());
 	}
 	void c2ls_req_login_reconnect(uint32 array_index, const void *data_ptr, size_t data_len)
 	{
 		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(array_index);
-		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false)
+		if (nullptr == client_session_ptr)
 		{
 			string str = "get_session error or session is vaild, id: ";
 			str += to_string(array_index);
@@ -67,7 +77,7 @@ namespace faith
 		login_proto_login_reconnect login_reconnect;
 		parse_msg::getInstance().parse_message_new(&login_reconnect, data_ptr, data_len);
 		int32 size_account = login_reconnect.account().size();
-		// 验证登陆使用的账户名和密码
+		// ?????????????????????
 		if (size_account == 0 || size_account > max_account_length)
 		{
 			client_session_ptr->response_login(e_error_code_login_invalid_reconnect_account);
@@ -92,7 +102,7 @@ namespace faith
 	void c2ls_req_login(uint32 array_index, const void *data_ptr, size_t data_len)
 	{
 		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(array_index);
-		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false)
+		if (nullptr == client_session_ptr)
 		{
 			_RLOG_(MERROR, "c2ls_req_login client_session_ptr is null array_index:"
 				<< array_index << " data_len:" << data_len);
@@ -116,7 +126,7 @@ namespace faith
 		{
 			int32 size_account = login.logic_account().size();
 			int32 size_password = login.password().size();
-			// 验证登陆使用的账户名和密码
+			// ?????????????????????
 			if (size_account < min_account_length 
 				|| size_account > max_account_length 
 				|| size_password < min_account_length 
@@ -184,7 +194,7 @@ namespace faith
 	void c2ws_token_login(uint32 array_index, const void *data_ptr, size_t data_len)
 	{
 		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(array_index);
-		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false)
+		if (nullptr == client_session_ptr)
 		{
 			return;
 		}
@@ -217,7 +227,7 @@ namespace faith
 	void c2fep_logout(uint32 array_index, const void *data_ptr, size_t data_len)
 	{
 		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(array_index);
-		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false)
+		if (nullptr == client_session_ptr)
 		{
 			return;
 		}
@@ -229,7 +239,7 @@ namespace faith
 		character_proto_enum_character enum_info;
 		parse_msg::getInstance().parse_message_new(&enum_info, data_ptr, data_len);
 		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(array_index);
-		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false)
+		if (nullptr == client_session_ptr)
 		{
 			return;
 		}
@@ -246,7 +256,7 @@ namespace faith
 		game_proto_enter_game select_info;
 		parse_msg::getInstance().parse_message_new(&select_info, data_ptr, data_len);
 		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(array_index);
-		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false)
+		if (nullptr == client_session_ptr)
 		{
 			return;
 		}
@@ -264,7 +274,7 @@ namespace faith
 		character_proto_create_character create_info;
 		parse_msg::getInstance().parse_message_new(&create_info, data_ptr, data_len);
 		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(array_index);
-		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false)
+		if (nullptr == client_session_ptr)
 		{
 			return;
 		}
@@ -283,7 +293,7 @@ namespace faith
 		character_proto_delete_character del_info;
 		parse_msg::getInstance().parse_message_new(&del_info, data_ptr, data_len);
 		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(array_index);
-		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false)
+		if (nullptr == client_session_ptr)
 		{
 			return;
 		}

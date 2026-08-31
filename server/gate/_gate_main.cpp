@@ -38,7 +38,6 @@
 //
 //////////////////////////////////////////////////////////////////////////
 //	global logger obj.
-//faith::logger	server_log::get_game_log()(_XTEXT("gait"));
 
 namespace faith
 {

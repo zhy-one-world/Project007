@@ -24,7 +24,6 @@ namespace faith
 		//	get_memory_usage(&mem, &vmem);
 		//	double cpu_use = get_cpu_usage();
 		//	get_io_bytes(&read_bytes, &write_bytes);
-		//	PROJECT_RECORD_LOG(server_log::get_game_log(),
 		//		server_name
 		//		<< _XTEXT(" memory =") << mem
 		//		<< _XTEXT(" vmemory =") << vmem

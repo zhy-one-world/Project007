@@ -26,7 +26,7 @@ namespace faith
 		for (int32 i = 0; i < pdata->data_num; ++i)
 		{
 			auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(pdata->client_uid[i].fepsession_uid);
-			if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false || client_session_ptr->get_client_uid() != pdata->client_uid[i])
+			if (nullptr == client_session_ptr || client_session_ptr->get_client_uid() != pdata->client_uid[i])
 			{
 				continue;
 			}

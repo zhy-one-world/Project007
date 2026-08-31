@@ -31,8 +31,6 @@ namespace faith
 		void update(const int64& new_time);
 		void start_update_timer();
 	public:
-		bool&				is_vaild() { return m_data_is_use; }
-		void				set_data_use(bool is_use);
 		bool&				get_is_logout() { return m_is_logout; }
 		void				set_is_logout(bool is_logout) { m_is_logout = is_logout; }
 		void				set_conn_index(uint32 conn_index) { m_conn_index = conn_index; }
@@ -104,7 +102,6 @@ namespace faith
 		int32				m_client_send_msg_count;            //????????????
 		bool				m_is_send_login_success;			//???????????????????
 	private:
-		bool				m_data_is_use;
 		bool				m_is_logout;
 		ui8					m_msg_index;
 		uint32				m_conn_index;

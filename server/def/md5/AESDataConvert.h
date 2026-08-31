@@ -15,7 +15,7 @@ namespace faith {
 		AESDataConvert() {};
 		static void InitSecretKey(const xstring secretkey) { 
 			g_key = secretkey; 
-			console_info("AESDataConvert::InitSecretKey secretkey: {}", secretkey);
+			_RLOG_(MINFO, "AESDataConvert::InitSecretKey secretkey: " << secretkey);
 		}
 		//static xstring EncryptionAES(const xstring& strSrc);
 		static xstring DecryptionAES(const xstring& strSrc);

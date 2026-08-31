@@ -10,7 +10,6 @@
 #include "db_log_type_def.hpp"
 #include "game_cfg/servers_config.h"
 #include "internal/server_log_msg.hpp"
-#include "log_file_mgr.h"
 #include "Logic/auction_def.h"
 #include "login_def.hpp"
 #include "server_log.hpp"
@@ -23,7 +22,6 @@
 namespace faith
 {
 	server_log::sender_handler_type server_log::log_db_sender_handler = NULL;
-	logger_base g_game_logger;
 #define SHOW_SERVER_LOG
 	std::string server_log_get_game_server_id(int32 server_template_id)
 	{
@@ -163,66 +161,11 @@ namespace faith
 	{
 		return source;
 	}
-	logger_base& server_log::get_game_log()
+	void server_log::init_new_log(int32, xstring process_name)
 	{
-		return g_game_logger;
-	}
-
-	void server_log::init_new_log(int32 server_id, xstring process_name)
-	{
-		g_game_logger.server_runing_log(process_name);
-
-		log_file_mgr::getInstance().init_server_id(server_id);
-		log_file_mgr::getInstance().register_logger("serverAccountCreate");
-		log_file_mgr::getInstance().register_logger("serverRoleLogin");
-		log_file_mgr::getInstance().register_logger("serverRoleCreate");
-		log_file_mgr::getInstance().register_logger("serverRoleUpgrade");
-		log_file_mgr::getInstance().register_logger("serverVipUpgrade");
-		log_file_mgr::getInstance().register_logger("serverNewbie");
-		log_file_mgr::getInstance().register_logger("serverTask");
-		log_file_mgr::getInstance().register_logger("serverDungeon");
-		log_file_mgr::getInstance().register_logger("serverCurrencyChange");
-		log_file_mgr::getInstance().register_logger("serverPropChange");
-		log_file_mgr::getInstance().register_logger("serverPropUpgrade");
-		log_file_mgr::getInstance().register_logger("serverRechargeStep");
-		log_file_mgr::getInstance().register_logger("serverPlayerCount");
-		log_file_mgr::getInstance().register_logger("serverRechargeSuccess");
-		log_file_mgr::getInstance().register_logger("serverLuckyDraw");
-		log_file_mgr::getInstance().register_logger("serverAuction");
-		log_file_mgr::getInstance().register_logger("serverChat");
-		log_file_mgr::getInstance().register_logger("serverBuyGoods");
-		log_file_mgr::getInstance().register_logger("serverGetMailContent");
-		log_file_mgr::getInstance().register_logger("serverGrowthFund");
-		log_file_mgr::getInstance().register_logger("serverCrossServerHarry");
-
-
-		log_file_mgr::getInstance().register_logger("serverCrossServerBossKill");
-		log_file_mgr::getInstance().register_logger("serverOccupationPk");
-		log_file_mgr::getInstance().register_logger("serverBossKillDrop");
-		log_file_mgr::getInstance().register_logger("serverBossKill");
-		log_file_mgr::getInstance().register_logger("serverMapChange");
-		log_file_mgr::getInstance().register_logger("serverTimeLimitActivity");
-
-		log_file_mgr::getInstance().register_logger("serverRoleMallLog");
-		log_file_mgr::getInstance().register_logger("serverLegionLog");
-
-		log_file_mgr::getInstance().register_logger("serverLegionWelfareGrantNumLog");
-		log_file_mgr::getInstance().register_logger("serverLegionActivrNumLog");
-
-		log_file_mgr::getInstance().register_logger("serverRankListLog");
-		log_file_mgr::getInstance().register_logger("serverAssistantLog");
-		log_file_mgr::getInstance().register_logger("serverTreasureLog");
-		log_file_mgr::getInstance().register_logger("serverBeatBoss");
-		log_file_mgr::getInstance().register_logger("serverManorLog");
-		log_file_mgr::getInstance().register_logger("serverCrystalLog");
-		log_file_mgr::getInstance().register_logger("serverLadderLog");
-		log_file_mgr::getInstance().register_logger("serverPkKingLog");
-		log_file_mgr::getInstance().register_logger("serverGodnessStar");
-		log_file_mgr::getInstance().register_logger("serverEarlyWarning");
-
-
-		log_file_mgr::getInstance().init_file_path();
-
+		rlog::options options;
+		options.basename = process_name;
+		rlog::init(options);
 	}
 
 	void	server_log::init_log_db_sender(server_log::sender_handler_type handler)
@@ -5091,7 +5034,7 @@ namespace faith
 		xstring str_json =writer.write_no_enter(json);
 
 		//PROJECT_RECORD_LOG(g_serverAccountCreate, str_json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverAccountCreate"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 	}
 
 	void server_log::serverRoleLogin(s_log_common_head &lg_common_head)
@@ -5122,7 +5065,7 @@ namespace faith
 		xstring str_json =writer.write_no_enter(json);
 
 		//PROJECT_RECORD_LOG(g_serverRoleLogin, str_json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverRoleLogin"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 	}
 
@@ -5154,7 +5097,7 @@ namespace faith
 		xstring str_json =writer.write_no_enter(json);
 
 		//PROJECT_RECORD_LOG(g_serverRoleCreate, str_json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverRoleCreate"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 	}
 
@@ -5172,7 +5115,7 @@ namespace faith
 		xstring str_json =writer.write_no_enter(json);
 
 		//PROJECT_RECORD_LOG(g_serverRoleUpgrade, str_json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverRoleUpgrade"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 	}
 	void server_log::serverVipUpgrade(s_log_common_head &lg_common_head, int32 vipLevel, int32 spendSecond)
 	{
@@ -5188,7 +5131,7 @@ namespace faith
 		xstring str_json =writer.write_no_enter(json);
 
 		//PROJECT_RECORD_LOG(g_serverVipUpgrade, str_json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverVipUpgrade"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 	}
 	void server_log::serverNewbie(s_log_common_head &lg_common_head, xstring step)
@@ -5203,7 +5146,7 @@ namespace faith
 		xstring str_json =writer.write_no_enter(json);
 
 		//PROJECT_RECORD_LOG(g_serverNewbie, str_json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverNewbie"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 	}
 	void server_log::serverTask(s_log_common_head &lg_common_head, xstring taskId, xstring taskType, int32 taskStatus, int32 spendSecond)
 	{
@@ -5220,7 +5163,7 @@ namespace faith
 		xstring str_json =writer.write_no_enter(json);
 
 		//PROJECT_RECORD_LOG(g_serverTask, str_json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverTask"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 
 
@@ -5245,7 +5188,7 @@ namespace faith
 		xstring str_json =writer.write_no_enter(json);
 
 		//PROJECT_RECORD_LOG(g_serverDungeon, str_json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverDungeon"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 	}
 
 	void server_log::serverCurrencyChange(s_log_common_head &lg_common_head, xstring currencyId, int32 changeType, int32 recharge, int32 changeDescribe, int32 changeCount, int32 residueCount, int32 changeLocation)
@@ -5267,7 +5210,7 @@ namespace faith
 		xstring str_json =writer.write_no_enter(json);
 
 		//PROJECT_RECORD_LOG(g_serverCurrencyChange, str_json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverCurrencyChange"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 
 	}
@@ -5290,7 +5233,7 @@ namespace faith
 		xstring str_json =writer.write_no_enter(json);
 
 		//PROJECT_RECORD_LOG(g_serverPropChange, str_json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverPropChange"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 	}
 
 	void server_log::serverPropUpgrade(s_log_common_head &lg_common_head, xstring propId, int32 changeType, xstring propQuality, xstring propStart, xstring propLevel)
@@ -5309,7 +5252,7 @@ namespace faith
 		xstring str_json =writer.write_no_enter(json);
 
 		//PROJECT_RECORD_LOG(g_serverPropUpgrade, str_json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverPropUpgrade"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 
 	}
@@ -5327,7 +5270,7 @@ namespace faith
 		xstring str_json =writer.write_no_enter(json);
 
 		//PROJECT_RECORD_LOG(g_serverRechargeStep, str_json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverRechargeStep"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 	}
 
 	void server_log::serverPlayerCount(s_log_common_head &lg_common_head, int32 playerCount)
@@ -5341,7 +5284,7 @@ namespace faith
 
 		xstring str_json =writer.write_no_enter(json);
 
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverPlayerCount"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 	}
 
@@ -5373,7 +5316,7 @@ namespace faith
 		xstring str_json =writer.write_no_enter(json);
 
 		//PROJECT_RECORD_LOG(g_serverRechargeSuccess, str_json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverRechargeSuccess"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 		
 
 
@@ -5399,7 +5342,7 @@ namespace faith
 		xstring str_json =writer.write_no_enter(json);
 
 		//PROJECT_RECORD_LOG(g_serverLuckyDraw, str_json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverLuckyDraw"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 	}
 
@@ -5434,7 +5377,7 @@ namespace faith
 
 		//PROJECT_RECORD_LOG(g_serverAuction, str_json);
 
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverAuction"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 
 
@@ -5455,7 +5398,7 @@ namespace faith
 
 		//PROJECT_RECORD_LOG(g_serverChat, str_json);
 
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverChat"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 		
 
 	}
@@ -5480,7 +5423,7 @@ namespace faith
 		xstring str_json =writer.write_no_enter(json);
 
 		//PROJECT_RECORD_LOG(g_serverBuyGoods, str_json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverBuyGoods"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 	}
 
@@ -5523,7 +5466,7 @@ namespace faith
 
 
 		//PROJECT_RECORD_LOG(g_serverGetMailContent, str_json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverGetMailContent"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 	}
 
@@ -5541,7 +5484,7 @@ namespace faith
 		xstring str_json =writer.write_no_enter(json);
 
 		//PROJECT_RECORD_LOG(g_serverGrowthFund, str_json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverGrowthFund"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 	}
 
@@ -5560,7 +5503,7 @@ namespace faith
 		xstring str_json =writer.write_no_enter(json);
 
 		//PROJECT_RECORD_LOG(g_serverCrossServerHarry, str_json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverCrossServerHarry"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 	}
 
@@ -5582,7 +5525,7 @@ namespace faith
 		json["top3Name"] = top3Name;
 
 		xstring str_json =writer.write_no_enter(json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverCrossServerBossKill"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 	}
 
@@ -5613,7 +5556,7 @@ namespace faith
 		}
 
 		xstring str_json =writer.write_no_enter(json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverOccupationPk"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 	}
 
@@ -5640,7 +5583,7 @@ namespace faith
 			json[item_num_key] = num;
 		}
 		xstring str_json =writer.write_no_enter(json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverBossKillDrop"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 	}
 
 
@@ -5660,7 +5603,7 @@ namespace faith
 
 
 		xstring str_json =writer.write_no_enter(json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverBossKill"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 
 
@@ -5682,7 +5625,7 @@ namespace faith
 
 
 		xstring str_json =writer.write_no_enter(json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverMapChange"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 	}
 
@@ -5700,7 +5643,7 @@ namespace faith
 
 
 		xstring str_json =writer.write_no_enter(json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverTimeLimitActivity"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 	}
 
@@ -5722,7 +5665,7 @@ namespace faith
 		json["soldNumAmount"] = soldNumAmount;
 
 		xstring str_json =writer.write_no_enter(json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverRoleMallLog"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 	}
 
 	void server_log::serverLegionLog(s_log_common_head &lg_common_head, xstring legionName, int32 legionLevel, int64  legionPower, int32 legionNum)
@@ -5737,7 +5680,7 @@ namespace faith
 		json["legionNum"] = legionNum;
 
 		xstring str_json =writer.write_no_enter(json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverLegionLog"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 	}
 
@@ -5766,7 +5709,7 @@ namespace faith
 		json["legionActiveNum"] = activeNum;
 
 		xstring str_json = writer.write_no_enter(json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverLegionWelfareGrantNumLog"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 		xstring cur_time = time_helper::get_cur_time();
 		Json::Value db_json;
@@ -5791,7 +5734,7 @@ namespace faith
 		json["legionActiveNum"] = activeNum;
 
 		xstring str_json = writer.write_no_enter(json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverLegionActivrNumLog"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 		xstring cur_time = time_helper::get_cur_time();
 
@@ -5814,7 +5757,7 @@ namespace faith
 		json["mapType"] = mapType;
 
 		xstring str_json = writer.write_no_enter(json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverAssistantLog"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 	
 	}
 
@@ -5840,7 +5783,7 @@ namespace faith
 		json["rankingIndex"] = rank_index;
 
 		xstring str_db_log = writer.write_no_enter(json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverRankListLog"), str_db_log);
+		PROJECT_RECORD_LOG("", str_db_log);
 	}
 
 	void server_log::serverTreasureLog(s_log_common_head & lg_common_head, int32 type, int32 bossId, int32 num)
@@ -5854,7 +5797,7 @@ namespace faith
 		json["num"] = num;
 
 		xstring str_json = writer.write_no_enter(json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverTreasureLog"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 	}
 
 	void server_log::serverBeatBoss(s_log_common_head & lg_common_head, int32 activeType, int32 type, int32 bossId)
@@ -5868,7 +5811,7 @@ namespace faith
 		json["bossId"] = bossId;
 
 		xstring str_json = writer.write_no_enter(json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverBeatBoss"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 	}
 
 	void server_log::serverManorLog(s_log_common_head & lg_common_head, int32 activeType, int32 type)
@@ -5880,7 +5823,7 @@ namespace faith
 		json["activeType"] = activeType;
 		json["type"] = type;
 		xstring str_json = writer.write_no_enter(json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverManorLog"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 	}
 
 	void server_log::serverCrystalLog(s_log_common_head & lg_common_head, int32 type)
@@ -5892,7 +5835,7 @@ namespace faith
 		json["type"] = type;
 		
 		xstring str_json = writer.write_no_enter(json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverCrystalLog"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 	}
 
 	void server_log::serverLadderLog(s_log_common_head & lg_common_head, int32 type)
@@ -5904,7 +5847,7 @@ namespace faith
 		json["type"] = type;
 
 		xstring str_json = writer.write_no_enter(json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverLadderLog"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 	}
 
 	void server_log::serverPkKingLog(s_log_common_head & lg_common_head, int32 type)
@@ -5916,7 +5859,7 @@ namespace faith
 		json["type"] = type;
 
 		xstring str_json = writer.write_no_enter(json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverPkKingLog"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 	}
 
 	void server_log::serverGodnessStar(s_log_common_head &lg_common_head, int32 level)
@@ -5927,7 +5870,7 @@ namespace faith
 		json["logName"] = "serverGodnessStar";
 		json["level"] = level;
 		xstring str_json = writer.write_no_enter(json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverGodnessStar"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 
 	}
 
@@ -5939,7 +5882,7 @@ namespace faith
 		json["logName"] = "serverEarlyWarning";
 		json["onlineTime"] = onlineTime;
 		xstring str_json = writer.write_no_enter(json);
-		PROJECT_RECORD_LOG(log_file_mgr::getInstance().get_logger_by_name("serverEarlyWarning"), str_json);
+		PROJECT_RECORD_LOG("", str_json);
 	}
 
 

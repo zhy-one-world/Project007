@@ -9,7 +9,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_COMPONENT_DIR}/../../../server_ship
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
 
 add_definitions(-DBOOST_BIND_GLOBAL_PLACEHOLDERS)
-add_definitions(-DSPDLOG_USE_STD_FORMAT)
 #add_definitions(-DTRACY_ENABLE)
 add_definitions(-D_WIN32_WINNT=0x0601)
 
