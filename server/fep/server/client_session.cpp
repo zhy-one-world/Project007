@@ -8,6 +8,8 @@
 	purpose:	
 *********************************************************************/
 #include <time.hpp>
+#include <boost/bind.hpp>
+#include <net/scheduler.hpp>
 #include <net/tcp_client.hpp>
 #include <login_msg.hpp>
 #include "client_session.hpp"
@@ -25,6 +27,7 @@
 namespace faith
 {
 	client_session::client_session()
+		: m_update_timer_index(net::scheduler::scheduler_invalid_timer_index)
 	{
 		m_array_index = 0;
 		clear_data();
@@ -34,8 +37,47 @@ namespace faith
 	{
 	}
 
+	void client_session::set_data_use(bool is_use)
+	{
+		if (!is_use && m_update_timer_index != net::scheduler::scheduler_invalid_timer_index)
+		{
+			net::scheduler::getInstance().remove_timer(m_update_timer_index);
+			m_update_timer_index = net::scheduler::scheduler_invalid_timer_index;
+		}
+		m_data_is_use = is_use;
+		if (m_data_is_use)
+		{
+			start_update_timer();
+		}
+	}
+
+	void client_session::start_update_timer()
+	{
+		if (!m_data_is_use || m_update_timer_index != net::scheduler::scheduler_invalid_timer_index)
+		{
+			return;
+		}
+		m_update_timer_index = net::scheduler::getInstance().add_timer(
+			500,
+			m_scheduler_thread_id,
+			boost::bind(&client_session::on_update_timer, this, _1));
+	}
+
+	void client_session::on_update_timer(uint32 timer_index)
+	{
+		if (m_data_is_use)
+		{
+			update(utility::get_tick_count());
+		}
+	}
+
 	void client_session::clear_data()
 	{
+		if (m_update_timer_index != net::scheduler::scheduler_invalid_timer_index)
+		{
+			net::scheduler::getInstance().remove_timer(m_update_timer_index);
+			m_update_timer_index = net::scheduler::scheduler_invalid_timer_index;
+		}
 		m_data_is_use = false;
 		memset(m_account, 0, sizeof(m_account));
 		memset(m_server_msg, 0, sizeof(m_server_msg));
@@ -50,6 +92,7 @@ namespace faith
 		m_conn_index = 0;
 		m_cs_conn_index = e_invalid_server_uid;
 		m_cs_array_index = 0;
+		m_scheduler_thread_id = 0;
 		m_client_uid.clear_data();
 		m_is_send_login_success = false;
 

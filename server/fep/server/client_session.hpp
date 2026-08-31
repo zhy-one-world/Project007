@@ -28,13 +28,16 @@ namespace faith
 		~client_session();	
 		void clear_data();
 		void update(const int64& new_time);
+		void start_update_timer();
 	public:
 		bool&				is_vaild() { return m_data_is_use; }
-		void				set_data_use(bool is_use) { m_data_is_use = is_use; }
+		void				set_data_use(bool is_use);
 		bool&				get_is_logout() { return m_is_logout; }
 		void				set_is_logout(bool is_logout) { m_is_logout = is_logout; }
 		void				set_conn_index(uint32 conn_index) { m_conn_index = conn_index; }
 		uint32				get_conn_index() { return m_conn_index; }
+		void				set_scheduler_thread_id(uint32 thread_id) { m_scheduler_thread_id = thread_id; }
+		uint32				get_scheduler_thread_id() { return m_scheduler_thread_id; }
 
 		void				set_array_index(uint32 array_index);
 		uint32				get_array_index() { return m_array_index; }
@@ -105,6 +108,7 @@ namespace faith
 		ui8					m_msg_index;
 		uint32				m_conn_index;
 		uint32				m_array_index;
+		uint32				m_scheduler_thread_id;
 		uint32				m_cs_conn_index;							//The cell server uid that the client session use
 		int32				m_cs_array_index;					//cs unit_man player array index;
 		s_client_uid		m_client_uid;
@@ -124,6 +128,10 @@ namespace faith
 		int32				m_month_recharge_time;
 
 		int64				m_online_tick;	//	Âıtick 1·ÖÖÓ Ò»´Î
+		uint32				m_update_timer_index;
+
+	private:
+		void				on_update_timer(uint32 timer_index);
 	};
 
 }

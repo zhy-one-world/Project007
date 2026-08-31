@@ -14,7 +14,7 @@ namespace faith
 	private:
 		app_server();
 	public:
-		void					run(init_handler_type init_handler,release_handler_type uninit_handler);
+		void					run(init_handler_type init_handler,release_handler_type uninit_handler, bool main_thread_dispatch = false);
 		void					stop();
 	private:
 		void					call_init_handler();
@@ -22,6 +22,7 @@ namespace faith
 	private:
 		bool					m_stopping;
 		bool					m_running;
+		bool					m_main_thread_dispatch;
 		init_handler_type		m_init_handler;
 		release_handler_type	m_release_handler;
 	};

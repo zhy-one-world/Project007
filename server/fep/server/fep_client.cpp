@@ -54,6 +54,13 @@ namespace faith
 
 	void fep_client::start()
 	{
+		scheduler::getInstance().post(
+			boost::bind(&fep_client::start_on_session_thread, this),
+			FEP_NETWORK_SCHEDULER_THREAD_ID);
+	}
+
+	void fep_client::start_on_session_thread()
+	{
 		net_client_mgr::getInstance().start(m_ws_info,
 			boost::bind(&fep_client::on_conn_status, this, _1),
 			boost::bind(&fep_client::on_conn_closed, this, _1)
@@ -122,7 +129,10 @@ namespace faith
 				CONSOLE_INFO("proxy_service_cli::getInstance().start error");
 				return;
 			}
-			m_timerindex_gameloop = scheduler::getInstance().add_timer(500, boost::bind(&fep_client::server_loop, this, _1));
+			m_timerindex_gameloop = scheduler::getInstance().add_timer(
+				500,
+				FEP_NETWORK_SCHEDULER_THREAD_ID,
+				boost::bind(&fep_client::server_loop, this, _1));
 		}
 	}
 	void fep_client::server_loop(uint32 timer_index)
@@ -135,8 +145,6 @@ namespace faith
 		loop_counter++;
 		loop_time += time_now - game_time;
 		game_time = time_now;
-
-		proxy_service_cli::getInstance().update();
 
 		static int64 last_log_time = 0;
 		if (time_now > last_log_time)

@@ -14,12 +14,12 @@
 #include <json/json.h>
 #include <Utility/cs_date.hpp>
 #include "server_log.hpp"
-#include "jwtcpp/jwt.h"
+#include "jwt-cpp/jwt.h"
 #include "Base64.h"
 
 namespace faith
 {
-	const xstring sdk_password = "googlesdk";		// πÃ∂®√‹¬Î
+	const xstring sdk_password = "googlesdk";		// Âõ∫ÂÆöÂØÜÁ†Å
 	const xstring apple_login_private_key =	"-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgMMKLzlrbVd9ezpLR\nnOiLE3iiB7ucbWVw6F4OwYi1JHygCgYIKoZIzj0DAQehRANCAASO/33LDPplMKcE\nORrE38AGiX67hlFRcvjgWJcKM0Hlmj1vSzhpqUEvJZR+bE0HXcKPWPodZa51PWvG\nrhYgsWKy\n-----END PRIVATE KEY-----";
 
 	login_service_appstore::login_service_appstore()
@@ -41,7 +41,7 @@ namespace faith
 
 		xstring sdk_url = "https://appleid.apple.com/auth/token";
 
-		// ◊‘∂®“Â«Î«ÛÕ∑
+		// Ëá™ÂÆö‰πâËØ∑Ê±ÇÂ§¥
 		std::vector<xstring> head_list;
 		head_list.push_back("Content-Type:application/x-www-form-urlencoded");
 		
@@ -50,7 +50,7 @@ namespace faith
 			+ "&code=" + proto_data.sdk_data().data()
 			+ "&grant_type=authorization_code";
 
-		// “Ï≤Ω«Î«Û
+		// ÂºÇÊ≠•ËØ∑Ê±Ç
 		http_access_mgr::get_instance().async_request
 			(
 				client_uid,
@@ -135,7 +135,7 @@ namespace faith
 
 				data_value = value;
 
-				// Ω‚Œˆdata ˝æ›
+				// Ëß£ÊûêdataÊï∞ÊçÆ
 				if (data_value["id_token"].isNull() || data_value["id_token"].empty() || !data_value["id_token"].isString())
 				{
 					CONSOLE_INFO("billing data format error:{}", json_data);
@@ -156,11 +156,11 @@ namespace faith
 				auto decoded = jwt::decode(id_token);
 				xstring account = decoded.get_subject();
 
-				// ºÏ≤Èµ«¬Ω◊¥Ã¨
+				// Ê£ÄÊü•ÁôªÈôÜÁä∂ÊÄÅ
 				if (account.size() > 0)
 				{
 					//CONSOLE_INFO("sdk read json data : " << json_data.c_str() << " ," << time_helper::get_current_time() << " , " << faith::utility::get_tick_count());
-					// ¥Ê≈Ã
+					// Â≠òÁõò
 					save_account(account, json_data, client_uid, ban_role_array, ban_chat_array);
 					return true;
 				}

@@ -38,6 +38,7 @@ namespace faith
 		void send_message_to_ws(const void* data_ptr, size_t data_len);
 		void send_message_to_cs(const void* data_ptr, size_t data_len, uint32 connindex);
 	private:
+		void start_on_session_thread();
 		void on_conn_status(const net_client* faith_client_ptr);
 		void on_conn_closed(const net_client* faith_client_ptr);
 		void start_loop();

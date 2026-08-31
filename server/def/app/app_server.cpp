@@ -15,7 +15,8 @@ namespace faith
 {
 	app_server::app_server():
 		m_running(false),
-		m_stopping(false)
+		m_stopping(false),
+		m_main_thread_dispatch(false)
 	{
 	}
 
@@ -29,17 +30,25 @@ namespace faith
 		release_handler();
 	}
 
-	void app_server::run(init_handler_type init_handler,release_handler_type release_handler)
+	void app_server::run(init_handler_type init_handler,release_handler_type release_handler, bool main_thread_dispatch)
 	{
 		m_init_handler = boost::bind(faith_app_extend_init,init_handler);
 		m_release_handler = boost::bind(faith_app_extend_release,release_handler);
+		m_main_thread_dispatch = main_thread_dispatch;
 		net::scheduler::getInstance().post(boost::bind(&app_server::call_init_handler,this));
 
 		m_running = true;
-		net::scheduler::getInstance().startup();
-		while(m_running)
+		net::scheduler::getInstance().startup(m_main_thread_dispatch);
+		if (m_main_thread_dispatch)
 		{
-			boost::this_thread::sleep(boost::posix_time::milliseconds(1));
+			net::scheduler::getInstance().run_current_thread();
+		}
+		else
+		{
+			while(m_running)
+			{
+				boost::this_thread::sleep(boost::posix_time::milliseconds(1));
+			}
 		}
 		net::scheduler::getInstance().shutdown();
 	}
@@ -68,6 +77,10 @@ namespace faith
 	{
 		m_release_handler();
 		m_running = false;
+		if (m_main_thread_dispatch)
+		{
+			net::scheduler::getInstance().request_stop();
+		}
 	}
 
 }

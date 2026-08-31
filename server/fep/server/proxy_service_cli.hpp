@@ -39,7 +39,6 @@ namespace faith
 		bool init();
 		bool start();
 		void stop();
-		void update();
 		bool alloc_session(uint32 connindex);		
 		void disconn_session(uint32 connindex, e_logout_result logout_result);
 		client_session* get_session_by_connect(uint32 connindex);

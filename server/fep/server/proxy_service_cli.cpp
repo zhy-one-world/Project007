@@ -9,6 +9,7 @@
 *********************************************************************/
 #include "proxy_service_cli.hpp"
 #include "fep_client.hpp"
+#include <net/scheduler.hpp>
 #include "game_cfg/servers_config.h"
 #include <base.hpp>
 #include "Logic/time_def.hpp"
@@ -80,7 +81,8 @@ namespace faith
 			boost::bind(&proxy_service_cli::on_conn_created,this,_1),
 			boost::bind(&proxy_service_cli::on_conn_closed,this,_1),
 			boost::bind(&proxy_service_cli::on_data_received,this,_1,_2,_3),
-			"127.0.0.1",m_port );
+			"127.0.0.1",m_port,
+			FEP_ACCEPTOR_SCHEDULER_THREAD_ID );
 
 		if (!m_tcpserver)
 		{
@@ -143,6 +145,8 @@ namespace faith
 		client_session& new_session_ptr = m_session_array[connindex];
 
 		m_session_array_num++;
+		new_session_ptr.set_scheduler_thread_id(
+			net::scheduler::getInstance().get_current_thread_id());
 		new_session_ptr.set_data_use(true);
 		xstring ip_str = m_tcpserver->get_ip_addr(connindex);
 		int32 ip_len = ip_str.size() > max_ip_address_length ? max_ip_address_length : ip_str.size();
@@ -218,6 +222,8 @@ namespace faith
 			if (m_session_array[i].is_vaild() == false)
 			{
 				m_session_array_num++;
+				m_session_array[i].set_scheduler_thread_id(
+					net::scheduler::getInstance().get_current_thread_id());
 				m_session_array[i].set_data_use(true);
 				return &(m_session_array[i]);
 			}
@@ -322,19 +328,6 @@ namespace faith
 		default:
 			CONSOLE_INFO("account num:{} header:{}", client_session_ptr->m_account, header);
 			break;
-		}
-	}
-
-	void proxy_service_cli::update()
-	{
-		ZoneScoped;
-		uint64 new_time = utility::get_tick_count();
-		for (int32 i = 0; i < init_socket_more; ++i)
-		{
-			if (m_session_array[i].is_vaild())
-			{
-				m_session_array[i].update(new_time);
-			}
 		}
 	}
 

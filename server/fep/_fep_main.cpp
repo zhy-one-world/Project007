@@ -114,7 +114,7 @@ faith::int32 _XMAIN(faith::int32 argc, xchar* argv[])
 
 	faith::scheduler::getInstance().set_option(faith::scheduler::options::thread_num(FEP_SERVER_SCHEDULER_THREAD_COUNT));
 
-	faith::app_server::getInstance().run(faith::init,faith::release);
+	faith::app_server::getInstance().run(faith::init, faith::release, true);
 
 	faith::postmortem::getInstance().release();
 
