@@ -29,7 +29,7 @@ namespace faith
 {
 	void transfer_c2ws(uint32 array_index, const void* data_ptr, size_t data_len)
 	{
-		client_session* client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(array_index);
+		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(array_index);
 		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false)
 		{
 			return;
@@ -40,7 +40,7 @@ namespace faith
 
 	void transfer_c2cs(uint32 array_index, const void* data_ptr, size_t data_len)
 	{
-		client_session* client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(array_index);
+		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(array_index);
 		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false)
 		{
 			return;
@@ -57,7 +57,7 @@ namespace faith
 	void transfer_s2c(uint32 connindex, const void *data_ptr,size_t data_len)
 	{
 		s_client_uid client_uid = parse_msg::getInstance().get_packet_connect_idx(data_ptr, data_len);
-		client_session* client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(client_uid.fepsession_uid);
+		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(client_uid.fepsession_uid);
 		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false || client_session_ptr->get_client_uid() != client_uid)
 		{
 			return;

@@ -11,6 +11,7 @@
 #define _CLIENT_CONNECTION_SESSION_H_
 
 #include <time.hpp>
+#include <memory>
 #include <base.hpp>
 #include "logic/type_def.hpp"
 #include <Logic/char_def.hpp>
@@ -114,9 +115,9 @@ namespace faith
 		s_client_uid		m_client_uid;
 		//guid_64				m_optional_char_guids[max_enum_character_num];
 
-		int64				m_client_send_msg_time;				//?????¦¥r?g
-		int32				m_client_send_error_count;          //???????????????
-		int32				m_client_random_close_num;          //???????????????
+		int64				m_client_send_msg_time;				//
+		int32				m_client_send_error_count;          //
+		int32				m_client_random_close_num;          //
 
 		login_proto_login	m_login_proto_login;
 
@@ -134,6 +135,8 @@ namespace faith
 	private:
 		void				on_update_timer(uint32 timer_index);
 	};
+
+	typedef std::shared_ptr<client_session> client_session_ptr;
 
 }
 

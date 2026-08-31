@@ -49,11 +49,6 @@ namespace faith
 		m_port=2200;
 		m_enable_connect = false;
 		m_session_array_num = 0;
-		for (int32 i = 0; i < init_socket_more; ++i)
-		{
-			m_session_array[i].clear_data();
-			m_session_array[i].set_array_index(i + 1);
-		}
 		for (int32 i = 0; i < e_msg_base_max; ++i)
 		{
 			register_message(i, none_fuction);
@@ -155,23 +150,29 @@ namespace faith
 		{
 			return false;
 		}
-		client_session& new_session_ptr = m_session_array[connindex];
-
-		m_session_array_num++;
-		new_session_ptr.set_scheduler_thread_id(
-			net::scheduler::getInstance().get_current_thread_id());
-		new_session_ptr.set_data_use(true);
+		if (m_session_array[connindex])
+		{
+			return false;
+		}
+		auto new_session_ptr =
+			std::make_shared<client_session>();
+		new_session_ptr->set_array_index(connindex + 1);
+		new_session_ptr->set_scheduler_thread_id(
+			m_tcpserver->get_session_thread_id(connindex));
 		xstring ip_str = m_tcpserver->get_ip_addr(connindex);
 		int32 ip_len = ip_str.size() > max_ip_address_length ? max_ip_address_length : ip_str.size();
-		memcpy(new_session_ptr.m_ipaddr, ip_str.c_str(), ip_len);
-		new_session_ptr.set_conn_index(connindex);
-		new_session_ptr.set_client_uid();
-		new_session_ptr.refresh_heart_beat();
-		new_session_ptr.m_heart_login_time = utility::get_tick_count() + client_session_login_time;
+		memcpy(new_session_ptr->m_ipaddr, ip_str.c_str(), ip_len);
+		new_session_ptr->set_conn_index(connindex);
+		new_session_ptr->set_client_uid();
+		new_session_ptr->refresh_heart_beat();
+		new_session_ptr->m_heart_login_time = utility::get_tick_count() + client_session_login_time;
+		new_session_ptr->set_data_use(true);
+		m_session_array[connindex] = new_session_ptr;
+		++m_session_array_num;
 		_RLOG_(MINFO, "client session allocated, connindex:" << connindex
-			<< " arrayindex:" << new_session_ptr.get_array_index()
+			<< " arrayindex:" << new_session_ptr->get_array_index()
 			<< " ip:" << ip_str << " scheduler thread:"
-			<< new_session_ptr.get_scheduler_thread_id()
+			<< new_session_ptr->get_scheduler_thread_id()
 			<< " session count:" << m_session_array_num);
 
 		if (get_session_num() > init_socket_link)
@@ -179,7 +180,7 @@ namespace faith
 			login_proto_login_end login_end;
 			login_end.set_result(e_error_code_login_login_full);
 			security_communication_layer::getInstance().send_to_session(connindex, &login_end, e_msgindex_s2c_client_login);
-			new_session_ptr.set_is_logout(true);
+			new_session_ptr->set_is_logout(true);
 		}
 		return true;
 	}
@@ -189,7 +190,8 @@ namespace faith
 		{
 			return;
 		}
-		client_session* client_session_ptr = get_session_by_connect(connindex);
+		auto client_session_ptr =
+			get_session_by_connect(connindex);
 		if (nullptr == client_session_ptr || client_session_ptr->get_is_logout())
 		{
 			return;
@@ -215,7 +217,8 @@ namespace faith
 	}
 	bool proxy_service_cli::free_session(uint32 connindex)
 	{
-		client_session* client_session_ptr = get_session_by_connect(connindex);
+		auto client_session_ptr =
+			get_session_by_connect(connindex);
 		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false)
 		{
 			return false;
@@ -225,45 +228,61 @@ namespace faith
 			<< " scheduler thread:" << client_session_ptr->get_scheduler_thread_id()
 			<< " session count:" << m_session_array_num);
 		client_session_ptr->clear_data();
-		m_session_array_num--;
+		{
+			std::lock_guard<std::mutex> lock(m_session_mutex);
+			if (m_session_array[connindex] != client_session_ptr)
+			{
+				return false;
+			}
+			m_session_array[connindex].reset();
+			--m_session_array_num;
+		}
 		return true;
 	}
 
-	client_session* proxy_service_cli::get_session_by_id(int32 array_index)
+	client_session_ptr proxy_service_cli::get_session_by_id(int32 array_index)
 	{
 		if (array_index < 1 || array_index > init_socket_more)
 		{
-			return nullptr;
+			return client_session_ptr();
 		}
-		return &(m_session_array[array_index - 1]);
+		std::lock_guard<std::mutex> lock(m_session_mutex);
+		return m_session_array[array_index - 1];
 	}
-	client_session* proxy_service_cli::get_empty_session()
+	client_session_ptr proxy_service_cli::get_empty_session()
 	{
 		for (int32 i = 0; i < init_socket_more; ++i)
 		{
-			if (m_session_array[i].is_vaild() == false)
+			std::lock_guard<std::mutex> lock(m_session_mutex);
+			if (!m_session_array[i])
 			{
-				m_session_array_num++;
-				m_session_array[i].set_scheduler_thread_id(
+				auto new_session_ptr =
+					std::make_shared<client_session>();
+				new_session_ptr->set_array_index(i + 1);
+				new_session_ptr->set_scheduler_thread_id(
 					net::scheduler::getInstance().get_current_thread_id());
-				m_session_array[i].set_data_use(true);
-				return &(m_session_array[i]);
+				new_session_ptr->set_data_use(true);
+				m_session_array[i] = new_session_ptr;
+				m_session_array_num++;
+				return new_session_ptr;
 			}
 		}
-		return nullptr;
+		return client_session_ptr();
 	}
-	client_session* proxy_service_cli::get_session_by_connect(uint32 connindex)
+	client_session_ptr proxy_service_cli::get_session_by_connect(uint32 connindex)
 	{
 		if (connindex >= init_socket_more)
 		{
-			return nullptr;
+			return client_session_ptr();
 		}
-		return &(m_session_array[connindex]);
+		std::lock_guard<std::mutex> lock(m_session_mutex);
+		return m_session_array[connindex];
 	}
 
-	client_session*	proxy_service_cli::get_session_by_account(int32 array_index, const xchar* account)
+	client_session_ptr proxy_service_cli::get_session_by_account(int32 array_index, const xchar* account)
 	{
-		client_session* client_session_ptr = get_session_by_id(array_index);
+		auto client_session_ptr =
+			get_session_by_id(array_index);
 		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false)
 		{
 			return nullptr;
@@ -316,7 +335,8 @@ namespace faith
 
 	void proxy_service_cli::on_data_received( uint32 connindex, const void *data_ptr, size_t data_len )
 	{
-		client_session* client_session_ptr = get_session_by_connect(connindex);
+		auto client_session_ptr =
+			get_session_by_connect(connindex);
 		if (nullptr == client_session_ptr || client_session_ptr->get_is_logout())
 		{
 			return;
@@ -370,9 +390,12 @@ namespace faith
 	{
 		for (int32 i = 0; i < init_socket_more; ++i)
 		{
-			if (m_session_array[i].is_vaild())
+			auto client_session_ptr =
+				get_session_by_connect(i);
+			if (client_session_ptr && client_session_ptr->is_vaild())
 			{
-				security_communication_layer::getInstance().send_to_session(m_session_array[i].get_conn_index(), header, data_ptr, data_len);
+				security_communication_layer::getInstance().send_to_session(
+					client_session_ptr->get_conn_index(), header, data_ptr, data_len);
 			}
 		}
 	}
@@ -380,9 +403,12 @@ namespace faith
 	{
 		for (int32 i = 0; i < init_socket_more; ++i)
 		{
-			if (m_session_array[i].is_vaild())
+			auto client_session_ptr =
+				get_session_by_connect(i);
+			if (client_session_ptr && client_session_ptr->is_vaild())
 			{
-				security_communication_layer::getInstance().send_to_session(m_session_array[i].get_conn_index(), data_ptr, data_len);
+				security_communication_layer::getInstance().send_to_session(
+					client_session_ptr->get_conn_index(), data_ptr, data_len);
 			}
 		}
 	}
@@ -411,12 +437,15 @@ namespace faith
 
 	bool proxy_service_cli::is_valid_session(uint32 conn_index)
 	{
-		return get_session_by_connect(conn_index) != nullptr;
+		auto client_session_ptr =
+			get_session_by_connect(conn_index);
+		return client_session_ptr != nullptr && client_session_ptr->is_vaild();
 	}
 
-	client_session* proxy_service_cli::get_session_by_fep_uid_64(ui64 uid)
+	client_session_ptr proxy_service_cli::get_session_by_fep_uid_64(ui64 uid)
 	{
-		client_session* client_session_ptr = get_session_by_id(s_client_uid(uid).fepsession_uid);
+		auto client_session_ptr =
+			get_session_by_id(s_client_uid(uid).fepsession_uid);
 		if (client_session_ptr == nullptr || !client_session_ptr->is_vaild() || client_session_ptr->get_client_uid().fep_uid_64 != uid)
 		{
 			return nullptr;

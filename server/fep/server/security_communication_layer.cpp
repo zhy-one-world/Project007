@@ -56,13 +56,13 @@ namespace faith
 			_RLOG_(MINFO, "send num:" << it->second << " header:" << it->first);
 		}
 	}
-	//	desc:	¼ÓÃÜ²¢·¢ËÍÊı¾İ
+	//	desc:	åŠ å¯†å¹¶å‘é€æ•°æ®
 	int32	security_communication_layer::send_to_session(uint32 conn_index,const void* data_ptr, size_t data_len)
 	{
 		int32 ret = 0;
 		if ( m_scl_cli_sender )
 		{
-			client_session* client_session_ptr = proxy_service_cli::getInstance().get_session_by_connect(conn_index);
+			auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_connect(conn_index);
 			if (nullptr == client_session_ptr)
 			{
 				return false;
@@ -92,7 +92,7 @@ namespace faith
 		send_to_session(conn_index, &m_cs_msg, m_cs_msg.get_packet_len());
 	}
 
-	//	desc:	´¦Àí½ÓÊÕµ½µÄÃÜÎÄÊı¾İ
+	//	desc:	å¤„ç†æ¥æ”¶åˆ°çš„å¯†æ–‡æ•°æ®
 	void security_communication_layer::on_encrypted_data_recved(uint32 conn_index,const void* data_ptr,size_t data_len)
 	{
 		if (m_scl_cli_recver)

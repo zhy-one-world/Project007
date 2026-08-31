@@ -12,6 +12,8 @@
 
 #include <net/tcp_server.hpp>
 #include <singleton.hpp>
+#include <memory>
+#include <mutex>
 #include <string>
 #include "Logic/count_def.hpp"
 #include "client_session.hpp"
@@ -41,11 +43,11 @@ namespace faith
 		void stop();
 		bool alloc_session(uint32 connindex);		
 		void disconn_session(uint32 connindex, e_logout_result logout_result);
-		client_session* get_session_by_connect(uint32 connindex);
-		client_session* get_session_by_account(int32 array_index, const xchar* account = nullptr);
-		client_session* get_empty_session();
-		client_session* get_session_by_id(int32 array_index);
-		client_session* get_session_by_fep_uid_64(ui64 uid);
+		client_session_ptr get_session_by_connect(uint32 connindex);
+		client_session_ptr get_session_by_account(int32 array_index, const xchar* account = nullptr);
+		client_session_ptr get_empty_session();
+		client_session_ptr get_session_by_id(int32 array_index);
+		client_session_ptr get_session_by_fep_uid_64(ui64 uid);
 		void set_allow_connection(bool be_allow)	{	m_enable_connect=be_allow;		};
 		void broadcast(const void* data_ptr, size_t data_len, int32 header);
 		void broadcast(const void* data_ptr, size_t data_len);
@@ -57,7 +59,7 @@ namespace faith
 		}
 		void send_time_limit_activity_template_to_all();
 	private:
-		void logout(uint32 connindex, e_logout_result logout_result);//·¢ËÍµÇ³öĞ­Òé,²¢ĞŞ¸ÄÏà¹Ø×´Ì¬
+		void logout(uint32 connindex, e_logout_result logout_result);//å‘é€ç™»å‡ºåè®®,å¹¶ä¿®æ”¹ç›¸å…³çŠ¶æ€
 		bool free_session(uint32 connindex);
 		bool set_netpara_option(uint32 send_buf_size, uint32 recv_buf_size, uint32 max_packet_size);
 	protected:
@@ -67,7 +69,8 @@ namespace faith
 		security_communication_layer::recved_handler_type	m_scl_cli_recver;
 		security_communication_layer::sender_handler_type	m_scl_cli_sender;
 		msg_handler_type m_handler_map[e_msg_base_max];
-		client_session m_session_array[init_socket_more];		//	who's key is connection_index to FEP
+		client_session_ptr m_session_array[init_socket_more];		//	who's key is connection_index to FEP
+		mutable std::mutex m_session_mutex;
 		int32 m_session_array_num;
 	};
 

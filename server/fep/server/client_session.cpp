@@ -36,6 +36,7 @@ namespace faith
 
 	client_session::~client_session()
 	{
+		clear_data();
 	}
 
 	void client_session::set_data_use(bool is_use)

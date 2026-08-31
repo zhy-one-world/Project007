@@ -40,7 +40,7 @@ namespace faith
 		if ( NULL == pdata )
 			return;
 
-		client_session* client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(pdata->client_uid.fepsession_uid);
+		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(pdata->client_uid.fepsession_uid);
 		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false || pdata->client_uid != client_session_ptr->get_client_uid())
 		{
 			return;
@@ -61,7 +61,7 @@ namespace faith
 			return;
 		}
 
-		client_session* client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(pdata->client_uid.fepsession_uid);
+		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(pdata->client_uid.fepsession_uid);
 		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false || pdata->client_uid != client_session_ptr->get_client_uid())
 		{
 			_RLOG_(MERROR, "client_session_ptr is null pdata->client_uid.fepsession_uid="
@@ -82,7 +82,7 @@ namespace faith
 			return;
 		}
 
-		client_session* client_session_ptr = proxy_service_cli::getInstance().get_session_by_account(pdata->client_uid.fepsession_uid, pdata->account);
+		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_account(pdata->client_uid.fepsession_uid, pdata->account);
 		if (nullptr == client_session_ptr)
 		{
 			string str = " the client_session_ptr is null";
@@ -110,7 +110,7 @@ namespace faith
 		if ( NULL == pdata )
 			return;
 
-		client_session* client_session_ptr = proxy_service_cli::getInstance().get_session_by_account(pdata->client_uid.fepsession_uid, pdata->account);
+		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_account(pdata->client_uid.fepsession_uid, pdata->account);
 		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false || client_session_ptr->get_client_uid() != pdata->client_uid)
 		{
 			return;
@@ -143,7 +143,7 @@ namespace faith
 			server_log::reconnect_game_log("fep", __FUNCTION__, str.c_str());
 			return;
 		}
-		client_session* client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(pdata->client_uid.fepsession_uid);
+		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(pdata->client_uid.fepsession_uid);
 		if(nullptr == client_session_ptr || client_session_ptr->is_vaild() == false || pdata->client_uid != client_session_ptr->get_client_uid())
 		{
 			string str = " the client_session_ptr is null or vaild or client_uid != client_session_ptr->get_client_uid";

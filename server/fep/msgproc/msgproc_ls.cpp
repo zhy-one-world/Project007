@@ -34,7 +34,7 @@ namespace faith
 			return;
 		}
 
-		client_session* client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(pdata->client_uid.fepsession_uid);
+		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(pdata->client_uid.fepsession_uid);
 		if(nullptr == client_session_ptr || client_session_ptr->is_vaild() == false || pdata->client_uid != client_session_ptr->get_client_uid())
 		{
 			_RLOG_(MERROR, "ls2fep_rep_client_login client_session_ptr is null "
@@ -84,7 +84,7 @@ namespace faith
 	{
 		s_client_uid client_uid = parse_msg::getInstance().get_packet_connect_idx(data_ptr, data_len);
 
-		client_session* client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(client_uid.fepsession_uid);
+		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(client_uid.fepsession_uid);
 		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false || client_session_ptr->get_client_uid() != client_uid)
 		{
 			return;
@@ -94,7 +94,7 @@ namespace faith
 		//parse_msg::getInstance().parse_message_new(&character_end_info_msg, data_ptr, data_len);
 		//client_session_ptr->insert_optional_guid(character_end_info_msg.role_guid());
 
-		//���Ϳͻ���
+		//传送客户端
 		security_communication_layer::getInstance().send_to_session(client_session_ptr->get_conn_index(), data_ptr, data_len);
 	}
 
@@ -105,7 +105,7 @@ namespace faith
 		{
 			return;
 		}
-		client_session* client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(pdata->client_uid.fepsession_uid);
+		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(pdata->client_uid.fepsession_uid);
 		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false || client_session_ptr->get_client_uid() != pdata->client_uid)
 		{
 			return;
@@ -119,7 +119,7 @@ namespace faith
 		{
 			cre_char.add_role_info(pdata->role_info.data_ary[i]);
 		}
-		//���Ϳͻ���
+		//传送客户端
 		security_communication_layer::getInstance().send_to_session(client_session_ptr->get_conn_index(), &cre_char, e_msgindex_s2c_create_char);
 	}
 
@@ -127,7 +127,7 @@ namespace faith
 	{
 		s_client_uid client_uid = parse_msg::getInstance().get_packet_connect_idx(data_ptr, data_len);
 
-		client_session* client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(client_uid.fepsession_uid);
+		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(client_uid.fepsession_uid);
 		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false || client_session_ptr->get_client_uid() != client_uid)
 		{
 			return;
@@ -140,7 +140,7 @@ namespace faith
 		//	client_session_ptr->remove_optional_guid(del_character_end_msg.role_guid());
 		//}
 
-		//���Ϳͻ���
+		//传送客户端
 		security_communication_layer::getInstance().send_to_session(client_session_ptr->get_conn_index(), data_ptr, data_len);
 	}
 }

@@ -25,7 +25,7 @@ namespace faith
 			return;
 		for (int32 i = 0; i < pdata->data_num; ++i)
 		{
-			client_session* client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(pdata->client_uid[i].fepsession_uid);
+			auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(pdata->client_uid[i].fepsession_uid);
 			if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false || client_session_ptr->get_client_uid() != pdata->client_uid[i])
 			{
 				continue;
@@ -42,7 +42,7 @@ namespace faith
 		memcpy(msg.account, pdata->account, max_account_length);
 		msg.array_index = pdata->array_index;
 		msg.role_guid = pdata->role_guid;
-		client_session* client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(pdata->client_uid.fepsession_uid);
+		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(pdata->client_uid.fepsession_uid);
 		if (nullptr == client_session_ptr)
 		{
 			msg.be_in_game = false;
@@ -64,7 +64,7 @@ namespace faith
 		const cs2fep_month_recharge_num* pdata = static_cast<const cs2fep_month_recharge_num*>(data_ptr);
 		if (NULL == pdata)
 			return;
-		client_session* client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(pdata->client_uid.fepsession_uid);
+		auto client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(pdata->client_uid.fepsession_uid);
 		if (nullptr == client_session_ptr)
 		{
 			return;
