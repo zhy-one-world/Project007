@@ -41,7 +41,6 @@ namespace faith
 		void start_on_session_thread();
 		void on_conn_status(const net_client* faith_client_ptr);
 		void on_conn_closed(const net_client* faith_client_ptr);
-		void start_loop();
 		void server_loop(uint32 timer_index);
 	protected:
 		uint32 m_ws_ci; //	connection index to world server

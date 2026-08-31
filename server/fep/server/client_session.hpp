@@ -59,7 +59,7 @@ namespace faith
 		void				set_cs_array_index(const int32 array_index) { m_cs_array_index = array_index; }
 		int32				get_cs_array_index() { return m_cs_array_index; }
 
-		void				refresh_heart_beat();// 刷新心跳时间
+		void				refresh_heart_beat();// ??????????
 
 		void				check_session(const int64& new_time);
 
@@ -98,10 +98,10 @@ namespace faith
 		xchar				m_server_msg[faith::max_server_msg_length + 1];			//	server_msg for login
 		xchar				m_ipaddr[faith::max_ip_address_length + 1];
 		bool				m_is_create_account;
-		int64				m_heart_beat_time;					//上次心跳时间(上次收到客户端消息时间)
-		int64				m_heart_login_time;					//玩家在登陆界面的时间，时间过长就踢掉
-		int32				m_client_send_msg_count;            //客户端请求计数
-		bool				m_is_send_login_success;			//已经发送过登陆成功的消息
+		int64				m_heart_beat_time;					//??????????(?????????????????)
+		int64				m_heart_login_time;					//??????????????????????????
+		int32				m_client_send_msg_count;            //????????????
+		bool				m_is_send_login_success;			//???????????????????
 	private:
 		bool				m_data_is_use;
 		bool				m_is_logout;
@@ -114,9 +114,9 @@ namespace faith
 		s_client_uid		m_client_uid;
 		//guid_64				m_optional_char_guids[max_enum_character_num];
 
-		int64				m_client_send_msg_time;				//封包幾次時間
-		int32				m_client_send_error_count;          //客户端错误请求计数
-		int32				m_client_random_close_num;          //客户端错误请求计数
+		int64				m_client_send_msg_time;				//?????Εr?g
+		int32				m_client_send_error_count;          //???????????????
+		int32				m_client_random_close_num;          //???????????????
 
 		login_proto_login	m_login_proto_login;
 
@@ -127,8 +127,9 @@ namespace faith
 		int32				m_month_recharge_num;
 		int32				m_month_recharge_time;
 
-		int64				m_online_tick;	//	慢tick 1分钟 一次
+		int64				m_online_tick;	//	??tick 1???? ???
 		uint32				m_update_timer_index;
+		int64				m_last_update_log_time;
 
 	private:
 		void				on_update_timer(uint32 timer_index);

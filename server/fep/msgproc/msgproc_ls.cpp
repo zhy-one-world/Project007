@@ -20,6 +20,7 @@
 #include "server_log.hpp"
 #include "net.pb.h"
 #include "character.pb.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -28,14 +29,17 @@ namespace faith
 		const ls2fep_client_login* pdata = static_cast<const ls2fep_client_login*>(data_ptr);
 		if ( NULL == pdata )
 		{
-			CONSOLE_INFO("ls2fep_rep_client_login pdata is null data_len:{}", data_len);
+			_RLOG_(MERROR, "ls2fep_rep_client_login pdata is null data_len="
+				<< data_len);
 			return;
 		}
 
 		client_session* client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(pdata->client_uid.fepsession_uid);
 		if(nullptr == client_session_ptr || client_session_ptr->is_vaild() == false || pdata->client_uid != client_session_ptr->get_client_uid())
 		{
-			CONSOLE_INFO("ls2fep_rep_client_login client_session_ptr is null pdata->client_uid.fepsession_uid:{}", pdata->client_uid.fepsession_uid);
+			_RLOG_(MERROR, "ls2fep_rep_client_login client_session_ptr is null "
+				<< "pdata->client_uid.fepsession_uid="
+				<< pdata->client_uid.fepsession_uid);
 			return;
 		}
 
@@ -50,13 +54,15 @@ namespace faith
 		if (pdata->eResult != e_error_code_success)
 		{
 			client_session_ptr->response_login(pdata->eResult);
-			CONSOLE_INFO("ls2fep_rep_client_login send_to_ws_login fail pdata->eResult:{} ", pdata->eResult);
+			_RLOG_(MWARN, "ls2fep_rep_client_login send_to_ws_login fail "
+				<< "pdata->eResult:" << pdata->eResult);
 		}
 		else
 		{
 			if (strlen(pdata->account) < min_account_length)
 			{
-				CONSOLE_INFO("ls2fep_rep_client_login account is limit, account:{} ", pdata->account);
+				_RLOG_(MWARN, "ls2fep_rep_client_login account is limit, account:"
+					<< pdata->account);
 			}
 			
 			client_session_ptr->set_radio_host(pdata->radio_host);

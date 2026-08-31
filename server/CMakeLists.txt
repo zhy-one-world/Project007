@@ -23,3 +23,5 @@ include_directories(
 foreach(dirname ${ComponentAllSubDir}) 
     add_subdirectory(${dirname})
 endforeach()
+
+add_subdirectory(tools/fep_test_client)

@@ -8,6 +8,7 @@
 	purpose:	
 *********************************************************************/
 #include "msgproc_ws.hpp"
+#include <rlog.hpp>
 #include "logic/type_def.hpp"
 #include <Logic/login_def.hpp>
 #include <gate_msg.hpp>
@@ -56,14 +57,15 @@ namespace faith
 		const ws2fep_client_logined* pdata = static_cast<const ws2fep_client_logined*>(data_ptr);
 		if (NULL == pdata)
 		{
-			CONSOLE_INFO("pdata is null");
+			_RLOG_(MERROR, "pdata is null");
 			return;
 		}
 
 		client_session* client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(pdata->client_uid.fepsession_uid);
 		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false || pdata->client_uid != client_session_ptr->get_client_uid())
 		{
-			CONSOLE_INFO("client_session_ptr is null pdata->client_uid.fepsession_uid:{} ", pdata->client_uid.fepsession_uid);
+			_RLOG_(MERROR, "client_session_ptr is null pdata->client_uid.fepsession_uid="
+				<< pdata->client_uid.fepsession_uid);
 			return;
 		}
 
@@ -123,7 +125,7 @@ namespace faith
 		}
 		else
 		{
-			CONSOLE_INFO("eResult:{}", (int32)pdata->e_result);
+			_RLOG_(MINFO, "eResult:" << (int32)pdata->e_result);
 			client_session_ptr->set_is_logout(true);
 		}
 		game_proto_enter_game_end enter_game_end;
@@ -148,7 +150,7 @@ namespace faith
 			server_log::reconnect_game_log("fep", __FUNCTION__, str.c_str());
 			return;
 		}
-		CONSOLE_INFO("reason:{} ", (int32)pdata->reason);
+		_RLOG_(MINFO, "reason:" << (int32)pdata->reason);
 		login_proto_logout_end logout_msg;
 		logout_msg.set_result(pdata->reason);
 		security_communication_layer::getInstance().send_to_session(client_session_ptr->get_conn_index(), &logout_msg, e_msgindex_s2c_logout);

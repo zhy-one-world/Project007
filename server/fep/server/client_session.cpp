@@ -11,6 +11,7 @@
 #include <boost/bind.hpp>
 #include <net/scheduler.hpp>
 #include <net/tcp_client.hpp>
+#include <rlog.hpp>
 #include <login_msg.hpp>
 #include "client_session.hpp"
 #include "proxy_service_cli.hpp"
@@ -107,6 +108,7 @@ namespace faith
 		m_month_recharge_time = 0;
 
 		m_online_tick = 0;
+		m_last_update_log_time = 0;
 	}
 	void client_session::set_array_index(uint32 array_index)
 	{
@@ -119,11 +121,25 @@ namespace faith
 	}
 	void client_session::update(const int64& new_time)
 	{
+		if (new_time >= m_last_update_log_time)
+		{
+			_RLOG_(MINFO, "client_session update, connindex:" << m_conn_index
+				<< " arrayindex:" << m_array_index
+				<< " scheduler thread:" << m_scheduler_thread_id
+				<< " valid:" << m_data_is_use
+				<< " logout:" << m_is_logout
+				<< " account:" << m_account
+				<< " msg count:" << m_client_send_msg_count
+				<< " heartbeat:" << m_heart_beat_time);
+			m_last_update_log_time = new_time + second_tick_time * 5;
+		}
 		check_session(new_time);
-		// 检测是否还存在心跳
+		// ?????????????
 		if (new_time > m_heart_beat_time)
 		{
-			CONSOLE_INFO(" heart beat close, connindex:{} new_time:{} m_heart_beat_time:{}", m_conn_index, new_time, m_heart_beat_time);
+			_RLOG_(MWARN, "heart beat close, connindex:" << m_conn_index
+				<< " new_time:" << new_time
+				<< " m_heart_beat_time:" << m_heart_beat_time);
 			proxy_service_cli::getInstance().disconn_session(m_conn_index, e_logout_result_time_out);
 		}
 		//if (new_time > m_heart_login_time && m_cs_array_index <= 0)
@@ -167,7 +183,11 @@ namespace faith
 		}
 		if (m_client_send_error_count > m_client_random_close_num)
 		{
-			CONSOLE_INFO("so fast, close connindex:{} m_client_send_error_count:{} m_client_send_msg_count:{} m_client_random_close_num:{} m_account:{} m_ipaddr:{}", get_conn_index(), m_client_send_error_count, m_client_send_msg_count, m_client_random_close_num, m_account, m_ipaddr);
+			_RLOG_(MWARN, "so fast, close connindex:" << get_conn_index()
+				<< " m_client_send_error_count:" << m_client_send_error_count
+				<< " m_client_send_msg_count:" << m_client_send_msg_count
+				<< " m_client_random_close_num:" << m_client_random_close_num
+				<< " m_account:" << m_account << " m_ipaddr:" << m_ipaddr);
 			//proxy_service_cli::getInstance().disconn_session(get_conn_index(), e_logout_result_connect_dis);
 		}
 		m_client_send_error_count = 0;
@@ -250,10 +270,10 @@ namespace faith
 		//1:app key
 		memcpy(request.fixed_data.param1, login_data.sdk_data().app_key().c_str(), sizeof(request.fixed_data.param1) > login_data.sdk_data().app_key().size() ? login_data.sdk_data().app_key().size() : sizeof(request.fixed_data.param1));
 
-		//2:客户端版本
+		//2:???????
 		memcpy(request.fixed_data.param2, login_data.client_version().c_str(), sizeof(request.fixed_data.param2) > login_data.client_version().size() ? login_data.client_version().size() : sizeof(request.fixed_data.param2));
 
-		//3:服务器ID
+		//3:??????ID
 		xchar server_id_buff[128];
 		sprintf(server_id_buff, "%d", login_data.server_id());
 		memcpy(request.fixed_data.param3, server_id_buff, sizeof(request.fixed_data.param3) > sizeof(server_id_buff) ? sizeof(server_id_buff) : sizeof(request.fixed_data.param3));
@@ -261,10 +281,10 @@ namespace faith
 		//4:media_id
 		memcpy(request.fixed_data.param4, login_data.sdk_data().app_secret().c_str(), sizeof(request.fixed_data.param4) > login_data.sdk_data().app_secret().size() ? login_data.sdk_data().app_secret().size() : sizeof(request.fixed_data.param4));
 
-		//5:设备标识
+		//5:??????
 		memcpy(request.fixed_data.param5, login_data.sdk_data().device_id().c_str(), sizeof(request.fixed_data.param5) > login_data.sdk_data().device_id().size() ? login_data.sdk_data().device_id().size() : sizeof(request.fixed_data.param5));
 
-		//6:登录IP
+		//6:???IP
 		memcpy(request.fixed_data.param6, m_ipaddr, sizeof(request.fixed_data.param6) > sizeof(m_ipaddr) ? sizeof(m_ipaddr) : sizeof(request.fixed_data.param6));
 		
 		//7:ChannelId

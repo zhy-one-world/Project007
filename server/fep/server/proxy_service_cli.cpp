@@ -14,6 +14,7 @@
 #include <base.hpp>
 #include "Logic/time_def.hpp"
 #include "server_log.hpp"
+#include <rlog.hpp>
 #include "error.pb.h"
 #include "net.pb.h"
 #include "login_msg.hpp"
@@ -35,10 +36,9 @@ namespace faith
 		}
 		else
 		{
-			std::cout << "check_packet_size get_packet_len = " << package_ptr->get_packet_len()
-				<< " data_len =" << data_len
-				<< " sizeof(packet_c2s_s2c) =" << sizeof(packet_c2s_s2c)
-				<< std::endl;
+			_RLOG_(MWARN, "check_packet_size get_packet_len="
+				<< package_ptr->get_packet_len() << " data_len=" << data_len
+				<< " sizeof(packet_c2s_s2c)=" << sizeof(packet_c2s_s2c));
 			return false;
 		}
 	}
@@ -76,6 +76,8 @@ namespace faith
 	bool proxy_service_cli::init()
 	{
 		m_port = FEPCONFIG->external_port;
+		_RLOG_(MINFO, "proxy service initialization started, endpoint=127.0.0.1:"
+			<< m_port << " acceptor thread=0");
 		m_tcpserver=new net::tcp_server(
 			boost::bind(&proxy_service_cli::on_serverstatus_changed,this,_1),
 			boost::bind(&proxy_service_cli::on_conn_created,this,_1),
@@ -86,16 +88,18 @@ namespace faith
 
 		if (!m_tcpserver)
 		{
-			CONSOLE_INFO("m_tcpserver is null");
+			_RLOG_(MERROR, "m_tcpserver is null");
 			return false;
 		}
 
 		// set  max default packet size 
 		if(!set_netpara_option(FEP_INTERNET_SERVER_SEND_BUFF_SIZE, FEP_INTERNET_SERVER_RECV_BUFF_SIZE, FEP_INTERNET_MAX_PACKAGE_SIZE))
 		{
-			CONSOLE_INFO("set_netpara_option");
+			_RLOG_(MERROR, "set_netpara_option");
 			return false;
 		}
+		_RLOG_(MINFO, "proxy network parameters initialized, initial connections="
+			<< FEPCONFIG->init_socket_num);
 
 		set_allow_connection(true);
 
@@ -105,15 +109,24 @@ namespace faith
 		m_scl_cli_sender = boost::bind(&tcp_server::send, m_tcpserver, _1,_2,_3);
 		m_scl_cli_recver = boost::bind(&proxy_service_cli::on_data_received, &proxy_service_cli::getInstance(),_1,_2,_3);
 
+		_RLOG_(MINFO, "proxy service initialization completed");
 		return true;
 	}
 
 	bool proxy_service_cli::start()
 	{
-		if(!m_tcpserver->start())
+		if (m_tcpserver == nullptr)
 		{
+			_RLOG_(MERROR, "proxy service start failed: tcp server is null");
 			return false;
 		}
+		_RLOG_(MINFO, "proxy service starting acceptor");
+		if(!m_tcpserver->start())
+		{
+			_RLOG_(MERROR, "proxy service acceptor start failed, port=" << m_port);
+			return false;
+		}
+		_RLOG_(MINFO, "proxy service acceptor started, port=" << m_port);
 		return true;
 	}
 
@@ -155,6 +168,11 @@ namespace faith
 		new_session_ptr.set_client_uid();
 		new_session_ptr.refresh_heart_beat();
 		new_session_ptr.m_heart_login_time = utility::get_tick_count() + client_session_login_time;
+		_RLOG_(MINFO, "client session allocated, connindex:" << connindex
+			<< " arrayindex:" << new_session_ptr.get_array_index()
+			<< " ip:" << ip_str << " scheduler thread:"
+			<< new_session_ptr.get_scheduler_thread_id()
+			<< " session count:" << m_session_array_num);
 
 		if (get_session_num() > init_socket_link)
 		{
@@ -202,6 +220,10 @@ namespace faith
 		{
 			return false;
 		}
+		_RLOG_(MINFO, "client session releasing, connindex:" << connindex
+			<< " arrayindex:" << client_session_ptr->get_array_index()
+			<< " scheduler thread:" << client_session_ptr->get_scheduler_thread_id()
+			<< " session count:" << m_session_array_num);
 		client_session_ptr->clear_data();
 		m_session_array_num--;
 		return true;
@@ -254,8 +276,14 @@ namespace faith
 	}
 	void proxy_service_cli::on_conn_created( uint32 connindex )
 	{
+		xstring ip_str = m_tcpserver ? m_tcpserver->get_ip_addr(connindex) : "unknown";
+		_RLOG_(MINFO, "client connection received, connindex:" << connindex
+			<< " ip:" << ip_str << " connection callback thread:"
+			<< net::scheduler::getInstance().get_current_thread_id());
 		if(!m_enable_connect)
 		{
+			_RLOG_(MWARN, "client connection rejected, connindex:" << connindex
+				<< " reason: connections disabled");
 			m_tcpserver->close(connindex);
 			return;
 		}
@@ -263,15 +291,21 @@ namespace faith
 
 		if(!alloc_session(connindex)) 
 		{
+			_RLOG_(MERROR, "client session allocation failed, connindex:" << connindex);
 			m_tcpserver->close(connindex);
 			return ;
 		}
+		_RLOG_(MINFO, "client connection accepted, connindex:" << connindex);
 	}
 
 	void proxy_service_cli::on_conn_closed( uint32 connindex )
 	{
+		_RLOG_(MINFO, "client connection closed, connindex:" << connindex);
 		logout(connindex, e_logout_result_connect_dis);
-		free_session(connindex);
+		if (!free_session(connindex))
+		{
+			_RLOG_(MWARN, "client session release skipped, connindex:" << connindex);
+		}
 	}
 
 	void proxy_service_cli::disconn_session(uint32 connindex, e_logout_result logout_result)
@@ -326,7 +360,8 @@ namespace faith
 		case e_msgindex_c2s_skill_operation:
 			break;
 		default:
-			CONSOLE_INFO("account num:{} header:{}", client_session_ptr->m_account, header);
+			_RLOG_(MINFO, "account num:" << client_session_ptr->m_account
+				<< " header:" << header);
 			break;
 		}
 	}

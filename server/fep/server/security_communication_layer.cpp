@@ -15,6 +15,7 @@
 #include "fep_client.hpp"
 #include <Utility/serialize_msg.h>
 #include "server_log.hpp"
+#include <rlog.hpp>
 #include "net.pb.h"
 
 namespace faith
@@ -52,7 +53,7 @@ namespace faith
 	{
 		for (std::map<int32, int64>::iterator it = m_send_message_map.begin(); it != m_send_message_map.end(); ++it)
 		{
-			CONSOLE_INFO("send num:{} header:{}", it->second, it->first);
+			_RLOG_(MINFO, "send num:" << it->second << " header:" << it->first);
 		}
 	}
 	//	desc:	加密并发送数据

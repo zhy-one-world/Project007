@@ -18,6 +18,7 @@
 #include "connection/daemon_client.hpp"
 #include "utility/parse_msg.h"
 #include "http/http_access_mgr.hpp"
+#include <rlog.hpp>
 #include "net.pb.h"
 #include "eye_proto.pb.h"
 
@@ -54,21 +55,45 @@ namespace faith
 
 	void fep_client::start()
 	{
+		_RLOG_(MINFO, "fep client starting external proxy service");
+		if (!proxy_service_cli::getInstance().start())
+		{
+			_RLOG_(MERROR, "proxy_service_cli::getInstance().start error");
+		}
+		else
+		{
+			_RLOG_(MINFO, "external proxy service started");
+		}
+		m_timerindex_gameloop = scheduler::getInstance().add_timer(
+			500,
+			FEP_NETWORK_SCHEDULER_THREAD_ID,
+			boost::bind(&fep_client::server_loop, this, _1));
+		_RLOG_(MINFO, "fep server loop timer initialized, timer index="
+			<< m_timerindex_gameloop << " thread=" << FEP_NETWORK_SCHEDULER_THREAD_ID);
+
 		scheduler::getInstance().post(
 			boost::bind(&fep_client::start_on_session_thread, this),
 			FEP_NETWORK_SCHEDULER_THREAD_ID);
+		_RLOG_(MINFO, "internal WS/CS startup task posted, thread="
+			<< FEP_NETWORK_SCHEDULER_THREAD_ID);
 	}
 
 	void fep_client::start_on_session_thread()
 	{
-		net_client_mgr::getInstance().start(m_ws_info,
+		_RLOG_(MINFO, "starting internal WS client, endpoint="
+			<< m_ws_info.ip_addr << ":" << m_ws_info.port);
+		const bool ws_start_result = net_client_mgr::getInstance().start(m_ws_info,
 			boost::bind(&fep_client::on_conn_status, this, _1),
 			boost::bind(&fep_client::on_conn_closed, this, _1)
 		);
-		net_client_mgr::getInstance().start(m_cs_info,
+		_RLOG_(MINFO, "internal WS client start result=" << ws_start_result);
+		_RLOG_(MINFO, "starting internal CS client, endpoint="
+			<< m_cs_info.ip_addr << ":" << m_cs_info.port);
+		const bool cs_start_result = net_client_mgr::getInstance().start(m_cs_info,
 			boost::bind(&fep_client::on_conn_status, this, _1),
 			boost::bind(&fep_client::on_conn_closed, this, _1)
 		);
+		_RLOG_(MINFO, "internal CS client start result=" << cs_start_result);
 	}
 	void fep_client::stop()
 	{
@@ -86,13 +111,13 @@ namespace faith
 		case e_server_type_ws:
 		{
 			m_ws_ci = faith_client_ptr->get_array_index();
-			start_loop();
+			_RLOG_(MINFO, "internal WS connected, connection index=" << m_ws_ci);
 		}
 		break;
 		case e_server_type_cs:
 		{
 			m_cs_ci = faith_client_ptr->get_array_index();
-			start_loop();
+			_RLOG_(MINFO, "internal CS connected, connection index=" << m_cs_ci);
 		}
 		default:
 			break;
@@ -110,29 +135,16 @@ namespace faith
 		case e_server_type_ws:
 		{
 			m_ws_ci = tcp_client::invalid_conn_index;
+			_RLOG_(MWARN, "internal WS connection closed");
 		}
 		break;
 		case e_server_type_cs:
 		{
 			m_cs_ci = tcp_client::invalid_conn_index;
+			_RLOG_(MWARN, "internal CS connection closed");
 		}
 		default:
 			break;
-		}
-	}
-	void fep_client::start_loop()
-	{
-		if (m_cs_ci != tcp_client::invalid_conn_index && m_ws_ci != tcp_client::invalid_conn_index)
-		{
-			if (!proxy_service_cli::getInstance().start())
-			{
-				CONSOLE_INFO("proxy_service_cli::getInstance().start error");
-				return;
-			}
-			m_timerindex_gameloop = scheduler::getInstance().add_timer(
-				500,
-				FEP_NETWORK_SCHEDULER_THREAD_ID,
-				boost::bind(&fep_client::server_loop, this, _1));
 		}
 	}
 	void fep_client::server_loop(uint32 timer_index)
@@ -153,27 +165,31 @@ namespace faith
 
 			if (m_gm_state)
 			{
-				CONSOLE_INFO("==========fep gm server status==========");
+				_RLOG_(MINFO, "==========fep gm server status==========");
 			}
 			else
 			{
-				CONSOLE_INFO("==========fep server status==========");
+				_RLOG_(MINFO, "==========fep server status==========");
 			}
 
-			CONSOLE_INFO("ws {}/{} cs {}/{}", net_client_mgr::getInstance().get_server_count(e_server_type_ws), SERVER_WS_COUNT, net_client_mgr::getInstance().get_server_count(e_server_type_cs), SERVER_CS_COUNT);
+			_RLOG_(MINFO, "ws " << net_client_mgr::getInstance().get_server_count(e_server_type_ws)
+				<< "/" << SERVER_WS_COUNT << " cs "
+				<< net_client_mgr::getInstance().get_server_count(e_server_type_cs)
+				<< "/" << SERVER_CS_COUNT);
 
 			// �����Ϣ
 			int32 session_count = proxy_service_cli::getInstance().get_session_num();
-			CONSOLE_INFO("session num:{} session max:{}", session_count, init_socket_more);
+			_RLOG_(MINFO, "session num:" << session_count
+				<< " session max:" << init_socket_more);
 			if (loop_counter > 0)
 			{
-				CONSOLE_INFO("tick:{}", loop_time / loop_counter);
+				_RLOG_(MINFO, "tick:" << loop_time / loop_counter);
 				loop_time = 0;
 				loop_counter = 0;
 			}
 			if (daemon_client::getInstance().get_server_close())
 			{
-				CONSOLE_INFO("daemon close, please shutdown fep ! ! !");
+				_RLOG_(MWARN, "daemon close, please shutdown fep ! ! !");
 				app_server::getInstance().stop();
 				return;
 			}
@@ -189,7 +205,10 @@ namespace faith
 			req.player_count = proxy_service_cli::getInstance().get_session_num();
 			req.max_player_count = init_socket_more;
 
-			tcp_client::get_instance().send(m_ws_ci, &req, sizeof(req));
+			if (m_ws_ci != tcp_client::invalid_conn_index)
+			{
+				tcp_client::get_instance().send(m_ws_ci, &req, sizeof(req));
+			}
 		}
 
 	}
@@ -216,7 +235,7 @@ namespace faith
 			return;
 		}
 		daemon_client::getInstance().set_server_close(true);
-		CONSOLE_INFO("FaithEye Stop Game!");
+		_RLOG_(MWARN, "FaithEye Stop Game!");
 	}
 
 	void fep_client::handler_daemon_onrecv(const void* data_ptr, size_t data_len)
@@ -248,7 +267,7 @@ namespace faith
 			return;
 		}
 		daemon_client::getInstance().set_server_close(true);
-		CONSOLE_INFO("FaithEye Stop Game!");
+		_RLOG_(MWARN, "FaithEye Stop Game!");
 	}
 	void fep_client::send_message_to_ws(const void* data_ptr, size_t data_len)
 	{

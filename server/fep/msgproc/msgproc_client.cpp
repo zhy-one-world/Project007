@@ -24,6 +24,7 @@
 #include "game.pb.h"
 #include "cross.pb.h"
 #include "net.pb.h"
+#include <rlog.hpp>
 #include "character.pb.h"
 
 namespace faith
@@ -93,14 +94,16 @@ namespace faith
 		client_session* client_session_ptr = proxy_service_cli::getInstance().get_session_by_id(array_index);
 		if (nullptr == client_session_ptr || client_session_ptr->is_vaild() == false)
 		{
-			CONSOLE_INFO("c2ls_req_login client_session_ptr is null array_index:{} data_len:{}", array_index, data_len);
+			_RLOG_(MERROR, "c2ls_req_login client_session_ptr is null array_index:"
+				<< array_index << " data_len:" << data_len);
 			return;
 		}
 
 		packet_c2s_s2c* packet = (packet_c2s_s2c*)data_ptr;
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("c2ls_req_login array_index:{} data_len:{}", array_index, data_len);
+			_RLOG_(MINFO, "c2ls_req_login array_index:" << array_index
+				<< " data_len:" << data_len);
 			return;
 		}
 		login_proto_login login;
