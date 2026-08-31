@@ -3,3 +3,5 @@ server/build-vs/
 server/build-vs2026/
 server_shipping/*.zip
 server_shipping/**/*.zip
+/server/build-fep
+/server/build-ws
