@@ -12,6 +12,7 @@
 
 #include <net/tcp_server.hpp>
 #include <singleton.hpp>
+#include <atomic>
 #include <memory>
 #include <mutex>
 #include <string>
@@ -53,13 +54,13 @@ namespace faith
 		void broadcast(const void* data_ptr, size_t data_len);
 		bool is_valid_session(uint32 conn_index);
 		uint32 get_port()       {  return m_port;}
-		int32& get_session_num() {
+		int32 get_session_num() const {
 			ZoneScoped;
-			return m_session_array_num;
+			return m_session_array_num.load();
 		}
 		void send_time_limit_activity_template_to_all();
 	private:
-		void logout(uint32 connindex, e_logout_result logout_result);//å‘é€ç™»å‡ºåè®®,å¹¶ä¿®æ”¹ç›¸å…³çŠ¶æ€
+		void logout(uint32 connindex, e_logout_result logout_result);//·¢ËÍµÇ³öĞ­Òé,²¢ĞŞ¸ÄÏà¹Ø×´Ì¬
 		bool free_session(uint32 connindex);
 		bool set_netpara_option(uint32 send_buf_size, uint32 recv_buf_size, uint32 max_packet_size);
 	protected:
@@ -71,7 +72,7 @@ namespace faith
 		msg_handler_type m_handler_map[e_msg_base_max];
 		client_session_ptr m_session_array[init_socket_more];		//	who's key is connection_index to FEP
 		mutable std::mutex m_session_mutex;
-		int32 m_session_array_num;
+		std::atomic<int32> m_session_array_num;
 	};
 
 }

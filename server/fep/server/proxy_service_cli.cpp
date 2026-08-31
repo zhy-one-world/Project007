@@ -173,7 +173,7 @@ namespace faith
 			<< " arrayindex:" << new_session_ptr->get_array_index()
 			<< " ip:" << ip_str << " scheduler thread:"
 			<< new_session_ptr->get_scheduler_thread_id()
-			<< " session count:" << m_session_array_num);
+			<< " session count:" << m_session_array_num.load());
 
 		if (get_session_num() > init_socket_link)
 		{
@@ -226,7 +226,7 @@ namespace faith
 		_RLOG_(MINFO, "client session releasing, connindex:" << connindex
 			<< " arrayindex:" << client_session_ptr->get_array_index()
 			<< " scheduler thread:" << client_session_ptr->get_scheduler_thread_id()
-			<< " session count:" << m_session_array_num);
+			<< " session count:" << m_session_array_num.load());
 		client_session_ptr->clear_data();
 		{
 			std::lock_guard<std::mutex> lock(m_session_mutex);
