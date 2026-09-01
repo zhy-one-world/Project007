@@ -94,7 +94,7 @@ namespace faith
 		//parse_msg::getInstance().parse_message_new(&character_end_info_msg, data_ptr, data_len);
 		//client_session_ptr->insert_optional_guid(character_end_info_msg.role_guid());
 
-		//´«ËÍ¿Í»§¶Ë
+		//ï¿½ï¿½ï¿½Í¿Í»ï¿½ï¿½ï¿½
 		security_communication_layer::getInstance().send_to_session(client_session_ptr->get_conn_index(), data_ptr, data_len);
 	}
 
@@ -119,7 +119,7 @@ namespace faith
 		{
 			cre_char.add_role_info(pdata->role_info.data_ary[i]);
 		}
-		//´«ËÍ¿Í»§¶Ë
+		//ï¿½ï¿½ï¿½Í¿Í»ï¿½ï¿½ï¿½
 		security_communication_layer::getInstance().send_to_session(client_session_ptr->get_conn_index(), &cre_char, e_msgindex_s2c_create_char);
 	}
 
@@ -140,7 +140,7 @@ namespace faith
 		//	client_session_ptr->remove_optional_guid(del_character_end_msg.role_guid());
 		//}
 
-		//´«ËÍ¿Í»§¶Ë
+		//ï¿½ï¿½ï¿½Í¿Í»ï¿½ï¿½ï¿½
 		security_communication_layer::getInstance().send_to_session(client_session_ptr->get_conn_index(), data_ptr, data_len);
 	}
 }

@@ -77,7 +77,6 @@ target_link_directories(fep PUBLIC
 target_link_libraries(fep PUBLIC
 	hld_def
 	server_common
-	server_lua
 	server_net
 	event
 	libcurl

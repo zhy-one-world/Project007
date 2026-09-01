@@ -29,8 +29,6 @@ namespace faith
 
 	fep_client::fep_client()
 	{
-		m_ws_ci = tcp_client::invalid_conn_index;
-		m_cs_ci = tcp_client::invalid_conn_index;
 		m_timerindex_gameloop = scheduler::scheduler_invalid_timer_index;
 
 		xstring ws_ip = WSCONFIG->internal_host;
@@ -110,17 +108,16 @@ namespace faith
 		{
 		case e_server_type_ws:
 		{
-			m_ws_ci = faith_client_ptr->get_array_index();
-			_RLOG_(MINFO, "internal WS connected, connection index=" << m_ws_ci);
+			m_ws_session = faith_client_ptr->get_session();
+			_RLOG_(MINFO, "internal WS connected, session=" << m_ws_session.get());
 		}
 		break;
 		case e_server_type_cs:
 		{
-			m_cs_ci = faith_client_ptr->get_array_index();
-			_RLOG_(MINFO, "internal CS connected, connection index=" << m_cs_ci);
+			m_cs_session = faith_client_ptr->get_session();
+			_RLOG_(MINFO, "internal CS connected, session=" << m_cs_session.get());
 		}
-		default:
-			break;
+		break;
 		}
 	}
 
@@ -134,15 +131,16 @@ namespace faith
 		{
 		case e_server_type_ws:
 		{
-			m_ws_ci = tcp_client::invalid_conn_index;
+			m_ws_session.reset();
 			_RLOG_(MWARN, "internal WS connection closed");
 		}
 		break;
 		case e_server_type_cs:
 		{
-			m_cs_ci = tcp_client::invalid_conn_index;
+			m_cs_session.reset();
 			_RLOG_(MWARN, "internal CS connection closed");
 		}
+		break;
 		default:
 			break;
 		}
@@ -177,7 +175,7 @@ namespace faith
 				<< net_client_mgr::getInstance().get_server_count(e_server_type_cs)
 				<< "/" << SERVER_CS_COUNT);
 
-			// �����Ϣ
+
 			int32 session_count = proxy_service_cli::getInstance().get_session_num();
 			_RLOG_(MINFO, "session num:" << session_count
 				<< " session max:" << init_socket_more);
@@ -205,9 +203,9 @@ namespace faith
 			req.player_count = proxy_service_cli::getInstance().get_session_num();
 			req.max_player_count = init_socket_more;
 
-			if (m_ws_ci != tcp_client::invalid_conn_index)
+			if (m_ws_session)
 			{
-				tcp_client::get_instance().send(m_ws_ci, &req, sizeof(req));
+				tcp_client::get_instance().send(m_ws_session, &req, sizeof(req));
 			}
 		}
 
@@ -271,10 +269,17 @@ namespace faith
 	}
 	void fep_client::send_message_to_ws(const void* data_ptr, size_t data_len)
 	{
-		net_client_mgr::getInstance().send_message(m_ws_ci, data_ptr, data_len);
+		if (m_ws_session)
+		{
+			tcp_client::get_instance().send(m_ws_session, data_ptr, data_len);
+		}
 	}
 	void fep_client::send_message_to_cs(const void* data_ptr, size_t data_len, uint32 connindex)
 	{
-		net_client_mgr::getInstance().send_message(m_cs_ci, data_ptr, data_len);
+		(void)connindex;
+		if (m_cs_session)
+		{
+			tcp_client::get_instance().send(m_cs_session, data_ptr, data_len);
+		}
 	}
 }

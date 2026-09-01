@@ -36,19 +36,16 @@ namespace faith
 			m_timerindex_connect = scheduler::scheduler_invalid_timer_index;
 		}
 		m_server_status = e_serverstatus_created;
-		m_conn_index = tcp_client::invalid_conn_index;
+		m_session.reset();
 		m_server_info.clear_data();
 	}
 	int32 net_client::send_message(const void* data_ptr, size_t data_len)
 	{
-		if (m_server_status > e_serverstatus_created)
+		if (m_server_status > e_serverstatus_created && m_session)
 		{
-			return tcp_client::get_instance().send(m_conn_index, data_ptr, data_len);
+			return tcp_client::get_instance().send(m_session, data_ptr, data_len);
 		}
-		else
-		{
-			return 0;
-		}
+		return 0;
 	}
 
 	void net_client::retry_connect(uint32 timer_index)
@@ -61,7 +58,7 @@ namespace faith
 		connect_to();
 	}
 
-	void net_client::on_conn_status(uint32 connindex, tcp_client::e_connect_info status, xstring info)
+	void net_client::on_conn_status(tcp_client_session_ptr session, tcp_client::e_connect_info status, xstring info)
 	{
 		CONSOLE_INFO(" info = {} status = {}", info, (int32)status);
 		switch (status)
@@ -70,6 +67,7 @@ namespace faith
 		case faith::net::tcp_client::e_ci_addr_resovle_failed:
 		case faith::net::tcp_client::e_ci_connection_failed:
 		{
+			m_session.reset();
 			m_timerindex_connect = scheduler::getInstance().add_timer(10000, boost::bind(&net_client::retry_connect, this, _1));
 		}
 			break;
@@ -77,6 +75,7 @@ namespace faith
 			break;
 		case faith::net::tcp_client::e_ci_connection_successed:
 		{
+			m_session = session;
 			m_server_status = e_serverstatus_working;
 
 			req_login req;
@@ -98,19 +97,18 @@ namespace faith
 		}
 	}
 
-	void net_client::on_conn_closed( uint32 connindex )
+	void net_client::on_conn_closed(tcp_client_session_ptr session)
 	{
-		if (connindex >= e_server_type_max)
-		{
-			return;
-		}
+		(void)session;
 		m_onclose_handler(this);
 		m_server_status = e_serverstatus_initialized;
+		m_session.reset();
 		m_timerindex_connect = scheduler::getInstance().add_timer(10000, boost::bind(&net_client::retry_connect, this, _1));
 	}
 
-	void net_client::on_data_received( uint32 connindex,const void *data_ptr,size_t data_len )
+	void net_client::on_data_received(tcp_client_session_ptr session, const void *data_ptr, size_t data_len)
 	{
+		(void)session;
 		m_onrecved_handler(this, data_ptr, data_len);
 	}
 
@@ -118,16 +116,18 @@ namespace faith
 	{
 		xstring ip = m_server_info.ip_addr;
 		xstring port = boost::lexical_cast<xstring>(m_server_info.port);
-		uint32 connindex = net::tcp_client::get_instance().connect_to(m_conn_index,
+		m_session = net::tcp_client::get_instance().connect_to(
 			ip, port,
 			boost::bind(&net_client::on_conn_status,this,_1,_2,_3),
 			boost::bind(&net_client::on_conn_closed,this,_1),
 			boost::bind(&net_client::on_data_received,this,_1,_2,_3)
 			);
 		m_server_status = e_serverstatus_initialized;
-		CONSOLE_INFO(" server_type = {} ipaddr = {} port_name = {} ci = {}", (int32)m_server_info.server_type, m_server_info.ip_addr, m_server_info.port, m_conn_index);
-		return true;
-	} 
+		CONSOLE_INFO(" server_type = {} ipaddr = {} port_name = {} session={}",
+			(int32)m_server_info.server_type, m_server_info.ip_addr, m_server_info.port,
+			m_session.get());
+		return m_session != NULL;
+	}
 	bool net_client::start(const s_server_info& server_info,
 		client_on_connect_handler_type onconnect_handler,
 		client_on_closed_handler_type onclose_handler,
@@ -141,8 +141,12 @@ namespace faith
 	}
 
 	void net_client::stop()
-	{ 
-		tcp_client::get_instance().disconnect(m_conn_index);
+	{
+		if (m_session)
+		{
+			tcp_client::get_instance().disconnect(m_session);
+			m_session.reset();
+		}
 		clear_data();
 	}
 }

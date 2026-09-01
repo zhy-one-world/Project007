@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2016年12月5日12:01:46
+	created:	2016??12??5??12:01:46
 	file base:	server
 	file ext:	cpp
 	author:		zhy
@@ -36,7 +36,7 @@ namespace faith
 		std::string return_value;
 		temp_stream >> return_value;
 		return return_value;*/
-		//服务器id不需要转码了
+		//??????id??????????
 		std::stringstream temp_stream;
 		temp_stream << server_template_id;
 		std::string return_value;
@@ -296,26 +296,26 @@ namespace faith
 		xstring log_string = "{";
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ROLE_LOGIN);
 		log_string += "{";
-		server_log::push_log_string(log_string, account, "userid");								//账号
-		server_log::push_log_string(log_string, device_id, "deviceid");							//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");							//时间戳
+		server_log::push_log_string(log_string, account, "userid");								//???
+		server_log::push_log_string(log_string, device_id, "deviceid");							//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");							//????
 		server_log::push_log_string(log_string, app_key, "appid");								//appid
-		server_log::push_log_string(log_string, "login", "logname");							//模块名
-		server_log::push_log_string(log_string, client_version, "version");						//客户端版本
-		server_log::push_log_string(log_string, "2050", "stepnumid");							//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");		//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, server_id, "serverid");						//服务器ID
-		server_log::push_log_string(log_string, gamechannel, "gamechannel");					//商店渠道ID
-		server_log::push_log_string(log_string, adchannel, "adchannel");						//广告渠道ID
-		server_log::push_log_string(log_string, server_invaild_string, "roleid");				//角色ID
-		server_log::push_log_string(log_string, server_invaild_string, "rolelevel");			//角色等级
-		server_log::push_log_string(log_string, server_invaild_string, "combatpower");			//角色战力
-		server_log::push_log_string(log_string, cur_time, "dtime");								//时间
-		server_log::push_log_string(log_string, account, "accname");							//账号
+		server_log::push_log_string(log_string, "login", "logname");							//?????
+		server_log::push_log_string(log_string, client_version, "version");						//?????锟斤拷
+		server_log::push_log_string(log_string, "2050", "stepnumid");							//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");		//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, server_id, "serverid");						//??????ID
+		server_log::push_log_string(log_string, gamechannel, "gamechannel");					//???????ID
+		server_log::push_log_string(log_string, adchannel, "adchannel");						//???????ID
+		server_log::push_log_string(log_string, server_invaild_string, "roleid");				//???ID
+		server_log::push_log_string(log_string, server_invaild_string, "rolelevel");			//??????
+		server_log::push_log_string(log_string, server_invaild_string, "combatpower");			//??????
+		server_log::push_log_string(log_string, cur_time, "dtime");								//???
+		server_log::push_log_string(log_string, account, "accname");							//???
 		server_log::push_log_string(log_string, ip, "ip");										//ip
-		server_log::push_log_string(log_string, server_invaild_string, "valueamount");			//价值虚拟币总量
-		server_log::push_log_string(log_string, server_invaild_string, "os_version");			//系统版本
-		server_log::push_log_string(log_string, model, "model");			//手机型号
+		server_log::push_log_string(log_string, server_invaild_string, "valueamount");			//????????????
+		server_log::push_log_string(log_string, server_invaild_string, "os_version");			//???锟斤拷
+		server_log::push_log_string(log_string, model, "model");			//??????
 		server_log::push_log_string(log_string, idfa, "idfa"); 									//idfa
 		server_log::push_log_string(log_string, imei, "imei"); 									//imei
 		server_log::push_log_string(log_string, android_id, "androidId"); 									//androidId
@@ -331,26 +331,26 @@ namespace faith
 		
 		
 
-		//server_log::push_log_string(log_string, server_log_trans(server_common_head));							//通用日志头
-		//server_log::push_log_string(log_string, server_log_trans(cur_time));									//时间
+		//server_log::push_log_string(log_string, server_log_trans(server_common_head));							//???????
+		//server_log::push_log_string(log_string, server_log_trans(cur_time));									//???
 		//server_log::push_log_string(log_string, server_log_trans(app_key));										//app key
-		//server_log::push_log_string(log_string, server_log_trans(client_version));							   	//客户端版本
-		//server_log::push_log_string(log_string, server_log_trans("login"));										//日志模块名
-		//server_log::push_log_string(log_string, server_log_trans(server_log_normversion));						//服务器日志规范版本号
-		//server_log::push_log_string(log_string, server_log_trans(2050));										//步骤号
-		//server_log::push_log_string(log_string, server_log_trans(server_id));									//游戏服务器ID
-		//server_log::push_log_string(log_string, server_log_trans(channel_id));									//上线渠道ID
-		//server_log::push_log_string(log_string, server_log_trans(account));										//账号ID
-		//server_log::push_log_string(log_string, server_log_trans(account));										//账户名
-		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//角色ID
-		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//角色名
-		//server_log::push_log_string(log_string,	0);																//等级
-		//server_log::push_log_string(log_string, server_log_trans(device_id));									//设备唯一标识
-		//server_log::push_log_string(log_string, server_log_trans(ip));											//登录IP
-		//server_log::push_log_string(log_string, 0);																//价值货币
-		//server_log::push_log_string(log_string, 0);																//虚拟币
-		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//VIP等级
-		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//其他货币
+		//server_log::push_log_string(log_string, server_log_trans(client_version));							   	//?????锟斤拷
+		//server_log::push_log_string(log_string, server_log_trans("login"));										//????????
+		//server_log::push_log_string(log_string, server_log_trans(server_log_normversion));						//??????????锟絑?锟斤拷??
+		//server_log::push_log_string(log_string, server_log_trans(2050));										//?????
+		//server_log::push_log_string(log_string, server_log_trans(server_id));									//?????????ID
+		//server_log::push_log_string(log_string, server_log_trans(channel_id));									//????????ID
+		//server_log::push_log_string(log_string, server_log_trans(account));										//???ID
+		//server_log::push_log_string(log_string, server_log_trans(account));										//?????
+		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//???ID
+		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//?????
+		//server_log::push_log_string(log_string,	0);																//???
+		//server_log::push_log_string(log_string, server_log_trans(device_id));									//?锟斤拷锟斤拷????
+		//server_log::push_log_string(log_string, server_log_trans(ip));											//???IP
+		//server_log::push_log_string(log_string, 0);																//???????
+		//server_log::push_log_string(log_string, 0);																//?????
+		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//VIP???
+		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//????????
 		//PROJECT_RECORD_LOG(g_login_role_logger, log_string);
 #endif
 	}
@@ -364,26 +364,26 @@ namespace faith
 		xstring log_string = "{";
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ACCOUNT_CREATE);
 		log_string += "{";
-		server_log::push_log_string(log_string, account, "userid");								//账号
-		server_log::push_log_string(log_string, device_id, "deviceid");							//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");							//时间戳
+		server_log::push_log_string(log_string, account, "userid");								//???
+		server_log::push_log_string(log_string, device_id, "deviceid");							//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");							//????
 		server_log::push_log_string(log_string, app_key, "appid");								//appid
-		server_log::push_log_string(log_string, "login", "logname");							//模块名
-		server_log::push_log_string(log_string, client_version, "version");						//客户端版本
-		server_log::push_log_string(log_string, "2050", "stepnumid");							//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");		//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, server_id, "serverid");						//服务器ID
-		server_log::push_log_string(log_string, gamechannel, "gamechannel");					//商店渠道ID
-		server_log::push_log_string(log_string, adchannel, "adchannel");						//广告渠道ID
-		server_log::push_log_string(log_string, server_invaild_string, "roleid");				//角色ID
-		server_log::push_log_string(log_string, server_invaild_string, "rolelevel");			//角色等级
-		server_log::push_log_string(log_string, server_invaild_string, "combatpower");			//角色战力
-		server_log::push_log_string(log_string, cur_time, "dtime");								//时间
-		server_log::push_log_string(log_string, account, "accname");							//账号
+		server_log::push_log_string(log_string, "login", "logname");							//?????
+		server_log::push_log_string(log_string, client_version, "version");						//?????锟斤拷
+		server_log::push_log_string(log_string, "2050", "stepnumid");							//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");		//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, server_id, "serverid");						//??????ID
+		server_log::push_log_string(log_string, gamechannel, "gamechannel");					//???????ID
+		server_log::push_log_string(log_string, adchannel, "adchannel");						//???????ID
+		server_log::push_log_string(log_string, server_invaild_string, "roleid");				//???ID
+		server_log::push_log_string(log_string, server_invaild_string, "rolelevel");			//??????
+		server_log::push_log_string(log_string, server_invaild_string, "combatpower");			//??????
+		server_log::push_log_string(log_string, cur_time, "dtime");								//???
+		server_log::push_log_string(log_string, account, "accname");							//???
 		server_log::push_log_string(log_string, ip, "ip");										//ip
-		server_log::push_log_string(log_string, server_invaild_string, "valueamount");			//价值虚拟币总量
-		server_log::push_log_string(log_string, server_invaild_string, "os_version");			//系统版本
-		server_log::push_log_string(log_string, model, "model");			//手机型号
+		server_log::push_log_string(log_string, server_invaild_string, "valueamount");			//????????????
+		server_log::push_log_string(log_string, server_invaild_string, "os_version");			//???锟斤拷
+		server_log::push_log_string(log_string, model, "model");			//??????
 		server_log::push_log_string(log_string, idfa, "idfa"); 									//idfa
 		server_log::push_log_string(log_string, imei, "imei"); 									//imei
 		server_log::push_log_string(log_string, android_id, "androidId"); 									//androidId
@@ -391,26 +391,26 @@ namespace faith
 		server_log::push_log_string(log_string, sn, "sn", true); 									//sn
 		
 		log_string += "}}";
-		//server_log::push_log_string(log_string, server_log_trans(server_common_head));							//通用日志头
-		//server_log::push_log_string(log_string, server_log_trans(cur_time));									//时间
+		//server_log::push_log_string(log_string, server_log_trans(server_common_head));							//???????
+		//server_log::push_log_string(log_string, server_log_trans(cur_time));									//???
 		//server_log::push_log_string(log_string, server_log_trans(app_key));										//app key
-		//server_log::push_log_string(log_string, server_log_trans(client_version));							   	//客户端版本
-		//server_log::push_log_string(log_string, server_log_trans("login"));										//日志模块名
-		//server_log::push_log_string(log_string, server_log_trans(server_log_normversion));						//服务器日志规范版本号
-		//server_log::push_log_string(log_string, server_log_trans(2050));										//步骤号
-		//server_log::push_log_string(log_string, server_log_trans(server_id));									//游戏服务器ID
-		//server_log::push_log_string(log_string, server_log_trans(channel_id));									//上线渠道ID
-		//server_log::push_log_string(log_string, server_log_trans(account));										//账号ID
-		//server_log::push_log_string(log_string, server_log_trans(account));										//账户名
-		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//角色ID
-		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//角色名
-		//server_log::push_log_string(log_string,	0);																//等级
-		//server_log::push_log_string(log_string, server_log_trans(device_id));									//设备唯一标识
-		//server_log::push_log_string(log_string, server_log_trans(ip));											//登录IP
-		//server_log::push_log_string(log_string, 0);																//价值货币
-		//server_log::push_log_string(log_string, 0);																//虚拟币
-		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//VIP等级
-		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//其他货币
+		//server_log::push_log_string(log_string, server_log_trans(client_version));							   	//?????锟斤拷
+		//server_log::push_log_string(log_string, server_log_trans("login"));										//????????
+		//server_log::push_log_string(log_string, server_log_trans(server_log_normversion));						//??????????锟絑?锟斤拷??
+		//server_log::push_log_string(log_string, server_log_trans(2050));										//?????
+		//server_log::push_log_string(log_string, server_log_trans(server_id));									//?????????ID
+		//server_log::push_log_string(log_string, server_log_trans(channel_id));									//????????ID
+		//server_log::push_log_string(log_string, server_log_trans(account));										//???ID
+		//server_log::push_log_string(log_string, server_log_trans(account));										//?????
+		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//???ID
+		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//?????
+		//server_log::push_log_string(log_string,	0);																//???
+		//server_log::push_log_string(log_string, server_log_trans(device_id));									//?锟斤拷锟斤拷????
+		//server_log::push_log_string(log_string, server_log_trans(ip));											//???IP
+		//server_log::push_log_string(log_string, 0);																//???????
+		//server_log::push_log_string(log_string, 0);																//?????
+		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//VIP???
+		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//????????
 		//PROJECT_RECORD_LOG(g_login_role_logger, log_string);
 
 		xstring log_time = time_helper::get_current_time();
@@ -468,26 +468,26 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_CREATE);
 		log_string += "{";
 
-		server_log::push_log_string(log_string, role_info.account, "userid");								//账号
-		server_log::push_log_string(log_string, deviceid, "deviceid");										//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");										//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");								//???
+		server_log::push_log_string(log_string, deviceid, "deviceid");										//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");										//????
 		server_log::push_log_string(log_string, appid, "appid");											//appid
-		server_log::push_log_string(log_string, "rolebuild", "logname");									//模块名
-		server_log::push_log_string(log_string, version, "version");										//客户端版本
-		server_log::push_log_string(log_string, "3025", "stepnumid");										//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");									//服务器ID
-		server_log::push_log_string(log_string, gamechannel, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, adchannel, "adchannel");									//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");					//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");	//角色等级
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");	//角色战力
-		server_log::push_log_string(log_string, cur_time, "dtime");											//时间
-		server_log::push_log_string(log_string, role_info.account, "accname");								//账号
-		server_log::push_log_string(log_string, role_info.role_name, "rolename");							//角色名
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "roletypeid");	//角色职业
-		server_log::push_log_string(log_string, server_invaild_string, "os_version");						//系统版本
-		server_log::push_log_string(log_string, model, "model");											//手机型号
+		server_log::push_log_string(log_string, "rolebuild", "logname");									//?????
+		server_log::push_log_string(log_string, version, "version");										//?????锟斤拷
+		server_log::push_log_string(log_string, "3025", "stepnumid");										//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");									//??????ID
+		server_log::push_log_string(log_string, gamechannel, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, adchannel, "adchannel");									//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");					//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");	//??????
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");	//??????
+		server_log::push_log_string(log_string, cur_time, "dtime");											//???
+		server_log::push_log_string(log_string, role_info.account, "accname");								//???
+		server_log::push_log_string(log_string, role_info.role_name, "rolename");							//?????
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "roletypeid");	//?????
+		server_log::push_log_string(log_string, server_invaild_string, "os_version");						//???锟斤拷
+		server_log::push_log_string(log_string, model, "model");											//??????
 		server_log::push_log_string(log_string, idfa, "idfa"); 												//idfa
 		server_log::push_log_string(log_string, imei, "imei"); 												//imei
 		server_log::push_log_string(log_string, android_id, "androidId"); 									//androidId
@@ -549,28 +549,28 @@ namespace faith
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_LOGOUT);
 
 		//log_string += "{";
-		//server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		//server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		//server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		//server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		//server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		//server_log::push_log_string(log_string, "rolelogin", "logname");										//模块名
-		//server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		//server_log::push_log_string(log_string, "3030", "stepnumid");											//步骤号
-		//server_log::push_log_string(log_string, server_log_normversion, "normversion");						//服务器日志规 范版本号 
-		//server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//角色ID
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//角色战力
+		//server_log::push_log_string(log_string, "rolelogin", "logname");										//?????
+		//server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		//server_log::push_log_string(log_string, "3030", "stepnumid");											//?????
+		//server_log::push_log_string(log_string, server_log_normversion, "normversion");						//??????????? ???锟斤拷?? 
+		//server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
+		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		//server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		//server_log::push_log_string(log_string, role_info.account, "accname");									//账号
-		//server_log::push_log_string(log_string, role_info.role_name, "rolename");								//角色名
-		//server_log::push_log_string(log_string, money_info.cur_data_ary[e_money_type_jewel], "valueamount");	//价值虚拟币总量
-		//server_log::push_log_string(log_string, login_type, "logintype");										//登陆类型
-		//server_log::push_log_string(log_string, server_invaild_string, "os_version");							//系统版本
-		//server_log::push_log_string(log_string, third_info.param8, "model");							//手机型号
+		//server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		//server_log::push_log_string(log_string, role_info.account, "accname");									//???
+		//server_log::push_log_string(log_string, role_info.role_name, "rolename");								//?????
+		//server_log::push_log_string(log_string, money_info.cur_data_ary[e_money_type_jewel], "valueamount");	//????????????
+		//server_log::push_log_string(log_string, login_type, "logintype");										//???????
+		//server_log::push_log_string(log_string, server_invaild_string, "os_version");							//???锟斤拷
+		//server_log::push_log_string(log_string, third_info.param8, "model");							//??????
 		//server_log::push_log_string(log_string, third_info.param9, "idfa"); 									//idfa
 		//server_log::push_log_string(log_string, third_info.param10, "imei"); 									//imei
 		//server_log::push_log_string(log_string, third_info.param11, "androidId"); 									//androidId
@@ -582,7 +582,7 @@ namespace faith
 
 		//PROJECT_RECORD_LOG(g_enter_game_role_logger, log_string);
 
-				//此处把在线时间由毫秒转换为秒
+				//???????????????????????
 		online_time = online_time / 1000;
 		std::stringstream temp_stream;
 		temp_stream << role_info.role_guid.server_64;
@@ -651,36 +651,36 @@ namespace faith
 
 		xstring cur_time = time_helper::get_cur_time();
 		int64 cur_time_int = utility::get_tick_count();
-		//此处把在线时间由毫秒转换为秒
+		//???????????????????????
 		online_time = online_time / 1000;
 
 		//xstring log_string = "{";
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_ACCOUNT_CREATE);
 
 		//log_string += "{";
-		//server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		//server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		//server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		//server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		//server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		//server_log::push_log_string(log_string, "logout", "logname");											//模块名
-		//server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		//server_log::push_log_string(log_string, "9999", "stepnumid");											//步骤号
-		//server_log::push_log_string(log_string, server_log_normversion, "normversion");						//服务器日志规 范版本号 
-		//server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//角色ID
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//角色战力
-		//server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		//server_log::push_log_string(log_string, role_info.account, "accname");									//账号
-		//server_log::push_log_string(log_string, role_info.role_name, "rolename");								//角色名
-		//server_log::push_log_string(log_string, money_info.cur_data_ary[e_money_type_jewel], "valueamount");	//价值虚拟币总量
-		//server_log::push_log_string(log_string, online_time, "onlinetimes");									//在线时长
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//vip等级
-		//server_log::push_log_string(log_string, 0, "energy");													//剩余体力值
-		//server_log::push_log_string(log_string, server_invaild_string, "os_version");							//系统版本
-		//server_log::push_log_string(log_string, third_info.param8, "model", true);							//手机型号
+		//server_log::push_log_string(log_string, "logout", "logname");											//?????
+		//server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		//server_log::push_log_string(log_string, "9999", "stepnumid");											//?????
+		//server_log::push_log_string(log_string, server_log_normversion, "normversion");						//??????????? ???锟斤拷?? 
+		//server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
+		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
+		//server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		//server_log::push_log_string(log_string, role_info.account, "accname");									//???
+		//server_log::push_log_string(log_string, role_info.role_name, "rolename");								//?????
+		//server_log::push_log_string(log_string, money_info.cur_data_ary[e_money_type_jewel], "valueamount");	//????????????
+		//server_log::push_log_string(log_string, online_time, "onlinetimes");									//???????
+		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//vip???
+		//server_log::push_log_string(log_string, 0, "energy");													//????????
+		//server_log::push_log_string(log_string, server_invaild_string, "os_version");							//???锟斤拷
+		//server_log::push_log_string(log_string, third_info.param8, "model", true);							//??????
 
 		//log_string += "}}";
 
@@ -735,7 +735,7 @@ namespace faith
 		std::string game_server = server_log_get_game_server_id(server_template_id);
 		xstring create_times = time_helper::get_str_time_by_stamp(create_time);
 
-		//此处把在线时间由毫秒转换为秒
+		//???????????????????????
 		online_time = online_time / 1000;
 		xstring log_time = time_helper::get_current_time();
 		std::stringstream temp_stream;
@@ -825,28 +825,28 @@ namespace faith
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_LEVELCHANGE);
 		//
 		//log_string += "{";
-		//server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		//server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		//server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		//server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		//server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		//server_log::push_log_string(log_string, "levelup", "logname");											//模块名
-		//server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		//server_log::push_log_string(log_string, "6010", "stepnumid");											//步骤号
-		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		//server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//角色ID
-		//server_log::push_log_string(log_string, old_level, "rolelevel");										//角色等级
-		//server_log::push_log_string(log_string, old_gs, "combatpower");											//角色战力
+		//server_log::push_log_string(log_string, "levelup", "logname");											//?????
+		//server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		//server_log::push_log_string(log_string, "6010", "stepnumid");											//?????
+		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		//server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
+		//server_log::push_log_string(log_string, old_level, "rolelevel");										//??????
+		//server_log::push_log_string(log_string, old_gs, "combatpower");											//??????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		//server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		//server_log::push_log_string(log_string, cur_level, "rolelevelaf");										//新等级
-		//server_log::push_log_string(log_string, old_level, "rolelevelbf");										//旧等级
-		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpoweraf");		//新战力
-		//server_log::push_log_string(log_string, old_gs, "combatpowerbf");										//旧战力
+		//server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		//server_log::push_log_string(log_string, cur_level, "rolelevelaf");										//????
+		//server_log::push_log_string(log_string, old_level, "rolelevelbf");										//????
+		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpoweraf");		//?????
+		//server_log::push_log_string(log_string, old_gs, "combatpowerbf");										//?????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		//server_log::push_log_string(log_string, cur_level_time, "time", true);                                 //升级时长
+		//server_log::push_log_string(log_string, cur_level_time, "time", true);                                 //???????
 
 
 		//log_string += "}}";
@@ -916,31 +916,31 @@ namespace faith
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_MONEYCHANGE);
 
 		//log_string += "{";
-		//server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		//server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		//server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		//server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		//server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		//server_log::push_log_string(log_string, "money", "logname");											//模块名
-		//server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		//server_log::push_log_string(log_string, "B1010", "stepnumid");											//步骤号
-		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		//server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");						//角色ID
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//角色战力
+		//server_log::push_log_string(log_string, "money", "logname");											//?????
+		//server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		//server_log::push_log_string(log_string, "B1010", "stepnumid");											//?????
+		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		//server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");						//???ID
+		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		//server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		//server_log::push_log_string(log_string, causeid, "causeid");											//变更方式
-		//server_log::push_log_string(log_string, change_value, "quantity");										//变更数量
-		//server_log::push_log_string(log_string, remain_value, "total");											//最终总数
-		//server_log::push_log_string(log_string, money_id, "moneytype");											//货币类型
+		//server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		//server_log::push_log_string(log_string, causeid, "causeid");											//??????
+		//server_log::push_log_string(log_string, change_value, "quantity");										//???????
+		//server_log::push_log_string(log_string, remain_value, "total");											//????????
+		//server_log::push_log_string(log_string, money_id, "moneytype");											//????????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//vip
-		//server_log::push_log_string(log_string, location, "location");											//消耗位置
-		//server_log::push_log_string(log_string, action, "action");										        //加还是减
-		//server_log::push_log_string(log_string, param, "itemid");												//物品id
-		//server_log::push_log_string(log_string, param2, "itemquantity", true);									//物品数量
+		//server_log::push_log_string(log_string, location, "location");											//????锟斤拷??
+		//server_log::push_log_string(log_string, action, "action");										        //??????
+		//server_log::push_log_string(log_string, param, "itemid");												//???id
+		//server_log::push_log_string(log_string, param2, "itemquantity", true);									//???????
 
 
 		//log_string += "}}";
@@ -1017,31 +1017,31 @@ namespace faith
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_ITEMCHANGE);
 
 		//log_string += "{";
-		//server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		//server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		//server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		//server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		//server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		//server_log::push_log_string(log_string, "item", "logname");												//模块名
-		//server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		//server_log::push_log_string(log_string, "B2110", "stepnumid");											//步骤号
-		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		//server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			            //角色ID
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//角色战力
+		//server_log::push_log_string(log_string, "item", "logname");												//?????
+		//server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		//server_log::push_log_string(log_string, "B2110", "stepnumid");											//?????
+		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		//server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			            //???ID
+		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		//server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		//server_log::push_log_string(log_string, item_template_ptr->item_type, "itemtypeid");					//物品类型
-		//server_log::push_log_string(log_string, item_id, "itemid");												//物品id
-		//server_log::push_log_string(log_string, causeid, "causeid");											//变化途径id
-		//server_log::push_log_string(log_string, change_value, "quantity");										//变化数量
+		//server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		//server_log::push_log_string(log_string, item_template_ptr->item_type, "itemtypeid");					//???????
+		//server_log::push_log_string(log_string, item_id, "itemid");												//???id
+		//server_log::push_log_string(log_string, causeid, "causeid");											//?锟斤拷???id
+		//server_log::push_log_string(log_string, change_value, "quantity");										//?锟斤拷????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//vip
-		//server_log::push_log_string(log_string, location, "location");											//消耗位置
-		//server_log::push_log_string(log_string, action, "action");												//加还是减
-		//server_log::push_log_string(log_string, item_guid.server_64, "itemguid");								//物品guid
-		//server_log::push_log_string(log_string, left_item_count,"left_item_count", true);						//剩余物品数目
+		//server_log::push_log_string(log_string, location, "location");											//????锟斤拷??
+		//server_log::push_log_string(log_string, action, "action");												//??????
+		//server_log::push_log_string(log_string, item_guid.server_64, "itemguid");								//???guid
+		//server_log::push_log_string(log_string, left_item_count,"left_item_count", true);						//?????????
 		//log_string += "}}";
 
 		//PROJECT_RECORD_LOG(g_item_role_logger, log_string);
@@ -1107,32 +1107,32 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_OPERATE_ITEM);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "itemoperate", "logname");										//模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "B2110", "stepnumid");											//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			            //角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//角色战力
-		server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		server_log::push_log_string(log_string, item_slot, "itemslot");											//位置
-		server_log::push_log_string(log_string, operation_type, "operationtype");								//操作
-		server_log::push_log_string(log_string, use_up_item, "useupitem");										//变化途径id
-		server_log::push_log_string(log_string, first_use_lock, "firstuselock");								//优先锁定
+		server_log::push_log_string(log_string, "itemoperate", "logname");										//?????
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "B2110", "stepnumid");											//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			            //???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
+		server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		server_log::push_log_string(log_string, item_slot, "itemslot");											//锟斤拷??
+		server_log::push_log_string(log_string, operation_type, "operationtype");								//????
+		server_log::push_log_string(log_string, use_up_item, "useupitem");										//?锟斤拷???id
+		server_log::push_log_string(log_string, first_use_lock, "firstuselock");								//????????
 		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//vip
-		server_log::push_log_string(log_string, item_num, "itemnum");											//消耗数量
+		server_log::push_log_string(log_string, item_num, "itemnum");											//????????
 		for (int i =0; i < item_guid.size(); ++i)
 		{
-			server_log::push_log_string(log_string, item_guid[i].server_64, "itemguid");						//物品guid
+			server_log::push_log_string(log_string, item_guid[i].server_64, "itemguid");						//???guid
 		}
-		server_log::push_log_string(log_string, force_do, "forcedo", true);										//强制操作
+		server_log::push_log_string(log_string, force_do, "forcedo", true);										//??????
 		log_string += "}}";
 
 		//PROJECT_RECORD_LOG(g_item_operate_logger, log_string);
@@ -1186,35 +1186,35 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_GOODS_LOG);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "shoptrade", "logname");										//模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "8010", "stepnumid");											//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");						//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//角色战力
+		server_log::push_log_string(log_string, "shoptrade", "logname");										//?????
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "8010", "stepnumid");											//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");						//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
 		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		server_log::push_log_string(log_string, last_login_time, "lastlogintime");								//最后登陆时间
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");			//VIP等级
-		server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		server_log::push_log_string(log_string, server_invaild_string, "sn");									//交易流水号
+		server_log::push_log_string(log_string, last_login_time, "lastlogintime");								//????????
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");			//VIP???
+		server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		server_log::push_log_string(log_string, server_invaild_string, "sn");									//?????????
 		server_log::push_log_string(log_string, third_info.param6, "ip");										//ip
-		server_log::push_log_string(log_string, item_template_ptr->item_type, "itemtypeid");					//商品类型
-		server_log::push_log_string(log_string, good_template_ptr->ItemId, "itemid");							//物品id
-		server_log::push_log_string(log_string, server_invaild_string, "itemvalid");							//商品有效期
-		server_log::push_log_string(log_string, buy_num * good_template_ptr->GoodsNum, "itemcount");			//商品数量
-		server_log::push_log_string(log_string, money_id, "moneytypeid");										//花钱类型
-		server_log::push_log_string(log_string, money_num, "moneycount");										//花钱数量
-		server_log::push_log_string(log_string, need_item_id, "cost_item_id");									//消耗道具类型
-		server_log::push_log_string(log_string, need_item_num, "cost_item_num");								//消耗道具数量
-		server_log::push_log_string(log_string, shop_template_id, "shopid", true);								//商城分类id
+		server_log::push_log_string(log_string, item_template_ptr->item_type, "itemtypeid");					//???????
+		server_log::push_log_string(log_string, good_template_ptr->ItemId, "itemid");							//???id
+		server_log::push_log_string(log_string, server_invaild_string, "itemvalid");							//?????锟斤拷??
+		server_log::push_log_string(log_string, buy_num * good_template_ptr->GoodsNum, "itemcount");			//???????
+		server_log::push_log_string(log_string, money_id, "moneytypeid");										//???????
+		server_log::push_log_string(log_string, money_num, "moneycount");										//???????
+		server_log::push_log_string(log_string, need_item_id, "cost_item_id");									//???????????
+		server_log::push_log_string(log_string, need_item_num, "cost_item_num");								//???????????
+		server_log::push_log_string(log_string, shop_template_id, "shopid", true);								//??????id
 
 		log_string += "}}";
 
@@ -1309,34 +1309,34 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_MALL);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "shoptrade", "logname");										//模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "8010", "stepnumid");											//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");						//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//角色战力
+		server_log::push_log_string(log_string, "shoptrade", "logname");										//?????
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "8010", "stepnumid");											//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");						//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
 		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");			//VIP等级
-		server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		server_log::push_log_string(log_string, server_invaild_string, "sn");									//交易流水号
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");			//VIP???
+		server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		server_log::push_log_string(log_string, server_invaild_string, "sn");									//?????????
 		server_log::push_log_string(log_string, third_info.param6, "ip");										//ip
-		server_log::push_log_string(log_string, item_template_ptr->item_type, "itemtypeid");					//商品类型
-		server_log::push_log_string(log_string, good_template_ptr->ItemId, "itemid");							//物品id
-		server_log::push_log_string(log_string, server_invaild_string, "itemvalid");							//商品有效期
-		server_log::push_log_string(log_string, sold_num * good_template_ptr->GoodsNum, "itemcount");			//商品数量
-		server_log::push_log_string(log_string, money_id, "moneytypeid");										//花钱类型
-		server_log::push_log_string(log_string, money_num, "moneycount");										//花钱数量
-		server_log::push_log_string(log_string, need_item_id, "cost_item_id");									//消耗道具类型
-		server_log::push_log_string(log_string, need_item_num, "cost_item_num");								//消耗道具数量
-		server_log::push_log_string(log_string, store_id, "shopid", true);								//商城分类id
+		server_log::push_log_string(log_string, item_template_ptr->item_type, "itemtypeid");					//???????
+		server_log::push_log_string(log_string, good_template_ptr->ItemId, "itemid");							//???id
+		server_log::push_log_string(log_string, server_invaild_string, "itemvalid");							//?????锟斤拷??
+		server_log::push_log_string(log_string, sold_num * good_template_ptr->GoodsNum, "itemcount");			//???????
+		server_log::push_log_string(log_string, money_id, "moneytypeid");										//???????
+		server_log::push_log_string(log_string, money_num, "moneycount");										//???????
+		server_log::push_log_string(log_string, need_item_id, "cost_item_id");									//???????????
+		server_log::push_log_string(log_string, need_item_num, "cost_item_num");								//???????????
+		server_log::push_log_string(log_string, store_id, "shopid", true);								//??????id
 
 		log_string += "}}";
 
@@ -1400,25 +1400,25 @@ namespace faith
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_TASK);
 
 		//log_string += "{";
-		//server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		//server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		//server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		//server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		//server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		//server_log::push_log_string(log_string, "gettask", "logname");											//模块名
-		//server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		//server_log::push_log_string(log_string, "B3110", "stepnumid");											//步骤号
-		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		//server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//角色ID
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//角色战力
+		//server_log::push_log_string(log_string, "gettask", "logname");											//?????
+		//server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		//server_log::push_log_string(log_string, "B3110", "stepnumid");											//?????
+		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		//server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
+		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		//server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		//server_log::push_log_string(log_string, mission_template_id, "taskid");									//任务ID
-		//server_log::push_log_string(log_string, get_result, "result");											//接受结果
-		//server_log::push_log_string(log_string, task_type, "tasktype", true);									//任务类型
+		//server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		//server_log::push_log_string(log_string, mission_template_id, "taskid");									//????ID
+		//server_log::push_log_string(log_string, get_result, "result");											//??????
+		//server_log::push_log_string(log_string, task_type, "tasktype", true);									//????????
 
 		//log_string += "}}";
 
@@ -1475,24 +1475,24 @@ namespace faith
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_MONEYCHANGE);
 
 		//log_string += "{";
-		//server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		//server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		//server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		//server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		//server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		//server_log::push_log_string(log_string, "finishtask", "logname");										//模块名
-		//server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		//server_log::push_log_string(log_string, "B3120", "stepnumid");											//步骤号
-		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		//server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//角色ID
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//角色战力
-		//server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		//server_log::push_log_string(log_string, mission_template_id, "taskid");									//任务ID
-		//server_log::push_log_string(log_string, finish_result, "result");										//接受结果
-		//server_log::push_log_string(log_string, task_type, "tasktype", true);									//任务类型
+		//server_log::push_log_string(log_string, "finishtask", "logname");										//?????
+		//server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		//server_log::push_log_string(log_string, "B3120", "stepnumid");											//?????
+		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		//server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
+		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
+		//server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		//server_log::push_log_string(log_string, mission_template_id, "taskid");									//????ID
+		//server_log::push_log_string(log_string, finish_result, "result");										//??????
+		//server_log::push_log_string(log_string, task_type, "tasktype", true);									//????????
 
 		//log_string += "}}";
 
@@ -1550,30 +1550,30 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ROLE_FIGHT_RAID);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "pvefight", "logname");											//模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "B4110", "stepnumid");											//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//角色战力
-		server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		server_log::push_log_string(log_string, raid_template_id, "stageid");									//关卡ID
-		server_log::push_log_string(log_string, type, "type");													//战斗类型
+		server_log::push_log_string(log_string, "pvefight", "logname");											//?????
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "B4110", "stepnumid");											//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
+		server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		server_log::push_log_string(log_string, raid_template_id, "stageid");									//???ID
+		server_log::push_log_string(log_string, type, "type");													//???????
 		server_log::push_log_string(log_string, server_invaild_string, "npcid");								//npcid
-		server_log::push_log_string(log_string, result, "result");												//接受结果
-		server_log::push_log_string(log_string, map_id, "mapid");												//地图ID
-		server_log::push_log_string(log_string, star, "star");													//评级
-		server_log::push_log_string(log_string, diffcult, "stagetype");											//副本难度
-		server_log::push_log_string(log_string, map_type, "maptype");											//副本难度
-		server_log::push_log_string(log_string, relive_times, "relive", true);									//复活次数
+		server_log::push_log_string(log_string, result, "result");												//??????
+		server_log::push_log_string(log_string, map_id, "mapid");												//???ID
+		server_log::push_log_string(log_string, star, "star");													//????
+		server_log::push_log_string(log_string, diffcult, "stagetype");											//???????
+		server_log::push_log_string(log_string, map_type, "maptype");											//???????
+		server_log::push_log_string(log_string, relive_times, "relive", true);									//???????
 
 		log_string += "}}";
 
@@ -1596,22 +1596,22 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ROLE_ACHIEVEMENT);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "achievement", "logname");										//模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "B5110", "stepnumid");											//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//角色战力
-		server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		server_log::push_log_string(log_string, achievement_template_id, "achievementid", true);				//成就ID
+		server_log::push_log_string(log_string, "achievement", "logname");										//?????
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "B5110", "stepnumid");											//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
+		server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		server_log::push_log_string(log_string, achievement_template_id, "achievementid", true);				//???ID
 
 		log_string += "}}";
 
@@ -1633,23 +1633,23 @@ namespace faith
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_NEWGUIDE);
 
 		//log_string += "{";
-		//server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		//server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		//server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		//server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		//server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		//server_log::push_log_string(log_string, "newstages", "logname");										//模块名
-		//server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		//server_log::push_log_string(log_string, "8074", "stepnumid");											//步骤号
-		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		//server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//角色ID
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//角色战力
+		//server_log::push_log_string(log_string, "newstages", "logname");										//?????
+		//server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		//server_log::push_log_string(log_string, "8074", "stepnumid");											//?????
+		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		//server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
+		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		//server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		//server_log::push_log_string(log_string, new_stages_id, "eventid", true);								//引导ID
+		//server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		//server_log::push_log_string(log_string, new_stages_id, "eventid", true);								//????ID
 
 		//log_string += "}}";
 
@@ -1712,23 +1712,23 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ROLE_ACTIVITY);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "activity", "logname");											//模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "B6110", "stepnumid");											//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//角色战力
-		server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		server_log::push_log_string(log_string, must_do_type, "mustdotype");									//活动类型
-		server_log::push_log_string(log_string, activity_id, "activityid", true);								//地图id
+		server_log::push_log_string(log_string, "activity", "logname");											//?????
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "B6110", "stepnumid");											//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
+		server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		server_log::push_log_string(log_string, must_do_type, "mustdotype");									//??????
+		server_log::push_log_string(log_string, activity_id, "activityid", true);								//???id
 
 		log_string += "}}";
 
@@ -1748,15 +1748,15 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ROLE_HEART_BEAT);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, cur_time, "dtime");												//时间
+		server_log::push_log_string(log_string, cur_time, "dtime");												//???
 		server_log::push_log_string(log_string, appkey, "appid");												//APPID
-		server_log::push_log_string(log_string, server_version, "version");										//客户端版本
-		server_log::push_log_string(log_string, "heart", "logname");											//模块名
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号
-		server_log::push_log_string(log_string, "B9990", "stepnumid");											//步骤号
-		server_log::push_log_string(log_string, server_id, "serverid");											//服务器ID
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
-		server_log::push_log_string(log_string, online_user, "onlineuser", true);								//在线玩家
+		server_log::push_log_string(log_string, server_version, "version");										//?????锟斤拷
+		server_log::push_log_string(log_string, "heart", "logname");											//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷??
+		server_log::push_log_string(log_string, "B9990", "stepnumid");											//?????
+		server_log::push_log_string(log_string, server_id, "serverid");											//??????ID
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, online_user, "onlineuser", true);								//???????
 
 		log_string += "}}";
 
@@ -1779,7 +1779,7 @@ namespace faith
 		json["log_time"] = log_time;
 		json["player_count"] = online_user;
 
-		//这个是服务器状态，和单个玩家无关，只是统一字段
+		//??????????????????????????????????
 		login_fixed_data third_info;
 		json["login_type"] = 0;
 		json["appid"] = third_info.param1;
@@ -1813,36 +1813,36 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ROLE_RECHARGE);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");								//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");								//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "recharge", "logname");										//模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "5050", "stepnumid");											//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//角色战力
-		server_log::push_log_string(log_string, cur_time, "dtime");											//时间
-		server_log::push_log_string(log_string, server_invaild_string, "gameorderid");							//游戏订单号
-		server_log::push_log_string(log_string, server_invaild_string, "gamechannelorderid");					//渠道订单号
-		server_log::push_log_string(log_string, server_invaild_string, "orderamount");							//订单金额
-		server_log::push_log_string(log_string, server_invaild_string, "shareamount");							//分成额度
-		server_log::push_log_string(log_string, server_invaild_string, "noshareamount");						//不分成额度
-		server_log::push_log_string(log_string, server_invaild_string, "payid");								//支付方式
-		server_log::push_log_string(log_string, server_invaild_string, "rechargechannel");						//支付渠道id
-		server_log::push_log_string(log_string, add_value, "valuequantity");									//当次充值增加量
-		server_log::push_log_string(log_string, server_invaild_string, "add_value");							//花费币种
+		server_log::push_log_string(log_string, "recharge", "logname");										//?????
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "5050", "stepnumid");											//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
+		server_log::push_log_string(log_string, cur_time, "dtime");											//???
+		server_log::push_log_string(log_string, server_invaild_string, "gameorderid");							//?????????
+		server_log::push_log_string(log_string, server_invaild_string, "gamechannelorderid");					//??????????
+		server_log::push_log_string(log_string, server_invaild_string, "orderamount");							//???????
+		server_log::push_log_string(log_string, server_invaild_string, "shareamount");							//?????
+		server_log::push_log_string(log_string, server_invaild_string, "noshareamount");						//???????
+		server_log::push_log_string(log_string, server_invaild_string, "payid");								//??????
+		server_log::push_log_string(log_string, server_invaild_string, "rechargechannel");						//???????id
+		server_log::push_log_string(log_string, add_value, "valuequantity");									//???锟斤拷????????
+		server_log::push_log_string(log_string, server_invaild_string, "add_value");							//???????
 		server_log::push_log_string(log_string, third_info.param6, "ip");										//IP
-		server_log::push_log_string(log_string, money_info.cur_data_ary[e_money_type_jewel], "valueamount");	//充完总量
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//角色VIP
-		server_log::push_log_string(log_string, recharge_id, "itemid");										//充值表id
-		server_log::push_log_string(log_string, server_invaild_string, "os_version");							//系统版本
-		server_log::push_log_string(log_string, third_info.param8, "model");								//手机型号
+		server_log::push_log_string(log_string, money_info.cur_data_ary[e_money_type_jewel], "valueamount");	//????????
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//???VIP
+		server_log::push_log_string(log_string, recharge_id, "itemid");										//?????id
+		server_log::push_log_string(log_string, server_invaild_string, "os_version");							//???锟斤拷
+		server_log::push_log_string(log_string, third_info.param8, "model");								//??????
 		server_log::push_log_string(log_string, third_info.param9, "idfa"); 									//idfa
 		server_log::push_log_string(log_string, third_info.param10, "imei"); 									//imei
 		server_log::push_log_string(log_string, third_info.param11, "androidId"); 									//androidId
@@ -1869,25 +1869,25 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ROLE_SERVER_EVENT);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "serverevent", "logname");										//模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "7010", "stepnumid");											//步骤号
-		server_log::push_log_string(log_string, "v1.2", "normversion");											//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//角色战力
-		server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		server_log::push_log_string(log_string, server_invaild_string, "sdkversion");							//sdk版本
-		server_log::push_log_string(log_string, server_invaild_string, "system");								//安卓还是IOS
-		server_log::push_log_string(log_string, event_id, "code");												//行为号
-		server_log::push_log_string(log_string, server_invaild_string, "os_version", true);						//系统版本
+		server_log::push_log_string(log_string, "serverevent", "logname");										//?????
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "7010", "stepnumid");											//?????
+		server_log::push_log_string(log_string, "v1.2", "normversion");											//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
+		server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		server_log::push_log_string(log_string, server_invaild_string, "sdkversion");							//sdk?锟斤拷
+		server_log::push_log_string(log_string, server_invaild_string, "system");								//???????IOS
+		server_log::push_log_string(log_string, event_id, "code");												//?????
+		server_log::push_log_string(log_string, server_invaild_string, "os_version", true);						//???锟斤拷
 
 		log_string += "}}";
 
@@ -1911,40 +1911,40 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_UPGRADE_EQUIP);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");								//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");								//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "upgradeequip", "logname");									//模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "C0410", "stepnumid");											//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");		//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, "0", "combatpower");											//角色评分（默认为零）
-		server_log::push_log_string(log_string, cur_time, "dtime");											//时间
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");		//VIP等级
-		server_log::push_log_string(log_string, equip_slot, "equipslot");										//部位
-		server_log::push_log_string(log_string, item_id, "itemid");											//物品ID
-		server_log::push_log_string(log_string, quality_level, "qualitylevel");								//装备等阶
-		server_log::push_log_string(log_string, item_color, "itemcolor");										//装备品质
-		//server_log::push_log_string(log_string, old_grade_level, "oldgradelevel");								//强化前等级
-		server_log::push_log_string(log_string, level, "level");						  //当前等级
-		server_log::push_log_string(log_string, upgrade_total_num, "upgradetotalnum");							//角色强化总等级
-		server_log::push_log_string(log_string, is_success, "issuccess");										//是否成功	<0失败掉级	0失败不掉级 >0成功
-		server_log::push_log_string(log_string, money_type, "moneytype");										//货币类型
-		server_log::push_log_string(log_string, money_num, "moneynum");										//货币数量
-		server_log::push_log_string(log_string, bind_material_num, "bindmaterialnum");							//绑定材料使用数量
-		server_log::push_log_string(log_string, no_bind_material_num, "nobindmaterialnum");					//非绑定材料使用数量
-		server_log::push_log_string(log_string, material_one_id, "materialoneid");								//材料一ID
-		server_log::push_log_string(log_string, material_one_num, "materialonenum");							//材料一数量
-		server_log::push_log_string(log_string, material_two_id, "materialtwoid");								//材料二ID
-		server_log::push_log_string(log_string, material_two_num, "materialtwonum");							//材料二数量
-		server_log::push_log_string(log_string, material_three_id, "materialthreeid");							//材料三D
-		server_log::push_log_string(log_string, material_three_num, "materialthreenum", true);						//材料三数量
+		server_log::push_log_string(log_string, "upgradeequip", "logname");									//?????
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "C0410", "stepnumid");											//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");		//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
+		server_log::push_log_string(log_string, cur_time, "dtime");											//???
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");		//VIP???
+		server_log::push_log_string(log_string, equip_slot, "equipslot");										//??锟斤拷
+		server_log::push_log_string(log_string, item_id, "itemid");											//???ID
+		server_log::push_log_string(log_string, quality_level, "qualitylevel");								//??????
+		server_log::push_log_string(log_string, item_color, "itemcolor");										//??????
+		//server_log::push_log_string(log_string, old_grade_level, "oldgradelevel");								//???????
+		server_log::push_log_string(log_string, level, "level");						  //??????
+		server_log::push_log_string(log_string, upgrade_total_num, "upgradetotalnum");							//??????????
+		server_log::push_log_string(log_string, is_success, "issuccess");										//?????	<0??????	0???????? >0???
+		server_log::push_log_string(log_string, money_type, "moneytype");										//????????
+		server_log::push_log_string(log_string, money_num, "moneynum");										//????????
+		server_log::push_log_string(log_string, bind_material_num, "bindmaterialnum");							//????????????
+		server_log::push_log_string(log_string, no_bind_material_num, "nobindmaterialnum");					//?????????????
+		server_log::push_log_string(log_string, material_one_id, "materialoneid");								//?????ID
+		server_log::push_log_string(log_string, material_one_num, "materialonenum");							//?????????
+		server_log::push_log_string(log_string, material_two_id, "materialtwoid");								//?????ID
+		server_log::push_log_string(log_string, material_two_num, "materialtwonum");							//?????????
+		server_log::push_log_string(log_string, material_three_id, "materialthreeid");							//??????D
+		server_log::push_log_string(log_string, material_three_num, "materialthreenum", true);						//??????????
 
 		log_string += "}}";
 
@@ -1967,37 +1967,37 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ADDON_EQUIP);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");								//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");								//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "addonequip", "logname");										//模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "C0420", "stepnumid");											//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");		//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, "0", "combatpower");											//角色评分（默认为零）
-		server_log::push_log_string(log_string, cur_time, "dtime");											//时间
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");		//VIP等级
-		server_log::push_log_string(log_string, equip_slot, "equipslot");										//部位
-		server_log::push_log_string(log_string, item_id, "itemid");											//物品ID
-		server_log::push_log_string(log_string, quality_level, "qualitylevel");								//装备等阶
-		server_log::push_log_string(log_string, item_color, "itemcolor");										//装备品质
-		//server_log::push_log_string(log_string, item_guid, "itemguid");										//物品guid
-		//server_log::push_log_string(log_string, old_addon_level, "oldaddonlevel");								//追加前等级
-		server_log::push_log_string(log_string, cur_addon_level, "curaddonlevel");								//追加后等级
-		//server_log::push_log_string(log_string, addon_total_num, "addontotalnum");								//装备总追加等级
-		server_log::push_log_string(log_string, is_success, "issuccess");										//是否成功	<0失败掉级	0失败不掉级 >0成功
-		server_log::push_log_string(log_string, money_type, "moneytype");										//货币类型
-		server_log::push_log_string(log_string, money_num, "moneynum");										//货币数量
-		server_log::push_log_string(log_string, bind_material_num, "bindmaterialnum");							//绑定材料使用数量
-		server_log::push_log_string(log_string, no_bind_material_num, "nobindmaterialnum");					//非绑定材料使用数量
-		server_log::push_log_string(log_string, material_id, "materialid");									//晶石ID
-		server_log::push_log_string(log_string, material_num, "materialnum", true);							//晶石使用量
+		server_log::push_log_string(log_string, "addonequip", "logname");										//?????
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "C0420", "stepnumid");											//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");		//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
+		server_log::push_log_string(log_string, cur_time, "dtime");											//???
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");		//VIP???
+		server_log::push_log_string(log_string, equip_slot, "equipslot");										//??锟斤拷
+		server_log::push_log_string(log_string, item_id, "itemid");											//???ID
+		server_log::push_log_string(log_string, quality_level, "qualitylevel");								//??????
+		server_log::push_log_string(log_string, item_color, "itemcolor");										//??????
+		//server_log::push_log_string(log_string, item_guid, "itemguid");										//???guid
+		//server_log::push_log_string(log_string, old_addon_level, "oldaddonlevel");								//???????
+		server_log::push_log_string(log_string, cur_addon_level, "curaddonlevel");								//??????
+		//server_log::push_log_string(log_string, addon_total_num, "addontotalnum");								//??????????
+		server_log::push_log_string(log_string, is_success, "issuccess");										//?????	<0??????	0???????? >0???
+		server_log::push_log_string(log_string, money_type, "moneytype");										//????????
+		server_log::push_log_string(log_string, money_num, "moneynum");										//????????
+		server_log::push_log_string(log_string, bind_material_num, "bindmaterialnum");							//????????????
+		server_log::push_log_string(log_string, no_bind_material_num, "nobindmaterialnum");					//?????????????
+		server_log::push_log_string(log_string, material_id, "materialid");									//???ID
+		server_log::push_log_string(log_string, material_num, "materialnum", true);							//????????
 
 		log_string += "}}";
 		
@@ -2020,34 +2020,34 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_SUCCINCT_EQUIP);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");								//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");								//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "succinctequip", "logname");									//模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "C0430", "stepnumid");											//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");		//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, "0", "combatpower");											//角色评分（默认为零）
-		server_log::push_log_string(log_string, cur_time, "dtime");											//时间
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");		//VIP等级
-		server_log::push_log_string(log_string, equip_slot, "equipslot");										//部位
-		server_log::push_log_string(log_string, item_id, "itemid");											//物品id
-		server_log::push_log_string(log_string, quality_level, "qualitylevel");								//装备等阶
-		server_log::push_log_string(log_string, item_color, "itemcolor");										//装备品质
-		server_log::push_log_string(log_string, culturing_percent, "culturingpercent");						//培养百分比
-		//server_log::push_log_string(log_string, succinct_num, "succinctnum ");									//洗练次数
-		server_log::push_log_string(log_string, money_type, "moneytype");										//货币类型
-		server_log::push_log_string(log_string, money_num, "moneynum");										//货币数量
-		server_log::push_log_string(log_string, bind_material_num, "bindmaterialnum");							//绑定材料使用数量
-		server_log::push_log_string(log_string, no_bind_material_num, "nobindmaterialnum");					//非绑定材料使用数量
-		server_log::push_log_string(log_string, material_id, "materialid");									//晶石ID
-		server_log::push_log_string(log_string, material_num, "materialnum", true);									//晶石使用量
+		server_log::push_log_string(log_string, "succinctequip", "logname");									//?????
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "C0430", "stepnumid");											//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");		//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
+		server_log::push_log_string(log_string, cur_time, "dtime");											//???
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");		//VIP???
+		server_log::push_log_string(log_string, equip_slot, "equipslot");										//??锟斤拷
+		server_log::push_log_string(log_string, item_id, "itemid");											//???id
+		server_log::push_log_string(log_string, quality_level, "qualitylevel");								//??????
+		server_log::push_log_string(log_string, item_color, "itemcolor");										//??????
+		server_log::push_log_string(log_string, culturing_percent, "culturingpercent");						//????????
+		//server_log::push_log_string(log_string, succinct_num, "succinctnum ");									//???????
+		server_log::push_log_string(log_string, money_type, "moneytype");										//????????
+		server_log::push_log_string(log_string, money_num, "moneynum");										//????????
+		server_log::push_log_string(log_string, bind_material_num, "bindmaterialnum");							//????????????
+		server_log::push_log_string(log_string, no_bind_material_num, "nobindmaterialnum");					//?????????????
+		server_log::push_log_string(log_string, material_id, "materialid");									//???ID
+		server_log::push_log_string(log_string, material_num, "materialnum", true);									//????????
 
 		log_string += "}}";
 
@@ -2069,22 +2069,22 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_SUCCINCT_EQUIP_SAVE);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "succinctequipsave", "logname");									//日志模块名
-		server_log::push_log_string(log_string, "C0440", "stepnumid");											//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, "0", "combatpower");											//角色评分（默认为零）
-		server_log::push_log_string(log_string, cur_time, "dtime");											//时间
-		server_log::push_log_string(log_string, item_id, "itemid", true);											//物品id
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "succinctequipsave", "logname");									//????????
+		server_log::push_log_string(log_string, "C0440", "stepnumid");											//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
+		server_log::push_log_string(log_string, cur_time, "dtime");											//???
+		server_log::push_log_string(log_string, item_id, "itemid", true);											//???id
 
 		log_string += "}}";
 
@@ -2108,47 +2108,47 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ADVANCE_EQUIP);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");								//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");								//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "advanceequip", "logname");									//模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");		//角色guid
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");		//VIP等级
-		server_log::push_log_string(log_string, item_id, "itemid");												//进阶前主物品ID
-		server_log::push_log_string(log_string, quality_level, "qualitylevel");								//装备等阶
-		server_log::push_log_string(log_string, item_color, "itemcolor");										//品质
-		server_log::push_log_string(log_string, excellence_num, "excellencenum");								//卓越属性条目
-		server_log::push_log_string(log_string, upgrade_level, "upgradelevel");								//强化等级
-		server_log::push_log_string(log_string, addon_level, "addonlevel");									//追加等级
-		server_log::push_log_string(log_string, culturing_percent, "culturingpercent");						//培养百分比(洗练)
-		server_log::push_log_string(log_string, first_material_id, "firstmaterialid");										//辅助物品一guid
-		server_log::push_log_string(log_string, first_material_level, "firstmateriallevel");								//装备等阶
-		server_log::push_log_string(log_string, first_material_color, "first_materialcolor");								//品质
-		server_log::push_log_string(log_string, first_material_excellence_num, "firstmaterialexcellencenum");				//卓越属性条目
-		server_log::push_log_string(log_string, first_material_upgrade_level, "firstmaterialupgradelevel");				//强化等级
-		server_log::push_log_string(log_string, first_material_addon_level, "firstmaterialaddonlevel");					//追加等级
-		server_log::push_log_string(log_string, first_material_culturing_percent, "firstmaterialculturingpercent");		//培养百分比(洗练)
-		server_log::push_log_string(log_string, second_material_id, "secondmaterialid");									//辅助物品二guid
-		server_log::push_log_string(log_string, second_material_level, "secondmateriallevel");								//装备等阶
-		server_log::push_log_string(log_string, second_material_color, "secondmaterialcolor");								//品质
-		server_log::push_log_string(log_string, second_material_excellence_num, "secondmaterialexcellencenum");			//卓越属性条目
-		server_log::push_log_string(log_string, second_material_upgrade_level, "secondmaterialupgradelevel");				//强化等级
-		server_log::push_log_string(log_string, second_material_addon_level, "secondmaterialaddonlevel");					//追加等级
-		server_log::push_log_string(log_string, second_material_culturing_percent, "secondmaterialculturingpercent");		//培养百分比(洗练)
-		server_log::push_log_string(log_string, finish_item_id, "finishitemid");											//进阶后物品guid
-		server_log::push_log_string(log_string, finish_item_quality_level, "finishitemqualitylevel");						//装备等阶
-		server_log::push_log_string(log_string, finish_item_color, "finishitemcolor");										//品质
-		server_log::push_log_string(log_string, finish_item_excellence_num, "finishitemexcellencenum");					//卓越属性条目
-		server_log::push_log_string(log_string, finish_item_upgrade_level, "finishitemupgradelevel");						//强化等级
-		server_log::push_log_string(log_string, finish_item_addon_level, "finishitemaddonlevel");							//追加等级
-		server_log::push_log_string(log_string, finish_item_culturing_percent, "finishitemculturingpercent", true);				//培养百分比(洗练)
+		server_log::push_log_string(log_string, "advanceequip", "logname");									//?????
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");		//???guid
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");		//VIP???
+		server_log::push_log_string(log_string, item_id, "itemid");												//??????????ID
+		server_log::push_log_string(log_string, quality_level, "qualitylevel");								//??????
+		server_log::push_log_string(log_string, item_color, "itemcolor");										//???
+		server_log::push_log_string(log_string, excellence_num, "excellencenum");								//?????????
+		server_log::push_log_string(log_string, upgrade_level, "upgradelevel");								//??????
+		server_log::push_log_string(log_string, addon_level, "addonlevel");									//?????
+		server_log::push_log_string(log_string, culturing_percent, "culturingpercent");						//????????(???)
+		server_log::push_log_string(log_string, first_material_id, "firstmaterialid");										//????????guid
+		server_log::push_log_string(log_string, first_material_level, "firstmateriallevel");								//??????
+		server_log::push_log_string(log_string, first_material_color, "first_materialcolor");								//???
+		server_log::push_log_string(log_string, first_material_excellence_num, "firstmaterialexcellencenum");				//?????????
+		server_log::push_log_string(log_string, first_material_upgrade_level, "firstmaterialupgradelevel");				//??????
+		server_log::push_log_string(log_string, first_material_addon_level, "firstmaterialaddonlevel");					//?????
+		server_log::push_log_string(log_string, first_material_culturing_percent, "firstmaterialculturingpercent");		//????????(???)
+		server_log::push_log_string(log_string, second_material_id, "secondmaterialid");									//?????????guid
+		server_log::push_log_string(log_string, second_material_level, "secondmateriallevel");								//??????
+		server_log::push_log_string(log_string, second_material_color, "secondmaterialcolor");								//???
+		server_log::push_log_string(log_string, second_material_excellence_num, "secondmaterialexcellencenum");			//?????????
+		server_log::push_log_string(log_string, second_material_upgrade_level, "secondmaterialupgradelevel");				//??????
+		server_log::push_log_string(log_string, second_material_addon_level, "secondmaterialaddonlevel");					//?????
+		server_log::push_log_string(log_string, second_material_culturing_percent, "secondmaterialculturingpercent");		//????????(???)
+		server_log::push_log_string(log_string, finish_item_id, "finishitemid");											//????????guid
+		server_log::push_log_string(log_string, finish_item_quality_level, "finishitemqualitylevel");						//??????
+		server_log::push_log_string(log_string, finish_item_color, "finishitemcolor");										//???
+		server_log::push_log_string(log_string, finish_item_excellence_num, "finishitemexcellencenum");					//?????????
+		server_log::push_log_string(log_string, finish_item_upgrade_level, "finishitemupgradelevel");						//??????
+		server_log::push_log_string(log_string, finish_item_addon_level, "finishitemaddonlevel");							//?????
+		server_log::push_log_string(log_string, finish_item_culturing_percent, "finishitemculturingpercent", true);				//????????(???)
 
 		log_string += "}}";
 
@@ -2167,12 +2167,12 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_RESURRECTION);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "resurrection", "logname");										//模块名
-		server_log::push_log_string(log_string, map_id, "mapid");													//复活地点
-		server_log::push_log_string(log_string, cur_time, "time");													//复活时间
-		server_log::push_log_string(log_string, mode, "mode");														//复活方式
-		server_log::push_log_string(log_string, old_jewel_num, "oldjewelnum");										//复活前的钻石数
-		server_log::push_log_string(log_string, new_jewel_num, "newjewelnum", true);										//复活后的钻石数
+		server_log::push_log_string(log_string, "resurrection", "logname");										//?????
+		server_log::push_log_string(log_string, map_id, "mapid");													//??????
+		server_log::push_log_string(log_string, cur_time, "time");													//???????
+		server_log::push_log_string(log_string, mode, "mode");														//?????
+		server_log::push_log_string(log_string, old_jewel_num, "oldjewelnum");										//????????????
+		server_log::push_log_string(log_string, new_jewel_num, "newjewelnum", true);										//???????????
 
 		log_string += "}}";
 
@@ -2190,15 +2190,15 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_SEND_MAIL);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "sendmail", "logname");												//模块名
-		server_log::push_log_string(log_string, target_player_guid, "targetguid");									//接收者guid
-		server_log::push_log_string(log_string, sender_player_guid, "senderguid");									//发送者guid
-		server_log::push_log_string(log_string, title, "title");													//标题
-		server_log::push_log_string(log_string, content_text, "contenttext");										//邮件文本内容
-		server_log::push_log_string(log_string, money_typ1, "moneytyp1");											//货币类型一
-		server_log::push_log_string(log_string, money_num1, "moneynum1");											//货币数量一
-		server_log::push_log_string(log_string, money_typ2, "moneytyp2");											//货币类型二
-		server_log::push_log_string(log_string, money_num2, "moneynum2");											//货币数量一
+		server_log::push_log_string(log_string, "sendmail", "logname");												//?????
+		server_log::push_log_string(log_string, target_player_guid, "targetguid");									//??????guid
+		server_log::push_log_string(log_string, sender_player_guid, "senderguid");									//??????guid
+		server_log::push_log_string(log_string, title, "title");													//????
+		server_log::push_log_string(log_string, content_text, "contenttext");										//??????????
+		server_log::push_log_string(log_string, money_typ1, "moneytyp1");											//?????????
+		server_log::push_log_string(log_string, money_num1, "moneynum1");											//?????????
+		server_log::push_log_string(log_string, money_typ2, "moneytyp2");											//?????????
+		server_log::push_log_string(log_string, money_num2, "moneynum2");											//?????????
 		int32 num = 1;
 		for (int32 i = 0; i < item_type_num; i++)
 		{
@@ -2208,12 +2208,12 @@ namespace faith
 				std::string itemnum = "itemnum";
 				itemid += std::to_string(num);
 				itemnum += std::to_string(num);
-				server_log::push_log_string(log_string, item_list[i].item_guid.server_64, itemid);					//物品guid
-				server_log::push_log_string(log_string, item_list[i].data_ary[e_item_info_stack_count], itemnum);		//物品数量
+				server_log::push_log_string(log_string, item_list[i].item_guid.server_64, itemid);					//???guid
+				server_log::push_log_string(log_string, item_list[i].data_ary[e_item_info_stack_count], itemnum);		//???????
 				num++;
 			}
 		}
-		server_log::push_log_string(log_string, item_type_num, "itemtypenum", true);								//物品种类数
+		server_log::push_log_string(log_string, item_type_num, "itemtypenum", true);								//?????????
 
 		log_string += "}}";
 
@@ -2231,9 +2231,9 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_FIRST_RECHARGE);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "firstrecharge", "logname");									//模块名
-		server_log::push_log_string(log_string, player_guid, "isfirstrecharge");								//玩家guid
-		server_log::push_log_string(log_string, is_first_recharge, "isfirstrecharge", true);							//是否首充
+		server_log::push_log_string(log_string, "firstrecharge", "logname");									//?????
+		server_log::push_log_string(log_string, player_guid, "isfirstrecharge");								//???guid
+		server_log::push_log_string(log_string, is_first_recharge, "isfirstrecharge", true);							//??????
 
 		log_string += "}}";
 
@@ -2255,37 +2255,37 @@ namespace faith
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_RECHARGE_SUCCESS);
 
 		//log_string += "{";
-		//server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		//server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		//server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		//server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		//server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		//server_log::push_log_string(log_string, "recharge", "logname");											//模块名
-		//server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		//server_log::push_log_string(log_string, "C5050", "stepnumid");											//步骤号
-		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		//server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");						//角色id
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//角色战力评分
+		//server_log::push_log_string(log_string, "recharge", "logname");											//?????
+		//server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		//server_log::push_log_string(log_string, "C5050", "stepnumid");											//?????
+		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		//server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");						//???id
+		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		//server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		//server_log::push_log_string(log_string, order_id_str, "gameorderid");											//游戏订单号
-		//server_log::push_log_string(log_string, "", "gamechannelorderid");									//渠道订单号
-		//server_log::push_log_string(log_string, add_money_value, "orderamount");											//订单金额（RMB元）
-		//server_log::push_log_string(log_string, 0, "shareamount");											//分成额度（RMB元）
-		//server_log::push_log_string(log_string, 0, "noshareamount");											//不分成额度（RMB 元）
-		//server_log::push_log_string(log_string, 0, "payid");											//支付方式
-		//server_log::push_log_string(log_string, third_info.param7, "rechargechannel");											//充值渠道id
-		//server_log::push_log_string(log_string, add_jewel_value, "valuequantity");											//价值虚拟币数量
-		//server_log::push_log_string(log_string, 1, "currency");											//币种
-		//server_log::push_log_string(log_string, third_info.param6, "ip");											//用户进行充值时设备的ip
-		//server_log::push_log_string(log_string, jewel_num, "valueamount");											//价值虚拟币总量
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");											//Vip等级
-		//server_log::push_log_string(log_string, recharge_template_id, "itemid");											//商品id
-		//server_log::push_log_string(log_string, server_invaild_string, "os_version");							//系统版本
-		//server_log::push_log_string(log_string, third_info.param8, "model");							//手机型号
+		//server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		//server_log::push_log_string(log_string, order_id_str, "gameorderid");											//?????????
+		//server_log::push_log_string(log_string, "", "gamechannelorderid");									//??????????
+		//server_log::push_log_string(log_string, add_money_value, "orderamount");											//???????RMB???
+		//server_log::push_log_string(log_string, 0, "shareamount");											//??????RMB???
+		//server_log::push_log_string(log_string, 0, "noshareamount");											//????????RMB ???
+		//server_log::push_log_string(log_string, 0, "payid");											//??????
+		//server_log::push_log_string(log_string, third_info.param7, "rechargechannel");											//???????id
+		//server_log::push_log_string(log_string, add_jewel_value, "valuequantity");											//????????????
+		//server_log::push_log_string(log_string, 1, "currency");											//????
+		//server_log::push_log_string(log_string, third_info.param6, "ip");											//??????锟斤拷????锟斤拷??ip
+		//server_log::push_log_string(log_string, jewel_num, "valueamount");											//????????????
+		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");											//Vip???
+		//server_log::push_log_string(log_string, recharge_template_id, "itemid");											//???id
+		//server_log::push_log_string(log_string, server_invaild_string, "os_version");							//???锟斤拷
+		//server_log::push_log_string(log_string, third_info.param8, "model");							//??????
 		//server_log::push_log_string(log_string, third_info.param9, "idfa"); 									//idfa
 		//server_log::push_log_string(log_string, third_info.param10, "imei"); 									//imei
 		//server_log::push_log_string(log_string, third_info.param11, "androidId"); 									//androidId
@@ -2370,10 +2370,10 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_TODAY_RECHARGE);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "recharge", "logname");									//模块名
-		server_log::push_log_string(log_string, recharge_num, "rechargenum");								//本次充值点数
-		server_log::push_log_string(log_string, total_num, "totalnum");									//充值后今日充值总点数
-		server_log::push_log_string(log_string, vip_level, "viplevel", true);									//VIP等级
+		server_log::push_log_string(log_string, "recharge", "logname");									//?????
+		server_log::push_log_string(log_string, recharge_num, "rechargenum");								//???锟斤拷??????
+		server_log::push_log_string(log_string, total_num, "totalnum");									//???????????????
+		server_log::push_log_string(log_string, vip_level, "viplevel", true);									//VIP???
 
 		log_string += "}}";
 
@@ -2392,11 +2392,11 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_RECHARGE_STEP);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "rechargestep", "logname");									//模块名
-		server_log::push_log_string(log_string, order_id, "order_id");									//订单号
-		server_log::push_log_string(log_string, role_id.server_64, "role_id");							//角色ID
-		server_log::push_log_string(log_string, goods_id, "goods_id");									//商品号
-		server_log::push_log_string(log_string, step_num, "setp_num", true);									//步骤号
+		server_log::push_log_string(log_string, "rechargestep", "logname");									//?????
+		server_log::push_log_string(log_string, order_id, "order_id");									//??????
+		server_log::push_log_string(log_string, role_id.server_64, "role_id");							//???ID
+		server_log::push_log_string(log_string, goods_id, "goods_id");									//?????
+		server_log::push_log_string(log_string, step_num, "setp_num", true);									//?????
 
 		log_string += "}}";
 
@@ -2475,11 +2475,11 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_RECHARGE_ERROR);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "rechargeerror", "logname");									//模块名
-		server_log::push_log_string(log_string, order_id, "order_id");									//订单号
-		server_log::push_log_string(log_string, role_id.server_64, "goods_id");							//角色ID
-		server_log::push_log_string(log_string, goods_id, "goods_id");									//商品号
-		server_log::push_log_string(log_string, error_num, "error_num", true);								//错误号
+		server_log::push_log_string(log_string, "rechargeerror", "logname");									//?????
+		server_log::push_log_string(log_string, order_id, "order_id");									//??????
+		server_log::push_log_string(log_string, role_id.server_64, "goods_id");							//???ID
+		server_log::push_log_string(log_string, goods_id, "goods_id");									//?????
+		server_log::push_log_string(log_string, error_num, "error_num", true);								//?????
 
 		log_string += "}}";
 
@@ -2497,10 +2497,10 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_VIP);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "recharge", "logname");									//模块名
-		server_log::push_log_string(log_string, old_vip_level, "rechargenum");								//升级前VIP等级
-		server_log::push_log_string(log_string, is_get_old_welfare, "totalnum");							//升级前的VIP此等级奖励是否领取
-		server_log::push_log_string(log_string, cur_vip_level, "viplevel", true);								//升级后VIP等级
+		server_log::push_log_string(log_string, "recharge", "logname");									//?????
+		server_log::push_log_string(log_string, old_vip_level, "rechargenum");								//?????VIP???
+		server_log::push_log_string(log_string, is_get_old_welfare, "totalnum");							//???????VIP??????????????
+		server_log::push_log_string(log_string, cur_vip_level, "viplevel", true);								//??????VIP???
 
 		log_string += "}}";
 
@@ -2518,10 +2518,10 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_JEWEL_CONSUME_LOGGER);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "jewelconsume", "logname");								//模块名
-		server_log::push_log_string(log_string, consume_num, "consumenum");								//本次消费钻石数
-		server_log::push_log_string(log_string, consume_type, "causeid");									//消费方式
-		server_log::push_log_string(log_string, total_consume_num, "totalconsumenum", true);						//总消费钻石数
+		server_log::push_log_string(log_string, "jewelconsume", "logname");								//?????
+		server_log::push_log_string(log_string, consume_num, "consumenum");								//?????????????
+		server_log::push_log_string(log_string, consume_type, "causeid");									//??????
+		server_log::push_log_string(log_string, total_consume_num, "totalconsumenum", true);						//???????????
 
 		log_string += "}}";
 
@@ -2579,21 +2579,21 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ARENA_CHALLENGE);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "arenachallenge", "logname");									//日志模块名
-		server_log::push_log_string(log_string, "C1010", "stepnumid");											//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, "0", "combatpower");											//角色评分（默认为零）
-		server_log::push_log_string(log_string, cur_time, "dtime", true);											//时间
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "arenachallenge", "logname");									//????????
+		server_log::push_log_string(log_string, "C1010", "stepnumid");											//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
+		server_log::push_log_string(log_string, cur_time, "dtime", true);											//???
 
 		log_string += "}}";
 		
@@ -2615,22 +2615,22 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_CHAT);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, sender_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
+		server_log::push_log_string(log_string, sender_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, third_info.param2, "version");										//客户端版本
-		server_log::push_log_string(log_string, "chat", "logname");													//日志模块名
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");								//服务器日志规范版本号
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, sender_info.role_guid.server_64, "roleid");							//角色ID
-		server_log::push_log_string(log_string, sender_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
+		server_log::push_log_string(log_string, third_info.param2, "version");										//?????锟斤拷
+		server_log::push_log_string(log_string, "chat", "logname");													//????????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");								//??????????锟絑?锟斤拷??
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, sender_info.role_guid.server_64, "roleid");							//???ID
+		server_log::push_log_string(log_string, sender_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
 		server_log::push_log_string(log_string, sender_info.data_ary[e_role_info_vip_level], "vip");			//vip	
-		server_log::push_log_string(log_string, chat_type, "chat_type");										//聊天类型	
-		server_log::push_log_string(log_string, addressee_guid.server_64, "addressee");							//接收者	
-		server_log::push_log_string(log_string, chat_text, "chat_text");											//聊天内容
-		server_log::push_log_string(log_string, item_json, "allitemnum", true);										//物品总量
+		server_log::push_log_string(log_string, chat_type, "chat_type");										//????????	
+		server_log::push_log_string(log_string, addressee_guid.server_64, "addressee");							//??????	
+		server_log::push_log_string(log_string, chat_text, "chat_text");											//????????
+		server_log::push_log_string(log_string, item_json, "allitemnum", true);										//???????
 
 		log_string += "}}";
 
@@ -2804,22 +2804,22 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_PLAYER_MARK);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "playermark", "logname");										//日志模块名
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "playermark", "logname");										//????????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
 		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//vip		
-		server_log::push_log_string(log_string, strength, "strengthlevel");									//力量
-		server_log::push_log_string(log_string, agility, "agilitylevel");										//敏捷
-		server_log::push_log_string(log_string, intellect, "intellectlevel");									//智力
-		server_log::push_log_string(log_string, stamina, "staminalevel", true);										//耐力
+		server_log::push_log_string(log_string, strength, "strengthlevel");									//????
+		server_log::push_log_string(log_string, agility, "agilitylevel");										//????
+		server_log::push_log_string(log_string, intellect, "intellectlevel");									//????
+		server_log::push_log_string(log_string, stamina, "staminalevel", true);										//????
 
 		log_string += "}}";
 	
@@ -2838,20 +2838,20 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ROLE_PLAYER_PK);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "playerpk", "logname");											//日志模块名
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "playerpk", "logname");											//????????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
 		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//vip			
-		server_log::push_log_string(log_string, cur_pk_mode, "pk_mode");										// pk模式
-		server_log::push_log_string(log_string, cur_pk_value, "pkvalue", true);										//当前PK值		
+		server_log::push_log_string(log_string, cur_pk_mode, "pk_mode");										// pk??
+		server_log::push_log_string(log_string, cur_pk_value, "pkvalue", true);										//???PK?		
 
 		log_string += "}}";
 
@@ -2872,36 +2872,36 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ROLE_PLAYER_DEAD);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, dead_role_info.account, "userid");											//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");											//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");														//时间戳
+		server_log::push_log_string(log_string, dead_role_info.account, "userid");											//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");											//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");														//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");												//appid
-		server_log::push_log_string(log_string, "playerdead", "logname");													//日志模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");												//客户端版本
-		server_log::push_log_string(log_string, "C0300", "stepnumid");														//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");									//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");													//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");											//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");											//广告渠道ID
-		server_log::push_log_string(log_string, dead_role_info.role_guid.server_64, "roleid");				//角色ID
-		server_log::push_log_string(log_string, dead_role_info.data_ary[e_role_info_exp_level], "rolelevel");				//角色等级
-		server_log::push_log_string(log_string, dead_role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");				//角色战力
-		server_log::push_log_string(log_string, cur_time, "dtime");														// 死亡时间
-		//server_log::push_log_string(log_string, killer_role_info.role_guid.server_64, "killerguid ");			// 击杀者id
-		server_log::push_log_string(log_string, killer_role_info.role_name, "killername");									// 击杀者名称
-		server_log::push_log_string(log_string, killer_role_info.data_ary[e_role_info_template_id], "killertemplateid");	// 击杀者模板id
-		server_log::push_log_string(log_string, killer_role_info.data_i64_ary[e_role_i64_info_gs_value], "killertgs");				// 击杀者战力
-		server_log::push_log_string(log_string, dead_role_info.role_guid.server_64, "deadguid");				// 被杀者ID
-		server_log::push_log_string(log_string, dead_role_info.role_name, "deadname");										// 被杀者名称
-		server_log::push_log_string(log_string, dead_role_info.data_ary[e_role_info_template_id], "deadtemplateid");		// 被杀者模板id
-		server_log::push_log_string(log_string, dead_role_info.data_i64_ary[e_role_i64_info_gs_value], "deadgs");					// 被杀者战力
-		server_log::push_log_string(log_string, dead_pos.X, "deathlocationx");												// 死亡地点 X
-		server_log::push_log_string(log_string, dead_pos.Y, "deathlocationy");												// 死亡地点 Y
-		server_log::push_log_string(log_string, dead_pos.Z, "deathlocationz");												// 死亡地点 Z
-		server_log::push_log_string(log_string, killer_pk_mode, "killerpkmode");											// 击杀者pk模式
-		server_log::push_log_string(log_string, dead_pk_mode, "deadpkmode");												// 死亡者pk模式
-		server_log::push_log_string(log_string, map_type, "scenemap");														// 死亡的地图id
-		server_log::push_log_string(log_string, dead_type, "deadtype", true);													// 死亡类型
+		server_log::push_log_string(log_string, "playerdead", "logname");													//????????
+		server_log::push_log_string(log_string, third_info.param2, "version");												//?????锟斤拷
+		server_log::push_log_string(log_string, "C0300", "stepnumid");														//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");									//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");													//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");											//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");											//???????ID
+		server_log::push_log_string(log_string, dead_role_info.role_guid.server_64, "roleid");				//???ID
+		server_log::push_log_string(log_string, dead_role_info.data_ary[e_role_info_exp_level], "rolelevel");				//??????
+		server_log::push_log_string(log_string, dead_role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");				//??????
+		server_log::push_log_string(log_string, cur_time, "dtime");														// ???????
+		//server_log::push_log_string(log_string, killer_role_info.role_guid.server_64, "killerguid ");			// ?????id
+		server_log::push_log_string(log_string, killer_role_info.role_name, "killername");									// ?????????
+		server_log::push_log_string(log_string, killer_role_info.data_ary[e_role_info_template_id], "killertemplateid");	// ????????id
+		server_log::push_log_string(log_string, killer_role_info.data_i64_ary[e_role_i64_info_gs_value], "killertgs");				// ????????
+		server_log::push_log_string(log_string, dead_role_info.role_guid.server_64, "deadguid");				// ?????ID
+		server_log::push_log_string(log_string, dead_role_info.role_name, "deadname");										// ?????????
+		server_log::push_log_string(log_string, dead_role_info.data_ary[e_role_info_template_id], "deadtemplateid");		// ????????id
+		server_log::push_log_string(log_string, dead_role_info.data_i64_ary[e_role_i64_info_gs_value], "deadgs");					// ????????
+		server_log::push_log_string(log_string, dead_pos.X, "deathlocationx");												// ??????? X
+		server_log::push_log_string(log_string, dead_pos.Y, "deathlocationy");												// ??????? Y
+		server_log::push_log_string(log_string, dead_pos.Z, "deathlocationz");												// ??????? Z
+		server_log::push_log_string(log_string, killer_pk_mode, "killerpkmode");											// ?????pk??
+		server_log::push_log_string(log_string, dead_pk_mode, "deadpkmode");												// ??????pk??
+		server_log::push_log_string(log_string, map_type, "scenemap");														// ????????id
+		server_log::push_log_string(log_string, dead_type, "deadtype", true);													// ????????
 
 		log_string += "}}";
 
@@ -2919,19 +2919,19 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_NUM_BAG_TOTAL);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "bagtotalnum", "logname");										//日志模块名
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
+		server_log::push_log_string(log_string, "bagtotalnum", "logname");										//????????
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
 		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//vip			
-		server_log::push_log_string(log_string, cur_bag_total_num, "curbagtotalnum", true);							//当前背包总格子数	
+		server_log::push_log_string(log_string, cur_bag_total_num, "curbagtotalnum", true);							//??????????????	
 
 		log_string += "}}";
 
@@ -2947,8 +2947,8 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_NUM_BAG_UNUSED);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "bagunusednum", "logname");											//日志模块名
-		server_log::push_log_string(log_string, cur_bag_unused_num, "curbagunusednum", true);							//当前背包剩余格子数量	
+		server_log::push_log_string(log_string, "bagunusednum", "logname");											//????????
+		server_log::push_log_string(log_string, cur_bag_unused_num, "curbagunusednum", true);							//?????????????????	
 
 		log_string += "}}";
 
@@ -2964,9 +2964,9 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_MONTH_CARD);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "monthcard", "logname");						//日志模块名
-		server_log::push_log_string(log_string, buy_time, "buytime");							//购买时间
-		server_log::push_log_string(log_string, buy_num, "buynum", true);								//购买数量
+		server_log::push_log_string(log_string, "monthcard", "logname");						//????????
+		server_log::push_log_string(log_string, buy_time, "buytime");							//???????
+		server_log::push_log_string(log_string, buy_num, "buynum", true);								//????????
 
 		log_string += "}}";
 
@@ -2982,8 +2982,8 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ELEMENT_RECOVERY);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "elementrecovery", "logname");					//日志模块名
-		server_log::push_log_string(log_string, pound_num, "pound_num", true);						//分解操作获得了多少符文精华
+		server_log::push_log_string(log_string, "elementrecovery", "logname");					//????????
+		server_log::push_log_string(log_string, pound_num, "pound_num", true);						//????????????????????
 
 		log_string += "}}";
 
@@ -2999,15 +2999,15 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_WORLD_BOSS_BATTLE_FROM_PLAYER);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "worldbossbattlefromplayer", "logname");			//日志模块名
+		server_log::push_log_string(log_string, "worldbossbattlefromplayer", "logname");			//????????
 		server_log::push_log_string(log_string, boss_id, "bossid");									// bossID
-		server_log::push_log_string(log_string, hurt_value, "damagevalue");							// 伤害量
-		server_log::push_log_string(log_string, battle_begin_time, "battlebegintime");				// 战斗开始时间
-		server_log::push_log_string(log_string, battle_end_time, "battleendtime");					// 战斗结束时间
-		server_log::push_log_string(log_string, battle_continued_time, "battlecontinuoustime");		// 战斗持续时间				
-		server_log::push_log_string(log_string, boss_is_dead, "bossisdead");						// boss是否死亡				
-		server_log::push_log_string(log_string, is_team, "isteam");									// 是否有队伍				
-		server_log::push_log_string(log_string, pk_mode, "pkmode", true);									// pk模式
+		server_log::push_log_string(log_string, hurt_value, "damagevalue");							// ?????
+		server_log::push_log_string(log_string, battle_begin_time, "battlebegintime");				// ?????????
+		server_log::push_log_string(log_string, battle_end_time, "battleendtime");					// ??????????
+		server_log::push_log_string(log_string, battle_continued_time, "battlecontinuoustime");		// ??????????				
+		server_log::push_log_string(log_string, boss_is_dead, "bossisdead");						// boss???????				
+		server_log::push_log_string(log_string, is_team, "isteam");									// ????锟斤拷???				
+		server_log::push_log_string(log_string, pk_mode, "pkmode", true);									// pk??
 
 		log_string += "}}";
 
@@ -3023,19 +3023,19 @@ namespace faith
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_BOSS_KILL_LOG);
 
 		//log_string += "{";
-		//server_log::push_log_string(log_string, "worldbossbattlefromboss", "logname");						//日志模块名
-		//server_log::push_log_string(log_string, role_info.role_guid, "killerguid");							//击杀者guid
-		//server_log::push_log_string(log_string, role_info.role_name, "rolename");							//击杀者名称
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelv");		//击杀者等级
-		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "rolepower");		//击杀者战力
+		//server_log::push_log_string(log_string, "worldbossbattlefromboss", "logname");						//????????
+		//server_log::push_log_string(log_string, role_info.role_guid, "killerguid");							//?????guid
+		//server_log::push_log_string(log_string, role_info.role_name, "rolename");							//?????????
+		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelv");		//???????
+		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "rolepower");		//????????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "rolevip");		//击杀者vip等级
+		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "rolevip");		//?????vip???
 		//server_log::push_log_string(log_string, boss_id, "bossid");											//bossID
-		//server_log::push_log_string(log_string, map_id, "mapid");											//地图id
-		//server_log::push_log_string(log_string, player_num, "playernum");									//参与战斗的玩家数量
-		//server_log::push_log_string(log_string, battle_begin_time, "battlebegintime");						//战斗开始时间
-		//server_log::push_log_string(log_string, battle_end_time, "battleendtime");							//战斗结束时间
-		//server_log::push_log_string(log_string, battle_continued_time, "battlecontinuoustime", true);		//战斗持续时间	
+		//server_log::push_log_string(log_string, map_id, "mapid");											//???id
+		//server_log::push_log_string(log_string, player_num, "playernum");									//????????????????
+		//server_log::push_log_string(log_string, battle_begin_time, "battlebegintime");						//?????????
+		//server_log::push_log_string(log_string, battle_end_time, "battleendtime");							//??????????
+		//server_log::push_log_string(log_string, battle_continued_time, "battlecontinuoustime", true);		//??????????	
 
 		//log_string += "}}";
 		
@@ -3089,20 +3089,20 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_CROSS_SERVER_BOSS_KILL_LOG);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "crossserverworldbosskill", "logname");			//日志模块名
+		server_log::push_log_string(log_string, "crossserverworldbosskill", "logname");			//????????
 		server_log::push_log_string(log_string, boss_id, "bossid");								//boss_id
-		server_log::push_log_string(log_string, legion_id.server_64, "legionid");							//击杀军团id
-		server_log::push_log_string(log_string, server_id, "serverid");							//击杀军团sever_id
-		server_log::push_log_string(log_string, legion_name, "legionname");						//击杀军团name
-		server_log::push_log_string(log_string, legion_id_top1.server_64, "legionidtop1");				//top1军团id
-		server_log::push_log_string(log_string, legion_name_top1, "legionnametop1");			//top1军团name
-		server_log::push_log_string(log_string, legion_server_id_top1, "legionserveridtop1");	//top1军团sever_id
-		server_log::push_log_string(log_string, legion_id_top2.server_64, "legionidtop2");				//top2军团id
-		server_log::push_log_string(log_string, legion_name_top2, "legionnametop2");			//top2军团name
-		server_log::push_log_string(log_string, legion_server_id_top2, "legionserveridtop2");	//top2军团sever_id
-		server_log::push_log_string(log_string, legion_id_top3.server_64, "legionidtop3");				//top3军团id
-		server_log::push_log_string(log_string, legion_name_top3, "legionnametop3");			//top3军团name
-		server_log::push_log_string(log_string, legion_server_id_top3, "legionserveridtop3", true);	//top3军团sever_id
+		server_log::push_log_string(log_string, legion_id.server_64, "legionid");							//???????id
+		server_log::push_log_string(log_string, server_id, "serverid");							//???????sever_id
+		server_log::push_log_string(log_string, legion_name, "legionname");						//???????name
+		server_log::push_log_string(log_string, legion_id_top1.server_64, "legionidtop1");				//top1????id
+		server_log::push_log_string(log_string, legion_name_top1, "legionnametop1");			//top1????name
+		server_log::push_log_string(log_string, legion_server_id_top1, "legionserveridtop1");	//top1????sever_id
+		server_log::push_log_string(log_string, legion_id_top2.server_64, "legionidtop2");				//top2????id
+		server_log::push_log_string(log_string, legion_name_top2, "legionnametop2");			//top2????name
+		server_log::push_log_string(log_string, legion_server_id_top2, "legionserveridtop2");	//top2????sever_id
+		server_log::push_log_string(log_string, legion_id_top3.server_64, "legionidtop3");				//top3????id
+		server_log::push_log_string(log_string, legion_name_top3, "legionnametop3");			//top3????name
+		server_log::push_log_string(log_string, legion_server_id_top3, "legionserveridtop3", true);	//top3????sever_id
 
 		log_string += "}}";
 
@@ -3140,13 +3140,13 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_BOSS_KILL_DROP_LOG);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "boss_kill_drop_log", "logname");							//日志模块名
-		server_log::push_log_string(log_string, role_info.role_guid, "killerguid");							//击杀者guid
-		server_log::push_log_string(log_string, role_info.role_name, "rolename");							//击杀者名称
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelv");		//击杀者等级
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "rolepower");		//击杀者战力
+		server_log::push_log_string(log_string, "boss_kill_drop_log", "logname");							//????????
+		server_log::push_log_string(log_string, role_info.role_guid, "killerguid");							//?????guid
+		server_log::push_log_string(log_string, role_info.role_name, "rolename");							//?????????
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelv");		//???????
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "rolepower");		//????????
 		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "rolevip");		//击杀者vip等级
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "rolevip");		//?????vip???
 		server_log::push_log_string(log_string, boss_id, "bossid");											//bossID
 
 		xstring item_list_str = "";
@@ -3232,15 +3232,15 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ELITE_BOSS_BATTLE_FROM_PLAYER);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "elitebossbattlefromplayer", "logname");			//日志模块名
+		server_log::push_log_string(log_string, "elitebossbattlefromplayer", "logname");			//????????
 		server_log::push_log_string(log_string, boss_id, "bossid");								// bossID
-		server_log::push_log_string(log_string, hurt_value, "hurtvalue");							// 伤害量
-		server_log::push_log_string(log_string, battle_begin_time, "battlebegintime");				// 战斗开始时间
-		server_log::push_log_string(log_string, battle_end_time, "battleendtime");					// 战斗结束时间
-		server_log::push_log_string(log_string, battle_continued_time, "battlecontinuoustime");	// 战斗持续时间				
-		server_log::push_log_string(log_string, boss_is_dead, "bossisdead");						// boss是否死亡				
-		server_log::push_log_string(log_string, is_team, "isteam");								// 是否有队伍				
-		server_log::push_log_string(log_string, pk_mode, "pkmode", true);								// pk模式
+		server_log::push_log_string(log_string, hurt_value, "hurtvalue");							// ?????
+		server_log::push_log_string(log_string, battle_begin_time, "battlebegintime");				// ?????????
+		server_log::push_log_string(log_string, battle_end_time, "battleendtime");					// ??????????
+		server_log::push_log_string(log_string, battle_continued_time, "battlecontinuoustime");	// ??????????				
+		server_log::push_log_string(log_string, boss_is_dead, "bossisdead");						// boss???????				
+		server_log::push_log_string(log_string, is_team, "isteam");								// ????锟斤拷???				
+		server_log::push_log_string(log_string, pk_mode, "pkmode", true);								// pk??
 
 		log_string += "}}";
 	
@@ -3256,12 +3256,12 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ELITE_BOSS_BATTLE_FROM_BOSS);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "elitebossbattlefromboss", "logname");				//日志模块名
+		server_log::push_log_string(log_string, "elitebossbattlefromboss", "logname");				//????????
 		server_log::push_log_string(log_string, boss_id, "bossid");								// bossID
-		server_log::push_log_string(log_string, player_num, "playernum");							// 参与战斗的玩家数量
-		server_log::push_log_string(log_string, battle_begin_time, "battlebegintime");				// 战斗开始时间
-		server_log::push_log_string(log_string, battle_end_time, "battleendtime");					// 战斗结束时间
-		server_log::push_log_string(log_string, battle_continued_time, "battlecontinuoustime", true);	// 战斗持续时间			
+		server_log::push_log_string(log_string, player_num, "playernum");							// ????????????????
+		server_log::push_log_string(log_string, battle_begin_time, "battlebegintime");				// ?????????
+		server_log::push_log_string(log_string, battle_end_time, "battleendtime");					// ??????????
+		server_log::push_log_string(log_string, battle_continued_time, "battlecontinuoustime", true);	// ??????????			
 
 		log_string += "}}";
 
@@ -3277,9 +3277,9 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ELITE_BOSS_BATTLE_FROM_BOSS);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "bosshome", "logname");				//日志模块名
+		server_log::push_log_string(log_string, "bosshome", "logname");				//????????
 		server_log::push_log_string(log_string, record_info.boss_spawn_point_template_id, "bossspawnid");			// bossID
-		server_log::push_log_string(log_string, record_info.killed_stamp, "killedtime");							// Boss死亡时间戳
+		server_log::push_log_string(log_string, record_info.killed_stamp, "killedtime");							// Boss????????
 		for (int32 i = 0; i < max_team_member_num; i++)
 		{
 			if (!record_info.player_info_arr[i].role_guid.is_valid())
@@ -3302,9 +3302,9 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ACTIVITY_DEGREE);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "activitydegree", "logname");									//日志模块名
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleguid");		// 玩家id
-		server_log::push_log_string(log_string, new_activity_degree_value, "activitydegreevalue", true);				// 活跃度的值
+		server_log::push_log_string(log_string, "activitydegree", "logname");									//????????
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleguid");		// ???id
+		server_log::push_log_string(log_string, new_activity_degree_value, "activitydegreevalue", true);				// ???????
 
 		log_string += "}}";
 
@@ -3325,25 +3325,25 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_RESOURCE_FIND_BACK);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "resourcefindback", "logname");									//日志模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "C0700", "stepnumid");											//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, "0", "combatpower");											//角色评分（默认为零）
-		server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "rolrguid ");		// 玩家id
-		server_log::push_log_string(log_string, must_do_type, "mustdotype");									// 副本类型
-		server_log::push_log_string(log_string, find_back_type, "findbacktype");								// 找回类型
-		server_log::push_log_string(log_string, find_back_value, "findbackvalue", true);								// 找回次数
+		server_log::push_log_string(log_string, "resourcefindback", "logname");									//????????
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "C0700", "stepnumid");											//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????锟絑?锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
+		server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "rolrguid ");		// ???id
+		server_log::push_log_string(log_string, must_do_type, "mustdotype");									// ????????
+		server_log::push_log_string(log_string, find_back_type, "findbacktype");								// ???????
+		server_log::push_log_string(log_string, find_back_value, "findbackvalue", true);								// ??????
 
 		log_string += "}}";
 
@@ -3359,9 +3359,9 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_LEGION_BURN_FIRE_OVER);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "legionburnfireover", "logname");						//日志模块名
-		server_log::push_log_string(log_string, legion_id, "legionid");								// 军团id
-		server_log::push_log_string(log_string, participate_number, "participatenumber", true);				// 参与人数
+		server_log::push_log_string(log_string, "legionburnfireover", "logname");						//????????
+		server_log::push_log_string(log_string, legion_id, "legionid");								// ????id
+		server_log::push_log_string(log_string, participate_number, "participatenumber", true);				// ????????
 
 		log_string += "}}";
 
@@ -3376,9 +3376,9 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_LEGION_BOSS_OVER);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "legionbossover", "logname");						//日志模块名
-		server_log::push_log_string(log_string, legion_id, "legionid");							// 军团id
-		server_log::push_log_string(log_string, participate_number, "participatenumber", true);			// 参与人数
+		server_log::push_log_string(log_string, "legionbossover", "logname");						//????????
+		server_log::push_log_string(log_string, legion_id, "legionid");							// ????id
+		server_log::push_log_string(log_string, participate_number, "participatenumber", true);			// ????????
 
 		log_string += "}}";
 
@@ -3394,9 +3394,9 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_LEGION_WAR_OVER);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "legionwarover", "logname");						//日志模块名
-		server_log::push_log_string(log_string, legion_id, "legionid");							// 军团id
-		server_log::push_log_string(log_string, participate_number, "participatenumber", true);			// 参与人数
+		server_log::push_log_string(log_string, "legionwarover", "logname");						//????????
+		server_log::push_log_string(log_string, legion_id, "legionid");							// ????id
+		server_log::push_log_string(log_string, participate_number, "participatenumber", true);			// ????????
 
 		log_string += "}}";
 
@@ -3412,11 +3412,11 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_LEGION_INFO);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "legioninfo", "logname");								//日志模块名
-		server_log::push_log_string(log_string, legion_id, "legionid");								//军团ID
-		server_log::push_log_string(log_string, legion_name, "legionname");							//军团名称
-		server_log::push_log_string(log_string, legion_level, "legionlevel");							//军团等级
-		server_log::push_log_string(log_string, legion_role_num, "legionrolenum", true);						//军团人数
+		server_log::push_log_string(log_string, "legioninfo", "logname");								//????????
+		server_log::push_log_string(log_string, legion_id, "legionid");								//????ID
+		server_log::push_log_string(log_string, legion_name, "legionname");							//????????
+		server_log::push_log_string(log_string, legion_level, "legionlevel");							//??????
+		server_log::push_log_string(log_string, legion_role_num, "legionrolenum", true);						//????????
 
 		log_string += "}}";
 
@@ -3432,9 +3432,9 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_CREATE_TEAM);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "createteam", "logname");								//日志模块名
-		server_log::push_log_string(log_string, creater_role_guid.server_64, "createrroleguid");		// 创建者的guid
-		server_log::push_log_string(log_string, team_aim, "teamaim", true);									// 队伍目标
+		server_log::push_log_string(log_string, "createteam", "logname");								//????????
+		server_log::push_log_string(log_string, creater_role_guid.server_64, "createrroleguid");		// ???????guid
+		server_log::push_log_string(log_string, team_aim, "teamaim", true);									// ???????
 
 		log_string += "}}";
 
@@ -3450,11 +3450,11 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_CREATE_TEAM);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "jointeam", "logname");								//日志模块名
-		server_log::push_log_string(log_string, creater_role_guid.server_64, "createrroleguid");	// 创建者的guid
-		server_log::push_log_string(log_string, cur_member_num, "curmembernum");					// 当前成员数量
-		server_log::push_log_string(log_string, team_aim, "teamaim");								// 队伍目标
-		server_log::push_log_string(log_string, joiner_role_guid.server_64, "joinerroleguid", true);		// 加入者的guid
+		server_log::push_log_string(log_string, "jointeam", "logname");								//????????
+		server_log::push_log_string(log_string, creater_role_guid.server_64, "createrroleguid");	// ???????guid
+		server_log::push_log_string(log_string, cur_member_num, "curmembernum");					// ??????????
+		server_log::push_log_string(log_string, team_aim, "teamaim");								// ???????
+		server_log::push_log_string(log_string, joiner_role_guid.server_64, "joinerroleguid", true);		// ???????guid
 
 		log_string += "}}";
 
@@ -3470,12 +3470,12 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_QUIT_TEAM);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "quitteam", "logname");								//日志模块名
-		server_log::push_log_string(log_string, creater_role_guid.server_64, "createrroleguid");	// 创建者的guid
-		server_log::push_log_string(log_string, cur_member_num, "curmembernum");					// 当前成员数量
-		server_log::push_log_string(log_string, team_aim, "teamaim");								// 队伍目标
-		server_log::push_log_string(log_string, joiner_role_guid.server_64, "joinerroleguid");		// 加入者的guid
-		server_log::push_log_string(log_string, is_exist, "isexist", true);								// 队伍是否存在
+		server_log::push_log_string(log_string, "quitteam", "logname");								//????????
+		server_log::push_log_string(log_string, creater_role_guid.server_64, "createrroleguid");	// ???????guid
+		server_log::push_log_string(log_string, cur_member_num, "curmembernum");					// ??????????
+		server_log::push_log_string(log_string, team_aim, "teamaim");								// ???????
+		server_log::push_log_string(log_string, joiner_role_guid.server_64, "joinerroleguid");		// ???????guid
+		server_log::push_log_string(log_string, is_exist, "isexist", true);								// ??????????
 
 		log_string += "}}";
 
@@ -3491,13 +3491,13 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_CHAT_CHANNEL);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "chatchannel", "logname");								//日志模块名
-		server_log::push_log_string(log_string, channel_id, "channelid");								// 频道ID
-		server_log::push_log_string(log_string, chat_content, "chatcontent");							// 发言内容
-		server_log::push_log_string(log_string, sender_guid.server_64, "senderguid");					// 发言者GUID
-		server_log::push_log_string(log_string, receiver_guid.server_64, "receiverguid");				// 接受者的GUID
-		server_log::push_log_string(log_string, voice_id, "voiceid");									// 语音的id
-		server_log::push_log_string(log_string, voice_time, "voicetime", true);								// 语音的时长
+		server_log::push_log_string(log_string, "chatchannel", "logname");								//????????
+		server_log::push_log_string(log_string, channel_id, "channelid");								// ???ID
+		server_log::push_log_string(log_string, chat_content, "chatcontent");							// ????????
+		server_log::push_log_string(log_string, sender_guid.server_64, "senderguid");					// ??????GUID
+		server_log::push_log_string(log_string, receiver_guid.server_64, "receiverguid");				// ???????GUID
+		server_log::push_log_string(log_string, voice_id, "voiceid");									// ??????id
+		server_log::push_log_string(log_string, voice_time, "voicetime", true);								// ?????????
 
 		log_string += "}}";
 
@@ -3518,30 +3518,30 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_GROW_UP);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "growup", "logname");											//模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "C5050", "stepnumid");											//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");						//角色id
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//角色战力评分
+		server_log::push_log_string(log_string, "growup", "logname");											//?????
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "C5050", "stepnumid");											//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");						//???id
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????????
 		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//Vip等级
-		server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		server_log::push_log_string(log_string, grow_up_id, "growupid");										//成长基金id
-		server_log::push_log_string(log_string, grow_up_cost, "growupcost");									//花费
-		server_log::push_log_string(log_string, 1, "buynum");													//购买数量
-		server_log::push_log_string(log_string, third_info.param7, "rechargechannel");							//充值渠道id
-		server_log::push_log_string(log_string, third_info.param6, "ip");										//用户进行充值时设备的ip
-		server_log::push_log_string(log_string, server_invaild_string, "os_version");							//系统版本
-		server_log::push_log_string(log_string, third_info.param8, "model");									//手机型号
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//Vip???
+		server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		server_log::push_log_string(log_string, grow_up_id, "growupid");										//???????id
+		server_log::push_log_string(log_string, grow_up_cost, "growupcost");									//????
+		server_log::push_log_string(log_string, 1, "buynum");													//????????
+		server_log::push_log_string(log_string, third_info.param7, "rechargechannel");							//???????id
+		server_log::push_log_string(log_string, third_info.param6, "ip");										//??????锟斤拷????锟斤拷??ip
+		server_log::push_log_string(log_string, server_invaild_string, "os_version");							//???锟斤拷
+		server_log::push_log_string(log_string, third_info.param8, "model");									//??????
 		server_log::push_log_string(log_string, third_info.param9, "idfa"); 									//idfa
 		server_log::push_log_string(log_string, third_info.param10, "imei"); 									//imei
 		server_log::push_log_string(log_string, third_info.param11, "androidId"); 								//androidId
@@ -3604,10 +3604,10 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_GRADE_UP);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "gradeup", "logname");									//日志模块名
-		server_log::push_log_string(log_string, role_info.account, "userid");							//账号
-		server_log::push_log_string(log_string, old_class, "oldclass");								//转职前职业
-		server_log::push_log_string(log_string, new_class, "newclass", true);								//转职后职业	
+		server_log::push_log_string(log_string, "gradeup", "logname");									//????????
+		server_log::push_log_string(log_string, role_info.account, "userid");							//???
+		server_log::push_log_string(log_string, old_class, "oldclass");								//?????
+		server_log::push_log_string(log_string, new_class, "newclass", true);								//??????	
 
 		log_string += "}}";
 
@@ -3628,23 +3628,23 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_GETMEDITATION);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "meditation", "logname");									//日志模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "C0600", "stepnumid");											//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, "0", "combatpower");											//角色评分（默认为零）
-		server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		server_log::push_log_string(log_string, meditation_type, "meditationtype");							//领取冥想类型
-		server_log::push_log_string(log_string, meditation_time, "meditationtime", true);							//冥想时间(分钟)
+		server_log::push_log_string(log_string, "meditation", "logname");									//????????
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "C0600", "stepnumid");											//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????锟絑?锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
+		server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		server_log::push_log_string(log_string, meditation_type, "meditationtype");							//??????????
+		server_log::push_log_string(log_string, meditation_time, "meditationtime", true);							//??????(????)
 
 		log_string += "}}";
 
@@ -3665,23 +3665,23 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_GETWELFARE);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "succinctequip", "logname");									//日志模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "C0500", "stepnumid");											//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, "0", "combatpower");											//角色评分（默认为零）
-		server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		server_log::push_log_string(log_string, in_template_type, "intemplatetype");							//领取福利的类型（welfare表中查看）
-		server_log::push_log_string(log_string, in_template_index, "intemplateindex", true);							//所领取福利的顺序值（welfare表中查看）
+		server_log::push_log_string(log_string, "succinctequip", "logname");									//????????
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "C0500", "stepnumid");											//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????锟絑?锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
+		server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		server_log::push_log_string(log_string, in_template_type, "intemplatetype");							//??????????????welfare???锟斤拷???
+		server_log::push_log_string(log_string, in_template_index, "intemplateindex", true);							//?????????????????welfare???锟斤拷???
 
 		log_string += "}}";
 		
@@ -3701,31 +3701,31 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_MAP_TRANSFER);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "maptransfer", "logname");											//日志模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "C1000", "stepnumid");											//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, "0", "combatpower");											//角色评分（默认为零）
-		server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		server_log::push_log_string(log_string, desc_type, "desctype");											//传送类型
-		server_log::push_log_string(log_string, desc_map_template_id, "mapid");									//目标地图
-		server_log::push_log_string(log_string, line_id, "lineid");												//线id
-		server_log::push_log_string(log_string, map_pos.unit_location.x, "mapx");								//地图x
-		server_log::push_log_string(log_string, map_pos.unit_location.y, "mapy");								//地图y
-		server_log::push_log_string(log_string, map_pos.unit_location.z, "mapz");								//地图z
-		server_log::push_log_string(log_string, map_guid.server_64, "mapguid");									//地图guid
-		server_log::push_log_string(log_string, war_index, "warindex");											//地图位置
-		server_log::push_log_string(log_string, force, "force");												//强制
-		server_log::push_log_string(log_string, dest_group_id, "destgroupid", true);							//副本类型
+		server_log::push_log_string(log_string, "maptransfer", "logname");											//????????
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "C1000", "stepnumid");											//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
+		server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		server_log::push_log_string(log_string, desc_type, "desctype");											//????????
+		server_log::push_log_string(log_string, desc_map_template_id, "mapid");									//?????
+		server_log::push_log_string(log_string, line_id, "lineid");												//??id
+		server_log::push_log_string(log_string, map_pos.unit_location.x, "mapx");								//???x
+		server_log::push_log_string(log_string, map_pos.unit_location.y, "mapy");								//???y
+		server_log::push_log_string(log_string, map_pos.unit_location.z, "mapz");								//???z
+		server_log::push_log_string(log_string, map_guid.server_64, "mapguid");									//???guid
+		server_log::push_log_string(log_string, war_index, "warindex");											//???锟斤拷??
+		server_log::push_log_string(log_string, force, "force");												//???
+		server_log::push_log_string(log_string, dest_group_id, "destgroupid", true);							//????????
 
 		log_string += "}}";
 
@@ -3739,44 +3739,44 @@ namespace faith
 		int64 cur_time_int = utility::get_tick_count();
 		xstring cur_time = time_helper::get_cur_time();
 
-		//开头
+		//???
 		//xstring log_string = "{";
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_MAP_CHANGE);
 
 		//log_string += "{";
-		//server_log::push_log_string(log_string,		role_info.account,							"userid");			//账号
-		//server_log::push_log_string(log_string,		third_info.param5,							"deviceid");		//设备号
-		//server_log::push_log_string(log_string,		cur_time_int,								"msec");			//时间戳
+		//server_log::push_log_string(log_string,		role_info.account,							"userid");			//???
+		//server_log::push_log_string(log_string,		third_info.param5,							"deviceid");		//?锟斤拷??
+		//server_log::push_log_string(log_string,		cur_time_int,								"msec");			//????
 		//server_log::push_log_string(log_string,		third_info.param1,							"appid");			//appid
-		//server_log::push_log_string(log_string,		"map_change",								"logname");			//日志模块名
-		//server_log::push_log_string(log_string,		third_info.param2,							"version");			//客户端版本
-		//server_log::push_log_string(log_string,		"C1000",									"stepnumid");		//步骤号
-		//server_log::push_log_string(log_string,		server_log_normversion,						"normversion");		//服务器日志规 范版本号 
-		//server_log::push_log_string(log_string,		game_server,								"serverid");		//服务器ID
-		//server_log::push_log_string(log_string,		third_info.param7,							"gamechannel");		//商店渠道ID
-		//server_log::push_log_string(log_string,		third_info.param4,							"adchannel");		//广告渠道ID
-		//server_log::push_log_string(log_string,		role_info.role_guid.server_64,				"roleid");			//角色ID
-		//server_log::push_log_string(log_string,		role_info.data_ary[e_role_info_exp_level],	"rolelevel");		//角色等级
-		//server_log::push_log_string(log_string,		"0",										"combatpower");		//角色评分（默认为零）
+		//server_log::push_log_string(log_string,		"map_change",								"logname");			//????????
+		//server_log::push_log_string(log_string,		third_info.param2,							"version");			//?????锟斤拷
+		//server_log::push_log_string(log_string,		"C1000",									"stepnumid");		//?????
+		//server_log::push_log_string(log_string,		server_log_normversion,						"normversion");		//??????????? ???锟斤拷?? 
+		//server_log::push_log_string(log_string,		game_server,								"serverid");		//??????ID
+		//server_log::push_log_string(log_string,		third_info.param7,							"gamechannel");		//???????ID
+		//server_log::push_log_string(log_string,		third_info.param4,							"adchannel");		//???????ID
+		//server_log::push_log_string(log_string,		role_info.role_guid.server_64,				"roleid");			//???ID
+		//server_log::push_log_string(log_string,		role_info.data_ary[e_role_info_exp_level],	"rolelevel");		//??????
+		//server_log::push_log_string(log_string,		"0",										"combatpower");		//??????????????
 		//server_log::push_log_string(log_string,   role_info.data_ary[e_role_info_template_id], "career");
-		//server_log::push_log_string(log_string,		cur_time,									"dtime");			//时间
+		//server_log::push_log_string(log_string,		cur_time,									"dtime");			//???
 
-		////自定义数据
-		//server_log::push_log_string(log_string,		map_id,										"maptemplateid");	//副本id
-		//server_log::push_log_string(log_string,		map_type,									"maptype");			//副本类型
-		//server_log::push_log_string(log_string,		map_sub_type,								"mapsubtype");		//副本子类型
-		//server_log::push_log_string(log_string,		change_type,								"changetype");		//改变类型 1:进入 0:退出
-		//server_log::push_log_string(log_string,		stage_type,									"stagetype");		//副本难度
+		////?????????
+		//server_log::push_log_string(log_string,		map_id,										"maptemplateid");	//????id
+		//server_log::push_log_string(log_string,		map_type,									"maptype");			//????????
+		//server_log::push_log_string(log_string,		map_sub_type,								"mapsubtype");		//??????????
+		//server_log::push_log_string(log_string,		change_type,								"changetype");		//??????? 1:???? 0:???
+		//server_log::push_log_string(log_string,		stage_type,									"stagetype");		//???????
 
-		////结尾
-		//server_log::push_log_string(log_string,		server_invaild_string,						"os_version");		//系统版本
-		//server_log::push_log_string(log_string,		third_info.param8,							"model");			//手机型号
+		////??锟斤拷
+		//server_log::push_log_string(log_string,		server_invaild_string,						"os_version");		//???锟斤拷
+		//server_log::push_log_string(log_string,		third_info.param8,							"model");			//??????
 		//server_log::push_log_string(log_string,		third_info.param9,							"idfa"); 			//idfa
 		//server_log::push_log_string(log_string,		third_info.param10,							"imei"); 			//imei
 		//server_log::push_log_string(log_string,		third_info.param11,							"androidId"); 		//androidId
 		//server_log::push_log_string(log_string,		third_info.param12,							"mac"); 			//mac
 		//server_log::push_log_string(log_string,		third_info.param13,							"sn"); 				//sn
-		//server_log::push_log_string(log_string,		login_type,									"logintype");		//登陆类型
+		//server_log::push_log_string(log_string,		login_type,									"logintype");		//???????
 		//server_log::push_log_string(log_string,		third_info.param6,							"ip", true);		//ip
 
 		//log_string += "}}";
@@ -3846,29 +3846,29 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_TIME_LIMIT_ACTIVITY);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "timelimitactivity", "logname");								//日志模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
+		server_log::push_log_string(log_string, "timelimitactivity", "logname");								//????????
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
 
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");						//角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, "0", "combatpower");											//角色评分（默认为零）
-		server_log::push_log_string(log_string, cur_time, "dtime");												//时间
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");						//???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
+		server_log::push_log_string(log_string, cur_time, "dtime");												//???
 
-		server_log::push_log_string(log_string, activity_id, "activityid");										//限时活动id
-		server_log::push_log_string(log_string, activity_template_id, "activitytemplateid");					//限时活动表id
-		server_log::push_log_string(log_string, activity_cycle, "activitycycle");								//活动周期
-		server_log::push_log_string(log_string, activity_day, "activityday");									//限时活动天数
-		server_log::push_log_string(log_string, activity_index, "activityindex");								//限时活动子类型
-		server_log::push_log_string(log_string, money_type, "moneytype");										//花费金钱类型
-		server_log::push_log_string(log_string, money_value, "moneyvalue");										//花费金钱数量
+		server_log::push_log_string(log_string, activity_id, "activityid");										//?????id
+		server_log::push_log_string(log_string, activity_template_id, "activitytemplateid");					//???????id
+		server_log::push_log_string(log_string, activity_cycle, "activitycycle");								//??????
+		server_log::push_log_string(log_string, activity_day, "activityday");									//?????????
+		server_log::push_log_string(log_string, activity_index, "activityindex");								//???????????
+		server_log::push_log_string(log_string, money_type, "moneytype");										//??????????
+		server_log::push_log_string(log_string, money_value, "moneyvalue");										//??????????
 		if (item_array.size() > 0)
 		{
 			int32 num = 1;
@@ -3878,8 +3878,8 @@ namespace faith
 				std::string itemcount = "itemcount";
 				itemid += std::to_string(num);
 				itemcount += std::to_string(num);
-				server_log::push_log_string(log_string, item_array[i], itemid);									//领取物品id
-				server_log::push_log_string(log_string, item_array[i + 1], itemcount);							//领取物品数量
+				server_log::push_log_string(log_string, item_array[i], itemid);									//??????id
+				server_log::push_log_string(log_string, item_array[i + 1], itemcount);							//??????????
 				num++;
 			}
 		}
@@ -3912,15 +3912,15 @@ namespace faith
 
 		log_string += "{";
 		
-		server_log::push_log_string(log_string, "ranklist", "logname");												//日志模块名
+		server_log::push_log_string(log_string, "ranklist", "logname");												//????????
 		int32 role_num = 0;
 
 		server_log::push_log_string(log_string, rank_list_type);
 		for (ranking_list_ite ite = rank_list->begin(); ite != rank_list->end(); ++ite,++role_num)
 		{
-			server_log::push_log_string(log_string, ite->role_guid.server_64, "roleid");									//玩家guid
-			server_log::push_log_string(log_string, ite->role_name, "rolename");								//玩家名字
-			server_log::push_log_string(log_string, ite->ranking_value, "rankingvalue", true);					//当前排行榜排行的依据值
+			server_log::push_log_string(log_string, ite->role_guid.server_64, "roleid");									//???guid
+			server_log::push_log_string(log_string, ite->role_name, "rolename");								//???????
+			server_log::push_log_string(log_string, ite->ranking_value, "rankingvalue", true);					//??????锟斤拷????锟斤拷??????
 			if (role_num >= 100)
 			{
 				break;
@@ -3932,7 +3932,7 @@ namespace faith
 		//PROJECT_RECORD_LOG(g_rank_list_logger, log_string);
 		int32 ranking_index = 1;
 		// send log to db
-		//排行榜的sql日志改为动态的根据排行榜枚举值创建单独的表格
+		//???锟斤拷??sql?????????????????锟斤拷??????????????????
 		std::string table_name = TABLE_NAME_RANK_LIST + "_";
 		table_name = table_name + init_unit::change_i32_to_string(rank_list_type);
 		for (ranking_list_ite ite = rank_list->begin(); ite != rank_list->end(); ++ite, ++ranking_index)
@@ -4041,26 +4041,26 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_AUCTIONBID);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号	
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//设备号	
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???	
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?锟斤拷??	
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "auctionbidlog", "logname");									//日志模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "C1020", "stepnumid");										//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, buyer_guid.server_64, "buyerid");	                            //角色ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, "0", "combatpower");											//角色评分（默认为零）
-		server_log::push_log_string(log_string, cur_time, "dtime");					                            //时间	
-		server_log::push_log_string(log_string, item_template_id, "itemid");					                //物品id	
-		server_log::push_log_string(log_string, money_type, "moneytype");                                       //钱的类型
-		server_log::push_log_string(log_string, money_value, "moneyvalue");                                     //竞标出价钻石数
-		server_log::push_log_string(log_string, data_num, "datanum");                                           //参与分钱人数
-		server_log::push_log_string(log_string, 0, "systemdeduction", true);		                            //系统扣掉的钻石数
+		server_log::push_log_string(log_string, "auctionbidlog", "logname");									//????????
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "C1020", "stepnumid");										//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, buyer_guid.server_64, "buyerid");	                            //???ID
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
+		server_log::push_log_string(log_string, cur_time, "dtime");					                            //???	
+		server_log::push_log_string(log_string, item_template_id, "itemid");					                //???id	
+		server_log::push_log_string(log_string, money_type, "moneytype");                                       //???????
+		server_log::push_log_string(log_string, money_value, "moneyvalue");                                     //????????????
+		server_log::push_log_string(log_string, data_num, "datanum");                                           //??????????
+		server_log::push_log_string(log_string, 0, "systemdeduction", true);		                            //????????????
 		log_string += "}}";
 
 		//PROJECT_RECORD_LOG(g_auctionbid_logger, log_string);
@@ -4079,25 +4079,25 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_AUTION_BUY);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//账号
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");								//设备号
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//时间戳
+		server_log::push_log_string(log_string, role_info.account, "userid");									//???
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");								//?锟斤拷??
+		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "auctionbuy", "logname");										//模块名
-		server_log::push_log_string(log_string, third_info.param2, "version");									//客户端版本
-		server_log::push_log_string(log_string, "C1000", "stepnumid");											//步骤号
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//服务器日志规 范版本号 
-		server_log::push_log_string(log_string, game_server, "serverid");										//服务器ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//商店渠道ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//广告渠道ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");		//角色id
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//角色等级
-		server_log::push_log_string(log_string, "0", "combatpower");											//角色评分（默认为零）
-		server_log::push_log_string(log_string, cur_time, "dtime");												//时间
-		server_log::push_log_string(log_string, item_id, "itemid");												//购买物品id
-		server_log::push_log_string(log_string, item_count, "itemcount");											//数量
-		server_log::push_log_string(log_string, money_type, "moneytype");											//货币类型
-		server_log::push_log_string(log_string, money_count, "moneycount", true);										//货币数量
+		server_log::push_log_string(log_string, "auctionbuy", "logname");										//?????
+		server_log::push_log_string(log_string, third_info.param2, "version");									//?????锟斤拷
+		server_log::push_log_string(log_string, "C1000", "stepnumid");											//?????
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");		//???id
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
+		server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		server_log::push_log_string(log_string, item_id, "itemid");												//???????id
+		server_log::push_log_string(log_string, item_count, "itemcount");											//????
+		server_log::push_log_string(log_string, money_type, "moneytype");											//????????
+		server_log::push_log_string(log_string, money_count, "moneycount", true);										//????????
 
 		log_string += "}}";
 
@@ -4114,12 +4114,12 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_AUCTION_SELL);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "auctionsell", "logname");											//模块名
-		server_log::push_log_string(log_string, item_id, "itemid");												//出售物品id
-		server_log::push_log_string(log_string, item_num, "itemnum");												//数量
-		server_log::push_log_string(log_string, cur_time, "dtime");												//上架时间
-		server_log::push_log_string(log_string, money_type, "moneytype");											//货币类型
-		server_log::push_log_string(log_string, item_price, "itemprice", true);											//上架价格
+		server_log::push_log_string(log_string, "auctionsell", "logname");											//?????
+		server_log::push_log_string(log_string, item_id, "itemid");												//???????id
+		server_log::push_log_string(log_string, item_num, "itemnum");												//????
+		server_log::push_log_string(log_string, cur_time, "dtime");												//??????
+		server_log::push_log_string(log_string, money_type, "moneytype");											//????????
+		server_log::push_log_string(log_string, item_price, "itemprice", true);											//?????
 
 		log_string += "}}";
 
@@ -4136,12 +4136,12 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_LEGION_AUCTION);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "legionauction", "logname");										//模块名
-		server_log::push_log_string(log_string, item_guid, "itemguid");											//购买物品guid
-		server_log::push_log_string(log_string, item_num, "itemnum");												//数量
-		server_log::push_log_string(log_string, money_type, "moneytype");											//货币类型
-		server_log::push_log_string(log_string, item_price, "itemprice");											//购买价格
-		server_log::push_log_string(log_string, cur_time, "dtime", true);												//时间
+		server_log::push_log_string(log_string, "legionauction", "logname");										//?????
+		server_log::push_log_string(log_string, item_guid, "itemguid");											//???????guid
+		server_log::push_log_string(log_string, item_num, "itemnum");												//????
+		server_log::push_log_string(log_string, money_type, "moneytype");											//????????
+		server_log::push_log_string(log_string, item_price, "itemprice");											//??????
+		server_log::push_log_string(log_string, cur_time, "dtime", true);												//???
 
 		log_string += "}}";
 		
@@ -4158,12 +4158,12 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_WORLD_AUCTION);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "worldauction", "logname");										//模块名
-		server_log::push_log_string(log_string, item_guid, "itemguid");											//购买物品guid
-		server_log::push_log_string(log_string, item_num, "itemnum");												//数量
-		server_log::push_log_string(log_string, money_type, "moneytype");											//货币类型
-		server_log::push_log_string(log_string, item_price, "itemprice");											//购买价格
-		server_log::push_log_string(log_string, cur_time, "dtime", true);												//时间
+		server_log::push_log_string(log_string, "worldauction", "logname");										//?????
+		server_log::push_log_string(log_string, item_guid, "itemguid");											//???????guid
+		server_log::push_log_string(log_string, item_num, "itemnum");												//????
+		server_log::push_log_string(log_string, money_type, "moneytype");											//????????
+		server_log::push_log_string(log_string, item_price, "itemprice");											//??????
+		server_log::push_log_string(log_string, cur_time, "dtime", true);												//???
 		
 		log_string += "}}";
 
@@ -4459,7 +4459,7 @@ namespace faith
 		json["role_power"] = (role_info.data_i64_ary[e_role_i64_info_gs_value]) / 10;
 		json["role_vip"] = role_info.data_ary[e_role_info_vip_level];
 
-		//不可用money_info的，因为该数据存储时候没有筛选
+		//??????money_info????????????锟斤拷????????
 		json["total_recharge_jewel"] = logic_info.data_ary[e_role_logic_info_jewel_total_recharge];
 		json["total_consume_jewel"] = logic_info.data_ary[e_role_logic_info_jewel_total_consume];
 
@@ -4508,7 +4508,7 @@ namespace faith
 			return;
 		}
 
-		int32 cost_item_info[10] = {0};//默认消耗品为5个
+		int32 cost_item_info[10] = {0};//?????????5??
 		if (activity_type == e_time_limit_activity_type_item_exchange || activity_type == e_time_limit_activity_type_treasure_sprite || 
 			activity_type == e_time_limit_activity_type_treasure_element || activity_type == e_time_limit_activity_type_treasure ||
 			activity_type == e_time_limit_activity_type_treasure_royal1 || activity_type == e_time_limit_activity_type_treasure_royal2 ||
@@ -4639,44 +4639,44 @@ namespace faith
 		int64 cur_time_int = utility::get_tick_count();
 		xstring cur_time = time_helper::get_cur_time();
 
-		//开头
+		//???
 		xstring log_string = "{";
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_CROSS_SERVER_HARRY);
 
 		log_string += "{";
-		server_log::push_log_string(log_string,		role_info.account,								"userid");			//账号
-		server_log::push_log_string(log_string,		third_info.param5,								"deviceid");		//设备号
-		server_log::push_log_string(log_string,		cur_time_int,									"msec");			//时间戳
+		server_log::push_log_string(log_string,		role_info.account,								"userid");			//???
+		server_log::push_log_string(log_string,		third_info.param5,								"deviceid");		//?锟斤拷??
+		server_log::push_log_string(log_string,		cur_time_int,									"msec");			//????
 		server_log::push_log_string(log_string,		third_info.param1,								"appid");			//appid
-		server_log::push_log_string(log_string,		"map_change",									"logname");			//日志模块名
-		server_log::push_log_string(log_string,		third_info.param2,								"version");			//客户端版本
-		server_log::push_log_string(log_string,		"C1000",										"stepnumid");		//步骤号
-		server_log::push_log_string(log_string,		server_log_normversion,							"normversion");		//服务器日志规 范版本号 
-		server_log::push_log_string(log_string,		game_server,									"serverid");		//服务器ID
-		server_log::push_log_string(log_string,		third_info.param7,								"gamechannel");		//商店渠道ID
-		server_log::push_log_string(log_string,		third_info.param4,								"adchannel");		//广告渠道ID
-		server_log::push_log_string(log_string,		role_info.role_guid.server_64,					"roleid");			//角色ID
-		server_log::push_log_string(log_string,		role_info.data_ary[e_role_info_exp_level],		"rolelevel");		//角色等级
-		server_log::push_log_string(log_string,		"0",											"combatpower");		//角色评分（默认为零）
+		server_log::push_log_string(log_string,		"map_change",									"logname");			//????????
+		server_log::push_log_string(log_string,		third_info.param2,								"version");			//?????锟斤拷
+		server_log::push_log_string(log_string,		"C1000",										"stepnumid");		//?????
+		server_log::push_log_string(log_string,		server_log_normversion,							"normversion");		//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string,		game_server,									"serverid");		//??????ID
+		server_log::push_log_string(log_string,		third_info.param7,								"gamechannel");		//???????ID
+		server_log::push_log_string(log_string,		third_info.param4,								"adchannel");		//???????ID
+		server_log::push_log_string(log_string,		role_info.role_guid.server_64,					"roleid");			//???ID
+		server_log::push_log_string(log_string,		role_info.data_ary[e_role_info_exp_level],		"rolelevel");		//??????
+		server_log::push_log_string(log_string,		"0",											"combatpower");		//??????????????
 		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		server_log::push_log_string(log_string,		cur_time,										"dtime");			//时间
+		server_log::push_log_string(log_string,		cur_time,										"dtime");			//???
 
-		//自定义数据
-		server_log::push_log_string(log_string,		oper_type,										"opertype");			//操作类型
-		server_log::push_log_string(log_string,		harry_type,										"harrytype");			//掠夺类型
-		server_log::push_log_string(log_string,		harry_server_id,								"harryserverid");		//掠夺服务器id
-		server_log::push_log_string(log_string,		normal_harry_count,								"normalharrycount");	//普通掠夺次数
-		server_log::push_log_string(log_string,		sepcail_harry_count,							"sepcailharrycount");	//高倍掠夺次数
+		//?????????
+		server_log::push_log_string(log_string,		oper_type,										"opertype");			//????????
+		server_log::push_log_string(log_string,		harry_type,										"harrytype");			//???????
+		server_log::push_log_string(log_string,		harry_server_id,								"harryserverid");		//????????id
+		server_log::push_log_string(log_string,		normal_harry_count,								"normalharrycount");	//?????????
+		server_log::push_log_string(log_string,		sepcail_harry_count,							"sepcailharrycount");	//?????????
 
-		//结尾
-		server_log::push_log_string(log_string,		server_invaild_string,							"os_version");		//系统版本
-		server_log::push_log_string(log_string,		third_info.param8,								"model");			//手机型号
+		//??锟斤拷
+		server_log::push_log_string(log_string,		server_invaild_string,							"os_version");		//???锟斤拷
+		server_log::push_log_string(log_string,		third_info.param8,								"model");			//??????
 		server_log::push_log_string(log_string,		third_info.param9,								"idfa"); 			//idfa
 		server_log::push_log_string(log_string,		third_info.param10,								"imei"); 			//imei
 		server_log::push_log_string(log_string,		third_info.param11,								"androidId"); 		//androidId
 		server_log::push_log_string(log_string,		third_info.param12,								"mac"); 			//mac
 		server_log::push_log_string(log_string,		third_info.param13,								"sn"); 				//sn
-		server_log::push_log_string(log_string,		login_type,										"logintype");		//登陆类型
+		server_log::push_log_string(log_string,		login_type,										"logintype");		//???????
 		server_log::push_log_string(log_string,		third_info.param6,								"ip", true);		//ip
 
 		log_string += "}}";
@@ -4738,33 +4738,33 @@ namespace faith
 		int64 cur_time_int = utility::get_tick_count();
 		xstring cur_time = time_helper::get_cur_time();
 
-		//开头
+		//???
 		xstring log_string = "{";
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_OCCUPATION_PK);
 
 		log_string += "{";
-		server_log::push_log_string(log_string,		role_info.account,								"userid");			//账号
-		server_log::push_log_string(log_string,		third_info.param5,								"deviceid");		//设备号
-		server_log::push_log_string(log_string,		cur_time_int,									"msec");			//时间戳
+		server_log::push_log_string(log_string,		role_info.account,								"userid");			//???
+		server_log::push_log_string(log_string,		third_info.param5,								"deviceid");		//?锟斤拷??
+		server_log::push_log_string(log_string,		cur_time_int,									"msec");			//????
 		server_log::push_log_string(log_string,		third_info.param1,								"appid");			//appid
-		server_log::push_log_string(log_string,		"map_change",									"logname");			//日志模块名
-		server_log::push_log_string(log_string,		third_info.param2,								"version");			//客户端版本
-		server_log::push_log_string(log_string,		"C1000",										"stepnumid");		//步骤号
-		server_log::push_log_string(log_string,		server_log_normversion,							"normversion");		//服务器日志规 范版本号 
-		server_log::push_log_string(log_string,		game_server,									"serverid");		//服务器ID
-		server_log::push_log_string(log_string,		third_info.param7,								"gamechannel");		//商店渠道ID
-		server_log::push_log_string(log_string,		third_info.param4,								"adchannel");		//广告渠道ID
-		server_log::push_log_string(log_string,		role_info.role_guid.server_64,					"roleid");			//角色ID
-		server_log::push_log_string(log_string,		role_info.data_ary[e_role_info_exp_level],		"rolelevel");		//角色等级
-		server_log::push_log_string(log_string,		"0",											"combatpower");		//角色评分（默认为零）
+		server_log::push_log_string(log_string,		"map_change",									"logname");			//????????
+		server_log::push_log_string(log_string,		third_info.param2,								"version");			//?????锟斤拷
+		server_log::push_log_string(log_string,		"C1000",										"stepnumid");		//?????
+		server_log::push_log_string(log_string,		server_log_normversion,							"normversion");		//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string,		game_server,									"serverid");		//??????ID
+		server_log::push_log_string(log_string,		third_info.param7,								"gamechannel");		//???????ID
+		server_log::push_log_string(log_string,		third_info.param4,								"adchannel");		//???????ID
+		server_log::push_log_string(log_string,		role_info.role_guid.server_64,					"roleid");			//???ID
+		server_log::push_log_string(log_string,		role_info.data_ary[e_role_info_exp_level],		"rolelevel");		//??????
+		server_log::push_log_string(log_string,		"0",											"combatpower");		//??????????????
 		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		server_log::push_log_string(log_string,		cur_time,										"dtime");			//时间
+		server_log::push_log_string(log_string,		cur_time,										"dtime");			//???
 
-		//自定义数据
-		server_log::push_log_string(log_string,		class_type,										"classtype");		//职业类型
-		server_log::push_log_string(log_string,		state_value,									"statevalue");		//阶段数据
-		server_log::push_log_string(log_string,		oppo_guid,										"oppoguid");		//对手id
-		server_log::push_log_string(log_string,		pk_result,										"pkresult");		//比赛结果：自己赢或者输
+		//?????????
+		server_log::push_log_string(log_string,		class_type,										"classtype");		//??????
+		server_log::push_log_string(log_string,		state_value,									"statevalue");		//???????
+		server_log::push_log_string(log_string,		oppo_guid,										"oppoguid");		//????id
+		server_log::push_log_string(log_string,		pk_result,										"pkresult");		//???????????????????
 
 		for (int32 i = 0; i < item_list.size(); i++)
 		{
@@ -4772,19 +4772,19 @@ namespace faith
 			std::string itemnum = "itemnum";
 			itemid  += std::to_string(i+1);
 			itemnum += std::to_string(i+1);
-			server_log::push_log_string(log_string, item_list[i].m_item_id,	itemid);		//物品guid
-			server_log::push_log_string(log_string, item_list[i].m_item_num, itemnum);		//物品数量
+			server_log::push_log_string(log_string, item_list[i].m_item_id,	itemid);		//???guid
+			server_log::push_log_string(log_string, item_list[i].m_item_num, itemnum);		//???????
 		}
 
-		//结尾
-		server_log::push_log_string(log_string,		server_invaild_string,							"os_version");		//系统版本
-		server_log::push_log_string(log_string,		third_info.param8,								"model");			//手机型号
+		//??锟斤拷
+		server_log::push_log_string(log_string,		server_invaild_string,							"os_version");		//???锟斤拷
+		server_log::push_log_string(log_string,		third_info.param8,								"model");			//??????
 		server_log::push_log_string(log_string,		third_info.param9,								"idfa"); 			//idfa
 		server_log::push_log_string(log_string,		third_info.param10,								"imei"); 			//imei
 		server_log::push_log_string(log_string,		third_info.param11,								"androidId"); 		//androidId
 		server_log::push_log_string(log_string,		third_info.param12,								"mac"); 			//mac
 		server_log::push_log_string(log_string,		third_info.param13,								"sn"); 				//sn
-		server_log::push_log_string(log_string,		login_type,										"logintype");		//登陆类型
+		server_log::push_log_string(log_string,		login_type,										"logintype");		//???????
 		server_log::push_log_string(log_string,		third_info.param6,								"ip", true);		//ip
 
 		log_string += "}}";
@@ -4880,34 +4880,34 @@ namespace faith
 		int64 cur_time_int = utility::get_tick_count();
 		xstring cur_time = time_helper::get_cur_time();
 
-		//开头
+		//???
 		xstring log_string = "{";
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_OCCUPATION_PK);
 
 		log_string += "{";
-		server_log::push_log_string(log_string,		server_invaild_string,		"userid");			//账号
-		server_log::push_log_string(log_string,		server_invaild_string,		"deviceid");		//设备号
-		server_log::push_log_string(log_string,		cur_time_int,				"msec");			//时间戳
+		server_log::push_log_string(log_string,		server_invaild_string,		"userid");			//???
+		server_log::push_log_string(log_string,		server_invaild_string,		"deviceid");		//?锟斤拷??
+		server_log::push_log_string(log_string,		cur_time_int,				"msec");			//????
 		server_log::push_log_string(log_string,		server_invaild_string,		"appid");			//appid
-		server_log::push_log_string(log_string,		"map_change",				"logname");			//日志模块名
-		server_log::push_log_string(log_string,		server_invaild_string,		"version");			//客户端版本
-		server_log::push_log_string(log_string,		"C1000",					"stepnumid");		//步骤号
-		server_log::push_log_string(log_string,		server_log_normversion,		"normversion");		//服务器日志规 范版本号 
-		server_log::push_log_string(log_string,		server_invaild_string,		"serverid");		//服务器ID
-		server_log::push_log_string(log_string,		server_invaild_string,		"gamechannel");		//商店渠道ID
-		server_log::push_log_string(log_string,		server_invaild_string,		"adchannel");		//广告渠道ID
-		server_log::push_log_string(log_string,		player_guid.server_64,		"roleid");			//角色ID
-		server_log::push_log_string(log_string,		server_invaild_string,		"rolelevel");		//角色等级
-		server_log::push_log_string(log_string,		"0",						"combatpower");		//角色评分（默认为零）
+		server_log::push_log_string(log_string,		"map_change",				"logname");			//????????
+		server_log::push_log_string(log_string,		server_invaild_string,		"version");			//?????锟斤拷
+		server_log::push_log_string(log_string,		"C1000",					"stepnumid");		//?????
+		server_log::push_log_string(log_string,		server_log_normversion,		"normversion");		//??????????? ???锟斤拷?? 
+		server_log::push_log_string(log_string,		server_invaild_string,		"serverid");		//??????ID
+		server_log::push_log_string(log_string,		server_invaild_string,		"gamechannel");		//???????ID
+		server_log::push_log_string(log_string,		server_invaild_string,		"adchannel");		//???????ID
+		server_log::push_log_string(log_string,		player_guid.server_64,		"roleid");			//???ID
+		server_log::push_log_string(log_string,		server_invaild_string,		"rolelevel");		//??????
+		server_log::push_log_string(log_string,		"0",						"combatpower");		//??????????????
 	
-		server_log::push_log_string(log_string,		cur_time,					"dtime");			//时间
+		server_log::push_log_string(log_string,		cur_time,					"dtime");			//???
 
 
-		//自定义数据
-		server_log::push_log_string(log_string,		class_type,					"classtype");		//职业类型
-		server_log::push_log_string(log_string,		state_value,				"statevalue");		//阶段数据
-		server_log::push_log_string(log_string,		oppo_guid,					"oppoguid");		//对手id
-		server_log::push_log_string(log_string,		pk_result,					"pkresult");		//比赛结果：自己赢或者输
+		//?????????
+		server_log::push_log_string(log_string,		class_type,					"classtype");		//??????
+		server_log::push_log_string(log_string,		state_value,				"statevalue");		//???????
+		server_log::push_log_string(log_string,		oppo_guid,					"oppoguid");		//????id
+		server_log::push_log_string(log_string,		pk_result,					"pkresult");		//???????????????????
 
 		for (int32 i = 0; i < item_list.size(); i++)
 		{
@@ -4915,19 +4915,19 @@ namespace faith
 			std::string itemnum = "itemnum";
 			itemid  += std::to_string(i + 1);
 			itemnum += std::to_string(i + 1);
-			server_log::push_log_string(log_string, item_list[i].m_item_id, itemid);		//物品guid
-			server_log::push_log_string(log_string, item_list[i].m_item_num, itemnum);			//物品数量
+			server_log::push_log_string(log_string, item_list[i].m_item_id, itemid);		//???guid
+			server_log::push_log_string(log_string, item_list[i].m_item_num, itemnum);			//???????
 		}
 		
-		//结尾
-		server_log::push_log_string(log_string,		server_invaild_string,		"os_version");		//系统版本
-		server_log::push_log_string(log_string,		server_invaild_string,		"model");			//手机型号
+		//??锟斤拷
+		server_log::push_log_string(log_string,		server_invaild_string,		"os_version");		//???锟斤拷
+		server_log::push_log_string(log_string,		server_invaild_string,		"model");			//??????
 		server_log::push_log_string(log_string,		server_invaild_string,		"idfa"); 			//idfa
 		server_log::push_log_string(log_string,		server_invaild_string,		"imei"); 			//imei
 		server_log::push_log_string(log_string,		server_invaild_string,		"androidId"); 		//androidId
 		server_log::push_log_string(log_string,		server_invaild_string,		"mac"); 			//mac
 		server_log::push_log_string(log_string,		server_invaild_string,		"sn"); 				//sn
-		server_log::push_log_string(log_string,		server_invaild_string,		"logintype");		//登陆类型
+		server_log::push_log_string(log_string,		server_invaild_string,		"logintype");		//???????
 		server_log::push_log_string(log_string,		server_invaild_string,		"ip", true);		//ip
 
 		log_string += "}";
@@ -5689,7 +5689,7 @@ namespace faith
 		xstring log_string = "{";
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_RECONNECT_GAME);
 		log_string += "{";
-		server_log::push_log_string(log_string, str_server_type, "server_type");			//服务器类型
+		server_log::push_log_string(log_string, str_server_type, "server_type");			//??????????
 		server_log::push_log_string(log_string, func_name, "function_name");
 		server_log::push_log_string(log_string, context_, "context");
 

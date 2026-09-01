@@ -54,7 +54,6 @@ namespace faith
 		if (!client.set_option(faith::net::tcp_client::options::send_buffer_size(send_buf_size))) return false;
 		if (!client.set_option(faith::net::tcp_client::options::recv_buffer_size(recv_buf_size))) return false;
 		if (!client.set_option(faith::net::tcp_client::options::max_packet_size(max_packet_size))) return false;
-		client.init_client_server(client_num);
 		m_client_connmap = new net_client[client_num];
 		m_client_num = client_num;
 		for (int32 i =0; i < m_client_num; ++i)
@@ -152,7 +151,7 @@ namespace faith
 		for (int32 i = 0; i < m_client_num; ++i)
 		{
 			net_client& server_client_ref = m_client_connmap[i];
-			if (server_client_ref.get_server_status() > e_serverstatus_created) // 只广播给已登录的Peer
+			if (server_client_ref.get_server_status() > e_serverstatus_created) // 鍙箍鎾粰宸茬櫥褰曠殑Peer
 				server_client_ref.send_message(data_ptr, data_len);
 		}
 	}

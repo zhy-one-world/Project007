@@ -1,13 +1,20 @@
-#include "AESDataConvert.h"
-#include "logic/type_def.hpp"
 #include "aes.h"
 #include "md5/Base64.h"
+#include "AESDataConvert.h"
+#include "game_cfg/servers_config.h"
+#include "log/server_log.hpp"
 
 #pragma warning(disable: 26400 26451)
 
 namespace faith {
 	xstring AESDataConvert::g_key = "test";
 	xstring AESDataConvert::g_iv = "";
+
+	void AESDataConvert::InitSecretKey(const xstring secretkey)
+	{
+		g_key = secretkey;
+		_RLOG_(MINFO, "AESDataConvert::InitSecretKey secretkey: " << secretkey);
+	}
 
 	const int32 max_aes_data_length = 2000;
 

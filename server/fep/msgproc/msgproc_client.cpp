@@ -42,7 +42,7 @@ namespace faith
 			client_session_ptr->get_conn_index(),
 			&server_ping,
 			e_msgindex_fep2c_ping);
-		_RLOG_(MINFO, "fep ping response sent, connindex:"
+		_RLOG_(MDEBUG, "fep ping response sent, connindex:"
 			<< client_session_ptr->get_conn_index()
 			<< " client_time:" << client_time);
 	}
@@ -57,10 +57,6 @@ namespace faith
 			return;
 		}
 		
-		_RLOG_(MINFO, "fep ping received, connindex:"
-			<< client_session_ptr->get_conn_index()
-			<< " arrayindex:" << array_index
-			<< " client_time:" << ping_msg.client_time());
 		client_session_ptr->refresh_heart_beat();
 		fep2c_ping(client_session_ptr.get(), ping_msg.client_time());
 	}

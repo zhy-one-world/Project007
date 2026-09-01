@@ -43,8 +43,8 @@ namespace faith
 		void on_conn_closed(const net_client* faith_client_ptr);
 		void server_loop(uint32 timer_index);
 	protected:
-		uint32 m_ws_ci; //	connection index to world server
-		uint32 m_cs_ci; //	connection index to cell server
+		faith::net::tcp_client_session_ptr m_ws_session;
+		faith::net::tcp_client_session_ptr m_cs_session;
 		uint32 m_timerindex_gameloop;
 		int32 m_cross_server_id;
 		int32 m_open_time;
