@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2017Äê6ÔÂ20ÈÕ
+created: 2017å¹´6æœˆ20æ—¥
 file base: legion_cs_mgr
 file ext: h
 author: Kero
@@ -74,14 +74,14 @@ namespace faith
 		static void					ws2cs_begin_city_war_fun(uint32 conn_index, const void* data_ptr, size_t data_len);
 		static void					ws2cs_enter_city_war_map_fun(uint32 conn_index, const void* data_ptr, size_t data_len);
 		static void					ws2cs_city_war_operate_fun(uint32 conn_index, const void* data_ptr, size_t data_len);
-		static void					ws2cs_get_construction_buff_fun(uint32 conn_index, const void* data_ptr, size_t data_len);  // ·ÏÆú
+		static void					ws2cs_get_construction_buff_fun(uint32 conn_index, const void* data_ptr, size_t data_len);  // åºŸå¼ƒ
 		static void					ws2cs_get_occupation_daily_award_fun(uint32 conn_index, const void* data_ptr, size_t data_len);
 		static void					ws2cs_get_city_war_master_stuff_fun(uint32 conn_index, const void* data_ptr, size_t data_len);
 		static void					ws2cs_del_city_war_master_stuff_fun(uint32 conn_index, const void* data_ptr, size_t data_len);
 		static void					ws2cs_add_city_war_winner_stuff_fun(uint32 conn_index, const void* data_ptr, size_t data_len);
 		static void					ws2cs_del_city_war_winner_stuff_fun(uint32 conn_index, const void* data_ptr, size_t data_len);
 
-		static void					ws2cs_level_up_legion_skill_func(uint32 conn_index, const void* data_ptr, size_t data_len); // Î´µ÷ÓÃ legion_skill
+		static void					ws2cs_level_up_legion_skill_func(uint32 conn_index, const void* data_ptr, size_t data_len); // æœªè°ƒç”¨ legion_skill
 		static void					ws2cs_get_bonus_award_fun(uint32 conn_index, const void* data_ptr, size_t data_len);
 		static int32				get_bonus_gold_num(guid_64 role_guid, int32 bonus_enum,int32 sub_type, float award_rate);
 		static void					ws2cs_answer_question_right_func(uint32 conn_index, const void* data_ptr, size_t data_len);

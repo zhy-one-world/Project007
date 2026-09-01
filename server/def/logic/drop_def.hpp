@@ -7,43 +7,43 @@ namespace faith
 #pragma pack(push,1)
 	constexpr int32  DROP_MAX_WEIGHT = 1000000;
 
-	enum e_dropbox_owner_type				// ¹éÊôÀàĞÍ
+	enum e_dropbox_owner_type				// å½’å±ç±»å‹
 	{
-		e_dropbox_owner_any,                //ÎŞ¹éÊô,Ë­¶¼¿ÉÒÔÊ°È¡
-		e_dropbox_owner_team,				//×é¶Ó¹éÊô
-		e_dropbox_owner_player, 		    //Ä³Íæ¼Ò,µ¥Ìå¹éÊô
-		e_dropbox_owner_team_ex,			//´ò±¦ÏµÍ³¹éÊô(ĞÂ)
+		e_dropbox_owner_any,                //æ— å½’å±,è°éƒ½å¯ä»¥æ‹¾å–
+		e_dropbox_owner_team,				//ç»„é˜Ÿå½’å±
+		e_dropbox_owner_player, 		    //æŸç©å®¶,å•ä½“å½’å±
+		e_dropbox_owner_team_ex,			//æ‰“å®ç³»ç»Ÿå½’å±(æ–°)
 	};
 
 	enum e_dropbox_distribute
 	{
-		e_dropbox_distribute_none,			// ÎŞ
-		e_dropbox_distribute_every_one,		// Ã¿ÈËÒ»·İ
-		e_dropbox_distribute_random,		// Ëæ»ú·ÖÅä
+		e_dropbox_distribute_none,			// æ— 
+		e_dropbox_distribute_every_one,		// æ¯äººä¸€ä»½
+		e_dropbox_distribute_random,		// éšæœºåˆ†é…
 		e_dropbox_distribute_max
 	};
 
-	enum e_dropbox_ran_type					// µôÂä¹æÔò  //0ÎªÖğ¸öµôÂä£¬¿ÉÄÜµôÂä¶à¸öÎïÆ·£¬Ã¿¸öÎïÆ·µÄµôÂä¸ÅÂÊ=È¨ÖØ/1000000 1Îª¹éÒ»µôÂä£¬Ô²×ÀÀíÂÛ£¬×î¶àÖ»»áµôÂäÒ»¸öÎïÆ·£¬ËùÓĞid×ÜÈ¨ÖØĞ¡ÓÚ1000000Ê±£¬¿ÉÄÜ³öÏÖ²»µôÂäÎïÆ·µÄÇé¿ö
+	enum e_dropbox_ran_type					// æ‰è½è§„åˆ™  //0ä¸ºé€ä¸ªæ‰è½ï¼Œå¯èƒ½æ‰è½å¤šä¸ªç‰©å“ï¼Œæ¯ä¸ªç‰©å“çš„æ‰è½æ¦‚ç‡=æƒé‡/1000000 1ä¸ºå½’ä¸€æ‰è½ï¼Œåœ†æ¡Œç†è®ºï¼Œæœ€å¤šåªä¼šæ‰è½ä¸€ä¸ªç‰©å“ï¼Œæ‰€æœ‰idæ€»æƒé‡å°äº1000000æ—¶ï¼Œå¯èƒ½å‡ºç°ä¸æ‰è½ç‰©å“çš„æƒ…å†µ
 	{
-		e_dropbox_ran_type_all,             //È«²¿µôÂä
-		e_dropbox_ran_type_one,		      	//¹éÒ»µôÂä
+		e_dropbox_ran_type_all,             //å…¨éƒ¨æ‰è½
+		e_dropbox_ran_type_one,		      	//å½’ä¸€æ‰è½
 	};
 
-	enum e_dropbox_typ						// µôÂäºĞÀàĞÍ
+	enum e_dropbox_typ						// æ‰è½ç›’ç±»å‹
 	{
-		e_dropbox_typ_non,					// ¿Õ£¬´íÎó
-		e_dropbox_typ_item,					// ÎïÆ·±¾Éí
-		e_dropbox_typ_drop_box,				// ÁíÒ»¸öµôÂäºĞ
-		e_dropbox_typ_money,				// »õ±ÒµôÂä
+		e_dropbox_typ_non,					// ç©ºï¼Œé”™è¯¯
+		e_dropbox_typ_item,					// ç‰©å“æœ¬èº«
+		e_dropbox_typ_drop_box,				// å¦ä¸€ä¸ªæ‰è½ç›’
+		e_dropbox_typ_money,				// è´§å¸æ‰è½
 	};
 
-	enum e_dropbox_attribution_rule			// µôÂäºĞÀàĞÍ
+	enum e_dropbox_attribution_rule			// æ‰è½ç›’ç±»å‹
 	{
-		e_dropbox_attribution_rule_non,		// ¿Õ
-		e_dropbox_attribution_rule_first,	// µÚÒ»µ¶
-		e_dropbox_attribution_rule_killer,	// »÷É±Õß
-		e_dropbox_attribution_rule_threat,	// ³ğºŞÁĞ±í
-		e_dropbox_attribution_rule_dmg,		// ÉËº¦ÁĞ±í
+		e_dropbox_attribution_rule_non,		// ç©º
+		e_dropbox_attribution_rule_first,	// ç¬¬ä¸€åˆ€
+		e_dropbox_attribution_rule_killer,	// å‡»æ€è€…
+		e_dropbox_attribution_rule_threat,	// ä»‡æ¨åˆ—è¡¨
+		e_dropbox_attribution_rule_dmg,		// ä¼¤å®³åˆ—è¡¨
 	};
 #pragma pack(pop)
 }

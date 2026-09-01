@@ -1,24 +1,14 @@
-// /*@@
-// 
+﻿// /*@@
 // 	Copyright (c) Beijing Second Laboratory Game Studio. All rights reserved. 
-// 	
 // 	Created_datetime : 	2011-5-31 15:43
-// 	
 // 	File Name :	login_service_robot.cpp
-// 	
 // 	Author : zhangjianyu (zhangjianyu@163.com)
-// 	
 // 	Description : 
-// 	
 // 	Change List :
-// 
-// 
 // @@*/
 
 //////////////////////////////////////////////////////////////////////////
-//
 //	File Include
-//
 //////////////////////////////////////////////////////////////////////////
 #include "login_service_robot.hpp"
 #include "login_service_mgr.hpp"

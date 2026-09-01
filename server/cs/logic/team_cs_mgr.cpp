@@ -1,5 +1,5 @@
-/********************************************************************
-created: 2017Äê7ÔÂ7ÈÕ
+ï»¿/********************************************************************
+created: 2017å¹´7æœˆ7æ—¥
 file base: team_cs_mgr
 file ext: h
 author: Kero
@@ -66,7 +66,7 @@ namespace faith
 
 		if (is_player_init)
 		{
-			// Íæ¼Ò³õÊ¼»¯µ½ÕâÀïÎªÖ¹ ºóÃæ¶¼ÊÇÕı³£¶ÓÎéĞÅÏ¢¸üĞÂµÄÂß¼­
+			// ç©å®¶åˆå§‹åŒ–åˆ°è¿™é‡Œä¸ºæ­¢ åé¢éƒ½æ˜¯æ­£å¸¸é˜Ÿä¼ä¿¡æ¯æ›´æ–°çš„é€»è¾‘
 			return;
 		}
 
@@ -215,7 +215,7 @@ namespace faith
 	{
 		//if (old_team_info.team_one_stop_flags >= 0 && m_unit_team_info.team_one_stop_flags >= 0)
 		//{
-		//	//Ò»ÌõÁú¶ÓÎé»»¶Ó³¤ÁË
+		//	//ä¸€æ¡é¾™é˜Ÿä¼æ¢é˜Ÿé•¿äº†
 		//	check_one_stop_finish_flags();
 		//	check_new_aim_for_one_stop();
 		//}
@@ -267,11 +267,11 @@ namespace faith
 
 	void team_cs_mgr::on_team_type_changed(const s_player_team_info& old_team_info)
 	{
-		// Âß¼­¶¼·Åµ½wsÁË
+		// é€»è¾‘éƒ½æ”¾åˆ°wsäº†
 		//if (old_team_info.team_one_stop_flags < 0 && m_unit_team_info.team_one_stop_flags < 0 
 		//	&& e_team_type_one_dragon == m_unit_team_info.team_type)
 		//{
-		//	// ´ÓÒ»¸öÆäËûÄ¿±êÇĞ»»µ½Ò»ÌõÁú
+		//	// ä»ä¸€ä¸ªå…¶ä»–ç›®æ ‡åˆ‡æ¢åˆ°ä¸€æ¡é¾™
 		//	check_one_stop_finish_flags();
 		//	check_new_aim_for_one_stop();
 		//}
@@ -294,7 +294,7 @@ namespace faith
 		}
 
 		check_one_stop_finish_flags(true);
-		set_is_not_drop(false);	//³õÊ¼»¯ÊÇ·ñÊÇÖúÕ½Íæ¼Ò
+		set_is_not_drop(false);	//åˆå§‹åŒ–æ˜¯å¦æ˜¯åŠ©æˆ˜ç©å®¶
 	}
 
 	bool team_cs_mgr::is_in_same_legion(guid_64& my_guid, guid_64& other_mem_guid)
@@ -339,7 +339,7 @@ namespace faith
 			}
 			if (aoi_player_ref.get_unit_guid() == my_player_ref.get_unit_guid())
 			{
-				continue; // µ±Ç°Íæ¼Ò²»ÓÃÔÙ¼ÆËãÒ»´ÎÈÎÎñÉ±¹ÖÊı
+				continue; // å½“å‰ç©å®¶ä¸ç”¨å†è®¡ç®—ä¸€æ¬¡ä»»åŠ¡æ€æ€ªæ•°
 			}
 
 			if (my_player_ref.is_in_same_team(aoi_player_ref) == true)
@@ -447,7 +447,7 @@ namespace faith
 		int32 base_exp_value = my_player_ref.get_base_exp_of_dead_npc(dead_npc_ref);
 		int32 mem_base_exp = base_exp_value / team_mem_num;
 
-		bool is_cur_player_have_couple_in_team = false;//¸Ã¾Ö²¿±äÁ¿ÓÃÓÚ¶ÓÎéÖĞ´æÔÚ×Ô¼ºµÄ°éÂÂÇÒ¹ÖÎïÊÇ×Ô¼º´òËÀµÄ£¬ĞèÒª¸ø×Ô¼º¾­Ñé¼Ó³É
+		bool is_cur_player_have_couple_in_team = false;//è¯¥å±€éƒ¨å˜é‡ç”¨äºé˜Ÿä¼ä¸­å­˜åœ¨è‡ªå·±çš„ä¼´ä¾£ä¸”æ€ªç‰©æ˜¯è‡ªå·±æ‰“æ­»çš„ï¼Œéœ€è¦ç»™è‡ªå·±ç»éªŒåŠ æˆ
 		for (int32 i = 0; i < m_unit_team_info.member_num; i++)
 		{
 			if (my_player_ref.is_couple(m_unit_team_info.team_mems_guid[i]))
@@ -491,7 +491,7 @@ namespace faith
 			}
 			if (cur_player_map_object_ptr->get_map_type() == e_map_type_field)
 			{
-				exp_extra_fix += (3 * exp_extra_fix_team);//ÉÏ¹ÅÒÅ¼£¶îÍâ¸øÈı±¶µÄ×é¶Ó¾­Ñé
+				exp_extra_fix += (3 * exp_extra_fix_team);//ä¸Šå¤é—è¿¹é¢å¤–ç»™ä¸‰å€çš„ç»„é˜Ÿç»éªŒ
 			}
 			if (my_player_ref.is_in_the_same_legion(*team_mem_ptr))
 			{
@@ -577,7 +577,7 @@ namespace faith
 
 	//		if (my_player_ref.is_in_same_team(aoi_player_ref) == true)
 	//		{
-	//			std::vector<int32> empty_array;	//¿ÕÊı×é
+	//			std::vector<int32> empty_array;	//ç©ºæ•°ç»„
 	//			world_cs::create_and_add_drop_box(map_guid, drop_template_id, init_pos, init_target_pos, aoi_player_ref.get_identifier(), empty_array);
 	//		}
 	//	}
@@ -790,7 +790,7 @@ namespace faith
 
 	void team_cs_mgr::check_update_team_mission()
 	{
-		//ÀíÂÛÉÏĞÂÔömemÒ²»á×ßµ½ÕâÀï µ½Ê±ºò¿´¿´ÓĞÃ´ÓĞbug
+		//ç†è®ºä¸Šæ–°å¢memä¹Ÿä¼šèµ°åˆ°è¿™é‡Œ åˆ°æ—¶å€™çœ‹çœ‹æœ‰ä¹ˆæœ‰bug
 		if (false == m_unit_team_info.is_valid())
 		{
 			return;
@@ -844,7 +844,7 @@ namespace faith
 		{
 			return;
 		}
-		//Èç¹ûÎªÖúÕ½Ôò²»·¢·Å¶Ó³¤½±Àø
+		//å¦‚æœä¸ºåŠ©æˆ˜åˆ™ä¸å‘æ”¾é˜Ÿé•¿å¥–åŠ±
 		if (is_assist_in_raid() == false)
 		{
 			return;
@@ -897,7 +897,7 @@ namespace faith
 		}
 	}
 
-	void team_cs_mgr::check_raid_team_finish_state() //¸±±¾¿Û´ÎÊıÊ±¿ÉÄÜ¸Ä±äÁËflags ×ßÕâÀï±ØÈ»ÊÇÓĞ¶ÓÎéµÄ
+	void team_cs_mgr::check_raid_team_finish_state() //å‰¯æœ¬æ‰£æ¬¡æ•°æ—¶å¯èƒ½æ”¹å˜äº†flags èµ°è¿™é‡Œå¿…ç„¶æ˜¯æœ‰é˜Ÿä¼çš„
 	{
 		player& my_player_ref = unit_man::get_player(m_unit_array_index);
 		if (false == my_player_ref.is_valid())
@@ -925,7 +925,7 @@ namespace faith
 		check_one_stop_finish_flags();
 	}
 
-	void team_cs_mgr::check_one_stop_finish_flags(bool is_player_init) //ÈÎÎñÍê³ÉÊ±¿ÉÄÜ¸Ä±äÁËflags Ö÷ÏßÈÎÎñ»á½âËø ÈÕ³£ÌÖ·¥»áÍê³É
+	void team_cs_mgr::check_one_stop_finish_flags(bool is_player_init) //ä»»åŠ¡å®Œæˆæ—¶å¯èƒ½æ”¹å˜äº†flags ä¸»çº¿ä»»åŠ¡ä¼šè§£é” æ—¥å¸¸è®¨ä¼ä¼šå®Œæˆ
 	{
 		ZoneScoped;
 		player& my_player_ref = unit_man::get_player(m_unit_array_index);
@@ -950,13 +950,13 @@ namespace faith
 		int32 new_one_stop = get_self_one_stop_flags();
 		if (new_one_stop == m_self_one_stop_flags)
 		{
-			// Ã»±ä
+			// æ²¡å˜
 			return;
 		}
 
 		if (m_unit_team_info.is_valid() && false == is_player_init)
 		{
-			// ¸Ä±äteam_wsÀïµÄ³ÉÔ±Êı¾İ ¼°¶ÓÎéÊı¾İ
+			// æ”¹å˜team_wsé‡Œçš„æˆå‘˜æ•°æ® åŠé˜Ÿä¼æ•°æ®
 			cs2ws_after_team_aim_finish_op aim_finish_op_msg;
 
 			int32 map_temp_id = base_map_cp->m_map_id;
@@ -970,7 +970,7 @@ namespace faith
 			connection_mgr::getInstance().send_to_ws(&aim_finish_op_msg, sizeof(aim_finish_op_msg));
 		}
 
-		// ¸Ä±ä¿Í»§¶Ëflags»º´æ
+		// æ”¹å˜å®¢æˆ·ç«¯flagsç¼“å­˜
 		team_proto_self_os_flags_update update_os_msg;
 		update_os_msg.set_own_os_flags(new_one_stop);
 		my_player_ref.send_message_to_self(&update_os_msg, e_msgindex_s2c_self_os_flags_update);
@@ -997,7 +997,7 @@ namespace faith
 
 		if (m_unit_team_info.team_one_stop_flags < 0)
 		{
-			return; //²»ÊÇÒ»ÌõÁúÊôĞÔµÄ¶ÓÎé
+			return; //ä¸æ˜¯ä¸€æ¡é¾™å±æ€§çš„é˜Ÿä¼
 		}
 
 		if (from_raid_map)
@@ -1275,7 +1275,7 @@ namespace faith
 		//	}
 		//}
 
-		////¿ç·ş×´Ì¬ÏÂ²»ÔÊĞí´´½¨¸±±¾¶ÓÎé
+		////è·¨æœçŠ¶æ€ä¸‹ä¸å…è®¸åˆ›å»ºå‰¯æœ¬é˜Ÿä¼
 		//if (is_team_type_raid(team_type) && false == player_ref.is_self_server())
 		//{
 		//	const std::string& notice_str = template_manager::get_instance().get_str_by_string_template_id(90305139);
@@ -1283,7 +1283,7 @@ namespace faith
 		//	return;
 		//}
 
-		//// ÒÑ¾­ÔÚ¶ÓÎéÖĞ¾Í²»ÄÜ´´½¨¶ÓÎé
+		//// å·²ç»åœ¨é˜Ÿä¼ä¸­å°±ä¸èƒ½åˆ›å»ºé˜Ÿä¼
 		//if (player_ref.is_player_in_team())
 		//{
 		//	team_proto_team_error team_error_msg;
@@ -1295,11 +1295,10 @@ namespace faith
 		//int32 required_fighting_power = req.required_fighting_power();
 		//int32 required_level = req.required_level();
 		//bool auto_accept_new_member = req.auto_accept_new_member();
-		//
 		//cs2ws_create_team create_team_msg;
 		//if (e_team_type_one_dragon == team_type)
 		//{
-		//	// Èç¹ûÊÇÒ»ÌõÁú
+		//	// å¦‚æœæ˜¯ä¸€æ¡é¾™
 		//	create_team_msg.team_one_stop_flags = player_ref.get_team_cs_mgr().get_self_one_stop_flags();
 		//	player_ref.get_team_cs_mgr().get_self_adapt_team_aim(team_type, team_sub_type_id);
 		//}
@@ -1337,7 +1336,7 @@ namespace faith
 			//}
 		}
 
-		//¿ç·ş×´Ì¬ÏÂ²»ÔÊĞí´´½¨¸±±¾¶ÓÎé
+		//è·¨æœçŠ¶æ€ä¸‹ä¸å…è®¸åˆ›å»ºå‰¯æœ¬é˜Ÿä¼
 		if (is_team_type_raid(team_type) && false == player_ref.is_self_server())
 		{
 			const std::string& notice_str = template_manager::get_instance().get_str_by_string_template_id(90305139);
@@ -1345,7 +1344,7 @@ namespace faith
 			return;
 		}
 
-		// ÒÑ¾­ÔÚ¶ÓÎéÖĞ¾Í²»ÄÜ´´½¨¶ÓÎé
+		// å·²ç»åœ¨é˜Ÿä¼ä¸­å°±ä¸èƒ½åˆ›å»ºé˜Ÿä¼
 		if (player_ref.is_player_in_team())
 		{
 			team_proto_team_error team_error_msg;
@@ -1361,7 +1360,7 @@ namespace faith
 		cs2ws_create_team create_team_msg;
 		if (e_team_type_one_dragon == team_type)
 		{
-			// Èç¹ûÊÇÒ»ÌõÁú
+			// å¦‚æœæ˜¯ä¸€æ¡é¾™
 			create_team_msg.team_one_stop_flags = player_ref.get_team_cs_mgr().get_self_one_stop_flags();
 			player_ref.get_team_cs_mgr().get_self_adapt_team_aim(team_type, team_sub_type_id);
 		}
@@ -1399,7 +1398,7 @@ namespace faith
 		//int32 limit_level = -1;
 
 		//e_team_type team_type_id = (e_team_type)req.team_type_id();
-		////¿ç·ş×´Ì¬ÏÂ²»ÔÊĞí´´½¨¸±±¾¶ÓÎé
+		////è·¨æœçŠ¶æ€ä¸‹ä¸å…è®¸åˆ›å»ºå‰¯æœ¬é˜Ÿä¼
 		//if (is_team_type_raid(team_type_id) && false == player_ref.is_self_server())
 		//{
 		//	const std::string& notice_str = template_manager::get_instance().get_str_by_string_template_id(90305139);
@@ -1454,7 +1453,7 @@ namespace faith
 		int32 limit_level = -1;
 
 		e_team_type team_type_id = (e_team_type)req.team_type_id();
-		//¿ç·ş×´Ì¬ÏÂ²»ÔÊĞí´´½¨¸±±¾¶ÓÎé
+		//è·¨æœçŠ¶æ€ä¸‹ä¸å…è®¸åˆ›å»ºå‰¯æœ¬é˜Ÿä¼
 		if (is_team_type_raid(team_type_id) && false == player_ref.is_self_server())
 		{
 			const std::string& notice_str = template_manager::get_instance().get_str_by_string_template_id(90305139);
@@ -1694,7 +1693,7 @@ namespace faith
 		}
 
 		e_map_type cur_map_type = map_object_ptr->get_map_type();
-		// ÔÚ×é¶Ó¸±±¾ÖĞ ĞèÒªÇ¿ÖÆ´«³ö
+		// åœ¨ç»„é˜Ÿå‰¯æœ¬ä¸­ éœ€è¦å¼ºåˆ¶ä¼ å‡º
 		int32 cur_map_template_id = player_ref.get_unit_info(e_role_info_move_map_id);
 		if (is_team_type_raid(team_info_cur.team_type) && team_info_cur.team_sub_type_id == cur_map_template_id && cur_map_type != e_map_type_field)
 		{
@@ -1717,16 +1716,13 @@ namespace faith
 	// 		{
 	// 			return;
 	// 		}
-	// 
 	// 		guid_64 role_guid = packet->role_guid;
 	// 		guid_64 team_guid = packet->team_guid;
-	// 
 	// 		player& player_ref = unit_man::get_player(role_guid);
 	// 		if (false == player_ref.is_valid())
 	// 		{
 	// 			return;
 	// 		}
-	// 
 	// 		cs2ws_join_team join_team_msg;
 	// 		join_team_msg.team_guid = team_guid;
 	// 		player_ref.get_team_cs_mgr().gen_player_team_member_info(join_team_msg.member_info);
@@ -1797,12 +1793,12 @@ namespace faith
 		{
 			if (e_team_type_one_dragon == final_team_type)
 			{
-				// Èç¹ûÊÇÒ»ÌõÁú
+				// å¦‚æœæ˜¯ä¸€æ¡é¾™
 				player_ref.get_team_cs_mgr().get_self_adapt_team_aim(final_team_type, final_sub_type_id);
 
 				if (e_team_type_one_dragon == final_team_type)
 				{
-					// ËµÃ÷ËùÓĞÒ»ÌõÁúÄ¿±êÃ»´ÎÊıÁË
+					// è¯´æ˜æ‰€æœ‰ä¸€æ¡é¾™ç›®æ ‡æ²¡æ¬¡æ•°äº†
 					final_check_ret = e_error_code_map_lack_of_times;
 				}
 				else
@@ -1846,7 +1842,7 @@ namespace faith
 			return;
 		}
 
-		//ÔİÊ±Ä¾ÓĞÂß¼­
+		//æš‚æ—¶æœ¨æœ‰é€»è¾‘
 	}
 
 	void team_cs_mgr::lua_ws2cs_apply_to_join_team_func(uint32 conn_index, const char* data_ptr, int32 data_len)

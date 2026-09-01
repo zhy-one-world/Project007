@@ -1,5 +1,5 @@
 /********************************************************************
-  created: 2019Äê6ÔÂ11ÈÕ
+  created: 2019å¹´6æœˆ11æ—¥
   file base: cross_server_city_war_ws_mgr
   file ext: cpp
   author: zhangshuo
@@ -152,7 +152,7 @@ namespace faith
 	{
 		if (!is_can_open_overload_city_war_with_cur_server())
 		{
-			return;//±¾·ş°ÔÖ÷Õ½Ò²ÓĞ¸ÃÂß¼­
+			return;//æœ¬æœéœ¸ä¸»æˆ˜ä¹Ÿæœ‰è¯¥é€»è¾‘
 		}
 		m_timer += time_new;
 		if (m_timer - m_last_tick_time > second_tick_time)
@@ -188,11 +188,11 @@ namespace faith
 			int32 notice_id = 0;
 			if (cur_state == e_overload_city_war_type_team_ready)
 			{
-				notice_id = 93000300;//ÊÀ½ç°ÔÖ÷·Ö×éÍê±Ï¹«¸æ
+				notice_id = 93000300;//ä¸–ç•Œéœ¸ä¸»åˆ†ç»„å®Œæ¯•å…¬å‘Š
 			}		
 			if (cur_state == e_overload_city_war_type_start_city_war)
 			{
-				notice_id = 93000411;//ÊÀ½ç°ÔÖ÷¿ªÊ¼¹«¸æ
+				notice_id = 93000411;//ä¸–ç•Œéœ¸ä¸»å¼€å§‹å…¬å‘Š
 			}
 			std::vector<std::string> vec_str_up_item;
 			vec_str_up_item.push_back(template_manager::get_instance().get_str_id_by_notice_id(notice_id));
@@ -959,7 +959,7 @@ namespace faith
 
 		bool is_today_open = false;
 		std::vector<int32> open_data = world_server::getInstance().get_activity_open_data(e_activity_type_overlord_city_war);
-		if (world_server::getInstance().is_sky_island_server())//¿ç·ş°ÔÖ÷Õ½ÅĞ¶¨
+		if (world_server::getInstance().is_sky_island_server())//è·¨æœéœ¸ä¸»æˆ˜åˆ¤å®š
 		{
 			for (int32 idx = 0; idx < open_data.size(); idx++)
 			{
@@ -970,7 +970,7 @@ namespace faith
 				}
 			}
 		}
-		else//±¾·ş°ÔÖ÷Õ½ÅĞ¶¨
+		else//æœ¬æœéœ¸ä¸»æˆ˜åˆ¤å®š
 		{
 			int32 server_open_days = globle_data::get_instance().get_server_days();
 			int32 over_load_city_war_day = _activity_cfg_ptr->ParamInt1;
@@ -1037,7 +1037,7 @@ namespace faith
 
 	void cross_server_city_war_ws_mgr::refresh_rank_city()
 	{
-		if (!m_city_war_all_legion_info[0].is_vaild())//Ê×´ÎË¢ĞÂÂß¼­
+		if (!m_city_war_all_legion_info[0].is_vaild())//é¦–æ¬¡åˆ·æ–°é€»è¾‘
 		{
 			for (int32 i = 0; i < max_cross_server_all_city_num; i++)
 			{
@@ -1078,7 +1078,7 @@ namespace faith
 		}
 		else
 		{
-			sort_legion_with_city_war_end();//Éı½µ¼¶²Ù×÷ĞèÒª·Åµ½µ±ÈÕÆßµã
+			sort_legion_with_city_war_end();//å‡é™çº§æ“ä½œéœ€è¦æ”¾åˆ°å½“æ—¥ä¸ƒç‚¹
 			del_last_group_legion();
 			add_legion_with_rank_list();
 		}

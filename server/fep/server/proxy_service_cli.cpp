@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2014/07/30
 	created:	30:7:2014   18:04
 	file base:	proxy_service_cli
@@ -98,8 +98,6 @@ namespace faith
 
 		set_allow_connection(true);
 
-		//���ļ�װ��RDE���ݵ�������
-		//
 
 		m_scl_cli_sender = boost::bind(&tcp_server::send, m_tcpserver, _1,_2,_3);
 		m_scl_cli_recver = boost::bind(&proxy_service_cli::on_data_received, &proxy_service_cli::getInstance(),_1,_2,_3);
@@ -415,7 +413,7 @@ namespace faith
 
 	bool proxy_service_cli::set_netpara_option(uint32 send_buf_size, uint32 recv_buf_size, uint32 _max_packet_size)
 	{
-		const int32 FAITH_INNER_HEADER_SIZE = 8; //FAITH�ڲ����ݰ�ͷ��С
+		const int32 FAITH_INNER_HEADER_SIZE = 8;
 
 		const int32 client_send_buffer_coef = 32;
 		const int32 client_recv_buffer_coef = 8;

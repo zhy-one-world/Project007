@@ -11,7 +11,7 @@
 
 namespace faith
 {
-	//½ÇÉ«¹ØÏµ
+	//è§’è‰²å…³ç³»
 	void ws2dp_req_load_player_relation(uint32 connindex, const void* data_ptr, size_t data_len);
 	void ws2dp_req_load_player_relation_end(db_result_type result, uint32 connindex, const guid_64& role_guid);
 	void ws2dp_req_save_player_relation(uint32 connindex, const void* data_ptr, size_t data_len);

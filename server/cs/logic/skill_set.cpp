@@ -1,4 +1,4 @@
-
+ï»¿
 #include "time.hpp"
 #include "server_log.hpp"
 #include "logic/skill_set.h"
@@ -210,7 +210,7 @@ namespace faith
 	}
 	void skill_set::exp_level_up(int32 cur_level) 
 	{
-		//ÒÑ¾­·ÏÆúÁË
+		//å·²ç»åºŸå¼ƒäº†
 		//for (auto skill_iter = m_skill_insts.begin(); skill_iter != m_skill_insts.end(); ++skill_iter)
 		//{
 		//	auto skill_id = skill_iter->get_data_info(e_skill_info_template_id);
@@ -578,7 +578,7 @@ namespace faith
 		if (skill_template_ptr->ActiveType == esat_zhudong)
 		{
 			int64 now_time = utility::get_tick_count();
-			//²¿·Ö·Ç¹¥»÷¼¼ÄÜ·şÎñÆ÷²»ÅĞ¶Ï¹¥Àä ½â¾öÍøÂç¿¨¶ÙÊ± ¶à¸ö¼¼ÄÜ°üÍ¬Ê±ÍÆÏò·şÎñÆ÷ µ¼ÖÂÀıÈçÉÏÏÂÂí¼¼ÄÜÊ¹ÓÃÊ§°Ü ¿Í»§¶Ë¾Í³öÏÖÁËÑ°Â·¿¨×¡ºÍÆïÂí´òÕÌµÄÎÊÌâ
+			//éƒ¨åˆ†éæ”»å‡»æŠ€èƒ½æœåŠ¡å™¨ä¸åˆ¤æ–­æ”»å†· è§£å†³ç½‘ç»œå¡é¡¿æ—¶ å¤šä¸ªæŠ€èƒ½åŒ…åŒæ—¶æ¨å‘æœåŠ¡å™¨ å¯¼è‡´ä¾‹å¦‚ä¸Šä¸‹é©¬æŠ€èƒ½ä½¿ç”¨å¤±è´¥ å®¢æˆ·ç«¯å°±å‡ºç°äº†å¯»è·¯å¡ä½å’Œéª‘é©¬æ‰“ä»—çš„é—®é¢˜
 			if((is_can_break_skill(skill_template_ptr->attribute_id) == false) && skill_template_ptr->Type != est_patron_saint && skill_template_ptr->CastType != estype_sprint
 				&& skill_template_ptr->Type != est_floor_call_mount
 				&& skill_template_ptr->Type != est_ride_fly_up
@@ -622,7 +622,7 @@ namespace faith
 			{
 				if (m_unit_idf.runtime_id < npc_arrary_index_begin)
 				{
-					m_public_time = init_unit::get_end_time(skill_template_ptr->PublicTime - 0.05f);//½µµÍµã¹«Àä ÒÔÓ¦¶ÔÍøÂç×´¿ö
+					m_public_time = init_unit::get_end_time(skill_template_ptr->PublicTime - 0.05f);//é™ä½ç‚¹å…¬å†· ä»¥åº”å¯¹ç½‘ç»œçŠ¶å†µ
 					set_break_skill(skill_template_ptr->BreakSkillArray);
 				}
 			}
@@ -704,7 +704,6 @@ namespace faith
 	}
 	void skill_set::resp_cancel_skill(const skill_proto_skill_operation& req)
     {
-// 
 //         auto iter = std::find_if(m_use_skills.begin(), m_use_skills.end(), [info_id](skill& _skill)
 //         {
 // 			return _skill.get_info_id() == req.info_id();
@@ -766,14 +765,14 @@ namespace faith
 			return;
 		}
 		if (player_ref.get_unit_info(e_role_info_exp_level) < skill_template_ptr->LearnConditionLevel)
-		{//µÈ¼¶²»×ã
+		{//ç­‰çº§ä¸è¶³
 			CONSOLE_ERROR("skill_set::resp_learn_skill, level not enough, skill_template_id:{} player_level:{} need_level:{}", skill_template_id, player_ref.get_unit_info(e_role_info_exp_level), skill_template_ptr->LearnConditionLevel);
 			return;
 		}
 
-		//Õâ¸ö°æ±¾È¥³ıÊìÁ·¶ÈÉı¼¶µÄÌõ¼ş,ÒÔºóÓ¦¸ÃÒª»Ø¸´
+		//è¿™ä¸ªç‰ˆæœ¬å»é™¤ç†Ÿç»ƒåº¦å‡çº§çš„æ¡ä»¶,ä»¥ååº”è¯¥è¦å›å¤
 		//if (skill_template_ptr->MaxMasteryNum > skill_inst_ptr->get_data_info(e_skill_info_maturity))
-		//{//ÊìÁ·¶È²»Âú
+		//{//ç†Ÿç»ƒåº¦ä¸æ»¡
 		if (skill_template_ptr->LearnConfitionMoney.size() % 2 != 0)
 		{
 			CONSOLE_ERROR("LearnConfitionMoney error, skill_template_id:{} size:{}", skill_template_id, skill_template_ptr->LearnConfitionMoney.size());
@@ -785,7 +784,7 @@ namespace faith
 			return;
 		}
 		for (int32 i = 0; i < skill_template_ptr->LearnConfitionMoney.size(); i += 2)
-		{//Ç®²»×ã
+		{//é’±ä¸è¶³
 			int32 need_money_id = skill_template_ptr->LearnConfitionMoney[i];
 			int32 need_money_num = skill_template_ptr->LearnConfitionMoney[i + 1];
 			if (player_ref.can_cut_money((e_money_type)need_money_id, need_money_num) == false)
@@ -795,11 +794,11 @@ namespace faith
 			}
 		}
 		for (int32 i = 0; i < skill_template_ptr->LearnConfitionItem.size(); i += 2)
-		{//ÎïÆ·²»×ã
+		{//ç‰©å“ä¸è¶³
 			int32 need_item_id = skill_template_ptr->LearnConfitionItem[i];
 			int32 need_item_num = skill_template_ptr->LearnConfitionItem[i + 1];
 			if (item_system::can_cost_item(&player_ref, e_bag_type_bag, need_item_id, need_item_num) == false)
-			{//ÎïÆ·²»×ã
+			{//ç‰©å“ä¸è¶³
 				CONSOLE_ERROR("item not enough, skill_template_id:{} need_item_id:{} need_item_num:{}", skill_template_id, need_item_id, need_item_num);
 				return;
 			}
@@ -980,7 +979,7 @@ namespace faith
 		{
 			if (m_break_skill_array[i] == skill_template_id)
 			{
-				//×ßµ½ÕâÀïÊÇ±»Ö÷¶¯¼¼ÄÜÖĞ¶ÏµÄ ËùÒÔÇå³ı²»¿É´ò¶ÏÊ±¼ä
+				//èµ°åˆ°è¿™é‡Œæ˜¯è¢«ä¸»åŠ¨æŠ€èƒ½ä¸­æ–­çš„ æ‰€ä»¥æ¸…é™¤ä¸å¯æ‰“æ–­æ—¶é—´
 				m_public_time = 0;
 				m_break_skill_array.clear();
 				return true;

@@ -10,14 +10,14 @@ namespace faith
 {
 	typedef std::vector<uint32> notice_time_array;
 	typedef notice_time_array::iterator notice_time_array_ite;
-	//ÓÃÓÚ´æ´¢ÄÇĞ©ĞèÒª»îÒ»¶ÎÊ±¼ä£¬¶ø²»ÊÇÖ»²¥Ò»´Î¾ÍĞĞµÄ¹«¸æ
+	//ç”¨äºå­˜å‚¨é‚£äº›éœ€è¦æ´»ä¸€æ®µæ—¶é—´ï¼Œè€Œä¸æ˜¯åªæ’­ä¸€æ¬¡å°±è¡Œçš„å…¬å‘Š
 	struct continued_notice
 	{
-		xchar		text[globel_message_max_size + 1];	//ÏÔÊ¾ÄÚÈİ
-		int64		m_begin_time;						//ºÎÊ±ÏÔÊ¾£¬µ¥Î»£ººÁÃë
-		int64		m_end_time;							//ºÎÊ±½áÊø£¬µ¥Î»£ººÁÃë
-		int64		m_interval_time;					//¼ä¸ôÊ±¼ä£¬µ¥Î»£ººÁÃë
-		int32		notice_id;							//¹«¸æµÄID£¬ÓĞÕâ¸ö£¬¾Í²»ĞèÒª¹«¸æÀàĞÍºÍÄÚÈİÁË
+		xchar		text[globel_message_max_size + 1];	//æ˜¾ç¤ºå†…å®¹
+		int64		m_begin_time;						//ä½•æ—¶æ˜¾ç¤ºï¼Œå•ä½ï¼šæ¯«ç§’
+		int64		m_end_time;							//ä½•æ—¶ç»“æŸï¼Œå•ä½ï¼šæ¯«ç§’
+		int64		m_interval_time;					//é—´éš”æ—¶é—´ï¼Œå•ä½ï¼šæ¯«ç§’
+		int32		notice_id;							//å…¬å‘Šçš„IDï¼Œæœ‰è¿™ä¸ªï¼Œå°±ä¸éœ€è¦å…¬å‘Šç±»å‹å’Œå†…å®¹äº†
 		guid_64		sender_guid;
 		bool		is_effect;
 
@@ -78,7 +78,7 @@ namespace faith
 		void del_delay_globle_notice(guid_64 notice_guid);
 
 		void send_notice_to_all_only_string(xstring& string_content);
-		void send_notice_with_text(std::string notice_text, int32 notice_create_time, int32 notice_show_typ);//ÓÃÓÚ²»ÔÚ±íÀïµÄ£¬Ëæ±ãĞ´µÄTEXTµÄ¹«¸æ
+		void send_notice_with_text(std::string notice_text, int32 notice_create_time, int32 notice_show_typ);//ç”¨äºä¸åœ¨è¡¨é‡Œçš„ï¼Œéšä¾¿å†™çš„TEXTçš„å…¬å‘Š
 		void send_mail_to_player_by_system(guid_64 terget_player_guid,
 			int32 target_server_id,
 			std::string sender_name,
@@ -90,7 +90,7 @@ namespace faith
 			int32 money_num2,
 			const std::vector<s_item_info>& item_list);
 
-		void send_notice_to_all(int32 notice_id, int32 notice_create_time, guid_64 sender_guid, std::string final_string,int32 sender_template_id = 0);		// Ä£°å¹«¸æÎ¨Ò»½Ó¿Ú
+		void send_notice_to_all(int32 notice_id, int32 notice_create_time, guid_64 sender_guid, std::string final_string,int32 sender_template_id = 0);		// æ¨¡æ¿å…¬å‘Šå”¯ä¸€æ¥å£
 		void send_notice_to_all(int32 notice_id, int32 notice_create_time, guid_64 sender_guid, std::string final_string, s_item_info* item_data, int32 item_num, int32 sender_template_id = 0);
 
 		void send_notice_with_param(guid_64 sender_guid, const xchar* sender_name, const xchar* content_text, 
@@ -100,10 +100,10 @@ namespace faith
 		int32	get_empty_globel_mail_slot();
 
 	private:
-		void send_notice_to_everyone(google::protobuf::Message* net_pro, uint32 header);										// ½«ÏûÏ¢·¢ËÍ¸øÈ«·ş
-		void send_notice_to_legion(guid_64 sender_guid, google::protobuf::Message* net_pro, uint32 header);						// Ö»½«ÏûÏ¢·¢ËÍ¸ø¾üÍÅ
-		void send_notice_to_team(guid_64 sender_guid, google::protobuf::Message* net_pro, uint32 header);						// Ö»½«ÏûÏ¢·¢ËÍ¸ø¶ÓÎé
-		void send_notice_to_self(guid_64 sender_guid, google::protobuf::Message* net_pro, uint32 header);						// Ö»½«ÏûÏ¢·¢ËÍ¸ø×Ô¼º
+		void send_notice_to_everyone(google::protobuf::Message* net_pro, uint32 header);										// å°†æ¶ˆæ¯å‘é€ç»™å…¨æœ
+		void send_notice_to_legion(guid_64 sender_guid, google::protobuf::Message* net_pro, uint32 header);						// åªå°†æ¶ˆæ¯å‘é€ç»™å†›å›¢
+		void send_notice_to_team(guid_64 sender_guid, google::protobuf::Message* net_pro, uint32 header);						// åªå°†æ¶ˆæ¯å‘é€ç»™é˜Ÿä¼
+		void send_notice_to_self(guid_64 sender_guid, google::protobuf::Message* net_pro, uint32 header);						// åªå°†æ¶ˆæ¯å‘é€ç»™è‡ªå·±
 
 		void set_mail_proto_info(server2dp_proto_s_mail_info * mail_info, s_mail_info _info);
 

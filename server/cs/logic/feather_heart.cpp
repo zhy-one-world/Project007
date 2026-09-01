@@ -44,11 +44,11 @@ namespace faith
 	void feather_heart::trigger_event(int32 target_index, bool is_add)
 	{
 		if (is_add)
-		{//´¥·¢×ö¸ö±ê¼Ç
+		{//è§¦å‘åšä¸ªæ ‡è®°
 			m_trigger_event = true;
 		}
 		if (m_trigger_event == false && is_add == false)
-		{//Èç¹ûÃ»ÓĞ´¥·¢¹ı£¬¾Í²»×öÉ¾³ı²Ù×÷
+		{//å¦‚æœæ²¡æœ‰è§¦å‘è¿‡ï¼Œå°±ä¸åšåˆ é™¤æ“ä½œ
 			return;
 		}
 		FeatherTemplate *feather_template_ptr = get_feather_template();

@@ -24,12 +24,12 @@ namespace faith
 		e_msgindex_cs2dp_save_char_spirit,
 	};
 
-	// DP2CS ·ÖÅú·¢ËÍÍæ¼ÒµÄËùÓĞÎïÆ·ĞÅÏ¢
+	// DP2CS åˆ†æ‰¹å‘é€ç©å®¶çš„æ‰€æœ‰ç‰©å“ä¿¡æ¯
 	struct dp2cs_load_char_spirit : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32							unit_array_index;
-		bool								is_over;		// ±êÊ¶Íæ¼ÒÎïÆ·ÊÇ·ñ·¢ËÍÍê±Ï, true±íÊ¾·¢ËÍ³É¹¦Íê±Ï£¬false±íÊ¾Ã»ÓĞ·¢ËÍÍê£¬errroÍ¨¹ıÁíÒ»ÌõÏûÏ¢´«µİ
+		bool								is_over;		// æ ‡è¯†ç©å®¶ç‰©å“æ˜¯å¦å‘é€å®Œæ¯•, trueè¡¨ç¤ºå‘é€æˆåŠŸå®Œæ¯•ï¼Œfalseè¡¨ç¤ºæ²¡æœ‰å‘é€å®Œï¼Œerrroé€šè¿‡å¦ä¸€æ¡æ¶ˆæ¯ä¼ é€’
 		int32									data_num;
 		s_spirit_info						data_list[sprite_bag_num];
 		dp2cs_load_char_spirit()

@@ -4,25 +4,25 @@
 #include "template/BoxMapTemplate_S.h"
 namespace faith
 {
-	const int32 g_role_box_search_time_cut = 1719802290;//±¦ÏäËÑË÷Ê±¼ä¼õÉÙÊ±¼ä´ÁÖµ£¬·ÀÖ¹int32Òç³ö
-	const int32 g_role_box_search_time_interval = 1;//±¦ÏäËÑË÷Ê±¼ä¼ä¸ô
+	const int32 g_role_box_search_time_cut = 1719802290;//å®ç®±æœç´¢æ—¶é—´å‡å°‘æ—¶é—´æˆ³å€¼ï¼Œé˜²æ­¢int32æº¢å‡º
+	const int32 g_role_box_search_time_interval = 1;//å®ç®±æœç´¢æ—¶é—´é—´éš”
 
 	enum e_box_map_state
 	{
-		e_box_map_state_none,//³õÊ¼×´Ì¬
-		e_box_map_state_player_join,//Íæ¼Ò½øÈë×´Ì¬
-		e_box_map_state_select_npc,//Ñ¡Ôñnpc×´Ì¬
-		e_box_map_state_wait_select_end,//µÈ´ı¿Í»§¶Ë×öÍêÑ¡Ôñ¶¯»­×´Ì¬
-		e_box_map_state_fight_monster,//¹ÖÎïÕ½¶·ÔËĞĞÊ±×´Ì¬
-		e_box_map_state_end_map,//É±bossÇĞ»»µØÍ¼×´Ì¬
-		e_box_map_state_close,//µØÍ¼´¦ÓÚ¹Ø±Õ×´Ì¬
+		e_box_map_state_none,//åˆå§‹çŠ¶æ€
+		e_box_map_state_player_join,//ç©å®¶è¿›å…¥çŠ¶æ€
+		e_box_map_state_select_npc,//é€‰æ‹©npcçŠ¶æ€
+		e_box_map_state_wait_select_end,//ç­‰å¾…å®¢æˆ·ç«¯åšå®Œé€‰æ‹©åŠ¨ç”»çŠ¶æ€
+		e_box_map_state_fight_monster,//æ€ªç‰©æˆ˜æ–—è¿è¡Œæ—¶çŠ¶æ€
+		e_box_map_state_end_map,//æ€bossåˆ‡æ¢åœ°å›¾çŠ¶æ€
+		e_box_map_state_close,//åœ°å›¾å¤„äºå…³é—­çŠ¶æ€
 	};
 	struct box_map_component
 	{
-		e_box_map_state m_state;//×´Ì¬
-		std::set<int32> m_boss_list;//bossÁĞ±í
-		int32 m_select_box_index;//Ñ¡ÖĞµÄ±¦Ïäid
-		int32 m_award_rate;//½±ÀøÕ¼±È
+		e_box_map_state m_state;//çŠ¶æ€
+		std::set<int32> m_boss_list;//bossåˆ—è¡¨
+		int32 m_select_box_index;//é€‰ä¸­çš„å®ç®±id
+		int32 m_award_rate;//å¥–åŠ±å æ¯”
 		BoxMapTemplate* m_box_map_template;
 	};
 }

@@ -45,7 +45,7 @@ namespace faith
 			{
 				m_tick_msg_queue.pop();
 				m_msg_pool.free(msg_data.msg_ptr);
-			} // else ÖØÐÂ·¢ËÍ
+			} // else é‡æ–°å‘é€
 		}
 	}
 

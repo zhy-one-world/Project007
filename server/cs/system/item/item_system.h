@@ -24,7 +24,7 @@ namespace faith
 		static void save_data_to_db(player* player_ptr, int32 save_type_ex);
 		static void clear_data(unit* unit_ptr);
 	public:
-		static void send_promp_msg_to_client(player* player_ptr, const std::vector<s_item_template_info>& items_array, const std::vector<s_item_template_info>& money_array = {});		//发送获得的物品弹框
+		static void send_promp_msg_to_client(player* player_ptr, const std::vector<s_item_template_info>& items_array, const std::vector<s_item_template_info>& money_array = {});		//鍙戦�佽幏寰楃殑鐗╁搧寮规
 		static void send_item_one(unit* unit_ptr, const std::vector<Entity*>& item_ent_array, bool to_self = true);
 		static void send_item_all(unit* unit_ptr);
 		static void send_item_del(unit* unit_ptr, const std::vector<guid_64>& item_guid_array);

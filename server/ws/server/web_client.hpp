@@ -1,4 +1,4 @@
-
+ï»¿
 #ifndef __WEB_CLIENT_H__
 #define __WEB_CLIENT_H__
 #include "Logic/web_def.hpp"
@@ -28,7 +28,7 @@ namespace faith
 		void hanlde_login(const char* data_ptr, uint32 length);
 		void hanlde_json(const char* data_ptr, uint32 length);
 
-		//gmtÒÔ¼°billing±»¸Éµôºó£¬¿ÉÉ¾³ıÈ«²¿¹ØÓÚis_send_to_old_gmtµÄÂß¼­
+		//gmtä»¥åŠbillingè¢«å¹²æ‰åï¼Œå¯åˆ é™¤å…¨éƒ¨å…³äºis_send_to_old_gmtçš„é€»è¾‘
 		void do_gm_order(int32 gm_type, Json::Value& json_value, s_daemon_callback_info callback_info, bool is_send_to_old_gmt);
 		void gm_order_end(int32 result_code, xstring result_msg, s_daemon_callback_info callback_info);
 		void gm_order_end_new(int32 result_code, xstring result_msg, s_daemon_callback_info callback_info);
@@ -99,7 +99,7 @@ namespace faith
 		void parse_json_change_password(Json::Value& json_value, s_daemon_callback_info callback_info, bool is_send_to_old_gmt);
 		
 
-		//ĞÂºóÌ¨GMÖ¸Áî
+		//æ–°åå°GMæŒ‡ä»¤
 		void parse_json_set_send_mail_new(Json::Value& json_value, s_daemon_callback_info callback_info);
 		void parse_json_set_send_chat_new(Json::Value& json_value, s_daemon_callback_info callback_info);
 		void parse_json_kickout_player_new(Json::Value& json_value, s_daemon_callback_info callback_info);
@@ -116,4 +116,4 @@ namespace faith
 	};
 }
 
-#endif //
+#endif

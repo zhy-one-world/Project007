@@ -1,5 +1,5 @@
 /********************************************************************
-  created: 2019Äê4ÔÂ4ÈÕ
+  created: 2019å¹´4æœˆ4æ—¥
   file base: cross_server_harry_ws_mgr
   file ext: hpp
   author: zhangshuo
@@ -31,8 +31,8 @@ namespace faith
 		void						tick_sec(int64 time_new);
 		void						clear_data();
 		
-		void						init_server_money();//³õÊ¼»¯·şÎñÆ÷·±ÈÙÖµ
-		void						init_server_money_with_refresh();//³õÊ¼»¯Ã¿ÖÜ¸üĞÂµÄ·±ÈÙÖµ
+		void						init_server_money();//åˆå§‹åŒ–æœåŠ¡å™¨ç¹è£å€¼
+		void						init_server_money_with_refresh();//åˆå§‹åŒ–æ¯å‘¨æ›´æ–°çš„ç¹è£å€¼
 
 		bool						is_in_harry_game_time();
 		bool						is_in_harry_special_game_time();
@@ -48,14 +48,14 @@ namespace faith
 		void						refresh_server_harry_with_server_list();
 		bool						is_have_this_server_id(int32 server_id);
 
-		void						send_all_harry_msg_to_other_server(int32 server_id = 0, bool is_need_set_name = false);//gateÊı¾İ·¢ËÍµ½ÆäËû·ş
+		void						send_all_harry_msg_to_other_server(int32 server_id = 0, bool is_need_set_name = false);//gateæ•°æ®å‘é€åˆ°å…¶ä»–æœ
 		void						recv_gate_harry_msg(const s_server_harry_msg* server_harry_msg_arr, int32 data_num, bool is_need_set_name);
 
-		void						clear_change_value();//ÇåÀí»º´æµÄ±ä»¯Á¿
-		void						send_cur_server_change_harry_msg_to_gate_server();//½«±¾·şµÄÊı¾İÍ¬²½µ½gateÉÏ
-		void						recv_server_harry_msg(const s_harry_money_change* server_harry_msg, int32 data_num);//ÆäËû·ş
+		void						clear_change_value();//æ¸…ç†ç¼“å­˜çš„å˜åŒ–é‡
+		void						send_cur_server_change_harry_msg_to_gate_server();//å°†æœ¬æœçš„æ•°æ®åŒæ­¥åˆ°gateä¸Š
+		void						recv_server_harry_msg(const s_harry_money_change* server_harry_msg, int32 data_num);//å…¶ä»–æœ
 
-		void						change_server_money(bool is_special, int32 change_num, int32 server_id);//Í¬²½
+		void						change_server_money(bool is_special, int32 change_num, int32 server_id);//åŒæ­¥
 
 		s_server_harry_msg&			get_cur_server_money();
 		s_server_harry_msg&			get_server_money_by_server_id(int32 server_id);
@@ -66,23 +66,23 @@ namespace faith
 
 		void						send_server_harry_msg_to_cs(int32 conn_index = -1);
 
-		void						make_special_money_with_special_time();//ÌØÊâÊ±¼äÄÚ£¬¸øÆäËûWSÌí¼ÓÌØÊâ²É¼¯´ÎÊı
-		void						clear_all_server_special_money();//ÇåÀíµôËùÓĞ·şÎñÆ÷µÄÌØÊâ²É¼¯´ÎÊı
-		void						make_special_money_for_other_server();//ÎªÊ£ÏÂµÄ·şÎñÆ÷Ìí¼Ó²É¼¯´ÎÊı
+		void						make_special_money_with_special_time();//ç‰¹æ®Šæ—¶é—´å†…ï¼Œç»™å…¶ä»–WSæ·»åŠ ç‰¹æ®Šé‡‡é›†æ¬¡æ•°
+		void						clear_all_server_special_money();//æ¸…ç†æ‰æ‰€æœ‰æœåŠ¡å™¨çš„ç‰¹æ®Šé‡‡é›†æ¬¡æ•°
+		void						make_special_money_for_other_server();//ä¸ºå‰©ä¸‹çš„æœåŠ¡å™¨æ·»åŠ é‡‡é›†æ¬¡æ•°
 
 		void						set_server_harry_best_player(int32 server_id, int64 first_player_guid, int64 second_player_guid, int64 third_player_guid, const xchar* player_name);
 		void						send_server_harry_best_player_msg_to_gate();
 
 		bool						is_can_join_harry_map(client_session* session_ptr);
 
-		void						send_award_with_player_defend_value();//¸ù¾İÊØ»¤ÖµÅÅĞĞ·¢½±Àø
+		void						send_award_with_player_defend_value();//æ ¹æ®å®ˆæŠ¤å€¼æ’è¡Œå‘å¥–åŠ±
 		void						give_award_with_player_defend_value(guid_64 player_guid, int32 player_rank, const xchar* player_name);
 
-		void						send_award_with_server_money_rank();//¸ù¾İ·şÎñÆ÷·±ÈÙ¶ÈÅÅĞĞ·¢½±Àø
-		void						recv_gate_with_server_money_rank(int32 server_rank);//·şÎñÆ÷·¢·Å·şÎñÆ÷ÅÅÃû½±Àø
+		void						send_award_with_server_money_rank();//æ ¹æ®æœåŠ¡å™¨ç¹è£åº¦æ’è¡Œå‘å¥–åŠ±
+		void						recv_gate_with_server_money_rank(int32 server_rank);//æœåŠ¡å™¨å‘æ”¾æœåŠ¡å™¨æ’åå¥–åŠ±
 		void						get_mail_data(s_mail_info& mail_info, s_item_info* item_array, int32& item_num, const std::vector<s_item_template_info>& item_list, const xstring& title, const xstring& content);
 
-		void						load_fake_data(int32 active_type);//¶ÁÈ¡Ç°ÈıÃûÍæ¼ÒµÄÊı¾İ
+		void						load_fake_data(int32 active_type);//è¯»å–å‰ä¸‰åç©å®¶çš„æ•°æ®
 		void						load_fake_data_with_fake_type(int32 fake_type);
 
 		void						handle_base_detail_info(int32 big_type, const s_unit_info role_info);
@@ -95,7 +95,7 @@ namespace faith
 
 		void						create_harry_player(int32 active_type);
 		void						set_create_need_harry_player(bool is_need) { m_need_create_player = is_need; };
-		void						set_is_need_create_harry_player(bool need_create);//Ã¿ÌìÁãµãË¢ĞÂÒ»´Î£¬·ÀÖ¹ÌØÊâÇé¿öµ¼ÖÂµñÏñ²»³öÏÖ
+		void						set_is_need_create_harry_player(bool need_create);//æ¯å¤©é›¶ç‚¹åˆ·æ–°ä¸€æ¬¡ï¼Œé˜²æ­¢ç‰¹æ®Šæƒ…å†µå¯¼è‡´é›•åƒä¸å‡ºç°
 
 		void						init_harry_map();
 		void						get_valid_harry_map(guid_64& map_guid, int32& war_idex);
@@ -110,32 +110,32 @@ namespace faith
 
 		s_server_harry_msg			m_dp_harry_msg_arr[dp_save_max_server_num];
 
-		std::map<int32, int32>		m_server_change_harry_msg;//ÆÕÍ¨²É¼¯±ä»¯Á¿
-		int32						m_server_change_special_money_num;//ÌØÊâ²É¼¯±ä»¯Á¿
+		std::map<int32, int32>		m_server_change_harry_msg;//æ™®é€šé‡‡é›†å˜åŒ–é‡
+		int32						m_server_change_special_money_num;//ç‰¹æ®Šé‡‡é›†å˜åŒ–é‡
 
 		int64						m_last_tick_time;
 		int64						m_timer;
 		int64						m_last_10sec_tick_time;
 		int64						m_last_sec_tick_time;
 
-		int64						m_need_set_next_special_money_time;//GATE·şÉèÖÃÏÂÒ»ÅúÌØÊâ²É¼¯µÄÊ±¼ä
-		std::vector<int32>			m_need_set_special_server_idex_arr;//ĞèÒªÉèÖÃµÄ·şÎñÆ÷ÓĞÄÄĞ©
+		int64						m_need_set_next_special_money_time;//GATEæœè®¾ç½®ä¸‹ä¸€æ‰¹ç‰¹æ®Šé‡‡é›†çš„æ—¶é—´
+		std::vector<int32>			m_need_set_special_server_idex_arr;//éœ€è¦è®¾ç½®çš„æœåŠ¡å™¨æœ‰å“ªäº›
 		bool						m_is_set_special_server_money;
 
-		bool						m_is_have_change;//ÊÇ·ñÓĞ±ä»¯£¬¾ö¶¨ÊÇ·ñĞèÒª·¢ËÍµ½¸÷¸öWSÍ¬²½
+		bool						m_is_have_change;//æ˜¯å¦æœ‰å˜åŒ–ï¼Œå†³å®šæ˜¯å¦éœ€è¦å‘é€åˆ°å„ä¸ªWSåŒæ­¥
 
-		s_fake_player_info			m_player_info_array[e_fake_type_max];//Ç°ÈıÃûµÄÍæ¼ÒµÄÊı¾İ
+		s_fake_player_info			m_player_info_array[e_fake_type_max];//å‰ä¸‰åçš„ç©å®¶çš„æ•°æ®
 
-		bool						m_need_create_player = false;//ĞèÒª´´½¨µñÏñ
+		bool						m_need_create_player = false;//éœ€è¦åˆ›å»ºé›•åƒ
 
-		bool						m_is_load_harry_player = false;//ÊÇ·ñÒÑ¾­¼ÓÔØµñÏñÊı¾İ
+		bool						m_is_load_harry_player = false;//æ˜¯å¦å·²ç»åŠ è½½é›•åƒæ•°æ®
 		bool						m_is_load_end = false;
 
-		bool						m_is_need_init_server_money = false;//ÊÇ·ñĞèÒªÖØÖÃËùÓĞ·şÎñÆ÷·±ÈÙ¶È
+		bool						m_is_need_init_server_money = false;//æ˜¯å¦éœ€è¦é‡ç½®æ‰€æœ‰æœåŠ¡å™¨ç¹è£åº¦
 
-		bool						m_is_load_all_harry_msg = false;//ÊÇ·ñÒÑ¾­¶ÁÈ¡ÂÓ¶áÈ«²¿Êı¾İ
+		bool						m_is_load_all_harry_msg = false;//æ˜¯å¦å·²ç»è¯»å–æ å¤ºå…¨éƒ¨æ•°æ®
 
-		bool						m_can_load_fake_player = false;//¿ÉÒÔ¿ªÊ¼¶ÁÈ¡µñÏñÊı¾İ
+		bool						m_can_load_fake_player = false;//å¯ä»¥å¼€å§‹è¯»å–é›•åƒæ•°æ®
 		bool						m_is_recv_gate_server_msg = false;
 
 		guid_64						m_harry_map_guid;

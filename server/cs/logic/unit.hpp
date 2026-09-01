@@ -15,17 +15,17 @@ namespace faith
 	struct s_map_block;
 	struct item_manager_component;
 
-	// ËùÓĞ³¡¾°Âß¼­¶ÔÏóµÄ»ùÀà
+	// æ‰€æœ‰åœºæ™¯é€»è¾‘å¯¹è±¡çš„åŸºç±»
 	class unit
 	{
 	protected:
 		unit();
 		virtual ~unit();
-	private://ÄÚ´æÒÑ¾­´´½¨ºÃÁË ½ûÖ¹¿½±´
+	private://å†…å­˜å·²ç»åˆ›å»ºå¥½äº† ç¦æ­¢æ‹·è´
 		unit(const unit& unit_ref);
 		unit& operator=(const unit&);
 	public:
-		//½ÇÉ«µÄÊı¾İ×´Ì¬
+		//è§’è‰²çš„æ•°æ®çŠ¶æ€
 		void							set_data_use(bool is_use) { m_is_data_use = is_use; }
 		const bool&						is_valid() const { return m_is_data_use; }
 		void							set_array_index(int32 array_index);
@@ -38,7 +38,7 @@ namespace faith
 		virtual void					heart_tick(const int64& new_time, const int32& tick_time);
 		virtual void					clear_data();
 		/************************************************************************/
-		/*                          ·ÇÕ½¶·ÊôĞÔÏà¹Ø                              */
+		/*                          éæˆ˜æ–—å±æ€§ç›¸å…³                              */
 		/************************************************************************/
 		virtual void					add_unit(const guid_64& unit_guid) {}
 		virtual void					remove_unit(const guid_64& unit_guid) {}
@@ -85,9 +85,9 @@ namespace faith
 		virtual int32                   is_control_boss() { return 0; }
 	public:
 		/************************************************************************/
-		/*                            Õ½¶·ÊôĞÔÏà¹Ø                              */
+		/*                            æˆ˜æ–—å±æ€§ç›¸å…³                              */
 		/************************************************************************/
-		virtual void					set_unit_gs_change() {}//ÊôĞÔ±ä»¯ºóÖØĞÂ¼ÆËãgsÖµ
+		virtual void					set_unit_gs_change() {}//å±æ€§å˜åŒ–åé‡æ–°è®¡ç®—gså€¼
 		pawn_att&						get_pawn_att() { return m_pawn_att; }
 		bool							change_hp(double hp_value, int32 array_index, bool be_critical, int32 skill_template_id = 0);
 		void							full_hp();
@@ -99,9 +99,9 @@ namespace faith
 
 
 		/************************************************************************/
-		/*							  ½ÇÉ«±³°üBUFF	   					        */
+		/*							  è§’è‰²èƒŒåŒ…BUFF	   					        */
 		/************************************************************************/
-		int32							m_addition_buff[e_addition_buff_max][faith::max_each_type_addition_buff_num];           // ±³°ü½çÃæµÄ4¸ö¼Ó³ÖbuffµÄµ±Ç°ÉúĞ§µÄÄ£°åBuff ID
+		int32							m_addition_buff[e_addition_buff_max][faith::max_each_type_addition_buff_num];           // èƒŒåŒ…ç•Œé¢çš„4ä¸ªåŠ æŒbuffçš„å½“å‰ç”Ÿæ•ˆçš„æ¨¡æ¿Buff ID
 		std::vector<int32>				get_addition_buff_id_arr(e_addition_buff addition_buff_type);
 		void                            add_addition_buff_id_arr(e_addition_buff addition_buff_type, int32 buff_id);
 		void							reset_addition_buff_id_by_type(e_addition_buff addition_buff_type);
@@ -109,16 +109,16 @@ namespace faith
 		void							send_addition_buff_info_arr(guid_64 guid, e_addition_buff addition_buff_type, std::vector<int32> addition_buff_id_arr);
 		void							send_all_addition_buff_info(unit& temp_player);
 		/************************************************************************/
-		/*                          Õ½¶·ÊôĞÔÏà¹Ø                                */
+		/*                          æˆ˜æ–—å±æ€§ç›¸å…³                                */
 		/************************************************************************/
 		void							send_warning(e_warning_type warn_type, int32 warn_value, bool warn_show = true);
 		virtual	void					be_dead(bool is_auto_put_into_bag = false) {}
 		bool							is_dead();
 		const s_map_block*				get_in_map_safe();
-		virtual f32						get_current_weapon_attack_speed(bool apply = true) { return 1.0f; }									// µÃµ½µ±Ç°Ö÷ÊÖÎäÆ÷µÄ¹¥»÷ËÙ¶È
-		virtual f32						get_current_weapon_attack_distance() { return 260.0f; }									// µÃµ½µ±Ç°Ö÷ÊÖÎäÆ÷µÄ¹¥»÷·¶Î§
-		virtual bool					is_equip_shield() { return false; }									// µÃµ½µ±Ç°Ö÷ÊÖÎäÆ÷µÄÊìÁ·¶È£¨Ã»ÓĞÎäÆ÷·µ»ØÍ½ÊÖÊìÁ·¶È£©
-		virtual int32					get_assistant_weapon_type(bool& is_weapon_sub) { is_weapon_sub = true; return e_weap_sub_type_none; }	// È¡µÃ¸±ÊÖÎäÆ÷ÀàĞÍ is_weapon_sub ·µ»Øtrue º¯Êı·µ»ØÖµ±íÊ¾ÎäÆ÷×ÓÀàĞÍ false º¯Êı·µ»ØÖµ±íÊ¾·À¾ßÀàĞÍ
+		virtual f32						get_current_weapon_attack_speed(bool apply = true) { return 1.0f; }									// å¾—åˆ°å½“å‰ä¸»æ‰‹æ­¦å™¨çš„æ”»å‡»é€Ÿåº¦
+		virtual f32						get_current_weapon_attack_distance() { return 260.0f; }									// å¾—åˆ°å½“å‰ä¸»æ‰‹æ­¦å™¨çš„æ”»å‡»èŒƒå›´
+		virtual bool					is_equip_shield() { return false; }									// å¾—åˆ°å½“å‰ä¸»æ‰‹æ­¦å™¨çš„ç†Ÿç»ƒåº¦ï¼ˆæ²¡æœ‰æ­¦å™¨è¿”å›å¾’æ‰‹ç†Ÿç»ƒåº¦ï¼‰
+		virtual int32					get_assistant_weapon_type(bool& is_weapon_sub) { is_weapon_sub = true; return e_weap_sub_type_none; }	// å–å¾—å‰¯æ‰‹æ­¦å™¨ç±»å‹ is_weapon_sub è¿”å›true å‡½æ•°è¿”å›å€¼è¡¨ç¤ºæ­¦å™¨å­ç±»å‹ false å‡½æ•°è¿”å›å€¼è¡¨ç¤ºé˜²å…·ç±»å‹
 		virtual void					on_mount_ammo(bool v) { m_mount_ammo_flag = v; };
 		bool							is_mount_ammo() const { return m_mount_ammo_flag; }
 		int32							get_killer_skill_template_id() { return m_kill_skill_template_id; }
@@ -128,14 +128,14 @@ namespace faith
 		void							set_kill_dead_reason(e_be_dead_reason dead_reason) { m_kill_dead_reason = dead_reason; }
 		bool							get_be_critical() { return m_be_critical; }
 		/************************************************************************/
-		/*                           µÀ¾ß¡¢×°±¸									*/
+		/*                           é“å…·ã€è£…å¤‡									*/
 		/************************************************************************/
 		item_set&						get_item_set() { return item_manager::get_item_set(m_array_index); }
-		virtual bool					valid_items_for_consume(int32 info_id, int32 number) { return true; }// true == Âú×ãÏûºÄÌõ¼ş£¬false == ²»Âú×ãÏûºÄÌõ¼ş
-		virtual void					consume_items(int32 info_id, int32 number) {}				// true == Âú×ãÏûºÄÌõ¼ş£¬false == ²»Âú×ãÏûºÄÌõ¼ş
+		virtual bool					valid_items_for_consume(int32 info_id, int32 number) { return true; }// true == æ»¡è¶³æ¶ˆè€—æ¡ä»¶ï¼Œfalse == ä¸æ»¡è¶³æ¶ˆè€—æ¡ä»¶
+		virtual void					consume_items(int32 info_id, int32 number) {}				// true == æ»¡è¶³æ¶ˆè€—æ¡ä»¶ï¼Œfalse == ä¸æ»¡è¶³æ¶ˆè€—æ¡ä»¶
 		std::shared_ptr<item_manager_component>				m_item_manager_component;
 		/************************************************************************/
-		/*                           ÒÆ¶¯Í¬²½¡¢Ğ­Òé´¦Àí							*/
+		/*                           ç§»åŠ¨åŒæ­¥ã€åè®®å¤„ç†							*/
 		/************************************************************************/
 		virtual	void					set_pos_move(const s_map_pos& map_pos) {}
 		void							set_new_map_pos(const s_map_pos& map_pos);
@@ -166,7 +166,7 @@ namespace faith
 		MapTemplate*					get_cur_map_template_ptr() { return m_cur_map_template_ptr; }
 		int32                           get_cur_map_type() { return m_cur_map_template_ptr == nullptr ? -1 : m_cur_map_template_ptr->Type; }
 		/************************************************************************/
-		/*                           pkÏà¹Ø										*/
+		/*                           pkç›¸å…³										*/
 		/************************************************************************/
 		pk_community_mgr&				get_pk_community_mgr() { return m_pk_community_mgr; }
 		c_war_state&					get_war_state_mgr() { return m_war_state_mgr; }
@@ -176,14 +176,14 @@ namespace faith
 		int32							get_unit_half_height() { return m_unit_half_height; }
 		virtual int32					get_random_num(int32 random_index) { return -1; }
 		/************************************************************************/
-		/*                           aoiÏà¹Ø									*/
+		/*                           aoiç›¸å…³									*/
 		/************************************************************************/
 		virtual bool							aoi_watch_all_data_in(int32 unit_array_index) { return true; }
 		virtual void							aoi_watch_all_data_out(int32 unit_array_index){}
 		virtual bool							aoi_is_watch_all_data(int32 unit_array_index) { return true; }
 
 		/************************************************************************/
-		/*							  ¾üÍÅÏà¹Ø						       	    */
+		/*							  å†›å›¢ç›¸å…³						       	    */
 		/************************************************************************/
 		legion_cs_mgr&					get_legion_cs_mgr() { return m_legion_cs_mgr; }
 		s_player_legion_info&			get_legion_info() { return m_legion_cs_mgr.get_legion_info(); }
@@ -193,7 +193,7 @@ namespace faith
 		void							set_legion_name(const xstring& legion_name);
 		
 		/************************************************************************/
-		/*							  ×é¶ÓÏà¹Ø						       	    */
+		/*							  ç»„é˜Ÿç›¸å…³						       	    */
 		/************************************************************************/
 		team_cs_mgr&					get_team_cs_mgr() { return m_team_cs_mgr; }
 		s_player_team_info&				get_team_info() { return m_team_cs_mgr.get_unit_team_info(); }
@@ -202,7 +202,7 @@ namespace faith
 		void							set_team_guid(guid_64 team_guid) { get_team_info().team_guid = team_guid; }
 		int32							get_last_attack_idex() { return m_last_attack_idex; };
 	public:
-		bool							m_is_data_use;		// ¶ÔÏó×´Ì¬
+		bool							m_is_data_use;		// å¯¹è±¡çŠ¶æ€
 		s_unit_identifier				m_unit_identifier;
 		pawn_att						m_pawn_att;
 		int32							m_unit_capsule;
@@ -220,9 +220,9 @@ namespace faith
 		Entity*							m_map_ent;
 		std::vector<s_map_block>*		m_safe_point_vec;
 		int32							m_safe_point_vec_len;
-		int32							m_array_index;		// ÔÚ¹ÜÀíÆ÷ÖĞµÄÎ»ÖÃĞÅÏ¢
-		e_unit_type						m_unit_type;		// unitµÄÀàĞÍ
-		int32							m_unit_sub_type;		// À©Õ¹µÄÀàĞÍ
+		int32							m_array_index;		// åœ¨ç®¡ç†å™¨ä¸­çš„ä½ç½®ä¿¡æ¯
+		e_unit_type						m_unit_type;		// unitçš„ç±»å‹
+		int32							m_unit_sub_type;		// æ‰©å±•çš„ç±»å‹
 		int32							m_line_id;
 		int32							m_war_index;
 		e_session_status				m_status;
@@ -236,7 +236,7 @@ namespace faith
 
 		guid_64							m_move_map_guid;
 
-		int32							m_last_attack_idex;//ÉÏÒ»´ÎÔì³É¹¥»÷µÄidex
+		int32							m_last_attack_idex;//ä¸Šä¸€æ¬¡é€ æˆæ”»å‡»çš„idex
 
 		int32							m_be_kill_num;
 	public:

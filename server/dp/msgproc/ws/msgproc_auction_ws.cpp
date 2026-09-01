@@ -1,5 +1,5 @@
 /********************************************************************
-created:	2017Äê10ÔÂ17ÈÕ13:04:37
+created:	2017å¹´10æœˆ17æ—¥13:04:37
 file base:	msgproc_auction_ws
 file ext:	cpp
 author:		luoxingyu
@@ -99,7 +99,7 @@ namespace faith
 			msg.operate_result = e_auction_sell_success;
 
 			{
-				//°²È«·À´í£¬·ÀÖ¹ÔÚ¼«ÏŞÇé¿öÏÂ£¬·şÎñÆ÷¹Òµô£¬µ¼ÖÂÎïÆ·ÉÏ¼ÜÁË£¬µ«ÊÇÍæ¼ÒÉÏÏßºó»¹ÓĞÕâ¸ö¶«Î÷
+				//å®‰å…¨é˜²é”™ï¼Œé˜²æ­¢åœ¨æé™æƒ…å†µä¸‹ï¼ŒæœåŠ¡å™¨æŒ‚æ‰ï¼Œå¯¼è‡´ç‰©å“ä¸Šæ¶äº†ï¼Œä½†æ˜¯ç©å®¶ä¸Šçº¿åè¿˜æœ‰è¿™ä¸ªä¸œè¥¿
 				sql_builder _sql(db_manager::getInstance().get_db_link().game_db);
 				_sql << _XTEXT("call ") << data_manager::get_instance().get_db_name(role_info.role_guid.server_64) << _XTEXT(".sp_role_item_del_one(");
 
@@ -150,14 +150,14 @@ namespace faith
 	}
 	void auction_find_buy_target_end(db_result_type result, uint32 connindex, guid_64 role_guid, guid_64 item_guid)
 	{
-		//±ØĞëÏÈ Ñ¡ ÔÙ É¾
-		//²¢ÇÒµÈÉ¾³ıÖ´ĞĞ½áÊøºóÔÙ»Ø¸´ ¹ºÂò³É¹¦
-		//·ñÔò»áÓĞÉ¾³ıÓï¾äÑÓ³Ù¹ı³¤Ôì³ÉµÄÍ³Ò»ÎïÆ··´¸´±»ÂòµÄÒş»¼
+		//å¿…é¡»å…ˆ é€‰ å† åˆ 
+		//å¹¶ä¸”ç­‰åˆ é™¤æ‰§è¡Œç»“æŸåå†å›å¤ è´­ä¹°æˆåŠŸ
+		//å¦åˆ™ä¼šæœ‰åˆ é™¤è¯­å¥å»¶è¿Ÿè¿‡é•¿é€ æˆçš„ç»Ÿä¸€ç‰©å“åå¤è¢«ä¹°çš„éšæ‚£
 
 		if (result.query.data_select.row_count < 1
 			|| result.query.data_select.row_size != sizeof(s_auction_info))
 		{
-			//Ïàµ±ÓÚ¹ºÂòÊ§°Ü
+			//ç›¸å½“äºè´­ä¹°å¤±è´¥
 			dp2ws_auction_find_buy_target_end msg;
 			msg.role_guid = role_guid;
 			msg.item_guid = item_guid;

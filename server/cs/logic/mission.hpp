@@ -1,8 +1,8 @@
 /********************************************************************
-created: 2016Äê5ÔÂ5ÈÕ11:14:26
+created: 2016å¹´5æœˆ5æ—¥11:14:26
 file base: mission
-author: ÕÅÓîÏè
-purpose: µ¥¸öÈÎÎñ
+author: å¼ å®‡ç¿”
+purpose: å•ä¸ªä»»åŠ¡
 *********************************************************************/
 #ifndef _MISSION_HPP_
 #define _MISSION_HPP_
@@ -26,8 +26,8 @@ namespace faith
 		void				clear_data();
 		void				init_mission_by_template(int32 mission_id, int32 mission_slot, player* player_ptr);
 		void				init_mission_by_info(s_mission_info mission_info, player* player_ptr);
-		bool				accept_mission();//½ÓÈÎÎñ
-		int32				finish_mission(int32 npc_id,e_mission_finish_type finish_type = e_mission_finish_type_normal);//Íê³É·¢Ç®
+		bool				accept_mission();//æ¥ä»»åŠ¡
+		int32				finish_mission(int32 npc_id,e_mission_finish_type finish_type = e_mission_finish_type_normal);//å®Œæˆå‘é’±
 		int32				finish_pre_proc(int32 finish_type);
 		int32				fill_mission_reward_and_cost_array(std::vector<s_item_template_info>& item_reward_array,
 															std::vector<s_item_template_info>& money_reward_array,
@@ -56,8 +56,8 @@ namespace faith
 	public:
 		void				create_npc();
 		int32				get_mission_id();
-		bool				can_accept_mission();//ÅĞ¶ÏÈÎÎñÊÇ·ñÂú×ã½ÓÈ¡Ìõ¼ş
-		bool				check_mission_state();// ÅĞ¶ÏÄ¿±ê´ï³É¿ÉÒÔÍê³É
+		bool				can_accept_mission();//åˆ¤æ–­ä»»åŠ¡æ˜¯å¦æ»¡è¶³æ¥å–æ¡ä»¶
+		bool				check_mission_state();// åˆ¤æ–­ç›®æ ‡è¾¾æˆå¯ä»¥å®Œæˆ
 		
 		const bool			is_mission_target(const int32 npc_template_id);
 		const int32			get_mission_goal_npc_kill_id(const int32 goal_index = 0);
@@ -65,29 +65,29 @@ namespace faith
 
 		void				check_mission_state_with_aoi_npc();
 
-		//ÈÎÎñ¼ÆÊıÏà¹Ø
+		//ä»»åŠ¡è®¡æ•°ç›¸å…³
 		bool				is_can_check(e_mission_end_type target_type, int32 target_info_0, int32 target_info_1, bool need_send_is_self = true);
 		bool				target_check(e_mission_end_type mission_end_type, int32 target_info_0 = 0, int32 target_info_1 = 0, bool need_send_is_self = true);
-		bool				start_dialog(int32 npc_id);//¶Ô»°
+		bool				start_dialog(int32 npc_id);//å¯¹è¯
 		bool				is_valid(bool is_check_state = true);
 		bool				marry_mission_can_check();
 
-		//ÈÎÎñ×Ô¼º¿É¼û¹Ö
+		//ä»»åŠ¡è‡ªå·±å¯è§æ€ª
 		void				check_self_see_npc();
 		bool				is_can_see_npc_guid(guid_64 npc_guid);
 	private:
-		// ÈÎÎñÄ¿±êÏà¹ØµÄ¹¦ÄÜ
+		// ä»»åŠ¡ç›®æ ‡ç›¸å…³çš„åŠŸèƒ½
 		bool				is_valid_goal_index(const int32 goal_index);
-		const int32			get_goal_index(const int32 killed_npc_template_id); // ¼ì²éÉ±µôµÄNPCÊÇ·ñÊÇ·ûºÏÍê³ÉÈÎÎñÄ¿±êµÄNPC
+		const int32			get_goal_index(const int32 killed_npc_template_id); // æ£€æŸ¥æ€æ‰çš„NPCæ˜¯å¦æ˜¯ç¬¦åˆå®Œæˆä»»åŠ¡ç›®æ ‡çš„NPC
 		void				set_cur_mission_goal_num(const int32 goal_index, const int32 value);
 		int32				get_cur_mission_goal_num(const int32 goal_index);
 
 		int32				get_cur_reached_num(int32 target_info_0, int32 target_info_1);
 		int32				get_target_num();
 	private:
-		bool				is_mission_goal_finish(const std::vector<int32>& template_goal_arr); // ¼ì²éÊÇ·ñÈÎÎñÄ¿±êÊÇ·ñÍê³É
+		bool				is_mission_goal_finish(const std::vector<int32>& template_goal_arr); // æ£€æŸ¥æ˜¯å¦ä»»åŠ¡ç›®æ ‡æ˜¯å¦å®Œæˆ
 
-		// ÈÎÎñ¶¯Ì¬Ë¢NPCÏà¹Ø
+		// ä»»åŠ¡åŠ¨æ€åˆ·NPCç›¸å…³
 		bool				exist_mission_create_npc_by_unit_index(const int32 npc_unit_array_index);
 		bool				exist_mission_create_npc_by_id(const int32 npc_template_id);
 		bool				exist_mission_create_npc_by_goal_index(const int32 goal_index);

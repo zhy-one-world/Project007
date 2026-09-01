@@ -40,7 +40,7 @@ namespace faith
 
 	void cloud_shop_mgr::load_cloud_shop_players_info()
 	{
-		//´ÓÊý¾Ý¿â»ñÈ¡Íæ¼Ò¹ØÓÚ´Ë»î¶¯µÄÊý¾Ý
+		//ä»Žæ•°æ®åº“èŽ·å–çŽ©å®¶å…³äºŽæ­¤æ´»åŠ¨çš„æ•°æ®
 		ws2dp_load_cloud_shop_players_info req_roles;
 		ws_client::getInstance().send_to_dp(&req_roles, sizeof(req_roles));
 	}
@@ -133,7 +133,7 @@ namespace faith
 			return;
 		}
 
-		//¿ª¿ç·þºóÖ»´æÔÚ¿ç·þÔÆ¹º ²»×ßÔ­Âß¼­
+		//å¼€è·¨æœåŽåªå­˜åœ¨è·¨æœäº‘è´­ ä¸èµ°åŽŸé€»è¾‘
 		if (world_server::getInstance().get_cross_id() > 0)
 		{
 			ws2gws_send_bug_cloud cross_msg;
@@ -203,7 +203,7 @@ namespace faith
 				return;
 			}
 
-			//ËãÇ®
+			//ç®—é’±
 			int32 need_cost_money_value = 0;
 			int32 need_cost_money_type = -1;
 			cloud_shop_ite->second[player_uid].role_guid = player_uid;
@@ -223,7 +223,7 @@ namespace faith
 				return;
 			}
 
-			//ÓÐ±ØÒª½øÐÐ¶þ´ÎÅÐ¶Ï
+			//æœ‰å¿…è¦è¿›è¡ŒäºŒæ¬¡åˆ¤æ–­
 			if (get_left_count(activity_type) > 0)
 			{
 				cur_cloud_shop_activity.add_activity_info(e_time_limit_ws_act_info_schedule, 1);
@@ -252,7 +252,7 @@ namespace faith
 				final_error_id = e_cloud_shop_communicate_error_define_not_enough_product;
 			}
 
-			//Èç¹û·¢ÏÖÒÑÂòÓÖÊýÁ¿ÂúÁË£¬ÕâÊ±Í¨¹ýÓÊ¼þÍË»ØÏûºÄ×êÊ¯
+			//å¦‚æžœå‘çŽ°å·²ä¹°åˆæ•°é‡æ»¡äº†ï¼Œè¿™æ—¶é€šè¿‡é‚®ä»¶é€€å›žæ¶ˆè€—é’»çŸ³
 			if (final_error_id != e_cloud_shop_communicate_error_define_no_error)
 			{
 				std::string mail_title = globle_data::get_instance().get_mail_common_text_id(e_mail_common_text_cloud_shop_big_buy_failed_title);
@@ -648,7 +648,7 @@ namespace faith
 			{
 				guid_64 player_guid = cloud_shop_calc_player[*big_reward_random_list_ite];
 				auto player_data_ptr = cloud_shop_ite->second.find(player_guid);
-				if (player_data_ptr != cloud_shop_ite->second.end() && rewards_array.size() > (player_data_ptr->second.get_data(e_cloud_shop_role_info_class_type) - 1) * 4 + 2)//ÓÃÐèÒªÓÃµ½µÄ×î´ó³¤¶ÈÅÐ¿Õ
+				if (player_data_ptr != cloud_shop_ite->second.end() && rewards_array.size() > (player_data_ptr->second.get_data(e_cloud_shop_role_info_class_type) - 1) * 4 + 2)//ç”¨éœ€è¦ç”¨åˆ°çš„æœ€å¤§é•¿åº¦åˆ¤ç©º
 				{
 					cloud_shop_big_reward_content player_content;
 					player_content.role_guid = player_guid;
@@ -696,7 +696,7 @@ namespace faith
 
 		cloud_shop_big_rewards big_reward_player_vec = calc_big_reward(activity_type, time_limit_act_branch_temp.ParamArr3[1], basic_reward_num, time_limit_act_branch_temp.ParamArr2);
 			
-		//±£µ×½±Àø
+		//ä¿åº•å¥–åŠ±
 		for (auto iter = cloud_shop_ite->second.begin(); iter != cloud_shop_ite->second.end(); iter++)
 		{
 			guid_64 player_guid = iter->second.role_guid;
@@ -721,7 +721,7 @@ namespace faith
 			}
 		}	
 		
-		//´ó½±
+		//å¤§å¥–
 		for (int32 i = 0; i < big_reward_player_vec.size(); i++)
 		{
 			guid_64 player_guid = big_reward_player_vec[i].role_guid;

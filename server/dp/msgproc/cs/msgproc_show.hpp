@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2016Äê9ÔÂ8ÈÕ11:18:14
+	created:	2016å¹´9æœˆ8æ—¥11:18:14
 	file base:	msgproc_show
 	file ext:	hpp
 	author:		lxy
@@ -13,7 +13,7 @@
 
 namespace faith
 {
-	//½ÇÉ«ÏÔÊ¾£¨×øÆï³á°ò¿ì½İÕÙ»½É¶µÄ£©
+	//è§’è‰²æ˜¾ç¤ºï¼ˆåéª‘ç¿…è†€å¿«æ·å¬å”¤å•¥çš„ï¼‰
 	void cs2dp_req_load_char_show(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index);
 	void cs2dp_req_load_char_show_end(db_result_type result, uint32 connindex, const guid_64& role_guid, const int32& unit_array_index);
 	void cs2dp_req_save_char_show(uint32 connindex, const void* data_ptr, size_t data_len);

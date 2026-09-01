@@ -1,5 +1,5 @@
 /********************************************************************
-created:	2016Äê1ÔÂ4ÈÕ17:26:07
+created:	2016å¹´1æœˆ4æ—¥17:26:07
 file base:	aoi_set_h
 file ext:	h
 author:		zhy
@@ -23,37 +23,37 @@ namespace faith
 	public:
 		bool create_aoi(int32 begin_x, int32 end_x, int32 begin_y, int32 end_y, int32 tower_width, int32 tower_length);
 	public:
-		//»ñµÃÄ³¸ö×ø±êËùÓĞ¿É¼ûÎïÌå
+		//è·å¾—æŸä¸ªåæ ‡æ‰€æœ‰å¯è§ç‰©ä½“
 		void get_unit_all(const fvector& unit_location, int32* unit_array, int32& watch_array_num);
-		//»ñµÃÒÆ„Óß^ááµÄ¹Û²ì×Å
+		//è·å¾—ç§»å‹•éå¾Œçš„è§‚å¯Ÿç€
 		const unit_index_map& get_watcher_all(const fvector& map_pos);
 		void get_watcher_by_type(const fvector& map_pos_old, const fvector& map_pos_new, e_aoi_move_type move_type, int32* unit_ary, int32& watch_array_num);
 	public:
-		//°ÑÎïÌåÌí¼Óµ½aoi¹ÜÀíÖĞ
+		//æŠŠç‰©ä½“æ·»åŠ åˆ°aoiç®¡ç†ä¸­
 		bool add_object(const fvector& unit_location, const int32 unit_index);
-		//°ÑÎïÌå´Óaoi¹ÜÀíÖĞÉ¾³ı
+		//æŠŠç‰©ä½“ä»aoiç®¡ç†ä¸­åˆ é™¤
 		bool remove_object(const fvector& unit_location, const int32 unit_index, bool is_dead);
-		//¸üĞÂÎïÌåaoi×´Ì¬
+		//æ›´æ–°ç‰©ä½“aoiçŠ¶æ€
 		bool update_object(const fvector& map_pos_old, const fvector& map_pos_new, const int32& unit_index);
 	private:
-		//¼ì²â½ÇÉ«µÄ×ø±êÊÇ·ñ³¬³öÁËµØÍ¼·¶Î§
+		//æ£€æµ‹è§’è‰²çš„åæ ‡æ˜¯å¦è¶…å‡ºäº†åœ°å›¾èŒƒå›´
 		const bool check_pos(const fvector& unit_location) const;
-		//°Ñ½ÇÉ«µÄÊÀ½ç×ø±ê×ª»»³ÉÏà¶Ô×ø±ê
+		//æŠŠè§’è‰²çš„ä¸–ç•Œåæ ‡è½¬æ¢æˆç›¸å¯¹åæ ‡
 		const void trans_pos(const fvector& unit_location, s_tower_pos& tower_pos) const;
 		void get_pos_limit(const s_tower_pos& map_pos, s_tower_pos* result);
 		void get_pos_limit(const s_tower_pos& map_pos_old, const s_tower_pos& map_pos_new, e_aoi_move_type move_type, s_tower_pos* result);
 		std::shared_ptr<aoi_tower> get_tower(const s_tower_pos& tower_pos);
 	private:
-		s_tower_pos						m_tower_pos_max;	//tower×î´óµÄ³¤ºÍ¿í
-		std::unordered_map<int32, std::unordered_map<int32, std::shared_ptr<aoi_tower>>> m_aoi_tower_array;//ËùÓĞµÄtower¹ÜÀí
-		int32							m_map_begin_x;	//µØÍ¼µÄ¿ªÊ¼µÄx
-		int32							m_map_end_x;	//µØÍ¼µÄ½áÊøµÄx
-		int32							m_map_begin_y;	//µØÍ¼µÄ¿ªÊ¼µÄy
-		int32							m_map_end_y;	//µØÍ¼µÄ½áÊøµÄy
-		int32							m_tower_width;	//¸ñ×Ó¿í¶È
-		int32							m_tower_length;	//¸ñ×Ó³¤¶È
-		s_tower_pos						m_tower_array[AOI_SEE_TOWER_NUM];//«@È¡Íæ¼Ò¿ÉÒŠ¸ñ×Ó”µ
-		s_tower_pos						m_tower_num[2];//¸ñ×ÓµÄÖÜéL
+		s_tower_pos						m_tower_pos_max;	//toweræœ€å¤§çš„é•¿å’Œå®½
+		std::unordered_map<int32, std::unordered_map<int32, std::shared_ptr<aoi_tower>>> m_aoi_tower_array;//æ‰€æœ‰çš„towerç®¡ç†
+		int32							m_map_begin_x;	//åœ°å›¾çš„å¼€å§‹çš„x
+		int32							m_map_end_x;	//åœ°å›¾çš„ç»“æŸçš„x
+		int32							m_map_begin_y;	//åœ°å›¾çš„å¼€å§‹çš„y
+		int32							m_map_end_y;	//åœ°å›¾çš„ç»“æŸçš„y
+		int32							m_tower_width;	//æ ¼å­å®½åº¦
+		int32							m_tower_length;	//æ ¼å­é•¿åº¦
+		s_tower_pos						m_tower_array[AOI_SEE_TOWER_NUM];//ç²å–ç©å®¶å¯è¦‹æ ¼å­æ•¸
+		s_tower_pos						m_tower_num[2];//æ ¼å­çš„å‘¨é•·
 		unit_index_map					m_empty_map;
 	};
 }

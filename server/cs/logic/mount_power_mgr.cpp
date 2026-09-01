@@ -1,4 +1,4 @@
-#include "mount_power_mgr.h"
+ï»¿#include "mount_power_mgr.h"
 #include "mount_power_def.h"
 #include "logic/unit_man.h"
 #include "logic/player.hpp"
@@ -133,7 +133,6 @@ namespace faith
 
 		////item_system::cost_item_from_bag(&player_ref.get_item_set().del_item(e_server_log_del_item_mount_equip_off, 0, d_item_ptr, 1);
 
-		//
 		//set_core_is_active(s_item_ptr);
 
 		//player_ref.get_item_set().send_item_one(s_item_ptr, true);
@@ -216,7 +215,7 @@ namespace faith
 		}
 
 		MountEquipTemplate *mount_equ_main_ptr = get_mount_equ_template_by_mount_id(mount_config_ptr->PowerID);
-		if (mount_equ_main_ptr == nullptr || mount_equ_main_ptr->SkillType == 0)   //ÎÞºËÐÄ¼¼ÄÜ
+		if (mount_equ_main_ptr == nullptr || mount_equ_main_ptr->SkillType == 0)   //æ— æ ¸å¿ƒæŠ€èƒ½
 		{
 			return;
 		}
@@ -258,7 +257,7 @@ namespace faith
 			{
 				return;
 			}
-			item_ptr->set_data_info(e_item_info(e_item_info_succinct_level), 1); // ¸ø¿Í»§¶Ë
+			item_ptr->set_data_info(e_item_info(e_item_info_succinct_level), 1); // ç»™å®¢æˆ·ç«¯
 
 			player_ref.get_passive_skill().passive_skill_special(mount_equ_main_ptr->SkillId, true);
 

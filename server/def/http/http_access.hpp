@@ -24,9 +24,9 @@ namespace faith
 		void clear_data();
 		int64 async_request(xstring& sdk_url, std::vector<xstring>& head_list, const xstring& params, http_accessor::result_handler_type handler, e_http_request_type request_type);
 		void on_http_access_result(
-			int http_error_code,		// ÓÉ HttpAccessorCodeÖĞ Ã¶¾ÙÖµ¶¨Òå
+			int http_error_code,		// ç”± HttpAccessorCodeä¸­ æšä¸¾å€¼å®šä¹‰
 			const std::string& http_error_info,
-			const std::string& http_result			// htmlÔ´ÎÄ¼ş£¬Ïàµ±ÓÚascii±àÂë´®¡££¨unicode/ansi°æ±¾£©
+			const std::string& http_result			// htmlæºæ–‡ä»¶ï¼Œç›¸å½“äºasciiç¼–ç ä¸²ã€‚ï¼ˆunicode/ansiç‰ˆæœ¬ï¼‰
 		);
 	public:
 		ui64									m_uid;

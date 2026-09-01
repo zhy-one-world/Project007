@@ -1,4 +1,4 @@
-/********************************************************************
+ï»¿/********************************************************************
 	created:	2014/08/07
 	created:	7:8:2014   14:57
 	file base:	client_session_mgr
@@ -186,7 +186,7 @@ namespace faith
 		}
 		remove_session(client_session_ptr->get_array_index());
 	}
-	//	ÎÞÌõ¼þµÄ£¬±£´æ¡¢Çå³ý´ËÍæ¼ÒÔÚÕû¸öÓÎÏ··þÎñÆ÷×éÄÚµÄËùÓÐÊý¾Ý
+	//	æ— æ¡ä»¶çš„ï¼Œä¿å­˜ã€æ¸…é™¤æ­¤çŽ©å®¶åœ¨æ•´ä¸ªæ¸¸æˆæœåŠ¡å™¨ç»„å†…çš„æ‰€æœ‰æ•°æ®
 	void client_session_mgr::logout_client(client_session* client_session_ptr)
 	{
 		if( !client_session_ptr )
@@ -238,21 +238,21 @@ namespace faith
 		guid_64 role_guid = client_session_ptr->get_role_guid();
 		cs_map_mgr_system::remove_unit_from_map(map_guid, role_guid);
 
-		//´Ó´ø½á»éÁÐ±íÖÐÉ¾³ý
+		//ä»Žå¸¦ç»“å©šåˆ—è¡¨ä¸­åˆ é™¤
 		marry_mgr_ws::get_instance().session_offline_marry_handle(role_guid);
-		// Íæ¼ÒÏÂÏßµÄÊ±ºòÒªÍ¨Öª¶ÓÎé
+		// çŽ©å®¶ä¸‹çº¿çš„æ—¶å€™è¦é€šçŸ¥é˜Ÿä¼
 		team_ws_mgr::get_instance().on_player_logout(client_session_ptr);
 
 		assist_fight_mgr::get_instance().on_player_logout(role_guid);
 
-		// Íæ¼ÒÏÂÏßÊ±ºòÒª°Ñ¾üÍÅÖÐµÄÔÚÏß×´Ì¬ÖÃÎªÀëÏß
+		// çŽ©å®¶ä¸‹çº¿æ—¶å€™è¦æŠŠå†›å›¢ä¸­çš„åœ¨çº¿çŠ¶æ€ç½®ä¸ºç¦»çº¿
 		legion_ws* legion_ws_ptr = legion_ws_mgr::get_instance().get_unit_legion(role_guid);
 		if (nullptr != legion_ws_ptr)
 		{
 			legion_ws_ptr->on_legion_member_logout(client_session_ptr);
 		}
 
-		//Íæ¼ÒÏÂÏßÊ±ºò±£´æÍæ¼ÒºÃÓÑÁÐ±í
+		//çŽ©å®¶ä¸‹çº¿æ—¶å€™ä¿å­˜çŽ©å®¶å¥½å‹åˆ—è¡¨
 		client_session_ptr->get_relation_list_mgr().save_relation_to_db(false);
 		remove_session(client_session_ptr->m_client_uid);
 	}
@@ -265,12 +265,12 @@ namespace faith
 			CONSOLE_ERROR("packet is nullptr");
 			return;
 		}
-		// ´´½¨session
+		// åˆ›å»ºsession
 		client_session *  client_session_ptr = get_empty_session();
 		if(client_session_ptr == NULL)
 		{
 			CONSOLE_ERROR("get empty session fail");
-			//·¢ËÍ´íÎóÏûÏ¢µ½FEP
+			//å‘é€é”™è¯¯æ¶ˆæ¯åˆ°FEP
 			ws2fep_client_logined rep;
 			rep.client_uid = packet->client_uid;
 			rep.login_type = packet->login_type;
@@ -333,7 +333,7 @@ namespace faith
 
 			for (auto ite = m_cross_player_legion_info_map.begin(); ite != m_cross_player_legion_info_map.end(); )
 			{
-				// tickÀï¿ÉÄÜÉ¾µô ÒªÓÃÕâÖÖ·½Ê½·ÀÖ¹µü´úÆ÷Ê§Ð§
+				// tické‡Œå¯èƒ½åˆ æŽ‰ è¦ç”¨è¿™ç§æ–¹å¼é˜²æ­¢è¿­ä»£å™¨å¤±æ•ˆ
 				auto  temp_it = ite++;
 				if (temp_it->second.save_time_stamp + cross_server_player_legion_save_time <= time_helper::get_cur_time_new().second)
 				{
@@ -667,7 +667,6 @@ namespace faith
 			{
 				continue;
 			}
-			// 
 			client_session_ref.get_relation_list_mgr().change_player_name_func(role_guid, role_name);
 		}
 	}

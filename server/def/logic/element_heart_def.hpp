@@ -3,7 +3,7 @@
 created: 2016/07/04
 file base: element_heart_def
 file ext: hpp
-author: ÕÅÓîÏè
+author: å¼ å®‡ç¿”
 
 purpose:
 *********************************************************************/
@@ -18,26 +18,26 @@ purpose:
 namespace faith
 {
 #pragma pack(push,1)
-#define			FIRST_ELEMENT_HEART_DROP_GROUP				55000001										//³õÊ¼ÔªËØÖ®ĞÄ³éÈ¡×éid
-#define         FIRST_ELEMENT_HEART_LUCKY_DRAW				55000100										//ÔªËØÖ®ĞÄÊ×´Î³éÈ¡±ØµÃ·ûÎÄ
-#define			SUMMON_ELEMNT_HEART_GROUP_LEVEL				3												//ÕÙ»½³éÈ¡×éµ½´ïµÄµÈ¼¶
+#define			FIRST_ELEMENT_HEART_DROP_GROUP				55000001										//åˆå§‹å…ƒç´ ä¹‹å¿ƒæŠ½å–ç»„id
+#define         FIRST_ELEMENT_HEART_LUCKY_DRAW				55000100										//å…ƒç´ ä¹‹å¿ƒé¦–æ¬¡æŠ½å–å¿…å¾—ç¬¦æ–‡
+#define			SUMMON_ELEMNT_HEART_GROUP_LEVEL				3												//å¬å”¤æŠ½å–ç»„åˆ°è¾¾çš„ç­‰çº§
 
 	const int32 elemnt_heart_max_group_level = 4;
-	const int32 elemnt_heart_orange_level = 5;	// ³ÈÉ«ÔªËØÖ®ĞÄ
+	const int32 elemnt_heart_orange_level = 5;	// æ©™è‰²å…ƒç´ ä¹‹å¿ƒ
 
 	//enum e_element_heart_operate_type
 	//{
-	//	eehot_get_one,//³éÈ¡1¸ö
-	//	eehot_get_ten,//³éÈ¡10¸ö
-	//	eehot_add_exp,//ÔªËØÖ®ĞÄÉı¼¶
-	//	eehot_equip_on,//ÔªËØÖ®ĞÄ×°±¸
-	//	eehot_equip_off,//ÔªËØÖ®ĞÄĞ¶ÏÂ
-	//	eehot_summon,//ÕÙ»½
-	//	eehot_tidy,//ÕûÀí
+	//	eehot_get_one,//æŠ½å–1ä¸ª
+	//	eehot_get_ten,//æŠ½å–10ä¸ª
+	//	eehot_add_exp,//å…ƒç´ ä¹‹å¿ƒå‡çº§
+	//	eehot_equip_on,//å…ƒç´ ä¹‹å¿ƒè£…å¤‡
+	//	eehot_equip_off,//å…ƒç´ ä¹‹å¿ƒå¸ä¸‹
+	//	eehot_summon,//å¬å”¤
+	//	eehot_tidy,//æ•´ç†
 	//};
 	enum e_element_heart_quality_levels
 	{
-		e_element_heart_quality_level_0,	//ÔªËØ²ĞÔü
+		e_element_heart_quality_level_0,	//å…ƒç´ æ®‹æ¸£
 		e_element_heart_quality_level_1,
 		e_element_heart_quality_level_2,
 		e_element_heart_quality_level_3,

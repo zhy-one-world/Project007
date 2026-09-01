@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2019Äê10ÔÂ15ÈÕ
+created: 2019å¹´10æœˆ15æ—¥
 file base: legion_dance_def
 file ext: hpp
 author: zhaoyuming
@@ -17,22 +17,22 @@ namespace faith
 
 	enum e_legion_dance_invite_error
 	{
-		e_legion_dance_invite_error_player_info_error,				//Íæ¼ÒĞÅÏ¢´íÎó
-		e_legion_dance_invite_error_not_in_map,						//Íæ¼Ò²»ÔÙ¸ÃµØÍ¼ÖĞ
-		e_legion_dance_invite_error_not_in_game,					//Íæ¼Ò´¦ÓÚÀëÏß×´Ì¬ÏÂ
-		e_legion_dance_invite_error_in_war,							//±»ÑûÇëÍæ¼ÒÔÚÕ½¶·ÖĞ
-		e_legion_dance_invite_error_my_in_war,						//×Ô¼ºÔÚÕ½¶·ÖĞ
-		e_legion_dance_invite_error_target_refuse,					//±»¾Ü¾ø
+		e_legion_dance_invite_error_player_info_error,				//ç©å®¶ä¿¡æ¯é”™è¯¯
+		e_legion_dance_invite_error_not_in_map,						//ç©å®¶ä¸å†è¯¥åœ°å›¾ä¸­
+		e_legion_dance_invite_error_not_in_game,					//ç©å®¶å¤„äºç¦»çº¿çŠ¶æ€ä¸‹
+		e_legion_dance_invite_error_in_war,							//è¢«é‚€è¯·ç©å®¶åœ¨æˆ˜æ–—ä¸­
+		e_legion_dance_invite_error_my_in_war,						//è‡ªå·±åœ¨æˆ˜æ–—ä¸­
+		e_legion_dance_invite_error_target_refuse,					//è¢«æ‹’ç»
 	};
 
 	enum e_legion_dance_accept_error
 	{
-		e_legion_dance_accept_error_player_info_error,				//Íæ¼ÒĞÅÏ¢´íÎó
-		e_legion_dance_accept_error_not_in_map,						//Íæ¼Ò²»ÔÙ¸ÃµØÍ¼ÖĞ
-		e_legion_dance_accept_error_not_in_game,					//Íæ¼Ò´¦ÓÚÀëÏß×´Ì¬ÏÂ
-		e_legion_dance_accept_error_in_war,							//ÑûÇëÍæ¼ÒÔÚÕ½¶·ÖĞ
-		e_legion_dance_accept_error_my_in_war,						//×Ô¼ºÔÚÕ½¶·ÖĞ
-		e_legion_dance_accept_error_in_interactive,					//Íæ¼ÒÕıÔÚ½»»¥×´Ì¬ÏÂ						
+		e_legion_dance_accept_error_player_info_error,				//ç©å®¶ä¿¡æ¯é”™è¯¯
+		e_legion_dance_accept_error_not_in_map,						//ç©å®¶ä¸å†è¯¥åœ°å›¾ä¸­
+		e_legion_dance_accept_error_not_in_game,					//ç©å®¶å¤„äºç¦»çº¿çŠ¶æ€ä¸‹
+		e_legion_dance_accept_error_in_war,							//é‚€è¯·ç©å®¶åœ¨æˆ˜æ–—ä¸­
+		e_legion_dance_accept_error_my_in_war,						//è‡ªå·±åœ¨æˆ˜æ–—ä¸­
+		e_legion_dance_accept_error_in_interactive,					//ç©å®¶æ­£åœ¨äº¤äº’çŠ¶æ€ä¸‹						
 	};
 
 #pragma pack(pop)

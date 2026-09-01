@@ -1,4 +1,4 @@
-/********************************************************************
+ï»¿/********************************************************************
 	created:	2010/03/01
 	created:	1:3:2010   14:28
 	filename: 	
@@ -50,17 +50,17 @@ namespace faith
 	#define FUN_SUB_DELIMITER		'-'
 	const int32 buff_guid_owner_up = npc_arrary_index_begin * 10;
 
-	const int32 transfer_buff_id = 10990011;			// ´«ËÍÖĞbuffÌØĞ§
-	const int32 transfer_finish_buff_id = 10130015;		// ´«ËÍºó½øÈë³¡¾°buffÌØĞ§
+	const int32 transfer_buff_id = 10990011;			// ä¼ é€ä¸­buffç‰¹æ•ˆ
+	const int32 transfer_finish_buff_id = 10130015;		// ä¼ é€åè¿›å…¥åœºæ™¯buffç‰¹æ•ˆ
 
-	const int32 one_half_exp_buff_id = 10010035;		// 1.5±¶¾­Ñébuff
-	const int32 double_exp_buff_id = 10010014;			// Ë«±¶¾­Ñébuff
-	const int32 treble_exp_buff_id = 10010015;			// Èı±¶¾­Ñébuff
-	const int32 first_exp_buff_id = 10010039;			// Ê×´Î¾­Ñé¸±±¾¾­Ñébuff
+	const int32 one_half_exp_buff_id = 10010035;		// 1.5å€ç»éªŒbuff
+	const int32 double_exp_buff_id = 10010014;			// åŒå€ç»éªŒbuff
+	const int32 treble_exp_buff_id = 10010015;			// ä¸‰å€ç»éªŒbuff
+	const int32 first_exp_buff_id = 10010039;			// é¦–æ¬¡ç»éªŒå‰¯æœ¬ç»éªŒbuff
 
 
-	const int32 item_upgrade_default_start_id = 41000001;							// Ç¿»¯±íÆğÊ¼ID
-	const int32 item_addon_default_start_id = 42000001;								// ×·¼Ó±íÆğÊ¼ID
+	const int32 item_upgrade_default_start_id = 41000001;							// å¼ºåŒ–è¡¨èµ·å§‹ID
+	const int32 item_addon_default_start_id = 42000001;								// è¿½åŠ è¡¨èµ·å§‹ID
 
 	const int32 weapon_upgrade_buff_series = 221100;
 	const int32 equip_upgrade_buff_series = 231101;
@@ -83,14 +83,14 @@ namespace faith
 
 	const int32 passive_skill_start = 26000000;
 	const int32 passive_skill_end = 26999999;
-	const int32 passive_skill_zlzz_id = 26020808; // ÕæÀíÖ®ÖÎ
-	const int32 sepc_skill_snow_id = 13029071;   // ·¨Ê¦±©·çÑ©
-	const int32 sepc_skill_fire_id = 13029021;  //  ·¨Ê¦»ğÓê
-	const int32 sepc_skill_range = 500 + 600;  //¼¼ÄÜ·¶Î§
-	const int32 sepc_skill_muti_id = 13018071; //Õ½Ê¿¾µÏñ
-	const int32 sepc_skill_mirror_id = 13048111; //´Ì¿Í»ó»Ã
+	const int32 passive_skill_zlzz_id = 26020808; // çœŸç†ä¹‹æ²»
+	const int32 sepc_skill_snow_id = 13029071;   // æ³•å¸ˆæš´é£é›ª
+	const int32 sepc_skill_fire_id = 13029021;  //  æ³•å¸ˆç«é›¨
+	const int32 sepc_skill_range = 500 + 600;  //æŠ€èƒ½èŒƒå›´
+	const int32 sepc_skill_muti_id = 13018071; //æˆ˜å£«é•œåƒ
+	const int32 sepc_skill_mirror_id = 13048111; //åˆºå®¢æƒ‘å¹»
 	const int32 jump_time_limit = 3000; 
-	const int32 skill_back_distance = 200; //¼¼ÄÜÀ­»Ø¾àÀëÆ«ÒÆ
+	const int32 skill_back_distance = 200; //æŠ€èƒ½æ‹‰å›è·ç¦»åç§»
 
 	const int32 max_rune_type = 16;
 	const int32 rune_buff_buff_series_array[max_rune_type] = { 
@@ -113,25 +113,25 @@ namespace faith
 	};
 	enum e_buff_type
 	{
-		e_buff_type_nomal,//ÆÕÍ¨buff
-		e_buff_type_frizing,//ÕıÃæbuff
-		e_buff_type_negative,//¸ºÃæbuff
+		e_buff_type_nomal,//æ™®é€šbuff
+		e_buff_type_frizing,//æ­£é¢buff
+		e_buff_type_negative,//è´Ÿé¢buff
 		e_buff_type_max,
 	};
 	enum e_buff_save_type
 	{
-		e_buff_svt_not_load, //±£´æµ«²»¼ÓÔØ
-		e_buff_svt_save_load, //±£´æÒ²¼ÓÔØ
-		e_buff_svt_not_save, //²»±£´æ
+		e_buff_svt_not_load, //ä¿å­˜ä½†ä¸åŠ è½½
+		e_buff_svt_save_load, //ä¿å­˜ä¹ŸåŠ è½½
+		e_buff_svt_not_save, //ä¸ä¿å­˜
 	};
 
 	enum
 	{
 		buff_ret_false		=	0x0,
 		buff_ret_true		=	0x1,
-		buff_ret_keep		=	0x2,//buff¼ÌĞø±£³Ö
-		buff_ret_del_pile	=	0x4,//buff¼õÉÙÒ»²ãµş¼Ó
-		buff_ret_kill		=	0x8,//buffÉ¾³ı
+		buff_ret_keep		=	0x2,//buffç»§ç»­ä¿æŒ
+		buff_ret_del_pile	=	0x4,//buffå‡å°‘ä¸€å±‚å åŠ 
+		buff_ret_kill		=	0x8,//buffåˆ é™¤
 	};
 
 	enum
@@ -155,30 +155,30 @@ namespace faith
 
 	enum e_buff_event_type
 	{
-		using_item,				//Ê¹ÓÃÎïÆ·
-		using_skill,			//Ê¹ÓÃ¼¼ÄÜ
-		replace_equip,			//¸ü»»×°±¸
-		buff_disappear,			//buffÏûÊ§Ê±
-		buff_appear,			//buff³öÏÖÊ±
-		target_move,			//¶ÔÏóÒÆ¶¯
-		skill_operate_self,		//Ö¸¶¨ÏµÁĞ¼¼ÄÜ×÷ÓÃÓÚ´ËÄ¿±êÊ±
-		skill_self_release,		//´ËÄ¿±êÊ©·ÅÖ¸¶¨ÖÖÀà¼¼ÄÜÊ±
-		using_emote,			//Ê¹ÓÃÀñÒÇ±íÇé¶¯×÷
-		target_block,			//Ä¿±ê¸ñµ²
-		target_miss,			//Ä¿±ê¶ãÉÁ
-		target_beblock,			//Ä¿±êbei¸ñµ²
-		target_bemiss,			//Ä¿±ê¶ãÉÁ
-		target_critical,		//Ä¿±ê±©»÷
-		target_becritical,		//Ä¿±ê±»±©»÷
-		target_attchange,		//ÊôĞÔ±ä»¯
-		target_immunitydamage,	//Ä¿±êÃâÒßÉËº¦
-		target_beimmunitydamage,//Ä¿±êÃâÒßÉËº¦
-		target_damage,			//Ä¿±êÉËº¦
-		target_bedamage,		//Ä¿±ê±»ÉËº¦
-		killtarget,				//É±ËÀÄ¿±ê
-		changeweapon,			//»»ÎäÆ÷
-		costmp,					//ÏûºÄmp
-		curein,					//±»ÖÎÁÆÊ±
+		using_item,				//ä½¿ç”¨ç‰©å“
+		using_skill,			//ä½¿ç”¨æŠ€èƒ½
+		replace_equip,			//æ›´æ¢è£…å¤‡
+		buff_disappear,			//buffæ¶ˆå¤±æ—¶
+		buff_appear,			//buffå‡ºç°æ—¶
+		target_move,			//å¯¹è±¡ç§»åŠ¨
+		skill_operate_self,		//æŒ‡å®šç³»åˆ—æŠ€èƒ½ä½œç”¨äºæ­¤ç›®æ ‡æ—¶
+		skill_self_release,		//æ­¤ç›®æ ‡æ–½æ”¾æŒ‡å®šç§ç±»æŠ€èƒ½æ—¶
+		using_emote,			//ä½¿ç”¨ç¤¼ä»ªè¡¨æƒ…åŠ¨ä½œ
+		target_block,			//ç›®æ ‡æ ¼æŒ¡
+		target_miss,			//ç›®æ ‡èº²é—ª
+		target_beblock,			//ç›®æ ‡beiæ ¼æŒ¡
+		target_bemiss,			//ç›®æ ‡èº²é—ª
+		target_critical,		//ç›®æ ‡æš´å‡»
+		target_becritical,		//ç›®æ ‡è¢«æš´å‡»
+		target_attchange,		//å±æ€§å˜åŒ–
+		target_immunitydamage,	//ç›®æ ‡å…ç–«ä¼¤å®³
+		target_beimmunitydamage,//ç›®æ ‡å…ç–«ä¼¤å®³
+		target_damage,			//ç›®æ ‡ä¼¤å®³
+		target_bedamage,		//ç›®æ ‡è¢«ä¼¤å®³
+		killtarget,				//æ€æ­»ç›®æ ‡
+		changeweapon,			//æ¢æ­¦å™¨
+		costmp,					//æ¶ˆè€—mp
+		curein,					//è¢«æ²»ç–—æ—¶
 		levelup,
 	};
 
@@ -208,14 +208,14 @@ namespace faith
 	};
 	enum EBuffInfo
 	{
-		EBuffInfo_template_id,//buffÄ£°åid
-		EBuffInfo_load_type,//buff¶ÁµµÀàĞÍ
-		EBuffInfo_time,//buffÊ±¼ä
-		EBuffInfo_pile_count,//buff²ã¼¶
-		EBuffInfo_series,//buffµÄÏµ
-		EBuffInfo_skill_template_id,//¼¼ÄÜÄ£°åid
-		EBuffInfo_percent,//¼¼ÄÜ°Ù·Ö±È
-		EBuffInfo_effect_index,//ÌØĞ§ÏÂ±ê
+		EBuffInfo_template_id,//buffæ¨¡æ¿id
+		EBuffInfo_load_type,//buffè¯»æ¡£ç±»å‹
+		EBuffInfo_time,//buffæ—¶é—´
+		EBuffInfo_pile_count,//buffå±‚çº§
+		EBuffInfo_series,//buffçš„ç³»
+		EBuffInfo_skill_template_id,//æŠ€èƒ½æ¨¡æ¿id
+		EBuffInfo_percent,//æŠ€èƒ½ç™¾åˆ†æ¯”
+		EBuffInfo_effect_index,//ç‰¹æ•ˆä¸‹æ ‡
 		EBuffInfo_max
 	};
 	struct s_buff_data
@@ -286,9 +286,9 @@ namespace faith
 	class buff_item;
 
 	/************************************************************************/
-	/*               buff action param¹Ì¶¨²ÎÊı£¨ÅäÖÃ±íÖĞ¹Ì¶¨5ÁĞ£©           */
+	/*               buff action paramå›ºå®šå‚æ•°ï¼ˆé…ç½®è¡¨ä¸­å›ºå®š5åˆ—ï¼‰           */
 	/************************************************************************/
-	struct buff_param //
+	struct buff_param
 	{
 		buff_param( )
 		{
@@ -317,7 +317,7 @@ namespace faith
 	};
 
 	/************************************************************************/
-	/*     buff action paramÄ¬ÈÏ²ÎÊı£¨²»ÔÚÅäÖÃ±íÖĞ±©Â¶£©				    */
+	/*     buff action paramé»˜è®¤å‚æ•°ï¼ˆä¸åœ¨é…ç½®è¡¨ä¸­æš´éœ²ï¼‰				    */
 	/************************************************************************/
 
 	struct buff_ex_env_param

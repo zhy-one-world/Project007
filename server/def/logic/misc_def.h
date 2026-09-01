@@ -14,17 +14,17 @@ purpose:
 namespace faith
 {
 #pragma pack(push,1)
-	const int32 regular_notification_max_count = 1;		//¶¨Ê±ÍÆËÍ×î´ó´ÎÊı
-	const int32	regular_notification_day_num = 3;		//ÍùºóÍÆ¼¸Ìì
-	const float float_type_compare_precision = 0.0001;	//floatÀàĞÍ±È½Ï¾«¶È
-	const int32 sdk_callback_array_max_num = 100;		//sdk»Øµ÷Êı×é´óĞ¡
+	const int32 regular_notification_max_count = 1;		//å®šæ—¶æ¨é€æœ€å¤§æ¬¡æ•°
+	const int32	regular_notification_day_num = 3;		//å¾€åæ¨å‡ å¤©
+	const float float_type_compare_precision = 0.0001;	//floatç±»å‹æ¯”è¾ƒç²¾åº¦
+	const int32 sdk_callback_array_max_num = 100;		//sdkå›è°ƒæ•°ç»„å¤§å°
 
 	enum e_notification_type
 	{
-		e_notification_type_regular,		//¶¨Ê±ÍÆËÍ
-		e_notification_type_activity,		//»î¶¯ÍÆËÍ
-		e_notification_type_offline_time,	//ÏÂÏßÊ±¼äÍÆËÍ
-		e_notification_type_vit_full,		//ÌåÁ¦»ØÂúÍÆËÍ
+		e_notification_type_regular,		//å®šæ—¶æ¨é€
+		e_notification_type_activity,		//æ´»åŠ¨æ¨é€
+		e_notification_type_offline_time,	//ä¸‹çº¿æ—¶é—´æ¨é€
+		e_notification_type_vit_full,		//ä½“åŠ›å›æ»¡æ¨é€
 	};
 
 #pragma pack(pop)

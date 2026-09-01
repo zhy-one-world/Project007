@@ -22,7 +22,7 @@ namespace faith
 		{
 			sdk_url = "https://sbpp.onestore.co.kr/v2/oauth/token";
 		}
-		// 自定义请求头
+		// 鑷畾涔夎姹傚ご
 		xstring url_para = xstring("client_id=") + "com.ulugames.faithkr.onestore";
 		url_para += "&client_secret=0IyDZGyaFSwtolft0cz6gZyOnzvQ9Nf34y4/LShie+8=";
 		url_para += "&grant_type=client_credentials";
@@ -31,7 +31,7 @@ namespace faith
 		head_list.push_back("Content-Length:" + init_unit::change_i64_to_string(url_para.size()));
 
 
-		// 异步请求
+		// 寮傛璇锋眰
 		http_access_mgr::get_instance().async_request
 		(
 			recharge_info.role_guid.server_64,
@@ -112,13 +112,13 @@ namespace faith
 		{
 			sdk_url = "https://sbpp.onestore.co.kr";
 		}
-		// 自定义请求头
+		// 鑷畾涔夎姹傚ご
 		xstring url_para = "";
 		sdk_url += "/v2/purchase/details-by-productid/" + recharge_info.goods_token + "/com.ulugames.faithkr.onestore/" + init_unit::change_i64_to_string(recharge_info.goods_id);
 		std::vector<xstring> head_list;
 		head_list.push_back("Authorization:Bearer " + value["access_token"].asString());
 
-		// 异步请求
+		// 寮傛璇锋眰
 		http_access_mgr::get_instance().async_request
 		(
 			recharge_info.role_guid.server_64,

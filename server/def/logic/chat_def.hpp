@@ -3,7 +3,7 @@ created: 2016/05/10
 created: 10:5:2016 15:28
 file base: char_def
 file ext: hpp
-author: W.H.B.A.(Íõ»Æ²©°º)
+author: W.H.B.A.(ç‹é»„åšæ˜‚)
 
 purpose:
 *********************************************************************/
@@ -20,21 +20,21 @@ purpose:
 namespace faith
 {
 #pragma pack(push,1)
-	const uint32 globel_message_max_size = 200;											// È«¾Ö¹«¸æ×î´ó×Ö½ÚÊı 100X2
-	const uint32 globel_message_max_show_time = 20;										// Ò»ÌõÈ«¾ÖÌáÊ¾×î´óÏÔÊ¾Ê±¼ä£¬·ÀÖ¹³öÎÊÌâµ¼ÖÂÔÙÒ²²»ÏÔÊ¾ÆäËûNotice
-	const uint32 continued_notice_max_num = 100;										// ×î´ó³ÖĞø¹«¸æÊıÁ¿£¬½²µÀÀí£¬ÓÀÔ¶²»Ó¦¸ÃÓĞÕâÃ´¶à¡­¡­
-	const uint32 chat_max_item = 4;														// Ò»ÌõÁÄÌì´øµÄ×î´óÎïÆ·Êı
-	const uint32 chat_show_max = 30;													// ×î´óÏÔÊ¾ÁÄÌìÌõÊı
-	const uint32 chat_max_word_num = 100;												// ÁÄÌìÎÄ±¾×î´ó×ÖÊı
-	const uint32 utf8_byt_per_chinese_world = 3;										// utf8ÖĞÎÄ±àÂëÃ¿¸ö×Ö×Ö½ÚÊı
-	const uint32 chat_max_chat_size = chat_max_word_num * utf8_byt_per_chinese_world;	// ÁÄÌìÎÄ±¾×î´ó³ß´ç
-	const uint32 chat_max_chat_size_with_hyper_link = chat_max_chat_size + 200;			// ÁÄÌìÎÄ±¾×î´ó³ß´ç£¨º¬³¬Á´½Ó£©
-	const uint32 chat_content_info_max = 4;												// µ¥¸ö×Ö·û×î´ó³¤¶È
-	const uint32 chat_mini_show_num = 5;												// È«ÆµµÀÁÄÌìÊıÁ¿ºÍ
-	const uint32 chat_audio_id_max = 300;												// ÓïÒôid×î´ó³¤¶È
-	const uint32 chat_auto_reply_interval = 30;											// ×Ô¶¯»Ø¸´CD
-	const uint32 chat_offline_num_max = 999;											// ÀëÏßÏûÏ¢×î¶à½ÓÊÕ999Ìõ
-	const uint32 add_friend_success_content_id = 90305232;								// Ìí¼ÓºÃÓÑ³É¹¦ÉêÇë·½ÊÕµ½µÄÄÚÈİid
+	const uint32 globel_message_max_size = 200;											// å…¨å±€å…¬å‘Šæœ€å¤§å­—èŠ‚æ•° 100X2
+	const uint32 globel_message_max_show_time = 20;										// ä¸€æ¡å…¨å±€æç¤ºæœ€å¤§æ˜¾ç¤ºæ—¶é—´ï¼Œé˜²æ­¢å‡ºé—®é¢˜å¯¼è‡´å†ä¹Ÿä¸æ˜¾ç¤ºå…¶ä»–Notice
+	const uint32 continued_notice_max_num = 100;										// æœ€å¤§æŒç»­å…¬å‘Šæ•°é‡ï¼Œè®²é“ç†ï¼Œæ°¸è¿œä¸åº”è¯¥æœ‰è¿™ä¹ˆå¤šâ€¦â€¦
+	const uint32 chat_max_item = 4;														// ä¸€æ¡èŠå¤©å¸¦çš„æœ€å¤§ç‰©å“æ•°
+	const uint32 chat_show_max = 30;													// æœ€å¤§æ˜¾ç¤ºèŠå¤©æ¡æ•°
+	const uint32 chat_max_word_num = 100;												// èŠå¤©æ–‡æœ¬æœ€å¤§å­—æ•°
+	const uint32 utf8_byt_per_chinese_world = 3;										// utf8ä¸­æ–‡ç¼–ç æ¯ä¸ªå­—å­—èŠ‚æ•°
+	const uint32 chat_max_chat_size = chat_max_word_num * utf8_byt_per_chinese_world;	// èŠå¤©æ–‡æœ¬æœ€å¤§å°ºå¯¸
+	const uint32 chat_max_chat_size_with_hyper_link = chat_max_chat_size + 200;			// èŠå¤©æ–‡æœ¬æœ€å¤§å°ºå¯¸ï¼ˆå«è¶…é“¾æ¥ï¼‰
+	const uint32 chat_content_info_max = 4;												// å•ä¸ªå­—ç¬¦æœ€å¤§é•¿åº¦
+	const uint32 chat_mini_show_num = 5;												// å…¨é¢‘é“èŠå¤©æ•°é‡å’Œ
+	const uint32 chat_audio_id_max = 300;												// è¯­éŸ³idæœ€å¤§é•¿åº¦
+	const uint32 chat_auto_reply_interval = 30;											// è‡ªåŠ¨å›å¤CD
+	const uint32 chat_offline_num_max = 999;											// ç¦»çº¿æ¶ˆæ¯æœ€å¤šæ¥æ”¶999æ¡
+	const uint32 add_friend_success_content_id = 90305232;								// æ·»åŠ å¥½å‹æˆåŠŸç”³è¯·æ–¹æ”¶åˆ°çš„å†…å®¹id
 	
 	const uint32 chat_record_max_len = 256;
 	const uint32 chat_real_max_length = 135;
@@ -74,11 +74,11 @@ namespace faith
 	{
 		xchar				common_text[chat_content_info_max + 1];
 		int32				item_info[e_item_info_max];
-		float				location[3];				//·´Õı¾Íx¡¢y¡¢zÈı¸öÊı¡­¡­
+		float				location[3];				//åæ­£å°±xã€yã€zä¸‰ä¸ªæ•°â€¦â€¦
 		int32				line_id;
 		int32				map_id;
 		int32				template_id;
-		xchar				audio_id[chat_audio_id_max + 1]; // ÁÙÊ±Ğ´·¨£¬ĞèÒªÓÅ»¯		
+		xchar				audio_id[chat_audio_id_max + 1]; // ä¸´æ—¶å†™æ³•ï¼Œéœ€è¦ä¼˜åŒ–		
 		float				duration_time;
 		int32				face_finish_img_id;
 		e_chat_content_info()
@@ -107,7 +107,7 @@ namespace faith
 		}
 	}; 
 
-	//ÀëÏßÏûÏ¢
+	//ç¦»çº¿æ¶ˆæ¯
 	struct e_chat_offline_info
 	{
 		int64					chat_guid;

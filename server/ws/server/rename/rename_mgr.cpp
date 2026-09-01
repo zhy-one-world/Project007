@@ -1,4 +1,4 @@
-#include "rename_mgr.h"
+﻿#include "rename_mgr.h"
 #include "../client_session.hpp"
 #include "../client_session_mgr.hpp"
 #include "ws_client.hpp"
@@ -77,11 +77,10 @@ namespace faith
 		}
 
 		if (invalid_ansi_word::include_invalid_ansi_str(role_name))
-		{//���ڷǷ���
+		{
 			check_ret = e_change_failed_role_name_invalid;
 		}
 
-		//�жϽ�ɫ�������Ƿ�Ϸ�
 		if ((role_name.size() < min_name_size))
 		{
 			check_ret = e_change_failed_role_name_size_too_short;

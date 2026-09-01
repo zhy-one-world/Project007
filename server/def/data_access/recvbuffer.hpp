@@ -17,7 +17,7 @@
 
 namespace faith
 {
-	//×ÔÔö³¤µÄÑ­»·´æÈ¡Á¬Ğø¿é»º³åÇø
+	//è‡ªå¢é•¿çš„å¾ªç¯å­˜å–è¿ç»­å—ç¼“å†²åŒº
 	class recvbuffer
 	{
 	public:
@@ -28,11 +28,11 @@ namespace faith
 		void					read( void * data, const int32 len );
 		xchar*					rptr( const int32 len );
 		void					rnext( const int32 len );
-		bool					reserve( const int32 len );				//±£Áôlen³¤¶ÈµÄbuffÓÃÓÚĞ´.
-		void					commit(	);								//Ìá½»±£ÁôµÄbuff
+		bool					reserve( const int32 len );				//ä¿ç•™lené•¿åº¦çš„buffç”¨äºå†™.
+		void					commit(	);								//æäº¤ä¿ç•™çš„buff
 		void					rollback(	);
-		xchar*					wptr(	);								//»ñÈ¡Ğ´Ö¸Õë,±ØĞëºÍreserve(), commit(),Ò»ÆğÊ¹ÓÃ
-		boost::recursive_mutex& get_mutex(	)	{ return m_mutex; };	//¶ÔÓÚµ÷ÓÃrptr(), ·µ»ØµÄ¶ÁÖ¸Õë£¬¿ÉÄÜ»áÔÚ×ÔÔö³¤¹ı³ÌÖĞ¸Ä±ä£¬µ¼ÖÂrptr()·µ»ØÖµÖ¸Ïò´íÎóµÄµØÖ·£¬µ÷rptr()Ç°Òª½øĞĞËø²Ù×÷
+		xchar*					wptr(	);								//è·å–å†™æŒ‡é’ˆ,å¿…é¡»å’Œreserve(), commit(),ä¸€èµ·ä½¿ç”¨
+		boost::recursive_mutex& get_mutex(	)	{ return m_mutex; };	//å¯¹äºè°ƒç”¨rptr(), è¿”å›çš„è¯»æŒ‡é’ˆï¼Œå¯èƒ½ä¼šåœ¨è‡ªå¢é•¿è¿‡ç¨‹ä¸­æ”¹å˜ï¼Œå¯¼è‡´rptr()è¿”å›å€¼æŒ‡å‘é”™è¯¯çš„åœ°å€ï¼Œè°ƒrptr()å‰è¦è¿›è¡Œé”æ“ä½œ
 
 	private:
 		int32						get_used_size(	);

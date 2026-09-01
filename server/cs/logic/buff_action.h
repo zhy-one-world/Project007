@@ -19,21 +19,21 @@ namespace faith
 {
 	namespace buff_str
 	{
-		//Çå³şÖ¸¶¨µÄ×Ö·û
+		//æ¸…æ¥šæŒ‡å®šçš„å­—ç¬¦
 		void 
 		clear_char( 
 			char* szaction, 
 			char cone, 
 			char ctwo = 0 );
 
-		//Ñ°ÕÒÖ¸¶¨µÄ·Ö¸î×Ö·û
+		//å¯»æ‰¾æŒ‡å®šçš„åˆ†å‰²å­—ç¬¦
 		int32	
 		find_delimter( 
 			char* szaction, 
 			char cone, 
 			char ctwo = 0 );
 
-		//×ª»»Ğ¡Ğ´
+		//è½¬æ¢å°å†™
 		void 
 		conv_lower_case( 
 			char* szaction );

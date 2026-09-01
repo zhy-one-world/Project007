@@ -183,10 +183,10 @@ namespace faith
 	void dp2ws_save_appearance_info_to_id_end_proc(uint32 conn_index, const void* data_ptr, size_t data_len);
 	void dp2ws_load_appearance_info_by_id_end_proc(uint32 conn_index, const void* data_ptr, size_t data_len);
 
-	//ÔªËØÕù°Ô
+	//å…ƒç´ äº‰éœ¸
 	void dp2ws_element_war_load_role_info_end_proc(uint32 conn_index, const void* data_ptr, size_t data_len);
 
-	//¹¥³ÇÕ½
+	//æ”»åŸŽæˆ˜
 	void dp2ws_attack_city_load_legion_info_end_proc(uint32 conn_index, const void* data_ptr, size_t data_len);
 	void dp2ws_attack_city_load_rank_info_end_proc(uint32 conn_index, const void* data_ptr, size_t data_len);
 }

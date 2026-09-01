@@ -39,9 +39,9 @@ namespace faith
 	}
 
 	void http_access::on_http_access_result(
-		int http_error_code,					// ÓÉ HttpAccessorCodeÖÐ Ã¶¾ÙÖµ¶¨Òå
+		int http_error_code,					// ç”± HttpAccessorCodeä¸­ æžšä¸¾å€¼å®šä¹‰
 		const std::string& http_error_info,
-		const std::string& http_result			// htmlÔ´ÎÄ¼þ£¬Ïàµ±ÓÚascii±àÂë´®¡££¨unicode/ansi°æ±¾£©
+		const std::string& http_result			// htmlæºæ–‡ä»¶ï¼Œç›¸å½“äºŽasciiç¼–ç ä¸²ã€‚ï¼ˆunicode/ansiç‰ˆæœ¬ï¼‰
 	)
 	{
 		if (http_error_code > 0)

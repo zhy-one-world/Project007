@@ -1,4 +1,4 @@
-/*@@
+ï»¿/*@@
 
 	copyright (c) beijing second laboratory game studio. all rights reserved.
 
@@ -16,9 +16,7 @@
 @@*/
 
 //////////////////////////////////////////////////////////////////////////
-//
 //	file include
-//
 //////////////////////////////////////////////////////////////////////////
 
 #include "cpp_damage_counter.h"
@@ -41,9 +39,7 @@
 namespace faith
 {
 	//////////////////////////////////////////////////////////////////////////
-	//
 	//	class implement
-	//
 	//////////////////////////////////////////////////////////////////////////
 	void cpp_damage_counter::buff_damage_by_server(use_buff_param& param, bool be_server)
 	{
@@ -188,7 +184,7 @@ namespace faith
 			}
 			else if (param.damage_style == edt_real)
 			{
-				//ÕæÊµÉËº¦
+				//çœŸå®ä¼¤å®³
 				base_value += attacker.get_pawn_att().get_attack_att_value(e_unit_attack_att_pure_attack);
 				base_value += attacker.get_pawn_att().get_attack_att_value(e_unit_attack_att_attack_multiple) * base_value;
 				buff_damage.set_damage_count(base_value);
@@ -425,7 +421,7 @@ namespace faith
 				}
 				else if (param.damage_style == edt_real)
 				{
-					//ÕæÊµÉËº¦
+					//çœŸå®ä¼¤å®³
 					base_value += attacker.get_pawn_att().get_attack_att_value(e_unit_attack_att_pure_attack);
 					base_value += attacker.get_pawn_att().get_attack_att_value(e_unit_attack_att_attack_multiple) * base_value;
 					damage_reflect(attacker, target, base_value, param);
@@ -548,7 +544,7 @@ namespace faith
 	void cpp_damage_counter::damage_reflect(unit& attacker, unit& targeter, double end_damage, use_buff_param& param)
 	{
 		if (targeter.get_pawn_att().get_game_att(e_unit_game_att_damage_reflect) > 0 && param.damage_style != edt_reflect)
-		{ //ÉËº¦·´Éä
+		{ //ä¼¤å®³åå°„
 			use_buff_param ub_param;
 			ub_param.attacker_array_index = targeter.get_array_index();
 			ub_param.target_array_index = attacker.get_array_index();
@@ -573,7 +569,7 @@ namespace faith
 			if (change_hp < 1.0)
 			{
 				return;
-			} //ÎüÑª
+			} //å¸è¡€
 			double suck_blood = end_damage * attacker.get_pawn_att().get_game_att(e_unit_game_att_suck_blood);
 			attacker.change_hp(-suck_blood, attacker.get_array_index(), false);
 

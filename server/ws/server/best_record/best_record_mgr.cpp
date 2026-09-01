@@ -1,4 +1,4 @@
-#include "best_record_mgr.h"
+﻿#include "best_record_mgr.h"
 #include "template/template_manager.h"
 #include "utility/cs_date.hpp"
 #include "server/mail/event_ws_mgr.h"
@@ -87,7 +87,7 @@ namespace faith
 		return map_template_ptr->BestRecordOrderType;
 	}
 
-	int32	best_record_mgr::get_convert_map_template_id(int32 map_template_id)	//���������ü�¼��Ϊ����ͳһ,ͳһ����map_template_id
+	int32	best_record_mgr::get_convert_map_template_id(int32 map_template_id)
 	{
 		MapTemplate* map_template_ptr = GET_TEMPLATE(MapTemplate, map_template_id);
 		if (nullptr == map_template_ptr)
@@ -261,7 +261,7 @@ namespace faith
 		insert_record(best_record, new_record, is_from_db);
 
 		if (!is_from_db)
-		{//���¸�������¼�Ĺ���
+		{
 			notice_best_record(map_template_id, new_record);
 		}
 		
@@ -274,7 +274,7 @@ namespace faith
 		{
 			return;
 		}
-		if (best_record_str->single_map_best_record[0].role_guid != best_record.role_guid)//���ǵ�һ����������
+		if (best_record_str->single_map_best_record[0].role_guid != best_record.role_guid)
 		{
 			return;
 		}
@@ -293,7 +293,6 @@ namespace faith
 		if (map_template_ptr->Type == e_map_type_exp_fuben && best_value >= 10000)
 		{
 			notice_id = exp_best_record_hundred_million_notice_id;
-			//������λС��
 			int32 temp_best_value = best_value / 100;
 			best_value = (float)temp_best_value / 100;
 		}
@@ -366,17 +365,17 @@ namespace faith
 				{
 				case e_map_difficulty_easy:
 					{
-						return template_manager::get_instance().int_to_string(90300098);//��ͨ
+						return template_manager::get_instance().int_to_string(90300098);
 					}
 					break;
 				case e_map_difficulty_normal:
 					{
-						return template_manager::get_instance().int_to_string(90300099);//��Ӣ
+						return template_manager::get_instance().int_to_string(90300099);
 					}
 					break;
 				case e_map_difficulty_heard:
 					{
-						return template_manager::get_instance().int_to_string(90300100);;//����
+						return template_manager::get_instance().int_to_string(90300100);;
 					}
 					break;
 				default:
@@ -393,27 +392,27 @@ namespace faith
 				{
 				case e_map_difficulty_for_multiplayer_easy:
 					{
-						return template_manager::get_instance().int_to_string(90300101);//��
+						return template_manager::get_instance().int_to_string(90300101);
 					}
 					break;
 				case e_map_difficulty_for_multiplayer_normal:
 					{
-						return template_manager::get_instance().int_to_string(90300102);//��ͨ
+						return template_manager::get_instance().int_to_string(90300102);
 					}
 					break;
 				case e_map_difficulty_for_multiplayer_hard:
 					{
-						return template_manager::get_instance().int_to_string(90300103);//����
+						return template_manager::get_instance().int_to_string(90300103);
 					}
 					break;
 				case e_map_difficulty_for_multiplayer_heroic:
 					{
-						return template_manager::get_instance().int_to_string(90300104);//Ӣ��
+						return template_manager::get_instance().int_to_string(90300104);
 					}
 					break;
 				case e_map_difficulty_for_multiplayer_hell:
 					{
-						return template_manager::get_instance().int_to_string(90300105);//����
+						return template_manager::get_instance().int_to_string(90300105);
 					}
 					break;
 				default:

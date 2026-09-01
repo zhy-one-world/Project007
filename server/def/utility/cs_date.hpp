@@ -14,31 +14,31 @@
 
 namespace faith
 {
-	//const int32 update_data_time = 5;			//´ú±í24hÖĞµÄ5µã
+	//const int32 update_data_time = 5;			//ä»£è¡¨24hä¸­çš„5ç‚¹
 
 	struct time_info
 	{
 		int64 second;
 		int64 millisecond;
 
-		int32 second_in_minute;	//´Ó0¿ªÊ¼	0-59
-		int32 second_in_hour;	//´Ó0¿ªÊ¼	0-3599
-		int32 second_in_day;	//´Ó0¿ªÊ¼	0-86399
+		int32 second_in_minute;	//ä»0å¼€å§‹	0-59
+		int32 second_in_hour;	//ä»0å¼€å§‹	0-3599
+		int32 second_in_day;	//ä»0å¼€å§‹	0-86399
 
-		int32 minute_in_hour;	//´Ó0¿ªÊ¼	0-59
-		int32 minute_in_day;	//´Ó0¿ªÊ¼	0-1439
+		int32 minute_in_hour;	//ä»0å¼€å§‹	0-59
+		int32 minute_in_day;	//ä»0å¼€å§‹	0-1439
 
-		int32 hour_in_day;		//´Ó0¿ªÊ¼	0-23
+		int32 hour_in_day;		//ä»0å¼€å§‹	0-23
 
-		int32 day_in_week;		//´Ó0¿ªÊ¼	0-6,0ÊÇÖÜÒ»£¬ÓĞ¶ÔÓ¦Ã¶¾Ù
-		int32 day_in_month;		//´Ó0¿ªÊ¼	0-30
-		int32 day_in_year;		//´Ó0¿ªÊ¼	0-365
+		int32 day_in_week;		//ä»0å¼€å§‹	0-6,0æ˜¯å‘¨ä¸€ï¼Œæœ‰å¯¹åº”æšä¸¾
+		int32 day_in_month;		//ä»0å¼€å§‹	0-30
+		int32 day_in_year;		//ä»0å¼€å§‹	0-365
 
-		int32 week_in_year;		//´Ó0¿ªÊ¼	0-51
+		int32 week_in_year;		//ä»0å¼€å§‹	0-51
 
-		int32 month_in_year;	//´Ó0¿ªÊ¼	0-11,0ÊÇ1ÔÂ£¬ÓĞ¶ÔÓ¦Ã¶¾Ù
+		int32 month_in_year;	//ä»0å¼€å§‹	0-11,0æ˜¯1æœˆï¼Œæœ‰å¯¹åº”æšä¸¾
 
-		int32 year;				//Õı³£¼ÇÂ¼
+		int32 year;				//æ­£å¸¸è®°å½•
 
 		time_info()
 		{
@@ -54,7 +54,7 @@ namespace faith
 	class cs_date : public boost::noncopyable
 	{
 		// |year+2008 6 | month 4|   day 5  |			time 17			     |
-		// |¡õ¡õ¡õ¡õ¡õ¡õ|¡õ¡õ¡õ¡õ|¡õ¡õ¡õ¡õ¡õ|¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ|
+		// |â–¡â–¡â–¡â–¡â–¡â–¡|â–¡â–¡â–¡â–¡|â–¡â–¡â–¡â–¡â–¡|â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡|
 	public:
 		cs_date(int32 date) { date_ = date; }
 		cs_date() { date_ = 0; }
@@ -82,7 +82,7 @@ namespace faith
 			return date_;
 		}
 
-		// µÃµ½µ±Ç°Ê±¼ä
+		// å¾—åˆ°å½“å‰æ—¶é—´
 		static int32 get_local_time();
 
 	private:
@@ -158,26 +158,26 @@ namespace faith
 		static uint32		get_second();
 		static int32		get_days_by_month(int y,int m);	
 		static int32		get_day_in_week(int y, int m, int d);
-		static int32		get_days_in_year(int y, int m, int d);//»ñÈ¡µ±Ç°ÈÕÆÚÎªµ±ÄêµÄµÚ¼¸Ìì
-		static uint32		get_part_in_year(uint32 part_duration);//Ò»ÄêÖĞµÄµÚ¼¸¸öÖÜÆÚ£»part_duration == ÖÜÆÚ		
-		static int32		get_days_of_year(int y);//»ñÈ¡Ò»ÄêÓĞ¼¸Ìì
-		static xstring		get_current_time();// ·µ»Øµ±Ç°Ê±¼ä£¬¸ñÊ½Îªyyyy-mm-dd hh:mm:ss
-		static xstring		get_cur_time();// ·µ»Øµ±Ç°Ê±¼ä£¬¸ñÊ½Îªyyyy/mm/dd hh:mm:ss
-		static xstring		get_cur_day_hour();// ·µ»Øµ±Ç°Ê±¼ä£¬¸ñÊ½Îªyyyymmddhh
-		static xstring		get_str_time_by_stamp(uint32 time_stamp);// ·µ»ØÊ±¼ä¸ñÊ½Îªyyyy-mm-dd hh:mm:ss
-		static xstring		get_str_time_by_tm(tm* tm_);// ·µ»ØÊ±¼ä¸ñÊ½Îªyyyy-mm-dd hh:mm:ss
+		static int32		get_days_in_year(int y, int m, int d);//è·å–å½“å‰æ—¥æœŸä¸ºå½“å¹´çš„ç¬¬å‡ å¤©
+		static uint32		get_part_in_year(uint32 part_duration);//ä¸€å¹´ä¸­çš„ç¬¬å‡ ä¸ªå‘¨æœŸï¼›part_duration == å‘¨æœŸ		
+		static int32		get_days_of_year(int y);//è·å–ä¸€å¹´æœ‰å‡ å¤©
+		static xstring		get_current_time();// è¿”å›å½“å‰æ—¶é—´ï¼Œæ ¼å¼ä¸ºyyyy-mm-dd hh:mm:ss
+		static xstring		get_cur_time();// è¿”å›å½“å‰æ—¶é—´ï¼Œæ ¼å¼ä¸ºyyyy/mm/dd hh:mm:ss
+		static xstring		get_cur_day_hour();// è¿”å›å½“å‰æ—¶é—´ï¼Œæ ¼å¼ä¸ºyyyymmddhh
+		static xstring		get_str_time_by_stamp(uint32 time_stamp);// è¿”å›æ—¶é—´æ ¼å¼ä¸ºyyyy-mm-dd hh:mm:ss
+		static xstring		get_str_time_by_tm(tm* tm_);// è¿”å›æ—¶é—´æ ¼å¼ä¸ºyyyy-mm-dd hh:mm:ss
 
 		static tm*			get_tm_by_time(uint32 time);
 		static tm*			get_cur_tm_by_time(uint32 time);
 		static void			get_time_by_string(const char* str, tm* tm_);
 		static tm*			get_localtime();
-		static int32		compare_tm(tm* tm_1, tm* tm_2);//<0´ú±íĞ¡ÓÚ,0´ú±íÏàµÈ,>0´ú±í´óÓÚ
-		static int32		get_int_day();//»ñµÃÒ»¸öÄêÔÂÈÕ×éºÏµÄÊı×Ö,Äê*10000 + ÔÂ*100+ÈÕ
-		static int32		get_today_time_in_sec(); // »ñÈ¡µ±ÌìµÄÒÔÃëÎªµ¥Î»µÄÊ±¼ä(Ê±*3600 + ·Ö*60 + Ãë)
-		static bool			is_diff_day(uint32 time_a, uint32 time_b = 0);//Í¨¹ıunixÊ±¼ä´ÁÅĞ¶ÏÊÇ·ñÍ¬Ò»Ìì
-		static bool			is_diff_month(uint32 time_a, uint32 time_b = 0);//Í¨¹ıunixÊ±¼ä´ÁÅĞ¶ÏÊÇ·ñÍ¬Ò»ÔÂ
-		static int64		get_stamp_by_hour_min(int32 time_hour, int32 time_min, int32 cur_time = 0);//Í¨¹ı¹Ì¶¨µÄ Ğ¡Ê± ºÍ ·ÖÖÓ »ñµÃµ±ÌìunixÊ±¼ä´Á
-		static int64		get_stamp_by_min(int32 time_min);//Í¨¹ı¹Ì¶¨µÄ·ÖÖÓ »ñµÃµ±Ç°Ğ¡Ê±unixÊ±¼ä´Á
+		static int32		compare_tm(tm* tm_1, tm* tm_2);//<0ä»£è¡¨å°äº,0ä»£è¡¨ç›¸ç­‰,>0ä»£è¡¨å¤§äº
+		static int32		get_int_day();//è·å¾—ä¸€ä¸ªå¹´æœˆæ—¥ç»„åˆçš„æ•°å­—,å¹´*10000 + æœˆ*100+æ—¥
+		static int32		get_today_time_in_sec(); // è·å–å½“å¤©çš„ä»¥ç§’ä¸ºå•ä½çš„æ—¶é—´(æ—¶*3600 + åˆ†*60 + ç§’)
+		static bool			is_diff_day(uint32 time_a, uint32 time_b = 0);//é€šè¿‡unixæ—¶é—´æˆ³åˆ¤æ–­æ˜¯å¦åŒä¸€å¤©
+		static bool			is_diff_month(uint32 time_a, uint32 time_b = 0);//é€šè¿‡unixæ—¶é—´æˆ³åˆ¤æ–­æ˜¯å¦åŒä¸€æœˆ
+		static int64		get_stamp_by_hour_min(int32 time_hour, int32 time_min, int32 cur_time = 0);//é€šè¿‡å›ºå®šçš„ å°æ—¶ å’Œ åˆ†é’Ÿ è·å¾—å½“å¤©unixæ—¶é—´æˆ³
+		static int64		get_stamp_by_min(int32 time_min);//é€šè¿‡å›ºå®šçš„åˆ†é’Ÿ è·å¾—å½“å‰å°æ—¶unixæ—¶é—´æˆ³
 		static int64		get_next_refresh_time_stamp(int64 cur_time = -1, int32 target_hour = 0);
 		static bool			is_over_refresh_time(int64 save_stamp_time);
 

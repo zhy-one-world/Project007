@@ -15,12 +15,12 @@
 
 /**
 * Code : ZeGuo.G
-* ÓÎÏ·LogÄ£¿é: LogÉè¶¨XML¶ÁÈ¡
+* æ¸¸æˆLogæ¨¡å—: Logè®¾å®šXMLè¯»å–
 */
 namespace faith
 {
 
-	//¿ªÆôºó¼ÇÂ¼¸÷¸öÄ£¿éUPDATEµÄµ÷ÓÃÊ±¼ä
+	//å¼€å¯åè®°å½•å„ä¸ªæ¨¡å—UPDATEçš„è°ƒç”¨æ—¶é—´
 	#define FAITH_LOG_UPDATE
 
 	#define LOG_TIME_LEN	20000
@@ -55,7 +55,7 @@ namespace faith
 	class cgame_log_enactment : public singleton< cgame_log_enactment >
 	{
 		friend class singleton< cgame_log_enactment >;
-		// Log¸÷ÀàÄÚÈİÉè¶¨±í( key: ÈÕÖ¾ÀàĞÍµÄÃ¶¾ÙÖµ value: ¿ª¹Ø )
+		// Logå„ç±»å†…å®¹è®¾å®šè¡¨( key: æ—¥å¿—ç±»å‹çš„æšä¸¾å€¼ value: å¼€å…³ )
 		typedef std::map< uint32, bool >	cgame_log_info;
 		typedef cgame_log_info::iterator							cgame_log_info_iter;
 

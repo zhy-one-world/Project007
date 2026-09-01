@@ -1,4 +1,4 @@
-/********************************************************************
+ï»¿/********************************************************************
   created: 2014/07/16
   created: 16:7:2014 19:30
   file base: serverdef
@@ -22,14 +22,14 @@ namespace faith
 
 	const int32 server_group_level_num = 10000;
 	const int32 server_uid_level_num = 100000000;
-	const uint32 max_ip_address_length = 30;						// ipµØÖ·µÄ³¤¶È
-	const uint32 max_ip_port_length = 10;							// ip¶Ë¿ÚµÄ³¤¶È
-	const int32 max_db_user_name = 100;								// Êı¾İ¿âÓÃ»§Ãû
-	const int32 max_db_password_name = 100;							// Êı¾İ¿âÃÜÂë
-	const int32 max_db_schema_name = 50;							// Êı¾İ¿âÃû
-	const int32 max_server_num = 11;								// Ò»¸ö¿ç·şÈº×î¶à¶àÉÙ¸ö·şÎñÆ÷
-	const int32 max_robot_num = 2000;								// Ò»¸öexe×î¶àÆô¶¯¶àÉÙ»úÆ÷ÈË
-	const int32	max_gate_server_num = 500;							// ·şÎñÆ÷×î´ó¼ÇÂ¼ÊıÁ¿
+	const uint32 max_ip_address_length = 30;						// ipåœ°å€çš„é•¿åº¦
+	const uint32 max_ip_port_length = 10;							// ipç«¯å£çš„é•¿åº¦
+	const int32 max_db_user_name = 100;								// æ•°æ®åº“ç”¨æˆ·å
+	const int32 max_db_password_name = 100;							// æ•°æ®åº“å¯†ç 
+	const int32 max_db_schema_name = 50;							// æ•°æ®åº“å
+	const int32 max_server_num = 11;								// ä¸€ä¸ªè·¨æœç¾¤æœ€å¤šå¤šå°‘ä¸ªæœåŠ¡å™¨
+	const int32 max_robot_num = 2000;								// ä¸€ä¸ªexeæœ€å¤šå¯åŠ¨å¤šå°‘æœºå™¨äºº
+	const int32	max_gate_server_num = 500;							// æœåŠ¡å™¨æœ€å¤§è®°å½•æ•°é‡
 
 	//common
 	#define MAX_ERVER_STATUS_LOG_BUFFER 256
@@ -83,13 +83,11 @@ namespace faith
 		e_invalid_server_pid = 0x0,
 	};
 
-	//
 	//	server type define
-	//
 	enum e_server_type
 	{
-		e_server_type_invalid,		//ÎŞĞ§
-		e_server_type_gate,			//gate·ş
+		e_server_type_invalid,		//æ— æ•ˆ
+		e_server_type_gate,			//gateæœ
 		e_server_type_ws,		//Ws
 		e_server_type_fep,			//Fep
 		e_server_type_ls,		//Ls
@@ -258,50 +256,50 @@ namespace faith
 
 	enum server_attr_val_type
 	{
-		e_srv_attr_val_refresh_zero, //0µãË¢ĞÂÊ±¼ä´Á
-		e_srv_attr_val_refresh_five, //5µãË¢ĞÂÊ±¼ä´Á
-		e_srv_attr_val_world_lv_cur, //µ±Ç°ÊÀ½çµÈ¼¶
-		e_srv_attr_val_world_lv_last, //ÉÏÒ»´ÎÊÀ½çµÈ¼¶
-		e_srv_attr_val_service_rank_check, //È«Ãñ³å°ñĞèÒª¼ì²âµÄÀàĞÍ
-		e_srv_attr_val_total_recharge_rank_refresh_time, //ÀÛ¼Æ³äÖµÅÅĞĞË¢ĞÂÊ±¼ä
-		e_srv_attr_val_total_cost_rank_refresh_time, //ÀÛ¼ÆÏû·ÑÅÅĞĞË¢ĞÂÊ±¼ä
-		e_srv_attr_val_total_recharge_rank_branch_template_id, //ÀÛ¼Æ³äÖµÅÅĞĞ·ÖÖ§id
-		e_srv_attr_val_total_cost_rank_branch_template_id, //ÀÛ¼ÆÏû·ÑÅÅĞĞ·ÖÖ§id
-		e_srv_attr_val_server_harry_refresh_time,//¿ç·şÂÓ¶áË¢ĞÂÊ±¼ä´Á
-		e_srv_attr_val_is_refresh_cross_city_war,//ÊÇ·ñÒÑ¾­Ë¢ĞÂ×îĞÂµÄ°ÔÖ÷Õ½
-		e_srv_attr_val_total_time_limit_activity_recharge,//ÏŞÊ±»î¶¯È«·şÀÛ¼Æ³äÖµÊıÁ¿
-		e_srv_attr_val_gs_up_rank_refresh_time,					//Õ½Á¦ÌáÉıÅÅĞĞË¢ĞÂÊ±¼ä
-		e_srv_attr_val_gs_up_rank_branch_template_id,			//Õ½Á¦ÌáÉıÅÅĞĞ·ÖÖ§id
-		e_srv_attr_val_mount_up_rank_refresh_time,				//×øÆïÌáÉıÅÅĞĞË¢ĞÂÊ±¼ä
-		e_srv_attr_val_mount_up_rank_branch_template_id,		//×øÆïÌáÉıÅÅĞĞ·ÖÖ§id
-		e_srv_attr_val_wing_up_rank_refresh_time,				//³á°òÌáÉıÅÅĞĞË¢ĞÂÊ±¼ä
-		e_srv_attr_val_wing_up_rank_branch_template_id,			//³á°òÌáÉıÅÅĞĞ·ÖÖ§id
-		e_srv_attr_val_equip_up_rank_refresh_time,				//×°±¸ÌáÉıÅÅĞĞË¢ĞÂÊ±¼ä
-		e_srv_attr_val_equip_up_rank_branch_template_id,		//×°±¸ÌáÉıÅÅĞĞ·ÖÖ§id
-		e_srv_attr_val_spirit_up_rank_refresh_time,				//¾«ÁéÌáÉıÅÅĞĞË¢ĞÂÊ±¼ä
-		e_srv_attr_val_spirit_up_rank_branch_template_id,		//¾«ÁéÌáÉıÅÅĞĞ·ÖÖ§id
-		e_srv_attr_val_cross_gs_up_rank_refresh_time,			//¿ç·şÕ½Á¦ÌáÉıÅÅĞĞË¢ĞÂÊ±¼ä
-		e_srv_attr_val_cross_gs_up_rank_branch_template_id,		//¿ç·ş×³ÀöÌáÉıÅÅĞĞ·ÖÖ§id
-		e_srv_attr_val_cross_mount_up_rank_refresh_time,		//¿ç·ş×øÆïÌáÉıÅÅĞĞË¢ĞÂÊ±¼ä
-		e_srv_attr_val_cross_mount_up_rank_branch_template_id,	//¿ç·ş×øÆïÌáÉıÅÅĞĞ·ÖÖ§id
-		e_srv_attr_val_cross_wing_up_rank_refresh_time,			//¿ç·ş³á°òÌáÉıÅÅĞĞË¢ĞÂÊ±¼ä
-		e_srv_attr_val_cross_wing_up_rank_branch_template_id,	//¿ç·ş³á°òÌáÉıÅÅĞĞ·ÖÖ§id
-		e_srv_attr_val_cross_equip_up_rank_refresh_time,		//¿ç·ş×°±¸ÌáÉıÅÅĞĞË¢ĞÂÊ±¼ä
-		e_srv_attr_val_cross_equip_up_rank_branch_template_id,	//¿ç·ş×°±¸ÌáÉıÅÅĞĞ·ÖÖ§id
-		e_srv_attr_val_cross_spirit_up_rank_refresh_time,		//¿ç·ş¾«ÁéÌáÉıÅÅĞĞË¢ĞÂÊ±¼ä
-		e_srv_attr_val_cross_spirit_up_rank_branch_template_id,	//¿ç·ş¾«ÁéÌáÉıÅÅĞĞ·ÖÖ§id
-		e_srv_attr_val_broken_sky_boss_level_last,				//ÉÏ´ÎÃ»±»»÷É±µÄÆÆËéĞé¿ÕbossµÈ¼¶
-		e_srv_attr_val_week_contribution_refresh_time,			//ÖÜ¹±Ï×Ë¢ĞÂÊ±¼äµã ÔİÊ±²»Ê¹ÓÃ
-		e_srv_attr_val_clear_city_war_bid_time,					//³ÇÕ½Çå¿ÕË¢ĞÂÊ±¼ä´øÄã
-		e_srv_attr_val_week_welfare_refresh_time,				//¾üÍÅ¸£ÀûË¢ĞÂÊ±¼äµã
-		e_srv_attr_val_ladder_world_level,						//ÌìÌİ¼ÇÂ¼µÈ¼¶
+		e_srv_attr_val_refresh_zero, //0ç‚¹åˆ·æ–°æ—¶é—´æˆ³
+		e_srv_attr_val_refresh_five, //5ç‚¹åˆ·æ–°æ—¶é—´æˆ³
+		e_srv_attr_val_world_lv_cur, //å½“å‰ä¸–ç•Œç­‰çº§
+		e_srv_attr_val_world_lv_last, //ä¸Šä¸€æ¬¡ä¸–ç•Œç­‰çº§
+		e_srv_attr_val_service_rank_check, //å…¨æ°‘å†²æ¦œéœ€è¦æ£€æµ‹çš„ç±»å‹
+		e_srv_attr_val_total_recharge_rank_refresh_time, //ç´¯è®¡å……å€¼æ’è¡Œåˆ·æ–°æ—¶é—´
+		e_srv_attr_val_total_cost_rank_refresh_time, //ç´¯è®¡æ¶ˆè´¹æ’è¡Œåˆ·æ–°æ—¶é—´
+		e_srv_attr_val_total_recharge_rank_branch_template_id, //ç´¯è®¡å……å€¼æ’è¡Œåˆ†æ”¯id
+		e_srv_attr_val_total_cost_rank_branch_template_id, //ç´¯è®¡æ¶ˆè´¹æ’è¡Œåˆ†æ”¯id
+		e_srv_attr_val_server_harry_refresh_time,//è·¨æœæ å¤ºåˆ·æ–°æ—¶é—´æˆ³
+		e_srv_attr_val_is_refresh_cross_city_war,//æ˜¯å¦å·²ç»åˆ·æ–°æœ€æ–°çš„éœ¸ä¸»æˆ˜
+		e_srv_attr_val_total_time_limit_activity_recharge,//é™æ—¶æ´»åŠ¨å…¨æœç´¯è®¡å……å€¼æ•°é‡
+		e_srv_attr_val_gs_up_rank_refresh_time,					//æˆ˜åŠ›æå‡æ’è¡Œåˆ·æ–°æ—¶é—´
+		e_srv_attr_val_gs_up_rank_branch_template_id,			//æˆ˜åŠ›æå‡æ’è¡Œåˆ†æ”¯id
+		e_srv_attr_val_mount_up_rank_refresh_time,				//åéª‘æå‡æ’è¡Œåˆ·æ–°æ—¶é—´
+		e_srv_attr_val_mount_up_rank_branch_template_id,		//åéª‘æå‡æ’è¡Œåˆ†æ”¯id
+		e_srv_attr_val_wing_up_rank_refresh_time,				//ç¿…è†€æå‡æ’è¡Œåˆ·æ–°æ—¶é—´
+		e_srv_attr_val_wing_up_rank_branch_template_id,			//ç¿…è†€æå‡æ’è¡Œåˆ†æ”¯id
+		e_srv_attr_val_equip_up_rank_refresh_time,				//è£…å¤‡æå‡æ’è¡Œåˆ·æ–°æ—¶é—´
+		e_srv_attr_val_equip_up_rank_branch_template_id,		//è£…å¤‡æå‡æ’è¡Œåˆ†æ”¯id
+		e_srv_attr_val_spirit_up_rank_refresh_time,				//ç²¾çµæå‡æ’è¡Œåˆ·æ–°æ—¶é—´
+		e_srv_attr_val_spirit_up_rank_branch_template_id,		//ç²¾çµæå‡æ’è¡Œåˆ†æ”¯id
+		e_srv_attr_val_cross_gs_up_rank_refresh_time,			//è·¨æœæˆ˜åŠ›æå‡æ’è¡Œåˆ·æ–°æ—¶é—´
+		e_srv_attr_val_cross_gs_up_rank_branch_template_id,		//è·¨æœå£®ä¸½æå‡æ’è¡Œåˆ†æ”¯id
+		e_srv_attr_val_cross_mount_up_rank_refresh_time,		//è·¨æœåéª‘æå‡æ’è¡Œåˆ·æ–°æ—¶é—´
+		e_srv_attr_val_cross_mount_up_rank_branch_template_id,	//è·¨æœåéª‘æå‡æ’è¡Œåˆ†æ”¯id
+		e_srv_attr_val_cross_wing_up_rank_refresh_time,			//è·¨æœç¿…è†€æå‡æ’è¡Œåˆ·æ–°æ—¶é—´
+		e_srv_attr_val_cross_wing_up_rank_branch_template_id,	//è·¨æœç¿…è†€æå‡æ’è¡Œåˆ†æ”¯id
+		e_srv_attr_val_cross_equip_up_rank_refresh_time,		//è·¨æœè£…å¤‡æå‡æ’è¡Œåˆ·æ–°æ—¶é—´
+		e_srv_attr_val_cross_equip_up_rank_branch_template_id,	//è·¨æœè£…å¤‡æå‡æ’è¡Œåˆ†æ”¯id
+		e_srv_attr_val_cross_spirit_up_rank_refresh_time,		//è·¨æœç²¾çµæå‡æ’è¡Œåˆ·æ–°æ—¶é—´
+		e_srv_attr_val_cross_spirit_up_rank_branch_template_id,	//è·¨æœç²¾çµæå‡æ’è¡Œåˆ†æ”¯id
+		e_srv_attr_val_broken_sky_boss_level_last,				//ä¸Šæ¬¡æ²¡è¢«å‡»æ€çš„ç ´ç¢è™šç©ºbossç­‰çº§
+		e_srv_attr_val_week_contribution_refresh_time,			//å‘¨è´¡çŒ®åˆ·æ–°æ—¶é—´ç‚¹ æš‚æ—¶ä¸ä½¿ç”¨
+		e_srv_attr_val_clear_city_war_bid_time,					//åŸæˆ˜æ¸…ç©ºåˆ·æ–°æ—¶é—´å¸¦ä½ 
+		e_srv_attr_val_week_welfare_refresh_time,				//å†›å›¢ç¦åˆ©åˆ·æ–°æ—¶é—´ç‚¹
+		e_srv_attr_val_ladder_world_level,						//å¤©æ¢¯è®°å½•ç­‰çº§
 		e_srv_attr_val_max
 	};
 
 	enum srv_refresh_type
 	{
-		e_refresh_type_zero,//0µãË¢ĞÂ
-		e_refresh_type_five,//5µãË¢ĞÂ
+		e_refresh_type_zero,//0ç‚¹åˆ·æ–°
+		e_refresh_type_five,//5ç‚¹åˆ·æ–°
 	};
 
 	struct  s_time_count

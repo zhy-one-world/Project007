@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 created: 2016��8��23��13:56:28
 file base: arena_mgr_ws_ws
 file ext: cpp
@@ -340,7 +340,7 @@ namespace faith
 		}
 		m_sec_tick += elapse_time;
 		if (m_sec_tick > 10 * minute_tick_time)
-		{//10����һ�浵
+		{
 			save_ranks_to_db();
 			m_sec_tick = 0;
 		}
@@ -510,7 +510,7 @@ namespace faith
 		{
 			if (temp_target_player != nullptr)
 			{
-				temp_target_player->challenge_end_time = init_unit::get_end_time(300 + 30);//���Ǹ����գ���ֹ����ս��������300��ͼʱ��Ӹ�30�ı���
+				temp_target_player->challenge_end_time = init_unit::get_end_time(300 + 30);
 			}
 
 			if (temp_challenge_player != nullptr)
@@ -597,7 +597,7 @@ namespace faith
 			match_index2 = get_area_index((rank_max - random_range * 2), rank_max - 1 - random_range, cur_time, is_cd2);
 			match_index3 = get_area_index((rank_max - random_range * 3), rank_max - 1 - random_range * 2, cur_time, is_cd3);
 
-			if (is_cd1 || is_cd2 || is_cd3)  // ����Χ
+			if (is_cd1 || is_cd2 || is_cd3)
 			{
 				 random_range = areaa_cloose_second_list_base_range / 3;
 				 match_index1 = get_area_index((rank_max - random_range), rank_max - 1, cur_time, is_cd1);
@@ -606,13 +606,13 @@ namespace faith
 
 			}
 		}
-		else if (0 == index)   // ��һ��
+		else if (0 == index)
 		{
 			match_index1 = 2;
 			match_index2 = 1;
 			match_index3 = 0;
 		}
-		else if (index < 10) // 2-9 ǰ10��
+		else if (index < 10)
 		{
 			match_index1 = index+1;
 			match_index2 = index;
@@ -627,7 +627,7 @@ namespace faith
 			}
 			else                                    // 10-299
 			{
-				random_range = (index / 3) - 1;       //        
+				random_range = (index / 3) - 1;
 			}
 			int32 behind_max_index = index + random_range;   
 			if (behind_max_index >= rank_max)
@@ -790,7 +790,7 @@ namespace faith
 		const int32 first_index = 0;
 
 		if (my_index < target_index
-			&& my_index > 0) //���������arena������������������ranking����û�м�¼������ݵ�����
+			&& my_index > 0)
 		{
 			return my_index;
 		}
@@ -798,7 +798,6 @@ namespace faith
 		player_arena_rank old_first_player_info = m_arena_rank[first_index];
 		int32 cur_time = time_helper::get_cur_time_new().second;
 
-		//------------ �������������а� ----------------------------------------
 		s_ranking_player_info my_palyer_info;
 		my_palyer_info.set_role_name(challenge_info.role_name);
 		my_palyer_info.role_guid = challenge_info.role_guid;
@@ -820,7 +819,6 @@ namespace faith
 			ranking_mgr_ws::sync_after_merge_first_player_deal(my_palyer_info);
 			return my_index;
 		}
-		//���� challenge ��target
 		player_arena_rank target_player = m_arena_rank[target_index];
 		m_arena_rank[target_index].role_guid = challenge_info.role_guid;
 		memcpy(m_arena_rank[target_index].role_name, challenge_info.role_name, max_name_size);
@@ -889,13 +887,11 @@ namespace faith
 		//	save_ranks_one_to_db(my_index);
 		//}
 
-		//����ս��ͬ�����ݣ��� �����ڵ� ����ͬ������
 		client_session* client_session_ptr = client_session_mgr::getInstance().get_session(target_guid);
 		if (client_session_ptr != nullptr)
 		{
 			ws2cs_rep_get_arena_rank  resp;
 			resp.role_guid = target_guid;
-			//�����ǡ�my_index����û��
 			resp.arena_rank = my_index;
 
 			bool is_use = proto_by_lua(e_msg_index_ws2cs_rep_get_arena_rank);
@@ -909,7 +905,6 @@ namespace faith
 				resp.to_proto(pro_msg);
 				client_session_ptr->send_to_cs_lua(&pro_msg, e_msg_index_ws2cs_rep_get_arena_rank);
 			}
-			//����ս�˵������Ѿ��仯�����Դ�ʱ��������ս������ҲҪ�ı�
 
 			get_choose_list(target_guid, my_index);
 		}

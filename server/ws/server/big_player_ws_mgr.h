@@ -25,12 +25,12 @@ namespace faith
 
 		void				clear_data();
 		void				tick(int32 dt);
-		void				set_big_player_guid(e_big_player_type big_type,guid_64 player_guid,int32 from = 0); //Õ‚
-		guid_64				get_big_player_guid(e_big_player_type big_type); //Õ‚
+		void				set_big_player_guid(e_big_player_type big_type,guid_64 player_guid,int32 from = 0); //Â§ñ
+		guid_64				get_big_player_guid(e_big_player_type big_type); //Â§ñ
 		void				save_data_to_db();
 		void				load_data_by_db();
 		void				load_detail_data(int32 index);
-		void				load_data_by_db_end(const s_big_player_db* data_info, int32 data_num = e_big_player_type_max); //Õ‚
+		void				load_data_by_db_end(const s_big_player_db* data_info, int32 data_num = e_big_player_type_max); //Â§ñ
 
 		void				handle_base_detail_info(int32 big_type,const s_unit_info role_info);
 		void				handle_item_info(int32 big_type,const s_item_info* item_info);
@@ -40,16 +40,16 @@ namespace faith
 
 		bool				crate_big_player_statue_by_big_type(int32 big_type);
 		void				load_end(int32 big_type);
-		void				crate_big_player_statue_success(int32 big_type, guid_64 statue_guid); //Õ‚
+		void				crate_big_player_statue_success(int32 big_type, guid_64 statue_guid); //Â§ñ
 		void				send_big_player_statue_info();
-		void				load_statue_by_ws_proc(guid_64 request_player_guid); //Õ‚
+		void				load_statue_by_ws_proc(guid_64 request_player_guid); //Â§ñ
 
-		void				send_big_player_msg_to_other_server(bool is_load_flag, int32 server_id = 0); //Õ‚
+		void				send_big_player_msg_to_other_server(bool is_load_flag, int32 server_id = 0); //Â§ñ
 		void				set_title_session_login(const guid_64& role_guid, bool(&loading_title_flag)[faith::e_title_type_max]);
 		int32				get_big_player_title_type(int32 player_type);
 
-		void				clear_title_with_big_player_clear(int32 big_player_type); //Õ‚
-		int32				get_big_player_type_with_ranking_type(int32 ranking_type); //Õ‚
+		void				clear_title_with_big_player_clear(int32 big_player_type); //Â§ñ
+		int32				get_big_player_type_with_ranking_type(int32 ranking_type); //Â§ñ
 
 		bool                is_use_lua();
 

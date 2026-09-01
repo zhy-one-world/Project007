@@ -36,7 +36,7 @@ namespace faith
 		bool push(void* msg_ptr, size_t size);
 
 	private:
-		static boost::pool<>		m_msg_pool;			// 设为static主要是每个player都共用一个pool
+		static boost::pool<>		m_msg_pool;			// 璁句负static涓昏鏄瘡涓猵layer閮藉叡鐢ㄤ竴涓猵ool
 		std::queue<msg_data_type>	m_tick_msg_queue;
 		sender_handler_type			m_sender;
 	};

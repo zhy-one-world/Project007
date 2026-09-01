@@ -1,24 +1,14 @@
-// /*@@
-// 
+ï»¿// /*@@
 // 	Copyright (c) Beijing Second Laboratory Game Studio. All rights reserved. 
-// 	
 // 	Created_datetime : 	2011-5-31 15:43
-// 	
 // 	File Name :	login_service_naive.cpp
-// 	
 // 	Author : zhangjianyu (zhangjianyu@163.com)
-// 	
 // 	Description : 
-// 	
 // 	Change List :
-// 
-// 
 // @@*/
 
 //////////////////////////////////////////////////////////////////////////
-//
 //	File Include
-//
 //////////////////////////////////////////////////////////////////////////
 #include "login_service_pc.hpp"
 #include "login_service_mgr.hpp"
@@ -35,7 +25,7 @@ namespace faith
 
 	void login_service_pc::req_login(const s_client_uid client_uid, const login_proto_login proto_data)
 	{
-		if (world_server::getInstance().get_gm_state())//ÕËºÅµÇÂ½ÓëGMÊÇ·ñ¿ªÆôÎŞ¹Ø
+		if (world_server::getInstance().get_gm_state())//è´¦å·ç™»é™†ä¸GMæ˜¯å¦å¼€å¯æ— å…³
 		{
 			ls2dp_client_login request;
 			request.client_uid = client_uid;
@@ -128,7 +118,7 @@ namespace faith
 					}
 				}
 
-				//³äÖµ¶î¶È
+				//å……å€¼é¢åº¦
 				if (time_helper::is_diff_month(request.month_recharge_time, time_helper::get_time()) == true)
 				{
 					request.month_recharge_num = 0;

@@ -1,5 +1,5 @@
 /********************************************************************
-created:	2016Äê9ÔÂ22ÈÕ14:18:14
+created:	2016å¹´9æœˆ22æ—¥14:18:14
 file base:	msgproc_special_name
 file ext:	hpp
 author:		zhangmnighai
@@ -14,7 +14,7 @@ purpose:
 
 namespace faith
 {
-	//½ÇÉ«³ÆºÅ
+	//è§’è‰²ç§°å·
 	void cs2dp_req_load_char_convert(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index);
 	void cs2dp_req_load_char_convert_end(db_result_type result, uint32 connindex, const guid_64& role_guid, const int32& unit_array_index);
 	void cs2dp_req_save_char_convert(uint32 connindex, const void* data_ptr, size_t data_len);

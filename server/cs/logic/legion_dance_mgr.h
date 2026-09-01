@@ -1,9 +1,9 @@
 /********************************************************************
-created: 2019Äê10ÔÂ15ÈÕ
+created: 2019å¹´10æœˆ15æ—¥
 file base: legion_dance
 file ext: hpp
 author: zhaoyuming
-purpose: ¾üÍÅ´«¹¦
+purpose: å†›å›¢ä¼ åŠŸ
 *********************************************************************/
 #ifndef _legion_dance_H
 #define _legion_dance_H
@@ -25,21 +25,21 @@ namespace faith
 
 		//int32	get_legion_dance_target_index();
 
-		//»ñÈ¡ÊÀ½ç¾²Ì¬µÈ¼¶
+		//è·å–ä¸–ç•Œé™æ€ç­‰çº§
 		int32 get_world_server_last_level();
 
-		//·¢ËÍÑûÇë´íÎóÌáÊ¾
+		//å‘é€é‚€è¯·é”™è¯¯æç¤º
 		void	send_legion_dance_invite_error_tip(e_legion_dance_invite_error error_index, xstring role_name);
-		//·¢ËÍÑûÇë´íÎóÌáÊ¾
+		//å‘é€é‚€è¯·é”™è¯¯æç¤º
 		void	send_legion_dance_accept_error_tip(e_legion_dance_accept_error error_index, xstring role_name);
 
-		//·¢ËÍÑûÇë
+		//å‘é€é‚€è¯·
 		void	send_legion_dance_invite(int32 target_index);
 
-		//¾üÍÅ¹²ÎèÕıÊ½¿ªÊ¼
+		//å†›å›¢å…±èˆæ­£å¼å¼€å§‹
 		void	legion_dance_official_start(guid_64 target_guid);
 
-	//luaµ÷ÓÃ
+	//luaè°ƒç”¨
 	public:
 
 	private:

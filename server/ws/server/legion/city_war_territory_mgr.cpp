@@ -1,4 +1,4 @@
-#include "city_war_territory_mgr.h"
+ï»¿#include "city_war_territory_mgr.h"
 #include "template/template_manager.h"
 #include <legion_msg.hpp>
 #include "ws_client.hpp"
@@ -45,7 +45,7 @@ namespace faith
 		{
 			return nullptr;
 		}
-		//map[key] Èç¹ûmap²»°üº¬key »áÔÚmapÖĞ²åÈëÒ»¸ökeyµÄÔªËØ valueÈ¡Ä¬ÈÏÖµ
+		//map[key] å¦‚æœmapä¸åŒ…å«key ä¼šåœ¨mapä¸­æ’å…¥ä¸€ä¸ªkeyçš„å…ƒç´  valueå–é»˜è®¤å€¼
 		s_city_war_territory_info& territory_info = m_territory_lists[territory_id];
 		if (territory_info.territory_id <= 0)
 		{
@@ -147,7 +147,7 @@ namespace faith
 			return;
 		}
 
-		// keroÕâÀïÒªÈ·ÈÏÏÂÓĞÎÊÌâÃ»
+		// keroè¿™é‡Œè¦ç¡®è®¤ä¸‹æœ‰é—®é¢˜æ²¡
 		*bid_info = bid_info_db;
 		if (bid_info->cur_bid_price == territory_occupier_price_flag)
 		{
@@ -221,7 +221,7 @@ namespace faith
 			}
 			//ws2dp_save_war_bid_info save_war_bid_info_msg;
 			//save_war_bid_info_msg.bid_info = *bid_info_ptr;
-			//ws_client::getInstance().send_to_dp(&save_war_bid_info_msg, sizeof(save_war_bid_info_msg));//½«²Î¼Ó°ÔÖ÷¾üÍÅµÄ¾üÍÅ´æ¸öµµ
+			//ws_client::getInstance().send_to_dp(&save_war_bid_info_msg, sizeof(save_war_bid_info_msg));//å°†å‚åŠ éœ¸ä¸»å†›å›¢çš„å†›å›¢å­˜ä¸ªæ¡£
 
 			server2dp_proto_ws2dp_save_war_bid_info msg;
 			server2dp_proto_s_city_war_bid_info* bid_info_msg = msg.mutable_bid_info();
@@ -284,7 +284,7 @@ namespace faith
 			int32 server_id = 0;
 			xstring legion_name;
 			bool isdefense_win = false;
-			// Õ½°Ü´¦Àí
+			// æˆ˜è´¥å¤„ç†
 			for (int32 i = 0; i < max_apply_city_war_legion_num; i++)
 			{
 				s_city_war_bid_info* bid_info = terr_info->get_bid_info(i);
@@ -308,7 +308,7 @@ namespace faith
 				if (territory_occupier_bid_idx == i)
 				{
 					old_city_guid = bid_info->legion_guid;
-					// Õ¼ÁìÕßË÷Òı ²»ÇåÀíÏÈ ºóÃæ´¦Àí				
+					// å é¢†è€…ç´¢å¼• ä¸æ¸…ç†å…ˆ åé¢å¤„ç†				
 					continue;
 				}
 				if (overlord_war_territory_flag == territory_id)
@@ -318,7 +318,7 @@ namespace faith
 				bid_info->clear_data();
 				save_bid_info_into_db(territory_id, i);
 			}
-			//Õ½Ê¤´¦Àí
+			//æˆ˜èƒœå¤„ç†
 			send_cross_territory_war_end_Info_to_other_server(server_id, win_legion_guid, territory_id, true, isdefense_win);
 			
 			s_city_war_bid_info* occ_bid_info = terr_info->get_bid_info(territory_occupier_bid_idx);
@@ -329,7 +329,7 @@ namespace faith
 
 			if (win_legion_guid == occ_bid_info->legion_guid && territory_occupier_price_flag == occ_bid_info->cur_bid_price)
 			{
-				//·ÀÊØÊ¤Àû
+				//é˜²å®ˆèƒœåˆ©
 				return;
 			}
 			occ_bid_info->clear_data();
@@ -359,7 +359,7 @@ namespace faith
 					}
 					//ws2dp_save_war_bid_info save_war_bid_info_msg;
 					//save_war_bid_info_msg.bid_info = *bid_info_ptr;
-					//ws_client::getInstance().send_to_dp(&save_war_bid_info_msg, sizeof(save_war_bid_info_msg));//½«²Î¼Ó°ÔÖ÷¾üÍÅµÄ¾üÍÅ´æ¸öµµ
+					//ws_client::getInstance().send_to_dp(&save_war_bid_info_msg, sizeof(save_war_bid_info_msg));//å°†å‚åŠ éœ¸ä¸»å†›å›¢çš„å†›å›¢å­˜ä¸ªæ¡£
 			
 					server2dp_proto_ws2dp_save_war_bid_info msg;
 					server2dp_proto_s_city_war_bid_info* bid_info_msg = msg.mutable_bid_info();
@@ -395,7 +395,7 @@ namespace faith
 			}
 			guid_64	old_city_guid = guid_64();
 			int32 old_index = -1;
-			// Õ½°Ü´¦Àí
+			// æˆ˜è´¥å¤„ç†
 			for (int32 i = 0; i < max_apply_city_war_legion_num; i++)
 			{
 				s_city_war_bid_info* bid_info = terr_info->get_bid_info(i);
@@ -410,7 +410,7 @@ namespace faith
 				legion_ws* old_legion_ws_ptr = legion_ws_mgr::get_instance().get_legion(bid_info->legion_guid);
 				if (win_legion_guid != bid_info->legion_guid && old_legion_ws_ptr) // && territory_occupier_price_flag == bid_info->cur_bid_price
 				{
-					// ÊäÁËµÄÄÇÁ½¸ö¾üÍÅ
+					// è¾“äº†çš„é‚£ä¸¤ä¸ªå†›å›¢
 					old_legion_ws_ptr->get_event_logger().add_lose_city_by_war_event(territory_id);
 					old_legion_ws_ptr->del_city_war_territory(territory_id);
 					old_legion_ws_ptr->send_aoi_legion_info_to_all_member();
@@ -419,7 +419,7 @@ namespace faith
 				if (territory_occupier_bid_idx == i)
 				{
 					old_city_guid = bid_info->legion_guid;
-					// Õ¼ÁìÕßË÷Òı ²»ÇåÀíÏÈ ºóÃæ´¦Àí
+					// å é¢†è€…ç´¢å¼• ä¸æ¸…ç†å…ˆ åé¢å¤„ç†
 					continue;
 				}
 				if (overlord_war_territory_flag == territory_id)
@@ -430,7 +430,7 @@ namespace faith
 				save_bid_info_into_db(territory_id, i);
 			}
 
-			//Õ½Ê¤´¦Àí
+			//æˆ˜èƒœå¤„ç†
 			if (territory_id == overlord_war_territory_flag)
 			{
 				winner_legion->get_event_logger().add_win_overlord_city_war_event(winner_legion->get_chief_name());
@@ -449,11 +449,11 @@ namespace faith
 
 			if (win_legion_guid == occ_bid_info->legion_guid && territory_occupier_price_flag == occ_bid_info->cur_bid_price)
 			{
-				//·ÀÊØÊ¤Àû
+				//é˜²å®ˆèƒœåˆ©
 				return;
 			}
 
-			// ºóÃæÊÇÊ×´ÎÕ¼ÁìµÄÂß¼­
+			// åé¢æ˜¯é¦–æ¬¡å é¢†çš„é€»è¾‘
 			winner_legion->add_city_war_territory(territory_id);
 			winner_legion->send_aoi_legion_info_to_all_member();
 			occ_bid_info->clear_data();
@@ -481,7 +481,7 @@ namespace faith
 					}
 					//ws2dp_save_war_bid_info save_war_bid_info_msg;
 					//save_war_bid_info_msg.bid_info = *bid_info_ptr;
-					//ws_client::getInstance().send_to_dp(&save_war_bid_info_msg, sizeof(save_war_bid_info_msg));//½«²Î¼Ó°ÔÖ÷¾üÍÅµÄ¾üÍÅ´æ¸öµµ
+					//ws_client::getInstance().send_to_dp(&save_war_bid_info_msg, sizeof(save_war_bid_info_msg));//å°†å‚åŠ éœ¸ä¸»å†›å›¢çš„å†›å›¢å­˜ä¸ªæ¡£
 
 					server2dp_proto_ws2dp_save_war_bid_info msg;
 					server2dp_proto_s_city_war_bid_info* bid_info_msg = msg.mutable_bid_info();
@@ -524,10 +524,10 @@ namespace faith
 		}
 		return bid_info->legion_guid;
 	}
-	// ·µ»ØÖµËµÃ÷:
-	//  1 Õı³£Ö´ĞĞ
-	// -1 ¾üÍÅÊ£Óà×Ê½ğ²»×ãÒÔ½øĞĞÏÂÒ»´Î¾º±ê
-	// -2 ÖØ¸´¾º±ê ÔİÊ±Ã»ÓĞÕâÖÖ
+	// è¿”å›å€¼è¯´æ˜:
+	//  1 æ­£å¸¸æ‰§è¡Œ
+	// -1 å†›å›¢å‰©ä½™èµ„é‡‘ä¸è¶³ä»¥è¿›è¡Œä¸‹ä¸€æ¬¡ç«æ ‡
+	// -2 é‡å¤ç«æ ‡ æš‚æ—¶æ²¡æœ‰è¿™ç§
 	int32 city_war_territory_mgr::bid_one_territory(guid_64 legion_guid, int32 territory_id, int32 bid_index, guid_64 role_guid)
 	{
 		if (!world_server::getInstance().is_sky_island_server() && world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_legion_territory_war))
@@ -540,7 +540,7 @@ namespace faith
 			return -1;
 		}
 
-		//ËùÓĞ³Ç³ØÖ»ÔÊĞí¾º±êÒ»¸ö------------------
+		//æ‰€æœ‰åŸæ± åªå…è®¸ç«æ ‡ä¸€ä¸ª------------------
 		bool is_have_bid = false;
 		for (int32 i = 121000001; i < 121000005; i++)
 		{
@@ -628,9 +628,9 @@ namespace faith
 				{
 					legion_ws_mgr_ref.get_legion_city_war().send_territory_info_one(session_old, territory_id);
 				}
-				//Ìí¼Ó¾º±ê³É¹¦ÊÂ¼ş
+				//æ·»åŠ ç«æ ‡æˆåŠŸäº‹ä»¶
 				legion_ws_ptr->get_event_logger().add_bid_win_event(territory_id);
-				//Ìí¼Ó¾º±êÊ§°ÜÊÂ¼ş
+				//æ·»åŠ ç«æ ‡å¤±è´¥äº‹ä»¶
 				old_legion_ws_ptr->get_event_logger().add_bid_fail_event(territory_id);
 			}
 		}
@@ -699,7 +699,7 @@ namespace faith
 		{
 			return;
 		}
-		legion_ws_mgr::get_instance().refresh_all_legion_power();//¸üĞÂÒ»´ÎËùÓĞ¾üÍÅµÄÕ½Á¦
+		legion_ws_mgr::get_instance().refresh_all_legion_power();//æ›´æ–°ä¸€æ¬¡æ‰€æœ‰å†›å›¢çš„æˆ˜åŠ›
 
 		ranking_list* legion_rank = legion_ws_mgr::get_instance().get_legion_ranking_by_ranking_type(e_RankingIndex_legion_core);
 
@@ -748,7 +748,7 @@ namespace faith
 			}
 			//ws2dp_save_war_bid_info save_war_bid_info_msg;
 			//save_war_bid_info_msg.bid_info = *bid_info_ptr;
-			//ws_client::getInstance().send_to_dp(&save_war_bid_info_msg, sizeof(save_war_bid_info_msg));//½«²Î¼Ó°ÔÖ÷¾üÍÅµÄ¾üÍÅ´æ¸öµµ
+			//ws_client::getInstance().send_to_dp(&save_war_bid_info_msg, sizeof(save_war_bid_info_msg));//å°†å‚åŠ éœ¸ä¸»å†›å›¢çš„å†›å›¢å­˜ä¸ªæ¡£
 			server2dp_proto_ws2dp_save_war_bid_info msg;
 			server2dp_proto_s_city_war_bid_info* bid_info_msg = msg.mutable_bid_info();
 			if (nullptr == bid_info_msg)
@@ -787,19 +787,19 @@ namespace faith
 				{
 					continue;
 				}				
-				//Í¨Öªws
+				//é€šçŸ¥ws
 				city_war_territory_mgr::get_instance().send_cross_territory_war_end_one_territory_to_other_server(bid_info_ptr->server_id, bid_info_ptr->legion_guid, territory_id, false);				
 			}
 
 			if (true == need_send_notice)
 			{
-				//Í¨Öªws
+				//é€šçŸ¥ws
 				city_war_territory_mgr::get_instance().send_cross_territory_war_end_one_territory_to_other_server(server_id, winner_legion_guid, territory_id, true);
 			}
 
 			if (territory_id == overlord_war_territory_flag)
 			{
-				//Íõ³ÇÕù°Ô²»ÓÃÖ´ĞĞºóÃæµÄÂß¼­
+				//ç‹åŸäº‰éœ¸ä¸ç”¨æ‰§è¡Œåé¢çš„é€»è¾‘
 				for (int32 i = 0; i < max_apply_city_war_legion_num; i++)
 				{
 					s_city_war_territory_info* terr_info = get_territory_info(overlord_war_territory_flag);
@@ -820,7 +820,7 @@ namespace faith
 						{
 							is_winner_legion = true;
 						}
-						//legion_ws_ptr->send_mail_to_all_member_with_master_city_war(is_winner_legion);ÔİÊ±²»·¢ÓÊ¼ş
+						//legion_ws_ptr->send_mail_to_all_member_with_master_city_war(is_winner_legion);æš‚æ—¶ä¸å‘é‚®ä»¶
 					}
 				}
 				return;
@@ -832,14 +832,14 @@ namespace faith
 			}
 
 			m_finish_war_territory_num++;
-			//¶¼½áÊøÁËËãÅÅĞĞ°ñ
-			//int32 terr_num = template_manager::get_instance().get_template_row_size(e_CityWarTerritoryTemplate) - 1; // È¥µôÍõ³ÇµÄÅäÖÃÏî
+			//éƒ½ç»“æŸäº†ç®—æ’è¡Œæ¦œ
+			//int32 terr_num = template_manager::get_instance().get_template_row_size(e_CityWarTerritoryTemplate) - 1; // å»æ‰ç‹åŸçš„é…ç½®é¡¹
 			int32 terr_num = cross_server_territory_city_max_params;
 			if (m_finish_war_territory_num >= terr_num)
 			{
 
 				cacul_occupy_territory_rank();
-				//³õÊ¼»¯m_overlord_territory_info
+				//åˆå§‹åŒ–m_overlord_territory_info
 				//m_overlord_territory_info.clear_data();
 				//city_war_rank_type::iterator rank_iter = m_legion_city_war_rank.begin();
 
@@ -884,7 +884,7 @@ namespace faith
 
 			if (territory_id == overlord_war_territory_flag)
 			{
-				//Íõ³ÇÕù°Ô²»ÓÃÖ´ĞĞºóÃæµÄÂß¼­
+				//ç‹åŸäº‰éœ¸ä¸ç”¨æ‰§è¡Œåé¢çš„é€»è¾‘
 				for (int32 i = 0; i < max_apply_city_war_legion_num; i++)
 				{
 					s_city_war_territory_info* terr_info = get_territory_info(overlord_war_territory_flag);
@@ -906,7 +906,7 @@ namespace faith
 						{
 							is_winner_legion = true;
 						}
-						//legion_ws_ptr->send_mail_to_all_member_with_master_city_war(is_winner_legion);ÔİÊ±²»·¢ÓÊ¼ş
+						//legion_ws_ptr->send_mail_to_all_member_with_master_city_war(is_winner_legion);æš‚æ—¶ä¸å‘é‚®ä»¶
 					}
 				}
 				return;
@@ -918,14 +918,14 @@ namespace faith
 			}
 
 			m_finish_war_territory_num++;
-			//¶¼½áÊøÁËËãÅÅĞĞ°ñ
-			//int32 terr_num = template_manager::get_instance().get_template_row_size(e_CityWarTerritoryTemplate) - 1; // È¥µôÍõ³ÇµÄÅäÖÃÏî
+			//éƒ½ç»“æŸäº†ç®—æ’è¡Œæ¦œ
+			//int32 terr_num = template_manager::get_instance().get_template_row_size(e_CityWarTerritoryTemplate) - 1; // å»æ‰ç‹åŸçš„é…ç½®é¡¹
 			int32 terr_num = max_territory_num;
 			if (m_finish_war_territory_num >= terr_num)
 			{
 
 				cacul_occupy_territory_rank();
-				//³õÊ¼»¯m_overlord_territory_info
+				//åˆå§‹åŒ–m_overlord_territory_info
 				//m_overlord_territory_info.clear_data();
 				//city_war_rank_type::iterator rank_iter = m_legion_city_war_rank.begin();
 
@@ -961,7 +961,7 @@ namespace faith
 	}
 	int32 city_war_territory_mgr::get_city_num_cross_server() {
 		int32 server_id = 0;
-		int32 server_num = world_server::getInstance().get_server_num() - 1;//¼õµôÒ»¸ögate·ş
+		int32 server_num = world_server::getInstance().get_server_num() - 1;//å‡æ‰ä¸€ä¸ªgateæœ
 		int32 city_num = 0;
 		if (server_num < 6) 
 		{
@@ -1097,13 +1097,13 @@ namespace faith
 		if (territory_id == overlord_war_territory_flag)
 		{
 			winner_legion->notice_world_mistress();
-			////Ìí¼ÓÊÀ½ç°ÔÖ÷Ê¤ÀûÊÂ¼ş
+			////æ·»åŠ ä¸–ç•Œéœ¸ä¸»èƒœåˆ©äº‹ä»¶
 			//winner_legion->get_event_logger().add_win_overlord_city_war_event(winner_legion->get_chief_name());
 		}
 		else
 		{
 			winner_legion->notice_occupied_treeitory(territory_id);
-			////Ìí¼Ó³ÇÕ½Ê¤ÀûÊÂ¼ş
+			////æ·»åŠ åŸæˆ˜èƒœåˆ©äº‹ä»¶
 			//winner_legion->get_event_logger().add_occupy_city_event(winner_legion->get_chief_name(), territory_id);
 		}
 	}
@@ -1128,7 +1128,7 @@ namespace faith
 
 	void city_war_territory_mgr::territory_war_clear()
 	{
-		//Çå¿â
+		//æ¸…åº“
 		del_all_overload_city_bid_info();
 		m_territory_lists.clear();
 		m_abstention_city_war_legion.clear();
@@ -1136,7 +1136,7 @@ namespace faith
 		m_finish_war_territory_num = 0;
 	}
 
-	//¿ç·ş¾º¼Û
+	//è·¨æœç«ä»·
 	void city_war_territory_mgr::req_cross_server_apply_city_war_bid(guid_64 legion_guid,int32 terr_id, int32 bid_index,guid_64 role_guid) {
 
 		ws2ws_legion_proto_apply_city_war_bid msg;
@@ -1168,7 +1168,7 @@ namespace faith
 				result = -1;
 				break;
 			}
-			//ËùÓĞ³Ç³ØÖ»ÔÊĞí¾º±êÒ»¸ö------------------
+			//æ‰€æœ‰åŸæ± åªå…è®¸ç«æ ‡ä¸€ä¸ª------------------
 			bool is_have_bid = false;
 			for (int32 i = cross_server_territory_war_flag; i < cross_server_territory_war_flag + get_city_num_cross_server(); i++)
 			{
@@ -1261,7 +1261,7 @@ namespace faith
 			old_legion_ws_ptr->add_glory_glow(cur_bid_price);
 			old_legion_ws_ptr->del_city_war_territory(terr_id);
 			old_legion_ws_ptr->send_mail_to_officer_with_city_bid(terr_id);
-			//Ìí¼Ó¾º±êÊ§°ÜÊÂ¼ş
+			//æ·»åŠ ç«æ ‡å¤±è´¥äº‹ä»¶
 			old_legion_ws_ptr->get_event_logger().add_bid_fail_event(terr_id);
 		}
 	}
@@ -1302,18 +1302,18 @@ namespace faith
 				memcpy(msg.legion_name, legion_ws_ptr->get_legion_name(), max_name_size);
 				msg.server_id = world_server::getInstance().get_server_id();
 				msg.need_price = need_price;
-				//¸üĞÂgate
+				//æ›´æ–°gate
 				int32 server_id = world_server::getInstance().get_cross_id();
 				cross::send_msg_to_ws(guid_64(), server_id, e_msgindex_ws2ws_legion_proto_apply_city_war_bid_end, &msg, sizeof(msg));
 			} while (false);		
 		}
-		//Í¨Öª
+		//é€šçŸ¥
 		client_session* session = client_session_mgr::getInstance().get_session(role_guid);
 		if (nullptr == session)
 		{
 			return;
 		}
-		if (result1 == 0 && !not_in_time)//Èç¹ûÎª0²»·µ»Ø¾º±ê³É¹¦£¬ÒòÎª½ÓÏÂÀ´ÓĞ¿ÉÄÜ»áÊ§°Ü
+		if (result1 == 0 && !not_in_time)//å¦‚æœä¸º0ä¸è¿”å›ç«æ ‡æˆåŠŸï¼Œå› ä¸ºæ¥ä¸‹æ¥æœ‰å¯èƒ½ä¼šå¤±è´¥
 		{
 			return;
 		}
@@ -1321,7 +1321,7 @@ namespace faith
 		{
 			session->send_notice("90202467");
 		}
-		//·µ»Ø¾º¼Û½áÊøĞÅÏ¢
+		//è¿”å›ç«ä»·ç»“æŸä¿¡æ¯
 		legion_proto_apply_city_war_bid_end apply_city_war_bid_end_msg;
 		apply_city_war_bid_end_msg.set_result(result1);
 		session->send_to_client(&apply_city_war_bid_end_msg, e_msgindex_s2c_apply_city_war_bid_end);
@@ -1363,7 +1363,7 @@ namespace faith
 		bid_info->server_id = server_id;
 		bid_info->set_legion_name(legion_name);
 		save_bid_info_into_db(territory_id, bid_index);
-		//¸üĞÂ¿Í»§¶Ë	
+		//æ›´æ–°å®¢æˆ·ç«¯	
 		ws2wsreq_legion_send_territory_info msg;
 		msg.role_guid = role_guid;
 		msg.info = *terr_info;
@@ -1371,7 +1371,7 @@ namespace faith
 		msg.legion_guid = legion_guid;
 		cross::send_msg_to_ws(guid_64(), server_id, e_msgindex_ws2wsreq_legion_send_territory_info, &msg, sizeof(msg));
 		
-		//ÏòËùÓĞ²Î¼Ó¸Ã³Ç³Ø¾º¼ÛµÄ¾üÍÅÍÆËÍĞÅÏ¢
+		//å‘æ‰€æœ‰å‚åŠ è¯¥åŸæ± ç«ä»·çš„å†›å›¢æ¨é€ä¿¡æ¯
 		ws2ws_legion_proto_push_city_war_info cur_city_info;
 		cur_city_info.city_info = *terr_info;
 		for (int32 i = 0; i < max_apply_city_war_legion_num; i++)
@@ -1384,7 +1384,7 @@ namespace faith
 			cur_city_info.legion_guid = bid_info->legion_guid;
 			cross::send_msg_to_ws(guid_64(), bid_info->server_id, e_msgindex_ws2ws_legion_proto_push_city_war_info, &cur_city_info, sizeof(cur_city_info));
 		}
-		//¾º¼Û·µ»¹
+		//ç«ä»·è¿”è¿˜
 		if (!is_same_legion)
 		{
 			ws2ws_legion_proto_return_city_war_bid_money money_return_msg;
@@ -1419,7 +1419,7 @@ namespace faith
 		{
 			return;
 		}
-		//Ìí¼Ó¾º±ê³É¹¦ÊÂ¼ş
+		//æ·»åŠ ç«æ ‡æˆåŠŸäº‹ä»¶
 		legion_ws_ptr->get_event_logger().add_bid_win_event(info.territory_id);
 		legion_ws_ptr->add_asset_money(-need_price);
 		legion_ws_ptr->add_glory_glow(-need_price);
@@ -1436,7 +1436,7 @@ namespace faith
 
 		session_cur->send_to_client(&req_territory_info_end_msg, e_msgindex_s2c_get_city_war_territory_info_end);
 	}
-	//¿ç·ş²ÎÕ½
+	//è·¨æœå‚æˆ˜
 	void city_war_territory_mgr::req_cross_server_enter_city_war_map(guid_64 role_guid,int32 terr_id,guid_64 legin_guid) 
 	{
 		ws2ws_transfer_cross_pk_map msg;
@@ -1473,7 +1473,7 @@ namespace faith
 				ret = e_error_code_map_no_territory_war_qualification;
 				break;
 			}	
-			//Ã¿ÈÕ²ÎÕ½ÅĞ¶Ï²¢¸üĞÂËùÔÚ·şÎñÆ÷id
+			//æ¯æ—¥å‚æˆ˜åˆ¤æ–­å¹¶æ›´æ–°æ‰€åœ¨æœåŠ¡å™¨id
 			s_city_war_territory_info* terr_info = get_territory_info(terr_id);
 			if (nullptr == terr_info)
 			{
@@ -1533,7 +1533,7 @@ namespace faith
 		}
 		return index;
 	}
-	//¿ç·şÓÅÏÈÎ¬»¤
+	//è·¨æœä¼˜å…ˆç»´æŠ¤
 	void city_war_territory_mgr::req_cross_server_territory_prior_maintain(guid_64 legion_guid, int32 TerritoryIds[], guid_64 role_guid,int32 territoryids_num)
 	{
 			ws2ws_set_territory_prior_maintain msg;
@@ -1572,7 +1572,7 @@ namespace faith
 	{
 		legion_ws_mgr& legion_ws_mgr_ref = legion_ws_mgr::get_instance();
 
-		// Èç¹ûÉêÇë²Î¼Ó³ÇÕ½µÄ½ÇÉ«Ã»ÓĞ¼ÓÈëÈÎºÎ¾üÍÅ¾Í²»ÄÜÉêÇë
+		// å¦‚æœç”³è¯·å‚åŠ åŸæˆ˜çš„è§’è‰²æ²¡æœ‰åŠ å…¥ä»»ä½•å†›å›¢å°±ä¸èƒ½ç”³è¯·
 		legion_ws* legion_ws_ptr = legion_ws_mgr_ref.get_unit_legion(role_guid);
 
 		if (nullptr != legion_ws_ptr) 
@@ -1597,7 +1597,7 @@ namespace faith
 				}
 			}
 		}
-		//¸üĞÂ¿Í»§¶ËĞÅÏ¢
+		//æ›´æ–°å®¢æˆ·ç«¯ä¿¡æ¯
 		client_session* session_cur = client_session_mgr::getInstance().get_session(role_guid);
 		if (session_cur)
 		{
@@ -1683,7 +1683,7 @@ namespace faith
 		}
 		session_cur->send_to_client(&get_city_war_info_end_msg, e_msgindex_s2c_get_city_war_info_end);
 	}
-	//Áì½±
+	//é¢†å¥–
 	void city_war_territory_mgr::req_get_occupation_daily_award(guid_64 role_guid,guid_64 legion_guid,int32 terri_id)
 	{
 		ws2wsreq_get_occupation_daily_award msg;
@@ -1707,12 +1707,12 @@ namespace faith
 			legion_ws_city_war& city_war_mgr = legion_ws_mgr::get_instance().get_legion_city_war();
 			if (legion_guid != city_war_mgr.get_occupy_legion_guid(terri_id))
 			{
-				notice = 90090403;//Î´´ïµ½ÁìÈ¡Ìõ¼ş
+				notice = 90090403;//æœªè¾¾åˆ°é¢†å–æ¡ä»¶
 				break;
 			}
 			if (true == city_war_mgr.is_during_city_war_time(terri_id) && terri_id != overlord_war_territory_flag)
 			{
-				notice = 90202127;//Èç¹û´¦ÓÚ³ÇÕ½ÆÚ¼äÔò²»ÄÜÁìÈ¡½±Àø
+				notice = 90202127;//å¦‚æœå¤„äºåŸæˆ˜æœŸé—´åˆ™ä¸èƒ½é¢†å–å¥–åŠ±
 				break;
 			}
 		} while (false);
@@ -1757,7 +1757,7 @@ namespace faith
 		}
 		init_unit::mark_flag_data(legion_city_war_award_flag_data, rwd_flag_idx);
 		legion_ws_ptr->update_member_info_one(session_cur->get_role_guid(), e_legion_member_info_last_get_city_award, legion_city_war_award_flag_data);
-		// Í¨ÖªCS»ñÈ¡½±Àø
+		// é€šçŸ¥CSè·å–å¥–åŠ±
 		ws2cs_get_occupation_daily_award get_occupation_daily_award_msg;
 		get_occupation_daily_award_msg.role_guid = session_cur->get_role_guid();
 		get_occupation_daily_award_msg.territory_id = terr_id;
@@ -1813,7 +1813,7 @@ namespace faith
 		if (is_winner)
 		{
 			legion_ws* winner_legion = legion_ws_mgr::get_instance().get_legion(legion_guid);
-			//Õ½Ê¤´¦Àí
+			//æˆ˜èƒœå¤„ç†
 			if (winner_legion != nullptr)
 			{
 				winner_legion->get_event_logger().add_occupy_city_event(winner_legion->get_chief_name(), terri_id);
@@ -1836,7 +1836,7 @@ namespace faith
 			legion_ws* old_legion_ws_ptr = legion_ws_mgr::get_instance().get_legion(legion_guid);
 			if (old_legion_ws_ptr) // && territory_occupier_price_flag == bid_info->cur_bid_price
 			{
-				// ÊäÁËµÄÄÇÁ½¸ö¾üÍÅ
+				// è¾“äº†çš„é‚£ä¸¤ä¸ªå†›å›¢
 				old_legion_ws_ptr->get_event_logger().add_lose_city_by_war_event(terri_id);
 				old_legion_ws_ptr->del_city_war_territory_common(terri_id);
 				old_legion_ws_ptr->del_city_war_territory_prior(terri_id);
@@ -1845,9 +1845,9 @@ namespace faith
 		}
 	}
 
-	//¼ì²éºÏ·şÖ®ºóµÄ·şÎñÆ÷id
-	//Èç¹ûcity_war_bid_info±íÀïµÄserverid²»´æÔÚ£¬Ö±½ÓÉ¾³ı
-	//ÒòÎª¿ç·şÂß¼­ĞŞ¸Ä£¬µ÷ÕûÎª·şÎñÆ÷±»Å²×ßÊ±£¬É¾³ı¸Ã·şÎñÆ÷µÄ¾üÍÅ
+	//æ£€æŸ¥åˆæœä¹‹åçš„æœåŠ¡å™¨id
+	//å¦‚æœcity_war_bid_infoè¡¨é‡Œçš„serveridä¸å­˜åœ¨ï¼Œç›´æ¥åˆ é™¤
+	//å› ä¸ºè·¨æœé€»è¾‘ä¿®æ”¹ï¼Œè°ƒæ•´ä¸ºæœåŠ¡å™¨è¢«æŒªèµ°æ—¶ï¼Œåˆ é™¤è¯¥æœåŠ¡å™¨çš„å†›å›¢
 	void city_war_territory_mgr::remove_bid_info_when_server_remove(int32 server_id)
 	{
 		for (territory_lists_type::iterator iter = m_territory_lists.begin(); iter != m_territory_lists.end(); ++iter)
@@ -1962,7 +1962,6 @@ namespace faith
 		//	{
 		//		continue;
 		//	}
-		//	
 		//}
 	}
 	void city_war_territory_mgr::change_legion_name(guid_64 legion_guid, xstring legion_name)

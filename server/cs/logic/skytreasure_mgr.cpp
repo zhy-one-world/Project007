@@ -142,7 +142,7 @@ namespace faith
 			{
 				m_skytreasure_info_list[i].skytreasure_pos_in_array = -1;
 
-				//ÖÜÆÚË¢ĞÂ¸Ä±äÊı¾İ¿â
+				//å‘¨æœŸåˆ·æ–°æ”¹å˜æ•°æ®åº“
 				s_skytreasure_info skytreasure_info;
 				skytreasure_info.skytreasure_layer_num = m_skytreasure_info_list[i].skytreasure_layer_num;
 				skytreasure_info.skytreasure_pos = m_skytreasure_info_list[i].skytreasure_pos;
@@ -189,7 +189,7 @@ namespace faith
 		{
 			return;
 		}
-		//ÅĞ¶ÏÕâ¸ö¸ñ×ÓÊÇ²»ÊÇÒÑ¾­·­¹ı
+		//åˆ¤æ–­è¿™ä¸ªæ ¼å­æ˜¯ä¸æ˜¯å·²ç»ç¿»è¿‡
 		for (int32 i = 0; i < m_skytreasure_num; i++)
 		{
 			if (m_skytreasure_info_list[i].skytreasure_layer_num == layer_num && m_skytreasure_info_list[i].skytreasure_pos == slot_pos && m_skytreasure_info_list[i].skytreasure_pos_in_array >= 0)
@@ -225,8 +225,8 @@ namespace faith
 			return;
 		}
 
-		//ÕÒµ½µ±Ç°²ã·­¿ª½±ÀøµÄÊıÁ¿ ²¢½«ÒÑÓĞ½±ÀøµÄÎ»ÖÃ·Åµ½Êı×éÀï
-		int32 get_reward_num = 0;        //µ±Ç°²ã·­ÅÆ´ÎÊı
+		//æ‰¾åˆ°å½“å‰å±‚ç¿»å¼€å¥–åŠ±çš„æ•°é‡ å¹¶å°†å·²æœ‰å¥–åŠ±çš„ä½ç½®æ”¾åˆ°æ•°ç»„é‡Œ
+		int32 get_reward_num = 0;        //å½“å‰å±‚ç¿»ç‰Œæ¬¡æ•°
 		int32 reward_arr[max_skytreasure_reward_num];
 		memset(reward_arr, -1, sizeof(reward_arr));
 		for (int32 j = 0; j < max_skytreasure_num; j++)
@@ -243,15 +243,15 @@ namespace faith
 
 		if (reward_arr[0] >= 0)
 		{
-			get_reward_num--; //³ıÈ¥´ó½±
+			get_reward_num--; //é™¤å»å¤§å¥–
 		}
 
-		//»ñµÃËæ»ú½±Àø ²»ÄÜËæµ½Ö®Ç°ÓĞµÄ
+		//è·å¾—éšæœºå¥–åŠ± ä¸èƒ½éšåˆ°ä¹‹å‰æœ‰çš„
 		int32 reward_pos = random_gen::get_random(0, num / 2 - get_reward_num - 2);
 		int32 temp_num = 0;
 		int32 real_reward_pos_in_arr = -1;
 
-		//·­ÅÆĞ¡ÓÚµÈÓÚ10´ÎËæ»úÒ»¸ö²»ÊÇ´ó½±µÄ  (´ó½±ÊÇ±íÖĞµÚÒ»¸ö)
+		//ç¿»ç‰Œå°äºç­‰äº10æ¬¡éšæœºä¸€ä¸ªä¸æ˜¯å¤§å¥–çš„  (å¤§å¥–æ˜¯è¡¨ä¸­ç¬¬ä¸€ä¸ª)
 		if (get_reward_num < branch_template_ptr.ParamArr2[0])
 		{
 			for (int32 j = 0; j < max_skytreasure_reward_num; j++)
@@ -267,9 +267,9 @@ namespace faith
 				}
 			}
 		}
-		else //·­ÅÆ´óÓÚ10´ÎÓĞ (´ÎÊı*0.2+10)% ¼¸ÂÊ»ñµÃ´ó½± 
+		else //ç¿»ç‰Œå¤§äº10æ¬¡æœ‰ (æ¬¡æ•°*0.2+10)% å‡ ç‡è·å¾—å¤§å¥– 
 		{
-			//ÄÃµ½¹ı´ó½±ÁË
+			//æ‹¿åˆ°è¿‡å¤§å¥–äº†
 			if (reward_arr[0] >= 0)
 			{
 				for (int32 j = 0; j < max_skytreasure_reward_num; j++)
@@ -287,14 +287,14 @@ namespace faith
 			}
 			else
 			{
-				//Èç¹ûÖ»Ê£´ó½±ÁË ¸øËû´ó½±
+				//å¦‚æœåªå‰©å¤§å¥–äº† ç»™ä»–å¤§å¥–
 				if (num / 2 - get_reward_num == 1)
 				{
 					real_reward_pos_in_arr = 0;
 				}
 				else
 				{
-					//Ã»ÓĞÄÃµ½¹ı´ó½± ÏÈ³é´ó½±
+					//æ²¡æœ‰æ‹¿åˆ°è¿‡å¤§å¥– å…ˆæŠ½å¤§å¥–
 					int32 big_reward_random_num = random_gen::get_random(0, 1000);
 					if (big_reward_random_num < get_reward_num * (branch_template_ptr.ParamArr2[1] * 0.1f) + (branch_template_ptr.ParamArr2[2] * 0.1f))
 					{
@@ -302,7 +302,7 @@ namespace faith
 					}
 					else
 					{
-						//Ëæ»úÒ»¸ö²»ÊÇ´ó½±µÄ
+						//éšæœºä¸€ä¸ªä¸æ˜¯å¤§å¥–çš„
 						for (int32 j = 0; j < max_skytreasure_reward_num; j++)
 						{
 							if (reward_arr[j] == -1 && j > 0)
@@ -334,7 +334,7 @@ namespace faith
 			return;
 		}
 
-		//¿Û³ıÔ¿³×
+		//æ‰£é™¤é’¥åŒ™
 		if (item_system::can_cost_item(&player_ref, e_bag_type_bag, branch_template_ptr.ParamArr1[0], 1) == false)
 		{
 			operate_end(operate_type, skytreasure_operate_error_not_item);
@@ -342,7 +342,7 @@ namespace faith
 		}
 		item_system::cost_item_from_bag(&player_ref, e_bag_type_bag, branch_template_ptr.ParamArr1[0], 1);
 
-		//»ñµÃ½±Àø
+		//è·å¾—å¥–åŠ±
 		//vector<int32> promp_item_data;
 
 		citem* temp_item = player_ref.get_item_set().create_item_by_template(e_server_log_add_item_skytreasure, 0, item_id, item_num, 1);
@@ -357,13 +357,13 @@ namespace faith
 			player_ref.get_item_set().get_item_send_promp_msg_to_client(promp_item_data);*/
 		}
 
-		//Èç¹ûÊÇ´ó½±Ôò·¢ËÍ¹«¸æ
+		//å¦‚æœæ˜¯å¤§å¥–åˆ™å‘é€å…¬å‘Š
 		if (item_id == branch_template_ptr.Condition[0])
 		{
 			send_skytreasure_notice(item_id);
 		}
 
-		//´æ¿â Ã¿·­Ò»´ÎÅÆ ´æÒ»´Î¿â
+		//å­˜åº“ æ¯ç¿»ä¸€æ¬¡ç‰Œ å­˜ä¸€æ¬¡åº“
 		s_skytreasure_info skytreasure_info;
 		skytreasure_info.skytreasure_layer_num = layer_num;
 		skytreasure_info.skytreasure_pos = slot_pos;
@@ -398,7 +398,7 @@ namespace faith
 			return;
 		}
 
-		//¿Û³ıÔ¿³×»¨·Ñ
+		//æ‰£é™¤é’¥åŒ™èŠ±è´¹
 		if (!player_ref.can_cut_money((e_money_type)branch_template_ptr.ParamArr1[1],branch_template_ptr.ParamArr1[2] * item_num))
 		{
 			operate_end(operate_type, skytreasure_operate_error_not_money);
@@ -406,7 +406,7 @@ namespace faith
 		}
 		player_ref.cut_money((e_money_type)branch_template_ptr.ParamArr1[1], branch_template_ptr.ParamArr1[2] * item_num, e_server_log_cut_money_skytreasure_buy_key);
 
-		//»ñµÃÔ¿³×
+		//è·å¾—é’¥åŒ™
 		std::vector<s_item_template_info> promp_item_data;
 
 		citem* temp_item = player_ref.get_item_set().create_item_by_template(e_server_log_add_item_skytreasure, 0, branch_template_ptr.ParamArr1[0], item_num, 1);

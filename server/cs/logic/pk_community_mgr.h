@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê8ÔÂ9ÈÕ13:56:28
+created: 2016å¹´8æœˆ9æ—¥13:56:28
 file base: pk_mgr
 file ext: h
 author: zhangminghai
@@ -47,7 +47,7 @@ namespace faith
 		void	set_legion_protect(bool cfg_value);
 
 		void	add_pk_value(int32 pk_value);
-		int32	cut_pk_value(int32 pk_value); //·µ»Ø³É¹¦¼õÉÙ¶àÉÙµãpkÖµ
+		int32	cut_pk_value(int32 pk_value); //è¿”å›æˆåŠŸå‡å°‘å¤šå°‘ç‚¹pkå€¼
 		int32	get_pk_value();
 		void	pk_value_skip_level_add_buff(int32 old_value, int32 new_value);
 		void	pk_value_add_buff(int32 pk_value);
@@ -82,8 +82,8 @@ namespace faith
 		//int64				m_fight_back_end_stamp;
 		c_fight_back_map	m_fight_back_list;
 		int64				m_tick_interval_1sec;
-		//°²È«ÇøÅĞ¶¨
-		int64				m_cut_interval_get_region;	//ÇøÓòÀàĞÍtick
+		//å®‰å…¨åŒºåˆ¤å®š
+		int64				m_cut_interval_get_region;	//åŒºåŸŸç±»å‹tick
 		int32				m_region_type = e_region_type_zhongli;
 		fvector				m_pre_location;
 		int32				m_map_have_not_safe_region;

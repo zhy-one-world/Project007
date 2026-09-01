@@ -16,9 +16,9 @@
 
 namespace faith
 {
-	//	»ùÓÚRDE·½·¨µÄ¡°Í¨ĞÅ°²È«²ã¡±£¨SCL£©ÊµÏÖ
-	//	ÊµÏÖ FEP ºÍ Client Ö®¼äµÄÍ¨ĞÅ°²È«²ã
-	//	Ö÷ÒªÓÉ proxy_service_cli Ê¹ÓÃ
+	//	åŸºäºRDEæ–¹æ³•çš„â€œé€šä¿¡å®‰å…¨å±‚â€ï¼ˆSCLï¼‰å®ç°
+	//	å®ç° FEP å’Œ Client ä¹‹é—´çš„é€šä¿¡å®‰å…¨å±‚
+	//	ä¸»è¦ç”± proxy_service_cli ä½¿ç”¨
 	class security_communication_layer : public singleton<security_communication_layer>
 	{
 	public:

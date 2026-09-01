@@ -306,19 +306,19 @@ namespace faith
 		empty_player.get_legion_cs_mgr().set_is_city_master(packet->bflag_loading_title[faith::e_title_type_legion_city_win_chief]);
 		empty_player.get_legion_cs_mgr().set_is_win_city_war_member(packet->bflag_loading_title[faith::e_title_type_legion_city_win_member]);
 		empty_player.set_is_already_login(packet->is_already_login);
-		// Èç¹ûÊÇPKÖ®Íõ¾Í»ñµÃPKÖ®ÍõµÄ³ÆºÅ,Èç¹û²»ÊÇ¾Í°ş¶áPKÖ®ÍõµÄ³ÆºÅs 
-		//Èç¹ûÊÇ¾üÍÅÕ½Ê¤Àû·½³ÉÔ±,Ìí¼Ó³ÆºÅ  
-		//ÅÅĞĞÀà³ÆºÅ   
+		// å¦‚æœæ˜¯PKä¹‹ç‹å°±è·å¾—PKä¹‹ç‹çš„ç§°å·,å¦‚æœä¸æ˜¯å°±å‰¥å¤ºPKä¹‹ç‹çš„ç§°å·s 
+		//å¦‚æœæ˜¯å†›å›¢æˆ˜èƒœåˆ©æ–¹æˆå‘˜,æ·»åŠ ç§°å·  
+		//æ’è¡Œç±»ç§°å·   
 		empty_player.get_title_mgr().add_loading_ranking_finish_title_type(packet->bflag_loading_title);
 
 		skill_manager::skill_set_owner(empty_player.get_array_index());
 		empty_player.set_login_time(packet->login_time);
 		
-		// ÔÚ¼ÓÔØroleÊı¾İÖ®Ç°ÏÈÉèÖÃaccount£¬·ñÔò¼ÓÔØ´íÎóÊ±É¾³ıÊı¾İÓ°Ïì»úÆ÷ÈË¼ÆÊı
+		// åœ¨åŠ è½½roleæ•°æ®ä¹‹å‰å…ˆè®¾ç½®accountï¼Œå¦åˆ™åŠ è½½é”™è¯¯æ—¶åˆ é™¤æ•°æ®å½±å“æœºå™¨äººè®¡æ•°
 		empty_player.set_role_account(packet->account);
 
 		empty_player.create_obj_lua();
-		//ÉÏÏß¼ÓÔØÊı¾İ
+		//ä¸Šçº¿åŠ è½½æ•°æ®
 		empty_player.load_role_data_online(packet->role_guid);
 
 		
@@ -1240,7 +1240,7 @@ namespace faith
 			temp_item_list.push_back(packet->item_list[i]);
 		}
 
-		//´Ë´¦Ö»ÊÇÎªÁËÈÃ¿ÉÒÔ¼´Ê±ÊÕµ½ÓÊ¼şµÄÍæ¼ÒÊÕ¼ş£¨¼°²Ù×÷£©£¬µ±¶¨Ê±¸üĞÂÊ±£¬»¹ÊÇÒÔÊı¾İ¿âÎª×¼
+		//æ­¤å¤„åªæ˜¯ä¸ºäº†è®©å¯ä»¥å³æ—¶æ”¶åˆ°é‚®ä»¶çš„ç©å®¶æ”¶ä»¶ï¼ˆåŠæ“ä½œï¼‰ï¼Œå½“å®šæ—¶æ›´æ–°æ—¶ï¼Œè¿˜æ˜¯ä»¥æ•°æ®åº“ä¸ºå‡†
 		receive_player.get_mail_mgr().receive_mail(packet->mail_info, temp_item_list);
 	}
 
@@ -1366,7 +1366,7 @@ namespace faith
 			return;
 		}
 
-		//¸üĞÂ±»³ç°İÍæ¼ÒµÄ³ç°İ´ÎÊı
+		//æ›´æ–°è¢«å´‡æ‹œç©å®¶çš„å´‡æ‹œæ¬¡æ•°
 		player& target_player_ref = unit_man::get_player(packet->target_guid);
 		if (true == target_player_ref.is_valid())
 		{
@@ -1548,7 +1548,7 @@ namespace faith
 		bool is_receive = main_player_ref.get_mission_mgr().random_marry_mission(true);
 		if (is_receive)
 		{
-			//½ÓÈ¡³É¹¦ÌáÊ¾
+			//æ¥å–æˆåŠŸæç¤º
 			const std::string& notice_str = template_manager::get_instance().get_str_by_string_template_id(90096815);
 			main_player_ref.send_notice(notice_str);
 		}
@@ -1778,7 +1778,7 @@ namespace faith
 			//if (temp_npc->get_npc_template()->NpcType!=3)
 			//{
 				//return;
-			//}//²»ÎªÊÀ½çbossµÄ»°¾Íreturn
+			//}//ä¸ä¸ºä¸–ç•Œbossçš„è¯å°±return
 			if(temp_npc->get_npc_template() != nullptr
 				&& temp_npc->get_npc_template()->CreatingNotice.size() > 0)
 			{
@@ -2307,7 +2307,7 @@ namespace faith
 				return;
 			}
 		}
-		// ´óÓÚ10000ËµÃ÷ÊÇÎïÆ·×ßÎïÆ·Âß¼­
+		// å¤§äº10000è¯´æ˜æ˜¯ç‰©å“èµ°ç‰©å“é€»è¾‘
 		if (packet->need_money_type > 10000)
 		{
 			if (item_system::can_cost_item(&player_ref, e_bag_type_bag, packet->need_money_type, packet->need_money_count) == false)

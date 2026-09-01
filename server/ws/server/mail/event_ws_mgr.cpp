@@ -54,7 +54,7 @@ namespace faith
 		int32 temp_cur_time = time_helper::get_cur_time_new().second;
 		bool mail_changed = false;
 		for (int32 i = 0; i < max_globel_mail_in_same_time; ++i)
-		{//¼ì²éÈ«¾ÖÓÊ¼ş´æ»îĞÔ
+		{//æ£€æŸ¥å…¨å±€é‚®ä»¶å­˜æ´»æ€§
 			if (!m_globel_mail_array[i].mail_guid.is_valid())
 			{
 				continue;
@@ -304,7 +304,7 @@ namespace faith
 		memcpy(m_temp_event_guid_array, had_event_array, data_num * sizeof(guid_64));
 
 		for (int32 i = 0; i < data_num; ++i)
-		{//ÕÒ³öËùÓĞÎ´½ÓÊÜ¹ıµÄÈ«¾ÖÓÊ¼ş£¬²¢Çå¿ÕÎŞĞ§µÄ±êÖ¾Î»
+		{//æ‰¾å‡ºæ‰€æœ‰æœªæ¥å—è¿‡çš„å…¨å±€é‚®ä»¶ï¼Œå¹¶æ¸…ç©ºæ— æ•ˆçš„æ ‡å¿—ä½
 			if (!m_temp_event_guid_array[i].is_valid())
 			{
 				continue;
@@ -319,8 +319,8 @@ namespace faith
 				}
 
 				if (m_temp_event_guid_array[i] == m_temp_mail_array[j].mail_guid)
-				{//ÒÑ¾­ÓĞ´ËÓÊ¼ş
-				 //¾Í°Ñ´ËÓÊ¼ş´Ó Ô¤½ÓÊÜÓÊ¼ş ÁĞ±íÉ¾³ı
+				{//å·²ç»æœ‰æ­¤é‚®ä»¶
+				 //å°±æŠŠæ­¤é‚®ä»¶ä» é¢„æ¥å—é‚®ä»¶ åˆ—è¡¨åˆ é™¤
 					m_temp_mail_array[j].clear_data();
 					is_this_event_req_delete = false;
 					break;
@@ -328,17 +328,17 @@ namespace faith
 			}
 
 			if (is_this_event_req_delete)
-			{//Íæ¼ÒÉíÉÏµÄguidÔÚ·şÎñÆ÷¶ËÕÒ²»µ½£¬¾ÍËµÃ÷¸ÃÓÊ¼şÊÂ¼şÊ§Ğ§ÁË£¬É¾³ıÍæ¼ÒÉíÉÏµÄ±êÖ¾Î»
+			{//ç©å®¶èº«ä¸Šçš„guidåœ¨æœåŠ¡å™¨ç«¯æ‰¾ä¸åˆ°ï¼Œå°±è¯´æ˜è¯¥é‚®ä»¶äº‹ä»¶å¤±æ•ˆäº†ï¼Œåˆ é™¤ç©å®¶èº«ä¸Šçš„æ ‡å¿—ä½
 				m_temp_event_guid_array[i].clear_data();
 				event_state_changed = true;
 			}
 		}
 
 		for (int32 i = 0; i < max_globel_mail_in_same_time; ++i)
-		{//×îÖÕ·¢ËÍÓÊ¼ş
+		{//æœ€ç»ˆå‘é€é‚®ä»¶
 			if (!m_temp_mail_array[i].mail_guid.is_valid()
 				|| m_temp_mail_array[i].data_ary[EMailInfo_SendTime] < role_create_time)
-			{//ÓÊ¼ş·¢ËÍÈÕÆÚÔÚ½¨ºÅÖ®Ç°
+			{//é‚®ä»¶å‘é€æ—¥æœŸåœ¨å»ºå·ä¹‹å‰
 				continue;
 			}
 
@@ -367,7 +367,7 @@ namespace faith
 						{
 							temp_mail_items_info[effect_item_index] = temp_it->second;
 
-							//´Ë´¦µÄÎïÆ·ĞÅÏ¢ÊÇÄ£°å£¬ĞèÒª¶ÔÃ¿¸ö·¢ËÍµÄÎïÆ·ÖØĞÂÉú³Éguid
+							//æ­¤å¤„çš„ç‰©å“ä¿¡æ¯æ˜¯æ¨¡æ¿ï¼Œéœ€è¦å¯¹æ¯ä¸ªå‘é€çš„ç‰©å“é‡æ–°ç”Ÿæˆguid
 							temp_mail_items_info[effect_item_index].item_guid = guid_gen::make_guid(player_guid);
 							effect_item_index++;
 						}
@@ -380,7 +380,7 @@ namespace faith
 			mail_ws_mgr::get_instance().send_mail(player_guid, 0, temp_mail_info, temp_mail_items_info, effect_item_index, false);
 
 			for (int32 j = 0; j < max_globel_mail_in_same_time; ++j)
-			{//´Ë´¦ËäÈ»Ã»ÓÃ data_num µ«²»»áÓĞÎÊÌâ£¬ÒòÎªdata_numÊÇÓĞĞ§³¤¶È²»ÊÇ×Ü³¤¶È
+			{//æ­¤å¤„è™½ç„¶æ²¡ç”¨ data_num ä½†ä¸ä¼šæœ‰é—®é¢˜ï¼Œå› ä¸ºdata_numæ˜¯æœ‰æ•ˆé•¿åº¦ä¸æ˜¯æ€»é•¿åº¦
 				if (!m_temp_event_guid_array[j].is_valid())
 				{
 					m_temp_event_guid_array[j] = m_temp_mail_array[i].mail_guid;
@@ -482,7 +482,7 @@ namespace faith
 
 	void event_ws_mgr::send_notice_to_all(int32 notice_id, int32 notice_create_time, guid_64 sender_guid, std::string final_string,int32 sender_template_id)
 	{
-		// ·âÏûÏ¢°ü
+		// å°æ¶ˆæ¯åŒ…
  		chat_proto_notice_info msg;
 		msg.add_role_guid(sender_guid.A);
 		msg.add_role_guid(sender_guid.B);
@@ -491,10 +491,10 @@ namespace faith
 		msg.set_final_string(final_string);
 		msg.set_sender_template_id(sender_template_id);
 
-		// ÏûÏ¢ÀàĞÍ
+		// æ¶ˆæ¯ç±»å‹
 		uint32 header = e_msgindex_s2c_receive_notice;
 
-		// ÅĞ¶Ï·¢ËÍ¶ÔÏó
+		// åˆ¤æ–­å‘é€å¯¹è±¡
 		NoticeTemplate* notice_template_ptr = GET_TEMPLATE(NoticeTemplate, notice_id);
 		if (notice_template_ptr == nullptr)
 		{
@@ -502,17 +502,17 @@ namespace faith
 		}
 		switch (notice_template_ptr->VisibleType)
 		{
-		case 0:// È«·ş
-		case 5://ÊÀ½ç
+		case 0:// å…¨æœ
+		case 5://ä¸–ç•Œ
 			send_notice_to_everyone(&msg, header);
 			break;
-		case 1:// ¾üÍÅ
+		case 1:// å†›å›¢
 			send_notice_to_legion(sender_guid, &msg, header);
 			break;
-		case 2:// ¶ÓÎé
+		case 2:// é˜Ÿä¼
 			send_notice_to_team(sender_guid, &msg, header);
 			break;
-		case 3:// ×Ô¼º
+		case 3:// è‡ªå·±
 			send_notice_to_self(sender_guid, &msg, header);
 			break;
 		default:
@@ -522,7 +522,7 @@ namespace faith
 
 	void event_ws_mgr::send_notice_to_all(int32 notice_id, int32 notice_create_time, guid_64 sender_guid, std::string final_string, s_item_info* item_data, int32 item_num,int32 sender_template_id)
 	{
-		// ·âÏûÏ¢°ü
+		// å°æ¶ˆæ¯åŒ…
 		chat_proto_notice_info msg;
 		msg.add_role_guid(sender_guid.A);
 		msg.add_role_guid(sender_guid.B);
@@ -547,10 +547,10 @@ namespace faith
 			return;
 		}
 
-		// ÏûÏ¢ÀàĞÍ
+		// æ¶ˆæ¯ç±»å‹
 		uint32 header = e_msgindex_s2c_receive_notice;
 
-		// ÅĞ¶Ï·¢ËÍ¶ÔÏó
+		// åˆ¤æ–­å‘é€å¯¹è±¡
 		NoticeTemplate* notice_template_ptr = GET_TEMPLATE(NoticeTemplate, notice_id);
 		if (notice_template_ptr == nullptr)
 		{
@@ -558,17 +558,17 @@ namespace faith
 		}
 		switch (notice_template_ptr->VisibleType)
 		{
-		case 0:// È«·ş
+		case 0:// å…¨æœ
 		case 5:
 			send_notice_to_everyone(&msg, header);
 			break;
-		case 1:// ¾üÍÅ
+		case 1:// å†›å›¢
 			send_notice_to_legion(sender_guid, &msg, header);
 			break;
-		case 2:// ¶ÓÎé
+		case 2:// é˜Ÿä¼
 			send_notice_to_team(sender_guid, &msg, header);
 			break;
-		case 3:// ×Ô¼º
+		case 3:// è‡ªå·±
 			send_notice_to_self(sender_guid, &msg, header);
 			break;
 		default:
@@ -655,7 +655,7 @@ namespace faith
 		memcpy(temp_mail_info.sender_name, sender_name.c_str(), string_len);
 
 
-		// nullptrËµÃ÷²»ÔÚÏß/²»´æÔÚ£¬cs_uid = 0 ËµÃ÷²»ÔÚCSÉÏ£¨±ÈÈç´«ËÍÖĞ£©
+		// nullptrè¯´æ˜ä¸åœ¨çº¿/ä¸å­˜åœ¨ï¼Œcs_uid = 0 è¯´æ˜ä¸åœ¨CSä¸Šï¼ˆæ¯”å¦‚ä¼ é€ä¸­ï¼‰
 		client_session* client_session_ptr = client_session_mgr::getInstance().get_session(terget_player_guid);
 		if ((client_session_ptr != nullptr) && (client_session_ptr->get_cs_conn_index() >= 0))
 		{

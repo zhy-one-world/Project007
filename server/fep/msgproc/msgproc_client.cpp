@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2014/07/30
 	created:	30:7:2014   17:25
 	file base:	msgproc_client
@@ -73,7 +73,6 @@ namespace faith
 		login_proto_login_reconnect login_reconnect;
 		parse_msg::getInstance().parse_message_new(&login_reconnect, data_ptr, data_len);
 		int32 size_account = login_reconnect.account().size();
-		// ?????????????????????
 		if (size_account == 0 || size_account > max_account_length)
 		{
 			client_session_ptr->response_login(e_error_code_login_invalid_reconnect_account);
@@ -122,7 +121,6 @@ namespace faith
 		{
 			int32 size_account = login.logic_account().size();
 			int32 size_password = login.password().size();
-			// ?????????????????????
 			if (size_account < min_account_length 
 				|| size_account > max_account_length 
 				|| size_password < min_account_length 

@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê8ÔÂ16ÈÕ
+created: 2016å¹´8æœˆ16æ—¥
 file base: chat_mgr
 file ext: cpp
 author: luoxingyu
@@ -279,7 +279,7 @@ namespace faith
 				{
 					return false;
 				}
-				msg.item_num -= 1;			//ÏûÏ¢ÀïµÄ¶¨Òå²»ÊÇitemÊıÁ¿¶øÊÇË÷Òı
+				msg.item_num -= 1;			//æ¶ˆæ¯é‡Œçš„å®šä¹‰ä¸æ˜¯itemæ•°é‡è€Œæ˜¯ç´¢å¼•
 				memcpy(msg.notice_string, show_string.c_str(), show_string.length());
 				connection_mgr::getInstance().send_to_ws( &msg, sizeof(msg));
 				msg.clear_item_info(); 
@@ -330,12 +330,12 @@ namespace faith
 		{
 			return;
 		}
-		// ÅÅĞĞ°ñÊ×Î»±ä¸ü¹«¸æ
+		// æ’è¡Œæ¦œé¦–ä½å˜æ›´å…¬å‘Š
 		if (is_first)
 		{ 
 			int32 string_id = 0;
 			switch (ranking_type) 
-			{			// Ã»ÓĞÅä±í£¬ÊÖ¶¯·Ö°É 
+			{			// æ²¡æœ‰é…è¡¨ï¼Œæ‰‹åŠ¨åˆ†å§ 
 			case e_RankingIndex_gs:
 				string_id = 90090955;
 				break;
@@ -445,7 +445,7 @@ namespace faith
 				return;
 			}
 
-			int32 notice_id = 93000027;// ÒòÎªÃ»ÓĞÅÅĞĞ°ñµÄ±í£¬ËùÒÔÕâ¸önoticeidµÄÖµĞ´ËÀÁË
+			int32 notice_id = 93000027;// å› ä¸ºæ²¡æœ‰æ’è¡Œæ¦œçš„è¡¨ï¼Œæ‰€ä»¥è¿™ä¸ªnoticeidçš„å€¼å†™æ­»äº†
 			std::vector<std::string> vec_notice_str;
 			vec_notice_str.push_back(template_manager::get_instance().get_str_id_by_notice_id(notice_id));
 			vec_notice_str.push_back(std::string(m_player_ptr->get_name()));
@@ -583,7 +583,7 @@ namespace faith
 		{
 			forbidden_word_check(chat_content_array, chat_content_num);
 
-			//µÈ¼¶µÍÓÚGAMECONFIG->ChatCostLimitLv ¸½½üºÍÊÀ½çÆµµÀĞèÒª»¨·Ñ½ğ±Ò
+			//ç­‰çº§ä½äºGAMECONFIG->ChatCostLimitLv é™„è¿‘å’Œä¸–ç•Œé¢‘é“éœ€è¦èŠ±è´¹é‡‘å¸
 			if (m_player_ptr->get_unit_info(e_role_info_exp_level) < GAMECONFIG->ChatCostLimitLv)
 			{
 				if (GAMECONFIG->NearChatCoinCount.size() < e_money_tuple_max || GAMECONFIG->NearChatCoinCount.size() % e_money_tuple_max != 0)
@@ -607,7 +607,7 @@ namespace faith
 			msg.set_relation_level(m_player_ptr->get_unit_info(e_role_info_exp_level));
 			msg.set_chat_guid(guid_gen::make_guid().server_64);
 
-			// add by wangsonghao : Íæ¼ÒVIP¾ôÎ»ĞÅÏ¢Í¨¹ı chat_content Í¬²½¸ø¿Í»§¶Ë
+			// add by wangsonghao : ç©å®¶VIPçˆµä½ä¿¡æ¯é€šè¿‡ chat_content åŒæ­¥ç»™å®¢æˆ·ç«¯
 			msg.set_vip_title_template_id(-1);
 			bool bFoundTitle = false;
 			for (int32 vip_level = m_player_ptr->get_unit_info(e_role_info_vip_level); vip_level >= 0; vip_level--)
@@ -642,7 +642,7 @@ namespace faith
 						break;
 					}
 				}
-				// ÕâÀï²»ÅĞ¶Ï¸Ã¾ôÎ»³ÆºÅÊÇ·ñÒÑ¾­»ñµÃ»òÕß´©´÷£¬Ö»ÅĞ¶ÏVIPµÈ¼¶ÊÇ·ñ´ïµ½¸Ã¾ôÎ»¶ÔÓ¦µÄVIPµÈ¼¶
+				// è¿™é‡Œä¸åˆ¤æ–­è¯¥çˆµä½ç§°å·æ˜¯å¦å·²ç»è·å¾—æˆ–è€…ç©¿æˆ´ï¼Œåªåˆ¤æ–­VIPç­‰çº§æ˜¯å¦è¾¾åˆ°è¯¥çˆµä½å¯¹åº”çš„VIPç­‰çº§
 				// 				ctitle_mgr& title_mgr = m_player_ptr->get_title_mgr();
 				// 				if (title_mgr.if_own_title_by_template_id(vip_template_ptr->TitleId))
 				// 				{
@@ -715,7 +715,7 @@ namespace faith
 			msg.sender_server_id = m_player_ptr->get_unit_info(e_role_info_server_id);
 			msg.sender_template_id = m_player_ptr->get_unit_info(faith::e_role_info_template_id);
 			msg.sender_exp_level = m_player_ptr->get_unit_info(e_role_info_exp_level);
-			// add by wangsonghao : Íæ¼ÒVIP¾ôÎ»ĞÅÏ¢Í¨¹ı chat_content Í¬²½¸ø¿Í»§¶Ë
+			// add by wangsonghao : ç©å®¶VIPçˆµä½ä¿¡æ¯é€šè¿‡ chat_content åŒæ­¥ç»™å®¢æˆ·ç«¯
 			msg.sender_vip_title_template_id = -1;
 			msg.sender_head_frame_id = m_player_ptr->get_unit_info(e_role_info_head_frame);
 			bool bFoundTitle = false;
@@ -751,7 +751,7 @@ namespace faith
 						break;
 					}
 				}
-				// ÕâÀï²»ÅĞ¶Ï¸Ã¾ôÎ»³ÆºÅÊÇ·ñÒÑ¾­»ñµÃ»òÕß´©´÷£¬Ö»ÅĞ¶ÏVIPµÈ¼¶ÊÇ·ñ´ïµ½¸Ã¾ôÎ»¶ÔÓ¦µÄVIPµÈ¼¶
+				// è¿™é‡Œä¸åˆ¤æ–­è¯¥çˆµä½ç§°å·æ˜¯å¦å·²ç»è·å¾—æˆ–è€…ç©¿æˆ´ï¼Œåªåˆ¤æ–­VIPç­‰çº§æ˜¯å¦è¾¾åˆ°è¯¥çˆµä½å¯¹åº”çš„VIPç­‰çº§
 // 				ctitle_mgr& title_mgr = m_player_ptr->get_title_mgr();
 // 				if (title_mgr.if_own_title_by_template_id(vip_template_ptr->TitleId))
 // 				{
@@ -793,11 +793,11 @@ namespace faith
 
 			if (chat_type == e_chat_type_world)
 			{
-				//ÊÀ½çÁÄÌìÄ£Ê½ĞèÒªÔö¼ÓCD
+				//ä¸–ç•ŒèŠå¤©æ¨¡å¼éœ€è¦å¢åŠ CD
 				m_last_send_chat_time = now_time + chat_interval_time;
 				m_last_chat_str = common_string;
 				m_last_chat_time = now_time + chat_same_str_time;
-				//µÈ¼¶µÍÓÚGAMECONFIG->ChatCostLimitLv ¸½½üºÍÊÀ½çÆµµÀĞèÒª»¨·Ñ½ğ±Ò
+				//ç­‰çº§ä½äºGAMECONFIG->ChatCostLimitLv é™„è¿‘å’Œä¸–ç•Œé¢‘é“éœ€è¦èŠ±è´¹é‡‘å¸
 				//if (m_player_ptr->get_unit_info(e_role_info_exp_level) < GAMECONFIG->ChatCostLimitLv)
 				//{
 				//	if (GAMECONFIG->WorldChatCoinCount.size() < e_money_tuple_max || GAMECONFIG->WorldChatCoinCount.size() % e_money_tuple_max != 0)

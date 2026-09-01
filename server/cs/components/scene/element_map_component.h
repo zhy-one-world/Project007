@@ -6,15 +6,15 @@ namespace faith
 {
 	enum e_element_map_state
 	{
-		e_element_map_state_none,//³õÊ¼×´Ì¬
-		e_element_map_state_player_join,//Íæ¼Ò½øÈë×´Ì¬
-		e_element_map_state_runtime,//Õı³£ÔËĞĞÊ±×´Ì¬
-		e_element_map_state_end_map,//É±ËÀËùÓĞnpcÇĞ»»µØÍ¼×´Ì¬
-		e_element_map_state_close,//µØÍ¼´¦ÓÚ¹Ø±Õ×´Ì¬
+		e_element_map_state_none,//åˆå§‹çŠ¶æ€
+		e_element_map_state_player_join,//ç©å®¶è¿›å…¥çŠ¶æ€
+		e_element_map_state_runtime,//æ­£å¸¸è¿è¡Œæ—¶çŠ¶æ€
+		e_element_map_state_end_map,//æ€æ­»æ‰€æœ‰npcåˆ‡æ¢åœ°å›¾çŠ¶æ€
+		e_element_map_state_close,//åœ°å›¾å¤„äºå…³é—­çŠ¶æ€
 	};
 	struct element_map_component
 	{
-		e_element_map_state m_state;//×´Ì¬
-		int32 m_data_array[e_role_element_map_max];//Êı¾İ
+		e_element_map_state m_state;//çŠ¶æ€
+		int32 m_data_array[e_role_element_map_max];//æ•°æ®
 	};
 }

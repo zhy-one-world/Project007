@@ -1,8 +1,8 @@
 /********************************************************************
-created: 2016Äê5ÔÂ10ÈÕ11:44:26
+created: 2016å¹´5æœˆ10æ—¥11:44:26
 file base: mission
-author: ÕÅÓîÏè
-purpose: ÈÎÎñ¹ÜÀíÏµÍ³
+author: å¼ å®‡ç¿”
+purpose: ä»»åŠ¡ç®¡ç†ç³»ç»Ÿ
 *********************************************************************/
 
 #include "mission_mgr.hpp"
@@ -47,12 +47,12 @@ namespace faith
 
 	void cmission_mgr::heart_tick(const int64& new_time)
 	{
-		//¸ù¾İÊ±¼äË¢ĞÂÈÎÎñ
+		//æ ¹æ®æ—¶é—´åˆ·æ–°ä»»åŠ¡
 		for (int32 mission_index = e_mission_slot_main; mission_index < e_mission_slot_max; mission_index++)
 		{
 			m_got_mission_array[mission_index].heart_tick(new_time);
 		}
-		//¸ù¾İÍê³ÉµÄÖ÷ÏßÈÎÎñ×Ô¶¯Íê³ÉÕÂ½ÚÈÎÎñ²¢½ÓÈ¡ÏÂÒ»ÕÂÈÎÎñ
+		//æ ¹æ®å®Œæˆçš„ä¸»çº¿ä»»åŠ¡è‡ªåŠ¨å®Œæˆç« èŠ‚ä»»åŠ¡å¹¶æ¥å–ä¸‹ä¸€ç« ä»»åŠ¡
 		//if (m_got_mission_array[e_mission_show_type_chapter].finish_mission(0,e_mission_finish_type_normal))
 		//{
 		//	player& temp_player = unit_man::get_player(m_array_index);
@@ -67,7 +67,7 @@ namespace faith
 		player& temp_player = unit_man::get_player(m_array_index);
 
 		if (m_got_mission_array[e_mission_slot_main].get_mission_id() < GAMECONFIG->DailyMissionNeedId)
-		{//¿ªÆôÖ÷ÏßÎ´Íê³É
+		{//å¼€å¯ä¸»çº¿æœªå®Œæˆ
 			return;
 		}
 		temp_player.set_unit_info(e_role_info_daily_done_num, 0);
@@ -84,7 +84,7 @@ namespace faith
 		player& temp_player = unit_man::get_player(m_array_index);
 
 		if (m_got_mission_array[e_mission_slot_main].get_mission_id() < GAMECONFIG->AgainstMissionNeedId)
-		{//¿ªÆôÖ÷ÏßÎ´Íê³É
+		{//å¼€å¯ä¸»çº¿æœªå®Œæˆ
 			return;
 		}
 		temp_player.set_unit_info(e_role_info_against_done_num, 0);
@@ -99,7 +99,7 @@ namespace faith
 		player& temp_player = unit_man::get_player(m_array_index);
 
 		if (m_got_mission_array[e_mission_slot_main].get_mission_id() < GAMECONFIG->MarryMissionNeedId)
-		{//¿ªÆôÖ÷ÏßÎ´Íê³É
+		{//å¼€å¯ä¸»çº¿æœªå®Œæˆ
 			return;
 		}
 		clear_marry_mission();
@@ -109,7 +109,7 @@ namespace faith
 	}
 	void cmission_mgr::check_and_send_all_mission()
 	{
-		//Ë¢ĞÂÉı¼¶ºóµÄÈÎÎñ×´Ì¬
+		//åˆ·æ–°å‡çº§åçš„ä»»åŠ¡çŠ¶æ€
 		for (int32 i = 0; i < e_mission_slot_max; i++)
 		{
 			if (m_got_mission_array[i].get_inst_data(e_mission_inst_data_id) <= 0)
@@ -144,7 +144,7 @@ namespace faith
 	{
 		if (mission_index < e_mission_slot_main
 			|| mission_index >= e_mission_slot_max)
-		{//Ö§ÏßÈÎÎñ¸´Êı¸ö ²»ÄÜÓÃÕâ¸öÕÒ
+		{//æ”¯çº¿ä»»åŠ¡å¤æ•°ä¸ª ä¸èƒ½ç”¨è¿™ä¸ªæ‰¾
 			return nullptr;
 		}
 		if (m_got_mission_array[mission_index].get_inst_data(e_mission_inst_data_id) > 0)
@@ -158,7 +158,7 @@ namespace faith
 	{
 		if (mission_type < 0
 			|| mission_type >= e_mission_type_side)
-		{//Ö§ÏßÈÎÎñ¸´Êı¸ö ²»ÄÜÓÃÕâ¸öÕÒ
+		{//æ”¯çº¿ä»»åŠ¡å¤æ•°ä¸ª ä¸èƒ½ç”¨è¿™ä¸ªæ‰¾
 			return nullptr;
 		}
 		if (m_got_mission_array[mission_type].get_inst_data(e_mission_inst_data_id) > 0)
@@ -272,7 +272,7 @@ namespace faith
 		//{
 		//	return;
 		//}
-		//ÕâÁ½¸ö¶¼¿ÉÒÔÎª¿Õ
+		//è¿™ä¸¤ä¸ªéƒ½å¯ä»¥ä¸ºç©º
 
 		player& temp_player = unit_man::get_player(m_array_index);
 		if (temp_player.is_valid() == false)
@@ -303,7 +303,7 @@ namespace faith
 			{
 				if (OldTemplatePtr != nullptr
 					&& OldTemplatePtr->attribute_id >= npc_template_ptr->EndShowMissionId)
-				{//ÓÃ¾ÉÈÎÎñÅĞ¶ÏÒª²»ÒªÒÆ³ı
+				{//ç”¨æ—§ä»»åŠ¡åˆ¤æ–­è¦ä¸è¦ç§»é™¤
 					aoi_proto_unit_aoi_out unit_aoi_out_msg;
 					unit_aoi_out_msg.add_unit_guid(npc_ref.get_unit_guid().server_64);
 					//unit_aoi_out_msg.set_is_dissolve(true);
@@ -316,7 +316,7 @@ namespace faith
 			{
 				if (NewTemplatePtr != nullptr
 					&& NewTemplatePtr->attribute_id <= npc_template_ptr->StartShowMissionId)
-				{//ÓÃĞÂÈÎÎñÅĞ¶ÏÒª²»Òª¼ÓÈë
+				{//ç”¨æ–°ä»»åŠ¡åˆ¤æ–­è¦ä¸è¦åŠ å…¥
 					aoi_proto_unit_aoi_all unit_aoi_enter_msg;
 					npc_ref.get_aoi_msg(unit_aoi_enter_msg);
 					unit_aoi_enter_msg.set_can_show_head(npc_ref.check_can_show_head(temp_player.get_unit_guid()));
@@ -335,11 +335,11 @@ namespace faith
 			return false;
 		}
 		if (m_got_mission_array[e_mission_slot_main].get_inst_data(e_mission_inst_data_id) <= GAMECONFIG->DailyMissionNeedId)
-		{//¿ªÆôÖ÷ÏßÎ´Íê³É
+		{//å¼€å¯ä¸»çº¿æœªå®Œæˆ
 			return false;
 		}
 		if (temp_player.get_unit_info(e_role_info_daily_done_num) >= DAILY_MISSION_MAX)
-		{//È«²¿×öÍêÁË
+		{//å…¨éƒ¨åšå®Œäº†
 
 			return false;
 		}
@@ -391,7 +391,7 @@ namespace faith
 		player& temp_player = unit_man::get_player(m_array_index);
 
 		if (m_got_mission_array[e_mission_slot_main].get_inst_data(e_mission_inst_data_id) <= GAMECONFIG->AgainstMissionNeedId)
-		{//¿ªÆôÖ÷ÏßÎ´Íê³É
+		{//å¼€å¯ä¸»çº¿æœªå®Œæˆ
 			return false;
 		}
 		PlayerUpgradeTemplate* player_upgrade_ptr = GET_TEMPLATE(PlayerUpgradeTemplate, temp_player.get_unit_info(e_role_info_upgrade_id));
@@ -436,7 +436,7 @@ namespace faith
 	}
 	void cmission_mgr::clear_marry_mission()
 	{
-		m_got_mission_array[e_mission_slot_extra_side_0].set_mission_state(e_mission_state_cannot_accept);//ÉèÖÃÌõ¼ş²»×ãÒÔ½ÓÈ¡
+		m_got_mission_array[e_mission_slot_extra_side_0].set_mission_state(e_mission_state_cannot_accept);//è®¾ç½®æ¡ä»¶ä¸è¶³ä»¥æ¥å–
 		send_one_mission(m_got_mission_array[e_mission_slot_extra_side_0]);
 		m_got_mission_array[e_mission_slot_extra_side_0].clear_data();
 	}
@@ -445,7 +445,7 @@ namespace faith
 		player& temp_player = unit_man::get_player(m_array_index);
 
 		if (m_got_mission_array[e_mission_slot_main].get_inst_data(e_mission_inst_data_id) <= GAMECONFIG->MarryMissionNeedId)
-		{//¿ªÆôÖ÷ÏßÎ´Íê³É
+		{//å¼€å¯ä¸»çº¿æœªå®Œæˆ
 			return false;
 		}
 		player& couple_player = unit_man::get_player(temp_player.get_couple_guid());
@@ -455,7 +455,7 @@ namespace faith
 		{
 			min_level = couple_level;
 		}
-		//ÓÃ·òÆŞÁ½ÈËÖĞµÈ¼¶½ÏĞ¡µÄ¼ÆËã
+		//ç”¨å¤«å¦»ä¸¤äººä¸­ç­‰çº§è¾ƒå°çš„è®¡ç®—
 		PlayerUpgradeTemplate* player_upgrade_ptr = GET_TEMPLATE(PlayerUpgradeTemplate, min_level);
 		if (nullptr == player_upgrade_ptr)
 		{
@@ -488,7 +488,7 @@ namespace faith
 				{
 					return false;
 				}
-				//²»Ëæ»ú
+				//ä¸éšæœº
 				int32 marry_mission_done_num = temp_player.get_unit_info(e_role_info_marry_done_num);
 				if (marry_mission_done_num >= marry_mission_library_ptr->MissionLibraryArray.size())
 				{
@@ -580,7 +580,7 @@ namespace faith
 		req.role_guid = player_ref.get_unit_guid();
 		req.unit_array_index = m_array_index;
 		int32 mission_count = 0;
-		for (int32 mission_index = e_mission_slot_main; mission_index < e_mission_slot_max; mission_index++) // ËùÓĞÎïÆ·µÄÊı¾İ
+		for (int32 mission_index = e_mission_slot_main; mission_index < e_mission_slot_max; mission_index++) // æ‰€æœ‰ç‰©å“çš„æ•°æ®
 		{
 			if (m_got_mission_array[mission_index].get_inst_data(e_mission_inst_data_id) == 0)
 			{
@@ -648,7 +648,7 @@ namespace faith
 				}
 				if (target_slot < 0
 					|| target_slot >= e_mission_slot_max)
-				{//ÕâÀïÓĞ±ä»¯µÄ¿ÉÄÜ£¬ËùÒÔÒªÔÙ¼ì²âÒ»´Î
+				{//è¿™é‡Œæœ‰å˜åŒ–çš„å¯èƒ½ï¼Œæ‰€ä»¥è¦å†æ£€æµ‹ä¸€æ¬¡
 					continue;
 				}
 
@@ -695,7 +695,7 @@ namespace faith
 	}
 	void cmission_mgr::check_refresh_time()
 	{
-		//¸ÄÓÉ player µÄ°´ÌìË¢ĞÂ£¬ÏÂÃæ gameconfig µÄÈÎÎñË¢ĞÂÊ±¼äÊµ¼ÊÉÏÊÇ 24
+		//æ”¹ç”± player çš„æŒ‰å¤©åˆ·æ–°ï¼Œä¸‹é¢ gameconfig çš„ä»»åŠ¡åˆ·æ–°æ—¶é—´å®é™…ä¸Šæ˜¯ 24
 
 		//player& player_ref = unit_man::get_player(m_array_index);
 		//tm* now_time = time_helper::get_localtime();
@@ -733,7 +733,7 @@ namespace faith
 		{
 			return;
 		}
-		if (mission_ptr->get_inst_data(e_mission_inst_type) != mission_template_ptr->MissionShowType)	// ·ÀÖ¹Ë¢ĞÂ´íÈÎÎñid
+		if (mission_ptr->get_inst_data(e_mission_inst_type) != mission_template_ptr->MissionShowType)	// é˜²æ­¢åˆ·æ–°é”™ä»»åŠ¡id
 		{
 			return;
 		}
@@ -915,7 +915,7 @@ namespace faith
 		if (new_chapter_template != nullptr)
 		{
 			if (m_cur_mission_chapter_id != new_chapter_template->attribute_id)
-			{//ÓĞ±ä»¯
+			{//æœ‰å˜åŒ–
 				MissionChapterTemplate* new_finish_chapter_template = template_manager::get_instance().get_template_by_mission_chapter_index(new_chapter_template->ChapterNum - 1);
 
 				MissionChapterTemplate*	old_finish_chapter_template = nullptr;
@@ -959,13 +959,13 @@ namespace faith
 		cmission* cur_grade_mission = find_mission_by_index(e_mission_slot_main);
 		if (cur_grade_mission == nullptr
 			|| cur_grade_mission->get_inst_data(e_mission_inst_data_mission_state) != e_mission_state_finished)
-		{//²»ÏàµÈËµÃ÷Ã»×öÍê
+		{//ä¸ç›¸ç­‰è¯´æ˜æ²¡åšå®Œ
 			return;
 		}
 		MissionTemplate* cur_grade_mission_ptr = cur_grade_mission->get_mission_template_ptr();
 		if (cur_grade_mission_ptr == nullptr
 			|| cur_grade_mission_ptr->NextMissionId <= 0)
-		{//nextÎª0¾ÍËµÃ÷×öÍêÁË
+		{//nextä¸º0å°±è¯´æ˜åšå®Œäº†
 			return;
 		}
 		int32 target_slot = cur_grade_mission->get_inst_data(e_mission_inst_slot);
@@ -975,9 +975,9 @@ namespace faith
 
 	void  cmission_mgr::refresh_missions()
 	{
-		//´¦ÀíĞÂ¼ÓµÄÖ÷ÏßÈÎÎñ
+		//å¤„ç†æ–°åŠ çš„ä¸»çº¿ä»»åŠ¡
 		refresh_main_mission();
-		//´¦ÀíĞÂ¼ÓµÄ×ªÖ°ÈÎÎñ
+		//å¤„ç†æ–°åŠ çš„è½¬èŒä»»åŠ¡
 		refresh_grade_mission();
 	}
 
@@ -997,7 +997,7 @@ namespace faith
 		if (trigger_template_ptr->TriggerSideMissionArray.size() == 0)
 		{
 			if (trigger_id == temp_player.get_unit_info(e_role_info_next_side_mission_main_trigger_id))
-			{//·ÀÖ¹ÏÂÃæµÄµİ¹éËÀÑ­»·£¬ÒÔ¼°ÀíÂÛÉÏ£¬Õâ¸öÎ»ÖÃ´æ´¢µÄÈÎÎñID£¬Ò»¶¨ÊÇÓĞÖ§ÏßÈÎÎñµÄ
+			{//é˜²æ­¢ä¸‹é¢çš„é€’å½’æ­»å¾ªç¯ï¼Œä»¥åŠç†è®ºä¸Šï¼Œè¿™ä¸ªä½ç½®å­˜å‚¨çš„ä»»åŠ¡IDï¼Œä¸€å®šæ˜¯æœ‰æ”¯çº¿ä»»åŠ¡çš„
 				temp_player.set_unit_info(e_role_info_next_side_mission_main_trigger_id, 0);
 				temp_player.send_info_one(e_role_info_next_side_mission_main_trigger_id);
 				return;
@@ -1020,7 +1020,7 @@ namespace faith
 		}
 		if (trigger_template_ptr->MissionShowType == e_mission_type_main
 			&& trigger_id >= cur_main_mission->get_mission_id())
-		{//Ö÷ÏßÖ§Ïß´¥·¢Æ÷±ØĞëÊÇÒÑÍê³ÉµÄÖ÷ÏßÈÎÎñ
+		{//ä¸»çº¿æ”¯çº¿è§¦å‘å™¨å¿…é¡»æ˜¯å·²å®Œæˆçš„ä¸»çº¿ä»»åŠ¡
 			return;
 		}
 
@@ -1070,13 +1070,13 @@ namespace faith
 		cmission* cur_grade_mission = find_mission_by_index(e_mission_slot_grade_up);
 		if (cur_grade_mission == nullptr
 			|| cur_grade_mission->get_inst_data(e_mission_inst_data_mission_state) != e_mission_state_finished)
-		{//²»ÏàµÈËµÃ÷Ã»×öÍê
+		{//ä¸ç›¸ç­‰è¯´æ˜æ²¡åšå®Œ
 			return;
 		}
 		MissionTemplate* cur_grade_mission_ptr = cur_grade_mission->get_mission_template_ptr();
 		if (cur_grade_mission_ptr == nullptr
 			|| cur_grade_mission_ptr->NextMissionId <= 0)
-		{//nextÎª0¾ÍËµÃ÷×öÍêÁË
+		{//nextä¸º0å°±è¯´æ˜åšå®Œäº†
 			return;
 		}
 		int32 target_slot = cur_grade_mission->get_inst_data(e_mission_inst_slot);
@@ -1234,7 +1234,7 @@ namespace faith
 			return;
 		}
 		player_ref.get_star_trip_mgr().target_mission_by_mission_type(mission_end_type, target_info_0, target_info_1);
-		//±äÇ¿ÈÎÎñĞèÒª¼ì²éÊÇ·ñ¿ÉÒÔÍê³É
+		//å˜å¼ºä»»åŠ¡éœ€è¦æ£€æŸ¥æ˜¯å¦å¯ä»¥å®Œæˆ
 		if (mission_end_type == e_mission_end_type_intensify_add_gs && false == get_power_up_is_can_check(target_info_0))
 		{
 			return;
@@ -1244,9 +1244,9 @@ namespace faith
 			if (m_got_mission_array[i].target_check(mission_end_type, target_info_0, target_info_1))
 			{
 				send_one_mission(m_got_mission_array[i]);
-				//if (e_mission_slot_main == i && m_got_mission_array[i].get_mission_id() == 15000632)//Ôö¼ÓÌØÀı£¬¸ÃÈÎÎñ´¦ÓÚÒÑÍê³É´ı½»¸¶×´Ì¬£¬Ôò½øĞĞÏÂÃæµÄ²Ù×÷
+				//if (e_mission_slot_main == i && m_got_mission_array[i].get_mission_id() == 15000632)//å¢åŠ ç‰¹ä¾‹ï¼Œè¯¥ä»»åŠ¡å¤„äºå·²å®Œæˆå¾…äº¤ä»˜çŠ¶æ€ï¼Œåˆ™è¿›è¡Œä¸‹é¢çš„æ“ä½œ
 				//{
-				//	player_ref.get_item_set().create_item_by_template(31040130);//µ±°ÑÁúÉ±ËÀÒÔºó£¬Ôò¸øÓè³á°òÎïÆ·
+				//	player_ref.get_item_set().create_item_by_template(31040130);//å½“æŠŠé¾™æ€æ­»ä»¥åï¼Œåˆ™ç»™äºˆç¿…è†€ç‰©å“
 				//}
 			}
 		}
@@ -1257,7 +1257,7 @@ namespace faith
 		for (int32 mission_index = e_mission_slot_main; mission_index < e_mission_slot_max; mission_index++)
 		{
 			if (m_got_mission_array[mission_index].start_dialog(npc_id) == true)
-			{//¶Ô»°ÓĞĞ§
+			{//å¯¹è¯æœ‰æ•ˆ
 				send_one_mission(m_got_mission_array[mission_index]);
 				return true;
 			}
@@ -1311,7 +1311,7 @@ namespace faith
 			{
 				if (old_mission_id != 0
 					&& old_mission_id >= npc_template_ptr->EndShowMissionId)
-				{//ÓÃ¾ÉÈÎÎñÅĞ¶ÏÒª²»ÒªÒÆ³ı
+				{//ç”¨æ—§ä»»åŠ¡åˆ¤æ–­è¦ä¸è¦ç§»é™¤
 					aoi_proto_unit_aoi_out unit_aoi_out_msg;
 					unit_aoi_out_msg.add_unit_guid(npc_ref.get_unit_guid().server_64);
 					unit_aoi_out_msg.set_is_dissolve(true);
@@ -1324,7 +1324,7 @@ namespace faith
 			{
 				if (new_mission_id != 0
 					&& new_mission_id <= npc_template_ptr->StartShowMissionId)
-				{//ÓÃĞÂÈÎÎñÅĞ¶ÏÒª²»Òª¼ÓÈë
+				{//ç”¨æ–°ä»»åŠ¡åˆ¤æ–­è¦ä¸è¦åŠ å…¥
 					aoi_proto_unit_aoi_all unit_aoi_enter_msg;
 					npc_ref.get_aoi_msg(unit_aoi_enter_msg);
 					unit_aoi_enter_msg.set_can_show_head(npc_ref.check_can_show_head(temp_player.get_unit_guid()));

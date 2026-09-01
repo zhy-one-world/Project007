@@ -193,7 +193,7 @@ namespace faith
 				target_pokedex_ptr.add_psyche_num(j, can_submit_num);
 				temp_item_set.cost_item_by_id_with_lock_states(e_server_log_del_item_submit_psyche, pokedex_id, target_pokedex_template_ptr->PsycheIdArray[j], can_submit_num, 0);
 
-				// »îÔ¾¶È
+				// æ´»è·ƒåº¦
 				int32 temp_cur_value = m_player_ptr->get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_submit_one_illustration);
 				m_player_ptr->get_welfare_mgr().set_active_degree_info(e_daily_active_degree_type_submit_one_illustration, temp_cur_value + 1);
 

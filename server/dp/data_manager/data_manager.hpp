@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2018Äê1ÔÂ4ÈÕ20:44:55
+	created:	2018å¹´1æœˆ4æ—¥20:44:55
 	file base:	data_manager
 	file ext:	hpp
 	author:		zhy
@@ -93,12 +93,12 @@ namespace faith
 		data_set_map m_data_set_map;
 		data_server_map m_data_server_map;
 		data_account_map m_data_account_map;
-		enum_character_map m_enum_char_map;//ÓÃÓÚ±éÀúËùÓĞ¿â²éÕÒ½ÇÉ«Ê±ÖÃ±ê¼ÇÎ»
-		enum_character_unit_info_map m_unit_info_arr_map;//ÓÃÓÚ¼ÇÂ¼¶ÔÓ¦Íæ¼ÒµÄ½ÇÉ«Êı¾İ
-		s_unit_info_arr m_empty_unit_info_arr;//¿ÕµÄÓÃÓÚ·µ»Ø
+		enum_character_map m_enum_char_map;//ç”¨äºéå†æ‰€æœ‰åº“æŸ¥æ‰¾è§’è‰²æ—¶ç½®æ ‡è®°ä½
+		enum_character_unit_info_map m_unit_info_arr_map;//ç”¨äºè®°å½•å¯¹åº”ç©å®¶çš„è§’è‰²æ•°æ®
+		s_unit_info_arr m_empty_unit_info_arr;//ç©ºçš„ç”¨äºè¿”å›
 
-		gm_query_map  m_gm_query_map;	  //gm²éÑ¯Êı¾İ¿â¼ÆÊı
-		gm_query_unit_info_map m_gm_query_unit_info_map; //gm²éÑ¯½ÇÉ«Êı¾İÄÚÈİ
+		gm_query_map  m_gm_query_map;	  //gmæŸ¥è¯¢æ•°æ®åº“è®¡æ•°
+		gm_query_unit_info_map m_gm_query_unit_info_map; //gmæŸ¥è¯¢è§’è‰²æ•°æ®å†…å®¹
 	};
 
 }

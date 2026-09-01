@@ -1,9 +1,9 @@
 /********************************************************************
-created: 2017Äê8ÔÂ10ÈÕ11:27:00
+created: 2017å¹´8æœˆ10æ—¥11:27:00
 file base: service_goal_def
 file ext: cpp
-author: º«Ôó³É
-purpose: ÆßÈÕÄ¿±êÊµÏÖÎÄ¼ş
+author: éŸ©æ³½æˆ
+purpose: ä¸ƒæ—¥ç›®æ ‡å®ç°æ–‡ä»¶
 *********************************************************************/
 
 #include "connection_mgr.hpp"
@@ -90,7 +90,7 @@ namespace faith
 
 	void cservice_goal_mgr::receive_service_goal(int32 service_goal_id)
 	{
-		//³¬¹ıÁË×î³¤Ê±¼ä¾Í²»ÄÜÁìÈ¡ÁË
+		//è¶…è¿‡äº†æœ€é•¿æ—¶é—´å°±ä¸èƒ½é¢†å–äº†
 		//int32 time_now = time_helper::get_cur_time_new().second;
 		//if (time_now > m_service_goal_max_over_time)
 		//{
@@ -169,7 +169,7 @@ namespace faith
 			}
 			create_service_goal_obj(temp_service_goal_template_ptr, new_service_goal_info);
 		}
-		// ½ÓÏÂÀ´·¢ËÍ¸ø¿Í»§¶Ë
+		// æ¥ä¸‹æ¥å‘é€ç»™å®¢æˆ·ç«¯
 		send_all_service_goal();
 	}
 	bool cservice_goal_mgr::load_service_goal_by_db_lua(const char *data_ptr, int32 data_len)
@@ -323,7 +323,7 @@ namespace faith
 		{
 			for (int32 i = 0; i < m_service_goal_obj_num; i++)
 			{
-				//´óÓÚ0ËµÃ÷ÒÑ¾­ÉèÖÃ¹ıÁË ²»ĞèÒªÖØ¸´ÉèÖÃÊ±¼ä
+				//å¤§äº0è¯´æ˜å·²ç»è®¾ç½®è¿‡äº† ä¸éœ€è¦é‡å¤è®¾ç½®æ—¶é—´
 				if (m_service_goal_obj_array[i].get_data_info(e_service_goal_inst_data_over_time) > 0)
 				{
 					continue;
@@ -458,7 +458,7 @@ namespace faith
 				}
 			}
 		}
-		//ÉèÖÃÍæ¼Ò  
+		//è®¾ç½®ç©å®¶  
 		int32 cur_time = time_helper::get_today_zero_time_info().second;
 		temp_player.set_time_data(e_time_type_service_goal_close_time, cur_time + day_time_second);
 		temp_player.send_time_one(e_time_type_service_goal_close_time);

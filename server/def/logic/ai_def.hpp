@@ -1,5 +1,5 @@
 /********************************************************************
-  created: 2015Äê8ÔÂ5ÈÕ11:13:58
+  created: 2015å¹´8æœˆ5æ—¥11:13:58
   file base: ai_def
   file ext: hpp
   author: zhy
@@ -15,26 +15,26 @@ namespace faith
 {
 	const int32 m_SkillMaxDistance = 200;
 	const int32 npc_use_skill_len = 4;
-	const int64	m_patrol_reach_judge_distance = 1000;		//npcÑ²Âßµ½´ïÄ¿±êµã·¶Î§¾àÀë(Æ½·½Öµ)
-	const int32 move_yaw_value = 5;//npcÒÆ¶¯Ê±Ã¿´ÎÒÆ¶¯µÄ½Ç¶È
+	const int64	m_patrol_reach_judge_distance = 1000;		//npcå·¡é€»åˆ°è¾¾ç›®æ ‡ç‚¹èŒƒå›´è·ç¦»(å¹³æ–¹å€¼)
+	const int32 move_yaw_value = 5;//npcç§»åŠ¨æ—¶æ¯æ¬¡ç§»åŠ¨çš„è§’åº¦
 	enum e_ai_state
 	{	
-		e_ai_state_stand,	//Ô­µØ²»¶¯
-		e_ai_state_move,	//Ëæ»úÒÆ¶¯
-		e_ai_state_chase,	//×·»÷
-		e_ai_state_move_to_born,//ÅÜ»Ø³öÉúµã
-		e_ai_state_skill,	//ÊÍ·Å¼¼ÄÜ
-		e_ai_state_born,	//³öÉú
-		e_ai_state_dead,	//ËÀÍö
-		e_ai_state_dont_move,	//¶¨Éí
-		e_ai_state_follow,	//¸úËæ
+		e_ai_state_stand,	//åŸåœ°ä¸åŠ¨
+		e_ai_state_move,	//éšæœºç§»åŠ¨
+		e_ai_state_chase,	//è¿½å‡»
+		e_ai_state_move_to_born,//è·‘å›å‡ºç”Ÿç‚¹
+		e_ai_state_skill,	//é‡Šæ”¾æŠ€èƒ½
+		e_ai_state_born,	//å‡ºç”Ÿ
+		e_ai_state_dead,	//æ­»äº¡
+		e_ai_state_dont_move,	//å®šèº«
+		e_ai_state_follow,	//è·Ÿéš
 	};
 
-	enum e_ai_patrol_type		//Ñ²ÂßÀàĞÍ
+	enum e_ai_patrol_type		//å·¡é€»ç±»å‹
 	{
-		e_ai_patrol_type_none,		//²»Ñ²Âß
-		e_ai_patrol_type_random,	//Ëæ»úÑ²Âß
-		e_ai_patrol_type_line,		//¶¨ÏßÑ²Âß
+		e_ai_patrol_type_none,		//ä¸å·¡é€»
+		e_ai_patrol_type_random,	//éšæœºå·¡é€»
+		e_ai_patrol_type_line,		//å®šçº¿å·¡é€»
 		e_ai_patrol_type_max,		
 	};
 
@@ -48,14 +48,14 @@ namespace faith
 
 	struct input_data
 	{
-		float				m_time_step;//Ê±¼ä²î
-		float				m_move_time;//ÒÆ¶¯µÄÊ±¼ä
-		int32					m_monster_state;//npcËùÔÚµÄ×´Ì¬
-		guid_64			m_target_guid;//Ä¿±êguid
-		fvector				m_target_position;//Ä¿±êÎ»ÖÃ
+		float				m_time_step;//æ—¶é—´å·®
+		float				m_move_time;//ç§»åŠ¨çš„æ—¶é—´
+		int32					m_monster_state;//npcæ‰€åœ¨çš„çŠ¶æ€
+		guid_64			m_target_guid;//ç›®æ ‡guid
+		fvector				m_target_position;//ç›®æ ‡ä½ç½®
 
-		int32			m_skill_id;//¼¼ÄÜid
-		int32			m_skill_state;//¼¼ÄÜÄ¿Ç°´¦ÓÚµÄ×´Ì¬
+		int32			m_skill_id;//æŠ€èƒ½id
+		int32			m_skill_state;//æŠ€èƒ½ç›®å‰å¤„äºçš„çŠ¶æ€
 		void ClearData()
 		{
 			m_monster_state = e_ai_state_stand;
@@ -68,12 +68,12 @@ namespace faith
 
 	struct out_data
 	{
-		int32					m_monster_state;//npcËùÔÚµÄ×´Ì¬
-		faith::guid_64		m_TargetGuid;//Ä¿±êguid
-		fvector				m_TargetPosition;//Ä¿±êÎ»ÖÃ
+		int32					m_monster_state;//npcæ‰€åœ¨çš„çŠ¶æ€
+		faith::guid_64		m_TargetGuid;//ç›®æ ‡guid
+		fvector				m_TargetPosition;//ç›®æ ‡ä½ç½®
 
-		int32			m_skill_id;//¼¼ÄÜid
-		int32			m_NextSkillState;//¼¼ÄÜÏÂÒ»¸öµÄ×´Ì¬
+		int32			m_skill_id;//æŠ€èƒ½id
+		int32			m_NextSkillState;//æŠ€èƒ½ä¸‹ä¸€ä¸ªçš„çŠ¶æ€
 		void ClearData()
 		{
 			m_monster_state = e_ai_state_stand;

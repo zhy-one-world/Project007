@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2015��12��28��16:11:23
 	file base:	msgproc_client
 	file ext:	cpp
@@ -321,7 +321,6 @@ namespace faith
 
 		int32 map_template_id = req.map_template_id();
 		int32 line_id = req.line_id();
-		// Ϊ�˷�������ͼ�н���Ҵ������������ͼ��ֻ�õ��ô��͵�ʱ��0�Ϳ�����
 		if (0 == map_template_id)
 		{
 			//map_template_id = player_ref.get_unit_info(e_role_info_main_map_id);
@@ -389,7 +388,7 @@ namespace faith
 		}
 		if (!init_unit::is_map_cross_server(cur_map_template_ptr->attribute_id, cell_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_activity))
 			&& false == init_unit::is_map_other_server(cur_map_template_ptr->attribute_id)
-			&& false == init_unit::is_map_all_server(cur_map_template_ptr->attribute_id))//Ŀǰ��ֻ�п�������õ��������
+			&& false == init_unit::is_map_all_server(cur_map_template_ptr->attribute_id))
 		{
 			return;
 		}
@@ -424,7 +423,6 @@ namespace faith
 		int32 group_id = request.group_id();
 		guid_64 map_guid(request.map_guid(0), request.map_guid(1));
 		
-		// Ϊ�˷�������ͼ�н���Ҵ������������ͼ ֻ�õ��ô��͵�ʱ��0�Ϳ�����
 		if (0 == map_template_id)
 		{
 			map_template_id = player_ref.get_unit_info(e_role_info_main_map_id);
@@ -456,21 +454,17 @@ namespace faith
 		bool is_need_check_map = true;
 		if (init_unit::get_map_public(map_template_ptr->Type) || init_unit::get_map_public(cur_map_template_ptr->Type))
 		{
-			//������ͼ���Դ����κε�ͼ �κε�ͼ���Դ���������ͼ
 		}
 		else if (init_unit::is_goto_same_map(map_template_id, line_id, base_map_cp->m_map_id, base_map_cp->m_line_id))
 		{
-			// ����ͬ��ͼ����
 			CONSOLE_ERROR("same map");
 			return;
 		}
 		else if (map_template_ptr->Type == e_map_type_demon_tower_fuben && cur_map_template_ptr->Type == e_map_type_demon_tower_fuben)
 		{
-			//����ħ����������ֱ�ӽ���һ����ħ������ ��һ��
 		}
 		else
 		{
-			//���ܴ�һ������ֱ�Ӵ��͵���һ������
 			CONSOLE_ERROR("map other error");
 			return;
 		}
@@ -480,7 +474,6 @@ namespace faith
 			CONSOLE_ERROR("player_ref.can_entry_fuben false");
 			return;
 		}
-		//����������������е�ͼ
 		if (false == init_unit::is_map_cross_server(map_template_id, cell_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_activity)) && map_template_ptr->Type != e_map_type_big_map && false == init_unit::is_map_all_server(map_template_id))
 		{
 			if (false == player_ref.is_self_server())
@@ -509,7 +502,6 @@ namespace faith
 		int32 group_id = req.group_id();
 		guid_64 map_guid(req.map_guid(0), req.map_guid(1));
 
-		// Ϊ�˷�������ͼ�н���Ҵ������������ͼ ֻ�õ��ô��͵�ʱ��0�Ϳ�����
 		if (0 == map_template_id)
 		{
 			map_template_id = player_ref.get_unit_info(e_role_info_main_map_id);
@@ -521,7 +513,7 @@ namespace faith
 		}
 
 		if (map_template_ptr->Type == e_map_type_crystak_dreamland)
-		{//�ж� ˮ���þ��Ƿ���
+		{
 			bool is_open = cell_server::getInstance().get_activity_sec_left(e_activity_type_crystal_fairyland, e_activity_time_get_all) > 0;
 			if (false == is_open)
 			{
@@ -553,21 +545,17 @@ namespace faith
 		if (init_unit::get_map_public(map_template_ptr->Type)
 			|| init_unit::get_map_public(cur_map_template_ptr->Type))
 		{
-			//������ͼ���Դ����κε�ͼ �κε�ͼ���Դ���������ͼ
 		}
 		else if (init_unit::is_goto_same_map(map_template_id, line_id, cur_map_object_ptr->get_map_template_id(), cur_map_object_ptr->get_line_id()))
 		{
-			// ����ͬ��ͼ����
 			return;
 		}
 		else if (map_template_ptr->Type == e_map_type_demon_tower_fuben
 			&& cur_map_template_ptr->Type == e_map_type_demon_tower_fuben)
 		{
-			//����ħ����������ֱ�ӽ���һ����ħ������ ��һ��
 		}
 		else
 		{
-			//���ܴ�һ������ֱ�Ӵ��͵���һ������
 			return;
 		}
 
@@ -575,7 +563,6 @@ namespace faith
 		{
 			return;
 		}
-		//����������������е�ͼ
 		if (false == init_unit::is_map_cross_server(map_template_id, cell_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_activity)) && map_template_ptr->Type != e_map_type_big_map && false == init_unit::is_map_all_server(map_template_id))
 		{
 			if (false == player_ref.is_self_server())
@@ -795,7 +782,6 @@ namespace faith
 	{
 		UNPACKING_PROTO(character_proto_mopping_up)
 
-		//���
 		if (false == player_ref.is_self_server())
 		{
 			return;
@@ -810,7 +796,6 @@ namespace faith
 	{
 		UNPACKING_PROTO(character_proto_mopping_up_demons_tower)
 
-		//���
 		if (false == player_ref.is_self_server())
 		{
 			return;
@@ -820,7 +805,6 @@ namespace faith
 	void c2cs_mopping_up_demons_tower_get_award(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
 		UNPACKING_PROTO(character_proto_mopping_up_demons_tower_get_award)
-		//���
 		if (false == player_ref.is_self_server())
 		{
 			return;
@@ -836,7 +820,6 @@ namespace faith
 	void c2cs_all_mopping_up(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
 		UNPACKING_PROTO(character_proto_all_mopping_up)
-		//���
 		if (false == player_ref.is_self_server())
 		{
 			return;
@@ -865,7 +848,6 @@ namespace faith
 	void c2cs_spirit_fetter_upgrade(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
 		UNPACKING_PROTO(item_c2s_sprite_fetter_upgrade)
-		//���
 		if (false == player_ref.is_self_server())
 		{
 			return;
@@ -910,7 +892,7 @@ namespace faith
 		int32 change_index = request.attack_att_index();
 		float change_value = request.attack_att_value();
 		if (change_index < e_unit_attack_att_max)
-		{//�����޸Ļ�������
+		{
 			//player_ref.get_pawn_att().set_state_att(change_index, change_value);
 		}
 		else if (change_index < e_unit_attack_att_max + e_unit_game_att_max)
@@ -921,7 +903,7 @@ namespace faith
 			}
 		}
 		else
-		{//״̬�����޸�
+		{
 			//player_ref.get_pawn_att().set_state_att(change_index - e_unit_attack_att_max - e_unit_game_att_max, change_value);
 		}
 	}
@@ -1037,7 +1019,6 @@ namespace faith
 		}
 	}
 
-	//******************************************************** ��� *************************************************************************************//
 
 	void c2cs_create_team(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
@@ -1089,7 +1070,7 @@ namespace faith
 			player_ref.set_unit_info(e_role_info_show_fashion, request.is_show_fashion());
 		}
 		item_set& item_ref = player_ref.get_item_set();
-		item_ref.equip_off_equip_show_buff();	//ȥװ����Чbuff
+		item_ref.equip_off_equip_show_buff();
 		player_ref.send_info_one(e_role_info_show_fashion, true);
 
 		item_proto_show_fashion show_request_end;
@@ -1316,14 +1297,13 @@ namespace faith
 	{
 		UNPACKING_PROTO(legion_proto_apply_to_join_legion)
 
-		//���״̬�²�����
 		if (false == player_ref.is_self_server())
 		{
 			return;
 		}
 		if (false == player_ref.get_func_unlock_mgr().is_func_unlock("Legion"))
 		{
-			player_ref.send_notice("90202450");//δ����
+			player_ref.send_notice("90202450");
 			return;
 		}
 		cs2ws_apply_to_join_legion msg;
@@ -1336,7 +1316,6 @@ namespace faith
 	{
 		UNPACKING_PROTO(legion_proto_invite_player)
 
-		//���״̬�²�����
 		if (false == player_ref.is_self_server())
 		{
 			return;
@@ -1369,7 +1348,7 @@ namespace faith
 		}
 		if (false == invite_player_ptr->get_func_unlock_mgr().is_func_unlock("Legion"))
 		{
-			player_ref.send_notice("90095314");//��������δ����
+			player_ref.send_notice("90095314");
 			return;
 		}
 		cs2ws_invite_to_join_legion msg;
@@ -1383,24 +1362,19 @@ namespace faith
 		UNPACKING_PROTO(legion_proto_operation_legion_warehouse_item)
 
 		player_ref.send_notice("90096217");
-		return;//���ε����Ųֿ⹦��
+		return;
 
-		//�ظ���Ϣ��ǰ��
 		int32 error_id = 0;
 		if (request.operation_type() == e_legion_warehouse_operation_store) {
-			//����
 			error_id = legion_cs_mgr::c2cs_store_legion_warehouse_item(connindex, data_ptr, data_len);
 		}
 		else if (request.operation_type() == e_legion_warehouse_operation_out) {
-			//���
 			error_id = legion_cs_mgr::c2cs_role_get_legion_warehouse_item(connindex, data_ptr, data_len);
 		}
 		else if (request.operation_type() == e_legion_warehouse_operation_destroy) {
-			//����
 			error_id = legion_cs_mgr::c2cs_destroy_legion_warehouse_item(connindex, data_ptr, data_len);
 		}
 		if (error_id > 0) {
-			// ���ڴ��� ������ŷ���ǰ�� �ɹ��Ļ� �����ӿڻ᷵��
 			legion_proto_operation_legion_warehouse_item_end resp;
 			resp.set_error_code(error_id);
 			player_ref.send_message_to_self(&resp, e_msgindex_s2c_operation_legion_warehouse_item_end);
@@ -1470,7 +1444,6 @@ namespace faith
 	{
 		UNPACKING_PROTO(arena_proto_get_arena_rank)
 
-		//���״̬�½�ֹ
 		if (false == player_ref.is_self_server())
 		{
 			return;
@@ -1480,7 +1453,6 @@ namespace faith
 	void req_get_match_player(uint32 connidex, const void* data_ptr, size_t data_len)
 	{
 		UNPACKING_PROTO(arena_proto_get_match_player)
-		//���״̬�½�ֹ
 		if (false == player_ref.is_self_server())
 		{
 			return;
@@ -1491,7 +1463,6 @@ namespace faith
 	{
 		UNPACKING_PROTO(arena_proto_get_top_three_player)
 
-		//���״̬�½�ֹ
 		if (false == player_ref.is_self_server())
 		{
 			return;
@@ -1502,7 +1473,6 @@ namespace faith
 	{
 		UNPACKING_PROTO(arena_proto_req_challenge)
 
-		//���״̬�½�ֹ
 		if (false == player_ref.is_self_server())
 		{
 			return;
@@ -1521,7 +1491,7 @@ namespace faith
 
 		if (cur_map_template_ptr->Type != e_map_type_big_map)
 		{
-			return;//���ڴ����粻����JJC
+			return;
 		}
 
 		guid_64 temp_guid;
@@ -1534,7 +1504,6 @@ namespace faith
 	{
 		UNPACKING_PROTO(arena_proto_req_get_challenge_log)
 
-		//���״̬�½�ֹ
 		if (false == player_ref.is_self_server())
 		{
 			return;
@@ -1546,7 +1515,6 @@ namespace faith
 	{
 		UNPACKING_PROTO(arena_proto_get_arena_reward)
 
-		//���״̬�½�ֹ
 		if (false == player_ref.is_self_server())
 		{
 			return;
@@ -1558,7 +1526,6 @@ namespace faith
 	{
 		UNPACKING_PROTO(arena_proto_get_arena_reward)
 
-		//���״̬�½�ֹ
 		if (false == player_ref.is_self_server())
 		{
 			return;
@@ -1755,9 +1722,7 @@ namespace faith
 			e_chat_content_info temp_info;
 			int32 str_len = request.content_info_array(i).commontext().size() > chat_content_info_max ? chat_content_info_max : request.content_info_array(i).commontext().size();
 			memcpy(temp_info.common_text, request.content_info_array(i).commontext().c_str(), str_len);
-			//
 			temp_info.template_id = request.content_info_array(i).template_id();
-			//
 			if (request.content_info_array(i).item_data_size() == e_item_info_max)
 			{
 				for (int32 j = 0; j < e_item_info_max; ++j)
@@ -1895,7 +1860,6 @@ namespace faith
 	{
 		UNPACKING_PROTO(character_proto_find_back_must_do_resource)
 
-		//�����ֹ
 		if (false == player_ref.is_self_server())
 		{
 			return;
@@ -1960,7 +1924,6 @@ namespace faith
 
 	void c2s_find_other_unit(uint32 connidex, const void* data_ptr, size_t data_len)
 	{
-		//��ȡtarget_guid
 
 		UNPACKING_PROTO(character_proto_find_other_unit)
 
@@ -2033,7 +1996,6 @@ namespace faith
 	{
 		UNPACKING_PROTO(auction_proto_operate)
 
-		//���״̬�½�ֹ
 		if (false == player_ref.is_self_server())
 		{
 			return;
@@ -2044,7 +2006,6 @@ namespace faith
 	void c2cs_auction_req_show_list(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
 		UNPACKING_PROTO(auction_proto_req_auction_list)
-		//���״̬�½�ֹ
 		if (false == player_ref.is_self_server())
 		{
 			return;
@@ -2060,7 +2021,6 @@ namespace faith
 	{
 		UNPACKING_PROTO(auction_proto_req_trade_record)
 
-		//���״̬�½�ֹ
 		if (false == player_ref.is_self_server())
 		{
 			return;
@@ -2071,7 +2031,6 @@ namespace faith
 	void c2cs_auction_req_another_sell_info(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
 		UNPACKING_PROTO(auction_proto_req_another_sell_info)
-		//���״̬�½�ֹ
 		if (false == player_ref.is_self_server())
 		{
 			return;
@@ -2083,7 +2042,6 @@ namespace faith
 	{
 		UNPACKING_PROTO(auction_proto_req_self_bid_list)
 
-		//���״̬�½�ֹ
 		if (false == player_ref.is_self_server())
 		{
 			return;
@@ -2242,7 +2200,6 @@ namespace faith
 		{
 			return;
 		}
-		//С���ֵ����ʾ֮·�ڷ�����ֱ�ӻ�ý��� ����Ҫ�ӿͻ���������
 		if (e_time_limit_activity_type_small_charge == reward_template_ptr.ActivityType
 			|| e_time_limit_activity_type_behavior_welfare == reward_template_ptr.ActivityType
 			|| e_time_limit_activity_type_behavior_welfare1 == reward_template_ptr.ActivityType
@@ -2261,7 +2218,6 @@ namespace faith
 	{
 		UNPACKING_PROTO(time_limit_activity_proto_add_activity_schedule)
 
-		//���������ʱֻ���ڼ�¼��ҵ��ת��
 		if (e_time_limit_activity_type_treasure == request.add_type()
 			|| e_time_limit_activity_type_treasure_royal1 == request.add_type()
 			|| e_time_limit_activity_type_treasure_royal2 == request.add_type()
@@ -2529,7 +2485,6 @@ namespace faith
 	void c2s_buy_speical_manual_proc(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
 		UNPACKING_PROTO(cross_ladder_buy_speical_manual)
-		//����Ӣ�ֲ�
 		player_ref.get_competition_mgr().buy_speical_manual(request.manual_type());
 	}
 
@@ -2560,7 +2515,6 @@ namespace faith
 	void c2s_buy_speical_element_manual_proc(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
 		UNPACKING_PROTO(game_proto_buy_speical_manual)
-		//����Ԫ���ֲ�
 		player_ref.get_element_competition_mgr().buy_speical_manual(request.manual_type());
 	}
 
@@ -2602,13 +2556,11 @@ namespace faith
 	}
 	void c2s_get_cumulative_sign_in_reward(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
-		//��ȡ�ۼ�ǩ������
 		UNPACKING_PROTO(welfare_proto_get_cumulative_sign_in_reward)
 		player_ref.get_welfare_mgr().get_cumulative_sign_in_reward(request.reward_index());
 	}
 	void c2s_retroactive_all_days(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
-		//��ǩ��������
 		UNPACKING_PROTO(welfare_proto_retroactive_all_days)
 		player_ref.get_welfare_mgr().retroactive_all_days();
 	}
@@ -2693,10 +2645,10 @@ namespace faith
 		e_element_war_buy_ticket_ret ret = e_element_war_buy_ticket_success;
 		game_proto_element_war_buy_ticket_end send_msg;
 		int32 have_buy_num = player_ref.get_logic_data(e_role_logic_info_element_war_buy_ticket);
-		int32 need_num = 0;			//����ϵ��
-		int32 money_type = 0;		//�������� 
-		int32 const_money_money = 0;//�����۸�
-		int32 can_buy_max = 0;		//��������
+		int32 need_num = 0;
+		int32 money_type = 0;
+		int32 const_money_money = 0;
+		int32 can_buy_max = 0;
 		int32 gate_server_id = GATECONFIG->gate_id;
 		VIPTemplate* vip_temp_ptr = template_manager::get_instance().get_template_by_vip_level(player_ref.get_vip_level(false));
 		RegionTemplate* region_ptr = globle_data::get_instance().get_region_template_ptr();

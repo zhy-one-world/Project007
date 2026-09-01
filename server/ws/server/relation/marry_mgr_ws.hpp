@@ -44,7 +44,7 @@ namespace faith
 		marry_couple_data	get_couple_data(const guid_64& role_guid);
 		bool	is_couple(const guid_64& role_guid , const guid_64& couple_guid);
 		//rename																																		
-		void	change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//角色改名同步
+		void	change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//瑙掕壊鏀瑰悕鍚屾
 
 	public:
 		void	session_offline_marry_handle(const guid_64& role_guid);

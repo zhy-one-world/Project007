@@ -17,13 +17,13 @@ namespace faith
 #pragma pack(push,1)
 
 /************************************************************************/
-/*	                    ÈİÆ÷ÏŞÖÆ                                        */
+/*	                    å®¹å™¨é™åˆ¶                                        */
 /************************************************************************/
 
 
-#define			All_MAX_ITEM_BAG_NUM					300												// ×î´óÊıÁ¿
-#define			MAX_ITEM_BAG_NUM						500												// ±³°ü×î´óÊıÁ¿
-#define			MAX_ITEM_TREASURE_NUM					100												// ±³°ü×î´óÊıÁ¿
+#define			All_MAX_ITEM_BAG_NUM					300												// æœ€å¤§æ•°é‡
+#define			MAX_ITEM_BAG_NUM						500												// èƒŒåŒ…æœ€å¤§æ•°é‡
+#define			MAX_ITEM_TREASURE_NUM					100												// èƒŒåŒ…æœ€å¤§æ•°é‡
 
 #define			MAX_WING_NUM							200
 #define			MAX_WING_FEATHER_NUM					5
@@ -39,21 +39,21 @@ namespace faith
 
 #define			MAX_BEAST_SPIRIT_NUM				50
 	const int32 send_item_max_num = 80;
-	const int32 max_proctect_mark_equip_slot_num = 8;													// ÊØ»¤Ó¡¼Ç×°±¸À¸ÉÏÏŞ
-	const int32 max_proctect_mark_bag_slot_num = 36;													// ÊØ»¤Ó¡¼ÇÀ¸ÉÏÏŞ
+	const int32 max_proctect_mark_equip_slot_num = 8;													// å®ˆæŠ¤å°è®°è£…å¤‡æ ä¸Šé™
+	const int32 max_proctect_mark_bag_slot_num = 36;													// å®ˆæŠ¤å°è®°æ ä¸Šé™
 
-	const int32 max_proctect_tinder_prop_slot_num = 10;													// »ğÖÖµÀ¾ß×°±¸À¸ÉÏÏŞ
+	const int32 max_proctect_tinder_prop_slot_num = 10;													// ç«ç§é“å…·è£…å¤‡æ ä¸Šé™
 
-	const int32 element_heart_bag_num = 200;															// ÔªËØÖ®ĞÄ±³°ü×î´óÊıÁ¿
-	const int32 element_heart_equip_num = 10;															// ÔªËØÖ®ĞÄ×°±¸×î´óÊıÁ¿
-	const int32 core_element_num = 4;																	// ºËĞÄ·ûÎÄ×î´óÊıÄ¿
+	const int32 element_heart_bag_num = 200;															// å…ƒç´ ä¹‹å¿ƒèƒŒåŒ…æœ€å¤§æ•°é‡
+	const int32 element_heart_equip_num = 10;															// å…ƒç´ ä¹‹å¿ƒè£…å¤‡æœ€å¤§æ•°é‡
+	const int32 core_element_num = 4;																	// æ ¸å¿ƒç¬¦æ–‡æœ€å¤§æ•°ç›®
 
-	const int32 belief_rune_bag_num = 200;                                                              // ĞÅÑö·ûÎÄ±³°üµÄ×î´óÊıÁ¿
-	const int32 belief_rune_equip_slot_each_type_num = 7;												// Ã¿ÀàĞÅÑöµÄ×°±¸²ÛÊıÁ¿
-	const int32 belief_rune_equip_bag_num = e_belief_series_type_max * belief_rune_equip_slot_each_type_num; // ĞÅÑö·ûÎÄ×°±¸µÄ×î´óÊıÁ¿
-	const int32 tinder_prop_bag_num = 10;																//»ğÖÖµÀ¾ß±³°üÊıÁ¿
+	const int32 belief_rune_bag_num = 200;                                                              // ä¿¡ä»°ç¬¦æ–‡èƒŒåŒ…çš„æœ€å¤§æ•°é‡
+	const int32 belief_rune_equip_slot_each_type_num = 7;												// æ¯ç±»ä¿¡ä»°çš„è£…å¤‡æ§½æ•°é‡
+	const int32 belief_rune_equip_bag_num = e_belief_series_type_max * belief_rune_equip_slot_each_type_num; // ä¿¡ä»°ç¬¦æ–‡è£…å¤‡çš„æœ€å¤§æ•°é‡
+	const int32 tinder_prop_bag_num = 10;																//ç«ç§é“å…·èƒŒåŒ…æ•°é‡
 
-	const int32 sprite_bag_num = 200;																	//¾«Áé±³°üÊıÁ¿
+	const int32 sprite_bag_num = 200;																	//ç²¾çµèƒŒåŒ…æ•°é‡
 
 	const int32 max_hope_item_bag_size = 100;
 
@@ -63,8 +63,8 @@ namespace faith
 
 	const int32 max_item_advance_num = 3;
 
-	const int32 special_mission_wing_id = 31040129;														//ÈÎÎñ¸øµÄ³á°òID
-	const int32 special_wing_buff_id = 10992004;														//ÌØÊâ³á°òµÄÏÔÊ¾BUFF ID
+	const int32 special_mission_wing_id = 31040129;														//ä»»åŠ¡ç»™çš„ç¿…è†€ID
+	const int32 special_wing_buff_id = 10992004;														//ç‰¹æ®Šç¿…è†€çš„æ˜¾ç¤ºBUFF ID
 
 	const int32 max_item_storage_num = 100;
 	const int32 template_storage_id = 33010000;
@@ -77,107 +77,107 @@ namespace faith
 	const int32 skygod_equip_slot_num = 10;
 	const int32 supreme_equip_slot_num = 10;
 
-	const int32 max_wedding_equip_num = 1;																//Ä¿Ç°Ö»ÓĞÒ»¸ö»é½ä
-	const int32 max_goddess_equip_num = 28;																//4¸öÅ®ÉñÎïÆ·ÒÔ¼°Ã¿¸öÅ®Éñ6¼ş×°±¸
-	const int32 per_goddess_type_equip_num = 6;															//Ã¿¸öÅ®Éñ×°±¸ÊıÄ¿
-	const int32	max_enchant_type_num = 100;																//¸½Ä§ÖÖÀà×î´óÊıÁ¿
-	const int32 max_each_type_addition_buff_num = 50;													//Ã¿ÖÖ¶îÍâbuffÀàĞÍµÄ×î´óÊıÁ¿
+	const int32 max_wedding_equip_num = 1;																//ç›®å‰åªæœ‰ä¸€ä¸ªå©šæˆ’
+	const int32 max_goddess_equip_num = 28;																//4ä¸ªå¥³ç¥ç‰©å“ä»¥åŠæ¯ä¸ªå¥³ç¥6ä»¶è£…å¤‡
+	const int32 per_goddess_type_equip_num = 6;															//æ¯ä¸ªå¥³ç¥è£…å¤‡æ•°ç›®
+	const int32	max_enchant_type_num = 100;																//é™„é­”ç§ç±»æœ€å¤§æ•°é‡
+	const int32 max_each_type_addition_buff_num = 50;													//æ¯ç§é¢å¤–buffç±»å‹çš„æœ€å¤§æ•°é‡
 
-	const int32 init_wedding_fashion = 31130490;														//³õÊ¼»¯ËÍµÄ½á»éÊ±×°
-	const int32	heart_value_template_begin_id = 58102001;												//ÁéÏ¬Öµ³ÆºÅÆäÊµid
+	const int32 init_wedding_fashion = 31130490;														//åˆå§‹åŒ–é€çš„ç»“å©šæ—¶è£…
+	const int32	heart_value_template_begin_id = 58102001;												//çµçŠ€å€¼ç§°å·å…¶å®id
 
-	const int32 sky_equip_buff_id = 10992053;															//Ìì¿ÕÌ××°ÏÔÊ¾buffId
-	const int32 skygod_equip_buff_id = 10992125;														//ÌìÉñÌ××°ÏÔÊ¾buffId
-	const int32 supreme_equip_buff_id = 10992150;														//ÉñÍõÌ××°ÏÔÊ¾buffId
+	const int32 sky_equip_buff_id = 10992053;															//å¤©ç©ºå¥—è£…æ˜¾ç¤ºbuffId
+	const int32 skygod_equip_buff_id = 10992125;														//å¤©ç¥å¥—è£…æ˜¾ç¤ºbuffId
+	const int32 supreme_equip_buff_id = 10992150;														//ç¥ç‹å¥—è£…æ˜¾ç¤ºbuffId
 /************************************************************************/
-/*		              ¹¦ÄÜÏŞÖÆ                                          */
+/*		              åŠŸèƒ½é™åˆ¶                                          */
 /************************************************************************/
-#define			EQUIP_QUALITY_MAX						8						//ÆÕÍ¨×°±¸Éı½×ĞèÒªµÀ¾ßµÈ¼¶
+#define			EQUIP_QUALITY_MAX						8						//æ™®é€šè£…å¤‡å‡é˜¶éœ€è¦é“å…·ç­‰çº§
 
-#define			EQUIP_GRADE_MAX					    	10						//ÆÕÍ¨×°±¸Æ·½××î¸ßÖµ
+#define			EQUIP_GRADE_MAX					    	10						//æ™®é€šè£…å¤‡å“é˜¶æœ€é«˜å€¼
 
-#define         FEATHER_EQUIP_OPEN                      5                                               // ×øÆï¿ªÆôôáÓğ¹¦ÄÜµÄµÈ¼¶
-#define			ADD_SPIRIT_OPEN							5												// ×¢Áé¿ªÆô¹¦ÄÜµÄµÈ¼¶
+#define         FEATHER_EQUIP_OPEN                      5                                               // åéª‘å¼€å¯ç¿ç¾½åŠŸèƒ½çš„ç­‰çº§
+#define			ADD_SPIRIT_OPEN							5												// æ³¨çµå¼€å¯åŠŸèƒ½çš„ç­‰çº§
 #define			ADD_SOUL_OPEN							5	
 
-	const int32 gods_reel = 31020005;						//ÉñÓÓÉñÊ¯
-	const int32 must_success_props_item = 31000062;			//Â¶Î÷·Æ¶ûµÄ×£¸£
-	const int32 not_downgrade_props_item = 31000063;		//Ø¨¹ÅÉñÓÓ¾íÖá
+	const int32 gods_reel = 31020005;						//ç¥ä½‘ç¥çŸ³
+	const int32 must_success_props_item = 31000062;			//éœ²è¥¿è²å°”çš„ç¥ç¦
+	const int32 not_downgrade_props_item = 31000063;		//äº˜å¤ç¥ä½‘å·è½´
 
-	const int32 item_illusion_max_num = 10;																// ÎïÆ·»Ã»¯ÊıÁ¿ÉÏÏŞ
-	const int32 item_illusion_byte_array[item_illusion_max_num] = { 1,2,4,8,16,32,64,128,256,512 };			// ÎïÆ·»Ã»¯Î»±ê¼ÇÊı×é
+	const int32 item_illusion_max_num = 10;																// ç‰©å“å¹»åŒ–æ•°é‡ä¸Šé™
+	const int32 item_illusion_byte_array[item_illusion_max_num] = { 1,2,4,8,16,32,64,128,256,512 };			// ç‰©å“å¹»åŒ–ä½æ ‡è®°æ•°ç»„
 
-	const float item_tidy_interval = 3.0f; // ±³°üÕûÀíµÄ¼ä¸ô
+	const float item_tidy_interval = 3.0f; // èƒŒåŒ…æ•´ç†çš„é—´éš”
 
-	const int32 hope_and_hunt_record_num = 50; // Æí¸£ºÍÁÔÈ¡¼ÇÂ¼´æ´¢ÊıÁ¿
-	const int32 draw_record_total_num = hope_and_hunt_record_num * 2; // Æí¸£ºÍÁÔÈ¡¸÷50
+	const int32 hope_and_hunt_record_num = 50; // ç¥ˆç¦å’ŒçŒå–è®°å½•å­˜å‚¨æ•°é‡
+	const int32 draw_record_total_num = hope_and_hunt_record_num * 2; // ç¥ˆç¦å’ŒçŒå–å„50
 
-	const int32 min_add_on_notice = 6;								// ×îĞ¡¹«¸æ×·¼ÓµÈ¼¶
-	const int32 max_item_name_size = 40;							// ÎïÆ·Ãû×î´ó×Ö·ûÊı ÅÄÂôĞĞÓÃ
-	const int32 difference_from_upgrade_star_id_and_item_logic_id = 1000;	//»êĞÇÓë³á°ò»ò×øÆïlogic idµÄ²îÖµ
-	const int32 difference_from_wing_psychic_id_and_item_logic_id = 2000;   //ÓğÒíÍ¨ÁéÓë³á°òlogic idµÄ²îÖµ 
+	const int32 min_add_on_notice = 6;								// æœ€å°å…¬å‘Šè¿½åŠ ç­‰çº§
+	const int32 max_item_name_size = 40;							// ç‰©å“åæœ€å¤§å­—ç¬¦æ•° æ‹å–è¡Œç”¨
+	const int32 difference_from_upgrade_star_id_and_item_logic_id = 1000;	//é­‚æ˜Ÿä¸ç¿…è†€æˆ–åéª‘logic idçš„å·®å€¼
+	const int32 difference_from_wing_psychic_id_and_item_logic_id = 2000;   //ç¾½ç¿¼é€šçµä¸ç¿…è†€logic idçš„å·®å€¼ 
 
-	const int32 init_mount_template_id = 56010000;					//µÚÒ»¸ö×øÆïÄ£°åid
+	const int32 init_mount_template_id = 56010000;					//ç¬¬ä¸€ä¸ªåéª‘æ¨¡æ¿id
 
 	const int32 max_item_num = MAX_ITEM_BAG_NUM + e_role_equip_slot_max + MAX_WING_ELEMENTS_NUM + MAX_MOUNT_NUM
 		+ max_proctect_mark_bag_slot_num + max_proctect_mark_equip_slot_num + max_hope_item_bag_size + element_heart_bag_num
 		+ element_heart_equip_num + max_fasion_item_bag_size+ e_fashion_equip_slot_max + MAX_ITEM_TREASURE_NUM + max_item_storage_num
 		+ belief_rune_bag_num + belief_rune_equip_bag_num + sprite_bag_num + sky_equip_slot_num + skygod_equip_slot_num + max_goddess_equip_num + max_wedding_equip_num + core_element_num;
 
-	const int32 role_show_item_num = e_role_equip_slot_max + e_fashion_equip_slot_max + 4; //4 ÊÇÕ¹Ê¾³á°ò+Õ¹Ê¾³á°òµÄÔ­Çø¼äid+Õ¹Ê¾×øÆï+Õ¹Ê¾×øÆïµÄÔ­Çø¼ä
+	const int32 role_show_item_num = e_role_equip_slot_max + e_fashion_equip_slot_max + 4; //4 æ˜¯å±•ç¤ºç¿…è†€+å±•ç¤ºç¿…è†€çš„åŸåŒºé—´id+å±•ç¤ºåéª‘+å±•ç¤ºåéª‘çš„åŸåŒºé—´
 
-	const int32 fake_item_num = role_show_item_num + element_heart_equip_num + belief_rune_equip_bag_num;//µñÏñĞèÒªµÄÎïÆ· ×°±¸+Ê±×°+·ûÎÄ+ĞÅÑö·ûÎÄ
+	const int32 fake_item_num = role_show_item_num + element_heart_equip_num + belief_rune_equip_bag_num;//é›•åƒéœ€è¦çš„ç‰©å“ è£…å¤‡+æ—¶è£…+ç¬¦æ–‡+ä¿¡ä»°ç¬¦æ–‡
 
-	const int32 bag_is_full_notice_id = 93000185;					//°üÒÑÂúÇåÇëÇåÀí±³°ü¹«¸æid
-	const int32 mail_with_item_notice_id = 93000186;				//½±ÀøÒÔÓÊ¼şĞÎÊ½·¢ËÍ¹ıÈ¥¹«¸æid
-	const int32 mail_with_item_rune_notice_id = 93000253;			//·ûÎÄ½±ÀøÒÔÓÊ¼şĞÎÊ½·¢ËÍ¹ıÈ¥¹«¸æid
-	const int32 add_buff_need_equip_num = 8;						//Ç¿»¯×·¼ÓÏ´Á·²úÉúĞ§¹ûµÄÊıÁ¿
+	const int32 bag_is_full_notice_id = 93000185;					//åŒ…å·²æ»¡æ¸…è¯·æ¸…ç†èƒŒåŒ…å…¬å‘Šid
+	const int32 mail_with_item_notice_id = 93000186;				//å¥–åŠ±ä»¥é‚®ä»¶å½¢å¼å‘é€è¿‡å»å…¬å‘Šid
+	const int32 mail_with_item_rune_notice_id = 93000253;			//ç¬¦æ–‡å¥–åŠ±ä»¥é‚®ä»¶å½¢å¼å‘é€è¿‡å»å…¬å‘Šid
+	const int32 add_buff_need_equip_num = 8;						//å¼ºåŒ–è¿½åŠ æ´—ç»ƒäº§ç”Ÿæ•ˆæœçš„æ•°é‡
 
-	const int32	upgrade_promote_spirit_max = 50;				//ĞÇÍ¼¾«Áé×î´óÊıÁ¿
-	const int32	break_will_max = 100;					//ĞÇÍ¼¾«Áé×î´óÊıÁ¿
-	const int32	awaken_fetter_bag_max = 20;				//¾õĞÑ´óÊ¦ÎïÆ·×î´óÊıÁ¿
-	//ÎïÆ·ÕûÀíÓÃÊı×é´óĞ¡  ***±ØĞë´óÓÚËùÓĞ±³°ü¸ñ×ÓÊı***
+	const int32	upgrade_promote_spirit_max = 50;				//æ˜Ÿå›¾ç²¾çµæœ€å¤§æ•°é‡
+	const int32	break_will_max = 100;					//æ˜Ÿå›¾ç²¾çµæœ€å¤§æ•°é‡
+	const int32	awaken_fetter_bag_max = 20;				//è§‰é†’å¤§å¸ˆç‰©å“æœ€å¤§æ•°é‡
+	//ç‰©å“æ•´ç†ç”¨æ•°ç»„å¤§å°  ***å¿…é¡»å¤§äºæ‰€æœ‰èƒŒåŒ…æ ¼å­æ•°***
 
 	//***************************************
-	//*********±ØĞë´óÓÚËùÓĞ±³°ü¸ñ×ÓÊı********
+	//*********å¿…é¡»å¤§äºæ‰€æœ‰èƒŒåŒ…æ ¼å­æ•°********
 	//***************************************
 
-	// ÎäÆ÷ÖÖÀàÀàĞÍ(ÎäÆ÷Ä£°åÊı¾İµÄ×ÓÀàĞÍ)
+	// æ­¦å™¨ç§ç±»ç±»å‹(æ­¦å™¨æ¨¡æ¿æ•°æ®çš„å­ç±»å‹)
 	enum e_weap_sub_type
 	{
-		e_weap_sub_type_none,			// Í½ÊÖÊìÁ·¶È
-		// µ¥ÊÖÎäÆ÷
-		e_weap_sub_type_jian,			// ½£
-		e_weap_sub_type_fu,				// ¸«
-		e_weap_sub_type_faqi,			// ·¨Æ÷
-		e_weap_sub_type_duanzhang,		// ¶ÌÕÈ
-		// Ë«³ÖÎäÆ÷
-		e_weap_sub_type_shuangdao,		// Ë«µ¶
-		e_weap_sub_type_shuanggun,		// ¹÷
-		// ¾ŞĞÍÎäÆ÷
-		e_weap_sub_type_jujian,			// ¾Ş½£
-		e_weap_sub_type_juchu,			// ¾ŞèÆ
-		// ÂÖ´Ì³¤±úÎäÆ÷
-		e_weap_sub_type_qianggun,		// Ç¹¹÷
-		e_weap_sub_type_changzhang,		// ³¤ÕÈ
-		// »Ó¿³³¤±úÎäÆ÷
-		e_weap_sub_type_jiyue,			// êªîá
-		// ¹­ÀàÎäÆ÷
-		e_weap_sub_type_gong,			// ¹­
-		e_weap_sub_type_gongjian,		// ¼ı
-		// µ¥ÊÖÎäÆ÷
-		e_weap_sub_type_dao,			// µ¶
-		// ¹­ÀàÎäÆ÷
-		e_weap_sub_type_zhonggong,		// ÖØ¹­
-		e_weap_sub_type_assistant,		// ¶ÜÅÆ		
+		e_weap_sub_type_none,			// å¾’æ‰‹ç†Ÿç»ƒåº¦
+		// å•æ‰‹æ­¦å™¨
+		e_weap_sub_type_jian,			// å‰‘
+		e_weap_sub_type_fu,				// æ–§
+		e_weap_sub_type_faqi,			// æ³•å™¨
+		e_weap_sub_type_duanzhang,		// çŸ­æ–
+		// åŒæŒæ­¦å™¨
+		e_weap_sub_type_shuangdao,		// åŒåˆ€
+		e_weap_sub_type_shuanggun,		// æ£
+		// å·¨å‹æ­¦å™¨
+		e_weap_sub_type_jujian,			// å·¨å‰‘
+		e_weap_sub_type_juchu,			// å·¨æµ
+		// è½®åˆºé•¿æŸ„æ­¦å™¨
+		e_weap_sub_type_qianggun,		// æªæ£
+		e_weap_sub_type_changzhang,		// é•¿æ–
+		// æŒ¥ç é•¿æŸ„æ­¦å™¨
+		e_weap_sub_type_jiyue,			// æˆŸé’º
+		// å¼“ç±»æ­¦å™¨
+		e_weap_sub_type_gong,			// å¼“
+		e_weap_sub_type_gongjian,		// ç®­
+		// å•æ‰‹æ­¦å™¨
+		e_weap_sub_type_dao,			// åˆ€
+		// å¼“ç±»æ­¦å™¨
+		e_weap_sub_type_zhonggong,		// é‡å¼“
+		e_weap_sub_type_assistant,		// ç›¾ç‰Œ		
 		e_weap_sub_type_max,
 	};
 
 	enum e_item_lock_status
 	{
-		e_item_lock_status_unlocked,    // ·Ç°ó¶¨
-		e_item_lock_status_locked,      // °ó¶¨
-		e_item_lock_status_ignore,      // ²»¹ØĞÄ°ó²»°ó¶¨
+		e_item_lock_status_unlocked,    // éç»‘å®š
+		e_item_lock_status_locked,      // ç»‘å®š
+		e_item_lock_status_ignore,      // ä¸å…³å¿ƒç»‘ä¸ç»‘å®š
 		e_item_lock_status_max
 	};
 
@@ -192,17 +192,17 @@ namespace faith
 	};
 
 	enum e_quest_sub_type
-	{// ÈÎÎñÎïÆ·×ÓÀàĞÍ(ÈÎÎñÎïÆ·Ä£°åÊı¾İµÄ×ÓÀàĞÍSubType)
-		e_quest_sub_type_none,				// È±Ê¡£¬Î´Ö¸¶¨ÀàĞÍ
-		e_quest_sub_type_unexpendable,		// ²»¿ÉÏûºÄÀà
-		e_quest_sub_type_expendable,		// ¿ÉÏûºÄÀà
+	{// ä»»åŠ¡ç‰©å“å­ç±»å‹(ä»»åŠ¡ç‰©å“æ¨¡æ¿æ•°æ®çš„å­ç±»å‹SubType)
+		e_quest_sub_type_none,				// ç¼ºçœï¼ŒæœªæŒ‡å®šç±»å‹
+		e_quest_sub_type_unexpendable,		// ä¸å¯æ¶ˆè€—ç±»
+		e_quest_sub_type_expendable,		// å¯æ¶ˆè€—ç±»
 		e_quest_sub_type_max,
 	};
 
 	const int32 max_jewel_slot_open_by_equip_level = e_item_info_jewel_vip_slot_0 - e_item_info_jewel_slot_0;
 	const int32 max_jewel_slot_open_by_vip_level = e_item_info_jewel_vip_slot_1 - e_item_info_jewel_vip_slot_0;
 
-	enum item_temp_succinct_property				//Ï´Á·ÊôĞÔÁÙÊ±´æ´¢
+	enum item_temp_succinct_property				//æ´—ç»ƒå±æ€§ä¸´æ—¶å­˜å‚¨
 	{
 		item_temp_succinct_property_1,
 		item_temp_succinct_property_2,
@@ -212,7 +212,7 @@ namespace faith
 
 	};
 
-	enum item_temp_forge_property				//ÖØÖıÊôĞÔÁÙÊ±´æ´¢
+	enum item_temp_forge_property				//é‡é“¸å±æ€§ä¸´æ—¶å­˜å‚¨
 	{
 		item_temp_forge_property_1,
 		item_temp_forge_property_2,
@@ -224,7 +224,7 @@ namespace faith
 	};
 
 
-	enum item_succinct_money_cost_typ				//Ï´Á·Ê±ÏûºÄµÄ»õ±ÒÖÖÀà
+	enum item_succinct_money_cost_typ				//æ´—ç»ƒæ—¶æ¶ˆè€—çš„è´§å¸ç§ç±»
 	{
 		item_succinct_money_cost_non = 0,
 		item_succinct_money_cost_gold,
@@ -233,36 +233,36 @@ namespace faith
 
 	enum item_succinct_change_range_read_index
 	{
-		item_succinct_change_des_max = 0,		//×î´ó¼õÖµ,Èç-5
-		item_succinct_change_des_min,			//×îĞ¡¼õÖµ,Èç-1
-		item_succinct_change_ins_min,			//×îĞ¡¼ÓÖµ,Èç 1
-		item_succinct_change_ins_max,			//×î´ó¼ÓÖµ,Èç 5
+		item_succinct_change_des_max = 0,		//æœ€å¤§å‡å€¼,å¦‚-5
+		item_succinct_change_des_min,			//æœ€å°å‡å€¼,å¦‚-1
+		item_succinct_change_ins_min,			//æœ€å°åŠ å€¼,å¦‚ 1
+		item_succinct_change_ins_max,			//æœ€å¤§åŠ å€¼,å¦‚ 5
 		item_succinct_change_max
 	};
 
 	//enum wing_type_read
 	//{
-	//	wing_type_non				= 0,		//³á°òÀàĞÍ£¬ÎŞ
-	//	wing_type_normal			= 1,		//ÆÕÍ¨³á°ò
-	//	wing_type_shape				= 2,		//ÍâĞÎ³á°ò
+	//	wing_type_non				= 0,		//ç¿…è†€ç±»å‹ï¼Œæ— 
+	//	wing_type_normal			= 1,		//æ™®é€šç¿…è†€
+	//	wing_type_shape				= 2,		//å¤–å½¢ç¿…è†€
 	//};
 
 	enum mount_type_read
 	{
-		mount_type_non = 0,				//×øÆïÀàĞÍ£¬ÎŞ
-		mount_type_normal = 1,			//ÆÕÍ¨×øÆï
-		mount_type_special = 2,			//ÌØÊâ×øÆï
-		mount_type_warlord = 3,			//³ÇÖ÷×øÆï
-		mount_type_illusion = 4,		//×øÆï»Ã»¯
-		mount_type_lordlegionmem = 5,	//°ÔÖ÷¾üÍÅ³ÉÔ±×øÆï
+		mount_type_non = 0,				//åéª‘ç±»å‹ï¼Œæ— 
+		mount_type_normal = 1,			//æ™®é€šåéª‘
+		mount_type_special = 2,			//ç‰¹æ®Šåéª‘
+		mount_type_warlord = 3,			//åŸä¸»åéª‘
+		mount_type_illusion = 4,		//åéª‘å¹»åŒ–
+		mount_type_lordlegionmem = 5,	//éœ¸ä¸»å†›å›¢æˆå‘˜åéª‘
 	};
 
 	enum e_item_transform_type
 	{
 		e_item_transform_type_none,
-		e_item_transform_type_two,	//¶şÔªÊı×é
-		e_item_transform_type_three,	//ÈıÔªÊı×é
-		e_item_transform_type_four,	//ËÄÔªÊı×é
+		e_item_transform_type_two,	//äºŒå…ƒæ•°ç»„
+		e_item_transform_type_three,	//ä¸‰å…ƒæ•°ç»„
+		e_item_transform_type_four,	//å››å…ƒæ•°ç»„
 		e_item_transform_type_max
 	};
 
@@ -352,9 +352,9 @@ namespace faith
 	};
 	struct s_item_info
 	{
-		guid_64	item_guid;									// ÎïÆ·µÄGUID	
-		int32	data_ary[e_item_info_max];					// ÎïÆ·ÊµÀıÊı¾İ
-		xchar	param_str[max_recharge_order_length + 1];	// ×Ö·û²ÎÊı£¬ÏÖÔÚÖ÷ÒªÓÃ×÷²¹µ¥×êÊ¯¿¨µÄ¶©µ¥ºÅ
+		guid_64	item_guid;									// ç‰©å“çš„GUID	
+		int32	data_ary[e_item_info_max];					// ç‰©å“å®ä¾‹æ•°æ®
+		xchar	param_str[max_recharge_order_length + 1];	// å­—ç¬¦å‚æ•°ï¼Œç°åœ¨ä¸»è¦ç”¨ä½œè¡¥å•é’»çŸ³å¡çš„è®¢å•å·
 		s_item_info()
 		{
 			clear_data();
@@ -398,7 +398,7 @@ namespace faith
 			data_info.clear_data();
 		}
 	};
-	//ºÏ²¢¼ÇÂ¼
+	//åˆå¹¶è®°å½•
 	struct s_merge_stat
 	{
 		guid_64 item_guid;
@@ -411,8 +411,8 @@ namespace faith
 	};
 	enum e_item_operate_money
 	{
-		e_item_operate_money_gold,		//Ê¹ÓÃ½ğ±Ò
-		e_item_operate_money_diamond	//Ê¹ÓÃ×êÊ¯
+		e_item_operate_money_gold,		//ä½¿ç”¨é‡‘å¸
+		e_item_operate_money_diamond	//ä½¿ç”¨é’»çŸ³
 	};
 	enum e_item_lock_states 
 	{
@@ -421,11 +421,11 @@ namespace faith
 	};
 	//enum e_item_wing_type
 	//{
-	//	e_item_wing_type_non,		// ¿Õ
-	//	e_item_wing_type_normal,	// ÆÕÍ¨³á°ò
-	//	e_item_wing_type_shape_no_illusion,		// ÎŞ»Ã»¯ÍâĞÎ³á°ò
-	//	e_item_wing_type_shape_illusion, // ÓĞ»Ã»¯µÄÍâĞÎ³á°ò
-	//	e_item_wing_type_illusion,		// »Ã»¯µÄ³á°ò
+	//	e_item_wing_type_non,		// ç©º
+	//	e_item_wing_type_normal,	// æ™®é€šç¿…è†€
+	//	e_item_wing_type_shape_no_illusion,		// æ— å¹»åŒ–å¤–å½¢ç¿…è†€
+	//	e_item_wing_type_shape_illusion, // æœ‰å¹»åŒ–çš„å¤–å½¢ç¿…è†€
+	//	e_item_wing_type_illusion,		// å¹»åŒ–çš„ç¿…è†€
 	//};
 	enum e_wing_illusion_originalid_range
 	{
@@ -439,7 +439,7 @@ namespace faith
 		e_mount_illusion_originalid_range_high,
 		e_mount_illusion_originalid_range_max,
 	};
-	enum e_wing_rush	//³á°òÈı¶Î³å
+	enum e_wing_rush	//ç¿…è†€ä¸‰æ®µå†²
 	{
 		e_wing_rush_first,
 		e_wing_rush_second,
@@ -449,9 +449,9 @@ namespace faith
 
 	enum e_item_advance_type
 	{
-		e_item_advance_ban,			// ²»¿É½ø½×
-		e_item_advance_normal,		// ÆÕÍ¨½ø½×
-		e_item_advance_godassembly,	// Éñ×°ÔÙÔì
+		e_item_advance_ban,			// ä¸å¯è¿›é˜¶
+		e_item_advance_normal,		// æ™®é€šè¿›é˜¶
+		e_item_advance_godassembly,	// ç¥è£…å†é€ 
 
 	};
 
@@ -478,8 +478,8 @@ namespace faith
 		guid_64		role_guid;
 		xchar		role_name[max_name_size + 1];
 		int32		item_template_id;
-		int32		get_type;					//»ñÈ¡·½Ê½£¬µ¥³é»¹ÊÇÊ®Á¬
-		int32		record_type;				//¼ÇÂ¼ÀàĞÍ£¬Æí¸£»¹ÊÇ¾«Áé
+		int32		get_type;					//è·å–æ–¹å¼ï¼Œå•æŠ½è¿˜æ˜¯åè¿
+		int32		record_type;				//è®°å½•ç±»å‹ï¼Œç¥ˆç¦è¿˜æ˜¯ç²¾çµ
 		int64		record_time;
 
 		s_hope_hunt_record_info()
@@ -533,16 +533,16 @@ namespace faith
 	enum e_develop_open_type
 	{
 		e_develop_open_type_non,
-		e_develop_open_type_tinder,					// »ğÖÖ¿ª·ÅÉÏÏŞ
-		e_develop_open_type_mount_upgrade,			// ×øÆïÉı½×ÉÏÏŞ
-		e_develop_open_type_mount_starupgrade,		// ×øÆï»êĞÇµÈ¼¶ÉÏÏŞ
-		e_develop_open_type_mount_illusionupgrade,	// ×øÆï»Ã»¯µÈ¼¶ÉÏÏŞ
-		e_develop_open_type_wing_upgrade,			// ÓğÒíÉı½×ÉÏÏŞ
-		e_develop_open_type_wing_starupgrade,		// ÓğÒí»êĞÇÉÏÏŞ
-		e_develop_open_type_wing_illusionupgrade,	// ÓğÒí»Ã»¯ÉÏÏŞ
-		e_develop_open_type_element_preview,		// ·ûÎÄÔ¤ÀÀÆ·ÖÊÉÏÏŞ
-		e_develop_open_type_fashion_upgrade,		// Ê±×°Éı¼¶ÉÏÏŞ
-		e_develop_open_type_max,					// ÉÏÏŞÖµ ÓÀÔ¶ÔÚ×îºóÒ»¸ö
+		e_develop_open_type_tinder,					// ç«ç§å¼€æ”¾ä¸Šé™
+		e_develop_open_type_mount_upgrade,			// åéª‘å‡é˜¶ä¸Šé™
+		e_develop_open_type_mount_starupgrade,		// åéª‘é­‚æ˜Ÿç­‰çº§ä¸Šé™
+		e_develop_open_type_mount_illusionupgrade,	// åéª‘å¹»åŒ–ç­‰çº§ä¸Šé™
+		e_develop_open_type_wing_upgrade,			// ç¾½ç¿¼å‡é˜¶ä¸Šé™
+		e_develop_open_type_wing_starupgrade,		// ç¾½ç¿¼é­‚æ˜Ÿä¸Šé™
+		e_develop_open_type_wing_illusionupgrade,	// ç¾½ç¿¼å¹»åŒ–ä¸Šé™
+		e_develop_open_type_element_preview,		// ç¬¦æ–‡é¢„è§ˆå“è´¨ä¸Šé™
+		e_develop_open_type_fashion_upgrade,		// æ—¶è£…å‡çº§ä¸Šé™
+		e_develop_open_type_max,					// ä¸Šé™å€¼ æ°¸è¿œåœ¨æœ€åä¸€ä¸ª
 
 	};
 #pragma pack(pop)

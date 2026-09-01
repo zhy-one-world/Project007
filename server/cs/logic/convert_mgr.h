@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê9ÔÂ24ÈÕ13:56:28
+created: 2016å¹´9æœˆ24æ—¥13:56:28
 file base: Special_name_mgr
 file ext: h
 author: zhangminghai
@@ -52,7 +52,7 @@ namespace faith
 	private:
 		int32										m_all_convert_time[e_convert_type_max];
 		int32										m_vip_convert_time[e_convert_type_max];
-		player*										m_player_ptr;//ËùÊôÍæ¼Ò
+		player*										m_player_ptr;//æ‰€å±ç©å®¶
 	};
 }
 #endif

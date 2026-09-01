@@ -35,9 +35,9 @@ namespace faith
 		void get_name_in_want_use_name(const uint64& role_guid, xstring& name);
 
 	public:
-		bool change_player_name(xstring name, guid_64 role_guid); //ĞŞ¸ÄÍæ¼ÒÃû×Ö
+		bool change_player_name(xstring name, guid_64 role_guid); //ä¿®æ”¹ç©å®¶åå­—
 		void sub_rename_item_end(int32 ret, guid_64 role_guid, xstring& want_name, xstring& original_name);
-		void check_role_name_end(uint64 role_guid, xstring role_name, int32 result); //¼ì²éÃû×Ö´æÔÚ·ñ
+		void check_role_name_end(uint64 role_guid, xstring role_name, int32 result); //æ£€æŸ¥åå­—å­˜åœ¨å¦
 		void change_player_name_end(uint64 role_guid, xstring role_name);
 		void confirm_change_name(bool confirm_type, guid_64 role_guid, const xstring& role_name);
 	public:
@@ -45,7 +45,7 @@ namespace faith
 	public:
 		bool is_use_lua();
 	private:
-		std::map<xstring,uint64>		m_want_use_names;							 //ÏŞÖÆµÄÃû×Ö-----role_guid
+		std::map<xstring,uint64>		m_want_use_names;							 //é™åˆ¶çš„åå­—-----role_guid
 		
 	};
 }

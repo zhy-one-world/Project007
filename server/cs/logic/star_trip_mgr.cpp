@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2022Äê8ÔÂ22ÈÕ
+created: 2022å¹´8æœˆ22æ—¥
 file base: star_trip_mgr
 file ext: cpp
 author: zhaoyuming
@@ -469,20 +469,20 @@ namespace faith
 			return e_star_trip_operate_end_template_error;
 		}
 		
-		// »ñÈ¡ÉÌÆ·ĞÅÏ¢
+		// è·å–å•†å“ä¿¡æ¯
 		s_star_trip_goods_info &buy_goods = m_goods_list[item_index];
 		if (buy_goods.item_id <= 0)
 		{
 			return e_star_trip_operate_end_template_error;
 		}
 
-		// ÅĞ¶Ï¹ºÂò´ÎÊı
+		// åˆ¤æ–­è´­ä¹°æ¬¡æ•°
 		if (!buy_goods.can_buy())
 		{
 			return e_star_trip_operate_end_no_buy_num;
 		}
 
-		// ÅĞ¶Ï»ı·Ö
+		// åˆ¤æ–­ç§¯åˆ†
 		int32 cur_source = activity_ptr.get_activity_schedule(1);
 		int32 end_source = cur_source - buy_goods.need_money;
 		if (end_source < 0)
@@ -490,18 +490,18 @@ namespace faith
 			return e_star_trip_operate_end_no_money;
 		}
 
-		// ´´½¨ÎïÆ·
+		// åˆ›å»ºç‰©å“
 		citem* temp_item = player_ref.get_item_set().create_item_by_template(e_server_log_add_buy_star_trip, buy_goods.need_money, buy_goods.item_id, buy_goods.item_num, buy_goods.is_lock);
 		if (temp_item == nullptr)
 		{
 			return e_star_trip_operate_end_no_item;
 		}
 
-		// Ôö¼Ó¹ºÂò´ÎÊı
+		// å¢åŠ è´­ä¹°æ¬¡æ•°
 		buy_goods.add_buy();
-		// ½«ÎïÆ··ÅÈë±³°ü
+		// å°†ç‰©å“æ”¾å…¥èƒŒåŒ…
 		player_ref.get_item_set().put_in_bag(temp_item);
-		// ¼õÉÙ»ı·Ö
+		// å‡å°‘ç§¯åˆ†
 		activity_ptr.set_activity_schedule(end_source, 1);
 
 		time_limit_activity_proto_send_star_trip_goods_info_one msg;
@@ -547,7 +547,7 @@ namespace faith
 			return e_star_trip_operate_end_no_time;
 		}
 
-		// »ñÈ¡ÉÌÈÎÎñĞÅÏ¢
+		// è·å–å•†ä»»åŠ¡ä¿¡æ¯
 		s_star_trip_mission_info &mission_info = m_mission_list[missione_index];
 		if (mission_info.award_num <= 0)
 		{
@@ -559,7 +559,7 @@ namespace faith
 			return e_star_trip_operate_end_is_get;
 		}
 
-		// ÅĞ¶Ï¹ºÂò´ÎÊı
+		// åˆ¤æ–­è´­ä¹°æ¬¡æ•°
 		if (false == mission_info.is_finish())
 		{
 			return e_star_trip_operate_end_no_target;

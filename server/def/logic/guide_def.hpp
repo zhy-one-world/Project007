@@ -20,24 +20,24 @@ namespace faith
 #pragma pack(push,1)
 	
 	const int32			max_guide_record_num = 400;
-	const int32			guide_interval = 100;										//²»Í¬´¥·¢Ìõ¼şµÄÒıµ¼¼ä¸ô
+	const int32			guide_interval = 100;										//ä¸åŒè§¦å‘æ¡ä»¶çš„å¼•å¯¼é—´éš”
 
-	const int32			warning_guide_skill_template_id = 13500162;					//Ô¤¾¯Òıµ¼boss¼¼ÄÜid
-	const int32			first_raid_auto_battke_guide_trigger_id = 118013700;		//µÚÒ»´Î½øÈëÄ§ÁúËÕĞÑ×Ô¶¯Õ½¶·Òıµ¼´¥·¢id
-	const int32         mount_unlock_guide_trigger_id = 0;							//×øÆï½âËøÒıµ¼id
-	const int32			welfare_type_total_login_guide_trigger_id = 118012000;		//ÀÛ»ıµÇÂ½Òıµ¼´¥·¢id
-	const int32			welfare_type_total_login_max_index = 9;						//ÀÛ»ıµÇÂ½¸£Àû×î´óË÷ÒıÖµ
-	const int32			daily_prompt_guide_trigger_id = 118016500;					//ÈÕ³£ÌáÊ¾Òıµ¼ID
-	const int32			new_tinder_guide_trigger_id = 118016600;					//»ğÖÖÉı¼¶Òıµ¼
-	const int32			tinder_unlock_guide_trigger_id = 118011500;					//»ğÖÖ¹¦ÄÜ¿ªÆôÒıµ¼
-	const int32			tinder_function_unlock_id = 117000060;						//»ğÖÖ½âËøid
-	const int32         first_recharge_guide_trigger_id = 118017500;				//Ê×³äÒıµ¼´¥·¢id
-	const int32         update_mount_guide_trigger_id = 118016800;					//×øÆïÉı¼¶Òıµ¼
-	const int32			service_rank_guide_trigger_id = 118018000;					//¿ª·şÇìµäÒıµ¼
-	const int32         first_exp_fuben_guide_trigger_id = 118018300;               //µÚÒ»´Î½øÈë¾­Ñé¸±±¾Òıµ¼ 
-	const int32         fly_sprint_guide_id = 118026800;							//·ÉĞĞ³å´ÌÒıµ¼ID
-	const int32			first_upgrade_buff_guide_id = 118029200;					//Ê×´Î´¥·¢Ç¿»¯BuffÒıµ¼Id
-	const int32			first_upgrade_buff_need_level = 3;							//Ê×´Î´¥·¢Ç¿»¯Òıµ¼IdĞèÒªµÈ¼¶
+	const int32			warning_guide_skill_template_id = 13500162;					//é¢„è­¦å¼•å¯¼bossæŠ€èƒ½id
+	const int32			first_raid_auto_battke_guide_trigger_id = 118013700;		//ç¬¬ä¸€æ¬¡è¿›å…¥é­”é¾™è‹é†’è‡ªåŠ¨æˆ˜æ–—å¼•å¯¼è§¦å‘id
+	const int32         mount_unlock_guide_trigger_id = 0;							//åéª‘è§£é”å¼•å¯¼id
+	const int32			welfare_type_total_login_guide_trigger_id = 118012000;		//ç´¯ç§¯ç™»é™†å¼•å¯¼è§¦å‘id
+	const int32			welfare_type_total_login_max_index = 9;						//ç´¯ç§¯ç™»é™†ç¦åˆ©æœ€å¤§ç´¢å¼•å€¼
+	const int32			daily_prompt_guide_trigger_id = 118016500;					//æ—¥å¸¸æç¤ºå¼•å¯¼ID
+	const int32			new_tinder_guide_trigger_id = 118016600;					//ç«ç§å‡çº§å¼•å¯¼
+	const int32			tinder_unlock_guide_trigger_id = 118011500;					//ç«ç§åŠŸèƒ½å¼€å¯å¼•å¯¼
+	const int32			tinder_function_unlock_id = 117000060;						//ç«ç§è§£é”id
+	const int32         first_recharge_guide_trigger_id = 118017500;				//é¦–å……å¼•å¯¼è§¦å‘id
+	const int32         update_mount_guide_trigger_id = 118016800;					//åéª‘å‡çº§å¼•å¯¼
+	const int32			service_rank_guide_trigger_id = 118018000;					//å¼€æœåº†å…¸å¼•å¯¼
+	const int32         first_exp_fuben_guide_trigger_id = 118018300;               //ç¬¬ä¸€æ¬¡è¿›å…¥ç»éªŒå‰¯æœ¬å¼•å¯¼ 
+	const int32         fly_sprint_guide_id = 118026800;							//é£è¡Œå†²åˆºå¼•å¯¼ID
+	const int32			first_upgrade_buff_guide_id = 118029200;					//é¦–æ¬¡è§¦å‘å¼ºåŒ–Buffå¼•å¯¼Id
+	const int32			first_upgrade_buff_need_level = 3;							//é¦–æ¬¡è§¦å‘å¼ºåŒ–å¼•å¯¼Idéœ€è¦ç­‰çº§
 
 	struct s_record_info
 	{

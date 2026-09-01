@@ -1,10 +1,10 @@
 #pragma once
 /********************************************************************
-created: 2017Äê8ÔÂ10ÈÕ11:27:00
+created: 2017å¹´8æœˆ10æ—¥11:27:00
 file base: service_goal
 file ext: hpp
-author: º«Ôó³É
-purpose: ÆßÈÕÄ¿±êÍ·ÎÄ¼ş
+author: éŸ©æ³½æˆ
+purpose: ä¸ƒæ—¥ç›®æ ‡å¤´æ–‡ä»¶
 *********************************************************************/
 #ifndef _SERVICE_GOAL_HPP_
 #define _SERVICE_GOAL_HPP_

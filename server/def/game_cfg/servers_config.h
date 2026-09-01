@@ -1,4 +1,4 @@
-
+ï»¿
 #ifndef __SERVERS_CONFIG_H__
 #define __SERVERS_CONFIG_H__
 
@@ -54,11 +54,11 @@ namespace faith
 		virtual void clear_data();
 		virtual bool parse_by_json(Json::Value& json_obj);
 
-		e_server_type server_type;//·şÎñÆ÷ÀàĞÍ
-		std::string internal_host;//ÄÚÍøIP
-		int32 internal_port;//ÄÚÍø¶Ë¿Ú
-		std::string external_host;//ÍâÍøIP
-		int32 external_port;//ÍâÍø¶Ë¿Ú
+		e_server_type server_type;//æœåŠ¡å™¨ç±»å‹
+		std::string internal_host;//å†…ç½‘IP
+		int32 internal_port;//å†…ç½‘ç«¯å£
+		std::string external_host;//å¤–ç½‘IP
+		int32 external_port;//å¤–ç½‘ç«¯å£
 	};
 
 	class fep_config : public net_config_base {
@@ -69,8 +69,8 @@ namespace faith
 		virtual void clear_data();
 		virtual bool parse_by_json(Json::Value& json_obj);
 
-		int32 client_send_limit = 20;//Ã¿Ãë¿Í»§¶ËÇëÇó´ÎÊıÏŞÖÆ
-		int32 init_socket_num = 20;//³õÊ¼Á´½ÓÊıÁ¿
+		int32 client_send_limit = 20;//æ¯ç§’å®¢æˆ·ç«¯è¯·æ±‚æ¬¡æ•°é™åˆ¶
+		int32 init_socket_num = 20;//åˆå§‹é“¾æ¥æ•°é‡
 	};
 
 	struct gate_config : public net_config_base {
@@ -79,7 +79,7 @@ namespace faith
 		virtual ~gate_config() {};
 		virtual void clear_data();
 		virtual bool parse_by_json(Json::Value& json_obj);
-		int32 gate_id;//Ã¿Ãë¿Í»§¶ËÇëÇó´ÎÊıÏŞÖÆ
+		int32 gate_id;//æ¯ç§’å®¢æˆ·ç«¯è¯·æ±‚æ¬¡æ•°é™åˆ¶
 	};
 
 	class cs_config : public net_config_base 
@@ -90,12 +90,12 @@ namespace faith
 		virtual void clear_data();
 		virtual bool parse_by_json(Json::Value& json_obj);
 
-		int32 role_num_limit = 2400;//×î´ó³ĞÔØÈËÊı
-		int32 npc_num_limit = 10000;//×î´ó³ĞÔØNpcÊıÁ¿
-		int32 drop_num_limit = 60000;//×î´ó³ĞÔØµôÂäÊı
-		int32 role_data_save_time = 60000;//×Ô¶¯´æÅÌ¼ä¸ô
-		int32 role_data_send_time = 60000;//ÑÓ³ÙÍ¬²½¼ä¸ô
-		int32 process_stat_interval = 600;//
+		int32 role_num_limit = 2400;//æœ€å¤§æ‰¿è½½äººæ•°
+		int32 npc_num_limit = 10000;//æœ€å¤§æ‰¿è½½Npcæ•°é‡
+		int32 drop_num_limit = 60000;//æœ€å¤§æ‰¿è½½æ‰è½æ•°
+		int32 role_data_save_time = 60000;//è‡ªåŠ¨å­˜ç›˜é—´éš”
+		int32 role_data_send_time = 60000;//å»¶è¿ŸåŒæ­¥é—´éš”
+		int32 process_stat_interval = 600;
 	};
 
 	struct ws_config : public net_config_base {

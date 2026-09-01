@@ -15,10 +15,10 @@ namespace faith
 	};
 	enum e_item_del_reason
 	{
-		e_item_del_reason_cost,//Ê¹ÓÃºó¹éÁã
-		e_item_del_reason_into_bag,//·ÅÈë±³°ü¹éÁã
-		e_item_del_reason_recovery,//×°±¸»ØÊÕ
-		e_item_del_reason_clear_bag,//Çå¿Õ±³°ü
+		e_item_del_reason_cost,//ä½¿ç”¨åå½’é›¶
+		e_item_del_reason_into_bag,//æ”¾å…¥èƒŒåŒ…å½’é›¶
+		e_item_del_reason_recovery,//è£…å¤‡å›æ”¶
+		e_item_del_reason_clear_bag,//æ¸…ç©ºèƒŒåŒ…
 	};
 	struct item_del_component
 	{

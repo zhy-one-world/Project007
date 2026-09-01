@@ -14,16 +14,16 @@
 #include <mem_pool.hpp>
 #include "log/server_log.hpp"
 
-const int32_t SQL_BUILDER_BUFF_SIZE = MAX_ROW_SIZE_LIMIT * 1024 * 4;	//dpÔÊĞí×î´óĞĞÏŞÖÆÎªMAX_ROW_SIZE_LIMIT£¬ ÄÇÃ´Ò»ÌõsqlÎÄÒ»°ã²»¿ÉÄÜ³¬¹ıBUFF_SIZE¡£
+const int32_t SQL_BUILDER_BUFF_SIZE = MAX_ROW_SIZE_LIMIT * 1024 * 4;	//dpå…è®¸æœ€å¤§è¡Œé™åˆ¶ä¸ºMAX_ROW_SIZE_LIMITï¼Œ é‚£ä¹ˆä¸€æ¡sqlæ–‡ä¸€èˆ¬ä¸å¯èƒ½è¶…è¿‡BUFF_SIZEã€‚
 
 namespace faith
 {
 	
-	/*	Í¨¹ıÖØÔØ<<£¬¼ò»¯sqlÎÄµÄ¹¹Ôì
-			1)¶ÔÓÚÊıÖµÀàĞÍ£¨°üÀ¨xchar£©,Ê¹ÓÃc×ª»¯º¯Êı½«Æä×ª»¯Îª×Ö·û´®
-			2)¶ÔÓÚxchar[],xchar*,xstringÀàĞÍ£¬Ê¹ÓÃmemcpy½øĞĞÖµ¿½±´
-			3)¶ÔÓÚÆäËûÀàĞÍ£¨Õë¶ÔµÄÊÇ¼òµ¥½á¹¹Ìå£¬Àà¡£ÄÜÊ¹ÓÃmemcpy¸øÁíÒ»¸öÀà¶ÔÏó¸³ÖµµÄ£¬²¢ÊÇ°´1¸ö×Ö½Ú¶ÔÆëµÄÀà£©£¬
-			  ½«ÆäÊÓÎª2½øÖÆÊı¾İ£¬µ÷ÓÃescape_string() º¯Êı½øĞĞ×ªÒå¹¹Ôì¡£
+	/*	é€šè¿‡é‡è½½<<ï¼Œç®€åŒ–sqlæ–‡çš„æ„é€ 
+			1)å¯¹äºæ•°å€¼ç±»å‹ï¼ˆåŒ…æ‹¬xcharï¼‰,ä½¿ç”¨cè½¬åŒ–å‡½æ•°å°†å…¶è½¬åŒ–ä¸ºå­—ç¬¦ä¸²
+			2)å¯¹äºxchar[],xchar*,xstringç±»å‹ï¼Œä½¿ç”¨memcpyè¿›è¡Œå€¼æ‹·è´
+			3)å¯¹äºå…¶ä»–ç±»å‹ï¼ˆé’ˆå¯¹çš„æ˜¯ç®€å•ç»“æ„ä½“ï¼Œç±»ã€‚èƒ½ä½¿ç”¨memcpyç»™å¦ä¸€ä¸ªç±»å¯¹è±¡èµ‹å€¼çš„ï¼Œå¹¶æ˜¯æŒ‰1ä¸ªå­—èŠ‚å¯¹é½çš„ç±»ï¼‰ï¼Œ
+			  å°†å…¶è§†ä¸º2è¿›åˆ¶æ•°æ®ï¼Œè°ƒç”¨escape_string() å‡½æ•°è¿›è¡Œè½¬ä¹‰æ„é€ ã€‚
 	*/
 	class sql_builder
 	{
@@ -77,7 +77,7 @@ namespace faith
 //	inline typename boost::enable_if<boost::is_class<t>, sql_builder>::type& sql_builder::operator << (const t& value)
 //#endif
 //	{
-//		BOOST_STATIC_ASSERT(boost::alignment_of<t>::value == 1);	//ÒªÇó°´Ò»¸ö×Ö½Ú¶ÔÆë
+//		BOOST_STATIC_ASSERT(boost::alignment_of<t>::value == 1);	//è¦æ±‚æŒ‰ä¸€ä¸ªå­—èŠ‚å¯¹é½
 //		assert(sizeof(t)*2 + 1 + m_wpos < (uint32)SQL_BUILDER_BUFF_SIZE);
 //		int32 len = (int32)m_db.escape_string(m_buffer + m_wpos, (xchar *)&value, sizeof(t));
 //		m_wpos += len;
@@ -87,7 +87,7 @@ namespace faith
 	template<typename t>
 	inline typename boost::enable_if<boost::is_signed<t>,sql_builder>::type& sql_builder::operator << (const t value)
 	{
-		assert(22 + m_wpos < SQL_BUILDER_BUFF_SIZE);//64Î»Ê®½øÖÆÊı×î¶à20¸ö×Ö·û£¬¼ÓÉÏ¼õºÅºÍ\0£¬¹²ĞèÒª22Î»
+		assert(22 + m_wpos < SQL_BUILDER_BUFF_SIZE);//64ä½åè¿›åˆ¶æ•°æœ€å¤š20ä¸ªå­—ç¬¦ï¼ŒåŠ ä¸Šå‡å·å’Œ\0ï¼Œå…±éœ€è¦22ä½
 	#if defined(_MSC_VER) && _MSC_VER >= 1400
 		_i64toa_s(value,m_buffer + m_wpos, 22, 10);
 		int64 len = strlen(m_buffer + m_wpos);

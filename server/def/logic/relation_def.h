@@ -12,19 +12,19 @@
 namespace faith
 {
 #pragma pack(push,1)
-	//×î´óºÃÓÑÊıÁ¿
+	//æœ€å¤§å¥½å‹æ•°é‡
 	//#define MAX_FRIEND_NUM	99
 	const int32 MAX_FRIEND_NUM = 99;
-	//²éÕÒÍæ¼Ò×î´óÊıÁ¿
+	//æŸ¥æ‰¾ç©å®¶æœ€å¤§æ•°é‡
 	const int32 MAX_FIND_PLAYER_NUM = 30;
-	//²éÕÒÍæ¼Ò¼ä¸ôÊ±¼ä£¨Ãë£©
+	//æŸ¥æ‰¾ç©å®¶é—´éš”æ—¶é—´ï¼ˆç§’ï¼‰
 	const int32 FIND_PLAYER_INTERVAL = 3000;
-	//Íæ¼ÒÍÆ¼öÁĞ±íÈËÊı
+	//ç©å®¶æ¨èåˆ—è¡¨äººæ•°
 	const int32 RECOMMENDED_PLAYER_NUM = 5;
-	//×î½üÁÄÌìÍæ¼ÒÊıÁ¿
+	//æœ€è¿‘èŠå¤©ç©å®¶æ•°é‡
 	const int32 FRIEND_CHAT_NUM = 10;
 	
-	//Íæ¼Ò¸üĞÂºÃÓÑÊı¾İ¼ä¸ôÊ±¼ä£¨ºÁÃë£©
+	//ç©å®¶æ›´æ–°å¥½å‹æ•°æ®é—´éš”æ—¶é—´ï¼ˆæ¯«ç§’ï¼‰
 	const int32 FRIEND_USERINFO_INTERVAL = 30000;
 
 	const int32 TalkDateItem = 20;
@@ -35,26 +35,26 @@ namespace faith
 
 	const int32 SearchMax = 20;
 
-	//ºÃÓÑ×´Ì¬
+	//å¥½å‹çŠ¶æ€
 	enum e_relation_state
 	{
-		e_relation_offline,		//ÀëÏß
-		e_relation_online,		//ÔÚÏß
+		e_relation_offline,		//ç¦»çº¿
+		e_relation_online,		//åœ¨çº¿
 	};
 
 
-	//ÉÏÏßÌáĞÑÀàĞÍ
+	//ä¸Šçº¿æé†’ç±»å‹
 	enum e_loginnotice_type
 	{
-		e_loginnotice_friend,	//ºÃÓÑ
-		e_loginnotice_marry,	//½á»é
-		e_loginnotice_master,	//Ê¦ÃÅ
+		e_loginnotice_friend,	//å¥½å‹
+		e_loginnotice_marry,	//ç»“å©š
+		e_loginnotice_master,	//å¸ˆé—¨
 	};
 	//////////////////////////////////////////////////////////////////////////
 	//About Marrage
-	//Í¨ĞÅ°üÀàĞÍ¶¨Òå
-	//S:0ÉêÇë/1È·ÈÏ/2È¡Ïû/3´ğÓ¦/4¾Ü¾ø/5Àë»é
-	//C:0¶ş¼¶È·ÈÏ/1±»Çó/2¶Ô·½È¡Ïû
+	//é€šä¿¡åŒ…ç±»å‹å®šä¹‰
+	//S:0ç”³è¯·/1ç¡®è®¤/2å–æ¶ˆ/3ç­”åº”/4æ‹’ç»/5ç¦»å©š
+	//C:0äºŒçº§ç¡®è®¤/1è¢«æ±‚/2å¯¹æ–¹å–æ¶ˆ
 	enum e_marry_packet_type
 	{
 		e_marry_packet_askmarry = 0,
@@ -66,55 +66,55 @@ namespace faith
 		e_marry_packet_parade = 6,
 	};
 
-	//½á»éÓÃµ½ÎïÆ·
+	//ç»“å©šç”¨åˆ°ç‰©å“
 	#define MARRY_ITEM_LUXURY (48)
 	#define MARRY_ITEM_NORMAL (59069)
 	#define MARRY_ITEM_RESULT (49)
-	//ÓÎ½ÖÓĞÏŞÊ±¼ä
+	//æ¸¸è¡—æœ‰é™æ—¶é—´
 	#define PARADE_VALIDTIME (60*60*2)
-	//Àë»éµ½ÔÙ»éÊ±¼ä
+	//ç¦»å©šåˆ°å†å©šæ—¶é—´
 	#define MARRY_BREAK_TIME (60*60*24)
-	//½á»é¼¶±ğÏŞÖÆ
+	//ç»“å©šçº§åˆ«é™åˆ¶
 	#define MARRY_MIN_LEVEL (30)
 
-	//°İÌÃ²½Öè
+	//æ‹œå ‚æ­¥éª¤
 	enum e_marry_process_step
 	{
 		e_marry_process_invalid,
-		e_marry_process_story = 58,		  //²½Öè£¬Í¬Ê±´ú±í¹ÊÊÂid
-		e_marry_process_action1 = 90103,	  //²½Öè£¬Í¬Ê±´ú±í¶¯×÷id
-		e_marry_process_action2 = 90104,    //²½Öè£¬Í¬Ê±´ú±í¶¯×÷id
-		e_marry_process_action3 = 90105,	  //²½Öè£¬Í¬Ê±´ú±í¶¯×÷id
-		e_marry_process_over = 167002,	  //²½Öè£¬Í¬Ê±´ú±íÌØĞ§buffid
+		e_marry_process_story = 58,		  //æ­¥éª¤ï¼ŒåŒæ—¶ä»£è¡¨æ•…äº‹id
+		e_marry_process_action1 = 90103,	  //æ­¥éª¤ï¼ŒåŒæ—¶ä»£è¡¨åŠ¨ä½œid
+		e_marry_process_action2 = 90104,    //æ­¥éª¤ï¼ŒåŒæ—¶ä»£è¡¨åŠ¨ä½œid
+		e_marry_process_action3 = 90105,	  //æ­¥éª¤ï¼ŒåŒæ—¶ä»£è¡¨åŠ¨ä½œid
+		e_marry_process_over = 167002,	  //æ­¥éª¤ï¼ŒåŒæ—¶ä»£è¡¨ç‰¹æ•ˆbuffid
 	};
-	//ÑÌ»¨IDºÍÎ»ÖÃ
+	//çƒŸèŠ±IDå’Œä½ç½®
 	#define MARRY_FIREWORKS_ID (4)
 	#define MARRY_FIREWORKS_POS1 (ScenePos(12,19))
 	#define MARRY_FIREWORKS_POS2 (ScenePos(15,19))
 	#define MARRY_FIREWORKS_POS3 (ScenePos(11,23))
 	#define MARRY_FIREWORKS_POS4 (ScenePos(16,23))
-	//°İÌÃ¿ªÊ¼Î»ÖÃ
+	//æ‹œå ‚å¼€å§‹ä½ç½®
 	#define MARRY_PROCESS_POS1 (ScenePos(13,21))
 	#define MARRY_PROCESS_POS2 (ScenePos(14,21))
-	//°İÌÃ½áÊøÎ»ÖÃ
+	//æ‹œå ‚ç»“æŸä½ç½®
 	#define MARRY_PROCESS_OVER_POS1 (ScenePos(14,16.5f))
 	#define MARRY_PROCESS_OVER_POS2 (ScenePos(15,16.5f))
-	//°İÌÃµÚÒ»¸ö×ß¶¯×î³¤ÑÓ³ÙÊ±¼ä
+	//æ‹œå ‚ç¬¬ä¸€ä¸ªèµ°åŠ¨æœ€é•¿å»¶è¿Ÿæ—¶é—´
 	#define MARRY_PROCESS_MAXTIME (60)
-	//°İÌÃÃ¿¸ö²½Öè×î³¤Ê±¼ä
+	//æ‹œå ‚æ¯ä¸ªæ­¥éª¤æœ€é•¿æ—¶é—´
 	#define MARRY_STEP_INTERVAL (5)
-	//°İÌÃ×îÖÕ·¢·ÅµÄbuff
+	//æ‹œå ‚æœ€ç»ˆå‘æ”¾çš„buff
 	#define MARRY_PROCESS_BUFF (248010)
-	//Ã¿Ìì×î´ó²ä¾­ÑéÊı
+	//æ¯å¤©æœ€å¤§è¹­ç»éªŒæ•°
 	#define MAXSHAREMARRYCOINANDEXP 20
-	//ÀÏ¹«ÀÏÆÅ³ÆºÅ
+	//è€å…¬è€å©†ç§°å·
 	#define MARRY_HUSBAND_TITLE (4)
 	#define MARRY_WIFE_TITLE (5)
-	//ÓÎ½Ö×î³¤Ê±¼äÏŞÖÆ
+	//æ¸¸è¡—æœ€é•¿æ—¶é—´é™åˆ¶
 	#define MARRY_PARADE_MAXTIME (150)
-	//ÓÎ½Ö¹ÊÊÂÄ£Ê½
+	//æ¸¸è¡—æ•…äº‹æ¨¡å¼
 	#define MARRY_PARADE_STORY (60)
-	//ÓÎ½ÖÊ¹ÓÃNPC
+	//æ¸¸è¡—ä½¿ç”¨NPC
 	enum e_marry_parade_npc
 	{
 		e_marry_parade_frontnpc = 935,
@@ -126,7 +126,7 @@ namespace faith
 		e_marry_parade_backnpc = 935,
 		e_marry_parade_backway = 31,
 	};
-	//Ñ²ÂßÂäÏß
+	//å·¡é€»è½çº¿
 	#define WUYINGXUNZONG_DATAID 59
 	//////////////////////////////////////////////////////////////////////////
 

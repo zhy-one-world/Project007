@@ -1,4 +1,4 @@
-#include "legion_ws_boss_record_set.h"
+﻿#include "legion_ws_boss_record_set.h"
 #include <legion_msg.hpp>
 #include "legion_ws_mgr.h"
 #include "template/template_manager.h"
@@ -167,7 +167,6 @@ namespace faith
 	//		{
 	//			return false;
 	//		}
-	//		
 	//		boss_record_msg->set_killer_name(legion_ws_ptr->get_kill_legion_boss_name());
 	//		std::vector<int32> nothing = { 0,0,0,0 };
 	//		for (int32 j = 0; j < ELegionBossRecord_max; ++j)
@@ -180,7 +179,6 @@ namespace faith
 	//		//{
 	//			//boss_record_msg->add_data_ary(boss_record.data_ary[j]);
 	//		//}
-	//	
 
 	//	return true;
 	//}

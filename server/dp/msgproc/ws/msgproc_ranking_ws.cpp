@@ -1,5 +1,5 @@
 /********************************************************************
-created:	2016Äê12ÔÂ12ÈÕ12:51:28
+created:	2016å¹´12æœˆ12æ—¥12:51:28
 file base:	msgproc_ranking_ws
 file ext:	cpp
 author:		zhy
@@ -225,7 +225,7 @@ namespace faith
 		{
 			if (old_start_from == 0)
 			{
-				//0ĞĞ¾ÍÊÇÒª´´½¨»úÆ÷ÈË
+				//0è¡Œå°±æ˜¯è¦åˆ›å»ºæœºå™¨äºº
 				//dp2ws_create_robot create_msg;
 				//dbproxy_service::getInstance().send_message(connindex, &create_msg, sizeof(dp2ws_create_robot));
 				//return;
@@ -236,7 +236,7 @@ namespace faith
 			}
 			else
 			{
-				//loadÍêÁË
+				//loadå®Œäº†
 				dp2s_proto_dp2ws_arena_load_finish msg;
 				dbproxy_service::getInstance().send_message(connindex, &msg, e_msg_dp2ws_load_finish);
 				return;
@@ -255,7 +255,7 @@ namespace faith
 		dp2ws_load_arena_rank msg;
 		msg.start_index = old_start_from;
 		msg.data_num = table_len;
-		//¿ÉÄÜ²»Îªrank_max
+		//å¯èƒ½ä¸ä¸ºrank_max
 
 		db_read_data(&result, msg.load_data, db_reult_stream_size);
 		//dbproxy_service::getInstance().send_message(connindex, &msg, msg.get_pak_length());
@@ -817,7 +817,7 @@ namespace faith
 
 	void add_robot_worship(uint32 connindex, const void *data_ptr, size_t data_len)
 	{
-		//ÒÔÏÂ×¢ÊÍ²¿·ÖÊÇ µ±¾º¼¼³¡ÅÅĞĞÎŞÊı¾İÊ±´´½¨»úÆ÷ÈË £¬ĞÂĞèÇóÊÇ »úÆ÷ÈË²»¼ÓÈëÅÅĞĞ°ñ
+		//ä»¥ä¸‹æ³¨é‡Šéƒ¨åˆ†æ˜¯ å½“ç«æŠ€åœºæ’è¡Œæ— æ•°æ®æ—¶åˆ›å»ºæœºå™¨äºº ï¼Œæ–°éœ€æ±‚æ˜¯ æœºå™¨äººä¸åŠ å…¥æ’è¡Œæ¦œ
 		//const faith::ws2dp_add_robot_worship* pdata = static_cast<const faith::ws2dp_add_robot_worship*>(data_ptr);
 		//if (nullptr == pdata)
 		//{
@@ -854,10 +854,10 @@ namespace faith
 	}
 
 	void add_robot_worship_end(db_result_type result, uint32 connindex)
-	{//´æÍê»úÆ÷ÈËµÄÍşÍû£¬Ò»¶¨ÒªÔÙloadÒ»±é£¬·ñÔòÄÚ´æÖĞµÄÊı¾İ»áÓĞÎÊÌâ
+	{//å­˜å®Œæœºå™¨äººçš„å¨æœ›ï¼Œä¸€å®šè¦å†loadä¸€éï¼Œå¦åˆ™å†…å­˜ä¸­çš„æ•°æ®ä¼šæœ‰é—®é¢˜
 
-		//ÒÔÏÂ×¢ÊÍ²¿·ÖÊÇ µ±¾º¼¼³¡ÅÅĞĞÎŞÊı¾İÊ±´´½¨»úÆ÷ÈË £¬ĞÂĞèÇóÊÇ »úÆ÷ÈË²»¼ÓÈëÅÅĞĞ°ñ
-		//µ«´Ë¹¦ÄÜ²»ÍêÈ«£¬²»ÄÜÕıÈ·¶Á³ö »úÆ÷ÈËÊı¾İ
+		//ä»¥ä¸‹æ³¨é‡Šéƒ¨åˆ†æ˜¯ å½“ç«æŠ€åœºæ’è¡Œæ— æ•°æ®æ—¶åˆ›å»ºæœºå™¨äºº ï¼Œæ–°éœ€æ±‚æ˜¯ æœºå™¨äººä¸åŠ å…¥æ’è¡Œæ¦œ
+		//ä½†æ­¤åŠŸèƒ½ä¸å®Œå…¨ï¼Œä¸èƒ½æ­£ç¡®è¯»å‡º æœºå™¨äººæ•°æ®
 
 		//sql_builder sql(db_manager::getInstance().get_db_link().game_db);
 		//sql << _XTEXT("call sp_ranking_info_load(");

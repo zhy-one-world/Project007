@@ -1,4 +1,4 @@
-﻿#include "person_infor_ws_mgr.h"
+#include "person_infor_ws_mgr.h"
 #include "template/template_manager.h"
 #include "utility/random.h"
 #include "server/client_session_mgr.hpp"

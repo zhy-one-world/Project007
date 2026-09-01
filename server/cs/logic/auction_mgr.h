@@ -151,9 +151,9 @@ namespace faith
 		int32                           m_next_interval;
 	/*	std::vector<s_auction_bid_replace_info> m_bid_record_vec;*/
 	public:
-		void person_tick(int64 new_time);  //在线模式
+		void person_tick(int64 new_time);  //鍦ㄧ嚎妯″紡
 		void calc_refresh_time(int64 new_time);
-		void person_sec_tick(); //离线模式
+		void person_sec_tick(); //绂荤嚎妯″紡
 		void refresh_yesterday();
 		void refresh_today();
 		bool request_refresh_to_ws(int64 item_time);

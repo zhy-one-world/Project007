@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2015Äê9ÔÂ26ÈÕ
+created: 2015å¹´9æœˆ26æ—¥
 file base: legion_station_msg_hpp
 file ext: hpp
 author: zhaoyuming
@@ -22,7 +22,7 @@ namespace faith
 #pragma pack(push,1)
 	enum
 	{
-		e_msgindex_cs2ws_bonfire_create = faith::e_msg_legion_station,				//·¢ËÍ´´½¨óô»ğ³É¹¦µ½cs
+		e_msgindex_cs2ws_bonfire_create = faith::e_msg_legion_station,				//å‘é€åˆ›å»ºç¯ç«æˆåŠŸåˆ°cs
 		e_msgindex_cs2ws_bonfire_end,
 		e_msgindex_ws2cs_send_bonfire_level,
 		e_msgindex_cs2ws_legion_boss_create,

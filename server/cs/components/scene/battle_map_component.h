@@ -6,11 +6,11 @@ namespace faith
 {
 	enum e_battle_map_state
 	{
-		e_battle_map_state_none,//³õÊ¼×´Ì¬
-		e_battle_map_state_player_join,//Íæ¼Ò½øÈë×´Ì¬
-		e_battle_map_state_runtime,//Õı³£ÔËĞĞÊ±×´Ì¬
-		e_battle_map_state_end_map,//É±ËÀËùÓĞnpc¹Ø±ÕµØÍ¼×´Ì¬
-		e_battle_map_state_close,//µØÍ¼´¦ÓÚ¹Ø±Õ×´Ì¬
+		e_battle_map_state_none,//åˆå§‹çŠ¶æ€
+		e_battle_map_state_player_join,//ç©å®¶è¿›å…¥çŠ¶æ€
+		e_battle_map_state_runtime,//æ­£å¸¸è¿è¡Œæ—¶çŠ¶æ€
+		e_battle_map_state_end_map,//æ€æ­»æ‰€æœ‰npcå…³é—­åœ°å›¾çŠ¶æ€
+		e_battle_map_state_close,//åœ°å›¾å¤„äºå…³é—­çŠ¶æ€
 	};
 	struct battle_map_component
 	{

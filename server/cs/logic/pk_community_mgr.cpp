@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê8ÔÂ9ÈÕ13:56:28
+created: 2016å¹´8æœˆ9æ—¥13:56:28
 file base: pk_mgr
 file ext: cpp
 author: zhangminghai
@@ -35,7 +35,7 @@ namespace faith
 		m_max_safe_map_priority = 0;
 		m_pk_value_time = 0;
 		m_is_pk_value_time = false;
-		m_cut_interval_get_region = 0;	//ÇøÓòÀàĞÍtick
+		m_cut_interval_get_region = 0;	//åŒºåŸŸç±»å‹tick
 		m_region_type = e_region_type_zhongli;
 		m_pre_location.clear_data();
 		m_fight_back_list.clear();
@@ -225,7 +225,7 @@ namespace faith
 		{
 			return;
 		}
-		if (m_region_type == e_region_type_danger_zhongli)	//Î£ÏÕÖĞÁ¢Çø²»Ôö¼ÓpkÖµ
+		if (m_region_type == e_region_type_danger_zhongli)	//å±é™©ä¸­ç«‹åŒºä¸å¢åŠ pkå€¼
 		{
 			return;
 		}
@@ -234,9 +234,9 @@ namespace faith
 		{
 			legion_cs_mgr& legion_cs_ref = m_unit_ref.get_legion_cs_mgr();
 
-			if (legion_cs_ref.get_legion_job_title() == e_legion_job_title_chief) //ÁìÖ÷ÔÚÁìµØÄÚ²»¼ÓPKÖµ
+			if (legion_cs_ref.get_legion_job_title() == e_legion_job_title_chief) //é¢†ä¸»åœ¨é¢†åœ°å†…ä¸åŠ PKå€¼
 			{
-				if (legion_cs_ref.is_city_master())	//°ÔÖ÷²»Ôö¼ÓPKÖµ
+				if (legion_cs_ref.is_city_master())	//éœ¸ä¸»ä¸å¢åŠ PKå€¼
 				{
 					return;
 				}
@@ -249,7 +249,7 @@ namespace faith
 
 		int32 temp_pk_value = m_unit_ref.get_pawn_att().get_unit_base_att(e_base_att_info_pk_value);
 		if (temp_pk_value <= 0 && (temp_pk_value + pk_value) > 0)
-		{//ÍË³öºÃÈËÕóÓª
+		{//é€€å‡ºå¥½äººé˜µè¥
 			//quit_community(e_community_type_kind_man);
 		}
 		
@@ -257,7 +257,7 @@ namespace faith
 		temp_pk_value += pk_value;
 		m_unit_ref.get_pawn_att().set_unit_base_att(e_base_att_info_pk_value, temp_pk_value);
 		m_unit_ref.get_pawn_att().send_base_att_one(e_base_att_info_pk_value);
-		m_pk_value_time = utility::get_tick_count() + pk_value_cut_time;				//ÖØ¼ÆÊ±¼ä
+		m_pk_value_time = utility::get_tick_count() + pk_value_cut_time;				//é‡è®¡æ—¶é—´
 		m_is_pk_value_time = true;
 
 		player& player_ref = unit_man::get_player(m_unit_array_index);
@@ -419,7 +419,7 @@ namespace faith
 		{
 			param.region_type = target_region_type;
 		}
-		//param.map_pk_type = get_cur_map_pk_type(); //Í³Ò»ÓÃregion_typeÅĞ¶ÏÁË
+		//param.map_pk_type = get_cur_map_pk_type(); //ç»Ÿä¸€ç”¨region_typeåˆ¤æ–­äº†
 		param.sender_unit_type = my_unit_ref.get_unit_type();
 		param.target_unit_type = target_unit_ref.get_unit_type();
 		param.sender_line_id = my_unit_ref.get_line_id();
@@ -538,7 +538,7 @@ namespace faith
 		int32 pk_cfg_entire = get_entire_pk_mode();
 		pk_cfg_entire >>= e_pk_cfg_type_pk_mode_end;
 		pk_cfg_entire <<= e_pk_cfg_type_pk_mode_end;
-		cfg_value &= 0xF; //±£Ö¤cfg_value<16
+		cfg_value &= 0xF; //ä¿è¯cfg_value<16
 		pk_cfg_entire |= cfg_value;
 
 		set_entire_pk_mode(pk_cfg_entire);
@@ -708,13 +708,13 @@ namespace faith
 					}
 					buff_man::add_buff_inst(m_unit_ref.get_array_index(), m_unit_ref.get_array_index(), level_buff_ids[i]);
 
-					//pkbuffÖµÖØÖÃ
+					//pkbuffå€¼é‡ç½®
 					mod_buff_dur_time(new_value);
 					return;
 				}
 			}
 
-			//pkbuffÖµÖØÖÃ
+			//pkbuffå€¼é‡ç½®
 			mod_buff_dur_time(new_value);
 		}
 		else if (old_value > new_value)	
@@ -760,14 +760,14 @@ namespace faith
 			if (level_values[i] <= pk_value && pk_value < level_values[i + 1]  )
 			{
 				buff_man::add_buff_inst(m_unit_ref.get_array_index(), m_unit_ref.get_array_index(), level_buff_ids[i]);
-				//pkbuffÖµÖØÖÃ
+				//pkbuffå€¼é‡ç½®
 				mod_buff_dur_time(pk_value);
 				return;
 			}
 			if (pk_value >= level_values[3])
 			{
 				buff_man::add_buff_inst(m_unit_ref.get_array_index(), m_unit_ref.get_array_index(), level_buff_ids[3]);
-				//pkbuffÖµÖØÖÃ
+				//pkbuffå€¼é‡ç½®
 				mod_buff_dur_time(pk_value);
 			}
 		}
@@ -810,14 +810,14 @@ namespace faith
 			return;
 		}
 
-		int32 dur_time = (pk_value - level_values[index] + PER_MIN_CLEAR_PK_VALUE) * (pk_value_cut_time / second_tick_time) / PER_MIN_CLEAR_PK_VALUE;	//·şÎñÆ÷µÄË¢ĞÂÊ±¼ä
+		int32 dur_time = (pk_value - level_values[index] + PER_MIN_CLEAR_PK_VALUE) * (pk_value_cut_time / second_tick_time) / PER_MIN_CLEAR_PK_VALUE;	//æœåŠ¡å™¨çš„åˆ·æ–°æ—¶é—´
 		buff_man::mod_buff_during_time_by_series_id(m_unit_ref.get_array_index(), m_buff_template_ptr->Series, dur_time);
 		return;
 	}
 
 	void	pk_community_mgr::check_first_hurt_add_pk_vaule()
 	{
-		//·ÇÉÆ¶ñÄ£Ê½µÚÒ»´Î¹¥»÷Íæ¼ÒÔö¼ÓpkÖµ
+		//éå–„æ¶æ¨¡å¼ç¬¬ä¸€æ¬¡æ”»å‡»ç©å®¶å¢åŠ pkå€¼
 		int32 my_pk_mode = get_pk_mode();
 		if (my_pk_mode != e_pk_mode_good_and_evil
 			&& my_pk_mode != e_pk_mode_peace
@@ -879,7 +879,7 @@ namespace faith
 		}
 
 		//int32 cur_map_template_id = m_unit_ref.get_unit_info(faith::e_role_info_move_map_id);
-		// if (cur_map_template_id == faith::big_world_map_id) //ÒÀÀµÓÚ¸±±¾ÖĞÃ»Åä°²È«Çø¾ÍºÃ ²»ÓÃÌØÀı
+		// if (cur_map_template_id == faith::big_world_map_id) //ä¾èµ–äºå‰¯æœ¬ä¸­æ²¡é…å®‰å…¨åŒºå°±å¥½ ä¸ç”¨ç‰¹ä¾‹
 		const s_map_block* cur_safe_region = m_unit_ref.get_in_map_safe();
 		if (nullptr == cur_safe_region)
 		{
@@ -888,14 +888,14 @@ namespace faith
 			{
 				return;
 			}
-			// ´óÊÀ½ç°²È«Çø»á°ü¹ü²»ÍêÈ«µ¼ÖÂ°²È«ÇøÊ§Ğ§
+			// å¤§ä¸–ç•Œå®‰å…¨åŒºä¼šåŒ…è£¹ä¸å®Œå…¨å¯¼è‡´å®‰å…¨åŒºå¤±æ•ˆ
 			if (map_template_ptr->Type == e_map_type_big_map)
 			{
 				m_map_have_not_safe_region = 0;
-				return; //Ã»ÓĞÅä°²È«ÇøµÄµØÍ¼ ±ÈÈç¸±±¾
+				return; //æ²¡æœ‰é…å®‰å…¨åŒºçš„åœ°å›¾ æ¯”å¦‚å‰¯æœ¬
 			}
 			m_map_have_not_safe_region = 1;
-			return; //Ã»ÓĞÅä°²È«ÇøµÄµØÍ¼ ±ÈÈç¸±±¾
+			return; //æ²¡æœ‰é…å®‰å…¨åŒºçš„åœ°å›¾ æ¯”å¦‚å‰¯æœ¬
 		}
 
 		m_pre_safe_map_template_id = cur_safe_region->region_id;
@@ -965,12 +965,12 @@ namespace faith
 			return;
 		}
 
-		//¹¥»÷ÓÑ·½ÕóÓª¼ÆÈëpkÖµ
+		//æ”»å‡»å‹æ–¹é˜µè¥è®¡å…¥pkå€¼
 		int32 att_community_type = unit_ref.get_pawn_att().get_unit_base_att(e_base_att_info_community_type);
 		int32 self_community_type = my_player_ref.get_pawn_att().get_unit_base_att(e_base_att_info_community_type);
 		if (globle_data::get_instance().get_community_group_relation_by_type(att_community_type, self_community_type) > 0)
 		{
-			if (unit_ref.is_self_server() && my_player_ref.is_self_server())//¿ç·ş²»¼ÓPKÖµ
+			if (unit_ref.is_self_server() && my_player_ref.is_self_server())//è·¨æœä¸åŠ PKå€¼
 			{
 				unit_ref.get_pk_community_mgr().check_first_hurt_add_pk_vaule();
 			}

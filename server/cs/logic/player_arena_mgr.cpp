@@ -1,5 +1,5 @@
  /********************************************************************
-created: 2016Äê8ÔÂ23ÈÕ13:56:28
+created: 2016å¹´8æœˆ23æ—¥13:56:28
 file base: arena_mgr
 file ext: cpp
 author: zhangminghai
@@ -104,11 +104,11 @@ namespace faith
 			return ;
 		}
 
-		//·ÅÔÚ save_role_info ´¦Àí£¬·ÅÔÚÕâµÄ»°£¬ÒòÎªÍæ¼ÒµôÏß£¨Ö÷¶¯Àë¿ª£©£¬»á ÏÈ save ÔÙµ½ÕâÀï£¬ËùÒÔÕâÀïÉèÖÃµÄÖµ¾ÍÃ»ÒâÒåÁË
+		//æ”¾åœ¨ save_role_info å¤„ç†ï¼Œæ”¾åœ¨è¿™çš„è¯ï¼Œå› ä¸ºç©å®¶æ‰çº¿ï¼ˆä¸»åŠ¨ç¦»å¼€ï¼‰ï¼Œä¼š å…ˆ save å†åˆ°è¿™é‡Œï¼Œæ‰€ä»¥è¿™é‡Œè®¾ç½®çš„å€¼å°±æ²¡æ„ä¹‰äº†
 		//temp_player.set_time_data(e_time_type_arena_colling_time, GAMECONFIG->ArenaClearChallengeCdTime * 1000 + utility::get_tick_count());
 		//temp_player.send_time_one(e_time_type_arena_colling_time);
 		
-		int32 temp_cur_value = temp_player.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_attend_three_arena); // »îÔ¾¶È
+		int32 temp_cur_value = temp_player.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_attend_three_arena); // æ´»è·ƒåº¦
 		temp_player.get_welfare_mgr().set_active_degree_info(e_daily_active_degree_type_attend_three_arena, temp_cur_value + 1);
 
 		cs2ws_chellenge_over req;
@@ -151,7 +151,7 @@ namespace faith
 			temp_player.send_info_one(e_role_info_arena_winning_streak);
 			m_current_rank = target_rank;
 			req_get_match_player();
-			temp_player.get_time_limit_activity_mgr().activity_behavior_done(e_time_limit_behavior_type_arena_win); //ĞÂÏŞÊ±ĞĞÎª¾º¼¼³¡»ñÊ¤¼ÆÊı
+			temp_player.get_time_limit_activity_mgr().activity_behavior_done(e_time_limit_behavior_type_arena_win); //æ–°é™æ—¶è¡Œä¸ºç«æŠ€åœºè·èƒœè®¡æ•°
 		}
 		break;
 		default:
@@ -170,7 +170,7 @@ namespace faith
 		int32 winning_streak = temp_player.get_unit_info(e_role_info_arena_winning_streak);
 		if ((winning_streak % 10 == 0) && winning_streak != 0)
 		{
-			ArenaRankRewardTemplate* arena_template_ptr = template_manager::get_instance().get_arena_reward_by_arena_pos(m_current_rank);		// ÎªÁËÄÃµ½NoticeID
+			ArenaRankRewardTemplate* arena_template_ptr = template_manager::get_instance().get_arena_reward_by_arena_pos(m_current_rank);		// ä¸ºäº†æ‹¿åˆ°NoticeID
 			if (arena_template_ptr)
 			{
 				int32 notice_id = arena_template_ptr->NoticeId;
@@ -201,7 +201,7 @@ namespace faith
 
 	
 	void player_arena_mgr::get_challenge_logs_end(std::vector<s_chanllenge_log_info>&  challenge_logs)
-	{//´Ë´¦·¢ÏûÏ¢¸ø¿Í»§¶Ë
+	{//æ­¤å¤„å‘æ¶ˆæ¯ç»™å®¢æˆ·ç«¯
 		player& temp_player = unit_man::get_player(m_unit_index);
 		if (temp_player.is_valid() == false)
 		{
@@ -212,7 +212,7 @@ namespace faith
 			arena_proto_req_get_challenge_log_end  log_msg;
 			log_msg.set_role_guid(temp_player.get_unit_guid().server_64);
 
-			//·¢¸ö¿ÕµÄÕâÍæÒâÇåÀí¼ÇÂ¼
+			//å‘ä¸ªç©ºçš„è¿™ç©æ„æ¸…ç†è®°å½•
 			log_msg.set_is_need_clear(true);
 			temp_player.send_message_to_self(&log_msg, e_msgindex_s2c_req_get_challenge_log_end);
 
@@ -409,19 +409,19 @@ namespace faith
 		bool is_no_cd = vip_template_ptr->IsArenaChallengeNoCD > 0;
 
 		int32 money_cost_type = GAMECONFIG->ArenaClearChallengeCdCost[0];
-		//ArenaClearChallengeCdCost ºÍ ArenaClearChallengeCdCost Òª»¨µÄÇ®IDÓ¦¸ÃÊÇÒ»ÑùµÄ£¬ÏÖÔÚËæ±ãÄÃÒ»¸ö£¬ÒÔºó¸ÄÁËÔÙËµ
+		//ArenaClearChallengeCdCost å’Œ ArenaClearChallengeCdCost è¦èŠ±çš„é’±IDåº”è¯¥æ˜¯ä¸€æ ·çš„ï¼Œç°åœ¨éšä¾¿æ‹¿ä¸€ä¸ªï¼Œä»¥åæ”¹äº†å†è¯´
 		int32 money_cost_value = 0;
 
 		uint64 colling_time = temp_player.get_time_data(e_time_type_arena_colling_time);
 		if (!is_no_cd
 			&& colling_time > utility::get_tick_count())
-		{//ÓĞCD²¢ÇÒÈÔÔÚÀäÈ´ÖĞ
+		{//æœ‰CDå¹¶ä¸”ä»åœ¨å†·å´ä¸­
 			if (is_cost_money)
-			{//¡°ÀÏ×ÓÒª»¨Ç®£¡¡±
+			{//â€œè€å­è¦èŠ±é’±ï¼â€
 				money_cost_value += GAMECONFIG->ArenaClearChallengeCdCost[1];
 			}
 			else
-			{//½²Õæ£¬Ó¦¸Ãµ½²»ÁËÕâ£¬²»»¨Ç®µÄ»°£¬¿Í»§¶Ë¾ÍÀ¹ÏÂÁË
+			{//è®²çœŸï¼Œåº”è¯¥åˆ°ä¸äº†è¿™ï¼Œä¸èŠ±é’±çš„è¯ï¼Œå®¢æˆ·ç«¯å°±æ‹¦ä¸‹äº†
 				resp.set_req_end(e_arena_challenge_is_colling);
 				resp.set_new_pos(m_current_rank);
 				temp_player.send_message_to_self(&resp, e_msgindex_s2c_req_challenge_end);
@@ -433,11 +433,11 @@ namespace faith
 		{
 			if (temp_player.get_unit_info(e_role_info_arena_vip_buy_times) < vip_template_ptr->ArenaBuyTimeLimit
 				&& is_cost_money)
-			{//ÄÜÂò£¬¶øÇÒÈ·ÊµÒªÂò
+			{//èƒ½ä¹°ï¼Œè€Œä¸”ç¡®å®è¦ä¹°
 				money_cost_value += GAMECONFIG->ArenaPurchaseChallengeTimesCost[1];
 			}
 			else
-			{//½²Õæ£¬Ó¦¸Ãµ½²»ÁËÕâ£¬²»»¨Ç®µÄ»°£¬¿Í»§¶Ë¾ÍÀ¹ÏÂÁË
+			{//è®²çœŸï¼Œåº”è¯¥åˆ°ä¸äº†è¿™ï¼Œä¸èŠ±é’±çš„è¯ï¼Œå®¢æˆ·ç«¯å°±æ‹¦ä¸‹äº†
 				resp.set_req_end(e_arena_challenge_times_not_enough);
 				resp.set_new_pos(m_current_rank);
 				temp_player.send_message_to_self(&resp, e_msgindex_s2c_req_challenge_end);
@@ -498,7 +498,7 @@ namespace faith
 		{
 			if (cost_money_num > 0
 				&& !temp_player.can_cut_money(e_money_type(cost_money_type), cost_money_num))
-			{//ÕâÀïÇ®±ØĞë¹»
+			{//è¿™é‡Œé’±å¿…é¡»å¤Ÿ
 				set_is_requiring(false);
 				return;
 			}
@@ -515,7 +515,7 @@ namespace faith
 			{
 				if (cur_vip_purchase_times >= vip_template_ptr->ArenaBuyTimeLimit)
 				{
-					//ÕâÀï±ØĞëÄÜÂò»òÕßÓĞÃâ·Ñ
+					//è¿™é‡Œå¿…é¡»èƒ½ä¹°æˆ–è€…æœ‰å…è´¹
 					set_is_requiring(false);
 					return;
 				}
@@ -538,7 +538,7 @@ namespace faith
 			temp_player.cut_money(e_money_type(cost_money_type), cost_money_num, e_server_log_cut_money_arena_challenge);
 
 
-			//¼ÓÔØnpc
+			//åŠ è½½npc
 			teleport_control& tc = temp_player.get_transfer_control();
 			tc.set_dynamic_param_int(0, target_role_guid.A);
 			tc.set_dynamic_param_int(1, target_role_guid.B);
@@ -561,7 +561,7 @@ namespace faith
 
 	void player_arena_mgr::get_reward()
 	{
-		//ÌáÊ¾ĞÅÏ¢¶¼ÔÚ¿Í»§¶Ë×öÁË£¬Õâ²»ÓÃ
+		//æç¤ºä¿¡æ¯éƒ½åœ¨å®¢æˆ·ç«¯åšäº†ï¼Œè¿™ä¸ç”¨
 		player& temp_player = unit_man::get_player(m_unit_index);
 		if (temp_player.is_valid() == false)
 		{
@@ -579,7 +579,7 @@ namespace faith
 		}
 
 		int32 money_reward_num = reward_template_ptr->MoneyRewardArray.size() / 2;
-		//»ñÈ¡½±ÀøµÄÌáÊ¾µÄ ²ÎÊı
+		//è·å–å¥–åŠ±çš„æç¤ºçš„ å‚æ•°
 		std::vector<s_item_template_info> item_tuple_array;
 
 		int32 item_reward_num = reward_template_ptr->ItemRewardArray.size() / 2;
@@ -652,7 +652,7 @@ namespace faith
 		//temp_player.get_item_set().put_in_bag(item_array, e_bag_type_none, e_item_mail_type_arena_reward);
 		//temp_player.get_item_set().get_item_send_promp_msg_to_client(item_tuple_array);
 
-		//µ½ÏÂ´ÎÁì½±CD
+		//åˆ°ä¸‹æ¬¡é¢†å¥–CD
 		int32 cur_today_time = time_helper::get_today_time_in_sec();
 		if (cur_today_time < GAMECONFIG->ArenaGetRewardTime)
 		{

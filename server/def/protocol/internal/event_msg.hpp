@@ -132,7 +132,7 @@ namespace faith
 
 	struct ws2dp_save_mail_event_to_db : public faith::packet_base
 	{
-		bool								is_over;		// ±êÊ¶Íæ¼ÒÎïÆ·ÊÇ·ñ·¢ËÍÍê±Ï, true±íÊ¾·¢ËÍ³É¹¦Íê±Ï£¬false±íÊ¾Ã»ÓĞ·¢ËÍÍê£¬errroÍ¨¹ıÁíÒ»ÌõÏûÏ¢´«µİ
+		bool								is_over;		// æ ‡è¯†ç©å®¶ç‰©å“æ˜¯å¦å‘é€å®Œæ¯•, trueè¡¨ç¤ºå‘é€æˆåŠŸå®Œæ¯•ï¼Œfalseè¡¨ç¤ºæ²¡æœ‰å‘é€å®Œï¼Œerrroé€šè¿‡å¦ä¸€æ¡æ¶ˆæ¯ä¼ é€’
 		int32									mail_num;
 		s_mail_info							mail_info[max_globel_mail_in_same_time];
 
@@ -152,7 +152,7 @@ namespace faith
 	struct ws2dp_save_mail_event_item_to_db : public faith::packet_base
 	{
 		guid_64								mail_guid;
-		bool								is_over;		// ±êÊ¶Íæ¼ÒÎïÆ·ÊÇ·ñ·¢ËÍÍê±Ï, true±íÊ¾·¢ËÍ³É¹¦Íê±Ï£¬false±íÊ¾Ã»ÓĞ·¢ËÍÍê£¬errroÍ¨¹ıÁíÒ»ÌõÏûÏ¢´«µİ
+		bool								is_over;		// æ ‡è¯†ç©å®¶ç‰©å“æ˜¯å¦å‘é€å®Œæ¯•, trueè¡¨ç¤ºå‘é€æˆåŠŸå®Œæ¯•ï¼Œfalseè¡¨ç¤ºæ²¡æœ‰å‘é€å®Œï¼Œerrroé€šè¿‡å¦ä¸€æ¡æ¶ˆæ¯ä¼ é€’
 		int32								item_num;
 		s_item_info							item_list[max_globel_mail_item_in_same_time];
 
@@ -170,7 +170,7 @@ namespace faith
 
 	struct ws2dp_load_mail_event : public faith::packet_base
 	{
-		//ÕâÀïÊ²Ã´¶¼²»ÓÃ´«£¬ÆäÊµ¾ÍÊÇ¸öloadÊ¹ÄÜ£¬loadÕûÕÅ±í
+		//è¿™é‡Œä»€ä¹ˆéƒ½ä¸ç”¨ä¼ ï¼Œå…¶å®å°±æ˜¯ä¸ªloadä½¿èƒ½ï¼Œloadæ•´å¼ è¡¨
 		bool								is_over;
 		ws2dp_load_mail_event()
 		{
@@ -181,7 +181,7 @@ namespace faith
 
 	struct ws2dp_load_mail_event_item : public faith::packet_base
 	{
-		//ÕâÀïÊ²Ã´¶¼²»ÓÃ´«£¬ÆäÊµ¾ÍÊÇ¸öloadÊ¹ÄÜ£¬loadÕûÕÅ±í
+		//è¿™é‡Œä»€ä¹ˆéƒ½ä¸ç”¨ä¼ ï¼Œå…¶å®å°±æ˜¯ä¸ªloadä½¿èƒ½ï¼Œloadæ•´å¼ è¡¨
 		bool								is_over;
 		ws2dp_load_mail_event_item()
 		{
@@ -195,7 +195,7 @@ namespace faith
 	struct dp2ws_load_mail_event_end : public faith::packet_base
 	{
 		guid_64								role_guid;
-		bool								is_over;		// ±êÊ¶Íæ¼ÒÎïÆ·ÊÇ·ñ·¢ËÍÍê±Ï, true±íÊ¾·¢ËÍ³É¹¦Íê±Ï£¬false±íÊ¾Ã»ÓĞ·¢ËÍÍê£¬errroÍ¨¹ıÁíÒ»ÌõÏûÏ¢´«µİ
+		bool								is_over;		// æ ‡è¯†ç©å®¶ç‰©å“æ˜¯å¦å‘é€å®Œæ¯•, trueè¡¨ç¤ºå‘é€æˆåŠŸå®Œæ¯•ï¼Œfalseè¡¨ç¤ºæ²¡æœ‰å‘é€å®Œï¼Œerrroé€šè¿‡å¦ä¸€æ¡æ¶ˆæ¯ä¼ é€’
 		int32								mail_num;
 		s_mail_info							mail_info[max_globel_mail_in_same_time];
 
@@ -216,7 +216,7 @@ namespace faith
 	struct dp2ws_load_mail_event_item_end : public faith::packet_base
 	{
 		guid_64								role_guid;
-		bool								is_over;		// ±êÊ¶Íæ¼ÒÎïÆ·ÊÇ·ñ·¢ËÍÍê±Ï, true±íÊ¾·¢ËÍ³É¹¦Íê±Ï£¬false±íÊ¾Ã»ÓĞ·¢ËÍÍê£¬errroÍ¨¹ıÁíÒ»ÌõÏûÏ¢´«µİ
+		bool								is_over;		// æ ‡è¯†ç©å®¶ç‰©å“æ˜¯å¦å‘é€å®Œæ¯•, trueè¡¨ç¤ºå‘é€æˆåŠŸå®Œæ¯•ï¼Œfalseè¡¨ç¤ºæ²¡æœ‰å‘é€å®Œï¼Œerrroé€šè¿‡å¦ä¸€æ¡æ¶ˆæ¯ä¼ é€’
 		int32								item_num;
 		s_item_info							item_list[max_item_per_mail * max_globel_mail_in_same_time];
 

@@ -1,4 +1,4 @@
-// Code: ³ÂÀ¥Åô
+// Code: é™ˆæ˜†é¹
 #ifndef __INVALID_ANSI_WORD_H__
 #define __INVALID_ANSI_WORD_H__
 
@@ -19,85 +19,85 @@ namespace faith
 		static WordSet& get_invalid_db_chars();
 
 		/**
-		 *	×ÖÌåÊÇ·ñÔÚÖ¸¶¨µÄ×Ö¿âÖĞ´æÔÚ
-		 *	@param	words	:	±ê×¼×Ö¿â
-		 *	@param	str		:	±»¼ì²éµÄ×Ö·û´®
-		 *	@param	len		:	±»¼ì²éµÄ×Ö·û´®³¤¶È
+		 *	å­—ä½“æ˜¯å¦åœ¨æŒ‡å®šçš„å­—åº“ä¸­å­˜åœ¨
+		 *	@param	words	:	æ ‡å‡†å­—åº“
+		 *	@param	str		:	è¢«æ£€æŸ¥çš„å­—ç¬¦ä¸²
+		 *	@param	len		:	è¢«æ£€æŸ¥çš„å­—ç¬¦ä¸²é•¿åº¦
 		 */
 		static bool exist_in_char_lib(WordSet& words, const char* str, int32 len);
 
 		/**
-		 *	×ÖÌåÊÇ·ñÔÚÖ¸¶¨µÄ×Ö¿âÖĞ´æÔÚ
-		 *	@param	words	:	±ê×¼×Ö¿â
-		 *	@param	str		:	±»¼ì²éµÄ×Ö·û´®
+		 *	å­—ä½“æ˜¯å¦åœ¨æŒ‡å®šçš„å­—åº“ä¸­å­˜åœ¨
+		 *	@param	words	:	æ ‡å‡†å­—åº“
+		 *	@param	str		:	è¢«æ£€æŸ¥çš„å­—ç¬¦ä¸²
 		 */
 		static bool exist_in_char_lib(WordSet& words, const std::string& str);
 
 		/**
-		 *	ÊÇ·ñ´æÔÚÆÁ±Î×Ö·û´®
-		 *	@param	invalid_words	:	ÆÁ±Î×Ö¿â
-		 *	@param	str				:	±»¼ì²éµÄ×Ö·û´®
+		 *	æ˜¯å¦å­˜åœ¨å±è”½å­—ç¬¦ä¸²
+		 *	@param	invalid_words	:	å±è”½å­—åº“
+		 *	@param	str				:	è¢«æ£€æŸ¥çš„å­—ç¬¦ä¸²
 		 */
 		static bool include_invalid_ansi_str(WordSet& invalid_words, std::string& str);
 
 		/**
-		 *	ÊÇ·ñ´æÔÚÆÁ±Î×Ö·û´®
-		 *	@param	invalid_words	:	ÆÁ±Î×Ö¿â
-		 *	@param	str				:	±»¼ì²éµÄ×Ö·û´®
-		 *	@param	len				:	±»¼ì²éµÄ×Ö·û´®µÄ³¤¶È
+		 *	æ˜¯å¦å­˜åœ¨å±è”½å­—ç¬¦ä¸²
+		 *	@param	invalid_words	:	å±è”½å­—åº“
+		 *	@param	str				:	è¢«æ£€æŸ¥çš„å­—ç¬¦ä¸²
+		 *	@param	len				:	è¢«æ£€æŸ¥çš„å­—ç¬¦ä¸²çš„é•¿åº¦
 		 */
 		static bool include_invalid_ansi_str(WordSet& invalid_words, const char* str, int32 len);
 
 		/**
-		 *	ÓÃ*Ìæ»»±»ÆÁ±ÎµÄ×Ö
-		 *	@param	invalid_words	:	ÆÁ±Î×Ö¿â
-		 *	@param	str				:	±»Ìæ»»µÄ×Ö·û´®
+		 *	ç”¨*æ›¿æ¢è¢«å±è”½çš„å­—
+		 *	@param	invalid_words	:	å±è”½å­—åº“
+		 *	@param	str				:	è¢«æ›¿æ¢çš„å­—ç¬¦ä¸²
 		 */
 		static void replace_invalid_ansi_str(WordSet& invalid_words, std::string& str);
 
 		/**
-		 *	ÓÃ*Ìæ»»±»ÆÁ±ÎµÄ×Ö
-		 *	@param	invalid_words	:	ÆÁ±Î×Ö¿â
-		 *	@param	str				:	±»Ìæ»»µÄ×Ö·û´®
-		 *	@param	len				:	±»Ìæ»»µÄ×Ö·û´®µÄ³¤¶È
+		 *	ç”¨*æ›¿æ¢è¢«å±è”½çš„å­—
+		 *	@param	invalid_words	:	å±è”½å­—åº“
+		 *	@param	str				:	è¢«æ›¿æ¢çš„å­—ç¬¦ä¸²
+		 *	@param	len				:	è¢«æ›¿æ¢çš„å­—ç¬¦ä¸²çš„é•¿åº¦
 		 */
 		static void replace_invalid_ansi_str(WordSet& invalid_words, char* str, int32 len);
 
 		/**
-		 *	¼ì²âÊÇ·ñ´æÔÚ·Ç·¨×Ö·û
-		 *	@return :  true:´æÔÚ·Ç·¨×Ö·û		false:²»´æÔÚ·Ç·¨×Ö·û
+		 *	æ£€æµ‹æ˜¯å¦å­˜åœ¨éæ³•å­—ç¬¦
+		 *	@return :  true:å­˜åœ¨éæ³•å­—ç¬¦		false:ä¸å­˜åœ¨éæ³•å­—ç¬¦
 		 */
 		static bool include_invalid_ansi_str(std::string str);
 
 		/**
-		 *	¼ì²âÊÇ·ñÃ¿¸ö×Ö¶¼ÊôÓÚ¿ÉÓÃ×Ö¿â
-		 *	@return :  true:¶¼ÊÇ¿ÉÓÃ×Ö·û		false:ÓĞ·Ç¿ÉÓÃ×Ö·û
+		 *	æ£€æµ‹æ˜¯å¦æ¯ä¸ªå­—éƒ½å±äºå¯ç”¨å­—åº“
+		 *	@return :  true:éƒ½æ˜¯å¯ç”¨å­—ç¬¦		false:æœ‰éå¯ç”¨å­—ç¬¦
 		 */
 		static bool is_valid_ansi_str(std::string str);
 		/**
-		*	¼ì²éÕâµØÇøÊÇ·ñĞèÒª¼ì²â¿ÉÓÃ×Ö·û
-		*	@return :  true:ĞèÒª¼ì²â		false:²»ĞèÒª¼ì²â
+		*	æ£€æŸ¥è¿™åœ°åŒºæ˜¯å¦éœ€è¦æ£€æµ‹å¯ç”¨å­—ç¬¦
+		*	@return :  true:éœ€è¦æ£€æµ‹		false:ä¸éœ€è¦æ£€æµ‹
 		*/
 		static bool is_region_need_check_ansi_str();
 		/**
-		 *	ÓĞ·Ç·¨×Ö·ûÊ±£¬ÓÃ*Ìæ»»·Ç·¨×Ö·û
+		 *	æœ‰éæ³•å­—ç¬¦æ—¶ï¼Œç”¨*æ›¿æ¢éæ³•å­—ç¬¦
 		 */
 		static void replace_invalid_ansi_str(std::string& str, bool only_check_symbols = false);
 
 
-		//¼ì²éÊäÈëµÄÕû¾ä»°ÊÇ·ñÊÇÆÁ±Î×Ö
+		//æ£€æŸ¥è¾“å…¥çš„æ•´å¥è¯æ˜¯å¦æ˜¯å±è”½å­—
 		static bool is_sentence_valid(WordSet& invalid_words, std::string& wstr);
 
 
-		//ÆÁ±Î×î´ó×éºÏ
+		//å±è”½æœ€å¤§ç»„åˆ
 		static void shield_componet_valid(WordSet& invalid_words, std::string& wstr);
 
 
-		//ÅĞ¶Ï²éÕÒÒ»¾ä»°ÖĞÕÒµ½µÄÖ¸¶¨Î»ÖÃºóµÄn¸ö×Ö·û×éºÏÊÇ·ñÎªÒ»¸öµ¥´Ê
+		//åˆ¤æ–­æŸ¥æ‰¾ä¸€å¥è¯ä¸­æ‰¾åˆ°çš„æŒ‡å®šä½ç½®åçš„nä¸ªå­—ç¬¦ç»„åˆæ˜¯å¦ä¸ºä¸€ä¸ªå•è¯
 		static bool is_a_word(std::string& sentence, int32 pos, int32 n);
 
 
-		//´æÈëÊı¾İ¿âÖ®Ç° ¼ì²é·Ç·¨×Ö·û
+		//å­˜å…¥æ•°æ®åº“ä¹‹å‰ æ£€æŸ¥éæ³•å­—ç¬¦
 		static void check_invalid_char_for_db(char* sz_str, int32 sz_len);
 
 	private:

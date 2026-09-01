@@ -19,15 +19,15 @@ namespace faith
 	public:
 		static void	tick(float tick_time);
 	public:
-		static void	init_map_by_world(int32 conn_index);//´´½¨ÊÀ½çÉÏËùÓĞµÄµØÍ¼
-		static Entity*	init_map_by_main(int32 map_template_id, int32 conn_index);//´´½¨Ö÷³ÇµØÍ¼
-		static Entity*	init_map_by_battle(int32 map_template_id, int32 conn_index = -1);//´´½¨¸±±¾Õ½¶·µØÍ¼
+		static void	init_map_by_world(int32 conn_index);//åˆ›å»ºä¸–ç•Œä¸Šæ‰€æœ‰çš„åœ°å›¾
+		static Entity*	init_map_by_main(int32 map_template_id, int32 conn_index);//åˆ›å»ºä¸»åŸåœ°å›¾
+		static Entity*	init_map_by_battle(int32 map_template_id, int32 conn_index = -1);//åˆ›å»ºå‰¯æœ¬æˆ˜æ–—åœ°å›¾
 		static void	init_map_by_cross_world(int32 conn_index);
-		static void	remove_map_by_uid(uint32 conn_index);//ÒÆ³ıÖ¸¶¨serverµÄµØÍ¼Êı¾İ
+		static void	remove_map_by_uid(uint32 conn_index);//ç§»é™¤æŒ‡å®šserverçš„åœ°å›¾æ•°æ®
 		static void	remove_map_by_guid(const guid_64& map_guid);
 		static void	remove_map(Entity* map_ent);
 	public:
-		static int32 remove_unit_from_map(const guid_64& map_guid, const guid_64& role_guid);//°Ñ½ÇÉ«´ÓÖ¸¶¨µØÍ¼ÀïÃæÒÆ³ı
+		static int32 remove_unit_from_map(const guid_64& map_guid, const guid_64& role_guid);//æŠŠè§’è‰²ä»æŒ‡å®šåœ°å›¾é‡Œé¢ç§»é™¤
 		static void	on_unit_leave_map(int32 map_template_id, const guid_64& role_guid);
 		static bool	check_unit_can_enter_map(int32 map_template_id, const guid_64& role_guid);
 	public:

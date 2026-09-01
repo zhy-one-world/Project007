@@ -23,11 +23,11 @@ namespace faith
 		static void get_watch_by_type(Entity* map_ent, const fvector& map_pos_old, const fvector& map_pos_new, e_aoi_move_type move_type, int32* unit_array, int32& watch_array_num);
 		static void get_watch_by_type(const guid_64& map_guid, const fvector& map_pos_old, const fvector& map_pos_new, e_aoi_move_type move_type, int32* unit_array, int32& watch_array_num);
 	public:
-		//°ÑÎïÌåÌí¼Óµ½aoi¹ÜÀíÖĞ
+		//æŠŠç‰©ä½“æ·»åŠ åˆ°aoiç®¡ç†ä¸­
 		static bool add_object(Entity* map_ent, const fvector& unit_location, const int32 unit_index);
-		//°ÑÎïÌå´Óaoi¹ÜÀíÖĞÉ¾³ı
+		//æŠŠç‰©ä½“ä»aoiç®¡ç†ä¸­åˆ é™¤
 		static bool remove_object(Entity* map_ent, const fvector& unit_location, const int32 unit_index, bool is_dead);
-		//¸üĞÂÎïÌåaoi×´Ì¬
+		//æ›´æ–°ç‰©ä½“aoiçŠ¶æ€
 		static bool update_object(Entity* map_ent, const fvector& map_pos_old, const fvector& map_pos_new, const int32& unit_index);
 	};
 }

@@ -38,7 +38,7 @@ namespace faith
 		void					set_base_info(s_red_package_base temp_info);
 
 		//rename																																		
-		void					change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//角色改名同步
+		void					change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//瑙掕壊鏀瑰悕鍚屾
 	private:
 		int32					get_random_money_num();
 

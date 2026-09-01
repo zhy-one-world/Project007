@@ -340,7 +340,7 @@ namespace faith
 			int32 nres = data.nres;
 			if ( -1 == nres )
 			{
-				// Êı¾İ¿â²Ù×÷´íÎó
+				// æ•°æ®åº“æ“ä½œé”™è¯¯
 				dp2ls_create_character reply;
 				reply.eresult = e_failed_internal_error;
 				reply.client_uid = client_uid;
@@ -350,7 +350,7 @@ namespace faith
 			}
 			else if ( 0 == nres)
 			{
-				// ´´½¨½ÇÉ«Ê§°Ü
+				// åˆ›å»ºè§’è‰²å¤±è´¥
 				dp2ls_create_character reply;
 				reply.eresult = e_failed_create_error;
 				reply.client_uid = client_uid;
@@ -360,7 +360,7 @@ namespace faith
 			}
 			else if (nres == -2)
 			{
-				// ½ÇÉ«ÃûÖØ¸´
+				// è§’è‰²åé‡å¤
 				dp2ls_create_character reply;
 				reply.eresult = e_failed_role_name_duplicate;
 				reply.client_uid = client_uid;
@@ -370,7 +370,7 @@ namespace faith
 			}
 			else if (nres == -3)
 			{
-				// ½ÇÉ«¹ı¶à
+				// è§’è‰²è¿‡å¤š
 				dp2ls_create_character reply;
 				reply.eresult = e_failed_role_num_max;
 				reply.client_uid = client_uid;
@@ -380,7 +380,7 @@ namespace faith
 			}
 			else if (nres == -4)
 			{
-				// Ã»ÓĞ´ïµ½´´½¨µÈ¼¶ÒªÇó
+				// æ²¡æœ‰è¾¾åˆ°åˆ›å»ºç­‰çº§è¦æ±‚
 				dp2ls_create_character reply;
 				reply.eresult = e_failed_role_create_level_limit;
 				reply.client_uid = client_uid;

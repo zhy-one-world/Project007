@@ -36,18 +36,18 @@ namespace faith
 		bool								read_json_data(const xstring& json_data,const s_client_uid client_uid);
 		
 		xstring								create_post_data(const xstring& data, int32 server_id, const xstring& game_id, const xstring& channel_id);
-		xstring								create_sign(i16 param_num,...);															// ¸ù¾İµÚÈı·½·şÎñ¶¨ÖÆÇ©Ãû,¿É±ä²Î¶¼ÊÇxstringÀàĞÍ
-		void								create_http_head_list(std::vector<xstring>& head_list,i16 param_num,...);				// ¸ù¾İµÚÈı·½·şÎñ¶¨ÖÆÇëÇóÍ·,¿É±ä²Î¶¼ÊÇxstringÀàĞÍ
+		xstring								create_sign(i16 param_num,...);															// æ ¹æ®ç¬¬ä¸‰æ–¹æœåŠ¡å®šåˆ¶ç­¾å,å¯å˜å‚éƒ½æ˜¯xstringç±»å‹
+		void								create_http_head_list(std::vector<xstring>& head_list,i16 param_num,...);				// æ ¹æ®ç¬¬ä¸‰æ–¹æœåŠ¡å®šåˆ¶è¯·æ±‚å¤´,å¯å˜å‚éƒ½æ˜¯xstringç±»å‹
 
 		void								save_account(const xstring& account, const xstring& server_msg, const s_client_uid client_uid, int64* ban_role_array, int64* ban_chat_array, int32 age = 0);
 	private:
 		int32								m_time_count;
 
-		//µÇÂ¼½áÊøºóÔÙÇåÀíµÄÁÙÊ±Êı¾İ£¬ÏÖ½×¶Î£¬logÓÃ
+		//ç™»å½•ç»“æŸåå†æ¸…ç†çš„ä¸´æ—¶æ•°æ®ï¼Œç°é˜¶æ®µï¼Œlogç”¨
 		//client_data_map						m_temp_datas;
 
 		/************************************************************************/
-		/*							  ·¢ËÍlog						       	    */
+		/*							  å‘é€log						       	    */
 		/************************************************************************/
 	public:
 		void									ls2dp_save_server_log(const xstring& log_sql_name, const xstring& sql_param_string);

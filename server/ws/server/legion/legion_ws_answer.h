@@ -22,14 +22,14 @@ namespace faith
 		void check_prepare_notice();
 		void clear_data();
 		//void add_legion_info(guid_64 legion_guid);
-		//´ğÌâ¹«¸æ
+		//ç­”é¢˜å…¬å‘Š
 		void notice_on_legion_prepare_answer(uint32 prepare_time);
-		void get_legion_question_info(guid_64 role_guid);//·µ»Øµ±Ç°´ğÌâ½ø¶Èµ¥ĞÅÏ¢
+		void get_legion_question_info(guid_64 role_guid);//è¿”å›å½“å‰ç­”é¢˜è¿›åº¦å•ä¿¡æ¯
 		void send_legion_question_info_by_legion(guid_64 legion_guid);
 
-		void answer_correctly(guid_64 role_guid);		//»Ø´ğÕıÈ·µÄ´¦Àí
+		void answer_correctly(guid_64 role_guid);		//å›ç­”æ­£ç¡®çš„å¤„ç†
 		void refresh_question_answer();
-		bool is_in_legion_answer_time();		    //ÊÇ·ñÔÚ´ğÌâÊ±¼ä¶ÎÄÚ
+		bool is_in_legion_answer_time();		    //æ˜¯å¦åœ¨ç­”é¢˜æ—¶é—´æ®µå†…
 		bool is_in_legion_answer_read_time();
 		bool is_in_legion_answer_all_time();
 		void notice_on_first_answer_true_notice(guid_64 legion_guid, const xstring& role_name, int32  answer_id);
@@ -42,18 +42,18 @@ namespace faith
 		void send_legion_answer_rank_list_all();
 		
 	private:
-		int64					m_legion_answer_activity_begin_time;	//¼ÇÂ¼µ±Ìì¾üÍÅ´ğÌâµÄ¿ªÊ¼
-		int64					m_legion_answer_activity_end_time;		//¼ÇÂ¼µ±Ìì¾üÍÅ´ğÌâµÄ½áÊø	
-		bool					m_legion_answer_activity_begin;			//ÅĞ¶Ï¾üÍÅ´ğÌâ»î¶¯
-		score_indicator			m_legion_answer_rank_list;				//¾üÍÅ´òÌâ½áÊøÊ±¼äÅÅÃû
-		int32					m_notice_index;							//´ğÌâ×¼±¸¹«¸æË÷Òı
+		int64					m_legion_answer_activity_begin_time;	//è®°å½•å½“å¤©å†›å›¢ç­”é¢˜çš„å¼€å§‹
+		int64					m_legion_answer_activity_end_time;		//è®°å½•å½“å¤©å†›å›¢ç­”é¢˜çš„ç»“æŸ	
+		bool					m_legion_answer_activity_begin;			//åˆ¤æ–­å†›å›¢ç­”é¢˜æ´»åŠ¨
+		score_indicator			m_legion_answer_rank_list;				//å†›å›¢æ‰“é¢˜ç»“æŸæ—¶é—´æ’å
+		int32					m_notice_index;							//ç­”é¢˜å‡†å¤‡å…¬å‘Šç´¢å¼•
 
-		int32					m_answer_index;							//ÌâÄ¿Ë÷Òı
-		int64					m_next_answer_time;						//ÏÂÒ»ÌâµÄ³öÌâÊ±¼ä
-		int32					m_topic_id;								//µ±Ç°ÌâÄ¿
-		int32					m_answer_id;							//µ±Ç°ÌâÄ¿´ğ°¸id
-		std::vector<int32>		m_old_answer;							//±¾´Î´ğÌâÒÑ¾­³ö¹ıµÄÌâ
-		int64					m_next_rank_list_refresh_time;			//ÅÅĞĞ°ñÁĞ±íË¢ĞÂÊ±¼ä
+		int32					m_answer_index;							//é¢˜ç›®ç´¢å¼•
+		int64					m_next_answer_time;						//ä¸‹ä¸€é¢˜çš„å‡ºé¢˜æ—¶é—´
+		int32					m_topic_id;								//å½“å‰é¢˜ç›®
+		int32					m_answer_id;							//å½“å‰é¢˜ç›®ç­”æ¡ˆid
+		std::vector<int32>		m_old_answer;							//æœ¬æ¬¡ç­”é¢˜å·²ç»å‡ºè¿‡çš„é¢˜
+		int64					m_next_rank_list_refresh_time;			//æ’è¡Œæ¦œåˆ—è¡¨åˆ·æ–°æ—¶é—´
 	};
 }
 

@@ -45,7 +45,7 @@ namespace faith
 		int32							unit_array_index;
 		int32							save_type_ex;
 		int32							data_num;
-		s_talent_info					data_list[TALENT_NUM_MAX];	//ÊµÀıÊı¾İ
+		s_talent_info					data_list[TALENT_NUM_MAX];	//å®ä¾‹æ•°æ®
 		cs2dp_save_char_talent()
 		{
 			memset(this, 0, sizeof(*this));

@@ -1,4 +1,4 @@
-#include "goddess_mgr.h"
+﻿#include "goddess_mgr.h"
 #include "logic/unit_man.h"
 #include "logic/buff_man.h"
 #include "template/template_manager.h"
@@ -60,14 +60,14 @@ namespace faith
 				}
 			}
 			item->set_data_info(e_item_info_activate, 1);
-			item->set_data_info(e_item_info_illusion_had_byte, slot);//��¼����λ��
+			item->set_data_info(e_item_info_illusion_had_byte, slot);
 			if (slot > 0)
 			{
-				calcu_cooperate_buff(item, true);//�������սλ��֮���ټ���
+				calcu_cooperate_buff(item, true);
 			}
 			if (slot == 0 && item->get_data_info(e_item_info_starskill_flag) == 0)
 			{
-				goddess_fight(item->get_item_guid());//����սλ����
+				goddess_fight(item->get_item_guid());
 			}
 			player_ref.get_item_set().send_item_one(item);
 			return true;
@@ -102,7 +102,7 @@ namespace faith
 			
 			if (real_slot == 0)
 			{
-				goddess_fight(item->get_item_guid());//����սλ����
+				goddess_fight(item->get_item_guid());
 			}
 			player_ref.get_item_set().send_item_one(item);
 			return true;
@@ -373,7 +373,7 @@ namespace faith
 			{
 				if (template_ptr->AdditionBuff.size() >= per_goddess_type_equip_num)
 				{
-					if (is_add)//װ����Я���Ĺ�Чbuff
+					if (is_add)
 					{
 						buff_man::add_buff_inst(array_index, array_index, template_ptr->AdditionBuff[temp_item_template->sub_type - 1]);
 					}
@@ -386,7 +386,7 @@ namespace faith
 				{
 					for (int32 j = 0; j < deity_template_ptr->AdditionBuff.size(); j++)
 					{
-						if (is_add)//װ����Я���ļ�������buff
+						if (is_add)
 						{
 							buff_man::add_buff_inst(array_index, array_index, deity_template_ptr->AdditionBuff[j]);
 						}

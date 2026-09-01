@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2011/04/26
 	created:	26:4:2011   14:35
 	file base:	Matrix2D
@@ -180,7 +180,6 @@ namespace faith
         typedef matrix2d<f32> matrix2df;
 
         //--------------------- PointToWorldSpace --------------------------------
-        //
         //  Transforms a point from the agent's local space into world space
         //------------------------------------------------------------------------
         template <class TVector>

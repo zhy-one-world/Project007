@@ -1,5 +1,5 @@
 /********************************************************************
-created:	2016Äê12ÔÂ12ÈÕ12:57:20
+created:	2016å¹´12æœˆ12æ—¥12:57:20
 file base:	msgproc_legion_ws
 file ext:	cpp
 author:		zhy
@@ -1194,7 +1194,7 @@ namespace faith
 		}
 	}
 
-	// Íæ¼Ò´æÈëµÀ¾ßµ½Êı¾İ¿â
+	// ç©å®¶å­˜å…¥é“å…·åˆ°æ•°æ®åº“
 	void store_legion_warehouse(uint32 connindex, const void *data_ptr, size_t data_len)
 	{
 		const ws2dp_store_legion_warehouse_info* pdata = static_cast<const ws2dp_store_legion_warehouse_info*>(data_ptr);
@@ -1251,12 +1251,12 @@ namespace faith
 		int32 nres = data.nres;
 		if (1 == nres)
 		{
-			// Êı¾İ¿â²Ù×÷´íÎó
+			// æ•°æ®åº“æ“ä½œé”™è¯¯
 			return;
 		}
 	}
 
-	// Íæ¼Ò´æÈëµÀ¾ßµ½Êı¾İ¿â
+	// ç©å®¶å­˜å…¥é“å…·åˆ°æ•°æ®åº“
 	void store_legion_warehouse_log(uint32 connindex, const void *data_ptr, size_t data_len)
 	{
 		const ws2dp_store_legion_warehouse_log* pdata = static_cast<const ws2dp_store_legion_warehouse_log*>(data_ptr);
@@ -1304,11 +1304,11 @@ namespace faith
 		int32 nres = data.nres;
 		if (1 == nres)
 		{
-			// Êı¾İ¿â²Ù×÷´íÎó
+			// æ•°æ®åº“æ“ä½œé”™è¯¯
 			return;
 		}
 	}
-	//Íæ¼Ò´Ó¾üÍÅ²Ö¿âÀïÃæ»ñÈ¡µÀ¾ß
+	//ç©å®¶ä»å†›å›¢ä»“åº“é‡Œé¢è·å–é“å…·
 	void role_get_legion_warehouse(uint32 connindex, const void *data_ptr, size_t data_len)
 	{
 		const ws2dp_role_get_legion_warehouse_info* pdata = static_cast<const ws2dp_role_get_legion_warehouse_info*>(data_ptr);
@@ -1372,7 +1372,7 @@ namespace faith
 		int32 nres = data.nres;
 		if (1 == nres)
 		{
-			// Êı¾İ¿â²Ù×÷´íÎó
+			// æ•°æ®åº“æ“ä½œé”™è¯¯
 			return;
 		}
 	}
@@ -1451,7 +1451,7 @@ namespace faith
 		int32 nres = data.nres;
 		if (1 == nres)
 		{
-			// Êı¾İ¿â²Ù×÷´íÎó
+			// æ•°æ®åº“æ“ä½œé”™è¯¯
 			return;
 		}
 	}
@@ -1494,7 +1494,7 @@ namespace faith
 		int32 nres = data.nres;
 		if (1 == nres)
 		{
-			// Êı¾İ¿â²Ù×÷´íÎó
+			// æ•°æ®åº“æ“ä½œé”™è¯¯
 			return;
 		}
 	}

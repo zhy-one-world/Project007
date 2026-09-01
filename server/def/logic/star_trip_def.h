@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2022Äê8ÔÂ24ÈÕ
+created: 2022å¹´8æœˆ24æ—¥
 file base: star_trip_def
 file ext: h
 author: zhaoyuming
@@ -18,18 +18,18 @@ namespace faith
 
 	enum e_star_trip_operate_end
 	{
-		e_star_trip_operate_end_buy_finish,					// ¶Ò»»³É¹¦
-		e_star_trip_operate_end_target_mission_finish,		// ÁìÈ¡ÈÎÎñ³É¹¦
-		e_star_trip_operate_end_set_tip_finish,				// ÉèÖÃÌáÐÑ³É¹¦
-		e_star_trip_operate_end_error1,						// ÏµÍ³´íÎó
-		e_star_trip_operate_end_template_error,				// ±í¸ñ´íÎó
-		e_star_trip_operate_end_no_money,					// »ý·Ö²»×ã
-		e_star_trip_operate_end_no_buy_num,					// Ã»ÓÐ¹ºÂò´ÎÊý
-		e_star_trip_operate_end_no_item,					// ÎïÆ·´´½¨Ê§°Ü
-		e_star_trip_operate_end_mission_error,				// ÈÎÎñ´íÎó
-		e_star_trip_operate_end_is_get,						// ÒÑÁìÈ¡½±Àø
-		e_star_trip_operate_end_no_target,					// Íê³ÉÌõ¼þ²»Âú×ã
-		e_star_trip_operate_end_no_time,					// ¹ýÁËÈÎÎñÁì½±Ê±¼ä
+		e_star_trip_operate_end_buy_finish,					// å…‘æ¢æˆåŠŸ
+		e_star_trip_operate_end_target_mission_finish,		// é¢†å–ä»»åŠ¡æˆåŠŸ
+		e_star_trip_operate_end_set_tip_finish,				// è®¾ç½®æé†’æˆåŠŸ
+		e_star_trip_operate_end_error1,						// ç³»ç»Ÿé”™è¯¯
+		e_star_trip_operate_end_template_error,				// è¡¨æ ¼é”™è¯¯
+		e_star_trip_operate_end_no_money,					// ç§¯åˆ†ä¸è¶³
+		e_star_trip_operate_end_no_buy_num,					// æ²¡æœ‰è´­ä¹°æ¬¡æ•°
+		e_star_trip_operate_end_no_item,					// ç‰©å“åˆ›å»ºå¤±è´¥
+		e_star_trip_operate_end_mission_error,				// ä»»åŠ¡é”™è¯¯
+		e_star_trip_operate_end_is_get,						// å·²é¢†å–å¥–åŠ±
+		e_star_trip_operate_end_no_target,					// å®Œæˆæ¡ä»¶ä¸æ»¡è¶³
+		e_star_trip_operate_end_no_time,					// è¿‡äº†ä»»åŠ¡é¢†å¥–æ—¶é—´
 	};
 
 	enum s_star_trip_operate_type
@@ -41,12 +41,12 @@ namespace faith
 
 	struct s_star_trip_goods_info
 	{
-		int32 item_id;								// ÎïÆ·Id
-		int32 item_num;								// ÎïÆ·ÊýÁ¿
-		int32 is_lock;								// ÊÇ·ñ°ó¶¨
-		int32 need_money;							// ÐèÒª»ý·ÖÊýÁ¿
-		int32 max_num;								// ×î´ó¹ºÂò´ÎÊý
-		int32 buy_num;								// ÒÑ¹ºÂò´ÎÊý
+		int32 item_id;								// ç‰©å“Id
+		int32 item_num;								// ç‰©å“æ•°é‡
+		int32 is_lock;								// æ˜¯å¦ç»‘å®š
+		int32 need_money;							// éœ€è¦ç§¯åˆ†æ•°é‡
+		int32 max_num;								// æœ€å¤§è´­ä¹°æ¬¡æ•°
+		int32 buy_num;								// å·²è´­ä¹°æ¬¡æ•°
 		s_star_trip_goods_info()
 		{
 			memset(this, 0, sizeof(*this));
@@ -74,13 +74,13 @@ namespace faith
 
 	struct s_star_trip_mission_info
 	{
-		int32 mission_type;							// ÈÎÎñÀàÐÍ 1ÊÇÃ¿ÈÕÈÎÎñ, 2ÊÇÖÜÆÚÈÎÎñ
-		int32 target_type;							// ´¥·¢ÀàÐÍ
-		int32 target_param;							// ´¥·¢²ÎÊý
-		int32 target_num;							// ´¥·¢²ÎÊý
-		int32 finish_num;							// Íê³É´ÎÊý 
-		int32 award_num;							// ½±ÀøÊýÁ¿
-		int32 is_get;								// ÊÇ·ñÁìÈ¡½±Àø
+		int32 mission_type;							// ä»»åŠ¡ç±»åž‹ 1æ˜¯æ¯æ—¥ä»»åŠ¡, 2æ˜¯å‘¨æœŸä»»åŠ¡
+		int32 target_type;							// è§¦å‘ç±»åž‹
+		int32 target_param;							// è§¦å‘å‚æ•°
+		int32 target_num;							// è§¦å‘å‚æ•°
+		int32 finish_num;							// å®Œæˆæ¬¡æ•° 
+		int32 award_num;							// å¥–åŠ±æ•°é‡
+		int32 is_get;								// æ˜¯å¦é¢†å–å¥–åŠ±
 		s_star_trip_mission_info()
 		{
 			memset(this, 0, sizeof(*this));
@@ -88,7 +88,7 @@ namespace faith
 
 		bool is_finish()
 		{
-			// ´¥·¢²ÎÊý´óÓÚÍê³É²ÎÊýÊÓÎªÍê³É
+			// è§¦å‘å‚æ•°å¤§äºŽå®Œæˆå‚æ•°è§†ä¸ºå®Œæˆ
 			return target_num >= finish_num;
 		}
 

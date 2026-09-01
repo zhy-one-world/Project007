@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê9ÔÂ13ÈÕ17:46:11
+created: 2016å¹´9æœˆ13æ—¥17:46:11
 file base: worship_target
 file ext: h
 author: zhangminghai
@@ -341,7 +341,7 @@ namespace faith
 		m_player_ptr->send_daily_must_do_count_info_one(e_daily_must_do_typ_rank);
 		m_player_ptr->get_mission_mgr().target_check(e_mission_end_type_cheer_worship);
 		m_player_ptr->get_recycle_mgr().on_event(e_recycle_task_type_belief_11);
-		m_player_ptr->get_time_limit_activity_mgr().activity_behavior_done(e_time_limit_behavior_type_ranking_worship); //ĞÂÏŞÊ±ĞĞÎªÅÅĞĞ°ñ³ç°İ¼ÆÊı
+		m_player_ptr->get_time_limit_activity_mgr().activity_behavior_done(e_time_limit_behavior_type_ranking_worship); //æ–°é™æ—¶è¡Œä¸ºæ’è¡Œæ¦œå´‡æ‹œè®¡æ•°
 		send_worhip_record(); 
 	}	
 

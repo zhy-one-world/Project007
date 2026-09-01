@@ -26,13 +26,13 @@ namespace faith
 		e_msgindex_cs2dp_save_char_item,
 	};
 
-	// DP2CS ·ÖÅú·¢ËÍÍæ¼ÒµÄËùÓĞÎïÆ·ĞÅÏ¢
+	// DP2CS åˆ†æ‰¹å‘é€ç©å®¶çš„æ‰€æœ‰ç‰©å“ä¿¡æ¯
 	struct dp2cs_load_char_item : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
 		s_daemon_callback_info				callback_info;
-		int32								bag_type;		// ±³°üÀàĞÍ
+		int32								bag_type;		// èƒŒåŒ…ç±»å‹
 		int32								data_num;
 		s_item_info							data_list[MAX_ITEM_BAG_NUM];
 
@@ -65,9 +65,9 @@ namespace faith
 		guid_64								role_guid;
 		int32								unit_array_index;
 		int32								save_type_ex;
-		int32								bag_type;		// ±³°üÀàĞÍ
+		int32								bag_type;		// èƒŒåŒ…ç±»å‹
 		int32								data_num;
-		s_item_info					        data_list[MAX_ITEM_BAG_NUM];	//ÎïÆ·ÊµÀıÊı¾İ
+		s_item_info					        data_list[MAX_ITEM_BAG_NUM];	//ç‰©å“å®ä¾‹æ•°æ®
 
 		cs2dp_save_char_item()
 		{

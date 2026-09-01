@@ -5,7 +5,7 @@
   file ext: h
   author: YU REN
   
-  purpose: 服务器解析客户端传递的googleprotocolbuff类型消息
+  purpose: 鏈嶅姟鍣ㄨВ鏋愬鎴风浼犻�掔殑googleprotocolbuff绫诲瀷娑堟伅
 *********************************************************************/
 #ifndef parse_msg_h
 #define parse_msg_h

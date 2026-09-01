@@ -14,20 +14,20 @@ purpose:
 namespace faith
 {
 #pragma pack(push,1)
-	const int32 time_limit_activity_schedule_num = 20;							//½ø¶È¼ÇÂ¼×î´óÌõÄ¿
-	const int32 time_limit_activity_get_reward_flag_index_max = 64;				//½±Àø±ê¼ÇÎ»×î´ó¸öÊı
-	const int32 time_limit_activity_common_data_max = 5;						//ÏŞÊ±»î¶¯¹«ÓÃÊı¾İ×î´ó¸öÊı
-	const int32 max_limit_act_temp_size = 512;									//ÏŞÊ±»î¶¯±íÊı¾İ×î´ó³¤¶È
-	const int32 max_load_time_limit_temp_num = 30;								//ÏŞÊ±»î¶¯±íµ¥´Îload×î´óÊıÁ¿
-	const int32 max_save_num_with_one_player = 300;								//¼ÇÂ¼Íæ¼ÒµÄ×î´óÌõÊı
-	const int32 max_send_cs2ws_once_num = 20;									//Í¬²½¸øWSµ¥´Î×î´óÊıÄ¿
-	const int32 time_limit_day_mark_num = 10000000;								//ÏŞÊ±»î¶¯±í¸ñÊ±¼ä±ê¼ÇÇ°Á½Î»
-	const int32 time_limit_server_mark_num = 10000;								//ÏŞÊ±»î¶¯±í¸ñ·şÎñÆ÷±ê¼ÇÖĞ¼äÈıÎ»
-	const int32 time_limit_activity_added_drop_drop_template_id = 70999999;		//ÏŞÊ±»î¶¯¶îÍâµôÂäµôÂä°üid
-	const int32 time_limit_activity_param_string_max_size = 3200;				//×Ö·û´®²ÎÊı×î´ó³¤¶È
-	const int32 time_limit_activity_string_max_size = 600;						//cs´æ´¢×Ö·û´®²ÎÊı×î´ó³¤¶È
-	const int32 time_limit_activity_dp_send_size = 50;							//dpÏÔÊ¾»î¶¯·¢ËÍÊı¾İ
-	const int32 time_feed_back_to_db_num = 30;									//Ê±¹â»ØÀ¡´æ´¢´óĞ¡	
+	const int32 time_limit_activity_schedule_num = 20;							//è¿›åº¦è®°å½•æœ€å¤§æ¡ç›®
+	const int32 time_limit_activity_get_reward_flag_index_max = 64;				//å¥–åŠ±æ ‡è®°ä½æœ€å¤§ä¸ªæ•°
+	const int32 time_limit_activity_common_data_max = 5;						//é™æ—¶æ´»åŠ¨å…¬ç”¨æ•°æ®æœ€å¤§ä¸ªæ•°
+	const int32 max_limit_act_temp_size = 512;									//é™æ—¶æ´»åŠ¨è¡¨æ•°æ®æœ€å¤§é•¿åº¦
+	const int32 max_load_time_limit_temp_num = 30;								//é™æ—¶æ´»åŠ¨è¡¨å•æ¬¡loadæœ€å¤§æ•°é‡
+	const int32 max_save_num_with_one_player = 300;								//è®°å½•ç©å®¶çš„æœ€å¤§æ¡æ•°
+	const int32 max_send_cs2ws_once_num = 20;									//åŒæ­¥ç»™WSå•æ¬¡æœ€å¤§æ•°ç›®
+	const int32 time_limit_day_mark_num = 10000000;								//é™æ—¶æ´»åŠ¨è¡¨æ ¼æ—¶é—´æ ‡è®°å‰ä¸¤ä½
+	const int32 time_limit_server_mark_num = 10000;								//é™æ—¶æ´»åŠ¨è¡¨æ ¼æœåŠ¡å™¨æ ‡è®°ä¸­é—´ä¸‰ä½
+	const int32 time_limit_activity_added_drop_drop_template_id = 70999999;		//é™æ—¶æ´»åŠ¨é¢å¤–æ‰è½æ‰è½åŒ…id
+	const int32 time_limit_activity_param_string_max_size = 3200;				//å­—ç¬¦ä¸²å‚æ•°æœ€å¤§é•¿åº¦
+	const int32 time_limit_activity_string_max_size = 600;						//cså­˜å‚¨å­—ç¬¦ä¸²å‚æ•°æœ€å¤§é•¿åº¦
+	const int32 time_limit_activity_dp_send_size = 50;							//dpæ˜¾ç¤ºæ´»åŠ¨å‘é€æ•°æ®
+	const int32 time_feed_back_to_db_num = 30;									//æ—¶å…‰å›é¦ˆå­˜å‚¨å¤§å°	
 
 	enum e_time_limit_activity_cycle_param_type
 	{
@@ -49,10 +49,10 @@ namespace faith
 
 	enum e_compare_temp_result
 	{
-		e_compare_temp_result_error,// ±È¶Ô³öÏÖ´íÎó£¬±íÎª¿Õ
-		e_compare_temp_result_new,//ĞèÒª¼ÓĞÂ±í
-		e_compare_temp_result_change,//ĞèÒª»»±í
-		e_compare_temp_result_none,//²»×ö´¦Àí
+		e_compare_temp_result_error,// æ¯”å¯¹å‡ºç°é”™è¯¯ï¼Œè¡¨ä¸ºç©º
+		e_compare_temp_result_new,//éœ€è¦åŠ æ–°è¡¨
+		e_compare_temp_result_change,//éœ€è¦æ¢è¡¨
+		e_compare_temp_result_none,//ä¸åšå¤„ç†
 		e_compare_temp_result_refresh_guid,
 		e_compare_temp_result_max
 	};
@@ -105,7 +105,7 @@ namespace faith
 		void clear_data()
 		{
 			memset(this, 0, sizeof(*this));
-			//Ä¬ÈÏÀàĞÍÊÇ-1 Ã»ÓĞÕâ¸öÀàĞÍ ÅĞ¶ÏÊ±²»»á³ö´í
+			//é»˜è®¤ç±»å‹æ˜¯-1 æ²¡æœ‰è¿™ä¸ªç±»å‹ åˆ¤æ–­æ—¶ä¸ä¼šå‡ºé”™
 			data_ary[e_time_limit_activity_info_type] = -1;
 		}
 		void set_schedule_str(xstring temp_name)
@@ -433,7 +433,7 @@ namespace faith
 		std::vector<int32>	ParamArr3;
 		std::vector<int32>	ParamArr4;
 		std::vector<int32>	ParamArr5;
-		int32				IsEndAct;//ÊÇ·ñÍ¨¹ıGMÖ¸ÁîÒÔ¼°ÆäËûÔ­ÒòÖÕÖ¹¸Ã»î¶¯
+		int32				IsEndAct;//æ˜¯å¦é€šè¿‡GMæŒ‡ä»¤ä»¥åŠå…¶ä»–åŸå› ç»ˆæ­¢è¯¥æ´»åŠ¨
 		std::vector<int32>	OriginalCycleFirstId;
 		std::vector<int32>	OldCycleFirstId;
 		int32				CreateTime;
@@ -670,13 +670,13 @@ namespace faith
 
 	struct s_time_feed_back_info
 	{
-		int32		template_id;			// »î¶¯Ö÷±íId	
-		int32		sub_template_id;		// »î¶¯Ö÷±íId	
-		int32		info_state;				// »î¶¯×´Ì¬
-		int32		get_time;				// ¿ÉÁìÈ¡½±ÀøÊ±¼ä
-		int32		end_time;				// »î¶¯½áÊøÊ±¼ä
-		int32		money_type;				// ½±Àø»õ±ÒId
-		int32		money_num;				// ½±Àø»õ±ÒÊıÁ¿
+		int32		template_id;			// æ´»åŠ¨ä¸»è¡¨Id	
+		int32		sub_template_id;		// æ´»åŠ¨ä¸»è¡¨Id	
+		int32		info_state;				// æ´»åŠ¨çŠ¶æ€
+		int32		get_time;				// å¯é¢†å–å¥–åŠ±æ—¶é—´
+		int32		end_time;				// æ´»åŠ¨ç»“æŸæ—¶é—´
+		int32		money_type;				// å¥–åŠ±è´§å¸Id
+		int32		money_num;				// å¥–åŠ±è´§å¸æ•°é‡
 		s_time_feed_back_info()
 		{
 			memset(this, 0, sizeof(*this));
@@ -709,36 +709,36 @@ namespace faith
 
 	enum e_time_feed_back_info_state
 	{
-		e_time_feed_back_info_state_no_buy,				// Î´¹ºÂò
-		e_time_feed_back_info_state_buy,				// ÒÑ¹ºÂò
-		e_time_feed_back_info_state_receive_award,		// ÒÑÁìÈ¡
+		e_time_feed_back_info_state_no_buy,				// æœªè´­ä¹°
+		e_time_feed_back_info_state_buy,				// å·²è´­ä¹°
+		e_time_feed_back_info_state_receive_award,		// å·²é¢†å–
 		e_time_feed_back_info_state_end,
 	};
 
 	enum e_time_feed_back_operation_type
 	{
-		e_time_feed_back_operation_type_buy,			// ¹ºÂò
-		e_time_feed_back_operation_type_receive_award,	// ÁìÈ¡
+		e_time_feed_back_operation_type_buy,			// è´­ä¹°
+		e_time_feed_back_operation_type_receive_award,	// é¢†å–
 	};
 
 	enum e_time_feed_back_operation_end_type
 	{
-		e_time_feed_back_operation_end_buy_succeed,		// ¹ºÂò³É¹¦
-		e_time_feed_back_operation_end_get_succeed,		// ÁìÈ¡³É¹¦
-		e_time_feed_back_operation_end_template_error,	// ±í¸ñ´íÎó
-		e_time_feed_back_operation_end_money_error,		// ¹ºÂò´íÎó - »õ±Ò²»×ã
-		e_time_feed_back_operation_end_item_error,		// ¹ºÂò´íÎó - ÎïÆ·´´½¨Ê§°Ü
-		e_time_feed_back_operation_end_time_error,		// ÁìÈ¡´íÎó - Ê±¼äÎ´µ½
-		e_time_feed_back_operation_end_error_01,		// ÁìÈ¡´íÎó - ´íÎóÂë01
+		e_time_feed_back_operation_end_buy_succeed,		// è´­ä¹°æˆåŠŸ
+		e_time_feed_back_operation_end_get_succeed,		// é¢†å–æˆåŠŸ
+		e_time_feed_back_operation_end_template_error,	// è¡¨æ ¼é”™è¯¯
+		e_time_feed_back_operation_end_money_error,		// è´­ä¹°é”™è¯¯ - è´§å¸ä¸è¶³
+		e_time_feed_back_operation_end_item_error,		// è´­ä¹°é”™è¯¯ - ç‰©å“åˆ›å»ºå¤±è´¥
+		e_time_feed_back_operation_end_time_error,		// é¢†å–é”™è¯¯ - æ—¶é—´æœªåˆ°
+		e_time_feed_back_operation_end_error_01,		// é¢†å–é”™è¯¯ - é”™è¯¯ç 01
 	};
 
 	enum e_buy_time_limit_item_end_type
 	{
-		e_buy_time_limit_item_end_type_buy_succeed,		// ¹ºÂò³É¹¦
-		e_buy_time_limit_item_end_type_template_error,	// ±í¸ñ´íÎó
-		e_buy_time_limit_item_end_type_money_error,		// ¹ºÂò´íÎó - »õ±Ò²»×ã
-		e_buy_time_limit_item_end_type_item_error,		// ¹ºÂòÊ§°Ü - ÎïÆ·ÎŞ·¨´´½¨
-		e_buy_time_limit_item_end_type_error_01,		// ÁìÈ¡´íÎó - ´íÎóÂë01
+		e_buy_time_limit_item_end_type_buy_succeed,		// è´­ä¹°æˆåŠŸ
+		e_buy_time_limit_item_end_type_template_error,	// è¡¨æ ¼é”™è¯¯
+		e_buy_time_limit_item_end_type_money_error,		// è´­ä¹°é”™è¯¯ - è´§å¸ä¸è¶³
+		e_buy_time_limit_item_end_type_item_error,		// è´­ä¹°å¤±è´¥ - ç‰©å“æ— æ³•åˆ›å»º
+		e_buy_time_limit_item_end_type_error_01,		// é¢†å–é”™è¯¯ - é”™è¯¯ç 01
 	};
 
 

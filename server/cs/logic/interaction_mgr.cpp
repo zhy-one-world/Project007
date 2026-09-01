@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2018Äê3ÔÂ15ÈÕ
+created: 2018å¹´3æœˆ15æ—¥
 file base: interaction_mgr
 file ext: cpp
 author: wucun
@@ -40,7 +40,7 @@ namespace faith
 	}
 	void cinteraction_mgr::heart_tick(const int64& new_time)
 	{
-		//´¦Àí½»»¥ÇëÇóÊ±¼ä
+		//å¤„ç†äº¤äº’è¯·æ±‚æ—¶é—´
 		//if (m_interaction_state == e_interaction_state_wait_reply)
 		{
 			if (m_handle_invite_cd_time > 0)
@@ -64,7 +64,7 @@ namespace faith
 			}
 		}
 		
-		//±£»¤´úÂë
+		//ä¿æŠ¤ä»£ç 
 		if (m_interaction_state == e_interaction_state_wait_start_real_interaction)
 		{
 			if (m_wait_real_interaction_time > 0)
@@ -227,7 +227,7 @@ namespace faith
 
 	void cinteraction_mgr::recv_interaction_invite(guid_64 invite_guid, faith::e_interaction_type interaction_type)
 	{
-		//µ±Ç°ÊÇ±»ÑûÇëÕß
+		//å½“å‰æ˜¯è¢«é‚€è¯·è€…
 
 		player& invite_player_ref = unit_man::get_player(invite_guid);
 		if (invite_player_ref.is_valid() == false)
@@ -242,7 +242,7 @@ namespace faith
 
 		m_interaction_cdtime = init_unit::get_end_time(GAMECONFIG->InteractionCDTime);
 
-		//ÕıÔÚ±»ÑûÇë½»»¥ ½»»¥ÖĞ Ôò²»ÄÜ½»»¥ Ö±½Ó·µ»Ø½»»¥Ó¦´ğ
+		//æ­£åœ¨è¢«é‚€è¯·äº¤äº’ äº¤äº’ä¸­ åˆ™ä¸èƒ½äº¤äº’ ç›´æ¥è¿”å›äº¤äº’åº”ç­”
 		if (m_handle_invite_cd_time > 0)
 		{
 			send_interaction_answer_to_two_side(invite_guid, interaction_type, faith::e_interaction_reply_be_invited);
@@ -259,7 +259,7 @@ namespace faith
 
 	void cinteraction_mgr::send_interaction_invite(guid_64 invite_guid, faith::e_interaction_type interaction_type)
 	{
-		//µ±Ç°ÊÇ±»ÑûÇëÕß
+		//å½“å‰æ˜¯è¢«é‚€è¯·è€…
 
 		player& be_invited_ref = unit_man::get_player(m_unit_array_index);
 		if (be_invited_ref.is_valid() == false)
@@ -288,11 +288,11 @@ namespace faith
 
 	void cinteraction_mgr::recv_interaction_answer(guid_64 invite_guid, faith::e_interaction_type interaction_type, faith::e_interaction_reply result)
 	{
-		//µ±Ç°ÊÇ±»ÑûÇëÕß
+		//å½“å‰æ˜¯è¢«é‚€è¯·è€…
 
 		if (result == faith::e_interaction_reply_agree)
 		{
-			//Èç¹ûÍ¬Òâ ÔòÉèÖÃ½»»¥Ä¿±êĞÅÏ¢
+			//å¦‚æœåŒæ„ åˆ™è®¾ç½®äº¤äº’ç›®æ ‡ä¿¡æ¯
 			player& be_invited_ref = unit_man::get_player(m_unit_array_index);
 			if (be_invited_ref.is_valid() == false)
 			{
@@ -318,7 +318,7 @@ namespace faith
 		}
 		else
 		{
-			//¾Ü¾ø»ò³¬Ê± ÖØÖÃ½»»¥ĞÅÏ¢
+			//æ‹’ç»æˆ–è¶…æ—¶ é‡ç½®äº¤äº’ä¿¡æ¯
 			guid_64 target_guid = m_interaction_target_guid;
 			reset_interaction_info();
 			player& target_ref = unit_man::get_player(target_guid);
@@ -332,7 +332,7 @@ namespace faith
 
 	void cinteraction_mgr::send_interaction_answer_to_two_side(guid_64 invite_guid, faith::e_interaction_type interaction_type, faith::e_interaction_reply result)
 	{
-		//µ±Ç°ÊÇ±»ÑûÇëÕß
+		//å½“å‰æ˜¯è¢«é‚€è¯·è€…
 
 		player& be_invited_ref = unit_man::get_player(m_unit_array_index);
 		if (be_invited_ref.is_valid() == false)
@@ -349,7 +349,7 @@ namespace faith
 		interaction_invite_reply_proto.set_be_invited_guid(be_invited_ref.get_unit_guid().server_64);
 		interaction_invite_reply_proto.set_interaction_type(interaction_type);
 		interaction_invite_reply_proto.set_reply_result(result);
-		//Èç¹ûÍ¬Òâ Ôò·¢¸øË«·½ ·ñÔòÖ»·¢¸øÑûÇëÕß
+		//å¦‚æœåŒæ„ åˆ™å‘ç»™åŒæ–¹ å¦åˆ™åªå‘ç»™é‚€è¯·è€…
 		if (result == faith::e_interaction_reply_agree)
 		{
 			faith::template_manager::template_type* table = template_manager::get_instance().get_templates(e_InteractionTemplate);
@@ -402,7 +402,7 @@ namespace faith
 
 	void cinteraction_mgr::recv_real_start_interaction(guid_64 be_invited_guid, faith::e_interaction_type interaction_type)
 	{
-		//µ±Ç°ÎªÑûÇë·½
+		//å½“å‰ä¸ºé‚€è¯·æ–¹
 
 		player& invited_ref = unit_man::get_player(m_unit_array_index);
 		if (invited_ref.is_valid() == false)
@@ -429,7 +429,7 @@ namespace faith
 		invited_ref.get_interaction_mgr().set_interaction_state(e_interaction_state_interacting);
 		be_invited_ref.get_interaction_mgr().set_interaction_state(e_interaction_state_interacting);
 
-		//Èç¹ûÊÇË«Æï²¢ÇÒË«·½¶¼ÊÇÆï³Ë×´Ì¬ Ôò±»ÑûÇë·½ÏÂÂí
+		//å¦‚æœæ˜¯åŒéª‘å¹¶ä¸”åŒæ–¹éƒ½æ˜¯éª‘ä¹˜çŠ¶æ€ åˆ™è¢«é‚€è¯·æ–¹ä¸‹é©¬
 		if (((invited_ref.get_pawn_att().get_game_att(e_unit_game_att_movement) == e_move_ment_mount_walk) || (invited_ref.get_pawn_att().get_game_att(e_unit_game_att_movement) == e_move_ment_mount_fly))
 			&& ((be_invited_ref.get_pawn_att().get_game_att(e_unit_game_att_movement) == e_move_ment_mount_walk) || (be_invited_ref.get_pawn_att().get_game_att(e_unit_game_att_movement) == e_move_ment_mount_fly)))
 		{
@@ -438,11 +438,11 @@ namespace faith
 			buff_man::add_buff_inst(be_invited_ref.get_array_index(), be_invited_ref.get_array_index(), 10090014);
 		}
 
-		//Ê×ÏÈÉèÖÃ½»»¥ÊôĞÔÔÙ·¢ËÍ¿ªÊ¼ÕæÕı½»»¥ÏûÏ¢ ÒòÎª¿Í»§¶ËÊÕµ½ÏûÏ¢ºóĞèÒª¸ù¾İ½»»¥ÊôĞÔ´¦Àí
+		//é¦–å…ˆè®¾ç½®äº¤äº’å±æ€§å†å‘é€å¼€å§‹çœŸæ­£äº¤äº’æ¶ˆæ¯ å› ä¸ºå®¢æˆ·ç«¯æ”¶åˆ°æ¶ˆæ¯åéœ€è¦æ ¹æ®äº¤äº’å±æ€§å¤„ç†
 		set_interaction_type_attribute(be_invited_guid, interaction_type);
 		send_real_start_interaction_to_aoi(invited_ref.get_unit_guid(), be_invited_guid, interaction_type);
 		
-		//Èç¹ûÊÇ¾üÍÅ¹²ÎèĞèÒª·¢ËÍ¹²Îè¿ªÊ¼ÌáÊ¾
+		//å¦‚æœæ˜¯å†›å›¢å…±èˆéœ€è¦å‘é€å…±èˆå¼€å§‹æç¤º
 		if (interaction_type == e_interaction_type_yao_legion_dance)
 		{
 			legion_proto_legion_dance_interaction_begin msg;
@@ -453,7 +453,7 @@ namespace faith
 
 	void cinteraction_mgr::send_real_start_interaction_to_aoi(guid_64 invite_guid, guid_64 be_invited_guid, faith::e_interaction_type interaction_type)
 	{
-		//µ±Ç°ÎªÑûÇë·½
+		//å½“å‰ä¸ºé‚€è¯·æ–¹
 
 		player& invited_ref = unit_man::get_player(m_unit_array_index);
 		if (invited_ref.is_valid() == false)
@@ -470,7 +470,7 @@ namespace faith
 
 	void cinteraction_mgr::set_interaction_type_attribute(guid_64 be_invited_guid, faith::e_interaction_type interaction_type)
 	{
-		//µ±Ç°ÎªÑûÇë·½
+		//å½“å‰ä¸ºé‚€è¯·æ–¹
 		player& invited_ref = unit_man::get_player(m_unit_array_index);
 		if (invited_ref.is_valid() == false)
 		{
@@ -530,7 +530,7 @@ namespace faith
 	}
 
 
-	//±£»¤´úÂë
+	//ä¿æŠ¤ä»£ç 
 	void cinteraction_mgr::set_wait_real_interaction_time(float duration_time)
 	{
 		m_wait_real_interaction_time = duration_time;

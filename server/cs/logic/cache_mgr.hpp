@@ -1,9 +1,9 @@
 #pragma once
 /********************************************************************
-created: 2016Äê7ÔÂ15ÈÕ
+created: 2016å¹´7æœˆ15æ—¥
 file base: cache
 author: zhy
-purpose: »º´æ¹ÜÀíÏµÍ³
+purpose: ç¼“å­˜ç®¡ç†ç³»ç»Ÿ
 *********************************************************************/
 #ifndef _CACHE_MGR_HPP_
 #define _CACHE_MGR_HPP_
@@ -33,7 +33,7 @@ namespace faith
 			return s_cache_mgr;
 		}
 	public:
-		//³õÊ¼»¯
+		//åˆå§‹åŒ–
 		void init();
 		void clear_data();
 		player* get_player_ptr();

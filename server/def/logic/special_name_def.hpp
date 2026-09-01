@@ -20,26 +20,26 @@ namespace faith
 #pragma pack(push,1)
 	enum e_special_name_type
 	{
-		e_special_name_type_acheivement = 0,	//	³É¾Í³ÆºÅ
+		e_special_name_type_acheivement = 0,	//	æˆå°±ç§°å·
 		e_special_name_type_acheivement_star,
-		e_special_name_type_military_rank,		//	¾üÏÎ³ÆºÅ
+		e_special_name_type_military_rank,		//	å†›è¡”ç§°å·
 		e_special_name_type_military_rank_star,
-		e_special_name_type_max,				//³ÆºÅµÄ×î´óÖµ				
+		e_special_name_type_max,				//ç§°å·çš„æœ€å¤§å€¼				
 	};
 
 	enum e_special_name_operate_type
 	{
-		e_special_name_operate_upgrade,		//	Éı¼¶
-		e_special_name_operate_promote,		//	ÉıĞÇ 
+		e_special_name_operate_upgrade,		//	å‡çº§
+		e_special_name_operate_promote,		//	å‡æ˜Ÿ 
 	};
 	enum e_special_name_upgrade_end_state
 	{
-		e_special_name_upgrade_succeed,		//³É¹¦
-		e_special_name_upgrade_fail,		//Ê§°Ü
+		e_special_name_upgrade_succeed,		//æˆåŠŸ
+		e_special_name_upgrade_fail,		//å¤±è´¥
 	};
 	struct s_special_name_info
 	{
-		int32						data_ary[e_special_name_type_max];				// ³ÆºÅÊµÀıÊı¾İ
+		int32						data_ary[e_special_name_type_max];				// ç§°å·å®ä¾‹æ•°æ®
 		s_special_name_info()
 		{
 			clear_data();

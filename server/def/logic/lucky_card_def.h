@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2021Äê3ÔÂ24ÈÕ
+created: 2021å¹´3æœˆ24æ—¥
 file base: lucky_card_def
 file ext: h
 author: zhaoyuming
@@ -16,38 +16,38 @@ namespace faith
 {
 #pragma pack(push, 1)
 
-	const int32 lucak_card_max_num = 9;				// ·­ÅÆ×ÜÊı
-	const int32 lucak_card_notice_id = 93000434;	// »ñ½±¹«¸æid
+	const int32 lucak_card_max_num = 9;				// ç¿»ç‰Œæ€»æ•°
+	const int32 lucak_card_notice_id = 93000434;	// è·å¥–å…¬å‘Šid
 
 	enum e_lucak_card_game_state_type
 	{
-		e_lucak_card_game_state_type_begin,			// Î´Ö§¸¶
-		e_lucak_card_game_state_type_first,			// ÒÑÖ§¸¶Î´¿ªÊ¼·­ÅÆ	
-		e_lucak_card_game_state_type_second,		// ÒÑ·­µÚÒ»´Î
-		e_lucak_card_game_state_type_three,			// ÒÑ·­µÚ¶ş´Î
-		e_lucak_card_game_state_type_end,			// ½áÊø
+		e_lucak_card_game_state_type_begin,			// æœªæ”¯ä»˜
+		e_lucak_card_game_state_type_first,			// å·²æ”¯ä»˜æœªå¼€å§‹ç¿»ç‰Œ	
+		e_lucak_card_game_state_type_second,		// å·²ç¿»ç¬¬ä¸€æ¬¡
+		e_lucak_card_game_state_type_three,			// å·²ç¿»ç¬¬äºŒæ¬¡
+		e_lucak_card_game_state_type_end,			// ç»“æŸ
 	};
 
 	enum e_lucak_card_use_type
 	{
-		e_lucak_card_use_type_free,					// Ãâ·Ñ
-		e_lucak_card_use_type_normal,				// Õı³£	
-		e_lucak_card_use_type_award,				// ±£µ×
+		e_lucak_card_use_type_free,					// å…è´¹
+		e_lucak_card_use_type_normal,				// æ­£å¸¸	
+		e_lucak_card_use_type_award,				// ä¿åº•
 	};
 
 	enum e_lucak_card_award_type
 	{
-		e_lucak_card_award_type_special = 1,		// ÌØµÈ½±
-		e_lucak_card_award_type_first,				// Ò»µÈ½±
-		e_lucak_card_award_type_second,				// ¶şµÈ½±
-		e_lucak_card_award_type_three,				// ÈıµÈ½±
+		e_lucak_card_award_type_special = 1,		// ç‰¹ç­‰å¥–
+		e_lucak_card_award_type_first,				// ä¸€ç­‰å¥–
+		e_lucak_card_award_type_second,				// äºŒç­‰å¥–
+		e_lucak_card_award_type_three,				// ä¸‰ç­‰å¥–
 	};
 
 	enum e_lucak_card_info
 	{
-		e_lucak_card_info_null ,					// Î´¿ªÆô
-		e_lucak_card_info_black,					// ºÚÉ«
-		e_lucak_card_info_red,						// ºìÉ«
+		e_lucak_card_info_null ,					// æœªå¼€å¯
+		e_lucak_card_info_black,					// é»‘è‰²
+		e_lucak_card_info_red,						// çº¢è‰²
 	};	
 
 	enum e_lucak_card_set_activity
@@ -62,33 +62,33 @@ namespace faith
 
 	enum e_lucak_card_item_info
 	{
-		e_lucak_card_item_info_award_type,			// ½±ÀøÀàĞÍ
-		e_lucak_card_item_info_item_index,			// ½±ÀøË÷Òı
-		e_lucak_card_item_info_item_id,				// ÎïÆ·id
-		e_lucak_card_item_info_item_num,			// ÎïÆ·ÊıÁ¿
-		e_lucak_card_item_info_basice_weight,		// ½±Àø»ù´¡È¨ÖØ
-		e_lucak_card_item_info_change_weight,		// ½±ÀøÈ¨ÖØĞŞÕı
+		e_lucak_card_item_info_award_type,			// å¥–åŠ±ç±»å‹
+		e_lucak_card_item_info_item_index,			// å¥–åŠ±ç´¢å¼•
+		e_lucak_card_item_info_item_id,				// ç‰©å“id
+		e_lucak_card_item_info_item_num,			// ç‰©å“æ•°é‡
+		e_lucak_card_item_info_basice_weight,		// å¥–åŠ±åŸºç¡€æƒé‡
+		e_lucak_card_item_info_change_weight,		// å¥–åŠ±æƒé‡ä¿®æ­£
 		e_lucak_card_item_info_max,
 	};
 
 	enum e_lucak_card_operate_end
 	{
-		e_lucak_card_operate_end_succeed,			// ³É¹¦
-		e_lucak_card_operate_end_not_have_item,		// È±ÉÙ»î¶¯ÎïÆ·
-		e_lucak_card_operate_end_not_open,			// »î¶¯Î´¿ªÆô
-		e_lucak_card_operate_end_have_touch,		// ÒÑ¾­´¥·¢¹ıÁË
+		e_lucak_card_operate_end_succeed,			// æˆåŠŸ
+		e_lucak_card_operate_end_not_have_item,		// ç¼ºå°‘æ´»åŠ¨ç‰©å“
+		e_lucak_card_operate_end_not_open,			// æ´»åŠ¨æœªå¼€å¯
+		e_lucak_card_operate_end_have_touch,		// å·²ç»è§¦å‘è¿‡äº†
 	};
 
 	struct s_lucky_card_role_info
 	{
-		int32 activity_guid;												// »î¶¯Guid
-		int32 state_info;													// ½øĞĞ×´Ì¬
-		int32 is_have_free;													// ÊÇ·ñÓĞÃâ·Ñ´ÎÊı
-		int32 end_info;														// ½á¹ûÀàĞÍ
-		int32 end_item_id;													// ½±ÀøÎïÆ·id
-		int32 no_get_num;													// Á¬ĞøÎ´»ñµÃ½±Àø´ÎÊı
-		int32 lucky_card_info;												// ÒÑ·­ÅÆĞÅÏ¢	10½øÖÆ±íÊ¾ ´Ó¸öÎ»Êı¿ªÊ¼Ã¿Ò»Î»´ú±íÒ»ÕÅÅÆµÄ×´Ì¬
-		xchar get_item_array[time_limit_activity_string_max_size + 1];		// »ñÈ¡ÎïÆ·´ÎÊı
+		int32 activity_guid;												// æ´»åŠ¨Guid
+		int32 state_info;													// è¿›è¡ŒçŠ¶æ€
+		int32 is_have_free;													// æ˜¯å¦æœ‰å…è´¹æ¬¡æ•°
+		int32 end_info;														// ç»“æœç±»å‹
+		int32 end_item_id;													// å¥–åŠ±ç‰©å“id
+		int32 no_get_num;													// è¿ç»­æœªè·å¾—å¥–åŠ±æ¬¡æ•°
+		int32 lucky_card_info;												// å·²ç¿»ç‰Œä¿¡æ¯	10è¿›åˆ¶è¡¨ç¤º ä»ä¸ªä½æ•°å¼€å§‹æ¯ä¸€ä½ä»£è¡¨ä¸€å¼ ç‰Œçš„çŠ¶æ€
+		xchar get_item_array[time_limit_activity_string_max_size + 1];		// è·å–ç‰©å“æ¬¡æ•°
 		s_lucky_card_role_info()
 		{
 			memset(this, 0, sizeof(*this));
@@ -105,7 +105,7 @@ namespace faith
 			memcpy(get_item_array, temp_name.c_str(), temp_name.size() > time_limit_activity_string_max_size ? time_limit_activity_string_max_size : temp_name.size());
 		}
 
-		//»ñÈ¡·­ÅÆĞÅÏ¢
+		//è·å–ç¿»ç‰Œä¿¡æ¯
 		int32 get_lucky_card_info(int32 index)
 		{
 			int32 card_info = lucky_card_info / pow(10, (index - 1));
@@ -116,7 +116,7 @@ namespace faith
 			return card_info % 10;
 		}
 
-		//ÉèÖÃ·­ÅÆĞÅÏ¢
+		//è®¾ç½®ç¿»ç‰Œä¿¡æ¯
 		void set_lucky_card_info(int32 index, int32 _info)
 		{
 			int32 cur_info = get_lucky_card_info(index);
@@ -127,7 +127,7 @@ namespace faith
 			lucky_card_info += ((_info - cur_info)  * pow(10, (index - 1)));
 		}
 
-		// »ñµÃ·­ÅÆÑÕÉ«ÊıÁ¿
+		// è·å¾—ç¿»ç‰Œé¢œè‰²æ•°é‡
 		int32 get_lucky_card_color_num(int32 color_index)
 		{
 			int32 have_num = 0;
@@ -141,7 +141,7 @@ namespace faith
 			return have_num;
 		}
 
-		//½áÊøÇåÀí
+		//ç»“æŸæ¸…ç†
 		void end_clear()
 		{
 			state_info = 0;
@@ -186,7 +186,7 @@ namespace faith
 			{
 				return basice_weight * 100;
 			}
-			//¾«¶ÈÈ¡Ğ¡ÊıµãºóÁ½Î»
+			//ç²¾åº¦å–å°æ•°ç‚¹åä¸¤ä½
 			int64 end_weight = (basice_weight * pow((change_weight / 100), (float)get_num)) * 100;
 			if (end_weight < 0)
 			{

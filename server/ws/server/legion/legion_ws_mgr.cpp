@@ -1,4 +1,4 @@
-#include <algorithm>
+﻿#include <algorithm>
 #include "legion_ws_mgr.h"
 #include <legion_msg.hpp>
 #include "Logic/time_def.hpp"
@@ -49,7 +49,6 @@ namespace faith
 
 		for (auto ite = m_legion_map.begin(); ite != m_legion_map.end(); )
 		{
-			// tick�����ɾ��legion Ҫ�����ַ�ʽ��ֹ������ʧЧ
 			auto temp_it = ite++;
 			temp_it->second.tick(tick_time);
 		}
@@ -80,7 +79,7 @@ namespace faith
 
 		int32 legion_mgr_tick_day_cur = now_tm->tm_year * 1000 + now_tm->tm_yday;
 		//int32 legion_mgr_tick_day_cur = tick_time / day_tick_time;
-		static int32 tick_day_last = legion_mgr_tick_day_cur; //��֤��Ҫ�������ִ�п��� �����ͣ��ά���ڼ������ ��ִ��һ�� kero
+		static int32 tick_day_last = legion_mgr_tick_day_cur;
 		if (legion_mgr_tick_day_cur > tick_day_last)
 		{
 			tick_day_last = legion_mgr_tick_day_cur;
@@ -92,7 +91,6 @@ namespace faith
 	{
 		for (auto ite = m_legion_map.begin(); ite != m_legion_map.end(); )
 		{
-			// tick�����ɾ��legion Ҫ�����ַ�ʽ��ֹ������ʧЧ
 			auto temp_it = ite++;
 			temp_it->second.tick_1_min(tick_time);
 			temp_it->second.save_legion_applicant_to_db();
@@ -115,7 +113,6 @@ namespace faith
 	{
 		for (auto ite = m_legion_map.begin(); ite != m_legion_map.end(); )
 		{
-			// tick�����ɾ��legion Ҫ�����ַ�ʽ��ֹ������ʧЧ
 			auto temp_it = ite++;
 			temp_it->second.tick_5_min(tick_time);
 		}
@@ -130,7 +127,6 @@ namespace faith
 	{
 		for (auto ite = m_legion_map.begin(); ite != m_legion_map.end(); )
 		{
-			// tick�����ɾ��legion Ҫ�����ַ�ʽ��ֹ������ʧЧ
 			auto temp_it = ite++;
 			temp_it->second.refresh_day_for_zero();
 		}
@@ -160,7 +156,6 @@ namespace faith
 	{
 		int32 active_legion_num = 0;
 
-		//�������Ÿ�����ȡ��¼
 		//ws2dp_delete_legion_city_war_member_info c_member_info_msg;
 		//c_member_info_msg.del_type = e_legion_use_contribution_type_legion_welfare;
 		//ws_client::getInstance().send_to_dp(&c_member_info_msg, sizeof(c_member_info_msg));
@@ -169,13 +164,9 @@ namespace faith
 
 		for (auto ite = m_legion_map.begin(); ite != m_legion_map.end(); )
 		{
-			// tick�����ɾ��legion Ҫ�����ַ�ʽ��ֹ������ʧЧ
 			auto  temp_it = ite++;
-			//�������Ÿ�����ȡ����
 			temp_it->second.clear_all_city_war_member_by_type(e_legion_use_contribution_type_legion_welfare);
-			//���ž��Ÿ�������
 			temp_it->second.legion_welfare_account();
-			//ͳ�ƻ�Ծ��������
 			if (temp_it->second.week_is_have_player_active())
 			{
 				active_legion_num++;
@@ -183,7 +174,6 @@ namespace faith
 			temp_it->second.refresh_week_for_twenty_three();
 		}
 
-		//ÿ��23:00��¼���ܻ�Ծ��������
 		set_log_var(log_head);
 		set_log_common_head_part3(log_head, "null", world_server::getInstance().get_server_id(), utility::get_tick_count());
 
@@ -194,7 +184,6 @@ namespace faith
 	{
 		for (auto ite = m_legion_map.begin(); ite != m_legion_map.end(); )
 		{
-			// tick�����ɾ��legion Ҫ�����ַ�ʽ��ֹ������ʧЧ
 			auto temp_it = ite++;
 			temp_it->second.refresh_day_for_five();
 		}
@@ -230,11 +219,6 @@ namespace faith
 		script_mgr::get_instance().call_func("ws2dp_send", "send_delete_legion_info_lua", 0, false, "%l", legion_guid.server_64);	
 	}
 
-	// ������:
-	//  1 ��ȷִ��
-	// -1 ������Ϣ����
-	// -2 �������ѱ�ʹ��
-	// -3 Ҫ����ľ����Ѿ��ھ��Ź�������
 	int32 legion_ws_mgr::add_legion(legion_ws& new_legion)
 	{
 		const guid_64& legion_guid = new_legion.get_legion_guid();
@@ -244,7 +228,6 @@ namespace faith
 			return -1;
 		}
 
-		// �����������Ƿ��Ѿ���ʹ��
 		std::string temp_legion_name = new_legion.get_legion_name();
 		if (exist_name_in_legion_name_searcher(temp_legion_name) == true)
 		{
@@ -260,10 +243,8 @@ namespace faith
 
 		m_legion_map.insert({ legion_guid.server_64, new_legion });
 
-		// ���������Ʒ���������Ʋ�ѯ�б���,�Է�ֹ�����������ŵ����󴴽���ͬ���Ƶľ���
 		add_name_in_legion_name_searcher(temp_legion_name);
 
-		// ����Ų�ѯ�б��������¾��ŵ���Ϣ
 		add_into_ordered_legion_list(m_ordered_legion_list, new_legion.get_legion_gs_value(), legion_guid);
 		if (new_legion.get_legion_info(ELegionInfo_auto_accept_new_member) > 0)
 		{
@@ -302,12 +283,10 @@ namespace faith
 		cross_server_city_war_ws_mgr::get_instance().refresh_rank_with_del_legion(legion_guid);
 		cross_server_city_war_ws_mgr::get_instance().send_to_gate_change_legion_msg(legion_guid, e_change_cross_city_type_del_legion);
 		legion_ws& legion_ws_ref = ite->second;
-		// ��ɢ�ľ��ŵ����ƻ��ÿ��Ա���������ʹ��
 		std::string temp_legion_name = legion_ws_ref.get_legion_name();
 		clear_name_in_legion_name_searcher(temp_legion_name);
 		
 		legion_ws_ref.del_legion_station_map();
-		// �����ŴӾ��Ų�ѯ�б���ժ��
 		del_from_ordered_legion_list(m_ordered_legion_list, legion_guid);
 		del_from_ordered_legion_list(m_ordered_auto_accept_new_member_legion_list, legion_guid);
 		del_rank_with_del_legion(legion_guid);
@@ -323,8 +302,6 @@ namespace faith
 			legion_ws_ref.get_event_logger().clear_legion_event_in_db();
 			legion_ws_ref.get_bonus_info_ins().clear_legion_bonus_info_in_db();
 			legion_ws_ref.get_warehouse().clear_legion_warehouse_info_in_db(legion_guid);
-			// PS: �뱣����֪ͨ��Ա��ɢ���ŵ���Ϣ����֮�����������ŵ�����,��Ϊ������Ϣ�Ĺ�����Ҫ�������ŵĳ�Ա�б�
-			// �ѽ�ɢ���ŵ���Ϣ���͸�ÿһ����Ա
 			legion_proto_dissolve_legion_end dissolve_legion_end_to_client_msg;
 			legion_ws_ref.send_message_to_all_member(&dissolve_legion_end_to_client_msg, e_msgindex_s2c_dissolve_legion_end);
 			
@@ -353,24 +330,20 @@ namespace faith
 			return;
 		}
 
-		// �������Ѿ���ĳ�������оͲ��ܴ�������
 		if (get_unit_legion(player_guid) != nullptr)
 		{
 			return;
 		}
-		// ���ŵ����ֱ�����legion_name_size_min_limit��legion_name_size_max_limit�ĳ���
 		if (l_name_len < legion_name_size_min_limit || l_name_len > max_name_size)
 		{
 			return;
 		}
-		// ����Ƿ����
 		if (invalid_ansi_word::is_valid_ansi_str(l_name) == false)
 		{
 			legion_ws_mgr::get_instance().send_legion_error_to_session(session, e_legion_error_error_legion_name_illegal);
 			return;
 		}
 
-		//�ж��Ƿ��ھ��Żʱ���� �ڻʱ���ڲ������������� 
 		/*int32 error_num = is_can_create_legion();
 		if (error_num > 0)
 		{
@@ -378,19 +351,16 @@ namespace faith
 			return;
 		}*/
 
-		// ����Ƿ���ڷǷ��ַ�
 		if (invalid_ansi_word::include_invalid_ansi_str(l_name))
 		{
 			legion_ws_mgr::get_instance().send_legion_error_to_session(session, e_legion_error_error_legion_name_illegal);
 			return;
 		}
-		// Ŀǰֻ�ܴ���1����2���ľ���
 		if (l_level < 1 || l_level > 2)
 		{
 			return;
 		}
 
-		// �����������Ƿ��Ѿ��ﵽ����
 		if (get_legion_num() >= max_legion_count)
 		{
 			send_legion_error_to_session(session, e_legion_error_full_legion_num);
@@ -417,7 +387,7 @@ namespace faith
 		new_legion_ws.set_legion_info(ELegionInfo_auto_accept_new_member, auto_accept, false);
 
 		new_legion_ws.set_legion_info(ELegionInfo_construction_level_main, l_level, false);
-		new_legion_ws.set_legion_info(ELegionInfo_construction_level_1, 1, false);//����ʱ��������Ĭ��Ϊ1
+		new_legion_ws.set_legion_info(ELegionInfo_construction_level_1, 1, false);
 		new_legion_ws.set_legion_info(ELegionInfo_construction_level_2, 1, false);
 		new_legion_ws.set_legion_info(ELegionInfo_construction_level_3, 1, false);
 
@@ -439,7 +409,6 @@ namespace faith
 			return;
 		}
 
-		// ����ʼ�������ŵ���Ϣ���͵����������ڵ�cs��
 		ws2cs_create_legion create_legion_end_to_cs_msg;
 		create_legion_end_to_cs_msg.legion_guid = new_legion_ws.get_legion_guid();
 		memcpy(create_legion_end_to_cs_msg.legion_name, l_name, l_name_len);
@@ -473,7 +442,6 @@ namespace faith
 			{
 				break;
 			}
-			//�޸�Ĭ�Ͼ��Ź���
 			const std::string& announcement_content = template_manager::get_instance().get_str_by_string_template_id(legion_init_announcement_str_id);
 			if (announcement_content.length() <= max_legion_announcement_size)
 			{
@@ -498,12 +466,10 @@ namespace faith
 			{
 				break;
 			}
-			//���
 			legion_ws_ptr->save_legion_info_to_db();
 
 			chief_session->send_to_client(&create_legion_end_msg, e_msgindex_s2c_create_legion_end);
 			
-			//�������Ź���				
 			int32 notice_id = GAMECONFIG->CreateLegionNotice;
 			std::vector<std::string> vec_notice_str;
 			vec_notice_str.push_back(template_manager::get_instance().get_str_id_by_notice_id(notice_id));
@@ -513,7 +479,6 @@ namespace faith
 			int32 create_time = time_helper::get_cur_time_new().second;
 			event_ws_mgr::get_instance().send_notice_to_all(notice_id, create_time, legion_ws_ptr->get_chief_guid(), notice_str);
 
-			// ��������Ƶ����ļ
 			legion_ws_ptr->send_legion_recruit(chief_info.role_guid, chief_info.role_name);
 			legion_ws_ptr->recalcu_legion_fighting_power();
 			update_ordered_legion_list();
@@ -554,7 +519,6 @@ namespace faith
 		{
 			return false;
 		}
-		// // ����Ҫ����ľ����Ƿ��Զ������³�Ա���в�ͬ�Ĳ���
 		if (legion_ws_ptr->is_auto_accept_new_member())
 		{
 			s_legion_member_info new_member_info;
@@ -592,14 +556,14 @@ namespace faith
 			}
 			break;
 
-			case e_add_applicant_legion_full: // ��������ŵ������б�����
+			case e_add_applicant_legion_full:
 				if (true == need_send_message_to_client)
 				{
 					send_legion_error_to_session(player_session, e_legion_error_applicant_list_full);
 				}
 				break;
 
-			case e_add_applicant_repeat: // �Ѿ���������ŷ��͹�������
+			case e_add_applicant_repeat:
 				if (true == need_send_message_to_client)
 				{
 					send_legion_error_to_session(player_session, e_legion_error_applicant_already_exist);
@@ -620,7 +584,6 @@ namespace faith
 			return;
 		}
 
-		// ���ȱ����Զ����˵ľ���
 		int32 len = m_ordered_auto_accept_new_member_legion_list.size();
 		if (len > 0)
 		{
@@ -634,7 +597,6 @@ namespace faith
 			}
 		}
 
-		// �������з��Զ����˵ľ���
 		len = m_ordered_legion_list.size();
 		if (len > 0)
 		{
@@ -652,13 +614,11 @@ namespace faith
 	{
 		//client_session* join_player_session = client_session_mgr::getInstance().get_session(player_guid);
 		
-		// �����Ƿ��Ѿ�����
 		if (legion_ref.is_legion_full())
 		{
 			return false;
 		}
 
-		// �������Ѿ���ĳ��������
 		if (get_unit_legion(player_guid) != nullptr)
 		{
 			send_legion_error_to_session(op_member_session, e_legion_error_player_joined_other_legion);
@@ -677,16 +637,14 @@ namespace faith
 
 		client_session* noti_session = nullptr;
 
-		if (op_member_session) //��Ա����
+		if (op_member_session)
 		{
-			// �����Լ����Լ�
 			if (op_member_session->get_role_guid() == player_guid)
 			{
 				return false;
 			}
 			
 			e_legion_job_title op_member_job_title = legion_ref.get_job_title(op_member_session->get_role_guid());
-			// û���κ�ְλ�Ľ�ɫ��������
 			if (op_member_job_title <= e_legion_job_title_none)
 			{
 				return false;
@@ -715,7 +673,6 @@ namespace faith
 		//	return;
 		//}
 
-		// ����ǳ�ս��ս����,��ô�ڳ�ս�ڼ䲻���˳�����
 		if (get_legion_city_war().is_during_city_war(legion_ref.get_legion_guid()) == true)
 		{
 			send_legion_error_to_session(noti_session, e_legion_error_can_not_leave_legion_during_city_war);
@@ -732,7 +689,6 @@ namespace faith
 		client_session* member_session = client_session_mgr::getInstance().get_session(player_guid);
 		if (member_session)
 		{
-			//�������ľ����ǣ���սʤ���ľ��������ӳƺ�
 			if (legion_guid == get_legion_city_war().get_overlord_legion())
 			{
 				get_legion_city_war().send_one_add_city_war_winner_title(member_session);
@@ -746,10 +702,8 @@ namespace faith
 		guid_64 empty_legion_guid;
 		ranking_mgr_ws::change_ranking_player_legion_info(player_guid, empty_legion_guid, "");
 
-		//����ǳ�սʤ��һ��ɾ����Ա��ɾ����սʤ����title
 		if (legion_guid == get_legion_city_war().get_overlord_legion())
 		{
-			//����ǳ���
 			if (get_legion_city_war().get_city_master_guid() == player_guid)
 			{
 				//get_legion_city_war().send_del_city_master_stuff(player_guid);
@@ -986,8 +940,6 @@ namespace faith
 
 		int32 len = legion_list.size();
 
-		// �մ����ľ���ֻ��һ����Ա,����ս�����Ƚϵ�,��Ϊ�б����ǰ�ս�����Ӵ�С��
-		// ˳������,�������һ����ʼ�ȽϿ��Ը������ɲ������
 		for (int32 i = len - 1; i >= 0; --i)
 		{
 			if (legion_fighting_power < legion_list[i].fighting_power)
@@ -1042,7 +994,6 @@ namespace faith
 	{
 		get_legion_list_msg.set_legion_list_len(0);
 
-		// �����Ƿ�ֻ����Զ����˵�������ѡ����Ӧ�Ĳ�ѯ�б�
 		std::vector<fighting_power_legion_pair>* legion_list_ptr = nullptr;
 		if (only_accept_new_member_legion)
 		{
@@ -1269,7 +1220,6 @@ namespace faith
 
 		int32 create_time = time_helper::get_cur_time_new().second;
 
-		//���а��һ
 		int32 top_notice_id = 93000189;
 		const guid_64& top_sender_guid = rank_list.front().role_guid;
 		std::vector<std::string> vec_notice_str_top;
@@ -1304,7 +1254,6 @@ namespace faith
 			legion_rank_list& _rank_list = m_legion_act_ranks[e_legion_act_type_raid];
 			int32 create_time = time_helper::get_cur_time_new().second;
 
-			//��һ������
 			MapTemplate* map_ptr = GET_TEMPLATE(MapTemplate, _rank_list.front().ranking_value / LegionBossRankingPara1 + legion_start_legion_boss_map_id);
 			if (nullptr == map_ptr)
 			{
@@ -1322,7 +1271,6 @@ namespace faith
 			std::string top_notice_str = init_unit::implode(vec_notice_str_top);
 			event_ws_mgr::get_instance().send_notice_to_all(top_notice_id, create_time, top_sender_guid, top_notice_str);
 
-			//�ϼ������й���
 			int32 _rank = 0;
 			int32 notice_id = 93000196;
 			legion_rank_list::const_iterator rank_pos_ite = _rank_list.end();
@@ -1344,7 +1292,6 @@ namespace faith
 			legion_rank_list& _rank_list = m_legion_act_ranks[e_legion_act_type_bonfire];
 			int32 create_time = time_helper::get_cur_time_new().second;
 
-			//��һ������
 			int32 top_notice_id = 93000197;
 			guid_64 top_sender_guid = _rank_list.front().role_guid;
 			std::vector<std::string> vec_notice_str_top;
@@ -1354,7 +1301,6 @@ namespace faith
 			std::string top_notice_str = init_unit::implode(vec_notice_str_top);
 			event_ws_mgr::get_instance().send_notice_to_all(top_notice_id, create_time, top_sender_guid, top_notice_str);
 
-			//�ϼ������й���
 			int32 _rank = 0;
 			int32 notice_id = 93000198;
 			legion_rank_list::const_iterator rank_pos_ite = _rank_list.end();
@@ -1631,7 +1577,6 @@ namespace faith
 
 	void legion_ws_mgr::change_player_name_func(const guid_64& role_guid, const xstring& role_name)
 	{
-		//���ų�Ա
 		auto iter_legion_ws = m_legion_map.begin();
 		for (; iter_legion_ws != m_legion_map.end(); iter_legion_ws++)
 		{
@@ -1809,9 +1754,7 @@ namespace faith
 		int32 active_legion_num = 0;
 		for (auto ite = m_legion_map.begin(); ite != m_legion_map.end(); )
 		{
-			// tick�����ɾ��legion Ҫ�����ַ�ʽ��ֹ������ʧЧ
 			auto temp_it = ite++;
-			//ͳ�ƻ�Ծ��������
 			if (temp_it->second.week_is_have_player_active())
 			{
 				active_legion_num++;

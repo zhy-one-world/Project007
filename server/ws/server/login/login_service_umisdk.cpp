@@ -39,12 +39,12 @@ namespace faith
 		
 		xstring sdk_url = SERVERCONFIG->login_url; 
 		
-		// 自定义请求头
+		// 鑷畾涔夎姹傚ご
 		std::vector<xstring> head_list;
 		head_list.push_back("Content-Type:application/x-www-form-urlencoded");
 		xstring url_para = "token=" + proto_data.sdk_data().data();
 
-		// 异步请求
+		// 寮傛璇锋眰
 		http_access_mgr::get_instance().async_request
 		(
 			client_uid,
@@ -78,7 +78,7 @@ namespace faith
 		world_server::getInstance().send_to_fep(pdata->client_uid.fepserver_uid, &request, sizeof(request));
 	}
 
-	void login_service_umisdk::on_login_result_handle(ui64 http_id /*网关服务器ip*/, uint32 http_error_code, const xstring& http_error_info, const xstring& http_result)
+	void login_service_umisdk::on_login_result_handle(ui64 http_id /*缃戝叧鏈嶅姟鍣╥p*/, uint32 http_error_code, const xstring& http_error_info, const xstring& http_result)
 	{
 		CONSOLE_INFO("login_result:{}",http_result);
 		

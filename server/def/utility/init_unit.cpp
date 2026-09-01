@@ -246,15 +246,15 @@ namespace faith
 				break;
 			}
 
-			strSub = strTemp.substr(nBeginPos, nEndPos - nBeginPos + 2); // ½ØÈ¡Ç°ÃæµÄ×Ö´®XXX%s
-			strTemp = strTemp.substr(nEndPos + 2, strTemp.length() - nEndPos - 2); // Ëõ¶ÌstrTemp
+			strSub = strTemp.substr(nBeginPos, nEndPos - nBeginPos + 2); // æˆªå–å‰é¢çš„å­—ä¸²XXX%s
+			strTemp = strTemp.substr(nEndPos + 2, strTemp.length() - nEndPos - 2); // ç¼©çŸ­strTemp
 			
 			nDestLenCur = strlen(szDest);
 			if (nDestSize <= nDestLenCur + strSub.length() + strParam.length() - 2)
 			{
 				return;
 			}
-			sprintf(szDest + nDestLenCur, strSub.c_str(), strParam.c_str()); // °´¸ñÊ½´æÈë
+			sprintf(szDest + nDestLenCur, strSub.c_str(), strParam.c_str()); // æŒ‰æ ¼å¼å­˜å…¥
 		}
 
 		nDestLenCur = strlen(szDest);
@@ -263,7 +263,7 @@ namespace faith
 			return;
 		}
 
-		// Èç¹ûÎªXXX%sYYY %sÒÔÇ°µÄ×Ö´®Ç°ÃæÒÑ¾­´¦Àí¹ı Ê£ÓàµÄ×Ö´®»¹ĞèÒªÆ´ÆğÀ´
+		// å¦‚æœä¸ºXXX%sYYY %sä»¥å‰çš„å­—ä¸²å‰é¢å·²ç»å¤„ç†è¿‡ å‰©ä½™çš„å­—ä¸²è¿˜éœ€è¦æ‹¼èµ·æ¥
 		strncpy(szDest + nDestLenCur, strTemp.c_str(), strTemp.length());
 	}
 
@@ -396,8 +396,8 @@ namespace faith
 		}
 	}
 
-	// ÅĞ¶ÏÊÇ·ñÊÇ¹«ÓÃµØÍ¼,Èç¹ûµØÍ¼ÊÇ¹«ÓÃµØÍ¼,Ôò½øÈë³¡¾°ÎŞĞè¶îÍâÌõ¼ş,ÓÎÏ·ÄÚÈİ½áÊøÊ±
-	// Ò²²»»áµ¯³ö½áËã½çÃæ
+	// åˆ¤æ–­æ˜¯å¦æ˜¯å…¬ç”¨åœ°å›¾,å¦‚æœåœ°å›¾æ˜¯å…¬ç”¨åœ°å›¾,åˆ™è¿›å…¥åœºæ™¯æ— éœ€é¢å¤–æ¡ä»¶,æ¸¸æˆå†…å®¹ç»“æŸæ—¶
+	// ä¹Ÿä¸ä¼šå¼¹å‡ºç»“ç®—ç•Œé¢
 	bool init_unit::get_map_public(int32 map_type)
 	{
 		switch (map_type)
@@ -498,7 +498,7 @@ namespace faith
 		}
 	}
 
-	//´ò±¦¶àÈËµØÍ¼²ÅĞèÒªÏÔÊ¾µôÂä¹éÊô
+	//æ‰“å®å¤šäººåœ°å›¾æ‰éœ€è¦æ˜¾ç¤ºæ‰è½å½’å±
 	bool init_unit::get_map_gain_treasure_multiplayer(int32 map_type)
 	{
 		switch (map_type)
@@ -515,7 +515,7 @@ namespace faith
 		}
 	}
 	
-	// ÅĞ¶ÏÊÇ·ñĞèÒª´´½¨ĞÂµÄµØÍ¼,·µ»Øfalse±íÊ¾²»ĞèÒª
+	// åˆ¤æ–­æ˜¯å¦éœ€è¦åˆ›å»ºæ–°çš„åœ°å›¾,è¿”å›falseè¡¨ç¤ºä¸éœ€è¦
 	bool init_unit::get_map_open_new(int32 map_type)
 	{
 		switch (map_type)
@@ -544,7 +544,7 @@ namespace faith
 		}
 	}
 	
-	// µ±µØÍ¼ÂúÈËºóÊÇ·ñ´´½¨ĞÂµÄµØÍ¼
+	// å½“åœ°å›¾æ»¡äººåæ˜¯å¦åˆ›å»ºæ–°çš„åœ°å›¾
 	bool init_unit::get_map_create_full(int32 map_type)
 	{
 		switch (map_type)
@@ -562,9 +562,9 @@ namespace faith
 		}
 	}
 	
-	// ÊÇ·ñÊ¼ÖÕ±£³ÖÄ³¸öµØÍ¼µÄÒıÓÃ,ÓÃÀ´ÔÚµØÍ¼ÖĞ[Ã»ÓĞ½ÇÉ«Ê±]»ØÊÕµØÍ¼µÄÄÚ´æ.
-	// ±ÈÈç:
-	//     ´óÊÀ½çÀàµÄµØÍ¼[¼´Ê¹Ã»ÈË]Ò²²»Ó¦¸ÃÇåÀíµôËü,ËùÒÔ´óÊÀ½çµÄµØÍ¼»á·µ»Øtrue
+	// æ˜¯å¦å§‹ç»ˆä¿æŒæŸä¸ªåœ°å›¾çš„å¼•ç”¨,ç”¨æ¥åœ¨åœ°å›¾ä¸­[æ²¡æœ‰è§’è‰²æ—¶]å›æ”¶åœ°å›¾çš„å†…å­˜.
+	// æ¯”å¦‚:
+	//     å¤§ä¸–ç•Œç±»çš„åœ°å›¾[å³ä½¿æ²¡äºº]ä¹Ÿä¸åº”è¯¥æ¸…ç†æ‰å®ƒ,æ‰€ä»¥å¤§ä¸–ç•Œçš„åœ°å›¾ä¼šè¿”å›true
 	bool init_unit::get_map_hold(int32 map_type)
 	{
 		switch (map_type)
@@ -979,7 +979,7 @@ namespace faith
 		item_data.data_ary[e_item_info_container_type] = container_type;
 		item_data.data_ary[e_item_info_stack_count] = stack_count;
 
-		// Èç¹ûItemTemplateÄ£°åÖĞµÄlocked×Ö¶ÎÊÇ1£¬ÄÇÃ´²»ÂÛÔõÃ´Ñù¸ÄÎïÆ·¶¼ÊÇ°ó¶¨µÄ(Ç¿ÖÆ°ó¶¨)
+		// å¦‚æœItemTemplateæ¨¡æ¿ä¸­çš„lockedå­—æ®µæ˜¯1ï¼Œé‚£ä¹ˆä¸è®ºæ€ä¹ˆæ ·æ”¹ç‰©å“éƒ½æ˜¯ç»‘å®šçš„(å¼ºåˆ¶ç»‘å®š)
 		if (item_template_ptr->locked > 0)
 		{
 			item_data.data_ary[e_item_info_locked] = 1;
@@ -1003,7 +1003,7 @@ namespace faith
 
 		switch ((e_item_type)(item_template_ptr->item_type))
 		{
-			// Èç¹ûÊÇ×°±¸ÀàµÄÎïÆ·Òª¿´¿´ËüÊÇ·ñĞèÒªÉú³É×¿Ô½ÊôĞÔ
+			// å¦‚æœæ˜¯è£…å¤‡ç±»çš„ç‰©å“è¦çœ‹çœ‹å®ƒæ˜¯å¦éœ€è¦ç”Ÿæˆå“è¶Šå±æ€§
 			case e_item_type_weapon:
 			case e_item_type_armor:
 			{
@@ -1017,12 +1017,12 @@ namespace faith
 			break;
 			case e_item_type_mount:
 			case e_item_type_wing:
-				//×øÆï¡¢³á°òĞèÒªÒ»ÉÏÀ´ÉèÖÃ²»ÓÃ»Ã»¯
+				//åéª‘ã€ç¿…è†€éœ€è¦ä¸€ä¸Šæ¥è®¾ç½®ä¸ç”¨å¹»åŒ–
 				item_data.data_ary[e_item_info_showing_illusion_idex] = -1;				
 				break;
 			case e_item_type_spirit:
 			{
-				//¾«ÁéĞèÒªÒ»ÉÏÀ´ÉèÖÃ²»ÓÃ»Ã»¯
+				//ç²¾çµéœ€è¦ä¸€ä¸Šæ¥è®¾ç½®ä¸ç”¨å¹»åŒ–
 				item_data.data_ary[e_item_info_showing_illusion_idex] = -1;
 				
 				//random_sprite_flair_property(item_data);
@@ -1098,7 +1098,7 @@ namespace faith
 		if (activated == 0)
 		{
 			if (template_data->LearnConditionLevel == 0)
-			{//Ìî0¾ÍÊÇ²»ÄÜÍ¨¹ıÕı³£Âß¼­»ñµÃ£¬Ò»°ã¶¼ÊÇÍæ¼Ò¼¼ÄÜ£¬ĞèÒªÍ¨¹ıÈÎÎñ½âËø
+			{//å¡«0å°±æ˜¯ä¸èƒ½é€šè¿‡æ­£å¸¸é€»è¾‘è·å¾—ï¼Œä¸€èˆ¬éƒ½æ˜¯ç©å®¶æŠ€èƒ½ï¼Œéœ€è¦é€šè¿‡ä»»åŠ¡è§£é”
 				msg_data.data_ary[e_skill_info_activated] = 0;
 			}
 			else
@@ -1174,10 +1174,10 @@ namespace faith
 			{
 				continue;
 			}
-			// ¼ÆËã¸ÃÊôĞÔ¹Ì¶¨ÊıÖµÔöÖµÌá¹©µÄÕ½¶·Á¦
+			// è®¡ç®—è¯¥å±æ€§å›ºå®šæ•°å€¼å¢å€¼æä¾›çš„æˆ˜æ–—åŠ›
 			fighting_power += (att_template_ptr->AttGs * att_value);
 
-			// ¼ÆËã¸ÃÊôĞÔ°Ù·Ö±ÈÔöÖµÌá¹©µÄÕ½¶·Á¦
+			// è®¡ç®—è¯¥å±æ€§ç™¾åˆ†æ¯”å¢å€¼æä¾›çš„æˆ˜æ–—åŠ›
 			if (AddPercentAtt)
 			{
 				f32 this_att_now_final_val = 0;
@@ -1223,7 +1223,7 @@ namespace faith
 			return boss_location;
 		}
 		if (fabs(move_location.Y) > fabs(move_location.X))
-		{//×¢Òâµ÷»»Î»ÖÃ£¬ÏÈ³ıÃ»¸Ä±äµÄÊıÖµ
+		{//æ³¨æ„è°ƒæ¢ä½ç½®ï¼Œå…ˆé™¤æ²¡æ”¹å˜çš„æ•°å€¼
 			if (FLOAT_IS_ZERO(move_location.Y))
 			{
 				if (move_location.x > 0)
@@ -1271,7 +1271,7 @@ namespace faith
 			return in_skill_target_y(boss_location, target_location, skill_wight, skill_length, unit_location);
 		}
 
-		/*Á½µã¼äÖ±Ïß¹«Ê½(x1,y1)(x2,y2)
+		/*ä¸¤ç‚¹é—´ç›´çº¿å…¬å¼(x1,y1)(x2,y2)
 		(y-y1)/(y2 - y1) = (x-x1)/(x2-x1)
 		(y-y1) * (x2-x1) = (x-x1) * (y2 - y1)
 		y*(x2-x1) - y1 * (x2-x1) = x*(y2 - y1) - x1 * (y2 - y1)
@@ -1283,7 +1283,7 @@ namespace faith
 		c = y1 * (x2-x1) - x1 * (y2 - y1) 
 		k = (y2-y1)/(x2-x1)
 		*/
-		/*µãµ½Ö±ÏßµÄ¾àÀë
+		/*ç‚¹åˆ°ç›´çº¿çš„è·ç¦»
 			d = abs( (a * x0 + b*y0 + c)/ sqrt(a * a + b * b) )
 		*/
 		float a = target_location.y - boss_location.y;
@@ -1305,11 +1305,11 @@ namespace faith
 			return false;
 		}
 
-		/*¹ı(x0,y0), Ğ±ÂÊÎªk µÄÖ±ÏßÎª y-y0=k(x-x0)
+		/*è¿‡(x0,y0), æ–œç‡ä¸ºk çš„ç›´çº¿ä¸º y-y0=k(x-x0)
 		y-y0 = k * x - k * x0
 		kx - y - k * x0 + y0 = 0
 		*/
-		/*´¹Ö±ÓÚÒ»ÌõÖ±ÏßµÄĞ±ÂÊÎª -1/k
+		/*å‚ç›´äºä¸€æ¡ç›´çº¿çš„æ–œç‡ä¸º -1/k
 		*/
 		if (FLOAT_IS_ZERO(k))
 		{
@@ -1394,7 +1394,7 @@ namespace faith
 		}
 		return false;
 	}
-	/*´Ë½Ó¿ÚÔÚÅÄÂôÖĞÖØĞ´,ĞŞ¸Ä´Ë´¦ ÔÚLUAÖĞËÑË÷init_mail_data_array*/
+	/*æ­¤æ¥å£åœ¨æ‹å–ä¸­é‡å†™,ä¿®æ”¹æ­¤å¤„ åœ¨LUAä¸­æœç´¢init_mail_data_array*/
 	bool init_unit::init_mail_data_array(faith::s_mail_info& msg_data, const std::vector<guid_64>& item_guid, int32 money_typ1, int32 money_num1, int32 money_typ2, int32 money_num2, guid_64 sender_guid, int64 cur_time_sec)
 	{
 		msg_data.mail_guid = guid_gen::make_guid(sender_guid);
@@ -1423,7 +1423,7 @@ namespace faith
 	}
 	void init_unit::range_pos(s_map_pos& pos)
 	{
-		float drop_range = 200;//Ä¬ÈÏ±£»¤Öµ
+		float drop_range = 200;//é»˜è®¤ä¿æŠ¤å€¼
 
 		if (GAMECONFIG->DropRange > 0.0f)
 		{
@@ -1548,7 +1548,7 @@ namespace faith
 			return -1;
 		}
 
-		// ×¢Òâ: ±ß½çÇé¿öÀàËÆ100¼¶µÄÊ±ºò,ÒªÏÔÊ¾0×ª¶ø²»ÊÇ1×ª
+		// æ³¨æ„: è¾¹ç•Œæƒ…å†µç±»ä¼¼100çº§çš„æ—¶å€™,è¦æ˜¾ç¤º0è½¬è€Œä¸æ˜¯1è½¬
 		return (level - 1) / player_grade_up_level_interval;
 	}
 
@@ -1559,7 +1559,7 @@ namespace faith
 			return -1;
 		}
 		
-		// ×¢Òâ: ±ß½çÇé¿öÀàËÆ100¼¶µÄÊ±ºò,ÒªÏÔÊ¾100¼¶¶ø²»ÊÇ0¼¶(ÇóÄ¦ºó)
+		// æ³¨æ„: è¾¹ç•Œæƒ…å†µç±»ä¼¼100çº§çš„æ—¶å€™,è¦æ˜¾ç¤º100çº§è€Œä¸æ˜¯0çº§(æ±‚æ‘©å)
 		int32 ret = level % player_grade_up_level_interval;
 		return ret != 0 ? ret : player_grade_up_level_interval;
 	}
@@ -1823,7 +1823,7 @@ namespace faith
 	bool init_unit::is_map_can_change_pk_mode(int32 map_type)
 	{
 		switch (map_type)
-		{//³ıÁË´óÊÀ½ç¶¼²»ÄÜ±ä
+		{//é™¤äº†å¤§ä¸–ç•Œéƒ½ä¸èƒ½å˜
 		case e_map_type_battle:
 		case e_map_type_field:
 		case e_map_type_fly_battle:
@@ -2030,7 +2030,7 @@ namespace faith
 		}
 
 		{
-			//ÕâÀïÎª¿ÕµÄÊ±ºòÒ²ÊÇÓĞÒâÒåµÄ£¬ËµÃ÷ÊÇÇ®£¬Õâ¸öÀ¨ºÅÊÇÎªÁË±£Ö¤Õâ¸öÖ¸Õë²»»áÔÚÖ®ºóµÄÂß¼­ÖĞ±»ÓÃµ½
+			//è¿™é‡Œä¸ºç©ºçš„æ—¶å€™ä¹Ÿæ˜¯æœ‰æ„ä¹‰çš„ï¼Œè¯´æ˜æ˜¯é’±ï¼Œè¿™ä¸ªæ‹¬å·æ˜¯ä¸ºäº†ä¿è¯è¿™ä¸ªæŒ‡é’ˆä¸ä¼šåœ¨ä¹‹åçš„é€»è¾‘ä¸­è¢«ç”¨åˆ°
 
 			for (int32 i = 0; i < source_array.size(); i ++)
 			{
@@ -2139,7 +2139,7 @@ namespace faith
 			}
 			if (temp_now_time > endTime)
 			{
-				//»ñÈ¡¾àÀëµ±Ç°Ê±¼ä×î½ü½áÊøµÄÈü¼¾
+				//è·å–è·ç¦»å½“å‰æ—¶é—´æœ€è¿‘ç»“æŸçš„èµ›å­£
 				int32 time_gap = temp_now_time - endTime;
 				if (last_time == 0)
 				{
@@ -2154,7 +2154,7 @@ namespace faith
 			}
 		}
 
-		//Èç¹û²»ÔÚÈü¼¾Ê±¼äÄÚ»ñÈ¡ÉÏ¸öÈü¼¾
+		//å¦‚æœä¸åœ¨èµ›å­£æ—¶é—´å†…è·å–ä¸Šä¸ªèµ›å­£
 		if (cur_season == 0 && last_season > 0)
 		{
 			cur_season = last_season;
@@ -2207,7 +2207,7 @@ namespace faith
 			}
 			if (temp_now_time > endTime)
 			{
-				//»ñÈ¡¾àÀëµ±Ç°Ê±¼ä×î½ü½áÊøµÄÈü¼¾
+				//è·å–è·ç¦»å½“å‰æ—¶é—´æœ€è¿‘ç»“æŸçš„èµ›å­£
 				int32 time_gap = temp_now_time - endTime;
 				if (last_time == 0)
 				{
@@ -2222,7 +2222,7 @@ namespace faith
 			}
 		}
 
-		//Èç¹û²»ÔÚÈü¼¾Ê±¼äÄÚ»ñÈ¡ÉÏ¸öÈü¼¾
+		//å¦‚æœä¸åœ¨èµ›å­£æ—¶é—´å†…è·å–ä¸Šä¸ªèµ›å­£
 		if (cur_season == 0 && last_season > 0)
 		{
 			cur_season = last_season;
@@ -2371,7 +2371,7 @@ namespace faith
 
 	int32 init_unit::get_mission_money_same_slot(int32* money_type_array, int32 target_type)
 	{
-		//¼´Ê¹ÊÇ¾­Ñé£¨ÀàĞÍ±¾Éí¾ÍÊÇ0£©±¾º¯ÊıÒ²ÕÕ³£ÉúĞ§
+		//å³ä½¿æ˜¯ç»éªŒï¼ˆç±»å‹æœ¬èº«å°±æ˜¯0ï¼‰æœ¬å‡½æ•°ä¹Ÿç…§å¸¸ç”Ÿæ•ˆ
 		for (int32 i = 0; i < max_mission_money_reward_type; ++i)
 		{
 			if (money_type_array[i] == target_type)
@@ -2686,7 +2686,7 @@ namespace faith
 		}
 		UpgradeId = npc_temp_ptr->UpgradeId;
 
-		if (UpgradeId == up_id)//·Ç¶¯Ì¬µÈ¼¶
+		if (UpgradeId == up_id)//éåŠ¨æ€ç­‰çº§
 		{
 			if (up_id >= new_monster_upgrade_cfg_first_id)
 			{
@@ -2768,10 +2768,10 @@ namespace faith
 			be_critical = false;
 			return;
 		}
-		f32 attacker_critical_rate = attack_att_param.att_critical;//±©»÷¾«Í¨
-		f32 target_un_critical_rate = target_att_param.att_critical_armor;//±©¿¹¾«Í¨
-		f32 att_crit_prob = attack_att_param.att_crit_prob;//±©»÷ÂÊ
-		f32 att_un_crit_prob = target_att_param.att_un_crit_prob;//±©¿¹ÂÊ
+		f32 attacker_critical_rate = attack_att_param.att_critical;//æš´å‡»ç²¾é€š
+		f32 target_un_critical_rate = target_att_param.att_critical_armor;//æš´æŠ—ç²¾é€š
+		f32 att_crit_prob = attack_att_param.att_crit_prob;//æš´å‡»ç‡
+		f32 att_un_crit_prob = target_att_param.att_un_crit_prob;//æš´æŠ—ç‡
 		if (FLOAT_IS_ZERO((attacker_critical_rate + CriticalRateParams[1] * target_un_critical_rate + CriticalRateParams[2])))
 		{
 			return;
@@ -2827,24 +2827,24 @@ namespace faith
 			return damage_info;
 		}
 		
-		//¼¼ÄÜÃüÖĞ
-		double attacker_value_max = attack_att_array[e_unit_attack_att_attack_max];//×î´ó¹¥»÷
+		//æŠ€èƒ½å‘½ä¸­
+		double attacker_value_max = attack_att_array[e_unit_attack_att_attack_max];//æœ€å¤§æ”»å‡»
 		double percent_atacker_value = attacker_value_max * 0.05f;
 		int32 attacker_value_real = attacker_value_max - percent_atacker_value + (percent_atacker_value*2)*(random_gen::skill_random() % 101) / 100;
 
 		double attacker_value_average =  attacker_value_max * 0.02f;
-		double target_armor_value = target_att_array[e_unit_attack_att_armor] / 5.0f;//·ÀÓùÁ¦
+		double target_armor_value = target_att_array[e_unit_attack_att_armor] / 5.0f;//é˜²å¾¡åŠ›
 		double damage = 0;
 		if (attacker_value_real*0.98 - target_armor_value > attacker_value_average)
-		{//ÆÆ·À
+		{//ç ´é˜²
 			damage = attacker_value_real - target_armor_value;
 		}
 		else
-		{//²»ÆÆ·À
+		{//ä¸ç ´é˜²
 			attacker_value_average = attacker_value_average < 1 ? 1 : attacker_value_average;
 			damage = random_gen::get_random(1, attacker_value_average);
 		}
-		//»ù´¡ÉËº¦È·¶¨
+		//åŸºç¡€ä¼¤å®³ç¡®å®š
 		damage = damage*skill_ratio + skill_plus + param.damage_base_value;
 		double attacker_att_attack_1 = attack_att_array[e_unit_attack_att_att_attack_1];
 		double attacker_att_attack_2 = attack_att_array[e_unit_attack_att_att_attack_2];
@@ -2858,8 +2858,8 @@ namespace faith
 		double target_att_armor_4 = target_att_array[e_unit_attack_att_att_armor_4];
 		double target_att_armor_5 = 0;// target_att_array[e_unit_attack_att_att_armor_5];
 
-		double attacker_element_ability = attack_att_array[e_unit_attack_att_element_ability];//ÔªËØ¾«Í¨
-		double target_element_resist = target_att_array[e_unit_attack_att_element_resist];//ÔªËØ¿¹ĞÔ
+		double attacker_element_ability = attack_att_array[e_unit_attack_att_element_ability];//å…ƒç´ ç²¾é€š
+		double target_element_resist = target_att_array[e_unit_attack_att_element_resist];//å…ƒç´ æŠ—æ€§
 
 		double att_damage_ratio = ((attacker_element_ability - target_element_resist) > 0.3) ? attacker_element_ability - target_element_resist : 0.3;
 		//double att_damage_1 = ((attacker_att_attack_1 - target_att_armor_1) > 0) ? (attacker_att_attack_1 - target_att_armor_1) * att_damage_ratio : 0;
@@ -2910,31 +2910,31 @@ namespace faith
 			
 		switch (attack_att_param.branch_type)
 		{
-		case e_branch_type_ice:// ±ù
+		case e_branch_type_ice:// å†°
 			att_damage_1 *= coefficient_a[0];
 			att_damage_2 *= coefficient_a[1];
 			att_damage_3 *= coefficient_a[0];
 			att_damage_4 *= coefficient_a[0];
 			break;
-		case e_branch_type_fire:// »ğ
+		case e_branch_type_fire:// ç«
 			att_damage_1 *= coefficient_a[1];
 			att_damage_2 *= coefficient_a[0];
 			att_damage_3 *= coefficient_a[0];
 			att_damage_4 *= coefficient_a[0];
 			break;
-		case e_branch_type_light:// ¹â
+		case e_branch_type_light:// å…‰
 			att_damage_1 *= coefficient_a[0];
 			att_damage_2 *= coefficient_a[0];
 			att_damage_3 *= coefficient_a[1];
 			att_damage_4 *= coefficient_a[0];
 			break;
-		case e_branch_type_dark:// °µ
+		case e_branch_type_dark:// æš—
 			att_damage_1 *= coefficient_a[0];
 			att_damage_2 *= coefficient_a[0];
 			att_damage_3 *= coefficient_a[0];
 			att_damage_4 *= coefficient_a[1];
 			break;
-		default://ÆäËû ±ÈÈçÃ»ÓĞ·ÖÖ§
+		default://å…¶ä»– æ¯”å¦‚æ²¡æœ‰åˆ†æ”¯
 			att_damage_1 *= coefficient_a[0];
 			att_damage_2 *= coefficient_a[0];
 			att_damage_3 *= coefficient_a[0];
@@ -2942,24 +2942,24 @@ namespace faith
 			break;
 		}
 
-		//	S£¨ÔªËØ£©=¡Æ¡¼£¨£¨ÔªËØÖµ-ÔªËØ¿¹ĞÔ£©*¶ÔÓ¦ÏµÊı¡½£©*£¨ÔªËØ¾«Í¨-ÔªËØÇ×ºÍ£©   ÔªËØÉËº¦È·¶¨
+		//	Sï¼ˆå…ƒç´ ï¼‰=âˆ‘ã€–ï¼ˆï¼ˆå…ƒç´ å€¼-å…ƒç´ æŠ—æ€§ï¼‰*å¯¹åº”ç³»æ•°ã€—ï¼‰*ï¼ˆå…ƒç´ ç²¾é€š-å…ƒç´ äº²å’Œï¼‰   å…ƒç´ ä¼¤å®³ç¡®å®š
 
-		//			double correct_value_a = 1;//ĞŞÕıÖµA
-		//			double correct_value_b = 1;//ĞŞÕıÖµB
-		//			double skill_value = 1;//¼¼ÄÜÏµÊı
+		//			double correct_value_a = 1;//ä¿®æ­£å€¼A
+		//			double correct_value_b = 1;//ä¿®æ­£å€¼B
+		//			double skill_value = 1;//æŠ€èƒ½ç³»æ•°
 
 		if (param.be_critical)
-		{//±©»÷
-			double attacker_critical_attack_rate = attack_att_array[e_unit_attack_att_critical_attack_rate];//±©»÷ÉËº¦
-			double target_critical_attack_relief = target_att_array[e_unit_attack_att_critical_attack_relief];//±©»÷¼õÉË
+		{//æš´å‡»
+			double attacker_critical_attack_rate = attack_att_array[e_unit_attack_att_critical_attack_rate];//æš´å‡»ä¼¤å®³
+			double target_critical_attack_relief = target_att_array[e_unit_attack_att_critical_attack_relief];//æš´å‡»å‡ä¼¤
 			if (attacker_critical_attack_rate > target_critical_attack_relief + 1.0f)
-			{//±¬ÉË¼õ±¬¿¹µÍÓÚ1Ç¿ÖÆµÈÓÚ1
+			{//çˆ†ä¼¤å‡çˆ†æŠ—ä½äº1å¼ºåˆ¶ç­‰äº1
 				damage = damage * (attacker_critical_attack_rate - target_critical_attack_relief);
 			}
 		}
 
-		double attacker_effect_damage = attack_att_array[e_unit_attack_att_effect_damage];//ÎŞË«
-		double target_effect_damage_relief = target_att_array[e_unit_attack_att_effect_damage_relief];//Ê¶ÆÆ
+		double attacker_effect_damage = attack_att_array[e_unit_attack_att_effect_damage];//æ— åŒ
+		double target_effect_damage_relief = target_att_array[e_unit_attack_att_effect_damage_relief];//è¯†ç ´
 		
 		double element_damage = att_damage_1 + att_damage_2 + att_damage_3 + att_damage_4 /*+ att_damage_5*/;
 		element_damage = element_damage* skill_ratio;
@@ -3004,23 +3004,23 @@ namespace faith
 		if (target_att_param.unit_type == e_unit_type_monster)
 		{
 			 all_damage_ratio = ((attacker_effect_damage - target_effect_damage_relief) > 0) ? (attacker_effect_damage - target_effect_damage_relief) : 0;
-			 end_damage = damage * all_damage_ratio + element_damage;//S£¨×îÖÕ£©=£¨S£¨»ù´¡£©»òS£¨±©»÷£©+S£¨ÔªËØ£©£©*£¨ÎŞË«-Ê¶ÆÆ£©»òÉÁ±Ü¡£
+			 end_damage = damage * all_damage_ratio + element_damage;//Sï¼ˆæœ€ç»ˆï¼‰=ï¼ˆSï¼ˆåŸºç¡€ï¼‰æˆ–Sï¼ˆæš´å‡»ï¼‰+Sï¼ˆå…ƒç´ ï¼‰ï¼‰*ï¼ˆæ— åŒ-è¯†ç ´ï¼‰æˆ–é—ªé¿ã€‚
 		}
 		else
 		{
 			 all_damage_ratio = ((attacker_effect_damage - target_effect_damage_relief) > 0.05) ? (attacker_effect_damage - target_effect_damage_relief) : 0.05;
-			 end_damage = damage * all_damage_ratio + element_damage;//S£¨×îÖÕ£©=£¨S£¨»ù´¡£©»òS£¨±©»÷£©+S£¨ÔªËØ£©£©*£¨ÎŞË«-Ê¶ÆÆ£©»òÉÁ±Ü¡£
+			 end_damage = damage * all_damage_ratio + element_damage;//Sï¼ˆæœ€ç»ˆï¼‰=ï¼ˆSï¼ˆåŸºç¡€ï¼‰æˆ–Sï¼ˆæš´å‡»ï¼‰+Sï¼ˆå…ƒç´ ï¼‰ï¼‰*ï¼ˆæ— åŒ-è¯†ç ´ï¼‰æˆ–é—ªé¿ã€‚
 		}
 
 		if (end_damage > target_att_array[e_unit_attack_att_hp_max] * 0.8)
 		{
-			//Y.	S£¨×îÖÕ£©>Ä¿±êÉúÃüÉÏÏŞ*80%Ê±£¬S£¨×îÖÕ£©=S£¨×îÖÕ£©*95%
+			//Y.	Sï¼ˆæœ€ç»ˆï¼‰>ç›®æ ‡ç”Ÿå‘½ä¸Šé™*80%æ—¶ï¼ŒSï¼ˆæœ€ç»ˆï¼‰=Sï¼ˆæœ€ç»ˆï¼‰*95%
 			end_damage = end_damage * 0.95;
 		}
-		end_damage = end_damage + end_damage * param.add_percent;//°Ù·Ö±Èbuff´øÀ´µÄ°Ù·Ö±ÈÉËº¦ÌáÉı
-		end_damage = end_damage - end_damage * damage_sub;//ÉËº¦¼õÃâ
+		end_damage = end_damage + end_damage * param.add_percent;//ç™¾åˆ†æ¯”buffå¸¦æ¥çš„ç™¾åˆ†æ¯”ä¼¤å®³æå‡
+		end_damage = end_damage - end_damage * damage_sub;//ä¼¤å®³å‡å…
 
-		float damage_unit = person_attack_change;//ÈË´òÈËÉËº¦¼õÉÙ
+		float damage_unit = person_attack_change;//äººæ‰“äººä¼¤å®³å‡å°‘
 		if (attack_att_param.unit_type == e_unit_type_player
 			&& target_att_param.unit_type != e_unit_type_player)
 		{
@@ -3086,7 +3086,7 @@ namespace faith
 		}
 		if (param.region_type == e_region_type_protect)
 		{
-			return false; //ËùÓĞunitÔÚ±£»¤ÇøÄÚ²»¿Épk
+			return false; //æ‰€æœ‰unitåœ¨ä¿æŠ¤åŒºå†…ä¸å¯pk
 		}
 		if (param.is_team_protect && param.is_in_same_team)
 		{
@@ -3097,29 +3097,29 @@ namespace faith
 			return false;
 		}
 
-		//ÕóÓª²»Í¬Ê± ÅĞ¶ÏÕóÓª¹ØÏµ ÈôÊÇ¶ÔÁ¢ÕóÓª¿É´ò ÈôÊÇÓÑ·½ÕóÓª²»¿É´ò
+		//é˜µè¥ä¸åŒæ—¶ åˆ¤æ–­é˜µè¥å…³ç³» è‹¥æ˜¯å¯¹ç«‹é˜µè¥å¯æ‰“ è‹¥æ˜¯å‹æ–¹é˜µè¥ä¸å¯æ‰“
 		if (param.sender_community_type != param.target_community_type)
 		{
 			return get_community_group_relation_by_data(param.sender_community_type, param.target_community_type) == 0;
 		}
 		else if ((param.sender_community_type >= e_community_type_player_group3) && (param.sender_community_type <= e_community_type_player_group6))
 		{
-			//3-6ÕóÓª  ÕóÓªÄÚ²»¿ÉÕ½¶·
+			//3-6é˜µè¥  é˜µè¥å†…ä¸å¯æˆ˜æ–—
 			return false;
 		}
 		else if ((param.sender_community_type >= e_community_type_attack_player) && (param.sender_community_type <= e_community_type_guard_boss) && param.sender_community_type == param.sender_community_type)
 		{
-			//13-17ÕóÓª  ÕóÓªÄÚ²»¿ÉÕ½¶·
+			//13-17é˜µè¥  é˜µè¥å†…ä¸å¯æˆ˜æ–—
 			return false;
 		}
 
-		// ºóÃæµÄÂß¼­¶¼ÊÇÔÚÍ¬Ò»ÕóÓªµÄ»ù´¡ÉÏ×öÅĞ¶Ï
-		// Í³Ò»ÓÃregion_typeÅĞ¶ÏÁË
+		// åé¢çš„é€»è¾‘éƒ½æ˜¯åœ¨åŒä¸€é˜µè¥çš„åŸºç¡€ä¸Šåšåˆ¤æ–­
+		// ç»Ÿä¸€ç”¨region_typeåˆ¤æ–­äº†
 		if (param.region_type == e_region_type_safe)
 		{
-			return false; //Í¬ÕóÓªunitÔÚ°²È«ÇøÄÚ²»¿Épk
+			return false; //åŒé˜µè¥unitåœ¨å®‰å…¨åŒºå†…ä¸å¯pk
 		}
-		// 2line ²»¿Épk
+		// 2line ä¸å¯pk
 		if (param.sender_line_id == 2)
 		{
 			return false;
@@ -3130,7 +3130,7 @@ namespace faith
 			return true;
 		}
 
-		//Í¬Ò»ÕóÓª ×ßpkÄ£Ê½
+		//åŒä¸€é˜µè¥ èµ°pkæ¨¡å¼
 		switch (param.sender_pk_mode)
 		{
 		case e_pk_mode_peace:
@@ -3347,7 +3347,7 @@ namespace faith
 		std::vector<int32> get_att_index_array, temp_att_index_lib_array;
 		get_att_index_array.reserve(10);
 		temp_att_index_lib_array.reserve(total_num);
-		if (item_const_att <= 0)//Ğ¡ÓÚµÈÓÚ0´ú±í²»ÊÇ¹Ì¶¨ÊôĞÔ×°±¸£¬×ßÕı³£Âß¼­
+		if (item_const_att <= 0)//å°äºç­‰äº0ä»£è¡¨ä¸æ˜¯å›ºå®šå±æ€§è£…å¤‡ï¼Œèµ°æ­£å¸¸é€»è¾‘
 		{
 
 			for (int32 i = 0; i < total_num; ++i)
@@ -3366,7 +3366,7 @@ namespace faith
 				temp_att_index_lib_array.erase(temp_att_index_lib_array.begin() + temp_index);
 			}
 		}
-		else//ÊÇ¹Ì¶¨×¿Ô½ÊôĞÔ×°±¸£¬ÔòÈ¡ÊôĞÔÇ°NÌõ
+		else//æ˜¯å›ºå®šå“è¶Šå±æ€§è£…å¤‡ï¼Œåˆ™å–å±æ€§å‰Næ¡
 		{
 			for (int32 i = 0; i < final_num; ++i)
 			{
@@ -3426,7 +3426,7 @@ namespace faith
 		//		int32 max_limit = temp_color_rate_array[i * 2 + 1];
 		//		data_info.data_ary[value_info_index] = random_gen::get_random(min_limit, max_limit);
 		//	}
-		//	else//¹Ì¶¨×¿Ô½ÊôĞÔ×°±¸Ò»¶¨È¡×îĞ¡Öµ
+		//	else//å›ºå®šå“è¶Šå±æ€§è£…å¤‡ä¸€å®šå–æœ€å°å€¼
 		//	{
 		//		int32 min_limit = temp_color_rate_array[i * 2];
 		//		data_info.data_ary[value_info_index] = min_limit;
@@ -3476,7 +3476,7 @@ namespace faith
 				int32 max_limit = temp_color_rate_array[i * 2 + 1];
 				data_info.data_ary[value_info_index] = random_gen::get_random(min_limit, max_limit);
 			}
-			else//¹Ì¶¨×¿Ô½ÊôĞÔ×°±¸Ò»¶¨È¡×îĞ¡Öµ
+			else//å›ºå®šå“è¶Šå±æ€§è£…å¤‡ä¸€å®šå–æœ€å°å€¼
 			{
 				int32 min_limit = temp_color_rate_array[i * 2];
 				data_info.data_ary[value_info_index] = min_limit;
@@ -3491,12 +3491,12 @@ namespace faith
 		{
 			return e_item_color_max;
 		}
-		if (item_const_att > 0)//Èç¹ûÊÇ¹Ì¶¨×¿Ô½ÊôĞÔ£¬ÔòÊôĞÔÑÕÉ«ÒÑ¾­ÊÇ¹Ì¶¨µÄ£¬Ö±½Ó·µ»Ø
+		if (item_const_att > 0)//å¦‚æœæ˜¯å›ºå®šå“è¶Šå±æ€§ï¼Œåˆ™å±æ€§é¢œè‰²å·²ç»æ˜¯å›ºå®šçš„ï¼Œç›´æ¥è¿”å›
 		{
 			return item_const_att;
 		}
 		int32 color_rand_value = random_gen::get_random(1, 100);
-		//²»ÄÜ´Ó0¿ªÊ¼
+		//ä¸èƒ½ä»0å¼€å§‹
 
 		//int32 color_rand_target_value = 0;
 		//int32 final_excellent_color = 0;
@@ -3517,12 +3517,12 @@ namespace faith
 		{
 			return e_item_color_max;
 		}
-		if (item_const_att > 0)//Èç¹ûÊÇ¹Ì¶¨×¿Ô½ÊôĞÔ£¬ÔòÊôĞÔÑÕÉ«ÒÑ¾­ÊÇ¹Ì¶¨µÄ£¬Ö±½Ó·µ»Ø
+		if (item_const_att > 0)//å¦‚æœæ˜¯å›ºå®šå“è¶Šå±æ€§ï¼Œåˆ™å±æ€§é¢œè‰²å·²ç»æ˜¯å›ºå®šçš„ï¼Œç›´æ¥è¿”å›
 		{
 			return item_const_att;
 		}
 		int32 color_rand_value = random_gen::get_random(1, 100);
-		//²»ÄÜ´Ó0¿ªÊ¼
+		//ä¸èƒ½ä»0å¼€å§‹
 
 		int32 color_rand_target_value = 0;
 		int32 final_excellent_color = 0;
@@ -3575,7 +3575,7 @@ namespace faith
 		//}
 		//int32 att_num_rand_value = random_gen::get_random(1, 100);
 		//int32 att_num_rand_target_value = 0;
-		//int32 final_att_num = 0;//ĞèÒª¼¸Ìõ×¿Ô½ÊôĞÔ
+		//int32 final_att_num = 0;//éœ€è¦å‡ æ¡å“è¶Šå±æ€§
 		//for (int32 i = 0; i < equip_template_ptr->ExcellentAttNumGenRate.size(); ++i)
 		//{
 		//	att_num_rand_target_value += equip_template_ptr->ExcellentAttNumGenRate[i];
@@ -3631,7 +3631,7 @@ namespace faith
 		}
 		int32 att_num_rand_value = random_gen::get_random(1, 100);
 		int32 att_num_rand_target_value = 0;
-		int32 final_att_num = 0;//ĞèÒª¼¸Ìõ×¿Ô½ÊôĞÔ
+		int32 final_att_num = 0;//éœ€è¦å‡ æ¡å“è¶Šå±æ€§
 		for (int32 i = 0; i < spirit_template_ptr->ExcellentAttNumGenRate.size(); ++i)
 		{
 			att_num_rand_target_value += spirit_template_ptr->ExcellentAttNumGenRate[i];
@@ -4158,7 +4158,7 @@ namespace faith
 		case e_time_limit_activity_type_new_behavior_welfare:
 		case e_time_limit_activity_type_daily_free_reward:
 		{
-			//ÕÒid×î¶àÑ­»·100´Î ·ÀÖ¹ÎŞÏŞÑ­»· 
+			//æ‰¾idæœ€å¤šå¾ªç¯100æ¬¡ é˜²æ­¢æ— é™å¾ªç¯ 
 			for (int32 i = 0; i < 100; ++i)
 			{
 				auto ite = branch_temp_map.find(first_branch_temp_id + i);
@@ -4212,7 +4212,7 @@ namespace faith
 		{
 			return 0;
 		}
-		//¼ÆËãÖÜÆÚÄÚĞòºÅ
+		//è®¡ç®—å‘¨æœŸå†…åºå·
 		time_info cur_day_time = time_helper::get_today_zero_time_info();
 		if (cur_day_time.second < basics_open_time)
 		{
@@ -4225,7 +4225,7 @@ namespace faith
 		}
 
 
-		//¼ÆËãÖÜÆÚ
+		//è®¡ç®—å‘¨æœŸ
 		if (time_limit_act_temp.CycleParamType == e_time_limit_activity_cycle_param_type_num)
 		{
 			cycle_num = (cur_day_time.second - basics_open_time) / (time_limit_act_temp.CycleDays * day_time_second) + 1;
@@ -4235,11 +4235,11 @@ namespace faith
 			return 0;
 		}
 
-		//Ã»ÕÒµ½±Èµ±Ç°´óµÄËµÃ÷Ã»ÓĞÖÜÆÚÁË
+		//æ²¡æ‰¾åˆ°æ¯”å½“å‰å¤§çš„è¯´æ˜æ²¡æœ‰å‘¨æœŸäº†
 		int32 cycle_first_id_index = -1;
 		for (int32 i = 1; i < time_limit_act_temp.CycleParamNum.size(); i++)
 		{
-			//Óöµ½±ÈÎÒ´óµÄÈ¡Ç°Ò»Î»
+			//é‡åˆ°æ¯”æˆ‘å¤§çš„å–å‰ä¸€ä½
 			if (time_limit_act_temp.CycleParamNum[i] > cycle_num)
 			{
 				cycle_first_id_index = i - 1;
@@ -4350,7 +4350,7 @@ namespace faith
 		case e_time_limit_activity_type_new_behavior_welfare:
 		case e_time_limit_activity_type_daily_free_reward:
 		{
-			//ÕÒid×î¶àÑ­»·100´Î ·ÀÖ¹ÎŞÏŞÑ­»· 
+			//æ‰¾idæœ€å¤šå¾ªç¯100æ¬¡ é˜²æ­¢æ— é™å¾ªç¯ 
 			for (int32 i = 0; i < 100; ++i)
 			{		
 				auto ite = branch_temp_map.find(time_limit_act_temp.CycleFirstId[cycle_first_id_index] + i);
@@ -4393,9 +4393,9 @@ namespace faith
 			return 0;
 		}
 
-		//ÏÈ¼ÆËã»ù´¡¿ªÆôÊ±¼ä
+		//å…ˆè®¡ç®—åŸºç¡€å¼€å¯æ—¶é—´
 		int32 basics_open_time = 0;
-		//°´¿ª·şºó¼¸Ìì
+		//æŒ‰å¼€æœåå‡ å¤©
 		if (time_limit_act_temp.OpenType == e_time_limit_activity_open_type_server_date)
 		{
 			//globle_data::get_instance().get_server_on_days()
@@ -4403,7 +4403,7 @@ namespace faith
 			int32 server_open_time_stamp = time_helper::get_time_by_info(server_open_time.tm_year + 1900, server_open_time.tm_mon + 1, server_open_time.tm_mday).second;
 			basics_open_time = server_open_time_stamp + time_limit_act_temp.OpenServerDate * day_time_second;
 		}
-		//°´¾ßÌåÈÕÆÚ
+		//æŒ‰å…·ä½“æ—¥æœŸ
 		else if (time_limit_act_temp.OpenType == e_time_limit_activity_open_type_spencific_date)
 		{
 			if (time_limit_act_temp.OpenSpencificDate.size() < 3)
@@ -4412,13 +4412,13 @@ namespace faith
 			}
 			basics_open_time = time_helper::get_time_by_info(time_limit_act_temp.OpenSpencificDate[0], time_limit_act_temp.OpenSpencificDate[1], time_limit_act_temp.OpenSpencificDate[2]).second;
 		}
-		//¿ç·şÈÕÆÚ
+		//è·¨æœæ—¥æœŸ
 		else if (time_limit_act_temp.OpenType == e_time_limit_activity_open_type_cross_server)
 		{
 			int32 cross_begin_time = cross_server_time + time_limit_act_temp.OpenServerDate * day_time_second;
 			basics_open_time = cross_begin_time - time_helper::get_time_by_stamp_new(cross_begin_time).second_in_day;
 		}
-		//ºÏ·şÈÕÆÚ
+		//åˆæœæ—¥æœŸ
 		else if (time_limit_act_temp.OpenType == e_time_limit_activity_open_type_merge_server)
 		{
 			int32 merge_begin_time = merge_server_time + time_limit_act_temp.OpenServerDate * day_time_second;
@@ -4430,7 +4430,7 @@ namespace faith
 			return 0;
 		}
 
-		//ÔÙ¼ÆËã´øĞÇÆÚµÄ
+		//å†è®¡ç®—å¸¦æ˜ŸæœŸçš„
 		if (time_limit_act_temp.FirstOpenDayOfWeek >= 0)
 		{
 			time_info basics_open_time_info = time_helper::get_time_by_stamp_new(basics_open_time);

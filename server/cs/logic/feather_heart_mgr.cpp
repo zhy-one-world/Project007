@@ -255,7 +255,7 @@ namespace faith
 			if (temp_wing_feather->get_data_info(e_item_info_activate) <= 0)
 				continue;
 
-			//计算本身加成
+			//璁＄畻鏈韩鍔犳垚
 			{
 				auto feather_template_ptr = temp_wing_feather->get_item_info_ptr();
 				if (nullptr == feather_template_ptr)
@@ -266,7 +266,7 @@ namespace faith
 					continue;
 				ranking_value += init_unit::calcu_fighting_power_by_att_array(feather_att_ptr->AttArray, att_array, 1.0, false);
 			}
-			//计算强化功能加成
+			//璁＄畻寮哄寲鍔熻兘鍔犳垚
 			{
 				int32 template_core_add_level = get_slot_add_level_by_item(temp_wing_feather);
 				for (int32 i = e_feather_heart_0; i <= e_feather_heart_3; i++)

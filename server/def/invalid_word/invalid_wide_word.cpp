@@ -1,4 +1,4 @@
-
+ï»¿
 #include "invalid_wide_word.h"
 #include <algorithm>
 
@@ -12,18 +12,18 @@
 
 namespace faith
 {
-	//ÊÇ·ñÎªÒ»¸öÓ¢ÎÄ×Ö·û
+	//æ˜¯å¦ä¸ºä¸€ä¸ªè‹±æ–‡å­—ç¬¦
 	bool is_an_english_charactor(wchar_t ch)
 	{
-		bool bSmallHalf = ( (ch>=L'a')	&& (ch<=L'z') );	//Ğ¡Ğ´°ë½Ç
-		bool bBigHalf	= ( (ch>=L'A')	&& (ch<=L'Z') );	//´óĞ´°ë½Ç
-		bool bSmallAll	= ( (ch>=L'£á') && (ch<=L'£ú') );	//Ğ¡Ğ´È«½Ç
-		bool bBigAll	= ( (ch>=L'£Á') && (ch<=L'£Ú') );	//´óĞ´È«½Ç
+		bool bSmallHalf = ( (ch>=L'a')	&& (ch<=L'z') );	//å°å†™åŠè§’
+		bool bBigHalf	= ( (ch>=L'A')	&& (ch<=L'Z') );	//å¤§å†™åŠè§’
+		bool bSmallAll	= ( (ch>=L'ï½') && (ch<=L'ï½š') );	//å°å†™å…¨è§’
+		bool bBigAll	= ( (ch>=L'ï¼¡') && (ch<=L'ï¼º') );	//å¤§å†™å…¨è§’
 
 		return (bSmallHalf || bBigHalf || bSmallAll	|| bBigAll);
 	}
 
-	//ÅĞ¶ÏÊÇ·ñÎªÒ»¸öÓ¢ÎÄµ¥´Ê
+	//åˆ¤æ–­æ˜¯å¦ä¸ºä¸€ä¸ªè‹±æ–‡å•è¯
 	bool is_an_english_word(std::wstring& word)
 	{
 		bool bAnWord = false;
@@ -40,9 +40,9 @@ namespace faith
 	}
 
 	/**
-	 *	ÊÇ·ñ´æÔÚÆÁ±Î×Ö·û´®
-	 *	@param	invalid_words	:	ÆÁ±Î×Ö¿â
-	 *	@param	str				:	±»¼ì²éµÄ×Ö·û´®
+	 *	æ˜¯å¦å­˜åœ¨å±è”½å­—ç¬¦ä¸²
+	 *	@param	invalid_words	:	å±è”½å­—åº“
+	 *	@param	str				:	è¢«æ£€æŸ¥çš„å­—ç¬¦ä¸²
 	 */
 	bool include_valid_wide_str(WideWordSet& invalid_words, std::string& str)
 	{
@@ -65,13 +65,13 @@ namespace faith
 				if(is_an_english_word(*it))
 				{
 					if(it_pos)
-					{//Ç°ÏòÅĞ¶Ï
+					{//å‰å‘åˆ¤æ–­
 						if(is_an_english_charactor(temp_str[it_pos-1]))
 							bWord = false;
 					}
 
 					//if((it_pos+it->size()) != temp_str.size())
-					//{//ºóÏòÅĞ¶Ï
+					//{//åå‘åˆ¤æ–­
 					//	if(is_an_english_charactor(temp_str[it_pos+it->size()]))
 					//		bWord = false;
 					//}
@@ -86,10 +86,10 @@ namespace faith
 
 
 	/**
-	 *	ÊÇ·ñ´æÔÚÆÁ±Î×Ö·û´®
-	 *	@param	invalid_words	:	ÆÁ±Î×Ö¿â
-	 *	@param	str				:	±»¼ì²éµÄ×Ö·û´®
-	 *	@param	len				:	±»¼ì²éµÄ×Ö·û´®µÄ³¤¶È
+	 *	æ˜¯å¦å­˜åœ¨å±è”½å­—ç¬¦ä¸²
+	 *	@param	invalid_words	:	å±è”½å­—åº“
+	 *	@param	str				:	è¢«æ£€æŸ¥çš„å­—ç¬¦ä¸²
+	 *	@param	len				:	è¢«æ£€æŸ¥çš„å­—ç¬¦ä¸²çš„é•¿åº¦
 	 */
 	bool include_valid_wide_str(WideWordSet& invalid_words, char* str, int32 len)
 	{
@@ -101,9 +101,9 @@ namespace faith
 	}
 
 	/**
-	 *	ÓÃ*Ìæ»»±»ÆÁ±ÎµÄ×Ö
-	 *	@param	invalid_words	:	ÆÁ±Î×Ö¿â
-	 *	@param	str				:	±»Ìæ»»µÄ×Ö·û´®
+	 *	ç”¨*æ›¿æ¢è¢«å±è”½çš„å­—
+	 *	@param	invalid_words	:	å±è”½å­—åº“
+	 *	@param	str				:	è¢«æ›¿æ¢çš„å­—ç¬¦ä¸²
 	 */
 	void replace_valid_wide_str(WideWordSet& invalid_words, std::string& str)
 	{
@@ -113,7 +113,7 @@ namespace faith
 		_wcslwr_s(const_cast<wchar_t*>(temp_str.c_str()), (temp_str.size()+1));
 
 		if( is_sentence_valid(invalid_words, temp_str) )
-		{//Ôö¼ÓÕû¾äÆÁ±ÎÂß¼­
+		{//å¢åŠ æ•´å¥å±è”½é€»è¾‘
 			std::fill(str.begin(), str.end(), '*');
 			return;
 		}
@@ -146,10 +146,10 @@ namespace faith
 	}
 
 	/**
-	 *	ÓÃ*Ìæ»»±»ÆÁ±ÎµÄ×Ö
-	 *	@param	invalid_words	:	ÆÁ±Î×Ö¿â
-	 *	@param	str				:	±»Ìæ»»µÄ×Ö·û´®
-	 *	@param	len				:	±»Ìæ»»µÄ×Ö·û´®µÄ³¤¶È
+	 *	ç”¨*æ›¿æ¢è¢«å±è”½çš„å­—
+	 *	@param	invalid_words	:	å±è”½å­—åº“
+	 *	@param	str				:	è¢«æ›¿æ¢çš„å­—ç¬¦ä¸²
+	 *	@param	len				:	è¢«æ›¿æ¢çš„å­—ç¬¦ä¸²çš„é•¿åº¦
 	 */
 	void replace_valid_wide_str(WideWordSet& invalid_words, char* str, int32 len)
 	{
@@ -162,14 +162,14 @@ namespace faith
 	}
 
 
-	//¼ì²âÊÇ·ñ´æÔÚ·Ç·¨×Ö·û(°üº¬Á½¸ö¼ì²â¹ı³Ì£ºÊÇ·ñÊôÓÚ×Ö¿â£¬ÊÇ·ñÊÇ·ÇÆÁ±Î×Ö)
+	//æ£€æµ‹æ˜¯å¦å­˜åœ¨éæ³•å­—ç¬¦(åŒ…å«ä¸¤ä¸ªæ£€æµ‹è¿‡ç¨‹ï¼šæ˜¯å¦å±äºå­—åº“ï¼Œæ˜¯å¦æ˜¯éå±è”½å­—)
 	bool include_valid_wide_str(std::string str)
 	{
 		return (include_valid_wide_str(CInvalidWord::getInstance().GetInvalidWideWordSet(), str));
 	}
 
 	/** 
-	 *	ÓĞ·Ç·¨×Ö·ûÊ±£¬ÓÃ*Ìæ»»·Ç·¨×Ö·û
+	 *	æœ‰éæ³•å­—ç¬¦æ—¶ï¼Œç”¨*æ›¿æ¢éæ³•å­—ç¬¦
 	 */ 
 	void replace_valid_wide_str(std::string& str)
 	{
@@ -177,7 +177,7 @@ namespace faith
 	}
 
 
-	//¼ì²éÊäÈëµÄÕû¾ä»°ÊÇ·ñÊÇÆÁ±Î×Ö
+	//æ£€æŸ¥è¾“å…¥çš„æ•´å¥è¯æ˜¯å¦æ˜¯å±è”½å­—
 	bool is_sentence_valid(WideWordSet& invalid_words, std::wstring& wstr)
 	{
 // 		boost::regex expression("^select ([a-zA-Z]*) from ([a-zA-Z]*)");
@@ -206,7 +206,7 @@ namespace faith
 // 		}		
 	}
 
-	//ÆÁ±Î×î´ó×éºÏ
+	//å±è”½æœ€å¤§ç»„åˆ
 	void shield_componet_valid(WideWordSet& invalid_words, std::wstring& wstr)
 	{
 		for(WideWordSetReIt it=invalid_words.rbegin(); it!=invalid_words.rend(); ++it)
@@ -224,7 +224,7 @@ namespace faith
 		}
 	}
 
-	//½«¼ì²éºóµÄÆÁ±Î×Ö»Ö¸´
+	//å°†æ£€æŸ¥åçš„å±è”½å­—æ¢å¤
 	void resume_str(std::string& invalid, std::string& origo)
 	{
 		int32 cur_pos = 0;
@@ -242,21 +242,21 @@ namespace faith
 		}
 	}
 
-	//ÅĞ¶Ï²éÕÒÒ»¾ä»°ÖĞÕÒµ½µÄÖ¸¶¨Î»ÖÃºóµÄn¸ö×Ö·û×éºÏÊÇ·ñÎªÒ»¸öµ¥´Ê
+	//åˆ¤æ–­æŸ¥æ‰¾ä¸€å¥è¯ä¸­æ‰¾åˆ°çš„æŒ‡å®šä½ç½®åçš„nä¸ªå­—ç¬¦ç»„åˆæ˜¯å¦ä¸ºä¸€ä¸ªå•è¯
 	bool is_a_word(std::wstring& sentence, int32 pos, int32 n)
 	{
 		//std::wstring allowed_chars(L"\t\v\b\f\a\n\r\\\"\'\? <>[](){}_=+-|/!@#$%^&*~`., \0");
 
 		//if( !sentence.size() || n<1 || pos<0 ) return false;
 
-		////Ç°ÏòÅĞ¶Ï
+		////å‰å‘åˆ¤æ–­
 		//if( 0!=pos && 255>sentence[pos-1] )
 		//{
 		//	if(std::wstring::npos==allowed_chars.find(sentence[pos-1]))
 		//		return false;
 		//}
 
-		////ºóÏòÅĞ¶Ï
+		////åå‘åˆ¤æ–­
 		//if(((pos+n)<(int32)sentence.size()) && 255>sentence[pos+n])
 		//	return (std::wstring::npos!=allowed_chars.find(sentence[pos+n]));
 

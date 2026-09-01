@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2014/07/30
 	created:	30:7:2014   18:29
 	file base:	fep_client
@@ -16,9 +16,7 @@
 
 namespace faith
 {
-	//
 	//	FEP server is a client of ws
-	//
 	class fep_client : public singleton<fep_client>
 	{
 		friend class singleton<fep_client>;

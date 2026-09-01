@@ -115,16 +115,16 @@ namespace faith
 	    void lua_cs2ws_get_red_package_process(uint32 conn_index, const char* data_ptr, int32 data_len);
 
 	//world_boss
-	//ws¶ËµÄ¹ÜÀíÆ÷´ÓÊı¾İ¿â¶ÁÊı¾İ
+	//wsç«¯çš„ç®¡ç†å™¨ä»æ•°æ®åº“è¯»æ•°æ®
 	void dp2ws_load_world_boss_end_proc(uint32 conn_index, const void* data_ptr, size_t data_len);
 
-	//ÊÀ½çBossËÀÍö¡¢Ë¢ĞÂ´¦Àí
+	//ä¸–ç•ŒBossæ­»äº¡ã€åˆ·æ–°å¤„ç†
 	void cs2ws_world_boss_dead_proc(uint32 conn_index, const void* data_ptr, size_t data_len);
 	void cs2ws_create_world_boss_sucess_proc(uint32 conn_index, const void* data_ptr, size_t data_len);
 	void cs2ws_first_killer_get_prize(uint32 conn_index, const void* data_ptr, size_t data_len);
 	void cs2ws_npc_left_hp_per_proc(uint32 conn_index, const void* data_ptr, size_t data_len);
 
-	//Ôö¼ÓÓÑºÃ¶È
+	//å¢åŠ å‹å¥½åº¦
 	void cs2ws_add_friendliness_value_proc(uint32 conn_index, const void *data_ptr, size_t data_len);
 	void cs2ws_fuben_add_friendliness_value_proc(uint32 conn_index, const void *data_ptr, size_t data_len);
 
@@ -160,7 +160,7 @@ namespace faith
 	void cs2ws_recharge_end_proc(uint32 conn_index, const void* data_ptr, size_t data_len);
 	void cs2ws_recharge_end_send_mail_proc(uint32 conn_index, const void* data_ptr, size_t data_len);
 
-	//gmÖ¸Áî×¨ÓÃ
+	//gmæŒ‡ä»¤ä¸“ç”¨
 	void cs2ws_gm_order_proc(uint32 conn_index, const void* data_ptr, size_t data_len);
 
 	//gain_treasure

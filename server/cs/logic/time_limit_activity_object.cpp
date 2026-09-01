@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2019Äê03ÔÂ17ÈÕ
+created: 2019å¹´03æœˆ17æ—¥
 file base: time_limit_activity_object
 file ext: cpp
 author: wangdi
@@ -49,21 +49,21 @@ namespace faith
 				int32 last_time = get_data_info(faith::e_time_limit_activity_info_end_time) - time_helper::get_cur_time_new().second;
 				if (last_time > second_tick_time * 60 * 15)
 				{
-					m_interval_time = new_time + second_tick_time * 60 * 5;		//5·ÖÖÓ
+					m_interval_time = new_time + second_tick_time * 60 * 5;		//5åˆ†é’Ÿ
 				}
 				else
 				{
-					m_interval_time = new_time + second_tick_time * 1;		//1ÃëÖÓ
+					m_interval_time = new_time + second_tick_time * 1;		//1ç§’é’Ÿ
 				}
 				highest_record_type = activity_type - e_time_limit_activity_type_cross_gs_up + e_role_history_highest_record_gs_value;
 			}
 			else
 			{
-				m_interval_time = new_time + second_tick_time;					//1ÃëÖÓ
+				m_interval_time = new_time + second_tick_time;					//1ç§’é’Ÿ
 				highest_record_type = activity_type - e_time_limit_activity_type_gs_up + e_role_history_highest_record_gs_value;
 			}
 
-			//m_interval_time = new_time + second_tick_time * 1;					//1ÃëÖÓ
+			//m_interval_time = new_time + second_tick_time * 1;					//1ç§’é’Ÿ
 
 			int32 ranking_index = activity_type - faith::e_time_limit_activity_type_gs_up + faith::e_RankingIndex_time_limit_activity_gs_up;
 			int64 ranking_value = m_player_ptr->get_highest_record(highest_record_type);
@@ -96,7 +96,7 @@ namespace faith
 
 	void time_limit_activity_object::set_gs_up_init_value()
 	{
-		//ÌáÉı°ñ³õÊ¼ÖµÉèÖÃ
+		//æå‡æ¦œåˆå§‹å€¼è®¾ç½®
 		if (m_player_ptr == nullptr)
 		{
 			return;
@@ -113,7 +113,7 @@ namespace faith
 		}
 		if (highest_record_type >= 0)
 		{
-			//µ±ÌìË¢ĞÂ¹ıÕ½Á¦ÌáÉı°ñ³õÊ¼Öµ ÔòÊ¹ÓÃÁãµãµÄ¼ÇÂ¼ÊıÖµ
+			//å½“å¤©åˆ·æ–°è¿‡æˆ˜åŠ›æå‡æ¦œåˆå§‹å€¼ åˆ™ä½¿ç”¨é›¶ç‚¹çš„è®°å½•æ•°å€¼
 			if (m_player_ptr->is_need_refresh_gs_up_start_value_time() == false)
 			{
 				CONSOLE_INFO("time_limit_activity_object::set_gs_up_init_value  highest_record_type:{} value:{}", highest_record_type,
@@ -140,7 +140,7 @@ namespace faith
 					set_activity_schedule((gs_value - set_num), 5);
 				}
 			}
-			//scheduleÖĞµÚ¶şÎ»±íÊ¾µÚÒ»Î»½ø¶ÈÖµÊÇ·ñÓĞĞ§ ÓÃÓÚÇø·Ö½ÇÉ«ÉÏÏßµÚÒ»´Î¿ªÆôÕâ¸ö»î¶¯Ê±ÖØÖÃÕ½Á¦³õÊ¼Öµ Õ½Á¦³õÊ¼Öµ±¾Éí¾ÍÊÇ0 ÕâÁ½ÖÖÇé¿ö
+			//scheduleä¸­ç¬¬äºŒä½è¡¨ç¤ºç¬¬ä¸€ä½è¿›åº¦å€¼æ˜¯å¦æœ‰æ•ˆ ç”¨äºåŒºåˆ†è§’è‰²ä¸Šçº¿ç¬¬ä¸€æ¬¡å¼€å¯è¿™ä¸ªæ´»åŠ¨æ—¶é‡ç½®æˆ˜åŠ›åˆå§‹å€¼ æˆ˜åŠ›åˆå§‹å€¼æœ¬èº«å°±æ˜¯0 è¿™ä¸¤ç§æƒ…å†µ
 			set_activity_schedule(1, 1);
 		}
 	}
@@ -183,7 +183,7 @@ namespace faith
 		bool is_refresh = false;
 		switch (get_act_type())
 		{
-		//ÖÜÆÚË¢ĞÂ
+		//å‘¨æœŸåˆ·æ–°
 		case e_time_limit_activity_type_total_charge:
 		case e_time_limit_activity_type_total_cost:
 		case e_time_limit_activity_type_treasure:
@@ -256,7 +256,7 @@ namespace faith
 			}
 		}
 			break;
-		//Ã¿ÈÕË¢ĞÂ
+		//æ¯æ—¥åˆ·æ–°
 		case e_time_limit_activity_type_daily_charge:
 		case e_time_limit_activity_type_time_welfare:
 		case e_time_limit_activity_type_behavior_welfare:
@@ -285,14 +285,14 @@ namespace faith
 			break;
 		}
 
-		//Èç¹ûË¢ĞÂ ¾ÍÇåÀí½ø¶ÈºÍÁì½±±ê¼Ç Èç¹û²»Ë¢ĞÂ Ã¿ÌìÒª¼ÆËãÒ»´ÎÊ±¼äºÍid ·½±ã¸Ä±íºóÒÔ±í¸ñÊ±¼äÎª×¼
+		//å¦‚æœåˆ·æ–° å°±æ¸…ç†è¿›åº¦å’Œé¢†å¥–æ ‡è®° å¦‚æœä¸åˆ·æ–° æ¯å¤©è¦è®¡ç®—ä¸€æ¬¡æ—¶é—´å’Œid æ–¹ä¾¿æ”¹è¡¨åä»¥è¡¨æ ¼æ—¶é—´ä¸ºå‡†
 		if (is_refresh)
 		{
 			clear_schedule_and_reward_flag();
 			init_end();
 		}
 
-		//ÏŞÊ±ÉÌµêºÍÕÛ¿ÛÉÌµê Ë¢ĞÂÃ¿ÈÕÏŞ¹ºÀàĞÍµÄ½ø¶È
+		//é™æ—¶å•†åº—å’ŒæŠ˜æ‰£å•†åº— åˆ·æ–°æ¯æ—¥é™è´­ç±»å‹çš„è¿›åº¦
 		if (e_time_limit_activity_type_shop == get_act_type() 
 			|| e_time_limit_activity_type_discount_shop == get_act_type()
 			|| e_time_limit_activity_type_discount_shop1 == get_act_type()
@@ -362,11 +362,11 @@ namespace faith
 		
 	}
 
-	//Õâ¸öº¯ÊıÓÃÓÚ¶ÁÈ¡¿âÖĞµÄÊı¾İÖ®ºó³õÊ¼»¯ ²»¶Ô¶ÁÈ¡³öÀ´µÄÊı¾İ½øĞĞ¸³Öµ (¿ªÊ¼Ê±¼ä ½áÊøÊ±¼ä)
+	//è¿™ä¸ªå‡½æ•°ç”¨äºè¯»å–åº“ä¸­çš„æ•°æ®ä¹‹ååˆå§‹åŒ– ä¸å¯¹è¯»å–å‡ºæ¥çš„æ•°æ®è¿›è¡Œèµ‹å€¼ (å¼€å§‹æ—¶é—´ ç»“æŸæ—¶é—´)
 	void time_limit_activity_object::init_template_id() //question_1 init activity temp id
 	{		
 		const s_time_limit_activity_temp& act_temp = get_time_limit_activity_temp();
-		//´Ó¿âÖĞ¶ÁÈ¡³öµÄÊı¾İÈç¹ûÊÇ0 ĞèÒªË¢ĞÂÊı¾İ ±ÜÃâÉÏÒ»ÌìµÄÊı¾İ²ĞÁô
+		//ä»åº“ä¸­è¯»å–å‡ºçš„æ•°æ®å¦‚æœæ˜¯0 éœ€è¦åˆ·æ–°æ•°æ® é¿å…ä¸Šä¸€å¤©çš„æ•°æ®æ®‹ç•™
 		if (!act_temp.is_valid())
 		{
 			return;
@@ -388,7 +388,7 @@ namespace faith
 				, cell_server::getInstance().is_cross_cs());
 		}
 
-		//Ë¢ĞÂÅÅĞĞ½ø¶È³õÊ¼Öµ
+		//åˆ·æ–°æ’è¡Œè¿›åº¦åˆå§‹å€¼
 		if (get_act_type() >= e_time_limit_activity_type_gs_up && get_act_type() <= e_time_limit_activity_type_cross_spirit_up && get_activity_schedule(0) <= 0 && get_activity_schedule(1) <= 0)
 		{
 			set_gs_up_init_value();
@@ -426,7 +426,7 @@ namespace faith
 	{
 		int32 reward_index = reward_template_id - m_time_limit_activity_branch_template_id;
 
-		//ÆôÊ¾Ö®Â·µ¥¶À´¦Àí
+		//å¯ç¤ºä¹‹è·¯å•ç‹¬å¤„ç†
 		if (get_act_type() == e_time_limit_activity_type_behavior_welfare
 			|| get_act_type() == e_time_limit_activity_type_behavior_welfare1
 			|| get_act_type() == e_time_limit_activity_type_behavior_welfare2
@@ -541,7 +541,7 @@ namespace faith
 			{
 				break;
 			}
-			//µ¥¶À´¦Àí
+			//å•ç‹¬å¤„ç†
 			if (get_cur_value() >= time_limit_activity_branch_template_ptr.Condition[0])
 			{
 				m_player_ptr->get_time_limit_activity_mgr().check_time_limit_activity_common_data_to_ws(reward_template_id, get_act_type(), time_limit_activity_branch_template_ptr.Condition[1]);
@@ -561,7 +561,7 @@ namespace faith
 			return  get_cur_value(reward_index) >= get_target_value(reward_template_id, reward_index);
 		}
 		break;
-		// Ã¿ÈÕÃâ·ÑÀñ°ü²»ĞèÒªÁìÈ¡Ìõ¼ş Ö»ĞèÒªÅĞ¶ÏÊÇ·ñÁìÈ¡¹ı¾ÍĞĞ
+		// æ¯æ—¥å…è´¹ç¤¼åŒ…ä¸éœ€è¦é¢†å–æ¡ä»¶ åªéœ€è¦åˆ¤æ–­æ˜¯å¦é¢†å–è¿‡å°±è¡Œ
 		case e_time_limit_activity_type_daily_free_reward:
 		{
 			return true;
@@ -648,7 +648,7 @@ namespace faith
 		case e_time_limit_activity_type_time_welfare5:
 		case e_time_limit_activity_type_landing_reward:
 		{
-			//¼ÆËã¾àÀë»î¶¯¿ªÊ¼Ê±¼äµÄÃëÊı
+			//è®¡ç®—è·ç¦»æ´»åŠ¨å¼€å§‹æ—¶é—´çš„ç§’æ•°
 			return_value = time_helper::get_cur_time_new().second - get_data_info(e_time_limit_activity_info_start_time);
 		}
 		break;
@@ -913,10 +913,10 @@ namespace faith
 		}
 		int32 cost_money_type = 0;
 		int32 cost_money_num = 0;
-		//¶Ò»»»î¶¯¿É¶à´Î¶Ò»» ´ÎÊı¼ÇÂ¼ÔÚ½ø¶ÈÖĞ ²»ĞèÒª¼ÇÂ¼ÊÇ·ñÁìÈ¡¹ı
+		//å…‘æ¢æ´»åŠ¨å¯å¤šæ¬¡å…‘æ¢ æ¬¡æ•°è®°å½•åœ¨è¿›åº¦ä¸­ ä¸éœ€è¦è®°å½•æ˜¯å¦é¢†å–è¿‡
 		if (get_act_type() == e_time_limit_activity_type_item_exchange || get_act_type() == e_time_limit_activity_type_special_exchange)
 		{
-			//ÅĞ¶ÏÎïÆ·¹»²»¹»
+			//åˆ¤æ–­ç‰©å“å¤Ÿä¸å¤Ÿ
 			if (time_limit_activity_branch_template_ptr.Condition.size() <= 0 || time_limit_activity_branch_template_ptr.Condition.size() % 2 != 0)
 			{
 				return;
@@ -935,7 +935,7 @@ namespace faith
 
 			add_activity_schedule(1, reward_template_id - m_time_limit_activity_branch_template_id);
 		}
-		//Ğ¡¶î³äÖµ ĞèÒªÅĞ¶ÏÍæ¼ÒÉíÉÏµÄÇ®ÊÇ·ñ×ã¹» ²¢¿Û³ıÕâ²¿·Ö×êÊ¯
+		//å°é¢å……å€¼ éœ€è¦åˆ¤æ–­ç©å®¶èº«ä¸Šçš„é’±æ˜¯å¦è¶³å¤Ÿ å¹¶æ‰£é™¤è¿™éƒ¨åˆ†é’»çŸ³
 		else if (get_act_type() == e_time_limit_activity_type_small_charge 
 			|| get_act_type() == e_time_limit_activity_type_daily_gift_charge )
 		{
@@ -977,7 +977,7 @@ namespace faith
 				continue;
 			}
 
-			//Ìø¹ı²»ÊôÓÚ×Ô¼ºµÄÎïÆ·
+			//è·³è¿‡ä¸å±äºè‡ªå·±çš„ç‰©å“
 			if (ItemTemplatePtr->class_type.size() > 0)
 			{
 				bool need_pass = true;
@@ -1041,7 +1041,7 @@ namespace faith
 
 		for (int32 i = 0; i + 1 < activity_temp.CycleFirstId.size(); i++)
 		{
-			//Õâ¸öidÔÚÁ½¸öÖÜÆÚÖ®¼ä
+			//è¿™ä¸ªidåœ¨ä¸¤ä¸ªå‘¨æœŸä¹‹é—´
 			if (m_time_limit_activity_branch_template_id == activity_temp.CycleFirstId[i] && reward_template_id >= activity_temp.CycleFirstId[i + 1])
 			{
 				return false;
@@ -1171,7 +1171,7 @@ namespace faith
 			time_limit_activity_proto_norank_type_activity_message msg;
 			msg.set_activity_type(act_guid);
 			msg.set_activity_value(get_activity_schedule());
-			//×î¶àÑ­»·50´Î
+			//æœ€å¤šå¾ªç¯50æ¬¡
 			for (int32 i = 0; i < 50; i++)
 			{
 				int32 branch_template_id = m_time_limit_activity_branch_template_id + i;
@@ -1442,7 +1442,7 @@ namespace faith
 		item_set& temp_item_set = m_player_ptr->get_item_set();
 
 		int32 first_template_id = get_data_info(e_time_limit_activity_info_first_branch_guid);
-		//ÕÒid×î¶àÑ­»·100´Î ·ÀÖ¹ÎŞÏŞÑ­»· 
+		//æ‰¾idæœ€å¤šå¾ªç¯100æ¬¡ é˜²æ­¢æ— é™å¾ªç¯ 
 		for (int32 i = 0; i < 10; ++i)
 		{
 			const s_time_limit_activity_branch_temp& time_limit_activity_branch_template_ptr = time_limit_activity_temp_mgr::get_instance().get_time_limit_act_branch_with_id(first_template_id + i);
@@ -1497,7 +1497,7 @@ namespace faith
 
 	void time_limit_activity_object::refresh_diamond_shop(int32 refresh_type)
 	{
-		// refresh_typeÎª1ÊÇ³õÊ¼»¯Ë¢ĞÂ refresh_typeÎª2ÊÇÍæ¼ÒÖ÷¶¯µã»÷Ë¢ĞÂ
+		// refresh_typeä¸º1æ˜¯åˆå§‹åŒ–åˆ·æ–° refresh_typeä¸º2æ˜¯ç©å®¶ä¸»åŠ¨ç‚¹å‡»åˆ·æ–°
 		if (nullptr == m_player_ptr)
 		{
 			return;
@@ -1510,12 +1510,12 @@ namespace faith
 			return;
 		}
 
-		//ÊÇ·ñ¿ÉÒÔË¢ĞÂ 
-		if (refresh_type == 1 && get_activity_schedule(0) <= 0)	// ¼ì²é³õÊ¼»¯´ÎÊı
+		//æ˜¯å¦å¯ä»¥åˆ·æ–° 
+		if (refresh_type == 1 && get_activity_schedule(0) <= 0)	// æ£€æŸ¥åˆå§‹åŒ–æ¬¡æ•°
 		{
 			set_activity_schedule(1,0);
 		}
-		else if (refresh_type == 2 && get_activity_schedule(1) <= 0) // ¼ì²éÃ¿ÈÕÃâ·Ñ´ÎÊı
+		else if (refresh_type == 2 && get_activity_schedule(1) <= 0) // æ£€æŸ¥æ¯æ—¥å…è´¹æ¬¡æ•°
 		{
 			set_activity_schedule(1, 1);
 		}
@@ -1532,7 +1532,7 @@ namespace faith
 				return;
 			}
 
-			// ÏûºÄ»õ±Ò
+			// æ¶ˆè€—è´§å¸
 			m_player_ptr->cut_money((e_money_type)money_type, money_num, e_server_log_cut_money_time_refresh_diamond_shop, first_template_id);
 		}
 		else

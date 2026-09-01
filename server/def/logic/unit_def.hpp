@@ -10,7 +10,7 @@ namespace faith {
 
 		enum UnitType
 		{
-			UT_PLAYER,		//Íæ¼Ò
+			UT_PLAYER,		//çŽ©å®¶
 			UT_NPC			//NPC
 		};
 
@@ -21,7 +21,7 @@ namespace faith {
 			{
 				struct 
 				{
-					uint32	charindex;		//½ÇÉ«Ë÷Òý
+					uint32	charindex;		//è§’è‰²ç´¢å¼•
 				} player;
 
 				struct 

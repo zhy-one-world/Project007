@@ -8,7 +8,7 @@
 namespace faith
 {
 	const int32 aoi_watch_num = 30;
-	const int32 aoi_watch_max = aoi_watch_num + max_team_member_num;//×î´ó30ÈË + ¶ÓÔ±
+	const int32 aoi_watch_max = aoi_watch_num + max_team_member_num;//æœ€å¤§30äºº + é˜Ÿå‘˜
 	class  player_aoi_watch
 	{
 	private:

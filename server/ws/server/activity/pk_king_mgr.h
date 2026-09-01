@@ -18,52 +18,52 @@ namespace faith
 	public:
 		void						tick(int64 time_new);
 		void						clear_data();
-		//Çå³ıÅÅĞĞ°ñÊı¾İ
+		//æ¸…é™¤æ’è¡Œæ¦œæ•°æ®
 		void						clear_rank_list_data();
-		//Ôö¼ÓÅÅĞĞ°ñÊı¾İ
+		//å¢åŠ æ’è¡Œæ¦œæ•°æ®
 		void						add_rank_list_data(guid_64 role_guid);
-		//´´½¨½»Õ½µØÍ¼
+		//åˆ›å»ºäº¤æˆ˜åœ°å›¾
 		void						create_pk_king_combat_map(guid_64 from_map_guid, int32 map_num);
-		//ÅĞ¶ÏÊÇ·ñ¿ÉÒÔ½øÈë
+		//åˆ¤æ–­æ˜¯å¦å¯ä»¥è¿›å…¥
 		e_error_code					is_can_join(guid_64 role_guid);
-		//ÅĞ¶ÏÊÇ·ñÔÚ»î¶¯Ê±¼äÄÚ
+		//åˆ¤æ–­æ˜¯å¦åœ¨æ´»åŠ¨æ—¶é—´å†…
 		bool						is_in_game_time();
-		//ÅĞ¶ÏÊÇ·ñÔÚ×¼±¸Ê±¼äÄÚ
+		//åˆ¤æ–­æ˜¯å¦åœ¨å‡†å¤‡æ—¶é—´å†…
 		bool						is_in_ready_time();
-		//ÅĞ¶ÏÊÇ·ñÔÚ¹«¸æÊ±¼äÄÚ
+		//åˆ¤æ–­æ˜¯å¦åœ¨å…¬å‘Šæ—¶é—´å†…
 		bool						is_in_notice_time();
-		//³õÊ¼»¯µØÍ¼
+		//åˆå§‹åŒ–åœ°å›¾
 		void						init_pkking_map();
-		//»ñµÃ´ı»úµØÍ¼
+		//è·å¾—å¾…æœºåœ°å›¾
 		guid_64						get_pk_king_map_guid() { return m_pk_king_map_guid; }
-		//ÉèÖÃ´ı»úµØÍ¼
+		//è®¾ç½®å¾…æœºåœ°å›¾
 		void						set_pk_king_map_guid(guid_64 map_guid) { m_pk_king_map_guid = map_guid; }
-		//ÅĞ¶ÏµØÍ¼ÈËÊı
+		//åˆ¤æ–­åœ°å›¾äººæ•°
 		void						get_valid_pkking_map(int32& map_war_idx, guid_64& map_guid);
-		//·¢ËÍµ±Ç°µØÍ¼ÈËÊı
+		//å‘é€å½“å‰åœ°å›¾äººæ•°
 		void						send_player_num_in_map_to_client(guid_64 role_guid);
-		//´«ËÍ½øÈëµØÍ¼
+		//ä¼ é€è¿›å…¥åœ°å›¾
 		void						recv_other_ws_transfer_gate_map(guid_64 role_guid, int32 server_id);
 		
-		//¼ÇÂ¼ÀëÏßÍæ¼Ò
+		//è®°å½•ç¦»çº¿ç©å®¶
 		void						add_break_line_player(s_break_line_login_info break_info);
-		//¼ì²éÀëÏßÍæ¼Ò
+		//æ£€æŸ¥ç¦»çº¿ç©å®¶
 		void						check_break_line_player();
-		//·¢ËÍ¶ÏÏßÖØÁ¬ÏûÏ¢			
+		//å‘é€æ–­çº¿é‡è¿æ¶ˆæ¯			
 		void						send_break_line_msg(guid_64 role_guid, int32 map_template_id);
-		//½øĞĞÖØÁ¬
+		//è¿›è¡Œé‡è¿
 		void						break_line_login_msg(guid_64 role_guid, bool is_login);
-		//·¢ËÍÖØÁ¬ÏûÏ¢
+		//å‘é€é‡è¿æ¶ˆæ¯
 		void						send_to_break_login_transfer_map(guid_64 role_guid, guid_64 map_guid, int32 activity_type, int32 server_id = 0);
-		//¼ì²éÊÇ·ñ¿ÉÒÔÖØÁ¬
+		//æ£€æŸ¥æ˜¯å¦å¯ä»¥é‡è¿
 		void						check_can_break_login_map(guid_64 role_guid, guid_64 map_guid,int32 server_id);
-		//¼ì²éÖØÁ¬µØÍ¼ÊÇ·ñ¿É½ø
+		//æ£€æŸ¥é‡è¿åœ°å›¾æ˜¯å¦å¯è¿›
 		e_error_code					check_login_map_can_join(guid_64 role_guid, guid_64 map_guid);
-		//ÖØÁ¬ÈëµØÍ¼
+		//é‡è¿å…¥åœ°å›¾
 		void						transfer_break_login_map(guid_64 role_guid, guid_64 map_guid, int32 error_ret, int32 map_template_id, int32 war_idex, int32 server_id);
-		//ÊÇ·ñÊÇpkÖ®Íõ
+		//æ˜¯å¦æ˜¯pkä¹‹ç‹
 		bool						player_is_pk_king(guid_64 role_guid);
-		//»ñÈ¡ÖØÁ¬µØÍ¼ĞÅÏ¢
+		//è·å–é‡è¿åœ°å›¾ä¿¡æ¯
 		s_break_line_login_info		get_player_break_login_info(guid_64 role_guid);
 		//Old
 		guid_64						get_pk_king_player() { return m_pk_king_player; }

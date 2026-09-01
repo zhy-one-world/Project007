@@ -10,15 +10,15 @@ namespace faith
 
 	const int32 max_best_record_num_all = 1000;
 	const int32 max_best_record_num = 50;
-	const int32 broken_sky_extra_award_player_num = 5;		//ÆÆËéĞé¿Õ»î¶¯ÖĞ»á»ñµÃ¶îÍâ½±ÀøµÄÍæ¼ÒµÄ¸öÊı
-	const int32 single_map_record_num = 5;					//Ã¿¸öµØÍ¼µÄ¼ÇÂ¼ÊıÁ¿
-	const int32 exp_best_record_hundred_million_notice_id = 93000252; //¾­Ñé¸±±¾ĞÂ¼ÍÂ¼¹«¸æ ¾­ÑéÖµ¹ıÒÚ
+	const int32 broken_sky_extra_award_player_num = 5;		//ç ´ç¢è™šç©ºæ´»åŠ¨ä¸­ä¼šè·å¾—é¢å¤–å¥–åŠ±çš„ç©å®¶çš„ä¸ªæ•°
+	const int32 single_map_record_num = 5;					//æ¯ä¸ªåœ°å›¾çš„è®°å½•æ•°é‡
+	const int32 exp_best_record_hundred_million_notice_id = 93000252; //ç»éªŒå‰¯æœ¬æ–°çºªå½•å…¬å‘Š ç»éªŒå€¼è¿‡äº¿
 
 	enum e_best_record_order
 	{
-		e_best_record_order_none,		// ÎŞ
-		e_best_record_order_by_bigger,	// Öµ¸ü´óµÄ¼ÇÂ¼ÊÇ¸üºÃµÄ¼ÇÂ¼
-		e_best_record_order_by_smaller,	// Öµ¸üĞ¡µÄ¼ÇÂ¼ÊÇ¸üºÃµÄ¼ÇÂ¼
+		e_best_record_order_none,		// æ— 
+		e_best_record_order_by_bigger,	// å€¼æ›´å¤§çš„è®°å½•æ˜¯æ›´å¥½çš„è®°å½•
+		e_best_record_order_by_smaller,	// å€¼æ›´å°çš„è®°å½•æ˜¯æ›´å¥½çš„è®°å½•
 		e_best_record_order_max
 	};
 

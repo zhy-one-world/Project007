@@ -17,37 +17,37 @@ namespace faith
 {
 	enum e_boss_state
 	{
-		e_boss_state_none,      // BOSSÃ»³öÏÖ
-		e_boss_state_appear,    // BOSS³öÏÖ
-		e_boss_state_killed,    // BOSS±»É±ËÀ
-		e_boss_state_disappear, // BOSSÏûÊ§
+		e_boss_state_none,      // BOSSæ²¡å‡ºç°
+		e_boss_state_appear,    // BOSSå‡ºç°
+		e_boss_state_killed,    // BOSSè¢«æ€æ­»
+		e_boss_state_disappear, // BOSSæ¶ˆå¤±
 		e_boss_state_max
 	};
 
 	enum e_boss_type
 	{
-		e_boss_type_world,			// ÊÀ½çBOSS
-		e_boss_type_cross_world,	// ¿ç·şÊÀ½çBOSS
-		e_boss_type_legion,			// ¾üÍÅBOSS
-		e_boss_type_attack_city,	// ¹¥³ÇÕ½boss
+		e_boss_type_world,			// ä¸–ç•ŒBOSS
+		e_boss_type_cross_world,	// è·¨æœä¸–ç•ŒBOSS
+		e_boss_type_legion,			// å†›å›¢BOSS
+		e_boss_type_attack_city,	// æ”»åŸæˆ˜boss
 		e_boss_type_max
 	};
 
 	enum e_protect_npc_state
 	{
-		e_protect_npc_state_none,       // ±»±£»¤µÄNPCÃ»³öÏÖ
-		e_protect_npc_state_appear,     // ±»±£»¤µÄNPC³öÏÖ
-		e_protect_npc_state_killed,     // ±»±£»¤µÄNPC±»É±µô
-		e_protect_npc_state_disappear,  // ±»±£»¤µÄNPCÏûÊ§
+		e_protect_npc_state_none,       // è¢«ä¿æŠ¤çš„NPCæ²¡å‡ºç°
+		e_protect_npc_state_appear,     // è¢«ä¿æŠ¤çš„NPCå‡ºç°
+		e_protect_npc_state_killed,     // è¢«ä¿æŠ¤çš„NPCè¢«æ€æ‰
+		e_protect_npc_state_disappear,  // è¢«ä¿æŠ¤çš„NPCæ¶ˆå¤±
 		e_protect_npc_state_max
 	};
 
 	enum e_npc_respawn_type
 	{
-		e_npc_respawn_type_non,					//¿Õ
-		e_npc_respawn_type_duration_time,		//°´CDÖØÉú
-		e_npc_respawn_type_target_time,			//Ê±¼äµãÖØÉú
-		e_npc_respawn_type_in_certain_time,		//ÌØ¶¨Ê±¼ä¶ÎÖØÉú
+		e_npc_respawn_type_non,					//ç©º
+		e_npc_respawn_type_duration_time,		//æŒ‰CDé‡ç”Ÿ
+		e_npc_respawn_type_target_time,			//æ—¶é—´ç‚¹é‡ç”Ÿ
+		e_npc_respawn_type_in_certain_time,		//ç‰¹å®šæ—¶é—´æ®µé‡ç”Ÿ
 	};
 
 	enum e_kill_npc_exp_mode
@@ -59,34 +59,34 @@ namespace faith
 	enum e_init_npc_level_type
 	{
 		e_npc_level_type_none,
-		e_npc_level_type_player_lv,//´´½¨µØÍ¼Ê±µÄÍæ¼ÒµÈ¼¶
-		e_npc_level_type_server_lv,//·şÎñÆ÷¶¯Ì¬µÈ¼¶
-		e_npc_level_type_legion_average_lv,//¾üÍÅ¶¯Ì¬µÈ¼¶
-		e_npc_level_type_cross_server_lv,//¿ç·ş¶¯Ì¬µÈ¼¶
-		e_npc_level_type_cur_player_lv,//µØÍ¼ÄÚÍæ¼ÒÊµÊ±Æ½¾ùµÈ¼¶
+		e_npc_level_type_player_lv,//åˆ›å»ºåœ°å›¾æ—¶çš„ç©å®¶ç­‰çº§
+		e_npc_level_type_server_lv,//æœåŠ¡å™¨åŠ¨æ€ç­‰çº§
+		e_npc_level_type_legion_average_lv,//å†›å›¢åŠ¨æ€ç­‰çº§
+		e_npc_level_type_cross_server_lv,//è·¨æœåŠ¨æ€ç­‰çº§
+		e_npc_level_type_cur_player_lv,//åœ°å›¾å†…ç©å®¶å®æ—¶å¹³å‡ç­‰çº§
 	};
 
-	const int32 notice_id_boss = 93000026;				// bossºÍ»Æ½ğÕ½¶ÓµÄnoticeid
-	const int32 notice_id_boss_add_legion = 93000199;	// bossºÍ»Æ½ğÕ½¶Ó´ø¾üÍÅÃû×ÖµÄnoticeId
-	const int32 notice_id_curse = 93000028;				// ×çÖäÉñµîµÄnoticeid
-	const int32 notice_id_broken_sky = 93000053;		// ÆÆËéĞé¿Õ
-	const int32 notice_id_legion_boss = 93000056;		// ¾üÍÅboss
-	const int32 notice_id_gain_treasure_boss_set_top = 93000240;	//´ò±¦bossÖÃ¶¥
-	const int32 notice_id_gain_treasure_boss_record = 93000241;		//´ò±¦bossÕı³£
-	const int32 first_boss_spawn_id = 82010001;			//µÚÒ»¸öÊÀ½çbossID
-	const int32 first_daily_boss_spawn_id = 82010001;	//µÚÒ»¸öÊÀ½ç¾«Ó¢ID
-	const int32 last_boss_spawn_id = 82010012;			//×îºóÒ»¸öÊÀ½çbossID
-	const int32 first_elite_ready_notice_id = 93000205; //µÚÒ»¸öÊÀ½ç¾«Ó¢×¼±¸¹«¸æµÄID
-	const int32 first_boss_free_notice_id = 93000215;	//µÚÒ»¸öÎŞÁÄµÄboss¹«¸æID
-	const int32 notice_id_boss_island_record = 93000263;//ÓÀºãµº¹«¸æID
-	const int32 notice_id_cross_server_kill_player = 93000266;//¿ç·şÉ±ÈË¹«¸æ
-	const int32 notice_id_cross_boss_award_id = 93000278;//¿ç·şÊÀ½ç»÷É±boss¹«¸æÓĞ¾üÍÅ
-	const int32 notice_id_cross_boss_award_id_not_legion = 93000291;//¿ç·şÊÀ½ç»÷É±boss¹«¸æÃ»ÓĞ¾üÍÅ
-	const int32 high_level_broken_sky_spawn_id = 82039003;//¸ßµÈ¼¶ÆÆËéĞé¿Õbossid
+	const int32 notice_id_boss = 93000026;				// bosså’Œé»„é‡‘æˆ˜é˜Ÿçš„noticeid
+	const int32 notice_id_boss_add_legion = 93000199;	// bosså’Œé»„é‡‘æˆ˜é˜Ÿå¸¦å†›å›¢åå­—çš„noticeId
+	const int32 notice_id_curse = 93000028;				// è¯…å’’ç¥æ®¿çš„noticeid
+	const int32 notice_id_broken_sky = 93000053;		// ç ´ç¢è™šç©º
+	const int32 notice_id_legion_boss = 93000056;		// å†›å›¢boss
+	const int32 notice_id_gain_treasure_boss_set_top = 93000240;	//æ‰“å®bossç½®é¡¶
+	const int32 notice_id_gain_treasure_boss_record = 93000241;		//æ‰“å®bossæ­£å¸¸
+	const int32 first_boss_spawn_id = 82010001;			//ç¬¬ä¸€ä¸ªä¸–ç•ŒbossID
+	const int32 first_daily_boss_spawn_id = 82010001;	//ç¬¬ä¸€ä¸ªä¸–ç•Œç²¾è‹±ID
+	const int32 last_boss_spawn_id = 82010012;			//æœ€åä¸€ä¸ªä¸–ç•ŒbossID
+	const int32 first_elite_ready_notice_id = 93000205; //ç¬¬ä¸€ä¸ªä¸–ç•Œç²¾è‹±å‡†å¤‡å…¬å‘Šçš„ID
+	const int32 first_boss_free_notice_id = 93000215;	//ç¬¬ä¸€ä¸ªæ— èŠçš„bosså…¬å‘ŠID
+	const int32 notice_id_boss_island_record = 93000263;//æ°¸æ’å²›å…¬å‘ŠID
+	const int32 notice_id_cross_server_kill_player = 93000266;//è·¨æœæ€äººå…¬å‘Š
+	const int32 notice_id_cross_boss_award_id = 93000278;//è·¨æœä¸–ç•Œå‡»æ€bosså…¬å‘Šæœ‰å†›å›¢
+	const int32 notice_id_cross_boss_award_id_not_legion = 93000291;//è·¨æœä¸–ç•Œå‡»æ€bosså…¬å‘Šæ²¡æœ‰å†›å›¢
+	const int32 high_level_broken_sky_spawn_id = 82039003;//é«˜ç­‰çº§ç ´ç¢è™šç©ºbossid
 
-	const int32 first_boss_ready_npc_id = 82013000;	//µÚÒ»¸öBOSS×¼±¸Ê±Ë¢ĞÂµÄNPCID
-	const int32 end_boss_ready_npc_id = 82013006;	//×îºóÒ»¸öBOSS×¼±¸ÊÒË¢ĞÂµÄNPCID
-	const int32 boss_rage_buff_id = 10010255;//Bossµ½Ê±¼äÒÔºó¿ñ±©buffID
+	const int32 first_boss_ready_npc_id = 82013000;	//ç¬¬ä¸€ä¸ªBOSSå‡†å¤‡æ—¶åˆ·æ–°çš„NPCID
+	const int32 end_boss_ready_npc_id = 82013006;	//æœ€åä¸€ä¸ªBOSSå‡†å¤‡å®¤åˆ·æ–°çš„NPCID
+	const int32 boss_rage_buff_id = 10010255;//Bossåˆ°æ—¶é—´ä»¥åç‹‚æš´buffID
 
 	const int32 area_npc_start_id = 76980200;
 	const int32 area_npc_end_id = 76980239;

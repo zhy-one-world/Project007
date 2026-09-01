@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2015Äê7ÔÂ24ÈÕ14:00:15
+	created:	2015å¹´7æœˆ24æ—¥14:00:15
 	file base:	msgproc_buff
 	file ext:	hpp
 	author:		zhy
@@ -14,7 +14,7 @@
 
 namespace faith
 {
-	//½ÇÉ«¼¼ÄÜ
+	//è§’è‰²æŠ€èƒ½
 	void cs2dp_req_load_char_buff(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index);
 	void cs2dp_req_load_char_buff_end(db_result_type result, uint32 connindex, const guid_64& role_guid, const int32& unit_array_index);
 	void cs2dp_req_save_char_buff(uint32 connindex, const void* data_ptr, size_t data_len);

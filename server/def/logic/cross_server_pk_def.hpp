@@ -1,5 +1,5 @@
 /********************************************************************
-  created: 2019Äê1ÔÂ15ÈÕ
+  created: 2019å¹´1æœˆ15æ—¥
   file base: cross_server_pk_def
   file ext: hpp
   author: zhangshuo
@@ -14,19 +14,19 @@
 namespace faith 
 {
 #pragma pack(push,1)
-	const int32 max_island_player_num = 2;//Ò»¸öĞ¡µº×î´óÈËÊı
-	const int32 max_island_team_num = 8;//×î´ó1v1¶ÔÊı
-	const int32 max_1v1_player_num = 16;//16Ç¿
+	const int32 max_island_player_num = 2;//ä¸€ä¸ªå°å²›æœ€å¤§äººæ•°
+	const int32 max_island_team_num = 8;//æœ€å¤§1v1å¯¹æ•°
+	const int32 max_1v1_player_num = 16;//16å¼º
 
 	const int32 max_branch_type = 4;
-	const int32 max_cross_server_war_count = 15;//×î´ó±ÈÈü¼ÇÂ¼ÊıÁ¿£¨8+4+2+1£©
+	const int32 max_cross_server_war_count = 15;//æœ€å¤§æ¯”èµ›è®°å½•æ•°é‡ï¼ˆ8+4+2+1ï¼‰
 	const int32 max_cross_server_all_class_war_count = 60;
 
-	const int32 first_award_att_id = 113018001;//²ÎÓë½±µÄID£¨µÚÒ»¸ö½±Àø£©
+	const int32 first_award_att_id = 113018001;//å‚ä¸å¥–çš„IDï¼ˆç¬¬ä¸€ä¸ªå¥–åŠ±ï¼‰
 
-	const int32 title_best_barserker_temp_id = 39000026;//×îÇ¿Õ½Ê¿³ÆºÅID
+	const int32 title_best_barserker_temp_id = 39000026;//æœ€å¼ºæˆ˜å£«ç§°å·ID
 
-	const int32 load_fake_player_time = 60;//load µñÏñ ¼ä¸ô
+	const int32 load_fake_player_time = 60;//load é›•åƒ é—´éš”
 
 	//enum e_cross_pk_state
 	//{
@@ -48,18 +48,18 @@ namespace faith
 
 	enum e_pk_island_win_state
 	{
-		e_pk_island_win_state_win,//Ê¤Àû
-		e_pk_island_win_state_draw,//Æ½ÊÖ
-		e_pk_island_win_state_lose,//Ê§°Ü
+		e_pk_island_win_state_win,//èƒœåˆ©
+		e_pk_island_win_state_draw,//å¹³æ‰‹
+		e_pk_island_win_state_lose,//å¤±è´¥
 		e_pk_island_win_state_max
 	};
 
 	enum e_pk_map_id
 	{
-		e_pk_map_id_barserker = 71211103,//¿ñÕ½
-		e_pk_map_id_wizard,//·¨Ê¦
-		e_pk_map_id_guardian,//ÆïÊ¿
-		e_pk_map_id_assassinator,//´Ì¿Í
+		e_pk_map_id_barserker = 71211103,//ç‹‚æˆ˜
+		e_pk_map_id_wizard,//æ³•å¸ˆ
+		e_pk_map_id_guardian,//éª‘å£«
+		e_pk_map_id_assassinator,//åˆºå®¢
 	};
 
 	struct s_pk_island_player_msg

@@ -29,7 +29,7 @@ namespace faith
 		e_msgindex_ws2dp_load_cloud_shop_not_finish_content,
 		e_msgindex_dp2ws_load_cloud_shop_not_finish_content_end,
 
-		//¿ç·ş
+		//è·¨æœ
 		e_msgindex_ws2gws_send_buy_cloud,
 		e_msgindex_gws2ws_cloud_shop_buy,
 		e_msgindex_ws2gws_cloud_shop_buy_end,
@@ -80,8 +80,8 @@ namespace faith
 	struct ws2cs_cloud_shop_buy_req : public packet_base
 	{
 		guid_64 role_guid;
-		int32 buy_type;			//0: ¹ºÂò 1:ÇÀ¹º
-		int32 have_buy_count;	//ÒÑ¹ºÂòÊıÁ¿(²»°üº¬ÇÀ¹ºÊıÁ¿)
+		int32 buy_type;			//0: è´­ä¹° 1:æŠ¢è´­
+		int32 have_buy_count;	//å·²è´­ä¹°æ•°é‡(ä¸åŒ…å«æŠ¢è´­æ•°é‡)
 		int32 need_money_type;
 		int32 need_money_count;
 		ws2cs_cloud_shop_buy_req()
@@ -109,11 +109,11 @@ namespace faith
 
 	struct cs2ws_cloud_shop_buy_resp : public packet_base
 	{
-		int32 error_id;			//0: ³É¹¦,Ã»´íÎó
+		int32 error_id;			//0: æˆåŠŸ,æ²¡é”™è¯¯
 		int32 buy_type;
 		guid_64 rold_guid;
 		int32	server_id;
-		int32	sender_server_id;//ËùÔÚ·şÎñÆ÷
+		int32	sender_server_id;//æ‰€åœ¨æœåŠ¡å™¨
 		cs2ws_cloud_shop_buy_resp()
 		{
 			memset(this, 0, sizeof(*this));
@@ -123,7 +123,7 @@ namespace faith
 
 	struct ws2gws_send_bug_cloud : public packet_base
 	{
-		int32	sender_server_id;//ËùÔÚ·şÎñÆ÷
+		int32	sender_server_id;//æ‰€åœ¨æœåŠ¡å™¨
 		int32	req_type;
 		int32	server_id;
 		guid_64	role_guid;
@@ -143,7 +143,7 @@ namespace faith
 
 	struct ws2gws_get_cloud_shop : public packet_base
 	{
-		int32	sender_server_id;//ËùÔÚ·şÎñÆ÷
+		int32	sender_server_id;//æ‰€åœ¨æœåŠ¡å™¨
 		guid_64	role_guid;
 		ws2gws_get_cloud_shop()
 		{

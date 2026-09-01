@@ -18,7 +18,7 @@
 namespace faith 
 {
 #pragma pack(push,1)
-	//	ÓÃÓÚ·şÎñÆ÷×éÄÚ²¿¸÷·şÎñÆ÷¼ä½¨Á¢Á¬½ÓµÄĞ­Òé¶¨Òå
+	//	ç”¨äºæœåŠ¡å™¨ç»„å†…éƒ¨å„æœåŠ¡å™¨é—´å»ºç«‹è¿æ¥çš„åè®®å®šä¹‰
 	enum
 	{
 		e_msg_index_req_login = e_msg_base_internal,
@@ -63,8 +63,8 @@ namespace faith
 
 	struct app_server_update : public packet_base
 	{
-		int32 player_count;			// µ±Ç°Íæ¼ÒÊıÁ¿
-		int32 max_player_count;		// ¿ÉÈİÔØ×î´óÍæ¼ÒÊıÁ¿
+		int32 player_count;			// å½“å‰ç©å®¶æ•°é‡
+		int32 max_player_count;		// å¯å®¹è½½æœ€å¤§ç©å®¶æ•°é‡
 		app_server_update()
 		{
 			wheader=e_msg_index_appserver_dataupdate;

@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê8ÔÂ23ÈÕ14:56:28
+created: 2016å¹´8æœˆ23æ—¥14:56:28
 file base: ranking_cross
 file ext: hpp
 author: zhangminghai

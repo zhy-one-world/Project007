@@ -50,8 +50,8 @@ namespace faith
 	}
 	void ai_level_nomal::clear_data()
 	{
-		m_tick_next_time = 0;//ÏÂÒ»¸ötickÏûºÄµÄÊ±¼ä
-		m_move_tick_time = 0;//¿ªÊ¼ÒÆ¶¯µÄÊ±¼äµã
+		m_tick_next_time = 0;//ä¸‹ä¸€ä¸ªtickæ¶ˆè€—çš„æ—¶é—´
+		m_move_tick_time = 0;//å¼€å§‹ç§»åŠ¨çš„æ—¶é—´ç‚¹
 		m_face_next_time = 0;
 		m_ai_state = e_ai_state_born;
 		m_ai_state_time = 0;
@@ -60,28 +60,28 @@ namespace faith
 		m_born_location.clear_data();
 		m_born_rotation.clear_data();
 		m_chase_rotation.clear_data();
-		m_patrol_location.clear_data();	//Ñ²Âßµã
-		m_chase_location.clear_data();//¿ªÊ¼×·»÷µÄµã
-		m_view_length = 0;//×îÔ¶¿É¼û¾àÀë
-		m_pursuit_length = 0;;//×î´ó×·»÷¾àÀë
-		m_patrol_length = 0;;//×î´óÑ²Âß¾àÀë
-		m_speed_vector.clear_data();//ÒÆ¶¯ËÙ¶È
-		m_born_map_ent = nullptr;//³öÉúµÄµØÍ¼id
-		m_skill_index = 0;;//¼¼ÄÜÁĞ±íµÄÏÂ±ê
+		m_patrol_location.clear_data();	//å·¡é€»ç‚¹
+		m_chase_location.clear_data();//å¼€å§‹è¿½å‡»çš„ç‚¹
+		m_view_length = 0;//æœ€è¿œå¯è§è·ç¦»
+		m_pursuit_length = 0;;//æœ€å¤§è¿½å‡»è·ç¦»
+		m_patrol_length = 0;;//æœ€å¤§å·¡é€»è·ç¦»
+		m_speed_vector.clear_data();//ç§»åŠ¨é€Ÿåº¦
+		m_born_map_ent = nullptr;//å‡ºç”Ÿçš„åœ°å›¾id
+		m_skill_index = 0;;//æŠ€èƒ½åˆ—è¡¨çš„ä¸‹æ ‡
 		m_skill_order = 0;
-		m_skill_vec.clear();//¼¼ÄÜÁĞ±í
-		m_skill_vec_len = 0;//¼¼ÄÜÁĞ±í³¤¶È
+		m_skill_vec.clear();//æŠ€èƒ½åˆ—è¡¨
+		m_skill_vec_len = 0;//æŠ€èƒ½åˆ—è¡¨é•¿åº¦
 		m_damage_vec.clear();
 		m_damage_vec_len = 0;
-		m_first_attack_index = 0;;//Ê×¸ö¹¥»÷Õß
+		m_first_attack_index = 0;;//é¦–ä¸ªæ”»å‡»è€…
 		m_total_hate = 0;
 		m_war_time = 0;
-		m_back_hp_begin = false;//¿ªÊ¼Æô¶¯·µ»Ø³öÉúµã»ØÑª
-		m_back_hp_time = 0;//·µ»Ø³öÉúµã»ØÑª¼ä¸ô
+		m_back_hp_begin = false;//å¼€å§‹å¯åŠ¨è¿”å›å‡ºç”Ÿç‚¹å›è¡€
+		m_back_hp_time = 0;//è¿”å›å‡ºç”Ÿç‚¹å›è¡€é—´éš”
 		m_has_combo_skill = false;
 		m_next_combo_skill = 0;
-		m_patrol_type = 0;		//Ñ²ÂßÀàĞÍ
-		m_patrol_direction = 0;	//Ñ²Âß·½Ïò	1--ÕıÏò	0--·´Ïò
+		m_patrol_type = 0;		//å·¡é€»ç±»å‹
+		m_patrol_direction = 0;	//å·¡é€»æ–¹å‘	1--æ­£å‘	0--åå‘
 		m_hate_vec.clear();
 		m_hate_vec_len = 0;
 		m_attack_map.clear();
@@ -240,7 +240,7 @@ namespace faith
 		if (fake_player_ptr.skill_num > 0 && fake_player_ptr.skill_num <= MAX_SKILL_NUM)
 		{
 			for (int32 i = 0; i < fake_player_ptr.skill_num; ++i)
-			{//ÏÈ¼ÓCD¼¼ÄÜ
+			{//å…ˆåŠ CDæŠ€èƒ½
 				s_skill_info const& skill_info = fake_player_ptr.skill_data[i];
 				int32 skill_template_id = skill_info.data_ary[e_skill_info_template_id];
 				int32 skill_type = skill_info.data_ary[e_skill_info_skill_type];
@@ -256,7 +256,7 @@ namespace faith
 			}
 
 			for (int32 i = 0; i < fake_player_ptr.skill_num; ++i)
-			{//ÔÙ¼ÓÆÕÍ¨¼¼ÄÜ
+			{//å†åŠ æ™®é€šæŠ€èƒ½
 				s_skill_info const& skill_info = fake_player_ptr.skill_data[i];
 				int32 skill_template_id = skill_info.data_ary[e_skill_info_template_id];
 				int32 skill_type = skill_info.data_ary[e_skill_info_skill_type];
@@ -425,7 +425,7 @@ namespace faith
 				else
 				{
 					unit_man::remove_npc(m_npc_ptr->get_array_index(), false);
-					return;//¹éÊô²»´æÔÚ¾ÍÉ¾,Ö»ÅĞ¶Ïnpc
+					return;//å½’å±ä¸å­˜åœ¨å°±åˆ ,åªåˆ¤æ–­npc
 				}
 			}
 		}
@@ -555,14 +555,14 @@ namespace faith
 		}
 
 		if (m_first_attack_index <= 0)
-		{//ÉèÖÃÊ×¸ö¹¥»÷ÕßID£¬²¢Í¬Ê±½« Î´ÊÜ¹¥»÷ ±êÖ¾Î»ÖÃ0 ·Åµ½ÕâÀïÊÇÒòÎªÕÙ»½ÎïÓĞ¹éÊôÕß ²»ÄÜÈ¡±¾ÉíµÄindex
+		{//è®¾ç½®é¦–ä¸ªæ”»å‡»è€…IDï¼Œå¹¶åŒæ—¶å°† æœªå—æ”»å‡» æ ‡å¿—ä½ç½®0 æ”¾åˆ°è¿™é‡Œæ˜¯å› ä¸ºå¬å”¤ç‰©æœ‰å½’å±è€… ä¸èƒ½å–æœ¬èº«çš„index
 			m_first_attack_index = real_attarker->get_array_index();
 		}
 
 		add_hate_value(real_attarker->get_identifier(), hp);
 		add_damage_value(real_attarker->get_identifier(), real_attarker->get_legion_guid(), hp);
 
-		//Èç¹ûÊÕµ½¹¥»÷µÄnpcÎªÕÙ»½Îï£¬Ôò°ÑÕÙ»½ÎïÊÜµ½µÄÉËº¦¼Ó¸ø¹éÊônpc
+		//å¦‚æœæ”¶åˆ°æ”»å‡»çš„npcä¸ºå¬å”¤ç‰©ï¼Œåˆ™æŠŠå¬å”¤ç‰©å—åˆ°çš„ä¼¤å®³åŠ ç»™å½’å±npc
 		if (m_npc_ptr != nullptr && m_npc_template_ptr != nullptr && m_npc_template_ptr->DamageSummonWithSelf == 1)
 		{
 			s_unit_identifier cur_npc_owner = m_npc_ptr->get_owner();
@@ -605,7 +605,7 @@ namespace faith
 			player& master_ref = unit_man::get_player(get_follow_guid());
 			if (master_ref.is_valid() && master_ref.get_map_guid() == m_npc_ptr->get_map_guid())
 			{
-				//ÔÚÖ÷ÈËÒ»¶¨·¶Î§ÄÚ£¬½øÈë¼¼ÄÜ×´Ì¬, ·ñÔò½øÈëmove×´Ì¬
+				//åœ¨ä¸»äººä¸€å®šèŒƒå›´å†…ï¼Œè¿›å…¥æŠ€èƒ½çŠ¶æ€, å¦åˆ™è¿›å…¥moveçŠ¶æ€
 				if (check_need_follow_master(get_follow_guid()))
 				{
 					set_next_time(new_time, ai_attack_tick_time);
@@ -619,7 +619,7 @@ namespace faith
 			player& master_ref = unit_man::get_player(m_npc_ptr->get_owner());
 			if (master_ref.is_valid() && master_ref.get_map_guid() == m_npc_ptr->get_map_guid())
 			{
-				//ÔÚÖ÷ÈËÒ»¶¨·¶Î§ÄÚ£¬½øÈë¼¼ÄÜ×´Ì¬, ·ñÔò½øÈëmove×´Ì¬
+				//åœ¨ä¸»äººä¸€å®šèŒƒå›´å†…ï¼Œè¿›å…¥æŠ€èƒ½çŠ¶æ€, å¦åˆ™è¿›å…¥moveçŠ¶æ€
 				if (false == check_need_follow_master(m_npc_ptr->get_owner().unit_guid))
 				{
 					if (master_ref.get_pawn_att().get_game_att(e_unit_game_att_war_state) == e_war_state_attack_in)
@@ -640,7 +640,7 @@ namespace faith
 			}
 			else
 			{
-				//TODO ×ÔÎÒ»ÙÃğ£¿
+				//TODO è‡ªæˆ‘æ¯ç­ï¼Ÿ
 				unit_man::remove_npc(m_npc_ptr->get_array_index(), false);
 				return;
 			}
@@ -732,7 +732,7 @@ namespace faith
 			player& master_ref = unit_man::get_player(m_npc_ptr->get_owner());
 			if (master_ref.is_valid() && master_ref.get_map_guid() == m_npc_ptr->get_map_guid())
 			{
-				//ÔÚÖ÷ÈËÒ»¶¨·¶Î§ÄÚ£¬ÔòÍ£Ö¹½øÈëstand×´Ì¬£¬·ñÔò¼ÌĞø
+				//åœ¨ä¸»äººä¸€å®šèŒƒå›´å†…ï¼Œåˆ™åœæ­¢è¿›å…¥standçŠ¶æ€ï¼Œå¦åˆ™ç»§ç»­
 				if (false == check_need_follow_master(m_npc_ptr->get_owner().unit_guid))
 				{
 					set_next_time(new_time, ai_move_tick_time);
@@ -746,7 +746,7 @@ namespace faith
 					follow_map_pos.clear_data();
 					get_map_pos_need_master(follow_map_pos, m_npc_ptr->get_owner().unit_guid);
 
-					//ÏÈ´¦ÀízÖá
+					//å…ˆå¤„ç†zè½´
 					if (m_npc_ptr->get_new_map_pos().unit_location.z != follow_map_pos.unit_location.z)
 					{
 						s_map_pos new_map_pos;
@@ -766,7 +766,7 @@ namespace faith
 			}
 			else
 			{
-				//TODO ×ÔÎÒ»ÙÃğ£¿
+				//TODO è‡ªæˆ‘æ¯ç­ï¼Ÿ
 				unit_man::remove_npc(m_npc_ptr->get_array_index(), false);
 				return;
 			}
@@ -806,7 +806,7 @@ namespace faith
 			player& master_ref = unit_man::get_player(get_follow_guid());
 			if (master_ref.is_valid() && master_ref.get_map_guid() == m_npc_ptr->get_map_guid())
 			{
-				//ÔÚÖ÷ÈËÒ»¶¨·¶Î§ÄÚ£¬½øÈë¼¼ÄÜ×´Ì¬, ·ñÔò½øÈëmove×´Ì¬
+				//åœ¨ä¸»äººä¸€å®šèŒƒå›´å†…ï¼Œè¿›å…¥æŠ€èƒ½çŠ¶æ€, å¦åˆ™è¿›å…¥moveçŠ¶æ€
 				if (check_need_follow_master(get_follow_guid()))
 				{
 					set_next_time(new_time, ai_attack_tick_time);
@@ -865,7 +865,7 @@ namespace faith
 			{
 				return;
 			}
-			m_back_hp_begin = false;//Èç¹ûÔÚ»Ö¸´Ê±¼äÄÚ±»´òÁË£¬Ôò´ò¶Ï»ØÑª
+			m_back_hp_begin = false;//å¦‚æœåœ¨æ¢å¤æ—¶é—´å†…è¢«æ‰“äº†ï¼Œåˆ™æ‰“æ–­å›è¡€
 			fvector cur_npc_location = m_npc_ptr->get_new_map_pos().unit_location;
 			fvector unit_location = unit_ref.get_new_map_pos().unit_location;
 
@@ -905,7 +905,7 @@ namespace faith
 				}
 				else
 				{
-					if (!m_npc_ptr->is_area_npc())  //¾º¼¼³¡NPC ÈÃÒÆ¶¯
+					if (!m_npc_ptr->is_area_npc())  //ç«æŠ€åœºNPC è®©ç§»åŠ¨
 					{
 						m_npc_ptr->get_move_mgr().stop(true);
 					}
@@ -944,7 +944,7 @@ namespace faith
 				{
 					skill_distance_decimal = 0;
 				}
-				middle_end_location.x = cur_npc_location.x + (destination_location.x - cur_npc_location.x) / 3;//È¡Ô­Â·³ÌµÄÈı·ÖÖ®Ò»Îªµ±Ç°Ä¿±êµÄ×îÖÕµã
+				middle_end_location.x = cur_npc_location.x + (destination_location.x - cur_npc_location.x) / 3;//å–åŸè·¯ç¨‹çš„ä¸‰åˆ†ä¹‹ä¸€ä¸ºå½“å‰ç›®æ ‡çš„æœ€ç»ˆç‚¹
 				middle_end_location.y = cur_npc_location.y + (destination_location.y - cur_npc_location.y) / 3;
 				middle_end_location.z = cur_npc_location.z;
 				fvector middle_diff_vector = middle_end_location - cur_npc_location;
@@ -954,7 +954,7 @@ namespace faith
 				fvector move_vector;
 				move_vector.x = (npc_skill_ptr->skill_distance - npc_skill_ptr->skill_distance * skill_distance_decimal) * cos(radian_value);
 				move_vector.y = (npc_skill_ptr->skill_distance - npc_skill_ptr->skill_distance * skill_distance_decimal) * sin(radian_value);
-				if ((move_vector.length_2d() * 2) >= middle_diff_vector.length_2d())//Èç¹û×ßµ½×îÔ¶¼¼ÄÜ¾àÀëµÄlength´óÓÚÖĞ¼äÖµµÄlengh£¬ÔòÖ´ĞĞÔ­Âß¼­
+				if ((move_vector.length_2d() * 2) >= middle_diff_vector.length_2d())//å¦‚æœèµ°åˆ°æœ€è¿œæŠ€èƒ½è·ç¦»çš„lengthå¤§äºä¸­é—´å€¼çš„lenghï¼Œåˆ™æ‰§è¡ŒåŸé€»è¾‘
 				{
 					double move_speed = m_npc_ptr->get_pawn_att().get_attack_att_value(e_unit_attack_att_move_speed);
 					if (move_speed <= 100)
@@ -983,7 +983,7 @@ namespace faith
 						}
 					}
 				}
-				else//·ñÔòÖ´ĞĞĞÂÂß¼­£¬ÏÈ×ßµ½Èı·ÖÖ®Ò»´¦ÔÙÅĞ¶ÏÄ¿±êÎ»ÖÃ
+				else//å¦åˆ™æ‰§è¡Œæ–°é€»è¾‘ï¼Œå…ˆèµ°åˆ°ä¸‰åˆ†ä¹‹ä¸€å¤„å†åˆ¤æ–­ç›®æ ‡ä½ç½®
 				{
 					double move_speed = m_npc_ptr->get_pawn_att().get_attack_att_value(e_unit_attack_att_move_speed);
 					if (move_speed <= 100)
@@ -1021,7 +1021,7 @@ namespace faith
 			player& master_ref = unit_man::get_player(get_follow_guid());
 			if (master_ref.is_valid() && master_ref.get_map_guid() == m_npc_ptr->get_map_guid())
 			{
-				//ÔÚÖ÷ÈËÒ»¶¨·¶Î§ÄÚ£¬½øÈë¼¼ÄÜ×´Ì¬, ·ñÔò½øÈëmove×´Ì¬
+				//åœ¨ä¸»äººä¸€å®šèŒƒå›´å†…ï¼Œè¿›å…¥æŠ€èƒ½çŠ¶æ€, å¦åˆ™è¿›å…¥moveçŠ¶æ€
 				if (check_need_follow_master(get_follow_guid()))
 				{
 					set_next_time(new_time, ai_attack_tick_time);
@@ -1035,7 +1035,7 @@ namespace faith
 			player& master_ref = unit_man::get_player(m_npc_ptr->get_owner());
 			if (master_ref.is_valid() && master_ref.get_map_guid() == m_npc_ptr->get_map_guid())
 			{
-				//ÓÅÏÈÒÆ¶¯µ½Ö÷ÈËÒ»¶¨·¶Î§ÄÚ£¬Èç¹ûÔÚ£¬ÔòÓÅÏÈÑ¡ÔñÄ¿±êÊ©·Å¼¼ÄÜ£¬ÕÒ²»µ½Ôò½øÈëstand×´Ì¬
+				//ä¼˜å…ˆç§»åŠ¨åˆ°ä¸»äººä¸€å®šèŒƒå›´å†…ï¼Œå¦‚æœåœ¨ï¼Œåˆ™ä¼˜å…ˆé€‰æ‹©ç›®æ ‡æ–½æ”¾æŠ€èƒ½ï¼Œæ‰¾ä¸åˆ°åˆ™è¿›å…¥standçŠ¶æ€
 				if (check_need_follow_master(m_npc_ptr->get_owner().unit_guid))
 				{
 					m_ai_state = e_ai_state_move;
@@ -1078,7 +1078,7 @@ namespace faith
 				{
 					return;
 				}
-				//µ÷Õû·½Ïò
+				//è°ƒæ•´æ–¹å‘
 				{
 					fvector  cur_location = m_npc_ptr->get_new_map_pos().unit_location;
 					frotator cur_rotation = m_npc_ptr->get_new_map_pos().unit_rotation;
@@ -1115,7 +1115,7 @@ namespace faith
 			}
 			else
 			{
-				//TODO ×ÔÎÒ»ÙÃğ£¿
+				//TODO è‡ªæˆ‘æ¯ç­ï¼Ÿ
 				unit_man::remove_npc(m_npc_ptr->get_array_index(), false);
 				return;
 			}
@@ -1209,7 +1209,7 @@ namespace faith
 			//	}
 			//}
 
-			//ÅĞ¶ÏÊÇ²»ÊÇ¿ç·şÊÀ½çbossµÄÎŞµĞ¼¼ÄÜÈç¹ûÊÇ¾Í·¢ËÍ¼¼ÄÜ¿ªÊ¼Ê±¼äµ½¿Í»§¶Ë{
+			//åˆ¤æ–­æ˜¯ä¸æ˜¯è·¨æœä¸–ç•Œbossçš„æ— æ•ŒæŠ€èƒ½å¦‚æœæ˜¯å°±å‘é€æŠ€èƒ½å¼€å§‹æ—¶é—´åˆ°å®¢æˆ·ç«¯{
 			if (m_npc_ptr->is_valid() && m_npc_ptr->is_god_skill(npc_skill_ptr->skill_template_id))
 			{
 				m_npc_ptr->set_boss_god_skill_begin_time(int32(new_time / 1000));
@@ -1365,7 +1365,7 @@ namespace faith
 				follow_map_pos.clear_data();
 				get_map_pos_need_master(follow_map_pos, get_follow_guid());
 
-				//ÏÈ´¦ÀízÖá
+				//å…ˆå¤„ç†zè½´
 				if (m_npc_ptr->get_new_map_pos().unit_location.z != follow_map_pos.unit_location.z)
 				{
 					s_map_pos new_map_pos;
@@ -1442,7 +1442,7 @@ namespace faith
 			if (m_has_combo_skill
 				&& m_skill_vec[m_skill_index].skill_type == e_npc_skill_type_nomal
 				&& m_next_combo_skill > 0)
-			{//ÄÜÁ¬»÷+ÕÒµ½µÄ¼¼ÄÜÊ±ÆÕ¹¥+ÆÕÍ¨µÄÏÂÒ»¶Î¼¼ÄÜÒÑÈ·¶¨Ê±
+			{//èƒ½è¿å‡»+æ‰¾åˆ°çš„æŠ€èƒ½æ—¶æ™®æ”»+æ™®é€šçš„ä¸‹ä¸€æ®µæŠ€èƒ½å·²ç¡®å®šæ—¶
 				return find_skill_by_template_id(m_next_combo_skill);
 			}
 			else
@@ -1495,8 +1495,8 @@ namespace faith
 			}
 			if ((m_skill_index >= 0 && m_skill_index < m_skill_vec.size())
 				&& temp_skill.npc_skill_type != m_skill_vec[m_skill_index].npc_skill_type)
-			{//µ±ÒÑ¾­ÓĞºòÑ¡¼¼ÄÜÊ±£¨¼´ÒÑ¾­Ñ­»·³ö×î¸ßÓÅÏÈ¼¶µÄ¼¼ÄÜÀàĞÍ£¬Èç CDÀà¼¼ÄÜ£©
-			//¾Í²»ÒªÔÙ¿¼ÂÇÆäËûÀàĞÍµÄ¼¼ÄÜÁË
+			{//å½“å·²ç»æœ‰å€™é€‰æŠ€èƒ½æ—¶ï¼ˆå³å·²ç»å¾ªç¯å‡ºæœ€é«˜ä¼˜å…ˆçº§çš„æŠ€èƒ½ç±»å‹ï¼Œå¦‚ CDç±»æŠ€èƒ½ï¼‰
+			//å°±ä¸è¦å†è€ƒè™‘å…¶ä»–ç±»å‹çš„æŠ€èƒ½äº†
 				continue;
 			}
 
@@ -1613,7 +1613,7 @@ namespace faith
 					unit& unit_ref = unit_man::get_unit(unit_index);
 					const fvector& unit_position = unit_ref.get_new_map_pos().unit_location;
 					if (init_unit::is_in_distance_with_high(cur_position, unit_position, m_view_length, 2.0f, false) == false)
-					{//¿´²»¼û
+					{//çœ‹ä¸è§
 						continue;
 					}
 					int64 cur_dis = init_unit::get_distance(cur_position, unit_position);
@@ -1624,12 +1624,12 @@ namespace faith
 						|| m_npc_ptr->is_mission_see(unit_index) == false
 						|| m_npc_ptr->get_pk_community_mgr().is_skill_target(unit_ref.get_array_index()) == false
 						)
-					{//½ÇÉ«´¦ÓÚ²»¿É¹¥»÷µÄ×´Ì¬
+					{//è§’è‰²å¤„äºä¸å¯æ”»å‡»çš„çŠ¶æ€
 						continue;
 					}
 					if (unit_ref.get_unit_type() == e_unit_type_player)
 					{
-						//Ñ¡È¡×î½üµÄÄÇ¸ö
+						//é€‰å–æœ€è¿‘çš„é‚£ä¸ª
 						if (min_player == 0)
 						{
 							min_player = cur_dis;
@@ -1646,7 +1646,7 @@ namespace faith
 					}
 					else
 					{
-						//Ñ¡È¡×î½üµÄÄÇ¸ö
+						//é€‰å–æœ€è¿‘çš„é‚£ä¸ª
 						if (min_npc == 0)
 						{
 							min_npc = cur_dis;
@@ -1829,7 +1829,7 @@ namespace faith
 			s_hate_info& hate_info_ref = m_hate_vec[i];
 			if (hate_info_ref.unit_identifier == unit_identifier)
 			{
-				hate_info_ref.hate_value *= 0.99f;//¼ì²âÈç¹ûÍæ¼ÒÊÇËÀÍö×´Ì¬ÇÒ´¦ÓÚ´ò±¦/ÓÀºãµºµØÍ¼£¬Ôò³ğºŞÖµ»ºÂı¼õÉÙ¶ø²»ÊÇÇåÁã
+				hate_info_ref.hate_value *= 0.99f;//æ£€æµ‹å¦‚æœç©å®¶æ˜¯æ­»äº¡çŠ¶æ€ä¸”å¤„äºæ‰“å®/æ°¸æ’å²›åœ°å›¾ï¼Œåˆ™ä»‡æ¨å€¼ç¼“æ…¢å‡å°‘è€Œä¸æ˜¯æ¸…é›¶
 				on_hate_list_may_change();
 				return true;
 			}
@@ -2026,7 +2026,7 @@ namespace faith
 		{
 			return;
 		}
-		//×Ô¼ºµÄÎ»ÖÃ
+		//è‡ªå·±çš„ä½ç½®
 		const fvector& cur_position = m_npc_ptr->get_new_map_pos().unit_location;
 		const unit_index_map& aoi_tower_watch = aoi_system::get_watch_all(m_npc_ptr->get_map_ent(), cur_position);
 		if (aoi_tower_watch.size() > 0)
@@ -2057,7 +2057,7 @@ namespace faith
 				{
 					continue;
 				}
-				if (unit_ref.get_npc_template() != nullptr)//ËÀÍö¸ø»÷É±Õß¼Óbuff
+				if (unit_ref.get_npc_template() != nullptr)//æ­»äº¡ç»™å‡»æ€è€…åŠ buff
 				{
 					std::vector<int32> buff_id_arr = unit_ref.get_npc_template()->BuffIdWithKill;
 					if (buff_id_arr.size() > 0)
@@ -2096,7 +2096,7 @@ namespace faith
 
 	bool ai_level_nomal::check_need_follow_master(guid_64 role_guid)
 	{
-		//³¢ÊÔ¼ÆËãÈıÎ¬×ø±êµã
+		//å°è¯•è®¡ç®—ä¸‰ç»´åæ ‡ç‚¹
 		player& master_ref = unit_man::get_player(role_guid);
 		if (master_ref.is_valid())
 		{
@@ -2126,7 +2126,7 @@ namespace faith
 
 	bool ai_level_nomal::check_need_follow_attack_master(guid_64 role_guid)
 	{
-		//³¢ÊÔ¼ÆËãÈıÎ¬×ø±êµã
+		//å°è¯•è®¡ç®—ä¸‰ç»´åæ ‡ç‚¹
 		player& master_ref = unit_man::get_player(role_guid);
 		if (master_ref.is_valid())
 		{

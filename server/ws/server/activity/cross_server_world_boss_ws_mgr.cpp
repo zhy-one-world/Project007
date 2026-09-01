@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2019Äê5ÔÂ24ÈÕ
+created: 2019å¹´5æœˆ24æ—¥
 file base: cross_server_world_boss_ws_mgr
 file ext: cpp
 author: zhaoyuming
@@ -97,7 +97,7 @@ namespace faith
 		{
 			m_game_over_flag = false;
 			m_is_cur_map_end[i] = false;
-			m_boss_damage_list[i].clear_data();			//bossÉËº¦ÁĞ±í
+			m_boss_damage_list[i].clear_data();			//bossä¼¤å®³åˆ—è¡¨
 			m_map_state[i] = e_map_state_max;
 			m_cross_world_boss_map_id[i] = 0;
 		}
@@ -117,7 +117,7 @@ namespace faith
 		send_get_boss_show_info_all();
 	}
 
-	//´´½¨µØÍ¼
+	//åˆ›å»ºåœ°å›¾
 	void cross_server_world_boss_ws_mgr::init_cross_server_world_boss_map()
 	{
 		for (int32 i = 0; i < map_max; i++)
@@ -128,10 +128,10 @@ namespace faith
 				m_cross_world_boss_map_id[i] = map_ent->getEntityId();
 			}
 		}
-		get_with_save_server_level();	//»ñµÃÆäËû·şÎñÆ÷µÄÆ½¾ùµÈ¼¶
+		get_with_save_server_level();	//è·å¾—å…¶ä»–æœåŠ¡å™¨çš„å¹³å‡ç­‰çº§
 	}
 
-	//ÅĞ¶ÏÍæ¼ÒÊÇ·ñ¿ÉÒÔ½øĞĞ¿ç·ş²¢´«ËÍµ½»î¶¯µØÍ¼
+	//åˆ¤æ–­ç©å®¶æ˜¯å¦å¯ä»¥è¿›è¡Œè·¨æœå¹¶ä¼ é€åˆ°æ´»åŠ¨åœ°å›¾
 	e_error_code cross_server_world_boss_ws_mgr::is_can_join_with_cross(guid_64 role_guid, int32 map_type)
 	{
 		client_session* cur_session_ptr = client_session_mgr::getInstance().get_session(role_guid);
@@ -141,25 +141,25 @@ namespace faith
 		}
 		if (is_in_game_ready_time() == false && is_in_game_all_time() == false)
 		{
-			cur_session_ptr->send_notice("90090360");  //¿ç·şÊÀ½çboss»î¶¯Î´¿ªÆô
+			cur_session_ptr->send_notice("90090360");  //è·¨æœä¸–ç•Œbossæ´»åŠ¨æœªå¼€å¯
 			return e_error_code_map_cross_server_world_boss_begin;
 		}
 		if (false == world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_boss))
 		{
-			cur_session_ptr->send_notice("90305015");//¿ç·şÊÀ½çboss»î¶¯»¹Ã»ÓĞ¿ª·Å
+			cur_session_ptr->send_notice("90305015");//è·¨æœä¸–ç•Œbossæ´»åŠ¨è¿˜æ²¡æœ‰å¼€æ”¾
 			return e_error_code_map_cross_server_world_boss_not_start;
 		}
 		int32 map_id = get_cross_server_world_boss_map_temp_id(map_type);
 		MapTemplate* map_ptr = GET_TEMPLATE(MapTemplate, map_id);
 		if (map_ptr == nullptr || map_ptr->EnterLevel > cur_session_ptr->get_role_info_data(e_role_info_exp_level))
 		{
-			cur_session_ptr->send_notice("90090228");//µÈ¼¶²»×ãÒÔ½øÈë»î¶¯µØÍ¼
+			cur_session_ptr->send_notice("90090228");//ç­‰çº§ä¸è¶³ä»¥è¿›å…¥æ´»åŠ¨åœ°å›¾
 			return e_error_code_map_max_players;
 		}
 		return e_error_code_success;
 	}
 
-	//ÅĞ¶ÏµØÍ¼ÊÇ·ñÄÜ´«ËÍ
+	//åˆ¤æ–­åœ°å›¾æ˜¯å¦èƒ½ä¼ é€
 	e_error_code cross_server_world_boss_ws_mgr::is_can_join_with_cross_gate(int32 map_type)
 	{
 		if (false == world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_boss))
@@ -186,7 +186,7 @@ namespace faith
 		return e_error_code_success;
 	}
 
-	//ÅĞ¶ÏÊÇ·ñ¿ÉÒÔ¿ç·ş²¢´«ËÍµ½»î¶¯µØÍ¼
+	//åˆ¤æ–­æ˜¯å¦å¯ä»¥è·¨æœå¹¶ä¼ é€åˆ°æ´»åŠ¨åœ°å›¾
 	void cross_server_world_boss_ws_mgr::recv_other_ws_transger_gate_map(guid_64 role_guid, int32 server_id, int32 map_type)
 	{
 		e_error_code ret = is_can_join_with_cross_gate(map_type);
@@ -214,7 +214,7 @@ namespace faith
 		cross::send_msg_to_ws(guid_64(), server_id, e_msgindex_ws2ws_cross_world_boss_map_result, &msg, sizeof(msg));
 	}
 
-	//¿ç·ş²¢´«ËÍµ½»î¶¯µØÍ¼
+	//è·¨æœå¹¶ä¼ é€åˆ°æ´»åŠ¨åœ°å›¾
 	void cross_server_world_boss_ws_mgr::transfer_to_map_with_gate_msg(guid_64 role_guid, int32 error_ret, int32 map_temp_id, guid_64 map_guid, int32 war_idex, int32 server_id)
 	{
 		client_session* session_ptr = client_session_mgr::getInstance().get_session(role_guid);
@@ -232,13 +232,13 @@ namespace faith
 			notice_id = "90090579";
 			break;
 		case faith::e_error_code_map_cross_server_world_boss_begin:
-			notice_id = "90090360";//¿ç·şÊÀ½çboss»î¶¯Î´¿ªÊ¼
+			notice_id = "90090360";//è·¨æœä¸–ç•Œbossæ´»åŠ¨æœªå¼€å§‹
 			break;
 		case faith::e_error_code_map_cross_server_world_boss_end:
-			notice_id = "90090360";//¿ç·şÊÀ½çboss»î¶¯ÒÑ½áÊø
+			notice_id = "90090360";//è·¨æœä¸–ç•Œbossæ´»åŠ¨å·²ç»“æŸ
 			break;
 		case faith::e_error_code_map_cross_server_world_boss_not_start:
-			notice_id = "90305015";//¿ç·şÊÀ½çboss»î¶¯Î´¿ªÆô
+			notice_id = "90305015";//è·¨æœä¸–ç•Œbossæ´»åŠ¨æœªå¼€å¯
 			break;
 		default:
 			break;
@@ -264,7 +264,7 @@ namespace faith
 	}
 
 
-	//»ñµÃ»î¶¯µØÍ¼µÄguid
+	//è·å¾—æ´»åŠ¨åœ°å›¾çš„guid
 	void cross_server_world_boss_ws_mgr::get_world_boss_map_guid(guid_64 & map_guid, int32 & war_idex, int32 map_type)
 	{
 		map_guid = guid_64();
@@ -280,7 +280,7 @@ namespace faith
 		}
 	}
 
-	//¸ù¾İÊı×Ö»ñµÃ»î¶¯µØÍ¼µÄÄ£°åid
+	//æ ¹æ®æ•°å­—è·å¾—æ´»åŠ¨åœ°å›¾çš„æ¨¡æ¿id
 	int32 cross_server_world_boss_ws_mgr::get_cross_server_world_boss_map_temp_id(int32 map_type)
 	{
 		if (map_type >= map_max || map_type < 0)
@@ -353,14 +353,14 @@ namespace faith
 		}
 	}
 
-	//·¢ËÍËùÓĞboss±»»÷É±ĞÅÏ¢
+	//å‘é€æ‰€æœ‰bossè¢«å‡»æ€ä¿¡æ¯
 	void cross_server_world_boss_ws_mgr::send_get_boss_show_info_all()
 	{
 		ws2dp_load_cross_server_world_boss_msg_all msg;
 		ws_client::getInstance().send_to_dp(&msg, sizeof(msg));
 	}
 
-	//ÊÇ·ñÔÚ»î¶¯Ê±¼äÄÚ
+	//æ˜¯å¦åœ¨æ´»åŠ¨æ—¶é—´å†…
 	bool cross_server_world_boss_ws_mgr::is_in_game_time()
 	{
 		int32 act_left = world_server::getInstance().get_activity_sec_left(e_activity_type_cross_server_world_boss, e_activity_time_get_gaming);
@@ -371,7 +371,7 @@ namespace faith
 		return true;
 	}
 
-	//ÊÇ·ñÔÚ»î¶¯È«²¿Ê±¼äÄÚ
+	//æ˜¯å¦åœ¨æ´»åŠ¨å…¨éƒ¨æ—¶é—´å†…
 	bool cross_server_world_boss_ws_mgr::is_in_game_all_time()
 	{
 		int32 act_left = world_server::getInstance().get_activity_sec_left(e_activity_type_cross_server_world_boss, e_activity_time_get_all);
@@ -382,7 +382,7 @@ namespace faith
 		return true;
 	}
 
-	//ÊÇ·ñÔÚ»î¶¯µÄ×¼±¸Ê±¼äÄÚ
+	//æ˜¯å¦åœ¨æ´»åŠ¨çš„å‡†å¤‡æ—¶é—´å†…
 	bool cross_server_world_boss_ws_mgr::is_in_game_ready_time()
 	{
 		int32 act_left = world_server::getInstance().get_activity_sec_left(e_activity_type_cross_server_world_boss, e_activity_time_get_ready);
@@ -393,7 +393,7 @@ namespace faith
 		return true;
 	}
 
-	//»î¶¯µØÍ¼ÊÇ·ñ´æÔÚ
+	//æ´»åŠ¨åœ°å›¾æ˜¯å¦å­˜åœ¨
 	bool cross_server_world_boss_ws_mgr::is_have_world_boss_map()
 	{
 		for (int i = 0; i < map_max; i++)
@@ -423,13 +423,13 @@ namespace faith
 		return false;
 	}
 
-	//·¢ËÍbossËÀÍö¸øËùÓĞµØÍ¼ÖĞµÄÍæ¼Ò
+	//å‘é€bossæ­»äº¡ç»™æ‰€æœ‰åœ°å›¾ä¸­çš„ç©å®¶
 	void cross_server_world_boss_ws_mgr::sync_kill_boss_to_all_map_inst(int32 map_template_id, int32 killer_unit_index, int32 be_kill_boss_guid, guid_64 killer_guid)
 	{
 		cross_boss_on_dead(killer_guid, be_kill_boss_guid);
 	}
 
-	//bossËÀÍöÒª´¦ÀíµÄĞÅÏ¢
+	//bossæ­»äº¡è¦å¤„ç†çš„ä¿¡æ¯
 	void cross_server_world_boss_ws_mgr::cross_boss_on_dead(guid_64 kill_boss_play_guid, int32 be_kill_boss_id)
 	{
 		client_session* player_session = client_session_mgr::getInstance().get_session(kill_boss_play_guid);
@@ -458,10 +458,10 @@ namespace faith
 			}	
 		}
 		cross::send_msg_to_ws(guid_64(), 0, e_msgindex_ws2ws_refresh_kill_boss_show_info, &msg, sizeof(msg));
-		save_boss_info_to_dp(be_kill_boss_id);//±£´æbossËÀÍöĞÅÏ¢µ½Êı¾İ¿â
+		save_boss_info_to_dp(be_kill_boss_id);//ä¿å­˜bossæ­»äº¡ä¿¡æ¯åˆ°æ•°æ®åº“
 	}
 
-	//¸ø¾üÍÅÉËº¦ÅÅĞĞÖĞµÄ¾üÍÅ·¢½±Àø
+	//ç»™å†›å›¢ä¼¤å®³æ’è¡Œä¸­çš„å†›å›¢å‘å¥–åŠ±
 	void cross_server_world_boss_ws_mgr::make_cross_world_boss_legion_award(guid_64 legion_guid, int32 boss_id, int32 rank_num, guid_64* play_guid_list, int32 play_num)
 	{
 	if (!legion_guid.is_valid() || play_guid_list== nullptr || play_num <= 0)
@@ -485,7 +485,7 @@ namespace faith
 		}
 	}
 
-	//·¢ËÍ¾üÍÅÉËº¦ÅÅÃû
+	//å‘é€å†›å›¢ä¼¤å®³æ’å
 	void cross_server_world_boss_ws_mgr::send_legion_act_rank(const cs2ws_make_cross_server_world_legion_award& act_rank)
 	{
 		int32 boss_id = act_rank.boss_id;
@@ -535,8 +535,8 @@ namespace faith
 			_legion_rank_mems[mem_score_info.play_guid] = mem_score_info;
 		}
 
-		int32 rank_num = 1;//ÅÅÃû
-		int32 act_legion_num = legion_act_num;//ĞèÒª·¢ËÍ½±ÀøµÄ¾üÍÅÊıÁ¿
+		int32 rank_num = 1;//æ’å
+		int32 act_legion_num = legion_act_num;//éœ€è¦å‘é€å¥–åŠ±çš„å†›å›¢æ•°é‡
 		if (record_score.size() < legion_act_num)
 		{
 			act_legion_num = record_score.size();
@@ -581,7 +581,7 @@ namespace faith
 				continue;
 			}
 			cross::send_msg_to_ws(guid_64(), server_id, e_msgindex_ws2ws_make_cross_server_world_legion_award, &msg, sizeof(msg));
-			//·¢·Å»÷É±boss¾üÍÅµÄ½±Àø
+			//å‘æ”¾å‡»æ€bosså†›å›¢çš„å¥–åŠ±
 			if (nullptr != play_ptr && play_ptr->get_legion_guid() == _record_score->role_guid)
 			{
 				ws2ws_grant_kill_boss_legion_award req;
@@ -601,7 +601,7 @@ namespace faith
 		}
 	}
 
-	//·¢·Å»÷É±boss¾üÍÅµÄ½±Àø
+	//å‘æ”¾å‡»æ€bosså†›å›¢çš„å¥–åŠ±
 	void cross_server_world_boss_ws_mgr::make_kill_boss_legion_awaed(guid_64 kill_boss_legion_guid, int32 kill_boss_tmp_id, guid_64* play_guid_list, int32 play_num)
 	{
 		if (!kill_boss_legion_guid.is_valid() || play_guid_list == nullptr || play_num <= 0)
@@ -649,7 +649,7 @@ namespace faith
 
 	}
 
-	//»î¶¯µØÍ¼½áÊø
+	//æ´»åŠ¨åœ°å›¾ç»“æŸ
 	void cross_server_world_boss_ws_mgr::cross_boss_map_game_over(int32 map_template)
 	{
 		for (int32 i = 0; i < map_max; ++i)
@@ -680,7 +680,7 @@ namespace faith
 		}
 	}
 
-	//·¢ËÍĞèÒªÏÔÊ¾µÄ»÷É±bossĞÅÏ¢
+	//å‘é€éœ€è¦æ˜¾ç¤ºçš„å‡»æ€bossä¿¡æ¯
 	void cross_server_world_boss_ws_mgr::send_kill_boss_show(client_session* session)
 	{
 		if (session == nullptr || session->get_role_guid().is_valid() == false)
@@ -692,7 +692,7 @@ namespace faith
 		{
 			if (is_in_game_all_time())
 			{
-				int32 be_kill_boss_num = m_map_max_boss;//Ã¿¸öµØÍ¼Ò»¹²3¸öboss ËÀÍöÒ»¸ö¾Í¼õÉÙ1
+				int32 be_kill_boss_num = m_map_max_boss;//æ¯ä¸ªåœ°å›¾ä¸€å…±3ä¸ªboss æ­»äº¡ä¸€ä¸ªå°±å‡å°‘1
 				for (int o = 0; o < m_map_max_boss; ++o)
 				{
 					if (m_boss_kill_all_info[i*m_map_max_boss + o].is_dead)
@@ -711,7 +711,7 @@ namespace faith
 		session->send_to_client(&msg, e_msgindex_s2c_set_cross_boss_show_info);
 	}
 
-	//·¢ËÍÏûÏ¢¸øËùÓĞÍæ¼Ò
+	//å‘é€æ¶ˆæ¯ç»™æ‰€æœ‰ç©å®¶
 	void cross_server_world_boss_ws_mgr::send_message_to_all_cs(const void * data_ptr, size_t data_len)
 	{
 		if (nullptr == data_ptr || data_len == 0)
@@ -721,7 +721,7 @@ namespace faith
 		world_server::getInstance().broadcast(data_ptr, data_len, e_server_type_cs);
 	}
 
-	//±£´æ»÷É±bossĞÅÏ¢µ½Êı¾İ¿â
+	//ä¿å­˜å‡»æ€bossä¿¡æ¯åˆ°æ•°æ®åº“
 	void cross_server_world_boss_ws_mgr::save_boss_info_to_dp(int32 boss_template_id)
 	{
 		ws2dp_save_cross_server_world_boss_msg_all msg;
@@ -757,7 +757,7 @@ namespace faith
 		ws_client::getInstance().send_to_dp(&msg, sizeof(msg));
 	}
 
-	//ÓÃÓÚ½ÓÊÕgate·ş·¢À´µÄbossĞÅÏ¢²¢±£´æ
+	//ç”¨äºæ¥æ”¶gateæœå‘æ¥çš„bossä¿¡æ¯å¹¶ä¿å­˜
 	void cross_server_world_boss_ws_mgr::set_kill_boss_show_info_all(const cross_boss_info * boss_info, int32 data_num)
 	{
 		for (int32 i = 0; i < data_num; ++i)
@@ -773,14 +773,14 @@ namespace faith
 		}
 	}
 
-	//·¢ËÍboss±»»÷É±¹«¸æ
+	//å‘é€bossè¢«å‡»æ€å…¬å‘Š
 	void cross_server_world_boss_ws_mgr::send_boss_dead_notice(int32 boss_template, int32 notice_id, int32 item_num, s_item_info * data_ary, std::string notice_string)
 	{
 		if (notice_id <= 0 || data_ary == nullptr || notice_string.length() <= 0)
 		{
 			return;
 		}
-		//·¢ËÍboss±»»÷É±µÄ¹«¸æ
+		//å‘é€bossè¢«å‡»æ€çš„å…¬å‘Š
 		int32 create_time = time_helper::get_cur_time_new().second;
 		event_ws_mgr::get_instance().send_notice_to_all(notice_id, create_time, guid_64(), notice_string, data_ary, item_num);
 		NpcTemplate* npc_tem_ptr = GET_TEMPLATE(NpcTemplate, boss_template);
@@ -789,7 +789,7 @@ namespace faith
 			return;
 		}
 		int32 boss_name_id = npc_tem_ptr->NpcName;
-		//boss±»»÷É±·¢ËÍ½±ÀøÒÑ·ÅÈëµ½ÅÄÂôĞĞ¹«¸æ
+		//bossè¢«å‡»æ€å‘é€å¥–åŠ±å·²æ”¾å…¥åˆ°æ‹å–è¡Œå…¬å‘Š
 		int32 award_notice_str_id = cross_boss_be_kill_award_notice_id;
 		std::vector<std::string> notice_str_params;
 		notice_str_params.push_back(template_manager::get_instance().get_str_id_by_notice_id(award_notice_str_id));
@@ -798,7 +798,7 @@ namespace faith
 		event_ws_mgr::get_instance().send_notice_to_all(award_notice_str_id, create_time, guid_64(), award_notice_str);
 	}
 
-	//¼ÓÔØboss»÷É±ĞÅÏ¢
+	//åŠ è½½bosså‡»æ€ä¿¡æ¯
 	void cross_server_world_boss_ws_mgr::locd_boss_show_info(const cross_world_boss_info_to_db * dp_info, int32 data_num)
 	{
 		if (nullptr == dp_info)
@@ -831,7 +831,7 @@ namespace faith
 		}
 	}
 
-	//½ÓÊÕgate·şµÄbossĞÅÏ¢²¢±£´æ
+	//æ¥æ”¶gateæœçš„bossä¿¡æ¯å¹¶ä¿å­˜
 	void cross_server_world_boss_ws_mgr::set_kill_boss_show_info(const cross_boss_info& boss_info)
 	{
 		if (boss_info.boss_template_id <= 0)
@@ -847,7 +847,7 @@ namespace faith
 		}
 	}
 
-	//·¢ËÍËùÓĞbossĞÅÏ¢¸øÆäËû·şÎñÆ÷ ²ÎÊıÊÇ·şÎñÆ÷id (0´ú±í·¢¸øËùÓĞ·şÎñÆ÷)
+	//å‘é€æ‰€æœ‰bossä¿¡æ¯ç»™å…¶ä»–æœåŠ¡å™¨ å‚æ•°æ˜¯æœåŠ¡å™¨id (0ä»£è¡¨å‘ç»™æ‰€æœ‰æœåŠ¡å™¨)
 	void cross_server_world_boss_ws_mgr::send_boss_dead_info_all_to_all_server(int32 server_id)
 	{
 		ws2ws_cross_refresh_kill_boss_show_info_all msg;
@@ -861,7 +861,7 @@ namespace faith
 
 	}
 
-	//½«bossÉËº¦ÅÅÃû±£´æµ½ÅÅĞĞ°ñÖĞ
+	//å°†bossä¼¤å®³æ’åä¿å­˜åˆ°æ’è¡Œæ¦œä¸­
 	void cross_server_world_boss_ws_mgr::send_cross_boss_ranking_list(int32 boss_id)
 	{
 		int32 boss_index = -1;
@@ -905,7 +905,7 @@ namespace faith
 		}
 	}
 
-	//½ÓÊÕ·şÎñÆ÷ĞÅÏ¢±£´æÉËº¦ÁĞ±í
+	//æ¥æ”¶æœåŠ¡å™¨ä¿¡æ¯ä¿å­˜ä¼¤å®³åˆ—è¡¨
 	void cross_server_world_boss_ws_mgr::set_cross_boss_ranking_list(int32 boss_template_id, s_ranking_player_info * ranking_info, int32 data_num)
 	{
 		/*if (boss_template_id <= 0 || ranking_info == nullptr || data_num <= 0)
@@ -931,7 +931,7 @@ namespace faith
 		}*/
 	}
 
-	//·¢ËÍbossËÀÍöĞÅÏ¢¸øËùÓĞ·şÎñÆ÷
+	//å‘é€bossæ­»äº¡ä¿¡æ¯ç»™æ‰€æœ‰æœåŠ¡å™¨
 	void cross_server_world_boss_ws_mgr::send_boss_dead_info_to_all_server(int32 boss_temp_id, int32 server_id)
 	{
 		ws2ws_cross_refresh_kill_boss_show_info msg;
@@ -945,7 +945,7 @@ namespace faith
 		cross::send_msg_to_ws(guid_64(), 0, e_msgindex_ws2ws_refresh_kill_boss_show_info, &msg, sizeof(msg));
 	}
 
-	//Ïò·şÎñÆ÷·¢ËÍËùÓĞbossĞÅÏ¢
+	//å‘æœåŠ¡å™¨å‘é€æ‰€æœ‰bossä¿¡æ¯
 	void cross_server_world_boss_ws_mgr::send_cross_boss_info_all_to_other_ws(int32 server_id)
 	{
 		send_boss_dead_info_all_to_all_server(server_id);
@@ -966,10 +966,10 @@ namespace faith
 			}
 			m_boss_damage_list[i].change_legion_name_func(legion_guid, legion_name.c_str());
 		}		
-		send_boss_dead_info_all_to_all_server(0);//½«ĞÅÏ¢Í¬²½µ½ËùÓĞ·şÎñÆ÷
+		send_boss_dead_info_all_to_all_server(0);//å°†ä¿¡æ¯åŒæ­¥åˆ°æ‰€æœ‰æœåŠ¡å™¨
 	}
 
-	//Í¬²½´´½¨bossµ½cs
+	//åŒæ­¥åˆ›å»ºbossåˆ°cs
 	void cross_server_world_boss_ws_mgr::sync_create_boos_to_cs(guid_64 from_map_guid)
 	{
 		if (!from_map_guid.is_valid())
@@ -983,7 +983,7 @@ namespace faith
 		creat_boss_msg.from_map_guid = from_map_guid;
 		if (m_game_over_flag)
 		{
-			creat_boss_msg.true_boss_level = -1; //±íÃ÷´´½¨¸±±¾Ê±»î¶¯»¹ÔÚ ¸±±¾ÄÚÒª´´½¨bossÊ±»î¶¯½áÊø
+			creat_boss_msg.true_boss_level = -1; //è¡¨æ˜åˆ›å»ºå‰¯æœ¬æ—¶æ´»åŠ¨è¿˜åœ¨ å‰¯æœ¬å†…è¦åˆ›å»ºbossæ—¶æ´»åŠ¨ç»“æŸ
 			creat_boss_msg.false_boss_level = -1;
 		}
 		bool is_use = proto_by_lua(e_msgindex_ws2cs_cross_server_world_boss_creat_boss);
@@ -999,19 +999,19 @@ namespace faith
 		}
 	}
 
-	//»ñµÃ·şÎñÆ÷Æ½¾ùµÈ¼¶Õæ
+	//è·å¾—æœåŠ¡å™¨å¹³å‡ç­‰çº§çœŸ
 	int32 cross_server_world_boss_ws_mgr::get_true_boss_level()
 	{
 		return m_boss_level_true;
 	}
 
-	//»ñµÃ·şÎñÆ÷Æ½¾ùµÈ¼¶¼Ù
+	//è·å¾—æœåŠ¡å™¨å¹³å‡ç­‰çº§å‡
 	int32 cross_server_world_boss_ws_mgr::get_false_boss_level()
 	{
 		return m_boss_level_false;
 	}
 
-	//ÉèÖÃ·şÎñÆ÷µÈ¼¶
+	//è®¾ç½®æœåŠ¡å™¨ç­‰çº§
 	void cross_server_world_boss_ws_mgr::set_boss_level()
 	{
 		int32 level_true = 0;
@@ -1034,7 +1034,7 @@ namespace faith
 		m_boss_level_false = level_false / server_num;
 	}
 
-	//·¢ËÍ»ñµÃ·şÎñÆ÷µÈ¼¶
+	//å‘é€è·å¾—æœåŠ¡å™¨ç­‰çº§
 	void cross_server_world_boss_ws_mgr::get_with_save_server_level()
 	{
 		ws2ws_get_cross_server_level msg;
@@ -1046,7 +1046,7 @@ namespace faith
 		cross::send_msg_to_ws(guid_64(), 0, e_msgindex_ws2ws_get_cross_server_level, &msg, sizeof(msg));
 	}
 
-	//·¢ËÍ·şÎñÆ÷µÈ¼¶
+	//å‘é€æœåŠ¡å™¨ç­‰çº§
 	void faith::cross_server_world_boss_ws_mgr::send_server_level(int32 server_id)
 	{
 		ActivityCommonConfigTemplate* cross_server_boss_config_ptr = GET_TEMPLATE(ActivityCommonConfigTemplate, first_activity_common_template_id + e_activity_type_cross_server_world_boss);
@@ -1061,7 +1061,7 @@ namespace faith
 		cross::send_msg_to_ws(guid_64(), server_id, e_msgindex_ws2ws_get_cross_server_level_end, &msg, sizeof(msg));
 	}
 
-	//ÊÕµ½·şÎñÆ÷µÈ¼¶µÄ´¦Àí
+	//æ”¶åˆ°æœåŠ¡å™¨ç­‰çº§çš„å¤„ç†
 	void cross_server_world_boss_ws_mgr::server_level_func(int32 true_server_level, int32 false_server_level, int32 server_id)
 	{
 		int32 empty_idex = -1;

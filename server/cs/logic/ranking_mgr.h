@@ -1,6 +1,6 @@
 
 /********************************************************************
-created: 2016Äê9ÔÂ13ÈÕ17:46:11
+created: 2016å¹´9æœˆ13æ—¥17:46:11
 file base: rank_mgr
 file ext: h
 author: zhy
@@ -70,8 +70,8 @@ namespace faith
 		
 		int32					m_player_class_type;
 		ranking_data_cs			m_ranking_data[e_RankingIndex_max];
-		int64					m_worship_value;		//±»³ç°Ý´ÎÊý
-		int64					m_next_tick_value;		//·ÖÖÓtick
+		int64					m_worship_value;		//è¢«å´‡æ‹œæ¬¡æ•°
+		int64					m_next_tick_value;		//åˆ†é’Ÿtick
 	};
 }
 

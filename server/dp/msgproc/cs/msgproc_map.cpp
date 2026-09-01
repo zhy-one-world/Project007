@@ -1,5 +1,5 @@
 /********************************************************************
-created:	2016Äê7ÔÂ20ÈÕ
+created:	2016å¹´7æœˆ20æ—¥
 file base:	msgproc_map_record
 file ext:	hpp
 author:		JiKai

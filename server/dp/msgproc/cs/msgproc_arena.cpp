@@ -1,5 +1,5 @@
 /********************************************************************
-created:	2016Äê8ÔÂ25ÈÕ
+created:	2016å¹´8æœˆ25æ—¥
 file base : msgproc_arena
 file ext : hpp
 author : zhangminghai
@@ -14,7 +14,7 @@ purpose :
 
 namespace faith
 {
-	//¾º¼¼³¡
+	//ç«æŠ€åœº
 	
 	void cs2dp_req_add_arena_log(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
@@ -306,7 +306,7 @@ namespace faith
 		dp2cs_arena_load_char_spirit reply_spirit;
 		reply_spirit.map_guid = map_guid;
 		if (table_len == 0)
-		{//¿ÉÒÔÃ»ÓĞ¾«Áé
+		{//å¯ä»¥æ²¡æœ‰ç²¾çµ
 			reply_spirit.is_has_fighting_spirit = false;
 			dbproxy_service::getInstance().send_message(connindex, &reply_spirit, sizeof(dp2cs_arena_load_char_spirit));
 		}
@@ -316,7 +316,7 @@ namespace faith
 		}
 		else if(table_len == 1)
 		{
-			//Ö»ÄÜ³öÕ½Ò»¸ö¾«Áé
+			//åªèƒ½å‡ºæˆ˜ä¸€ä¸ªç²¾çµ
 			db_read_data(&result, &sql_data, data_size);
 			reply_spirit.map_guid = map_guid;
 			reply_spirit.spirit_data = sql_data.data_info;
@@ -344,7 +344,7 @@ namespace faith
 
 		int32 table_len = result.query.data_select.row_count;
 		int32 table_size = result.query.data_select.row_size;
-		//´ËÖµ¿ÉÄÜÎª0£¬±ÈÈç¾ÉºÅÃ»´æ¹ıÕ½¶·ÊôĞÔ£¬ÔÚºóĞøÂß¼­´¦Àí£¬ÕıÊ½ÉÏÏß²»»áÓĞÕâÖÖÇé¿ö
+		//æ­¤å€¼å¯èƒ½ä¸º0ï¼Œæ¯”å¦‚æ—§å·æ²¡å­˜è¿‡æˆ˜æ–—å±æ€§ï¼Œåœ¨åç»­é€»è¾‘å¤„ç†ï¼Œæ­£å¼ä¸Šçº¿ä¸ä¼šæœ‰è¿™ç§æƒ…å†µ
 		int32 data_size = sizeof(s_arena_char_fight_att);
 		if (table_len == 0 || result.error || table_size != data_size)
 		{

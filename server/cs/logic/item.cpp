@@ -1,4 +1,4 @@
-
+ï»¿
 /********************************************************************
   created: 2014/07/14
   created: 14:7:2014 19:40
@@ -401,7 +401,7 @@ namespace faith
 		return init_unit::is_equip_type(m_item_info_ptr->item_type);
 	}
 
-	// Èç¹û²»ÊÇË®¹û¾Í·µ»Øe_fruit_type_none,·ñÔò·µ»ØË®¹ûµÄÀàĞÍ
+	// å¦‚æœä¸æ˜¯æ°´æœå°±è¿”å›e_fruit_type_none,å¦åˆ™è¿”å›æ°´æœçš„ç±»å‹
 	e_fruit_type citem::is_fruit()
 	{
 		if (nullptr == m_item_info_ptr)
@@ -436,19 +436,19 @@ namespace faith
 		{
 			return false;
 		}
-		//ÏŞÊ±ÎïÆ·²»¿ÉÒÔ¶Ñµş
+		//é™æ—¶ç‰©å“ä¸å¯ä»¥å †å 
 		if (get_data_info(e_item_info_over_time) > 0)
 		{
 			return false;
 		}
-		// ¶ÑµşÊıÄ¿ÒÑÂúµÄµÀ¾ß²»ĞèÒªºÏ²¢
+		// å †å æ•°ç›®å·²æ»¡çš„é“å…·ä¸éœ€è¦åˆå¹¶
 		if (get_data_info(e_item_info_stack_count) >= m_item_info_ptr->max_pile_num)
 		{
 			return false;
 		}
 		return true;
 	}
-	// »ñÈ¡×°±¸µÄ×¿Ô½ÊôĞÔµÄ¸öÊı,·µ»Ø0-6
+	// è·å–è£…å¤‡çš„å“è¶Šå±æ€§çš„ä¸ªæ•°,è¿”å›0-6
 	int32 citem::get_excellent_att_num()
 	{
 		int32 excellent_att_num = 0;
@@ -645,9 +645,9 @@ namespace faith
 		for (int32 i = e_item_info_forge_property1; i <= e_item_info_forge_property6; i++)
 		{
 			int32 forge_property = get_data_info(e_item_info(i));
-			int32 forge_att = forge_property & 0XFFFF;		//ÊôĞÔ±¶ÂÊ
+			int32 forge_att = forge_property & 0XFFFF;		//å±æ€§å€ç‡
 			forge_property &= 0XFF0000;	
-			int32 forge_name_att = (forge_property >> 16);	//ÊôĞÔË÷Òı
+			int32 forge_name_att = (forge_property >> 16);	//å±æ€§ç´¢å¼•
 		
 			if (forge_name_att <= 0)
 			{
@@ -656,7 +656,7 @@ namespace faith
 
 			for (int32 j = 0; j < (data_num / e_att_one_max); j++)
 			{
-				//ÅĞ¶ÏÊÇ·ñ´æÔÚid
+				//åˆ¤æ–­æ˜¯å¦å­˜åœ¨id
 				if (forge_name_att == base_att_array[j * e_att_one_max + e_att_one_att_id])
 				{
 					add_att.push_back(base_att_array[j * e_att_one_max + e_att_one_level]);
@@ -669,7 +669,7 @@ namespace faith
 			}
 		}
 
-		//Ã»ÓĞÔö¼ÓÊôĞÔËµÃ÷²»ÊÇÖØÖı
+		//æ²¡æœ‰å¢åŠ å±æ€§è¯´æ˜ä¸æ˜¯é‡é“¸
 		if (add_att.size() <= 0)
 		{
 			return 0;
@@ -762,8 +762,8 @@ namespace faith
 		int32 property_size = temp_succinct_template->PropertyMaxLimit.size() / temp_succinct_template->PropertyID.size();
 		int32 item_info_check_start = e_item_info_succinct_property1;
 		int32 cur_min_level = property_size;
-		int32 cur_max_level = property_size;//Âú¼¶
-		for (int32 i = 0; i < temp_succinct_template->PropertyID.size(); i++)//¸ù¾İÏ´Á·ÊôĞÔ»ñÈ¡ËùÊô¼¶±ğ
+		int32 cur_max_level = property_size;//æ»¡çº§
+		for (int32 i = 0; i < temp_succinct_template->PropertyID.size(); i++)//æ ¹æ®æ´—ç»ƒå±æ€§è·å–æ‰€å±çº§åˆ«
 		{
 			
 			int32 real_data_index = item_info_check_start + i;
@@ -795,7 +795,7 @@ namespace faith
 			}
 		}
 
-		if (cur_max_level != 0)//±íÀïµÄÊôĞÔÃ»ÎÊÌâ
+		if (cur_max_level != 0)//è¡¨é‡Œçš„å±æ€§æ²¡é—®é¢˜
 		{
 			return cur_min_level;
 		}
@@ -888,7 +888,7 @@ namespace faith
 			item_info_ptr->add_item_data(get_data_info(e_item_info_slot));
 			item_info_ptr->add_item_data(get_data_info(e_item_info_container_type));
 			item_info_ptr->add_item_data(get_data_info(e_item_info_stack_count));
-			item_info_ptr->add_item_data(get_data_info(e_item_info_activate));//
+			item_info_ptr->add_item_data(get_data_info(e_item_info_activate));
 			item_info_ptr->add_item_data(get_data_info(e_item_info_is_first));
 			item_info_ptr->add_item_data(get_data_info(e_item_info_upgrade_count));
 		}
@@ -1060,7 +1060,7 @@ namespace faith
 			}
 		}
 
-		//¸½Ä§
+		//é™„é­”
 		int32 enchant_num = get_data_info(e_item_info_illusion_had_byte);
 		int32 enchant_level = enchant_num / faith::max_enchant_type_num;
 		int32 enchant_type = enchant_num % faith::max_enchant_type_num;
@@ -1074,7 +1074,7 @@ namespace faith
 			}
 		}
 
-		//±¦Ê¯
+		//å®çŸ³
 		for (int32 i = e_item_info_jewel_slot_0; i <= e_item_info_jewel_vip_slot_1; ++i)
 		{
 			int32 jewel_id = get_data_info((e_item_info)i);

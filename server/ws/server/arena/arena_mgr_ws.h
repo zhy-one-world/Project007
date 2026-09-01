@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê8ÔÂ23ÈÕ14:56:28
+created: 2016å¹´8æœˆ23æ—¥14:56:28
 file base: arena_mgr_ws
 file ext: hpp
 author: zhangminghai
@@ -50,7 +50,7 @@ namespace faith
 		}
 	public:
 
-		void							init_manager();	//³õÊ¼»¯¹ÜÀí
+		void							init_manager();	//åˆå§‹åŒ–ç®¡ç†
 		void							clear_data();
 
 		void							heart_tick(int32 elapse_time);
@@ -96,7 +96,7 @@ namespace faith
 		void							reset_challenge_state(guid_64 self_guid, guid_64 target_guid, int32 target_rank, int32 self_rank);
 
 		//rename
-		void							change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//½ÇÉ«¸ÄÃûÍ¬²½
+		void							change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//è§’è‰²æ”¹ååŒæ­¥
 
 		bool                            is_use_lua();
 	private:

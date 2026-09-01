@@ -1,5 +1,5 @@
 /********************************************************************
-created:	2016Äê8ÔÂ16ÈÕ14
+created:	2016å¹´8æœˆ16æ—¥14
 	file base : msgproc_mail
 	file ext : hpp
 	author : lxy
@@ -14,7 +14,7 @@ created:	2016Äê8ÔÂ16ÈÕ14
 
 namespace faith
 {
-	//½ÇÉ«ÓÊ¼ş
+	//è§’è‰²é‚®ä»¶
 	void cs2dp_req_load_char_mail(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index);
 	void cs2dp_req_load_char_mail_item(guid_64* item_guid, int32 item_num, int32 connindex, const guid_64& role_guid, const int32& unit_array_index);
 	void cs2dp_req_load_char_mail_end(db_result_type result, uint32 connindex, const guid_64& role_guid, const int32& unit_array_index);

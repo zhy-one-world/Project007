@@ -31,7 +31,7 @@ namespace faith
 	void c2ws_req_get_legion_applicant_list(uint32 conn_index, const void* data_ptr, size_t data_len);
 	void c2ws_req_process_legion_apply(uint32 conn_index, const void* data_ptr, size_t data_len);
 	void c2ws_req_legion_construction_level_up(uint32 conn_index, const void* data_ptr, size_t data_len); 
-	void c2ws_req_get_construction_buff(uint32 conn_index, const void* data_ptr, size_t data_len); //×¢ÊÍµôÁË
+	void c2ws_req_get_construction_buff(uint32 conn_index, const void* data_ptr, size_t data_len); //æ³¨é‡Šæ‰äº†
 	void c2ws_req_legion_donate_money(uint32 conn_index, const void* data_ptr, size_t data_len);
 		void c2ws_req_legion_donate_money_logic(client_session* session, int32 donate_times);
 
@@ -42,7 +42,7 @@ namespace faith
 		void c2ws_req_get_event_list_logic(client_session* session, int32 from_happen_time);
 	void c2ws_req_kick_out_legion_member(uint32 conn_index, const void* data_ptr, size_t data_len);
 	void c2ws_req_appoint_legion_member_job_title(uint32 conn_index, const void* data_ptr, size_t data_len);
-	void c2ws_req_enter_legion_boss_map(uint32 conn_index, const void* data_ptr, size_t data_len); // ×¢ÊÍ·ÏÆú
+	void c2ws_req_enter_legion_boss_map(uint32 conn_index, const void* data_ptr, size_t data_len); // æ³¨é‡ŠåºŸå¼ƒ
 	void c2ws_req_get_legion_boss_award(uint32 conn_index, const void* data_ptr, size_t data_len);
 		void c2ws_req_get_legion_boss_award_logic(client_session* session);
 	void c2ws_req_get_banquet_info(uint32 conn_index, const void* data_ptr, size_t data_len);
@@ -60,9 +60,9 @@ namespace faith
 	void c2ws_req_set_auto_accept_new_legion_member(uint32 conn_index, const void* data_ptr, size_t data_len);
 
 	void c2ws_req_get_city_master_info(uint32 conn_index, const void* data_ptr, size_t data_len);
-	void c2ws_req_get_occupation_daily_award(uint32 conn_index, const void* data_ptr, size_t data_len); // Ö±½Ó·µ»Ø£¬·ÏÆú
+	void c2ws_req_get_occupation_daily_award(uint32 conn_index, const void* data_ptr, size_t data_len); // ç›´æ¥è¿”å›ï¼ŒåºŸå¼ƒ
 	void c2ws_req_get_legion_rank(uint32 conn_index, const void* data_ptr, size_t data_len);
-	void c2ws_req_fire_bonfire(uint32 conn_index, const void* data_ptr, size_t data_len);   // ×¢ÊÍ·ÏÆú
+	void c2ws_req_fire_bonfire(uint32 conn_index, const void* data_ptr, size_t data_len);   // æ³¨é‡ŠåºŸå¼ƒ
 	void c2ws_req_add_fuel_to_fire(uint32 conn_index, const void* data_ptr, size_t data_len);
 		void c2ws_req_add_fuel_to_fire_logic(client_session* session);
 
@@ -104,7 +104,7 @@ namespace faith
 		void c2ws_req_goods_operate_lua(client_session * session, const char* msg, int32 msg_len);
 
 	// team
-	void c2ws_req_let_role_join_team(uint32 conn_index, const void* data_ptr, size_t data_len);   // Ïà¹ØÂß¼­Ã»ÓĞ
+	void c2ws_req_let_role_join_team(uint32 conn_index, const void* data_ptr, size_t data_len);   // ç›¸å…³é€»è¾‘æ²¡æœ‰
 	void c2ws_req_leave_team(uint32 conn_index, const void* data_ptr, size_t data_len);
 	void c2ws_req_kickout_team_member(uint32 conn_index, const void* data_ptr, size_t data_len);
 	void c2ws_req_set_team_captain(uint32 conn_index, const void* data_ptr, size_t data_len);
@@ -115,7 +115,7 @@ namespace faith
 	void c2ws_req_ready(uint32 conn_index, const void* data_ptr, size_t data_len);
 		void c2ws_req_ready_logic(client_session * session, team_proto_ready& req);
 		void c2ws_req_ready_lua(client_session * session, const char* msg, int32 msg_len);
-	void c2ws_req_ready_transfer(uint32 conn_index, const void* data_ptr, size_t data_len);  // ×¢ÊÍ·ÏÆú
+	void c2ws_req_ready_transfer(uint32 conn_index, const void* data_ptr, size_t data_len);  // æ³¨é‡ŠåºŸå¼ƒ
 	void c2ws_req_search_team_list(uint32 conn_index, const void* data_ptr, size_t data_len);
 		void c2ws_req_search_team_list_logic(client_session * session, team_proto_search_team_by_map_id& req);
 		void c2ws_req_search_team_list_lua(client_session * session, const char* msg, int32 msg_len);
@@ -126,7 +126,7 @@ namespace faith
 		void c2ws_req_get_team_list_by_aim_logic(client_session * session, team_proto_get_team_list_by_aim& req);
 		void c2ws_req_get_team_list_by_aim_lua(client_session * session, const char* msg, int32 msg_len);
 	void c2ws_req_auto_match_team(uint32 conn_index, const void* data_ptr, size_t data_len);
-	void c2ws_req_update_team_attribute(uint32 conn_index, const void* data_ptr, size_t data_len); // ÏûÏ¢×¢²á·ÏÆú
+	void c2ws_req_update_team_attribute(uint32 conn_index, const void* data_ptr, size_t data_len); // æ¶ˆæ¯æ³¨å†ŒåºŸå¼ƒ
 	void c2ws_req_team_mem_operate(uint32 conn_index, const void* data_ptr, size_t data_len);
 		void c2ws_req_team_mem_operate_logic(client_session * session, team_proto_team_mem_operate& req);
 		void c2ws_req_team_mem_operate_lua(client_session * session, const char* msg, int32 msg_len);
@@ -162,7 +162,7 @@ namespace faith
 	//marry
 	void c2ws_req_marry_proc(uint32 conn_index, const void *data_ptr, size_t data_len);
 	void c2ws_reply_marry_choice_proc(uint32 conn_index, const void *data_ptr, size_t data_len);
-	void c2ws_get_marry_couple_info_proc(uint32 conn_index, const void *data_ptr, size_t data_len); // ·ÏÆú
+	void c2ws_get_marry_couple_info_proc(uint32 conn_index, const void *data_ptr, size_t data_len); // åºŸå¼ƒ
 	void c2ws_req_divorce_proc(uint32 conn_index, const void *data_ptr, size_t data_len);
 	void c2ws_req_get_marry_reward_proc(uint32 conn_index, const void *data_ptr, size_t data_len);
 	void c2s_req_get_marry_task(uint32 conn_index, const void *data_ptr, size_t data_len);
@@ -215,7 +215,7 @@ namespace faith
 	//assist_fight
 	void c2s_get_assist_fight_info_proc(uint32 connindex, const void * data_ptr, size_t data_len);
 	void c2s_req_assist_fight_proc(uint32 connindex, const void * data_ptr, size_t data_len);
-	void c2s_cancel_assist_fight_proc(uint32 connindex, const void * data_ptr, size_t data_len); // ÏûÏ¢ÔÚCS
+	void c2s_cancel_assist_fight_proc(uint32 connindex, const void * data_ptr, size_t data_len); // æ¶ˆæ¯åœ¨CS
 
 	void c2s_save_appearance_info_to_id_proc(uint32 connindex, const void * data_ptr, size_t data_len);
 	void c2s_load_appearance_info_by_id_proc(uint32 connindex, const void * data_ptr, size_t data_len);

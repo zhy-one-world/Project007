@@ -103,7 +103,7 @@ namespace faith
 			return e_error_code_map_max_players;
 		}
 		
-		// ĞÂÔöÍæ¼Ò½øÈëµØÍ¼cd
+		// æ–°å¢ç©å®¶è¿›å…¥åœ°å›¾cd
 		//if (false == cs_map_mgr_system::check_unit_can_enter_map(pk_king_map_template_id, role_guid))
 		//{
 		//	return e_error_code_map_enter_map_cd;
@@ -124,7 +124,7 @@ namespace faith
 	bool pk_king_mgr::is_in_ready_time()
 	{
 		int32 act_left = world_server::getInstance().get_activity_sec_left(e_activity_type_pk_king, e_activity_time_get_ready);
-		//pkÖ®ÍõÊ£10Ãë¾Í²»ÔÊĞí½øÈëÁË ·ÀÖ¹½øÈëµØÍ¼ÖĞ»î¶¯¿ªÆô
+		//pkä¹‹ç‹å‰©10ç§’å°±ä¸å…è®¸è¿›å…¥äº† é˜²æ­¢è¿›å…¥åœ°å›¾ä¸­æ´»åŠ¨å¼€å¯
 		if (act_left < 10)
 		{
 			return false;
@@ -246,7 +246,7 @@ namespace faith
 			s_break_line_login_info& other_info = *ite;
 			if (game_time >= other_info.expiry_time)
 			{
-				//²»ÒªÉ¾³ı·ÀÖ¹½Ó½üÊ±¼äµÄÊ±ºòÖØĞÂÁ¬½Óµ¼ÖÂ»ñÈ¡²»µ½Êı¾İ
+				//ä¸è¦åˆ é™¤é˜²æ­¢æ¥è¿‘æ—¶é—´çš„æ—¶å€™é‡æ–°è¿æ¥å¯¼è‡´è·å–ä¸åˆ°æ•°æ®
 				other_info.is_send_msg = true;
 				continue;
 			}
@@ -289,7 +289,7 @@ namespace faith
 			s_break_line_login_info role_login_info = get_player_break_login_info(role_guid);
 			if (role_login_info.role_guid.is_valid() == false)
 			{
-				//·¢ËÍ»î¶¯ÒÑ½áÊø
+				//å‘é€æ´»åŠ¨å·²ç»“æŸ
 				session->send_notice("90201845");
 				return;
 			}

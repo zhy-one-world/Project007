@@ -1,5 +1,5 @@
 /********************************************************************
-  created: 2019Äê5ÔÂ28ÈÕ
+  created: 2019å¹´5æœˆ28æ—¥
   file base: cross_server_world_boss_def
   file ext: hpp
   author: zhaoyuming
@@ -14,22 +14,22 @@
 namespace faith 
 {
 #pragma pack(push,1)	
-	const int32							m_map_max_boss = 3;										//Ã¿¸öµØÍ¼Éú³ÉµÄbossÊıÁ¿
-	const int32							map_max = 4;											//´´½¨µÄ»î¶¯µØÍ¼ÊıÁ¿
-	const int32							m_boss_max_num = m_map_max_boss*map_max;				//Éú³ÉµÄ×ÜbossÊıÁ¿
-	const int32							cross_boss_max_server = 10;								//¿ç·şÊÀ½çboss»î¶¯·şÎñÆ÷×î´óÊı
-	const int32							cross_boss_map_id_tmp = 71211109;						//»î¶¯µØÍ¼Ä£°åid
-	const int32							legion_act_num = 10;									//×î´ó½±ÀøÊıÁ¿
-	const int32							act_num = 100;											//×î´ó¾üÍÅÅÅÃûÊıÁ¿
-	const int32							cross_boss_activity_notice_id = 93000287;				//¿ç·şÊÀ½çboss»î¶¯¹«¸æ
-	const int32							cross_boss_activity_ready_notice_id = 93000288;			//¿ç·şÊÀ½çboss»î¶¯×¼±¸¹«¸æ
-	const int32							cross_boss_activity_begin_notice_id = 93000289;			//¿ç·şÊÀ½çboss»î¶¯¿ªÊ¼¹«¸æ
-	const int32							cross_bosss_legion_convene_notice_id = 93000290;		//¿ç·şÊÀ½çboss¾üÍÅÕÙ¼¯¹«¸æ
-	const int32							cross_boss_be_kill_have_legion_notice_id = 93000278;	//¿ç·şÊÀ½çboss±»»÷É±¹«¸æÓĞ¾üÍÅ
-	const int32							cross_boss_be_kill_not_have_legion_notice_id = 93000291;//¿ç·şÊÀ½çboss±»»÷É±¹«¸æÎŞ¾üÍÅ
-	const int32							cross_boss_be_kill_award_notice_id = 93000292;			//¿ç·şÊÀ½çboss½±Àø¹«¸æ
-	const int32							ranking_list_leght = 100;								//¿ç·şÊÀ½çÅÅĞĞ°ñ×î´óÊıÁ¿
-	const int32							cross_boss_map_template_num = 4;						//¿ç·şÊÀ½çboss»ñÈ¡µØÍ¼Ä£°åid±éÀúÊÇµÄÒ»×éÊı¾İµÄ³¤¶È (1¸öµØÍ¼idºóÃæ3ºÍbossid)
+	const int32							m_map_max_boss = 3;										//æ¯ä¸ªåœ°å›¾ç”Ÿæˆçš„bossæ•°é‡
+	const int32							map_max = 4;											//åˆ›å»ºçš„æ´»åŠ¨åœ°å›¾æ•°é‡
+	const int32							m_boss_max_num = m_map_max_boss*map_max;				//ç”Ÿæˆçš„æ€»bossæ•°é‡
+	const int32							cross_boss_max_server = 10;								//è·¨æœä¸–ç•Œbossæ´»åŠ¨æœåŠ¡å™¨æœ€å¤§æ•°
+	const int32							cross_boss_map_id_tmp = 71211109;						//æ´»åŠ¨åœ°å›¾æ¨¡æ¿id
+	const int32							legion_act_num = 10;									//æœ€å¤§å¥–åŠ±æ•°é‡
+	const int32							act_num = 100;											//æœ€å¤§å†›å›¢æ’åæ•°é‡
+	const int32							cross_boss_activity_notice_id = 93000287;				//è·¨æœä¸–ç•Œbossæ´»åŠ¨å…¬å‘Š
+	const int32							cross_boss_activity_ready_notice_id = 93000288;			//è·¨æœä¸–ç•Œbossæ´»åŠ¨å‡†å¤‡å…¬å‘Š
+	const int32							cross_boss_activity_begin_notice_id = 93000289;			//è·¨æœä¸–ç•Œbossæ´»åŠ¨å¼€å§‹å…¬å‘Š
+	const int32							cross_bosss_legion_convene_notice_id = 93000290;		//è·¨æœä¸–ç•Œbosså†›å›¢å¬é›†å…¬å‘Š
+	const int32							cross_boss_be_kill_have_legion_notice_id = 93000278;	//è·¨æœä¸–ç•Œbossè¢«å‡»æ€å…¬å‘Šæœ‰å†›å›¢
+	const int32							cross_boss_be_kill_not_have_legion_notice_id = 93000291;//è·¨æœä¸–ç•Œbossè¢«å‡»æ€å…¬å‘Šæ— å†›å›¢
+	const int32							cross_boss_be_kill_award_notice_id = 93000292;			//è·¨æœä¸–ç•Œbosså¥–åŠ±å…¬å‘Š
+	const int32							ranking_list_leght = 100;								//è·¨æœä¸–ç•Œæ’è¡Œæ¦œæœ€å¤§æ•°é‡
+	const int32							cross_boss_map_template_num = 4;						//è·¨æœä¸–ç•Œbossè·å–åœ°å›¾æ¨¡æ¿idéå†æ˜¯çš„ä¸€ç»„æ•°æ®çš„é•¿åº¦ (1ä¸ªåœ°å›¾idåé¢3å’Œbossid)
 
 
 

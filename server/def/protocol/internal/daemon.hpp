@@ -75,7 +75,7 @@ namespace faith
 	struct dp2ws_response_query_role_list_match : public faith::packet_base
 	{
 		ui8 role_num;
-		role_info_in_list_match role_arr[10];  //×î¶à·µ»Ø10¸ö½ÇÉ«ĞÅÏ¢
+		role_info_in_list_match role_arr[10];  //æœ€å¤šè¿”å›10ä¸ªè§’è‰²ä¿¡æ¯
 
 		dp2ws_response_query_role_list_match()
 		{

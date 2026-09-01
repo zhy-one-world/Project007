@@ -1,10 +1,10 @@
 /********************************************************************
-created: 2018Äê5ÔÂ5ÈÕ
+created: 2018å¹´5æœˆ5æ—¥
 file base: msgproc_gain_treasure
 file ext: cpp
 author: wangdi
 
-purpose: ´ò±¦Ïà¹Ø
+purpose: æ‰“å®ç›¸å…³
 *********************************************************************/
 
 #include "logic/type_def.hpp"

@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2018Äê3ÔÂ15ÈÕ
+created: 2018å¹´3æœˆ15æ—¥
 file base: interaction_mgr
 file ext: h
 author: wucun
@@ -26,7 +26,7 @@ namespace faith
 	class cinteraction_mgr
 	{
 	public:
-		//³õÊ¼»¯
+		//åˆå§‹åŒ–
 		cinteraction_mgr();
 		~cinteraction_mgr();
 		void clear_data();
@@ -35,7 +35,7 @@ namespace faith
 
 		guid_64 get_interaction_target_guid() { return m_interaction_target_guid; };
 
-		//»ù´¡²Ù×÷
+		//åŸºç¡€æ“ä½œ
 		void	set_interaction_info(guid_64 target_guid, faith::e_interaction_type interaction_type);
 		void	reset_interaction_info();
 		guid_64	get_interaction_guid();
@@ -53,19 +53,19 @@ namespace faith
 		void	set_interaction_state(e_interaction_state state);
 		e_interaction_state	get_interaction_state() { return m_interaction_state; };
 
-		//Á÷³Ì²Ù×÷
-		void	recv_interaction_invite(guid_64 invite_guid, faith::e_interaction_type interaction_type);				//ÊÕµ½½»»¥ÇëÇó
-		void	send_interaction_invite(guid_64 invite_guid, faith::e_interaction_type interaction_type);				//·¢ËÍ½»»¥ÇëÇó
-		void	recv_interaction_answer(guid_64 invite_guid, faith::e_interaction_type interaction_type, faith::e_interaction_reply result);					//ÊÕµ½½»»¥Ó¦´ğ
-		void	send_interaction_answer_to_two_side(guid_64 invite_guid, faith::e_interaction_type interaction_type, faith::e_interaction_reply result);		//ÏòË«·½·¢ËÍ½»»¥Ó¦´ğ
-		void	recv_real_start_interaction(guid_64 be_invited_guid, faith::e_interaction_type interaction_type);		//ÊÕµ½ÕæÕı¿ªÊ¼½»»¥ÏûÏ¢ Ä¬ÈÏÑûÇë·½ÊÕµ½
-		void	send_real_start_interaction_to_aoi(guid_64 invite_guid,guid_64 be_invited_guid, faith::e_interaction_type interaction_type);				//·¢ËÍÕæÕı¿ªÊ¼½»»¥ÏûÏ¢	Ä¬ÈÏÑûÇë·½·¢ËÍ
-		void	set_interaction_type_attribute(guid_64 be_invited_guid, faith::e_interaction_type interaction_type);	//¿ªÊ¼½»»¥ºóÉèÖÃË«·½½»»¥ÊôĞÔ
+		//æµç¨‹æ“ä½œ
+		void	recv_interaction_invite(guid_64 invite_guid, faith::e_interaction_type interaction_type);				//æ”¶åˆ°äº¤äº’è¯·æ±‚
+		void	send_interaction_invite(guid_64 invite_guid, faith::e_interaction_type interaction_type);				//å‘é€äº¤äº’è¯·æ±‚
+		void	recv_interaction_answer(guid_64 invite_guid, faith::e_interaction_type interaction_type, faith::e_interaction_reply result);					//æ”¶åˆ°äº¤äº’åº”ç­”
+		void	send_interaction_answer_to_two_side(guid_64 invite_guid, faith::e_interaction_type interaction_type, faith::e_interaction_reply result);		//å‘åŒæ–¹å‘é€äº¤äº’åº”ç­”
+		void	recv_real_start_interaction(guid_64 be_invited_guid, faith::e_interaction_type interaction_type);		//æ”¶åˆ°çœŸæ­£å¼€å§‹äº¤äº’æ¶ˆæ¯ é»˜è®¤é‚€è¯·æ–¹æ”¶åˆ°
+		void	send_real_start_interaction_to_aoi(guid_64 invite_guid,guid_64 be_invited_guid, faith::e_interaction_type interaction_type);				//å‘é€çœŸæ­£å¼€å§‹äº¤äº’æ¶ˆæ¯	é»˜è®¤é‚€è¯·æ–¹å‘é€
+		void	set_interaction_type_attribute(guid_64 be_invited_guid, faith::e_interaction_type interaction_type);	//å¼€å§‹äº¤äº’åè®¾ç½®åŒæ–¹äº¤äº’å±æ€§
 		void	stop_interaction();
 		void	stop_interaction_by_guid(guid_64 guid);
 
 
-		//±£»¤´úÂë
+		//ä¿æŠ¤ä»£ç 
 		void	set_wait_real_interaction_time(float duration_time);
 
 	private:
@@ -78,7 +78,7 @@ namespace faith
 
 		e_interaction_state			m_interaction_state;
 
-		float						m_wait_real_interaction_time;	//Ò»·½ÒÆ¶¯µ½¶Ô·½µÈ´ıÊ±¼ä Èô³¬Ê±Ôò×Ô¶¯Í£Ö¹½»»¥
+		float						m_wait_real_interaction_time;	//ä¸€æ–¹ç§»åŠ¨åˆ°å¯¹æ–¹ç­‰å¾…æ—¶é—´ è‹¥è¶…æ—¶åˆ™è‡ªåŠ¨åœæ­¢äº¤äº’
 	private:
 		int32						m_unit_array_index;
 		int64						m_old_tick_time;

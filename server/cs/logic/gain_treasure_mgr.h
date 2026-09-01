@@ -1,10 +1,10 @@
 /********************************************************************
-created: 2018Äê5ÔÂ5ÈÕ
+created: 2018å¹´5æœˆ5æ—¥
 file base: gain_treasure_mgr
 file ext: h
 author: wangdi
 
-purpose: ´ò±¦Ïà¹Ø
+purpose: æ‰“å®ç›¸å…³
 *********************************************************************/
 #ifndef _GAIN_TREASURE_MGR_H_
 #define _GAIN_TREASURE_MGR_H_

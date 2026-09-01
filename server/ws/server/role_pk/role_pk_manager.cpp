@@ -1,4 +1,4 @@
-/*@@
+ï»¿/*@@
 
 	Copyright (c) Beijing Second Laboratory Game Studio. All rights reserved. 
 	
@@ -16,9 +16,7 @@
 @@*/
 
 //////////////////////////////////////////////////////////////////////////
-//
 //	File Include
-//
 //////////////////////////////////////////////////////////////////////////
 #include "role_pk_manager.h"
 #include <role_pk_msg.hpp>
@@ -32,9 +30,7 @@
 #include "cross.pb.h"
 #include "net.pb.h"
 //////////////////////////////////////////////////////////////////////////
-//
 //	Class Implement
-//
 //////////////////////////////////////////////////////////////////////////
 namespace faith
 {
@@ -80,7 +76,7 @@ namespace faith
 					return;
 				}
 
-				//ÏÖÔÚµÄÆ¥ÅäÖ»Ö§³Ö1v1
+				//çŽ°åœ¨çš„åŒ¹é…åªæ”¯æŒ1v1
 				s_role_pk_team_info team_info;
 				sign_up_list::iterator first_it = temp_sign_list.begin();
 				team_info.team_1[0] = (*first_it)->get_role_guid();
@@ -97,7 +93,7 @@ namespace faith
 				temp_sign_list.erase(first_it);
 				temp_sign_list.erase(second_it);
 
-				// map_ptr->get_map_guid()ÕâÀïÐèÒª¸öµØÍ¼id_³ÉÔ±idµÄmap ½áËãÊ±Í¨¹ýµØÍ¼idÕÒµ½Íæ¼Ò
+				// map_ptr->get_map_guid()è¿™é‡Œéœ€è¦ä¸ªåœ°å›¾id_æˆå‘˜idçš„map ç»“ç®—æ—¶é€šè¿‡åœ°å›¾idæ‰¾åˆ°çŽ©å®¶
 				m_all_war_map_team_map[map_ent->getEntityId()] = team_info;
 			}
 		}

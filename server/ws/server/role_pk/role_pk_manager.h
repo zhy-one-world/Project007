@@ -1,4 +1,4 @@
-/*@@
+ï»¿/*@@
 
 	Copyright (c) Beijing Second Laboratory Game Studio. All rights reserved. 
 	
@@ -19,9 +19,7 @@
 #define _ROLE_PK_MANAGER_H_
 
 //////////////////////////////////////////////////////////////////////////
-//
 //	File Include
-//
 //////////////////////////////////////////////////////////////////////////
 #include <unordered_map>
 #include <common/singleton.hpp>
@@ -29,9 +27,7 @@
 #include "Logic/gate_def.hpp"
 
 //////////////////////////////////////////////////////////////////////////
-//
 //	Class Declare
-//
 //////////////////////////////////////////////////////////////////////////
 namespace faith
 {
@@ -73,7 +69,7 @@ namespace faith
 		const s_role_pk_team_info& get_war_map_team_map(guid_64 map_guid) { return m_all_war_map_team_map[map_guid.server_64]; }
 
 		//reanme
-		void change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//½ÇÉ«¸ÄÃûÍ¬²½
+		void change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//è§’è‰²æ”¹ååŒæ­¥
 	private:
 		//void 
 	private:

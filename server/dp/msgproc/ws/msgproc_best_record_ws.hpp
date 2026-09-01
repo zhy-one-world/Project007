@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2016Äê12ÔÂ12ÈÕ12:59:26
+	created:	2016å¹´12æœˆ12æ—¥12:59:26
 	file base:	msgproc_best_record_ws
 	file ext:	hpp
 	author:		zhy

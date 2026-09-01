@@ -56,7 +56,7 @@ namespace faith
 
 	};
 
-	// ÇëÇó¶ÁÈ¡
+	// è¯·æ±‚è¯»å–
 	struct ws2dp_load_arena_rank : public faith::packet_base
 	{
 		ws2dp_load_arena_rank()
@@ -67,7 +67,7 @@ namespace faith
 	};
 
 
-	//DP2ws ¶ÁÈ¡ËùÓĞ¾º¼¼³¡ÅÅÃû
+	//DP2ws è¯»å–æ‰€æœ‰ç«æŠ€åœºæ’å
 	struct dp2ws_load_arena_rank : public faith::packet_base
 	{
 		int32							start_index;
@@ -104,7 +104,7 @@ namespace faith
 	};
 
 
-	//ws2dp	ÇëÇó´æ´¢ÅÅÃûĞÅÏ¢
+	//ws2dp	è¯·æ±‚å­˜å‚¨æ’åä¿¡æ¯
 	struct ws2dp_save_arena_rank : public faith::packet_base
 	{
 		bool								is_first;
@@ -155,7 +155,7 @@ namespace faith
 
 
 
-	//cs2dp ÇëÇóÌí¼ÓÌôÕ½¼ÇÂ¼
+	//cs2dp è¯·æ±‚æ·»åŠ æŒ‘æˆ˜è®°å½•
 	struct cs2dp_add_arena_log : public faith::packet_base
 	{
 		s_chanllenge_log_info   log_data;
@@ -172,7 +172,7 @@ namespace faith
 		}
 	};
 
-	//cs2dp ÇëÇó¶ÁÈ¡ÌôÕ½¼ÇÂ¼
+	//cs2dp è¯·æ±‚è¯»å–æŒ‘æˆ˜è®°å½•
 	struct cs2dp_load_arena_log : public faith::packet_base
 	{
 		guid_64		role_guid;
@@ -183,7 +183,7 @@ namespace faith
 			wheader = e_msgindex_cs2dp_load_arena_log;
 		}
 	};
-	//dp2csÏìÓ¦¶ÁÈ¡¼ÇÂ¼
+	//dp2cså“åº”è¯»å–è®°å½•
 	struct dp2cs_resp_load_arena_log : public faith::packet_base
 	{
 		guid_64		role_guid;
@@ -217,7 +217,7 @@ namespace faith
 		}
 	};
 
-	//ws2dp	ÇëÇó¸üĞÂËùÓĞÅÅÃûĞÅÏ¢
+	//ws2dp	è¯·æ±‚æ›´æ–°æ‰€æœ‰æ’åä¿¡æ¯
 	struct ws2dp_fresh_all_rank : public faith::packet_base
 	{
 		ws2dp_fresh_all_rank()

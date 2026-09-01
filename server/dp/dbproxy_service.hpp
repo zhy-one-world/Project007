@@ -1,4 +1,4 @@
-/********************************************************************
+ï»¿/********************************************************************
 	created:	2014/05/28
 	created:	28:5:2014   20:26
 	file base:	dbproxy_service
@@ -19,9 +19,7 @@
 
 namespace faith
 {
-	//
 	//	singleton services class
-	//
 	class dbproxy_service
 	{
 		friend class singleton<dbproxy_service>;
@@ -42,7 +40,7 @@ namespace faith
 		xstring									get_ipaddr();
 		uint32									get_port();
 		int32									get_server_id() { return m_server_id; }
-	private:													// ÏûÏ¢´¦Àí¶¨Ê±Æ÷
+	private:													// æ¶ˆæ¯å¤„ç†å®šæ—¶å™¨
 		void									server_loop(uint32 timer_index);
 		void									on_conn_closed(const net_server* faith_server_ptr);
 	public:

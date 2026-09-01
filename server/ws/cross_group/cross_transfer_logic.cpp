@@ -1,4 +1,4 @@
-/*@@
+ï»¿/*@@
 
 	Copyright (c) Beijing Second Laboratory Game Studio. All rights reserved. 
 	
@@ -16,9 +16,7 @@
 @@*/
 
 //////////////////////////////////////////////////////////////////////////
-//
 //	File Include
-//
 //////////////////////////////////////////////////////////////////////////
 #include "cross_transfer_logic.hpp"
 #include "gate_proxy.hpp"
@@ -70,7 +68,7 @@ namespace faith
 					{
 						team_ws_ptr->leave_voie_channel(pSession->get_role_guid());
 					}
-					//team_ws_ptr->del_member(pSession->get_role_guid());Íæ¼Ò¿ç·þÊ±²»ÔÙÉ¾³ý¶ÓÎé
+					//team_ws_ptr->del_member(pSession->get_role_guid());çŽ©å®¶è·¨æœæ—¶ä¸å†åˆ é™¤é˜Ÿä¼
 					team_ws_ptr->set_is_need_save_team(true);
 					team_ws_ptr->send_claer_team_member_message(pSession->get_role_guid());
 				}
@@ -83,7 +81,7 @@ namespace faith
 			//param.destGroupID = dstGroupID;
 			//param.transfer_info = transfer_info;
 			//strncpy(param.logicParam.playerParam.account, pSession->m_role_info.account, max_account_length);
-			//strncpy(param.logicParam.playerParam.ipAddr, pSession->m_login_third_data.param6, max_ip_address_length);//¸ÃÍæ¼ÒIP
+			//strncpy(param.logicParam.playerParam.ipAddr, pSession->m_login_third_data.param6, max_ip_address_length);//è¯¥çŽ©å®¶IP
 			//if (pSession->is_self_server())
 			//{
 			//	request.legion_info = pSession->get_legion_info();
@@ -126,7 +124,7 @@ namespace faith
 				}
 				return;
 			}
-			//·¢ËÍ¿ç·þ¾üÍÅ»º´æÊý¾Ý
+			//å‘é€è·¨æœå†›å›¢ç¼“å­˜æ•°æ®
 			ws2ws_cross_player_legion_info legion_info_msg;
 			legion_info_msg.role_guid = pSession->get_role_guid();
 			legion_info_msg.legion_info.legion_info = pSession->get_legion_info();

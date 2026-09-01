@@ -13,11 +13,11 @@ namespace faith
 		~ai_unit(){};
 		void clear_data();
 	public:
-		//npc³õÊ¼»¯
+		//npcåˆå§‹åŒ–
 		void init_ai(npc* unit_ptr, const s_map_pos& born_pos, const s_map_pos& patrol_pos, NpcTemplate* npc_template_ptr, Entity* map_ent);
 		void set_has_combo_skill(bool is_has) { m_ai_level_nomal.set_has_combo_skill(is_has); };
 		void init_fake_player_info(const s_fake_player_info& fake_player_ptr);
-		//npcÊ±¼ätick
+		//npcæ—¶é—´tick
 		void ai_tick(const int64& new_time);
 		void relieve_stop_time(const int32& skill_template_id);
 
@@ -29,7 +29,7 @@ namespace faith
 		void set_state(e_ai_state m_state) { m_ai_level_nomal.set_state(m_state); }
 		void clear_bron_data();
 	public:
-		//ÓĞÈË¹¥»÷ÎÒ
+		//æœ‰äººæ”»å‡»æˆ‘
 		void attack_value(const int32& attack_index, const int64 hp);
 		void add_damage_value_with_summon(const int32& attack_index, const int64 hp);
 		void on_dead() { m_ai_level_nomal.on_dead(); }

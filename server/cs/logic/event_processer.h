@@ -13,48 +13,48 @@ purpose:
 
 namespace faith
 {
-	//ÓÎÏ·Ìõ¼ş
+	//æ¸¸æˆæ¡ä»¶
 	enum e_game_condition_type
 	{
-		e_game_condition_type_null,//²»ĞèÒªÌõ¼ş
-		e_game_condition_type_movement,//ÔË¶¯×´Ì¬
+		e_game_condition_type_null,//ä¸éœ€è¦æ¡ä»¶
+		e_game_condition_type_movement,//è¿åŠ¨çŠ¶æ€
 		e_game_condition_type_max
 	};
-	// ÓÎÏ·ÊÂ¼şÃ¶¾Ù
+	// æ¸¸æˆäº‹ä»¶æšä¸¾
 	enum e_game_event_type
 	{
 		e_game_event_type_null,
-		e_game_event_type_unit_move,				// ½ÇÉ«ÒÆ¶¯´¥·¢
-		e_game_event_type_unit_skill,				// ½ÇÉ«Ê¹ÓÃ¼¼ÄÜ´¥·¢
-		e_game_event_type_unit_buff_del,			// buffÉ¾³ı´¥·¢
-		e_game_event_type_unit_hp_down,				// ÑªÁ¿½µµÍ´¥·¢
-		e_game_event_type_unit_hp_up,				// ÑªÁ¿Éı¸ß´¥·¢
-		e_game_event_type_unit_attack_num,			// ¹¥»÷´ÎÊı´¥·¢
-		e_game_event_type_unit_dispel_self,			// ÇıÉ¢ÒÑ·½¸ºÃæ×´Ì¬
-		e_game_event_type_unit_bullet,				// ×Óµ¯ÊÍ·Å¶ÔµĞ
-		e_game_event_type_unit_dead,				// ËÀÍö
-		e_game_event_type_unit_critical,			// ±©»÷
-		e_game_event_type_unit_critical_be,			// ±»±©»÷
-		e_game_event_type_unit_kill,				// ÈÎÒâ»÷É±
-		e_game_event_type_unit_hit,					// »÷ÖĞ
-		e_game_event_type_unit_will_dead,			// ½«ËÀ
-		e_game_event_type_unit_dispel_target,		// ÇıÉ¢¶Ô·½ÕıÃæ×´Ì¬
-		e_game_event_type_unit_kill_player,			// »÷É±Íæ¼Ò
-		e_game_event_type_unit_be_hit,				// ±»»÷ÖĞ
-		e_game_event_type_unit_kill_npc,			// »÷É±¹ÖÎï
-		e_game_event_type_unit_bullet_self,			// ×Óµ¯ÊÍ·Å¶Ô×Ô¼º
-		e_game_event_type_unit_energy_low,			// ÄÜÁ¿Öµ¹ıµÍ
+		e_game_event_type_unit_move,				// è§’è‰²ç§»åŠ¨è§¦å‘
+		e_game_event_type_unit_skill,				// è§’è‰²ä½¿ç”¨æŠ€èƒ½è§¦å‘
+		e_game_event_type_unit_buff_del,			// buffåˆ é™¤è§¦å‘
+		e_game_event_type_unit_hp_down,				// è¡€é‡é™ä½è§¦å‘
+		e_game_event_type_unit_hp_up,				// è¡€é‡å‡é«˜è§¦å‘
+		e_game_event_type_unit_attack_num,			// æ”»å‡»æ¬¡æ•°è§¦å‘
+		e_game_event_type_unit_dispel_self,			// é©±æ•£å·²æ–¹è´Ÿé¢çŠ¶æ€
+		e_game_event_type_unit_bullet,				// å­å¼¹é‡Šæ”¾å¯¹æ•Œ
+		e_game_event_type_unit_dead,				// æ­»äº¡
+		e_game_event_type_unit_critical,			// æš´å‡»
+		e_game_event_type_unit_critical_be,			// è¢«æš´å‡»
+		e_game_event_type_unit_kill,				// ä»»æ„å‡»æ€
+		e_game_event_type_unit_hit,					// å‡»ä¸­
+		e_game_event_type_unit_will_dead,			// å°†æ­»
+		e_game_event_type_unit_dispel_target,		// é©±æ•£å¯¹æ–¹æ­£é¢çŠ¶æ€
+		e_game_event_type_unit_kill_player,			// å‡»æ€ç©å®¶
+		e_game_event_type_unit_be_hit,				// è¢«å‡»ä¸­
+		e_game_event_type_unit_kill_npc,			// å‡»æ€æ€ªç‰©
+		e_game_event_type_unit_bullet_self,			// å­å¼¹é‡Šæ”¾å¯¹è‡ªå·±
+		e_game_event_type_unit_energy_low,			// èƒ½é‡å€¼è¿‡ä½
 		e_game_event_type_max,
 	};
 	class game_event_handler;
 
 	struct s_trigger_param
 	{
-		int32 m_type;			// ÏûÏ¢ÀàĞÍ
-		int32 m_owner_index;	// Ë­´¥·¢µÄÕâ¸öÏûÏ¢
-		int64 m_event_param_1;	// µ¥¸ö²ÎÊıÔ¤Áô
-		int64 m_event_param_2;	// µ¥¸ö²ÎÊıÔ¤Áô
-		int64 m_event_param_3;	// µ¥¸ö²ÎÊıÔ¤Áô
+		int32 m_type;			// æ¶ˆæ¯ç±»å‹
+		int32 m_owner_index;	// è°è§¦å‘çš„è¿™ä¸ªæ¶ˆæ¯
+		int64 m_event_param_1;	// å•ä¸ªå‚æ•°é¢„ç•™
+		int64 m_event_param_2;	// å•ä¸ªå‚æ•°é¢„ç•™
+		int64 m_event_param_3;	// å•ä¸ªå‚æ•°é¢„ç•™
 		s_trigger_param()
 		{
 			m_type = 0;
@@ -72,14 +72,14 @@ namespace faith
 	};
 	struct game_event
 	{
-		int32 m_type;          // ÏûÏ¢ÀàĞÍ
-		game_event_handler*		m_dist_ptr;		// ÊÂ¼ş½ÓÊÜÕß
-		int32 m_skill_id;		// ÄÄ¸ö¼¼ÄÜ²úÉúµÄbuff
-		int32 m_sender_index;	// ·¢ËÍÕß
-		int32 m_tick_time;		// Ö´ĞĞÒ»´ÎµÄÊ±¼ä¼ä¸ô
-		int64 m_last_time;		// ×îºóÒ»´ÎµÄÖ´ĞĞÊ±¼ä
-		int32 m_random_num;		// ¸ÅÂÊ
-		s_trigger_param m_event_param;	// µ¥¸ö²ÎÊıÔ¤Áô
+		int32 m_type;          // æ¶ˆæ¯ç±»å‹
+		game_event_handler*		m_dist_ptr;		// äº‹ä»¶æ¥å—è€…
+		int32 m_skill_id;		// å“ªä¸ªæŠ€èƒ½äº§ç”Ÿçš„buff
+		int32 m_sender_index;	// å‘é€è€…
+		int32 m_tick_time;		// æ‰§è¡Œä¸€æ¬¡çš„æ—¶é—´é—´éš”
+		int64 m_last_time;		// æœ€åä¸€æ¬¡çš„æ‰§è¡Œæ—¶é—´
+		int32 m_random_num;		// æ¦‚ç‡
+		s_trigger_param m_event_param;	// å•ä¸ªå‚æ•°é¢„ç•™
 		game_event()
 		{
 			m_type = 0;
@@ -107,7 +107,7 @@ namespace faith
 	class event_processer
 	{
 	public:
-		//È¥µôÁË±äÁ¿µÄconstĞŞÊÎ ±ÜÃâios±àÒë²»¹ıµÄÎÊÌâ
+		//å»æ‰äº†å˜é‡çš„constä¿®é¥° é¿å…iosç¼–è¯‘ä¸è¿‡çš„é—®é¢˜
 		event_processer();
 		void clear_data();
 		void add_event(const game_event& event);

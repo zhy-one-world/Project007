@@ -1,5 +1,5 @@
 /********************************************************************
-  created: 2018Äê1ÔÂ10ÈÕ00:01:41
+  created: 2018å¹´1æœˆ10æ—¥00:01:41
   file base: count_def
   file ext: hpp
   author: zhy
@@ -12,42 +12,42 @@
 #include "logic/type_def.hpp"
 
 /************************************************************************/
-/*        ¿ØÖÆÍæ¼ÒµÇÂ½µÄ»ù±¾ÊıÁ¿ÏŞÖÆ							        */
+/*        æ§åˆ¶ç©å®¶ç™»é™†çš„åŸºæœ¬æ•°é‡é™åˆ¶							        */
 /************************************************************************/
 
 namespace faith 
 {
 #pragma pack(push,1)
 #ifdef _DEBUG
-	const int32 init_normal_max = 100;					//ÆÕÍ¨Íæ¼Ò½øÈëÊıÁ¿
-	const int32 init_vip_max = 10;					//vip+gmÕËºÅÍ¨µÀ
-	const int32 init_player_max = init_normal_max + init_vip_max; //³õÊ¼»¯½ÇÉ«ÊıÁ¿£¨·şÎñÆ÷×î´óÊıÁ¿£©
-	const int32 init_link_max = 10;					//ÅÅ¶ÓÊıÁ¿
-	const int32 init_link_more = 10;					//³¬ÁËÉÏÏŞºó¸øÍæ¼ÒÌáÊ¾
-	const int32 init_socket_link = init_player_max + init_link_max;//¿ÉÒÔÎ¬³ÖÁ¬½ÓµÄÊıÁ¿
-	const int32 init_socket_more = init_socket_link + init_link_more;//Á¬½ÓÊıÔÚ½ÇÉ«µÄ»ù´¡ÉÏ¶àÒ»Ğ©
-	const int32 init_npc_max = 10000;					//³õÊ¼»¯npcÊıÁ¿£¨·şÎñÆ÷×î´óÊıÁ¿£©
-	const int32 init_cs_max = 2;						// ×Ü¹²ÓĞ¶àÉÙ¸öcs
-	const int32 init_session_max = init_player_max * init_cs_max; // ×Ü¹²ÓĞ¶àÉÙ¸öÁ´½ÓÍæ¼Ò
-	const int32 max_save_data_count = init_player_max + 100;//Êı¾İ»º´æµÄÊıÁ¿
-	const int32 queue_player_count = 1;					//ÅÅ¶Óµ¥´Î½øÈëÍæ¼ÒÊıÁ¿
+	const int32 init_normal_max = 100;					//æ™®é€šç©å®¶è¿›å…¥æ•°é‡
+	const int32 init_vip_max = 10;					//vip+gmè´¦å·é€šé“
+	const int32 init_player_max = init_normal_max + init_vip_max; //åˆå§‹åŒ–è§’è‰²æ•°é‡ï¼ˆæœåŠ¡å™¨æœ€å¤§æ•°é‡ï¼‰
+	const int32 init_link_max = 10;					//æ’é˜Ÿæ•°é‡
+	const int32 init_link_more = 10;					//è¶…äº†ä¸Šé™åç»™ç©å®¶æç¤º
+	const int32 init_socket_link = init_player_max + init_link_max;//å¯ä»¥ç»´æŒè¿æ¥çš„æ•°é‡
+	const int32 init_socket_more = init_socket_link + init_link_more;//è¿æ¥æ•°åœ¨è§’è‰²çš„åŸºç¡€ä¸Šå¤šä¸€äº›
+	const int32 init_npc_max = 10000;					//åˆå§‹åŒ–npcæ•°é‡ï¼ˆæœåŠ¡å™¨æœ€å¤§æ•°é‡ï¼‰
+	const int32 init_cs_max = 2;						// æ€»å…±æœ‰å¤šå°‘ä¸ªcs
+	const int32 init_session_max = init_player_max * init_cs_max; // æ€»å…±æœ‰å¤šå°‘ä¸ªé“¾æ¥ç©å®¶
+	const int32 max_save_data_count = init_player_max + 100;//æ•°æ®ç¼“å­˜çš„æ•°é‡
+	const int32 queue_player_count = 1;					//æ’é˜Ÿå•æ¬¡è¿›å…¥ç©å®¶æ•°é‡
 #else
-	const int32 init_normal_max = 1500;					//ÆÕÍ¨Íæ¼Ò½øÈëÊıÁ¿
-	const int32 init_vip_max = 200;						//vip+gmÕËºÅÍ¨µÀ
-	const int32 init_player_max = init_normal_max + init_vip_max; //³õÊ¼»¯½ÇÉ«ÊıÁ¿£¨·şÎñÆ÷×î´óÊıÁ¿£©
-	const int32 init_link_max = 500;					//ÅÅ¶ÓÊıÁ¿
-	const int32 init_link_more = 10;					//³¬ÁËÉÏÏŞºó¸øÍæ¼ÒÌáÊ¾
-	const int32 init_socket_link = init_player_max + init_link_max;//¿ÉÒÔÎ¬³ÖÁ¬½ÓµÄÊıÁ¿
-	const int32 init_socket_more = init_socket_link + init_link_more;//Á¬½ÓÊıÔÚ½ÇÉ«µÄ»ù´¡ÉÏ¶àÒ»Ğ©
-	const int32 init_npc_max = 15000;					//³õÊ¼»¯npcÊıÁ¿£¨·şÎñÆ÷×î´óÊıÁ¿£©
-	const int32 init_cs_max = 3;						// ×Ü¹²ÓĞ¶àÉÙ¸öcs
-	const int32 init_session_max = init_player_max * init_cs_max; // ×Ü¹²ÓĞ¶àÉÙ¸öÁ´½ÓÍæ¼Ò
-	const int32 max_save_data_count = init_player_max + 1000;//Êı¾İ»º´æµÄÊıÁ¿
-	const int32 queue_player_count = 1;					//ÅÅ¶Óµ¥´Î½øÈëÍæ¼ÒÊıÁ¿
+	const int32 init_normal_max = 1500;					//æ™®é€šç©å®¶è¿›å…¥æ•°é‡
+	const int32 init_vip_max = 200;						//vip+gmè´¦å·é€šé“
+	const int32 init_player_max = init_normal_max + init_vip_max; //åˆå§‹åŒ–è§’è‰²æ•°é‡ï¼ˆæœåŠ¡å™¨æœ€å¤§æ•°é‡ï¼‰
+	const int32 init_link_max = 500;					//æ’é˜Ÿæ•°é‡
+	const int32 init_link_more = 10;					//è¶…äº†ä¸Šé™åç»™ç©å®¶æç¤º
+	const int32 init_socket_link = init_player_max + init_link_max;//å¯ä»¥ç»´æŒè¿æ¥çš„æ•°é‡
+	const int32 init_socket_more = init_socket_link + init_link_more;//è¿æ¥æ•°åœ¨è§’è‰²çš„åŸºç¡€ä¸Šå¤šä¸€äº›
+	const int32 init_npc_max = 15000;					//åˆå§‹åŒ–npcæ•°é‡ï¼ˆæœåŠ¡å™¨æœ€å¤§æ•°é‡ï¼‰
+	const int32 init_cs_max = 3;						// æ€»å…±æœ‰å¤šå°‘ä¸ªcs
+	const int32 init_session_max = init_player_max * init_cs_max; // æ€»å…±æœ‰å¤šå°‘ä¸ªé“¾æ¥ç©å®¶
+	const int32 max_save_data_count = init_player_max + 1000;//æ•°æ®ç¼“å­˜çš„æ•°é‡
+	const int32 queue_player_count = 1;					//æ’é˜Ÿå•æ¬¡è¿›å…¥ç©å®¶æ•°é‡
 #endif
 
-	const int32 npc_arrary_index_begin = 100000;					// npcÁĞ±íµÄÆğÊ¼id
-	const int32 npc_arrary_index_max = 100000 + init_npc_max;		// npcÁĞ±íµÄ×î´óÖµ
+	const int32 npc_arrary_index_begin = 100000;					// npcåˆ—è¡¨çš„èµ·å§‹id
+	const int32 npc_arrary_index_max = 100000 + init_npc_max;		// npcåˆ—è¡¨çš„æœ€å¤§å€¼
 
 #pragma pack(pop)
 }

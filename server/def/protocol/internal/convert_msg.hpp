@@ -22,7 +22,7 @@ namespace faith
 		e_msgindex_dp2cs_load_char_convert = faith::e_msg_base_convert,
 		e_msgindex_cs2dp_save_char_convert,
 	};
-	// DP2CS ·ÖÅú·¢ËÍÍæ¼ÒµÄËùÓĞ³ÆºÅĞÅÏ¢
+	// DP2CS åˆ†æ‰¹å‘é€ç©å®¶çš„æ‰€æœ‰ç§°å·ä¿¡æ¯
 	struct dp2cs_load_char_convert : public faith::packet_base
 	{
 		guid_64								role_guid;

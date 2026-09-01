@@ -23,7 +23,7 @@ namespace faith
 		s_best_record*			get_record_by_template_id(int32 map_template_id);
 		s_best_record*			create_record_by_template_id(int32 map_template_id);
 		int32					get_order_type_by_template_id(int32 map_template_id);
-		int32					get_convert_map_template_id(int32 map_template_id);	//活动副本中最好记录改为世界统一,统一设置map_template_id
+		int32					get_convert_map_template_id(int32 map_template_id);	//娲诲姩鍓湰涓渶濂借褰曟敼涓轰笘鐣岀粺涓�,缁熶竴璁剧疆map_template_id
 
 		int32					get_insert_index(s_best_record* best_record, const s_single_map_record& new_record, int32 order_type);
 		bool					judget_if_can_add(s_best_record* best_record, const s_single_map_record& new_record);
@@ -37,7 +37,7 @@ namespace faith
 		std::string				get_map_difficulty_notice_id(int32 map_template_id);
 
 		//rename
-		void					change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//角色改名同步
+		void					change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//瑙掕壊鏀瑰悕鍚屾
 
 		bool                    is_use_lua();
 

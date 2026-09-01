@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	file name:	relation.cpp
 	created:	2017/05/26 13:49
 	author:		zhy
@@ -105,7 +105,6 @@ namespace faith
 
 	void relation_mgr::recv_chat(guid_64 send_guid)
 	{
-		//�յ�˽����Ϣ,˽��λ������ǰ
 		relation_set* relation_set_ptr = get_relation_list(e_relationlist_type_chat);
 		if (nullptr == relation_set_ptr)
 		{
@@ -134,7 +133,6 @@ namespace faith
 
 				if (iter == relation_list_temp.begin())
 				{
-					//�ǵ�һ������Ҫ��λ��
 					return;
 				}
 				else
@@ -191,7 +189,6 @@ namespace faith
 		relation_info.data_array[e_relation_data_friendliness] = 0;
 		relation_info.data_array[e_relation_data_vip_title_template_id] = get_vip_title_template_id(client_session_ptr);
 
-		//���Ѷ� ����ԵҲ����һ��,��ʼ�øжȴӺ��ѻ�ȡ��
 		if (relation_info.data_array[e_relation_data_type] == e_relationlist_type_chat || relation_info.data_array[e_relation_data_type] == e_relationlist_type_other_req_add_lucky)
 		{
 			relation_set* relation_set_ptr = get_relation_list(e_relationlist_type_friend);
@@ -218,14 +215,12 @@ namespace faith
 
 		if (relation_info.data_array[e_relation_data_type] == e_relationlist_type_lucky)
 		{
-			//����ǽ�Ե���� ��ԵҲ��ͬ��һ�ּӺ��ѵķ�ʽ
 			req_add_friend = true;
 		}
 
 		bool result = add_unit_to_relation_list(relation_info, remove_other, req_add_friend);
 		if (result)
 		{
-			//���ӵ����˺������б���ɾ������ҵĺ���
 			if (relation_type == e_relationlist_type_black || relation_type == e_relationlist_type_hate)
 			{
 				client_session_ptr->get_relation_list_mgr().del_relation(m_client_session_ptr->get_role_guid());
@@ -274,7 +269,6 @@ namespace faith
 		client_session* client_session_ptr = client_session_mgr::getInstance().get_session(guid);
 		if (client_session_ptr)
 		{
-			//�����ֹ //�����б�����������
 			if (false == client_session_ptr->is_self_server() && e_relationlist_type_black != relation_type)
 			{
 				send_operate_result_to_client(e_relation_operate_result_other_is_cross_server);
@@ -343,13 +337,13 @@ namespace faith
 		user_info->set_guid(add_session->get_role_guid().server_64);
 		user_info->set_name(add_session->m_role_info.role_name);
 		user_info->set_gs_value(init_unit::change_i64_to_string(add_session->get_role_gs_value()));
-		user_info->add_data_array(0);								//relation_data_type���޹�ϵ������Ҫ����λ��
+		user_info->add_data_array(0);
 		user_info->add_data_array(add_session->m_role_info.data_ary[e_role_info_exp_level]);
 		user_info->add_data_array(add_session->m_role_info.data_ary[e_role_info_template_id]);
 		user_info->add_data_array(add_session->get_role_gs_value());
 		user_info->add_data_array(e_relation_online);				
-		user_info->add_data_array(add_session->m_logintime);		//���һ�ε�¼ʱ��					
-		user_info->add_data_array(0);								//�Ѻö�Ϊ0��
+		user_info->add_data_array(add_session->m_logintime);
+		user_info->add_data_array(0);
 	}
 
 
@@ -384,10 +378,8 @@ namespace faith
 				break;
 			}
 			client_session* push_session = client_session_mgr::getInstance().get_session_by_array_index(push_index);
-			//��һ���ҵ���999�����������ˣ�����begin_index=999�����ǵڶ������ҵ�ʱ��ӵ�999��Ѱ�ң���������߻�ֱ������ȥ
 			if (nullptr == push_session || push_session->is_vaild() == false)
 			{
-				//����������ҵ�ʱ����Ҫ�ж�����ǲ������һ���ˣ�����Ǿͷ���ȥ
 				if (push_index >= init_session_max - 1 && return_begin == false)
 				{
 					push_index = -1;
@@ -534,22 +526,22 @@ namespace faith
 
 	void relation_mgr::req_marrage(int32 req_type, client_session& req, client_session& obj)
 	{
-		if (req_type == e_marry_packet_askmarry) // 0����
+		if (req_type == e_marry_packet_askmarry)
 		{
 			req.get_relation_list_mgr().set_promosing(obj.get_role_guid());
 		}
-		else if (req_type == e_marry_packet_accept) // 3��Ӧ
+		else if (req_type == e_marry_packet_accept)
 		{
 			if (req.get_relation_list_mgr().can_marry(obj,false))
 			{
 				req.get_relation_list_mgr().marry(obj);
 			}
 		}
-		else if (req_type == e_marry_packet_refuse) // 4�ܾ�
+		else if (req_type == e_marry_packet_refuse)
 		{
 			//req.get_relation_list_mgr().on_clear_proming();
 		}
-		else if (req_type == e_marry_packet_divorce) //5���
+		else if (req_type == e_marry_packet_divorce)
 		{
 			if (req.get_relation_list_mgr().can_divorce(true))
 			{
@@ -620,7 +612,6 @@ namespace faith
 
 							}
 						}
-						//�������
 						if (relation_ref.get_data_value(e_relation_data_level) != session_ptr->m_role_info.data_ary[e_role_info_exp_level])
 						{
 							relation_ref.set_data_value(e_relation_data_level, session_ptr->m_role_info.data_ary[e_role_info_exp_level]);
@@ -648,7 +639,7 @@ namespace faith
 							have_change = true;
 							it_have_change = true;
 						}
-						relation_ref.set_data_value(e_relation_data_relation_state, e_relation_offline);//��Ҳ�����
+						relation_ref.set_data_value(e_relation_data_relation_state, e_relation_offline);
 					}
 					if (is_send_to_client && it_have_change)
 					{
@@ -661,7 +652,6 @@ namespace faith
 							if (nullptr != session_ptr)
 								ret_pak->set_exp_level(session_ptr->m_role_info.data_ary[e_role_info_exp_level]);
 						}
-						//���
 						if (send_pak.ByteSize() > packege_length_max)
 						{
 							m_client_session_ptr->send_to_client(&send_pak, e_msgindex_s2c_ret_relation_state);
@@ -730,7 +720,6 @@ namespace faith
 				}
 			}
 		}
-		//��������ǿյ� Ҳ�Ͳ��ô���
 		ws_client::getInstance().send_to_dp(&req, req.get_pak_length());
 	}
 
@@ -832,7 +821,6 @@ namespace faith
 		}
 		for (int i = 0; i < e_relationlist_type_max; i++)
 		{
-			//����ӿ��������ж��ܲ��ܼӺ��ѵģ���������һ�½�Ե���жϣ����������ӹ����н�Ե���ڼӺ���
 			if (i == e_relationlist_type_chat)
 				continue;
 			if (m_releation_list[i].is_relation(friendGuid))
@@ -853,22 +841,20 @@ namespace faith
 		{
 			for (int i = 0; i < e_relationlist_type_max; i++)
 			{
-				//����ĵıȽ϶࣬�ֱ�����ͬ��������£�ɾ�����������
-				if (e_relationlist_type_chat == i)//���첻���κ�Ӱ��
+				if (e_relationlist_type_chat == i)
 					continue;
-				if (e_relationlist_type_friend == relation_type && e_relationlist_type_lucky == i)//���Ӻ��Ѳ�ɾ����Ե
+				if (e_relationlist_type_friend == relation_type && e_relationlist_type_lucky == i)
 					continue;
-				if (e_relationlist_type_lucky == relation_type && e_relationlist_type_other_req_add_lucky != i)//���ӽ�Եֻ��������Ե�б�
+				if (e_relationlist_type_lucky == relation_type && e_relationlist_type_other_req_add_lucky != i)
 					continue;
-				if (e_relationlist_type_other_req_add == relation_type && i >= e_relationlist_type_chat)//�����������ɾ���������ͳ���б�
+				if (e_relationlist_type_other_req_add == relation_type && i >= e_relationlist_type_chat)
 					continue;
-				if (e_relationlist_type_other_req_add_lucky == relation_type && i != e_relationlist_type_other_req_add)//���������Ե�б�ɾ���������Ӻ��� ��Ϊ���ȼ�����
+				if (e_relationlist_type_other_req_add_lucky == relation_type && i != e_relationlist_type_other_req_add)
 					continue;
 				m_releation_list[i].del_relation(realtion_info.relation_guid);
 			}
 		}
 		bool add_result = true;
-		//����������Ӻ��Ѻͽ�Ե��ֱ������
 		if (!req_add_friend || (relation_type != e_relationlist_type_friend && relation_type != e_relationlist_type_lucky))
 		{
 			if (!m_releation_list[relation_type].is_relation(realtion_info.relation_guid))
@@ -886,13 +872,11 @@ namespace faith
 				{
 					if (relation_type == e_relationlist_type_friend)
 					{
-						//��������Ӻ��� �ͼ���ܷ�����
 						if (other->get_relation_list_mgr().is_relation_exist(m_client_session_ptr->get_role_guid()) == false)
 							other->get_relation_list_mgr().add_relation(e_relationlist_type_other_req_add, m_client_session_ptr, true, true);
 					}
 					else
 					{
-						//��������ӽ�Ե ��ô�����ͱȽ϶� �����Ѿ���Ե ����Ե ����������
 						guid_64 my_guid = m_client_session_ptr->get_role_guid();
 						if(other->get_relation_list_mgr().is_relation_exist(e_relationlist_type_lucky, my_guid) == false
 							&& other->get_relation_list_mgr().is_relation_exist(e_relationlist_type_other_req_add_lucky, my_guid) == false
@@ -957,7 +941,6 @@ namespace faith
 			return false;
 		}
 
-		//ͬ���ʱ�򣬳��Դ�2�������б��л�ȡ �������൱������2���б��������⣩
 		e_relationlist_type relation_type;
 		relation* operate_relation = m_releation_list[e_relationlist_type_other_req_add].get_relation(guid);
 		if (nullptr != operate_relation)
@@ -1001,7 +984,6 @@ namespace faith
 			return result;
 		}
 
-		//��Ե��ͬʱ�������Ӻ���
 		if (relation_type == e_relationlist_type_lucky)
 		{
 			if (is_relation_full(e_relationlist_type_friend) == false && is_relation_exist(e_relationlist_type_friend, guid) == false)
@@ -1050,7 +1032,6 @@ namespace faith
 			result = true;
 		}
 
-		//��Ե��ͬʱ�������Ӻ���
 		if (relation_type == e_relationlist_type_lucky && nullptr != target_session_ptr)
 		{
 			target_relation_info.data_array[e_relation_data_type] = e_relationlist_type_friend;
@@ -1108,7 +1089,6 @@ namespace faith
 		else
 		{
 			int32 success_times = 0;
-			//�����ͬ��
 			for (int32 index = 0; index < array_size; index++)
 			{
 				bool result = add_player_from_other_req(packet.operate_guid(index));
@@ -1188,7 +1168,6 @@ namespace faith
 			remove_other = false;
 		}
 
-		//���Ѷ�
 		if (other_realtion.data_array[e_relation_data_type] == e_relationlist_type_chat || other_realtion.data_array[e_relation_data_type] == e_relationlist_type_lucky)
 		{
 			relation_set* relation_set_ptr = get_relation_list(e_relationlist_type_friend);
@@ -1212,7 +1191,6 @@ namespace faith
 			return;
 		}
 
-		//���ӵ����˺������б�������ɾ���ҵĺ���
 		if (other_realtion.data_array[e_relation_data_type] == e_relationlist_type_black || other_realtion.data_array[e_relation_data_type] == e_relationlist_type_hate)
 		{
 			del_relation_to_dp(other_realtion.relation_guid,m_client_session_ptr->get_role_guid(), e_relationlist_type_friend);
@@ -1259,7 +1237,6 @@ namespace faith
 	{
 		if (get_lover_guid() != rGuid || rName.size() <= 0)
 		{
-			//��Ϣ���ݲ���ȷ
 			return;
 		}
 	}
@@ -1350,9 +1327,7 @@ namespace faith
 
 		if (is_change_value)
 		{
-			//�Ѻöȱ仯Ҫͬ����cs
 			sync_full_relation_list_to_cs(false);
-			//����һ��ϵͳ����
 			int32 notice_id = 93000070;
 			int32 create_time = time_helper::get_cur_time_new().second;
 			std::vector<std::string> vec_notice_str;
@@ -1387,7 +1362,6 @@ namespace faith
 		relation* addreesee_relation = m_releation_list[e_relationlist_type_friend].get_relation(addreessee_guid);
 		if (nullptr == addreesee_relation)
 		{
-			//������Ǻ���,�۵����������ʼ�����ȥ
 			s_item_info gift_item;
 			bool result = faith::init_unit::init_item_data(gift_item, gift_id, -1, gift_count, e_bag_type_bag, 1);
 			if (false == result)
@@ -1415,8 +1389,6 @@ namespace faith
 			}
 			return;
 		}
-		//�����Ѻö�
-		//������Ʒid��������ӵ��Ѻö�val��ȥ����
 		ItemTemplate* gift_ptr = GET_TEMPLATE(ItemTemplate, gift_id);
 		if (nullptr == gift_ptr)
 		{
@@ -1440,7 +1412,6 @@ namespace faith
 		{
 			lucky_relation->set_data_value(e_relation_data_friendliness, old_friendliness + gift_prop_ptr->FriendlinessAdd * gift_count);
 		}
-		//���Լ��ظ�һ����Ϣ
 		faith::relation_proto_s2c_ret_friendliness_value ret_pak;
 		ret_pak.set_relation_guid(addreesee_relation->get_data_guid().server_64);
 		ret_pak.set_relation_friendliness(addreesee_relation->get_data_value(e_relation_data_friendliness));
@@ -1456,7 +1427,6 @@ namespace faith
 		{
 			return;
 		}
-		//����� Ҳͬ����ȥ
 		relation_proto_s2c_syn_loverinfo pak;
 		pak.set_loverguid(get_lover_guid().server_64);
 		m_client_session_ptr->send_to_client(&pak, e_msgindex_s2c_syn_loverinfo);
@@ -1525,7 +1495,6 @@ namespace faith
 			int32 nitemcount2 = 0/*getbackpack().getcountbydataid(marry_item_luxury)*/;
 			int32 nitemid = 0;
 			int8  ndeststauts = marriage_data::e_lover_nostatus;
-			//���ݻ��ľ������ݻ���
 			if (nitemcount2 > 0)
 			{
 				nitemid = MARRY_ITEM_LUXURY;
@@ -1549,9 +1518,7 @@ namespace faith
 				set_lover_status(ndeststauts);
 				ruser.get_relation_list_mgr().set_lover_status(ndeststauts);
 
-				//ͬ�����ͻ���
 				sync_lover_to_client();
-				//����Ҳͬ������Ϣ
 				ruser.get_relation_list_mgr().sync_lover_to_client();
 			}
 
@@ -1654,9 +1621,7 @@ namespace faith
 		m_marriage.clean_up_data();
 
 		m_marriage.m_lover_status = marriage_data::e_lover_break;
-		//ͬ�����ͻ���
 		sync_lover_to_client();
-		//������ Ҳ��������Ϣ
 
 		//if (IsSceneValid())
 		{
@@ -1743,13 +1708,10 @@ namespace faith
 // 				"startpro,u1[%08x,%08x],u2[%08x,%08x]",
 // 				puser1->get_unit_guid().gethigh32value(),puser1->get_unit_guid().getlow32value(),
 // 				puser2->get_unit_guid().gethigh32value(),puser2->get_unit_guid().getlow32value());
-// 
 // 			auditlog(logdef_inst(audit_marrage), "pros",puser1->get_unit_guid(), "playerlevel=%d \1 viplevel=%d", 
 // 				puser1->getlevel(),puser1->getviplv());
-// 
 // 			auditlog(logdef_inst(audit_marrage), "pros",puser2->get_unit_guid(), "playerlevel=%d \1 viplevel=%d", 
 // 				puser2->getlevel(),puser2->getviplv());
-// 		
 		}
 	}
 
@@ -1795,7 +1757,6 @@ namespace faith
 			break;
 		case e_marry_process_story:
 		{
-			//��ʱ����Ҿ���û�ߵ�
 			m_overtime++;
 			if (m_overtime >= MARRY_PROCESS_MAXTIME)
 			{
@@ -1826,7 +1787,6 @@ namespace faith
 				// 					retpak1.m_packetdata.set_senderid(ruser1.getid());
 				// 					retpak1.m_packetdata.set_targetid(0);
 				// 					m_rscene.broadcast_insight_include(retpak1,ruser1.getid());
-				// 
 				// 					packets::gc_ret_use_skill_pak retpak2;
 				// 					retpak2.m_packetdata.set_skillid(marry_process_action1);
 				// 					retpak2.m_packetdata.set_senderid(ruser2.getid());
@@ -1854,7 +1814,6 @@ namespace faith
 // 					retpak1.m_packetdata.set_senderid(ruser1.getid());
 // 					retpak1.m_packetdata.set_targetid(0);
 // 					m_rscene.broadcast_insight_include(retpak1,ruser1.getid());
-// 
 // 					packets::gc_ret_use_skill_pak retpak2;
 // 					retpak2.m_packetdata.set_skillid(marry_process_action2);
 // 					retpak2.m_packetdata.set_senderid(ruser2.getid());
@@ -1882,7 +1841,6 @@ namespace faith
 // 					retpak1.m_packetdata.set_senderid(ruser1.getid());
 // 					retpak1.m_packetdata.set_targetid(ruser2.getid());
 // 					m_rscene.broadcast_insight_include(retpak1,ruser1.getid());
-// 
 // 					packets::gc_ret_use_skill_pak retpak2;
 // 					retpak2.m_packetdata.set_skillid(marry_process_action3);
 // 					retpak2.m_packetdata.set_senderid(ruser2.getid());
@@ -1926,16 +1884,13 @@ namespace faith
 // 					m_rscene.scan_user_all(cont);
 // 					for (int32 i = 0; i < cont.size(); i++)
 // 					{
-// 						//�ж��µ����Ƿ��ȡ������
 // 						int32 nsharetimes =cont[i].getcommondata(user_commondata::cd_sharemarryexpandcoin);
 // 						if (nsharetimes>=maxsharemarrycoinandexp)
 // 						{
-// 							//������ʾ
 // 							cont[i].sendnotice("#{3175}");
 // 							continue;
 // 						}
 // 						ruser1.sendimpacttounit(cont[i],marry_process_buff,0);
-// 						//��¼�²�ȡ����
 // 						cont[i].setcommondata(user_commondata::cd_sharemarryexpandcoin,nsharetimes+1);
 // 					}
 
@@ -2046,7 +2001,6 @@ namespace faith
 		if ( /*rInfo.m_bDiffSecond &&*/ m_overtime >= 0)
 		{
 			m_overtime++;
-			//�ʱ��֮�����
 			if (m_overtime > MARRY_PARADE_MAXTIME)
 			{
 				// 				CacheLog(LOGDEF_INST(Marrage),"TiEnd,U1(%08X,%08X),U2(%08X,%08X)",
@@ -2055,7 +2009,6 @@ namespace faith
 				end();
 				clean_up();
 			}
-			//����NPC����ʧ��֮��Ҳ����
 			std::vector<int32>::iterator it = m_npcids.begin();
 			// 			for ( ; it != m_npcids.end(); ++it )
 			// 			{
@@ -2275,7 +2228,6 @@ namespace faith
 		client_session* target_client_ptr = client_session_mgr::getInstance().get_session(target_guid);
 		if (nullptr == target_client_ptr)
 		{
-			//����Ӻ��ѵ���Ҳ�����
 			add_relation_to_dp(target_guid, relation_info);
 
 			ws2dp_save_chat_with_offline offline_msg;
@@ -2386,7 +2338,6 @@ namespace faith
 		//}
 		//int32 info_value = member_info->data_ary[info_index];
 
-		//// ����Ա����Ϣ���͸����о��ų�Ա
 		//legion_proto_update_legion_member_info_one update_legion_member_info_one_to_client_msg;
 		//update_legion_member_info_one_to_client_msg.set_member_guid(member_guid.server_64);
 		//update_legion_member_info_one_to_client_msg.set_info_index(info_index);

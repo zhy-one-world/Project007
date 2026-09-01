@@ -96,7 +96,7 @@ namespace faith
 
 	void legion_ws_bonus_info::save_legion_bonus_info_into_db()
 	{
-		if (false == m_is_need_save_to_db)//±ÜÃâÎŞÓÃ´æ´¢
+		if (false == m_is_need_save_to_db)//é¿å…æ— ç”¨å­˜å‚¨
 		{
 			return;
 		}

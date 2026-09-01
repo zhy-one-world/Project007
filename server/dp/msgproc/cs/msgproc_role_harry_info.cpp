@@ -1,10 +1,10 @@
 /********************************************************************
-created: 2019Äê4ÔÂ24ÈÕ
+created: 2019å¹´4æœˆ24æ—¥
 file base: msgproc_role_harry_info
 file ext: cpp
 author: zhangshuo
 
-purpose: ¿ç·şÂÓ¶á
+purpose: è·¨æœæ å¤º
 *********************************************************************/
 
 #include "logic/type_def.hpp"

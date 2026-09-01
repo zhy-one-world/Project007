@@ -1,4 +1,4 @@
-#include "Logic/activity_def.hpp"
+﻿#include "Logic/activity_def.hpp"
 #include "Logic/arena_def.hpp"
 #include "server_log.hpp"
 #include "template/template_base.h"
@@ -1241,10 +1241,8 @@ namespace faith
 			{
 				continue;
 			}
-			//��߷�С�ڻ�����ͷ�С�ڵ��ڵ�����
 			if (ladder_tmpl_ptr->HighScore < min_score || ladder_tmpl_ptr->LowScore <= min_score)
 			{
-				//��һ����λ���ڵ�һ�����ε�ʱ�򷢷�
 				if (min_score != 0 || ladder_tmpl_ptr->LowScore != 0)
 				{
 					continue;

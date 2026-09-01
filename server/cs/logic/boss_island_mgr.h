@@ -1,10 +1,10 @@
 /********************************************************************
-created: 2018Äê9ÔÂ6ÈÕ
+created: 2018å¹´9æœˆ6æ—¥
 file base: boss_island_mgr
 file ext: h
 author: zhangshuo
 
-purpose: ÓÀºãµº
+purpose: æ°¸æ’å²›
 *********************************************************************/
 #ifndef _BOSS_ISLAND_MGR_H_
 #define _BOSS_ISLAND_MGR_H_
@@ -31,10 +31,10 @@ namespace faith
 
 		void									set_boss_island_info(int32 type, int32 value);
 		int32									get_boss_island_info(int32 type);
-		int32									get_left_boss_island_chest();//Ê£Óà²É¼¯´ÎÊı
-		int32									get_left_cross_pk_chest();//¿ç·şJJCÊ£Óà²É¼¯´ÎÊı
+		int32									get_left_boss_island_chest();//å‰©ä½™é‡‡é›†æ¬¡æ•°
+		int32									get_left_cross_pk_chest();//è·¨æœJJCå‰©ä½™é‡‡é›†æ¬¡æ•°
 		bool									can_have_item_in_island();
-		int32									get_left_boss_island_kill();//Ê£ÓàBOSS»÷É±Êı
+		int32									get_left_boss_island_kill();//å‰©ä½™BOSSå‡»æ€æ•°
 		static void								send_boss_island_info_to_ws(int32 boss_spawn_point_template_id, guid_64 boss_guid, int32 next_refresh_stamp, const std::vector<s_gain_treasure_player_info>& player_info_arr);
 
 		void									refresh_all_boss_island_info();

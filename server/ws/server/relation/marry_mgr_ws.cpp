@@ -124,7 +124,7 @@ namespace faith
 		temp.first = couple_data.sub_couple_guid.server_64;
 		temp.second = couple_data;
 		m_marry_info_map.insert(temp);
-		//´æµµ
+		//å­˜æ¡£
 		save_marry_data(couple_data);
 		send_mail_to_couple(couple_data.main_couple_guid, couple_data.sub_couple_guid, false);
 		return true;
@@ -140,7 +140,7 @@ namespace faith
 		save_marry_data(*couple_data_ptr,true);
 		send_mail_to_couple(main_guid, couple_guid, true);
 
-		//´Ó·òÆŞÅÅĞĞ°ñÖĞÉ¾³ı
+		//ä»å¤«å¦»æ’è¡Œæ¦œä¸­åˆ é™¤
 		ranking_mgr_ws::delete_ranking_by_role_guid(e_RankingIndex_couple, main_guid);
 
 		auto ite = m_marry_info_map.find(main_guid.server_64);
@@ -294,12 +294,12 @@ namespace faith
 	{  
 		marry_couple_data	couple_data = get_couple_data(role_guid); 
 		marry_couple_data	role_data = get_couple_data(couple_data.role_guid);
-		//¸ø¶Ô·½·¢ËÍÉÏÏß¹«¸æµÈ   
+		//ç»™å¯¹æ–¹å‘é€ä¸Šçº¿å…¬å‘Šç­‰   
 		send_couple_online_notice(couple_data.role_guid, role_data.role_name);
-		//¸ø×Ô¼ºÍÆËÍÇéÂÂĞÅÏ¢
+		//ç»™è‡ªå·±æ¨é€æƒ…ä¾£ä¿¡æ¯
 		c2ws_get_couple_info(couple_data, role_guid);
 
-		//Ë¢ĞÂÅÅĞĞ°ñ
+		//åˆ·æ–°æ’è¡Œæ¦œ
 		marry_record_data* data_ptr = find_marry_record_info(role_guid);
 		if (data_ptr != nullptr)
 		{
@@ -559,7 +559,7 @@ namespace faith
 		{
 			return;
 		}
-		//ÅĞ¶Ï×é¶Ó
+		//åˆ¤æ–­ç»„é˜Ÿ
 		team_ws* team_ref = team_ws_mgr::get_instance().get_team(main_session_ptr->get_team_guid());
 		if (nullptr == team_ref)
 		{
@@ -581,7 +581,7 @@ namespace faith
 		if (nullptr == couple_session_ptr)
 		{
 			main_session_ptr->send_notice("90096777");
-			//¶Ô·½²»ÔÚÏß
+			//å¯¹æ–¹ä¸åœ¨çº¿
 			return;
 		}
 
@@ -678,7 +678,7 @@ namespace faith
 			ws2cs_get_reward(role_guid, marry_state_sub_had_get_reward);
 		}
 		break;
-		case  marry_state_with_sb:		//»¹Ã»ÓĞÒ»¸öÈËÁì¹ı½±Àø
+		case  marry_state_with_sb:		//è¿˜æ²¡æœ‰ä¸€ä¸ªäººé¢†è¿‡å¥–åŠ±
 		{ 
 			if (is_main)
 			{
@@ -716,7 +716,7 @@ namespace faith
 		{
 			return e_marry_operate_type_one_offline;
 		} 
-		//ÅĞ¶Ï¶ÓÎé
+		//åˆ¤æ–­é˜Ÿä¼
 		team_ws* team_ref = team_ws_mgr::get_instance().get_team(main_session_ptr->get_team_guid());
 		if (nullptr == team_ref)
 		{
@@ -735,7 +735,7 @@ namespace faith
 		{
 			return e_marry_operate_type_team_error;
 		}
-		//¼ì²éÊÇ·ñ½á»é¹ı
+		//æ£€æŸ¥æ˜¯å¦ç»“å©šè¿‡
 		marry_record_data* main_marry_record_ptr = find_marry_record_info(main_guid);
 		marry_record_data* sub_marry_record_ptr = find_marry_record_info(sub_guid);
 		if (main_marry_record_ptr || sub_marry_record_ptr)
@@ -776,7 +776,7 @@ namespace faith
 			send_operate_result_notice(e_marry_operate_type_one_offline, main_guid, guid_64());
 			return;
 		}
-		//·¢ËÍcs ¼ì²éÊÇ·ñ¿ÉÒÔ½á»é£¬ µÀ¾ß ºÍ¹¦ÄÜ ÊÇ·ñ½âËø
+		//å‘é€cs æ£€æŸ¥æ˜¯å¦å¯ä»¥ç»“å©šï¼Œ é“å…· å’ŒåŠŸèƒ½ æ˜¯å¦è§£é”
 		faith::ws2cs_check_item_enough pack;
 		pack.item_id = marry_item; 
 		pack.main_guid = main_guid;
@@ -843,7 +843,7 @@ namespace faith
 
 	void	marry_mgr_ws::agree_marry_with_sb(const guid_64& main_guid, const guid_64& sub_guid, int32 marry_item)
 	{ 			
-		//ÔÙ¼ì²éÒ»±é
+		//å†æ£€æŸ¥ä¸€é
 		if (!check_is_in_marry_ready(main_guid, sub_guid))
 		{
 			send_operate_result_notice(e_marry_operate_type_unknow_error, main_guid, sub_guid);
@@ -884,7 +884,7 @@ namespace faith
 
 	void	marry_mgr_ws::cs2ws_cost_marry_item_end(const guid_64& main_guid, const guid_64& sub_guid, int32 result_type)
 	{
-		//¿Û³ıµÀ¾ß³É¹¦£¬½á»é³É¹¦ 
+		//æ‰£é™¤é“å…·æˆåŠŸï¼Œç»“å©šæˆåŠŸ 
 		int32 result = result_type;
 		if (e_marry_operate_type_success == result_type)
 		{
@@ -904,10 +904,10 @@ namespace faith
 				newly_married.marry_item_id = marry_item_id;
 				insert_into_data_map(newly_married);
 				result = e_marry_operate_type_marry_success;
-				//Í¬²½couple Êı¾İ 
+				//åŒæ­¥couple æ•°æ® 
 				sync_couple_data_info(main_guid, newly_married);
 				sync_couple_data_info(sub_guid, newly_married);
-				//¸æËßcs½á»é³É¹¦ÁË 
+				//å‘Šè¯‰csç»“å©šæˆåŠŸäº† 
 				send_marry_notice_to_cs(newly_married, true, marry_item_id);
 			} 
 		}
@@ -995,7 +995,7 @@ namespace faith
 				return;
 			}
 			waiting_data_ptr->marry_state = marry_state_both_agree;
-			agree_marry_with_sb(waiting_data_ptr->main_couple_guid, waiting_data_ptr->sub_couple_guid, waiting_data_ptr->save_event_time);		//´ËÊ±save_event_time´«ÈëµÄÊÇĞÅÎïid
+			agree_marry_with_sb(waiting_data_ptr->main_couple_guid, waiting_data_ptr->sub_couple_guid, waiting_data_ptr->save_event_time);		//æ­¤æ—¶save_event_timeä¼ å…¥çš„æ˜¯ä¿¡ç‰©id
 
 		}
 		break;
@@ -1006,7 +1006,7 @@ namespace faith
 				return;
 			}
 			waiting_data_ptr->marry_state = marry_state_both_agree;
-			agree_marry_with_sb(waiting_data_ptr->main_couple_guid, waiting_data_ptr->sub_couple_guid, waiting_data_ptr->save_event_time);		//´ËÊ±save_event_time´«ÈëµÄÊÇĞÅÎïid
+			agree_marry_with_sb(waiting_data_ptr->main_couple_guid, waiting_data_ptr->sub_couple_guid, waiting_data_ptr->save_event_time);		//æ­¤æ—¶save_event_timeä¼ å…¥çš„æ˜¯ä¿¡ç‰©id
 		}
 		break;
 		default:
@@ -1037,7 +1037,7 @@ namespace faith
 			return;
 		}
 		int32 result = check_is_can_divorce(main_guid, sub_guid, is_force);
-		//Ğ­ÒéÀë»é»òÕß²»³É¹¦ ¼ì²é½áÊøÁË
+		//åè®®ç¦»å©šæˆ–è€…ä¸æˆåŠŸ æ£€æŸ¥ç»“æŸäº†
 		if (e_marry_operate_type_success  != result)
 		{
 			if (e_marry_operate_type_check_divorce_success == result)
@@ -1058,7 +1058,7 @@ namespace faith
 		{
 			target_guid = data_ptr->main_couple_guid;
 		}
-		//¼ì²â¶Ô·½µÄÀëÏßÊ±¼ä£¬´Ó¶øÅĞ¶ÏÊÇ·ñĞèÒª»¨Ç®	
+		//æ£€æµ‹å¯¹æ–¹çš„ç¦»çº¿æ—¶é—´ï¼Œä»è€Œåˆ¤æ–­æ˜¯å¦éœ€è¦èŠ±é’±	
 		ws2dp_marry_get_last_login_time req;
 		req.sender_guid = main_guid;
 		req.target_guid = target_guid;
@@ -1077,13 +1077,13 @@ namespace faith
 		{
 			return e_marry_operate_type_one_refuse_divorce;
 		} 
-		//¼ì²éÊÇ·ñ½á»é¹ı
+		//æ£€æŸ¥æ˜¯å¦ç»“å©šè¿‡
 		marry_record_data* data_ptr = find_marry_record_info(main_guid);
 		if (nullptr == data_ptr)
 		{
 			return e_marry_operate_type_divorce_isnt_marry;
 		}
-		//ÅĞ¶Ï¶ÓÎé 
+		//åˆ¤æ–­é˜Ÿä¼ 
 		if (!is_force)
 		{
 			client_session* sub_session_ptr = client_session_mgr::getInstance().get_session(sub_guid);
@@ -1190,7 +1190,7 @@ namespace faith
 			addreess_guid = data_ptr->main_couple_guid;
 			role_name = data_ptr->sub_couple_name;
 		}
-		//¾Ü¾ø
+		//æ‹’ç»
 		if (!is_agree)
 		{ 
 			del_from_waiting_divorce_array(role_guid);
@@ -1201,7 +1201,7 @@ namespace faith
 			send_operate_result_notice(e_marry_operate_type_one_refuse_divorce, addreess_guid, guid_64());
 			return;
 		}
-		//´¦ÀíĞ­ÒéÀë»é Í¬ÒâÁ÷³Ì
+		//å¤„ç†åè®®ç¦»å©š åŒæ„æµç¨‹
 		if (is_force)
 		{  
 			if (data_ptr->marry_state == marry_state_divorce_no_need_cost_money)
@@ -1215,9 +1215,9 @@ namespace faith
 			}
 			else
 			{
-				//¿ÛÇ® 
+				//æ‰£é’± 
 				faith::ws2cs_check_item_enough pack;
-				pack.item_id = 1;		//´ÓÅä±íÀï»ñÈ¡
+				pack.item_id = 1;		//ä»é…è¡¨é‡Œè·å–
 				pack.main_guid = role_guid; 
 				pack.is_cost_item = true;
 				pack.is_divorce = true;
@@ -1240,7 +1240,7 @@ namespace faith
 				}
 			}
 		} 
-		//´¦ÀíĞ­ÒéÀë»éË«·½Í¬ÒâÁ÷³Ì
+		//å¤„ç†åè®®ç¦»å©šåŒæ–¹åŒæ„æµç¨‹
 		agree_divorce_proc(role_guid, data_ptr);
 	}
 	 
@@ -1341,9 +1341,9 @@ namespace faith
 				return;
 			}
 
-			//ĞèÒª»¨Ç® ·¢ËÍ¸øcs ¼ì²â½ğ±Ò¹»²»¹»
+			//éœ€è¦èŠ±é’± å‘é€ç»™cs æ£€æµ‹é‡‘å¸å¤Ÿä¸å¤Ÿ
 			faith::ws2cs_check_item_enough pack;
-			pack.item_id = 1;		//Ëæ±ã¸øÒ»¸ö cs ÒÔgameconfig Îª×¼
+			pack.item_id = 1;		//éšä¾¿ç»™ä¸€ä¸ª cs ä»¥gameconfig ä¸ºå‡†
 			pack.main_guid = role_guid; 
 			if (role_guid == data_ptr->main_couple_guid)
 			{
@@ -1429,7 +1429,7 @@ namespace faith
 		{
 			return;
 		}
-		//·¢ËÍÈ«·ş¹«¸æ
+		//å‘é€å…¨æœå…¬å‘Š
 
 		std::vector<int32> param_arr;
 		param_arr.reserve(5);
@@ -1456,7 +1456,7 @@ namespace faith
 		case e_item_color_purple:
 		case e_item_color_orange:
 		{
-			//È«·şÌØĞ§
+			//å…¨æœç‰¹æ•ˆ
 			relation_proto_s2c_send_marry_effect_notice net_pro;
 			net_pro.set_effect_level(item_ptr->item_color); 
 			client_session_mgr::getInstance().send_message_to_all_client(&net_pro, e_msgindex_s2c_send_marry_effect_notice); 
@@ -1570,7 +1570,7 @@ namespace faith
 					main_session->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_update_wedding_ring_state);
 				}
 			}
-			else //¿ç·şµÄ»° È¥±¾·şÊı¾İ¿âÈ¡³ö½á»éĞÅÏ¢·¢¸øÍæ¼Ò
+			else //è·¨æœçš„è¯ å»æœ¬æœæ•°æ®åº“å–å‡ºç»“å©šä¿¡æ¯å‘ç»™ç©å®¶
 			{
 				ws2dp_load_marry_info_cross_server msg;
 				msg.role_guid = role_guid;
@@ -1609,7 +1609,7 @@ namespace faith
 					main_session->send_to_cs_lua(&pro_msg, e_msgindex_ws2cs_sync_marry_task);
 				}
 			}
-			else //¿ç·şµÄ»° È¥±¾·şÊı¾İ¿âÈ¡³ö½á»éĞÅÏ¢·¢¸øÍæ¼Ò
+			else //è·¨æœçš„è¯ å»æœ¬æœæ•°æ®åº“å–å‡ºç»“å©šä¿¡æ¯å‘ç»™ç©å®¶
 			{
 				ws2dp_load_marry_info_cross_server msg;
 				msg.role_guid = role_guid;
@@ -1624,7 +1624,7 @@ namespace faith
 		marry_record_data* data_ptr = find_marry_record_info(role_guid);
 		if (data_ptr == nullptr)
 			return;
-		//ÕÒµ½ÅäÅ¼ĞÅÏ¢
+		//æ‰¾åˆ°é…å¶ä¿¡æ¯
 		bool is_main = false;
 		guid_64 mate_guid;
 		if (data_ptr->main_couple_guid == role_guid)
@@ -1641,7 +1641,7 @@ namespace faith
 		if (mate_date_ptr == nullptr)
 			return;
 
-		//1.Í¬Ê±¸ü¸Ä×Ô¼ººÍ¶Ô·½µÄ
+		//1.åŒæ—¶æ›´æ”¹è‡ªå·±å’Œå¯¹æ–¹çš„
 		if (is_main)
 		{
 			data_ptr->main_ring_level = ring_level;
@@ -1653,10 +1653,10 @@ namespace faith
 			mate_date_ptr->sub_ring_level = ring_level;
 		}
 
-		//2. ±£´æ
+		//2. ä¿å­˜
 		save_marry_data(*data_ptr);
 
-		//3. Í¬²½¸ø¶Ô·½
+		//3. åŒæ­¥ç»™å¯¹æ–¹
 		client_session* mate_session = client_session_mgr::getInstance().get_session(mate_guid);
 		if (nullptr != mate_session)
 		{
@@ -1683,7 +1683,7 @@ namespace faith
 		if (data_ptr == nullptr)
 			return false;
 
-		//ÕÒµ½ÅäÅ¼ĞÅÏ¢
+		//æ‰¾åˆ°é…å¶ä¿¡æ¯
 		guid_64 mate_guid;
 		if (data_ptr->main_couple_guid == role_guid)
 		{
@@ -1698,14 +1698,14 @@ namespace faith
 		if (mate_date_ptr == nullptr)
 			return false;
 
-		//1.Í¬Ê±¸ü¸Ä×Ô¼ººÍ¶Ô·½µÄ
+		//1.åŒæ—¶æ›´æ”¹è‡ªå·±å’Œå¯¹æ–¹çš„
 		data_ptr->heart_value += add_value;
 		mate_date_ptr->heart_value = data_ptr->heart_value;
 
-		//2. ±£´æ
+		//2. ä¿å­˜
 		save_marry_data(*data_ptr);
 
-		//3. Í¬²½¸øË«·½
+		//3. åŒæ­¥ç»™åŒæ–¹
 		client_session* main_session = client_session_mgr::getInstance().get_session(role_guid);
 		if (nullptr != main_session)
 		{
@@ -1743,7 +1743,7 @@ namespace faith
 			}
 		}
 
-		//4.Ìí¼Óµ½ÅÅĞĞ°ñÖĞ
+		//4.æ·»åŠ åˆ°æ’è¡Œæ¦œä¸­
 		s_ranking_player_info role_info;
 		role_info.role_guid = data_ptr->main_couple_guid;
 		role_info.set_role_name(data_ptr->main_couple_name);

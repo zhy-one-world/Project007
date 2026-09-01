@@ -108,7 +108,7 @@ namespace faith
 		bool del_hate_value(const s_unit_identifier& unit_identifier);
 		bool reduce_hate_value(const s_unit_identifier& unit_identifier);
 		s_unit_identifier get_hate_max();
-		s_unit_identifier get_target_by_hate();//Í¨¹ı³ğºŞÁĞ±í»ñµÃ³ğºŞÖµµÚÒ»µÄÍæ¼Ò»ònpc
+		s_unit_identifier get_target_by_hate();//é€šè¿‡ä»‡æ¨åˆ—è¡¨è·å¾—ä»‡æ¨å€¼ç¬¬ä¸€çš„ç©å®¶æˆ–npc
 		e_ai_target_check_ret check_can_be_ai_target(const s_unit_identifier& unit_identifier, int32 hate_val);
 		void on_hate_list_may_change();
 		void add_damage_value(const s_unit_identifier& unit_identifier, const guid_64& legion_guid, const int64& damage_value);
@@ -118,50 +118,50 @@ namespace faith
 		bool check_need_follow_attack_master(guid_64 role_guid);
 		void get_map_pos_need_master(s_map_pos & map_pos, guid_64 role_guid);
 	protected:
-		int64						m_tick_next_time;//ÏÂÒ»¸ötickÏûºÄµÄÊ±¼ä
-		int64						m_move_tick_time;//¿ªÊ¼ÒÆ¶¯µÄÊ±¼äµã
-		e_ai_state					m_ai_state;//µ±Ç°µÄ×´Ì¬
-		int64						m_ai_state_time;//Ö´ĞĞµÄÊ±¼ä
-		int64						m_face_next_time;//ÃæÏòÍæ¼ÒµÄÊ±¼ä¼ä¸ô
-		npc*						m_npc_ptr;// npcµÄÖ¸Õë
+		int64						m_tick_next_time;//ä¸‹ä¸€ä¸ªtickæ¶ˆè€—çš„æ—¶é—´
+		int64						m_move_tick_time;//å¼€å§‹ç§»åŠ¨çš„æ—¶é—´ç‚¹
+		e_ai_state					m_ai_state;//å½“å‰çš„çŠ¶æ€
+		int64						m_ai_state_time;//æ‰§è¡Œçš„æ—¶é—´
+		int64						m_face_next_time;//é¢å‘ç©å®¶çš„æ—¶é—´é—´éš”
+		npc*						m_npc_ptr;// npcçš„æŒ‡é’ˆ
 		const NpcTemplate*			m_npc_template_ptr;
-		fvector						m_born_location;//³öÉúµã
-		fvector						m_patrol_point_location;//³öÉúµã
-		frotator					m_born_rotation;//¿ªÊ¼×·»÷µÄÃæÏò
-		fvector						m_patrol_location;	//Ñ²Âßµã
-		fvector						m_chase_location;//¿ªÊ¼×·»÷µÄµã
-		frotator					m_chase_rotation;//¿ªÊ¼×·»÷µÄÃæÏò
-		int32						m_view_length;//×îÔ¶¿É¼û¾àÀë
-		int32						m_pursuit_length;//×î´ó×·»÷¾àÀë
-		int32						m_patrol_length;//×î´óÑ²Âß¾àÀë
-		int32						m_follow_length;//×î´ó¸úËæ¾àÀë
-		int32						m_follow_attack_length;//×î´ó¸úËæ¹¥»÷¾àÀë
-		fvector						m_speed_vector;//ÒÆ¶¯ËÙ¶È
-		Entity*						m_born_map_ent;//³öÉúµÄµØÍ¼id
-		int32						m_skill_index;//¼¼ÄÜÁĞ±íµÄÏÂ±ê
-		int64						m_skill_order;//¼¼ÄÜË³Ğò
-		std::vector<s_npc_skill>	m_skill_vec;//¼¼ÄÜÁĞ±í
-		int32						m_skill_vec_len;//¼¼ÄÜÁĞ±í³¤¶È
-		hate_info_vector			m_hate_vec;//³ğºŞÁĞ±í
-		int32						m_hate_vec_len;//³ğºŞÁĞ±í³¤¶È
-		damage_info_vector			m_damage_vec;//ÉËº¦ÁĞ±í
-		int32						m_damage_vec_len;//ÉËº¦ÁĞ±í³¤¶È
-		int32						m_first_attack_index;//Ê×¸ö¹¥»÷Õß
-		int32						m_total_hate;//×ÜµÄ³ğºŞÖµ
-		int64						m_war_time;//Õ½¶·¾­¹ıµÄÊ±¼ä
-		bool						m_back_hp_begin;//¿ªÊ¼Æô¶¯·µ»Ø³öÉúµã»ØÑª
-		int64						m_back_hp_time;//·µ»Ø³öÉúµã»ØÑª¼ä¸ô
+		fvector						m_born_location;//å‡ºç”Ÿç‚¹
+		fvector						m_patrol_point_location;//å‡ºç”Ÿç‚¹
+		frotator					m_born_rotation;//å¼€å§‹è¿½å‡»çš„é¢å‘
+		fvector						m_patrol_location;	//å·¡é€»ç‚¹
+		fvector						m_chase_location;//å¼€å§‹è¿½å‡»çš„ç‚¹
+		frotator					m_chase_rotation;//å¼€å§‹è¿½å‡»çš„é¢å‘
+		int32						m_view_length;//æœ€è¿œå¯è§è·ç¦»
+		int32						m_pursuit_length;//æœ€å¤§è¿½å‡»è·ç¦»
+		int32						m_patrol_length;//æœ€å¤§å·¡é€»è·ç¦»
+		int32						m_follow_length;//æœ€å¤§è·Ÿéšè·ç¦»
+		int32						m_follow_attack_length;//æœ€å¤§è·Ÿéšæ”»å‡»è·ç¦»
+		fvector						m_speed_vector;//ç§»åŠ¨é€Ÿåº¦
+		Entity*						m_born_map_ent;//å‡ºç”Ÿçš„åœ°å›¾id
+		int32						m_skill_index;//æŠ€èƒ½åˆ—è¡¨çš„ä¸‹æ ‡
+		int64						m_skill_order;//æŠ€èƒ½é¡ºåº
+		std::vector<s_npc_skill>	m_skill_vec;//æŠ€èƒ½åˆ—è¡¨
+		int32						m_skill_vec_len;//æŠ€èƒ½åˆ—è¡¨é•¿åº¦
+		hate_info_vector			m_hate_vec;//ä»‡æ¨åˆ—è¡¨
+		int32						m_hate_vec_len;//ä»‡æ¨åˆ—è¡¨é•¿åº¦
+		damage_info_vector			m_damage_vec;//ä¼¤å®³åˆ—è¡¨
+		int32						m_damage_vec_len;//ä¼¤å®³åˆ—è¡¨é•¿åº¦
+		int32						m_first_attack_index;//é¦–ä¸ªæ”»å‡»è€…
+		int32						m_total_hate;//æ€»çš„ä»‡æ¨å€¼
+		int64						m_war_time;//æˆ˜æ–—ç»è¿‡çš„æ—¶é—´
+		bool						m_back_hp_begin;//å¼€å§‹å¯åŠ¨è¿”å›å‡ºç”Ÿç‚¹å›è¡€
+		int64						m_back_hp_time;//è¿”å›å‡ºç”Ÿç‚¹å›è¡€é—´éš”
 		bool						m_has_combo_skill;
 		int32						m_next_combo_skill;
 		std::map<uint64, int32>		m_dead_hate_cache;
 
-		int32						m_patrol_type;		//Ñ²ÂßÀàĞÍ
-		int32						m_patrol_direction;	//Ñ²Âß·½Ïò	1--ÕıÏò	0--·´Ïò
+		int32						m_patrol_type;		//å·¡é€»ç±»å‹
+		int32						m_patrol_direction;	//å·¡é€»æ–¹å‘	1--æ­£å‘	0--åå‘
 
 		unit_index_map				m_attack_map;
 		int32						m_attack_num;
 
-		int64						m_all_hate_list_gs_value;//µ±Ç°³ğºŞÁĞ±íÍæ¼ÒÕ½Á¦×ÜÖµ
+		int64						m_all_hate_list_gs_value;//å½“å‰ä»‡æ¨åˆ—è¡¨ç©å®¶æˆ˜åŠ›æ€»å€¼
 
 		guid_64						m_follow_role_guid;
 	public:

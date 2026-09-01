@@ -67,8 +67,8 @@ namespace faith
 		void								on_member_delete(const s_legion_member_info& member_info);
 		void								clear_member();
 
-		void								send_mail_to_all_member_with_master_city_war(bool is_winner = false);//°ÔÖ÷Õ½ËùÓĞÈË¶¼·¢ÓÊ¼ş½±Àø
-		void								send_mail_to_officer_with_city_bid(int32 ter_id);//±»³¬±êºó·¢ÓÊ¼ş¸ø¾üÍÅ³¤ºÍ¸±¾üÍÅ³¤
+		void								send_mail_to_all_member_with_master_city_war(bool is_winner = false);//éœ¸ä¸»æˆ˜æ‰€æœ‰äººéƒ½å‘é‚®ä»¶å¥–åŠ±
+		void								send_mail_to_officer_with_city_bid(int32 ter_id);//è¢«è¶…æ ‡åå‘é‚®ä»¶ç»™å†›å›¢é•¿å’Œå‰¯å†›å›¢é•¿
 
 		const LegionConstructionsTemplate*	get_legion_cfg(faith::ELegionInfo construction_index = ELegionInfo_construction_level_main) const;
 		void								recalcu_legion_fighting_power();
@@ -82,7 +82,7 @@ namespace faith
 		bool								is_chief(guid_64 player_guid);
 		bool								is_assistant_chief(guid_64 player_guid);
 		void								set_member_online(client_session* legion_member_session, bool online);
-		void								on_legion_member_reconnect(client_session* mem_session); //¾üÍÅ¶ÏÏß²»´¦Àí Ö»¹ÜÖØÁ¬ Òª²»È»ÒÀÀµe_legion_member_info_is_onlineµÄÂß¼­ÓĞÎÊÌâ
+		void								on_legion_member_reconnect(client_session* mem_session); //å†›å›¢æ–­çº¿ä¸å¤„ç† åªç®¡é‡è¿ è¦ä¸ç„¶ä¾èµ–e_legion_member_info_is_onlineçš„é€»è¾‘æœ‰é—®é¢˜
 		void								on_legion_member_login(client_session* mem_session);
 		void								on_legion_member_logout(client_session* mem_session);
 		void								add_member_contribution(guid_64 player_guid, int32 add_contri_val);
@@ -162,22 +162,22 @@ namespace faith
 		legion_ws_bonus_info&				get_bonus_info_ins() { return m_bonus_info; }
 		legion_ws_warehouse&                get_warehouse() { return m_warehouse; }
 
-		//×Ô¶¯¼ì²é¾üÍÅ³¤´«Î»
+		//è‡ªåŠ¨æ£€æŸ¥å†›å›¢é•¿ä¼ ä½
 		void								auto_appoint_chief();
 		bool								is_member_offline_too_long_to_Dismiss(s_legion_member_info& member_info);
 		guid_64								get_next_chief_guid();
 		void								check_chief_valid_and_change();
 
-		//GMÖ¸Áî½«¾üÍÅ³¤Ìß³ö¾üÍÅ£¬²¢ÇÒ¸ü»»Ò»¸öĞÂµÄ¾üÍÅ³¤
+		//GMæŒ‡ä»¤å°†å†›å›¢é•¿è¸¢å‡ºå†›å›¢ï¼Œå¹¶ä¸”æ›´æ¢ä¸€ä¸ªæ–°çš„å†›å›¢é•¿
 		void								gm_kick_out_chief();
 
-		//óô»ğ
+		//ç¯ç«
 		int32								get_bonfire_add_fuel_times() { return m_bonfire_add_fuel_times; }
 		void								send_player_bonfire_info(client_session* p_session);
 		void								on_create_bonfire_npc();
 		void								add_fuel_to_bonfire_succeed(guid_64 mem_guid);
 		void								req_bonfire_rank_reward(guid_64 mem_guid);
-		guid_64								get_valid_legion_station_map();	//»î¶¯¾üÍÅ×¤µØµÄµØÍ¼guid
+		guid_64								get_valid_legion_station_map();	//æ´»åŠ¨å†›å›¢é©»åœ°çš„åœ°å›¾guid
 
 		uint64								get_last_recruit_in_world_stamp() { return m_last_recruit_in_world_stamp; }
 		void								set_last_recruit_in_world_stamp(uint64 stamp) { m_last_recruit_in_world_stamp = stamp; }
@@ -202,7 +202,7 @@ namespace faith
 		void								legion_brofire_end();
 		void								set_legion_boss_create_time(int64 creat_time);
 		/************************************************************************/
-		/*                           ¹«¸æ                                       */
+		/*                           å…¬å‘Š                                       */
 		/************************************************************************/
 		void								notice_add_member(FString member_name);	//, int32 template_id = 0
 		void								notice_del_member(FString member_name);	//, int32 template_id = 0
@@ -229,13 +229,13 @@ namespace faith
 
 		void								send_legion_attack_city_call(guid_64 role_guid);
 		/************************************************************************/
-		/*                           ¾üÍÅ»î¶¯                                   */
+		/*                           å†›å›¢æ´»åŠ¨                                   */
 		/************************************************************************/
 		void								check_reset_act_info(e_legion_act_type act_type);
 		void								set_act_got_score(e_legion_act_type act_type, int64 score_val);
 		void								add_act_attend_mems_info(e_legion_act_type act_type, const s_legion_member_attend_activity* attend_mem_arr, int32 attend_mem_num);
 		void								add_act_attend_mem_info(e_legion_act_type act_type, const s_legion_member_attend_activity& attend_mem);
-		void								give_activity_reward(ActivityCommonConfigTemplate* act_config_ptr, const legion_act_attend_mems_map& mem_list, int32 item_id, int32 item_num);//¾üÍÅÅÄÂô
+		void								give_activity_reward(ActivityCommonConfigTemplate* act_config_ptr, const legion_act_attend_mems_map& mem_list, int32 item_id, int32 item_num);//å†›å›¢æ‹å–
 		void								give_activity_reward(const ActivityCommonConfigTemplate* act_config_ptr, const guid_64 *mem_list, int32 play_num, int32 item_id, int32 item_num);
 		int32								get_ranking_list_type(e_legion_rank_type legion_type, int32 sub_id = -1);
 		void								gen_info_in_rank_list(s_ranking_player_info& new_rank_info, int64 rank_score, e_legion_rank_type rank_type, int32 sub_id = -1);
@@ -253,20 +253,20 @@ namespace faith
 		void								join_voice_channel(guid_64 role_guid);
 		void								leave_voie_channel(guid_64 role_guid);
 
-		void								send_applicant_info_list(client_session* session);//·¢ËÍÉêÇë¾üÍÅÈËÔ±ÁĞ±íµ½client
-		void								send_applicant_info_list_to_have_job_member();//·¢ËÍÉêÇëÈËÔ±ÁĞ±íµ½ËùÓĞÓµÓĞÖ°Î»µÄÈË
+		void								send_applicant_info_list(client_session* session);//å‘é€ç”³è¯·å†›å›¢äººå‘˜åˆ—è¡¨åˆ°client
+		void								send_applicant_info_list_to_have_job_member();//å‘é€ç”³è¯·äººå‘˜åˆ—è¡¨åˆ°æ‰€æœ‰æ‹¥æœ‰èŒä½çš„äºº
 
 		void								change_player_name_func(const guid_64& role_guid, const xstring& role_name);
-		void								send_legion_info_to_all_member();	//¸øÈ«²¿³ÉÔ±Ë¢ĞÂ¾üÍÅĞÅÏ¢
-		void								send_change_name_mail_to_all_member(const xstring& original_name, const xstring& current_name);		//¸ø¾üÍÅÄÚÍæ¼Ò·¢ËÍ¸ÄÃûÓÊ¼ş
-		void								send_change_legion_name_mail_to_all_member(const xstring& original_name);		//¸ø¾üÍÅÄÚÍæ¼Ò·¢¾üÍÅ¸ÄÃûÓÊ¼ş
-		void								change_legion_name(const guid_64& role_guid, const xchar* legion_name, int32 legion_name_len); //ÅĞ¶ÏÊÇ·ñ¿ÉÒÔ¸ü¸Ä¾üÍÅÃû
+		void								send_legion_info_to_all_member();	//ç»™å…¨éƒ¨æˆå‘˜åˆ·æ–°å†›å›¢ä¿¡æ¯
+		void								send_change_name_mail_to_all_member(const xstring& original_name, const xstring& current_name);		//ç»™å†›å›¢å†…ç©å®¶å‘é€æ”¹åé‚®ä»¶
+		void								send_change_legion_name_mail_to_all_member(const xstring& original_name);		//ç»™å†›å›¢å†…ç©å®¶å‘å†›å›¢æ”¹åé‚®ä»¶
+		void								change_legion_name(const guid_64& role_guid, const xchar* legion_name, int32 legion_name_len); //åˆ¤æ–­æ˜¯å¦å¯ä»¥æ›´æ”¹å†›å›¢å
 		void								change_legion_name_end(const guid_64& role_guid, int32	num);
-		void								confirm_change_legion_name(const guid_64& role_guid, const xchar* legion_name, int32 legion_name_len);		//È·ÈÏ¸ü¸Ä¾üÍÅÃû
-		void								ref_all_about_legion_name(const guid_64& role_guid); //Ë¢ĞÂ¹ØÓÚ¾üÍÅÃûµÄÆäËûĞÅÏ¢
+		void								confirm_change_legion_name(const guid_64& role_guid, const xchar* legion_name, int32 legion_name_len);		//ç¡®è®¤æ›´æ”¹å†›å›¢å
+		void								ref_all_about_legion_name(const guid_64& role_guid); //åˆ·æ–°å…³äºå†›å›¢åçš„å…¶ä»–ä¿¡æ¯
 		void								set_m_new_legion_name(const	xchar* new_legion_name);
 
-		void								send_mail_to_all_member_with_city_rank(int32 rank_idex, guid_64* play_guid_list, int32 play_num);//¿ç·ş³ÇÕ½ÅÅÃûÓÊ¼ş½±Àø
+		void								send_mail_to_all_member_with_city_rank(int32 rank_idex, guid_64* play_guid_list, int32 play_num);//è·¨æœåŸæˆ˜æ’åé‚®ä»¶å¥–åŠ±
 
 		void								add_cross_city_territories_prior(int32 terr_id);
 		void								add_cross_city_territories_common(int32 terr_id);
@@ -277,7 +277,7 @@ namespace faith
 		void								set_legion_answer_info(s_legion_answer_info answer_info) { m_legion_answer_info = answer_info; }
 		s_legion_answer_info*				get_legion_answer_info() { return &m_legion_answer_info; }
 
-		bool								is_all_member_logout_long_time();//ÊÇ·ñËùÓĞ³ÉÔ±¾ù³¤Ê±¼äÎ´µÇÂ½
+		bool								is_all_member_logout_long_time();//æ˜¯å¦æ‰€æœ‰æˆå‘˜å‡é•¿æ—¶é—´æœªç™»é™†
 		void								set_legion_boss_damage_player(const guid_64* player_guid_arr, int32 player_num);
 		void								send_legion_reward_with_legion_boss_rank(int32 rank);
 		void								send_legion_boss_notice();
@@ -300,7 +300,7 @@ namespace faith
 
 		xstring                             get_all_member_guid();
 		/************************************************************************/
-		/*                           ¾üÍÅ²Ö¿â                                   */
+		/*                           å†›å›¢ä»“åº“                                   */
 		/************************************************************************/
 
 	private:
@@ -308,14 +308,14 @@ namespace faith
 		std::list<s_legion_member_info>		m_member_list;
 		std::list<s_legion_city_war_member_info>		m_city_war_member_list;
 		guid_64								m_chief_guid;
-		player_session_map					m_member_sessions; //Î¬»¤Õâ¸ö¿ÉÄÜ»áÓĞbug Òª½÷É÷
+		player_session_map					m_member_sessions; //ç»´æŠ¤è¿™ä¸ªå¯èƒ½ä¼šæœ‰bug è¦è°¨æ…
 
-		legion_ws_applicant_list			m_need_save_db_applicant_list;	// Èë¶ÓÉêÇë¹ÜÀíÁĞ±í
-		legion_ws_applicant_list			m_applicant_list;	// Èë¶ÓÉêÇë¹ÜÀíÁĞ±í
-		legion_ws_event_logger				m_event_logger;		// ¾üÍÅÊÂ¼ş¼ÇÂ¼Æ÷
-		legion_ws_boss_record_set			m_boss_record_set;	// ¾üÍÅBOSS¼ÇÂ¼¼¯ºÏ
-		legion_ws_bonus_info				m_bonus_info;		// ¾üÍÅ·Öºì¼ÇÂ¼Æ÷
-		legion_ws_warehouse                 m_warehouse;        // ¾üÍÅ²Ö¿â
+		legion_ws_applicant_list			m_need_save_db_applicant_list;	// å…¥é˜Ÿç”³è¯·ç®¡ç†åˆ—è¡¨
+		legion_ws_applicant_list			m_applicant_list;	// å…¥é˜Ÿç”³è¯·ç®¡ç†åˆ—è¡¨
+		legion_ws_event_logger				m_event_logger;		// å†›å›¢äº‹ä»¶è®°å½•å™¨
+		legion_ws_boss_record_set			m_boss_record_set;	// å†›å›¢BOSSè®°å½•é›†åˆ
+		legion_ws_bonus_info				m_bonus_info;		// å†›å›¢åˆ†çº¢è®°å½•å™¨
+		legion_ws_warehouse                 m_warehouse;        // å†›å›¢ä»“åº“
 
 		int32								m_legion_rank;
 		uint64								m_last_ordered_rank_stamp;
@@ -329,22 +329,22 @@ namespace faith
 		guid_64								m_legion_boss_damage_player_arr[max_legion_member_num];
 		int32								m_legion_boss_damage_player_num;
 
-		//óô»ğÏà¹Ø
+		//ç¯ç«ç›¸å…³
 		int32								m_bonfire_add_fuel_times;
-		unit_guid_map						m_member_add_fuel_times; //³ÉÔ±ÃÇ¹°»ğ´ÎÊı
+		unit_guid_map						m_member_add_fuel_times; //æˆå‘˜ä»¬æ‹±ç«æ¬¡æ•°
 		std::set<guid_64>					m_got_bonfire_reward_members;
 		
-		std::set<int32>						m_city_war_territories; //setÄ¬ÈÏÊÇÉıĞòÅÅĞòµÄ Èç¹û¿ÛÎ¬»¤µÄÇ®¿ÉÒÔÀûÓÃ
+		std::set<int32>						m_city_war_territories; //seté»˜è®¤æ˜¯å‡åºæ’åºçš„ å¦‚æœæ‰£ç»´æŠ¤çš„é’±å¯ä»¥åˆ©ç”¨
 
-		std::set<int32>						m_cross_server_city_war_territories; //setÄ¬ÈÏÊÇÉıĞòÅÅĞòµÄ Èç¹û¿ÛÎ¬»¤µÄÇ®¿ÉÒÔÀûÓÃ
+		std::set<int32>						m_cross_server_city_war_territories; //seté»˜è®¤æ˜¯å‡åºæ’åºçš„ å¦‚æœæ‰£ç»´æŠ¤çš„é’±å¯ä»¥åˆ©ç”¨
 		
-		guid_64								m_legion_station_map_guid;			//¼ÇÂ¼¾üÍÅ×¤µØµÄguid
+		guid_64								m_legion_station_map_guid;			//è®°å½•å†›å›¢é©»åœ°çš„guid
 
 		bool								m_is_auction_selling;
 		uint64								m_next_auction_check_time;
 		
 		uint32								m_last_attend_act_stamp[e_legion_act_type_max];
-		legion_act_attend_mems_map			m_attend_act_mems_map[e_legion_act_type_max]; //¸÷¸ö»î¶¯²Î¼Ó³ÉÔ±ÁĞ±í
+		legion_act_attend_mems_map			m_attend_act_mems_map[e_legion_act_type_max]; //å„ä¸ªæ´»åŠ¨å‚åŠ æˆå‘˜åˆ—è¡¨
 
 		int32								m_selling_num;
 
@@ -354,17 +354,17 @@ namespace faith
 
 		bool								m_is_legion_have_change;
 
-		std::set<int32>						m_cross_city_territories_prior; //¿ç·ş³ÇÕ½µÄÓÅÏÈÎ¬»¤³Ç³Ø
-		std::set<int32>						m_cross_city_territories_common; //¿ç·ş³ÇÕ½µÄÆÕÍ¨Î¬»¤³Ç³Ø
+		std::set<int32>						m_cross_city_territories_prior; //è·¨æœåŸæˆ˜çš„ä¼˜å…ˆç»´æŠ¤åŸæ± 
+		std::set<int32>						m_cross_city_territories_common; //è·¨æœåŸæˆ˜çš„æ™®é€šç»´æŠ¤åŸæ± 
 
-		int64								m_last_caclu_rank_gs_value;//ÉÏ´ÎÍ¬²½ĞÅÏ¢Ê±GSÊıÖµ
+		int64								m_last_caclu_rank_gs_value;//ä¸Šæ¬¡åŒæ­¥ä¿¡æ¯æ—¶GSæ•°å€¼
 
 		s_legion_answer_info				m_legion_answer_info;
-		bool								m_is_load_legion_member_end;//ÊÇ·ñ¼ÓÔØÍê¾üÍÅ³ÉÔ±
+		bool								m_is_load_legion_member_end;//æ˜¯å¦åŠ è½½å®Œå†›å›¢æˆå‘˜
 		
 		uint64								m_next_bid_time;
 
-		int32                               m_strategy_world_boss[legion_strategy_world_boss_num];//¾üÍÅ¹¥ÂÔÊÀ½çbossÊı×é
+		int32                               m_strategy_world_boss[legion_strategy_world_boss_num];//å†›å›¢æ”»ç•¥ä¸–ç•Œbossæ•°ç»„
 	};
 }
 

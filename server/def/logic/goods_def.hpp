@@ -18,57 +18,57 @@ purpose:
 namespace faith
 {
 #pragma pack(push,1)
-#define STORE_START_TEMPLATE_ID		28000001	//	ÉÌÆ·ÆğÊ¼id
-#define LIMIT_GOODS_TIME_ARRAY_NUM		5	//ÇÀ¹ºÉÌÆ·µÄÊ±¼äÏŞÖÆÊı×éÎ»Êı
-const int32 goods_max_num = 40;				//µ¥¸öÉÌµê×î´óµÄÏŞÁ¿ÊıÁ¿
-	const int32 MAX_GOODSINST_SIZE_PROP = goods_max_num * e_store_type_max;		//²»Í¬ÉÌÆ·µÄ×î´óÊıÁ¿
+#define STORE_START_TEMPLATE_ID		28000001	//	å•†å“èµ·å§‹id
+#define LIMIT_GOODS_TIME_ARRAY_NUM		5	//æŠ¢è´­å•†å“çš„æ—¶é—´é™åˆ¶æ•°ç»„ä½æ•°
+const int32 goods_max_num = 40;				//å•ä¸ªå•†åº—æœ€å¤§çš„é™é‡æ•°é‡
+	const int32 MAX_GOODSINST_SIZE_PROP = goods_max_num * e_store_type_max;		//ä¸åŒå•†å“çš„æœ€å¤§æ•°é‡
 	enum e_goods_info
 	{
-		e_goods_info_id = 0,//Ä£°åid
-		e_goods_info_owner_store,//Á¥ÊôÉÌµêid
-		e_goods_info_purchased_num,//ÒÑ¹ºÂòµÄÊıÁ¿
-		e_goods_info_last_update_time,//×î½üÒ»´Î¸üĞÂÊ±¼ä
+		e_goods_info_id = 0,//æ¨¡æ¿id
+		e_goods_info_owner_store,//éš¶å±å•†åº—id
+		e_goods_info_purchased_num,//å·²è´­ä¹°çš„æ•°é‡
+		e_goods_info_last_update_time,//æœ€è¿‘ä¸€æ¬¡æ›´æ–°æ—¶é—´
 		e_goods_info_max,
 	};
 	enum e_store_update_type
 	{
-		e_store_update_null,	//²»Ë¢ĞÂ
-		e_store_update_timed,	//¶¨Ê±Ë¢ĞÂ
-		e_store_update_interval,//¼ä¸ôË¢ĞÂ
+		e_store_update_null,	//ä¸åˆ·æ–°
+		e_store_update_timed,	//å®šæ—¶åˆ·æ–°
+		e_store_update_interval,//é—´éš”åˆ·æ–°
 	};
 	enum e_goods_type
 	{
-		e_goods_type_recommend = 0,//ÍÆ¼öÉÌÆ·
-		e_goods_type_daily,//ÈÕ³£ÉÌÆ·
-		e_goods_type_cost,//ÏûºÄÆ·
-		e_goods_type_outline,//ÍâĞÎÉÌÆ·
-		e_goods_type_buy_time_limit,//ÏŞÊ±¹ºÂòÉÌÆ·
+		e_goods_type_recommend = 0,//æ¨èå•†å“
+		e_goods_type_daily,//æ—¥å¸¸å•†å“
+		e_goods_type_cost,//æ¶ˆè€—å“
+		e_goods_type_outline,//å¤–å½¢å•†å“
+		e_goods_type_buy_time_limit,//é™æ—¶è´­ä¹°å•†å“
 		e_goods_type_max,
 	};
 	enum e_request_update_type
 	{
-		e_request_update_type_normal = 0, //Õı³£Ë¢ĞÂ
-		e_request_update_type_get_server__open_time =1,//	Ë¢ĞÂÏŞ¹ºÀà
+		e_request_update_type_normal = 0, //æ­£å¸¸åˆ·æ–°
+		e_request_update_type_get_server__open_time =1,//	åˆ·æ–°é™è´­ç±»
 	};
 	enum e_store_open_type
 	{
-		e_store_open_type_foever = 0,//³£×¤ÉÌµê
-		e_store_open_type_time,//¸ù¾İÏÖÊµÊ±¼ä¿ªÆôµÄÉÌµê
-		e_store_open_type_server,//¸ù¾İ·şÎñÆ÷¿ªÊ¼Ê±¼ä¼ÆËãµÄÉÌµê
+		e_store_open_type_foever = 0,//å¸¸é©»å•†åº—
+		e_store_open_type_time,//æ ¹æ®ç°å®æ—¶é—´å¼€å¯çš„å•†åº—
+		e_store_open_type_server,//æ ¹æ®æœåŠ¡å™¨å¼€å§‹æ—¶é—´è®¡ç®—çš„å•†åº—
 	};
 
 	enum e_time_limit_goods_on_type
 	{
 		e_time_limit_goods_on_type_none,
-		e_time_limit_goods_on_type_open_server_days,	//·şÎñÆ÷¿ª·şÊ±¼ä
-		e_time_limit_goods_on_type_open_time,			//¾ßÌåÊ±¼ä
+		e_time_limit_goods_on_type_open_server_days,	//æœåŠ¡å™¨å¼€æœæ—¶é—´
+		e_time_limit_goods_on_type_open_time,			//å…·ä½“æ—¶é—´
 	};
 
 	enum e_time_limit_goods_start_type
 	{
-		e_time_limit_goods_start_type_data_error,		//Êı¾İ´íÎó
-		e_time_limit_goods_start_type_continuing,		//ÎïÆ·³öÊÛÖĞ
-		e_time_limit_goods_start_type_not_begin,		//ÎïÆ·Î´¿ªÊ¼³öÊÛ
+		e_time_limit_goods_start_type_data_error,		//æ•°æ®é”™è¯¯
+		e_time_limit_goods_start_type_continuing,		//ç‰©å“å‡ºå”®ä¸­
+		e_time_limit_goods_start_type_not_begin,		//ç‰©å“æœªå¼€å§‹å‡ºå”®
 	};
 
 	struct s_goods_info

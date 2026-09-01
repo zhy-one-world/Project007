@@ -1,4 +1,4 @@
-/********************************************************************
+ï»¿/********************************************************************
 	file name:	relation_def.h
 	created:	2017/05/26 23:18
 	author:		zhy
@@ -27,21 +27,21 @@ namespace faith
 	const int32 dati_max_num = 5;
 	enum marry_state
 	{
-		marry_state_single_none,						//ÎŞ
-		marry_state_main_is_getting_reward,				//ÕıÔÚÁì½±Àø
-		marry_state_sub_is_getting_reward,				//ÕıÔÚÁì½±Àø
-		marry_state_main_had_get_reward,				//mainÁì¹ıÁË
-		marry_state_sub_had_get_reward,					//subÁì¹ıÁË
-		marry_state_both_had_get_reward,				//¶¼Áì¹ıÁË
-		marry_state_with_sb,							//½á»é
-		marry_state_want_to_find_love,					// 
-		marry_state_waiting_choice, 					//µÈ´ıÑ¡Ôñ
-		marry_state_one_main_agree,						//main Í¬Òâ
-		marry_state_one_sub_agree,						//sub Í¬Òâ
-		marry_state_one_refuse,							//¾Ü¾ø
-		marry_state_both_agree, 						//¶¼Í¬Òâ
-		marry_state_divorce_no_need_cost_money, 		//²»ĞèÒª»¨Ç®µÄÇ¿ÖÆÀë»é
-		marry_state_force_divorce,						//Ç¿ÖÆÀë»é
+		marry_state_single_none,						//æ— 
+		marry_state_main_is_getting_reward,				//æ­£åœ¨é¢†å¥–åŠ±
+		marry_state_sub_is_getting_reward,				//æ­£åœ¨é¢†å¥–åŠ±
+		marry_state_main_had_get_reward,				//mainé¢†è¿‡äº†
+		marry_state_sub_had_get_reward,					//subé¢†è¿‡äº†
+		marry_state_both_had_get_reward,				//éƒ½é¢†è¿‡äº†
+		marry_state_with_sb,							//ç»“å©š
+		marry_state_want_to_find_love,
+		marry_state_waiting_choice, 					//ç­‰å¾…é€‰æ‹©
+		marry_state_one_main_agree,						//main åŒæ„
+		marry_state_one_sub_agree,						//sub åŒæ„
+		marry_state_one_refuse,							//æ‹’ç»
+		marry_state_both_agree, 						//éƒ½åŒæ„
+		marry_state_divorce_no_need_cost_money, 		//ä¸éœ€è¦èŠ±é’±çš„å¼ºåˆ¶ç¦»å©š
+		marry_state_force_divorce,						//å¼ºåˆ¶ç¦»å©š
 		marry_state_max,
 	};
 	 

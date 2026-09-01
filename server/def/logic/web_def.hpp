@@ -70,21 +70,21 @@ namespace faith
 	enum e_web_json_type
 	{
 		e_web_json_type_role_info = 1,
-		e_web_json_type_send_chat,				//½ûÑÔ
-		e_web_json_type_kickout,				//ÌßµÇÂ½
-		e_web_json_type_send_mail,				//·¢ËÍÓÊ¼ş
+		e_web_json_type_send_chat,				//ç¦è¨€
+		e_web_json_type_kickout,				//è¸¢ç™»é™†
+		e_web_json_type_send_mail,				//å‘é€é‚®ä»¶
 		e_web_json_type_char_info_modify,
 		//e_web_json_type_money_info_modify,
 		e_web_json_type_role_item_info,
 		e_web_json_type_role_item_modify,
-		e_web_json_type_marquee,				//·¢ËÍ¹«¸æ
-		e_web_json_type_textcommand,			//×Ô¶¨ÒåÖ¸Áî
-		e_web_json_type_activate_code,			//·¢·ÅÀñ°ü	
+		e_web_json_type_marquee,				//å‘é€å…¬å‘Š
+		e_web_json_type_textcommand,			//è‡ªå®šä¹‰æŒ‡ä»¤
+		e_web_json_type_activate_code,			//å‘æ”¾ç¤¼åŒ…	
 		e_web_json_type_robot_op,
-		e_web_json_type_recharge,				//³äÖµ
-		e_web_json_type_open_time,				//ÉèÖÃ¿ª·şÊ±¼ä
-		e_web_json_type_new_password,			//ĞŞ¸ÄÃÜÂë
-		e_web_json_type_ban_login,				//·âºÅ
+		e_web_json_type_recharge,				//å……å€¼
+		e_web_json_type_open_time,				//è®¾ç½®å¼€æœæ—¶é—´
+		e_web_json_type_new_password,			//ä¿®æ”¹å¯†ç 
+		e_web_json_type_ban_login,				//å°å·
 	};
 #pragma pack(pop)
 }

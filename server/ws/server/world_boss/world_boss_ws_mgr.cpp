@@ -1,4 +1,4 @@
-#include "world_boss_ws_mgr.h"
+ï»¿#include "world_boss_ws_mgr.h"
 #include "utility/cs_date.hpp"
 #include "utility/globle_data.h"
 #include "utility/init_unit.h"
@@ -67,12 +67,12 @@ namespace faith
 
 	void world_boss_ws_mgr::clear_world_boss_activity_info()
 	{
-		m_personal_world_boss_score_info.clear();		//Çå¿ÕÊÀ½çboss¸öÈËÉËº¦ÁĞ±í
-		m_legion_world_boss_score_info.clear();			//Çå¿ÕÊÀ½çboss¾üÍÅÉËº¦ÁĞ±í
-		m_all_join_world_boss_member.clear();			//Çå¿ÕËùÓĞ²Î¼ÓÊÀ½çboss³ÉÔ±
-		m_boss_create_pos.clear();						//Çå¿ÕÊÀ½çbossËæ»úÎ»ÖÃ
-		m_personal_total_rank_indicator.clear_data();	//Çå¿Õ¸öÈË×ÜÉËº¦
-		m_activity_rank_indicator.clear_data();			//Çå¿Õ¾üÍÅ×ÜÉËº¦
+		m_personal_world_boss_score_info.clear();		//æ¸…ç©ºä¸–ç•Œbossä¸ªäººä¼¤å®³åˆ—è¡¨
+		m_legion_world_boss_score_info.clear();			//æ¸…ç©ºä¸–ç•Œbosså†›å›¢ä¼¤å®³åˆ—è¡¨
+		m_all_join_world_boss_member.clear();			//æ¸…ç©ºæ‰€æœ‰å‚åŠ ä¸–ç•Œbossæˆå‘˜
+		m_boss_create_pos.clear();						//æ¸…ç©ºä¸–ç•Œbosséšæœºä½ç½®
+		m_personal_total_rank_indicator.clear_data();	//æ¸…ç©ºä¸ªäººæ€»ä¼¤å®³
+		m_activity_rank_indicator.clear_data();			//æ¸…ç©ºå†›å›¢æ€»ä¼¤å®³
 		for (int32 i = 0; i < max_world_boss_and_gold_army_num; ++i)
 		{
 			m_world_boss_data[i].set_boss_state(0);
@@ -81,8 +81,8 @@ namespace faith
 
 	void world_boss_ws_mgr::tick(int32 dt)
 	{
-		//´Ë´¦TickµÄ¼ä¸ôÖµÊÇºÁÃëµ¥Î»
-		//1ÃëÖÓ£¨1000ºÁÃë£©tickÒ»´Î
+		//æ­¤å¤„Tickçš„é—´éš”å€¼æ˜¯æ¯«ç§’å•ä½
+		//1ç§’é’Ÿï¼ˆ1000æ¯«ç§’ï¼‰tickä¸€æ¬¡
 		m_3sec_tick += dt;
 		if (m_3sec_tick > 3000)
 		{
@@ -98,7 +98,7 @@ namespace faith
 
 			if (cur_time_info.second >= m_create_boss_tamp && cur_time_info.second <= m_remove_boss_tamp)
 			{
-				//ÔÚ»î¶¯Ê±¼äÄÚ
+				//åœ¨æ´»åŠ¨æ—¶é—´å†…
 				if (!is_in_active_time)
 				{
 					is_in_active_time = true;
@@ -108,16 +108,16 @@ namespace faith
 
 					clear_world_boss_activity_info();
 
-					find_need_create_world_boss();					//ÉèÖÃĞèÒª´´½¨µÄµÍÖĞ¸ßÊÀ½çbossÊı×é
-					assign_postion_to_world_boss();					//ÉèÖÃÊÀ½çbossÎ»ÖÃ
-					assign_world_boss_to_legion();					//·ÖÅäÊÀ½çboss¸øÃ¿¸ö¾üÍÅ
-					legion_ws_mgr::get_instance().send_all_legion_world_boss_info();   //·¢ËÍËùÓĞ¹¥ÂÔboss¸ø¶ÔÓ¦¾üÍÅ
+					find_need_create_world_boss();					//è®¾ç½®éœ€è¦åˆ›å»ºçš„ä½ä¸­é«˜ä¸–ç•Œbossæ•°ç»„
+					assign_postion_to_world_boss();					//è®¾ç½®ä¸–ç•Œbossä½ç½®
+					assign_world_boss_to_legion();					//åˆ†é…ä¸–ç•Œbossç»™æ¯ä¸ªå†›å›¢
+					legion_ws_mgr::get_instance().send_all_legion_world_boss_info();   //å‘é€æ‰€æœ‰æ”»ç•¥bossç»™å¯¹åº”å†›å›¢
 				}
 				send_world_boss_notice();		
 			}
 			else
 			{
-				//²»ÔÚ»î¶¯Ê±¼äÄÚ(»î¶¯½áÊø)
+				//ä¸åœ¨æ´»åŠ¨æ—¶é—´å†…(æ´»åŠ¨ç»“æŸ)
 				if (is_in_active_time)
 				{
 					is_in_active_time = false;
@@ -134,7 +134,7 @@ namespace faith
 			}
 			if (world_server::getInstance().get_activity_sec_left(e_activity_type_world_boss, e_activity_time_get_all) < 0 && m_is_send_legion_welfare == true)
 			{
-				//»î¶¯½áÊøºó·¢·Å¾üÍÅ¸£Àû½±Àø ²»ĞèÒªµÈµ½bossËÀÍê
+				//æ´»åŠ¨ç»“æŸåå‘æ”¾å†›å›¢ç¦åˆ©å¥–åŠ± ä¸éœ€è¦ç­‰åˆ°bossæ­»å®Œ
 				send_strategy_reward();
 				send_leigon_welfare_activity_end(e_activity_type_world_boss);
 				send_strategy_result();
@@ -144,7 +144,7 @@ namespace faith
 				clear_world_boss_activity_info();
 			}
 
-			//Ñ­»·ÊÀ½çbossÈİÆ÷£¬¿´»î×ÅµÄBossÊÇ·ñÄÜË¢ĞÂ£¬ÄÜË¢ĞÂ¾Íremoveµô£¬²¢¼ÓÈë¿ÉË¢ĞÂÁĞ±í
+			//å¾ªç¯ä¸–ç•Œbosså®¹å™¨ï¼Œçœ‹æ´»ç€çš„Bossæ˜¯å¦èƒ½åˆ·æ–°ï¼Œèƒ½åˆ·æ–°å°±removeæ‰ï¼Œå¹¶åŠ å…¥å¯åˆ·æ–°åˆ—è¡¨
 			for (int32 i = 0; i < max_world_boss_and_gold_army_num; ++i)
 			{
 				if (m_world_boss_data[i].get_spawn_id() <= 0)
@@ -154,12 +154,12 @@ namespace faith
 
 				if (cur_time_info.second >= m_create_boss_tamp && cur_time_info.second <= m_remove_boss_tamp && !m_world_boss_data[i].get_creating() && can_create_world_boss(m_world_boss_data[i].get_spawn_id()))
 				{
-					//´´½¨³É¹¦ÔÙÉèÖÃÎªtrue
+					//åˆ›å»ºæˆåŠŸå†è®¾ç½®ä¸ºtrue
 					if (create_world_boss(m_world_boss_data[i].get_spawn_id()))
 					{
 						set_is_all_boss_dead(false);
 						m_world_boss_data[i].set_creating(true);
-						legion_ws_mgr::get_instance().clear_boss_rank_list();//ÇåÀíBOSSÅÅĞĞ°ñ
+						legion_ws_mgr::get_instance().clear_boss_rank_list();//æ¸…ç†BOSSæ’è¡Œæ¦œ
 					}
 				}
 
@@ -386,7 +386,7 @@ namespace faith
 		}
 		//if (npc_spawn_template_id <= end_boss_ready_npc_id&&npc_spawn_template_id >= first_boss_ready_npc_id)
 		//{
-		//	s_world_boss_ready_info world_boss_ready_npc;//ÕâÀï½«BOSS×¼±¸µÄÁÑÏ¶´æÆğÀ´
+		//	s_world_boss_ready_info world_boss_ready_npc;//è¿™é‡Œå°†BOSSå‡†å¤‡çš„è£‚éš™å­˜èµ·æ¥
 		//	world_boss_ready_npc.line_id = npc_spawn_line_id;
 		//	world_boss_ready_npc.npc_guid = cur_boss_guid;
 		//	world_boss_ready_npc.npc_respawn_point_template_id = npc_spawn_template_id;
@@ -436,7 +436,7 @@ namespace faith
 				}
 				if (m_world_boss_respawn_ptr_list[i]->get_spawn_id() == npc_spawn_template_id)
 				{
-					//ÒÑ¾­ÔÚË¢ĞÂÁĞ±íÖĞµÄ£¬²»ÄÜ·´¸´Ìí¼Ó
+					//å·²ç»åœ¨åˆ·æ–°åˆ—è¡¨ä¸­çš„ï¼Œä¸èƒ½åå¤æ·»åŠ 
 					return;
 				}
 			}
@@ -494,7 +494,7 @@ namespace faith
 			world_boss_info->m_is_recv_get_prize_msg = false;
 			return;
 		}
-		//ÒÑ¾­ÁìÈ¡¹ıÁË
+		//å·²ç»é¢†å–è¿‡äº†
 		if (e_first_kill_prize_type_was_get == world_boss_info->get_is_get_prize())
 		{
 			world_boss_info->m_is_recv_get_prize_msg = false;
@@ -506,7 +506,7 @@ namespace faith
 			world_boss_info->m_is_recv_get_prize_msg = false;
 			return;
 		}
-		//ÅĞ¶Ï ÊÇ·ñÊ×É±Õß
+		//åˆ¤æ–­ æ˜¯å¦é¦–æ€è€…
 		if (req_guid == frist_killer->get_role_guid())
 		{
 			ws2cs_create_first_kill_prize pak;
@@ -638,7 +638,6 @@ namespace faith
 //			return;
 //		}
 //		time_info cur_time_info = time_helper::get_cur_time_new();
-//
 //		for (int32 i = first_boss_ready_npc_id; i < end_boss_ready_npc_id + 1; i++)
 //		{
 //			ws2cs_create_world_boss create_msg;
@@ -661,7 +660,6 @@ namespace faith
 //		}
 //		m_is_create_boss_ready_npc = true;
 //	}
-//
 	bool world_boss_ws_mgr::create_world_boss(int32 SpawnId)
 	{
 		ZoneScoped;
@@ -802,9 +800,9 @@ namespace faith
 		world_boss_ws* temp_info_ptr = get_world_boss_info(world_boss_info.npc_respawn_point_template_id);
 		if (temp_info_ptr == nullptr)
 		{
-			//´Ë´¦Îª¿Õ£¬ËµÃ÷µ±Ç°Ã»ÓĞÕâ¸öBossÊı¾İ
-			//ÒòÎªÔÚloadÇ°£¬ÊÇÏÈÒªÓÃgameconfig±í¸ñÖĞµÄÊı¾İ³õÊ¼»¯´æ´¢Æ÷µÄ£¬ËùÒÔÒ»°ãÀ´Ëµ£¬ÊÇÒ»¶¨ÄÜÕÒµÃµ½µÄ
-			//ÕÒ²»µ½£¬¾ÍËµÃ÷gameconfigÖĞ¾ÍÃ»ÓĞ£¬Ò²¾ÍËµÃ÷Õâ¸öboss±»É¾ÁË£¬Ò²¾Í²»ÓÃ´æµµÁË
+			//æ­¤å¤„ä¸ºç©ºï¼Œè¯´æ˜å½“å‰æ²¡æœ‰è¿™ä¸ªBossæ•°æ®
+			//å› ä¸ºåœ¨loadå‰ï¼Œæ˜¯å…ˆè¦ç”¨gameconfigè¡¨æ ¼ä¸­çš„æ•°æ®åˆå§‹åŒ–å­˜å‚¨å™¨çš„ï¼Œæ‰€ä»¥ä¸€èˆ¬æ¥è¯´ï¼Œæ˜¯ä¸€å®šèƒ½æ‰¾å¾—åˆ°çš„
+			//æ‰¾ä¸åˆ°ï¼Œå°±è¯´æ˜gameconfigä¸­å°±æ²¡æœ‰ï¼Œä¹Ÿå°±è¯´æ˜è¿™ä¸ªbossè¢«åˆ äº†ï¼Œä¹Ÿå°±ä¸ç”¨å­˜æ¡£äº†
 			return nullptr;
 		}
 		else
@@ -828,8 +826,8 @@ namespace faith
 
 	void world_boss_ws_mgr::load_world_boss_event_end(const s_world_boss_info* world_boss_info_ptr, int32 info_num)
 	{
-		//Õâ¸ö´úÂëÖ»ÔÚ ·şÎñÆ÷Æô¶¯Ê± µ÷ÓÃµÄ£¬´ÓÊı¾İ¿â¶Á·şÎñÆ÷´æµµµÄ½á¹ûºóµ÷ÓÃ
-		//ËùÒÔÔÚÕâÀï£¬ÒªÖØĞÂÉú³ÉÉÏ´Î·şÎñÆ÷ÏÂÏßÊ±£¬Ã»ËÀµÄÊÀ½çboss
+		//è¿™ä¸ªä»£ç åªåœ¨ æœåŠ¡å™¨å¯åŠ¨æ—¶ è°ƒç”¨çš„ï¼Œä»æ•°æ®åº“è¯»æœåŠ¡å™¨å­˜æ¡£çš„ç»“æœåè°ƒç”¨
+		//æ‰€ä»¥åœ¨è¿™é‡Œï¼Œè¦é‡æ–°ç”Ÿæˆä¸Šæ¬¡æœåŠ¡å™¨ä¸‹çº¿æ—¶ï¼Œæ²¡æ­»çš„ä¸–ç•Œboss
 		for (int32 i = 0; i < info_num; ++i)
 		{
 			s_world_boss_info temp_info = world_boss_info_ptr[i];
@@ -979,7 +977,7 @@ namespace faith
 					break;
 				}
 
-				//ÊÀ½çboss¸öÈËµÃ·ÖĞÅÏ¢
+				//ä¸–ç•Œbossä¸ªäººå¾—åˆ†ä¿¡æ¯
 				if (boss_type == e_boss_type_world)
 				{
 					int64 last_score = 0;
@@ -1016,7 +1014,7 @@ namespace faith
 					break;
 				}
 
-				//ÊÀ½çboss¾üÍÅµÃ·ÖĞÅÏ¢
+				//ä¸–ç•Œbosså†›å›¢å¾—åˆ†ä¿¡æ¯
 				if (boss_type == e_boss_type_world)
 				{
 					int64 last_score = 0;
@@ -1100,7 +1098,7 @@ namespace faith
 			int32 rank_index = 1;
 			for (int32 idx = 0; idx < record_score.size(); idx++)
 			{
-				//ÉèÖÃ¾üÍÅ¸£Àû
+				//è®¾ç½®å†›å›¢ç¦åˆ©
 				legion_ws* legion_ptr = legion_ws_mgr::get_instance().get_legion(record_score[idx].role_guid);
 				if (nullptr == legion_ptr)
 				{
@@ -1108,7 +1106,7 @@ namespace faith
 				}
 				legion_ptr->send_legion_welfare_by_activity_and_rank(e_activity_type_world_boss, rank_index);
 
-				//ÊÀ½çboss¾üÍÅÉÏ¼Ü
+				//ä¸–ç•Œbosså†›å›¢ä¸Šæ¶
 				int32 player_num = 0;
 				guid_64* mem_list = find_legion_jion_member(legion_ptr->get_legion_guid(), player_num);
 				if (mem_list == nullptr)
@@ -1241,7 +1239,7 @@ namespace faith
 		}
 		time_info cur_time_info = time_helper::get_cur_time_new();
 		int32 active_legion_num = legion_ws_mgr::get_instance().get_active_legion_num();
-		int32 boss_num = 0;           //ĞèÒªÉú³ÉµÄbossÊıÁ¿
+		int32 boss_num = 0;           //éœ€è¦ç”Ÿæˆçš„bossæ•°é‡
 
 		memset(lower_boss_arr, 0, sizeof(lower_boss_arr));
 		memset(intermediate_boss_arr, 0, sizeof(intermediate_boss_arr));
@@ -1249,7 +1247,7 @@ namespace faith
 
 		if (cur_time_info.second >= m_create_boss_tamp && cur_time_info.second <= m_remove_boss_tamp)
 		{
-			//µÍ¼¶ÊÀ½çboss
+			//ä½çº§ä¸–ç•Œboss
 			if (active_legion_num <= act_temp_ptr->ParamIntArr2[0])
 			{
 				boss_num = act_temp_ptr->ParamIntArr2[3];
@@ -1291,7 +1289,7 @@ namespace faith
 			}
 
 
-			//ÖĞ¼¶ÊÀ½çboss
+			//ä¸­çº§ä¸–ç•Œboss
 			boss_num = 0;
 			if (active_legion_num <= act_temp_ptr->ParamIntArr2[7])
 			{
@@ -1334,7 +1332,7 @@ namespace faith
 			}
 
 
-			//¸ß¼¶ÊÀ½çboss
+			//é«˜çº§ä¸–ç•Œboss
 			boss_num = 0;
 			if (active_legion_num <= act_temp_ptr->ParamIntArr2[14])
 			{
@@ -1484,9 +1482,9 @@ namespace faith
 
 		for (auto ite = legion_ws_mgr::get_instance().get_legion_map().begin(); ite != legion_ws_mgr::get_instance().get_legion_map().end(); )
 		{
-			// tickÀï¿ÉÄÜÉ¾µôlegion ÒªÓÃÕâÖÖ·½Ê½·ÀÖ¹µü´úÆ÷Ê§Ğ§
+			// tické‡Œå¯èƒ½åˆ æ‰legion è¦ç”¨è¿™ç§æ–¹å¼é˜²æ­¢è¿­ä»£å™¨å¤±æ•ˆ
 			auto temp_it = ite++;
-			//Í³¼Æ»îÔ¾¾üÍÅÊıÁ¿
+			//ç»Ÿè®¡æ´»è·ƒå†›å›¢æ•°é‡
 			if (temp_it->second.week_is_have_player_active())
 			{
 				if (active_low_index >= max_world_boss_arr_num || lower_boss_arr[active_low_index] == 0)
@@ -1603,7 +1601,7 @@ namespace faith
 		for (auto ite = legion_ws_mgr::get_instance().get_legion_map().begin(); ite != legion_ws_mgr::get_instance().get_legion_map().end(); )
 		{
 			int32 reward_level = 0;
-			// tickÀï¿ÉÄÜÉ¾µôlegion ÒªÓÃÕâÖÖ·½Ê½·ÀÖ¹µü´úÆ÷Ê§Ğ§
+			// tické‡Œå¯èƒ½åˆ æ‰legion è¦ç”¨è¿™ç§æ–¹å¼é˜²æ­¢è¿­ä»£å™¨å¤±æ•ˆ
 			auto temp_it = ite++;
 
 			NpcSpawnPointTemplate* low_npc_temp_ptr = GET_TEMPLATE(NpcSpawnPointTemplate, temp_it->second.get_strategy_world_boss_arr(0));
@@ -1661,7 +1659,7 @@ namespace faith
 				continue;
 			}
 
-			//½±ÀøÎïÆ·
+			//å¥–åŠ±ç‰©å“
 			std::vector<s_item_template_info> drop_item_list;
 
 			for (int32 i = 0; i < player_num; i++)
@@ -1894,7 +1892,7 @@ namespace faith
 		m_activity_rank_indicator.sort();
 		m_personal_total_rank_indicator.sort();
 
-		int32 rank_num = 3;	//ÅÅĞĞ°ñÈËÊı
+		int32 rank_num = 3;	//æ’è¡Œæ¦œäººæ•°
 		legion_proto_world_boss_strategy_result all_rank_msg;
 		for (int32 i = 0; i < rank_num; i++)
 		{
@@ -1932,7 +1930,7 @@ namespace faith
 		for (ite = legion_ws_mgr::get_instance().get_legion_map().begin(); ite != legion_ws_mgr::get_instance().get_legion_map().end(); )
 		{
 			int32 reward_level = 0;
-			// tickÀï¿ÉÄÜÉ¾µôlegion ÒªÓÃÕâÖÖ·½Ê½·ÀÖ¹µü´úÆ÷Ê§Ğ§
+			// tické‡Œå¯èƒ½åˆ æ‰legion è¦ç”¨è¿™ç§æ–¹å¼é˜²æ­¢è¿­ä»£å™¨å¤±æ•ˆ
 			auto temp_it = ite++;
 
 			NpcSpawnPointTemplate* low_npc_temp_ptr = GET_TEMPLATE(NpcSpawnPointTemplate, temp_it->second.get_strategy_world_boss_arr(0));
@@ -2091,7 +2089,7 @@ namespace faith
 			legion_ws_map::iterator ite;
 			for (ite = legion_ws_mgr::get_instance().get_legion_map().begin(); ite != legion_ws_mgr::get_instance().get_legion_map().end(); )
 			{
-				// tickÀï¿ÉÄÜÉ¾µôlegion ÒªÓÃÕâÖÖ·½Ê½·ÀÖ¹µü´úÆ÷Ê§Ğ§
+				// tické‡Œå¯èƒ½åˆ æ‰legion è¦ç”¨è¿™ç§æ–¹å¼é˜²æ­¢è¿­ä»£å™¨å¤±æ•ˆ
 				auto temp_it = ite++;
 				event_ws_mgr::get_instance().send_notice_to_all(notice_id, create_time, temp_it->first, notice_str);
 			}
@@ -2106,7 +2104,7 @@ namespace faith
 			legion_ws_map::iterator ite;
 			for (ite = legion_ws_mgr::get_instance().get_legion_map().begin(); ite != legion_ws_mgr::get_instance().get_legion_map().end(); )
 			{
-				// tickÀï¿ÉÄÜÉ¾µôlegion ÒªÓÃÕâÖÖ·½Ê½·ÀÖ¹µü´úÆ÷Ê§Ğ§
+				// tické‡Œå¯èƒ½åˆ æ‰legion è¦ç”¨è¿™ç§æ–¹å¼é˜²æ­¢è¿­ä»£å™¨å¤±æ•ˆ
 				auto temp_it = ite++;
 				event_ws_mgr::get_instance().send_notice_to_all(notice_id, create_time, temp_it->first, notice_str);
 			}
@@ -2121,7 +2119,7 @@ namespace faith
 			legion_ws_map::iterator ite;
 			for (ite = legion_ws_mgr::get_instance().get_legion_map().begin(); ite != legion_ws_mgr::get_instance().get_legion_map().end(); )
 			{
-				// tickÀï¿ÉÄÜÉ¾µôlegion ÒªÓÃÕâÖÖ·½Ê½·ÀÖ¹µü´úÆ÷Ê§Ğ§
+				// tické‡Œå¯èƒ½åˆ æ‰legion è¦ç”¨è¿™ç§æ–¹å¼é˜²æ­¢è¿­ä»£å™¨å¤±æ•ˆ
 				auto temp_it = ite++;
 				event_ws_mgr::get_instance().send_notice_to_all(notice_id, create_time, temp_it->first, notice_str);
 			}
@@ -2209,7 +2207,7 @@ namespace faith
 
 	void world_boss_ws_mgr::calculate_other_score(int32 boss_spawn_id)
 	{
-		//Èç¹ûÄÜÉ¾³ı±íÊ¾bossÊÇ±»ÏµÍ³É±µôµÄ²»Ôö¼Ó½±Àø
+		//å¦‚æœèƒ½åˆ é™¤è¡¨ç¤ºbossæ˜¯è¢«ç³»ç»Ÿæ€æ‰çš„ä¸å¢åŠ å¥–åŠ±
 		if (can_remove_world_boss(boss_spawn_id))
 		{
 			return;

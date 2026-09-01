@@ -1,10 +1,10 @@
 #pragma once
 /********************************************************************
-created: 2019Äê2ÔÂ13ÈÕ
+created: 2019å¹´2æœˆ13æ—¥
 file base: seven_day_goal_mgr
 file ext: h
 author: wangdi
-purpose: ÆßÈÕÄ¿±êÍ·ÎÄ¼þ
+purpose: ä¸ƒæ—¥ç›®æ ‡å¤´æ–‡ä»¶
 *********************************************************************/
 #ifndef _SEVEN_DAY_GOAL_MGR_H_
 #define _SEVEN_DAY_GOAL_MGR_H_

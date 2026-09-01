@@ -253,7 +253,7 @@ namespace faith
 		static s_unit_info role_info;
 		role_info.clear_data();
 		role_info.role_guid = m_role_info.role_guid;
-		role_info.data_ary[e_role_info_template_id] = faker_player_template_id; //¼ÙÊı¾İ
+		role_info.data_ary[e_role_info_template_id] = faker_player_template_id; //å‡æ•°æ®
 		role_info.data_ary[e_role_info_gender] = m_npc_template_ptr->Sex;
 		role_info.data_ary[e_role_info_class_type] = m_npc_template_ptr->Class;
 		role_info.data_ary[e_role_info_wing_showd_template_id] = m_npc_template_ptr->BornWing;
@@ -279,7 +279,7 @@ namespace faith
 		if (m_npc_template_ptr->Capsule.size() >= 2)
 		{
 			m_unit_capsule = m_npc_template_ptr->Capsule[1];
-			born_pos.unit_location.z += m_npc_template_ptr->Capsule[0] - 110;//¼õµôÒ»¸öÓÃÍæ¼Ò²âÁ¿Ê±Íæ¼ÒµÄ¸ß¶È
+			born_pos.unit_location.z += m_npc_template_ptr->Capsule[0] - 110;//å‡æ‰ä¸€ä¸ªç”¨ç©å®¶æµ‹é‡æ—¶ç©å®¶çš„é«˜åº¦
 			m_unit_half_height = m_npc_template_ptr->Capsule[0];
 		}
 		set_new_map_pos(born_pos);
@@ -303,7 +303,7 @@ namespace faith
 		}
 		item_info.clear_data();
 		if (init_unit::init_item_data(item_info, m_npc_template_ptr->BornWing, 0, 1, e_bag_type_wing, 1))
-		{//³õÊ¼»¯³á°ò
+		{//åˆå§‹åŒ–ç¿…è†€
 			load_proto.add_item_guid(item_info.item_guid.server_64);
 			for (int32 j = 0; j < e_item_info_max; ++j)
 			{
@@ -349,7 +349,7 @@ namespace faith
 
 		item_info.clear_data();
 		if (init_unit::init_item_data(item_info, m_npc_template_ptr->BornMount, 0, 1, e_bag_type_mount, 1))
-		{//³õÊ¼»¯×øÆï ÏÔÊ¾Ô­ĞÍ£¬²»»Ã»¯
+		{//åˆå§‹åŒ–åéª‘ æ˜¾ç¤ºåŸå‹ï¼Œä¸å¹»åŒ–
 			load_proto.add_item_guid(item_info.item_guid.server_64);
 			for (int32 j = 0; j < e_item_info_max; ++j)
 			{
@@ -361,7 +361,7 @@ namespace faith
 		static s_spirit_info init_spirit[1];
 		init_spirit[0].clear_data();
 		if (init_unit::init_spirit_data(init_spirit[0], m_npc_template_ptr->BornSpirit, 0, e_spirit_bag_type_equiped, 1))
-		{//³õÊ¼¾«Áé
+		{//åˆå§‹ç²¾çµ
 			//m_spirit_mgr.load_spirit_by_db(init_spirit, 1);
 		}
 
@@ -383,15 +383,15 @@ namespace faith
 				player& player_ref = unit_man::get_player(play_guid);
 				if (player_ref.is_valid() && player_ref.get_write_log())
 				{
-					//ÖúÕ½²»¼ÇÂ¼´ò±¦ÈÕÖ¾
+					//åŠ©æˆ˜ä¸è®°å½•æ‰“å®æ—¥å¿—
 					if (player_ref.get_assist_fight_mgr().is_assist_helper())
 					{
 						continue;
 					}
 					int32 treasure_type = player_ref.get_vip_level();
-					int32 kill_field_num = player_ref.get_gain_treasure_mgr().get_gain_treasure_info(e_gain_treasure_info_type_killed_field_boss) + player_ref.get_logic_data(e_role_logic_info_gain_treasure_restore_num);;	//µØ¹¬boss»÷É±´ÎÊı
-					int32 kill_simple_num = player_ref.get_gain_treasure_mgr().get_gain_treasure_info(e_gain_treasure_info_type_killed_simple_boss);//¸öÈËboss»÷É±´ÎÊı
-					int32 kill_home_num = player_ref.get_logic_data(e_role_logic_info_boss_home_cur_used_times);									//bossÖ®¼Ò»÷É±´ÎÊı
+					int32 kill_field_num = player_ref.get_gain_treasure_mgr().get_gain_treasure_info(e_gain_treasure_info_type_killed_field_boss) + player_ref.get_logic_data(e_role_logic_info_gain_treasure_restore_num);;	//åœ°å®«bosså‡»æ€æ¬¡æ•°
+					int32 kill_simple_num = player_ref.get_gain_treasure_mgr().get_gain_treasure_info(e_gain_treasure_info_type_killed_simple_boss);//ä¸ªäººbosså‡»æ€æ¬¡æ•°
+					int32 kill_home_num = player_ref.get_logic_data(e_role_logic_info_boss_home_cur_used_times);									//bossä¹‹å®¶å‡»æ€æ¬¡æ•°
 					int32 treasure_num = kill_field_num + kill_simple_num + kill_home_num + 1;
 
 					set_log_var(log_head)
@@ -496,7 +496,7 @@ namespace faith
 		{
 			return;
 		}
-		//¼ì²éÈç¹û²»ÊÇµ±Ç°ÈÎÎñ¹Ö¾ÍÉ¾³ıµô
+		//æ£€æŸ¥å¦‚æœä¸æ˜¯å½“å‰ä»»åŠ¡æ€ªå°±åˆ é™¤æ‰
 		player& player_ref = unit_man::get_player(get_can_see_player_guid());
 		if (player_ref.is_valid())
 		{
@@ -515,7 +515,7 @@ namespace faith
 		}
 		else
 		{
-			//Èç¹ûÍæ¼Ò²»ÔÚÏßÉ¾³ı ÉÏÏßºó»áÖØĞÂ´´½¨
+			//å¦‚æœç©å®¶ä¸åœ¨çº¿åˆ é™¤ ä¸Šçº¿åä¼šé‡æ–°åˆ›å»º
 			be_dead();
 		}
 	}
@@ -584,11 +584,11 @@ namespace faith
 			MapTemplate* map_template_ptr = GET_TEMPLATE(MapTemplate, get_unit_info(e_role_info_move_map_id));
 			if (map_template_ptr && map_template_ptr->Type == faith::e_map_type_big_map && temp_send_unit.get_unit_guid() != get_unit_guid())
 			{
-				//Ôö¼ÓÉ±ÈËÊı
+				//å¢åŠ æ€äººæ•°
 				int32 kill_player_num = temp_send_player.get_unit_info(faith::e_role_info_kill_player_num);
 				temp_send_player.set_unit_info(faith::e_role_info_kill_player_num, ++kill_player_num);
 				temp_send_player.send_info_one(faith::e_role_info_kill_player_num);
-				//Ôö¼ÓÉ±ÈË³ÆºÅ
+				//å¢åŠ æ€äººç§°å·
 				temp_send_player.get_title_mgr().add_title_by_type_and_value(faith::e_title_type_kill_player_num, kill_player_num);
 			}
 		}
@@ -723,7 +723,7 @@ namespace faith
 		if (m_npc_template_ptr->Capsule.size() >= 2)
 		{
 			m_unit_capsule = m_npc_template_ptr->Capsule[1];
-			born_pos.unit_location.z += m_npc_template_ptr->Capsule[0] - 110;//¼õµôÒ»¸öÓÃÍæ¼Ò²âÁ¿Ê±Íæ¼ÒµÄ¸ß¶È
+			born_pos.unit_location.z += m_npc_template_ptr->Capsule[0] - 110;//å‡æ‰ä¸€ä¸ªç”¨ç©å®¶æµ‹é‡æ—¶ç©å®¶çš„é«˜åº¦
 			m_unit_half_height = m_npc_template_ptr->Capsule[0];
 		}
 		set_new_map_pos(born_pos);
@@ -746,7 +746,7 @@ namespace faith
 		}
 		item_info.clear_data();
 		if (init_unit::init_item_data(item_info, m_npc_template_ptr->BornWing, 0, 1, e_bag_type_wing, 1))
-		{//³õÊ¼»¯³á°ò
+		{//åˆå§‹åŒ–ç¿…è†€
 			load_proto.add_item_guid(item_info.item_guid.server_64);
 			for (int32 j = 0; j < e_item_info_max; ++j)
 			{
@@ -758,7 +758,7 @@ namespace faith
 		{
 			item_info.clear_data();
 			if (init_unit::init_item_data(item_info, show_wing_id, 0, 1, e_bag_type_wing, 1))
-			{//³õÊ¼»¯³á°ò
+			{//åˆå§‹åŒ–ç¿…è†€
 				load_proto.add_item_guid(item_info.item_guid.server_64);
 				for (int32 j = 0; j < e_item_info_max; ++j)
 				{
@@ -771,7 +771,7 @@ namespace faith
 
 		item_info.clear_data();
 		if (init_unit::init_item_data(item_info, m_npc_template_ptr->BornMount, 0, 1, e_bag_type_mount, 1))
-		{//³õÊ¼»¯×øÆï ÏÔÊ¾Ô­ĞÍ£¬²»»Ã»¯
+		{//åˆå§‹åŒ–åéª‘ æ˜¾ç¤ºåŸå‹ï¼Œä¸å¹»åŒ–
 			load_proto.add_item_guid(item_info.item_guid.server_64);
 			for (int32 j = 0; j < e_item_info_max; ++j)
 			{
@@ -783,7 +783,7 @@ namespace faith
 		static s_spirit_info init_spirit[1];
 		init_spirit[0].clear_data();
 		if (init_unit::init_spirit_data(init_spirit[0], m_npc_template_ptr->BornSpirit, 0, e_spirit_bag_type_equiped, 1))
-		{//³õÊ¼¾«Áé
+		{//åˆå§‹ç²¾çµ
 			//m_spirit_mgr.load_spirit_by_db(init_spirit, 1);
 		}
 
@@ -827,7 +827,7 @@ namespace faith
 				if (m_npc_template_ptr->Capsule.size() >= 2)
 				{
 					m_unit_capsule = m_npc_template_ptr->Capsule[1];
-					born_pos.unit_location.z += m_npc_template_ptr->Capsule[0] - 110;//¼õµôÒ»¸öÓÃÍæ¼Ò²âÁ¿Ê±Íæ¼ÒµÄ¸ß¶È
+					born_pos.unit_location.z += m_npc_template_ptr->Capsule[0] - 110;//å‡æ‰ä¸€ä¸ªç”¨ç©å®¶æµ‹é‡æ—¶ç©å®¶çš„é«˜åº¦
 					m_unit_half_height = m_npc_template_ptr->Capsule[0];
 				}
 				set_new_map_pos(born_pos);
@@ -881,20 +881,20 @@ namespace faith
 				get_item_set().load_item_by_db(load_proto);
 				get_item_set().send_item_all();
 
-				//get_item_set().calcu_addition_with_fake_player(e_addition_buff_upgrade);//Ç¿»¯Ï´Á·×·¼Ó×¿Ô½
+				//get_item_set().calcu_addition_with_fake_player(e_addition_buff_upgrade);//å¼ºåŒ–æ´—ç»ƒè¿½åŠ å“è¶Š
 				//get_item_set().calcu_addition_with_fake_player(e_addition_buff_quality);
 				//get_item_set().calcu_addition_with_fake_player(e_addition_buff_addon);
 				//get_item_set().calcu_addition_with_fake_player(e_addition_buff_succinct);
-				//get_item_set().refresh_element_heart_faker_player_buff();//·ûÎÄbuff
+				//get_item_set().refresh_element_heart_faker_player_buff();//ç¬¦æ–‡buff
 		
 				{
-					//ÔÚ load_base_att_by_db Ö®ºóÉèÖÃ¼ÙÍæ¼ÒµÄPKÕóÓª ·ñÔò»á±»¸²¸Çµô
+					//åœ¨ load_base_att_by_db ä¹‹åè®¾ç½®å‡ç©å®¶çš„PKé˜µè¥ å¦åˆ™ä¼šè¢«è¦†ç›–æ‰
 					get_pawn_att().load_base_att_by_db(fake_data.att_info);
 					get_pawn_att().load_unit_att_by_db(fake_data.m_fight_att);
 
 				}
 
-				//Ç¿ÖÆ²¹ÂúÑª ²¹ÑªĞèÒª·ÅÔÚ¼ÓbuffÖ®Ç°
+				//å¼ºåˆ¶è¡¥æ»¡è¡€ è¡¥è¡€éœ€è¦æ”¾åœ¨åŠ buffä¹‹å‰
 				m_pawn_att.set_unit_base_att(e_base_att_info_hp_cur, get_pawn_att().get_attack_att_value(e_unit_attack_att_hp_max));
 
 
@@ -964,7 +964,7 @@ namespace faith
 			if (m_npc_template_ptr->Capsule.size() >= 2)
 			{
 				m_unit_capsule = m_npc_template_ptr->Capsule[1];
-				born_pos.unit_location.z += m_npc_template_ptr->Capsule[0] - 110;//¼õµôÒ»¸öÓÃÍæ¼Ò²âÁ¿Ê±Íæ¼ÒµÄ¸ß¶È
+				born_pos.unit_location.z += m_npc_template_ptr->Capsule[0] - 110;//å‡æ‰ä¸€ä¸ªç”¨ç©å®¶æµ‹é‡æ—¶ç©å®¶çš„é«˜åº¦
 				m_unit_half_height = m_npc_template_ptr->Capsule[0];
 			}
 			set_new_map_pos(born_pos);
@@ -1022,7 +1022,7 @@ namespace faith
 			get_item_set().send_item_all();
 			get_pawn_att().load_base_att_by_db(fake_data.att_info);
 			get_pawn_att().load_unit_att_by_db(fake_data.m_fight_att);
-			//Ç¿ÖÆ²¹ÂúÑª ²¹ÑªĞèÒª·ÅÔÚ¼ÓbuffÖ®Ç°
+			//å¼ºåˆ¶è¡¥æ»¡è¡€ è¡¥è¡€éœ€è¦æ”¾åœ¨åŠ buffä¹‹å‰
 			m_pawn_att.set_unit_base_att(e_base_att_info_hp_cur, get_pawn_att().get_attack_att_value(e_unit_attack_att_hp_max));
 
 			//get_spirit_mgr().load_spirit_by_db(&fake_data.spirit_data, 1);
@@ -1116,7 +1116,7 @@ namespace faith
 			if (m_npc_template_ptr->Capsule.size() >= 2)
 			{
 				m_unit_capsule = m_npc_template_ptr->Capsule[1];
-				born_pos.unit_location.z += m_npc_template_ptr->Capsule[0] - 110;//¼õµôÒ»¸öÓÃÍæ¼Ò²âÁ¿Ê±Íæ¼ÒµÄ¸ß¶È
+				born_pos.unit_location.z += m_npc_template_ptr->Capsule[0] - 110;//å‡æ‰ä¸€ä¸ªç”¨ç©å®¶æµ‹é‡æ—¶ç©å®¶çš„é«˜åº¦
 				m_unit_half_height = m_npc_template_ptr->Capsule[0];
 			}
 			set_new_map_pos(born_pos);
@@ -1202,7 +1202,7 @@ namespace faith
 			get_item_set().set_equip_skill_buff_all();
 			get_item_set().set_equip_att_all();
 		}
-		//Íæ¼ÒÊı¾İ¹Ö²»ĞèÒª³õÊ¼»¯ÊôĞÔ
+		//ç©å®¶æ•°æ®æ€ªä¸éœ€è¦åˆå§‹åŒ–å±æ€§
 		if (m_npc_template_ptr != nullptr && m_npc_template_ptr->ComeBackTime > 0)
 		{
 			if (m_be_kill_num <= 0 && m_is_player_data_npc == false)
@@ -1286,7 +1286,7 @@ namespace faith
 
 		}
 
-		// ´¦ÀíaoiÖĞµÄ¶ÓÓÑ
+		// å¤„ç†aoiä¸­çš„é˜Ÿå‹
 		const unit_index_map& aoi_tower_watch = aoi_system::get_watch_all(get_map_ent(), get_old_map_pos().unit_location);
 		if (aoi_tower_watch.empty())
 		{
@@ -1636,7 +1636,7 @@ namespace faith
 		{
 			player_index = attack_index;
 		}
-		// ¸±±¾ÄÚÉËº¦ÅÅĞĞ°ñ
+		// å‰¯æœ¬å†…ä¼¤å®³æ’è¡Œæ¦œ
 		player& attacker_ref = unit_man::get_player(player_index);
 		auto map_type = base_map_system::get_map_type(get_map_ent());
 		auto map_sub_type = base_map_system::get_map_sub_type(get_map_ent());
@@ -1653,15 +1653,15 @@ namespace faith
 			{
 				world_cs::unit_be_damage(get_map_ent(), player_index, get_array_index(), hp);
 			}
-			if (m_npc_template_ptr->NpcType == e_unit_type_monster && init_unit::is_world_boss(m_npc_template_ptr->SubType))//ÊÀ½çBOSS
+			if (m_npc_template_ptr->NpcType == e_unit_type_monster && init_unit::is_world_boss(m_npc_template_ptr->SubType))//ä¸–ç•ŒBOSS
 			{
 				refresh_npc_damaget_list(player_index, hp, attacker_ref, e_boss_type_world);
 			}
-			else if ( map_type == e_map_type_cross_server_pk && map_sub_type == 4)//¿ç·şÊÀ½çBOSS
+			else if ( map_type == e_map_type_cross_server_pk && map_sub_type == 4)//è·¨æœä¸–ç•ŒBOSS
 			{
 				refresh_npc_damaget_list(player_index, hp, attacker_ref, e_boss_type_cross_world);
 			}
-			else if ( map_type == e_map_type_legion_station && m_npc_template_ptr->NpcType == e_unit_type_monster && m_npc_template_ptr->SubType == e_monster_type_boss)//¾üÍÅBOSS
+			else if ( map_type == e_map_type_legion_station && m_npc_template_ptr->NpcType == e_unit_type_monster && m_npc_template_ptr->SubType == e_monster_type_boss)//å†›å›¢BOSS
 			{
 				refresh_npc_damaget_list(player_index, hp, attacker_ref, e_boss_type_legion);
 			}
@@ -1721,7 +1721,7 @@ namespace faith
 
 		if (m_npc_template_ptr)
 		{
-			// Ôö¼Ó×ÔµôÑªnpcÎŞ·¨¹¥»÷Ê±»á×Ô¶¯µôÑª
+			// å¢åŠ è‡ªæ‰è¡€npcæ— æ³•æ”»å‡»æ—¶ä¼šè‡ªåŠ¨æ‰è¡€
 			if (m_npc_template_ptr->AttackOther > 0 || m_npc_template_ptr->BeHurtType == e_be_hurt_type_self)
 			{
 				return true;
@@ -1752,7 +1752,7 @@ namespace faith
 		}
 
 		if (m_npc_template_ptr->NpcType == e_unit_type_award_mark && m_npc_template_ptr->SubType == e_award_mark_type_refrush_monster)
-		{//±¦Ïä¹Ö×ß»ñÈ¡É¾³ı
+		{//å®ç®±æ€ªèµ°è·å–åˆ é™¤
 			auto& player_ptr = unit_man::get_player(m_kill_array_index);
 			if (player_ptr.is_valid() && m_box_award_component)
 			{
@@ -2003,15 +2003,15 @@ namespace faith
 		if (attacker_ref.is_valid())
 		{
 			world_cs::unit_be_damage(get_map_ent(), attack_index, get_array_index(), hp);
-			if (m_npc_template_ptr->NpcType == e_unit_type_monster && init_unit::is_world_boss(m_npc_template_ptr->SubType))//ÊÀ½çBOSS
+			if (m_npc_template_ptr->NpcType == e_unit_type_monster && init_unit::is_world_boss(m_npc_template_ptr->SubType))//ä¸–ç•ŒBOSS
 			{
 				refresh_npc_damaget_list(attack_index, hp, attacker_ref, e_boss_type_world);
 			}
-			else if (map_type == e_map_type_cross_server_pk && map_sub_type == 4)//¿ç·şÊÀ½çBOSS
+			else if (map_type == e_map_type_cross_server_pk && map_sub_type == 4)//è·¨æœä¸–ç•ŒBOSS
 			{
 				refresh_npc_damaget_list(attack_index, hp, attacker_ref, e_boss_type_cross_world);
 			}
-			else if (map_type == e_map_type_legion_station && m_npc_template_ptr->NpcType == e_unit_type_monster && m_npc_template_ptr->SubType == e_monster_type_boss)//¾üÍÅBOSS
+			else if (map_type == e_map_type_legion_station && m_npc_template_ptr->NpcType == e_unit_type_monster && m_npc_template_ptr->SubType == e_monster_type_boss)//å†›å›¢BOSS
 			{
 				refresh_npc_damaget_list(attack_index, hp, attacker_ref, e_boss_type_legion);
 			}
@@ -2115,13 +2115,13 @@ namespace faith
 					std::vector<int32> open_time = cell_server::getInstance().get_activity_open_time(e_activity_type_world_boss);
 					if (nullptr != activity_cfg_template_ptr && open_time.size() >= once_activity_open_time_array_size)
 					{
-						player_ref.get_time_limit_activity_mgr().activity_behavior_done(e_time_limit_behavior_type_kill_world_boss);      //ĞÂÏŞÊ±ĞĞÎªÊÀ½çboss¼ÆÊı
+						player_ref.get_time_limit_activity_mgr().activity_behavior_done(e_time_limit_behavior_type_kill_world_boss);      //æ–°é™æ—¶è¡Œä¸ºä¸–ç•Œbossè®¡æ•°
 						player_ref.set_must_do_count(e_daily_must_do_typ_gold_army, player_ref.get_must_do_count(e_daily_must_do_typ_gold_army) + 1);
 						player_ref.send_daily_must_do_count_info_one(e_daily_must_do_typ_gold_army);
 						player_ref.set_daily_active_degree_info(e_daily_must_do_typ_gold_army);
 						int32 activity_duration_time = time_helper::get_stamp_by_hour_min(open_time[6], open_time[7])
 							- time_helper::get_stamp_by_hour_min(open_time[2], open_time[3]);
-						//Ô¤Áô30·ÖÖÓboss¿ñ±©µÄÊ±¼ä
+						//é¢„ç•™30åˆ†é’Ÿbossç‹‚æš´çš„æ—¶é—´
 						player_ref.set_time_data(e_time_type_next_world_boss_can_count, cur_time_stamp + activity_duration_time + 30 * 60);
 					}
 				}
@@ -2180,7 +2180,7 @@ namespace faith
 		auto map_type = base_map_system::get_map_template_id(get_map_ent());
 
 		if (m_npc_template_ptr->NpcType == e_unit_type_monster && init_unit::is_world_boss(m_npc_template_ptr->SubType)
-			|| (map_type == e_map_type_legion_station && m_npc_template_ptr->NpcType == e_unit_type_monster && m_npc_template_ptr->SubType == e_monster_type_boss))//ÊÀ½çBOSS
+			|| (map_type == e_map_type_legion_station && m_npc_template_ptr->NpcType == e_unit_type_monster && m_npc_template_ptr->SubType == e_monster_type_boss))//ä¸–ç•ŒBOSS
 		{
 			cs2ws_npc_damage_list msg;
 			int32 data_idx = 0;
@@ -2322,7 +2322,7 @@ namespace faith
 			}
 			else if (true == is_belief_cloister_boss())
 			{
-				//ĞÅÑö»ØÀÈbossÄ¿±ê×ªÒÆ ÓÉÓÚÂß¼­ÏàËÆ ÔİÊ±ºÍÌì¿ÕÖ®µºÂß¼­Ò»Æğ´¦Àí
+				//ä¿¡ä»°å›å»Šbossç›®æ ‡è½¬ç§» ç”±äºé€»è¾‘ç›¸ä¼¼ æš‚æ—¶å’Œå¤©ç©ºä¹‹å²›é€»è¾‘ä¸€èµ·å¤„ç†
 				boss_island_mgr::send_boss_island_info_to_ws(get_spawn_point_id(), get_unit_guid(), 0, player_info_arr);
 			}
 		}
@@ -2355,7 +2355,7 @@ namespace faith
 		}
 		else if (true == is_belief_cloister_boss())
 		{
-			//ĞÅÑö»ØÀÈboss±»»÷É± ÓÉÓÚÂß¼­ÏàËÆ ÔİÊ±ºÍÌì¿ÕÖ®µºÂß¼­Ò»Æğ´¦Àí
+			//ä¿¡ä»°å›å»Šbossè¢«å‡»æ€ ç”±äºé€»è¾‘ç›¸ä¼¼ æš‚æ—¶å’Œå¤©ç©ºä¹‹å²›é€»è¾‘ä¸€èµ·å¤„ç†
 			boss_island_mgr::send_boss_island_info_to_ws(spawn_id, null_guid, next_refresh_stamp, player_info_arr);
 		}
 		return true;
@@ -2379,7 +2379,7 @@ namespace faith
 		}
 		else if (true == is_belief_cloister_boss())
 		{
-			//ĞÅÑö»ØÀÈboss¸´»î ÓÉÓÚÂß¼­ÏàËÆ ÔİÊ±ºÍÌì¿ÕÖ®µºÂß¼­Ò»Æğ´¦Àí
+			//ä¿¡ä»°å›å»Šbosså¤æ´» ç”±äºé€»è¾‘ç›¸ä¼¼ æš‚æ—¶å’Œå¤©ç©ºä¹‹å²›é€»è¾‘ä¸€èµ·å¤„ç†
 			boss_island_mgr::send_boss_island_info_to_ws(get_spawn_point_id(), get_unit_guid(), 0, player_info_arr);
 		}
 	}
@@ -2530,7 +2530,7 @@ namespace faith
 
 	}
 
-	void npc::send_boss_god_skill_begion_time()//·¢ËÍboss¿ªÊ¼Ê¹ÓÃÎŞµĞ¼¼ÄÜÖ±½ÓÏÔÊ¾20Ãë
+	void npc::send_boss_god_skill_begion_time()//å‘é€bosså¼€å§‹ä½¿ç”¨æ— æ•ŒæŠ€èƒ½ç›´æ¥æ˜¾ç¤º20ç§’
 	{
 		if (!is_cross_server_boss())
 		{
@@ -2596,10 +2596,10 @@ namespace faith
 	}
 
 	/*
-	ÉËº¦Í³¼Æ¹æÔò£¬ÅÅĞĞ°ñÉÏÏÔÊ¾×î¸ß²ã¼¶Íæ¼Òid
-	²ã¼¶ÓĞ2ÖÖÇé¿ö£º
-	¶Ó³¤(ÓĞĞ§Çé¿ö:¶Ó³¤ÔÚÉËº¦ÁĞ±íÄÚ)-¶ÓÔ±-ÖúÕ½Õß
-	Íæ¼Ò-ÖúÕ½Õß
+	ä¼¤å®³ç»Ÿè®¡è§„åˆ™ï¼Œæ’è¡Œæ¦œä¸Šæ˜¾ç¤ºæœ€é«˜å±‚çº§ç©å®¶id
+	å±‚çº§æœ‰2ç§æƒ…å†µï¼š
+	é˜Ÿé•¿(æœ‰æ•ˆæƒ…å†µ:é˜Ÿé•¿åœ¨ä¼¤å®³åˆ—è¡¨å†…)-é˜Ÿå‘˜-åŠ©æˆ˜è€…
+	ç©å®¶-åŠ©æˆ˜è€…
 	*/
 	void npc::add_boss_damage_vaule(player* attacker, int64 attack_value)
 	{
@@ -2611,8 +2611,8 @@ namespace faith
 		if (iter == m_boss_damage_person_map.end())
 		{
 			is_new = true;
-			//¶ÔÓÚÒ»¸öĞÂÔì³ÉÉËº¦µÄÍæ¼Ò£¬ÏÈ³¢ÊÔ¼ÆËãÆäËùÊôĞ¡ÍÅÌåµÄ¸ºÔğÈË
-			//¿ÉÄÜÊÇ×ÔÉí£¬¿ÉÄÜÊÇ×ÔÉíµÄ±»ÖúÕ½Õß£¬Ò²¿ÉÄÜÊÇ¶Ó³¤
+			//å¯¹äºä¸€ä¸ªæ–°é€ æˆä¼¤å®³çš„ç©å®¶ï¼Œå…ˆå°è¯•è®¡ç®—å…¶æ‰€å±å°å›¢ä½“çš„è´Ÿè´£äºº
+			//å¯èƒ½æ˜¯è‡ªèº«ï¼Œå¯èƒ½æ˜¯è‡ªèº«çš„è¢«åŠ©æˆ˜è€…ï¼Œä¹Ÿå¯èƒ½æ˜¯é˜Ÿé•¿
 			guid_64 tmp_master_guid;
 			if (attacker->get_assist_fight_mgr().is_assist_helper() && attacker->get_assist_fight_mgr().get_assist_fight_guid().is_valid())
 			{
@@ -2666,7 +2666,7 @@ namespace faith
 
 		add_boss_damage_total_vaule(iter->second.master_guid, attacker, attack_value);
 
-		//ÓÉ¶Ó³¤¼ì²é¶ÓÎéºÏ²¢(Õë¶ÔÊÂÏÈ´´½¨ºÃµÄ¶ÓÎé)
+		//ç”±é˜Ÿé•¿æ£€æŸ¥é˜Ÿä¼åˆå¹¶(é’ˆå¯¹äº‹å…ˆåˆ›å»ºå¥½çš„é˜Ÿä¼)
 		if (attacker->is_player_in_team() && attacker->is_player_team_captain() == true && iter->second.team_check == false)
 		{
 			iter->second.team_check = true;
@@ -2688,7 +2688,7 @@ namespace faith
 			send_boss_damage_list_to_player(attacker);
 	}
 	/*
-	»úÆ÷ÈË¼ÇÂ¼ÉËº¦ÁĞ±í
+	æœºå™¨äººè®°å½•ä¼¤å®³åˆ—è¡¨
 	*/
 	void npc::add_boss_damage_vaule(npc * attacker, int64 attack_value)
 	{
@@ -2747,13 +2747,13 @@ namespace faith
 		if (iter == m_boss_damage_person_map.end())
 				return;
 
-		//ÕÒµ½×î¸ß²ã´ÎµÄ¸ºÔğÈË
+		//æ‰¾åˆ°æœ€é«˜å±‚æ¬¡çš„è´Ÿè´£äºº
 		if (iter->second.master_guid != master_guid)
 			high_master_guid = iter->second.master_guid;
 
 		if (attacker->get_assist_fight_mgr().is_assist_helper() && master_guid == attacker->get_assist_fight_mgr().get_assist_fight_guid())
 		{
-			//Ìî³äÖúÕ½¹ØÏµ
+			//å¡«å……åŠ©æˆ˜å…³ç³»
 			int32 tmp_index = -1;
 			for (auto i = 0; i < 5; ++i)
 			{
@@ -2774,7 +2774,7 @@ namespace faith
 				iter->second.helper_guid[tmp_index] = attacker->get_unit_guid();
 		}
 
-		//Î¬»¤total_vec
+		//ç»´æŠ¤total_vec
 		bool has_in = false;
 		for (auto v_iter = m_boss_damage_total_vec.begin(); v_iter != m_boss_damage_total_vec.end(); ++v_iter)
 		{
@@ -2819,7 +2819,7 @@ namespace faith
 			return;
 		}
 
-		//ÕÒµ½×î¸ß²ã´ÎµÄ¸ºÔğÈË
+		//æ‰¾åˆ°æœ€é«˜å±‚æ¬¡çš„è´Ÿè´£äºº
 		if (iter->second.master_guid != master_guid)
 		{
 			high_master_guid = iter->second.master_guid;
@@ -2827,7 +2827,7 @@ namespace faith
 			
 		if (attacker->get_assist_fight_guid().is_valid())
 		{
-			//Ìî³äÖúÕ½¹ØÏµ
+			//å¡«å……åŠ©æˆ˜å…³ç³»
 			int32 tmp_index = -1;
 			for (auto i = 0; i < 5; ++i)
 			{
@@ -2850,7 +2850,7 @@ namespace faith
 			}	
 		}
 
-		//Î¬»¤total_vec
+		//ç»´æŠ¤total_vec
 		bool has_in = false;
 		for (auto v_iter = m_boss_damage_total_vec.begin(); v_iter != m_boss_damage_total_vec.end(); ++v_iter)
 		{
@@ -3063,7 +3063,7 @@ namespace faith
 
 	void npc::transfer_damage_to_master(guid_64 role_guid, int32 array_index)
 	{
-		//Àë¿ªAOI»áÇå³ğºŞ£¬Í¬Ê±Çå¿ÕÉËº¦
+		//ç¦»å¼€AOIä¼šæ¸…ä»‡æ¨ï¼ŒåŒæ—¶æ¸…ç©ºä¼¤å®³
 		player& player_ref = unit_man::get_player(array_index);
 		if (player_ref.is_valid() == false || player_ref.get_unit_guid() != role_guid)
 		{
@@ -3088,7 +3088,7 @@ namespace faith
 		master_iter->second.damage_value += iter->second.damage_value;
 		if(player_ref.get_team_info().captain_guid == master_guid)
 		{
-			//¶ÓÔ±Àë¿ª»áË³±ãÈ¡ÏûËûÕÙ»½µÄÖúÕ½Õß
+			//é˜Ÿå‘˜ç¦»å¼€ä¼šé¡ºä¾¿å–æ¶ˆä»–å¬å”¤çš„åŠ©æˆ˜è€…
 			for (auto i = 0; i < 5; ++i)
 			{
 				if (iter->second.helper_guid[i].is_valid())
@@ -3112,7 +3112,7 @@ namespace faith
 		}
 		else
 		{
-			//ÖúÕ½ÕßÍË³öÖúÕ½
+			//åŠ©æˆ˜è€…é€€å‡ºåŠ©æˆ˜
 			for (auto i = 0; i < 5; ++i)
 			{
 				if (master_iter->second.helper_guid[i] == role_guid)
@@ -3130,7 +3130,7 @@ namespace faith
 
 	void npc::clear_all_damage(guid_64 role_guid, bool is_master)
 	{
-		//¶Ó³¤Àë¿ªÉËº¦ÁĞ±í
+		//é˜Ÿé•¿ç¦»å¼€ä¼¤å®³åˆ—è¡¨
 		player& player_ref = unit_man::get_player(role_guid);
 		if (player_ref.is_valid() == false)
 			return;
@@ -3190,7 +3190,7 @@ namespace faith
 			return;
 
 		int64 transfer_damage = iter->second.damage_value / 5;
-		//ÏÈ×öÉËº¦¿Û³ı
+		//å…ˆåšä¼¤å®³æ‰£é™¤
 		iter->second.damage_value -= transfer_damage;
 		if (iter->second.master_guid != iter->second.role_guid)
 		{
@@ -3216,7 +3216,7 @@ namespace faith
 		auto killer_iter = m_boss_damage_person_map.find(killer_guid);
 		if (killer_iter == m_boss_damage_person_map.end())
 			return;
-		//ÔÚ×öÉËº¦Ôö¼Ó
+		//åœ¨åšä¼¤å®³å¢åŠ 
 		add_boss_damage_vaule(&killer, transfer_damage);
 	}
 
@@ -3395,7 +3395,7 @@ namespace faith
 		}
 		else if (old_iter != m_boss_damage_person_map.end() && new_iter == m_boss_damage_person_map.end())
 		{
-			//·ÀÖ¹ĞÂ¶Ó³¤²»ÔÚÏß Ê¹ÓÃ¾Í¶Ó³¤µÄ½ÇÉ«ÒıÓÃ
+			//é˜²æ­¢æ–°é˜Ÿé•¿ä¸åœ¨çº¿ ä½¿ç”¨å°±é˜Ÿé•¿çš„è§’è‰²å¼•ç”¨
 			player& old_captain_ref = unit_man::get_player(old_captain);
 			if (old_captain_ref.is_valid() == false)
 				return;

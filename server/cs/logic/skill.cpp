@@ -54,7 +54,7 @@ namespace faith
 					int32 max_time = get_data_info(e_skill_info_cd_max_time);
 					int32 sub_time = get_fix_skill_value(e_fix_skill_sub_cd_value);
 					float percent_cd = get_fix_skill_value(e_fix_skill_sub_cd_percent);
-					int32 end_time = (max_time - sub_time * 1000) * (1 - percent_cd) - 100;//½µµÍµã¹«Àä ÒÔÓ¦¶ÔÍøÂç×´¿ö
+					int32 end_time = (max_time - sub_time * 1000) * (1 - percent_cd) - 100;//é™ä½ç‚¹å…¬å†· ä»¥åº”å¯¹ç½‘ç»œçŠ¶å†µ
 					set_skill_cd(end_time);
 				}
 			}
@@ -222,7 +222,7 @@ namespace faith
 						int32 max_time = get_data_info(e_skill_info_cd_max_time);
 						int32 sub_time = get_fix_skill_value(e_fix_skill_sub_cd_value);
 						float percent_cd = get_fix_skill_value(e_fix_skill_sub_cd_percent);
-						int32 end_time = (max_time - sub_time * 1000) * (1 - percent_cd) - 200;//½µµÍµã¹«Àä ÒÔÓ¦¶ÔÍøÂç×´¿ö
+						int32 end_time = (max_time - sub_time * 1000) * (1 - percent_cd) - 200;//é™ä½ç‚¹å…¬å†· ä»¥åº”å¯¹ç½‘ç»œçŠ¶å†µ
 						set_skill_cd(end_time);
 						m_next_skill_cd = 0;
 					}
@@ -237,7 +237,7 @@ namespace faith
 				int32 max_time = get_data_info(e_skill_info_cd_max_time);
 				int32 sub_time = get_fix_skill_value(e_fix_skill_sub_cd_value);
 				float percent_cd = get_fix_skill_value(e_fix_skill_sub_cd_percent);
-				int32 end_time = (max_time - sub_time * 1000) * (1 - percent_cd) - 200;//½µµÍµã¹«Àä ÒÔÓ¦¶ÔÍøÂç×´¿ö
+				int32 end_time = (max_time - sub_time * 1000) * (1 - percent_cd) - 200;//é™ä½ç‚¹å…¬å†· ä»¥åº”å¯¹ç½‘ç»œçŠ¶å†µ
 				set_skill_cd(end_time);
 				m_next_skill_cd = 0;
 			}

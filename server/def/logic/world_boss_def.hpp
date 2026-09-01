@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê10ÔÂ17ÈÕ
+created: 2016å¹´10æœˆ17æ—¥
 file base: world boss
 file ext: hpp
 author: lxy
@@ -22,13 +22,13 @@ namespace faith
 #pragma pack(push,1)
 	const int32 max_world_boss_and_gold_army_num = 30;
 	const int32 max_world_boss_reward_num = 5;
-	const int32	world_boss_line = 1;									//ÊÀ½çbossËùÔÚÏßÂ·
-	const int32 max_world_boss_damage_list_num = 50;					//ÊÀ½çboss×î´ó¼ÇÂ¼ÉËº¦ÁĞ±í
-	const int32 max_world_boss_arr_num = 4;								//µÍÖĞ¸ßÊÀ½çbossÊı×é×î´óÊıÁ¿  
-	const int32	world_boss_first_stage_notice_id = 93000431;			//ÊÀ½çboss»î¶¯µÚÒ»½×¶Î¿ªÆô¹«¸æ
-	const int32	world_boss_second_stage_notice_id = 93000432;			//ÊÀ½çboss»î¶¯µÚ¶ş½×¶Î¿ªÆô¹«¸æ
-	const int32	world_boss_third_stage_notice_id = 93000433;			//ÊÀ½çboss»î¶¯µÚÈı½×¶Î¿ªÆô¹«¸æ
-	const int32 world_boss_add_other_score_power = 3;					//Ã¿´Î¼Ó¶îÍâ»ı·ÖµÄ±¶ÂÊ
+	const int32	world_boss_line = 1;									//ä¸–ç•Œbossæ‰€åœ¨çº¿è·¯
+	const int32 max_world_boss_damage_list_num = 50;					//ä¸–ç•Œbossæœ€å¤§è®°å½•ä¼¤å®³åˆ—è¡¨
+	const int32 max_world_boss_arr_num = 4;								//ä½ä¸­é«˜ä¸–ç•Œbossæ•°ç»„æœ€å¤§æ•°é‡  
+	const int32	world_boss_first_stage_notice_id = 93000431;			//ä¸–ç•Œbossæ´»åŠ¨ç¬¬ä¸€é˜¶æ®µå¼€å¯å…¬å‘Š
+	const int32	world_boss_second_stage_notice_id = 93000432;			//ä¸–ç•Œbossæ´»åŠ¨ç¬¬äºŒé˜¶æ®µå¼€å¯å…¬å‘Š
+	const int32	world_boss_third_stage_notice_id = 93000433;			//ä¸–ç•Œbossæ´»åŠ¨ç¬¬ä¸‰é˜¶æ®µå¼€å¯å…¬å‘Š
+	const int32 world_boss_add_other_score_power = 3;					//æ¯æ¬¡åŠ é¢å¤–ç§¯åˆ†çš„å€ç‡
 	
 	enum e_world_boss_level
 	{

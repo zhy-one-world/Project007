@@ -1,4 +1,4 @@
-#include "team_ws.h"
+ï»¿#include "team_ws.h"
 #include "team_ws_mgr.h"
 #include "../legion/legion_ws_mgr.h"
 #include "utility/guid_gen.h"
@@ -58,7 +58,7 @@ namespace faith
 
 	void team_ws::tick(const uint64& time_now)
 	{
-		// ×¼±¸´«ËÍµÄtickÂß¼­
+		// å‡†å¤‡ä¼ é€çš„tické€»è¾‘
 		ready_transfer_tick(time_now);
 	}
 
@@ -163,11 +163,11 @@ namespace faith
 		mem_session->set_team_guid(m_team_guid);
 		m_member_sessions[member_guid.server_64] = mem_session;
 
-		// ¸üĞÂ¶ÓÎéÈËÊı(ÀıÈçËÑË÷¸½½üµÄ¶ÓÎéºÍ×é¶Ó¾­Ñé·ÖÏíÕâÀà¹¦ÄÜĞèÒªÓÃµ½Õâ¸öĞÅÏ¢)
+		// æ›´æ–°é˜Ÿä¼äººæ•°(ä¾‹å¦‚æœç´¢é™„è¿‘çš„é˜Ÿä¼å’Œç»„é˜Ÿç»éªŒåˆ†äº«è¿™ç±»åŠŸèƒ½éœ€è¦ç”¨åˆ°è¿™ä¸ªä¿¡æ¯)
 		send_all_member_aoi_team_info();
 		update_recruit_info_to_client();
 		
-		//ÕâÀïmember_infoÀïµÄETeamMemberInfo_check_ret¶¼ÒÑ¾­ÊÇcsÉÏ¼ì²âºóµÄ½á¹û ²»ÓÃÔÙ¼ì²â
+		//è¿™é‡Œmember_infoé‡Œçš„ETeamMemberInfo_check_retéƒ½å·²ç»æ˜¯csä¸Šæ£€æµ‹åçš„ç»“æœ ä¸ç”¨å†æ£€æµ‹
 		//if (member_guid != m_captain_guid)
 		//{
 		//	client_session* session = client_session_mgr::getInstance().get_session(member_guid);
@@ -278,21 +278,21 @@ namespace faith
 				}
 			}
 
-			//ÏÈÉ¾µôÕâ¸öÍæ¼ÒÊı¾İ
+			//å…ˆåˆ æ‰è¿™ä¸ªç©å®¶æ•°æ®
 			ite = m_members_list.erase(ite);
 			del_member_common_op(player_guid);
 
 			server_log::quit_team_log(m_captain_guid, get_member_num(), get_team_type(), player_guid, 1);
 			
 
-			// Èç¹û¶ÓÎéÒÑ¾­Ã»ÈËÁË¾Í¿ÉÒÔ½âÉ¢¶ÓÎé,°Ñ¶ÓÎé´ÓÄÚ´æÖĞÇåÀíµôÁË
+			// å¦‚æœé˜Ÿä¼å·²ç»æ²¡äººäº†å°±å¯ä»¥è§£æ•£é˜Ÿä¼,æŠŠé˜Ÿä¼ä»å†…å­˜ä¸­æ¸…ç†æ‰äº†
 			if (m_members_list.size() <= 0 || is_all_member_offline())
 			{
 				dissolve_team();
 				return true;
 			}
 			
-			// ¸üĞÂ¶ÓÎéÈËÊı
+			// æ›´æ–°é˜Ÿä¼äººæ•°
 			send_all_member_aoi_team_info();
 			update_recruit_info_to_client();
 			notice_del_member(member_name);
@@ -453,7 +453,7 @@ namespace faith
 		}
 		
 		member_info->data_ary[ETeamMemberInfo_check_ret] = check_ret;
-		// ÓÉÓÚÏÖÔÚ¿Í»§¶ËÒÀÀµone_stop_flags ¼ÆËãcheck_retÁË ²»ÓÃÍ¬²½Õâ¸öÁË
+		// ç”±äºç°åœ¨å®¢æˆ·ç«¯ä¾èµ–one_stop_flags è®¡ç®—check_retäº† ä¸ç”¨åŒæ­¥è¿™ä¸ªäº†
 		//send_team_member_info_one(player_guid, ETeamMemberInfo_check_ret);
 	}
 
@@ -598,13 +598,13 @@ namespace faith
 
 	bool team_ws::set_captain(guid_64 player_guid)
 	{
-		// Èç¹ûÖ¸¶¨µÄ³ÉÔ±ÒÑ¾­ÊÇ¶Ó³¤¾Í²»±ØÖØ¸´ÉèÖÃÎª¶Ó³¤
+		// å¦‚æœæŒ‡å®šçš„æˆå‘˜å·²ç»æ˜¯é˜Ÿé•¿å°±ä¸å¿…é‡å¤è®¾ç½®ä¸ºé˜Ÿé•¿
 		if (player_guid == m_captain_guid)
 		{
 			return false;
 		}
 
-		// Èç¹ûÖ¸¶¨µÄ³ÉÔ±²»ÔÚ¶ÓÎéÖĞ¾Í·µ»Ø
+		// å¦‚æœæŒ‡å®šçš„æˆå‘˜ä¸åœ¨é˜Ÿä¼ä¸­å°±è¿”å›
 		if (get_member(player_guid) == nullptr)
 		{
 			return false;
@@ -662,7 +662,7 @@ namespace faith
 		
 		if (member_guid == m_captain_guid)
 		{
-			// ¶Ó³¤·¢Æğ×¼±¸»ò·ÅÆú
+			// é˜Ÿé•¿å‘èµ·å‡†å¤‡æˆ–æ”¾å¼ƒ
 			clear_all_member_ready_state();
 			if (init_unit::is_team_type_raid_for_team(get_team_type()))
 			{
@@ -675,8 +675,8 @@ namespace faith
 				{
 					return;
 				}
-				// ÉÏÒ»°æÂß¼­ ÅÅ³ıµôÒÑ¾­ÔÚÆäËû¸±±¾µÄ³ÉÔ± ¶Ó³¤ºÍÄ¿Ç°¿ÉÒÔ×¼±¸µÄ³ÉÔ±Ò»Æğ½ø±¾
-				// check_and_set_mem_ready_stateº¯ÊıÀï»áÏÈ°Ñ²»ÄÜ´«ËÍµÄÍæ¼ÒµÄ×´Ì¬·¢¸øËûÃÇ ±£Ö¤±ÈÏÂÃæµÄ¶Ó³¤×¼±¸ÏûÏ¢ÏÈµ½¿Í»§¶Ë
+				// ä¸Šä¸€ç‰ˆé€»è¾‘ æ’é™¤æ‰å·²ç»åœ¨å…¶ä»–å‰¯æœ¬çš„æˆå‘˜ é˜Ÿé•¿å’Œç›®å‰å¯ä»¥å‡†å¤‡çš„æˆå‘˜ä¸€èµ·è¿›æœ¬
+				// check_and_set_mem_ready_stateå‡½æ•°é‡Œä¼šå…ˆæŠŠä¸èƒ½ä¼ é€çš„ç©å®¶çš„çŠ¶æ€å‘ç»™ä»–ä»¬ ä¿è¯æ¯”ä¸‹é¢çš„é˜Ÿé•¿å‡†å¤‡æ¶ˆæ¯å…ˆåˆ°å®¢æˆ·ç«¯
 				//m_checked_ready_mem_num = check_and_set_mem_ready_state();
 				check_and_set_members_ready_state();
 				m_checked_ready_mem_num = 1;
@@ -685,7 +685,7 @@ namespace faith
 		}
 		else
 		{
-			// Èç¹û¶ÓÎéµ±Ç°µÄ×´Ì¬²»ÄÜÈÃ¶ÓÔ±¸Ä±ä×¼±¸×´Ì¬¾Í·µ»Ø
+			// å¦‚æœé˜Ÿä¼å½“å‰çš„çŠ¶æ€ä¸èƒ½è®©é˜Ÿå‘˜æ”¹å˜å‡†å¤‡çŠ¶æ€å°±è¿”å›
 			if (can_team_state_ready() == false)
 			{
 				return;
@@ -741,7 +741,7 @@ namespace faith
 			return;
 		}
 		
-		// ÓĞ¶ÓÔ±Ã»ÓĞÈ«²¿×¼±¸¾Í²»ÄÜ¿ªÊ¼
+		// æœ‰é˜Ÿå‘˜æ²¡æœ‰å…¨éƒ¨å‡†å¤‡å°±ä¸èƒ½å¼€å§‹
 		if (is_all_member_ready() == false)
 		{
 			return;
@@ -796,13 +796,13 @@ namespace faith
 	{
 		for (const s_team_member_info& member_info : m_members_list)
 		{
-			// ÉÏÒ»°æÂß¼­ ÅÅ³ıµôÒÑ¾­ÔÚÆäËû¸±±¾µÄ³ÉÔ± ¶Ó³¤ºÍÄ¿Ç°¿ÉÒÔ×¼±¸µÄ³ÉÔ±Ò»Æğ½ø±¾
+			// ä¸Šä¸€ç‰ˆé€»è¾‘ æ’é™¤æ‰å·²ç»åœ¨å…¶ä»–å‰¯æœ¬çš„æˆå‘˜ é˜Ÿé•¿å’Œç›®å‰å¯ä»¥å‡†å¤‡çš„æˆå‘˜ä¸€èµ·è¿›æœ¬
 			//if (member_info.data_ary[ETeamMemberInfo_ready_state] == e_team_mem_ready_state_waiting_ready)
 			//{
 			//	return false;
 			//}
 
-			// ÕâÒ»°æÂß¼­ ±ØĞëµÈËùÓĞÔÚ¶ÓÎéÖĞµÄ³ÉÔ±¿ÉÒÔ½ø±¾²ÅËã
+			// è¿™ä¸€ç‰ˆé€»è¾‘ å¿…é¡»ç­‰æ‰€æœ‰åœ¨é˜Ÿä¼ä¸­çš„æˆå‘˜å¯ä»¥è¿›æœ¬æ‰ç®—
 			if (member_info.data_ary[ETeamMemberInfo_ready_state] != e_team_mem_ready_state_ready)
 			{
 				return false;
@@ -840,7 +840,7 @@ namespace faith
 			return valid_mem;
 		}
 		
-		// ÉÏÒ»°æÂß¼­ ÅÅ³ıµôÒÑ¾­ÔÚÆäËû¸±±¾µÄ³ÉÔ± ¶Ó³¤ºÍÄ¿Ç°¿ÉÒÔ×¼±¸µÄ³ÉÔ±Ò»Æğ½ø±¾
+		// ä¸Šä¸€ç‰ˆé€»è¾‘ æ’é™¤æ‰å·²ç»åœ¨å…¶ä»–å‰¯æœ¬çš„æˆå‘˜ é˜Ÿé•¿å’Œç›®å‰å¯ä»¥å‡†å¤‡çš„æˆå‘˜ä¸€èµ·è¿›æœ¬
 		//team_proto_ready_end ready_end_msg;
 		//ready_end_msg.set_team_guid(m_team_guid.server_64);
 		//ready_end_msg.set_is_ready(1);
@@ -899,7 +899,7 @@ namespace faith
 			return;
 		}
 
-		// Ò»µ©·¢Æğ´«ËÍÇëÇóºó¾ÍÒªÉèÖÃĞÂµÄ¶ÓÎé×´Ì¬ÒÔ±ÜÃâÓĞÆäËûÍæ¼Ò¼ÓÈë»òÍË³öÍËÎé
+		// ä¸€æ—¦å‘èµ·ä¼ é€è¯·æ±‚åå°±è¦è®¾ç½®æ–°çš„é˜Ÿä¼çŠ¶æ€ä»¥é¿å…æœ‰å…¶ä»–ç©å®¶åŠ å…¥æˆ–é€€å‡ºé€€ä¼
 		set_team_state(e_team_state_game);
 		set_ready_transfer_info(get_team_map_tempalte_id());
 
@@ -916,7 +916,7 @@ namespace faith
 			return;
 		}
 
-		// ¼ì²éµØÍ¼IDÊÇ·ñºÏ·¨
+		// æ£€æŸ¥åœ°å›¾IDæ˜¯å¦åˆæ³•
 		MapTemplate* map_template_ptr = GET_TEMPLATE(MapTemplate, map_template_id);
 		if (nullptr == map_template_ptr)
 		{
@@ -1059,7 +1059,7 @@ namespace faith
 
 	void team_ws::on_team_game_over()
 	{
-		//sync_all_member_check_ret(); //Õâ¸ö¼ì²â·Åµ½csÉÏÍæ¼Ò¿Û´ÎÊıÊ±
+		//sync_all_member_check_ret(); //è¿™ä¸ªæ£€æµ‹æ”¾åˆ°csä¸Šç©å®¶æ‰£æ¬¡æ•°æ—¶
 	}
 
 	void team_ws::change_team_type(cs2ws_change_team_type msg)
@@ -1090,7 +1090,7 @@ namespace faith
 			{
 				if (is_one_stop_team())
 				{
-					//Ò»ÌõÁú²»¿ÉÒÔÊÖ¶¯¸ÄÄ¿±ê
+					//ä¸€æ¡é¾™ä¸å¯ä»¥æ‰‹åŠ¨æ”¹ç›®æ ‡
 					return;
 				}
 				else
@@ -1102,7 +1102,7 @@ namespace faith
 			}
 			else
 			{
-				set_one_stop_flags(-1); //Ò»ÌõÁúĞŞ¸ÄÄ¿±êºó¾Í²»ÊÇÒ»ÌõÁúÁË
+				set_one_stop_flags(-1); //ä¸€æ¡é¾™ä¿®æ”¹ç›®æ ‡åå°±ä¸æ˜¯ä¸€æ¡é¾™äº†
 			}
 
 			update_team_attr_end_msg.set_n_one_stop_flags(get_one_stop_flags());
@@ -1126,8 +1126,8 @@ namespace faith
 			is_auto_match = is_auto_matching();
 		}
 
-		// modify by wangsonghao : Ö®Ç°µÄÂß¼­ÊÇ£¬Èç¹û¶ÓÎéÄ¿±êÊÇ"È«²¿"£¬¾ÍÎŞ·¨½«¶ÓÎéµÄ×Ô¶¯Æ¥Åä¹¦ÄÜ´ò¿ª
-		// ÏÖÔÚ¸ù¾İĞèÇóĞŞ¸ÄÎª¶ÓÎéÄ¿±êÎª"È«²¿"Ò²¿ÉÒÔ´ò¿ª×Ô¶¯Æ¥Åä¹¦ÄÜ
+		// modify by wangsonghao : ä¹‹å‰çš„é€»è¾‘æ˜¯ï¼Œå¦‚æœé˜Ÿä¼ç›®æ ‡æ˜¯"å…¨éƒ¨"ï¼Œå°±æ— æ³•å°†é˜Ÿä¼çš„è‡ªåŠ¨åŒ¹é…åŠŸèƒ½æ‰“å¼€
+		// ç°åœ¨æ ¹æ®éœ€æ±‚ä¿®æ”¹ä¸ºé˜Ÿä¼ç›®æ ‡ä¸º"å…¨éƒ¨"ä¹Ÿå¯ä»¥æ‰“å¼€è‡ªåŠ¨åŒ¹é…åŠŸèƒ½
 // 		if (get_team_type() == e_team_type_none)
 // 		{
 // 			is_auto_match = false;
@@ -1225,10 +1225,10 @@ namespace faith
 
 		if (need_check_mem_ret)
 		{
-			// ÏÖÔÚÃ¿¸ö³ÉÔ±ÓĞÁË one_stop_flags Ö±½Ó¾ÍÖªµÀÖúÕ½×´Ì¬ÁË ²»ÓÃËãÁË
+			// ç°åœ¨æ¯ä¸ªæˆå‘˜æœ‰äº† one_stop_flags ç›´æ¥å°±çŸ¥é“åŠ©æˆ˜çŠ¶æ€äº† ä¸ç”¨ç®—äº†
 			//sync_all_member_check_ret();
 
-			//ÇĞ»»Ä¿±êÁËÖØÖÃÏÂ
+			//åˆ‡æ¢ç›®æ ‡äº†é‡ç½®ä¸‹
 			reset_mems_check_ret();
 		}
 
@@ -1333,7 +1333,7 @@ namespace faith
 		team_brief_info.set_one_stop_flags(m_one_stop_flags);
 	}
 
-	void team_ws::update_team_member_position(guid_64 role_guid, int32 pos_x, int32 pos_y, int32 pos_z)					 //Ë¢ĞÂ¶ÓÎéÍæ¼ÒÎ»ÖÃĞÅÏ¢
+	void team_ws::update_team_member_position(guid_64 role_guid, int32 pos_x, int32 pos_y, int32 pos_z)					 //åˆ·æ–°é˜Ÿä¼ç©å®¶ä½ç½®ä¿¡æ¯
 	{
 		if (m_members_list.size() <= 0)
 		{
@@ -1354,7 +1354,7 @@ namespace faith
 		}
 	}
 
-	void team_ws::send_all_team_member_position()					 //Ë¢ĞÂ¶ÓÎéÍæ¼ÒÎ»ÖÃĞÅÏ¢
+	void team_ws::send_all_team_member_position()					 //åˆ·æ–°é˜Ÿä¼ç©å®¶ä½ç½®ä¿¡æ¯
 	{
 		team_proto_team_pos_info team_pos_info_msg;
 		int32 member_num = 0;
@@ -1817,7 +1817,7 @@ namespace faith
 	{
 		if (m_team_sub_type_id <= 0)
 		{
-			//ÔªËØÕù°Ô²»ĞèÒª×ÓÀàĞÍ
+			//å…ƒç´ äº‰éœ¸ä¸éœ€è¦å­ç±»å‹
 			if (m_team_type == e_team_type_element_war)
 			{
 				return true;
@@ -1985,7 +1985,6 @@ namespace faith
 //		{
 //			log_str += " * " + string(m_members_list[i].role_name) + "(" + init_unit::change_i64_to_string(m_members_list[i].role_guid.server_64) + ")";
 //		}
-//
 //		server_log::server_debug_log(log_str);
 	}
 

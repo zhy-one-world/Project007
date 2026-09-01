@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2018Äê1ÔÂ4ÈÕ20:45:59
+	created:	2018å¹´1æœˆ4æ—¥20:45:59
 	file base:	data_manager
 	file ext:	cpp
 	author:		zhy
@@ -47,12 +47,12 @@ namespace faith
 			g_table_map[e_data_flag_item + i] = "role_item" + boost::lexical_cast<std::string>(i);
 		}
 
-		if (db_manager::getInstance().compare_is_db_name_change())//·¢ÏÖÊÇºÏ·şÔòĞèÒªÖ´ĞĞµÄÂß¼­
+		if (db_manager::getInstance().compare_is_db_name_change())//å‘ç°æ˜¯åˆæœåˆ™éœ€è¦æ‰§è¡Œçš„é€»è¾‘
 		{
 			init_time_limit_activity_template();
 			init_marry_info();
 			init_all_temp();
-			if (db_manager::getInstance().get_old_data_name_map().size() > 0)//ĞÂ·ş²»Ö´ĞĞ
+			if (db_manager::getInstance().get_old_data_name_map().size() > 0)//æ–°æœä¸æ‰§è¡Œ
 			{
 				clear_merge_template();
 			}

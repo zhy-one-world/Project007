@@ -2,7 +2,7 @@
 /********************************************************************
 created: 2016/08/23
 created: 23:8:2016 14:11
-file base: ranking ÅÅĞĞ°ñ
+file base: ranking æ’è¡Œæ¦œ
 file ext: hpp
 author: XingLong
 
@@ -58,7 +58,7 @@ namespace faith
 
 
 	//***********/
-	//ws2dp ÇëÇó¶ÁÈ¡ÅÅĞĞ°ñ¼ÇÂ¼
+	//ws2dp è¯·æ±‚è¯»å–æ’è¡Œæ¦œè®°å½•
 	struct ws2dp_load_all_ranking_info : public faith::packet_base
 	{
 		int32								ranking_type;

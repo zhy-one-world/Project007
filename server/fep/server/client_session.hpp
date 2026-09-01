@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2014/07/30
 	created:	30:7:2014   17:32
 	file base:	client_session
@@ -58,7 +58,7 @@ namespace faith
 		void				set_cs_array_index(const int32 array_index) { m_cs_array_index = array_index; }
 		int32				get_cs_array_index() { return m_cs_array_index; }
 
-		void				refresh_heart_beat();// ??????????
+		void				refresh_heart_beat();
 
 		void				check_session(const int64& new_time);
 
@@ -97,10 +97,10 @@ namespace faith
 		xchar				m_server_msg[faith::max_server_msg_length + 1];			//	server_msg for login
 		xchar				m_ipaddr[faith::max_ip_address_length + 1];
 		bool				m_is_create_account;
-		int64				m_heart_beat_time;					//??????????(?????????????????)
-		int64				m_heart_login_time;					//??????????????????????????
-		int32				m_client_send_msg_count;            //????????????
-		bool				m_is_send_login_success;			//???????????????????
+		int64				m_heart_beat_time;
+		int64				m_heart_login_time;
+		int32				m_client_send_msg_count;
+		bool				m_is_send_login_success;
 	private:
 		bool				m_is_logout;
 		ui8					m_msg_index;
@@ -112,9 +112,9 @@ namespace faith
 		s_client_uid		m_client_uid;
 		//guid_64				m_optional_char_guids[max_enum_character_num];
 
-		int64				m_client_send_msg_time;				//
-		int32				m_client_send_error_count;          //
-		int32				m_client_random_close_num;          //
+		int64				m_client_send_msg_time;
+		int32				m_client_send_error_count;
+		int32				m_client_random_close_num;
 
 		login_proto_login	m_login_proto_login;
 
@@ -125,7 +125,7 @@ namespace faith
 		int32				m_month_recharge_num;
 		int32				m_month_recharge_time;
 
-		int64				m_online_tick;	//	??tick 1???? ???
+		int64				m_online_tick;
 		uint32				m_update_timer_index;
 		int64				m_last_update_log_time;
 

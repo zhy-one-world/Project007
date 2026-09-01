@@ -12,7 +12,7 @@
 
 namespace faith
 {
-	//½ÇÉ«¹ØÏµ
+	//è§’è‰²å…³ç³»
 	void req_load_marry_info(uint32 connindex, int32 start_pos);
 	void ws2dp_req_load_marry_info(uint32 connindex, const void* data_ptr, size_t data_len);
 	void ws2dp_req_load_marry_info_end(db_result_type result, uint32 connindex, int32 start_pos);

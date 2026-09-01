@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê8ÔÂ15ÈÕ
+created: 2016å¹´8æœˆ15æ—¥
 file base: mail
 file ext: hpp
 author: lxy
@@ -21,38 +21,38 @@ namespace faith
 {
 #pragma pack(push,1)
 
-	const int32 MAX_MAIL_NUM = 50;											// ×î´óÓÊ¼şÊıÁ¿
-	const int32 max_text_contents_length = 400;							// ×î´óÎÄ±¾³¤¶È
-	const int32 max_mail_title_length = 64;								// ×î´ó±êÌâ³¤¶È
-	const int32 max_item_per_mail = 5;										// Ã¿·âÓÊ¼ş×î´óÎïÆ·Êı
-	const int32 max_mail_item_num = MAX_MAIL_NUM * max_item_per_mail;		// ÓÊ¼şÎïÆ·µÄ×î´óÊıÁ¿
-	const int32 auto_load_mail_time = 300;									// ×Ô¶¯·ÃÎÊÊı¾İ¿â¸üĞÂÓÊ¼şÊı¾İÊ±¼ä
-	const int32 check_id_mail_per_time = 100;								// µ¥´Î¼ì²éIDÓÊ¼şµÄ´¦ÀíÊıÁ¿
-	const int32 max_other_server_mail_record_num = 2 * max_server_num;		// ÆäËû·şÎñÆ÷ÓÊ¼ş¼ÇÂ¼×î´óÊıÁ¿
-	const int32 max_other_server_mail_num = 50;								// Ò»¸öÆäËû·ş´æ´¢ÓÊ¼ş×î´óÊıÁ¿
-	const int32 max_other_server_mail_item_num = max_other_server_mail_num * max_item_per_mail;	//ÆäËû·şÎñÆ÷ÓÊ¼şÎïÆ·×î´óÊıÁ¿
+	const int32 MAX_MAIL_NUM = 50;											// æœ€å¤§é‚®ä»¶æ•°é‡
+	const int32 max_text_contents_length = 400;							// æœ€å¤§æ–‡æœ¬é•¿åº¦
+	const int32 max_mail_title_length = 64;								// æœ€å¤§æ ‡é¢˜é•¿åº¦
+	const int32 max_item_per_mail = 5;										// æ¯å°é‚®ä»¶æœ€å¤§ç‰©å“æ•°
+	const int32 max_mail_item_num = MAX_MAIL_NUM * max_item_per_mail;		// é‚®ä»¶ç‰©å“çš„æœ€å¤§æ•°é‡
+	const int32 auto_load_mail_time = 300;									// è‡ªåŠ¨è®¿é—®æ•°æ®åº“æ›´æ–°é‚®ä»¶æ•°æ®æ—¶é—´
+	const int32 check_id_mail_per_time = 100;								// å•æ¬¡æ£€æŸ¥IDé‚®ä»¶çš„å¤„ç†æ•°é‡
+	const int32 max_other_server_mail_record_num = 2 * max_server_num;		// å…¶ä»–æœåŠ¡å™¨é‚®ä»¶è®°å½•æœ€å¤§æ•°é‡
+	const int32 max_other_server_mail_num = 50;								// ä¸€ä¸ªå…¶ä»–æœå­˜å‚¨é‚®ä»¶æœ€å¤§æ•°é‡
+	const int32 max_other_server_mail_item_num = max_other_server_mail_num * max_item_per_mail;	//å…¶ä»–æœåŠ¡å™¨é‚®ä»¶ç‰©å“æœ€å¤§æ•°é‡
 	enum EMailInfo
 	{
-		EMailInfo_IsNeedDelete = 0, //¶ÔÓÚÈº·¢ÏµÍ³ÓÊ¼ş Õâ¸öÊÇÉ¾³ıÊ±¼ä´Á
+		EMailInfo_IsNeedDelete = 0, //å¯¹äºç¾¤å‘ç³»ç»Ÿé‚®ä»¶ è¿™ä¸ªæ˜¯åˆ é™¤æ—¶é—´æˆ³
 		EMailInfo_SendTime,
-		EMailInfo_ItemGuid11,	//µÚÒ»¸öÎïÆ·GUIDÇ°°ë²¿·Ö
-		EMailInfo_ItemGuid12,	//µÚÒ»¸öÎïÆ·GUIDºó°ë²¿·Ö
+		EMailInfo_ItemGuid11,	//ç¬¬ä¸€ä¸ªç‰©å“GUIDå‰åŠéƒ¨åˆ†
+		EMailInfo_ItemGuid12,	//ç¬¬ä¸€ä¸ªç‰©å“GUIDååŠéƒ¨åˆ†
 		EMailInfo_ItemGuid21,
 		EMailInfo_ItemGuid22,
 		EMailInfo_ItemGuid31,
 		EMailInfo_ItemGuid32,
 		EMailInfo_ItemGuid41,
 		EMailInfo_ItemGuid42,
-		EMailInfo_ItemGuid51,	//µÚÎå¸öÎïÆ·Ç°°ë²¿·Ö
-		EMailInfo_ItemGuid52,	//µÚÎå¸öÎïÆ·ºó°ë²¿·Ö
-		EMailInfo_MoneyTyp1,	//12 µÚÒ»ÖÖÇ®±ÒÀàĞÍ
-		EMailInfo_MoneyNum1,	//13 µÚÒ»ÖÖÇ®±ÒÊıÁ¿
+		EMailInfo_ItemGuid51,	//ç¬¬äº”ä¸ªç‰©å“å‰åŠéƒ¨åˆ†
+		EMailInfo_ItemGuid52,	//ç¬¬äº”ä¸ªç‰©å“ååŠéƒ¨åˆ†
+		EMailInfo_MoneyTyp1,	//12 ç¬¬ä¸€ç§é’±å¸ç±»å‹
+		EMailInfo_MoneyNum1,	//13 ç¬¬ä¸€ç§é’±å¸æ•°é‡
 		EMailInfo_MoneyTyp2,
 		EMailInfo_MoneyNum2,
-		EMailInfo_ReadState,	//1£ºÒÑ¶Á  0£ºÎ´¶Á
-		EMailInfo_SenderGuid1,	//·¢ËÍÕßGUIDÇ°°ë²¿·Ö
-		EMailInfo_SenderGuid2,	//·¢ËÍÕßGUIDºó°ë²¿·Ö
-		EMailInfo_ServerId,		//ÓÊ¼ş·şÎñÆ÷ID
+		EMailInfo_ReadState,	//1ï¼šå·²è¯»  0ï¼šæœªè¯»
+		EMailInfo_SenderGuid1,	//å‘é€è€…GUIDå‰åŠéƒ¨åˆ†
+		EMailInfo_SenderGuid2,	//å‘é€è€…GUIDååŠéƒ¨åˆ†
+		EMailInfo_ServerId,		//é‚®ä»¶æœåŠ¡å™¨ID
 		EMailInfo_max
 
 	};
@@ -73,7 +73,7 @@ namespace faith
 	struct s_mail_info
 	{
 		guid_64					mail_guid;								// guid		
-		int32					data_ary[EMailInfo_max];				// ÓÊ¼şÊµÀıÊı¾İ
+		int32					data_ary[EMailInfo_max];				// é‚®ä»¶å®ä¾‹æ•°æ®
 		xchar					text_contents[max_text_contents_length + 1];
 		xchar					sender_name[max_name_size + 1];
 		xchar					mail_title[max_mail_title_length + 1];
@@ -497,7 +497,7 @@ namespace faith
 		e_mail_common_text_time_attack_city_group_up_context,
 		e_mail_common_text_time_attack_city_singl_reward_title,
 		e_mail_common_text_time_attack_city_singl_reward_context,
-		e_mail_common_text_max //Í¨¹ıÕâ¸öÃ¶¾Ù¿ÉÒÔÕÒµ½×ÖµäºÅÅäÖÃµÄµØ·½
+		e_mail_common_text_max //é€šè¿‡è¿™ä¸ªæšä¸¾å¯ä»¥æ‰¾åˆ°å­—å…¸å·é…ç½®çš„åœ°æ–¹
 	};
 
 #pragma pack(pop)

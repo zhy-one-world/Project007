@@ -22,7 +22,7 @@ namespace faith
 	const int32 msgindex_rep_query_log_db	=			e_msg_base_dp2all;
 
 #pragma pack(push,1)
-	//向LogDB中提交一个SQL查询请求
+	//鍚慙ogDB涓彁浜や竴涓猄QL鏌ヨ璇锋眰
 	struct req_query_log_db : public packet_base
 	{
 		enum{max_limit = 1024,};
@@ -42,7 +42,7 @@ namespace faith
 		}
 	};
 
-	//SQL执行结果
+	//SQL鎵ц缁撴灉
 	struct rep_query_log_db : public packet_base
 	{
 		enum{max_limit = 4096,};

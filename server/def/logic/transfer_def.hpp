@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
   created: 2014/07/16
   created: 16:7:2014 15:52
   file base: scene_def
@@ -43,15 +43,14 @@ namespace faith
 
 	const int32 kmax_transfer_dynamic_int_num = 5;
 
-	//������Ϣ
 	struct s_transfer_info
 	{		
-		s_map_pos		map_pos;				// ���ͺ�ĵ�ͼ����
-		e_scene_type	scene_type;				// ��������
-		uint32			map_id;					// ����ģ��id
-		int32			line_id;				// ���͵���id
-		guid_64			map_guid;				// ���͵ĵ�ͼguid
-		int32			war_index;				// ��һ��
+		s_map_pos		map_pos;
+		e_scene_type	scene_type;
+		uint32			map_id;
+		int32			line_id;
+		guid_64			map_guid;
+		int32			war_index;
 		int32			dynamic_ints[kmax_transfer_dynamic_int_num];
 		s_transfer_info()
 		{

@@ -11,10 +11,10 @@ namespace faith
 
 	enum e_broken_sky_state
 	{
-		e_broken_sky_not_start, //ÓÎÏ·Î´¿ªÊ¼
-		e_broken_sky_in_join,	//×¼±¸Ê±¼ä
-		e_broken_sky_in_game,	//ÓÎÏ·Ê±¼ä
-		e_broken_sky_game_end,	//ÓÎÏ·½áÊø
+		e_broken_sky_not_start, //æ¸¸æˆæœªå¼€å§‹
+		e_broken_sky_in_join,	//å‡†å¤‡æ—¶é—´
+		e_broken_sky_in_game,	//æ¸¸æˆæ—¶é—´
+		e_broken_sky_game_end,	//æ¸¸æˆç»“æŸ
 	};
 
 	class broken_sky_mgr
@@ -45,7 +45,7 @@ namespace faith
 		e_error_code		is_can_join();
 
 		//rename
-		void				change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//½ÇÉ«¸ÄÃûÍ¬²½
+		void				change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//è§’è‰²æ”¹ååŒæ­¥
 	private:
 		void				send_message_to_all_cs(const void* data_ptr, size_t data_len);
 		void				send_top_records();

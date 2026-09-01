@@ -1,8 +1,8 @@
 /********************************************************************
-created: 2016Äê7ÔÂ14ÈÕ
+created: 2016å¹´7æœˆ14æ—¥
 file base: achievement
-author: ÕÅÓîÏè
-purpose: µ¥¸ö³É¾Í
+author: å¼ å®‡ç¿”
+purpose: å•ä¸ªæˆå°±
 *********************************************************************/
 
 #include "achievement.hpp"
@@ -44,7 +44,7 @@ namespace faith
 		{
 			return false;
 		}
-		//³õÊ¼»¯
+		//åˆå§‹åŒ–
 		m_achievement_ptr = achievement_ptr;
 		m_player_ptr = player_ptr;
 		m_achievement_info.reset();
@@ -66,7 +66,7 @@ namespace faith
 		{
 			return false;
 		}
-		//³õÊ¼»¯
+		//åˆå§‹åŒ–
 		m_achievement_ptr = achievement_ptr;
 		m_player_ptr = player_ptr;
 		return true;
@@ -152,7 +152,7 @@ namespace faith
 			return false;
 		}
 		if (get_achievement_state() >= eas_can_finish)
-		{//ÒÑ¿É½»¸¶
+		{//å·²å¯äº¤ä»˜
 			return false;
 		}
 
@@ -173,7 +173,7 @@ namespace faith
 			return false;
 		}
 		if (get_achievement_state() >= eas_can_finish)
-		{//ÒÑ¿É½»¸¶
+		{//å·²å¯äº¤ä»˜
 			return false;
 		}
 		if (new_value > m_achievement_ptr->AchievementGoal[e_item_tuple_num])
@@ -199,7 +199,7 @@ namespace faith
 		}
 
 		if (get_achievement_state() >= eas_can_finish)
-		{//ÒÑ¿É½»¸¶
+		{//å·²å¯äº¤ä»˜
 			return false;
 		}
 

@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	file name:	auction_cs.cpp
 	created:	2017/06/11 0:14
 	author:		zhy
@@ -682,7 +682,6 @@ namespace faith
 
 		temp_player.get_first_time_do_mgr().add_do_record(e_first_time_do_type_auction_buy);
 
-		//�ж������й��������Ƿ����
 		temp_player.get_mission_mgr().target_check(e_mission_end_type_auction_shopping);
 
 		int32 item_num = item_info.item_info.data_ary[e_item_info_stack_count];
@@ -970,9 +969,7 @@ namespace faith
 		//		0, 0, 0, 0, &auction_info.item_info, 1); 
 
 		//	return;
-		//
 		//}
-		//
 		//temp_player.get_item_set().put_in_bag(p_new_item, e_bag_type_none, e_item_mail_type_auction_item);
 
 		//vector<s_item_template_info> promp_item_data;
@@ -1082,7 +1079,6 @@ namespace faith
 		case e_trading_type_normal_sell:
 		case e_trading_type_world:
 		{
-			//�����¼
 			cs2ws_auction_add_purchase_record auction_record_msg;
 			auction_record_msg.auction_record_info.record_guid = guid_gen::make_guid(temp_player.get_unit_guid());
 			auction_record_msg.auction_record_info.role_guid = temp_player.get_unit_guid();
@@ -1092,7 +1088,6 @@ namespace faith
 
 			if (auction_info.seller_guid.is_valid())
 			{
-				//���ۼ�¼
 				auction_record_msg.auction_record_info.record_guid = guid_gen::make_guid(temp_player.get_unit_guid());
 				auction_record_msg.auction_record_info.role_guid = auction_info.seller_guid;
 				auction_record_msg.auction_record_info.is_sell = true;
@@ -1111,7 +1106,7 @@ namespace faith
 		{
 			cs2ws_auction_add_purchase_record auction_record_msg;
 			auction_record_msg.auction_record_info.record_guid = guid_gen::make_guid(temp_player.get_unit_guid());
-			auction_record_msg.auction_record_info.role_guid = auction_info.seller_guid;		//�������� guid�Ǿ���guid
+			auction_record_msg.auction_record_info.role_guid = auction_info.seller_guid;
 			auction_record_msg.auction_record_info.is_sell = false;
 			auction_record_msg.auction_record_info.auction_info = auction_info;
 			connection_mgr::getInstance().send_to_ws( &auction_record_msg, sizeof(cs2ws_auction_add_purchase_record));
@@ -1129,7 +1124,6 @@ namespace faith
 		{
 			return;
 		}
-		//�˴��� price_value �����ǽ�Ҫ���Ե��μӼ�����Ļ�׼ֵ
 
 		temp_player.get_star_trip_mgr().target_mission(e_star_trip_target_type_bid);
 
@@ -1199,13 +1193,12 @@ namespace faith
 			cost_money_value = auction_info.cur_bid_money + cost_money_add_value;
 		}
 		else
-		{//���˾��ģ���һ���ģ�ʹ�ò��Ӽ۵ļ۸�
+		{
 			cost_money_value = auction_info.cur_bid_money;
 		}
 
 		if (cost_money_value >= auction_info.sell_total_money && auction_info.sell_total_money != 0)
-		{//��������� Ӧ��ֱ���� �����߼�
-			//����Ϊ�����������־
+		{
 			item_num = auction_info.item_info.data_ary[e_item_info_stack_count];
 			money_type = auction_info.sell_money_type;
 			item_price = auction_info.sell_total_money;
@@ -1262,7 +1255,6 @@ namespace faith
 		
 		temp_player.get_time_limit_activity_mgr().activity_behavior_done(e_time_limit_behavior_type_auction_bid);
 
-		//����Ϊ�����������־
 		item_num = auction_info.item_info.data_ary[e_item_info_stack_count];
 		money_type = auction_info.sell_money_type;
 		item_price = auction_info.sell_total_money;
@@ -1499,7 +1491,7 @@ namespace faith
 	    temp_player.send_message_to_self(&msg, e_msgindex_s2c_update_bid_notice_red);
 	}
 
-	void cauction_mgr::person_tick(int64 new_time) // ����
+	void cauction_mgr::person_tick(int64 new_time)
 	{
 		if (m_refresh_time == 0)
 		{
@@ -1545,7 +1537,7 @@ namespace faith
 	{
 
 		time_info cur_time_info = time_helper::get_cur_time_new();
-		if (m_refresh_info.second == 0) // ��ʼ����ǰʱ��
+		if (m_refresh_info.second == 0)
 		{
 			m_refresh_info = time_helper::get_time_by_today_stamp_new(get_config_param(e_auction_param_person_refresh_time));
 		}

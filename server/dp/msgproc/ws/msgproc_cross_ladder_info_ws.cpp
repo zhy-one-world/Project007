@@ -1,10 +1,10 @@
 /********************************************************************
-created: 2019Äê5ÔÂ31ÈÕ
+created: 2019å¹´5æœˆ31æ—¥
 file base: msgproc_cross_ladder_info_ws
 file ext: cpp
 author: pengbiao
 
-purpose: ¿ç·şÌìÌİ
+purpose: è·¨æœå¤©æ¢¯
 *********************************************************************/
 
 #include "logic/type_def.hpp"

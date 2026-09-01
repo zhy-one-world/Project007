@@ -12,7 +12,7 @@
 
 namespace faith
 {
-	//ÔÆ¹º
+	//äº‘è´­
 	void ws2dp_req_load_cloud_role_record(uint32 connindex, const void* data_ptr, size_t data_len);
 	void req_load_cloud_shop_role_record(uint32 connindex, int32 start_pos);
 	void ws2dp_req_load_cloud_role_record_end(db_result_type result, uint32 connindex, int32 start_pos);

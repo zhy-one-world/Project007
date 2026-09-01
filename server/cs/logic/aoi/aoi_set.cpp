@@ -1,5 +1,5 @@
 /********************************************************************
-created:	2016Äê1ÔÂ4ÈÕ17:26:07
+created:	2016å¹´1æœˆ4æ—¥17:26:07
 file base:	aoi_set_cpp
 file ext:	cpp
 author:		zhy
@@ -18,12 +18,12 @@ namespace faith
 	{
 		m_tower_pos_max.clear_data();
 		m_aoi_tower_array.clear();
-		m_map_begin_x = 0;	//µØÍ¼µÄ¿ªÊ¼µÄx
-		m_map_end_x = 0;	//µØÍ¼µÄ½áÊøµÄx
-		m_map_begin_y = 0;	//µØÍ¼µÄ¿ªÊ¼µÄy
-		m_map_end_y = 0;	//µØÍ¼µÄ½áÊøµÄy
-		m_tower_width = 0;	//¸ñ×Ó¿í¶È
-		m_tower_length = 0;	//¸ñ×Ó³¤¶È
+		m_map_begin_x = 0;	//åœ°å›¾çš„å¼€å§‹çš„x
+		m_map_end_x = 0;	//åœ°å›¾çš„ç»“æŸçš„x
+		m_map_begin_y = 0;	//åœ°å›¾çš„å¼€å§‹çš„y
+		m_map_end_y = 0;	//åœ°å›¾çš„ç»“æŸçš„y
+		m_tower_width = 0;	//æ ¼å­å®½åº¦
+		m_tower_length = 0;	//æ ¼å­é•¿åº¦
 		m_empty_map.clear();
 	}
 	aoi_set::~aoi_set()
@@ -44,8 +44,8 @@ namespace faith
 		m_map_end_y = end_y;
 		m_tower_width = tower_width;
 		m_tower_length = tower_length;
-		m_tower_pos_max.x = (m_map_end_x - m_map_begin_x) / tower_width + 3;//·ÀÖ¹ÌîµÄµØÍ¼¿í¶ÈÌ«Ğ¡
-		m_tower_pos_max.y = (m_map_end_x - m_map_begin_x) / tower_length + 3;//·ÀÖ¹ÌîµÄµØÍ¼¿í¶ÈÌ«Ğ¡
+		m_tower_pos_max.x = (m_map_end_x - m_map_begin_x) / tower_width + 3;//é˜²æ­¢å¡«çš„åœ°å›¾å®½åº¦å¤ªå°
+		m_tower_pos_max.y = (m_map_end_x - m_map_begin_x) / tower_length + 3;//é˜²æ­¢å¡«çš„åœ°å›¾å®½åº¦å¤ªå°
 		return true;
 	}
 	void aoi_set::get_unit_all(const fvector& unit_location, int32* unit_array, int32& watch_array_num)

@@ -22,7 +22,7 @@ namespace faith
 		{
 			sdk_url = "https://sandbox.itunes.apple.com/verifyReceipt";
 		}
-		// 自定义请求头
+		// 鑷畾涔夎姹傚ご
 		Json::Value root;
 		root["receipt-data"] = recharge_info.goods_token;
 		Json::FastWriter fast_writer;
@@ -32,7 +32,7 @@ namespace faith
 		head_list.push_back("Content-Length:" + init_unit::change_i64_to_string(url_para.size()));
 
 
-		// 异步请求
+		// 寮傛璇锋眰
 		http_access_mgr::get_instance().async_request
 			(
 				recharge_info.role_guid.server_64,

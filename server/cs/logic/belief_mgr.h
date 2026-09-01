@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2015Äê8ÔÂ28ÈÕ13:56:28
+created: 2015å¹´8æœˆ28æ—¥13:56:28
 file base: belief_mgr
 file ext: h
 author: W.H.B.A.
@@ -48,8 +48,8 @@ namespace faith
 		int32 get_belief_record_type(int32 belief_type);
 
 	private:
-		cbelief										m_belief_ary[e_belief_series_type_max];		// ËùÓĞĞÅÑö
-		player*										m_player_ptr;							// ĞÅÑöËùÊô½ÇÉ«Ãû³Æ
+		cbelief										m_belief_ary[e_belief_series_type_max];		// æ‰€æœ‰ä¿¡ä»°
+		player*										m_player_ptr;							// ä¿¡ä»°æ‰€å±è§’è‰²åç§°
 		int32										m_buff_index;
 		int64										m_buff_change_time;
 		std::vector<int32>							m_cur_buff_array;

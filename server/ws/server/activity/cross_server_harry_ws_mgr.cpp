@@ -1,5 +1,5 @@
 /********************************************************************
-  created: 2019Äê4ÔÂ4ÈÕ
+  created: 2019å¹´4æœˆ4æ—¥
   file base: cross_server_harry_ws_mgr
   file ext: cpp
   author: zhangshuo
@@ -138,7 +138,7 @@ namespace faith
 
 	void cross_server_harry_ws_mgr::tick_10sec(int64 time_new)
 	{
-		if (m_is_have_change && world_server::getInstance().is_sky_island_server())//Í¬²½ĞÅÏ¢
+		if (m_is_have_change && world_server::getInstance().is_sky_island_server())//åŒæ­¥ä¿¡æ¯
 		{
 			send_all_harry_msg_to_other_server();
 			send_harry_msg_to_all_client();
@@ -437,7 +437,7 @@ namespace faith
 			}
 
 			int32 empty_idex = 0;
-			for (int32 i = 0; i < data_num; ++i)//ÏÈ²é±íÀïµÄÊı¾İÊÇ·ñÎªcfgÖĞ´æÔÚµÄ
+			for (int32 i = 0; i < data_num; ++i)//å…ˆæŸ¥è¡¨é‡Œçš„æ•°æ®æ˜¯å¦ä¸ºcfgä¸­å­˜åœ¨çš„
 			{
 				if (server_harry_msg_arr[i].server_id <= 0 || server_harry_msg_arr[i].server_id == world_server::getInstance().get_cross_id())
 				{
@@ -463,7 +463,7 @@ namespace faith
 				m_server_harry_msg_arr[empty_idex] = server_harry_msg_arr[i];
 				empty_idex++;
 			}
-			for (std::set<int32>::iterator it = server_id_arr.begin(); it != server_id_arr.end(); ++it)//ÔÙ²¹Ã»ÓĞµÄ
+			for (std::set<int32>::iterator it = server_id_arr.begin(); it != server_id_arr.end(); ++it)//å†è¡¥æ²¡æœ‰çš„
 			{
 				bool is_have_server = false;
 				for (int32 j = 0; j < max_server_num; j++)
@@ -548,7 +548,7 @@ namespace faith
 	{
 		if (m_server_change_harry_msg.size() <= 0 && m_server_change_special_money_num == 0)
 		{
-			return;//Ã»ÓĞ¸Ä±ä£¬Ôò²»·¢ËÍ
+			return;//æ²¡æœ‰æ”¹å˜ï¼Œåˆ™ä¸å‘é€
 		}
 		int32 data_num = 0;
 		bool have_cur_server_special_money_num = false;
@@ -610,7 +610,7 @@ namespace faith
 			}
 			server_harry_msg.server_money += change_normal_value;
 			server_harry_msg.special_money += change_special_value;
-			if (server_harry_msg.special_money < 0)//µ±gateÍ¬²½ĞÅÏ¢Ê±£¬ÓĞ¼¸ÂÊµ¼ÖÂ¸ß±¶²É¼¯ÕıºÃÇåÁã£¬´ËÊ±·¢À´µÄÍ¬²½Êı¾İ»áµ¼ÖÂÌØÊâ²É¼¯´ÎÊıĞ¡ÓÚ0
+			if (server_harry_msg.special_money < 0)//å½“gateåŒæ­¥ä¿¡æ¯æ—¶ï¼Œæœ‰å‡ ç‡å¯¼è‡´é«˜å€é‡‡é›†æ­£å¥½æ¸…é›¶ï¼Œæ­¤æ—¶å‘æ¥çš„åŒæ­¥æ•°æ®ä¼šå¯¼è‡´ç‰¹æ®Šé‡‡é›†æ¬¡æ•°å°äº0
 			{
 				server_harry_msg.special_money = 0;
 			}
@@ -828,7 +828,7 @@ namespace faith
 	{
 		if (false == world_server::getInstance().is_sky_island_server())
 		{
-			return;//Ö»ÓĞgate·şµÄws´¦ÀíÕâ¼şÊÂÇé
+			return;//åªæœ‰gateæœçš„wså¤„ç†è¿™ä»¶äº‹æƒ…
 		}
 		ActivityCommonConfigTemplate* act_cfg_ptr = GET_TEMPLATE(ActivityCommonConfigTemplate, first_activity_common_template_id + e_activity_type_cross_server_harry);
 		if (nullptr == act_cfg_ptr)
@@ -898,7 +898,7 @@ namespace faith
 	{
 		if (false == world_server::getInstance().is_sky_island_server())
 		{
-			return;//Ö»ÓĞgate·şµÄws´¦ÀíÕâ¼şÊÂÇé
+			return;//åªæœ‰gateæœçš„wså¤„ç†è¿™ä»¶äº‹æƒ…
 		}
 		ActivityCommonConfigTemplate* act_cfg_ptr = GET_TEMPLATE(ActivityCommonConfigTemplate, first_activity_common_template_id + e_activity_type_cross_server_harry);
 		if (nullptr == act_cfg_ptr)
@@ -953,7 +953,7 @@ namespace faith
 		if (world_server::getInstance().is_sky_island_server())
 		{
 			m_is_have_change = true;
-			return;//GATE·ş²»ĞèÒª¼ÌĞøÖ´ĞĞ
+			return;//GATEæœä¸éœ€è¦ç»§ç»­æ‰§è¡Œ
 		}
 		if (server_id == world_server::getInstance().get_server_id())
 		{
@@ -1023,7 +1023,7 @@ namespace faith
 		}
 		int32 player_rank = 1;
 		ranking_list_ite cur_list_ite = cur_ranking_list_ptr->begin();
-		for (int32 i = 0; i < 50; i++)//ÔİÊ±¶¨Ö»·¢Ç°¡Á¸ö
+		for (int32 i = 0; i < 50; i++)//æš‚æ—¶å®šåªå‘å‰Ã—ä¸ª
 		{
 			if (cur_list_ite == cur_ranking_list_ptr->end())
 			{
@@ -1067,7 +1067,7 @@ namespace faith
 	{
 		if (!world_server::getInstance().is_sky_island_server())
 		{
-			return;//Ö»ÓĞgateĞèÒªÔËĞĞ¸Ã½áËãº¯Êı
+			return;//åªæœ‰gateéœ€è¦è¿è¡Œè¯¥ç»“ç®—å‡½æ•°
 		}
 		std::vector<s_server_harry_msg> server_harry_arr;
 		for (int32 i = 0; i < max_server_num; i++)
@@ -1124,7 +1124,7 @@ namespace faith
 		s_item_info final_item_array[max_item_per_mail];
 		s_mail_info final_mail_info;
 		get_mail_data(final_mail_info, final_item_array, item_num, drop_item_list, title, contenttext);
-		final_mail_info.data_ary[EMailInfo_IsNeedDelete] = time_helper::get_cur_time_new().second + day_time_second * 15;//15ÌìÉ¾³ı
+		final_mail_info.data_ary[EMailInfo_IsNeedDelete] = time_helper::get_cur_time_new().second + day_time_second * 15;//15å¤©åˆ é™¤
 		event_ws_mgr::get_instance().add_globel_mail(final_mail_info, final_item_array, item_num);
 
 	}

@@ -1,8 +1,8 @@
 /********************************************************************
-created: 2017Äê8ÔÂ10ÈÕ11:15:00
+created: 2017å¹´8æœˆ10æ—¥11:15:00
 file base: service_goal
-author: º«Ôó³É
-purpose: ÆßÈÕÄ¿±ê´æµµÏûÏ¢
+author: éŸ©æ³½æˆ
+purpose: ä¸ƒæ—¥ç›®æ ‡å­˜æ¡£æ¶ˆæ¯
 *********************************************************************/
 #ifndef _FAITH_SERVICE_GOAL_HPP_
 #define _FAITH_SERVICE_GOAL_HPP_
@@ -25,7 +25,7 @@ namespace faith
 	{
 		guid_64								role_guid;
 		int32							unit_array_index;
-		bool								is_over;		// ±êÊ¶ÊÇ·ñ·¢ËÍÍê±Ï, true±íÊ¾·¢ËÍ³É¹¦Íê±Ï£¬false±íÊ¾Ã»ÓĞ·¢ËÍÍê£¬errroÍ¨¹ıÁíÒ»ÌõÏûÏ¢´«µİ
+		bool								is_over;		// æ ‡è¯†æ˜¯å¦å‘é€å®Œæ¯•, trueè¡¨ç¤ºå‘é€æˆåŠŸå®Œæ¯•ï¼Œfalseè¡¨ç¤ºæ²¡æœ‰å‘é€å®Œï¼Œerrroé€šè¿‡å¦ä¸€æ¡æ¶ˆæ¯ä¼ é€’
 		int32								data_num;
 		s_service_goal_info					data_list[MAX_SERVICE_GOAL_NUM];
 		dp2cs_load_char_service_goal()

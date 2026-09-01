@@ -1,5 +1,5 @@
-/********************************************************************
-	created:	2015Äê7ÔÂ24ÈÕ15:37:47
+ï»¿/********************************************************************
+	created:	2015å¹´7æœˆ24æ—¥15:37:47
 	file base:	msgproc_cs
 	file ext:	cpp
 	author:		zhy
@@ -67,7 +67,7 @@ namespace faith
 {
 
 
-	// ½ÇÉ«ÉÏÏßÍ³Ò»loadindgÁ´´¦Àí
+	// è§’è‰²ä¸Šçº¿ç»Ÿä¸€loadindgé“¾å¤„ç†
 	void cs2dp_req_char_online_loading_data(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
 		if (data_len != sizeof(cs2dp_load_data_online))
@@ -277,7 +277,7 @@ namespace faith
 			query.sql_str.assign(sql.c_str(), sql.size());
 			db_manager::getInstance().get_db_link().game_db.add_query(query);
 		}
-		// ¸üĞÂ½ÇÉ«ĞÅÏ¢±í
+		// æ›´æ–°è§’è‰²ä¿¡æ¯è¡¨
 		sql_builder sql(db_manager::getInstance().get_db_link().game_db);
 		sql << _XTEXT("call ") << data_manager::get_instance().get_db_name(pdata->role_info.role_guid.server_64) << _XTEXT(".sp_role_info_save(");
 		sql << _XTEXT("'UPDATE role_info SET ");
@@ -542,7 +542,7 @@ namespace faith
 		}
 	}
 
-	//»ñÈ¡ÆäËûÍæ¼ÒĞÅÏ¢
+	//è·å–å…¶ä»–ç©å®¶ä¿¡æ¯
 	void cs2dp_req_get_other_player_info(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
 		cs2dp_req_get_other_player_info_base(connindex, data_ptr, data_len);
@@ -608,7 +608,7 @@ namespace faith
 		{
 			msgData.role_guid = role_guid;
 			db_read_data(&result, &(msgData.data_info), sizeof(msgData.data_info));
-			msgData.data_info[0].role_guid = target_guid;	//·ÀÖ¹Ã»ÓĞÕÒµ½ÈÎºÎ×°±¸Ê±·µ»Øµ½¿Í»§¶ËµÄ½ÇÉ«guidÎª¿Õ
+			msgData.data_info[0].role_guid = target_guid;	//é˜²æ­¢æ²¡æœ‰æ‰¾åˆ°ä»»ä½•è£…å¤‡æ—¶è¿”å›åˆ°å®¢æˆ·ç«¯çš„è§’è‰²guidä¸ºç©º
 			dbproxy_service::getInstance().send_message(connindex, &msgData, sizeof(msgData));
 
 			cs2dp_req_get_other_player_info_special_name(connindex, role_guid, target_guid, unit_info);
@@ -632,7 +632,7 @@ namespace faith
 			faith::dp2cs_get_other_player_info_special_name_end msgData;
 			msgData.role_guid = role_guid;
 			db_read_data(&result, &(msgData.data_info), sizeof(msgData.data_info));
-			msgData.data_info.role_guid = target_guid;	//·ÀÖ¹Ã»ÓĞÕÒµ½ÈÎºÎ³ÆºÅÊ±·µ»Øµ½¿Í»§¶ËµÄ½ÇÉ«guidÎª¿Õ
+			msgData.data_info.role_guid = target_guid;	//é˜²æ­¢æ²¡æœ‰æ‰¾åˆ°ä»»ä½•ç§°å·æ—¶è¿”å›åˆ°å®¢æˆ·ç«¯çš„è§’è‰²guidä¸ºç©º
 			dbproxy_service::getInstance().send_message(connindex, &msgData, sizeof(msgData));
 
 			cs2dp_req_get_other_player_info_base_group(connindex, role_guid, target_guid, unit_info);
@@ -680,7 +680,7 @@ namespace faith
 			faith::dp2cs_get_other_player_info_spirit_end msgData;
 			msgData.role_guid = role_guid;
 			db_read_data(&result, &(msgData.data_info), sizeof(msgData.data_info));
-			msgData.data_info.role_guid = target_guid;	//·ÀÖ¹Ã»ÓĞÕÒµ½ÈÎºÎ¾«ÁéÊ±·µ»Øµ½¿Í»§¶ËµÄ½ÇÉ«guidÎª¿Õ
+			msgData.data_info.role_guid = target_guid;	//é˜²æ­¢æ²¡æœ‰æ‰¾åˆ°ä»»ä½•ç²¾çµæ—¶è¿”å›åˆ°å®¢æˆ·ç«¯çš„è§’è‰²guidä¸ºç©º
 			dbproxy_service::getInstance().send_message(connindex, &msgData, sizeof(msgData));
 
 			cs2dp_req_get_other_player_info_wing(connindex, role_guid, target_guid, unit_info);
@@ -763,9 +763,9 @@ namespace faith
 			msgData.role_guid = role_guid;
 			db_read_data(&result, &(msgData.data_info), sizeof(msgData.data_info));
 
-			msgData.data_info[0].role_guid = target_guid;	//·ÀÖ¹Ã»ÓĞÕÒµ½ÈÎºÎ³á°ò»ò×øÆïÊ±·µ»Øµ½¿Í»§¶ËµÄ½ÇÉ«guidÎª¿Õ
-			msgData.is_wing = is_wing;						//·ÀÖ¹Ã»ÓĞÕÒµ½ÈÎºÎ³á°ò»ò×øÆïÊ±·µ»Øµ½¿Í»§¶ËµÄ°üÀàĞÍÎª¿Õ
-			//msgData.data_info[0].data_info.data_ary[faith::e_item_info_container_type] = bag_type;	//·ÀÖ¹Ã»ÓĞÕÒµ½ÈÎºÎ³á°ò»ò×øÆïÊ±·µ»Øµ½¿Í»§¶ËµÄ°üÀàĞÍÎª¿Õ
+			msgData.data_info[0].role_guid = target_guid;	//é˜²æ­¢æ²¡æœ‰æ‰¾åˆ°ä»»ä½•ç¿…è†€æˆ–åéª‘æ—¶è¿”å›åˆ°å®¢æˆ·ç«¯çš„è§’è‰²guidä¸ºç©º
+			msgData.is_wing = is_wing;						//é˜²æ­¢æ²¡æœ‰æ‰¾åˆ°ä»»ä½•ç¿…è†€æˆ–åéª‘æ—¶è¿”å›åˆ°å®¢æˆ·ç«¯çš„åŒ…ç±»å‹ä¸ºç©º
+			//msgData.data_info[0].data_info.data_ary[faith::e_item_info_container_type] = bag_type;	//é˜²æ­¢æ²¡æœ‰æ‰¾åˆ°ä»»ä½•ç¿…è†€æˆ–åéª‘æ—¶è¿”å›åˆ°å®¢æˆ·ç«¯çš„åŒ…ç±»å‹ä¸ºç©º
 
 			dbproxy_service::getInstance().send_message(connindex, &msgData, sizeof(msgData));
 
@@ -1482,7 +1482,6 @@ namespace faith
 		int32 table_len = result.query.data_select.row_count;
 		if (result.error || data_size != result.query.data_select.row_size)
 		{
-			//
 		}
 		else {
 			dp2cs_get_other_person_information msgData;

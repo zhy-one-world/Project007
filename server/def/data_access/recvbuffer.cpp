@@ -17,13 +17,13 @@ namespace faith
 {
 	int32 recvbuffer::get_used_size()
 	{
-		//m_wpos == m_rpos£¬¼´bufferÎª¿Õ
+		//m_wpos == m_rposï¼Œå³bufferä¸ºç©º
 		return (m_wpos - m_rpos + m_buff_size) % m_buff_size;
 	}
 
 	int32 recvbuffer::get_idle_size()
 	{
-		//ÁôÒ»¸öbyte×÷ÎªbufferÒÑÂúµÄ±êÖ¾
+		//ç•™ä¸€ä¸ªbyteä½œä¸ºbufferå·²æ»¡çš„æ ‡å¿—
 		return m_buff_size - get_used_size() - 1;
 	}
 
@@ -32,7 +32,7 @@ namespace faith
 		int32 real_idle_size = get_idle_size();
 		real_wpos = m_wpos;
 
-		//Èç¹ûbuffÎ´¶Ë²»¹»Ğ´£¬Ôò´ÓÍ·¿ªÊ¼Ğ´¡£
+		//å¦‚æœbuffæœªç«¯ä¸å¤Ÿå†™ï¼Œåˆ™ä»å¤´å¼€å§‹å†™ã€‚
 		int32 count = m_buff_size - m_wpos;
 		if (m_wpos >= m_rpos && count < len)
 		{
@@ -47,7 +47,7 @@ namespace faith
 		int32 real_used_size = get_used_size();
 		real_rpos = m_rpos;
 
-		//Èç¹ûbuffÄ©¶Ë²»¹»¶Á£¬Ôò´ÓÍ·¿ªÊ¼¶Á
+		//å¦‚æœbuffæœ«ç«¯ä¸å¤Ÿè¯»ï¼Œåˆ™ä»å¤´å¼€å§‹è¯»
 		int32 count = m_buff_size - m_rpos;
 		if(m_rpos >= m_wpos && count < len)
 		{
@@ -92,7 +92,7 @@ namespace faith
 
 			assert(len == m_reserve_size);
 
-			//½«Êı¾İĞ´Èë»º´æÇø
+			//å°†æ•°æ®å†™å…¥ç¼“å­˜åŒº
 			memcpy(m_buffer + m_wpos, data, len);
 			commit();
 		}
@@ -165,7 +165,7 @@ namespace faith
 
 		if(len > 0)
 		{
-			//²»¹»Ğ´£¬ÔòÀ©´ó»º´æÇø
+			//ä¸å¤Ÿå†™ï¼Œåˆ™æ‰©å¤§ç¼“å­˜åŒº
 			int32 real_wpos;
 			if(!writeable(len,real_wpos))
 			{

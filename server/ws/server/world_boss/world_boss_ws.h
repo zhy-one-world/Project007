@@ -23,7 +23,7 @@ namespace faith
 		int32				get_npc_array_index() { return m_world_boss_data.world_boss_npc_array_index; };
 		void				set_npc_array_index(int32 npc_array_index) { m_world_boss_data.world_boss_npc_array_index = npc_array_index; };
 		bool				is_alive();
-		int32				boss_state() { return  m_world_boss_data.boss_daily_refresh; }; //is_aliveÖ»ÉèÖÃboss¿ÉÒÔ´ò-»îµÄ²¢ÉèÖÃÎª1£¬²»¿ÉÒÔ´ò-´òËÀÁË£¬Ã»ÓĞ´òÁ½ÖÖ×´Ì¬£¬´Ë´¦½«²»¿ÉÒÔ´òµÄÁ½ÖÖ×´Ì¬Çø·Ö£¬ÉèÖÃÎª0ÊÇÃ»ÓĞ´ò×´Ì¬£¬·´Ö®
+		int32				boss_state() { return  m_world_boss_data.boss_daily_refresh; }; //is_aliveåªè®¾ç½®bosså¯ä»¥æ‰“-æ´»çš„å¹¶è®¾ç½®ä¸º1ï¼Œä¸å¯ä»¥æ‰“-æ‰“æ­»äº†ï¼Œæ²¡æœ‰æ‰“ä¸¤ç§çŠ¶æ€ï¼Œæ­¤å¤„å°†ä¸å¯ä»¥æ‰“çš„ä¸¤ç§çŠ¶æ€åŒºåˆ†ï¼Œè®¾ç½®ä¸º0æ˜¯æ²¡æœ‰æ‰“çŠ¶æ€ï¼Œåä¹‹
 		void				set_boss_state(int32 refresh_boss_state) { m_world_boss_data.boss_daily_refresh = refresh_boss_state; };
 		int32				get_line_id() { return m_world_boss_data.line_id; };
 		void				set_line_id(int32 line_id) { m_world_boss_data.line_id = line_id; };
@@ -64,16 +64,16 @@ namespace faith
 		int32				get_boss_random_pos_id() { return m_boss_random_pos_id; }
 		void				set_boss_random_pos_id(int32 boss_random_pos_id) { m_boss_random_pos_id = boss_random_pos_id; }
 
-		bool					m_is_recv_get_prize_msg;	//ÊÇ·ñ½ÓÊÕµ½ÁË¿Í»§¶Ë·¢ËÍµÄ ÇëÇóÁì½±µÄÏûÏ¢
+		bool					m_is_recv_get_prize_msg;	//æ˜¯å¦æ¥æ”¶åˆ°äº†å®¢æˆ·ç«¯å‘é€çš„ è¯·æ±‚é¢†å¥–çš„æ¶ˆæ¯
 	private:
 		s_world_boss_info		m_world_boss_data;
 		NpcSpawnPointTemplate*	m_spawn_template_ptr;
 		NpcTemplate*			m_npc_template_ptr;
 		bool					m_is_creating;
-		bool					m_is_need_pre_create;	//ÊÇ·ñĞèÒªÔÚ·şÎñÆ÷Æô¶¯Ê±¼´¿Ì´´½¨£¬²»¹ÜË¢ĞÂÊ±¼ä
+		bool					m_is_need_pre_create;	//æ˜¯å¦éœ€è¦åœ¨æœåŠ¡å™¨å¯åŠ¨æ—¶å³åˆ»åˆ›å»ºï¼Œä¸ç®¡åˆ·æ–°æ—¶é—´
 		int32					m_hp_per;
 		guid_64					m_cur_guid;
-		int32                   m_boss_random_pos_id;	//ÊÀ½çbossËæ»úÎ»ÖÃid
+		int32                   m_boss_random_pos_id;	//ä¸–ç•Œbosséšæœºä½ç½®id
 	};
 }
 

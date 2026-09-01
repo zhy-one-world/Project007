@@ -75,11 +75,11 @@ namespace faith
 		//	check_ret = e_failed_role_name_invalid;
 		//}
 		//if (invalid_ansi_word::include_invalid_ansi_str(create_proto_msg.name()))
-		//{//´æÔÚ·Ç·¨×Ö
+		//{//å­˜åœ¨éæ³•å­—
 		//	check_ret = e_failed_role_name_invalid;
 		//}
 
-		//ÅĞ¶Ï½ÇÉ«Ãû³¤¶ÈÊÇ·ñºÏ·¨final
+		//åˆ¤æ–­è§’è‰²åé•¿åº¦æ˜¯å¦åˆæ³•final
 		if ((create_proto_msg.name().size() < faith::min_name_size))
 		{
 			check_ret = e_failed_role_name_size_too_short;
@@ -135,7 +135,7 @@ namespace faith
 		size_t appearance_size_cp = (appearance_size_dst > appearance_size_src ? appearance_size_src : appearance_size_dst);
 		memcpy(reqeust_db.init_role.role_appearance, create_proto_msg.appearance().c_str(), appearance_size_cp);
 
-		// µÈ¼¶ÏŞÖÆ
+		// ç­‰çº§é™åˆ¶
 		reqeust_db.create_level_requirement = template_data_ptr->CreateLevelRequirement;
 		reqeust_db.init_role.data_ary[e_role_info_exp_level] = template_data_ptr->InitLevel;
 		guid_64 player_id = guid_gen::make_guid();
@@ -207,7 +207,7 @@ namespace faith
 		reqeust_db.init_role.data_ary[e_role_info_sprite_equip_slot_open_num] = sprite_equip_slot_open_num;
 
 
-		// ³õÊ¼»¯³õÊ¼×°±¸ĞÅÏ¢
+		// åˆå§‹åŒ–åˆå§‹è£…å¤‡ä¿¡æ¯
 		int32 item_count = 0;
 		for (int32 i = 0; i < template_data_ptr->InitEquips.size(); ++i)
 		{
@@ -221,7 +221,7 @@ namespace faith
 			}
 		}
 
-		// ³õÊ¼»¯±³°üÎïÆ·ĞÅÏ¢
+		// åˆå§‹åŒ–èƒŒåŒ…ç‰©å“ä¿¡æ¯
 		if (template_data_ptr->InitItems.size() > 0
 			&& template_data_ptr->InitItems.size() % 2 == 0)
 		{
@@ -285,14 +285,14 @@ namespace faith
 		}
 
 		int32 skill_count = 0;
-		//´´½¨³õÊ¼»¯¼¼ÄÜ
+		//åˆ›å»ºåˆå§‹åŒ–æŠ€èƒ½
 
 		//for (int32 i = 0; i < template_data_ptr->InstSkills.size(); i++)
 		//{
 		//	if (init_unit::init_skill_data(reqeust_db.init_skill[skill_count], template_data_ptr->InstSkills[i]))
 		//	{
-		//		//´´½¨½ÇÉ«Ê±ÉèÎª²»¿ÉÓÃ£¬ÓÉĞÂÊÖÒıµ¼£¨ÈÎÎñ£©¼¤»î
-		//		//ÏÂÃæ·ÏÆúÁË£¬ÒòÎªÔÚinitÊ±£¬µÈ¼¶ÏŞÖÆÎª0µÄ£¬¾ÍÊÇÒ»ÉÏÀ´²»¸øµÄ¼¼ÄÜÁË
+		//		//åˆ›å»ºè§’è‰²æ—¶è®¾ä¸ºä¸å¯ç”¨ï¼Œç”±æ–°æ‰‹å¼•å¯¼ï¼ˆä»»åŠ¡ï¼‰æ¿€æ´»
+		//		//ä¸‹é¢åºŸå¼ƒäº†ï¼Œå› ä¸ºåœ¨initæ—¶ï¼Œç­‰çº§é™åˆ¶ä¸º0çš„ï¼Œå°±æ˜¯ä¸€ä¸Šæ¥ä¸ç»™çš„æŠ€èƒ½äº†
 		//		//reqeust_db.init_skill[skill_count].data_ary[e_skill_info_activated] = 0;
 		//		++skill_count;
 		//	}
@@ -301,8 +301,8 @@ namespace faith
 		{
 			if (init_unit::init_skill_data(reqeust_db.init_skill[skill_count], template_data_ptr->AssistSkills[i], 1))
 			{
-				//´´½¨½ÇÉ«Ê±ÉèÎª²»¿ÉÓÃ£¬ÓÉĞÂÊÖÒıµ¼£¨ÈÎÎñ£©¼¤»î
-				//ÏÂÃæ·ÏÆúÁË£¬ÒòÎªÔÚinitÊ±£¬µÈ¼¶ÏŞÖÆÎª0µÄ£¬¾ÍÊÇÒ»ÉÏÀ´²»¸øµÄ¼¼ÄÜÁË
+				//åˆ›å»ºè§’è‰²æ—¶è®¾ä¸ºä¸å¯ç”¨ï¼Œç”±æ–°æ‰‹å¼•å¯¼ï¼ˆä»»åŠ¡ï¼‰æ¿€æ´»
+				//ä¸‹é¢åºŸå¼ƒäº†ï¼Œå› ä¸ºåœ¨initæ—¶ï¼Œç­‰çº§é™åˆ¶ä¸º0çš„ï¼Œå°±æ˜¯ä¸€ä¸Šæ¥ä¸ç»™çš„æŠ€èƒ½äº†
 				//reqeust_db.init_skill[skill_count].data_ary[e_skill_info_activated] = 0;
 				++skill_count;
 			}
@@ -316,7 +316,7 @@ namespace faith
 		}
 
 
-		//³õÊ¼»¯Òıµ¼
+		//åˆå§‹åŒ–å¼•å¯¼
 		faith::template_manager::template_type* table = template_manager::get_instance().get_templates(e_GuideTriggerTemplate);
 		if (nullptr == table)
 		{
@@ -453,7 +453,7 @@ namespace faith
 
 		client_session* old_session_ptr = client_session_mgr::getInstance().get_session(packet->account);
 		if (old_session_ptr != NULL)
-		{//ÓĞÕËºÅÒÑ¾­µÇÂ¼ÁË,¸ÉµôÇ°Ò»¸öµÇÂ½Õß,¼ÓÈëµ½µÈ´ıÁĞ±í
+		{//æœ‰è´¦å·å·²ç»ç™»å½•äº†,å¹²æ‰å‰ä¸€ä¸ªç™»é™†è€…,åŠ å…¥åˆ°ç­‰å¾…åˆ—è¡¨
 			if (old_session_ptr->m_status != client_session::e_ss_logout)
 			{
 				client_session_mgr::getInstance().kickout_account(old_session_ptr->m_client_uid, e_logout_result_replaced_by_new_login);
@@ -534,19 +534,19 @@ namespace faith
 
 		}
 
-		//loadÊÀ½çboss×´Ì¬
+		//loadä¸–ç•ŒbossçŠ¶æ€
 		world_boss_ws_mgr::get_instance().send_world_boss_all(session, false);
 
-		//loadÄ¤°İµñÏñµÄÊı¾İ
+		//loadè†œæ‹œé›•åƒçš„æ•°æ®
 		big_player_ws_mgr::get_instance().load_statue_by_ws_proc(session->get_role_guid());
 
-		//loadºì°ü
+		//loadçº¢åŒ…
 		red_package_ws_mgr::get_instance().send_info_to_one(session->get_role_guid());
 
-		//load³é½±ĞÅĞÄ
+		//loadæŠ½å¥–ä¿¡å¿ƒ
 		lucky_draw_record_ws_mgr::get_instance().send_record_all_to_req_player(session->get_role_guid());
 
-		//ÔØÈëws_info
+		//è½½å…¥ws_info
 		session->send_ws_info_all();
 
 	}

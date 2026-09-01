@@ -30,7 +30,7 @@ namespace faith
 		void send_treasure_notice(int32 item_id, int32 item_quality, int32 operate_type);
 	private:
 		std::list<s_treasure_record>	m_prize_record_list;
-		int32				m_unit_array_index;						// Ìì¸³ËùÊô½ÇÉ«
+		int32				m_unit_array_index;						// å¤©èµ‹æ‰€å±è§’è‰²
 	};
 }
 

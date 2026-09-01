@@ -1,9 +1,9 @@
 /********************************************************************
-created: 2019Äê7ÔÂ25ÈÕ
+created: 2019å¹´7æœˆ25æ—¥
 file base: oracle_trial_mgr
 file ext: h
 author: zhaoyuming
-purpose: ÌìÆôÊÔÁ¶
+purpose: å¤©å¯è¯•ç‚¼
 *********************************************************************/
 #ifndef _ORACLE_TRIAL_MGR_H
 #define _ORACLE_TRIAL_MGR_H
@@ -40,7 +40,7 @@ namespace faith
 		oracle_trial_play_info get_m_oracle_trial_info();
 
 		item_num_info get_drop_list_by_id(int32 drop_id);
-	//ÒÔÏÂº¯ÊıÊÇÖ±½Óµ÷ÓÃluaµÄº¯Êı
+	//ä»¥ä¸‹å‡½æ•°æ˜¯ç›´æ¥è°ƒç”¨luaçš„å‡½æ•°
 		int32 lua_get_comppingup_item_list();
 		int32 lua_get_stat_num_award(int32 tier_num, int32 reward_num);
 		void lua_map_game_over(int32 trial_num, int32 customs_num, int32 customs_state);

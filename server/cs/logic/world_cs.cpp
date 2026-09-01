@@ -132,7 +132,7 @@ namespace faith
 				{
 					temp_npc.set_owner_type(e_dropbox_owner_player);
 					temp_npc.set_owner(player_ptr->get_identifier());
-					temp_npc.set_item_id(temp_item_id);//ÉèÖÃµôÂäÎïÆ·id
+					temp_npc.set_item_id(temp_item_id);//è®¾ç½®æ‰è½ç‰©å“id
 					temp_npc.set_item_lock(lock_state);
 					temp_npc.set_spawn_point_id(0);
 					temp_npc.set_drop_npc_temp_id(drop_npc_temp_id);
@@ -163,11 +163,11 @@ namespace faith
 			return;
 		if (m_npc_template_ptr->NpcType == e_unit_type_monster && (m_npc_template_ptr->SubType == e_monster_type_boss || m_npc_template_ptr->SubType == e_monster_type_world_boss || m_npc_template_ptr->SubType == e_monster_type_gold_army))
 		{
-			//¿Û³ıÌôÕ½´ÎÊı²¢ÇÒ¼æ¹Ë»îÔ¾¶ÈµÈÊı¾İµÄĞŞ¸Ä
+			//æ‰£é™¤æŒ‘æˆ˜æ¬¡æ•°å¹¶ä¸”å…¼é¡¾æ´»è·ƒåº¦ç­‰æ•°æ®çš„ä¿®æ”¹
 			if (cost_time)
 				player_ptr->delete_boss_challenge_times_after_drop();
 
-			//bossµôÂäÈÕÖ¾
+			//bossæ‰è½æ—¥å¿—
 			server_log::boss_kill_drop_log(player_ptr->get_third_info(), player_ptr->get_unit_info_inst(), item_list, drop_npc_temp_id, player_ptr->get_login_type());
 
 			set_log_var(log_head);
@@ -658,7 +658,7 @@ namespace faith
 
 		//if (m_big_player_statue_index_array[big_type] > 0)
 		//{
-		//	//ÒÆ³ı¾ÉµñÏñ
+		//	//ç§»é™¤æ—§é›•åƒ
 		//	//del_npc(map_guid, m_big_player_statue_index_array[big_type], false);
 		//	unit_man::remove_npc(m_big_player_statue_index_array[big_type], false);
 		//	m_big_player_statue_index_array[big_type] = -1;
@@ -810,7 +810,7 @@ namespace faith
 				CONSOLE_INFO("create_harry_player_statue npc guid = {} big_type = {}", player_info.guid.server_64, big_type);
 			}
 		}
-		if (big_type >= e_fake_type_best_barserker && big_type < e_fake_type_max)//Í¨ÓÃ¸ù¾İÀàĞÍ´´½¨µñÏñÂß¼­£¬¿ÉÖ±½Óµ÷ÓÃ
+		if (big_type >= e_fake_type_best_barserker && big_type < e_fake_type_max)//é€šç”¨æ ¹æ®ç±»å‹åˆ›å»ºé›•åƒé€»è¾‘ï¼Œå¯ç›´æ¥è°ƒç”¨
 		{
 			auto map_cs_ptr = get_map_by_guid<map_cs>(map_guid);
 			if (nullptr == map_cs_ptr)
@@ -846,14 +846,14 @@ namespace faith
 			{
 				npc& last_unit_ref = unit_man::get_npc(m_pk_player_idex_array[map_line][big_type]);
 				if (last_unit_ref.is_valid() && init_unit::is_fake_player(last_unit_ref.get_unit_type(), last_unit_ref.get_unit_sub_type())
-					&& last_unit_ref.get_npc_template_id() == npc_spawn_ptr->TemplateId)//·ÀÖ¹ÎóÉ¾
+					&& last_unit_ref.get_npc_template_id() == npc_spawn_ptr->TemplateId)//é˜²æ­¢è¯¯åˆ 
 				{
 					unit_man::remove_npc(m_pk_player_idex_array[map_line][big_type], false);
 				}
 				m_pk_player_idex_array[map_line][big_type] = -1;
 			}
 			s_fake_player_info fake_player_info = player_info;
-			if (!player_info.guid.is_valid())//²»´æÔÚÍæ¼Ò£¬´´½¨ÆÕÍ¨NPC
+			if (!player_info.guid.is_valid())//ä¸å­˜åœ¨ç©å®¶ï¼Œåˆ›å»ºæ™®é€šNPC
 			{
 				if (npc_spawn_ptr->SpawnRate < 0)
 				{
@@ -867,7 +867,7 @@ namespace faith
 				if (npc_template_ptr->NpcType == e_unit_type_monster
 					&& init_unit::is_world_boss(npc_template_ptr->SubType))
 				{
-					//ÊÀ½çBossÉ¶µÄ¹éWSÉÏµÄÄ³¸ö¹ÜÀíÆ÷´¦Àí
+					//ä¸–ç•ŒBosså•¥çš„å½’WSä¸Šçš„æŸä¸ªç®¡ç†å™¨å¤„ç†
 					return;
 				}
 

@@ -1,5 +1,5 @@
 /********************************************************************
-created:	2016Äê12ÔÂ12ÈÕ12:54:24
+created:	2016å¹´12æœˆ12æ—¥12:54:24
 file base:	msgproc_mail_ws
 file ext:	cpp
 author:		zhy
@@ -72,7 +72,7 @@ namespace faith
 		int32 receiver_total_count = 0;
 		for (int32 i = 0; i < data_num && i < red_package_total_num; i++)
 		{
-			//½«´Ëºì°üÖĞµÄ¸÷¸öÁì½±ÈË´æµµ
+			//å°†æ­¤çº¢åŒ…ä¸­çš„å„ä¸ªé¢†å¥–äººå­˜æ¡£
 			int32 reveiver_len = data_list[i].info_list_size() - 1;
 			if (reveiver_len > red_package_max_receiver_num)
 			{
@@ -118,7 +118,7 @@ namespace faith
 
 	void load_red_package_receiver_by_sql_lua(uint32 connindex, int64 role_guid)
 	{
-		//Ã»ÓĞÈÎºÎĞÅÏ¢£¬Ö±½Óload
+		//æ²¡æœ‰ä»»ä½•ä¿¡æ¯ï¼Œç›´æ¥load
 		sql_builder receiver_info_sql(db_manager::getInstance().get_db_link().game_db);
 		receiver_info_sql << _XTEXT("call sp_redpack_receiver_load(") << role_guid << ");";
 		db_query_type query;

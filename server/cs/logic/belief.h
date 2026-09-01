@@ -1,9 +1,9 @@
-/********************************************************************
+ï»¿/********************************************************************
 created: 2016/4/21 
 created: 21:4:2016 16:57:56
 file base: belief
 file ext: h
-author: W.H.B.A.(Íõ»Æ²©°º)
+author: W.H.B.A.(ç‹é»„åšæ˜‚)
 
 purpose: about role's belief
 *********************************************************************/
@@ -21,25 +21,25 @@ namespace faith
 		cbelief(void);
 		~cbelief(void);
 	public:											
-		void										heart_tick(const int64& new_time);																	//
-		void										clear_data();																					//Çå¿ÕĞÅÑöÊı¾İ
+		void										heart_tick(const int64& new_time);
+		void										clear_data();																					//æ¸…ç©ºä¿¡ä»°æ•°æ®
 		int32										get_belief_ins_data(int32 eIndex);																			// get belief data
 
 	public:
-		const s_belief_info&						get_belief_inst() const { return m_belief_data; }												//»ñÈ¡ÊµÀıÊı¾İ	
-		void										set_belief_data(const s_belief_info& belief_data);												//ÉèÖÃÈ«²¿ÊµÀıĞÅÏ¢
+		const s_belief_info&						get_belief_inst() const { return m_belief_data; }												//è·å–å®ä¾‹æ•°æ®	
+		void										set_belief_data(const s_belief_info& belief_data);												//è®¾ç½®å…¨éƒ¨å®ä¾‹ä¿¡æ¯
 
-		int32										get_data_info(int32 eIndex) const { return m_belief_data.data_ary[eIndex]; }				//»ñÈ¡ÊµÀıÊı¾İ
-		void										set_data_info(int32 eIndex, int32 iValue) { m_belief_data.data_ary[eIndex] = iValue; }		//ÉèÖÃµ¥ÏîÊµÀıÊı¾İ
+		int32										get_data_info(int32 eIndex) const { return m_belief_data.data_ary[eIndex]; }				//è·å–å®ä¾‹æ•°æ®
+		void										set_data_info(int32 eIndex, int32 iValue) { m_belief_data.data_ary[eIndex] = iValue; }		//è®¾ç½®å•é¡¹å®ä¾‹æ•°æ®
 
-		BeliefTemplate*								get_belief_info_ptr() const { return m_belief_info_ptr; }										//Ä£°åÖ¸Õë
+		BeliefTemplate*								get_belief_info_ptr() const { return m_belief_info_ptr; }										//æ¨¡æ¿æŒ‡é’ˆ
 		void										refresh_template();
 	public:
 		int32										get_buff_id();
 
 	private:
-		s_belief_info								m_belief_data;						// Å®ÉñÊµÀıÊı¾İ	
-		BeliefTemplate*								m_belief_info_ptr;					// Å®ÉñÄ£°åÊı¾İÖ¸Õë,¼õÉÙÑ°ÕÒÖ¸Õë²Ù×÷ÊıÁ¿
+		s_belief_info								m_belief_data;						// å¥³ç¥å®ä¾‹æ•°æ®	
+		BeliefTemplate*								m_belief_info_ptr;					// å¥³ç¥æ¨¡æ¿æ•°æ®æŒ‡é’ˆ,å‡å°‘å¯»æ‰¾æŒ‡é’ˆæ“ä½œæ•°é‡
 	};
 }
 

@@ -1,4 +1,4 @@
-/*@@
+ï»¿/*@@
 
 	Copyright (c) Beijing Second Laboratory Game Studio. All rights reserved. 
 	
@@ -19,9 +19,7 @@
 #define _GAME_MGR_H_
 
 //////////////////////////////////////////////////////////////////////////
-//
 //	File Include
-//
 //////////////////////////////////////////////////////////////////////////
 #include <common/singleton.hpp>
 #include <net/net_server_mgr.hpp>
@@ -30,9 +28,7 @@
 using namespace faith::net;
 
 //////////////////////////////////////////////////////////////////////////
-//
 //	Class Declare
-//
 //////////////////////////////////////////////////////////////////////////
 namespace faith
 {
@@ -88,8 +84,8 @@ namespace faith
 		std::map<int32, int32> m_all_server_flag_end_map;
 		std::set<int32> m_all_server_id_arr;
 
-		std::map<std::string, std::vector<int32>> m_all_server_msg_with_ip;//¸ù¾İIPĞÅÏ¢»®·Ö²»Í¬·şÎñÆ÷£¬ÓÃÓÚ´¦ÀíreloadcsvÒÀ´Î¼ÓÔØ
-		std::map<std::string, std::vector<int32>> m_cur_server_msg_with_ip;//µ±´ÎÊ£Óà·şÎñÆ÷
+		std::map<std::string, std::vector<int32>> m_all_server_msg_with_ip;//æ ¹æ®IPä¿¡æ¯åˆ’åˆ†ä¸åŒæœåŠ¡å™¨ï¼Œç”¨äºå¤„ç†reloadcsvä¾æ¬¡åŠ è½½
+		std::map<std::string, std::vector<int32>> m_cur_server_msg_with_ip;//å½“æ¬¡å‰©ä½™æœåŠ¡å™¨
 		int64	m_begin_reload_csv_time;
 
 		int32	m_gate_server_id;

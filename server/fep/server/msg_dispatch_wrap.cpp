@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2014/06/05
 	created:	5:6:2014   14:30
 	file base:	msg_dispatch_wrap
@@ -103,7 +103,6 @@ namespace faith
 	}
 	bool message_from_server_dispatcher::init()
 	{
-		// ��ʼ��������Ϣ
 
 		REGISTER_MESSAGE_S2S(e_msg_index_rep_login, boost::bind(&fep_client::internal_rep_login, &fep_client::getInstance(), _1, _2, _3));
 		REGISTER_MESSAGE_S2S(e_msg_index_req_stop, boost::bind(&fep_client::internal_rep_stop, &fep_client::getInstance(), _1, _2, _3));
@@ -120,7 +119,6 @@ namespace faith
 		REGISTER_MESSAGE_S2S(e_msgindex_ls2fep_create_character, ls2fep_rep_client_create_char);
 		REGISTER_MESSAGE_S2S(e_msgindex_s2c_del_char, ls2fep_rep_client_del_char);
 
-		// ע����Ϣ��������, ������Ϣ
 		// ------------------------------------------login system---------------------------------------------
 		REGISTER_MESSAGE_C2S(e_msgindex_c2fep_ping, c2fep_ping);
 		REGISTER_MESSAGE_C2S(e_msgindex_c2s_logout, c2fep_logout);
@@ -782,7 +780,6 @@ namespace faith
 		REGISTER_MESSAGE_S2C(e_mgsindex_s2c_legion_pdate_legion_member_gs_value);
 		REGISTER_MESSAGE_S2C(e_mgsindex_s2c_legion_pdate_legion_member_contribution);
 		
-		// ���Ųֿ�
 		REGISTER_MESSAGE_C2WS(e_msgindex_c2s_get_legion_warehouse_item_info);
 		REGISTER_MESSAGE_S2C(e_msgindex_s2c_get_legion_warehouse_item_info_end);
 		REGISTER_MESSAGE_C2CS(e_msgindex_c2s_operation_legion_warehouse_item);

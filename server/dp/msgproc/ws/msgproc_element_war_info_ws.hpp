@@ -1,9 +1,9 @@
 /***********************************************
-* created	: 2020Äê8ÔÂ20ÈÕ
+* created	: 2020å¹´8æœˆ20æ—¥
 * file base : msgproc_element_war_info_ws
 * file ext  : hpp
-* author    : ÕÔÓñÃ÷
-* purpose   : ÔªËØÕù°Ô
+* author    : èµµç‰æ˜
+* purpose   : å…ƒç´ äº‰éœ¸
 ************************************************/
 
 #ifndef _MSGPROC_ELEMENT_WAR_INFO_WS_HPP
@@ -17,23 +17,23 @@
 
 namespace faith
 {
-	//¼ÓÔØÍæ¼ÒĞÅÏ¢
+	//åŠ è½½ç©å®¶ä¿¡æ¯
 	void Load_element_war_load_info(uint32 connindex, const void *data_ptr, size_t data_len);
 	void Load_element_war_load_info_end(db_result_type result, uint32 connindex, int32 cur_num);
 
-	//Ìí¼ÓÍæ¼Ò
+	//æ·»åŠ ç©å®¶
 	void save_element_war_add_role_info(uint32 connindex, const void *data_ptr, size_t data_len);
-	//¸üĞÂÍæ¼Ò»ı·ÖĞÅÏ¢
+	//æ›´æ–°ç©å®¶ç§¯åˆ†ä¿¡æ¯
 	void save_element_war_update_info(uint32 connindex, const void *data_ptr, size_t data_len);
-	//Ë¢ĞÂÈü¼¾ĞÅÏ¢
+	//åˆ·æ–°èµ›å­£ä¿¡æ¯
 	void save_element_war_refresh_season_info(uint32 connindex, const void *data_ptr, size_t data_len);
-	//¸üĞÂÍæ¼Ò»ù´¡ĞÅÏ¢
+	//æ›´æ–°ç©å®¶åŸºç¡€ä¿¡æ¯
 	void save_element_war_update_role_info(uint32 connindex, const void *data_ptr, size_t data_len);
-	//¸üĞÂÍæ¼ÒÃ¿ÈÕĞÅÏ¢
+	//æ›´æ–°ç©å®¶æ¯æ—¥ä¿¡æ¯
 	void save_element_war_refresh_ticket_info(uint32 connindex, const void *data_ptr, size_t data_len);
-	//¸üĞÂÍæ¼ÒÈÎÎñĞÅÏ¢
+	//æ›´æ–°ç©å®¶ä»»åŠ¡ä¿¡æ¯
 	void save_element_war_refresh_mission_info(uint32 connindex, const void *data_ptr, size_t data_len);
-	//É¾³ıÍæ¼ÒÈÎÎñĞÅÏ¢
+	//åˆ é™¤ç©å®¶ä»»åŠ¡ä¿¡æ¯
 	void save_element_war_refresh_clear_mission_info(uint32 connindex, const void *data_ptr, size_t data_len);
 
 	void ws2dp_element_war_common_end(db_result_type result, uint32 connindex);

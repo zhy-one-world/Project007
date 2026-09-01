@@ -1,4 +1,4 @@
-#include "red_package_ws_mgr.h"
+﻿#include "red_package_ws_mgr.h"
 #include "utility/cs_date.hpp"
 #include "utility/init_unit.h"
 #include "template/StringConst_S.h"
@@ -130,7 +130,6 @@ namespace faith
 			suit_solt = get_oldest_red_package_slot();
 			if (suit_solt != -1 && red_package_arr[suit_solt] != nullptr)
 			{
-				//ɾ�����ȷ��ĺ��
 				character_proto_del_red_package msg;
 				msg.add_red_package_guid(red_package_arr[suit_solt]->get_guid().A);
 				msg.add_red_package_guid(red_package_arr[suit_solt]->get_guid().B);
@@ -245,7 +244,7 @@ namespace faith
 			return;
 		}
 		if (red_package_arr[target_index]->get_remain_times() <= 0)
-		{//��������£��Ҳ���������Ӧ���Ǻ���Ѿ����걻ɾ�ˣ����ÿ��Ǵ��˸���GUID�����
+		{
 			ws2cs_get_red_package_end msg;
 			msg.receiver_guid = role_guid;
 			msg.get_result = e_red_bag_alread_done;
@@ -287,7 +286,6 @@ namespace faith
 		if (draw_num > 0)
 		{
 			//send_info_to_all(target_index);
-			//����ȫ���ˣ�ȫ���Ļ����ᷢ�����ѳ�ȡ�˽϶��ʱ�򣬰����ϴ������
 			send_new_draw_info(target_index, role_guid, role_name, draw_num);
 
 			ws2cs_get_red_package_end msg;
@@ -596,7 +594,7 @@ namespace faith
 			red_package_ws_ptr->set_base_info(data_list[i]);
 
 			if (data_list[i].remain_times > 0)
-			{//���ܳ��Ҫload�齱����Ϣ���Ѿ����ģ��Ȳ�load��������Ҫ����load
+			{
 				load_receiver_by_db(data_list[i].red_package_guid);
 			}
 		}
@@ -612,7 +610,6 @@ namespace faith
 		{
 			return;
 		}
-		//����ͬһ������� ��ȡ�ˣ������guid��Ӧ��һ���������һ������
 		guid_64 red_package_guid = data_list[0].red_package_guid;
 		int32 target_index = find_package_index(red_package_guid);
 		if (target_index < 0

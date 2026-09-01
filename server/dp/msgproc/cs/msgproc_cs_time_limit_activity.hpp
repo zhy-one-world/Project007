@@ -13,7 +13,7 @@
 
 namespace faith
 {
-	//限时活动
+	//闄愭椂娲诲姩
 	void cs2dp_req_load_char_time_limit_activity_info(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index);
 	void cs2dp_req_load_char_time_limit_activity_info_end(db_result_type result, uint32 connindex, const guid_64& role_guid, const int32& unit_array_index);
 	void cs2dp_req_save_char_time_limit_activity_info(uint32 connindex, const void* data_ptr, size_t data_len);

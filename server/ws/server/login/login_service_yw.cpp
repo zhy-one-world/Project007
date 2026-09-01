@@ -22,7 +22,7 @@ purpose:
 #include "server_log_msg.hpp"
 namespace faith
 {
-	const xstring sdk_password = "googlesdk";		// ¹Ì¶¨ÃÜÂë
+	const xstring sdk_password = "googlesdk";		// å›ºå®šå¯†ç 
 
 	void login_service_yw::tick(float deltaseconds)
 	{
@@ -38,7 +38,7 @@ namespace faith
 
 		xstring sdk_url = SERVERCONFIG->login_url;
 
-		// ×Ô¶¨ÒåÇëÇóÍ·
+		// è‡ªå®šä¹‰è¯·æ±‚å¤´
 		std::vector<xstring> head_list;
 		head_list.push_back("GAME-ID:"+ SERVERCONFIG->app_key);
 		head_list.push_back("CHANNEL:" + proto_data.sdk_data().channel_id());
@@ -58,7 +58,7 @@ namespace faith
 			CONSOLE_INFO("{}", head_list[i].c_str());
 		}
 		CONSOLE_INFO("{}", post_content.c_str());
-		// Òì²½ÇëÇó
+		// å¼‚æ­¥è¯·æ±‚
 		http_access_mgr::get_instance().async_request
 		(
 			client_uid,
@@ -135,7 +135,7 @@ namespace faith
 					return false;
 				}
 
-				// ½âÎödataÊı¾İ
+				// è§£ædataæ•°æ®
 				if (value.empty()
 					|| value["code"].isNull() || value["code"].empty() || !value["code"].isInt()
 					|| value["data"].isNull() || value["data"].empty() || !value["data"].isObject()
@@ -169,11 +169,11 @@ namespace faith
 				memset(ban_chat_array, 0, sizeof(ban_chat_array));
 				//Json::Value& ban_role = data_value["banRoles"];
 				//Json::Value& ban_chat = data_value["banChats"];
-				// ¼ì²éµÇÂ½×´Ì¬
+				// æ£€æŸ¥ç™»é™†çŠ¶æ€
 				if (account.size() > 0)
 				{
 					//CONSOLE_INFO("sdk read json data : " << json_data.c_str() << " ," << time_helper::get_current_time() << " , " << faith::utility::get_tick_count());
-					// ´æÅÌ
+					// å­˜ç›˜
 					save_account(account, json_data, client_uid, ban_role_array, ban_chat_array);
 					return true;
 				}
@@ -235,7 +235,7 @@ namespace faith
 			memcpy(request.ban_role_array, ban_role_array, sizeof(request.ban_role_array));
 			memcpy(request.ban_chat_array, ban_chat_array, sizeof(request.ban_chat_array));
 			ws_client::getInstance().send_to_dp(&request, sizeof(request));
-			//loginÈÕÖ¾
+			//loginæ—¥å¿—
 			//server_log::login_role_log(login_data->server_id(),
 			//	login_data->sdk_data().app_key(),
 			//	login_data->client_version(),

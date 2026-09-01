@@ -16,18 +16,18 @@ namespace faith
 			static assist_fight_mgr instance;
 			return instance;
 		}
-		void start_assist_fight(const s_assist_fight_info & m_in_info);//Õ‚
-		void req_assist_fight_end(guid_64 assist_fight_guid, guid_64 role_guid, bool check_result);//Õ‚
-		void cancel_assist_fight(int32 cancel_type, guid_64 assist_fight_guid, guid_64 role_guid);//Õ‚
-		void sync_assist_fight_info(guid_64 role_guid, bool is_login = false, guid_64 create_guid = guid_64()); //Õ‚
+		void start_assist_fight(const s_assist_fight_info & m_in_info);//Â§ñ
+		void req_assist_fight_end(guid_64 assist_fight_guid, guid_64 role_guid, bool check_result);//Â§ñ
+		void cancel_assist_fight(int32 cancel_type, guid_64 assist_fight_guid, guid_64 role_guid);//Â§ñ
+		void sync_assist_fight_info(guid_64 role_guid, bool is_login = false, guid_64 create_guid = guid_64()); //Â§ñ
 		void broadcast_to_server();
 		void broadcast_to_legion(guid_64 legion_guid, guid_64 create_guid = guid_64());
 		void sync_assist_fight_info_to_cs(guid_64 role_guid, guid_64 assist_fight_guid);
-		void req_assist_fight(guid_64 role_guid, guid_64 assist_fight_guid); //Õ‚
+		void req_assist_fight(guid_64 role_guid, guid_64 assist_fight_guid); //Â§ñ
 		bool check_can_assist_fight(guid_64 role_guid, int32 assist_fight_tag, int32 map_template_id, guid_64 map_guid);
-		void sync_assist_fight_info_to_cs_login(guid_64 role_guid); //Õ‚
-		void check_assist_fight_legion_team(guid_64 role_guid); //Õ‚
-		void on_player_logout(guid_64 role_guid);//Õ‚
+		void sync_assist_fight_info_to_cs_login(guid_64 role_guid); //Â§ñ
+		void check_assist_fight_legion_team(guid_64 role_guid); //Â§ñ
+		void on_player_logout(guid_64 role_guid);//Â§ñ
 
 		void send_create_assist_fight_notic(const s_assist_fight_info & m_in_info);
 	public:

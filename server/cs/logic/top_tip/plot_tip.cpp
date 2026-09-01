@@ -59,8 +59,8 @@ namespace faith
 		{
 			if (index >= max_plot_tip_entry_num)
 			{
-				// Èç¹û½øÈëÁËÕâ¸ö·ÖÖ§¾ÍËµÃ÷±í¸ñÖĞµÄÊı¾İÌ«¶àÁË,Ä¿Ç°Ã¿¸öplot_tip×î¶àÖ§³ÖÌáÊ¾5¶Î¾çÇéÎÄ×Ö,
-				// Èç¹ûÏëÒªÈÃÖ§³ÖµÄÊıÄ¿¸ü¶à,Ö»Ğè½«max_plot_tip_entry_numµÄÖµ¸Ä´ó¼´¿É.
+				// å¦‚æœè¿›å…¥äº†è¿™ä¸ªåˆ†æ”¯å°±è¯´æ˜è¡¨æ ¼ä¸­çš„æ•°æ®å¤ªå¤šäº†,ç›®å‰æ¯ä¸ªplot_tipæœ€å¤šæ”¯æŒæç¤º5æ®µå‰§æƒ…æ–‡å­—,
+				// å¦‚æœæƒ³è¦è®©æ”¯æŒçš„æ•°ç›®æ›´å¤š,åªéœ€å°†max_plot_tip_entry_numçš„å€¼æ”¹å¤§å³å¯.
 				CONSOLE_ERROR("plot_tip::init(): index:{} max_plot_tip_entry_num:{}", index, max_plot_tip_entry_num);
 				return false;
 			}

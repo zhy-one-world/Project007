@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2019Äê4ÔÂ4ÈÕ12:59:26
+	created:	2019å¹´4æœˆ4æ—¥12:59:26
 	file base:	msgproc_cross_server_harry_ws
 	file ext:	cpp
 	author:		zhangshuo
@@ -14,7 +14,7 @@ namespace faith
 {
 	void save_cross_server_harry_ws_info_lua(uint32 connindex, int32 server_id, int32 server_money, int32 special_money, int64 first_player_guid, int64 second_player_guid, int64 third_player_guid, xstring first_player_name)
 	{
-		int32 init_special_money = 0;//ÌØÊâ²É¼¯²»´æ¿â
+		int32 init_special_money = 0;//ç‰¹æ®Šé‡‡é›†ä¸å­˜åº“
 		if ( server_id <= 0)
 		{
 			return;

@@ -1,5 +1,5 @@
 /********************************************************************
-  created: 2016Äê6ÔÂ2ÈÕ14:00:55
+  created: 2016å¹´6æœˆ2æ—¥14:00:55
   file base: att_msg
   file ext: hpp
   author: zhy
@@ -22,7 +22,7 @@ namespace faith
 		e_msgindex_cs2dp_save_char_att,
 	};
 
-	// DP2CS ·ÖÅú·¢ËÍÍæ¼ÒµÄËùÓĞÎïÆ·ĞÅÏ¢
+	// DP2CS åˆ†æ‰¹å‘é€ç©å®¶çš„æ‰€æœ‰ç‰©å“ä¿¡æ¯
 	struct dp2cs_load_char_att : public faith::packet_base
 	{
 		guid_64							role_guid;

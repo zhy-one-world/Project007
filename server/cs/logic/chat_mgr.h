@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê9ÔÂ6ÈÕ13:56:28
+created: 2016å¹´9æœˆ6æ—¥13:56:28
 file base: chat_mgr
 file ext: h
 author: lxy
@@ -43,11 +43,11 @@ namespace faith
 		void send_chat_new(e_chat_content_info* chat_content_array, int32 chat_content_num, std::string common_string,int32 chat_type, guid_64 addressee_guid);
 		void send_failed_process(int32 send_result, int32 chat_type);
 		
-		void masking_word_check(std::string& temp_text);		//ÆÁ±Î×ÖÌæ»»
-		bool is_had_special_word(std::string& temp_text);		//ÌØÊâ×Ö·û¼ì²é
+		void masking_word_check(std::string& temp_text);		//å±è”½å­—æ›¿æ¢
+		bool is_had_special_word(std::string& temp_text);		//ç‰¹æ®Šå­—ç¬¦æ£€æŸ¥
 		void forbidden_word_check(e_chat_content_info* chat_info_ary, int32 chat_content_num); // forbidden word check
 		
-		bool is_ban_speech();									//ÊÇ·ñ±»½ûÑÔ
+		bool is_ban_speech();									//æ˜¯å¦è¢«ç¦è¨€
 	private:
 		void check_forbidden_and_reconstruct(std::string& str_to_be_checked, const std::vector<int32>& chat_composition, e_chat_content_info* chat_content_ary); // called inside forbidden_word_check
 

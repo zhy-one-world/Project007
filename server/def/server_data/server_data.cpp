@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2017Äê11ÔÂ23ÈÕ19:36:39
+	created:	2017å¹´11æœˆ23æ—¥19:36:39
 	file base:	server_data
 	file ext:	cpp
 	author:		zhy
@@ -45,7 +45,7 @@ namespace faith
 		}
 		return -1;
 	}
-	/// Ê±¼ä×ª»»
+	/// æ—¶é—´è½¬æ¢
 	int64 server_data::file_time_2_utc(const FILETIME* ftime)
 	{
 		LARGE_INTEGER li;
@@ -54,7 +54,7 @@ namespace faith
 		li.HighPart = ftime->dwHighDateTime;
 		return li.QuadPart;
 	}
-	/// »ñµÃCPUµÄºËÊı
+	/// è·å¾—CPUçš„æ ¸æ•°
 	int server_data::get_processor_number()
 	{
 		SYSTEM_INFO info;
@@ -63,9 +63,9 @@ namespace faith
 	}
 	double server_data::get_cpu_usage()
 	{
-		//cpuÊıÁ¿
+		//cpuæ•°é‡
 		static int processor_count_ = -1;
-		//ÉÏÒ»´ÎµÄÊ±¼ä
+		//ä¸Šä¸€æ¬¡çš„æ—¶é—´
 		static int64_t last_time_ = 0;
 		static int64_t last_system_time_ = 0;
 
@@ -90,7 +90,7 @@ namespace faith
 
 		if (!GetProcessTimes(GetCurrentProcess(), &creation_time, &exit_time, &kernel_time, &user_time))
 		{
-			// We don¡¯t assert here because in some cases (such as in the TaskManager)
+			// We donâ€™t assert here because in some cases (such as in the TaskManager)
 			// we may call this function on a process that has just exited butwe have
 			// not yet received the notification.
 			return -1;

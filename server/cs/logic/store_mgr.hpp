@@ -1,5 +1,5 @@
  /********************************************************************
-created: 2016Äê7ÔÂ4ÈÕ13:56:28
+created: 2016å¹´7æœˆ4æ—¥13:56:28
 file base: store_mgr
 file ext: hpp
 author: zhangminghai
@@ -14,8 +14,8 @@ purpose: about store system's store_mgr
 namespace faith
 {
 	class goods_proto_update_store_goods;
-	typedef	std::vector<int32>    fresh_vec;//Ë¢ĞÂÊı×é
-	typedef std::map<int32, fresh_vec>  fresh_map;//ÉÌµêË¢ĞÂmap
+	typedef	std::vector<int32>    fresh_vec;//åˆ·æ–°æ•°ç»„
+	typedef std::map<int32, fresh_vec>  fresh_map;//å•†åº—åˆ·æ–°map
 
 	class store_mgr
 	{
@@ -29,7 +29,7 @@ namespace faith
 			return s_store_mgr;
 		}
 	public:
-		void							init_manager();	//³õÊ¼»¯¹ÜÀí
+		void							init_manager();	//åˆå§‹åŒ–ç®¡ç†
 		void							heart_tick(const int64& new_time);
 		void							load_good_from_db();
 		void							save_goods_to_db(int32 save_type);
@@ -130,24 +130,24 @@ namespace faith
 	public:
 		player_store_helper() { m_unit_array_index = 0; clear_data(); }
 		~player_store_helper() {}
-		void							heart_tick(const int64& new_time);			//ĞÄÌø¹ÜÀí
+		void							heart_tick(const int64& new_time);			//å¿ƒè·³ç®¡ç†
 		void							set_player_ptr(const int32& unit_index) { m_unit_array_index = unit_index; }
 		void							clear_data();
 		s_store_goods*					get_empty_store_goods();
 		s_store_goods*					get_store_goods_by_id(const int32& store_id);
 		cgoods*							get_goods_by_id(const int32& store_id, const int32& goods_id);
-	//	void							update_goods_list();					//¸üĞÂÉÌÆ·ÁĞ±í
-	//	void							update_goods_info(int32 goods_id);		//¸üĞÂÉÌÆ·ĞÅÏ¢
+	//	void							update_goods_list();					//æ›´æ–°å•†å“åˆ—è¡¨
+	//	void							update_goods_info(int32 goods_id);		//æ›´æ–°å•†å“ä¿¡æ¯
 		bool                            can_buy(int32 goods_id, int32 store_id);
-		int32							can_buy_num(int32 goods_id,int32 store_id );			//// 0±íÊ¾ÊÇ²»¿É¹ºÂò ; <0 ±íÊ¾¿ÉÎŞÏŞ¹ºÂò ;>0 ±íÊ¾Êµ¼Ê¿É¹ºÂòµÄÊıÁ¿
-		void							add_buy_info(int32 goods_id, int32 goods_num, int32 store_id);		//	Ìí¼Ó¹ºÂò¼ÇÂ¼
-		std::vector<int32>				get_cost_of_goods(int32 goods_id, int32 goods_num);	//»ñÈ¡¹ºÂòĞèÒªµÄ½ğ¶î
+		int32							can_buy_num(int32 goods_id,int32 store_id );			//// 0è¡¨ç¤ºæ˜¯ä¸å¯è´­ä¹° ; <0 è¡¨ç¤ºå¯æ— é™è´­ä¹° ;>0 è¡¨ç¤ºå®é™…å¯è´­ä¹°çš„æ•°é‡
+		void							add_buy_info(int32 goods_id, int32 goods_num, int32 store_id);		//	æ·»åŠ è´­ä¹°è®°å½•
+		std::vector<int32>				get_cost_of_goods(int32 goods_id, int32 goods_num);	//è·å–è´­ä¹°éœ€è¦çš„é‡‘é¢
 		void							create_record_by_inst(const s_goods_info& goods_info);
 		cgoods							create_goods_by_template(int32 goods_id, int32 store_id);
 		void							load_purchase_record_from_db(const s_goods_info* goods_data, int32 goods_num);
 		bool                            load_purchase_record_by_db_lua(const char *data_ptr, int32 data_len);
 		void							save_purchase_record_to_db(int32 save_type);
-		void							update_record(bool is_send, int32 update_type);		// Ë¢ĞÂ
+		void							update_record(bool is_send, int32 update_type);		// åˆ·æ–°
 		void							send_store_goods_record_all();
 		void							send_server_open_time();
 		void							remove_record_by_goods_id(int32 goods_id, int32 store_id);

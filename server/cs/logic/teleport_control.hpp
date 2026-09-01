@@ -20,8 +20,8 @@ namespace faith
 {
 	enum e_transfer_type
 	{
-		e_transfer_type_login,//µÇÂ¼
-		e_transfer_type_scene//³¡¾°¼ä
+		e_transfer_type_login,//ç™»å½•
+		e_transfer_type_scene//åœºæ™¯é—´
 	};
 	struct teleport_param
 	{
@@ -59,11 +59,11 @@ namespace faith
 		void 						set_player_ptr(player* player_ptr) { m_player_ptr = player_ptr; }
 		void						clear_data();
 		/************************************************************************/
-		/*                              ´«ËÍ²Ù×÷                                */
+		/*                              ä¼ é€æ“ä½œ                                */
 		/************************************************************************/
 		void                        teleport_by_template(int32 map_tempate_id, int32 line_id, int32 group_id, guid_64& map_guid, int32 war_index);
-        void                        teleport_by_template_pos(int32 map_tempate_id, int32 line_id, s_map_pos& teleport_pos, guid_64 map_guid);//ÓÃÓÚÌØÊâµÄ´«ËÍĞèÇó,±ÈÈç»Ø³Ç¸´»î.//Steven.Han
-		void 						teleport_to_local(const s_map_pos& map_pos, bool send_client = true); //±¾µØÍ¼´«ËÍ
+        void                        teleport_by_template_pos(int32 map_tempate_id, int32 line_id, s_map_pos& teleport_pos, guid_64 map_guid);//ç”¨äºç‰¹æ®Šçš„ä¼ é€éœ€æ±‚,æ¯”å¦‚å›åŸå¤æ´».//Steven.Han
+		void 						teleport_to_local(const s_map_pos& map_pos, bool send_client = true); //æœ¬åœ°å›¾ä¼ é€
 		bool 						is_teleport_to_same_map(guid_64& map_guid, int32 map_template_id, int32 line_id);
 		void						re_teleport_to_local();
 
@@ -74,7 +74,7 @@ namespace faith
 			
 		s_map_pos					get_random_map_pos(std::vector<int32> map_location_arr);
 		/************************************************************************/
-		/*							 ÓÃÓÚ¸±±¾ÖĞÇ¿ÖÆÍË³ö                         */
+		/*							 ç”¨äºå‰¯æœ¬ä¸­å¼ºåˆ¶é€€å‡º                         */
 		/************************************************************************/
 		void 						teleport_world_update				(uint32 elapse_time);
 		void 						teleport_world						(uint32 delay_time);

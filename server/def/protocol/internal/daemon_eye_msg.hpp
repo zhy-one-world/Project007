@@ -147,14 +147,14 @@ namespace faith
 		g2e_ExeSysCmd_done,
 		g2e_ExeSysCmd_busy,
 		g2e_ExeSysCmd_result,
-		//--> ZhangZe Edit Start [2010/12/28] for 角色数据导出
+		//--> ZhangZe Edit Start [2010/12/28] for 瑙掕壊鏁版嵁瀵煎嚭
 		g2e_Role_Export_err,
 		g2e_Role_Import_err,
 		//<-- ZhangZe Edit End [2010/12/28]
-		//--> ZhangZe Edit Start [2011/3/21] for 删除角色恢复
+		//--> ZhangZe Edit Start [2011/3/21] for 鍒犻櫎瑙掕壊鎭㈠
 		g2e_recover_role_err,
 		//<-- ZhangZe Edit End [2011/3/21]
-		// --> xiaojiaquan Edit Start [7/1/2011] for 数据清洗
+		// --> xiaojiaquan Edit Start [7/1/2011] for 鏁版嵁娓呮礂
 		g2e_compiledataclean_bussy,
 		g2e_compilecreatethread_err,
 		g2e_compiledataclean_err,

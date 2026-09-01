@@ -258,7 +258,7 @@ void item_sprite_system::equip_on_sprite(player* player_ptr, Entity* item_ent, i
 
 	auto sprite_template_ptr = item_sprite_cp->m_sprite_template;
 
-	//±»¶¯¼¼ÄÜ
+	//è¢«åŠ¨æŠ€èƒ½
 	for (auto& it : sprite_template_ptr->StarBuffId)
 	{
 		if (it > 0)
@@ -309,7 +309,7 @@ void item_sprite_system::equip_off_sprite(player* player_ptr, Entity* item_ent, 
 
 	auto sprite_template_ptr = item_sprite_cp->m_sprite_template;
 
-	//±»¶¯¼¼ÄÜ
+	//è¢«åŠ¨æŠ€èƒ½
 	for (auto& it : sprite_template_ptr->StarBuffId)
 	{
 		if (it > 0)

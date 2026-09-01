@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2015Äê7ÔÂ24ÈÕ14:18:14
+	created:	2015å¹´7æœˆ24æ—¥14:18:14
 	file base:	msgproc_att
 	file ext:	hpp
 	author:		zhy
@@ -15,7 +15,7 @@
 
 namespace faith
 {
-	//½ÇÉ«×°±¸
+	//è§’è‰²è£…å¤‡
 	void cs2dp_req_load_char_att(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index);
 	void cs2dp_req_load_char_att_end(db_result_type result, uint32 connindex, const guid_64& role_guid, const int32& unit_array_index);
 	void cs2dp_req_save_char_att(uint32 connindex, const void* data_ptr, size_t data_len);

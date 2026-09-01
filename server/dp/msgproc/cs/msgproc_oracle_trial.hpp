@@ -1,10 +1,10 @@
 /********************************************************************
-created: 2019Äê7ÔÂ25ÈÕ
+created: 2019å¹´7æœˆ25æ—¥
 file base: msgproc_oracle_trial
 file ext: h
 author: zhaoyuming
 
-purpose: ÌìÆôÊÔÁ¶
+purpose: å¤©å¯è¯•ç‚¼
 *********************************************************************/
 
 #ifndef _DP_MSGPROC_MSGPROC_ORACLE_TRIAL_HPP_

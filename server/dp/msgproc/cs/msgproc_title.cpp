@@ -1,5 +1,5 @@
 /********************************************************************
-created:	2016Äê10ÔÂ09
+created:	2016å¹´10æœˆ09
 file base:	msgproc_title
 file ext:	cpp
 author:		wucun

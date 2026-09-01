@@ -1,5 +1,5 @@
 /********************************************************************
-created:	2016Äê8ÔÂ16ÈÕ11:05:31
+created:	2016å¹´8æœˆ16æ—¥11:05:31
 file base:	msgproc_pokedex
 file ext:	hpp
 author:		XingLong
@@ -13,7 +13,7 @@ purpose:
 
 namespace faith
 {
-	//½ÇÉ«¼¼ÄÜ
+	//è§’è‰²æŠ€èƒ½
 	void cs2dp_req_load_char_pokedex(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index);
 	void cs2dp_req_load_char_pokedex_end(db_result_type result, uint32 connindex, const guid_64& role_guid, const int32& unit_array_index);
 	void cs2dp_req_save_char_pokedex(uint32 connindex, const void* data_ptr, size_t data_len);

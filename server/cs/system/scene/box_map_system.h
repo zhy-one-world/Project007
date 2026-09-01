@@ -4,7 +4,7 @@
 
 namespace faith
 {
-	const int32 g_box_born_group_len = 4;//宝箱出生点组长度
+	const int32 g_box_born_group_len = 4;//瀹濈鍑虹敓鐐圭粍闀垮害
 	class map_s2s_box_map_info;
 	class player;
 	class npc;

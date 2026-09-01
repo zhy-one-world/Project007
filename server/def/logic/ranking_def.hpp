@@ -19,28 +19,28 @@ namespace faith
 {
 #pragma pack(push,1)
 	
-	const int32 TopMaxNum = 500;//Ã¿¸öÅÅĞĞ°ñ×î´óÈËÊı
-	const int32 ShowTopMaxNum = 100;//Ã¿¸öÅÅĞĞ°ñĞèÒªÏÔÊ¾×î´óÈËÊı
-	const int32 GuidWorshipMax = 3500;//ÅÅĞĞ°ñ³ç°İÖµ×î´óÊıÁ¿	Ô­±¾Îª2000,ÕâÀï¸ÄÎª3500,¼Ù¶¨7¸öÅÅĞĞ°ñ½ÇÉ«¾ù²»Í¬
-	const float FreshTimeInterval = 120.0f;//Ã¿¸öÅÅĞĞ°ñ×î´óÈËÊı
-	const int32 DaliyWorshipTime = 10;//ÅÅĞĞ°ñ³ç°İÖµ×î´óÊıÁ¿(ÕâÀïĞèÒªÓëgameconfigÖĞDaliyWorshipTime±£³ÖÒ»ÖÂ)
-	const int32 WingOrMountValueRateNum = 9;	//×øÆï»ò³á°òvalue±ÈÂÊÊı
+	const int32 TopMaxNum = 500;//æ¯ä¸ªæ’è¡Œæ¦œæœ€å¤§äººæ•°
+	const int32 ShowTopMaxNum = 100;//æ¯ä¸ªæ’è¡Œæ¦œéœ€è¦æ˜¾ç¤ºæœ€å¤§äººæ•°
+	const int32 GuidWorshipMax = 3500;//æ’è¡Œæ¦œå´‡æ‹œå€¼æœ€å¤§æ•°é‡	åŸæœ¬ä¸º2000,è¿™é‡Œæ”¹ä¸º3500,å‡å®š7ä¸ªæ’è¡Œæ¦œè§’è‰²å‡ä¸åŒ
+	const float FreshTimeInterval = 120.0f;//æ¯ä¸ªæ’è¡Œæ¦œæœ€å¤§äººæ•°
+	const int32 DaliyWorshipTime = 10;//æ’è¡Œæ¦œå´‡æ‹œå€¼æœ€å¤§æ•°é‡(è¿™é‡Œéœ€è¦ä¸gameconfigä¸­DaliyWorshipTimeä¿æŒä¸€è‡´)
+	const int32 WingOrMountValueRateNum = 9;	//åéª‘æˆ–ç¿…è†€valueæ¯”ç‡æ•°
 
-	const int32 MinRankingPost = 0;	//×îĞ¡ÅÅÃû¹«¸æ
-	const int32 MaxRankingPost = 9;//×î´óÅÅÃû¹«¸æ
+	const int32 MinRankingPost = 0;	//æœ€å°æ’åå…¬å‘Š
+	const int32 MaxRankingPost = 9;//æœ€å¤§æ’åå…¬å‘Š
 	
-	const int32 LegionBossRankingPara1 = 1000000;	//¾üÍÅBOSS»ı·Ö¼ÆËã²ÎÊı1
-	const int32 LegionBossRankingPara2 = 10000;		//¾üÍÅBOSS»ı·Ö¼ÆËã²ÎÊı1
-	const int32 LegionBossRankingPara3 = 100;		//¾üÍÅBOSS»ı·Ö¼ÆËã²ÎÊı3
+	const int32 LegionBossRankingPara1 = 1000000;	//å†›å›¢BOSSç§¯åˆ†è®¡ç®—å‚æ•°1
+	const int32 LegionBossRankingPara2 = 10000;		//å†›å›¢BOSSç§¯åˆ†è®¡ç®—å‚æ•°1
+	const int32 LegionBossRankingPara3 = 100;		//å†›å›¢BOSSç§¯åˆ†è®¡ç®—å‚æ•°3
 
 	const int32 service_rank_first_template_id = 133000000;
 
-	const int32 oracle_trial_rank_info = 3;	//ÌìÆôÊÔÁ¶ĞèÒªÇ°ÈıµÄµ¥¶ÀÏÔÊ¾
-	const int32 oracle_trial_first_play_notice_id = 93000295;	//ÌìÆôÊÔÁ¶µÚÒ»Ãû¹«¸æ ÎŞ¾üÍÅ
-	const int32 oracle_trial_first_play_and_legion_notice_id = 93000294;	 //ÌìÆôÊÔÁ¶µÚÒ»Ãû¹«¸æ ÓĞ¾üÍÅ
+	const int32 oracle_trial_rank_info = 3;	//å¤©å¯è¯•ç‚¼éœ€è¦å‰ä¸‰çš„å•ç‹¬æ˜¾ç¤º
+	const int32 oracle_trial_first_play_notice_id = 93000295;	//å¤©å¯è¯•ç‚¼ç¬¬ä¸€åå…¬å‘Š æ— å†›å›¢
+	const int32 oracle_trial_first_play_and_legion_notice_id = 93000294;	 //å¤©å¯è¯•ç‚¼ç¬¬ä¸€åå…¬å‘Š æœ‰å†›å›¢
 	enum e_ranking_operation_type
 	{
-		e_ranking_operation_ranking_type_fighting,			// Õ½Á¦ÅÅĞĞ°ñ     
+		e_ranking_operation_ranking_type_fighting,			// æˆ˜åŠ›æ’è¡Œæ¦œ     
 		e_ranking_operation_ranking_type_max
 	};
 	 
@@ -54,7 +54,7 @@ namespace faith
 		e_sync_cs2ws_ranking_demonstower,
 		e_sync_cs2ws_ranking_wing,
 		e_sync_cs2ws_ranking_mount,
-		e_sync_cs2ws_ranking_worship,		//ÍşÍûÖµÓ¦¸ÃÊÇ²»ĞèÒªÍ¬²½µÄ
+		e_sync_cs2ws_ranking_worship,		//å¨æœ›å€¼åº”è¯¥æ˜¯ä¸éœ€è¦åŒæ­¥çš„
 		e_sync_cs2ws_ranking_max
 	};
 
@@ -70,7 +70,7 @@ namespace faith
 		EWorshipEndType_max
 	};
 	
-	enum e_ranking_get_other_player_info	//ÅÅĞĞ°ñ»ñÈ¡ÆäËûÍæ¼ÒĞÅÏ¢
+	enum e_ranking_get_other_player_info	//æ’è¡Œæ¦œè·å–å…¶ä»–ç©å®¶ä¿¡æ¯
 	{
 		e_ranking_get_other_player_info_base,
 		e_ranking_get_other_player_info_equiping,
@@ -147,13 +147,13 @@ namespace faith
 		int64				ranking_type;
 		int64				ranking_value;
 		int64				save_time;
-		guid_64				supporting_guid;						//±¸ÓÃ
+		guid_64				supporting_guid;						//å¤‡ç”¨
 		xchar				supporting_name[max_name_size + 1];
 		int32				vip_level;
 		int32				Peak;
 		int32				server_id;
 		xchar				game_channel[e_login_fixed_data_lenght + 1];
-		int64				standby_parameter;						//±¸ÓÃ²ÎÊı
+		int64				standby_parameter;						//å¤‡ç”¨å‚æ•°
 		void set_role_name(xstring p_role_name)
 		{
 			memset(role_name, 0, sizeof(role_name));
@@ -230,13 +230,13 @@ namespace faith
 			st_rank_ptr->set_ranking_type(ranking_type);
 			st_rank_ptr->set_ranking_value(ranking_value);
 			st_rank_ptr->set_save_time(save_time);
-			st_rank_ptr->set_supporting_guid(supporting_guid.server_64);						//±¸ÓÃ
+			st_rank_ptr->set_supporting_guid(supporting_guid.server_64);						//å¤‡ç”¨
 			st_rank_ptr->set_supporting_name(supporting_name);
 			st_rank_ptr->set_vip_level(vip_level);
 			st_rank_ptr->set_peak(Peak);
 			st_rank_ptr->set_server_id(server_id);
 		    st_rank_ptr->set_game_channel(game_channel);
-			st_rank_ptr->set_standby_parameter(standby_parameter);						//±¸ÓÃ²ÎÊı
+			st_rank_ptr->set_standby_parameter(standby_parameter);						//å¤‡ç”¨å‚æ•°
 
 		}
 
@@ -258,7 +258,7 @@ namespace faith
 			ranking_type = st_rank_ref.ranking_type();
 			ranking_value = st_rank_ref.ranking_value();
 			save_time =  st_rank_ref.save_time();
-			supporting_guid.server_64 = st_rank_ref.supporting_guid();						//±¸ÓÃ
+			supporting_guid.server_64 = st_rank_ref.supporting_guid();						//å¤‡ç”¨
 			my_memcopy_string(supporting_name, max_name_size, st_rank_ref.supporting_name());
 
 			vip_level = st_rank_ref.vip_level();

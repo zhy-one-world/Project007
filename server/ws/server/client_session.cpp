@@ -184,7 +184,7 @@ namespace faith
 		if (m_status == client_session::e_ss_logout)
 		{
 			ws2cs_client_logout	req_logout;
-			//	ÖÜÆÚĞÔ¹ã²¥£¬Í¨ÖªËùÓĞ CS LOGOUT
+			//	å‘¨æœŸæ€§å¹¿æ’­ï¼Œé€šçŸ¥æ‰€æœ‰ CS LOGOUT
 			req_logout.role_guid = get_role_guid();
 			req_logout.client_uid = get_client_uid();
 			req_logout.need_send_save_end = m_is_need_send_save_end;
@@ -234,9 +234,9 @@ namespace faith
 		if (m_client_session_tick_min_last <= new_time)
 		{
 			m_client_session_tick_min_last = new_time + minute_tick_time;
-			get_relation_list_mgr().update_relation_state(true, true);//Ã¿¸ôÒ»·ÖÖÓÍ¬²½Ò»´ÎºÃÓÑµÄ×´Ì¬
+			get_relation_list_mgr().update_relation_state(true, true);//æ¯éš”ä¸€åˆ†é’ŸåŒæ­¥ä¸€æ¬¡å¥½å‹çš„çŠ¶æ€
 		}
-		//TODO:	Ìí¼ÓÖÜÆÚĞÔ´æ»ØÊı¾İµ½ DP
+		//TODO:	æ·»åŠ å‘¨æœŸæ€§å­˜å›æ•°æ®åˆ° DP
 		if (is_ws_info_daily_refresh())
 		{
 			refresh_ws_faily_info();
@@ -249,7 +249,7 @@ namespace faith
 
 	void client_session::func_session_load_dp_end()
 	{
-		if (m_login_type == e_login_type_new_token)//¿ç·şĞèÒªÈ¡¼ÇÂ¼µÄ´«ËÍÊı¾İ
+		if (m_login_type == e_login_type_new_token)//è·¨æœéœ€è¦å–è®°å½•çš„ä¼ é€æ•°æ®
 		{
 			s_transfer_info transfer_info;
 			transfer_info.map_guid = m_role_info.map_guid;
@@ -325,7 +325,7 @@ namespace faith
 		int32 cur_month = cur_time_info.month_in_year;
 		int32 cur_day = cur_time_info.day_in_month;
 
-		//²âÊÔ£¬ÌáÉıË¢ĞÂÆµÂÊ
+		//æµ‹è¯•ï¼Œæå‡åˆ·æ–°é¢‘ç‡
 		int32 last_refresh_hour = last_time_info.hour_in_day;
 		int32 last_refresh_minut = last_time_info.minute_in_hour;
 		int32 last_refresh_second = last_time_info.second_in_hour;
@@ -465,7 +465,7 @@ namespace faith
 		for (int32 i = 0; i < max_character_num; ++i)
 		{
 			if (m_ban_role_array[i] == role_guid.server_64)
-			{//ÏŞÖÆµÇÂ¼
+			{//é™åˆ¶ç™»å½•
 				CONSOLE_INFO("player_enter_game_transfer m_ban_role_array[i] == role_guid.server_64 role_guid.server_64:{}", role_guid.server_64);
 				ws2fep_enter_game rep;
 				rep.client_uid = m_client_uid;
@@ -513,7 +513,7 @@ namespace faith
 		{
 			return true;
 		}
-		client_session* target_session = client_session_mgr::getInstance().get_session(target_guid);//ÏÂÃæµÄÂß¼­¶¼ÓÃÓÚ»¥¶¯Ïà¹ØµÄ£¬·ÇÍ¬·şÍæ¼Ò½ûÖ¹½»»¥
+		client_session* target_session = client_session_mgr::getInstance().get_session(target_guid);//ä¸‹é¢çš„é€»è¾‘éƒ½ç”¨äºäº’åŠ¨ç›¸å…³çš„ï¼ŒéåŒæœç©å®¶ç¦æ­¢äº¤äº’
 		if (nullptr == target_session)
 		{
 			return false;
@@ -543,7 +543,7 @@ namespace faith
 
 		if (transfer_map_guid.is_valid() == false)
 		{
-			// Ö®Ç°ÓÃmap_template_idÅĞ¶Ï¶ÏÏßÖØÁ¬ ²»¹»¾«È·
+			// ä¹‹å‰ç”¨map_template_idåˆ¤æ–­æ–­çº¿é‡è¿ ä¸å¤Ÿç²¾ç¡®
 			guid_64 cur_map_guid = get_role_map_guid();
 			auto map_ent = get_entity(cur_map_guid);
 			if (nullptr != map_ent)
@@ -570,7 +570,7 @@ namespace faith
 				role_pk_manager::getInstance().clear_player_role_pk_map(role_guid);
 				if (world_server::getInstance().is_sky_island_server())
 				{
-					//»ØÔ­·ş
+					//å›åŸæœ
 					m_transfer_info.clear_data();
 					cross::transfer_player(this, -1, m_transfer_info);
 					return;
@@ -621,9 +621,9 @@ namespace faith
 			}
 		}
 
-		if (need_cross_big_map && world_server::getInstance().get_server_id() == get_role_info_data(e_role_info_server_id))//Íæ¼ÒÏë´«ËÍµ½Ò»ÕÅÒÑ½áÊøµÄµØÍ¼Ê±£¬»á±»Ç¿ÖÆÀ­»Ø´óÊÀ½ç¶ø²»ÊÇÖ±½ÓÌß³ö
+		if (need_cross_big_map && world_server::getInstance().get_server_id() == get_role_info_data(e_role_info_server_id))//ç©å®¶æƒ³ä¼ é€åˆ°ä¸€å¼ å·²ç»“æŸçš„åœ°å›¾æ—¶ï¼Œä¼šè¢«å¼ºåˆ¶æ‹‰å›å¤§ä¸–ç•Œè€Œä¸æ˜¯ç›´æ¥è¸¢å‡º
 		{
-			if (world_server::getInstance().is_sky_island_server())//Èç¹ûÊÇgate·şÔò´«ËÍµ½Ìì¿Õµº
+			if (world_server::getInstance().is_sky_island_server())//å¦‚æœæ˜¯gateæœåˆ™ä¼ é€åˆ°å¤©ç©ºå²›
 			{
 				map_ent = cs_map_mgr_system::get_map_ws_by_min(boss_island_temp_id);
 			}
@@ -702,16 +702,16 @@ namespace faith
 		team_ws* team_ws_ptr = team_ws_mgr::get_instance().get_unit_team(role_guid);
 		if (team_ws_ptr)
 		{
-			// Èç¹ûÓĞÍæ¼ÒÔÚ×é¶ÓÖĞ¾ÍÒª¸üĞÂµ±Ç°ËùÔÚµØÖ·µÄID²¢ÍÆËÍ¸ø¶ÓÓÑ
+			// å¦‚æœæœ‰ç©å®¶åœ¨ç»„é˜Ÿä¸­å°±è¦æ›´æ–°å½“å‰æ‰€åœ¨åœ°å€çš„IDå¹¶æ¨é€ç»™é˜Ÿå‹
 			team_ws_ptr->update_member_map(this, map_cp->m_map_guid);
 			team_ws_ptr->gen_player_team_info(ws2cs_req.team_info);
 		}
 		legion_ws* legion_ws_ptr = legion_ws_mgr::get_instance().get_unit_legion(role_guid);
 		if (nullptr != legion_ws_ptr)
 		{
-			// ´«ËÍÊ±¸½´ø¾üÍÅGUIDÊÇÎªÁËÔÚ´«ËÍ½ø¾üÍÅ³ÇÕ½µØÍ¼µÄÊ±ºò¿ÉÒÔ±êÊ¶Íæ¼ÒÊôÓÚÄÄ¸ö¾üÍÅ
+			// ä¼ é€æ—¶é™„å¸¦å†›å›¢GUIDæ˜¯ä¸ºäº†åœ¨ä¼ é€è¿›å†›å›¢åŸæˆ˜åœ°å›¾çš„æ—¶å€™å¯ä»¥æ ‡è¯†ç©å®¶å±äºå“ªä¸ªå†›å›¢
 			legion_ws_ptr->get_player_legion_info(ws2cs_req.legion_info, role_guid);
-			//ÉèÖÃÊÇ·ñÊÇ¾üÍÅÕ½Ê¤Àû·½³ÉÔ±, ÊÇ·ñÊÇ³ÇÖ÷  
+			//è®¾ç½®æ˜¯å¦æ˜¯å†›å›¢æˆ˜èƒœåˆ©æ–¹æˆå‘˜, æ˜¯å¦æ˜¯åŸä¸»  
 			if (big_player_ws_mgr::get_instance().get_big_player_guid(e_big_player_type_overload_legion) == legion_ws_ptr->get_legion_guid())
 			{
 				ws2cs_req.bflag_loading_title[e_title_type_legion_city_win_member] = true;
@@ -743,7 +743,7 @@ namespace faith
 			enter_scene_logic_proc_login();
 		}
 
-		world_boss_ws_mgr::get_instance().send_all_boss_hp_per(this);// Í¬²½ËùÓĞbossµÄÑªÁ¿ĞÅÏ¢
+		world_boss_ws_mgr::get_instance().send_all_boss_hp_per(this);// åŒæ­¥æ‰€æœ‰bossçš„è¡€é‡ä¿¡æ¯
 		cross_ladder_ws_mgr_new::get_instance().send_upgrade_notify(this);
 		element_war_ws_mgr::get_instance().send_upgrade_notify(this);
 		game_proto_line_list line_list_msg;
@@ -756,16 +756,16 @@ namespace faith
 		send_to_client(&line_list_msg, e_msgindex_s2c_map_line_ary);
 		if (m_is_need_send_cross_server_notice == true)
 		{
-			send_notice("90096605");//¿ç·ş³É¹¦¸øµÄÌáÊ¾
+			send_notice("90096605");//è·¨æœæˆåŠŸç»™çš„æç¤º
 			m_is_need_send_cross_server_notice = false;
 		}
-		//Í¬²½ÖúÕ½ĞÅÏ¢
+		//åŒæ­¥åŠ©æˆ˜ä¿¡æ¯
 		if (is_self_server())
 		{
 			assist_fight_mgr::get_instance().check_assist_fight_legion_team(get_role_guid());
-			//ÏòcsÍ¬²½ÖúÕ½ĞÅÏ¢
+			//å‘csåŒæ­¥åŠ©æˆ˜ä¿¡æ¯
 			assist_fight_mgr::get_instance().sync_assist_fight_info_to_cs_login(get_role_guid());
-			//Ïò¿Í»§¶ËÍ¬²½ÖúÕ½ĞÅÏ¢
+			//å‘å®¢æˆ·ç«¯åŒæ­¥åŠ©æˆ˜ä¿¡æ¯
 			assist_fight_mgr::get_instance().sync_assist_fight_info(get_role_guid(), true);
 		}
 		world_server::getInstance().send_server_act_hidden_to_client(this);

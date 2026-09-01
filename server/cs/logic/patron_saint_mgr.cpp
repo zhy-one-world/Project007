@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 created: 2017��6��8��15:55
 file base: patron_saint
 file ext: cpp
@@ -65,7 +65,7 @@ namespace faith
 		int32 cur_unlock_order = tinder_template_ptr_unlock->CurrentOrder;
 		if (cur_unlock_order > faith::tinder_old_num_max)
 		{
-			cur_unlock_order += 2; // ����ֻ��4��
+			cur_unlock_order += 2;
 		}
 		int32 cur_equip_slot_can_open_num = cur_unlock_order / 6;
 		/////////////////////////
@@ -108,7 +108,6 @@ namespace faith
 		//int32 cur_unlock_order = tinder_template_ptr_unlock->CurrentOrder;
 		//if (cur_unlock_order > faith::tinder_old_num_max)
 		//{
-		//	cur_unlock_order += 2; // ����ֻ��4��
 		//}
 		////int32 cur_equip_slot_open_num = tinder_template_ptr_unlock->CurrentOrder / 6;
 		//int32 cur_equip_slot_open_num = cur_unlock_order / 6;
@@ -195,7 +194,6 @@ namespace faith
 		//target_mark->set_data_info(e_item_info_container_type, e_bag_type_bag);
 		//target_mark->set_data_info(e_item_info_slot, target_operate_slot);
 		//temp_player.get_item_set().set_target_slot_guid(e_bag_type_bag, target_operate_slot, target_mark->get_item_guid());
-		//
 		//temp_player.get_item_set().send_item_one(target_mark);
 		send_tinder_info_one(e_tinder_info_add_star_level);
 		return e_item_string_succeed;

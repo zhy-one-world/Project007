@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2017Äê6ÔÂ8ÈÕ15:55
+created: 2017å¹´6æœˆ8æ—¥15:55
 file base: patron_saint
 file ext: h
 author: Lxy
@@ -30,7 +30,7 @@ namespace faith
 
 		int32														get_mark_level_sum();
 		int32														get_mark_activated_num();
-		void														auto_get_equip_slot(); // ÊØ»¤Éñ×°±¸²Û¸ù¾İ×ªÉúµÈ¼¶×Ô¶¯¿ªÆô
+		void														auto_get_equip_slot(); // å®ˆæŠ¤ç¥è£…å¤‡æ§½æ ¹æ®è½¬ç”Ÿç­‰çº§è‡ªåŠ¨å¼€å¯
 
 		void														sync_tinder_data();
 

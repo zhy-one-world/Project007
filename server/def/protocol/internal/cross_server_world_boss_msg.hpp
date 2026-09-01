@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2019Äê5ÔÂ24ÈÕ
+created: 2019å¹´5æœˆ24æ—¥
 file base: cross_server_world_boss_msg
 file ext: hpp
 author: zhaoyuming
@@ -24,21 +24,21 @@ namespace faith
 	{
 		e_msgindex_cs2ws_cross_server_world_boss_creat_boss_begin = faith::e_msg_base_cross_server_world_boss, 
 		e_msgindex_ws2cs_cross_server_world_boss_creat_boss,		
-		e_msgindex_ws2ws_get_cross_server_level,					//»ñµÃ·şÎñÆ÷×éÖĞµÄ·şÎñÆ÷µÈ¼¶
-		e_msgindex_ws2ws_get_cross_server_level_end,				//·şÎñÆ÷×éÖĞµÄ·şÎñÆ÷·µ»Ø×Ô¼ºµÄ·şÎñÆ÷µÈ¼¶,				
+		e_msgindex_ws2ws_get_cross_server_level,					//è·å¾—æœåŠ¡å™¨ç»„ä¸­çš„æœåŠ¡å™¨ç­‰çº§
+		e_msgindex_ws2ws_get_cross_server_level_end,				//æœåŠ¡å™¨ç»„ä¸­çš„æœåŠ¡å™¨è¿”å›è‡ªå·±çš„æœåŠ¡å™¨ç­‰çº§,				
 		e_msgindex_ws2ws_cross_world_boss_map_result,
-		e_msgindex_cs2ws_cross_server_kill_world_boss,				//csÏòws·¢ËÍbossËÀÍö
+		e_msgindex_cs2ws_cross_server_kill_world_boss,				//cså‘wså‘é€bossæ­»äº¡
 		e_msgindex_ws2cs_cross_server_kill_boss,					
-		e_msgindex_cs2ws_make_cross_server_world_legion_award,		//·¢ËÍ»î¶¯½±Àø
+		e_msgindex_cs2ws_make_cross_server_world_legion_award,		//å‘é€æ´»åŠ¨å¥–åŠ±
 		e_msgindex_ws2ws_make_cross_server_world_legion_award,
-		e_msgindex_ws2dp_save_cross_server_world_boss_info,			//ws·¢ËÍ±£´æbossĞÅÏ¢
-		e_msgindex_ws2dp_load_cross_server_world_boss_info,			//ws·¢ËÍÇëÇó»ñµÃbossĞÅÏ¢
-		e_msgindex_dp2ws_load_cross_server_world_boss_info,			//dp·¢ËÍ¸øwsµÄbossĞÅÏ¢
-		e_msgindex_cs2ws_cross_boss_map_game_over,					//Í¨ÖªwsÕâ¸öµØÍ¼ÓÎÏ·½áÊø¿É
-		e_msgindex_ws2ws_refresh_kill_boss_show_info,				//Ò»´Î·¢Ò»¸öbossµÄÊı¾İ
-		e_msgindex_ws2ws_refresh_kill_boss_show_info_all,			//Ò»´Î·¢ËùÓÃbossµÄÊı¾İ
-		e_msgindex_ws2ws_grant_kill_boss_legion_award,				//·¢·Å»÷É±boss¾üÍÅµÄ½±Àø
-		e_msg_gate2ws_send_boss_ranking_list,						//¿ç·şÊÀ½çbossÅÅĞĞ°ñ
+		e_msgindex_ws2dp_save_cross_server_world_boss_info,			//wså‘é€ä¿å­˜bossä¿¡æ¯
+		e_msgindex_ws2dp_load_cross_server_world_boss_info,			//wså‘é€è¯·æ±‚è·å¾—bossä¿¡æ¯
+		e_msgindex_dp2ws_load_cross_server_world_boss_info,			//dpå‘é€ç»™wsçš„bossä¿¡æ¯
+		e_msgindex_cs2ws_cross_boss_map_game_over,					//é€šçŸ¥wsè¿™ä¸ªåœ°å›¾æ¸¸æˆç»“æŸå¯
+		e_msgindex_ws2ws_refresh_kill_boss_show_info,				//ä¸€æ¬¡å‘ä¸€ä¸ªbossçš„æ•°æ®
+		e_msgindex_ws2ws_refresh_kill_boss_show_info_all,			//ä¸€æ¬¡å‘æ‰€ç”¨bossçš„æ•°æ®
+		e_msgindex_ws2ws_grant_kill_boss_legion_award,				//å‘æ”¾å‡»æ€bosså†›å›¢çš„å¥–åŠ±
+		e_msg_gate2ws_send_boss_ranking_list,						//è·¨æœä¸–ç•Œbossæ’è¡Œæ¦œ
 		e_msg_cs2ws_send_kill_boss_notic,
 		e_msg_gate2ws_send_kill_boss_notice,
 		e_msg_ws2ws_get_legion_chief_guid,
@@ -146,7 +146,7 @@ namespace faith
 		}
 	};
 
-	struct cs2ws_cross_server_world_boss_creat_boss_begin : public packet_base //·¢ËÍ¿ªÊ¼´´½¨»î¶¯boss
+	struct cs2ws_cross_server_world_boss_creat_boss_begin : public packet_base //å‘é€å¼€å§‹åˆ›å»ºæ´»åŠ¨boss
 	{
 		guid_64 from_map_guid;
 
@@ -157,10 +157,10 @@ namespace faith
 		}
 	};
 
-	//»ñÈ¡·şÎñÆ÷µÈ¼¶
+	//è·å–æœåŠ¡å™¨ç­‰çº§
 	struct ws2ws_get_cross_server_level : public faith::packet_base
 	{
-		int32	server_id;	//·¢ËÍÇëÇó»ñµÃ·şÎñÆ÷µÈ¼¶µÄ·şÎñÆ÷id
+		int32	server_id;	//å‘é€è¯·æ±‚è·å¾—æœåŠ¡å™¨ç­‰çº§çš„æœåŠ¡å™¨id
 		ws2ws_get_cross_server_level()
 		{
 			memset(this, 0, sizeof(*this));
@@ -169,9 +169,9 @@ namespace faith
 	};
 	struct ws2ws_get_cross_server_level_end : public faith::packet_base
 	{
-		int32	true_server_level;	//·şÎñÆ÷µÈ¼¶Õæboss
-		int32	false_server_level;	//·şÎñÆ÷µÈ¼¶¼Ùboss
-		int32	server_id;		//·şÎñÆ÷µÈ¼¶¶ÔÓ¦µÄ·şÎñÆ÷id
+		int32	true_server_level;	//æœåŠ¡å™¨ç­‰çº§çœŸboss
+		int32	false_server_level;	//æœåŠ¡å™¨ç­‰çº§å‡boss
+		int32	server_id;		//æœåŠ¡å™¨ç­‰çº§å¯¹åº”çš„æœåŠ¡å™¨id
 		ws2ws_get_cross_server_level_end()
 		{
 			memset(this, 0, sizeof(*this));
@@ -197,8 +197,8 @@ namespace faith
 	{
 		int32 boss_id;
 		guid_64 kill_boss_legion_guid;
-		int32	play_num;										//²ÎÓëÊıÁ¿
-		guid_64	play_guid_list[max_hurt_monster_player_num];	//²ÎÓë»î¶¯µÄÍæ¼Ò
+		int32	play_num;										//å‚ä¸æ•°é‡
+		guid_64	play_guid_list[max_hurt_monster_player_num];	//å‚ä¸æ´»åŠ¨çš„ç©å®¶
 		ws2ws_grant_kill_boss_legion_award()
 		{
 			memset(this, 0, sizeof(*this));
@@ -212,8 +212,8 @@ namespace faith
 		guid_64 legion_guid;
 		int32	boss_tem_id;
 		int32	score_rank;
-		int32	play_num;										//²ÎÓëÊıÁ¿
-		guid_64	play_guid_list[max_hurt_monster_player_num];	//²ÎÓë»î¶¯µÄÍæ¼Ò
+		int32	play_num;										//å‚ä¸æ•°é‡
+		guid_64	play_guid_list[max_hurt_monster_player_num];	//å‚ä¸æ´»åŠ¨çš„ç©å®¶
 		ws2ws_make_cross_server_world_legion_award()
 		{
 			memset(this, 0, sizeof(*this));

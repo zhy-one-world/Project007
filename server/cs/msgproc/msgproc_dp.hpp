@@ -6,9 +6,9 @@
   author: lidongyang
   
   purpose: 
- *  ¼ÓÔØË³Ğò loading
- *	1. »ù±¾ÊôĞÔ
- *	2. ÎïÆ·ĞÅÏ¢
+ *  åŠ è½½é¡ºåº loading
+ *	1. åŸºæœ¬å±æ€§
+ *	2. ç‰©å“ä¿¡æ¯
  
 *********************************************************************/
 #ifndef _MESSAGE_PROCESS_DP_HPP_
@@ -54,7 +54,7 @@ namespace faith
 	void dp2cs_rep_load_char_first_time_do(uint32 conn_index, const void* data_ptr, size_t data_len);
 	void dp2cs_rep_load_char_daily_must_do_count(uint32 conn_index, const void* data_ptr, size_t data_len);
 
-	void dp2cs_rep_load_char_data_error(uint32 conn_index, const void* data_ptr, size_t data_len);		// ´íÎóĞÅÏ¢
+	void dp2cs_rep_load_char_data_error(uint32 conn_index, const void* data_ptr, size_t data_len);		// é”™è¯¯ä¿¡æ¯
 	void dp2cs_rep_save_char_data_complete(uint32 conn_index, const void* data_ptr, size_t data_len);
 
 	void dp2cs_req_load_gain_treasure_info(uint32 conn_index, const void* data_ptr, size_t data_len);

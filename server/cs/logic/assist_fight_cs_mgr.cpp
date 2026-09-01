@@ -35,7 +35,7 @@ namespace faith
 	//	}
 	//	if (get_assist_fight_guid().is_valid())
 	//	{
-	//		return false;//ÕıÔÚÖúÕ½ÖĞ
+	//		return false;//æ­£åœ¨åŠ©æˆ˜ä¸­
 	//	}
 	//	if (assist_fight_tag == 0)
 	//	{
@@ -52,11 +52,11 @@ namespace faith
 	//		{
 	//			return false;
 	//		}
-	//		if (map_template_ptr->Type == e_map_type_boss_home || //µØ¹¬boss
-	//			map_template_ptr->Type == e_map_type_boss_island || //Ìì¿Õµº
-	//			map_template_ptr->Type == e_map_type_boss_vip_home || //bossÖ®¼Ò
-	//			map_template_ptr->Type == e_map_type_belief_cloister ||//ĞÅÑö»ØÀÈ
-	//			map_template_ptr->Type == e_map_type_field ||//ÉÏ¹ÅÒÅ¼£   
+	//		if (map_template_ptr->Type == e_map_type_boss_home || //åœ°å®«boss
+	//			map_template_ptr->Type == e_map_type_boss_island || //å¤©ç©ºå²›
+	//			map_template_ptr->Type == e_map_type_boss_vip_home || //bossä¹‹å®¶
+	//			map_template_ptr->Type == e_map_type_belief_cloister ||//ä¿¡ä»°å›å»Š
+	//			map_template_ptr->Type == e_map_type_field ||//ä¸Šå¤é—è¿¹   
 	//			map_template_ptr->Type == e_map_type_big_map)
 	//		{
 	//			return false;
@@ -95,7 +95,7 @@ namespace faith
 		//	player_ref.send_notice("90204194");
 		//	return;
 		//}
-		//Ö»Òª·¢ÆğÇëÇó¾ÍËãÍê³É ²»ĞèÒªÅĞ¶ÏÊÇ·ñ¿ÉÒÔ·¢ËÍ
+		//åªè¦å‘èµ·è¯·æ±‚å°±ç®—å®Œæˆ ä¸éœ€è¦åˆ¤æ–­æ˜¯å¦å¯ä»¥å‘é€
 		player_ref.set_logic_data(e_role_logic_info_help_tip_send_times, player_ref.get_logic_data(e_role_logic_info_help_tip_send_times) + 1);
 		player_ref.get_mission_mgr().target_check(e_mission_end_type_by_assis_fight_num);
 		if (assist_fight_type == e_assist_fight_type_legion)
@@ -121,10 +121,10 @@ namespace faith
 			//boss
 			map_id = map_template_id;
 
-			if (map_type == e_map_type_boss_home || //µØ¹¬boss
-				map_type == e_map_type_boss_island || //Ìì¿Õµº
-				map_type == e_map_type_boss_vip_home || //bossÖ®¼Ò
-				map_type == e_map_type_single_assist_boss // ¸öÈËÖúÕ½boss
+			if (map_type == e_map_type_boss_home || //åœ°å®«boss
+				map_type == e_map_type_boss_island || //å¤©ç©ºå²›
+				map_type == e_map_type_boss_vip_home || //bossä¹‹å®¶
+				map_type == e_map_type_single_assist_boss // ä¸ªäººåŠ©æˆ˜boss
 				)
 			{
 				if (!m_assist_fight_info.boss_guid.is_valid())
@@ -146,7 +146,7 @@ namespace faith
 			}
 			else
 			{
-				//ÆäËû¸±±¾²»¿É·¢ÆğÖúÕ½
+				//å…¶ä»–å‰¯æœ¬ä¸å¯å‘èµ·åŠ©æˆ˜
 				return;
 			}
 		}
@@ -155,7 +155,7 @@ namespace faith
 			if (map_type != e_map_type_big_map)
 			{
 				player_ref.send_notice("90300078");
-				//Ö»ÓĞ´óÊÀ½çµØÍ¼¿ÉÒÔ·¢Æğ¾üÍÅ¸±±¾ÇóÖú
+				//åªæœ‰å¤§ä¸–ç•Œåœ°å›¾å¯ä»¥å‘èµ·å†›å›¢å‰¯æœ¬æ±‚åŠ©
 				return;
 			}
 			s_player_team_info& m_team_info = player_ref.get_team_info();
@@ -170,7 +170,7 @@ namespace faith
 			}
 			map_id = m_team_info.team_sub_type_id;
 		}
-		//´æ´¢Ö÷ÒªÖúÕ½ĞÅÏ¢
+		//å­˜å‚¨ä¸»è¦åŠ©æˆ˜ä¿¡æ¯
 		m_assist_fight_info.asssit_fight_guid = player_ref.get_unit_guid();
 		memcpy(m_assist_fight_info.role_name, player_ref.get_name(), max_name_size);
 		m_assist_fight_info.role_lv = player_ref.get_unit_info(e_role_info_exp_level);
@@ -276,7 +276,7 @@ namespace faith
 		}
 		//if (need_transfer)
 		//{
-		//	//´«³öµØÍ¼
+		//	//ä¼ å‡ºåœ°å›¾
 		//	player_ref.transfer_by_template(player_ref.get_unit_info(faith::e_role_info_main_map_id), player_ref.get_main_line_id(), 0, guid_64(), 0);
 		//}
 		msg.cancel_type = cancel_type;
@@ -379,14 +379,14 @@ namespace faith
 		player_ref.send_message_to_self(&msg, e_msgindex_s2c_assist_fight_end_to_show_reward);
 		//cancel_assist_fight(); 
 	}
-	//¸Éµô
+	//å¹²æ‰
 	void assist_fight_cs_mgr::update_assist_fight_info(s_assist_fight_info m_info)
 	{
-		//ÏÂÃæÖ»×ß±¾·şÂß¼­
+		//ä¸‹é¢åªèµ°æœ¬æœé€»è¾‘
 		player& player_ref = unit_man::get_player(m_array_index);
 		if (player_ref.is_valid() && m_assist_fight_info.asssit_fight_guid.is_valid() == false && m_assist_fight_info.boss_guid.is_valid())
 		{
-			//¶ÔÓÚÖ®Ç°ÔÚ´òbossµÄÍæ¼Ò£¬Èç¹ûËûÈ¥ÖúÕ½ÁË¾Í´ÓÉËº¦ÁĞ±íÖĞÇå³ı
+			//å¯¹äºä¹‹å‰åœ¨æ‰“bossçš„ç©å®¶ï¼Œå¦‚æœä»–å»åŠ©æˆ˜äº†å°±ä»ä¼¤å®³åˆ—è¡¨ä¸­æ¸…é™¤
 			if (m_info.asssit_fight_guid.is_valid() && m_info.asssit_fight_guid != player_ref.get_unit_guid())
 			{
 				npc& boss_ref = unit_man::get_npc(m_assist_fight_info.boss_guid);
@@ -405,7 +405,7 @@ namespace faith
 		{
 			if (m_info.assist_fight_tag == 1)
 			{
-				//¾üÍÅÇóÖú²»×ßÖúÕ½¹ØÏµ
+				//å†›å›¢æ±‚åŠ©ä¸èµ°åŠ©æˆ˜å…³ç³»
 				return;
 			}
 			player& player_main_ref = unit_man::get_player(m_info.asssit_fight_guid);
@@ -432,7 +432,7 @@ namespace faith
 					return;
 				}
 				const std::string& boss_name = template_manager::get_instance().get_str_by_string_template_id(_npc_template_ptr->NpcName);
-				//±»ÖúÕ½ÕßÌáÊ¾
+				//è¢«åŠ©æˆ˜è€…æç¤º
 				/*std::string notice_str_id = "90204169";
 				std::vector<std::string> notice_str_params_vec;
 				notice_str_params_vec.push_back(notice_str_id);
@@ -449,7 +449,7 @@ namespace faith
 				{
 					main_ref.send_notice(notice_str);
 				}*/
-				//ÖúÕ½ÕßÌáÊ¾
+				//åŠ©æˆ˜è€…æç¤º
 				/*notice_str_params_vec.clear();
 				notice_str_id = "90204170";
 				notice_str_params_vec.push_back(notice_str_id);
@@ -503,7 +503,7 @@ namespace faith
 		if (base_map_cp->m_map_template->Type == e_map_type_boss_island)
 		{
 			player_ref.set_logic_data(e_role_logic_info_main_pk_mode, e_pk_mode_peace);
-			//Èç¹ûµ±Ç°ÊÇÌì¿Õµº£¬È¥³¢ÊÔ»ñÈ¡ÖúÕ½ĞÅÏ¢
+			//å¦‚æœå½“å‰æ˜¯å¤©ç©ºå²›ï¼Œå»å°è¯•è·å–åŠ©æˆ˜ä¿¡æ¯
 			guid_64  &assist_fight_guid = player_ref.get_competition_mgr().get_competition_info().assist_fight_guid;
 			if (assist_fight_guid.is_valid())
 			{
@@ -529,7 +529,7 @@ namespace faith
 					main_player_ref.get_assist_fight_mgr().sync_assist_fight_state();
 					main_player_ref.get_assist_fight_mgr().sync_assist_fight_state_to_all_mem();
 					player_ref.transfer_local_pos(m_info.map_pos);
-					//±»ÖúÕ½ÕßÌáÊ¾
+					//è¢«åŠ©æˆ˜è€…æç¤º
 					std::string notice_str_id = "90204169";
 					std::vector<std::string> notice_str_params_vec;
 					notice_str_params_vec.push_back(notice_str_id);
@@ -582,7 +582,7 @@ namespace faith
 		}
 		else if(m_assist_fight_info.assist_fight_tag == 1)
 		{
-			//¼ÓÈë¶ÓÎé
+			//åŠ å…¥é˜Ÿä¼
 			player& aim_player = unit_man::get_player(m_assist_fight_info.asssit_fight_guid);
 			if (aim_player.is_valid() && aim_player.is_player_in_team())
 			{

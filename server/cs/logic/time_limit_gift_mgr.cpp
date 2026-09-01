@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2022Äê2ÔÂ23ÈÕ
+created: 2022å¹´2æœˆ23æ—¥
 file base: time_limit_gift_mgr
 file ext: cpp
 author: zhaoyuming
@@ -71,7 +71,7 @@ namespace faith
 		{
 			return;
 		}
-		// »º´æ¾üÍÅĞÅÏ¢
+		// ç¼“å­˜å†›å›¢ä¿¡æ¯
 		m_info_list.clear();
 		for (int32 i = 0; i < data_num; ++i)
 		{
@@ -112,7 +112,7 @@ namespace faith
 
 	int32 time_limit_gift_mgr::get_receive_award_time(int32 day_num)
 	{
-		// µ±Ìì0µãÊ±¼ä´Á + (ÌìÊı * Ã¿ÈÕµÄÃëÊı)
+		// å½“å¤©0ç‚¹æ—¶é—´æˆ³ + (å¤©æ•° * æ¯æ—¥çš„ç§’æ•°)
 		return time_helper::get_stamp_by_hour_min(0, 0) + (day_num * day_time_second);
 	}
 	void time_limit_gift_mgr::update_all_info()
@@ -172,9 +172,9 @@ namespace faith
 			s_time_limit_gift_info& role_info = get_info(template_id);
 			if (role_info.is_valid())
 			{
-				// Ã»ÓĞ´¥·¢¼ä¸ôµÄ¾ÍÊÇÎŞ·¨¶à´Î´¥·¢µÄ
-				if (role_info.trigger_num < tem_ptr->MaxTriggerNum &&				// ÅĞ¶Ï´¥·¢´ÎÊı
-					role_info.buy_num < tem_ptr->MaxBuyTime &&					// ÅĞ¶Ï¹ºÂò´ÎÊı
+				// æ²¡æœ‰è§¦å‘é—´éš”çš„å°±æ˜¯æ— æ³•å¤šæ¬¡è§¦å‘çš„
+				if (role_info.trigger_num < tem_ptr->MaxTriggerNum &&				// åˆ¤æ–­è§¦å‘æ¬¡æ•°
+					role_info.buy_num < tem_ptr->MaxBuyTime &&					// åˆ¤æ–­è´­ä¹°æ¬¡æ•°
 					cur_time >(role_info.end_time + tem_ptr->TriggerTime))
 				{
 					role_info.trigger_num++;
@@ -214,7 +214,7 @@ namespace faith
 			{
 				return;
 			}
-			// ÅĞ¶ÏÊÇ·ñ¹ıÁË¹ºÂòÊ±¼ä
+			// åˆ¤æ–­æ˜¯å¦è¿‡äº†è´­ä¹°æ—¶é—´
 			int64 cur_time = utility::get_tick_count() / 1000;
 			if (cur_time > role_info.end_time)
 			{
@@ -233,26 +233,26 @@ namespace faith
 				return;
 			}
 
-			// ÏûºÄ»õ±Ò
+			// æ¶ˆè€—è´§å¸
 			player_ref.cut_money((e_money_type)tem_ptr->MoneyList[0], tem_ptr->MoneyList[1], e_server_log_cut_money_time_limit_gift, template_id);
 
 			if (tem_ptr->Reward.size() > 0)
 			{
-				// ·¢·Å½±Àø
+				// å‘æ”¾å¥–åŠ±
 				player_ref.get_item_set().put_in_bag(e_server_log_add_item_time_limit_gift, template_id, init_unit::reward_regional_diff(tem_ptr->Reward[0]), e_bag_type_none);
 
 			}
 			
-			// ÉèÖÃÉÌÆ·×´Ì¬
+			// è®¾ç½®å•†å“çŠ¶æ€
 			role_info.state_info = e_time_limit_gift_state_end;
 
-			// Ôö¼Ó¹ºÂò´ÎÊı
+			// å¢åŠ è´­ä¹°æ¬¡æ•°
 			role_info.buy_num++;
 
-			// Í¬²½¹ºÂòĞÅÏ¢
+			// åŒæ­¥è´­ä¹°ä¿¡æ¯
 			update_all_info();
 			
-			// ·¢ËÍ²Ù×÷³É¹¦
+			// å‘é€æ“ä½œæˆåŠŸ
 			send_operate_end(e_time_limit_gift_operation_end_type_buy_succeed);
 		}
 		break;
@@ -320,7 +320,7 @@ namespace faith
 				{
 					continue;
 				}
-				// ÅĞ¶ÏÊÇ·ñ¹ıÁË¹ºÂòÊ±¼ä
+				// åˆ¤æ–­æ˜¯å¦è¿‡äº†è´­ä¹°æ—¶é—´
 				int64 cur_time = utility::get_tick_count() / 1000;
 				if (cur_time > role_info.end_time)
 				{
@@ -336,22 +336,22 @@ namespace faith
 
 				player_ref.cut_money(e_money_type(recharge_template_ptr->MoneyGetArray[0]), recharge_template_ptr->MoneyGetArray[1], e_server_log_cut_money_time_limit_gift);
 
-				// ·¢·Å½±Àø
+				// å‘æ”¾å¥–åŠ±
 				if (tem_ptr->Reward.size() > 0)
 				{
 					player_ref.get_item_set().put_in_bag(e_server_log_add_item_time_limit_gift, goods_id, init_unit::reward_regional_diff(tem_ptr->Reward[0]));
 				}
 
-				// Ôö¼Ó¹ºÂò´ÎÊı
+				// å¢åŠ è´­ä¹°æ¬¡æ•°
 				role_info.buy_num++;
 
-				// ÉèÖÃÉÌÆ·×´Ì¬
+				// è®¾ç½®å•†å“çŠ¶æ€
 				role_info.state_info = e_time_limit_gift_state_end;
 
-				// Í¬²½¹ºÂòĞÅÏ¢
+				// åŒæ­¥è´­ä¹°ä¿¡æ¯
 				update_all_info();
 
-				// ·¢ËÍ²Ù×÷³É¹¦
+				// å‘é€æ“ä½œæˆåŠŸ
 				send_operate_end(e_time_limit_gift_operation_end_type_buy_succeed);
 
 				return;
@@ -373,7 +373,7 @@ namespace faith
 			return;
 		}
 		template_manager::template_type::iterator it;
-		for (it = template_list->begin(); it != template_list->end(); ++it)//±éÀú±íÖĞÃ¿Ò»ĞĞ
+		for (it = template_list->begin(); it != template_list->end(); ++it)//éå†è¡¨ä¸­æ¯ä¸€è¡Œ
 		{
 			TimeLimitGiftTemplate* template_ptr = (TimeLimitGiftTemplate*)it->second;
 			if (template_ptr == nullptr)
@@ -392,7 +392,7 @@ namespace faith
 			{
 				if (map_template_id == template_ptr->MapWinList[i])
 				{
-					// ¼ì²éÈÎÎñ
+					// æ£€æŸ¥ä»»åŠ¡
 					if (template_ptr->NeedMission.size() >= 2)
 					{
 						cmission* mission_ptr = player_ref.get_mission_mgr().find_mission_by_index(e_mission_slot_main);
@@ -412,7 +412,7 @@ namespace faith
 						}
 					}
 
-					// ¼ì²éµÈ¼¶
+					// æ£€æŸ¥ç­‰çº§
 					if (template_ptr->NeedLevel.size() >= 2)
 					{
 						int32 player_level = player_ref.get_unit_info(e_role_info_exp_level);

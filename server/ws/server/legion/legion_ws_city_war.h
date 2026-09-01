@@ -23,7 +23,7 @@ namespace faith
 		void						tick_1_min(const uint64& tick_time);
 		
 		/********************************************/
-		/*                Íõ³ÇÕù°Ô                  */
+		/*                ç‹åŸäº‰éœ¸                  */
 		/********************************************/
 		void						save_city_info_into_db(guid_64 overlord_legion, xchar* city_master_name);
 		void						load_city_info_from_db();
@@ -31,9 +31,9 @@ namespace faith
 		xchar*						get_overlord_legion_name();
 		void						set_overlord_legion(guid_64 legion_guid, bool is_from_db, bool is_from_cross_city = false);
 		void						set_city_master_name(const xchar* city_master_name, bool is_from_db);
-		guid_64						get_city_master_guid(); // »ñµÃ³ÇÖ÷µÄGUID
+		guid_64						get_city_master_guid(); // è·å¾—åŸä¸»çš„GUID
 		xchar*						get_city_master_name();
-		xchar*						get_city_master_name_old();//Ö»ÔÚ³ÇÕ½½áÊøÊ±»ñÈ¡Ò»´Î£¬ÆäËûÊ±ºò²»Òªµ÷ÓÃ¸Ãº¯Êı
+		xchar*						get_city_master_name_old();//åªåœ¨åŸæˆ˜ç»“æŸæ—¶è·å–ä¸€æ¬¡ï¼Œå…¶ä»–æ—¶å€™ä¸è¦è°ƒç”¨è¯¥å‡½æ•°
 		void						check_and_send_city_master_online_acconcement(const guid_64& online_guid);
 		void						send_get_city_master_stuff(client_session* session);
 		void						send_del_city_master_stuff(const guid_64& city_master_guid);
@@ -46,7 +46,7 @@ namespace faith
 		void						get_maintain_time(tm& begin_tm, tm& end_tm);
 
 		/********************************************/
-		/*               ÆÕÍ¨³ÇÕ½Ïà¹Ø               */
+		/*               æ™®é€šåŸæˆ˜ç›¸å…³               */
 		/********************************************/
 		void						send_city_war_end_notice(guid_64 legion_guid);
 		guid_64						get_occupy_legion_guid(int32 terr_id);
@@ -60,7 +60,7 @@ namespace faith
 		bool						exist_bid_info(guid_64 map_guid, guid_64 legion_guid);
 		int32						get_bid_info_count(int32 terr_id);
 		void						begin_war(int32 terr_id);
-		void						end_war(int32 terr_id, guid_64 winner_legion_guid,bool need_send_notice = true);//Ôö¼ÓboolÖµÅĞ¶ÏÊÇ·ñĞèÒª·¢¹«¸æ
+		void						end_war(int32 terr_id, guid_64 winner_legion_guid,bool need_send_notice = true);//å¢åŠ boolå€¼åˆ¤æ–­æ˜¯å¦éœ€è¦å‘å…¬å‘Š
 		void						end_war(guid_64 map_guid, guid_64 winner_legion_guid);
 		guid_64						get_city_war_map_guid(int32 terr_id);
 		bool						is_during_city_war(guid_64 legion_guid);
@@ -82,7 +82,7 @@ namespace faith
 		void						set_cross_server_territory_war_state(bool war_state) { m_cross_server_territory_war_state = war_state; };
 
 		/********************************************/
-		/*               Íõ³ÇÎè»áÏà¹Ø               */
+		/*               ç‹åŸèˆä¼šç›¸å…³               */
 		/********************************************/
 		bool						is_banquet_holding();
 		e_banquet_level				get_banquet_level() { return m_banquet_level; }
@@ -94,7 +94,7 @@ namespace faith
 
 		void						fill_get_banquet_info_msg(legion_proto_get_banquet_info_end& get_banquet_info_msg, guid_64 role_guid);
 		
-		void						send_overlord_notice(std::string overlord_name, guid_64 overlord_guid, std::string city_name);		//³ÉÎª³ÇÖ÷µÄ¹«¸æ£¬²ÎÊıÎª³ÇÖ÷ÃûºÍ³ÇÊĞÃû
+		void						send_overlord_notice(std::string overlord_name, guid_64 overlord_guid, std::string city_name);		//æˆä¸ºåŸä¸»çš„å…¬å‘Šï¼Œå‚æ•°ä¸ºåŸä¸»åå’ŒåŸå¸‚å
 		void						check_send_city_war_begin_notice(int32 territory_id);
 		void						send_overlord_war_begin_notice();
 		void						send_common_war_begin_notice();
@@ -108,24 +108,24 @@ namespace faith
 		ActivityCommonConfigTemplate* m_city_activity_cfg_ptr;
 
 		/********************************************/
-		/*                 ³ÇÕ½Ïà¹Ø                 */
+		/*                 åŸæˆ˜ç›¸å…³                 */
 		/********************************************/
 		guid_64						m_overlord_legion;
 		xchar						m_city_master_name[max_name_size + 1];
-		bool						m_is_start_city_war;		// Íõ³ÇÎè»áµ±Ç°ÊÇ·ñÕıÔÚ¾ÙĞĞÖĞ
+		bool						m_is_start_city_war;		// ç‹åŸèˆä¼šå½“å‰æ˜¯å¦æ­£åœ¨ä¸¾è¡Œä¸­
 		/********************************************/
-		/*               Íõ³ÇÎè»áÏà¹Ø               */
+		/*               ç‹åŸèˆä¼šç›¸å…³               */
 		/********************************************/
-		bool						m_is_banquet_holding;		// Íõ³ÇÎè»áµ±Ç°ÊÇ·ñÕıÔÚ¾ÙĞĞÖĞ
-		bool						m_request_hold_banquet;		// ÊÇ·ñÇëÇó¾Ù°ìÎè»á
-		e_banquet_level				m_banquet_level;			// Îè»áµÄ¼¶±ğ(ÆÕÍ¨?·áÊ¢?ºÀ»ª?)
-		float						m_banquet_holding_time;		// Íõ³ÇÎè»á´Ó¿ªÊ¼¾Ù°ìµ½Ä¿Ç°¾­¹ıµÄÊ±¼ä
-		int32						m_participant_count;		// ²ÎÓëÕßµÄÊıÄ¿
-		int32						m_participant_max;			// ×î´ó²ÎÓëÕßÊıÄ¿
-		unit_guid_map				m_participant_record;		// ²ÎÓëÕß¼ÇÂ¼
-		bool						m_need_maintain_city_war;	// ĞèÒª¿Û³ıÎ¬»¤·ÑÓÃ
+		bool						m_is_banquet_holding;		// ç‹åŸèˆä¼šå½“å‰æ˜¯å¦æ­£åœ¨ä¸¾è¡Œä¸­
+		bool						m_request_hold_banquet;		// æ˜¯å¦è¯·æ±‚ä¸¾åŠèˆä¼š
+		e_banquet_level				m_banquet_level;			// èˆä¼šçš„çº§åˆ«(æ™®é€š?ä¸°ç››?è±ªå?)
+		float						m_banquet_holding_time;		// ç‹åŸèˆä¼šä»å¼€å§‹ä¸¾åŠåˆ°ç›®å‰ç»è¿‡çš„æ—¶é—´
+		int32						m_participant_count;		// å‚ä¸è€…çš„æ•°ç›®
+		int32						m_participant_max;			// æœ€å¤§å‚ä¸è€…æ•°ç›®
+		unit_guid_map				m_participant_record;		// å‚ä¸è€…è®°å½•
+		bool						m_need_maintain_city_war;	// éœ€è¦æ‰£é™¤ç»´æŠ¤è´¹ç”¨
 
-		bool						m_cross_server_territory_war_state;//¿ç·ş³ÇÕ½×´Ì¬
+		bool						m_cross_server_territory_war_state;//è·¨æœåŸæˆ˜çŠ¶æ€
 	};
 }
 

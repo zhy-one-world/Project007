@@ -128,7 +128,7 @@ namespace faith
 			if (m_sprite_record_array.size() >= hope_and_hunt_record_num)
 			{
 				for (int32 i = 0; i < hope_and_hunt_record_num; ++i)
-				{//´ÓÍ·Çå£¬²»ÓÃwhile·ÀÖ¹ËÀÑ­»·
+				{//ä»Žå¤´æ¸…ï¼Œä¸ç”¨whileé˜²æ­¢æ­»å¾ªçŽ¯
 					if (m_sprite_record_array.empty())
 					{
 						break;
@@ -157,7 +157,7 @@ namespace faith
 			if (m_hope_item_record_array.size() >= hope_and_hunt_record_num)
 			{
 				for (int32 i = 0; i < hope_and_hunt_record_num; ++i)
-				{//´ÓÍ·Çå£¬²»ÓÃwhile·ÀÖ¹ËÀÑ­»·
+				{//ä»Žå¤´æ¸…ï¼Œä¸ç”¨whileé˜²æ­¢æ­»å¾ªçŽ¯
 					if (m_hope_item_record_array.empty())
 					{
 						break;
@@ -223,7 +223,7 @@ namespace faith
 			temp_record->set_get_type(temp_info.get_type);
 			temp_record->set_record_type(temp_info.record_type);
 			temp_record->set_record_time(temp_info.record_time);
-			//·ÀÖ¹Êý¾Ý¹ý³¤ÎÞ·¨·¢ËÍ
+			//é˜²æ­¢æ•°æ®è¿‡é•¿æ— æ³•å‘é€
 			if (msg.ByteSize() > packege_length_max)
 			{
 				temp_session->send_to_client(&msg, e_msgindex_s2c_load_record_info);
@@ -242,7 +242,7 @@ namespace faith
 			temp_record->set_get_type(temp_info.get_type);
 			temp_record->set_record_type(temp_info.record_type);
 			temp_record->set_record_time(temp_info.record_time);
-			//·ÀÖ¹Êý¾Ý¹ý³¤ÎÞ·¨·¢ËÍ
+			//é˜²æ­¢æ•°æ®è¿‡é•¿æ— æ³•å‘é€
 			if (msg.ByteSize() > packege_length_max)
 			{
 				temp_session->send_to_client(&msg, e_msgindex_s2c_load_record_info);

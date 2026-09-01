@@ -24,8 +24,8 @@ namespace faith
 	class buff_proto_buff_info_all;
 	enum e_cyc_action_lanuch_type
 	{
-		ecalt_lanuch_interval,		//¼ä¸ô´¥·¢
-		ecalt_lanuch_timepoint,		//¶¨Ê±´¥·¢
+		ecalt_lanuch_interval,		//é—´éš”è§¦å‘
+		ecalt_lanuch_timepoint,		//å®šæ—¶è§¦å‘
 	};
 
 	struct effect
@@ -64,7 +64,7 @@ namespace faith
 	public:
 		buff_item();
 		~buff_item();
-		//¹¹Ôì¡¢Ïú»Ù
+		//æ„é€ ã€é”€æ¯
 	public:
 		bool						on_event(s_trigger_param& trigger_param);
 		void						buff_event_param(bool apply);
@@ -101,7 +101,7 @@ namespace faith
 		int32						get_max_pile_count();
 		int32						get_cur_pile_count();
 		void						change_cur_pile_count(int32 pile_count);
-		//ÊôĞÔ
+		//å±æ€§
 	public:
 		bool						can_use();
 		bool						can_cannel();
@@ -137,12 +137,12 @@ namespace faith
 		e_buff_add_judge			add_buff_type(const int32& sender_index, const int32& buff_template_id);
 
 		void						set_is_ignore_att(bool is_ignore) { m_is_ignore_att = is_ignore; };
-		//·½·¨
+		//æ–¹æ³•
 	public:
 		void							pile_one(buff_ex_env_param* pEnv, bool change_level = false);
 		int32							dec_pile();
 		void							dec_all_pile(bool time_over = false);
-		//ĞĞÎªÏà¹Ø»Øµ÷º¯Êı
+		//è¡Œä¸ºç›¸å…³å›è°ƒå‡½æ•°
 	public:
 		bool						begin_effect(buff_ex_env_param* pEnv);
 		bool						end_effect(buff_ex_env_param* pEnv);
@@ -151,7 +151,7 @@ namespace faith
 		void                        cyc_buff_show();
 		bool						end_buff(buff_ex_env_param* pEnv, bool time_over = false);
 
-		//Êı¾İ¿â¡¢Í¬²½Ïà¹Ø¹¤¾ßº¯Êı
+		//æ•°æ®åº“ã€åŒæ­¥ç›¸å…³å·¥å…·å‡½æ•°
 	private:
 		void						send_buff_by_add(buff_ex_env_param* pEnv);
 		void						send_buff_by_del();
@@ -163,21 +163,21 @@ namespace faith
 	private:
 		bool						m_is_end;
 		bool						m_data_use;
-		int32						m_sender_index;					//·¢ËÍÕß
-		int32						m_owner_index;					//ÓµÓĞÕß
-		guid_64						m_buff_guid;					//buff id (Í¬Ò»playerÉÏ±êÊ¶²»Í¬buff)
-		int64						m_life_time;					//buff´æÔÚÊ±¼ä
-		buff_proto_buff_info		m_buff_data;					//buffÊı¾İ
-		BuffDataTemplate*			m_buff_template_ptr;			//Ä£°åÖ¸Õë
-		std::vector<effect>			m_begin_action;					//¿ªÊ¼µÄaction
+		int32						m_sender_index;					//å‘é€è€…
+		int32						m_owner_index;					//æ‹¥æœ‰è€…
+		guid_64						m_buff_guid;					//buff id (åŒä¸€playerä¸Šæ ‡è¯†ä¸åŒbuff)
+		int64						m_life_time;					//buffå­˜åœ¨æ—¶é—´
+		buff_proto_buff_info		m_buff_data;					//buffæ•°æ®
+		BuffDataTemplate*			m_buff_template_ptr;			//æ¨¡æ¿æŒ‡é’ˆ
+		std::vector<effect>			m_begin_action;					//å¼€å§‹çš„action
 		int32						m_begin_action_num;
-		std::vector<effect_cyc>		m_cyc_effect;					//Ñ­»·µÄaction
+		std::vector<effect_cyc>		m_cyc_effect;					//å¾ªç¯çš„action
 		int32						m_cyc_action_num;
-		std::vector<effect>			m_end_action;					//½áÊøaction
+		std::vector<effect>			m_end_action;					//ç»“æŸaction
 		int32						m_end_action_num;
-		std::vector<effect>			m_effect_action;				//³ÖĞøaction
+		std::vector<effect>			m_effect_action;				//æŒç»­action
 		int32						m_effect_action_num;
-		std::vector<effect>			m_event_action;					//ÊÂ¼şaction
+		std::vector<effect>			m_event_action;					//äº‹ä»¶action
 		int32						m_event_action_num;
 		int64						m_last_action_tick;
 		int64						m_jump_tick;

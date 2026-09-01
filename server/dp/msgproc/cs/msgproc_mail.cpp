@@ -108,7 +108,7 @@ namespace faith
 				memcpy(&(reply_mail.data_list[i]), &(sql_data[i].data_info), sizeof(s_mail_info));
 
 				for (int32 j = 0; j < max_item_per_mail; ++j)
-				{// ´æ´¢loadÏÂÀ´µÄÓÊ¼þ¸½¼þÎïÆ·µÄguid
+				{// å­˜å‚¨loadä¸‹æ¥çš„é‚®ä»¶é™„ä»¶ç‰©å“çš„guid
 					guid_64 temp_guid;
 					temp_guid.A = sql_data[i].data_info.data_ary[EMailInfo_ItemGuid11 + j * 2];
 					temp_guid.B = sql_data[i].data_info.data_ary[EMailInfo_ItemGuid11 + j * 2 + 1];
@@ -130,7 +130,7 @@ namespace faith
 				cs2dp_load_role_mail_send_lua(connindex, reply_mail, unit_array_index);
 			}
 
-			//Ã»ÓÐÎïÆ·Ò²Òªµ÷ÓÃ ±£Ö¤Êý¾ÝÁ´ÍêÕû
+			//æ²¡æœ‰ç‰©å“ä¹Ÿè¦è°ƒç”¨ ä¿è¯æ•°æ®é“¾å®Œæ•´
 			cs2dp_req_load_char_mail_item(mail_item_guid_array, mail_item_count, connindex, role_guid, unit_array_index);
 			return;
 		}
@@ -229,7 +229,7 @@ namespace faith
 			dbproxy_service::getInstance().send_message(connindex, &operate_load_lock_mail, sizeof(operate_load_lock_mail));
 			return;
 		}
-		else /*if (result.query.data_select.row_count > 0)*/  // ¿ÉÒÔÎª0
+		else /*if (result.query.data_select.row_count > 0)*/  // å¯ä»¥ä¸º0
 		{
 			if (table_len > 0)
 			{

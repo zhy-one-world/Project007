@@ -30,13 +30,13 @@ namespace faith
 	/************************************************************************/
 	/*                            Class Declare                             */
 	/************************************************************************/
-	// ËùÓĞ³¡¾°Âß¼­¶ÔÏóµÄ»ùÀà
+	// æ‰€æœ‰åœºæ™¯é€»è¾‘å¯¹è±¡çš„åŸºç±»
 	class npc : public unit
 	{
 	public:
 		npc();
 		virtual ~npc();
-	private://ÄÚ´æÒÑ¾­´´½¨ºÃÁË ½ûÖ¹¿½±´
+	private://å†…å­˜å·²ç»åˆ›å»ºå¥½äº† ç¦æ­¢æ‹·è´
 		npc(const npc& unit_ref);
 		npc& operator=(const npc&);
 	public: 
@@ -114,7 +114,7 @@ namespace faith
 		virtual int32					get_owner_unit_level();
 
 		void							send_plot_with_npc_hp();
-		void							refresh_npc_left_hp_per();	//ÏÈ°ÑÑªÁ¿¸üĞÂµ½ws ÔÙ¸üĞÂµ½ËùÓĞ¿Í»§¶Ë Ã¿ÏÂ½µ°Ù·ÖÖ®10¸üĞÂÒ»´Î
+		void							refresh_npc_left_hp_per();	//å…ˆæŠŠè¡€é‡æ›´æ–°åˆ°ws å†æ›´æ–°åˆ°æ‰€æœ‰å®¢æˆ·ç«¯ æ¯ä¸‹é™ç™¾åˆ†ä¹‹10æ›´æ–°ä¸€æ¬¡
 		void							send_npc_left_hp_per();
 		void							refresh_npc_damaget_list(const int32& unit_array_index, double damage_value, player& player_ref, e_boss_type boss_type);
 		void							send_damage_score_to_ws();
@@ -143,14 +143,14 @@ namespace faith
 
 		void							clear_legion_score_rank() { return m_legion_score_rank_indicator.clear_data(); }
 
-		bool							is_cross_server_boss();//ÅĞ¶ÏÊÇ·ñÊÇ¿ç·şÊÀ½çboss
-		int32							get_cross_boss_buff();//»ñµÃ¿ç·şÊÀ½çboss´¥·¢µÄbuffid
+		bool							is_cross_server_boss();//åˆ¤æ–­æ˜¯å¦æ˜¯è·¨æœä¸–ç•Œboss
+		int32							get_cross_boss_buff();//è·å¾—è·¨æœä¸–ç•Œbossè§¦å‘çš„buffid
 
-		void							set_boss_god_skill_begin_time(int64 begin_time) { m_boss_god_skill_begin_tiem = begin_time; };	//ÉèÖÃÎŞµĞ¿ªÊ¼Ê±¼ä
-		int64							get_boss_god_skill_begion_time() {return m_boss_god_skill_begin_tiem;};							//»ñµÃÎŞµĞ¿ªÊ¼Ê±¼ä
+		void							set_boss_god_skill_begin_time(int64 begin_time) { m_boss_god_skill_begin_tiem = begin_time; };	//è®¾ç½®æ— æ•Œå¼€å§‹æ—¶é—´
+		int64							get_boss_god_skill_begion_time() {return m_boss_god_skill_begin_tiem;};							//è·å¾—æ— æ•Œå¼€å§‹æ—¶é—´
 
 		void							send_boss_god_skill_begion_time();
-		bool							is_god_skill(int32 skill_id);	// ÅĞ¶ÏÊÇ²»ÊÇ¿ç·şÊÀ½çbossµÄÎŞµĞ¼¼ÄÜ
+		bool							is_god_skill(int32 skill_id);	// åˆ¤æ–­æ˜¯ä¸æ˜¯è·¨æœä¸–ç•Œbossçš„æ— æ•ŒæŠ€èƒ½
 
 		bool							is_summon_pet();
 		void							cross_boss_send_boss_god_time(guid_64 role_guid);
@@ -167,7 +167,7 @@ namespace faith
 
 		void							set_can_see_player_guid(guid_64 unit_guid);
 		guid_64							get_can_see_player_guid();
-		void							check_can_see_npc_state();//Èç¹ûÈÎÎñ¹ÖµÄÍæ¼ÒÏÂÏßÉ¾³ıÈÎÎñ¹Ö
+		void							check_can_see_npc_state();//å¦‚æœä»»åŠ¡æ€ªçš„ç©å®¶ä¸‹çº¿åˆ é™¤ä»»åŠ¡æ€ª
 
 		void							robot_be_dead();
 		void							send_kill_prompt(int32 kill_player_array_index, bool is_end = false);
@@ -188,36 +188,36 @@ namespace faith
 		NpcTemplate*	m_npc_template_ptr;
 		ai_unit			m_ai_unit;
 		int32			m_spawn_point_id;
-		int32			m_item_id;					// µôÂä°ü°üº¬ÁËÊ²Ã´ÎïÆ·;
-		int32			m_item_lock;				// µôÂä°üÎïÆ·ÊÇ·ñ°ó¶¨;
+		int32			m_item_id;					// æ‰è½åŒ…åŒ…å«äº†ä»€ä¹ˆç‰©å“;
+		int32			m_item_lock;				// æ‰è½åŒ…ç‰©å“æ˜¯å¦ç»‘å®š;
 
-		int64			m_life_time;				// npc´æ»îÊ±¼ä
-		bool			m_is_life_change;			// npcµÄ´æ»îÊ±¼äÊÇ·ñĞèÒªË¢ĞÂ
-		int32			m_born_type;				// ÊÇ·ñÔÚ³öÉú½×¶Î
+		int64			m_life_time;				// npcå­˜æ´»æ—¶é—´
+		bool			m_is_life_change;			// npcçš„å­˜æ´»æ—¶é—´æ˜¯å¦éœ€è¦åˆ·æ–°
+		int32			m_born_type;				// æ˜¯å¦åœ¨å‡ºç”Ÿé˜¶æ®µ
 		e_dropbox_owner_type  m_owner_type;
-		s_unit_identifier m_owner_unit_identifier;	//¹éÊôÕßµÄguid
-		bool			m_show_map;					//ÊÇ·ñÏÔÊ¾µ½µØÍ¼ÖĞÁË
-		int32			m_show_weapon_id;			//ÈßÓàÊı¾İ ÓÃÓÚÍ¬²½
-		std::vector<float> m_init_poroperty_ratio;	//ÓÃÓÚ³õÊ¼»¯ÊôĞÔ¼ÆËã
-		std::vector<float> m_init_property_plus;	//ÓÃÓÚ³õÊ¼»¯ÊôĞÔ¼ÆËã
-		int64			m_next_clamor_time;				// npcÏÂÒ»´Îº°»°Ê±¼ä
-		int64			m_next_clamor_tick;				// npcº°»°tickÊ±¼ä
+		s_unit_identifier m_owner_unit_identifier;	//å½’å±è€…çš„guid
+		bool			m_show_map;					//æ˜¯å¦æ˜¾ç¤ºåˆ°åœ°å›¾ä¸­äº†
+		int32			m_show_weapon_id;			//å†—ä½™æ•°æ® ç”¨äºåŒæ­¥
+		std::vector<float> m_init_poroperty_ratio;	//ç”¨äºåˆå§‹åŒ–å±æ€§è®¡ç®—
+		std::vector<float> m_init_property_plus;	//ç”¨äºåˆå§‹åŒ–å±æ€§è®¡ç®—
+		int64			m_next_clamor_time;				// npcä¸‹ä¸€æ¬¡å–Šè¯æ—¶é—´
+		int64			m_next_clamor_tick;				// npcå–Šè¯tickæ—¶é—´
 
 		int32			m_robot_template_id;
 		int64			battle_begin_time;
-		float			last_hp_scale_flag;				// Ê£ÓàÑªÁ¿¼ÇÂ¼±ê¼Ç
-		int32			m_residue_born_time;//¾àÀë³ö³¡¿ªÊ¼µÄÊ£ÓàÊ±¼ä
+		float			last_hp_scale_flag;				// å‰©ä½™è¡€é‡è®°å½•æ ‡è®°
+		int32			m_residue_born_time;//è·ç¦»å‡ºåœºå¼€å§‹çš„å‰©ä½™æ—¶é—´
 		int64			m_last_sec_stamp;
 		int64			m_last_2sec_stamp;
 		int64			m_last_3sec_stamp;
-		score_indicator				m_score_rank_indicator;//»ı·ÖÅÅĞĞ Õë¶ÔÊÀ½çboss
-		score_indicator				m_legion_score_rank_indicator;//¾üÍÅ»ı·ÖÅÅĞĞ Õë¶ÔÊÀ½çboss
+		score_indicator				m_score_rank_indicator;//ç§¯åˆ†æ’è¡Œ é’ˆå¯¹ä¸–ç•Œboss
+		score_indicator				m_legion_score_rank_indicator;//å†›å›¢ç§¯åˆ†æ’è¡Œ é’ˆå¯¹ä¸–ç•Œboss
 		std::unordered_map<ui64, int32>				m_player_got_damage_reward_map;
-		std::vector<s_gain_treasure_player_info>  m_player_info_arr;	//´ò±¦ÏµÍ³ÓµÓĞÊ°È¡È¨µÄÈË
+		std::vector<s_gain_treasure_player_info>  m_player_info_arr;	//æ‰“å®ç³»ç»Ÿæ‹¥æœ‰æ‹¾å–æƒçš„äºº
 
-		int32			m_drop_with_npc_temp_id;//ÄÄ¸önpcIDµôÂäµÄµôÂä°ü
+		int32			m_drop_with_npc_temp_id;//å“ªä¸ªnpcIDæ‰è½çš„æ‰è½åŒ…
 		
-		int64			m_boss_god_skill_begin_tiem;		//¿ç·şÊÀ½çbossÊ¹ÓÃ ÓÃÓÚ±£´æÎŞµĞ¼¼ÄÜµÄ¿ªÊ¼Ê±¼ä
+		int64			m_boss_god_skill_begin_tiem;		//è·¨æœä¸–ç•Œbossä½¿ç”¨ ç”¨äºä¿å­˜æ— æ•ŒæŠ€èƒ½çš„å¼€å§‹æ—¶é—´
 
 		int32			m_last_send_plot_hp;
 
@@ -239,7 +239,7 @@ namespace faith
 		int32			m_attack_city_npc_type;
 
 	private:
-		/******************************* BOSSÉËº¦ÁĞ±í (ÖúÕ½+×é¶Ó) *******************************************************/
+		/******************************* BOSSä¼¤å®³åˆ—è¡¨ (åŠ©æˆ˜+ç»„é˜Ÿ) *******************************************************/
 		std::map<guid_64, s_boss_damage_list_person_item> m_boss_damage_person_map;
 		std::vector<s_boss_damage_list_total_item> m_boss_damage_total_vec;
 	public:

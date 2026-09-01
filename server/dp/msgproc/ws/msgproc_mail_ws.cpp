@@ -1,5 +1,5 @@
 /********************************************************************
-created:	2016Äê12ÔÂ12ÈÕ12:54:24
+created:	2016å¹´12æœˆ12æ—¥12:54:24
 file base:	msgproc_mail_ws
 file ext:	cpp
 author:		zhy
@@ -65,7 +65,7 @@ namespace faith
 				ws2dp_add_mail_to_sql new_msg;
 				new_msg = mail_msg;
 				if (i > 0)
-				{//Ò»´Î·¢Ò»¸öÒÔÉÏµÄÓÊ¼ş£¬ĞèÒªÖØÉè¸÷ÖÖGUID
+				{//ä¸€æ¬¡å‘ä¸€ä¸ªä»¥ä¸Šçš„é‚®ä»¶ï¼Œéœ€è¦é‡è®¾å„ç§GUID
 					new_msg.mail_info.mail_guid = guid_gen::make_guid();
 					for (int32 item_index = 0; item_index < new_msg.item_num; ++item_index)
 					{
@@ -139,7 +139,7 @@ namespace faith
 
 	void del_mail_item_batch_for_add_new_finish(db_result_type result, uint32 connindex, guid_64 role_guid, const faith::ws2dp_add_mail_to_sql mail_msg)
 	{
-		//²åÈëÎïÆ·
+		//æ’å…¥ç‰©å“
 		if (!result.error)
 		{
 			add_mail_item_batch(connindex, role_guid, mail_msg);
@@ -210,7 +210,7 @@ namespace faith
 
 		CONSOLE_INFO("add_new_item_finish result = {} Mail Guid = {}", result.error, mail_msg.mail_info.mail_guid.server_64);
 
-		//²åÈëÓÊ¼ş±¾Ìå
+		//æ’å…¥é‚®ä»¶æœ¬ä½“
 		if (!result.error)
 		{
 			add_mail(connindex, role_guid, mail_msg);
@@ -299,7 +299,7 @@ namespace faith
 		CONSOLE_INFO("Mail Guid = {}", mail_msg.mail_info.mail_guid.server_64);
 		if (mail_msg.resend_times > 5)
 		{
-			//·À´í£¬·ÀÖ¹Êı¾İ´íÎó·´¸´»Ø·¢
+			//é˜²é”™ï¼Œé˜²æ­¢æ•°æ®é”™è¯¯åå¤å›å‘
 			return;
 		}
 		guid_64 sender_guid = guid_64(mail_msg.mail_info.data_ary[EMailInfo_SenderGuid1], mail_msg.mail_info.data_ary[EMailInfo_SenderGuid2]);
@@ -454,7 +454,7 @@ namespace faith
 			dp2ws_load_mail_event_end reply_mail;
 			reply_mail.is_over = true;
 
-			// Èº·¢ÓÊ¼şÖ»×÷ÎªÄ£°æ´æÔÚwsÉÏ£¬²¢²»ÊôÓÚÈÎºÎÈË
+			// ç¾¤å‘é‚®ä»¶åªä½œä¸ºæ¨¡ç‰ˆå­˜åœ¨wsä¸Šï¼Œå¹¶ä¸å±äºä»»ä½•äºº
 			reply_mail.role_guid = 0;
 
 			reply_mail.mail_num = table_len;
@@ -483,7 +483,7 @@ namespace faith
 			db_read_data(&result, &sql_data, data_size * table_len);
 
 			dp2ws_load_mail_event_item_end reply_item;
-			//ÕâĞ©ÎïÆ·£¨¼´ÕâÌõÏûÏ¢£©²»ÊôÓÚÈÎºÎÈË£¬itemÖĞµÄrole_guidÎª0£¬Ö»ÊÇÎªÁËÅäºÏ s_item_info_db µÄÊı¾İ¸ñÊ½Õ¼Î»ÓÃ
+			//è¿™äº›ç‰©å“ï¼ˆå³è¿™æ¡æ¶ˆæ¯ï¼‰ä¸å±äºä»»ä½•äººï¼Œitemä¸­çš„role_guidä¸º0ï¼Œåªæ˜¯ä¸ºäº†é…åˆ s_item_info_db çš„æ•°æ®æ ¼å¼å ä½ç”¨
 			reply_item.is_over = true;
 			reply_item.item_num = table_len;
 			for (int32 i = 0; i < table_len; ++i)
@@ -616,7 +616,7 @@ namespace faith
 			for (int32 i = 0; i < table_len; ++i)
 			{
 				for (int32 j = 0; j < max_item_per_mail; ++j)
-				{// ´æ´¢loadÏÂÀ´µÄÓÊ¼ş¸½¼şÎïÆ·µÄguid
+				{// å­˜å‚¨loadä¸‹æ¥çš„é‚®ä»¶é™„ä»¶ç‰©å“çš„guid
 					guid_64 temp_guid;
 					temp_guid.A = sql_data.mail_info_db[i].data_info.data_ary[EMailInfo_ItemGuid11 + j * 2];
 					temp_guid.B = sql_data.mail_info_db[i].data_info.data_ary[EMailInfo_ItemGuid11 + j * 2 + 1];
@@ -753,7 +753,7 @@ namespace faith
 			guid_64 sender_guid = guid_64(request.mail_info(i).data_ary(EMailInfo_SenderGuid1), request.mail_info(i).data_ary(EMailInfo_SenderGuid2));
 
 
-			// ´ËÊ±ÓÊ¼ş²»ÊôÓÚÈÎºÎÈË£¬ËùÒÔ¡°role_guid¡±Î»ÖÃÎŞÒâÒå£¬µ¥Î»ÁËÅäºÏ s_mail_info_db µÄÊı¾İÀàĞÍ£¬ËùÒÔÌî0Õ¼Î»
+			// æ­¤æ—¶é‚®ä»¶ä¸å±äºä»»ä½•äººï¼Œæ‰€ä»¥â€œrole_guidâ€ä½ç½®æ— æ„ä¹‰ï¼Œå•ä½äº†é…åˆ s_mail_info_db çš„æ•°æ®ç±»å‹ï¼Œæ‰€ä»¥å¡«0å ä½
 			sql << "(" << 0 << ","
 				<< request.mail_info(i).role_guid() << ",";
 
@@ -809,7 +809,7 @@ namespace faith
 		int32 sqlEnd = e_item_info_max - 1;
 		for (int32 i = 0; i < request.item_list_size(); i++)
 		{
-			// ´ËÊ±£¬ÎïÆ·µÄ²»ÊôÓÚÈÎºÎÈË£¬role_guidÎŞÒâÒå£¬µ«ÎªÁËÅäºÏ s_item_info_dbµÄÊı¾İ¸ñÊ½£¬Ìî0Õ¼Î»
+			// æ­¤æ—¶ï¼Œç‰©å“çš„ä¸å±äºä»»ä½•äººï¼Œrole_guidæ— æ„ä¹‰ï¼Œä½†ä¸ºäº†é…åˆ s_item_info_dbçš„æ•°æ®æ ¼å¼ï¼Œå¡«0å ä½
 			sql << "(" << 0 << ","
 				<< request.item_list(i).item_guid() << ",";
 			for (int32 j = 0; j < e_item_info_max; ++j)

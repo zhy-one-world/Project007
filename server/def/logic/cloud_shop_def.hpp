@@ -14,22 +14,22 @@ namespace faith
 {
 #pragma pack(push,1)
 
-	const int32 basic_cloud_shop_template_id = 134000000;	// ÔÆ¹ºÅäÖÃ±í »ù´¡ÅäÖÃid
-	const int32 cloud_shop_day_index_rate = 100;			// ÔÆ¹ºÅäÖÃ±í µ±Ç°µÚ¼¸ÌìË÷ÒıµÄ³ËÊıÏµÊı
-	const int32 cloud_shop_server_level_min_id = 1;			// ÔÆ¹ºÅäÖÃ±í ·şÎñÆ÷µÈ¼¶·Ö¶Î×îĞ¡ ID
-	const int32 cloud_shop_server_level_max_id = 1000;		// ÔÆ¹ºÅäÖÃ±í ·şÎñÆ÷µÈ¼¶·Ö¶Î×î´ó ID
-	const int32 cloud_shop_award_str_max_size = 3200;		//Êı¾İ¿â´æ´¢ÔÆ¹ºµÄ´ó½±»ñµÃÇé¿öÊı¾İ×Ö·û´®×î´ó³¤¶È
-	const int32 cloud_shop_basic_award_size = 4;			//ÔÆ¹º»ù´¡½±ÀøÀà±ğÊıÁ¿
+	const int32 basic_cloud_shop_template_id = 134000000;	// äº‘è´­é…ç½®è¡¨ åŸºç¡€é…ç½®id
+	const int32 cloud_shop_day_index_rate = 100;			// äº‘è´­é…ç½®è¡¨ å½“å‰ç¬¬å‡ å¤©ç´¢å¼•çš„ä¹˜æ•°ç³»æ•°
+	const int32 cloud_shop_server_level_min_id = 1;			// äº‘è´­é…ç½®è¡¨ æœåŠ¡å™¨ç­‰çº§åˆ†æ®µæœ€å° ID
+	const int32 cloud_shop_server_level_max_id = 1000;		// äº‘è´­é…ç½®è¡¨ æœåŠ¡å™¨ç­‰çº§åˆ†æ®µæœ€å¤§ ID
+	const int32 cloud_shop_award_str_max_size = 3200;		//æ•°æ®åº“å­˜å‚¨äº‘è´­çš„å¤§å¥–è·å¾—æƒ…å†µæ•°æ®å­—ç¬¦ä¸²æœ€å¤§é•¿åº¦
+	const int32 cloud_shop_basic_award_size = 4;			//äº‘è´­åŸºç¡€å¥–åŠ±ç±»åˆ«æ•°é‡
 	const int32 max_load_record_num = 1000;
 
-	const int32 cloud_shop_robbery_start_time = 64800;		//ÇÀ¹º¿ªÊ¼Ê±¼ä
-	const int32 cloud_shop_award_opening_time = 75600;		//¿ª½±Ê±¼ä
+	const int32 cloud_shop_robbery_start_time = 64800;		//æŠ¢è´­å¼€å§‹æ—¶é—´
+	const int32 cloud_shop_award_opening_time = 75600;		//å¼€å¥–æ—¶é—´
 
 
 	enum e_cloud_shop_buy_type
 	{
-		e_cloud_shop_buy_type_buy,			//¹ºÂò
-		e_cloud_shop_buy_type_robber,		//ÇÀ¹º
+		e_cloud_shop_buy_type_buy,			//è´­ä¹°
+		e_cloud_shop_buy_type_robber,		//æŠ¢è´­
 		e_cloud_shop_buy_type_robber_max,
 	};
 
@@ -43,24 +43,24 @@ namespace faith
 
 	enum e_cloud_shop_state
 	{
-		e_cloud_shop_not_open,			//»î¶¯Î´¿ª·Å
-		e_cloud_shop_wait_for_start,	//»î¶¯Î´¿ªÊ¼
-		e_cloud_shop_buy,				//¿É¹ºÂò
-		e_cloud_shop_robber,			//¿ÉÇÀ¹º
-		e_cloud_shop_finish,			//»î¶¯µ±ÌìÄÚÈİ½áÊø
+		e_cloud_shop_not_open,			//æ´»åŠ¨æœªå¼€æ”¾
+		e_cloud_shop_wait_for_start,	//æ´»åŠ¨æœªå¼€å§‹
+		e_cloud_shop_buy,				//å¯è´­ä¹°
+		e_cloud_shop_robber,			//å¯æŠ¢è´­
+		e_cloud_shop_finish,			//æ´»åŠ¨å½“å¤©å†…å®¹ç»“æŸ
 	};
 
 	enum e_cloud_shop_communicate_error_define
 	{
-		e_cloud_shop_communicate_error_define_no_error					= 0,	//Ã»´íÎó
-		e_cloud_shop_communicate_error_define_state_error				= 1,	//²»ÔÚ¹ºÂòÊ±¼äÄÚ½øĞĞÔÆ¹º¹ºÂò£¨°üÀ¨¹ºÂòºÍÇÀ¹º£©
-		e_cloud_shop_communicate_error_define_not_enough_product		= 2,	//ÔÆ¹ºÊıÁ¿ÒÑÂòÍê£¬Ã»ÓĞ¿É¹©¹ºÂòµÄÊıÁ¿ÁË£¨°üÀ¨¹ºÂòºÍÇÀ¹º£©
-		e_cloud_shop_communicate_error_define_data_error				= 3,	//Êı¾İ¸ñÊ½´íÎó
-		e_cloud_shop_communicate_error_define_player_offline			= 4,	//Íæ¼Ò²»´æÔÚ
-		e_cloud_shop_communicate_error_define_req_type_error			= 5,	//ÇëÇó²ÎÊı´íÎó
-		e_cloud_shop_communicate_error_define_vip_data_error			= 6,	//vip±íÎ´ÕÒµ½Êı¾İ
-		e_cloud_shop_communicate_error_define_not_enough_vip_buy_times	= 7,	//¹ºÂò´ÎÊıÒÑÓÃ¾¡£¨½öÖ¸¹ºÂò£©
-		e_cloud_shop_communicate_error_define_not_enough_money			= 8,	//Ç®²»×ã£¨°üÀ¨¹ºÂòºÍÇÀ¹º£©
+		e_cloud_shop_communicate_error_define_no_error					= 0,	//æ²¡é”™è¯¯
+		e_cloud_shop_communicate_error_define_state_error				= 1,	//ä¸åœ¨è´­ä¹°æ—¶é—´å†…è¿›è¡Œäº‘è´­è´­ä¹°ï¼ˆåŒ…æ‹¬è´­ä¹°å’ŒæŠ¢è´­ï¼‰
+		e_cloud_shop_communicate_error_define_not_enough_product		= 2,	//äº‘è´­æ•°é‡å·²ä¹°å®Œï¼Œæ²¡æœ‰å¯ä¾›è´­ä¹°çš„æ•°é‡äº†ï¼ˆåŒ…æ‹¬è´­ä¹°å’ŒæŠ¢è´­ï¼‰
+		e_cloud_shop_communicate_error_define_data_error				= 3,	//æ•°æ®æ ¼å¼é”™è¯¯
+		e_cloud_shop_communicate_error_define_player_offline			= 4,	//ç©å®¶ä¸å­˜åœ¨
+		e_cloud_shop_communicate_error_define_req_type_error			= 5,	//è¯·æ±‚å‚æ•°é”™è¯¯
+		e_cloud_shop_communicate_error_define_vip_data_error			= 6,	//vipè¡¨æœªæ‰¾åˆ°æ•°æ®
+		e_cloud_shop_communicate_error_define_not_enough_vip_buy_times	= 7,	//è´­ä¹°æ¬¡æ•°å·²ç”¨å°½ï¼ˆä»…æŒ‡è´­ä¹°ï¼‰
+		e_cloud_shop_communicate_error_define_not_enough_money			= 8,	//é’±ä¸è¶³ï¼ˆåŒ…æ‹¬è´­ä¹°å’ŒæŠ¢è´­ï¼‰
 	};
 
 	enum e_cloud_shop_role_info

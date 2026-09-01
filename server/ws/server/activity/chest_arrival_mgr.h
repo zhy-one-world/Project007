@@ -8,12 +8,12 @@
 
 namespace faith
 {
-	// ±¦Ïä½µÁÙ»î¶¯µÄ¹ÜÀíÆ÷
+	// å®ç®±é™ä¸´æ´»åŠ¨çš„ç®¡ç†å™¨
 	class chest_arrival_mgr
 	{
 	public:
-		const float check_spawn_time_tick_duration = 30.0f; // µ¥Î»ÎªÃë
-		const int32 spawn_chests_announcement_template_id = 93000024; // Ë¢±¦ÏäÊ±µÄ¹«¸æÄÚÈİÄ£°å
+		const float check_spawn_time_tick_duration = 30.0f; // å•ä½ä¸ºç§’
+		const int32 spawn_chests_announcement_template_id = 93000024; // åˆ·å®ç®±æ—¶çš„å…¬å‘Šå†…å®¹æ¨¡æ¿
 
 		static chest_arrival_mgr& get_instance()
 		{

@@ -79,8 +79,8 @@ namespace faith
 		bool								get_member_online(guid_64 player_guid);
 		bool								is_all_member_offline();
 		bool								is_all_other_member_offline(guid_64 player_guid);
-		void								dissolve_team(); // ½âÉ¢¶ÓÎé
-		void								on_team_delete(); // ½âÉ¢¶ÓÎé
+		void								dissolve_team(); // è§£æ•£é˜Ÿä¼
+		void								on_team_delete(); // è§£æ•£é˜Ÿä¼
 		void								on_team_mem_online(client_session* session);
 		void								on_team_mem_offline(client_session* session);
 		void								on_team_mem_login(client_session* session);
@@ -111,7 +111,7 @@ namespace faith
 
 		bool								is_dissolved() const { return m_is_dissolved; }
 
-		// ´«ËÍÏà¹Ø²Ù×÷
+		// ä¼ é€ç›¸å…³æ“ä½œ
 		void								ready_transfer_all_member_to_scene();
 		bool								is_ready_transfer_now() { return m_ready_transfer_info.is_active; }
 		void								set_ready_transfer_info(int32 map_template_id);
@@ -121,7 +121,7 @@ namespace faith
 		void								on_team_map_recycle();
 		void								on_team_game_over();
 
-		// ³ÉÔ±×¼±¸Ïà¹Ø²Ù×÷
+		// æˆå‘˜å‡†å¤‡ç›¸å…³æ“ä½œ
 		void								set_member_ready_status(guid_64 member_guid, bool mem_ready, e_error_code check_ret = e_error_code_success);
 		bool								is_all_member_ready();
 		void								clear_all_member_ready_state();
@@ -130,20 +130,20 @@ namespace faith
 		void								try_start_team_aim();
 		void								sync_to_cs_start_team_aim();
 
-		// ¶ÓÎé×´Ì¬Ïà¹Ø²Ù×÷
+		// é˜Ÿä¼çŠ¶æ€ç›¸å…³æ“ä½œ
 		e_team_state						get_team_state() const { return m_team_state; }
 		void								set_team_state(e_team_state team_state) { m_team_state = team_state; }
-		bool								can_team_state_add_member() const; // ÅĞ¶Ï¶ÓÎéµ±Ç°µÄ×´Ì¬ÊÇ·ñ¿ÉÒÔ¼ÓÈëĞÂ³ÉÔ±
+		bool								can_team_state_add_member() const; // åˆ¤æ–­é˜Ÿä¼å½“å‰çš„çŠ¶æ€æ˜¯å¦å¯ä»¥åŠ å…¥æ–°æˆå‘˜
 		//bool								can_team_state_start_ready();
-		bool								can_team_state_ready(); // ÅĞ¶Ï¶ÓÎéµ±Ç°µÄ×´Ì¬ÊÇ·ñ¿ÉÒÔÈÃ³ÉÔ±×¼±¸
+		bool								can_team_state_ready(); // åˆ¤æ–­é˜Ÿä¼å½“å‰çš„çŠ¶æ€æ˜¯å¦å¯ä»¥è®©æˆå‘˜å‡†å¤‡
 		bool								can_team_state_start_transfer();
 		bool								can_team_state_be_searched() const;
 		void								change_team_type(cs2ws_change_team_type msg);
 
 		void								get_team_brief_info_pkg(team_proto_team_brief_info* brief_info_msg_ptr);
 
-		void								update_team_member_position(guid_64 role_guid, int32 pos_x, int32 pos_y, int32 pos_z);					 //Ë¢ĞÂ¶ÓÎéÍæ¼ÒÎ»ÖÃĞÅÏ¢
-		void								send_all_team_member_position();					 //·¢ËÍ¶ÓÎéÍæ¼ÒÎ»ÖÃĞÅÏ¢
+		void								update_team_member_position(guid_64 role_guid, int32 pos_x, int32 pos_y, int32 pos_z);					 //åˆ·æ–°é˜Ÿä¼ç©å®¶ä½ç½®ä¿¡æ¯
+		void								send_all_team_member_position();					 //å‘é€é˜Ÿä¼ç©å®¶ä½ç½®ä¿¡æ¯
 
 		bool								fill_team_info_msg(team_proto_team_info& team_info_msg);
 		void								fill_team_member_info_msg(team_proto_member_info& team_member_info_msg, const s_team_member_info& member_info);
@@ -156,7 +156,7 @@ namespace faith
 		void								send_team_info_to_all_member();
 		void								send_add_team_member_message(const s_team_member_info& new_member_info);
 		void								send_del_team_member_message(const guid_64& leave_member_guid);
-		void								send_claer_team_member_message(const guid_64& leave_member_guid);//ÓÃÓÚ¿ç·şÊ±ÇåÀí¿Í»§¶Ë×é¶ÓĞÅÏ¢
+		void								send_claer_team_member_message(const guid_64& leave_member_guid);//ç”¨äºè·¨æœæ—¶æ¸…ç†å®¢æˆ·ç«¯ç»„é˜Ÿä¿¡æ¯
 
 		void								send_aoi_team_info(client_session* session);
 		void								send_all_member_aoi_team_info();
@@ -191,9 +191,9 @@ namespace faith
 		void								set_is_need_save_team(bool need_save) { m_is_need_save_team = need_save; };
 
 	private:
-		void								init_team_state(e_team_type team_type); // ÉèÖÃ¶ÓÎéµÄ³õÊ¼×´Ì¬
+		void								init_team_state(e_team_type team_type); // è®¾ç½®é˜Ÿä¼çš„åˆå§‹çŠ¶æ€
 		/************************************************************************/
-		/*                          ¹«¸æ                                        */
+		/*                          å…¬å‘Š                                        */
 		/************************************************************************/
 		void								notice_add_member(FString member_name);
 		void								notice_del_member(FString member_name);
@@ -209,22 +209,22 @@ namespace faith
 		e_team_type							m_team_type;
 		int32								m_team_sub_type_id;
 		//int32								m_continuous_line_begin;
-		int32								m_one_stop_flags; //Ò»ÌõÁú±ê¼Ç -1ÎŞĞ§ >=0ÓĞĞ§
+		int32								m_one_stop_flags; //ä¸€æ¡é¾™æ ‡è®° -1æ— æ•ˆ >=0æœ‰æ•ˆ
 		guid_64								m_team_map_guid;
 		guid_64								m_captain_guid;
 		e_team_state						m_team_state;
 		int32								m_required_fighting_power;
 		int32								m_required_level;
 		std::list<s_team_member_info>		m_members_list;
-		player_session_map					m_member_sessions; //Î¬»¤Õâ¸ö¿ÉÄÜ»áÓĞbug Òª½÷É÷
+		player_session_map					m_member_sessions; //ç»´æŠ¤è¿™ä¸ªå¯èƒ½ä¼šæœ‰bug è¦è°¨æ…
 		e_recurit_type						m_recruit_type;
 		uint64								m_check_captain_offline_stamp;
 
 		team_ready_transfer_info			m_ready_transfer_info;
 		int32								m_checked_ready_mem_num;
 
-		std::set<guid_64>					m_captain_invite_guid;//¶Ó³¤ÑûÇëµÄÍæ¼Òguid
-		bool								m_is_need_save_team;//µ±ËùÓĞÈË¶¼ÀëÏßµÄ»°ÊÇ·ñĞèÒª±£Áô¶ÓÎé£¬ÓÃÓÚ¿ç·ş
+		std::set<guid_64>					m_captain_invite_guid;//é˜Ÿé•¿é‚€è¯·çš„ç©å®¶guid
+		bool								m_is_need_save_team;//å½“æ‰€æœ‰äººéƒ½ç¦»çº¿çš„è¯æ˜¯å¦éœ€è¦ä¿ç•™é˜Ÿä¼ï¼Œç”¨äºè·¨æœ
 
 		bool								m_is_auto_matching;
 		bool								m_is_dissolved;

@@ -1,4 +1,4 @@
-/********************************************************************
+ï»¿/********************************************************************
 	created:	2014/05/28
 	created:	28:5:2014   21:56
 	file base:	msgproc_ws
@@ -16,7 +16,7 @@
 
 namespace faith
 {
-	// »ñÈ¡ÓÎÏ·ÅäÖÃĞÅÏ¢¸øws
+	// è·å–æ¸¸æˆé…ç½®ä¿¡æ¯ç»™ws
 	void get_game_info_ws(uint32 connindex, const void *data_ptr, size_t data_len);
 	void handler_get_game_info_ws_proc(db_result_type result, uint32 connindex);
 	void gm_reload_csv(uint32 connindex, const void *data_ptr, size_t data_len);
@@ -39,13 +39,11 @@ namespace faith
 	void load_server_last_server_list(uint32 connindex, const void *data_ptr, size_t data_len);
 	void load_server_last_server_list_end(db_result_type result, uint32 connindex);
 
-	// »ñÈ¡ÓÎÏ·½ÇÉ«ĞÅÏ¢¸øws
+	// è·å–æ¸¸æˆè§’è‰²ä¿¡æ¯ç»™ws
 	void get_char_info_ws(uint32 connindex, const void *data_ptr, size_t data_len);
 	void handler_get_char_info_ws_proc(db_result_type result, uint32 connindex, guid_64 role_guid, xstring role_account);
 
-	//
 	//gm
-	//
 	void get_char_info_ws_lua(uint32 connindex, int64 role_guid, xstring role_account);
 	void gm_set_role_right_lua(uint32 connindex, xstring role_mark, uint32 right_type, uint32 right_value, uint32 right_time, uint32 listen_port, int64 handle_index);
 	void gm_change_account_lua(uint32 connindex, xstring change_name, xstring target_name, uint32 listen_port, int64 handle_index);
@@ -93,7 +91,7 @@ namespace faith
 	void gm_get_server_info(uint32 connindex, const void *data_ptr, size_t data_len);
 	void handler_gm_get_server_info_proc(db_result_type result, uint32 connindex);
 
-	//½ÇÉ«¸ÄÃû
+	//è§’è‰²æ”¹å
 	void ws2dp_req_check_player_name(uint32 connindex, const void* data_ptr, size_t data_len);
 		void ws2dp_req_check_player_name_(uint32 connindex, const void* data_ptr, size_t data_len);
 	void ws2dp_req_check_player_name_end(db_result_type result, uint32 connindex, guid_64 role_guid, std::string role_name);
@@ -106,7 +104,7 @@ namespace faith
 	void load_ws_time_limit_func(uint32 connindex, const void *data_ptr, size_t data_len);
 	void load_ws_time_limit_func_end(db_result_type result, uint32 connindex);
 
-	//±£´æÕËºÅµ±Ê±ÔÚÏßÊ±³¤
+	//ä¿å­˜è´¦å·å½“æ—¶åœ¨çº¿æ—¶é•¿
 	void save_account_online_time(uint32 connindex, const void* data_ptr, size_t data_len);
 	void save_account_online_time_end(db_result_type result, uint32 connindex);
 

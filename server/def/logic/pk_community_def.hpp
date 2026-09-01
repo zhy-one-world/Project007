@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê8ÔÂ9ÈÕ13:56:28
+created: 2016å¹´8æœˆ9æ—¥13:56:28
 file base: pk_def
 file ext: hpp
 author: zhangminghai
@@ -27,36 +27,36 @@ namespace faith
 
 	enum e_community_type
 	{
-		e_community_type_npc_pet,			//Íæ¼Ò³èÎï
-		e_community_type_player_group1,		//Íæ¼ÒÕóÓª1
-		e_community_type_player_group2,		//Íæ¼ÒÕóÓª2
-		e_community_type_player_group3,		//Íæ¼ÒÕóÓª3
-		e_community_type_player_group4,		//Íæ¼ÒÕóÓª4
-		e_community_type_player_group5,		//Íæ¼ÒÕóÓª5
-		e_community_type_player_group6,		//Íæ¼ÒÕóÓª6
-		e_community_type_player_yuliu1,		//ÕóÓªÔ¤Áô1
-		e_community_type_player_yuliu2,		//ÕóÓªÔ¤Áô2
-		e_community_type_common_monster,	//Í¨ÓÃ¹ÖÎïÕóÓª
-		e_community_type_common_friend,		//Í¨ÓÃÓÑ·½ÕóÓª
-		e_community_type_friend_npc_group1,	//ÓÑ·½npcÕóÓª1
-		e_community_type_friend_npc_group2,	//ÓÑ·½npcÕóÓª2
-		e_community_type_attack_player,		//½ø¹¥·½Íæ¼Ò×¨ÓÃÕóÓª
-		e_community_type_attack_car,		//½ø¹¥·½Õ½³µ×¨ÓÃÕóÓª
-		e_community_type_guard_player,		//·ÀÊØ·½Íæ¼Ò×¨ÓÃÕóÓª
-		e_community_type_guard_car,			//·ÀÊØ·½Õ½³µ×¨ÓÃÕóÓª
-		e_community_type_guard_boss,		//·ÀÊØ·½boss×¨ÓÃÕóÓª
+		e_community_type_npc_pet,			//ç©å®¶å® ç‰©
+		e_community_type_player_group1,		//ç©å®¶é˜µè¥1
+		e_community_type_player_group2,		//ç©å®¶é˜µè¥2
+		e_community_type_player_group3,		//ç©å®¶é˜µè¥3
+		e_community_type_player_group4,		//ç©å®¶é˜µè¥4
+		e_community_type_player_group5,		//ç©å®¶é˜µè¥5
+		e_community_type_player_group6,		//ç©å®¶é˜µè¥6
+		e_community_type_player_yuliu1,		//é˜µè¥é¢„ç•™1
+		e_community_type_player_yuliu2,		//é˜µè¥é¢„ç•™2
+		e_community_type_common_monster,	//é€šç”¨æ€ªç‰©é˜µè¥
+		e_community_type_common_friend,		//é€šç”¨å‹æ–¹é˜µè¥
+		e_community_type_friend_npc_group1,	//å‹æ–¹npcé˜µè¥1
+		e_community_type_friend_npc_group2,	//å‹æ–¹npcé˜µè¥2
+		e_community_type_attack_player,		//è¿›æ”»æ–¹ç©å®¶ä¸“ç”¨é˜µè¥
+		e_community_type_attack_car,		//è¿›æ”»æ–¹æˆ˜è½¦ä¸“ç”¨é˜µè¥
+		e_community_type_guard_player,		//é˜²å®ˆæ–¹ç©å®¶ä¸“ç”¨é˜µè¥
+		e_community_type_guard_car,			//é˜²å®ˆæ–¹æˆ˜è½¦ä¸“ç”¨é˜µè¥
+		e_community_type_guard_boss,		//é˜²å®ˆæ–¹bossä¸“ç”¨é˜µè¥
 		e_community_type_max,
 	};
 	
 	enum e_community_state
 	{
-		e_community_state_out = 0,			//²»ÔÚÕóÓªÖĞ			
-		e_community_state_in,				//ÔÚÕóÓªÖĞ
+		e_community_state_out = 0,			//ä¸åœ¨é˜µè¥ä¸­			
+		e_community_state_in,				//åœ¨é˜µè¥ä¸­
 	};
 	
 	struct s_community_info
 	{
-		int32 all_community[e_community_type_max];//1±íÊ¾ÔÚÕâ¸öÕóÓªÖĞ0±íÊ¾²»ÔÚ´ËÕóÓª
+		int32 all_community[e_community_type_max];//1è¡¨ç¤ºåœ¨è¿™ä¸ªé˜µè¥ä¸­0è¡¨ç¤ºä¸åœ¨æ­¤é˜µè¥
 		s_community_info()
 		{
 			reset();
@@ -80,7 +80,7 @@ namespace faith
 
 	struct s_community_group_relation
 	{
-		int32 data_ary[e_community_type_max][e_community_type_max];	//0±íÊ¾¶ÔÁ¢	1±íÊ¾ÓÑºÃ
+		int32 data_ary[e_community_type_max][e_community_type_max];	//0è¡¨ç¤ºå¯¹ç«‹	1è¡¨ç¤ºå‹å¥½
 		s_community_group_relation()
 		{
 			reset();
@@ -139,7 +139,7 @@ namespace faith
 	
 	enum e_pk_cfg_type
 	{
-		e_pk_cfg_type_pk_mode_end = 4, //1-4Î»¶¼ÊÇpk_mode
+		e_pk_cfg_type_pk_mode_end = 4, //1-4ä½éƒ½æ˜¯pk_mode
 		e_pk_cfg_type_is_fight_back = 5,
 		e_pk_cfg_type_team_protect = 6,
 		e_pk_cfg_type_legion_protect = 7,

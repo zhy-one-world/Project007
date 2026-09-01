@@ -20,7 +20,7 @@
 #include "server_log.hpp"
 namespace faith
 {
-	const xstring sdk_password = "sdk";		// ¹Ì¶¨ÃÜÂë
+	const xstring sdk_password = "sdk";		// å›ºå®šå¯†ç 
 
 	void login_service_zl::tick(float deltaseconds)
 	{
@@ -56,7 +56,7 @@ namespace faith
 		////sign
 		//xstring sign = create_sign(SIGN_PARAM_NUM,opcode,login.sdk_data().data(),login.sdk_data().app_key(),login.sdk_data().app_secret(),tag,channel_id);
 
-		//// ×Ô¶¨ÒåÇëÇóÍ·
+		//// è‡ªå®šä¹‰è¯·æ±‚å¤´
 		//std::vector<xstring> head_list;
 		//xstring appkey = "appkey:" + login.sdk_data().app_key();
 		//xstring sign_str = "sign:" + sign;
@@ -66,14 +66,14 @@ namespace faith
 		//xstring client_ip_str = "clientIp:" + login.ip();
 		//create_http_head_list(head_list,HTTP_HEAD_PARAM_NUM,appkey,sign_str,tag_str,opcode_str,channel_id_str, client_ip_str);
 
-		//// GET/POST ²ÎÊı
+		//// GET/POST å‚æ•°
 		//xstring url_para = create_post_data(login.sdk_data().data());
 
  	//	CONSOLE_INFO("sdk login data : " << time_helper::get_current_time() << " , " << faith::utility::get_tick_count()
  	//		<< ","<< appkey << "," << sign_str << "," << tag_str << "," << opcode_str << "," << channel_id_str << "," << client_ip_str << ","
  	//		<< login.sdk_data().app_secret() << "," << url_para);
 
-		//// Òì²½ÇëÇó
+		//// å¼‚æ­¥è¯·æ±‚
 		//std::vector<xstring> url_vec;
 		//url_vec.push_back(sdk_url);
 		//login_proto_login_block temp_data_block;
@@ -125,7 +125,7 @@ namespace faith
 
 		if(http_result.size() > 0)
 		{
-			// ÏÈ°şÀëhttpÍ·
+			// å…ˆå‰¥ç¦»httpå¤´
 			if ( std::string::npos == http_result.find_first_of("{") || std::string::npos == http_result.find_last_of("}") )
 			{
 				CONSOLE_INFO("error_code:{} error_info:{} http_result:{}", http_error_code, http_error_info, http_result);
@@ -134,7 +134,7 @@ namespace faith
 			xstring result = http_result.substr(http_result.find_first_of("{"),http_result.find_last_of("}") + 1);
 			if(result.size() > 0)
 			{
-				// ÔÙ½âÎö
+				// å†è§£æ
 				read_json_data(result, client_uid);
 			}
 		}
@@ -172,7 +172,7 @@ namespace faith
 				}
 
 				data_value = value.get("data",default_value);
-				// ½âÎödataÊı¾İ
+				// è§£ædataæ•°æ®
 				if(data_value.empty() || data_value["status"].isNull() || data_value["status"].empty() || !data_value["status"].isString()
 					|| data_value["userid"].isNull() || data_value["userid"].empty()  || !data_value["userid"].isString())
 				{
@@ -183,10 +183,10 @@ namespace faith
 				xstring status = data_value["status"].asString();
 				xstring account = data_value["userid"].asString();
 
-				// ¼ì²éµÇÂ½×´Ì¬
+				// æ£€æŸ¥ç™»é™†çŠ¶æ€
 				if(status == "1" && account.size() > 0)
 				{ 
-					// ´æÅÌ
+					// å­˜ç›˜
 					save_account(account,client_uid);
 					return true;
 				}

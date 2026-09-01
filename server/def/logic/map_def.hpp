@@ -1,5 +1,5 @@
 /********************************************************************
-  created: 2015Äê8ÔÂ24ÈÕ20:54:53
+  created: 2015å¹´8æœˆ24æ—¥20:54:53
   file base: map_def
   file ext: hpp
   author: zhy
@@ -18,119 +18,119 @@ namespace faith
 #pragma pack(push,1)
 
 	const int32 max_map_record_num = 300;
-	const int32 big_world_map_id = 71050001;				// ÊÀ½çµØÍ¼id
-	const int32 new_map_lock_id = 15001517;					//½øÈëĞÂÊÀ½çµÄ½âËøÈÎÎñid
-	const int32 first_demons_tower_template_id = 71031001;	// µÚÒ»²ãÍòÄ§ËşµÄÄ£°åID
-	const int32 first_battle_map_template_id = 71040001;	// µÚÒ»²ãÕ½¶·¸±±¾µÄÄ£°åID
+	const int32 big_world_map_id = 71050001;				// ä¸–ç•Œåœ°å›¾id
+	const int32 new_map_lock_id = 15001517;					//è¿›å…¥æ–°ä¸–ç•Œçš„è§£é”ä»»åŠ¡id
+	const int32 first_demons_tower_template_id = 71031001;	// ç¬¬ä¸€å±‚ä¸‡é­”å¡”çš„æ¨¡æ¿ID
+	const int32 first_battle_map_template_id = 71040001;	// ç¬¬ä¸€å±‚æˆ˜æ–—å‰¯æœ¬çš„æ¨¡æ¿ID
 	const int32 wave_npc_num_max = 100;
-	const int32 pk_king_map_template_id = 71140001;			// PKÖ®ÍõµÄ´ı»úµØÍ¼Ä£°åID
-	const int32 pk_king_combat_map_template_id = 71140002;	// PKÖ®ÍõµÄÕ½¶·µØÍ¼Ä£°åID
-	const int32 shui_jing_map_tempplate_id = 71160001;		// Ë®¾§»Ã¾³µÄµØÍ¼Ä£°åID
-	const int32 shui_jing_map_cross_temp_id = 71160000;		// ¿ç·şË®¾§»Ã¾³µØÍ¼Ä£°åID
-	const int32 broken_sky_map_template_id = 71130001;		// ÆÆËéĞé¿ÕµÄµØÍ¼Ä£°åID
-	const int32 legion_bonfire_map_template_id = 71160004;	// ¾üÍÅóô»ğµÄµØÍ¼Ä£°åID
-	const int32 legion_city_war_map_temp_id = 71080001;		// ¾üÍÅ³ÇÕ½ID
-	const int32	cross_server_world_boss_temp_id = 71080002; //¿ç·şÊÀ½çÄ£°åid
-	const int32 max_extra_enter_map_count = 10;				// ÄÜ¹»Í¨¹ı»¨·ÑÌØÊâÇ®ÎïµÄ·½Ê½À´½øÈëÄ³¸öµØÍ¼(¸±±¾)µÄ´ÎÊı
+	const int32 pk_king_map_template_id = 71140001;			// PKä¹‹ç‹çš„å¾…æœºåœ°å›¾æ¨¡æ¿ID
+	const int32 pk_king_combat_map_template_id = 71140002;	// PKä¹‹ç‹çš„æˆ˜æ–—åœ°å›¾æ¨¡æ¿ID
+	const int32 shui_jing_map_tempplate_id = 71160001;		// æ°´æ™¶å¹»å¢ƒçš„åœ°å›¾æ¨¡æ¿ID
+	const int32 shui_jing_map_cross_temp_id = 71160000;		// è·¨æœæ°´æ™¶å¹»å¢ƒåœ°å›¾æ¨¡æ¿ID
+	const int32 broken_sky_map_template_id = 71130001;		// ç ´ç¢è™šç©ºçš„åœ°å›¾æ¨¡æ¿ID
+	const int32 legion_bonfire_map_template_id = 71160004;	// å†›å›¢ç¯ç«çš„åœ°å›¾æ¨¡æ¿ID
+	const int32 legion_city_war_map_temp_id = 71080001;		// å†›å›¢åŸæˆ˜ID
+	const int32	cross_server_world_boss_temp_id = 71080002; //è·¨æœä¸–ç•Œæ¨¡æ¿id
+	const int32 max_extra_enter_map_count = 10;				// èƒ½å¤Ÿé€šè¿‡èŠ±è´¹ç‰¹æ®Šé’±ç‰©çš„æ–¹å¼æ¥è¿›å…¥æŸä¸ªåœ°å›¾(å‰¯æœ¬)çš„æ¬¡æ•°
 	const int32 big_map_line_num = 100;
 	const int32 battle_map_line_num = 4000;
 	const int32 role_pk_line_num = 2000;
 	const int32 city_war_line_num = 1;
-	const int32 map_in_null_time = 3;						//µØÍ¼´¦ÓÚÎŞÈË×´Ì¬Ê±¶à³¤Ê±¼ä»áÉ¾³ı(Ãë)
-	const int32 hold_map_in_null_time = 3600;				//holdµØÍ¼´¦ÓÚÎŞÈË×´Ì¬Ê±¶à³¤Ê±¼ä»áÉ¾³ı(Ãë)
-	const int32 map_game_over_time = 60;					//ÓÎÏ·½áÊøÊ±Íæ¼ÒÔÚ³¡¾°ÄÚÍ£ÁôÊ£ÓàÊ±¼ä(Ãë)
-	const int32 temple_join_num = 5;						//ÉñÃí×î¶à¼ÓÈë¶àÉÙÈË
+	const int32 map_in_null_time = 3;						//åœ°å›¾å¤„äºæ— äººçŠ¶æ€æ—¶å¤šé•¿æ—¶é—´ä¼šåˆ é™¤(ç§’)
+	const int32 hold_map_in_null_time = 3600;				//holdåœ°å›¾å¤„äºæ— äººçŠ¶æ€æ—¶å¤šé•¿æ—¶é—´ä¼šåˆ é™¤(ç§’)
+	const int32 map_game_over_time = 60;					//æ¸¸æˆç»“æŸæ—¶ç©å®¶åœ¨åœºæ™¯å†…åœç•™å‰©ä½™æ—¶é—´(ç§’)
+	const int32 temple_join_num = 5;						//ç¥åº™æœ€å¤šåŠ å…¥å¤šå°‘äºº
 
-	const int32 first_temple_template_id = 71110001;			// ×çÖäÉñµîÒ»¶ÎµÄID
-	const int32 first_empire_treasure_template_id = 71120001;	// µÛ¹úÒÅ²ØÒ»¶ÎµÄID
-	const int32 first_broken_sky_template_id = 71130001;		// ÆÆËéĞé¿ÕÒ»¶ÎµÄID
+	const int32 first_temple_template_id = 71110001;			// è¯…å’’ç¥æ®¿ä¸€æ®µçš„ID
+	const int32 first_empire_treasure_template_id = 71120001;	// å¸å›½é—è—ä¸€æ®µçš„ID
+	const int32 first_broken_sky_template_id = 71130001;		// ç ´ç¢è™šç©ºä¸€æ®µçš„ID
 
-	const int32 multiplayer_baohugongzhu_reach_distance = 150;		//ÅĞ¶Ïµ½´ï¹«Ö÷×ø±ê¾àÀë
+	const int32 multiplayer_baohugongzhu_reach_distance = 150;		//åˆ¤æ–­åˆ°è¾¾å…¬ä¸»åæ ‡è·ç¦»
 
-	const int32 map_info_arr_max_num = 5;						//µ¥¸öµØÍ¼ĞÅÏ¢Êı×é×î´óÖµ
+	const int32 map_info_arr_max_num = 5;						//å•ä¸ªåœ°å›¾ä¿¡æ¯æ•°ç»„æœ€å¤§å€¼
 
 	const int32 map_load_npc_interval_max = 10;
 	const int32 map_load_npc_interval_middle = 8;
 	const int32 map_load_npc_interval_min = 6;
-	//const int32 begin_join_time	= 15 * 3600 + 00 * 60 + 00;	// ÆÆËéĞé¿ÕµÄ¿ªÊ¼Èë³¡Ê±¼ä
-	//const int32 end_join_time	= 15 * 3600 + 02 * 60 + 00;	// ÆÆËéĞé¿ÕµÄ½áÊøÈë³¡Ê±¼ä
-	//const int32 begin_time		= 15 * 3600 + 02 * 60 + 00;	// ÆÆËéĞé¿ÕµÄ¿ªÊ¼Ê±¼ä
-	//const int32 end_time			= 15 * 3600 + 15 * 60 + 00;	// ÆÆËéĞé¿ÕµÄ½áÊøÊ±¼ä
+	//const int32 begin_join_time	= 15 * 3600 + 00 * 60 + 00;	// ç ´ç¢è™šç©ºçš„å¼€å§‹å…¥åœºæ—¶é—´
+	//const int32 end_join_time	= 15 * 3600 + 02 * 60 + 00;	// ç ´ç¢è™šç©ºçš„ç»“æŸå…¥åœºæ—¶é—´
+	//const int32 begin_time		= 15 * 3600 + 02 * 60 + 00;	// ç ´ç¢è™šç©ºçš„å¼€å§‹æ—¶é—´
+	//const int32 end_time			= 15 * 3600 + 15 * 60 + 00;	// ç ´ç¢è™šç©ºçš„ç»“æŸæ—¶é—´
 	//const int32 creat_boss_level_ranking_begion = 1;
 	//const int32 creat_boss_level_ranking_end = 50;
 	const int32 sync_damage_rank_count = 50;
 
-	const int32 boss_island_temp_id = 71200001;	//ÓÀºãµºID
+	const int32 boss_island_temp_id = 71200001;	//æ°¸æ’å²›ID
 
-	const int32 map_lind_max_num = 2;//ÓĞ¼¸¸öÏß
+	const int32 map_lind_max_num = 2;//æœ‰å‡ ä¸ªçº¿
 
-	const int32	doublie_line_max_num = 10;	//Ë«±¶¾­Ñé×î´óµØÍ¼ÊıÁ¿
+	const int32	doublie_line_max_num = 10;	//åŒå€ç»éªŒæœ€å¤§åœ°å›¾æ•°é‡
 
-	//const int32 EmpireTreasureBeginJoinTime = 0;//¿ÉÒÔ¼ÓÈëµÄÊ±¼ä
-	//const int32 EmpireTreasureEndJoinTime = 2;//½áÊø¼ÓÈëµÄÊ±¼ä
-	//const int32 EmpireTreasureBeginGameTime = 2;//¿ªÊ¼ÓÎÏ·µÄÊ±¼ä
-	//const int32 EmpireTreasureEndGameTime = 12;//½áÊøÓÎÏ·µÄÊ±¼ä
-	//const int32 EmpireTreasureDiffTime = 30;//ÏÂÒ»´ÎµÄÊ±¼ä¼ä¸ô
-	//const int32 EmpireTreasureRefreshTime = 2;//ĞèË¢ĞÂ¹ÖÎïËÀºóË¢ĞÂ¼ä¸ôÊ±¼ä
+	//const int32 EmpireTreasureBeginJoinTime = 0;//å¯ä»¥åŠ å…¥çš„æ—¶é—´
+	//const int32 EmpireTreasureEndJoinTime = 2;//ç»“æŸåŠ å…¥çš„æ—¶é—´
+	//const int32 EmpireTreasureBeginGameTime = 2;//å¼€å§‹æ¸¸æˆçš„æ—¶é—´
+	//const int32 EmpireTreasureEndGameTime = 12;//ç»“æŸæ¸¸æˆçš„æ—¶é—´
+	//const int32 EmpireTreasureDiffTime = 30;//ä¸‹ä¸€æ¬¡çš„æ—¶é—´é—´éš”
+	//const int32 EmpireTreasureRefreshTime = 2;//éœ€åˆ·æ–°æ€ªç‰©æ­»ååˆ·æ–°é—´éš”æ—¶é—´
 
-	//const int32 TempleBeginJoinTime = 15;//¿ÉÒÔ¼ÓÈëµÄÊ±¼ä
-	//const int32 TempleEndJoinTime = 17;//½áÊø¼ÓÈëµÄÊ±¼ä
-	//const int32 TempleBeginGameTime = 17;//¿ªÊ¼ÓÎÏ·µÄÊ±¼ä
-	//const int32 TempleEndGameTime = 25;//½áÊøÓÎÏ·µÄÊ±¼ä
-	//const int32 TempleDiffTime = 30;//ÏÂÒ»´ÎµÄÊ±¼ä¼ä¸ô
+	//const int32 TempleBeginJoinTime = 15;//å¯ä»¥åŠ å…¥çš„æ—¶é—´
+	//const int32 TempleEndJoinTime = 17;//ç»“æŸåŠ å…¥çš„æ—¶é—´
+	//const int32 TempleBeginGameTime = 17;//å¼€å§‹æ¸¸æˆçš„æ—¶é—´
+	//const int32 TempleEndGameTime = 25;//ç»“æŸæ¸¸æˆçš„æ—¶é—´
+	//const int32 TempleDiffTime = 30;//ä¸‹ä¸€æ¬¡çš„æ—¶é—´é—´éš”
 
 	//const int32 CrystalIllusionOpenTime0[4]{ 12,0,13,0 };
 	//const int32 CrystalIllusionOpenTime1[4]{ 22,0,23,0 };
 
-	const int32 appearance_map_id = 71220301;			// ÄóÁ³µØÍ¼Id
+	const int32 appearance_map_id = 71220301;			// æè„¸åœ°å›¾Id
 
-	const int32 assist_fight_npc = 76991158;			//ÖúÕ½Òıµ¼Npc
+	const int32 assist_fight_npc = 76991158;			//åŠ©æˆ˜å¼•å¯¼Npc
 
 
-	const int32 box_map_npc_count = 20;			//¿ªÏä×ÓµØÍ¼ÖĞNpc×î´óÊıÁ¿
+	const int32 box_map_npc_count = 20;			//å¼€ç®±å­åœ°å›¾ä¸­Npcæœ€å¤§æ•°é‡
 
 	
 	enum e_map_info
 	{
-		e_map_info_player_num,//µ±Ç°µØÍ¼µÄÍæ¼ÒÈËÊı
-		e_map_info_boss_cur_hp,//µ±Ç°µØÍ¼BOSSµÄµ±Ç°ÑªÁ¿
-		e_map_info_boss_max_hp,//µ±Ç°µØÍ¼BOSSµÄ×î´óÑªÁ¿
+		e_map_info_player_num,//å½“å‰åœ°å›¾çš„ç©å®¶äººæ•°
+		e_map_info_boss_cur_hp,//å½“å‰åœ°å›¾BOSSçš„å½“å‰è¡€é‡
+		e_map_info_boss_max_hp,//å½“å‰åœ°å›¾BOSSçš„æœ€å¤§è¡€é‡
 	};
 
 	enum e_map_open
 	{
-		e_map_open_new,//Ã¿´Î½øÈëÖØĞÂ¿ªÆô
-		e_map_open_old,//Ã¿´Î½øÈëÏÈ²éÕÒÊÇ·ñÓĞ¾ÉµÄ
+		e_map_open_new,//æ¯æ¬¡è¿›å…¥é‡æ–°å¼€å¯
+		e_map_open_old,//æ¯æ¬¡è¿›å…¥å…ˆæŸ¥æ‰¾æ˜¯å¦æœ‰æ—§çš„
 	};
 
 	enum e_map_close
 	{
-		e_map_close_close,//ÈË¶¼Àë¿ªµÄÊ±ºòÒªÉ¾³ı
-		e_map_close_hold,//ÈËÀë¿ªºóÒª±£Áô
+		e_map_close_close,//äººéƒ½ç¦»å¼€çš„æ—¶å€™è¦åˆ é™¤
+		e_map_close_hold,//äººç¦»å¼€åè¦ä¿ç•™
 	};
 
-	// ¸±±¾ÖĞµÄ¼ÆÊ±Ä£Ê½
+	// å‰¯æœ¬ä¸­çš„è®¡æ—¶æ¨¡å¼
 	enum e_map_time_mode
 	{
-		e_map_time_mode_none,             // ÎŞ(±ÈÈç´óµØÍ¼)
-		e_map_time_mode_timeout_success,  // µ½Ê±ºóÊ¤Àû
-		e_map_time_mode_timeout_fail,     // µ½Ê±ºóÊ§°Ü
-		e_map_time_mode_timeout_transfer, // µ½Ê±ºó´«ËÍ
+		e_map_time_mode_none,             // æ— (æ¯”å¦‚å¤§åœ°å›¾)
+		e_map_time_mode_timeout_success,  // åˆ°æ—¶åèƒœåˆ©
+		e_map_time_mode_timeout_fail,     // åˆ°æ—¶åå¤±è´¥
+		e_map_time_mode_timeout_transfer, // åˆ°æ—¶åä¼ é€
 		e_map_time_mode_max
 	};
 
 	enum e_map_war_result
 	{
-		e_map_war_result_lost,		//Ê§°Ü
-		e_map_war_result_peace,		//Æ½¾Ö
-		e_map_war_result_win,		//Ê¤Àû
+		e_map_war_result_lost,		//å¤±è´¥
+		e_map_war_result_peace,		//å¹³å±€
+		e_map_war_result_win,		//èƒœåˆ©
 	};
 
 	enum e_mopping_up_result
 	{
-		e_mopping_up_result_none,            // ÎŞ
-		e_mopping_up_result_finish,          // Íê³ÉÉ¨µ´
-		e_mopping_up_result_no_enter_count,  // Ã»ÓĞÊ£ÓàÉ¨µ´´ÎÊıÁË
+		e_mopping_up_result_none,            // æ— 
+		e_mopping_up_result_finish,          // å®Œæˆæ‰«è¡
+		e_mopping_up_result_no_enter_count,  // æ²¡æœ‰å‰©ä½™æ‰«è¡æ¬¡æ•°äº†
 		e_mopping_up_result_max
 	};
 
@@ -141,60 +141,60 @@ namespace faith
 		e_consume_enter_count_cond_win
 	};
 
-	// ¸±±¾µÄÊ¤ÀûÌõ¼ş
+	// å‰¯æœ¬çš„èƒœåˆ©æ¡ä»¶
 	enum e_map_win_cond
 	{
-		e_map_win_cond_none,              // ÎŞÏŞÄ£Ê½
-		e_map_win_cond_kill_boss,         // ´òËÀBOSS¼´ÎªÊ¤Àû
-		e_map_win_cond_clear_all_wave,    // ÇåÀíËùÓĞ²¨µÄ¹ÖÎï¼´ÎªÊ¤Àû
-		e_map_win_cond_time_out,          // µ½Ê±¼´ÎªÊ¤Àû
+		e_map_win_cond_none,              // æ— é™æ¨¡å¼
+		e_map_win_cond_kill_boss,         // æ‰“æ­»BOSSå³ä¸ºèƒœåˆ©
+		e_map_win_cond_clear_all_wave,    // æ¸…ç†æ‰€æœ‰æ³¢çš„æ€ªç‰©å³ä¸ºèƒœåˆ©
+		e_map_win_cond_time_out,          // åˆ°æ—¶å³ä¸ºèƒœåˆ©
 		e_map_win_cond_max
 	};
 
-	// ¸±±¾½áËãÆÀ¼¶
+	// å‰¯æœ¬ç»“ç®—è¯„çº§
 	enum e_map_settle_type
 	{
-		e_map_settle_type_finish_time,		// Í¨¹ØÊ±¼ä
-		e_map_settle_type_kill_boss_num,	// »÷°ÜBOSSÊı
-		e_map_settle_type_protect_npc_hp,	// ±£»¤NPCÊ£ÓàÑªÁ¿
+		e_map_settle_type_finish_time,		// é€šå…³æ—¶é—´
+		e_map_settle_type_kill_boss_num,	// å‡»è´¥BOSSæ•°
+		e_map_settle_type_protect_npc_hp,	// ä¿æŠ¤NPCå‰©ä½™è¡€é‡
 		e_map_settle_type_max
 	};
 
 	enum e_map_result_dialog_type
 	{
-		e_map_result_dialog_type_none,							// ÎŞµ¯³ö(ÀıÈç½ğ±Ò¸±±¾)
-		e_map_result_dialog_type_lucky_draw,					// ³é½±½áËã½çÃæ(Èç¾çÇé¸±±¾)
-		e_map_result_dialog_type_lucky_draw_and_fixed_award,	// ³é½±+¹Ì¶¨½±Àø½áËã½çÃæ(Èç¶àÈË¸±±¾)
-		e_map_result_dialog_type_demons_tower,					// ÍòÄ§Ëş½áËã½çÃæ
-		e_map_result_dialog_type_legion_activity,				// ¾üÍÅ»î¶¯½áËã½çÃæ
-		e_map_result_dialog_type_score_and_rank_award,			// PKÖ®Íõ½áËã½çÃæ
-		e_map_result_dialog_type_city_war_award,				// ³ÇÕ½½áËã½çÃæ
+		e_map_result_dialog_type_none,							// æ— å¼¹å‡º(ä¾‹å¦‚é‡‘å¸å‰¯æœ¬)
+		e_map_result_dialog_type_lucky_draw,					// æŠ½å¥–ç»“ç®—ç•Œé¢(å¦‚å‰§æƒ…å‰¯æœ¬)
+		e_map_result_dialog_type_lucky_draw_and_fixed_award,	// æŠ½å¥–+å›ºå®šå¥–åŠ±ç»“ç®—ç•Œé¢(å¦‚å¤šäººå‰¯æœ¬)
+		e_map_result_dialog_type_demons_tower,					// ä¸‡é­”å¡”ç»“ç®—ç•Œé¢
+		e_map_result_dialog_type_legion_activity,				// å†›å›¢æ´»åŠ¨ç»“ç®—ç•Œé¢
+		e_map_result_dialog_type_score_and_rank_award,			// PKä¹‹ç‹ç»“ç®—ç•Œé¢
+		e_map_result_dialog_type_city_war_award,				// åŸæˆ˜ç»“ç®—ç•Œé¢
 		e_map_result_dialog_type_arena,
-		e_map_result_dialog_type_exp_raid,						//¾­Ñé¸±±¾½áËã½çÃæ
-		e_map_result_dialog_type_pk_king,						//PKÖ®Íõ½áËã½çÃæ
+		e_map_result_dialog_type_exp_raid,						//ç»éªŒå‰¯æœ¬ç»“ç®—ç•Œé¢
+		e_map_result_dialog_type_pk_king,						//PKä¹‹ç‹ç»“ç®—ç•Œé¢
 		e_map_result_dialog_type_max
 	};
 
 	enum e_map_result_dialog_pk_king_sub_type
 	{
-		e_map_result_dialog_pk_king_sub_type_death,				//ËÀ¶·½áËã½çÃæ
-		e_map_result_dialog_pk_king_sub_type_No_death,			//·ÇËÀ¶·½áËã½çÃæ
+		e_map_result_dialog_pk_king_sub_type_death,				//æ­»æ–—ç»“ç®—ç•Œé¢
+		e_map_result_dialog_pk_king_sub_type_No_death,			//éæ­»æ–—ç»“ç®—ç•Œé¢
 	};
 
 	enum e_map_lua_type
 	{
-		e_map_lua_type_init = 0,     //µØÍ¼³õÊ¼»¯
-		e_map_lua_type_tick,         //µØÍ¼tick
-		e_map_lua_type_end,          //µØÍ¼½áÊø
-		e_map_lua_type_unit_in,      //µØÍ¼½ÇÉ«½øÈë
-		e_map_lua_type_unit_out,     //µØÍ¼½ÇÉ«Àë¿ª
-		e_map_lua_type_unit_dead,    //µØÍ¼½ÇÉ«ËÀÍö
+		e_map_lua_type_init = 0,     //åœ°å›¾åˆå§‹åŒ–
+		e_map_lua_type_tick,         //åœ°å›¾tick
+		e_map_lua_type_end,          //åœ°å›¾ç»“æŸ
+		e_map_lua_type_unit_in,      //åœ°å›¾è§’è‰²è¿›å…¥
+		e_map_lua_type_unit_out,     //åœ°å›¾è§’è‰²ç¦»å¼€
+		e_map_lua_type_unit_dead,    //åœ°å›¾è§’è‰²æ­»äº¡
 	};
 	struct s_map_record_info
 	{
 		int32 data_ary[e_map_record_info_max];
 
-        s_map_record_info& operator=(const s_map_record_info& src)//ÖØÔØÔËËã·û
+        s_map_record_info& operator=(const s_map_record_info& src)//é‡è½½è¿ç®—ç¬¦
         {
             for (int32 i = 0; i < e_map_record_info_max; i++)
             {
@@ -203,7 +203,7 @@ namespace faith
             return *this;
         }
 
-        s_map_record_info(const s_map_record_info &src)  //¿½±´¹¹Ôìº¯Êı
+        s_map_record_info(const s_map_record_info &src)  //æ‹·è´æ„é€ å‡½æ•°
         {
             for (int32 i = 0; i < e_map_record_info_max; i++)
             {
@@ -262,16 +262,16 @@ namespace faith
 		{
 			if (data_ary[e_demons_tower_info_left_mopping_up_count] <= 0 && data_ary[e_demons_tower_info_cur_mopping_up_tier] <= 0)
 			{
-				return false; // Èç¹ûÃ»ÓĞÁËÊ£ÓàÉ¨µ´´ÎÊı¾Í²»ÄÜ½øĞĞÉ¨µ´
+				return false; // å¦‚æœæ²¡æœ‰äº†å‰©ä½™æ‰«è¡æ¬¡æ•°å°±ä¸èƒ½è¿›è¡Œæ‰«è¡
 			}
 			if (data_ary[e_demons_tower_info_can_get_award] > 0)
 			{
-				return false; // Èç¹ûÉÏ´ÎÉ¨µ´µÄ½±Àø»¹Ã»ÓĞÁìÈ¡¾Í²»ÄÜ¿ªÊ¼ÏÂÒ»´ÎÉ¨µ´
+				return false; // å¦‚æœä¸Šæ¬¡æ‰«è¡çš„å¥–åŠ±è¿˜æ²¡æœ‰é¢†å–å°±ä¸èƒ½å¼€å§‹ä¸‹ä¸€æ¬¡æ‰«è¡
 			}
 			return true;
 		}
 
-		// »ñµÃµ±Ç°ÕıÔÚÉ¨µ´µÄ²ãµÄÄ£°åID
+		// è·å¾—å½“å‰æ­£åœ¨æ‰«è¡çš„å±‚çš„æ¨¡æ¿ID
 		int32 get_cur_mopping_up_tier_template_id()
 		{
 			int32 cur_mopping_up_tier = data_ary[e_demons_tower_info_cur_mopping_up_tier];
@@ -292,7 +292,7 @@ namespace faith
 		//	return true;
 		//}
 
-		// ·µ»ØÖµ±íÊ¾ÊÇ·ñÉ¨µ´½áÊø(true±íÊ¾É¨µ´ÒÑ¾­½áÊø)
+		// è¿”å›å€¼è¡¨ç¤ºæ˜¯å¦æ‰«è¡ç»“æŸ(trueè¡¨ç¤ºæ‰«è¡å·²ç»ç»“æŸ)
 		bool mopping_up_tier_increase()
 		{
 			int32 mopping_up_tier = data_ary[e_demons_tower_info_cur_mopping_up_tier];
@@ -308,7 +308,7 @@ namespace faith
 			}
 		}
 
-		// »ñµÃÍòÄ§ËşÉ¨µ´½±Àø,Èç¹ûµ±Ç°²»ÄÜ»ñÈ¡¾Í·µ»Øfalse
+		// è·å¾—ä¸‡é­”å¡”æ‰«è¡å¥–åŠ±,å¦‚æœå½“å‰ä¸èƒ½è·å–å°±è¿”å›false
 		bool get_award()
 		{
 			if (data_ary[e_demons_tower_info_can_get_award] <= 0)
@@ -323,7 +323,7 @@ namespace faith
 			}
 		}
 
-		// ÏûºÄÒ»´ÎÉ¨µ´´ÎÊı
+		// æ¶ˆè€—ä¸€æ¬¡æ‰«è¡æ¬¡æ•°
 		void cost_left_mopping_up_count()
 		{
 			if (data_ary[e_demons_tower_info_left_mopping_up_count] > 0)
@@ -340,7 +340,7 @@ namespace faith
 		int32	role_level;
 		int64	score;
 		int32	server_id;
-		guid_64 legion_guid;	//µ¥ÈËÅÅĞĞ°ñ¼ÇÂ¼¾üÍÅguidµÄ
+		guid_64 legion_guid;	//å•äººæ’è¡Œæ¦œè®°å½•å†›å›¢guidçš„
 		int64	other_score;
 
 		score_record()
@@ -431,8 +431,8 @@ namespace faith
 
 	enum e_map_target_image
 	{
-		e_map_target_image_element_red,		//ÔªËØÕù°Ôºì
-		e_map_target_image_element_blue,	//ÔªËØÕù°ÔÀ¶
+		e_map_target_image_element_red,		//å…ƒç´ äº‰éœ¸çº¢
+		e_map_target_image_element_blue,	//å…ƒç´ äº‰éœ¸è“
 	};
 #pragma pack(pop)
 }

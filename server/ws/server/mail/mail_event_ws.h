@@ -62,9 +62,9 @@ namespace faith
 		void del_other_server_mail_record(s_other_server_mail_record mail_record);
 		s_other_server_mail_record find_other_server_mail_record(int32 source_server_id, int32 target_server_id);
 
-		void send_other_server_mail(s_other_server_mail_info mail_info);			//·¢ËÍ·½
-		void recv_other_server_mail(const s_other_server_mail_record& mail_record, const s_other_server_mail_info& mail_info);	//½ÓÊÕ·½
-		void recv_other_server_mail_end(const s_other_server_mail_record& mail_record);		//·¢ËÍ·½
+		void send_other_server_mail(s_other_server_mail_info mail_info);			//å‘é€æ–¹
+		void recv_other_server_mail(const s_other_server_mail_record& mail_record, const s_other_server_mail_info& mail_info);	//æ¥æ”¶æ–¹
+		void recv_other_server_mail_end(const s_other_server_mail_record& mail_record);		//å‘é€æ–¹
 
 		void load_other_server_mail_tick(const int64& new_time);
 		void load_other_server_mail_end(int32 server_id, const s_other_server_mail_info* mail_record, int32 data_num);

@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê9ÔÂ13ÈÕ17:46:11
+created: 2016å¹´9æœˆ13æ—¥17:46:11
 file base: rank_mgr
 file ext: h
 author: zhy
@@ -70,18 +70,18 @@ void cranking_mgr::init_ranking_time_and_update()
 		m_ranking_data[ranking_type].ranking_time = ranking_time;
 		switch ((e_RankingIndex)ranking_type)
 		{
-		case e_RankingIndex_gs://Õ½Á¦×Ü°ñ
-		case e_RankingIndex_gs_barserker: //Õ½Á¦-Õ½Ê¿
-		case e_RankingIndex_gs_wizard: //Õ½Á¦-·¨Ê¦
-		case e_RankingIndex_gs_guardian: //Õ½Á¦-ÆïÊ¿
-		case e_RankingIndex_gs_assassinator: //Õ½Á¦-´Ì¿Í
-		case e_RankingIndex_equipment_main: //×°±¸°ñ-×ÜÕ½Á¦
-		case e_RankingIndex_box_map_level: //Ö÷µØÍ¼µÈ¼¶
-		case e_RankingIndex_wing: //ÓğÒí×ÜÕ½Á¦
-		case e_RankingIndex_elves_gs://¾«Áé×ÜÕ½Á¦
-		case e_RankingIndex_mount://×øÆï×ÜÕ½Á¦
-		case e_RankingIndex_belief: //¸öÈË°ñ-ĞÅÑö
-		case e_RankingIndex_element: //¸öÈË°ñ-·ûÎÄ
+		case e_RankingIndex_gs://æˆ˜åŠ›æ€»æ¦œ
+		case e_RankingIndex_gs_barserker: //æˆ˜åŠ›-æˆ˜å£«
+		case e_RankingIndex_gs_wizard: //æˆ˜åŠ›-æ³•å¸ˆ
+		case e_RankingIndex_gs_guardian: //æˆ˜åŠ›-éª‘å£«
+		case e_RankingIndex_gs_assassinator: //æˆ˜åŠ›-åˆºå®¢
+		case e_RankingIndex_equipment_main: //è£…å¤‡æ¦œ-æ€»æˆ˜åŠ›
+		case e_RankingIndex_box_map_level: //ä¸»åœ°å›¾ç­‰çº§
+		case e_RankingIndex_wing: //ç¾½ç¿¼æ€»æˆ˜åŠ›
+		case e_RankingIndex_elves_gs://ç²¾çµæ€»æˆ˜åŠ›
+		case e_RankingIndex_mount://åéª‘æ€»æˆ˜åŠ›
+		case e_RankingIndex_belief: //ä¸ªäººæ¦œ-ä¿¡ä»°
+		case e_RankingIndex_element: //ä¸ªäººæ¦œ-ç¬¦æ–‡
 		case e_RankingIndex_feather_heart:
 		case e_RankingIndex_couple:
 		{
@@ -109,11 +109,11 @@ void	cranking_mgr::init_ranking_data()
 	m_bflag_has_init = true;
 	m_player_class_type = m_player_ref.get_unit_info(e_role_info_class_type);
 	init_ranking_time_and_update();
-	//³õÊ¼»¯cs¶ÏrangkingµÄÊı¾İ±¸·İ
+	//åˆå§‹åŒ–csæ–­rangkingçš„æ•°æ®å¤‡ä»½
 	int64 temp_ranking_value = m_player_ref.get_unit_gs_value();
 	set_and_sync_ranking_data(e_RankingIndex_gs, temp_ranking_value);
 
-	// µÈ¼¶ÅÅĞĞ°ñ áÛ·å
+	// ç­‰çº§æ’è¡Œæ¦œ å·…å³°
 	int32 GradeNum = m_player_ref.get_grade_num();
 	if (GradeNum >= faith::player_grade_up_peakedness_num)
 	{
@@ -221,7 +221,7 @@ void cranking_mgr::set_ranking_value(e_RankingIndex ranking_type, const  int64& 
 
 void	cranking_mgr::save_ranking_to_db()
 {
-	////·ÀÖ¹ÏÂÏßÇ° tick¸üĞÂµÄÊı¾İÃ»ÓĞ¸üĞÂ
+	////é˜²æ­¢ä¸‹çº¿å‰ tickæ›´æ–°çš„æ•°æ®æ²¡æœ‰æ›´æ–°
 	//for (int32 ranking_type = 0; ranking_type < e_RankingIndex_max;ranking_type++)
 	//{
 	//	if (m_ranking_data[ranking_type].bflag_is_tick_update)
@@ -378,7 +378,7 @@ bool	cranking_mgr::make_ranking_data(s_ranking_player_info& ranking_data, e_Rank
 		{
 			return false;
 		}
-		ranking_data.supporting_guid.A = template_id;				//×°±¸id
+		ranking_data.supporting_guid.A = template_id;				//è£…å¤‡id
 		return true;
 	}
 	break;

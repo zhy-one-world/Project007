@@ -82,7 +82,7 @@ namespace faith
 		selling_goods_map	m_selling_goods_map;
 		selling_goods_map	m_direct_purchase_map;
 
-		//优化
+		//浼樺寲
 		//std::vector<std::string> notice_string_vector;
 
 		int64				m_old_tick_time;
@@ -134,11 +134,11 @@ namespace faith
 	public:
 		int32 get_config_param(e_auction_param param_type);
 	public:
-		void on_login(client_session* session); //外部调用
+		void on_login(client_session* session); //澶栭儴璋冪敤
 	public:
 		void auction_bid_db_sucess(const guid_64& buyer_guid,  const guid_64& item_guid);
 
-	//////////////////////////////个人拍卖///////////////////////////////////
+	//////////////////////////////涓汉鎷嶅崠///////////////////////////////////
 	public:
 		void add_person_info(const cs2ws_auction_request_refresh_person *p_data);
 

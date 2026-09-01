@@ -3,7 +3,7 @@
 created: 2016/07/14
 file base: achievement_def
 file ext: hpp
-author: ÕÅÓîÏè
+author: å¼ å®‡ç¿”
 
 purpose:
 *********************************************************************/
@@ -19,83 +19,83 @@ namespace faith
 {
 #pragma pack(push,1)
 
-	const int32			MAX_ACHIEVEMENT_NUM = 320;											//³É¾ÍÏîÄ¿×î´óÊıÁ¿
-//	const int32			MAX_ACHIEVEMENT_PAGE_NUM = 8;										//·Ö×éÒ³Ç©Êı(´Ó1¿ªÊ¼)
+	const int32			MAX_ACHIEVEMENT_NUM = 320;											//æˆå°±é¡¹ç›®æœ€å¤§æ•°é‡
+//	const int32			MAX_ACHIEVEMENT_PAGE_NUM = 8;										//åˆ†ç»„é¡µç­¾æ•°(ä»1å¼€å§‹)
 
 	enum e_achievement_operate_type
 	{
-		eaot_none,//È±Ê¡
-		eaot_finish,//ÁìÈ¡
+		eaot_none,//ç¼ºçœ
+		eaot_finish,//é¢†å–
 
 	};
 
 	enum e_achievement_type
 	{
-		eat_npc_kill_count,//É±¹ÖÍ³¼Æ
-		eat_boss_kill_count,//boss»÷É±Í³¼Æ
-		eat_compose_count,//ºÏ³ÉÍ³¼Æ
-		eat_item_upgrade_count,//Ç¿»¯´ÎÊıÍ³¼Æ
-		eat_item_addon_count,//×·¼Ó´ÎÊıÍ³¼Æ
-		eat_item_upgrade_state_check,//×°±¸Ç¿»¯Ä³ĞÇÅĞ¶Ï
-		eat_item_addon_state_check,//×°±¸×·¼ÓÄ³¼¶ÅĞ¶Ï
-		eat_role_level_count,//µÈ¼¶ÅĞ¶Ï
-		eat_role_transmigration_level_count,//×ªÉúµÈ¼¶
-		eat_skill_level_check,//¼¼ÄÜµÈ¼¶´ïµ½¼¸¼¶ÅĞ¶Ï
-		eat_login_continuity_count,//Á¬ĞøµÇÂ½Í³¼Æ,-------------------------·ÏÆú
-		eat_login_all_count,//ÀÛ¼ÆµÇÂ½Í³¼Æ
-		eat_current_money_check,//µ±Ç°½ğÇ®ÅĞ¶Ï
-		eat_all_money_count,//ÀÛ¼Æ½ğÇ®ÅĞ¶Ï
-		eat_easy_fuben_count,//¼òµ¥¸±±¾Í¨¹ØÍ³¼Æ
-		eat_medium_fuben_count,//ÆÕÍ¨¸±±¾Í¨¹ØÍ³¼Æ
-		eat_hard_fuben_count,//À§ÄÑ¸±±¾Í¨¹ØÍ³¼Æ
-		eat_military_rank_check,//¾üÏÎµÈ¼¶ÅĞ¶Ï
-		eat_main_mission_check,//Ö÷ÏßÈÎÎñÅĞ¶Ï
-		eat_add_friend_count,//¼ÓºÃÓÑÍ³¼Æ
-		eat_add_or_create_group_team,//¼ÓÈë»ò´´½¨¶ÓÎéÍ³¼Æ
-		eat_add_or_create_group_legion,//¼ÓÈë»ò´´½¨Õ½ÃËÍ³¼Æ
-		eat_item_inherit_count,//´«³ĞÍ³¼Æ----------------------------------·ÏÆú
-		eat_all_skill_level_count,//È«²¿¼¼ÄÜµÈ¼¶Í³¼Æ
+		eat_npc_kill_count,//æ€æ€ªç»Ÿè®¡
+		eat_boss_kill_count,//bosså‡»æ€ç»Ÿè®¡
+		eat_compose_count,//åˆæˆç»Ÿè®¡
+		eat_item_upgrade_count,//å¼ºåŒ–æ¬¡æ•°ç»Ÿè®¡
+		eat_item_addon_count,//è¿½åŠ æ¬¡æ•°ç»Ÿè®¡
+		eat_item_upgrade_state_check,//è£…å¤‡å¼ºåŒ–æŸæ˜Ÿåˆ¤æ–­
+		eat_item_addon_state_check,//è£…å¤‡è¿½åŠ æŸçº§åˆ¤æ–­
+		eat_role_level_count,//ç­‰çº§åˆ¤æ–­
+		eat_role_transmigration_level_count,//è½¬ç”Ÿç­‰çº§
+		eat_skill_level_check,//æŠ€èƒ½ç­‰çº§è¾¾åˆ°å‡ çº§åˆ¤æ–­
+		eat_login_continuity_count,//è¿ç»­ç™»é™†ç»Ÿè®¡,-------------------------åºŸå¼ƒ
+		eat_login_all_count,//ç´¯è®¡ç™»é™†ç»Ÿè®¡
+		eat_current_money_check,//å½“å‰é‡‘é’±åˆ¤æ–­
+		eat_all_money_count,//ç´¯è®¡é‡‘é’±åˆ¤æ–­
+		eat_easy_fuben_count,//ç®€å•å‰¯æœ¬é€šå…³ç»Ÿè®¡
+		eat_medium_fuben_count,//æ™®é€šå‰¯æœ¬é€šå…³ç»Ÿè®¡
+		eat_hard_fuben_count,//å›°éš¾å‰¯æœ¬é€šå…³ç»Ÿè®¡
+		eat_military_rank_check,//å†›è¡”ç­‰çº§åˆ¤æ–­
+		eat_main_mission_check,//ä¸»çº¿ä»»åŠ¡åˆ¤æ–­
+		eat_add_friend_count,//åŠ å¥½å‹ç»Ÿè®¡
+		eat_add_or_create_group_team,//åŠ å…¥æˆ–åˆ›å»ºé˜Ÿä¼ç»Ÿè®¡
+		eat_add_or_create_group_legion,//åŠ å…¥æˆ–åˆ›å»ºæˆ˜ç›Ÿç»Ÿè®¡
+		eat_item_inherit_count,//ä¼ æ‰¿ç»Ÿè®¡----------------------------------åºŸå¼ƒ
+		eat_all_skill_level_count,//å…¨éƒ¨æŠ€èƒ½ç­‰çº§ç»Ÿè®¡
 
-		eat_lingyu_grade_count,					// ôáÓğ×Ü½×----------------·ÏÆú
-		eat_wing_grade_count,					// ÓğÒíµÈ½×Í³¼Æ
+		eat_lingyu_grade_count,					// ç¿ç¾½æ€»é˜¶----------------åºŸå¼ƒ
+		eat_wing_grade_count,					// ç¾½ç¿¼ç­‰é˜¶ç»Ÿè®¡
 
-		eat_mount_grade_count,					// ×øÆï×î¸ß½×Í³¼Æ
-		eat_mount_type,							// ×øÆïÀàĞÍ
-		eat_mount_illusion_count,				// ×øÆï»Ã»¯×Ü´ÎÊıÍ³¼Æ
+		eat_mount_grade_count,					// åéª‘æœ€é«˜é˜¶ç»Ÿè®¡
+		eat_mount_type,							// åéª‘ç±»å‹
+		eat_mount_illusion_count,				// åéª‘å¹»åŒ–æ€»æ¬¡æ•°ç»Ÿè®¡
 		
-		eat_spirit_num_count,					// ÓµÓĞ¾«ÁéÊıÁ¿Í³¼Æ
-		eat_spirit_level_count,					// ¾«Áé×ÜµÈ¼¶Í³¼Æ
+		eat_spirit_num_count,					// æ‹¥æœ‰ç²¾çµæ•°é‡ç»Ÿè®¡
+		eat_spirit_level_count,					// ç²¾çµæ€»ç­‰çº§ç»Ÿè®¡
 
-		eat_belief_grade_count,					// ĞÅÑö×ÜµÈ½×Í³¼Æ
+		eat_belief_grade_count,					// ä¿¡ä»°æ€»ç­‰é˜¶ç»Ÿè®¡
 		
-		eat_patron_saint_activation_num_count,	// ÊØ»¤Éñ¼¤»îÊıÁ¿Í³¼Æ
-		eat_patron_saint_grade_num_count,		// ÊØ»¤Éñ×ÜµÈ¼¶Í³¼Æ
+		eat_patron_saint_activation_num_count,	// å®ˆæŠ¤ç¥æ¿€æ´»æ•°é‡ç»Ÿè®¡
+		eat_patron_saint_grade_num_count,		// å®ˆæŠ¤ç¥æ€»ç­‰çº§ç»Ÿè®¡
 
-		eat_illustration_finish_num_count,		// Í¼¼øÍê³ÉÊıÁ¿Í³¼Æ
+		eat_illustration_finish_num_count,		// å›¾é‰´å®Œæˆæ•°é‡ç»Ÿè®¡
 
-		eat_legion_boss,						// ¾üÍÅboss
+		eat_legion_boss,						// å†›å›¢boss
 
-		eat_run_equip_num_count,				// ·ûÎÄ×î¸ß×°±¸²ÛÊı ·ûÎÄ = ÔªËØÖ®ĞÄ
-		eat_runc_level_count,					// Í¬Ê±×°±¸·ûÎÄÖ®ºÍ×ÜµÈ¼¶
+		eat_run_equip_num_count,				// ç¬¦æ–‡æœ€é«˜è£…å¤‡æ§½æ•° ç¬¦æ–‡ = å…ƒç´ ä¹‹å¿ƒ
+		eat_runc_level_count,					// åŒæ—¶è£…å¤‡ç¬¦æ–‡ä¹‹å’Œæ€»ç­‰çº§
 
-		eat_multiple_fuben_has_finished_count,			// ¶àÈË¸±±¾Íê³ÉÊıÁ¿
+		eat_multiple_fuben_has_finished_count,			// å¤šäººå‰¯æœ¬å®Œæˆæ•°é‡
 
-		eat_role_marry,							// ½ÇÉ«½á»é
+		eat_role_marry,							// è§’è‰²ç»“å©š
 
 		eat_max,
 	};
 
 	enum e_achievement_state
 	{
-		eas_accept,//Î´Íê³É
-		eas_can_finish,//ÒÑÍê³É
-		eas_done,//ÒÑÁìÈ¡
+		eas_accept,//æœªå®Œæˆ
+		eas_can_finish,//å·²å®Œæˆ
+		eas_done,//å·²é¢†å–
 	};
 	enum e_achievement_inst_data
 	{
-		eaid_id,//Ä£°åid
-		eaid_current_num,//µ±Ç°½ø¶È
-		eaid_current_state,//µ±Ç°×´Ì¬
+		eaid_id,//æ¨¡æ¿id
+		eaid_current_num,//å½“å‰è¿›åº¦
+		eaid_current_state,//å½“å‰çŠ¶æ€
 		eaid_max,
 	};
 	enum e_achievement_error_type

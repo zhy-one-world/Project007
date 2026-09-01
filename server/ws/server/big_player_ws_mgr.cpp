@@ -1,4 +1,4 @@
-#include "big_player_ws_mgr.h"
+﻿#include "big_player_ws_mgr.h"
 #include "utility/cs_date.hpp"
 #include "utility/guid_gen.h"
 #include "utility/globle_data.h"
@@ -57,7 +57,6 @@ namespace faith
 			if (m_timer - m_last_save_time > 180000)
 			{
 				m_last_save_time = m_timer;
-				//������һ�浵
 				save_data_to_db();
 			}
 			for (int32 i = 0; i < e_big_player_type_max; ++i)
@@ -189,7 +188,6 @@ namespace faith
 		//msg.big_type = index;
 		//ws_client::getInstance().send_to_dp(&msg, sizeof(ws2dp_load_big_player_detail));
 
-		//������load
 		player_info_array[index].mask_data_block(s_fake_player_info::efpi_spirit);
 		player_info_array[index].mask_data_block(s_fake_player_info::efpi_fight_att);
 	}
@@ -370,7 +368,6 @@ namespace faith
 			msg.add_statue_guid(statue_guid_array[i].B);
 		}
 		client_session* temp_session = client_session_mgr::getInstance().get_session(request_player_guid);
-		// nullptr˵��������/�����ڣ�cs_uid = 0 ˵������CS�ϣ����紫���У�
 		if ((temp_session != nullptr) && (temp_session->get_cs_conn_index() >= 0))
 		{
 			temp_session->send_to_client(&msg, e_msgindex_s2c_update_big_player_statue_guid);

@@ -85,19 +85,19 @@ namespace faith
 
 		int32 next_phase = m_world_boss_data.respawn_phase + 1;
 		for (; next_phase < e_world_boss_respawn_unit_max; ++next_phase)
-		{//next_phase = e_world_boss_respawn_unit_maxÊ±£¬ÆäÊµ¾ÍËµÃ÷µ±ÈÕË¢ĞÂ´ÎÊıÒÑ¾­ÓÃÍêÁË
+		{//next_phase = e_world_boss_respawn_unit_maxæ—¶ï¼Œå…¶å®å°±è¯´æ˜å½“æ—¥åˆ·æ–°æ¬¡æ•°å·²ç»ç”¨å®Œäº†
 			int32 this_index = start_index + next_phase;
 			if (this_index < 0
 				|| this_index >= m_spawn_template_ptr->RespawnByDayArray.size()
 				|| m_spawn_template_ptr->RespawnByDayArray[this_index] <= 0)
-			{//Èç¹ûµ±´ÎË¢ĞÂµÄÏÂÒ»´ÎË¢ĞÂÒÔ¼°Ö®ºóµÄËùÓĞË¢ĞÂÎ»¶¼ÊÇ0£¬ÄÇnext_phase»áÀÛ¼Ó£¬Ò»Ö±µ½µÈÓÚe_world_boss_respawn_unit_maxºóÌø³ö
+			{//å¦‚æœå½“æ¬¡åˆ·æ–°çš„ä¸‹ä¸€æ¬¡åˆ·æ–°ä»¥åŠä¹‹åçš„æ‰€æœ‰åˆ·æ–°ä½éƒ½æ˜¯0ï¼Œé‚£next_phaseä¼šç´¯åŠ ï¼Œä¸€ç›´åˆ°ç­‰äºe_world_boss_respawn_unit_maxåè·³å‡º
 				continue;
 			}
 
 			time_info respawn_time = time_helper::get_time_by_today_stamp_new(m_spawn_template_ptr->RespawnByDayArray[this_index]);
 
-			//ÕâÀï±ØĞëÈ·±£InscreaseÖ®ºóµÄÖµÎª²»ÄÜ¼°Ê±´´½¨µÄÖµ£¬·ÀÖ¹ÔÚÒ»¸ö½ÏµÍµÄrespawn_phaseÊ±£¬·¢ÉúÁ¬Ğø´´½¨µÄÇé¿ö
-			//Èô·¢ÉúÉÏÊöÇé¿ö£¬Ôò¿ÉÄÜÔì³Écs´´½¨»Ø°ü²»¼°Ê±£¨unit_arry_indexÉèÖÃ²»¼°Ê±£©£¬µ¼ÖÂ²»ÄÜÕı³£ÒÆ³ıÖ®Ç°´´½¨µÄNPCµÄÇé¿ö
+			//è¿™é‡Œå¿…é¡»ç¡®ä¿Inscreaseä¹‹åçš„å€¼ä¸ºä¸èƒ½åŠæ—¶åˆ›å»ºçš„å€¼ï¼Œé˜²æ­¢åœ¨ä¸€ä¸ªè¾ƒä½çš„respawn_phaseæ—¶ï¼Œå‘ç”Ÿè¿ç»­åˆ›å»ºçš„æƒ…å†µ
+			//è‹¥å‘ç”Ÿä¸Šè¿°æƒ…å†µï¼Œåˆ™å¯èƒ½é€ æˆcsåˆ›å»ºå›åŒ…ä¸åŠæ—¶ï¼ˆunit_arry_indexè®¾ç½®ä¸åŠæ—¶ï¼‰ï¼Œå¯¼è‡´ä¸èƒ½æ­£å¸¸ç§»é™¤ä¹‹å‰åˆ›å»ºçš„NPCçš„æƒ…å†µ
 			if (cur_time_info.hour_in_day < respawn_time.hour_in_day)
 			{
 				break;
@@ -126,7 +126,7 @@ namespace faith
 		int32 start_index = e_world_boss_respawn_unit_max * cur_time_info.day_in_week;
 
 		m_world_boss_data.respawn_phase = e_world_boss_respawn_unit_max;
-		//ÖØÖÃÕâ¸öË¢ĞÂ½×¶ÎÊ±£¬ÏÈ½«ÆäÉèÖÃÎªË¢ĞÂÈ«²¿½øĞĞ¹ıµÄÊıÖµ£¬¼´e_world_boss_respawn_unit_max
+		//é‡ç½®è¿™ä¸ªåˆ·æ–°é˜¶æ®µæ—¶ï¼Œå…ˆå°†å…¶è®¾ç½®ä¸ºåˆ·æ–°å…¨éƒ¨è¿›è¡Œè¿‡çš„æ•°å€¼ï¼Œå³e_world_boss_respawn_unit_max
 
 		for (int32 i = 0; i < e_world_boss_respawn_unit_max; ++i)
 		{
@@ -138,8 +138,8 @@ namespace faith
 			}
 			if (m_spawn_template_ptr->RespawnByDayArray[this_index] > 0)
 			{
-				//µ±ÓĞÓĞĞ§Ë¢ĞÂÊ±¼äÊı¾İÊ±£¬¼´¸Ã±í¸ñÊı×é¶ÔÓ¦Î»ÖÃÖµ´óÓÚ0Ê±
-				//ÔÙÉèÖÃÎªÓĞĞ§µÄid
+				//å½“æœ‰æœ‰æ•ˆåˆ·æ–°æ—¶é—´æ•°æ®æ—¶ï¼Œå³è¯¥è¡¨æ ¼æ•°ç»„å¯¹åº”ä½ç½®å€¼å¤§äº0æ—¶
+				//å†è®¾ç½®ä¸ºæœ‰æ•ˆçš„id
 				m_world_boss_data.respawn_phase = i;
 				break;
 			}
@@ -168,7 +168,7 @@ namespace faith
 		}
 		if (m_world_boss_data.respawn_phase >= e_world_boss_respawn_unit_max)
 		{
-			//ËµÃ÷Õâ¸öBoss½ñÌìË¢ĞÂ´ÎÊıÒÑ¾­ÂúÁË
+			//è¯´æ˜è¿™ä¸ªBossä»Šå¤©åˆ·æ–°æ¬¡æ•°å·²ç»æ»¡äº†
 			return false;
 		}
 
@@ -202,7 +202,7 @@ namespace faith
 		m_world_boss_data.world_boss_npc_array_index = -1;
 		memcpy(m_world_boss_data.killer_name, killer_name, max_name_size);
 
-		//×Ô¶¯»ØÊÕ¾ÍÃ»ÓĞ»÷É±Õß
+		//è‡ªåŠ¨å›æ”¶å°±æ²¡æœ‰å‡»æ€è€…
 		if (0 == strlen(killer_name))
 		{
 			return;

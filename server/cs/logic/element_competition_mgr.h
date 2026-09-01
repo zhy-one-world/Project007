@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2021Äê6ÔÂ16ÈÕ
+created: 2021å¹´6æœˆ16æ—¥
 file base: element_competition_mgr
 file ext: hpp
 author: zhaoyuming
@@ -21,54 +21,54 @@ namespace faith
 
 
 	public:
-		// Êı¾İÇåÀí
+		// æ•°æ®æ¸…ç†
 		void									clear_data();
-		// ÉèÖÃ½ÇÉ«Ë÷Òı
+		// è®¾ç½®è§’è‰²ç´¢å¼•
 		void									set_unit_index(int32 array_index) { m_array_index = array_index; };
-		// »ñÈ¡ÊÖ²áĞÅÏ¢ÒıÓÃ
+		// è·å–æ‰‹å†Œä¿¡æ¯å¼•ç”¨
 		s_role_competition_info&				get_competition_info() { return m_cur_competition_info; };
 		// Tick
 		void									heart_tick(const int64& new_time);
-		// ¼ì²é»î¶¯×´Ì¬
+		// æ£€æŸ¥æ´»åŠ¨çŠ¶æ€
 		void									check_state(const int64& new_time);
-		// ³õÊ¼»¯Êı¾İ½áÊø
+		// åˆå§‹åŒ–æ•°æ®ç»“æŸ
 		void									load_competition_info_end(s_role_competition_info info);
-		// lua·¢À´µÄ¼ÓÔØÊı¾İ½á¹û
+		// luaå‘æ¥çš„åŠ è½½æ•°æ®ç»“æœ
 		bool                                    load_element_competition_by_db_lua(const char *data_ptr, int32 data_len);
-		// ³õÊ¼»¯ÊÖ²áÊı¾İ
+		// åˆå§‹åŒ–æ‰‹å†Œæ•°æ®
 		void									reset_competition_data();
-		// ±£´æÊı¾İ
+		// ä¿å­˜æ•°æ®
 		void									save_to_db(e_save_role_data_type eType);
-		// Ïò¿Í»§¶ËÍ¬²½ĞÅÏ¢
+		// å‘å®¢æˆ·ç«¯åŒæ­¥ä¿¡æ¯
 		void									sync_competition_info();
-		// ÁìÈ¡½±Àø
+		// é¢†å–å¥–åŠ±
 		void									get_reward(int32 id, int32 type);
-		// ÁìÈ¡È«²¿½±Àø
+		// é¢†å–å…¨éƒ¨å¥–åŠ±
 		void									get_reward_all(int32 get_type);
-		// Ôö¼ÓÊÖ²á¾­Ñé
+		// å¢åŠ æ‰‹å†Œç»éªŒ
 		void									add_competition_exp(int64 point_num);
-		// Ïò¿Í»§¶ËÍ¬²½ÊÖ²á¾­Ñé
+		// å‘å®¢æˆ·ç«¯åŒæ­¥æ‰‹å†Œç»éªŒ
 		void									sync_lv_exp();
-		// ·¢·Å½±Àø
+		// å‘æ”¾å¥–åŠ±
 		void									send_reward(int32 m_id, int32 m_type);
-		// Ê±¼ä×°»»º¯Êı
+		// æ—¶é—´è£…æ¢å‡½æ•°
 		int64									transfer_date_to_stamp(int64 date);
-		// ¹ºÂòµÈ¼¶
+		// è´­ä¹°ç­‰çº§
 		void									buy_competition_level(int32 level);
-		// ³äÖµ¹ºÂò
+		// å……å€¼è´­ä¹°
 		void									check_is_manual(int32 goods_id);
-		// ¹ºÂòÊÖ²á
+		// è´­ä¹°æ‰‹å†Œ
 		void									buy_speical_manual(int32 manual_type);
 	private:
-		// ³õÊ¼»¯Êı¾İ(Èü¼¾Ê±¼äÊı¾İ)
+		// åˆå§‹åŒ–æ•°æ®(èµ›å­£æ—¶é—´æ•°æ®)
 		void									init_data();
-		// ¼¤»îÊÖ²á
+		// æ¿€æ´»æ‰‹å†Œ
 		void									activati_manual(int32 manual_type);
-		// ¼¤»îÊÖ²á½±Àø
+		// æ¿€æ´»æ‰‹å†Œå¥–åŠ±
 		void									activati_manual_reward_by_type(int32 active_type, int32 active_ext0, int32 active_ext1);
-		// ĞŞ¸ÄÊÖ²áµÈ¼¶
+		// ä¿®æ”¹æ‰‹å†Œç­‰çº§
 		void									change_point();
-		// Èü¼¾½áËã
+		// èµ›å­£ç»“ç®—
 		void									calcu_cur_competition();
 	private:
 		int32									m_array_index;

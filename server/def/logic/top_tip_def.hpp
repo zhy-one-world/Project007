@@ -10,7 +10,7 @@ namespace faith
 	const int32 max_plot_tip_entry_num = 5;
 	const int32 pop_plot_tip_interval = 3000;
 
-	// Õâ¸öÃ¶¾ÙÊÇ´Ó¾çÇéÌáÊ¾Êı×éÖĞÌáÊ¾Ã¿ÌõÌáÊ¾Ê±ÓÃµÄÊı×éÏÂ±í
+	// è¿™ä¸ªæšä¸¾æ˜¯ä»å‰§æƒ…æç¤ºæ•°ç»„ä¸­æç¤ºæ¯æ¡æç¤ºæ—¶ç”¨çš„æ•°ç»„ä¸‹è¡¨
 	enum e_plot_tip_arr_tuple_index
 	{
 		e_plot_tip_arr_tuple_index_type,
@@ -21,18 +21,18 @@ namespace faith
 
 	enum e_plot_type
 	{
-		e_plot_type_when_create,	// ´´½¨Ê±µ¯³öÌáÊ¾
-		e_plot_type_when_destroy,	// Ïú»ÙÊ±µ¯³öÌáÊ¾
-		e_plot_type_after_begin,	// ´´½¨Ò»¶ÎÊ±¼äºóµ¯³öÌáÊ¾
-		e_plot_type_before_end,		// Ïú»ÙÖ®Ç°µÄÒ»¶ÎÊ±¼äµ¯³öÌáÊ¾
+		e_plot_type_when_create,	// åˆ›å»ºæ—¶å¼¹å‡ºæç¤º
+		e_plot_type_when_destroy,	// é”€æ¯æ—¶å¼¹å‡ºæç¤º
+		e_plot_type_after_begin,	// åˆ›å»ºä¸€æ®µæ—¶é—´åå¼¹å‡ºæç¤º
+		e_plot_type_before_end,		// é”€æ¯ä¹‹å‰çš„ä¸€æ®µæ—¶é—´å¼¹å‡ºæç¤º
 		e_plot_type_max
 	};
 
 	struct s_plot_tip_entry
 	{
-		e_plot_type	type;		// ¾çÇéÌáÊ¾µÄµ¯³öÀàĞÍ
-		int32		time;		// ¾çÇéÌáÊ¾µÄµ¯³öÊ±¼ä
-		int32		str_id;		// ¾çÇéÌáÊ¾µÄ×Ö·û´®ID
+		e_plot_type	type;		// å‰§æƒ…æç¤ºçš„å¼¹å‡ºç±»å‹
+		int32		time;		// å‰§æƒ…æç¤ºçš„å¼¹å‡ºæ—¶é—´
+		int32		str_id;		// å‰§æƒ…æç¤ºçš„å­—ç¬¦ä¸²ID
 
 		s_plot_tip_entry()
 		{

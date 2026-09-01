@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2019Äê03ÔÂ20ÈÕ
+created: 2019å¹´03æœˆ20æ—¥
 file base: time_limit_activity_mgr
 file ext: cpp
 author: wangdi
@@ -117,7 +117,7 @@ namespace faith
 		for (ite = m_activity_obj.begin(); ite != m_activity_obj.end(); ite++)
 		{
 			ite->second.refresh_by_zero(time_now);
-			reset_ranking_value((e_time_limit_activity_type)ite->second.get_act_type());//Ö»ÓĞÅÅĞĞ°ñ²Å»áË¢
+			reset_ranking_value((e_time_limit_activity_type)ite->second.get_act_type());//åªæœ‰æ’è¡Œæ¦œæ‰ä¼šåˆ·
 		}
 		send_open_activity_all();
 		add_activity_schedule(e_time_limit_activity_type_total_landing, 1);
@@ -178,7 +178,7 @@ namespace faith
 			auto ite = m_activity_obj.find(act_guid);
 			if (ite == m_activity_obj.end())
 			{
-				//¸øÀÏ»î¶¯Ò»¸ö±ê¼ÇÎ»ÖÃ
+				//ç»™è€æ´»åŠ¨ä¸€ä¸ªæ ‡è®°ä½ç½®
 				for (auto temp_ite = m_activity_obj.begin(); temp_ite != m_activity_obj.end();)
 				{
 					auto other_ite = temp_ite++;
@@ -400,7 +400,7 @@ namespace faith
 			}
 			int32 branch_template_id = m_activity_obj[act_id_arr[i]].get_branch_template_id();
 
-			//×î¶àÑ­»·50´Î ÕÒµ½Í¬Ò»ÌìÄÚ ³äÖµidÓÚµ±Ç°³äÖµidÏàÍ¬µÄ
+			//æœ€å¤šå¾ªç¯50æ¬¡ æ‰¾åˆ°åŒä¸€å¤©å†… å……å€¼idäºå½“å‰å……å€¼idç›¸åŒçš„
 			for (int32 j = 0; j < 50; j++)
 			{
 				if (!m_activity_obj[act_id_arr[i]].is_same_cycle(branch_template_id + j))
@@ -427,7 +427,7 @@ namespace faith
 			}
 			int32 branch_template_id = m_activity_obj[act_id_arr[i]].get_branch_template_id();
 
-			//×î¶àÑ­»·50´Î ÕÒµ½Í¬Ò»ÌìÄÚ ³äÖµidÓÚµ±Ç°³äÖµidÏàÍ¬µÄ
+			//æœ€å¤šå¾ªç¯50æ¬¡ æ‰¾åˆ°åŒä¸€å¤©å†… å……å€¼idäºå½“å‰å……å€¼idç›¸åŒçš„
 			for (int32 j = 0; j < 50; j++)
 			{
 				if (!m_activity_obj[act_id_arr[i]].is_same_cycle(branch_template_id + j))
@@ -957,7 +957,7 @@ namespace faith
 			case faith::e_time_limit_activity_type_national_treasure_2:
 			{
 				std::vector<int32> condition_list;
-				//ÏòwsÍ¬²½×îĞÂ³äÖµÊı¾İ
+				//å‘wsåŒæ­¥æœ€æ–°å……å€¼æ•°æ®
 
 				time_limit_activity_object& activity_obj_ptr = get_new_act_obj_by_act_type(activity_type);
 				if (!activity_obj_ptr.is_valid() || !activity_obj_ptr.is_open())
@@ -1038,7 +1038,7 @@ namespace faith
 	{
 		if (nullptr == m_player_ptr)
 			return;
-		//Ê¹ÓÃÃ¿ÈÕ³äÖµÍ¬²½ÏÔÊ¾»î¶¯³äÖµÏà¹Ø ÕâÀïÒÀÀµµÄÊÇ Õı³£»î¶¯¿ªÆôÊ±³äÖµÊıÖµÒ»¶¨ÊÇ´óÓÚµÈÓÚÃ¿ÈÕ³äÖµÊıÖµµÄ
+		//ä½¿ç”¨æ¯æ—¥å……å€¼åŒæ­¥æ˜¾ç¤ºæ´»åŠ¨å……å€¼ç›¸å…³ è¿™é‡Œä¾èµ–çš„æ˜¯ æ­£å¸¸æ´»åŠ¨å¼€å¯æ—¶å……å€¼æ•°å€¼ä¸€å®šæ˜¯å¤§äºç­‰äºæ¯æ—¥å……å€¼æ•°å€¼çš„
 		int32 cur_daily_recharge_num = m_player_ptr->get_unit_info(e_role_info_daily_recharge_num);
 		if (cur_daily_recharge_num > get_activity_schedule(e_time_limit_activity_type_total_charge))
 		{

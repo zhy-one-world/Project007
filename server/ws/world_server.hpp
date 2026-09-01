@@ -71,10 +71,10 @@ namespace faith
 		bool	is_sky_island_server() { return m_server_id == get_cross_id(); };
 		int32	get_server_group_id	(){ return m_server_id % server_group_level_num; }
 		int32	get_big_group_id(){ return m_server_id/ server_group_level_num; }
-		int32	get_server_id() { return m_server_id; }//·şÎñÆ÷µÄserver_id
-		xstring&	get_out_ip() { return m_out_ip; }//ÍâÍøip
-		int32	get_out_port() { return m_out_port; }//ÍâÍø¶Ë¿Ú
-		xstring&	get_server_name() { return m_server_name; }//·şÎñÆ÷µÄÃû³Æ
+		int32	get_server_id() { return m_server_id; }//æœåŠ¡å™¨çš„server_id
+		xstring&	get_out_ip() { return m_out_ip; }//å¤–ç½‘ip
+		int32	get_out_port() { return m_out_port; }//å¤–ç½‘ç«¯å£
+		xstring&	get_server_name() { return m_server_name; }//æœåŠ¡å™¨çš„åç§°
 		int32	get_cross_id() {return m_need_begin_cross_config[e_need_server_cross_begin_cross];}
 		const int32 get_begin_time() { return m_begin_time; }
 		bool	get_gm_state() { return m_gm_state; }
@@ -118,14 +118,14 @@ namespace faith
 	public:
 		void	set_cross_server_open_time(int32 cross_time, bool is_from_other_server);
 		void	set_cross_server_open_day();
-		void	open_act_with_cross_server_open_day();//¸ù¾İ¿ç·şÊ±¼ä½âËø»î¶¯
+		void	open_act_with_cross_server_open_day();//æ ¹æ®è·¨æœæ—¶é—´è§£é”æ´»åŠ¨
 		void	save_gm_common_to_db(int64 req_http_id = 0);
 		void	reload_csv_func();
 		void	internal_req_login(uint32 conn_index, const void* data_ptr, size_t data_len);
 		void	internal_appserver_dataupdate(uint32 conn_index, const void* data_ptr, size_t data_len);
 
-		void	set_flag_when_one_min_start();//Ò»·ÖÖÓºóÈç¹ûflagÓĞÎÊÌâ£¬ÔòÇ¿ÖÆÖ´ĞĞ
-		void	end_refresh_server_list();//¸ù¾İµ±Ç°server_list´¦ÀíĞèÒªÓÃµ½server_listµÄÂß¼­
+		void	set_flag_when_one_min_start();//ä¸€åˆ†é’Ÿåå¦‚æœflagæœ‰é—®é¢˜ï¼Œåˆ™å¼ºåˆ¶æ‰§è¡Œ
+		void	end_refresh_server_list();//æ ¹æ®å½“å‰server_listå¤„ç†éœ€è¦ç”¨åˆ°server_listçš„é€»è¾‘
 		bool	is_have_this_server(int32 server_id);
 	public:
 		void	send_by_uid(int32 conn_index, const void* data_ptr, size_t data_len);
@@ -138,15 +138,15 @@ namespace faith
 		void    broadcast_lua(google::protobuf::Message* net_pro, uint32 header, e_server_type server_type = e_server_type_invalid);
 		void	send_message_out(const void* data_ptr, size_t data_len, int32 conn_index = -1, e_server_type server_type = e_server_type_invalid);
 
-		void	func_when_add_other_server(int32 server_id);//µ±ÓĞÆäËû·şÎñÆ÷¼ÓÈë¿ç·ş×éÊ±Ö´ĞĞµÄº¯Êı
-		void	func_when_remove_other_server(int32 server_id);//µ±ÓĞÆäËû·şÎñÆ÷ÒÆ³ı¿ç·ş×éÊ±Ö´ĞĞµÄº¯Êı
-		void	func_when_change_gate_server(int32 server_id);//µ±¿ç·ş×éÖØĞÂµ÷ÕûÊ±Ö´ĞĞµÄº¯Êı
+		void	func_when_add_other_server(int32 server_id);//å½“æœ‰å…¶ä»–æœåŠ¡å™¨åŠ å…¥è·¨æœç»„æ—¶æ‰§è¡Œçš„å‡½æ•°
+		void	func_when_remove_other_server(int32 server_id);//å½“æœ‰å…¶ä»–æœåŠ¡å™¨ç§»é™¤è·¨æœç»„æ—¶æ‰§è¡Œçš„å‡½æ•°
+		void	func_when_change_gate_server(int32 server_id);//å½“è·¨æœç»„é‡æ–°è°ƒæ•´æ—¶æ‰§è¡Œçš„å‡½æ•°
 		void	set_ws_loading_flag(int64 flag);
-		bool	is_ws_all_load_end() { return m_ws_loading_flag == 0; };//ÊÇ·ñÈ«²¿¼ÓÔØÍê
-		bool	is_loading_flag_finish(int64 target_loading_flag);//µ¥¸öÀàĞÍÊÇ·ñ¼ÓÔØÍê
+		bool	is_ws_all_load_end() { return m_ws_loading_flag == 0; };//æ˜¯å¦å…¨éƒ¨åŠ è½½å®Œ
+		bool	is_loading_flag_finish(int64 target_loading_flag);//å•ä¸ªç±»å‹æ˜¯å¦åŠ è½½å®Œ
 
-		void	send_msg_to_cs_with_load_end();//load½áÊø·¢csĞÅÏ¢
-		void	send_to_gate_get_msg(int64 flag);//ÇëÇógateÊı¾İ
+		void	send_msg_to_cs_with_load_end();//loadç»“æŸå‘csä¿¡æ¯
+		void	send_to_gate_get_msg(int64 flag);//è¯·æ±‚gateæ•°æ®
 		void	send_to_gate_get_all_msg_with_change_gate_server();
 
 		void	check_send_get_gate_msg(const uint64& tick_time);
@@ -170,8 +170,8 @@ namespace faith
 		void	set_server_act_hidden(bool is_need_hidden, bool is_other_server);
 
 		int32 get_activity_sec_left(int32 activity_type, e_activity_time_get time_get, bool is_other_time = false, bool is_cross_city_war = false);
-		std::vector<int32> get_activity_open_time(int32 activity_type);	//»î¶¯¿ªÆôÊ±¼ä
-		std::vector<int32> get_activity_open_data(int32 activity_type);	//»î¶¯¿ªÆôÈÕÆÚ
+		std::vector<int32> get_activity_open_time(int32 activity_type);	//æ´»åŠ¨å¼€å¯æ—¶é—´
+		std::vector<int32> get_activity_open_data(int32 activity_type);	//æ´»åŠ¨å¼€å¯æ—¥æœŸ
 
 		void	set_cs_reload_csv_end() { m_is_begin_cs_reload_csv = false; };
 	private:
@@ -193,27 +193,27 @@ namespace faith
 		int32			m_begin_time;
 		int64			m_server_time_five;
 		int64			m_server_time_zero;
-		int64			m_server_time_refresh_harry;//¿ç·şÂÓ¶áË¢ĞÂ
-		int64			m_server_time_week_constribution_refresh;//¾üÍÅÖÜ¹±Ï×Ë¢ĞÂÊ±¼ä´Á,ÖÜ1  0µãÊ±¼ä´Á£¬¿ÉÒÔÍ¨ÓÃ (ÔİÊ±Ã»ÓĞÊ¹ÓÃ)
-		int64			m_server_time_week_legion_welfare_refresh;//¾üÍÅÖÜ¹±Ï×Ë¢ĞÂÊ±¼ä´Á,¾ü¸£Àû·¢·ÅÊ±¼ä´Á ÖÜÈÕ  23µãÊ±¼ä´Á£¬¿ÉÒÔÍ¨ÓÃ
-		int64			m_server_time_clear_city_war_bid;//³ÇÕ½ÇåÁãÊ±¼ä´Á
+		int64			m_server_time_refresh_harry;//è·¨æœæ å¤ºåˆ·æ–°
+		int64			m_server_time_week_constribution_refresh;//å†›å›¢å‘¨è´¡çŒ®åˆ·æ–°æ—¶é—´æˆ³,å‘¨1  0ç‚¹æ—¶é—´æˆ³ï¼Œå¯ä»¥é€šç”¨ (æš‚æ—¶æ²¡æœ‰ä½¿ç”¨)
+		int64			m_server_time_week_legion_welfare_refresh;//å†›å›¢å‘¨è´¡çŒ®åˆ·æ–°æ—¶é—´æˆ³,å†›ç¦åˆ©å‘æ”¾æ—¶é—´æˆ³ å‘¨æ—¥  23ç‚¹æ—¶é—´æˆ³ï¼Œå¯ä»¥é€šç”¨
+		int64			m_server_time_clear_city_war_bid;//åŸæˆ˜æ¸…é›¶æ—¶é—´æˆ³
 		int64			m_server_ladder_wrold_level;
 		int32			m_fep_conn_index[SERVER_FEP_COUNT];
 		bool			m_is_load_cross_act_end;
-		int32			m_need_begin_cross_config[e_need_server_cross_max];//ÊÇ·ñ¿ªÆô¿ç·ş¶ÔÓ¦ÅäÖÃ
+		int32			m_need_begin_cross_config[e_need_server_cross_max];//æ˜¯å¦å¼€å¯è·¨æœå¯¹åº”é…ç½®
 
-		int32			m_server_info_arr[e_server_info_type_max];//·şÎñÆ÷ĞèÇóÊı¾İ
+		int32			m_server_info_arr[e_server_info_type_max];//æœåŠ¡å™¨éœ€æ±‚æ•°æ®
 
-		int32			m_open_cross_server_days;//¿ªÆô¿ç·ş¾ßÌåÌìÊı
-		bool			m_is_set_cross_time;//ÊÇ·ñÉèÖÃ¹ı¿ª¿ç·şÊ±¼ä
-		int64			m_ws_loading_flag;					//wsÊı¾İ¼ÓÔØ±êÖ¾Î»
-		bool			m_need_get_big_player_gate_msg;		//ĞèÒª¼ÓÔØgate·şÃûÈËÌÃÊı¾İ
-		std::set<int64>	m_need_send_gate_flag_arr;		//ĞèÒª²¹·¢ÍùgateµÄÊı¾İ
-		std::vector<int32> m_last_server_list_server_id;//ÉÏ´Î·şÎñÆ÷ÓµÓĞÄÄĞ©ID
+		int32			m_open_cross_server_days;//å¼€å¯è·¨æœå…·ä½“å¤©æ•°
+		bool			m_is_set_cross_time;//æ˜¯å¦è®¾ç½®è¿‡å¼€è·¨æœæ—¶é—´
+		int64			m_ws_loading_flag;					//wsæ•°æ®åŠ è½½æ ‡å¿—ä½
+		bool			m_need_get_big_player_gate_msg;		//éœ€è¦åŠ è½½gateæœåäººå ‚æ•°æ®
+		std::set<int64>	m_need_send_gate_flag_arr;		//éœ€è¦è¡¥å‘å¾€gateçš„æ•°æ®
+		std::vector<int32> m_last_server_list_server_id;//ä¸Šæ¬¡æœåŠ¡å™¨æ‹¥æœ‰å“ªäº›ID
 		time_cout_map	m_channel_count;
-		bool			m_server_act_hidden;//ÌØÊâÂß¼­
-		bool			m_is_begin_reload_csv;//ÊÇ·ñÔÚÈÈ¸ü£¬ÈÈ¸üÊ±ÉèÖÃtrue£¬ÏÂÒ»¸ötick¸ÄÎªfalse²¢´¥·¢Âß¼­
-		bool			m_is_begin_cs_reload_csv;//ÊÇ·ñÔÚÈÈ¸ücsµÄcsv
+		bool			m_server_act_hidden;//ç‰¹æ®Šé€»è¾‘
+		bool			m_is_begin_reload_csv;//æ˜¯å¦åœ¨çƒ­æ›´ï¼Œçƒ­æ›´æ—¶è®¾ç½®trueï¼Œä¸‹ä¸€ä¸ªtickæ”¹ä¸ºfalseå¹¶è§¦å‘é€»è¾‘
+		bool			m_is_begin_cs_reload_csv;//æ˜¯å¦åœ¨çƒ­æ›´csçš„csv
 	};
 }
 

@@ -32,14 +32,14 @@ namespace faith
 		}
 		else
 		{
-			//boss刚复活或者刚死亡 消息发送给全服玩家
+			//boss鍒氬娲绘垨鑰呭垰姝讳骸 娑堟伅鍙戦�佺粰鍏ㄦ湇鐜╁
 			if ((!ite->second.boss_guid.is_valid() && boss_info.boss_guid.is_valid())
 				|| !boss_info.boss_guid.is_valid())
 			{
 				ite->second = boss_info;
 				send_boss_island_info_to_all_player(boss_info.boss_spawn_point_template_id);
 			}
-			//boss归属改变只发给对应地图的玩家
+			//boss褰掑睘鏀瑰彉鍙彂缁欏搴斿湴鍥剧殑鐜╁
 			else
 			{
 				ite->second = boss_info;

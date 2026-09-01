@@ -22,9 +22,9 @@ namespace faith
 	class unit_man
 	{
 	public:
-		static bool init_manager();	//³õÊ¼»¯¹ÜÀí
+		static bool init_manager();	//åˆå§‹åŒ–ç®¡ç†
 		static void reload_csv();
-		static void heart_tick(const int64& new_time, const int32& tick_time);//ĞÄÌø¹ÜÀí
+		static void heart_tick(const int64& new_time, const int32& tick_time);//å¿ƒè·³ç®¡ç†
 		static void dump_npc_info_by_template_id(int32 npc_id);
 	public:
 		//player
@@ -66,12 +66,12 @@ namespace faith
 	public:
 		static int32 get_grade_num(int32 player_template_id, int32 class_type);
 		static int32 get_world_exp_value();
-		static bool	kill_player_num(guid_64 guid_killer, guid_64 guid_killed, int32 level_killer, int32 level_killed); //¿ç·şÂÓ¶á»÷É±µĞÈËÊÇ·ñÓĞĞ§ÅĞ¶¨;
+		static bool	kill_player_num(guid_64 guid_killer, guid_64 guid_killed, int32 level_killer, int32 level_killed); //è·¨æœæ å¤ºå‡»æ€æ•Œäººæ˜¯å¦æœ‰æ•ˆåˆ¤å®š;
 		static void	refresh_kill_num_at_zero_hour();
 	public:
 		static void	log_msg_info(int32 msg_header, int32 msg_size);
 		static void	log_msg_print_file();
 		static void	log_msg_info_client(int32 msg_header, int32 msg_size);
-		static void	refresh_all_player_time_limit();//ÒòÎªgmÇ¿ÖÆ½áÊøÄ³¸ö»î¶¯£¬Ë¢ĞÂ»î¶¯×´Ì¬		
+		static void	refresh_all_player_time_limit();//å› ä¸ºgmå¼ºåˆ¶ç»“æŸæŸä¸ªæ´»åŠ¨ï¼Œåˆ·æ–°æ´»åŠ¨çŠ¶æ€		
 	};
 }

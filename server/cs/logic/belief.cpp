@@ -3,7 +3,7 @@ created: 2016/4/21
 created: 21:4:2016 17:17:59
 file base: belief
 file ext: h
-author: W.H.B.A.(Íõ»Æ²©°º)
+author: W.H.B.A.(ç‹é»„åšæ˜‚)
 
 purpose: 
 *********************************************************************/
@@ -66,7 +66,7 @@ namespace faith
 		}
 
 		if (m_belief_data.data_ary[e_belief_info_upgrade_count] == 0)
-		{//Ã»½âËø
+		{//æ²¡è§£é”
 			return buff_id;
 		}
 

@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2016Äê10ÔÂ18ÈÕ21:38:05
+	created:	2016å¹´10æœˆ18æ—¥21:38:05
 	file base:	map_object
 	file ext:	h
 	author:		zhy
@@ -26,7 +26,7 @@ namespace faith
 		/*                                                                      */
 		/************************************************************************/
 	public:
-		// Õâ¸ö·½·¨ÖĞ»á×Ô¶¯ÉèÖÃm_map_template_idºÍm_map_template_ptr
+		// è¿™ä¸ªæ–¹æ³•ä¸­ä¼šè‡ªåŠ¨è®¾ç½®m_map_template_idå’Œm_map_template_ptr
 		bool					init_map_data(const guid_64 map_guid, int32 template_id, int32 line_id, int32 map_all_time);
 	public:
 		virtual bool			create_by_template_data(const guid_64& map_guid, int32 template_id, int32 line_id, int32 map_all_time) { return false; }
@@ -109,7 +109,7 @@ namespace faith
 		virtual void			send_notice_to_all_player(std::string notice_str);
 		virtual void			send_notice_to_all_player(int32 notice_id, std::string notice_str);
 		virtual void			on_pop_plot_tip(int32 str_id) {}
-		virtual float			get_time_left(int32 player_idx = -1) { return m_map_state_time; } // »ñµÃ³¡¾°µÄµ±Ç°Ê£ÓàÊ±¼ä
+		virtual float			get_time_left(int32 player_idx = -1) { return m_map_state_time; } // è·å¾—åœºæ™¯çš„å½“å‰å‰©ä½™æ—¶é—´
 		virtual float			get_time_passed();
 		virtual s_map_pos		get_born_pos(int32 unit_index);
 		virtual bool			is_game_over() { return false; }
@@ -143,7 +143,7 @@ namespace faith
 		void					relive_all_player();
 
 		virtual int64			get_map_first_join_time() { return m_first_player_join_time; };
-		virtual int64			get_map_life_time();//»ñÈ¡µ±Ç°µØÍ¼´ÓµÚÒ»¸öÍæ¼Ò½øÈëÒÔºóÒÑ¾­´æÔÚµÄÊ±¼ä
+		virtual int64			get_map_life_time();//è·å–å½“å‰åœ°å›¾ä»ç¬¬ä¸€ä¸ªç©å®¶è¿›å…¥ä»¥åå·²ç»å­˜åœ¨çš„æ—¶é—´
 
 		void					send_map_target_list_to_all();
 		void					send_map_target_list(guid_64 role_guid);
@@ -169,17 +169,17 @@ namespace faith
 		int64						m_begin_map_time;
 		int64						m_first_player_join_time;
 		
-		score_indicator				m_score_rank_indicator;//»ı·ÖÅÅĞĞ ²»Í¬¸±±¾ÖĞ²»Í¬ ¿ÉÄÜÊÇÉËº¦ÅÅĞĞ»òÆäËû
+		score_indicator				m_score_rank_indicator;//ç§¯åˆ†æ’è¡Œ ä¸åŒå‰¯æœ¬ä¸­ä¸åŒ å¯èƒ½æ˜¯ä¼¤å®³æ’è¡Œæˆ–å…¶ä»–
 
-		int32						m_map_pk_mode;	//µØÍ¼ÊÇ·ñ¿Épk
+		int32						m_map_pk_mode;	//åœ°å›¾æ˜¯å¦å¯pk
 		guid_64						m_map_own_legion;
 		int32						m_player_avg_lv;
 		unit_guid_map				m_dead_player_map;
 		int32						m_legion_average_lv;
 
-		int32						m_now_player_avg_lv;//ÊµÊ±µÈ¼¶£¬Ã¿´ÎÈ¡Ö®Ç°ÏÈµ÷ÓÃ¼ÆËã
+		int32						m_now_player_avg_lv;//å®æ—¶ç­‰çº§ï¼Œæ¯æ¬¡å–ä¹‹å‰å…ˆè°ƒç”¨è®¡ç®—
 
-		std::vector<guid_64>		m_enter_map_array;	//ÓÃÀ´¼ÇÂ¼ÊÇ·ñÊÇµÚÒ»´Î½øÈëµØÍ¼
+		std::vector<guid_64>		m_enter_map_array;	//ç”¨æ¥è®°å½•æ˜¯å¦æ˜¯ç¬¬ä¸€æ¬¡è¿›å…¥åœ°å›¾
 		std::vector<s_map_target_show_info>	m_map_target_show_info;
 	};
 }

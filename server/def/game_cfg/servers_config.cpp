@@ -1,4 +1,4 @@
-#include "servers_config.h"
+ï»¿#include "servers_config.h"
 #include <iostream>
 #include <fstream>
 #include "server_log.hpp"
@@ -250,12 +250,12 @@ namespace faith
 	void cs_config::clear_data()
 	{
 		net_config_base::clear_data();
-		role_num_limit = 2400;//×î´ó³ĞÔØÈËÊı
-		npc_num_limit = 10000;//×î´ó³ĞÔØNpcÊıÁ¿
-		drop_num_limit = 60000;//×î´ó³ĞÔØµôÂäÊı
-		role_data_save_time = 60000;//×Ô¶¯´æÅÌ¼ä¸ô
-		role_data_send_time = 60000;//ÑÓ³ÙÍ¬²½¼ä¸ô
-		process_stat_interval = 600;//
+		role_num_limit = 2400;//æœ€å¤§æ‰¿è½½äººæ•°
+		npc_num_limit = 10000;//æœ€å¤§æ‰¿è½½Npcæ•°é‡
+		drop_num_limit = 60000;//æœ€å¤§æ‰¿è½½æ‰è½æ•°
+		role_data_save_time = 60000;//è‡ªåŠ¨å­˜ç›˜é—´éš”
+		role_data_send_time = 60000;//å»¶è¿ŸåŒæ­¥é—´éš”
+		process_stat_interval = 600;
 	}
 	bool cs_config::parse_by_json(Json::Value& json_obj)
 	{

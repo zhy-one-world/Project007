@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê8ÔÂ15ÈÕ
+created: 2016å¹´8æœˆ15æ—¥
 file base: event
 file ext: hpp
 author: lxy
@@ -21,17 +21,17 @@ purpose: about event
 namespace faith
 {
 #pragma pack(push,1)
-	const uint32 auto_save_time = 5;																		// ×Ô¶¯´æ´¢¼ä¸ô·ÖÖÓÊı
-	const uint32 max_globel_mail_in_same_time = 30;															// Í¬Ò»Ê±¼ä×î´óÈº·¢ÓÊ¼şÊı
-	const uint32 max_globel_mail_item_in_same_time = max_globel_mail_in_same_time * max_item_per_mail;		// Í¬Ò»Ê±¼ä×î´óÈº·¢ÓÊ¼şÎïÆ·Êı
+	const uint32 auto_save_time = 5;																		// è‡ªåŠ¨å­˜å‚¨é—´éš”åˆ†é’Ÿæ•°
+	const uint32 max_globel_mail_in_same_time = 30;															// åŒä¸€æ—¶é—´æœ€å¤§ç¾¤å‘é‚®ä»¶æ•°
+	const uint32 max_globel_mail_item_in_same_time = max_globel_mail_in_same_time * max_item_per_mail;		// åŒä¸€æ—¶é—´æœ€å¤§ç¾¤å‘é‚®ä»¶ç‰©å“æ•°
 
-	//ºì°ü
-	const uint32 red_package_max_receiver_num = 50;									// µ¥¸öºì°ü×î´ó·İÊı
-	const uint32 red_package_max_text_length = 60;									// ºì°ü×î´óÎÄ±¾³¤¶È
-	const uint32 red_package_show_num = 5;											// ºì°ü³éÈ¡Êı¶îÏÔÊ¾Ç°XÈË
-	const uint32 red_package_total_num = 50;										// Í¬Ò»Ê±¼ä×î´óºì°üÊı
-	const uint32 total_receiver_num = red_package_total_num * red_package_max_receiver_num;			// ×Ü³é½±ÕßÊıÁ¿
-	const uint32 red_package_msg_max_lenght = 5694;									// µ¥¸öºì°üÏûÏ¢°ü×î´ó³¤¶È
+	//çº¢åŒ…
+	const uint32 red_package_max_receiver_num = 50;									// å•ä¸ªçº¢åŒ…æœ€å¤§ä»½æ•°
+	const uint32 red_package_max_text_length = 60;									// çº¢åŒ…æœ€å¤§æ–‡æœ¬é•¿åº¦
+	const uint32 red_package_show_num = 5;											// çº¢åŒ…æŠ½å–æ•°é¢æ˜¾ç¤ºå‰Xäºº
+	const uint32 red_package_total_num = 50;										// åŒä¸€æ—¶é—´æœ€å¤§çº¢åŒ…æ•°
+	const uint32 total_receiver_num = red_package_total_num * red_package_max_receiver_num;			// æ€»æŠ½å¥–è€…æ•°é‡
+	const uint32 red_package_msg_max_lenght = 5694;									// å•ä¸ªçº¢åŒ…æ¶ˆæ¯åŒ…æœ€å¤§é•¿åº¦
 
 	struct s_globel_mail_guid_db
 	{
@@ -188,7 +188,7 @@ namespace faith
 		}
 
 		int32 get_receiver_num() const
-		{//ÓĞĞ§Êı¾İ±Ø¶¨ÊÇÁ¬ĞøµÄ
+		{//æœ‰æ•ˆæ•°æ®å¿…å®šæ˜¯è¿ç»­çš„
 			int32 receiver_num = 0;
 			for (int32 i = 0; i < red_package_max_receiver_num; ++i)
 			{

@@ -1,5 +1,5 @@
-/********************************************************************
-  created: 2015Äê8ÔÂ28ÈÕ13:56:28
+ï»¿/********************************************************************
+  created: 2015å¹´8æœˆ28æ—¥13:56:28
   file base: item_set
   file ext: h
   author: zhy
@@ -31,7 +31,7 @@ namespace faith
 	public:
 		item_set();
 		~item_set(void);
-	private://ÄÚ´æÒÑ¾­´´½¨ºÃÁË ½ûÖ¹¿½±´
+	private://å†…å­˜å·²ç»åˆ›å»ºå¥½äº† ç¦æ­¢æ‹·è´
 		item_set(const item_set& unit_ref);
 		item_set& operator=(const item_set&);
 	public:
@@ -51,14 +51,14 @@ namespace faith
 		void send_item_tidy_guid_array(const std::unordered_map<int32, guid_64>& guid_arr);
 		void send_item_sell_earn_info(int32 money_id, int32 money_num);
 		void send_item_composit_response(int32 composit_template_id, std::vector<int32>& result_code);
-		void init_skill_and_item_gs();//³õÊ¼»¯ÎïÆ·ºÍ¼¼ÄÜbuffµÄÕ½Á¦£¬²»·ÅÔÚloadingÁ´Âß¼­ÀïÊÇÒòÎª»áÓĞ»Øµ÷º¯ÊıµÄ·µ»ØÊ±¼äÔì³ÉÓ°Ïì
+		void init_skill_and_item_gs();//åˆå§‹åŒ–ç‰©å“å’ŒæŠ€èƒ½buffçš„æˆ˜åŠ›ï¼Œä¸æ”¾åœ¨loadingé“¾é€»è¾‘é‡Œæ˜¯å› ä¸ºä¼šæœ‰å›è°ƒå‡½æ•°çš„è¿”å›æ—¶é—´é€ æˆå½±å“
 
-	public://ÎïÆ·ÊôĞÔ¹ÜÀí,ËùÓĞ×°±¸²Ù×÷¸Ä±äÊôĞÔ¶¼°´ÕÕ²ğ×°¸üÌæ×°±¸½øĞĞ
-		void set_equip_skill_buff_all();//³õÊ¼»¯ÈËÎïÊ±È«²¿ÎäÆ÷·À¾ß¼¼ÄÜºÍbuff
-		void set_equip_att_all();//³õÊ¼»¯ÈËÎïÈ«²¿µÄÎäÆ÷·À¾ß×øÆïÊôĞÔ
+	public://ç‰©å“å±æ€§ç®¡ç†,æ‰€æœ‰è£…å¤‡æ“ä½œæ”¹å˜å±æ€§éƒ½æŒ‰ç…§æ‹†è£…æ›´æ›¿è£…å¤‡è¿›è¡Œ
+		void set_equip_skill_buff_all();//åˆå§‹åŒ–äººç‰©æ—¶å…¨éƒ¨æ­¦å™¨é˜²å…·æŠ€èƒ½å’Œbuff
+		void set_equip_att_all();//åˆå§‹åŒ–äººç‰©å…¨éƒ¨çš„æ­¦å™¨é˜²å…·åéª‘å±æ€§
 		void set_show_fashion_buff();
 
-		void set_equip_att(citem* equip_ptr, bool is_add);//²ğĞ¶×°±¸¸Ä±äÒ»¸öÎïÆ·µÄbuff,¼¼ÄÜºÍÊôĞÔ
+		void set_equip_att(citem* equip_ptr, bool is_add);//æ‹†å¸è£…å¤‡æ”¹å˜ä¸€ä¸ªç‰©å“çš„buff,æŠ€èƒ½å’Œå±æ€§
 		void set_sky_equip_att(citem* equip_ptr, bool is_add);
 		void set_skygod_equip_att(citem* equip_ptr, bool is_add);
 		void set_supreme_equip_att(citem* equip_ptr, bool is_add);
@@ -79,7 +79,7 @@ namespace faith
 		citem* get_wedding_equip_item();
 		void set_wedding_init_fashion_state(bool activate);
 
-		void set_fashion_att(citem* fashion_ptr, bool is_add, int32 star_num);//²ğĞ¶Ê±×°¸Ä±äÒ»¸öÎïÆ·µÄbuff,¼¼ÄÜºÍÊôĞÔ
+		void set_fashion_att(citem* fashion_ptr, bool is_add, int32 star_num);//æ‹†å¸æ—¶è£…æ”¹å˜ä¸€ä¸ªç‰©å“çš„buff,æŠ€èƒ½å’Œå±æ€§
 		void set_wing_att(bool is_add);
 		void all_wing_sort();
 		void set_feather_att(const citem& feather_ptr, bool is_add);
@@ -93,21 +93,21 @@ namespace faith
 	public:
 		bool item_operate(const std::vector<guid_64>& item_guid, int32 item_slot, int32 operation_type,int32 use_up_item, int32 first_use_lock, int32 item_num, int32 force_do);
 		bool equip_on(const guid_64& item_guid, int32& item_slot, bool is_without_auto_inherit = false, bool is_against_buy_time = false);
-		bool equip_off(const guid_64& item_guid, int32 item_slot = -1, bool is_auto_equip_off = false, bool is_change_equipment = false);//ÊÇ·ñÒò´©×°±¸¶øÖ´ĞĞµÄÍÑÏÂ²Ù×÷
+		bool equip_off(const guid_64& item_guid, int32 item_slot = -1, bool is_auto_equip_off = false, bool is_change_equipment = false);//æ˜¯å¦å› ç©¿è£…å¤‡è€Œæ‰§è¡Œçš„è„±ä¸‹æ“ä½œ
 		void reset_fashion_effect();
 		void reset_weapon_fashion_effect();
 		void reset_cloth_fashion_effect();
 		void reset_foot_fashion_effect();
 		bool is_can_add_fashion_buff(citem* item_fashion);
-		//×°±¸²»·ûºÏ´©´÷ĞèÇóÊ±¿Û³ı¸Ã×°±¸¼Ó³ÉµÄÒ»ÇĞÊôĞÔ
+		//è£…å¤‡ä¸ç¬¦åˆç©¿æˆ´éœ€æ±‚æ—¶æ‰£é™¤è¯¥è£…å¤‡åŠ æˆçš„ä¸€åˆ‡å±æ€§
 		void change_att_for_equip(const guid_64& item_guid,bool is_add);
-		//ÅĞ¶Ï×°±¸ÊÇ·ñÊ§Ğ§
+		//åˆ¤æ–­è£…å¤‡æ˜¯å¦å¤±æ•ˆ
 		bool is_can_add_att(const guid_64& item_guid);
-		//ÅĞ¶ÏÎïÆ·ÊÇ·ñÔÚÊ¹ÓÃÆÚ¼ä Î´Ê§Ğ§
+		//åˆ¤æ–­ç‰©å“æ˜¯å¦åœ¨ä½¿ç”¨æœŸé—´ æœªå¤±æ•ˆ
 		bool is_in_duration(const guid_64& item_guid);
-		//ÅĞ¶Ï×°±¸ÊÇ·ñÓĞĞ§ °üº¬ÊôĞÔºÍÊ±¼äÅĞ¶¨
+		//åˆ¤æ–­è£…å¤‡æ˜¯å¦æœ‰æ•ˆ åŒ…å«å±æ€§å’Œæ—¶é—´åˆ¤å®š
 		bool is_equipment_effective(const guid_64& item_guid);
-		//±éÀúËùÓĞµÄÒÑ×°±¸×°±¸£¬³õÊ¼»¯ÊÇ·ñÊ§Ğ§
+		//éå†æ‰€æœ‰çš„å·²è£…å¤‡è£…å¤‡ï¼Œåˆå§‹åŒ–æ˜¯å¦å¤±æ•ˆ
 		//void init_all_equip_add_att();
 
 		int32 get_equip_smallest_upgrade_level();
@@ -128,19 +128,19 @@ namespace faith
 
 		int32 get_awaken_fetter_max_num();
 
-		void equip_off_upgrade_show_buff();		//È¥³ı×°±¸Ç¿»¯¹âĞ§buff
-		void equip_on_upgrade_show_buff();		//Ìí¼Ó×°±¸Ç¿»¯¹âĞ§buff
-		void equip_off_addon_show_buff();		//È¥³ı×°±¸×·¼Ó¹âĞ§buff
-		void equip_on_addon_show_buff();		//Ìí¼Ó×°±¸×·¼Ó¹âĞ§buff
-		void equip_off_awaken_show_buff();		//È¥³ı×°±¸¾õĞÑ¹âĞ§buff
-		void equip_on_awaken_show_buff();		//Ìí¼Ó×°±¸¾õĞÑ¹âĞ§buff
-		void equip_off_forge_show_buff();		//È¥³ı×°±¸ÖØÖı¹âĞ§buff
-		void equip_on_forge_show_buff();		//Ìí¼Ó×°±¸ÖØÖı¹âĞ§buff
-		void equip_off_enchant_show_buff();		//È¥³ı×°±¸¸½Ä§¹âĞ§buff
-		void equip_on_enchant_show_buff();		//Ìí¼Ó×°±¸¸½Ä§¹âĞ§buff
+		void equip_off_upgrade_show_buff();		//å»é™¤è£…å¤‡å¼ºåŒ–å…‰æ•ˆbuff
+		void equip_on_upgrade_show_buff();		//æ·»åŠ è£…å¤‡å¼ºåŒ–å…‰æ•ˆbuff
+		void equip_off_addon_show_buff();		//å»é™¤è£…å¤‡è¿½åŠ å…‰æ•ˆbuff
+		void equip_on_addon_show_buff();		//æ·»åŠ è£…å¤‡è¿½åŠ å…‰æ•ˆbuff
+		void equip_off_awaken_show_buff();		//å»é™¤è£…å¤‡è§‰é†’å…‰æ•ˆbuff
+		void equip_on_awaken_show_buff();		//æ·»åŠ è£…å¤‡è§‰é†’å…‰æ•ˆbuff
+		void equip_off_forge_show_buff();		//å»é™¤è£…å¤‡é‡é“¸å…‰æ•ˆbuff
+		void equip_on_forge_show_buff();		//æ·»åŠ è£…å¤‡é‡é“¸å…‰æ•ˆbuff
+		void equip_off_enchant_show_buff();		//å»é™¤è£…å¤‡é™„é­”å…‰æ•ˆbuff
+		void equip_on_enchant_show_buff();		//æ·»åŠ è£…å¤‡é™„é­”å…‰æ•ˆbuff
 
-		void equip_off_equip_show_buff();		//È¥³ı×°±¸¹âĞ§buff
-		void equip_on_equip_show_buff();		//Ìí¼Ó×°±¸¹âĞ§buff
+		void equip_off_equip_show_buff();		//å»é™¤è£…å¤‡å…‰æ•ˆbuff
+		void equip_on_equip_show_buff();		//æ·»åŠ è£…å¤‡å…‰æ•ˆbuff
 
 		int32 get_equip_num_by_color(int32 target_color);
 		bool activate_weapon(int32 item_slot);
@@ -156,15 +156,15 @@ namespace faith
 		int32 set_jewel_off(const guid_64& target_guid, const int32& target_slot);
 		int32 jewel_upgrade(const guid_64& target_guid, const int32& target_slot);
 
-		int32 item_advance(const std::vector<guid_64>& item_guids, int32 use_up_item);			//×°±¸½ø½×
-		int32 item_inherit(const std::vector<guid_64>& item_guids, bool is_auto = false);//×°±¸´«³Ğ
+		int32 item_advance(const std::vector<guid_64>& item_guids, int32 use_up_item);			//è£…å¤‡è¿›é˜¶
+		int32 item_inherit(const std::vector<guid_64>& item_guids, bool is_auto = false);//è£…å¤‡ä¼ æ‰¿
 
-		bool is_can_inherit(citem* strip_item_ptr, citem* inherited_item_ptr);//°şÀë×°±¸ÖÁÉÙÇ¿»¯¡¢×·¼Ó¡¢Ï´Á·ÊôĞÔÖĞ£¬ÖÁÉÙÓĞÒ»Ïî´óÓÚ±»´«³ĞÎïÆ·
-		bool is_will_lose_point(citem* strip_item_ptr, citem* inherited_item_ptr);//°şÀë×°±¸ÖÁÉÙÇ¿»¯¡¢×·¼Ó¡¢Ï´Á·ÊôĞÔÖĞ£¬ÖÁÉÙÓĞÒ»Ïî´óÓÚ±»´«³ĞÎïÆ·µÄ¶ÔÓ¦ÅàÑøÉÏÏŞ
+		bool is_can_inherit(citem* strip_item_ptr, citem* inherited_item_ptr);//å‰¥ç¦»è£…å¤‡è‡³å°‘å¼ºåŒ–ã€è¿½åŠ ã€æ´—ç»ƒå±æ€§ä¸­ï¼Œè‡³å°‘æœ‰ä¸€é¡¹å¤§äºè¢«ä¼ æ‰¿ç‰©å“
+		bool is_will_lose_point(citem* strip_item_ptr, citem* inherited_item_ptr);//å‰¥ç¦»è£…å¤‡è‡³å°‘å¼ºåŒ–ã€è¿½åŠ ã€æ´—ç»ƒå±æ€§ä¸­ï¼Œè‡³å°‘æœ‰ä¸€é¡¹å¤§äºè¢«ä¼ æ‰¿ç‰©å“çš„å¯¹åº”åŸ¹å…»ä¸Šé™
 		int64 get_inherit_money_num(citem* strip_item_ptr, int32 cost_type);
 
-		int32 item_assembly(const guid_64& item_guid, int32 first_use_lock);//Éñ×°ÔÙÔì
-		int32 item_assembled(const guid_64& item_guid, int32 first_use_lock);//Éñ×°ºÏ³É
+		int32 item_assembly(const guid_64& item_guid, int32 first_use_lock);//ç¥è£…å†é€ 
+		int32 item_assembled(const guid_64& item_guid, int32 first_use_lock);//ç¥è£…åˆæˆ
 		int32 random_property_value(int32 up_chance, int32 max_des, int32 min_des, int32 min_ins, int32 max_ins);
 
 
@@ -182,37 +182,37 @@ namespace faith
 		void refresh_succinct_buff(bool is_add);
 		int32 get_succinct_weapon_buff();
 		int32 get_succinct_equip_buff();
-		e_error_code item_use_check(citem& item_ref, int32& use_num); // PS:use_numÊÇ·µ»ØĞÍ²ÎÊı,´«ÈëµÄuse_num¿ÉÄÜ»á±»ĞŞ¸Ä
-		bool item_use(const guid_64& item_guid, citem*& end_item, int32 item_num = 1, int32 force_use = 0, bool is_cotinue_use = false,int32 item_slot=0); // Ê¹ÓÃÎïÆ·
-		int32 item_buy_and_use(int32 item_id, int32 item_num, e_error_code& item_use_end_result, std::vector<s_item_template_info>& get_item_list);//¹ºÂò²¢ÇÒÊ¹ÓÃ
+		e_error_code item_use_check(citem& item_ref, int32& use_num); // PS:use_numæ˜¯è¿”å›å‹å‚æ•°,ä¼ å…¥çš„use_numå¯èƒ½ä¼šè¢«ä¿®æ”¹
+		bool item_use(const guid_64& item_guid, citem*& end_item, int32 item_num = 1, int32 force_use = 0, bool is_cotinue_use = false,int32 item_slot=0); // ä½¿ç”¨ç‰©å“
+		int32 item_buy_and_use(int32 item_id, int32 item_num, e_error_code& item_use_end_result, std::vector<s_item_template_info>& get_item_list);//è´­ä¹°å¹¶ä¸”ä½¿ç”¨
 		int32 item_buy_and_use(int32 goods_id);
 		bool use_beast_spirit(const guid_64& item_guid, int32 item_num = 1);
-		bool item_one_key_use(const std::vector<guid_64>& item_guid_array);									// Ò»¼üÊ¹ÓÃ
-		bool item_sell(const guid_64& item_guid, int32 item_num);  // µÀ¾ß³öÊÛ
+		bool item_one_key_use(const std::vector<guid_64>& item_guid_array);									// ä¸€é”®ä½¿ç”¨
+		bool item_sell(const guid_64& item_guid, int32 item_num);  // é“å…·å‡ºå”®
 		void item_merge(e_bag_type merge_bag);
 		void set_merge_array(s_merge_stat* merge_array, int32& merge_num, const guid_64& item_guid, const int32& item_count);
 		s_money_tuple get_item_recovery_earn_money(int32 item_template_id, int32 excellent_att_num = 0);
-		bool item_recovery(const std::vector<guid_64>& item_guid, bool is_sprite_use_diamond = false); // ÎïÆ·»ØÊÕ
-		int32 wing_upgrade(const guid_64& wing_guid, int32 use_up_item);//³á°òÉı¼¶
-		int32 wing_starupgrade(const guid_64& wing_guid, int32 use_up_item);//³á°òËéÆ¬ÉıĞÇ
-		int32 wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 item_num);//³á°òÖıÁé
-		int32 wing_lengque(const guid_64& wing_guid, int32 use_up_item);//³á°òÀäÈ´
-		int32 wing_xiling(const guid_64& wing_guid, int32 use_up_item);//³á°òÀäÈ´
-		int32 wing_illusionupgrade(const guid_64& wing_guid, int32 use_up_item);//³á°òËéÆ¬ÉıĞÇ
-		int32 wing_shape_upgrade(citem& ref_wing_item_shape, int32 use_up_item); // ³á°òÍâĞÎÉı¼¶
+		bool item_recovery(const std::vector<guid_64>& item_guid, bool is_sprite_use_diamond = false); // ç‰©å“å›æ”¶
+		int32 wing_upgrade(const guid_64& wing_guid, int32 use_up_item);//ç¿…è†€å‡çº§
+		int32 wing_starupgrade(const guid_64& wing_guid, int32 use_up_item);//ç¿…è†€ç¢ç‰‡å‡æ˜Ÿ
+		int32 wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 item_num);//ç¿…è†€é“¸çµ
+		int32 wing_lengque(const guid_64& wing_guid, int32 use_up_item);//ç¿…è†€å†·å´
+		int32 wing_xiling(const guid_64& wing_guid, int32 use_up_item);//ç¿…è†€å†·å´
+		int32 wing_illusionupgrade(const guid_64& wing_guid, int32 use_up_item);//ç¿…è†€ç¢ç‰‡å‡æ˜Ÿ
+		int32 wing_shape_upgrade(citem& ref_wing_item_shape, int32 use_up_item); // ç¿…è†€å¤–å½¢å‡çº§
 		int32 wing_shape_unlock(const guid_64& wing_guid, int32 item_slot);
 		int32 wing_feather_unlock(const guid_64& wing_guid, int32 item_slot);
 		int32 wing_shape_illusion_unlock(const guid_64& wing_guid, const int32 illusion_slot);
 		WingTemplate* get_wing_template_ptr(citem& ref_wing_item_shape);
-		void  sync_ranking_wing();		//Ë¢ĞÂÅÅĞĞ°ñ³á°ò
-		bool wing_upgrade_rate(int32 bless, WingTemplate* wing_template_ptr);//³á°òÉı½×¸ÅÂÊÅĞ¶Ï
-		int32 wing_add_soul(const guid_64& wing_guid);//³á°ò×¢»ê
-		int32 wing_add_spirit(const guid_64& wing_guid);//³á°ò×¢Áé
-		int32 feather_upgrade(const guid_64& feather_guid, int32 use_up_item); // ôáÓğÉı½×
-		void equip_all_feather_and_spirit_and_soul();//×°±¸È«²¿ôáÓğ,×¢Áé,×¢»ê
-		void equip_all_spirit();//×°±¸×¢Áé
-		void equip_all_feather();//×°±¸ôáÓğ
-		void equip_all_soul();//×°±¸×¢»ê
+		void  sync_ranking_wing();		//åˆ·æ–°æ’è¡Œæ¦œç¿…è†€
+		bool wing_upgrade_rate(int32 bless, WingTemplate* wing_template_ptr);//ç¿…è†€å‡é˜¶æ¦‚ç‡åˆ¤æ–­
+		int32 wing_add_soul(const guid_64& wing_guid);//ç¿…è†€æ³¨é­‚
+		int32 wing_add_spirit(const guid_64& wing_guid);//ç¿…è†€æ³¨çµ
+		int32 feather_upgrade(const guid_64& feather_guid, int32 use_up_item); // ç¿ç¾½å‡é˜¶
+		void equip_all_feather_and_spirit_and_soul();//è£…å¤‡å…¨éƒ¨ç¿ç¾½,æ³¨çµ,æ³¨é­‚
+		void equip_all_spirit();//è£…å¤‡æ³¨çµ
+		void equip_all_feather();//è£…å¤‡ç¿ç¾½
+		void equip_all_soul();//è£…å¤‡æ³¨é­‚
 		bool judge_can_recovery(citem* item_ptr);
 
 		int32 show_this_wing(citem* wing_ptr, int32 item_slot, bool is_mission_wing = false, bool is_need_send_notice = false);
@@ -232,12 +232,12 @@ namespace faith
 		int32 get_lingyu_total_grade();
 		int32 star_skill_unlock(guid_64 choosed_guid, int32 choosed_index, bool use_item = true,bool is_star = true);
 		int32 item_star_skill_unlock(guid_64 choosed_guid, int32 choosed_index, bool use_item = true, bool is_star = true);
-		int32 wing_psychic_skill_unlock(int32 passive_skill_template_id, bool is_add); //ÓğÒíÍ¨Áé¼¼ÄÜ½âËø
+		int32 wing_psychic_skill_unlock(int32 passive_skill_template_id, bool is_add); //ç¾½ç¿¼é€šçµæŠ€èƒ½è§£é”
 		int32 get_mark_activated_num();
 		int32 get_double_att_element_num();
 
-		void init_break_will_skill_att();					// ³õÊ¼»¯¼¼ÄÜÓëÊôĞÔ
-		void refresh_break_will_skill_by_id(int32 tem_id);	// ¸ù¾İÖ÷idË¢ĞÂ¼¼ÄÜ
+		void init_break_will_skill_att();					// åˆå§‹åŒ–æŠ€èƒ½ä¸å±æ€§
+		void refresh_break_will_skill_by_id(int32 tem_id);	// æ ¹æ®ä¸»idåˆ·æ–°æŠ€èƒ½
 		int32 get_break_will_level();
 
 		void init_awaken_fetter_att();
@@ -247,8 +247,8 @@ namespace faith
 		int32 get_empty_slot(e_bag_type temp_bag_type);
 		bool is_empty_slot_enough(e_bag_type temp_bag_typ, int32 request_num);
 
-		citem* get_item(const guid_64& item_guid); // ´Ó±³°üÖĞ»ñµÃÎïÆ·
-		citem* get_item(const int32& item_guid_A, const int32& item_guid_B); // ´Ó±³°üÖĞ»ñµÃÎïÆ·
+		citem* get_item(const guid_64& item_guid); // ä»èƒŒåŒ…ä¸­è·å¾—ç‰©å“
+		citem* get_item(const int32& item_guid_A, const int32& item_guid_B); // ä»èƒŒåŒ…ä¸­è·å¾—ç‰©å“
 		citem* get_item(std::string item_guid_str);
 		std::vector<citem*> get_item_array(e_bag_type bag_type);
 
@@ -270,7 +270,7 @@ namespace faith
 	public:
 		int32 get_bind_material_num() { return m_bind_material_num; }
 		int32 get_no_bind_material_num() { return m_no_bind_material_num; }
-		void cost_item_by_id_with_lock_states(e_server_log_del_item causeid, int32 location,int32 item_template_id, int32 item_cost_num, int32 first_use_lock);//ÏûºÄÄ³ÀàÎïÆ·£¬ÊÇ·ñÓÅÏÈËø¶¨
+		void cost_item_by_id_with_lock_states(e_server_log_del_item causeid, int32 location,int32 item_template_id, int32 item_cost_num, int32 first_use_lock);//æ¶ˆè€—æŸç±»ç‰©å“ï¼Œæ˜¯å¦ä¼˜å…ˆé”å®š
 		citem* get_cur_level_wing();
 		citem* get_wing_add_spirit();
 		citem* get_wing_add_soul();
@@ -278,23 +278,23 @@ namespace faith
 		std::vector<citem*> get_all_shape_wing();
 		std::vector<citem*> get_all_wing();
 
-		void cost_star_map_spirit_item_states(e_server_log_del_item causeid, int32 location, int32 item_template_id, int32 item_cost_num);//ÏûºÄĞÇÍ¼¿ÉÉı¸ñ¾«Áé
-		int32 count_star_map_spirit(int32 item_template_id);//ĞÇÍ¼¿ÉÏûºÄÎïÆ·ÊıÁ¿
+		void cost_star_map_spirit_item_states(e_server_log_del_item causeid, int32 location, int32 item_template_id, int32 item_cost_num);//æ¶ˆè€—æ˜Ÿå›¾å¯å‡æ ¼ç²¾çµ
+		int32 count_star_map_spirit(int32 item_template_id);//æ˜Ÿå›¾å¯æ¶ˆè€—ç‰©å“æ•°é‡
 	private:
 		bool can_put_items_into_bag(e_bag_type bag_type, const std::vector<s_item_template_info>& item_array);
 		int32 del_item_instance(e_server_log_del_item causeid, int32 location, const guid_64& item_guid, int32 del_num = 0);
 		int32 del_item_instance(e_server_log_del_item causeid, int32 location, citem* item_ptr, int32 del_num = 0);
-		bool put_item_into_bag(citem* item_ptr, e_bag_type bag_type = e_bag_type_bag, bool merge = true, e_update_item_info_mode update_mode = e_update_item_info_mode_default, bool is_show_go_to_bag = false, bool is_continue_put = false); // °ÑÎïÆ··ÅÈë±³°üÖĞ£¬Ö»ÓĞ·µ»Ø>0Ê±²Å±íÊ¾Ö´ĞĞÕıÈ·
+		bool put_item_into_bag(citem* item_ptr, e_bag_type bag_type = e_bag_type_bag, bool merge = true, e_update_item_info_mode update_mode = e_update_item_info_mode_default, bool is_show_go_to_bag = false, bool is_continue_put = false); // æŠŠç‰©å“æ”¾å…¥èƒŒåŒ…ä¸­ï¼Œåªæœ‰è¿”å›>0æ—¶æ‰è¡¨ç¤ºæ‰§è¡Œæ­£ç¡®
 	public:
 
 		citem* create_item_by_template(e_server_log_add_item add_type, int32 param, int32 item_template_id, int32 item_num = 1, int32 locked = 1, int32 item_over_time = 0, e_bag_type bag_type = e_bag_type_none, int32 item_const_att = 0);
 		citem* create_item_by_info(const s_item_info& temp_info, e_server_log_add_item add_type, int32 param, bool write_log);
-		std::vector<citem*> create_items(e_server_log_add_item add_type, int32 param, const  std::vector<s_item_template_info>& item_template_info_array);	// ÅúÁ¿´´½¨item
+		std::vector<citem*> create_items(e_server_log_add_item add_type, int32 param, const  std::vector<s_item_template_info>& item_template_info_array);	// æ‰¹é‡åˆ›å»ºitem
 	public:
 		bool can_put_items(const std::vector<s_item_template_info>& item_array, e_bag_type bag_type = e_bag_type_none);
 		bool can_put_items(const std::vector<citem*>& item_array, e_bag_type bag_type = e_bag_type_none);
-		bool put_in_bag(std::vector<citem*>& item_inst_array, e_bag_type bag_type = e_bag_type_none, e_item_mail_type mail_type = e_item_mail_type_nomal);	// °ÑÎïÆ··ÅÈë±³°üÖĞ ·Å²»ÏÂ¾Í×Ô¶¯·¢ÓÊ¼ş
-		bool put_in_bag(citem* item_ptr, e_bag_type bag_type = e_bag_type_none, e_item_mail_type mail_type = e_item_mail_type_nomal);	// °ÑÎïÆ··ÅÈë±³°üÖĞ ·Å²»ÏÂ¾Í×Ô¶¯·¢ÓÊ¼ş
+		bool put_in_bag(std::vector<citem*>& item_inst_array, e_bag_type bag_type = e_bag_type_none, e_item_mail_type mail_type = e_item_mail_type_nomal);	// æŠŠç‰©å“æ”¾å…¥èƒŒåŒ…ä¸­ æ”¾ä¸ä¸‹å°±è‡ªåŠ¨å‘é‚®ä»¶
+		bool put_in_bag(citem* item_ptr, e_bag_type bag_type = e_bag_type_none, e_item_mail_type mail_type = e_item_mail_type_nomal);	// æŠŠç‰©å“æ”¾å…¥èƒŒåŒ…ä¸­ æ”¾ä¸ä¸‹å°±è‡ªåŠ¨å‘é‚®ä»¶
 
 		bool put_in_bag(e_server_log_add_item add_type, int32 param,
 			const std::vector<int32>& item_data_array,
@@ -311,21 +311,21 @@ namespace faith
 			int32 notice_id = 0
 		);
 	public:
-		// locked: 0±íÊ¾Ö»»ñµÃ·Ç°ó¶¨ÎïÆ·Êı×é 1±íÊ¾Ö»»ñÈ¡°ó¶¨µÄÎïÆ·Êı×é 2±íÊ¾°ó¶¨ºÍ·Ç°ó¶¨µÄ¶¼»ñÈ¡
-		// only_bag±íÊ¾ÊÇ·ñÖ»»ñÈ¡±³°üÖĞµÄÏàÓ¦ÎïÆ·
+		// locked: 0è¡¨ç¤ºåªè·å¾—éç»‘å®šç‰©å“æ•°ç»„ 1è¡¨ç¤ºåªè·å–ç»‘å®šçš„ç‰©å“æ•°ç»„ 2è¡¨ç¤ºç»‘å®šå’Œéç»‘å®šçš„éƒ½è·å–
+		// only_bagè¡¨ç¤ºæ˜¯å¦åªè·å–èƒŒåŒ…ä¸­çš„ç›¸åº”ç‰©å“
 		std::vector<citem*> get_items_by_template_id(int32 item_template_id, int32 locked = e_item_lock_status_ignore, bool only_bag = true);
-		int32 get_item_count(e_bag_type bag_type, int32 item_template_id, int32 lock = -1);//ËùÓĞÎïÆ·ÊıÁ¿
-		std::vector<s_item_template_info> get_item_template_info_array(const std::vector<int32>& item_array, e_item_transform_type item_transform_type = e_item_transform_type_two);	// ½«ÎïÆ·Êı×é×ª»»Îª½á¹¹Ìå Ä¿Ç°Ö§³Ö¶şÔªÊı×éºÍÈıÔªÊı×é
+		int32 get_item_count(e_bag_type bag_type, int32 item_template_id, int32 lock = -1);//æ‰€æœ‰ç‰©å“æ•°é‡
+		std::vector<s_item_template_info> get_item_template_info_array(const std::vector<int32>& item_array, e_item_transform_type item_transform_type = e_item_transform_type_two);	// å°†ç‰©å“æ•°ç»„è½¬æ¢ä¸ºç»“æ„ä½“ ç›®å‰æ”¯æŒäºŒå…ƒæ•°ç»„å’Œä¸‰å…ƒæ•°ç»„
 		std::vector<s_item_info> get_item_info_array(std::vector<citem*>& item_ptr_array);
 	public:
 		void clear_bag(e_bag_type bag_type);
 		void del_item(e_server_log_del_item causeid, int32 location, e_bag_type bag_type, int32 item_template_id, int32 del_num = 0);
-		void del_item(e_server_log_del_item causeid, int32 location, e_bag_type bag_type, const std::vector<s_del_item_info>& del_info_array);//É¾³ıÎïÆ·(item_id, del_num)
+		void del_item(e_server_log_del_item causeid, int32 location, e_bag_type bag_type, const std::vector<s_del_item_info>& del_info_array);//åˆ é™¤ç‰©å“(item_id, del_num)
 		void del_item(e_server_log_del_item causeid, int32 location, const guid_64& item_guid, int32 del_num = 0);
 		void del_item(e_server_log_del_item causeid, int32 location, const std::vector<s_del_item_guid>& del_guid_array);
 		void del_item(e_server_log_del_item causeid, int32 location, citem* item_ptr, int32 del_num = 0);
 	public:
-		bool tidy_item(e_bag_type tidy_bag_typ,	bool is_not_tidy_time = false); // ÕûÀíÎïÆ·À¸ÖĞµÄËùÓĞÎïÆ·
+		bool tidy_item(e_bag_type tidy_bag_typ,	bool is_not_tidy_time = false); // æ•´ç†ç‰©å“æ ä¸­çš„æ‰€æœ‰ç‰©å“
 		void add_and_del_tidy_type(e_bag_type tidy_bag_typ, bool is_add);
 		int32 get_use_time_item_empty_slot();
 		bool set_mount_or_wing_beast_spirit_bag_data(int32 item_id,int32 item_type, int32 upgrade_num);
@@ -367,7 +367,7 @@ namespace faith
 		int32 get_mount_illusion_slot(const int32 mount_illusion_template_id);
 
 		/************************************************************************/
-		/*                                    Íâ²¿½Ó¿Ú                          */
+		/*                                    å¤–éƒ¨æ¥å£                          */
 		/************************************************************************/
 		public:
 			int32 get_equip_num_by_strength_limit(int32 limit_level);
@@ -386,39 +386,39 @@ namespace faith
 			void  get_mount_grade_and_level_by_order_num(int32 order_num, int32& grade, int32& level);
 			void  get_cur_wing_grade_and_level(int32& grade, int32& level);
 
-	public: // ¼ÆËãÏà¹Ø
-		void calcu_addition(e_addition_buff addition_buff_type, bool need_send_notice = true);//¼ÆËãÇ¿»¯¼Ó³É
-		void calcu_addition_with_fake_player(e_addition_buff addition_buff_type);//¼ÆËãµñÏñÇ¿»¯buff
-		void calcu_addition_by_one(AdditionBuffTemplate* addition_tmpl_ptr, std::vector<int32>& buff_id_arr, std::vector<int32>& buff_equip_num_arr, std::vector<int32>& buff_need_num_arr, std::vector<int32>& buff_sub_type_arr, std::vector<int32>& buff_level_arr);// ¼ÆËãÒ»ÌõbuffÊÇ·ñ·ûºÏ
+	public: // è®¡ç®—ç›¸å…³
+		void calcu_addition(e_addition_buff addition_buff_type, bool need_send_notice = true);//è®¡ç®—å¼ºåŒ–åŠ æˆ
+		void calcu_addition_with_fake_player(e_addition_buff addition_buff_type);//è®¡ç®—é›•åƒå¼ºåŒ–buff
+		void calcu_addition_by_one(AdditionBuffTemplate* addition_tmpl_ptr, std::vector<int32>& buff_id_arr, std::vector<int32>& buff_equip_num_arr, std::vector<int32>& buff_need_num_arr, std::vector<int32>& buff_sub_type_arr, std::vector<int32>& buff_level_arr);// è®¡ç®—ä¸€æ¡buffæ˜¯å¦ç¬¦åˆ
 		void protect_spirit_change_att(std::vector<f32> const & att_array, int32 add_count, float radio, bool is_addo);
 		void item_change_att(std::vector<f32> const & att_array, f32 add_count, bool is_add);
 		int32 get_element_heart_equip_num();
 		int32 get_total_element_heart_level();
-		//¼ÆËãÕ½¶·Á¦
+		//è®¡ç®—æˆ˜æ–—åŠ›
 		int64 calcu_whole_equip_fighting_power();
-		int64 calcu_feather_total_fighting_power();		//¼ÆËãôáÓğÕ½¶·Á¦
+		int64 calcu_feather_total_fighting_power();		//è®¡ç®—ç¿ç¾½æˆ˜æ–—åŠ›
 		void sync_whole_euip_fighting_power();
 
-		void refresh_element_heart_faker_player_buff();//ÓÃÓÚµñÏñ¼Óbuff
+		void refresh_element_heart_faker_player_buff();//ç”¨äºé›•åƒåŠ buff
 
-		int32 init_fake_player_item_info(s_item_info * item_info_list, int32 max_num);				//Ê¹ÓÃÍæ¼ÒĞÅÏ¢³õÊ¼»¯Íæ¼ÒÊı¾İ¹ÖÎïµÄÎïÆ·ĞÅÏ¢,·µ»ØÔö¼ÓµÄÎïÆ·ÊıÁ¿
+		int32 init_fake_player_item_info(s_item_info * item_info_list, int32 max_num);				//ä½¿ç”¨ç©å®¶ä¿¡æ¯åˆå§‹åŒ–ç©å®¶æ•°æ®æ€ªç‰©çš„ç‰©å“ä¿¡æ¯,è¿”å›å¢åŠ çš„ç‰©å“æ•°é‡
 		/************************************************************************/
-		//						·Å±³°ü   ½Ó¿ÚÊ¹ÓÃÎÄµµ
-		// ¹¦ÄÜ ½«ÎïÆ··ÅÈë±³°üÖĞ 
+		//						æ”¾èƒŒåŒ…   æ¥å£ä½¿ç”¨æ–‡æ¡£
+		// åŠŸèƒ½ å°†ç‰©å“æ”¾å…¥èƒŒåŒ…ä¸­ 
 
-		//	put_item_into_bag ÊÇÓÉºóÃæ¼¸¸öº¯Êı×éºÏ¶ø³ÉµÄ Íâ²¿½Ó¿Ú
-		//		°üº¬ÒÔÏÂn¸ö²ÎÊı 
-		//		item_array					ÓÉid num×é³ÉµÄÈİÆ÷
-		//		item_put_into_bag_info	    ÎïÆ··Å°üÊ±»á´¥·¢µÄÊÂÇé ±ÈÈçÊÇ·ñ·¢ÓÊ¼ş ¾ßÌåµÄ alt+g ½øÈ¥¿´°É
-		//		chat_notice_data_info		¹«¸æÅäÖÃ 
-		//		mail_info					ÓÊ¼şÅäÖÃ Èç¹û·¢ËÍÓÊ¼ş ÓÊ¼şµÄ¾ßÌåÉèÖÃ Ä¬ÈÏµÄ»°ÊÇ ·¢ËÍÈË: ÏµÍ³ ÓÊ¼ş±êÌâ: ±³°üÒÑÂú ÓÊ¼şÕıÎÄ: ÓÉÓÚÊ°È¡Ê±±³°üÒÑÂú£¬ÎïÆ·Í¨¹ıÓÊ¼ş·¢ËÍ ÇëÔÚÓÊ¼şÓĞĞ§ÆÚÄÚÌáÈ¡
-		//		item_transform_type			×ª»»¹æÔò Ä¿Ç°µÄÌî±í¹æÔòÊÇ¶şÔª×é ´´½¨³öÀ´µÄÎïÆ·Ä¬ÈÏ¶¼ÊÇËø¶¨µÄ Òò´ËÁô³öÀ©Õ¹ÓàµØ ±ÈÈçÈıÔª×éÎª id num lock 
-		//	ÒÔÉÏ¹æÔò²»Âú×ãĞèÒªµÄÇé¿öÏÂ ¿ÉÒÔÑ¡ÔñÀ©Õ¹ s_item_put_into_bag_info½á¹¹Ìå
+		//	put_item_into_bag æ˜¯ç”±åé¢å‡ ä¸ªå‡½æ•°ç»„åˆè€Œæˆçš„ å¤–éƒ¨æ¥å£
+		//		åŒ…å«ä»¥ä¸‹nä¸ªå‚æ•° 
+		//		item_array					ç”±id numç»„æˆçš„å®¹å™¨
+		//		item_put_into_bag_info	    ç‰©å“æ”¾åŒ…æ—¶ä¼šè§¦å‘çš„äº‹æƒ… æ¯”å¦‚æ˜¯å¦å‘é‚®ä»¶ å…·ä½“çš„ alt+g è¿›å»çœ‹å§
+		//		chat_notice_data_info		å…¬å‘Šé…ç½® 
+		//		mail_info					é‚®ä»¶é…ç½® å¦‚æœå‘é€é‚®ä»¶ é‚®ä»¶çš„å…·ä½“è®¾ç½® é»˜è®¤çš„è¯æ˜¯ å‘é€äºº: ç³»ç»Ÿ é‚®ä»¶æ ‡é¢˜: èƒŒåŒ…å·²æ»¡ é‚®ä»¶æ­£æ–‡: ç”±äºæ‹¾å–æ—¶èƒŒåŒ…å·²æ»¡ï¼Œç‰©å“é€šè¿‡é‚®ä»¶å‘é€ è¯·åœ¨é‚®ä»¶æœ‰æ•ˆæœŸå†…æå–
+		//		item_transform_type			è½¬æ¢è§„åˆ™ ç›®å‰çš„å¡«è¡¨è§„åˆ™æ˜¯äºŒå…ƒç»„ åˆ›å»ºå‡ºæ¥çš„ç‰©å“é»˜è®¤éƒ½æ˜¯é”å®šçš„ å› æ­¤ç•™å‡ºæ‰©å±•ä½™åœ° æ¯”å¦‚ä¸‰å…ƒç»„ä¸º id num lock 
+		//	ä»¥ä¸Šè§„åˆ™ä¸æ»¡è¶³éœ€è¦çš„æƒ…å†µä¸‹ å¯ä»¥é€‰æ‹©æ‰©å±• s_item_put_into_bag_infoç»“æ„ä½“
 		/************************************************************************/
 	public:
-		void send_item_by_mail(std::vector<citem*>& item_array, e_item_mail_type mail_type);	// ÓÃÓÊ¼ş·¢ËÍÎïÆ·
-		void send_item_by_mail(std::vector<s_item_info>& item_array, e_item_mail_type mail_type);	// ÓÃÓÊ¼ş·¢ËÍÎïÆ·
-		s_item_info filter_items_with_notice(std::vector<citem*> item_ptr_array, std::string& item_names_str, int32 notices_id = 0);//É¸Ñ¡Ö¸¶¨ÎïÆ·
+		void send_item_by_mail(std::vector<citem*>& item_array, e_item_mail_type mail_type);	// ç”¨é‚®ä»¶å‘é€ç‰©å“
+		void send_item_by_mail(std::vector<s_item_info>& item_array, e_item_mail_type mail_type);	// ç”¨é‚®ä»¶å‘é€ç‰©å“
+		s_item_info filter_items_with_notice(std::vector<citem*> item_ptr_array, std::string& item_names_str, int32 notices_id = 0);//ç­›é€‰æŒ‡å®šç‰©å“
 		void set_quick_hp_guid(guid_64 newguid);
 		int32 against_buy_item(guid_64 item_guid, int32 goods_id);
 		void  check_time_limit_item();
@@ -426,20 +426,20 @@ namespace faith
 		void  check_time_limit_mount_and_wing_item();
 		void  check_time_limit_equip_item();
 
-		citem*	get_can_auto_use_hp_item();//»ñÈ¡×Ô¶¯Ê¹ÓÃµÄÒ©Æ·
+		citem*	get_can_auto_use_hp_item();//è·å–è‡ªåŠ¨ä½¿ç”¨çš„è¯å“
 
 		int32  show_this_init_mount();
 		int32  show_this_init_max_wing(citem* item_ptr = nullptr);
 
-		//¾«Áé
+		//ç²¾çµ
 		bool  has_spirit_on_equip();
 		void send_spirit_msg(citem* temp_item,bool is_del = false);
 
 
 
-		void  change_buff_time();//¸Ãº¯ÊıÓÃÓÚ¸Ä±äÒòÏÂÏß¶ø²»µ¹¼ÆÊ±µÄbuffÊ±¼ä£¬Ä¿Ç°ÓÃÓÚÌØÊâÓğÒí³á°ò£¬ÆäbuffÊ±¼äÓë³á°òÊ±¼ä¹Ò¹³
+		void  change_buff_time();//è¯¥å‡½æ•°ç”¨äºæ”¹å˜å› ä¸‹çº¿è€Œä¸å€’è®¡æ—¶çš„buffæ—¶é—´ï¼Œç›®å‰ç”¨äºç‰¹æ®Šç¾½ç¿¼ç¿…è†€ï¼Œå…¶buffæ—¶é—´ä¸ç¿…è†€æ—¶é—´æŒ‚é’©
 
-		static s_item_template_info get_const_att_item_by_id(int32 item_tem_id, int32 item_num, int32 item_const_att, int32 item_lock, int32 class_type, int32 exp_level);//Í¨¹ıÎïÆ·IDºÍÈËÎïÖ°Òµ»ñÈ¡Êµ¼ÊµÄÎïÆ·£¬Ä¿Ç°Ö÷ÒªÓÃÓÚ¹Ì¶¨×¿Ô½ÊôĞÔÎïÆ·
+		static s_item_template_info get_const_att_item_by_id(int32 item_tem_id, int32 item_num, int32 item_const_att, int32 item_lock, int32 class_type, int32 exp_level);//é€šè¿‡ç‰©å“IDå’Œäººç‰©èŒä¸šè·å–å®é™…çš„ç‰©å“ï¼Œç›®å‰ä¸»è¦ç”¨äºå›ºå®šå“è¶Šå±æ€§ç‰©å“
 
 		void add_fashion_star_num() { m_fashion_star_num++; }
 		int32 get_fashion_star_num() { return m_fashion_star_num;}
@@ -462,30 +462,29 @@ namespace faith
 
 	private:
 		int32										m_unit_array_index;
-		std::map<int32, int64>					 m_item_use_cd; // ¼ÇÂ¼ËùÓĞÎïÆ·µÄCDµ¹¼ÆÊ±,Ã¿Ìõ¼ÇÂ¼Îª<TemplateID, CDÊ£ÓàÊ±¼ä>
-		// item_map£¬item_in_bagºÍitem_in_equipÈı¸öÊı¾İ½á¹¹µÄ×÷ÓÃ£º
-		//   1.item_mapÊÇ¸ömap½á¹¹£¬ÒÔÃ¿¸öÎïÆ·ÊµÀıµÄguidÖµ×÷Îªkey£¬valueÊÇÎïÆ·ÊµÀıµÄÊı¾İ¡£
-		//   2.item_in_bag´æ´¢ÁË½ÇÉ«±³°üÎïÆ·À¸ÖĞÏàÓ¦Î»ÖÃµÄ¶ÔÓ¦ÎïÆ·µÄguid¡£
-		//   3.item_in_equip´æ´¢ÁË½ÇÉ«±³°ü×°±¸À¸ÖĞÏàÓ¦Î»ÖÃµÄ¶ÔÓ¦ÎïÆ·µÄguid¡£
-		//   4.item_in_bag_countºÍitem_in_equip_count·Ö±ğ¼ÇÂ¼ÁËÎïÆ·À¸ºÍ×°±¸À¸ÖĞÎïÆ·µÄÊıÁ¿£¬¿ÉÒÔ¸ü¿ìµÄ¼ìÑé±³°üÊÇ·ñÒÑÂú
-		//
-		// ²éÕÒÎïÆ·ÊµÀıµÄÊı¾İ¶¼ÒªÍ¨¹ıguidÔÚitem_mapÖĞ²éÕÒ£¬Èç¹ûÄÜÌá¹©ÎïÆ·ÔÚÎïÆ·À¸»ò×°±¸À¸ÖĞµÄÎ»ÖÃ£¬
-		// Ôò¿ÉÒÔ¸ù¾İÌá¹©µÄÎ»ÖÃÔÚitem_in_bag»òitem_in_equipÖĞÕÒµ½¶ÔÓ¦µÄguid£¬È»ºóÔÙÍ¨¹ıitem_map»ñÈ¡
-		// ÎïÆ·µÄÊµÀıÊı¾İ¡£
-		//									// ÎïÆ·ËùÊô½ÇÉ«ÏÂ±ê
+		std::map<int32, int64>					 m_item_use_cd; // è®°å½•æ‰€æœ‰ç‰©å“çš„CDå€’è®¡æ—¶,æ¯æ¡è®°å½•ä¸º<TemplateID, CDå‰©ä½™æ—¶é—´>
+		// item_mapï¼Œitem_in_bagå’Œitem_in_equipä¸‰ä¸ªæ•°æ®ç»“æ„çš„ä½œç”¨ï¼š
+		//   1.item_mapæ˜¯ä¸ªmapç»“æ„ï¼Œä»¥æ¯ä¸ªç‰©å“å®ä¾‹çš„guidå€¼ä½œä¸ºkeyï¼Œvalueæ˜¯ç‰©å“å®ä¾‹çš„æ•°æ®ã€‚
+		//   2.item_in_bagå­˜å‚¨äº†è§’è‰²èƒŒåŒ…ç‰©å“æ ä¸­ç›¸åº”ä½ç½®çš„å¯¹åº”ç‰©å“çš„guidã€‚
+		//   3.item_in_equipå­˜å‚¨äº†è§’è‰²èƒŒåŒ…è£…å¤‡æ ä¸­ç›¸åº”ä½ç½®çš„å¯¹åº”ç‰©å“çš„guidã€‚
+		//   4.item_in_bag_countå’Œitem_in_equip_countåˆ†åˆ«è®°å½•äº†ç‰©å“æ å’Œè£…å¤‡æ ä¸­ç‰©å“çš„æ•°é‡ï¼Œå¯ä»¥æ›´å¿«çš„æ£€éªŒèƒŒåŒ…æ˜¯å¦å·²æ»¡
+		// æŸ¥æ‰¾ç‰©å“å®ä¾‹çš„æ•°æ®éƒ½è¦é€šè¿‡guidåœ¨item_mapä¸­æŸ¥æ‰¾ï¼Œå¦‚æœèƒ½æä¾›ç‰©å“åœ¨ç‰©å“æ æˆ–è£…å¤‡æ ä¸­çš„ä½ç½®ï¼Œ
+		// åˆ™å¯ä»¥æ ¹æ®æä¾›çš„ä½ç½®åœ¨item_in_bagæˆ–item_in_equipä¸­æ‰¾åˆ°å¯¹åº”çš„guidï¼Œç„¶åå†é€šè¿‡item_mapè·å–
+		// ç‰©å“çš„å®ä¾‹æ•°æ®ã€‚
+		//									// ç‰©å“æ‰€å±è§’è‰²ä¸‹æ ‡
 		int32 m_item_load_flag;
-		std::unordered_map<ui64, citem*> m_item_map; // ÒÔÎïÆ·µÄguidÎªkey£¬Ê÷ÉÏµÄÃ¿¸ö½Úµã´æ´¢itemµÄÊı¾İ
+		std::unordered_map<ui64, citem*> m_item_map; // ä»¥ç‰©å“çš„guidä¸ºkeyï¼Œæ ‘ä¸Šçš„æ¯ä¸ªèŠ‚ç‚¹å­˜å‚¨itemçš„æ•°æ®
 		std::unordered_map<int32,guid_64> m_item_bag_array[e_bag_type_max];
 		int32 m_item_bag_length[e_bag_type_max];
 
-		std::unordered_map<int32, guid_64>										m_used_has_time_item_array;			//´øÓĞÊ±ÏŞµÄÎïÆ·
-		std::unordered_map<int32, guid_64>										m_time_limit_item_in_equip;			//×°±¸µÄÏŞÊ±×°±¸
-		std::unordered_map<int32, guid_64>										m_quick_call_mount_array;			//¿ìËÙÕÙ»½×øÆï
+		std::unordered_map<int32, guid_64>										m_used_has_time_item_array;			//å¸¦æœ‰æ—¶é™çš„ç‰©å“
+		std::unordered_map<int32, guid_64>										m_time_limit_item_in_equip;			//è£…å¤‡çš„é™æ—¶è£…å¤‡
+		std::unordered_map<int32, guid_64>										m_quick_call_mount_array;			//å¿«é€Ÿå¬å”¤åéª‘
 		guid_64										m_quick_hp_guid;
 		uint64										m_item_tidy_cd;
 		std::vector<int32>							m_tidy_type_list;
 		int32										m_fashion_star_num;
-		//ÈÕÖ¾ÓÃµÄ²ÎÊı
+		//æ—¥å¿—ç”¨çš„å‚æ•°
 		int32										m_bind_material_num;
 		int32										m_no_bind_material_num;
 	private:

@@ -1,10 +1,10 @@
 /********************************************************************
-  created: 2015Äê12ÔÂ28ÈÕ16:10:39
+  created: 2015å¹´12æœˆ28æ—¥16:10:39
   file base: msgproc_client
   file ext: hpp
   author: zhy
   
-  purpose: ¿Í»§¶Ëµ½·şÎñÆ÷µÄÇëÇó´¦Àí
+  purpose: å®¢æˆ·ç«¯åˆ°æœåŠ¡å™¨çš„è¯·æ±‚å¤„ç†
 *********************************************************************/
 #ifndef _FEP_MSGPROC_CLIENT_H_
 #define _FEP_MSGPROC_CLIENT_H_
@@ -135,13 +135,13 @@ namespace faith
 	void buff_req_message_lua(player& player_ref, const char* msg, int32 msg_len);
 	void c2s_player_gmorder_message(uint32 connindex, const void *data_ptr, size_t data_len);
 	void c2s_player_pick_drop_box(uint32 connindex, const void *data_ptr, size_t data_len);
-	//ÕóÓªºÍPK
+	//é˜µè¥å’ŒPK
 	void c2cs_change_pk_mode(uint32 connindex, const void *data_ptr, size_t data_len);
 
-	//Ú¤Ïë
+	//å†¥æƒ³
 	void c2cs_start_meditation(uint32 connindex, const void *data_ptr, size_t data_len);
 	void c2cs_stop_meditation(uint32 connindex, const void *data_ptr, size_t data_len);
-	//Ìì¸³
+	//å¤©èµ‹
 	void c2cs_talent_level_up(uint32 connindex, const void *data_ptr, size_t data_len);
 	void c2cs_talent_reset(uint32 connindex, const void *data_ptr, size_t data_len);
 
@@ -150,7 +150,7 @@ namespace faith
 	void c2cs_draw_mem_daily_award(uint32 connindex, const void *data_ptr, size_t data_len);
 	void c2cs_territory_buff_operate(uint32 connindex, const void *data_ptr, size_t data_len);
 	void c2cs_goto_next_stage_of_bonfire_map(uint32 connindex, const void *data_ptr, size_t data_len);
-	void c2cs_legion_warehouse_operation(uint32 connindex, const void *data_ptr, size_t data_len);  //ÆÁ±Î
+	void c2cs_legion_warehouse_operation(uint32 connindex, const void *data_ptr, size_t data_len);  //å±è”½
 	void c2cs_invite_player_to_join_legion(uint32 connindex, const void *data_ptr, size_t data_len);
 	void c2cs_req_apply_to_join_legion(uint32 connindex, const void *data_ptr, size_t data_len);
 	void c2cs_add_damage_buff_in_legion_boss(uint32 connindex, const void *data_ptr, size_t data_len);
@@ -171,21 +171,21 @@ namespace faith
 	void req_do_challenge(uint32 connidex, const void *data_ptr, size_t data_len);
 	void get_challenge_log(uint32 connidex, const void *data_ptr, size_t data_len);
 	void get_arena_reward(uint32 connidex, const void *data_ptr, size_t data_len);
-	void mopping_arena_remain_times(uint32 connidex, const void *data_ptr, size_t data_len);  // ÆÁ±Î
+	void mopping_arena_remain_times(uint32 connidex, const void *data_ptr, size_t data_len);  // å±è”½
 
 
-	//ÅÅĞĞ°ñ
+	//æ’è¡Œæ¦œ
 	void c2cs_worship_top_player_proc(uint32 connidex, const void *data_ptr, size_t data_len);
 	void c2cs_service_rank_receice_reward_proc(uint32 connidex, const void *data_ptr, size_t data_len);
 
-	//ÓÊ¼ş
+	//é‚®ä»¶
 	void c2s_operate_mail(uint32 connindex, const void *data_ptr, size_t data_len);
 	void c2s_operate_mail_logic(player& player_ref, mail_proto_mail_operation& req);
 	void c2s_operate_mail_lua(player& player_ref, const char* msg, int32 msg_len);
-	void c2s_send_mail(uint32 connindex, const void *data_ptr, size_t data_len);           // Î´Ê¹ÓÃ
-	void c2s_send_mail_to_all_player(uint32 connindex, const void *data_ptr, size_t data_len); //Î´Ê¹ÓÃ
+	void c2s_send_mail(uint32 connindex, const void *data_ptr, size_t data_len);           // æœªä½¿ç”¨
+	void c2s_send_mail_to_all_player(uint32 connindex, const void *data_ptr, size_t data_len); //æœªä½¿ç”¨
 
-	//ÌáÊ¾ĞÅÏ¢ºÍÁÄÌì
+	//æç¤ºä¿¡æ¯å’ŒèŠå¤©
 	void c2s_send_notice(uint32 connindex, const void *data_ptr, size_t data_len);
 	void c2s_send_notice_with_param(uint32 connindex, const void *data_ptr, size_t data_len);
 	void c2s_send_notice_with_param_logic(player& player_ref, chat_proto_notice_info_with_param& req);
@@ -194,32 +194,32 @@ namespace faith
 	void c2s_send_chat_new_logic(player& player_ref, chat_proto_chat_content& req);
 	void c2s_send_chat_new_lua(player& player_ref, const char* msg, int32 msg_len);
 
-	void c2s_send_audio(uint32 connindex, const void *data_ptr, size_t data_len); // Î´µ÷ÓÃ
+	void c2s_send_audio(uint32 connindex, const void *data_ptr, size_t data_len); // æœªè°ƒç”¨
 
-	//×ÊÔ´ÕÒ»Ø
+	//èµ„æºæ‰¾å›
 	void c2s_find_back_must_do_resource(uint32 connindex, const void *data_ptr, size_t data_len);
 
 	//vip
 	void c2s_recharge(uint32 connindex, const void *data_ptr, size_t data_len);
 	void c2s_recharge_widget_type(uint32 connindex, const void *data_ptr, size_t data_len);
 
-	//ĞÂÊ×³ä½±Àø
+	//æ–°é¦–å……å¥–åŠ±
 	void c2s_get_first_recharge_time(uint32 connindex, const void *data_ptr, size_t data_len);
 
-	//Ï¡ÓĞÃû³Æ
+	//ç¨€æœ‰åç§°
 	void c2s_title_set_title_no_need_see(uint32 connindex, const void *data_ptr, size_t data_len);
 
 	//big player worship
 	void c2s_worship_by_type(uint32 connindex, const void *data_ptr, size_t data_len);
 
-	//²é¿´ËûÈË×°±¸
+	//æŸ¥çœ‹ä»–äººè£…å¤‡
 	void c2s_find_other_unit(uint32 connidex, const void *data_ptr, size_t data_len);
 
-	//ºì°ü
+	//çº¢åŒ…
 	void c2s_send_red_package(uint32 connindex, const void *data_ptr, size_t data_len);
 	void c2s_get_red_package(uint32 connindex, const void *data_ptr, size_t data_len);
 
-	//´«ËÍbuff
+	//ä¼ é€buff
 	void c2s_transfer_buff(uint32 connindex, const void *data_ptr, size_t data_len);
 
 
@@ -237,7 +237,7 @@ namespace faith
 	//achievement
 	void c2s_achievement_finish(uint32 connindex, const void *data_ptr, size_t data_len);
 
-	void c2s_achievement_all_finish(uint32 connindex, const void *data_ptr, size_t data_len);//ÁìÈ¡ËùÓĞ¿ÉÁìµÄ³É¾Í
+	void c2s_achievement_all_finish(uint32 connindex, const void *data_ptr, size_t data_len);//é¢†å–æ‰€æœ‰å¯é¢†çš„æˆå°±
 	//send gift
 	void c2cs_add_friendliness_value(uint32 connindex, const void *data_ptr, size_t data_len);
 
@@ -295,7 +295,7 @@ namespace faith
 
 	void c2s_get_person_information_proc(uint32 connindex, const void *data_ptr, size_t data_len);
 	void c2s_get_other_person_information_proc(uint32 connindex, const void *data_ptr, size_t data_len);
-	void c2s_get_person_infor_reward_proc(uint32 connindex, const void *data_ptr, size_t data_len);//ÒÑ·­Òë
+	void c2s_get_person_infor_reward_proc(uint32 connindex, const void *data_ptr, size_t data_len);//å·²ç¿»è¯‘
 
 	void c2s_get_role_competition_proc(uint32 connindex, const void *data_ptr, size_t data_len);
 	void c2s_get_competition_lv_reward_proc(uint32 connindex, const void *data_ptr, size_t data_len);

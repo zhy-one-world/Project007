@@ -1,4 +1,4 @@
-/********************************************************************
+ï»¿/********************************************************************
   created: 2014/07/31
   created: 31:7:2014 17:31
   file base: skill_def
@@ -19,12 +19,12 @@
 namespace faith
 {
 #pragma pack(push,1)
-	#define MAX_SKILL_SERIES_NUM	1000      // ¼¼ÄÜÏµÁĞÉÏÏŞ
-	#define MAX_SKILL_NUM			300	      // ¼¼ÄÜÊıÁ¿ÉÏÏŞ
-	const int32 skill_effect_max = 10;	//µ¥¸ö¼¼ÄÜ×î´ó×Óµ¯ÊıÁ¿
+	#define MAX_SKILL_SERIES_NUM	1000      // æŠ€èƒ½ç³»åˆ—ä¸Šé™
+	#define MAX_SKILL_NUM			300	      // æŠ€èƒ½æ•°é‡ä¸Šé™
+	const int32 skill_effect_max = 10;	//å•ä¸ªæŠ€èƒ½æœ€å¤§å­å¼¹æ•°é‡
 	const int32 k_max_skill_num_player = 10;
-	const int32 skill_type_buff_add = -1;       // buff´øÀ´µÄ¼¼ÄÜÀàĞÍÌî³ä-1£¬·ÀÖ¹ºÍÕı³£¼¼ÄÜ²úÉú³åÍ»
-	const int32 k_max_buff_num_in_cast_section = 5; //Ã¿¸öcast½×¶Î²úÉúµÄbuff¸öÊıÉÏÏŞ
+	const int32 skill_type_buff_add = -1;       // buffå¸¦æ¥çš„æŠ€èƒ½ç±»å‹å¡«å……-1ï¼Œé˜²æ­¢å’Œæ­£å¸¸æŠ€èƒ½äº§ç”Ÿå†²çª
+	const int32 k_max_buff_num_in_cast_section = 5; //æ¯ä¸ªcasté˜¶æ®µäº§ç”Ÿçš„buffä¸ªæ•°ä¸Šé™
 	const float k_skill_move_length_error_range = 80;
 	const float k_skill_move_square_length_error_range = k_skill_move_length_error_range * k_skill_move_length_error_range;
 	const int32 skill_use_change_num = 6;
@@ -32,89 +32,89 @@ namespace faith
 	const int32	skill_move_max = 2000;
 	const int32	skill_mount_stop_series = 104004;
 
-	// ¼¼ÄÜÀàĞÍ
+	// æŠ€èƒ½ç±»å‹
 	enum e_skill_type
 	{
-		est_floor_common = 0,        // ÆÕ¹¥
-		est_floor_skill_1,           // Ò»ºÅÎ»ÖÃ¼¼ÄÜ
-		est_floor_skill_2,           // ¶şºÅÎ»ÖÃ¼¼ÄÜ
-		est_floor_skill_3,           // ÈıºÅÎ»ÖÃ¼¼ÄÜ
-		est_floor_skill_4,           // ËÄºÅÎ»ÖÃ¼¼ÄÜ
-		est_floor_skill_5,           // ÎåºÅÎ»ÖÃ¼¼ÄÜ
-		est_floor_skill_6,           // ÁùºÅÎ»ÖÃ¼¼ÄÜ
-		est_floor_skill_7,           // ÆßºÅÎ»ÖÃ¼¼ÄÜ
-		est_floor_call_mount = 15,   // ÕÙ»½×øÆï
-		est_floor_ride,              // Æï³Ë¼¼ÄÜ
+		est_floor_common = 0,        // æ™®æ”»
+		est_floor_skill_1,           // ä¸€å·ä½ç½®æŠ€èƒ½
+		est_floor_skill_2,           // äºŒå·ä½ç½®æŠ€èƒ½
+		est_floor_skill_3,           // ä¸‰å·ä½ç½®æŠ€èƒ½
+		est_floor_skill_4,           // å››å·ä½ç½®æŠ€èƒ½
+		est_floor_skill_5,           // äº”å·ä½ç½®æŠ€èƒ½
+		est_floor_skill_6,           // å…­å·ä½ç½®æŠ€èƒ½
+		est_floor_skill_7,           // ä¸ƒå·ä½ç½®æŠ€èƒ½
+		est_floor_call_mount = 15,   // å¬å”¤åéª‘
+		est_floor_ride,              // éª‘ä¹˜æŠ€èƒ½
 
-		//ÊÀ½çÆï³Ë
-		est_ride_add_speed = 20,     // ¼ÓËÙ
-		est_ride_fly_up,             // ÉÏÉı¼¼ÄÜ
-		est_ride_fly_down,           // ÏÂ½µ¼¼ÄÜ
-		est_ride_skill_3,            // ÈıºÅÎ»ÖÃ¼¼ÄÜ
-		est_ride_skill_4,            // ËÄºÅÎ»ÖÃ¼¼ÄÜ
-		est_ride_change_mount,       // ÇĞ»»×øÆï
-		est_ride_call_wing,          // ÕÙ»½³á°ò
-		est_ride_fly,                // ·ÉĞĞ¼¼ÄÜ
-		est_ride_change_mount_no_anim,// ÇĞ»»×øÆïÎŞ¶¯»­
-		est_ride_call_wing_no_anim,   // ÕÙ»½³á°òÎŞ¶¯»­
+		//ä¸–ç•Œéª‘ä¹˜
+		est_ride_add_speed = 20,     // åŠ é€Ÿ
+		est_ride_fly_up,             // ä¸Šå‡æŠ€èƒ½
+		est_ride_fly_down,           // ä¸‹é™æŠ€èƒ½
+		est_ride_skill_3,            // ä¸‰å·ä½ç½®æŠ€èƒ½
+		est_ride_skill_4,            // å››å·ä½ç½®æŠ€èƒ½
+		est_ride_change_mount,       // åˆ‡æ¢åéª‘
+		est_ride_call_wing,          // å¬å”¤ç¿…è†€
+		est_ride_fly,                // é£è¡ŒæŠ€èƒ½
+		est_ride_change_mount_no_anim,// åˆ‡æ¢åéª‘æ— åŠ¨ç”»
+		est_ride_call_wing_no_anim,   // å¬å”¤ç¿…è†€æ— åŠ¨ç”»
 
-		//¸±±¾Æï³Ë
-		est_fu_ride_common = 40,     // ÆÕ¹¥
-		est_fu_ride_fly_up,          // ÉÏÉı¼¼ÄÜ
-		est_fu_ride_fly_down,        // ÏÂ½µ¼¼ÄÜ
-		est_fu_ride_skill_3,         // Æï³Ë¸±±¾¼¼ÄÜ1
-		est_fu_ride_skill_4,         // Æï³Ë¸±±¾¼¼ÄÜ2
-		est_fu_ride_change_mount,    // ÇĞ»»×øÆï
-		est_fu_ride_call_wing,       // ÕÙ»½³á°ò
-		est_fu_ride_fly,             // ·ÉĞĞ¼¼ÄÜ
+		//å‰¯æœ¬éª‘ä¹˜
+		est_fu_ride_common = 40,     // æ™®æ”»
+		est_fu_ride_fly_up,          // ä¸Šå‡æŠ€èƒ½
+		est_fu_ride_fly_down,        // ä¸‹é™æŠ€èƒ½
+		est_fu_ride_skill_3,         // éª‘ä¹˜å‰¯æœ¬æŠ€èƒ½1
+		est_fu_ride_skill_4,         // éª‘ä¹˜å‰¯æœ¬æŠ€èƒ½2
+		est_fu_ride_change_mount,    // åˆ‡æ¢åéª‘
+		est_fu_ride_call_wing,       // å¬å”¤ç¿…è†€
+		est_fu_ride_fly,             // é£è¡ŒæŠ€èƒ½
 
-		//ÊÀ½ç·ÉĞĞ
-		est_world_sky_add_speed = 60,// ¼ÓËÙ
-		est_world_sky_fly_up,        // ·ÉĞĞÖĞÉÏÉı
-		est_world_sky_fly_down,      // ÏÂ½µ¼¼ÄÜ
-		est_world_sky_skill_3,       // ÈıºÅÎ»ÖÃ¼¼ÄÜ
-		est_world_sky_skill_4,       // ËÄºÅÎ»ÖÃ¼¼ÄÜ
-		est_world_change_mount,      // ÇĞ»»×øÆï
-		est_world_sky_sky_to_floor,  // ´Ó·ÉĞĞµ½Æï³Ë×´Ì¬UISkillPointFuRideWidget
-		est_world_wingfly_to_mountfly,//³á°ò·ÉĞĞ×ª×øÆï·ÉĞĞ
-		est_world_mountfly_to_wingfly,//×øÆï·ÉĞĞ×ª³á°ò·ÉĞĞ
-		est_world_wingfly_to_mountfly_no_anim,//³á°ò·ÉĞĞ×ª×øÆï·ÉĞĞÎŞ¶¯»­
+		//ä¸–ç•Œé£è¡Œ
+		est_world_sky_add_speed = 60,// åŠ é€Ÿ
+		est_world_sky_fly_up,        // é£è¡Œä¸­ä¸Šå‡
+		est_world_sky_fly_down,      // ä¸‹é™æŠ€èƒ½
+		est_world_sky_skill_3,       // ä¸‰å·ä½ç½®æŠ€èƒ½
+		est_world_sky_skill_4,       // å››å·ä½ç½®æŠ€èƒ½
+		est_world_change_mount,      // åˆ‡æ¢åéª‘
+		est_world_sky_sky_to_floor,  // ä»é£è¡Œåˆ°éª‘ä¹˜çŠ¶æ€UISkillPointFuRideWidget
+		est_world_wingfly_to_mountfly,//ç¿…è†€é£è¡Œè½¬åéª‘é£è¡Œ
+		est_world_mountfly_to_wingfly,//åéª‘é£è¡Œè½¬ç¿…è†€é£è¡Œ
+		est_world_wingfly_to_mountfly_no_anim,//ç¿…è†€é£è¡Œè½¬åéª‘é£è¡Œæ— åŠ¨ç”»
 
 
-		//¸±±¾·ÉĞĞ
-		est_fu_sky_common = 80,      // ÆÕ¹¥
-		est_fu_sky_skill_3,          // ·ÉĞĞ¸±±¾¼¼ÄÜ1
-		est_fu_sky_fly_down,         // ÏÂ½µ¼¼ÄÜ
-		est_fu_sky_fly_up,           // ·ÉĞĞÖĞÉÏÉı
-		est_fu_sky_skill_4,          // ·ÉĞĞ¸±±¾¼¼ÄÜ2
-		est_fu_sky_change_mount,     // ÇĞ»»×øÆï
-		est_fu_sky_sky_to_floor,     // ´Ó·ÉĞĞµ½Æï³Ë×´Ì¬
+		//å‰¯æœ¬é£è¡Œ
+		est_fu_sky_common = 80,      // æ™®æ”»
+		est_fu_sky_skill_3,          // é£è¡Œå‰¯æœ¬æŠ€èƒ½1
+		est_fu_sky_fly_down,         // ä¸‹é™æŠ€èƒ½
+		est_fu_sky_fly_up,           // é£è¡Œä¸­ä¸Šå‡
+		est_fu_sky_skill_4,          // é£è¡Œå‰¯æœ¬æŠ€èƒ½2
+		est_fu_sky_change_mount,     // åˆ‡æ¢åéª‘
+		est_fu_sky_sky_to_floor,     // ä»é£è¡Œåˆ°éª‘ä¹˜çŠ¶æ€
 
-		//ÊØ»¤Éñ
-		est_patron_saint = 100,      // ÆÕ¹¥
+		//å®ˆæŠ¤ç¥
+		est_patron_saint = 100,      // æ™®æ”»
 
-		//ÌøÔ¾
-		est_jump = 110,		// ÌøÔ¾
+		//è·³è·ƒ
+		est_jump = 110,		// è·³è·ƒ
 		est_old_mount_speed = 111,
 		est_old_mount_stop = 112,
-		est_mount_speed = 113,	// ×øÆï¼ÓËÙ
-		est_mount_stop = 114,	// ×øÆïÍ£Ö¹
-		est_wing_speed = 116,	// ³á°ò¼ÓËÙ
-		est_wing_stop = 117,	// ³á°òÍ£Ö¹
+		est_mount_speed = 113,	// åéª‘åŠ é€Ÿ
+		est_mount_stop = 114,	// åéª‘åœæ­¢
+		est_wing_speed = 116,	// ç¿…è†€åŠ é€Ÿ
+		est_wing_stop = 117,	// ç¿…è†€åœæ­¢
 
-		//³å´Ì
-		est_sprint_forward		=   120,	// Ç°³å
-		est_sprint_back			=   121,	// ºóÍË
-		est_sprint_left			=   122,	// ×ó³å
-		est_sprint_right		=   123,	// ÓÒ³å
+		//å†²åˆº
+		est_sprint_forward		=   120,	// å‰å†²
+		est_sprint_back			=   121,	// åé€€
+		est_sprint_left			=   122,	// å·¦å†²
+		est_sprint_right		=   123,	// å³å†²
 		
-		//´óÊÀ½ç³á°ò·ÉĞĞ  
-		est_bigworld_wing_fly_down = 130,		// ³á°ò½µÂä
-		est_bigworld_wing_fly_up,				// ³á°òÆğ·É 
-		est_bigworldwing_fly_roll_up,			// ·­¹ö
-		est_bigworldwing_fly_change_wing,		// ÇĞ»»³á°ò
-		est_bigworld_wing_fly_to_wing_walk,		// ´Ó·ÉĞĞµ½·ÉĞĞ×ßÂ· 
-		est_bigworld_wing_fly_skill ,			// ³á°ò·ÉĞĞ¼¼ÄÜ£¬´ÓÂ½µØÖ±½Ó±ä³É·ÉĞĞ×´Ì¬Ã»ÓĞ¶¯»­
+		//å¤§ä¸–ç•Œç¿…è†€é£è¡Œ  
+		est_bigworld_wing_fly_down = 130,		// ç¿…è†€é™è½
+		est_bigworld_wing_fly_up,				// ç¿…è†€èµ·é£ 
+		est_bigworldwing_fly_roll_up,			// ç¿»æ»š
+		est_bigworldwing_fly_change_wing,		// åˆ‡æ¢ç¿…è†€
+		est_bigworld_wing_fly_to_wing_walk,		// ä»é£è¡Œåˆ°é£è¡Œèµ°è·¯ 
+		est_bigworld_wing_fly_skill ,			// ç¿…è†€é£è¡ŒæŠ€èƒ½ï¼Œä»é™†åœ°ç›´æ¥å˜æˆé£è¡ŒçŠ¶æ€æ²¡æœ‰åŠ¨ç”»
 
 		est_change_mesh_skill_1 = 150,
 		est_change_mesh_skill_2,
@@ -139,100 +139,99 @@ namespace faith
 		e_skill_operation_spellcast = 12,
 		e_skill_operation_sprint = 13,
 	};
-	// ¼¼ÄÜÃüÖĞ¼°ÉËº¦ÏìÓ¦Ã¶¾Ù
+	// æŠ€èƒ½å‘½ä¸­åŠä¼¤å®³å“åº”æšä¸¾
 	enum e_skill_damage_rep_type
 	{
 		e_skill_damage_reptype_null = 0,
-		e_skill_damage_reptype_success = 1,          // ÆÕÍ¨ÃüÖĞ
-		e_skill_damage_reptype_miss = 2,             // ´ò²»ÖĞ
-		e_skill_damage_reptype_critical_imbibe = 3,  // Ä¿±êÕĞ¼Ü±©»÷
-		e_skill_damage_reptype_block = 4,            // Ä¿±ê¸ñµµ³É¹¦
-		e_skill_damage_reptype_imbibe = 5,           // Ä¿±êÕĞ¼Ü³É¹¦
-		e_skill_damage_reptype_criticalhit = 6,      // ¼¼ÄÜÊ¹ÓÃÕß±©»÷³É¹¦
-		e_skill_damage_reptype_invinc = 7,           // ÃâÒß
-		e_skill_damage_reptype_resist = 8,           // µÖ¿¹
-		e_skill_damage_reptype_antihurt = 9,         // ÎüÊÕ
+		e_skill_damage_reptype_success = 1,          // æ™®é€šå‘½ä¸­
+		e_skill_damage_reptype_miss = 2,             // æ‰“ä¸ä¸­
+		e_skill_damage_reptype_critical_imbibe = 3,  // ç›®æ ‡æ‹›æ¶æš´å‡»
+		e_skill_damage_reptype_block = 4,            // ç›®æ ‡æ ¼æ¡£æˆåŠŸ
+		e_skill_damage_reptype_imbibe = 5,           // ç›®æ ‡æ‹›æ¶æˆåŠŸ
+		e_skill_damage_reptype_criticalhit = 6,      // æŠ€èƒ½ä½¿ç”¨è€…æš´å‡»æˆåŠŸ
+		e_skill_damage_reptype_invinc = 7,           // å…ç–«
+		e_skill_damage_reptype_resist = 8,           // æŠµæŠ—
+		e_skill_damage_reptype_antihurt = 9,         // å¸æ”¶
 	};
-	// ÆğĞ§ÀàĞÍ
+	// èµ·æ•ˆç±»å‹
 	enum e_skill_active_type
 	{
 		esat_zhudong,
 		esat_buff,
 	};
 
-	// ¼¼ÄÜĞÔÖÊ
+	// æŠ€èƒ½æ€§è´¨
 	enum e_skill_cast_type
 	{
-		estype_moment,			 // Ë²·¢¼¼ÄÜ
-		estype_spell,			 // Ò÷³ª¼¼ÄÜ
-		estype_channels,		 // Í¨µÀ¼¼ÄÜ
-		estype_continuum,		 // Á¬Ğø¼¼ÄÜ
-		estype_rush,			 // ³å·æ¼¼ÄÜ
-		estype_callmountandride, // ÕÙ»½×øÆï²¢Æï³Ë
-		estype_callwing,		 // ÕÙ»½³á°ò¼¼ÄÜ
-		estype_callmountandfly,	 // ÕÙ»½×øÆï²¢Æğ·É
-		estype_flyup,			 // ÉÏÉı
-		estype_flydown,			 // ÏÂ½µ
-		estype_sprint,			 // ³å´Ì¼¼ÄÜ
-		estype_doublemounts,	 // Ë«ÈË×øÆï
-		estype_wingflyup,		 // ÓğÒíÉÏÉı¼¼ÄÜ
-		estype_wingflydown,		 // ÓğÒíÏÂ½µ¼¼ÄÜ
-		estype_channels_1,		 // ±ùÍ¨µÀ¼¼ÄÜ
-		estype_channels_2,		 // »ğÍ¨µÀ¼¼ÄÜ
-		estype_channels_3,		 // ¹âÍ¨µÀ¼¼ÄÜ
-		estype_channels_4,		 // °µÍ¨µÀ¼¼ÄÜ
-		estype_channels_mount,	 // ×øÆïÍ¨µÀ¼¼ÄÜ
-		estype_channels_wing,	 // ³á°òÍ¨µÀ¼¼ÄÜ
+		estype_moment,			 // ç¬å‘æŠ€èƒ½
+		estype_spell,			 // åŸå”±æŠ€èƒ½
+		estype_channels,		 // é€šé“æŠ€èƒ½
+		estype_continuum,		 // è¿ç»­æŠ€èƒ½
+		estype_rush,			 // å†²é”‹æŠ€èƒ½
+		estype_callmountandride, // å¬å”¤åéª‘å¹¶éª‘ä¹˜
+		estype_callwing,		 // å¬å”¤ç¿…è†€æŠ€èƒ½
+		estype_callmountandfly,	 // å¬å”¤åéª‘å¹¶èµ·é£
+		estype_flyup,			 // ä¸Šå‡
+		estype_flydown,			 // ä¸‹é™
+		estype_sprint,			 // å†²åˆºæŠ€èƒ½
+		estype_doublemounts,	 // åŒäººåéª‘
+		estype_wingflyup,		 // ç¾½ç¿¼ä¸Šå‡æŠ€èƒ½
+		estype_wingflydown,		 // ç¾½ç¿¼ä¸‹é™æŠ€èƒ½
+		estype_channels_1,		 // å†°é€šé“æŠ€èƒ½
+		estype_channels_2,		 // ç«é€šé“æŠ€èƒ½
+		estype_channels_3,		 // å…‰é€šé“æŠ€èƒ½
+		estype_channels_4,		 // æš—é€šé“æŠ€èƒ½
+		estype_channels_mount,	 // åéª‘é€šé“æŠ€èƒ½
+		estype_channels_wing,	 // ç¿…è†€é€šé“æŠ€èƒ½
 		estype_max
 	};
-// 
-// 	// ¹¥»÷·¶Î§
+// 	// æ”»å‡»èŒƒå›´
 // 	enum e_skill_effect_type
 // 	{
-// 		esarea_single,		// µ¥Ìå¹¥»÷
-// 		esarea_multi,		// ¶àÌå£¨ÈçÖÎÁÆ²¨¡¢ÉÁµçÁ´µÈ£¬ÔÚ¶à¸öÄ¿±ê¼äÌø×ª£©
-// 		esarea_aoe_fixed,	// Ê©·ÅÕßÖÜÎ§  area of effect,¹Ì¶¨Ê©·ÅÇøÓò,Ê©·ÅÕßÖÜÎ§µÄÒ»¶¨ÇøÓòÄÚ
-// 		esarea_aoe,			// area of effect£¬ÈÎÒâÑ¡ÔñÊ©·ÅÇøÓò
-// 		esarea_front,		// Ö¸¶¨·½ÏòÒ»¶Î¾àÀë
-// 		esarea_front_angle,	// ½ÇÉ«Ç°·½ÉÈĞÎÇøÓò
-// 		esarea_aoe_target_area,		//ÔÚÄ¿±êÖÜÎ§²úÉúĞ§¹û£¬¹¥»÷Õß²»±ä£¬¹¥»÷Ä¿±êÖÜÎ§µÄÒ»Èº
-// 		esarea_aoe_random,	// Ê©·ÅÕßÖÜÎ§ÄÚµÄÒ»¸öËæ»úÄ¿±ê
+// 		esarea_single,		// å•ä½“æ”»å‡»
+// 		esarea_multi,		// å¤šä½“ï¼ˆå¦‚æ²»ç–—æ³¢ã€é—ªç”µé“¾ç­‰ï¼Œåœ¨å¤šä¸ªç›®æ ‡é—´è·³è½¬ï¼‰
+// 		esarea_aoe_fixed,	// æ–½æ”¾è€…å‘¨å›´  area of effect,å›ºå®šæ–½æ”¾åŒºåŸŸ,æ–½æ”¾è€…å‘¨å›´çš„ä¸€å®šåŒºåŸŸå†…
+// 		esarea_aoe,			// area of effectï¼Œä»»æ„é€‰æ‹©æ–½æ”¾åŒºåŸŸ
+// 		esarea_front,		// æŒ‡å®šæ–¹å‘ä¸€æ®µè·ç¦»
+// 		esarea_front_angle,	// è§’è‰²å‰æ–¹æ‰‡å½¢åŒºåŸŸ
+// 		esarea_aoe_target_area,		//åœ¨ç›®æ ‡å‘¨å›´äº§ç”Ÿæ•ˆæœï¼Œæ”»å‡»è€…ä¸å˜ï¼Œæ”»å‡»ç›®æ ‡å‘¨å›´çš„ä¸€ç¾¤
+// 		esarea_aoe_random,	// æ–½æ”¾è€…å‘¨å›´å†…çš„ä¸€ä¸ªéšæœºç›®æ ‡
 // 		esarea_aoe_transfer,
 // 		esarea_weapon,
 // 	};
 
-	//¼¼ÄÜ×÷ÓÃÄ¿±êÀàĞÍ
+	//æŠ€èƒ½ä½œç”¨ç›®æ ‡ç±»å‹
 	enum e_skill_target_type
 	{
-		eskilltarget_enemy,				//µĞ¶Ô
-		eskilltarget_friend,			//ÓÑºÃ
-		eskilltarget_enemyplayer,		//µĞ¶ÔÍæ¼Ò
-		eskilltarget_enemynpc,			//µĞ¶Ônpc
-		eskilltarget_friendplayer,		//ÓÑºÃÍæ¼Ò
-		eskilltarget_friendnpc,			//ÓÑºÃnpc
-		eskilltarget_team,				//¶ÓÎé
-		eskilltarget_self,				//×Ô¼º
-		eskilltarget_selfpet,			//×Ô¼ºµÄ³èÎï
-		eskilltarget_selfowner,			//×Ô¼ºµÄÖ÷ÈË
+		eskilltarget_enemy,				//æ•Œå¯¹
+		eskilltarget_friend,			//å‹å¥½
+		eskilltarget_enemyplayer,		//æ•Œå¯¹ç©å®¶
+		eskilltarget_enemynpc,			//æ•Œå¯¹npc
+		eskilltarget_friendplayer,		//å‹å¥½ç©å®¶
+		eskilltarget_friendnpc,			//å‹å¥½npc
+		eskilltarget_team,				//é˜Ÿä¼
+		eskilltarget_self,				//è‡ªå·±
+		eskilltarget_selfpet,			//è‡ªå·±çš„å® ç‰©
+		eskilltarget_selfowner,			//è‡ªå·±çš„ä¸»äºº
 		eskilltarget_boss,				//boss
-		eskilltarget_groud,				//Õ½³¡
-		eskilltarget_friendplayer_noself,//ÓÑºÃÍæ¼Ò£¬²»°üÀ¨×Ô¼º
+		eskilltarget_groud,				//æˆ˜åœº
+		eskilltarget_friendplayer_noself,//å‹å¥½ç©å®¶ï¼Œä¸åŒ…æ‹¬è‡ªå·±
 		eskilltarget_max
 	};
 
-    // ÉËº¦ÀàĞÍ
+    // ä¼¤å®³ç±»å‹
     enum e_skill_hurt_type
     {
-		edt_skill,     //¼¼ÄÜÉËº¦,¼ÆËã×ÔÉíÊôĞÔ
-		edt_real,      //ÕæÊµÉËº¦,²»¼ÆËãÊôĞÔ
-		edt_percent,   //°Ù·Ö±ÈÉËº¦,²»¼ÆËãÊôĞÔ,Ö±½Ó°´×ÜÑªÁ¿µÄ°Ù·Ö±È¿Û³ı»òÔö¼ÓÑªÁ¿
-		edt_damage_num,//ÆäËûÊôĞÔÔì³ÉµÄÉËº¦
-		edt_hp_percent,//°´ÕÕ×ÔÉíÑªÁ¿°Ù·Ö±ÈÕ¨
-		edt_reflect,	//·´µ¯ÉËº¦
-		edt_kill_once,	//Ò»»÷±ØÉ±
-		edt_hp_percent_target,//°´ÕÕ×ÔÉíÑªÁ¿°Ù·Ö±È
-		edt_hp_percent_precise,//°´ÕÕ×ÔÉíÑªÁ¿°Ù·Ö±È ¾«È·µ½0.001%
-		edt_hp_percent_precise_wound,//°´ÕÕ×ÔÉíÑªÁ¿°Ù·Ö±È ¾«È·µ½0.001% ¼ÆËã¼õÉËÊôĞÔ
+		edt_skill,     //æŠ€èƒ½ä¼¤å®³,è®¡ç®—è‡ªèº«å±æ€§
+		edt_real,      //çœŸå®ä¼¤å®³,ä¸è®¡ç®—å±æ€§
+		edt_percent,   //ç™¾åˆ†æ¯”ä¼¤å®³,ä¸è®¡ç®—å±æ€§,ç›´æ¥æŒ‰æ€»è¡€é‡çš„ç™¾åˆ†æ¯”æ‰£é™¤æˆ–å¢åŠ è¡€é‡
+		edt_damage_num,//å…¶ä»–å±æ€§é€ æˆçš„ä¼¤å®³
+		edt_hp_percent,//æŒ‰ç…§è‡ªèº«è¡€é‡ç™¾åˆ†æ¯”ç‚¸
+		edt_reflect,	//åå¼¹ä¼¤å®³
+		edt_kill_once,	//ä¸€å‡»å¿…æ€
+		edt_hp_percent_target,//æŒ‰ç…§è‡ªèº«è¡€é‡ç™¾åˆ†æ¯”
+		edt_hp_percent_precise,//æŒ‰ç…§è‡ªèº«è¡€é‡ç™¾åˆ†æ¯” ç²¾ç¡®åˆ°0.001%
+		edt_hp_percent_precise_wound,//æŒ‰ç…§è‡ªèº«è¡€é‡ç™¾åˆ†æ¯” ç²¾ç¡®åˆ°0.001% è®¡ç®—å‡ä¼¤å±æ€§
     };	
 	enum e_skill_warning_type
 	{
@@ -245,41 +244,41 @@ namespace faith
 	};
 	enum e_skill_hurt_sound_type
 	{
-		e_skill_hurt_sound_type_near,//½üÕ½
-		e_skill_hurt_sound_type_ice,//±ùÄ§·¨
-		e_skill_hurt_sound_type_fire,//»ğÄ§·¨
-		e_skill_hurt_sound_type_light,//¹âÄ§·¨
-		e_skill_hurt_sound_type_dark,//°µÄ§·¨
+		e_skill_hurt_sound_type_near,//è¿‘æˆ˜
+		e_skill_hurt_sound_type_ice,//å†°é­”æ³•
+		e_skill_hurt_sound_type_fire,//ç«é­”æ³•
+		e_skill_hurt_sound_type_light,//å…‰é­”æ³•
+		e_skill_hurt_sound_type_dark,//æš—é­”æ³•
 		e_skill_hurt_sound_type_max
 
 	};
 	enum e_skill_movement_type
 	{
-		esmtype_none,				//  0: ²»ÒÆ¶¯½ÇÉ«
-		esmtype_charge,				//  1: ³å·æÊ¹ÓÃskillspeed¼ÆËãÒÆ¶¯µ½Ä¿±êµãĞèÒªµÄÊ±¼ä
-		esmtype_leap,				//  2: ·ÉÉíÔ¾Õ¶ Ê¹ÓÃskillactiontime°´ÕÕ¹Ì¶¨Ê±¼äÒÆ¶¯µ½Ä¿±êµã,Ò»°ãÓÃÓÚĞèÒªºÍ¶¯»­ÅäºÏskillactiontime==¶¯»­Ê±³¤(Î´Ê¹ÓÃ)
-		esmtype_transinmap,			//  3: ´«ËÍÀà:Ë²¼äÒÆ¶¯µ½Ä¿±êµã
-		esmtype_trans,				//  4: ÒÆĞÎ»»Î»:ºÍ×Ô¼ºµÄ±ø»ê»¥»»Î»ÖÃ£¨Î´Ê¹ÓÃ£©
-		esmtype_transinarea,		//  5: Ê©·ÅÕßÔÚÒ»¶¨·¶Î§ÄÚÒÆ¶¯,ÒÆ¶¯ÊÕÍæ¼Ò¿ØÖÆ,skillspeedÒÆ¶¯ËÙ¶È£¨Î´Ê¹ÓÃ£©
-		esmtype_randomtransinarea,	//  6: Ê©·ÅÕßÔÚÒ»¶¨·¶Î§ÄÚËæ»úÒÆ¶¯£¬ÒÆ¶¯²»ÊÕÍæ¼Ò¿ØÖÆ£¬skillspeedÒÆ¶¯ËÙ¶È£¨Î´Ê¹ÓÃ£©
-		esmtype_recallnomove,		//  7: ²»ÒÆ¶¯½ÇÉ«,ĞèÒªÔÚÄ¿±êµãÕÙ»½³öÀ´Ò»¸ö¾²Ö¹²»¶¯µÄaoi object,aoi object boundÓÉÄ¿±êµãºÍactionrangeÈ·¶¨,ÈçÏİÚå
-		esmtype_recallmove,			//  8: ²»ÒÆ¶¯½ÇÉ«,ĞèÒªÔÚÄ¿±êµãÕÙ»½³öÀ´Ò»¸öËæ»úÒÆ¶¯µÄaoi object,aoi object boundÓÉÄ¿±êµãºÍactionrangeÈ·¶¨,aoi objectµÄÒÆ¶¯°ë¾¶ÓÉskillmovementparamÈ·¶¨,Èç·ç¾í²ĞÔÆ
-		esmtype_pull,				//  9: À­ÈË,Óë³å·æÏà·´
-		esmtype_freecharge,			// 10: ²»Ñ¡¶¨Ä¿±êµÄ³å·æ
-		esmtype_transtarget,		// 11: Ë²ÒÆµ½Ä¿±ê/ Á¬ĞøÔË¶¯
+		esmtype_none,				//  0: ä¸ç§»åŠ¨è§’è‰²
+		esmtype_charge,				//  1: å†²é”‹ä½¿ç”¨skillspeedè®¡ç®—ç§»åŠ¨åˆ°ç›®æ ‡ç‚¹éœ€è¦çš„æ—¶é—´
+		esmtype_leap,				//  2: é£èº«è·ƒæ–© ä½¿ç”¨skillactiontimeæŒ‰ç…§å›ºå®šæ—¶é—´ç§»åŠ¨åˆ°ç›®æ ‡ç‚¹,ä¸€èˆ¬ç”¨äºéœ€è¦å’ŒåŠ¨ç”»é…åˆskillactiontime==åŠ¨ç”»æ—¶é•¿(æœªä½¿ç”¨)
+		esmtype_transinmap,			//  3: ä¼ é€ç±»:ç¬é—´ç§»åŠ¨åˆ°ç›®æ ‡ç‚¹
+		esmtype_trans,				//  4: ç§»å½¢æ¢ä½:å’Œè‡ªå·±çš„å…µé­‚äº’æ¢ä½ç½®ï¼ˆæœªä½¿ç”¨ï¼‰
+		esmtype_transinarea,		//  5: æ–½æ”¾è€…åœ¨ä¸€å®šèŒƒå›´å†…ç§»åŠ¨,ç§»åŠ¨æ”¶ç©å®¶æ§åˆ¶,skillspeedç§»åŠ¨é€Ÿåº¦ï¼ˆæœªä½¿ç”¨ï¼‰
+		esmtype_randomtransinarea,	//  6: æ–½æ”¾è€…åœ¨ä¸€å®šèŒƒå›´å†…éšæœºç§»åŠ¨ï¼Œç§»åŠ¨ä¸æ”¶ç©å®¶æ§åˆ¶ï¼Œskillspeedç§»åŠ¨é€Ÿåº¦ï¼ˆæœªä½¿ç”¨ï¼‰
+		esmtype_recallnomove,		//  7: ä¸ç§»åŠ¨è§’è‰²,éœ€è¦åœ¨ç›®æ ‡ç‚¹å¬å”¤å‡ºæ¥ä¸€ä¸ªé™æ­¢ä¸åŠ¨çš„aoi object,aoi object boundç”±ç›®æ ‡ç‚¹å’Œactionrangeç¡®å®š,å¦‚é™·é˜±
+		esmtype_recallmove,			//  8: ä¸ç§»åŠ¨è§’è‰²,éœ€è¦åœ¨ç›®æ ‡ç‚¹å¬å”¤å‡ºæ¥ä¸€ä¸ªéšæœºç§»åŠ¨çš„aoi object,aoi object boundç”±ç›®æ ‡ç‚¹å’Œactionrangeç¡®å®š,aoi objectçš„ç§»åŠ¨åŠå¾„ç”±skillmovementparamç¡®å®š,å¦‚é£å·æ®‹äº‘
+		esmtype_pull,				//  9: æ‹‰äºº,ä¸å†²é”‹ç›¸å
+		esmtype_freecharge,			// 10: ä¸é€‰å®šç›®æ ‡çš„å†²é”‹
+		esmtype_transtarget,		// 11: ç¬ç§»åˆ°ç›®æ ‡/ è¿ç»­è¿åŠ¨
 	};
 	enum e_skill_bullet_move
 	{
-		e_skill_bullet_move_stop,//Ô­µØ
-		e_skill_bullet_move_line,//Ö±Ïß
-		e_skill_bullet_move_follow,//×·×Ù
-		e_skill_bullet_move_radian,//ÉÈĞÎ
-		e_skill_bullet_move_follow_and_hurt,//×·×Ù²¢ÇÒ¶ÔÂ·¾¶ÉÏÓĞÉËº¦
+		e_skill_bullet_move_stop,//åŸåœ°
+		e_skill_bullet_move_line,//ç›´çº¿
+		e_skill_bullet_move_follow,//è¿½è¸ª
+		e_skill_bullet_move_radian,//æ‰‡å½¢
+		e_skill_bullet_move_follow_and_hurt,//è¿½è¸ªå¹¶ä¸”å¯¹è·¯å¾„ä¸Šæœ‰ä¼¤å®³
 	};
 	enum e_skill_bullet_unit
 	{
-		e_skill_bullet_unit_one,//µ¥Ìå
-		e_skill_bullet_unit_all,//ÈºÌå
+		e_skill_bullet_unit_one,//å•ä½“
+		e_skill_bullet_unit_all,//ç¾¤ä½“
 	};
 	enum e_ammo_type
 	{
@@ -289,10 +288,10 @@ namespace faith
 	enum e_skill_missile_movement_type
 	{
 		none = 0,
-		repeated = 1,    // ·´¸´ÔË¶¯
-		order = 2,       // Ë³ĞòÔË¶¯
-		continuous = 4,  // Á¬ĞøÔË¶¯
-		discrete = 8     // ÀëÉ¢ÔË¶¯
+		repeated = 1,    // åå¤è¿åŠ¨
+		order = 2,       // é¡ºåºè¿åŠ¨
+		continuous = 4,  // è¿ç»­è¿åŠ¨
+		discrete = 8     // ç¦»æ•£è¿åŠ¨
 	};
 
 	enum e_skill_use_target_in_war_type
@@ -303,25 +302,25 @@ namespace faith
 
 
 
-	//¼¼ÄÜÊôĞÔÏûºÄ
+	//æŠ€èƒ½å±æ€§æ¶ˆè€—
 	struct tag_skill_expend
 	{
 		tag_skill_expend(void) :iattindex(0), itype(0), ivalue(0)
 		{
 		}
-		int32		iattindex;	//ÊôĞÔÀàĞÍ(erolestate)
-		int32		itype;		//[1:ÏûºÄÊıÖµ  2:ÏûºÄµ±Ç°°Ù·Ö±È 3:ÏûºÄ×î´ó°Ù·Ö±È]
+		int32		iattindex;	//å±æ€§ç±»å‹(erolestate)
+		int32		itype;		//[1:æ¶ˆè€—æ•°å€¼  2:æ¶ˆè€—å½“å‰ç™¾åˆ†æ¯” 3:æ¶ˆè€—æœ€å¤§ç™¾åˆ†æ¯”]
 		int32		ivalue;
 	};
 
-	//¼¼ÄÜcd×é
+	//æŠ€èƒ½cdç»„
 	struct tag_skill_cd_group
 	{
 		tag_skill_cd_group() : igroupid(0), icdtime(0.f)
 		{
 		}
 		int32		igroupid;
-		f32		icdtime;		//µ¥Î»:Ãë
+		f32		icdtime;		//å•ä½:ç§’
 	};
 
 	struct use_skill_param
@@ -472,13 +471,13 @@ namespace faith
 	{
 		emt_invalid = -1,
 		emt_immediately,
-		emt_direction, //·½Ïò
-		emt_trace, //×·×Ù
-		emt_channeled, //Í¨µÀ
-		emt_point_fall_back, //µãÍË»Ø
-		emt_retarget, //·´µ¯
-		emt_return, //·µ»Ø
-		emt_transfer, //´«ËÍ
+		emt_direction, //æ–¹å‘
+		emt_trace, //è¿½è¸ª
+		emt_channeled, //é€šé“
+		emt_point_fall_back, //ç‚¹é€€å›
+		emt_retarget, //åå¼¹
+		emt_return, //è¿”å›
+		emt_transfer, //ä¼ é€
 		emt_max,
 	};
 

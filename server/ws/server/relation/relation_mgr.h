@@ -15,28 +15,28 @@ namespace faith
 	class relation_proto_c2s_operate_other_add_req;
 	class relation_proto_s2c_ret_friend_userinfo;
 
-	//½á»éÏà¹Ø´æ´¢
+	//ç»“å©šç›¸å…³å­˜å‚¨
 	struct marriage_data
 	{
 	public:
 		enum
 		{
-			e_lover_nostatus = -1,	//ÎŞĞ§×´Ì¬
-			e_lover_normal,			//Õı³£½á»é-²»ÄÜÓÎĞĞ
-			e_lover_luxury,			//Éİ»ª½á»é-ÓÎĞĞÖ®Ç°
-			e_lover_luxury_over,	//Éİ»ª½á»é-ÓÎĞĞÖ®ºó
-			e_lover_break,			//Àë»é×´Ì¬-·ÀÖ¹ÔÙ½á»é
-			e_lover_maxstatus,		//×î´óÖµ
+			e_lover_nostatus = -1,	//æ— æ•ˆçŠ¶æ€
+			e_lover_normal,			//æ­£å¸¸ç»“å©š-ä¸èƒ½æ¸¸è¡Œ
+			e_lover_luxury,			//å¥¢åç»“å©š-æ¸¸è¡Œä¹‹å‰
+			e_lover_luxury_over,	//å¥¢åç»“å©š-æ¸¸è¡Œä¹‹å
+			e_lover_break,			//ç¦»å©šçŠ¶æ€-é˜²æ­¢å†ç»“å©š
+			e_lover_maxstatus,		//æœ€å¤§å€¼
 		};
 	public:
 		void clean_up_data();
 		void serialize_from_db(s_relation_info(&datas)[MAX_FRIEND_NUM * e_relationlist_type_max]);
 		void serialize_to_db(s_relation_info(&datas)[MAX_FRIEND_NUM * e_relationlist_type_max]);
 	public:
-		guid_64 m_lover_guid;		//ÁµÈËGUID£¨´æ´¢£©
-		int8	m_lover_status;		//ÁµÈË×´Ì¬£¨´æ´¢£©
-		time_t	m_marrage_time;		//½á»é/Àë»éÊ±¼ä£¨´æ´¢£©
-		guid_64	m_promising_id;		//Çó»é¶Ô·½GUID£¨ÔËĞĞÊ±Êı¾İ£©
+		guid_64 m_lover_guid;		//æ‹äººGUIDï¼ˆå­˜å‚¨ï¼‰
+		int8	m_lover_status;		//æ‹äººçŠ¶æ€ï¼ˆå­˜å‚¨ï¼‰
+		time_t	m_marrage_time;		//ç»“å©š/ç¦»å©šæ—¶é—´ï¼ˆå­˜å‚¨ï¼‰
+		guid_64	m_promising_id;		//æ±‚å©šå¯¹æ–¹GUIDï¼ˆè¿è¡Œæ—¶æ•°æ®ï¼‰
 	};
 
 	class relation_mgr
@@ -71,70 +71,70 @@ namespace faith
 		int32							get_relation_num(e_relationlist_type relation_type);
 		bool							is_relation_full(e_relationlist_type relation_type);
 		bool							is_relation_exist(e_relationlist_type relation_type, const guid_64& friendGuid);
-		bool							is_relation_exist(const guid_64& friendGuid);								//ºÃÓÑÊÇ·ñ´æÔÚ
-		bool							add_unit_to_relation_list(const s_relation_info& relation_info, bool remove_other, bool req_add_friend);						//Ìí¼ÓºÃÓÑ		
-		bool							del_unit_from_relation_list(e_relationlist_type relation_type, const guid_64& friend_guid);					//É¾³ıºÃÓÑ
-		void							sync_relation_list_to_client();										//Í¬²½È«²¿ºÃÓÑÁĞ±í¸ø¿Í»§¶Ë
+		bool							is_relation_exist(const guid_64& friendGuid);								//å¥½å‹æ˜¯å¦å­˜åœ¨
+		bool							add_unit_to_relation_list(const s_relation_info& relation_info, bool remove_other, bool req_add_friend);						//æ·»åŠ å¥½å‹		
+		bool							del_unit_from_relation_list(e_relationlist_type relation_type, const guid_64& friend_guid);					//åˆ é™¤å¥½å‹
+		void							sync_relation_list_to_client();										//åŒæ­¥å…¨éƒ¨å¥½å‹åˆ—è¡¨ç»™å®¢æˆ·ç«¯
 
 		bool							add_player_from_other_req(const guid_64& guid);
 		void							operate_player_from_other_req(const faith::relation_proto_c2s_operate_other_add_req& packet);
 		bool							send_other_add_msg_to_self(relation* req_player);
 
-		void							req_relation_info_from_db(int32 relation_type, const guid_64& other_guid);									//´ÓdbÖĞÇëÇóÍæ¼ÒÊı¾İ
-		void							recv_other_relation_info_from_db(const s_relation_info& other_realtion_info);									//½ÓÊÕdb·¢À´µÄload½á¹û
+		void							req_relation_info_from_db(int32 relation_type, const guid_64& other_guid);									//ä»dbä¸­è¯·æ±‚ç©å®¶æ•°æ®
+		void							recv_other_relation_info_from_db(const s_relation_info& other_realtion_info);									//æ¥æ”¶dbå‘æ¥çš„loadç»“æœ
 
-		void							sync_full_relation_list_to_cs(bool is_add);									//Í¬²½ËùÓĞ¹ØÏµÈËµÄguidµ½csÉÏ
+		void							sync_full_relation_list_to_cs(bool is_add);									//åŒæ­¥æ‰€æœ‰å…³ç³»äººçš„guidåˆ°csä¸Š
 
 
-		void							add_friendliness(const guid_64& relation_guid, int32 add_value);		//Ôö¼ÓÓÑºÃ¶È
-		void							send_relation_friendliness_to_self(const guid_64& relation_guid);		//·¢ËÍºÃÓÑµÄÓÑºÃ¶È¸ø×Ô¼º
-		void							fuben_add_friendliness_func(const guid_64 team_member_guid[max_team_member_num - 1], int32 team_num);		//¸±±¾Ôö¼ÓÓÑºÃ¶È
-		void							send_gift_add_friendliness_func(const guid_64& addreessee_guid, int32 gift_id, int32 gift_count);		//Ôö¼ÓÓÑºÃ¶È
+		void							add_friendliness(const guid_64& relation_guid, int32 add_value);		//å¢åŠ å‹å¥½åº¦
+		void							send_relation_friendliness_to_self(const guid_64& relation_guid);		//å‘é€å¥½å‹çš„å‹å¥½åº¦ç»™è‡ªå·±
+		void							fuben_add_friendliness_func(const guid_64 team_member_guid[max_team_member_num - 1], int32 team_num);		//å‰¯æœ¬å¢åŠ å‹å¥½åº¦
+		void							send_gift_add_friendliness_func(const guid_64& addreessee_guid, int32 gift_id, int32 gift_count);		//å¢åŠ å‹å¥½åº¦
 		//rename																																	
-		void							change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//½ÇÉ«¸ÄÃûÍ¬²½
+		void							change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//è§’è‰²æ”¹ååŒæ­¥
 		void							send_change_name_mail_to_all_friend(const xstring& original_name, const xstring& current_name);
 		void							add_relation_to_dp(guid_64 role_guid, s_relation_info relation_info);
 		void							del_relation_to_dp(guid_64 role_guid, guid_64 target_role_guid, int32 relation_type);
-		void							add_friend_success_chat_and_send_advices(guid_64 target_guid, s_relation_info relation_info); //Í¬ÒâÌí¼ÓºÃÓÑ¸ø¶Ô·½·¢ËÍË½ÁÄÏûÏ¢
-		int32							get_vip_title_template_id(client_session* client_session_ptr);																	//»ñµÃ½ÇÉ«VIPµÈ¼¶³ÆºÅid
+		void							add_friend_success_chat_and_send_advices(guid_64 target_guid, s_relation_info relation_info); //åŒæ„æ·»åŠ å¥½å‹ç»™å¯¹æ–¹å‘é€ç§èŠæ¶ˆæ¯
+		int32							get_vip_title_template_id(client_session* client_session_ptr);																	//è·å¾—è§’è‰²VIPç­‰çº§ç§°å·id
 		//void							send_relation_info_one(guid_64 member_guid, e_relation_data info_index);
 	private:
 		void							add_ret_friend_userinfo(relation_proto_s2c_ret_friend_userinfo& pak, client_session* session);
 
-	/*	»éÒöÊÇ¶ÀÁ¢µÄ¹ÜÀíÆ÷	*/
+	/*	å©šå§»æ˜¯ç‹¬ç«‹çš„ç®¡ç†å™¨	*/
 	public:
-		void							update_lover_name(const guid_64& rGuid, const std::string& rName);	//¸üĞÂÅäÅ¼Ãû³Æ£¨Ö÷ÒªÊÇ½á»é³ÆºÅÖĞµÄ£©
-		void							sync_lover_to_client();												//Í¬²½°éÂÂĞÅÏ¢
+		void							update_lover_name(const guid_64& rGuid, const std::string& rName);	//æ›´æ–°é…å¶åç§°ï¼ˆä¸»è¦æ˜¯ç»“å©šç§°å·ä¸­çš„ï¼‰
+		void							sync_lover_to_client();												//åŒæ­¥ä¼´ä¾£ä¿¡æ¯
 
-		guid_64							get_promosing() { return m_marriage.m_promising_id; }				//ÊÇ·ñ´¦ÓÚÇó»é×´Ì¬
-		void							set_promosing(guid_64 nid) { m_marriage.m_promising_id = nid; }		//ÉèÖÃÇó»é×´Ì¬
+		guid_64							get_promosing() { return m_marriage.m_promising_id; }				//æ˜¯å¦å¤„äºæ±‚å©šçŠ¶æ€
+		void							set_promosing(guid_64 nid) { m_marriage.m_promising_id = nid; }		//è®¾ç½®æ±‚å©šçŠ¶æ€
 
-		guid_64							get_lover_guid();													//µÃµ½µ±Ç°¶Ô·½GUID
-		bool							set_lover_guid(guid_64 loverguid);									//±äÎª»éÒö¹ØÏµ
-		int8							get_lover_status();													//µÃµ½»éÒö×´Ì¬
-		void							set_lover_status(int8 nValue);										//±ä¸ü»éÒö×´Ì¬
+		guid_64							get_lover_guid();													//å¾—åˆ°å½“å‰å¯¹æ–¹GUID
+		bool							set_lover_guid(guid_64 loverguid);									//å˜ä¸ºå©šå§»å…³ç³»
+		int8							get_lover_status();													//å¾—åˆ°å©šå§»çŠ¶æ€
+		void							set_lover_status(int8 nValue);										//å˜æ›´å©šå§»çŠ¶æ€
 
-		bool							can_marry(client_session& ruser, bool btips);						//½á»éÅĞ¶Ï
-		void							marry(client_session& ruser);										//½á»é½Ó¿Ú
+		bool							can_marry(client_session& ruser, bool btips);						//ç»“å©šåˆ¤æ–­
+		void							marry(client_session& ruser);										//ç»“å©šæ¥å£
 
-		bool							is_parade_expired();												//¶ÔÓÚÓÎĞĞÊÇ·ñ¹ıÆÚ
-		bool							can_parade(client_session& rUser, bool bTips);						//ÓÎĞĞÅĞ¶Ï
-		void							marry_parade(client_session& rUser);								//ÓÎĞĞ½Ó¿Ú
+		bool							is_parade_expired();												//å¯¹äºæ¸¸è¡Œæ˜¯å¦è¿‡æœŸ
+		bool							can_parade(client_session& rUser, bool bTips);						//æ¸¸è¡Œåˆ¤æ–­
+		void							marry_parade(client_session& rUser);								//æ¸¸è¡Œæ¥å£
 
-		bool							is_breaking_heart();												//ÊÇ·ñ¶È¹ıÁËÀë»é¹ı¶ÉÆÚ
-		bool							can_divorce(bool bTips);											//Àë»éÅĞ¶Ï
-		void							divorce();															//Àë»é½Ó¿Ú
-		void							on_divorce();														//Àë»é²Ù×÷		
+		bool							is_breaking_heart();												//æ˜¯å¦åº¦è¿‡äº†ç¦»å©šè¿‡æ¸¡æœŸ
+		bool							can_divorce(bool bTips);											//ç¦»å©šåˆ¤æ–­
+		void							divorce();															//ç¦»å©šæ¥å£
+		void							on_divorce();														//ç¦»å©šæ“ä½œ		
 	private:
 		client_session*					m_client_session_ptr;
-		relation_set					m_releation_list[e_relationlist_type_max];							//Íæ¼ÒºÃÓÑÁĞ±í
+		relation_set					m_releation_list[e_relationlist_type_max];							//ç©å®¶å¥½å‹åˆ—è¡¨
 		marriage_data					m_marriage;
-		int64							m_last_update_friend_user_info_time;								//¸üĞÂÍæ¼ÒºÃÓÑĞÅÏ¢ÀäÈ´Ê±¼ä
+		int64							m_last_update_friend_user_info_time;								//æ›´æ–°ç©å®¶å¥½å‹ä¿¡æ¯å†·å´æ—¶é—´
 		int64							m_last_find_friend_user_info_time;
 		bool							m_load_data;
 	};
 
-	//½á»éÁ÷³Ì¹ÜÀí
+	//ç»“å©šæµç¨‹ç®¡ç†
 	class marry_process
 	{
 	public:
@@ -154,7 +154,7 @@ namespace faith
 		int32			m_overtime;
 	};
 
-	//½á»éÓÎ½Ö¹ÜÀí
+	//ç»“å©šæ¸¸è¡—ç®¡ç†
 	class marry_parade
 	{
 	public:

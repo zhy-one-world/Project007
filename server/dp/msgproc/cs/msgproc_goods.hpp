@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2015Äê7ÔÂ24ÈÕ14:18:14
+	created:	2015å¹´7æœˆ24æ—¥14:18:14
 	file base:	msgproc_goods
 	file ext:	hpp
 	author:		zhy
@@ -14,7 +14,7 @@
 
 namespace faith
 {
-	//½ÇÉ«¹ºÂòÉÌÆ·¼ÇÂ¼
+	//è§’è‰²è´­ä¹°å•†å“è®°å½•
 	void cs2dp_req_load_char_goods(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index);
 	void cs2dp_req_load_char_goods_end(db_result_type result, uint32 connindex, const guid_64& role_guid, const int32& unit_array_index);
 	void cs2dp_req_save_char_goods(uint32 connindex, const void* data_ptr, size_t data_len);

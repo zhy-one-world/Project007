@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2019Äê7ÔÂ22ÈÕ
+created: 2019å¹´7æœˆ22æ—¥
 file base: oracle_trial_def
 file ext: hpp
 author: zhaoyuming
@@ -14,36 +14,36 @@ purpose:
 namespace faith
 {
 #pragma pack(push,1)	
-	const int32							max_tier_num = 30;			//ÌìÆôÊÔÁ¶×î´ó²ãÊı
-	const int32							max_customs_num = 6;		//ÌìÆôÊÔÁ¶Ã¿²ã×î´ó¹Ø¿¨Êı
-	const int32							max_reward_num = 6;			//Ã¿²ã×î´ó½±ÀøÊıÁ¿
-	const int32							max_commingup_item_id = 10;	//É¨µ´×î´óÎïÆ·ÀàĞÍÊıÁ¿
+	const int32							max_tier_num = 30;			//å¤©å¯è¯•ç‚¼æœ€å¤§å±‚æ•°
+	const int32							max_customs_num = 6;		//å¤©å¯è¯•ç‚¼æ¯å±‚æœ€å¤§å…³å¡æ•°
+	const int32							max_reward_num = 6;			//æ¯å±‚æœ€å¤§å¥–åŠ±æ•°é‡
+	const int32							max_commingup_item_id = 10;	//æ‰«è¡æœ€å¤§ç‰©å“ç±»å‹æ•°é‡
 	const int32							complete_state = 333333;
 	const int32							complete_reward_state = 111111;
-	const int32							oracle_trial_unlock_id = 117000139;	//ÌìÆôÊÔÁ¶½âËø±íid
+	const int32							oracle_trial_unlock_id = 117000139;	//å¤©å¯è¯•ç‚¼è§£é”è¡¨id
 
 	enum e_oracle_trial_customs_state
 	{
-		e_oracle_trial_customs_state_begin,							//ÒÑ¾­¿ªÆô¹Ø¿¨È´Ã»ÓĞÍ¨¹Ø¹ı
-		e_oracle_trial_customs_state_one_stat,						//Í¨¹ØÁË¹Ø¿¨»ñµÃ1¿ÅĞÇ
-		e_oracle_trial_customs_state_two_stat,						//Í¨¹ØÁË¹Ø¿¨»ñµÃ2¿ÅĞÇ
-		e_oracle_trial_customs_state_three_stat,					//Í¨¹ØÁË¹Ø¿¨»ñµÃ3¿ÅĞÇ
+		e_oracle_trial_customs_state_begin,							//å·²ç»å¼€å¯å…³å¡å´æ²¡æœ‰é€šå…³è¿‡
+		e_oracle_trial_customs_state_one_stat,						//é€šå…³äº†å…³å¡è·å¾—1é¢—æ˜Ÿ
+		e_oracle_trial_customs_state_two_stat,						//é€šå…³äº†å…³å¡è·å¾—2é¢—æ˜Ÿ
+		e_oracle_trial_customs_state_three_stat,					//é€šå…³äº†å…³å¡è·å¾—3é¢—æ˜Ÿ
 	};
 
 	enum e_oracle_trial_error
 	{
-		e_oracle_trial_error_get_award_succed = 1,					//ÁìÈ¡½±Àø³É¹¦ÁË
-		e_oracle_trial_error_get_award_not_get_num,					//Õâ¸ö½±ÀøÒÑ¾­ÁìÈ¡¹ıÁË
-		e_oracle_trial_error_get_award_no_have_stat,				//ĞÇÊı²»×ã
-		e_oracle_trial_error_max,									//Î´Öª´íÎó
-		e_oracle_trial_error_commping_up_succed,					//É¨µ´³É¹¦
-		e_oracle_trial_error_commping_up_no_have_num,				//É¨µ´Ê§°Ü ½ñÈÕÒÑ¾­É¨µ´¹ıÁË
+		e_oracle_trial_error_get_award_succed = 1,					//é¢†å–å¥–åŠ±æˆåŠŸäº†
+		e_oracle_trial_error_get_award_not_get_num,					//è¿™ä¸ªå¥–åŠ±å·²ç»é¢†å–è¿‡äº†
+		e_oracle_trial_error_get_award_no_have_stat,				//æ˜Ÿæ•°ä¸è¶³
+		e_oracle_trial_error_max,									//æœªçŸ¥é”™è¯¯
+		e_oracle_trial_error_commping_up_succed,					//æ‰«è¡æˆåŠŸ
+		e_oracle_trial_error_commping_up_no_have_num,				//æ‰«è¡å¤±è´¥ ä»Šæ—¥å·²ç»æ‰«è¡è¿‡äº†
 	};
 	
 	struct oracle_trial_customs_state
 	{
-		int32	customs_state;										//µ±Ç°²ãÊıµÄ¹Ø¿¨×´Ì¬		
-		int32	reward_stat;										//µ±Ç°²ãÊıµÄ½±ÀøÁìÈ¡×´Ì¬
+		int32	customs_state;										//å½“å‰å±‚æ•°çš„å…³å¡çŠ¶æ€		
+		int32	reward_stat;										//å½“å‰å±‚æ•°çš„å¥–åŠ±é¢†å–çŠ¶æ€
 		oracle_trial_customs_state()
 		{
 			clear_data();
@@ -56,7 +56,7 @@ namespace faith
 
 	struct oracle_trial_play_info
 	{
-		oracle_trial_customs_state	tier_num[max_tier_num];			//ÌìÆôÊÔÁ¶µÄ²ãÊı
+		oracle_trial_customs_state	tier_num[max_tier_num];			//å¤©å¯è¯•ç‚¼çš„å±‚æ•°
 		oracle_trial_play_info()
 		{
 			clear_data();

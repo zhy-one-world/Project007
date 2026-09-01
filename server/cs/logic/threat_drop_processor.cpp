@@ -46,7 +46,7 @@ void drop_manager::create_drop(NpcTemplate*  npc_template_ptr,
 	const int32& npc_array_index,
 	const bool& is_use_all_player_drop)
 {
-	clear_data(); // ¹¤¾ßµ¥ÀıÀà Ê¹ÓÃÇ°ĞèÒªÇå¿Õ
+	clear_data(); // å·¥å…·å•ä¾‹ç±» ä½¿ç”¨å‰éœ€è¦æ¸…ç©º
 	if (nullptr == npc_template_ptr)
 	{
 		return;
@@ -64,7 +64,7 @@ void drop_manager::create_drop(NpcTemplate*  npc_template_ptr,
 	m_npc_template_ptr = npc_template_ptr;
 	m_npc_array_index = npc_array_index;
 
-	if (npc_template_ptr->NpcType == e_unit_type_monster && npc_template_ptr->SubType == e_monster_type_gold_army)//Èç¹ûÎªÊÀ½çBOSS£¬ÔòµôÂä°üÖ±½ÓÉú³Éµ½Íæ¼Ò½ÅÏÂ£¬³¢ÊÔĞŞ¸´µôÂä°ü²»¼ûµÃÎÊÌâ
+	if (npc_template_ptr->NpcType == e_unit_type_monster && npc_template_ptr->SubType == e_monster_type_gold_army)//å¦‚æœä¸ºä¸–ç•ŒBOSSï¼Œåˆ™æ‰è½åŒ…ç›´æ¥ç”Ÿæˆåˆ°ç©å®¶è„šä¸‹ï¼Œå°è¯•ä¿®å¤æ‰è½åŒ…ä¸è§å¾—é—®é¢˜
 	{
 		m_init_pos = player_ref.get_new_map_pos();
 	}
@@ -84,7 +84,7 @@ void drop_manager::create_drop(NpcTemplate*  npc_template_ptr,
 	init_drop(temp_drop,hate_list, damage_list);
 	send_notice();
 
-	//¾üÍÅboss±»»÷É±ºóÌí¼Ó¾üÍÅboss»÷É±ÊÂ¼ş
+	//å†›å›¢bossè¢«å‡»æ€åæ·»åŠ å†›å›¢bosså‡»æ€äº‹ä»¶
 	legion_cs_mgr legion_cs_mgr_ref = player_ref.get_legion_cs_mgr();
 	if (legion_cs_mgr_ref.is_legion_boss_map(m_map_ent->getEntityId()))
 	{
@@ -105,7 +105,7 @@ void drop_manager::init_drop(vector<int32>& drop_list, const hate_info_vector& h
 	int32 list_size = drop_list.size();
 	for (int32 list_index = 0; list_index < list_size; list_index++)
 	{
-		clear_score_array();//ÇåÀíÒ»´Î»º´æµÄ·ÖÊıĞÅÏ¢£¬·ñÔò»áµ¼ÖÂÍ¬Ò»¸öÍæ¼Ò¶à´Î¼ÓÈëµ½Êı×éÖĞ--±ÈÈçÍ¬Ò»¸öNPC´æÔÚ¶à¸öµôÂä°üÊ±
+		clear_score_array();//æ¸…ç†ä¸€æ¬¡ç¼“å­˜çš„åˆ†æ•°ä¿¡æ¯ï¼Œå¦åˆ™ä¼šå¯¼è‡´åŒä¸€ä¸ªç©å®¶å¤šæ¬¡åŠ å…¥åˆ°æ•°ç»„ä¸­--æ¯”å¦‚åŒä¸€ä¸ªNPCå­˜åœ¨å¤šä¸ªæ‰è½åŒ…æ—¶
 		int32 drop_template_id = drop_list[list_index];
 		DropTemplate* temp_drop_ptr = GET_TEMPLATE(DropTemplate, drop_template_id);
 		if (nullptr == temp_drop_ptr)
@@ -686,7 +686,7 @@ void drop_manager::distribution_to_team_ex(int32& drop_template_id, team_score_i
 		return;
 	}
 	std::set<int32> player_index_arr;
-	//½«¸Ã¶ÓÎéÖĞÍæ¼ÒÏÂ±ê×öÒ»¸öÊı×é£¬±ãÓÚÂÒĞò
+	//å°†è¯¥é˜Ÿä¼ä¸­ç©å®¶ä¸‹æ ‡åšä¸€ä¸ªæ•°ç»„ï¼Œä¾¿äºä¹±åº
 	std::vector<int32> player_ptr_index;
 	player_ptr_index.clear();
 	for (int32 i = 0; i < team_member_num; i++)
@@ -714,7 +714,7 @@ void drop_manager::distribution_to_team_ex(int32& drop_template_id, team_score_i
 		}
 
 	}
-	//·ÖÅäÂß¼­
+	//åˆ†é…é€»è¾‘
 	std::vector<s_item_template_info> item_drop_list_with_arr;
 	cdrop::gen_drop_list_by_drop_id(drop_template_id, item_drop_list_with_arr, class_type, exp_level);
 
@@ -976,7 +976,7 @@ void drop_manager::send_notice()
 		return;
 	}
 		
-	std::string notice_str = "";				// ¹«¸æÆ´½Ó
+	std::string notice_str = "";				// å…¬å‘Šæ‹¼æ¥
 	int32 notice_id = m_npc_template_ptr->Noticeld;		
 	if (notice_id_broken_sky == notice_id)
 	{
@@ -1033,7 +1033,7 @@ void drop_manager::create_drop_for_boss_damage_ranking(npc& boss_ref, int32 rank
 		int32 exp_level = -1;
 		int32 team_member_num = team_info.size();
 
-		//½«¸Ã¶ÓÎéÖĞÍæ¼ÒÏÂ±ê×öÒ»¸öÊı×é£¬±ãÓÚÂÒĞò
+		//å°†è¯¥é˜Ÿä¼ä¸­ç©å®¶ä¸‹æ ‡åšä¸€ä¸ªæ•°ç»„ï¼Œä¾¿äºä¹±åº
 		std::vector<int32> player_ptr_index;
 		player_ptr_index.clear();
 		for (int32 i = 0; i < team_member_num; i++)
@@ -1053,7 +1053,7 @@ void drop_manager::create_drop_for_boss_damage_ranking(npc& boss_ref, int32 rank
 
 		s_gain_treasure_record_player_info_one_things one_player_info;
 		one_player_info.clear_data();
-		//·ÖÅäÂß¼­
+		//åˆ†é…é€»è¾‘
 		std::vector<s_item_template_info> drop_list;
 		cdrop::gen_drop_list_by_drop_id(drop_template_id, drop_list, class_type, exp_level);
 

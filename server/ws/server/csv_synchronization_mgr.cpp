@@ -1,10 +1,10 @@
 /********************************************************************
-created: 2019Äê03ÔÂ27ÈÕ
+created: 2019å¹´03æœˆ27æ—¥
 file base: csv_synchronization_mgr
 file ext: cpp
 author: wangdi
 
-purpose: csvÍ¬²½ĞÅÏ¢¹ÜÀíÆ÷
+purpose: csvåŒæ­¥ä¿¡æ¯ç®¡ç†å™¨
 *********************************************************************/
 
 #include "csv_synchronization_mgr.h"

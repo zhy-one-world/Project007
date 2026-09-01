@@ -1,4 +1,4 @@
-#ifndef _LEGION_DEF_HPP_
+﻿#ifndef _LEGION_DEF_HPP_
 #define _LEGION_DEF_HPP_
 
 #include "logic/type_def.hpp"
@@ -13,61 +13,61 @@ namespace faith
 {
 #pragma pack(push,1)
 
-	const int32 legion_name_size_min_limit = 2;				// ����Ǿ�������ʵ�ʵ���С��������
-	const int32 legion_name_size_max_limit = 12;			// ����Ǿ�������ʵ�ʵ���󳤶�����
-	const int32 max_legion_count = 999;						// ���ŵ��������
-	const int32 db_legion_count = 100;						// ���ŵ��δ��������
-	const int32 once_legion_list_get_num = 15;				// ���λ�ȡ�����б��ĳ���
-	const int32 max_legion_announcement_size = 400;			// ���Ź�����ַ�������
-	const int32 max_legion_announcement_content_size = 200;	// ���Ź������������
-	const int32 max_legion_member_num = 250;				// ���������������
-	const int32 max_cross_legion_member_num = 50;			// ���������Ԥ�ƾ�������Ծ����
-	const int64	convenient_join_legion_cd = 10;				// һ��������Ź��ܵ�CD
-	const int32 max_hurt_monster_player_num = 500;			// ��һ����������˺��������
+	const int32 legion_name_size_min_limit = 2;
+	const int32 legion_name_size_max_limit = 12;
+	const int32 max_legion_count = 999;
+	const int32 db_legion_count = 100;
+	const int32 once_legion_list_get_num = 15;
+	const int32 max_legion_announcement_size = 400;
+	const int32 max_legion_announcement_content_size = 200;
+	const int32 max_legion_member_num = 250;
+	const int32 max_cross_legion_member_num = 50;
+	const int64	convenient_join_legion_cd = 10;
+	const int32 max_hurt_monster_player_num = 500;
 
-	const int32 max_legion_applicant_num = 50;				// �����б����Ա����������Ŀ�����ֵ
-	const int32 max_legion_event_num = 500;					// һ�������ܱ���ľ����¼��������Ŀ
-	const int32 once_legion_event_list_get_num = 10;		// ��ѯ�����¼��б�ÿ���ܹ���õ��¼���Ŀ����
-	const int32 max_once_legion_event_size = 256;			// �����¼����ַ�������
-	const int32 max_legion_boss_record_num = 20;			// ����BOSS�������Ŀ
+	const int32 max_legion_applicant_num = 50;
+	const int32 max_legion_event_num = 500;
+	const int32 once_legion_event_list_get_num = 10;
+	const int32 max_once_legion_event_size = 256;
+	const int32 max_legion_boss_record_num = 20;
 
-	const int32 first_legion_template_id = 38000001;		// ���ű����һ����Ŀ��ID
-	const int32 legion_shop_template_id = 34000017;			// �����̵��ģ�����ID
+	const int32 first_legion_template_id = 38000001;
+	const int32 legion_shop_template_id = 34000017;
 
-	const int32 city_master_wing_id = 31040044;				// �������ģ��ID
-	const int32 city_master_buff_id = 10130011;				// ����buff
-	const int32 city_master_title_id = 39000011;			// �����ƺ�
-	const int32 city_master_mount_id = 0;					// ��������
-	const int32 city_master_union_mount_id = 31030050;		// �������ڹ���
-	const int32 lord_legion_mem_mount_id = 0;				// ������Ա����
-	const int32 city_war_winner_title_id = 39000012;		// ������Աtitle
+	const int32 city_master_wing_id = 31040044;
+	const int32 city_master_buff_id = 10130011;
+	const int32 city_master_title_id = 39000011;
+	const int32 city_master_mount_id = 0;
+	const int32 city_master_union_mount_id = 31030050;
+	const int32 lord_legion_mem_mount_id = 0;
+	const int32 city_war_winner_title_id = 39000012;
 
-	const int32 city_war_cross_master_title_id = 39000043;			// ��������ƺ�
-	const int32 city_war_cross_winner_title_id = 39000044;			// ���������Ա�ƺ�
+	const int32 city_war_cross_master_title_id = 39000043;
+	const int32 city_war_cross_winner_title_id = 39000044;
 	
-	const int32 max_take_part_in_banquet_per_role = 10; // ÿ����ɫ�ܹ��μ���������������
+	const int32 max_take_part_in_banquet_per_role = 10;
 
-	const int32 max_apply_city_war_legion_num = 3;				// ������صĳ�ս���������
-	const int32 city_war_bid_base_price = 10000;				// ��ս�����������۸�
-	const int32 city_war_bid_add_price = 1000;					// ÿ�������ս����ļ۸�����
-	const int32 city_war_map_id = 71080001;						// ���ų�ս�ĵ�ͼID
-	const int32 max_glory_glow = std::numeric_limits<int32>::max() - 300000;		// ����֮�����ֵ
-	const int32 territory_occupier_price_flag = max_glory_glow + 1;	// ռ����
-	const int32 territory_occupier_bid_idx = 0;					// ռ���洢���ĸ�����
+	const int32 max_apply_city_war_legion_num = 3;
+	const int32 city_war_bid_base_price = 10000;
+	const int32 city_war_bid_add_price = 1000;
+	const int32 city_war_map_id = 71080001;
+	const int32 max_glory_glow = std::numeric_limits<int32>::max() - 300000;
+	const int32 territory_occupier_price_flag = max_glory_glow + 1;
+	const int32 territory_occupier_bid_idx = 0;
 	const int32 max_territory_num = 10;
 	const int32 max_territory_num_cross_server = 7;
 	const int32 min_territory_num_cross_server = 4;
 
 	const int32 all_territory_bid_info_num = (max_territory_num_cross_server + 1) * max_apply_city_war_legion_num;
-	const int32 overlord_war_territory_flag = 121000000;		// CityWarTerritoryTemplate���е�id
-	const int32 legion_construction_num = 4;		// ���Ž�������
-	const int32 max_legion_bonus_mission_num = 10;//�ֺ���������
-	const int32 cross_server_territory_war_flag = 121000005;		//������ս��ʼid
+	const int32 overlord_war_territory_flag = 121000000;
+	const int32 legion_construction_num = 4;
+	const int32 max_legion_bonus_mission_num = 10;
+	const int32 cross_server_territory_war_flag = 121000005;
 
-	const int32 first_legion_bonus_template_id = 132000000;											//��һ���ֺ�����ID
+	const int32 first_legion_bonus_template_id = 132000000;
 	const int32	legion_city_master_online_notice_id = 93000008;
-	const int32	new_legion_city_master_online_notice_id = 93000284;	//�°������߹���
-	const int32 new_begin_cross_city_war_notice_id = 93000285;//�³�ս��������
+	const int32	new_legion_city_master_online_notice_id = 93000284;
+	const int32 new_begin_cross_city_war_notice_id = 93000285;
 	const int32	legion_city_war_open_notice_id = 93000022;
 	const int32	legion_city_dance_open_notice_id = 93000023;
 	const int32 legion_send_overload_notice_id = 93000040;
@@ -84,117 +84,116 @@ namespace faith
 	const int32 legion_start_legion_boss_map_id = 71060000;
 	const int32 legion_donate_notice_id = 93000151;
 	const int32 legion_add_bonfire_successfull_notice_id = 93000201;
-	const int32 legion_get_bonus_reward_notice_id = 93000230;										//��þ��ŷֺ콱������
-	const int32 legion_stimulate_bonus_notice_id = 93000231;										//���ż����ֺ칫��
-	const int32 legion_member_change_name_notice_id = 93000255;										//���ų�Ա��������
-	const int32 legion_warehouse_store_notice_id = 93000264;                                        //���Ųֿ��������
-	const int32 legion_warehouse_get_notice_id = 93000265;                                          //���Ųֿ��ù���
-	const int32 legion_member_change_legion_name_notice_id = 93000276;								//��������������
+	const int32 legion_get_bonus_reward_notice_id = 93000230;
+	const int32 legion_stimulate_bonus_notice_id = 93000231;
+	const int32 legion_member_change_name_notice_id = 93000255;
+	const int32 legion_warehouse_store_notice_id = 93000264;
+	const int32 legion_warehouse_get_notice_id = 93000265;
+	const int32 legion_member_change_legion_name_notice_id = 93000276;
 	const int32	legion_cross_server_city_war_open_notice_id = 93000280;
 
-	const int32 legion_boss_cur_legion_notice_id = 93000421;										//����BOSS��ɱ��ǰ�����ڲ��˺�
-	const int32 legion_boss_all_legion_notice_id = 93000422;										//����BOSS��ɱ���о�������
+	const int32 legion_boss_cur_legion_notice_id = 93000421;
+	const int32 legion_boss_all_legion_notice_id = 93000422;
 
-	const int32 legion_init_announcement_str_id = 90095257;										 	// ����Ĭ�Ϲ���
-	const int32 legion_event_member_leave_str_model_id = 90095121;									// ��Ա�˳�
-	const int32 legion_event_member_join_str_model_id = 90095122;									// ��Ա����
-	const int32 legion_event_member_post_change_str_model_id = 90095123;							// ���ų�Աְ����
-	const int32 legion_event_donate_money_and_item_str_model_id = 90095124;							// ���˾��׽�һ�����Ʒ
-	const int32 legion_event_kill_boss_str_model_id = 90095125;										// ���˻�ɱ�˾���BOSS
-	const int32 legion_event_win_overlord_city_war_str_model_id = 90095128;							// �������ʤ��
-	const int32 legion_event_occupy_city_str_model_id = 90095129;									// ռ�����
-	const int32 legion_event_lose_city_by_war_str_model_id = 90095130;								// ��սʧ�ܶ�ʧ����
-	const int32 legion_event_lose_city_by_maintain_money_not_enough_str_model_id = 90095131;		// ά���ʽ��㶪ʧ����
-	const int32 legion_event_on_create_bonfire_str_model_id = 90095132;								// ���𴴽�
-	const int32 legion_event_legion_construction_level_up_str_model_id = 90095133;					// ���Ž�������
-	const int32 legion_event_donate_money_and_item_no_battle_achievement_str_model_id = 90095134;	// ���˾��׽�һ�����Ʒ,��ս��
-	const int32 legion_event_bid_win_str_model_id = 90095135;										// ����ɹ�
-	const int32 legion_event_bid_fail_str_model_id = 90095136;										// ����ʧ��
+	const int32 legion_init_announcement_str_id = 90095257;
+	const int32 legion_event_member_leave_str_model_id = 90095121;
+	const int32 legion_event_member_join_str_model_id = 90095122;
+	const int32 legion_event_member_post_change_str_model_id = 90095123;
+	const int32 legion_event_donate_money_and_item_str_model_id = 90095124;
+	const int32 legion_event_kill_boss_str_model_id = 90095125;
+	const int32 legion_event_win_overlord_city_war_str_model_id = 90095128;
+	const int32 legion_event_occupy_city_str_model_id = 90095129;
+	const int32 legion_event_lose_city_by_war_str_model_id = 90095130;
+	const int32 legion_event_lose_city_by_maintain_money_not_enough_str_model_id = 90095131;
+	const int32 legion_event_on_create_bonfire_str_model_id = 90095132;
+	const int32 legion_event_legion_construction_level_up_str_model_id = 90095133;
+	const int32 legion_event_donate_money_and_item_no_battle_achievement_str_model_id = 90095134;
+	const int32 legion_event_bid_win_str_model_id = 90095135;
+	const int32 legion_event_bid_fail_str_model_id = 90095136;
 	const int32 legion_main_construction_name_id = 90090132;
 
-	const int32 first_legion_skill_id = 128000001;													//��һ�����ż���ID
-	const int32 finally_legion_skill_id = 128000010;												//���һ�����ż���ID
+	const int32 first_legion_skill_id = 128000001;
+	const int32 finally_legion_skill_id = 128000010;
 
-	const int32 legion_member_change_name_event_id = 90096117;										//�����ڳ�Ա�����¼�id
+	const int32 legion_member_change_name_event_id = 90096117;
 	
-	const int32 first_legion_answer_template_id = 144000001;										//���Ŵ������ñ���ʼid
-	const int32 inform_series_right_nums = 10;														//������ȷ���ⷢ������Ҫ������
-	const int32 inform_all_right_nums = 14;														    //�ܹ���ȷ���ⷢ������Ҫ������
-	const int32 first_right_question_notice_id = 93000256;											//��һ��ȷ���⹫��id
-	const int32 series_right_question_notice_id = 93000257;											//������ȷ���⹫��id
-	const int32 all_right_question_notice_id = 93000258;											//�ܹ���ȷ���⹫��id
-	const int32 prepare_legion_answer_notice_id = 93000259;											//׼����ʼ���⹫��id
-	const int32 start_legion_answer_notice_id = 93000262;											//��ʼ���⹫��id
+	const int32 first_legion_answer_template_id = 144000001;
+	const int32 inform_series_right_nums = 10;
+	const int32 inform_all_right_nums = 14;
+	const int32 first_right_question_notice_id = 93000256;
+	const int32 series_right_question_notice_id = 93000257;
+	const int32 all_right_question_notice_id = 93000258;
+	const int32 prepare_legion_answer_notice_id = 93000259;
+	const int32 start_legion_answer_notice_id = 93000262;
 
-	const int32	first_answer_true_notice_id = 93000400;												//����ɹ��ľ��Ź���id
-	const int32 answer_failure_notice_id = 93000401;												//���Ŵ���ʧ�ܵĹ���id
-	const int32 play_answer_num_notice_id = 93000402;												//����ڱ��λ�����������ָ�������Ĺ���id
-	const int32 legion_answer_end_notice_id = 93000403;												//���ξ��Ŵ�������Ĺ���
-	const int32 all_legion_answer_end_one_play_notice_id = 93000404;								//ȫ�����Ŵ�������Ĺ���һ�������ϰ�
-	const int32 all_legion_answer_end_two_play_notice_id = 93000405;								//ȫ�����Ŵ�������Ĺ�����������ϰ�
-	const int32 all_legion_answer_end_three_play_notice_id = 93000406;								//ȫ�����Ŵ�������Ĺ������������ϰ�
+	const int32	first_answer_true_notice_id = 93000400;
+	const int32 answer_failure_notice_id = 93000401;
+	const int32 play_answer_num_notice_id = 93000402;
+	const int32 legion_answer_end_notice_id = 93000403;
+	const int32 all_legion_answer_end_one_play_notice_id = 93000404;
+	const int32 all_legion_answer_end_two_play_notice_id = 93000405;
+	const int32 all_legion_answer_end_three_play_notice_id = 93000406;
 
-	const int32 max_legion_warehouse_info = 100;                                                    //���Ųֿ���Ʒ���������
-	const int32 max_legion_warehouse_log = 20;                                                      //������־���������
-	const int32 calculate_legion_average_lv_need_member_num = 20;									//�������ƽ���ȼ������Ա��Ŀ
+	const int32 max_legion_warehouse_info = 100;
+	const int32 max_legion_warehouse_log = 20;
+	const int32 calculate_legion_average_lv_need_member_num = 20;
 
-	const int32 max_cross_server_all_city_num = 15;													//�������ս�ܾ�����
-	const int32 max_cross_server_one_group_city_num = 3;											//һ�����ս������
-	const int32 max_cross_server_city_group_num = 5;												//�������ս����
+	const int32 max_cross_server_all_city_num = 15;
+	const int32 max_cross_server_one_group_city_num = 3;
+	const int32 max_cross_server_city_group_num = 5;
 
-	const int32 cross_server_territory_city_max = 7;												//�����ս�ǳ�������
-	const int32 cross_server_legion_call_operate_params_max = 5;									//�����ս�ټ������������
-	const int32 cross_server_territory_city_max_params = 11;										//�����ս�������ϢΪ���б������õĳ�ս��Ϣ���ڿͻ��������˴���		
+	const int32 cross_server_territory_city_max = 7;
+	const int32 cross_server_legion_call_operate_params_max = 5;
+	const int32 cross_server_territory_city_max_params = 11;
 
 	const int32 cross_server_territory_city_bid_info_max = cross_server_territory_city_max * max_apply_city_war_legion_num;
 
-	const int32 cross_server_player_legion_save_time = 180;											//�����Ҿ��Ż����¼Sec
-	const int32 max_legion_answer_num = 14;															//���Ŵ����������
-	const int32 rank_show_num = 3;																	//���Ŵ��������ʾ����
+	const int32 cross_server_player_legion_save_time = 180;
+	const int32 max_legion_answer_num = 14;
+	const int32 rank_show_num = 3;
 
-	const int32 overload_city_war_reward_first_temp_id = 155000001;									// ����ս������ID
-	const int32 max_overload_city_war = 15;															// ����ս���������
+	const int32 overload_city_war_reward_first_temp_id = 155000001;
+	const int32 max_overload_city_war = 15;
 
-	const int32 legion_welfare_activity_award_notice_id = 93000425;									// ���Ÿ����������������
-	const int32 legion_welfare_kill_boss_notice_id = 93000426;										// ���Ÿ�����ɱboss��������
-	const int32 legion_welfare_grant_num = 1;														// ���Ÿ���ÿ�˷�������
+	const int32 legion_welfare_activity_award_notice_id = 93000425;
+	const int32 legion_welfare_kill_boss_notice_id = 93000426;
+	const int32 legion_welfare_grant_num = 1;
 
-	const int32 legion_strategy_world_boss_num = 3;                                                 //���Ź�������boss����  
+	const int32 legion_strategy_world_boss_num = 3;
 
 	enum e_del_overlord_stuff_event
 	{
 		e_del_overlord_stuff_event_none,
-		e_del_overlord_stuff_event_all_legion,		//ɾ���������� �������� �ͳ�Ա�� ����
-		e_del_overlord_stuff_event_all_member,		//���г�Ա
-		e_del_overlord_stuff_event_only_master,		//ֻ�г���
-		e_del_overlord_stuff_event_only_one_member,	//ֻ��һ����Ա
+		e_del_overlord_stuff_event_all_legion,
+		e_del_overlord_stuff_event_all_member,
+		e_del_overlord_stuff_event_only_master,
+		e_del_overlord_stuff_event_only_one_member,
 		e_del_overlord_stuff_event_max,
 
 	};
 
 
-	// �������ļ���,�ٰ첻ͬ����������Ҫ��ͬ�Ĳ�εĻ���,�õ�������Ҳ��ͬ
 	enum e_banquet_level
 	{
-		e_banquet_level_ordinary,		// ��ͨ�����
-		e_banquet_level_hearty,			// ��ʢ�����
-		e_banquet_level_luxury,			// ���������
+		e_banquet_level_ordinary,
+		e_banquet_level_hearty,
+		e_banquet_level_luxury,
 		e_banquet_level_max
 	};
 
 	enum e_overload_notice_type
 	{
-		e_overload_notice_type_legion_begin,//�������ŵĿ�ʼ����
-		e_overload_notice_type_world_begin,//��������Ŀ�ʼ����
-		e_overload_notice_type_cross_city_war_begin_world,//��������淢������
-		e_overload_notice_type_cross_city_war_begin_legion,//��������淢������
+		e_overload_notice_type_legion_begin,
+		e_overload_notice_type_world_begin,
+		e_overload_notice_type_cross_city_war_begin_world,
+		e_overload_notice_type_cross_city_war_begin_legion,
 		e_overload_notice_type_max
 	};
 
 	enum e_overload_city_war_type
 	{
-		e_overload_city_war_type_team_ready,//�����ѷֺ���״̬
-		e_overload_city_war_type_start_city_war,//���ڿ�ʼ״̬
+		e_overload_city_war_type_team_ready,
+		e_overload_city_war_type_start_city_war,
 	};
 
 	enum e_city_war_interact_npc
@@ -208,22 +207,22 @@ namespace faith
 
 	enum ELegionInfo
 	{
-		ELegionInfo_construction_level_main,	// �����������ȼ�
-		ELegionInfo_construction_level_1,		// ���Ÿ�����1�ȼ�
-		ELegionInfo_construction_level_2,		// ���Ÿ�����2�ȼ�
-		ELegionInfo_construction_level_3,		// ���Ÿ�����3�ȼ�
-		ELegionInfo_asset_money,				// ���ŲƲ�--�ʽ�
-		ELegionInfo_asset_item_1,				// ���ŲƲ�--��Ʒ1
-		ELegionInfo_asset_item_2,				// ���ŲƲ�--��Ʒ2
-		ELegionInfo_asset_item_3,				// ���ŲƲ�--��Ʒ3
-		ELegionInfo_asset_item_4,				// ���ŲƲ�--��Ʒ4
-		ELegionInfo_fighting_power,             // ����ս����
-		ELegionInfo_auto_accept_new_member,     // �Ƿ��Զ�������������
-		ELegionInfo_last_refresh_time,			// �ϴ�ÿ�ܸ��µ�ʱ��
-		ELegionInfo_glory_glow,					// ��ҫ֮��
-		ELegionInfo_act_score_raid,				// ���Ÿ����÷�
-		ELegionInfo_act_score_bonfire,			// ����÷�
-		ELegionInfo_legion_welfare_num,			// ���ܾ��Ÿ�����������
+		ELegionInfo_construction_level_main,
+		ELegionInfo_construction_level_1,
+		ELegionInfo_construction_level_2,
+		ELegionInfo_construction_level_3,
+		ELegionInfo_asset_money,
+		ELegionInfo_asset_item_1,
+		ELegionInfo_asset_item_2,
+		ELegionInfo_asset_item_3,
+		ELegionInfo_asset_item_4,
+		ELegionInfo_fighting_power,
+		ELegionInfo_auto_accept_new_member,
+		ELegionInfo_last_refresh_time,
+		ELegionInfo_glory_glow,
+		ELegionInfo_act_score_raid,
+		ELegionInfo_act_score_bonfire,
+		ELegionInfo_legion_welfare_num,
 		ELegionInfo_max
 	};
 	
@@ -253,22 +252,22 @@ namespace faith
 
 	enum e_legion_job_title
 	{
-		e_legion_job_title_none,             // ��ְλ
-		e_legion_job_title_commander,        // ָ�ӹ�
-		e_legion_job_title_assistant_chief,  // �����ų�
-		e_legion_job_title_chief,            // ���ų�
+		e_legion_job_title_none,
+		e_legion_job_title_commander,
+		e_legion_job_title_assistant_chief,
+		e_legion_job_title_chief,
 		e_legion_job_title_max
 	};
 
 	enum e_legion_log_type
 	{
-		e_legion_log_type_create,			// ��������
-		e_legion_log_type_del,				// ɾ������
-		e_legion_log_type_join,				// �������
-		e_legion_log_type_leave,			// �뿪����
-		e_legion_log_type_change_name,		// �ľ�����
-		e_legion_log_type_announcement,		// �޸Ĺ���
-		e_legion_log_type_appoint,			// ����ְλ
+		e_legion_log_type_create,
+		e_legion_log_type_del,
+		e_legion_log_type_join,
+		e_legion_log_type_leave,
+		e_legion_log_type_change_name,
+		e_legion_log_type_announcement,
+		e_legion_log_type_appoint,
 		e_legion_log_type_max
 	};
 
@@ -397,7 +396,6 @@ namespace faith
 		xchar					city_master_name[max_name_size + 1];
 	};
 
-	// ����������ų�Ա�ķ���
 	struct legion_member_score
 	{
 		guid_64	legion_guid;
@@ -431,11 +429,11 @@ namespace faith
 
 	struct s_legion_answer_info
 	{
-		int32					answer_successfully_num;						//���δ���ɹ�������
-		guid_64					play_guid[max_legion_answer_num];				//������¼���λ����ɹ������
-		bool					is_answer;										//�Ƿ�����ɹ���
-		guid_64					the_answer_play_guid[max_legion_member_num];	//�������лش�ɹ�������б�
-		int32					the_answer_play_num;							//�ش�ɹ���ҵ�����
+		int32					answer_successfully_num;
+		guid_64					play_guid[max_legion_answer_num];
+		bool					is_answer;
+		guid_64					the_answer_play_guid[max_legion_member_num];
+		int32					the_answer_play_num;
 		s_legion_answer_info()
 		{
 			clear_data();
@@ -450,7 +448,7 @@ namespace faith
 			memset(legion_name, 0, sizeof(legion_name));
 			memcpy(legion_name, role_name.c_str(), role_name.size() > sizeof(legion_name) ? sizeof(legion_name) : role_name.size());
 		}*/
-		int32 get_play_answer_num(guid_64 role_guid)		//��������������Ĵ���
+		int32 get_play_answer_num(guid_64 role_guid)
 		{
 			int32 num = 0;
 			for (int32 i = 0; i < max_legion_answer_num; ++i)
@@ -462,7 +460,7 @@ namespace faith
 			}
 			return num;
 		}
-		guid_64 get_max_num_play()	//�����������������id
+		guid_64 get_max_num_play()
 		{
 			guid_64 role_guid;
 			int32 num = 0;
@@ -480,11 +478,11 @@ namespace faith
 
 	enum e_legion_apply_stage
 	{
-		e_legion_apply_stage_send_failed,	// �������뷢��ʧ��
-		e_legion_apply_stage_send_success,	// �������뷢�ͳɹ�
-		e_legion_apply_stage_is_accepted,	// �Է���������������
-		e_legion_apply_stage_is_refused,	// �Է��ܾ�����������
-		e_legion_apply_stage_auto_accepted,	// �Է��Զ������³�Ա
+		e_legion_apply_stage_send_failed,
+		e_legion_apply_stage_send_success,
+		e_legion_apply_stage_is_accepted,
+		e_legion_apply_stage_is_refused,
+		e_legion_apply_stage_auto_accepted,
 		e_legion_apply_stage_max
 	};
 
@@ -528,21 +526,18 @@ namespace faith
 		}
 	};
 
-	// �����¼�������
 	enum e_legion_event_type
 	{
 		e_legion_event_type_none,
-		e_legion_event_type_legion_create,								// ��������
-		e_legion_event_type_member_join,								// ��Ա����
-		e_legion_event_type_member_leave,								// ��Ա�˳�
-		e_legion_event_type_donate_money,								// ���˾��׽�Ǯ
-		e_legion_event_type_donate_item,								// ���˾�����Ʒ
-		e_legion_event_type_kill_boss,									// ���˻�ɱ�˾���BOSS
+		e_legion_event_type_legion_create,
+		e_legion_event_type_member_join,
+		e_legion_event_type_member_leave,
+		e_legion_event_type_donate_money,
+		e_legion_event_type_donate_item,
+		e_legion_event_type_kill_boss,
 		e_legion_event_type_max
 	};
 
-	// �����¼���Я���Ķ�������,���ֱ�ӱ��������¼����ַ������ݿ��Լ�С�洢�������ݰ���С.
-	// ÿ���������ݸ���s_legion_event_type��ֵ�Ĳ�ͬ���в�ͬ������,��һ�����еĶ������ݶ��ᱻ�õ�
 	enum e_legion_event_extra_data
 	{
 		e_legion_event_extra_data_0,
@@ -577,9 +572,9 @@ namespace faith
 
 	enum ELegionBossRecord
 	{
-		ELegionBossRecord_template_id,	// ��Ӧ�ľ��Ż�ĸ�����ͼģ��ID
-		ELegionBossRecord_unlock,		// ��Ӧ��BOSS���ͼ�Ƿ����
-		ELegionBossRecord_killed,		// ��Ӧ�ľ���BOSS�Ƿ��Ѿ�����ɱ
+		ELegionBossRecord_template_id,
+		ELegionBossRecord_unlock,
+		ELegionBossRecord_killed,
 		ELegionBossRecord_max
 	};
 
@@ -611,20 +606,18 @@ namespace faith
 		}
 	};
 
-	// ���������˳�ս��������ز�����ö��,��ռ��ݵ�Ͳɼ�ˮ��
 	enum e_city_war_operate_type
 	{
 		e_city_war_operate_type_none,
-		e_city_war_operate_type_occupy_stronghold,		// ռ��ݵ�
-		e_city_war_operate_type_interrupt_occupy,		// �ж�ռ��
-		e_city_war_operate_type_finish_occupy,			// ���ռ��
-		e_city_war_operate_type_gather_crystal,			// �ɼ�ˮ��
-		e_city_war_operate_type_interrupt_gather,		// �жϲɼ�
-		e_city_war_operate_type_finish_gather,			// ��ɲɼ�
+		e_city_war_operate_type_occupy_stronghold,
+		e_city_war_operate_type_interrupt_occupy,
+		e_city_war_operate_type_finish_occupy,
+		e_city_war_operate_type_gather_crystal,
+		e_city_war_operate_type_interrupt_gather,
+		e_city_war_operate_type_finish_gather,
 		e_city_war_operate_type_max
 	};
 	
-	// ����������ŵķ���
 	struct s_city_war_legion_score
 	{
 		guid_64	legion_guid;
@@ -678,11 +671,11 @@ namespace faith
 
 	struct s_city_war_bid_info
 	{
-		int32	territory_id;		//�������id
+		int32	territory_id;
 		int32	index_in_terr;
 		guid_64	legion_guid;
-		int32	cur_bid_price;		//ռ���ֵΪterritory_occupier_price_flag
-		int32	is_prior_maintain;	//ռ����Ƿ�����ά��
+		int32	cur_bid_price;
+		int32	is_prior_maintain;
 		int32   occupy_time_stamp;
 		int32	server_id;
 		xchar	legion_name[max_name_size + 1];
@@ -719,12 +712,12 @@ namespace faith
 	};
 	struct s_cross_server_city_war_bid_info
 	{
-		int32   serverid;			//������ID
-		int32	territory_id;		//�������id
+		int32   serverid;
+		int32	territory_id;
 		int32	index_in_terr;
 		guid_64	legion_guid;
-		int32	cur_bid_price;		//ռ���ֵΪterritory_occupier_price_flag
-		int32	is_prior_maintain;	//ռ����Ƿ�����ά��
+		int32	cur_bid_price;
+		int32	is_prior_maintain;
 		int32   occupy_time_stamp;
 
 		s_cross_server_city_war_bid_info()
@@ -758,7 +751,6 @@ namespace faith
 // 	{
 // 		int32				bid_id;
 // 		s_city_war_bid_info	bid_info;
-// 
 // 		s_city_war_bid_info_db()
 // 		{
 // 			bid_id = 0;
@@ -769,7 +761,7 @@ namespace faith
 	{
 		int32				territory_id;
 		//guid_64			occupier_legion_guid;
-		guid_64				city_war_map_guid; //map��Чʱ˵���������� ����ս������������������Ҫ���¿���
+		guid_64				city_war_map_guid;
 		uint32				city_war_finish_stamp;
 		s_city_war_bid_info	bid_legions[max_apply_city_war_legion_num];
 
@@ -865,7 +857,7 @@ namespace faith
 		}
 		bool operator < (const s_city_war_legion_rank_info& info) const
 		{
-			return !(*this > info); //��ƾ�������=
+			return !(*this > info);
 		}
 	};
 	typedef std::list<s_city_war_legion_rank_info> city_war_rank_type;
@@ -889,7 +881,6 @@ namespace faith
 	typedef std::map<guid_64, legion_mem_gg_info_list> legion_add_gg_info;
 
 
-	// ����cs�ϴ洢��Ҿ��ż�Ҫ��Ϣ�Ľṹ
 	struct s_player_legion_info
 	{
 		guid_64				legion_guid;
@@ -964,7 +955,6 @@ namespace faith
 		}
 	};
 
-	// ���ڿ���ϴ洢��Ҿ��ż�Ҫ��Ϣ�Ľṹ
 	struct s_cross_player_legion_info
 	{
 		s_player_legion_info	legion_info;
@@ -1044,94 +1034,93 @@ namespace faith
 
 	enum e_legion_construction_level_up_error
 	{
-		e_legion_construction_level_up_error_none,							// û����
-		e_legion_construction_level_up_error_job_title_not_enough,			// ְλ����
-		e_legion_construction_level_up_error_invalid_index,					// ������������ȷ
-		e_legion_construction_level_up_error_sub_constr_level_not_enough,	// ���������Ž������Ǹ����Ž����ȼ�����
-		e_legion_construction_level_up_error_sub_constr_level_too_high,		// ���������Ž������Ǹý����ȼ������������Ž���
-		e_legion_construction_level_up_error_table_data_error,				// ������ش���
-		e_legion_construction_level_up_error_money_not_enough,				// ��������ľ����ʽ���
-		e_legion_construction_level_up_error_item_not_enougn,				// �����������Ʒ����
-		e_legion_construction_level_up_error_already_top_level,				// �����Ѿ��ﵽ��ߵȼ�
+		e_legion_construction_level_up_error_none,
+		e_legion_construction_level_up_error_job_title_not_enough,
+		e_legion_construction_level_up_error_invalid_index,
+		e_legion_construction_level_up_error_sub_constr_level_not_enough,
+		e_legion_construction_level_up_error_sub_constr_level_too_high,
+		e_legion_construction_level_up_error_table_data_error,
+		e_legion_construction_level_up_error_money_not_enough,
+		e_legion_construction_level_up_error_item_not_enougn,
+		e_legion_construction_level_up_error_already_top_level,
 		e_legion_construction_level_up_error_max
 	};
 
 	enum e_legion_error
 	{
 		e_legion_error_none,
-		e_legion_error_template_error,								// ����ģ�����
-		e_legion_error_member_full,									// ������Ա����
-		e_legion_error_applicant_list_full,							// ���ŵ����������б�����
-		e_legion_error_applicant_already_exist,						// �Ѿ�����ŷ��͹�һ����������
-		e_legion_error_player_added_not_online,						// Ҫ���ӵĳ�Ա��ǰ������
-		e_legion_error_player_added_is_legion_member,				// Ҫ���ӵĳ�Ա�Ѿ��ǵ�ǰ���ŵĳ�Ա
-		e_legion_error_player_added_is_already_join_other_legion,	// Ҫ���ӵĳ�Ա�Ѿ������˱�ľ���
-		e_legion_error_used_all_take_part_in_banquet_times,			// ���еĲμ����Ĵ����Ѿ�����
-		e_legion_error_banquet_already_over,						// ����Ѿ�����
-		e_legion_error_no_city_war_qualification,					// û�г�ս�ʸ�
-		e_legion_error_city_war_not_begin,							// ��ս��û�п�ʼ
-		e_legion_error_can_not_dissolve_during_city_war,			// ��ս�ڼ䲻�ܽ�ɢ����(���Բ�ս������Ч)
-		e_legion_error_can_not_leave_legion_during_city_war,		// ��ս�ڼ䲻���˳�����(���Բ�ս������Ч)
-		e_legion_error_error_legion_name_illegal,					// ���������к��зǷ��ַ�
-		e_legion_error_can_not_dissolve_during_banquet,				// �������ٰ��ڼ䲻�ܽ�ɢ����
-		e_legion_error_can_not_kickout_member_during_city_war,		// ��ս�ڼ䲻���߳���Ա(���Բ�ս������Ч)
-		e_legion_error_repeat_legion_name,							// �ظ��ľ�����
-		e_legion_error_full_legion_num,								// ���������Ѵﵽ��������,�޷��ٴ�������
-		e_legion_error_create_legion_invalid_role_state,			// ��ɫ��ǰ��״̬���ܴ�������
-		e_legion_error_create_legion_no_enough_level,				// ��ɫ�ȼ����㲻�ܴ�������
-		e_legion_error_create_legion_no_enough_money,				// ��ɫ��Ǯ���㲻�ܴ�������
-		e_legion_error_invalid_banquet_type,						// ������������
-		e_legion_error_can_cur_time_error,							// ��ȡ��ǰʱ��ʱ��������
-		e_legion_error_can_not_hold_banquet_in_legion_war_day,		// �����ھ��ų�ս�ľٰ�������ٰ����
-		e_legion_error_invalid_hold_banquet_time,					// ��ǰʱ�䲻�ٰܾ����
-		e_legion_error_request_hold_banquet_again,					// �Ѿ����������ľٰ�
-		e_legion_error_already_occupy_stronghold,					// �Ѿ�ռ���˸þݵ�
-		e_legion_error_already_get_occupation_daily_award,			// �Ѿ���ȡ�˵��յ�����ռ�콱��
-		e_legion_error_next_day_get_occupation_daily_award,			// ��ȡ��������ռ�콱����������
-		e_legion_error_city_war_gather_crystal_field_not_open,		// ��սˮ���ɼ�����δ����
-		e_legion_error_stronghold_occupied_by_others,				// ��ս�ݵ��Ѿ�����������ռ��(��������Լ��Ĳ���)
-		e_legion_error_crystal_gathered_by_others,					// ��սˮ���Ѿ����������Ųɼ�(��������Լ��Ĳ���)
-		e_legion_error_job_title_num_max,							// Ҫί�е�ְλ�Ѵﵽ����
-		e_legion_error_player_joined_other_legion,					// ����Ѿ���������������
-		e_legion_error_is_in_legion_answer_time,					// �ھ��Ŵ���ʱ���ڲ�������������
+		e_legion_error_template_error,
+		e_legion_error_member_full,
+		e_legion_error_applicant_list_full,
+		e_legion_error_applicant_already_exist,
+		e_legion_error_player_added_not_online,
+		e_legion_error_player_added_is_legion_member,
+		e_legion_error_player_added_is_already_join_other_legion,
+		e_legion_error_used_all_take_part_in_banquet_times,
+		e_legion_error_banquet_already_over,
+		e_legion_error_no_city_war_qualification,
+		e_legion_error_city_war_not_begin,
+		e_legion_error_can_not_dissolve_during_city_war,
+		e_legion_error_can_not_leave_legion_during_city_war,
+		e_legion_error_error_legion_name_illegal,
+		e_legion_error_can_not_dissolve_during_banquet,
+		e_legion_error_can_not_kickout_member_during_city_war,
+		e_legion_error_repeat_legion_name,
+		e_legion_error_full_legion_num,
+		e_legion_error_create_legion_invalid_role_state,
+		e_legion_error_create_legion_no_enough_level,
+		e_legion_error_create_legion_no_enough_money,
+		e_legion_error_invalid_banquet_type,
+		e_legion_error_can_cur_time_error,
+		e_legion_error_can_not_hold_banquet_in_legion_war_day,
+		e_legion_error_invalid_hold_banquet_time,
+		e_legion_error_request_hold_banquet_again,
+		e_legion_error_already_occupy_stronghold,
+		e_legion_error_already_get_occupation_daily_award,
+		e_legion_error_next_day_get_occupation_daily_award,
+		e_legion_error_city_war_gather_crystal_field_not_open,
+		e_legion_error_stronghold_occupied_by_others,
+		e_legion_error_crystal_gathered_by_others,
+		e_legion_error_job_title_num_max,
+		e_legion_error_player_joined_other_legion,
+		e_legion_error_is_in_legion_answer_time,
 		e_legion_error_max
 	};
 
 	enum e_legion_warehouse_error
 	{
 		e_legion_warehouse_error_none,
-		e_legion_unknown_error,                                    //δ֪����
-		e_legion_cross_server_error,                               //���״̬�������洢
-		e_legion_not_in_legion_error,                              //û�о���
-		e_legion_not_has_item_error,                               //��װ��������
-		e_legion_warehouse_is_full,                                //�ֿ���������
-		e_legion_warehouse_item_type_error,                        //Ҫ�洢��װ�� ���ͱ��������������
-		e_legion_warehouse_item_equip_quality_error,               //Ҫ�洢��װ�� ��������ɫ����
-		e_legion_warehouse_item_equip_equip_on_error,              //Ҫ�洢��װ�� �Ѿ���
-		e_legion_warehouse_equip_bag_id_full,                      //װ���������� ���ܻ�ȡ����
-		e_legion_warehouse_score_not_enough,                       //���Ųֿ���ֲ���
-		e_legion_warehouse_lack_of_authority,                      //Ȩ�޲��� �������ٵ���
-		e_legion_warehouse_none_item_by_destroy,                   //û�е��߿ɱ�����
-		e_legion_warehouse_item_tempelete_none,                    //��Ʒ������û�����øõ���
+		e_legion_unknown_error,
+		e_legion_cross_server_error,
+		e_legion_not_in_legion_error,
+		e_legion_not_has_item_error,
+		e_legion_warehouse_is_full,
+		e_legion_warehouse_item_type_error,
+		e_legion_warehouse_item_equip_quality_error,
+		e_legion_warehouse_item_equip_equip_on_error,
+		e_legion_warehouse_equip_bag_id_full,
+		e_legion_warehouse_score_not_enough,
+		e_legion_warehouse_lack_of_authority,
+		e_legion_warehouse_none_item_by_destroy,
+		e_legion_warehouse_item_tempelete_none,
 		e_legion_warehouse_max
 	};
 
 	enum e_legion_daily_rwd_flag
 	{
-		// 0��29����սԤ����
 		e_legion_daily_rwd_flag_daily_everyone = 30,
 		e_legion_daily_rwd_flag_bonfire,
 	};
 
 	enum e_legion_gm_order
 	{
-		e_legion_gm_order_money,//�����ʽ�
-		e_legion_gm_order_achievement,//ս��
-		e_legion_gm_order_emblem,//����֮�ռ�
-		e_legion_gm_order_item1,//����
-		e_legion_gm_order_item2,//��ͭ
-		e_legion_gm_order_item3,//�׽�
-		e_legion_gm_order_item4,//����
+		e_legion_gm_order_money,
+		e_legion_gm_order_achievement,
+		e_legion_gm_order_emblem,
+		e_legion_gm_order_item1,
+		e_legion_gm_order_item2,
+		e_legion_gm_order_item3,
+		e_legion_gm_order_item4,
 		e_legion_gm_order_max
 	};
 
@@ -1148,28 +1137,28 @@ namespace faith
 
 	enum e_legion_act_type
 	{
-		e_legion_act_type_raid,				// ���Ÿ���
-		e_legion_act_type_bonfire,			// ����
-		e_legion_act_type_cross_boss,		// �������boss
+		e_legion_act_type_raid,
+		e_legion_act_type_bonfire,
+		e_legion_act_type_cross_boss,
 		e_legion_act_type_max,
 	};
 
 	enum e_legion_rank_type
 	{
-		e_legion_rank_type_fighting_power,	// ����ս��
-		e_legion_rank_type_city_war,		// ��ս
-		e_legion_rank_type_world_elite,		// ���羫Ӣ
-		e_legion_rank_type_world_boss,		// ����boss
-		e_legion_rank_type_raid,			// ���Ÿ���
-		e_legion_rank_type_bonfire,			// ����
-		e_legion_rank_type_cross_world_boss,// �������boss
+		e_legion_rank_type_fighting_power,
+		e_legion_rank_type_city_war,
+		e_legion_rank_type_world_elite,
+		e_legion_rank_type_world_boss,
+		e_legion_rank_type_raid,
+		e_legion_rank_type_bonfire,
+		e_legion_rank_type_cross_world_boss,
 		e_legion_rank_type_max,
 	};
 	enum e_legion_warehouse_operation_type
 	{
-		e_legion_warehouse_operation_store,    //����
-		e_legion_warehouse_operation_out,      //ȡ��
-		e_legion_warehouse_operation_destroy,  //���ٵ���
+		e_legion_warehouse_operation_store,
+		e_legion_warehouse_operation_out,
+		e_legion_warehouse_operation_destroy,
 	};
 	
 	struct s_legion_member_attend_activity
@@ -1213,7 +1202,7 @@ namespace faith
 	struct s_legion_bonus_info
 	{
 		guid_64	legion_guid;		
-		int32	mission_id;		//����id
+		int32	mission_id;
 		int32	finish_count;
 
 		s_legion_bonus_info()
@@ -1312,28 +1301,28 @@ namespace faith
 
 	enum e_legion_name_error
 	{
-		e_legion_name_error_change_name_succeed, //���ľ������ɹ�
-		e_legion_name_error_not_chief,			//��Ҳ��Ǿ��ų�
-		e_legion_name_error_formal_error,		//�����������
-		e_legion_name_error_repetition,			//�������ظ�
-		e_legion_name_error_contains_illegal_characters,	//����������Υ���ַ�
-		e_legion_name_error_cross_server,		//���״̬�²������޸�
-		e_legion_name_error_available,			//���������Ը���
-		e_legion_name_error_player_not_legion,	//���û�о���
-		e_legion_name_error_item_not_enough,    //���Ÿ�������������		
+		e_legion_name_error_change_name_succeed,
+		e_legion_name_error_not_chief,
+		e_legion_name_error_formal_error,
+		e_legion_name_error_repetition,
+		e_legion_name_error_contains_illegal_characters,
+		e_legion_name_error_cross_server,
+		e_legion_name_error_available,
+		e_legion_name_error_player_not_legion,
+		e_legion_name_error_item_not_enough,
 	};
 
 	enum e_change_cross_city_type
 	{
-		e_change_cross_city_type_change_chief,//�ľ��ų�
-		e_change_cross_city_type_change_legion_name,//�ľ�����
-		e_change_cross_city_type_del_legion,//��ɢ����
+		e_change_cross_city_type_change_chief,
+		e_change_cross_city_type_change_legion_name,
+		e_change_cross_city_type_del_legion,
 	};
 	
 	enum e_legion_use_contribution_type
 	{
-		e_legion_use_contribution_type_city_war,		//��ս����
-		e_legion_use_contribution_type_legion_welfare,	//���Ÿ���
+		e_legion_use_contribution_type_city_war,
+		e_legion_use_contribution_type_legion_welfare,
 	};
 
 	struct s_cross_db_city_info

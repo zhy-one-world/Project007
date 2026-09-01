@@ -26,13 +26,13 @@ void drop_system::gen_drop_id_list(int32 drop_id, std::vector<s_item_template_in
 	if (curstep > 10)
 	{
 		CONSOLE_ERROR("curstep > 10 drop_id:{}", drop_id);
-		return; //Ç¿ÖÆ±£»¤,ÒòÎªµôÂä°ü¿ÉÒÔÌ×µôÂä°ü,Ìî´íÁË¾Í»áµİ¹é°üº¬,×îÖÕµ¼ÖÂËÀÑ­»·,ËùÒÔµ÷ÓÃÉî¶È³¬¹ı10,ÔòÇ¿ÖÆ·µ»Ø;
+		return; //å¼ºåˆ¶ä¿æŠ¤,å› ä¸ºæ‰è½åŒ…å¯ä»¥å¥—æ‰è½åŒ…,å¡«é”™äº†å°±ä¼šé€’å½’åŒ…å«,æœ€ç»ˆå¯¼è‡´æ­»å¾ªç¯,æ‰€ä»¥è°ƒç”¨æ·±åº¦è¶…è¿‡10,åˆ™å¼ºåˆ¶è¿”å›;
 	}
 
 	if (drop_list.size() > 100)
 	{
 		CONSOLE_ERROR("drop_id:{} is nullprt", drop_id);
-		return;//Ò»¸ö°üµôÂäÁË³¬¹ı100¸öÎïÆ·? Ç¿ÖÆÍË³ö,ºÜ¿ÉÄÜÊÇ³öÎÊÌâÁË;
+		return;//ä¸€ä¸ªåŒ…æ‰è½äº†è¶…è¿‡100ä¸ªç‰©å“? å¼ºåˆ¶é€€å‡º,å¾ˆå¯èƒ½æ˜¯å‡ºé—®é¢˜äº†;
 	}
 
 	bool rand_ret = rand_trigger(drop_weight, DROP_MAX_WEIGHT);
@@ -49,7 +49,7 @@ void drop_system::gen_drop_id_list(int32 drop_id, std::vector<s_item_template_in
 	}
 
 	int32 size_id = line_ptr->IDs.size();
-	int32 drop_type = line_ptr->DropType; //0ÎªÖğ¸öµôÂä£¬¿ÉÄÜµôÂä¶à¸öÎïÆ·£¬Ã¿¸öÎïÆ·µÄµôÂä¸ÅÂÊ=È¨ÖØ/1000000 1Îª¹éÒ»µôÂä£¬Ô²×ÀÀíÂÛ£¬×î¶àÖ»»áµôÂäÒ»¸öÎïÆ·£¬ËùÓĞid×ÜÈ¨ÖØĞ¡ÓÚ1000000Ê±£¬¿ÉÄÜ³öÏÖ²»µôÂäÎïÆ·µÄÇé¿ö
+	int32 drop_type = line_ptr->DropType; //0ä¸ºé€ä¸ªæ‰è½ï¼Œå¯èƒ½æ‰è½å¤šä¸ªç‰©å“ï¼Œæ¯ä¸ªç‰©å“çš„æ‰è½æ¦‚ç‡=æƒé‡/1000000 1ä¸ºå½’ä¸€æ‰è½ï¼Œåœ†æ¡Œç†è®ºï¼Œæœ€å¤šåªä¼šæ‰è½ä¸€ä¸ªç‰©å“ï¼Œæ‰€æœ‰idæ€»æƒé‡å°äº1000000æ—¶ï¼Œå¯èƒ½å‡ºç°ä¸æ‰è½ç‰©å“çš„æƒ…å†µ
 	int32 size_idtype = line_ptr->IDTypes.size();
 	int32 size_count = line_ptr->Counts.size();
 	int32 size_bound = line_ptr->Bounds.size();
@@ -59,10 +59,10 @@ void drop_system::gen_drop_id_list(int32 drop_id, std::vector<s_item_template_in
 	if (false == size_equ)
 	{
 		CONSOLE_ERROR("size_equ is error drop_id:{} size_id:{} size_idtype:{} size_count:{} size_bound:{} size_weight:{}", drop_id, size_id, size_idtype, size_count, size_bound, size_weight);
-		return;//±íÌî´íÁË,ÁĞµÄÊıÁ¿¶Ô²»ÉÏ
+		return;//è¡¨å¡«é”™äº†,åˆ—çš„æ•°é‡å¯¹ä¸ä¸Š
 	}
 
-	//ĞÂµôÂäÂß¼­
+	//æ–°æ‰è½é€»è¾‘
 	switch (drop_type)
 	{
 	case e_dropbox_ran_type_all:
@@ -112,7 +112,7 @@ void drop_system::sub_drop_rand_all(int32 drop_id, std::vector<s_item_template_i
 	if (false == size_equ)
 	{
 		CONSOLE_ERROR("size_equ is error drop_id:{} size_id:{} size_idtype:{} size_count:{} size_bound:{} size_weight:{}", drop_id, size_id, size_idtype, size_count, size_bound, size_weight);
-		return;//±íÌî´íÁË,ÁĞµÄÊıÁ¿¶Ô²»ÉÏ
+		return;//è¡¨å¡«é”™äº†,åˆ—çš„æ•°é‡å¯¹ä¸ä¸Š
 	}
 
 	for (int32 i = 0; i < size_id; i++)
@@ -141,21 +141,21 @@ void drop_system::sub_drop_rand_all(int32 drop_id, std::vector<s_item_template_i
 		}
 
 
-		if (0 == temp_id) //ÎïÆ·ID²»¿ÉÄÜÊÇ0
+		if (0 == temp_id) //ç‰©å“IDä¸å¯èƒ½æ˜¯0
 		{
 			CONSOLE_ERROR("size_equ is error drop_id:{} size_id:{} i:{}", drop_id, size_id, i);
 			continue;
 		}
 
-		if (e_dropbox_typ_drop_box == temp_type)//µôÂäºĞÀïµÄÎïÆ·ÊÇÁíÒ»¸öµôÂäºĞ£¬ÔÙËæ»úÒ»±é¡­¡­
+		if (e_dropbox_typ_drop_box == temp_type)//æ‰è½ç›’é‡Œçš„ç‰©å“æ˜¯å¦ä¸€ä¸ªæ‰è½ç›’ï¼Œå†éšæœºä¸€éâ€¦â€¦
 		{
 			for (int32 ii = 0; ii < temp_count; ii++)
 			{
 				gen_drop_id_list(temp_id, drop_list, temp_weight, curstep);
-				//´ËÊ±»¹²»È·¶¨Õâ¸ö°üµô²»µô£¬ËùÒÔÒª´«ÕæÊµÈ¨ÖØ×öÅĞ¶Ï
+				//æ­¤æ—¶è¿˜ä¸ç¡®å®šè¿™ä¸ªåŒ…æ‰ä¸æ‰ï¼Œæ‰€ä»¥è¦ä¼ çœŸå®æƒé‡åšåˆ¤æ–­
 			}
 		}
-		else if(e_dropbox_typ_item == temp_type )//µôÂäºĞÀïÊÇÎïÆ·£¬¾Í¼ÓÈëµôÂäÁĞ±í
+		else if(e_dropbox_typ_item == temp_type )//æ‰è½ç›’é‡Œæ˜¯ç‰©å“ï¼Œå°±åŠ å…¥æ‰è½åˆ—è¡¨
 		{
 		    bool rand_temp = rand_trigger(temp_weight, DROP_MAX_WEIGHT);
 			//bool rand_temp = rand_trigger(temp_weight, temp_weight+1);
@@ -167,7 +167,7 @@ void drop_system::sub_drop_rand_all(int32 drop_id, std::vector<s_item_template_i
 		        }
 		    }
 		}
-		else if (e_dropbox_typ_money == temp_type)//µôÂäºĞÀïÊÇÎïÆ·£¬¾Í¼ÓÈëµôÂäÁĞ±í
+		else if (e_dropbox_typ_money == temp_type)//æ‰è½ç›’é‡Œæ˜¯ç‰©å“ï¼Œå°±åŠ å…¥æ‰è½åˆ—è¡¨
 		{
 			bool rand_temp = rand_trigger(temp_weight, DROP_MAX_WEIGHT);
 			if (true == rand_temp)
@@ -178,7 +178,7 @@ void drop_system::sub_drop_rand_all(int32 drop_id, std::vector<s_item_template_i
 		else 
 		{
 			CONSOLE_ERROR("size_equ is error drop_id:{} size_id:{} i:{} temp_type:{}", drop_id, size_id, i, temp_type);
-		    continue; //·Ç·¨Öµ, ¼ÌĞøÏÂÒ»ÎïÆ·~
+		    continue; //éæ³•å€¼, ç»§ç»­ä¸‹ä¸€ç‰©å“~
 		}
 	}
 
@@ -204,7 +204,7 @@ void drop_system::add_item_id_to_drop_list(int32 item_template_id, std::vector<s
 			}
 			else
 			{
-				//µ±Ç°itemµÄÎ»ÖÃ¶ÑÂúÁË£¬»¹Òª¿´Ö®ºóµÄÎïÆ·£¬ÓĞÃ»ÓĞ¿ÕÓàµÄ¶ÑµşÊı
+				//å½“å‰itemçš„ä½ç½®å †æ»¡äº†ï¼Œè¿˜è¦çœ‹ä¹‹åçš„ç‰©å“ï¼Œæœ‰æ²¡æœ‰ç©ºä½™çš„å †å æ•°
 			}
 		}
 	}
@@ -230,7 +230,7 @@ void drop_system::sub_drop_rand_one(int32 drop_id, std::vector<s_item_template_i
 	if (false == size_equ)
 	{
 		CONSOLE_ERROR("size_equ is error drop_id:{} size_id:{} size_idtype:{} size_count:{} size_bound:{} size_weight:{}", drop_id, size_id, size_idtype, size_count, size_bound, size_weight);
-		return;//±íÌî´íÁË,ÁĞµÄÊıÁ¿¶Ô²»ÉÏ
+		return;//è¡¨å¡«é”™äº†,åˆ—çš„æ•°é‡å¯¹ä¸ä¸Š
 	}
 
 	int32 choosed_item_index = -1;
@@ -245,8 +245,8 @@ void drop_system::sub_drop_rand_one(int32 drop_id, std::vector<s_item_template_i
 		total_weight = DROP_MAX_WEIGHT;
 	}
 
-	//È·¶¨Ëæµ½µÚ¼¸¸ö
-	//´ËÊ±µÄËæ»úÉÏÏŞÒÑ¾­×ö¹ı´¦Àí£¬ÔÚÊµ¼Ê×ÜÈ¨ÖØÖµ²»×ã¡°DROP_MAX_WEIGHT¡±Ê±£¬ÒÑ¾­½«ÆäÉèÖÃÎª¡°DROP_MAX_WEIGHT¡±£¬ËùÒÔ¿ÉÄÜ³öÏÖËæ²»µ½µÄÇé¿ö
+	//ç¡®å®šéšåˆ°ç¬¬å‡ ä¸ª
+	//æ­¤æ—¶çš„éšæœºä¸Šé™å·²ç»åšè¿‡å¤„ç†ï¼Œåœ¨å®é™…æ€»æƒé‡å€¼ä¸è¶³â€œDROP_MAX_WEIGHTâ€æ—¶ï¼Œå·²ç»å°†å…¶è®¾ç½®ä¸ºâ€œDROP_MAX_WEIGHTâ€ï¼Œæ‰€ä»¥å¯èƒ½å‡ºç°éšä¸åˆ°çš„æƒ…å†µ
 	int32 random_value = random_gen::get_random(0, total_weight);
 	int32 cur_weight = 0;
 	for (int32 i = 0; i < size_weight; i++)
@@ -261,7 +261,7 @@ void drop_system::sub_drop_rand_one(int32 drop_id, std::vector<s_item_template_i
 
 	if (choosed_item_index < 0)
 	{
-		//Ã»Ëæµ½£¬É¶¶¼²»¸É
+		//æ²¡éšåˆ°ï¼Œå•¥éƒ½ä¸å¹²
 		CONSOLE_INFO("random empty item. drop_id:{}, choosed_item_index:{}, total_weight:{} random_value:{} cur_weight:{}", drop_id, choosed_item_index, total_weight, random_value, cur_weight);
 		return;
 	}
@@ -269,25 +269,25 @@ void drop_system::sub_drop_rand_one(int32 drop_id, std::vector<s_item_template_i
 	if (choosed_item_index >= size_id)
 	{
 		CONSOLE_ERROR("size_equ is error drop_id:{} choosed_item_index:{} size_id:{}", drop_id, choosed_item_index, size_id);
-		return;//Ëæµ½µÄÎïÆ·ÏÂ±êÔ½½çÁË
+		return;//éšåˆ°çš„ç‰©å“ä¸‹æ ‡è¶Šç•Œäº†
 	}
 
 	int32 cur_id_typ = line_ptr->IDTypes[choosed_item_index];
 	if (cur_id_typ == e_dropbox_typ_non)
 	{
 		CONSOLE_ERROR("size_equ is error drop_id:{} choosed_item_index:{}  cur_id_typ:{} ", drop_id, choosed_item_index, cur_id_typ);
-		return;//0¿ÉÄÜ¾ÍÊÇ±íÓĞÎÊÌâ¡­¡­
+		return;//0å¯èƒ½å°±æ˜¯è¡¨æœ‰é—®é¢˜â€¦â€¦
 	}
 
 	int32 real_get_id = line_ptr->IDs[choosed_item_index];
 	int32 item_lock_state = line_ptr->Bounds[choosed_item_index];
-	if (real_get_id == 0)//ÎïÆ·ID²»¿ÉÄÜÊÇ0
+	if (real_get_id == 0)//ç‰©å“IDä¸å¯èƒ½æ˜¯0
 	{
 		CONSOLE_ERROR("real_get_id is error drop_id:{} choosed_item_index:{} real_get_id:{} ", drop_id, choosed_item_index, real_get_id);
 		return;
 	}
 
-	//È·ÈÏÉú³É¼¸¸öÎïÆ·
+	//ç¡®è®¤ç”Ÿæˆå‡ ä¸ªç‰©å“
 	int32 total_item_num = 0;
 	int32 temp_count1 = line_ptr->Counts[2 * choosed_item_index];
 	int32 temp_count2 = line_ptr->Counts[2 * choosed_item_index + 1];
@@ -306,22 +306,22 @@ void drop_system::sub_drop_rand_one(int32 drop_id, std::vector<s_item_template_i
 		total_item_num = random_gen::get_random(temp_count2, temp_count1);
 	}
 
-	if (e_dropbox_typ_drop_box == cur_id_typ)//µôÂäºĞÀïµÄÎïÆ·ÊÇÁíÒ»¸öµôÂäºĞ£¬ÔÙËæ»úÒ»±é¡­¡­
+	if (e_dropbox_typ_drop_box == cur_id_typ)//æ‰è½ç›’é‡Œçš„ç‰©å“æ˜¯å¦ä¸€ä¸ªæ‰è½ç›’ï¼Œå†éšæœºä¸€éâ€¦â€¦
 	{
 		for (int32 cur_item_num = 0; cur_item_num < total_item_num; cur_item_num++)
 		{
 			gen_drop_id_list(real_get_id, drop_list, DROP_MAX_WEIGHT, curstep);
 		}
-		//ÒòÎª´ËÊ±ÒÑ¾­È·ÈÏ¸ÃÎïÆ·°ü±ØÈ»µôÂä£¬ËùÒÔµİ¹éÊ±Ö±½Ó´«ÈëÂúÈ¨ÖØ
+		//å› ä¸ºæ­¤æ—¶å·²ç»ç¡®è®¤è¯¥ç‰©å“åŒ…å¿…ç„¶æ‰è½ï¼Œæ‰€ä»¥é€’å½’æ—¶ç›´æ¥ä¼ å…¥æ»¡æƒé‡
 	}
-	else if (e_dropbox_typ_item == cur_id_typ)//µôÂäºĞÀïÊÇÎïÆ·£¬¾Í¼ÓÈëµôÂäÁĞ±í
+	else if (e_dropbox_typ_item == cur_id_typ)//æ‰è½ç›’é‡Œæ˜¯ç‰©å“ï¼Œå°±åŠ å…¥æ‰è½åˆ—è¡¨
 	{
 		for (int32 cur_item_num = 0; cur_item_num < total_item_num; cur_item_num++)
 		{
 			drop_list.push_back({ real_get_id, 1, item_lock_state });
 		}
 	}
-	else if (e_dropbox_typ_money == cur_id_typ)//µôÂäºĞÀïÊÇÎïÆ·£¬¾Í¼ÓÈëµôÂäÁĞ±í
+	else if (e_dropbox_typ_money == cur_id_typ)//æ‰è½ç›’é‡Œæ˜¯ç‰©å“ï¼Œå°±åŠ å…¥æ‰è½åˆ—è¡¨
 	{
 		drop_list.push_back({ real_get_id, total_item_num });
 	}

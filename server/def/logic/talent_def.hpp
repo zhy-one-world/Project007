@@ -12,8 +12,8 @@ author: zhy
 namespace faith
 {
 #pragma pack(push,1)
-	const int32 TALENT_NUM_MAX = 200;//总共多少天赋
-	const int32 TALENT_ID_LOW = 100;//需求的id < 100 层级 >100 talent_list_template_id
+	const int32 TALENT_NUM_MAX = 200;//鎬诲叡澶氬皯澶╄祴
+	const int32 TALENT_ID_LOW = 100;//闇�姹傜殑id < 100 灞傜骇 >100 talent_list_template_id
 	const int32 talent_kinds_num = 5;
 	const int32 talent_layers_num = 10;
 	const int32 role_talent_list_base_id = 25000001;
@@ -57,7 +57,7 @@ namespace faith
 	//define the inst data struct
 	struct s_talent_info
 	{
-		int32						data_ary[e_talent_info_max];				//天赋实例数据
+		int32						data_ary[e_talent_info_max];				//澶╄祴瀹炰緥鏁版嵁
 		s_talent_info()
 		{
 			clear_data();

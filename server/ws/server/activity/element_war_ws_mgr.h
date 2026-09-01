@@ -1,9 +1,9 @@
 /***********************************************
-* created	: 2020Äê8ÔÂ18ÈÕ
+* created	: 2020å¹´8æœˆ18æ—¥
 * file base : element_war_ws_mgr
 * file ext  : h
-* author    : ÕÔÓñÃ÷
-* purpose   : ÔªËØÕù°Ô
+* author    : èµµç‰æ˜
+* purpose   : å…ƒç´ äº‰éœ¸
 ************************************************/
 
 #ifndef _ELEMENT_WAR_WS_MGR_H_
@@ -68,7 +68,7 @@ namespace faith
 		void	update_info_to_dp();
 		void	refresh_season_info();
 
-		std::vector<int32>	get_robot_array();	//»ñÈ¡»úÆ÷ÈËÄ£°åÊı×é
+		std::vector<int32>	get_robot_array();	//è·å–æœºå™¨äººæ¨¡æ¿æ•°ç»„
 
 		void	save_mission_info();
 	
@@ -83,8 +83,8 @@ namespace faith
 		bool	get_is_send_tip() { return m_is_send_tip; }
 		void	send_math_tip();
 	private:
-		s_element_war_role_info		m_role_info;	//»ù±¾ĞÅÏ¢
-		e_element_war_role_state	m_role_state;	//×´Ì¬
+		s_element_war_role_info		m_role_info;	//åŸºæœ¬ä¿¡æ¯
+		e_element_war_role_state	m_role_state;	//çŠ¶æ€
 
 		guid_64						m_team_guid;
 
@@ -97,8 +97,8 @@ namespace faith
 	};
 
 
-	using element_war_sign_up_list = std::list<c_element_war_role_info*>;						//¶ÎÎ»Æ¥ÅäÁĞ±í
-	using element_war_all_sign_up_map = std::unordered_map<int32, element_war_sign_up_list>;	//È«²¿Æ¥ÅäÁĞ±í
+	using element_war_sign_up_list = std::list<c_element_war_role_info*>;						//æ®µä½åŒ¹é…åˆ—è¡¨
+	using element_war_all_sign_up_map = std::unordered_map<int32, element_war_sign_up_list>;	//å…¨éƒ¨åŒ¹é…åˆ—è¡¨
 
 	class element_war_ws_mgr
 	{
@@ -125,161 +125,161 @@ namespace faith
 		int64	transfer_date_to_stamp(int64 date);
 	public:
 		/*****************************************************************/
-		/*							Í¨ÓÃ¹¦ÄÜ						 */
+		/*							é€šç”¨åŠŸèƒ½						 */
 		/*****************************************************************/
-		//¸ù¾İĞÅÏ¢»ñÈ¡¶ÎÎ»
+		//æ ¹æ®ä¿¡æ¯è·å–æ®µä½
 		int32	get_segment_value(const c_element_war_role_info& info);
-		//»ñÈ¡¿É¹ºÂò´ÎÊı
+		//è·å–å¯è´­ä¹°æ¬¡æ•°
 		int32	get_can_buy_num(int32 vip_level);
-		//¿ªÆôÈü¼¾
+		//å¼€å¯èµ›å­£
 		void	begin_one_season(int32 cur_season_num);
-		//½áÊøÈü¼¾
+		//ç»“æŸèµ›å­£
 		void	end_one_season();
-		//Ë¢ĞÂÃ¿ÈÕĞÅÏ¢
+		//åˆ·æ–°æ¯æ—¥ä¿¡æ¯
 		void	refresh_daily_ticket_info();
-		//·¢ËÍ»î¶¯¿ªÆô¹«¸æ
+		//å‘é€æ´»åŠ¨å¼€å¯å…¬å‘Š
 		void	send_activity_begin_notice();
-		//»ñÈ¡Ô­Çø´«ËÍĞÅÏ¢
+		//è·å–åŸåŒºä¼ é€ä¿¡æ¯
 		bool	get_transfer_game_info(const guid_64& role_guid, const int32& server_id, s_game_info& game_info);
-		//GmÔö¼Ó´ÎÊı±¾·ş
+		//Gmå¢åŠ æ¬¡æ•°æœ¬æœ
 		void	gm_send_add_ticket(guid_64 role_guid);
-		//GmÔö¼Ó´ÎÊıGate·ş
+		//Gmå¢åŠ æ¬¡æ•°Gateæœ
 		void	gm_add_ticket(guid_64 role_guid);
 	private:
-		int32												m_config_match_server_id;				//Æ¥Åä·şÎñÆ÷Id
-		int32												m_cur_season;							//µ±Ç°Èü¼¾
-		int32												m_send_notify_flag;						//»î¶¯¿ªÆô¹«¸æ
-		int64												m_activity_timer;						//ÉÏ´ÎË¢ĞÂÊ±¼ä
-		int64												m_sec_timer;							//´«ËÍÊ±¼ä´Á
-		bool												m_refresh_flag;							//Ã¿ÈÕË¢ĞÂ
-		std::vector<s_element_war_activity_time>			m_activity_time_vec;					//Èü¼¾Ê±¼äÁĞ±í
-		std::unordered_map<int64, s_game_info>				m_transfer_info_map;					//´«ËÍÁĞ±í
-		std::unordered_map<int64, s_game_info>				m_role_server_info_map;					//½ÇÉ«Ô­·şÎñÆ÷´«ËÍĞÅÏ¢
+		int32												m_config_match_server_id;				//åŒ¹é…æœåŠ¡å™¨Id
+		int32												m_cur_season;							//å½“å‰èµ›å­£
+		int32												m_send_notify_flag;						//æ´»åŠ¨å¼€å¯å…¬å‘Š
+		int64												m_activity_timer;						//ä¸Šæ¬¡åˆ·æ–°æ—¶é—´
+		int64												m_sec_timer;							//ä¼ é€æ—¶é—´æˆ³
+		bool												m_refresh_flag;							//æ¯æ—¥åˆ·æ–°
+		std::vector<s_element_war_activity_time>			m_activity_time_vec;					//èµ›å­£æ—¶é—´åˆ—è¡¨
+		std::unordered_map<int64, s_game_info>				m_transfer_info_map;					//ä¼ é€åˆ—è¡¨
+		std::unordered_map<int64, s_game_info>				m_role_server_info_map;					//è§’è‰²åŸæœåŠ¡å™¨ä¼ é€ä¿¡æ¯
 
 		/*****************************************************************/
-		/*							Æ¥Åä·şws¹¦ÄÜ						 */
+		/*							åŒ¹é…æœwsåŠŸèƒ½						 */
 		/*****************************************************************/
 	public:
-		//Æ¥Åäº¯Êı
+		//åŒ¹é…å‡½æ•°
 		void	match(int64 time_new);			
-		//Æ¥Åä³É¹¦
+		//åŒ¹é…æˆåŠŸ
 		void	match_success(std::vector<guid_64> first_team_list, std::vector<guid_64> secord_team_list);
-		//Æ¥Åä»úÆ÷ÈË
+		//åŒ¹é…æœºå™¨äºº
 		bool	match_with_robot(c_element_war_role_info* play_role_info, std::vector<guid_64> first_team_list, std::vector<guid_64> secord_team_list);
-		//¼ÆËãÆ¥ÅäÇø¼ä
+		//è®¡ç®—åŒ¹é…åŒºé—´
 		void	get_expend_range(const c_element_war_role_info& info, int64 time_new, int32 expend_time, int32& upper_limit, int32& lower_limit);
-		//½øĞĞµ¥ÈËÆ¥Åä
+		//è¿›è¡Œå•äººåŒ¹é…
 		e_element_war_sign_up_ret	single_sign_up(guid_64 role_guid);
-		//½øĞĞ¶àÈËÈËÆ¥Åä
+		//è¿›è¡Œå¤šäººäººåŒ¹é…
 		e_element_war_sign_up_ret	team_sign_up(std::vector<guid_64> role_guid_list, guid_64 team_guid, guid_64& error_guid);
-		//È¡ÏûÆ¥Åä
+		//å–æ¶ˆåŒ¹é…
 		void	sign_up_leave(guid_64 role_guid);
-		//·¢ËÍÆ¥ÅäÊ§°ÜĞÅÏ¢
+		//å‘é€åŒ¹é…å¤±è´¥ä¿¡æ¯
 		void	send_sign_up_result(const guid_64& role_guid, e_element_war_sign_up_ret result_type, int32 server_id);
-		//»ñÈ¡¿ÉÆ¥ÅäÅÅÃûÊı×é
+		//è·å–å¯åŒ¹é…æ’åæ•°ç»„
 		void	get_valid_role_list(const c_element_war_role_info& info, int64 time_new, std::vector<guid_64>& first_role_guid_array, std::vector<guid_64>& second_role_guid_array);
-		//´ÓÆ¥ÅäÁĞ±íÖĞÇå³ıÍæ¼Ò
+		//ä»åŒ¹é…åˆ—è¡¨ä¸­æ¸…é™¤ç©å®¶
 		void	erase_match_by_list(std::vector<guid_64>& role_guid_array);
-		//´ÓÊı¾İ¿âÖĞ¶ÁÈ¡Íæ¼Ò
+		//ä»æ•°æ®åº“ä¸­è¯»å–ç©å®¶
 		void	add_element_war_info(const s_element_war_role_info& info);
-		//µÇÂ½Í¬²½Íæ¼ÒÊı¾İ
+		//ç™»é™†åŒæ­¥ç©å®¶æ•°æ®
 		void	req_element_war_info(const guid_64& role_guid, const ws2ws_element_war_req_role_info* msg);
-		//´ÓÊı¾İ¿âÀ­È¡Íæ¼ÒĞÅÏ¢
+		//ä»æ•°æ®åº“æ‹‰å–ç©å®¶ä¿¡æ¯
 		void	load_info_from_db();
-		//ÉèÖÃÊÇ·ñ¼ÓÔØÍê³É
+		//è®¾ç½®æ˜¯å¦åŠ è½½å®Œæˆ
 		void	set_is_load_all(bool is_load);
-		//ÉèÖÃ·şÎñÆ÷ĞÅÏ¢
+		//è®¾ç½®æœåŠ¡å™¨ä¿¡æ¯
 		void	set_role_server_info(const guid_64& role_guid, const xstring& server_ip, int32 server_port);
-		//ÖØÖÃ½ÇÉ«×´Ì¬
+		//é‡ç½®è§’è‰²çŠ¶æ€
 		void	reset_role_state(const guid_64& role_guid);
-		//·¢ËÍ½ÇÉ«ĞÅÏ¢µ½¿Í»§¶Ë
+		//å‘é€è§’è‰²ä¿¡æ¯åˆ°å®¢æˆ·ç«¯
 		void	send_element_war_info(c_element_war_role_info& info, bool is_online = false);
-		//·¢ËÍÈü¼¾½±Àø
+		//å‘é€èµ›å­£å¥–åŠ±
 		void	send_season_reward_to_player(const guid_64& role_guid);
-		//·¢ËÍ¶ÎÎ»ÌáÉı½±Àø(ĞÂÈü¼¾¿ªÊ¼Ê±)
+		//å‘é€æ®µä½æå‡å¥–åŠ±(æ–°èµ›å­£å¼€å§‹æ—¶)
 		void    send_season_upreward_to_player(const guid_64& role_guid);
-		//»ñÈ¡Ã¿ÈÕÈÎÎñ
+		//è·å–æ¯æ—¥ä»»åŠ¡
 		std::vector<int32>	get_mission_list();
-		//ÓÎÏ·½áÊø½áËã
+		//æ¸¸æˆç»“æŸç»“ç®—
 		void	map_game_end(const cs2ws_element_war_map_game_end_role_info* end_info);
-		//¼ì²éÊÇ·ñ¿ÉÒÔÁìÈ¡ÈÎÎñ½±Àø 
+		//æ£€æŸ¥æ˜¯å¦å¯ä»¥é¢†å–ä»»åŠ¡å¥–åŠ± 
 		void	check_can_get_mission_reward(const guid_64& role_guid, int32 mission_index);
-		//·¢ËÍÅÅÃû½±Àø
+		//å‘é€æ’åå¥–åŠ±
 		void	send_season_ranking_reward_to_player(const guid_64& role_guid, int32 server_id);
-		//¹ºÂò´ÎÊı³É¹¦Ôö¼Ó´ÎÊı
+		//è´­ä¹°æ¬¡æ•°æˆåŠŸå¢åŠ æ¬¡æ•°
 		void	buy_ticket_num(guid_64 role_guid);
-		//»ñÈ¡Èü¼¾ĞÅÏ¢
+		//è·å–èµ›å­£ä¿¡æ¯
 		void	req_element_ladder_last_score(const guid_64& role_guid, int32 server_id);
 	private:
-		std::unordered_map<ui64, c_element_war_role_info>		m_all_player_info;				//ËùÓĞÍæ¼ÒÁĞ±í
-		element_war_all_sign_up_map								m_all_sign_up_map;				//Æ¥ÅäÁĞ±í
+		std::unordered_map<ui64, c_element_war_role_info>		m_all_player_info;				//æ‰€æœ‰ç©å®¶åˆ—è¡¨
+		element_war_all_sign_up_map								m_all_sign_up_map;				//åŒ¹é…åˆ—è¡¨
 
-		int32													m_config_match_time_limit;		//Æ¥ÅäÊ±¼äÏŞÖÆ
-		int32													m_config_transfer_time;			//´«ËÍÊ±¼äÑÓ³Ù
-		bool													m_is_load_all;					//ÊÇ·ñ¼ÓÔØÍê½ÇÉ«Êı¾İ
+		int32													m_config_match_time_limit;		//åŒ¹é…æ—¶é—´é™åˆ¶
+		int32													m_config_transfer_time;			//ä¼ é€æ—¶é—´å»¶è¿Ÿ
+		bool													m_is_load_all;					//æ˜¯å¦åŠ è½½å®Œè§’è‰²æ•°æ®
 
-		int32													m_config_daily_ticket_num;		//Ã¿ÈÕ´ÎÊı
-		int32													m_get_reward_need_num;			//ÁìÈ¡½±ÀøĞèÒª´ÎÊı
-		bool													m_is_in_activity_time;			//ÊÇ·ñÔÚ»î¶¯Ê±¼ä
+		int32													m_config_daily_ticket_num;		//æ¯æ—¥æ¬¡æ•°
+		int32													m_get_reward_need_num;			//é¢†å–å¥–åŠ±éœ€è¦æ¬¡æ•°
+		bool													m_is_in_activity_time;			//æ˜¯å¦åœ¨æ´»åŠ¨æ—¶é—´
 		/*****************************************************************/
-		/*							±ÈÈüÇøws¹¦ÄÜ						 */
+		/*							æ¯”èµ›åŒºwsåŠŸèƒ½						 */
 		/*****************************************************************/
 	public:
-		//´´½¨Õ½¶·µØÍ¼
+		//åˆ›å»ºæˆ˜æ–—åœ°å›¾
 		void	deal_with_create_map_msg(s_element_war_match_info& match_info);
-		//·¢ËÍ´´½¨µØÍ¼³É¹¦
+		//å‘é€åˆ›å»ºåœ°å›¾æˆåŠŸ
 		void	send_match_success_msg(guid_64 map_id, int32 war_index, const s_element_war_match_info& opponent_info);
-		//´´½¨»úÆ÷ÈË
+		//åˆ›å»ºæœºå™¨äºº
 		void	create_robot_init_map(guid_64 map_guid, s_element_war_match_info & match_info);
 
 	private:
-		std::unordered_map<int64, s_element_war_match_info>		m_war_map_list;					//Õ½¶·µØÍ¼ÁĞ±í
+		std::unordered_map<int64, s_element_war_match_info>		m_war_map_list;					//æˆ˜æ–—åœ°å›¾åˆ—è¡¨
 
 		/*****************************************************************/
-		/*							½ÇÉ«Ô­Çøws¹¦ÄÜ						 */
+		/*							è§’è‰²åŸåŒºwsåŠŸèƒ½						 */
 		/*****************************************************************/
 	public:
-		//Íæ¼ÒµÇÂ½´¦Àí
+		//ç©å®¶ç™»é™†å¤„ç†
 		void	session_online(client_session* session);
-		//·¢ËÍ»ñÈ¡Íæ¼ÒĞÅÏ¢
+		//å‘é€è·å–ç©å®¶ä¿¡æ¯
 		bool	send_req_element_war_role_info(client_session* session, bool is_online = false);
-		//·¢ËÍÈü¼¾ÌáÊ¾
+		//å‘é€èµ›å­£æç¤º
 		void	send_upgrade_notify(client_session* session);
-		//¼ì²éÊÇ·ñ¿ÉÒÔ½øĞĞÆ¥Åä
+		//æ£€æŸ¥æ˜¯å¦å¯ä»¥è¿›è¡ŒåŒ¹é…
 		e_element_war_sign_up_ret	check_can_sign_up(client_session* session);
-		//·¢ËÍ¶àÈËÆ¥Åä×¼±¸
+		//å‘é€å¤šäººåŒ¹é…å‡†å¤‡
 		void	send_team_ready_end(guid_64 team_guid);
-		//¶àÈËÆ¥ÅäÂß¼­
+		//å¤šäººåŒ¹é…é€»è¾‘
 		void	send_team_sign_up(client_session* session);
-		//µ¥ÈËÆ¥ÅäÂß¼­
+		//å•äººåŒ¹é…é€»è¾‘
 		void	send_single_sign_up(client_session* session);
-		//È¡ÏûÆ¥ÅäÂß¼­
+		//å–æ¶ˆåŒ¹é…é€»è¾‘
 		void	send_close_sign_up(client_session* session);
-		//´«ËÍÍæ¼Ò
+		//ä¼ é€ç©å®¶
 		void	transfer_player(int64 time_new);
-		//Õ½¶·µØÍ¼´´½¨³É¹¦´¦Àí
+		//æˆ˜æ–—åœ°å›¾åˆ›å»ºæˆåŠŸå¤„ç†
 		void	deal_with_match_success_msg(const guid_64& role_guid, const ws2ws_element_war_send_match_success* msg);
-		//¶ÏÏßÖØÁ¬
+		//æ–­çº¿é‡è¿
 		void	add_break_line_player(s_break_line_login_info break_info);
-		//¼ì²éÀëÏßÍæ¼Ò
+		//æ£€æŸ¥ç¦»çº¿ç©å®¶
 		void	check_break_line_player();
-		//É¾³ıÍæ¼Ò´ÓÀëÏßÁĞ±í
+		//åˆ é™¤ç©å®¶ä»ç¦»çº¿åˆ—è¡¨
 		void	del_break_line_player(guid_64 role_guid);
-		//·¢ËÍ¶ÏÏßÖØÁ¬ÏûÏ¢			
+		//å‘é€æ–­çº¿é‡è¿æ¶ˆæ¯			
 		void	send_break_line_msg(guid_64 role_guid, int32 map_template_id);
-		//½øĞĞÖØÁ¬
+		//è¿›è¡Œé‡è¿
 		void	break_line_login_msg(guid_64 role_guid, bool is_login);
-		//»ñÈ¡ÖØÁ¬ĞÅÏ¢
+		//è·å–é‡è¿ä¿¡æ¯
 		s_break_line_login_info		get_player_break_login_info(guid_64 role_guid);
-		//±ÈÈü½á¹ûµÄ±¾·ş´¦Àí
+		//æ¯”èµ›ç»“æœçš„æœ¬æœå¤„ç†
 		void	deal_with_pk_result_msg(const guid_64& role_guid, const ws2ws_element_war_sync_game_result* msg);
-		//»ñÈ¡ÈÎÎñ½±Àø
+		//è·å–ä»»åŠ¡å¥–åŠ±
 		void	get_mission_reward(guid_64 role_guid, int32 mission_idex);
 	private:
-		std::list<s_element_war_transfer_info>					m_transfer_list;				//ÑÓÊ±´«ËÍÁĞ±í
-		std::unordered_map<int64, int32>						m_notify_map;					//¶ÎÎ»ÌáÉıÌáÊ¾
-		int32													m_config_level_limit;			//»î¶¯ÏŞÖÆµÈ¼¶
-		std::vector<s_break_line_login_info>					m_break_line_login_list;		//¶ÏÏßÖØÁ¬ÁĞ±í
+		std::list<s_element_war_transfer_info>					m_transfer_list;				//å»¶æ—¶ä¼ é€åˆ—è¡¨
+		std::unordered_map<int64, int32>						m_notify_map;					//æ®µä½æå‡æç¤º
+		int32													m_config_level_limit;			//æ´»åŠ¨é™åˆ¶ç­‰çº§
+		std::vector<s_break_line_login_info>					m_break_line_login_list;		//æ–­çº¿é‡è¿åˆ—è¡¨
 
 					
 	};

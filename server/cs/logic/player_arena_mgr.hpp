@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê8ÔÂ23ÈÕ14:56:28
+created: 2016å¹´8æœˆ23æ—¥14:56:28
 file base: player_arena_mgr
 file ext: hpp
 author: zhangminghai
@@ -22,7 +22,7 @@ namespace faith
 		player_arena_mgr() { m_unit_index = 0; clear_data(); };
 		~player_arena_mgr() {};
 	public:
-		void							heart_tick(const int64& new_time);//ÓÃÓÚ·¢ËÍÌôÕ½ÀäÈ´
+		void							heart_tick(const int64& new_time);//ç”¨äºå‘é€æŒ‘æˆ˜å†·å´
 
 		void							set_player_ptr(int32& unit_index);
 
@@ -35,7 +35,7 @@ namespace faith
 
 		void							get_arena_rank_end(int32 arena_rank, int32 is_request);
 
-		//ÇëÇóÌôÕ½
+		//è¯·æ±‚æŒ‘æˆ˜
 		void							req_challenge(const guid_64& target_role_guid, bool is_cost_money, int32 target_cur_pos, int32 self_cur_pos);
 
 		void							do_challenge(guid_64 target_role_guid, int32 robot_id, int32 req_result
@@ -46,12 +46,12 @@ namespace faith
 
 		void							add_challeng_log(const guid_64& challenge_role_guid, const guid_64& target_role_guid, bool initiative, int32 end_result,int32 role_rank, int32 target_rank);
 
-		//ÇëÇó»ñÈ¡ÌôÕ½¼ÇÂ¼
+		//è¯·æ±‚è·å–æŒ‘æˆ˜è®°å½•
 		void							get_challenge_logs();
 
 		void							get_challenge_logs_end(std::vector<s_chanllenge_log_info>&  challenge_logs);
 
-		//ÇëÇóÆ¥ÅäµÄÍæ¼Ò
+		//è¯·æ±‚åŒ¹é…çš„ç©å®¶
 		void							req_get_match_player();  //lua
 
 		void							req_match_player_end(const player_arena_rank* target_guids);

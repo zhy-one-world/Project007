@@ -1,9 +1,9 @@
 #pragma once
 /********************************************************************
-created: 2016Äê5ÔÂ10ÈÕ11:14:26
+created: 2016å¹´5æœˆ10æ—¥11:14:26
 file base: mission
-author: ÕÅÓîÏè
-purpose: ÈÎÎñ¹ÜÀíÏµÍ³
+author: å¼ å®‡ç¿”
+purpose: ä»»åŠ¡ç®¡ç†ç³»ç»Ÿ
 *********************************************************************/
 #ifndef _MISSION_MGR_HPP_
 #define _MISSION_MGR_HPP_
@@ -18,7 +18,7 @@ namespace faith
 		cmission_mgr();
 		~cmission_mgr();
 	public:
-		//³õÊ¼»¯
+		//åˆå§‹åŒ–
 		void clear_data();
 		void heart_tick(const int64& new_time);
 		void set_player_ptr(const int32 array_index) { m_array_index = array_index; }
@@ -26,7 +26,7 @@ namespace faith
 		void init_against_mission();
 		void init_marry_mission();
 		void check_and_send_all_mission();
-		//ÈÎÎñ²Ù×÷
+		//ä»»åŠ¡æ“ä½œ
 		cmission*	find_mission(int32 mission_id);
 		cmission*	find_mission_by_index(int32 mission_index);
 		cmission*	find_mission_by_type(int32 mission_type);
@@ -39,17 +39,17 @@ namespace faith
 		void reset_mission_chapter(bool is_need_send = true);
 		void operate_npc_show(MissionTemplate* OldTemplatePtr, MissionTemplate* NewTemplatePtr);
 		void set_marry_mission(int32 new_mission_id);
-		//ÏûÏ¢
+		//æ¶ˆæ¯
 		void send_one_mission(cmission& my_mission);
 		void send_all_mission();
 
-		//´æµµ
+		//å­˜æ¡£
 		void save_mission_to_db(int32 save_type);
 		void load_mission_by_db(const s_mission_info* mission_data, int32 mission_num);
 
 		bool load_mission_by_db_lua(const char *data_ptr, int32 data_len);
 
-		void check_refresh_time();//¼ÆËãÊÇ·ñÒªË¢ĞÂÈÕ³£
+		void check_refresh_time();//è®¡ç®—æ˜¯å¦è¦åˆ·æ–°æ—¥å¸¸
 		void change_mission(const e_mission_slot mission_index, const int32 mission_template_id);
 
 
@@ -68,7 +68,7 @@ namespace faith
 		int32	get_can_set_mission_slot(MissionTemplate* mission_template_ptr);
 		int32	get_empty_side_mission_slot(int32 trigger_mission_id);
 
-		//×´Ì¬ĞŞ¸Ä´¥·¢
+		//çŠ¶æ€ä¿®æ”¹è§¦å‘
 		void	target_check(e_mission_end_type mission_end_type, int32 target_info_0 = 0, int32 target_info_1 = 0);
 		bool start_dialog(int32 mission_id, int32 npc_id);
 

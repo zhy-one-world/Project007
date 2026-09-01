@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2016Äê9ÔÂ22ÈÕ
+	created:	2016å¹´9æœˆ22æ—¥
 	file base:	msgproc_yesterday_must_do_remain
 	file ext:	hpp
 	author:		lxy
@@ -13,13 +13,13 @@
 
 namespace faith
 {
-	//×òÌìÊ£ÏÂÃ»×öµÄÃ¿ÈÕ±Ø×ö£¬ÕÒ»ØÓÃ
+	//æ˜¨å¤©å‰©ä¸‹æ²¡åšçš„æ¯æ—¥å¿…åšï¼Œæ‰¾å›ç”¨
 	void cs2dp_req_load_char_yesterday_must_do_remain(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index);
 	void cs2dp_req_load_char_yesterday_must_do_remain_end(db_result_type result, uint32 connindex, const guid_64& role_guid, const int32& unit_array_index);
 	void cs2dp_req_save_yesterday_must_do_remain(uint32 connindex, const void* data_ptr, size_t data_len);
 
 	bool cs2dp_save_role_yesterday_must_do_remain_cache_lua(int64 role_id, const char* data_ptr, size_t data_len);
-	//Ã¿ÈÕ±Ø×ö´ÎÊı¼ÓÔØ
+	//æ¯æ—¥å¿…åšæ¬¡æ•°åŠ è½½
 	void cs2dp_req_load_char_daily_must_do_count(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index);
 	void cs2dp_req_load_char_daily_must_do_count_end(db_result_type result, uint32 connindex, const guid_64& role_guid, const int32& unit_array_index);
 	void cs2dp_req_save_daily_must_do_count(uint32 connindex, const void* data_ptr, size_t data_len);

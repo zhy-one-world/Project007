@@ -98,7 +98,7 @@ void item_prop_system::item_use(player* player_ptr, Entity* item_ent, int32 use_
 		return;
 	}
 
-	// ʹǮ����ĸı���Ч
+	// 使钱财类的改变生效
 	for (int32 i = 0; i < prop_template->MoneyChange.size(); i += 2)
 	{
 		int32 money_type = prop_template->MoneyChange[i];

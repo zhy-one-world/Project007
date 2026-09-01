@@ -18,36 +18,36 @@ namespace faith
 			static gain_treasure_ws_mgr instance;
 			return instance;
 		}
-		void								init_manager(); //Íâ²¿
-		void								save_gain_treasure_record_info_into_db(int32 boss_spawn_point_template_id, int32 del_stamp);//Ä¬ÈÏ´æµÚÒ»Ìõ É¾³ı×îºóÒ»Ìõ
+		void								init_manager(); //å¤–éƒ¨
+		void								save_gain_treasure_record_info_into_db(int32 boss_spawn_point_template_id, int32 del_stamp);//é»˜è®¤å­˜ç¬¬ä¸€æ¡ åˆ é™¤æœ€åä¸€æ¡
 		void								req_load_gain_treasure_record_info_from_db();
-		void								load_gain_treasure_record_info_from_db_proc(const s_gain_treasure_record_info_one_db* record_infos, int32 data_num); //dp-wsÍâ²¿
+		void								load_gain_treasure_record_info_from_db_proc(const s_gain_treasure_record_info_one_db* record_infos, int32 data_num); //dp-wså¤–éƒ¨
 		void								load_gain_treasure_record_info(const s_gain_treasure_record_info_one_db& record_info_db);
 
 		s_gain_treasure_record_info_all*	get_gain_treasure_record_one_boss_info(int32 boss_spawn_point_template_id);
-		int32								add_gain_treasure_record(const s_gain_treasure_record_info_one& record_info);//·µ»ØĞèÒªÉ¾³ı¼ÇÂ¼µÄÊ±¼ä´Á
-		void								add_gain_treasure_record_and_save(const s_gain_treasure_record_info_one& record_info); //cs-wsÍâ²¿
+		int32								add_gain_treasure_record(const s_gain_treasure_record_info_one& record_info);//è¿”å›éœ€è¦åˆ é™¤è®°å½•çš„æ—¶é—´æˆ³
+		void								add_gain_treasure_record_and_save(const s_gain_treasure_record_info_one& record_info); //cs-wså¤–éƒ¨
 
 		void								add_gain_item_record(s_gain_treasure_gain_item_record_info& record_info);
 		void								add_gain_item_reocrd_by_one_boss(const s_gain_treasure_record_info_one& record_info);
-		void								add_gain_item_reocrd_by_dorp_record_model(const s_gain_treasure_record_info_one& record_info, e_drop_record_model_type record_model);//ÕÒµ½¸ÃÌõÖĞ¶ÔÓ¦Ä£Ê½µÄÎïÆ·²¢¼ÇÂ¼
+		void								add_gain_item_reocrd_by_dorp_record_model(const s_gain_treasure_record_info_one& record_info, e_drop_record_model_type record_model);//æ‰¾åˆ°è¯¥æ¡ä¸­å¯¹åº”æ¨¡å¼çš„ç‰©å“å¹¶è®°å½•
 
-		void								req_kill_record_end(client_session* session, int32 boss_spawn_point_template_id); //cs-wsÍâ²¿
+		void								req_kill_record_end(client_session* session, int32 boss_spawn_point_template_id); //cs-wså¤–éƒ¨
 		int32								fill_kill_record_end_msg(game_proto_gain_treasure_kill_record_end& kill_record_end_msg, int32 boss_spawn_point_template_id);
-		void								req_gain_item_record(client_session* session, int32 record_index);//indexĞ¡ÓÚ0±íÊ¾µÚÒ»´ÎÇëÇó¼ÇÂ¼ //cs-wsÍâ²¿
+		void								req_gain_item_record(client_session* session, int32 record_index);//indexå°äº0è¡¨ç¤ºç¬¬ä¸€æ¬¡è¯·æ±‚è®°å½• //cs-wså¤–éƒ¨
 		int32								fill_gain_item_record_end_msg(game_proto_gain_treasure_gain_item_record_end& gain_item_record_end_msg, int32 record_index);
 		std::set<int32>						get_npc_spawn_point_template_id_by_map_id(int32 map_template_id);
 		std::set<int32>						get_npc_spawn_point_template_id_by_map_type(e_map_type map_type);
 
 		s_gain_treasure_boss_info*			get_gain_treasure_boss_info_by_id(int32 boss_spawn_point_template_id);
-		void								update_gain_treasure_boss_info(const s_gain_treasure_boss_info& boss_info); //cs-wsÍâ²¿
+		void								update_gain_treasure_boss_info(const s_gain_treasure_boss_info& boss_info); //cs-wså¤–éƒ¨
 		void								send_gain_treasure_boss_info_one(client_session* session, int32 boss_spawn_point_template_id);
-		void								send_gain_treasure_boss_info_all(client_session* session); //Íâ²¿
+		void								send_gain_treasure_boss_info_all(client_session* session); //å¤–éƒ¨
 		int32								fill_boss_info_one_msg(game_proto_gain_treasure_boss_info_one& boss_info_one_msg, int32 boss_spawn_point_template_id);
 		void								send_gain_treasure_boss_to_all(int32 boss_spawn_point_template_id);
 		void								send_gain_treasure_boss_to_map(int32 boss_spawn_point_template_id);
 		//rename
-		void								change_player_name_func(const guid_64& role_guid, const xstring& role_name, const xstring& original_name);	//½ÇÉ«¸ÄÃûÍ¬²½Íâ²¿
+		void								change_player_name_func(const guid_64& role_guid, const xstring& role_name, const xstring& original_name);	//è§’è‰²æ”¹ååŒæ­¥å¤–éƒ¨
 		bool                                is_use_lua();
 
 	private:

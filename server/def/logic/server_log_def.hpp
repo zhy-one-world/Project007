@@ -1,4 +1,4 @@
-/********************************************************************
+ï»¿/********************************************************************
 created:	2014/08/01
 created:	01:08:2014   12:45
 file base: player_def
@@ -14,8 +14,8 @@ purpose:
 namespace faith
 {
 
-	const int32 max_log_char_num = 4096;							// logÈÕÖ¾×î´ó³¤¶È 
-	const int32 max_log_int64_size = 21;							// logÈÕÖ¾×î´ó³¤¶È
+	const int32 max_log_char_num = 4096;							// logæ—¥å¿—æœ€å¤§é•¿åº¦ 
+	const int32 max_log_int64_size = 21;							// logæ—¥å¿—æœ€å¤§é•¿åº¦
 	static const char server_log_separator = 0x01;
 	static const std::string server_log_normversion = "1.1.4";
 	static const std::string server_invaild_string = "null";
@@ -23,401 +23,401 @@ namespace faith
 
 	enum e_server_log_cut_money
 	{
-		e_server_log_cut_money_grade_up, //×ªÉú
-		e_server_log_cut_money_back_to_life, //¸´»î
-		e_server_log_cut_money_unlock_bag_slot, //½âËø±³°ü¸ñ×Ó
-		e_server_log_cut_money_legion_donate, //¾üÍÅ¾èÏ×
-		e_server_log_cut_money_resource_back, //×ÊÔ´ÕÒ»Ø
-		e_server_log_cut_money_grow_up_fund, //³É³¤»ù½ğ
-		e_server_log_cut_money_red_package, //ºì°ü
-		e_server_log_cut_money_worship_player, //Ä¤°İ
-		e_server_log_cut_money_learn_skill, //Ñ§Ï°¼¼ÄÜ
-		e_server_log_cut_money_upgrade_skill, //Éı¼¶¼¼ÄÜ
-		e_server_log_cut_money_send_mail_content, //Í¨¹ıÓÊ¼ş·¢Ç®
-		e_server_log_cut_money_convert_main_ui, //Ö÷½çÃæµÄ×ª»»
-		e_server_log_cut_money_convert_in_bag, //±³°üÀïµÄ×ª»»
-		e_server_log_cut_money_patron_add_star, //Í¼¼øÊØ»¤ÉñÉıĞÇ
-		e_server_log_cut_money_patron_upgrade, //Í¼¼øÊØ»¤ÉñÉı¼¶
-		e_server_log_cut_money_belief_head_up, //ĞÅÑöµãÁÁ
-		e_server_log_cut_money_belief_upgrade_up, //ĞÅÑöÉı¼¶
-		e_server_log_cut_money_create_legion, //´´½¨¾üÍÅ
-		e_server_log_cut_money_get_banquet_reward, //Îè»áÁì½±
-		e_server_log_cut_money_create_banquet, //¾Ù°ìÎè»á
-		e_server_log_cut_money_legion_buff, //¾üÍÅbuff
-		e_server_log_cut_money_legion_rm_recruit_cd, //¾üÍÅÇå³ıÊÀ½çÕĞÄ¼cd
-		e_server_log_cut_money_welfare_replacement, //²¹Áì¸£Àû
-		e_server_log_cut_money_map_over_gift, //¸±±¾Íê³É½±Àø
-		e_server_log_cut_money_sprite_upgrade, //j¾«ÁéÉı¼¶
-		e_server_log_cut_money_sprite_hunt_one, //¾«Áéµ¥¸öÁÔÈ¡
-		e_server_log_cut_money_sprite_hunt_ten, //¾«ÁéÊ®Á¬ÁÔÈ¡
-		e_server_log_cut_money_meditation, //Ú¤Ïë
-		e_server_log_cut_money_arena_challenge, //¾º¼¼³¡¸¶·ÑÌôÕ½
-		e_server_log_cut_money_finish_mission, //Íê³ÉÈÎÎñ
-		e_server_log_cut_money_refresh_mission_star, //ÈÎÎñË¢ĞÇ
-		e_server_log_cut_money_teleport, //´«ËÍ
-		e_server_log_cut_money_element_heart_get_one, //ÔªËØÖ®ĞÄµ¥¸ö»ñÈ¡
-		e_server_log_cut_money_element_heart_summon, //ÔªËØÖ®ĞÄ¾«Á¶
-		e_server_log_cut_money_element_heart_upgrade, //ÔªËØÖ®ĞÄÉı¼¶
-		e_server_log_cut_money_map_mopping, //¸±±¾É¨µ´
-		e_server_log_cut_money_buy_goods, //ÂòÎïÆ·
-		e_server_log_cut_money_item_add_on, //ÎïÆ·×·¼Ó
-		e_server_log_cut_money_item_advance, //ÎïÆ·½ø½×
-		e_server_log_cut_money_item_assembly, //Éñ×°ÔÙÔì
-		e_server_log_cut_money_composit, //ºÏ³É
-		e_server_log_cut_money_item_upgrade, //ÎïÆ·Éı¼¶
-		e_server_log_cut_money_wing_upgrade_auto_buy, //³á°òÉı¼¶×Ô¶¯Âò
-		e_server_log_cut_money_wing_upgrade, //³á°òÉı¼¶
-		e_server_log_cut_money_wing_add_star_auto_buy, //³á°òÉıĞÇ×Ô¶¯Âò
-		e_server_log_cut_money_wing_add_star, //³á°òÉıĞÇ
-		e_server_log_cut_money_add_soul, //×¢»ê
-		e_server_log_cut_money_add_sprite, //×¢Áé
-		e_server_log_cut_money_feather_upgrade_auto_buy, //ôáÓğÉı¼¶×Ô¶¯Âò
-		e_server_log_cut_money_feather_upgrade, //ôáÓğÉı¼¶
-		e_server_log_cut_money_feather_add_star_auto_buy, //ôáÓğÉıĞÇ×Ô¶¯Âò
-		e_server_log_cut_money_feather_add_star, //ôáÓğÉıĞÇ
-		e_server_log_cut_money_item_succinct, //ÎïÆ·Ï´Á·
-		e_server_log_cut_money_mount_upgrade_auto_buy, //×øÆïÉı¼¶×Ô¶¯Âò
-		e_server_log_cut_money_mount_upgrade, //×øÆïÉı¼¶
-		e_server_log_cut_money_mount_unlock, //×øÆï½âËø
-		e_server_log_cut_money_get_mount_illusion, //×øÆï»Ã»¯
-		e_server_log_cut_money_hope_item_one, //Æí¸£µ¥´Î
-		e_server_log_cut_money_hope_item_ten, //Æí¸£Ê®Á¬
-		e_server_log_cut_money_sepcial_name_upgrade, //³ÆºÅÉı¼¶
-		e_server_log_cut_money_gm_order, //gmÖ¸Áî
-		e_server_log_cut_money_get_wing_illusion, //³á°ò»Ã»¯
-		e_server_log_cut_money_element_diamond_recovery, //·ûÎÄ±£Öµ»ØÊÕ
-		e_server_log_cut_money_chat, //»¨·Ñ½ğ±ÒÁÄÌì
-		e_server_log_cut_money_item_against_buy, //ÎïÆ·Ğø·Ñ
-		e_server_log_cut_money_item_package_buy, //ÎïÆ·Àñ°ü¹ºÂò
-		e_server_log_cut_money_item_medical_buy, //¹ºÂòbuffÒ©
-		e_server_log_cut_money_jewel_upgrade, //±¦Ê¯Éı¼¶
-		e_server_log_cut_money_auction_buy, //ÅÄÂô¹ºÂò
-		e_server_log_cut_money_auction_bid, //ÅÄÂô¾º±ê
-		e_server_log_cut_money_item_recovery, //ÎïÆ·»ØÊÕ
-		e_server_log_cut_money_legion_bonfire, //¾üÍÅ¼Ó»ğ
-		e_server_log_cut_money_legion_skill, //¾üÍÅÌáÉı¼¼ÄÜ
-		e_server_log_cut_money_patron_saint_buy_slot, //»ğÖÖ¹ºÂò±êÖ¾Î»
-		e_server_log_cut_money_patron_saint_upgrade, //»ğÖÖÉı¼¶
-		e_server_log_cut_money_patron_saint_tinder_upgrade, //»ğÖÖÎ»ÖÃÉı¼¶
-		e_server_log_cut_money_map_add_buff, //¸±±¾Ôö¼Óbuff
-		e_server_log_cut_money_spirit_slot, //¾«Áé¿ª¸ñ×Ó
-		e_server_log_cut_money_spirit_illusion, //¾«Áé»Ã»¯
-		e_server_log_cut_money_talent_open, //¿ªÆôÌì¸³
-		e_server_log_cut_money_divorce, //Àë»é
-		e_server_log_cut_money_treasure_prize, //±¦²Ø³é½±
-		e_server_log_cut_money_item_assembled, //Éñ×°ºÏ³É
-		e_server_log_cut_money_mopping_arena, //¾º¼¼³¡É¨µ´
-		e_server_log_cut_money_cloud_shop, //ÔÆ¹º¹ºÂò
-		e_server_log_cut_money_unlock_storage_slot, //½âËø²Ö¿â¸ñ×Ó
-		e_server_log_cut_money_belief_rune_levelup, //ĞÅÑö·ûÎÄÉı¼¶
-		e_server_log_cut_money_belief_rune_diamond_recover, //ĞÅÑö·ûÎÄ±£Öµ·Ö½â
-		e_server_log_cut_money_legion_warehouse_score,//¾üÍÅ²Ö¿â»ı·Ö
-		e_server_log_cut_money_vip_get_item,//¹ºÂòVIPÌØÈ¨ÎïÆ·
-		e_server_log_cut_money_pokedex_upgrade,//Í¼¼øÉı¼¶
-		e_server_log_cut_money_time_limit_small_charge,//ÏŞÊ±Ğ¡¶î³äÖµ
-		e_server_log_cut_money_cross_ladder_buy_ticket,//¹ºÂò¿ç·şÌìÌİ´ÎÊı
-		e_server_log_cut_money_feather_heart_upgrade, //ÉñôáÖ®ĞÄÉı¼¶
-		e_server_log_cut_money_skill_book_diamond_recovery, //¼¼ÄÜÊé±£Öµ»ØÊÕ
-		e_server_log_cut_money_couple_bless, //·òÆŞ°ñ×£¸£
-		e_server_log_cut_money_far_speak,  //Ç§Àï´«Òô
-		e_server_log_cut_money_buy_special_lucky_times, //¹ºÂòÃüÖĞ×¢¶¨´ÎÊı
-		e_sereve_log_cut_money_recycle_buy, //»Ø¹éÏµÍ³¹ºÂò
-		e_server_log_cut_money_buy_competition_lv, //¹ºÂòÈü¼¾ÊÖ²áµÈ¼¶
-		e_server_cut_add_money_competition, //¿ç·şÌìÌİÈü¼¾ÊÖ²á
-		e_server_log_cut_money_time_limit_shop, //ÏŞÊ±»î¶¯ÉÌµê¹ºÂò
-		e_server_log_cut_money_buy_single_boss,	//¹ºÂò¸öÈËboss´ÎÊı
-		e_server_log_cut_money_dragontrip,      // ÃÈÁúÆæÓö
-		e_server_log_cut_money_wing_lengque, //ÓğÒíÖıÁéÀäÈ´
-		e_server_log_cut_money_wing_xiling, //ÓğÒíÏ´Áé
-		e_server_log_cut_money_element_war_buy_ticket, //¹ºÂòÔªËØÕù°Ô´ÎÊı
-		e_server_log_cut_money_skytreasure_buy_key,  //Ìì¿Õ±¦¿â¹ºÂòÔ¿³×
-		e_server_log_cut_money_starark_buy_item,   // ĞÇº£·½ÖÛ¹ºÂòÏûºÄµÀ¾ß
-		e_server_log_cut_money_buy_element_competition_lv, //¹ºÂòÔªËØÊÖ²áµÈ¼¶
-		e_server_log_cut_money_activity_shop,//ÏŞÊ±ÉÌµê¹ºÂò
-		e_server_log_cut_money_discount_shop,//ÕÛ¿ÛÉÌµê¹ºÂò
-		e_server_log_cut_money_item_shop,//»ı·ÖÉÌµê¹ºÂò
-		e_server_log_cut_money_weekend_top_up, //ÖÜÄ©³äÖµ
-		e_server_log_cut_money_support_for_promotion,//³å»÷ÖúÁ¦
-		e_server_log_cut_money_time_feed_back,// Ê±¿ÕÀ¡Ôù
-		e_server_log_cut_money_time_limit_gift,// ĞÂÏŞÊ±Àñ°ü
-		e_server_log_cut_money_time_limit_buy_item, //ÏŞÊ±»î¶¯¹ºÂòµÀ¾ß
-		e_server_log_cut_money_time_refresh_diamond_shop, //Ë¢ĞÂ×êÊ¯ÉÌµê
-		e_server_log_cut_money_time_buy_diamond_shop,	// ×êÊ¯ÉÌµê¹ºÂò
-		e_server_log_cut_money_map_search,	// µØÍ¼Ë¢ĞÂ
-		e_server_log_cut_money_upgrade_search_level,	// Ì½Ë÷µÈ¼¶Éı¼¶
-		e_server_log_cut_money_get_award,	// »ñÈ¡³¡¾°ÖĞµÄÏä×Ó
-		e_server_log_cut_money_treasure_pic,	// ¿ªÆô±¦²ØÍ¼
-		e_server_log_cut_money_finger_guess,	// ²ÂÈ­Ê§°Ü
-		e_server_log_cut_money_finger_guess_offline,	// ²ÂÈ­ÖĞµôÏß
-		e_server_log_cut_money_smashing_bottle,	// ÔÒ¾ÆÆ¿Ê§°Ü
-		e_server_log_cut_money_smashing_bottle_offline,	// ÔÒ¾ÆÆ¿ÖĞµôÏß
+		e_server_log_cut_money_grade_up, //è½¬ç”Ÿ
+		e_server_log_cut_money_back_to_life, //å¤æ´»
+		e_server_log_cut_money_unlock_bag_slot, //è§£é”èƒŒåŒ…æ ¼å­
+		e_server_log_cut_money_legion_donate, //å†›å›¢æçŒ®
+		e_server_log_cut_money_resource_back, //èµ„æºæ‰¾å›
+		e_server_log_cut_money_grow_up_fund, //æˆé•¿åŸºé‡‘
+		e_server_log_cut_money_red_package, //çº¢åŒ…
+		e_server_log_cut_money_worship_player, //è†œæ‹œ
+		e_server_log_cut_money_learn_skill, //å­¦ä¹ æŠ€èƒ½
+		e_server_log_cut_money_upgrade_skill, //å‡çº§æŠ€èƒ½
+		e_server_log_cut_money_send_mail_content, //é€šè¿‡é‚®ä»¶å‘é’±
+		e_server_log_cut_money_convert_main_ui, //ä¸»ç•Œé¢çš„è½¬æ¢
+		e_server_log_cut_money_convert_in_bag, //èƒŒåŒ…é‡Œçš„è½¬æ¢
+		e_server_log_cut_money_patron_add_star, //å›¾é‰´å®ˆæŠ¤ç¥å‡æ˜Ÿ
+		e_server_log_cut_money_patron_upgrade, //å›¾é‰´å®ˆæŠ¤ç¥å‡çº§
+		e_server_log_cut_money_belief_head_up, //ä¿¡ä»°ç‚¹äº®
+		e_server_log_cut_money_belief_upgrade_up, //ä¿¡ä»°å‡çº§
+		e_server_log_cut_money_create_legion, //åˆ›å»ºå†›å›¢
+		e_server_log_cut_money_get_banquet_reward, //èˆä¼šé¢†å¥–
+		e_server_log_cut_money_create_banquet, //ä¸¾åŠèˆä¼š
+		e_server_log_cut_money_legion_buff, //å†›å›¢buff
+		e_server_log_cut_money_legion_rm_recruit_cd, //å†›å›¢æ¸…é™¤ä¸–ç•Œæ‹›å‹Ÿcd
+		e_server_log_cut_money_welfare_replacement, //è¡¥é¢†ç¦åˆ©
+		e_server_log_cut_money_map_over_gift, //å‰¯æœ¬å®Œæˆå¥–åŠ±
+		e_server_log_cut_money_sprite_upgrade, //jç²¾çµå‡çº§
+		e_server_log_cut_money_sprite_hunt_one, //ç²¾çµå•ä¸ªçŒå–
+		e_server_log_cut_money_sprite_hunt_ten, //ç²¾çµåè¿çŒå–
+		e_server_log_cut_money_meditation, //å†¥æƒ³
+		e_server_log_cut_money_arena_challenge, //ç«æŠ€åœºä»˜è´¹æŒ‘æˆ˜
+		e_server_log_cut_money_finish_mission, //å®Œæˆä»»åŠ¡
+		e_server_log_cut_money_refresh_mission_star, //ä»»åŠ¡åˆ·æ˜Ÿ
+		e_server_log_cut_money_teleport, //ä¼ é€
+		e_server_log_cut_money_element_heart_get_one, //å…ƒç´ ä¹‹å¿ƒå•ä¸ªè·å–
+		e_server_log_cut_money_element_heart_summon, //å…ƒç´ ä¹‹å¿ƒç²¾ç‚¼
+		e_server_log_cut_money_element_heart_upgrade, //å…ƒç´ ä¹‹å¿ƒå‡çº§
+		e_server_log_cut_money_map_mopping, //å‰¯æœ¬æ‰«è¡
+		e_server_log_cut_money_buy_goods, //ä¹°ç‰©å“
+		e_server_log_cut_money_item_add_on, //ç‰©å“è¿½åŠ 
+		e_server_log_cut_money_item_advance, //ç‰©å“è¿›é˜¶
+		e_server_log_cut_money_item_assembly, //ç¥è£…å†é€ 
+		e_server_log_cut_money_composit, //åˆæˆ
+		e_server_log_cut_money_item_upgrade, //ç‰©å“å‡çº§
+		e_server_log_cut_money_wing_upgrade_auto_buy, //ç¿…è†€å‡çº§è‡ªåŠ¨ä¹°
+		e_server_log_cut_money_wing_upgrade, //ç¿…è†€å‡çº§
+		e_server_log_cut_money_wing_add_star_auto_buy, //ç¿…è†€å‡æ˜Ÿè‡ªåŠ¨ä¹°
+		e_server_log_cut_money_wing_add_star, //ç¿…è†€å‡æ˜Ÿ
+		e_server_log_cut_money_add_soul, //æ³¨é­‚
+		e_server_log_cut_money_add_sprite, //æ³¨çµ
+		e_server_log_cut_money_feather_upgrade_auto_buy, //ç¿ç¾½å‡çº§è‡ªåŠ¨ä¹°
+		e_server_log_cut_money_feather_upgrade, //ç¿ç¾½å‡çº§
+		e_server_log_cut_money_feather_add_star_auto_buy, //ç¿ç¾½å‡æ˜Ÿè‡ªåŠ¨ä¹°
+		e_server_log_cut_money_feather_add_star, //ç¿ç¾½å‡æ˜Ÿ
+		e_server_log_cut_money_item_succinct, //ç‰©å“æ´—ç»ƒ
+		e_server_log_cut_money_mount_upgrade_auto_buy, //åéª‘å‡çº§è‡ªåŠ¨ä¹°
+		e_server_log_cut_money_mount_upgrade, //åéª‘å‡çº§
+		e_server_log_cut_money_mount_unlock, //åéª‘è§£é”
+		e_server_log_cut_money_get_mount_illusion, //åéª‘å¹»åŒ–
+		e_server_log_cut_money_hope_item_one, //ç¥ˆç¦å•æ¬¡
+		e_server_log_cut_money_hope_item_ten, //ç¥ˆç¦åè¿
+		e_server_log_cut_money_sepcial_name_upgrade, //ç§°å·å‡çº§
+		e_server_log_cut_money_gm_order, //gmæŒ‡ä»¤
+		e_server_log_cut_money_get_wing_illusion, //ç¿…è†€å¹»åŒ–
+		e_server_log_cut_money_element_diamond_recovery, //ç¬¦æ–‡ä¿å€¼å›æ”¶
+		e_server_log_cut_money_chat, //èŠ±è´¹é‡‘å¸èŠå¤©
+		e_server_log_cut_money_item_against_buy, //ç‰©å“ç»­è´¹
+		e_server_log_cut_money_item_package_buy, //ç‰©å“ç¤¼åŒ…è´­ä¹°
+		e_server_log_cut_money_item_medical_buy, //è´­ä¹°buffè¯
+		e_server_log_cut_money_jewel_upgrade, //å®çŸ³å‡çº§
+		e_server_log_cut_money_auction_buy, //æ‹å–è´­ä¹°
+		e_server_log_cut_money_auction_bid, //æ‹å–ç«æ ‡
+		e_server_log_cut_money_item_recovery, //ç‰©å“å›æ”¶
+		e_server_log_cut_money_legion_bonfire, //å†›å›¢åŠ ç«
+		e_server_log_cut_money_legion_skill, //å†›å›¢æå‡æŠ€èƒ½
+		e_server_log_cut_money_patron_saint_buy_slot, //ç«ç§è´­ä¹°æ ‡å¿—ä½
+		e_server_log_cut_money_patron_saint_upgrade, //ç«ç§å‡çº§
+		e_server_log_cut_money_patron_saint_tinder_upgrade, //ç«ç§ä½ç½®å‡çº§
+		e_server_log_cut_money_map_add_buff, //å‰¯æœ¬å¢åŠ buff
+		e_server_log_cut_money_spirit_slot, //ç²¾çµå¼€æ ¼å­
+		e_server_log_cut_money_spirit_illusion, //ç²¾çµå¹»åŒ–
+		e_server_log_cut_money_talent_open, //å¼€å¯å¤©èµ‹
+		e_server_log_cut_money_divorce, //ç¦»å©š
+		e_server_log_cut_money_treasure_prize, //å®è—æŠ½å¥–
+		e_server_log_cut_money_item_assembled, //ç¥è£…åˆæˆ
+		e_server_log_cut_money_mopping_arena, //ç«æŠ€åœºæ‰«è¡
+		e_server_log_cut_money_cloud_shop, //äº‘è´­è´­ä¹°
+		e_server_log_cut_money_unlock_storage_slot, //è§£é”ä»“åº“æ ¼å­
+		e_server_log_cut_money_belief_rune_levelup, //ä¿¡ä»°ç¬¦æ–‡å‡çº§
+		e_server_log_cut_money_belief_rune_diamond_recover, //ä¿¡ä»°ç¬¦æ–‡ä¿å€¼åˆ†è§£
+		e_server_log_cut_money_legion_warehouse_score,//å†›å›¢ä»“åº“ç§¯åˆ†
+		e_server_log_cut_money_vip_get_item,//è´­ä¹°VIPç‰¹æƒç‰©å“
+		e_server_log_cut_money_pokedex_upgrade,//å›¾é‰´å‡çº§
+		e_server_log_cut_money_time_limit_small_charge,//é™æ—¶å°é¢å……å€¼
+		e_server_log_cut_money_cross_ladder_buy_ticket,//è´­ä¹°è·¨æœå¤©æ¢¯æ¬¡æ•°
+		e_server_log_cut_money_feather_heart_upgrade, //ç¥ç¿ä¹‹å¿ƒå‡çº§
+		e_server_log_cut_money_skill_book_diamond_recovery, //æŠ€èƒ½ä¹¦ä¿å€¼å›æ”¶
+		e_server_log_cut_money_couple_bless, //å¤«å¦»æ¦œç¥ç¦
+		e_server_log_cut_money_far_speak,  //åƒé‡Œä¼ éŸ³
+		e_server_log_cut_money_buy_special_lucky_times, //è´­ä¹°å‘½ä¸­æ³¨å®šæ¬¡æ•°
+		e_sereve_log_cut_money_recycle_buy, //å›å½’ç³»ç»Ÿè´­ä¹°
+		e_server_log_cut_money_buy_competition_lv, //è´­ä¹°èµ›å­£æ‰‹å†Œç­‰çº§
+		e_server_cut_add_money_competition, //è·¨æœå¤©æ¢¯èµ›å­£æ‰‹å†Œ
+		e_server_log_cut_money_time_limit_shop, //é™æ—¶æ´»åŠ¨å•†åº—è´­ä¹°
+		e_server_log_cut_money_buy_single_boss,	//è´­ä¹°ä¸ªäººbossæ¬¡æ•°
+		e_server_log_cut_money_dragontrip,      // èŒé¾™å¥‡é‡
+		e_server_log_cut_money_wing_lengque, //ç¾½ç¿¼é“¸çµå†·å´
+		e_server_log_cut_money_wing_xiling, //ç¾½ç¿¼æ´—çµ
+		e_server_log_cut_money_element_war_buy_ticket, //è´­ä¹°å…ƒç´ äº‰éœ¸æ¬¡æ•°
+		e_server_log_cut_money_skytreasure_buy_key,  //å¤©ç©ºå®åº“è´­ä¹°é’¥åŒ™
+		e_server_log_cut_money_starark_buy_item,   // æ˜Ÿæµ·æ–¹èˆŸè´­ä¹°æ¶ˆè€—é“å…·
+		e_server_log_cut_money_buy_element_competition_lv, //è´­ä¹°å…ƒç´ æ‰‹å†Œç­‰çº§
+		e_server_log_cut_money_activity_shop,//é™æ—¶å•†åº—è´­ä¹°
+		e_server_log_cut_money_discount_shop,//æŠ˜æ‰£å•†åº—è´­ä¹°
+		e_server_log_cut_money_item_shop,//ç§¯åˆ†å•†åº—è´­ä¹°
+		e_server_log_cut_money_weekend_top_up, //å‘¨æœ«å……å€¼
+		e_server_log_cut_money_support_for_promotion,//å†²å‡»åŠ©åŠ›
+		e_server_log_cut_money_time_feed_back,// æ—¶ç©ºé¦ˆèµ 
+		e_server_log_cut_money_time_limit_gift,// æ–°é™æ—¶ç¤¼åŒ…
+		e_server_log_cut_money_time_limit_buy_item, //é™æ—¶æ´»åŠ¨è´­ä¹°é“å…·
+		e_server_log_cut_money_time_refresh_diamond_shop, //åˆ·æ–°é’»çŸ³å•†åº—
+		e_server_log_cut_money_time_buy_diamond_shop,	// é’»çŸ³å•†åº—è´­ä¹°
+		e_server_log_cut_money_map_search,	// åœ°å›¾åˆ·æ–°
+		e_server_log_cut_money_upgrade_search_level,	// æ¢ç´¢ç­‰çº§å‡çº§
+		e_server_log_cut_money_get_award,	// è·å–åœºæ™¯ä¸­çš„ç®±å­
+		e_server_log_cut_money_treasure_pic,	// å¼€å¯å®è—å›¾
+		e_server_log_cut_money_finger_guess,	// çŒœæ‹³å¤±è´¥
+		e_server_log_cut_money_finger_guess_offline,	// çŒœæ‹³ä¸­æ‰çº¿
+		e_server_log_cut_money_smashing_bottle,	// ç ¸é…’ç“¶å¤±è´¥
+		e_server_log_cut_money_smashing_bottle_offline,	// ç ¸é…’ç“¶ä¸­æ‰çº¿
 		e_server_log_cut_money_max
 	};
 	enum e_server_log_add_money
 	{
-		e_server_log_add_money_add_exp, //¼Ó¾­Ñé
-		e_server_log_add_money_worship, //Ä¤°İ
-		e_server_log_add_money_raid_over_reward, //¸±±¾½áËã
-		e_server_log_add_money_legion_donate_money, //¾üÍÅ¾èÇ®
-		e_server_log_add_money_legion_donate_item, //¾üÍÅ¾èÎï
-		e_server_log_add_money_legion_boss, //¾üÍÅBoss
-		e_server_log_add_money_legion_add_fuel_to_bonfire, //¾üÍÅóô»ğ¼Ó»ğ
-		e_server_log_add_money_resource_back, //×ÊÔ´ÕÒ»Ø
-		e_server_log_add_money_recharge, //³äÖµ
-		e_server_log_add_money_grow_up_fund, //³É³¤»ù½ğ
-		e_server_log_add_money_red_package, //ºì°ü
-		e_server_log_add_money_achievement, //³É¾Í
-		e_server_log_add_money_convert_main_ui, //Ö÷½çÃæµÄ×ª»»
-		e_server_log_add_money_convert_in_bag, //±³°üÀïµÄ×ª»»
-		e_server_log_add_money_get_mail, //ÁìÓÊ¼ş
-		e_server_log_add_money_banquet, //Îè»á
-		e_server_log_add_money_codex_del, //Í¼¼ø»ØÊÕ
-		e_server_log_add_money_codex_refresh, //Í¼¼øË¢ĞÂ
-		e_server_log_add_money_sprite_sell, //¾«Áé»ØÊÕ
-		e_server_log_add_money_hunt_sprite, //¾«ÁéÁÔÈ¡¼Óµã
-		e_server_log_add_money_meditation, //Ú¤Ïë
-		e_server_log_add_money_finish_mission, //ÈÎÎñ½áËã
-		e_server_log_add_money_map_mopping, //µØÍ¼É¨µ´
-		e_server_log_add_money_money_card, //Ç®¿¨
-		e_server_log_add_money_item_sell, //Âô¶«Î÷
-		e_server_log_add_money_item_recovery, //ÎïÆ·»ØÊÕ
-		e_server_log_add_money_hope_item, //Æí¸£¼Óµã
-		e_server_log_add_money_welfare, //ÁìÈ¡¸£Àû
-		e_server_log_add_money_arena_rank, //¾º¼¼³¡ÅÅÃû½±Àø
-		e_server_log_add_money_finish_all_daily_mission, //Íê³ÉÈ«²¿ÈÕ³£
-		e_server_log_add_money_finish_all_hard_mission, //Íê³ÉÈ«²¿ÌÖ·¥
-		e_server_log_add_money_gm_order, //gmÖ¸Áî
-		e_server_log_add_money_buff, //buffÔö¼Ó
-		e_server_log_add_money_element_heart_recovery, //ÔªËØÖ®ĞÄ»ØÊÕ
-		e_server_log_add_money_daily_legion_reward, //Ã¿ÈÕÎ´ÁìÈ¡µÄ¾üÍÅ¸£Àû
-		e_server_log_add_money_talent_recovery, //Ìì¸³»ØÊÕ
-		e_server_log_add_money_exp_level_up, //µÈ¼¶ÌáÉı
-		e_server_log_add_money_treasure_prize, //±¦²Ø³é½±
-		e_server_log_add_money_arena_mopping, //É¨µ´¾º¼¼³¡
-		e_server_log_add_money_belief_rune_piece, //ĞÅÑö·ûÎÄ·Ö½âËéÆ¬
-		e_server_log_add_legion_warehouse_score, //¾üÍÅ²Ö¿â»ı·Ö
-		e_server_log_add_money_harry,//Ôö¼Ó¿ç·şÂÓ¶á±Ò
-		e_server_log_add_money_skill_book_recovery, //¼¼ÄÜÊé»ØÊÕ
-		e_server_log_add_money_competition, //¿ç·şÌìÌİÈü¼¾ÊÖ²á
-		e_server_log_add_money_cross_ladder_task, //¿ç·şÌìÌİÃ¿ÈÕÈÎÎñ
-		e_server_log_add_money_captain_reward, // ¾üÍÅ¸±±¾¶Ó³¤
-		e_server_log_add_money_assist_reward,  //¶ÓÔ±½±Àø
-		e_server_log_add_money_element_competition, //ÔªËØÊÖ²á
-		e_server_log_add_money_time_feed_back, //Ê±¹âÀ¡Ôù
-		e_server_log_add_money_offline_award,	//ÀëÏß½±ÀøÁìÈ¡
-		e_server_log_add_money_online_award,	//ÔÚÏß½±ÀøÁìÈ¡
-		e_server_log_add_money_energy_tick,	//ÌåÁ¦×ÔÈ»»Ö¸´
-		e_server_log_add_money_map_search,	//µØÍ¼Ñ°±¦
-		e_server_log_add_money_player_init,	//Íæ¼Ò³õÊ¼»¯
-		e_server_log_add_money_finger_guess,	//²ÂÈ­Ê¤Àû
-		e_server_log_add_money_smashing_bottle,	//ÔÒ¾ÆÆ¿Ê¤Àû
-		e_server_log_add_money_put_into_bag,	//·ÅÈë±³°üºó×Ô¶¯Ê¹ÓÃ
+		e_server_log_add_money_add_exp, //åŠ ç»éªŒ
+		e_server_log_add_money_worship, //è†œæ‹œ
+		e_server_log_add_money_raid_over_reward, //å‰¯æœ¬ç»“ç®—
+		e_server_log_add_money_legion_donate_money, //å†›å›¢æé’±
+		e_server_log_add_money_legion_donate_item, //å†›å›¢æç‰©
+		e_server_log_add_money_legion_boss, //å†›å›¢Boss
+		e_server_log_add_money_legion_add_fuel_to_bonfire, //å†›å›¢ç¯ç«åŠ ç«
+		e_server_log_add_money_resource_back, //èµ„æºæ‰¾å›
+		e_server_log_add_money_recharge, //å……å€¼
+		e_server_log_add_money_grow_up_fund, //æˆé•¿åŸºé‡‘
+		e_server_log_add_money_red_package, //çº¢åŒ…
+		e_server_log_add_money_achievement, //æˆå°±
+		e_server_log_add_money_convert_main_ui, //ä¸»ç•Œé¢çš„è½¬æ¢
+		e_server_log_add_money_convert_in_bag, //èƒŒåŒ…é‡Œçš„è½¬æ¢
+		e_server_log_add_money_get_mail, //é¢†é‚®ä»¶
+		e_server_log_add_money_banquet, //èˆä¼š
+		e_server_log_add_money_codex_del, //å›¾é‰´å›æ”¶
+		e_server_log_add_money_codex_refresh, //å›¾é‰´åˆ·æ–°
+		e_server_log_add_money_sprite_sell, //ç²¾çµå›æ”¶
+		e_server_log_add_money_hunt_sprite, //ç²¾çµçŒå–åŠ ç‚¹
+		e_server_log_add_money_meditation, //å†¥æƒ³
+		e_server_log_add_money_finish_mission, //ä»»åŠ¡ç»“ç®—
+		e_server_log_add_money_map_mopping, //åœ°å›¾æ‰«è¡
+		e_server_log_add_money_money_card, //é’±å¡
+		e_server_log_add_money_item_sell, //å–ä¸œè¥¿
+		e_server_log_add_money_item_recovery, //ç‰©å“å›æ”¶
+		e_server_log_add_money_hope_item, //ç¥ˆç¦åŠ ç‚¹
+		e_server_log_add_money_welfare, //é¢†å–ç¦åˆ©
+		e_server_log_add_money_arena_rank, //ç«æŠ€åœºæ’åå¥–åŠ±
+		e_server_log_add_money_finish_all_daily_mission, //å®Œæˆå…¨éƒ¨æ—¥å¸¸
+		e_server_log_add_money_finish_all_hard_mission, //å®Œæˆå…¨éƒ¨è®¨ä¼
+		e_server_log_add_money_gm_order, //gmæŒ‡ä»¤
+		e_server_log_add_money_buff, //buffå¢åŠ 
+		e_server_log_add_money_element_heart_recovery, //å…ƒç´ ä¹‹å¿ƒå›æ”¶
+		e_server_log_add_money_daily_legion_reward, //æ¯æ—¥æœªé¢†å–çš„å†›å›¢ç¦åˆ©
+		e_server_log_add_money_talent_recovery, //å¤©èµ‹å›æ”¶
+		e_server_log_add_money_exp_level_up, //ç­‰çº§æå‡
+		e_server_log_add_money_treasure_prize, //å®è—æŠ½å¥–
+		e_server_log_add_money_arena_mopping, //æ‰«è¡ç«æŠ€åœº
+		e_server_log_add_money_belief_rune_piece, //ä¿¡ä»°ç¬¦æ–‡åˆ†è§£ç¢ç‰‡
+		e_server_log_add_legion_warehouse_score, //å†›å›¢ä»“åº“ç§¯åˆ†
+		e_server_log_add_money_harry,//å¢åŠ è·¨æœæ å¤ºå¸
+		e_server_log_add_money_skill_book_recovery, //æŠ€èƒ½ä¹¦å›æ”¶
+		e_server_log_add_money_competition, //è·¨æœå¤©æ¢¯èµ›å­£æ‰‹å†Œ
+		e_server_log_add_money_cross_ladder_task, //è·¨æœå¤©æ¢¯æ¯æ—¥ä»»åŠ¡
+		e_server_log_add_money_captain_reward, // å†›å›¢å‰¯æœ¬é˜Ÿé•¿
+		e_server_log_add_money_assist_reward,  //é˜Ÿå‘˜å¥–åŠ±
+		e_server_log_add_money_element_competition, //å…ƒç´ æ‰‹å†Œ
+		e_server_log_add_money_time_feed_back, //æ—¶å…‰é¦ˆèµ 
+		e_server_log_add_money_offline_award,	//ç¦»çº¿å¥–åŠ±é¢†å–
+		e_server_log_add_money_online_award,	//åœ¨çº¿å¥–åŠ±é¢†å–
+		e_server_log_add_money_energy_tick,	//ä½“åŠ›è‡ªç„¶æ¢å¤
+		e_server_log_add_money_map_search,	//åœ°å›¾å¯»å®
+		e_server_log_add_money_player_init,	//ç©å®¶åˆå§‹åŒ–
+		e_server_log_add_money_finger_guess,	//çŒœæ‹³èƒœåˆ©
+		e_server_log_add_money_smashing_bottle,	//ç ¸é…’ç“¶èƒœåˆ©
+		e_server_log_add_money_put_into_bag,	//æ”¾å…¥èƒŒåŒ…åè‡ªåŠ¨ä½¿ç”¨
 		e_server_log_add_money_max
 	};
 	enum e_server_log_del_item
 	{
-		e_server_log_del_item_put_in_bag_not_create, //Ö»ÊÇ»»¸ö°ü¶ø²»ÊÇ´´½¨ĞÂµÄ
-		e_server_log_del_item_del_mail, //ÓÊ¼şÉ¾³ı
-		e_server_log_del_item_advance_cost, //ÎïÆ·½ø½×ÏûºÄ
-		e_server_log_del_item_assembly_cost, //Éñ×°ÔÙÔìÏûºÄ
-		e_server_log_del_item_item_use, //ÎïÆ·Ê¹ÓÃµôÁË
-		e_server_log_del_item_item_sell, //ÎïÆ·³öÊÛ
-		e_server_log_del_item_limit_item_auto_del, //ÏŞÖÆÎïÆ·×Ô¶¯É¾³ı
-		e_server_log_del_item_city_war, //³ÇÕ½
-		e_server_log_del_item_gm_order, //gmÖ¸Áî
-		e_server_log_del_item_auction_sell, //ÅÄÂôĞĞÂô³öÉ¾³ı
-		e_server_log_del_item_clearn_talent, //Çå¿ÕÌì¸³¿Û³ı
-		e_server_log_del_item_set_jewel, //Ïâ±¦Ê¯
-		e_server_log_del_item_assembled_cost, //Éñ×°ºÏ³ÉÏûºÄ
-		e_server_log_del_item_rename_cost,	//¸ÄÃûÏûºÄ
-		e_server_log_del_item_add_on,	//×·¼Ó
-		e_server_log_del_item_treasure,	//³é½±
-		e_server_log_del_item_map_mopping, //¸±±¾É¨µ´
-		e_server_log_del_item_teleport, //´«ËÍ
-		e_server_log_del_item_friend_gift, //ºÃÓÑËÍÀñÆ·
-		e_server_log_del_item_submit_psyche,//Í¼¼øÌá½»»êÆÇ
-		e_server_log_del_item_spirit_illusion, //¾«Áé»Ã»¯
-		e_server_log_del_item_spirit_voucher, //¾«Áé³é½±
-		e_server_log_del_item_shop_buy, //ÉÌµê¹ºÂòÌæ»»
-		e_server_log_del_item_assembly,//Éñ×°ÔÙÔì
-		e_server_log_del_item_assembled, //Éñ×°ºÏ³É
-		e_server_log_del_item_composit, //ºÏ³É
-		e_server_log_del_item_upgrade, //ÎïÆ·Éı¼¶
-		e_server_log_del_item_wing_upgrade, //³á°òÉı¼¶
-		e_server_log_del_item_wing_unlock, //³á°ò½âËø
-		e_server_log_del_item_wing_shape_upgrade, //³á°òÍâĞÎÉı¼¶
-		e_server_log_del_item_wing_illusionupgrade, //³á°ò»Ã»¯Éı¼¶
-		e_server_log_del_item_wing_starupgrade, //³á°òÉıĞÇ
-		e_server_log_del_item_legion_donate, //¾üÍÅ¾èÎï
-		e_server_log_del_item_hope_item_one, //Æí¸£µ¥´Î
-		e_server_log_del_item_hope_item_ten, //Æí¸£Ê®Á¬
-		e_server_log_del_item_mount_illusion, //×øÆï»Ã»¯
-		e_server_log_del_item_mount_unlock, //×øÆï½âËø
-		e_server_log_del_item_mount_illusionupgrade, //×øÆï»Ã»¯Éı¼¶
-		e_server_log_del_item_mount_starupgrade, //×øÆïÉıĞÇ
-		e_server_log_del_item_mount_upgrade, //×øÆïÉı¼¶
-		e_server_log_del_item_succinct, //ÎïÆ·Ï´Á·
-		e_server_log_del_item_feather_add_star, //ôáÓğÉıĞÇ
-		e_server_log_del_item_add_soul, //×¢»ê
-		e_server_log_del_item_add_sprite, //×¢Áé
-		e_server_log_del_item_wing_iilusion, //³á°ò»Ã»¯
-		e_server_log_del_item_grade_up,		//×ªÖ°
-		e_server_log_del_item_legion_warehouse,//¾üÍÅ²Ö¿â¾èÏ×
-		e_server_log_del_item_mainpalace_upgrade,//Í¼¼øµîÌÃÉı¼¶
-		e_server_log_del_item_oracle_activate,//Í¼¼øÉñÚÍ¼¤»î
-		e_server_log_del_item_auction,//ÅÄÂôĞĞÉÏ¼Ü
-		e_server_log_del_item_change_class,//×ªÖ°
-		e_server_log_del_item_back_life,//¸´»î
-		e_server_log_del_item_marry,//Çó»é
-		e_server_log_del_item_send_mail,//ÓÊ¼ş·¢ËÍÎïÆ·
-		e_server_log_del_item_red_package,//·¢ËÍºì°ü
-		e_server_log_del_item_bag_zero,//·Å°üÊ±ÊıÁ¿Îª0
-		e_server_log_del_item_bag_merge,//·Å°üÊ±ºÏ²¢ºóÊıÁ¿Îª0
-		e_server_log_del_item_storage_zero,//·Å²Ö¿âÊ±ÊıÁ¿Îª0
-		e_server_log_del_item_storage_merge,//·Å°üÊ±ºÏ²¢ºóÊıÁ¿Îª0
-		e_server_log_del_item_use_beast,//Ê¹ÓÃÊŞ»ê
-		e_server_log_del_item_equip_on_spirit,//×°±¸¾«Áé
-		e_server_log_del_item_bag_error,//·Å°üÊ§°Ü
-		e_server_log_del_item_template_null,//Ö¸ÕëÎª¿Õ
-		e_server_log_del_item_patron_saint_activate,//ÊØ»¤Éñ¼¤»î
-		e_server_log_del_item_skill_unlock,//¼¼ÄÜ½âËø
-		e_server_log_del_item_time_limit_exchange,//ÏŞÊ±¶Ò»»
-		e_server_log_del_item_split, //²ğ·ÖµÄÎïÆ·
-		e_server_log_del_item_pokedex_upgrade, //Í¼¼øÉı¼¶
-		e_server_log_del_item_local_from_mail,//É¾³ıÀ´×ÔÓÊ¼şÀïµÄ±¾µØÎïÆ·
-		e_server_log_del_item_activate_tinder_skill,//¼¤»î»ğÖÖ¼¼ÄÜ
-		e_server_log_del_item_spirit_upgrade,//¾«ÁéÉı¼¶
-		e_server_log_del_item_spirit_skill,//¾«Áé¼¼ÄÜ
-		e_server_log_del_item_passive_skill_unlock,//±»¶¯¼¼ÄÜ½âËø
-		e_server_log_del_item_wing_feather_unlock,//³á°òôáÓğ½âËø
-		e_server_log_del_item_forge, //×°±¸ÖØÖı
-		e_server_log_del_item_re_legion_name,	//¾üÍÅ¸ÄÃûÏûºÄ
-		e_server_log_del_item_enchant, //×°±¸¸½Ä§
-		e_server_log_del_item_set_skill_book, //×°±¸¼¼ÄÜÊé
-		e_server_log_del_item_upgrade_goddess_equip,//Éı¼¶Å®Éñ×°±¸
-		e_server_log_del_item_goddess_slot_unlock,//½âËøĞ­Õ½²ÛÎ»
-		e_server_log_del_item_wedding_ring_upgrade,//»é½äÉı¼¶
-		e_server_log_del_item_element_merge,//·ûÎÄÈÚºÏ
-		e_server_log_del_item_element_unlock,//·ûÎÄ½âËø
-		e_server_log_del_item_chat_far_speak, // Ç§Àï´«Òô
-		e_server_log_del_item_new_tinder_active,  //ĞÂ»ğÖÖ¼¤»î
-		e_server_log_del_item_awaken,   // ¾õĞÑÏûºÄ
-		e_server_log_del_item_unlock_spirit_slot,   // ½âËø¾«Áé²ÛÎ»
-		e_server_log_del_item_star_upgrade_goddess,//Å®ÉñÉıĞÇ
-		e_server_log_del_item_dragontrip,  //ÃÈÁúÆæÓö
-		e_server_log_del_item_mount_equip_off,   //×øÆï×°±¸
-		e_server_log_del_item_mount_equip_star,  //×øÆï×°±¸ÉıĞÇ
-		e_server_log_del_item_wing_zhuling,   //ÓğÒíÖıÁé
-		e_server_log_del_item_treasure_clear,  // ±¦¿âÇå¿Õ
-		e_server_log_del_item_jewel_carve,     // ±¦Ê¯ÎÆ¿Ì
-		e_server_log_del_item_skytreasure,     //Ìì¿Õ±¦¿â 
-		e_server_log_del_item_starark,        //ĞÇº£·½ÖÛ
-		e_server_log_del_item_spirit_promote, //¾«ÁéÉı¸ñÏûºÄ
-		e_server_log_del_item_lucky_card, //¸£ÅÆ¿ªÆôÏûºÄ
-		e_server_log_del_item_break_will, // ĞÄÄ§ÒâÖ¾¼¤»îÏûºÄ
-		e_server_log_del_item_cloud_shop, // ÔÆ¹ºÏûºÄ
-		e_server_log_del_item_awaken_skill,//¾õĞÑî¿°í¼¼ÄÜÉı¼¶
-		e_server_log_del_item_full_bag,//±³°üÂúÁË£¬Ö±½ÓÉ¾³ı
-		e_server_log_del_item_skill_up_level,//¼¼ÄÜµÈ¼¶ÌáÉı
+		e_server_log_del_item_put_in_bag_not_create, //åªæ˜¯æ¢ä¸ªåŒ…è€Œä¸æ˜¯åˆ›å»ºæ–°çš„
+		e_server_log_del_item_del_mail, //é‚®ä»¶åˆ é™¤
+		e_server_log_del_item_advance_cost, //ç‰©å“è¿›é˜¶æ¶ˆè€—
+		e_server_log_del_item_assembly_cost, //ç¥è£…å†é€ æ¶ˆè€—
+		e_server_log_del_item_item_use, //ç‰©å“ä½¿ç”¨æ‰äº†
+		e_server_log_del_item_item_sell, //ç‰©å“å‡ºå”®
+		e_server_log_del_item_limit_item_auto_del, //é™åˆ¶ç‰©å“è‡ªåŠ¨åˆ é™¤
+		e_server_log_del_item_city_war, //åŸæˆ˜
+		e_server_log_del_item_gm_order, //gmæŒ‡ä»¤
+		e_server_log_del_item_auction_sell, //æ‹å–è¡Œå–å‡ºåˆ é™¤
+		e_server_log_del_item_clearn_talent, //æ¸…ç©ºå¤©èµ‹æ‰£é™¤
+		e_server_log_del_item_set_jewel, //é•¶å®çŸ³
+		e_server_log_del_item_assembled_cost, //ç¥è£…åˆæˆæ¶ˆè€—
+		e_server_log_del_item_rename_cost,	//æ”¹åæ¶ˆè€—
+		e_server_log_del_item_add_on,	//è¿½åŠ 
+		e_server_log_del_item_treasure,	//æŠ½å¥–
+		e_server_log_del_item_map_mopping, //å‰¯æœ¬æ‰«è¡
+		e_server_log_del_item_teleport, //ä¼ é€
+		e_server_log_del_item_friend_gift, //å¥½å‹é€ç¤¼å“
+		e_server_log_del_item_submit_psyche,//å›¾é‰´æäº¤é­‚é­„
+		e_server_log_del_item_spirit_illusion, //ç²¾çµå¹»åŒ–
+		e_server_log_del_item_spirit_voucher, //ç²¾çµæŠ½å¥–
+		e_server_log_del_item_shop_buy, //å•†åº—è´­ä¹°æ›¿æ¢
+		e_server_log_del_item_assembly,//ç¥è£…å†é€ 
+		e_server_log_del_item_assembled, //ç¥è£…åˆæˆ
+		e_server_log_del_item_composit, //åˆæˆ
+		e_server_log_del_item_upgrade, //ç‰©å“å‡çº§
+		e_server_log_del_item_wing_upgrade, //ç¿…è†€å‡çº§
+		e_server_log_del_item_wing_unlock, //ç¿…è†€è§£é”
+		e_server_log_del_item_wing_shape_upgrade, //ç¿…è†€å¤–å½¢å‡çº§
+		e_server_log_del_item_wing_illusionupgrade, //ç¿…è†€å¹»åŒ–å‡çº§
+		e_server_log_del_item_wing_starupgrade, //ç¿…è†€å‡æ˜Ÿ
+		e_server_log_del_item_legion_donate, //å†›å›¢æç‰©
+		e_server_log_del_item_hope_item_one, //ç¥ˆç¦å•æ¬¡
+		e_server_log_del_item_hope_item_ten, //ç¥ˆç¦åè¿
+		e_server_log_del_item_mount_illusion, //åéª‘å¹»åŒ–
+		e_server_log_del_item_mount_unlock, //åéª‘è§£é”
+		e_server_log_del_item_mount_illusionupgrade, //åéª‘å¹»åŒ–å‡çº§
+		e_server_log_del_item_mount_starupgrade, //åéª‘å‡æ˜Ÿ
+		e_server_log_del_item_mount_upgrade, //åéª‘å‡çº§
+		e_server_log_del_item_succinct, //ç‰©å“æ´—ç»ƒ
+		e_server_log_del_item_feather_add_star, //ç¿ç¾½å‡æ˜Ÿ
+		e_server_log_del_item_add_soul, //æ³¨é­‚
+		e_server_log_del_item_add_sprite, //æ³¨çµ
+		e_server_log_del_item_wing_iilusion, //ç¿…è†€å¹»åŒ–
+		e_server_log_del_item_grade_up,		//è½¬èŒ
+		e_server_log_del_item_legion_warehouse,//å†›å›¢ä»“åº“æçŒ®
+		e_server_log_del_item_mainpalace_upgrade,//å›¾é‰´æ®¿å ‚å‡çº§
+		e_server_log_del_item_oracle_activate,//å›¾é‰´ç¥è°•æ¿€æ´»
+		e_server_log_del_item_auction,//æ‹å–è¡Œä¸Šæ¶
+		e_server_log_del_item_change_class,//è½¬èŒ
+		e_server_log_del_item_back_life,//å¤æ´»
+		e_server_log_del_item_marry,//æ±‚å©š
+		e_server_log_del_item_send_mail,//é‚®ä»¶å‘é€ç‰©å“
+		e_server_log_del_item_red_package,//å‘é€çº¢åŒ…
+		e_server_log_del_item_bag_zero,//æ”¾åŒ…æ—¶æ•°é‡ä¸º0
+		e_server_log_del_item_bag_merge,//æ”¾åŒ…æ—¶åˆå¹¶åæ•°é‡ä¸º0
+		e_server_log_del_item_storage_zero,//æ”¾ä»“åº“æ—¶æ•°é‡ä¸º0
+		e_server_log_del_item_storage_merge,//æ”¾åŒ…æ—¶åˆå¹¶åæ•°é‡ä¸º0
+		e_server_log_del_item_use_beast,//ä½¿ç”¨å…½é­‚
+		e_server_log_del_item_equip_on_spirit,//è£…å¤‡ç²¾çµ
+		e_server_log_del_item_bag_error,//æ”¾åŒ…å¤±è´¥
+		e_server_log_del_item_template_null,//æŒ‡é’ˆä¸ºç©º
+		e_server_log_del_item_patron_saint_activate,//å®ˆæŠ¤ç¥æ¿€æ´»
+		e_server_log_del_item_skill_unlock,//æŠ€èƒ½è§£é”
+		e_server_log_del_item_time_limit_exchange,//é™æ—¶å…‘æ¢
+		e_server_log_del_item_split, //æ‹†åˆ†çš„ç‰©å“
+		e_server_log_del_item_pokedex_upgrade, //å›¾é‰´å‡çº§
+		e_server_log_del_item_local_from_mail,//åˆ é™¤æ¥è‡ªé‚®ä»¶é‡Œçš„æœ¬åœ°ç‰©å“
+		e_server_log_del_item_activate_tinder_skill,//æ¿€æ´»ç«ç§æŠ€èƒ½
+		e_server_log_del_item_spirit_upgrade,//ç²¾çµå‡çº§
+		e_server_log_del_item_spirit_skill,//ç²¾çµæŠ€èƒ½
+		e_server_log_del_item_passive_skill_unlock,//è¢«åŠ¨æŠ€èƒ½è§£é”
+		e_server_log_del_item_wing_feather_unlock,//ç¿…è†€ç¿ç¾½è§£é”
+		e_server_log_del_item_forge, //è£…å¤‡é‡é“¸
+		e_server_log_del_item_re_legion_name,	//å†›å›¢æ”¹åæ¶ˆè€—
+		e_server_log_del_item_enchant, //è£…å¤‡é™„é­”
+		e_server_log_del_item_set_skill_book, //è£…å¤‡æŠ€èƒ½ä¹¦
+		e_server_log_del_item_upgrade_goddess_equip,//å‡çº§å¥³ç¥è£…å¤‡
+		e_server_log_del_item_goddess_slot_unlock,//è§£é”åæˆ˜æ§½ä½
+		e_server_log_del_item_wedding_ring_upgrade,//å©šæˆ’å‡çº§
+		e_server_log_del_item_element_merge,//ç¬¦æ–‡èåˆ
+		e_server_log_del_item_element_unlock,//ç¬¦æ–‡è§£é”
+		e_server_log_del_item_chat_far_speak, // åƒé‡Œä¼ éŸ³
+		e_server_log_del_item_new_tinder_active,  //æ–°ç«ç§æ¿€æ´»
+		e_server_log_del_item_awaken,   // è§‰é†’æ¶ˆè€—
+		e_server_log_del_item_unlock_spirit_slot,   // è§£é”ç²¾çµæ§½ä½
+		e_server_log_del_item_star_upgrade_goddess,//å¥³ç¥å‡æ˜Ÿ
+		e_server_log_del_item_dragontrip,  //èŒé¾™å¥‡é‡
+		e_server_log_del_item_mount_equip_off,   //åéª‘è£…å¤‡
+		e_server_log_del_item_mount_equip_star,  //åéª‘è£…å¤‡å‡æ˜Ÿ
+		e_server_log_del_item_wing_zhuling,   //ç¾½ç¿¼é“¸çµ
+		e_server_log_del_item_treasure_clear,  // å®åº“æ¸…ç©º
+		e_server_log_del_item_jewel_carve,     // å®çŸ³çº¹åˆ»
+		e_server_log_del_item_skytreasure,     //å¤©ç©ºå®åº“ 
+		e_server_log_del_item_starark,        //æ˜Ÿæµ·æ–¹èˆŸ
+		e_server_log_del_item_spirit_promote, //ç²¾çµå‡æ ¼æ¶ˆè€—
+		e_server_log_del_item_lucky_card, //ç¦ç‰Œå¼€å¯æ¶ˆè€—
+		e_server_log_del_item_break_will, // å¿ƒé­”æ„å¿—æ¿€æ´»æ¶ˆè€—
+		e_server_log_del_item_cloud_shop, // äº‘è´­æ¶ˆè€—
+		e_server_log_del_item_awaken_skill,//è§‰é†’ç¾ç»ŠæŠ€èƒ½å‡çº§
+		e_server_log_del_item_full_bag,//èƒŒåŒ…æ»¡äº†ï¼Œç›´æ¥åˆ é™¤
+		e_server_log_del_item_skill_up_level,//æŠ€èƒ½ç­‰çº§æå‡
 		e_server_log_del_item_max
 	};
 	enum e_server_log_add_item
 	{
-		e_server_log_add_item_put_in_bag_not_create, //Ö»ÊÇ»»¸ö°ü¶ø²»ÊÇ´´½¨ĞÂµÄ
-		e_server_log_add_item_item_advance, //ÎïÆ·½ø½×
-		e_server_log_add_item_item_assembly, //Éñ×°ÔÙÔì
-		e_server_log_add_item_item_use, //Ê¹ÓÃÎïÆ·
-		e_server_log_add_item_item_split, //ÎïÆ·²ğ·Ö
-		e_server_log_add_item_item_composit, //ºÏ³É
-		e_server_log_add_item_create_sprite_stone, //´´½¨¾«ÁéÊ¯
-		e_server_log_add_item_mount_illusion, //×øÆï»Ã»¯
-		e_server_log_add_item_codex_open, //¿ªÍ¼¼ø
-		e_server_log_add_item_raid_reward, //¸±±¾½áËã
-		e_server_log_add_item_get_welfare, //Áì¸£Àû
-		e_server_log_add_item_activate_code, //ÎïÆ·Âë
-		e_server_log_add_item_finish_mission, //Íê³ÉÈÎÎñ
-		e_server_log_add_item_map_mopping, //É¨µ´
-		e_server_log_add_item_buy_goods, //Âò¶«Î÷
-		e_server_log_add_item_pick_up_drop_box, //¼ñµôÂä°ü
-		e_server_log_add_item_luck_draw, //ĞÒÔË³é½±
-		e_server_log_add_item_item_recovery, //ÎïÆ·»ØÊÕ
-		e_server_log_add_item_get_vip_item, //vipÀñ°ü
-		e_server_log_add_item_func_lock, //¹¦ÄÜ½âËø
-		e_server_log_add_item_finish_all_daily_mission, //Íê³ÉÈ«²¿ÈÕ³£
-		e_server_log_add_item_finish_all_hard_mission, //Íê³ÉÈ«²¿ÌÖ·¥
-		e_server_log_add_item_city_war, //³ÇÕ½
-		e_server_log_add_item_gm_order, //gmÖ¸Áî
-		e_server_log_add_item_wing_iilusion, //³á°ò»Ã»¯
-		e_server_log_add_item_set_jewel_off, //²ğ±¦Ê¯
-		e_server_log_add_item_treasure_prize, //±¦²Ø³é½±
-		e_server_log_add_item_daily_activity_reward, //Ã¿ÈÕÎ´ÁìÈ¡µÄ»îÔ¾¶È¸£Àû
-		e_server_log_add_item_daily_legion_reward, //Ã¿ÈÕÎ´ÁìÈ¡µÄ¾üÍÅ¸£Àû
-		e_server_log_add_item_item_assembled, //Éñ×°ºÏ³É
-		e_server_log_add_item_mail, //ÓÊ¼şÖĞ»ñÈ¡
-		e_server_log_add_item_spirit_lock, //»êÊ¯½âËø
-		e_server_log_add_item_cancel_sell, //ÎïÆ·ÏÂ¼Ü
-		e_server_log_add_item_rename_fail, //¸ÄÃûÊ§°Ü
-		e_server_log_add_item_legion_warehouse,//¾üÍÅ²Ö¿â»ñÈ¡
-		e_server_log_add_item_service_rank, //È«Ãñ³å°ñ
-		e_server_log_add_item_spirit_bag, //¾«Áé·Å»Ø±³°ü
-		e_server_log_add_item_load_db, //´ÓÊı¾İ¿â¶ÁÈ¡
-		e_server_log_add_item_load_create, //Êı¾İÔö¼Ó
-		e_server_log_add_item_bag_split, //±³°ü²ğ·Ö
-		e_server_log_add_item_storage_split, //²Ö¿â²ğ·Ö
-		e_server_log_add_item_open_package_bag,//ÎïÆ·¿ª°ü
-		e_server_log_add_item_arena_reward,//¾º¼¼³¡½±Àø
-		e_server_log_add_item_time_limit,//ÏŞÊ±»î¶¯
-		e_server_log_add_item_treasure,//³é½±
+		e_server_log_add_item_put_in_bag_not_create, //åªæ˜¯æ¢ä¸ªåŒ…è€Œä¸æ˜¯åˆ›å»ºæ–°çš„
+		e_server_log_add_item_item_advance, //ç‰©å“è¿›é˜¶
+		e_server_log_add_item_item_assembly, //ç¥è£…å†é€ 
+		e_server_log_add_item_item_use, //ä½¿ç”¨ç‰©å“
+		e_server_log_add_item_item_split, //ç‰©å“æ‹†åˆ†
+		e_server_log_add_item_item_composit, //åˆæˆ
+		e_server_log_add_item_create_sprite_stone, //åˆ›å»ºç²¾çµçŸ³
+		e_server_log_add_item_mount_illusion, //åéª‘å¹»åŒ–
+		e_server_log_add_item_codex_open, //å¼€å›¾é‰´
+		e_server_log_add_item_raid_reward, //å‰¯æœ¬ç»“ç®—
+		e_server_log_add_item_get_welfare, //é¢†ç¦åˆ©
+		e_server_log_add_item_activate_code, //ç‰©å“ç 
+		e_server_log_add_item_finish_mission, //å®Œæˆä»»åŠ¡
+		e_server_log_add_item_map_mopping, //æ‰«è¡
+		e_server_log_add_item_buy_goods, //ä¹°ä¸œè¥¿
+		e_server_log_add_item_pick_up_drop_box, //æ¡æ‰è½åŒ…
+		e_server_log_add_item_luck_draw, //å¹¸è¿æŠ½å¥–
+		e_server_log_add_item_item_recovery, //ç‰©å“å›æ”¶
+		e_server_log_add_item_get_vip_item, //vipç¤¼åŒ…
+		e_server_log_add_item_func_lock, //åŠŸèƒ½è§£é”
+		e_server_log_add_item_finish_all_daily_mission, //å®Œæˆå…¨éƒ¨æ—¥å¸¸
+		e_server_log_add_item_finish_all_hard_mission, //å®Œæˆå…¨éƒ¨è®¨ä¼
+		e_server_log_add_item_city_war, //åŸæˆ˜
+		e_server_log_add_item_gm_order, //gmæŒ‡ä»¤
+		e_server_log_add_item_wing_iilusion, //ç¿…è†€å¹»åŒ–
+		e_server_log_add_item_set_jewel_off, //æ‹†å®çŸ³
+		e_server_log_add_item_treasure_prize, //å®è—æŠ½å¥–
+		e_server_log_add_item_daily_activity_reward, //æ¯æ—¥æœªé¢†å–çš„æ´»è·ƒåº¦ç¦åˆ©
+		e_server_log_add_item_daily_legion_reward, //æ¯æ—¥æœªé¢†å–çš„å†›å›¢ç¦åˆ©
+		e_server_log_add_item_item_assembled, //ç¥è£…åˆæˆ
+		e_server_log_add_item_mail, //é‚®ä»¶ä¸­è·å–
+		e_server_log_add_item_spirit_lock, //é­‚çŸ³è§£é”
+		e_server_log_add_item_cancel_sell, //ç‰©å“ä¸‹æ¶
+		e_server_log_add_item_rename_fail, //æ”¹åå¤±è´¥
+		e_server_log_add_item_legion_warehouse,//å†›å›¢ä»“åº“è·å–
+		e_server_log_add_item_service_rank, //å…¨æ°‘å†²æ¦œ
+		e_server_log_add_item_spirit_bag, //ç²¾çµæ”¾å›èƒŒåŒ…
+		e_server_log_add_item_load_db, //ä»æ•°æ®åº“è¯»å–
+		e_server_log_add_item_load_create, //æ•°æ®å¢åŠ 
+		e_server_log_add_item_bag_split, //èƒŒåŒ…æ‹†åˆ†
+		e_server_log_add_item_storage_split, //ä»“åº“æ‹†åˆ†
+		e_server_log_add_item_open_package_bag,//ç‰©å“å¼€åŒ…
+		e_server_log_add_item_arena_reward,//ç«æŠ€åœºå¥–åŠ±
+		e_server_log_add_item_time_limit,//é™æ—¶æ´»åŠ¨
+		e_server_log_add_item_treasure,//æŠ½å¥–
 		e_server_log_add_item_service_goal,//24H
-		e_server_log_add_item_seven_day,//7ÈÕ
-		e_server_log_add_item_first_kill,//Ê×É±
-		e_server_log_add_item_upgrade_fail_offset,//Ç¿»¯Ê§°Ü²¹³¥
-		e_server_log_add_item_add_item_to_bag,//Ìí¼ÓÎï¼şµ½±³°ü
-		e_server_log_add_item_splite_element_heart,//·Ö½âÔªËØÖ®ĞÄ
-		e_server_log_add_item_tidy_belife_rune,//ÕûÀíĞÅÑö·ûÎÄ
-		e_server_log_add_item_tidy_element_heart,	//»ñµÃÔªËØÖ®ĞÄ
-		e_server_log_add_item_gm_create_item,//GMÃüÁî´´½¨ÎïÆ·
-		e_server_log_add_item_first_kill_boss_welfare,//ÊÀ½çbossÊ×É±¸£Àû
-		e_server_log_add_item_notice_info,//Ìí¼Ó¹«¸æĞÅÏ¢
-		e_server_log_add_item_by_dtop_items, //Í¨¹ıÎïÆ·ÁĞ±íÌí¼ÓÎïÆ·
-		e_server_log_add_item_unlock_award,//½âËøµÃµ½µÄ½±Æ·
-		e_server_log_add_item_unenchant,//¸½Ä§²ğ·Ö
-		e_server_log_add_item_element_merge,//·ûÎÄÈÚºÏ
-		e_server_log_add_item_person_information,//¸öĞÔ±êÇ©
-		e_server_log_add_item_marry_dati,//½á»é´ğÌâ
-		e_server_log_add_item_recycle, //ÀÏÓÑ»Ø¹é
-		e_server_log_add_item_competition,//Èü¼¾½±Àø
-		e_server_log_add_item_cumulative_sign_in,//ÀÛ¼ÆÇ©µ½
-		e_server_log_add_item_dragontrip,         //ÃÈÁúÆæÓö
-		e_server_log_add_item_auction,            //ÅÄÂôĞĞ¹ºÂòÎïÆ·
-		e_server_log_add_item_skytreasure,        //Ìì¿Õ±¦¿â
+		e_server_log_add_item_seven_day,//7æ—¥
+		e_server_log_add_item_first_kill,//é¦–æ€
+		e_server_log_add_item_upgrade_fail_offset,//å¼ºåŒ–å¤±è´¥è¡¥å¿
+		e_server_log_add_item_add_item_to_bag,//æ·»åŠ ç‰©ä»¶åˆ°èƒŒåŒ…
+		e_server_log_add_item_splite_element_heart,//åˆ†è§£å…ƒç´ ä¹‹å¿ƒ
+		e_server_log_add_item_tidy_belife_rune,//æ•´ç†ä¿¡ä»°ç¬¦æ–‡
+		e_server_log_add_item_tidy_element_heart,	//è·å¾—å…ƒç´ ä¹‹å¿ƒ
+		e_server_log_add_item_gm_create_item,//GMå‘½ä»¤åˆ›å»ºç‰©å“
+		e_server_log_add_item_first_kill_boss_welfare,//ä¸–ç•Œbossé¦–æ€ç¦åˆ©
+		e_server_log_add_item_notice_info,//æ·»åŠ å…¬å‘Šä¿¡æ¯
+		e_server_log_add_item_by_dtop_items, //é€šè¿‡ç‰©å“åˆ—è¡¨æ·»åŠ ç‰©å“
+		e_server_log_add_item_unlock_award,//è§£é”å¾—åˆ°çš„å¥–å“
+		e_server_log_add_item_unenchant,//é™„é­”æ‹†åˆ†
+		e_server_log_add_item_element_merge,//ç¬¦æ–‡èåˆ
+		e_server_log_add_item_person_information,//ä¸ªæ€§æ ‡ç­¾
+		e_server_log_add_item_marry_dati,//ç»“å©šç­”é¢˜
+		e_server_log_add_item_recycle, //è€å‹å›å½’
+		e_server_log_add_item_competition,//èµ›å­£å¥–åŠ±
+		e_server_log_add_item_cumulative_sign_in,//ç´¯è®¡ç­¾åˆ°
+		e_server_log_add_item_dragontrip,         //èŒé¾™å¥‡é‡
+		e_server_log_add_item_auction,            //æ‹å–è¡Œè´­ä¹°ç‰©å“
+		e_server_log_add_item_skytreasure,        //å¤©ç©ºå®åº“
 		e_server_log_add_item_starark,
-		e_server_log_add_item_lucky_card, //¸£ÅÆ½±Àø
-		e_server_log_add_item_element_competition,//ÔªËØÊÖ²á½±Àø
-		e_server_log_add_item_time_feed_back,	//Ê±¹âÀ¡Ôù
-		e_server_log_add_item_time_limit_gift,	//ÏŞÊ±Àñ°ü
-		e_server_log_add_item_time_limit_buy,	//ÏŞÊ±»î¶¯¹ºÂò
-		e_server_log_add_buy_diamond_shop,		//×êÊ¯ÉÌµê¹ºÂò
-		e_server_log_add_buy_star_trip,			//ĞÇ½çÒìÂÃ¶Ò»»
-		e_server_log_add_item_offline_award,	//ÀëÏß½±ÀøÁìÈ¡
-		e_server_log_add_item_online_award,		//ÔÚÏß½±ÀøÁìÈ¡
-		e_server_log_add_item_search_map,		//Ì½Ë÷µØÍ¼½±Àø
-		e_server_log_add_item_treasure_pic,		//²Ø±¦Í¼½±Àø
-		e_server_log_add_item_element_mission,	//·ûÎÄÕ½ÈÎÎñ½±Àø
-		e_server_log_add_item_harry,//Ôö¼Ó¿ç·şÂÓ¶áÎïÆ·
-		e_server_log_add_item_pk_king,//pkÖ®Íõ½±Àø
-		e_server_log_add_item_legion_station,//¾üÍÅÕ¾
-		e_server_log_add_item_broken_sky,//ÆÆËéĞé¿Õ
-		e_server_log_add_item_bonfire,//óô»ğ
-		e_server_log_add_item_married_reward,//½á»é½±Àø
-		e_server_log_add_item_stat_num,//
-		e_server_log_add_item_daily_must_do_arena, //Ã¿ÈÕ±Ø×ö¾º¼¼³¡
+		e_server_log_add_item_lucky_card, //ç¦ç‰Œå¥–åŠ±
+		e_server_log_add_item_element_competition,//å…ƒç´ æ‰‹å†Œå¥–åŠ±
+		e_server_log_add_item_time_feed_back,	//æ—¶å…‰é¦ˆèµ 
+		e_server_log_add_item_time_limit_gift,	//é™æ—¶ç¤¼åŒ…
+		e_server_log_add_item_time_limit_buy,	//é™æ—¶æ´»åŠ¨è´­ä¹°
+		e_server_log_add_buy_diamond_shop,		//é’»çŸ³å•†åº—è´­ä¹°
+		e_server_log_add_buy_star_trip,			//æ˜Ÿç•Œå¼‚æ—…å…‘æ¢
+		e_server_log_add_item_offline_award,	//ç¦»çº¿å¥–åŠ±é¢†å–
+		e_server_log_add_item_online_award,		//åœ¨çº¿å¥–åŠ±é¢†å–
+		e_server_log_add_item_search_map,		//æ¢ç´¢åœ°å›¾å¥–åŠ±
+		e_server_log_add_item_treasure_pic,		//è—å®å›¾å¥–åŠ±
+		e_server_log_add_item_element_mission,	//ç¬¦æ–‡æˆ˜ä»»åŠ¡å¥–åŠ±
+		e_server_log_add_item_harry,//å¢åŠ è·¨æœæ å¤ºç‰©å“
+		e_server_log_add_item_pk_king,//pkä¹‹ç‹å¥–åŠ±
+		e_server_log_add_item_legion_station,//å†›å›¢ç«™
+		e_server_log_add_item_broken_sky,//ç ´ç¢è™šç©º
+		e_server_log_add_item_bonfire,//ç¯ç«
+		e_server_log_add_item_married_reward,//ç»“å©šå¥–åŠ±
+		e_server_log_add_item_stat_num,
+		e_server_log_add_item_daily_must_do_arena, //æ¯æ—¥å¿…åšç«æŠ€åœº
 		e_server_log_add_item_oracle_trial,
-		e_server_log_add_item_npc_damage_rewards,//npcÉËº¦½±Àø
-		e_server_log_add_item_legion_occupation_daily,//¾üÍÅÕ¼ÁìÈÕ³£
-		e_server_log_add_item_legion_draw_mem_daily,//
-		e_server_log_add_item_legion_draw_bonfire_daily,//
-		e_server_log_add_item_legion_answer_question_right,//
+		e_server_log_add_item_npc_damage_rewards,//npcä¼¤å®³å¥–åŠ±
+		e_server_log_add_item_legion_occupation_daily,//å†›å›¢å é¢†æ—¥å¸¸
+		e_server_log_add_item_legion_draw_mem_daily,
+		e_server_log_add_item_legion_draw_bonfire_daily,
+		e_server_log_add_item_legion_answer_question_right,
 		e_server_log_add_item_max
 	};
 

@@ -604,12 +604,12 @@ const xstring TABLE_FILED_TABLE_NAME_TIME_LIMIT_ACTIVITY_LOG[] = {
 	"role_power",
 	
 	"role_vip",
-	"activity_id",//ÏŞÊ±»î¶¯id
-	"activity_type",//ÏŞÊ±»î¶¯ÀàĞÍ
-	"cur_value",//µ±Ç°Ö¸
-	"target_value",//Ä¿±êÖµ
-	"reward_id",//½±ÀøµÄÎïÆ·id
-	"reward_num",//½±ÀøµÄÎïÆ·ÊıÁ¿
+	"activity_id",//é™æ—¶æ´»åŠ¨id
+	"activity_type",//é™æ—¶æ´»åŠ¨ç±»å‹
+	"cur_value",//å½“å‰æŒ‡
+	"target_value",//ç›®æ ‡å€¼
+	"reward_id",//å¥–åŠ±çš„ç‰©å“id
+	"reward_num",//å¥–åŠ±çš„ç‰©å“æ•°é‡
 
 	"login_type",
 	"appid",

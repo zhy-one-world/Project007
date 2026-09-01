@@ -18,41 +18,41 @@ namespace faith
 {
 #pragma pack(push,1)
 
-	const int32			max_attribute_num = 30;			//ÊôĞÔ×î´óÊıÁ¿
-	const int32			MAX_TITLE_NUM = 200;			//³ÆºÅ×î´óÊıÁ¿
-	const int32			pk_king_title_id = 39000010; // PKÖ®ÍõµÄ³ÆºÅID
-	const int32			pk_king_kill_num_title_id = 39000077; // PKÖ®Íõ»÷É±µÄ³ÆºÅID
+	const int32			max_attribute_num = 30;			//å±æ€§æœ€å¤§æ•°é‡
+	const int32			MAX_TITLE_NUM = 200;			//ç§°å·æœ€å¤§æ•°é‡
+	const int32			pk_king_title_id = 39000010; // PKä¹‹ç‹çš„ç§°å·ID
+	const int32			pk_king_kill_num_title_id = 39000077; // PKä¹‹ç‹å‡»æ€çš„ç§°å·ID
 
 
 	enum e_title_type
 	{
-		e_title_type_title_card,				//Ê¹ÓÃ³ÆºÅ¿¨
-		e_title_type_kingofpk,					//pkÖ®Íõ
-		e_title_type_kingofgods,				//ÖîÉñÖ®Íõ
-		e_title_type_legion_city_win_chief,		//ËùÁìµ¼¾üÍÅÎª¾üÍÅÕù°ÔÊ¤·½
-		e_title_type_legion_city_win_member,	//ËùÔÚ¾üÍÅÎª¾üÍÅÕù°ÔÊ¤·½
-		e_title_type_capture_point_chief,		//ËùÁìµ¼¾üÍÅÕ¼Áì10¼¶¾İµã
-		e_title_type_capture_point_member,		//ËùÔÚ¾üÍÅÕ¼Áì10¼¶¾İµã
-		e_title_type_login_day_num,				//µÇÂ½ÌìÊı
-		e_title_type_level,						//½ÇÉ«µÈ¼¶
-		e_title_type_kill_player_num,			//»÷É±Íæ¼ÒÊıÁ¿
-		e_title_type_arena_rank_first,			//¾º¼¼³¡ÅÅÃûµÚÒ»
-		e_title_type_worship_rank_first,		//ÍşÍûÅÅÃûµÚÒ»
-		e_title_type_gs_rank_first,				//Õ½Á¦ÅÅÃûµÚÒ»
-		e_title_type_money_rank_first,			//²Æ¸»ÅÅÃûµÚÒ»
-		e_title_type_first_clearance_heard_map, //Ê×´ÎÍ¨¹ØÁ¶Óü¸±±¾
-		e_title_type_gs_ranking_barserker,		//Õ½Ê¿Õ½Á¦°ñ
-		e_title_type_gs_ranking_wizard,			//·¨Ê¦
-		e_title_type_gs_ranking_guardian,		//ÆïÊ¿
-		e_title_type_gs_ranking_assassinator,	//´Ì¿Í
+		e_title_type_title_card,				//ä½¿ç”¨ç§°å·å¡
+		e_title_type_kingofpk,					//pkä¹‹ç‹
+		e_title_type_kingofgods,				//è¯¸ç¥ä¹‹ç‹
+		e_title_type_legion_city_win_chief,		//æ‰€é¢†å¯¼å†›å›¢ä¸ºå†›å›¢äº‰éœ¸èƒœæ–¹
+		e_title_type_legion_city_win_member,	//æ‰€åœ¨å†›å›¢ä¸ºå†›å›¢äº‰éœ¸èƒœæ–¹
+		e_title_type_capture_point_chief,		//æ‰€é¢†å¯¼å†›å›¢å é¢†10çº§æ®ç‚¹
+		e_title_type_capture_point_member,		//æ‰€åœ¨å†›å›¢å é¢†10çº§æ®ç‚¹
+		e_title_type_login_day_num,				//ç™»é™†å¤©æ•°
+		e_title_type_level,						//è§’è‰²ç­‰çº§
+		e_title_type_kill_player_num,			//å‡»æ€ç©å®¶æ•°é‡
+		e_title_type_arena_rank_first,			//ç«æŠ€åœºæ’åç¬¬ä¸€
+		e_title_type_worship_rank_first,		//å¨æœ›æ’åç¬¬ä¸€
+		e_title_type_gs_rank_first,				//æˆ˜åŠ›æ’åç¬¬ä¸€
+		e_title_type_money_rank_first,			//è´¢å¯Œæ’åç¬¬ä¸€
+		e_title_type_first_clearance_heard_map, //é¦–æ¬¡é€šå…³ç‚¼ç‹±å‰¯æœ¬
+		e_title_type_gs_ranking_barserker,		//æˆ˜å£«æˆ˜åŠ›æ¦œ
+		e_title_type_gs_ranking_wizard,			//æ³•å¸ˆ
+		e_title_type_gs_ranking_guardian,		//éª‘å£«
+		e_title_type_gs_ranking_assassinator,	//åˆºå®¢
 		e_title_type_vip,						//VIP
-		e_title_type_internal_test,			    //ÄÚ²âÏÈ·æ
-		e_title_type_best_barserker,			//×îÇ¿Õ½Ê¿
-		e_title_type_best_wizard,				//×îÇ¿·¨Ê¦
-		e_title_type_best_guardian,				//×îÇ¿ÆïÊ¿
-		e_title_type_best_assassinator,			//×îÇ¿´Ì¿Í
-		e_title_type_marry_times,				//½á»é³ÆºÅ
-		e_title_type_marry_divorce_times,		//Àë»é³ÆºÅ
+		e_title_type_internal_test,			    //å†…æµ‹å…ˆé”‹
+		e_title_type_best_barserker,			//æœ€å¼ºæˆ˜å£«
+		e_title_type_best_wizard,				//æœ€å¼ºæ³•å¸ˆ
+		e_title_type_best_guardian,				//æœ€å¼ºéª‘å£«
+		e_title_type_best_assassinator,			//æœ€å¼ºåˆºå®¢
+		e_title_type_marry_times,				//ç»“å©šç§°å·
+		e_title_type_marry_divorce_times,		//ç¦»å©šç§°å·
 		e_title_type_cross_ladder_one,
 		e_title_type_cross_ladder_two,
 		e_title_type_cross_ladder_three,
@@ -60,11 +60,11 @@ namespace faith
 		e_title_type_cross_ladder_five,
 		e_title_type_cross_ladder_six,
 		e_title_type_cross_ladder_ranking,
-		e_title_type_pk_king_kill_num,			//PkÖ®ÍõÁ¬É±
-		e_title_type_element_war_one,			//ÔªËØÕù°Ô°×½ğ³ÆºÅ
-		e_title_type_element_war_two,			//ÔªËØÕù°Ô×êÊ¯³ÆºÅ
-		e_title_type_element_war_three,			//ÔªËØÕù°ÔÍõÕß³ÆºÅ
-		e_title_type_element_war_ranking,		//ÔªËØÕù°Ô°ÙÇ¿³ÆºÅ
+		e_title_type_pk_king_kill_num,			//Pkä¹‹ç‹è¿æ€
+		e_title_type_element_war_one,			//å…ƒç´ äº‰éœ¸ç™½é‡‘ç§°å·
+		e_title_type_element_war_two,			//å…ƒç´ äº‰éœ¸é’»çŸ³ç§°å·
+		e_title_type_element_war_three,			//å…ƒç´ äº‰éœ¸ç‹è€…ç§°å·
+		e_title_type_element_war_ranking,		//å…ƒç´ äº‰éœ¸ç™¾å¼ºç§°å·
 		e_title_type_max	
 	};
 	
@@ -89,8 +89,8 @@ namespace faith
 
 	enum e_title_equip_id
 	{
-		e_title_equip_template_id,					//µ±Ç°×°±¸³ÆºÅÄ£°åid
-		e_title_equip_index_id,						//µ±Ç°×°±¸³ÆºÅÊı×éid
+		e_title_equip_template_id,					//å½“å‰è£…å¤‡ç§°å·æ¨¡æ¿id
+		e_title_equip_index_id,						//å½“å‰è£…å¤‡ç§°å·æ•°ç»„id
 		e_title_equip_max,
 	};
 
@@ -109,16 +109,16 @@ namespace faith
 	};
 	enum e_title_add_result_type
 	{
-		e_title_add_result_type_none,					//Î´Öª´íÎó
-		e_title_add_result_type_normal,					//Õı³£Ê¹ÓÃ³É¹¦
-		e_title_add_result_type_add_time,				//×·¼ÓÊ±¼ä
-		e_title_add_result_type_cannot_use_again,		//²»ÄÜÖØ¸´Ê¹ÓÃ
+		e_title_add_result_type_none,					//æœªçŸ¥é”™è¯¯
+		e_title_add_result_type_normal,					//æ­£å¸¸ä½¿ç”¨æˆåŠŸ
+		e_title_add_result_type_add_time,				//è¿½åŠ æ—¶é—´
+		e_title_add_result_type_cannot_use_again,		//ä¸èƒ½é‡å¤ä½¿ç”¨
 		e_title_add_result_type_max,
 	};
 	enum e_title_operate_type
 	{
-		e_title_operate_type_equip_on,					//×°±¸
-		e_title_operate_type_equip_off,					//Ğ¶ÏÂ
+		e_title_operate_type_equip_on,					//è£…å¤‡
+		e_title_operate_type_equip_off,					//å¸ä¸‹
 		e_title_operate_type_max,
 	};
 

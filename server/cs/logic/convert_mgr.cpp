@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê7ÔÂ14ÈÕ13:56:28
+created: 2016å¹´7æœˆ14æ—¥13:56:28
 file base: convert_mgr
 file ext: cpp
 author: zhangminghai
@@ -292,7 +292,7 @@ namespace faith
 		return init_unit::change_i64_to_string(m_player_ptr->get_time_data(time_type)).c_str();
 	}
 
-	void convert_mgr::force_refresh() //ÓÃm_all_convert_time[4]£¬Ê®½øÖÆ²»Í¬Î»£¬´æ´¢µÚÒ»´ÎÃâ·ÑË¢ĞÂ×´Ì¬£¨0Î´Ë¢ĞÂ£¬1ÒÑË¢ĞÂ£©£¬1234Î»·Ö±ğ±íÊ¾²»Í¬»õ±Ò×ª»»£¬µÚÎåÎ»ÓÃÀ´Ç¿ÖÆË¢ĞÂ×ª»»´ÎÊı	
+	void convert_mgr::force_refresh() //ç”¨m_all_convert_time[4]ï¼Œåè¿›åˆ¶ä¸åŒä½ï¼Œå­˜å‚¨ç¬¬ä¸€æ¬¡å…è´¹åˆ·æ–°çŠ¶æ€ï¼ˆ0æœªåˆ·æ–°ï¼Œ1å·²åˆ·æ–°ï¼‰ï¼Œ1234ä½åˆ†åˆ«è¡¨ç¤ºä¸åŒè´§å¸è½¬æ¢ï¼Œç¬¬äº”ä½ç”¨æ¥å¼ºåˆ¶åˆ·æ–°è½¬æ¢æ¬¡æ•°	
 	{
 		int32 num = m_all_convert_time[4];
 		if (num	< pow(10,5))

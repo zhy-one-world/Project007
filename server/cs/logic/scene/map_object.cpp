@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2016Äê10ÔÂ18ÈÕ21:38:42
+	created:	2016å¹´10æœˆ18æ—¥21:38:42
 	file base:	map_object
 	file ext:	cpp
 	author:		zhy
@@ -365,7 +365,7 @@ namespace faith
 		team_game_over_msg.raid_map_guid = m_map_guid;
 		connection_mgr::getInstance().send_to_ws( &team_game_over_msg, sizeof(team_game_over_msg));
 
-		//Èç¹ûÍê³É£¬ÇÒ²»ÊÇÖúÕ½ ÔòÔö¼ÓºÃÓÑ¶È
+		//å¦‚æœå®Œæˆï¼Œä¸”ä¸æ˜¯åŠ©æˆ˜ åˆ™å¢åŠ å¥½å‹åº¦
 		cs2ws_fuben_add_friendliness_value pak;
 		for (unit_index_map_it it = m_player_index_list.begin(); it != m_player_index_list.end();)
 		{
@@ -579,7 +579,7 @@ namespace faith
 		//	server_log::server_debug_log(log_str);
 		//}
 
-		// on_player_deleteÔÚm_player_mapÇå³ıµôÁËÍæ¼Òºóµ÷ÓÃ
+		// on_player_deleteåœ¨m_player_mapæ¸…é™¤æ‰äº†ç©å®¶åè°ƒç”¨
 		on_player_delete(unit_index);
 	}
 	
@@ -612,12 +612,12 @@ namespace faith
 		}
 		
 
-		if (e_map_type_big_map != get_map_type()) //·Ç´óÊÀ½çµÄÂß¼­
+		if (e_map_type_big_map != get_map_type()) //éå¤§ä¸–ç•Œçš„é€»è¾‘
 		{
 			send_cur_game_state_to_player(unit_index);
 			check_default_pk_mode(unit_index);
 		}
-		if (false == init_unit::get_map_public(get_map_type())) //·Ç¹«¹²µØÍ¼µÄÂß¼­
+		if (false == init_unit::get_map_public(get_map_type())) //éå…¬å…±åœ°å›¾çš„é€»è¾‘
 		{
 			calcu_player_avg_level();
 			send_cur_wave_trig_state_to_player(unit_index);		
@@ -899,7 +899,7 @@ namespace faith
 				continue;
 			}
 
-			//»á×ß±»Íæ¼ÒÉ±µôµÄÂß¼­
+			//ä¼šèµ°è¢«ç©å®¶æ€æ‰çš„é€»è¾‘
 			buff_man::add_buff_inst(unit_array_index, temp_npc.get_array_index(), GM_DAMAGE_BUFF_ID, &penv);
 		}
 	}
@@ -911,11 +911,11 @@ namespace faith
 			auto temp_it = it++;
 			int32 npc_index = temp_it->first;
 		
-			//ÓÑ·½NPC²»É¾³ı
+			//å‹æ–¹NPCä¸åˆ é™¤
 			npc& temp_npc = unit_man::get_npc(npc_index);
 			if (temp_npc.get_unit_type() == e_unit_type_friend_npc || e_unit_type_drop_bag == temp_npc.get_unit_type()
 				|| (temp_npc.get_unit_type() == e_unit_type_npc && temp_npc.get_unit_sub_type() == e_npc_type_cross_pk_chests)
-				|| (temp_npc.get_unit_type() == e_unit_type_npc && temp_npc.get_unit_sub_type() == e_npc_type_world_boss_chests))//·ÀÖ¹µôÂä°ü±»Çåµô
+				|| (temp_npc.get_unit_type() == e_unit_type_npc && temp_npc.get_unit_sub_type() == e_npc_type_world_boss_chests))//é˜²æ­¢æ‰è½åŒ…è¢«æ¸…æ‰
 			{
 				continue;
 			}
@@ -967,7 +967,7 @@ namespace faith
 					map_template_id = temp_player.get_unit_info(e_role_info_main_map_id);
 					map_line_id = temp_player.get_main_line_id();
 				}
-				// Èç¹ûÊÇ¸öÈË´ò±¦µØÍ¼Àë¿ªÊ±¸´Ô­PkÄ£Ê½
+				// å¦‚æœæ˜¯ä¸ªäººæ‰“å®åœ°å›¾ç¦»å¼€æ—¶å¤åŸPkæ¨¡å¼
 				if (get_map_type() == e_map_type_single_land_boss)
 				{
 					int32 main_pk_mode = temp_player.get_logic_data(e_role_logic_info_main_pk_mode);
@@ -1006,7 +1006,7 @@ namespace faith
 	
 	void map_object::check_default_pk_mode(const int32& unit_index)
 	{
-		//ÏÖÔÚµÄÂß¼­ĞèÒª²¿·Ö½øÈëµØÍ¼¸ÄpkÄ£Ê½ ±ÈÈç´ò±¦µØÍ¼
+		//ç°åœ¨çš„é€»è¾‘éœ€è¦éƒ¨åˆ†è¿›å…¥åœ°å›¾æ”¹pkæ¨¡å¼ æ¯”å¦‚æ‰“å®åœ°å›¾
 		MapTemplate* map_template_ptr = get_map_template_ptr();
 		if (nullptr == map_template_ptr)
 		{
@@ -1137,7 +1137,7 @@ namespace faith
 			{
 				return 0;
 			}
-			return player_ref.get_time_data(e_time_type_ancient_battelfield) / second_tick_time; //ÏûºÄÍêÃ¿ÈÕÊ±¼äºóÎª0
+			return player_ref.get_time_data(e_time_type_ancient_battelfield) / second_tick_time; //æ¶ˆè€—å®Œæ¯æ—¥æ—¶é—´åä¸º0
 		}
 		else if (act_map_type == e_map_type_broken_sky)
 		{

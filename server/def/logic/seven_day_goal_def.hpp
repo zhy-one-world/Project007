@@ -1,9 +1,9 @@
 /********************************************************************
-  created: 2019Äê2ÔÂ13ÈÕ
+  created: 2019å¹´2æœˆ13æ—¥
   file base: seven_day_goal_def
   file ext: hpp
   author: wangdi
-  purpose: ÆßÈÕÄ¿±ê¶¨ÒåÎÄ¼þ
+  purpose: ä¸ƒæ—¥ç›®æ ‡å®šä¹‰æ–‡ä»¶
 *********************************************************************/
 #ifndef _SEVEN_DAY_GOAL_DEF_HPP_
 #define _SEVEN_DAY_GOAL_DEF_HPP_

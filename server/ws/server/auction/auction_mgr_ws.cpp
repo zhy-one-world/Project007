@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 file name:	relation_mgr_ws.cpp
 created:	2017/06/20 20:46
 author:		zhy
@@ -220,7 +220,6 @@ namespace faith
 			buy_failed_msg.set_operate_type(e_auction_operate_type_purchase);
 			buy_failed_msg.set_operate_result(e_auction_purchase_already_purchased);
 
-			//�����⼸����ûʲô��
 			buy_failed_msg.set_item_guid(item_guid.server_64);
 			buy_failed_msg.set_item_num(0);	
 			buy_failed_msg.set_money_type(0);
@@ -260,7 +259,6 @@ namespace faith
 			buy_failed_msg.set_operate_type(e_auction_operate_type_purchase);
 			buy_failed_msg.set_operate_result(e_auction_purchase_already_purchased);
 
-			//�����⼸����ûʲô��
 			buy_failed_msg.set_item_guid(0);
 			buy_failed_msg.set_item_num(0);
 			buy_failed_msg.set_money_type(0);
@@ -277,7 +275,6 @@ namespace faith
 			if (nullptr == session_player
 				|| session_player->get_cs_conn_index() < 0)
 			{
-				//�Է��������� ����֪���۶���Ǯ
 				auction_mgr_ws::get_instance().add_auction_info_to_db(info);
 			}
 			else
@@ -344,14 +341,12 @@ namespace faith
 		{
 			return;
 		}
-		//guidһ���У���ID�ж��Ƿ��ҵ�
 		if (info.item_info.data_ary[e_item_info_info_id] == 0)
 		{
 			auction_proto_operate_end buy_failed_msg;
 			buy_failed_msg.set_operate_type(e_auction_operate_type_cancel_sell);
 			buy_failed_msg.set_operate_result(e_auction_cancel_sell_already_sell);
 
-			//�����⼸����ûʲô��
 			buy_failed_msg.set_item_guid(0);
 			buy_failed_msg.set_item_num(0);
 			buy_failed_msg.set_money_type(0);
@@ -447,7 +442,7 @@ namespace faith
 		{
 		case e_trading_type_world:
 		case e_trading_type_normal_sell:
-		{//��ͨ����Ҫ��CS�ذ�
+		{
 			client_session* session_player = client_session_mgr::getInstance().get_session(info.seller_guid);
 			if (session_player != nullptr
 				&& session_player->get_cs_conn_index() >= 0)
@@ -563,19 +558,16 @@ namespace faith
 			notice_param_array.push_back(info.item_info.data_ary[i]);
 		}
 
-		//�����Ƶ�
 		std::vector<std::string> vec_notice;
 		vec_notice.push_back(template_manager::get_instance().get_str_id_by_notice_id(93000232));
 		vec_notice.push_back(info.seller_name);
 
-		//�ṹ���е�nameû����ɫ����
 		const std::string& temp_string = template_manager::get_instance().get_str_by_string_template_id(item_template_ptr->ItemName);
 		vec_notice.push_back(temp_string);
 
 		std::string notice_str = init_unit::implode(vec_notice);
 		event_ws_mgr::get_instance().send_notice_to_all(93000232, time_helper::get_cur_time_new().second, info.seller_guid, notice_str, session_player->get_role_info_data(e_role_info_template_id));
 
-		//����Ƶ����
 		event_ws_mgr::get_instance().send_notice_with_param(
 			info.seller_guid, info.seller_name, 
 			"90089566", 
@@ -596,7 +588,6 @@ namespace faith
 			bid_failed_msg.set_operate_type(e_auction_operate_type_bid);
 			bid_failed_msg.set_operate_result(e_auction_bid_money_changed);
 
-			//�����⼸����ûʲô��
 			bid_failed_msg.set_item_guid(item_guid.server_64);
 			bid_failed_msg.set_item_num(0);
 			bid_failed_msg.set_money_type(0);
@@ -640,7 +631,6 @@ namespace faith
 			buy_failed_msg.set_operate_type(e_auction_operate_type_bid);
 			buy_failed_msg.set_operate_result(e_auction_purchase_already_purchased);
 
-			//�����⼸����ûʲô��
 			buy_failed_msg.set_item_guid(0);
 			buy_failed_msg.set_item_num(0);
 			buy_failed_msg.set_money_type(0);
@@ -662,7 +652,6 @@ namespace faith
 				buy_failed_msg.set_operate_type(e_auction_operate_type_bid);
 				buy_failed_msg.set_operate_result(e_auction_bid_money_changed);
 
-				//�����⼸����ûʲô��
 				buy_failed_msg.set_item_guid(0);
 				buy_failed_msg.set_item_num(0);
 				buy_failed_msg.set_money_type(0);
@@ -682,7 +671,6 @@ namespace faith
 			}
 			else
 			{
-				//�Է��������� ����֪���۶���Ǯ
 				ws2cs_auction_find_bid_target_end success_msg;
 				success_msg.auction_info = info;
 				success_msg.role_guid = role_guid;
@@ -798,7 +786,6 @@ namespace faith
 			{
 				add_record_to_db(auction_info[i], auction_info[i].buyer_guid, 0, false);
 				add_record_to_db(auction_info[i], auction_info[i].seller_guid, 0, true);
-				// ��������ֻ�г�������Ч�������˳��� ����ʧ����Ҫ����Ʒ���ظ�������
 				if (auction_info[i].seller_guid.is_valid())
 				{
 					if (auction_info[i].buyer_guid.is_valid() == false)
@@ -820,7 +807,6 @@ namespace faith
 			break;
 			case e_trading_type_legion:
 			{
-				//�������� ��¼���ھ��� �� �����˾��Ǿ���guid
 				add_record_to_db(auction_info[i], auction_info[i].seller_guid);
 				if (!auction_info[i].buyer_guid.is_valid()
 					&& !m_is_force_clear_old_item)
@@ -865,7 +851,6 @@ namespace faith
 		{
 		case e_trading_type_normal_sell:
 		{
-			//��ͨû���� ����Ҳ�������
 		}
 		break;
 		case e_trading_type_world:
@@ -926,7 +911,6 @@ namespace faith
 		case e_trading_type_normal_sell:
 		case e_trading_type_world:
 		{
-			//���粻�ֺ� ��ͨû�о���û�ֺ�
 		}
 			break;
 		case e_trading_type_legion:
@@ -1142,7 +1126,6 @@ namespace faith
 			memcpy(temp_mail_info.text_contents, share_info[i].share_mail_content, mail_content_len);
 
 			float temp_money_value = share_money_value * share_info[i].share_rate + 0.5f;
-			//+0.5 ��������
 
 			int32 share_money_num = temp_money_value;
 			if (share_money_num <= 0)
@@ -1322,19 +1305,16 @@ namespace faith
 			notice_param_array.push_back(info.auction_info.item_info.data_ary[i]);
 		}
 
-		//�����Ƶ�
 		std::vector<std::string> vec_notice;
 		vec_notice.push_back(template_manager::get_instance().get_str_id_by_notice_id(93000232));
 		vec_notice.push_back(info.auction_info.seller_name);
 
-		//�ṹ���е�nameû����ɫ����
 		const std::string& temp_string = template_manager::get_instance().get_str_by_string_template_id(item_template_ptr->ItemName);
 		vec_notice.push_back(temp_string);
 
 		std::string notice_str = init_unit::implode(vec_notice);
 		event_ws_mgr::get_instance().send_notice_to_all(93000232, time_helper::get_cur_time_new().second, info.auction_info.seller_guid, notice_str, info.template_id);
 
-		//����Ƶ����
 		event_ws_mgr::get_instance().send_notice_with_param(
 			info.auction_info.seller_guid, info.auction_info.seller_name,
 			"90089566",
@@ -1587,18 +1567,15 @@ namespace faith
 			notice_param_array.push_back(info.item_info.data_ary[i]);
 		}
 
-		//�����Ƶ�
 		std::vector<std::string> vec_notice;
 		vec_notice.push_back(template_manager::get_instance().get_str_id_by_notice_id(93000416));
 
-		//�ṹ���е�nameû����ɫ����
 		const std::string& temp_string = template_manager::get_instance().get_str_by_string_template_id(item_template_ptr->ItemName);
 		vec_notice.push_back(temp_string);
 
 		std::string notice_str = init_unit::implode(vec_notice);
 		event_ws_mgr::get_instance().send_notice_to_all(93000416, time_helper::get_cur_time_new().second, guid_64(), notice_str, 0);
 
-		//����Ƶ����
 		event_ws_mgr::get_instance().send_notice_with_param(
 			guid_64(), "",
 			"90089577",
@@ -1625,18 +1602,15 @@ namespace faith
 			notice_param_array.push_back(info.item_info.data_ary[i]);
 		}
 
-		//�����Ƶ�
 		std::vector<std::string> vec_notice;
 		vec_notice.push_back(template_manager::get_instance().get_str_id_by_notice_id(93000418));
 	
-		//�ṹ���е�nameû����ɫ����
 		const std::string& temp_string = template_manager::get_instance().get_str_by_string_template_id(item_template_ptr->ItemName);
 		vec_notice.push_back(temp_string);
 
 		std::string notice_str = init_unit::implode(vec_notice);
 		event_ws_mgr::get_instance().send_notice_to_all(93000418, time_helper::get_cur_time_new().second, guid_64(), notice_str, 0);
 
-		//����Ƶ����
 		event_ws_mgr::get_instance().send_notice_with_param(
 			guid_64(), "",
 			"90089578",
@@ -1786,7 +1760,6 @@ namespace faith
 	}
 	void auction_mgr_ws::make_person_auction(s_auction_person_info& person_info, int32 item_id)
 	{
-		// ϵͳ�ϼ�
 		ItemTemplate* item_template_ptr = GET_TEMPLATE(ItemTemplate, item_id);
 		if (item_template_ptr == nullptr)
 		{

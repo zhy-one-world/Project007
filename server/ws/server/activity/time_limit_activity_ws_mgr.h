@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2019Äê03ÔÂ20ÈÕ
+created: 2019å¹´03æœˆ20æ—¥
 file base: time_limit_activity_ws_mgr
 file ext: cpp
 author: wangdi
@@ -35,7 +35,7 @@ namespace faith
 		void												refresh_data(e_time_limit_activity_type activity_type);
 		void												send_activity_rank_rewards(e_time_limit_activity_type activity_type);
 		int32												get_time_limit_activity_rank_min_config_value(e_time_limit_activity_type activity_type);
-		void												get_rank_info(e_time_limit_activity_type activity_type, guid_64 role_uid, int32 source_server_id = 0);			//server_id²»µÈÓÚ0 ±íÊ¾´Óws·¢µ½gateµÄÏûÏ¢
+		void												get_rank_info(e_time_limit_activity_type activity_type, guid_64 role_uid, int32 source_server_id = 0);			//server_idä¸ç­‰äº0 è¡¨ç¤ºä»wså‘åˆ°gateçš„æ¶ˆæ¯
 		void												update_activity_common_data(int32 activity_type, int32 data_num, std::vector<int32> condition_list);
 		void												update_activity_common_data_on_gate(int32 activity_id, int32 data_num, std::vector<int32> condition_list);
 		void												update_activity_common_data_on_local(int32 activity_type, int32 data_num, std::vector<int32> condition_list);

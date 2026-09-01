@@ -83,12 +83,12 @@ namespace faith
 		void	set_world_boss_guid(guid_64 npc_guid) { m_cur_world_boss_guid = npc_guid; }
 		guid_64	get_world_boss_guid() { return m_cur_world_boss_guid; }
 
-		void	dp_connect_cs_success();//dpÁ¬½ÓÉÏcsÒÔºóµÄº¯Êı
+		void	dp_connect_cs_success();//dpè¿æ¥ä¸Šcsä»¥åçš„å‡½æ•°
 		int32	get_server_open_time() { return m_open_time; }
 
 		int32 get_activity_sec_left(int32 activity_type, e_activity_time_get time_get, bool is_other_time = false, bool is_cross_city_war = false);
-		std::vector<int32> get_activity_open_time(int32 activity_type);	//»î¶¯¿ªÆôÊ±¼ä
-		std::vector<int32> get_activity_open_data(int32 activity_type);	//»î¶¯¿ªÆôÈÕÆÚ
+		std::vector<int32> get_activity_open_time(int32 activity_type);	//æ´»åŠ¨å¼€å¯æ—¶é—´
+		std::vector<int32> get_activity_open_data(int32 activity_type);	//æ´»åŠ¨å¼€å¯æ—¥æœŸ
 
 		void set_ladder_world_level(int64 world_level) { m_ladder_world_level = world_level; }
 		int64 get_ladder_world_level() { return m_ladder_world_level; }
@@ -116,7 +116,7 @@ namespace faith
 
 		int32	m_server_info_arr[e_server_info_type_max];
 
-		bool	m_is_close_cs;//·ÀÖ¹½áÊø½ø³ÌÊ±¶à´ÎÎö¹¹µ¼ÖÂµÄ±ÀÀ£
+		bool	m_is_close_cs;//é˜²æ­¢ç»“æŸè¿›ç¨‹æ—¶å¤šæ¬¡ææ„å¯¼è‡´çš„å´©æºƒ
 	};
 }
 

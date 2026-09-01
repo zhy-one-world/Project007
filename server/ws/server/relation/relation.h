@@ -15,18 +15,18 @@
 namespace faith
 {
 	class client_session;
-	//¹ØÏµÈËÊı¾İ
+	//å…³ç³»äººæ•°æ®
 	class relation
 	{
 	public:
 		relation();
 	public:
-		void					clear_data();				//Çå³ıÊı¾İ
+		void					clear_data();				//æ¸…é™¤æ•°æ®
 		bool					build_relation(client_session* puser);
 		bool					is_valid();
 		void					set_is_use(bool is_use) { m_is_use = is_use; }
-		bool					serialize_to_db(s_relation_info& datas);	//Êı¾İ¿½±´µ½´æ´¢½á¹¹ÖĞ
-		bool					serialize_from_db(const s_relation_info& datas);//´æ´¢½á¹¹ÖĞÊı¾İ¿½±´
+		bool					serialize_to_db(s_relation_info& datas);	//æ•°æ®æ‹·è´åˆ°å­˜å‚¨ç»“æ„ä¸­
+		bool					serialize_from_db(const s_relation_info& datas);//å­˜å‚¨ç»“æ„ä¸­æ•°æ®æ‹·è´
 
 	public:
 		s_relation_info&		get_data_all() { return m_relation_info; }
@@ -40,7 +40,7 @@ namespace faith
 		void					set_data_gs_value(int64 gs_value);
 	
 	private:
-		s_relation_info			m_relation_info;			//ºÃÓÑµÄĞÅÏ¢
+		s_relation_info			m_relation_info;			//å¥½å‹çš„ä¿¡æ¯
 		bool					m_is_use;
 	};
 }

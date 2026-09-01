@@ -1,9 +1,9 @@
 /********************************************************************
-created: 2019Äê5ÔÂ24ÈÕ
+created: 2019å¹´5æœˆ24æ—¥
 file base: cross_ladder_mgr
 file ext: h
 author: pengbiao
-purpose: ¿ç·şÌìÌİ
+purpose: è·¨æœå¤©æ¢¯
 *********************************************************************/
 
 #ifndef _CROSS_LADDER_WS_MGR_H_
@@ -71,8 +71,8 @@ namespace faith
 	private:
 		bool	check_is_upgrade(int32 old_score, int32 new_score);
 	private:
-		s_cross_ladder_role_info	m_role_info;	//»ù±¾ĞÅÏ¢
-		e_cross_ladder_role_state	m_role_state;	//×´Ì¬
+		s_cross_ladder_role_info	m_role_info;	//åŸºæœ¬ä¿¡æ¯
+		e_cross_ladder_role_state	m_role_state;	//çŠ¶æ€
 
 		int64						m_sign_up_time;
 		guid_64						m_previous_opponent;
@@ -116,7 +116,7 @@ namespace faith
 		int64	transfer_date_to_stamp(int64 date);
 	public:
 		/*****************************************************************/
-		/*							½ÇÉ«Ô­Çøws¹¦ÄÜ						 */
+		/*							è§’è‰²åŸåŒºwsåŠŸèƒ½						 */
 		/*****************************************************************/
 		bool	send_req_cross_ladder_role_info(client_session* session, bool is_online = false);
 		e_cross_ladder_sign_up_ret	check_can_sign_up(client_session* session);
@@ -131,7 +131,7 @@ namespace faith
 
 	public:
 		/*****************************************************************/
-		/*							±ÈÈüÇøws¹¦ÄÜ						 */
+		/*							æ¯”èµ›åŒºwsåŠŸèƒ½						 */
 		/*****************************************************************/
 
 		void	deal_with_create_map_msg(s_cross_ladder_match_info& match_info);
@@ -141,7 +141,7 @@ namespace faith
 
 	public:
 		/*****************************************************************/
-		/*							Æ¥Åä·şws¹¦ÄÜ						 */
+		/*							åŒ¹é…æœwsåŠŸèƒ½						 */
 		/*****************************************************************/
 		void	load_info_from_db();
 		void	add_cross_ladder_info(const s_cross_ladder_role_info& info);
@@ -181,7 +181,7 @@ namespace faith
 		int32	get_rank_limit_socre() { return m_config_rank_limit_score; }
 		int32	get_cur_season()	{ return m_cur_season; }
 
-	private://Í¨ÓÃ
+	private://é€šç”¨
 		int32								m_send_notify_flag;
 		int64								m_sec_timer;
 		int64								m_activity_timer;
@@ -189,24 +189,24 @@ namespace faith
 		int32								m_cur_season;
 		cross_ladder_activity_time_vec		m_activity_time_vec;
 
-	private://Ô­Çøws
-		cross_ladder_transfer_list			m_transfer_list;						//ÑÓ³Ù´«ËÍÁĞ±í
-		cross_ladder_upgrade_notify_map		m_notify_map;							//¶ÎÎ»ÌáÉıÍ¨ÖªÁĞ±í
-		cross_ladder_transfer_info_map		m_transfer_info_map;					//±ÈÈü·şÎñÆ÷ĞÅÏ¢´æ´¢
+	private://åŸåŒºws
+		cross_ladder_transfer_list			m_transfer_list;						//å»¶è¿Ÿä¼ é€åˆ—è¡¨
+		cross_ladder_upgrade_notify_map		m_notify_map;							//æ®µä½æå‡é€šçŸ¥åˆ—è¡¨
+		cross_ladder_transfer_info_map		m_transfer_info_map;					//æ¯”èµ›æœåŠ¡å™¨ä¿¡æ¯å­˜å‚¨
 
-	private://±ÈÈüÇøws
-		cross_ladder_map_info				m_war_map_team_map;						//±¾·şÎñÆ÷´´½¨µÄ±ÈÈüµØÍ¼
-		cross_ladder_transfer_info_map		m_role_server_info_map;					//ÓÃÓÚÍæ¼Ò±ÈÈü½áÊø·µ»ØÔ­ÇøÊ¹ÓÃ
+	private://æ¯”èµ›åŒºws
+		cross_ladder_map_info				m_war_map_team_map;						//æœ¬æœåŠ¡å™¨åˆ›å»ºçš„æ¯”èµ›åœ°å›¾
+		cross_ladder_transfer_info_map		m_role_server_info_map;					//ç”¨äºç©å®¶æ¯”èµ›ç»“æŸè¿”å›åŸåŒºä½¿ç”¨
 
-	private://Æ¥Åä·ş
+	private://åŒ¹é…æœ
 
 		bool								m_refresh_flag;
 		bool								m_is_load_all;
-		cross_ladder_all_role_info_map 		m_all_ladder_info_map;					//ËùÓĞÍæ¼ÒĞÅÏ¢
-		cross_ladder_all_sign_up_map 		m_all_sign_up_map;						//ËùÓĞ±¨ÃûĞÅÏ¢
-		server_online_num_map 				m_server_online_num_map;				//·şÎñÆ÷ÔÚÏßÈËÊımap£¨²»ÊÇ×¼È·ÊıÖµ£©
+		cross_ladder_all_role_info_map 		m_all_ladder_info_map;					//æ‰€æœ‰ç©å®¶ä¿¡æ¯
+		cross_ladder_all_sign_up_map 		m_all_sign_up_map;						//æ‰€æœ‰æŠ¥åä¿¡æ¯
+		server_online_num_map 				m_server_online_num_map;				//æœåŠ¡å™¨åœ¨çº¿äººæ•°mapï¼ˆä¸æ˜¯å‡†ç¡®æ•°å€¼ï¼‰
 
-		bool								m_send_reward_flag;						//½±Àø·ÖÅú·¢ËÍ
+		bool								m_send_reward_flag;						//å¥–åŠ±åˆ†æ‰¹å‘é€
 		cross_ladder_season_reward_info		m_season_reward_list;
 
 	private:
@@ -217,10 +217,10 @@ namespace faith
 		int32								m_config_daily_can_buy_num;
 		int32								m_config_daily_ticket_cost;
 		int32								m_config_daily_ticket_cost_type;
-		int64								m_config_match_time_limit;				//Æ¥ÅäÊ±¼äÏŞÖÆ
-		int32								m_config_last_win_limit;				//Á¬Ê¤¼Ó³É´ÎÊıÉÏÏŞ
-		int32								m_config_last_win_rate;					//Á¬Ê¤¼Ó³ÉÏµÊı
-		int32								m_config_rank_limit_score;				//È«·şÅÅĞĞ°ñ»ı·ÖÏŞÖÆ
+		int64								m_config_match_time_limit;				//åŒ¹é…æ—¶é—´é™åˆ¶
+		int32								m_config_last_win_limit;				//è¿èƒœåŠ æˆæ¬¡æ•°ä¸Šé™
+		int32								m_config_last_win_rate;					//è¿èƒœåŠ æˆç³»æ•°
+		int32								m_config_rank_limit_score;				//å…¨æœæ’è¡Œæ¦œç§¯åˆ†é™åˆ¶
 	};
 }
 #endif

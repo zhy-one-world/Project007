@@ -213,7 +213,7 @@ namespace faith
 		xchar					content_text[chat_max_chat_size + 1];
 		int32					notice_id;
 
-		//¶¨ÒåÒ»¸ö×î³¤µÄÀàĞÍ
+		//å®šä¹‰ä¸€ä¸ªæœ€é•¿çš„ç±»å‹
 		int32					param_array[e_item_info_max];
 		int32					param_len;
 
@@ -305,7 +305,7 @@ namespace faith
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
-		//bool								is_over;		// ±êÊ¶Íæ¼ÒÎïÆ·ÊÇ·ñ·¢ËÍÍê±Ï, true±íÊ¾·¢ËÍ³É¹¦Íê±Ï£¬false±íÊ¾Ã»ÓĞ·¢ËÍÍê£¬errroÍ¨¹ıÁíÒ»ÌõÏûÏ¢´«µİ
+		//bool								is_over;		// æ ‡è¯†ç©å®¶ç‰©å“æ˜¯å¦å‘é€å®Œæ¯•, trueè¡¨ç¤ºå‘é€æˆåŠŸå®Œæ¯•ï¼Œfalseè¡¨ç¤ºæ²¡æœ‰å‘é€å®Œï¼Œerrroé€šè¿‡å¦ä¸€æ¡æ¶ˆæ¯ä¼ é€’
 		int32								data_num;
 		s_chat_record					    data_list[chat_record_max_num];
 		dp2cs_load_chat_record()

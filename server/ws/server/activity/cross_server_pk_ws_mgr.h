@@ -1,5 +1,5 @@
 /********************************************************************
-  created: 2019Äê1ÔÂ15ÈÕ
+  created: 2019å¹´1æœˆ15æ—¥
   file base: cross_server_pk_ws_mgr
   file ext: hpp
   author: zhangshuo
@@ -86,7 +86,7 @@ namespace faith
 
 		void						set_load_all_fake_player(int32 idex);
 		bool						get_is_load_all_fake_player();
-		void						load_fake_player_with_last_time();//¼ÓÔØÊ£ÓàÃ»loadµÄ
+		void						load_fake_player_with_last_time();//åŠ è½½å‰©ä½™æ²¡loadçš„
 
 		void						set_need_create_fake_player(bool need_create) { m_need_create_fake_player = need_create; };
 	private:
@@ -105,19 +105,19 @@ namespace faith
 		bool						m_is_clear_db;
 		bool						m_is_cur_map_end[max_branch_type];
 
-		s_pk_player_msg				m_pk_player_msg[max_branch_type];//ËÄ¸öµÚÒ»Ãû
+		s_pk_player_msg				m_pk_player_msg[max_branch_type];//å››ä¸ªç¬¬ä¸€å
 		s_pk_player_msg				m_empty_player_msg;
 
 		bool						m_is_create_fake_player = false;
-		bool						m_can_craete_fake_player = false;//ÒÑÁ¬½ÓÉÏDP ¿ÉÒÔ¿ªÊ¼´´½¨
+		bool						m_can_craete_fake_player = false;//å·²è¿æ¥ä¸ŠDP å¯ä»¥å¼€å§‹åˆ›å»º
 		
-		bool						m_recv_gate_msg = false;	//	GATEÊÇ·ñ·¢À´Êı¾İ
+		bool						m_recv_gate_msg = false;	//	GATEæ˜¯å¦å‘æ¥æ•°æ®
 
-		int64						m_last_load_fake_player_time;//ÏÂ´ÎloadÊ±¼ä£¬·ÀÖ¹Òò¶Ô·½·şÎñÆ÷Î´Æô¶¯£¬µ¼ÖÂ¶ÁÈ¡Ê§°Ü
+		int64						m_last_load_fake_player_time;//ä¸‹æ¬¡loadæ—¶é—´ï¼Œé˜²æ­¢å› å¯¹æ–¹æœåŠ¡å™¨æœªå¯åŠ¨ï¼Œå¯¼è‡´è¯»å–å¤±è´¥
 
 		bool						m_is_load_all_fake_player[max_branch_type];
 
-		bool						m_need_create_fake_player = false;// CS·¢À´Êı¾İ ¿ªÊ¼´´½¨
+		bool						m_need_create_fake_player = false;// CSå‘æ¥æ•°æ® å¼€å§‹åˆ›å»º
 	};
 }
 

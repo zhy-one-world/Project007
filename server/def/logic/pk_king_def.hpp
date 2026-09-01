@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2019Äê6ÔÂ17ÈÕ
+created: 2019å¹´6æœˆ17æ—¥
 file base: pk_king_def
 file ext: hpp
 author: zhaoyuming
@@ -15,61 +15,61 @@ namespace faith
 {
 #pragma pack(push,1)
 
-	const int32							pk_king_max_map_num = 100;								//PkÖ®ÍõÕ½¶·µØÍ¼×î´óÊıÁ¿	
-	const int32							pk_king_max_play_num = 1200;							//PkÖ®Íõ´ı»úµØÍ¼×î´óÍæ¼ÒÊıÁ¿
-	const int32							pk_king_transfer_buff_id = 10990011;					//PkÖ®Íõ´«ËÍÌØĞ§BuffId
-	const int32							pk_king_transfer_god_buff_id = 10992300;				//PkÖ®Íõ´«ËÍÎŞµĞBuffId
-	const int32							pk_king_weaken_player_buff_id = 1010000;				//PkÖ®ÍõÏ÷Èõ½ÇÉ«ÊôĞÔBuffId
-	const int32							pk_king_transfer_tick_time = 3;							//PkÖ®Íõ½×¶Î´«ËÍÃëÊı
-	const int32							pk_king_robot_template_id = 76991113;					//PkÖ®ÍõÍæ¼ÒÄ£°åId
+	const int32							pk_king_max_map_num = 100;								//Pkä¹‹ç‹æˆ˜æ–—åœ°å›¾æœ€å¤§æ•°é‡	
+	const int32							pk_king_max_play_num = 1200;							//Pkä¹‹ç‹å¾…æœºåœ°å›¾æœ€å¤§ç©å®¶æ•°é‡
+	const int32							pk_king_transfer_buff_id = 10990011;					//Pkä¹‹ç‹ä¼ é€ç‰¹æ•ˆBuffId
+	const int32							pk_king_transfer_god_buff_id = 10992300;				//Pkä¹‹ç‹ä¼ é€æ— æ•ŒBuffId
+	const int32							pk_king_weaken_player_buff_id = 1010000;				//Pkä¹‹ç‹å‰Šå¼±è§’è‰²å±æ€§BuffId
+	const int32							pk_king_transfer_tick_time = 3;							//Pkä¹‹ç‹é˜¶æ®µä¼ é€ç§’æ•°
+	const int32							pk_king_robot_template_id = 76991113;					//Pkä¹‹ç‹ç©å®¶æ¨¡æ¿Id
 
 	enum e_pk_king_time_type
 	{	
-		e_pk_king_time_type_first,				//µÚÒ»½×¶Î
-		e_pk_king_time_type_second,				//µÚ¶ş½×¶Î
-		e_pk_king_time_type_thirdly,			//µÚÈı½×¶Î
-		e_pk_king_time_type_end,				//ËÀ¶·½×¶Î
+		e_pk_king_time_type_first,				//ç¬¬ä¸€é˜¶æ®µ
+		e_pk_king_time_type_second,				//ç¬¬äºŒé˜¶æ®µ
+		e_pk_king_time_type_thirdly,			//ç¬¬ä¸‰é˜¶æ®µ
+		e_pk_king_time_type_end,				//æ­»æ–—é˜¶æ®µ
 		e_pk_king_time_type_max
 	};
 
 	enum e_pk_king_time_state_type
 	{
-		e_pk_king_time_state_type_setout,		//×¼±¸½×¶Î
-		e_pk_king_time_state_type_begin,		//¿ªÊ¼½×¶Î
+		e_pk_king_time_state_type_setout,		//å‡†å¤‡é˜¶æ®µ
+		e_pk_king_time_state_type_begin,		//å¼€å§‹é˜¶æ®µ
 	};
 
 	enum e_pk_king_map_sub_type
 	{
-		e_pk_king_map_sub_type_wait,			//´ı»úµØÍ¼
-		e_pk_king_map_sub_type_combat			//Õ½¶·µØÍ¼
+		e_pk_king_map_sub_type_wait,			//å¾…æœºåœ°å›¾
+		e_pk_king_map_sub_type_combat			//æˆ˜æ–—åœ°å›¾
 	};
 
 	enum e_pk_king_add_score_type
 	{
-		e_pk_king_add_score_type_time,			//Ë¢ĞÂÊ±¼ä
-		e_pk_king_add_score_type_score,			//ÆÕÍ¨»ı·Ö
-		e_pk_king_add_score_type_hight_score,	//¸ß±¶»ı·Ö
+		e_pk_king_add_score_type_time,			//åˆ·æ–°æ—¶é—´
+		e_pk_king_add_score_type_score,			//æ™®é€šç§¯åˆ†
+		e_pk_king_add_score_type_hight_score,	//é«˜å€ç§¯åˆ†
 		e_pk_king_add_score_type_max
 	};
 
 	struct s_pk_king_player_info
 	{
-		guid_64						role_guid;						//½ÇÉ«Guid
-		xchar						role_name[max_name_size + 1];	//½ÇÉ«Ãû³Æ
-		int32						server_id;						//½ÇÉ«·şÎñÆ÷Id
-		int32						class_type;						//Ö°Òµ
-		int32						role_level;						//µÈ¼¶
-		int32						score_num;						//½ÇÉ«·ÖÊı
-		int32						kill_num;						//»÷É±×ÜÊı
-		int32						high_kill_num;					//×î¸ßÁ¬É±Êı
-		int32						cur_kill_num;					//µ±Ç°Á¬É±Êı
-		int32						next_send_kill_num;				//ÉÏ´Î·¢ËÍÁ¬É±Êı(ÒÑÆúÓÃ)
-		s_map_pos					bron_pos;						//¸´»îµãÅäÖÃ
-		s_map_pos					tansfer_pos;					//´«ËÍµãÅäÖÃ
-		bool						is_dead;						//ÊÇ·ñÔÚËÀ¶·ÖĞËÀÍö
-		bool						is_robot;						//ÊÇ·ñÊÇ»úÆ÷ÈË
-		bool						is_send_reward;					//ÊÇ·ñ·¢·Å¹ı½±Àø
-		bool						is_send_break_line;				//ÊÇ·ñ·¢ËÍ¹ıÖØÁ¬ĞÅÏ¢
+		guid_64						role_guid;						//è§’è‰²Guid
+		xchar						role_name[max_name_size + 1];	//è§’è‰²åç§°
+		int32						server_id;						//è§’è‰²æœåŠ¡å™¨Id
+		int32						class_type;						//èŒä¸š
+		int32						role_level;						//ç­‰çº§
+		int32						score_num;						//è§’è‰²åˆ†æ•°
+		int32						kill_num;						//å‡»æ€æ€»æ•°
+		int32						high_kill_num;					//æœ€é«˜è¿æ€æ•°
+		int32						cur_kill_num;					//å½“å‰è¿æ€æ•°
+		int32						next_send_kill_num;				//ä¸Šæ¬¡å‘é€è¿æ€æ•°(å·²å¼ƒç”¨)
+		s_map_pos					bron_pos;						//å¤æ´»ç‚¹é…ç½®
+		s_map_pos					tansfer_pos;					//ä¼ é€ç‚¹é…ç½®
+		bool						is_dead;						//æ˜¯å¦åœ¨æ­»æ–—ä¸­æ­»äº¡
+		bool						is_robot;						//æ˜¯å¦æ˜¯æœºå™¨äºº
+		bool						is_send_reward;					//æ˜¯å¦å‘æ”¾è¿‡å¥–åŠ±
+		bool						is_send_break_line;				//æ˜¯å¦å‘é€è¿‡é‡è¿ä¿¡æ¯
 		s_pk_king_player_info()
 		{
 			clear_data();
@@ -98,12 +98,12 @@ namespace faith
 		}
 	};
 
-	struct s_pk_king_prop_npc_info									//PkÖ®ÍõµÀ¾ßNpcĞÅÏ¢
+	struct s_pk_king_prop_npc_info									//Pkä¹‹ç‹é“å…·Npcä¿¡æ¯
 	{
 		guid_64						role_guid;						//NpcGuid
-		int32						npc_tem_id;						//NpcÄ£°åId
-		s_map_pos					bron_pos;						//Ë¢ĞÂµã
-		bool						is_dead;						//ÊÇ·ñËÀÍö
+		int32						npc_tem_id;						//Npcæ¨¡æ¿Id
+		s_map_pos					bron_pos;						//åˆ·æ–°ç‚¹
+		bool						is_dead;						//æ˜¯å¦æ­»äº¡
 		s_pk_king_prop_npc_info()
 		{
 			clear_data();
@@ -114,10 +114,10 @@ namespace faith
 		}
 	};
 
-	struct s_pk_king_play_rank_info									//ÓÃÓÚÕ½Á¦ÅÅÃû
+	struct s_pk_king_play_rank_info									//ç”¨äºæˆ˜åŠ›æ’å
 	{
-		guid_64						role_guid;						//Íæ¼ÒGuid
-		int64						role_gs;						//Õ½Á¦Öµ
+		guid_64						role_guid;						//ç©å®¶Guid
+		int64						role_gs;						//æˆ˜åŠ›å€¼
 
 		s_pk_king_play_rank_info()
 		{
@@ -141,8 +141,8 @@ namespace faith
 
 	struct s_pk_king_map_info
 	{
-		guid_64						map_guid;						//µØÍ¼Guid
-		int32						map_state;						//µØÍ¼½×¶Î
+		guid_64						map_guid;						//åœ°å›¾Guid
+		int32						map_state;						//åœ°å›¾é˜¶æ®µ
 	
 		s_pk_king_map_info()
 		{

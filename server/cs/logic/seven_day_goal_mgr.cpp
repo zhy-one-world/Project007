@@ -1,9 +1,9 @@
 /********************************************************************
-created: 2019Äê2ÔÂ13ÈÕ
+created: 2019å¹´2æœˆ13æ—¥
 file base: seven_day_goal_mgr
 file ext: cpp
 author: wangdi
-purpose: ÆßÈÕÄ¿±êÊµÏÖÎÄ¼ş
+purpose: ä¸ƒæ—¥ç›®æ ‡å®ç°æ–‡ä»¶
 *********************************************************************/
 
 #include "arena_def.hpp"
@@ -169,7 +169,7 @@ namespace faith
 
 		template_manager::template_type::iterator ite;
 		time_info cur_time_info = time_helper::get_cur_time_new();
-		//½ñÌìÁãµãÊ±¼ä´Á
+		//ä»Šå¤©é›¶ç‚¹æ—¶é—´æˆ³
 		int32 today_zero_oclock_time_stamp = cur_time_info.second - cur_time_info.second_in_day;
 		for (ite = ladder_tmpl_table->begin(); ite != ladder_tmpl_table->end(); ++ite)
 		{
@@ -191,7 +191,7 @@ namespace faith
 					break;
 				}
 			}
-			//Êı¾İ¿âÃ»ÓĞ¾Í³õÊ¼»¯Êı¾İ
+			//æ•°æ®åº“æ²¡æœ‰å°±åˆå§‹åŒ–æ•°æ®
 			if (new_seven_day_goal_info.data_ary[e_seven_day_goal_info_id] <= 0)
 			{
 				new_seven_day_goal_info.data_ary[e_seven_day_goal_info_id] = ite->first;
@@ -204,7 +204,7 @@ namespace faith
 			}
 			create_seven_day_goal_obj(new_seven_day_goal_info);
 		}
-		// ½ÓÏÂÀ´·¢ËÍ¸ø¿Í»§¶Ë
+		// æ¥ä¸‹æ¥å‘é€ç»™å®¢æˆ·ç«¯
 		send_all_seven_day_goal();
 	}
 
@@ -432,7 +432,7 @@ namespace faith
 		}
 	}
 	
-	//µÚ¶ş¸ö²ÎÊı¿ØÖÆÊÇ·ñ¿ÉÒÔ×ÔÔö Ö÷ÒªÕë¶ÔĞèÒª¿¿×ÔÉí½ø¶È¸üĞÂË¢ĞÂµÄÀàĞÍ ±ÈÈç¼ÓºÃÓÑ¸öÊı ·ÀÖ¹Ë¢ĞÂÈ«²¿µÄÊ±ºò´íÎó×ÔÔö
+	//ç¬¬äºŒä¸ªå‚æ•°æ§åˆ¶æ˜¯å¦å¯ä»¥è‡ªå¢ ä¸»è¦é’ˆå¯¹éœ€è¦é è‡ªèº«è¿›åº¦æ›´æ–°åˆ·æ–°çš„ç±»å‹ æ¯”å¦‚åŠ å¥½å‹ä¸ªæ•° é˜²æ­¢åˆ·æ–°å…¨éƒ¨çš„æ—¶å€™é”™è¯¯è‡ªå¢
 	void cseven_day_goal_mgr::refresh_seven_day_goal(cseven_day_goal* seven_day_goal_obj_ptr, bool is_self_add)
 	{
 		player& temp_player = get_player();
@@ -656,7 +656,7 @@ namespace faith
 			}
 			else
 			{
-				//Ğ¡ÓÚÄ¿±êĞÇ¼¶Ôò²»Ëã´ïµ½´Ë½×
+				//å°äºç›®æ ‡æ˜Ÿçº§åˆ™ä¸ç®—è¾¾åˆ°æ­¤é˜¶
 				if (BeliefTemplatePtr->CurStarNumber < target_star)
 				{
 					current_value = BeliefTemplatePtr->CurRankNumber - 1;

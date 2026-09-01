@@ -1,4 +1,4 @@
-/********************************************************************
+ï»¿/********************************************************************
 	file name:	relation_def.h
 	created:	2017/05/26 23:18
 	author:		zhy
@@ -22,30 +22,30 @@
 
 namespace faith
 {
-	const int32 max_auction_sell_num = 16;							// Í¬Ê±³öÊÛÎïÆ·×î´óÊıÁ¿
-	const int32 auction_show_num_per_page = 10;						// ½»Ò×ĞĞÃ¿Ò³ÊıÁ¿
-	const int32 auction_record_show_num_per_page = 10;				// ½»Ò×ĞĞ¼ÇÂ¼Ã¿Ò³ÊıÁ¿
+	const int32 max_auction_sell_num = 16;							// åŒæ—¶å‡ºå”®ç‰©å“æœ€å¤§æ•°é‡
+	const int32 auction_show_num_per_page = 10;						// äº¤æ˜“è¡Œæ¯é¡µæ•°é‡
+	const int32 auction_record_show_num_per_page = 10;				// äº¤æ˜“è¡Œè®°å½•æ¯é¡µæ•°é‡
 
-	const int32 auction_trade_record_num_personal = 20;				// ½»Ò×ĞĞ¼ÇÂ¼ÊıÁ¿-¸öÈË
-	const int32 auction_trade_record_num_legion = 200;				// ½»Ò×ĞĞ¼ÇÂ¼ÊıÁ¿-¾üÍÅ
-	const int32 auction_trade_record_num_world = 200;				// ½»Ò×ĞĞ¼ÇÂ¼ÊıÁ¿-ÊÀ½ç
+	const int32 auction_trade_record_num_personal = 20;				// äº¤æ˜“è¡Œè®°å½•æ•°é‡-ä¸ªäºº
+	const int32 auction_trade_record_num_legion = 200;				// äº¤æ˜“è¡Œè®°å½•æ•°é‡-å†›å›¢
+	const int32 auction_trade_record_num_world = 200;				// äº¤æ˜“è¡Œè®°å½•æ•°é‡-ä¸–ç•Œ
 
-	const float auction_find_list_interval = 0.25;					// ½»Ò×ĞĞËÑË÷CD
+	const float auction_find_list_interval = 0.25;					// äº¤æ˜“è¡Œæœç´¢CD
 
-	const int32 auction_find_key_word_max_num = 10;					// ½»Ò×ĞĞËÑË÷¹Ø¼ü×Ö¸öÊı
-	const int32 auction_find_key_word_max_lenth = 40;				// ½»Ò×ĞĞËÑË÷¹Ø¼ü×Ö³¤¶È
+	const int32 auction_find_key_word_max_num = 10;					// äº¤æ˜“è¡Œæœç´¢å…³é”®å­—ä¸ªæ•°
+	const int32 auction_find_key_word_max_lenth = 40;				// äº¤æ˜“è¡Œæœç´¢å…³é”®å­—é•¿åº¦
 
-	const int32 auction_show_another_sell_info_num = 10;			// ÆäËûÈË×îµÍÊÛ¼ÛÕ¹Ê¾ÊıÁ¿
+	const int32 auction_show_another_sell_info_num = 10;			// å…¶ä»–äººæœ€ä½å”®ä»·å±•ç¤ºæ•°é‡
 
-	const int32 auction_clear_item_num_per_time = 100;				// Ã¿´ÎÇåÀíÅÄÂôĞĞÓâÆÚÎïÆ·¸öÊı
+	const int32 auction_clear_item_num_per_time = 100;				// æ¯æ¬¡æ¸…ç†æ‹å–è¡Œé€¾æœŸç‰©å“ä¸ªæ•°
 
-	const int32 auction_share_list_max_num = 130;					// ·ÖºìÁĞ±íÉÏÏŞ
+	const int32 auction_share_list_max_num = 130;					// åˆ†çº¢åˆ—è¡¨ä¸Šé™
 
-	const int32 auction_legion_sell_check_interval = 5;			// ¾üÍÅÅÄÂôºìµã¼ì²é¼ä¸ô
+	const int32 auction_legion_sell_check_interval = 5;			// å†›å›¢æ‹å–çº¢ç‚¹æ£€æŸ¥é—´éš”
 
-	const int32 auction_time_out_sell_num = 100;                 // ³¬Ê±Ã¿´Î·µ»¹ÊıÁ¿
+	const int32 auction_time_out_sell_num = 100;                 // è¶…æ—¶æ¯æ¬¡è¿”è¿˜æ•°é‡
 
-	const int32 auction_bid_record_failure_num = 50;            // ¾ºÅÄÊ§°ÜÊıÄ¿
+	const int32 auction_bid_record_failure_num = 50;            // ç«æ‹å¤±è´¥æ•°ç›®
 
 	const int32 auction_bid_notice_max_num = 50;
 
@@ -71,8 +71,8 @@ namespace faith
 		int64 sell_time;
 		int64 deal_time;
 		int32 sell_money_type;
-		int64 sell_total_money;			// Ò»¿Ú¼Û ¼Û¸ñÉÏÏŞ
-		int64 sell_single_money;		// ³õÊ¼¼Û¸ñ
+		int64 sell_total_money;			// ä¸€å£ä»· ä»·æ ¼ä¸Šé™
+		int64 sell_single_money;		// åˆå§‹ä»·æ ¼
 		int64 cur_bid_money;
 		int32 is_show;
 		int32 add_time;
@@ -414,76 +414,76 @@ namespace faith
 
 	enum e_auction_lab_type
 	{
-		e_auction_lab_type_non, //
-		e_auction_lab_type_Equip, //×°±¸
-		e_auction_lab_type_equip_materials, //Ç¿»¯
-		e_auction_lab_type_mount, //×øÆï
-		e_auction_lab_type_wing, //ÓğÒí
-		e_auction_lab_type_book, //Í¼¼ø
-		e_auction_lab_type_treasure, //ÕäÆ·
-		e_auction_lab_type_sundries, //ÔÓÎï
+		e_auction_lab_type_non,
+		e_auction_lab_type_Equip, //è£…å¤‡
+		e_auction_lab_type_equip_materials, //å¼ºåŒ–
+		e_auction_lab_type_mount, //åéª‘
+		e_auction_lab_type_wing, //ç¾½ç¿¼
+		e_auction_lab_type_book, //å›¾é‰´
+		e_auction_lab_type_treasure, //çå“
+		e_auction_lab_type_sundries, //æ‚ç‰©
 		e_auction_lab_type_max
 	};
 	enum e_auction_equip_sub_type
 	{
-		e_auction_equip_sub_type_non, //
-		e_auction_equip_sub_type_weapon, //ÎäÆ÷
-		e_auction_equip_sub_type_cloth, //ÒÂ·ş
-		e_auction_equip_sub_type_pants, //¿ã×Ó
-		e_auction_equip_sub_type_hemelt, //Í·¿ø
-		e_auction_equip_sub_type_handguard, //»¤ÊÖ
-		e_auction_equip_sub_type_shoes, //Ğ¬×Ó
-		e_auction_equip_sub_type_ring, //½äÖ¸
-		e_auction_equip_sub_type_necklace, //ÏîÁ´
-		e_auction_equip_sub_type_earing, //¶ú»·
-		e_auction_lab_type_magic_book, //Ä§·¨Êé
+		e_auction_equip_sub_type_non,
+		e_auction_equip_sub_type_weapon, //æ­¦å™¨
+		e_auction_equip_sub_type_cloth, //è¡£æœ
+		e_auction_equip_sub_type_pants, //è£¤å­
+		e_auction_equip_sub_type_hemelt, //å¤´ç›”
+		e_auction_equip_sub_type_handguard, //æŠ¤æ‰‹
+		e_auction_equip_sub_type_shoes, //é‹å­
+		e_auction_equip_sub_type_ring, //æˆ’æŒ‡
+		e_auction_equip_sub_type_necklace, //é¡¹é“¾
+		e_auction_equip_sub_type_earing, //è€³ç¯
+		e_auction_lab_type_magic_book, //é­”æ³•ä¹¦
 		e_auction_equip_sub_type_max
 	};
 	
 	enum e_auction_equip_material_sub_type
 	{
-		e_auction_equip_material_sub_type_non, //
-		e_auction_equip_material_sub_type_upgrade_stone, //Ç¿»¯Ê¯
-		e_auction_equip_material_sub_type_upgrade_protect, //Ç¿»¯±£»¤²ÄÁÏ
+		e_auction_equip_material_sub_type_non,
+		e_auction_equip_material_sub_type_upgrade_stone, //å¼ºåŒ–çŸ³
+		e_auction_equip_material_sub_type_upgrade_protect, //å¼ºåŒ–ä¿æŠ¤ææ–™
 		e_auction_equip_material_sub_type_max
 	};
 	enum e_auction_mount_sub_type
 	{
-		e_auction_mount_sub_type_non, //
-		e_auction_mount_sub_type_unlock, //½âËø
-		e_auction_mount_sub_type_rare_mount_chip, //ÉñÊŞËéÆ¬
+		e_auction_mount_sub_type_non,
+		e_auction_mount_sub_type_unlock, //è§£é”
+		e_auction_mount_sub_type_rare_mount_chip, //ç¥å…½ç¢ç‰‡
 		e_auction_mount_sub_type_max
 	};
 	enum e_auction_wing_sub_type
 	{
-		e_auction_wing_sub_type_non, //
-		e_auction_wing_sub_type_rare_wing_fragment, //ÉñÒíËéÆ¬
-		e_auction_wing_sub_type_rare_wing_egg, //µ°
-		e_auction_wing_sub_type_wing_illusion, //ÓğÒí»Ã»¯
+		e_auction_wing_sub_type_non,
+		e_auction_wing_sub_type_rare_wing_fragment, //ç¥ç¿¼ç¢ç‰‡
+		e_auction_wing_sub_type_rare_wing_egg, //è›‹
+		e_auction_wing_sub_type_wing_illusion, //ç¾½ç¿¼å¹»åŒ–
 		e_auction_wing_sub_type_max
 	};
 
 	enum e_auction_book_sub_type
 	{
-		e_auction_book_sub_type_non, //
-		e_auction_book_sub_type_hero, //Ó¢ĞÛÍ¼¼ø
-		e_auction_book_sub_type_resonance, //¹²Ãù
+		e_auction_book_sub_type_non,
+		e_auction_book_sub_type_hero, //è‹±é›„å›¾é‰´
+		e_auction_book_sub_type_resonance, //å…±é¸£
 		e_auction_book_sub_type_max
 	};
 
 	
 	enum e_auction_param
 	{
-		e_auction_param_private_del, //¸öÈËÅÄÂôÉ¾³ıÊ±¼ä
-		e_auction_param_private_delay_start, // ¸öÈËËæ»úÉÏ¼ÜÆğÊ¼Ê±¼ä
-		e_auction_param_private_delay_end, //¸öÈËËæ»úÉÏ¼Ü½áÊøÊ±¼ä
-		e_auction_param_wait_bid,  // ÊÀ½ç£¬¾üÍÅÅÄÂôµÈ´ıÊ±¼ä
-		e_auction_param_wait_notice, // Æ·ÖÊµÀ¾ßÍ¨¸æÊ±¼ä
-		e_auction_param_add_time,    //¼ÓÊ±Ê±¼ä
-		e_auction_param_add_n,       //¼ÓÊ±´ÎÊı
-		e_auction_param_share_money_limit, //¹²ÏíÅÄÂô·ÖºìÉÏÏŞ
-		e_auction_param_person_refresh_time,  // ¸öÈËË¢ĞÂÊ±¼ä
-		e_auction_param_person_refresh_item_num, // ¸öÈËË¢ĞÂÎïÆ·ÊıÁ¿
+		e_auction_param_private_del, //ä¸ªäººæ‹å–åˆ é™¤æ—¶é—´
+		e_auction_param_private_delay_start, // ä¸ªäººéšæœºä¸Šæ¶èµ·å§‹æ—¶é—´
+		e_auction_param_private_delay_end, //ä¸ªäººéšæœºä¸Šæ¶ç»“æŸæ—¶é—´
+		e_auction_param_wait_bid,  // ä¸–ç•Œï¼Œå†›å›¢æ‹å–ç­‰å¾…æ—¶é—´
+		e_auction_param_wait_notice, // å“è´¨é“å…·é€šå‘Šæ—¶é—´
+		e_auction_param_add_time,    //åŠ æ—¶æ—¶é—´
+		e_auction_param_add_n,       //åŠ æ—¶æ¬¡æ•°
+		e_auction_param_share_money_limit, //å…±äº«æ‹å–åˆ†çº¢ä¸Šé™
+		e_auction_param_person_refresh_time,  // ä¸ªäººåˆ·æ–°æ—¶é—´
+		e_auction_param_person_refresh_item_num, // ä¸ªäººåˆ·æ–°ç‰©å“æ•°é‡
 		e_auction_param_max,
 	};
 

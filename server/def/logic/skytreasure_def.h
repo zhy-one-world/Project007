@@ -7,28 +7,28 @@ namespace faith
 {
 #pragma pack(push, 1)
 
-	const int32			max_skytreasure_num = 400;                   //Ìì¿Õ±¦¿â×î´óÊıÁ¿
-	const int32         max_skytreasure_reward_num = 100;            //×î´ó½±ÀøÊıÁ¿  
-	const int32         skytreasure_notice_id = 93000430;            //Ìì¿Õ±¦¿â´ó½±¹«¸æ
+	const int32			max_skytreasure_num = 400;                   //å¤©ç©ºå®åº“æœ€å¤§æ•°é‡
+	const int32         max_skytreasure_reward_num = 100;            //æœ€å¤§å¥–åŠ±æ•°é‡  
+	const int32         skytreasure_notice_id = 93000430;            //å¤©ç©ºå®åº“å¤§å¥–å…¬å‘Š
 
-	const int32			skytreasure_operate_sucess = 0;              //²Ù×÷³É¹¦
-	const int32			skytreasure_operate_error_not_item = -1;	 //²ÄÁÏ²»¹»	
-	const int32			skytreasure_operate_error_not_money = -2;	 //Ç®²»¹»	
-	const int32			skytreasure_operate_error_other = -3;        //ÆäËü´íÎó
+	const int32			skytreasure_operate_sucess = 0;              //æ“ä½œæˆåŠŸ
+	const int32			skytreasure_operate_error_not_item = -1;	 //ææ–™ä¸å¤Ÿ	
+	const int32			skytreasure_operate_error_not_money = -2;	 //é’±ä¸å¤Ÿ	
+	const int32			skytreasure_operate_error_other = -3;        //å…¶å®ƒé”™è¯¯
 
 
 	enum e_skytreasure_operate_type
 	{
-		e_skytreasure_get_reward,         //·­ÅÆ½±Àø    
-		e_skytreasure_buy_key,            //¹ºÂòÔ¿³× 
-		e_skytreasure_refresh_recycle     //Ë¢ĞÂÖÜÆÚ
+		e_skytreasure_get_reward,         //ç¿»ç‰Œå¥–åŠ±    
+		e_skytreasure_buy_key,            //è´­ä¹°é’¥åŒ™ 
+		e_skytreasure_refresh_recycle     //åˆ·æ–°å‘¨æœŸ
 	};
 
 	struct s_skytreasure_info
 	{
-		int32 skytreasure_layer_num;        //²ãÊı
-		int32 skytreasure_pos;              //ÔÚ¸ñ×ÓÖĞµÄÎ»ÖÃ 
-		int32 skytreasure_pos_in_array;     //ÔÚ½±ÀøÊı×éÖĞµÄÎ»ÖÃ	
+		int32 skytreasure_layer_num;        //å±‚æ•°
+		int32 skytreasure_pos;              //åœ¨æ ¼å­ä¸­çš„ä½ç½® 
+		int32 skytreasure_pos_in_array;     //åœ¨å¥–åŠ±æ•°ç»„ä¸­çš„ä½ç½®	
 		s_skytreasure_info()
 		{
 			clear_data();

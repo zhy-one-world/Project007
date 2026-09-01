@@ -1,3465 +1,3465 @@
-#ifndef _GAME_ENUM_DEF_S_HPP_
+ï»¿#ifndef _GAME_ENUM_DEF_S_HPP_
 #define _GAME_ENUM_DEF_S_HPP_
  
 namespace faith
 {
      enum e_role_pk_map_state
      {
-         e_role_pk_map_state_one_role, //µÚÒ»¸öÈËÍæ¼Ò½øÈë
-         e_role_pk_map_state_wait_begin, //µÈ´ı¼ÆÊ±½áÊøÓÎÏ·¿ªÊ¼
-         e_role_pk_map_state_begin_war, //¿ªÊ¼Õ½¶·ÁË
-         e_role_pk_map_state_end_war, //ÓÎÏ·½áÊøÁË
+         e_role_pk_map_state_one_role, //ç¬¬ä¸€ä¸ªäººç©å®¶è¿›å…¥
+         e_role_pk_map_state_wait_begin, //ç­‰å¾…è®¡æ—¶ç»“æŸæ¸¸æˆå¼€å§‹
+         e_role_pk_map_state_begin_war, //å¼€å§‹æˆ˜æ–—äº†
+         e_role_pk_map_state_end_war, //æ¸¸æˆç»“æŸäº†
          e_role_pk_map_state_max
      };
      enum e_map_type
      {
-         e_map_type_ui, //uiµØÍ¼
-         e_map_type_new, //ĞÂÊÖ´å
-         e_map_type_main, //Ö÷³Ç
-         e_map_type_battle, //¾çÇé¸±±¾
-         e_map_type_field, //ÉÏ¹ÅÒÅ¼£
-         e_map_type_big_map, //´óÊÀ½çµØÍ¼
-         e_map_type_fly_battle, //¿ÕÖĞÕ½¶·¸±±¾
-         e_map_type_exp_fuben, //¾­Ñé¸±±¾
-         e_map_type_money_fuben, //°ó½ğ¸±±¾
-         e_map_type_demon_tower_fuben, //ÍòÄ§Ëş¸±±¾
-         e_map_type_legion_boss, //¾üÍÅBOSS¸±±¾
-         e_map_type_city_war, //¾üÍÅ³ÇÕ½
-         e_map_type_broken_sky, //ÆÆËéĞé¿Õ
-         e_map_type_king_of_pk, //PKÖ®Íõ»î¶¯
-         e_map_type_arena, //¾º¼¼³¡
-         e_map_type_temple, //×çÖäÉñµî
-         e_map_type_empire_treasure, //µÛ¹úÒÅ²Ø
-         e_map_type_crystak_dreamland, //Ë®¾§»Ã¾³
-         e_map_type_legion_bonfire, //¾üÍÅóô»ğ
-         e_map_type_boss_single, //´ò±¦¸öÈË
-         e_map_type_boss_home, //´ò±¦bossÖ®¼Ò
-         e_map_type_boss_vip_home, //´ò±¦VIPbossÖ®¼Ò
-         e_map_type_boss_island, //ÓÀºãµº
-         e_map_type_belief_cloister, //ĞÅÑö»ØÀÈ
-         e_map_type_princess_guard_war, //¹«Ö÷ÊØÎÀÕ½
-         e_map_type_lava_hellfire, //ÈÛÑÒµØÓü
-         e_map_type_sea_of_hate, //ÎŞ¾¡Ö®º£
-         e_map_type_abyss_of_fear, //ÁìÖ÷µÄÊÔÁ¶
-         e_map_type_fallen_fantasy, //ÃÎ¾³µÄÊÔÁ¶
-         e_map_type_star_test, //ÖÚĞÇµÄÊÔÁ¶
-         e_map_type_cross_server_pk, //¿ç·şPK
-         e_map_type_cross_server_harry, //¿ç·şÂÓ¶á
-         e_map_type_cross_ladder, //¿ç·şÌìÌİ
-         e_map_type_oracle_trial_map, //ÌìÆôÊÔÁ¶
-         e_map_type_legion_station, //¾üÍÅ×¤µØ
-         e_map_type_appearance, //ÄóÁ³µØÍ¼
-         e_map_type_single_land_boss, //µ¥ÈËµØ¹¬Boss
-         e_map_type_single_assist_boss, //µ¥ÈËÖúÕ½µØÍ¼
-         e_map_type_level_up_map, //Éı¼¶¸±±¾
-         e_map_type_element_war, //ÔªËØÕù°Ô
-         e_map_type_attack_city, //¹¥³ÇÕ½
-         e_map_type_single_monster, //µ¥ÈËË¢¹Ö½±ÀøµØÍ¼
-         e_map_type_single_open_box, //µ¥ÈË¿ªÏä×Ó½±ÀøµØÍ¼
+         e_map_type_ui, //uiåœ°å›¾
+         e_map_type_new, //æ–°æ‰‹æ‘
+         e_map_type_main, //ä¸»åŸ
+         e_map_type_battle, //å‰§æƒ…å‰¯æœ¬
+         e_map_type_field, //ä¸Šå¤é—è¿¹
+         e_map_type_big_map, //å¤§ä¸–ç•Œåœ°å›¾
+         e_map_type_fly_battle, //ç©ºä¸­æˆ˜æ–—å‰¯æœ¬
+         e_map_type_exp_fuben, //ç»éªŒå‰¯æœ¬
+         e_map_type_money_fuben, //ç»‘é‡‘å‰¯æœ¬
+         e_map_type_demon_tower_fuben, //ä¸‡é­”å¡”å‰¯æœ¬
+         e_map_type_legion_boss, //å†›å›¢BOSSå‰¯æœ¬
+         e_map_type_city_war, //å†›å›¢åŸæˆ˜
+         e_map_type_broken_sky, //ç ´ç¢è™šç©º
+         e_map_type_king_of_pk, //PKä¹‹ç‹æ´»åŠ¨
+         e_map_type_arena, //ç«æŠ€åœº
+         e_map_type_temple, //è¯…å’’ç¥æ®¿
+         e_map_type_empire_treasure, //å¸å›½é—è—
+         e_map_type_crystak_dreamland, //æ°´æ™¶å¹»å¢ƒ
+         e_map_type_legion_bonfire, //å†›å›¢ç¯ç«
+         e_map_type_boss_single, //æ‰“å®ä¸ªäºº
+         e_map_type_boss_home, //æ‰“å®bossä¹‹å®¶
+         e_map_type_boss_vip_home, //æ‰“å®VIPbossä¹‹å®¶
+         e_map_type_boss_island, //æ°¸æ’å²›
+         e_map_type_belief_cloister, //ä¿¡ä»°å›å»Š
+         e_map_type_princess_guard_war, //å…¬ä¸»å®ˆå«æˆ˜
+         e_map_type_lava_hellfire, //ç†”å²©åœ°ç‹±
+         e_map_type_sea_of_hate, //æ— å°½ä¹‹æµ·
+         e_map_type_abyss_of_fear, //é¢†ä¸»çš„è¯•ç‚¼
+         e_map_type_fallen_fantasy, //æ¢¦å¢ƒçš„è¯•ç‚¼
+         e_map_type_star_test, //ä¼—æ˜Ÿçš„è¯•ç‚¼
+         e_map_type_cross_server_pk, //è·¨æœPK
+         e_map_type_cross_server_harry, //è·¨æœæ å¤º
+         e_map_type_cross_ladder, //è·¨æœå¤©æ¢¯
+         e_map_type_oracle_trial_map, //å¤©å¯è¯•ç‚¼
+         e_map_type_legion_station, //å†›å›¢é©»åœ°
+         e_map_type_appearance, //æè„¸åœ°å›¾
+         e_map_type_single_land_boss, //å•äººåœ°å®«Boss
+         e_map_type_single_assist_boss, //å•äººåŠ©æˆ˜åœ°å›¾
+         e_map_type_level_up_map, //å‡çº§å‰¯æœ¬
+         e_map_type_element_war, //å…ƒç´ äº‰éœ¸
+         e_map_type_attack_city, //æ”»åŸæˆ˜
+         e_map_type_single_monster, //å•äººåˆ·æ€ªå¥–åŠ±åœ°å›¾
+         e_map_type_single_open_box, //å•äººå¼€ç®±å­å¥–åŠ±åœ°å›¾
          e_map_type_max
      };
      enum e_role_info
      {
-         e_role_info_template_id, //Ä£°åid
-         e_role_info_server_id, //·şÎñÆ÷id
-         e_role_info_img_id, //Í·Ïñ
-         e_role_info_class_type, //Ö°Òµ
-         e_role_info_class_branch, //×ªÖ°
-         e_role_info_gender, //½ÇÉ«ĞÔ±ğ
-         e_role_info_exp_level, //¾­ÑéµÈ¼¶
-         e_role_info_vip_level, //vipµÈ¼¶
-         e_role_info_vip_experience_level, //vipÌåÑéµÈ¼¶
-         e_role_info_recharge_num, //³äÖµµãÊı
-         e_role_info_main_map_id, //´óµØÍ¼Ä£°åid
-         e_role_info_main_pos_x, //´óµØÍ¼×ø±êx
-         e_role_info_main_pos_y, //10´óµØÍ¼×ø±êy
-         e_role_info_main_pos_z, //´óµØÍ¼×ø±êz
-         e_role_info_main_pos_yaw, //´óµØÍ¼Ğı×ª
-         e_role_info_main_line_id, //15´óµØÍ¼Ïßid
-         e_role_info_move_map_id, //Òªµ½´ïµØÍ¼Ä£°åid
-         e_role_info_move_pos_x, //µ±Ç°×ø±êx
-         e_role_info_move_pos_y, //µ±Ç°×ø±êy
-         e_role_info_move_pos_z, //µ±Ç°×ø±êz
-         e_role_info_move_pos_yaw, //Ğı×ª
-         e_role_info_move_line_id, //Òªµ½´ïµØÍ¼Ïßid
-         e_role_info_GS_value, //25µ±Ç°Õ½¶·Á¦
-         e_role_info_upgrade_id, //µÈ¼¶Ä£°åid
-         e_role_info_daily_done_num, //ÈÕ³£Íê³ÉÊıÄ¿
-         e_role_info_against_done_num, //ÌÖ·¥Íê³ÉÊıÄ¿
-         e_role_info_wing_showd_template_id, //30ÒªÏÔÊ¾µÄ³á°òID
-         e_role_info_mount_showd_template_id, //ÒªÏÔÊ¾µÄ×øÆïID
-         e_role_info_element_heart_drop_group, //ÔªËØÖ®ĞÄµÄ³éÈ¡×é
-         e_role_info_arena_times, //¾º¼¼³¡´ÎÊı
-         e_role_info_arena_vip_times, //vip¿ÉÌôÕ½´ÎÊı
-         e_role_info_arena_vip_buy_times, //35vipÒÑ¹ºÂò´ÎÊı
-         e_role_info_arena_winning_streak, //Á¬Ê¤¼ÍÂ¼
-         e_role_info_legion_donate_earn_by_money, //¾üÍÅ¾èÏ×½ğ±Ò»ñµÃµÄÕ½¹¦
-         e_role_info_legion_donate_earn_by_item, //¾üÍÅ¾èÏ×ÎïÆ·»ñµÃµÄÕ½¹¦
-         e_role_info_worship_other_time, //Íæ¼Ò³ç°İ´ÎÊı
-         e_role_info_get_func_unlock_award_record, //¹¦ÄÜ½âËø½±ÀøÁìÈ¡¼ÇÂ¼
-         e_role_info_vip_item_geted_level, //VIPÀñ°üÁìÈ¡µ½µÚ¼¸¼¶ÁË
-         e_role_info_vip_free_revive_time, //Ãâ·Ñ¸´»î´ÎÊı
-         e_role_info_element_heart_refine_time, //ÔªËØÖ®ĞÄÌáÁ¶´ÎÊı
-         e_role_info_total_login_days, //ÀÛ¼ÆµÇÂ½ÌìÊı
-         e_role_info_continue_login_time, //45Á¬ĞøµÇÂ¼´ÎÊı
-         e_role_info_daily_activity_degree, //ÈÕ»îÔ¾¶È
-         e_role_info_daily_recharge_num, //ÈÕ³äÖµÊı
-         e_role_info_total_diamond_cost_num, //ÀÛ¼ÆÏû·Ñ×êÊ¯Êı
-         e_role_info_daily_active_degree_get_flag, //Ã¿ÈÕ»îÔ¾½±ÀøÁìÈ¡±êÖ¾Î»
-         e_role_info_fund_recharge_num, //50³É³¤»ù½ğ³äÖµ»ù½ğ³äÖµ¶î
-         e_role_info_fund_payment_flag, //³É³¤»ù½ğ¹ºÂò±ê¼ÇÎ»
-         e_role_info_fund_time_get_flag, //³É³¤»ù½ğÊ±¹âÁìÈ¡±ê¼ÇÎ»
-         e_role_info_fund_pride_get_flag, //³É³¤»ù½ğ³äÖµÁìÈ¡±ê¼ÇÎ»
-         e_role_info_fund_reborn_get_flag, //³É³¤»ù½ğÖØÉúÁìÈ¡±ê¼ÇÎ»
-         e_role_info_fund_cost_num, //55³É³¤»ù½ğ³äÖµ»ù½ğÏû·Ñ¶î
-         e_role_info_lord_of_city_worship_time, //³ÇÖ÷Ä¤°İ´ÎÊı
-         e_role_info_lord_of_war_worship_time, //PKÖ®ÍõÄ¤°İ´ÎÊı
-         e_role_info_lord_of_sanctuary_worship_time, //Ê¥ÓòÖ®Ö÷Ä¤°İ´ÎÊı
-         e_role_info_lord_of_god_worship_time, //ÖÚÉñÖ®ÍõÄ¤°İ´ÎÊı
-         e_role_info_hope_value, //Æí¸£×£¸£Öµ
-         e_role_info_del_time, //É¾³ıÊ±¼ä0Î´É¾³ı
-         e_role_info_kill_player_num, //»÷É±Íæ¼ÒÊıÁ¿
-         e_role_info_spirit_value, //¾«ÁéÁÔÈ¡±£µ×
-         e_role_info_watch_count, //²é¿´µÄ×î´óÈËÊı
-         e_role_info_crystal_dreamland_chests, //Ë®¾§»Ã¾³²É¼¯±¦Ïä¸öÊı
-         e_role_info_protect_mark_slot_open_num, //ÊØ»¤Ó¡¼Ç²ÛÎ»¿ªÆô¸öÊı
-         e_role_info_element_heart_slot_open_num, //ÔªËØÖ®ĞÄ²ÛÎ»¿ªÆô¸öÊı
-         e_role_info_sprite_equip_slot_open_num, //¾«Áé×°±¸²ÛÎ»¿ªÆô¸öÊı
-         e_role_info_exclusive_flag, //×ğÏíÓÃ»§±êÖ¾
-         e_role_info_red_package_geted_times, //Ã¿ÈÕºì°üÒÑÁìÈ¡´ÎÊı
-         e_role_info_free_red_package_send_times, //Ã¿ÈÕÃâ·Ñ·¢ºì°ü´ÎÊı
-         e_role_info_world_boss_chests, //ÊÀ½çBOSSµôÂä±¦Ïä²É¼¯Êı
-         e_role_info_leave_map_id, //ÒªÀë¿ªµØÍ¼µÄid
-         e_role_info_assist_chests, //ÖúÕ½±¦Ïä»ñÈ¡´ÎÊı
-         e_role_info_next_side_mission_main_trigger_id, //ÏÂ¸ö´ı´¥·¢Ö§ÏßÈÎÎñµÄÖ÷ÏßÈÎÎñID
-         e_role_info_show_fashion, //ÊÇ·ñÏÔÊ¾Ê±×°
-         e_role_info_real_recharge_jewel_num, //³åÈë×êÊ¯ÊıÖ÷ÒªÓÃÓÚ³äÖµ°ñ
-         e_role_info_relic_kill_num, //ÉÏ¹ÅÒÅ¼£½ñÈÕÉ±¹ÖÊı
-         e_role_info_relic_exp_num, //ÉÏ¹ÅÒÅ¼£½ñÈÕ»ñµÃ¾­ÑéÊı
-         e_role_info_head_frame, //Í·Ïñ¿ò
-         e_role_info_fund_pride_cost_value, //³É³¤»ù½ğÏû·ÑµãÊı
-         e_role_info_tinder_prop_slot_open_num, //»ğÖÖµÀ¾ß²ÛÎ»¿ªÆô¸öÊı
-         e_role_info_show_sky_suit_shape, //ÊÇ·ñÏÔÊ¾Ìì¿ÕÌ××°ÍâĞÎ
-         e_role_info_move_server_id, //Òªµ½´ï·şÎñÆ÷ID
-         e_role_info_move_war_idex, //Òªµ½´ïµØÍ¼Î»ÖÃ
-         e_role_info_goddess_slot_flag, //Å®ÉñĞ­Õ½²ÛÎ»¿ªÆô±ê¼Ç
-         e_role_info_daily_cost, //Ã¿ÈÕÏû·ÑÊıÖµ
-         e_role_info_marry_done_num, //½á»éÈÎÎñÍê³ÉÊıÁ¿
-         e_role_info_marry_dati_id, //µ±Ç°½á»é´ğÌâid
-         e_role_info_marry_dati_num, //½á»é´ğÌâÍê³ÉÊıÁ¿
-         e_role_info_marry_dati_right_num, //½á»é´ğÌâ´ğ¶ÔÊıÁ¿
-         e_role_info_marry_dati_current_answer, //½á»é´ğÌâµ±Ç°´ğ°¸
-         e_role_info_legion_dance_exp_num, //¾üÍÅ¹²Îè½ñÈÕ¾­Ñé»ñÈ¡´ÎÊı
-         e_role_info_legion_donate_num, //¾üÍÅ¾èÔù´ÎÊı
-         e_role_info_appearance_id, //ÄóÁ³ÍâĞÎID
-         e_role_info_is_show_vip, //ÊÇ·ñÏÔÊ¾vip
-         e_role_info_need_check_guide, //ÊÇ·ñĞèÒª¼ì²éÒıµ¼
-         e_role_info_enchant_show_type, //¸½Ä§ÏÔÊ¾buffÀàĞÍ
-         e_role_info_push_map_id, //ÍÆÍ¼µÄµØÍ¼id
+         e_role_info_template_id, //æ¨¡æ¿id
+         e_role_info_server_id, //æœåŠ¡å™¨id
+         e_role_info_img_id, //å¤´åƒ
+         e_role_info_class_type, //èŒä¸š
+         e_role_info_class_branch, //è½¬èŒ
+         e_role_info_gender, //è§’è‰²æ€§åˆ«
+         e_role_info_exp_level, //ç»éªŒç­‰çº§
+         e_role_info_vip_level, //vipç­‰çº§
+         e_role_info_vip_experience_level, //vipä½“éªŒç­‰çº§
+         e_role_info_recharge_num, //å……å€¼ç‚¹æ•°
+         e_role_info_main_map_id, //å¤§åœ°å›¾æ¨¡æ¿id
+         e_role_info_main_pos_x, //å¤§åœ°å›¾åæ ‡x
+         e_role_info_main_pos_y, //10å¤§åœ°å›¾åæ ‡y
+         e_role_info_main_pos_z, //å¤§åœ°å›¾åæ ‡z
+         e_role_info_main_pos_yaw, //å¤§åœ°å›¾æ—‹è½¬
+         e_role_info_main_line_id, //15å¤§åœ°å›¾çº¿id
+         e_role_info_move_map_id, //è¦åˆ°è¾¾åœ°å›¾æ¨¡æ¿id
+         e_role_info_move_pos_x, //å½“å‰åæ ‡x
+         e_role_info_move_pos_y, //å½“å‰åæ ‡y
+         e_role_info_move_pos_z, //å½“å‰åæ ‡z
+         e_role_info_move_pos_yaw, //æ—‹è½¬
+         e_role_info_move_line_id, //è¦åˆ°è¾¾åœ°å›¾çº¿id
+         e_role_info_GS_value, //25å½“å‰æˆ˜æ–—åŠ›
+         e_role_info_upgrade_id, //ç­‰çº§æ¨¡æ¿id
+         e_role_info_daily_done_num, //æ—¥å¸¸å®Œæˆæ•°ç›®
+         e_role_info_against_done_num, //è®¨ä¼å®Œæˆæ•°ç›®
+         e_role_info_wing_showd_template_id, //30è¦æ˜¾ç¤ºçš„ç¿…è†€ID
+         e_role_info_mount_showd_template_id, //è¦æ˜¾ç¤ºçš„åéª‘ID
+         e_role_info_element_heart_drop_group, //å…ƒç´ ä¹‹å¿ƒçš„æŠ½å–ç»„
+         e_role_info_arena_times, //ç«æŠ€åœºæ¬¡æ•°
+         e_role_info_arena_vip_times, //vipå¯æŒ‘æˆ˜æ¬¡æ•°
+         e_role_info_arena_vip_buy_times, //35vipå·²è´­ä¹°æ¬¡æ•°
+         e_role_info_arena_winning_streak, //è¿èƒœçºªå½•
+         e_role_info_legion_donate_earn_by_money, //å†›å›¢æçŒ®é‡‘å¸è·å¾—çš„æˆ˜åŠŸ
+         e_role_info_legion_donate_earn_by_item, //å†›å›¢æçŒ®ç‰©å“è·å¾—çš„æˆ˜åŠŸ
+         e_role_info_worship_other_time, //ç©å®¶å´‡æ‹œæ¬¡æ•°
+         e_role_info_get_func_unlock_award_record, //åŠŸèƒ½è§£é”å¥–åŠ±é¢†å–è®°å½•
+         e_role_info_vip_item_geted_level, //VIPç¤¼åŒ…é¢†å–åˆ°ç¬¬å‡ çº§äº†
+         e_role_info_vip_free_revive_time, //å…è´¹å¤æ´»æ¬¡æ•°
+         e_role_info_element_heart_refine_time, //å…ƒç´ ä¹‹å¿ƒæç‚¼æ¬¡æ•°
+         e_role_info_total_login_days, //ç´¯è®¡ç™»é™†å¤©æ•°
+         e_role_info_continue_login_time, //45è¿ç»­ç™»å½•æ¬¡æ•°
+         e_role_info_daily_activity_degree, //æ—¥æ´»è·ƒåº¦
+         e_role_info_daily_recharge_num, //æ—¥å……å€¼æ•°
+         e_role_info_total_diamond_cost_num, //ç´¯è®¡æ¶ˆè´¹é’»çŸ³æ•°
+         e_role_info_daily_active_degree_get_flag, //æ¯æ—¥æ´»è·ƒå¥–åŠ±é¢†å–æ ‡å¿—ä½
+         e_role_info_fund_recharge_num, //50æˆé•¿åŸºé‡‘å……å€¼åŸºé‡‘å……å€¼é¢
+         e_role_info_fund_payment_flag, //æˆé•¿åŸºé‡‘è´­ä¹°æ ‡è®°ä½
+         e_role_info_fund_time_get_flag, //æˆé•¿åŸºé‡‘æ—¶å…‰é¢†å–æ ‡è®°ä½
+         e_role_info_fund_pride_get_flag, //æˆé•¿åŸºé‡‘å……å€¼é¢†å–æ ‡è®°ä½
+         e_role_info_fund_reborn_get_flag, //æˆé•¿åŸºé‡‘é‡ç”Ÿé¢†å–æ ‡è®°ä½
+         e_role_info_fund_cost_num, //55æˆé•¿åŸºé‡‘å……å€¼åŸºé‡‘æ¶ˆè´¹é¢
+         e_role_info_lord_of_city_worship_time, //åŸä¸»è†œæ‹œæ¬¡æ•°
+         e_role_info_lord_of_war_worship_time, //PKä¹‹ç‹è†œæ‹œæ¬¡æ•°
+         e_role_info_lord_of_sanctuary_worship_time, //åœ£åŸŸä¹‹ä¸»è†œæ‹œæ¬¡æ•°
+         e_role_info_lord_of_god_worship_time, //ä¼—ç¥ä¹‹ç‹è†œæ‹œæ¬¡æ•°
+         e_role_info_hope_value, //ç¥ˆç¦ç¥ç¦å€¼
+         e_role_info_del_time, //åˆ é™¤æ—¶é—´0æœªåˆ é™¤
+         e_role_info_kill_player_num, //å‡»æ€ç©å®¶æ•°é‡
+         e_role_info_spirit_value, //ç²¾çµçŒå–ä¿åº•
+         e_role_info_watch_count, //æŸ¥çœ‹çš„æœ€å¤§äººæ•°
+         e_role_info_crystal_dreamland_chests, //æ°´æ™¶å¹»å¢ƒé‡‡é›†å®ç®±ä¸ªæ•°
+         e_role_info_protect_mark_slot_open_num, //å®ˆæŠ¤å°è®°æ§½ä½å¼€å¯ä¸ªæ•°
+         e_role_info_element_heart_slot_open_num, //å…ƒç´ ä¹‹å¿ƒæ§½ä½å¼€å¯ä¸ªæ•°
+         e_role_info_sprite_equip_slot_open_num, //ç²¾çµè£…å¤‡æ§½ä½å¼€å¯ä¸ªæ•°
+         e_role_info_exclusive_flag, //å°Šäº«ç”¨æˆ·æ ‡å¿—
+         e_role_info_red_package_geted_times, //æ¯æ—¥çº¢åŒ…å·²é¢†å–æ¬¡æ•°
+         e_role_info_free_red_package_send_times, //æ¯æ—¥å…è´¹å‘çº¢åŒ…æ¬¡æ•°
+         e_role_info_world_boss_chests, //ä¸–ç•ŒBOSSæ‰è½å®ç®±é‡‡é›†æ•°
+         e_role_info_leave_map_id, //è¦ç¦»å¼€åœ°å›¾çš„id
+         e_role_info_assist_chests, //åŠ©æˆ˜å®ç®±è·å–æ¬¡æ•°
+         e_role_info_next_side_mission_main_trigger_id, //ä¸‹ä¸ªå¾…è§¦å‘æ”¯çº¿ä»»åŠ¡çš„ä¸»çº¿ä»»åŠ¡ID
+         e_role_info_show_fashion, //æ˜¯å¦æ˜¾ç¤ºæ—¶è£…
+         e_role_info_real_recharge_jewel_num, //å†²å…¥é’»çŸ³æ•°ä¸»è¦ç”¨äºå……å€¼æ¦œ
+         e_role_info_relic_kill_num, //ä¸Šå¤é—è¿¹ä»Šæ—¥æ€æ€ªæ•°
+         e_role_info_relic_exp_num, //ä¸Šå¤é—è¿¹ä»Šæ—¥è·å¾—ç»éªŒæ•°
+         e_role_info_head_frame, //å¤´åƒæ¡†
+         e_role_info_fund_pride_cost_value, //æˆé•¿åŸºé‡‘æ¶ˆè´¹ç‚¹æ•°
+         e_role_info_tinder_prop_slot_open_num, //ç«ç§é“å…·æ§½ä½å¼€å¯ä¸ªæ•°
+         e_role_info_show_sky_suit_shape, //æ˜¯å¦æ˜¾ç¤ºå¤©ç©ºå¥—è£…å¤–å½¢
+         e_role_info_move_server_id, //è¦åˆ°è¾¾æœåŠ¡å™¨ID
+         e_role_info_move_war_idex, //è¦åˆ°è¾¾åœ°å›¾ä½ç½®
+         e_role_info_goddess_slot_flag, //å¥³ç¥åæˆ˜æ§½ä½å¼€å¯æ ‡è®°
+         e_role_info_daily_cost, //æ¯æ—¥æ¶ˆè´¹æ•°å€¼
+         e_role_info_marry_done_num, //ç»“å©šä»»åŠ¡å®Œæˆæ•°é‡
+         e_role_info_marry_dati_id, //å½“å‰ç»“å©šç­”é¢˜id
+         e_role_info_marry_dati_num, //ç»“å©šç­”é¢˜å®Œæˆæ•°é‡
+         e_role_info_marry_dati_right_num, //ç»“å©šç­”é¢˜ç­”å¯¹æ•°é‡
+         e_role_info_marry_dati_current_answer, //ç»“å©šç­”é¢˜å½“å‰ç­”æ¡ˆ
+         e_role_info_legion_dance_exp_num, //å†›å›¢å…±èˆä»Šæ—¥ç»éªŒè·å–æ¬¡æ•°
+         e_role_info_legion_donate_num, //å†›å›¢æèµ æ¬¡æ•°
+         e_role_info_appearance_id, //æè„¸å¤–å½¢ID
+         e_role_info_is_show_vip, //æ˜¯å¦æ˜¾ç¤ºvip
+         e_role_info_need_check_guide, //æ˜¯å¦éœ€è¦æ£€æŸ¥å¼•å¯¼
+         e_role_info_enchant_show_type, //é™„é­”æ˜¾ç¤ºbuffç±»å‹
+         e_role_info_push_map_id, //æ¨å›¾çš„åœ°å›¾id
          e_role_info_max
      };
      enum e_role_logic_info
      {
-         e_role_logic_info_bag_open, //±³°ü¿ªÆô¸ñ×ÓÊı×î´óÖµÓÉºêMAX_ITEMINST_SIZE_PROP¶¨Òå
-         e_role_logic_info_main_pk_mode, //ÔÚ´óÊÀ½çÊ±ºòµÄPKÄ£Ê½
-         e_role_logic_info_jewel_first_one, //ÊÇ·ñÊÇµÚÒ»´Î±¦Ê¯µ¥´ÎÑ°±¦
-         e_role_logic_info_jewel_first_ten, //ÊÇ·ñÊÇµÚÒ»´Î±¦Ê¯Ê®´ÎÑ°±¦
-         e_role_logic_info_jewel_luck, //±¦Ê¯ĞÒÔË»ı·Ö
-         e_role_logic_info_jewel_free, //±¦Ê¯Ãâ·ÑÑ°±¦
-         e_role_logic_info_element_first_one, //ÊÇ·ñÊÇµÚÒ»´Î·ûÎÄµ¥´ÎÑ°±¦
-         e_role_logic_info_element_first_ten, //ÊÇ·ñÊÇµÚÒ»´Î·ûÎÄÊ®´ÎÑ°±¦
-         e_role_logic_info_element_luck, //·ûÎÄĞÒÔË»ı·Ö
-         e_role_logic_info_element_free, //·ûÎÄÃâ·ÑÑ°±¦
-         e_role_logic_info_spirit_first_one, //ÊÇ·ñÊÇµÚÒ»´Î¾«Áéµ¥´ÎÑ°±¦
-         e_role_logic_info_spirit_first_ten, //ÊÇ·ñÊÇµÚÒ»´Î¾«ÁéÊ®´ÎÑ°±¦
-         e_role_logic_info_spirit_luck, //¾«ÁéĞÒÔË»ı·Ö
-         e_role_logic_info_spirit_free, //¾«ÁéÃâ·ÑÑ°±¦
-         e_role_logic_info_storage_open, //²Ö¿â±³°ü¿ªÆô¸ñ×ÓÊıÄ¿
-         e_role_logic_info_first_look_legion, //µÚÒ»´Î²é¿´¾üÍÅÒ³Ãæ
-         e_role_logic_info_done_grade_mission, //Íê³ÉµÄ×ªÖ°ÈÎÎñ
-         e_role_logic_info_god_hood_grade, //Éñ¸ñÍ»ÆÆµÈ¼¶
-         e_role_logic_info_first_join_legion_award, //µÚÒ»´Î¼ÓÈë¾üÍÅ»ñµÃµÄ½±Àø
-         e_role_logic_info_is_get_kill_legion_boss_award, //½ñÈÕÊÇ·ñ»ñµÃ¾üÍÅboss½±Àø
-         e_role_logic_info_done_grade_mission_1, //Íê³ÉµÄ×ªÖ°ÈÎÎñÃ¿¸ö¿ÉÒÔ±íÊ¾6¸ö´ó×ªÖ°
-         e_role_logic_info_done_grade_mission_2, //Íê³ÉµÄ×ªÖ°ÈÎÎñ
-         e_role_logic_info_done_grade_mission_3, //Íê³ÉµÄ×ªÖ°ÈÎÎñ
-         e_role_logic_info_done_grade_mission_4, //Íê³ÉµÄ×ªÖ°ÈÎÎñ
-         e_role_logic_info_jewel_total_recharge, //×êÊ¯×Ü³äÖµ
-         e_role_logic_info_jewel_total_consume, //×êÊ¯×ÜÏû·Ñ
-         e_role_logic_info_cross_ladder_join_num, //¿ç·şÌìÌİÃ¿ÈÕ²ÎÓë´ÎÊı
-         e_role_logic_info_cross_ladder_win_num, //¿ç·şÌìÌİÃ¿ÈÕÊ¤Àû´ÎÊı
-         e_role_logic_info_cross_ladder_reward_tag, //¿ç·şÌìÌİÁì½±±êÊ¶
-         e_role_logic_info_marry_times, //½á»é´ÎÊı
-         e_role_logic_info_marry_divorce_times, //Àë»é´ÎÊı
-         e_role_logic_info_daily_lucky_times, //Ã¿ÈÕÃüÖĞ×¢¶¨´ÎÊı
-         e_role_logic_info_zero_gs_up_start_value, //ÁãµãÕ½Á¦ÌáÉı°ñ³õÊ¼Öµ
-         e_role_logic_info_zero_mount_up_start_value, //ÁãµãË¢ĞÂ×øÆïÌáÉı°ñ³õÊ¼Öµ
-         e_role_logic_info_zero_wing_up_start_value, //ÁãµãË¢ĞÂ³á°òÌáÉı°ñ³õÊ¼Öµ
-         e_role_logic_info_zero_equip_up_start_value, //ÁãµãË¢ĞÂ×°±¸ÌáÉı°ñ³õÊ¼Öµ
-         e_role_logic_info_zero_spirit_up_start_value, //ÁãµãË¢ĞÂ¾«ÁéÌáÉı°ñ³õÊ¼Öµ
-         e_role_logic_info_helper_reward_send_times, //ÖúÕ½½±Àø·¢·Å´ÎÊı
-         e_role_logic_info_boss_home_cur_used_times, //bossÖ®¼Òµ±Ç°Ê¹ÓÃ´ÎÊı
-         e_role_logic_info_gain_treasure_restore_num, //µØ¹¬boss»Ö¸´´ÎÊı
-         e_role_logic_info_gain_treasure_restore_time, //µØ¹¬boss»Ö¸´Ê±¼ä
-         e_role_logic_info_sky_land_boss_restore_num, //Ìì¿Õµºboss»Ö¸´´ÎÊı
-         e_role_logic_info_sky_land_boss_restore_time, //Ìì¿Õµºboss»Ö¸´Ê±¼ä
-         e_role_logic_info_boss_island_cur_kill_times, //Ìì¿Õµºµ±Ç°»÷É±boss´ÎÊı
-         e_role_logic_info_help_reward_send_times, //±»ÖúÕ½½±Àø·¢·Å´ÎÊı
-         e_role_logic_info_sprite_equip_slot_open_flag, //¾«Áé°ü¹ü½âËø±êÊ¶
-         e_role_logic_info_check_in_days, //Ç©µ½ÀÛ¼ÆÌìÊı
-         e_role_logic_info_check_in_repetition_num, //Ç©µ½Ñ­»·»ú´ÎÊı
-         e_role_logic_info_exp_raid_add_damage_gold, //¾­Ñé¸±±¾¹ÄÎè½ğ±Ò´ÎÊı
-         e_role_logic_info_exp_raid_add_damage_diamond, //¾­Ñé¸±±¾¹ÄÎè×êÊ¯´ÎÊı
-         e_role_logic_info_element_war_mission_tag, //ÔªËØÕù°ÔÃ¿ÈÕ½±ÀøÁìÈ¡±ê¼ÇÎ»
-         e_role_logic_info_element_war_buy_ticket, //ÔªËØÕù°ÔÃ¿ÈÕ¹ºÂò´ÎÊı
-         e_role_logic_info_jewel_carve_lucky, //±¦Ê¯ÎÆ¿ÌĞÒÔËÖµ
-         e_role_logic_info_choose_fashion_id, //Ñ¡ÔñÊ±×°ÈÎÎñÑ¡ÔñµÄÊ±×°id
-         e_role_logic_info_help_tip_send_times, //ÀÛ¼Æ·¢ËÍÖúÕ½ÇëÇó´ÎÊı
-         e_role_logic_info_is_have_new_server_mail, //ÊÇ·ñ»ñÈ¡¹ıĞÂ·şÓÊ¼ş½±Àø
-         e_role_logic_info_awaken_fetter, //¾õĞÑ´óÊ¦µÈ¼¶
-         e_role_logic_info_offline_award_time, //ÀëÏß¼ÆËã¿ªÆôÊ±¼ä
-         e_role_logic_info_offline_award_random, //ÀëÏß¼ÆËãËæ»úÖÖ×Ó
-         e_role_logic_info_online_award_money_type, //ÔÚÏß½±Àø»õ±ÒÀàĞÍ
-         e_role_logic_info_online_award_money_num, //ÔÚÏß½±Àø»õ±ÒÊıÁ¿
-         e_role_logic_info_online_award_time, //ÔÚÏß½±Àø×ÜÊ±³¤
-         e_role_logic_info_online_award_money_count, //ÔÚÏß½±Àø»õ±Ò´ÎÊı
-         e_role_logic_info_online_award_item_count, //ÔÚÏß½±ÀøÎïÆ·´ÎÊı
-         e_role_logic_info_skill_level, //¼¼ÄÜµ±Ç°µÈ¼¶
-         e_role_logic_info_search_value, //Ì½Ë÷Öµ
-         e_role_logic_info_search_level, //Íæ¼ÒÌ½Ë÷µÈ¼¶
+         e_role_logic_info_bag_open, //èƒŒåŒ…å¼€å¯æ ¼å­æ•°æœ€å¤§å€¼ç”±å®MAX_ITEMINST_SIZE_PROPå®šä¹‰
+         e_role_logic_info_main_pk_mode, //åœ¨å¤§ä¸–ç•Œæ—¶å€™çš„PKæ¨¡å¼
+         e_role_logic_info_jewel_first_one, //æ˜¯å¦æ˜¯ç¬¬ä¸€æ¬¡å®çŸ³å•æ¬¡å¯»å®
+         e_role_logic_info_jewel_first_ten, //æ˜¯å¦æ˜¯ç¬¬ä¸€æ¬¡å®çŸ³åæ¬¡å¯»å®
+         e_role_logic_info_jewel_luck, //å®çŸ³å¹¸è¿ç§¯åˆ†
+         e_role_logic_info_jewel_free, //å®çŸ³å…è´¹å¯»å®
+         e_role_logic_info_element_first_one, //æ˜¯å¦æ˜¯ç¬¬ä¸€æ¬¡ç¬¦æ–‡å•æ¬¡å¯»å®
+         e_role_logic_info_element_first_ten, //æ˜¯å¦æ˜¯ç¬¬ä¸€æ¬¡ç¬¦æ–‡åæ¬¡å¯»å®
+         e_role_logic_info_element_luck, //ç¬¦æ–‡å¹¸è¿ç§¯åˆ†
+         e_role_logic_info_element_free, //ç¬¦æ–‡å…è´¹å¯»å®
+         e_role_logic_info_spirit_first_one, //æ˜¯å¦æ˜¯ç¬¬ä¸€æ¬¡ç²¾çµå•æ¬¡å¯»å®
+         e_role_logic_info_spirit_first_ten, //æ˜¯å¦æ˜¯ç¬¬ä¸€æ¬¡ç²¾çµåæ¬¡å¯»å®
+         e_role_logic_info_spirit_luck, //ç²¾çµå¹¸è¿ç§¯åˆ†
+         e_role_logic_info_spirit_free, //ç²¾çµå…è´¹å¯»å®
+         e_role_logic_info_storage_open, //ä»“åº“èƒŒåŒ…å¼€å¯æ ¼å­æ•°ç›®
+         e_role_logic_info_first_look_legion, //ç¬¬ä¸€æ¬¡æŸ¥çœ‹å†›å›¢é¡µé¢
+         e_role_logic_info_done_grade_mission, //å®Œæˆçš„è½¬èŒä»»åŠ¡
+         e_role_logic_info_god_hood_grade, //ç¥æ ¼çªç ´ç­‰çº§
+         e_role_logic_info_first_join_legion_award, //ç¬¬ä¸€æ¬¡åŠ å…¥å†›å›¢è·å¾—çš„å¥–åŠ±
+         e_role_logic_info_is_get_kill_legion_boss_award, //ä»Šæ—¥æ˜¯å¦è·å¾—å†›å›¢bosså¥–åŠ±
+         e_role_logic_info_done_grade_mission_1, //å®Œæˆçš„è½¬èŒä»»åŠ¡æ¯ä¸ªå¯ä»¥è¡¨ç¤º6ä¸ªå¤§è½¬èŒ
+         e_role_logic_info_done_grade_mission_2, //å®Œæˆçš„è½¬èŒä»»åŠ¡
+         e_role_logic_info_done_grade_mission_3, //å®Œæˆçš„è½¬èŒä»»åŠ¡
+         e_role_logic_info_done_grade_mission_4, //å®Œæˆçš„è½¬èŒä»»åŠ¡
+         e_role_logic_info_jewel_total_recharge, //é’»çŸ³æ€»å……å€¼
+         e_role_logic_info_jewel_total_consume, //é’»çŸ³æ€»æ¶ˆè´¹
+         e_role_logic_info_cross_ladder_join_num, //è·¨æœå¤©æ¢¯æ¯æ—¥å‚ä¸æ¬¡æ•°
+         e_role_logic_info_cross_ladder_win_num, //è·¨æœå¤©æ¢¯æ¯æ—¥èƒœåˆ©æ¬¡æ•°
+         e_role_logic_info_cross_ladder_reward_tag, //è·¨æœå¤©æ¢¯é¢†å¥–æ ‡è¯†
+         e_role_logic_info_marry_times, //ç»“å©šæ¬¡æ•°
+         e_role_logic_info_marry_divorce_times, //ç¦»å©šæ¬¡æ•°
+         e_role_logic_info_daily_lucky_times, //æ¯æ—¥å‘½ä¸­æ³¨å®šæ¬¡æ•°
+         e_role_logic_info_zero_gs_up_start_value, //é›¶ç‚¹æˆ˜åŠ›æå‡æ¦œåˆå§‹å€¼
+         e_role_logic_info_zero_mount_up_start_value, //é›¶ç‚¹åˆ·æ–°åéª‘æå‡æ¦œåˆå§‹å€¼
+         e_role_logic_info_zero_wing_up_start_value, //é›¶ç‚¹åˆ·æ–°ç¿…è†€æå‡æ¦œåˆå§‹å€¼
+         e_role_logic_info_zero_equip_up_start_value, //é›¶ç‚¹åˆ·æ–°è£…å¤‡æå‡æ¦œåˆå§‹å€¼
+         e_role_logic_info_zero_spirit_up_start_value, //é›¶ç‚¹åˆ·æ–°ç²¾çµæå‡æ¦œåˆå§‹å€¼
+         e_role_logic_info_helper_reward_send_times, //åŠ©æˆ˜å¥–åŠ±å‘æ”¾æ¬¡æ•°
+         e_role_logic_info_boss_home_cur_used_times, //bossä¹‹å®¶å½“å‰ä½¿ç”¨æ¬¡æ•°
+         e_role_logic_info_gain_treasure_restore_num, //åœ°å®«bossæ¢å¤æ¬¡æ•°
+         e_role_logic_info_gain_treasure_restore_time, //åœ°å®«bossæ¢å¤æ—¶é—´
+         e_role_logic_info_sky_land_boss_restore_num, //å¤©ç©ºå²›bossæ¢å¤æ¬¡æ•°
+         e_role_logic_info_sky_land_boss_restore_time, //å¤©ç©ºå²›bossæ¢å¤æ—¶é—´
+         e_role_logic_info_boss_island_cur_kill_times, //å¤©ç©ºå²›å½“å‰å‡»æ€bossæ¬¡æ•°
+         e_role_logic_info_help_reward_send_times, //è¢«åŠ©æˆ˜å¥–åŠ±å‘æ”¾æ¬¡æ•°
+         e_role_logic_info_sprite_equip_slot_open_flag, //ç²¾çµåŒ…è£¹è§£é”æ ‡è¯†
+         e_role_logic_info_check_in_days, //ç­¾åˆ°ç´¯è®¡å¤©æ•°
+         e_role_logic_info_check_in_repetition_num, //ç­¾åˆ°å¾ªç¯æœºæ¬¡æ•°
+         e_role_logic_info_exp_raid_add_damage_gold, //ç»éªŒå‰¯æœ¬é¼“èˆé‡‘å¸æ¬¡æ•°
+         e_role_logic_info_exp_raid_add_damage_diamond, //ç»éªŒå‰¯æœ¬é¼“èˆé’»çŸ³æ¬¡æ•°
+         e_role_logic_info_element_war_mission_tag, //å…ƒç´ äº‰éœ¸æ¯æ—¥å¥–åŠ±é¢†å–æ ‡è®°ä½
+         e_role_logic_info_element_war_buy_ticket, //å…ƒç´ äº‰éœ¸æ¯æ—¥è´­ä¹°æ¬¡æ•°
+         e_role_logic_info_jewel_carve_lucky, //å®çŸ³çº¹åˆ»å¹¸è¿å€¼
+         e_role_logic_info_choose_fashion_id, //é€‰æ‹©æ—¶è£…ä»»åŠ¡é€‰æ‹©çš„æ—¶è£…id
+         e_role_logic_info_help_tip_send_times, //ç´¯è®¡å‘é€åŠ©æˆ˜è¯·æ±‚æ¬¡æ•°
+         e_role_logic_info_is_have_new_server_mail, //æ˜¯å¦è·å–è¿‡æ–°æœé‚®ä»¶å¥–åŠ±
+         e_role_logic_info_awaken_fetter, //è§‰é†’å¤§å¸ˆç­‰çº§
+         e_role_logic_info_offline_award_time, //ç¦»çº¿è®¡ç®—å¼€å¯æ—¶é—´
+         e_role_logic_info_offline_award_random, //ç¦»çº¿è®¡ç®—éšæœºç§å­
+         e_role_logic_info_online_award_money_type, //åœ¨çº¿å¥–åŠ±è´§å¸ç±»å‹
+         e_role_logic_info_online_award_money_num, //åœ¨çº¿å¥–åŠ±è´§å¸æ•°é‡
+         e_role_logic_info_online_award_time, //åœ¨çº¿å¥–åŠ±æ€»æ—¶é•¿
+         e_role_logic_info_online_award_money_count, //åœ¨çº¿å¥–åŠ±è´§å¸æ¬¡æ•°
+         e_role_logic_info_online_award_item_count, //åœ¨çº¿å¥–åŠ±ç‰©å“æ¬¡æ•°
+         e_role_logic_info_skill_level, //æŠ€èƒ½å½“å‰ç­‰çº§
+         e_role_logic_info_search_value, //æ¢ç´¢å€¼
+         e_role_logic_info_search_level, //ç©å®¶æ¢ç´¢ç­‰çº§
          e_role_logic_info_max
      };
      enum e_role_box_map
      {
-         e_role_box_map_next_award, //»ñÈ¡ÏÂÒ»¸ö¿ªÏäµÄnpc
-         e_role_box_map_search_time, //ÏÂÒ»´ÎËÑË÷µÄÊ±¼ä¼ä¸ô(Ãë)
-         e_role_box_map_middle_open_compensate, //ÖĞ¼¶±¦Ïä¿ªÆô²¹³¥Öµ
-         e_role_box_map_big_open_compensate, //´ó±¦Ïä¿ªÆô²¹³¥´ÎÊı
-         e_role_box_map_special_refrush_compensate, //ÌØÊâ±¦ÏäË¢ĞÂ²¹³¥´ÎÊı
-         e_role_box_map_special_open_compensate, //ÌØÊâ±¦Ïä¿ªÆô²¹³¥Öµ
+         e_role_box_map_next_award, //è·å–ä¸‹ä¸€ä¸ªå¼€ç®±çš„npc
+         e_role_box_map_search_time, //ä¸‹ä¸€æ¬¡æœç´¢çš„æ—¶é—´é—´éš”(ç§’)
+         e_role_box_map_middle_open_compensate, //ä¸­çº§å®ç®±å¼€å¯è¡¥å¿å€¼
+         e_role_box_map_big_open_compensate, //å¤§å®ç®±å¼€å¯è¡¥å¿æ¬¡æ•°
+         e_role_box_map_special_refrush_compensate, //ç‰¹æ®Šå®ç®±åˆ·æ–°è¡¥å¿æ¬¡æ•°
+         e_role_box_map_special_open_compensate, //ç‰¹æ®Šå®ç®±å¼€å¯è¡¥å¿å€¼
          e_role_box_map_max
      };
      enum e_role_element_map
      {
-         e_role_element_map_mop_up_count, //É¨µ´Ê£Óà´ÎÊı
+         e_role_element_map_mop_up_count, //æ‰«è¡å‰©ä½™æ¬¡æ•°
          e_role_element_map_max
      };
      enum e_role_battle_map
      {
-         e_role_battle_map_mop_up_count, //É¨µ´Ê£Óà´ÎÊı
+         e_role_battle_map_mop_up_count, //æ‰«è¡å‰©ä½™æ¬¡æ•°
          e_role_battle_map_max
      };
      enum e_unit_attack_att
      {
-         e_unit_attack_att_none, //
-         e_unit_attack_att_strength, //Á¦Á¿
-         e_unit_attack_att_agility, //Ãô½İ
-         e_unit_attack_att_intellect, //ÖÇÁ¦
-         e_unit_attack_att_stamina, //ÄÍÁ¦
-         e_unit_attack_att_attack_min, //×îĞ¡¹¥»÷Á¦
-         e_unit_attack_att_attack_max, //×î´ó¹¥»÷Á¦
-         e_unit_attack_att_armor, //·ÀÓùÁ¦
-         e_unit_attack_att_hp_max, //×î´óÉúÃüÉúÃüÖµ
-         e_unit_attack_att_hit_force, //ÃüÖĞ¾«Í¨
-         e_unit_attack_att_dodge_force, //ÉÁ±Ü¾«Í¨
-         e_unit_attack_att_critical_rate, //±©»÷¾«Í¨
-         e_unit_attack_att_critical_armor_rate, //±©»÷µÖ¿¹
-         e_unit_attack_att_critical_attack_rate, //±©»÷ÉËº¦
-         e_unit_attack_att_critical_attack_relief, //±©»÷¼õÉË
-         e_unit_attack_att_att_attack_1, //ÊôĞÔÉËº¦1
-         e_unit_attack_att_att_armor_1, //ÊôĞÔµÖ¿¹1
-         e_unit_attack_att_att_attack_2, //ÊôĞÔÉËº¦2
-         e_unit_attack_att_att_armor_2, //ÊôĞÔµÖ¿¹2
-         e_unit_attack_att_att_attack_3, //ÊôĞÔÉËº¦3
-         e_unit_attack_att_att_armor_3, //ÊôĞÔµÖ¿¹3
-         e_unit_attack_att_att_attack_4, //ÊôĞÔÉËº¦4
-         e_unit_attack_att_att_armor_4, //ÊôĞÔµÖ¿¹4
-         e_unit_attack_att_element_ability, //ÔªËØ¾«Í¨
-         e_unit_attack_att_element_resist, //ÔªËØÇ×ºÍ
-         e_unit_attack_att_effect_damage, //×îÖÕÉËº¦
-         e_unit_attack_att_effect_damage_relief, //×îÖÕÉËº¦¼õÃâ
-         e_unit_attack_att_hit_prob, //ÃüÖĞÂÊ
-         e_unit_attack_att_un_hit_prob, //ÉÁ±ÜÂÊ
-         e_unit_attack_att_crit_prob, //±©»÷ÂÊ
-         e_unit_attack_att_un_crit_prob, //±©¿¹ÂÊ
-         e_unit_attack_att_move_speed, //ËÙ¶È
-         e_unit_attack_att_un_dizzy, //¿¹Ñ£ÔÎ
-         e_unit_attack_att_un_move_speed, //¿¹¼õËÙ
-         e_unit_attack_att_un_frozen, //¿¹±ù¶³
-         e_unit_attack_att_un_no_skill, //¿¹³ÁÄ¬
-         e_unit_attack_att_magic, //Ä§·¨Öµ
-         e_unit_attack_att_body_power, //ÌåÁ¦Öµ
-         e_unit_attack_att_exp_addition, //´ò¹Ö¾­Ñé¼Ó³É
-         e_unit_attack_att_attack_npc, //´ò¹ÖÔöÉË
-         e_unit_attack_att_attack_player, //´òÈËÔöÉË
-         e_unit_attack_att_exp_add_all, //È«¾Ö¾­Ñé¼Ó³É
-         e_unit_attack_att_be_attack_player, //±»ÈË´òÔöÉË
-         e_unit_attack_att_pure_attack, //´¿´âÉËº¦
-         e_unit_attack_att_pure_armor, //´¿´â·ÀÓù
-         e_unit_attack_att_attack_multiple, //¹¥»÷·­±¶
-         e_unit_attack_att_flight_energy, //·ÉĞĞ³å´ÌÄÜÁ¦Öµ
+         e_unit_attack_att_none,
+         e_unit_attack_att_strength, //åŠ›é‡
+         e_unit_attack_att_agility, //æ•æ·
+         e_unit_attack_att_intellect, //æ™ºåŠ›
+         e_unit_attack_att_stamina, //è€åŠ›
+         e_unit_attack_att_attack_min, //æœ€å°æ”»å‡»åŠ›
+         e_unit_attack_att_attack_max, //æœ€å¤§æ”»å‡»åŠ›
+         e_unit_attack_att_armor, //é˜²å¾¡åŠ›
+         e_unit_attack_att_hp_max, //æœ€å¤§ç”Ÿå‘½ç”Ÿå‘½å€¼
+         e_unit_attack_att_hit_force, //å‘½ä¸­ç²¾é€š
+         e_unit_attack_att_dodge_force, //é—ªé¿ç²¾é€š
+         e_unit_attack_att_critical_rate, //æš´å‡»ç²¾é€š
+         e_unit_attack_att_critical_armor_rate, //æš´å‡»æŠµæŠ—
+         e_unit_attack_att_critical_attack_rate, //æš´å‡»ä¼¤å®³
+         e_unit_attack_att_critical_attack_relief, //æš´å‡»å‡ä¼¤
+         e_unit_attack_att_att_attack_1, //å±æ€§ä¼¤å®³1
+         e_unit_attack_att_att_armor_1, //å±æ€§æŠµæŠ—1
+         e_unit_attack_att_att_attack_2, //å±æ€§ä¼¤å®³2
+         e_unit_attack_att_att_armor_2, //å±æ€§æŠµæŠ—2
+         e_unit_attack_att_att_attack_3, //å±æ€§ä¼¤å®³3
+         e_unit_attack_att_att_armor_3, //å±æ€§æŠµæŠ—3
+         e_unit_attack_att_att_attack_4, //å±æ€§ä¼¤å®³4
+         e_unit_attack_att_att_armor_4, //å±æ€§æŠµæŠ—4
+         e_unit_attack_att_element_ability, //å…ƒç´ ç²¾é€š
+         e_unit_attack_att_element_resist, //å…ƒç´ äº²å’Œ
+         e_unit_attack_att_effect_damage, //æœ€ç»ˆä¼¤å®³
+         e_unit_attack_att_effect_damage_relief, //æœ€ç»ˆä¼¤å®³å‡å…
+         e_unit_attack_att_hit_prob, //å‘½ä¸­ç‡
+         e_unit_attack_att_un_hit_prob, //é—ªé¿ç‡
+         e_unit_attack_att_crit_prob, //æš´å‡»ç‡
+         e_unit_attack_att_un_crit_prob, //æš´æŠ—ç‡
+         e_unit_attack_att_move_speed, //é€Ÿåº¦
+         e_unit_attack_att_un_dizzy, //æŠ—çœ©æ™•
+         e_unit_attack_att_un_move_speed, //æŠ—å‡é€Ÿ
+         e_unit_attack_att_un_frozen, //æŠ—å†°å†»
+         e_unit_attack_att_un_no_skill, //æŠ—æ²‰é»˜
+         e_unit_attack_att_magic, //é­”æ³•å€¼
+         e_unit_attack_att_body_power, //ä½“åŠ›å€¼
+         e_unit_attack_att_exp_addition, //æ‰“æ€ªç»éªŒåŠ æˆ
+         e_unit_attack_att_attack_npc, //æ‰“æ€ªå¢ä¼¤
+         e_unit_attack_att_attack_player, //æ‰“äººå¢ä¼¤
+         e_unit_attack_att_exp_add_all, //å…¨å±€ç»éªŒåŠ æˆ
+         e_unit_attack_att_be_attack_player, //è¢«äººæ‰“å¢ä¼¤
+         e_unit_attack_att_pure_attack, //çº¯ç²¹ä¼¤å®³
+         e_unit_attack_att_pure_armor, //çº¯ç²¹é˜²å¾¡
+         e_unit_attack_att_attack_multiple, //æ”»å‡»ç¿»å€
+         e_unit_attack_att_flight_energy, //é£è¡Œå†²åˆºèƒ½åŠ›å€¼
          e_unit_attack_att_max
      };
      enum e_unit_game_att
      {
-         e_unit_game_att_movement, //µ±Ç°ÔË¶¯×´Ì¬
-         e_unit_game_att_exp_only, //µ±Ç°¾­ÑéµÄ±¶ÂÊ
-         e_unit_game_att_suck_blood, //ÎüÑª±ÈÀı
-         e_unit_game_att_damage_reflect, //ÉËº¦·´Éä
-         e_unit_game_att_war_state, //Õ½¶·×´Ì¬
-         e_unit_game_att_damage_sub, //ÉËº¦¼õÃâ
-         e_unit_game_att_fight_lock, //Ëø¶¨
-         e_unit_game_att_jump, //ÌøÔ¾
-         e_unit_game_att_interaction, //½»»¥
-         e_unit_game_att_exp_add, //¾­Ñé±¶ÊıÀÛ¼Ó
-         e_unit_game_att_attack_num, //¹¥»÷´ÎÊı
-         e_unit_game_att_back_hp_percent, //»ØÑª°Ù·Ö±È
-         e_unit_game_att_back_hp_value, //»ØÑª¹Ì¶¨Öµ
-         e_unit_game_att_no_back_hp_percent, //¼õÉÙ»ØÑª°Ù·Ö±È
-         e_unit_game_att_pure_hurt_percent, //´¿´âÉËº¦°Ù·Ö±È
-         e_unit_game_att_pure_hurt_value, //´¿´âÉËº¦¹Ì¶¨Öµ
+         e_unit_game_att_movement, //å½“å‰è¿åŠ¨çŠ¶æ€
+         e_unit_game_att_exp_only, //å½“å‰ç»éªŒçš„å€ç‡
+         e_unit_game_att_suck_blood, //å¸è¡€æ¯”ä¾‹
+         e_unit_game_att_damage_reflect, //ä¼¤å®³åå°„
+         e_unit_game_att_war_state, //æˆ˜æ–—çŠ¶æ€
+         e_unit_game_att_damage_sub, //ä¼¤å®³å‡å…
+         e_unit_game_att_fight_lock, //é”å®š
+         e_unit_game_att_jump, //è·³è·ƒ
+         e_unit_game_att_interaction, //äº¤äº’
+         e_unit_game_att_exp_add, //ç»éªŒå€æ•°ç´¯åŠ 
+         e_unit_game_att_attack_num, //æ”»å‡»æ¬¡æ•°
+         e_unit_game_att_back_hp_percent, //å›è¡€ç™¾åˆ†æ¯”
+         e_unit_game_att_back_hp_value, //å›è¡€å›ºå®šå€¼
+         e_unit_game_att_no_back_hp_percent, //å‡å°‘å›è¡€ç™¾åˆ†æ¯”
+         e_unit_game_att_pure_hurt_percent, //çº¯ç²¹ä¼¤å®³ç™¾åˆ†æ¯”
+         e_unit_game_att_pure_hurt_value, //çº¯ç²¹ä¼¤å®³å›ºå®šå€¼
          e_unit_game_att_max
      };
      enum e_war_state
      {
-         e_war_state_peace, //ºÍÆ½×´Ì¬
-         e_war_state_attack_ready, //Õ½¶·×¼±¸
-         e_war_state_attack_in, //Õ½¶·×´Ì¬
+         e_war_state_peace, //å’Œå¹³çŠ¶æ€
+         e_war_state_attack_ready, //æˆ˜æ–—å‡†å¤‡
+         e_war_state_attack_in, //æˆ˜æ–—çŠ¶æ€
          e_war_state_max
      };
      enum e_unit_attack_state
      {
-         e_unit_attack_state_dead, //ËÀÍö
-         e_unit_attack_state_dizzy, //Ñ£ÔÎ
-         e_unit_attack_state_frozen, //±ù¶³
-         e_unit_attack_state_attack_back, //»÷ÍË
-         e_unit_attack_state_no_control, //ÊÇ·ñÃâÒß¿ØÖÆ
-         e_unit_attack_state_no_hurt, //ÊÇ·ñÃâÒßÉËº¦
-         e_unit_attack_state_stealth, //ÊÇ·ñÒşÉí ×Ô¼º²»¿É¼û
-         e_unit_attack_state_no_dead, //hpµÍÓÚ0Ê±ÊÇ·ñËÀÍö
-         e_unit_attack_state_no_skill, //³ÁÄ¬
-         e_unit_attack_state_adversity_aid, //Äæ¾³Ô®Öú
-         e_unit_attack_state_speed_down, //¼õËÙ
-         e_unit_attack_state_speed_up, //¼ÓËÙ
-         e_unit_attack_state_stealth_show_me, //ÊÇ·ñÒşÉí ×Ô¼º¿É¼û
-         e_unit_attack_state_bleeding, //ÊÇ·ñÁ÷Ñª
-         e_unit_attack_state_burn, //ÊÇ·ñ×ÆÉÕ
-         e_unit_attack_state_adsorbent, //ÊÇ·ñÎü¸½
-         e_unit_attack_state_crazy, //ÊÇ·ñ¿ñ±©
-         e_unit_attack_state_lock_cd, //Ëø¶¨cd
-         e_unit_attack_state_will_dead, //ÊÇ·ñ±ôËÀÎŞµĞ
-         e_unit_attack_state_will_dead_percent, //°Ù·Ö±È±ôËÀÎŞµĞ
+         e_unit_attack_state_dead, //æ­»äº¡
+         e_unit_attack_state_dizzy, //çœ©æ™•
+         e_unit_attack_state_frozen, //å†°å†»
+         e_unit_attack_state_attack_back, //å‡»é€€
+         e_unit_attack_state_no_control, //æ˜¯å¦å…ç–«æ§åˆ¶
+         e_unit_attack_state_no_hurt, //æ˜¯å¦å…ç–«ä¼¤å®³
+         e_unit_attack_state_stealth, //æ˜¯å¦éšèº« è‡ªå·±ä¸å¯è§
+         e_unit_attack_state_no_dead, //hpä½äº0æ—¶æ˜¯å¦æ­»äº¡
+         e_unit_attack_state_no_skill, //æ²‰é»˜
+         e_unit_attack_state_adversity_aid, //é€†å¢ƒæ´åŠ©
+         e_unit_attack_state_speed_down, //å‡é€Ÿ
+         e_unit_attack_state_speed_up, //åŠ é€Ÿ
+         e_unit_attack_state_stealth_show_me, //æ˜¯å¦éšèº« è‡ªå·±å¯è§
+         e_unit_attack_state_bleeding, //æ˜¯å¦æµè¡€
+         e_unit_attack_state_burn, //æ˜¯å¦ç¼çƒ§
+         e_unit_attack_state_adsorbent, //æ˜¯å¦å¸é™„
+         e_unit_attack_state_crazy, //æ˜¯å¦ç‹‚æš´
+         e_unit_attack_state_lock_cd, //é”å®šcd
+         e_unit_attack_state_will_dead, //æ˜¯å¦æ¿’æ­»æ— æ•Œ
+         e_unit_attack_state_will_dead_percent, //ç™¾åˆ†æ¯”æ¿’æ­»æ— æ•Œ
          e_unit_attack_state_max
      };
      enum e_pawn_att_type
      {
-         e_pawn_att_type_attack, //¹¥»÷
-         e_pawn_att_type_game, //µ¥Ò»ÊôĞÔ
-         e_pawn_att_type_state, //Õ½¶·×´Ì¬
-         e_pawn_att_type_sign, //±ê¼Ç
+         e_pawn_att_type_attack, //æ”»å‡»
+         e_pawn_att_type_game, //å•ä¸€å±æ€§
+         e_pawn_att_type_state, //æˆ˜æ–—çŠ¶æ€
+         e_pawn_att_type_sign, //æ ‡è®°
          e_pawn_att_type_max
      };
      enum e_class_type
      {
-         e_class_type_none, //
-         e_class_type_barserker, //¿ñÕ½Ê¿
-         e_class_type_wizard, //Î×Ê¦
-         e_class_type_guardian, //ÊØ»¤Õß
-         e_class_type_assassinator, //°µÉ±Õß
-         e_class_type_ranger, //ÓÎÏÀ
-         e_class_type_monster, //¹ÖÎï
+         e_class_type_none,
+         e_class_type_barserker, //ç‹‚æˆ˜å£«
+         e_class_type_wizard, //å·«å¸ˆ
+         e_class_type_guardian, //å®ˆæŠ¤è€…
+         e_class_type_assassinator, //æš—æ€è€…
+         e_class_type_ranger, //æ¸¸ä¾ 
+         e_class_type_monster, //æ€ªç‰©
          e_class_type_max
      };
      enum e_branch_type
      {
-         e_branch_type_common, //»ù´¡Ö°Òµ
-         e_branch_type_ice, //±ù
-         e_branch_type_fire, //»ğ
-         e_branch_type_light, //¹âÃ÷
-         e_branch_type_dark, //ºÚ°µ
+         e_branch_type_common, //åŸºç¡€èŒä¸š
+         e_branch_type_ice, //å†°
+         e_branch_type_fire, //ç«
+         e_branch_type_light, //å…‰æ˜
+         e_branch_type_dark, //é»‘æš—
          e_branch_type_max
      };
      enum e_map_record_info
      {
-         e_map_record_info_map_template_id, //µØÍ¼Ä£°åID
-         e_map_record_info_unlock, //µØÍ¼½âËø×´Ì¬
-         e_map_record_info_enter_count, //×éµØÍ¼½øÈë´ÎÊı
-         e_map_record_info_fastest_time, //×îËÙÍ¨¹ØÊ±¼ä
-         e_map_record_info_extra_enter_count, //Í¨¹ı»¨·ÑÌØÊâÇ®Îï½øÈëµÄ´ÎÊı
-         e_map_record_info_score_record, //·ÖÊı¼ÇÂ¼
-         e_map_record_info_real_enter_count, //±¾µØÍ¼Êµ¼Ê½øÈë´ÎÊı
-         e_map_record_info_buy_count, //ÒÑ¹ºÂò´ÎÊı
-         e_map_record_info_use_things_count, //ÏûºÄÎïÆ·»ñµÃ´ÎÊı
-         e_map_record_info_first_join, //ÊÇ·ñÒÑ¾­½øÈë¹ı¸±±¾ÁË
-         e_map_record_info_first_award, //ÊÇ·ñÁìÈ¡¹ıÊ×´Î½±Àø
-         e_map_record_info_next_refresh_time, //ÏÂ´ÎË¢ĞÂÊ±¼ä
-         e_map_record_info_mopping_num, //ÀÛ¼ÆË¢ĞÂ´ÎÊı
-         e_map_record_info_all_enter_count, //ÀúÊ·ÀÛ¼Æ½øÈë´ÎÊı
+         e_map_record_info_map_template_id, //åœ°å›¾æ¨¡æ¿ID
+         e_map_record_info_unlock, //åœ°å›¾è§£é”çŠ¶æ€
+         e_map_record_info_enter_count, //ç»„åœ°å›¾è¿›å…¥æ¬¡æ•°
+         e_map_record_info_fastest_time, //æœ€é€Ÿé€šå…³æ—¶é—´
+         e_map_record_info_extra_enter_count, //é€šè¿‡èŠ±è´¹ç‰¹æ®Šé’±ç‰©è¿›å…¥çš„æ¬¡æ•°
+         e_map_record_info_score_record, //åˆ†æ•°è®°å½•
+         e_map_record_info_real_enter_count, //æœ¬åœ°å›¾å®é™…è¿›å…¥æ¬¡æ•°
+         e_map_record_info_buy_count, //å·²è´­ä¹°æ¬¡æ•°
+         e_map_record_info_use_things_count, //æ¶ˆè€—ç‰©å“è·å¾—æ¬¡æ•°
+         e_map_record_info_first_join, //æ˜¯å¦å·²ç»è¿›å…¥è¿‡å‰¯æœ¬äº†
+         e_map_record_info_first_award, //æ˜¯å¦é¢†å–è¿‡é¦–æ¬¡å¥–åŠ±
+         e_map_record_info_next_refresh_time, //ä¸‹æ¬¡åˆ·æ–°æ—¶é—´
+         e_map_record_info_mopping_num, //ç´¯è®¡åˆ·æ–°æ¬¡æ•°
+         e_map_record_info_all_enter_count, //å†å²ç´¯è®¡è¿›å…¥æ¬¡æ•°
          e_map_record_info_max
      };
      enum e_big_player_type
      {
-         e_big_player_type_lord_of_city, //³ÇÖ÷
-         e_big_player_type_lord_or_war, //pkÖ®Íõ
-         e_big_player_type_lord_or_sanctuary, //Ê¥ÓòÖ®Ö÷
-         e_big_player_type_lord_or_god, //ÖÚÉñÖ®Íõ
-         e_big_player_type_best_barserker, //×îÇ¿¿ñÕ½Ê¿
-         e_big_player_type_best_wizard, //×îÇ¿·¨Ê¦
-         e_big_player_type_best_guardian, //×îÇ¿ÆïÊ¿
-         e_big_player_type_best_assassinator, //×îÇ¿°µÉ±Õß
-         e_big_player_type_overload_legion, //°ÔÖ÷¾üÍÅ
-         e_big_player_type_gs_first_barserker, //Õ½Ê¿Õ½Á¦°ñµÚÒ»
-         e_big_player_type_gs_first_wizard, //·¨Ê¦Õ½Á¦°ñµÚÒ»
-         e_big_player_type_gs_first_guardian, //ÆïÊ¿Õ½Á¦°ñµÚÒ»
-         e_big_player_type_gs_first_assassinator, //´Ì¿ÍÕ½Á¦°ñµÚÒ»
-         e_big_player_type_gs_first_player, //Õ½Á¦×ÜÅÅĞĞµÚÒ»
-         e_big_player_type_money_first_player, //½ğÇ®µÚÒ»
-         e_big_player_type_worship_first_player, //ÍşÍûµÚÒ»
-         e_big_player_type_arena_first_player, //¾º¼¼³¡µÚÒ»
+         e_big_player_type_lord_of_city, //åŸä¸»
+         e_big_player_type_lord_or_war, //pkä¹‹ç‹
+         e_big_player_type_lord_or_sanctuary, //åœ£åŸŸä¹‹ä¸»
+         e_big_player_type_lord_or_god, //ä¼—ç¥ä¹‹ç‹
+         e_big_player_type_best_barserker, //æœ€å¼ºç‹‚æˆ˜å£«
+         e_big_player_type_best_wizard, //æœ€å¼ºæ³•å¸ˆ
+         e_big_player_type_best_guardian, //æœ€å¼ºéª‘å£«
+         e_big_player_type_best_assassinator, //æœ€å¼ºæš—æ€è€…
+         e_big_player_type_overload_legion, //éœ¸ä¸»å†›å›¢
+         e_big_player_type_gs_first_barserker, //æˆ˜å£«æˆ˜åŠ›æ¦œç¬¬ä¸€
+         e_big_player_type_gs_first_wizard, //æ³•å¸ˆæˆ˜åŠ›æ¦œç¬¬ä¸€
+         e_big_player_type_gs_first_guardian, //éª‘å£«æˆ˜åŠ›æ¦œç¬¬ä¸€
+         e_big_player_type_gs_first_assassinator, //åˆºå®¢æˆ˜åŠ›æ¦œç¬¬ä¸€
+         e_big_player_type_gs_first_player, //æˆ˜åŠ›æ€»æ’è¡Œç¬¬ä¸€
+         e_big_player_type_money_first_player, //é‡‘é’±ç¬¬ä¸€
+         e_big_player_type_worship_first_player, //å¨æœ›ç¬¬ä¸€
+         e_big_player_type_arena_first_player, //ç«æŠ€åœºç¬¬ä¸€
          e_big_player_type_max
      };
      enum e_map_state
      {
-         e_map_state_join, //ÓÎÏ·¿ªÊ¼Ê±½øÈËµÄ½×¶Îµ½Ò»¶¨Ê±¼äÎŞÈË½øÈë»áÉ¾³ıÕâ¸ö¸±±¾
-         e_map_state_game, //ÓÎÏ·ÓĞÈËÁË¿ÉÒÔ¿ªÊ¼
-         e_map_state_in_game, //ÓÎÏ·ÕıÊ½¿ªÊ¼
-         e_map_state_over, //ÓÎÏ·ÒÑ¾­½áÊø¿ªÊ¼´«ËÍÍæ¼ÒÍ¨ÖªwsÉ¾³ı×Ô¼º
-         e_map_state_return_data, //µÈ´ı×ÊÔ´»ØÊÕ
+         e_map_state_join, //æ¸¸æˆå¼€å§‹æ—¶è¿›äººçš„é˜¶æ®µåˆ°ä¸€å®šæ—¶é—´æ— äººè¿›å…¥ä¼šåˆ é™¤è¿™ä¸ªå‰¯æœ¬
+         e_map_state_game, //æ¸¸æˆæœ‰äººäº†å¯ä»¥å¼€å§‹
+         e_map_state_in_game, //æ¸¸æˆæ­£å¼å¼€å§‹
+         e_map_state_over, //æ¸¸æˆå·²ç»ç»“æŸå¼€å§‹ä¼ é€ç©å®¶é€šçŸ¥wsåˆ é™¤è‡ªå·±
+         e_map_state_return_data, //ç­‰å¾…èµ„æºå›æ”¶
          e_map_state_max
      };
      enum e_bag_type
      {
-         e_bag_type_none, //
-         e_bag_type_equip, //ÒÑ×°±¸
-         e_bag_type_bag, //µÀ¾ß°ü
-         e_bag_type_storage, //×°±¸±³°ü
-         e_bag_type_equip_spirit, //ÒÑ×°±¸µÄ¾«Áé±³°ü
-         e_bag_type_awaken_item, //¾õĞÑ´óÊ¦ÎïÆ·°ü
-         e_bag_type_online_award, //ÔÚÏß½±Àø
-         e_bag_type_wing, //³á°ò°ü
-         e_bag_type_mount, //×øÆï°ü
-         e_bag_type_protect, //Î´×°±¸µÄÊØ»¤Ö®ÁéµÄ±³°ü
-         e_bag_type_equip_protect, //ÒÑ¾­×°±¸µÄÊØ»¤Ö®ÁéµÄ±³°ü
-         e_bag_type_mail, //ÓÊ¼ş¸½¼şÎïÆ·°ü
-         e_bag_type_hope_item, //ÆíÔ¸»ñµÃµÄÎïÆ·µÄ°ü
-         e_bag_type_elemenet, //Î´×°±¸µÄÔªËØÖ®ĞÄµÄ±³°ü
-         e_bag_type_equip_elemenet, //ÒÑ¾­×°±¸µÄÔªËØÖ®ĞÄµÄ±³°ü
-         e_bag_type_fasion, //Ê±×°
-         e_bag_type_equip_fasion, //ÒÑ×°±¸Ê±×°
-         e_bag_type_mount_beast_spirit, //×øÆïÊŞ»ê°ü
-         e_bag_type_wing_beast_spirit, //ÓğÒíÊŞ»ê°ü
-         e_bag_type_treasure, //±¦²Ø³éÈ¡°ü
-         e_bag_type_belief_rune, //Î´×°±¸µÄĞÅÑö·ûÎÄ±³°ü
-         e_bag_type_belief_rune_equip, //ÒÑ×°±¸µÄĞÅÑö·ûÎÄ±³°ü
-         e_bag_type_equip_tinder_prop, //ÒÑ×°±¸µÄ»ğÖÖµÀ¾ß±³°ü
-         e_bag_type_sky_equip, //Ìì¿Õ×°±¸°ü
-         e_bag_type_skill_book, //¼¼ÄÜÊé
-         e_bag_type_goddess_equip, //Å®Éñ×°±¸
-         e_bag_type_wedding_equip, //½á»é×°±¸
-         e_bag_type_core_element, //ºËĞÄ·ûÎÄ
-         e_bag_type_spirit_beast_spirit, //¾«ÁéÊŞ»ê°ü
-         e_bag_type_skygod_equip, //ÌìÉñ×°±¸°ü
-         e_bag_type_supreme_equip, //ÉñÍõ×°±¸°ü
-         e_bag_type_spirit_upgrade_promote, //ĞÇÍ¼¾«Áé°ü
-         e_bag_type_break_will, //ĞÄÄ§ÒâÖ¾×°±¸°ü
+         e_bag_type_none,
+         e_bag_type_equip, //å·²è£…å¤‡
+         e_bag_type_bag, //é“å…·åŒ…
+         e_bag_type_storage, //è£…å¤‡èƒŒåŒ…
+         e_bag_type_equip_spirit, //å·²è£…å¤‡çš„ç²¾çµèƒŒåŒ…
+         e_bag_type_awaken_item, //è§‰é†’å¤§å¸ˆç‰©å“åŒ…
+         e_bag_type_online_award, //åœ¨çº¿å¥–åŠ±
+         e_bag_type_wing, //ç¿…è†€åŒ…
+         e_bag_type_mount, //åéª‘åŒ…
+         e_bag_type_protect, //æœªè£…å¤‡çš„å®ˆæŠ¤ä¹‹çµçš„èƒŒåŒ…
+         e_bag_type_equip_protect, //å·²ç»è£…å¤‡çš„å®ˆæŠ¤ä¹‹çµçš„èƒŒåŒ…
+         e_bag_type_mail, //é‚®ä»¶é™„ä»¶ç‰©å“åŒ…
+         e_bag_type_hope_item, //ç¥ˆæ„¿è·å¾—çš„ç‰©å“çš„åŒ…
+         e_bag_type_elemenet, //æœªè£…å¤‡çš„å…ƒç´ ä¹‹å¿ƒçš„èƒŒåŒ…
+         e_bag_type_equip_elemenet, //å·²ç»è£…å¤‡çš„å…ƒç´ ä¹‹å¿ƒçš„èƒŒåŒ…
+         e_bag_type_fasion, //æ—¶è£…
+         e_bag_type_equip_fasion, //å·²è£…å¤‡æ—¶è£…
+         e_bag_type_mount_beast_spirit, //åéª‘å…½é­‚åŒ…
+         e_bag_type_wing_beast_spirit, //ç¾½ç¿¼å…½é­‚åŒ…
+         e_bag_type_treasure, //å®è—æŠ½å–åŒ…
+         e_bag_type_belief_rune, //æœªè£…å¤‡çš„ä¿¡ä»°ç¬¦æ–‡èƒŒåŒ…
+         e_bag_type_belief_rune_equip, //å·²è£…å¤‡çš„ä¿¡ä»°ç¬¦æ–‡èƒŒåŒ…
+         e_bag_type_equip_tinder_prop, //å·²è£…å¤‡çš„ç«ç§é“å…·èƒŒåŒ…
+         e_bag_type_sky_equip, //å¤©ç©ºè£…å¤‡åŒ…
+         e_bag_type_skill_book, //æŠ€èƒ½ä¹¦
+         e_bag_type_goddess_equip, //å¥³ç¥è£…å¤‡
+         e_bag_type_wedding_equip, //ç»“å©šè£…å¤‡
+         e_bag_type_core_element, //æ ¸å¿ƒç¬¦æ–‡
+         e_bag_type_spirit_beast_spirit, //ç²¾çµå…½é­‚åŒ…
+         e_bag_type_skygod_equip, //å¤©ç¥è£…å¤‡åŒ…
+         e_bag_type_supreme_equip, //ç¥ç‹è£…å¤‡åŒ…
+         e_bag_type_spirit_upgrade_promote, //æ˜Ÿå›¾ç²¾çµåŒ…
+         e_bag_type_break_will, //å¿ƒé­”æ„å¿—è£…å¤‡åŒ…
          e_bag_type_max
      };
      enum e_item_info
      {
-         e_item_info_info_id, //Ä£°åid
-         e_item_info_slot, //ÎïÆ·Î»ÖÃË÷Òıe_role_equipÎïÆ·×°±¸Ê±´ú±íÎïÆ·ÔÚ×°±¸À¸ÖĞµÄÎ»ÖÃÔÚÎïÆ·À¸Ê±´ú±íÔÚÎïÆ·À¸ÖĞµÄÎ»ÖÃ
-         e_item_info_equip_slot, //×°ÅäÎ»ÖÃ£¨±³°ü£¬ÏÔÊ¾¹²ÓÃÊ±£©
-         e_item_info_container_type, //ËùÔÚ°ü¹ü:e_bag_type
-         e_item_info_stack_count, //ÎïÆ·¶ÑµşÊıÄ¿
-         e_item_info_locked, //ÊÇ·ñ°ó¶¨ 1ÊÓÎª°ó¶¨0ÊÓÎªÎ´°ó¶¨
-         e_item_info_activate, //ÊÇ·ñ¼¤»î
-         e_item_info_is_first, //5ÊÇ·ñµÚÒ»´Î¼¤»î
-         e_item_info_upgrade_count, //×°±¸µÈ¼¶×øÆïÉıĞÇÊıÉı½×ôáÓğÉıĞÇÊıôáÓğÉı½××¢»ê´ÎÊı×¢Áé´ÎÊı¾«ÁéµÈ¼¶ÔªËØÖ®ĞÄµÈ¼¶ÊŞ»êµÈ¼¶
-         e_item_info_stargrade_count, //×øÆï¡¢ÓğÒíËéÆ¬ÉıĞÇÊı
-         e_item_info_starskill_flag, //×øÆï¡¢ÓğÒí»êĞÇ¼¼ÄÜ¿ªÆô±ê¼Ç
-         e_item_info_add_on, //×°±¸×·¼Ó´ÎÊı
-         e_item_info_wing_exp, //×øÆïµ±Ç°ÉıĞÇ¾­ÑéÔªËØÖ®ĞÄµ±Ç°¾­Ñé
-         e_item_info_wing_bless, //10×øÆï×£¸£Öµ
-         e_item_info_random_had_flag, //ÓµÓĞµÄËæ»úÊôĞÔ±ê¼ÇÎ»
-         e_item_info_random_property1, //ÎïÆ·Ëæ»úÊôĞÔ¾«ÁéÌì¸³ÊôĞÔ»ò×¿Ô½ÊôĞÔ
-         e_item_info_random_property2, //
-         e_item_info_random_property3, //
-         e_item_info_random_property4, //
-         e_item_info_random_property5, //
-         e_item_info_random_property6, //
-         e_item_info_succinct_property1, //×°±¸Ï´Á·ÊôĞÔ×øÆï³á°ò¾«Áé¼¼ÄÜ¼¤»îÊ±¼ä
-         e_item_info_succinct_property2, //
-         e_item_info_succinct_property3, //
-         e_item_info_succinct_property4, //
-         e_item_info_succinct_property5, //±¸ÓÃ
-         e_item_info_succinct_property6, //
-         e_item_info_showing_illusion_idex, //ÏÔÊ¾µÄ»Ã»¯IDÄ¬ÈÏÎª-1
-         e_item_info_put_in_bag_count, //·ÅÈë±³°ü¼ÆÊıÖ÷ÒªÓÃÓÚÈ·ÈÏÊÇ·ñÊÇĞÂ»ñµÃµÄÎïÆ·
-         e_item_info_illusion_had_byte, //ÒÑ»ñÈ¡»Ã»¯Î»±êÊ¶·û
-         e_item_info_over_time, //ÎïÆ·µ½ÆÚÊ±¼ä
-         e_item_info_succinct_level, //Ï´Á·µÈ¼¶
-         e_item_info_jewel_slot_0, //±¦Ê¯²ÛÎ»0
-         e_item_info_jewel_slot_1, //±¦Ê¯²ÛÎ»1
-         e_item_info_jewel_slot_2, //±¦Ê¯²ÛÎ»2
-         e_item_info_jewel_slot_3, //±¦Ê¯²ÛÎ»3
-         e_item_info_jewel_slot_4, //±¦Ê¯²ÛÎ»4 
-         e_item_info_jewel_vip_slot_0, //VIP±¦Ê¯²ÛÎ»0
-         e_item_info_jewel_vip_slot_1, //VIP±¦Ê¯²ÛÎ»1
-         e_item_info_prototype_id, //ÎïÆ·Ô­ĞÍid ÏŞÊ±ÎïÆ·¸Ä±äÇ°id
-         e_item_info_forge_property1, //ÎïÆ·ÖØÖıÊôĞÔ¾«ÁéÌì¸³ÊôĞÔ»ò×¿Ô½ÊôĞÔÓğÒíÁéĞÔÖµ
-         e_item_info_forge_property2          , //ÓğÒíÖıÁéÀäÈ´Ê±¼ä 
-         e_item_info_forge_property3          , //ÓğÒíÍ¨Áé¼¼ÄÜid 
-         e_item_info_forge_property4         , //ÓğÒíÇåÁéÂ¶Ê¹ÓÃ´ÎÊı
-         e_item_info_forge_property5, //ÓğÒíÁéĞÔÖµµÚÒ»´Î´óÓÚµÈÓÚ80µÄÖµ
-         e_item_info_forge_property6, //ÓğÒíÁéĞÔÖµµ½´ï110±ê¼ÇÎ»
-         e_item_info_jewel_carve_0           , //Ëæ»úÎÆ¿Ì
-         e_item_info_jewel_carve_1            , //±¦Ê¯ÎÆ¿Ì1
-         e_item_info_jewel_carve_2            , //±¦Ê¯ÎÆ¿Ì2
-         e_item_info_jewel_lucky_carve, //ÊÇ·ñÊÇĞÒÔËÎÆ¿Ì
+         e_item_info_info_id, //æ¨¡æ¿id
+         e_item_info_slot, //ç‰©å“ä½ç½®ç´¢å¼•e_role_equipç‰©å“è£…å¤‡æ—¶ä»£è¡¨ç‰©å“åœ¨è£…å¤‡æ ä¸­çš„ä½ç½®åœ¨ç‰©å“æ æ—¶ä»£è¡¨åœ¨ç‰©å“æ ä¸­çš„ä½ç½®
+         e_item_info_equip_slot, //è£…é…ä½ç½®ï¼ˆèƒŒåŒ…ï¼Œæ˜¾ç¤ºå…±ç”¨æ—¶ï¼‰
+         e_item_info_container_type, //æ‰€åœ¨åŒ…è£¹:e_bag_type
+         e_item_info_stack_count, //ç‰©å“å †å æ•°ç›®
+         e_item_info_locked, //æ˜¯å¦ç»‘å®š 1è§†ä¸ºç»‘å®š0è§†ä¸ºæœªç»‘å®š
+         e_item_info_activate, //æ˜¯å¦æ¿€æ´»
+         e_item_info_is_first, //5æ˜¯å¦ç¬¬ä¸€æ¬¡æ¿€æ´»
+         e_item_info_upgrade_count, //è£…å¤‡ç­‰çº§åéª‘å‡æ˜Ÿæ•°å‡é˜¶ç¿ç¾½å‡æ˜Ÿæ•°ç¿ç¾½å‡é˜¶æ³¨é­‚æ¬¡æ•°æ³¨çµæ¬¡æ•°ç²¾çµç­‰çº§å…ƒç´ ä¹‹å¿ƒç­‰çº§å…½é­‚ç­‰çº§
+         e_item_info_stargrade_count, //åéª‘ã€ç¾½ç¿¼ç¢ç‰‡å‡æ˜Ÿæ•°
+         e_item_info_starskill_flag, //åéª‘ã€ç¾½ç¿¼é­‚æ˜ŸæŠ€èƒ½å¼€å¯æ ‡è®°
+         e_item_info_add_on, //è£…å¤‡è¿½åŠ æ¬¡æ•°
+         e_item_info_wing_exp, //åéª‘å½“å‰å‡æ˜Ÿç»éªŒå…ƒç´ ä¹‹å¿ƒå½“å‰ç»éªŒ
+         e_item_info_wing_bless, //10åéª‘ç¥ç¦å€¼
+         e_item_info_random_had_flag, //æ‹¥æœ‰çš„éšæœºå±æ€§æ ‡è®°ä½
+         e_item_info_random_property1, //ç‰©å“éšæœºå±æ€§ç²¾çµå¤©èµ‹å±æ€§æˆ–å“è¶Šå±æ€§
+         e_item_info_random_property2,
+         e_item_info_random_property3,
+         e_item_info_random_property4,
+         e_item_info_random_property5,
+         e_item_info_random_property6,
+         e_item_info_succinct_property1, //è£…å¤‡æ´—ç»ƒå±æ€§åéª‘ç¿…è†€ç²¾çµæŠ€èƒ½æ¿€æ´»æ—¶é—´
+         e_item_info_succinct_property2,
+         e_item_info_succinct_property3,
+         e_item_info_succinct_property4,
+         e_item_info_succinct_property5, //å¤‡ç”¨
+         e_item_info_succinct_property6,
+         e_item_info_showing_illusion_idex, //æ˜¾ç¤ºçš„å¹»åŒ–IDé»˜è®¤ä¸º-1
+         e_item_info_put_in_bag_count, //æ”¾å…¥èƒŒåŒ…è®¡æ•°ä¸»è¦ç”¨äºç¡®è®¤æ˜¯å¦æ˜¯æ–°è·å¾—çš„ç‰©å“
+         e_item_info_illusion_had_byte, //å·²è·å–å¹»åŒ–ä½æ ‡è¯†ç¬¦
+         e_item_info_over_time, //ç‰©å“åˆ°æœŸæ—¶é—´
+         e_item_info_succinct_level, //æ´—ç»ƒç­‰çº§
+         e_item_info_jewel_slot_0, //å®çŸ³æ§½ä½0
+         e_item_info_jewel_slot_1, //å®çŸ³æ§½ä½1
+         e_item_info_jewel_slot_2, //å®çŸ³æ§½ä½2
+         e_item_info_jewel_slot_3, //å®çŸ³æ§½ä½3
+         e_item_info_jewel_slot_4, //å®çŸ³æ§½ä½4 
+         e_item_info_jewel_vip_slot_0, //VIPå®çŸ³æ§½ä½0
+         e_item_info_jewel_vip_slot_1, //VIPå®çŸ³æ§½ä½1
+         e_item_info_prototype_id, //ç‰©å“åŸå‹id é™æ—¶ç‰©å“æ”¹å˜å‰id
+         e_item_info_forge_property1, //ç‰©å“é‡é“¸å±æ€§ç²¾çµå¤©èµ‹å±æ€§æˆ–å“è¶Šå±æ€§ç¾½ç¿¼çµæ€§å€¼
+         e_item_info_forge_property2          , //ç¾½ç¿¼é“¸çµå†·å´æ—¶é—´ 
+         e_item_info_forge_property3          , //ç¾½ç¿¼é€šçµæŠ€èƒ½id 
+         e_item_info_forge_property4         , //ç¾½ç¿¼æ¸…çµéœ²ä½¿ç”¨æ¬¡æ•°
+         e_item_info_forge_property5, //ç¾½ç¿¼çµæ€§å€¼ç¬¬ä¸€æ¬¡å¤§äºç­‰äº80çš„å€¼
+         e_item_info_forge_property6, //ç¾½ç¿¼çµæ€§å€¼åˆ°è¾¾110æ ‡è®°ä½
+         e_item_info_jewel_carve_0           , //éšæœºçº¹åˆ»
+         e_item_info_jewel_carve_1            , //å®çŸ³çº¹åˆ»1
+         e_item_info_jewel_carve_2            , //å®çŸ³çº¹åˆ»2
+         e_item_info_jewel_lucky_carve, //æ˜¯å¦æ˜¯å¹¸è¿çº¹åˆ»
          e_item_info_max
      };
      enum e_item_base
      {
-         e_item_base_bag_type, //ËùÔÚ°ü¹ü:e_bag_type
-         e_item_base_count, //ÎïÆ·¶ÑµşÊıÄ¿
-         e_item_base_locked, //ÊÇ·ñ°ó¶¨ 1ÊÓÎª°ó¶¨0ÊÓÎªÎ´°ó¶¨
+         e_item_base_bag_type, //æ‰€åœ¨åŒ…è£¹:e_bag_type
+         e_item_base_count, //ç‰©å“å †å æ•°ç›®
+         e_item_base_locked, //æ˜¯å¦ç»‘å®š 1è§†ä¸ºç»‘å®š0è§†ä¸ºæœªç»‘å®š
          e_item_base_max
      };
      enum e_item_equip
      {
-         e_item_equip_level, //×°±¸µÈ¼¶
-         e_item_equip_color, //×°±¸Æ·ÖÊ
-         e_item_equip_attack, //¹¥»÷
-         e_item_equip_defense, //·ÀÓù
-         e_item_equip_hp, //ÑªÁ¿
-         e_item_equip_random_att_1, //Ëæ»ú¸ß¼¶ÊôĞÔÌõÄ¿1
-         e_item_equip_random_att_2, //Ëæ»ú¸ß¼¶ÊôĞÔÌõÄ¿2
-         e_item_equip_random_att_3, //Ëæ»ú¸ß¼¶ÊôĞÔÌõÄ¿3
-         e_item_equip_random_att_4, //Ëæ»ú¸ß¼¶ÊôĞÔÌõÄ¿4
-         e_item_equip_random_att_5, //Ëæ»ú¸ß¼¶ÊôĞÔÌõÄ¿5
+         e_item_equip_level, //è£…å¤‡ç­‰çº§
+         e_item_equip_color, //è£…å¤‡å“è´¨
+         e_item_equip_attack, //æ”»å‡»
+         e_item_equip_defense, //é˜²å¾¡
+         e_item_equip_hp, //è¡€é‡
+         e_item_equip_random_att_1, //éšæœºé«˜çº§å±æ€§æ¡ç›®1
+         e_item_equip_random_att_2, //éšæœºé«˜çº§å±æ€§æ¡ç›®2
+         e_item_equip_random_att_3, //éšæœºé«˜çº§å±æ€§æ¡ç›®3
+         e_item_equip_random_att_4, //éšæœºé«˜çº§å±æ€§æ¡ç›®4
+         e_item_equip_random_att_5, //éšæœºé«˜çº§å±æ€§æ¡ç›®5
          e_item_equip_max
      };
      enum e_item_sprite
      {
-         e_item_sprite_equip_slot, //×°±¸Î»ÖÃ
-         e_item_sprite_level, //Ç¿»¯µÈ¼¶
+         e_item_sprite_equip_slot, //è£…å¤‡ä½ç½®
+         e_item_sprite_level, //å¼ºåŒ–ç­‰çº§
          e_item_sprite_max
      };
      enum e_item_prop
      {
-         e_item_prop_param1, //ÔİÊ±ÎŞÓÃ£¬Õ¼Î»
+         e_item_prop_param1, //æš‚æ—¶æ— ç”¨ï¼Œå ä½
          e_item_prop_max
      };
      enum e_item_element
      {
-         e_item_element_equip_slot, //×°±¸Î»ÖÃ
-         e_item_element_level, //Ç¿»¯µÈ¼¶
+         e_item_element_equip_slot, //è£…å¤‡ä½ç½®
+         e_item_element_level, //å¼ºåŒ–ç­‰çº§
          e_item_element_max
      };
      enum e_item_lock
      {
-         e_item_lock_all, //È«²¿»ñÈ¡
-         e_item_lock_lock, //»ñÈ¡Ëø¶¨ÎïÆ·
-         e_item_lock_un_lock, //»ñÈ¡·ÇËø¶¨ÎïÆ·
+         e_item_lock_all, //å…¨éƒ¨è·å–
+         e_item_lock_lock, //è·å–é”å®šç‰©å“
+         e_item_lock_un_lock, //è·å–éé”å®šç‰©å“
          e_item_lock_max
      };
      enum e_item_operation
      {
-         e_item_operation_none, //
-         e_item_operation_equipon, //×°±¸ÉÏ
-         e_item_operation_equipoff, //ÍÑÏÂ
-         e_item_operation_weaponactivate, //¼¤»îÎäÆ÷
-         e_item_operation_weaponfirst, //µÚÒ»´Î¼¤»îÎäÆ÷
-         e_item_operation_levelup, //ÎïÆ·Ç¿»¯
-         e_item_operation_synthesis, //ÎïÆ·ºÏ³É
-         e_item_operation_sell, //ÎïÆ·³öÊÛ
-         e_item_operation_addon, //ÎïÆ·×·¼Ó
-         e_item_operation_recovery, //ÎïÆ·»ØÊÕ
-         e_item_operation_use, //Ê¹ÓÃ
-         e_item_operation_wing_upgrade, //ÓğÒíÉı¼¶£¨ÒÔÇ°µÄÓÃ·¨£©×øÆïÉı½×ÉıĞÇ
-         e_item_operation_wing_starupgrade, //ÓğÒíËéÆ¬ÉıĞÇ
-         e_item_operation_wing_illusionupgrade, //ÓğÒí»Ã»¯Éı¼¶
-         e_item_operation_wing_addsoul, //ÓğÒí×¢»ê
-         e_item_operation_wing_addspirit, //ÓğÒí×¢Áé
-         e_item_operation_featherupgrade, //ôáÓğÉı½×ÉıĞÇ
-         e_item_operation_tidy, //ÕûÀí×°±¸
-         e_item_operation_inherit, //×°±¸´«³Ğ
-         e_item_operation_advanced, //×°±¸½ø½×
-         e_item_operation_spirit_upgrade, //¾«ÁéÉı¼¶
-         e_item_operation_split, //ÎïÆ·²ğ·Ö
-         e_item_operation_spirit_send_out, //¾«ÁéËÍ³ö±³°ü
-         e_item_operation_spirit_recovery, //¾«Áé»ØÊÕ
-         e_item_operation_godassembly, //Éñ×°ÔÙÔì
-         e_item_operation_succinct_gold, //×°±¸½ğ±ÒÏ´Á·
-         e_item_operation_succinct_diamond, //×°±¸×êÊ¯Ï´Á·
-         e_item_operation_save_succinct_result, //±£´æÏ´Á·½á¹û
-         e_item_operation_show_this_wing, //ÏÔÊ¾¸Ã³á°ò3
-         e_item_operation_mount_unlock, //½âËø×øÆï
-         e_item_operation_mount_upgrade, //×øÆïÉı¼¶
-         e_item_operation_mount_starupgrade, //×øÆïÉıĞÇ
-         e_item_operation_mount_illusionupgrade, //×øÆï»Ã»¯Éı¼¶
-         e_item_operation_mount_show_this_mount, //ÏÔÊ¾´Ë×øÆï;
-         e_item_operation_mount_show_this_mount_illusion, //ÏÔÊ¾»Ã»¯
-         e_item_operation_mount_get_illusion, //½âËø»Ã»¯
-         e_item_operation_retrieve_psyche, //»ØÊÕ¾«ÆÇ
-         e_item_operation_put_into_bag, //·ÅÈë±³°ü
-         e_item_operation_tidy_hope_item, //ÕûÀíÆí¸£ÎïÆ·°ü
-         e_item_operation_featherupgrade_star, //ÓğÒíÉıĞÇ
-         e_item_operation_featherupgrade_grade, //ÓğÒíÉı½×
-         e_item_operation_spirit_had, //ÓµÓĞ¾«Áé
-         e_item_operation_wing_shape_upgrade, //ÓğÒíÍâĞÎÉı¼¶
-         e_item_operation_wing_shape_unlock, //ÓğÒíÍâĞÎ½âËø
-         e_item_operation_wing_shape_illusion_unlock, //ÓğÒíÍâĞÎ»Ã»¯½âËø
-         e_item_operation_one_key_use, //Ò»¼üÊ¹ÓÃ
-         e_item_operation_quickly_hp, //±£´æ¿ì½İÒ©¼Á
-         e_item_operation_against_buy, //ÎïÆ·Ğø·Ñ
-         e_item_operation_buy_and_use, //¹ºÂò²¢Ê¹ÓÃ
-         e_item_operation_use_beast_spirit, //Ê¹ÓÃÊŞ»ê
-         e_item_operation_set_jewel_on, //ÏâÇ¶±¦Ê¯
-         e_item_operation_set_jewel_off, //È¡ÏÂ±¦Ê¯
-         e_item_operation_jewel_upgrade, //±¦Ê¯Éı¼¶
-         e_item_operation_tidy_treasure_item, //ÕûÀí±¦²ØÎïÆ·°ü
-         e_item_operation_get_treasure_item, //È¡³ö±¦²ØÎïÆ·°ü
-         e_item_operation_godassembled, //Éñ×°ºÏ³É
-         e_item_operation_tidy_storage_item, //ÕûÀí²Ö¿âÎïÆ·°ü
-         e_item_operation_fashion_upgrade, //Ê±×°ÉıĞÇ
-         e_item_operation_forge, //×°±¸¶ÍÔì
-         e_item_operation_n_succinct_gold, //×°±¸n´Î½ğ±ÒÏ´Á·
-         e_item_operation_n_succinct_diamond, //×°±¸n´Î×êÊ¯Ï´Á·
-         e_item_operation_enchant, //×°±¸¸½Ä§
-         e_item_operation_unenchant, //×°±¸·´¸½Ä§
-         e_item_operation_wing_zhuling, //ÓğÒíÖıÁé
-         e_item_operation_wing_lengque, //ÓğÒíÀäÈ´
-         e_item_operation_wing_xiling, //ÓğÒíÏ´Áé
-         e_item_operation_spirit_upgrade_promote, //¾«ÁéÉı¸ñ
-         e_item_operation_break_will_activate, //ĞÄÄ§ÒâÖ¾
-         e_item_operation_awaken_fetter, //¾õĞÑ´óÊ¦¼¤»î
-         e_item_operation_awaken_fetter_skill, //¾õĞÑ´óÊ¦¼¼ÄÜÉı¼¶
+         e_item_operation_none,
+         e_item_operation_equipon, //è£…å¤‡ä¸Š
+         e_item_operation_equipoff, //è„±ä¸‹
+         e_item_operation_weaponactivate, //æ¿€æ´»æ­¦å™¨
+         e_item_operation_weaponfirst, //ç¬¬ä¸€æ¬¡æ¿€æ´»æ­¦å™¨
+         e_item_operation_levelup, //ç‰©å“å¼ºåŒ–
+         e_item_operation_synthesis, //ç‰©å“åˆæˆ
+         e_item_operation_sell, //ç‰©å“å‡ºå”®
+         e_item_operation_addon, //ç‰©å“è¿½åŠ 
+         e_item_operation_recovery, //ç‰©å“å›æ”¶
+         e_item_operation_use, //ä½¿ç”¨
+         e_item_operation_wing_upgrade, //ç¾½ç¿¼å‡çº§ï¼ˆä»¥å‰çš„ç”¨æ³•ï¼‰åéª‘å‡é˜¶å‡æ˜Ÿ
+         e_item_operation_wing_starupgrade, //ç¾½ç¿¼ç¢ç‰‡å‡æ˜Ÿ
+         e_item_operation_wing_illusionupgrade, //ç¾½ç¿¼å¹»åŒ–å‡çº§
+         e_item_operation_wing_addsoul, //ç¾½ç¿¼æ³¨é­‚
+         e_item_operation_wing_addspirit, //ç¾½ç¿¼æ³¨çµ
+         e_item_operation_featherupgrade, //ç¿ç¾½å‡é˜¶å‡æ˜Ÿ
+         e_item_operation_tidy, //æ•´ç†è£…å¤‡
+         e_item_operation_inherit, //è£…å¤‡ä¼ æ‰¿
+         e_item_operation_advanced, //è£…å¤‡è¿›é˜¶
+         e_item_operation_spirit_upgrade, //ç²¾çµå‡çº§
+         e_item_operation_split, //ç‰©å“æ‹†åˆ†
+         e_item_operation_spirit_send_out, //ç²¾çµé€å‡ºèƒŒåŒ…
+         e_item_operation_spirit_recovery, //ç²¾çµå›æ”¶
+         e_item_operation_godassembly, //ç¥è£…å†é€ 
+         e_item_operation_succinct_gold, //è£…å¤‡é‡‘å¸æ´—ç»ƒ
+         e_item_operation_succinct_diamond, //è£…å¤‡é’»çŸ³æ´—ç»ƒ
+         e_item_operation_save_succinct_result, //ä¿å­˜æ´—ç»ƒç»“æœ
+         e_item_operation_show_this_wing, //æ˜¾ç¤ºè¯¥ç¿…è†€3
+         e_item_operation_mount_unlock, //è§£é”åéª‘
+         e_item_operation_mount_upgrade, //åéª‘å‡çº§
+         e_item_operation_mount_starupgrade, //åéª‘å‡æ˜Ÿ
+         e_item_operation_mount_illusionupgrade, //åéª‘å¹»åŒ–å‡çº§
+         e_item_operation_mount_show_this_mount, //æ˜¾ç¤ºæ­¤åéª‘;
+         e_item_operation_mount_show_this_mount_illusion, //æ˜¾ç¤ºå¹»åŒ–
+         e_item_operation_mount_get_illusion, //è§£é”å¹»åŒ–
+         e_item_operation_retrieve_psyche, //å›æ”¶ç²¾é­„
+         e_item_operation_put_into_bag, //æ”¾å…¥èƒŒåŒ…
+         e_item_operation_tidy_hope_item, //æ•´ç†ç¥ˆç¦ç‰©å“åŒ…
+         e_item_operation_featherupgrade_star, //ç¾½ç¿¼å‡æ˜Ÿ
+         e_item_operation_featherupgrade_grade, //ç¾½ç¿¼å‡é˜¶
+         e_item_operation_spirit_had, //æ‹¥æœ‰ç²¾çµ
+         e_item_operation_wing_shape_upgrade, //ç¾½ç¿¼å¤–å½¢å‡çº§
+         e_item_operation_wing_shape_unlock, //ç¾½ç¿¼å¤–å½¢è§£é”
+         e_item_operation_wing_shape_illusion_unlock, //ç¾½ç¿¼å¤–å½¢å¹»åŒ–è§£é”
+         e_item_operation_one_key_use, //ä¸€é”®ä½¿ç”¨
+         e_item_operation_quickly_hp, //ä¿å­˜å¿«æ·è¯å‰‚
+         e_item_operation_against_buy, //ç‰©å“ç»­è´¹
+         e_item_operation_buy_and_use, //è´­ä¹°å¹¶ä½¿ç”¨
+         e_item_operation_use_beast_spirit, //ä½¿ç”¨å…½é­‚
+         e_item_operation_set_jewel_on, //é•¶åµŒå®çŸ³
+         e_item_operation_set_jewel_off, //å–ä¸‹å®çŸ³
+         e_item_operation_jewel_upgrade, //å®çŸ³å‡çº§
+         e_item_operation_tidy_treasure_item, //æ•´ç†å®è—ç‰©å“åŒ…
+         e_item_operation_get_treasure_item, //å–å‡ºå®è—ç‰©å“åŒ…
+         e_item_operation_godassembled, //ç¥è£…åˆæˆ
+         e_item_operation_tidy_storage_item, //æ•´ç†ä»“åº“ç‰©å“åŒ…
+         e_item_operation_fashion_upgrade, //æ—¶è£…å‡æ˜Ÿ
+         e_item_operation_forge, //è£…å¤‡é”»é€ 
+         e_item_operation_n_succinct_gold, //è£…å¤‡næ¬¡é‡‘å¸æ´—ç»ƒ
+         e_item_operation_n_succinct_diamond, //è£…å¤‡næ¬¡é’»çŸ³æ´—ç»ƒ
+         e_item_operation_enchant, //è£…å¤‡é™„é­”
+         e_item_operation_unenchant, //è£…å¤‡åé™„é­”
+         e_item_operation_wing_zhuling, //ç¾½ç¿¼é“¸çµ
+         e_item_operation_wing_lengque, //ç¾½ç¿¼å†·å´
+         e_item_operation_wing_xiling, //ç¾½ç¿¼æ´—çµ
+         e_item_operation_spirit_upgrade_promote, //ç²¾çµå‡æ ¼
+         e_item_operation_break_will_activate, //å¿ƒé­”æ„å¿—
+         e_item_operation_awaken_fetter, //è§‰é†’å¤§å¸ˆæ¿€æ´»
+         e_item_operation_awaken_fetter_skill, //è§‰é†’å¤§å¸ˆæŠ€èƒ½å‡çº§
          e_item_operation_max
      };
      enum e_item_composit_type
      {
-         e_item_composit_type_none, //
-         e_item_composit_type_element, //·ûÎÄ
-         e_item_composit_type_equip, //×°±¸
-         e_item_composit_type_sprite, //¾«Áé
+         e_item_composit_type_none,
+         e_item_composit_type_element, //ç¬¦æ–‡
+         e_item_composit_type_equip, //è£…å¤‡
+         e_item_composit_type_sprite, //ç²¾çµ
          e_item_composit_type_max
      };
      enum e_welfare_random_item
      {
-         e_welfare_random_item_daily_online_0, //Ã¿ÈÕÔÚÏß0
-         e_welfare_random_item_daily_online_1, //Ã¿ÈÕÔÚÏß1
-         e_welfare_random_item_daily_online_2, //Ã¿ÈÕÔÚÏß2
-         e_welfare_random_item_daily_online_3, //Ã¿ÈÕÔÚÏß3
-         e_welfare_random_item_daily_online_4, //Ã¿ÈÕÔÚÏß4
-         e_welfare_random_item_daily_online_5, //Ã¿ÈÕÔÚÏß5
-         e_welfare_random_item_daily_online_6, //Ã¿ÈÕÔÚÏß6
-         e_welfare_random_item_daily_online_7, //Ã¿ÈÕÔÚÏß7
-         e_welfare_random_item_continue_login_0, //Á¬ĞøµÇÂ½0
-         e_welfare_random_item_continue_login_1, //Á¬ĞøµÇÂ½1
-         e_welfare_random_item_continue_login_2, //Á¬ĞøµÇÂ½2
-         e_welfare_random_item_continue_login_3, //Á¬ĞøµÇÂ½3
-         e_welfare_random_item_continue_login_4, //Á¬ĞøµÇÂ½4
-         e_welfare_random_item_continue_login_5, //Á¬ĞøµÇÂ½5
-         e_welfare_random_item_continue_login_6, //Á¬ĞøµÇÂ½6
-         e_welfare_random_item_continue_login_7, //Á¬ĞøµÇÂ½7
-         e_welfare_random_item_continue_login_8, //Á¬ĞøµÇÂ½8
-         e_welfare_random_item_continue_login_9, //Á¬ĞøµÇÂ½9
+         e_welfare_random_item_daily_online_0, //æ¯æ—¥åœ¨çº¿0
+         e_welfare_random_item_daily_online_1, //æ¯æ—¥åœ¨çº¿1
+         e_welfare_random_item_daily_online_2, //æ¯æ—¥åœ¨çº¿2
+         e_welfare_random_item_daily_online_3, //æ¯æ—¥åœ¨çº¿3
+         e_welfare_random_item_daily_online_4, //æ¯æ—¥åœ¨çº¿4
+         e_welfare_random_item_daily_online_5, //æ¯æ—¥åœ¨çº¿5
+         e_welfare_random_item_daily_online_6, //æ¯æ—¥åœ¨çº¿6
+         e_welfare_random_item_daily_online_7, //æ¯æ—¥åœ¨çº¿7
+         e_welfare_random_item_continue_login_0, //è¿ç»­ç™»é™†0
+         e_welfare_random_item_continue_login_1, //è¿ç»­ç™»é™†1
+         e_welfare_random_item_continue_login_2, //è¿ç»­ç™»é™†2
+         e_welfare_random_item_continue_login_3, //è¿ç»­ç™»é™†3
+         e_welfare_random_item_continue_login_4, //è¿ç»­ç™»é™†4
+         e_welfare_random_item_continue_login_5, //è¿ç»­ç™»é™†5
+         e_welfare_random_item_continue_login_6, //è¿ç»­ç™»é™†6
+         e_welfare_random_item_continue_login_7, //è¿ç»­ç™»é™†7
+         e_welfare_random_item_continue_login_8, //è¿ç»­ç™»é™†8
+         e_welfare_random_item_continue_login_9, //è¿ç»­ç™»é™†9
          e_welfare_random_item_max
      };
      enum e_item_use_type
      {
-         e_item_use_type_can_not_use, //²»ÄÜÊ¹ÓÃ
-         e_item_use_type_can_use, //ÄÜÊ¹ÓÃ
-         e_item_use_type_can_batch_use, //ÄÜÅúÁ¿Ê¹ÓÃ
-         e_item_use_type_only_jump, //´¿Ìø×ª
+         e_item_use_type_can_not_use, //ä¸èƒ½ä½¿ç”¨
+         e_item_use_type_can_use, //èƒ½ä½¿ç”¨
+         e_item_use_type_can_batch_use, //èƒ½æ‰¹é‡ä½¿ç”¨
+         e_item_use_type_only_jump, //çº¯è·³è½¬
          e_item_use_type_max
      };
      enum e_item_color
      {
-         e_item_color_white, //°×É«
-         e_item_color_green, //ÂÌÉ«
-         e_item_color_blue, //À¶É«
-         e_item_color_purple, //×ÏÉ«
-         e_item_color_orange, //³ÈÉ«
-         e_item_color_red, //¼tÉ«
-         e_item_color_pink, //·ÛÉ«
+         e_item_color_white, //ç™½è‰²
+         e_item_color_green, //ç»¿è‰²
+         e_item_color_blue, //è“è‰²
+         e_item_color_purple, //ç´«è‰²
+         e_item_color_orange, //æ©™è‰²
+         e_item_color_red, //ç´…è‰²
+         e_item_color_pink, //ç²‰è‰²
          e_item_color_max
      };
      enum e_tem_melting_sort_type
      {
-         e_tem_melting_sort_type_gs, //×îÏÂ²ã°´Õ½¶·Á¦¶Ô±È
-         e_tem_melting_sort_type_upgrade, //×îÏÂ²ã°´Éı¼¶Êı¶Ô±È
-         e_tem_melting_sort_type_addon, //×îÏÂ²ã°´×·¼ÓÊı¶Ô±È
+         e_tem_melting_sort_type_gs, //æœ€ä¸‹å±‚æŒ‰æˆ˜æ–—åŠ›å¯¹æ¯”
+         e_tem_melting_sort_type_upgrade, //æœ€ä¸‹å±‚æŒ‰å‡çº§æ•°å¯¹æ¯”
+         e_tem_melting_sort_type_addon, //æœ€ä¸‹å±‚æŒ‰è¿½åŠ æ•°å¯¹æ¯”
          e_tem_melting_sort_type_max
      };
      enum e_unit_type
      {
-         e_unit_type_null, //
-         e_unit_type_player, //Íæ¼Ò
+         e_unit_type_null,
+         e_unit_type_player, //ç©å®¶
          e_unit_type_npc, //npc
-         e_unit_type_monster, //¹ÖÎï
-         e_unit_type_drop_bag, //µôÂä°ü
-         e_unit_type_trap, //ÏİÚå
-         e_unit_type_friend_npc, //ÓÑ·½npc
-         e_unit_type_summoned, //ÕÙ»½Îï
-         e_unit_type_hide, //ÒşÉí±©·çÑ©
-         e_unit_type_award_mark, //½±ÀøNPC
-         e_unit_type_award_play, //Íæ·¨NPC
+         e_unit_type_monster, //æ€ªç‰©
+         e_unit_type_drop_bag, //æ‰è½åŒ…
+         e_unit_type_trap, //é™·é˜±
+         e_unit_type_friend_npc, //å‹æ–¹npc
+         e_unit_type_summoned, //å¬å”¤ç‰©
+         e_unit_type_hide, //éšèº«æš´é£é›ª
+         e_unit_type_award_mark, //å¥–åŠ±NPC
+         e_unit_type_award_play, //ç©æ³•NPC
          e_unit_type_max
      };
      enum e_npc_type
      {
-         e_npc_type_mission, //ÈÎÎñnpc
-         e_npc_type_grade_up, //×ªÉúnpc
-         e_npc_type_strong_hold, //¾üÍÅÕ½¾İµãNPc
-         e_npc_type_gather_crystal, //¾üÍÅÕ½Ë®¾§
-         e_npc_type_lord_city, //³ÇÖ÷Ä¤°İ
-         e_npc_type_lord_pk, //PkÄ¤°İ
-         e_npc_type_lord_sanctuary, //Ê¥ÓòÄ¤°İ
-         e_npc_type_lord_god, //ÖÚÉñÄ¤°İ
-         e_npc_type_protect_npc, //ÒªÊØ»¤µÄNPC
-         e_npc_type_interact_gather, //¶ÁÌõ²É¼¯Npc
-         e_npc_type_touch_gather, //²»¶ÁÌõ²É¼¯Npc
-         e_npc_type_hit_and_get_npc, //Åö×²²É¼¯Npc
-         e_npc_type_marry_npc, //½á»énpc
-         e_npc_type_divorce_npc, //Àë»énpc
-         e_npc_type_world_boss_chests, //ÊÀ½çBOSSµôÂä±¦Ïä²É¼¯
-         e_npc_type_island_big_chests, //ÓÀºãµº´óÉñÏñ²É¼¯
-         e_npc_type_island_small_chests, //ÓÀºãµºĞ¡ÉñÏñ²É¼¯
-         e_npc_type_cross_pk_chests, //¿ç·ş¾º¼¼±¦Ïä²É¼¯
-         e_npc_type_server_harry_chests, //¿ç·şÂÓ¶á²É¼¯
-         e_npc_type_server_harry_submit, //¿ç·şÂÓ¶áÌá½»
-         e_npc_type_marry_task, //·òÆŞÈÎÎñ
-         e_npc_type_marry_exam, //·òÆŞ´ğÌâ
-         e_npc_type_attack_city_npc, //¹¥³ÇÕ½¸´»îNPC
-         e_npc_type_transfiguration_npc, //¹¥³ÇÕ½±äÉí
-         e_npc_type_transfer, //´«ËÍNPC
+         e_npc_type_mission, //ä»»åŠ¡npc
+         e_npc_type_grade_up, //è½¬ç”Ÿnpc
+         e_npc_type_strong_hold, //å†›å›¢æˆ˜æ®ç‚¹NPc
+         e_npc_type_gather_crystal, //å†›å›¢æˆ˜æ°´æ™¶
+         e_npc_type_lord_city, //åŸä¸»è†œæ‹œ
+         e_npc_type_lord_pk, //Pkè†œæ‹œ
+         e_npc_type_lord_sanctuary, //åœ£åŸŸè†œæ‹œ
+         e_npc_type_lord_god, //ä¼—ç¥è†œæ‹œ
+         e_npc_type_protect_npc, //è¦å®ˆæŠ¤çš„NPC
+         e_npc_type_interact_gather, //è¯»æ¡é‡‡é›†Npc
+         e_npc_type_touch_gather, //ä¸è¯»æ¡é‡‡é›†Npc
+         e_npc_type_hit_and_get_npc, //ç¢°æ’é‡‡é›†Npc
+         e_npc_type_marry_npc, //ç»“å©šnpc
+         e_npc_type_divorce_npc, //ç¦»å©šnpc
+         e_npc_type_world_boss_chests, //ä¸–ç•ŒBOSSæ‰è½å®ç®±é‡‡é›†
+         e_npc_type_island_big_chests, //æ°¸æ’å²›å¤§ç¥åƒé‡‡é›†
+         e_npc_type_island_small_chests, //æ°¸æ’å²›å°ç¥åƒé‡‡é›†
+         e_npc_type_cross_pk_chests, //è·¨æœç«æŠ€å®ç®±é‡‡é›†
+         e_npc_type_server_harry_chests, //è·¨æœæ å¤ºé‡‡é›†
+         e_npc_type_server_harry_submit, //è·¨æœæ å¤ºæäº¤
+         e_npc_type_marry_task, //å¤«å¦»ä»»åŠ¡
+         e_npc_type_marry_exam, //å¤«å¦»ç­”é¢˜
+         e_npc_type_attack_city_npc, //æ”»åŸæˆ˜å¤æ´»NPC
+         e_npc_type_transfiguration_npc, //æ”»åŸæˆ˜å˜èº«
+         e_npc_type_transfer, //ä¼ é€NPC
          e_npc_type_max
      };
      enum e_monster_type
      {
-         e_monster_type_nomal, //ÆÕÍ¨¹ÖÎï
-         e_monster_type_elite, //¾«Ó¢¹ÖÎï
+         e_monster_type_nomal, //æ™®é€šæ€ªç‰©
+         e_monster_type_elite, //ç²¾è‹±æ€ªç‰©
          e_monster_type_boss, //boss
-         e_monster_type_world_boss, //ÊÀ½çBoss
-         e_monster_type_gold_army, //»Æ½ğ²¿¶Ó
-         e_monster_type_player_data, //Ê¹ÓÃÍæ¼ÒÊı¾İµÄ¹Ö
-         e_monster_type_legion_bonfire, //¾üÍÅóô»ğ
-         e_monster_type_robot_player, //»úÆ÷ÈË
-         e_monster_type_award_boss, //±¦ÏäBoss
+         e_monster_type_world_boss, //ä¸–ç•ŒBoss
+         e_monster_type_gold_army, //é»„é‡‘éƒ¨é˜Ÿ
+         e_monster_type_player_data, //ä½¿ç”¨ç©å®¶æ•°æ®çš„æ€ª
+         e_monster_type_legion_bonfire, //å†›å›¢ç¯ç«
+         e_monster_type_robot_player, //æœºå™¨äºº
+         e_monster_type_award_boss, //å®ç®±Boss
          e_monster_type_max
      };
      enum e_hide_type
      {
-         e_hide_type_null, //Ä¬ÈÏ
-         e_hide_type_fire, //»ğÇò
-         e_hide_type_snowstorm, //±©·çÑ©
+         e_hide_type_null, //é»˜è®¤
+         e_hide_type_fire, //ç«çƒ
+         e_hide_type_snowstorm, //æš´é£é›ª
          e_hide_type_max
      };
      enum e_award_mark_level
      {
-         e_award_mark_level_small, //Ğ¡½±
-         e_award_mark_level_middle, //ÖĞ½±
-         e_award_mark_level_big, //´ó½±
-         e_award_mark_level_special, //ÌØÊâ½±Àø
+         e_award_mark_level_small, //å°å¥–
+         e_award_mark_level_middle, //ä¸­å¥–
+         e_award_mark_level_big, //å¤§å¥–
+         e_award_mark_level_special, //ç‰¹æ®Šå¥–åŠ±
          e_award_mark_level_max
      };
      enum e_award_mark_type
      {
-         e_award_mark_type_nomal, //Ğ¡½±
-         e_award_mark_type_treasure_pic, //²Ø±¦Í¼
-         e_award_mark_type_special, //ÌØÊâ½±Àø
-         e_award_mark_type_bank_robbery, //ÇÀÒøĞĞµÄ½»»¥NPC
-         e_award_mark_type_refrush_monster, //¿ªÆÕÍ¨Ïä×Ó³ö¹Ö½»»¥
-         e_award_mark_type_finger_guess, //²ÂÈ­ÓÎÏ·½»»¥NPC
-         e_award_mark_type_smashing_bottle, //ÔÒ¾ÆÆ¿½»»¥NPC
-         e_award_mark_type_transfer, //´«ËÍ½»»¥NPC
+         e_award_mark_type_nomal, //å°å¥–
+         e_award_mark_type_treasure_pic, //è—å®å›¾
+         e_award_mark_type_special, //ç‰¹æ®Šå¥–åŠ±
+         e_award_mark_type_bank_robbery, //æŠ¢é“¶è¡Œçš„äº¤äº’NPC
+         e_award_mark_type_refrush_monster, //å¼€æ™®é€šç®±å­å‡ºæ€ªäº¤äº’
+         e_award_mark_type_finger_guess, //çŒœæ‹³æ¸¸æˆäº¤äº’NPC
+         e_award_mark_type_smashing_bottle, //ç ¸é…’ç“¶äº¤äº’NPC
+         e_award_mark_type_transfer, //ä¼ é€äº¤äº’NPC
          e_award_mark_type_max
      };
      enum e_award_play_type
      {
-         e_award_play_type_null, //
-         e_award_play_type_bank_robbery_box, //ÇÀÒøĞĞÄÃ½±ÀøµÄ±¦Ïä
-         e_award_play_type_smashing_bottle, //¾ÆÆ¿NPC
-         e_award_play_type_smashing_bottle_guard, //ÔÒ¾ÆÆ¿¿´ÊØ
-         e_award_play_type_smashing_bottle_award, //ÔÒ¾ÆÆ¿±¦Ïä
+         e_award_play_type_null,
+         e_award_play_type_bank_robbery_box, //æŠ¢é“¶è¡Œæ‹¿å¥–åŠ±çš„å®ç®±
+         e_award_play_type_smashing_bottle, //é…’ç“¶NPC
+         e_award_play_type_smashing_bottle_guard, //ç ¸é…’ç“¶çœ‹å®ˆ
+         e_award_play_type_smashing_bottle_award, //ç ¸é…’ç“¶å®ç®±
          e_award_play_type_max
      };
      enum e_drop_bag_type
      {
-         e_drop_bag_type_nomal, //ÆÕÍ¨µôÂä°ü
-         e_drop_bag_type_award, //¿ª½±µôÂä°ü
-         e_drop_bag_type_bank_robbery_box, //ÇÀÒøĞĞ¿ª½±²úÉúµÄµôÂä°ü
-         e_drop_bag_type_smashing_bottle, //ÔÒ¾ÆÆ¿²úÉúµÄµôÂä°ü
+         e_drop_bag_type_nomal, //æ™®é€šæ‰è½åŒ…
+         e_drop_bag_type_award, //å¼€å¥–æ‰è½åŒ…
+         e_drop_bag_type_bank_robbery_box, //æŠ¢é“¶è¡Œå¼€å¥–äº§ç”Ÿçš„æ‰è½åŒ…
+         e_drop_bag_type_smashing_bottle, //ç ¸é…’ç“¶äº§ç”Ÿçš„æ‰è½åŒ…
          e_drop_bag_type_max
      };
      enum e_box_award_type
      {
-         e_box_award_type_null, //ÎŞ
-         e_box_award_type_player_search_level, //¸ù¾İÍæ¼ÒÌ½Ë÷µÈ¼¶µôÂä
-         e_box_award_type_self_drop, //¸ù¾İ×ÔÉíµôÂä°üµôÂä
+         e_box_award_type_null, //æ— 
+         e_box_award_type_player_search_level, //æ ¹æ®ç©å®¶æ¢ç´¢ç­‰çº§æ‰è½
+         e_box_award_type_self_drop, //æ ¹æ®è‡ªèº«æ‰è½åŒ…æ‰è½
          e_box_award_type_max
      };
      enum e_activity_type
      {
-         e_activity_type_temple, //×çÖäÉñÃí
-         e_activity_type_empire_treasure, //µÛ¹úÒÅ²Ø
-         e_activity_type_pk_king, //PKÖ®Íõ
-         e_activity_type_legion_bonfire, //¾üÍÅóô»ğ
-         e_activity_type_broken_sky, //ÆÆËéĞé¿Õ
-         e_activity_type_sky_treasure_box, //Ìì¿Õ±¦Ïä
-         e_activity_type_legion_boss, //¾üÍÅBOSS
-         e_activity_type_city_war, //ÁìÍÁÕù¶á
-         e_activity_type_crystal_fairyland, //Ë®¾§»Ã¾³
-         e_activity_type_overlord_city_war, //ÊÀ½ç°ÔÖ÷
-         e_activity_type_world_elite, //ÊÀ½ç¾«Ó¢
-         e_activity_type_world_boss, //ÊÀ½çboss
-         e_activity_type_ancient_field, //¹ÅÕ½³¡
-         e_activity_type_boss_field, //´ò±¦Ò°Íâ
-         e_activity_type_boss_home, //´ò±¦bossÖ®¼Ò
-         e_activity_type_boss_single, //´ò±¦¸öÈË
-         e_activity_type_cloud_shop, //ÔÆ¹º
-         e_activity_type_belief_cloister, //ĞÅÑö»ØÀÈ
-         e_activity_type_cross_server_pk, //¿ç·şPK
-         e_activity_type_cross_server_harry, //¿ç·şÂÓ¶á
-         e_activity_type_cross_ladder, //¿ç·şÌìÌİ
-         e_activity_type_cross_server_world_boss, //¿ç·şÊÀ½çboss
-         e_activity_type_city_war_cross_server, //¿ç·ş¾üÍÅÕ½
-         e_activity_type_legion_answer, //¾üÍÅ´ğÌâ
-         e_activity_type_legion_dance, //¾üÍÅ¹²Îè
-         e_activity_type_element_war, //ÔªËØÕù°Ô
-         e_activity_type_attack_city, //¹¥³ÇÕ½
+         e_activity_type_temple, //è¯…å’’ç¥åº™
+         e_activity_type_empire_treasure, //å¸å›½é—è—
+         e_activity_type_pk_king, //PKä¹‹ç‹
+         e_activity_type_legion_bonfire, //å†›å›¢ç¯ç«
+         e_activity_type_broken_sky, //ç ´ç¢è™šç©º
+         e_activity_type_sky_treasure_box, //å¤©ç©ºå®ç®±
+         e_activity_type_legion_boss, //å†›å›¢BOSS
+         e_activity_type_city_war, //é¢†åœŸäº‰å¤º
+         e_activity_type_crystal_fairyland, //æ°´æ™¶å¹»å¢ƒ
+         e_activity_type_overlord_city_war, //ä¸–ç•Œéœ¸ä¸»
+         e_activity_type_world_elite, //ä¸–ç•Œç²¾è‹±
+         e_activity_type_world_boss, //ä¸–ç•Œboss
+         e_activity_type_ancient_field, //å¤æˆ˜åœº
+         e_activity_type_boss_field, //æ‰“å®é‡å¤–
+         e_activity_type_boss_home, //æ‰“å®bossä¹‹å®¶
+         e_activity_type_boss_single, //æ‰“å®ä¸ªäºº
+         e_activity_type_cloud_shop, //äº‘è´­
+         e_activity_type_belief_cloister, //ä¿¡ä»°å›å»Š
+         e_activity_type_cross_server_pk, //è·¨æœPK
+         e_activity_type_cross_server_harry, //è·¨æœæ å¤º
+         e_activity_type_cross_ladder, //è·¨æœå¤©æ¢¯
+         e_activity_type_cross_server_world_boss, //è·¨æœä¸–ç•Œboss
+         e_activity_type_city_war_cross_server, //è·¨æœå†›å›¢æˆ˜
+         e_activity_type_legion_answer, //å†›å›¢ç­”é¢˜
+         e_activity_type_legion_dance, //å†›å›¢å…±èˆ
+         e_activity_type_element_war, //å…ƒç´ äº‰éœ¸
+         e_activity_type_attack_city, //æ”»åŸæˆ˜
          e_activity_type_max
      };
      enum e_widget_jump
      {
-         e_widget_jump_img_id, //Í¼Æ¬
-         e_widget_jump_describe_id, //ÎÄ×ÖÃèÊö
-         e_widget_jump_widget_id, //Ö÷½çÃæÃû
-         e_widget_jump_second_index, //¶ş¼¶½çÃæindex
-         e_widget_jump_third_index, //Èı¼¶½çÃæindex
+         e_widget_jump_img_id, //å›¾ç‰‡
+         e_widget_jump_describe_id, //æ–‡å­—æè¿°
+         e_widget_jump_widget_id, //ä¸»ç•Œé¢å
+         e_widget_jump_second_index, //äºŒçº§ç•Œé¢index
+         e_widget_jump_third_index, //ä¸‰çº§ç•Œé¢index
          e_widget_jump_max
      };
      enum e_logout_result
      {
-         e_logout_result_self, //×Ô¼ºÖ÷¶¯ÏÂÏß
-         e_logout_result_load_data_fail, //Êı¾İ¼ÓÔØ´íÎó
-         e_logout_result_save_data_fail, //Êı¾İ´æµµ´íÎó
-         e_logout_result_link_fail, //ÍøÂçÁ¬½ÓÊ§°Ü
-         e_logout_result_time_out, //ÍøÂçÁ¬½Ó³¬Ê±
-         e_logout_result_net_lost, //ÍøÂçÍ¨ĞÅ¶ªÊ§
-         e_logout_result_ban_account, //ÕËºÅ±»½ûÓÃ
-         e_logout_result_new_login, //Ìß³öĞÂÉÏÏßÕË»§
-         e_logout_result_replaced_by_new_login, //±»ĞÂµÇÂ¼ÕËºÅÌæ»»
-         e_logout_result_enter_scene_failed, //½øÈë³¡¾°Ê§°Ü
-         e_logout_result_leave_scene_failed, //Àë¿ª³¡¾°Ê§°Ü
-         e_logout_result_cs_crash, //CSµ±»ú
-         e_logout_result_ls_crash, //LSµ±»ú
-         e_logout_result_kick_by_rpc, //ÍøÒ³ÉÏÌßµÄ
-         e_logout_result_no_find_player, //Î´ÕÒµ½Õâ¸öÍæ¼Ò
-         e_logout_result_fep_id_error, //·¢´ífepÁË
-         e_logout_result_connect_dis, //ÍøÂçÁ¬½Ó¶Ï¿ª
-         e_logout_result_begin_time, //Ê±¼äÎ´µ½²»ÄÜ½øÈë
-         e_logout_result_password_error, //ÃÜÂë´íÎó
-         e_logout_result_version_wrong, //Í¨Ñ¶°æ±¾ºÅ´íÎó
-         e_logout_result_account_error, //ÕËºÅ¸ñÊ½´íÎó
-         e_logout_result_queue_full, //¶ÓÁĞÒÑÂú
-         e_logout_result_login_full, //µÇÂ½ÈËÊıÒÑÂú
-         e_logout_result_bi, //BIÑéÖ¤Ê§°Ü
-         e_logout_result_fake_server_full, //¼Ù·şÎñÆ÷±¬Âú
-         e_logout_result_reconnect_account, //ÖØĞÂÁ¬½ÓÕËºÅ´íÎó
-         e_logout_result_login_game_need_update, //µÇÂ½ÓÎÏ·¼ì²âĞèÒª¸üĞÂ
-         e_logout_result_enter_game_server_maintenance, //µÇÂ½ÓÎÏ··şÎñÆ÷Î¬»¤ÖĞ
-         e_logout_result_enter_game_no_net, //µÇÂ½½øÈëÓÎÏ·Ã»Íø
-         e_logout_result_online_time_limit, //·À³ÁÃÔÔÚÏßÊ±¼äÏŞÖÆ
-         e_logout_result_online_duration_over, //·À³ÁÃÔÔÚÏßÊ±³¤³¬Ê±
-         e_logout_result_only_create_role, //·şÎñÆ÷Î´Æô¶¯
+         e_logout_result_self, //è‡ªå·±ä¸»åŠ¨ä¸‹çº¿
+         e_logout_result_load_data_fail, //æ•°æ®åŠ è½½é”™è¯¯
+         e_logout_result_save_data_fail, //æ•°æ®å­˜æ¡£é”™è¯¯
+         e_logout_result_link_fail, //ç½‘ç»œè¿æ¥å¤±è´¥
+         e_logout_result_time_out, //ç½‘ç»œè¿æ¥è¶…æ—¶
+         e_logout_result_net_lost, //ç½‘ç»œé€šä¿¡ä¸¢å¤±
+         e_logout_result_ban_account, //è´¦å·è¢«ç¦ç”¨
+         e_logout_result_new_login, //è¸¢å‡ºæ–°ä¸Šçº¿è´¦æˆ·
+         e_logout_result_replaced_by_new_login, //è¢«æ–°ç™»å½•è´¦å·æ›¿æ¢
+         e_logout_result_enter_scene_failed, //è¿›å…¥åœºæ™¯å¤±è´¥
+         e_logout_result_leave_scene_failed, //ç¦»å¼€åœºæ™¯å¤±è´¥
+         e_logout_result_cs_crash, //CSå½“æœº
+         e_logout_result_ls_crash, //LSå½“æœº
+         e_logout_result_kick_by_rpc, //ç½‘é¡µä¸Šè¸¢çš„
+         e_logout_result_no_find_player, //æœªæ‰¾åˆ°è¿™ä¸ªç©å®¶
+         e_logout_result_fep_id_error, //å‘é”™fepäº†
+         e_logout_result_connect_dis, //ç½‘ç»œè¿æ¥æ–­å¼€
+         e_logout_result_begin_time, //æ—¶é—´æœªåˆ°ä¸èƒ½è¿›å…¥
+         e_logout_result_password_error, //å¯†ç é”™è¯¯
+         e_logout_result_version_wrong, //é€šè®¯ç‰ˆæœ¬å·é”™è¯¯
+         e_logout_result_account_error, //è´¦å·æ ¼å¼é”™è¯¯
+         e_logout_result_queue_full, //é˜Ÿåˆ—å·²æ»¡
+         e_logout_result_login_full, //ç™»é™†äººæ•°å·²æ»¡
+         e_logout_result_bi, //BIéªŒè¯å¤±è´¥
+         e_logout_result_fake_server_full, //å‡æœåŠ¡å™¨çˆ†æ»¡
+         e_logout_result_reconnect_account, //é‡æ–°è¿æ¥è´¦å·é”™è¯¯
+         e_logout_result_login_game_need_update, //ç™»é™†æ¸¸æˆæ£€æµ‹éœ€è¦æ›´æ–°
+         e_logout_result_enter_game_server_maintenance, //ç™»é™†æ¸¸æˆæœåŠ¡å™¨ç»´æŠ¤ä¸­
+         e_logout_result_enter_game_no_net, //ç™»é™†è¿›å…¥æ¸¸æˆæ²¡ç½‘
+         e_logout_result_online_time_limit, //é˜²æ²‰è¿·åœ¨çº¿æ—¶é—´é™åˆ¶
+         e_logout_result_online_duration_over, //é˜²æ²‰è¿·åœ¨çº¿æ—¶é•¿è¶…æ—¶
+         e_logout_result_only_create_role, //æœåŠ¡å™¨æœªå¯åŠ¨
          e_logout_result_max
      };
      enum e_reconnect_result
      {
-         e_reconnect_result_win, //³É¹¦
-         e_reconnect_result_fep_no_find, //fepÎ´ÕÒµ½Êı¾İ
-         e_reconnect_result_ws_no_find, //wsÎ´ÕÒµ½Êı¾İ
-         e_reconnect_result_cs_no_find, //csÎ´ÕÒµ½Êı¾İ
+         e_reconnect_result_win, //æˆåŠŸ
+         e_reconnect_result_fep_no_find, //fepæœªæ‰¾åˆ°æ•°æ®
+         e_reconnect_result_ws_no_find, //wsæœªæ‰¾åˆ°æ•°æ®
+         e_reconnect_result_cs_no_find, //csæœªæ‰¾åˆ°æ•°æ®
          e_reconnect_result_max
      };
      enum e_demons_tower_info
      {
-         e_demons_tower_info_cur_challenge_tier, //µ±Ç°ÌôÕ½²ãÊı
-         e_demons_tower_info_left_mopping_up_count, //Ê£ÓàÉ¨µ´´ÎÊı
-         e_demons_tower_info_cur_mopping_up_tier, //µ±Ç°ÕıÔÚÉ¨µ´µÄ²ãÊı
-         e_demons_tower_info_can_get_award, //ÊÇ·ñ¿ÉÒÔÁìÈ¡½±Àø
+         e_demons_tower_info_cur_challenge_tier, //å½“å‰æŒ‘æˆ˜å±‚æ•°
+         e_demons_tower_info_left_mopping_up_count, //å‰©ä½™æ‰«è¡æ¬¡æ•°
+         e_demons_tower_info_cur_mopping_up_tier, //å½“å‰æ­£åœ¨æ‰«è¡çš„å±‚æ•°
+         e_demons_tower_info_can_get_award, //æ˜¯å¦å¯ä»¥é¢†å–å¥–åŠ±
          e_demons_tower_info_max
      };
      enum e_map_category
      {
-         e_map_category_common, //Í¨ÓÃ
-         e_map_category_raid, //¸±±¾
-         e_map_category_activity, //»î¶¯
+         e_map_category_common, //é€šç”¨
+         e_map_category_raid, //å‰¯æœ¬
+         e_map_category_activity, //æ´»åŠ¨
          e_map_category_max
      };
      enum e_money_type
      {
-         e_money_type_exp, //¾­ÑéÖµ
-         e_money_type_treasure_pic, //±¦²ØÍ¼
-         e_money_type_silver_bind, //°ó¶¨ÓÎÏ·±Ò
-         e_money_type_jewel, //±¦Ê¯
-         e_money_type_jewel_bind, //°ó¶¨±¦Ê¯
-         e_money_type_boss_progress, //boss½ø¶È
-         e_money_type_magic_crystal, //Ä§¾§
-         e_money_type_battle_key, //¸±±¾½øÈë»õ±Ò
-         e_money_type_skill_active, //¼¼ÄÜ¼¤»î
-         e_money_type_skill_upgrade, //¼¼ÄÜÉı¼¶
-         e_money_type_pound, //ÔªËØ·ÛÄ©
-         e_money_type_guard_point, //ÊØ»¤µãÊı
-         e_money_type_achievement_point, //³É¾ÍµãÊı
-         e_money_type_reputation, //ÉùÍû
-         e_money_type_hope_point, //Æí¸£µãÊı
-         e_money_type_battle_achievement, //Õ½¹¦
-         e_money_type_cross_honor, //ÈÙÒ«µãÊı
-         e_money_type_talent, //Ìì¸³µãÊı
-         e_money_type_assist_fighting, //ÖúÕ½Öµ
-         e_money_type_treasure_score, //±¦²ØÑ°±¦»ı·Ö
-         e_money_type_belief_rune_piece, //ĞÅÑö·ûÎÄ·Ö½âËéÆ¬
-         e_money_type_legion_warehouse_score, //¾üÍÅ²Ö¿â»ı·Ö
-         e_money_type_attribute_talent, //ÊôĞÔÌì¸³µãÊı
-         e_money_type_world_essence, //ÊÀ½ç¾«´â
-         e_money_type_cross_server_money, //¿ç·ş±Ò
-         e_money_type_red_diamond, //ºì×ê
-         e_money_type_feather_piece, //ÉñôáÖ®³¾
-         e_money_type_cross_ladder_honor, //¾º¼¼±Ò
-         e_money_type_season_point, //Èü¼¾»ı·Ö
-         e_money_type_element_score, //ÓÂÊ¿±Ò
-         e_money_type_element_point, //ÔªËØ»ı·Ö
-         e_money_type_energy, //ÌåÁ¦Öµ
+         e_money_type_exp, //ç»éªŒå€¼
+         e_money_type_treasure_pic, //å®è—å›¾
+         e_money_type_silver_bind, //ç»‘å®šæ¸¸æˆå¸
+         e_money_type_jewel, //å®çŸ³
+         e_money_type_jewel_bind, //ç»‘å®šå®çŸ³
+         e_money_type_boss_progress, //bossè¿›åº¦
+         e_money_type_magic_crystal, //é­”æ™¶
+         e_money_type_battle_key, //å‰¯æœ¬è¿›å…¥è´§å¸
+         e_money_type_skill_active, //æŠ€èƒ½æ¿€æ´»
+         e_money_type_skill_upgrade, //æŠ€èƒ½å‡çº§
+         e_money_type_pound, //å…ƒç´ ç²‰æœ«
+         e_money_type_guard_point, //å®ˆæŠ¤ç‚¹æ•°
+         e_money_type_achievement_point, //æˆå°±ç‚¹æ•°
+         e_money_type_reputation, //å£°æœ›
+         e_money_type_hope_point, //ç¥ˆç¦ç‚¹æ•°
+         e_money_type_battle_achievement, //æˆ˜åŠŸ
+         e_money_type_cross_honor, //è£è€€ç‚¹æ•°
+         e_money_type_talent, //å¤©èµ‹ç‚¹æ•°
+         e_money_type_assist_fighting, //åŠ©æˆ˜å€¼
+         e_money_type_treasure_score, //å®è—å¯»å®ç§¯åˆ†
+         e_money_type_belief_rune_piece, //ä¿¡ä»°ç¬¦æ–‡åˆ†è§£ç¢ç‰‡
+         e_money_type_legion_warehouse_score, //å†›å›¢ä»“åº“ç§¯åˆ†
+         e_money_type_attribute_talent, //å±æ€§å¤©èµ‹ç‚¹æ•°
+         e_money_type_world_essence, //ä¸–ç•Œç²¾ç²¹
+         e_money_type_cross_server_money, //è·¨æœå¸
+         e_money_type_red_diamond, //çº¢é’»
+         e_money_type_feather_piece, //ç¥ç¿ä¹‹å°˜
+         e_money_type_cross_ladder_honor, //ç«æŠ€å¸
+         e_money_type_season_point, //èµ›å­£ç§¯åˆ†
+         e_money_type_element_score, //å‹‡å£«å¸
+         e_money_type_element_point, //å…ƒç´ ç§¯åˆ†
+         e_money_type_energy, //ä½“åŠ›å€¼
          e_money_type_max
      };
      enum e_team_type
      {
-         e_team_type_none, //ÎŞ
-         e_team_type_one_dragon, //Ò»ÌõÁú
-         e_team_type_mission_daily, //ÈÕ³£ÈÎÎñ
-         e_team_type_mission_against, //ÌÖ·¥ÈÎÎñ
-         e_team_type_act_world_boss, //ÊÀ½çBOSS
-         e_team_type_element_war, //ÔªËØÕù°Ô
-         e_team_type_raid_daily_exp, //¾­Ñé¸±±¾
-         e_team_type_raid_daily_gold, //½ğ±Ò¸±±¾
-         e_team_type_raid_multi_0, //ÈÛÑÒµØÓü
-         e_team_type_raid_sky, //³ğºŞÖ®º£
-         e_team_type_raid_temple, //¿Ö¾åÃÎ÷Ê
-         e_team_type_raid_multi_1, //¹«Ö÷ÊØÎÀÕ½
-         e_team_type_raid_treasure, //¶éÂä»ÃÏó
-         e_team_type_raid_multi_2, //¿Ö¾åÉîÔ¨
-         e_team_type_hang_up, //¹Ò»ú
-         e_team_type_ancient_hang_up, //¹ÅÕ½³¡¹Ò»ú
-         e_team_type_act_world_elite, //ÊÀ½ç¾«Ó¢
+         e_team_type_none, //æ— 
+         e_team_type_one_dragon, //ä¸€æ¡é¾™
+         e_team_type_mission_daily, //æ—¥å¸¸ä»»åŠ¡
+         e_team_type_mission_against, //è®¨ä¼ä»»åŠ¡
+         e_team_type_act_world_boss, //ä¸–ç•ŒBOSS
+         e_team_type_element_war, //å…ƒç´ äº‰éœ¸
+         e_team_type_raid_daily_exp, //ç»éªŒå‰¯æœ¬
+         e_team_type_raid_daily_gold, //é‡‘å¸å‰¯æœ¬
+         e_team_type_raid_multi_0, //ç†”å²©åœ°ç‹±
+         e_team_type_raid_sky, //ä»‡æ¨ä¹‹æµ·
+         e_team_type_raid_temple, //ææƒ§æ¢¦é­‡
+         e_team_type_raid_multi_1, //å…¬ä¸»å®ˆå«æˆ˜
+         e_team_type_raid_treasure, //å •è½å¹»è±¡
+         e_team_type_raid_multi_2, //ææƒ§æ·±æ¸Š
+         e_team_type_hang_up, //æŒ‚æœº
+         e_team_type_ancient_hang_up, //å¤æˆ˜åœºæŒ‚æœº
+         e_team_type_act_world_elite, //ä¸–ç•Œç²¾è‹±
          e_team_type_max
      };
      enum e_skill_info
      {
-         e_skill_info_template_id, //¼¼ÄÜÄ£°åid
-         e_skill_info_cd_cur_time, //ÀäÈ´Ê£ÓàÊ±¼ä
-         e_skill_info_cd_max_time, //ÀäÈ´Ê±¼ä×î´óÖµ
-         e_skill_info_activated, //ÊÇ·ñ¼¤»îÁË
-         e_skill_info_skill_type, //¼¼ÄÜÀàĞÍ
-         e_skill_info_maturity, //¼¼ÄÜÊìÁ·¶È
-         e_skill_info_use_pos, //Ê¹ÓÃÎ»ÖÃ
-         e_skill_info_level, //¼¼ÄÜµÈ¼¶
+         e_skill_info_template_id, //æŠ€èƒ½æ¨¡æ¿id
+         e_skill_info_cd_cur_time, //å†·å´å‰©ä½™æ—¶é—´
+         e_skill_info_cd_max_time, //å†·å´æ—¶é—´æœ€å¤§å€¼
+         e_skill_info_activated, //æ˜¯å¦æ¿€æ´»äº†
+         e_skill_info_skill_type, //æŠ€èƒ½ç±»å‹
+         e_skill_info_maturity, //æŠ€èƒ½ç†Ÿç»ƒåº¦
+         e_skill_info_use_pos, //ä½¿ç”¨ä½ç½®
+         e_skill_info_level, //æŠ€èƒ½ç­‰çº§
          e_skill_info_max
      };
      enum e_mission_end_type
      {
-         e_mission_end_type_npc_kill, //É±¹Ö
-         e_mission_end_type_dialog, //µØµã»ò¶Ô»°
-         e_mission_end_type_mission, //Íê³ÉÈÎÎñµÄÈÎÎñÕÂ½ÚÈÎÎñ
-         e_mission_end_type_map, //Íê³ÉÄ³¸öµØÍ¼
-         e_mission_end_type_transfer, //Ë²ÒÆ´«ËÍ
-         e_mission_end_type_beat_npc, //»÷°ÜNPC
-         e_mission_end_type_kill_monster_get_item, //É±¹ÖÄÃÎïÆ·
-         e_mission_end_type_get_item, //²É¼¯ÎïÆ·
-         e_mission_end_type_equip_upgrade, //×°±¸Ç¿»¯
-         e_mission_end_type_equip_addon, //×°±¸×·¼Ó
-         e_mission_end_type_rune_equip, //×°±¸·ûÎÄ
-         e_mission_end_type_map_clear_current, //Í¨¹Ø¸±±¾£¨µ±Ç°£©
-         e_mission_end_type_activity_clear_current, //Í¨¹Ø»î¶¯£¨µ±Ç°£©
-         e_mission_end_type_mount_unlock, //½âËø×øÆï
-         e_mission_end_type_wing_upgrade, //³á°òÉı½×
-         e_mission_end_type_pokedex_activation, //¼¤»îÍ¼¼ø
-         e_mission_end_type_sprite_activation, //¾«Áé¼¤»î
-         e_mission_end_type_character_level, //½ÇÉ«µÈ¼¶
-         e_mission_end_type_map_clear_history, //Í¨¹Ø¸±±¾£¨ÀúÊ·£©
-         e_mission_end_type_clear_daily_mission, //Íê³ÉÈÕ³£ÈÎÎñ£¨ÊıÁ¿£©
-         e_mission_end_type_clear_against_mission, //Íê³ÉÌÖ·¥ÈÎÎñ£¨ÊıÁ¿£©
-         e_mission_end_type_clear_demon_tower, //ÍòÄ§ËşÍ¨¹Ø£¨²ã£©
-         e_mission_end_type_clear_arena, //ÌôÕ½¾º¼¼³¡£¨´ÎÊı£©
-         e_mission_end_type_cheer_worship, //ÖúÁ¦³ç°İ
-         e_mission_end_type_transform, //×ª»»
-         e_mission_end_type_equip_levelup, //×°±¸½ø½×
-         e_mission_end_type_add_friend, //Ìí¼ÓºÃÓÑ
-         e_mission_end_type_purchase_goods, //Âò¶«Î÷
-         e_mission_end_type_npc_attacked_num, //¹ÖÎïÊÜ»÷´ÎÊı
-         e_mission_end_type_join_legion, //¼ÓÈë¾üÍÅ
-         e_mission_end_type_rune_total_level, //·ûÎÄ×ÜµÈ¼¶
-         e_mission_end_type_upgrade_total_level, //Ç¿»¯×ÜµÈ¼¶
-         e_mission_end_type_add_on_total_level, //×·¼Ó×ÜµÈ¼¶
-         e_mission_end_type_mount_total_grade, //×øÆï×Ü½×Êı
-         e_mission_end_type_join_legion_boss_map, //²Î¼Ó¾üÍÅBOSS¸±±¾
-         e_mission_end_type_tinder_total_level, //»ğÖÖ×ÜµÈ¼¶
-         e_mission_end_type_equip_target_color, //´©´÷Ö¸¶¨ÑÕÉ«×°±¸
-         e_mission_end_type_legion_donate, //¾üÍÅ¾èÔù
-         e_mission_end_type_boss_field, //´ò±¦
-         e_mission_end_type_grade_levelup, //×ªÖ°
-         e_mission_end_type_upgrade_level_num, //Ç¿»¯µÈ¼¶ÊıÁ¿
-         e_mission_end_type_addon_level_num, //×·¼ÓµÈ¼¶ÊıÁ¿
-         e_mission_end_type_awaken_level_num, //¾õĞÑµÈ¼¶ÊıÁ¿
-         e_mission_end_type_succinct_level_num, //Ï´Á·µÈ¼¶ÊıÁ¿
-         e_mission_end_type_marry_dance, //½á»é¶¯×÷
-         e_mission_end_type_reach_level, //´ïµ½µÈ¼¶
-         e_mission_end_type_learning_skill, //Ñ§Ï°Ö¸¶¨¼¼ÄÜ
-         e_mission_end_type_arena_military_rank, //¾º¼¼³¡µ½´ïÖ¸¶¨¾üÏÎ
-         e_mission_end_type_use_item, //Ê¹ÓÃÖ¸¶¨µÀ¾ß
-         e_mission_end_type_compound_item, //ºÏ³ÉÖ¸¶¨µÀ¾ß
-         e_mission_end_type_spirit_baptism, //¾«ÁéÏ´Àñ´ÎÊı
-         e_mission_end_type_spirit_baptism_color, //¾«Áé×ÜÏ´ÀñÑÕÉ«Êı
-         e_mission_end_type_inset_genstone, //ÏâÇ¶±¦Ê¯
-         e_mission_end_type_belief_all_num, //ĞÅÑöµ½´ïÖ¸¶¨µÈ¼¶
-         e_mission_end_type_kill_home_boss, //»÷É±µØ¹¬boss
-         e_mission_end_type_new_map_finish, //Íê³ÉµØÍ¼(Ìø×ª·½Ê½²»Í¬)
-         e_mission_end_type_mount_upgrade_num, //×øÆïÉı¼¶´ÎÊı
-         e_mission_end_type_spirit_upgrade_num, //¾«ÁéÉı¼¶´ÎÊı
-         e_mission_end_type_wing_all_star, //ÓğÒí×ÜĞÇÊı
-         e_mission_end_type_install_equip, //×°±¸Ö¸¶¨µÀ¾ß
-         e_mission_end_type_unlock_skill_by_mission, //Íê³ÉÈÎÎñ½âËø¼¼ÄÜ
-         e_mission_end_type_auction_goods, //½»Ò×ĞĞÉÏ¼ÜÎïÆ·
-         e_mission_end_type_equip_spirit, //×°±¸¾«ÁéÊıÁ¿
-         e_mission_end_type_assis_fight_num, //½øĞĞÖúÕ½´ÎÊı
-         e_mission_end_type_auction_shopping, //½»Ò×ĞĞ¹ºÂòÎïÆ·
-         e_mission_end_type_kill_any_home_boss, //»÷É±ÈÎÒâÒ»Ö»µØ¹¬boss
-         e_mission_end_type_kill_any_single_boss, //»÷É±ÈÎÒâÒ»Ö»¸öÈËboss
-         e_mission_end_type_service_goal, //ÀÛ¼ÆÍê³ÉÖ¸¶¨ÆßÈÕÄ¿±ê´ÎÊı
-         e_mission_end_type_total_login, //ÀÛ¼ÆµÇÂ½ÁìÈ¡½±Àø´ÎÊı
-         e_mission_end_type_operatrion_raid, //ÀÛ¼ÆÉ¨µ´¸±±¾´ÎÊı
-         e_mission_end_type_add_dot, //Íê³ÉX´Î¼Óµã
-         e_mission_end_type_gs_welfare_num, //ÀÛ¼ÆÁìÈ¡Õ½Á¦Àñ°ü´ÎÊı
-         e_mission_end_type_level_welfare_num, //ÀÛ¼ÆÁìÈ¡µÈ¼¶Àñ°ü´ÎÊı
-         e_mission_end_type_by_assis_fight_num, //±»ÖúÕ½´ÎÊı
-         e_mission_end_type_intensify_add_gs, //±äÇ¿Õ½Á¦ÌáÉı
-         e_mission_end_type_choose_a_fashion, //Ñ¡ÔñÒ»¼şÖ¸¶¨Ê±×°
-         e_mission_end_type_active_break_will, //Íê³ÉÖ¸¶¨´ÎÊıĞÄÄ§ÒâÖ¾¼¤»î
-         e_mission_end_type_search_count, //Ì½Ë÷´ÎÊı
-         e_mission_end_type_active_skill_count, //ÉÏÕóÖ÷¶¯¼¼ÄÜ¸öÊı
-         e_mission_end_type_passive_skill_count, //ÉÏÕó±»¶¯¼¼ÄÜ¸öÊı
-         e_mission_end_type_active_skill_level, //Ö÷¶¯¼¼ÄÜ´ïµ½µÄµÈ¼¶
+         e_mission_end_type_npc_kill, //æ€æ€ª
+         e_mission_end_type_dialog, //åœ°ç‚¹æˆ–å¯¹è¯
+         e_mission_end_type_mission, //å®Œæˆä»»åŠ¡çš„ä»»åŠ¡ç« èŠ‚ä»»åŠ¡
+         e_mission_end_type_map, //å®ŒæˆæŸä¸ªåœ°å›¾
+         e_mission_end_type_transfer, //ç¬ç§»ä¼ é€
+         e_mission_end_type_beat_npc, //å‡»è´¥NPC
+         e_mission_end_type_kill_monster_get_item, //æ€æ€ªæ‹¿ç‰©å“
+         e_mission_end_type_get_item, //é‡‡é›†ç‰©å“
+         e_mission_end_type_equip_upgrade, //è£…å¤‡å¼ºåŒ–
+         e_mission_end_type_equip_addon, //è£…å¤‡è¿½åŠ 
+         e_mission_end_type_rune_equip, //è£…å¤‡ç¬¦æ–‡
+         e_mission_end_type_map_clear_current, //é€šå…³å‰¯æœ¬ï¼ˆå½“å‰ï¼‰
+         e_mission_end_type_activity_clear_current, //é€šå…³æ´»åŠ¨ï¼ˆå½“å‰ï¼‰
+         e_mission_end_type_mount_unlock, //è§£é”åéª‘
+         e_mission_end_type_wing_upgrade, //ç¿…è†€å‡é˜¶
+         e_mission_end_type_pokedex_activation, //æ¿€æ´»å›¾é‰´
+         e_mission_end_type_sprite_activation, //ç²¾çµæ¿€æ´»
+         e_mission_end_type_character_level, //è§’è‰²ç­‰çº§
+         e_mission_end_type_map_clear_history, //é€šå…³å‰¯æœ¬ï¼ˆå†å²ï¼‰
+         e_mission_end_type_clear_daily_mission, //å®Œæˆæ—¥å¸¸ä»»åŠ¡ï¼ˆæ•°é‡ï¼‰
+         e_mission_end_type_clear_against_mission, //å®Œæˆè®¨ä¼ä»»åŠ¡ï¼ˆæ•°é‡ï¼‰
+         e_mission_end_type_clear_demon_tower, //ä¸‡é­”å¡”é€šå…³ï¼ˆå±‚ï¼‰
+         e_mission_end_type_clear_arena, //æŒ‘æˆ˜ç«æŠ€åœºï¼ˆæ¬¡æ•°ï¼‰
+         e_mission_end_type_cheer_worship, //åŠ©åŠ›å´‡æ‹œ
+         e_mission_end_type_transform, //è½¬æ¢
+         e_mission_end_type_equip_levelup, //è£…å¤‡è¿›é˜¶
+         e_mission_end_type_add_friend, //æ·»åŠ å¥½å‹
+         e_mission_end_type_purchase_goods, //ä¹°ä¸œè¥¿
+         e_mission_end_type_npc_attacked_num, //æ€ªç‰©å—å‡»æ¬¡æ•°
+         e_mission_end_type_join_legion, //åŠ å…¥å†›å›¢
+         e_mission_end_type_rune_total_level, //ç¬¦æ–‡æ€»ç­‰çº§
+         e_mission_end_type_upgrade_total_level, //å¼ºåŒ–æ€»ç­‰çº§
+         e_mission_end_type_add_on_total_level, //è¿½åŠ æ€»ç­‰çº§
+         e_mission_end_type_mount_total_grade, //åéª‘æ€»é˜¶æ•°
+         e_mission_end_type_join_legion_boss_map, //å‚åŠ å†›å›¢BOSSå‰¯æœ¬
+         e_mission_end_type_tinder_total_level, //ç«ç§æ€»ç­‰çº§
+         e_mission_end_type_equip_target_color, //ç©¿æˆ´æŒ‡å®šé¢œè‰²è£…å¤‡
+         e_mission_end_type_legion_donate, //å†›å›¢æèµ 
+         e_mission_end_type_boss_field, //æ‰“å®
+         e_mission_end_type_grade_levelup, //è½¬èŒ
+         e_mission_end_type_upgrade_level_num, //å¼ºåŒ–ç­‰çº§æ•°é‡
+         e_mission_end_type_addon_level_num, //è¿½åŠ ç­‰çº§æ•°é‡
+         e_mission_end_type_awaken_level_num, //è§‰é†’ç­‰çº§æ•°é‡
+         e_mission_end_type_succinct_level_num, //æ´—ç»ƒç­‰çº§æ•°é‡
+         e_mission_end_type_marry_dance, //ç»“å©šåŠ¨ä½œ
+         e_mission_end_type_reach_level, //è¾¾åˆ°ç­‰çº§
+         e_mission_end_type_learning_skill, //å­¦ä¹ æŒ‡å®šæŠ€èƒ½
+         e_mission_end_type_arena_military_rank, //ç«æŠ€åœºåˆ°è¾¾æŒ‡å®šå†›è¡”
+         e_mission_end_type_use_item, //ä½¿ç”¨æŒ‡å®šé“å…·
+         e_mission_end_type_compound_item, //åˆæˆæŒ‡å®šé“å…·
+         e_mission_end_type_spirit_baptism, //ç²¾çµæ´—ç¤¼æ¬¡æ•°
+         e_mission_end_type_spirit_baptism_color, //ç²¾çµæ€»æ´—ç¤¼é¢œè‰²æ•°
+         e_mission_end_type_inset_genstone, //é•¶åµŒå®çŸ³
+         e_mission_end_type_belief_all_num, //ä¿¡ä»°åˆ°è¾¾æŒ‡å®šç­‰çº§
+         e_mission_end_type_kill_home_boss, //å‡»æ€åœ°å®«boss
+         e_mission_end_type_new_map_finish, //å®Œæˆåœ°å›¾(è·³è½¬æ–¹å¼ä¸åŒ)
+         e_mission_end_type_mount_upgrade_num, //åéª‘å‡çº§æ¬¡æ•°
+         e_mission_end_type_spirit_upgrade_num, //ç²¾çµå‡çº§æ¬¡æ•°
+         e_mission_end_type_wing_all_star, //ç¾½ç¿¼æ€»æ˜Ÿæ•°
+         e_mission_end_type_install_equip, //è£…å¤‡æŒ‡å®šé“å…·
+         e_mission_end_type_unlock_skill_by_mission, //å®Œæˆä»»åŠ¡è§£é”æŠ€èƒ½
+         e_mission_end_type_auction_goods, //äº¤æ˜“è¡Œä¸Šæ¶ç‰©å“
+         e_mission_end_type_equip_spirit, //è£…å¤‡ç²¾çµæ•°é‡
+         e_mission_end_type_assis_fight_num, //è¿›è¡ŒåŠ©æˆ˜æ¬¡æ•°
+         e_mission_end_type_auction_shopping, //äº¤æ˜“è¡Œè´­ä¹°ç‰©å“
+         e_mission_end_type_kill_any_home_boss, //å‡»æ€ä»»æ„ä¸€åªåœ°å®«boss
+         e_mission_end_type_kill_any_single_boss, //å‡»æ€ä»»æ„ä¸€åªä¸ªäººboss
+         e_mission_end_type_service_goal, //ç´¯è®¡å®ŒæˆæŒ‡å®šä¸ƒæ—¥ç›®æ ‡æ¬¡æ•°
+         e_mission_end_type_total_login, //ç´¯è®¡ç™»é™†é¢†å–å¥–åŠ±æ¬¡æ•°
+         e_mission_end_type_operatrion_raid, //ç´¯è®¡æ‰«è¡å‰¯æœ¬æ¬¡æ•°
+         e_mission_end_type_add_dot, //å®ŒæˆXæ¬¡åŠ ç‚¹
+         e_mission_end_type_gs_welfare_num, //ç´¯è®¡é¢†å–æˆ˜åŠ›ç¤¼åŒ…æ¬¡æ•°
+         e_mission_end_type_level_welfare_num, //ç´¯è®¡é¢†å–ç­‰çº§ç¤¼åŒ…æ¬¡æ•°
+         e_mission_end_type_by_assis_fight_num, //è¢«åŠ©æˆ˜æ¬¡æ•°
+         e_mission_end_type_intensify_add_gs, //å˜å¼ºæˆ˜åŠ›æå‡
+         e_mission_end_type_choose_a_fashion, //é€‰æ‹©ä¸€ä»¶æŒ‡å®šæ—¶è£…
+         e_mission_end_type_active_break_will, //å®ŒæˆæŒ‡å®šæ¬¡æ•°å¿ƒé­”æ„å¿—æ¿€æ´»
+         e_mission_end_type_search_count, //æ¢ç´¢æ¬¡æ•°
+         e_mission_end_type_active_skill_count, //ä¸Šé˜µä¸»åŠ¨æŠ€èƒ½ä¸ªæ•°
+         e_mission_end_type_passive_skill_count, //ä¸Šé˜µè¢«åŠ¨æŠ€èƒ½ä¸ªæ•°
+         e_mission_end_type_active_skill_level, //ä¸»åŠ¨æŠ€èƒ½è¾¾åˆ°çš„ç­‰çº§
          e_mission_end_type_max
      };
      enum e_unlock_func_type
      {
-         e_unlock_func_type_skill_0, //ÆÕ¹¥¼¼ÄÜ
-         e_unlock_func_type_skill_1, //¼¼ÄÜ1
-         e_unlock_func_type_skill_2, //¼¼ÄÜ2
-         e_unlock_func_type_skill_3, //¼¼ÄÜ3
-         e_unlock_func_type_skill_4, //±»¶¯¼¼ÄÜ1
-         e_unlock_func_type_skill_5, //±»¶¯¼¼ÄÜ2
-         e_unlock_func_type_auto_battle, //×Ô¶¯Õ½¶·
-         e_unlock_func_type_mount, //×øÆï¹¦ÄÜ
-         e_unlock_func_type_equip_upgrade, //ÈÛÁ¶¹¦ÄÜ
-         e_unlock_func_type_equip_addon, //×°±¸×·¼Ó
-         e_unlock_func_type_wing, //³á°ò¹¦ÄÜ
-         e_unlock_func_type_activity, //»î¶¯¹¦ÄÜ
-         e_unlock_func_type_convert, //×ª»»¹¦ÄÜ
-         e_unlock_func_type_ranking, //ÅÅĞĞ°ñ¹¦ÄÜ
-         e_unlock_func_type_achievement, //³É¾Í¹¦ÄÜ
-         e_unlock_func_type_raid_daily_exp, //¾­ÑéÈÕ³£¸±±¾
-         e_unlock_func_type_raid_daily_money, //½ğÇ®ÈÕ³£¸±±¾
-         e_unlock_func_type_raid_demons_tower, //ÍòÄ§Ëş¸±±¾
-         e_unlock_func_type_raid_multiplayer, //¶àÈË¸±±¾
-         e_unlock_func_type_raid_sky_battle, //¿ÕÕ½¸±±¾
-         e_unlock_func_type_raid_drama, //¾çÇé¸±±¾
+         e_unlock_func_type_skill_0, //æ™®æ”»æŠ€èƒ½
+         e_unlock_func_type_skill_1, //æŠ€èƒ½1
+         e_unlock_func_type_skill_2, //æŠ€èƒ½2
+         e_unlock_func_type_skill_3, //æŠ€èƒ½3
+         e_unlock_func_type_skill_4, //è¢«åŠ¨æŠ€èƒ½1
+         e_unlock_func_type_skill_5, //è¢«åŠ¨æŠ€èƒ½2
+         e_unlock_func_type_auto_battle, //è‡ªåŠ¨æˆ˜æ–—
+         e_unlock_func_type_mount, //åéª‘åŠŸèƒ½
+         e_unlock_func_type_equip_upgrade, //ç†”ç‚¼åŠŸèƒ½
+         e_unlock_func_type_equip_addon, //è£…å¤‡è¿½åŠ 
+         e_unlock_func_type_wing, //ç¿…è†€åŠŸèƒ½
+         e_unlock_func_type_activity, //æ´»åŠ¨åŠŸèƒ½
+         e_unlock_func_type_convert, //è½¬æ¢åŠŸèƒ½
+         e_unlock_func_type_ranking, //æ’è¡Œæ¦œåŠŸèƒ½
+         e_unlock_func_type_achievement, //æˆå°±åŠŸèƒ½
+         e_unlock_func_type_raid_daily_exp, //ç»éªŒæ—¥å¸¸å‰¯æœ¬
+         e_unlock_func_type_raid_daily_money, //é‡‘é’±æ—¥å¸¸å‰¯æœ¬
+         e_unlock_func_type_raid_demons_tower, //ä¸‡é­”å¡”å‰¯æœ¬
+         e_unlock_func_type_raid_multiplayer, //å¤šäººå‰¯æœ¬
+         e_unlock_func_type_raid_sky_battle, //ç©ºæˆ˜å‰¯æœ¬
+         e_unlock_func_type_raid_drama, //å‰§æƒ…å‰¯æœ¬
          e_unlock_func_type_max
      };
      enum e_guide_type
      {
-         e_guide_type_none, //ÎŞ
-         e_guide_type_operate, //²Ù×÷Òıµ¼
-         e_guide_type_open_func, //¿ªÆô¹¦ÄÜ
-         e_guide_type_mask, //ºÚ²¼ÕÚÕÖ
-         e_guide_type_cinematics_anim, //¹ı³¡¶¯»­
-         e_guide_type_trigger_event, //´¥·¢ÊÂ¼ş
+         e_guide_type_none, //æ— 
+         e_guide_type_operate, //æ“ä½œå¼•å¯¼
+         e_guide_type_open_func, //å¼€å¯åŠŸèƒ½
+         e_guide_type_mask, //é»‘å¸ƒé®ç½©
+         e_guide_type_cinematics_anim, //è¿‡åœºåŠ¨ç”»
+         e_guide_type_trigger_event, //è§¦å‘äº‹ä»¶
          e_guide_type_max
      };
      enum e_time_type
      {
-         e_time_type_login_time, //×îºóÒ»´ÎµÇÂ¼Ê±¼ä
-         e_time_type_logout_time, //×îºóÒ»´ÎµÇ³öÊ±¼ä
-         e_time_type_login_time_all, //×ÜµÄÔÚÏßÊ±¼ä
-         e_time_type_last_save_data_time, //×î½üÒ»´Î´æµµÊ±¼ä
-         e_time_type_last_refresh_time, //ÏÂ´ÎÎåµãË¢ĞÂÊ±¼ä
-         e_time_type_spirit_last_free_hunt_time, //¾«ÁéÉÏ´ÎÃâ·ÑÁÔÈ¡Ê±¼ä
-         e_time_type_arena_last_update, //¾º¼¼³¡´ÎÊıÉÏÒ»´ÎË¢ĞÂÊ±¼ä
-         e_time_type_arena_colling_time, //¾º¼¼³¡ÌôÕ½ÀäÈ´Ê±¼ä
-         e_time_type_hope_item_free_get_time, //ÉÏ´ÎÃâ·ÑÎïÆ·Æí¸£Ê±¼ä
-         e_time_type_next_free_change_gold_time, //ÏÂ´ÎÃâ·Ñ½ğ±Ò×ª»¯Ê±¼ä
-         e_time_type_have_meditation_time, //ÒÑ¾­Ú¤ÏëµÄÊ±¼ä
-         e_time_type_month_card_activity_time, //ÔÂ¿¨µ±Ç°ÌìÊı
-         e_time_type_month_card_remain_time, //ÔÂ¿¨Ê£ÓàÌìÊı
-         e_time_type_bag_time, //±³°ü¿ªÆôÊ£ÓàÊ±¼ä
-         e_time_type_last_daily_info_refresh_time, //ÉÏÒ»´Î°´ÈÕË¢ĞÂÄÚÈİµÄË¢ĞÂÊ±¼ä
-         e_time_type_ancient_battelfield, //±¾ÈÕ¹ÅÕ½³¡ÒÑ½øÈëÊ±¼ä
-         e_time_type_last_map_record_update_time, //ÉÏÒ»´ÎµØÍ¼¼ÇÂ¼µÄË¢ĞÂÊ±¼ä
-         e_time_type_cur_level_time, //µ±Ç°µÈ¼¶Ê±¼ä
-         e_time_type_legion_daily_award_flags, //¾üÍÅ¹¦ÄÜ¸÷ÖÖÃ¿ÈÕÁì½±±ê¼Ç
-         e_time_type_convert_last_update_time, //×ª»»ÉÏ´ÎË¢ĞÂÊ±¼ä
-         e_time_type_arena_last_get_reward_time, //¾º¼¼³¡ÉÏ´ÎÁì½±Ê±¼ä
-         e_time_type_map_auto_revive_time, //ÏÂ´Î¿É×Ô¶¯¸´»îÊ±¼ä
-         e_time_type_exclusive_card_activity_time, //×ğÏíµ±Ç°ÌìÊı
-         e_time_type_last_month_info_refresh_time, //ÉÏÒ»´Î°´ÔÂË¢ĞÂÄÚÈİµÄË¢ĞÂÊ±¼ä
-         e_time_type_welfare_last_refresh_time, //¸£ÀûË¢ĞÂÊ±¼ä
-         e_time_type_active_degree_last_refresh_time, //»îÔ¾¶ÈË¢ĞÂÊ±¼ä
-         e_time_type_meditation_full_send_mail, //ÊÇ·ñÏò¸ÃÍæ¼Ò·¢ËÍ¹ıÚ¤ÏëÒÑÂúµÄÓÊ¼ş
-         e_time_type_legion_bonus_award_flags, //·ÖºìÁì½±±ê¼Ç
-         e_time_type_vip_experience_level_time, //vipÌåÑéµÈ¼¶µ½ÆÚÊ±¼ä
-         e_time_type_treasure_jewel_free, //±¦Ê¯³é½±Ãâ·ÑÊ±¼ä
-         e_time_type_treasure_element_free, //·ûÎÄ³é½±Ãâ·ÑÊ±¼ä
-         e_time_type_treasure_spirit_free, //¾«Áé³é½±Ãâ·ÑÊ±¼ä
-         e_time_type_storage_time, //²Ö¿â¿ªÆôÊ£ÓàÊ±¼ä
-         e_time_type_meditation_remaining_time, //Ú¤ÏëÊ£ÓàÊ±¼ä
-         e_time_type_last_refresh_by_zero_no_cross, //ÉÏÒ»´Î·Ç¿ç·şÁãµãË¢ĞÂÊ±¼ä
-         e_time_type_next_world_boss_can_count, //ÏÂ´ÎÊÀ½çbossÃ¿ÈÕ±Ø×ö¿É¼ÆÊıÊ±¼ä´Á
-         e_time_type_last_harry_clear_time, //¿ç·şÂÓ¶áÉÏ´ÎÈ«²¿Çå¿ÕÊ±¼ä
-         e_time_type_last_refresh_by_zero_cross, //ÉÏÒ»´Î¿ç·şÁãµãË¢ĞÂÊ±¼ä
-         e_time_type_last_refresh_gs_up_start_value_time, //ÉÏ´ÎÁãµãË¢ĞÂÕ½Á¦ÌáÉı°ñ³õÊ¼ÖµÊ±¼ä
-         e_time_type_frist_recharge_time, //Íæ¼ÒÊ×³äÊ±¼ä
-         e_time_type_exp_raid_join_time, //Ã¿ÈÕ¾­Ñé¸±±¾ÒÑ½øÈëÊ±¼ä
-         e_time_type_exp_raid_skill_cd, //Ã¿ÈÕ¾­Ñé¸±±¾½øÈëÊ±ÊØ»¤¼¼CD
-         e_time_type_exp_raid_extra_time, //Ã¿ÈÕ¾­Ñé¸±±¾¶îÍâÔö¼ÓÊ±¼ä
-         e_time_type_service_goal_close_time, //ÆßÈÕÍõÕß¹Ø±ÕÊ±¼ä
-         e_time_type_first_recharge_open_time, //Ê×³ä½çÃæ´ò¿ªÊ±¼ä
-         e_time_type_fuben_level_buy_tip_time, //¸±±¾ÆÀ¼¶ÂòÌáÊ¾Ê±¼ä
-         e_time_type_money_buy_tip_time, //×Ï×êÂòÌáÊ¾Ê±¼ä
-         e_time_type_red_convert_last_time, //ºì×êÃâ·ÑÊ±¼ä
-         e_time_type_energy_back, //ÌåÁ¦»Ö¸´Ê±¼ä
-         e_time_type_offline_award_time, //ÀëÏß½±Àø¼ÆËãÊ±¼ä
+         e_time_type_login_time, //æœ€åä¸€æ¬¡ç™»å½•æ—¶é—´
+         e_time_type_logout_time, //æœ€åä¸€æ¬¡ç™»å‡ºæ—¶é—´
+         e_time_type_login_time_all, //æ€»çš„åœ¨çº¿æ—¶é—´
+         e_time_type_last_save_data_time, //æœ€è¿‘ä¸€æ¬¡å­˜æ¡£æ—¶é—´
+         e_time_type_last_refresh_time, //ä¸‹æ¬¡äº”ç‚¹åˆ·æ–°æ—¶é—´
+         e_time_type_spirit_last_free_hunt_time, //ç²¾çµä¸Šæ¬¡å…è´¹çŒå–æ—¶é—´
+         e_time_type_arena_last_update, //ç«æŠ€åœºæ¬¡æ•°ä¸Šä¸€æ¬¡åˆ·æ–°æ—¶é—´
+         e_time_type_arena_colling_time, //ç«æŠ€åœºæŒ‘æˆ˜å†·å´æ—¶é—´
+         e_time_type_hope_item_free_get_time, //ä¸Šæ¬¡å…è´¹ç‰©å“ç¥ˆç¦æ—¶é—´
+         e_time_type_next_free_change_gold_time, //ä¸‹æ¬¡å…è´¹é‡‘å¸è½¬åŒ–æ—¶é—´
+         e_time_type_have_meditation_time, //å·²ç»å†¥æƒ³çš„æ—¶é—´
+         e_time_type_month_card_activity_time, //æœˆå¡å½“å‰å¤©æ•°
+         e_time_type_month_card_remain_time, //æœˆå¡å‰©ä½™å¤©æ•°
+         e_time_type_bag_time, //èƒŒåŒ…å¼€å¯å‰©ä½™æ—¶é—´
+         e_time_type_last_daily_info_refresh_time, //ä¸Šä¸€æ¬¡æŒ‰æ—¥åˆ·æ–°å†…å®¹çš„åˆ·æ–°æ—¶é—´
+         e_time_type_ancient_battelfield, //æœ¬æ—¥å¤æˆ˜åœºå·²è¿›å…¥æ—¶é—´
+         e_time_type_last_map_record_update_time, //ä¸Šä¸€æ¬¡åœ°å›¾è®°å½•çš„åˆ·æ–°æ—¶é—´
+         e_time_type_cur_level_time, //å½“å‰ç­‰çº§æ—¶é—´
+         e_time_type_legion_daily_award_flags, //å†›å›¢åŠŸèƒ½å„ç§æ¯æ—¥é¢†å¥–æ ‡è®°
+         e_time_type_convert_last_update_time, //è½¬æ¢ä¸Šæ¬¡åˆ·æ–°æ—¶é—´
+         e_time_type_arena_last_get_reward_time, //ç«æŠ€åœºä¸Šæ¬¡é¢†å¥–æ—¶é—´
+         e_time_type_map_auto_revive_time, //ä¸‹æ¬¡å¯è‡ªåŠ¨å¤æ´»æ—¶é—´
+         e_time_type_exclusive_card_activity_time, //å°Šäº«å½“å‰å¤©æ•°
+         e_time_type_last_month_info_refresh_time, //ä¸Šä¸€æ¬¡æŒ‰æœˆåˆ·æ–°å†…å®¹çš„åˆ·æ–°æ—¶é—´
+         e_time_type_welfare_last_refresh_time, //ç¦åˆ©åˆ·æ–°æ—¶é—´
+         e_time_type_active_degree_last_refresh_time, //æ´»è·ƒåº¦åˆ·æ–°æ—¶é—´
+         e_time_type_meditation_full_send_mail, //æ˜¯å¦å‘è¯¥ç©å®¶å‘é€è¿‡å†¥æƒ³å·²æ»¡çš„é‚®ä»¶
+         e_time_type_legion_bonus_award_flags, //åˆ†çº¢é¢†å¥–æ ‡è®°
+         e_time_type_vip_experience_level_time, //vipä½“éªŒç­‰çº§åˆ°æœŸæ—¶é—´
+         e_time_type_treasure_jewel_free, //å®çŸ³æŠ½å¥–å…è´¹æ—¶é—´
+         e_time_type_treasure_element_free, //ç¬¦æ–‡æŠ½å¥–å…è´¹æ—¶é—´
+         e_time_type_treasure_spirit_free, //ç²¾çµæŠ½å¥–å…è´¹æ—¶é—´
+         e_time_type_storage_time, //ä»“åº“å¼€å¯å‰©ä½™æ—¶é—´
+         e_time_type_meditation_remaining_time, //å†¥æƒ³å‰©ä½™æ—¶é—´
+         e_time_type_last_refresh_by_zero_no_cross, //ä¸Šä¸€æ¬¡éè·¨æœé›¶ç‚¹åˆ·æ–°æ—¶é—´
+         e_time_type_next_world_boss_can_count, //ä¸‹æ¬¡ä¸–ç•Œbossæ¯æ—¥å¿…åšå¯è®¡æ•°æ—¶é—´æˆ³
+         e_time_type_last_harry_clear_time, //è·¨æœæ å¤ºä¸Šæ¬¡å…¨éƒ¨æ¸…ç©ºæ—¶é—´
+         e_time_type_last_refresh_by_zero_cross, //ä¸Šä¸€æ¬¡è·¨æœé›¶ç‚¹åˆ·æ–°æ—¶é—´
+         e_time_type_last_refresh_gs_up_start_value_time, //ä¸Šæ¬¡é›¶ç‚¹åˆ·æ–°æˆ˜åŠ›æå‡æ¦œåˆå§‹å€¼æ—¶é—´
+         e_time_type_frist_recharge_time, //ç©å®¶é¦–å……æ—¶é—´
+         e_time_type_exp_raid_join_time, //æ¯æ—¥ç»éªŒå‰¯æœ¬å·²è¿›å…¥æ—¶é—´
+         e_time_type_exp_raid_skill_cd, //æ¯æ—¥ç»éªŒå‰¯æœ¬è¿›å…¥æ—¶å®ˆæŠ¤æŠ€CD
+         e_time_type_exp_raid_extra_time, //æ¯æ—¥ç»éªŒå‰¯æœ¬é¢å¤–å¢åŠ æ—¶é—´
+         e_time_type_service_goal_close_time, //ä¸ƒæ—¥ç‹è€…å…³é—­æ—¶é—´
+         e_time_type_first_recharge_open_time, //é¦–å……ç•Œé¢æ‰“å¼€æ—¶é—´
+         e_time_type_fuben_level_buy_tip_time, //å‰¯æœ¬è¯„çº§ä¹°æç¤ºæ—¶é—´
+         e_time_type_money_buy_tip_time, //ç´«é’»ä¹°æç¤ºæ—¶é—´
+         e_time_type_red_convert_last_time, //çº¢é’»å…è´¹æ—¶é—´
+         e_time_type_energy_back, //ä½“åŠ›æ¢å¤æ—¶é—´
+         e_time_type_offline_award_time, //ç¦»çº¿å¥–åŠ±è®¡ç®—æ—¶é—´
          e_time_type_max
      };
      enum e_title_info
      {
-         e_title_info_template_id, //³ÆºÅÄ£°åid
-         e_title_info_start_time, //³ÆºÅ¿ªÊ¼Ê±¼ä
-         e_title_info_end_time, //³ÆºÅ½áÊøÊ±¼ä
-         e_title_info_if_geted, //ÊÇ·ñ»ñÈ¡
-         e_title_info_if_need_see, //ÊÇ·ñĞèÒª²é¿´
-         e_title_info_if_need_equip, //ÊÇ·ñĞèÒª×°±¸
+         e_title_info_template_id, //ç§°å·æ¨¡æ¿id
+         e_title_info_start_time, //ç§°å·å¼€å§‹æ—¶é—´
+         e_title_info_end_time, //ç§°å·ç»“æŸæ—¶é—´
+         e_title_info_if_geted, //æ˜¯å¦è·å–
+         e_title_info_if_need_see, //æ˜¯å¦éœ€è¦æŸ¥çœ‹
+         e_title_info_if_need_equip, //æ˜¯å¦éœ€è¦è£…å¤‡
          e_title_info_max
      };
      enum e_title_end_type
      {
-         e_title_end_type_forever, //ÓÀ¾ÃĞÔ
-         e_title_end_type_time, //Ê±Ğ§ĞÔ
-         e_title_end_type_condition_1, //Ìõ¼şĞÔ1¿ÉÈ·¶¨½áÊøÊ±¼ä
-         e_title_end_type_condition_2, //Ìõ¼şĞÔ2²»¿ÉÈ·¶¨½áÊøÊ±¼ä
+         e_title_end_type_forever, //æ°¸ä¹…æ€§
+         e_title_end_type_time, //æ—¶æ•ˆæ€§
+         e_title_end_type_condition_1, //æ¡ä»¶æ€§1å¯ç¡®å®šç»“æŸæ—¶é—´
+         e_title_end_type_condition_2, //æ¡ä»¶æ€§2ä¸å¯ç¡®å®šç»“æŸæ—¶é—´
          e_title_end_type_max
      };
      enum e_buff_add_judge
      {
-         e_buff_add_judge_non, //¼Ó²»ÁË
-         e_buff_add_judge_has_it, //ÒÑÓĞ´ËĞ§¹û
-         e_buff_add_judge_has_stronger_one, //ÓĞ¸üÇ¿µÄĞ§¹û
-         e_buff_add_judge_can_cover, //¸²¸Ç
-         e_buff_add_judge_can_wrap, //µş¼Ó
-         e_buff_add_judge_can_cumulative, //ĞøÃü
-         e_buff_add_judge_direct_add, //Ö±½Ó¼Ó
-         e_buff_add_judge_can_percent, //Ôö¼Ó°Ù·Ö±È
+         e_buff_add_judge_non, //åŠ ä¸äº†
+         e_buff_add_judge_has_it, //å·²æœ‰æ­¤æ•ˆæœ
+         e_buff_add_judge_has_stronger_one, //æœ‰æ›´å¼ºçš„æ•ˆæœ
+         e_buff_add_judge_can_cover, //è¦†ç›–
+         e_buff_add_judge_can_wrap, //å åŠ 
+         e_buff_add_judge_can_cumulative, //ç»­å‘½
+         e_buff_add_judge_direct_add, //ç›´æ¥åŠ 
+         e_buff_add_judge_can_percent, //å¢åŠ ç™¾åˆ†æ¯”
          e_buff_add_judge_max
      };
      enum e_spirit_info
      {
-         e_spirit_info_template_id, //Ä£°åid
-         e_spirit_info_spirit_slot, //×°±¸Î»ÖÃ
-         e_spirit_info_container_type, //±³°üÀàĞÍ
-         e_spirit_info_spirit_is_equiped, //ÊÇ·ñ×°±¸ÖĞ
-         e_spirit_info_spirit_is_fighting, //ÊÇ·ñ³öÕ½
-         e_spirit_info_flair_property_1, //
-         e_spirit_info_flair_property_2, //
-         e_spirit_info_flair_property_3, //
-         e_spirit_info_flair_property_4, //
-         e_spirit_info_flair_property_5, //
-         e_spirit_info_flair_property_6, //
-         e_spirit_info_spirit_typ, //
-         e_spirit_info_showing_illusion_idex, //
-         e_spirit_info_illusion_had_byte, //
-         e_spirit_info_upgrade_count, //
-         e_spirit_info_star_upgrade_count, //
-         e_spirit_info_spirit_exp, //
-         e_spirit_info_random_has_flag, //
-         e_spirit_info_star_skill_flag, //
-         e_spirit_info_efficient_skill_id, //
-         e_spirit_info_efficient_skill_id_2, //
+         e_spirit_info_template_id, //æ¨¡æ¿id
+         e_spirit_info_spirit_slot, //è£…å¤‡ä½ç½®
+         e_spirit_info_container_type, //èƒŒåŒ…ç±»å‹
+         e_spirit_info_spirit_is_equiped, //æ˜¯å¦è£…å¤‡ä¸­
+         e_spirit_info_spirit_is_fighting, //æ˜¯å¦å‡ºæˆ˜
+         e_spirit_info_flair_property_1,
+         e_spirit_info_flair_property_2,
+         e_spirit_info_flair_property_3,
+         e_spirit_info_flair_property_4,
+         e_spirit_info_flair_property_5,
+         e_spirit_info_flair_property_6,
+         e_spirit_info_spirit_typ,
+         e_spirit_info_showing_illusion_idex,
+         e_spirit_info_illusion_had_byte,
+         e_spirit_info_upgrade_count,
+         e_spirit_info_star_upgrade_count,
+         e_spirit_info_spirit_exp,
+         e_spirit_info_random_has_flag,
+         e_spirit_info_star_skill_flag,
+         e_spirit_info_efficient_skill_id,
+         e_spirit_info_efficient_skill_id_2,
          e_spirit_info_max
      };
      enum e_spirit_fetter_info
      {
-         e_spirit_fetter_info_template_id, //Ä£°åid
-         e_spirit_fetter_info_upgrade_level, //Ç¿»¯µÈ¼¶
+         e_spirit_fetter_info_template_id, //æ¨¡æ¿id
+         e_spirit_fetter_info_upgrade_level, //å¼ºåŒ–ç­‰çº§
          e_spirit_fetter_info_max
      };
      enum e_spirit_bag_type
      {
-         e_spirit_bag_type_equiped, //×°±¸°ü
-         e_spirit_bag_type_spiritbag, //¾«Áé²Ö¿â
-         e_spirit_bag_type_itembag, //ÎïÆ·°ü
+         e_spirit_bag_type_equiped, //è£…å¤‡åŒ…
+         e_spirit_bag_type_spiritbag, //ç²¾çµä»“åº“
+         e_spirit_bag_type_itembag, //ç‰©å“åŒ…
          e_spirit_bag_type_max
      };
      enum e_spirit_hunt_type
      {
-         e_spirit_hunt_type_free, //Ãâ·Ñ
-         e_spirit_hunt_type_by_voucher, //½±È¯
-         e_spirit_hunt_type_by_ten_voucher, //½±È¯Ê®Á¬
-         e_spirit_hunt_type_one_by_cost, //¸¶·ÑÒ»´Î
-         e_spirit_hunt_type_ten, //Ê®Á¬
+         e_spirit_hunt_type_free, //å…è´¹
+         e_spirit_hunt_type_by_voucher, //å¥–åˆ¸
+         e_spirit_hunt_type_by_ten_voucher, //å¥–åˆ¸åè¿
+         e_spirit_hunt_type_one_by_cost, //ä»˜è´¹ä¸€æ¬¡
+         e_spirit_hunt_type_ten, //åè¿
          e_spirit_hunt_type_max
      };
      enum e_map_difficulty
      {
-         e_map_difficulty_easy, //ÆÕÍ¨
-         e_map_difficulty_normal, //¾«Ó¢
-         e_map_difficulty_heard, //Á¶Óü
+         e_map_difficulty_easy, //æ™®é€š
+         e_map_difficulty_normal, //ç²¾è‹±
+         e_map_difficulty_heard, //ç‚¼ç‹±
          e_map_difficulty_max
      };
      enum e_ranking_worship_type
      {
-         e_ranking_worship_type_normal, //Ãâ·Ñ³ç°İ
-         e_ranking_worship_type_money, //½ğ±Ò³ç°İ
+         e_ranking_worship_type_normal, //å…è´¹å´‡æ‹œ
+         e_ranking_worship_type_money, //é‡‘å¸å´‡æ‹œ
          e_ranking_worship_type_max
      };
      enum e_pk_mode
      {
-         e_pk_mode_peace, //ºÍÆ½Ä£Ê½
-         e_pk_mode_good_and_evil, //ÉÆ¶ñÄ£Ê½
-         e_pk_mode_team, //¶ÓÎéÄ£Ê½
-         e_pk_mode_family, //¼Ò×åÄ£Ê½
-         e_pk_mode_slaughter, //É±Â¾Ä£Ê½
-         e_pk_mode_cross_sever, //¿ç·şÄ£Ê½
-         e_pk_mode_plunder, //ÂÓ¶áÄ£Ê½
+         e_pk_mode_peace, //å’Œå¹³æ¨¡å¼
+         e_pk_mode_good_and_evil, //å–„æ¶æ¨¡å¼
+         e_pk_mode_team, //é˜Ÿä¼æ¨¡å¼
+         e_pk_mode_family, //å®¶æ—æ¨¡å¼
+         e_pk_mode_slaughter, //æ€æˆ®æ¨¡å¼
+         e_pk_mode_cross_sever, //è·¨æœæ¨¡å¼
+         e_pk_mode_plunder, //æ å¤ºæ¨¡å¼
          e_pk_mode_max
      };
      enum e_pk_mode_type
      {
-         e_pk_mode_type_cant, //²»¿ÉPK
-         e_pk_mode_type_allow, //¿ÉPK
-         e_pk_mode_type_no_kill_point, //¿ÉPKµ«²»¼ÓÉ±Â¾Öµ
+         e_pk_mode_type_cant, //ä¸å¯PK
+         e_pk_mode_type_allow, //å¯PK
+         e_pk_mode_type_no_kill_point, //å¯PKä½†ä¸åŠ æ€æˆ®å€¼
          e_pk_mode_type_max
      };
      enum e_recurit_type
      {
-         e_recurit_type_none, //ÎŞÕĞÄ¼
-         e_recurit_type_legion_recurit, //¾üÍÅÕĞÄ¼
-         e_recurit_type_world_recurit, //ÊÀ½çÕĞÄ¼
+         e_recurit_type_none, //æ— æ‹›å‹Ÿ
+         e_recurit_type_legion_recurit, //å†›å›¢æ‹›å‹Ÿ
+         e_recurit_type_world_recurit, //ä¸–ç•Œæ‹›å‹Ÿ
          e_recurit_type_max
      };
      enum e_fruit_type
      {
-         e_fruit_type_none, //·Ç·¨¹ûÊµ
-         e_fruit_type_strength, //Á¦Á¿¹ûÊµ
-         e_fruit_type_agility, //Ãô½İ¹ûÊµ
-         e_fruit_type_intellect, //ÖÇÁ¦¹ûÊµ
-         e_fruit_type_stamina, //ÄÍÁ¦¹ûÊµ
+         e_fruit_type_none, //éæ³•æœå®
+         e_fruit_type_strength, //åŠ›é‡æœå®
+         e_fruit_type_agility, //æ•æ·æœå®
+         e_fruit_type_intellect, //æ™ºåŠ›æœå®
+         e_fruit_type_stamina, //è€åŠ›æœå®
          e_fruit_type_max
      };
      enum e_welfare_type
      {
-         e_welfare_type_online_time, //Ã¿ÈÕÔÚÏß
-         e_welfare_type_total_login, //ÀÛ¼ÆµÇÂ½
-         e_welfare_type_continue_login, //Á¬ĞøµÇÂ½
-         e_welfare_type_daily_activity_reward, //Ã¿ÈÕ»îÔ¾
-         e_welfare_type_monthcard_reward, //ÔÂ¿¨·µÀû ÔÂ¿¨Ç©µ½
-         e_welfare_type_daily_recharge_reward, //Ã¿ÈÕ³äÖµ
-         e_welfare_type_total_recharge_reward, //ÀÛ¼Æ³äÖµ
-         e_welfare_type_total_cost_reward, //ÀÛ¼ÆÏû·Ñ
-         e_welfare_type_exp_level_reward, //µÈ¼¶½±Àø
-         e_welfare_type_gs_reward, //Õ½¶·Á¦½±Àø
-         e_welfare_type_first_recharge_reward, //Ê×´Î³äÖµ
-         e_welfare_type_first_recharge_geted, //Ê×´Î³äÖµ¶îÍâ½±Àø
-         e_welfare_type_regular_check_in, //³£¹æÇ©µ½
-         e_welfare_type_exclusive_check_in, //×ğÏíÇ©µ½
-         e_welfare_type_vip_double_check_in, //vip·­±¶Ç©µ½
-         e_welfare_type_is_today_check_in, //½ñÌìÊÇ·ñÇ©µ½¹ı
-         e_welfare_type_replace_times, //²¹Ç©´ÎÊı
-         e_welfare_type_time_limit_reward, //ÏŞÊ±¸£Àû
-         e_welfare_type_cumulative_sign_in, //ÀÛ¼ÆÇ©µ½
-         e_welfare_type_weekend_recharge_reward, //ÖÜÄ©¼ÓÔù
+         e_welfare_type_online_time, //æ¯æ—¥åœ¨çº¿
+         e_welfare_type_total_login, //ç´¯è®¡ç™»é™†
+         e_welfare_type_continue_login, //è¿ç»­ç™»é™†
+         e_welfare_type_daily_activity_reward, //æ¯æ—¥æ´»è·ƒ
+         e_welfare_type_monthcard_reward, //æœˆå¡è¿”åˆ© æœˆå¡ç­¾åˆ°
+         e_welfare_type_daily_recharge_reward, //æ¯æ—¥å……å€¼
+         e_welfare_type_total_recharge_reward, //ç´¯è®¡å……å€¼
+         e_welfare_type_total_cost_reward, //ç´¯è®¡æ¶ˆè´¹
+         e_welfare_type_exp_level_reward, //ç­‰çº§å¥–åŠ±
+         e_welfare_type_gs_reward, //æˆ˜æ–—åŠ›å¥–åŠ±
+         e_welfare_type_first_recharge_reward, //é¦–æ¬¡å……å€¼
+         e_welfare_type_first_recharge_geted, //é¦–æ¬¡å……å€¼é¢å¤–å¥–åŠ±
+         e_welfare_type_regular_check_in, //å¸¸è§„ç­¾åˆ°
+         e_welfare_type_exclusive_check_in, //å°Šäº«ç­¾åˆ°
+         e_welfare_type_vip_double_check_in, //vipç¿»å€ç­¾åˆ°
+         e_welfare_type_is_today_check_in, //ä»Šå¤©æ˜¯å¦ç­¾åˆ°è¿‡
+         e_welfare_type_replace_times, //è¡¥ç­¾æ¬¡æ•°
+         e_welfare_type_time_limit_reward, //é™æ—¶ç¦åˆ©
+         e_welfare_type_cumulative_sign_in, //ç´¯è®¡ç­¾åˆ°
+         e_welfare_type_weekend_recharge_reward, //å‘¨æœ«åŠ èµ 
          e_welfare_type_max
      };
      enum e_red_package_type
      {
-         e_red_package_type_globel, //È«·ş
-         e_red_package_type_legion, //¾üÍÅ
+         e_red_package_type_globel, //å…¨æœ
+         e_red_package_type_legion, //å†›å›¢
          e_red_package_type_vip, //VIP
          e_red_package_type_max
      };
      enum e_role_ws_info
      {
-         e_role_ws_info_save_time, //´æ´¢Ê±¼ä
-         e_role_ws_info_free_red_package_count, //Ãâ·Ñºì°ü¼ÆÊı
+         e_role_ws_info_save_time, //å­˜å‚¨æ—¶é—´
+         e_role_ws_info_free_red_package_count, //å…è´¹çº¢åŒ…è®¡æ•°
          e_role_ws_info_max
      };
      enum e_power_up_prompt
      {
-         e_power_up_prompt_mount_levelup, //×øÆïÉı¼¶
-         e_power_up_prompt_mount_upgrade, //×øÆïÉı½×
-         e_power_up_prompt_mount_unlock, //×øÆï½âËø
-         e_power_up_prompt_wing_levelup, //³á°òÉıĞÇ
-         e_power_up_prompt_wing_upgrade, //³á°òÉı½×
-         e_power_up_prompt_wing_shengling, //³á°òÉıÁé
-         e_power_up_prompt_wing_yuling, //³á°òÓğÁé
-         e_power_up_prompt_wing_juhun, //³á°ò¾Û»ê
-         e_power_up_prompt_equip_upgrade, //×°±¸¿ÉÇ¿»¯
-         e_power_up_prompt_equip_add_on, //×°±¸¿É×·¼Ó
-         e_power_up_prompt_equip_jinjie, //×°±¸¿É½ø½×
-         e_power_up_prompt_equip_xilian, //×°±¸¿ÉÏ´Á·
-         e_power_up_prompt_equip_chongzhu, //×°±¸¿ÉÖØÖı
-         e_power_up_prompt_equip_shenzhuangzaizao, //×°±¸¿ÉÉñ×°ÔÙÔì
-         e_power_up_prompt_exchange_amulet, //¿É¶Ò»»»¤·û
-         e_power_up_prompt_raise_achievement, //¿ÉÌáÉı³É¾Í
-         e_power_up_prompt_raise_rank, //¿ÉÌáÉı¾üÏÎ
-         e_power_up_prompt_raise_sprite, //¿ÉÅàÑø¾«Áé
-         e_power_up_prompt_role_add_point, //ÈËÎï¼Óµã
-         e_power_up_prompt_add_tinder, //¼Ó»ğÖÖ
-         e_power_up_prompt_mount_beast_spirit, //×øÆïÊŞ»ê
-         e_power_up_prompt_wing_beast_spirit, //³á°ò¾«»ê
-         e_power_up_prompt_jewel_set, //±¦Ê¯¿ÉÏâÇ¶
-         e_power_up_prompt_jewel_composit, //±¦Ê¯¿ÉºÏ³É
-         e_power_up_prompt_level_package, //ÁìÈ¡µÈ¼¶Àñ°ü
-         e_power_up_prompt_gs_package, //ÁìÈ¡Õ½Á¦Àñ°ü
-         e_power_up_prompt_god_assembled, //Éñ×°ºÏ³É
-         e_power_up_prompt_mount_illusion, //×øÆï»Ã»¯
-         e_power_up_prompt_mount_star_grade, //×øÆïÉı»ê
-         e_power_up_prompt_wing_illusion, //³á°ò»Ã»¯
-         e_power_up_prompt_wing_star_grade, //³á°òÉı»ê
-         e_power_up_prompt_fighting_power_analysis, //Õ½Á¦·ÖÎö
-         e_power_up_prompt_element_power_up, //·ûÎÄÌáÉı
-         e_power_up_prompt_tinder_skill, //»ğÖÖ¼¼ÄÜ
-         e_power_up_prompt_feather_activate, //ôáÓğ¼¤»î
-         e_power_up_prompt_feather_upgrade, //ôáÓğÉı¼¶
-         e_power_up_prompt_feather_skillbook_upgrade, //Éñôá¼¼ÄÜÊéÉı¼¶
-         e_power_up_prompt_feather_skillbook_EquipOn, //Éñôá×°±¸¼¼ÄÜÊé
-         e_power_up_prompt_Phantom_upgrade, //»ÃÁéÌáÉı
-         e_power_up_prompt_goddess, //ÉñÆíÑø³É
-         e_power_up_prompt_goddess_chain, //ÉñÆíĞÇÃú
-         e_power_up_prompt_mount_star, //×øÆï¸³ÄÜ
-         e_power_up_prompt_wing_psychic, //ÓğÒíÍ¨Áé
-         e_power_up_prompt_equip_awaken, //×°±¸¿É¾õĞÑ
+         e_power_up_prompt_mount_levelup, //åéª‘å‡çº§
+         e_power_up_prompt_mount_upgrade, //åéª‘å‡é˜¶
+         e_power_up_prompt_mount_unlock, //åéª‘è§£é”
+         e_power_up_prompt_wing_levelup, //ç¿…è†€å‡æ˜Ÿ
+         e_power_up_prompt_wing_upgrade, //ç¿…è†€å‡é˜¶
+         e_power_up_prompt_wing_shengling, //ç¿…è†€å‡çµ
+         e_power_up_prompt_wing_yuling, //ç¿…è†€ç¾½çµ
+         e_power_up_prompt_wing_juhun, //ç¿…è†€èšé­‚
+         e_power_up_prompt_equip_upgrade, //è£…å¤‡å¯å¼ºåŒ–
+         e_power_up_prompt_equip_add_on, //è£…å¤‡å¯è¿½åŠ 
+         e_power_up_prompt_equip_jinjie, //è£…å¤‡å¯è¿›é˜¶
+         e_power_up_prompt_equip_xilian, //è£…å¤‡å¯æ´—ç»ƒ
+         e_power_up_prompt_equip_chongzhu, //è£…å¤‡å¯é‡é“¸
+         e_power_up_prompt_equip_shenzhuangzaizao, //è£…å¤‡å¯ç¥è£…å†é€ 
+         e_power_up_prompt_exchange_amulet, //å¯å…‘æ¢æŠ¤ç¬¦
+         e_power_up_prompt_raise_achievement, //å¯æå‡æˆå°±
+         e_power_up_prompt_raise_rank, //å¯æå‡å†›è¡”
+         e_power_up_prompt_raise_sprite, //å¯åŸ¹å…»ç²¾çµ
+         e_power_up_prompt_role_add_point, //äººç‰©åŠ ç‚¹
+         e_power_up_prompt_add_tinder, //åŠ ç«ç§
+         e_power_up_prompt_mount_beast_spirit, //åéª‘å…½é­‚
+         e_power_up_prompt_wing_beast_spirit, //ç¿…è†€ç²¾é­‚
+         e_power_up_prompt_jewel_set, //å®çŸ³å¯é•¶åµŒ
+         e_power_up_prompt_jewel_composit, //å®çŸ³å¯åˆæˆ
+         e_power_up_prompt_level_package, //é¢†å–ç­‰çº§ç¤¼åŒ…
+         e_power_up_prompt_gs_package, //é¢†å–æˆ˜åŠ›ç¤¼åŒ…
+         e_power_up_prompt_god_assembled, //ç¥è£…åˆæˆ
+         e_power_up_prompt_mount_illusion, //åéª‘å¹»åŒ–
+         e_power_up_prompt_mount_star_grade, //åéª‘å‡é­‚
+         e_power_up_prompt_wing_illusion, //ç¿…è†€å¹»åŒ–
+         e_power_up_prompt_wing_star_grade, //ç¿…è†€å‡é­‚
+         e_power_up_prompt_fighting_power_analysis, //æˆ˜åŠ›åˆ†æ
+         e_power_up_prompt_element_power_up, //ç¬¦æ–‡æå‡
+         e_power_up_prompt_tinder_skill, //ç«ç§æŠ€èƒ½
+         e_power_up_prompt_feather_activate, //ç¿ç¾½æ¿€æ´»
+         e_power_up_prompt_feather_upgrade, //ç¿ç¾½å‡çº§
+         e_power_up_prompt_feather_skillbook_upgrade, //ç¥ç¿æŠ€èƒ½ä¹¦å‡çº§
+         e_power_up_prompt_feather_skillbook_EquipOn, //ç¥ç¿è£…å¤‡æŠ€èƒ½ä¹¦
+         e_power_up_prompt_Phantom_upgrade, //å¹»çµæå‡
+         e_power_up_prompt_goddess, //ç¥ç¥ˆå…»æˆ
+         e_power_up_prompt_goddess_chain, //ç¥ç¥ˆæ˜Ÿé“­
+         e_power_up_prompt_mount_star, //åéª‘èµ‹èƒ½
+         e_power_up_prompt_wing_psychic, //ç¾½ç¿¼é€šçµ
+         e_power_up_prompt_equip_awaken, //è£…å¤‡å¯è§‰é†’
          e_power_up_prompt_max
      };
      enum e_sound_type
      {
-         e_sound_type_sound, //±³¾°ÒôĞ§
-         e_sound_type_music, //±³¾°ÒôÀÖ
+         e_sound_type_sound, //èƒŒæ™¯éŸ³æ•ˆ
+         e_sound_type_music, //èƒŒæ™¯éŸ³ä¹
          e_sound_type_max
      };
      enum e_pk_king_competition_stage
      {
-         e_pk_king_competition_stage_preliminary, //Ô¤Èü
-         e_pk_king_competition_stage_final, //¾öÈü
+         e_pk_king_competition_stage_preliminary, //é¢„èµ›
+         e_pk_king_competition_stage_final, //å†³èµ›
          e_pk_king_competition_stage_max
      };
      enum e_small_map_show_unit_type
      {
-         e_small_map_show_unit_type_monster, //Ğ¡¹Ö
+         e_small_map_show_unit_type_monster, //å°æ€ª
          e_small_map_show_unit_type_boss, //Boss
-         e_small_map_show_unit_type_partner, //¶ÓÓÑ
-         e_small_map_show_unit_type_target, //Ä¿±êµã
-         e_small_map_show_unit_type_target_in_map_border, //Ä¿±êµãÎ»ÓÚµØÍ¼±ßÔµ
-         e_small_map_show_unit_type_city_war_born_point, //¾üÍÅ³ÇÕ½³öÉúµã
-         e_small_map_show_unit_type_world_boss, //ÊÀ½çboss
+         e_small_map_show_unit_type_partner, //é˜Ÿå‹
+         e_small_map_show_unit_type_target, //ç›®æ ‡ç‚¹
+         e_small_map_show_unit_type_target_in_map_border, //ç›®æ ‡ç‚¹ä½äºåœ°å›¾è¾¹ç¼˜
+         e_small_map_show_unit_type_city_war_born_point, //å†›å›¢åŸæˆ˜å‡ºç”Ÿç‚¹
+         e_small_map_show_unit_type_world_boss, //ä¸–ç•Œboss
          e_small_map_show_unit_type_max
      };
      enum e_money_tuple
      {
-         e_money_tuple_id, //Ç®µÄID
-         e_money_tuple_num, //Ç®µÄÊıÁ¿
+         e_money_tuple_id, //é’±çš„ID
+         e_money_tuple_num, //é’±çš„æ•°é‡
          e_money_tuple_max
      };
      enum e_item_tuple
      {
-         e_item_tuple_id, //ÎïÆ·µÄID
-         e_item_tuple_num, //ÎïÆ·µÄÊıÁ¿
+         e_item_tuple_id, //ç‰©å“çš„ID
+         e_item_tuple_num, //ç‰©å“çš„æ•°é‡
          e_item_tuple_max
      };
      enum e_recruit_activites_type
      {
-         e_recruit_activites_type_fuben, //¸±±¾
-         e_recruit_activites_type_hunting, //á÷ÁÔ»î¶¯
+         e_recruit_activites_type_fuben, //å‰¯æœ¬
+         e_recruit_activites_type_hunting, //ç‹©çŒæ´»åŠ¨
          e_recruit_activites_type_max
      };
      enum e_widget_show_mode
      {
-         e_widget_show_mode_normal, //Õı³£
-         e_widget_show_mode_OnlyDeleteBySelf, //Ö»ÄÜ±»×Ô¼º¹Ø±Õ²»ÄÜ±»CloseAll¹Ø±Õ
-         e_widget_show_mode_HiddenInGuide, //Òıµ¼Ê±Òş²Ø²»¹Ø±ÕÒıµ¼½áÊøÏÔÊ¾
-         e_widget_show_mode_OnlyDeleteBySelfAndHiddenInGuide, //Òıµ¼Ê±Òş²Ø²»¹Ø±ÕÒıµ¼½áÊøÏÔÊ¾
+         e_widget_show_mode_normal, //æ­£å¸¸
+         e_widget_show_mode_OnlyDeleteBySelf, //åªèƒ½è¢«è‡ªå·±å…³é—­ä¸èƒ½è¢«CloseAllå…³é—­
+         e_widget_show_mode_HiddenInGuide, //å¼•å¯¼æ—¶éšè—ä¸å…³é—­å¼•å¯¼ç»“æŸæ˜¾ç¤º
+         e_widget_show_mode_OnlyDeleteBySelfAndHiddenInGuide, //å¼•å¯¼æ—¶éšè—ä¸å…³é—­å¼•å¯¼ç»“æŸæ˜¾ç¤º
          e_widget_show_mode_max
      };
      enum e_arena_end_type
      {
-         e_arena_end_type_failed, //Ê§°Ü
-         e_arena_end_type_win, //Ê¤Àû
-         e_arena_end_type_draw, //Æ½¾Ö
+         e_arena_end_type_failed, //å¤±è´¥
+         e_arena_end_type_win, //èƒœåˆ©
+         e_arena_end_type_draw, //å¹³å±€
          e_arena_end_type_max
      };
      enum e_item_upgrade_effect_type
      {
-         e_item_upgrade_effect_type_wing_add_star, //³á°òÉıĞÇ
-         e_item_upgrade_effect_type_wing_upgrade, //³á°òÉı½×
-         e_item_upgrade_effect_type_mount_upgrade, //×øÆïÉı¼¶
-         e_item_upgrade_effect_type_mount_upgrade_class, //×øÆïÉı½×
-         e_item_upgrade_effect_type_fashion_upgrade, //Ê±×°ÉıĞÇ
+         e_item_upgrade_effect_type_wing_add_star, //ç¿…è†€å‡æ˜Ÿ
+         e_item_upgrade_effect_type_wing_upgrade, //ç¿…è†€å‡é˜¶
+         e_item_upgrade_effect_type_mount_upgrade, //åéª‘å‡çº§
+         e_item_upgrade_effect_type_mount_upgrade_class, //åéª‘å‡é˜¶
+         e_item_upgrade_effect_type_fashion_upgrade, //æ—¶è£…å‡æ˜Ÿ
          e_item_upgrade_effect_type_max
      };
      enum e_map_info_panel_type
      {
-         e_map_info_panel_type_none, //ÎŞ
-         e_map_info_panel_type_wave, //²¨´ÎĞÅÏ¢
-         e_map_info_panel_type_damage_rank, //ÉËº¦ÅÅÃû
-         e_map_info_panel_type_boss_buff, //bossÌá¹©µÄBUFF
-         e_map_info_panel_type_final_boss, //×îÖÕBOSS
-         e_map_info_panel_type_protect_npc, //ÊØ»¤NPCµÄ×´Ì¬
-         e_map_info_panel_type_wave_timer, //²¨´Îµ¹¼ÆÊ±
-         e_map_info_panel_type_score_rank, //»ı·ÖÅÅÃûĞÅÏ¢
-         e_map_info_panel_type_score_get_reward, //»ı·Ö´ï³É½±Àø
-         e_map_info_panel_type_aim_monster_killed_num, //Ä¿±ê¹ÖÎï»÷É±ÊıÁ¿
-         e_map_info_panel_type_exp_raid, //¾­Ñé¸±±¾×¨ÓÃ
-         e_map_info_panel_type_boss_home, //bossÖ®¼ÒºÍvipbossÖ®¼Ò×¨ÓÃ
-         e_map_info_panel_type_tower_reward, //ÍòÄ§Ëş½±ÀøÏÔÊ¾¿Ø¼ş
-         e_map_info_panel_type_crystak_raid, //Ë®¾§»·¾³ÏÔÊ¾¿Ø¼ş
-         e_map_info_panel_type_relic_raid, //ÉÏ¹ÅÒÅ¼£ÏÔÊ¾¿Ø¼ş
-         e_map_info_panel_type_belief_home, //ĞÅÑö»ØÀÈÏÔÊ¾¿Ø¼ş
-         e_map_info_panel_type_answer_question, //¾üÍÅ´ğÌâÏÔÊ¾¿Ø¼ş
-         e_map_info_panel_type_legion_station, //¾üÍÅ×¤µØ¿Ø¼ş
-         e_map_info_panel_type_pk_king, //PkÖ®Íõ×¨Êô¿Ø¼ş
-         e_map_info_panel_type_element_war, //ÔªËØÕù°ÔÏÔÊ¾¿Ø¼ş
+         e_map_info_panel_type_none, //æ— 
+         e_map_info_panel_type_wave, //æ³¢æ¬¡ä¿¡æ¯
+         e_map_info_panel_type_damage_rank, //ä¼¤å®³æ’å
+         e_map_info_panel_type_boss_buff, //bossæä¾›çš„BUFF
+         e_map_info_panel_type_final_boss, //æœ€ç»ˆBOSS
+         e_map_info_panel_type_protect_npc, //å®ˆæŠ¤NPCçš„çŠ¶æ€
+         e_map_info_panel_type_wave_timer, //æ³¢æ¬¡å€’è®¡æ—¶
+         e_map_info_panel_type_score_rank, //ç§¯åˆ†æ’åä¿¡æ¯
+         e_map_info_panel_type_score_get_reward, //ç§¯åˆ†è¾¾æˆå¥–åŠ±
+         e_map_info_panel_type_aim_monster_killed_num, //ç›®æ ‡æ€ªç‰©å‡»æ€æ•°é‡
+         e_map_info_panel_type_exp_raid, //ç»éªŒå‰¯æœ¬ä¸“ç”¨
+         e_map_info_panel_type_boss_home, //bossä¹‹å®¶å’Œvipbossä¹‹å®¶ä¸“ç”¨
+         e_map_info_panel_type_tower_reward, //ä¸‡é­”å¡”å¥–åŠ±æ˜¾ç¤ºæ§ä»¶
+         e_map_info_panel_type_crystak_raid, //æ°´æ™¶ç¯å¢ƒæ˜¾ç¤ºæ§ä»¶
+         e_map_info_panel_type_relic_raid, //ä¸Šå¤é—è¿¹æ˜¾ç¤ºæ§ä»¶
+         e_map_info_panel_type_belief_home, //ä¿¡ä»°å›å»Šæ˜¾ç¤ºæ§ä»¶
+         e_map_info_panel_type_answer_question, //å†›å›¢ç­”é¢˜æ˜¾ç¤ºæ§ä»¶
+         e_map_info_panel_type_legion_station, //å†›å›¢é©»åœ°æ§ä»¶
+         e_map_info_panel_type_pk_king, //Pkä¹‹ç‹ä¸“å±æ§ä»¶
+         e_map_info_panel_type_element_war, //å…ƒç´ äº‰éœ¸æ˜¾ç¤ºæ§ä»¶
          e_map_info_panel_type_max
      };
      enum e_legion_member_info
      {
-         e_legion_member_info_is_online, //¾üÍÅ³ÉÔ±ÊÇ·ñÔÚÏß
-         e_legion_member_info_level, //¾üÍÅ³ÉÔ±µÄµÈ¼¶
-         e_legion_member_info_player_template_id, //¾üÍÅ³ÉÔ±µÄ½ÇÉ«Ä£°å
-         e_legion_member_info_fighting_power, //¾üÍÅ³ÉÔ±µÄÕ½¶·Á¦
-         e_legion_member_info_job_title, //Ö°Î»
-         e_legion_member_info_city_war_score, //ÔÚ³ÇÕ½ÖĞ»ñµÃµÄ·ÖÊı
-         e_legion_member_info_donate_contribution, //¾èÔùµÄ¹±Ï×¶È
-         e_legion_member_info_add_fuel_times, //óô»ğ»î¶¯¹°»ğ´ÎÊı
-         e_legion_member_info_last_logout_stamp, //ÉÏ´ÎÀëÏßÊ±¼ä´Á
-         e_legion_member_info_last_get_city_award, //³ÇÕ½Áì½±¼ÇÂ¼
+         e_legion_member_info_is_online, //å†›å›¢æˆå‘˜æ˜¯å¦åœ¨çº¿
+         e_legion_member_info_level, //å†›å›¢æˆå‘˜çš„ç­‰çº§
+         e_legion_member_info_player_template_id, //å†›å›¢æˆå‘˜çš„è§’è‰²æ¨¡æ¿
+         e_legion_member_info_fighting_power, //å†›å›¢æˆå‘˜çš„æˆ˜æ–—åŠ›
+         e_legion_member_info_job_title, //èŒä½
+         e_legion_member_info_city_war_score, //åœ¨åŸæˆ˜ä¸­è·å¾—çš„åˆ†æ•°
+         e_legion_member_info_donate_contribution, //æèµ çš„è´¡çŒ®åº¦
+         e_legion_member_info_add_fuel_times, //ç¯ç«æ´»åŠ¨æ‹±ç«æ¬¡æ•°
+         e_legion_member_info_last_logout_stamp, //ä¸Šæ¬¡ç¦»çº¿æ—¶é—´æˆ³
+         e_legion_member_info_last_get_city_award, //åŸæˆ˜é¢†å¥–è®°å½•
          e_legion_member_info_agora_id, //AgoraID
-         e_legion_member_info_join_time_stamp, //¼ÓÈë¾üÍÅÊ±¼ä´Á
-         e_legion_member_info_vip_level, //¾üÍÅ³ÉÔ±µÄVIPµÈ¼¶
-         e_legion_member_info_get_master_city_award, //°ÔÖ÷Õ½Áì½±¼ÇÂ¼
-         e_legion_member_info_week_contribution, //Ã¿ÖÜ¹±Ï×¶È
-         e_legion_member_info_is_show_vip, //ÊÇ·ñÏÔÊ¾vip
+         e_legion_member_info_join_time_stamp, //åŠ å…¥å†›å›¢æ—¶é—´æˆ³
+         e_legion_member_info_vip_level, //å†›å›¢æˆå‘˜çš„VIPç­‰çº§
+         e_legion_member_info_get_master_city_award, //éœ¸ä¸»æˆ˜é¢†å¥–è®°å½•
+         e_legion_member_info_week_contribution, //æ¯å‘¨è´¡çŒ®åº¦
+         e_legion_member_info_is_show_vip, //æ˜¯å¦æ˜¾ç¤ºvip
          e_legion_member_info_max
      };
      enum e_first_time_do_type
      {
-         e_first_time_do_type_none, //ÎŞ
-         e_first_time_do_type_composit, //µÚÒ»´ÎºÏ³É
-         e_first_time_do_type_pop_power_up_prompt_widget, //µÚÒ»´Îµ¯³ö±äÇ¿Ö¸Òı¿Ø¼ş
-         e_first_time_do_type_sky_raid, //µÚÒ»´Î×ö¿ÕÕ½¸±±¾
-         e_first_time_do_type_close_raid_win_widget, //µÚÒ»´Î¹Ø±Õ½áËã½çÃæ
-         e_first_time_do_type_equip_upgrade, //µÚÒ»´Î×°±¸Ç¿»¯
-         e_first_time_do_type_lucky_draw_sprite, //µÚÒ»´Î³é¾«Áé
-         e_first_time_do_type_lucky_draw_item, //µÚÒ»´Î³é×°±¸
-         e_first_time_do_type_get_equip, //µÚÒ»´Î»ñµÃ×°±¸
-         e_first_time_do_type_lucky_draw_elementheart, //µÚÒ»´Î³éÈ¡ÔªËØÖ®ĞÄ
-         e_first_time_do_type_killed, //µÚÒ»´ÎËÀÍö
-         e_first_time_do_type_open_legion_store, //µÚÒ»´Î´ò¿ª¾üÍÅÉÌµê
-         e_first_time_do_type_open_old_store, //µÚÒ»´Î´ò¿ª¹ÅÕ½³¡ÉÌµê
-         e_first_time_do_type_open_hope_store, //µÚÒ»´Î´ò¿ªÆíÔ¸ÉÌµê
-         e_first_time_do_type_exp_raid, //µÚÒ»´Î½øÈë¾­Ñé¸±±¾
-         e_first_time_do_type_online_reward, //µÚÒ»´Îµã»÷ÁìÈ¡ÔÚÏß¸£Àû
-         e_first_time_do_type_spirit_forge, //µÚÒ»´Î¾«ÁéÏ´Àñ
-         e_first_time_do_type_auction_buy, //µÚÒ»´ÎÅÄÂô¹ºÂò
-         e_first_time_do_type_auction_sell, //µÚÒ»´ÎÅÄÂô³öÊÛ
+         e_first_time_do_type_none, //æ— 
+         e_first_time_do_type_composit, //ç¬¬ä¸€æ¬¡åˆæˆ
+         e_first_time_do_type_pop_power_up_prompt_widget, //ç¬¬ä¸€æ¬¡å¼¹å‡ºå˜å¼ºæŒ‡å¼•æ§ä»¶
+         e_first_time_do_type_sky_raid, //ç¬¬ä¸€æ¬¡åšç©ºæˆ˜å‰¯æœ¬
+         e_first_time_do_type_close_raid_win_widget, //ç¬¬ä¸€æ¬¡å…³é—­ç»“ç®—ç•Œé¢
+         e_first_time_do_type_equip_upgrade, //ç¬¬ä¸€æ¬¡è£…å¤‡å¼ºåŒ–
+         e_first_time_do_type_lucky_draw_sprite, //ç¬¬ä¸€æ¬¡æŠ½ç²¾çµ
+         e_first_time_do_type_lucky_draw_item, //ç¬¬ä¸€æ¬¡æŠ½è£…å¤‡
+         e_first_time_do_type_get_equip, //ç¬¬ä¸€æ¬¡è·å¾—è£…å¤‡
+         e_first_time_do_type_lucky_draw_elementheart, //ç¬¬ä¸€æ¬¡æŠ½å–å…ƒç´ ä¹‹å¿ƒ
+         e_first_time_do_type_killed, //ç¬¬ä¸€æ¬¡æ­»äº¡
+         e_first_time_do_type_open_legion_store, //ç¬¬ä¸€æ¬¡æ‰“å¼€å†›å›¢å•†åº—
+         e_first_time_do_type_open_old_store, //ç¬¬ä¸€æ¬¡æ‰“å¼€å¤æˆ˜åœºå•†åº—
+         e_first_time_do_type_open_hope_store, //ç¬¬ä¸€æ¬¡æ‰“å¼€ç¥ˆæ„¿å•†åº—
+         e_first_time_do_type_exp_raid, //ç¬¬ä¸€æ¬¡è¿›å…¥ç»éªŒå‰¯æœ¬
+         e_first_time_do_type_online_reward, //ç¬¬ä¸€æ¬¡ç‚¹å‡»é¢†å–åœ¨çº¿ç¦åˆ©
+         e_first_time_do_type_spirit_forge, //ç¬¬ä¸€æ¬¡ç²¾çµæ´—ç¤¼
+         e_first_time_do_type_auction_buy, //ç¬¬ä¸€æ¬¡æ‹å–è´­ä¹°
+         e_first_time_do_type_auction_sell, //ç¬¬ä¸€æ¬¡æ‹å–å‡ºå”®
          e_first_time_do_type_max
      };
      enum e_move_type
      {
-         e_move_type_stop, //Í£Ö¹
-         e_move_type_front, //ÏòÇ°
-         e_move_type_back, //Ïòºó
-         e_move_type_left, //Ïò×ó
-         e_move_type_right, //ÏòÓÒ
+         e_move_type_stop, //åœæ­¢
+         e_move_type_front, //å‘å‰
+         e_move_type_back, //å‘å
+         e_move_type_left, //å‘å·¦
+         e_move_type_right, //å‘å³
          e_move_type_max
      };
      enum e_revive_type
      {
-         e_revive_type_transfer, //»Ø³Ç¸´»î
-         e_revive_type_born_pos, //³öÉúµã¸´»î
-         e_revive_type_free_revive_by_CD, //Ãâ·Ñ°´CDÔ­µØ¸´»î
-         e_revive_type_same_pos, //Ô­µØ¸´»î
-         e_revive_type_cant_revive, //²»¿É¸´»î
+         e_revive_type_transfer, //å›åŸå¤æ´»
+         e_revive_type_born_pos, //å‡ºç”Ÿç‚¹å¤æ´»
+         e_revive_type_free_revive_by_CD, //å…è´¹æŒ‰CDåŸåœ°å¤æ´»
+         e_revive_type_same_pos, //åŸåœ°å¤æ´»
+         e_revive_type_cant_revive, //ä¸å¯å¤æ´»
          e_revive_type_max
      };
      enum e_team_state
      {
-         e_team_state_none, //ÎŞ×´Ì¬
-         e_team_state_waiting_join, //µÈ´ı³ÉÔ±¼ÓÈë
-         e_team_state_waiting_ready, //×¼±¸ÖĞÖĞ
-         e_team_state_game, //ÓÎÏ·ÖĞ
+         e_team_state_none, //æ— çŠ¶æ€
+         e_team_state_waiting_join, //ç­‰å¾…æˆå‘˜åŠ å…¥
+         e_team_state_waiting_ready, //å‡†å¤‡ä¸­ä¸­
+         e_team_state_game, //æ¸¸æˆä¸­
          e_team_state_max
      };
      enum e_pk_info
      {
-         e_pk_info_pk_mode, //pkÄ£Ê½
-         e_pk_info_community_type, //Íæ¼ÒÕóÓª
+         e_pk_info_pk_mode, //pkæ¨¡å¼
+         e_pk_info_community_type, //ç©å®¶é˜µè¥
          e_pk_info_max
      };
      enum e_region_type
      {
-         e_region_type_zhongli, //ÖĞÁ¢Çø
-         e_region_type_danger_zhongli, //Î£ÏÕÖĞÁ¢Çø
-         e_region_type_safe, //°²È«Çø
-         e_region_type_protect, //ÊÜ±£»¤Çø
+         e_region_type_zhongli, //ä¸­ç«‹åŒº
+         e_region_type_danger_zhongli, //å±é™©ä¸­ç«‹åŒº
+         e_region_type_safe, //å®‰å…¨åŒº
+         e_region_type_protect, //å—ä¿æŠ¤åŒº
          e_region_type_max
      };
      enum e_npc_interact_state
      {
-         e_npc_interact_state_none, //ÎŞ
-         e_npc_interact_state_begin, //¿ªÊ¼½»»¥
-         e_npc_interact_state_stop, //Í£Ö¹½»»¥
-         e_npc_interact_state_finish, //Íê³É½»»¥
+         e_npc_interact_state_none, //æ— 
+         e_npc_interact_state_begin, //å¼€å§‹äº¤äº’
+         e_npc_interact_state_stop, //åœæ­¢äº¤äº’
+         e_npc_interact_state_finish, //å®Œæˆäº¤äº’
          e_npc_interact_state_max
      };
      enum e_mission_operate_type
      {
-         e_mission_operate_type_accept, //½ÓÈ¡
-         e_mission_operate_type_finish, //½»¸¶
-         e_mission_operate_type_refresh_star, //Ë¢ĞÇ
-         e_mission_operate_type_dialog, //¶Ô»°
-         e_mission_operate_type_finish_all_daily, //Ò»¼üÍê³É
-         e_mission_operate_type_special_finish, //×êÊ¯Íê³ÉË«±¶¾­Ñé
-         e_mission_operate_type_create_npc, //´´½¨ÈÎÎñĞèÒªµÄnpc
+         e_mission_operate_type_accept, //æ¥å–
+         e_mission_operate_type_finish, //äº¤ä»˜
+         e_mission_operate_type_refresh_star, //åˆ·æ˜Ÿ
+         e_mission_operate_type_dialog, //å¯¹è¯
+         e_mission_operate_type_finish_all_daily, //ä¸€é”®å®Œæˆ
+         e_mission_operate_type_special_finish, //é’»çŸ³å®ŒæˆåŒå€ç»éªŒ
+         e_mission_operate_type_create_npc, //åˆ›å»ºä»»åŠ¡éœ€è¦çš„npc
          e_mission_operate_type_max
      };
      enum e_protect_mark_type
      {
-         e_protect_mark_type_single_equip_upgrade_history_record, //µ¥¼ş×°±¸Ç¿»¯µÈ¼¶ÀúÊ·×î¸ß¼ÍÂ¼
-         e_protect_mark_type_total_equip_upgrade_num_history_record, //×°±¸Ç¿»¯×ÜµÈ¼¶
-         e_protect_mark_type_total_equip_addon_num_history_record, //×°±¸×·¼Ó×ÜµÈ¼¶
-         e_protect_mark_type_equip_succinct_max_highest_color, //×°±¸Ï´Á·ÉıÂú×î¸ßÆ·ÖÊ
-         e_protect_mark_type_total_mount_grade, //×øÆï×Ü½×Êı
-         e_protect_mark_type_mount_num, //¼¤»îµÄ×øÆï¸öÊı
-         e_protect_mark_type_wing_and_feather_total_grade, //µ±Ç°³á°ò½×Êı+ôáÓğ×Ü½×Êı
-         e_protect_mark_type_pokedex_num, //Í¼¼ø¼¤»îÊı
-         e_protect_mark_type_total_sprite_equip_level_history_record, //¾«Áé×ÜµÈ¼¶
-         e_protect_mark_type_total_belief_grade, //ĞÅÑö×Ü½×Êı
-         e_protect_mark_type_role_exp_level, //µÈ¼¶
-         e_protect_mark_type_role_military_rank, //¾üÏÎ
-         e_protect_mark_type_achievement, //³É¾Í
-         e_protect_mark_type_total_element_heart_equip_level_history_record, //ÔªËØÖ®ĞÄ×ÜµÈ¼¶
+         e_protect_mark_type_single_equip_upgrade_history_record, //å•ä»¶è£…å¤‡å¼ºåŒ–ç­‰çº§å†å²æœ€é«˜çºªå½•
+         e_protect_mark_type_total_equip_upgrade_num_history_record, //è£…å¤‡å¼ºåŒ–æ€»ç­‰çº§
+         e_protect_mark_type_total_equip_addon_num_history_record, //è£…å¤‡è¿½åŠ æ€»ç­‰çº§
+         e_protect_mark_type_equip_succinct_max_highest_color, //è£…å¤‡æ´—ç»ƒå‡æ»¡æœ€é«˜å“è´¨
+         e_protect_mark_type_total_mount_grade, //åéª‘æ€»é˜¶æ•°
+         e_protect_mark_type_mount_num, //æ¿€æ´»çš„åéª‘ä¸ªæ•°
+         e_protect_mark_type_wing_and_feather_total_grade, //å½“å‰ç¿…è†€é˜¶æ•°+ç¿ç¾½æ€»é˜¶æ•°
+         e_protect_mark_type_pokedex_num, //å›¾é‰´æ¿€æ´»æ•°
+         e_protect_mark_type_total_sprite_equip_level_history_record, //ç²¾çµæ€»ç­‰çº§
+         e_protect_mark_type_total_belief_grade, //ä¿¡ä»°æ€»é˜¶æ•°
+         e_protect_mark_type_role_exp_level, //ç­‰çº§
+         e_protect_mark_type_role_military_rank, //å†›è¡”
+         e_protect_mark_type_achievement, //æˆå°±
+         e_protect_mark_type_total_element_heart_equip_level_history_record, //å…ƒç´ ä¹‹å¿ƒæ€»ç­‰çº§
          e_protect_mark_type_max
      };
      enum e_patron_saint_info
      {
-         e_patron_saint_info_template_id, //Ä£°åid
-         e_patron_saint_info_last_update_time, //ÉÏÒ»´ÎË¢ĞÂÊ±¼ä
-         e_patron_saint_info_psyche_recovery_num, //¾«ÆÇÒÑ¾­»ØÊÕµÄÊıÁ¿
-         e_patron_saint_info_psyche_oneday_limit, //¾«ÆÇµ±ÈÕ»ØÊÕµÄÉÏÏŞ
-         e_patron_saint_info_psyche_today_exceed_num, //½ñÌì¶à³ÔµôµÄÒ»¸ö¾«ÆÇ³¬³öÉÏÏŞÎŞ·¨¼¤»îµÄÄÇ²¿·Ö±£Áôµ½´ÎÈÕÔÙÊ¹ÓÃ
-         e_patron_saint_info_upgrade_num, //Éı¼¶´ÎÊı
+         e_patron_saint_info_template_id, //æ¨¡æ¿id
+         e_patron_saint_info_last_update_time, //ä¸Šä¸€æ¬¡åˆ·æ–°æ—¶é—´
+         e_patron_saint_info_psyche_recovery_num, //ç²¾é­„å·²ç»å›æ”¶çš„æ•°é‡
+         e_patron_saint_info_psyche_oneday_limit, //ç²¾é­„å½“æ—¥å›æ”¶çš„ä¸Šé™
+         e_patron_saint_info_psyche_today_exceed_num, //ä»Šå¤©å¤šåƒæ‰çš„ä¸€ä¸ªç²¾é­„è¶…å‡ºä¸Šé™æ— æ³•æ¿€æ´»çš„é‚£éƒ¨åˆ†ä¿ç•™åˆ°æ¬¡æ—¥å†ä½¿ç”¨
+         e_patron_saint_info_upgrade_num, //å‡çº§æ¬¡æ•°
          e_patron_saint_info_max
      };
      enum e_role_history_highest_record
      {
-         e_role_history_highest_record_single_equip_upgrade, //µ¥¼ş×°±¸Ç¿»¯ÀúÊ·×î¸ßÖµ
-         e_role_history_highest_record_total_equip_upgrade_num, //È«Éí×°±¸Ç¿»¯´ÎÊıºÍÀúÊ·×î¸ßÖµ
-         e_role_history_highest_record_total_equip_addon_num, //È«Éí×°±¸×·¼Ó´ÎÊıºÍÀúÊ·×î¸ßÖµ
-         e_role_history_highest_record_item_succinct_reach_mark_level, //Ï´Á·×°±¸µ½Ó¡¼ÇÉı¼¶ÒªÇóµÚ¼¸²ã
-         e_role_history_highest_record_total_sprite_equip_level, //Í¬Ê±×°±¸¾«ÁéµÈ¼¶ºÍÀúÊ·×î¸ßÖµ
-         e_role_history_highest_record_total_element_heart_equip_level, //Í¬Ê±×°±¸ÔªËØÖ®ĞÄµÈ¼¶ºÍÀúÊ·×î¸ßÖµ
-         e_role_history_highest_record_arena_higest, //¾º¼¼³¡ÀúÊ·×î¸ß
-         e_role_history_highest_record_demon_tower_highest_level, //ÍòÄ§ËşÀúÊ·×î¸ß²ã
-         e_role_history_highest_record_higest_friend_num, //ÓµÓĞºÃÓÑÊıÁ¿
-         e_role_history_highest_record_higest_friendliness_value, //×î¸ßºÃÓÑ¶È
-         e_role_history_highest_record_higest_weapon_upgrade_buff, //ÎäÆ÷Ç¿»¯BuffÀúÊ·×î¸ßÖµ
-         e_role_history_highest_record_higest_equip_upgrade_buff, //×°±¸Ç¿»¯BuffÀúÊ·×î¸ßÖµ
-         e_role_history_highest_record_rune_total_level, //·ûÎÄ×î¸ß×ÜµÈ¼¶
-         e_role_history_highest_record_addon_weapon, //×·¼ÓÎäÆ÷×î¸ßµÈ¼¶
-         e_role_history_highest_record_addon_equip, //×·¼Ó×°±¸×î¸ßµÈ¼¶
-         e_role_history_highest_record_belief_spring, //»ğÏµĞÅÑö
-         e_role_history_highest_record_belief_summer, //±ùÏµĞÅÑö
-         e_role_history_highest_record_belief_autumn, //¹âÏµĞÅÑö
-         e_role_history_highest_record_belief_winter, //°µÏµĞÅÑö
-         e_role_history_highest_record_weapon_full_succinct_grade, //×î¸ßÂúÏ´Á·ÎäÆ÷½×Êı ÕæÊµ½×Êı¼Ó1
-         e_role_history_highest_record_equip_full_succinct_grade, //×îµÍÈ«ÉíÂúÏ´Á·×°±¸½×Êı ÕæÊµ½×Êı¼Ó1
-         e_role_history_highest_record_battle_achievement, //ÀÛ¼Æ»ñµÃµÄ×î¸ß¾ü¹¦Öµ
-         e_role_history_highest_record_gs_value, //×ÜÕ½Á¦×î¸ßÖµ
-         e_role_history_highest_record_mount_value, //×øÆïÕ½Á¦×î¸ßÖµ
-         e_role_history_highest_record_wing_value, //³á°òÕ½Á¦×î¸ßÖµ
-         e_role_history_highest_record_equip_value, //×°±¸Õ½Á¦×î¸ßÖµ
-         e_role_history_highest_record_spirit_value, //¾«ÁéÕ½Á¦×î¸ßÖµ
-         e_role_history_highest_record_max_awaken_level, //×°±¸¾õĞÑ×î¸ßÖµ
-         e_role_history_highest_record_max_forge_level, //×°±¸ÖØÖı×î¸ßÖµ
-         e_role_history_highest_record_max_equip_enchant_level, //·À¾ß¸½Ä§×î¸ßÖµ
-         e_role_history_highest_record_max_jewelry_enchant_level, //Ê×ÊÎ¸½Ä§×î¸ßÖµ
-         e_role_history_highest_record_max_spirit_composit_level, //¾«ÁéºÏ³É×î¸ßÖµ
+         e_role_history_highest_record_single_equip_upgrade, //å•ä»¶è£…å¤‡å¼ºåŒ–å†å²æœ€é«˜å€¼
+         e_role_history_highest_record_total_equip_upgrade_num, //å…¨èº«è£…å¤‡å¼ºåŒ–æ¬¡æ•°å’Œå†å²æœ€é«˜å€¼
+         e_role_history_highest_record_total_equip_addon_num, //å…¨èº«è£…å¤‡è¿½åŠ æ¬¡æ•°å’Œå†å²æœ€é«˜å€¼
+         e_role_history_highest_record_item_succinct_reach_mark_level, //æ´—ç»ƒè£…å¤‡åˆ°å°è®°å‡çº§è¦æ±‚ç¬¬å‡ å±‚
+         e_role_history_highest_record_total_sprite_equip_level, //åŒæ—¶è£…å¤‡ç²¾çµç­‰çº§å’Œå†å²æœ€é«˜å€¼
+         e_role_history_highest_record_total_element_heart_equip_level, //åŒæ—¶è£…å¤‡å…ƒç´ ä¹‹å¿ƒç­‰çº§å’Œå†å²æœ€é«˜å€¼
+         e_role_history_highest_record_arena_higest, //ç«æŠ€åœºå†å²æœ€é«˜
+         e_role_history_highest_record_demon_tower_highest_level, //ä¸‡é­”å¡”å†å²æœ€é«˜å±‚
+         e_role_history_highest_record_higest_friend_num, //æ‹¥æœ‰å¥½å‹æ•°é‡
+         e_role_history_highest_record_higest_friendliness_value, //æœ€é«˜å¥½å‹åº¦
+         e_role_history_highest_record_higest_weapon_upgrade_buff, //æ­¦å™¨å¼ºåŒ–Buffå†å²æœ€é«˜å€¼
+         e_role_history_highest_record_higest_equip_upgrade_buff, //è£…å¤‡å¼ºåŒ–Buffå†å²æœ€é«˜å€¼
+         e_role_history_highest_record_rune_total_level, //ç¬¦æ–‡æœ€é«˜æ€»ç­‰çº§
+         e_role_history_highest_record_addon_weapon, //è¿½åŠ æ­¦å™¨æœ€é«˜ç­‰çº§
+         e_role_history_highest_record_addon_equip, //è¿½åŠ è£…å¤‡æœ€é«˜ç­‰çº§
+         e_role_history_highest_record_belief_spring, //ç«ç³»ä¿¡ä»°
+         e_role_history_highest_record_belief_summer, //å†°ç³»ä¿¡ä»°
+         e_role_history_highest_record_belief_autumn, //å…‰ç³»ä¿¡ä»°
+         e_role_history_highest_record_belief_winter, //æš—ç³»ä¿¡ä»°
+         e_role_history_highest_record_weapon_full_succinct_grade, //æœ€é«˜æ»¡æ´—ç»ƒæ­¦å™¨é˜¶æ•° çœŸå®é˜¶æ•°åŠ 1
+         e_role_history_highest_record_equip_full_succinct_grade, //æœ€ä½å…¨èº«æ»¡æ´—ç»ƒè£…å¤‡é˜¶æ•° çœŸå®é˜¶æ•°åŠ 1
+         e_role_history_highest_record_battle_achievement, //ç´¯è®¡è·å¾—çš„æœ€é«˜å†›åŠŸå€¼
+         e_role_history_highest_record_gs_value, //æ€»æˆ˜åŠ›æœ€é«˜å€¼
+         e_role_history_highest_record_mount_value, //åéª‘æˆ˜åŠ›æœ€é«˜å€¼
+         e_role_history_highest_record_wing_value, //ç¿…è†€æˆ˜åŠ›æœ€é«˜å€¼
+         e_role_history_highest_record_equip_value, //è£…å¤‡æˆ˜åŠ›æœ€é«˜å€¼
+         e_role_history_highest_record_spirit_value, //ç²¾çµæˆ˜åŠ›æœ€é«˜å€¼
+         e_role_history_highest_record_max_awaken_level, //è£…å¤‡è§‰é†’æœ€é«˜å€¼
+         e_role_history_highest_record_max_forge_level, //è£…å¤‡é‡é“¸æœ€é«˜å€¼
+         e_role_history_highest_record_max_equip_enchant_level, //é˜²å…·é™„é­”æœ€é«˜å€¼
+         e_role_history_highest_record_max_jewelry_enchant_level, //é¦–é¥°é™„é­”æœ€é«˜å€¼
+         e_role_history_highest_record_max_spirit_composit_level, //ç²¾çµåˆæˆæœ€é«˜å€¼
          e_role_history_highest_record_max
      };
      enum e_patron_saint_mark_operate_type
      {
-         e_patron_saint_mark_operate_type_purchase_new_slot, //ÂòĞÂ¸ñ×Ó
-         e_patron_saint_mark_operate_type_equip_mark, //×°±¸
-         e_patron_saint_mark_operate_type_unequip_mark, //Ğ¶ÏÂ
-         e_patron_saint_mark_operate_type_upgrade, //Éı¼¶
-         e_patron_saint_mark_operate_type_equip_prop, //×°±¸»ğÖÖµÀ¾ß
-         e_patron_saint_mark_operate_type_unequip_prop, //Ğ¶ÏÂ»ğÖÖµÀ¾ß
-         e_patron_saint_mark_operate_type_purchase_prop_new_slot, //¹ºÂò»ğÖÖµÀ¾ßĞÂ¸ñ×Ó
+         e_patron_saint_mark_operate_type_purchase_new_slot, //ä¹°æ–°æ ¼å­
+         e_patron_saint_mark_operate_type_equip_mark, //è£…å¤‡
+         e_patron_saint_mark_operate_type_unequip_mark, //å¸ä¸‹
+         e_patron_saint_mark_operate_type_upgrade, //å‡çº§
+         e_patron_saint_mark_operate_type_equip_prop, //è£…å¤‡ç«ç§é“å…·
+         e_patron_saint_mark_operate_type_unequip_prop, //å¸ä¸‹ç«ç§é“å…·
+         e_patron_saint_mark_operate_type_purchase_prop_new_slot, //è´­ä¹°ç«ç§é“å…·æ–°æ ¼å­
          e_patron_saint_mark_operate_type_max
      };
      enum e_belief_info
      {
-         e_belief_info_template_id, //Ä£°æID
-         e_belief_info_upgrade_count, //Éı¼¶´ÎÊı
-         e_belief_info_try_upgrade_times, //³¢ÊÔÉı¼¶´ÎÊı
+         e_belief_info_template_id, //æ¨¡ç‰ˆID
+         e_belief_info_upgrade_count, //å‡çº§æ¬¡æ•°
+         e_belief_info_try_upgrade_times, //å°è¯•å‡çº§æ¬¡æ•°
          e_belief_info_max
      };
      enum e_talent_info
      {
-         e_talent_info_template_id, //Ä£°åid
-         e_talent_info_cast_money, //×Ü¹²ÏûºÄ¶àÉÙµãÌì¸³ÔÚÕâ¸ö½ÚµãÉÏ
+         e_talent_info_template_id, //æ¨¡æ¿id
+         e_talent_info_cast_money, //æ€»å…±æ¶ˆè€—å¤šå°‘ç‚¹å¤©èµ‹åœ¨è¿™ä¸ªèŠ‚ç‚¹ä¸Š
          e_talent_info_max
      };
      enum e_talent_layer
      {
-         e_talent_layer_need_id, //ĞèÇóµÄid<100²ã¼¶>100talent_list_template_id
-         e_talent_layer_need_num, //ĞèÇóµÄÊıÁ¿
-         e_talent_layer_template_id_0, //ÕâÒ»²ãµÄÌì¸³id
-         e_talent_layer_template_id_1, //ÕâÒ»²ãµÄÌì¸³id
-         e_talent_layer_template_id_2, //ÕâÒ»²ãµÄÌì¸³id
-         e_talent_layer_template_id_3, //ÕâÒ»²ãµÄÌì¸³id
+         e_talent_layer_need_id, //éœ€æ±‚çš„id<100å±‚çº§>100talent_list_template_id
+         e_talent_layer_need_num, //éœ€æ±‚çš„æ•°é‡
+         e_talent_layer_template_id_0, //è¿™ä¸€å±‚çš„å¤©èµ‹id
+         e_talent_layer_template_id_1, //è¿™ä¸€å±‚çš„å¤©èµ‹id
+         e_talent_layer_template_id_2, //è¿™ä¸€å±‚çš„å¤©èµ‹id
+         e_talent_layer_template_id_3, //è¿™ä¸€å±‚çš„å¤©èµ‹id
          e_talent_layer_max
      };
      enum e_relation_data
      {
-         e_relation_data_type, //ÀàĞÍ
-         e_relation_data_level, //µÈ¼¶
-         e_relation_data_template_id, //Ä£°åid
-         e_relation_data_gs, //Õ½¶·Á¦
-         e_relation_data_relation_state, //¹ØÏµÈË×´Ì¬
-         e_relation_data_last_login_time, //¹ØÏµÈË×î½üÒ»´ÎµÇÂ¼Ê±¼ä
-         e_relation_data_friendliness, //ÓÑºÃ¶È
-         e_relation_data_vip_title_template_id, //Vip³ÆºÅµÈ¼¶
+         e_relation_data_type, //ç±»å‹
+         e_relation_data_level, //ç­‰çº§
+         e_relation_data_template_id, //æ¨¡æ¿id
+         e_relation_data_gs, //æˆ˜æ–—åŠ›
+         e_relation_data_relation_state, //å…³ç³»äººçŠ¶æ€
+         e_relation_data_last_login_time, //å…³ç³»äººæœ€è¿‘ä¸€æ¬¡ç™»å½•æ—¶é—´
+         e_relation_data_friendliness, //å‹å¥½åº¦
+         e_relation_data_vip_title_template_id, //Vipç§°å·ç­‰çº§
          e_relation_data_max
      };
      enum e_role_equip_slot
      {
-         e_role_equip_slot_body, //ÈËÎïÉíÌå¹Ç÷ÀÄ£ĞÍ
-         e_role_equip_slot_weapon_1, //ÎäÆ÷1
-         e_role_equip_slot_hat, //Ã±×Ó
-         e_role_equip_slot_earring, //¶ú»·
-         e_role_equip_slot_necklace, //ÏîÁ´
-         e_role_equip_slot_armor, //ÉíÌå·À¾ß
-         e_role_equip_slot_pants, //ÍÈ²¿,ÍÈ¼×¡¢¿ã×Ó
-         e_role_equip_slot_ring, //½äÖ¸
-         e_role_equip_slot_glove, //ÊÖ²¿
-         e_role_equip_slot_boot, //½Å²¿,Ñ¥×Ó
-         e_role_equip_slot_amulet, //»¤·û
-         e_role_equip_slot_magic_1, //Ä§·¨Êé1
-         e_role_equip_slot_magic_2, //Ä§·¨Êé2
-         e_role_equip_slot_wing, //³á°ò
-         e_role_equip_slot_mount, //×øÆï
-         e_role_equip_slot_sprite, //¾«Áé
-         e_role_equip_slot_mantle, //±³²¿Åû·ç
-         e_role_equip_slot_badge, //»ÕÕÂ
-         e_role_equip_slot_head, //ÈËÎïÍ·²¿¹Ç÷ÀÄ£ĞÍ
-         e_role_equip_slot_hair, //ÈËÎïÍ··¢¹Ç÷ÀÄ£ĞÍ
-         e_role_equip_slot_headdress, //ÈËÎïÍ·ÊÎ¹Ç÷ÀÄ£ĞÍ
-         e_role_equip_slot_mouth, //ÈËÎï¿ÚÕÖ¹Ç÷ÀÄ£ĞÍ
-         e_role_equip_slot_eye, //ÈËÎïÑÛ¾¦¹Ç÷ÀÄ£ĞÍ
+         e_role_equip_slot_body, //äººç‰©èº«ä½“éª¨éª¼æ¨¡å‹
+         e_role_equip_slot_weapon_1, //æ­¦å™¨1
+         e_role_equip_slot_hat, //å¸½å­
+         e_role_equip_slot_earring, //è€³ç¯
+         e_role_equip_slot_necklace, //é¡¹é“¾
+         e_role_equip_slot_armor, //èº«ä½“é˜²å…·
+         e_role_equip_slot_pants, //è…¿éƒ¨,è…¿ç”²ã€è£¤å­
+         e_role_equip_slot_ring, //æˆ’æŒ‡
+         e_role_equip_slot_glove, //æ‰‹éƒ¨
+         e_role_equip_slot_boot, //è„šéƒ¨,é´å­
+         e_role_equip_slot_amulet, //æŠ¤ç¬¦
+         e_role_equip_slot_magic_1, //é­”æ³•ä¹¦1
+         e_role_equip_slot_magic_2, //é­”æ³•ä¹¦2
+         e_role_equip_slot_wing, //ç¿…è†€
+         e_role_equip_slot_mount, //åéª‘
+         e_role_equip_slot_sprite, //ç²¾çµ
+         e_role_equip_slot_mantle, //èƒŒéƒ¨æŠ«é£
+         e_role_equip_slot_badge, //å¾½ç« 
+         e_role_equip_slot_head, //äººç‰©å¤´éƒ¨éª¨éª¼æ¨¡å‹
+         e_role_equip_slot_hair, //äººç‰©å¤´å‘éª¨éª¼æ¨¡å‹
+         e_role_equip_slot_headdress, //äººç‰©å¤´é¥°éª¨éª¼æ¨¡å‹
+         e_role_equip_slot_mouth, //äººç‰©å£ç½©éª¨éª¼æ¨¡å‹
+         e_role_equip_slot_eye, //äººç‰©çœ¼ç›éª¨éª¼æ¨¡å‹
          e_role_equip_slot_max
      };
      enum e_item_type
      {
-         e_item_type_none, //
-         e_item_type_weapon, //ÎäÆ÷
-         e_item_type_armor, //·À¾ß
-         e_item_type_mount, //×øÆï
-         e_item_type_expendable, //ÏûºÄÆ·
-         e_item_type_stone, //±¦Ê¯Àà
-         e_item_type_fashion, //Ê±×°Àà
-         e_item_type_mission, //ÈÎÎñÀà
-         e_item_type_spirit, //¾«Áé
-         e_item_type_wing, //³á°ò
-         e_item_type_element_heart, //ÔªËØÖ®ĞÄ
-         e_item_type_protect, //ÊØ»¤Ö®Áé
-         e_item_type_beast_spirit, //ÊŞ»ê
-         e_item_type_time_limit, //ÏŞÊ±ÎïÆ·
-         e_item_type_belief_rune, //ĞÅÑö·ûÎÄ
-         e_item_type_sky_equip, //Ìì¿Õ×°±¸
-         e_item_type_skill_book, //¼¼ÄÜÊé
-         e_item_type_goddess_equip, //Å®Éñ×°±¸
-         e_item_type_wedding_equip, //½á»é×°±¸
-         e_item_type_skygod_equip, //ÌìÉñ×°±¸
-         e_item_type_mount_equip, //×øÆï×°±¸
-         e_item_type_supreme_equip, //ÉñÍõ×°±¸
-         e_item_type_star_map_spirit, //ĞÇÍ¼¾«Áé
-         e_item_type_mount_star, //×øÆï¸³ÄÜ
-         e_item_type_wing_psychic, //ÓğÒíÍ¨Áé
-         e_item_type_break_will, //ĞÄÄ§ÒâÖ¾×°±¸
-         e_item_type_awaken_item, //¾õĞÑî¿°í×°±¸
+         e_item_type_none,
+         e_item_type_weapon, //æ­¦å™¨
+         e_item_type_armor, //é˜²å…·
+         e_item_type_mount, //åéª‘
+         e_item_type_expendable, //æ¶ˆè€—å“
+         e_item_type_stone, //å®çŸ³ç±»
+         e_item_type_fashion, //æ—¶è£…ç±»
+         e_item_type_mission, //ä»»åŠ¡ç±»
+         e_item_type_spirit, //ç²¾çµ
+         e_item_type_wing, //ç¿…è†€
+         e_item_type_element_heart, //å…ƒç´ ä¹‹å¿ƒ
+         e_item_type_protect, //å®ˆæŠ¤ä¹‹çµ
+         e_item_type_beast_spirit, //å…½é­‚
+         e_item_type_time_limit, //é™æ—¶ç‰©å“
+         e_item_type_belief_rune, //ä¿¡ä»°ç¬¦æ–‡
+         e_item_type_sky_equip, //å¤©ç©ºè£…å¤‡
+         e_item_type_skill_book, //æŠ€èƒ½ä¹¦
+         e_item_type_goddess_equip, //å¥³ç¥è£…å¤‡
+         e_item_type_wedding_equip, //ç»“å©šè£…å¤‡
+         e_item_type_skygod_equip, //å¤©ç¥è£…å¤‡
+         e_item_type_mount_equip, //åéª‘è£…å¤‡
+         e_item_type_supreme_equip, //ç¥ç‹è£…å¤‡
+         e_item_type_star_map_spirit, //æ˜Ÿå›¾ç²¾çµ
+         e_item_type_mount_star, //åéª‘èµ‹èƒ½
+         e_item_type_wing_psychic, //ç¾½ç¿¼é€šçµ
+         e_item_type_break_will, //å¿ƒé­”æ„å¿—è£…å¤‡
+         e_item_type_awaken_item, //è§‰é†’ç¾ç»Šè£…å¤‡
          e_item_type_max
      };
      enum e_armor_sub_type
      {
-         e_armor_sub_type_none, //
-         e_armor_sub_type_hat, //Í·²¿·À¾ß
-         e_armor_sub_type_earring, //¶ú»·
-         e_armor_sub_type_necklace, //ÏîÁ´
-         e_armor_sub_type_armor, //ÉíÌå·À¾ß
-         e_armor_sub_type_pants, //ÍÈ²¿ÍÈ¼×¡¢¿ã×Ó
-         e_armor_sub_type_ring, //½äÖ¸
-         e_armor_sub_type_glove, //ÊÖ²¿
-         e_armor_sub_type_boot, //½Å²¿Ñ¥×Ó
-         e_armor_sub_type_amulet, //»¤·û
-         e_armor_sub_type_fashion, //Ê±×°
-         e_armor_sub_type_wedding, //»é½ä
-         e_armor_sub_type_spirit, //¾«Áé
-         e_armor_sub_type_mantle, //±³²¿Åû·ç
+         e_armor_sub_type_none,
+         e_armor_sub_type_hat, //å¤´éƒ¨é˜²å…·
+         e_armor_sub_type_earring, //è€³ç¯
+         e_armor_sub_type_necklace, //é¡¹é“¾
+         e_armor_sub_type_armor, //èº«ä½“é˜²å…·
+         e_armor_sub_type_pants, //è…¿éƒ¨è…¿ç”²ã€è£¤å­
+         e_armor_sub_type_ring, //æˆ’æŒ‡
+         e_armor_sub_type_glove, //æ‰‹éƒ¨
+         e_armor_sub_type_boot, //è„šéƒ¨é´å­
+         e_armor_sub_type_amulet, //æŠ¤ç¬¦
+         e_armor_sub_type_fashion, //æ—¶è£…
+         e_armor_sub_type_wedding, //å©šæˆ’
+         e_armor_sub_type_spirit, //ç²¾çµ
+         e_armor_sub_type_mantle, //èƒŒéƒ¨æŠ«é£
          e_armor_sub_type_max
      };
      enum e_prop_sub_type
      {
-         e_prop_sub_type_none, //
-         e_prop_sub_type_fruit, //¹ûÊµ
-         e_prop_sub_type_gife, //Àñ°ü
-         e_prop_sub_type_money, //¼ÓÇ®µÄ¿¨Æ¬
-         e_prop_sub_type_hp_min, //Ğ¡ÑªÆ¿
-         e_prop_sub_type_hp_mld, //ÖĞÑªÆ¿
-         e_prop_sub_type_hp_max, //´óÑªÆ¿
-         e_prop_sub_type_wing_shap_card, //³á°òÍâĞÎ¿¨
-         e_prop_sub_type_title_card, //³ÆºÅ¿¨
-         e_prop_sub_type_hp_shop, //¼Ó´óÑªÆ¿
-         e_prop_sub_type_hp_essence, //³¬´óÑªÆ¿
-         e_prop_sub_type_store_medicine, //ÉÌ³ÇÒ©¼Á
-         e_prop_sub_type_gain_medicine, //ÔöÒæÒ©¼Á
-         e_prop_sub_type_min_level_up_medicine, //Éı¼¶µ¤
-         e_prop_sub_type_mid_level_up_medicine, //³¬¼¶Éı¼¶µ¤
-         e_prop_sub_type_max_level_up_medicine, //ÖÁ×ğÉı¼¶µ¤
-         e_prop_sub_type_wash_talent_water, //Ï´µãË®
-         e_prop_sub_type_legion_donate, //¾üÍÅ¾èÔùÎï×Ê
-         e_prop_sub_type_reduce_Pk_value, //Ï´pkÖµ
-         e_prop_sub_type_mount_illusion_unlock, //×øÆï»Ã»¯½âËøµÀ¾ß
-         e_prop_sub_type_wing_illusion_unlock, //ÓğÒí»Ã»¯½âËøµÀ¾ß
-         e_prop_sub_type_element_package, //·ûÎÄ°ü¹ü
-         e_prop_sub_type_vip_card, //VIP¿¨
-         e_prop_sub_type_rand_equip, //Ëæ»ú×°±¸
-         e_prop_sub_type_globel_red_package, //ÊÀ½çºì°ü
-         e_prop_sub_type_legion_red_package, //¾üÍÅºì°ü
-         e_prop_sub_type_mount_shap_card, //×øÆïÍâĞÎ¿¨
-         e_prop_sub_type_marry_prop, //½á»éµÀ¾ß
-         e_prop_sub_type_diamonds_package, //×êÊ¯Àñ°ü
-         e_prop_sub_type_refresh_body_att, //Ï´ÊôĞÔ
-         e_prop_sub_type_time_limit_prop, //ÏŞÊ±µÀ¾ß
-         e_prop_sub_type_recharge_package, //³äÖµÀñ°ü
-         e_prop_sub_type_vip_experience_card, //VIPÌåÑé¿¨
-         e_prop_sub_type_const_att_equip, //¹Ì¶¨×¿Ô½ÊôĞÔ×°±¸
-         e_prop_sub_type_exp_addition, //Ê¹ÓÃ»ñµÃ¾­Ñé¼Ó³É
-         e_prop_sub_type_add_map_count, //Ôö¼ÓµØÍ¼½øÈë´ÎÊı
-         e_prop_sub_type_add_exp_with_num, //°´ÕÕÏµÊı¶¯Ì¬Ôö¼Ó¾­Ñé
-         e_prop_sub_type_wing_experience, //×Ô¶¯Ê¹ÓÃµÄ³á°òÏŞÊ±¿¨£¨ÎŞÊÓÏŞÖÆÖ±½Ó´øÉÏ³á°ò£©
-         e_prop_sub_type_wing_piece, //³á°òËéÆ¬
-         e_prop_sub_type_change_class_card, //×ªÖ°¿¨
-         e_prop_sub_type_change_name_card, //¸ÄÃû¿¨
-         e_prop_sub_type_choose_gife, //Ñ¡ÔñÀñ°ü
-         e_prop_sub_type_meditation_medicine, //Ú¤ÏëÒ©Ë®
-         e_prop_sub_type_fashion_prop, //Ê±×°Éı¼¶µÀ¾ß
-         e_prop_sub_type_tinder_skill_book, //»ğÖÖ¼¼ÄÜÊé
-         e_prop_sub_type_grade_up, //Í»ÆÆµÀ¾ß
-         e_prop_sub_type_legion_change_name_card, //¾üÍÅ¸ÄÃû¿¨
-         e_prop_sub_type_fireworks, //ÑÌ»¨
-         e_prop_sub_type_horn, //À®°È
-         e_prop_sub_type_area_horn, //È«ÇøÀ®°È
-         e_prop_sub_type_add_map_time, //Ôö¼ÓµØÍ¼Ê±¼äµÀ¾ß
-         e_prop_sub_type_appearance_card, //ÄóÁ³¿¨
-         e_prop_sub_type_add_already_time, //¼õÉÙµØ¹¬bossÆ£ÀÍÖµ
-         e_prop_sub_type_add_single_boss_times, //¼õÉÙ¸öÈËBoss Times
-         e_prop_sub_type_awken_item, //¾õĞÑÏûºÄµÀ¾ß
-         e_prop_sub_type_sprite_upgrade, //¾«ÁéÉı¼¶µÀ¾ß
+         e_prop_sub_type_none,
+         e_prop_sub_type_fruit, //æœå®
+         e_prop_sub_type_gife, //ç¤¼åŒ…
+         e_prop_sub_type_money, //åŠ é’±çš„å¡ç‰‡
+         e_prop_sub_type_hp_min, //å°è¡€ç“¶
+         e_prop_sub_type_hp_mld, //ä¸­è¡€ç“¶
+         e_prop_sub_type_hp_max, //å¤§è¡€ç“¶
+         e_prop_sub_type_wing_shap_card, //ç¿…è†€å¤–å½¢å¡
+         e_prop_sub_type_title_card, //ç§°å·å¡
+         e_prop_sub_type_hp_shop, //åŠ å¤§è¡€ç“¶
+         e_prop_sub_type_hp_essence, //è¶…å¤§è¡€ç“¶
+         e_prop_sub_type_store_medicine, //å•†åŸè¯å‰‚
+         e_prop_sub_type_gain_medicine, //å¢ç›Šè¯å‰‚
+         e_prop_sub_type_min_level_up_medicine, //å‡çº§ä¸¹
+         e_prop_sub_type_mid_level_up_medicine, //è¶…çº§å‡çº§ä¸¹
+         e_prop_sub_type_max_level_up_medicine, //è‡³å°Šå‡çº§ä¸¹
+         e_prop_sub_type_wash_talent_water, //æ´—ç‚¹æ°´
+         e_prop_sub_type_legion_donate, //å†›å›¢æèµ ç‰©èµ„
+         e_prop_sub_type_reduce_Pk_value, //æ´—pkå€¼
+         e_prop_sub_type_mount_illusion_unlock, //åéª‘å¹»åŒ–è§£é”é“å…·
+         e_prop_sub_type_wing_illusion_unlock, //ç¾½ç¿¼å¹»åŒ–è§£é”é“å…·
+         e_prop_sub_type_element_package, //ç¬¦æ–‡åŒ…è£¹
+         e_prop_sub_type_vip_card, //VIPå¡
+         e_prop_sub_type_rand_equip, //éšæœºè£…å¤‡
+         e_prop_sub_type_globel_red_package, //ä¸–ç•Œçº¢åŒ…
+         e_prop_sub_type_legion_red_package, //å†›å›¢çº¢åŒ…
+         e_prop_sub_type_mount_shap_card, //åéª‘å¤–å½¢å¡
+         e_prop_sub_type_marry_prop, //ç»“å©šé“å…·
+         e_prop_sub_type_diamonds_package, //é’»çŸ³ç¤¼åŒ…
+         e_prop_sub_type_refresh_body_att, //æ´—å±æ€§
+         e_prop_sub_type_time_limit_prop, //é™æ—¶é“å…·
+         e_prop_sub_type_recharge_package, //å……å€¼ç¤¼åŒ…
+         e_prop_sub_type_vip_experience_card, //VIPä½“éªŒå¡
+         e_prop_sub_type_const_att_equip, //å›ºå®šå“è¶Šå±æ€§è£…å¤‡
+         e_prop_sub_type_exp_addition, //ä½¿ç”¨è·å¾—ç»éªŒåŠ æˆ
+         e_prop_sub_type_add_map_count, //å¢åŠ åœ°å›¾è¿›å…¥æ¬¡æ•°
+         e_prop_sub_type_add_exp_with_num, //æŒ‰ç…§ç³»æ•°åŠ¨æ€å¢åŠ ç»éªŒ
+         e_prop_sub_type_wing_experience, //è‡ªåŠ¨ä½¿ç”¨çš„ç¿…è†€é™æ—¶å¡ï¼ˆæ— è§†é™åˆ¶ç›´æ¥å¸¦ä¸Šç¿…è†€ï¼‰
+         e_prop_sub_type_wing_piece, //ç¿…è†€ç¢ç‰‡
+         e_prop_sub_type_change_class_card, //è½¬èŒå¡
+         e_prop_sub_type_change_name_card, //æ”¹åå¡
+         e_prop_sub_type_choose_gife, //é€‰æ‹©ç¤¼åŒ…
+         e_prop_sub_type_meditation_medicine, //å†¥æƒ³è¯æ°´
+         e_prop_sub_type_fashion_prop, //æ—¶è£…å‡çº§é“å…·
+         e_prop_sub_type_tinder_skill_book, //ç«ç§æŠ€èƒ½ä¹¦
+         e_prop_sub_type_grade_up, //çªç ´é“å…·
+         e_prop_sub_type_legion_change_name_card, //å†›å›¢æ”¹åå¡
+         e_prop_sub_type_fireworks, //çƒŸèŠ±
+         e_prop_sub_type_horn, //å–‡å­
+         e_prop_sub_type_area_horn, //å…¨åŒºå–‡å­
+         e_prop_sub_type_add_map_time, //å¢åŠ åœ°å›¾æ—¶é—´é“å…·
+         e_prop_sub_type_appearance_card, //æè„¸å¡
+         e_prop_sub_type_add_already_time, //å‡å°‘åœ°å®«bossç–²åŠ³å€¼
+         e_prop_sub_type_add_single_boss_times, //å‡å°‘ä¸ªäººBoss Times
+         e_prop_sub_type_awken_item, //è§‰é†’æ¶ˆè€—é“å…·
+         e_prop_sub_type_sprite_upgrade, //ç²¾çµå‡çº§é“å…·
          e_prop_sub_type_max
      };
      enum e_stone_sub_type
      {
-         e_stone_sub_type_none, //
-         e_stone_sub_type_equip_upgrade, //Ç¿»¯ËØ²Ä
-         e_stone_sub_type_equip_addon, //×·¼ÓËØ²Ä
-         e_stone_sub_type_mount, //×øÆïËØ²Ä
-         e_stone_sub_type_addsoul, //×¢»êËØ²Ä
-         e_stone_sub_type_addspririt, //×¢ÁéËØ²Ä
-         e_stone_sub_type_refine, //Ï´Á¶ËØ²Ä
-         e_stone_sub_type_upgrade_protect, //Ç¿»¯±£»¤ËØ²Ä
-         e_stone_sub_type_mount_upgrade, //×øÆïÉı¼¶²ÄÁÏ
-         e_stone_sub_type_mount_upstair, //×øÆïÉı½×²ÄÁÏ
-         e_stone_sub_type_mount_unlock, //×øÆï½âËø²ÄÁÏ
-         e_stone_sub_type_mount_unlock_highgrade, //¸ß¼¶×øÆï½âËø²ÄÁÏ
-         e_stone_sub_type_wing_upgrade, //ÓğÒíÉı¼¶²ÄÁÏ
-         e_stone_sub_type_wing_upstair, //ÓğÒíÉı½×²ÄÁÏ
-         e_stone_sub_type_wing_highgrade, //¸ß¼¶ÓğÒí²ÄÁÏ
-         e_stone_sub_type_orangered_shard, //³È¡¢ºì×°ËéÆ¬
-         e_stone_sub_type_basic_synthetic_material, //»ù´¡ºÏ³É²ÄÁÏ
-         e_stone_sub_type_spirit_shard, //¾«ÁéËéÆ¬
-         e_stone_sub_type_resurection_stone, //¸´»îÊ¯
-         e_stone_sub_type_dragon_soul, //Áú»ê
-         e_stone_sub_type_debris, //ÉñÆ÷ËéÆ¬
-         e_stone_sub_type_psyche, //¾«ÆÇ
-         e_stone_sub_type_jewel, //±¦Ê¯
-         e_stone_sub_type_book_card, //Í¼¼øËéÆ¬
-         e_stone_sub_type_tinder_prop, //»ğÖÖµÀ¾ß
-         e_stone_sub_type_mount_equip, //×øÆï×°±¸ËéÆ¬
+         e_stone_sub_type_none,
+         e_stone_sub_type_equip_upgrade, //å¼ºåŒ–ç´ æ
+         e_stone_sub_type_equip_addon, //è¿½åŠ ç´ æ
+         e_stone_sub_type_mount, //åéª‘ç´ æ
+         e_stone_sub_type_addsoul, //æ³¨é­‚ç´ æ
+         e_stone_sub_type_addspririt, //æ³¨çµç´ æ
+         e_stone_sub_type_refine, //æ´—ç‚¼ç´ æ
+         e_stone_sub_type_upgrade_protect, //å¼ºåŒ–ä¿æŠ¤ç´ æ
+         e_stone_sub_type_mount_upgrade, //åéª‘å‡çº§ææ–™
+         e_stone_sub_type_mount_upstair, //åéª‘å‡é˜¶ææ–™
+         e_stone_sub_type_mount_unlock, //åéª‘è§£é”ææ–™
+         e_stone_sub_type_mount_unlock_highgrade, //é«˜çº§åéª‘è§£é”ææ–™
+         e_stone_sub_type_wing_upgrade, //ç¾½ç¿¼å‡çº§ææ–™
+         e_stone_sub_type_wing_upstair, //ç¾½ç¿¼å‡é˜¶ææ–™
+         e_stone_sub_type_wing_highgrade, //é«˜çº§ç¾½ç¿¼ææ–™
+         e_stone_sub_type_orangered_shard, //æ©™ã€çº¢è£…ç¢ç‰‡
+         e_stone_sub_type_basic_synthetic_material, //åŸºç¡€åˆæˆææ–™
+         e_stone_sub_type_spirit_shard, //ç²¾çµç¢ç‰‡
+         e_stone_sub_type_resurection_stone, //å¤æ´»çŸ³
+         e_stone_sub_type_dragon_soul, //é¾™é­‚
+         e_stone_sub_type_debris, //ç¥å™¨ç¢ç‰‡
+         e_stone_sub_type_psyche, //ç²¾é­„
+         e_stone_sub_type_jewel, //å®çŸ³
+         e_stone_sub_type_book_card, //å›¾é‰´ç¢ç‰‡
+         e_stone_sub_type_tinder_prop, //ç«ç§é“å…·
+         e_stone_sub_type_mount_equip, //åéª‘è£…å¤‡ç¢ç‰‡
          e_stone_sub_type_max
      };
      enum e_feather_sub_type
      {
-         e_feather_sub_type_none, //
-         e_feather_sub_type_feather1, //
-         e_feather_sub_type_feather2, //
-         e_feather_sub_type_feather3, //
-         e_feather_sub_type_feather4, //
+         e_feather_sub_type_none,
+         e_feather_sub_type_feather1,
+         e_feather_sub_type_feather2,
+         e_feather_sub_type_feather3,
+         e_feather_sub_type_feather4,
          e_feather_sub_type_max
      };
      enum e_wing_sub_type
      {
-         e_wing_sub_type_none, //
-         e_wing_sub_type_wing, //³á°ò±¾Ìå
-         e_wing_sub_type_feather, //³á°òôáÓğ
-         e_wing_sub_type_soul, //³á°ò×¢»ê
-         e_wing_sub_type_spirit, //³á°ò×¢Áé
-         e_wing_sub_type_illusion, //³á°ò»Ã»¯
+         e_wing_sub_type_none,
+         e_wing_sub_type_wing, //ç¿…è†€æœ¬ä½“
+         e_wing_sub_type_feather, //ç¿…è†€ç¿ç¾½
+         e_wing_sub_type_soul, //ç¿…è†€æ³¨é­‚
+         e_wing_sub_type_spirit, //ç¿…è†€æ³¨çµ
+         e_wing_sub_type_illusion, //ç¿…è†€å¹»åŒ–
          e_wing_sub_type_max
      };
      enum e_element_heart_sub_type
      {
-         e_element_heart_sub_type_equip, //¿ÉÅå´ø
-         e_element_heart_sub_type_exp, //¾­ÑéÓÃ
+         e_element_heart_sub_type_equip, //å¯ä½©å¸¦
+         e_element_heart_sub_type_exp, //ç»éªŒç”¨
          e_element_heart_sub_type_max
      };
      enum e_store_type
      {
-         e_store_type_non, //¿Õ
-         e_store_type_recommend, //ÍÆ¼öÉÌµê
-         e_store_type_daily, //ÈÕ³£ÉÌµê
-         e_store_type_expendables, //ÏûºÄÆ·
-         e_store_type_bind_jewel_0, //°ó×êÉÌµê_0
-         e_store_type_shape, //ÍâĞÎÉÌµê
-         e_store_type_limit_buy, //ÏŞ¹ºÉÌµê
-         e_store_type_sprite_first, //¾«Áé¶Ò»»1
-         e_store_type_sprite_second, //¾«Áé¶Ò»»2
-         e_store_type_sprite_third, //¾«Áé¶Ò»»3
-         e_store_type_magic_crystal_first, //Ä§¾§1
-         e_store_type_magic_crystal_second, //Ä§¾§2
-         e_store_type_magic_crystal_third, //Ä§¾§3
-         e_store_type_medicine, //Ò©Æ·
-         e_store_type_prop, //µÀ¾ß
-         e_store_type_hope_point_first, //Æí¸£»ı·Ö1
-         e_store_type_hope_point_second, //Æí¸£»ı·Ö2
-         e_store_type_hope_point_third, //Æí¸£»ı·Ö3
-         e_store_type_legion, //¾üÍÅÉÌµê
-         e_store_type_hornor, //ÈÙÓşÉÌµê
-         e_store_type_assist_fighting, //ÖúÕ½ÉÌµê
-         e_store_type_fashion, //Ê±×°
-         e_store_type_bind_jewel_1, //°ó×êÉÌµê_1
-         e_store_type_bind_jewel_2, //°ó×êÉÌµê_2
-         e_store_type_treasure_royal, //±¦²Ø±¦Ê¯»ı·ÖÉÌµê
-         e_store_type_treasure_element, //±¦²Ø·ûÎÄ»ı·ÖÉÌµê
-         e_store_type_cross_server_buy, //¿ç·şÉÌµê
-         e_store_type_red_diamond, //ºì×êÉÌµê
-         e_store_type_cross_ladder_store, //¿ç·şÌìÌİÈÙÓşÉÌµê
-         e_store_type_non_29, //Ô¤Áô
-         e_store_type_non_30, //Ô¤Áô
-         e_store_type_non_31, //Ô¤Áô
-         e_store_type_non_32, //Ô¤Áô
-         e_store_type_non_33, //Ô¤Áô
-         e_store_type_non_34, //Ô¤Áô
-         e_store_type_non_35, //Ô¤Áô
-         e_store_type_non_36, //Ô¤Áô
-         e_store_type_non_37, //Ô¤Áô
-         e_store_type_non_38, //Ô¤Áô
-         e_store_type_non_39, //Ô¤Áô
-         e_store_type_non_40, //Ô¤Áô
-         e_store_type_limit_buy_41, //ÏŞÊ±ÉÌµê41
-         e_store_type_limit_buy_42, //ÏŞÊ±ÉÌµê42
-         e_store_type_limit_buy_43, //ÏŞÊ±ÉÌµê43
-         e_store_type_limit_buy_44, //ÏŞÊ±ÉÌµê44
-         e_store_type_limit_buy_45, //ÏŞÊ±ÉÌµê45
-         e_store_type_limit_buy_46, //ÏŞÊ±ÉÌµê46
-         e_store_type_limit_buy_47, //ÏŞÊ±ÉÌµê47
-         e_store_type_limit_buy_48, //ÏŞÊ±ÉÌµê48
-         e_store_type_limit_buy_49, //ÏŞÊ±ÉÌµê49
-         e_store_type_limit_buy_50, //ÏŞÊ±ÉÌµê50
-         e_store_type_limit_buy_51, //ÏŞÊ±ÉÌµê51
-         e_store_type_limit_buy_52, //ÏŞÊ±ÉÌµê52
-         e_store_type_limit_buy_53, //ÏŞÊ±ÉÌµê53
-         e_store_type_limit_buy_54, //ÏŞÊ±ÉÌµê54
-         e_store_type_limit_buy_55, //ÏŞÊ±ÉÌµê55
-         e_store_type_limit_buy_56, //ÏŞÊ±ÉÌµê56
-         e_store_type_limit_buy_57, //ÏŞÊ±ÉÌµê57
-         e_store_type_limit_buy_58, //ÏŞÊ±ÉÌµê58
-         e_store_type_limit_buy_59, //ÏŞÊ±ÉÌµê59
-         e_store_type_limit_buy_60, //ÏŞÊ±ÉÌµê60
-         e_store_type_limit_buy_61, //ÏŞÊ±ÉÌµê61
-         e_store_type_limit_buy_62, //ÏŞÊ±ÉÌµê62
-         e_store_type_limit_buy_63, //ÏŞÊ±ÉÌµê63
-         e_store_type_limit_buy_64, //ÏŞÊ±ÉÌµê64
-         e_store_type_limit_buy_65, //ÏŞÊ±ÉÌµê65
-         e_store_type_limit_buy_66, //ÏŞÊ±ÉÌµê66
-         e_store_type_limit_buy_67, //ÏŞÊ±ÉÌµê67
-         e_store_type_limit_buy_68, //ÏŞÊ±ÉÌµê68
-         e_store_type_limit_buy_69, //ÏŞÊ±ÉÌµê69
-         e_store_type_limit_buy_70, //ÏŞÊ±ÉÌµê70
-         e_store_type_limit_buy_71, //ÏŞÊ±ÉÌµê71
-         e_store_type_limit_buy_72, //ÏŞÊ±ÉÌµê72
-         e_store_type_limit_buy_73, //ÏŞÊ±ÉÌµê73
-         e_store_type_limit_buy_74, //ÏŞÊ±ÉÌµê74
-         e_store_type_limit_buy_75, //ÏŞÊ±ÉÌµê75
-         e_store_type_limit_buy_76, //ÏŞÊ±ÉÌµê76
-         e_store_type_limit_buy_77, //ÏŞÊ±ÉÌµê77
-         e_store_type_limit_buy_78, //ÏŞÊ±ÉÌµê78
-         e_store_type_limit_buy_79, //ÏŞÊ±ÉÌµê79
-         e_store_type_limit_buy_80, //ÏŞÊ±ÉÌµê80
-         e_store_type_limit_buy_81, //ÏŞÊ±ÉÌµê81
-         e_store_type_limit_buy_82, //ÏŞÊ±ÉÌµê82
-         e_store_type_limit_buy_83, //ÏŞÊ±ÉÌµê83
-         e_store_type_limit_buy_84, //ÏŞÊ±ÉÌµê84
-         e_store_type_limit_buy_85, //ÏŞÊ±ÉÌµê85
-         e_store_type_limit_buy_86, //ÏŞÊ±ÉÌµê86
-         e_store_type_limit_buy_87, //ÏŞÊ±ÉÌµê87
-         e_store_type_limit_buy_88, //ÏŞÊ±ÉÌµê88
-         e_store_type_limit_buy_89, //ÏŞÊ±ÉÌµê89
-         e_store_type_limit_buy_90, //ÏŞÊ±ÉÌµê90
-         e_store_type_limit_buy_91, //ÏŞÊ±ÉÌµê91
-         e_store_type_limit_buy_92, //ÏŞÊ±ÉÌµê92
-         e_store_type_limit_buy_93, //ÏŞÊ±ÉÌµê93
-         e_store_type_limit_buy_94, //ÏŞÊ±ÉÌµê94
-         e_store_type_limit_buy_95, //ÏŞÊ±ÉÌµê95
-         e_store_type_limit_buy_96, //ÏŞÊ±ÉÌµê96
-         e_store_type_limit_buy_97, //ÏŞÊ±ÉÌµê97
-         e_store_type_limit_buy_98, //ÏŞÊ±ÉÌµê98
-         e_store_type_limit_buy_99, //ÏŞÊ±ÉÌµê99
-         e_store_type_limit_buy_100, //ÏŞÊ±ÉÌµê100
-         e_store_type_limit_buy_101, //ÏŞÊ±ÉÌµê101
-         e_store_type_limit_buy_102, //ÏŞÊ±ÉÌµê102
-         e_store_type_limit_buy_103, //ÏŞÊ±ÉÌµê103
-         e_store_type_limit_buy_104, //ÏŞÊ±ÉÌµê104
-         e_store_type_limit_buy_105, //ÏŞÊ±ÉÌµê105
-         e_store_type_limit_buy_106, //ÏŞÊ±ÉÌµê106
-         e_store_type_limit_buy_107, //ÏŞÊ±ÉÌµê107
-         e_store_type_limit_buy_108, //ÏŞÊ±ÉÌµê108
-         e_store_type_limit_buy_109, //ÏŞÊ±ÉÌµê109
-         e_store_type_limit_buy_110, //ÏŞÊ±ÉÌµê110
-         e_store_type_limit_buy_111, //ÏŞÊ±ÉÌµê111
-         e_store_type_limit_buy_112, //ÏŞÊ±ÉÌµê112
-         e_store_type_limit_buy_113, //ÏŞÊ±ÉÌµê113
-         e_store_type_limit_buy_114, //ÏŞÊ±ÉÌµê114
-         e_store_type_limit_buy_115, //ÏŞÊ±ÉÌµê115
-         e_store_type_limit_buy_116, //ÏŞÊ±ÉÌµê116
-         e_store_type_limit_buy_117, //ÏŞÊ±ÉÌµê117
-         e_store_type_limit_buy_118, //ÏŞÊ±ÉÌµê118
-         e_store_type_limit_buy_119, //ÏŞÊ±ÉÌµê119
-         e_store_type_limit_buy_120, //ÏŞÊ±ÉÌµê120
-         e_store_type_limit_buy_121, //ÏŞÊ±ÉÌµê121
-         e_store_type_limit_buy_122, //ÏŞÊ±ÉÌµê122
-         e_store_type_limit_buy_123, //ÏŞÊ±ÉÌµê123
-         e_store_type_limit_buy_124, //ÏŞÊ±ÉÌµê124
-         e_store_type_limit_buy_125, //ÏŞÊ±ÉÌµê125
-         e_store_type_limit_buy_126, //ÏŞÊ±ÉÌµê126
-         e_store_type_limit_buy_127, //ÏŞÊ±ÉÌµê127
-         e_store_type_limit_buy_128, //ÏŞÊ±ÉÌµê128
-         e_store_type_limit_buy_129, //ÏŞÊ±ÉÌµê129
-         e_store_type_limit_buy_130, //ÏŞÊ±ÉÌµê130
-         e_store_type_limit_buy_131, //ÏŞÊ±ÉÌµê131
-         e_store_type_limit_buy_132, //ÏŞÊ±ÉÌµê132
-         e_store_type_limit_buy_133, //ÏŞÊ±ÉÌµê133
-         e_store_type_limit_buy_134, //ÏŞÊ±ÉÌµê134
-         e_store_type_limit_buy_135, //ÏŞÊ±ÉÌµê135
-         e_store_type_limit_buy_136, //ÏŞÊ±ÉÌµê136
-         e_store_type_limit_buy_137, //ÏŞÊ±ÉÌµê137
-         e_store_type_limit_buy_138, //ÏŞÊ±ÉÌµê138
-         e_store_type_limit_buy_139, //ÏŞÊ±ÉÌµê139
-         e_store_type_limit_buy_140, //ÏŞÊ±ÉÌµê140
+         e_store_type_non, //ç©º
+         e_store_type_recommend, //æ¨èå•†åº—
+         e_store_type_daily, //æ—¥å¸¸å•†åº—
+         e_store_type_expendables, //æ¶ˆè€—å“
+         e_store_type_bind_jewel_0, //ç»‘é’»å•†åº—_0
+         e_store_type_shape, //å¤–å½¢å•†åº—
+         e_store_type_limit_buy, //é™è´­å•†åº—
+         e_store_type_sprite_first, //ç²¾çµå…‘æ¢1
+         e_store_type_sprite_second, //ç²¾çµå…‘æ¢2
+         e_store_type_sprite_third, //ç²¾çµå…‘æ¢3
+         e_store_type_magic_crystal_first, //é­”æ™¶1
+         e_store_type_magic_crystal_second, //é­”æ™¶2
+         e_store_type_magic_crystal_third, //é­”æ™¶3
+         e_store_type_medicine, //è¯å“
+         e_store_type_prop, //é“å…·
+         e_store_type_hope_point_first, //ç¥ˆç¦ç§¯åˆ†1
+         e_store_type_hope_point_second, //ç¥ˆç¦ç§¯åˆ†2
+         e_store_type_hope_point_third, //ç¥ˆç¦ç§¯åˆ†3
+         e_store_type_legion, //å†›å›¢å•†åº—
+         e_store_type_hornor, //è£èª‰å•†åº—
+         e_store_type_assist_fighting, //åŠ©æˆ˜å•†åº—
+         e_store_type_fashion, //æ—¶è£…
+         e_store_type_bind_jewel_1, //ç»‘é’»å•†åº—_1
+         e_store_type_bind_jewel_2, //ç»‘é’»å•†åº—_2
+         e_store_type_treasure_royal, //å®è—å®çŸ³ç§¯åˆ†å•†åº—
+         e_store_type_treasure_element, //å®è—ç¬¦æ–‡ç§¯åˆ†å•†åº—
+         e_store_type_cross_server_buy, //è·¨æœå•†åº—
+         e_store_type_red_diamond, //çº¢é’»å•†åº—
+         e_store_type_cross_ladder_store, //è·¨æœå¤©æ¢¯è£èª‰å•†åº—
+         e_store_type_non_29, //é¢„ç•™
+         e_store_type_non_30, //é¢„ç•™
+         e_store_type_non_31, //é¢„ç•™
+         e_store_type_non_32, //é¢„ç•™
+         e_store_type_non_33, //é¢„ç•™
+         e_store_type_non_34, //é¢„ç•™
+         e_store_type_non_35, //é¢„ç•™
+         e_store_type_non_36, //é¢„ç•™
+         e_store_type_non_37, //é¢„ç•™
+         e_store_type_non_38, //é¢„ç•™
+         e_store_type_non_39, //é¢„ç•™
+         e_store_type_non_40, //é¢„ç•™
+         e_store_type_limit_buy_41, //é™æ—¶å•†åº—41
+         e_store_type_limit_buy_42, //é™æ—¶å•†åº—42
+         e_store_type_limit_buy_43, //é™æ—¶å•†åº—43
+         e_store_type_limit_buy_44, //é™æ—¶å•†åº—44
+         e_store_type_limit_buy_45, //é™æ—¶å•†åº—45
+         e_store_type_limit_buy_46, //é™æ—¶å•†åº—46
+         e_store_type_limit_buy_47, //é™æ—¶å•†åº—47
+         e_store_type_limit_buy_48, //é™æ—¶å•†åº—48
+         e_store_type_limit_buy_49, //é™æ—¶å•†åº—49
+         e_store_type_limit_buy_50, //é™æ—¶å•†åº—50
+         e_store_type_limit_buy_51, //é™æ—¶å•†åº—51
+         e_store_type_limit_buy_52, //é™æ—¶å•†åº—52
+         e_store_type_limit_buy_53, //é™æ—¶å•†åº—53
+         e_store_type_limit_buy_54, //é™æ—¶å•†åº—54
+         e_store_type_limit_buy_55, //é™æ—¶å•†åº—55
+         e_store_type_limit_buy_56, //é™æ—¶å•†åº—56
+         e_store_type_limit_buy_57, //é™æ—¶å•†åº—57
+         e_store_type_limit_buy_58, //é™æ—¶å•†åº—58
+         e_store_type_limit_buy_59, //é™æ—¶å•†åº—59
+         e_store_type_limit_buy_60, //é™æ—¶å•†åº—60
+         e_store_type_limit_buy_61, //é™æ—¶å•†åº—61
+         e_store_type_limit_buy_62, //é™æ—¶å•†åº—62
+         e_store_type_limit_buy_63, //é™æ—¶å•†åº—63
+         e_store_type_limit_buy_64, //é™æ—¶å•†åº—64
+         e_store_type_limit_buy_65, //é™æ—¶å•†åº—65
+         e_store_type_limit_buy_66, //é™æ—¶å•†åº—66
+         e_store_type_limit_buy_67, //é™æ—¶å•†åº—67
+         e_store_type_limit_buy_68, //é™æ—¶å•†åº—68
+         e_store_type_limit_buy_69, //é™æ—¶å•†åº—69
+         e_store_type_limit_buy_70, //é™æ—¶å•†åº—70
+         e_store_type_limit_buy_71, //é™æ—¶å•†åº—71
+         e_store_type_limit_buy_72, //é™æ—¶å•†åº—72
+         e_store_type_limit_buy_73, //é™æ—¶å•†åº—73
+         e_store_type_limit_buy_74, //é™æ—¶å•†åº—74
+         e_store_type_limit_buy_75, //é™æ—¶å•†åº—75
+         e_store_type_limit_buy_76, //é™æ—¶å•†åº—76
+         e_store_type_limit_buy_77, //é™æ—¶å•†åº—77
+         e_store_type_limit_buy_78, //é™æ—¶å•†åº—78
+         e_store_type_limit_buy_79, //é™æ—¶å•†åº—79
+         e_store_type_limit_buy_80, //é™æ—¶å•†åº—80
+         e_store_type_limit_buy_81, //é™æ—¶å•†åº—81
+         e_store_type_limit_buy_82, //é™æ—¶å•†åº—82
+         e_store_type_limit_buy_83, //é™æ—¶å•†åº—83
+         e_store_type_limit_buy_84, //é™æ—¶å•†åº—84
+         e_store_type_limit_buy_85, //é™æ—¶å•†åº—85
+         e_store_type_limit_buy_86, //é™æ—¶å•†åº—86
+         e_store_type_limit_buy_87, //é™æ—¶å•†åº—87
+         e_store_type_limit_buy_88, //é™æ—¶å•†åº—88
+         e_store_type_limit_buy_89, //é™æ—¶å•†åº—89
+         e_store_type_limit_buy_90, //é™æ—¶å•†åº—90
+         e_store_type_limit_buy_91, //é™æ—¶å•†åº—91
+         e_store_type_limit_buy_92, //é™æ—¶å•†åº—92
+         e_store_type_limit_buy_93, //é™æ—¶å•†åº—93
+         e_store_type_limit_buy_94, //é™æ—¶å•†åº—94
+         e_store_type_limit_buy_95, //é™æ—¶å•†åº—95
+         e_store_type_limit_buy_96, //é™æ—¶å•†åº—96
+         e_store_type_limit_buy_97, //é™æ—¶å•†åº—97
+         e_store_type_limit_buy_98, //é™æ—¶å•†åº—98
+         e_store_type_limit_buy_99, //é™æ—¶å•†åº—99
+         e_store_type_limit_buy_100, //é™æ—¶å•†åº—100
+         e_store_type_limit_buy_101, //é™æ—¶å•†åº—101
+         e_store_type_limit_buy_102, //é™æ—¶å•†åº—102
+         e_store_type_limit_buy_103, //é™æ—¶å•†åº—103
+         e_store_type_limit_buy_104, //é™æ—¶å•†åº—104
+         e_store_type_limit_buy_105, //é™æ—¶å•†åº—105
+         e_store_type_limit_buy_106, //é™æ—¶å•†åº—106
+         e_store_type_limit_buy_107, //é™æ—¶å•†åº—107
+         e_store_type_limit_buy_108, //é™æ—¶å•†åº—108
+         e_store_type_limit_buy_109, //é™æ—¶å•†åº—109
+         e_store_type_limit_buy_110, //é™æ—¶å•†åº—110
+         e_store_type_limit_buy_111, //é™æ—¶å•†åº—111
+         e_store_type_limit_buy_112, //é™æ—¶å•†åº—112
+         e_store_type_limit_buy_113, //é™æ—¶å•†åº—113
+         e_store_type_limit_buy_114, //é™æ—¶å•†åº—114
+         e_store_type_limit_buy_115, //é™æ—¶å•†åº—115
+         e_store_type_limit_buy_116, //é™æ—¶å•†åº—116
+         e_store_type_limit_buy_117, //é™æ—¶å•†åº—117
+         e_store_type_limit_buy_118, //é™æ—¶å•†åº—118
+         e_store_type_limit_buy_119, //é™æ—¶å•†åº—119
+         e_store_type_limit_buy_120, //é™æ—¶å•†åº—120
+         e_store_type_limit_buy_121, //é™æ—¶å•†åº—121
+         e_store_type_limit_buy_122, //é™æ—¶å•†åº—122
+         e_store_type_limit_buy_123, //é™æ—¶å•†åº—123
+         e_store_type_limit_buy_124, //é™æ—¶å•†åº—124
+         e_store_type_limit_buy_125, //é™æ—¶å•†åº—125
+         e_store_type_limit_buy_126, //é™æ—¶å•†åº—126
+         e_store_type_limit_buy_127, //é™æ—¶å•†åº—127
+         e_store_type_limit_buy_128, //é™æ—¶å•†åº—128
+         e_store_type_limit_buy_129, //é™æ—¶å•†åº—129
+         e_store_type_limit_buy_130, //é™æ—¶å•†åº—130
+         e_store_type_limit_buy_131, //é™æ—¶å•†åº—131
+         e_store_type_limit_buy_132, //é™æ—¶å•†åº—132
+         e_store_type_limit_buy_133, //é™æ—¶å•†åº—133
+         e_store_type_limit_buy_134, //é™æ—¶å•†åº—134
+         e_store_type_limit_buy_135, //é™æ—¶å•†åº—135
+         e_store_type_limit_buy_136, //é™æ—¶å•†åº—136
+         e_store_type_limit_buy_137, //é™æ—¶å•†åº—137
+         e_store_type_limit_buy_138, //é™æ—¶å•†åº—138
+         e_store_type_limit_buy_139, //é™æ—¶å•†åº—139
+         e_store_type_limit_buy_140, //é™æ—¶å•†åº—140
          e_store_type_max
      };
      enum e_element_heart_operate
      {
-         e_element_heart_operate_get_one, //³éÒ»¸ö
-         e_element_heart_operate_get_ten, //³éÊ®¸ö
-         e_element_heart_operate_upgrade, //Éı¼¶
-         e_element_heart_operate_equip_on, //×°±¸
-         e_element_heart_operate_equip_off, //Ğ¶ÏÂ
-         e_element_heart_operate_summon, //ÕÙ»½
-         e_element_heart_operate_tidy, //ÕûÀí
-         e_element_heart_operate_purchase_equip_slot, //Âò¸ñ×Ó
-         e_element_heart_operate_recovery, //³öÊÛ
-         e_element_heart_operate_common, //ÆÕÍ¨
-         e_element_heart_operate_superior, //¾«Á¼
-         e_element_heart_operate_rare, //Ï¡ÓĞ
-         e_element_heart_operate_epic, //Ê·Ê«
-         e_element_heart_operate_legend, //´«Ëµ
-         e_element_heart_operate_merge, //·ûÎÄÈÚºÏ
-         e_element_heart_operate_core_unlock, //ºËĞÄ·ûÎÄ½âËø
-         e_element_heart_operate_core_upgrade, //ºËĞÄ·ûÎÄÉı¼¶
+         e_element_heart_operate_get_one, //æŠ½ä¸€ä¸ª
+         e_element_heart_operate_get_ten, //æŠ½åä¸ª
+         e_element_heart_operate_upgrade, //å‡çº§
+         e_element_heart_operate_equip_on, //è£…å¤‡
+         e_element_heart_operate_equip_off, //å¸ä¸‹
+         e_element_heart_operate_summon, //å¬å”¤
+         e_element_heart_operate_tidy, //æ•´ç†
+         e_element_heart_operate_purchase_equip_slot, //ä¹°æ ¼å­
+         e_element_heart_operate_recovery, //å‡ºå”®
+         e_element_heart_operate_common, //æ™®é€š
+         e_element_heart_operate_superior, //ç²¾è‰¯
+         e_element_heart_operate_rare, //ç¨€æœ‰
+         e_element_heart_operate_epic, //å²è¯—
+         e_element_heart_operate_legend, //ä¼ è¯´
+         e_element_heart_operate_merge, //ç¬¦æ–‡èåˆ
+         e_element_heart_operate_core_unlock, //æ ¸å¿ƒç¬¦æ–‡è§£é”
+         e_element_heart_operate_core_upgrade, //æ ¸å¿ƒç¬¦æ–‡å‡çº§
          e_element_heart_operate_max
      };
      enum e_top_tip_type
      {
-         e_top_tip_type_normal, //ÆÕÍ¨ÏûÏ¢
-         e_top_tip_type_important, //ÖØÒªÍ¨Öª
+         e_top_tip_type_normal, //æ™®é€šæ¶ˆæ¯
+         e_top_tip_type_important, //é‡è¦é€šçŸ¥
          e_top_tip_type_max
      };
      enum e_sprite_operate
      {
-         e_sprite_operate_fight, //³öÕ½/ÕÙ»Ø
-         e_sprite_operate_equip, //×°±¸
-         e_sprite_operate_unequip, //Ğ¶ÏÂ
-         e_sprite_operate_upgrade, //Éı¼¶
-         e_sprite_operate_sell, //³öÊÛ
-         e_sprite_operate_send_to_item_bag, //ËÍ½ø±³°ü
-         e_sprite_operate_tidy, //ÕûÀí
-         e_sprite_operate_auto_sell, //×Ô¶¯³öÊÛ
-         e_sprite_operate_purchase_equip_slot, //¹ºÂò×°±¸²Û
-         e_sprite_operate_purchase_illusion, //¹ºÂò»Ã»¯
-         e_sprite_operate_use_illusion, //ÆôÓÃ»Ã»¯
-         e_sprite_operate_star_upgrade, //»êĞÇÉı¼¶
+         e_sprite_operate_fight, //å‡ºæˆ˜/å¬å›
+         e_sprite_operate_equip, //è£…å¤‡
+         e_sprite_operate_unequip, //å¸ä¸‹
+         e_sprite_operate_upgrade, //å‡çº§
+         e_sprite_operate_sell, //å‡ºå”®
+         e_sprite_operate_send_to_item_bag, //é€è¿›èƒŒåŒ…
+         e_sprite_operate_tidy, //æ•´ç†
+         e_sprite_operate_auto_sell, //è‡ªåŠ¨å‡ºå”®
+         e_sprite_operate_purchase_equip_slot, //è´­ä¹°è£…å¤‡æ§½
+         e_sprite_operate_purchase_illusion, //è´­ä¹°å¹»åŒ–
+         e_sprite_operate_use_illusion, //å¯ç”¨å¹»åŒ–
+         e_sprite_operate_star_upgrade, //é­‚æ˜Ÿå‡çº§
          e_sprite_operate_max
      };
      enum e_chat_type
      {
-         e_chat_type_none, //
-         e_chat_type_system, //ÏµÍ³ĞÅÏ¢
-         e_chat_type_world, //ÊÀ½çĞÅÏ¢
-         e_chat_type_legion, //¾üÍÅĞÅÏ¢
-         e_chat_type_team, //×é¶ÓĞÅÏ¢
-         e_chat_type_private, //Ë½ÁÄĞÅÏ¢
-         e_chat_type_near, //¸½½üaoi
-         e_chat_type_total, //ËùÓĞ×ÛºÏ ²»ÓÃÓÚ·¢ËÍÖ»ÓÃÓÚÏÔÊ¾
-         e_chat_type_friend, //ºÃÓÑÁÄÌì
-         e_chat_type_world_recruit, //ÊÀ½çÕĞÄ¼
-         e_chat_type_legion_recruit, //¾üÍÅÕĞÄ¼
-         e_chat_type_radio_host, //Ö÷²¥ÆµµÀ
-         e_chat_type_server, //¿ç·şÆµµÀ
-         e_chat_type_all_server, //´ó¿ç·şÆµµÀ
+         e_chat_type_none,
+         e_chat_type_system, //ç³»ç»Ÿä¿¡æ¯
+         e_chat_type_world, //ä¸–ç•Œä¿¡æ¯
+         e_chat_type_legion, //å†›å›¢ä¿¡æ¯
+         e_chat_type_team, //ç»„é˜Ÿä¿¡æ¯
+         e_chat_type_private, //ç§èŠä¿¡æ¯
+         e_chat_type_near, //é™„è¿‘aoi
+         e_chat_type_total, //æ‰€æœ‰ç»¼åˆ ä¸ç”¨äºå‘é€åªç”¨äºæ˜¾ç¤º
+         e_chat_type_friend, //å¥½å‹èŠå¤©
+         e_chat_type_world_recruit, //ä¸–ç•Œæ‹›å‹Ÿ
+         e_chat_type_legion_recruit, //å†›å›¢æ‹›å‹Ÿ
+         e_chat_type_radio_host, //ä¸»æ’­é¢‘é“
+         e_chat_type_server, //è·¨æœé¢‘é“
+         e_chat_type_all_server, //å¤§è·¨æœé¢‘é“
          e_chat_type_max
      };
      enum e_recharge_type
      {
-         e_recharge_type_none, //Î´³äÖµ
+         e_recharge_type_none, //æœªå……å€¼
          e_recharge_type_vip, //vip
-         e_recharge_type_month_card, //ÔÂ¿¨
-         e_recharge_type_exclusive, //×ğÏí
+         e_recharge_type_month_card, //æœˆå¡
+         e_recharge_type_exclusive, //å°Šäº«
          e_recharge_type_max
      };
      enum e_relationlist_type
      {
-         e_relationlist_type_friend, //ºÃÓÑÁĞ±í
-         e_relationlist_type_black, //ÆÁ±ÎÁĞ±í
-         e_relationlist_type_marry, //»éÒöÁĞ±í
-         e_relationlist_type_hate, //³ğºŞÁĞ±í
-         e_relationlist_type_friendex, //¿ç·şºÃÓÑÁĞ±í
-         e_relationlist_type_other_req_add, //ÇëÇóÌí¼ÓºÃÓÑÁĞ±í
-         e_relationlist_type_chat, //×î½üÁÄÌì
-         e_relationlist_type_lucky, //½áÔµ
-         e_relationlist_type_other_req_add_lucky, //ÇëÇó½áÔµÁĞ±í
+         e_relationlist_type_friend, //å¥½å‹åˆ—è¡¨
+         e_relationlist_type_black, //å±è”½åˆ—è¡¨
+         e_relationlist_type_marry, //å©šå§»åˆ—è¡¨
+         e_relationlist_type_hate, //ä»‡æ¨åˆ—è¡¨
+         e_relationlist_type_friendex, //è·¨æœå¥½å‹åˆ—è¡¨
+         e_relationlist_type_other_req_add, //è¯·æ±‚æ·»åŠ å¥½å‹åˆ—è¡¨
+         e_relationlist_type_chat, //æœ€è¿‘èŠå¤©
+         e_relationlist_type_lucky, //ç»“ç¼˜
+         e_relationlist_type_other_req_add_lucky, //è¯·æ±‚ç»“ç¼˜åˆ—è¡¨
          e_relationlist_type_max
      };
      enum e_first_kill_prize_type
      {
-         e_first_kill_prize_type_cant_get, //Ê×É±Ã»³öÏÖ£¬²»ÄÜÁìÈ¡Ê×É±½±Àø
-         e_first_kill_prize_type_not_get, //Ã»ÓĞÁìÈ¡Ê×É±½±Àø
-         e_first_kill_prize_type_was_get, //ÁìÈ¡¹ıÊ×É±½±Àø
+         e_first_kill_prize_type_cant_get, //é¦–æ€æ²¡å‡ºç°ï¼Œä¸èƒ½é¢†å–é¦–æ€å¥–åŠ±
+         e_first_kill_prize_type_not_get, //æ²¡æœ‰é¢†å–é¦–æ€å¥–åŠ±
+         e_first_kill_prize_type_was_get, //é¢†å–è¿‡é¦–æ€å¥–åŠ±
          e_first_kill_prize_type_max
      };
      enum e_service_goal_state
      {
-         e_service_goal_state_unfinished, //Î´Íê³É
-         e_service_goal_state_finished, //Íê³É
-         e_service_goal_state_has_been_received, //ÒÑÁìÈ¡
+         e_service_goal_state_unfinished, //æœªå®Œæˆ
+         e_service_goal_state_finished, //å®Œæˆ
+         e_service_goal_state_has_been_received, //å·²é¢†å–
          e_service_goal_state_max
      };
      enum e_service_goal_inst_data
      {
          e_service_goal_inst_data_id, //id
-         e_service_goal_inst_data_schedule, //½ø¶È
-         e_service_goal_inst_data_state, //×´Ì¬
-         e_service_goal_inst_data_active_state, //¼¤»î×´Ì¬
-         e_service_goal_inst_data_over_time, //µ½ÆÚÊ±¼ä
+         e_service_goal_inst_data_schedule, //è¿›åº¦
+         e_service_goal_inst_data_state, //çŠ¶æ€
+         e_service_goal_inst_data_active_state, //æ¿€æ´»çŠ¶æ€
+         e_service_goal_inst_data_over_time, //åˆ°æœŸæ—¶é—´
          e_service_goal_inst_data_max
      };
      enum e_service_goal_operate_type
      {
-         e_service_goal_operate_type_none, //
-         e_service_goal_operate_type_receive, //ÁìÈ¡
+         e_service_goal_operate_type_none,
+         e_service_goal_operate_type_receive, //é¢†å–
          e_service_goal_operate_type_max
      };
      enum e_service_goal_type
      {
-         e_service_goal_type_role_level, //µÈ¼¶
-         e_service_goal_type_role_gs, //Õ½Á¦
-         e_service_goal_type_big_reward, //´ó½±
-         e_service_goal_type_strength_any, //N¼şÇ¿»¯µÈ¼¶
-         e_service_goal_type_addition_the_body, //È«Éí×·¼ÓµÈ¼¶
-         e_service_goal_type_mount_level, //×øÆï¼¸¼¶½×¼¸ĞÇ
-         e_service_goal_type_mount_num, //ÓµÓĞ¼¸¸ö×øÆï
-         e_service_goal_type_friend_num, //ÓµÓĞN¸öºÃÓÑ
-         e_service_goal_type_friendliness, //ºÃÓÑ¶È
-         e_service_goal_type_clearance_fuben, //Í¨¹Ø¹ıXX¸±±¾
-         e_service_goal_type_body_has_color_equip, //È«Éí×°±¸N¼şN½××ÏÉ«Æ·ÖÊÒÔÉÏ×°±¸
-         e_service_goal_type_legion_donate_num, //¾üÍÅ¾èÔù´ÎÊı
-         e_service_goal_type_soldier_rank_level, //¾üÏÎµÈ¼¶
-         e_service_goal_type_arena_rank_level, //¾º¼¼³¡ÅÅÃû
-         e_service_goal_type_actived_illustration_num, //¼¤»îN¸öÍ¼¼ø
-         e_service_goal_type_actived_any_chapter_illustration, //¼¤»îÈÎÒâÒ»ÕÂ½ÚÍ¼¼ø
-         e_service_goal_type_demons_tower_layer_num, //ÍòÄ§Ëş²ãÊı
-         e_service_goal_type_achievement_title, //³É¾Í³ÆºÅ
-         e_service_goal_type_wing_level, //ÓğÒíN½×NĞÇ
-         e_service_goal_type_element_heart_total_level, //·ûÎÄ×ÜµÈ¼¶
-         e_service_goal_type_equiped_element_heart_num, //ÓµÓĞXÆ·ÖÊ·ûÎÄ
-         e_service_goal_type_equiped_spirit_total_level, //¾«Áé×ÜµÈ¼¶
-         e_service_goal_type_equiped_spirit_num, //×°±¸¾«ÁéÊı
-         e_service_goal_type_belief_rank, //ĞÅÑö½×Êı Çø·ÖÖ°Òµ
-         e_service_goal_type_get_all_reward, //ÁìÈ¡Ç°ÁùÈÕËùÓĞ½ø½×½±Àø
-         e_service_goal_type_final, //×îÖÕ´ó½±
-         e_service_goal_type_god_hood_grade, //Éñ¸ñÍ»ÆÆµÈ¼¶
-         e_service_goal_type_seven_day_final, //ÆßÈÕ×îÖÕ´ó½±
-         e_service_goal_type_no_limit_time_final, //·ÇÏŞÊ±´ó½±
-         e_service_goal_type_awaken_level, //¾õĞÑ×°±¸µÈ¼¶
+         e_service_goal_type_role_level, //ç­‰çº§
+         e_service_goal_type_role_gs, //æˆ˜åŠ›
+         e_service_goal_type_big_reward, //å¤§å¥–
+         e_service_goal_type_strength_any, //Nä»¶å¼ºåŒ–ç­‰çº§
+         e_service_goal_type_addition_the_body, //å…¨èº«è¿½åŠ ç­‰çº§
+         e_service_goal_type_mount_level, //åéª‘å‡ çº§é˜¶å‡ æ˜Ÿ
+         e_service_goal_type_mount_num, //æ‹¥æœ‰å‡ ä¸ªåéª‘
+         e_service_goal_type_friend_num, //æ‹¥æœ‰Nä¸ªå¥½å‹
+         e_service_goal_type_friendliness, //å¥½å‹åº¦
+         e_service_goal_type_clearance_fuben, //é€šå…³è¿‡XXå‰¯æœ¬
+         e_service_goal_type_body_has_color_equip, //å…¨èº«è£…å¤‡Nä»¶Né˜¶ç´«è‰²å“è´¨ä»¥ä¸Šè£…å¤‡
+         e_service_goal_type_legion_donate_num, //å†›å›¢æèµ æ¬¡æ•°
+         e_service_goal_type_soldier_rank_level, //å†›è¡”ç­‰çº§
+         e_service_goal_type_arena_rank_level, //ç«æŠ€åœºæ’å
+         e_service_goal_type_actived_illustration_num, //æ¿€æ´»Nä¸ªå›¾é‰´
+         e_service_goal_type_actived_any_chapter_illustration, //æ¿€æ´»ä»»æ„ä¸€ç« èŠ‚å›¾é‰´
+         e_service_goal_type_demons_tower_layer_num, //ä¸‡é­”å¡”å±‚æ•°
+         e_service_goal_type_achievement_title, //æˆå°±ç§°å·
+         e_service_goal_type_wing_level, //ç¾½ç¿¼Né˜¶Næ˜Ÿ
+         e_service_goal_type_element_heart_total_level, //ç¬¦æ–‡æ€»ç­‰çº§
+         e_service_goal_type_equiped_element_heart_num, //æ‹¥æœ‰Xå“è´¨ç¬¦æ–‡
+         e_service_goal_type_equiped_spirit_total_level, //ç²¾çµæ€»ç­‰çº§
+         e_service_goal_type_equiped_spirit_num, //è£…å¤‡ç²¾çµæ•°
+         e_service_goal_type_belief_rank, //ä¿¡ä»°é˜¶æ•° åŒºåˆ†èŒä¸š
+         e_service_goal_type_get_all_reward, //é¢†å–å‰å…­æ—¥æ‰€æœ‰è¿›é˜¶å¥–åŠ±
+         e_service_goal_type_final, //æœ€ç»ˆå¤§å¥–
+         e_service_goal_type_god_hood_grade, //ç¥æ ¼çªç ´ç­‰çº§
+         e_service_goal_type_seven_day_final, //ä¸ƒæ—¥æœ€ç»ˆå¤§å¥–
+         e_service_goal_type_no_limit_time_final, //éé™æ—¶å¤§å¥–
+         e_service_goal_type_awaken_level, //è§‰é†’è£…å¤‡ç­‰çº§
          e_service_goal_type_max
      };
      enum e_service_goal_active_type
      {
-         e_service_goal_active_type_basis, //»ù´¡
-         e_service_goal_active_type_advance, //½ø½×
-         e_service_goal_active_type_final, //×îÖÕ´ó½±
-         e_service_goal_active_type_seven_day, //Ç°7ÌìÄ¿±ê
+         e_service_goal_active_type_basis, //åŸºç¡€
+         e_service_goal_active_type_advance, //è¿›é˜¶
+         e_service_goal_active_type_final, //æœ€ç»ˆå¤§å¥–
+         e_service_goal_active_type_seven_day, //å‰7å¤©ç›®æ ‡
          e_service_goal_active_type_max
      };
      enum e_team_operate
      {
-         e_team_operate_follow_cap, //¸úËæ¶Ó³¤
-         e_team_operate_urge_cap, //´ß´Ù¶Ó³¤
-         e_team_operate_call_together, //ÕÙ¼¯¶ÓÔ±
-         e_team_operate_urge_together, //´ß´Ù¶ÓÔ±
+         e_team_operate_follow_cap, //è·Ÿéšé˜Ÿé•¿
+         e_team_operate_urge_cap, //å‚¬ä¿ƒé˜Ÿé•¿
+         e_team_operate_call_together, //å¬é›†é˜Ÿå‘˜
+         e_team_operate_urge_together, //å‚¬ä¿ƒé˜Ÿå‘˜
          e_team_operate_max
      };
      enum e_relation_operate_result
      {
-         e_relation_operate_result_success, //³É¹¦
-         e_relation_operate_result_offline, //¶Ô·½²»ÔÚÏß
-         e_relation_operate_result_add_friend_success, //Ìí¼ÓºÃÓÑ³É¹¦
-         e_relation_operate_result_del_friend_success, //É¾³ı³É¹¦
-         e_relation_operate_result_add_black_success, //Ìí¼ÓºÚÃûµ¥³É¹¦
-         e_relation_operate_result_del_black_success, //É¾³ıºÚÃûµ¥³É¹¦
-         e_relation_operate_result_add_hate_success, //Ìí¼Ó³ğÈË³É¹¦
-         e_relation_operate_result_add_friend_all_once, //Ò»¼üÌí¼Ó³É¹¦
-         e_relation_operate_result_cant_operate_self, //²»ÔÊĞí²Ù×÷×Ô¼º
-         e_relation_operate_result_friend_list_full, //ºÃÓÑÁĞ±íÂúÁË
-         e_relation_operate_result_hate_list_full, //³ğºŞÁĞ±íÂúÁË
-         e_relation_operate_result_black_list_full, //ÆÁ±ÎÁĞ±íÂúÁË
-         e_relation_operate_result_friend_exist, //ºÃÓÑÒÑ´æÔÚ
-         e_relation_operate_result_black_exist, //ÆÁ±ÎÍæ¼ÒÒÑ¾­´æÔÚ
-         e_relation_operate_result_hate_exist, //³ğÈËÒÑ´æÔÚ
-         e_relation_operate_result_too_fast, //ËÑË÷¹ı¿ì
-         e_relation_operate_result_req_friend_success, //
-         e_relation_operate_result_pass_req_friend, //
-         e_relation_operate_result_other_add_friend, //¼ÓÈë´ıÍ¬ÒâÁĞ±í
-         e_relation_operate_result_other_is_cross_server, //¶Ô·½ÊÇ¿ç·şÍæ¼Ò½ûÖ¹Ìí¼ÓºÃÓÑ
+         e_relation_operate_result_success, //æˆåŠŸ
+         e_relation_operate_result_offline, //å¯¹æ–¹ä¸åœ¨çº¿
+         e_relation_operate_result_add_friend_success, //æ·»åŠ å¥½å‹æˆåŠŸ
+         e_relation_operate_result_del_friend_success, //åˆ é™¤æˆåŠŸ
+         e_relation_operate_result_add_black_success, //æ·»åŠ é»‘åå•æˆåŠŸ
+         e_relation_operate_result_del_black_success, //åˆ é™¤é»‘åå•æˆåŠŸ
+         e_relation_operate_result_add_hate_success, //æ·»åŠ ä»‡äººæˆåŠŸ
+         e_relation_operate_result_add_friend_all_once, //ä¸€é”®æ·»åŠ æˆåŠŸ
+         e_relation_operate_result_cant_operate_self, //ä¸å…è®¸æ“ä½œè‡ªå·±
+         e_relation_operate_result_friend_list_full, //å¥½å‹åˆ—è¡¨æ»¡äº†
+         e_relation_operate_result_hate_list_full, //ä»‡æ¨åˆ—è¡¨æ»¡äº†
+         e_relation_operate_result_black_list_full, //å±è”½åˆ—è¡¨æ»¡äº†
+         e_relation_operate_result_friend_exist, //å¥½å‹å·²å­˜åœ¨
+         e_relation_operate_result_black_exist, //å±è”½ç©å®¶å·²ç»å­˜åœ¨
+         e_relation_operate_result_hate_exist, //ä»‡äººå·²å­˜åœ¨
+         e_relation_operate_result_too_fast, //æœç´¢è¿‡å¿«
+         e_relation_operate_result_req_friend_success,
+         e_relation_operate_result_pass_req_friend,
+         e_relation_operate_result_other_add_friend, //åŠ å…¥å¾…åŒæ„åˆ—è¡¨
+         e_relation_operate_result_other_is_cross_server, //å¯¹æ–¹æ˜¯è·¨æœç©å®¶ç¦æ­¢æ·»åŠ å¥½å‹
          e_relation_operate_result_max
      };
      enum e_item_wing_type
      {
-         e_item_wing_type_non, //¿Õ
-         e_item_wing_type_normal, //ÆÕÍ¨³á°ò
-         e_item_wing_type_shape_no_illusion, //ÎŞ»Ã»¯ÍâĞÎ³á°ò
-         e_item_wing_type_shape_illusion, //ÓĞ»Ã»¯µÄÍâĞÎ³á°ò
-         e_item_wing_type_illusion, //»Ã»¯µÄ³á°ò
-         e_item_wing_type_special_santo, //³ÇÖ÷³á°ò
+         e_item_wing_type_non, //ç©º
+         e_item_wing_type_normal, //æ™®é€šç¿…è†€
+         e_item_wing_type_shape_no_illusion, //æ— å¹»åŒ–å¤–å½¢ç¿…è†€
+         e_item_wing_type_shape_illusion, //æœ‰å¹»åŒ–çš„å¤–å½¢ç¿…è†€
+         e_item_wing_type_illusion, //å¹»åŒ–çš„ç¿…è†€
+         e_item_wing_type_special_santo, //åŸä¸»ç¿…è†€
          e_item_wing_type_max
      };
      enum e_convert_type
      {
-         e_convert_type_bind_siliver, //°ó½ğ
-         e_convert_type_exp, //¾­Ñé
-         e_convert_type_bind_diamond, //°ó¶¨×êÊ¯
-         e_convert_type_bag_bind_siliver, //±³°ü°ó½ğ
-         e_convert_type_bag_siliver, //±³°ü½ğ±Ò
+         e_convert_type_bind_siliver, //ç»‘é‡‘
+         e_convert_type_exp, //ç»éªŒ
+         e_convert_type_bind_diamond, //ç»‘å®šé’»çŸ³
+         e_convert_type_bag_bind_siliver, //èƒŒåŒ…ç»‘é‡‘
+         e_convert_type_bag_siliver, //èƒŒåŒ…é‡‘å¸
          e_convert_type_max
      };
      enum e_belief_series_type
      {
-         e_belief_series_type_spring, //»ğ
-         e_belief_series_type_summer, //±ù
-         e_belief_series_type_autumn, //¹â
-         e_belief_series_type_winter, //°µ
+         e_belief_series_type_spring, //ç«
+         e_belief_series_type_summer, //å†°
+         e_belief_series_type_autumn, //å…‰
+         e_belief_series_type_winter, //æš—
          e_belief_series_type_max
      };
      enum e_belief_buff_level
      {
-         e_belief_buff_level_index_first, //Ò»½×¶Î
-         e_belief_buff_level_index_second, //¶ş½×¶Î
-         e_belief_buff_level_index_third, //Èı½×¶Î
+         e_belief_buff_level_index_first, //ä¸€é˜¶æ®µ
+         e_belief_buff_level_index_second, //äºŒé˜¶æ®µ
+         e_belief_buff_level_index_third, //ä¸‰é˜¶æ®µ
          e_belief_buff_level_max
      };
      enum e_legion_call_type
      {
-         e_legion_call_type_call_legion_boss, //¾üÍÅbossÕÙ¼¯
-         e_legion_call_type_call_city_war, //ÁìÍÁÕù¶áÕÙ¼¯
-         e_legion_call_type_call_bonfire, //óô»ğÕÙ¼¯
-         e_legion_call_type_call_elite_boss, //¾«Ó¢ÌÖ·¥ÕÙ¼¯
-         e_legion_call_type_call_world_boss, //ÊÀ½çÁìÖ÷ÕÙ¼¯
+         e_legion_call_type_call_legion_boss, //å†›å›¢bosså¬é›†
+         e_legion_call_type_call_city_war, //é¢†åœŸäº‰å¤ºå¬é›†
+         e_legion_call_type_call_bonfire, //ç¯ç«å¬é›†
+         e_legion_call_type_call_elite_boss, //ç²¾è‹±è®¨ä¼å¬é›†
+         e_legion_call_type_call_world_boss, //ä¸–ç•Œé¢†ä¸»å¬é›†
          e_legion_call_type_max
      };
      enum e_reduce_pk_value_prop_quality
      {
-         e_reduce_pk_value_prop_quality_low, //µÍÆ·ÖÊ
-         e_reduce_pk_value_prop_quality_mid, //ÖĞÆ·ÖÊ
-         e_reduce_pk_value_prop_quality_high, //¸ßÆ·ÖÊ
+         e_reduce_pk_value_prop_quality_low, //ä½å“è´¨
+         e_reduce_pk_value_prop_quality_mid, //ä¸­å“è´¨
+         e_reduce_pk_value_prop_quality_high, //é«˜å“è´¨
          e_reduce_pk_value_prop_quality_max
      };
      enum e_spirit_operate_result
      {
-         e_spirit_operate_result_unknown, //
-         e_spirit_operate_result_success, //³É¹¦
-         e_spirit_operate_result_no_space, //°üÂú
+         e_spirit_operate_result_unknown,
+         e_spirit_operate_result_success, //æˆåŠŸ
+         e_spirit_operate_result_no_space, //åŒ…æ»¡
          e_spirit_operate_result_max
      };
      enum e_daily_must_do_typ
      {
-         e_daily_must_do_typ_raid_exp, ////¾­Ñé¸±±¾
-         e_daily_must_do_typ_raid_daily, ////ÈÕ³£ÈÎÎñ
-         e_daily_must_do_typ_raid_devil_square, ////×çÖäÉñµî
-         e_daily_must_do_typ_raid_ancient_battlefield, ////ÉÏ¹ÅÕ½³¡
-         e_daily_must_do_typ_raid_siliver, ////½ğ±Ò¸±±¾
-         e_daily_must_do_typ_community_fight, ////ÕóÓªÕ½
-         e_daily_must_do_typ_raid_drame, ////¾çÇé¸±±¾
-         e_daily_must_do_typ_bloody_castle, ////µÛ¹úÒÅ²Ø
-         e_daily_must_do_typ_raid_multiple_princess_guard_war, ////Å®Éñ±£ÎÀ
-         e_daily_must_do_typ_raid_multiple_lava_hellfire, ////ÈÛÑÒÁ¶Óü
-         e_daily_must_do_typ_raid_multiple_abyss_of_fear, ////¿Ö¾åÉîÔ¨
-         e_daily_must_do_typ_demon_tower, ////ÍòÄ§Ëş
-         e_daily_must_do_typ_angel_temple, ////ÆÆËéĞé¿Õ
-         e_daily_must_do_typ_pk_king, ////PKÖ®Íõ
-         e_daily_must_do_typ_arena, ////¾º¼¼³¡
-         e_daily_must_do_typ_crusade_mission, ////ÌÖ·¥ÈÎÎñ
-         e_daily_must_do_typ_crystal_illusion, ////Ë®¾§»Ã¾³
-         e_daily_must_do_typ_mingmie_xukong, ////ÎŞ¾¡Ö®º£
-         e_daily_must_do_typ_out_board, ////¹Ò»ú
-         e_daily_must_do_typ_convert, ////×ª»»
-         e_daily_must_do_typ_rank, ////ÅÅĞĞ°ñ
-         e_daily_must_do_typ_gold_army, ////ÊÀ½ç¾«Ó¢
-         e_daily_must_do_typ_world_boss, ////ÊÀ½çBoss
-         e_daily_must_do_typ_sky_treasure_box, ////Ìì¿Õ±¦Ïä
-         e_daily_must_do_typ_field_treasure_box, ////Ò°Íâ±¦Ïä
-         e_daily_must_do_typ_legion_boss, ////Õ½ÃËBoss
-         e_daily_must_do_typ_meditation, ////Ú¤Ïë
-         e_daily_must_do_typ_activaty_degree, ////»îÔ¾¶È
-         e_daily_must_do_typ_city_war, ////³ÇÕ½
-         e_daily_must_do_typ_cross_fight, ////¿ç·ş
-         e_daily_must_do_typ_gold_store, ////½ğ±ÒÉÌµê
-         e_daily_must_do_typ_magic_crystal_store, ////Ä§¾§ÉÌµê
-         e_daily_must_do_typ_ancient_coin_store, ////¹Å±ÒÉÌµê
-         e_daily_must_do_typ_hope_store, ////Æí¸£ÉÌµê
-         e_daily_must_do_typ_legion_store, ////¾üÍÅÉÌµê
-         e_daily_must_do_typ_hope_item, ////Æí¸£
-         e_daily_must_do_typ_shop, ////ÉÌ³Ç
-         e_daily_must_do_typ_legion_bonfire, ////¾üÍÅóô»ğ
-         e_daily_must_do_typ_legion_war, ////¾üÍÅÕ½
-         e_daily_must_do_typ_boss_home, ////´ò±¦Ò°Íâboss
-         e_daily_must_do_typ_boss_island, ////Ìì¿Õµº
-         e_daily_must_do_typ_belief_cloister, ////ĞÅÑö»ØÀÈ
-         e_daily_must_do_typ_cross_pk, ////¿ç·ş¾º¼¼
-         e_daily_must_do_typ_cross_rob, ////¿ç·şÂÓ¶á
-         e_daily_must_do_typ_legion_dance, ////¾üÍÅ¹²Îè
-         e_daily_must_do_typ_legion_answer, ////¾üÍÅ´ğÌâ
-         e_daily_must_do_typ_cross_ladder, ////¿ç·şÌìÌİ
-         e_daily_must_do_typ_single_boss, ////¸öÈËboss
-         e_daily_must_do_typ_element_war, ////ÔªËØÕù°Ô
-         e_daily_must_do_typ_vip_boss_home, ////bossÖ®¼Ò
-         e_daily_must_do_typ_cross_server_boss, ////¿ç·şÊÀ½çboss
-         e_daily_must_do_typ_oracle_trial, ////ÌìÆôÊÔÁ¶
-         e_daily_must_do_typ_attack_city, ////¹¥³ÇÕ½
+         e_daily_must_do_typ_raid_exp, ////ç»éªŒå‰¯æœ¬
+         e_daily_must_do_typ_raid_daily, ////æ—¥å¸¸ä»»åŠ¡
+         e_daily_must_do_typ_raid_devil_square, ////è¯…å’’ç¥æ®¿
+         e_daily_must_do_typ_raid_ancient_battlefield, ////ä¸Šå¤æˆ˜åœº
+         e_daily_must_do_typ_raid_siliver, ////é‡‘å¸å‰¯æœ¬
+         e_daily_must_do_typ_community_fight, ////é˜µè¥æˆ˜
+         e_daily_must_do_typ_raid_drame, ////å‰§æƒ…å‰¯æœ¬
+         e_daily_must_do_typ_bloody_castle, ////å¸å›½é—è—
+         e_daily_must_do_typ_raid_multiple_princess_guard_war, ////å¥³ç¥ä¿å«
+         e_daily_must_do_typ_raid_multiple_lava_hellfire, ////ç†”å²©ç‚¼ç‹±
+         e_daily_must_do_typ_raid_multiple_abyss_of_fear, ////ææƒ§æ·±æ¸Š
+         e_daily_must_do_typ_demon_tower, ////ä¸‡é­”å¡”
+         e_daily_must_do_typ_angel_temple, ////ç ´ç¢è™šç©º
+         e_daily_must_do_typ_pk_king, ////PKä¹‹ç‹
+         e_daily_must_do_typ_arena, ////ç«æŠ€åœº
+         e_daily_must_do_typ_crusade_mission, ////è®¨ä¼ä»»åŠ¡
+         e_daily_must_do_typ_crystal_illusion, ////æ°´æ™¶å¹»å¢ƒ
+         e_daily_must_do_typ_mingmie_xukong, ////æ— å°½ä¹‹æµ·
+         e_daily_must_do_typ_out_board, ////æŒ‚æœº
+         e_daily_must_do_typ_convert, ////è½¬æ¢
+         e_daily_must_do_typ_rank, ////æ’è¡Œæ¦œ
+         e_daily_must_do_typ_gold_army, ////ä¸–ç•Œç²¾è‹±
+         e_daily_must_do_typ_world_boss, ////ä¸–ç•ŒBoss
+         e_daily_must_do_typ_sky_treasure_box, ////å¤©ç©ºå®ç®±
+         e_daily_must_do_typ_field_treasure_box, ////é‡å¤–å®ç®±
+         e_daily_must_do_typ_legion_boss, ////æˆ˜ç›ŸBoss
+         e_daily_must_do_typ_meditation, ////å†¥æƒ³
+         e_daily_must_do_typ_activaty_degree, ////æ´»è·ƒåº¦
+         e_daily_must_do_typ_city_war, ////åŸæˆ˜
+         e_daily_must_do_typ_cross_fight, ////è·¨æœ
+         e_daily_must_do_typ_gold_store, ////é‡‘å¸å•†åº—
+         e_daily_must_do_typ_magic_crystal_store, ////é­”æ™¶å•†åº—
+         e_daily_must_do_typ_ancient_coin_store, ////å¤å¸å•†åº—
+         e_daily_must_do_typ_hope_store, ////ç¥ˆç¦å•†åº—
+         e_daily_must_do_typ_legion_store, ////å†›å›¢å•†åº—
+         e_daily_must_do_typ_hope_item, ////ç¥ˆç¦
+         e_daily_must_do_typ_shop, ////å•†åŸ
+         e_daily_must_do_typ_legion_bonfire, ////å†›å›¢ç¯ç«
+         e_daily_must_do_typ_legion_war, ////å†›å›¢æˆ˜
+         e_daily_must_do_typ_boss_home, ////æ‰“å®é‡å¤–boss
+         e_daily_must_do_typ_boss_island, ////å¤©ç©ºå²›
+         e_daily_must_do_typ_belief_cloister, ////ä¿¡ä»°å›å»Š
+         e_daily_must_do_typ_cross_pk, ////è·¨æœç«æŠ€
+         e_daily_must_do_typ_cross_rob, ////è·¨æœæ å¤º
+         e_daily_must_do_typ_legion_dance, ////å†›å›¢å…±èˆ
+         e_daily_must_do_typ_legion_answer, ////å†›å›¢ç­”é¢˜
+         e_daily_must_do_typ_cross_ladder, ////è·¨æœå¤©æ¢¯
+         e_daily_must_do_typ_single_boss, ////ä¸ªäººboss
+         e_daily_must_do_typ_element_war, ////å…ƒç´ äº‰éœ¸
+         e_daily_must_do_typ_vip_boss_home, ////bossä¹‹å®¶
+         e_daily_must_do_typ_cross_server_boss, ////è·¨æœä¸–ç•Œboss
+         e_daily_must_do_typ_oracle_trial, ////å¤©å¯è¯•ç‚¼
+         e_daily_must_do_typ_attack_city, ////æ”»åŸæˆ˜
          e_daily_must_do_typ_max
      };
      enum e_daily_active_degree_type
      {
-         e_daily_active_degree_type_cost_one_diamond, //ÉÌ³ÇÏû·Ñ1×ê
-         e_daily_active_degree_type_ten_daily_mission, //ÈÕ³£ÈÎÎñ10
-         e_daily_active_degree_type_three_normal_raid, //Í¨¹Ø3´ÎÆÕÍ¨¸±±¾
-         e_daily_active_degree_type_three_elite_raid, //Í¨¹Ø3´Î¾«Ó¢¸±±¾
-         e_daily_active_degree_type_three_hell_raid, //Í¨¹Ø3´ÎÁ¶Óü¸±±¾
-         e_daily_active_degree_type_empire_raid, //²ÎÓë1´ÎµÛ¹úÒÅ²Ø
-         e_daily_active_degree_type_temple_raid, //²ÎÓë1´Î×çÖäÉñµî
-         e_daily_active_degree_type_warp_raid, //²ÎÓë1´Î¿ÕÕ½±¾
-         e_daily_active_degree_type_three_upgrade, //Ç¿»¯ÈÎÒâ×°±¸3´Î
-         e_daily_active_degree_type_three_addon, //×·¼ÓÈÎÒâ×°±¸3´Î
-         e_daily_active_degree_type_kill_200_monster, //»÷É±200¸ö¹ÖÎï
-         e_daily_active_degree_type_kill_500_monster, //»÷É±500¸ö¹ÖÎï
-         e_daily_active_degree_type_kill_1000_monster, //»÷É±1000¸ö¹ÖÎï
-         e_daily_active_degree_type_login, //µÇÂ¼ÓÎÏ·
-         e_daily_active_degree_type_online_30_minutes, //ÔÚÏß30·ÖÖÓ
-         e_daily_active_degree_type_strengthing_one_spirit, //Ç¿»¯ÈÎÒâ¾«Áé1´Î
-         e_daily_active_degree_type_strengthing_one_mount, //Ç¿»¯ÈÎÒâ×øÆï1´Î
-         e_daily_active_degree_type_strengthing_one_wing, //Ç¿»¯ÈÎÒâÓğÒí1´Î
-         e_daily_active_degree_type_upgrade_one_element_heart, //Éı¼¶ÈÎÒâ·ûÎÄ1´Î
-         e_daily_active_degree_type_upgrade_one_patron_saint, //Éı¼¶ÊØ»¤Éñ1´Î
-         e_daily_active_degree_type_upgrade_one_belief, //Éı¼¶ÈÎÒâĞÅÑö1´Î
-         e_daily_active_degree_type_submit_one_illustration, //Ìá½»1´ÎÍ¼¼ø
-         e_daily_active_degree_type_attend_three_arena, //²Î¼Ó3´Î¾º¼¼³¡
-         e_daily_active_degree_type_attend_one_city_war, //²Î¼Ó³ÇÕ½1
-         e_daily_active_degree_type_attend_one_legion_war, //²Î¼Ó³ÇÕ½2£¬¾üÍÅÕ½
+         e_daily_active_degree_type_cost_one_diamond, //å•†åŸæ¶ˆè´¹1é’»
+         e_daily_active_degree_type_ten_daily_mission, //æ—¥å¸¸ä»»åŠ¡10
+         e_daily_active_degree_type_three_normal_raid, //é€šå…³3æ¬¡æ™®é€šå‰¯æœ¬
+         e_daily_active_degree_type_three_elite_raid, //é€šå…³3æ¬¡ç²¾è‹±å‰¯æœ¬
+         e_daily_active_degree_type_three_hell_raid, //é€šå…³3æ¬¡ç‚¼ç‹±å‰¯æœ¬
+         e_daily_active_degree_type_empire_raid, //å‚ä¸1æ¬¡å¸å›½é—è—
+         e_daily_active_degree_type_temple_raid, //å‚ä¸1æ¬¡è¯…å’’ç¥æ®¿
+         e_daily_active_degree_type_warp_raid, //å‚ä¸1æ¬¡ç©ºæˆ˜æœ¬
+         e_daily_active_degree_type_three_upgrade, //å¼ºåŒ–ä»»æ„è£…å¤‡3æ¬¡
+         e_daily_active_degree_type_three_addon, //è¿½åŠ ä»»æ„è£…å¤‡3æ¬¡
+         e_daily_active_degree_type_kill_200_monster, //å‡»æ€200ä¸ªæ€ªç‰©
+         e_daily_active_degree_type_kill_500_monster, //å‡»æ€500ä¸ªæ€ªç‰©
+         e_daily_active_degree_type_kill_1000_monster, //å‡»æ€1000ä¸ªæ€ªç‰©
+         e_daily_active_degree_type_login, //ç™»å½•æ¸¸æˆ
+         e_daily_active_degree_type_online_30_minutes, //åœ¨çº¿30åˆ†é’Ÿ
+         e_daily_active_degree_type_strengthing_one_spirit, //å¼ºåŒ–ä»»æ„ç²¾çµ1æ¬¡
+         e_daily_active_degree_type_strengthing_one_mount, //å¼ºåŒ–ä»»æ„åéª‘1æ¬¡
+         e_daily_active_degree_type_strengthing_one_wing, //å¼ºåŒ–ä»»æ„ç¾½ç¿¼1æ¬¡
+         e_daily_active_degree_type_upgrade_one_element_heart, //å‡çº§ä»»æ„ç¬¦æ–‡1æ¬¡
+         e_daily_active_degree_type_upgrade_one_patron_saint, //å‡çº§å®ˆæŠ¤ç¥1æ¬¡
+         e_daily_active_degree_type_upgrade_one_belief, //å‡çº§ä»»æ„ä¿¡ä»°1æ¬¡
+         e_daily_active_degree_type_submit_one_illustration, //æäº¤1æ¬¡å›¾é‰´
+         e_daily_active_degree_type_attend_three_arena, //å‚åŠ 3æ¬¡ç«æŠ€åœº
+         e_daily_active_degree_type_attend_one_city_war, //å‚åŠ åŸæˆ˜1
+         e_daily_active_degree_type_attend_one_legion_war, //å‚åŠ åŸæˆ˜2ï¼Œå†›å›¢æˆ˜
          e_daily_active_degree_type_max
      };
      enum e_notice_param
      {
-         e_notice_param_go_to_location, //Ñ°Â·
-         e_notice_param_open_widget, //´ò¿ª½çÃæ
-         e_notice_param_item_info, //ÎïÆ·ĞÅÏ¢
+         e_notice_param_go_to_location, //å¯»è·¯
+         e_notice_param_open_widget, //æ‰“å¼€ç•Œé¢
+         e_notice_param_item_info, //ç‰©å“ä¿¡æ¯
          e_notice_param_max
      };
      enum e_RankingIndex
      {
-         e_RankingIndex_gs, //Õ½Á¦×Ü°ñ
-         e_RankingIndex_level, //µÈ¼¶×Ü°ñ
-         e_RankingIndex_box_map_level, //´óÊÀ½ç°ñ
-         e_RankingIndex_demonstower, //ÍòÄ§Ëş
-         e_RankingIndex_wing, //ÓğÒí×ÜÕ½Á¦
-         e_RankingIndex_mount, //×øÆï×ÜÕ½Á¦
-         e_RankingIndex_worship, //¸öÈË ÍşÍû
-         e_RankingIndex_arena, //¾º¼¼³¡
-         e_RankingIndex_legion_core, //¾üÍÅ°ñ ×ÜÕ½Á¦
-         e_RankingIndex_gs_barserker, //Õ½Á¦ Õ½Ê¿
-         e_RankingIndex_gs_wizard, //Õ½Á¦ ·¨Ê¦
-         e_RankingIndex_gs_guardian, //Õ½Á¦ ÆïÊ¿
-         e_RankingIndex_gs_assassinator, //Õ½Á¦ ´Ì¿Í
-         e_RankingIndex_level_barserker, //µÈ¼¶ Õ½Ê¿
-         e_RankingIndex_level_wizard, //µÈ¼¶ ·¨Ê¦
-         e_RankingIndex_level_guardian, //µÈ¼¶ ÆïÊ¿
-         e_RankingIndex_level_assassinator, //µÈ¼¶ ´Ì¿Í
-         e_RankingIndex_equipment_main, //×°±¸°ñ ×ÜÕ½Á¦
-         e_RankingIndex_equipment_weapon, //×°±¸°ñ ÎäÆ÷
-         e_RankingIndex_equipment_necklace, //×°±¸°ñ ÏîÁ´
-         e_RankingIndex_equipment_armor, //×°±¸°ñ ÒÂ·ş
-         e_RankingIndex_equipment_pants, //×°±¸°ñ ¿ã×Ó
-         e_RankingIndex_equipment_hat, //×°±¸°ñ Í·ÊÎ
-         e_RankingIndex_equipment_shoes, //×°±¸°ñ Ğ¬×Ó
-         e_RankingIndex_equipment_glove, //×°±¸°ñ ÊÖÌ×
-         e_RankingIndex_equipment_ring, //×°±¸°ñ ½äÖ¸
-         e_RankingIndex_equipment_earring, //×°±¸°ñ ¶ú»·
-         e_RankingIndex_mount_train, //×øÆï°ñ ÅàÑø
-         e_RankingIndex_wing_train, //ÓğÒí°ñ ÅàÑø
-         e_RankingIndex_elves_train, //¾«Áé°ñ ÅàÑø
-         e_RankingIndex_belief, //¸öÈË°ñ ĞÅÑö
-         e_RankingIndex_element, //¸öÈË°ñ ·ûÎÄ
-         e_RankingIndex_inspiration, //¸öÈË°ñ ÆôÊ¾Ö®»ê
-         e_RankingIndex_military_rank, //¸öÈË°ñ ¾üÏÎ
-         e_RankingIndex_achievement, //¸öÈË°ñ ³É¾Í
-         e_RankingIndex_illustrated, //¸öÈË°ñ Í¼¼ø
-         e_RankingIndex_legion_territory, //¾üÍÅ°ñ ÁìµØÅÅĞĞ
-         e_RankingIndex_legion_boss, //¾üÍÅ°ñ ¾üÍÅboss
-         e_RankingIndex_legion_bonfire, //¾üÍÅ°ñ ¾üÍÅóô»ğ
-         e_RankingIndex_world_boss_one, //ÊÀ½çBOSS boss1
-         e_RankingIndex_world_boss_two, //ÊÀ½çBOSS boss2
-         e_RankingIndex_world_boss_three, //ÊÀ½çBOSS boss3
-         e_RankingIndex_world_boss_four, //ÊÀ½çBOSS boss4
-         e_RankingIndex_world_boss_five, //ÊÀ½çBOSS boss5
-         e_RankingIndex_world_boss_six, //ÊÀ½çBOSS boss6
-         e_RankingIndex_world_boss_seven, //ÊÀ½çBOSS boss7
-         e_RankingIndex_world_elite_one, //¾«Ó¢ÌÖ·¥ boss1
-         e_RankingIndex_world_elite_two, //¾«Ó¢ÌÖ·¥ boss2
-         e_RankingIndex_world_elite_three, //¾«Ó¢ÌÖ·¥ boss3
-         e_RankingIndex_world_elite_four, //¾«Ó¢ÌÖ·¥ boss4
-         e_RankingIndex_world_elite_five, //¾«Ó¢ÌÖ·¥ boss5
-         e_RankingIndex_world_elite_six, //¾«Ó¢ÌÖ·¥ boss6
-         e_RankingIndex_world_elite_seven, //¾«Ó¢ÌÖ·¥ boss7
-         e_RankingIndex_world_elite_eight, //¾«Ó¢ÌÖ·¥ boss8
-         e_RankingIndex_elves_gs, //¾«Áé×ÜÕ½Á¦
-         e_RankingIndex_vip_level_one, //VIP°ñ VIP1
-         e_RankingIndex_vip_level_five, //VIP°ñ VIP5
-         e_RankingIndex_vip_level_seven, //VIP°ñ VIP7
-         e_RankingIndex_recharge_rmb, //³äÖµ°ñ
-         e_RankingIndex_time_limit_activity_total_recharge, //ÏŞÊ±»î¶¯ÀÛ¼Æ³äÖµÅÅĞĞ°ñ
-         e_RankingIndex_time_limit_activity_total_cost, //ÏŞÊ±»î¶¯ÀÛ¼ÆÏû·ÑÅÅĞĞ°ñ
-         e_RankingIndex_time_limit_activity_treasure, //ÏŞÊ±»î¶¯±¦²Ø³éÈ¡ÅÅĞĞ°ñ
-         e_RankingIndex_gs_all, //¿ç·şÕ½Á¦°ñ
-         e_RankingIndex_cross_server_plinder_guard_value, //¿ç·şÂÓ¶áÊØÎÀÖµ°ñ
-         e_RankingIndex_legion_gs_all, //¿ç·ş¾üÍÅÕ½Á¦°ñ
-         e_RankingIndex_cross_ladder_score, //¿ç·şÌìÌİ±¾·ş»ı·Ö°ñ
-         e_RankingIndex_feather_heart, //Éñôá°ñ
-         e_RankingIndex_cross_boss_one, //¿ç·şÊÀ½çboss1
-         e_RankingIndex_cross_boss_two, //`¿ç·şÊÀ½çboss2
-         e_RankingIndex_cross_boss_three, //¿ç·şÊÀ½çboss3
-         e_RankingIndex_cross_boss_four, //¿ç·şÊÀ½çboss4
-         e_RankingIndex_cross_boss_five, //¿ç·şÊÀ½çboss5
-         e_RankingIndex_cross_boss_six, //¿ç·şÊÀ½çboss6
-         e_RankingIndex_cross_boss_seven, //¿ç·şÊÀ½çboss7
-         e_RankingIndex_cross_boss_eight, //¿ç·şÊÀ½çboss8
-         e_RankingIndex_cross_boss_nine, //¿ç·şÊÀ½çboss9
-         e_RankingIndex_cross_boss_ten, //¿ç·şÊÀ½çboss10
-         e_RankingIndex_cross_boss_eleven, //¿ç·şÊÀ½çboss11
-         e_RankingIndex_cross_boss_tweleve, //¿ç·şÊÀ½çboss12
-         e_RankingIndex_time_limit_activity_gs_up, //ÏŞÊ±»î¶¯Õ½Á¦ÌáÉı°ñ
-         e_RankingIndex_time_limit_activity_mount_up, //ÏŞÊ±»î¶¯×øÆïÌáÉı°ñ
-         e_RankingIndex_time_limit_activity_wing_up, //ÏŞÊ±»î¶¯³á°òÌáÉı°ñ
-         e_RankingIndex_time_limit_activity_equip_up, //ÏŞÊ±»î¶¯×°±¸ÌáÉı°ñ
-         e_RankingIndex_time_limit_activity_spirit_up, //ÏŞÊ±»î¶¯¾«ÁéÌáÉı°ñ
-         e_RankingIndex_time_limit_activity_cross_gs_up, //¿ç·şÏŞÊ±»î¶¯Õ½Á¦ÌáÉı°ñ
-         e_RankingIndex_time_limit_activity_cross_mount_up, //¿ç·şÏŞÊ±»î¶¯×øÆïÌáÉı°ñ
-         e_RankingIndex_time_limit_activity_cross_wing_up, //¿ç·şÏŞÊ±»î¶¯³á°òÌáÉı°ñ
-         e_RankingIndex_time_limit_activity_cross_equip_up, //¿ç·şÏŞÊ±»î¶¯×°±¸ÌáÉı°ñ
-         e_RankingIndex_time_limit_activity_cross_spirit_up, //¿ç·şÏŞÊ±»î¶¯¾«ÁéÌáÉı°ñ
-         e_RankingIndex_level_all, //¿ç·şµÈ¼¶°ñ
-         e_RankingIndex_couple, //·òÆŞ°ñ
-         e_RankingIndex_Oracle_Trial, //ÌìÆôÊÔÁ¶
-         e_RankingIndex_cross_ladder_last_seaon, //¿ç·şÌìÌİÉÏÈü¼¾ÍõÕß°ñ
-         e_RankingIndex_cross_ladder_cur_season, //¿ç·şÌìÌİ±¾Èü¼¾ÍõÕß°ñ
-         e_RankingIndex_pk_king, //PkÖ®Íõ
-         e_RankingIndex_element_rank_list, //ÔªËØÕù°Ô±¾·şÅÅĞĞ°ñ
-         e_RankingIndex_element_war_cur_season, //ÔªËØÕù°Ô±¾Èü¼¾ÅÅĞĞ°ñ
-         e_RankingIndex_element_war_last_season, //ÔªËØÕù°ÔÉÏÈü¼¾ÅÅĞĞ°ñ
-         e_RankingIndex_cross_time_limit_activity_total_recharge, //¿ç·şÏŞÊ±»î¶¯ÀÛ¼Æ³äÖµÅÅĞĞ°ñ
+         e_RankingIndex_gs, //æˆ˜åŠ›æ€»æ¦œ
+         e_RankingIndex_level, //ç­‰çº§æ€»æ¦œ
+         e_RankingIndex_box_map_level, //å¤§ä¸–ç•Œæ¦œ
+         e_RankingIndex_demonstower, //ä¸‡é­”å¡”
+         e_RankingIndex_wing, //ç¾½ç¿¼æ€»æˆ˜åŠ›
+         e_RankingIndex_mount, //åéª‘æ€»æˆ˜åŠ›
+         e_RankingIndex_worship, //ä¸ªäºº å¨æœ›
+         e_RankingIndex_arena, //ç«æŠ€åœº
+         e_RankingIndex_legion_core, //å†›å›¢æ¦œ æ€»æˆ˜åŠ›
+         e_RankingIndex_gs_barserker, //æˆ˜åŠ› æˆ˜å£«
+         e_RankingIndex_gs_wizard, //æˆ˜åŠ› æ³•å¸ˆ
+         e_RankingIndex_gs_guardian, //æˆ˜åŠ› éª‘å£«
+         e_RankingIndex_gs_assassinator, //æˆ˜åŠ› åˆºå®¢
+         e_RankingIndex_level_barserker, //ç­‰çº§ æˆ˜å£«
+         e_RankingIndex_level_wizard, //ç­‰çº§ æ³•å¸ˆ
+         e_RankingIndex_level_guardian, //ç­‰çº§ éª‘å£«
+         e_RankingIndex_level_assassinator, //ç­‰çº§ åˆºå®¢
+         e_RankingIndex_equipment_main, //è£…å¤‡æ¦œ æ€»æˆ˜åŠ›
+         e_RankingIndex_equipment_weapon, //è£…å¤‡æ¦œ æ­¦å™¨
+         e_RankingIndex_equipment_necklace, //è£…å¤‡æ¦œ é¡¹é“¾
+         e_RankingIndex_equipment_armor, //è£…å¤‡æ¦œ è¡£æœ
+         e_RankingIndex_equipment_pants, //è£…å¤‡æ¦œ è£¤å­
+         e_RankingIndex_equipment_hat, //è£…å¤‡æ¦œ å¤´é¥°
+         e_RankingIndex_equipment_shoes, //è£…å¤‡æ¦œ é‹å­
+         e_RankingIndex_equipment_glove, //è£…å¤‡æ¦œ æ‰‹å¥—
+         e_RankingIndex_equipment_ring, //è£…å¤‡æ¦œ æˆ’æŒ‡
+         e_RankingIndex_equipment_earring, //è£…å¤‡æ¦œ è€³ç¯
+         e_RankingIndex_mount_train, //åéª‘æ¦œ åŸ¹å…»
+         e_RankingIndex_wing_train, //ç¾½ç¿¼æ¦œ åŸ¹å…»
+         e_RankingIndex_elves_train, //ç²¾çµæ¦œ åŸ¹å…»
+         e_RankingIndex_belief, //ä¸ªäººæ¦œ ä¿¡ä»°
+         e_RankingIndex_element, //ä¸ªäººæ¦œ ç¬¦æ–‡
+         e_RankingIndex_inspiration, //ä¸ªäººæ¦œ å¯ç¤ºä¹‹é­‚
+         e_RankingIndex_military_rank, //ä¸ªäººæ¦œ å†›è¡”
+         e_RankingIndex_achievement, //ä¸ªäººæ¦œ æˆå°±
+         e_RankingIndex_illustrated, //ä¸ªäººæ¦œ å›¾é‰´
+         e_RankingIndex_legion_territory, //å†›å›¢æ¦œ é¢†åœ°æ’è¡Œ
+         e_RankingIndex_legion_boss, //å†›å›¢æ¦œ å†›å›¢boss
+         e_RankingIndex_legion_bonfire, //å†›å›¢æ¦œ å†›å›¢ç¯ç«
+         e_RankingIndex_world_boss_one, //ä¸–ç•ŒBOSS boss1
+         e_RankingIndex_world_boss_two, //ä¸–ç•ŒBOSS boss2
+         e_RankingIndex_world_boss_three, //ä¸–ç•ŒBOSS boss3
+         e_RankingIndex_world_boss_four, //ä¸–ç•ŒBOSS boss4
+         e_RankingIndex_world_boss_five, //ä¸–ç•ŒBOSS boss5
+         e_RankingIndex_world_boss_six, //ä¸–ç•ŒBOSS boss6
+         e_RankingIndex_world_boss_seven, //ä¸–ç•ŒBOSS boss7
+         e_RankingIndex_world_elite_one, //ç²¾è‹±è®¨ä¼ boss1
+         e_RankingIndex_world_elite_two, //ç²¾è‹±è®¨ä¼ boss2
+         e_RankingIndex_world_elite_three, //ç²¾è‹±è®¨ä¼ boss3
+         e_RankingIndex_world_elite_four, //ç²¾è‹±è®¨ä¼ boss4
+         e_RankingIndex_world_elite_five, //ç²¾è‹±è®¨ä¼ boss5
+         e_RankingIndex_world_elite_six, //ç²¾è‹±è®¨ä¼ boss6
+         e_RankingIndex_world_elite_seven, //ç²¾è‹±è®¨ä¼ boss7
+         e_RankingIndex_world_elite_eight, //ç²¾è‹±è®¨ä¼ boss8
+         e_RankingIndex_elves_gs, //ç²¾çµæ€»æˆ˜åŠ›
+         e_RankingIndex_vip_level_one, //VIPæ¦œ VIP1
+         e_RankingIndex_vip_level_five, //VIPæ¦œ VIP5
+         e_RankingIndex_vip_level_seven, //VIPæ¦œ VIP7
+         e_RankingIndex_recharge_rmb, //å……å€¼æ¦œ
+         e_RankingIndex_time_limit_activity_total_recharge, //é™æ—¶æ´»åŠ¨ç´¯è®¡å……å€¼æ’è¡Œæ¦œ
+         e_RankingIndex_time_limit_activity_total_cost, //é™æ—¶æ´»åŠ¨ç´¯è®¡æ¶ˆè´¹æ’è¡Œæ¦œ
+         e_RankingIndex_time_limit_activity_treasure, //é™æ—¶æ´»åŠ¨å®è—æŠ½å–æ’è¡Œæ¦œ
+         e_RankingIndex_gs_all, //è·¨æœæˆ˜åŠ›æ¦œ
+         e_RankingIndex_cross_server_plinder_guard_value, //è·¨æœæ å¤ºå®ˆå«å€¼æ¦œ
+         e_RankingIndex_legion_gs_all, //è·¨æœå†›å›¢æˆ˜åŠ›æ¦œ
+         e_RankingIndex_cross_ladder_score, //è·¨æœå¤©æ¢¯æœ¬æœç§¯åˆ†æ¦œ
+         e_RankingIndex_feather_heart, //ç¥ç¿æ¦œ
+         e_RankingIndex_cross_boss_one, //è·¨æœä¸–ç•Œboss1
+         e_RankingIndex_cross_boss_two, //`è·¨æœä¸–ç•Œboss2
+         e_RankingIndex_cross_boss_three, //è·¨æœä¸–ç•Œboss3
+         e_RankingIndex_cross_boss_four, //è·¨æœä¸–ç•Œboss4
+         e_RankingIndex_cross_boss_five, //è·¨æœä¸–ç•Œboss5
+         e_RankingIndex_cross_boss_six, //è·¨æœä¸–ç•Œboss6
+         e_RankingIndex_cross_boss_seven, //è·¨æœä¸–ç•Œboss7
+         e_RankingIndex_cross_boss_eight, //è·¨æœä¸–ç•Œboss8
+         e_RankingIndex_cross_boss_nine, //è·¨æœä¸–ç•Œboss9
+         e_RankingIndex_cross_boss_ten, //è·¨æœä¸–ç•Œboss10
+         e_RankingIndex_cross_boss_eleven, //è·¨æœä¸–ç•Œboss11
+         e_RankingIndex_cross_boss_tweleve, //è·¨æœä¸–ç•Œboss12
+         e_RankingIndex_time_limit_activity_gs_up, //é™æ—¶æ´»åŠ¨æˆ˜åŠ›æå‡æ¦œ
+         e_RankingIndex_time_limit_activity_mount_up, //é™æ—¶æ´»åŠ¨åéª‘æå‡æ¦œ
+         e_RankingIndex_time_limit_activity_wing_up, //é™æ—¶æ´»åŠ¨ç¿…è†€æå‡æ¦œ
+         e_RankingIndex_time_limit_activity_equip_up, //é™æ—¶æ´»åŠ¨è£…å¤‡æå‡æ¦œ
+         e_RankingIndex_time_limit_activity_spirit_up, //é™æ—¶æ´»åŠ¨ç²¾çµæå‡æ¦œ
+         e_RankingIndex_time_limit_activity_cross_gs_up, //è·¨æœé™æ—¶æ´»åŠ¨æˆ˜åŠ›æå‡æ¦œ
+         e_RankingIndex_time_limit_activity_cross_mount_up, //è·¨æœé™æ—¶æ´»åŠ¨åéª‘æå‡æ¦œ
+         e_RankingIndex_time_limit_activity_cross_wing_up, //è·¨æœé™æ—¶æ´»åŠ¨ç¿…è†€æå‡æ¦œ
+         e_RankingIndex_time_limit_activity_cross_equip_up, //è·¨æœé™æ—¶æ´»åŠ¨è£…å¤‡æå‡æ¦œ
+         e_RankingIndex_time_limit_activity_cross_spirit_up, //è·¨æœé™æ—¶æ´»åŠ¨ç²¾çµæå‡æ¦œ
+         e_RankingIndex_level_all, //è·¨æœç­‰çº§æ¦œ
+         e_RankingIndex_couple, //å¤«å¦»æ¦œ
+         e_RankingIndex_Oracle_Trial, //å¤©å¯è¯•ç‚¼
+         e_RankingIndex_cross_ladder_last_seaon, //è·¨æœå¤©æ¢¯ä¸Šèµ›å­£ç‹è€…æ¦œ
+         e_RankingIndex_cross_ladder_cur_season, //è·¨æœå¤©æ¢¯æœ¬èµ›å­£ç‹è€…æ¦œ
+         e_RankingIndex_pk_king, //Pkä¹‹ç‹
+         e_RankingIndex_element_rank_list, //å…ƒç´ äº‰éœ¸æœ¬æœæ’è¡Œæ¦œ
+         e_RankingIndex_element_war_cur_season, //å…ƒç´ äº‰éœ¸æœ¬èµ›å­£æ’è¡Œæ¦œ
+         e_RankingIndex_element_war_last_season, //å…ƒç´ äº‰éœ¸ä¸Šèµ›å­£æ’è¡Œæ¦œ
+         e_RankingIndex_cross_time_limit_activity_total_recharge, //è·¨æœé™æ—¶æ´»åŠ¨ç´¯è®¡å……å€¼æ’è¡Œæ¦œ
          e_RankingIndex_max
      };
      enum e_mount_sub_type
      {
-         e_mount_sub_type_none, //
-         e_mount_sub_type_origin, //×øÆï±¾Ìå
-         e_mount_sub_type_illusion, //×øÆï»Ã»¯
+         e_mount_sub_type_none,
+         e_mount_sub_type_origin, //åéª‘æœ¬ä½“
+         e_mount_sub_type_illusion, //åéª‘å¹»åŒ–
          e_mount_sub_type_max
      };
      enum e_goods_purchase_limit_type
      {
-         e_goods_purchase_limit_type_none, //²»ÏŞ¹º
-         e_goods_purchase_limit_type_per_day, //Ã¿ÈÕÏŞ¹º
-         e_goods_purchase_limit_type_forever, //ÓÀ¾ÃÏŞ¹º
-         e_goods_purchase_limit_type_per_week, //Ã¿ÖÜÏŞ¹º
+         e_goods_purchase_limit_type_none, //ä¸é™è´­
+         e_goods_purchase_limit_type_per_day, //æ¯æ—¥é™è´­
+         e_goods_purchase_limit_type_forever, //æ°¸ä¹…é™è´­
+         e_goods_purchase_limit_type_per_week, //æ¯å‘¨é™è´­
          e_goods_purchase_limit_type_max
      };
      enum e_update_item_info_mode
      {
-         e_update_item_info_mode_default, //Ä¬ÈÏ
-         e_update_item_info_mode_pick_up_new, //¼ñ°ü
-         e_update_item_info_mode_update_all, //Í¬²½ËùÓĞÊı¾İ
+         e_update_item_info_mode_default, //é»˜è®¤
+         e_update_item_info_mode_pick_up_new, //æ¡åŒ…
+         e_update_item_info_mode_update_all, //åŒæ­¥æ‰€æœ‰æ•°æ®
          e_update_item_info_mode_max
      };
      enum e_exhibition_actor_array
      {
-         e_exhibition_actor_array_model, //3DÄ£ĞÍÕ¹Ê¾
-         e_exhibition_actor_array_item, //ÎïÆ·2DÕ¹Ê¾
+         e_exhibition_actor_array_model, //3Dæ¨¡å‹å±•ç¤º
+         e_exhibition_actor_array_item, //ç‰©å“2Då±•ç¤º
          e_exhibition_actor_array_max
      };
      enum e_auction_operate_type
      {
-         e_auction_operate_type_non, //
-         e_auction_operate_type_sell, //Âô
-         e_auction_operate_type_purchase, //Âò
-         e_auction_operate_type_cancel_sell, //È¡Ïû³öÊÛ
-         e_auction_operate_type_bid, //¾º±ê
-         e_auction_operate_type_read_record, //¶Á¼ÍÂ¼
+         e_auction_operate_type_non,
+         e_auction_operate_type_sell, //å–
+         e_auction_operate_type_purchase, //ä¹°
+         e_auction_operate_type_cancel_sell, //å–æ¶ˆå‡ºå”®
+         e_auction_operate_type_bid, //ç«æ ‡
+         e_auction_operate_type_read_record, //è¯»çºªå½•
          e_auction_operate_type_max
      };
      enum e_trading_type
      {
-         e_trading_type_normal_sell, //ÆÕÍ¨Íæ¼Ò½»Ò×
-         e_trading_type_legion, //¾üÍÅÅÄÂô
-         e_trading_type_world, //ÊÀ½çÅÄÂô
+         e_trading_type_normal_sell, //æ™®é€šç©å®¶äº¤æ˜“
+         e_trading_type_legion, //å†›å›¢æ‹å–
+         e_trading_type_world, //ä¸–ç•Œæ‹å–
          e_trading_type_max
      };
      enum e_trading_source_type
      {
-         e_trading_source_type_non, //
-         e_trading_source_type_world_boss, //ÊÀ½ç¾«Ó¢
-         e_trading_source_type_gold_army, //ÊÀ½çÁìÖ÷
-         e_trading_source_type_bonfire, //óô»ğ
-         e_trading_source_type_legion_boss, //¾üÍÅboss
+         e_trading_source_type_non,
+         e_trading_source_type_world_boss, //ä¸–ç•Œç²¾è‹±
+         e_trading_source_type_gold_army, //ä¸–ç•Œé¢†ä¸»
+         e_trading_source_type_bonfire, //ç¯ç«
+         e_trading_source_type_legion_boss, //å†›å›¢boss
          e_trading_source_type_max
      };
      enum e_excellentatt_quality_type
      {
-         e_excellentatt_quality_type_green, //×¿Ô½ÊôĞÔÂÌÉ«Æ·ÖÊ
-         e_excellentatt_quality_type_blue, //×¿Ô½ÊôĞÔÀ¶É«Æ·ÖÊ
-         e_excellentatt_quality_type_purple, //×¿Ô½ÊôĞÔ×ÏÉ«Æ·ÖÊ
-         e_excellentatt_quality_type_orange, //×¿Ô½ÊôĞÔ³ÈÉ«Æ·ÖÊ
-         e_excellentatt_quality_type_red, //×¿Ô½ÊôĞÔºìÉ«Æ·ÖÊ
-         e_excellentatt_quality_type_upper, //×¿Ô½ÊôĞÔÆ·ÖÊÉÏÏŞ
+         e_excellentatt_quality_type_green, //å“è¶Šå±æ€§ç»¿è‰²å“è´¨
+         e_excellentatt_quality_type_blue, //å“è¶Šå±æ€§è“è‰²å“è´¨
+         e_excellentatt_quality_type_purple, //å“è¶Šå±æ€§ç´«è‰²å“è´¨
+         e_excellentatt_quality_type_orange, //å“è¶Šå±æ€§æ©™è‰²å“è´¨
+         e_excellentatt_quality_type_red, //å“è¶Šå±æ€§çº¢è‰²å“è´¨
+         e_excellentatt_quality_type_upper, //å“è¶Šå±æ€§å“è´¨ä¸Šé™
          e_excellentatt_quality_type_max
      };
      enum e_ranking_operate_result
      {
-         e_ranking_operate_result_success, //³É¹¦
-         e_ranking_operate_result_error, //Î´Öª´íÎó
-         e_ranking_operate_result_no_worship_value, //Ã»ÓĞÍşÍû
-         e_ranking_operate_result_ranking_no_player, //ÅÅĞĞ°ñÃ»ÓĞÈË
+         e_ranking_operate_result_success, //æˆåŠŸ
+         e_ranking_operate_result_error, //æœªçŸ¥é”™è¯¯
+         e_ranking_operate_result_no_worship_value, //æ²¡æœ‰å¨æœ›
+         e_ranking_operate_result_ranking_no_player, //æ’è¡Œæ¦œæ²¡æœ‰äºº
          e_ranking_operate_result_max
      };
      enum e_camera_move_info
      {
-         e_camera_move_info_boom_length, //¾àÀë ¸º1ÎªÊ§Ğ§
-         e_camera_move_info_field_of_view, //ÊÓ½Ç ¸º1ÎªÊ§Ğ§
-         e_camera_move_info_camera_location_x, //ÉãÏñ»úÎ»ÖÃX ¸º1ÎªÊ§Ğ§
-         e_camera_move_info_camera_location_y, //ÉãÏñ»úÎ»ÖÃY ¸º1ÎªÊ§Ğ§
-         e_camera_move_info_camera_location_z, //ÉãÏñ»úÎ»ÖÃZ ¸º1ÎªÊ§Ğ§
-         e_camera_move_info_camera_rotation_roll, //ÉãÏñ»úXĞı×ª 361ÎªÊ§Ğ§
-         e_camera_move_info_camera_rotation_pitch, //ÉãÏñ»úYĞı×ª 361ÎªÊ§Ğ§
-         e_camera_move_info_camera_rotation_yaw, //ÉãÏñ»úZĞı×ª 361ÎªÊ§Ğ§
-         e_camera_move_info_boom_location_x, //ÉãÏñ»ú¸ËÎ»ÖÃX ¸º1ÎªÊ§Ğ§
-         e_camera_move_info_boom_location_y, //ÉãÏñ»ú¸ËÎ»ÖÃY ¸º1ÎªÊ§Ğ§
-         e_camera_move_info_boom_location_z, //ÉãÏñ»ú¸ËÎ»ÖÃZ ¸º1ÎªÊ§Ğ§
-         e_camera_move_info_boom_rotation_roll, //ÉãÏñ»ú¸ËXĞı×ª 361ÎªÊ§Ğ§
-         e_camera_move_info_boom_rotation_pitch, //ÉãÏñ»ú¸ËYĞı×ª 361ÎªÊ§Ğ§
-         e_camera_move_info_boom_rotation_yaw, //ÉãÏñ»ú¸ËZĞı×ª 361ÎªÊ§Ğ§
-         e_camera_move_info_ani_time, //Ä¿±ê¶¯»­Ê±¼ä
-         e_camera_move_info_remain_time, //ÕæÊµ³ÖĞøÊ±¼ä
+         e_camera_move_info_boom_length, //è·ç¦» è´Ÿ1ä¸ºå¤±æ•ˆ
+         e_camera_move_info_field_of_view, //è§†è§’ è´Ÿ1ä¸ºå¤±æ•ˆ
+         e_camera_move_info_camera_location_x, //æ‘„åƒæœºä½ç½®X è´Ÿ1ä¸ºå¤±æ•ˆ
+         e_camera_move_info_camera_location_y, //æ‘„åƒæœºä½ç½®Y è´Ÿ1ä¸ºå¤±æ•ˆ
+         e_camera_move_info_camera_location_z, //æ‘„åƒæœºä½ç½®Z è´Ÿ1ä¸ºå¤±æ•ˆ
+         e_camera_move_info_camera_rotation_roll, //æ‘„åƒæœºXæ—‹è½¬ 361ä¸ºå¤±æ•ˆ
+         e_camera_move_info_camera_rotation_pitch, //æ‘„åƒæœºYæ—‹è½¬ 361ä¸ºå¤±æ•ˆ
+         e_camera_move_info_camera_rotation_yaw, //æ‘„åƒæœºZæ—‹è½¬ 361ä¸ºå¤±æ•ˆ
+         e_camera_move_info_boom_location_x, //æ‘„åƒæœºæ†ä½ç½®X è´Ÿ1ä¸ºå¤±æ•ˆ
+         e_camera_move_info_boom_location_y, //æ‘„åƒæœºæ†ä½ç½®Y è´Ÿ1ä¸ºå¤±æ•ˆ
+         e_camera_move_info_boom_location_z, //æ‘„åƒæœºæ†ä½ç½®Z è´Ÿ1ä¸ºå¤±æ•ˆ
+         e_camera_move_info_boom_rotation_roll, //æ‘„åƒæœºæ†Xæ—‹è½¬ 361ä¸ºå¤±æ•ˆ
+         e_camera_move_info_boom_rotation_pitch, //æ‘„åƒæœºæ†Yæ—‹è½¬ 361ä¸ºå¤±æ•ˆ
+         e_camera_move_info_boom_rotation_yaw, //æ‘„åƒæœºæ†Zæ—‹è½¬ 361ä¸ºå¤±æ•ˆ
+         e_camera_move_info_ani_time, //ç›®æ ‡åŠ¨ç”»æ—¶é—´
+         e_camera_move_info_remain_time, //çœŸå®æŒç»­æ—¶é—´
          e_camera_move_info_max
      };
      enum e_notice_param_type
      {
-         e_notice_param_type_unit_name, //ÈËÎïÃû³ÆÀàĞÍ
-         e_notice_param_type_item_name, //ÎïÆ·Ãû³ÆÀàĞÍ
-         e_notice_param_type_num_data, //Êı×ÖÀàĞÍ×Ö·û´®
-         e_notice_param_type_item_data, //³¬Á´½ÓÀàĞÍ
-         e_notice_param_type_describe_str, //ÃèÊöÀàĞÍ×Ö·û´®
-         e_notice_param_type_other_name, //ÆäËûÃû×Ö
+         e_notice_param_type_unit_name, //äººç‰©åç§°ç±»å‹
+         e_notice_param_type_item_name, //ç‰©å“åç§°ç±»å‹
+         e_notice_param_type_num_data, //æ•°å­—ç±»å‹å­—ç¬¦ä¸²
+         e_notice_param_type_item_data, //è¶…é“¾æ¥ç±»å‹
+         e_notice_param_type_describe_str, //æè¿°ç±»å‹å­—ç¬¦ä¸²
+         e_notice_param_type_other_name, //å…¶ä»–åå­—
          e_notice_param_type_max
      };
      enum e_marry_operate_type
      {
-         e_marry_operate_type_success, //³É¹¦
-         e_marry_operate_type_unknow_error, //Î´Öª´íÎó
-         e_marry_operate_type_team_error, //×é¶Ó´íÎó
-         e_marry_operate_type_level_error, //µÈ¼¶´íÎó
-         e_marry_operate_type_not_friend, //²»ÊÇºÃÓÑ
-         e_marry_operate_type_low_friendliness, //ºÃÓÑ¶È¹ıµÍ
-         e_marry_operate_type_one_is_cant_marry_state, //Ò»¸öÈË²»ÔÚ½á»é×´Ì¬
-         e_marry_operate_type_far_away, //¾àÀënpc¹ıÔ¶
-         e_marry_operate_type_lack_marry_item, //Ã»ÓĞ½á»éµÀ¾ß
-         e_marry_operate_type_one_refuse, //¶Ô·½¾Ü¾ø
-         e_marry_operate_type_one_offline, //¶Ô·½ÀëÏß
-         e_marry_operate_type_can_marry, //·ûºÏÌõ¼ş
-         e_marry_operate_type_marry_success, //½á»é³É¹¦
-         e_marry_operate_type_check_marry_item, //¼ì²â½á»éÀñÎï
-         e_marry_operate_type_mary_func_unlock, //½á»é¹¦ÄÜÎ´½âËø
-         e_marry_operate_type_check_marry_success, //»éÇ°¼ì²é³É¹¦
-         e_marry_operate_type_single, //µ¥Éí
-         e_marry_operate_type_one_agree, //¶Ô·½Í¬Òâ
-         e_marry_operate_type_divorce_team_error, //Àë»é_×é¶Ó´íÎó
-         e_marry_operate_type_divorce_isnt_marry, //Ã»½á¹ı»é
-         e_marry_operate_type_divorce_lack_money, //½ğ±Ò²»×ã
-         e_marry_operate_type_one_refuse_divorce, //¾Ü¾øÀë»é
-         e_marry_operate_type_one_agree_divorce, //Í¬ÒâÀë»é
-         e_marry_operate_type_divorce_success, //Àë»é³É¹¦
-         e_marry_operate_type_check_divorce_success, //Àë»é¼ì²é³É¹¦
-         e_marry_operate_type_offline_over_seven, //Ç¿ÖÆÀë»éÁ¬ĞøÀëÏß³¬¹ı7Ìì
-         e_marry_operate_type_check_force_divorce_success, //Ç¿ÖÆÀë»é¼ì²é
-         e_marry_operate_type_had_getted_reward, //Áì¹ı½±ÀøÁË
-         e_marry_operate_type_get_reward_success, //ÁìÈ¡³É¹¦
+         e_marry_operate_type_success, //æˆåŠŸ
+         e_marry_operate_type_unknow_error, //æœªçŸ¥é”™è¯¯
+         e_marry_operate_type_team_error, //ç»„é˜Ÿé”™è¯¯
+         e_marry_operate_type_level_error, //ç­‰çº§é”™è¯¯
+         e_marry_operate_type_not_friend, //ä¸æ˜¯å¥½å‹
+         e_marry_operate_type_low_friendliness, //å¥½å‹åº¦è¿‡ä½
+         e_marry_operate_type_one_is_cant_marry_state, //ä¸€ä¸ªäººä¸åœ¨ç»“å©šçŠ¶æ€
+         e_marry_operate_type_far_away, //è·ç¦»npcè¿‡è¿œ
+         e_marry_operate_type_lack_marry_item, //æ²¡æœ‰ç»“å©šé“å…·
+         e_marry_operate_type_one_refuse, //å¯¹æ–¹æ‹’ç»
+         e_marry_operate_type_one_offline, //å¯¹æ–¹ç¦»çº¿
+         e_marry_operate_type_can_marry, //ç¬¦åˆæ¡ä»¶
+         e_marry_operate_type_marry_success, //ç»“å©šæˆåŠŸ
+         e_marry_operate_type_check_marry_item, //æ£€æµ‹ç»“å©šç¤¼ç‰©
+         e_marry_operate_type_mary_func_unlock, //ç»“å©šåŠŸèƒ½æœªè§£é”
+         e_marry_operate_type_check_marry_success, //å©šå‰æ£€æŸ¥æˆåŠŸ
+         e_marry_operate_type_single, //å•èº«
+         e_marry_operate_type_one_agree, //å¯¹æ–¹åŒæ„
+         e_marry_operate_type_divorce_team_error, //ç¦»å©š_ç»„é˜Ÿé”™è¯¯
+         e_marry_operate_type_divorce_isnt_marry, //æ²¡ç»“è¿‡å©š
+         e_marry_operate_type_divorce_lack_money, //é‡‘å¸ä¸è¶³
+         e_marry_operate_type_one_refuse_divorce, //æ‹’ç»ç¦»å©š
+         e_marry_operate_type_one_agree_divorce, //åŒæ„ç¦»å©š
+         e_marry_operate_type_divorce_success, //ç¦»å©šæˆåŠŸ
+         e_marry_operate_type_check_divorce_success, //ç¦»å©šæ£€æŸ¥æˆåŠŸ
+         e_marry_operate_type_offline_over_seven, //å¼ºåˆ¶ç¦»å©šè¿ç»­ç¦»çº¿è¶…è¿‡7å¤©
+         e_marry_operate_type_check_force_divorce_success, //å¼ºåˆ¶ç¦»å©šæ£€æŸ¥
+         e_marry_operate_type_had_getted_reward, //é¢†è¿‡å¥–åŠ±äº†
+         e_marry_operate_type_get_reward_success, //é¢†å–æˆåŠŸ
          e_marry_operate_type_max
      };
      enum e_fashion_equip_slot
      {
-         e_fashion_equip_slot_non, //¿Õ
-         e_fashion_equip_slot_weapon_mesh, //ÎäÆ÷Ä£ĞÍ
-         e_fashion_equip_slot_body_mesh, //ÉíÌåÄ£ĞÍ
-         e_fashion_equip_slot_wedding_ring, //»é½ä
-         e_fashion_equip_slot_weapon_effect, //ÎäÆ÷ÌØĞ§
-         e_fashion_equip_slot_body_effect, //ÉíÌåÌØĞ§
-         e_fashion_equip_slot_track_effect, //×ã¼£ÌØĞ§
-         e_fashion_equip_slot_head_effect, //Í·²¿ÌØĞ§
-         e_fashion_equip_slot_breastplate_effect, //ĞØ¼×ÌØĞ§
-         e_fashion_equip_slot_glove_effect, //»¤ÊÖÌØĞ§
-         e_fashion_equip_slot_legs_effect, //ÍÈ²¿ÌØĞ§
-         e_fashion_equip_slot_feet_effect, //×ã²¿ÌØĞ§
-         e_fashion_equip_slot_headdress, //Í·ÊÎ
-         e_fashion_equip_slot_mouth, //¿ÚÕÖ
-         e_fashion_equip_slot_eye, //ÑÛ¾¦
+         e_fashion_equip_slot_non, //ç©º
+         e_fashion_equip_slot_weapon_mesh, //æ­¦å™¨æ¨¡å‹
+         e_fashion_equip_slot_body_mesh, //èº«ä½“æ¨¡å‹
+         e_fashion_equip_slot_wedding_ring, //å©šæˆ’
+         e_fashion_equip_slot_weapon_effect, //æ­¦å™¨ç‰¹æ•ˆ
+         e_fashion_equip_slot_body_effect, //èº«ä½“ç‰¹æ•ˆ
+         e_fashion_equip_slot_track_effect, //è¶³è¿¹ç‰¹æ•ˆ
+         e_fashion_equip_slot_head_effect, //å¤´éƒ¨ç‰¹æ•ˆ
+         e_fashion_equip_slot_breastplate_effect, //èƒ¸ç”²ç‰¹æ•ˆ
+         e_fashion_equip_slot_glove_effect, //æŠ¤æ‰‹ç‰¹æ•ˆ
+         e_fashion_equip_slot_legs_effect, //è…¿éƒ¨ç‰¹æ•ˆ
+         e_fashion_equip_slot_feet_effect, //è¶³éƒ¨ç‰¹æ•ˆ
+         e_fashion_equip_slot_headdress, //å¤´é¥°
+         e_fashion_equip_slot_mouth, //å£ç½©
+         e_fashion_equip_slot_eye, //çœ¼ç›
          e_fashion_equip_slot_max
      };
      enum e_fashion_show_type
      {
-         e_fashion_show_type_all, //È«²¿
-         e_fashion_show_type_weapon, //ÎäÆ÷
-         e_fashion_show_type_cloth, //ÒÂ·ş
-         e_fashion_show_type_weapon_effect, //ÎäÆ÷ÌØĞ§
-         e_fashion_show_type_cloth_effect, //ÒÂ·şÌØĞ§
-         e_fashion_show_type_foot_effect, //½Å²¿ÌØĞ§
-         e_fashion_show_type_head_frame, //Í·Ïñ¿ò
-         e_fashion_show_type_headdress, //Í·ÊÎ
-         e_fashion_show_type_mouth, //¿ÚÕÖ
-         e_fashion_show_type_eye, //ÑÛ¾¦
+         e_fashion_show_type_all, //å…¨éƒ¨
+         e_fashion_show_type_weapon, //æ­¦å™¨
+         e_fashion_show_type_cloth, //è¡£æœ
+         e_fashion_show_type_weapon_effect, //æ­¦å™¨ç‰¹æ•ˆ
+         e_fashion_show_type_cloth_effect, //è¡£æœç‰¹æ•ˆ
+         e_fashion_show_type_foot_effect, //è„šéƒ¨ç‰¹æ•ˆ
+         e_fashion_show_type_head_frame, //å¤´åƒæ¡†
+         e_fashion_show_type_headdress, //å¤´é¥°
+         e_fashion_show_type_mouth, //å£ç½©
+         e_fashion_show_type_eye, //çœ¼ç›
          e_fashion_show_type_max
      };
      enum e_interaction_reply
      {
-         e_interaction_reply_none, //
-         e_interaction_reply_reject, //¾Ü¾ø
-         e_interaction_reply_agree, //Í¬Òâ
-         e_interaction_reply_timeout, //³¬Ê±
-         e_interaction_reply_be_invited, //±»ÑûÇëÖĞ
-         e_interaction_reply_is_interacting, //½»»¥ÖĞ
+         e_interaction_reply_none,
+         e_interaction_reply_reject, //æ‹’ç»
+         e_interaction_reply_agree, //åŒæ„
+         e_interaction_reply_timeout, //è¶…æ—¶
+         e_interaction_reply_be_invited, //è¢«é‚€è¯·ä¸­
+         e_interaction_reply_is_interacting, //äº¤äº’ä¸­
          e_interaction_reply_max
      };
      enum e_interaction_type
      {
-         e_interaction_type_none, //
-         e_interaction_type_interrupted, //½»»¥
-         e_interaction_type_doubleride_front, //Ë«ÈË×øÆïÇ°
-         e_interaction_type_doubleride_back, //Ë«ÈË×øÆïºó
-         e_interaction_type_bao_da_tui, //±§´óÍÈ
-         e_interaction_type_bei_bao_da_tui, //±»±§´óÍÈ
-         e_interaction_type_gong_zhu_bao, //¹«Ö÷±§
-         e_interaction_type_bei_gong_zhu_bao, //±»¹«Ö÷±§
-         e_interaction_type_qiu_hun, //Çó»é
-         e_interaction_type_bei_qiu_hun, //±»Çó»é
-         e_interaction_type_tiao_wu, //ÌøÎè
-         e_interaction_type_bei_tiao_wu, //±»ÌøÎè
-         e_interaction_type_marry_raid_back_target_man, //½á»éÍ¬Æïºó¶Ô·½ÄĞ
-         e_interaction_type_marry_raid_back_target_woman, //½á»éÍ¬Æïºó¶Ô·½Å®
-         e_interaction_type_marry_raid_front_target_man, //½á»éÍ¬ÆïÇ°¶Ô·½ÄĞ
-         e_interaction_type_marry_raid_front_target_woman, //½á»éÍ¬ÆïÇ°¶Ô·½Å®
-         e_interaction_type_marry_raid, //½á»éÍ¬Æï
-         e_interaction_type_yao_legion_dance, //ÑûÇë¹²Îè
-         e_interaction_type_bei_legion_dance, //±»ÑûÇë¹²Îè
-         e_interaction_type_marry_dance_accord, //½á»é¶¯×÷Ö÷¶¯
-         e_interaction_type_marry_dance_passive, //½á»é¶¯×÷±»¶¯
+         e_interaction_type_none,
+         e_interaction_type_interrupted, //äº¤äº’
+         e_interaction_type_doubleride_front, //åŒäººåéª‘å‰
+         e_interaction_type_doubleride_back, //åŒäººåéª‘å
+         e_interaction_type_bao_da_tui, //æŠ±å¤§è…¿
+         e_interaction_type_bei_bao_da_tui, //è¢«æŠ±å¤§è…¿
+         e_interaction_type_gong_zhu_bao, //å…¬ä¸»æŠ±
+         e_interaction_type_bei_gong_zhu_bao, //è¢«å…¬ä¸»æŠ±
+         e_interaction_type_qiu_hun, //æ±‚å©š
+         e_interaction_type_bei_qiu_hun, //è¢«æ±‚å©š
+         e_interaction_type_tiao_wu, //è·³èˆ
+         e_interaction_type_bei_tiao_wu, //è¢«è·³èˆ
+         e_interaction_type_marry_raid_back_target_man, //ç»“å©šåŒéª‘åå¯¹æ–¹ç”·
+         e_interaction_type_marry_raid_back_target_woman, //ç»“å©šåŒéª‘åå¯¹æ–¹å¥³
+         e_interaction_type_marry_raid_front_target_man, //ç»“å©šåŒéª‘å‰å¯¹æ–¹ç”·
+         e_interaction_type_marry_raid_front_target_woman, //ç»“å©šåŒéª‘å‰å¯¹æ–¹å¥³
+         e_interaction_type_marry_raid, //ç»“å©šåŒéª‘
+         e_interaction_type_yao_legion_dance, //é‚€è¯·å…±èˆ
+         e_interaction_type_bei_legion_dance, //è¢«é‚€è¯·å…±èˆ
+         e_interaction_type_marry_dance_accord, //ç»“å©šåŠ¨ä½œä¸»åŠ¨
+         e_interaction_type_marry_dance_passive, //ç»“å©šåŠ¨ä½œè¢«åŠ¨
          e_interaction_type_max
      };
      enum e_belief_upgrade_type
      {
-         e_belief_upgrade_type_none, //Âú¼¶
-         e_belief_upgrade_type_upgrade_star, //ÉıĞÇ
-         e_belief_upgrade_type_upgrade_rank, //Éı½×
+         e_belief_upgrade_type_none, //æ»¡çº§
+         e_belief_upgrade_type_upgrade_star, //å‡æ˜Ÿ
+         e_belief_upgrade_type_upgrade_rank, //å‡é˜¶
          e_belief_upgrade_type_max
      };
      enum e_belief_operate_type
      {
-         e_belief_operate_type_upgrade_star, //ÉıĞÇ
-         e_belief_operate_type_upgrade_rank, //Éı½×
+         e_belief_operate_type_upgrade_star, //å‡æ˜Ÿ
+         e_belief_operate_type_upgrade_rank, //å‡é˜¶
          e_belief_operate_type_max
      };
      enum e_exhibition_show_type
      {
-         e_exhibition_show_type_player_self, //×Ô¼º
-         e_exhibition_show_type_player_other, //ÆäËûÈË
+         e_exhibition_show_type_player_self, //è‡ªå·±
+         e_exhibition_show_type_player_other, //å…¶ä»–äºº
          e_exhibition_show_type_npc, //npc
-         e_exhibition_show_type_other_slot, //Ä³Ò»×°±¸²Û
-         e_exhibition_show_type_spirit, //¾«Áé
-         e_exhibition_show_type_protect_spirit, //ÊØ»¤Éñ
-         e_exhibition_show_type_self_by_info, //ÓÃ¾ßÌåĞÅÏ¢ÏÔÊ¾×Ô¼º
-         e_exhibition_show_type_player_self_simple, //¼ò»¯µÄ×Ô¼º Ã»³á°òÉ¶µÄ
-         e_exhibition_show_type_player_other_on_mount, //ÔÚ×øÆïÉÏµÄÆäËûÍæ¼Ò
-         e_exhibition_show_type_try_on_fashion, //Ê±×°ÊÔ´©
-         e_exhibition_show_type_spirit_composit, //¾«ÁéºÏ³É
+         e_exhibition_show_type_other_slot, //æŸä¸€è£…å¤‡æ§½
+         e_exhibition_show_type_spirit, //ç²¾çµ
+         e_exhibition_show_type_protect_spirit, //å®ˆæŠ¤ç¥
+         e_exhibition_show_type_self_by_info, //ç”¨å…·ä½“ä¿¡æ¯æ˜¾ç¤ºè‡ªå·±
+         e_exhibition_show_type_player_self_simple, //ç®€åŒ–çš„è‡ªå·± æ²¡ç¿…è†€å•¥çš„
+         e_exhibition_show_type_player_other_on_mount, //åœ¨åéª‘ä¸Šçš„å…¶ä»–ç©å®¶
+         e_exhibition_show_type_try_on_fashion, //æ—¶è£…è¯•ç©¿
+         e_exhibition_show_type_spirit_composit, //ç²¾çµåˆæˆ
          e_exhibition_show_type_max
      };
      enum e_pos_type
      {
-         e_pos_type_pos_x, //×ø±êx
-         e_pos_type_pos_y, //×ø±êy
-         e_pos_type_pos_z, //×ø±êz
+         e_pos_type_pos_x, //åæ ‡x
+         e_pos_type_pos_y, //åæ ‡y
+         e_pos_type_pos_z, //åæ ‡z
          e_pos_type_max
      };
      enum e_rotation_type
      {
-         e_rotation_type_pitch, //Ğı×ªpitch
-         e_rotation_type_yaw, //Ğı×ªyaw
-         e_rotation_type_roll, //Ğı×ªroll
+         e_rotation_type_pitch, //æ—‹è½¬pitch
+         e_rotation_type_yaw, //æ—‹è½¬yaw
+         e_rotation_type_roll, //æ—‹è½¬roll
          e_rotation_type_max
      };
      enum e_week_day
      {
-         e_week_day_monday, //ÖÜÒ»
-         e_week_day_tuesday, //ÖÜ¶ş
-         e_week_day_wednesday, //ÖÜÈı
-         e_week_day_thursday, //ÖÜËÄ
-         e_week_day_friday, //ÖÜÎå
-         e_week_day_saturday, //ÖÜÁù
-         e_week_day_sunday, //ÖÜÈÕ
+         e_week_day_monday, //å‘¨ä¸€
+         e_week_day_tuesday, //å‘¨äºŒ
+         e_week_day_wednesday, //å‘¨ä¸‰
+         e_week_day_thursday, //å‘¨å››
+         e_week_day_friday, //å‘¨äº”
+         e_week_day_saturday, //å‘¨å…­
+         e_week_day_sunday, //å‘¨æ—¥
          e_week_day_max
      };
      enum e_month
      {
-         e_month_january, //Ò»ÔÂ
-         e_month_february, //¶şÔÂ
-         e_month_march, //ÈıÔÂ
-         e_month_april, //ËÄÔÂ
-         e_month_may, //ÎåÔÂ
-         e_month_june, //ÁùÔÂ
-         e_month_july, //ÆßÔÂ
-         e_month_august, //°ËÔÂ
-         e_month_september, //¾ÅÔÂ
-         e_month_october, //Ê®ÔÂ
-         e_month_november, //Ê®Ò»ÔÂ
-         e_month_december, //Ê®¶şÔÂ
+         e_month_january, //ä¸€æœˆ
+         e_month_february, //äºŒæœˆ
+         e_month_march, //ä¸‰æœˆ
+         e_month_april, //å››æœˆ
+         e_month_may, //äº”æœˆ
+         e_month_june, //å…­æœˆ
+         e_month_july, //ä¸ƒæœˆ
+         e_month_august, //å…«æœˆ
+         e_month_september, //ä¹æœˆ
+         e_month_october, //åæœˆ
+         e_month_november, //åä¸€æœˆ
+         e_month_december, //åäºŒæœˆ
          e_month_max
      };
      enum e_item_get_info
      {
-         e_item_get_info_item_template_id, //±í¸ñID
-         e_item_get_info_item_num, //ÎïÆ·ÊıÁ¿
-         e_item_get_info_locked_state, //Ëø¶¨×´Ì¬
+         e_item_get_info_item_template_id, //è¡¨æ ¼ID
+         e_item_get_info_item_num, //ç‰©å“æ•°é‡
+         e_item_get_info_locked_state, //é”å®šçŠ¶æ€
          e_item_get_info_max
      };
      enum e_addition_buff
      {
-         e_addition_buff_upgrade, //×°±¸Ç¿»¯
-         e_addition_buff_quality, //×°±¸×¿Ô½
-         e_addition_buff_achievement, //³É¾Í
-         e_addition_buff_rank, //¾üÏÎ
-         e_addition_buff_feather, //³á°òÇ¿»¯
-         e_addition_buff_addon, //×°±¸×·¼Ó
-         e_addition_buff_succinct, //×°±¸Ï´Á·
-         e_addition_buff_fahion_sum_level, //Ê±×°×ÜĞÇ¼¶
-         e_addition_buff_sky_equip, //Ìì¿ÕÌ××°
-         e_addition_buff_enchant, //¸½Ä§Ì××°
-         e_addition_buff_goddess, //Å®ÉñÌ××°
-         e_addition_buff_couple_heart_value, //·òÆŞÁéÏ¬Öµ
-         e_addition_buff_skygod_equip, //ÌìÉñÌ××°
-         e_addition_buff_supreme_equip, //ÉñÍõÌ××°
+         e_addition_buff_upgrade, //è£…å¤‡å¼ºåŒ–
+         e_addition_buff_quality, //è£…å¤‡å“è¶Š
+         e_addition_buff_achievement, //æˆå°±
+         e_addition_buff_rank, //å†›è¡”
+         e_addition_buff_feather, //ç¿…è†€å¼ºåŒ–
+         e_addition_buff_addon, //è£…å¤‡è¿½åŠ 
+         e_addition_buff_succinct, //è£…å¤‡æ´—ç»ƒ
+         e_addition_buff_fahion_sum_level, //æ—¶è£…æ€»æ˜Ÿçº§
+         e_addition_buff_sky_equip, //å¤©ç©ºå¥—è£…
+         e_addition_buff_enchant, //é™„é­”å¥—è£…
+         e_addition_buff_goddess, //å¥³ç¥å¥—è£…
+         e_addition_buff_couple_heart_value, //å¤«å¦»çµçŠ€å€¼
+         e_addition_buff_skygod_equip, //å¤©ç¥å¥—è£…
+         e_addition_buff_supreme_equip, //ç¥ç‹å¥—è£…
          e_addition_buff_max
      };
      enum e_item_upgrade_protect_type
      {
-         e_item_upgrade_protect_type_non, //ÎŞ
-         e_item_upgrade_protect_type_low_level_undown, //µÍ¼¶²»µô¼¶
-         e_item_upgrade_protect_type_high_level_undown, //¸ß¼¶²»µô¼¶
-         e_item_upgrade_protect_type_add_success_percentage, //Ôö¼Ó³É¹¦ÂÊ
+         e_item_upgrade_protect_type_non, //æ— 
+         e_item_upgrade_protect_type_low_level_undown, //ä½çº§ä¸æ‰çº§
+         e_item_upgrade_protect_type_high_level_undown, //é«˜çº§ä¸æ‰çº§
+         e_item_upgrade_protect_type_add_success_percentage, //å¢åŠ æˆåŠŸç‡
          e_item_upgrade_protect_type_max
      };
      enum e_item_succinct_buff_level
      {
-         e_item_succinct_buff_level_none, //ÎŞ
-         e_item_succinct_buff_level_F, //F¼¶
-         e_item_succinct_buff_level_E, //E¼¶
-         e_item_succinct_buff_level_D, //D¼¶
-         e_item_succinct_buff_level_C, //C¼¶
-         e_item_succinct_buff_level_B, //B¼¶
-         e_item_succinct_buff_level_A, //A¼¶
-         e_item_succinct_buff_level_S, //S¼¶
-         e_item_succinct_buff_level_SS, //SS¼¶
-         e_item_succinct_buff_level_SSS, //SSS¼¶
+         e_item_succinct_buff_level_none, //æ— 
+         e_item_succinct_buff_level_F, //Fçº§
+         e_item_succinct_buff_level_E, //Eçº§
+         e_item_succinct_buff_level_D, //Dçº§
+         e_item_succinct_buff_level_C, //Cçº§
+         e_item_succinct_buff_level_B, //Bçº§
+         e_item_succinct_buff_level_A, //Açº§
+         e_item_succinct_buff_level_S, //Sçº§
+         e_item_succinct_buff_level_SS, //SSçº§
+         e_item_succinct_buff_level_SSS, //SSSçº§
          e_item_succinct_buff_level_max
      };
      enum e_this_launch_already_do
      {
-         e_this_launch_already_do_play_cg, //²¥·ÅCG
-         e_this_launch_already_do_show_notice, //µ¯³ö¹«¸æ
-         e_this_launch_already_do_sdk_game_start, //·ÀÖ¹GameStart½Ó¿Úµ÷ÓÃ¶à´Î
+         e_this_launch_already_do_play_cg, //æ’­æ”¾CG
+         e_this_launch_already_do_show_notice, //å¼¹å‡ºå…¬å‘Š
+         e_this_launch_already_do_sdk_game_start, //é˜²æ­¢GameStartæ¥å£è°ƒç”¨å¤šæ¬¡
          e_this_launch_already_do_max
      };
      enum e_tinder_info
      {
-         e_tinder_info_current_level_template_id, //µ±Ç°»ğÖÖµÈ¼¶Ä£°åid
-         e_tinder_info_current_unlock_template_id, //µ±Ç°½âËø»ğÖÖÄ£°åid
-         e_tinder_info_already_play_unlock_animation_id, //ÒÑ¾­²¥·Å½âËø¶¯»­µÄ»ğÖÖid
-         e_tinder_info_total_star_level, //»ğÖÖĞÇ¼¶
-         e_tinder_info_add_star_level, //»ğÖÖµÀ¾ßÔö¼ÓĞÇ¼¶
+         e_tinder_info_current_level_template_id, //å½“å‰ç«ç§ç­‰çº§æ¨¡æ¿id
+         e_tinder_info_current_unlock_template_id, //å½“å‰è§£é”ç«ç§æ¨¡æ¿id
+         e_tinder_info_already_play_unlock_animation_id, //å·²ç»æ’­æ”¾è§£é”åŠ¨ç”»çš„ç«ç§id
+         e_tinder_info_total_star_level, //ç«ç§æ˜Ÿçº§
+         e_tinder_info_add_star_level, //ç«ç§é“å…·å¢åŠ æ˜Ÿçº§
          e_tinder_info_max
      };
      enum e_tinder_operation_type
      {
-         e_tinder_operation_type_levelup_tinder, //Éı¼¶»ğÖÖ
-         e_tinder_operation_type_unlock_tinder, //½âËø»ğÖÖ
-         e_tinder_operation_type_update_unlock_ani, //¸üĞÂ½âËø¶¯»­
-         e_tinder_operation_type_unlock_active_skill, //½âËøÖ÷¶¯¼¼ÄÜ
+         e_tinder_operation_type_levelup_tinder, //å‡çº§ç«ç§
+         e_tinder_operation_type_unlock_tinder, //è§£é”ç«ç§
+         e_tinder_operation_type_update_unlock_ani, //æ›´æ–°è§£é”åŠ¨ç”»
+         e_tinder_operation_type_unlock_active_skill, //è§£é”ä¸»åŠ¨æŠ€èƒ½
          e_tinder_operation_type_max
      };
      enum e_get_aoi_info_all_type
      {
-         e_get_aoi_info_all_type_create, //´´½¨
-         e_get_aoi_info_all_type_simple_to_normal, //Simple×ªNormal
-         e_get_aoi_info_all_type_normal_to_simple, //Normal×ªSimple
+         e_get_aoi_info_all_type_create, //åˆ›å»º
+         e_get_aoi_info_all_type_simple_to_normal, //Simpleè½¬Normal
+         e_get_aoi_info_all_type_normal_to_simple, //Normalè½¬Simple
          e_get_aoi_info_all_type_max
      };
      enum e_service_rank_type
      {
-         e_service_rank_type_level, //µÈ¼¶°ñ
-         e_service_rank_type_mount, //×øÆï
-         e_service_rank_type_spirit, //¾«Áé
-         e_service_rank_type_element, //·ûÎÄ
-         e_service_rank_type_wing, //³á°ò
-         e_service_rank_type_gs, //Õ½Á¦°ñ
+         e_service_rank_type_level, //ç­‰çº§æ¦œ
+         e_service_rank_type_mount, //åéª‘
+         e_service_rank_type_spirit, //ç²¾çµ
+         e_service_rank_type_element, //ç¬¦æ–‡
+         e_service_rank_type_wing, //ç¿…è†€
+         e_service_rank_type_gs, //æˆ˜åŠ›æ¦œ
          e_service_rank_type_max
      };
      enum e_mission_type
      {
-         e_mission_type_main, //Ö÷Ïß
-         e_mission_type_daily, //ÈÕ³£
-         e_mission_type_against, //ÌÖ·¥
-         e_mission_type_side, //Ö§Ïß
-         e_mission_type_grade_up, //×ªÖ°ÈÎÎñ
-         e_mission_type_marry, //·òÆŞÈÎÎñ
+         e_mission_type_main, //ä¸»çº¿
+         e_mission_type_daily, //æ—¥å¸¸
+         e_mission_type_against, //è®¨ä¼
+         e_mission_type_side, //æ”¯çº¿
+         e_mission_type_grade_up, //è½¬èŒä»»åŠ¡
+         e_mission_type_marry, //å¤«å¦»ä»»åŠ¡
          e_mission_type_max
      };
      enum e_mission_slot
      {
-         e_mission_slot_main, //Ö÷Ïß
-         e_mission_slot_daily, //ÈÕ³£
-         e_mission_slot_against, //ÌÖ·¥
-         e_mission_slot_grade_up, //×ªÖ°
-         e_mission_slot_side_0, //Ö§Ïß_0
-         e_mission_slot_side_1, //Ö§Ïß_1
-         e_mission_slot_side_2, //Ö§Ïß_2
-         e_mission_slot_side_3, //Ö§Ïß_3
-         e_mission_slot_side_4, //Ö§Ïß_4
-         e_mission_slot_side_5, //Ö§Ïß_5
-         e_mission_slot_side_6, //Ö§Ïß_6
-         e_mission_slot_extra_side_0, //¶îÍâÖ§Ïß_0£¨½á»éÈÎÎñ£©
-         e_mission_slot_extra_side_1, //¶îÍâÖ§Ïß_1
-         e_mission_slot_extra_side_2, //¶îÍâÖ§Ïß_2
-         e_mission_slot_extra_side_3, //¶îÍâÖ§Ïß_3
-         e_mission_slot_extra_side_4, //¶îÍâÖ§Ïß_4
-         e_mission_slot_extra_side_5, //¶îÍâÖ§Ïß_5
-         e_mission_slot_extra_side_6, //¶îÍâÖ§Ïß_6
-         e_mission_slot_extra_side_7, //¶îÍâÖ§Ïß_7
-         e_mission_slot_extra_side_8, //¶îÍâÖ§Ïß_8
-         e_mission_slot_extra_side_9, //¶îÍâÖ§Ïß_9
-         e_mission_slot_extra_side_10, //¶îÍâÖ§Ïß_10
+         e_mission_slot_main, //ä¸»çº¿
+         e_mission_slot_daily, //æ—¥å¸¸
+         e_mission_slot_against, //è®¨ä¼
+         e_mission_slot_grade_up, //è½¬èŒ
+         e_mission_slot_side_0, //æ”¯çº¿_0
+         e_mission_slot_side_1, //æ”¯çº¿_1
+         e_mission_slot_side_2, //æ”¯çº¿_2
+         e_mission_slot_side_3, //æ”¯çº¿_3
+         e_mission_slot_side_4, //æ”¯çº¿_4
+         e_mission_slot_side_5, //æ”¯çº¿_5
+         e_mission_slot_side_6, //æ”¯çº¿_6
+         e_mission_slot_extra_side_0, //é¢å¤–æ”¯çº¿_0ï¼ˆç»“å©šä»»åŠ¡ï¼‰
+         e_mission_slot_extra_side_1, //é¢å¤–æ”¯çº¿_1
+         e_mission_slot_extra_side_2, //é¢å¤–æ”¯çº¿_2
+         e_mission_slot_extra_side_3, //é¢å¤–æ”¯çº¿_3
+         e_mission_slot_extra_side_4, //é¢å¤–æ”¯çº¿_4
+         e_mission_slot_extra_side_5, //é¢å¤–æ”¯çº¿_5
+         e_mission_slot_extra_side_6, //é¢å¤–æ”¯çº¿_6
+         e_mission_slot_extra_side_7, //é¢å¤–æ”¯çº¿_7
+         e_mission_slot_extra_side_8, //é¢å¤–æ”¯çº¿_8
+         e_mission_slot_extra_side_9, //é¢å¤–æ”¯çº¿_9
+         e_mission_slot_extra_side_10, //é¢å¤–æ”¯çº¿_10
          e_mission_slot_max
      };
      enum e_service_rank_reward_state_type
      {
-         e_service_rank_reward_state_type_no_qualification, //Ã»ÓĞ×Ê¸ñ
-         e_service_rank_reward_state_type_have_qualification, //ÓĞ×Ê¸ñ
-         e_service_rank_reward_state_type_already_receive, //ÒÑ¾­ÁìÈ¡
+         e_service_rank_reward_state_type_no_qualification, //æ²¡æœ‰èµ„æ ¼
+         e_service_rank_reward_state_type_have_qualification, //æœ‰èµ„æ ¼
+         e_service_rank_reward_state_type_already_receive, //å·²ç»é¢†å–
          e_service_rank_reward_state_type_max
      };
      enum e_service_rank_reward_type
      {
-         e_service_rank_reward_type_first, //Í·½±
-         e_service_rank_reward_type_second, //µÚ¶ş¶Î
-         e_service_rank_reward_type_third, //µÚÈı¶Î
-         e_service_rank_reward_type_fourth, //µÚËÄ¶Î
-         e_service_rank_reward_type_fifth, //µÚÎå¶Î
+         e_service_rank_reward_type_first, //å¤´å¥–
+         e_service_rank_reward_type_second, //ç¬¬äºŒæ®µ
+         e_service_rank_reward_type_third, //ç¬¬ä¸‰æ®µ
+         e_service_rank_reward_type_fourth, //ç¬¬å››æ®µ
+         e_service_rank_reward_type_fifth, //ç¬¬äº”æ®µ
          e_service_rank_reward_type_max
      };
      enum e_beast_spirit_type
      {
-         e_beast_spirit_type_mount, //×øÆïÊŞ»ê
-         e_beast_spirit_type_wing, //³á°òÊŞ»ê
-         e_beast_spirit_type_spirit, //¾«ÁéÊŞ»ê
+         e_beast_spirit_type_mount, //åéª‘å…½é­‚
+         e_beast_spirit_type_wing, //ç¿…è†€å…½é­‚
+         e_beast_spirit_type_spirit, //ç²¾çµå…½é­‚
          e_beast_spirit_type_max
      };
      enum e_gain_treasure_info_type
      {
-         e_gain_treasure_info_type_killed_field_boss, //ÒÑ»÷É±Ò°Íâboss´ÎÊı
-         e_gain_treasure_info_type_killed_simple_boss, //ÒÑ»÷É±¸öÈËboss´ÎÊı
-         e_gain_treasure_info_type_buy_simple_boss, //¸öÈËbossÒÑ¹ºÂò´ÎÊı
+         e_gain_treasure_info_type_killed_field_boss, //å·²å‡»æ€é‡å¤–bossæ¬¡æ•°
+         e_gain_treasure_info_type_killed_simple_boss, //å·²å‡»æ€ä¸ªäººbossæ¬¡æ•°
+         e_gain_treasure_info_type_buy_simple_boss, //ä¸ªäººbosså·²è´­ä¹°æ¬¡æ•°
          e_gain_treasure_info_type_max
      };
      enum e_jewel_type
      {
-         e_jewel_type_non, //ÎŞĞ§
-         e_jewel_type_attack, //¹¥»÷
-         e_jewel_type_defense, //·ÀÓù
+         e_jewel_type_non, //æ— æ•ˆ
+         e_jewel_type_attack, //æ”»å‡»
+         e_jewel_type_defense, //é˜²å¾¡
          e_jewel_type_max
      };
      enum e_drop_record_model_type
      {
-         e_drop_record_model_type_no, //²»¼ÇÂ¼
-         e_drop_record_model_type_record, //¼ÇÂ¼
-         e_drop_record_model_type_set_top, //ÖÃ¶¥
+         e_drop_record_model_type_no, //ä¸è®°å½•
+         e_drop_record_model_type_record, //è®°å½•
+         e_drop_record_model_type_set_top, //ç½®é¡¶
          e_drop_record_model_type_max
      };
      enum e_treasure_record
      {
-         e_treasure_record_time, //³éÈ¡Ê±¼ä
-         e_treasure_record_treasure_type, //±¦²ØÀàĞÍ
-         e_treasure_record_prize_type, //³éÈ¡ÀàĞÍ
-         e_treasure_record_prize_0, //½±Æ·
-         e_treasure_record_prize_1, //½±Æ·
-         e_treasure_record_prize_2, //½±Æ·
-         e_treasure_record_prize_3, //½±Æ·
-         e_treasure_record_prize_4, //½±Æ·
-         e_treasure_record_prize_5, //½±Æ·
-         e_treasure_record_prize_6, //½±Æ·
-         e_treasure_record_prize_7, //½±Æ·
-         e_treasure_record_prize_8, //½±Æ·
-         e_treasure_record_prize_9, //½±Æ·
+         e_treasure_record_time, //æŠ½å–æ—¶é—´
+         e_treasure_record_treasure_type, //å®è—ç±»å‹
+         e_treasure_record_prize_type, //æŠ½å–ç±»å‹
+         e_treasure_record_prize_0, //å¥–å“
+         e_treasure_record_prize_1, //å¥–å“
+         e_treasure_record_prize_2, //å¥–å“
+         e_treasure_record_prize_3, //å¥–å“
+         e_treasure_record_prize_4, //å¥–å“
+         e_treasure_record_prize_5, //å¥–å“
+         e_treasure_record_prize_6, //å¥–å“
+         e_treasure_record_prize_7, //å¥–å“
+         e_treasure_record_prize_8, //å¥–å“
+         e_treasure_record_prize_9, //å¥–å“
          e_treasure_record_max
      };
      enum e_time_limit_activity_type
      {
-         e_time_limit_activity_type_total_charge, //ÀÛ¼Æ³äÖµÅÅĞĞ
-         e_time_limit_activity_type_total_cost, //ÀÛ¼ÆÏûºÄÅÅĞĞ
-         e_time_limit_activity_type_daily_charge, //Ô­³õ±¦Ïä
-         e_time_limit_activity_type_treasure, //ÏŞÊ±»Ê¼Ò±¦²Ø
-         e_time_limit_activity_type_shop, //ÏŞÊ±ÉÌµê
-         e_time_limit_activity_type_time_welfare, //¾­ÑéÅÉËÍ
-         e_time_limit_activity_type_behavior_welfare, //ÆôÊ¾Ö®Â·
-         e_time_limit_activity_type_word_desc, //¼ÓÈºÓĞÀñ
-         e_time_limit_activity_type_time_welfare2, //Õ½Á¦ÅÉËÍ
-         e_time_limit_activity_type_time_welfare3, //×Ï×êÅÉËÍ
-         e_time_limit_activity_type_time_welfare4, //Ê±×°ÅÉËÍ
-         e_time_limit_activity_type_treasure_sprite, //ÏŞÊ±¾«Áé³é½±
-         e_time_limit_activity_type_item_exchange, //¶Ò»»»î¶¯
-         e_time_limit_activity_type_time_welfare5, //ÖÜÒ»Áì½±
-         e_time_limit_activity_type_daily_charge2, //Ã¿ÈÕ³äÖµ
-         e_time_limit_activity_type_total_charge2, //ÀÛ¼Æ³äÖµ
-         e_time_limit_activity_type_behavior_welfare_reward, //ÆôÊ¾Ö®Â·Áì½±
-         e_time_limit_activity_type_discount_shop, //ÕÛ¿ÛÉÌµê
-         e_time_limit_activity_type_small_charge, //Ğ¡¶î³äÖµ
-         e_time_limit_activity_type_total_landing, //ÀÛ¼ÆµÇÂ½
-         e_time_limit_activity_type_total_cost_jewel, //ÀÛ¼ÆÏû·Ñ
-         e_time_limit_activity_type_landing_reward, //µÇÂ½Áì½±
-         e_time_limit_activity_type_added_drop, //¶îÍâµôÂä
-         e_time_limit_activity_type_add_upgrade_level, //Ç¿»¯¼Ó¼¶
-         e_time_limit_activity_type_activity_notice_1, //¹«¸æ°å1
-         e_time_limit_activity_type_activity_notice_2, //¹«¸æ°å2
-         e_time_limit_activity_type_national_treasure_1, //È«Ãñ¾Û±¦-¸öÈË
-         e_time_limit_activity_type_national_treasure_2, //È«Ãñ¾Û±¦-È«·ş
-         e_time_limit_activity_type_gs_up, //Õ½Á¦ÌáÉı°ñ
-         e_time_limit_activity_type_mount_up, //×øÆïÌáÉı°ñ
-         e_time_limit_activity_type_wing_up, //³á°òÌáÉı°ñ
-         e_time_limit_activity_type_equip_up, //×°±¸ÌáÉı°ñ
-         e_time_limit_activity_type_spirit_up, //¾«ÁéÌáÉı°ñ
-         e_time_limit_activity_type_cross_gs_up, //¿ç·şÕ½Á¦ÌáÉı°ñ
-         e_time_limit_activity_type_cross_mount_up, //¿ç·ş×øÆïÌáÉı°ñ
-         e_time_limit_activity_type_cross_wing_up, //¿ç·ş³á°òÌáÉı°ñ
-         e_time_limit_activity_type_cross_equip_up, //¿ç·ş×°±¸ÌáÉı°ñ
-         e_time_limit_activity_type_cross_spirit_up, //¿ç·ş¾«ÁéÌáÉı°ñ
-         e_time_limit_activity_type_treasure_element, //·ûÎÄ±¦²Ø
-         e_time_limit_activity_type_cloud_shop, //ÔÆ¹º
-         e_time_limit_activity_type_cross_cloud_shop, //¿ç·şÔÆ¹º
-         e_time_limit_activity_type_daily_gift_charge, //Ã¿ÈÕÖ±¹ºÀñ°ü
-         e_time_limit_activity_type_item_shop, //»ı·ÖµÀ¾ßÉÌµê
-         e_time_limit_activity_type_dragontrip, //ÃÈÁúÆæÓö
-         e_time_limit_activity_type_special_exchange, //ÌØÊâ¶Ò»»
-         e_time_limit_activity_type_new_total_landing, //ĞÂÀÛ¼ÆµÇÂ¼
-         e_time_limit_activity_type_new_behavior_welfare, //ĞÂÆôÊ¾Ö®Â·
-         e_time_limit_activity_type_new_behavior_welfare_reward, //ĞÂÆôÊ¾Ö®Â·Áì½±
-         e_time_limit_activity_type_sky_treasure, //Ìì¿Õ±¦¿â
-         e_time_limit_activity_type_starark, //ĞÇº£·½ÖÛ
-         e_time_limit_activity_type_support_for_promotion, //³å¼¶ÖúÁ¦
-         e_time_limit_activity_type_weekend_top_up, //ÖÜÄ©ÏŞÊ±³äÖµ
-         e_time_limit_activity_type_behavior_welfare1, //ÆôÊ¾Ö®Â·±¸ÓÃ1
-         e_time_limit_activity_type_behavior_welfare2, //ÆôÊ¾Ö®Â·±¸ÓÃ2
-         e_time_limit_activity_type_behavior_welfare3, //ÆôÊ¾Ö®Â·±¸ÓÃ3
-         e_time_limit_activity_type_treasure_royal1, //»Ê¼Ò±¦²Ø±¸ÓÃ1
-         e_time_limit_activity_type_treasure_royal2, //»Ê¼Ò±¦²Ø±¸ÓÃ2
-         e_time_limit_activity_type_treasure_royal3, //»Ê¼Ò±¦²Ø±¸ÓÃ3
-         e_time_limit_activity_type_daily_charge3, //Ã¿ÈÕ³äÖµ±¸ÓÃ3
-         e_time_limit_activity_type_daily_charge4, //Ã¿ÈÕ³äÖµ±¸ÓÃ4
-         e_time_limit_activity_type_daily_charge5, //Ã¿ÈÕ³äÖµ±¸ÓÃ5
-         e_time_limit_activity_type_daily_charge6, //Ã¿ÈÕ³äÖµ±¸ÓÃ6
-         e_time_limit_activity_type_discount_shop1, //ÕÛ¿ÛÉÌµê±¸ÓÃ1
-         e_time_limit_activity_type_discount_shop2, //ÕÛ¿ÛÉÌµê±¸ÓÃ2
-         e_time_limit_activity_type_discount_shop3, //ÕÛ¿ÛÉÌµê±¸ÓÃ3
-         e_time_limit_activity_type_behavior_welfare_reward1, //ÆôÊ¾Ö®Â·Áì½±±¸ÓÃ1
-         e_time_limit_activity_type_behavior_welfare_reward2, //ÆôÊ¾Ö®Â·Áì½±±¸ÓÃ2
-         e_time_limit_activity_type_behavior_welfare_reward3, //ÆôÊ¾Ö®Â·Áì½±±¸ÓÃ3
-         e_time_limit_activity_type_item_shop1, //»ı·ÖµÀ¾ßÉÌµê±¸ÓÃ1
-         e_time_limit_activity_type_item_shop2, //»ı·ÖµÀ¾ßÉÌµê±¸ÓÃ2
-         e_time_limit_activity_type_item_shop3, //»ı·ÖµÀ¾ßÉÌµê±¸ÓÃ3
-         e_time_limit_activity_type_lucky_card, //¸£ÅÆ»î¶¯
-         e_time_limit_activity_type_cross_total_charge, //¿ç·şÀÛ¼Æ³äÖµÅÅĞĞ°ñ
-         e_time_limit_activity_type_new_total_charge_1, //ĞÂÀÛ¼Æ³äÖµ1
-         e_time_limit_activity_type_new_total_charge_2, //ĞÂÀÛ¼Æ³äÖµ2
-         e_time_limit_activity_type_new_total_charge_3, //ĞÂÀÛ¼Æ³äÖµ3
-         e_time_limit_activity_type_new_total_cost_jewel_1, //ĞÂÀÛ¼ÆÏû·Ñ1
-         e_time_limit_activity_type_new_total_cost_jewel_2, //ĞÂÀÛ¼ÆÏû·Ñ2
-         e_time_limit_activity_type_new_total_cost_jewel_3, //ĞÂÀÛ¼ÆÏû·Ñ3
-         e_time_limit_activity_type_new_server_treasure, //ĞÂ¿ª·ş±¦²Ø
-         e_time_limit_activity_type_new_server_mail, //ĞÂ·şÓÊ¼ş
-         e_time_limit_activity_type_national_treasure_3, //È«Ãñ¾Û±¦±¾·ş_¸öÈË
-         e_time_limit_activity_type_national_treasure_4, //È«Ãñ¾Û±¦±¾·ş_È«·ş
-         e_time_limit_activity_type_daily_free_reward, //Ã¿ÈÕÃâ·ÑÀñ°ü
-         e_time_limit_activity_type_time_feed_back1, //Ê±¹â»ØÀ¡1
-         e_time_limit_activity_type_time_feed_back2, //Ê±¹â»ØÀ¡2
-         e_time_limit_activity_type_time_feed_back3, //Ê±¹â»ØÀ¡3
-         e_time_limit_activity_type_limit_time_treasure2, //ĞÂÏŞÊ±³é½±
-         e_time_limit_activity_type_limit_time_notice, //ÏŞÊ±¹«¸æ
-         e_time_limit_activity_type_diamond_shop, //×êÊ¯ÉÌµê
-         e_time_limit_activity_type_star_trip, //Òì½çÖ®ÂÃ
+         e_time_limit_activity_type_total_charge, //ç´¯è®¡å……å€¼æ’è¡Œ
+         e_time_limit_activity_type_total_cost, //ç´¯è®¡æ¶ˆè€—æ’è¡Œ
+         e_time_limit_activity_type_daily_charge, //åŸåˆå®ç®±
+         e_time_limit_activity_type_treasure, //é™æ—¶çš‡å®¶å®è—
+         e_time_limit_activity_type_shop, //é™æ—¶å•†åº—
+         e_time_limit_activity_type_time_welfare, //ç»éªŒæ´¾é€
+         e_time_limit_activity_type_behavior_welfare, //å¯ç¤ºä¹‹è·¯
+         e_time_limit_activity_type_word_desc, //åŠ ç¾¤æœ‰ç¤¼
+         e_time_limit_activity_type_time_welfare2, //æˆ˜åŠ›æ´¾é€
+         e_time_limit_activity_type_time_welfare3, //ç´«é’»æ´¾é€
+         e_time_limit_activity_type_time_welfare4, //æ—¶è£…æ´¾é€
+         e_time_limit_activity_type_treasure_sprite, //é™æ—¶ç²¾çµæŠ½å¥–
+         e_time_limit_activity_type_item_exchange, //å…‘æ¢æ´»åŠ¨
+         e_time_limit_activity_type_time_welfare5, //å‘¨ä¸€é¢†å¥–
+         e_time_limit_activity_type_daily_charge2, //æ¯æ—¥å……å€¼
+         e_time_limit_activity_type_total_charge2, //ç´¯è®¡å……å€¼
+         e_time_limit_activity_type_behavior_welfare_reward, //å¯ç¤ºä¹‹è·¯é¢†å¥–
+         e_time_limit_activity_type_discount_shop, //æŠ˜æ‰£å•†åº—
+         e_time_limit_activity_type_small_charge, //å°é¢å……å€¼
+         e_time_limit_activity_type_total_landing, //ç´¯è®¡ç™»é™†
+         e_time_limit_activity_type_total_cost_jewel, //ç´¯è®¡æ¶ˆè´¹
+         e_time_limit_activity_type_landing_reward, //ç™»é™†é¢†å¥–
+         e_time_limit_activity_type_added_drop, //é¢å¤–æ‰è½
+         e_time_limit_activity_type_add_upgrade_level, //å¼ºåŒ–åŠ çº§
+         e_time_limit_activity_type_activity_notice_1, //å…¬å‘Šæ¿1
+         e_time_limit_activity_type_activity_notice_2, //å…¬å‘Šæ¿2
+         e_time_limit_activity_type_national_treasure_1, //å…¨æ°‘èšå®-ä¸ªäºº
+         e_time_limit_activity_type_national_treasure_2, //å…¨æ°‘èšå®-å…¨æœ
+         e_time_limit_activity_type_gs_up, //æˆ˜åŠ›æå‡æ¦œ
+         e_time_limit_activity_type_mount_up, //åéª‘æå‡æ¦œ
+         e_time_limit_activity_type_wing_up, //ç¿…è†€æå‡æ¦œ
+         e_time_limit_activity_type_equip_up, //è£…å¤‡æå‡æ¦œ
+         e_time_limit_activity_type_spirit_up, //ç²¾çµæå‡æ¦œ
+         e_time_limit_activity_type_cross_gs_up, //è·¨æœæˆ˜åŠ›æå‡æ¦œ
+         e_time_limit_activity_type_cross_mount_up, //è·¨æœåéª‘æå‡æ¦œ
+         e_time_limit_activity_type_cross_wing_up, //è·¨æœç¿…è†€æå‡æ¦œ
+         e_time_limit_activity_type_cross_equip_up, //è·¨æœè£…å¤‡æå‡æ¦œ
+         e_time_limit_activity_type_cross_spirit_up, //è·¨æœç²¾çµæå‡æ¦œ
+         e_time_limit_activity_type_treasure_element, //ç¬¦æ–‡å®è—
+         e_time_limit_activity_type_cloud_shop, //äº‘è´­
+         e_time_limit_activity_type_cross_cloud_shop, //è·¨æœäº‘è´­
+         e_time_limit_activity_type_daily_gift_charge, //æ¯æ—¥ç›´è´­ç¤¼åŒ…
+         e_time_limit_activity_type_item_shop, //ç§¯åˆ†é“å…·å•†åº—
+         e_time_limit_activity_type_dragontrip, //èŒé¾™å¥‡é‡
+         e_time_limit_activity_type_special_exchange, //ç‰¹æ®Šå…‘æ¢
+         e_time_limit_activity_type_new_total_landing, //æ–°ç´¯è®¡ç™»å½•
+         e_time_limit_activity_type_new_behavior_welfare, //æ–°å¯ç¤ºä¹‹è·¯
+         e_time_limit_activity_type_new_behavior_welfare_reward, //æ–°å¯ç¤ºä¹‹è·¯é¢†å¥–
+         e_time_limit_activity_type_sky_treasure, //å¤©ç©ºå®åº“
+         e_time_limit_activity_type_starark, //æ˜Ÿæµ·æ–¹èˆŸ
+         e_time_limit_activity_type_support_for_promotion, //å†²çº§åŠ©åŠ›
+         e_time_limit_activity_type_weekend_top_up, //å‘¨æœ«é™æ—¶å……å€¼
+         e_time_limit_activity_type_behavior_welfare1, //å¯ç¤ºä¹‹è·¯å¤‡ç”¨1
+         e_time_limit_activity_type_behavior_welfare2, //å¯ç¤ºä¹‹è·¯å¤‡ç”¨2
+         e_time_limit_activity_type_behavior_welfare3, //å¯ç¤ºä¹‹è·¯å¤‡ç”¨3
+         e_time_limit_activity_type_treasure_royal1, //çš‡å®¶å®è—å¤‡ç”¨1
+         e_time_limit_activity_type_treasure_royal2, //çš‡å®¶å®è—å¤‡ç”¨2
+         e_time_limit_activity_type_treasure_royal3, //çš‡å®¶å®è—å¤‡ç”¨3
+         e_time_limit_activity_type_daily_charge3, //æ¯æ—¥å……å€¼å¤‡ç”¨3
+         e_time_limit_activity_type_daily_charge4, //æ¯æ—¥å……å€¼å¤‡ç”¨4
+         e_time_limit_activity_type_daily_charge5, //æ¯æ—¥å……å€¼å¤‡ç”¨5
+         e_time_limit_activity_type_daily_charge6, //æ¯æ—¥å……å€¼å¤‡ç”¨6
+         e_time_limit_activity_type_discount_shop1, //æŠ˜æ‰£å•†åº—å¤‡ç”¨1
+         e_time_limit_activity_type_discount_shop2, //æŠ˜æ‰£å•†åº—å¤‡ç”¨2
+         e_time_limit_activity_type_discount_shop3, //æŠ˜æ‰£å•†åº—å¤‡ç”¨3
+         e_time_limit_activity_type_behavior_welfare_reward1, //å¯ç¤ºä¹‹è·¯é¢†å¥–å¤‡ç”¨1
+         e_time_limit_activity_type_behavior_welfare_reward2, //å¯ç¤ºä¹‹è·¯é¢†å¥–å¤‡ç”¨2
+         e_time_limit_activity_type_behavior_welfare_reward3, //å¯ç¤ºä¹‹è·¯é¢†å¥–å¤‡ç”¨3
+         e_time_limit_activity_type_item_shop1, //ç§¯åˆ†é“å…·å•†åº—å¤‡ç”¨1
+         e_time_limit_activity_type_item_shop2, //ç§¯åˆ†é“å…·å•†åº—å¤‡ç”¨2
+         e_time_limit_activity_type_item_shop3, //ç§¯åˆ†é“å…·å•†åº—å¤‡ç”¨3
+         e_time_limit_activity_type_lucky_card, //ç¦ç‰Œæ´»åŠ¨
+         e_time_limit_activity_type_cross_total_charge, //è·¨æœç´¯è®¡å……å€¼æ’è¡Œæ¦œ
+         e_time_limit_activity_type_new_total_charge_1, //æ–°ç´¯è®¡å……å€¼1
+         e_time_limit_activity_type_new_total_charge_2, //æ–°ç´¯è®¡å……å€¼2
+         e_time_limit_activity_type_new_total_charge_3, //æ–°ç´¯è®¡å……å€¼3
+         e_time_limit_activity_type_new_total_cost_jewel_1, //æ–°ç´¯è®¡æ¶ˆè´¹1
+         e_time_limit_activity_type_new_total_cost_jewel_2, //æ–°ç´¯è®¡æ¶ˆè´¹2
+         e_time_limit_activity_type_new_total_cost_jewel_3, //æ–°ç´¯è®¡æ¶ˆè´¹3
+         e_time_limit_activity_type_new_server_treasure, //æ–°å¼€æœå®è—
+         e_time_limit_activity_type_new_server_mail, //æ–°æœé‚®ä»¶
+         e_time_limit_activity_type_national_treasure_3, //å…¨æ°‘èšå®æœ¬æœ_ä¸ªäºº
+         e_time_limit_activity_type_national_treasure_4, //å…¨æ°‘èšå®æœ¬æœ_å…¨æœ
+         e_time_limit_activity_type_daily_free_reward, //æ¯æ—¥å…è´¹ç¤¼åŒ…
+         e_time_limit_activity_type_time_feed_back1, //æ—¶å…‰å›é¦ˆ1
+         e_time_limit_activity_type_time_feed_back2, //æ—¶å…‰å›é¦ˆ2
+         e_time_limit_activity_type_time_feed_back3, //æ—¶å…‰å›é¦ˆ3
+         e_time_limit_activity_type_limit_time_treasure2, //æ–°é™æ—¶æŠ½å¥–
+         e_time_limit_activity_type_limit_time_notice, //é™æ—¶å…¬å‘Š
+         e_time_limit_activity_type_diamond_shop, //é’»çŸ³å•†åº—
+         e_time_limit_activity_type_star_trip, //å¼‚ç•Œä¹‹æ—…
          e_time_limit_activity_type_max
      };
      enum e_mail_type
      {
-         e_mail_type_normal_mail, //³£¹æÓÊ¼ş
-         e_mail_type_server_merge_to_normal_player, //ºÏ·ş·¢¸øËùÓĞÈËµÄ
-         e_mail_type_server_merge_to_legion_del_player, //ºÏ·ş·¢¸ø¾üÍÅ±»É¾µÄÈËµÄ
-         e_mail_type_server_merge_to_be_del_player, //ºÏ·ş·¢¸ø±»É¾ºÅÈËµÄ
+         e_mail_type_normal_mail, //å¸¸è§„é‚®ä»¶
+         e_mail_type_server_merge_to_normal_player, //åˆæœå‘ç»™æ‰€æœ‰äººçš„
+         e_mail_type_server_merge_to_legion_del_player, //åˆæœå‘ç»™å†›å›¢è¢«åˆ çš„äººçš„
+         e_mail_type_server_merge_to_be_del_player, //åˆæœå‘ç»™è¢«åˆ å·äººçš„
          e_mail_type_max
      };
      enum e_time_limit_activity_info
      {
-         e_time_limit_activity_info_type, //ÀàĞÍ
-         e_time_limit_activity_info_start_time, //¿ªÊ¼Ê±¼ä
-         e_time_limit_activity_info_end_time, //½áÊøÊ±¼ä
-         e_time_limit_activity_info_guid, //Ö÷±íÎ¨Ò»id
-         e_time_limit_activity_info_first_branch_guid, //µ±Ç°ÖÜÆÚ×Ó±íÊ×Î¨Ò»id
+         e_time_limit_activity_info_type, //ç±»å‹
+         e_time_limit_activity_info_start_time, //å¼€å§‹æ—¶é—´
+         e_time_limit_activity_info_end_time, //ç»“æŸæ—¶é—´
+         e_time_limit_activity_info_guid, //ä¸»è¡¨å”¯ä¸€id
+         e_time_limit_activity_info_first_branch_guid, //å½“å‰å‘¨æœŸå­è¡¨é¦–å”¯ä¸€id
          e_time_limit_activity_info_max
      };
      enum e_unit_safe_map_info
      {
-         e_unit_safe_map_info_pos_x, //Íæ¼ÒÎ»ÖÃX
-         e_unit_safe_map_info_pos_y, //Íæ¼ÒÎ»ÖÃY
-         e_unit_safe_map_info_map_tempate_id, //µØÍ¼Id
-         e_unit_safe_map_info_map_have_not_safe_region, //¸ÃµØÍ¼Ã»ÓĞ°²È«Çø
-         e_unit_safe_map_info_safe_map_template_id, //°²È«ÇøTemplateId
-         e_unit_safe_map_info_safe_missiondone_id, //Íê³ÉÖ÷ÏßÈÎÎñid
-         e_unit_safe_map_info_safe_map_type, //°²È«ÇøÀàĞÍ
+         e_unit_safe_map_info_pos_x, //ç©å®¶ä½ç½®X
+         e_unit_safe_map_info_pos_y, //ç©å®¶ä½ç½®Y
+         e_unit_safe_map_info_map_tempate_id, //åœ°å›¾Id
+         e_unit_safe_map_info_map_have_not_safe_region, //è¯¥åœ°å›¾æ²¡æœ‰å®‰å…¨åŒº
+         e_unit_safe_map_info_safe_map_template_id, //å®‰å…¨åŒºTemplateId
+         e_unit_safe_map_info_safe_missiondone_id, //å®Œæˆä¸»çº¿ä»»åŠ¡id
+         e_unit_safe_map_info_safe_map_type, //å®‰å…¨åŒºç±»å‹
          e_unit_safe_map_info_max
      };
      enum e_island_record
      {
-         e_island_record_killed_island_boss, //»÷É±boss´ÎÊı
-         e_island_record_island_collect_count, //²É¼¯´ÎÊı
-         e_island_record_cross_pk_collect_count, //¿ç·ş¾º¼¼²É¼¯´ÎÊı
-         e_island_record_oracle_trial_count, //ÌìÆôÊÔÁ¶É¨µ´´ÎÊı
+         e_island_record_killed_island_boss, //å‡»æ€bossæ¬¡æ•°
+         e_island_record_island_collect_count, //é‡‡é›†æ¬¡æ•°
+         e_island_record_cross_pk_collect_count, //è·¨æœç«æŠ€é‡‡é›†æ¬¡æ•°
+         e_island_record_oracle_trial_count, //å¤©å¯è¯•ç‚¼æ‰«è¡æ¬¡æ•°
          e_island_record_max
      };
      enum e_login_type_new
      {
-         e_login_type_new_account_and_password, //ÕËºÅÃÜÂëµÇÂ¼
-         e_login_type_new_robot, //»úÆ÷ÈËµÇÂ¼
-         e_login_type_new_token, //tokenµÇÂ¼
-         e_login_type_new_zw, //ÖĞÎÄ
-         e_login_type_new_facebook, //Á³Êé
-         e_login_type_new_google, //¹È¸è
-         e_login_type_new_gate_server, //gateµÇÂ½»ñÈ¡·şÎñÆ÷ĞÅÏ¢
-         e_login_type_new_tw, //Ì¨Íå°æ
-         e_login_type_new_korea, //º«¹ú°æ
-         e_login_type_new_en, //Ó¢ÎÄ°æ
-         e_login_type_new_umisdk, //Ì©¹ú°æ
-         e_login_type_new_umisdk_vn, //Ô½ÄÏ°æ
-         e_login_type_new_appstore, //Æ»¹ûµÇÂ¼
-         e_login_type_new_umisdk_tw, //·±Ìå°æ
-         e_login_type_new_umisdk_jp, //ÈÕ±¾
-         e_login_type_new_umisdk_rus, //¶íÂŞË¹
-         e_login_type_new_umisdk_sg, //¶«ÄÏÑÇ
-         e_login_type_new_umisdk_new_tw, //ĞÂÌ¨Íå
+         e_login_type_new_account_and_password, //è´¦å·å¯†ç ç™»å½•
+         e_login_type_new_robot, //æœºå™¨äººç™»å½•
+         e_login_type_new_token, //tokenç™»å½•
+         e_login_type_new_zw, //ä¸­æ–‡
+         e_login_type_new_facebook, //è„¸ä¹¦
+         e_login_type_new_google, //è°·æ­Œ
+         e_login_type_new_gate_server, //gateç™»é™†è·å–æœåŠ¡å™¨ä¿¡æ¯
+         e_login_type_new_tw, //å°æ¹¾ç‰ˆ
+         e_login_type_new_korea, //éŸ©å›½ç‰ˆ
+         e_login_type_new_en, //è‹±æ–‡ç‰ˆ
+         e_login_type_new_umisdk, //æ³°å›½ç‰ˆ
+         e_login_type_new_umisdk_vn, //è¶Šå—ç‰ˆ
+         e_login_type_new_appstore, //è‹¹æœç™»å½•
+         e_login_type_new_umisdk_tw, //ç¹ä½“ç‰ˆ
+         e_login_type_new_umisdk_jp, //æ—¥æœ¬
+         e_login_type_new_umisdk_rus, //ä¿„ç½—æ–¯
+         e_login_type_new_umisdk_sg, //ä¸œå—äºš
+         e_login_type_new_umisdk_new_tw, //æ–°å°æ¹¾
          e_login_type_new_max
      };
      enum e_payment_method
      {
-         e_payment_method_test, //²âÊÔ³äÖµ
-         e_payment_method_zw, //ÖĞÎÄ³äÖµ
-         e_payment_method_google, //¹È¸è³äÖµ
-         e_payment_method_one_store, //onestore³äÖµ
-         e_payment_method_app_store, //Æ»¹ûappstore
-         e_payment_method_tw_android, //Ì¨Íåandroid
-         e_payment_method_tw_ios, //Ì¨Íåios
-         e_payment_method_tw_third, //Ì¨ÍåµÚÈı·½
-         e_payment_method_samsung, //ÈıĞÇÉÌ³Ç
-         e_payment_method_en_ios, //Ó¢ÎÄios
-         e_payment_method_en_android, //Ó¢ÎÄandroid
-         e_payment_method_kr_gameloop, //º«¹úGameloop
-         e_payment_method_tl_umisdk_google, //Ì©¹úumisdk
-         e_payment_method_tl_umisdk_ios, //Ì©¹úumisdk
-         e_payment_method_vn_umisdk_google, //Ô½ÄÏgoogle
-         e_payment_method_vn_umisdk_ios, //Ô½ÄÏios
-         e_payment_method_tw_android_new, //ĞÂÌ¨Íåandroid
-         e_payment_method_tw_ios_new, //ĞÂÌ¨Íåios
-         e_payment_method_tw_third_new, //ĞÂÌ¨ÍåµÚÈı·½
-         e_payment_method_tw_umisdk_android, //·±Ìåumisdk_android
-         e_payment_method_tw_umisdk_ios, //·±Ìåumisdk_ios
-         e_payment_method_tw_umisdk_third, //·±Ìåumisdk_third
-         e_payment_method_jp_umisdk_android, //ÈÕ±¾Android
-         e_payment_method_jp_uminsdk_ios, //ÈÕ±¾IOS
-         e_payment_method_rus_umisdk_android, //¶íÂŞË¹Android
-         e_payment_method_rus_uminsdk_ios, //¶íÂŞË¹IOS
-         e_payment_method_sg_umisdk_android, //¶«ÄÏÑÇAndroid
-         e_payment_method_sg_uminsdk_ios, //¶«ÄÏÑÇIOS
-         e_payment_method_umisdk_tw_android, //ĞÂÌ¨Íåandroid
-         e_payment_method_umisdk_tw_ios, //ĞÂÌ¨Íåios
-         e_payment_method_umisdk_tw_third, //ĞÂÌ¨ÍåµÚÈı·½
-         e_payment_method_umisdk_tw_hw, //ĞÂÌ¨Íå»ªÎª
+         e_payment_method_test, //æµ‹è¯•å……å€¼
+         e_payment_method_zw, //ä¸­æ–‡å……å€¼
+         e_payment_method_google, //è°·æ­Œå……å€¼
+         e_payment_method_one_store, //onestoreå……å€¼
+         e_payment_method_app_store, //è‹¹æœappstore
+         e_payment_method_tw_android, //å°æ¹¾android
+         e_payment_method_tw_ios, //å°æ¹¾ios
+         e_payment_method_tw_third, //å°æ¹¾ç¬¬ä¸‰æ–¹
+         e_payment_method_samsung, //ä¸‰æ˜Ÿå•†åŸ
+         e_payment_method_en_ios, //è‹±æ–‡ios
+         e_payment_method_en_android, //è‹±æ–‡android
+         e_payment_method_kr_gameloop, //éŸ©å›½Gameloop
+         e_payment_method_tl_umisdk_google, //æ³°å›½umisdk
+         e_payment_method_tl_umisdk_ios, //æ³°å›½umisdk
+         e_payment_method_vn_umisdk_google, //è¶Šå—google
+         e_payment_method_vn_umisdk_ios, //è¶Šå—ios
+         e_payment_method_tw_android_new, //æ–°å°æ¹¾android
+         e_payment_method_tw_ios_new, //æ–°å°æ¹¾ios
+         e_payment_method_tw_third_new, //æ–°å°æ¹¾ç¬¬ä¸‰æ–¹
+         e_payment_method_tw_umisdk_android, //ç¹ä½“umisdk_android
+         e_payment_method_tw_umisdk_ios, //ç¹ä½“umisdk_ios
+         e_payment_method_tw_umisdk_third, //ç¹ä½“umisdk_third
+         e_payment_method_jp_umisdk_android, //æ—¥æœ¬Android
+         e_payment_method_jp_uminsdk_ios, //æ—¥æœ¬IOS
+         e_payment_method_rus_umisdk_android, //ä¿„ç½—æ–¯Android
+         e_payment_method_rus_uminsdk_ios, //ä¿„ç½—æ–¯IOS
+         e_payment_method_sg_umisdk_android, //ä¸œå—äºšAndroid
+         e_payment_method_sg_uminsdk_ios, //ä¸œå—äºšIOS
+         e_payment_method_umisdk_tw_android, //æ–°å°æ¹¾android
+         e_payment_method_umisdk_tw_ios, //æ–°å°æ¹¾ios
+         e_payment_method_umisdk_tw_third, //æ–°å°æ¹¾ç¬¬ä¸‰æ–¹
+         e_payment_method_umisdk_tw_hw, //æ–°å°æ¹¾åä¸º
          e_payment_method_max
      };
      enum e_treasure_prize_type
      {
-         e_treasure_prize_type_one, //×êÊ¯µ¥³é
-         e_treasure_prize_type_ten, //×êÊ¯10³é
-         e_treasure_prize_type_one_item, //ÎïÆ·µ¥³é
-         e_treasure_prize_type_ten_item, //ÎïÆ·10³é
+         e_treasure_prize_type_one, //é’»çŸ³å•æŠ½
+         e_treasure_prize_type_ten, //é’»çŸ³10æŠ½
+         e_treasure_prize_type_one_item, //ç‰©å“å•æŠ½
+         e_treasure_prize_type_ten_item, //ç‰©å“10æŠ½
          e_treasure_prize_type_max
      };
      enum e_treasure_type
      {
-         e_treasure_type_item, //ÎïÆ·
-         e_treasure_type_element, //·ûÎÄ
-         e_treasure_type_spirit, //¾«Áé
-         e_treasure_type_new_server, //ĞÂ·ş
-         e_treasure_type_time_limit, //ÏŞÊ±
+         e_treasure_type_item, //ç‰©å“
+         e_treasure_type_element, //ç¬¦æ–‡
+         e_treasure_type_spirit, //ç²¾çµ
+         e_treasure_type_new_server, //æ–°æœ
+         e_treasure_type_time_limit, //é™æ—¶
          e_treasure_type_max
      };
      enum e_ranking_show_type
      {
-         e_ranking_show_type_non, //¿Õ
-         e_ranking_show_type_gs, //Õ½Á¦°ñ
-         e_ranking_show_type_exp_level, //µÈ¼¶°ñ
-         e_ranking_show_type_equip, //×°±¸°ñ
-         e_ranking_show_type_mount, //×øÆï°ñ
-         e_ranking_show_type_wing, //ÓğÒí°ñ
-         e_ranking_show_type_sprite, //¾«Áé°ñ
-         e_ranking_show_type_role, //¸öÈË°ñ
-         e_ranking_show_type_challenge, //ÌôÕ½°ñ
-         e_ranking_show_type_vip, //vip°ñ
-         e_ranking_show_type_legion, //¾üÍÅ°ñ
-         e_ranking_show_type_world_boss, //ÊÀ½çBoss°ñ
-         e_ranking_show_type_elite, //¾«Ó¢ÌÖ·¥°ñ
-         e_ranking_show_type_cross_service, //¿ç·ş°ñ
+         e_ranking_show_type_non, //ç©º
+         e_ranking_show_type_gs, //æˆ˜åŠ›æ¦œ
+         e_ranking_show_type_exp_level, //ç­‰çº§æ¦œ
+         e_ranking_show_type_equip, //è£…å¤‡æ¦œ
+         e_ranking_show_type_mount, //åéª‘æ¦œ
+         e_ranking_show_type_wing, //ç¾½ç¿¼æ¦œ
+         e_ranking_show_type_sprite, //ç²¾çµæ¦œ
+         e_ranking_show_type_role, //ä¸ªäººæ¦œ
+         e_ranking_show_type_challenge, //æŒ‘æˆ˜æ¦œ
+         e_ranking_show_type_vip, //vipæ¦œ
+         e_ranking_show_type_legion, //å†›å›¢æ¦œ
+         e_ranking_show_type_world_boss, //ä¸–ç•ŒBossæ¦œ
+         e_ranking_show_type_elite, //ç²¾è‹±è®¨ä¼æ¦œ
+         e_ranking_show_type_cross_service, //è·¨æœæ¦œ
          e_ranking_show_type_max
      };
      enum e_time_limit_behavior_type
      {
-         e_time_limit_behavior_type_non, //¿Õ
-         e_time_limit_behavior_type_kill_boss, //»÷É±µØ¹¬boss
-         e_time_limit_behavior_type_kill_monster, //É±ËÀÒ°Íâ¹ÖÎï
-         e_time_limit_behavior_type_treasure_lottery, //±¦²Ø³é½±
-         e_time_limit_behavior_type_exp_stage, //Í¨¹Ø¾­Ñé¸±±¾
-         e_time_limit_behavior_type_coin_stage, //Í¨¹Ø½ğ±Ò¸±±¾
-         e_time_limit_behavior_type_illusion_stage, //Í¨¹Ø»Ã»¯¸±±¾
-         e_time_limit_behavior_type_belief_stage, //Í¨¹ØĞÅÑö¸±±¾
-         e_time_limit_behavior_type_sprite_stage, //Í¨¹Ø¾«Áé¸±±¾
-         e_time_limit_behavior_type_recharge, //Íê³ÉÈÎÒâ½ğ¶î³äÖµ
-         e_time_limit_behavior_type_auction_bid, //Íê³ÉÅÄÂôĞĞ¾º±ê
-         e_time_limit_behavior_type_buy_in_diamond_store, //×êÊ¯ÉÌµê¹ºÂòÉÌÆ·
-         e_time_limit_behavior_type_telves_awaken, //¾«Áé¾õĞÑ
-         e_time_limit_behavior_type_kill_personal_boss, //»÷É±¸öÈËboss
-         e_time_limit_behavior_type_legion_dance, //Íê³É¾üÍÅ¹²Îè
-         e_time_limit_behavior_type_kill_world_boss, //»÷É±ÊÀ½çboss
-         e_time_limit_behavior_type_kill_legion_boss, //»÷É±¾üÍÅboss
-         e_time_limit_behavior_type_arena_win, //¾º¼¼³¡»ñÊ¤
-         e_time_limit_behavior_type_ranking_worship, //ÅÅĞĞ°ñ³ç°İ
+         e_time_limit_behavior_type_non, //ç©º
+         e_time_limit_behavior_type_kill_boss, //å‡»æ€åœ°å®«boss
+         e_time_limit_behavior_type_kill_monster, //æ€æ­»é‡å¤–æ€ªç‰©
+         e_time_limit_behavior_type_treasure_lottery, //å®è—æŠ½å¥–
+         e_time_limit_behavior_type_exp_stage, //é€šå…³ç»éªŒå‰¯æœ¬
+         e_time_limit_behavior_type_coin_stage, //é€šå…³é‡‘å¸å‰¯æœ¬
+         e_time_limit_behavior_type_illusion_stage, //é€šå…³å¹»åŒ–å‰¯æœ¬
+         e_time_limit_behavior_type_belief_stage, //é€šå…³ä¿¡ä»°å‰¯æœ¬
+         e_time_limit_behavior_type_sprite_stage, //é€šå…³ç²¾çµå‰¯æœ¬
+         e_time_limit_behavior_type_recharge, //å®Œæˆä»»æ„é‡‘é¢å……å€¼
+         e_time_limit_behavior_type_auction_bid, //å®Œæˆæ‹å–è¡Œç«æ ‡
+         e_time_limit_behavior_type_buy_in_diamond_store, //é’»çŸ³å•†åº—è´­ä¹°å•†å“
+         e_time_limit_behavior_type_telves_awaken, //ç²¾çµè§‰é†’
+         e_time_limit_behavior_type_kill_personal_boss, //å‡»æ€ä¸ªäººboss
+         e_time_limit_behavior_type_legion_dance, //å®Œæˆå†›å›¢å…±èˆ
+         e_time_limit_behavior_type_kill_world_boss, //å‡»æ€ä¸–ç•Œboss
+         e_time_limit_behavior_type_kill_legion_boss, //å‡»æ€å†›å›¢boss
+         e_time_limit_behavior_type_arena_win, //ç«æŠ€åœºè·èƒœ
+         e_time_limit_behavior_type_ranking_worship, //æ’è¡Œæ¦œå´‡æ‹œ
          e_time_limit_behavior_type_max
      };
      enum e_passive_skill_info
      {
-         e_passive_skill_info_passive_skill_id, //±»¶¯¼¼ÄÜID
-         e_passive_skill_info_equip_slot, //×°ÅäÎ»ÖÃ
-         e_passive_skill_info_cd, //Ê±¼ä´Á Ãë
+         e_passive_skill_info_passive_skill_id, //è¢«åŠ¨æŠ€èƒ½ID
+         e_passive_skill_info_equip_slot, //è£…é…ä½ç½®
+         e_passive_skill_info_cd, //æ—¶é—´æˆ³ ç§’
          e_passive_skill_info_max
      };
      enum e_legion_skill_info
      {
-         e_legion_skill_info_legion_skill_id, //¾üÍÅ¼¼ÄÜID
-         e_legion_skill_info_curr_level, //µ±Ç°¾üÍÅ¼¼ÄÜµÈ¼¶
+         e_legion_skill_info_legion_skill_id, //å†›å›¢æŠ€èƒ½ID
+         e_legion_skill_info_curr_level, //å½“å‰å†›å›¢æŠ€èƒ½ç­‰çº§
          e_legion_skill_info_max
      };
      enum e_passive_skill_info_type
      {
-         e_passive_skill_info_type_non, //Ä¬ÈÏ
-         e_passive_skill_info_type_tinder, //»ğÖÖ±»¶¯
-         e_passive_skill_info_type_sprite, //¾«Áé±»¶¯
-         e_passive_skill_info_type_mount, //×øÆï±»¶¯
-         e_passive_skill_info_type_wing, //³á°ò±»¶¯
-         e_passive_skill_info_type_feather, //ôáÓğ±»¶¯
-         e_passive_skill_info_type_phantom, //»ÃÁé±»¶¯
-         e_passive_skill_info_type_sky_weapon, //Ìì¿ÕÎäÆ÷±»¶¯
-         e_passive_skill_info_type_mount_star, //×øÆï¸³ÄÜ
-         e_passive_skill_info_type_wing_psychic, //ÓğÒíÍ¨Áé
-         e_passive_skill_info_type_break_will, //ĞÄÄ§ÒâÖ¾±»¶¯
-         e_passive_skill_info_type_direct_get, //Ö±½Ó»ñÈ¡
+         e_passive_skill_info_type_non, //é»˜è®¤
+         e_passive_skill_info_type_tinder, //ç«ç§è¢«åŠ¨
+         e_passive_skill_info_type_sprite, //ç²¾çµè¢«åŠ¨
+         e_passive_skill_info_type_mount, //åéª‘è¢«åŠ¨
+         e_passive_skill_info_type_wing, //ç¿…è†€è¢«åŠ¨
+         e_passive_skill_info_type_feather, //ç¿ç¾½è¢«åŠ¨
+         e_passive_skill_info_type_phantom, //å¹»çµè¢«åŠ¨
+         e_passive_skill_info_type_sky_weapon, //å¤©ç©ºæ­¦å™¨è¢«åŠ¨
+         e_passive_skill_info_type_mount_star, //åéª‘èµ‹èƒ½
+         e_passive_skill_info_type_wing_psychic, //ç¾½ç¿¼é€šçµ
+         e_passive_skill_info_type_break_will, //å¿ƒé­”æ„å¿—è¢«åŠ¨
+         e_passive_skill_info_type_direct_get, //ç›´æ¥è·å–
          e_passive_skill_info_type_max
      };
      enum e_map_order_type
      {
-         e_map_order_type_other_raid, //ÆäËûÀàĞÍ
-         e_map_order_type_story_raid, //¾çÇé¸±±¾
-         e_map_order_type_daily_raid, //ÈÕ³£¸±±¾
-         e_map_order_type_multiplayer_raid, //¶àÈË¸±±¾
+         e_map_order_type_other_raid, //å…¶ä»–ç±»å‹
+         e_map_order_type_story_raid, //å‰§æƒ…å‰¯æœ¬
+         e_map_order_type_daily_raid, //æ—¥å¸¸å‰¯æœ¬
+         e_map_order_type_multiplayer_raid, //å¤šäººå‰¯æœ¬
          e_map_order_type_max
      };
      enum e_pokedex_Info
      {
-         e_pokedex_Info_template_id, //Ä£°åID
-         e_pokedex_Info_upgrade_num, //µ±Ç°µÈ¼¶
-         e_pokedex_Info_state, //¼¤»î×´Ì¬
-         e_pokedex_Info_fetter_state_1, //î¿°í¼¤»î1
-         e_pokedex_Info_fetter_state_2, //î¿°í¼¤»î2
-         e_pokedex_Info_fetter_state_3, //î¿°í¼¤»î3
-         e_pokedex_Info_psyche_num_1, //¾«ÆÇ×ª»¯ÊıÄ¿1
-         e_pokedex_Info_psyche_num_2, //¾«ÆÇ×ª»¯ÊıÄ¿2
-         e_pokedex_Info_psyche_num_3, //¾«ÆÇ×ª»¯ÊıÄ¿3
-         e_pokedex_Info_psyche_num_4, //¾«ÆÇ×ª»¯ÊıÄ¿4
-         e_pokedex_Info_psyche_num_5, //¾«ÆÇ×ª»¯ÊıÄ¿5
-         e_pokedex_Info_psyche_num_6, //¾«ÆÇ×ª»¯ÊıÄ¿6
-         e_pokedex_Info_psyche_num_7, //¾«ÆÇ×ª»¯ÊıÄ¿7
-         e_pokedex_Info_psyche_num_8, //¾«ÆÇ×ª»¯ÊıÄ¿8
-         e_pokedex_Info_psyche_num_9, //¾«ÆÇ×ª»¯ÊıÄ¿9
-         e_pokedex_Info_psyche_num_10, //¾«ÆÇ×ª»¯ÊıÄ¿10
-         e_pokedex_Info_psyche_num_11, //¾«ÆÇ×ª»¯ÊıÄ¿11
-         e_pokedex_Info_psyche_num_12, //¾«ÆÇ×ª»¯ÊıÄ¿12
-         e_pokedex_Info_psyche_num_13, //¾«ÆÇ×ª»¯ÊıÄ¿13
-         e_pokedex_Info_psyche_num_14, //¾«ÆÇ×ª»¯ÊıÄ¿14
-         e_pokedex_Info_psyche_num_15, //¾«ÆÇ×ª»¯ÊıÄ¿15
-         e_pokedex_Info_psyche_num_16, //¾«ÆÇ×ª»¯ÊıÄ¿16
-         e_pokedex_Info_psyche_num_17, //¾«ÆÇ×ª»¯ÊıÄ¿17
-         e_pokedex_Info_psyche_num_18, //¾«ÆÇ×ª»¯ÊıÄ¿18
-         e_pokedex_Info_psyche_num_19, //¾«ÆÇ×ª»¯ÊıÄ¿19
-         e_pokedex_Info_psyche_num_20, //¾«ÆÇ×ª»¯ÊıÄ¿20
+         e_pokedex_Info_template_id, //æ¨¡æ¿ID
+         e_pokedex_Info_upgrade_num, //å½“å‰ç­‰çº§
+         e_pokedex_Info_state, //æ¿€æ´»çŠ¶æ€
+         e_pokedex_Info_fetter_state_1, //ç¾ç»Šæ¿€æ´»1
+         e_pokedex_Info_fetter_state_2, //ç¾ç»Šæ¿€æ´»2
+         e_pokedex_Info_fetter_state_3, //ç¾ç»Šæ¿€æ´»3
+         e_pokedex_Info_psyche_num_1, //ç²¾é­„è½¬åŒ–æ•°ç›®1
+         e_pokedex_Info_psyche_num_2, //ç²¾é­„è½¬åŒ–æ•°ç›®2
+         e_pokedex_Info_psyche_num_3, //ç²¾é­„è½¬åŒ–æ•°ç›®3
+         e_pokedex_Info_psyche_num_4, //ç²¾é­„è½¬åŒ–æ•°ç›®4
+         e_pokedex_Info_psyche_num_5, //ç²¾é­„è½¬åŒ–æ•°ç›®5
+         e_pokedex_Info_psyche_num_6, //ç²¾é­„è½¬åŒ–æ•°ç›®6
+         e_pokedex_Info_psyche_num_7, //ç²¾é­„è½¬åŒ–æ•°ç›®7
+         e_pokedex_Info_psyche_num_8, //ç²¾é­„è½¬åŒ–æ•°ç›®8
+         e_pokedex_Info_psyche_num_9, //ç²¾é­„è½¬åŒ–æ•°ç›®9
+         e_pokedex_Info_psyche_num_10, //ç²¾é­„è½¬åŒ–æ•°ç›®10
+         e_pokedex_Info_psyche_num_11, //ç²¾é­„è½¬åŒ–æ•°ç›®11
+         e_pokedex_Info_psyche_num_12, //ç²¾é­„è½¬åŒ–æ•°ç›®12
+         e_pokedex_Info_psyche_num_13, //ç²¾é­„è½¬åŒ–æ•°ç›®13
+         e_pokedex_Info_psyche_num_14, //ç²¾é­„è½¬åŒ–æ•°ç›®14
+         e_pokedex_Info_psyche_num_15, //ç²¾é­„è½¬åŒ–æ•°ç›®15
+         e_pokedex_Info_psyche_num_16, //ç²¾é­„è½¬åŒ–æ•°ç›®16
+         e_pokedex_Info_psyche_num_17, //ç²¾é­„è½¬åŒ–æ•°ç›®17
+         e_pokedex_Info_psyche_num_18, //ç²¾é­„è½¬åŒ–æ•°ç›®18
+         e_pokedex_Info_psyche_num_19, //ç²¾é­„è½¬åŒ–æ•°ç›®19
+         e_pokedex_Info_psyche_num_20, //ç²¾é­„è½¬åŒ–æ•°ç›®20
          e_pokedex_Info_max
      };
      enum e_pokedex_operation_type
      {
-         e_pokedex_operation_type_submit_psyche, //¾«ÆÇÊÕ¼¯
-         e_pokedex_operation_type_change, //¾«ÆÇ×ª»¯
-         e_pokedex_operation_type_main_palace_upgrade, //ÌìÆôµîÌÃÉı¼¶
-         e_pokedex_operation_type_oracle_activate, //ÉñÚÍ¼¤»î
-         e_pokedex_operation_type_oracle_upgrade, //ÉñÚÍÉı¼¶
-         e_pokedex_operation_type_mainland_activate, //µØÍ¼¼¤»î
-         e_pokedex_operation_type_mainland_upgrade, //µØÍ¼Éı¼¶
+         e_pokedex_operation_type_submit_psyche, //ç²¾é­„æ”¶é›†
+         e_pokedex_operation_type_change, //ç²¾é­„è½¬åŒ–
+         e_pokedex_operation_type_main_palace_upgrade, //å¤©å¯æ®¿å ‚å‡çº§
+         e_pokedex_operation_type_oracle_activate, //ç¥è°•æ¿€æ´»
+         e_pokedex_operation_type_oracle_upgrade, //ç¥è°•å‡çº§
+         e_pokedex_operation_type_mainland_activate, //åœ°å›¾æ¿€æ´»
+         e_pokedex_operation_type_mainland_upgrade, //åœ°å›¾å‡çº§
          e_pokedex_operation_type_max
      };
      enum e_goddess_operate_type
      {
-         e_goddess_operate_type_none, //¿Õ
-         e_goddess_operate_type_unlock, //Å®Éñ½âËø
-         e_goddess_operate_type_equip, //×°±¸Å®Éñ
-         e_goddess_operate_type_unequip, //Ğ¶ÏÂÅ®Éñ
-         e_goddess_operate_type_fight, //Å®Éñ³öÕ½
-         e_goddess_operate_type_equip_upgrade, //Å®Éñ×°±¸Éı¼¶
-         e_goddess_operate_type_goddess_slot_unlock, //Å®Éñ²ÛÎ»½âËø
+         e_goddess_operate_type_none, //ç©º
+         e_goddess_operate_type_unlock, //å¥³ç¥è§£é”
+         e_goddess_operate_type_equip, //è£…å¤‡å¥³ç¥
+         e_goddess_operate_type_unequip, //å¸ä¸‹å¥³ç¥
+         e_goddess_operate_type_fight, //å¥³ç¥å‡ºæˆ˜
+         e_goddess_operate_type_equip_upgrade, //å¥³ç¥è£…å¤‡å‡çº§
+         e_goddess_operate_type_goddess_slot_unlock, //å¥³ç¥æ§½ä½è§£é”
          e_goddess_operate_type_max
      };
      enum e_cross_pk_state
      {
-         e_cross_pk_state_none, //¿Õ
-         e_cross_pk_state_16, //16Ç¿
-         e_cross_pk_state_8, //8Ç¿
-         e_cross_pk_state_4, //4Ç¿
-         e_cross_pk_state_2, //¾öÈü
+         e_cross_pk_state_none, //ç©º
+         e_cross_pk_state_16, //16å¼º
+         e_cross_pk_state_8, //8å¼º
+         e_cross_pk_state_4, //4å¼º
+         e_cross_pk_state_2, //å†³èµ›
          e_cross_pk_state_max
      };
      enum e_1v1_pk_state
      {
-         e_1v1_pk_state_ready, //×¼±¸
-         e_1v1_pk_state_begin, //¿ªÊ¼
-         e_1v1_pk_state_end, //½áÊø
+         e_1v1_pk_state_ready, //å‡†å¤‡
+         e_1v1_pk_state_begin, //å¼€å§‹
+         e_1v1_pk_state_end, //ç»“æŸ
          e_1v1_pk_state_max
      };
      enum e_auction_state
      {
-         e_auction_state_start_sell, //ÉÏ¼Ü
-         e_auction_state_cancel, //È¡Ïû
-         e_auction_state_deal, //³É½»
-         e_auction_state_bid, //¾º±ê
+         e_auction_state_start_sell, //ä¸Šæ¶
+         e_auction_state_cancel, //å–æ¶ˆ
+         e_auction_state_deal, //æˆäº¤
+         e_auction_state_bid, //ç«æ ‡
          e_auction_state_max
      };
      enum e_cloud_shop_record
      {
-         e_cloud_shop_record_date_value, //»î¶¯ÈÕÆÚ¼ÇÂ¼
-         e_cloud_shop_record_day_index, //»î¶¯µÚ¼¸Ìì
-         e_cloud_shop_record_template_id, //ÅäÖÃ±íid
-         e_cloud_shop_record_total_number, //»î¶¯×Ü¹ºÂò´ÎÊı
-         e_cloud_shop_record_buy_count, //»î¶¯ÒÑ¹ºÂò´ÎÊı
-         e_cloud_shop_record_send_award_flag, //½±ÀøÁìÈ¡×´Ì¬
+         e_cloud_shop_record_date_value, //æ´»åŠ¨æ—¥æœŸè®°å½•
+         e_cloud_shop_record_day_index, //æ´»åŠ¨ç¬¬å‡ å¤©
+         e_cloud_shop_record_template_id, //é…ç½®è¡¨id
+         e_cloud_shop_record_total_number, //æ´»åŠ¨æ€»è´­ä¹°æ¬¡æ•°
+         e_cloud_shop_record_buy_count, //æ´»åŠ¨å·²è´­ä¹°æ¬¡æ•°
+         e_cloud_shop_record_send_award_flag, //å¥–åŠ±é¢†å–çŠ¶æ€
          e_cloud_shop_record_max
      };
      enum e_seven_day_goal_info
      {
          e_seven_day_goal_info_id, //id
-         e_seven_day_goal_info_schedule, //½ø¶È
-         e_seven_day_goal_info_state, //×´Ì¬
-         e_seven_day_goal_info_open_time, //¿ªÊ¼Ê±¼ä
+         e_seven_day_goal_info_schedule, //è¿›åº¦
+         e_seven_day_goal_info_state, //çŠ¶æ€
+         e_seven_day_goal_info_open_time, //å¼€å§‹æ—¶é—´
          e_seven_day_goal_info_max
      };
      enum e_harry_record
      {
-         e_harry_record_harry_value, //ÂÓ¶áÖµ
-         e_harry_record_defend_value, //ÊØ»¤Öµ
-         e_harry_record_normal_harry_count, //Ã¿ÈÕÆÕÍ¨ÂÓ¶á´ÎÊı
-         e_harry_record_special_harry_count, //Ã¿ÈÕÌØÊâÂÓ¶á´ÎÊı
-         e_harry_record_kill_ct_num, //»÷É±±£ÎÀÕß¸öÊı
-         e_harry_record_kill_terrorist_num, //»÷É±ÂÓ¶áÕß¸öÊı
-         e_harry_record_harry_item_server_id, //²É¼¯µ½µÄÎïÆ·¹éÊô·şÎñÆ÷id
+         e_harry_record_harry_value, //æ å¤ºå€¼
+         e_harry_record_defend_value, //å®ˆæŠ¤å€¼
+         e_harry_record_normal_harry_count, //æ¯æ—¥æ™®é€šæ å¤ºæ¬¡æ•°
+         e_harry_record_special_harry_count, //æ¯æ—¥ç‰¹æ®Šæ å¤ºæ¬¡æ•°
+         e_harry_record_kill_ct_num, //å‡»æ€ä¿å«è€…ä¸ªæ•°
+         e_harry_record_kill_terrorist_num, //å‡»æ€æ å¤ºè€…ä¸ªæ•°
+         e_harry_record_harry_item_server_id, //é‡‡é›†åˆ°çš„ç‰©å“å½’å±æœåŠ¡å™¨id
          e_harry_record_max
      };
      enum e_quality_level
      {
-         e_quality_level_non, //¿Õ
-         e_quality_level_one, //Ò»½×
-         e_quality_level_two, //¶ş½×
-         e_quality_level_three, //Èı½×
-         e_quality_level_four, //ËÄ½×
-         e_quality_level_five, //Îå½×
-         e_quality_level_six, //Áù½×
-         e_quality_level_seven, //Æß½×
-         e_quality_level_eight, //°Ë½×
-         e_quality_level_nine, //¾Å½×
-         e_quality_level_ten, //Ê®½×
+         e_quality_level_non, //ç©º
+         e_quality_level_one, //ä¸€é˜¶
+         e_quality_level_two, //äºŒé˜¶
+         e_quality_level_three, //ä¸‰é˜¶
+         e_quality_level_four, //å››é˜¶
+         e_quality_level_five, //äº”é˜¶
+         e_quality_level_six, //å…­é˜¶
+         e_quality_level_seven, //ä¸ƒé˜¶
+         e_quality_level_eight, //å…«é˜¶
+         e_quality_level_nine, //ä¹é˜¶
+         e_quality_level_ten, //åé˜¶
          e_quality_level_max
      };
      enum e_lua_item_info
      {
-         e_lua_item_info_non, //¿Õ
-         e_lua_item_info_info_id, //Ä£°åid
-         e_lua_item_info_slot, //ÎïÆ·Î»ÖÃË÷Òıe_role_equip£¬ÎïÆ·×°±¸Ê±´ú±íÎïÆ·ÔÚ×°±¸À¸ÖĞµÄÎ»ÖÃ£¬ÔÚÎïÆ·À¸Ê±´ú±íÔÚÎïÆ·À¸ÖĞµÄÎ»ÖÃ
-         e_lua_item_info_container_type, //ËùÔÚ°ü¹ü:e_bag_type
-         e_lua_item_info_stack_count, //ÎïÆ·¶ÑµşÊıÄ¿
-         e_lua_item_info_activate, //ÊÇ·ñ¼¤»î
-         e_lua_item_info_is_first, //5ÊÇ·ñµÚÒ»´Î¼¤»î
-         e_lua_item_info_upgrade_count, //×°±¸Ç¿»¯´ÎÊı,×øÆïÉıĞÇÊı,Éı½×,ôáÓğÉıĞÇÊı,ôáÓğÉı½×£¬×¢»ê´ÎÊı£¬×¢Áé´ÎÊı£¬¾«ÁéµÈ¼¶,ÔªËØÖ®ĞÄµÈ¼¶,ÊŞ»êµÈ¼¶
-         e_lua_item_info_stargrade_count, //×øÆï¡¢ÓğÒíËéÆ¬ÉıĞÇÊı
-         e_lua_item_info_starskill_flag, //×øÆï¡¢ÓğÒí»êĞÇ¼¼ÄÜ¿ªÆô±ê¼Ç
-         e_lua_item_info_add_on, //×°±¸×·¼Ó´ÎÊı
-         e_lua_item_info_locked, //ÊÇ·ñ°ó¶¨ 1ÊÓÎª°ó¶¨£¬0ÊÓÎªÎ´°ó¶¨
-         e_lua_item_info_wing_exp, //×øÆïµ±Ç°ÉıĞÇ¾­Ñé£¬ÔªËØÖ®ĞÄµ±Ç°¾­Ñé
-         e_lua_item_info_wing_bless, //10×øÆï×£¸£Öµ
-         e_lua_item_info_random_had_flag, //ÓµÓĞµÄËæ»úÊôĞÔ±ê¼ÇÎ»
-         e_lua_item_info_random_property1, //ÎïÆ·Ëæ»úÊôĞÔ£¬¾«ÁéÌì¸³ÊôĞÔ»ò×¿Ô½ÊôĞÔ
-         e_lua_item_info_random_property2, //
-         e_lua_item_info_random_property3, //
-         e_lua_item_info_random_property4, //
-         e_lua_item_info_random_property5, //
-         e_lua_item_info_random_property6, //
-         e_lua_item_info_succinct_property1, //×°±¸Ï´Á·ÊôĞÔ,×øÆï£¬³á°ò£¬¾«Áé¼¼ÄÜ¼¤»îÊ±¼ä
-         e_lua_item_info_succinct_property2, //
-         e_lua_item_info_succinct_property3, //
-         e_lua_item_info_succinct_property4, //
-         e_lua_item_info_succinct_property5, //±¸ÓÃ
-         e_lua_item_info_succinct_property6, //
-         e_lua_item_info_showing_illusion_idex, //ÏÔÊ¾µÄ»Ã»¯ID£¬Ä¬ÈÏÎª-1
-         e_lua_item_info_put_in_bag_count, //·ÅÈë±³°ü¼ÆÊı£¬Ö÷ÒªÓÃÓÚÈ·ÈÏÊÇ·ñÊÇĞÂ»ñµÃµÄÎïÆ·
-         e_lua_item_info_illusion_had_byte, //ÒÑ»ñÈ¡»Ã»¯Î»±êÊ¶·û
-         e_lua_item_info_over_time, //ÎïÆ·µ½ÆÚÊ±¼ä
-         e_lua_item_info_succinct_level, //Ï´Á·µÈ¼¶
-         e_lua_item_info_jewel_slot_0, //±¦Ê¯²ÛÎ»0
-         e_lua_item_info_jewel_slot_1, //±¦Ê¯²ÛÎ»1
-         e_lua_item_info_jewel_slot_2, //±¦Ê¯²ÛÎ»2
-         e_lua_item_info_jewel_slot_3, //±¦Ê¯²ÛÎ»3
-         e_lua_item_info_jewel_slot_4, //±¦Ê¯²ÛÎ»4
-         e_lua_item_info_jewel_vip_slot_0, //VIP±¦Ê¯²ÛÎ»0
-         e_lua_item_info_jewel_vip_slot_1, //VIP±¦Ê¯²ÛÎ»1
-         e_lua_item_info_prototype_id, //ÎïÆ·Ô­ĞÍid ÏŞÊ±ÎïÆ·¸Ä±äÇ°id
-         e_lua_item_info_forge_property1, //ÎïÆ·ÖØÖıÊôĞÔ£¬¾«ÁéÌì¸³ÊôĞÔ»ò×¿Ô½ÊôĞÔ
-         e_lua_item_info_forge_property2, //
-         e_lua_item_info_forge_property3, //
-         e_lua_item_info_forge_property4, //
-         e_lua_item_info_forge_property5, //
-         e_lua_item_info_forge_property6, //
-         e_lua_item_info_jewel_carve_0, //Ëæ»úÎÆ¿Ì
-         e_lua_item_info_jewel_carve_1, //±¦Ê¯ÎÆ¿Ì1
-         e_lua_item_info_jewel_carve_2, //±¦Ê¯ÎÆ¿Ì2
+         e_lua_item_info_non, //ç©º
+         e_lua_item_info_info_id, //æ¨¡æ¿id
+         e_lua_item_info_slot, //ç‰©å“ä½ç½®ç´¢å¼•e_role_equipï¼Œç‰©å“è£…å¤‡æ—¶ä»£è¡¨ç‰©å“åœ¨è£…å¤‡æ ä¸­çš„ä½ç½®ï¼Œåœ¨ç‰©å“æ æ—¶ä»£è¡¨åœ¨ç‰©å“æ ä¸­çš„ä½ç½®
+         e_lua_item_info_container_type, //æ‰€åœ¨åŒ…è£¹:e_bag_type
+         e_lua_item_info_stack_count, //ç‰©å“å †å æ•°ç›®
+         e_lua_item_info_activate, //æ˜¯å¦æ¿€æ´»
+         e_lua_item_info_is_first, //5æ˜¯å¦ç¬¬ä¸€æ¬¡æ¿€æ´»
+         e_lua_item_info_upgrade_count, //è£…å¤‡å¼ºåŒ–æ¬¡æ•°,åéª‘å‡æ˜Ÿæ•°,å‡é˜¶,ç¿ç¾½å‡æ˜Ÿæ•°,ç¿ç¾½å‡é˜¶ï¼Œæ³¨é­‚æ¬¡æ•°ï¼Œæ³¨çµæ¬¡æ•°ï¼Œç²¾çµç­‰çº§,å…ƒç´ ä¹‹å¿ƒç­‰çº§,å…½é­‚ç­‰çº§
+         e_lua_item_info_stargrade_count, //åéª‘ã€ç¾½ç¿¼ç¢ç‰‡å‡æ˜Ÿæ•°
+         e_lua_item_info_starskill_flag, //åéª‘ã€ç¾½ç¿¼é­‚æ˜ŸæŠ€èƒ½å¼€å¯æ ‡è®°
+         e_lua_item_info_add_on, //è£…å¤‡è¿½åŠ æ¬¡æ•°
+         e_lua_item_info_locked, //æ˜¯å¦ç»‘å®š 1è§†ä¸ºç»‘å®šï¼Œ0è§†ä¸ºæœªç»‘å®š
+         e_lua_item_info_wing_exp, //åéª‘å½“å‰å‡æ˜Ÿç»éªŒï¼Œå…ƒç´ ä¹‹å¿ƒå½“å‰ç»éªŒ
+         e_lua_item_info_wing_bless, //10åéª‘ç¥ç¦å€¼
+         e_lua_item_info_random_had_flag, //æ‹¥æœ‰çš„éšæœºå±æ€§æ ‡è®°ä½
+         e_lua_item_info_random_property1, //ç‰©å“éšæœºå±æ€§ï¼Œç²¾çµå¤©èµ‹å±æ€§æˆ–å“è¶Šå±æ€§
+         e_lua_item_info_random_property2,
+         e_lua_item_info_random_property3,
+         e_lua_item_info_random_property4,
+         e_lua_item_info_random_property5,
+         e_lua_item_info_random_property6,
+         e_lua_item_info_succinct_property1, //è£…å¤‡æ´—ç»ƒå±æ€§,åéª‘ï¼Œç¿…è†€ï¼Œç²¾çµæŠ€èƒ½æ¿€æ´»æ—¶é—´
+         e_lua_item_info_succinct_property2,
+         e_lua_item_info_succinct_property3,
+         e_lua_item_info_succinct_property4,
+         e_lua_item_info_succinct_property5, //å¤‡ç”¨
+         e_lua_item_info_succinct_property6,
+         e_lua_item_info_showing_illusion_idex, //æ˜¾ç¤ºçš„å¹»åŒ–IDï¼Œé»˜è®¤ä¸º-1
+         e_lua_item_info_put_in_bag_count, //æ”¾å…¥èƒŒåŒ…è®¡æ•°ï¼Œä¸»è¦ç”¨äºç¡®è®¤æ˜¯å¦æ˜¯æ–°è·å¾—çš„ç‰©å“
+         e_lua_item_info_illusion_had_byte, //å·²è·å–å¹»åŒ–ä½æ ‡è¯†ç¬¦
+         e_lua_item_info_over_time, //ç‰©å“åˆ°æœŸæ—¶é—´
+         e_lua_item_info_succinct_level, //æ´—ç»ƒç­‰çº§
+         e_lua_item_info_jewel_slot_0, //å®çŸ³æ§½ä½0
+         e_lua_item_info_jewel_slot_1, //å®çŸ³æ§½ä½1
+         e_lua_item_info_jewel_slot_2, //å®çŸ³æ§½ä½2
+         e_lua_item_info_jewel_slot_3, //å®çŸ³æ§½ä½3
+         e_lua_item_info_jewel_slot_4, //å®çŸ³æ§½ä½4
+         e_lua_item_info_jewel_vip_slot_0, //VIPå®çŸ³æ§½ä½0
+         e_lua_item_info_jewel_vip_slot_1, //VIPå®çŸ³æ§½ä½1
+         e_lua_item_info_prototype_id, //ç‰©å“åŸå‹id é™æ—¶ç‰©å“æ”¹å˜å‰id
+         e_lua_item_info_forge_property1, //ç‰©å“é‡é“¸å±æ€§ï¼Œç²¾çµå¤©èµ‹å±æ€§æˆ–å“è¶Šå±æ€§
+         e_lua_item_info_forge_property2,
+         e_lua_item_info_forge_property3,
+         e_lua_item_info_forge_property4,
+         e_lua_item_info_forge_property5,
+         e_lua_item_info_forge_property6,
+         e_lua_item_info_jewel_carve_0, //éšæœºçº¹åˆ»
+         e_lua_item_info_jewel_carve_1, //å®çŸ³çº¹åˆ»1
+         e_lua_item_info_jewel_carve_2, //å®çŸ³çº¹åˆ»2
          e_lua_item_info_max
      };
      enum e_money_array_type
      {
-         e_money_array_type_cur, //µ±Ç°Ç®Êı
-         e_money_array_type_total_get, //×Ü»ñµÃÊı
-         e_money_array_type_total_cost, //×ÜÏû·ÑÊı
+         e_money_array_type_cur, //å½“å‰é’±æ•°
+         e_money_array_type_total_get, //æ€»è·å¾—æ•°
+         e_money_array_type_total_cost, //æ€»æ¶ˆè´¹æ•°
          e_money_array_type_max
      };
      enum e_summon_pet_type
      {
-         e_summon_pet_type_normal_summon, //ÆÕÍ¨ÕÙ»½Îï
-         e_summon_pet_type_goddess, //Å®Éñ
-         e_summon_pet_type_boss_pet, //BOSSÕÙ»½Îï
+         e_summon_pet_type_normal_summon, //æ™®é€šå¬å”¤ç‰©
+         e_summon_pet_type_goddess, //å¥³ç¥
+         e_summon_pet_type_boss_pet, //BOSSå¬å”¤ç‰©
          e_summon_pet_type_max
      };
      enum e_version_region_type
      {
-         e_version_region_type_china_main, //´óÂ½
-         e_version_region_type_kr, //º«¹ú
-         e_version_region_type_china_tw, //¸Û°ÄÌ¨
-         e_version_region_type_en, //Ó¢ÎÄ°æ
-         e_version_region_type_tha, //Ì©¹ú
-         e_version_region_type_vn, //Ô½ÄÏ
-         e_version_region_type_jp, //ÈÕ±¾
-         e_version_region_type_rus, //¶íÂŞË¹(Russia)
-         e_version_region_type_sg, //¶«ÄÏÑÇ(ĞÂ¼ÓÆÂ)
+         e_version_region_type_china_main, //å¤§é™†
+         e_version_region_type_kr, //éŸ©å›½
+         e_version_region_type_china_tw, //æ¸¯æ¾³å°
+         e_version_region_type_en, //è‹±æ–‡ç‰ˆ
+         e_version_region_type_tha, //æ³°å›½
+         e_version_region_type_vn, //è¶Šå—
+         e_version_region_type_jp, //æ—¥æœ¬
+         e_version_region_type_rus, //ä¿„ç½—æ–¯(Russia)
+         e_version_region_type_sg, //ä¸œå—äºš(æ–°åŠ å¡)
          e_version_region_type_max
      };
      enum e_manual_reward_type
      {
-         e_manual_reward_type_add_item, //½±ÀøÎïÆ·
-         e_manual_reward_type_manual_level, //ÌáÉıÊÖ²áµÈ¼¶
-         e_manual_reward_type_add_point, //Ôö¼ÓÌôÕ½»ı·Ö½±Àø
+         e_manual_reward_type_add_item, //å¥–åŠ±ç‰©å“
+         e_manual_reward_type_manual_level, //æå‡æ‰‹å†Œç­‰çº§
+         e_manual_reward_type_add_point, //å¢åŠ æŒ‘æˆ˜ç§¯åˆ†å¥–åŠ±
          e_manual_reward_type_max
      };
      enum e_time_limit_shop_purchase_limit_type
      {
-         e_time_limit_shop_purchase_limit_type_none, //²»ÏŞ¹º
-         e_time_limit_shop_purchase_limit_type_day, //Ã¿ÈÕÏŞ¹º
-         e_time_limit_shop_purchase_limit_type_cycle, //ÖÜÆÚÏŞ¹º
+         e_time_limit_shop_purchase_limit_type_none, //ä¸é™è´­
+         e_time_limit_shop_purchase_limit_type_day, //æ¯æ—¥é™è´­
+         e_time_limit_shop_purchase_limit_type_cycle, //å‘¨æœŸé™è´­
          e_time_limit_shop_purchase_limit_type_max
      };
      enum e_role_i64_info
      {
-         e_role_i64_info_gs_value, //Õ½Á¦Öµ
-         e_role_i64_info_history_best_gs_value, //ÁãµãÕ½Á¦ÌáÉı°ñ³õÊ¼Öµ
-         e_role_i64_info_zero_mount_up_start_value, //ÁãµãË¢ĞÂ×øÆïÌáÉı°ñ³õÊ¼Öµ
-         e_role_i64_info_zero_wing_up_start_value, //ÁãµãË¢ĞÂ³á°òÌáÉı°ñ³õÊ¼Öµ
-         e_role_i64_info_zero_equip_up_start_value, //ÁãµãË¢ĞÂ×°±¸ÌáÉı°ñ³õÊ¼Öµ
-         e_role_i64_info_zero_spirit_up_start_value, //ÁãµãË¢ĞÂ¾«ÁéÌáÉı°ñ³õÊ¼Öµ
-         e_role_i64_info_create_time, //´´½¨Ê±¼ä
+         e_role_i64_info_gs_value, //æˆ˜åŠ›å€¼
+         e_role_i64_info_history_best_gs_value, //é›¶ç‚¹æˆ˜åŠ›æå‡æ¦œåˆå§‹å€¼
+         e_role_i64_info_zero_mount_up_start_value, //é›¶ç‚¹åˆ·æ–°åéª‘æå‡æ¦œåˆå§‹å€¼
+         e_role_i64_info_zero_wing_up_start_value, //é›¶ç‚¹åˆ·æ–°ç¿…è†€æå‡æ¦œåˆå§‹å€¼
+         e_role_i64_info_zero_equip_up_start_value, //é›¶ç‚¹åˆ·æ–°è£…å¤‡æå‡æ¦œåˆå§‹å€¼
+         e_role_i64_info_zero_spirit_up_start_value, //é›¶ç‚¹åˆ·æ–°ç²¾çµæå‡æ¦œåˆå§‹å€¼
+         e_role_i64_info_create_time, //åˆ›å»ºæ—¶é—´
          e_role_i64_info_max
      };
      enum e_cross_server_pk_sub_type
      {
-         e_cross_server_pk_sub_type_berserker, //¿ç·şÖ°Òµ¾º¼¼Õ½Ê¿
-         e_cross_server_pk_sub_type_caster, //¿ç·şÖ°Òµ¾º¼¼·¨Ê¦
-         e_cross_server_pk_sub_type_add_rider, //¿ç·şÖ°Òµ¾º¼¼ÆïÊ¿
-         e_cross_server_pk_sub_type_add_assassion, //¿ç·şÖ°Òµ¾º¼¼´Ì¿Í
-         e_cross_server_pk_sub_type_word_boss, //¿ç·şÊÀ½çboss»ÃÓ°ÁìÖ÷
+         e_cross_server_pk_sub_type_berserker, //è·¨æœèŒä¸šç«æŠ€æˆ˜å£«
+         e_cross_server_pk_sub_type_caster, //è·¨æœèŒä¸šç«æŠ€æ³•å¸ˆ
+         e_cross_server_pk_sub_type_add_rider, //è·¨æœèŒä¸šç«æŠ€éª‘å£«
+         e_cross_server_pk_sub_type_add_assassion, //è·¨æœèŒä¸šç«æŠ€åˆºå®¢
+         e_cross_server_pk_sub_type_word_boss, //è·¨æœä¸–ç•Œbosså¹»å½±é¢†ä¸»
          e_cross_server_pk_sub_type_max
      };
      enum e_star_trip_target_type
      {
-         e_star_trip_target_type_buy_goods, //¹ºÂòÉÌÆ·
-         e_star_trip_target_type_buy_single_boss, //¹ºÂò¸öÈËboss
-         e_star_trip_target_type_convert, //½øĞĞ×ª»»
-         e_star_trip_target_type_legion_donate, //½øĞĞ¾üÍÅ¾èÔù
-         e_star_trip_target_type_join_activity, //²ÎÓëÏŞÊ±»î¶¯
-         e_star_trip_target_type_buy_today_gift, //¹ºÂòÃ¿ÈÕÀñ°ü
-         e_star_trip_target_type_map_finish, //Íê³ÉÖ¸¶¨¸±±¾
-         e_star_trip_target_type_kill_single_boss, //»÷É±¸öÈËboss
-         e_star_trip_target_type_kill_home_boss, //»÷É±µØ¹¬boss
-         e_star_trip_target_type_treasure, //Íê³É³é½±
-         e_star_trip_target_type_recharge, //Íê³É³äÖµ
-         e_star_trip_target_type_bid, //Íê³É¾º±ê
+         e_star_trip_target_type_buy_goods, //è´­ä¹°å•†å“
+         e_star_trip_target_type_buy_single_boss, //è´­ä¹°ä¸ªäººboss
+         e_star_trip_target_type_convert, //è¿›è¡Œè½¬æ¢
+         e_star_trip_target_type_legion_donate, //è¿›è¡Œå†›å›¢æèµ 
+         e_star_trip_target_type_join_activity, //å‚ä¸é™æ—¶æ´»åŠ¨
+         e_star_trip_target_type_buy_today_gift, //è´­ä¹°æ¯æ—¥ç¤¼åŒ…
+         e_star_trip_target_type_map_finish, //å®ŒæˆæŒ‡å®šå‰¯æœ¬
+         e_star_trip_target_type_kill_single_boss, //å‡»æ€ä¸ªäººboss
+         e_star_trip_target_type_kill_home_boss, //å‡»æ€åœ°å®«boss
+         e_star_trip_target_type_treasure, //å®ŒæˆæŠ½å¥–
+         e_star_trip_target_type_recharge, //å®Œæˆå……å€¼
+         e_star_trip_target_type_bid, //å®Œæˆç«æ ‡
          e_star_trip_target_type_max
      };
      enum e_map_play_type
      {
-         e_map_play_type_non, //ÎŞ²Ù×÷£¬Ö±½Ó¹ı
-         e_map_play_type_kill_boss, //É±ËÀboss
+         e_map_play_type_non, //æ— æ“ä½œï¼Œç›´æ¥è¿‡
+         e_map_play_type_kill_boss, //æ€æ­»boss
          e_map_play_type_max
      };
      enum e_map_search_boss_type
      {
-         e_map_search_boss_type_boss_no_kill, //boss²»¿É±»¹¥»÷
-         e_map_search_boss_type_boss_can_kill, //boss¿ÉÒÔ¹¥»÷ÁË
-         e_map_search_boss_type_boss_wait, //bossµÈ´ıË¢ĞÂ
-         e_map_search_boss_type_boss_refresh, //boss¿ªÊ¼Ë¢ĞÂ
-         e_map_search_boss_type_boss_killed, //bossËÀÍö
-         e_map_search_boss_type_be_killed, //±»É±ËÀÁË£¬bossÖØÖÃ
+         e_map_search_boss_type_boss_no_kill, //bossä¸å¯è¢«æ”»å‡»
+         e_map_search_boss_type_boss_can_kill, //bosså¯ä»¥æ”»å‡»äº†
+         e_map_search_boss_type_boss_wait, //bossç­‰å¾…åˆ·æ–°
+         e_map_search_boss_type_boss_refresh, //bosså¼€å§‹åˆ·æ–°
+         e_map_search_boss_type_boss_killed, //bossæ­»äº¡
+         e_map_search_boss_type_be_killed, //è¢«æ€æ­»äº†ï¼Œbossé‡ç½®
          e_map_search_boss_type_max
      };
      enum e_daily_play_count
      {
-         e_daily_play_count_element_map, //·ûÎÄ¸±±¾
-         e_daily_play_count_battle_map, //Õ½¶·¸±±¾
+         e_daily_play_count_element_map, //ç¬¦æ–‡å‰¯æœ¬
+         e_daily_play_count_battle_map, //æˆ˜æ–—å‰¯æœ¬
          e_daily_play_count_max
      };
      enum e_time_activity_type
      {
-         e_time_activity_type_null, //ÎŞ
-         e_time_activity_type_wheel_plate, //×ªÅÌÍæ·¨
+         e_time_activity_type_null, //æ— 
+         e_time_activity_type_wheel_plate, //è½¬ç›˜ç©æ³•
          e_time_activity_type_max
      };
      enum e_time_activity_score_type
      {
-         e_time_activity_score_type_nomal_search, //Ì½Ë÷µ½Ğ¡±¦Ïä
-         e_time_activity_score_type_monster_search, //Ì½Ë÷µ½±¦Ïä¹Ö
-         e_time_activity_score_type_flip_box_search, //Ì½Ë÷µ½µØ¿ß
-         e_time_activity_score_type_finger_guess_search, //Ì½Ë÷µ½²ÂÈ­
-         e_time_activity_score_type_special_search, //Ì½Ë÷µ½½ğ²¼ÁÖ
+         e_time_activity_score_type_nomal_search, //æ¢ç´¢åˆ°å°å®ç®±
+         e_time_activity_score_type_monster_search, //æ¢ç´¢åˆ°å®ç®±æ€ª
+         e_time_activity_score_type_flip_box_search, //æ¢ç´¢åˆ°åœ°çªŸ
+         e_time_activity_score_type_finger_guess_search, //æ¢ç´¢åˆ°çŒœæ‹³
+         e_time_activity_score_type_special_search, //æ¢ç´¢åˆ°é‡‘å¸ƒæ—
          e_time_activity_score_type_max
      };
      enum e_wheel_plate_info
      {
-         e_wheel_plate_info_accumulate_num, //ÀÛ»ıÊıÁ¿
-         e_wheel_plate_info_open_index, //¿ªÆôÎ»ÖÃ
-         e_wheel_plate_info_award_index, //±¾´Î½±ÀøÎ»ÖÃ
+         e_wheel_plate_info_accumulate_num, //ç´¯ç§¯æ•°é‡
+         e_wheel_plate_info_open_index, //å¼€å¯ä½ç½®
+         e_wheel_plate_info_award_index, //æœ¬æ¬¡å¥–åŠ±ä½ç½®
          e_wheel_plate_info_max
      };
 }

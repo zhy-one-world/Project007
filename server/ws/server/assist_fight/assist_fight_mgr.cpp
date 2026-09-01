@@ -1,4 +1,4 @@
-#include "assist_fight_mgr.h"
+﻿#include "assist_fight_mgr.h"
 #include "template/template_manager.h"
 #include "../ws/server/client_session_mgr.hpp"
 #include <world_boss_msg.hpp> 
@@ -40,7 +40,6 @@ namespace faith
 		
 		if (m_assist_fight_list.find(m_in_info.asssit_fight_guid) != m_assist_fight_list.end())
 		{
-			//������Ϣ����Ҫ�Ǹ���ʱ�䣩
 			s_assist_fight_info &m_old_info = m_assist_fight_list[m_in_info.asssit_fight_guid];
 			m_old_info.set_info(m_in_info);
 			m_old_info.start_assist_time = time_helper::get_time();
@@ -51,7 +50,6 @@ namespace faith
 			m_info.set_info(m_in_info);
 			m_info.start_assist_time = time_helper::get_time();
 			m_assist_fight_list.insert(std::pair<guid_64, s_assist_fight_info>(m_in_info.asssit_fight_guid, m_info));
-			//��һ�η�����ʾ���浽����Ƶ��
 			if (m_in_info.assist_fight_type == e_assist_fight_type_legion)
 			{
 				send_create_assist_fight_notic(m_in_info);
@@ -104,7 +102,6 @@ namespace faith
 			{
 				return;
 			}
-		//�����ҵ�ͼ����
 
 		auto map_template_ptr = cs_map_system::get_map_template(role_session->get_map_guid());
 		if (nullptr == map_template_ptr)
@@ -112,12 +109,12 @@ namespace faith
 			CONSOLE_ERROR("map_template_ptr is nullptr map_guid:{}", role_session->get_map_guid().server_64);
 			return;
 		}
-		if (map_template_ptr->Type != e_map_type_boss_home &&	//�ع�boss
-			map_template_ptr->Type != e_map_type_boss_island &&		//��յ�
-			map_template_ptr->Type != e_map_type_boss_vip_home &&	//boss֮��
-			map_template_ptr->Type != e_map_type_belief_cloister &&	//��������
-			map_template_ptr->Type != e_map_type_field &&	//�Ϲ��ż�
-			map_template_ptr->Type != e_map_type_big_map)	//������
+		if (map_template_ptr->Type != e_map_type_boss_home &&
+			map_template_ptr->Type != e_map_type_boss_island &&
+			map_template_ptr->Type != e_map_type_boss_vip_home &&
+			map_template_ptr->Type != e_map_type_belief_cloister &&
+			map_template_ptr->Type != e_map_type_field &&
+			map_template_ptr->Type != e_map_type_big_map)
 		{
 			role_session->send_notice("90204165");
 			return;
@@ -160,7 +157,6 @@ namespace faith
 				return;
 			}
 		}
-		//��cs��mgrͬ���Լ�����ս��Ϣ
 		sync_assist_fight_info_to_cs(role_guid, assist_fight_guid);
 
 		if (m_info.assist_fight_tag == 0)
@@ -226,7 +222,6 @@ namespace faith
 		{
 			return;
 		}
-		//���״̬�²�����
 		if (false == session->is_self_server())
 		{
 			return;
@@ -307,11 +302,11 @@ namespace faith
 			if (player_cur_template_id - player_init_template_id < map_template_ptr->EnterGradeLevel)
 				return false;
 
-			if (map_template_ptr->Type == e_map_type_boss_home || //�ع�boss
-				map_template_ptr->Type == e_map_type_boss_island || //��յ�
-				map_template_ptr->Type == e_map_type_boss_vip_home || //boss֮��
-				map_template_ptr->Type == e_map_type_belief_cloister ||//��������
-				map_template_ptr->Type == e_map_type_field ||//�Ϲ��ż�   
+			if (map_template_ptr->Type == e_map_type_boss_home ||
+				map_template_ptr->Type == e_map_type_boss_island ||
+				map_template_ptr->Type == e_map_type_boss_vip_home ||
+				map_template_ptr->Type == e_map_type_belief_cloister ||
+				map_template_ptr->Type == e_map_type_field ||
 				map_template_ptr->Type == e_map_type_big_map)
 			{
 				return true;
@@ -389,12 +384,10 @@ namespace faith
 		//}
 		//if (m_assist_fight_list.find(assist_fight_guid) == m_assist_fight_list.end())
 		//{
-		//	//û�������ս��Ϣ
 		//	return;
 		//}
 		//s_assist_fight_info &m_info = m_assist_fight_list[assist_fight_guid];
 		//m_info.insert_assist_list(role_guid);
-		////��cs��mgrͬ���Լ�����ս��Ϣ
 		//sync_assist_fight_info_to_cs(role_guid, assist_fight_guid);
 
 		//if (m_info.boss_id > 0)
@@ -404,7 +397,6 @@ namespace faith
 		//	{
 		//		return;
 		//	}
-		//	//����ս����ʾ
 		//	std::string notice_str_id = "90204169";
 		//	std::vector<std::string> notice_str_params_vec;
 		//	notice_str_params_vec.push_back(notice_str_id);
@@ -413,7 +405,6 @@ namespace faith
 		//	notice_str_params_vec.push_back(boss_name);
 		//	std::string notice_str = init_unit::implode(notice_str_params_vec);
 		//	main_session->send_notice(notice_str);
-		//	//��ս����ʾ
 		//	notice_str_params_vec.clear();
 		//	notice_str_id = "90204170";
 		//	notice_str_params_vec.push_back(notice_str_id);
@@ -434,7 +425,7 @@ namespace faith
 		}
 		
 		guid_64 normal_fight_guid;
-		if (cancel_type == 0)//����ս���Լ�ȡ��
+		if (cancel_type == 0)
 		{
 			if (m_assist_fight_list.find(role_guid) == m_assist_fight_list.end())
 			{
@@ -452,7 +443,7 @@ namespace faith
 			m_info.clear_data();
 			m_assist_fight_list.erase(role_guid);
 		}
-		else if (cancel_type == 1)//��ս���Լ�ȡ��
+		else if (cancel_type == 1)
 		{
 			client_session* role_session = client_session_mgr::getInstance().get_session(role_guid);
 			if (nullptr != role_session)
@@ -486,7 +477,6 @@ namespace faith
 			ws2cs_sync_assist_fight_info cs_msg;
 			cs_msg.role_guid = role_guid;
 			cs_msg.m_assist_fight_info = m_assist_fight_list[assist_fight_guid];
-			//����
 			bool is_use = proto_by_lua(e_msgindex_ws2cs_sync_assist_fight_info);
 			if (is_use == false)
 			{

@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2015Äê9ÔÂ26ÈÕ
+created: 2015å¹´9æœˆ26æ—¥
 file base: legion_station_def_hpp
 file ext: hpp
 author: zhaoyuming
@@ -16,13 +16,13 @@ purpose:
 namespace faith
 {
 #pragma pack(push,1)
-	const int32							legion_friend_spawn_id = 82072065;//¾üÍÅBOSSÓÑ·½NPC
+	const int32							legion_friend_spawn_id = 82072065;//å†›å›¢BOSSå‹æ–¹NPC
 
 	enum e_legion_station_state_type
 	{
-		e_legion_station_state_type_usual,				//ÆÕÍ¨×´Ì¬
-		e_legion_station_state_type_legion_boss,		//¾üÍÅboss×´Ì¬
-		e_legion_station_state_type_bonfire,			//¾üÍÅóô»ğ×´Ì¬
+		e_legion_station_state_type_usual,				//æ™®é€šçŠ¶æ€
+		e_legion_station_state_type_legion_boss,		//å†›å›¢bossçŠ¶æ€
+		e_legion_station_state_type_bonfire,			//å†›å›¢ç¯ç«çŠ¶æ€
 		e_legion_station_state_type_max,
 	};
 

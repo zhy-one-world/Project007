@@ -336,7 +336,7 @@ namespace faith
 		}
 		for (auto ite : *guide_trigger_template_table)
 		{
-			//Ö»ÓÐµÈ¼¶ÏÞÖÆ£¬»òÕßÖ»ÓÐ½âËø¹¦ÄÜÏÞÖÆµÄÒýµ¼£¬³ýÈ¥ÕâÁ½¸öÊôÐÔÆäËû¶¼Ó¦Îª¿Õ
+			//åªæœ‰ç­‰çº§é™åˆ¶ï¼Œæˆ–è€…åªæœ‰è§£é”åŠŸèƒ½é™åˆ¶çš„å¼•å¯¼ï¼Œé™¤åŽ»è¿™ä¸¤ä¸ªå±žæ€§å…¶ä»–éƒ½åº”ä¸ºç©º
 			GuideTriggerTemplate* guide_trigger_template_ptr = (GuideTriggerTemplate*)(ite.second);
 			if (nullptr == guide_trigger_template_ptr || guide_trigger_template_ptr->NeedLevel > player_init_template_ptr->InitLevel || guide_trigger_template_ptr->NeedMission.size() > 0 
 				|| guide_trigger_template_ptr->NeedItem.size() > 0 || guide_trigger_template_ptr->NeedMoney.size() > 0 || guide_trigger_template_ptr->RoleState != 0 
@@ -346,7 +346,7 @@ namespace faith
 				continue;
 			}
 
-			//Ö»ÓÐµÈ¼¶ÏÞÖÆµÄÒýµ¼
+			//åªæœ‰ç­‰çº§é™åˆ¶çš„å¼•å¯¼
 			if (guide_trigger_template_ptr->NeedLevel > 0 && guide_trigger_template_ptr->NeedFuncUnlock == "")
 			{
 				s_record_info add_record_info;
@@ -356,7 +356,7 @@ namespace faith
 				continue;
 			}
 
-			//¹¦ÄÜ½âËøµÄÏÞÖÆµÈ¼¶²»µ½³õÊ¼µÈ¼¶µÄÒýµ¼
+			//åŠŸèƒ½è§£é”çš„é™åˆ¶ç­‰çº§ä¸åˆ°åˆå§‹ç­‰çº§çš„å¼•å¯¼
 			if (guide_trigger_template_ptr->NeedFuncUnlock != "")
 			{
 				FuncUnlockTemplate* func_unlock_template_ptr = func_unlock_mgr::get_func_unlock_template_by_func_name_of_all_func(guide_trigger_template_ptr->NeedFuncUnlock);

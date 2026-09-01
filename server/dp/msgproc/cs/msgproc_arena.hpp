@@ -1,5 +1,5 @@
 /********************************************************************
-created:	2016Äê8ÔÂ25ÈÕ
+created:	2016å¹´8æœˆ25æ—¥
 file base : msgproc_arena
 file ext : hpp
 author : zhangminghai
@@ -14,7 +14,7 @@ purpose :
 
 namespace faith
 {
-	//¾º¼¼³¡
+	//ç«žæŠ€åœº
 	void cs2dp_req_add_arena_log(uint32 connindex, const void* data_ptr, size_t data_len);
 	void cs2dp_req_add_arena_log_end(db_result_type result);
 

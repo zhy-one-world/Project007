@@ -1,4 +1,4 @@
-#include "components/item/item_base_component.h"
+﻿#include "components/item/item_base_component.h"
 #include "components/item/item_equip_component.h"
 #include "components/item/item_manager_component.h"
 #include "item_base_system.h"
@@ -183,7 +183,6 @@ void item_equip_system::equip_on_equip(unit* unit_ptr, Entity* item_ent, int32& 
 		return;
 	}
 
-	// equip_slot��ʾ��Ʒ��װ����Ӧ�����ĸ�װ��������
 	e_role_equip_slot equip_slot = init_unit::get_slot_by_item_type(item_template->item_type, item_template->sub_type);
 	if (equip_slot >= e_role_equip_slot_max)
 	{
@@ -191,7 +190,6 @@ void item_equip_system::equip_on_equip(unit* unit_ptr, Entity* item_ent, int32& 
 		return;
 	}
 
-	// �����Ӧ��װ�������Ѿ�����װ�����ѵ���
 	auto old_item = get_equip_item(unit_ptr, equip_slot);
 	if (old_item)
 	{
@@ -200,7 +198,6 @@ void item_equip_system::equip_on_equip(unit* unit_ptr, Entity* item_ent, int32& 
 
 	item_system::remove_item_from_bag(unit_ptr, item_ent);
 
-	// ����Ӧ��װ������������Ҫװ������Ʒ
 	item_base_cp->m_data_array[e_item_base_locked] = 1;
 	item_system::put_item_into_bag(unit_ptr, item_ent, e_bag_type_equip);
 
@@ -208,7 +205,6 @@ void item_equip_system::equip_on_equip(unit* unit_ptr, Entity* item_ent, int32& 
 
 	item_system::send_item_one(unit_ptr, { item_ent });
 
-	//�������ң�����һ����߼�¼
 	auto* player_ptr = player::cast(unit_ptr);
 	if (player_ptr)
 	{

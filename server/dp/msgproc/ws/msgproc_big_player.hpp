@@ -1,5 +1,5 @@
 /********************************************************************
-created:	2016Äê10ÔÂ27ÈÕ
+created:	2016å¹´10æœˆ27æ—¥
 	file base : msgproc_big_player
 	file ext : hpp
 	author : lxy

@@ -36,7 +36,7 @@ namespace faith
 	bool buff_param_error(buff_env_param& env, BuffActionTemplate* buff_action_template_ptr)
 	{
 		if (nullptr == buff_action_template_ptr
-			|| buff_action_template_ptr->ActionParams.size() < 10 /*¶¨ËÀµÄ³¤¶È²»¹ÜÓÃÃ»ÓÃ*/)
+			|| buff_action_template_ptr->ActionParams.size() < 10 /*å®šæ­»çš„é•¿åº¦ä¸ç®¡ç”¨æ²¡ç”¨*/)
 		{
 			return true;
 		}
@@ -377,24 +377,24 @@ namespace faith
 			return false;
 		}
 
-		if (target_ptr.get_pawn_att().get_unit_base_att(e_base_att_info_hp_cur) < 0//µ±Ç°ÑªÁ¿¹ıµÍ£¬¹À¼ÆÒÑ¾­ËÀÍöÁË 
+		if (target_ptr.get_pawn_att().get_unit_base_att(e_base_att_info_hp_cur) < 0//å½“å‰è¡€é‡è¿‡ä½ï¼Œä¼°è®¡å·²ç»æ­»äº¡äº† 
 			|| src_ptr.is_dead())
 		{
 			return false;
 		}
 
-		e_skill_hurt_type damage_style = (e_skill_hurt_type)buff_action_template_ptr->ActionParams[4];//ÉËº¦ÀàĞÍ
+		e_skill_hurt_type damage_style = (e_skill_hurt_type)buff_action_template_ptr->ActionParams[4];//ä¼¤å®³ç±»å‹
 
 		f32 base_damage						= 10.0f;
 		if (buff_action_template_ptr->ActionParams[2] <= buff_action_template_ptr->ActionParams[3])
 		{
-			base_damage = random_gen::get_random(buff_action_template_ptr->ActionParams[2], buff_action_template_ptr->ActionParams[3]);			//´Ó×îĞ¡Öµµ½×î´óÖµËæ¼´
+			base_damage = random_gen::get_random(buff_action_template_ptr->ActionParams[2], buff_action_template_ptr->ActionParams[3]);			//ä»æœ€å°å€¼åˆ°æœ€å¤§å€¼éšå³
 		}
 		else
 		{
-			base_damage = random_gen::get_random(buff_action_template_ptr->ActionParams[3], buff_action_template_ptr->ActionParams[2]);			//´Ó×îĞ¡Öµµ½×î´óÖµËæ¼´
+			base_damage = random_gen::get_random(buff_action_template_ptr->ActionParams[3], buff_action_template_ptr->ActionParams[2]);			//ä»æœ€å°å€¼åˆ°æœ€å¤§å€¼éšå³
 		}				
-		double damage = base_damage* env.pbuff->get_cur_pile_count();	//ÉËº¦*²ãÊı
+		double damage = base_damage* env.pbuff->get_cur_pile_count();	//ä¼¤å®³*å±‚æ•°
 
 		if (target_ptr.get_pawn_att().get_state_att(e_unit_attack_state_no_hurt) && damage >= 0)
 		{
@@ -425,7 +425,7 @@ namespace faith
 			ub_param.skill_info_id = buff_action_template_ptr->attribute_id;
 		}
 		if (buff_action_template_ptr->ActionParams[5] > 0)
-		{//ÊÇ·ñÊ¹ÓÃÄ³¸öÌØ±ğ×´Ì¬
+		{//æ˜¯å¦ä½¿ç”¨æŸä¸ªç‰¹åˆ«çŠ¶æ€
 			if (buff_action_template_ptr->ActionParams[8] > 0)
 			{
 				if (target_ptr.get_pawn_att().get_state_att(buff_action_template_ptr->ActionParams[5]))
@@ -445,7 +445,7 @@ namespace faith
 				if (target_ptr.get_pawn_att().get_state_att(buff_action_template_ptr->ActionParams[5]))
 				{
 					if (buff_action_template_ptr->ActionParams[7] == 0 || target_ptr.get_pawn_att().get_state_trigger(buff_action_template_ptr->ActionParams[5]))
-					{//²»ÓÃ±ê¼Ç¾ÍÊ¹ÓÃ || ±ê¼ÇÒÑ¾­ÓµÓĞÁË
+					{//ä¸ç”¨æ ‡è®°å°±ä½¿ç”¨ || æ ‡è®°å·²ç»æ‹¥æœ‰äº†
 						ub_param.add_percent = buff_action_template_ptr->ActionParams[6] / 100.f;
 					}
 				}
@@ -1051,7 +1051,7 @@ namespace faith
 					//	return true;
 					//}
 
-					if (buff_res_template->MoveLength < 0) //À­»Ø
+					if (buff_res_template->MoveLength < 0) //æ‹‰å›
 					{
 						s_map_pos src_pos = src_ptr.get_new_map_pos();
 
@@ -1064,7 +1064,7 @@ namespace faith
 
 						target_ptr.get_move_mgr().start(aim_pos, buff_res_template->MoveTime);
 					}
-					else //»÷ÍË
+					else //å‡»é€€
 					{
 						s_map_pos target_pos = target_ptr.get_new_map_pos();
 						s_map_pos src_pos = src_ptr.get_new_map_pos();
@@ -2002,7 +2002,7 @@ namespace faith
 			return false;
 		}
 
-		{//¿ç·şÌìÌİµØÍ¼½ûÖ¹·Ç·şÎñÆ÷¸´»î
+		{//è·¨æœå¤©æ¢¯åœ°å›¾ç¦æ­¢éæœåŠ¡å™¨å¤æ´»
 
 			if (base_map_system::get_map_type(target_ptr.get_map_ent()) == e_map_type_cross_ladder)
 			{
@@ -2268,7 +2268,7 @@ namespace faith
 		/*
 		 *	action
 		 */
-		//¸Ä±äÊôĞÔ×´Ì¬
+		//æ”¹å˜å±æ€§çŠ¶æ€
 		{ "modhp",				buff_mod_hp},
 		{ "modmp",				buff_mod_mp},
 		{ "modatt",				buff_mod_att},

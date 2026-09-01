@@ -3,7 +3,7 @@ created: 2016/04/21
 created: 21:4:2016 15:40
 file base: belief_def
 file ext: hpp
-author: W.H.B.A.(Íõ»Æ²©°º)
+author: W.H.B.A.(ç‹é»„åšæ˜‚)
 
 purpose:define the type of belief, define the type and the length of belief inst data
 *********************************************************************/
@@ -20,34 +20,34 @@ namespace faith
 {
 #pragma pack(push,1)
 
-	const	float	belief_buff_change_time_diff = 3.0;	//ĞÅÑöBuffÇĞ»»Ê±¼ä
+	const	float	belief_buff_change_time_diff = 3.0;	//ä¿¡ä»°Buffåˆ‡æ¢æ—¶é—´
 
 	//define the type of belief
 	//enum EBeliefType
 	//{
-	//	e_belief_type_spring,							// »ğ
-	//	e_belief_type_summer,							// ±ù
-	//	e_belief_type_autumn,							// ¹â
-	//	e_belief_type_winter,							// °µ
+	//	e_belief_type_spring,							// ç«
+	//	e_belief_type_summer,							// å†°
+	//	e_belief_type_autumn,							// å…‰
+	//	e_belief_type_winter,							// æš—
 	//	e_belief_type_max
 	//};
 
 	//enum EBeliefBuffIndex
 	//{
-	//	e_belief_buff_index_0,							// Ò»½×¶Î
-	//	e_belief_buff_index_1,							// ¶ş½×¶Î
-	//	e_belief_buff_index_2,							// Èı½×¶Î
+	//	e_belief_buff_index_0,							// ä¸€é˜¶æ®µ
+	//	e_belief_buff_index_1,							// äºŒé˜¶æ®µ
+	//	e_belief_buff_index_2,							// ä¸‰é˜¶æ®µ
 	//	e_belief_buff_index_max
 	//};
 
-	const	int32	max_belief_buff_num = e_belief_series_type_max * e_belief_buff_level_max;		//ĞÅÑöbuff¿â£¬Ã¿¸öĞÅÑöÈı¸öbuff
+	const	int32	max_belief_buff_num = e_belief_series_type_max * e_belief_buff_level_max;		//ä¿¡ä»°buffåº“ï¼Œæ¯ä¸ªä¿¡ä»°ä¸‰ä¸ªbuff
 
 	const	int32	belief_buff_req_array[e_belief_buff_level_max] = {1, 4, 7};
 
 	//define the inst data struct
 	struct s_belief_info
 	{
-		int32						data_ary[e_belief_info_max];				// Å®ÉñÊµÀıÊı¾İ
+		int32						data_ary[e_belief_info_max];				// å¥³ç¥å®ä¾‹æ•°æ®
 		s_belief_info()
 		{
 			clear_data();

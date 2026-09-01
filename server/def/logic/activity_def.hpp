@@ -8,24 +8,24 @@ namespace faith
 {
 #pragma pack(push,1)
 	
-	const int32 first_activity_common_template_id = 120000000;	// »î¶¯Í¨ÓÃÅäÖÃ±íµÚÒ»¸öÅäÖÃid
+	const int32 first_activity_common_template_id = 120000000;	// æ´»åŠ¨é€šç”¨é…ç½®è¡¨ç¬¬ä¸€ä¸ªé…ç½®id
 
 	const int32 first_broken_sky_reward_temp_id = 113004001;
 	const int32 first_world_boss_reward_temp_id = 113011001;
 	const int32 first_legion_boss_reward_temp_id = 113005001;
 
-	const int32 broken_sky_act_open_time = 900 ;	//ÆÆËéĞé¿Õ¿ªÆô³ÖĞøÊ±¼ä
+	const int32 broken_sky_act_open_time = 900 ;	//ç ´ç¢è™šç©ºå¼€å¯æŒç»­æ—¶é—´
 	const int32 once_activity_open_time_array_size = 8;
 
 	/************************************************/
-	/*                 ±¦Ïä½µÁÙ»î¶¯                 */
+	/*                 å®ç®±é™ä¸´æ´»åŠ¨                 */
 	/************************************************/
 
 	namespace chest_arrival_activity
 	{
 		const int32 max_spawn_chest_num = 10000;
-		const int32 spawn_chest_begin_template_id = 0;//Ìì½µ±¦ÏäÒÑÆúÓÃ
-		const int32 chest_live_time = 15 * 60; // µ¥Î»Ãë
+		const int32 spawn_chest_begin_template_id = 0;//å¤©é™å®ç®±å·²å¼ƒç”¨
+		const int32 chest_live_time = 15 * 60; // å•ä½ç§’
 
 		const int32 spawn_chest_time[] = {
 			13 * 3600 + 00 * 60 + 00,	// 13:00
@@ -37,11 +37,11 @@ namespace faith
 	};
 	enum e_map_difficulty_for_multiplayer
 	{
-		e_map_difficulty_for_multiplayer_easy, //¼òµ¥
-		e_map_difficulty_for_multiplayer_normal, //ÆÕÍ¨
-		e_map_difficulty_for_multiplayer_hard, //À§ÄÑ
-		e_map_difficulty_for_multiplayer_heroic,//Ó¢ĞÛ
-		e_map_difficulty_for_multiplayer_hell,//µØÓü
+		e_map_difficulty_for_multiplayer_easy, //ç®€å•
+		e_map_difficulty_for_multiplayer_normal, //æ™®é€š
+		e_map_difficulty_for_multiplayer_hard, //å›°éš¾
+		e_map_difficulty_for_multiplayer_heroic,//è‹±é›„
+		e_map_difficulty_for_multiplayer_hell,//åœ°ç‹±
 		e_map_difficulty_for_multiplayer_max
 	};
 

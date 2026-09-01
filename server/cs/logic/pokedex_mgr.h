@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2015Äê6ÔÂ18ÈÕ15:55
+created: 2015å¹´6æœˆ18æ—¥15:55
 file base: pokedex_mgr
 file ext: h
 author: XingLong
@@ -29,7 +29,7 @@ namespace faith
 		bool                                    load_pokedex_by_db_lua(const char *data_ptr, int32 data_len);
 		void									save_pokedex_to_db(int32 save_type);
 		int32									get_all_active_pokedex_num();
-		int32									get_active_pokedex_num();			//»êÆÇ¼¤»îÊıÁ¿
+		int32									get_active_pokedex_num();			//é­‚é­„æ¿€æ´»æ•°é‡
 		void									init_manager(const s_pokedex_info* pokedex_data, int32 pokedex_num);
 	public:
 		void									send_pokedex_all();
@@ -42,8 +42,8 @@ namespace faith
 		float									get_add_percent();
 
 	private:
-		cpokedex								                    m_pokedex_ary[POKEDEX_NUM_MAX];								// ËùÓĞÍ¼¼ø
-		player*													    m_player_ptr;												// Í¼¼øËùÊô½ÇÉ«Ãû³Æ		
+		cpokedex								                    m_pokedex_ary[POKEDEX_NUM_MAX];								// æ‰€æœ‰å›¾é‰´
+		player*													    m_player_ptr;												// å›¾é‰´æ‰€å±è§’è‰²åç§°		
 	};
 }
 

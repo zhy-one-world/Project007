@@ -1,10 +1,10 @@
 /********************************************************************
-created: 2019Äê1ÔÂ17ÈÕ
+created: 2019å¹´1æœˆ17æ—¥
 file base: cross_server_pk_msg
 file ext: hpp
 author: zhangshuo
 
-purpose: ¿ç·şPK
+purpose: è·¨æœPK
 *********************************************************************/
 
 #ifndef _FAITH_CROSS_SERVER_PK_MSG_HPP_

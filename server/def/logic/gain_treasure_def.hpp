@@ -1,10 +1,10 @@
 /********************************************************************
-created: 2018Äê5ÔÂ5ÈÕ
+created: 2018å¹´5æœˆ5æ—¥
 file base: gain_treasure_def
 file ext: hpp
 author: wangdi
 
-purpose: ´ò±¦Ïà¹Ø
+purpose: æ‰“å®ç›¸å…³
 *********************************************************************/
 #ifndef _GAIN_TREASURE_DEF_HPP_
 #define _GAIN_TREASURE_DEF_HPP_
@@ -16,9 +16,9 @@ purpose: ´ò±¦Ïà¹Ø
 namespace faith
 {
 #pragma pack(push,1)
-	const int32 gain_treasure_gain_item_max_num = 5;//µ¥¸öboss×î¸ßµôÂäĞèÒª¼ÇÂ¼µÄÎïÆ·ÊıÁ¿
+	const int32 gain_treasure_gain_item_max_num = 5;//å•ä¸ªbossæœ€é«˜æ‰è½éœ€è¦è®°å½•çš„ç‰©å“æ•°é‡
 	const int32 gain_treasure_killed_record_one_boss_max_size = 5;
-	const int32 gain_treasure_boss_max_size = 150;//×î´óbossÊıÁ¿
+	const int32 gain_treasure_boss_max_size = 150;//æœ€å¤§bossæ•°é‡
 	const int32 gain_treasure_gain_item_id_max_size = gain_treasure_gain_item_max_num * (item_template_id_length + 2);
 	const int32 gain_treasure_record_info_max_size = gain_treasure_boss_max_size * gain_treasure_killed_record_one_boss_max_size;
 	const int32	gain_treasure_gain_item_record_max_size = 30;
@@ -30,10 +30,10 @@ namespace faith
 
 	enum e_buy_simple_boss_num_error
 	{
-		e_buy_simple_boss_num_error_unkonwn,		// Î´Öª´íÎó
-		e_buy_simple_boss_num_error_lack_money,		// »õ±Ò²»×ã
-		e_buy_simple_boss_num_error_lack_num,		// ÎŞ¹ºÂò´ÎÊı
-		e_buy_simple_boss_num_error_succeed,		// ¹ºÂò³É¹¦
+		e_buy_simple_boss_num_error_unkonwn,		// æœªçŸ¥é”™è¯¯
+		e_buy_simple_boss_num_error_lack_money,		// è´§å¸ä¸è¶³
+		e_buy_simple_boss_num_error_lack_num,		// æ— è´­ä¹°æ¬¡æ•°
+		e_buy_simple_boss_num_error_succeed,		// è´­ä¹°æˆåŠŸ
 		e_buy_simple_boss_num_error_max,
 	};
 
@@ -272,7 +272,7 @@ namespace faith
 		{
 			record_info_list.clear();
 		}
-		//Ôö¼Ó¼ÇÂ¼ Èç¹û¼ÇÂ¼ÒÑÂú ·µ»ØĞèÒªÉ¾³ı¼ÇÂ¼µÄÊ±¼ä´Á
+		//å¢åŠ è®°å½• å¦‚æœè®°å½•å·²æ»¡ è¿”å›éœ€è¦åˆ é™¤è®°å½•çš„æ—¶é—´æˆ³
 		int32 add_record(const s_gain_treasure_record_info_one& record_info)
 		{
 			s_gain_treasure_record_info_one add_record_info = record_info;
@@ -362,7 +362,7 @@ namespace faith
 	struct s_gain_treasure_boss_info
 	{
 		int32											boss_spawn_point_template_id;
-		guid_64											boss_guid;							//bossËÀÍöÊ±guidÎª0
+		guid_64											boss_guid;							//bossæ­»äº¡æ—¶guidä¸º0
 		int32											next_refresh_stamp;
 		s_gain_treasure_player_info						player_info[max_team_member_num];
 		s_gain_treasure_boss_info()

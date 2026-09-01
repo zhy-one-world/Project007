@@ -234,7 +234,7 @@ void battle_map_system::on_npc_delete(Entity* map_ent, npc* npc_ptr, bool is_dea
 			{
 				CONSOLE_ERROR("FirstWinAwardItems size error item_size:{} item_num:{}", map_template->FirstWinAwardItems.size(), map_template->FirstWinAwardItemsNum.size());
 			}
-			//¿Û¸±±¾´ÎÊı
+			//æ‰£å‰¯æœ¬æ¬¡æ•°
 			player_ref.cost_enter_scene_consume();
 			player_ref.get_map_record_mgr()->upgrade_map(base_map_cp->m_map_id);
 		}

@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 created: 2014/07/16
 created: 16:7:2014 11:14
 file base: char_def
@@ -21,110 +21,108 @@ namespace faith
 
 	const int32 role_data_save_time = 310000;
 	const xstring account_and_password_login_prefix = "Faith";
-	const int32 max_time_str_size = 20;								// ʱ���ַ�������
-	const int32 max_packege_in_one_second = 20;						// һ��犃Ȱl�͔����������ֵ
-	const int32 max_role_name_size = 8;								// ��ɫ���ֵĿ�������ַ���
-	const int32 max_name_size = 100;								// ��ɫ������ַ���
-	const int32 min_name_size = 2;									// ��ɫ����С�ַ���
-	const int32 max_name_size_one_team = max_name_size * 5 +10;		// һ�������ɫ������ַ���
-	const uint32 max_account_length = 100;							// �˻���������ַ���
-	const uint32 min_account_length = 4;							// �˻���������ַ���
-	const uint32 max_password_length = 100;							// ���������ַ���
-	const int32	max_unit_guid_str_max = 64;							// guidת��Ϊstr��󳤶�
-	const uint32 max_server_msg_length = 500;						// sdk���ص�message
-	const uint32 max_device_type_length = 100;						// �豸����
-	const ui64 invalid_character_id = 0;				  			// ��ɫid�ķǷ�ֵ
-	const uint32 max_character_num = 3;								// ��ɫ���������
-	const int32 max_time_role_count = 6;							// ÿСʱ�洢���ν�ɫ����
-	const int32 diconnect_repeat_num = 5;							// �����ظ������� 
+	const int32 max_time_str_size = 20;
+	const int32 max_packege_in_one_second = 20;
+	const int32 max_role_name_size = 8;
+	const int32 max_name_size = 100;
+	const int32 min_name_size = 2;
+	const int32 max_name_size_one_team = max_name_size * 5 +10;
+	const uint32 max_account_length = 100;
+	const uint32 min_account_length = 4;
+	const uint32 max_password_length = 100;
+	const int32	max_unit_guid_str_max = 64;
+	const uint32 max_server_msg_length = 500;
+	const uint32 max_device_type_length = 100;
+	const ui64 invalid_character_id = 0;
+	const uint32 max_character_num = 3;
+	const int32 max_time_role_count = 6;
+	const int32 diconnect_repeat_num = 5;
 	const uint32 limit_call_back_val_count = 8;
-	const uint32 max_secondary_passwd_len = 12;						// ����������󳤶�
+	const uint32 max_secondary_passwd_len = 12;
 	const int32 last_server_list_max_length = 256;	
 	const uint32 max_captcha_length = 10;
-	const uint32 max_token_len = 64;								// �������token���ȣ�������
+	const uint32 max_token_len = 64;
 	const uint32 limit_cluster_login_key_length = 32;
 	const uint32 limit_disable_account_desc_length = 64;
-	const int32	role_max_level = 1000;								// ��ɫ���ȼ�
-	const int32	role_branch_id_diff = 100;							// ��ɫ��֧�м�id���
-	const int32 role_watch_unit_num = 100;							// ��ҿ��Կ�����Χ����������ݵ�����
-	const uint32 init_item_num = 60;								// ��ҳ�ʼ����Ʒ����
-	const uint32 init_skill_num = 100;								// ��ҳ�ʼ�ļ�������
-	const uint32 init_belief_num = 4;								// ��ҳ�ʼ����������
-	const uint32 init_pokedex_num = 8;								// ��ҳ�ʼ��ͼ������
-	const uint32 init_mission_num = 4;								// ��ҳ�ʼ��������
-	const uint32 init_achievement_num = 200;						// ��ҳ�ʼ�ɾ�����
-	const uint32 init_spirit_num = 200;								// ��ҳ�ʼ�ľ�������
-	const uint32 init_map_record_num = 256;                         // ��ҳ�ʼ�ĵ�ͼ��¼����
-	typedef uint32	character_data_version;							// ������ݰ汾
-	const int32	search_level_template_id_start = 171000001;			// ̽����������ʼid
-	const int32	attribute_template_id_start	= 20000000;				// ����˵������ʼid
-	const int32 money_template_id_start = 30000000;					// ��Ǯ����ʼid
-	const int32   player_achievement_template_id_start = 34000001;  // ��ʼ�ɾ�id
-	const int32 player_grade_up_level_interval = 100;               // ��ɫת���ȼ����(����ÿ100��ת��һ�����������ֵ����100)
-	const int32 player_grade_up_peakedness_num = 3;					// �۷�ȼ���תְ����
-	const int32 player_grade_up_stage_nums = 5;						// ת����С�׶�����
-	const int32 player_grade_up_one_mission_num = 30;				// һ��������ɱ�ʶ���ܱ�ʾ��ת������
-	const uint32	game_config_template_id = 99000001;				// ��Ϸ�����ļ���ȡ����id
+	const int32	role_max_level = 1000;
+	const int32	role_branch_id_diff = 100;
+	const int32 role_watch_unit_num = 100;
+	const uint32 init_item_num = 60;
+	const uint32 init_skill_num = 100;
+	const uint32 init_belief_num = 4;
+	const uint32 init_pokedex_num = 8;
+	const uint32 init_mission_num = 4;
+	const uint32 init_achievement_num = 200;
+	const uint32 init_spirit_num = 200;
+	const uint32 init_map_record_num = 256;
+	typedef uint32	character_data_version;
+	const int32	search_level_template_id_start = 171000001;
+	const int32	attribute_template_id_start	= 20000000;
+	const int32 money_template_id_start = 30000000;
+	const int32   player_achievement_template_id_start = 34000001;
+	const int32 player_grade_up_level_interval = 100;
+	const int32 player_grade_up_peakedness_num = 3;
+	const int32 player_grade_up_stage_nums = 5;
+	const int32 player_grade_up_one_mission_num = 30;
+	const uint32	game_config_template_id = 99000001;
 	const uint32  bag_extend_template_first_id = 33000000;
-	const uint32  default_gather_distance = 500;					//Ĭ��/��С �ɼ�����
-	const uint32  sync_pos_diff_distance = 100;						//��Сͬ������ƽ��
-	const int32	ROBOT_BUFF_TEMPLATE_ID = 10010019;					//���������ӵ�buff
-	const int32 ROBOT_BUFF_EXP_TEMPLATE_ID = 10010040;				//������1.5������id
-	const int32	ROBOT_COPY_EXP_LEVEL = 100;							//�����˿����������ݵ���ʼ�ȼ�
+	const uint32  default_gather_distance = 500;
+	const uint32  sync_pos_diff_distance = 100;
+	const int32	ROBOT_BUFF_TEMPLATE_ID = 10010019;
+	const int32 ROBOT_BUFF_EXP_TEMPLATE_ID = 10010040;
+	const int32	ROBOT_COPY_EXP_LEVEL = 100;
 
-	const int32	req_other_info_retry_num = 5;						//����������Ϣ���Դ���
-	const int32	req_other_info_retry_interval = 5;					//����������Ϣ����CD
+	const int32	req_other_info_retry_num = 5;
+	const int32	req_other_info_retry_interval = 5;
 
 	const int32 resource_find_back_day = 3;
 	
 	const uint32 max_gm_sql_str_length = 1024;
 
-	const uint32 max_recharge_order_length = 40;					// ��ֵ��������󳤶�
-	const uint32 max_recharge_order_token_length = 7000;			// ��ֵtoken��󳤶�
-	const int32 item_template_id_length = 8;						// ��Ʒģ��id���ַ�����
+	const uint32 max_recharge_order_length = 40;
+	const uint32 max_recharge_order_token_length = 7000;
+	const int32 item_template_id_length = 8;
 
-	const int32 recharge_unfinish_message_keep_time = 120;			// �ְ����͵�SDK��ֵ��Ϣ����ʱ��
+	const int32 recharge_unfinish_message_keep_time = 120;
 
-	const int32 server_merge_guid_load_max = 1000;					//�Ϸ�ʱһ�δ���guid����
+	const int32 server_merge_guid_load_max = 1000;
 
-	const int32 person_information_tag_num_max = 8;				//��Ҹ��˱�ǩ������
+	const int32 person_information_tag_num_max = 8;
 
-	const int32 relation_push_num_max = 100;						//��Ե�����������
+	const int32 relation_push_num_max = 100;
 
-	const int32 person_infor_personalized_signature_max = 100;		//��Ҹ���ǩ������ַ���
-	const int32 person_infor_city_max = 100;				//��ҳ�������ַ���
-	const int32 person_infor_hometown_max = 100;			//��Ҽ�������ַ���
-	const int32 person_infor_online_state_max = 100;			//�������״̬����ַ���
-	const int32 person_infor_gender_max = 100;		//����Ա�����ַ���
+	const int32 person_infor_personalized_signature_max = 100;
+	const int32 person_infor_city_max = 100;
+	const int32 person_infor_hometown_max = 100;
+	const int32 person_infor_online_state_max = 100;
+	const int32 person_infor_gender_max = 100;
 
-	const int32 role_competition_max = 100;		//��Ҿ�������������
+	const int32 role_competition_max = 100;
 
-	const int32 role_competition_tag_num = 7;	//��Ҿ�������int����
+	const int32 role_competition_tag_num = 7;
 
-	const int32 competition_season_id_start = 153000000;	//����������ʼid
-	const int32 normal_manual_goods_type = 32;				//��ͨ��Ӣ�ֲ��ֵ����
-	const int32 special_manual_goods_type = 33;				//������Ӣ�ֲ��ֵ����
-	const int32 add_special_manual_goods_type = 34;			//������Ӣ�ֲ��۳�ֵ����
+	const int32 competition_season_id_start = 153000000;
+	const int32 normal_manual_goods_type = 32;
+	const int32 special_manual_goods_type = 33;
+	const int32 add_special_manual_goods_type = 34;
 
-	const int32 element_normal_manual_goods_type = 40;				//��ͨ��Ӣ�ֲ��ֵ����
-	const int32 element_special_manual_goods_type = 41;				//������Ӣ�ֲ��ֵ����
-	const int32 element_add_special_manual_goods_type = 42;			//������Ӣ�ֲ��۳�ֵ����
+	const int32 element_normal_manual_goods_type = 40;
+	const int32 element_special_manual_goods_type = 41;
+	const int32 element_add_special_manual_goods_type = 42;
 
-	const int32 assist_fight_max_num = 5;					//��ս�������
+	const int32 assist_fight_max_num = 5;
 
 	const int32 assist_fight_help_notice_id = 90204169;					
 	const int32 assist_fight_helper_notice_id = 90204170;
 
-	const int32 can_show_other_line_session_num = 100;		//��������session����ʾ��һ����
+	const int32 can_show_other_line_session_num = 100;
 
-	const int32 max_first_kill_npc_id_str = 280;			//��ɱNPCid��¼����
-	const int32 max_first_kill_npc_id_num = 30;				//��ɱnpcid��¼�������ֵ
+	const int32 max_first_kill_npc_id_str = 280;
+	const int32 max_first_kill_npc_id_num = 30;
 
-	const int32 wing_func_unlock_id = 117000037;			//��������Id
+	const int32 wing_func_unlock_id = 117000037;
 
-	const int32 time_limit_gift_db_num = 100;				// ��ʱ���״̬���洢����
-	//========================= ��־ =========================================================
-	//const int32 max_log_char_num = 4096;							// log��־��󳤶� 
+	const int32 time_limit_gift_db_num = 100;
 	//static const char server_log_separator = 0x01;
 	//static const std::string server_log_normversion = "1.1.4";
 	//static const std::string server_invaild_string = "null";
@@ -133,170 +131,168 @@ namespace faith
 	const int32 char_quick_call_mount_max = 3;
 	const int32 aoi_watch_unit_length = 2250000;
 
-	const uint32 max_hit_and_get_npc_dis_power = 500 * 500;			// ��ײ���ɼ�Npc������ĳ˷�
+	const uint32 max_hit_and_get_npc_dis_power = 500 * 500;
 	
-	const int32 player_upgrade_cfg_first_id = 21000001;				// ��ұ�׼���е�һ��id
-	const int32	monster_upgrade_cfg_first_id = 21050001;			// �����׼���е�һ��id
-	const int32	new_monster_upgrade_cfg_first_id = 21060001;			// �����׼���е�һ��id
-	const int32 default_show_fashion = 1;							// ��������Ĭ�Ϲ�ѡʱװ
-	const int32 invalid_payment_type = -1;							// ��Ч��֧������
+	const int32 player_upgrade_cfg_first_id = 21000001;
+	const int32	monster_upgrade_cfg_first_id = 21050001;
+	const int32	new_monster_upgrade_cfg_first_id = 21060001;
+	const int32 default_show_fashion = 1;
+	const int32 invalid_payment_type = -1;
 
-	const int32 is_belong_string_template_id = 90037226;			// %s��%s
+	const int32 is_belong_string_template_id = 90037226;
 
-	const int32 max_passive_skill_num = 250;						// ������������
-	const int32 max_legion_passive_skill_num = 150;					// ���ű�����������
+	const int32 max_passive_skill_num = 250;
+	const int32 max_legion_passive_skill_num = 150;
 
-	const int32 max_legion_skill_num = 20;							//���ż�������
+	const int32 max_legion_skill_num = 20;
 
-	const int32 random_seed_num = 10;								//�����������
+	const int32 random_seed_num = 10;
 
-	const int32 max_recursion_num = 20;								//�ݹ��������
+	const int32 max_recursion_num = 20;
 
-	const int32 cache_other_player_num = 30;					//���������������
-	const int32 cache_drop_box_num = 20;						//������������
-	const int32 cache_bot_num = 50;								//����npc����
+	const int32 cache_other_player_num = 30;
+	const int32 cache_drop_box_num = 20;
+	const int32 cache_bot_num = 50;
 
-	const int32	max_appearance_size = 1000;						//����������󳤶�
+	const int32	max_appearance_size = 1000;
 	enum e_data_flag
 	{
 		e_data_flag_none,
-		e_data_flag_info,		// ��ɫ������Ϣ
-		e_data_flag_buff,		// ��ɫBuff
-		e_data_flag_skill,		// ��ɫ����
-		e_data_flag_time,		// ���ʱ��
-		e_data_flag_money,		// ��ɫ����
-		e_data_flag_time_activity,// ��ʱ�
-		e_data_flag_mission,		// ��ɫ����
-		e_data_flag_att,		// ��ɫ����
-		e_data_flag_goods,		// ��ɫ�����¼
-		e_data_flag_map,		// ��ɫ��ͼ��¼
-		e_data_flag_service_goal,		// ����Ŀ���¼
-		e_data_flag_special_name,		// ��ɫ�ƺż�¼
-		e_data_flag_achievement,		// ��ɫ�ɾͼ�¼
-		e_data_flag_pokedex,		// ��ɫͼ����¼
-		e_data_flag_item_upgrade,		// ��ɫ��Ʒǿ������
-		e_data_flag_mail,		// ��ɫ�ʼ���¼
-		e_data_flag_tinder,		// ��ɫ���ּ�¼
-		e_data_flag_worship,		// ��ҳ�ݼ�¼
-		e_data_flag_yesterday_must_do_remain,		// ����û���ı�������
-		e_data_flag_convert,		// ���ת����¼
-		e_data_flag_welfare,		// ��Ҹ���
-		e_data_flag_active_degree,		// ��һ�Ծ��
-		e_data_flag_title,		// ��ҳƺ�
-		e_data_flag_guide,		// ��������
-		e_data_flag_fist_time_do,		// �״β���
-		e_data_flag_sprite_fetter,		// �����
-		e_data_flag_talent,		// ��ɫ�츳
-		e_data_flag_daily_must_do_count,		// ÿ�ձ���������¼
-		e_data_flag_highest_record,		// ��ɫ��ʷ��߼�¼
-		e_data_flag_auction_self_selling,		// �������Լ��ĳ�����
-		e_data_flag_globel_mail_had,		// ��ӵ�е�ȫ���ʼ�
-		e_data_flag_service_rank,		// ȫ������Ϣ
-		e_data_flag_logic_info,		// ����߼�����
-		e_data_flag_gain_treasure,		// ������
-		e_data_flag_time_limit_activity,		// ��ʱ�����	
-		e_data_flag_relation,		// ��ɫ��ϵ
-		e_data_flag_boss_island,		// ���㵺����
-		e_data_flag_chat,		// ��������
-		e_data_flag_passive_skill,		// ��������
-		e_data_flag_seven_day_goal,		// ����Ŀ��ǰ�����¼
-		e_data_flag_harry_record,		// ����Ӷ���Ҽ�¼
-		e_data_flag_phantom,		// ��ɫ����
-		e_data_flag_oracle_trial,		// ��������
-		e_data_flag_chat_record,		// 
-		e_data_flag_player_information,		// ������Ϣ
-		e_data_flag_recycle,     // �ع���Ϣ
-		e_data_flag_recycle_task,     // �ع�����
-		e_data_flag_player_competition,		// ������Ϣ
-		e_data_flag_recycle_invited,		// �ع���ļ
-		e_data_flag_dragontrip,		// ��������
-		e_data_flag_legion_skill,		// ���ż���
-		e_data_flag_skytreasure,		// ��ձ���
-		e_data_flag_starark,		// �Ǻ�����
-		e_data_flag_element_competition,		// Ԫ���ֲ�
-		e_data_flag_time_feed_back,		// Ԫ��
-		e_data_flag_time_limit_gift,		// ��ʱ���
-		e_data_flag_subscribe_daily_info,		// �Ԥ��
-		e_data_flag_item = 100000,		// ��ɫ��Ʒ(��ƷҪ��δ浵������Ҫ������Ʒ�ı��λ�����)
+		e_data_flag_info,
+		e_data_flag_buff,
+		e_data_flag_skill,
+		e_data_flag_time,
+		e_data_flag_money,
+		e_data_flag_time_activity,
+		e_data_flag_mission,
+		e_data_flag_att,
+		e_data_flag_goods,
+		e_data_flag_map,
+		e_data_flag_service_goal,
+		e_data_flag_special_name,
+		e_data_flag_achievement,
+		e_data_flag_pokedex,
+		e_data_flag_item_upgrade,
+		e_data_flag_mail,
+		e_data_flag_tinder,
+		e_data_flag_worship,
+		e_data_flag_yesterday_must_do_remain,
+		e_data_flag_convert,
+		e_data_flag_welfare,
+		e_data_flag_active_degree,
+		e_data_flag_title,
+		e_data_flag_guide,
+		e_data_flag_fist_time_do,
+		e_data_flag_sprite_fetter,
+		e_data_flag_talent,
+		e_data_flag_daily_must_do_count,
+		e_data_flag_highest_record,
+		e_data_flag_auction_self_selling,
+		e_data_flag_globel_mail_had,
+		e_data_flag_service_rank,
+		e_data_flag_logic_info,
+		e_data_flag_gain_treasure,
+		e_data_flag_time_limit_activity,
+		e_data_flag_relation,
+		e_data_flag_boss_island,
+		e_data_flag_chat,
+		e_data_flag_passive_skill,
+		e_data_flag_seven_day_goal,
+		e_data_flag_harry_record,
+		e_data_flag_phantom,
+		e_data_flag_oracle_trial,
+		e_data_flag_chat_record,
+		e_data_flag_player_information,
+		e_data_flag_recycle,
+		e_data_flag_recycle_task,
+		e_data_flag_player_competition,
+		e_data_flag_recycle_invited,
+		e_data_flag_dragontrip,
+		e_data_flag_legion_skill,
+		e_data_flag_skytreasure,
+		e_data_flag_starark,
+		e_data_flag_element_competition,
+		e_data_flag_time_feed_back,
+		e_data_flag_time_limit_gift,
+		e_data_flag_subscribe_daily_info,
+		e_data_flag_item = 100000,
 	};
 
 //////////////////////////////////////////////////////////////////////////
 	enum e_unit_res
 	{
-		e_unit_res_mesh,				// ģ��
-		e_unit_res_blueprint,			// ������ͼ
-		e_unit_res_spell,				// ��������
-		e_unit_res_attack,				// ��������
-		e_unit_res_cast,				// ʩ������
-		e_unit_res_channel,				// ͨ����
-		e_unit_res_rush,				// ��
-		e_unit_res_ghost,			    // 
-		e_unit_res_hurt,				// ���˶���
-		e_unit_res_dead,				// ��������
-		e_unit_res_talk,				// ���춯��
-		e_unit_res_xuanyun,				// ѣ�ζ���
-		e_unit_res_born,				// ��������
-		e_unit_res_jump_to_mount,		// ��������
-		e_unit_res_wing,				// �ٻ������
-		e_unit_res_flyup,				// �����������
-		e_unit_res_flydown,				// ��������½�
-		e_unit_res_change_mount,		// ������
-		e_unit_res_sprint,				// 
-		e_unit_res_double_mounts,		// ˫������
-		e_unit_res_wing_fly_up,			// ����������
-		e_unit_res_wing_fly_down,		// �������½�
-		e_unit_res_channel_1,			// ��channel
-		e_unit_res_channel_2,			// ��channel
-		e_unit_res_channel_3,			// ��channel
-		e_unit_res_channel_4,			// ��channel
-		e_unit_res_channel_mount,		// ����channel
-		e_unit_res_channel_wing,		// ���channel
+		e_unit_res_mesh,
+		e_unit_res_blueprint,
+		e_unit_res_spell,
+		e_unit_res_attack,
+		e_unit_res_cast,
+		e_unit_res_channel,
+		e_unit_res_rush,
+		e_unit_res_ghost,
+		e_unit_res_hurt,
+		e_unit_res_dead,
+		e_unit_res_talk,
+		e_unit_res_xuanyun,
+		e_unit_res_born,
+		e_unit_res_jump_to_mount,
+		e_unit_res_wing,
+		e_unit_res_flyup,
+		e_unit_res_flydown,
+		e_unit_res_change_mount,
+		e_unit_res_sprint,
+		e_unit_res_double_mounts,
+		e_unit_res_wing_fly_up,
+		e_unit_res_wing_fly_down,
+		e_unit_res_channel_1,
+		e_unit_res_channel_2,
+		e_unit_res_channel_3,
+		e_unit_res_channel_4,
+		e_unit_res_channel_mount,
+		e_unit_res_channel_wing,
 		e_unit_res_max
 	};
 
 	enum e_unit_mesh_data
 	{
-		e_unit_mesh_data_body,									//����ģ��
-		e_unit_mesh_data_head,									//ͷ��ģ��
-		e_unit_mesh_data_hair,									//ͷ��ģ��
-		e_unit_mesh_data_headdress,								//ͷ��ģ��
-		e_unit_mesh_data_mouth,									//�첿ģ��
-		e_unit_mesh_data_eye,									//�۲�ģ��	
+		e_unit_mesh_data_body,
+		e_unit_mesh_data_head,
+		e_unit_mesh_data_hair,
+		e_unit_mesh_data_headdress,
+		e_unit_mesh_data_mouth,
+		e_unit_mesh_data_eye,
 		e_unit_mesh_data_max									
 	};
 
-	enum e_save_role_data_type							// ��ɫ���ݱ�������
+	enum e_save_role_data_type
 	{
-		e_save_data_type_exit_game,						// �˳���Ϸ
-		e_save_data_type_leave_scene,					// ����ʱ�뿪����������ݱ���
-		e_save_data_type_update,						// ��ʱ����
-		e_save_data_type_cross,							// ���͵�����������
+		e_save_data_type_exit_game,
+		e_save_data_type_leave_scene,
+		e_save_data_type_update,
+		e_save_data_type_cross,
 		e_save_data_type_max,
 	};
-	enum e_be_dead_reason								// ����ԭ��
+	enum e_be_dead_reason
 	{
-		e_be_dead_self,									//��ɱ
-		e_be_dead_other,								//������ɱ��
+		e_be_dead_self,
+		e_be_dead_other,
 	};
 
 	enum e_monster_born
 	{
-		e_monster_born_nomal,									//�޶���
-		e_monster_born_anim,									//����
-		e_monster_born_soluble,									//�ܽ�
-		e_monster_born_soluble_anim,							//�ܽ�+����
+		e_monster_born_nomal,
+		e_monster_born_anim,
+		e_monster_born_soluble,
+		e_monster_born_soluble_anim,
 	};
-	// ���ҽ�ɫ���ؽ��
 	enum get_char_result
 	{
-		e_enum_result_failed_common_error,		// û��login�ͷ��͸���Ϣ
-		e_enum_result_success_exist_char,		// ���ҵ���ɫ
-		e_enum_result_success_no_exist_char,	// ���ҳɹ�δ���ҵ���ɫ
-		e_enum_result_failed_no_exist_char,		// ����ʧ��δ���ҵ���ɫ
+		e_enum_result_failed_common_error,
+		e_enum_result_success_exist_char,
+		e_enum_result_success_no_exist_char,
+		e_enum_result_failed_no_exist_char,
 		e_enum_result_max,
 	};
 
-	// ������ɫ���ؽ��
 	enum create_char_result
 	{
 		e_create_result_unknow,
@@ -307,54 +303,49 @@ namespace faith
 		e_create_result_max,
 	};
 
-	// ��ɫת�������ķ��ؽ��
 	enum e_grade_up_result
 	{
-		e_grade_up_result_unknown,                      // δ֪����
-		e_grade_up_result_success,                      // ת���ɹ�
-		e_grade_up_result_level_not_enough,             // �ȼ�����
-		e_grade_up_result_silver_not_enough,            // ��Ҳ���
-		e_grade_up_result_magic_crystal_not_enough,     // ħ������
-		e_grade_up_result_full_grade_num,               // �Ѵﵽ���ת������
+		e_grade_up_result_unknown,
+		e_grade_up_result_success,
+		e_grade_up_result_level_not_enough,
+		e_grade_up_result_silver_not_enough,
+		e_grade_up_result_magic_crystal_not_enough,
+		e_grade_up_result_full_grade_num,
 		e_grade_up_result_max
 	};
 
 	enum e_character_error
 	{
 		e_character_error_unknwon,
-		e_character_error_exp_full,    // ����ֵ�Ѳ����ټ����ۼ�
+		e_character_error_exp_full,
 		e_character_error_max
 	};
 
 	enum e_session_status
 	{
-		e_ss_invalid,	                    // �Ƿ�ֵ
-		e_session_status_created_session,   // session�������
-		e_session_status_create_player,	    // player �������
-		e_session_status_dp_loading,	    // session���뵽����������ʼ�� DP ��ȡ����
-		e_session_status_client_loading,    // DP������Ϻ���clientͬ������
-		e_session_status_in_gaming,	        // ���뵽��������Ϸ״̬
-		e_session_status_switching_loading,	// ��loading�������ݼ���
-		e_session_status_logout_connect,	// �ڶ�������״̬
-		e_session_status_max,	            // 
+		e_ss_invalid,
+		e_session_status_created_session,
+		e_session_status_create_player,
+		e_session_status_dp_loading,
+		e_session_status_client_loading,
+		e_session_status_in_gaming,
+		e_session_status_switching_loading,
+		e_session_status_logout_connect,
+		e_session_status_max,
 	};
 
 	enum e_role_gender
-	{//�Ԅe���
-		e_role_gender_male = 0,						//	����
-		e_role_gender_female = 1,					//	Ů��
+	{
+		e_role_gender_male = 0,
+		e_role_gender_female = 1,
 	};
 	//enum e_revive_mode
-	//{//�ͻ����
-	//	e_revive_mode_same_pos,				//ԭ��
-	//	e_revive_mode_transfer,				//�س�
-	//	e_revive_mode_born_pos,				//�����㸴��
 	//	e_revive_mode_max,
 	//};
 	enum e_warning_type
 	{
-		e_warning_type_find,				//���ֹ�����
-		e_warning_type_use_skill			//ʹ�ü���ǰ��
+		e_warning_type_find,
+		e_warning_type_use_skill
 	};
 	enum green_channel_type
 	{
@@ -433,165 +424,143 @@ namespace faith
 	};
 	const xchar* const e_role_info_str[] = 
 	{
-		"e_role_info_template_id",						//ģ��id
-		"e_role_info_server_id",						//������id
-		"e_role_info_img_id",							//ͷ��
-		"e_role_info_class_type",						//ְҵ
-		"e_role_info_class_branch",						//��֧
-		"e_role_info_gender",							//��ɫ�Ա�
-		"e_role_info_exp_level",						//����ȼ�
-		"e_role_info_vip_level",						//vip�ȼ�
-		"e_role_info_vip_experience_level",				//vip����ȼ�
-		"e_role_info_recharge_num",						//��ֵ����
-		"e_role_info_main_map_id",						//���ͼģ��id
-		"e_role_info_main_pos_x",						//���ͼ����x
-		"e_role_info_main_pos_y",						//10���ͼ����y
-		"e_role_info_main_pos_z",						//���ͼ����z
-		"e_role_info_main_pos_yaw",						//���ͼ��ת
-		"e_role_info_main_line_id",						//15���ͼ��id
-		"e_role_info_move_map_id",						//Ҫ�����ͼģ��id
-		"e_role_info_move_pos_x",						//��ǰ����x
-		"e_role_info_move_pos_y",						//��ǰ����y
-		"e_role_info_move_pos_z",						//��ǰ����z
-		"e_role_info_move_pos_yaw",						//��ת
-		"e_role_info_move_line_id",						//Ҫ�����ͼ��id
-		"e_role_info_GS_value",							//25��ǰս����ֵ
-		"e_role_info_upgrade_id",						//�ȼ�ģ��id
-		"e_role_info_daily_done_num",					//�ճ������Ŀ
-		"e_role_info_against_done_num",					//�ַ������Ŀ
-		"e_role_info_wing_showd_template_id",			//30Ҫ��ʾ�ĳ��ID
-		"e_role_info_mount_showd_template_id",			//Ҫ��ʾ������ID
-		"e_role_info_element_heart_drop_group",			//Ԫ��֮�ĵĳ�ȡ��
-		"e_role_info_arena_times",						//����������
-		"e_role_info_arena_vip_times",					//vip����ս����
-		"e_role_info_arena_vip_buy_times",				//35vip�ѹ������
-		"e_role_info_arena_winning_streak",				//��ʤ��¼
-		"e_role_info_legion_donate_earn_by_money",		//���ž��׽�һ�õ�ս��
-		"e_role_info_legion_donate_earn_by_item",		//���ž�����Ʒ��õ�ս��
-		"e_role_info_worship_other_time",				//��ҳ�ݴ���
-		"e_role_info_get_func_unlock_award_record",		//������������ȡ
-		"e_role_info_vip_item_geted_level",				// VIP�����ȡ���ڼ�����
-		"e_role_info_vip_free_revive_time",				//��Ѹ������
-		"e_role_info_element_heart_refine_time",		//Ԫ��֮����������
-		"e_role_info_total_login_days",					//�ۼƵ�½����
-		"e_role_info_continue_login_time",				//45������¼����
-		"e_role_info_daily_activity_degree",			//�ջ�Ծ��
-		"e_role_info_daily_recharge_num",				//�ճ�ֵ��
-		"e_role_info_total_diamond_cost_num",			//�ۼ�������ʯ��
-		"e_role_info_daily_active_degree_get_flag",		//ÿ�ջ�Ծ������ȡ��־λ
-		"e_role_info_fund_recharge_num",				//50�ɳ����𣬳�ֵ�����ֵ��
-		"e_role_info_fund_payment_flag",				//�ɳ���������λ
-		"e_role_info_fund_time_get_flag",				//�ɳ�����ʱ����ȡ���λ
-		"e_role_info_fund_pride_get_flag",				//�ɳ����𣬳�ֵ��ȡ���λ
-		"e_role_info_fund_reborn_get_flag",				//�ɳ�����������ȡ���λ
-		"e_role_info_fund_cost_num",					//55�ɳ����𣬳�ֵ�������Ѷ�
-		"e_role_info_lord_of_city_worship_time",		//����Ĥ�ݴ���
-		"e_role_info_lord_of_war_worship_time",			//PK֮��Ĥ�ݴ���
-		"e_role_info_lord_of_sanctuary_worship_time",	//ʥ��֮��Ĥ�ݴ���
-		"e_role_info_lord_of_god_worship_time",			//����֮��Ĥ�ݴ���
-		"e_role_info_hope_value",						//����ף��ֵ
-		"e_role_info_del_time",							//ɾ��ʱ��
-		"e_role_info_kill_player_num",					//��ɱ�������
-		"e_role_info_spirit_value",						//������ȡ����
-		"e_role_info_watch_count",						//�鿴���������
-		"e_role_info_crystal_dreamland_chests",			//ˮ���þ��ɼ��������
-		"e_role_info_protect_mark_slot_open_num",		//�ػ�ӡ�ǲ�λ��������
-		"e_role_info_element_heart_slot_open_num",		//Ԫ��֮�Ĳ�λ��������
-		"e_role_info_sprite_equip_slot_open_num",		//����װ����λ��������
+		"e_role_info_template_id",
+		"e_role_info_server_id",
+		"e_role_info_img_id",
+		"e_role_info_class_type",
+		"e_role_info_class_branch",
+		"e_role_info_gender",
+		"e_role_info_exp_level",
+		"e_role_info_vip_level",
+		"e_role_info_vip_experience_level",
+		"e_role_info_recharge_num",
+		"e_role_info_main_map_id",
+		"e_role_info_main_pos_x",
+		"e_role_info_main_pos_y",
+		"e_role_info_main_pos_z",
+		"e_role_info_main_pos_yaw",
+		"e_role_info_main_line_id",
+		"e_role_info_move_map_id",
+		"e_role_info_move_pos_x",
+		"e_role_info_move_pos_y",
+		"e_role_info_move_pos_z",
+		"e_role_info_move_pos_yaw",
+		"e_role_info_move_line_id",
+		"e_role_info_GS_value",
+		"e_role_info_upgrade_id",
+		"e_role_info_daily_done_num",
+		"e_role_info_against_done_num",
+		"e_role_info_wing_showd_template_id",
+		"e_role_info_mount_showd_template_id",
+		"e_role_info_element_heart_drop_group",
+		"e_role_info_arena_times",
+		"e_role_info_arena_vip_times",
+		"e_role_info_arena_vip_buy_times",
+		"e_role_info_arena_winning_streak",
+		"e_role_info_legion_donate_earn_by_money",
+		"e_role_info_legion_donate_earn_by_item",
+		"e_role_info_worship_other_time",
+		"e_role_info_get_func_unlock_award_record",
+		"e_role_info_vip_item_geted_level",
+		"e_role_info_vip_free_revive_time",
+		"e_role_info_element_heart_refine_time",
+		"e_role_info_total_login_days",
+		"e_role_info_continue_login_time",
+		"e_role_info_daily_activity_degree",
+		"e_role_info_daily_recharge_num",
+		"e_role_info_total_diamond_cost_num",
+		"e_role_info_daily_active_degree_get_flag",
+		"e_role_info_fund_recharge_num",
+		"e_role_info_fund_payment_flag",
+		"e_role_info_fund_time_get_flag",
+		"e_role_info_fund_pride_get_flag",
+		"e_role_info_fund_reborn_get_flag",
+		"e_role_info_fund_cost_num",
+		"e_role_info_lord_of_city_worship_time",
+		"e_role_info_lord_of_war_worship_time",
+		"e_role_info_lord_of_sanctuary_worship_time",
+		"e_role_info_lord_of_god_worship_time",
+		"e_role_info_hope_value",
+		"e_role_info_del_time",
+		"e_role_info_kill_player_num",
+		"e_role_info_spirit_value",
+		"e_role_info_watch_count",
+		"e_role_info_crystal_dreamland_chests",
+		"e_role_info_protect_mark_slot_open_num",
+		"e_role_info_element_heart_slot_open_num",
+		"e_role_info_sprite_equip_slot_open_num",
 		"e_role_info_exclusive_flag",
-		"e_role_info_red_package_geted_times",			//ÿ�պ����ȡ����
-		"e_role_info_free_red_package_send_times",		//ÿ����ѷ��������
-		"e_role_info_world_boss_chests",				//����BOSS���䱦��ɼ�
-		"e_role_info_leave_map_id",						//Ҫ�뿪�ĵ�ͼid
-		"e_role_info_assist_chests",					//��ս����ɼ�
-		"e_role_info_next_side_mission_main_trigger_id",	//�¸�������֧���������������ID
-		"e_role_info_show_fashion",						//�Ƿ���ʾʱװ
-		"e_role_info_real_recharge_jewel_num",			//������ʯ����Ҫ���ڳ�ֵ��
-		"e_role_info_relic_kill_num",					//�Ϲ��ż�����ɱ����
-		"e_role_info_relic_exp_num",					//�Ϲ��ż����ջ�þ�����
-		"e_role_info_head_frame",						//ͷ���
-		"e_role_info_fund_pride_cost_value",			//�ɳ��������ѵ���
-		"e_role_info_tinder_prop_slot_open_num",			//���ֵ��߲�λ��������
-		"e_role_info_show_sky_suit_shape", //�Ƿ���ʾ�����װ����
-		"e_role_info_move_server_id",					//Ҫ���������
-		"e_role_info_move_war_idex",					//Ҫ�����ͼλ��
-		"e_role_info_goddess_slot_flag",				//Ů��Эս��λ�������
-		"e_role_info_daily_cost",						//ÿ��������ֵ
-		"e_role_info_marry_done_num",				//�������ÿ����ɴ���
-		"e_role_info_marry_dati_id",				//��ǰ������id
-		"e_role_info_marry_dati_num",				//�������������
-		"e_role_info_marry_dati_right_num",			//������������
-		"e_role_info_marry_dati_current_answer",	//�����⵱ǰ��
-		"e_role_info_legion_dance_exp_num",			//���Ź�����վ����ȡ����
-		"e_role_info_legion_donate_num",			//���ž�������
-		"e_role_info_appearance_id",				//��������ID
-		"e_role_info_is_show_vip",					//�Ƿ���ʾvip
-		"e_role_info_need_check_guide",				//�Ƿ���Ҫ�������
-		"e_role_info_enchant_show_type",			//��ħ��ʾbuff����
-		"e_role_info_push_map_id",					//��ͼ�ĵ�ͼid
+		"e_role_info_red_package_geted_times",
+		"e_role_info_free_red_package_send_times",
+		"e_role_info_world_boss_chests",
+		"e_role_info_leave_map_id",
+		"e_role_info_assist_chests",
+		"e_role_info_next_side_mission_main_trigger_id",
+		"e_role_info_show_fashion",
+		"e_role_info_real_recharge_jewel_num",
+		"e_role_info_relic_kill_num",
+		"e_role_info_relic_exp_num",
+		"e_role_info_head_frame",
+		"e_role_info_fund_pride_cost_value",
+		"e_role_info_tinder_prop_slot_open_num",
+		"e_role_info_show_sky_suit_shape",
+		"e_role_info_move_server_id",
+		"e_role_info_move_war_idex",
+		"e_role_info_goddess_slot_flag",
+		"e_role_info_daily_cost",
+		"e_role_info_marry_done_num",
+		"e_role_info_marry_dati_id",
+		"e_role_info_marry_dati_num",
+		"e_role_info_marry_dati_right_num",
+		"e_role_info_marry_dati_current_answer",
+		"e_role_info_legion_dance_exp_num",
+		"e_role_info_legion_donate_num",
+		"e_role_info_appearance_id",
+		"e_role_info_is_show_vip",
+		"e_role_info_need_check_guide",
+		"e_role_info_enchant_show_type",
+		"e_role_info_push_map_id",
 	};
 
 	const xchar* const e_role_i64_info_str[] =
 	{
-		"e_role_i64_info_gs_value",				//ս��
-		"e_role_i64_info_history_best_gs_value",//��ʷ���ս��
-		"e_role_i64_info_zero_mount_up_start_value", //���ˢ�������������ʼֵ
-		"e_role_i64_info_zero_wing_up_start_value", //���ˢ�³���������ʼֵ
-		"e_role_i64_info_zero_equip_up_start_value", //���ˢ��װ���������ʼֵ
-		"e_role_i64_info_zero_spirit_up_start_value", //���ˢ�¾����������ʼֵ
-		"e_role_i64_info_create_time", //����ʱ��
+		"e_role_i64_info_gs_value",
+		"e_role_i64_info_history_best_gs_value",
+		"e_role_i64_info_zero_mount_up_start_value",
+		"e_role_i64_info_zero_wing_up_start_value",
+		"e_role_i64_info_zero_equip_up_start_value",
+		"e_role_i64_info_zero_spirit_up_start_value",
+		"e_role_i64_info_create_time",
 	};
 
 	const xchar* const e_role_ws_info_str[] =
 	{
-		"save_time",										//����ʱ��
-		"red_package_free_count",							//��Ѻ������
+		"save_time",
+		"red_package_free_count",
 	};
 
 	enum e_grow_up_fund_type
 	{
-		e_grow_up_fund_type_reborn,					//��������
-		e_grow_up_fund_type_time,					//ʱ�����
-		e_grow_up_fund_type_pride,					//��ֵ����
+		e_grow_up_fund_type_reborn,
+		e_grow_up_fund_type_time,
+		e_grow_up_fund_type_pride,
 		e_grow_up_fund_type_max,
 	};
 
 	enum e_relivepoint_read
 	{
-		e_relivepoint_read_x,		//�����Xֵ
-		e_relivepoint_read_y,		//�����Yֵ
-		e_relivepoint_read_z,		//�����Zֵ
-		e_relivepoint_read_pitch,	//��X��ת
-		e_relivepoint_read_yaw,		//��Y��ת
-		e_relivepoint_read_roll,	//��Z��ת
-		e_relivepoint_read_max		//����������ܸ���
+		e_relivepoint_read_x,
+		e_relivepoint_read_y,
+		e_relivepoint_read_z,
+		e_relivepoint_read_pitch,
+		e_relivepoint_read_yaw,
+		e_relivepoint_read_roll,
+		e_relivepoint_read_max
 	};
 
 	//enum e_powerup_target_typ
 	//{
 	//	e_powerup_target_non,
-	//	e_powerup_target_wing_grade_num,						//������
-	//	e_powerup_target_wing_star_num_in_cur_grade,			//���ǰ�����µ��Ǽ�
-	//	e_powerup_target_skill_level,							//���ܵȼ�
-	//	e_powerup_target_equips_average_upgrade_level,			//װ��ƽ��ǿ���ȼ�
-	//	e_powerup_target_equips_average_addon_level,			//װ��ƽ��׷�ӵȼ�
-	//	e_powerup_target_amulet_level,							//�������ȼ�
-	//	e_powerup_target_VIP_level,								//VIP�ȼ�
-	//	e_powerup_target_achievement_level,						//�ɾ͵ȼ�
-	//	e_powerup_target_rank_level,							//���εȼ�
-	//	e_powerup_target_activity_belief_level,					//���������ܵȼ�
-	//	e_powerup_target_succinct,								//�������Դﵽ���޵� ����ת���� װ����
-	//	e_powerup_target_fighting_spirit_level,					//��ս����ȼ��ﵽ10��
-	//	e_powerup_target_element_heart_total_level,				//Ԫ��֮���ܵȼ��ﵽ10��
-	//	e_powerup_target_equips_average_quality_level,			//װ��ƽ���Ƚ״ﵽ10��
-	//	e_powerup_target_reincarnation_num,						//ת��
-	//	e_powerup_target_protect_spirit_level,					//�ػ������
-	//	e_powerup_target_wing_feather,							//�������
-	//	e_powerup_target_wing_add_spirit,						//���ע��
-	//	e_powerup_target_wing_add_soul,							//���ע��
-	//	e_powerup_target_mount_grade_num,						//�������
-	//	e_powerup_target_mount_level_num,						//����ȼ�
-	//	e_powerup_target_pokedex_actived_num,					//ͼ����������
 	//	e_powerup_target_max
 	//};
 	enum e_unit_guid
@@ -849,18 +818,18 @@ namespace faith
 
 	enum e_meditation_reward_type
 	{
-		e_meditation_reward_usual,					//һ������
-		e_meditation_reward_double,                 //��������
-		e_meditation_reward_four,                  //�ı�����
+		e_meditation_reward_usual,
+		e_meditation_reward_double,
+		e_meditation_reward_four,
 	};
 
 	enum e_meditation_get_reward_endtype
 	{
-		e_meditation_get_reward_success = 0,		//�ɹ�
-		e_meditation_reward_vip,					//vip�ȼ�����
-		e_meditation_reward_money_lack,             //���Ҳ���
-		e_meditation_reward_less_one_munite,		//����һ����
-		e_meditation_reward_unknown,				//δ֪����
+		e_meditation_get_reward_success = 0,
+		e_meditation_reward_vip,
+		e_meditation_reward_money_lack,
+		e_meditation_reward_less_one_munite,
+		e_meditation_reward_unknown,
 	};
 
 
@@ -902,23 +871,23 @@ namespace faith
 
 	enum e_vip_item_get
 	{
-		e_vip_item_get_non	= 0x00000000,		// vip����û���
-		e_vip_item_get_0	= 0x00000001,		// 0��vip����
-		e_vip_item_get_1	= 0x00000002,		// 1��vip����
-		e_vip_item_get_2	= 0x00000004,		// 2��vip����
-		e_vip_item_get_3	= 0x00000008,		// 3��vip����
-		e_vip_item_get_4	= 0x00000010,		// 4��vip����
-		e_vip_item_get_5	= 0x00000020,		// 5��vip����
-		e_vip_item_get_6	= 0x00000040,		// 6��vip����
-		e_vip_item_get_7	= 0x00000080,		// 7��vip����
-		e_vip_item_get_8	= 0x00000100,		// 8��vip����
-		e_vip_item_get_9	= 0x00000200,		// 9��vip����
-		e_vip_item_get_10	= 0x00000400,		// 10��vip����
-		e_vip_item_get_11	= 0x00000800,		// 11��vip����
-		e_vip_item_get_12	= 0x00001000,		// 12��vip����
-		e_vip_item_get_13	= 0x00002000,		// 13��vip����
-		e_vip_item_get_14	= 0x00004000,		// 14��vip����
-		e_vip_item_get_15	= 0x00008000,		// 15��vip����
+		e_vip_item_get_non	= 0x00000000,
+		e_vip_item_get_0	= 0x00000001,
+		e_vip_item_get_1	= 0x00000002,
+		e_vip_item_get_2	= 0x00000004,
+		e_vip_item_get_3	= 0x00000008,
+		e_vip_item_get_4	= 0x00000010,
+		e_vip_item_get_5	= 0x00000020,
+		e_vip_item_get_6	= 0x00000040,
+		e_vip_item_get_7	= 0x00000080,
+		e_vip_item_get_8	= 0x00000100,
+		e_vip_item_get_9	= 0x00000200,
+		e_vip_item_get_10	= 0x00000400,
+		e_vip_item_get_11	= 0x00000800,
+		e_vip_item_get_12	= 0x00001000,
+		e_vip_item_get_13	= 0x00002000,
+		e_vip_item_get_14	= 0x00004000,
+		e_vip_item_get_15	= 0x00008000,
 	};
 
 	enum e_recharge_typ
@@ -930,22 +899,22 @@ namespace faith
 
 	enum e_recharge_step
 	{
-		e_recharge_step_begin,								// ��ֵ��ʼ
-		e_recharge_step_ws_save_recharge,					// ws�����ֵ��¼
-		e_recharge_step_sp_save_recharge,					// dp�����ֵ��¼
-		e_recharge_step_sp_save_recharge_end,				// dp�����ֵ��¼����
-		e_recharge_step_ws_save_recharge_end,				// ws�����ֵ��¼����
-		e_recharge_step_ws_to_cs_send_recharge,				// ws���ͳ�ֵ��cs
-		e_recharge_step_ws_to_cs_send_recharge_end,			// cs�յ�ws�ĳ�ֵ��¼
-		e_recharge_step_cs_recharge_by_template_id,			// cs��ʼ��ֵ
-		e_recharge_step_cs_recharge_by_template_id_end,		// cs��ֵ�ɹ�
-		e_recharge_step_ws_recharge_send_mail,				// ������߷����ʼ�
-		e_recharge_step_ws_send_mail_end,					// ������߷����ʼ��ɹ�
+		e_recharge_step_begin,
+		e_recharge_step_ws_save_recharge,
+		e_recharge_step_sp_save_recharge,
+		e_recharge_step_sp_save_recharge_end,
+		e_recharge_step_ws_save_recharge_end,
+		e_recharge_step_ws_to_cs_send_recharge,
+		e_recharge_step_ws_to_cs_send_recharge_end,
+		e_recharge_step_cs_recharge_by_template_id,
+		e_recharge_step_cs_recharge_by_template_id_end,
+		e_recharge_step_ws_recharge_send_mail,
+		e_recharge_step_ws_send_mail_end,
 	};
 
 	enum e_recharge_error
 	{
-		e_recharge_error_none,						//�޴���
+		e_recharge_error_none,
 		e_recharge_error_begin_order_id_is_null,
 		e_recharge_error_send_save_recharge_order_id_is_null,
 		e_recharge_error_send_save_recharge_dp_is_null,
@@ -957,7 +926,7 @@ namespace faith
 		e_recharge_error_db_save_recharge_order_id_len_bigger,
 		e_recharge_error_db_save_recharge_role_id_is_not_valid,
 		e_recharge_error_db_save_recharge_game_goods_id_less,
-		e_recharge_error_db_save_recharge_success_less,								//�Ѵ��ڵ��˵�
+		e_recharge_error_db_save_recharge_success_less,
 		e_recharge_error_ws2cs_recharge_proc_packet_is_null,
 		e_recharge_error_ws2cs_recharge_proc_data_len_error,
 		e_recharge_error_ws2cs_recharge_proc_player_not_valid,
@@ -1009,9 +978,9 @@ namespace faith
 
 	struct s_money_info
 	{	
-		i64						cur_data_ary[e_money_type_max];				// �Ʋ�ʵ������
-		i64						all_data_ary[e_money_type_max];				// �ܻ������
-		i64						cost_data_ary[e_money_type_max];			// ����������
+		i64						cur_data_ary[e_money_type_max];
+		i64						all_data_ary[e_money_type_max];
+		i64						cost_data_ary[e_money_type_max];
 		s_money_info()
 		{
 			clear_data();
@@ -1050,10 +1019,10 @@ namespace faith
 
 	enum e_role_right
 	{
-		e_role_right_allow_login,//�Ƿ�������¼
-		e_role_right_allow_chat,//�Ƿ���������
-		e_role_right_radio_host,//�Ƿ�����
-		e_role_right_vip_point,//vip����
+		e_role_right_allow_login,
+		e_role_right_allow_chat,
+		e_role_right_radio_host,
+		e_role_right_vip_point,
 		e_role_right_max
 	};
 	struct s_role_right
@@ -1201,8 +1170,8 @@ namespace faith
 
 	enum e_competition_type
 	{
-		e_competition_type_ladder,	//�����ֲ�
-		e_competition_type_element,	//Ԫ���ֲ�
+		e_competition_type_ladder,
+		e_competition_type_element,
 		e_competition_type_element_max,
 	};
 	struct s_role_competition_info
@@ -1210,14 +1179,14 @@ namespace faith
 	public:
 		guid_64     role_guid;
 		int32		have_type;
-		int32		is_buy;//�Ƿ���Ӣ�ֲ�
+		int32		is_buy;
 		int32		buy_manual_type;
 		int32		point_add_percent;
-		int32		season;//����
-		int32		competition_begin_time;//������ʼʱ��
-		int32		competition_end_time;//��������ʱ��
-		int32		level;//�ȼ�
-		int64		cur_exp;//��ǰ����		
+		int32		season;
+		int32		competition_begin_time;
+		int32		competition_end_time;
+		int32		level;
+		int64		cur_exp;
 		int32		need_reset;
 		guid_64     assist_fight_guid;
 		int32       reward_state[role_competition_tag_num];
@@ -1269,7 +1238,7 @@ namespace faith
 	struct s_assist_fight_info
 	{
 	public:
-		int32	    assist_fight_type;//��ս����  0������  1��ȫ��
+		int32	    assist_fight_type;
 		guid_64		asssit_fight_guid;
 		xchar		role_name[max_name_size + 1];
 		int32		role_lv;
@@ -1281,9 +1250,9 @@ namespace faith
 		int64		map_guid;
 		s_map_pos   map_pos;
 		guid_64     assist_guid_list[assist_fight_max_num];
-		int32       assist_fight_tag;//0��boss  1�����˸���
+		int32       assist_fight_tag;
 		guid_64     legion_guid;
-		int32       start_assist_time;//��ս����ʱ��  ���ڿͻ�������
+		int32       start_assist_time;
 		s_assist_fight_info()
 		{
 			clear_data();
@@ -1350,7 +1319,7 @@ namespace faith
 				return false;
 			}
 
-			st_assist_ptr->set_assist_fight_type(assist_fight_type);	  //��ս����  0������  1��ȫ��
+			st_assist_ptr->set_assist_fight_type(assist_fight_type);
 			st_assist_ptr->set_asssit_fight_guid(asssit_fight_guid.server_64);
 			st_assist_ptr->set_role_name(role_name);
 			st_assist_ptr->set_role_lv(role_lv);
@@ -1371,9 +1340,9 @@ namespace faith
 			{
 				st_assist_ptr->add_assist_guid_list(assist_guid_list[i]);
 			}
-			st_assist_ptr->set_assist_fight_tag(assist_fight_tag);//0��boss  1�����˸���
+			st_assist_ptr->set_assist_fight_tag(assist_fight_tag);
 			st_assist_ptr->set_legion_guid(legion_guid.server_64);
-			st_assist_ptr->set_start_assist_time(start_assist_time);//��ս����ʱ��  ���ڿͻ�������
+			st_assist_ptr->set_start_assist_time(start_assist_time);
 
 			return true;
 		}
@@ -1394,7 +1363,7 @@ namespace faith
 				return;
 			}
 
-			assist_fight_type = st_assist_ref.assist_fight_type();	  //��ս����  0������  1��ȫ��
+			assist_fight_type = st_assist_ref.assist_fight_type();
 			asssit_fight_guid.server_64 = st_assist_ref.asssit_fight_guid();
 			my_memcopy_string(role_name, max_name_size, st_assist_ref.role_name());
 			role_lv = st_assist_ref.role_lv();
@@ -1416,9 +1385,9 @@ namespace faith
 			{
 				assist_guid_list[i] = st_assist_ref.assist_guid_list(i);
 			}
-			assist_fight_tag = st_assist_ref.assist_fight_tag();//0��boss  1�����˸���
+			assist_fight_tag = st_assist_ref.assist_fight_tag();
 			legion_guid.server_64 = st_assist_ref.legion_guid();
-			start_assist_time =  st_assist_ref.start_assist_time();//��ս����ʱ��  ���ڿͻ�������
+			start_assist_time =  st_assist_ref.start_assist_time();
 
 		}
 	};
@@ -1539,31 +1508,31 @@ namespace faith
 	enum e_login_promptbox_type
 	{
 
-		e_login_promptbox_type_meditation,					//ڤ��
-		e_login_promptbox_type_resource_recovery,			//��Դ�һ�
-		e_login_promptbox_type_timed_mounts,				//��ʱ����
-		e_login_promptbox_type_timed_Wings,				     //��ʱ���
-		e_login_promptbox_type_firstrecharge,				//�׳���ȡ��ʾ
-		e_login_promptbox_type_vipexperiencecard,			//��ʱVip������
-		e_login_promptbox_type_firstflush,					//�׳���ʾ
-		e_login_promptbox_type_combatpower,				    //ս�������ʾ
-		e_login_promptbox_type_experience,					//���������ʾ
-		e_login_promptbox_type_monthlycard,				    //�¿���ʾ
-		e_login_promptbox_type_fund,						//������ʾ
-		e_login_promptbox_type_exclusive,                   //������ʾ
-		e_login_promptbox_type_support_for_promotion,       //�弶����
+		e_login_promptbox_type_meditation,
+		e_login_promptbox_type_resource_recovery,
+		e_login_promptbox_type_timed_mounts,
+		e_login_promptbox_type_timed_Wings,
+		e_login_promptbox_type_firstrecharge,
+		e_login_promptbox_type_vipexperiencecard,
+		e_login_promptbox_type_firstflush,
+		e_login_promptbox_type_combatpower,
+		e_login_promptbox_type_experience,
+		e_login_promptbox_type_monthlycard,
+		e_login_promptbox_type_fund,
+		e_login_promptbox_type_exclusive,
+		e_login_promptbox_type_support_for_promotion,
 		e_login_promptbox_type_max,						   
 	};
 
 
 	struct s_time_limit_gift_info
 	{
-		int32 template_id;													// ��Id
-		int32 state_info;													// ����״̬
-		int32 begin_time;													// ������ʼʱ��
-		int32 end_time;														// ����ʱ��
-		int32 trigger_num;													// ��������
-		int32 buy_num;														// �������
+		int32 template_id;
+		int32 state_info;
+		int32 begin_time;
+		int32 end_time;
+		int32 trigger_num;
+		int32 buy_num;
 
 		s_time_limit_gift_info()
 		{
@@ -1598,27 +1567,27 @@ namespace faith
 
 	enum e_time_limit_gift_state
 	{
-		e_time_limit_gift_state_non,			// δ����
-		e_time_limit_gift_state_begin,			// �Ѽ���
-		e_time_limit_gift_state_end,			// �ѽ���
+		e_time_limit_gift_state_non,
+		e_time_limit_gift_state_begin,
+		e_time_limit_gift_state_end,
 	};
 	
 	enum e_time_limit_gift_operation_type
 	{
-		e_time_limit_gift_operation_type_activate,		// ��ʼ����
-		e_time_limit_gift_operation_type_buy,			// ��ʼ����
+		e_time_limit_gift_operation_type_activate,
+		e_time_limit_gift_operation_type_buy,
 	};
 
 	enum e_time_limit_gift_operation_end_type
 	{
-		e_time_limit_gift_operation_end_type_activate_succeed,	// ��������ɹ�
-		e_time_limit_gift_operation_end_type_activate_fail,		// �������ʧ��
-		e_time_limit_gift_operation_end_type_template_error,	// �������
-		e_time_limit_gift_operation_end_type_buy_succeed,		// ����ɹ�
-		e_time_limit_gift_operation_end_type_money_error,		// ������� - ���Ҳ���
-		e_time_limit_gift_operation_end_type_item_error,		// ������� - ��Ʒ����ʧ��
-		e_time_limit_gift_operation_end_type_time_error,		// ��ȡ���� - ��������ʱ��
-		e_time_limit_gift_operation_end_typed_error_01,			// ��ȡ���� - ������01
+		e_time_limit_gift_operation_end_type_activate_succeed,
+		e_time_limit_gift_operation_end_type_activate_fail,
+		e_time_limit_gift_operation_end_type_template_error,
+		e_time_limit_gift_operation_end_type_buy_succeed,
+		e_time_limit_gift_operation_end_type_money_error,
+		e_time_limit_gift_operation_end_type_item_error,
+		e_time_limit_gift_operation_end_type_time_error,
+		e_time_limit_gift_operation_end_typed_error_01,
 	};
 
 	struct s_subscribe_daily_info
@@ -1644,9 +1613,9 @@ namespace faith
 
 	enum e_subscribe_daily_end_type
 	{
-		e_subscribe_daily_end_type_succeed,	// �ɹ�
-		e_subscribe_daily_end_type_have,	// �Ѿ�������
-		e_subscribe_daily_end_type_not_can1,// �û�޷�����
+		e_subscribe_daily_end_type_succeed,
+		e_subscribe_daily_end_type_have,
+		e_subscribe_daily_end_type_not_can1,
 	};
 
 	struct s_subscribe_daily_db_info

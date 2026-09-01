@@ -1,9 +1,9 @@
 /********************************************************************
-  created: 2019Äê6ÔÂ11ÈÕ
+  created: 2019å¹´6æœˆ11æ—¥
   file base: cross_server_city_war_ws_mgr
   file ext: hpp
   author: zhangshuo
-  purpose: ¿ç·ş³ÇÕ½¹ÜÀíÀà
+  purpose: è·¨æœåŸæˆ˜ç®¡ç†ç±»
 *********************************************************************/
 #ifndef _CROSS_SERVER_CITY_WAR_WS_MGR_WS_H
 #define _CROSS_SERVER_CITY_WAR_WS_MGR_WS_H
@@ -35,24 +35,24 @@ namespace faith
 		e_error_code				is_can_join(guid_64 legion_guid);
 		void						create_map_with_game_begin();
 		void						clear_msg_with_game_end();
-		bool						is_need_refresh_rank_city();//ÊÇ·ñĞèÒªµÚÒ»´Î³õÊ¼»¯¾üÍÅÅÅĞĞ
-		void						refresh_rank_city();//³õÊ¼»¯°ÔÖ÷¾üÍÅÊı×é
+		bool						is_need_refresh_rank_city();//æ˜¯å¦éœ€è¦ç¬¬ä¸€æ¬¡åˆå§‹åŒ–å†›å›¢æ’è¡Œ
+		void						refresh_rank_city();//åˆå§‹åŒ–éœ¸ä¸»å†›å›¢æ•°ç»„
 		void						send_load_db_msg();
 		void						req_load_db_msg(const s_cross_city_info* city_info, int32 data_num, bool is_empty_msg);
-		void						refresh_rank_with_del_legion(guid_64 legion_guid);//¸üĞÂÅÅĞĞµ±ÓĞ¾üÍÅ±»É¾³ıÊ±
-		void						refresh_rank_with_server_list();//¸üĞÂÅÅĞĞµ±server_listÈ·ÈÏÊ±
+		void						refresh_rank_with_del_legion(guid_64 legion_guid);//æ›´æ–°æ’è¡Œå½“æœ‰å†›å›¢è¢«åˆ é™¤æ—¶
+		void						refresh_rank_with_server_list();//æ›´æ–°æ’è¡Œå½“server_listç¡®è®¤æ—¶
 		void						refresh_chief_with_legion(guid_64 legion_guid, guid_64 chief_guid, xstring chief_name);
 		void						refresh_legion_name(guid_64 legion_guid,xstring legion_name);
 		int32						is_need_add_legion_with_rank_list();
-		void						add_legion_with_rank_list();//²¹³ä¾üÍÅµ½Ğ¡×éÖĞ
-		void						end_cross_city_war(guid_64 map_guid, int32 cross_city_idex, guid_64 first_legion_guid, guid_64 second_legion_guid, guid_64 third_legion_guid, const guid_64* first_member_guid, const guid_64* second_member_guid, const guid_64* third_member_guid, int32 first_member_num, int32 second_member_num, int32 third_member_num);//Ò»³¡Õ½¶·½áÊøºóÖ´ĞĞµÄÂß¼­
-		void						sort_legion_with_city_war_end();//ËùÓĞÕ½¶·½áÊøÒÔºó£¬½øĞĞÉı½µ¼¶²Ù×÷£¬ÒòÎªĞèÒª·¢½±Àø£¬É¾×îºóÒ»×é²Ù×÷Òª·Åµ½·¢½±ÀøµÄºóÃæ
+		void						add_legion_with_rank_list();//è¡¥å……å†›å›¢åˆ°å°ç»„ä¸­
+		void						end_cross_city_war(guid_64 map_guid, int32 cross_city_idex, guid_64 first_legion_guid, guid_64 second_legion_guid, guid_64 third_legion_guid, const guid_64* first_member_guid, const guid_64* second_member_guid, const guid_64* third_member_guid, int32 first_member_num, int32 second_member_num, int32 third_member_num);//ä¸€åœºæˆ˜æ–—ç»“æŸåæ‰§è¡Œçš„é€»è¾‘
+		void						sort_legion_with_city_war_end();//æ‰€æœ‰æˆ˜æ–—ç»“æŸä»¥åï¼Œè¿›è¡Œå‡é™çº§æ“ä½œï¼Œå› ä¸ºéœ€è¦å‘å¥–åŠ±ï¼Œåˆ æœ€åä¸€ç»„æ“ä½œè¦æ”¾åˆ°å‘å¥–åŠ±çš„åé¢
 		bool						is_all_city_war_end();
-		void						send_legion_reward_with_rank();//¸ù¾İÅÅĞĞ·¢½±Àø
-		void						del_last_group_legion();//É¾µô×îºóÒ»×é¾üÍÅ
-		void						send_city_info_all_to_other_ws(int32 server_id = 0);//Í¬²½gateĞÅÏ¢µ½ÆäËû·şÎñÆ÷
+		void						send_legion_reward_with_rank();//æ ¹æ®æ’è¡Œå‘å¥–åŠ±
+		void						del_last_group_legion();//åˆ æ‰æœ€åä¸€ç»„å†›å›¢
+		void						send_city_info_all_to_other_ws(int32 server_id = 0);//åŒæ­¥gateä¿¡æ¯åˆ°å…¶ä»–æœåŠ¡å™¨
 		void						set_city_war_master();
-		void						save_city_info_to_db();//´æ¿â
+		void						save_city_info_to_db();//å­˜åº“
 		void						recv_other_ws_transfer_gate_map(guid_64 role_guid, int32 server_id, guid_64 legion_guid);
 		void						clear_city_master();
 		void						set_refresh_cross_city_war(int32 is_refresh) { m_is_refresh_cross_city_war = is_refresh; };
@@ -65,9 +65,9 @@ namespace faith
 
 		void						fil_cross_city_info(server2dp_proto_s_cross_city_info& city_info, s_cross_city_info& info);
 	private:
-		guid_64						m_city_war_map_guid_arr[max_cross_server_city_group_num];//³ÇÕ½µØÍ¼guidÊı×é
-		bool						m_city_war_map_end[max_cross_server_city_group_num];//µØÍ¼ÊÇ·ñÒÑ½áÊø
-		bool						m_is_create_map;//ÒÑ¾­´´½¨µØÍ¼
+		guid_64						m_city_war_map_guid_arr[max_cross_server_city_group_num];//åŸæˆ˜åœ°å›¾guidæ•°ç»„
+		bool						m_city_war_map_end[max_cross_server_city_group_num];//åœ°å›¾æ˜¯å¦å·²ç»“æŸ
+		bool						m_is_create_map;//å·²ç»åˆ›å»ºåœ°å›¾
 		bool						m_is_load_end;
 		bool						m_is_have_change;
 		int32						m_is_refresh_cross_city_war;
@@ -88,7 +88,7 @@ namespace faith
 		void						send_city_info_all_to_all_client();
 		void						fill_one_city_msg(const s_cross_city_info& city_info,legion_proto_cross_city_info_one& one_msg, int32 legion_rank);
 		void						send_to_gate_change_legion_msg(guid_64 legion_guid, e_change_cross_city_type chang_type, xstring role_name = "", guid_64 role_guid = guid_64());
-		bool						is_need_send_last_group_msg();//ÊÇ·ñĞèÒª·¢×îºóÒ»×éµÄĞÅÏ¢
+		bool						is_need_send_last_group_msg();//æ˜¯å¦éœ€è¦å‘æœ€åä¸€ç»„çš„ä¿¡æ¯
 		int64						get_cross_city_war_refresh_time();
 		bool						is_can_open_overload_city_war_with_cur_server();
 

@@ -3,7 +3,7 @@
 created: 2016/07/29
 file base: gm_order_def
 file ext: hpp
-author: ÕÅÓîÏè
+author: å¼ å®‡ç¿”
 
 purpose:
 *********************************************************************/
@@ -23,48 +23,48 @@ namespace faith
 	const int32  GM_ORDER_PARAMETER_MAX_SIZE_ON_WS = 10;
 	enum e_gm_order_type
 	{
-		egot_role_level,//ÈËÎïµÈ¼¶,×ªÉúµÈ¼¶
-		egot_role_vip_point,//³äÖµµãÊı
-		egot_role_career,//ÈËÎïÖ°Òµ
-		egot_role_info,//ÏÔÊ¾ÈËÎïĞÅÏ¢
-		egot_skill_level,//¼¼ÄÜµÈ¼¶
-		egot_heal,//»ØÂú
-		egot_god,//ÎŞµĞ
-		egot_no_god,//ÎŞµĞÊ§Ğ§
-		egot_add_money,//¼ÓÇ®
-		egot_reset_cd,//ÖØÖÃ¼¼ÄÜÀäÈ´
-		egot_create_item,//´´½¨ÎïÆ·
-		egot_create_mail,//·¢ÓÊ¼ş
-		egot_transport,//´«ËÍÖ¸¶¨Î»ÖÃ
-		egot_set_damage,//Ôì³ÉÉËº¦
-		egot_fuben_win,//¸±±¾Ê¤Àû
-		egot_create_npc,//´´½¨µ¥Î»
-		egot_clean_wave,//Çå³ş²¨´Î
-		egot_mission_main,//Ö÷ÏßÈÎÎñ
-		egot_mission_daily,//ÈÕ³£ÈÎÎñ
-		egot_mission_taofa,//ÌÖ·¥ÈÎÎñ
+		egot_role_level,//äººç‰©ç­‰çº§,è½¬ç”Ÿç­‰çº§
+		egot_role_vip_point,//å……å€¼ç‚¹æ•°
+		egot_role_career,//äººç‰©èŒä¸š
+		egot_role_info,//æ˜¾ç¤ºäººç‰©ä¿¡æ¯
+		egot_skill_level,//æŠ€èƒ½ç­‰çº§
+		egot_heal,//å›æ»¡
+		egot_god,//æ— æ•Œ
+		egot_no_god,//æ— æ•Œå¤±æ•ˆ
+		egot_add_money,//åŠ é’±
+		egot_reset_cd,//é‡ç½®æŠ€èƒ½å†·å´
+		egot_create_item,//åˆ›å»ºç‰©å“
+		egot_create_mail,//å‘é‚®ä»¶
+		egot_transport,//ä¼ é€æŒ‡å®šä½ç½®
+		egot_set_damage,//é€ æˆä¼¤å®³
+		egot_fuben_win,//å‰¯æœ¬èƒœåˆ©
+		egot_create_npc,//åˆ›å»ºå•ä½
+		egot_clean_wave,//æ¸…æ¥šæ³¢æ¬¡
+		egot_mission_main,//ä¸»çº¿ä»»åŠ¡
+		egot_mission_daily,//æ—¥å¸¸ä»»åŠ¡
+		egot_mission_taofa,//è®¨ä¼ä»»åŠ¡
 		egot_buff,//buff
-		egot_activate_all,//½âËøËùÓĞÒÑÓĞµÄ³á°ò¡¢×øÆï¡¢¼¼ÄÜ
-		egot_activate_new_stage,//½âËø³õ½×³á°ò¡¢×øÆï¡¢ºÍÈ«²¿¼¼ÄÜ
-		egot_dump_npc_info, //´òÓ¡Ö¸¶¨idµÄnpcĞÅÏ¢
-		egot_dump_aoi_info, //´òÓ¡Íæ¼Ò¸½¼şµÄaoiĞÅÏ¢
-		egot_unlock_all_raid, // ½âËøÈ«²¿¸±±¾µØÍ¼
-		egot_clear_enter_count, // ÇåÁãÈ«²¿µØÍ¼µÄ½øÈë´ÎÊı
-		egot_activate_skill,//½âËø¼¼ÄÜ
-		egot_add_legion_coin,//Ôö¼Ó¾üÍÅ×ÊÔ´
-		egot_load_config,//¶ÁÈ¡±í¸ñÅäÖÃ
-		egot_clean_bag,//ÇåÀí±³°ü
-		egot_reset_highest_record,//ÖØÖÃ×î´ó¼ÇÂ¼
-		egot_control_robot_chat,//¹Ø±Õ»ò´ò¿ª»úÆ÷ÈËÁÄÌì
-		egot_set_self_hp_point,//ÉèÖÃ×Ô¼ºÑªÁ¿
-		egot_clear_arena,//ÖØÖÃ¾º¼¼³¡´ÎÊı
-		egot_open_mobile_gm_web_require,//¿Í»§¶ËÇëÇó´ò¿ªGMÖ¸ÁîÍøÒ³
-		egot_open_mobile_gm_web_response,//Server»Ø´«¿Í»§¶Ë´ò¿ªGMÖ¸ÁîÍøÒ³
-		egot_close_speed,//¹Ø±ÕËÙ¶ÈÏŞÖÆ
-		egot_grade_up,   //×ªÖ°
-		egot_send_mail,	//·¢ÓÊ¼ş
+		egot_activate_all,//è§£é”æ‰€æœ‰å·²æœ‰çš„ç¿…è†€ã€åéª‘ã€æŠ€èƒ½
+		egot_activate_new_stage,//è§£é”åˆé˜¶ç¿…è†€ã€åéª‘ã€å’Œå…¨éƒ¨æŠ€èƒ½
+		egot_dump_npc_info, //æ‰“å°æŒ‡å®šidçš„npcä¿¡æ¯
+		egot_dump_aoi_info, //æ‰“å°ç©å®¶é™„ä»¶çš„aoiä¿¡æ¯
+		egot_unlock_all_raid, // è§£é”å…¨éƒ¨å‰¯æœ¬åœ°å›¾
+		egot_clear_enter_count, // æ¸…é›¶å…¨éƒ¨åœ°å›¾çš„è¿›å…¥æ¬¡æ•°
+		egot_activate_skill,//è§£é”æŠ€èƒ½
+		egot_add_legion_coin,//å¢åŠ å†›å›¢èµ„æº
+		egot_load_config,//è¯»å–è¡¨æ ¼é…ç½®
+		egot_clean_bag,//æ¸…ç†èƒŒåŒ…
+		egot_reset_highest_record,//é‡ç½®æœ€å¤§è®°å½•
+		egot_control_robot_chat,//å…³é—­æˆ–æ‰“å¼€æœºå™¨äººèŠå¤©
+		egot_set_self_hp_point,//è®¾ç½®è‡ªå·±è¡€é‡
+		egot_clear_arena,//é‡ç½®ç«æŠ€åœºæ¬¡æ•°
+		egot_open_mobile_gm_web_require,//å®¢æˆ·ç«¯è¯·æ±‚æ‰“å¼€GMæŒ‡ä»¤ç½‘é¡µ
+		egot_open_mobile_gm_web_response,//Serverå›ä¼ å®¢æˆ·ç«¯æ‰“å¼€GMæŒ‡ä»¤ç½‘é¡µ
+		egot_close_speed,//å…³é—­é€Ÿåº¦é™åˆ¶
+		egot_grade_up,   //è½¬èŒ
+		egot_send_mail,	//å‘é‚®ä»¶
 		egot_load_svr_lua,
-		egot_set_recycle,// »Ø¹éÏµÍ³ÉèÖÃ
+		egot_set_recycle,// å›å½’ç³»ç»Ÿè®¾ç½®
 		egot_max,
 	};
 #pragma pack(pop)

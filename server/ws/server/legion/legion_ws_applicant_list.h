@@ -26,7 +26,7 @@ namespace faith
 
 		int32					fill_get_legion_applicant_list_msg(legion_proto_get_applicant_info_list_end& get_legion_applicant_list_end_msg);
 
-		void					del_applicant_with_join_legion(guid_64 role_guid);//当玩家加入军团后，删除掉其所有的申请
+		void					del_applicant_with_join_legion(guid_64 role_guid);//褰撶帺瀹跺姞鍏ュ啗鍥㈠悗锛屽垹闄ゆ帀鍏舵墍鏈夌殑鐢宠
 
 	private:
 		legion_ws_applicant*	m_applicant_ptr_arr[max_legion_applicant_num];

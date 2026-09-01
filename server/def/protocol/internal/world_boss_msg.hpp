@@ -68,7 +68,7 @@ namespace faith
 
 	struct ws2dp_load_world_boss : public faith::packet_base
 	{
-		//ÕâÀïÊ²Ã´¶¼²»ÓÃ´«£¬ÆäÊµ¾ÍÊÇ¸öloadÊ¹ÄÜ£¬loadÕûÕÅ±í
+		//è¿™é‡Œä»€ä¹ˆéƒ½ä¸ç”¨ä¼ ï¼Œå…¶å®å°±æ˜¯ä¸ªloadä½¿èƒ½ï¼Œloadæ•´å¼ è¡¨
 		ws2dp_load_world_boss()
 		{
 			memset(this, 0, sizeof(*this));

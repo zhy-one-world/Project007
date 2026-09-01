@@ -28,7 +28,7 @@ namespace faith
 
 		void							add_record(s_hope_hunt_record_info record_info);
 		//rename
-		void	change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//角色改名同步
+		void	change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//瑙掕壊鏀瑰悕鍚屾
 	private:
 		std::list<s_hope_hunt_record_info> m_sprite_record_array;
 		std::list<s_hope_hunt_record_info> m_hope_item_record_array;

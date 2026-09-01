@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2019Äê03ÔÂ17ÈÕ
+created: 2019å¹´03æœˆ17æ—¥
 file base: time_limit_activity_object
 file ext: h
 author: wangdi
@@ -74,7 +74,7 @@ namespace faith
 		void								check_send_new_server_mail();
 
 
-		//×êÊ¯ÉÌµê
+		//é’»çŸ³å•†åº—
 		void								refresh_diamond_shop(int32 refresh_type);
 		void								buy_diamond_shop_by_index(int32 buy_index);
 	private:
@@ -84,7 +84,7 @@ namespace faith
 		int32								m_cycle_num;
 		int32								m_cycle_index;
 		bool								m_need_sync_to_ranking = false;
-		int64								m_interval_time;	//	Âýtick 1·ÖÖÓ Ò»´Î
+		int64								m_interval_time;	//	æ…¢tick 1åˆ†é’Ÿ ä¸€æ¬¡
 
 		bool								m_is_old_act;
 	};

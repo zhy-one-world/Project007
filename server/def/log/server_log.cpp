@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2016??12??5??12:01:46
 	file base:	server
 	file ext:	cpp
@@ -36,7 +36,6 @@ namespace faith
 		std::string return_value;
 		temp_stream >> return_value;
 		return return_value;*/
-		//??????id??????????
 		std::stringstream temp_stream;
 		temp_stream << server_template_id;
 		std::string return_value;
@@ -296,26 +295,26 @@ namespace faith
 		xstring log_string = "{";
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ROLE_LOGIN);
 		log_string += "{";
-		server_log::push_log_string(log_string, account, "userid");								//???
-		server_log::push_log_string(log_string, device_id, "deviceid");							//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");							//????
+		server_log::push_log_string(log_string, account, "userid");
+		server_log::push_log_string(log_string, device_id, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, app_key, "appid");								//appid
-		server_log::push_log_string(log_string, "login", "logname");							//?????
-		server_log::push_log_string(log_string, client_version, "version");						//?????��
-		server_log::push_log_string(log_string, "2050", "stepnumid");							//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");		//??????????? ???��?? 
-		server_log::push_log_string(log_string, server_id, "serverid");						//??????ID
-		server_log::push_log_string(log_string, gamechannel, "gamechannel");					//???????ID
-		server_log::push_log_string(log_string, adchannel, "adchannel");						//???????ID
-		server_log::push_log_string(log_string, server_invaild_string, "roleid");				//???ID
-		server_log::push_log_string(log_string, server_invaild_string, "rolelevel");			//??????
-		server_log::push_log_string(log_string, server_invaild_string, "combatpower");			//??????
-		server_log::push_log_string(log_string, cur_time, "dtime");								//???
-		server_log::push_log_string(log_string, account, "accname");							//???
+		server_log::push_log_string(log_string, "login", "logname");
+		server_log::push_log_string(log_string, client_version, "version");
+		server_log::push_log_string(log_string, "2050", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, server_id, "serverid");
+		server_log::push_log_string(log_string, gamechannel, "gamechannel");
+		server_log::push_log_string(log_string, adchannel, "adchannel");
+		server_log::push_log_string(log_string, server_invaild_string, "roleid");
+		server_log::push_log_string(log_string, server_invaild_string, "rolelevel");
+		server_log::push_log_string(log_string, server_invaild_string, "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, account, "accname");
 		server_log::push_log_string(log_string, ip, "ip");										//ip
-		server_log::push_log_string(log_string, server_invaild_string, "valueamount");			//????????????
-		server_log::push_log_string(log_string, server_invaild_string, "os_version");			//???��
-		server_log::push_log_string(log_string, model, "model");			//??????
+		server_log::push_log_string(log_string, server_invaild_string, "valueamount");
+		server_log::push_log_string(log_string, server_invaild_string, "os_version");
+		server_log::push_log_string(log_string, model, "model");
 		server_log::push_log_string(log_string, idfa, "idfa"); 									//idfa
 		server_log::push_log_string(log_string, imei, "imei"); 									//imei
 		server_log::push_log_string(log_string, android_id, "androidId"); 									//androidId
@@ -331,26 +330,7 @@ namespace faith
 		
 		
 
-		//server_log::push_log_string(log_string, server_log_trans(server_common_head));							//???????
-		//server_log::push_log_string(log_string, server_log_trans(cur_time));									//???
 		//server_log::push_log_string(log_string, server_log_trans(app_key));										//app key
-		//server_log::push_log_string(log_string, server_log_trans(client_version));							   	//?????��
-		//server_log::push_log_string(log_string, server_log_trans("login"));										//????????
-		//server_log::push_log_string(log_string, server_log_trans(server_log_normversion));						//??????????�Z?��??
-		//server_log::push_log_string(log_string, server_log_trans(2050));										//?????
-		//server_log::push_log_string(log_string, server_log_trans(server_id));									//?????????ID
-		//server_log::push_log_string(log_string, server_log_trans(channel_id));									//????????ID
-		//server_log::push_log_string(log_string, server_log_trans(account));										//???ID
-		//server_log::push_log_string(log_string, server_log_trans(account));										//?????
-		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//???ID
-		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//?????
-		//server_log::push_log_string(log_string,	0);																//???
-		//server_log::push_log_string(log_string, server_log_trans(device_id));									//?����????
-		//server_log::push_log_string(log_string, server_log_trans(ip));											//???IP
-		//server_log::push_log_string(log_string, 0);																//???????
-		//server_log::push_log_string(log_string, 0);																//?????
-		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//VIP???
-		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//????????
 		//PROJECT_RECORD_LOG(g_login_role_logger, log_string);
 #endif
 	}
@@ -364,26 +344,26 @@ namespace faith
 		xstring log_string = "{";
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ACCOUNT_CREATE);
 		log_string += "{";
-		server_log::push_log_string(log_string, account, "userid");								//???
-		server_log::push_log_string(log_string, device_id, "deviceid");							//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");							//????
+		server_log::push_log_string(log_string, account, "userid");
+		server_log::push_log_string(log_string, device_id, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, app_key, "appid");								//appid
-		server_log::push_log_string(log_string, "login", "logname");							//?????
-		server_log::push_log_string(log_string, client_version, "version");						//?????��
-		server_log::push_log_string(log_string, "2050", "stepnumid");							//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");		//??????????? ???��?? 
-		server_log::push_log_string(log_string, server_id, "serverid");						//??????ID
-		server_log::push_log_string(log_string, gamechannel, "gamechannel");					//???????ID
-		server_log::push_log_string(log_string, adchannel, "adchannel");						//???????ID
-		server_log::push_log_string(log_string, server_invaild_string, "roleid");				//???ID
-		server_log::push_log_string(log_string, server_invaild_string, "rolelevel");			//??????
-		server_log::push_log_string(log_string, server_invaild_string, "combatpower");			//??????
-		server_log::push_log_string(log_string, cur_time, "dtime");								//???
-		server_log::push_log_string(log_string, account, "accname");							//???
+		server_log::push_log_string(log_string, "login", "logname");
+		server_log::push_log_string(log_string, client_version, "version");
+		server_log::push_log_string(log_string, "2050", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, server_id, "serverid");
+		server_log::push_log_string(log_string, gamechannel, "gamechannel");
+		server_log::push_log_string(log_string, adchannel, "adchannel");
+		server_log::push_log_string(log_string, server_invaild_string, "roleid");
+		server_log::push_log_string(log_string, server_invaild_string, "rolelevel");
+		server_log::push_log_string(log_string, server_invaild_string, "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, account, "accname");
 		server_log::push_log_string(log_string, ip, "ip");										//ip
-		server_log::push_log_string(log_string, server_invaild_string, "valueamount");			//????????????
-		server_log::push_log_string(log_string, server_invaild_string, "os_version");			//???��
-		server_log::push_log_string(log_string, model, "model");			//??????
+		server_log::push_log_string(log_string, server_invaild_string, "valueamount");
+		server_log::push_log_string(log_string, server_invaild_string, "os_version");
+		server_log::push_log_string(log_string, model, "model");
 		server_log::push_log_string(log_string, idfa, "idfa"); 									//idfa
 		server_log::push_log_string(log_string, imei, "imei"); 									//imei
 		server_log::push_log_string(log_string, android_id, "androidId"); 									//androidId
@@ -391,26 +371,7 @@ namespace faith
 		server_log::push_log_string(log_string, sn, "sn", true); 									//sn
 		
 		log_string += "}}";
-		//server_log::push_log_string(log_string, server_log_trans(server_common_head));							//???????
-		//server_log::push_log_string(log_string, server_log_trans(cur_time));									//???
 		//server_log::push_log_string(log_string, server_log_trans(app_key));										//app key
-		//server_log::push_log_string(log_string, server_log_trans(client_version));							   	//?????��
-		//server_log::push_log_string(log_string, server_log_trans("login"));										//????????
-		//server_log::push_log_string(log_string, server_log_trans(server_log_normversion));						//??????????�Z?��??
-		//server_log::push_log_string(log_string, server_log_trans(2050));										//?????
-		//server_log::push_log_string(log_string, server_log_trans(server_id));									//?????????ID
-		//server_log::push_log_string(log_string, server_log_trans(channel_id));									//????????ID
-		//server_log::push_log_string(log_string, server_log_trans(account));										//???ID
-		//server_log::push_log_string(log_string, server_log_trans(account));										//?????
-		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//???ID
-		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//?????
-		//server_log::push_log_string(log_string,	0);																//???
-		//server_log::push_log_string(log_string, server_log_trans(device_id));									//?����????
-		//server_log::push_log_string(log_string, server_log_trans(ip));											//???IP
-		//server_log::push_log_string(log_string, 0);																//???????
-		//server_log::push_log_string(log_string, 0);																//?????
-		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//VIP???
-		//server_log::push_log_string(log_string, server_log_trans(server_invaild_string));						//????????
 		//PROJECT_RECORD_LOG(g_login_role_logger, log_string);
 
 		xstring log_time = time_helper::get_current_time();
@@ -468,26 +429,26 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_CREATE);
 		log_string += "{";
 
-		server_log::push_log_string(log_string, role_info.account, "userid");								//???
-		server_log::push_log_string(log_string, deviceid, "deviceid");										//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");										//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, deviceid, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, appid, "appid");											//appid
-		server_log::push_log_string(log_string, "rolebuild", "logname");									//?????
-		server_log::push_log_string(log_string, version, "version");										//?????��
-		server_log::push_log_string(log_string, "3025", "stepnumid");										//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");									//??????ID
-		server_log::push_log_string(log_string, gamechannel, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, adchannel, "adchannel");									//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");					//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");	//??????
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");	//??????
-		server_log::push_log_string(log_string, cur_time, "dtime");											//???
-		server_log::push_log_string(log_string, role_info.account, "accname");								//???
-		server_log::push_log_string(log_string, role_info.role_name, "rolename");							//?????
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "roletypeid");	//?????
-		server_log::push_log_string(log_string, server_invaild_string, "os_version");						//???��
-		server_log::push_log_string(log_string, model, "model");											//??????
+		server_log::push_log_string(log_string, "rolebuild", "logname");
+		server_log::push_log_string(log_string, version, "version");
+		server_log::push_log_string(log_string, "3025", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, gamechannel, "gamechannel");
+		server_log::push_log_string(log_string, adchannel, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, role_info.account, "accname");
+		server_log::push_log_string(log_string, role_info.role_name, "rolename");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "roletypeid");
+		server_log::push_log_string(log_string, server_invaild_string, "os_version");
+		server_log::push_log_string(log_string, model, "model");
 		server_log::push_log_string(log_string, idfa, "idfa"); 												//idfa
 		server_log::push_log_string(log_string, imei, "imei"); 												//imei
 		server_log::push_log_string(log_string, android_id, "androidId"); 									//androidId
@@ -549,28 +510,8 @@ namespace faith
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_LOGOUT);
 
 		//log_string += "{";
-		//server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		//server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		//server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		//server_log::push_log_string(log_string, "rolelogin", "logname");										//?????
-		//server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		//server_log::push_log_string(log_string, "3030", "stepnumid");											//?????
-		//server_log::push_log_string(log_string, server_log_normversion, "normversion");						//??????????? ???��?? 
-		//server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		//server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		//server_log::push_log_string(log_string, role_info.account, "accname");									//???
-		//server_log::push_log_string(log_string, role_info.role_name, "rolename");								//?????
-		//server_log::push_log_string(log_string, money_info.cur_data_ary[e_money_type_jewel], "valueamount");	//????????????
-		//server_log::push_log_string(log_string, login_type, "logintype");										//???????
-		//server_log::push_log_string(log_string, server_invaild_string, "os_version");							//???��
-		//server_log::push_log_string(log_string, third_info.param8, "model");							//??????
 		//server_log::push_log_string(log_string, third_info.param9, "idfa"); 									//idfa
 		//server_log::push_log_string(log_string, third_info.param10, "imei"); 									//imei
 		//server_log::push_log_string(log_string, third_info.param11, "androidId"); 									//androidId
@@ -582,7 +523,6 @@ namespace faith
 
 		//PROJECT_RECORD_LOG(g_enter_game_role_logger, log_string);
 
-				//???????????????????????
 		online_time = online_time / 1000;
 		std::stringstream temp_stream;
 		temp_stream << role_info.role_guid.server_64;
@@ -651,36 +591,13 @@ namespace faith
 
 		xstring cur_time = time_helper::get_cur_time();
 		int64 cur_time_int = utility::get_tick_count();
-		//???????????????????????
 		online_time = online_time / 1000;
 
 		//xstring log_string = "{";
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_ACCOUNT_CREATE);
 
 		//log_string += "{";
-		//server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		//server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		//server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		//server_log::push_log_string(log_string, "logout", "logname");											//?????
-		//server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		//server_log::push_log_string(log_string, "9999", "stepnumid");											//?????
-		//server_log::push_log_string(log_string, server_log_normversion, "normversion");						//??????????? ???��?? 
-		//server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
-		//server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		//server_log::push_log_string(log_string, role_info.account, "accname");									//???
-		//server_log::push_log_string(log_string, role_info.role_name, "rolename");								//?????
-		//server_log::push_log_string(log_string, money_info.cur_data_ary[e_money_type_jewel], "valueamount");	//????????????
-		//server_log::push_log_string(log_string, online_time, "onlinetimes");									//???????
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//vip???
-		//server_log::push_log_string(log_string, 0, "energy");													//????????
-		//server_log::push_log_string(log_string, server_invaild_string, "os_version");							//???��
-		//server_log::push_log_string(log_string, third_info.param8, "model", true);							//??????
 
 		//log_string += "}}";
 
@@ -735,7 +652,6 @@ namespace faith
 		std::string game_server = server_log_get_game_server_id(server_template_id);
 		xstring create_times = time_helper::get_str_time_by_stamp(create_time);
 
-		//???????????????????????
 		online_time = online_time / 1000;
 		xstring log_time = time_helper::get_current_time();
 		std::stringstream temp_stream;
@@ -823,30 +739,10 @@ namespace faith
 
 		//xstring log_string = "{";
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_LEVELCHANGE);
-		//
 		//log_string += "{";
-		//server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		//server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		//server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		//server_log::push_log_string(log_string, "levelup", "logname");											//?????
-		//server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		//server_log::push_log_string(log_string, "6010", "stepnumid");											//?????
-		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		//server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
-		//server_log::push_log_string(log_string, old_level, "rolelevel");										//??????
-		//server_log::push_log_string(log_string, old_gs, "combatpower");											//??????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		//server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		//server_log::push_log_string(log_string, cur_level, "rolelevelaf");										//????
-		//server_log::push_log_string(log_string, old_level, "rolelevelbf");										//????
-		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpoweraf");		//?????
-		//server_log::push_log_string(log_string, old_gs, "combatpowerbf");										//?????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		//server_log::push_log_string(log_string, cur_level_time, "time", true);                                 //???????
 
 
 		//log_string += "}}";
@@ -916,31 +812,9 @@ namespace faith
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_MONEYCHANGE);
 
 		//log_string += "{";
-		//server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		//server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		//server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		//server_log::push_log_string(log_string, "money", "logname");											//?????
-		//server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		//server_log::push_log_string(log_string, "B1010", "stepnumid");											//?????
-		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		//server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");						//???ID
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		//server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		//server_log::push_log_string(log_string, causeid, "causeid");											//??????
-		//server_log::push_log_string(log_string, change_value, "quantity");										//???????
-		//server_log::push_log_string(log_string, remain_value, "total");											//????????
-		//server_log::push_log_string(log_string, money_id, "moneytype");											//????????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//vip
-		//server_log::push_log_string(log_string, location, "location");											//????��??
-		//server_log::push_log_string(log_string, action, "action");										        //??????
-		//server_log::push_log_string(log_string, param, "itemid");												//???id
-		//server_log::push_log_string(log_string, param2, "itemquantity", true);									//???????
 
 
 		//log_string += "}}";
@@ -1017,31 +891,9 @@ namespace faith
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_ITEMCHANGE);
 
 		//log_string += "{";
-		//server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		//server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		//server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		//server_log::push_log_string(log_string, "item", "logname");												//?????
-		//server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		//server_log::push_log_string(log_string, "B2110", "stepnumid");											//?????
-		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		//server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			            //???ID
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		//server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		//server_log::push_log_string(log_string, item_template_ptr->item_type, "itemtypeid");					//???????
-		//server_log::push_log_string(log_string, item_id, "itemid");												//???id
-		//server_log::push_log_string(log_string, causeid, "causeid");											//?��???id
-		//server_log::push_log_string(log_string, change_value, "quantity");										//?��????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//vip
-		//server_log::push_log_string(log_string, location, "location");											//????��??
-		//server_log::push_log_string(log_string, action, "action");												//??????
-		//server_log::push_log_string(log_string, item_guid.server_64, "itemguid");								//???guid
-		//server_log::push_log_string(log_string, left_item_count,"left_item_count", true);						//?????????
 		//log_string += "}}";
 
 		//PROJECT_RECORD_LOG(g_item_role_logger, log_string);
@@ -1107,32 +959,32 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_OPERATE_ITEM);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "itemoperate", "logname");										//?????
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "B2110", "stepnumid");											//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			            //???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
-		server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		server_log::push_log_string(log_string, item_slot, "itemslot");											//��??
-		server_log::push_log_string(log_string, operation_type, "operationtype");								//????
-		server_log::push_log_string(log_string, use_up_item, "useupitem");										//?��???id
-		server_log::push_log_string(log_string, first_use_lock, "firstuselock");								//????????
+		server_log::push_log_string(log_string, "itemoperate", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "B2110", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, item_slot, "itemslot");
+		server_log::push_log_string(log_string, operation_type, "operationtype");
+		server_log::push_log_string(log_string, use_up_item, "useupitem");
+		server_log::push_log_string(log_string, first_use_lock, "firstuselock");
 		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//vip
-		server_log::push_log_string(log_string, item_num, "itemnum");											//????????
+		server_log::push_log_string(log_string, item_num, "itemnum");
 		for (int i =0; i < item_guid.size(); ++i)
 		{
-			server_log::push_log_string(log_string, item_guid[i].server_64, "itemguid");						//???guid
+			server_log::push_log_string(log_string, item_guid[i].server_64, "itemguid");
 		}
-		server_log::push_log_string(log_string, force_do, "forcedo", true);										//??????
+		server_log::push_log_string(log_string, force_do, "forcedo", true);
 		log_string += "}}";
 
 		//PROJECT_RECORD_LOG(g_item_operate_logger, log_string);
@@ -1186,35 +1038,35 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_GOODS_LOG);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "shoptrade", "logname");										//?????
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "8010", "stepnumid");											//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");						//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
+		server_log::push_log_string(log_string, "shoptrade", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "8010", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");
 		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		server_log::push_log_string(log_string, last_login_time, "lastlogintime");								//????????
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");			//VIP???
-		server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		server_log::push_log_string(log_string, server_invaild_string, "sn");									//?????????
+		server_log::push_log_string(log_string, last_login_time, "lastlogintime");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, server_invaild_string, "sn");
 		server_log::push_log_string(log_string, third_info.param6, "ip");										//ip
-		server_log::push_log_string(log_string, item_template_ptr->item_type, "itemtypeid");					//???????
-		server_log::push_log_string(log_string, good_template_ptr->ItemId, "itemid");							//???id
-		server_log::push_log_string(log_string, server_invaild_string, "itemvalid");							//?????��??
-		server_log::push_log_string(log_string, buy_num * good_template_ptr->GoodsNum, "itemcount");			//???????
-		server_log::push_log_string(log_string, money_id, "moneytypeid");										//???????
-		server_log::push_log_string(log_string, money_num, "moneycount");										//???????
-		server_log::push_log_string(log_string, need_item_id, "cost_item_id");									//???????????
-		server_log::push_log_string(log_string, need_item_num, "cost_item_num");								//???????????
-		server_log::push_log_string(log_string, shop_template_id, "shopid", true);								//??????id
+		server_log::push_log_string(log_string, item_template_ptr->item_type, "itemtypeid");
+		server_log::push_log_string(log_string, good_template_ptr->ItemId, "itemid");
+		server_log::push_log_string(log_string, server_invaild_string, "itemvalid");
+		server_log::push_log_string(log_string, buy_num * good_template_ptr->GoodsNum, "itemcount");
+		server_log::push_log_string(log_string, money_id, "moneytypeid");
+		server_log::push_log_string(log_string, money_num, "moneycount");
+		server_log::push_log_string(log_string, need_item_id, "cost_item_id");
+		server_log::push_log_string(log_string, need_item_num, "cost_item_num");
+		server_log::push_log_string(log_string, shop_template_id, "shopid", true);
 
 		log_string += "}}";
 
@@ -1309,34 +1161,34 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_MALL);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "shoptrade", "logname");										//?????
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "8010", "stepnumid");											//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");						//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
+		server_log::push_log_string(log_string, "shoptrade", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "8010", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");
 		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");			//VIP???
-		server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		server_log::push_log_string(log_string, server_invaild_string, "sn");									//?????????
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, server_invaild_string, "sn");
 		server_log::push_log_string(log_string, third_info.param6, "ip");										//ip
-		server_log::push_log_string(log_string, item_template_ptr->item_type, "itemtypeid");					//???????
-		server_log::push_log_string(log_string, good_template_ptr->ItemId, "itemid");							//???id
-		server_log::push_log_string(log_string, server_invaild_string, "itemvalid");							//?????��??
-		server_log::push_log_string(log_string, sold_num * good_template_ptr->GoodsNum, "itemcount");			//???????
-		server_log::push_log_string(log_string, money_id, "moneytypeid");										//???????
-		server_log::push_log_string(log_string, money_num, "moneycount");										//???????
-		server_log::push_log_string(log_string, need_item_id, "cost_item_id");									//???????????
-		server_log::push_log_string(log_string, need_item_num, "cost_item_num");								//???????????
-		server_log::push_log_string(log_string, store_id, "shopid", true);								//??????id
+		server_log::push_log_string(log_string, item_template_ptr->item_type, "itemtypeid");
+		server_log::push_log_string(log_string, good_template_ptr->ItemId, "itemid");
+		server_log::push_log_string(log_string, server_invaild_string, "itemvalid");
+		server_log::push_log_string(log_string, sold_num * good_template_ptr->GoodsNum, "itemcount");
+		server_log::push_log_string(log_string, money_id, "moneytypeid");
+		server_log::push_log_string(log_string, money_num, "moneycount");
+		server_log::push_log_string(log_string, need_item_id, "cost_item_id");
+		server_log::push_log_string(log_string, need_item_num, "cost_item_num");
+		server_log::push_log_string(log_string, store_id, "shopid", true);
 
 		log_string += "}}";
 
@@ -1400,25 +1252,8 @@ namespace faith
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_TASK);
 
 		//log_string += "{";
-		//server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		//server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		//server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		//server_log::push_log_string(log_string, "gettask", "logname");											//?????
-		//server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		//server_log::push_log_string(log_string, "B3110", "stepnumid");											//?????
-		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		//server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		//server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		//server_log::push_log_string(log_string, mission_template_id, "taskid");									//????ID
-		//server_log::push_log_string(log_string, get_result, "result");											//??????
-		//server_log::push_log_string(log_string, task_type, "tasktype", true);									//????????
 
 		//log_string += "}}";
 
@@ -1475,24 +1310,7 @@ namespace faith
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_MONEYCHANGE);
 
 		//log_string += "{";
-		//server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		//server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		//server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		//server_log::push_log_string(log_string, "finishtask", "logname");										//?????
-		//server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		//server_log::push_log_string(log_string, "B3120", "stepnumid");											//?????
-		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		//server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
-		//server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		//server_log::push_log_string(log_string, mission_template_id, "taskid");									//????ID
-		//server_log::push_log_string(log_string, finish_result, "result");										//??????
-		//server_log::push_log_string(log_string, task_type, "tasktype", true);									//????????
 
 		//log_string += "}}";
 
@@ -1550,30 +1368,30 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ROLE_FIGHT_RAID);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "pvefight", "logname");											//?????
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "B4110", "stepnumid");											//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
-		server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		server_log::push_log_string(log_string, raid_template_id, "stageid");									//???ID
-		server_log::push_log_string(log_string, type, "type");													//???????
+		server_log::push_log_string(log_string, "pvefight", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "B4110", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, raid_template_id, "stageid");
+		server_log::push_log_string(log_string, type, "type");
 		server_log::push_log_string(log_string, server_invaild_string, "npcid");								//npcid
-		server_log::push_log_string(log_string, result, "result");												//??????
-		server_log::push_log_string(log_string, map_id, "mapid");												//???ID
-		server_log::push_log_string(log_string, star, "star");													//????
-		server_log::push_log_string(log_string, diffcult, "stagetype");											//???????
-		server_log::push_log_string(log_string, map_type, "maptype");											//???????
-		server_log::push_log_string(log_string, relive_times, "relive", true);									//???????
+		server_log::push_log_string(log_string, result, "result");
+		server_log::push_log_string(log_string, map_id, "mapid");
+		server_log::push_log_string(log_string, star, "star");
+		server_log::push_log_string(log_string, diffcult, "stagetype");
+		server_log::push_log_string(log_string, map_type, "maptype");
+		server_log::push_log_string(log_string, relive_times, "relive", true);
 
 		log_string += "}}";
 
@@ -1596,22 +1414,22 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ROLE_ACHIEVEMENT);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "achievement", "logname");										//?????
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "B5110", "stepnumid");											//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
-		server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		server_log::push_log_string(log_string, achievement_template_id, "achievementid", true);				//???ID
+		server_log::push_log_string(log_string, "achievement", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "B5110", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, achievement_template_id, "achievementid", true);
 
 		log_string += "}}";
 
@@ -1633,23 +1451,8 @@ namespace faith
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_NEWGUIDE);
 
 		//log_string += "{";
-		//server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		//server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		//server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		//server_log::push_log_string(log_string, "newstages", "logname");										//?????
-		//server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		//server_log::push_log_string(log_string, "8074", "stepnumid");											//?????
-		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		//server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		//server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		//server_log::push_log_string(log_string, new_stages_id, "eventid", true);								//????ID
 
 		//log_string += "}}";
 
@@ -1712,23 +1515,23 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ROLE_ACTIVITY);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "activity", "logname");											//?????
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "B6110", "stepnumid");											//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
-		server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		server_log::push_log_string(log_string, must_do_type, "mustdotype");									//??????
-		server_log::push_log_string(log_string, activity_id, "activityid", true);								//???id
+		server_log::push_log_string(log_string, "activity", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "B6110", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, must_do_type, "mustdotype");
+		server_log::push_log_string(log_string, activity_id, "activityid", true);
 
 		log_string += "}}";
 
@@ -1748,15 +1551,15 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ROLE_HEART_BEAT);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		server_log::push_log_string(log_string, cur_time, "dtime");
 		server_log::push_log_string(log_string, appkey, "appid");												//APPID
-		server_log::push_log_string(log_string, server_version, "version");										//?????��
-		server_log::push_log_string(log_string, "heart", "logname");											//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��??
-		server_log::push_log_string(log_string, "B9990", "stepnumid");											//?????
-		server_log::push_log_string(log_string, server_id, "serverid");											//??????ID
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
-		server_log::push_log_string(log_string, online_user, "onlineuser", true);								//???????
+		server_log::push_log_string(log_string, server_version, "version");
+		server_log::push_log_string(log_string, "heart", "logname");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, "B9990", "stepnumid");
+		server_log::push_log_string(log_string, server_id, "serverid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
+		server_log::push_log_string(log_string, online_user, "onlineuser", true);
 
 		log_string += "}}";
 
@@ -1779,7 +1582,6 @@ namespace faith
 		json["log_time"] = log_time;
 		json["player_count"] = online_user;
 
-		//??????????????????????????????????
 		login_fixed_data third_info;
 		json["login_type"] = 0;
 		json["appid"] = third_info.param1;
@@ -1813,36 +1615,36 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ROLE_RECHARGE);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");								//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "recharge", "logname");										//?????
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "5050", "stepnumid");											//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
-		server_log::push_log_string(log_string, cur_time, "dtime");											//???
-		server_log::push_log_string(log_string, server_invaild_string, "gameorderid");							//?????????
-		server_log::push_log_string(log_string, server_invaild_string, "gamechannelorderid");					//??????????
-		server_log::push_log_string(log_string, server_invaild_string, "orderamount");							//???????
-		server_log::push_log_string(log_string, server_invaild_string, "shareamount");							//?????
-		server_log::push_log_string(log_string, server_invaild_string, "noshareamount");						//???????
-		server_log::push_log_string(log_string, server_invaild_string, "payid");								//??????
-		server_log::push_log_string(log_string, server_invaild_string, "rechargechannel");						//???????id
-		server_log::push_log_string(log_string, add_value, "valuequantity");									//???��????????
-		server_log::push_log_string(log_string, server_invaild_string, "add_value");							//???????
+		server_log::push_log_string(log_string, "recharge", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "5050", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, server_invaild_string, "gameorderid");
+		server_log::push_log_string(log_string, server_invaild_string, "gamechannelorderid");
+		server_log::push_log_string(log_string, server_invaild_string, "orderamount");
+		server_log::push_log_string(log_string, server_invaild_string, "shareamount");
+		server_log::push_log_string(log_string, server_invaild_string, "noshareamount");
+		server_log::push_log_string(log_string, server_invaild_string, "payid");
+		server_log::push_log_string(log_string, server_invaild_string, "rechargechannel");
+		server_log::push_log_string(log_string, add_value, "valuequantity");
+		server_log::push_log_string(log_string, server_invaild_string, "add_value");
 		server_log::push_log_string(log_string, third_info.param6, "ip");										//IP
-		server_log::push_log_string(log_string, money_info.cur_data_ary[e_money_type_jewel], "valueamount");	//????????
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//???VIP
-		server_log::push_log_string(log_string, recharge_id, "itemid");										//?????id
-		server_log::push_log_string(log_string, server_invaild_string, "os_version");							//???��
-		server_log::push_log_string(log_string, third_info.param8, "model");								//??????
+		server_log::push_log_string(log_string, money_info.cur_data_ary[e_money_type_jewel], "valueamount");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");
+		server_log::push_log_string(log_string, recharge_id, "itemid");
+		server_log::push_log_string(log_string, server_invaild_string, "os_version");
+		server_log::push_log_string(log_string, third_info.param8, "model");
 		server_log::push_log_string(log_string, third_info.param9, "idfa"); 									//idfa
 		server_log::push_log_string(log_string, third_info.param10, "imei"); 									//imei
 		server_log::push_log_string(log_string, third_info.param11, "androidId"); 									//androidId
@@ -1869,25 +1671,25 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ROLE_SERVER_EVENT);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "serverevent", "logname");										//?????
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "7010", "stepnumid");											//?????
-		server_log::push_log_string(log_string, "v1.2", "normversion");											//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????
-		server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		server_log::push_log_string(log_string, server_invaild_string, "sdkversion");							//sdk?��
-		server_log::push_log_string(log_string, server_invaild_string, "system");								//???????IOS
-		server_log::push_log_string(log_string, event_id, "code");												//?????
-		server_log::push_log_string(log_string, server_invaild_string, "os_version", true);						//???��
+		server_log::push_log_string(log_string, "serverevent", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "7010", "stepnumid");
+		server_log::push_log_string(log_string, "v1.2", "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, server_invaild_string, "sdkversion");
+		server_log::push_log_string(log_string, server_invaild_string, "system");
+		server_log::push_log_string(log_string, event_id, "code");
+		server_log::push_log_string(log_string, server_invaild_string, "os_version", true);
 
 		log_string += "}}";
 
@@ -1911,40 +1713,39 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_UPGRADE_EQUIP);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");								//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "upgradeequip", "logname");									//?????
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "C0410", "stepnumid");											//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");		//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
-		server_log::push_log_string(log_string, cur_time, "dtime");											//???
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");		//VIP???
-		server_log::push_log_string(log_string, equip_slot, "equipslot");										//??��
-		server_log::push_log_string(log_string, item_id, "itemid");											//???ID
-		server_log::push_log_string(log_string, quality_level, "qualitylevel");								//??????
-		server_log::push_log_string(log_string, item_color, "itemcolor");										//??????
-		//server_log::push_log_string(log_string, old_grade_level, "oldgradelevel");								//???????
-		server_log::push_log_string(log_string, level, "level");						  //??????
-		server_log::push_log_string(log_string, upgrade_total_num, "upgradetotalnum");							//??????????
-		server_log::push_log_string(log_string, is_success, "issuccess");										//?????	<0??????	0???????? >0???
-		server_log::push_log_string(log_string, money_type, "moneytype");										//????????
-		server_log::push_log_string(log_string, money_num, "moneynum");										//????????
-		server_log::push_log_string(log_string, bind_material_num, "bindmaterialnum");							//????????????
-		server_log::push_log_string(log_string, no_bind_material_num, "nobindmaterialnum");					//?????????????
-		server_log::push_log_string(log_string, material_one_id, "materialoneid");								//?????ID
-		server_log::push_log_string(log_string, material_one_num, "materialonenum");							//?????????
-		server_log::push_log_string(log_string, material_two_id, "materialtwoid");								//?????ID
-		server_log::push_log_string(log_string, material_two_num, "materialtwonum");							//?????????
-		server_log::push_log_string(log_string, material_three_id, "materialthreeid");							//??????D
-		server_log::push_log_string(log_string, material_three_num, "materialthreenum", true);						//??????????
+		server_log::push_log_string(log_string, "upgradeequip", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "C0410", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, "0", "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");
+		server_log::push_log_string(log_string, equip_slot, "equipslot");
+		server_log::push_log_string(log_string, item_id, "itemid");
+		server_log::push_log_string(log_string, quality_level, "qualitylevel");
+		server_log::push_log_string(log_string, item_color, "itemcolor");
+		server_log::push_log_string(log_string, level, "level");
+		server_log::push_log_string(log_string, upgrade_total_num, "upgradetotalnum");
+		server_log::push_log_string(log_string, is_success, "issuccess");
+		server_log::push_log_string(log_string, money_type, "moneytype");
+		server_log::push_log_string(log_string, money_num, "moneynum");
+		server_log::push_log_string(log_string, bind_material_num, "bindmaterialnum");
+		server_log::push_log_string(log_string, no_bind_material_num, "nobindmaterialnum");
+		server_log::push_log_string(log_string, material_one_id, "materialoneid");
+		server_log::push_log_string(log_string, material_one_num, "materialonenum");
+		server_log::push_log_string(log_string, material_two_id, "materialtwoid");
+		server_log::push_log_string(log_string, material_two_num, "materialtwonum");
+		server_log::push_log_string(log_string, material_three_id, "materialthreeid");
+		server_log::push_log_string(log_string, material_three_num, "materialthreenum", true);
 
 		log_string += "}}";
 
@@ -1967,37 +1768,34 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ADDON_EQUIP);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");								//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "addonequip", "logname");										//?????
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "C0420", "stepnumid");											//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");		//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
-		server_log::push_log_string(log_string, cur_time, "dtime");											//???
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");		//VIP???
-		server_log::push_log_string(log_string, equip_slot, "equipslot");										//??��
-		server_log::push_log_string(log_string, item_id, "itemid");											//???ID
-		server_log::push_log_string(log_string, quality_level, "qualitylevel");								//??????
-		server_log::push_log_string(log_string, item_color, "itemcolor");										//??????
-		//server_log::push_log_string(log_string, item_guid, "itemguid");										//???guid
-		//server_log::push_log_string(log_string, old_addon_level, "oldaddonlevel");								//???????
-		server_log::push_log_string(log_string, cur_addon_level, "curaddonlevel");								//??????
-		//server_log::push_log_string(log_string, addon_total_num, "addontotalnum");								//??????????
-		server_log::push_log_string(log_string, is_success, "issuccess");										//?????	<0??????	0???????? >0???
-		server_log::push_log_string(log_string, money_type, "moneytype");										//????????
-		server_log::push_log_string(log_string, money_num, "moneynum");										//????????
-		server_log::push_log_string(log_string, bind_material_num, "bindmaterialnum");							//????????????
-		server_log::push_log_string(log_string, no_bind_material_num, "nobindmaterialnum");					//?????????????
-		server_log::push_log_string(log_string, material_id, "materialid");									//???ID
-		server_log::push_log_string(log_string, material_num, "materialnum", true);							//????????
+		server_log::push_log_string(log_string, "addonequip", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "C0420", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, "0", "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");
+		server_log::push_log_string(log_string, equip_slot, "equipslot");
+		server_log::push_log_string(log_string, item_id, "itemid");
+		server_log::push_log_string(log_string, quality_level, "qualitylevel");
+		server_log::push_log_string(log_string, item_color, "itemcolor");
+		server_log::push_log_string(log_string, cur_addon_level, "curaddonlevel");
+		server_log::push_log_string(log_string, is_success, "issuccess");
+		server_log::push_log_string(log_string, money_type, "moneytype");
+		server_log::push_log_string(log_string, money_num, "moneynum");
+		server_log::push_log_string(log_string, bind_material_num, "bindmaterialnum");
+		server_log::push_log_string(log_string, no_bind_material_num, "nobindmaterialnum");
+		server_log::push_log_string(log_string, material_id, "materialid");
+		server_log::push_log_string(log_string, material_num, "materialnum", true);
 
 		log_string += "}}";
 		
@@ -2020,34 +1818,33 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_SUCCINCT_EQUIP);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");								//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "succinctequip", "logname");									//?????
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "C0430", "stepnumid");											//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");		//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
-		server_log::push_log_string(log_string, cur_time, "dtime");											//???
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");		//VIP???
-		server_log::push_log_string(log_string, equip_slot, "equipslot");										//??��
-		server_log::push_log_string(log_string, item_id, "itemid");											//???id
-		server_log::push_log_string(log_string, quality_level, "qualitylevel");								//??????
-		server_log::push_log_string(log_string, item_color, "itemcolor");										//??????
-		server_log::push_log_string(log_string, culturing_percent, "culturingpercent");						//????????
-		//server_log::push_log_string(log_string, succinct_num, "succinctnum ");									//???????
-		server_log::push_log_string(log_string, money_type, "moneytype");										//????????
-		server_log::push_log_string(log_string, money_num, "moneynum");										//????????
-		server_log::push_log_string(log_string, bind_material_num, "bindmaterialnum");							//????????????
-		server_log::push_log_string(log_string, no_bind_material_num, "nobindmaterialnum");					//?????????????
-		server_log::push_log_string(log_string, material_id, "materialid");									//???ID
-		server_log::push_log_string(log_string, material_num, "materialnum", true);									//????????
+		server_log::push_log_string(log_string, "succinctequip", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "C0430", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, "0", "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");
+		server_log::push_log_string(log_string, equip_slot, "equipslot");
+		server_log::push_log_string(log_string, item_id, "itemid");
+		server_log::push_log_string(log_string, quality_level, "qualitylevel");
+		server_log::push_log_string(log_string, item_color, "itemcolor");
+		server_log::push_log_string(log_string, culturing_percent, "culturingpercent");
+		server_log::push_log_string(log_string, money_type, "moneytype");
+		server_log::push_log_string(log_string, money_num, "moneynum");
+		server_log::push_log_string(log_string, bind_material_num, "bindmaterialnum");
+		server_log::push_log_string(log_string, no_bind_material_num, "nobindmaterialnum");
+		server_log::push_log_string(log_string, material_id, "materialid");
+		server_log::push_log_string(log_string, material_num, "materialnum", true);
 
 		log_string += "}}";
 
@@ -2069,22 +1866,22 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_SUCCINCT_EQUIP_SAVE);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "succinctequipsave", "logname");									//????????
-		server_log::push_log_string(log_string, "C0440", "stepnumid");											//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
-		server_log::push_log_string(log_string, cur_time, "dtime");											//???
-		server_log::push_log_string(log_string, item_id, "itemid", true);											//???id
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "succinctequipsave", "logname");
+		server_log::push_log_string(log_string, "C0440", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, "0", "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, item_id, "itemid", true);
 
 		log_string += "}}";
 
@@ -2108,47 +1905,47 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ADVANCE_EQUIP);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");								//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "advanceequip", "logname");									//?????
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");		//???guid
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");		//VIP???
-		server_log::push_log_string(log_string, item_id, "itemid");												//??????????ID
-		server_log::push_log_string(log_string, quality_level, "qualitylevel");								//??????
-		server_log::push_log_string(log_string, item_color, "itemcolor");										//???
-		server_log::push_log_string(log_string, excellence_num, "excellencenum");								//?????????
-		server_log::push_log_string(log_string, upgrade_level, "upgradelevel");								//??????
-		server_log::push_log_string(log_string, addon_level, "addonlevel");									//?????
-		server_log::push_log_string(log_string, culturing_percent, "culturingpercent");						//????????(???)
-		server_log::push_log_string(log_string, first_material_id, "firstmaterialid");										//????????guid
-		server_log::push_log_string(log_string, first_material_level, "firstmateriallevel");								//??????
-		server_log::push_log_string(log_string, first_material_color, "first_materialcolor");								//???
-		server_log::push_log_string(log_string, first_material_excellence_num, "firstmaterialexcellencenum");				//?????????
-		server_log::push_log_string(log_string, first_material_upgrade_level, "firstmaterialupgradelevel");				//??????
-		server_log::push_log_string(log_string, first_material_addon_level, "firstmaterialaddonlevel");					//?????
-		server_log::push_log_string(log_string, first_material_culturing_percent, "firstmaterialculturingpercent");		//????????(???)
-		server_log::push_log_string(log_string, second_material_id, "secondmaterialid");									//?????????guid
-		server_log::push_log_string(log_string, second_material_level, "secondmateriallevel");								//??????
-		server_log::push_log_string(log_string, second_material_color, "secondmaterialcolor");								//???
-		server_log::push_log_string(log_string, second_material_excellence_num, "secondmaterialexcellencenum");			//?????????
-		server_log::push_log_string(log_string, second_material_upgrade_level, "secondmaterialupgradelevel");				//??????
-		server_log::push_log_string(log_string, second_material_addon_level, "secondmaterialaddonlevel");					//?????
-		server_log::push_log_string(log_string, second_material_culturing_percent, "secondmaterialculturingpercent");		//????????(???)
-		server_log::push_log_string(log_string, finish_item_id, "finishitemid");											//????????guid
-		server_log::push_log_string(log_string, finish_item_quality_level, "finishitemqualitylevel");						//??????
-		server_log::push_log_string(log_string, finish_item_color, "finishitemcolor");										//???
-		server_log::push_log_string(log_string, finish_item_excellence_num, "finishitemexcellencenum");					//?????????
-		server_log::push_log_string(log_string, finish_item_upgrade_level, "finishitemupgradelevel");						//??????
-		server_log::push_log_string(log_string, finish_item_addon_level, "finishitemaddonlevel");							//?????
-		server_log::push_log_string(log_string, finish_item_culturing_percent, "finishitemculturingpercent", true);				//????????(???)
+		server_log::push_log_string(log_string, "advanceequip", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "viplevel");
+		server_log::push_log_string(log_string, item_id, "itemid");
+		server_log::push_log_string(log_string, quality_level, "qualitylevel");
+		server_log::push_log_string(log_string, item_color, "itemcolor");
+		server_log::push_log_string(log_string, excellence_num, "excellencenum");
+		server_log::push_log_string(log_string, upgrade_level, "upgradelevel");
+		server_log::push_log_string(log_string, addon_level, "addonlevel");
+		server_log::push_log_string(log_string, culturing_percent, "culturingpercent");
+		server_log::push_log_string(log_string, first_material_id, "firstmaterialid");
+		server_log::push_log_string(log_string, first_material_level, "firstmateriallevel");
+		server_log::push_log_string(log_string, first_material_color, "first_materialcolor");
+		server_log::push_log_string(log_string, first_material_excellence_num, "firstmaterialexcellencenum");
+		server_log::push_log_string(log_string, first_material_upgrade_level, "firstmaterialupgradelevel");
+		server_log::push_log_string(log_string, first_material_addon_level, "firstmaterialaddonlevel");
+		server_log::push_log_string(log_string, first_material_culturing_percent, "firstmaterialculturingpercent");
+		server_log::push_log_string(log_string, second_material_id, "secondmaterialid");
+		server_log::push_log_string(log_string, second_material_level, "secondmateriallevel");
+		server_log::push_log_string(log_string, second_material_color, "secondmaterialcolor");
+		server_log::push_log_string(log_string, second_material_excellence_num, "secondmaterialexcellencenum");
+		server_log::push_log_string(log_string, second_material_upgrade_level, "secondmaterialupgradelevel");
+		server_log::push_log_string(log_string, second_material_addon_level, "secondmaterialaddonlevel");
+		server_log::push_log_string(log_string, second_material_culturing_percent, "secondmaterialculturingpercent");
+		server_log::push_log_string(log_string, finish_item_id, "finishitemid");
+		server_log::push_log_string(log_string, finish_item_quality_level, "finishitemqualitylevel");
+		server_log::push_log_string(log_string, finish_item_color, "finishitemcolor");
+		server_log::push_log_string(log_string, finish_item_excellence_num, "finishitemexcellencenum");
+		server_log::push_log_string(log_string, finish_item_upgrade_level, "finishitemupgradelevel");
+		server_log::push_log_string(log_string, finish_item_addon_level, "finishitemaddonlevel");
+		server_log::push_log_string(log_string, finish_item_culturing_percent, "finishitemculturingpercent", true);
 
 		log_string += "}}";
 
@@ -2167,12 +1964,12 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_RESURRECTION);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "resurrection", "logname");										//?????
-		server_log::push_log_string(log_string, map_id, "mapid");													//??????
-		server_log::push_log_string(log_string, cur_time, "time");													//???????
-		server_log::push_log_string(log_string, mode, "mode");														//?????
-		server_log::push_log_string(log_string, old_jewel_num, "oldjewelnum");										//????????????
-		server_log::push_log_string(log_string, new_jewel_num, "newjewelnum", true);										//???????????
+		server_log::push_log_string(log_string, "resurrection", "logname");
+		server_log::push_log_string(log_string, map_id, "mapid");
+		server_log::push_log_string(log_string, cur_time, "time");
+		server_log::push_log_string(log_string, mode, "mode");
+		server_log::push_log_string(log_string, old_jewel_num, "oldjewelnum");
+		server_log::push_log_string(log_string, new_jewel_num, "newjewelnum", true);
 
 		log_string += "}}";
 
@@ -2190,15 +1987,15 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_SEND_MAIL);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "sendmail", "logname");												//?????
-		server_log::push_log_string(log_string, target_player_guid, "targetguid");									//??????guid
-		server_log::push_log_string(log_string, sender_player_guid, "senderguid");									//??????guid
-		server_log::push_log_string(log_string, title, "title");													//????
-		server_log::push_log_string(log_string, content_text, "contenttext");										//??????????
-		server_log::push_log_string(log_string, money_typ1, "moneytyp1");											//?????????
-		server_log::push_log_string(log_string, money_num1, "moneynum1");											//?????????
-		server_log::push_log_string(log_string, money_typ2, "moneytyp2");											//?????????
-		server_log::push_log_string(log_string, money_num2, "moneynum2");											//?????????
+		server_log::push_log_string(log_string, "sendmail", "logname");
+		server_log::push_log_string(log_string, target_player_guid, "targetguid");
+		server_log::push_log_string(log_string, sender_player_guid, "senderguid");
+		server_log::push_log_string(log_string, title, "title");
+		server_log::push_log_string(log_string, content_text, "contenttext");
+		server_log::push_log_string(log_string, money_typ1, "moneytyp1");
+		server_log::push_log_string(log_string, money_num1, "moneynum1");
+		server_log::push_log_string(log_string, money_typ2, "moneytyp2");
+		server_log::push_log_string(log_string, money_num2, "moneynum2");
 		int32 num = 1;
 		for (int32 i = 0; i < item_type_num; i++)
 		{
@@ -2208,12 +2005,12 @@ namespace faith
 				std::string itemnum = "itemnum";
 				itemid += std::to_string(num);
 				itemnum += std::to_string(num);
-				server_log::push_log_string(log_string, item_list[i].item_guid.server_64, itemid);					//???guid
-				server_log::push_log_string(log_string, item_list[i].data_ary[e_item_info_stack_count], itemnum);		//???????
+				server_log::push_log_string(log_string, item_list[i].item_guid.server_64, itemid);
+				server_log::push_log_string(log_string, item_list[i].data_ary[e_item_info_stack_count], itemnum);
 				num++;
 			}
 		}
-		server_log::push_log_string(log_string, item_type_num, "itemtypenum", true);								//?????????
+		server_log::push_log_string(log_string, item_type_num, "itemtypenum", true);
 
 		log_string += "}}";
 
@@ -2231,9 +2028,9 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_FIRST_RECHARGE);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "firstrecharge", "logname");									//?????
-		server_log::push_log_string(log_string, player_guid, "isfirstrecharge");								//???guid
-		server_log::push_log_string(log_string, is_first_recharge, "isfirstrecharge", true);							//??????
+		server_log::push_log_string(log_string, "firstrecharge", "logname");
+		server_log::push_log_string(log_string, player_guid, "isfirstrecharge");
+		server_log::push_log_string(log_string, is_first_recharge, "isfirstrecharge", true);
 
 		log_string += "}}";
 
@@ -2255,43 +2052,13 @@ namespace faith
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_RECHARGE_SUCCESS);
 
 		//log_string += "{";
-		//server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		//server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		//server_log::push_log_string(log_string, cur_time_int, "msec");											//????
 		//server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		//server_log::push_log_string(log_string, "recharge", "logname");											//?????
-		//server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		//server_log::push_log_string(log_string, "C5050", "stepnumid");											//?????
-		//server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		//server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		//server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		//server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");						//???id
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		//server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		//server_log::push_log_string(log_string, order_id_str, "gameorderid");											//?????????
-		//server_log::push_log_string(log_string, "", "gamechannelorderid");									//??????????
-		//server_log::push_log_string(log_string, add_money_value, "orderamount");											//???????RMB???
-		//server_log::push_log_string(log_string, 0, "shareamount");											//??????RMB???
-		//server_log::push_log_string(log_string, 0, "noshareamount");											//????????RMB ???
-		//server_log::push_log_string(log_string, 0, "payid");											//??????
-		//server_log::push_log_string(log_string, third_info.param7, "rechargechannel");											//???????id
-		//server_log::push_log_string(log_string, add_jewel_value, "valuequantity");											//????????????
-		//server_log::push_log_string(log_string, 1, "currency");											//????
-		//server_log::push_log_string(log_string, third_info.param6, "ip");											//??????��????��??ip
-		//server_log::push_log_string(log_string, jewel_num, "valueamount");											//????????????
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");											//Vip???
-		//server_log::push_log_string(log_string, recharge_template_id, "itemid");											//???id
-		//server_log::push_log_string(log_string, server_invaild_string, "os_version");							//???��
-		//server_log::push_log_string(log_string, third_info.param8, "model");							//??????
 		//server_log::push_log_string(log_string, third_info.param9, "idfa"); 									//idfa
 		//server_log::push_log_string(log_string, third_info.param10, "imei"); 									//imei
 		//server_log::push_log_string(log_string, third_info.param11, "androidId"); 									//androidId
 		//server_log::push_log_string(log_string, third_info.param12, "mac"); 									//mac
 		//server_log::push_log_string(log_string, third_info.param13, "sn", true); 									//sn
-		//
 
 		//log_string += "}}";
 
@@ -2370,10 +2137,10 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_TODAY_RECHARGE);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "recharge", "logname");									//?????
-		server_log::push_log_string(log_string, recharge_num, "rechargenum");								//???��??????
-		server_log::push_log_string(log_string, total_num, "totalnum");									//???????????????
-		server_log::push_log_string(log_string, vip_level, "viplevel", true);									//VIP???
+		server_log::push_log_string(log_string, "recharge", "logname");
+		server_log::push_log_string(log_string, recharge_num, "rechargenum");
+		server_log::push_log_string(log_string, total_num, "totalnum");
+		server_log::push_log_string(log_string, vip_level, "viplevel", true);
 
 		log_string += "}}";
 
@@ -2392,11 +2159,11 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_RECHARGE_STEP);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "rechargestep", "logname");									//?????
-		server_log::push_log_string(log_string, order_id, "order_id");									//??????
-		server_log::push_log_string(log_string, role_id.server_64, "role_id");							//???ID
-		server_log::push_log_string(log_string, goods_id, "goods_id");									//?????
-		server_log::push_log_string(log_string, step_num, "setp_num", true);									//?????
+		server_log::push_log_string(log_string, "rechargestep", "logname");
+		server_log::push_log_string(log_string, order_id, "order_id");
+		server_log::push_log_string(log_string, role_id.server_64, "role_id");
+		server_log::push_log_string(log_string, goods_id, "goods_id");
+		server_log::push_log_string(log_string, step_num, "setp_num", true);
 
 		log_string += "}}";
 
@@ -2475,11 +2242,11 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_RECHARGE_ERROR);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "rechargeerror", "logname");									//?????
-		server_log::push_log_string(log_string, order_id, "order_id");									//??????
-		server_log::push_log_string(log_string, role_id.server_64, "goods_id");							//???ID
-		server_log::push_log_string(log_string, goods_id, "goods_id");									//?????
-		server_log::push_log_string(log_string, error_num, "error_num", true);								//?????
+		server_log::push_log_string(log_string, "rechargeerror", "logname");
+		server_log::push_log_string(log_string, order_id, "order_id");
+		server_log::push_log_string(log_string, role_id.server_64, "goods_id");
+		server_log::push_log_string(log_string, goods_id, "goods_id");
+		server_log::push_log_string(log_string, error_num, "error_num", true);
 
 		log_string += "}}";
 
@@ -2497,10 +2264,10 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_VIP);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "recharge", "logname");									//?????
-		server_log::push_log_string(log_string, old_vip_level, "rechargenum");								//?????VIP???
-		server_log::push_log_string(log_string, is_get_old_welfare, "totalnum");							//???????VIP??????????????
-		server_log::push_log_string(log_string, cur_vip_level, "viplevel", true);								//??????VIP???
+		server_log::push_log_string(log_string, "recharge", "logname");
+		server_log::push_log_string(log_string, old_vip_level, "rechargenum");
+		server_log::push_log_string(log_string, is_get_old_welfare, "totalnum");
+		server_log::push_log_string(log_string, cur_vip_level, "viplevel", true);
 
 		log_string += "}}";
 
@@ -2518,10 +2285,10 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_JEWEL_CONSUME_LOGGER);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "jewelconsume", "logname");								//?????
-		server_log::push_log_string(log_string, consume_num, "consumenum");								//?????????????
-		server_log::push_log_string(log_string, consume_type, "causeid");									//??????
-		server_log::push_log_string(log_string, total_consume_num, "totalconsumenum", true);						//???????????
+		server_log::push_log_string(log_string, "jewelconsume", "logname");
+		server_log::push_log_string(log_string, consume_num, "consumenum");
+		server_log::push_log_string(log_string, consume_type, "causeid");
+		server_log::push_log_string(log_string, total_consume_num, "totalconsumenum", true);
 
 		log_string += "}}";
 
@@ -2579,21 +2346,21 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ARENA_CHALLENGE);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "arenachallenge", "logname");									//????????
-		server_log::push_log_string(log_string, "C1010", "stepnumid");											//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
-		server_log::push_log_string(log_string, cur_time, "dtime", true);											//???
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "arenachallenge", "logname");
+		server_log::push_log_string(log_string, "C1010", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, "0", "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime", true);
 
 		log_string += "}}";
 		
@@ -2615,22 +2382,22 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_CHAT);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, sender_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
+		server_log::push_log_string(log_string, sender_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, third_info.param2, "version");										//?????��
-		server_log::push_log_string(log_string, "chat", "logname");													//????????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");								//??????????�Z?��??
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, sender_info.role_guid.server_64, "roleid");							//???ID
-		server_log::push_log_string(log_string, sender_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "chat", "logname");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, sender_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, sender_info.data_ary[e_role_info_exp_level], "rolelevel");
 		server_log::push_log_string(log_string, sender_info.data_ary[e_role_info_vip_level], "vip");			//vip	
-		server_log::push_log_string(log_string, chat_type, "chat_type");										//????????	
-		server_log::push_log_string(log_string, addressee_guid.server_64, "addressee");							//??????	
-		server_log::push_log_string(log_string, chat_text, "chat_text");											//????????
-		server_log::push_log_string(log_string, item_json, "allitemnum", true);										//???????
+		server_log::push_log_string(log_string, chat_type, "chat_type");
+		server_log::push_log_string(log_string, addressee_guid.server_64, "addressee");
+		server_log::push_log_string(log_string, chat_text, "chat_text");
+		server_log::push_log_string(log_string, item_json, "allitemnum", true);
 
 		log_string += "}}";
 
@@ -2804,22 +2571,22 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_PLAYER_MARK);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "playermark", "logname");										//????????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "playermark", "logname");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
 		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//vip		
-		server_log::push_log_string(log_string, strength, "strengthlevel");									//????
-		server_log::push_log_string(log_string, agility, "agilitylevel");										//????
-		server_log::push_log_string(log_string, intellect, "intellectlevel");									//????
-		server_log::push_log_string(log_string, stamina, "staminalevel", true);										//????
+		server_log::push_log_string(log_string, strength, "strengthlevel");
+		server_log::push_log_string(log_string, agility, "agilitylevel");
+		server_log::push_log_string(log_string, intellect, "intellectlevel");
+		server_log::push_log_string(log_string, stamina, "staminalevel", true);
 
 		log_string += "}}";
 	
@@ -2838,20 +2605,20 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ROLE_PLAYER_PK);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "playerpk", "logname");											//????????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "playerpk", "logname");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
 		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//vip			
-		server_log::push_log_string(log_string, cur_pk_mode, "pk_mode");										// pk??
-		server_log::push_log_string(log_string, cur_pk_value, "pkvalue", true);										//???PK?		
+		server_log::push_log_string(log_string, cur_pk_mode, "pk_mode");
+		server_log::push_log_string(log_string, cur_pk_value, "pkvalue", true);
 
 		log_string += "}}";
 
@@ -2872,36 +2639,35 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ROLE_PLAYER_DEAD);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, dead_role_info.account, "userid");											//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");											//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");														//????
+		server_log::push_log_string(log_string, dead_role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");												//appid
-		server_log::push_log_string(log_string, "playerdead", "logname");													//????????
-		server_log::push_log_string(log_string, third_info.param2, "version");												//?????��
-		server_log::push_log_string(log_string, "C0300", "stepnumid");														//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");									//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");													//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");											//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");											//???????ID
-		server_log::push_log_string(log_string, dead_role_info.role_guid.server_64, "roleid");				//???ID
-		server_log::push_log_string(log_string, dead_role_info.data_ary[e_role_info_exp_level], "rolelevel");				//??????
-		server_log::push_log_string(log_string, dead_role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");				//??????
-		server_log::push_log_string(log_string, cur_time, "dtime");														// ???????
-		//server_log::push_log_string(log_string, killer_role_info.role_guid.server_64, "killerguid ");			// ?????id
-		server_log::push_log_string(log_string, killer_role_info.role_name, "killername");									// ?????????
-		server_log::push_log_string(log_string, killer_role_info.data_ary[e_role_info_template_id], "killertemplateid");	// ????????id
-		server_log::push_log_string(log_string, killer_role_info.data_i64_ary[e_role_i64_info_gs_value], "killertgs");				// ????????
-		server_log::push_log_string(log_string, dead_role_info.role_guid.server_64, "deadguid");				// ?????ID
-		server_log::push_log_string(log_string, dead_role_info.role_name, "deadname");										// ?????????
-		server_log::push_log_string(log_string, dead_role_info.data_ary[e_role_info_template_id], "deadtemplateid");		// ????????id
-		server_log::push_log_string(log_string, dead_role_info.data_i64_ary[e_role_i64_info_gs_value], "deadgs");					// ????????
-		server_log::push_log_string(log_string, dead_pos.X, "deathlocationx");												// ??????? X
-		server_log::push_log_string(log_string, dead_pos.Y, "deathlocationy");												// ??????? Y
-		server_log::push_log_string(log_string, dead_pos.Z, "deathlocationz");												// ??????? Z
-		server_log::push_log_string(log_string, killer_pk_mode, "killerpkmode");											// ?????pk??
-		server_log::push_log_string(log_string, dead_pk_mode, "deadpkmode");												// ??????pk??
-		server_log::push_log_string(log_string, map_type, "scenemap");														// ????????id
-		server_log::push_log_string(log_string, dead_type, "deadtype", true);													// ????????
+		server_log::push_log_string(log_string, "playerdead", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "C0300", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, dead_role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, dead_role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, dead_role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, killer_role_info.role_name, "killername");
+		server_log::push_log_string(log_string, killer_role_info.data_ary[e_role_info_template_id], "killertemplateid");
+		server_log::push_log_string(log_string, killer_role_info.data_i64_ary[e_role_i64_info_gs_value], "killertgs");
+		server_log::push_log_string(log_string, dead_role_info.role_guid.server_64, "deadguid");
+		server_log::push_log_string(log_string, dead_role_info.role_name, "deadname");
+		server_log::push_log_string(log_string, dead_role_info.data_ary[e_role_info_template_id], "deadtemplateid");
+		server_log::push_log_string(log_string, dead_role_info.data_i64_ary[e_role_i64_info_gs_value], "deadgs");
+		server_log::push_log_string(log_string, dead_pos.X, "deathlocationx");
+		server_log::push_log_string(log_string, dead_pos.Y, "deathlocationy");
+		server_log::push_log_string(log_string, dead_pos.Z, "deathlocationz");
+		server_log::push_log_string(log_string, killer_pk_mode, "killerpkmode");
+		server_log::push_log_string(log_string, dead_pk_mode, "deadpkmode");
+		server_log::push_log_string(log_string, map_type, "scenemap");
+		server_log::push_log_string(log_string, dead_type, "deadtype", true);
 
 		log_string += "}}";
 
@@ -2919,19 +2685,19 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_NUM_BAG_TOTAL);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "bagtotalnum", "logname");										//????????
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
+		server_log::push_log_string(log_string, "bagtotalnum", "logname");
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
 		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//vip			
-		server_log::push_log_string(log_string, cur_bag_total_num, "curbagtotalnum", true);							//??????????????	
+		server_log::push_log_string(log_string, cur_bag_total_num, "curbagtotalnum", true);
 
 		log_string += "}}";
 
@@ -2947,8 +2713,8 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_NUM_BAG_UNUSED);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "bagunusednum", "logname");											//????????
-		server_log::push_log_string(log_string, cur_bag_unused_num, "curbagunusednum", true);							//?????????????????	
+		server_log::push_log_string(log_string, "bagunusednum", "logname");
+		server_log::push_log_string(log_string, cur_bag_unused_num, "curbagunusednum", true);
 
 		log_string += "}}";
 
@@ -2964,9 +2730,9 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_MONTH_CARD);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "monthcard", "logname");						//????????
-		server_log::push_log_string(log_string, buy_time, "buytime");							//???????
-		server_log::push_log_string(log_string, buy_num, "buynum", true);								//????????
+		server_log::push_log_string(log_string, "monthcard", "logname");
+		server_log::push_log_string(log_string, buy_time, "buytime");
+		server_log::push_log_string(log_string, buy_num, "buynum", true);
 
 		log_string += "}}";
 
@@ -2982,8 +2748,8 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ELEMENT_RECOVERY);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "elementrecovery", "logname");					//????????
-		server_log::push_log_string(log_string, pound_num, "pound_num", true);						//????????????????????
+		server_log::push_log_string(log_string, "elementrecovery", "logname");
+		server_log::push_log_string(log_string, pound_num, "pound_num", true);
 
 		log_string += "}}";
 
@@ -2999,15 +2765,15 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_WORLD_BOSS_BATTLE_FROM_PLAYER);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "worldbossbattlefromplayer", "logname");			//????????
+		server_log::push_log_string(log_string, "worldbossbattlefromplayer", "logname");
 		server_log::push_log_string(log_string, boss_id, "bossid");									// bossID
-		server_log::push_log_string(log_string, hurt_value, "damagevalue");							// ?????
-		server_log::push_log_string(log_string, battle_begin_time, "battlebegintime");				// ?????????
-		server_log::push_log_string(log_string, battle_end_time, "battleendtime");					// ??????????
-		server_log::push_log_string(log_string, battle_continued_time, "battlecontinuoustime");		// ??????????				
-		server_log::push_log_string(log_string, boss_is_dead, "bossisdead");						// boss???????				
-		server_log::push_log_string(log_string, is_team, "isteam");									// ????��???				
-		server_log::push_log_string(log_string, pk_mode, "pkmode", true);									// pk??
+		server_log::push_log_string(log_string, hurt_value, "damagevalue");
+		server_log::push_log_string(log_string, battle_begin_time, "battlebegintime");
+		server_log::push_log_string(log_string, battle_end_time, "battleendtime");
+		server_log::push_log_string(log_string, battle_continued_time, "battlecontinuoustime");
+		server_log::push_log_string(log_string, boss_is_dead, "bossisdead");
+		server_log::push_log_string(log_string, is_team, "isteam");
+		server_log::push_log_string(log_string, pk_mode, "pkmode", true);
 
 		log_string += "}}";
 
@@ -3023,19 +2789,8 @@ namespace faith
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_BOSS_KILL_LOG);
 
 		//log_string += "{";
-		//server_log::push_log_string(log_string, "worldbossbattlefromboss", "logname");						//????????
-		//server_log::push_log_string(log_string, role_info.role_guid, "killerguid");							//?????guid
-		//server_log::push_log_string(log_string, role_info.role_name, "rolename");							//?????????
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelv");		//???????
-		//server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "rolepower");		//????????
 		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		//server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "rolevip");		//?????vip???
 		//server_log::push_log_string(log_string, boss_id, "bossid");											//bossID
-		//server_log::push_log_string(log_string, map_id, "mapid");											//???id
-		//server_log::push_log_string(log_string, player_num, "playernum");									//????????????????
-		//server_log::push_log_string(log_string, battle_begin_time, "battlebegintime");						//?????????
-		//server_log::push_log_string(log_string, battle_end_time, "battleendtime");							//??????????
-		//server_log::push_log_string(log_string, battle_continued_time, "battlecontinuoustime", true);		//??????????	
 
 		//log_string += "}}";
 		
@@ -3089,20 +2844,20 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_CROSS_SERVER_BOSS_KILL_LOG);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "crossserverworldbosskill", "logname");			//????????
+		server_log::push_log_string(log_string, "crossserverworldbosskill", "logname");
 		server_log::push_log_string(log_string, boss_id, "bossid");								//boss_id
-		server_log::push_log_string(log_string, legion_id.server_64, "legionid");							//???????id
-		server_log::push_log_string(log_string, server_id, "serverid");							//???????sever_id
-		server_log::push_log_string(log_string, legion_name, "legionname");						//???????name
-		server_log::push_log_string(log_string, legion_id_top1.server_64, "legionidtop1");				//top1????id
-		server_log::push_log_string(log_string, legion_name_top1, "legionnametop1");			//top1????name
-		server_log::push_log_string(log_string, legion_server_id_top1, "legionserveridtop1");	//top1????sever_id
-		server_log::push_log_string(log_string, legion_id_top2.server_64, "legionidtop2");				//top2????id
-		server_log::push_log_string(log_string, legion_name_top2, "legionnametop2");			//top2????name
-		server_log::push_log_string(log_string, legion_server_id_top2, "legionserveridtop2");	//top2????sever_id
-		server_log::push_log_string(log_string, legion_id_top3.server_64, "legionidtop3");				//top3????id
-		server_log::push_log_string(log_string, legion_name_top3, "legionnametop3");			//top3????name
-		server_log::push_log_string(log_string, legion_server_id_top3, "legionserveridtop3", true);	//top3????sever_id
+		server_log::push_log_string(log_string, legion_id.server_64, "legionid");
+		server_log::push_log_string(log_string, server_id, "serverid");
+		server_log::push_log_string(log_string, legion_name, "legionname");
+		server_log::push_log_string(log_string, legion_id_top1.server_64, "legionidtop1");
+		server_log::push_log_string(log_string, legion_name_top1, "legionnametop1");
+		server_log::push_log_string(log_string, legion_server_id_top1, "legionserveridtop1");
+		server_log::push_log_string(log_string, legion_id_top2.server_64, "legionidtop2");
+		server_log::push_log_string(log_string, legion_name_top2, "legionnametop2");
+		server_log::push_log_string(log_string, legion_server_id_top2, "legionserveridtop2");
+		server_log::push_log_string(log_string, legion_id_top3.server_64, "legionidtop3");
+		server_log::push_log_string(log_string, legion_name_top3, "legionnametop3");
+		server_log::push_log_string(log_string, legion_server_id_top3, "legionserveridtop3", true);
 
 		log_string += "}}";
 
@@ -3140,13 +2895,13 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_BOSS_KILL_DROP_LOG);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "boss_kill_drop_log", "logname");							//????????
-		server_log::push_log_string(log_string, role_info.role_guid, "killerguid");							//?????guid
-		server_log::push_log_string(log_string, role_info.role_name, "rolename");							//?????????
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelv");		//???????
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "rolepower");		//????????
+		server_log::push_log_string(log_string, "boss_kill_drop_log", "logname");
+		server_log::push_log_string(log_string, role_info.role_guid, "killerguid");
+		server_log::push_log_string(log_string, role_info.role_name, "rolename");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelv");
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "rolepower");
 		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "rolevip");		//?????vip???
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "rolevip");
 		server_log::push_log_string(log_string, boss_id, "bossid");											//bossID
 
 		xstring item_list_str = "";
@@ -3232,15 +2987,15 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ELITE_BOSS_BATTLE_FROM_PLAYER);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "elitebossbattlefromplayer", "logname");			//????????
+		server_log::push_log_string(log_string, "elitebossbattlefromplayer", "logname");
 		server_log::push_log_string(log_string, boss_id, "bossid");								// bossID
-		server_log::push_log_string(log_string, hurt_value, "hurtvalue");							// ?????
-		server_log::push_log_string(log_string, battle_begin_time, "battlebegintime");				// ?????????
-		server_log::push_log_string(log_string, battle_end_time, "battleendtime");					// ??????????
-		server_log::push_log_string(log_string, battle_continued_time, "battlecontinuoustime");	// ??????????				
-		server_log::push_log_string(log_string, boss_is_dead, "bossisdead");						// boss???????				
-		server_log::push_log_string(log_string, is_team, "isteam");								// ????��???				
-		server_log::push_log_string(log_string, pk_mode, "pkmode", true);								// pk??
+		server_log::push_log_string(log_string, hurt_value, "hurtvalue");
+		server_log::push_log_string(log_string, battle_begin_time, "battlebegintime");
+		server_log::push_log_string(log_string, battle_end_time, "battleendtime");
+		server_log::push_log_string(log_string, battle_continued_time, "battlecontinuoustime");
+		server_log::push_log_string(log_string, boss_is_dead, "bossisdead");
+		server_log::push_log_string(log_string, is_team, "isteam");
+		server_log::push_log_string(log_string, pk_mode, "pkmode", true);
 
 		log_string += "}}";
 	
@@ -3256,12 +3011,12 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ELITE_BOSS_BATTLE_FROM_BOSS);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "elitebossbattlefromboss", "logname");				//????????
+		server_log::push_log_string(log_string, "elitebossbattlefromboss", "logname");
 		server_log::push_log_string(log_string, boss_id, "bossid");								// bossID
-		server_log::push_log_string(log_string, player_num, "playernum");							// ????????????????
-		server_log::push_log_string(log_string, battle_begin_time, "battlebegintime");				// ?????????
-		server_log::push_log_string(log_string, battle_end_time, "battleendtime");					// ??????????
-		server_log::push_log_string(log_string, battle_continued_time, "battlecontinuoustime", true);	// ??????????			
+		server_log::push_log_string(log_string, player_num, "playernum");
+		server_log::push_log_string(log_string, battle_begin_time, "battlebegintime");
+		server_log::push_log_string(log_string, battle_end_time, "battleendtime");
+		server_log::push_log_string(log_string, battle_continued_time, "battlecontinuoustime", true);
 
 		log_string += "}}";
 
@@ -3277,9 +3032,9 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ELITE_BOSS_BATTLE_FROM_BOSS);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "bosshome", "logname");				//????????
+		server_log::push_log_string(log_string, "bosshome", "logname");
 		server_log::push_log_string(log_string, record_info.boss_spawn_point_template_id, "bossspawnid");			// bossID
-		server_log::push_log_string(log_string, record_info.killed_stamp, "killedtime");							// Boss????????
+		server_log::push_log_string(log_string, record_info.killed_stamp, "killedtime");
 		for (int32 i = 0; i < max_team_member_num; i++)
 		{
 			if (!record_info.player_info_arr[i].role_guid.is_valid())
@@ -3302,9 +3057,9 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_ACTIVITY_DEGREE);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "activitydegree", "logname");									//????????
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleguid");		// ???id
-		server_log::push_log_string(log_string, new_activity_degree_value, "activitydegreevalue", true);				// ???????
+		server_log::push_log_string(log_string, "activitydegree", "logname");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleguid");
+		server_log::push_log_string(log_string, new_activity_degree_value, "activitydegreevalue", true);
 
 		log_string += "}}";
 
@@ -3325,25 +3080,24 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_RESOURCE_FIND_BACK);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "resourcefindback", "logname");									//????????
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "C0700", "stepnumid");											//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????�Z?��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
-		server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		//server_log::push_log_string(log_string, role_info.role_guid.server_64, "rolrguid ");		// ???id
-		server_log::push_log_string(log_string, must_do_type, "mustdotype");									// ????????
-		server_log::push_log_string(log_string, find_back_type, "findbacktype");								// ???????
-		server_log::push_log_string(log_string, find_back_value, "findbackvalue", true);								// ??????
+		server_log::push_log_string(log_string, "resourcefindback", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "C0700", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, "0", "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, must_do_type, "mustdotype");
+		server_log::push_log_string(log_string, find_back_type, "findbacktype");
+		server_log::push_log_string(log_string, find_back_value, "findbackvalue", true);
 
 		log_string += "}}";
 
@@ -3359,9 +3113,9 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_LEGION_BURN_FIRE_OVER);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "legionburnfireover", "logname");						//????????
-		server_log::push_log_string(log_string, legion_id, "legionid");								// ????id
-		server_log::push_log_string(log_string, participate_number, "participatenumber", true);				// ????????
+		server_log::push_log_string(log_string, "legionburnfireover", "logname");
+		server_log::push_log_string(log_string, legion_id, "legionid");
+		server_log::push_log_string(log_string, participate_number, "participatenumber", true);
 
 		log_string += "}}";
 
@@ -3376,9 +3130,9 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_LEGION_BOSS_OVER);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "legionbossover", "logname");						//????????
-		server_log::push_log_string(log_string, legion_id, "legionid");							// ????id
-		server_log::push_log_string(log_string, participate_number, "participatenumber", true);			// ????????
+		server_log::push_log_string(log_string, "legionbossover", "logname");
+		server_log::push_log_string(log_string, legion_id, "legionid");
+		server_log::push_log_string(log_string, participate_number, "participatenumber", true);
 
 		log_string += "}}";
 
@@ -3394,9 +3148,9 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_LEGION_WAR_OVER);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "legionwarover", "logname");						//????????
-		server_log::push_log_string(log_string, legion_id, "legionid");							// ????id
-		server_log::push_log_string(log_string, participate_number, "participatenumber", true);			// ????????
+		server_log::push_log_string(log_string, "legionwarover", "logname");
+		server_log::push_log_string(log_string, legion_id, "legionid");
+		server_log::push_log_string(log_string, participate_number, "participatenumber", true);
 
 		log_string += "}}";
 
@@ -3412,11 +3166,11 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_LEGION_INFO);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "legioninfo", "logname");								//????????
-		server_log::push_log_string(log_string, legion_id, "legionid");								//????ID
-		server_log::push_log_string(log_string, legion_name, "legionname");							//????????
-		server_log::push_log_string(log_string, legion_level, "legionlevel");							//??????
-		server_log::push_log_string(log_string, legion_role_num, "legionrolenum", true);						//????????
+		server_log::push_log_string(log_string, "legioninfo", "logname");
+		server_log::push_log_string(log_string, legion_id, "legionid");
+		server_log::push_log_string(log_string, legion_name, "legionname");
+		server_log::push_log_string(log_string, legion_level, "legionlevel");
+		server_log::push_log_string(log_string, legion_role_num, "legionrolenum", true);
 
 		log_string += "}}";
 
@@ -3432,9 +3186,9 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_CREATE_TEAM);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "createteam", "logname");								//????????
-		server_log::push_log_string(log_string, creater_role_guid.server_64, "createrroleguid");		// ???????guid
-		server_log::push_log_string(log_string, team_aim, "teamaim", true);									// ???????
+		server_log::push_log_string(log_string, "createteam", "logname");
+		server_log::push_log_string(log_string, creater_role_guid.server_64, "createrroleguid");
+		server_log::push_log_string(log_string, team_aim, "teamaim", true);
 
 		log_string += "}}";
 
@@ -3450,11 +3204,11 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_CREATE_TEAM);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "jointeam", "logname");								//????????
-		server_log::push_log_string(log_string, creater_role_guid.server_64, "createrroleguid");	// ???????guid
-		server_log::push_log_string(log_string, cur_member_num, "curmembernum");					// ??????????
-		server_log::push_log_string(log_string, team_aim, "teamaim");								// ???????
-		server_log::push_log_string(log_string, joiner_role_guid.server_64, "joinerroleguid", true);		// ???????guid
+		server_log::push_log_string(log_string, "jointeam", "logname");
+		server_log::push_log_string(log_string, creater_role_guid.server_64, "createrroleguid");
+		server_log::push_log_string(log_string, cur_member_num, "curmembernum");
+		server_log::push_log_string(log_string, team_aim, "teamaim");
+		server_log::push_log_string(log_string, joiner_role_guid.server_64, "joinerroleguid", true);
 
 		log_string += "}}";
 
@@ -3470,12 +3224,12 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_QUIT_TEAM);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "quitteam", "logname");								//????????
-		server_log::push_log_string(log_string, creater_role_guid.server_64, "createrroleguid");	// ???????guid
-		server_log::push_log_string(log_string, cur_member_num, "curmembernum");					// ??????????
-		server_log::push_log_string(log_string, team_aim, "teamaim");								// ???????
-		server_log::push_log_string(log_string, joiner_role_guid.server_64, "joinerroleguid");		// ???????guid
-		server_log::push_log_string(log_string, is_exist, "isexist", true);								// ??????????
+		server_log::push_log_string(log_string, "quitteam", "logname");
+		server_log::push_log_string(log_string, creater_role_guid.server_64, "createrroleguid");
+		server_log::push_log_string(log_string, cur_member_num, "curmembernum");
+		server_log::push_log_string(log_string, team_aim, "teamaim");
+		server_log::push_log_string(log_string, joiner_role_guid.server_64, "joinerroleguid");
+		server_log::push_log_string(log_string, is_exist, "isexist", true);
 
 		log_string += "}}";
 
@@ -3491,13 +3245,13 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_CHAT_CHANNEL);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "chatchannel", "logname");								//????????
-		server_log::push_log_string(log_string, channel_id, "channelid");								// ???ID
-		server_log::push_log_string(log_string, chat_content, "chatcontent");							// ????????
-		server_log::push_log_string(log_string, sender_guid.server_64, "senderguid");					// ??????GUID
-		server_log::push_log_string(log_string, receiver_guid.server_64, "receiverguid");				// ???????GUID
-		server_log::push_log_string(log_string, voice_id, "voiceid");									// ??????id
-		server_log::push_log_string(log_string, voice_time, "voicetime", true);								// ?????????
+		server_log::push_log_string(log_string, "chatchannel", "logname");
+		server_log::push_log_string(log_string, channel_id, "channelid");
+		server_log::push_log_string(log_string, chat_content, "chatcontent");
+		server_log::push_log_string(log_string, sender_guid.server_64, "senderguid");
+		server_log::push_log_string(log_string, receiver_guid.server_64, "receiverguid");
+		server_log::push_log_string(log_string, voice_id, "voiceid");
+		server_log::push_log_string(log_string, voice_time, "voicetime", true);
 
 		log_string += "}}";
 
@@ -3518,30 +3272,30 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_GROW_UP);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "growup", "logname");											//?????
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "C5050", "stepnumid");											//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");						//???id
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");		//??????????
+		server_log::push_log_string(log_string, "growup", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "C5050", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, role_info.data_i64_ary[e_role_i64_info_gs_value], "combatpower");
 		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");				//Vip???
-		server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		server_log::push_log_string(log_string, grow_up_id, "growupid");										//???????id
-		server_log::push_log_string(log_string, grow_up_cost, "growupcost");									//????
-		server_log::push_log_string(log_string, 1, "buynum");													//????????
-		server_log::push_log_string(log_string, third_info.param7, "rechargechannel");							//???????id
-		server_log::push_log_string(log_string, third_info.param6, "ip");										//??????��????��??ip
-		server_log::push_log_string(log_string, server_invaild_string, "os_version");							//???��
-		server_log::push_log_string(log_string, third_info.param8, "model");									//??????
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_vip_level], "vip");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, grow_up_id, "growupid");
+		server_log::push_log_string(log_string, grow_up_cost, "growupcost");
+		server_log::push_log_string(log_string, 1, "buynum");
+		server_log::push_log_string(log_string, third_info.param7, "rechargechannel");
+		server_log::push_log_string(log_string, third_info.param6, "ip");
+		server_log::push_log_string(log_string, server_invaild_string, "os_version");
+		server_log::push_log_string(log_string, third_info.param8, "model");
 		server_log::push_log_string(log_string, third_info.param9, "idfa"); 									//idfa
 		server_log::push_log_string(log_string, third_info.param10, "imei"); 									//imei
 		server_log::push_log_string(log_string, third_info.param11, "androidId"); 								//androidId
@@ -3604,10 +3358,10 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_GRADE_UP);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "gradeup", "logname");									//????????
-		server_log::push_log_string(log_string, role_info.account, "userid");							//???
-		server_log::push_log_string(log_string, old_class, "oldclass");								//?????
-		server_log::push_log_string(log_string, new_class, "newclass", true);								//??????	
+		server_log::push_log_string(log_string, "gradeup", "logname");
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, old_class, "oldclass");
+		server_log::push_log_string(log_string, new_class, "newclass", true);
 
 		log_string += "}}";
 
@@ -3628,23 +3382,23 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_GETMEDITATION);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "meditation", "logname");									//????????
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "C0600", "stepnumid");											//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????�Z?��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
-		server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		server_log::push_log_string(log_string, meditation_type, "meditationtype");							//??????????
-		server_log::push_log_string(log_string, meditation_time, "meditationtime", true);							//??????(????)
+		server_log::push_log_string(log_string, "meditation", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "C0600", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, "0", "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, meditation_type, "meditationtype");
+		server_log::push_log_string(log_string, meditation_time, "meditationtime", true);
 
 		log_string += "}}";
 
@@ -3665,23 +3419,23 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_GETWELFARE);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "succinctequip", "logname");									//????????
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "C0500", "stepnumid");											//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????�Z?��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
-		server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		server_log::push_log_string(log_string, in_template_type, "intemplatetype");							//??????????????welfare???��???
-		server_log::push_log_string(log_string, in_template_index, "intemplateindex", true);							//?????????????????welfare???��???
+		server_log::push_log_string(log_string, "succinctequip", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "C0500", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, "0", "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, in_template_type, "intemplatetype");
+		server_log::push_log_string(log_string, in_template_index, "intemplateindex", true);
 
 		log_string += "}}";
 		
@@ -3701,31 +3455,31 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_MAP_TRANSFER);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "maptransfer", "logname");											//????????
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "C1000", "stepnumid");											//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");			//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
-		server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		server_log::push_log_string(log_string, desc_type, "desctype");											//????????
-		server_log::push_log_string(log_string, desc_map_template_id, "mapid");									//?????
-		server_log::push_log_string(log_string, line_id, "lineid");												//??id
-		server_log::push_log_string(log_string, map_pos.unit_location.x, "mapx");								//???x
-		server_log::push_log_string(log_string, map_pos.unit_location.y, "mapy");								//???y
-		server_log::push_log_string(log_string, map_pos.unit_location.z, "mapz");								//???z
-		server_log::push_log_string(log_string, map_guid.server_64, "mapguid");									//???guid
-		server_log::push_log_string(log_string, war_index, "warindex");											//???��??
-		server_log::push_log_string(log_string, force, "force");												//???
-		server_log::push_log_string(log_string, dest_group_id, "destgroupid", true);							//????????
+		server_log::push_log_string(log_string, "maptransfer", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "C1000", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, "0", "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, desc_type, "desctype");
+		server_log::push_log_string(log_string, desc_map_template_id, "mapid");
+		server_log::push_log_string(log_string, line_id, "lineid");
+		server_log::push_log_string(log_string, map_pos.unit_location.x, "mapx");
+		server_log::push_log_string(log_string, map_pos.unit_location.y, "mapy");
+		server_log::push_log_string(log_string, map_pos.unit_location.z, "mapz");
+		server_log::push_log_string(log_string, map_guid.server_64, "mapguid");
+		server_log::push_log_string(log_string, war_index, "warindex");
+		server_log::push_log_string(log_string, force, "force");
+		server_log::push_log_string(log_string, dest_group_id, "destgroupid", true);
 
 		log_string += "}}";
 
@@ -3739,44 +3493,19 @@ namespace faith
 		int64 cur_time_int = utility::get_tick_count();
 		xstring cur_time = time_helper::get_cur_time();
 
-		//???
 		//xstring log_string = "{";
 		//server_log::push_hadooplog_string(log_string, TABLE_NAME_MAP_CHANGE);
 
 		//log_string += "{";
-		//server_log::push_log_string(log_string,		role_info.account,							"userid");			//???
-		//server_log::push_log_string(log_string,		third_info.param5,							"deviceid");		//?��??
-		//server_log::push_log_string(log_string,		cur_time_int,								"msec");			//????
 		//server_log::push_log_string(log_string,		third_info.param1,							"appid");			//appid
-		//server_log::push_log_string(log_string,		"map_change",								"logname");			//????????
-		//server_log::push_log_string(log_string,		third_info.param2,							"version");			//?????��
-		//server_log::push_log_string(log_string,		"C1000",									"stepnumid");		//?????
-		//server_log::push_log_string(log_string,		server_log_normversion,						"normversion");		//??????????? ???��?? 
-		//server_log::push_log_string(log_string,		game_server,								"serverid");		//??????ID
-		//server_log::push_log_string(log_string,		third_info.param7,							"gamechannel");		//???????ID
-		//server_log::push_log_string(log_string,		third_info.param4,							"adchannel");		//???????ID
-		//server_log::push_log_string(log_string,		role_info.role_guid.server_64,				"roleid");			//???ID
-		//server_log::push_log_string(log_string,		role_info.data_ary[e_role_info_exp_level],	"rolelevel");		//??????
-		//server_log::push_log_string(log_string,		"0",										"combatpower");		//??????????????
 		//server_log::push_log_string(log_string,   role_info.data_ary[e_role_info_template_id], "career");
-		//server_log::push_log_string(log_string,		cur_time,									"dtime");			//???
 
-		////?????????
-		//server_log::push_log_string(log_string,		map_id,										"maptemplateid");	//????id
-		//server_log::push_log_string(log_string,		map_type,									"maptype");			//????????
-		//server_log::push_log_string(log_string,		map_sub_type,								"mapsubtype");		//??????????
-		//server_log::push_log_string(log_string,		change_type,								"changetype");		//??????? 1:???? 0:???
-		//server_log::push_log_string(log_string,		stage_type,									"stagetype");		//???????
 
-		////??��
-		//server_log::push_log_string(log_string,		server_invaild_string,						"os_version");		//???��
-		//server_log::push_log_string(log_string,		third_info.param8,							"model");			//??????
 		//server_log::push_log_string(log_string,		third_info.param9,							"idfa"); 			//idfa
 		//server_log::push_log_string(log_string,		third_info.param10,							"imei"); 			//imei
 		//server_log::push_log_string(log_string,		third_info.param11,							"androidId"); 		//androidId
 		//server_log::push_log_string(log_string,		third_info.param12,							"mac"); 			//mac
 		//server_log::push_log_string(log_string,		third_info.param13,							"sn"); 				//sn
-		//server_log::push_log_string(log_string,		login_type,									"logintype");		//???????
 		//server_log::push_log_string(log_string,		third_info.param6,							"ip", true);		//ip
 
 		//log_string += "}}";
@@ -3846,29 +3575,29 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_TIME_LIMIT_ACTIVITY);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "timelimitactivity", "logname");								//????????
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
+		server_log::push_log_string(log_string, "timelimitactivity", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
 
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");						//???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
-		server_log::push_log_string(log_string, cur_time, "dtime");												//???
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, "0", "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
 
-		server_log::push_log_string(log_string, activity_id, "activityid");										//?????id
-		server_log::push_log_string(log_string, activity_template_id, "activitytemplateid");					//???????id
-		server_log::push_log_string(log_string, activity_cycle, "activitycycle");								//??????
-		server_log::push_log_string(log_string, activity_day, "activityday");									//?????????
-		server_log::push_log_string(log_string, activity_index, "activityindex");								//???????????
-		server_log::push_log_string(log_string, money_type, "moneytype");										//??????????
-		server_log::push_log_string(log_string, money_value, "moneyvalue");										//??????????
+		server_log::push_log_string(log_string, activity_id, "activityid");
+		server_log::push_log_string(log_string, activity_template_id, "activitytemplateid");
+		server_log::push_log_string(log_string, activity_cycle, "activitycycle");
+		server_log::push_log_string(log_string, activity_day, "activityday");
+		server_log::push_log_string(log_string, activity_index, "activityindex");
+		server_log::push_log_string(log_string, money_type, "moneytype");
+		server_log::push_log_string(log_string, money_value, "moneyvalue");
 		if (item_array.size() > 0)
 		{
 			int32 num = 1;
@@ -3878,8 +3607,8 @@ namespace faith
 				std::string itemcount = "itemcount";
 				itemid += std::to_string(num);
 				itemcount += std::to_string(num);
-				server_log::push_log_string(log_string, item_array[i], itemid);									//??????id
-				server_log::push_log_string(log_string, item_array[i + 1], itemcount);							//??????????
+				server_log::push_log_string(log_string, item_array[i], itemid);
+				server_log::push_log_string(log_string, item_array[i + 1], itemcount);
 				num++;
 			}
 		}
@@ -3912,15 +3641,15 @@ namespace faith
 
 		log_string += "{";
 		
-		server_log::push_log_string(log_string, "ranklist", "logname");												//????????
+		server_log::push_log_string(log_string, "ranklist", "logname");
 		int32 role_num = 0;
 
 		server_log::push_log_string(log_string, rank_list_type);
 		for (ranking_list_ite ite = rank_list->begin(); ite != rank_list->end(); ++ite,++role_num)
 		{
-			server_log::push_log_string(log_string, ite->role_guid.server_64, "roleid");									//???guid
-			server_log::push_log_string(log_string, ite->role_name, "rolename");								//???????
-			server_log::push_log_string(log_string, ite->ranking_value, "rankingvalue", true);					//??????��????��??????
+			server_log::push_log_string(log_string, ite->role_guid.server_64, "roleid");
+			server_log::push_log_string(log_string, ite->role_name, "rolename");
+			server_log::push_log_string(log_string, ite->ranking_value, "rankingvalue", true);
 			if (role_num >= 100)
 			{
 				break;
@@ -3932,7 +3661,6 @@ namespace faith
 		//PROJECT_RECORD_LOG(g_rank_list_logger, log_string);
 		int32 ranking_index = 1;
 		// send log to db
-		//???��??sql?????????????????��??????????????????
 		std::string table_name = TABLE_NAME_RANK_LIST + "_";
 		table_name = table_name + init_unit::change_i32_to_string(rank_list_type);
 		for (ranking_list_ite ite = rank_list->begin(); ite != rank_list->end(); ++ite, ++ranking_index)
@@ -4041,26 +3769,26 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_AUCTIONBID);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???	
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");									//?��??	
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "auctionbidlog", "logname");									//????????
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "C1020", "stepnumid");										//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");							//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, buyer_guid.server_64, "buyerid");	                            //???ID
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
-		server_log::push_log_string(log_string, cur_time, "dtime");					                            //???	
-		server_log::push_log_string(log_string, item_template_id, "itemid");					                //???id	
-		server_log::push_log_string(log_string, money_type, "moneytype");                                       //???????
-		server_log::push_log_string(log_string, money_value, "moneyvalue");                                     //????????????
-		server_log::push_log_string(log_string, data_num, "datanum");                                           //??????????
-		server_log::push_log_string(log_string, 0, "systemdeduction", true);		                            //????????????
+		server_log::push_log_string(log_string, "auctionbidlog", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "C1020", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, buyer_guid.server_64, "buyerid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, "0", "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, item_template_id, "itemid");
+		server_log::push_log_string(log_string, money_type, "moneytype");
+		server_log::push_log_string(log_string, money_value, "moneyvalue");
+		server_log::push_log_string(log_string, data_num, "datanum");
+		server_log::push_log_string(log_string, 0, "systemdeduction", true);
 		log_string += "}}";
 
 		//PROJECT_RECORD_LOG(g_auctionbid_logger, log_string);
@@ -4079,25 +3807,25 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_AUTION_BUY);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, role_info.account, "userid");									//???
-		server_log::push_log_string(log_string, third_info.param5, "deviceid");								//?��??
-		server_log::push_log_string(log_string, cur_time_int, "msec");											//????
+		server_log::push_log_string(log_string, role_info.account, "userid");
+		server_log::push_log_string(log_string, third_info.param5, "deviceid");
+		server_log::push_log_string(log_string, cur_time_int, "msec");
 		server_log::push_log_string(log_string, third_info.param1, "appid");									//appid
-		server_log::push_log_string(log_string, "auctionbuy", "logname");										//?????
-		server_log::push_log_string(log_string, third_info.param2, "version");									//?????��
-		server_log::push_log_string(log_string, "C1000", "stepnumid");											//?????
-		server_log::push_log_string(log_string, server_log_normversion, "normversion");						//??????????? ???��?? 
-		server_log::push_log_string(log_string, game_server, "serverid");										//??????ID
-		server_log::push_log_string(log_string, third_info.param7, "gamechannel");								//???????ID
-		server_log::push_log_string(log_string, third_info.param4, "adchannel");								//???????ID
-		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");		//???id
-		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");		//??????
-		server_log::push_log_string(log_string, "0", "combatpower");											//??????????????
-		server_log::push_log_string(log_string, cur_time, "dtime");												//???
-		server_log::push_log_string(log_string, item_id, "itemid");												//???????id
-		server_log::push_log_string(log_string, item_count, "itemcount");											//????
-		server_log::push_log_string(log_string, money_type, "moneytype");											//????????
-		server_log::push_log_string(log_string, money_count, "moneycount", true);										//????????
+		server_log::push_log_string(log_string, "auctionbuy", "logname");
+		server_log::push_log_string(log_string, third_info.param2, "version");
+		server_log::push_log_string(log_string, "C1000", "stepnumid");
+		server_log::push_log_string(log_string, server_log_normversion, "normversion");
+		server_log::push_log_string(log_string, game_server, "serverid");
+		server_log::push_log_string(log_string, third_info.param7, "gamechannel");
+		server_log::push_log_string(log_string, third_info.param4, "adchannel");
+		server_log::push_log_string(log_string, role_info.role_guid.server_64, "roleid");
+		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_exp_level], "rolelevel");
+		server_log::push_log_string(log_string, "0", "combatpower");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, item_id, "itemid");
+		server_log::push_log_string(log_string, item_count, "itemcount");
+		server_log::push_log_string(log_string, money_type, "moneytype");
+		server_log::push_log_string(log_string, money_count, "moneycount", true);
 
 		log_string += "}}";
 
@@ -4114,12 +3842,12 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_AUCTION_SELL);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "auctionsell", "logname");											//?????
-		server_log::push_log_string(log_string, item_id, "itemid");												//???????id
-		server_log::push_log_string(log_string, item_num, "itemnum");												//????
-		server_log::push_log_string(log_string, cur_time, "dtime");												//??????
-		server_log::push_log_string(log_string, money_type, "moneytype");											//????????
-		server_log::push_log_string(log_string, item_price, "itemprice", true);											//?????
+		server_log::push_log_string(log_string, "auctionsell", "logname");
+		server_log::push_log_string(log_string, item_id, "itemid");
+		server_log::push_log_string(log_string, item_num, "itemnum");
+		server_log::push_log_string(log_string, cur_time, "dtime");
+		server_log::push_log_string(log_string, money_type, "moneytype");
+		server_log::push_log_string(log_string, item_price, "itemprice", true);
 
 		log_string += "}}";
 
@@ -4136,12 +3864,12 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_LEGION_AUCTION);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "legionauction", "logname");										//?????
-		server_log::push_log_string(log_string, item_guid, "itemguid");											//???????guid
-		server_log::push_log_string(log_string, item_num, "itemnum");												//????
-		server_log::push_log_string(log_string, money_type, "moneytype");											//????????
-		server_log::push_log_string(log_string, item_price, "itemprice");											//??????
-		server_log::push_log_string(log_string, cur_time, "dtime", true);												//???
+		server_log::push_log_string(log_string, "legionauction", "logname");
+		server_log::push_log_string(log_string, item_guid, "itemguid");
+		server_log::push_log_string(log_string, item_num, "itemnum");
+		server_log::push_log_string(log_string, money_type, "moneytype");
+		server_log::push_log_string(log_string, item_price, "itemprice");
+		server_log::push_log_string(log_string, cur_time, "dtime", true);
 
 		log_string += "}}";
 		
@@ -4158,12 +3886,12 @@ namespace faith
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_WORLD_AUCTION);
 
 		log_string += "{";
-		server_log::push_log_string(log_string, "worldauction", "logname");										//?????
-		server_log::push_log_string(log_string, item_guid, "itemguid");											//???????guid
-		server_log::push_log_string(log_string, item_num, "itemnum");												//????
-		server_log::push_log_string(log_string, money_type, "moneytype");											//????????
-		server_log::push_log_string(log_string, item_price, "itemprice");											//??????
-		server_log::push_log_string(log_string, cur_time, "dtime", true);												//???
+		server_log::push_log_string(log_string, "worldauction", "logname");
+		server_log::push_log_string(log_string, item_guid, "itemguid");
+		server_log::push_log_string(log_string, item_num, "itemnum");
+		server_log::push_log_string(log_string, money_type, "moneytype");
+		server_log::push_log_string(log_string, item_price, "itemprice");
+		server_log::push_log_string(log_string, cur_time, "dtime", true);
 		
 		log_string += "}}";
 
@@ -4459,7 +4187,6 @@ namespace faith
 		json["role_power"] = (role_info.data_i64_ary[e_role_i64_info_gs_value]) / 10;
 		json["role_vip"] = role_info.data_ary[e_role_info_vip_level];
 
-		//??????money_info????????????��????????
 		json["total_recharge_jewel"] = logic_info.data_ary[e_role_logic_info_jewel_total_recharge];
 		json["total_consume_jewel"] = logic_info.data_ary[e_role_logic_info_jewel_total_consume];
 
@@ -4508,7 +4235,7 @@ namespace faith
 			return;
 		}
 
-		int32 cost_item_info[10] = {0};//?????????5??
+		int32 cost_item_info[10] = {0};
 		if (activity_type == e_time_limit_activity_type_item_exchange || activity_type == e_time_limit_activity_type_treasure_sprite || 
 			activity_type == e_time_limit_activity_type_treasure_element || activity_type == e_time_limit_activity_type_treasure ||
 			activity_type == e_time_limit_activity_type_treasure_royal1 || activity_type == e_time_limit_activity_type_treasure_royal2 ||
@@ -4639,44 +4366,41 @@ namespace faith
 		int64 cur_time_int = utility::get_tick_count();
 		xstring cur_time = time_helper::get_cur_time();
 
-		//???
 		xstring log_string = "{";
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_CROSS_SERVER_HARRY);
 
 		log_string += "{";
-		server_log::push_log_string(log_string,		role_info.account,								"userid");			//???
-		server_log::push_log_string(log_string,		third_info.param5,								"deviceid");		//?��??
-		server_log::push_log_string(log_string,		cur_time_int,									"msec");			//????
+		server_log::push_log_string(log_string,		role_info.account,								"userid");
+		server_log::push_log_string(log_string,		third_info.param5,								"deviceid");
+		server_log::push_log_string(log_string,		cur_time_int,									"msec");
 		server_log::push_log_string(log_string,		third_info.param1,								"appid");			//appid
-		server_log::push_log_string(log_string,		"map_change",									"logname");			//????????
-		server_log::push_log_string(log_string,		third_info.param2,								"version");			//?????��
-		server_log::push_log_string(log_string,		"C1000",										"stepnumid");		//?????
-		server_log::push_log_string(log_string,		server_log_normversion,							"normversion");		//??????????? ???��?? 
-		server_log::push_log_string(log_string,		game_server,									"serverid");		//??????ID
-		server_log::push_log_string(log_string,		third_info.param7,								"gamechannel");		//???????ID
-		server_log::push_log_string(log_string,		third_info.param4,								"adchannel");		//???????ID
-		server_log::push_log_string(log_string,		role_info.role_guid.server_64,					"roleid");			//???ID
-		server_log::push_log_string(log_string,		role_info.data_ary[e_role_info_exp_level],		"rolelevel");		//??????
-		server_log::push_log_string(log_string,		"0",											"combatpower");		//??????????????
+		server_log::push_log_string(log_string,		"map_change",									"logname");
+		server_log::push_log_string(log_string,		third_info.param2,								"version");
+		server_log::push_log_string(log_string,		"C1000",										"stepnumid");
+		server_log::push_log_string(log_string,		server_log_normversion,							"normversion");
+		server_log::push_log_string(log_string,		game_server,									"serverid");
+		server_log::push_log_string(log_string,		third_info.param7,								"gamechannel");
+		server_log::push_log_string(log_string,		third_info.param4,								"adchannel");
+		server_log::push_log_string(log_string,		role_info.role_guid.server_64,					"roleid");
+		server_log::push_log_string(log_string,		role_info.data_ary[e_role_info_exp_level],		"rolelevel");
+		server_log::push_log_string(log_string,		"0",											"combatpower");
 		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		server_log::push_log_string(log_string,		cur_time,										"dtime");			//???
+		server_log::push_log_string(log_string,		cur_time,										"dtime");
 
-		//?????????
-		server_log::push_log_string(log_string,		oper_type,										"opertype");			//????????
-		server_log::push_log_string(log_string,		harry_type,										"harrytype");			//???????
-		server_log::push_log_string(log_string,		harry_server_id,								"harryserverid");		//????????id
-		server_log::push_log_string(log_string,		normal_harry_count,								"normalharrycount");	//?????????
-		server_log::push_log_string(log_string,		sepcail_harry_count,							"sepcailharrycount");	//?????????
+		server_log::push_log_string(log_string,		oper_type,										"opertype");
+		server_log::push_log_string(log_string,		harry_type,										"harrytype");
+		server_log::push_log_string(log_string,		harry_server_id,								"harryserverid");
+		server_log::push_log_string(log_string,		normal_harry_count,								"normalharrycount");
+		server_log::push_log_string(log_string,		sepcail_harry_count,							"sepcailharrycount");
 
-		//??��
-		server_log::push_log_string(log_string,		server_invaild_string,							"os_version");		//???��
-		server_log::push_log_string(log_string,		third_info.param8,								"model");			//??????
+		server_log::push_log_string(log_string,		server_invaild_string,							"os_version");
+		server_log::push_log_string(log_string,		third_info.param8,								"model");
 		server_log::push_log_string(log_string,		third_info.param9,								"idfa"); 			//idfa
 		server_log::push_log_string(log_string,		third_info.param10,								"imei"); 			//imei
 		server_log::push_log_string(log_string,		third_info.param11,								"androidId"); 		//androidId
 		server_log::push_log_string(log_string,		third_info.param12,								"mac"); 			//mac
 		server_log::push_log_string(log_string,		third_info.param13,								"sn"); 				//sn
-		server_log::push_log_string(log_string,		login_type,										"logintype");		//???????
+		server_log::push_log_string(log_string,		login_type,										"logintype");
 		server_log::push_log_string(log_string,		third_info.param6,								"ip", true);		//ip
 
 		log_string += "}}";
@@ -4738,33 +4462,31 @@ namespace faith
 		int64 cur_time_int = utility::get_tick_count();
 		xstring cur_time = time_helper::get_cur_time();
 
-		//???
 		xstring log_string = "{";
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_OCCUPATION_PK);
 
 		log_string += "{";
-		server_log::push_log_string(log_string,		role_info.account,								"userid");			//???
-		server_log::push_log_string(log_string,		third_info.param5,								"deviceid");		//?��??
-		server_log::push_log_string(log_string,		cur_time_int,									"msec");			//????
+		server_log::push_log_string(log_string,		role_info.account,								"userid");
+		server_log::push_log_string(log_string,		third_info.param5,								"deviceid");
+		server_log::push_log_string(log_string,		cur_time_int,									"msec");
 		server_log::push_log_string(log_string,		third_info.param1,								"appid");			//appid
-		server_log::push_log_string(log_string,		"map_change",									"logname");			//????????
-		server_log::push_log_string(log_string,		third_info.param2,								"version");			//?????��
-		server_log::push_log_string(log_string,		"C1000",										"stepnumid");		//?????
-		server_log::push_log_string(log_string,		server_log_normversion,							"normversion");		//??????????? ???��?? 
-		server_log::push_log_string(log_string,		game_server,									"serverid");		//??????ID
-		server_log::push_log_string(log_string,		third_info.param7,								"gamechannel");		//???????ID
-		server_log::push_log_string(log_string,		third_info.param4,								"adchannel");		//???????ID
-		server_log::push_log_string(log_string,		role_info.role_guid.server_64,					"roleid");			//???ID
-		server_log::push_log_string(log_string,		role_info.data_ary[e_role_info_exp_level],		"rolelevel");		//??????
-		server_log::push_log_string(log_string,		"0",											"combatpower");		//??????????????
+		server_log::push_log_string(log_string,		"map_change",									"logname");
+		server_log::push_log_string(log_string,		third_info.param2,								"version");
+		server_log::push_log_string(log_string,		"C1000",										"stepnumid");
+		server_log::push_log_string(log_string,		server_log_normversion,							"normversion");
+		server_log::push_log_string(log_string,		game_server,									"serverid");
+		server_log::push_log_string(log_string,		third_info.param7,								"gamechannel");
+		server_log::push_log_string(log_string,		third_info.param4,								"adchannel");
+		server_log::push_log_string(log_string,		role_info.role_guid.server_64,					"roleid");
+		server_log::push_log_string(log_string,		role_info.data_ary[e_role_info_exp_level],		"rolelevel");
+		server_log::push_log_string(log_string,		"0",											"combatpower");
 		server_log::push_log_string(log_string, role_info.data_ary[e_role_info_template_id], "career");
-		server_log::push_log_string(log_string,		cur_time,										"dtime");			//???
+		server_log::push_log_string(log_string,		cur_time,										"dtime");
 
-		//?????????
-		server_log::push_log_string(log_string,		class_type,										"classtype");		//??????
-		server_log::push_log_string(log_string,		state_value,									"statevalue");		//???????
-		server_log::push_log_string(log_string,		oppo_guid,										"oppoguid");		//????id
-		server_log::push_log_string(log_string,		pk_result,										"pkresult");		//???????????????????
+		server_log::push_log_string(log_string,		class_type,										"classtype");
+		server_log::push_log_string(log_string,		state_value,									"statevalue");
+		server_log::push_log_string(log_string,		oppo_guid,										"oppoguid");
+		server_log::push_log_string(log_string,		pk_result,										"pkresult");
 
 		for (int32 i = 0; i < item_list.size(); i++)
 		{
@@ -4772,19 +4494,18 @@ namespace faith
 			std::string itemnum = "itemnum";
 			itemid  += std::to_string(i+1);
 			itemnum += std::to_string(i+1);
-			server_log::push_log_string(log_string, item_list[i].m_item_id,	itemid);		//???guid
-			server_log::push_log_string(log_string, item_list[i].m_item_num, itemnum);		//???????
+			server_log::push_log_string(log_string, item_list[i].m_item_id,	itemid);
+			server_log::push_log_string(log_string, item_list[i].m_item_num, itemnum);
 		}
 
-		//??��
-		server_log::push_log_string(log_string,		server_invaild_string,							"os_version");		//???��
-		server_log::push_log_string(log_string,		third_info.param8,								"model");			//??????
+		server_log::push_log_string(log_string,		server_invaild_string,							"os_version");
+		server_log::push_log_string(log_string,		third_info.param8,								"model");
 		server_log::push_log_string(log_string,		third_info.param9,								"idfa"); 			//idfa
 		server_log::push_log_string(log_string,		third_info.param10,								"imei"); 			//imei
 		server_log::push_log_string(log_string,		third_info.param11,								"androidId"); 		//androidId
 		server_log::push_log_string(log_string,		third_info.param12,								"mac"); 			//mac
 		server_log::push_log_string(log_string,		third_info.param13,								"sn"); 				//sn
-		server_log::push_log_string(log_string,		login_type,										"logintype");		//???????
+		server_log::push_log_string(log_string,		login_type,										"logintype");
 		server_log::push_log_string(log_string,		third_info.param6,								"ip", true);		//ip
 
 		log_string += "}}";
@@ -4880,34 +4601,32 @@ namespace faith
 		int64 cur_time_int = utility::get_tick_count();
 		xstring cur_time = time_helper::get_cur_time();
 
-		//???
 		xstring log_string = "{";
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_OCCUPATION_PK);
 
 		log_string += "{";
-		server_log::push_log_string(log_string,		server_invaild_string,		"userid");			//???
-		server_log::push_log_string(log_string,		server_invaild_string,		"deviceid");		//?��??
-		server_log::push_log_string(log_string,		cur_time_int,				"msec");			//????
+		server_log::push_log_string(log_string,		server_invaild_string,		"userid");
+		server_log::push_log_string(log_string,		server_invaild_string,		"deviceid");
+		server_log::push_log_string(log_string,		cur_time_int,				"msec");
 		server_log::push_log_string(log_string,		server_invaild_string,		"appid");			//appid
-		server_log::push_log_string(log_string,		"map_change",				"logname");			//????????
-		server_log::push_log_string(log_string,		server_invaild_string,		"version");			//?????��
-		server_log::push_log_string(log_string,		"C1000",					"stepnumid");		//?????
-		server_log::push_log_string(log_string,		server_log_normversion,		"normversion");		//??????????? ???��?? 
-		server_log::push_log_string(log_string,		server_invaild_string,		"serverid");		//??????ID
-		server_log::push_log_string(log_string,		server_invaild_string,		"gamechannel");		//???????ID
-		server_log::push_log_string(log_string,		server_invaild_string,		"adchannel");		//???????ID
-		server_log::push_log_string(log_string,		player_guid.server_64,		"roleid");			//???ID
-		server_log::push_log_string(log_string,		server_invaild_string,		"rolelevel");		//??????
-		server_log::push_log_string(log_string,		"0",						"combatpower");		//??????????????
+		server_log::push_log_string(log_string,		"map_change",				"logname");
+		server_log::push_log_string(log_string,		server_invaild_string,		"version");
+		server_log::push_log_string(log_string,		"C1000",					"stepnumid");
+		server_log::push_log_string(log_string,		server_log_normversion,		"normversion");
+		server_log::push_log_string(log_string,		server_invaild_string,		"serverid");
+		server_log::push_log_string(log_string,		server_invaild_string,		"gamechannel");
+		server_log::push_log_string(log_string,		server_invaild_string,		"adchannel");
+		server_log::push_log_string(log_string,		player_guid.server_64,		"roleid");
+		server_log::push_log_string(log_string,		server_invaild_string,		"rolelevel");
+		server_log::push_log_string(log_string,		"0",						"combatpower");
 	
-		server_log::push_log_string(log_string,		cur_time,					"dtime");			//???
+		server_log::push_log_string(log_string,		cur_time,					"dtime");
 
 
-		//?????????
-		server_log::push_log_string(log_string,		class_type,					"classtype");		//??????
-		server_log::push_log_string(log_string,		state_value,				"statevalue");		//???????
-		server_log::push_log_string(log_string,		oppo_guid,					"oppoguid");		//????id
-		server_log::push_log_string(log_string,		pk_result,					"pkresult");		//???????????????????
+		server_log::push_log_string(log_string,		class_type,					"classtype");
+		server_log::push_log_string(log_string,		state_value,				"statevalue");
+		server_log::push_log_string(log_string,		oppo_guid,					"oppoguid");
+		server_log::push_log_string(log_string,		pk_result,					"pkresult");
 
 		for (int32 i = 0; i < item_list.size(); i++)
 		{
@@ -4915,19 +4634,18 @@ namespace faith
 			std::string itemnum = "itemnum";
 			itemid  += std::to_string(i + 1);
 			itemnum += std::to_string(i + 1);
-			server_log::push_log_string(log_string, item_list[i].m_item_id, itemid);		//???guid
-			server_log::push_log_string(log_string, item_list[i].m_item_num, itemnum);			//???????
+			server_log::push_log_string(log_string, item_list[i].m_item_id, itemid);
+			server_log::push_log_string(log_string, item_list[i].m_item_num, itemnum);
 		}
 		
-		//??��
-		server_log::push_log_string(log_string,		server_invaild_string,		"os_version");		//???��
-		server_log::push_log_string(log_string,		server_invaild_string,		"model");			//??????
+		server_log::push_log_string(log_string,		server_invaild_string,		"os_version");
+		server_log::push_log_string(log_string,		server_invaild_string,		"model");
 		server_log::push_log_string(log_string,		server_invaild_string,		"idfa"); 			//idfa
 		server_log::push_log_string(log_string,		server_invaild_string,		"imei"); 			//imei
 		server_log::push_log_string(log_string,		server_invaild_string,		"androidId"); 		//androidId
 		server_log::push_log_string(log_string,		server_invaild_string,		"mac"); 			//mac
 		server_log::push_log_string(log_string,		server_invaild_string,		"sn"); 				//sn
-		server_log::push_log_string(log_string,		server_invaild_string,		"logintype");		//???????
+		server_log::push_log_string(log_string,		server_invaild_string,		"logintype");
 		server_log::push_log_string(log_string,		server_invaild_string,		"ip", true);		//ip
 
 		log_string += "}";
@@ -5689,7 +5407,7 @@ namespace faith
 		xstring log_string = "{";
 		server_log::push_hadooplog_string(log_string, TABLE_NAME_RECONNECT_GAME);
 		log_string += "{";
-		server_log::push_log_string(log_string, str_server_type, "server_type");			//??????????
+		server_log::push_log_string(log_string, str_server_type, "server_type");
 		server_log::push_log_string(log_string, func_name, "function_name");
 		server_log::push_log_string(log_string, context_, "context");
 

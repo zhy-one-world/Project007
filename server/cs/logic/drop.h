@@ -17,13 +17,13 @@ namespace faith
 		static void merge_drop_bag(const std::vector<s_item_template_info>& drop_list_in, std::vector<s_item_template_info>& drop_list_out, int32 class_type = e_class_type_none, int32 exp_level = -1);
 		static int32 get_drop_id(int32 drop_template_id);
 
-		// Õâ¸öÊÇ×î·½±ãµÄÒ»¸ö½Ó¿Ú,»á·µ»Ø(item_id,item_num)Ôª×éÎªÁĞ±íµÄµôÂä×é
+		// è¿™ä¸ªæ˜¯æœ€æ–¹ä¾¿çš„ä¸€ä¸ªæ¥å£,ä¼šè¿”å›(item_id,item_num)å…ƒç»„ä¸ºåˆ—è¡¨çš„æ‰è½ç»„
 		static void gen_drop_list_by_drop_id(int32 drop_template_id, std::vector<s_item_template_info>& drop_list_with_num_ref, int32 class_type = e_class_type_none, int32 exp_level = -1);
-		// µÈ¼¶ÊÇ·ñ·ûºÏ
+		// ç­‰çº§æ˜¯å¦ç¬¦åˆ
 		static bool meet_level(DropTemplate* drop_ptr, int32 owner_level);
 
 	public:
-		static std::vector<s_item_template_info> mission_drop(MissionTemplate* mission_ptr, player* player_ptr);			// ÈÎÎñÎïÆ·½Ó¿Ú£¬ ·µ»ØµôÂäÎïÆ·ÁĞ±í
+		static std::vector<s_item_template_info> mission_drop(MissionTemplate* mission_ptr, player* player_ptr);			// ä»»åŠ¡ç‰©å“æ¥å£ï¼Œ è¿”å›æ‰è½ç‰©å“åˆ—è¡¨
 
     private:
         static bool rand_trigger(int32 drop_weight, int32 drop_denominator);

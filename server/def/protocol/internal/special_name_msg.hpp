@@ -23,13 +23,13 @@ namespace faith
 		e_msgindex_dp2cs_load_char_special_name = faith::e_msg_base_special_name,
 		e_msgindex_cs2dp_save_char_special_name,
 	};
-	// DP2CS ·ÖÅú·¢ËÍÍæ¼ÒµÄËùÓĞ³ÆºÅĞÅÏ¢
+	// DP2CS åˆ†æ‰¹å‘é€ç©å®¶çš„æ‰€æœ‰ç§°å·ä¿¡æ¯
 	struct dp2cs_load_char_special_name : public faith::packet_base
 	{
 		guid_64							role_guid;
 		int32								unit_array_index;
-		bool								is_over;		// ±êÊ¶Íæ¼Ò³ÆºÅÊÇ·ñ·¢ËÍÍê±Ï, true±íÊ¾·¢ËÍ³É¹¦Íê±Ï£¬false±íÊ¾Ã»ÓĞ·¢ËÍÍê£¬errroÍ¨¹ıÁíÒ»ÌõÏûÏ¢´«µİ
-		s_special_name_info					special_name_data;	//Íæ¼ÒµÄËùÓĞ³ÆºÅ
+		bool								is_over;		// æ ‡è¯†ç©å®¶ç§°å·æ˜¯å¦å‘é€å®Œæ¯•, trueè¡¨ç¤ºå‘é€æˆåŠŸå®Œæ¯•ï¼Œfalseè¡¨ç¤ºæ²¡æœ‰å‘é€å®Œï¼Œerrroé€šè¿‡å¦ä¸€æ¡æ¶ˆæ¯ä¼ é€’
+		s_special_name_info					special_name_data;	//ç©å®¶çš„æ‰€æœ‰ç§°å·
 
 		dp2cs_load_char_special_name()
 		{
@@ -43,7 +43,7 @@ namespace faith
 		guid_64							role_guid;
 		int32							unit_array_index;
 		int32							save_type_ex;
-		s_special_name_info				name_data;	//Íæ¼ÒµÄËùÓĞ³ÆºÅ
+		s_special_name_info				name_data;	//ç©å®¶çš„æ‰€æœ‰ç§°å·
 
 		cs2dp_save_char_special_name()
 		{

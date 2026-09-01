@@ -1,10 +1,10 @@
 /********************************************************************
-created: 2019Äê4ÔÂ24ÈÕ
+created: 2019å¹´4æœˆ24æ—¥
 file base: server_harry_mgr
 file ext: h
 author: zhangshuo
 
-purpose: ¿ç·şÂÓ¶á
+purpose: è·¨æœæ å¤º
 *********************************************************************/
 #ifndef _SERVER_HARRY_MGR_H_
 #define _SERVER_HARRY_MGR_H_
@@ -30,42 +30,42 @@ namespace faith
 		void									load_role_harry_info_from_db(const s_db_role_harry_info& harry_info);
 		bool                                    load_role_harry_record_by_db_lua(const char *data_ptr, int32 data_len);
 
-		void									refresh_day_harry_info();//ÈÕ³£ÇåÀí
-		void									clear_harry_info_all();//È«²¿ÇåÀí
+		void									refresh_day_harry_info();//æ—¥å¸¸æ¸…ç†
+		void									clear_harry_info_all();//å…¨éƒ¨æ¸…ç†
 
 		void									set_harry_data_info(int32 idex, int32 value);
 		int32									get_harry_data_info(int32 idex);
 
-		bool									is_special_collect();//ÊÇ·ñÎªÌØÊâ²É¼¯
+		bool									is_special_collect();//æ˜¯å¦ä¸ºç‰¹æ®Šé‡‡é›†
 		bool									can_harry_item();
-		bool									can_harry_item_with_server_money();//¸ù¾İ·±ÈÙ¶ÈÅĞ¶ÏÊÇ·ñÄÜ²É¼¯
+		bool									can_harry_item_with_server_money();//æ ¹æ®ç¹è£åº¦åˆ¤æ–­æ˜¯å¦èƒ½é‡‡é›†
 		bool									is_have_special_harry_item_count();
-		bool									is_have_item();//ÊÇ·ñÒÑ¾­ÓµÓĞ²É¼¯ÎïÆ·
-		void									clear_server_item_with_player_dead();//ÇåÀíµôÒÑÓµÓĞµÄÎïÆ·µ±Íæ¼ÒËÀÍö
+		bool									is_have_item();//æ˜¯å¦å·²ç»æ‹¥æœ‰é‡‡é›†ç‰©å“
+		void									clear_server_item_with_player_dead();//æ¸…ç†æ‰å·²æ‹¥æœ‰çš„ç‰©å“å½“ç©å®¶æ­»äº¡
 
-		bool									can_have_item_with_harry_type(int32 harry_type);//ÊÇ·ñÄÜ»ñµÃÎïÆ·Í¨¹ı¸ÃÂÓ¶áÀàĞÍ
-		bool									can_have_money_with_harry_type(int32 harry_Type);//ÊÇ·ñÄÜ»ñµÃ½ğÇ®Í¨¹ı¸ÃÂÓ¶áÀàĞÍ
+		bool									can_have_item_with_harry_type(int32 harry_type);//æ˜¯å¦èƒ½è·å¾—ç‰©å“é€šè¿‡è¯¥æ å¤ºç±»å‹
+		bool									can_have_money_with_harry_type(int32 harry_Type);//æ˜¯å¦èƒ½è·å¾—é‡‘é’±é€šè¿‡è¯¥æ å¤ºç±»å‹
 
-		void									finish_collect_set_item_server_id(int32 server_id, bool is_special_item);//²É¼¯³É¹¦£¬ÉèÖÃÒ»ÏÂ¶ÔÓ¦µÄ±ê¼Ç
+		void									finish_collect_set_item_server_id(int32 server_id, bool is_special_item);//é‡‡é›†æˆåŠŸï¼Œè®¾ç½®ä¸€ä¸‹å¯¹åº”çš„æ ‡è®°
 		void									add_defend_value(int32 value);
 		void									add_harry_value(int32 value);
-		void									add_defend_or_harry_value_with_ratio(float ratio, bool is_defend_value);//¸ù¾İ±¶ÂÊÔö¼ÓÂÓ¶áÖµ»òÕßÊØ»¤Öµ
+		void									add_defend_or_harry_value_with_ratio(float ratio, bool is_defend_value);//æ ¹æ®å€ç‡å¢åŠ æ å¤ºå€¼æˆ–è€…å®ˆæŠ¤å€¼
 
-		void									finish_gather_item();//²É¼¯³É¹¦ÒÔºóµ÷ÓÃµÄº¯Êı
+		void									finish_gather_item();//é‡‡é›†æˆåŠŸä»¥åè°ƒç”¨çš„å‡½æ•°
 
 		void									send_ws_change_server_money(bool is_special_harry, int32 change_value, int32 server_id);
 
-		void									give_server_item_to_npc();//Ìá½»ÎïÆ·¸øNPC
-		void									kill_player_with_harry(int32 other_player_index);//É±ÈË
+		void									give_server_item_to_npc();//æäº¤ç‰©å“ç»™NPC
+		void									kill_player_with_harry(int32 other_player_index);//æ€äºº
 
-		float									get_award_ratio_with_server_money(float server_money);//¸ù¾İ·±ÈÙ¶È»ñÈ¡ÊÕÒæ±ÈÀı
-		float									get_award_ratio_with_kill_player_level(float other_player_level);//¸ù¾İµÈ¼¶²î»ñÈ¡ÊÕÒæ±ÈÀı
+		float									get_award_ratio_with_server_money(float server_money);//æ ¹æ®ç¹è£åº¦è·å–æ”¶ç›Šæ¯”ä¾‹
+		float									get_award_ratio_with_kill_player_level(float other_player_level);//æ ¹æ®ç­‰çº§å·®è·å–æ”¶ç›Šæ¯”ä¾‹
 
 		void									get_award_item_and_money_with_harry_type(std::vector<int32>& item_arr, std::vector<int32>& money_arr, int32 harry_type);
 
 		void									send_role_harry_info_one(int32 harry_record_type);
 		void									send_role_harry_info_all();
-		void									sync_defend_data_ranking_data(); //Í¬²½¿ç·şÂÓ¶áÊØ»¤ÖµÅÅĞĞ°ñ
+		void									sync_defend_data_ranking_data(); //åŒæ­¥è·¨æœæ å¤ºå®ˆæŠ¤å€¼æ’è¡Œæ¦œ
 
 		void									add_cross_rob_must_daily_count();
 	private:

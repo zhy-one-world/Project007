@@ -566,7 +566,7 @@ namespace faith
 		if (m_ranking_table_index == -1)
 			return;
 
-		//¶¯Ì¬Ôö¼ÓÃ¿¸öÅÅĞĞ°ñ½á¹¹
+		//åŠ¨æ€å¢åŠ æ¯ä¸ªæ’è¡Œæ¦œç»“æ„
 		for (int32 i = 0; i < e_RankingIndex_max; ++i)
 		{
 			std::string tmp_table_name = TABLE_NAMES[m_ranking_table_index] + "_";
@@ -580,7 +580,7 @@ namespace faith
 			m_table_logs_map.insert(std::make_pair(tmp_table_name, logs));
 		}
 
-		//Ë¢ĞÂÊı¾İ¿âÖĞµÄ±í¸ñ
+		//åˆ·æ–°æ•°æ®åº“ä¸­çš„è¡¨æ ¼
 		sql_builder sql(db_manager::getInstance().get_db_link().log_db);
 		sql << _XTEXT("CALL sp_init_ranking_list_log_table(")
 			<< e_RankingIndex_max

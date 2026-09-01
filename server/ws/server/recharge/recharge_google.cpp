@@ -22,7 +22,7 @@ namespace faith
 		{
 			sdk_url = "https://accounts.google.com/o/oauth2/token";
 		}
-		// 自定义请求头
+		// 鑷畾涔夎姹傚ご
 		xstring url_para = xstring("grant_type=refresh_token");
 		url_para += "&client_id=1038072218930-05iud14ihnm7rbrd8pn2uivk51chgqou.apps.googleusercontent.com";
 		url_para += "&client_secret=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";
@@ -32,7 +32,7 @@ namespace faith
 		head_list.push_back("Content-Length:" + init_unit::change_i64_to_string(url_para.size()));
 
 
-		// 异步请求
+		// 寮傛璇锋眰
 		http_access_mgr::get_instance().async_request
 		(
 			recharge_info.role_guid.server_64,
@@ -103,7 +103,7 @@ namespace faith
 			sdk_url = "https://www.googleapis.com";
 		}
 		// /androidpublisher/v3/applications/com.ulugame.faithkr.google/purchases/products/104000103/tokens/niapkjjopmojcbnofhkpgppo.AO-J1Ox_3P58LQwjE2aXO5OHFYrk7icgpqBNmapeK_JNqgSeKY8j6_Xq02Bz1AY6BDoDEOuONGk9TRPrLcnmmI1WUFRDyNOpY0RI6tVQXfMOOjUq-ay7p5voyCaEBB16IZ-I1BDILSqZ?access_token=ya29.a0Adw1xeXeBte9xkMGm7eZnsFFY8NzCi0osJXQod5gR3x7gnniBRpoKMynYlb6DqttrE08eEyXTwZGrA3v3eldJ1AgZ8Z49Kh7jaXzECgROiZDnsZNHnthMPhLy-SzSgxz0tWYQTM4904wDszJ4_yuXO1DKqTpMrQlVtxBbA
-		// 自定义请求头
+		// 鑷畾涔夎姹傚ご
 		xstring url_para = "";
 		url_para += "/androidpublisher/v3/applications/" + recharge_info.packge_name;
 		url_para += "/purchases/products/" + init_unit::change_i64_to_string(recharge_info.goods_id);
@@ -113,7 +113,7 @@ namespace faith
 		head_list.push_back("application/x-www-form-urlencoded");
 
 
-		// 异步请求
+		// 寮傛璇锋眰
 		http_access_mgr::get_instance().async_request
 		(
 			recharge_info.role_guid.server_64,

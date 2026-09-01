@@ -2555,7 +2555,6 @@ namespace faith
 		//req.role_guid = role_guid;
 		//req.callback_info = callback_info;
 		//memcpy(req.sql_str, sql_str.c_str(), sql_str.length());
-		//
 		//ws_client::getInstance().send_to_dp(&req, sizeof(req));
 
 		script_mgr::get_instance().call_func("ws2dp_send", "send_gm_modify_role_info_lua", 0, false, "%l%s%d%l", role_guid.server_64, sql_str.c_str(), callback_info.listen_port, callback_info.handle_index);
@@ -2748,7 +2747,6 @@ namespace faith
 	//		send_order_fail(e_web_json_type_char_info_modify, "parameter error");
 	//		return;
 	//	}
-	//	
 	//	if (json_value["modify_data"].isNull() || json_value["modify_data"].isObject() == false)
 	//	{
 	//		send_order_fail(e_web_json_type_char_info_modify, "parameter error");

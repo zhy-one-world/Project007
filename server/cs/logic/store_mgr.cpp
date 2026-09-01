@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 created: 2016��7��4��13:56:28
 file base: store_mgr
 file ext: hpp
@@ -74,7 +74,7 @@ namespace faith
 			return false;
 		}
 		if (temp_store_ptr->FreshType == e_store_update_null)
-		{//��ˢ��
+		{
 			return false;
 		}
 		if (player_last_update < m_last_fresh_time[store_id])
@@ -89,41 +89,36 @@ namespace faith
 		time_t now_time;
 		time(&now_time);
 		tm temp_time = *localtime(&now_time);
-		temp_time.tm_year = y - 1900;    //������
-		temp_time.tm_mon = m - 1;     //������
-		temp_time.tm_mday = d;    //������
-		temp_time.tm_hour = h;    //����Сʱ
-		temp_time.tm_min = min;     //���÷���
-		temp_time.tm_sec = s;     //������	
+		temp_time.tm_year = y - 1900;
+		temp_time.tm_mon = m - 1;
+		temp_time.tm_mday = d;
+		temp_time.tm_hour = h;
+		temp_time.tm_min = min;
+		temp_time.tm_sec = s;
 		return mktime(&temp_time);
 	}
 
 	void store_mgr::init_all_store_time()
 	{
-		//�ǿ����ĵ���0:00:00
 		tm open_time;
 		time_t now_time;
 		time(&now_time);
 		open_time = *localtime(&now_time);
-		open_time.tm_sec = 0;  //�޸�ʱ��
+		open_time.tm_sec = 0;
 		open_time.tm_min = 0;
 		open_time.tm_hour = 0;
-		//��¼����ʱ��
 		m_server_opentime = mktime(&open_time);
 		m_timed_fresh_map.clear();
 		m_interval_fresh_map.clear();
 		m_last_fresh_time.clear();
-		//�����̵�ĳ�ʼˢ��ʱ��
 		for (int32 i = 0; i < e_store_type_max; ++i)
 		{
 			m_last_fresh_time.push_back(m_server_opentime);
 
-			//����,�Ƿ���Ҫ��¼ˢ��ʱ��
 
 			StoreTemplate* temp_store_ptr = template_manager::get_instance().get_store_template_by_id(i);
 			if (temp_store_ptr != nullptr)
 			{
-				//��פ�̵� ��ʱˢ��
 				if (temp_store_ptr->OpenType == e_store_open_type_foever && temp_store_ptr->FreshTime.size() > 0)
 				{
 					fresh_vec fresh_times;
@@ -134,7 +129,6 @@ namespace faith
 					m_timed_fresh_map.insert({ i,fresh_times });
 					continue;
 				}
-				//�濪������ʱ��
 				if (temp_store_ptr->OpenType == e_store_open_type_server)
 				{
 					if (temp_store_ptr->StoreOpenTimeLimit.size() == 5)
@@ -148,11 +142,10 @@ namespace faith
 
 					int32 store_open_time = mktime(&open_time);
 					fresh_vec fresh_times;
-					fresh_times.push_back(store_open_time);//���ӿ���ʱ��
-					fresh_times.push_back(temp_store_ptr->FreshInterval);//����ˢ�¼��
+					fresh_times.push_back(store_open_time);
+					fresh_times.push_back(temp_store_ptr->FreshInterval);
 					m_interval_fresh_map.insert({ i,fresh_times });
 				}
-				//��ʵʱ�����
 				if (temp_store_ptr->OpenType == e_store_open_type_time)
 				{
 					if (temp_store_ptr->StoreOpenTimeLimit.size() == 5)
@@ -165,8 +158,8 @@ namespace faith
 							temp_store_ptr->StoreOpenTimeLimit[3],
 							temp_store_ptr->StoreOpenTimeLimit[4], 0);
 						fresh_vec fresh_times;
-						fresh_times.push_back(store_open_time);//���ӿ���ʱ��
-						fresh_times.push_back(temp_store_ptr->FreshInterval);//����ˢ�¼��
+						fresh_times.push_back(store_open_time);
+						fresh_times.push_back(temp_store_ptr->FreshInterval);
 						m_interval_fresh_map.insert({ i,fresh_times });
 					}
 				}
@@ -185,7 +178,6 @@ namespace faith
 
 
 
-	//======================== ����������̳���Ϣ���� ===========================================================================
 	void player_store_helper::heart_tick(const int64& new_time)
 	{
 
@@ -362,7 +354,7 @@ namespace faith
 				continue;
 			}
 			for (int32 j = 0; j < goods_max_num; ++j)
-			{//�Ƿ��������޹�
+			{
 				cgoods& goods_ref = store_goods_ref.goods_data_array[j];
 				if (goods_ref.is_data_use() == false)
 				{
@@ -508,7 +500,6 @@ namespace faith
 
 	bool player_store_helper::can_buy(int32 goods_id, int32 store_id)
 	{
-		//�����ܷ�����߼�
 		if (check_is_store_open_time(store_id, goods_id) == false)
 		{
 			return false;
@@ -536,18 +527,16 @@ namespace faith
 	}
 
 	int32	player_store_helper::can_buy_num(int32 goods_id,int32 store_id) 
-	{// 0��ʾ�ǲ��ɹ��� ; <0 ��ʾ�����޹��� ;>0 ��ʾʵ�ʿɹ��������
+	{
 		int32 cur_purchased_num = 0;
 		cgoods* goods_ptr = get_goods_by_id(store_id, goods_id);
 		if (goods_ptr != nullptr)
-		{//�ǿ����Ҳ����ģ�ѹ��û���������������Ҳ����ģ�
-		 //����֮����ֱ�������goods_ptr!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		{
 			cur_purchased_num = goods_ptr->get_goods_data_by_index(e_goods_info_purchased_num);
 		}
 		int32 temp_can_buy_num = 0;
 
 		//GoodsTemplate* goods_template_ptr = goods_ptr->get_goods_template_ptr();
-		//���������goods_ptr!!!!!!!!!!!�����ǿյģ�����������������������������
 
 		GoodsTemplate* goods_template_ptr = GET_TEMPLATE(GoodsTemplate, goods_id);
 		if (nullptr == goods_template_ptr)
@@ -619,7 +608,6 @@ namespace faith
 			return e_item_string_unkown;
 		}
 
-		// �ж���Ʒ�Ƿ����̵���
 		bool is_in_store = false;
 		for (int32 i = 0; i < temp_store_ptr->StoreGoods.size(); i++)
 		{
@@ -643,12 +631,10 @@ namespace faith
 			is_full_exc_att = true;
 		}
 
-		//�ж���Ʒ�Ƿ��ϼ�
 		if (!check_is_goods_open_time(goods_id))
 		{
 			return e_buy_goods_end_in_time_limit;
 		}
-		// �ж���ҵĵȼ��Ƿ�ﵽ���ܹ��������Ʒ��Ҫ��
 		int32 player_level = player_ref.get_unit_info(e_role_info_exp_level);
 		if (temp_goods_ptr->Levellimit.size() < 2)
 		{
@@ -674,8 +660,6 @@ namespace faith
 			return e_item_string_vip_level;
 		}
 
-		//��������Ѿ���ws���жϹ����˴������ж�
-		//// ����������Ʒ��Ҫ���ŵȼ��ﵽһ���ĵȼ�����,���������жϵ�ǰ���ŵĵȼ��Ƿ��㹻
 		//if (temp_goods_ptr->NeedLegionLevel > 0)
 		//{
 		//	guid_64 legion_guid = player_ref.get_legion_guid();
@@ -695,16 +679,13 @@ namespace faith
 		{
 			return e_item_string_unkown;
 		}
-		//�ܷ���
 		int32 i_can_buy_num = can_buy_num(goods_id, store_id);
 		if (i_can_buy_num == 0 || (i_can_buy_num != -1 && (i_can_buy_num - goods_num) < 0))
 		{
-			//�ﵽ��������
 			return e_buy_goods_end_state_num_limit;
 		}
 		
 
-		//�����������Ƿ��㹻
 		int32 need_slot_num = 0;
 		int32 total_item_num = goods_num * temp_goods_ptr->GoodsNum;
 		need_slot_num = total_item_num;
@@ -731,7 +712,7 @@ namespace faith
 		}
 
 		if (temp_goods_ptr->NeedItemId.size() >= 2)
-		{//������Ʒ
+		{
 			if (item_system::can_cost_item(&player_ref, e_bag_type_bag, temp_goods_ptr->NeedItemId[0], temp_goods_ptr->NeedItemId[1] * goods_num) == false)
 			{
 				return e_buy_goods_end_need_item_not_enough;
@@ -746,12 +727,10 @@ namespace faith
 				return e_item_string_unkown;
 			}
 
-			//�ܷ�Ǯ
 			if (player_ref.can_cut_money((e_money_type)total_price[0], total_price[1]) == false)
 			{
 				return e_buy_goods_end_state_money;
 			}
-			//������Ʒ
 
 			citem* temp_item = player_ref.get_item_set().create_item_by_template(e_server_log_add_item_buy_goods, goods_id, temp_goods_ptr->ItemId, goods_num * temp_goods_ptr->GoodsNum, temp_goods_ptr->IsLock,  -temp_goods_ptr->EffectiveTime);
 			if (temp_item == nullptr)
@@ -760,17 +739,16 @@ namespace faith
 			}
 
 			if (temp_item_ptr->item_type == e_item_type_spirit)
-			{//����Ĭ������Ϊ1��
+			{
 				temp_item->set_data_info(e_item_info_upgrade_count, 1);
 			}
 
 			if (temp_goods_ptr->NeedItemId.size() >= 2)
-			{	//������Ʒ
+			{
 				item_system::cost_item_from_bag(&player_ref, e_bag_type_bag, temp_goods_ptr->NeedItemId[0], temp_goods_ptr->NeedItemId[1] * goods_num);
 			}
 			player_ref.get_item_set().put_in_bag(temp_item);
 
-			//��Ǯ
 			player_ref.cut_money((e_money_type)total_price[0], total_price[1], e_server_log_cut_money_buy_goods, goods_id, goods_num);
 
 			if (total_price[0] == e_money_type_jewel)
@@ -778,7 +756,6 @@ namespace faith
 				player_ref.get_welfare_mgr().set_active_degree_info(e_daily_active_degree_type_cost_one_diamond, 1);
 			}
 
-			//���ӹ����¼
 			add_buy_info(goods_id, goods_num, store_id);
 			send_store_goods_record_all();
 
@@ -786,7 +763,6 @@ namespace faith
 
 			if (temp_store_ptr->StoreType == e_store_type_recommend || temp_store_ptr->StoreType == e_store_type_daily || temp_store_ptr->StoreType == e_store_type_expendables)
 			{
-				//��¼��ʯ�̵깺���¼�
 				player_ref.get_time_limit_activity_mgr().activity_behavior_done(e_time_limit_behavior_type_buy_in_diamond_store);
 			}
 
@@ -795,8 +771,6 @@ namespace faith
 				server_log::buy_goods_role_log(player_ref.get_third_info(), player_ref.get_unit_info_inst(), temp_store_ptr->attribute_id, goods_id, goods_num, player_ref.get_login_type(), player_ref.get_time_data(e_time_type_login_time));
 			}
 			return 0;
-			//����ɹ����Ƿ��� 0����Ϊ����ϵͳ�򡢶һ�������������߼������ǳɹ������ʾ��ͬ
-			//���Է���0��ÿ�������Լ�����ͬ�ĳɹ���ʾ
 		}
 		return e_item_string_unkown;
 	}
@@ -804,7 +778,6 @@ namespace faith
 
 	bool player_store_helper::check_is_store_open_time(int32 store_id, int32 goods_id)
 	{
-		//������Ƿ��̵��Ƿ���
 		StoreTemplate* temp_store_ptr = template_manager::get_instance().get_store_template_by_id(store_id);
 		if (temp_store_ptr == nullptr )
 		{
@@ -831,33 +804,31 @@ namespace faith
 				open_time = store_mgr::get_instance().get_server_open_time() + temp_store_ptr->StoreOpenTimeLimit[3] * 3600 + temp_store_ptr->StoreOpenTimeLimit[4] * 60;
 			}
 			
-			int32 passed_time = difftime(now_time, open_time);//�ӿ���ʱ�䵽���ڵ�ʱ���
+			int32 passed_time = difftime(now_time, open_time);
 			if (passed_time < 0 || passed_time >= temp_store_ptr->LastTime)
 			{
 				return false;
 			}			
 		}
 
-		//�����Ʒ�Ƿ��ϼ�
 		
 		GoodsTemplate* temp_goods_ptr = GET_TEMPLATE(GoodsTemplate,goods_id );
 		if (nullptr == temp_goods_ptr)
 		{
 			return false;
 		}
-		//�������¼�ʱ��
 		if (temp_goods_ptr->AddTime.size() == 5 && temp_goods_ptr->RemoveTime.size() == 5)
 		{
 			int32 on_sale_time = store_mgr::get_instance().get_time_stamp(temp_goods_ptr->AddTime[0],
 				temp_goods_ptr->AddTime[1],
 				temp_goods_ptr->AddTime[2],
 				temp_goods_ptr->AddTime[3],
-				temp_goods_ptr->AddTime[4], 0);//�ϼ�ʱ��
+				temp_goods_ptr->AddTime[4], 0);
 			int32 off_sale_time = store_mgr::get_instance().get_time_stamp(temp_goods_ptr->RemoveTime[0],
 				temp_goods_ptr->RemoveTime[1],
 				temp_goods_ptr->RemoveTime[2],
 				temp_goods_ptr->RemoveTime[3],
-				temp_goods_ptr->RemoveTime[4], 0);//�¼�ʱ��
+				temp_goods_ptr->RemoveTime[4], 0);
 
 			if (now_time < on_sale_time || now_time > off_sale_time)
 			{
@@ -878,7 +849,7 @@ namespace faith
 		{
 			return true;
 		}
-		if (temp_goods_ptr->TimelimitOnTime.size() != 5 || temp_goods_ptr->DurationTime.size() != 5)		//(ʱ��:��,��,��,ʱ,��)
+		if (temp_goods_ptr->TimelimitOnTime.size() != 5 || temp_goods_ptr->DurationTime.size() != 5)
 		{
 			return false;
 		}
@@ -893,11 +864,10 @@ namespace faith
 		break;
 		case e_time_limit_goods_on_type_open_server_days:
 		{
-			if (temp_goods_ptr->TimelimitOnTime.size() < 1)		//(�����ڼ���)
+			if (temp_goods_ptr->TimelimitOnTime.size() < 1)
 			{
 				return false;
 			}
-			//���������0���ʱ���
 			tm temp_time = globle_data::get_instance().get_server_open_tm();
 			temp_time.tm_hour = 0;    
 			temp_time.tm_min = 0;     
@@ -924,8 +894,8 @@ namespace faith
 			temp_goods_ptr->DurationTime[3],
 			temp_goods_ptr->DurationTime[4], 0);
 
-		int32 passed_time = difftime(now_time, open_time);		//�ӿ���ʱ�䵽���ڵ�ʱ���
-		if (passed_time < 0 || passed_time >= end_time)	//�ж��Ƿ񳬹��ϼ�ʱ��
+		int32 passed_time = difftime(now_time, open_time);
+		if (passed_time < 0 || passed_time >= end_time)
 		{
 			return false;
 		}

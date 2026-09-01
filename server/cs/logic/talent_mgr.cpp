@@ -420,7 +420,7 @@ namespace faith
 		{
 			return;
 		}
-		//Ö»ÄÜ¿ªÆôÍ¨ÓÃºÍ×Ô¼º×ªÖ°ÏµµÄÌì¸³
+		//åªèƒ½å¼€å¯é€šç”¨å’Œè‡ªå·±è½¬èŒç³»çš„å¤©èµ‹
 		if (talent_template_ptr->Type > 0)
 		{
 			if (player_ref.get_unit_info(e_role_info_class_branch) != talent_template_ptr->Type)
@@ -428,13 +428,13 @@ namespace faith
 				return;
 			}
 		}
-		//»ñÈ¡ËùÔÚÁĞµÄÊı¾İ
+		//è·å–æ‰€åœ¨åˆ—çš„æ•°æ®
 		std::vector<int32>& layer_data = get_data_by_layer_index(talent_list_template_id, layer_index);
 		if (layer_data.size() < e_talent_layer_max)
 		{
 			return;
 		}
-		//ÅĞ¶¨ÊÇ·ñÔÚÕâÁĞÀï
+		//åˆ¤å®šæ˜¯å¦åœ¨è¿™åˆ—é‡Œ
 		bool in_data = false;
 		for (int32 i = e_talent_layer_template_id_0; i < e_talent_layer_max; ++i)
 		{
@@ -450,7 +450,7 @@ namespace faith
 		{
 			return;
 		}
-		//ÅĞ¶¨ÊÇ·ñÂú×ã¿ªÆôÁĞµÄĞèÇó
+		//åˆ¤å®šæ˜¯å¦æ»¡è¶³å¼€å¯åˆ—çš„éœ€æ±‚
 		if (layer_data[e_talent_layer_need_id] > 0)
 		{
 			if (layer_data[e_talent_layer_need_id] < TALENT_ID_LOW)
@@ -501,7 +501,7 @@ namespace faith
 			}
 		}
 
-		// ¿ªÆôµÄÌì¸³Ò³ÏŞÖÆ
+		// å¼€å¯çš„å¤©èµ‹é¡µé™åˆ¶
 		const int32 OpenLayerLimitSize = talent_template_ptr->OpenrLayerLimit.size();
 		if (OpenLayerLimitSize == faith::e_open_layer_limit_max)
 		{
@@ -589,7 +589,7 @@ namespace faith
 		talent_ptr->set_talent_skill(m_unit_array_index, true);
 		send_talent_one(talent_ptr);
 
-		player_ref.set_unit_gs_change();//¸Ä±äÕ½Á¦
+		player_ref.set_unit_gs_change();//æ”¹å˜æˆ˜åŠ›
 
 		msg.set_operate_result(faith::e_item_string_succeed);
 		msg.set_old_talent_template_id(old_data_ary[e_talent_info_template_id]);

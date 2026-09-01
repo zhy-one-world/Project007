@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê8ÔÂ16ÈÕ
+created: 2016å¹´8æœˆ16æ—¥
 file base: mail_mgr
 file ext: h
 author: luoxingyu

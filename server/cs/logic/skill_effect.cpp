@@ -334,7 +334,7 @@ namespace faith
 			return;
 		}
 		max_length += attack_unit.get_unit_capsule_width() + target_unit.get_unit_capsule_width();
-		max_length += (max_length >> 1);//³Ë´ó1.5±¶,·ÀÖ¹¿Í»§¶Ë³öÏÖ´òÖĞ,·şÎñÆ÷ÅĞ¶ÏÎŞĞ§µÄÎÊÌâ
+		max_length += (max_length >> 1);//ä¹˜å¤§1.5å€,é˜²æ­¢å®¢æˆ·ç«¯å‡ºç°æ‰“ä¸­,æœåŠ¡å™¨åˆ¤æ–­æ— æ•ˆçš„é—®é¢˜
 		if (init_unit::is_in_distance(param.pos, target_unit.get_new_map_pos().unit_location, max_length))
 		{
 			unit_guid_map_it it = m_target_index_map.find(param.target_unit_idf.unit_guid.server_64);
@@ -495,7 +495,7 @@ namespace faith
 		{
 			player* target_ptr = player::cast(&target_unit);
 			if (nullptr != target_ptr)
-			{//´ò¶Ï²É¼¯×´Ì¬
+			{//æ‰“æ–­é‡‡é›†çŠ¶æ€
 				target_ptr->stop_interact_with_npc();
 			}
 			send_unit.get_war_state_mgr().add_in_war(target_index);

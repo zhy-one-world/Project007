@@ -181,7 +181,7 @@ int32 cs_map_system::del_unit(Entity* map_ent, const guid_64& role_guid)
 		auto map_tick_cp = map_ent->add_component<cs_map_tick_component>();
 		if (map_cp->m_map_template_ptr->Type == e_map_type_cross_ladder)
 		{
-			//µ±Íæ¼ÒÔÚµÈ´ýÆÚ¼äÍË³öÊ±£¬»áÔÚµÈ´ýÊ±¼ä½áÊø½áËãËùÒÔ²»ÄÜÖ±½Ó»ØÊÕ
+			//å½“çŽ©å®¶åœ¨ç­‰å¾…æœŸé—´é€€å‡ºæ—¶ï¼Œä¼šåœ¨ç­‰å¾…æ—¶é—´ç»“æŸç»“ç®—æ‰€ä»¥ä¸èƒ½ç›´æŽ¥å›žæ”¶
 			map_tick_cp->m_empty_end_time = time_helper::get_cur_time_new().second + minute_tick_time / second_tick_time;
 		}
 		else

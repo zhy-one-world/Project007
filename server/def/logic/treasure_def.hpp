@@ -13,17 +13,17 @@ namespace faith
 {
 #pragma pack(push,1)
 
-	const int32 treasure_prize_num = 30;						//ÀñÆ·ÊıÁ¿
-	const int32 treasure_prize_record_num = 50;					//¼ÇÂ¼ÊıÁ¿
-	const int32 treasure_prize_record_string_num = 1000;		//¼ÇÂ¼ÊıÁ¿
-	const int32 treasure_royal_best_notice_id = 93000236;		//»Ê¼Ò±¦²Ø¼«Æ·¹«¸æ
-	const int32 treasure_royal_better_notice_id = 93000237;		//»Ê¼Ò±¦²ØÏ¡ÓĞ¹«¸æ
-	const int32 treasure_element_best_notice_id = 93000238;		//·ûÎÄ±¦²Ø¼«Æ·¹«¸æ
-	const int32 treasure_element_better_notice_id = 93000239;	//·ûÎÄ±¦²ØÏ¡ÓĞ¹«¸æ
-	const int32 spirit_element_best_notice_id = 93000260;		//¾«Áé±¦²Ø¼«Æ·¹«¸æ
-	const int32 spirit_element_better_notice_id = 93000261;		//¾«Áé±¦²ØÏ¡ÓĞ¹«¸æ
-	const int32 time_limit_best_notice_id = 93000437;		//¾«Áé±¦²Ø¼«Æ·¹«¸æ
-	const int32 stime_limit_better_notice_id = 93000438;		//¾«Áé±¦²ØÏ¡ÓĞ¹«¸æ
+	const int32 treasure_prize_num = 30;						//ç¤¼å“æ•°é‡
+	const int32 treasure_prize_record_num = 50;					//è®°å½•æ•°é‡
+	const int32 treasure_prize_record_string_num = 1000;		//è®°å½•æ•°é‡
+	const int32 treasure_royal_best_notice_id = 93000236;		//çš‡å®¶å®è—æå“å…¬å‘Š
+	const int32 treasure_royal_better_notice_id = 93000237;		//çš‡å®¶å®è—ç¨€æœ‰å…¬å‘Š
+	const int32 treasure_element_best_notice_id = 93000238;		//ç¬¦æ–‡å®è—æå“å…¬å‘Š
+	const int32 treasure_element_better_notice_id = 93000239;	//ç¬¦æ–‡å®è—ç¨€æœ‰å…¬å‘Š
+	const int32 spirit_element_best_notice_id = 93000260;		//ç²¾çµå®è—æå“å…¬å‘Š
+	const int32 spirit_element_better_notice_id = 93000261;		//ç²¾çµå®è—ç¨€æœ‰å…¬å‘Š
+	const int32 time_limit_best_notice_id = 93000437;		//ç²¾çµå®è—æå“å…¬å‘Š
+	const int32 stime_limit_better_notice_id = 93000438;		//ç²¾çµå®è—ç¨€æœ‰å…¬å‘Š
 
 	struct s_treasure_record
 	{

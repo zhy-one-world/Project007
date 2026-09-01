@@ -1,5 +1,5 @@
 /********************************************************************
-  created: 2017Äê3ÔÂ3ÈÕ11:32:50
+  created: 2017å¹´3æœˆ3æ—¥11:32:50
   file base: time_def
   file ext: hpp
   author: zhy
@@ -13,63 +13,63 @@
 #include "time.hpp"
 
 /************************************************************************/
-/*        ËùÓĞ·şÎñÆ÷Ë¢ĞÂÊ±¼ä¼ä¸ô(ºÁÃë)								    */
+/*        æ‰€æœ‰æœåŠ¡å™¨åˆ·æ–°æ—¶é—´é—´éš”(æ¯«ç§’)								    */
 /************************************************************************/
 
 namespace faith 
 {
 #pragma pack(push,1)
-	const int32 day_tick_time = 86400000;//Ò»ÌìµÄºÁÃëÊı
-	const int32 day_time_second = 86400;//Ò»ÌìµÄÃëÊı
-	const int32 hour_tick_time = 3600000;//Ò»Ğ¡Ê±µÄºÁÃëÊı
-	const int32 half_hour_tick_time = 1800000;//°ëĞ¡Ê±µÄºÁÃëÊı
-	const int32 minute_tick_time = 60000;//Ò»·ÖÖÓµÄºÁÃëÊı
-	const int32 thrity_second_tick_time = 30000;//30ÃëÖÓµÄºÁÃëÊı
-	const int32 second_tick_time = 1000;//Ò»ÃëÖÓµÄºÁÃëÊı
-	const int32 half_second_tick_time = 500;//°ëÃëÖÓµÄºÁÃëÊı
-	const int32 deci_second_tick_time = 100;//Ê®·ÖÖ®Ò»ÃëÖÓµÄºÁÃëÊı
-	const int32 interval_retry_connect2dp = 10000;//·şÎñÆ÷ÖØÁ¬dp¼ä¸ôÊ±¼ä
-	const int32 dp_interval_serverloop = 200;//dpÄÚÑ­»·Ò»´ÎµÄÊ±¼ä¼ä¸ô
-	const int32 server_console_time = 60 * second_tick_time;//¿ØÖÆÌ¨Êä³öÒ»´ÎµÄÊ±¼ä¼ä¸ô
-	const int32 server_player_to_ws = 15 * second_tick_time;//Ã¿15sÍ¬²½Ò»´ÎcsÍæ¼ÒÊıÁ¿µ½ws
-	const int32 server_log_tick_time = 10 * second_tick_time;//ÈÕÖ¾Ë¢ĞÂ¼ä¸ô
-	const int32 map_record_tick_time = hour_tick_time;//µØÍ¼ĞÅÏ¢Ë¢ĞÂ¼ä¸ô
-	const int32 sync_pos_walk_tick_time = 300;//·şÎñÆ÷µØÃæÒÆ¶¯Í¬²½Î»ÖÃÊ±¼ä¼ä¸ô
-	const int32 sync_pos_fly_tick_time = 1 * second_tick_time;//npc,Ğ¡¹ÖÎ»ÖÃÍ¬²½
-	const int32 sync_pos_simple_update_time = 5 * second_tick_time;//¼òÄ£Íæ¼ÒÎ»ÖÃÍ¬²½
-	const int32 globel_mail_check_time = 30;// È«¾ÖÓÊ¼ş¶¨Ê±¼ì²éÊ±¼ä
-	const int32 welfare_send_time = 600 * second_tick_time;//¸£ÀûÍ¬²½ÏûÏ¢µÄÊ±¼ä¼ä¸ô
-	const int32 meditation_begin_time = 30 * second_tick_time;//Ú¤Ïë¿ªÆôµÄÊ±¼ä¼ä¸ô
-	//const int32 meditation_time_max = 43200 * second_tick_time;// Ú¤Ïë×î´óÊ±¼ä
-	const int32 pk_value_cut_time = minute_tick_time;// pkÃ¿¸ô1·ÖÖÓ¼õÉÙÒ»´Î
-	const int32 ai_nomal_tick_time = 3 * second_tick_time;// aiÆ½³£×´Ì¬3ÃëÖÓÒ»´Î
-	const int32 ai_move_tick_time = 1 * second_tick_time;// aiËæ»úÒÆ¶¯Ìá¸ßµ½1ÃëÖÓÒ»´Î
-	const int32 ai_attack_tick_time = 0.5 * second_tick_time;// ai±»¹¥»÷Ö®ºóÌá¸ßµ½0.5ÃëÖÓÒ»´Î
-	const int32 ai_next_attack_tick_time = 0.5 * second_tick_time;// AI¹¥»÷¼ä¸ô
-	const int32 client_session_heart_time = 120 * second_tick_time;// ¿Í»§¶ËĞÄÌøÊ±³¤
-	const int32 client_session_login_time = 600 * second_tick_time;// ¿Í»§¶ËÔÚµÇÂ½½çÃæÊ±³¤
-	const int32 client_session_logout_time = 180 * second_tick_time;// ¿Í»§¶ËµôÏßºó±£Áô¶à¾ÃµÄÊı¾İ
-	const int32	recalcu_legion_fighting_power_interval = 120 * second_tick_time;	// ÖØĞÂ¼ÆËã²¢ÍÆËÍ¾üÍÅ×ÜÕ½¶·Á¦µÄÊÂ¼ş¼ä¸ô
-	const int32 legion_apply_out_of_data_time = 172800 * second_tick_time;			// Ò»¸öÈëÍÅÉêÇëµÄµ½ÆÚÊ±¼ä(Ä¿Ç°ÊÇ48¸öĞ¡Ê±)
-	const int32 auction_check_time = 60 * second_tick_time;//ÅÄÂôĞĞ¼ì²âÊ±¼ä
+	const int32 day_tick_time = 86400000;//ä¸€å¤©çš„æ¯«ç§’æ•°
+	const int32 day_time_second = 86400;//ä¸€å¤©çš„ç§’æ•°
+	const int32 hour_tick_time = 3600000;//ä¸€å°æ—¶çš„æ¯«ç§’æ•°
+	const int32 half_hour_tick_time = 1800000;//åŠå°æ—¶çš„æ¯«ç§’æ•°
+	const int32 minute_tick_time = 60000;//ä¸€åˆ†é’Ÿçš„æ¯«ç§’æ•°
+	const int32 thrity_second_tick_time = 30000;//30ç§’é’Ÿçš„æ¯«ç§’æ•°
+	const int32 second_tick_time = 1000;//ä¸€ç§’é’Ÿçš„æ¯«ç§’æ•°
+	const int32 half_second_tick_time = 500;//åŠç§’é’Ÿçš„æ¯«ç§’æ•°
+	const int32 deci_second_tick_time = 100;//ååˆ†ä¹‹ä¸€ç§’é’Ÿçš„æ¯«ç§’æ•°
+	const int32 interval_retry_connect2dp = 10000;//æœåŠ¡å™¨é‡è¿dpé—´éš”æ—¶é—´
+	const int32 dp_interval_serverloop = 200;//dpå†…å¾ªç¯ä¸€æ¬¡çš„æ—¶é—´é—´éš”
+	const int32 server_console_time = 60 * second_tick_time;//æ§åˆ¶å°è¾“å‡ºä¸€æ¬¡çš„æ—¶é—´é—´éš”
+	const int32 server_player_to_ws = 15 * second_tick_time;//æ¯15såŒæ­¥ä¸€æ¬¡csç©å®¶æ•°é‡åˆ°ws
+	const int32 server_log_tick_time = 10 * second_tick_time;//æ—¥å¿—åˆ·æ–°é—´éš”
+	const int32 map_record_tick_time = hour_tick_time;//åœ°å›¾ä¿¡æ¯åˆ·æ–°é—´éš”
+	const int32 sync_pos_walk_tick_time = 300;//æœåŠ¡å™¨åœ°é¢ç§»åŠ¨åŒæ­¥ä½ç½®æ—¶é—´é—´éš”
+	const int32 sync_pos_fly_tick_time = 1 * second_tick_time;//npc,å°æ€ªä½ç½®åŒæ­¥
+	const int32 sync_pos_simple_update_time = 5 * second_tick_time;//ç®€æ¨¡ç©å®¶ä½ç½®åŒæ­¥
+	const int32 globel_mail_check_time = 30;// å…¨å±€é‚®ä»¶å®šæ—¶æ£€æŸ¥æ—¶é—´
+	const int32 welfare_send_time = 600 * second_tick_time;//ç¦åˆ©åŒæ­¥æ¶ˆæ¯çš„æ—¶é—´é—´éš”
+	const int32 meditation_begin_time = 30 * second_tick_time;//å†¥æƒ³å¼€å¯çš„æ—¶é—´é—´éš”
+	//const int32 meditation_time_max = 43200 * second_tick_time;// å†¥æƒ³æœ€å¤§æ—¶é—´
+	const int32 pk_value_cut_time = minute_tick_time;// pkæ¯éš”1åˆ†é’Ÿå‡å°‘ä¸€æ¬¡
+	const int32 ai_nomal_tick_time = 3 * second_tick_time;// aiå¹³å¸¸çŠ¶æ€3ç§’é’Ÿä¸€æ¬¡
+	const int32 ai_move_tick_time = 1 * second_tick_time;// aiéšæœºç§»åŠ¨æé«˜åˆ°1ç§’é’Ÿä¸€æ¬¡
+	const int32 ai_attack_tick_time = 0.5 * second_tick_time;// aiè¢«æ”»å‡»ä¹‹åæé«˜åˆ°0.5ç§’é’Ÿä¸€æ¬¡
+	const int32 ai_next_attack_tick_time = 0.5 * second_tick_time;// AIæ”»å‡»é—´éš”
+	const int32 client_session_heart_time = 120 * second_tick_time;// å®¢æˆ·ç«¯å¿ƒè·³æ—¶é•¿
+	const int32 client_session_login_time = 600 * second_tick_time;// å®¢æˆ·ç«¯åœ¨ç™»é™†ç•Œé¢æ—¶é•¿
+	const int32 client_session_logout_time = 180 * second_tick_time;// å®¢æˆ·ç«¯æ‰çº¿åä¿ç•™å¤šä¹…çš„æ•°æ®
+	const int32	recalcu_legion_fighting_power_interval = 120 * second_tick_time;	// é‡æ–°è®¡ç®—å¹¶æ¨é€å†›å›¢æ€»æˆ˜æ–—åŠ›çš„äº‹ä»¶é—´éš”
+	const int32 legion_apply_out_of_data_time = 172800 * second_tick_time;			// ä¸€ä¸ªå…¥å›¢ç”³è¯·çš„åˆ°æœŸæ—¶é—´(ç›®å‰æ˜¯48ä¸ªå°æ—¶)
+	const int32 auction_check_time = 60 * second_tick_time;//æ‹å–è¡Œæ£€æµ‹æ—¶é—´
 	const int32 back_hp_magic_time = 10 * second_tick_time;//30s tick
-	const int32 all_day_in_week = 7;//Ò»ÖÜµÄÌìÊı
-	const int32 gate_fet_state = 5 * second_tick_time;//gateÉÏfepµÄ×´Ì¬Í¬²½
-	const int32 legion_answer_interval_time = 60 * second_tick_time;			//¾üÍÅ´ğÌâ¼ä¸ôÊ±¼ä
-	const int32 legion_answer_fisrt_notice_time = 60;							//¾üÍÅ´ğÌâµÚÒ»´Î×¼±¸¹«¸æÊ±¼ä
-	const int32 legion_answer_second_notice_time = 30;							//¾üÍÅ´ğÌâµÚ¶ş´Î×¼±¸¹«¸æÊ±¼ä
-	const int32 legion_answer_third_notice_time = 10;							//¾üÍÅ´ğÌâµÚÈı´Î×¼±¸¹«¸æÊ±¼ä
-	const uint32 chat_interval_time = 20 * second_tick_time;					//ÁÄÌì¼ä¸ô
-	const uint32 chat_same_str_time = 60 * second_tick_time;					//ÏàÍ¬×Ö·ûÁÄÌì¼ä¸ô
+	const int32 all_day_in_week = 7;//ä¸€å‘¨çš„å¤©æ•°
+	const int32 gate_fet_state = 5 * second_tick_time;//gateä¸Šfepçš„çŠ¶æ€åŒæ­¥
+	const int32 legion_answer_interval_time = 60 * second_tick_time;			//å†›å›¢ç­”é¢˜é—´éš”æ—¶é—´
+	const int32 legion_answer_fisrt_notice_time = 60;							//å†›å›¢ç­”é¢˜ç¬¬ä¸€æ¬¡å‡†å¤‡å…¬å‘Šæ—¶é—´
+	const int32 legion_answer_second_notice_time = 30;							//å†›å›¢ç­”é¢˜ç¬¬äºŒæ¬¡å‡†å¤‡å…¬å‘Šæ—¶é—´
+	const int32 legion_answer_third_notice_time = 10;							//å†›å›¢ç­”é¢˜ç¬¬ä¸‰æ¬¡å‡†å¤‡å…¬å‘Šæ—¶é—´
+	const uint32 chat_interval_time = 20 * second_tick_time;					//èŠå¤©é—´éš”
+	const uint32 chat_same_str_time = 60 * second_tick_time;					//ç›¸åŒå­—ç¬¦èŠå¤©é—´éš”
 
-	const int32 send_server_info_to_daemon_interval = 2000;						//ÏòdaemonÍ¬²½·şÎñÆ÷×´Ì¬¼ä¸ôÊ±¼ä
+	const int32 send_server_info_to_daemon_interval = 2000;						//å‘daemonåŒæ­¥æœåŠ¡å™¨çŠ¶æ€é—´éš”æ—¶é—´
 
-	const int32 sec_five_hour_tick_time = 18000;//0µãµ½5µãµÄÃëÊı
-	const int32 client_fdate_sec_ticks = 10000000;//¿Í»§¶ËË¢ĞÂÊ±¼ä
-	const int32 auction_time_out_interval = 60 * second_tick_time;//ÅÄÂôĞĞ¼ì²âÊ±¼ä
-	const int32 legion_city_war_bid_time_begin = 5;//³ÇÕ½¾º±ê¿ªÊ¼Ê±¼ä
+	const int32 sec_five_hour_tick_time = 18000;//0ç‚¹åˆ°5ç‚¹çš„ç§’æ•°
+	const int32 client_fdate_sec_ticks = 10000000;//å®¢æˆ·ç«¯åˆ·æ–°æ—¶é—´
+	const int32 auction_time_out_interval = 60 * second_tick_time;//æ‹å–è¡Œæ£€æµ‹æ—¶é—´
+	const int32 legion_city_war_bid_time_begin = 5;//åŸæˆ˜ç«æ ‡å¼€å§‹æ—¶é—´
 
-	const int32 reload_csv_constraint_time = 300 * second_tick_time;//Ç¿ÖÆÈ«·şÖ´ĞĞreloadcsvÊ±¼ä
+	const int32 reload_csv_constraint_time = 300 * second_tick_time;//å¼ºåˆ¶å…¨æœæ‰§è¡Œreloadcsvæ—¶é—´
 #pragma pack(pop)
 }
 

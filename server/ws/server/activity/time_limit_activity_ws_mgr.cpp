@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2019Äê03ÔÂ20ÈÕ
+created: 2019å¹´03æœˆ20æ—¥
 file base: time_limit_activity_ws_mgr
 file ext: cpp
 author: wangdi
@@ -166,7 +166,7 @@ namespace faith
 				{
 					cloud_shop_mgr::get_instance().send_rewards_and_clear_info((e_time_limit_activity_type)ite->first);
 				}
-				//½»»»´ó½±µÃÖ÷Ãû³Æ
+				//äº¤æ¢å¤§å¥–å¾—ä¸»åç§°
 				ite->second.set_activity_string_param(ite->second.get_activity_string_param(e_time_limit_activity_string_param_index_1), e_time_limit_activity_string_param_index_2);
 				ite->second.clear_activity_string_param(e_time_limit_activity_string_param_index_1);
 				ite->second.set_activity_info(e_time_limit_ws_act_info_schedule, 0);
@@ -189,12 +189,12 @@ namespace faith
 
 	void time_limit_activity_ws_mgr::init_all_time_limit_ws()
 	{
-		//Ã¿ÈÕË¢ĞÂÓĞÍ¬ÑùµÄĞ§¹û Èç¹ûÃ¿ÈÕË¢ĞÂ×ß¹ıÁËÔÙ×ßÕâ¸ö
+		//æ¯æ—¥åˆ·æ–°æœ‰åŒæ ·çš„æ•ˆæœ å¦‚æœæ¯æ—¥åˆ·æ–°èµ°è¿‡äº†å†èµ°è¿™ä¸ª
 		if (world_server::getInstance().is_need_refresh_ws_daily_info_at_zero_hour())
 		{
 			return;
 		}
-		//Ö»ÔÚ±í¸ñ¸Ä±äÊ±Ë¢ĞÂÊı¾İ ÖØĞÂ¼ÆËã¿ªÊ¼ºÍ½áÊøÊ±¼ä Ö»ÓÃÓÚÆô·şºóºÍreloadcsvµ÷ÓÃÒ»´Î
+		//åªåœ¨è¡¨æ ¼æ”¹å˜æ—¶åˆ·æ–°æ•°æ® é‡æ–°è®¡ç®—å¼€å§‹å’Œç»“æŸæ—¶é—´ åªç”¨äºå¯æœåå’Œreloadcsvè°ƒç”¨ä¸€æ¬¡
 		for (int32 i = 0; i < e_time_limit_activity_type_max; i++)
 		{
 			refresh_data((e_time_limit_activity_type)i);
@@ -390,7 +390,7 @@ namespace faith
 			return;
 		}
 
-		//¼ÆËã³öÏÂ¸öÖÜÆÚid ±£Ö¤ÔÚÁ½¸öÖÜÆÚÖ®¼ä Èç¹ûµ±Ç°ÖÜÆÚÎª×îºóÒ»¸öÖÜÆÚ ÔòÎª0
+		//è®¡ç®—å‡ºä¸‹ä¸ªå‘¨æœŸid ä¿è¯åœ¨ä¸¤ä¸ªå‘¨æœŸä¹‹é—´ å¦‚æœå½“å‰å‘¨æœŸä¸ºæœ€åä¸€ä¸ªå‘¨æœŸ åˆ™ä¸º0
 		int32 next_cycle_first_template_id = 0;
 		for (int32 i = 0; i + 1 < activity_template_ptr.CycleFirstId.size(); i++)
 		{
@@ -400,7 +400,7 @@ namespace faith
 			}
 		}
 
-		//×î¶à50¸öÑ­»·
+		//æœ€å¤š50ä¸ªå¾ªç¯
 		ranking_list_ite cur_list_ite = cur_ranking_list_ptr->begin();
 		for (int32 i = 0; i < 50; i++)
 		{
@@ -694,7 +694,7 @@ namespace faith
 		{
 			return;
 		}
-		if (activity_type == -1)//È«Çå
+		if (activity_type == -1)//å…¨æ¸…
 		{
 			for (auto ite = m_activity_info.begin(); ite != m_activity_info.end(); ++ite)
 			{
@@ -851,7 +851,7 @@ namespace faith
 		}
 	}
 
-	//¿ç·şÖ»·µ»Ø¿ç·şÔÆ¹º 
+	//è·¨æœåªè¿”å›è·¨æœäº‘è´­ 
 	s_time_limit_activity_ws_info& time_limit_activity_ws_mgr::get_cur_cloud_shop_activity()
 	{
 		if (world_server::getInstance().get_cross_id() > 0 && world_server::getInstance().is_sky_island_server())
@@ -893,7 +893,7 @@ namespace faith
 			return e_time_limit_activity_type_cloud_shop;
 		}
 
-		return e_time_limit_activity_type_max;//²»¿ª·µ»ØÎŞĞ§Öµ
+		return e_time_limit_activity_type_max;//ä¸å¼€è¿”å›æ— æ•ˆå€¼
 	}
 
 }

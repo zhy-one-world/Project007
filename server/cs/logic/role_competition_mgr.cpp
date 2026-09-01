@@ -115,12 +115,12 @@ namespace faith
 			{
 				return;
 			}
-			//100¼¶ÌØÊâ´¦Àí
+			//100çº§ç‰¹æ®Šå¤„ç†
 			int64 overflow_num = m_cur_competition_info.cur_exp - competition_temp->exp;
 			if (overflow_num > 0)
 			{
 				player& player_ref = unit_man::get_player(m_array_index);
-				//¶àÓàµÄ×ª»»³ÉÌìÌİ±Ò
+				//å¤šä½™çš„è½¬æ¢æˆå¤©æ¢¯å¸
 				player_ref.add_money_or_exp(e_money_type_cross_ladder_honor, overflow_num, e_server_log_add_money_competition);
 				m_cur_competition_info.cur_exp = competition_temp->exp;
 			}
@@ -152,7 +152,7 @@ namespace faith
 		{
 			reset_competition_data();
 		}
-		//¼ÆËã×îĞÂµÄÈü¼¾
+		//è®¡ç®—æœ€æ–°çš„èµ›å­£
 		calcu_cur_competition();
 	}
 	int32 role_competition_mgr::load_role_competition_by_db_lua(const char *data_ptr, int32 data_len)
@@ -237,7 +237,7 @@ namespace faith
 		can_sync = true;
 		if (cur_season_info.season > m_cur_competition_info.season)
 		{
-			//½áËã
+			//ç»“ç®—
 			change_point();
 			reset_competition_data();
 		}
@@ -347,34 +347,34 @@ namespace faith
 			int32 m_tag_char_normal = m_cur_competition_info.get_reward_tag(0, level - 1);
 			if (m_tag_char_normal == 1)
 			{
-				//ÒÑÁì
+				//å·²é¢†
 				return;
 			}
 			if (competition_temp->BigRewardTag < 0)
 			{
-				//Î´¿ª·ÅµÈ¼¶
+				//æœªå¼€æ”¾ç­‰çº§
 				return;
 			}
-			//ÓÂÕß
+			//å‹‡è€…
 			send_reward(id,type);
 			m_cur_competition_info.set_reward_tag(0, level - 1);
 			m_success = true;
 		}
 		else if (type == e_competition_manual_type_special)
 		{
-			//¾«Ó¢
+			//ç²¾è‹±
 			if (m_cur_competition_info.is_buy == 0)
 			{
-				//ÌáÊ¾
+				//æç¤º
 				return;
 			}
 			int32 m_tag_char_normal = m_cur_competition_info.get_reward_tag(1, level - 1);
 			if (m_tag_char_normal == 1)
 			{
-				//ÒÑÁì
+				//å·²é¢†
 				return;
 			}
-			//ÓÂÕß
+			//å‹‡è€…
 			send_reward(id,type);
 			m_success = true;
 			m_cur_competition_info.set_reward_tag(1, level - 1);
@@ -434,7 +434,7 @@ namespace faith
 				m_ItemRewardArray = m_TemPlate_ItemRewardArray;
 			}
 
-			//ÎïÆ·½±Àø
+			//ç‰©å“å¥–åŠ±
 			std::vector<s_item_template_info> promp_item_data;
 			for (int32 i = 0; i * 2 + 1 < m_ItemRewardArray.size(); i++)
 			{
@@ -450,7 +450,7 @@ namespace faith
 		player& player_ref = unit_man::get_player(m_array_index);
 		if (true == player_ref.is_valid() && player_ref.get_session_state() == e_session_status_in_gaming)
 		{	
-			//Í¬²½ÊÖ²áµÈ¼¶ºÍ¾­Ñé
+			//åŒæ­¥æ‰‹å†Œç­‰çº§å’Œç»éªŒ
 			faith::cross_ladder_buy_competition_lv_end msg;
 			msg.set_level(m_cur_competition_info.level);
 			msg.set_cur_exp(m_cur_competition_info.cur_exp);
@@ -545,7 +545,7 @@ namespace faith
 				int32 m_tag_char_special = m_cur_competition_info.get_reward_tag(1, i);
 				if (m_tag_char_special == 0)
 				{
-					//·¢½±
+					//å‘å¥–
 					send_reward(m_id, e_competition_manual_type_special);
 					m_cur_competition_info.set_reward_tag(1, i);
 					if (is_have == false)
@@ -632,11 +632,11 @@ namespace faith
 			{
 				if (m_cur_competition_info.is_buy == 1 && ( m_cur_competition_info.buy_manual_type == manual_type || m_cur_competition_info.buy_manual_type >= e_competition_manual_type_special))
 				{
-					//ÒÑ¾­¹ºÂò¾«Ó¢ÊÖ²á
+					//å·²ç»è´­ä¹°ç²¾è‹±æ‰‹å†Œ
 					return;
 				}
 
-				//¿ÛÀ¶×ê
+				//æ‰£è“é’»
 				int32 money_num = 0;
 				switch (manual_type)
 				{
@@ -659,7 +659,7 @@ namespace faith
 				player_ref.cut_money(e_money_type_jewel, money_num, e_server_cut_add_money_competition);
 				m_cur_competition_info.is_buy = 1;
 				m_cur_competition_info.buy_manual_type = manual_type;
-				//´¥·¢ÌØÈ¨
+				//è§¦å‘ç‰¹æƒ
 				activati_manual(manual_type);
 				faith::cross_ladder_buy_speical_manual_end msg;
 				msg.set_is_buy(1);
@@ -698,22 +698,22 @@ namespace faith
 	}
 	void role_competition_mgr::activati_manual(int32 manual_type)
 	{
-		//ÆÕÍ¨¾«Ó¢ÊÖ²á
+		//æ™®é€šç²¾è‹±æ‰‹å†Œ
 
 		std::vector<int32> reward_list;
 		if (manual_type == e_competition_manual_type_normal)
 		{
-			//ÆÕÍ¨¾«Ó¢ÊÖ²á
+			//æ™®é€šç²¾è‹±æ‰‹å†Œ
 			reward_list = GAMECONFIG->NormalManual;
 		}
 		else if (manual_type == e_competition_manual_type_special)
 		{
-			//ºÀ»ª¾«Ó¢ÊÖ²á
+			//è±ªåç²¾è‹±æ‰‹å†Œ
 			reward_list = GAMECONFIG->LuxurylManual;
 		}
 		else if (manual_type == e_competition_manual_type_add_special)
 		{
-			//ºÀ»ª¾«Ó¢ÊÖ²á(²î¼Û)
+			//è±ªåç²¾è‹±æ‰‹å†Œ(å·®ä»·)
 			reward_list = GAMECONFIG->AddLuxurylManual;
 		}
 		if (reward_list.size()> 0 && reward_list.size() % 3 == 0)
@@ -746,7 +746,7 @@ namespace faith
 				}
 				case faith::e_manual_reward_type_manual_level:
 				{
-					//ÊÖ²áÉı¼¶
+					//æ‰‹å†Œå‡çº§
 					CompetitionSeasonTemplate *aim_temp = template_manager::get_instance().get_template_by_competition_level(active_ext0, cell_server::getInstance().get_ladder_world_level());
 					if (nullptr == aim_temp)
 					{
@@ -757,7 +757,7 @@ namespace faith
 				}
 				case faith::e_manual_reward_type_add_point:
 				{
-					//Ôö¼Ó»ı·Ö»ñÈ¡±ÈÀı
+					//å¢åŠ ç§¯åˆ†è·å–æ¯”ä¾‹
 					m_cur_competition_info.point_add_percent += active_ext0;
 					break;
 				}

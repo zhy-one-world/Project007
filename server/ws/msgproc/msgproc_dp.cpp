@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2014/06/05
 	created:	5:6:2014   15:01
 	file base:	msgproc_dp
@@ -276,13 +276,13 @@ namespace faith
 		{
 			if (i == e_server_info_type_begin_cross_server_time)
 			{
-				world_server::getInstance().set_cross_server_open_time(server_info_arr[i], false);//����ʱ�������߼�
+				world_server::getInstance().set_cross_server_open_time(server_info_arr[i], false);
 				continue;
 			}
 			int32 server_value = server_info_arr[i];
 			if (i == e_server_info_type_server_cross_state && !world_server::getInstance().is_sky_island_server())
 			{
-				continue;//��ʱ��ȼ������Լ���db
+				continue;
 			}
 			world_server::getInstance().set_server_info_arr(server_value, i);
 		}
@@ -294,7 +294,7 @@ namespace faith
 		CONSOLE_INFO("main(): world_server started");
 		CONSOLE_INFO("main(): main-thread enter loop");
 
-		if (cross_server_id <= 0)//����ȡ���ݿⷢ�ֲ�Ϊ���ʱ��ִ��ԭ�߼�
+		if (cross_server_id <= 0)
 		{
 			for (int32 i = e_need_server_cross_begin_cross; i < e_need_server_cross_max; i++)
 			{
@@ -308,9 +308,9 @@ namespace faith
 			world_server::getInstance().send_server_config_to_db();
 			world_server::getInstance().load_server_attr_val();
 		}
-		else//����ȡ���ݿⷢ��Ϊ���ʱ��ִ�����߼�
+		else
 		{
-			if (world_server::getInstance().is_sky_island_server())//GATE��Ҳ��ԭ�߼�
+			if (world_server::getInstance().is_sky_island_server())
 			{
 				for (int32 i = e_need_server_cross_begin_cross; i < e_need_server_cross_max; i++)
 				{
@@ -380,7 +380,7 @@ namespace faith
 		case e_error_code_success:
 		{
 			if (is_login > 0)
-			{//���Ƶ�¼
+			{
 				CONSOLE_INFO("dp2ws_rep_get_role_info_ws is_login > 0");
 				ws2fep_enter_game rep;
 				rep.client_uid = session->m_client_uid;
@@ -406,7 +406,7 @@ namespace faith
 
 			session->m_is_send_chat = false;
 			for (int32 i = 0; i < max_character_num; ++i)
-			{//����
+			{
 				if (session->m_ban_chat_array[i] == session->get_role_guid().server_64)
 				{
 					session->m_is_send_chat = true;
@@ -420,9 +420,9 @@ namespace faith
 			session->m_worship_value = worship_value;
 			session->m_step_num = client_session::e_session_step_dp_load;
 			session->m_login_time = utility::get_tick_count();
-			if (session->get_role_info_data(e_role_info_server_id) == world_server::getInstance().get_server_id())//����
+			if (session->get_role_info_data(e_role_info_server_id) == world_server::getInstance().get_server_id())
 			{
-				if (session->get_role_info_data(e_role_info_move_server_id) != 0 && session->get_role_info_data(e_role_info_move_server_id) != world_server::getInstance().get_server_id())//�����������˵�������������������������ߣ����Է�һ���߳���Ϣ����Ӧ����ͬʱ�ڱ�����½
+				if (session->get_role_info_data(e_role_info_move_server_id) != 0 && session->get_role_info_data(e_role_info_move_server_id) != world_server::getInstance().get_server_id())
 				{
 					CONSOLE_INFO("dp2ws_rep_get_role_info_ws move_server_id:{}, cur_server_id:{}", session->get_role_info_data(e_role_info_move_server_id), world_server::getInstance().get_server_id());
 					ws2ws_kick_out_player kick_msg;
@@ -430,14 +430,14 @@ namespace faith
 					kick_msg.need_send_save_end = true;
 					cross::send_msg_to_ws(guid_64(), session->get_role_info_data(e_role_info_move_server_id), e_msgindex_ws2ws_kick_player, &kick_msg, sizeof(kick_msg));
 					session->set_role_info_data(e_role_info_move_server_id, world_server::getInstance().get_server_id());
-					int64 save_end_time = time_helper::get_cur_time_new().millisecond + second_tick_time * 3;//3S������saveend��Ϣ����ǿ�Ƶ�½
+					int64 save_end_time = time_helper::get_cur_time_new().millisecond + second_tick_time * 3;
 					session->set_cross_server_save_time(save_end_time);
-					return;//��Ҫ��Ŀ�������save�ɹ��󣬲ſɼ���ִ�е�½������������load��save��Ŀ���������ݶ�ʧ������
+					return;
 				}
 			}
 			else
 			{
-				if (session->get_role_info_data(e_role_info_move_server_id) != world_server::getInstance().get_server_id())//���������Ԥ�ڵ����������һ��
+				if (session->get_role_info_data(e_role_info_move_server_id) != world_server::getInstance().get_server_id())
 				{
 					CONSOLE_INFO("dp2ws_rep_get_role_info_ws move_server_id:{}, cur_server_id:{}", session->get_role_info_data(e_role_info_move_server_id), world_server::getInstance().get_server_id());
 					ws2fep_enter_game rep;
@@ -1103,7 +1103,6 @@ namespace faith
 				continue;
 			}
 
-			// ��������������ʱ�����о��ų�Ա�϶���������״̬��
 			loaded_member_info.data_ary[e_legion_member_info_is_online] = 0;
 			if (loaded_member_info.data_ary[e_legion_member_info_last_logout_stamp] <= 0)
 			{
@@ -1244,7 +1243,6 @@ namespace faith
 				world_server::getInstance().set_ws_loading_flag(e_ws_flag_city_war);
 				if (world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_legion_territory_war))
 				{
-					//�������з������ľ�������
 					city_war_territory_mgr::get_instance().send_city_info_all_to_other_ws(0);
 				}
 				else
@@ -1705,7 +1703,7 @@ namespace faith
 		}
 		session_player->get_relation_list_mgr().clear_relation_list();
 		session_player->get_relation_list_mgr().load_relation_from_db(load_player_relation->relation_array, load_player_relation->data_num);
-		session_player->get_relation_list_mgr().update_relation_state(true, false);				//�������״̬�������½ʱ��
+		session_player->get_relation_list_mgr().update_relation_state(true, false);
 		session_player->get_relation_list_mgr().sync_relation_list_to_client();
 		session_player->get_relation_list_mgr().sync_full_relation_list_to_cs(false);
 	}
@@ -1744,7 +1742,6 @@ namespace faith
 			return;
 		}
 
-		//���������ǼӺ����б�
 		if (packet->relation_type == e_relationlist_type_friend)
 		{
 			client_session* session_ptr = client_session_mgr::getInstance().get_session(packet->relation_guid);

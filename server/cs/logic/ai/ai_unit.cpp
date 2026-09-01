@@ -13,7 +13,7 @@ namespace faith
 	{
 		m_ai_level_nomal.clear_data();
 	}
-	//npc³õÊ¼»¯
+	//npcåˆå§‹åŒ–
 	void ai_unit::init_ai(npc* unit_ptr, const s_map_pos& born_pos, const s_map_pos& patrol_pos, NpcTemplate* npc_template_ptr, Entity* map_ent)
 	{
 		if (NULL == unit_ptr || NULL == npc_template_ptr)
@@ -28,7 +28,7 @@ namespace faith
 		m_ai_level_nomal.init_fake_player_info(fake_player_ptr);
 	}
 
-	//npcÊ±¼ätick
+	//npcæ—¶é—´tick
 	void ai_unit::ai_tick(const int64& new_time)
 	{
 		m_ai_level_nomal.ai_tick(new_time);

@@ -1,4 +1,4 @@
-/*@@
+﻿/*@@
 
 	Copyright (c) Beijing Second Laboratory Game Studio. All rights reserved. 
 	
@@ -19,9 +19,7 @@
 #define _CROSS_TRANSFER_LOGIC_HPP_
 
 //////////////////////////////////////////////////////////////////////////
-//
 //	File Include
-//
 //////////////////////////////////////////////////////////////////////////
 #include <gate_msg.hpp>
 #include "../server/client_session.hpp"

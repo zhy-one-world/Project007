@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2014/08/07
 	created:	7:8:2014   15:02
 	file base:	world_server
@@ -351,7 +351,7 @@ namespace faith
 	{
 		game_proto_server_act_is_open_end msg;
 		msg.set_is_hiden(m_server_act_hidden);
-		if (nullptr == session)//�������session��ʾ�����������
+		if (nullptr == session)
 		{
 			client_session_mgr::getInstance().send_message_to_all_client(&msg, e_mgsindex_s2c_send_server_act_is_open);
 		}
@@ -387,7 +387,7 @@ namespace faith
 			msg.add_server_ip("");
 			msg.add_server_name("");
 		}
-		if (nullptr == session)//�������session��ʾ�����������
+		if (nullptr == session)
 		{
 			client_session_mgr::getInstance().send_message_to_all_client(&msg, e_msgindex_s2c_player_server_config);
 		}
@@ -740,7 +740,6 @@ namespace faith
 				return;
 			}
 			m_fep_conn_index[msg->server_info.server_index] = conn_index;
-			//����fep��������fep����
 			if (world_server::getInstance().is_loading_flag_finish(e_ws_flag_fep_connect))
 			{
 				time_limit_activity_temp_ws_mgr::get_instance().send_to_fep_template();
@@ -766,7 +765,6 @@ namespace faith
 			{
 				world_server::getInstance().send_msg_to_cs_with_load_end();
 			}
-			//����cs��������cs����
 			if (world_server::getInstance().is_loading_flag_finish(e_ws_flag_init_time_limit_template))
 			{
 				time_limit_activity_temp_ws_mgr::get_instance().send_to_cs_template();
@@ -787,7 +785,6 @@ namespace faith
 	{
 		const app_server_update* msg = static_cast<const app_server_update*>(data_ptr);
 
-		//	��֤�Ϸ���
 		net_server* faith_server_ptr = net_server_mgr::getInstance().get_peer_by_conn_index(conn_index);
 		if (faith_server_ptr == NULL)
 		{
@@ -950,11 +947,9 @@ namespace faith
 				,cs_num, SERVER_CS_COUNT
 				,fep_num, SERVER_FEP_COUNT
 				,gate_num, SERVER_GATE_COUNT);
-			// �����Ϣ
 			int32 session_count = client_session_mgr::getInstance().get_session_num();
 			CONSOLE_INFO("session num:{} session max:{}", session_count, init_session_max);
 
-			//�Ŷ���Ϣ�����Ϊ׼
 			int32 seesion_online_counter = queued_login_mgr::getInstance().get_online_counter();
 			int32 seesion_queue_length = queued_login_mgr::getInstance().get_queue_length();
 			CONSOLE_INFO("seesion_online_counter:{} seesion_queue_length:{}", seesion_online_counter, seesion_queue_length);
@@ -1004,7 +999,6 @@ namespace faith
 			CONSOLE_INFO("ws loading flag:{}", m_ws_loading_flag);
 		}
 
-		// �����Ϣ
 		int32 session_count = client_session_mgr::getInstance().get_session_num();
 		if (daemon_client::getInstance().get_server_close() && session_count == 0)
 		{
@@ -1152,7 +1146,7 @@ namespace faith
 			m_server_time_refresh_harry = get_next_harry_refresh_time();
 			save_server_attr_val_db(e_srv_attr_val_server_harry_refresh_time, m_server_time_refresh_harry);
 		}
-		else if (m_server_time_refresh_harry == 0)//Ϊ0��ˢ��
+		else if (m_server_time_refresh_harry == 0)
 		{
 			m_server_time_refresh_harry = get_next_harry_refresh_time();
 			if (m_server_time_refresh_harry > 0)
@@ -1646,11 +1640,11 @@ namespace faith
 		}
 		else
 		{
-			days += time_helper::get_days_of_year(server_on_year) - server_on_yday; //������ʣ������
-			days += local_yday;	//��ǰ���ѹ�����
+			days += time_helper::get_days_of_year(server_on_year) - server_on_yday;
+			days += local_yday;
 			for (int32 year = server_on_year + 1; year < local_year; year++)
 			{
-				days += time_helper::get_days_of_year(year);	// �м��������
+				days += time_helper::get_days_of_year(year);
 			}
 		}
 		if (days < 0)
@@ -1668,7 +1662,6 @@ namespace faith
 		}
 		if (get_need_begin_cross_gm_common(e_need_server_cross_begin_cross) <= 0)
 		{
-			//û����������Զ�������
 			return;
 		}
 
@@ -1714,7 +1707,7 @@ namespace faith
 		{
 			return;
 		}
-		if (old_loading_flag != 0)//ִֻ��һ��
+		if (old_loading_flag != 0)
 		{
 			send_to_gate_with_flag_load_end();
 			send_msg_to_cs_with_load_end();
@@ -1866,7 +1859,6 @@ namespace faith
 
 	void world_server::refresh_server_cross_time()
 	{
-		//û�����������gate��ֱ������״̬
 		if (is_sky_island_server())
 		{
 			if (m_server_info_arr[e_server_info_type_begin_first_cross_server_time] <= 0)
@@ -1884,7 +1876,7 @@ namespace faith
 		else
 		{
 			if (gate_proxy::getInstance().is_gate_run() && !m_is_set_cross_time)
-			{//gate���ڵķ���������Ҫ�Լ�����
+			{
 				m_is_set_cross_time = true;
 				if (m_server_info_arr[e_server_info_type_begin_cross_server_time] <= 0)
 				{
@@ -2040,9 +2032,7 @@ namespace faith
 		int64 cur_day_zero_time = time_helper::get_today_zero_time_info().second;
 
 		int32 mid_day = 7 - weekday;
-		//��ȡ��ǰ���յ�23:00
 		int64 time_week_refresh = cur_day_zero_time + mid_day * day_time_second - hour_tick_time / second_tick_time;
-		//���ܻ�ȡʱ��������23:00֮���Ϊ��ȡ���ܵ�ʱ��
 		if (time_helper::get_cur_time_new().second > time_week_refresh)
 		{
 			time_week_refresh = time_week_refresh + all_day_in_week * day_time_second;

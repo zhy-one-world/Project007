@@ -31,7 +31,7 @@ namespace faith
 			return false;
 		}
 
-		//³õÊ¼»¯playerµÄrelationÊôÐÔ
+		//åˆå§‹åŒ–playerçš„relationå±žæ€§
 		m_relation_info.relation_guid = puser->get_role_guid();
 		this->set_data_name(puser->m_role_info.role_name);
 		m_relation_info.gs_value = puser->get_role_gs_value();

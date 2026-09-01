@@ -1,4 +1,4 @@
-#include "team_ws_mgr.h"
+ï»¿#include "team_ws_mgr.h"
 #include "ws/server/legion/legion_ws_mgr.h"
 #include "team_ws_mgr.h"
 #include "template/StringConst_S.h"
@@ -105,7 +105,7 @@ namespace faith
 			return nullptr;
 		}
 
-		// Èç¹û¶ÓÎéÒÑ¾­ÔÚ×é¶Ó¹ÜÀíÆ÷ÖĞÔò²»ÔÙÖØ¸´²åÈë
+		// å¦‚æœé˜Ÿä¼å·²ç»åœ¨ç»„é˜Ÿç®¡ç†å™¨ä¸­åˆ™ä¸å†é‡å¤æ’å…¥
 		if (get_team(team_guid) != nullptr)
 		{
 			return nullptr;
@@ -162,7 +162,7 @@ namespace faith
 
 	team_ws* team_ws_mgr::create_new_team(client_session* session, const s_team_member_info& captain_info, e_team_type team_type, int32 sub_type_id, bool is_auto_match, int32 one_stop_val, int32 required_fp, int32 required_lv)
 	{
-		// ´´½¨¶ÓÎé ¼ÓÈë´´½¨ÈË ²¢½«´´½¨ÈËÉèÖÃÎª¶Ó³¤ ÈÎºÎÒ»²½ÔËĞĞÒì³£¶¼»áµ¼ÖÂ¶ÓÎé´´½¨Ê§°Ü
+		// åˆ›å»ºé˜Ÿä¼ åŠ å…¥åˆ›å»ºäºº å¹¶å°†åˆ›å»ºäººè®¾ç½®ä¸ºé˜Ÿé•¿ ä»»ä½•ä¸€æ­¥è¿è¡Œå¼‚å¸¸éƒ½ä¼šå¯¼è‡´é˜Ÿä¼åˆ›å»ºå¤±è´¥
 		team_ws new_team_ws(team_type);
 		new_team_ws.set_captain_guid(captain_info.role_guid);
 		new_team_ws.set_team_sub_type_id(sub_type_id);
@@ -181,12 +181,12 @@ namespace faith
 		}
 
 		new_team_ws.send_team_info_to_session(session, true);
-		// new_team_ws.send_aoi_team_info(role_guid); //ÉÏÃæµÄadd_memberÒÑ¾­·¢ÁË
+		// new_team_ws.send_aoi_team_info(role_guid); //ä¸Šé¢çš„add_memberå·²ç»å‘äº†
 
 		team_proto_create_team_end create_team_end_msg;
 		session->send_to_client(&create_team_end_msg, e_msgindex_s2c_create_team_end);
 
-		// ËùÓĞµÄ´´½¨Á÷³Ì×ßÍêÖ®ºó ËÑËØÏÂÓĞÃ»ÓĞ·ûºÏÌõ¼şµÄÍæ¼Ò
+		// æ‰€æœ‰çš„åˆ›å»ºæµç¨‹èµ°å®Œä¹‹å æœç´ ä¸‹æœ‰æ²¡æœ‰ç¬¦åˆæ¡ä»¶çš„ç©å®¶
 		new_team_ws.match_waiting_players();
 		notice_all_player_team_created(new_team_ws);
 
@@ -357,7 +357,6 @@ namespace faith
 		//	{
 		//		return false;
 		//	}
-		//	
 		//	if (is_team_type_raid(team_ws_ref.get_team_type()))
 		//	{
 		//		MapTemplate* map_template_ptr = GET_TEMPLATE(MapTemplate, team_ws_ref.get_team_sub_type_id());
@@ -405,7 +404,7 @@ namespace faith
 				{
 					continue;
 				}
-				// modify by wangsonghao : sub_type_id ²»Ò»ÖÂµÄ¶ÓÎéÒ²Í¬²½¸ø¿Í»§¶ËÏÔÊ¾
+				// modify by wangsonghao : sub_type_id ä¸ä¸€è‡´çš„é˜Ÿä¼ä¹ŸåŒæ­¥ç»™å®¢æˆ·ç«¯æ˜¾ç¤º
 // 				if (team_ws_ref.is_check_sub_id_for_platform() && team_ws_ref.get_team_sub_type_id() != sub_type_id)
 // 				{
 // 					continue;
@@ -451,7 +450,7 @@ namespace faith
 			
 			if (is_team_type_raid(team_ws_ref.get_team_type()))
 			{
-				// ÔİÊ±È¥µô ÈÃÍæ¼Ò¶¼ÄÜ¿´¼û
+				// æš‚æ—¶å»æ‰ è®©ç©å®¶éƒ½èƒ½çœ‹è§
 				//auto ite = can_transfer_sub_ids.find(team_ws_ref.get_team_sub_type_id());
 				//if (ite == can_transfer_sub_ids.end())
 				//{
@@ -512,7 +511,7 @@ namespace faith
 		
 		if (team_type == e_team_type_one_dragon)
 		{
-			// Ò»ÌõÁú»áÑ¡Ôñ¾ßÌåÄ¿±ê ËùÓĞÄ¿±ê´ÎÊı¶¼ÓÃÍêµÄ»° Ç°Ãæ¾Í·µ»Ø´íÎóÁË
+			// ä¸€æ¡é¾™ä¼šé€‰æ‹©å…·ä½“ç›®æ ‡ æ‰€æœ‰ç›®æ ‡æ¬¡æ•°éƒ½ç”¨å®Œçš„è¯ å‰é¢å°±è¿”å›é”™è¯¯äº†
 			return e_player_match_team_none;
 		}
 
@@ -555,7 +554,7 @@ namespace faith
 			return e_player_match_team_succeed;
 		}
 		
-		// Ã»ÓĞÆ¥Åäµ½¶ÓÎé ¼ì²éÓĞÃ»ÓĞÆ¥ÅäÒ»ÑùµÄ¶ÓÎéÄ¿±êµÄÆäËûÍæ¼Ò
+		// æ²¡æœ‰åŒ¹é…åˆ°é˜Ÿä¼ æ£€æŸ¥æœ‰æ²¡æœ‰åŒ¹é…ä¸€æ ·çš„é˜Ÿä¼ç›®æ ‡çš„å…¶ä»–ç©å®¶
 		player_auto_match_map& matching_players_map = get_auto_matching_players();
 		for (player_auto_match_map::iterator iter = matching_players_map.begin(); iter != matching_players_map.end(); ++iter)
 		{
@@ -717,7 +716,7 @@ namespace faith
 
 	void team_ws_mgr::on_unit_leave_map(client_session* session, int32 unit_num_after_rm)
 	{
-		//Ö®Ç°¶ÓÎé×´Ì¬ÖØÖÃµÄÂß¼­ ÕâÑùÊµÏÖ¸±±¾ÄÚÎ¨Ò»¶ÓÔ± ÍË¶Ó»áÓĞbug ¸ÄÎª¸±±¾»ØÊÕÊ±ºòÖØÖÃ
+		//ä¹‹å‰é˜Ÿä¼çŠ¶æ€é‡ç½®çš„é€»è¾‘ è¿™æ ·å®ç°å‰¯æœ¬å†…å”¯ä¸€é˜Ÿå‘˜ é€€é˜Ÿä¼šæœ‰bug æ”¹ä¸ºå‰¯æœ¬å›æ”¶æ—¶å€™é‡ç½®
 		//if (nullptr == session)
 		//{
 		//	return;
@@ -767,7 +766,7 @@ namespace faith
 		team_ws* team_ws_ptr = team_ws_mgr::get_instance().get_unit_team(player_guid);
 		if (team_ws_ptr == nullptr)
 		{
-			//·ÀÖ¹¶ÏÏß¹ı³ÌÖĞ±»Ìßµô
+			//é˜²æ­¢æ–­çº¿è¿‡ç¨‹ä¸­è¢«è¸¢æ‰
 			team_proto_leave_team_end leave_team_end_msg;
 			leave_team_end_msg.set_team_guid(0);
 			session->send_to_client(&leave_team_end_msg, e_msgindex_s2c_leave_team_end);
@@ -958,7 +957,7 @@ namespace faith
 		session->send_to_client(&get_no_team_mate_list_end_msg, e_msgindex_s2c_get_no_team_legionmate_list_end);
 	}
 
-	//Ä¿Ç°Õâ¸öÏûÏ¢°üÊÇ¸ö»úÆ÷ÈË¹¦ÄÜÓÃµÄ
+	//ç›®å‰è¿™ä¸ªæ¶ˆæ¯åŒ…æ˜¯ä¸ªæœºå™¨äººåŠŸèƒ½ç”¨çš„
 	void team_ws_mgr::notice_all_player_team_created(team_ws& team_ref)
 	{
 		if (!team_ref.can_team_state_be_searched())

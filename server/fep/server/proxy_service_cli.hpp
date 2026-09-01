@@ -1,4 +1,4 @@
-/********************************************************************
+ï»¿/********************************************************************
 	created:	2014/07/30
 	created:	30:7:2014   18:02
 	file base:	proxy_service_cli
@@ -23,9 +23,7 @@
 
 namespace faith
 {
-	//
 	//	singleton class, connection-proxy services for clients
-	//
 	class proxy_service_cli : public singleton<proxy_service_cli>
 	{
 		friend class singleton<proxy_service_cli>;
@@ -60,7 +58,7 @@ namespace faith
 		}
 		void send_time_limit_activity_template_to_all();
 	private:
-		void logout(uint32 connindex, e_logout_result logout_result);//·¢ËÍµÇ³öĞ­Òé,²¢ĞŞ¸ÄÏà¹Ø×´Ì¬
+		void logout(uint32 connindex, e_logout_result logout_result);//å‘é€ç™»å‡ºåè®®,å¹¶ä¿®æ”¹ç›¸å…³çŠ¶æ€
 		bool free_session(uint32 connindex);
 		bool set_netpara_option(uint32 send_buf_size, uint32 recv_buf_size, uint32 max_packet_size);
 	protected:

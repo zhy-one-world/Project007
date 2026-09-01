@@ -27,7 +27,7 @@
 //}; /* EVP_CIPHER_CTX */
 
    /*
-   * openssl aes 128 ecb pkcs5padding ¼ÓÃÜ
+   * openssl aes 128 ecb pkcs5padding åŠ å¯†
    */
 using namespace std;
 
@@ -1165,7 +1165,7 @@ namespace faith {
 		ctx = EVP_CIPHER_CTX_new();
 		int ret = EVP_EncryptInit_ex(ctx, EVP_aes_128_ecb(), NULL, (const unsigned char*)key.data(), NULL);
 
-		unsigned char* result = new unsigned char[source.length() + 64]; // Åª¸ö×ã¹»´óµÄ¿Õ¼ä
+		unsigned char* result = new unsigned char[source.length() + 64]; // å¼„ä¸ªè¶³å¤Ÿå¤§çš„ç©ºé—´
 		int len1 = 0;
 		ret = EVP_EncryptUpdate(ctx, result, &len1, (const unsigned char*)source.data(), source.length());
 
@@ -1180,7 +1180,7 @@ namespace faith {
 		return res;
 	}
 	/*
-	* openssl aes 128 ecb pkcs5padding ½âÃÜ
+	* openssl aes 128 ecb pkcs5padding è§£å¯†
 	*/
 	std::string AES::aes_128_ecb_decrypt(const std::string& ciphertext, const std::string& key)
 	{
@@ -1188,7 +1188,7 @@ namespace faith {
 		ctx = EVP_CIPHER_CTX_new();
 		int ret = EVP_DecryptInit_ex(ctx, EVP_aes_128_ecb(), NULL, (const unsigned char*)key.data(), NULL);
 
-		unsigned char* result = new unsigned char[ciphertext.length() + 64]; // Åª¸ö×ã¹»´óµÄ¿Õ¼ä
+		unsigned char* result = new unsigned char[ciphertext.length() + 64]; // å¼„ä¸ªè¶³å¤Ÿå¤§çš„ç©ºé—´
 		int len1 = 0;
 		ret = EVP_DecryptUpdate(ctx, result, &len1, (const unsigned char*)ciphertext.data(), ciphertext.length());
 

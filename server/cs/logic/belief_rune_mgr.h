@@ -1,8 +1,8 @@
 #pragma once
 /********************************************************************
-created: 2018Äê09ÔÂ13ÈÕ
-author: ÁõÑô
-purpose: ĞÅÑö·ûÎÄ¹ÜÀíÏµÍ³
+created: 2018å¹´09æœˆ13æ—¥
+author: åˆ˜é˜³
+purpose: ä¿¡ä»°ç¬¦æ–‡ç®¡ç†ç³»ç»Ÿ
 *********************************************************************/
 #ifndef _BELIEF_RUNE_MGR_H_
 #define _BELIEF_RUNE_MGR_H_
@@ -41,7 +41,7 @@ namespace faith
 		
 		void response_operate_result(e_belief_rune_operate_type operate_type, int32 error_id);
 
-		//ĞÅÑö»ØÀÈÏà¹Ø
+		//ä¿¡ä»°å›å»Šç›¸å…³
 		int32 get_stage_point() { return m_stage_point; };
 		void add_stage_point(int32 num) { m_stage_point += num; };
 		void set_stage_point(int32 num) { m_stage_point = num; };
@@ -57,9 +57,9 @@ namespace faith
 	private:
 		player* m_player_ptr;
 		int32 m_attr_type_equiped_cache[e_belief_series_type_max];
-		int32 m_decompose_rune_piece; //·Ö½â»ñµÃµÄ·ûÎÄËéÆ¬ ÓÃÓÚÇ°¶ËÏÔÊ¾
+		int32 m_decompose_rune_piece; //åˆ†è§£è·å¾—çš„ç¬¦æ–‡ç¢ç‰‡ ç”¨äºå‰ç«¯æ˜¾ç¤º
 
-		//ĞÅÑö»ØÀÈÏà¹Ø
+		//ä¿¡ä»°å›å»Šç›¸å…³
 		int32 m_stage_point;
 		int32 m_leave_stage_left_time;
 		bool m_is_in_belief_cloister_battle;

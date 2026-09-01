@@ -1,10 +1,10 @@
 /********************************************************************
-created: 2018Äê9ÔÂ6ÈÕ
+created: 2018å¹´9æœˆ6æ—¥
 file base: msgproc_boss_island
 file ext: cpp
 author: zhangshuo
 
-purpose: ÓÀºãµº
+purpose: æ°¸æ’å²›
 *********************************************************************/
 
 #include "logic/type_def.hpp"

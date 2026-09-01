@@ -14,45 +14,45 @@ namespace faith
 	public:
 		void									set_unit_index(int32 array_index) { m_array_index = array_index; };
 
-		//¼¤»î»é½äÊôĞÔ£¨¸ù¾İÏûºÄÎïÆ·ÉèÖÃ³õÊ¼µÈ¼¶£©
+		//æ¿€æ´»å©šæˆ’å±æ€§ï¼ˆæ ¹æ®æ¶ˆè€—ç‰©å“è®¾ç½®åˆå§‹ç­‰çº§ï¼‰
 		void									activate_wedding_ring(int32 marry_item_id = 0);
 
-		//¹Ø±Õ»é½äÊôĞÔ£¨Àë»éÊ¹ÓÃ£©
+		//å…³é—­å©šæˆ’å±æ€§ï¼ˆç¦»å©šä½¿ç”¨ï¼‰
 		void									close_wedding_ring();
 
-		//¸ù¾İws·¢À´µÄÏûÏ¢Ë¢ĞÂ×´Ì¬
+		//æ ¹æ®wså‘æ¥çš„æ¶ˆæ¯åˆ·æ–°çŠ¶æ€
 		void									refresh_wedding_ring_info(bool is_marry, int32 marry_item_id, int32 mate_ring_level, int32 heart_value);
 
-		//Ë¢ĞÂ¶Ô·½ÅàÑøµÈ¼¶
+		//åˆ·æ–°å¯¹æ–¹åŸ¹å…»ç­‰çº§
 		void									refresh_mate_wedding_ring_level(int32 mate_ring_level);
 
-		//ÅàÑø»é½äÊôĞÔ
+		//åŸ¹å…»å©šæˆ’å±æ€§
 		void									wedding_ring_upgrade(int32 use_up_item);
 
-		//»ñÈ¡ÅàÑøµÈ¼¶
+		//è·å–åŸ¹å…»ç­‰çº§
 		int32									get_ring_level();
 
-		//Ë¢ĞÂÁéÏ¬Öµ
+		//åˆ·æ–°çµçŠ€å€¼
 		void									refresh_heart_value(int32 heart_value);
 
-		//Ôö¼ÓÁéÏ¬Öµ £¨»áÇëÇówsÌí¼Ó²¢Í¬²½£©
+		//å¢åŠ çµçŠ€å€¼ ï¼ˆä¼šè¯·æ±‚wsæ·»åŠ å¹¶åŒæ­¥ï¼‰
 		void									add_heart_value(int32 add_value, int32 send_type = 0);
 
 		int32									get_heart_value();
 
-		//¿Û³ı×£¸£ËùĞè»¨·Ñ
+		//æ‰£é™¤ç¥ç¦æ‰€éœ€èŠ±è´¹
 		void									cost_bless_money(const guid_64& target_guid);
 
-		//Ê¹ÓÃÑÌ»¨µÀ¾ß
+		//ä½¿ç”¨çƒŸèŠ±é“å…·
 		void									req_use_fireworks(const guid_64& obj_guid, const std::string& target_name, const std::string& target_blessing);
 
-		//½áÔµÏà¹Ø²Ù×÷
+		//ç»“ç¼˜ç›¸å…³æ“ä½œ
 		void									req_lucky_operator(e_lucky_info_req_type type);
 
-		//¼ÆËãÊôĞÔ¼Ó³É
+		//è®¡ç®—å±æ€§åŠ æˆ
 		//void									set_att_all(bool is_add) {}
 
-		//------------´ğÌâÏà¹Ø----------------
+		//------------ç­”é¢˜ç›¸å…³----------------
 		void									begin_marry_dati(bool is_near);
 		void									confirm_marry_dati(int32 is_receive);
 		void									confirm_marry_operate(int32 operate_type, int32 ext_param_1, int32 ext_param_2);

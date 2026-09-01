@@ -31,14 +31,14 @@ namespace faith
 		void	send_new_draw_info(int32 index, guid_64 role_guid, xstring role_name, int32 money_num);
 		void	add_info_to_msg(character_proto_update_red_pack_info& msg, int32 index);
 		void	save_info_to_db();
-		void	load_info_by_db();  //ÎŞµ÷ÓÃ
+		void	load_info_by_db();  //æ— è°ƒç”¨
 		void	load_receiver_by_db(guid_64 red_package_guid);
 		void	load_red_package_end(const s_red_package_base* data_list, int32 data_num);
 		void	load_red_package_receiver_end(const s_red_package_receiver* data_list, int32 data_num);
 		int32   get_suit_slot();
 		int32   get_oldest_red_package_slot();
 		//rename																																		
-		void	change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//½ÇÉ«¸ÄÃûÍ¬²½
+		void	change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//è§’è‰²æ”¹ååŒæ­¥
 		void	set_red_package_base_proto(server2dp_proto_s_red_package_base * proto_info, s_red_package_base data_info);
 		void	set_red_package_receiver_proto(server2dp_proto_s_red_package_receiver * proto_info, s_red_package_receiver data_info);
 		void	set_red_package_proto(server2dp_proto_s_red_package * proto_info, s_red_package data_info);

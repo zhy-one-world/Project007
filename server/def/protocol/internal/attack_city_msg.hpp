@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2021Äê9ÔÂ24ÈÕ
+created: 2021å¹´9æœˆ24æ—¥
 file base: attack_city_msg
 file ext: hpp
 author: zhaoyuming
@@ -22,52 +22,52 @@ namespace faith
 #pragma pack(push,1)
 	enum
 	{
-		e_msgindex_ws2ws_transfer_attack_city_map_result = faith::e_msg_base_attack_city,	// ´«ËÍµ½»î¶¯µØÍ¼µÄ·µ»Ø½á¹û
-		e_msgindex_ws2cs_attack_city_init_data,												// µØÍ¼³õÊ¼»¯¾üÍÅÊı¾İ		
-		e_msgindex_ws2ws_attack_city_legion_check,											// »î¶¯¿ªÆôÇ°µÄ»î¶¯¼ì²â
-		e_msgindex_ws2ws_attack_city_legion_check_end,										// »î¶¯¿ªÆôÇ°µÄ»î¶¯¼ì²â½á¹û
-		e_msgindex_ws2dp_attack_city_save_legion_info,										// ±£´æ¾üÍÅĞÅÏ¢
-		e_msgindex_ws2dp_attack_city_save_rank_info,										// ±£´æÅÅÃûĞÅÏ¢
-		e_msgindex_ws2dp_attack_city_load_legion_info,										// ¼ÓÔØ¾üÍÅĞÅÏ¢
-		e_msgindex_dp2ws_attack_city_load_legion_info_end,									// ¼ÓÔØ¾üÍÅĞÅÏ¢½á¹û
-		e_msgindex_ws2dp_attack_city_load_rank_info,										// ¼ÓÔØÅÅÃûĞÅÏ¢
-		e_msgindex_dp2ws_attack_city_load_rank_info_end,									// ¼ÓÔØÅÅÃûĞÅÏ¢½á¹û
-		e_msgindex_ws2dp_attack_city_clear_rank_info,										// Çå³ıÅÅÃûÊı¾İ
-		e_msgindex_ws2dp_attack_city_clear_legion_info,										// Çå³ı¾üÍÅÊı¾İ
-		e_msgindex_ws2ws_get_attack_city_legion_info,										// »ñÈ¡¾üÍÅĞÅÏ¢
-		e_msgindex_ws2ws_send_attack_city_legion_info,										// ·¢ËÍ¾üÍÅĞÅÏ¢
-		e_msgindex_ws2ws_get_attack_city_legion_rank_info,									// »ñÈ¡¾üÍÅÅÅÃûĞÅÏ¢
-		e_msgindex_ws2ws_send_attack_city_legion_rank_info,									// ·¢ËÍ¾üÍÅÅÅÃûĞÅÏ¢
-		e_msgindex_ws2ws_sync_attack_city_legion_info,										// Í¬²½¾üÍÅĞÅÏ¢
-		e_msgindex_cs2ws_send_attack_city_legion_end_info,									// ¾üÍÅ½áÊøĞÅÏ¢
-		e_msgindex_cs2ws_send_attack_city_legion_reward_info,								// ¾üÍÅ½±ÀøĞÅÏ¢
-		e_msgindex_cs2ws_send_attack_city_rank_end_info,									// ·¢ËÍ¾üÍÅÅÅÃûĞÅÏ¢
-		e_msgindex_cs2ws_send_attack_city_legion_call,										// ·¢ËÍ¾üÍÅÕÙ¼¯
-		e_msgindex_ws2ws_send_attack_city_group_mail,										// ·¢ËÍ·Ö×éĞÅÏ¢
+		e_msgindex_ws2ws_transfer_attack_city_map_result = faith::e_msg_base_attack_city,	// ä¼ é€åˆ°æ´»åŠ¨åœ°å›¾çš„è¿”å›ç»“æœ
+		e_msgindex_ws2cs_attack_city_init_data,												// åœ°å›¾åˆå§‹åŒ–å†›å›¢æ•°æ®		
+		e_msgindex_ws2ws_attack_city_legion_check,											// æ´»åŠ¨å¼€å¯å‰çš„æ´»åŠ¨æ£€æµ‹
+		e_msgindex_ws2ws_attack_city_legion_check_end,										// æ´»åŠ¨å¼€å¯å‰çš„æ´»åŠ¨æ£€æµ‹ç»“æœ
+		e_msgindex_ws2dp_attack_city_save_legion_info,										// ä¿å­˜å†›å›¢ä¿¡æ¯
+		e_msgindex_ws2dp_attack_city_save_rank_info,										// ä¿å­˜æ’åä¿¡æ¯
+		e_msgindex_ws2dp_attack_city_load_legion_info,										// åŠ è½½å†›å›¢ä¿¡æ¯
+		e_msgindex_dp2ws_attack_city_load_legion_info_end,									// åŠ è½½å†›å›¢ä¿¡æ¯ç»“æœ
+		e_msgindex_ws2dp_attack_city_load_rank_info,										// åŠ è½½æ’åä¿¡æ¯
+		e_msgindex_dp2ws_attack_city_load_rank_info_end,									// åŠ è½½æ’åä¿¡æ¯ç»“æœ
+		e_msgindex_ws2dp_attack_city_clear_rank_info,										// æ¸…é™¤æ’åæ•°æ®
+		e_msgindex_ws2dp_attack_city_clear_legion_info,										// æ¸…é™¤å†›å›¢æ•°æ®
+		e_msgindex_ws2ws_get_attack_city_legion_info,										// è·å–å†›å›¢ä¿¡æ¯
+		e_msgindex_ws2ws_send_attack_city_legion_info,										// å‘é€å†›å›¢ä¿¡æ¯
+		e_msgindex_ws2ws_get_attack_city_legion_rank_info,									// è·å–å†›å›¢æ’åä¿¡æ¯
+		e_msgindex_ws2ws_send_attack_city_legion_rank_info,									// å‘é€å†›å›¢æ’åä¿¡æ¯
+		e_msgindex_ws2ws_sync_attack_city_legion_info,										// åŒæ­¥å†›å›¢ä¿¡æ¯
+		e_msgindex_cs2ws_send_attack_city_legion_end_info,									// å†›å›¢ç»“æŸä¿¡æ¯
+		e_msgindex_cs2ws_send_attack_city_legion_reward_info,								// å†›å›¢å¥–åŠ±ä¿¡æ¯
+		e_msgindex_cs2ws_send_attack_city_rank_end_info,									// å‘é€å†›å›¢æ’åä¿¡æ¯
+		e_msgindex_cs2ws_send_attack_city_legion_call,										// å‘é€å†›å›¢å¬é›†
+		e_msgindex_ws2ws_send_attack_city_group_mail,										// å‘é€åˆ†ç»„ä¿¡æ¯
 	};	
-	// »î¶¯µØÍ¼´«ËÍ
+	// æ´»åŠ¨åœ°å›¾ä¼ é€
 	struct ws2ws_transfer_attack_city_map_result : public faith::packet_base
 	{
-		int32						result;								// ½á¹ûÀàĞÍ
-		guid_64						role_guid;							// ½ÇÉ«Guid
-		guid_64						legion_guid;						// ¾üÍÅGuid
-		guid_64						map_guid;							// µØÍ¼Guid
-		int32						map_temp_id;						// µØÍ¼Ä£°åId
-		int32						war_idex;							// Ïß
-		int32						activity_type;						// »î¶¯ÀàĞÍ
-		int32						server_id;							// ·şÎñÆ÷id
+		int32						result;								// ç»“æœç±»å‹
+		guid_64						role_guid;							// è§’è‰²Guid
+		guid_64						legion_guid;						// å†›å›¢Guid
+		guid_64						map_guid;							// åœ°å›¾Guid
+		int32						map_temp_id;						// åœ°å›¾æ¨¡æ¿Id
+		int32						war_idex;							// çº¿
+		int32						activity_type;						// æ´»åŠ¨ç±»å‹
+		int32						server_id;							// æœåŠ¡å™¨id
 		ws2ws_transfer_attack_city_map_result()
 		{
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2ws_transfer_attack_city_map_result;
 		}
 	};
-	// µØÍ¼³õÊ¼»¯
+	// åœ°å›¾åˆå§‹åŒ–
 	struct ws2cs_attack_city_init_data : public faith::packet_base
 	{
-		guid_64						map_guid;								// µØÍ¼Guid
-		int32						group_level;							// ·Ö×éµÈ¼¶
-		s_attack_city_legion_info   legion_list[attack_city_group_max_num];	// ¾üÍÅĞÅÏ¢Êı×é
+		guid_64						map_guid;								// åœ°å›¾Guid
+		int32						group_level;							// åˆ†ç»„ç­‰çº§
+		s_attack_city_legion_info   legion_list[attack_city_group_max_num];	// å†›å›¢ä¿¡æ¯æ•°ç»„
 		ws2cs_attack_city_init_data()
 		{
 			clear_data();
@@ -78,27 +78,27 @@ namespace faith
 			wheader = e_msgindex_ws2cs_attack_city_init_data;
 		}
 	};
-	// ¾üÍÅ¼ì²é
+	// å†›å›¢æ£€æŸ¥
 	struct ws2ws_attack_city_legion_check : public faith::packet_base
 	{
-		guid_64						legion_guid;							// ¾üÍÅGuid
+		guid_64						legion_guid;							// å†›å›¢Guid
 		ws2ws_attack_city_legion_check()
 		{
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2ws_attack_city_legion_check;
 		}
 	};
-	// ¾üÍÅ¼ì²é½á¹û
+	// å†›å›¢æ£€æŸ¥ç»“æœ
 	struct ws2ws_attack_city_legion_check_end : public faith::packet_base
 	{
-		guid_64						legion_guid;							// ¾üÍÅGuid
+		guid_64						legion_guid;							// å†›å›¢Guid
 		ws2ws_attack_city_legion_check_end()	
 		{
 			memset(this, 0, sizeof(*this));
 			wheader = e_msgindex_ws2ws_attack_city_legion_check_end;
 		}
 	};
-	// ±£´æ¾üÍÅĞÅÏ¢
+	// ä¿å­˜å†›å›¢ä¿¡æ¯
 	struct ws2dp_attack_city_save_legion_info : public faith::packet_base
 	{
 		s_attack_city_legion_info					legion_info;
@@ -108,7 +108,7 @@ namespace faith
 			wheader = e_msgindex_ws2dp_attack_city_save_legion_info;
 		}
 	};
-	// ±£´æÅÅÃûĞÅÏ¢
+	// ä¿å­˜æ’åä¿¡æ¯
 	struct ws2dp_attack_city_save_rank_info : public faith::packet_base
 	{
 		s_attack_city_rank_info						rank_info;
@@ -118,7 +118,7 @@ namespace faith
 			wheader = e_msgindex_ws2dp_attack_city_save_rank_info;
 		}
 	};
-	// ÇëÇó¼ÓÔØ¾üÍÅĞÅÏ¢
+	// è¯·æ±‚åŠ è½½å†›å›¢ä¿¡æ¯
 	struct ws2dp_attack_city_load_legion_info : public faith::packet_base
 	{
 		ws2dp_attack_city_load_legion_info()
@@ -127,7 +127,7 @@ namespace faith
 			wheader = e_msgindex_ws2dp_attack_city_load_legion_info;
 		}
 	};
-	// ¼ÓÔØ¾üÍÅĞÅÏ¢
+	// åŠ è½½å†›å›¢ä¿¡æ¯
 	struct dp2ws_attack_city_load_legion_info_end : public faith::packet_base
 	{
 		s_attack_city_legion_info	info_list[attack_city_save_dp_max_num];
@@ -138,7 +138,7 @@ namespace faith
 			wheader = e_msgindex_dp2ws_attack_city_load_legion_info_end;
 		}
 	};
-	// ÇëÇó¼ÓÔØÅÅÃûĞÅÏ¢
+	// è¯·æ±‚åŠ è½½æ’åä¿¡æ¯
 	struct ws2dp_attack_city_load_rank_info : public faith::packet_base
 	{
 		ws2dp_attack_city_load_rank_info()
@@ -147,7 +147,7 @@ namespace faith
 			wheader = e_msgindex_ws2dp_attack_city_load_rank_info;
 		}
 	};
-	// ¼ÓÔØÅÅÃûĞÅÏ¢
+	// åŠ è½½æ’åä¿¡æ¯
 	struct dp2ws_attack_city_load_rank_info_end : public faith::packet_base
 	{
 		s_attack_city_rank_info		info_list[TopMaxNum];
@@ -158,7 +158,7 @@ namespace faith
 			wheader = e_msgindex_dp2ws_attack_city_load_rank_info_end;
 		}
 	};
-	// Çå¿ÕÅÅÃûĞÅÏ¢
+	// æ¸…ç©ºæ’åä¿¡æ¯
 	struct ws2dp_attack_city_clear_rank_info : public faith::packet_base
 	{
 		ws2dp_attack_city_clear_rank_info()
@@ -167,7 +167,7 @@ namespace faith
 			wheader = e_msgindex_ws2dp_attack_city_clear_rank_info;
 		}
 	};
-	// Çå¿Õ¾üÍÅĞÅÏ¢
+	// æ¸…ç©ºå†›å›¢ä¿¡æ¯
 	struct ws2dp_attack_city_clear_legion_info : public faith::packet_base
 	{
 		ws2dp_attack_city_clear_legion_info()
@@ -176,7 +176,7 @@ namespace faith
 			wheader = e_msgindex_ws2dp_attack_city_clear_legion_info;
 		}
 	};
-	// »ñÈ¡¾üÍÅĞÅÏ¢
+	// è·å–å†›å›¢ä¿¡æ¯
 	struct ws2ws_get_attack_city_legion_info : public faith::packet_base
 	{
 		guid_64 role_guid;
@@ -188,7 +188,7 @@ namespace faith
 			wheader = e_msgindex_ws2ws_get_attack_city_legion_info;
 		}
 	};
-	// »ñÈ¡ÅÅÃûĞÅÏ¢
+	// è·å–æ’åä¿¡æ¯
 	struct ws2ws_get_attack_city_legion_rank_info : public faith::packet_base
 	{
 		guid_64 role_guid;
@@ -200,7 +200,7 @@ namespace faith
 			wheader = e_msgindex_ws2ws_get_attack_city_legion_rank_info;
 		}
 	};
-	// ·¢ËÍ¹¥³ÇÕ½³õÊ¼»¯³É¹¦
+	// å‘é€æ”»åŸæˆ˜åˆå§‹åŒ–æˆåŠŸ
 	struct ws2ws_sync_attack_city_legion_info : public faith::packet_base
 	{
 		ws2ws_sync_attack_city_legion_info()
@@ -210,13 +210,13 @@ namespace faith
 		}
 	};
 
-	// ·¢ËÍ¾üÍÅ½áËã½á¹û
+	// å‘é€å†›å›¢ç»“ç®—ç»“æœ
 	struct cs2ws_send_attack_city_legion_reward_info : public faith::packet_base
 	{
 		guid_64						legion_guid;
 		int32						rank_level;
-		s_item_template_info	item_list[50];							// ¾üÍÅ½±Àø
-		guid_64						player_guid[max_legion_member_num];		// Íæ¼ÒÁĞ±í
+		s_item_template_info	item_list[50];							// å†›å›¢å¥–åŠ±
+		guid_64						player_guid[max_legion_member_num];		// ç©å®¶åˆ—è¡¨
 		int32						player_num;
 		cs2ws_send_attack_city_legion_reward_info()
 		{
@@ -224,7 +224,7 @@ namespace faith
 			wheader = e_msgindex_cs2ws_send_attack_city_legion_reward_info;
 		}
 	};
-	// ·¢ËÍ¾üÍÅ½áÊøĞÅÏ¢
+	// å‘é€å†›å›¢ç»“æŸä¿¡æ¯
 	struct cs2ws_send_attack_city_legion_end_info : public faith::packet_base
 	{
 		int32							group_level;
@@ -235,7 +235,7 @@ namespace faith
 			wheader = e_msgindex_cs2ws_send_attack_city_legion_end_info;
 		}
 	};
-	// ·¢ËÍ¾üÍÅÅÅÃûĞÅÏ¢
+	// å‘é€å†›å›¢æ’åä¿¡æ¯
 	struct cs2ws_send_attack_city_rank_end_info : public faith::packet_base
 	{
 		s_attack_city_rank_info		info_list[max_legion_member_num];
@@ -246,7 +246,7 @@ namespace faith
 			wheader = e_msgindex_cs2ws_send_attack_city_rank_end_info;
 		}
 	};
-	// ·¢ËÍ¾üÍÅÅÅÃûĞÅÏ¢
+	// å‘é€å†›å›¢æ’åä¿¡æ¯
 	struct cs2ws_send_attack_city_legion_call : public faith::packet_base
 	{
 		guid_64						play_guid;
@@ -257,7 +257,7 @@ namespace faith
 			wheader = e_msgindex_cs2ws_send_attack_city_legion_call;
 		}
 	};
-	// ·¢ËÍ¾üÍÅ·Ö×éĞÅÏ¢
+	// å‘é€å†›å›¢åˆ†ç»„ä¿¡æ¯
 	struct ws2ws_send_attack_city_group_mail : public faith::packet_base
 	{
 		guid_64						legion_guid[e_attack_city_group_level_max * attack_city_group_max_num];

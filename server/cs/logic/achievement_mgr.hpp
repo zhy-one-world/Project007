@@ -1,9 +1,9 @@
 #pragma once
 /********************************************************************
-created: 2016Äê7ÔÂ15ÈÕ
+created: 2016å¹´7æœˆ15æ—¥
 file base: achievement
-author: ÕÅÓîÏè
-purpose: ³É¾Í¹ÜÀíÏµÍ³
+author: å¼ å®‡ç¿”
+purpose: æˆå°±ç®¡ç†ç³»ç»Ÿ
 *********************************************************************/
 #ifndef _ACHIEVEMENT_MGR_HPP_
 #define _ACHIEVEMENT_MGR_HPP_
@@ -26,15 +26,15 @@ namespace faith
 		cachievement_mgr();
 		~cachievement_mgr();
 	public:
-		//³õÊ¼»¯
+		//åˆå§‹åŒ–
 		void clear_data();
 		void set_player_ptr(const int32 array_index);
 		void tick(float elapse_time);
-		//ÏûÏ¢
+		//æ¶ˆæ¯
 		void send_one_achievement(cachievement& my_achievement);
 		void send_all_achievement();
 		void make_one_achievement_msg(achievement_proto_achievement_one& achievement_msg, const cachievement& my_achievement);
-		//´æµµ
+		//å­˜æ¡£
 		void save_achievement_to_db(int32 save_type);
 		void load_achievement_by_db(const s_achievement_info* achievement_data, int32 achievement_num);
 		bool load_achievement_by_db_lua(const char *data_ptr, int32 data_len);
@@ -42,11 +42,11 @@ namespace faith
 		cachievement* create_achievement_by_template(int32 achievement_id);
 		cachievement* create_achievement_by_info(const s_achievement_info& temp_info);
 
-		//²Ù×÷
+		//æ“ä½œ
 		cachievement*	find_achievement(int32 achievement_id);
 		std::vector <cachievement*>   get_all_can_receive_achievement();
-		void npc_killed(npc* const dead_npc_ptr);//É±¹ÖÏà¹ØÅĞ¶Ï
-		void item_changed(citem* changed_item_ptr,e_item_operation operation_type);//ÎïÆ·Ïà¹ØÅĞ¶Ï
+		void npc_killed(npc* const dead_npc_ptr);//æ€æ€ªç›¸å…³åˆ¤æ–­
+		void item_changed(citem* changed_item_ptr,e_item_operation operation_type);//ç‰©å“ç›¸å…³åˆ¤æ–­
 		void player_changed(e_achievement_type operate_type);
 		void skill_level_up(skill* upgrade_skill);
 		void skill_level_count(int32 new_value);
@@ -58,7 +58,7 @@ namespace faith
 
 		void set_achievement_success(int32 achievement_id, int32 achievement_state);
 		void set_can_receive_achievement_success();
-		////ÊôĞÔ
+		////å±æ€§
 	private:
 		std::map<int32, cachievement>	m_achievement_array;
 		std::vector<cachievement*>		m_achievement_about_npc;

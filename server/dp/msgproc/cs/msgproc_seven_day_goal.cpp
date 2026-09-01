@@ -1,9 +1,9 @@
 /********************************************************************
-created: 2019Äê2ÔÂ13ÈÕ
+created: 2019å¹´2æœˆ13æ—¥
 file base: msgproc_seven_day_goal
 file ext: cpp
 author: wangdi
-purpose: ÆßÈÕÄ¿±êÏûÏ¢Âß¼­ÊµÏÖÎÄ¼ş
+purpose: ä¸ƒæ—¥ç›®æ ‡æ¶ˆæ¯é€»è¾‘å®ç°æ–‡ä»¶
 *********************************************************************/
 #include "logic/type_def.hpp"
 #include "../../dbproxy_service.hpp"

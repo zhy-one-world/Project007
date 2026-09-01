@@ -1,9 +1,9 @@
 /**********************************************
-* created	: 2020Äê8ÔÂ18ÈÕ
+* created	: 2020å¹´8æœˆ18æ—¥
 * file base : element_war_def
 * file ext  : hpp
-* author    : ÕÔÓñÃ÷
-* purpose   : ÔªËØÕù°Ô
+* author    : èµµç‰æ˜
+* purpose   : å…ƒç´ äº‰éœ¸
 *********************************************/
 
 #ifndef _ELEMENT_WAR_DEF_HPP_
@@ -14,179 +14,179 @@
 namespace faith
 {
 #pragma pack(push,1)
-	const int32 ELEMENT_WAR_MAP_ID					= 71220601;	//±ÈÈüµØÍ¼id
-	const int32 ELEMENT_WAR_PLAY_NUM				= 3;		//¶ÓÎé×î´óÍæ¼ÒÊıÁ¿
-	const int32 ELEMENT_WAR_MATCH_NUM				= 6;		//Æ¥Åä×é×î´óÍæ¼ÒÊıÁ¿
-	const int32 ELEMENT_WAR_MAX_LOAD_DB_NUM			= 500;		//µ¥´ÎÊı¾İ¿â×î´ó¼ÓÔØÊıÁ¿
-	const int32	ELEMENT_WAR_BUFF_POS_NUM			= 3;		//ÍÅ¶ÓbuffË¢ĞÂµã		
-	const int32	ELEMENT_WAR_MAP_TEAM_NUM			= 2;		//¶ÓÎéÊıÁ¿	
-	const int32 ELEMENT_WAR_MAP_BEGIN_TIME			= 20;		//×¼±¸Ê±¼ä
-	const int32	ELEMENT_WAR_MAP_SEND_TIME			= 3;		//·¢ËÍµ¹¼ÆÊ±Ê±¼ä
-	const int32 ElEMENT_WAR_BOSS_DEAD_TIME			= 5;		//bossËÀÍöÑÓÊ± 
-	const int32 ElEMENT_WAR_MATH_TIME				= 5;		//Æ¥Åä»úÆ÷ÈËÊ±¼ä
-	const int32 ElEMENT_WAR_SHOW_TIP_TIME			= 10;		//µ¯ÌáÊ¾Ê±¼ä
+	const int32 ELEMENT_WAR_MAP_ID					= 71220601;	//æ¯”èµ›åœ°å›¾id
+	const int32 ELEMENT_WAR_PLAY_NUM				= 3;		//é˜Ÿä¼æœ€å¤§ç©å®¶æ•°é‡
+	const int32 ELEMENT_WAR_MATCH_NUM				= 6;		//åŒ¹é…ç»„æœ€å¤§ç©å®¶æ•°é‡
+	const int32 ELEMENT_WAR_MAX_LOAD_DB_NUM			= 500;		//å•æ¬¡æ•°æ®åº“æœ€å¤§åŠ è½½æ•°é‡
+	const int32	ELEMENT_WAR_BUFF_POS_NUM			= 3;		//å›¢é˜Ÿbuffåˆ·æ–°ç‚¹		
+	const int32	ELEMENT_WAR_MAP_TEAM_NUM			= 2;		//é˜Ÿä¼æ•°é‡	
+	const int32 ELEMENT_WAR_MAP_BEGIN_TIME			= 20;		//å‡†å¤‡æ—¶é—´
+	const int32	ELEMENT_WAR_MAP_SEND_TIME			= 3;		//å‘é€å€’è®¡æ—¶æ—¶é—´
+	const int32 ElEMENT_WAR_BOSS_DEAD_TIME			= 5;		//bossæ­»äº¡å»¶æ—¶ 
+	const int32 ElEMENT_WAR_MATH_TIME				= 5;		//åŒ¹é…æœºå™¨äººæ—¶é—´
+	const int32 ElEMENT_WAR_SHOW_TIP_TIME			= 10;		//å¼¹æç¤ºæ—¶é—´
 
 
 	enum e_element_war_role_info
 	{
-		e_element_war_role_info_template_id,				//Ö°Òµ
-		e_element_war_role_info_vip_level,					//vipµÈ¼¶
-		e_element_war_role_info_role_level,					//½ÇÉ«µÈ¼¶
-		e_element_war_role_info_server_id,					//·şÎñÆ÷id
-		e_element_war_role_info_score_num,					//»ı·Ö
-		e_element_war_role_info_cur_season,					//µ±Ç°Èü¼¾
-		e_element_war_role_info_last_season,				//ÉÏ´ÎµÇÂ½Èü¼¾
-		e_element_war_role_info_total_join_num,				//×Ü´ÎÊı
-		e_element_war_role_info_total_win_num,				//Ê¤Àû´ÎÊı
-		e_element_war_role_info_last_win_num,				//Á¬Ê¤´ÎÊı
-		e_element_war_role_info_ticket_num,					//Ê£Óà´ÎÊı
-		e_element_war_role_info_can_buy_num,				//¿É¹ºÂò´ÎÊı
-		e_element_war_role_info_have_buy_num,				//ÒÑ¹ºÂò´ÎÊı
-		e_element_war_role_info_history_score,				//ÀúÊ·×î¸ß»ı·Ö
-		e_element_war_role_info_cur_season_join_num,		//±¾Èü¼¾²ÎÓë´ÎÊı
-		e_element_war_role_info_last_score,					//ÉÏÈü¼¾»ı·Ö
-		e_element_war_role_info_season_reward,				//ÉÏÈü¼¾½±Àø±êÊ¶
-		e_element_war_role_info_last_season_join_num,		//ÉÏÈü¼¾²ÎÓë´ÎÊı
-		e_element_war_role_info_mission1,					//Ã¿ÈÕÈÎÎñ1id
-		e_element_war_role_info_mission2,					//Ã¿ÈÕÈÎÎñ2id
-		e_element_war_role_info_mission3,					//Ã¿ÈÕÈÎÎñ3id
-		e_element_war_role_info_mission4,					//Ã¿ÈÕÈÎÎñ4id
-		e_element_war_role_info_mission1_have_num,			//Ã¿ÈÕÈÎÎñ1Íê³É´ÎÊı
-		e_element_war_role_info_mission2_have_num,			//Ã¿ÈÕÈÎÎñ2Íê³É´ÎÊı
-		e_element_war_role_info_mission3_have_num,			//Ã¿ÈÕÈÎÎñ3Íê³É´ÎÊı
-		e_element_war_role_info_mission4_have_num,			//Ã¿ÈÕÈÎÎñ4Íê³É´ÎÊı
+		e_element_war_role_info_template_id,				//èŒä¸š
+		e_element_war_role_info_vip_level,					//vipç­‰çº§
+		e_element_war_role_info_role_level,					//è§’è‰²ç­‰çº§
+		e_element_war_role_info_server_id,					//æœåŠ¡å™¨id
+		e_element_war_role_info_score_num,					//ç§¯åˆ†
+		e_element_war_role_info_cur_season,					//å½“å‰èµ›å­£
+		e_element_war_role_info_last_season,				//ä¸Šæ¬¡ç™»é™†èµ›å­£
+		e_element_war_role_info_total_join_num,				//æ€»æ¬¡æ•°
+		e_element_war_role_info_total_win_num,				//èƒœåˆ©æ¬¡æ•°
+		e_element_war_role_info_last_win_num,				//è¿èƒœæ¬¡æ•°
+		e_element_war_role_info_ticket_num,					//å‰©ä½™æ¬¡æ•°
+		e_element_war_role_info_can_buy_num,				//å¯è´­ä¹°æ¬¡æ•°
+		e_element_war_role_info_have_buy_num,				//å·²è´­ä¹°æ¬¡æ•°
+		e_element_war_role_info_history_score,				//å†å²æœ€é«˜ç§¯åˆ†
+		e_element_war_role_info_cur_season_join_num,		//æœ¬èµ›å­£å‚ä¸æ¬¡æ•°
+		e_element_war_role_info_last_score,					//ä¸Šèµ›å­£ç§¯åˆ†
+		e_element_war_role_info_season_reward,				//ä¸Šèµ›å­£å¥–åŠ±æ ‡è¯†
+		e_element_war_role_info_last_season_join_num,		//ä¸Šèµ›å­£å‚ä¸æ¬¡æ•°
+		e_element_war_role_info_mission1,					//æ¯æ—¥ä»»åŠ¡1id
+		e_element_war_role_info_mission2,					//æ¯æ—¥ä»»åŠ¡2id
+		e_element_war_role_info_mission3,					//æ¯æ—¥ä»»åŠ¡3id
+		e_element_war_role_info_mission4,					//æ¯æ—¥ä»»åŠ¡4id
+		e_element_war_role_info_mission1_have_num,			//æ¯æ—¥ä»»åŠ¡1å®Œæˆæ¬¡æ•°
+		e_element_war_role_info_mission2_have_num,			//æ¯æ—¥ä»»åŠ¡2å®Œæˆæ¬¡æ•°
+		e_element_war_role_info_mission3_have_num,			//æ¯æ—¥ä»»åŠ¡3å®Œæˆæ¬¡æ•°
+		e_element_war_role_info_mission4_have_num,			//æ¯æ—¥ä»»åŠ¡4å®Œæˆæ¬¡æ•°
 		e_element_war_role_info_max,
 	};
 
 	enum e_element_war_role_state
 	{
-		e_element_war_role_no_sign_up,					//Î´±¨Ãû
-		e_element_war_role_sign_up,						//±¨Ãû³É¹¦
-		e_element_war_role_join_war,					//±ÈÈü
+		e_element_war_role_no_sign_up,					//æœªæŠ¥å
+		e_element_war_role_sign_up,						//æŠ¥åæˆåŠŸ
+		e_element_war_role_join_war,					//æ¯”èµ›
 	};
 
 	enum e_element_war_sign_up_ret
 	{
-		e_element_war_sign_up_success,					//±¨Ãû³É¹¦
-		e_element_war_sign_up_leave_success,			//È¡Ïû±¨Ãû³É¹¦
-		e_element_war_sign_up_failed,					//±¨ÃûÊ§°Ü
-		e_element_war_sign_up_no_ticket,				//´ÎÊı²»×ã
-		e_element_war_sign_up_level_limit,				//µÈ¼¶²»×ã
-		e_element_war_sign_up_not_open,					//»î¶¯Î´¿ª·Å
-		e_element_war_sign_up_not_in_time,				//²»ÔÚ±ÈÈüÊ±¼äÄÚ
-		e_element_war_sign_up_cross_server_fail,		//¿çÇø·şÎñÆ÷Á¬½ÓÊ§°Ü
-		e_element_war_sign_up_already,					//ÒÑ¾­±¨Ãû
-		e_element_war_sign_up_time_out,					//Æ¥Åä³¬Ê±
-		e_element_war_sign_up_map_limit,				//µØÍ¼ÉÏÏŞ
-		e_element_war_sign_up_team_max_num,				//×é¶ÓÈËÊı¹ı¶à
-		e_element_war_sign_up_is_not_captation,			//²»ÊÇ¶Ó³¤²»ÄÜ·¢ÆğÆ¥Åä
-		e_element_war_sign_up_is_not_line,				//¶ÓÔ±´¦ÓÚÀëÏß×´Ì¬
+		e_element_war_sign_up_success,					//æŠ¥åæˆåŠŸ
+		e_element_war_sign_up_leave_success,			//å–æ¶ˆæŠ¥åæˆåŠŸ
+		e_element_war_sign_up_failed,					//æŠ¥åå¤±è´¥
+		e_element_war_sign_up_no_ticket,				//æ¬¡æ•°ä¸è¶³
+		e_element_war_sign_up_level_limit,				//ç­‰çº§ä¸è¶³
+		e_element_war_sign_up_not_open,					//æ´»åŠ¨æœªå¼€æ”¾
+		e_element_war_sign_up_not_in_time,				//ä¸åœ¨æ¯”èµ›æ—¶é—´å†…
+		e_element_war_sign_up_cross_server_fail,		//è·¨åŒºæœåŠ¡å™¨è¿æ¥å¤±è´¥
+		e_element_war_sign_up_already,					//å·²ç»æŠ¥å
+		e_element_war_sign_up_time_out,					//åŒ¹é…è¶…æ—¶
+		e_element_war_sign_up_map_limit,				//åœ°å›¾ä¸Šé™
+		e_element_war_sign_up_team_max_num,				//ç»„é˜Ÿäººæ•°è¿‡å¤š
+		e_element_war_sign_up_is_not_captation,			//ä¸æ˜¯é˜Ÿé•¿ä¸èƒ½å‘èµ·åŒ¹é…
+		e_element_war_sign_up_is_not_line,				//é˜Ÿå‘˜å¤„äºç¦»çº¿çŠ¶æ€
 	};
 
 	enum e_element_war_config_type
 	{
-		e_element_war_config_match_time_limit,			//Æ¥ÅäÊ±¼äÉÏÏŞ(s)
-		e_element_war_config_transfer_time,				//Ô­Çø´«ËÍÑÓ³Ù(s)
+		e_element_war_config_match_time_limit,			//åŒ¹é…æ—¶é—´ä¸Šé™(s)
+		e_element_war_config_transfer_time,				//åŸåŒºä¼ é€å»¶è¿Ÿ(s)
 		e_element_war_config_max,
 	};
 
 
 	enum e_element_war_buy_limit_type
 	{
-		e_element_war_buy_limit_type_region,			//µØÇø	
-		e_element_war_buy_limit_type_num,				//¿É¹ºÂò´ÎÊı
-		e_element_war_buy_limit_type_money_type,		//¹ºÂò»õ±ÒÀàĞÍ
-		e_element_war_buy_limit_type_money_num,			//»ù´¡¼Û¸ñ
-		e_element_war_buy_limit_type_add_money,			//¼Û¸ñÌáÊ¾ÏµÊı
+		e_element_war_buy_limit_type_region,			//åœ°åŒº	
+		e_element_war_buy_limit_type_num,				//å¯è´­ä¹°æ¬¡æ•°
+		e_element_war_buy_limit_type_money_type,		//è´­ä¹°è´§å¸ç±»å‹
+		e_element_war_buy_limit_type_money_num,			//åŸºç¡€ä»·æ ¼
+		e_element_war_buy_limit_type_add_money,			//ä»·æ ¼æç¤ºç³»æ•°
 		e_element_war_buy_limit_type_max,
 	};
 
 	enum e_element_war_map_state
 	{
-		e_element_war_map_state_begin,		//×¼±¸½×¶Î
-		e_element_war_map_state_first,		//µÚÒ»½×¶Î
-		e_element_war_map_state_secord,		//µÚ¶ş½×¶Î
-		e_element_war_map_state_end,		//×îÖÕ½×¶Î
+		e_element_war_map_state_begin,		//å‡†å¤‡é˜¶æ®µ
+		e_element_war_map_state_first,		//ç¬¬ä¸€é˜¶æ®µ
+		e_element_war_map_state_secord,		//ç¬¬äºŒé˜¶æ®µ
+		e_element_war_map_state_end,		//æœ€ç»ˆé˜¶æ®µ
 		e_element_war_map_state_max,
 	};
 
 	enum e_element_war_map_role_info
 	{
-		e_element_war_map_role_info_server_id ,			//·şÎñÆ÷id	
-		e_element_war_map_role_info_element_score,		//²ÎÈüÇ°ÌìÌİ»ı·Ö
-		e_element_war_map_role_info_score_num,			//»î¶¯ÊÆÁ¦Öµ
-		e_element_war_map_role_info_kill_player_num,	//»÷É±Íæ¼ÒÊıÁ¿
-		e_element_war_map_role_info_kill_monster_num,	//»÷É±ÆÕÍ¨¹ÖÎïÊıÁ¿
-		e_element_war_map_role_info_kill_elite_num,		//»÷É±¾«Ó¢¹ÖÊıÁ¿
-		e_element_war_map_role_info_kill_boss_num,		//»÷É±bossÊıÁ¿
-		e_element_war_map_role_info_team_index,			//¶ÓÎéË÷Òı
-		e_element_war_map_role_info_end_add_score,		//Êµ¼ÊÔö¼Ó»ı·ÖÊı
+		e_element_war_map_role_info_server_id ,			//æœåŠ¡å™¨id	
+		e_element_war_map_role_info_element_score,		//å‚èµ›å‰å¤©æ¢¯ç§¯åˆ†
+		e_element_war_map_role_info_score_num,			//æ´»åŠ¨åŠ¿åŠ›å€¼
+		e_element_war_map_role_info_kill_player_num,	//å‡»æ€ç©å®¶æ•°é‡
+		e_element_war_map_role_info_kill_monster_num,	//å‡»æ€æ™®é€šæ€ªç‰©æ•°é‡
+		e_element_war_map_role_info_kill_elite_num,		//å‡»æ€ç²¾è‹±æ€ªæ•°é‡
+		e_element_war_map_role_info_kill_boss_num,		//å‡»æ€bossæ•°é‡
+		e_element_war_map_role_info_team_index,			//é˜Ÿä¼ç´¢å¼•
+		e_element_war_map_role_info_end_add_score,		//å®é™…å¢åŠ ç§¯åˆ†æ•°
 		e_element_war_map_role_info_max,
 	};
 
 	enum e_element_war_mission_type
 	{
-		e_element_war_mission_type_join_map_num,			//²ÎÓë´ÎÊı
-		e_element_war_mission_type_win_num,					//»ñÊ¤´ÎÊı
-		e_element_war_mission_type_kill_monster_num,		//»÷É±Ğ¡¹Ö´ÎÊı
-		e_element_war_mission_type_kill_player_num,			//»÷É±Íæ¼Ò´ÎÊı
-		e_element_war_mission_type_kill_elite_num,			//»÷É±¾«Ó¢´ÎÊı
-		e_element_war_mission_type_kill_boss_num,			//»÷É±boss´ÎÊı
-		e_element_war_mission_type_kill_first_score_num,	//»ñÈ¡»ı·ÖµÚÒ»´ÎÊı
+		e_element_war_mission_type_join_map_num,			//å‚ä¸æ¬¡æ•°
+		e_element_war_mission_type_win_num,					//è·èƒœæ¬¡æ•°
+		e_element_war_mission_type_kill_monster_num,		//å‡»æ€å°æ€ªæ¬¡æ•°
+		e_element_war_mission_type_kill_player_num,			//å‡»æ€ç©å®¶æ¬¡æ•°
+		e_element_war_mission_type_kill_elite_num,			//å‡»æ€ç²¾è‹±æ¬¡æ•°
+		e_element_war_mission_type_kill_boss_num,			//å‡»æ€bossæ¬¡æ•°
+		e_element_war_mission_type_kill_first_score_num,	//è·å–ç§¯åˆ†ç¬¬ä¸€æ¬¡æ•°
 	};
 
 	enum e_element_war_add_score
 	{
-		e_element_war_add_score_monster,					//»÷É±¹ÖÎï»ı·Ö
-		e_element_war_add_score_elite,						//»÷É±¾«Ó¢¹Ö»ı·Ö
-		e_element_war_add_score_boss,						//»÷É±boss»ı·Ö
-		e_element_war_add_score_player,						//»÷É±Íæ¼Ò»ı·Ö
-		e_element_war_add_score_buff,						//ÓµÓĞbuff»ı·Ö
+		e_element_war_add_score_monster,					//å‡»æ€æ€ªç‰©ç§¯åˆ†
+		e_element_war_add_score_elite,						//å‡»æ€ç²¾è‹±æ€ªç§¯åˆ†
+		e_element_war_add_score_boss,						//å‡»æ€bossç§¯åˆ†
+		e_element_war_add_score_player,						//å‡»æ€ç©å®¶ç§¯åˆ†
+		e_element_war_add_score_buff,						//æ‹¥æœ‰buffç§¯åˆ†
 		e_element_war_add_score_max,
 	};
 
 	enum e_element_war_map_add_score
 	{
-		e_element_war_map_add_score1,						//ÅÅÃû1»ı·Ö
-		e_element_war_map_add_score2,						//ÅÅÃû2»ı·Ö
-		e_element_war_map_add_score3,						//ÅÅÃû3»ı·Ö
-		e_element_war_map_add_score4,						//ÅÅÃû4»ı·Ö
-		e_element_war_map_add_score5,						//ÅÅÃû5»ı·Ö
-		e_element_war_map_add_score6,						//ÅÅÃû6»ı·Ö
-		e_element_war_map_add_score_win,					//»ñÊ¤»ı·Ö
-		e_element_war_map_add_score_los,					//Ê§°Ü»ı·Ö
-		e_element_war_map_add_score_kill_boss,				//»÷É±boss»ı·Ö
-		e_element_war_map_add_score_is_escape,				//ÌÓÅÜ¿Û³ı·ÖÊı
+		e_element_war_map_add_score1,						//æ’å1ç§¯åˆ†
+		e_element_war_map_add_score2,						//æ’å2ç§¯åˆ†
+		e_element_war_map_add_score3,						//æ’å3ç§¯åˆ†
+		e_element_war_map_add_score4,						//æ’å4ç§¯åˆ†
+		e_element_war_map_add_score5,						//æ’å5ç§¯åˆ†
+		e_element_war_map_add_score6,						//æ’å6ç§¯åˆ†
+		e_element_war_map_add_score_win,					//è·èƒœç§¯åˆ†
+		e_element_war_map_add_score_los,					//å¤±è´¥ç§¯åˆ†
+		e_element_war_map_add_score_kill_boss,				//å‡»æ€bossç§¯åˆ†
+		e_element_war_map_add_score_is_escape,				//é€ƒè·‘æ‰£é™¤åˆ†æ•°
 		e_element_war_map_add_score_max,
 	};
 
 	enum e_element_war_buff_drop_pos
 	{
-		e_element_war_buff_drop_pos_id,						//°²È«Çøid
-		e_element_war_buff_drop_pos_min_x,					//×îĞ¡×ø±êx
-		e_element_war_buff_drop_pos_min_y,					//×îĞ¡×ø±êy
-		e_element_war_buff_drop_pos_min_z,					//×îĞ¡×ø±êz
-		e_element_war_buff_drop_pos_max_x,					//×î´ó×ø±êx
-		e_element_war_buff_drop_pos_max_y,					//×î´ó×ø±êy
-		e_element_war_buff_drop_pos_max_z,					//×î´ó×ø±êz
+		e_element_war_buff_drop_pos_id,						//å®‰å…¨åŒºid
+		e_element_war_buff_drop_pos_min_x,					//æœ€å°åæ ‡x
+		e_element_war_buff_drop_pos_min_y,					//æœ€å°åæ ‡y
+		e_element_war_buff_drop_pos_min_z,					//æœ€å°åæ ‡z
+		e_element_war_buff_drop_pos_max_x,					//æœ€å¤§åæ ‡x
+		e_element_war_buff_drop_pos_max_y,					//æœ€å¤§åæ ‡y
+		e_element_war_buff_drop_pos_max_z,					//æœ€å¤§åæ ‡z
 		e_element_war_buff_drop_pos_max,
 	};
 
 	enum e_element_war_get_mission_reward
 	{
-		e_element_war_get_mission_reward_succeed,			//ÁìÈ¡³É¹¦
-		e_element_war_get_mission_reward_not_info,			//ĞÅÏ¢´íÎó
-		e_element_war_get_mission_reward_not_num,			//Î´Íê³ÉÈÎÎñ
-		e_element_war_get_mission_reward_have_reward,		//ÒÑÁìÈ¡¹ı½±Àø
+		e_element_war_get_mission_reward_succeed,			//é¢†å–æˆåŠŸ
+		e_element_war_get_mission_reward_not_info,			//ä¿¡æ¯é”™è¯¯
+		e_element_war_get_mission_reward_not_num,			//æœªå®Œæˆä»»åŠ¡
+		e_element_war_get_mission_reward_have_reward,		//å·²é¢†å–è¿‡å¥–åŠ±
 	};
 
 	enum e_element_war_buy_ticket_ret
 	{
-		e_element_war_buy_ticket_success,				//¹ºÂò³É¹¦
-		e_element_war_buy_ticket_failed,				//¹ºÂòÊ§°Ü
-		e_element_war_buy_ticket_jewl,					//×êÊ¯²»×ã
-		e_element_war_buy_ticket_limit,					//¹ºÂò´ÎÊıÏŞÖÆ
-		e_element_war_buy_ticket_not_open,				//»î¶¯Î´¿ª·Å
+		e_element_war_buy_ticket_success,				//è´­ä¹°æˆåŠŸ
+		e_element_war_buy_ticket_failed,				//è´­ä¹°å¤±è´¥
+		e_element_war_buy_ticket_jewl,					//é’»çŸ³ä¸è¶³
+		e_element_war_buy_ticket_limit,					//è´­ä¹°æ¬¡æ•°é™åˆ¶
+		e_element_war_buy_ticket_not_open,				//æ´»åŠ¨æœªå¼€æ”¾
 	};
 
 	struct s_element_war_buff_drop_pos_info
@@ -412,13 +412,13 @@ namespace faith
 
 	struct s_element_war_map_team_info
 	{
-		guid_64		role_guid_list[ELEMENT_WAR_PLAY_NUM];			//½ÇÉ«ÁĞ±í
+		guid_64		role_guid_list[ELEMENT_WAR_PLAY_NUM];			//è§’è‰²åˆ—è¡¨
 		guid_64		boss_guid;										//bossGuid
-		int64		last_send_boss_be_attack;						//ÉÏ´Î·¢ËÍboss±»¹¥»÷Ê±¼ä
-		int32		score_num;										//×Ü·ÖÊı
-		int32		kill_unit_num;									//»÷É±¹ÖÎïÊıÁ¿
-		bool		is_create_buff;									//ÊÇ·ñ´´½¨¹ıbuff
-		s_map_pos	bron_pos;										//¸´»îµã
+		int64		last_send_boss_be_attack;						//ä¸Šæ¬¡å‘é€bossè¢«æ”»å‡»æ—¶é—´
+		int32		score_num;										//æ€»åˆ†æ•°
+		int32		kill_unit_num;									//å‡»æ€æ€ªç‰©æ•°é‡
+		bool		is_create_buff;									//æ˜¯å¦åˆ›å»ºè¿‡buff
+		s_map_pos	bron_pos;										//å¤æ´»ç‚¹
 		s_element_war_map_team_info()
 		{
 			memset(this, 0, sizeof(*this));
@@ -450,7 +450,7 @@ namespace faith
 
 	struct s_element_war_map_role_info
 	{		
-		guid_64		role_guid;										//½ÇÉ«guid
+		guid_64		role_guid;										//è§’è‰²guid
 		xchar		role_name[max_name_size + 1];
 		xchar		server_name[max_name_size + 1];
 		bool		is_robot;

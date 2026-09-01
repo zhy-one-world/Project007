@@ -1,4 +1,4 @@
-
+ï»¿
 #include "belief_rune_mgr.h"
 #include "template/template_manager.h"
 #include "logic/player.hpp" 
@@ -40,12 +40,11 @@ namespace faith
 			//if (item == nullptr)
 			//	continue;
 
-			//// ¼ì²éµÀ¾ßÀàĞÍÊÇ·ñÎªĞÅÑö·ûÎÄ
+			//// æ£€æŸ¥é“å…·ç±»å‹æ˜¯å¦ä¸ºä¿¡ä»°ç¬¦æ–‡
 			//ItemTemplate* item_template_ptr = item->get_item_info_ptr();
 			//if (item_template_ptr == nullptr || item_template_ptr->item_type != e_item_type_belief_rune)
 			//	continue;
-			//
-			//// ¼ì²éÄ£°åÊı¾İ±íÀïÃæÊÇ·ñ´æÔÚ¸ÃÊı¾İ
+			//// æ£€æŸ¥æ¨¡æ¿æ•°æ®è¡¨é‡Œé¢æ˜¯å¦å­˜åœ¨è¯¥æ•°æ®
 			//BeliefRunesTemplate* BeliefRunesTemplatePtr = get_belief_rune_template(*item);
 			//if (BeliefRunesTemplatePtr == nullptr)
 			//	continue;
@@ -91,7 +90,7 @@ namespace faith
 
 	}
 
-	//Ä£°å
+	//æ¨¡æ¿
 	BeliefRunesTemplate* belief_rune_mgr::get_belief_rune_template(const citem& item)
 	{
 		if (!item.get_item_info_ptr())

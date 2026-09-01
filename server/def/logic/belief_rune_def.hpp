@@ -19,8 +19,8 @@ namespace faith
 #pragma pack(push,1)
 
 	const int32	belief_rune_unlock_template_base_id = 143000000;
-	const int32 belief_cloister_attributeid_in_activity_tbl = 120000000 + e_activity_type_belief_cloister;	//ĞÅÑö»ØÀÈ»î¶¯ÔÚ»î¶¯±íÖĞµÄid
-	const int32 belief_cloister_leave_map_wait_seconds = 15;	//ĞÅÑö»ØÀÈ¸±±¾Àë¿ªµ¹¼ÆÊ±Ê±¼ä£¨Ãë£©
+	const int32 belief_cloister_attributeid_in_activity_tbl = 120000000 + e_activity_type_belief_cloister;	//ä¿¡ä»°å›å»Šæ´»åŠ¨åœ¨æ´»åŠ¨è¡¨ä¸­çš„id
+	const int32 belief_cloister_leave_map_wait_seconds = 15;	//ä¿¡ä»°å›å»Šå‰¯æœ¬ç¦»å¼€å€’è®¡æ—¶æ—¶é—´ï¼ˆç§’ï¼‰
 
 	enum e_belief_rune_operate_type
 	{
@@ -31,21 +31,21 @@ namespace faith
 
 	enum e_belief_rune_error_code_item
 	{
-		e_belief_rune_error_code_item_none,							//Ã»´íÎó
-		e_belief_rune_error_code_item_player_error,					//Íæ¼Ò²»·ñ´æÔÚ
-		e_belief_rune_error_code_item_param_slot_error,				//²ÎÊı´íÎó£¬×°±¸²ÛµÄË÷ÒıÔ½½ç
-		e_belief_rune_error_code_item_param_slot_is_unlock,			//×°±¸²ÛÎ´½âËø
-		e_belief_rune_error_code_item_item_not_exist,				//µÀ¾ß²»´æÔÚ
-		e_belief_rune_error_code_item_item_is_not_belief_rune,		//ÀàĞÍ²»ÊÇĞÅÑö·ûÎÄ
-		e_belief_rune_error_code_item_template_not_found,			//Êı¾İ±íÕÒ²»µ½Êı¾İ
-		e_belief_rune_error_code_item_item_container_error,			//ÈİÆ÷ÀàĞÍ²»ºÏ·¨
-		e_belief_rune_error_code_item_is_max_level,					//ÒÑÊÇ×î´óµÈ¼¶
-		e_belief_rune_error_code_item_template_data_error,			//Êı¾İ±í¸ñÊ½´íÎó
-		e_belief_rune_error_code_item_levelup_money_not_enough,		//Éı¼¶ÏûºÄÇ®²»¹»
-		e_belief_rune_error_code_item_param_empty,					//²ÎÊı´íÎó£¬·Ö½âÁĞ±íÎª¿Õ
-		e_belief_rune_error_code_item_decompose_money_not_enough,	//±£Öµ·Ö½âÏûºÄÇ®²»¹»
-		e_belief_rune_error_code_item_equip_on_one_attr,             //Í¬ÀàÊôĞÔÖ»ÄÜ´©´÷Ò»¸ö
-		e_belief_rune_error_code_item_item_is_not_sub_belief_rune    //µÀ¾ßµÄ×ÓÀàĞÍ²»ºÏ·¨
+		e_belief_rune_error_code_item_none,							//æ²¡é”™è¯¯
+		e_belief_rune_error_code_item_player_error,					//ç©å®¶ä¸å¦å­˜åœ¨
+		e_belief_rune_error_code_item_param_slot_error,				//å‚æ•°é”™è¯¯ï¼Œè£…å¤‡æ§½çš„ç´¢å¼•è¶Šç•Œ
+		e_belief_rune_error_code_item_param_slot_is_unlock,			//è£…å¤‡æ§½æœªè§£é”
+		e_belief_rune_error_code_item_item_not_exist,				//é“å…·ä¸å­˜åœ¨
+		e_belief_rune_error_code_item_item_is_not_belief_rune,		//ç±»å‹ä¸æ˜¯ä¿¡ä»°ç¬¦æ–‡
+		e_belief_rune_error_code_item_template_not_found,			//æ•°æ®è¡¨æ‰¾ä¸åˆ°æ•°æ®
+		e_belief_rune_error_code_item_item_container_error,			//å®¹å™¨ç±»å‹ä¸åˆæ³•
+		e_belief_rune_error_code_item_is_max_level,					//å·²æ˜¯æœ€å¤§ç­‰çº§
+		e_belief_rune_error_code_item_template_data_error,			//æ•°æ®è¡¨æ ¼å¼é”™è¯¯
+		e_belief_rune_error_code_item_levelup_money_not_enough,		//å‡çº§æ¶ˆè€—é’±ä¸å¤Ÿ
+		e_belief_rune_error_code_item_param_empty,					//å‚æ•°é”™è¯¯ï¼Œåˆ†è§£åˆ—è¡¨ä¸ºç©º
+		e_belief_rune_error_code_item_decompose_money_not_enough,	//ä¿å€¼åˆ†è§£æ¶ˆè€—é’±ä¸å¤Ÿ
+		e_belief_rune_error_code_item_equip_on_one_attr,             //åŒç±»å±æ€§åªèƒ½ç©¿æˆ´ä¸€ä¸ª
+		e_belief_rune_error_code_item_item_is_not_sub_belief_rune    //é“å…·çš„å­ç±»å‹ä¸åˆæ³•
 	};
 	
 #pragma pack(pop)

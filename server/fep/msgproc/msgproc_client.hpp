@@ -5,7 +5,7 @@
   file ext: hpp
   author: wangpengqing
   
-  purpose: 客户端到服务器的请求处理
+  purpose: 瀹㈡埛绔埌鏈嶅姟鍣ㄧ殑璇锋眰澶勭悊
 *********************************************************************/
 #ifndef _FEP_MSGPROC_CLIENT_H_
 #define _FEP_MSGPROC_CLIENT_H_

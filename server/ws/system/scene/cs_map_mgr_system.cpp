@@ -119,7 +119,7 @@ Entity* cs_map_mgr_system::init_map_by_battle(int32 map_template_id, int32 conn_
 void cs_map_mgr_system::init_map_by_cross_world(int32 conn_index)
 {
 	ZoneScoped;
-	//GATEÉÏÖ»ĞèÒª´´½¨¿ç·şµØÍ¼£¬ËùÒÔµ¥¶À´¦Àí£¬²»´´½¨ÆäËûµØÍ¼
+	//GATEä¸Šåªéœ€è¦åˆ›å»ºè·¨æœåœ°å›¾ï¼Œæ‰€ä»¥å•ç‹¬å¤„ç†ï¼Œä¸åˆ›å»ºå…¶ä»–åœ°å›¾
 	std::vector<int32> map_id_arr = GAMECONFIG->GateServerMapIDArr;
 	if (map_id_arr.size() <= 0)
 	{
@@ -192,7 +192,7 @@ void cs_map_mgr_system::on_unit_leave_map(int32 map_template_id, const guid_64& 
 bool cs_map_mgr_system::check_unit_can_enter_map(int32 map_template_id, const guid_64& role_guid)
 {
 	ZoneScoped;
-	//gate·şÉÏ²»ÔÊĞí´«ËÍµ½ÆäËûµØÍ¼
+	//gateæœä¸Šä¸å…è®¸ä¼ é€åˆ°å…¶ä»–åœ°å›¾
 	if (world_server::getInstance().get_cross_id() == world_server::getInstance().get_server_id())
 	{
 		if (false == init_unit::is_map_cross_server(map_template_id, world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_activity)) && false == init_unit::is_map_all_server(map_template_id))
@@ -254,7 +254,7 @@ Entity* cs_map_mgr_system::get_map_ws_by_min(int32 map_template_id, int32 trans_
 		int32 min_num = init_player_max;
 		Entity* min_map_ent = nullptr;
 		g_ecs->each<cs_map_component>([&](Entity* ent, ComponentHandle<cs_map_component> cs_map_cp) -> bool {
-			//wsÉÏµØÍ¼×´Ì¬Ä¬ÈÏÎªe_map_state_join ÓĞÈË½øÈëÎªe_map_state_game µ±cs·¢ÏûÏ¢Í¬²½Îªe_map_state_in_game¼°Ö®ºóµÄ×´Ì¬ºó²»¿ÉÔÙ¼ÓÈëÍæ¼Ò
+			//wsä¸Šåœ°å›¾çŠ¶æ€é»˜è®¤ä¸ºe_map_state_join æœ‰äººè¿›å…¥ä¸ºe_map_state_game å½“cså‘æ¶ˆæ¯åŒæ­¥ä¸ºe_map_state_in_gameåŠä¹‹åçš„çŠ¶æ€åä¸å¯å†åŠ å…¥ç©å®¶
 			auto role_num = cs_map_cp->m_role_list.size();
 			if (cs_map_cp->m_map_template_id == map_template_id
 				&& cs_map_cp->m_map_state < e_map_state_in_game
@@ -368,7 +368,7 @@ void cs_map_mgr_system::transfer_to_map(client_session* client_session_ptr, int3
 	if (false == client_session_ptr->is_self_server() && false == init_unit::is_map_other_server(map_template_id) && false == init_unit::is_map_cross_server(map_template_id, world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_activity)) && false == init_unit::is_map_all_server(map_template_id))
 	{
 		return;
-	}//·Ç±¾·şÇÒ´«ËÍµØÍ¼ID²»Îª´óÊÀ½ç²¢ÇÒ²»Îª¿ç·şµØÍ¼£¬Ôò²»ÔÊĞí´«ËÍ
+	}//éæœ¬æœä¸”ä¼ é€åœ°å›¾IDä¸ä¸ºå¤§ä¸–ç•Œå¹¶ä¸”ä¸ä¸ºè·¨æœåœ°å›¾ï¼Œåˆ™ä¸å…è®¸ä¼ é€
 
 
 	ws2cs_transfer_to_map transfer_to_map_msg;

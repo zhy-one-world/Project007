@@ -461,7 +461,7 @@ void box_map_system::refresh_award(Entity* map_ent, player* player_ptr)
 	else
 	{
 		int32 refrush_count = box_map_template->AwardMaxCount;
-		//ˢ��
+		//刷大奖
 		if (box_map_template->BigAward.empty() == false)
 		{
 			auto spawn_id = get_born_list(map_ent);
@@ -473,7 +473,7 @@ void box_map_system::refresh_award(Entity* map_ent, player* player_ptr)
 				refrush_count--;
 			}
 		}
-		//ˢ�н�
+		//刷中奖
 		if (box_map_template->MiddleAward.empty() == false)
 		{
 			for (int32 i = 0; i < box_map_template->MiddleAwardCount; ++i)
@@ -488,7 +488,7 @@ void box_map_system::refresh_award(Entity* map_ent, player* player_ptr)
 				}
 			}
 		}
-		//ˢС��
+		//刷小奖
 		for (int32 i = 0; i < refrush_count; ++i)
 		{
 			auto spawn_id = get_born_list(map_ent);

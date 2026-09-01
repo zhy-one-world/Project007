@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê8ÔÂ16ÈÕ
+created: 2016å¹´8æœˆ16æ—¥
 file base: mail
 file ext: h
 author: lxy
@@ -26,7 +26,7 @@ namespace faith
 		void										set_data_use(bool is_use) { m_is_data_use = is_use; }
 		bool&										is_valid() { return m_is_data_use; }
 
-		const s_mail_info&							get_mail_inst() const { return m_mail_data; }						//ÊµÀı	
+		const s_mail_info&							get_mail_inst() const { return m_mail_data; }						//å®ä¾‹	
 		guid_64&									get_mail_guid() { return m_mail_data.mail_guid; }
 		int32										get_data_info(EMailInfo eIndex);
 		void										set_data_info(EMailInfo eIndex, int32 iValue);
@@ -47,7 +47,7 @@ namespace faith
 		guid_64										get_target_item_guid(int32 index);
 		int32										get_item_num();
 	private:
-		s_mail_info								m_mail_data;						// ÓÊ¼şÊµÀıÊı¾İ	
+		s_mail_info								m_mail_data;						// é‚®ä»¶å®ä¾‹æ•°æ®	
 		bool									m_is_data_use;
 	};
 }

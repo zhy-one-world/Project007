@@ -153,7 +153,7 @@ namespace faith
 		}
 		else if (table_len <= 0)
 		{
-			//ºÏ·þÂß¼­»áÉ¾³ýµôÒ»¸öÔÂÃ»ÓÐµÇÂ¼µÄÍæ¼Ò,·ÀÖ¹ÕÒ²»µ½²»ÄÜÀë»é
+			//åˆæœé€»è¾‘ä¼šåˆ é™¤æŽ‰ä¸€ä¸ªæœˆæ²¡æœ‰ç™»å½•çš„çŽ©å®¶,é˜²æ­¢æ‰¾ä¸åˆ°ä¸èƒ½ç¦»å©š
 			pak.sender_guid = sender_guid;
 			pak.last_login = 0;
 			dbproxy_service::getInstance().send_message(connindex, &pak, sizeof(dp2ws_marry_get_last_login_time_end));

@@ -15,14 +15,14 @@ namespace faith
 		memset(m_item_npc_ary, 0, sizeof(m_item_npc_ary));
 	}
 
-	// ¶ÔËùÓĞÎïÆ··¢Éä¼ÆÊ±Âö³å
+	// å¯¹æ‰€æœ‰ç‰©å“å‘å°„è®¡æ—¶è„‰å†²
 	void item_manager::heart_tick(int32 unit_array_index, const int64& new_time)
 	{
 		item_set& temp_item_set = get_item_set(unit_array_index);
 		temp_item_set.heart_tick(new_time);
 	}
 
-	// Çå¿ÕËùÓĞÎïÆ·µÄÊı¾İ(°üÀ¨ÎïÆ·À¸+×°±¸À¸)
+	// æ¸…ç©ºæ‰€æœ‰ç‰©å“çš„æ•°æ®(åŒ…æ‹¬ç‰©å“æ +è£…å¤‡æ )
 	void item_manager::clear_data(int32 unit_array_index)
 	{
 		item_set& temp_item_set = get_item_set(unit_array_index);

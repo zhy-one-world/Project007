@@ -11,7 +11,7 @@ typedef std::set<std::string>	WordSet;
 typedef WordSet::iterator		WordSetIt;
 
 /*
- *	ÓÎÏ·ÔÊĞíµÄÓĞĞ§×Ö¿â
+ *	æ¸¸æˆå…è®¸çš„æœ‰æ•ˆå­—åº“
  */
 namespace faith
 {

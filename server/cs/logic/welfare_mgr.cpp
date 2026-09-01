@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 created: 2016��10��8��
 file base: welfare_mgr
 file ext: cpp
@@ -64,10 +64,8 @@ namespace faith
 		if (new_time > m_old_tick_time)
 		{
 			m_old_tick_time = new_time + welfare_send_time;
-			//ÿ10��������ͬ��һ��
 			send_active_degree();
 		}
-		//ͳһ��player::refresh_daily_info��ˢ��
 		/*if (new_time - m_min_tick >= minute_tick_time)
 		{
 			m_min_tick = new_time;
@@ -224,7 +222,7 @@ namespace faith
 		{
 			set_log_var(log_head)
 			player_ref.get_log_common_head_info(log_head);
-			log_head.logTime -= second_tick_time * 100;  // ��¼��һ�������
+			log_head.logTime -= second_tick_time * 100;
 			int32 onlineTime = get_active_degree_info(e_daily_active_degree_type_online_30_minutes);
 			server_log::serverEarlyWarning(log_head, onlineTime);
 
@@ -234,9 +232,8 @@ namespace faith
 		set_welfare_info(e_welfare_type_daily_recharge_reward, 0);
 		set_welfare_info(e_welfare_type_is_today_check_in, 0);
 		set_welfare_info(e_welfare_type_continue_login, 0);
-		set_welfare_info(e_welfare_type_time_limit_reward, 0);//��ʱ�������λ
+		set_welfare_info(e_welfare_type_time_limit_reward, 0);
 		set_active_degree_info(e_daily_active_degree_type_online_30_minutes, 0);
-		//ÿ��ˢ�£��Զ����¼����
 
 		//m_online_time = m_active_degree_info.data_ary[e_daily_active_degree_type_online_30_minutes];
 
@@ -259,7 +256,6 @@ namespace faith
 		{
 			return;
 		}
-		////����һ��ˢ�µ��ʱ��
 		//int64 next_refresh = time_helper::get_next_refresh_time_stamp();
 		//player_ref.set_time_data(e_time_type_active_degree_last_refresh_time, next_refresh);
 
@@ -441,7 +437,6 @@ namespace faith
 		m_active_degree_info.data_ary[info_type] = info_value;
 		if (info_type != e_daily_active_degree_type_online_30_minutes)
 		{
-			//����ÿ��ͬ��һ��
 			send_active_degree();
 		}
 
@@ -453,7 +448,6 @@ namespace faith
 		int32 TempTargetValue = template_ptr->TargetValue;
 		if (info_type == e_daily_active_degree_type_online_30_minutes)
 		{
-			//����ʱ�䣬���Ŀ��ֵ��λ�Ƿ���
 			TempTargetValue *= 60;
 		}
 		if ((old_value < TempTargetValue) && (m_active_degree_info.data_ary[info_type] >= TempTargetValue))
@@ -490,7 +484,6 @@ namespace faith
 	{
 		
 		player& player_ref = unit_man::get_player(m_unit_array_index);
-		//���������ң��ѳ�ֵ������ȡ�������������׳�ʱ�������ȡ����
 		if (is_welfare_geted(e_welfare_type_first_recharge_reward, 0) == 1)
 		{
 			if (player_ref.get_time_data(e_time_type_frist_recharge_time) == 0)
@@ -502,7 +495,6 @@ namespace faith
 				}
 			}
 		}
-		//���������ң��ѳ�ֵ��û����ȡ�������������׳�ʱ�������ȡ����
 		if (is_welfare_geted(e_welfare_type_first_recharge_reward, 0) == 0)
 		{
 			if (player_ref.get_time_data(e_time_type_frist_recharge_time) == 0)
@@ -608,7 +600,6 @@ namespace faith
 			return;
 		}
 
-		//û�н�Ʒ��,�ֶ����ý�Ʒ
 		std::vector<s_item_template_info> item_list;
 		item_list.push_back({ 31010024,3, 1 });
 		item_list.push_back({ 31020104,2,1 });
@@ -734,15 +725,13 @@ namespace faith
 		if (welfare_type == e_welfare_type_online_time
 			|| welfare_type == e_welfare_type_continue_login)
 		{
-			//��������Ҫ���һ�Σ���֮ǰ�����еĽ�������ȡ
 			int32 pre_phase_id = welfare_template_id - 1;
 			WelfareTemplate* PreTemplatePtr = GET_TEMPLATE(WelfareTemplate, pre_phase_id);
 			if (PreTemplatePtr != nullptr && PreTemplatePtr->Type == welfare_type)
-			{//ǰһ�б�����ͬ��ĸ���
+			{
 				if (!is_welfare_geted(PreTemplatePtr->Type, PreTemplatePtr->Index))
-				{//ǰһ�б���û��ȡ��
+				{
 
-					//�����Լ�����ǰһ�н���Ҳ�ӵ���ȡ�б���
 					get_welfare(pre_phase_id, item_list, money_list);
 				}
 			}
@@ -751,7 +740,6 @@ namespace faith
 
 	void cwelfare_mgr::add_welfare_to_vector(int32 id, int32 num, std::vector<s_item_template_info>& id_list)
 	{
-		//���ڽ�ͬ�����Ʒ
 		for (int32 i = 0; i < id_list.size(); ++i)
 		{
 			if (id_list[i].m_item_id == id)
@@ -759,17 +747,14 @@ namespace faith
 				ItemTemplate* temp_item_template_ptr = GET_TEMPLATE(ItemTemplate, id_list[i].m_item_id);
 				if (temp_item_template_ptr != nullptr)
 				{
-					//��Ʒ��Ҫ���Ƕѵ���
 					int32 pile_num = temp_item_template_ptr->max_pile_num;
 					if (id_list[i].m_item_num + num <= pile_num)
 					{
-						//��ȫ���ѵ���һ��
 						id_list[i].m_item_num += num;
 						return;
 					}
 					else
 					{
-						//�ѵ������ˣ����գ�Ȼ���������Ѷ���Ĳ�����push
 						int32 can_merge_num = pile_num - id_list[i].m_item_num;
 						id_list[i].m_item_num = pile_num;
 						num -= can_merge_num;
@@ -857,7 +842,7 @@ namespace faith
 		break;
 		case e_welfare_type_time_limit_reward:
 		{
-			return_value = 0; //û��Ŀ��ֵ,ֱ�ӷ���0
+			return_value = 0;
 		}
 		break;
 		default:
@@ -1059,10 +1044,8 @@ namespace faith
 		int32 has_replace_times = get_has_replace_times();
 		int32 replace_money_cost_num = replace_money_cost_basic_num + replace_money_cost_coefficient_num * (has_replace_times + 1);
 		msg.set_get_result(e_item_string_unkown);
-		// �ж��Ƿ��ǲ�ǩ
 		if (cur_time_info.day_in_month != welfare_template_ptr->Index)
 		{
-			// ����
 			is_replacement = true;
 
 			if (!player_ref.can_cut_money(e_money_type(replace_money_cost_id), replace_money_cost_num))
@@ -1077,22 +1060,18 @@ namespace faith
 		std::vector<s_item_template_info> data_array;
 
 		int32 target_value = welfare_template_ptr->TargetValue;
-		// ����ǩ��
 		if (false == get_welfare_reward(e_welfare_type_regular_check_in, target_value, msg, data_array))
 		{
 			player_ref.send_message_to_self(&msg, e_msgindex_s2c_get_welfare_end);
 			return;
 		}
 		set_welfare_get_flag(e_welfare_type_regular_check_in, welfare_template_ptr->Index);
-		//����ǩ������
 		player_ref.set_logic_data(e_role_logic_info_check_in_days, player_ref.get_logic_data(e_role_logic_info_check_in_days) + 1);
-		//���¿ͻ�����ǩ������
 		player_ref.send_logic_one(e_role_logic_info_check_in_days);
 
 		msg.set_get_result(e_item_string_succeed);
 		send_notice(welfare_template_ptr->RewardItemArray, welfare_template_ptr->RewardMoneyArray, welfare_template_ptr->NoticeId);
 
-		// vipǩ��
 		/*if (player_ref.is_recharge_by_type(e_recharge_type_vip))
 		{
 			if (player_ref.get_vip_level() >= welfare_template_ptr->VipDoubleRank && 0 < welfare_template_ptr->VipDoubleRank)
@@ -1112,7 +1091,6 @@ namespace faith
 			}
 		}*/
 
-		//// �¿�ǩ��
 		//if (player_ref.is_recharge_by_type(e_recharge_type_month_card) && false == is_replacement)
 		//{
 		//	target_value = player_ref.get_month_card_current_activity_time();
@@ -1133,7 +1111,6 @@ namespace faith
 
 		//	}
 		//}
-		//// ����ǩ��
 		//if (player_ref.is_recharge_by_type(e_recharge_type_exclusive) && false == is_replacement)
 		//{
 		//	target_value = player_ref.get_exclusive_card_current_activity_time() % 31;
@@ -1152,7 +1129,6 @@ namespace faith
 		//		}
 		//	}
 		//}
-		//�����Ǯ
 		if (is_replacement)
 		{
 			player_ref.cut_money(e_money_type(replace_money_cost_id), replace_money_cost_num, e_server_log_cut_money_welfare_replacement);
@@ -1163,7 +1139,6 @@ namespace faith
 
 		player_ref.get_item_set().get_item_send_promp_msg_to_client(data_array);
 		send_welfare_all();
-		// ����
 		player_ref.send_message_to_self(&msg, e_msgindex_s2c_get_welfare_end);
 
 	}
@@ -1186,7 +1161,6 @@ namespace faith
 		msg.set_get_result(e_item_string_unkown);
 		int32 target_value = welfare_template_ptr->TargetValue;
 		std::vector<s_item_template_info> data_array;
-		// �¿�ǩ��
 		if (player_ref.is_recharge_by_type(e_recharge_type_month_card))
 		{
 			target_value = player_ref.get_month_card_current_activity_time();
@@ -1210,7 +1184,6 @@ namespace faith
 
 		player_ref.get_item_set().get_item_send_promp_msg_to_client(data_array);
 		send_welfare_all();
-		// ����
 		player_ref.send_message_to_self(&msg, e_msgindex_s2c_get_welfare_end);
 	}
 
@@ -1253,7 +1226,6 @@ namespace faith
 		
 		player_ref.get_item_set().get_item_send_promp_msg_to_client(data_array);
 		send_welfare_all();
-		// ����
 		player_ref.send_message_to_self(&msg, e_msgindex_s2c_get_welfare_end);
 	}
 
@@ -1280,7 +1252,6 @@ namespace faith
 		int32 check_size = GAMECONFIG->GrandTotalCheckInNum.size();
 		for (int32 i = 0; i < check_size; ++i)
 		{
-			//�ж��Ƿ����н�������ȡ��	�����δ��ȡ�ľͲ�ˢ��
 			if (!player_ref.get_welfare_mgr().is_welfare_geted(e_welfare_type_cumulative_sign_in, i))
 			{
 				return;
@@ -1307,27 +1278,26 @@ namespace faith
 		welfare_proto_get_reward_end end_msg;
 		if (GAMECONFIG->MonthCardReplacementCost.size() < 3)
 		{
-			msg.set_get_result(e_item_string_unkown);	//�������
+			msg.set_get_result(e_item_string_unkown);
 			player_ref.send_message_to_self(&msg, e_mgsindex_s2c_retroactive_all_days_end);
 			return;
 		}
 
-		int32 replace_money_cost_id = GAMECONFIG->MonthCardReplacementCost[0];	//��ȡmoney����
-		int32 replace_money_num = get_retroactive_all_days_money_num();							//��ȡmoney����
+		int32 replace_money_cost_id = GAMECONFIG->MonthCardReplacementCost[0];
+		int32 replace_money_num = get_retroactive_all_days_money_num();
 		msg.set_get_result(e_item_string_unkown);
 
-		if (!player_ref.can_cut_money(e_money_type(replace_money_cost_id), replace_money_num))	//�ж��Ƿ�ȫ����ǩ��money
+		if (!player_ref.can_cut_money(e_money_type(replace_money_cost_id), replace_money_num))
 		{
-			msg.set_get_result(e_item_string_yuanbao_bind);	//(����)��ʯ����
+			msg.set_get_result(e_item_string_yuanbao_bind);
 			player_ref.send_message_to_self(&msg, e_mgsindex_s2c_retroactive_all_days_end);
 			return;
 		}
-		time_info now_day = time_helper::get_cur_time_new();						//��õ�ǰ�Ǳ��µڼ���
+		time_info now_day = time_helper::get_cur_time_new();
 		time_info create_time = time_helper::get_time_by_stamp_new(player_ref.get_unit_i64_info_data(e_role_i64_info_create_time));
 		std::vector<s_item_template_info> data_array;
 		for (int32 i = 0; i < now_day.day_in_month; ++i)
 		{
-			//�жϴ����˺�֮ǰ�����ڲ����в�ǩ
 			if (now_day.year == create_time.year && now_day.month_in_year == create_time.month_in_year && i < create_time.day_in_month)
 			{
 				continue;
@@ -1339,9 +1309,9 @@ namespace faith
 			WelfareTemplate* TemplatePtr = GET_TEMPLATE(WelfareTemplate, daily_ttendance_begin_template_id + i);
 			if (TemplatePtr == nullptr)
 			{
-				msg.set_get_result(e_item_string_unkown);	//�������ֱ�ӽ��� 
+				msg.set_get_result(e_item_string_unkown);
 				player_ref.send_message_to_self(&msg, e_mgsindex_s2c_retroactive_all_days_end);
-				continue;									//��ֹǰ�潱�����ͳɹ�������ֱ������û�п۳���ʯ ��ֹˢ��Ʒ
+				continue;
 			}
 			if (false == get_welfare_reward(e_welfare_type_regular_check_in, TemplatePtr->TargetValue, end_msg, data_array))
 			{
@@ -1349,18 +1319,14 @@ namespace faith
 				continue;
 			}
 			set_welfare_get_flag(e_welfare_type_regular_check_in, TemplatePtr->Index);
-			//����ǩ������
 			player_ref.set_logic_data(e_role_logic_info_check_in_days, player_ref.get_logic_data(e_role_logic_info_check_in_days) + 1);
-			//���ò�ǩ����
 			add_replace_times();
 		}
-		//���¿ͻ�����ǩ������
 		player_ref.send_logic_one(e_role_logic_info_check_in_days);
 		msg.set_get_result(e_item_string_succeed);
 
 		player_ref.cut_money(e_money_type(replace_money_cost_id), replace_money_num, e_server_log_cut_money_welfare_replacement);
 		player_ref.get_item_set().get_item_send_promp_msg_to_client(data_array);
-		//ͬ�����ͻ���
 		send_welfare_all();
 		player_ref.send_message_to_self(&msg, e_mgsindex_s2c_retroactive_all_days_end);
 	}
@@ -1384,11 +1350,10 @@ namespace faith
 		int32 replace_money_num = 0;
 		int32 retroactive_days_num = 0;
 
-		time_info now_day = time_helper::get_cur_time_new();						//��õ�ǰ�Ǳ��µڼ���
+		time_info now_day = time_helper::get_cur_time_new();
 		time_info create_time = time_helper::get_time_by_stamp_new(player_ref.get_unit_i64_info_data(e_role_i64_info_create_time));
 		for (int32 i = 0; i < now_day.day_in_month; ++i)
 		{
-			//�жϴ����˺�֮ǰ�����ڲ����в�ǩ
 			if (now_day.year == create_time.year && now_day.month_in_year == create_time.month_in_year && i < create_time.day_in_month)
 			{
 				continue;
@@ -1412,7 +1377,7 @@ namespace faith
 		welfare_proto_get_cumulative_sign_in_reward_end msg;
 		if (GAMECONFIG->GrandTotalCheckInNum.size() < index || GAMECONFIG->GrandTotalCheckInReward.size() % 8 != 0)
 		{
-			msg.set_get_result(e_item_string_unkown);			//������� δ֪����
+			msg.set_get_result(e_item_string_unkown);
 			player_ref.send_message_to_self(&msg, e_mgsindex_s2c_get_cumulative_sign_in_reward_end);
 			return;
 		}
@@ -1421,13 +1386,13 @@ namespace faith
 		int32 check_in_repetition_num = player_ref.get_logic_data(e_role_logic_info_check_in_repetition_num);
 		if (check_in_num < GAMECONFIG->GrandTotalCheckInNum[index])
 		{
-			msg.set_get_result(e_welfare_cant_get);				//������ȡ�ʸ�
+			msg.set_get_result(e_welfare_cant_get);
 			player_ref.send_message_to_self(&msg, e_mgsindex_s2c_get_cumulative_sign_in_reward_end);
 			return;
 		}
 		if (is_welfare_geted(e_welfare_type_cumulative_sign_in, index))
 		{
-			msg.set_get_result(e_welfare_already_geted);		//�Ѿ���ȡ����
+			msg.set_get_result(e_welfare_already_geted);
 			player_ref.send_message_to_self(&msg, e_mgsindex_s2c_get_cumulative_sign_in_reward_end);
 			return;
 		}
@@ -1435,17 +1400,17 @@ namespace faith
 		std::vector<s_item_template_info> item_list;
 		if (GAMECONFIG->GrandTotalCheckInReward.size() < ((begin_index + (index * 2)) + 1))
 		{
-			msg.set_get_result(e_item_string_unkown);			//������� δ֪����
+			msg.set_get_result(e_item_string_unkown);
 			player_ref.send_message_to_self(&msg, e_mgsindex_s2c_get_cumulative_sign_in_reward_end);
 			return;
 		}
 
-		item_list.push_back({ GAMECONFIG->GrandTotalCheckInReward[(begin_index + (index * 2))],GAMECONFIG->GrandTotalCheckInReward[(begin_index + (index * 2)) + 1], 1 });		//��Ʒid																		
-		player_ref.get_item_set().put_in_bag(e_server_log_add_item_cumulative_sign_in, index, item_list);						//����Ʒ���뱳��
+		item_list.push_back({ GAMECONFIG->GrandTotalCheckInReward[(begin_index + (index * 2))],GAMECONFIG->GrandTotalCheckInReward[(begin_index + (index * 2)) + 1], 1 });
+		player_ref.get_item_set().put_in_bag(e_server_log_add_item_cumulative_sign_in, index, item_list);
 
-		set_welfare_get_flag(e_welfare_type_cumulative_sign_in, index);				//ˢ�±��λ
-		send_welfare_all();															//���͸��ͻ���
-		msg.set_get_result(e_item_string_succeed);									//��ȡ�ɹ�
+		set_welfare_get_flag(e_welfare_type_cumulative_sign_in, index);
+		send_welfare_all();
+		msg.set_get_result(e_item_string_succeed);
 		player_ref.send_message_to_self(&msg, e_mgsindex_s2c_get_cumulative_sign_in_reward_end);
 	}
 

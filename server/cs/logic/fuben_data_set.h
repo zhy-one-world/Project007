@@ -42,7 +42,7 @@ namespace faith
 		}
 	};
 
-	struct s_fuben_settlement //¸±±¾½áËã
+	struct s_fuben_settlement //å‰¯æœ¬ç»“ç®—
 	{
 		s_fuben_settlement()
 		{
@@ -52,17 +52,17 @@ namespace faith
 			fuben_level = 0;
 		}
 
-		int32 pass_time;    //Í¨¹ØÊ±¼ä
-		int32 dead_count;   //ËÀÍö´ÎÊı
-		int32 max_hit;      //×î´óÁ¬»÷Êı
-		int32 fuben_level;  //¸±±¾ÆÀ¼¶
+		int32 pass_time;    //é€šå…³æ—¶é—´
+		int32 dead_count;   //æ­»äº¡æ¬¡æ•°
+		int32 max_hit;      //æœ€å¤§è¿å‡»æ•°
+		int32 fuben_level;  //å‰¯æœ¬è¯„çº§
 	};
 
 	struct tag_fuben_data
 	{
-		int32 enter_count;       //¸±±¾Íê³É´ÎÊı
-		int32 pass_time;         //±¾´Î¸±±¾Íê³ÉÊ±¼ä
-		int32 pass_time_mebest;  //×Ô¼ºÍê³ÉÕâ¸ö¸±±¾µÄ×î¶ÌÊ±¼ä¼ÇÂ¼
+		int32 enter_count;       //å‰¯æœ¬å®Œæˆæ¬¡æ•°
+		int32 pass_time;         //æœ¬æ¬¡å‰¯æœ¬å®Œæˆæ—¶é—´
+		int32 pass_time_mebest;  //è‡ªå·±å®Œæˆè¿™ä¸ªå‰¯æœ¬çš„æœ€çŸ­æ—¶é—´è®°å½•
 	};
 
 	class fuben_data_set

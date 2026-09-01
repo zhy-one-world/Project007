@@ -20,7 +20,7 @@ namespace faith
 
 		bool is_first_time_do(e_first_time_do_type do_type);
 		
-		// ÓĞĞÂ¼ÓµÄÊ×´ÎÀàĞÍÖ»ĞèÒªÔÚÊÊµ±µÄÎ»ÖÃµ÷ÓÃÕâ¸ö½Ó¿Ú²¢°ÑÀàĞÍ´«Èë¼´¿É
+		// æœ‰æ–°åŠ çš„é¦–æ¬¡ç±»å‹åªéœ€è¦åœ¨é€‚å½“çš„ä½ç½®è°ƒç”¨è¿™ä¸ªæ¥å£å¹¶æŠŠç±»å‹ä¼ å…¥å³å¯
 		bool add_do_record(e_first_time_do_type do_type, bool save_to_db = true);
 
 		void load_first_time_do_records_from_db(const s_first_time_do_record records[e_first_time_do_type_max], int32 record_num);

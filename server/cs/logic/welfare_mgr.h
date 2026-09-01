@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê10ÔÂ8ÈÕ17:00
+created: 2016å¹´10æœˆ8æ—¥17:00
 file base: welfare_mgr
 file ext: h
 author: lxy
@@ -74,7 +74,7 @@ namespace faith
 		bool is_recharge_time(int32 recharge_index);
 
 		/************************************************************************/
-		/*                         Ã¿ÈÕÇ©µ½                                     */
+		/*                         æ¯æ—¥ç­¾åˆ°                                     */
 		/************************************************************************/
 	public:
 		void	check_in(WelfareTemplate* welfare_template_ptr);
@@ -83,12 +83,12 @@ namespace faith
 		void    refresh_month_info();
 		int32   get_unit_array() { return m_unit_array_index; }
 		void	refresh_grand_total_check_in_num();
-		void	retroactive_all_days();	//²¹Ç©ËùÓĞ
+		void	retroactive_all_days();	//è¡¥ç­¾æ‰€æœ‰
 		int32	get_retroactive_all_days_money_num();
-		void	get_cumulative_sign_in_reward(int32 index);//ÁìÈ¡ÀÛ¼ÆÇ©µ½½±Àø
+		void	get_cumulative_sign_in_reward(int32 index);//é¢†å–ç´¯è®¡ç­¾åˆ°å¥–åŠ±
 
 	private:
-		// ½«ÏàÓ¦µÄ½±Àø·ÅÈëmsgÖĞ
+		// å°†ç›¸åº”çš„å¥–åŠ±æ”¾å…¥msgä¸­
 		bool	get_welfare_reward(const e_welfare_type welfare_type, const int32 welfare_target_value, welfare_proto_get_reward_end& msg, std::vector<s_item_template_info>& data_array);
 		int32	data_to_target_value(const e_welfare_type welfare_type, const int32 target_value);
 		bool	is_today_check_in();
@@ -104,8 +104,8 @@ namespace faith
 		s_welfare_random_get_info	m_random_get_info;
 		int32						m_unit_array_index;
 
-		//ÓÃÀ´tickÍùÉÏ¼ÓµÄÔÚÏßÊ±¼ä£¬ÔÚ load Ê±Í¬²½Îª ´æ´¢Î»¡°e_daily_active_degree_type_online_30_minutes¡±µÄÊı¾İ£¬ÔÚ save Ê±¸³Öµ¸ø´æ´¢Î»
-		//·ÀÖ¹ tick µÄ¼ÓÖµÊÇfloatÖµµ¼ÖÂµÄ int + float »áËğÊ§Êı¾İµÄÎÊÌâ
+		//ç”¨æ¥tickå¾€ä¸ŠåŠ çš„åœ¨çº¿æ—¶é—´ï¼Œåœ¨ load æ—¶åŒæ­¥ä¸º å­˜å‚¨ä½â€œe_daily_active_degree_type_online_30_minutesâ€çš„æ•°æ®ï¼Œåœ¨ save æ—¶èµ‹å€¼ç»™å­˜å‚¨ä½
+		//é˜²æ­¢ tick çš„åŠ å€¼æ˜¯floatå€¼å¯¼è‡´çš„ int + float ä¼šæŸå¤±æ•°æ®çš„é—®é¢˜
 		int64						m_online_time;
 		int64						m_old_tick_time;
 		int64						m_min_tick;

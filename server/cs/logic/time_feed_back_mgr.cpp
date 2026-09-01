@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2022Äê2ÔÂ23ÈÕ
+created: 2022å¹´2æœˆ23æ—¥
 file base: time_feed_back_mgr
 file ext: cpp
 author: zhaoyuming
@@ -80,7 +80,7 @@ namespace faith
 		{
 			return;
 		}
-		// »º´æ¾üÍÅĞÅÏ¢
+		// ç¼“å­˜å†›å›¢ä¿¡æ¯
 		m_info_list.clear();
 		for (int32 i = 0; i < data_num; ++i)
 		{
@@ -120,7 +120,7 @@ namespace faith
 
 	int32 time_feed_back_mgr::get_receive_award_time(int32 day_num)
 	{
-		// µ±Ìì0µãÊ±¼ä´Á + (ÌìÊı * Ã¿ÈÕµÄÃëÊı)
+		// å½“å¤©0ç‚¹æ—¶é—´æˆ³ + (å¤©æ•° * æ¯æ—¥çš„ç§’æ•°)
 		return time_helper::get_stamp_by_hour_min(0, 0) + (day_num * day_time_second);
 	}
 	void time_feed_back_mgr::send_time_feed_back_info()
@@ -186,18 +186,18 @@ namespace faith
 			int32 cur_money_type = sub_template_ptr.ParamArr1[1];
 			int32 cur_money_num = sub_template_ptr.ParamArr1[2];
 
-			// ¼ì²é»õ±ÒÊÇ·ñ×ã¹»
+			// æ£€æŸ¥è´§å¸æ˜¯å¦è¶³å¤Ÿ
 			if (!player_ref.can_cut_money(e_money_type(cur_money_type), cur_money_num))
 			{
 				send_operate_end(e_time_feed_back_operation_end_money_error);
 				return;
 			}
 
-			// ÏûºÄ»õ±Ò
+			// æ¶ˆè€—è´§å¸
 			player_ref.cut_money((e_money_type)cur_money_type, cur_money_num, e_server_log_cut_money_time_feed_back, mian_id, sub_id);
 			
 			player_ref.get_item_set().put_in_bag(e_server_log_add_item_time_feed_back, sub_id, sub_template_ptr.Reward);
-			// ¼ÇÂ¼¹ºÂòĞÅÏ¢
+			// è®°å½•è´­ä¹°ä¿¡æ¯
 			s_time_feed_back_info add_info;
 			add_info.template_id = mian_id;
 			add_info.sub_template_id = sub_id;
@@ -208,10 +208,10 @@ namespace faith
 			add_info.money_num = sub_template_ptr.ParamArr2[1];
 			m_info_list.push_back(add_info);
 
-			// Í¬²½¹ºÂòĞÅÏ¢
+			// åŒæ­¥è´­ä¹°ä¿¡æ¯
 			send_time_feed_back_info();
 			
-			// ·¢ËÍ²Ù×÷½á¹û
+			// å‘é€æ“ä½œç»“æœ
 			send_operate_end(e_time_feed_back_operation_end_buy_succeed);
 		}
 		break;
@@ -224,7 +224,7 @@ namespace faith
 				return;
 			}
 
-			// ÅĞ¶ÏÊÇ·ñµ½ÁìÈ¡Ê±¼ä
+			// åˆ¤æ–­æ˜¯å¦åˆ°é¢†å–æ—¶é—´
 			int64 cur_time = utility::get_tick_count() / 1000;
 			if (cur_time < back_info.get_time)
 			{
@@ -232,16 +232,16 @@ namespace faith
 				return;
 			}
 
-			// Ôö¼Ó»õ±Ò
+			// å¢åŠ è´§å¸
 			player_ref.add_money_or_exp((e_money_type)back_info.money_type, back_info.money_num, e_server_log_add_money_time_feed_back, sub_id);
 			
-			// ÉèÖÃÉÌÆ·×´Ì¬
+			// è®¾ç½®å•†å“çŠ¶æ€
 			back_info.info_state = e_time_feed_back_info_state_receive_award;
 
-			// Í¬²½¹ºÂòĞÅÏ¢
+			// åŒæ­¥è´­ä¹°ä¿¡æ¯
 			send_time_feed_back_info();
 			
-			// ·¢ËÍ²Ù×÷³É¹¦
+			// å‘é€æ“ä½œæˆåŠŸ
 			send_operate_end(e_time_feed_back_operation_end_get_succeed);
 		}
 		break;
@@ -284,7 +284,7 @@ namespace faith
 				continue;
 			}
 			int32 branch_template_id = activity_object.get_branch_template_id();
-			//×î¶àÑ­»·50´Î
+			//æœ€å¤šå¾ªç¯50æ¬¡
 			for (int32 j = 0; j < 20; j++)
 			{
 				int32 sub_template_id = branch_template_id + j;
@@ -292,7 +292,7 @@ namespace faith
 				{
 					break;
 				}
-				// ÓĞÊı¾İËµÃ÷ÒÑ¾­Âò¹ıÁË²»ĞèÒªÔÙ¹ºÂòÁË
+				// æœ‰æ•°æ®è¯´æ˜å·²ç»ä¹°è¿‡äº†ä¸éœ€è¦å†è´­ä¹°äº†
 				if (get_info_by_id(act_guid, sub_template_id).is_valid())
 				{
 					continue;
@@ -313,7 +313,7 @@ namespace faith
 					player_ref.cut_money(e_money_type(recharge_template_ptr->MoneyGetArray[0]), recharge_template_ptr->MoneyGetArray[1], e_server_log_cut_money_time_feed_back);
 					player_ref.get_item_set().put_in_bag(e_server_log_add_item_time_feed_back, 0, sub_template_ptr.Reward, e_bag_type_none);
 
-					// ¼ÇÂ¼¹ºÂòĞÅÏ¢
+					// è®°å½•è´­ä¹°ä¿¡æ¯
 					s_time_feed_back_info add_info;
 					add_info.template_id = act_guid;
 					add_info.sub_template_id = sub_template_id;
@@ -324,10 +324,10 @@ namespace faith
 					add_info.money_num = sub_template_ptr.ParamArr2[1];
 					m_info_list.push_back(add_info);
 
-					// Í¬²½¹ºÂòĞÅÏ¢
+					// åŒæ­¥è´­ä¹°ä¿¡æ¯
 					send_time_feed_back_info();
 
-					// ·¢ËÍ²Ù×÷½á¹û
+					// å‘é€æ“ä½œç»“æœ
 					send_operate_end(e_time_feed_back_operation_end_buy_succeed);
 					return;
 				}

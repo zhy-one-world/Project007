@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2017Äê11ÔÂ30ÈÕ15:37:47
+	created:	2017å¹´11æœˆ30æ—¥15:37:47
 	file base:	msgproc_log
 	file ext:	cpp
 	author:		allen wl
@@ -36,7 +36,7 @@ namespace faith
 		}
 
 		/*
-		//½âÎö×Ö·û´®
+		//è§£æå­—ç¬¦ä¸²
 		int32 protect_count = 0;
 		int32 max_length = log_string.length();
 		std::vector<xstring> value_array;
@@ -106,7 +106,7 @@ namespace faith
 		}
 
 		/*
-		//½âÎö×Ö·û´®
+		//è§£æå­—ç¬¦ä¸²
 		xstring src_string = pdata->save_string;
 		int32 protect_count = 0;
 		int32 max_length = src_string.length();

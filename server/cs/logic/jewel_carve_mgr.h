@@ -19,10 +19,10 @@ namespace faith
 
 	enum e_jewel_carve_oper
 	{
-		e_jewel_carve_oper_random,  //Ëæ»ú¼¼ÄÜ
-		e_jewel_carve_oper_up,     //ÉÏÎ»
-		e_jewel_carve_oper_cancel,   //È¡Ïû
-		e_jewel_carve_oper_choose, //ĞÒÔËÑ¡Ôñ
+		e_jewel_carve_oper_random,  //éšæœºæŠ€èƒ½
+		e_jewel_carve_oper_up,     //ä¸Šä½
+		e_jewel_carve_oper_cancel,   //å–æ¶ˆ
+		e_jewel_carve_oper_choose, //å¹¸è¿é€‰æ‹©
 	};
 
 	enum e_jewel_carve_param

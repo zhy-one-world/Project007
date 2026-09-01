@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2016Äê9ÔÂ8ÈÕ11:18:14
+	created:	2016å¹´9æœˆ8æ—¥11:18:14
 	file base:	msgproc_show
 	file ext:	cpp
 	author:		lxy
@@ -216,7 +216,7 @@ namespace faith
 			}
 			tempcount++;
 		}
-		// ¸üĞÂ½ÇÉ«ĞÅÏ¢±í
+		// æ›´æ–°è§’è‰²ä¿¡æ¯è¡¨
 		sql_builder sql(db_manager::getInstance().get_db_link().game_db);
 		sql << _XTEXT("call ")<<data_manager::get_instance().get_db_name(pdata->role_guid.server_64)<<_XTEXT(".sp_role_yesterday_must_do_remain_save(")
 			<< pdata->role_guid.server_64 << ",'";

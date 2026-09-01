@@ -1,4 +1,4 @@
-/********************************************************************
+ï»¿/********************************************************************
 	created:	2017/06/07
 	file base:	msgproc_cs.legion
 	file ext:	cpp
@@ -57,7 +57,7 @@ namespace faith
 		{
 			return;
 		}
-		//¿ç·ş×´Ì¬ÏÂ²»ÔÊĞí
+		//è·¨æœçŠ¶æ€ä¸‹ä¸å…è®¸
 		if (false == session->is_self_server())
 		{
 			return;
@@ -83,13 +83,13 @@ namespace faith
 		{
 			return;
 		}
-		//¿ç·ş×´Ì¬ÏÂ²»ÔÊĞí
+		//è·¨æœçŠ¶æ€ä¸‹ä¸å…è®¸
 		if (false == session->is_self_server())
 		{
 			return;
 		}
-		int32 add_money_num = packet->money_num;					// Ôö¼ÓµÄ¾üÍÅ×Ê½ğÊıÄ¿
-		int32 battle_achievement_get = packet->battle_achievement;	// Íæ¼ÒÒò¾èÏ×¶ø»ñµÃµÄÕ½¹¦Öµ
+		int32 add_money_num = packet->money_num;					// å¢åŠ çš„å†›å›¢èµ„é‡‘æ•°ç›®
+		int32 battle_achievement_get = packet->battle_achievement;	// ç©å®¶å› æçŒ®è€Œè·å¾—çš„æˆ˜åŠŸå€¼
 		if (add_money_num <= 0)
 		{
 			return;
@@ -101,16 +101,16 @@ namespace faith
 			return;
 		}
 		
-		// ¸ø¾üÍÅÔö¼ÓÏàÓ¦Êı¶îµÄ¾üÍÅ×Ê½ğ
+		// ç»™å†›å›¢å¢åŠ ç›¸åº”æ•°é¢çš„å†›å›¢èµ„é‡‘
 		legion_ws_ptr->add_asset_money(add_money_num);
 
-		// ·´À¡¸ø¿Í»§¶Ë»ñµÃµÄÕ½¹¦ĞÅÏ¢
+		// åé¦ˆç»™å®¢æˆ·ç«¯è·å¾—çš„æˆ˜åŠŸä¿¡æ¯
 		//legion_proto_donate_end donate_end_msg;
 		//donate_end_msg.set_add_legion_money(add_money_num);
 		//donate_end_msg.set_add_battle_achievement(battle_achievement_get);
 		//session->send_to_client(&donate_end_msg, e_msgindex_s2c_legion_donate_end);
 
-		// Ïò¾üÍÅÊÂ¼ş¼ÇÂ¼Æ÷ÖĞ¼ÇÂ¼¾èÏ×ÊÂ¼ş
+		// å‘å†›å›¢äº‹ä»¶è®°å½•å™¨ä¸­è®°å½•æçŒ®äº‹ä»¶
 		int32 cur_legion_level = legion_ws_ptr->get_legion_info(ELegionInfo_construction_level_main);
 		int32 legion_template_id = first_legion_template_id + cur_legion_level - 1;
 		LegionConstructionsTemplate* legion_template_ptr = GET_TEMPLATE(LegionConstructionsTemplate, legion_template_id);
@@ -125,13 +125,13 @@ namespace faith
 			event_logger_ref.add_donate_money_event(session->m_role_info.role_name, add_money_num, battle_achievement_get, add_money_num * donate_money_scale);
 		}
 
-		//Ôö¼Ó¾èÔù¹±Ï×¶È
+		//å¢åŠ æèµ è´¡çŒ®åº¦
 		if (legion_template_ptr->GetContributionScale.size() > e_legion_get_contribution_type_donate_money && add_money_num / legion_template_ptr->DonateMoneyGet > 0 && battle_achievement_get > 0)
 		{
 			int32 contribution_get = legion_template_ptr->GetContributionScale[e_legion_get_contribution_type_donate_money] * add_money_num / legion_template_ptr->DonateMoneyGet;
 			legion_ws_ptr->add_member_contribution(session->get_role_guid(), contribution_get);
 		}
-		// ·´À¡¸ø¿Í»§¶Ë»ñµÃµÄÕ½¹¦ĞÅÏ¢,ÒÆµ½WSÉÏ·¢£¬±ÜÃâÏûÏ¢°üÏÈºóË³Ğòµ¼ÖÂµÄÄ³Ğ©bug
+		// åé¦ˆç»™å®¢æˆ·ç«¯è·å¾—çš„æˆ˜åŠŸä¿¡æ¯,ç§»åˆ°WSä¸Šå‘ï¼Œé¿å…æ¶ˆæ¯åŒ…å…ˆåé¡ºåºå¯¼è‡´çš„æŸäº›bug
 		legion_proto_donate_end donate_end_msg;
 		donate_end_msg.set_add_legion_money(add_money_num);
 		donate_end_msg.set_add_battle_achievement(battle_achievement_get);
@@ -154,7 +154,7 @@ namespace faith
 		{
 			return;
 		}
-		//¿ç·ş×´Ì¬ÏÂ²»ÔÊĞí
+		//è·¨æœçŠ¶æ€ä¸‹ä¸å…è®¸
 		if (false == session->is_self_server())
 		{
 			return;
@@ -186,7 +186,7 @@ namespace faith
 
 		legion_ws_ptr->add_asset_money(add_money_num);
 
-		// Ïò¾üÍÅÊÂ¼ş¼ÇÂ¼Æ÷ÖĞ¼ÇÂ¼¾èÏ×ÊÂ¼ş
+		// å‘å†›å›¢äº‹ä»¶è®°å½•å™¨ä¸­è®°å½•æçŒ®äº‹ä»¶
 		int32 cur_legion_level = legion_ws_ptr->get_legion_info(ELegionInfo_construction_level_main);
 		int32 legion_template_id = first_legion_template_id + cur_legion_level - 1;
 		LegionConstructionsTemplate* legion_template_ptr = GET_TEMPLATE(LegionConstructionsTemplate, legion_template_id);
@@ -200,19 +200,19 @@ namespace faith
 		legion_ws_event_logger& event_logger_ref = legion_ws_ptr->get_event_logger();
 		event_logger_ref.add_donate_item_event(session->m_role_info.role_name, donate_item_id, add_item_num, battle_achievement_get, add_money_num);
 
-		//Ôö¼Ó¾èÔù¹±Ï×¶È
+		//å¢åŠ æèµ è´¡çŒ®åº¦
 		if (battle_achievement_get > 0)
 		{
 			int32 contribution_get = legion_template_ptr->GetContributionScale[e_legion_get_contribution_type_donate_item] * add_item_num;
 			legion_ws_ptr->add_member_contribution(session->get_role_guid(), contribution_get);
 		}
 
-		//Ôö¼Ó·Öºì
+		//å¢åŠ åˆ†çº¢
 		s_legion_bonus_info& bonus_info = legion_ws_ptr->get_bonus_info_ins().get_bonus_one(e_legion_bonus_type_donate_count);
 		bonus_info.finish_count += add_item_num;
 		legion_ws_ptr->get_bonus_info_ins().add_legion_bonus_info_map(bonus_info);
 			
-		// ·´À¡¸ø¿Í»§¶Ë»ñµÃµÄÕ½¹¦ĞÅÏ¢
+		// åé¦ˆç»™å®¢æˆ·ç«¯è·å¾—çš„æˆ˜åŠŸä¿¡æ¯
 		legion_proto_donate_end donate_end_msg;
 		donate_end_msg.set_add_legion_money(add_money_num);
 		donate_end_msg.set_add_battle_achievement(battle_achievement_get);
@@ -243,7 +243,7 @@ namespace faith
 		//legion_ws_boss_record_set& legion_boss_record = legion_ws_ptr->get_boss_record_set();
 		//legion_boss_record.set_boss_killed(boss_map_tmpl_id, packet->killer_name);
 		
-		// ÏòËùÓĞµÄ¿Í»§¶ËÍ¬²½»÷É±¾üÍÅBOSSµÄĞÅÏ¢
+		// å‘æ‰€æœ‰çš„å®¢æˆ·ç«¯åŒæ­¥å‡»æ€å†›å›¢BOSSçš„ä¿¡æ¯
 		legion_proto_kill_legion_boss kill_legion_boss_to_client_msg;
 		kill_legion_boss_to_client_msg.set_boss_map_template_id(boss_map_tmpl_id);
 		kill_legion_boss_to_client_msg.set_killer_name(packet->killer_name);
@@ -319,7 +319,6 @@ namespace faith
 		//{
 		//	return;
 		//}
-		//
 		//guid_64 role_guid = packet->role_guid;
 		//guid_64 bonfire_guid = packet->bonfire_guid;
 		//guid_64 bonfire_map_guid = packet->bonfire_map_guid;
@@ -501,7 +500,7 @@ namespace faith
 
 	void cs2ws_req_add_legion_act_score(uint32 conn_index, const void* data_ptr, size_t data_len) 
 	{
-		//ÆÁ±Î¾üÍÅbossºÍóô»ğµÄÅÄÂôĞĞ
+		//å±è”½å†›å›¢bosså’Œç¯ç«çš„æ‹å–è¡Œ
 		if (true)
 		{
 			return;
@@ -725,7 +724,7 @@ namespace faith
 		{
 			return;
 		}
-		//¿ç·ş×´Ì¬ÏÂ²»ÔÊĞí
+		//è·¨æœçŠ¶æ€ä¸‹ä¸å…è®¸
 		if (false == session->is_self_server())
 		{
 			return;
@@ -752,7 +751,7 @@ namespace faith
 		{
 			return;
 		}
-		//¿ç·ş×´Ì¬ÏÂ²»ÔÊĞí
+		//è·¨æœçŠ¶æ€ä¸‹ä¸å…è®¸
 		if (false == session->is_self_server())
 		{
 			return;
@@ -776,7 +775,7 @@ namespace faith
 			return;
 		}
 		guid_64 invite_guid = new_member_session->get_role_guid();
-		// Èç¹ûÒªÌí¼ÓµÄÍæ¼ÒÒÑ¾­¼ÓÈë¾üÍÅ¾Í²»ÄÜÔÙÌí¼ÓËû
+		// å¦‚æœè¦æ·»åŠ çš„ç©å®¶å·²ç»åŠ å…¥å†›å›¢å°±ä¸èƒ½å†æ·»åŠ ä»–
 		if (legion_ws_mgr_ref.get_unit_legion(invite_guid) != nullptr)
 		{
 			legion_ws_mgr_ref.send_legion_error_to_session(session, e_legion_error_player_added_is_already_join_other_legion);
@@ -850,7 +849,7 @@ namespace faith
 		{
 			return;
 		}
-		//¿ç·ş×´Ì¬ÏÂ²»ÔÊĞí
+		//è·¨æœçŠ¶æ€ä¸‹ä¸å…è®¸
 		if (false == session->is_self_server())
 		{
 			return;

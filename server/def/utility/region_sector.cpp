@@ -21,7 +21,7 @@ namespace faith
         bool is_in_region_radius = false;
         bool is_in_region_angle = false;
 
-        ////ÊÇ·ñÔÚ°ë¾¶·¶Î§ÄÚ
+        ////æ˜¯å¦åœ¨åŠå¾„èŒƒå›´å†…
         //i32 dx = pos.x - m_center.x;;
         //i32 dy = pos.y - m_center.y;
         //is_in_region_radius = dx*dx + dy*dy <= m_radius_quare;
@@ -33,7 +33,7 @@ namespace faith
         //f32 ddy = (f32)dy;
         //f32 ddx = (f32)dx;
 
-        ////±»²âÁ¿µÄÄ¿±êÓëÕı·½ÏòµÄ¼Ğ½Ç
+        ////è¢«æµ‹é‡çš„ç›®æ ‡ä¸æ­£æ–¹å‘çš„å¤¹è§’
         //f32 angle;
         //angle = (f32)::atan2(ddx, ddy);
         //angle *= math::RADTODEG64;
@@ -44,7 +44,7 @@ namespace faith
         //if (angle >= 360.0f) 
         //    angle -= 360.0f;
 
-        ////Õı·½Ïò
+        ////æ­£æ–¹å‘
         //if (m_rot.yaw >= 0)
         //{
         //    m_rot.yaw = m_rot.yaw % 65535;
@@ -66,7 +66,7 @@ namespace faith
         //if (rot_angle >= 360.0f) 
         //    rot_angle -= 360.0f;
 
-        ////ÅĞ¶Ï±»²âÊÔµÄÄ¿±êµã£¬ºÍÕı·½ÏòµÄ¼Ğ½ÇÊÇ·ñÔÚ ÉÈĞÎ ½Ç¶ÈÄÚ
+        ////åˆ¤æ–­è¢«æµ‹è¯•çš„ç›®æ ‡ç‚¹ï¼Œå’Œæ­£æ–¹å‘çš„å¤¹è§’æ˜¯å¦åœ¨ æ‰‡å½¢ è§’åº¦å†…
         //f32 fangle = (f32)(m_angle);
         //if ((angle - rot_angle) <= (f32)(fangle) / 2.0f && (angle - rot_angle) >= 0.f)
         //{

@@ -48,7 +48,7 @@ namespace faith
 
 			m_func_unlock_template_map.insert({ func_unlock_template_ptr->FuncName, func_unlock_template_ptr });
 
-			// ÎªÁË¼õÉÙ±éÀúµÄÁ¿,°ÑÄÜ´¥·¢¼¤»î²Ù×÷µÄÌõÄ¿µ¥¶À·ÅÔÚÁíÒ»¸öÊı×éÀï
+			// ä¸ºäº†å‡å°‘éå†çš„é‡,æŠŠèƒ½è§¦å‘æ¿€æ´»æ“ä½œçš„æ¡ç›®å•ç‹¬æ”¾åœ¨å¦ä¸€ä¸ªæ•°ç»„é‡Œ
 			if ((func_unlock_template_ptr->Activate.size() > 0) && (func_unlock_template_ptr->Activate.size() % e_finish_activate_info_max == 0) && (is_func_unlock(func_unlock_template_ptr->FuncName) == false || func_unlock_template_ptr->attribute_id == wing_func_unlock_id))
 			{
 				m_can_trigger_active_funcs.push_back(func_unlock_template_ptr);
@@ -200,7 +200,7 @@ namespace faith
 				//player_ref.get_spirit_mgr().set_qiyuan_att_all();
 			}
 			break;
-			case e_finish_activate_type_wing_spirit://×¢Áé
+			case e_finish_activate_type_wing_spirit://æ³¨çµ
 			{
 				player_ref.get_item_set().set_wing_att(false);
 				player_ref.get_item_set().equip_all_spirit();
@@ -209,7 +209,7 @@ namespace faith
 				player_ref.get_item_set().set_wing_att(true);
 			}
 			break;
-			case e_finish_activate_type_wing_feather://ôáÓğ
+			case e_finish_activate_type_wing_feather://ç¿ç¾½
 			{
 				player_ref.get_item_set().set_wing_att(false);
 				player_ref.get_item_set().reset_wings_order();
@@ -217,7 +217,7 @@ namespace faith
 				player_ref.get_item_set().set_wing_att(true);
 			}
 			break;
-			case e_finish_activate_type_wing_soul://×¢»ê
+			case e_finish_activate_type_wing_soul://æ³¨é­‚
 			{
 				player_ref.get_item_set().set_wing_att(false);
 				player_ref.get_item_set().equip_all_soul();
@@ -226,7 +226,7 @@ namespace faith
 				player_ref.get_item_set().set_wing_att(true);
 			}
 			break;
-			case e_finish_activate_type_meditation://Ú¤Ïë
+			case e_finish_activate_type_meditation://å†¥æƒ³
 			{
 				player_ref.get_meditation_mgr().set_meditation_reward_time();
 			}
@@ -252,11 +252,11 @@ namespace faith
 
 		FuncUnlockTemplate* func_unlock_template_ptr = get_func_unlock_template_by_func_name(func_name);
 		if (nullptr == func_unlock_template_ptr)
-		{//ÕÒ²»µ½¾ÍËµÃ÷²»´æÔÚÕâ¸ö ¾ÍÊÇ½âËøÁË
+		{//æ‰¾ä¸åˆ°å°±è¯´æ˜ä¸å­˜åœ¨è¿™ä¸ª å°±æ˜¯è§£é”äº†
 			return true;
 		}
 
-		// ¼ì²éÒÀÀµµÄ¹¦ÄÜÊÇ·ñÒÑ¾­½âËø
+		// æ£€æŸ¥ä¾èµ–çš„åŠŸèƒ½æ˜¯å¦å·²ç»è§£é”
 		if (func_unlock_template_ptr->PrecondFuncUnlock.length() > 0)
 		{
 			if (func_name == func_unlock_template_ptr->PrecondFuncUnlock)
@@ -275,7 +275,7 @@ namespace faith
 			return false;
 		}
 
-		// ¼ì²é½ÇÉ«µ±Ç°µÄµÈ¼¶ÊÇ·ñ¿ÉÒÔ¿ªÆôÏàÓ¦µÄ¹¦ÄÜ
+		// æ£€æŸ¥è§’è‰²å½“å‰çš„ç­‰çº§æ˜¯å¦å¯ä»¥å¼€å¯ç›¸åº”çš„åŠŸèƒ½
 		int32 cur_level = player_ref.get_unit_info(e_role_info_exp_level);
 		if (cur_level < func_unlock_template_ptr->UnlockNeedLevel)
 		{
@@ -288,7 +288,7 @@ namespace faith
 			return false;
 		}
 
-		// ¼ì²é¿ªÆôÏàÓ¦µÄ¹¦ÄÜĞèÒªÍê³ÉµÄÈÎÎñÊÇ·ñÒÑ¾­Íê³É
+		// æ£€æŸ¥å¼€å¯ç›¸åº”çš„åŠŸèƒ½éœ€è¦å®Œæˆçš„ä»»åŠ¡æ˜¯å¦å·²ç»å®Œæˆ
 		int32 need_finish_mission_id = func_unlock_template_ptr->UnlockNeedMissionID;
 		if (need_finish_mission_id > 0)
 		{
@@ -318,7 +318,7 @@ namespace faith
 			}
 		}
 
-		//¼ì²âÊÇ·ñ¿ªÆô¿ç·ş
+		//æ£€æµ‹æ˜¯å¦å¼€å¯è·¨æœ
 		int32 is_need_cross_server = func_unlock_template_ptr->IsNeedCrossServer;
 		if (is_need_cross_server > 0)
 		{

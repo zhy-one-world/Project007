@@ -94,7 +94,7 @@ namespace faith
 			world_server::getInstance().broadcast_lua(&pro_msg, e_msgindex_ws2cs_time_limit_temp, e_server_type_cs);
 		}
 
-		//·¢·ÖÖ§±í
+		//å‘åˆ†æ”¯è¡¨
 		int32 branch_data_num = 0;
 		ws2cs_act_limit_branch_temp branch_msg;
 
@@ -163,7 +163,7 @@ namespace faith
 		msg.is_begin = is_begin;
 		world_server::getInstance().broadcast(&msg, sizeof(msg), e_server_type_fep);
 
-		//·¢·ÖÖ§±í
+		//å‘åˆ†æ”¯è¡¨
 		int32 branch_data_num = 0;
 		ws2fep_act_limit_branch_temp branch_msg;
 		for (auto ite = m_time_limit_activity_branch_temp_map.begin(); ite != m_time_limit_activity_branch_temp_map.end(); ite++)
@@ -539,7 +539,7 @@ namespace faith
 	std::vector<int32> time_limit_activity_temp_ws_mgr::get_first_cycle_branch_temp_arr_by_template(int32 first_branch_temp_id, int32 next_first_branch_temp_id, int32 activity_type)
 	{
 		std::vector<int32> cycle_first_branch_temp_id_arr;
-		//×î¶àÑ­»·²éÕÒ100´Î ·ÀÖ¹ÎŞÏŞÑ­»·
+		//æœ€å¤šå¾ªç¯æŸ¥æ‰¾100æ¬¡ é˜²æ­¢æ— é™å¾ªç¯
 		for (int32 i = 0; i < 100; i++)
 		{
 			int32 limit_act_branch_temp_id = first_branch_temp_id + i;
@@ -560,7 +560,7 @@ namespace faith
 	std::vector<int32> time_limit_activity_temp_ws_mgr::get_first_cycle_branch_struct_arr_by_template(int32 first_branch_temp_id, int32 next_first_branch_temp_id, int32 activity_type)
 	{
 		std::vector<int32> cycle_first_branch_temp_id_arr;
-		//×î¶àÑ­»·²éÕÒ100´Î ·ÀÖ¹ÎŞÏŞÑ­»·
+		//æœ€å¤šå¾ªç¯æŸ¥æ‰¾100æ¬¡ é˜²æ­¢æ— é™å¾ªç¯
 		for (int32 i = 0; i < 100; i++)
 		{
 			int32 limit_act_branch_temp_id = first_branch_temp_id + i;
@@ -602,9 +602,9 @@ namespace faith
 		int32 change_open_time = (new_base_open_time - old_base_open_time) > 0 ? (new_base_open_time - old_base_open_time) : (old_base_open_time - new_base_open_time);
 
 		bool is_change = false;
-		//paramArr4½öÓÃÓÚÉú³Éid ²»ÓÃ×ö¶Ô±È
+		//paramArr4ä»…ç”¨äºç”Ÿæˆid ä¸ç”¨åšå¯¹æ¯”
 		if (limit_act_temp->CycleParamNum != act_temp_info.CycleParamNum ||
-			limit_act_temp->CycleFirstId != act_temp_info.OriginalCycleFirstId ||	//firstidĞèÒª×öÌØÊâ±È¶Ô´¦Àí
+			limit_act_temp->CycleFirstId != act_temp_info.OriginalCycleFirstId ||	//firstidéœ€è¦åšç‰¹æ®Šæ¯”å¯¹å¤„ç†
 			limit_act_temp->TextImage != act_temp_info.TextImage ||
 			limit_act_temp->ShowType != act_temp_info.ShowType ||
 			limit_act_temp->ParamArr1 != act_temp_info.ParamArr1 ||
@@ -616,13 +616,13 @@ namespace faith
 			is_change = true;
 		}
 
-		//³ÖĞøÊ±¼ä Ñ­»·ÌìÊı ¿ªÊ¼Ê±¼ä´íÎ»
+		//æŒç»­æ—¶é—´ å¾ªç¯å¤©æ•° å¼€å§‹æ—¶é—´é”™ä½
 		if (new_duration_days != old_duration_days || new_cycle_days != old_cycle_days
 			|| (change_open_time > 0 && change_open_time / day_time_second != new_cycle_days))
 		{
 			return e_compare_temp_result_new;
 		}
-		//Æğ·şÊ±²Å»áË¢ĞÂguid ÈÈ¸ü²»Ë¢ĞÂ
+		//èµ·æœæ—¶æ‰ä¼šåˆ·æ–°guid çƒ­æ›´ä¸åˆ·æ–°
 		else if (is_need_refresh_guid && time_helper::get_cur_time_new().second > act_temp_info.RefreshTime && !init_unit::is_cross_time_limit_cross_activity(act_temp_info.ActivityType))
 		{
 			return e_compare_temp_result_refresh_guid;
@@ -777,7 +777,7 @@ namespace faith
 			{
 				break;
 			}
-			//×î¶àÑ­»·²éÕÒ100´Î ·ÀÖ¹ÎŞÏŞÑ­»·
+			//æœ€å¤šå¾ªç¯æŸ¥æ‰¾100æ¬¡ é˜²æ­¢æ— é™å¾ªç¯
 			for (int32 j = 0; j < 100; j++)
 			{
 				int32 limit_act_branch_temp_id = cycle_first_id_arr[i] + j;

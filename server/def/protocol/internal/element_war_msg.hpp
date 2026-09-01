@@ -1,9 +1,9 @@
 /***********************************************
-* created	: 2020Äê8ÔÂ18ÈÕ
+* created	: 2020å¹´8æœˆ18æ—¥
 * file base : element_war_msg
 * file ext  : hpp
-* author    : ÕÔÓñÃ÷
-* purpose   : ÔªËØÕù°Ô
+* author    : èµµç‰æ˜
+* purpose   : å…ƒç´ äº‰éœ¸
 ************************************************/
 
 #ifndef _ELEMENT_WAR_MSG_HPP_
@@ -20,40 +20,40 @@ namespace faith
 #pragma pack(push, 1)
 	enum
 	{
-		e_msgindex_ws2dp_element_war_add_role_info = e_msg_base_element_war,	//Ìí¼ÓĞÂ½ÇÉ«
-		e_msgindex_ws2dp_element_war_update_info,								//¸üĞÂ½ÇÉ«±ÈÈüĞÅÏ¢
-		e_msgindex_ws2dp_element_war_refresh_season_info,						//Ë¢ĞÂÈü¼¾ĞÅÏ¢
-		e_msgindex_ws2ws_element_war_req_create_map,							//´´½¨µØÍ¼
-		e_msgindex_ws2ws_element_war_req_role_info,								//½ÇÉ«·şÏòÆ¥Åä·şÇëÇóÍæ¼ÒÊı¾İ
-		e_msgindex_ws2dp_element_war_update_role_info,							//¸üĞÂ½ÇÉ«ÏÔÊ¾ĞÅÏ¢
-		e_msgindex_ws2dp_element_war_load_info,									//´ÓÊı¾İ¿âÀ­È¡Íæ¼ÒĞÅÏ¢ÇëÇó
-		e_msgindex_dp2ws_element_war_load_role_info_end,						//´ÓÊı¾İ¿âÀ­È¡Êı¾İ½á¹û
-		e_msgindex_ws2ws_element_war_send_sign_up,								//·¢ËÍÆ¥ÅäÇëÇó
-		e_msgindex_ws2ws_element_war_close_sign_up,								//·¢ËÍÈ¡ÏûÆ¥ÅäÉêÇë
-		e_msgindex_ws2ws_element_war_create_map_failed,							//Õ½¶··şµØÍ¼´´½¨Ê§°Ü½á¹û
-		e_msgindex_ws2ws_element_war_send_match_success,						//·¢ËÍµØÍ¼´´½¨³É¹¦
-		e_msgindex_ws2cs_element_war_send_create_robot,							//·¢ËÍ´´½¨»úÆ÷ÈËÏûÏ¢
-		e_msgindex_ws2dp_element_war_refresh_ticket_info,						//Ë¢ĞÂÃ¿ÈÕÊı¾İ
-		e_msgindex_ws2ws_element_war_notify_get_season_reward,					//·¢ËÍÈü¼¾¸üĞÂÌáÊ¾
-		e_msgindex_cs2ws_element_war_map_game_end_role_info,					//·¢ËÍ±ÈÈü½á¹û
-		e_msgindex_ws2dp_element_war_refresh_mission_info,						//Ë¢ĞÂÈÎÎñĞÅÏ¢
-		e_msgindex_ws2dp_element_war_clear_mission_info,						//Çå³ıÈÎÎñĞÅÏ¢
-		e_msgindex_ws2ws_element_war_sync_game_result,							//·¢ËÍ±ÈÈü½á¹ûµ½×Ô¼º·şÎñÆ÷
-		e_msgindex_ws2ws_element_war_check_can_get_mission_reward,				//½ÇÉ«·şÏòÆ¥Åä·ş·¢ËÍÊÇ·ñ¿ÉÒÔÁìÈ¡ÈÎÎñ½±Àø
-		e_msgindex_ws2ws_element_war_check_can_get_mission_reward_end,			//Æ¥Åä·ş»Ø¸´ÈÎÎñ½±ÀøµÄÁìÈ¡½á¹û
-		e_msgindex_ws2cs_element_war_check_can_get_mission_reward_end,			//wsÏòcs·¢ËÍÁìÈ¡½á¹û
-		e_msgindex_ws2cs_element_war_refresh_ticket_info,						//Ë¢ĞÂÃ¿ÈÕ´ÎÊı
-		e_msgindex_ws2cs_element_war_send_last_score,							//·¢ËÍÉÏÈü¼¾ÅÅÃû
-		e_msgindex_cs2ws_element_war_buy_ticket,								//Í¨Öªgate·ş¹ºÂò´ÎÊı
-		e_msgindex_cs2ws_element_ladder_req_last_score,							//»ñÈ¡Èü¼¾·ÖÊı
-		e_msgindex_ws2ws_element_ladder_send_last_score,						//·¢ËÍÉÏÈü¼¾·ÖÊı
-		e_msgindex_ws2ws_element_war_send_math_tip,								//·¢ËÍÆ¥ÅäÌáÊ¾
-		e_msgindex_cs2ws_element_war_gm_send_add_ticket,						//GmÔö¼Ó´ÎÊı
+		e_msgindex_ws2dp_element_war_add_role_info = e_msg_base_element_war,	//æ·»åŠ æ–°è§’è‰²
+		e_msgindex_ws2dp_element_war_update_info,								//æ›´æ–°è§’è‰²æ¯”èµ›ä¿¡æ¯
+		e_msgindex_ws2dp_element_war_refresh_season_info,						//åˆ·æ–°èµ›å­£ä¿¡æ¯
+		e_msgindex_ws2ws_element_war_req_create_map,							//åˆ›å»ºåœ°å›¾
+		e_msgindex_ws2ws_element_war_req_role_info,								//è§’è‰²æœå‘åŒ¹é…æœè¯·æ±‚ç©å®¶æ•°æ®
+		e_msgindex_ws2dp_element_war_update_role_info,							//æ›´æ–°è§’è‰²æ˜¾ç¤ºä¿¡æ¯
+		e_msgindex_ws2dp_element_war_load_info,									//ä»æ•°æ®åº“æ‹‰å–ç©å®¶ä¿¡æ¯è¯·æ±‚
+		e_msgindex_dp2ws_element_war_load_role_info_end,						//ä»æ•°æ®åº“æ‹‰å–æ•°æ®ç»“æœ
+		e_msgindex_ws2ws_element_war_send_sign_up,								//å‘é€åŒ¹é…è¯·æ±‚
+		e_msgindex_ws2ws_element_war_close_sign_up,								//å‘é€å–æ¶ˆåŒ¹é…ç”³è¯·
+		e_msgindex_ws2ws_element_war_create_map_failed,							//æˆ˜æ–—æœåœ°å›¾åˆ›å»ºå¤±è´¥ç»“æœ
+		e_msgindex_ws2ws_element_war_send_match_success,						//å‘é€åœ°å›¾åˆ›å»ºæˆåŠŸ
+		e_msgindex_ws2cs_element_war_send_create_robot,							//å‘é€åˆ›å»ºæœºå™¨äººæ¶ˆæ¯
+		e_msgindex_ws2dp_element_war_refresh_ticket_info,						//åˆ·æ–°æ¯æ—¥æ•°æ®
+		e_msgindex_ws2ws_element_war_notify_get_season_reward,					//å‘é€èµ›å­£æ›´æ–°æç¤º
+		e_msgindex_cs2ws_element_war_map_game_end_role_info,					//å‘é€æ¯”èµ›ç»“æœ
+		e_msgindex_ws2dp_element_war_refresh_mission_info,						//åˆ·æ–°ä»»åŠ¡ä¿¡æ¯
+		e_msgindex_ws2dp_element_war_clear_mission_info,						//æ¸…é™¤ä»»åŠ¡ä¿¡æ¯
+		e_msgindex_ws2ws_element_war_sync_game_result,							//å‘é€æ¯”èµ›ç»“æœåˆ°è‡ªå·±æœåŠ¡å™¨
+		e_msgindex_ws2ws_element_war_check_can_get_mission_reward,				//è§’è‰²æœå‘åŒ¹é…æœå‘é€æ˜¯å¦å¯ä»¥é¢†å–ä»»åŠ¡å¥–åŠ±
+		e_msgindex_ws2ws_element_war_check_can_get_mission_reward_end,			//åŒ¹é…æœå›å¤ä»»åŠ¡å¥–åŠ±çš„é¢†å–ç»“æœ
+		e_msgindex_ws2cs_element_war_check_can_get_mission_reward_end,			//wså‘cså‘é€é¢†å–ç»“æœ
+		e_msgindex_ws2cs_element_war_refresh_ticket_info,						//åˆ·æ–°æ¯æ—¥æ¬¡æ•°
+		e_msgindex_ws2cs_element_war_send_last_score,							//å‘é€ä¸Šèµ›å­£æ’å
+		e_msgindex_cs2ws_element_war_buy_ticket,								//é€šçŸ¥gateæœè´­ä¹°æ¬¡æ•°
+		e_msgindex_cs2ws_element_ladder_req_last_score,							//è·å–èµ›å­£åˆ†æ•°
+		e_msgindex_ws2ws_element_ladder_send_last_score,						//å‘é€ä¸Šèµ›å­£åˆ†æ•°
+		e_msgindex_ws2ws_element_war_send_math_tip,								//å‘é€åŒ¹é…æç¤º
+		e_msgindex_cs2ws_element_war_gm_send_add_ticket,						//Gmå¢åŠ æ¬¡æ•°
 	};
 	
 
 
-	//gate·şÏòdp¸üĞÂÊı¾İ£¨±ÈÈüºó£©
+	//gateæœå‘dpæ›´æ–°æ•°æ®ï¼ˆæ¯”èµ›åï¼‰
 	struct ws2dp_element_war_update_info : public faith::packet_base
 	{
 		guid_64		role_guid;
@@ -89,7 +89,7 @@ namespace faith
 		}
 	};
 
-	//Ô­ÇøwsÏògate·şws·¢ËÍÇëÇó½ÇÉ«ĞÅÏ¢
+	//åŸåŒºwså‘gateæœwså‘é€è¯·æ±‚è§’è‰²ä¿¡æ¯
 	struct ws2ws_element_war_req_role_info : public faith::packet_base
 	{
 		xchar		role_name[max_name_size + 1];
@@ -107,7 +107,7 @@ namespace faith
 		}
 	};
 
-	//gate·şÏòdp¸üĞÂÊı¾İ£¨ĞÂ½¨Êı¾İºó)
+	//gateæœå‘dpæ›´æ–°æ•°æ®ï¼ˆæ–°å»ºæ•°æ®å)
 	struct ws2dp_element_war_add_role_info : public faith::packet_base
 	{
 		s_element_war_role_info	role_info;
@@ -118,7 +118,7 @@ namespace faith
 		}
 	};
 
-	//gate·şÏòdpË¢ĞÂrole_name
+	//gateæœå‘dpåˆ·æ–°role_name
 	struct ws2dp_element_war_update_role_info : public faith::packet_base
 	{
 		guid_64		role_guid;
@@ -137,7 +137,7 @@ namespace faith
 		}
 	};
 
-	//gate·şÏòdpÇëÇóÊı¾İ
+	//gateæœå‘dpè¯·æ±‚æ•°æ®
 	struct ws2dp_element_war_load_info : public faith::packet_base
 	{
 		ws2dp_element_war_load_info()
@@ -169,7 +169,7 @@ namespace faith
 		}
 	};
 
-	//Ô­ÇøwsÏògate·ş·¢ËÍ±¨ÃûÇëÇó
+	//åŸåŒºwså‘gateæœå‘é€æŠ¥åè¯·æ±‚
 	struct ws2ws_element_war_sign_up : public faith::packet_base
 	{
 		guid_64		role_guid_list[ELEMENT_WAR_PLAY_NUM];
@@ -185,7 +185,7 @@ namespace faith
 		}
 	};
 
-	//Ô­ÇøwsÏògate·ş·¢ËÍÈ¡Ïû±¨ÃûÇëÇó
+	//åŸåŒºwså‘gateæœå‘é€å–æ¶ˆæŠ¥åè¯·æ±‚
 	struct ws2ws_element_war_close_sign_up : public faith::packet_base
 	{
 		guid_64		role_guid;
@@ -196,7 +196,7 @@ namespace faith
 			wheader = e_msgindex_ws2ws_element_war_close_sign_up;
 		}
 	};
-	//µØÍ¼´´½¨Ê§°ÜÖØÖÃ½ÇÉ«ĞÅÏ¢
+	//åœ°å›¾åˆ›å»ºå¤±è´¥é‡ç½®è§’è‰²ä¿¡æ¯
 	struct ws2ws_element_war_create_map_failed : public faith::packet_base
 	{
 		guid_64		first_role_guid[ELEMENT_WAR_PLAY_NUM];
@@ -218,7 +218,7 @@ namespace faith
 		}
 	};
 
-	//±ÈÈü·şwsÏòÔ­Çøws·¢ËÍ±ÈÈüÆ¥Åä³É¹¦
+	//æ¯”èµ›æœwså‘åŸåŒºwså‘é€æ¯”èµ›åŒ¹é…æˆåŠŸ
 	struct ws2ws_element_war_send_match_success : public faith::packet_base
 	{
 		int32		server_id;
@@ -232,7 +232,7 @@ namespace faith
 		}
 	};
 
-	//±ÈÈü·şwsÏòcs·¢ËÍ´´½¨»úÆ÷ÈËÏûÏ¢
+	//æ¯”èµ›æœwså‘cså‘é€åˆ›å»ºæœºå™¨äººæ¶ˆæ¯
 	struct ws2cs_element_war_send_create_robot : public faith::packet_base
 	{
 		guid_64		map_guid;
@@ -259,7 +259,7 @@ namespace faith
 		}
 	};
 
-	//gate·şÍ¨ÖªdpË¢ĞÂÃ¿ÈÕÊı¾İ
+	//gateæœé€šçŸ¥dpåˆ·æ–°æ¯æ—¥æ•°æ®
 	struct ws2dp_element_war_refresh_ticket_info : public faith::packet_base
 	{
 		int32		ticket_num;
@@ -271,7 +271,7 @@ namespace faith
 		}
 	};
 
-	//ws·şÍ¨ÖªcsË¢ĞÂÃ¿ÈÕÊı¾İ
+	//wsæœé€šçŸ¥csåˆ·æ–°æ¯æ—¥æ•°æ®
 	struct ws2cs_element_war_refresh_ticket_info : public faith::packet_base
 	{
 		guid_64		role_guid;
@@ -283,7 +283,7 @@ namespace faith
 		}
 	};
 
-	//·¢ËÍÉÏÈü¼¾ÅÅÃû
+	//å‘é€ä¸Šèµ›å­£æ’å
 	struct ws2cs_element_war_send_last_score : public faith::packet_base
 	{
 		guid_64		role_guid;
@@ -309,7 +309,7 @@ namespace faith
 		}
 	};
 
-	//·¢ËÍÈü¼¾¸üĞÂ
+	//å‘é€èµ›å­£æ›´æ–°
 	struct ws2ws_element_war_notify_season_reward : public faith::packet_base
 	{
 		ws2ws_element_war_notify_season_reward()
@@ -435,7 +435,7 @@ namespace faith
 		}
 	};
 
-	//¿Û³ı»õ±Ò³É¹¦Í¨Öªgate·şÔö¼Ó´ÎÊı
+	//æ‰£é™¤è´§å¸æˆåŠŸé€šçŸ¥gateæœå¢åŠ æ¬¡æ•°
 	struct cs2ws_element_war_buy_ticket : public faith::packet_base
 	{
 		guid_64 role_guid;
@@ -445,7 +445,7 @@ namespace faith
 			wheader = e_msgindex_cs2ws_element_war_buy_ticket;
 		}
 	};
-	//Ç°ÆÚÉÏÈü¼¾·ÖÊı
+	//å‰æœŸä¸Šèµ›å­£åˆ†æ•°
 	struct cs2ws_element_ladder_req_last_score : public faith::packet_base
 	{
 		guid_64		role_guid;
@@ -456,7 +456,7 @@ namespace faith
 			wheader = e_msgindex_cs2ws_element_ladder_req_last_score;
 		}
 	};
-	//·¢ËÍÉÏÈü¼¾·ÖÊı
+	//å‘é€ä¸Šèµ›å­£åˆ†æ•°
 	struct ws2ws_element_ladder_send_last_score : public faith::packet_base
 	{
 		guid_64		role_guid;
@@ -469,7 +469,7 @@ namespace faith
 		}
 	};
 
-	//·¢ËÍÆ¥ÅäÌáÊ¾Tip
+	//å‘é€åŒ¹é…æç¤ºTip
 	struct ws2ws_element_war_send_math_tip : public faith::packet_base
 	{
 		guid_64		role_guid;

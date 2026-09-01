@@ -27,7 +27,7 @@ namespace faith
 		void														init_manager();
 		void														heart_tick(const int64& time_new);
 		void														clear_data();
-		void														send_to_dp_load_temp();//È¥dp loadµ±Ç°±íµÄÊı¾İ
+		void														send_to_dp_load_temp();//å»dp loadå½“å‰è¡¨çš„æ•°æ®
 		void														load_temp_end(const s_time_limit_activity_temp_db* temp_dp_info, bool is_load_all, int32 data_num);
 		void														load_branch_temp_end(const s_time_limit_activity_branch_temp_db* temp_dp_info, bool is_load_all, int32 data_num);
 		void														save_temp_to_db(const s_time_limit_activity_temp& temp_info);
@@ -37,9 +37,9 @@ namespace faith
 		void														delete_branch_temp(int32 act_guid);
 		void														load_new_temp(bool is_empty, bool is_need_refresh_guid);
 		void														update_role_time_limit_act_guid(int32 act_type, int32 act_guid);
-		const s_time_limit_activity_temp&							get_time_limit_act_with_id(int32 temp_id);//¸ù¾İ±íID»ñµÃÖ÷±í
+		const s_time_limit_activity_temp&							get_time_limit_act_with_id(int32 temp_id);//æ ¹æ®è¡¨IDè·å¾—ä¸»è¡¨
 		const s_time_limit_activity_temp&							get_new_limit_act_with_type(int32 activity_type);
-		const s_time_limit_activity_branch_temp&					get_time_limit_act_branch_with_id(int32 role_id);//¸ù¾İ×Ó±íÎ¨Ò»id»ñµÃ×Ó±í
+		const s_time_limit_activity_branch_temp&					get_time_limit_act_branch_with_id(int32 role_id);//æ ¹æ®å­è¡¨å”¯ä¸€idè·å¾—å­è¡¨
 		const std::map<int32, s_time_limit_activity_temp>&			get_temp_map() { return m_time_limit_activity_temp_map; };
 		const std::map<int32, s_time_limit_activity_branch_temp>&	get_branch_temp_map() { return m_time_limit_activity_branch_temp_map; };
 		void														send_to_cs_end_act_type(int32 act_type, int32 is_need_send_to_client);
@@ -51,13 +51,13 @@ namespace faith
 		void														fill_time_limit_activity_template_one_msg(const s_time_limit_activity_temp* template_line, game_proto_template_table_data* activity_template_data);
 		void														fill_time_limit_activity_branch_template_one_msg(const s_time_limit_activity_branch_temp* template_line, game_proto_template_table_data* activity_template_data);		
 
-		void														parse_char_temp(s_time_limit_activity_temp& temp_info, const s_time_limit_activity_temp_db& temp_dp_info);//DP±í×ª³£ÓÃ±í
-		void														parse_char_branch_temp(s_time_limit_activity_branch_temp& temp_info, const s_time_limit_activity_branch_temp_db& temp_dp_info);//DP±í×ª³£ÓÃ±í		
-		void														package_char_temp(s_time_limit_activity_temp_db& temp_dp_info, const s_time_limit_activity_temp& temp_info);//³£ÓÃ±í×ªDP±í
-		void														package_char_branch_temp(s_time_limit_activity_branch_temp_db& temp_dp_info, const s_time_limit_activity_branch_temp& temp_info);//³£ÓÃ±í×ªDP±í
-		void														load_limit_act_temp(bool is_need_update, bool is_need_refresh_guid);//¶Á±í
+		void														parse_char_temp(s_time_limit_activity_temp& temp_info, const s_time_limit_activity_temp_db& temp_dp_info);//DPè¡¨è½¬å¸¸ç”¨è¡¨
+		void														parse_char_branch_temp(s_time_limit_activity_branch_temp& temp_info, const s_time_limit_activity_branch_temp_db& temp_dp_info);//DPè¡¨è½¬å¸¸ç”¨è¡¨		
+		void														package_char_temp(s_time_limit_activity_temp_db& temp_dp_info, const s_time_limit_activity_temp& temp_info);//å¸¸ç”¨è¡¨è½¬DPè¡¨
+		void														package_char_branch_temp(s_time_limit_activity_branch_temp_db& temp_dp_info, const s_time_limit_activity_branch_temp& temp_info);//å¸¸ç”¨è¡¨è½¬DPè¡¨
+		void														load_limit_act_temp(bool is_need_update, bool is_need_refresh_guid);//è¯»è¡¨
 		void														load_limit_act_temp(int32 mark_time, bool is_need_update, std::set<int32>& add_id_set, bool is_need_refresh_guid, e_template template_name);
-		int32														get_new_limit_act_temp_with_type(int32 activity_type);//»ñÈ¡ÉÏ´Î×îĞÂµÄÖ÷±íÊı¾İ
+		int32														get_new_limit_act_temp_with_type(int32 activity_type);//è·å–ä¸Šæ¬¡æœ€æ–°çš„ä¸»è¡¨æ•°æ®
 		int32														compare_limit_act_temp(const TimeLimitActivityTemplate* limit_act_temp, int32 act_temp_id, bool is_need_refresh_guid);
 		int32														compare_cycle_first_branch_temp_arr(const TimeLimitActivityTemplate* limit_act_temp, int32 act_temp_id);
 		int32														compare_limit_act_branch_temp(const TimeLimitActivityBranchTemplate* limit_act_temp, int32 act_temp_id);
@@ -71,7 +71,7 @@ namespace faith
 		void														change_limit_act_branch_temp_all(const TimeLimitActivityTemplate* limit_act_temp, int32 act_temp_id);
 		void														send_to_cs_template();
 		void														send_to_fep_template();
-		bool														is_self_server_temp_line(e_time_limit_activity_type activity_type, const std::vector<int32>& param_int_arr);//¸ÃĞĞÊÇ·ñÎª±¾·şËùĞè
+		bool														is_self_server_temp_line(e_time_limit_activity_type activity_type, const std::vector<int32>& param_int_arr);//è¯¥è¡Œæ˜¯å¦ä¸ºæœ¬æœæ‰€éœ€
 		void														check_and_update_branch_temp_info(const TimeLimitActivityTemplate* limit_act_temp, int32 act_temp_id, int32 mark_time, int32 template_from_type);
 		void														delete_temp_info_when_time_over();
 		int32														get_cur_mark_time();

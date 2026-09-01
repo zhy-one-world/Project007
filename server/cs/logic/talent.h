@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2017Äê5ÔÂ26ÈÕ16:30:43
+created: 2017å¹´5æœˆ26æ—¥16:30:43
 file base: talent
 file ext: h
 author: zhy
@@ -20,20 +20,20 @@ namespace faith
 		ctalent(void);
 		~ctalent(void);
 	public:											
-		void										heart_tick(const int64& new_time);																//ĞÄÌø
-		void										clear_data();																					//Çå¿ÕÊı¾İ
+		void										heart_tick(const int64& new_time);																//å¿ƒè·³
+		void										clear_data();																					//æ¸…ç©ºæ•°æ®
 		bool&										is_valid();
 		void										set_valid_state(bool is_use) { m_is_data_use = is_use; }
 	public:
-		const s_talent_info&						get_talent_inst() const { return m_talent_data; }												//»ñÈ¡ÊµÀıÊı¾İ	
-		void										set_talent_data(const s_talent_info& talent_data);												//ÉèÖÃÈ«²¿ÊµÀıĞÅÏ¢
+		const s_talent_info&						get_talent_inst() const { return m_talent_data; }												//è·å–å®ä¾‹æ•°æ®	
+		void										set_talent_data(const s_talent_info& talent_data);												//è®¾ç½®å…¨éƒ¨å®ä¾‹ä¿¡æ¯
 
-		int32										get_data_info(int32 eIndex) const { return m_talent_data.data_ary[eIndex]; }					//»ñÈ¡ÊµÀıÊı¾İ
-		void										set_data_info(int32 eIndex, int32 iValue) { m_talent_data.data_ary[eIndex] = iValue; }			//ÉèÖÃµ¥ÏîÊµÀıÊı¾İ
+		int32										get_data_info(int32 eIndex) const { return m_talent_data.data_ary[eIndex]; }					//è·å–å®ä¾‹æ•°æ®
+		void										set_data_info(int32 eIndex, int32 iValue) { m_talent_data.data_ary[eIndex] = iValue; }			//è®¾ç½®å•é¡¹å®ä¾‹æ•°æ®
 
 		int32&										get_talent_template_id() { return m_talent_data.data_ary[e_talent_info_template_id]; }
 		int32										get_talent_series();
-		TalentTemplate*								get_talent_template_ptr() const { return m_talent_template_ptr; }								//Ä£°åÖ¸Õë
+		TalentTemplate*								get_talent_template_ptr() const { return m_talent_template_ptr; }								//æ¨¡æ¿æŒ‡é’ˆ
 
 		void										set_talent_buff(const int32& unit_array_index, bool is_add);
 		void										set_talent_skill(const int32& unit_array_index, bool is_add);
@@ -44,8 +44,8 @@ namespace faith
 
 	private:
 		bool										m_is_data_use;
-		s_talent_info								m_talent_data;							// Ìì¸³ÊµÀıÊı¾İ	
-		TalentTemplate*								m_talent_template_ptr;					// ¸³Ä£°åÊı¾İÖ¸Õë,¼õÉÙÑ°ÕÒÖ¸Õë²Ù×÷ÊıÁ¿
+		s_talent_info								m_talent_data;							// å¤©èµ‹å®ä¾‹æ•°æ®	
+		TalentTemplate*								m_talent_template_ptr;					// èµ‹æ¨¡æ¿æ•°æ®æŒ‡é’ˆ,å‡å°‘å¯»æ‰¾æŒ‡é’ˆæ“ä½œæ•°é‡
 	};
 }
 

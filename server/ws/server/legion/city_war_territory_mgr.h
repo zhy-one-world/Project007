@@ -33,22 +33,22 @@ namespace faith
 		int32						bid_one_territory(guid_64 legion_guid, int32 territory_id, int32 bid_index, guid_64 role_guid);
 		bool						set_is_prior_maintain(guid_64 legion_guid, int32 territory_id);
 		void						on_begin_war(int32 territory_id, guid_64 map_guid);
-		void						on_end_war(int32 territory_id, guid_64 winner_legion_guid, int32 server_id, bool need_send_notice = true);//Ôö¼ÓÒ»¸öboolÖµÅĞ¶ÏĞèÒªÊÇ·ñ·¢¹«¸æ
+		void						on_end_war(int32 territory_id, guid_64 winner_legion_guid, int32 server_id, bool need_send_notice = true);//å¢åŠ ä¸€ä¸ªboolå€¼åˆ¤æ–­éœ€è¦æ˜¯å¦å‘å…¬å‘Š
 		void						cacul_occupy_territory_rank();
-		void						territory_notice(int32 territory_id, guid_64 winner_legion_guid);//ÅĞ¶ÏÊÇ·ñÊÇÍõ³ÇÕù°Ô²¢ÇÒ·¢ÏàÓ¦¹«¸æ
+		void						territory_notice(int32 territory_id, guid_64 winner_legion_guid);//åˆ¤æ–­æ˜¯å¦æ˜¯ç‹åŸäº‰éœ¸å¹¶ä¸”å‘ç›¸åº”å…¬å‘Š
 
 		void						get_all_attended_legions(unit_guid_map& legion_guid_map);
-		void						get_overload_city_war_bid_legion();//¸Ãº¯ÊıÓÃÀ´»ñÈ¡°ÔÖ÷Õ½µÄ²ÎÕ½¾üÍÅÍ¬Ê±´æ¿â
+		void						get_overload_city_war_bid_legion();//è¯¥å‡½æ•°ç”¨æ¥è·å–éœ¸ä¸»æˆ˜çš„å‚æˆ˜å†›å›¢åŒæ—¶å­˜åº“
 
 		void						add_abstention_city_war_legion(int32 territory_id, xstring legion_name);
 
-		void						del_all_overload_city_bid_info();//¶¨Ê±ÇåÀíÕù°ÔÕ½ËùÓĞ¾º±ê³Ç³ØĞÅÏ¢
-		bool						is_have_overload_city_bid_info();//ÊÇ·ñÓµÓĞÕù°ÔÕ½¾º±ê³Ç³Ø
+		void						del_all_overload_city_bid_info();//å®šæ—¶æ¸…ç†äº‰éœ¸æˆ˜æ‰€æœ‰ç«æ ‡åŸæ± ä¿¡æ¯
+		bool						is_have_overload_city_bid_info();//æ˜¯å¦æ‹¥æœ‰äº‰éœ¸æˆ˜ç«æ ‡åŸæ± 
 		std::unordered_map<int32, xstring>&	get_absabstention_city_war_legion() { return m_abstention_city_war_legion; };
 
 		void						set_need_del_overload_city_bid_info(bool need_del) {m_need_del_overload_city_bid_info = need_del; };
 		bool						get_need_del_overload_city_bid_info() { return m_need_del_overload_city_bid_info; };
-		void						territory_war_clear();//ÓÃÓÚ¿ç·ş³ÇÕ½¿ªÆôÇå³ı³Ç³ØÊı¾İ
+		void						territory_war_clear();//ç”¨äºè·¨æœåŸæˆ˜å¼€å¯æ¸…é™¤åŸæ± æ•°æ®
 		
 		void						req_cross_server_apply_city_war_bid(guid_64 legion_guid, int32 territory_id,int32 bid_index, guid_64 role_guid);
 		void						check_cross_server_apply_city_war_bid(int32 serverid, guid_64 legion_guid, int32 territory_id, int32 bid_index, guid_64 role_guid);
@@ -93,10 +93,10 @@ namespace faith
 
 		void						change_legion_name(guid_64 legion_guid, xstring legion_name);
 	private:
-		territory_lists_type		m_territory_lists; //mapÄÚ²¿±¾Éí¾ÍÊÇ°´Ğò´æ´¢µÄ ±ÈÈçºìºÚÊ÷ ²åÈë<key, value>¼üÖµ¶ÔÊ± ¾Í»á°´ÕÕkeyµÄ´óĞ¡Ë³Ğò½øĞĞ´æ´¢
-		std::unordered_map<int32, xstring>	m_abstention_city_war_legion;//Ã»Ç®Î¬»¤µÄ³Ç³ØÁĞ±í
-		s_city_war_territory_info	m_overlord_territory_info; //ÁìÖ÷Õù°ÔÕ½ĞÅÏ¢ ´¦Àí×îÖÕÕ½
-		city_war_rank_type			m_legion_city_war_rank; //Éú³ÉÅÅĞĞ°ñµÄÊ±ºò»¹ÒªÉú³ÉÕù°ÔÕ½ĞèÒªµÄĞÅÏ¢
+		territory_lists_type		m_territory_lists; //mapå†…éƒ¨æœ¬èº«å°±æ˜¯æŒ‰åºå­˜å‚¨çš„ æ¯”å¦‚çº¢é»‘æ ‘ æ’å…¥<key, value>é”®å€¼å¯¹æ—¶ å°±ä¼šæŒ‰ç…§keyçš„å¤§å°é¡ºåºè¿›è¡Œå­˜å‚¨
+		std::unordered_map<int32, xstring>	m_abstention_city_war_legion;//æ²¡é’±ç»´æŠ¤çš„åŸæ± åˆ—è¡¨
+		s_city_war_territory_info	m_overlord_territory_info; //é¢†ä¸»äº‰éœ¸æˆ˜ä¿¡æ¯ å¤„ç†æœ€ç»ˆæˆ˜
+		city_war_rank_type			m_legion_city_war_rank; //ç”Ÿæˆæ’è¡Œæ¦œçš„æ—¶å€™è¿˜è¦ç”Ÿæˆäº‰éœ¸æˆ˜éœ€è¦çš„ä¿¡æ¯
 		int32						m_finish_war_territory_num;
 		bool						m_need_del_overload_city_bid_info;
 		territory_war_bid_info	    m_bid_infos;

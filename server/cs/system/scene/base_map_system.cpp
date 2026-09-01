@@ -282,7 +282,7 @@ void base_map_system::transfer_all_player(Entity* entity, int32 map_template_id)
 			map_template_id = temp_player.get_unit_info(e_role_info_main_map_id);
 			map_line_id = temp_player.get_main_line_id();
 		}
-		// Èç¹ûÊÇ¸öÈË´ò±¦µØÍ¼Àë¿ªÊ±¸´Ô­PkÄ£Ê½
+		// å¦‚æžœæ˜¯ä¸ªäººæ‰“å®åœ°å›¾ç¦»å¼€æ—¶å¤åŽŸPkæ¨¡å¼
 		if (base_map_cp->m_map_template->Type == e_map_type_single_land_boss)
 		{
 			int32 main_pk_mode = temp_player.get_logic_data(e_role_logic_info_main_pk_mode);
@@ -303,12 +303,12 @@ void base_map_system::remove_all_monster(Entity* entity)
 	auto npc_list = base_map_cp->m_npc_list;
 	for (auto& it : npc_list)
 	{
-		//ÓÑ·½NPC²»É¾³ý
+		//å‹æ–¹NPCä¸åˆ é™¤
 		auto& temp_npc = unit_man::get_npc(it);
 
 		if (temp_npc.get_unit_type() == e_unit_type_friend_npc || e_unit_type_drop_bag == temp_npc.get_unit_type()
 			|| (temp_npc.get_unit_type() == e_unit_type_npc && temp_npc.get_unit_sub_type() == e_npc_type_cross_pk_chests)
-			|| (temp_npc.get_unit_type() == e_unit_type_npc && temp_npc.get_unit_sub_type() == e_npc_type_world_boss_chests))//·ÀÖ¹µôÂä°ü±»Çåµô
+			|| (temp_npc.get_unit_type() == e_unit_type_npc && temp_npc.get_unit_sub_type() == e_npc_type_world_boss_chests))//é˜²æ­¢æŽ‰è½åŒ…è¢«æ¸…æŽ‰
 		{
 			continue;
 		}
@@ -373,9 +373,9 @@ void  base_map_system::add_vip_map_buff(base_map_component& base_map_cp, int32 u
 void base_map_system::set_default_pk_mode(base_map_component& base_map_cp, int32 unit_index)
 {
 	ZoneScoped;
-	//ÏÖÔÚµÄÂß¼­ÐèÒª²¿·Ö½øÈëµØÍ¼¸ÄpkÄ£Ê½ ±ÈÈç´ò±¦µØÍ¼
+	//çŽ°åœ¨çš„é€»è¾‘éœ€è¦éƒ¨åˆ†è¿›å…¥åœ°å›¾æ”¹pkæ¨¡å¼ æ¯”å¦‚æ‰“å®åœ°å›¾
 	if (e_map_type_big_map == base_map_cp.m_map_template->Type)
-	{//·Ç´óÊÀ½çµÄÂß¼­
+	{//éžå¤§ä¸–ç•Œçš„é€»è¾‘
 		return;
 	}
 	if (base_map_cp.m_map_template->DefaultPkMode < 0 || base_map_cp.m_map_template->DefaultPkMode >= e_pk_mode_max)

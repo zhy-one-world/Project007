@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê9ÔÂ20ÈÕ17:46:11
+created: 2016å¹´9æœˆ20æ—¥17:46:11
 file base: meditation_manager
 file ext: h
 author: zhangminghai

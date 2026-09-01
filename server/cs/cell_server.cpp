@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
   created: 2014/07/14
   created: 14:7:2014 21:14
   file base: cell_server
@@ -144,7 +144,6 @@ namespace faith
 	}
 	void cell_server::on_req_login(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
-		//������̨����������Ϣ
 		const faith::req_login* msg = static_cast<const faith::req_login*>(data_ptr);
 		if (NULL == msg)
 		{
@@ -211,9 +210,9 @@ namespace faith
 			return;
 		}
 		static int32 loop_counter = 0;
-		static int64 tick_time = get_tick_count();	// ÿ�γ���tickʱ��(ƽ��ֵ)
+		static int64 tick_time = get_tick_count();
 		static int64 last_log_time = 0;
-		static int64 sync_cs_data = 0;	// ÿ5���Ӵ�ӡһЩ����
+		static int64 sync_cs_data = 0;
 		static int64 time_old = 0;
 		++loop_counter;
 		static bool is_cs_ok = false;
@@ -290,7 +289,6 @@ namespace faith
 
 		if (daemon_client::getInstance().get_server_close())
 		{
-			// �����Ϣ
 			CONSOLE_INFO("daemon close, all player offline, please shutdown cs ! ! !");
 			unit_man::save_all_player(e_logout_result_connect_dis);
 			unit_man::remove_all_player();

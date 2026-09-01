@@ -1,4 +1,4 @@
-#include "ws_client.hpp"
+﻿#include "ws_client.hpp"
 #include "world_server.hpp"
 #include <mail_msg.hpp>
 #include "utility/init_unit.h"
@@ -23,7 +23,6 @@ namespace faith
 
 	void mail_ws_mgr::tick(const int64& new_time)
 	{
-		//���Կ���ʼ�����
 		int a1 = 0;
 		if (a1 > 0)
 		{
@@ -78,7 +77,6 @@ namespace faith
 	{
 		client_session* temp_session = client_session_mgr::getInstance().get_session(address_guid);
 
-		// nullptr˵��������/�����ڣ�cs_uid = 0 ˵������CS�ϣ����紫���У�
 		if (!is_only_to_sql
 			&& (temp_session != nullptr)
 			&& (temp_session->get_cs_conn_index() >= 0))

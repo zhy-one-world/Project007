@@ -1,4 +1,4 @@
-/********************************************************************
+Ôªø/********************************************************************
   created: 2014/07/14
   created: 14:7:2014 11:47
   file base: msgproc_ws
@@ -111,7 +111,7 @@ namespace faith
 	void ws2cs_begin_city_war_func(uint32 conn_index, const void* data_ptr, size_t data_len);
 	void ws2cs_enter_city_war_map_func(uint32 conn_index, const void* data_ptr, size_t data_len);
 	void ws2cs_city_war_operate_func(uint32 conn_index, const void* data_ptr, size_t data_len); 
-	void ws2cs_get_construction_buff_func(uint32 conn_index, const void* data_ptr, size_t data_len); //Œﬁ
+	void ws2cs_get_construction_buff_func(uint32 conn_index, const void* data_ptr, size_t data_len); //Êó†
 	void ws2cs_get_occupation_daily_award_func(uint32 conn_index, const void* data_ptr, size_t data_len);
 	void ws2cs_get_city_war_master_stuff_func(uint32 conn_index, const void* data_ptr, size_t data_len);
 	void ws2cs_del_city_war_master_stuff_func(uint32 conn_index, const void* data_ptr, size_t data_len);
@@ -121,11 +121,10 @@ namespace faith
 	void ws2cs_answer_question_right(uint32 conn_index, const void* data_ptr, size_t data_len);
 	void ws2cs_set_legion_average_lv_to_map_proc(uint32 conn_index, const void* data_ptr, size_t data_len);
 
-	// 
 	void ws2cs_rep_get_rank(uint32 conn_index, const void* data_ptr, size_t data_len);
 	void ws2cs_res_challenge(uint32 conn_index, const void* data_ptr, size_t data_len);
 	void ws2cs_get_choose_ist(uint32 conn_index, const void* data_ptr, size_t data_len);
-	void ws2cs_resp_fresh_challenge_time(uint32 conn_index, const void* data_ptr, size_t data_len);//Œﬁ
+	void ws2cs_resp_fresh_challenge_time(uint32 conn_index, const void* data_ptr, size_t data_len);//Êó†
 
 	//ranking 
 	void ws2cs_worship_player_end_proc(uint32 conn_index, const void* data_ptr, size_t data_len);
@@ -156,7 +155,7 @@ namespace faith
 	void lua_ws2cs_refresh_globel_mail_sign_state(uint32 conn_index, const char* data_ptr, int32 data_len);
 
 	void ws2cs_receive_globel_message_proc(uint32 conn_index, const void* data_ptr, size_t data_len);
-	void ws2cs_receive_notice_proc(uint32 conn_index, const void* data_ptr, size_t data_len); // õ]”–∞lÀÕµÿ∑Ω
+	void ws2cs_receive_notice_proc(uint32 conn_index, const void* data_ptr, size_t data_len); // Ê≤íÊúâÁôºÈÄÅÂú∞Êñπ
 	void ws2cs_send_chat_end_process(uint32 conn_index, const void* data_ptr, size_t data_len);
 
 	//world_boss
@@ -244,7 +243,7 @@ namespace faith
 
 	//time_limit_activity
 	void ws2cs_check_time_limit_activity_common_data_resp(uint32 conn_index, const void * data_ptr, size_t data_len);
-	void ws2cs_gm_set_time_limit_activity_pause_flag_resp(uint32 conn_index, const void * data_ptr, size_t data_len); // ∑œ∆˙
+	void ws2cs_gm_set_time_limit_activity_pause_flag_resp(uint32 conn_index, const void * data_ptr, size_t data_len); // Â∫üÂºÉ
 	void ws2cs_end_act_type_func(uint32 conn_index, const void * data_ptr, size_t data_len);
 	void ws2cs_time_limit_act_temp(uint32 conn_index, const void *data_ptr, size_t data_len);
 	void lua_ws2cs_time_limit_act_temp(uint32 conn_index, const char *data_ptr, int32 data_len);
@@ -252,7 +251,7 @@ namespace faith
 	void lua_ws2cs_time_limit_act_branch_temp(uint32 conn_index, const char *data_ptr, int32 data_len);
 
 	//legion_station
-	void ws2cs_send_bonfire_level_func(uint32 conn_index, const void * data_ptr, size_t data_len);  // ∑œ∆˙
+	void ws2cs_send_bonfire_level_func(uint32 conn_index, const void * data_ptr, size_t data_len);  // Â∫üÂºÉ
 	void ws2cs_set_map_own_legion(uint32 conn_index, const void * data_ptr, size_t data_len);
 	void ws2cs_transfer_all_player_this_map(uint32 conn_index, const void * data_ptr, size_t data_len);
 

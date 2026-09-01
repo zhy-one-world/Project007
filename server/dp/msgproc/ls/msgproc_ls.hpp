@@ -20,12 +20,12 @@ namespace faith
 {
 	class db_object;
 
-	//获得账号登录数据
+	//鑾峰緱璐﹀彿鐧诲綍鏁版嵁
 	void ls2dp_client_login_func(uint32 connindex, const void* data_ptr, size_t data_len);
 	void ls2dp_client_main_check_login_end(db_result_type result, uint32 connindex, const ls2dp_client_login msg_data);
 	void ls2dp_client_login_end(db_result_type result, uint32 connindex, const ls2dp_client_login msg_data);
 
-	//处理老服问题，当查询不到玩家所在服时，则直接去主服查找
+	//澶勭悊鑰佹湇闂锛屽綋鏌ヨ涓嶅埌鐜╁鎵�鍦ㄦ湇鏃讹紝鍒欑洿鎺ュ幓涓绘湇鏌ユ壘
 
 	void ls2dp_req_createchar_func(uint32 connindex, const void* data_ptr, size_t data_len);
 	void ls2dp_req_createchar_end(db_result_type result,guid_64 charid,uint32 connindex, s_client_uid client_uid, s_unit_info role_info, const ui8* login_proto_msg, int32 login_msg_len, int32 server_id);

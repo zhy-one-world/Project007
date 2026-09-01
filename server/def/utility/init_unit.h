@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2015Äê8ÔÂ17ÈÕ10:32:06
+	created:	2015å¹´8æœˆ17æ—¥10:32:06
 	file base:	init_unit
 	file ext:	h
 	author:		zhy
@@ -33,7 +33,7 @@ namespace faith
 		init_unit();
 		~init_unit();
 	public:
-		//Î»ÔËËã´¦Àí
+		//ä½è¿ç®—å¤„ç†
 		static int get_left_shift_operation_result(int left_operator, int right_operator);
 		static int get_bitwise_and_operation_result(int left_operator, int right_operator);
 		static int get_bitwise_or_operation_result(int left_operator, int right_operator);
@@ -49,19 +49,19 @@ namespace faith
 		static void  erase_flag_data_2bit(int32& _flag_datas, int32 _idx);
 		static bool  is_had_this_flag(int32 _flag_datas, int32 _idx);
 
-		//Ò»Ğ©×Ö·û´®µÄ´¦Àí
+		//ä¸€äº›å­—ç¬¦ä¸²çš„å¤„ç†
 		static string	implode(const vector<string>& v_src, string sep = "&#");
 		static void		explode(const string& str_src, vector<string>& v_ret, string sep = "&#");
 		static char*	get_host_ip(void);
 		static void		format_str(char* szBuf, int32 nBufSize, const char* szText, const vector<string>& vtVar);
 		static bool get_map_public(int32 map_type);
-		static bool is_cross_server_npc(int32 npc_type);//ÊÇ·ñ¿ÉÒÔ¿ç·şÓëÕâĞ©NPC½»»¥
-		static bool is_all_server_npc(int32 npc_type);//¿ç·şÓë·ñ¶¼¿ÉÓëÕâĞ©NPC½»»¥
+		static bool is_cross_server_npc(int32 npc_type);//æ˜¯å¦å¯ä»¥è·¨æœä¸è¿™äº›NPCäº¤äº’
+		static bool is_all_server_npc(int32 npc_type);//è·¨æœä¸å¦éƒ½å¯ä¸è¿™äº›NPCäº¤äº’
 		static bool is_send_clear_title_with_clear_big_player(int32 player_type);
 		static bool is_cross_server_big_player(int32 player_type, bool is_begin_cross_activity = false, bool is_begin_cross_city_war = false);
 		static bool is_cross_server_title(int32 title_type, bool is_begin_cross_activity = false);
 		static bool is_levelup_add_hp(int32 map_type);
-		static bool is_rank_type_cross_server(int32 ranking_type);//ÊÇ·ñÎª¿ç·şÅÅĞĞ°ñ
+		static bool is_rank_type_cross_server(int32 ranking_type);//æ˜¯å¦ä¸ºè·¨æœæ’è¡Œæ¦œ
 		static bool get_map_need_add_hate(int32 map_type);
 		static bool get_map_level_suppress(int32 map_type, int32 map_order);
 		static bool get_map_gain_treasure_multiplayer(int32 map_type);
@@ -73,17 +73,17 @@ namespace faith
 		static bool is_map_boss_island(int32 map_type);
 		static bool is_map_belief_cloister(int32 map_type);
 		static bool is_can_change_pk_mode(int32 map_type);
-		static bool is_map_cross_server(int32 map_temp_id, bool is_cross_activity = false);//ÊÇ·ñÎª¿ç·şµØÍ¼
-		static bool is_map_other_server(int32 map_temp_id);//ÊÇ·ñÎªÆÕÍ¨µÄ¿ç·şµØÍ¼
-		static bool is_tansfer_server(int32 map_temp_id, bool is_gate_server, bool is_cross_activity = false);//ÊÇ·ñÄÜ´«ËÍ
-		static bool is_map_all_server(int32 map_temp_id);//ÊÇ·ñÎªgateºÍÆÕÍ¨·ş¶¼´æÔÚµÄµØÍ¼
+		static bool is_map_cross_server(int32 map_temp_id, bool is_cross_activity = false);//æ˜¯å¦ä¸ºè·¨æœåœ°å›¾
+		static bool is_map_other_server(int32 map_temp_id);//æ˜¯å¦ä¸ºæ™®é€šçš„è·¨æœåœ°å›¾
+		static bool is_tansfer_server(int32 map_temp_id, bool is_gate_server, bool is_cross_activity = false);//æ˜¯å¦èƒ½ä¼ é€
+		static bool is_map_all_server(int32 map_temp_id);//æ˜¯å¦ä¸ºgateå’Œæ™®é€šæœéƒ½å­˜åœ¨çš„åœ°å›¾
 		static bool is_boss(int32 boss_type);
 		static bool is_world_boss(int32 boss_type);
 		static bool is_goto_same_map(int32 map_id_to, int32 line_id_to, int32 map_id_cur, int32 line_id_cur);
-		static bool is_can_same_map_transfer(int32 map_type);//ÊÇ·ñÄÜÍ¬µØÍ¼´«ËÍ
+		static bool is_can_same_map_transfer(int32 map_type);//æ˜¯å¦èƒ½åŒåœ°å›¾ä¼ é€
 		static e_map_category get_map_category(int32 map_type);
 		static bool is_team_type_raid_map(int32 team_type);
-		static bool is_team_type_raid_for_team(int32 team_type); //×é¶Ó²ÅÄÜ½øÈëµÄ¸±±¾
+		static bool is_team_type_raid_for_team(int32 team_type); //ç»„é˜Ÿæ‰èƒ½è¿›å…¥çš„å‰¯æœ¬
 		static bool is_team_type_one_stop(int32 team_type);
 		static bool is_fake_player(int32 unit_type, int32 sub_type);
 		static e_role_equip_slot get_slot_by_item_type(int32 item_type, int32 sub_type);
@@ -97,7 +97,7 @@ namespace faith
 
 		static bool init_item_data(faith::s_item_info& msg_data, int32 template_id, int32 slot, int32 stack_count, e_bag_type container_type = e_bag_type_bag, int32 is_activate = 0, int32 locked = 1, int32 item_over_time = 0, int32 item_const_att = 0);
 		static bool init_spirit_data(faith::s_spirit_info& msg_data, int32 template_id, int32 slot, e_spirit_bag_type container_type, int32 is_activate);
-		static bool init_skill_data(faith::s_skill_info& msg_data, int32 template_id, int32 activated = 0);//ÅĞ¶ÏÊÇ·ñÄÜÊÍ·Å¸Ã¼¼ÄÜ
+		static bool init_skill_data(faith::s_skill_info& msg_data, int32 template_id, int32 activated = 0);//åˆ¤æ–­æ˜¯å¦èƒ½é‡Šæ”¾è¯¥æŠ€èƒ½
 		static int64 get_distance(const int64& x, const int64& y, const int64& z, const int64& x1, const int64& y1, const int64& z1);
 		static int64 get_distance(const int64& x, const int64& y, const int64& x1, const int64& y1);
 		static int64 get_distance(const fvector& pos1, const fvector& pos2);
@@ -114,8 +114,8 @@ namespace faith
 		static bool init_mail_data_array(faith::s_mail_info& msg_data, const std::vector<guid_64>& item_guid, int32 money_typ1, int32 money_num1, int32 money_typ2, int32 money_num2, guid_64 sender_guid, int64 cur_time_sec = time_helper::get_cur_time_new().second);
 		static void range_pos(s_map_pos& pos);
 			
-		static int32 get_player_grade_num(int32 level);				// »ñµÃ½ÇÉ«µ±Ç°µÄ×ªÉúÊı
-		static int32 get_player_level_of_cur_grade(int32 level);	// »ñµÃ½ÇÉ«ÔÚµ±Ç°×ªÊıÏÂµÄµÈ¼¶
+		static int32 get_player_grade_num(int32 level);				// è·å¾—è§’è‰²å½“å‰çš„è½¬ç”Ÿæ•°
+		static int32 get_player_level_of_cur_grade(int32 level);	// è·å¾—è§’è‰²åœ¨å½“å‰è½¬æ•°ä¸‹çš„ç­‰çº§
 
 		static e_bag_type get_item_bag_type(int32 item_template_id);
 
@@ -128,7 +128,7 @@ namespace faith
 		static std::string change_i64_to_string(int64 value_i64);
 		static float change_string_to_float(std::string str_i32);
 		static std::string change_float_to_string(f32 value_f32);
-		// ¹¦ÄÜ½âËøÅĞ¶Ï(·µ»Øtrue±íÊ¾½âËø,false±íÊ¾Îª½âËø)
+		// åŠŸèƒ½è§£é”åˆ¤æ–­(è¿”å›trueè¡¨ç¤ºè§£é”,falseè¡¨ç¤ºä¸ºè§£é”)
 		static bool judge_func_unlock(int32 player_cond_id, int32 func_type);
 
 		static bool is_map_can_change_pk_mode(int32 map_type);
@@ -159,7 +159,7 @@ namespace faith
 
 		static void get_team_share_exp_ratio(int32 team_mem_num, int32 team_same_legion_mem_num, float& ratio_team, float& ratio_legion, float& ratio_team_raid);
 
-		static s_damage_count_all skill_damage_end//¼¼ÄÜbuff´øÀ´µÄÉËº¦
+		static s_damage_count_all skill_damage_end//æŠ€èƒ½buffå¸¦æ¥çš„ä¼¤å®³
 			(
 				const s_hit_critical_calcu_param& attack_att_param,
 				const s_hit_critical_calcu_param& target_att_param,
@@ -174,7 +174,7 @@ namespace faith
 				f32 person_attack_change,
 				f32 sky_attack_ground
 				);
-		static void hit_and_critical//¼ÆËãÃüÖĞºÍ±©»÷
+		static void hit_and_critical//è®¡ç®—å‘½ä¸­å’Œæš´å‡»
 			(
 				const s_hit_critical_calcu_param& attack_att_param,
 				const s_hit_critical_calcu_param& target_att_param,
@@ -194,7 +194,7 @@ namespace faith
 
 		static bool is_robot_account(xstring robot_standard, xstring robot_account);
 
-		//Éú³É×¿Ô½ÊôĞÔ
+		//ç”Ÿæˆå“è¶Šå±æ€§
 	private:
 		static void set_excellent_had_flag(const int32& total_num, const int32& final_num, s_item_info& data_info, int32 item_const_att = 0);
 		static void set_excellent_ratio_value(EquipTemplate* equip_template_ptr, s_item_info& data_info, int32 item_const_att = 0);
@@ -226,15 +226,15 @@ namespace faith
 		static float get_arena_first_high_reward_factor(int32 role_rank);
 		static int32 get_cur_time_limit_activity_id_by_temp(const s_time_limit_activity_temp& time_limit_act_temp, const std::map<int32, s_time_limit_activity_branch_temp>& branch_temp_map, int32& open_time, int32& end_time, int32& cycle_num, int32& cycle_index, int32& basics_open_time, int32& first_branch_temp_id, int32 cross_server_time, int32 merge_server_time, bool is_cross_server);
 		static int32 get_cur_time_limit_activity_base_time_by_temp(const s_time_limit_activity_temp& time_limit_act_temp, int32 cross_server_time, int32 merge_server_time);
-		static void	parse_char_to_vector(std::vector<int32>& int_arr_value, const xstring& temp_str, bool is_need_add_mid_str = false, xstring symbol_str = ",");//string×ªint vector,¸ñÊ½Îª(1,2,3,) Ä©Î²Èç¹û²»ÊÇ¶ººÅÔòboolÖµÌîtrue
-		static void	parse_vector_to_char(xstring& temp_str, const std::vector<int32>& int_arr_value);//int vector×ªstring,×ª»»ºó¸ñÊ½Îª(1,2,3,)
-		static bool is_no_superposition_time_limit_activity(int32 act_type);//ÊÇ·ñÎªÖ»´æÔÚÒ»¸öµÄ»î¶¯
-		static int32 get_cur_time_limit_branch_id_with_first_id(const s_time_limit_activity_temp& time_limit_act_temp, const std::map<int32, s_time_limit_activity_branch_temp>& branch_temp_map, int32 open_time, int32 end_time, int32 first_branch_temp_id);//¸ù¾İÊ×ID£¬Ê±¼äµÈÊı¾İËã³öµ±Ç°×Ó±íID£¬Ö÷ÒªÓÃÓÚ¾É»î¶¯×îºóÖÜÆÚÊ±×ö´¦Àí
-		static bool is_cross_time_limit_cross_activity(int32 act_type);//ÊÇ·ñÎª¿ç·şÀàĞÍµÄ»î¶¯
-		static bool is_rank_time_limit_cross_activity(int32 act_type);//ÊÇ·ñÎªÅÅĞĞ°ñÀàĞÍµÄ»î¶¯
-		static bool is_time_limit_behavior_welfare(int32 act_type);//ÊÇ·ñÎªÆôÊ¾Ö®Â·Àà»î¶¯
-		static int32 get_behavior_welfare_reward_type(int32 act_type);//»ñµÃÆôÊ¾Ö®Â·Áì½±µÄ»î¶¯ÀàĞÍ
-		static int32 get_pk_king_max_num_by_time(e_pk_king_time_type time_type);		//¸ù¾İ½×¶Î»ñÈ¡µ±Ç°½×¶Î×î´óÈËÊı
+		static void	parse_char_to_vector(std::vector<int32>& int_arr_value, const xstring& temp_str, bool is_need_add_mid_str = false, xstring symbol_str = ",");//stringè½¬int vector,æ ¼å¼ä¸º(1,2,3,) æœ«å°¾å¦‚æœä¸æ˜¯é€—å·åˆ™boolå€¼å¡«true
+		static void	parse_vector_to_char(xstring& temp_str, const std::vector<int32>& int_arr_value);//int vectorè½¬string,è½¬æ¢åæ ¼å¼ä¸º(1,2,3,)
+		static bool is_no_superposition_time_limit_activity(int32 act_type);//æ˜¯å¦ä¸ºåªå­˜åœ¨ä¸€ä¸ªçš„æ´»åŠ¨
+		static int32 get_cur_time_limit_branch_id_with_first_id(const s_time_limit_activity_temp& time_limit_act_temp, const std::map<int32, s_time_limit_activity_branch_temp>& branch_temp_map, int32 open_time, int32 end_time, int32 first_branch_temp_id);//æ ¹æ®é¦–IDï¼Œæ—¶é—´ç­‰æ•°æ®ç®—å‡ºå½“å‰å­è¡¨IDï¼Œä¸»è¦ç”¨äºæ—§æ´»åŠ¨æœ€åå‘¨æœŸæ—¶åšå¤„ç†
+		static bool is_cross_time_limit_cross_activity(int32 act_type);//æ˜¯å¦ä¸ºè·¨æœç±»å‹çš„æ´»åŠ¨
+		static bool is_rank_time_limit_cross_activity(int32 act_type);//æ˜¯å¦ä¸ºæ’è¡Œæ¦œç±»å‹çš„æ´»åŠ¨
+		static bool is_time_limit_behavior_welfare(int32 act_type);//æ˜¯å¦ä¸ºå¯ç¤ºä¹‹è·¯ç±»æ´»åŠ¨
+		static int32 get_behavior_welfare_reward_type(int32 act_type);//è·å¾—å¯ç¤ºä¹‹è·¯é¢†å¥–çš„æ´»åŠ¨ç±»å‹
+		static int32 get_pk_king_max_num_by_time(e_pk_king_time_type time_type);		//æ ¹æ®é˜¶æ®µè·å–å½“å‰é˜¶æ®µæœ€å¤§äººæ•°
 		static std::string load_random_role_name();
 		static bool is_big_endian();
 		static std::vector<float> get_equip_upgrade_att_array(int32 equip_id, int32 upgrade_num);

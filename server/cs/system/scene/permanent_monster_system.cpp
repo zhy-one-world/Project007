@@ -57,7 +57,7 @@ void permanent_monster_system::start_up(Entity* map_ent, int32 spawn_point_id)
 		npc_spawn_id = next_spawn_id;
 
 		if (npc_template_ptr->NpcType == e_unit_type_monster && init_unit::is_world_boss(npc_template_ptr->SubType))
-		{//ÊÀ½çBossÉ¶µÄ¹éWSÉÏµÄÄ³¸ö¹ÜÀíÆ÷´¦Àí		
+		{//ä¸–ç•ŒBosså•¥çš„å½’WSä¸Šçš„æŸä¸ªç®¡ç†å™¨å¤„ç†		
 			continue;
 		}
 		if (npc_spawn_point_template_ptr->IsCreateByMapCreate > 0 && is_in_refresh_time(npc_spawn_point_template_ptr))

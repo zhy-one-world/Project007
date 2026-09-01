@@ -60,12 +60,12 @@ namespace faith
 		m_red_package_info.base_info.sender_vip_level = sender_vip_level;
 
 		m_red_package_info.base_info.remain_money_num = red_pack_template_ptr->CanGetMoneyArray[1] - red_pack_template_ptr->CanGetTimes;
-		//ÒòÎªÔÚÊµ¼Ê ÁìÈ¡ ºì°üÊ±£¬»áÇ¿ÐÐÃ¿ÈËÖÁÉÙ1¿éÇ®£¬ËùÒÔÔÚ´æ´¢Óà¶îÊ±£¬ÌáÇ°¼õµô ×ÜÈËÊý X 1¿éÇ®
+		//å› ä¸ºåœ¨å®žé™… é¢†å– çº¢åŒ…æ—¶ï¼Œä¼šå¼ºè¡Œæ¯äººè‡³å°‘1å—é’±ï¼Œæ‰€ä»¥åœ¨å­˜å‚¨ä½™é¢æ—¶ï¼Œæå‰å‡æŽ‰ æ€»äººæ•° X 1å—é’±
 
 		memcpy(m_red_package_info.base_info.sender_name, sender_name.c_str(), sender_name.length());
 		memcpy(m_red_package_info.base_info.text, text.c_str(), text.length());
 
-		//²»¿Éµ¥¶ÀÉèÖÃ£¬»áÔÚ get_XXX º¯ÊýÖÐ×Ô¶¯ÉèÖÃ
+		//ä¸å¯å•ç‹¬è®¾ç½®ï¼Œä¼šåœ¨ get_XXX å‡½æ•°ä¸­è‡ªåŠ¨è®¾ç½®
 		//m_red_package_template_ptr = red_pack_template_ptr;
 		//m_money_type = red_pack_template_ptr->CanGetMoneyArray[0];
 
@@ -145,7 +145,7 @@ namespace faith
 
 	void red_package_ws::set_base_info(s_red_package_base temp_info)
 	{
-		//·þÎñÆ÷¸Õ¿ª»ú£¬ÕâÀï»á¶Á³ö¿Õ±í¸ñ,ËùÒÔ²»¿ÉÉèÖÃ
+		//æœåŠ¡å™¨åˆšå¼€æœºï¼Œè¿™é‡Œä¼šè¯»å‡ºç©ºè¡¨æ ¼,æ‰€ä»¥ä¸å¯è®¾ç½®
 		//RedPackageTemplate* red_pack_template_ptr = GET_TEMPLATE(RedPackageTemplate, temp_info.red_package_template_id);
 		//if (red_pack_template_ptr == nullptr
 		//	|| red_pack_template_ptr->CanGetMoneyArray.size() < 2)
@@ -191,7 +191,7 @@ namespace faith
 		{
 			return -1;
 		}
-		int32 final_num = temp_num + 1;  //ÖÁÉÙ¸ø1¿éÇ®£¬Õâ¸öËæ»ú³öÀ´µÄÊý²»º¬1¿éÇ®£¬Ö±½Ó¼Ó¾ÍÐÐ£¬×ÜÇ®ÊýÔÚ´´½¨ºì°üÊ±¾ÍÒÑ¾­×ö¹ý´¦ÀíÁË
+		int32 final_num = temp_num + 1;  //è‡³å°‘ç»™1å—é’±ï¼Œè¿™ä¸ªéšæœºå‡ºæ¥çš„æ•°ä¸å«1å—é’±ï¼Œç›´æŽ¥åŠ å°±è¡Œï¼Œæ€»é’±æ•°åœ¨åˆ›å»ºçº¢åŒ…æ—¶å°±å·²ç»åšè¿‡å¤„ç†äº†
 		m_red_package_info.base_info.remain_times--;
 		m_red_package_info.base_info.remain_money_num -= temp_num;
 
@@ -207,7 +207,7 @@ namespace faith
 				name_len = max_name_size;
 			}
 			memcpy(m_red_package_info.receiver_info_list[empty_receiver_slot].role_name, receiver_name.c_str(), name_len);
-			//·þÎñ¶ËµÄ³é½±ÈË²»ÅÅÐò£¬·¢µ½¿Í»§¶Ë×Ô¼ºÅÅ
+			//æœåŠ¡ç«¯çš„æŠ½å¥–äººä¸æŽ’åºï¼Œå‘åˆ°å®¢æˆ·ç«¯è‡ªå·±æŽ’
 
 			server2dp_proto_ws2dp_add_red_package_receiver_to_sql add_msg;
 			red_package_ws_mgr::get_instance().set_red_package_receiver_proto(add_msg.mutable_red_info(), m_red_package_info.receiver_info_list[empty_receiver_slot]);
@@ -222,12 +222,12 @@ namespace faith
 	int32 red_package_ws::get_random_money_num()
 	{
 		if (m_red_package_info.base_info.remain_times <= 0)
-		{//²»ÄÜÄÃÊ£ÓàÇ®Êý×öÅÐ¶Ï£¬Ê£ÓàÇ®ÊýÊÇ¿ÉÄÜµÈÓÚ0µÄ£¬ÒòÎªÄ¬ÈÏµÄ1¿éÇ®²¢²»ËãÈë Ê£ÓàÇ®Êý ÖÐ
+		{//ä¸èƒ½æ‹¿å‰©ä½™é’±æ•°åšåˆ¤æ–­ï¼Œå‰©ä½™é’±æ•°æ˜¯å¯èƒ½ç­‰äºŽ0çš„ï¼Œå› ä¸ºé»˜è®¤çš„1å—é’±å¹¶ä¸ç®—å…¥ å‰©ä½™é’±æ•° ä¸­
 			return -1;
 		}
-		//ËäÈ»Ä¬ÈÏ¸ø·ÖÁËÒ»¿éÇ®£¬µ«²»ÄÜÔÚÕâËæ»úÊ±ºò´¦Àí£¬ÒòÎª ÐÂÊ£ÓàÇ®Êý = Ô­Ê£ÓàÇ® - Ëæ»úÊý£¨´Ëº¯Êý·µ»ØÖµ£©
-		//Èç¹û´ËÊ±¾Í +1 £¬ÄÇÖ®ºóµÄÂß¼­¾ÍµÈÓÚÓÃ Ô­ÍêÈ«Ëæ»úµÄÊýÖµ ¼õµôÁË ÍêÈ«Ëæ»ú³ö³öµÄÖµ+²»Ëæ»úµÄ»ù´¡Öµ£¨×îµÍµÄÄÇ1¿éÇ®£©
-		//ÕâÑù»áÔì³ÉÔÚ×îºóÒ»¸öÈËÊ±ºò£¬ÓÀÔ¶»á¶à¸ø³ö1¿éÇ®
+		//è™½ç„¶é»˜è®¤ç»™åˆ†äº†ä¸€å—é’±ï¼Œä½†ä¸èƒ½åœ¨è¿™éšæœºæ—¶å€™å¤„ç†ï¼Œå› ä¸º æ–°å‰©ä½™é’±æ•° = åŽŸå‰©ä½™é’± - éšæœºæ•°ï¼ˆæ­¤å‡½æ•°è¿”å›žå€¼ï¼‰
+		//å¦‚æžœæ­¤æ—¶å°± +1 ï¼Œé‚£ä¹‹åŽçš„é€»è¾‘å°±ç­‰äºŽç”¨ åŽŸå®Œå…¨éšæœºçš„æ•°å€¼ å‡æŽ‰äº† å®Œå…¨éšæœºå‡ºå‡ºçš„å€¼+ä¸éšæœºçš„åŸºç¡€å€¼ï¼ˆæœ€ä½Žçš„é‚£1å—é’±ï¼‰
+		//è¿™æ ·ä¼šé€ æˆåœ¨æœ€åŽä¸€ä¸ªäººæ—¶å€™ï¼Œæ°¸è¿œä¼šå¤šç»™å‡º1å—é’±
 		if (m_red_package_info.base_info.remain_money_num <= 0)
 		{
 			return 0;
@@ -239,7 +239,7 @@ namespace faith
 		else
 		{
 			int32 max_num = m_red_package_info.base_info.remain_money_num / m_red_package_info.base_info.remain_times * 2;
-			//×î´óÖµÊÇ2±¶Æ½¾ùÖµ
+			//æœ€å¤§å€¼æ˜¯2å€å¹³å‡å€¼
 
 			int32 random_value = random_gen::get_random(0, max_num);
 			return random_value;

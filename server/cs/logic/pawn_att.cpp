@@ -3,7 +3,7 @@
   created: 14:7:2014 20:00
   file base: pawn_att
   file ext: cpp
-  author: S.L.H.(ËïÁ¦»ª)
+  author: S.L.H.(å­™åŠ›å)
   
   purpose: 
 *********************************************************************/
@@ -391,24 +391,24 @@ namespace faith
 		}
 	}
 
-	void pawn_att::strength_to_second_att(int32 class_type, e_pawn_att_index pawn_att_index, int32 value, int32 is_show)//Á¦Á¿ÊôĞÔ±ä»¯Ôö¼Ó¶ş¼¶ÊôĞÔ
+	void pawn_att::strength_to_second_att(int32 class_type, e_pawn_att_index pawn_att_index, int32 value, int32 is_show)//åŠ›é‡å±æ€§å˜åŒ–å¢åŠ äºŒçº§å±æ€§
 	{
 		switch (class_type)
 		{
 
-		case e_class_type_barserker://Õ½Ê¿
+		case e_class_type_barserker://æˆ˜å£«
 			change_gs_for_att(pawn_att_index, GAMECONFIG->BarserkerSTREffectAttArr, value, is_show);
 			break;
-		case e_class_type_wizard://·¨Ê¦
+		case e_class_type_wizard://æ³•å¸ˆ
 			change_gs_for_att(pawn_att_index, GAMECONFIG->WizardSTREffectAttArr, value, is_show);
 			break;
-		case e_class_type_guardian://ÆïÊ¿
+		case e_class_type_guardian://éª‘å£«
 			change_gs_for_att(pawn_att_index, GAMECONFIG->GuardianSTREffectAttArr, value, is_show);
 			break;
-		case e_class_type_assassinator://´Ì¿Í
+		case e_class_type_assassinator://åˆºå®¢
 			change_gs_for_att(pawn_att_index, GAMECONFIG->AssassinatorSTREffectAttArr, value, is_show);
 			break;
-		case  e_class_type_ranger://È±Ê¡
+		case  e_class_type_ranger://ç¼ºçœ
 			att_modifier(pawn_att_index, e_unit_attack_att_attack_max, value * 0.3, is_show, true);
 			att_modifier(pawn_att_index, e_unit_attack_att_armor, value * 1.6, is_show, true);
 			att_modifier(pawn_att_index, e_unit_attack_att_hp_max, value * 2.7, is_show, true);
@@ -417,24 +417,24 @@ namespace faith
 		}
 		return;
 	}
-	void pawn_att::agility_to_second_att(int32 class_type, e_pawn_att_index pawn_att_index, int32 value, int32 is_show)//Ãô½İÊôĞÔ±ä»¯Ôö¼Ó¶ş¼¶ÊôĞÔ
+	void pawn_att::agility_to_second_att(int32 class_type, e_pawn_att_index pawn_att_index, int32 value, int32 is_show)//æ•æ·å±æ€§å˜åŒ–å¢åŠ äºŒçº§å±æ€§
 	{
 		switch (class_type)
 		{
 
-		case e_class_type_barserker://Õ½Ê¿
+		case e_class_type_barserker://æˆ˜å£«
 			change_gs_for_att(pawn_att_index, GAMECONFIG->BarserkerAGIEffectAttArr, value, is_show);
 			break;
-		case e_class_type_wizard://·¨Ê¦
+		case e_class_type_wizard://æ³•å¸ˆ
 			change_gs_for_att(pawn_att_index, GAMECONFIG->WizardAGIEffectAttArr, value, is_show);
 			break;
-		case e_class_type_guardian://ÆïÊ¿
+		case e_class_type_guardian://éª‘å£«
 			change_gs_for_att(pawn_att_index, GAMECONFIG->GuardianAGIEffectAttArr, value, is_show);
 			break;
-		case e_class_type_assassinator://´Ì¿Í
+		case e_class_type_assassinator://åˆºå®¢
 			change_gs_for_att(pawn_att_index, GAMECONFIG->AssassinatorAGIEffectAttArr, value, is_show);
 			break;
-		case e_class_type_ranger://È±Ê¡
+		case e_class_type_ranger://ç¼ºçœ
 			att_modifier(pawn_att_index, e_unit_attack_att_attack_min, value * 0.8, is_show, true);
 			att_modifier(pawn_att_index, e_unit_attack_att_hit_force, value * 0.3, is_show, true);
 			att_modifier(pawn_att_index, e_unit_attack_att_dodge_force, value * 0.3, is_show, true);
@@ -443,24 +443,24 @@ namespace faith
 		}
 		return;
 	}
-	void pawn_att::stamina_to_second_att(int32 class_type, e_pawn_att_index pawn_att_index, int32 value, int32 is_show)//ÄÍÁ¦ÊôĞÔ±ä»¯Ôö¼Ó¶ş¼¶ÊôĞÔ
+	void pawn_att::stamina_to_second_att(int32 class_type, e_pawn_att_index pawn_att_index, int32 value, int32 is_show)//è€åŠ›å±æ€§å˜åŒ–å¢åŠ äºŒçº§å±æ€§
 	{
 		switch (class_type)
 		{
 
-		case e_class_type_barserker://Õ½Ê¿
+		case e_class_type_barserker://æˆ˜å£«
 			change_gs_for_att(pawn_att_index, GAMECONFIG->BarserkerSTAEffectAttArr, value, is_show);
 			break;
-		case e_class_type_wizard://·¨Ê¦
+		case e_class_type_wizard://æ³•å¸ˆ
 			change_gs_for_att(pawn_att_index, GAMECONFIG->WizardSTAEffectAttArr, value, is_show);
 			break;
-		case e_class_type_guardian://ÆïÊ¿
+		case e_class_type_guardian://éª‘å£«
 			change_gs_for_att(pawn_att_index, GAMECONFIG->GuardianSTAEffectAttArr, value, is_show);
 			break;
-		case e_class_type_assassinator://´Ì¿Í
+		case e_class_type_assassinator://åˆºå®¢
 			change_gs_for_att(pawn_att_index, GAMECONFIG->AssassinatorSTAEffectAttArr, value, is_show);
 			break;
-		case e_class_type_ranger://È±Ê¡
+		case e_class_type_ranger://ç¼ºçœ
 			att_modifier(pawn_att_index, e_unit_attack_att_hp_max, value * 2.3, is_show, true);
 			att_modifier(pawn_att_index, e_unit_attack_att_critical_armor_rate, value * 0.2, is_show, true);
 			att_modifier(pawn_att_index, e_unit_attack_att_armor, value * 1.4, is_show, true);
@@ -469,24 +469,24 @@ namespace faith
 		}
 		return;
 	}
-	void pawn_att::intellect_to_second_att(int32 class_type, e_pawn_att_index pawn_att_index, int32 value, int32 is_show)//ÖÇÁ¦ÊôĞÔÔö¼Ó¶ş¼¶ÊôĞÔ
+	void pawn_att::intellect_to_second_att(int32 class_type, e_pawn_att_index pawn_att_index, int32 value, int32 is_show)//æ™ºåŠ›å±æ€§å¢åŠ äºŒçº§å±æ€§
 	{
 		switch (class_type)
 		{
 
-		case e_class_type_barserker://Õ½Ê¿
+		case e_class_type_barserker://æˆ˜å£«
 			change_gs_for_att(pawn_att_index, GAMECONFIG->BarserkerINTEffectAttArr, value, is_show);
 			break;
-		case e_class_type_wizard://·¨Ê¦
+		case e_class_type_wizard://æ³•å¸ˆ
 			change_gs_for_att(pawn_att_index, GAMECONFIG->WizardINTEffectAttArr, value, is_show);
 			break;
-		case e_class_type_guardian://ÆïÊ¿
+		case e_class_type_guardian://éª‘å£«
 			change_gs_for_att(pawn_att_index, GAMECONFIG->GuardianINTEffectAttArr, value, is_show);
 			break;
-		case e_class_type_assassinator://´Ì¿Í
+		case e_class_type_assassinator://åˆºå®¢
 			change_gs_for_att(pawn_att_index, GAMECONFIG->AssassinatorINTEffectAttArr, value, is_show);
 			break;
-		case e_class_type_ranger://È±Ê¡
+		case e_class_type_ranger://ç¼ºçœ
 			att_modifier(pawn_att_index, e_unit_attack_att_attack_min, value * 0.2, is_show, true);
 			att_modifier(pawn_att_index, e_unit_attack_att_attack_max, value * 0.9, is_show, true);
 			att_modifier(pawn_att_index, e_unit_attack_att_critical_rate, value * 0.2, is_show, true);
@@ -709,7 +709,7 @@ namespace faith
 	}
 
 	bool pawn_att::att_modifier(e_pawn_att_index pawn_att_index, int32 ers_index, f32 value, int32 is_show, bool apply)
-	{//ÒòÎªÓĞ°Ù·Ö±È³Ë·¨,Ïà»¥¹ØÁªµÄÊôĞÔ±ØĞë×ßgetfinalatt»ñÈ¡½á¹û½øĞĞ¼ÆËã
+	{//å› ä¸ºæœ‰ç™¾åˆ†æ¯”ä¹˜æ³•,ç›¸äº’å…³è”çš„å±æ€§å¿…é¡»èµ°getfinalattè·å–ç»“æœè¿›è¡Œè®¡ç®—
 		if (ers_index <= e_unit_attack_att_none ||
 			ers_index >= e_unit_attack_att_max ||
 			pawn_att_index < 0 ||
@@ -800,7 +800,7 @@ namespace faith
 			}
 			if (old_final_value < m_unit_att_end[ers_index])
 			{
-				m_max_move_length = m_unit_att_end[ers_index] + 200;//·Å¿íÒ»Ğ©ÒÆ¶¯µÄÅĞ¶¨
+				m_max_move_length = m_unit_att_end[ers_index] + 200;//æ”¾å®½ä¸€äº›ç§»åŠ¨çš„åˆ¤å®š
 				//m_max_move_length += (m_max_move_length >> 1);
 			}
 		}
@@ -1388,7 +1388,7 @@ namespace faith
 			{
 				value = 0;
 			}
-			if (value > max_att)//·ÀÖ¹¿Í»§¶Ë±»ÆÆ½â£¬µ¼ÖÂÊäÈëÒ»¸öint_max£¬ÔÚ×ÜÊı¼ÆËãÊ±ÎŞ·¨×¼È·ÅĞ¶Ï
+			if (value > max_att)//é˜²æ­¢å®¢æˆ·ç«¯è¢«ç ´è§£ï¼Œå¯¼è‡´è¾“å…¥ä¸€ä¸ªint_maxï¼Œåœ¨æ€»æ•°è®¡ç®—æ—¶æ— æ³•å‡†ç¡®åˆ¤æ–­
 			{
 				return;
 			}
@@ -1534,13 +1534,13 @@ namespace faith
 			now_gs += globle_data::get_instance().get_att_gs(ers_index) * get_attack_att_gs(ers_index);
 		}
 
-		tag_unit_att old_unit_att_all[epai_max];	//±£´æ¾ÉÊôĞÔ
+		tag_unit_att old_unit_att_all[epai_max];	//ä¿å­˜æ—§å±æ€§
 		for (int32 i = epai_self_value; i < epai_max; ++i)
 		{
 			old_unit_att_all[i] = m_unit_att_all[send_gs_to_client][i];
 		}
 
-		//ÏÈ¿Û³ıÊôĞÔ
+		//å…ˆæ‰£é™¤å±æ€§
 		for (int32 i = 0; i < del_att.size(); i += e_att_one_max)
 		{
 			int32 att_level = del_att[i + e_att_one_level] + 0.5f;
@@ -1553,51 +1553,51 @@ namespace faith
 				continue;
 			}
 
-			//ÅĞ¶ÏÊôĞÔ²ã¼¶ÊÇ·ñÓĞĞ§
+			//åˆ¤æ–­å±æ€§å±‚çº§æ˜¯å¦æœ‰æ•ˆ
 			if (att_level > tier_att_max || att_level < tier_att_min)
 			{
 				continue;
 			}
 
-			//¼ÆËãĞŞ¸ÄÊôĞÔ²ã¼¶
+			//è®¡ç®—ä¿®æ”¹å±æ€§å±‚çº§
 			e_pawn_att_index  value_level = e_pawn_att_index((att_level - 2) * 2 - 2);
 			e_pawn_att_index  rate_level = e_pawn_att_index((att_level - 2) * 2 - 1);
 		
-			//ĞŞ¸ÄÊôĞÔ
+			//ä¿®æ”¹å±æ€§
 			old_unit_att_all[value_level].att[att_id] -= att_value;
 			old_unit_att_all[rate_level].att[att_id] -= att_percent;
 		}
 
-		//¼ÆËãÔö¼ÓÊôĞÔ
+		//è®¡ç®—å¢åŠ å±æ€§
 		for (int32 i = 0; i < add_att.size(); i += e_att_one_max)
 		{
 			int32 att_level = add_att[i + e_att_one_level] + 0.5f;
 			int32 att_id = add_att[i + e_att_one_att_id] + 0.5f;
 			f32 att_value = add_att[i + e_att_one_value] * 1;
 			f32 att_percent = add_att[i + e_att_one_percent] * 1;
-			int32 att_gs = globle_data::get_instance().get_att_gs(att_id);	//ÊôĞÔ¼ÛÖµ
+			int32 att_gs = globle_data::get_instance().get_att_gs(att_id);	//å±æ€§ä»·å€¼
 
-			//ÅĞ¶ÏÊôĞÔidÊÇ·ñÓĞĞ§
+			//åˆ¤æ–­å±æ€§idæ˜¯å¦æœ‰æ•ˆ
 			if (e_unit_attack_att_none > att_id || e_unit_attack_att_max < att_id)
 			{
 				continue;
 			}
 
-			//ÅĞ¶ÏÊôĞÔ²ã¼¶ÊÇ·ñÓĞĞ§
+			//åˆ¤æ–­å±æ€§å±‚çº§æ˜¯å¦æœ‰æ•ˆ
 			if (att_level > tier_att_max || att_level < tier_att_min)
 			{
 				continue;
 			}
 
-			//¼ÆËãÍæ¼Ò¾ÉÊôĞÔ
+			//è®¡ç®—ç©å®¶æ—§å±æ€§
 			double old_self_value = old_unit_att_all[epai_self_value].att[att_id] * (1 + old_unit_att_all[epai_self_rate].att[att_id]);
 			double old_att_value = (old_self_value + old_unit_att_all[epai_equip_value].att[att_id]) * (1 + old_unit_att_all[epai_equip_rate].att[att_id]);
 
-			//¼ÆËãĞŞ¸ÄÊôĞÔ²ã¼¶
+			//è®¡ç®—ä¿®æ”¹å±æ€§å±‚çº§
 			e_pawn_att_index  value_level = e_pawn_att_index((att_level - 2) * 2 - 2);
 			e_pawn_att_index  rate_level = e_pawn_att_index((att_level - 2) * 2 - 1);
 
-			//ĞŞ¸ÄÊôĞÔ
+			//ä¿®æ”¹å±æ€§
 			old_unit_att_all[value_level].att[att_id] += att_value;
 			old_unit_att_all[rate_level].att[att_id] += att_percent;
 		}

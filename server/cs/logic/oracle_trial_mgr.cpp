@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 created: 2019��7��25��
 file base: oracle_trial_mgr
 file ext: cpp
@@ -40,7 +40,6 @@ namespace faith
 		m_oracle_trial_info.clear_data();
 	}
 
-	//����������Ϣ
 	void oracle_trial_mgr::load_oracle_trial_info_from_db(const s_oracle_trial_info_db* oracle_trial_info, int32 data_num)
 	{
 		m_oracle_trial_info.clear_data();
@@ -90,7 +89,6 @@ namespace faith
 
 	}
 
-	//����������Ϣ
 	void oracle_trial_mgr::save_oracle_trial_to_db(int32 save_type)
 	{
 		player& player_ref = unit_man::get_player(m_array_index);
@@ -158,7 +156,6 @@ namespace faith
 		player_ref.send_message_to_dp_lua(&msg, e_msgindex_cs2dp_save_oracle_trial_info);
 	}
 
-	//������ҵ�������Ϣ���ͻ���
 	void oracle_trial_mgr::send_player_oracle_trial_info_all()
 	{
 		player& player_ref = unit_man::get_player(m_array_index);
@@ -183,7 +180,6 @@ namespace faith
 		player_ref.send_message_to_self(&msg, e_msgindex_s2c_send_oracle_trial_info_all);
 	}
 
-	//������ҵ�ָ��������������Ϣ
 	void oracle_trial_mgr::set_play_oracle_trial_info(int32 tier_num, int32 customs_num, int32 customs_state)
 	{
 		if (tier_num < 1 || tier_num > GAMECONFIG->OracleTrialTierNum || customs_num < 1 || customs_num > max_customs_num || customs_state < m_oracle_trial_info.tier_num[tier_num - 1].customs_state)
@@ -193,7 +189,6 @@ namespace faith
 		int32 old_rank = m_oracle_trial_info.get_all_stat_num();
 		m_oracle_trial_info.tier_num[tier_num - 1].customs_state = customs_state;
 		send_player_oracle_trial_info_all();
-		//�����߼�¼����� �ͷ��ͼ�¼��ws��ͬ�������а���
 		if (m_oracle_trial_info.get_all_stat_num() > old_rank)
 		{
 			player& player_ref = unit_man::get_player(m_array_index);
@@ -208,7 +203,6 @@ namespace faith
 		}	
 	}
 
-	//�������ָ�������Ľ�����Ϣ
 	void oracle_trial_mgr::set_play_oracle_trial_reward_info(int32 tier_num, int32 reward_num, int32 reward_state)
 	{
 		if (tier_num < 1 || tier_num > GAMECONFIG->OracleTrialTierNum || reward_num < 1 || reward_num > max_reward_num || reward_state < m_oracle_trial_info.tier_num[tier_num - 1].reward_stat)
@@ -219,19 +213,16 @@ namespace faith
 		send_player_oracle_trial_info_all();
 	}
 
-	//���ָ��������������Ϣ
 	int32 oracle_trial_mgr::get_tier_customs_state_info(int32 tier_num)
 	{
 		return m_oracle_trial_info.tier_num[tier_num - 1].customs_state;
 	}
 
-	//���ָ�������Ľ�����Ϣ
 	int32 oracle_trial_mgr::get_tier_reward_state_info(int32 tier_num)
 	{
 		return  m_oracle_trial_info.tier_num[tier_num - 1].reward_stat;
 	}
 	
-	//�������ɨ������
 	void oracle_trial_mgr::send_mopping_up_award()
 	{
 		player& player_ref = unit_man::get_player(m_array_index);
@@ -257,13 +248,11 @@ namespace faith
 		player_ref.send_message_to_self(&msg, e_msgindex_s2c_oracle_trial_commpingup_end);
 	}
 
-	//���������ͨ�عؿ�
 	int32 oracle_trial_mgr::get_hight_rank_num()
 	{
 		return m_oracle_trial_info.get_hight_rank();
 	}
 
-	//�����ȡ�Ǽ������ķ��ؽ��
 	void oracle_trial_mgr::get_oracle_trial_stat_num_raward(int32 tier_num, int32 reward_num)
 	{
 		player& player_ref = unit_man::get_player(m_array_index);

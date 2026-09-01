@@ -2,7 +2,7 @@
 created: 2016/05/05
 file base: mission_def
 file ext: hpp
-author: ÕÅÓîÏè
+author: å¼ å®‡ç¿”
 
 purpose:
 *********************************************************************/
@@ -17,113 +17,113 @@ purpose:
 namespace faith
 {
 #pragma pack(push,1)
-	const int32 MAX_MISSION_LINE_NUM = 4;					// Ò»¹²4ÖÖÈÎÎñ
-	const int32 TEMPLATE_ONE_NPC_OR_ITEM_INFO_LEN = 2;		// Ä£°åÖĞÒ»¸öÄ¿±ê³¤¶ÈÎªÁ½Î»,id,num
-	const float MIN_DISTENCE_TO_DONE_MISSION = 300000.0;	// Íê³ÉÈÎÎñ×îĞ¡¾àÀë
-	const int32 LOCATION_ARRAY_LEN = 3;						// ×ø±êÊı×éÎªÈıÎ»
-	const int32 MAX_POOL_NUM = 5;							// ÈÕ³£,ÌÖ·¥ÈÎÎñ³Ø×î´óÊı
-	const int32 MISSION_START_ID = 24000001;				// ÈÎÎñµÄÆğÊ¼id
-	const int32 DAILY_MISSION_MAX = 10;						// ÈÕ³£ÈÎÎñÉÏÏŞ10
-	const int32 AGAINST_MISSION_MAX = 5;					// ÌÖ·¥ÈÎÎñÉÏÏŞ5
-	const int32 MARRY_MISSION_MAX = 5;						// ½á»éÈÎÎñÉÏÏŞ5
+	const int32 MAX_MISSION_LINE_NUM = 4;					// ä¸€å…±4ç§ä»»åŠ¡
+	const int32 TEMPLATE_ONE_NPC_OR_ITEM_INFO_LEN = 2;		// æ¨¡æ¿ä¸­ä¸€ä¸ªç›®æ ‡é•¿åº¦ä¸ºä¸¤ä½,id,num
+	const float MIN_DISTENCE_TO_DONE_MISSION = 300000.0;	// å®Œæˆä»»åŠ¡æœ€å°è·ç¦»
+	const int32 LOCATION_ARRAY_LEN = 3;						// åæ ‡æ•°ç»„ä¸ºä¸‰ä½
+	const int32 MAX_POOL_NUM = 5;							// æ—¥å¸¸,è®¨ä¼ä»»åŠ¡æ± æœ€å¤§æ•°
+	const int32 MISSION_START_ID = 24000001;				// ä»»åŠ¡çš„èµ·å§‹id
+	const int32 DAILY_MISSION_MAX = 10;						// æ—¥å¸¸ä»»åŠ¡ä¸Šé™10
+	const int32 AGAINST_MISSION_MAX = 5;					// è®¨ä¼ä»»åŠ¡ä¸Šé™5
+	const int32 MARRY_MISSION_MAX = 5;						// ç»“å©šä»»åŠ¡ä¸Šé™5
 	const int32 MAX_AWARD_ITEM = 3;
 	const int32 MAX_DALIY_STAR_NUM = 5;
-	const int32 max_mission_money_reward_type = 5;			// ÈÎÎñÍê³É×î¶à»õ±Ò½±ÀøÀàĞÍ
+	const int32 max_mission_money_reward_type = 5;			// ä»»åŠ¡å®Œæˆæœ€å¤šè´§å¸å¥–åŠ±ç±»å‹
 	
 	const int32 daily_mission_unlock_id = 117000069;
 	const int32 against_mission_unlock_id = 117000070;
-	const int32 first_recharge_time_mission_id = 15000633;  //ÉèÖÃÊ×³äÊ±¼äÈÎÎñid
+	const int32 first_recharge_time_mission_id = 15000633;  //è®¾ç½®é¦–å……æ—¶é—´ä»»åŠ¡id
 
-	enum e_mission_state//ÈÎÎñ×´Ì¬
+	enum e_mission_state//ä»»åŠ¡çŠ¶æ€
 	{
-		e_mission_state_none,//ÎŞ±ê¼Ç
-		e_mission_state_cannot_accept,//Ìõ¼ş²»×ãÎŞ·¨½ÓÈ¡
-		e_mission_state_can_accept,//Î´½ÓÈ¡
-		e_mission_state_accepted,//½ÓÈ¡µ«ÊÇÎ´Íê³É
-		e_mission_state_done,//Ä¿±ê´ï³É
-		e_mission_state_chat,//¶Ô»°Íê³É
-		e_mission_state_can_finish,//¿É½»¸¶
-		e_mission_state_finished,//ÒÑ½»¸¶
+		e_mission_state_none,//æ— æ ‡è®°
+		e_mission_state_cannot_accept,//æ¡ä»¶ä¸è¶³æ— æ³•æ¥å–
+		e_mission_state_can_accept,//æœªæ¥å–
+		e_mission_state_accepted,//æ¥å–ä½†æ˜¯æœªå®Œæˆ
+		e_mission_state_done,//ç›®æ ‡è¾¾æˆ
+		e_mission_state_chat,//å¯¹è¯å®Œæˆ
+		e_mission_state_can_finish,//å¯äº¤ä»˜
+		e_mission_state_finished,//å·²äº¤ä»˜
 		e_mission_state_max,
 	};
 	enum e_npc_mark
 	{
-		e_npc_mark_none,//ÎŞ±ê¼Ç
-		e_npc_mark_cannot_accept,//²»¿É½Ó»ÒÉ«Ì¾ºÅ
-		e_npc_mark_can_accept,//¿É½Ó»ÆÉ«Ì¾ºÅ
-		e_npc_mark_accepted,//ÒÑ½ÓÎ´Íê³É»ÒÉ«ÎÊºÅ
-		e_npc_mark_can_finish,//Íê³É»ÆÉ«Ì¾ºÅ
+		e_npc_mark_none,//æ— æ ‡è®°
+		e_npc_mark_cannot_accept,//ä¸å¯æ¥ç°è‰²å¹å·
+		e_npc_mark_can_accept,//å¯æ¥é»„è‰²å¹å·
+		e_npc_mark_accepted,//å·²æ¥æœªå®Œæˆç°è‰²é—®å·
+		e_npc_mark_can_finish,//å®Œæˆé»„è‰²å¹å·
 	};
 	enum e_mission_operate_end_state
 	{
-		e_mission_operate_end_state_system_wrong,//Ê§°Ü
-		e_mission_operate_end_state_succeed,//³É¹¦
-		e_mission_operate_end_state_bag_full,//°üÂú
-		e_mission_operate_end_state_too_far,//¾àÀë¹ıÔ¶
-		e_mission_operate_end_state_not_enough_money,//Ç®²»¹»
-		e_mission_operate_end_state_too_fast//²Ù×÷Ì«Æµ·±
+		e_mission_operate_end_state_system_wrong,//å¤±è´¥
+		e_mission_operate_end_state_succeed,//æˆåŠŸ
+		e_mission_operate_end_state_bag_full,//åŒ…æ»¡
+		e_mission_operate_end_state_too_far,//è·ç¦»è¿‡è¿œ
+		e_mission_operate_end_state_not_enough_money,//é’±ä¸å¤Ÿ
+		e_mission_operate_end_state_too_fast//æ“ä½œå¤ªé¢‘ç¹
 	};
 	enum e_mission_inst_data
 	{
-		e_mission_inst_data_id,//ÈÎÎñÄ£°åid
-		e_mission_inst_type,//ÈÎÎñÀàĞÍ
-		e_mission_inst_slot,//ÈÎÎñ²ÛÎ»
-		e_mission_inst_data_goal1_num,//ÈÎÎñÄ¿±ê1µÄµ±Ç°ÊıÁ¿
-		e_mission_inst_data_goal2_num,//ÈÎÎñÄ¿±ê2µÄµ±Ç°ÊıÁ¿
-		e_mission_inst_data_goal3_num,//ÈÎÎñÄ¿±ê3µÄµ±Ç°ÊıÁ¿
-		e_mission_inst_data_goal4_num,//ÈÎÎñÄ¿±ê4µÄµ±Ç°ÊıÁ¿
-		e_mission_inst_data_star_level,//ÈÕ³£ÈÎÎñµÄĞÇ¼¶
-		e_mission_inst_data_mission_state,//ÈÎÎñµÄ×´Ì¬
-		e_mission_inst_data_finish_item_id1,//½±ÀøÎïÆ·8
-		e_mission_inst_data_finish_item_num1,//ÊıÁ¿1 9
+		e_mission_inst_data_id,//ä»»åŠ¡æ¨¡æ¿id
+		e_mission_inst_type,//ä»»åŠ¡ç±»å‹
+		e_mission_inst_slot,//ä»»åŠ¡æ§½ä½
+		e_mission_inst_data_goal1_num,//ä»»åŠ¡ç›®æ ‡1çš„å½“å‰æ•°é‡
+		e_mission_inst_data_goal2_num,//ä»»åŠ¡ç›®æ ‡2çš„å½“å‰æ•°é‡
+		e_mission_inst_data_goal3_num,//ä»»åŠ¡ç›®æ ‡3çš„å½“å‰æ•°é‡
+		e_mission_inst_data_goal4_num,//ä»»åŠ¡ç›®æ ‡4çš„å½“å‰æ•°é‡
+		e_mission_inst_data_star_level,//æ—¥å¸¸ä»»åŠ¡çš„æ˜Ÿçº§
+		e_mission_inst_data_mission_state,//ä»»åŠ¡çš„çŠ¶æ€
+		e_mission_inst_data_finish_item_id1,//å¥–åŠ±ç‰©å“8
+		e_mission_inst_data_finish_item_num1,//æ•°é‡1 9
 		e_mission_inst_data_finish_item_id2,//10
 		e_mission_inst_data_finish_item_num2,
 		e_mission_inst_data_finish_item_id3,
 		e_mission_inst_data_finish_item_num3,
 		e_mission_inst_data_finish_item_id4,
 		e_mission_inst_data_finish_item_num4,
-		e_mission_inst_get_time,//½ÓÊÜÈÎÎñÊ±¼ä
+		e_mission_inst_get_time,//æ¥å—ä»»åŠ¡æ—¶é—´
 		e_mission_inst_data_max,
 	};
 	enum e_mission_finish_type
 	{
-		e_mission_finish_type_normal,//Õı³£Íê³É
-		e_mission_finish_type_double,//Ë«±¶½±Àø
-		e_mission_finish_type_endall,//Ò»¼üÍê³É
+		e_mission_finish_type_normal,//æ­£å¸¸å®Œæˆ
+		e_mission_finish_type_double,//åŒå€å¥–åŠ±
+		e_mission_finish_type_endall,//ä¸€é”®å®Œæˆ
 	};
 	enum e_mission_finish_award_type
 	{
 		e_mission_finish_award_type_none,
-		e_mission_finish_award_type_normal,//³£¹æµãÊı½±Àø
-		e_mission_finish_award_type_rate,//±¶ÂÊ½±Àø
+		e_mission_finish_award_type_normal,//å¸¸è§„ç‚¹æ•°å¥–åŠ±
+		e_mission_finish_award_type_rate,//å€ç‡å¥–åŠ±
 		e_mission_finish_award_type_world,
 
 	};
 
 	enum e_finish_activate_type
 	{
-		e_finish_activate_type_non,				//ÎŞ
-		e_finish_activate_type_skill,			//¼¼ÄÜ
-		e_finish_activate_type_wing,			//³á°ò
-		e_finish_activate_type_mount,			//×øÆï
-		e_finish_activate_type_item,			//ÎïÆ·
-		e_finish_activate_type_sprite_jiban,	//¾«Áéî¿°í
-		e_finish_activate_type_sprite_qiyuan,	//¾«ÁéÆæÔµ
-		e_finish_activate_type_wing_spirit,		//×¢Áé
-		e_finish_activate_type_wing_feather,	//ôáÓğ
-		e_finish_activate_type_wing_soul,		//×¢»ê
-		e_finish_activate_type_meditation,      //Ú¤Ïë
+		e_finish_activate_type_non,				//æ— 
+		e_finish_activate_type_skill,			//æŠ€èƒ½
+		e_finish_activate_type_wing,			//ç¿…è†€
+		e_finish_activate_type_mount,			//åéª‘
+		e_finish_activate_type_item,			//ç‰©å“
+		e_finish_activate_type_sprite_jiban,	//ç²¾çµç¾ç»Š
+		e_finish_activate_type_sprite_qiyuan,	//ç²¾çµå¥‡ç¼˜
+		e_finish_activate_type_wing_spirit,		//æ³¨çµ
+		e_finish_activate_type_wing_feather,	//ç¿ç¾½
+		e_finish_activate_type_wing_soul,		//æ³¨é­‚
+		e_finish_activate_type_meditation,      //å†¥æƒ³
 		e_finish_activate_type_max
 	};
 
 
 	enum e_finish_activate_info
 	{
-		e_finish_activate_info_type,			//ÀàĞÍ£¬Òª¼¤»îÊ²Ã´£¬ÊÇ ¼¼ÄÜ»¹ÊÇ³á°ò»¹ÊÇÉ¶
-		e_finish_activate_info_barserker,		//Õ½Ê¿£¬Óë Ö°Òµ idÍêÈ«ÏàÍ¬
-		e_finish_activate_info_wizard,			//Î×Ê¦£¬Óë Ö°Òµ idÍêÈ«ÏàÍ¬
-		e_finish_activate_info_guardian,		//ÊØ»¤Õß£¬Óë Ö°Òµ idÍêÈ«ÏàÍ¬
-		e_finish_activate_info_assassinator,	//´Ì¿Í£¬Óë Ö°Òµ idÍêÈ«ÏàÍ¬
+		e_finish_activate_info_type,			//ç±»å‹ï¼Œè¦æ¿€æ´»ä»€ä¹ˆï¼Œæ˜¯ æŠ€èƒ½è¿˜æ˜¯ç¿…è†€è¿˜æ˜¯å•¥
+		e_finish_activate_info_barserker,		//æˆ˜å£«ï¼Œä¸ èŒä¸š idå®Œå…¨ç›¸åŒ
+		e_finish_activate_info_wizard,			//å·«å¸ˆï¼Œä¸ èŒä¸š idå®Œå…¨ç›¸åŒ
+		e_finish_activate_info_guardian,		//å®ˆæŠ¤è€…ï¼Œä¸ èŒä¸š idå®Œå…¨ç›¸åŒ
+		e_finish_activate_info_assassinator,	//åˆºå®¢ï¼Œä¸ èŒä¸š idå®Œå…¨ç›¸åŒ
 		e_finish_activate_info_max
 	};
 

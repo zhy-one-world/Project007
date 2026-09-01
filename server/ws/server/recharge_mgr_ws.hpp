@@ -1,4 +1,4 @@
-
+ï»¿
 #ifndef __RECHARGE_MGR_WS_H__
 #define __RECHARGE_MGR_WS_H__
 
@@ -53,7 +53,7 @@ namespace faith
 			client_uid = 0;
 			recharge_info.clear_data();
 
-			//string ²»ÒªÓÃmemset
+			//string ä¸è¦ç”¨memset
 		}
 
 		s_unfinish_message_info()
@@ -114,4 +114,4 @@ namespace faith
 	};
 }
 
-#endif //
+#endif

@@ -92,7 +92,7 @@ namespace faith
 			return 1;
 		}
 		int32 data_ary[e_role_box_map_max];
-		std::list<npc_point_info> m_npc_point;//±¦ÏäË¢ĞÂÁĞ±í
+		std::list<npc_point_info> m_npc_point;//å®ç®±åˆ·æ–°åˆ—è¡¨
 		flip_box m_flip_box;
 	};
 	struct s_element_map_info : public s_map_record_base

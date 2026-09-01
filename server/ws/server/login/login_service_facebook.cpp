@@ -22,7 +22,7 @@
 #include "server_log_msg.hpp"
 namespace faith
 {
-	const xstring sdk_password = "googlesdk";		// ¹Ì¶¨ÃÜÂë
+	const xstring sdk_password = "googlesdk";		// å›ºå®šå¯†ç 
 
 	void login_service_facebook::tick(float deltaseconds)
 	{
@@ -37,13 +37,13 @@ namespace faith
 		}
 
 		xstring sdk_url = "https://graph.facebook.com";
-		// ×Ô¶¨ÒåÇëÇóÍ·
+		// è‡ªå®šä¹‰è¯·æ±‚å¤´
 		std::vector<xstring> head_list;
 		head_list.push_back("Content-Type:application/x-www-form-urlencoded");
 		xstring url_para = "/debug_token?access_token=2225056661104893%7C3e2d9e24ff589ee5b73885e57656857c";
 		url_para += "&input_token=" + proto_data.sdk_data().data();
 
-		// Òì²½ÇëÇó
+		// å¼‚æ­¥è¯·æ±‚
 		http_access_mgr::get_instance().async_request
 			(
 				client_uid,
@@ -131,7 +131,7 @@ namespace faith
 
 				data_value = value.get("data",default_value);
 
-				// ½âÎödataÊı¾İ
+				// è§£ædataæ•°æ®
 				if(data_value.empty() 
 					|| data_value["user_id"].isNull() || data_value["user_id"].empty() || !data_value["user_id"].isString()
 					|| data_value["is_valid"].isNull() || data_value["is_valid"].empty() || !data_value["is_valid"].isBool() || data_value["is_valid"].asBool() == false)
@@ -152,11 +152,11 @@ namespace faith
 				memset(ban_chat_array, 0, sizeof(ban_chat_array));
 				//Json::Value& ban_role = data_value["banRoles"];
 				//Json::Value& ban_chat = data_value["banChats"];
-				// ¼ì²éµÇÂ½×´Ì¬
+				// æ£€æŸ¥ç™»é™†çŠ¶æ€
 				if(account.size() > 0)
 				{
 					//CONSOLE_INFO("sdk read json data : " << json_data.c_str() << " ," << time_helper::get_current_time() << " , " << faith::utility::get_tick_count());
-					// ´æÅÌ
+					// å­˜ç›˜
 					save_account(account, json_data, client_uid, ban_role_array, ban_chat_array);
 					return true;
 				}
@@ -218,7 +218,7 @@ namespace faith
 			memcpy(request.ban_role_array, ban_role_array, sizeof(request.ban_role_array));
 			memcpy(request.ban_chat_array, ban_chat_array, sizeof(request.ban_chat_array));
 			ws_client::getInstance().send_to_dp( &request, sizeof(request));
-			//loginÈÕÖ¾
+			//loginæ—¥å¿—
 			//server_log::login_role_log(login_data->server_id(),
 			//	login_data->sdk_data().app_key(),
 			//	login_data->client_version(),

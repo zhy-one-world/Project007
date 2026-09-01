@@ -5,340 +5,340 @@
  
 namespace faith
 {
-	//////////////////////////////////itemÌáÊ¾ĞÅÏ¢////////////////////////////////////////
-	const int32 e_item_string_bind = 90028001;									// ÒÑ°ó¶¨
-	const int32 e_item_string_bind_no = 90028002;								// Î´°ó¶¨
-	const int32 e_item_string_upgrade = 90028003;								// "+","×·"
-	const int32 e_item_string_mount_max_high = 90028004;						// ÒÑ´ï×øÆï×î´ó·ÉĞĞ¸ß¶È
-	const int32 e_item_string_push_upgrade = 90010077;							// Çë·ÅÈëÒªÇ¿»¯µÄ×°±¸
-	const int32 e_item_string_exchange_success = 90090122;						// ¶Ò»»³É¹¦
+	//////////////////////////////////itemæç¤ºä¿¡æ¯////////////////////////////////////////
+	const int32 e_item_string_bind = 90028001;									// å·²ç»‘å®š
+	const int32 e_item_string_bind_no = 90028002;								// æœªç»‘å®š
+	const int32 e_item_string_upgrade = 90028003;								// "+","è¿½"
+	const int32 e_item_string_mount_max_high = 90028004;						// å·²è¾¾åéª‘æœ€å¤§é£è¡Œé«˜åº¦
+	const int32 e_item_string_push_upgrade = 90010077;							// è¯·æ”¾å…¥è¦å¼ºåŒ–çš„è£…å¤‡
+	const int32 e_item_string_exchange_success = 90090122;						// å…‘æ¢æˆåŠŸ
 
-	//////////////////////////////////item´íÎóĞÅÏ¢////////////////////////////////////////
-	const int32 e_item_string_unkown = 90029001;								// Î´Öª´íÎó
-	const int32 e_item_string_succeed = 90029002;								// ³É¹¦
-	const int32 e_item_string_can_not_use = 90029003;							// ²»ÄÜÊ¹ÓÃ
-	const int32 e_item_string_no_item = 90029004;								// Ã»ÓĞ¸ÃÎïÆ·
-	const int32 e_item_string_no_target = 90029005;								// nTargetRoleIDÃ»ÓĞÕÒµ½
-	const int32 e_item_string_dead = 90029006;									// ËÀÍö×´Ì¬ÏÂÎŞ·¨Ê¹ÓÃ
-	const int32 e_item_string_spelling = 90029007;								// ÕıÔÚÖ´ĞĞÁíÒ»¸ö¶¯×÷
-	const int32 e_item_string_cd = 90029008;									// cdÎ´ºÃ
-	const int32 e_item_string_in_combat = 90029009;								// Õ½¶·×´Ì¬ÏÂÎŞ·¨Ê¹ÓÃ
-	const int32 e_item_string_quest = 90029010;									// ÈÎÎñÎïÆ·Ê¹ÓÃ´íÎó
-	const int32 e_item_string_target = 90029011;								// Ä¿±ê´íÎó
-	const int32 e_item_string_regin = 90029012;									// Ã»ÓĞÔÚÖ¸¶¨ÇøÓòÄÚÊ¹ÓÃ
-	const int32 e_item_string_level = 90029013;									// Î´Âú×ãµÈ¼¶ÒªÇó
-	const int32 e_item_string_class = 90029014;									// Î´Âú×ãÖ°ÒµÒªÇó
-	const int32 e_item_string_camp = 90029015;									// Î´Âú×ãÕóÓªÒªÇó
-	const int32 e_item_string_race = 90029016;									// Î´Âú×ãÖÖ×åÒªÇó
-	const int32 e_item_string_gender = 90029017;								// Î´Âú×ãĞÔ±ğÒªÇó
-	const int32 e_item_string_spell_learn = 90029018;							// ²»ÄÜÑ§Ï°¸Ã¼¼ÄÜ
-	const int32 e_item_string_specialty_learn = 90029019;						// ²»ÄÜÑ§Ï°¸ÃÉú»î¼¼ÄÜ
-	const int32 e_item_string_pet_spell_learn = 90029020;						// Ö¸¶¨±ø»ê²»ÄÜÑ§Ï°¸Ã¼¼ÄÜ
-	const int32 e_item_string_compse_learn = 90029021;							// ²»ÄÜÑ§Ï°Åä·½
-	const int32 e_item_string_not_identified = 90029022;						// ÎïÆ·ĞèÒª¼ø¶¨ºó²ÅÄÜÊ¹ÓÃ
-	const int32 e_item_string_not_enough_item = 90029023;						// ËùĞèºÏ³ÉÎïÆ·È±ÉÙ
-	const int32 e_item_string_target_too_far = 90029024;						// Ä¿±êÌ«Ô¶
-	const int32 e_item_string_cannot_open_gift_bag = 90029025;					// ±³°üÂúÎŞ·¨´ò¿ªÀñÆ·°ü
-	const int32 e_item_string_cannot_use_qust_point_bag = 90029026;				// ÈÎÎñµãÊı´ïµ½ÉÏÏŞÎŞ·¨Ôö¼ÓÈÎÎñµã
-	const int32 e_item_string_cannot_use_prestige_bag = 90029027;				// ÊÆÁ¦ÉùÍû´ïµ½×î´óÖµÎŞ·¨Ôö¼Ó
-	const int32 e_item_string_cannot_use_presting_bag = 90029028;				// ÎŞ·¨Íê³ÉÎïÆ·ºÏ³É²Ù×÷£¬±³°ü¿Õ¼ä²»×ã
-	const int32 e_item_string_no_catch_pet_skill = 90029029;					// »¹Ã»ÓĞÑ§Ï°Îü»ê¼¼ÄÜ,²»ÄÜÊ¹ÓÃ±ø»êÀ¸Î»À©³äµÀ¾ß
-	const int32 e_item_string_all_pet_slot_opened = 90029030;					// ËùÓĞµÄ±ø»êÀ¸Î»ÒÑ±»È«²¿´ò¿ª
-	const int32 e_item_string_error_metemp_sychosis_times = 90029031;			// ´íÎóµÄ×ªÉú´ÎÊı
-	const int32 e_item_string_spell_learned = 90029032;							// ÒÑ¾­Ñ§»áÁË
-	const int32 e_item_string_success_hc = 90029033;							// Ê¹ÓÃµÀ¾ßºÏ³É
-	const int32 e_item_string_pk_cannot_use_item1 = 90029034;					// ´ËÎïÆ·²»ĞèÊ¹ÓÃ
-	const int32 e_item_string_item_is_using = 90029035;							// ÎïÆ·ÕıÔÚÊ¹ÓÃÖĞ£¬²Ù×÷Ê§°Ü
-	const int32 e_item_string_invalid = 90029036;								// Ô­¶ÑÎïÆ·²»ºÏ·¨
-	const int32 e_item_string_new_position = 90029037;							// ĞÂÎ»ÖÃ´íÎó
-	const int32 e_item_string_bag_capacity = 90029038;							// ±³°üÈİÁ¿±ä»¯·Ç·¨
-	const int32 e_item_string_never_can_be_discard = 90029039;					// ÎïÆ·²»ÄÜÏú»Ù
-	const int32 e_item_string_ca_not_enough = 90029040;							// Õ½Á¦Öµ²»×ã
-	const int32 e_item_string_noneed_item = 90029041;							// Ê¹ÓÃÊ§°Ü£¬È±ÉÙ±ØÒªµÄÎïÆ·
-	const int32 e_item_string_script_trigger_error = 90029042;					// ½Å±¾º¯Êı·µ»Ø´íÎó
-	const int32 e_item_string_peer_level = 90029043;							// ¹ó×åµÈ¼¶²»×ã
-	const int32 e_item_string_vip_level = 90029044;								// vipµÈ¼¶²»×ã
-	const int32 e_item_string_yuanbao = 90029045;								// Íæ¼ÒÔª±¦²»×ã
-	const int32 e_item_string_yuanbao_bind = 90029046;							// Íæ¼Ò°ó¶¨Ôª±¦²»×ã
-	const int32 e_item_string_inherit = 90029047;								// ´«³ĞÊ§°Ü
-	const int32 e_item_string_advance = 90029048;								// ½ø½×Ê§°Ü
-	const int32 e_item_string_upgrade_no_down = 90029049;						// Ç¿»¯Ê§°Ü,²»½µ¼¶
-	const int32 e_item_string_upgrade_down = 90029050;							// Ç¿»¯Ê§°Ü,½µ¼¶
-	const int32 e_item_string_item_use_in_cd = 90029051;						// µÀ¾ßCDÖĞ£¬ÎŞ·¨Ê¹ÓÃ
-	const int32 e_item_string_money = 90029052;									// ½ğ±Ò²»×ã
-	const int32 e_item_string_jewel = 90029053;									// ×êÊ¯²»×ã
-	const int32 e_item_string_tinder_point_not_enough = 90095310;				// »ğÖÖµãÊı²»×ã
-	const int32 e_item_string_full_level = 90029054;							// µÈ¼¶ÒÑÂú
-	const int32 e_item_string_matirial_not_enough = 90029055;					// ËØ²Ä²»×ã
-	const int32 e_item_string_chant_show_unactivate_wing = 90029514;			// ÎŞ·¨ÆôÓÃÎ´¼¤»î³á°ò
-	const int32 e_item_string_had_this_shape_wing = 90029515;					// ÒÑÓµÓĞ´ËÍâĞÎ³á°ò
-	const int32 e_item_string_wing_block_full = 90029516;						// ³á°òÀ¸ÒÑÂú
-	const int32 e_item_string_auto_use_money_not_enough = 90305019;				// ×Ô¶¯¹ºÂò²ÄÁÏµÄÇ®±Ò²»×ã
-	const int32 e_item_string_warlord_mount_cant_upgrade = 90305020;			// ³ÇÖ÷×øÆïÎŞ·¨Éı¼¶
-	const int32 e_item_string_unlock_requirement_not_reach = 90305021;			// ½âËøÌõ¼şÎ´Âú×ã
-	const int32 e_item_string_cant_unlock_again = 90305022;						// ²»ÄÜÖØ¸´½âËø
-	const int32 e_item_string_have_no_illusion = 90305023;						// ÎŞ´Ë»Ã»¯
-	const int32 e_item_string_cant_show_unlock_mount = 90305024;				// ÎŞ·¨ÆôÓÃÎ´½âËø×øÆï
-	const int32 e_item_string_mount_unlock = 90305025;							// ´Ë×øÆïÎ´½âËø
-	const int32 e_item_string_mount_illusion_unlock = 90305026;					// ´Ë×øÆï»Ã»¯Î´½âËø
-	const int32 e_item_string_cant_free_get_hope_item = 90305003;				// Ãâ·ÑÆí¸£Ê±¼äÃ»µ½
-	const int32 e_item_string_bag_full = 90305038;								// ±³°üÒÑÂú
-	const int32 e_item_string_storage_full = 90209300;							// ²Ö¿âÒÑÂú
-	const int32 e_item_string_hopbag_full = 90090136;							// ÆíÔ¸²Ö¿âÒÑÂú
-	const int32 e_item_element_heart_refind_one_no_time = 90090195;				// ÔªËØÖ®ĞÄÊ£ÓàÌáÁ¶´ÎÊı²»×ã,1´Î
-	const int32 e_item_element_heart_refind_ten_no_time = 90090196;				// ÔªËØÖ®ĞÄÊ£ÓàÌáÁ¶´ÎÊı²»×ã,10´Î
-	const int32 e_item_get_new_wing_by_card = 90305049;							// Í¨¹ı³á°ò¿¨»ñµÃĞÂ³á°ò
-	const int32 e_item_inherit_point_lose_notice = 90029619;					// ×Ô¶¯´«³ĞÅàÑøµãÊıËğÊ§ÌáÊ¾
-	const int32 e_item_rear_item_get_notice = 90300020;							// Ï¡ÓĞÎïÆ·£¨ºìÉ«£©»ñµÃÌáÊ¾
-	const int32 e_item_sprite_equip_slot_full = 90305006;						// ¾«Áé×°±¸²ÛÒÑÂú
-	const int32 e_item_add_on_failed = 90090682;								// ×·¼ÓÊ§°Ü
-	const int32 e_item_string_not_belong_level = 90091304;					// Ö»¿É¹ºÂòµ±Ç°ÈËÎï¶ÔÓ¦½×¶ÎµÄÒ©Ë®
-	const int32 e_buff_cover_confirm = 90090512;								// buff¸²¸ÇÈ·ÈÏ
-	const int32 e_buff_has_stronger = 90090513;									// ÓĞ¸üÇ¿Ğ§¹ûÁË
-	const int32 e_buff_has_same = 90090514;										// ÓĞÍ¬ÀàĞ§¹ûÁË
+	//////////////////////////////////itemé”™è¯¯ä¿¡æ¯////////////////////////////////////////
+	const int32 e_item_string_unkown = 90029001;								// æœªçŸ¥é”™è¯¯
+	const int32 e_item_string_succeed = 90029002;								// æˆåŠŸ
+	const int32 e_item_string_can_not_use = 90029003;							// ä¸èƒ½ä½¿ç”¨
+	const int32 e_item_string_no_item = 90029004;								// æ²¡æœ‰è¯¥ç‰©å“
+	const int32 e_item_string_no_target = 90029005;								// nTargetRoleIDæ²¡æœ‰æ‰¾åˆ°
+	const int32 e_item_string_dead = 90029006;									// æ­»äº¡çŠ¶æ€ä¸‹æ— æ³•ä½¿ç”¨
+	const int32 e_item_string_spelling = 90029007;								// æ­£åœ¨æ‰§è¡Œå¦ä¸€ä¸ªåŠ¨ä½œ
+	const int32 e_item_string_cd = 90029008;									// cdæœªå¥½
+	const int32 e_item_string_in_combat = 90029009;								// æˆ˜æ–—çŠ¶æ€ä¸‹æ— æ³•ä½¿ç”¨
+	const int32 e_item_string_quest = 90029010;									// ä»»åŠ¡ç‰©å“ä½¿ç”¨é”™è¯¯
+	const int32 e_item_string_target = 90029011;								// ç›®æ ‡é”™è¯¯
+	const int32 e_item_string_regin = 90029012;									// æ²¡æœ‰åœ¨æŒ‡å®šåŒºåŸŸå†…ä½¿ç”¨
+	const int32 e_item_string_level = 90029013;									// æœªæ»¡è¶³ç­‰çº§è¦æ±‚
+	const int32 e_item_string_class = 90029014;									// æœªæ»¡è¶³èŒä¸šè¦æ±‚
+	const int32 e_item_string_camp = 90029015;									// æœªæ»¡è¶³é˜µè¥è¦æ±‚
+	const int32 e_item_string_race = 90029016;									// æœªæ»¡è¶³ç§æ—è¦æ±‚
+	const int32 e_item_string_gender = 90029017;								// æœªæ»¡è¶³æ€§åˆ«è¦æ±‚
+	const int32 e_item_string_spell_learn = 90029018;							// ä¸èƒ½å­¦ä¹ è¯¥æŠ€èƒ½
+	const int32 e_item_string_specialty_learn = 90029019;						// ä¸èƒ½å­¦ä¹ è¯¥ç”Ÿæ´»æŠ€èƒ½
+	const int32 e_item_string_pet_spell_learn = 90029020;						// æŒ‡å®šå…µé­‚ä¸èƒ½å­¦ä¹ è¯¥æŠ€èƒ½
+	const int32 e_item_string_compse_learn = 90029021;							// ä¸èƒ½å­¦ä¹ é…æ–¹
+	const int32 e_item_string_not_identified = 90029022;						// ç‰©å“éœ€è¦é‰´å®šåæ‰èƒ½ä½¿ç”¨
+	const int32 e_item_string_not_enough_item = 90029023;						// æ‰€éœ€åˆæˆç‰©å“ç¼ºå°‘
+	const int32 e_item_string_target_too_far = 90029024;						// ç›®æ ‡å¤ªè¿œ
+	const int32 e_item_string_cannot_open_gift_bag = 90029025;					// èƒŒåŒ…æ»¡æ— æ³•æ‰“å¼€ç¤¼å“åŒ…
+	const int32 e_item_string_cannot_use_qust_point_bag = 90029026;				// ä»»åŠ¡ç‚¹æ•°è¾¾åˆ°ä¸Šé™æ— æ³•å¢åŠ ä»»åŠ¡ç‚¹
+	const int32 e_item_string_cannot_use_prestige_bag = 90029027;				// åŠ¿åŠ›å£°æœ›è¾¾åˆ°æœ€å¤§å€¼æ— æ³•å¢åŠ 
+	const int32 e_item_string_cannot_use_presting_bag = 90029028;				// æ— æ³•å®Œæˆç‰©å“åˆæˆæ“ä½œï¼ŒèƒŒåŒ…ç©ºé—´ä¸è¶³
+	const int32 e_item_string_no_catch_pet_skill = 90029029;					// è¿˜æ²¡æœ‰å­¦ä¹ å¸é­‚æŠ€èƒ½,ä¸èƒ½ä½¿ç”¨å…µé­‚æ ä½æ‰©å……é“å…·
+	const int32 e_item_string_all_pet_slot_opened = 90029030;					// æ‰€æœ‰çš„å…µé­‚æ ä½å·²è¢«å…¨éƒ¨æ‰“å¼€
+	const int32 e_item_string_error_metemp_sychosis_times = 90029031;			// é”™è¯¯çš„è½¬ç”Ÿæ¬¡æ•°
+	const int32 e_item_string_spell_learned = 90029032;							// å·²ç»å­¦ä¼šäº†
+	const int32 e_item_string_success_hc = 90029033;							// ä½¿ç”¨é“å…·åˆæˆ
+	const int32 e_item_string_pk_cannot_use_item1 = 90029034;					// æ­¤ç‰©å“ä¸éœ€ä½¿ç”¨
+	const int32 e_item_string_item_is_using = 90029035;							// ç‰©å“æ­£åœ¨ä½¿ç”¨ä¸­ï¼Œæ“ä½œå¤±è´¥
+	const int32 e_item_string_invalid = 90029036;								// åŸå †ç‰©å“ä¸åˆæ³•
+	const int32 e_item_string_new_position = 90029037;							// æ–°ä½ç½®é”™è¯¯
+	const int32 e_item_string_bag_capacity = 90029038;							// èƒŒåŒ…å®¹é‡å˜åŒ–éæ³•
+	const int32 e_item_string_never_can_be_discard = 90029039;					// ç‰©å“ä¸èƒ½é”€æ¯
+	const int32 e_item_string_ca_not_enough = 90029040;							// æˆ˜åŠ›å€¼ä¸è¶³
+	const int32 e_item_string_noneed_item = 90029041;							// ä½¿ç”¨å¤±è´¥ï¼Œç¼ºå°‘å¿…è¦çš„ç‰©å“
+	const int32 e_item_string_script_trigger_error = 90029042;					// è„šæœ¬å‡½æ•°è¿”å›é”™è¯¯
+	const int32 e_item_string_peer_level = 90029043;							// è´µæ—ç­‰çº§ä¸è¶³
+	const int32 e_item_string_vip_level = 90029044;								// vipç­‰çº§ä¸è¶³
+	const int32 e_item_string_yuanbao = 90029045;								// ç©å®¶å…ƒå®ä¸è¶³
+	const int32 e_item_string_yuanbao_bind = 90029046;							// ç©å®¶ç»‘å®šå…ƒå®ä¸è¶³
+	const int32 e_item_string_inherit = 90029047;								// ä¼ æ‰¿å¤±è´¥
+	const int32 e_item_string_advance = 90029048;								// è¿›é˜¶å¤±è´¥
+	const int32 e_item_string_upgrade_no_down = 90029049;						// å¼ºåŒ–å¤±è´¥,ä¸é™çº§
+	const int32 e_item_string_upgrade_down = 90029050;							// å¼ºåŒ–å¤±è´¥,é™çº§
+	const int32 e_item_string_item_use_in_cd = 90029051;						// é“å…·CDä¸­ï¼Œæ— æ³•ä½¿ç”¨
+	const int32 e_item_string_money = 90029052;									// é‡‘å¸ä¸è¶³
+	const int32 e_item_string_jewel = 90029053;									// é’»çŸ³ä¸è¶³
+	const int32 e_item_string_tinder_point_not_enough = 90095310;				// ç«ç§ç‚¹æ•°ä¸è¶³
+	const int32 e_item_string_full_level = 90029054;							// ç­‰çº§å·²æ»¡
+	const int32 e_item_string_matirial_not_enough = 90029055;					// ç´ æä¸è¶³
+	const int32 e_item_string_chant_show_unactivate_wing = 90029514;			// æ— æ³•å¯ç”¨æœªæ¿€æ´»ç¿…è†€
+	const int32 e_item_string_had_this_shape_wing = 90029515;					// å·²æ‹¥æœ‰æ­¤å¤–å½¢ç¿…è†€
+	const int32 e_item_string_wing_block_full = 90029516;						// ç¿…è†€æ å·²æ»¡
+	const int32 e_item_string_auto_use_money_not_enough = 90305019;				// è‡ªåŠ¨è´­ä¹°ææ–™çš„é’±å¸ä¸è¶³
+	const int32 e_item_string_warlord_mount_cant_upgrade = 90305020;			// åŸä¸»åéª‘æ— æ³•å‡çº§
+	const int32 e_item_string_unlock_requirement_not_reach = 90305021;			// è§£é”æ¡ä»¶æœªæ»¡è¶³
+	const int32 e_item_string_cant_unlock_again = 90305022;						// ä¸èƒ½é‡å¤è§£é”
+	const int32 e_item_string_have_no_illusion = 90305023;						// æ— æ­¤å¹»åŒ–
+	const int32 e_item_string_cant_show_unlock_mount = 90305024;				// æ— æ³•å¯ç”¨æœªè§£é”åéª‘
+	const int32 e_item_string_mount_unlock = 90305025;							// æ­¤åéª‘æœªè§£é”
+	const int32 e_item_string_mount_illusion_unlock = 90305026;					// æ­¤åéª‘å¹»åŒ–æœªè§£é”
+	const int32 e_item_string_cant_free_get_hope_item = 90305003;				// å…è´¹ç¥ˆç¦æ—¶é—´æ²¡åˆ°
+	const int32 e_item_string_bag_full = 90305038;								// èƒŒåŒ…å·²æ»¡
+	const int32 e_item_string_storage_full = 90209300;							// ä»“åº“å·²æ»¡
+	const int32 e_item_string_hopbag_full = 90090136;							// ç¥ˆæ„¿ä»“åº“å·²æ»¡
+	const int32 e_item_element_heart_refind_one_no_time = 90090195;				// å…ƒç´ ä¹‹å¿ƒå‰©ä½™æç‚¼æ¬¡æ•°ä¸è¶³,1æ¬¡
+	const int32 e_item_element_heart_refind_ten_no_time = 90090196;				// å…ƒç´ ä¹‹å¿ƒå‰©ä½™æç‚¼æ¬¡æ•°ä¸è¶³,10æ¬¡
+	const int32 e_item_get_new_wing_by_card = 90305049;							// é€šè¿‡ç¿…è†€å¡è·å¾—æ–°ç¿…è†€
+	const int32 e_item_inherit_point_lose_notice = 90029619;					// è‡ªåŠ¨ä¼ æ‰¿åŸ¹å…»ç‚¹æ•°æŸå¤±æç¤º
+	const int32 e_item_rear_item_get_notice = 90300020;							// ç¨€æœ‰ç‰©å“ï¼ˆçº¢è‰²ï¼‰è·å¾—æç¤º
+	const int32 e_item_sprite_equip_slot_full = 90305006;						// ç²¾çµè£…å¤‡æ§½å·²æ»¡
+	const int32 e_item_add_on_failed = 90090682;								// è¿½åŠ å¤±è´¥
+	const int32 e_item_string_not_belong_level = 90091304;					// åªå¯è´­ä¹°å½“å‰äººç‰©å¯¹åº”é˜¶æ®µçš„è¯æ°´
+	const int32 e_buff_cover_confirm = 90090512;								// buffè¦†ç›–ç¡®è®¤
+	const int32 e_buff_has_stronger = 90090513;									// æœ‰æ›´å¼ºæ•ˆæœäº†
+	const int32 e_buff_has_same = 90090514;										// æœ‰åŒç±»æ•ˆæœäº†
 
-	const int32 e_system_recruit_need_legion = 90090597;						// ¾üÍÅÕĞÄ¼ĞèÒª¾üÍÅ
-	const int32 e_item_tinder_star_level_not_enough = 90202996;					// »ğÖÖĞÇ¼¶²»×ã
-	const int32 e_item_tinder_skill_slot_not_enough = 90096416;					// »ğÖÖ¼¼ÄÜ²ÛÎ»²»×ã
+	const int32 e_system_recruit_need_legion = 90090597;						// å†›å›¢æ‹›å‹Ÿéœ€è¦å†›å›¢
+	const int32 e_item_tinder_star_level_not_enough = 90202996;					// ç«ç§æ˜Ÿçº§ä¸è¶³
+	const int32 e_item_tinder_skill_slot_not_enough = 90096416;					// ç«ç§æŠ€èƒ½æ§½ä½ä¸è¶³
 
-	///////////////////////////////ÎïÆ·»ñµÃÌáÊ¾Ç°×º///////////////////////////////////////////
-	//const int32 e_item_get_first_string_weapon = 90305001;						// ÎäÆ÷
-	//const int32 e_item_get_first_string_armor = 90305001;						// ·À¾ß
-	//const int32 e_item_get_first_string_mount = 90305001;						// ×øÆï
-	//const int32 e_item_get_first_string_expendable = 90305001;					// ÏûºÄÆ·
-	//const int32 e_item_get_first_string_stone = 90305001;						// ±¦Ê¯
-	//const int32 e_item_get_first_string_fashion = 90305001;						// Ê±×°
-	//const int32 e_item_get_first_string_quest = 90305001;						// ÈÎÎñ
-	//const int32 e_item_get_first_string_spirit = 90305001;						// ¾«Áé
-	//const int32 e_item_get_first_string_wing = 90305002;						// ³á°ò
-	const int32 e_item_get_first_string_common = 90090227;						// Í¨ÓÃ
+	///////////////////////////////ç‰©å“è·å¾—æç¤ºå‰ç¼€///////////////////////////////////////////
+	//const int32 e_item_get_first_string_weapon = 90305001;						// æ­¦å™¨
+	//const int32 e_item_get_first_string_armor = 90305001;						// é˜²å…·
+	//const int32 e_item_get_first_string_mount = 90305001;						// åéª‘
+	//const int32 e_item_get_first_string_expendable = 90305001;					// æ¶ˆè€—å“
+	//const int32 e_item_get_first_string_stone = 90305001;						// å®çŸ³
+	//const int32 e_item_get_first_string_fashion = 90305001;						// æ—¶è£…
+	//const int32 e_item_get_first_string_quest = 90305001;						// ä»»åŠ¡
+	//const int32 e_item_get_first_string_spirit = 90305001;						// ç²¾çµ
+	//const int32 e_item_get_first_string_wing = 90305002;						// ç¿…è†€
+	const int32 e_item_get_first_string_common = 90090227;						// é€šç”¨
 
-	////////////////////////////////////////×ªÖ°/////////////////////////////////////////////////
-	const int32 e_item_gradeup_use_item_not_enough = 90096509;				   // Í»ÆÆµÀ¾ß²»×ã
-	const int32 e_item_gradeup_use_level_not_enough = 90096510;				   // Î´´ïµ½Í»ÆÆµÈ¼¶
-	const int32 e_item_gradeup_use_mission_not_enough = 90096511;			  // ĞèÒªÏÈÍê³ÉÍ»ÆÆÈÎÎñ
+	////////////////////////////////////////è½¬èŒ/////////////////////////////////////////////////
+	const int32 e_item_gradeup_use_item_not_enough = 90096509;				   // çªç ´é“å…·ä¸è¶³
+	const int32 e_item_gradeup_use_level_not_enough = 90096510;				   // æœªè¾¾åˆ°çªç ´ç­‰çº§
+	const int32 e_item_gradeup_use_mission_not_enough = 90096511;			  // éœ€è¦å…ˆå®Œæˆçªç ´ä»»åŠ¡
 
-///////////////////////////////ÓÊ¼ş²Ù×÷½á¹ûÌáÊ¾///////////////////////////////////////////
-	const int32 e_mail_bag_full_cant_get = 90303001;							// ±³°üÒÑÂúÎŞ·¨ÌáÈ¡£¨µ¥¸öÁìÈ¡ÓÃ£©
-	const int32 e_mail_element_bag_full_cant_get = 90096110;					// ·ûÎÄ±³°üÒÑÂúÎŞ·¨ÌáÈ¡£¨µ¥¸öÁìÈ¡ÓÃ£©
-	const int32 e_mail_get_success = 90305004;									// ÌáÈ¡³É¹¦
-	const int32 e_mail_force_delete_confirm = 90303003;							// ÎŞ¸½¼şÓÊ¼şÒÑÉ¾³ı£¬Ê£ÓàÓÊ¼şÖĞÓĞÎ´ÁìÈ¡½±Àø£¬ÊÇ·ñÈ«²¿É¾³ı
-	const int32 e_mail_delete_sucess = 90303004;								// ÓÊ¼şÒÑÉ¾³ı
-	const int32 e_mail_no_selected_mail = 90303005;								// ÎŞÑ¡ÖĞÓÊ¼ş
-	const int32 e_mail_no_item_or_money = 90303006;								// ÎŞ¸½¼ş
-	const int32 e_mail_not_exist = 90303007;									// ÓÊ¼ş²»´æÔÚ
-	const int32 e_mail_bag_full_cant_continue_get = 90305005;					// ±³°üÒÑÂúÎŞ·¨¼ÌĞøÌáÈ¡£¨×Ô¶¯ÁìÈ¡ÓÃ£©
-	const int32 e_mail_has_no_readed_mail = 90303008;							// ÎŞÒÑ¶ÁÓÊ¼ş
+///////////////////////////////é‚®ä»¶æ“ä½œç»“æœæç¤º///////////////////////////////////////////
+	const int32 e_mail_bag_full_cant_get = 90303001;							// èƒŒåŒ…å·²æ»¡æ— æ³•æå–ï¼ˆå•ä¸ªé¢†å–ç”¨ï¼‰
+	const int32 e_mail_element_bag_full_cant_get = 90096110;					// ç¬¦æ–‡èƒŒåŒ…å·²æ»¡æ— æ³•æå–ï¼ˆå•ä¸ªé¢†å–ç”¨ï¼‰
+	const int32 e_mail_get_success = 90305004;									// æå–æˆåŠŸ
+	const int32 e_mail_force_delete_confirm = 90303003;							// æ— é™„ä»¶é‚®ä»¶å·²åˆ é™¤ï¼Œå‰©ä½™é‚®ä»¶ä¸­æœ‰æœªé¢†å–å¥–åŠ±ï¼Œæ˜¯å¦å…¨éƒ¨åˆ é™¤
+	const int32 e_mail_delete_sucess = 90303004;								// é‚®ä»¶å·²åˆ é™¤
+	const int32 e_mail_no_selected_mail = 90303005;								// æ— é€‰ä¸­é‚®ä»¶
+	const int32 e_mail_no_item_or_money = 90303006;								// æ— é™„ä»¶
+	const int32 e_mail_not_exist = 90303007;									// é‚®ä»¶ä¸å­˜åœ¨
+	const int32 e_mail_bag_full_cant_continue_get = 90305005;					// èƒŒåŒ…å·²æ»¡æ— æ³•ç»§ç»­æå–ï¼ˆè‡ªåŠ¨é¢†å–ç”¨ï¼‰
+	const int32 e_mail_has_no_readed_mail = 90303008;							// æ— å·²è¯»é‚®ä»¶
 
-///////////////////////////////ÁÄÌìÌáÊ¾///////////////////////////////////////////
-	const int32 e_chat_no_in_player = 90081001;									// ÇëÊäÈëË½ÁÄÍæ¼Ò
-	const int32 e_chat_is_empty = 90081002;										// ÏûÏ¢Îª¿Õ
-	const int32 e_chat_cant_find_player = 90081003;								// Ë½ÁÄ¶ÔÏó²»ÔÚÏß»òÃû³Æ´íÎó
-	const int32 e_chat_illegal_string = 90081004;								// º¬ÓĞ·Ç·¨×Ö·û
-	const int32 e_chat_cant_send_chat = 90096617;								// »¹²»ÄÜ·¢ÑÔ
-	const int32 e_chat_is_baning = 90081006;									// ÒÑ±»½ûÑÔ
-	const int32 e_chat_player_cant_receive_personal_chat = 90081007;			// ¸ÃÍæ¼Ò²»½ÓÊÜË½ÁÄ
-	const int32 e_chat_player_state_cant_chat = 90081008;						// ¸ÃÍæ¼Ò×´Ì¬ÎŞ·¨Ë½ÁÄ
-	const int32 e_chat_player_no_team = 90081009;								// ¸ÃÍæ¼ÒÃ»¶ÓÎé
-	const int32 e_chat_player_no_legion = 90081010;								// ¸ÃÍæ¼ÒÃ»¾üÍÅ
-	const int32 e_chat_too_long = 90081011;										// ÏûÏ¢Ì«³¤ÁË
-	const int32 e_chat_sender_no_legion = 90090419;								// Ã»ÓĞ¾üÍÅ
-	const int32 e_chat_my_position_text = 90090565;								// ÎÒµÄÎ»ÖÃ
-	const int32 e_chat_open_widget = 90090910;									// ´ò¿ª½çÃæ
-	const int32	e_chat_near_channel_level_limit = 90090687;						// ½ÇÉ«´ïµ½Ä³Ä³µÈ¼¶¿ÉÔÚ¸½½üÆµµÀ·¢ÑÔ
-	const int32	e_chat_world_channel_level_limit = 90090688;					// ½ÇÉ«´ïµ½Ä³Ä³µÈ¼¶¿ÉÔÚÊÀ½çÆµµÀ·¢ÑÔ
-	const int32	e_chat_radio_host_channel_level_limit = 90091005;				// ½ÇÉ«´ïµ½Ä³Ä³µÈ¼¶¿ÉÔÚÖ÷²¥ÆµµÀ·¢ÑÔ
-	const int32 e_chat_is_same_str = 90096616;									// ÏàÍ¬×Ö·û´®²»ÔÊĞí·¢ËÍ
-	const int32 e_chat_voice_message_forbidden_world = 90096659;				// ÓïÒôÏûÏ¢°üº¬Ãô¸Ğ×Ö·û ²»ÄÜ·¢ËÍ
+///////////////////////////////èŠå¤©æç¤º///////////////////////////////////////////
+	const int32 e_chat_no_in_player = 90081001;									// è¯·è¾“å…¥ç§èŠç©å®¶
+	const int32 e_chat_is_empty = 90081002;										// æ¶ˆæ¯ä¸ºç©º
+	const int32 e_chat_cant_find_player = 90081003;								// ç§èŠå¯¹è±¡ä¸åœ¨çº¿æˆ–åç§°é”™è¯¯
+	const int32 e_chat_illegal_string = 90081004;								// å«æœ‰éæ³•å­—ç¬¦
+	const int32 e_chat_cant_send_chat = 90096617;								// è¿˜ä¸èƒ½å‘è¨€
+	const int32 e_chat_is_baning = 90081006;									// å·²è¢«ç¦è¨€
+	const int32 e_chat_player_cant_receive_personal_chat = 90081007;			// è¯¥ç©å®¶ä¸æ¥å—ç§èŠ
+	const int32 e_chat_player_state_cant_chat = 90081008;						// è¯¥ç©å®¶çŠ¶æ€æ— æ³•ç§èŠ
+	const int32 e_chat_player_no_team = 90081009;								// è¯¥ç©å®¶æ²¡é˜Ÿä¼
+	const int32 e_chat_player_no_legion = 90081010;								// è¯¥ç©å®¶æ²¡å†›å›¢
+	const int32 e_chat_too_long = 90081011;										// æ¶ˆæ¯å¤ªé•¿äº†
+	const int32 e_chat_sender_no_legion = 90090419;								// æ²¡æœ‰å†›å›¢
+	const int32 e_chat_my_position_text = 90090565;								// æˆ‘çš„ä½ç½®
+	const int32 e_chat_open_widget = 90090910;									// æ‰“å¼€ç•Œé¢
+	const int32	e_chat_near_channel_level_limit = 90090687;						// è§’è‰²è¾¾åˆ°æŸæŸç­‰çº§å¯åœ¨é™„è¿‘é¢‘é“å‘è¨€
+	const int32	e_chat_world_channel_level_limit = 90090688;					// è§’è‰²è¾¾åˆ°æŸæŸç­‰çº§å¯åœ¨ä¸–ç•Œé¢‘é“å‘è¨€
+	const int32	e_chat_radio_host_channel_level_limit = 90091005;				// è§’è‰²è¾¾åˆ°æŸæŸç­‰çº§å¯åœ¨ä¸»æ’­é¢‘é“å‘è¨€
+	const int32 e_chat_is_same_str = 90096616;									// ç›¸åŒå­—ç¬¦ä¸²ä¸å…è®¸å‘é€
+	const int32 e_chat_voice_message_forbidden_world = 90096659;				// è¯­éŸ³æ¶ˆæ¯åŒ…å«æ•æ„Ÿå­—ç¬¦ ä¸èƒ½å‘é€
 
-	const int32 e_chat_fight_power_req = 90090566;								// Õ½Á¦ĞèÇó
-	const int32 e_chat_fight_power_no_req = 90090567;							// ÎŞÕ½Á¦ĞèÇó
-	const int32 e_chat_level_no_limit = 90090568;								// ÎŞÏŞÖÆ
-	const int32 e_chat_hunt_recruit = 90090569;									// á÷ÁÔ¿ª×é
-	const int32 e_chat_fuben_recruit = 90090570;								// ¸±±¾¿ª×é
+	const int32 e_chat_fight_power_req = 90090566;								// æˆ˜åŠ›éœ€æ±‚
+	const int32 e_chat_fight_power_no_req = 90090567;							// æ— æˆ˜åŠ›éœ€æ±‚
+	const int32 e_chat_level_no_limit = 90090568;								// æ— é™åˆ¶
+	const int32 e_chat_hunt_recruit = 90090569;									// ç‹©çŒå¼€ç»„
+	const int32 e_chat_fuben_recruit = 90090570;								// å‰¯æœ¬å¼€ç»„
 
-	const int32 e_chat_addressee_offline = 90300073;								//ĞÅÏ¢ÎŞ·¨ËÍ´ï£¬¶Ô·½²»ÔÚÏß
+	const int32 e_chat_addressee_offline = 90300073;								//ä¿¡æ¯æ— æ³•é€è¾¾ï¼Œå¯¹æ–¹ä¸åœ¨çº¿
 
-	const int32 e_chat_line_str = 90091025;										// Ïß
-	////////////////////////////////////////VIPÌáÊ¾/////////////////////////////////////////////
-	const int32 e_vip_this_level_not_open = 90090186;							// VIPµÈ¼¶Î´¿ªÆô
-	const int32 e_vip_item_alread_get = 90090187;								// VIPÀñ°üÒÑÁìÈ¡¹ı
-	const int32 e_vip_open_daily_mission_limit = 90090193;						// VIP¿ªÆôÈÕ³£ÈÎÎñÒ»¼üÍê³ÉµÈ¼¶ÌáÊ¾
-	const int32 e_vip_open_area_transfer = 90090194;							// VIP¿ªÆôÇøÓò´«ËÍµÈ¼¶ÌáÊ¾
-	const int32 e_vip_item_get_sucess = 90090188;								// VIPÀñ°üÁìÈ¡³É¹¦
-	const int32 e_recharge_sucess = 90090189;									// ³äÖµ³É¹¦
+	const int32 e_chat_line_str = 90091025;										// çº¿
+	////////////////////////////////////////VIPæç¤º/////////////////////////////////////////////
+	const int32 e_vip_this_level_not_open = 90090186;							// VIPç­‰çº§æœªå¼€å¯
+	const int32 e_vip_item_alread_get = 90090187;								// VIPç¤¼åŒ…å·²é¢†å–è¿‡
+	const int32 e_vip_open_daily_mission_limit = 90090193;						// VIPå¼€å¯æ—¥å¸¸ä»»åŠ¡ä¸€é”®å®Œæˆç­‰çº§æç¤º
+	const int32 e_vip_open_area_transfer = 90090194;							// VIPå¼€å¯åŒºåŸŸä¼ é€ç­‰çº§æç¤º
+	const int32 e_vip_item_get_sucess = 90090188;								// VIPç¤¼åŒ…é¢†å–æˆåŠŸ
+	const int32 e_recharge_sucess = 90090189;									// å……å€¼æˆåŠŸ
 
-	////////////////////////////////////////¸£ÀûÌáÊ¾/////////////////////////////////////////////
-	const int32 e_welfare_no_empty_slot = 90090165;								// ¸£Àû£¬°ü¸ñ×Ó²»¹»
-	const int32 e_welfare_cant_get = 90090197;									// ¸£Àû£¬Î´Âú×ãÁìÈ¡Ìõ¼ş
-	const int32 e_welfare_already_geted = 90090198;								// ¸£Àû£¬ÒÑÁìÈ¡¹ı
-	const int32 e_welfare_replacement_success = 90090167;						// ¸£Àû£¬ÔÂ¿¨²¹Áì³É¹¦
+	////////////////////////////////////////ç¦åˆ©æç¤º/////////////////////////////////////////////
+	const int32 e_welfare_no_empty_slot = 90090165;								// ç¦åˆ©ï¼ŒåŒ…æ ¼å­ä¸å¤Ÿ
+	const int32 e_welfare_cant_get = 90090197;									// ç¦åˆ©ï¼Œæœªæ»¡è¶³é¢†å–æ¡ä»¶
+	const int32 e_welfare_already_geted = 90090198;								// ç¦åˆ©ï¼Œå·²é¢†å–è¿‡
+	const int32 e_welfare_replacement_success = 90090167;						// ç¦åˆ©ï¼Œæœˆå¡è¡¥é¢†æˆåŠŸ
 
-	///////////////////////////////////////µØÍ¼ÌáÊ¾//////////////////////////////////////////////////
-	const int32 e_map_exp_level_cant = 90090228;								// µØÍ¼£¬µÈ¼¶²»×ã£¬ÎŞ·¨½øÈë
-	const int32 e_map_ancient_map_no_time = 90090229;							// µØÍ¼£¬¹ÅÕ½³¡Ê±¼äÒÑºÄ¾¡
-	const int32 e_raid_map_leave_prompt = 90095171;								// µØÍ¼  È·¶¨´«³ö½«Àë¿ª¸±±¾ ¶ªÊ§¸±±¾½ø¶È ÊÇ·ñ´«³ö
+	///////////////////////////////////////åœ°å›¾æç¤º//////////////////////////////////////////////////
+	const int32 e_map_exp_level_cant = 90090228;								// åœ°å›¾ï¼Œç­‰çº§ä¸è¶³ï¼Œæ— æ³•è¿›å…¥
+	const int32 e_map_ancient_map_no_time = 90090229;							// åœ°å›¾ï¼Œå¤æˆ˜åœºæ—¶é—´å·²è€—å°½
+	const int32 e_raid_map_leave_prompt = 90095171;								// åœ°å›¾  ç¡®å®šä¼ å‡ºå°†ç¦»å¼€å‰¯æœ¬ ä¸¢å¤±å‰¯æœ¬è¿›åº¦ æ˜¯å¦ä¼ å‡º
 
-	///////////////////////////////////////ÊÀ½çBossÌáÊ¾//////////////////////////////////////////////////
-	const int32 e_world_boss_create_1 = 90090339;								// ÒÑ¾­Ë¢ĞÂÔÚÁË
-	const int32 e_world_boss_create_2 = 90090340;								// Ïß£¬ÓÂÊ¿ÃÇÇëËÙÈ¥»÷É±
-	const int32 e_world_boss_killed_1 = 90090341;								// ÒÑÔÚ
-	const int32 e_world_boss_killed_2 = 90090342;								// Ïß±»
-	const int32 e_world_boss_killed_3 = 90090343;								// »÷É±
+	///////////////////////////////////////ä¸–ç•ŒBossæç¤º//////////////////////////////////////////////////
+	const int32 e_world_boss_create_1 = 90090339;								// å·²ç»åˆ·æ–°åœ¨äº†
+	const int32 e_world_boss_create_2 = 90090340;								// çº¿ï¼Œå‹‡å£«ä»¬è¯·é€Ÿå»å‡»æ€
+	const int32 e_world_boss_killed_1 = 90090341;								// å·²åœ¨
+	const int32 e_world_boss_killed_2 = 90090342;								// çº¿è¢«
+	const int32 e_world_boss_killed_3 = 90090343;								// å‡»æ€
 
-	///////////////////////////////////////³É³¤»ù½ğÌáÊ¾//////////////////////////////////////////////////
-	const int32 e_fund_already_purchased = 90090400;							// ²»ÄÜÖØ¸´¹ºÂò
-	const int32 e_fund_money_not_enough = 90090401;								// »õ±Ò²»×ã
-	const int32 e_fund_already_geted = 90090402;								// ÒÑÁìÈ¡¹ı
-	const int32 e_fund_cant_get = 90090403;										// Î´Âú×ãÁìÈ¡Ìõ¼ş
-	const int32 e_fund_not_purchase = 90090404;									// Ã»Âò
-	const int32 e_fund_purchase_success = 90090405;								// ¹ºÂò»ù½ğ³É¹¦
+	///////////////////////////////////////æˆé•¿åŸºé‡‘æç¤º//////////////////////////////////////////////////
+	const int32 e_fund_already_purchased = 90090400;							// ä¸èƒ½é‡å¤è´­ä¹°
+	const int32 e_fund_money_not_enough = 90090401;								// è´§å¸ä¸è¶³
+	const int32 e_fund_already_geted = 90090402;								// å·²é¢†å–è¿‡
+	const int32 e_fund_cant_get = 90090403;										// æœªæ»¡è¶³é¢†å–æ¡ä»¶
+	const int32 e_fund_not_purchase = 90090404;									// æ²¡ä¹°
+	const int32 e_fund_purchase_success = 90090405;								// è´­ä¹°åŸºé‡‘æˆåŠŸ
 
-	///////////////////////////////////////³ÆºÅÌáÊ¾//////////////////////////////////////////////////
-	const int32 e_title_have_geted = 90090336;									// ³ÆºÅ£¬ÒÑ¾­ÓµÓĞ¸ÃÓÀ¾ÃĞÔ³ÆºÅ£¬ÎŞ·¨Ê¹ÓÃ
-	const int32 e_title_get_title = 90090227;									// ³ÆºÅ£¬¹§Ï²»ñµÃ:
+	///////////////////////////////////////ç§°å·æç¤º//////////////////////////////////////////////////
+	const int32 e_title_have_geted = 90090336;									// ç§°å·ï¼Œå·²ç»æ‹¥æœ‰è¯¥æ°¸ä¹…æ€§ç§°å·ï¼Œæ— æ³•ä½¿ç”¨
+	const int32 e_title_get_title = 90090227;									// ç§°å·ï¼Œæ­å–œè·å¾—:
 
-	///////////////////////////////////////Ä¤°İÌáÊ¾//////////////////////////////////////////////////
-	const int32 e_worship_gold_not_enough = 90090415;							// Ä¤°İ£¬½ğ±Ò²»×ã
-	const int32 e_worship_diamond_not_enough = 90090416;						// Ä¤°İ£¬×êÊ¯²»×ã
-	const int32 e_worship_has_worship = 90090417;								// Ä¤°İ£¬Ä¤°İ´ÎÊıÓÃ¾¡
-	const int32 e_worship_success = 90090418;									// Ä¤°İ£¬Ä¤°İ³É¹¦
+	///////////////////////////////////////è†œæ‹œæç¤º//////////////////////////////////////////////////
+	const int32 e_worship_gold_not_enough = 90090415;							// è†œæ‹œï¼Œé‡‘å¸ä¸è¶³
+	const int32 e_worship_diamond_not_enough = 90090416;						// è†œæ‹œï¼Œé’»çŸ³ä¸è¶³
+	const int32 e_worship_has_worship = 90090417;								// è†œæ‹œï¼Œè†œæ‹œæ¬¡æ•°ç”¨å°½
+	const int32 e_worship_success = 90090418;									// è†œæ‹œï¼Œè†œæ‹œæˆåŠŸ
 
-	//////////////////////////////////////ÉÌµê/////////////////////////////////////////////////////
-	const int32 e_buy_goods_end_goods_num_is_zero = 90029522;						// ¹ºÂòÎïÆ·ÊıÁ¿Îª0
-	const int32 e_buy_goods_end_role_not_in_legion = 90090419;						// Íæ¼Ò²»ÔÚ¾üÍÅÖĞ
-	const int32 e_buy_goods_end_legion_level_limit = 90090420;						// ¾üÍÅµÈ¼¶²»×ã
-	const int32 e_buy_goods_end_state_num_limit = 90029521;							// ÊÛÂôÊıÁ¿ÒÑ´ïÉÏÏŞ
-	const int32 e_buy_goods_end_state_bag = 90090165;								// ±³°ü¸ñ×Ó²»¹»
-	const int32 e_buy_goods_end_need_item_not_enough = 90029524;					// ËùĞèÇ°ÖÃÎïÆ·²»×ã
-	const int32 e_buy_goods_end_state_money = 90029519;								// »õ±Ò²»×ã
-	const int32 e_buy_goods_end_success = 90029517;									// ¹ºÂò³É¹¦
-	const int32 e_buy_goods_end_need_contribution_not_enough = 90029526;			// ¹±Ï×¶È²»×ã
-	const int32 e_buy_goods_end_in_time_limit = 90200900;							// ²»ÔÚÏŞÊ±¹ºÂòÊ±¼ä
-
-
-	const int32 e_skill_unactivate = 90069110;										// ¼¼ÄÜÎ´½âËø
-	const int32 e_mount_unactivate = 90069111;										// ×øÆïÎ´½âËø
-	const int32 e_pk_mode_cant_change_back = 90090519;								// ²»ÄÜÇĞ»»PKÄ£Ê½µÄºó°ë¶Î£¨Ç°°ë¶ÎÊÇµØÍ¼Ãû£©
-
-	//////////////////////////////////////ºì°ü/////////////////////////////////////////////////////
-	const int32 e_red_bag_send_success = 90090549;									// ºì°ü·¢ËÍ³É¹¦
-	const int32 e_red_bag_no_more_space = 90090550;									// ·şÎñ¶Ëºì°üÈİÁ¿ÒÑÂú
-	const int32 e_red_bag_refund_mail_text = 90090551;								// ºì°ü·¢ËÍÊ§°ÜÍË¿îÓÊ¼şÕıÎÄ
-	const int32 e_red_bag_no_more_free = 90090552;									// Ãâ·Ñºì°ü´ÎÊıÒÑºÄ¾¡
-	const int32 e_red_bag_alread_done = 90090553;									// ºì°üÒÑ±»Áì¹â
-	const int32 e_red_bag_get_success = 90090554;									// ºì°üÁìÈ¡³É¹¦
-	const int32 e_red_bag_cant_draw_again = 90090557;								// ºì°ü²»¿ÉÖØ¸´ÁìÈ¡
-	const int32 e_red_bag_get_legion_success = 90095205;							// ¾üÍÅºì°ü·¢ËÍ³É¹¦
-	const int32 e_red_bag_get_globel_success = 90095206;							// È«·şºì°ü·¢ËÍ³É¹¦
-	const int32 e_red_bag_get_vip_success = 90095220;								// VIPºì°ü·¢ËÍ³É¹¦
+	//////////////////////////////////////å•†åº—/////////////////////////////////////////////////////
+	const int32 e_buy_goods_end_goods_num_is_zero = 90029522;						// è´­ä¹°ç‰©å“æ•°é‡ä¸º0
+	const int32 e_buy_goods_end_role_not_in_legion = 90090419;						// ç©å®¶ä¸åœ¨å†›å›¢ä¸­
+	const int32 e_buy_goods_end_legion_level_limit = 90090420;						// å†›å›¢ç­‰çº§ä¸è¶³
+	const int32 e_buy_goods_end_state_num_limit = 90029521;							// å”®å–æ•°é‡å·²è¾¾ä¸Šé™
+	const int32 e_buy_goods_end_state_bag = 90090165;								// èƒŒåŒ…æ ¼å­ä¸å¤Ÿ
+	const int32 e_buy_goods_end_need_item_not_enough = 90029524;					// æ‰€éœ€å‰ç½®ç‰©å“ä¸è¶³
+	const int32 e_buy_goods_end_state_money = 90029519;								// è´§å¸ä¸è¶³
+	const int32 e_buy_goods_end_success = 90029517;									// è´­ä¹°æˆåŠŸ
+	const int32 e_buy_goods_end_need_contribution_not_enough = 90029526;			// è´¡çŒ®åº¦ä¸è¶³
+	const int32 e_buy_goods_end_in_time_limit = 90200900;							// ä¸åœ¨é™æ—¶è´­ä¹°æ—¶é—´
 
 
-	//////////////////////////////////////¾º¼¼³¡/////////////////////////////////////////////////////
-	const int32 e_arena_match_success = 90090573;									// Æ¥Åä³É¹¦
-	const int32 e_arena_no_player = 90090574;										// Íæ¼Ò²»´æÔÚ
-	const int32 e_arena_challenge_times_not_enough = 90090575;						// ÌôÕ½´ÎÊı²»×ã
-	const int32 e_arena_challenge_is_colling = 90090576;							// ÌôÕ½ÀäÈ´ÖĞ
-	const int32 e_arena_target_is_challenging = 90090577;							// ¸ÃÍæ¼ÒÕıÔÚÌôÕ½ÖĞ
-	const int32 e_arena_target_pos_is_changed = 90090580;							// ¸ÃÍæ¼ÒÅÅÃûÒÑ¸Ä±ä£¬ÇëË¢ĞÂºóÖØÊÔ
-	const int32 e_arena_self_is_challenging = 90095251;								// ×Ô¼ºÕıÔÚ±»ÌôÕ½ÖĞ
-	const int32 e_arena_self_pos_is_changed = 90095250;								// ×Ô¼ºÅÅÃûÒÑ¸Ä±ä£¬ÇëË¢ĞÂºóÖØÊÔ
-	const int32 e_arena_mopping_no_times = 90305028;								// ´ÎÊıÒÑÂúÎŞ·¨É¨µ´
+	const int32 e_skill_unactivate = 90069110;										// æŠ€èƒ½æœªè§£é”
+	const int32 e_mount_unactivate = 90069111;										// åéª‘æœªè§£é”
+	const int32 e_pk_mode_cant_change_back = 90090519;								// ä¸èƒ½åˆ‡æ¢PKæ¨¡å¼çš„ååŠæ®µï¼ˆå‰åŠæ®µæ˜¯åœ°å›¾åï¼‰
+
+	//////////////////////////////////////çº¢åŒ…/////////////////////////////////////////////////////
+	const int32 e_red_bag_send_success = 90090549;									// çº¢åŒ…å‘é€æˆåŠŸ
+	const int32 e_red_bag_no_more_space = 90090550;									// æœåŠ¡ç«¯çº¢åŒ…å®¹é‡å·²æ»¡
+	const int32 e_red_bag_refund_mail_text = 90090551;								// çº¢åŒ…å‘é€å¤±è´¥é€€æ¬¾é‚®ä»¶æ­£æ–‡
+	const int32 e_red_bag_no_more_free = 90090552;									// å…è´¹çº¢åŒ…æ¬¡æ•°å·²è€—å°½
+	const int32 e_red_bag_alread_done = 90090553;									// çº¢åŒ…å·²è¢«é¢†å…‰
+	const int32 e_red_bag_get_success = 90090554;									// çº¢åŒ…é¢†å–æˆåŠŸ
+	const int32 e_red_bag_cant_draw_again = 90090557;								// çº¢åŒ…ä¸å¯é‡å¤é¢†å–
+	const int32 e_red_bag_get_legion_success = 90095205;							// å†›å›¢çº¢åŒ…å‘é€æˆåŠŸ
+	const int32 e_red_bag_get_globel_success = 90095206;							// å…¨æœçº¢åŒ…å‘é€æˆåŠŸ
+	const int32 e_red_bag_get_vip_success = 90095220;								// VIPçº¢åŒ…å‘é€æˆåŠŸ
 
 
-	//////////////////////////////////////ÔªËØÖ®ĞÄ/////////////////////////////////////////////////////
-	const int32 e_element_heart_no_pound = 90305045;								// ÔªËØ·ÛÄ©²»×ã
-	const int32 e_element_heart_equip_same_type = 90305046;							// ×°±¸ÏàÍ¬ÀàĞÍ
-	const int32 e_element_heart_equip_full = 90305047;								// ×°±¸Î»ÒÑÂú
-	const int32 e_element_heart_summon_high = 90305048;								// ³éÈ¡×éÊı¹ı¸ß
-	const int32 e_element_heart_no_summon_num = 90305050;							// ÕÙ»½´ÎÊıÓÃ¾¡
-	const int32	e_element_heart_bag_full = 90090917;								// ÔªËØÖ®ĞÄ±³°üÒÑÂú
-
-	//////////////////////////////////////ĞÅÑöÏµ½y/////////////////////////////////////////////////////
-	const int32 e_belief_string_ji_huo_fail = 90060059;								// ¼¤»îÊ§”¡
-	const int32 e_belief_string_ji_huo_succeed = 90060058;							//¼¤»î³É¹¦
-
-	//////////////////////////////////////Ö°ÒµÃû³Æ/////////////////////////////////////////////////////
-	const int32 e_class_type_string_all = 90060040;										// È«Ö°Òµ
-	const int32 e_class_type_string_barserker = 90060041;									// Õ½Ê¿
-	const int32 e_class_type_string_wizard = 90060042;										// ·¨Ê¦
-	const int32 e_class_type_string_guardian = 90060043;									// ÆïÊ¿
-	const int32 e_class_type_string_assassinator = 90060044;								// ´Ì¿Í
-	const int32 e_class_type_string_ranger = 90060045;										// ÓÎÏÀ
-
-	//////////////////////////////////////Í¼¼ø/////////////////////////////////////////////////////
-	const int32 e_psyche_cant_sell_before_submit_finish = 90090653;							// ¾«ÆÇÔÚ»ØÊÕ¹»ÊıÇ°²»µÃ³öÊÛ
-
-	const int32 e_active_has_not_start = 90090360;										// »î¶¯ÉĞÎ´¿ªÆô
-
-	//////////////////////////////////////ÀëÏßÓïÒôÌáÊ¾/////////////////////////////////////////////////////
-	const int32 e_voice_record_time_not_enough = 90090831;								// ÓïÒôÊ±¼ä²»×ã1s ·¢ËÍÊ§°Ü
-	const int32 e_voice_record_time_over = 90090832;									// ÓïÒôÊ±¼ä³¬¹ı15s ×Ô¶¯·¢ËÍ
-	const int32 e_voice_user_canel = 90090839;											// ÊÖÖ¸»¬¿ª ÓïÒô·¢ËÍÈ¡Ïû
-	const int32 e_voice_not_valid = 90090835;											// Î´¼ì²âµ½ÓĞĞ§ÉùÒô ·¢ËÍÊ§°Ü
-	const int32 e_voice_send_too_fast = 90090841;										// ÓïÒô·¢ËÍ¹ı¿ì ÇëÉÔµÈÆ¬¿Ì
-	const int32 e_world_message_send_too_fast = 90095172;										// ÏûÏ¢·¢ËÍ¹ı¿ì  Çë sºóÔÙÊÔ
-
-	//////////////////////////////////////½»Ò×ĞĞ/////////////////////////////////////////////////////
-	const int32 e_auction_sell_success = 90095107;										// ÉÏ¼Ü³É¹¦
-	const int32 e_auction_sell_failed = 90095108;										// ÉÏ¼ÜÊ§°Ü
-	const int32 e_auction_sell_slot_full = 90095109;									// ³öÊÛ²ÛÒÑÂú
-	const int32 e_auction_sell_finish_success = 90095100;								// ÎïÆ·ÒÑ³É¹¦ÊÛ³ö
-
-	const int32 e_auction_purchase_failed = 90095101;									// ¹ºÂòÊ§°Ü
-	const int32 e_auction_purchase_already_purchased = 90095106;						// ÎïÆ·ÒÑÊÛ³ö
-	const int32 e_auction_purchase_success = 90095099;									// ¹ºÂò³É¹¦
-
-	const int32 e_auction_cancel_sell_already_sell = 90095116;							// È¡ÏûÊ§°ÜÒÑÊÛ³ö
-	const int32 e_auction_cancel_sell_success = 90095120;								// È¡Ïû³É¹¦
-
-	const int32 e_auction_bid_money_changed = 90095149;									// ¾º±ê¼Û¸ñ±ä¶¯
-	const int32 e_auction_bid_success = 90095148;										// ¾º±ê³É¹¦
-	const int32 e_auction_bid_are_overtaken = 90300214;									// ¾º±ê±»³¬¹ı
-
-	//////////////////////////////////////×´Ì¬ÇĞ»»ÏŞÖÆ/////////////////////////////////////////////////////
-	const int32 e_equip_off_mount_limite = 90095246;									// ×øÆï½â³ıÏŞÖÆ
-	const int32 e_equip_off_wing_limite = 90095247;										// ÓğÒí½â³ıÏŞÖÆ
-
-	//////////////////////////////////////×´Ì¬ÇĞ»»ÏŞÖÆ/////////////////////////////////////////////////////
-	const int32 e_target_cannot_path_find_toptip = 90090999;							// Ä¿±êÎ»ÖÃÎŞ·¨×Ô¶¯Ñ°Â· ÇëÊÖ¶¯Ç°Íù
-	const int32 e_path_finding = 90091000;												// ×Ô¶¯Ñ°Â·ÖĞ
-	const int32 e_target_cant_path_find_mp_fly_up = 90091001;							// ×Ô¶¯Ñ°Â·ÖĞ Ä¿±êÎ»ÖÃÎŞ·¨µ½´ï			Æğ·ÉÊÜ×èÏÂ·½ÌáÊ¾
-	const int32 e_target_cant_path_find_mp_fly_down = 90091022;							// ×Ô¶¯Ñ°Â·ÖĞ Ä¿±êÎ»ÖÃÎŞ·¨µ½´ï			ÏÂ½µÊÜ×èÏÂ·½ÌáÊ¾
-	const int32 e_setting_level_cannot_lower_than_target = 90091002;					// ÉèÖÃµÈ¼¶²»ÄÜµÍÓÚµ±Ç°µÈ¼¶
-	const int32 e_follow_captain_can_not_do_this = 90091002;							// ÕıÔÚ¸úËæ¶Ó³¤ ÎŞ·¨½øĞĞ¸Ã²Ù×÷
-
-	//////////////////////////////////////ÇĞÏß/////////////////////////////////////////////////////
-	const int32 e_is_chane_line_cannot_do_this = 90091024;								// Õı´¦ÓÚÇĞ»»ÏßÂ·ÖĞ ÎŞ·¨ÕâÑù×ö
-	const int32 e_not_same_line_need_change_line = 90070061;							// Ä¿±êËù´¦²»ÔÚµ±Ç°ÏßÂ· ÊÇ·ñÇĞ»»ÏßÂ·
-	const int32 e_team_call_boss_not_same_one_tip = 90070058;							// Ä¿±êËùÔÚµØÎª»ìÂÒÖ®µØ ÊÇ·ñ¸ü»»µ½»ìÂÒÖ®µØ
+	//////////////////////////////////////ç«æŠ€åœº/////////////////////////////////////////////////////
+	const int32 e_arena_match_success = 90090573;									// åŒ¹é…æˆåŠŸ
+	const int32 e_arena_no_player = 90090574;										// ç©å®¶ä¸å­˜åœ¨
+	const int32 e_arena_challenge_times_not_enough = 90090575;						// æŒ‘æˆ˜æ¬¡æ•°ä¸è¶³
+	const int32 e_arena_challenge_is_colling = 90090576;							// æŒ‘æˆ˜å†·å´ä¸­
+	const int32 e_arena_target_is_challenging = 90090577;							// è¯¥ç©å®¶æ­£åœ¨æŒ‘æˆ˜ä¸­
+	const int32 e_arena_target_pos_is_changed = 90090580;							// è¯¥ç©å®¶æ’åå·²æ”¹å˜ï¼Œè¯·åˆ·æ–°åé‡è¯•
+	const int32 e_arena_self_is_challenging = 90095251;								// è‡ªå·±æ­£åœ¨è¢«æŒ‘æˆ˜ä¸­
+	const int32 e_arena_self_pos_is_changed = 90095250;								// è‡ªå·±æ’åå·²æ”¹å˜ï¼Œè¯·åˆ·æ–°åé‡è¯•
+	const int32 e_arena_mopping_no_times = 90305028;								// æ¬¡æ•°å·²æ»¡æ— æ³•æ‰«è¡
 
 
-	//////////////////////////////////////½»»¥/////////////////////////////////////////////////////
-	const int32 e_target_not_in_range = 90091024;										// Ä¿±ê²»ÔÚ·¶Î§ÄÚ
-	const int32 e_target_can_not_accept_request = 90070061;								// ¶Ô·½ÔİÊ±ÎŞ·¨½ÓÊÕÑûÇë
-	const int32 e_ride_state_can_not_interaction = 90070058;							// Æï×øÆï×´Ì¬ÏÂ²»ÄÜ½»»¥
-	const int32 e_can_not_path_find_to_target = 90091024;								// ÎŞ·¨Õı³£Ñ°Â·ÖÁÄ¿±ê
-	const int32 e_interaction_state_can_not_do_this = 90070061;							// ½»»¥×´Ì¬ÏÂ²»ÄÜÕâÃ´×ö
-	const int32 e_double_state_can_not_do_this = 90070058;								// Ë«Æï×´Ì¬ÏÂ²»ÄÜÕâÃ´×ö
-	const int32 e_interaction_cd_please_wait = 90091024;								// ÑûÇëÀäÈ´ÖĞ ÇëÉÔºóÔÙÊÔ
-	const int32 e_target_is_accept_other_request = 90070061;							// ¶Ô·½ÕıÔÚ½ÓÊÕËûÈËÑûÇë
-	const int32 e_target_reject_request = 90070058;										// ¶Ô·½¾Ü¾øÑûÇë
-	const int32 e_target_not_notice_your_request = 90091024;							// ¶Ô·½Î´×¢ÒâÄãµÄÑûÇë
-	const int32 e_can_not_send_request = 90070061;										// ÎŞ·¨·¢ËÍÑûÇë
+	//////////////////////////////////////å…ƒç´ ä¹‹å¿ƒ/////////////////////////////////////////////////////
+	const int32 e_element_heart_no_pound = 90305045;								// å…ƒç´ ç²‰æœ«ä¸è¶³
+	const int32 e_element_heart_equip_same_type = 90305046;							// è£…å¤‡ç›¸åŒç±»å‹
+	const int32 e_element_heart_equip_full = 90305047;								// è£…å¤‡ä½å·²æ»¡
+	const int32 e_element_heart_summon_high = 90305048;								// æŠ½å–ç»„æ•°è¿‡é«˜
+	const int32 e_element_heart_no_summon_num = 90305050;							// å¬å”¤æ¬¡æ•°ç”¨å°½
+	const int32	e_element_heart_bag_full = 90090917;								// å…ƒç´ ä¹‹å¿ƒèƒŒåŒ…å·²æ»¡
 
-	//////////////////////////////////////ÓïÒô/////////////////////////////////////////////////////
-	const int32 e_agora_in_other_channel_can_not_change = 90091134;						// ÔÚÆäËûÓïÒôÁÄÌìÖĞ£¬ÎŞ·¨ÇĞ»»
-	const int32 e_agora_someone_join_channel = 90091135;								// Ä³ÈË¼ÓÈëÁËÊµÊ±ÓïÒô
-	const int32 e_agora_someone_leave_channel = 90091136;								// Ä³ÈËÀë¿ªÁËÊµÊ±ÓïÒô
-	const int32 e_agora_in_voice_can_not_do_it = 90091137;								// ÁÄÌìÖĞ²»ÄÜÕâÑù×ö
-	const int32 e_agora_inteive_join_legion_channel_noteice = 90091138;					// ÊÇ·ñ¼ÓÈë¾üÍÅÆµµÀÊµÊ±ÓïÒô
-	const int32 e_agora_inteive_join_team_channel_noteice = 90091139;					// ÊÇ·ñ¼ÓÈë¶ÓÎéÆµµÀÊµÊ±ÓïÒô
-	const int32 e_agora_channel_become_radio = 90202807;								// ÒÑ½«ÄúÓïÒôÆµµÀÇĞ»»ÎªÖ÷²¥ÆµµÀ
-	const int32 e_agora_channel_become_legion = 90202808;								// ÒÑ½«ÄúÓïÒôÆµµÀÇĞ»»Îª¾üÍÅÆµµÀ
-	const int32 e_agora_channel_become_team = 90202809;									// ÒÑ½«ÄúÓïÒôÆµµÀÇĞ»»Îª¶ÓÎéÆµµÀ
-	//////////////////////////////////////ÆäËû/////////////////////////////////////////////////////
-	const int32 e_operate_too_fast = 90095223;											// ²Ù×÷¹ı¿ì
-	const int32 e_copy_finish = 90305344;												// ÒÑ¸´ÖÆ
-	const int32 e_paste_finish = 90305613;												// ÒÑÕ³Ìù
+	//////////////////////////////////////ä¿¡ä»°ç³»çµ±/////////////////////////////////////////////////////
+	const int32 e_belief_string_ji_huo_fail = 90060059;								// æ¿€æ´»å¤±æ•—
+	const int32 e_belief_string_ji_huo_succeed = 90060058;							//æ¿€æ´»æˆåŠŸ
+
+	//////////////////////////////////////èŒä¸šåç§°/////////////////////////////////////////////////////
+	const int32 e_class_type_string_all = 90060040;										// å…¨èŒä¸š
+	const int32 e_class_type_string_barserker = 90060041;									// æˆ˜å£«
+	const int32 e_class_type_string_wizard = 90060042;										// æ³•å¸ˆ
+	const int32 e_class_type_string_guardian = 90060043;									// éª‘å£«
+	const int32 e_class_type_string_assassinator = 90060044;								// åˆºå®¢
+	const int32 e_class_type_string_ranger = 90060045;										// æ¸¸ä¾ 
+
+	//////////////////////////////////////å›¾é‰´/////////////////////////////////////////////////////
+	const int32 e_psyche_cant_sell_before_submit_finish = 90090653;							// ç²¾é­„åœ¨å›æ”¶å¤Ÿæ•°å‰ä¸å¾—å‡ºå”®
+
+	const int32 e_active_has_not_start = 90090360;										// æ´»åŠ¨å°šæœªå¼€å¯
+
+	//////////////////////////////////////ç¦»çº¿è¯­éŸ³æç¤º/////////////////////////////////////////////////////
+	const int32 e_voice_record_time_not_enough = 90090831;								// è¯­éŸ³æ—¶é—´ä¸è¶³1s å‘é€å¤±è´¥
+	const int32 e_voice_record_time_over = 90090832;									// è¯­éŸ³æ—¶é—´è¶…è¿‡15s è‡ªåŠ¨å‘é€
+	const int32 e_voice_user_canel = 90090839;											// æ‰‹æŒ‡æ»‘å¼€ è¯­éŸ³å‘é€å–æ¶ˆ
+	const int32 e_voice_not_valid = 90090835;											// æœªæ£€æµ‹åˆ°æœ‰æ•ˆå£°éŸ³ å‘é€å¤±è´¥
+	const int32 e_voice_send_too_fast = 90090841;										// è¯­éŸ³å‘é€è¿‡å¿« è¯·ç¨ç­‰ç‰‡åˆ»
+	const int32 e_world_message_send_too_fast = 90095172;										// æ¶ˆæ¯å‘é€è¿‡å¿«  è¯· såå†è¯•
+
+	//////////////////////////////////////äº¤æ˜“è¡Œ/////////////////////////////////////////////////////
+	const int32 e_auction_sell_success = 90095107;										// ä¸Šæ¶æˆåŠŸ
+	const int32 e_auction_sell_failed = 90095108;										// ä¸Šæ¶å¤±è´¥
+	const int32 e_auction_sell_slot_full = 90095109;									// å‡ºå”®æ§½å·²æ»¡
+	const int32 e_auction_sell_finish_success = 90095100;								// ç‰©å“å·²æˆåŠŸå”®å‡º
+
+	const int32 e_auction_purchase_failed = 90095101;									// è´­ä¹°å¤±è´¥
+	const int32 e_auction_purchase_already_purchased = 90095106;						// ç‰©å“å·²å”®å‡º
+	const int32 e_auction_purchase_success = 90095099;									// è´­ä¹°æˆåŠŸ
+
+	const int32 e_auction_cancel_sell_already_sell = 90095116;							// å–æ¶ˆå¤±è´¥å·²å”®å‡º
+	const int32 e_auction_cancel_sell_success = 90095120;								// å–æ¶ˆæˆåŠŸ
+
+	const int32 e_auction_bid_money_changed = 90095149;									// ç«æ ‡ä»·æ ¼å˜åŠ¨
+	const int32 e_auction_bid_success = 90095148;										// ç«æ ‡æˆåŠŸ
+	const int32 e_auction_bid_are_overtaken = 90300214;									// ç«æ ‡è¢«è¶…è¿‡
+
+	//////////////////////////////////////çŠ¶æ€åˆ‡æ¢é™åˆ¶/////////////////////////////////////////////////////
+	const int32 e_equip_off_mount_limite = 90095246;									// åéª‘è§£é™¤é™åˆ¶
+	const int32 e_equip_off_wing_limite = 90095247;										// ç¾½ç¿¼è§£é™¤é™åˆ¶
+
+	//////////////////////////////////////çŠ¶æ€åˆ‡æ¢é™åˆ¶/////////////////////////////////////////////////////
+	const int32 e_target_cannot_path_find_toptip = 90090999;							// ç›®æ ‡ä½ç½®æ— æ³•è‡ªåŠ¨å¯»è·¯ è¯·æ‰‹åŠ¨å‰å¾€
+	const int32 e_path_finding = 90091000;												// è‡ªåŠ¨å¯»è·¯ä¸­
+	const int32 e_target_cant_path_find_mp_fly_up = 90091001;							// è‡ªåŠ¨å¯»è·¯ä¸­ ç›®æ ‡ä½ç½®æ— æ³•åˆ°è¾¾			èµ·é£å—é˜»ä¸‹æ–¹æç¤º
+	const int32 e_target_cant_path_find_mp_fly_down = 90091022;							// è‡ªåŠ¨å¯»è·¯ä¸­ ç›®æ ‡ä½ç½®æ— æ³•åˆ°è¾¾			ä¸‹é™å—é˜»ä¸‹æ–¹æç¤º
+	const int32 e_setting_level_cannot_lower_than_target = 90091002;					// è®¾ç½®ç­‰çº§ä¸èƒ½ä½äºå½“å‰ç­‰çº§
+	const int32 e_follow_captain_can_not_do_this = 90091002;							// æ­£åœ¨è·Ÿéšé˜Ÿé•¿ æ— æ³•è¿›è¡Œè¯¥æ“ä½œ
+
+	//////////////////////////////////////åˆ‡çº¿/////////////////////////////////////////////////////
+	const int32 e_is_chane_line_cannot_do_this = 90091024;								// æ­£å¤„äºåˆ‡æ¢çº¿è·¯ä¸­ æ— æ³•è¿™æ ·åš
+	const int32 e_not_same_line_need_change_line = 90070061;							// ç›®æ ‡æ‰€å¤„ä¸åœ¨å½“å‰çº¿è·¯ æ˜¯å¦åˆ‡æ¢çº¿è·¯
+	const int32 e_team_call_boss_not_same_one_tip = 90070058;							// ç›®æ ‡æ‰€åœ¨åœ°ä¸ºæ··ä¹±ä¹‹åœ° æ˜¯å¦æ›´æ¢åˆ°æ··ä¹±ä¹‹åœ°
+
+
+	//////////////////////////////////////äº¤äº’/////////////////////////////////////////////////////
+	const int32 e_target_not_in_range = 90091024;										// ç›®æ ‡ä¸åœ¨èŒƒå›´å†…
+	const int32 e_target_can_not_accept_request = 90070061;								// å¯¹æ–¹æš‚æ—¶æ— æ³•æ¥æ”¶é‚€è¯·
+	const int32 e_ride_state_can_not_interaction = 90070058;							// éª‘åéª‘çŠ¶æ€ä¸‹ä¸èƒ½äº¤äº’
+	const int32 e_can_not_path_find_to_target = 90091024;								// æ— æ³•æ­£å¸¸å¯»è·¯è‡³ç›®æ ‡
+	const int32 e_interaction_state_can_not_do_this = 90070061;							// äº¤äº’çŠ¶æ€ä¸‹ä¸èƒ½è¿™ä¹ˆåš
+	const int32 e_double_state_can_not_do_this = 90070058;								// åŒéª‘çŠ¶æ€ä¸‹ä¸èƒ½è¿™ä¹ˆåš
+	const int32 e_interaction_cd_please_wait = 90091024;								// é‚€è¯·å†·å´ä¸­ è¯·ç¨åå†è¯•
+	const int32 e_target_is_accept_other_request = 90070061;							// å¯¹æ–¹æ­£åœ¨æ¥æ”¶ä»–äººé‚€è¯·
+	const int32 e_target_reject_request = 90070058;										// å¯¹æ–¹æ‹’ç»é‚€è¯·
+	const int32 e_target_not_notice_your_request = 90091024;							// å¯¹æ–¹æœªæ³¨æ„ä½ çš„é‚€è¯·
+	const int32 e_can_not_send_request = 90070061;										// æ— æ³•å‘é€é‚€è¯·
+
+	//////////////////////////////////////è¯­éŸ³/////////////////////////////////////////////////////
+	const int32 e_agora_in_other_channel_can_not_change = 90091134;						// åœ¨å…¶ä»–è¯­éŸ³èŠå¤©ä¸­ï¼Œæ— æ³•åˆ‡æ¢
+	const int32 e_agora_someone_join_channel = 90091135;								// æŸäººåŠ å…¥äº†å®æ—¶è¯­éŸ³
+	const int32 e_agora_someone_leave_channel = 90091136;								// æŸäººç¦»å¼€äº†å®æ—¶è¯­éŸ³
+	const int32 e_agora_in_voice_can_not_do_it = 90091137;								// èŠå¤©ä¸­ä¸èƒ½è¿™æ ·åš
+	const int32 e_agora_inteive_join_legion_channel_noteice = 90091138;					// æ˜¯å¦åŠ å…¥å†›å›¢é¢‘é“å®æ—¶è¯­éŸ³
+	const int32 e_agora_inteive_join_team_channel_noteice = 90091139;					// æ˜¯å¦åŠ å…¥é˜Ÿä¼é¢‘é“å®æ—¶è¯­éŸ³
+	const int32 e_agora_channel_become_radio = 90202807;								// å·²å°†æ‚¨è¯­éŸ³é¢‘é“åˆ‡æ¢ä¸ºä¸»æ’­é¢‘é“
+	const int32 e_agora_channel_become_legion = 90202808;								// å·²å°†æ‚¨è¯­éŸ³é¢‘é“åˆ‡æ¢ä¸ºå†›å›¢é¢‘é“
+	const int32 e_agora_channel_become_team = 90202809;									// å·²å°†æ‚¨è¯­éŸ³é¢‘é“åˆ‡æ¢ä¸ºé˜Ÿä¼é¢‘é“
+	//////////////////////////////////////å…¶ä»–/////////////////////////////////////////////////////
+	const int32 e_operate_too_fast = 90095223;											// æ“ä½œè¿‡å¿«
+	const int32 e_copy_finish = 90305344;												// å·²å¤åˆ¶
+	const int32 e_paste_finish = 90305613;												// å·²ç²˜è´´
 } 

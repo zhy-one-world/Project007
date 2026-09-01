@@ -1,5 +1,5 @@
 /********************************************************************
-  created: 2019Äê4ÔÂ4ÈÕ
+  created: 2019å¹´4æœˆ4æ—¥
   file base: cross_server_harry_def
   file ext: hpp
   author: zhangshuo
@@ -15,53 +15,53 @@ namespace faith
 {
 #pragma pack(push,1)
 
-	const int32 special_harry_mark = 10000000;			//ÌØÊâ²É¼¯¸øserveridÔö¼ÓÒ»¸ö¹Ì¶¨Öµ£¬±ê¼ÇÒ»ÏÂ
-	const int32 special_money_time = 900;				//ÌØÊâ²É¼¯´æÔÚÊ±³¤£¬sec
-	const int32 harry_map_id = 71211107;				//¿ç·şÂÓ¶áµØÍ¼ID
-	const int32 harry_map_first_spawn_id = 82072057;	//¿ç·şÂÓ¶áµØÍ¼µÚÒ»¸önpc spawnid
-	const int32 harry_special_buff = 10992046;			//²É¼¯µ½ÎïÆ·ĞèÒª¼ÓµÄbuff
-	const int32 pk_winner_first_spawn_id = 82072060;	//¿ç·şÖ°Òµ¾º¼¼µÚÒ»¸önpc spawnid
-	const int32 dp_save_max_server_num = 100;			//¿ç·şÂÓ¶á×î´ó´æ´¢·şÎñÆ÷ÊıÁ¿
+	const int32 special_harry_mark = 10000000;			//ç‰¹æ®Šé‡‡é›†ç»™serveridå¢åŠ ä¸€ä¸ªå›ºå®šå€¼ï¼Œæ ‡è®°ä¸€ä¸‹
+	const int32 special_money_time = 900;				//ç‰¹æ®Šé‡‡é›†å­˜åœ¨æ—¶é•¿ï¼Œsec
+	const int32 harry_map_id = 71211107;				//è·¨æœæ å¤ºåœ°å›¾ID
+	const int32 harry_map_first_spawn_id = 82072057;	//è·¨æœæ å¤ºåœ°å›¾ç¬¬ä¸€ä¸ªnpc spawnid
+	const int32 harry_special_buff = 10992046;			//é‡‡é›†åˆ°ç‰©å“éœ€è¦åŠ çš„buff
+	const int32 pk_winner_first_spawn_id = 82072060;	//è·¨æœèŒä¸šç«æŠ€ç¬¬ä¸€ä¸ªnpc spawnid
+	const int32 dp_save_max_server_num = 100;			//è·¨æœæ å¤ºæœ€å¤§å­˜å‚¨æœåŠ¡å™¨æ•°é‡
 
 	enum e_server_money
 	{
-		e_server_money_init,//³õÊ¼Öµ
-		e_server_money_minimum,//×îµÍÖµ
-		e_server_money_special,//ÌØÊâ²É¼¯´ÎÊı
+		e_server_money_init,//åˆå§‹å€¼
+		e_server_money_minimum,//æœ€ä½å€¼
+		e_server_money_special,//ç‰¹æ®Šé‡‡é›†æ¬¡æ•°
 		e_server_money_max
 	};
 
 	enum e_harry_branch_mission
 	{
-		e_harry_branch_mission_normal_harry_count,//ÆÕÍ¨ÂÓ¶áÍê³É´ÎÊı
-		e_harry_branch_mission_special_harry_count,//ÌØÊâÂÓ¶áÍê³É´ÎÊı
-		e_harry_branch_mission_kill_ct_count,//»÷É±±£ÎÀÕß´ÎÊı
-		e_harry_branch_mission_kill_t_count,//»÷É±ÂÓ¶áÕß´ÎÊı
-		e_harry_branch_mission_normal_harry_count_only_money,//ÆÕÍ¨ÂÓ¶áÍê³É´ÎÊı(ÒÔÏÂÊÇÖ»»ñµÃÂÓ¶á±ÒµÄ×î´ó´ÎÊı)
-		e_harry_branch_mission_special_harry_count_only_money,//ÌØÊâÂÓ¶áÍê³É´ÎÊı
-		e_harry_branch_mission_kill_ct_count_only_money,//»÷É±±£ÎÀÕß´ÎÊı
-		e_harry_branch_mission_kill_t_count_only_money,//»÷É±ÂÓ¶áÕß´ÎÊı
+		e_harry_branch_mission_normal_harry_count,//æ™®é€šæ å¤ºå®Œæˆæ¬¡æ•°
+		e_harry_branch_mission_special_harry_count,//ç‰¹æ®Šæ å¤ºå®Œæˆæ¬¡æ•°
+		e_harry_branch_mission_kill_ct_count,//å‡»æ€ä¿å«è€…æ¬¡æ•°
+		e_harry_branch_mission_kill_t_count,//å‡»æ€æ å¤ºè€…æ¬¡æ•°
+		e_harry_branch_mission_normal_harry_count_only_money,//æ™®é€šæ å¤ºå®Œæˆæ¬¡æ•°(ä»¥ä¸‹æ˜¯åªè·å¾—æ å¤ºå¸çš„æœ€å¤§æ¬¡æ•°)
+		e_harry_branch_mission_special_harry_count_only_money,//ç‰¹æ®Šæ å¤ºå®Œæˆæ¬¡æ•°
+		e_harry_branch_mission_kill_ct_count_only_money,//å‡»æ€ä¿å«è€…æ¬¡æ•°
+		e_harry_branch_mission_kill_t_count_only_money,//å‡»æ€æ å¤ºè€…æ¬¡æ•°
 		e_harry_branch_mission_max
 	};
 
 	enum e_harry_type
 	{
-		e_harry_type_normal_harry,//ÆÕÍ¨ÂÓ¶á
-		e_harry_type_special_harry,//ÌØÊâÂÓ¶á
-		e_harry_type_kill_ct,//»÷É±ÊØÎÀÕß
-		e_harry_type_kill_t,//»÷É±ÂÓ¶áÕß
+		e_harry_type_normal_harry,//æ™®é€šæ å¤º
+		e_harry_type_special_harry,//ç‰¹æ®Šæ å¤º
+		e_harry_type_kill_ct,//å‡»æ€å®ˆå«è€…
+		e_harry_type_kill_t,//å‡»æ€æ å¤ºè€…
 		e_harry_type_max
 	};
 
 	enum e_fake_type
 	{
-		e_fake_type_first_harry_player,	//ÂÓ¶áµÚÒ»Ãû
+		e_fake_type_first_harry_player,	//æ å¤ºç¬¬ä¸€å
 		e_fake_type_second_harry_player,
 		e_fake_type_third_harry_player,
-		e_fake_type_best_barserker,		//×îÇ¿¿ñÕ½Ê¿
-		e_fake_type_best_wizard,		//·¨Ê¦
-		e_fake_type_best_guardian,		//ÆïÊ¿
-		e_fake_type_best_assassinator,	//°µÉ±Õß
+		e_fake_type_best_barserker,		//æœ€å¼ºç‹‚æˆ˜å£«
+		e_fake_type_best_wizard,		//æ³•å¸ˆ
+		e_fake_type_best_guardian,		//éª‘å£«
+		e_fake_type_best_assassinator,	//æš—æ€è€…
 		e_fake_type_max
 	};
 

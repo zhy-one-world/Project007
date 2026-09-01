@@ -38,22 +38,22 @@ namespace faith
 	public:
 		void				pop_gm();
 		bool				pop_front();
-		void				login_complete(client_session* client_session_ptr);									// Íê³ÉµÇÂ½.
+		void				login_complete(client_session* client_session_ptr);									// å®Œæˆç™»é™†.
 		void				tick(const int64& new_time);
-		void				on_session_login(client_session* client_session_ptr, e_login_type_new login_type);			// µ÷ÓÃµ±£ºÕÊºÅÃÜÂëÑéÖ¤Íê±Ï£¬session ÇĞ»»Îª LOGIN_OK ×´Ì¬Ê±
-		void				on_session_logout(client_session* client_session_ptr, bool is_need_reduce_count = true);			// µ÷ÓÃµ±£ºsession ¶Ï¿ªÊ±,Èç¹ûsessionÔÚµÇÂ½¶ÓÁĞÖĞÔòÉ¾³ı,Èç¹ûsessinÒÑÔÚÓÎÏ·ÖĞ.Ôòµ÷ÓÃpop_front().
+		void				on_session_login(client_session* client_session_ptr, e_login_type_new login_type);			// è°ƒç”¨å½“ï¼šå¸å·å¯†ç éªŒè¯å®Œæ¯•ï¼Œsession åˆ‡æ¢ä¸º LOGIN_OK çŠ¶æ€æ—¶
+		void				on_session_logout(client_session* client_session_ptr, bool is_need_reduce_count = true);			// è°ƒç”¨å½“ï¼šsession æ–­å¼€æ—¶,å¦‚æœsessionåœ¨ç™»é™†é˜Ÿåˆ—ä¸­åˆ™åˆ é™¤,å¦‚æœsessinå·²åœ¨æ¸¸æˆä¸­.åˆ™è°ƒç”¨pop_front().
 
 		void				change_online_counter(int32 change_num) { m_online_counter += change_num; }
 		int32				get_online_limit() const			{ return init_session_max; }
 		int32				get_queue_length() const			{ return m_queued_client_list.size(); }
 		int32				get_online_counter() const				{ return m_online_counter; }
 	private:
-		int32				m_online_counter;								//	ÒÑÔÚÓÎÏ·ÖĞµÄÍæ¼Ò¼ÆÊı
-		int64				m_update_time_interval;							//	¸üĞÂ¼ÆÊ±
-		unit_index_list		m_queued_client_list;							//	Íæ¼Ò¶ÓÁĞ
+		int32				m_online_counter;								//	å·²åœ¨æ¸¸æˆä¸­çš„ç©å®¶è®¡æ•°
+		int64				m_update_time_interval;							//	æ›´æ–°è®¡æ—¶
+		unit_index_list		m_queued_client_list;							//	ç©å®¶é˜Ÿåˆ—
 
-		int32				m_max_login_normal_player;						//	ÆÕÍ¨Íæ¼Ò×î´óµÇÂ¼Êı
-		int32				m_max_login_player;								//	ËùÓĞÍæ¼Ò×î´óµÇÂ¼Êı
+		int32				m_max_login_normal_player;						//	æ™®é€šç©å®¶æœ€å¤§ç™»å½•æ•°
+		int32				m_max_login_player;								//	æ‰€æœ‰ç©å®¶æœ€å¤§ç™»å½•æ•°
 	};
 
 }

@@ -56,7 +56,7 @@ namespace faith
 				reply_relation.relation_array[i].relation_guid = sql_data[i].data_info.relation_guid;
 				strncpy_s(reply_relation.relation_array[i].relation_name, sql_data[i].data_info.relation_name, max_name_size);
 				
-				//¹ØÏµÊı¾İÖĞµÄÕ½Á¦Êı¾İ¸ü»»×Ö¶Î Ôö¼ÓĞÂ×Ö¶ÎÎª0Ê±½«ĞÂ×Ö¶ÎÉèÖÃÎª¾É×Ö¶Î
+				//å…³ç³»æ•°æ®ä¸­çš„æˆ˜åŠ›æ•°æ®æ›´æ¢å­—æ®µ å¢åŠ æ–°å­—æ®µä¸º0æ—¶å°†æ–°å­—æ®µè®¾ç½®ä¸ºæ—§å­—æ®µ
 				if (sql_data[i].data_info.gs_value <= 0)
 				{
 					reply_relation.relation_array[i].gs_value = sql_data[i].data_info.data_array[e_relation_data_gs];

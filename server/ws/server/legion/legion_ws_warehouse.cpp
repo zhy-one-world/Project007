@@ -26,7 +26,7 @@ namespace faith
 		m_legion_warehouse_log.clear();
 	}
 
-	// Ìí¼ÓÈÕÖ¾
+	// æ·»åŠ æ—¥å¿—
 	void legion_ws_warehouse::add_legion_log(const s_legion_warehouse_log& log, bool is_from_db) 
 	{
 		if (is_from_db)
@@ -35,7 +35,7 @@ namespace faith
 		}
 		else
 		{
-			//ÅĞ¶ÏÈİÁ¿ ³¬¹ıÈİÁ¿ ÏÈÉ¾³ıÊ±¼ä×îÔçµÄÄÇ¸ö ÔÙÌí¼Ó
+			//åˆ¤æ–­å®¹é‡ è¶…è¿‡å®¹é‡ å…ˆåˆ é™¤æ—¶é—´æœ€æ—©çš„é‚£ä¸ª å†æ·»åŠ 
 			if(m_legion_warehouse_log.size() >= max_legion_warehouse_log)
 			{
 				int64 min_time = utility::get_tick_count();
@@ -44,7 +44,7 @@ namespace faith
 						min_time = log.add_time;
 					}
 				}
-				//É¾³ıÊ±¼ä×îĞ¡µÄÄÇ¸öÔªËØ
+				//åˆ é™¤æ—¶é—´æœ€å°çš„é‚£ä¸ªå…ƒç´ 
 				std::list<s_legion_warehouse_log>::iterator ite;
 				for (ite = m_legion_warehouse_log.begin(); ite != m_legion_warehouse_log.end();){
 					if (ite->add_time == min_time){
@@ -64,10 +64,10 @@ namespace faith
 		}
 	}
 
-	// Ìí¼ÓµÀ¾ß»òÕß´ÓÊı¾İ¿âÖĞ¼ÓÔØµÀ¾ß
+	// æ·»åŠ é“å…·æˆ–è€…ä»æ•°æ®åº“ä¸­åŠ è½½é“å…·
 	bool legion_ws_warehouse::add_legion_warehouse(const s_legion_warehouse_info& legion_warehouse_info, bool is_from_db)
 	{
-		//²Ö¿âÒÑÂú
+		//ä»“åº“å·²æ»¡
 		if (get_legion_warehouse_count() == max_legion_warehouse_info)
 			return false;
 		if(is_from_db)
@@ -76,7 +76,7 @@ namespace faith
 		}
 		else
 		{
-			//ĞèÒª²éÖØ
+			//éœ€è¦æŸ¥é‡
 			if (!is_in_legion_warehouse(legion_warehouse_info.item_info.item_guid))
 			{
 				m_legion_warehouse_list.push_back(legion_warehouse_info);
@@ -85,7 +85,7 @@ namespace faith
 		return true;
 	}
 
-	// É¾³ı²Ö¿âÀïÃæµÄµÀ¾ß
+	// åˆ é™¤ä»“åº“é‡Œé¢çš„é“å…·
 	void legion_ws_warehouse::del_legion_warehouse(const guid_64& item_guid)
 	{
 		std::list<s_legion_warehouse_info>::iterator ite;
@@ -116,7 +116,7 @@ namespace faith
 		return item;
 	}
 
-	// ¼ì²é²Ö¿âÀïÃæÊÇ·ñÒÑ¾­´æÔÚ¸ÃµÀ¾ß
+	// æ£€æŸ¥ä»“åº“é‡Œé¢æ˜¯å¦å·²ç»å­˜åœ¨è¯¥é“å…·
 	bool legion_ws_warehouse::is_in_legion_warehouse(const guid_64& item_guid)
 	{
 		for (s_legion_warehouse_info& legion_warehouse_info : m_legion_warehouse_list)
@@ -129,7 +129,7 @@ namespace faith
 		return false;
 	}
 
-	// ·¢ËÍ²Ö¿âµÀ¾ßµ½¿Í»§¶Ë
+	// å‘é€ä»“åº“é“å…·åˆ°å®¢æˆ·ç«¯
 	void legion_ws_warehouse::send_item_list_to_client(uint64 role_guid)
 	{
 		client_session* session_ptr = client_session_mgr::getInstance().get_session(role_guid);
@@ -138,8 +138,8 @@ namespace faith
 			return;
 		}
 		legion_proto_req_legion_warehouse_item_info_end msg;
-		msg.set_is_final(0);// 0:Ã»ÓĞ½áÊø 1:½áÊø
-		msg.set_is_clean(0);// 0:ĞèÒªÇå¿Õ 1:²»ĞèÒª
+		msg.set_is_final(0);// 0:æ²¡æœ‰ç»“æŸ 1:ç»“æŸ
+		msg.set_is_clean(0);// 0:éœ€è¦æ¸…ç©º 1:ä¸éœ€è¦
 		int32 need_clear = 0;
 		for (s_legion_warehouse_info& legion_warehouse_info : m_legion_warehouse_list)
 		{
@@ -160,7 +160,7 @@ namespace faith
 		session_ptr->send_to_client(&msg, e_msgindex_s2c_get_legion_warehouse_item_info_end);
 	}
 
-	//·¢ËÍÈÕÖ¾
+	//å‘é€æ—¥å¿—
 	void legion_ws_warehouse::send_log_list_to_client(uint64 role_guid)
 	{
 		client_session* session_ptr = client_session_mgr::getInstance().get_session(role_guid);
@@ -181,17 +181,17 @@ namespace faith
 		session_ptr->send_to_client(&msg, e_msgindex_s2c_get_legion_warehouse_log_end);
 	}
 
-	//´æ´¢²Ù×÷
+	//å­˜å‚¨æ“ä½œ
 	void legion_ws_warehouse::operation_store_legion_warehouse(const cs2ws_legion_warehouse_operation& info)
 	{
 		int32 error_id = operation_store(info);
 
-		//´ÓĞÂ½«²Ö¿âµÄÊı¾İ·¢ËÍµ½Ç°¶Ë
+		//ä»æ–°å°†ä»“åº“çš„æ•°æ®å‘é€åˆ°å‰ç«¯
 		if (error_id <= 0) {
 			send_item_list_to_client(info.role_guid);
 		}
 
-		// ½«½á¹û·¢ËÍ¸øcs
+		// å°†ç»“æœå‘é€ç»™cs
 		ws2cs_legion_warehouse_operation msg;
 		msg.error_id = error_id;
 		msg.role_guid = info.role_guid;
@@ -204,26 +204,26 @@ namespace faith
 		}
 		player_session->send_to_cs(&msg, sizeof(msg));
 	}
-	// ´æ´¢µÀ¾ß
+	// å­˜å‚¨é“å…·
 	int32 legion_ws_warehouse::operation_store(const cs2ws_legion_warehouse_operation& info)
 	{
 		int32 error_id = 0;
-		// 1.²Ö¿âÈİÁ¿ÒÑÂú
+		// 1.ä»“åº“å®¹é‡å·²æ»¡
 		if (get_legion_warehouse_count() == max_legion_warehouse_info)
 			return e_legion_warehouse_is_full;
 
-		// Ìí¼Óµ½ÄÚ´æ
+		// æ·»åŠ åˆ°å†…å­˜
 		m_legion_warehouse_list.push_back(info.legion_warehouse_info);
-		// Ìí¼ÓÈÕÖ¾µ½ÄÚ´æ
+		// æ·»åŠ æ—¥å¿—åˆ°å†…å­˜
 		add_legion_log(info.legion_warehouse_log,false);
 
-		// ·¢ËÍ¹«¸æ
+		// å‘é€å…¬å‘Š
 		send_notice((e_legion_warehouse_operation_type)info.operation_type, info.role_guid, info.legion_warehouse_info.item_info.data_ary[e_item_info_info_id]);
 
 
 		save_legion_warehouse(info.legion_warehouse_info);
 		save_legion_warehouse_log(info.legion_warehouse_log);
-		// Ìí¼Óµ½Êı¾İ¿â
+		// æ·»åŠ åˆ°æ•°æ®åº“
 		return error_id;
 	}
 
@@ -240,19 +240,19 @@ namespace faith
 		msg.log = log;
 		ws_client::getInstance().send_to_dp(&msg, sizeof(msg));
 	}
-	//»ñÈ¡²Ù×÷
+	//è·å–æ“ä½œ
 	void legion_ws_warehouse::operation_out_legion_warehouse(const cs2ws_legion_warehouse_operation& info)
 	{
 		s_legion_warehouse_info temp_item = get_item(info.legion_warehouse_info.item_info.item_guid);
 
 		int32 error_id = operation_out(info);
 
-		//´ÓĞÂ½«²Ö¿âµÄÊı¾İ·¢ËÍµ½Ç°¶Ë
+		//ä»æ–°å°†ä»“åº“çš„æ•°æ®å‘é€åˆ°å‰ç«¯
 		if (error_id <= 0) {
 			send_item_list_to_client(info.role_guid);
 		}
 
-		// ½«½á¹û·¢ËÍ¸øcs
+		// å°†ç»“æœå‘é€ç»™cs
 		ws2cs_legion_warehouse_operation msg;
 		msg.error_id = error_id;
 		msg.role_guid = info.role_guid;
@@ -266,24 +266,24 @@ namespace faith
 		}
 		player_session->send_to_cs(&msg, sizeof(msg));
 	}
-	//»ñÈ¡µÀ¾ß
+	//è·å–é“å…·
 	int32 legion_ws_warehouse::operation_out(const cs2ws_legion_warehouse_operation& info)
 	{
 		int32 error_id = 0;
-		//1.¼ì²éÊÇ·ñ´æÔÚ¸ÃµÀ¾ß e_legion_not_has_item_error
+		//1.æ£€æŸ¥æ˜¯å¦å­˜åœ¨è¯¥é“å…· e_legion_not_has_item_error
 		if (!is_in_legion_warehouse(info.legion_warehouse_info.item_info.item_guid))
 			return e_legion_not_has_item_error;
 
-		// ´Ó¾üÍÅ²Ö¿âµÄÄÚ´æÖĞÒÆ³ı¸ÃµÀ¾ß
+		// ä»å†›å›¢ä»“åº“çš„å†…å­˜ä¸­ç§»é™¤è¯¥é“å…·
 		s_legion_warehouse_info temp_item = get_item(info.legion_warehouse_info.item_info.item_guid);
 		del_legion_warehouse(info.legion_warehouse_info.item_info.item_guid);
-		// Ìí¼ÓÈÕÖ¾µ½ÄÚ´æ
+		// æ·»åŠ æ—¥å¿—åˆ°å†…å­˜
 		add_legion_log(info.legion_warehouse_log, false);
 
-		// ·¢ËÍ¹«¸æ
+		// å‘é€å…¬å‘Š
 		send_notice((e_legion_warehouse_operation_type)info.operation_type, info.role_guid, info.legion_warehouse_log.item_template_id);
 
-		// ´ÓÊı¾İ¿âÖĞÉ¾³ı
+		// ä»æ•°æ®åº“ä¸­åˆ é™¤
 		ws2dp_role_get_legion_warehouse_info msg;
 		msg.role_guid = info.role_guid;
 		msg.legion_info = temp_item;
@@ -298,8 +298,8 @@ namespace faith
 		ws2dp_destroy_legion_item msg;
 		msg.log = info.legion_warehouse_log;
 		msg.del_num = info.del_num;
-		// ¼ÇÂ¼ÒªÉ¾³ıµÄµÀ¾ßµÄguid
-		int32 has_del_num = 0;//ÓÃÓÚ¼ÇÂ¼´æÔÚµÄguid
+		// è®°å½•è¦åˆ é™¤çš„é“å…·çš„guid
+		int32 has_del_num = 0;//ç”¨äºè®°å½•å­˜åœ¨çš„guid
 		for (int32 i = 0; i < info.del_num; i++)
 		{
 			if (is_in_legion_warehouse(info.del_array[i])){
@@ -307,7 +307,7 @@ namespace faith
 				has_del_num++;
 			}
 		}
-		// Ò»´ÎĞÔ²åÈëÉ¾³ıÈÕÖ¾ ×î¶à20Ìõ
+		// ä¸€æ¬¡æ€§æ’å…¥åˆ é™¤æ—¥å¿— æœ€å¤š20æ¡
 		int32 max_log_del = has_del_num;
 		if (max_log_del >= max_legion_warehouse_log)
 		{
@@ -319,7 +319,7 @@ namespace faith
 			msg.del_item_id[i] = item_info.item_info.data_ary[e_item_info_info_id];
 		}
 
-		//Ìí¼ÓÏú»ÙÈÕÖ¾µ½ÄÚ´æ
+		//æ·»åŠ é”€æ¯æ—¥å¿—åˆ°å†…å­˜
 		for (int32 i = 0; i < max_log_del; i++)
 		{
 			s_legion_warehouse_info item_info = get_item(msg.del_guid_array[i]);
@@ -328,18 +328,18 @@ namespace faith
 			log.item_template_id = item_info.item_info.data_ary[e_item_info_info_id];
 			add_legion_log(log, false);
 		}
-		// ´ÓÄÚ´æÖĞÉ¾³ıµÀ¾ß
+		// ä»å†…å­˜ä¸­åˆ é™¤é“å…·
 		for (int32 i = 0; i < has_del_num; i++)
 		{
 			del_legion_warehouse(msg.del_guid_array[i]);
 		}
 		msg.del_log_num = max_log_del;
-		// ´ÓÊı¾İ¿âÖĞÉ¾³ıµÀ¾ß
+		// ä»æ•°æ®åº“ä¸­åˆ é™¤é“å…·
 		ws_client::getInstance().send_to_dp(&msg, sizeof(msg));
-		//´ÓĞÂ½«²Ö¿âµÄÊı¾İ·¢ËÍµ½Ç°¶Ë
+		//ä»æ–°å°†ä»“åº“çš„æ•°æ®å‘é€åˆ°å‰ç«¯
 		send_item_list_to_client(info.role_guid);
 
-		// ½«½á¹û·¢ËÍ¸øcs
+		// å°†ç»“æœå‘é€ç»™cs
 		ws2cs_legion_warehouse_operation response_cs;
 		response_cs.error_id = 0;
 		response_cs.role_guid = info.role_guid;
@@ -352,10 +352,10 @@ namespace faith
 		player_session->send_to_cs(&response_cs, sizeof(response_cs));
 	}
 
-	// µ±É¾³ı¾üÍÅÊ± ĞèÒªÇå¿ÕÊı¾İ
+	// å½“åˆ é™¤å†›å›¢æ—¶ éœ€è¦æ¸…ç©ºæ•°æ®
 	void legion_ws_warehouse::clear_legion_warehouse_info_in_db(const guid_64& legion_guid)
 	{
-		// ´ÓÄÚ´æÖĞÉ¾³ıµÀ¾ß
+		// ä»å†…å­˜ä¸­åˆ é™¤é“å…·
 		std::list<s_legion_warehouse_info>::iterator ite;
 		for (ite = m_legion_warehouse_list.begin(); ite != m_legion_warehouse_list.end();)
 		{
@@ -369,7 +369,7 @@ namespace faith
 				++ite;
 			}
 		}
-		// ´ÓÊı¾İ¿âÖĞÉ¾³ı
+		// ä»æ•°æ®åº“ä¸­åˆ é™¤
 		ws2dp_clear_legion_warehouse msg;
 		msg.legion_guid = legion_guid;
 		ws_client::getInstance().send_to_dp(&msg, sizeof(msg));
@@ -406,12 +406,12 @@ namespace faith
 			return;
 
 		std::vector<std::string> vec_notice_str;
-		// ÈËÃû
+		// äººå
 		vec_notice_str.push_back(template_manager::get_instance().get_str_id_by_notice_id(notice_id));
 		vec_notice_str.push_back(player_session->get_role_name());
-		// µÀ¾ßÃû
+		// é“å…·å
 		vec_notice_str.push_back(template_manager::get_instance().int_to_string(item_template_ptr->ItemName));
-		// »ı·ÖÊıÁ¿
+		// ç§¯åˆ†æ•°é‡
 		vec_notice_str.push_back(template_manager::get_instance().int_to_string(score));
 		std::string notice_str = init_unit::implode(vec_notice_str);
 		int32 create_time = time_helper::get_cur_time_new().second;

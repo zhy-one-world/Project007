@@ -16,8 +16,8 @@ namespace faith
 {
 #pragma pack(push,1)
 
-	const int32							daily_ttendance_begin_template_id = 107012001;										//每日签到奖励模板初始id
-	const int32							cumulative_sign_in_reward_num		= 4;												//累计签到奖励数量		
+	const int32							daily_ttendance_begin_template_id = 107012001;										//姣忔棩绛惧埌濂栧姳妯℃澘鍒濆id
+	const int32							cumulative_sign_in_reward_num		= 4;												//绱绛惧埌濂栧姳鏁伴噺		
 
 
 	struct s_welfare_info

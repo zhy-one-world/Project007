@@ -1,9 +1,9 @@
 /********************************************************************
-created: 2017Äê8ÔÂ10ÈÕ11:27:00
+created: 2017å¹´8æœˆ10æ—¥11:27:00
 file base: service_goal
 file ext: cpp
-author: º«Ôó³É
-purpose: ÆßÈÕÄ¿±êÍ·ÎÄ¼þ
+author: éŸ©æ³½æˆ
+purpose: ä¸ƒæ—¥ç›®æ ‡å¤´æ–‡ä»¶
 *********************************************************************/
 
 #include "arena_def.hpp"
@@ -344,7 +344,7 @@ namespace faith
 			}
 			else
 			{
-				//Ð¡ÓÚÄ¿±êÐÇ¼¶Ôò²»Ëã´ïµ½´Ë½×
+				//å°äºŽç›®æ ‡æ˜Ÿçº§åˆ™ä¸ç®—è¾¾åˆ°æ­¤é˜¶
 				if (BeliefTemplatePtr->CurStarNumber < target_star)
 				{
 					current_value = BeliefTemplatePtr->CurRankNumber - 1;
@@ -624,8 +624,8 @@ namespace faith
 		{
 			return e_item_string_unkown;
 		}
-		//Ö»ÓÐÏÞÊ±´ó½±ÐèÒªÅÐ¶ÏÊ±¼ä
-		//³¬Ê±»òÕßÎ´µ½24Ð¡Ê±ÄÚ¾ù²»¿ÉÁìÈ¡
+		//åªæœ‰é™æ—¶å¤§å¥–éœ€è¦åˆ¤æ–­æ—¶é—´
+		//è¶…æ—¶æˆ–è€…æœªåˆ°24å°æ—¶å†…å‡ä¸å¯é¢†å–
 		if (m_template_ptr != nullptr && m_template_ptr->ConditionType == e_service_goal_type_final)
 		{
 			int32 time_now = time_helper::get_cur_time_new().second;

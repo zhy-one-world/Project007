@@ -1,4 +1,4 @@
-/********************************************************************
+ï»¿/********************************************************************
 created: 2016/04/21
 created: 21:4:2016 21:23:32
 file base: belief
@@ -97,14 +97,14 @@ namespace faith
 				continue;
 			}
 
-			//¿ÕÖµÖ±½Ó¸³Öµ
+			//ç©ºå€¼ç›´æ¥èµ‹å€¼
 			if (nullptr == BeliefTemplatePtr)
 			{
 				BeliefTemplatePtr = m_belief_ary[i].get_belief_info_ptr();
 			}
 			else
 			{
-				//ÏÈÅĞ¶Ï½×Êı ½×ÊıÏàÍ¬ÅĞ¶ÏĞÇÊı
+				//å…ˆåˆ¤æ–­é˜¶æ•° é˜¶æ•°ç›¸åŒåˆ¤æ–­æ˜Ÿæ•°
 				if (BeliefTemplatePtr->CurRankNumber < m_belief_ary[i].get_belief_info_ptr()->CurRankNumber)
 				{
 					BeliefTemplatePtr = m_belief_ary[i].get_belief_info_ptr();
@@ -127,7 +127,7 @@ namespace faith
 		else
 		{
 			int32 current_value = 0;
-			//Ğ¡ÓÚÄ¿±êĞÇ¼¶Ôò²»Ëã´ïµ½´Ë½×
+			//å°äºç›®æ ‡æ˜Ÿçº§åˆ™ä¸ç®—è¾¾åˆ°æ­¤é˜¶
 			if (BeliefTemplatePtr->CurStarNumber < target_star)
 			{
 				current_value = BeliefTemplatePtr->CurRankNumber - 1;
@@ -203,7 +203,7 @@ namespace faith
 				ranking_value += init_unit::calcu_fighting_power_by_att_array(belief_ptr->AttArray, att_array);
 			}
 		}
-		//Ôö¼ÓĞÅÑö·ûÎÄÕ½Á¦
+		//å¢åŠ ä¿¡ä»°ç¬¦æ–‡æˆ˜åŠ›
 		ranking_value += m_player_ptr->get_belief_rune_mgr().calcu_total_fighting_power();
 		m_player_ptr->get_ranking_mgr().set_and_sync_ranking_data(e_RankingIndex_belief, ranking_value);
 	}
@@ -275,13 +275,13 @@ namespace faith
 		int32 rank_num = belief_ptr->CurRankNumber;
 		switch (rank_num)
 		{
-		case 1:	//1½×
+		case 1:	//1é˜¶
 			name_index = 0;
 			break;
-		case 4:	//4½×
+		case 4:	//4é˜¶
 			name_index = 1;
 			break;
-		case 7:	//7½×
+		case 7:	//7é˜¶
 			name_index = 2;
 			break;
 		default:
@@ -332,7 +332,7 @@ namespace faith
 		return equip_num;
 	}
 
-	void cbelief_mgr::set_belief_by_info(const s_belief_info& belief_data, int32 belief_number)//???
+	void cbelief_mgr::set_belief_by_info(const s_belief_info& belief_data, int32 belief_number)
 	{
 		if (belief_number >= e_belief_series_type_max || belief_number < e_belief_series_type_spring)
 		{

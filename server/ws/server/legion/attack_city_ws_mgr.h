@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2021Äê9ÔÂ23ÈÕ
+created: 2021å¹´9æœˆ23æ—¥
 file base: attack_city_ws_mgr
 file ext: hpp
 author: zhaoyuming
@@ -27,106 +27,106 @@ namespace faith
 
 	public:
 
-		// Ê±¼äTick
+		// æ—¶é—´Tick
 		void						tick(int64 time_new);
-		// Êı¾İÇåÀí
+		// æ•°æ®æ¸…ç†
 		void						clear_data();
-		// ³õÊ¼»¯ÅäÖÃÊı¾İ
+		// åˆå§‹åŒ–é…ç½®æ•°æ®
 		void						init_manager(bool need_load_dp = true);
-		// ¼ÓÔØÅÅÃûÊı¾İ
+		// åŠ è½½æ’åæ•°æ®
 		void						load_rank_data();
-		// ¼ÓÔØÅÅÃûÊı¾İ½á¹û
+		// åŠ è½½æ’åæ•°æ®ç»“æœ
 		void						clear_rank_data(bool is_clear_dp = false);
-		// Ìí¼ÓÅÅÃûÊı¾İ
+		// æ·»åŠ æ’åæ•°æ®
 		void						add_rank_data(const s_attack_city_rank_info& rank_info, bool is_save = false);
-		// ±£´æÈ«²¿ÅÅÃûÊı¾İ
+		// ä¿å­˜å…¨éƒ¨æ’åæ•°æ®
 		void						save_rank_data_all(bool is_clear_dp = false);
-		// ±£´æµ¥ÈËÅÅÃûÊı¾İ
+		// ä¿å­˜å•äººæ’åæ•°æ®
 		void						save_rank_data_one(const s_attack_city_rank_info& rank_info);
-		// ¼ÓÔØ·Ö×éÊı¾İ
+		// åŠ è½½åˆ†ç»„æ•°æ®
 		void						load_group_data();
-		// ÇåÀí·Ö×éÊı¾İ
+		// æ¸…ç†åˆ†ç»„æ•°æ®
 		void						clear_group_dp_data();
-		// ÇåÀíÅÅÃûÊı¾İ
+		// æ¸…ç†æ’åæ•°æ®
 		void						clear_rank_dp_data();
-		// ¼ÓÔØ·Ö×éÊı¾İ½á¹û
+		// åŠ è½½åˆ†ç»„æ•°æ®ç»“æœ
 		void						load_group_data_end(const s_attack_city_legion_info * dp_info, int32 data_num);
-		// ±£´æ·Ö×éÊı¾İ
+		// ä¿å­˜åˆ†ç»„æ•°æ®
 		void						save_group_data(const s_attack_city_legion_info& legion_info);
-		// ±£´æ·Ö×éÊı¾İ
+		// ä¿å­˜åˆ†ç»„æ•°æ®
 		void						save_group_data_all(bool is_clear_dp = false);
-		// ÊÇ·ñÔÚ»î¶¯Ê±¼äÄÚ
+		// æ˜¯å¦åœ¨æ´»åŠ¨æ—¶é—´å†…
 		bool						is_in_game_time();
-		// ÊÇ·ñÊÇ¼ì²éÊ±¼ä
+		// æ˜¯å¦æ˜¯æ£€æŸ¥æ—¶é—´
 		bool						is_in_check_time();
-		// ÊÇ·ñÊÇ·Ö×éÊ±¼ä
+		// æ˜¯å¦æ˜¯åˆ†ç»„æ—¶é—´
 		bool						is_in_group_time();
-		// »î¶¯¿ªÆô³õÊ¼»¯
+		// æ´»åŠ¨å¼€å¯åˆå§‹åŒ–
 		void						game_init();
-		// »î¶¯¿ªÆôÇ°¼ì²é
+		// æ´»åŠ¨å¼€å¯å‰æ£€æŸ¥
 		void						game_check();
-		// »î¶¯¼ì²é
+		// æ´»åŠ¨æ£€æŸ¥
 		void						check_legion_is_valid(guid_64 legion_guid);
-		// »î¶¯¼ì²é½á¹û
+		// æ´»åŠ¨æ£€æŸ¥ç»“æœ
 		void						set_legion_is_valid(guid_64 legion_guid);
-		// »î¶¯¿ªÆô³õÊ¼»¯
+		// æ´»åŠ¨å¼€å¯åˆå§‹åŒ–
 		void						game_group();
-		// ÁÙÊ±·Ö×é
+		// ä¸´æ—¶åˆ†ç»„
 		void						tem_game_group();
-		// »î¶¯½áÊø
+		// æ´»åŠ¨ç»“æŸ
 		void						game_end();
-		// »ñÈ¡¾üÍÅĞÅÏ¢
+		// è·å–å†›å›¢ä¿¡æ¯
 		void						send_attack_city_legion_info(guid_64 legion_guid, guid_64 role_guid, int32 server_id);
-		// »ñÈ¡¾üÍÅĞÅÏ¢
+		// è·å–å†›å›¢ä¿¡æ¯
 		void						send_attack_city_legion_rank_info(guid_64 legion_guid, guid_64 role_guid, int32 server_id);
-		// »î¶¯½áÊø
+		// æ´»åŠ¨ç»“æŸ
 		void						send_load_succend(int32 server_id);
-		// Ë¢ĞÂ¾üÍÅĞÅÏ¢
+		// åˆ·æ–°å†›å›¢ä¿¡æ¯
 		void						refresh_legion_list();
-		// Çå³ı¾üÍÅĞÅÏ¢
+		// æ¸…é™¤å†›å›¢ä¿¡æ¯
 		void						clear_legion_list();
-		// ¾üÍÅ¸ÄÃû
+		// å†›å›¢æ”¹å
 		void						change_legion_name(guid_64 legion_guid, xstring legion_name);
-		////////////////////////////////////»î¶¯µØÍ¼Ïà¹Ø////////////////////////////////////
-		// ´«ËÍµ½»î¶¯µØÍ¼
+		////////////////////////////////////æ´»åŠ¨åœ°å›¾ç›¸å…³////////////////////////////////////
+		// ä¼ é€åˆ°æ´»åŠ¨åœ°å›¾
 		void						recv_other_ws_transger_gate_map(guid_64 role_guid, guid_64 legion_guid, int32 server_id);
-		// ¼ì²éÊÇ·ñ¿ÉÒÔ½øÈëµØÍ¼
+		// æ£€æŸ¥æ˜¯å¦å¯ä»¥è¿›å…¥åœ°å›¾
 		int32						check_can_transfer_to_map(guid_64 map_guid);
-		//  ´«ËÍ·µ»Ø½á¹û´¦Àí
+		//  ä¼ é€è¿”å›ç»“æœå¤„ç†
 		void						transfer_to_map_with_gate_msg(guid_64 role_guid, int32 error_ret, int32 map_temp_id, guid_64 map_guid, int32 war_idex, int32 server_id);
 
 
 
-		////////////////////////////////////¹¤¾ßº¯Êı////////////////////////////////////
-		// »ñÈ¡ÅäÖÃ²ÎÊı
+		////////////////////////////////////å·¥å…·å‡½æ•°////////////////////////////////////
+		// è·å–é…ç½®å‚æ•°
 		int32						get_config_data(int32 data_type);
-		// ¸ù¾İ¾üÍÅGuid»ñÈ¡µØÍ¼Guid
+		// æ ¹æ®å†›å›¢Guidè·å–åœ°å›¾Guid
 		int32						get_map_guid_by_legion(guid_64 legion_guid, guid_64& map_guid);
-		// »ñÈ¡¾üÍÅÒıÓÃ
+		// è·å–å†›å›¢å¼•ç”¨
 		s_attack_city_legion_info&	get_legion_info(guid_64 legion_guid);
-		// Í¬²½Êı¾İµ½ÆäËû·şÎñÆ÷
+		// åŒæ­¥æ•°æ®åˆ°å…¶ä»–æœåŠ¡å™¨
 		void						send_info_all_to_other_ws(int32 server_id);
 
 	private:
-		// ÊÇ·ñ½øĞĞ¹ı³õÊ¼»¯
+		// æ˜¯å¦è¿›è¡Œè¿‡åˆå§‹åŒ–
 		bool										m_is_begin_time;
-		// ÊÇ·ñ½øĞĞ¾üÍÅ¼ì²é
+		// æ˜¯å¦è¿›è¡Œå†›å›¢æ£€æŸ¥
 		bool										m_is_check_time;
-		// ÊÇ·ñ½øĞĞ·Ö×é
+		// æ˜¯å¦è¿›è¡Œåˆ†ç»„
 		bool										m_is_group_time;
-		// ¿Õ¾üÍÅĞÅÏ¢
+		// ç©ºå†›å›¢ä¿¡æ¯
 		s_attack_city_legion_info					m_empty_legion_info;
-		// ÅäÖÃÎÄ¼şÊı×é
+		// é…ç½®æ–‡ä»¶æ•°ç»„
 		int32										m_config_data[e_attack_city_data_max];	
-		// ¹¥³ÇÕ½µØÍ¼Id
+		// æ”»åŸæˆ˜åœ°å›¾Id
 		guid_64										m_map_guid_list[e_attack_city_group_level_max];
-		// ËùÓĞ²ÎÕ½¾üÍÅĞÅÏ¢
+		// æ‰€æœ‰å‚æˆ˜å†›å›¢ä¿¡æ¯
 		std::vector<s_attack_city_legion_info>		m_legion_info_list;	
-		// ²ÎÕ½¾üÍÅÁÙÊ±ĞÅÏ¢
+		// å‚æˆ˜å†›å›¢ä¸´æ—¶ä¿¡æ¯
 		std::vector<s_attack_city_legion_info>		m_tem_legion_info_list;
-		// Õ½³¡ÅÅÃûĞÅÏ¢
+		// æˆ˜åœºæ’åä¿¡æ¯
 		std::vector<s_attack_city_rank_info>		m_rank_list;
-		// ·Ö×étickÊ±¼ä
+		// åˆ†ç»„tickæ—¶é—´
 		int64										m_tem_game_group_time;
 		
 		bool										m_is_legion_data;

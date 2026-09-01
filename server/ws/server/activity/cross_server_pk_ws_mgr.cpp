@@ -1,5 +1,5 @@
 /********************************************************************
-  created: 2019Äê1ÔÂ15ÈÕ
+  created: 2019å¹´1æœˆ15æ—¥
   file base: cross_server_pk_ws_mgr
   file ext: cpp
   author: zhangshuo
@@ -71,7 +71,7 @@ namespace faith
 				if (true == is_in_game_time() && false == is_have_pk_map())
 				{
 					init_cross_server_pk_map();
-					if (false == m_is_clear_db)//½øÈëµ½ÓÎÏ·Ê±¼äÔòÇåÀíÒ»´Î¿â
+					if (false == m_is_clear_db)//è¿›å…¥åˆ°æ¸¸æˆæ—¶é—´åˆ™æ¸…ç†ä¸€æ¬¡åº“
 					{
 						clear_all_big_player_and_title();
 						m_is_clear_db = true;
@@ -81,7 +81,7 @@ namespace faith
 				}
 				if (false == is_in_game_time())
 				{
-					if (true == m_is_clear_db)//Àë¿ªÓÎÏ·Ê±¼äÔò´æÒ»´Î¿â
+					if (true == m_is_clear_db)//ç¦»å¼€æ¸¸æˆæ—¶é—´åˆ™å­˜ä¸€æ¬¡åº“
 					{
 						for (int32 i = 0; i < max_branch_type; i++)
 						{

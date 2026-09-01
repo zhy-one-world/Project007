@@ -18,8 +18,8 @@ namespace faith
 		fvector	m_center;
         i32 m_radius;
         i32 m_radius_quare;
-        frotator	m_rot;		//ÉÈĞÎÕı·½Ïò
-        const i32 m_angle;	//ÉÈĞÎ½Ç¶È
+        frotator	m_rot;		//æ‰‡å½¢æ­£æ–¹å‘
+        const i32 m_angle;	//æ‰‡å½¢è§’åº¦
     };
 }
 

@@ -38,12 +38,12 @@ namespace faith
 	typedef msg_info_map::iterator msg_info_map_it;
 
 	player							m_empty_player;
-	player* m_player_vec[init_player_max];//»º´æµÄÍæ¼Ò¹ÜÀí
+	player* m_player_vec[init_player_max];//ç¼“å­˜çš„ç©å®¶ç®¡ç†
 	std::list<int32>				m_empty_player_index;
 	std::list<int32>				m_use_player_index;
 
 	npc								m_empty_npc;
-	npc* m_npc_vec[init_npc_max];//»º´æµÄnpc¹ÜÀí
+	npc* m_npc_vec[init_npc_max];//ç¼“å­˜çš„npcç®¡ç†
 	std::list<int32>				m_empty_npc_index;
 	std::list<int32>				m_use_npc_index;
 
@@ -701,7 +701,7 @@ namespace faith
 		return template_ptr->BaseExp;
 	}
 
-	bool unit_man::kill_player_num(guid_64 guid_killer, guid_64 guid_killed, int32 level_killer, int32 level_killed) //¿ªÍ·»¹²îµÈ¼¶ÅĞ¶¨
+	bool unit_man::kill_player_num(guid_64 guid_killer, guid_64 guid_killed, int32 level_killer, int32 level_killed) //å¼€å¤´è¿˜å·®ç­‰çº§åˆ¤å®š
 	{
 		ZoneScoped;
 		if (GAMECONFIG->ServerHarryKillLimit.size() % 3 != 0)
@@ -733,8 +733,8 @@ namespace faith
 		{
 			return false;
 		}
-		xstring killer_player = guid_killer.to_string() + guid_killed.to_string(); //°ÑkillerºÍkilledµÄguid×ª»¯³É×Ö·û´®²¢Æ´½ÓÆğÀ´µ±×ömapµÄkey	
-		map<xstring, int32>::iterator iter; //ÅĞ¶ÏmapÖĞÊÇ·ñ´æÔÚa kill bµÄkey£¬´æÔÚÅĞ¶Ï»÷É±´ÎÊıÊÇ·ñĞ¡ÓÚN£¬Ğ¡ÓÚÔò++value£¬²»´æÔÚÔò²åÈëkey²¢³õÊ¼»¯¶ÔÓ¦valueÎª1£¨±íÊ¾a»÷É±bÒ»´Î£©
+		xstring killer_player = guid_killer.to_string() + guid_killed.to_string(); //æŠŠkillerå’Œkilledçš„guidè½¬åŒ–æˆå­—ç¬¦ä¸²å¹¶æ‹¼æ¥èµ·æ¥å½“åšmapçš„key	
+		map<xstring, int32>::iterator iter; //åˆ¤æ–­mapä¸­æ˜¯å¦å­˜åœ¨a kill bçš„keyï¼Œå­˜åœ¨åˆ¤æ–­å‡»æ€æ¬¡æ•°æ˜¯å¦å°äºNï¼Œå°äºåˆ™++valueï¼Œä¸å­˜åœ¨åˆ™æ’å…¥keyå¹¶åˆå§‹åŒ–å¯¹åº”valueä¸º1ï¼ˆè¡¨ç¤ºaå‡»æ€bä¸€æ¬¡ï¼‰
 		iter = m_harry_kill_num.find(killer_player);
 		if (iter == m_harry_kill_num.end())
 		{

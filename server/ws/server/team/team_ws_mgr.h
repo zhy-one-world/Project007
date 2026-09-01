@@ -13,9 +13,9 @@ namespace faith
 {
 	class team_ws_mgr
 	{
-		typedef std::map<ui64, team_ws>		team_ws_map; // map的键值对为[team的GUID/team_ws实例]
-		typedef std::map<int64, guid_64>		team_create_stamp_map; // map的键值对为[team的创建时间戳/team_ws的guid]
-		typedef std::map<ui64, guid_64>		role_team_pair_map; // map的键值对为[role的GUID/team的GUID]
+		typedef std::map<ui64, team_ws>		team_ws_map; // map鐨勯敭鍊煎涓篬team鐨凣UID/team_ws瀹炰緥]
+		typedef std::map<int64, guid_64>		team_create_stamp_map; // map鐨勯敭鍊煎涓篬team鐨勫垱寤烘椂闂存埑/team_ws鐨刧uid]
+		typedef std::map<ui64, guid_64>		role_team_pair_map; // map鐨勯敭鍊煎涓篬role鐨凣UID/team鐨凣UID]
 	private:
 		team_ws_mgr();
 		~team_ws_mgr();
@@ -69,7 +69,7 @@ namespace faith
 		void					req_no_team_mate_list(client_session* session, e_team_req_mate_type mate_type);
 
 		void					notice_all_player_team_created(team_ws& team_ref);
-		void					change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//角色改名同步
+		void					change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//瑙掕壊鏀瑰悕鍚屾
 
 	private:
 		team_ws_map				m_team_ws_map;

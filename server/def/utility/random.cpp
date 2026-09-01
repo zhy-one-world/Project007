@@ -34,10 +34,10 @@ namespace faith
 		}
 
 	}
-	uint32 random_gen::skill_random()    //Éú³ÉµÚn+1¸öµÄËæ»úÊı¹ı³Ì
+	uint32 random_gen::skill_random()    //ç”Ÿæˆç¬¬n+1ä¸ªçš„éšæœºæ•°è¿‡ç¨‹
 	{
 		uint32 r;
-		/* ·µ»ØÒ»¸öÎŞ·ûºÅ32Î»ÕûĞÍµÄÎ±Ëæ»úÊı. */
+		/* è¿”å›ä¸€ä¸ªæ— ç¬¦å·32ä½æ•´å‹çš„ä¼ªéšæœºæ•°. */
 		r = randseed = randseed * 1103515245 + 12345;
 		return (r << 16) | ((r >> 16) & 0xFFFF);
 	}

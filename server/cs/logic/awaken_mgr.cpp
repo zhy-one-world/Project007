@@ -1,4 +1,4 @@
-#include "awaken_mgr.h"
+﻿#include "awaken_mgr.h"
 #include "internet/item.pb.h"
 #include "internet/net.pb.h"
 #include "logic/item_set.h"
@@ -175,7 +175,7 @@ namespace faith
 		{
 			return false;
 		}
-		if (sub_type < e_armor_sub_type_hat || sub_type > e_armor_sub_type_fashion) //  2 ���� 10 Ϊħ����
+		if (sub_type < e_armor_sub_type_hat || sub_type > e_armor_sub_type_fashion)
 		{
 			return false;
 		}
@@ -244,7 +244,6 @@ namespace faith
 		{
 			return;
 		}
-		// �����������Ա����ǵ�ǰ���ѵȼ�
 		float add_count = (float)item_ptr->get_data_info(e_item_info_wing_bless) / (float)awaken_template_ptr->NeedPower;
 		AwakenTemplate *next_awaken_template_ptr = get_next_awaken_template_by_item(item_ptr);
 		if (next_awaken_template_ptr == nullptr)

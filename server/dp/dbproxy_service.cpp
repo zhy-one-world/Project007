@@ -343,7 +343,7 @@ namespace faith
 		//save account online time
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_save_account_online_time, save_account_online_time);
 
-		//ÔªËØÕù°Ô
+		//å…ƒç´ äº‰éœ¸
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_element_war_add_role_info, save_element_war_add_role_info);
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_element_war_update_info, save_element_war_update_info);
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_element_war_refresh_season_info, save_element_war_refresh_season_info);
@@ -353,7 +353,7 @@ namespace faith
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_element_war_clear_mission_info, save_element_war_refresh_clear_mission_info);
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_element_war_refresh_mission_info, save_element_war_refresh_mission_info);
 
-		//¹¥³ÇÕ½
+		//æ”»åŸæˆ˜
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_attack_city_save_legion_info, save_attack_city_ws_info);
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_attack_city_save_rank_info, save_attack_city_rank_info);
 		message_manager::getInstance().register_handler(e_msgindex_ws2dp_attack_city_load_legion_info, load_attack_city_ws_info);
@@ -364,7 +364,7 @@ namespace faith
 		//////////////////////////////////////////////////////////////ZymEnd/////////////////////////////////////////////////////////////////////////
 		//--------------------------System Mail---------------------------//
 		// message_manager::getInstance().register_handler(e_msg_index_ws2dp_system_mail_newmail,ws2dp_system_mail_new_mail_func);
-		//gmÈº·¢ÓÊ¼ş
+		//gmç¾¤å‘é‚®ä»¶
 		// message_manager::getInstance().register_handler(e_msg_index_ws2dp_system_all_mail,ws2dp_system_mail_all_mail);
 		//----------------------------------------------------------------//
 
@@ -481,7 +481,7 @@ namespace faith
 
 	void dbproxy_service::stop()
 	{
-		//ÒÆ³ö¼ÓÈëschedulerÖĞµÄ¶¨Ê±Æ÷
+		//ç§»å‡ºåŠ å…¥schedulerä¸­çš„å®šæ—¶å™¨
 		net_server_mgr::getInstance().stop();
 	}
 
@@ -526,7 +526,7 @@ namespace faith
 	}
 	void dbproxy_service::on_req_login(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
-		//´æÏÂÕâÌ¨·şÎñÆ÷µÄĞÅÏ¢
+		//å­˜ä¸‹è¿™å°æœåŠ¡å™¨çš„ä¿¡æ¯
 		const faith::req_login* pdata = static_cast<const faith::req_login*>(data_ptr);
 		if (NULL == pdata)
 		{

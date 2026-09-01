@@ -18,7 +18,7 @@ namespace faith
 		bool				get_is_in_the_war() { return m_is_in_the_war; };
 		void				set_is_in_the_war(bool is_in_war) { m_is_in_the_war = is_in_war; };
 
-		void				begin_war();//¿ªÊ¼ÀŞÌ¨Èü
+		void				begin_war();//å¼€å§‹æ“‚å°èµ›
 
 		int32				set_win_player(guid_64 player_guid);
 
@@ -36,17 +36,17 @@ namespace faith
 
 		void				end_war();
 
-		void				transfer_player_to_born_pos();//´«ËÍÍæ¼Òµ½Õ½¶·ÇøÓò
+		void				transfer_player_to_born_pos();//ä¼ é€ç©å®¶åˆ°æˆ˜æ–—åŒºåŸŸ
 
 		void				set_map_ptr(map_object* map_ptr) { m_cur_map_ptr = map_ptr; };
 
 		void				set_pk_type(e_pk_mode_type mode_type, e_pk_mode pk_mode);
 
-		int32				reset_war(bool is_time_out = false);//ÖØÖÃÄ³Ò»³¡
+		int32				reset_war(bool is_time_out = false);//é‡ç½®æŸä¸€åœº
 
-		void				start_pk();//¿ªÊ¼ÀŞÌ¨ÈüµÄÄ³Ò»³¡
+		void				start_pk();//å¼€å§‹æ“‚å°èµ›çš„æŸä¸€åœº
 
-		void				end_one_war();//½áÊøÒ»Ğ¡³¡
+		void				end_one_war();//ç»“æŸä¸€å°åœº
 
 		void				fill_simple_msg(s_pk_island_simple_msg& simple_msg);
 
@@ -66,7 +66,7 @@ namespace faith
 
 		void				reset_player_state();
 
-		void				send_ws_msg_time_out();//Ê±¼äµ½ Æ½¾Ö Ò²·¢Ò»´ÎĞÅÏ¢Í¬²½µ½WS
+		void				send_ws_msg_time_out();//æ—¶é—´åˆ° å¹³å±€ ä¹Ÿå‘ä¸€æ¬¡ä¿¡æ¯åŒæ­¥åˆ°WS
 
 		void				send_award_to_winner_player();
 
@@ -85,16 +85,16 @@ namespace faith
 
 		e_cross_pk_state		m_pk_state;
 
-		int32			m_need_winer_num;//ĞèÒª¶àÉÙ³¡²ÅËã»ñÊ¤
+		int32			m_need_winer_num;//éœ€è¦å¤šå°‘åœºæ‰ç®—è·èƒœ
 
-		int32			m_is_pk_count;//ÒÑ¾­½øĞĞÁË¶àÉÙ³¡PK
+		int32			m_is_pk_count;//å·²ç»è¿›è¡Œäº†å¤šå°‘åœºPK
 
-		int32			m_small_free_time;//ĞİÏ¢Ğ¡¼ä¸ôÊ±³¤
-		int32			m_war_time;//Õ½¶·Ê±³¤
+		int32			m_small_free_time;//ä¼‘æ¯å°é—´éš”æ—¶é•¿
+		int32			m_war_time;//æˆ˜æ–—æ—¶é•¿
 
-		int64			m_next_begin_war_time;//ÏÂ´Î¿ªÊ¼Õ½¶·µÄÊ±¼ä
-		int64			m_next_ready_war_time;//ÏÂ´Î×¼±¸Õ½¶·µÄÊ±¼ä
-		int64			m_end_war_transfer_time;//½áÊø´«ËÍÊ±¼ä
+		int64			m_next_begin_war_time;//ä¸‹æ¬¡å¼€å§‹æˆ˜æ–—çš„æ—¶é—´
+		int64			m_next_ready_war_time;//ä¸‹æ¬¡å‡†å¤‡æˆ˜æ–—çš„æ—¶é—´
+		int64			m_end_war_transfer_time;//ç»“æŸä¼ é€æ—¶é—´
 
 		map_object*		m_cur_map_ptr;
 
@@ -102,7 +102,7 @@ namespace faith
 
 		guid_64			m_winner_player_guid;
 
-		int32			m_island_idex;//¼¸ºÅµºÓì£¬·½±ã²Ù¿Ø¿Í»§¶Ë¶ÔÓ¦¿ÕÆøÇ½
+		int32			m_island_idex;//å‡ å·å²›å±¿ï¼Œæ–¹ä¾¿æ“æ§å®¢æˆ·ç«¯å¯¹åº”ç©ºæ°”å¢™
 
 		int32			m_cur_island_class_type;
 	};

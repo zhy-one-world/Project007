@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2016Äê9ÔÂ3ÈÕ03:06:47
+	created:	2016å¹´9æœˆ3æ—¥03:06:47
 	file base:	re_login_mgr
 	file ext:	h
 	author:		zhy
@@ -39,7 +39,7 @@ namespace faith
 		void remove_re_login(const std::string& account);
 		void add_re_login(const std::string& account, s_re_login_info& re_info);
 	private:
-		re_login_info_map m_re_login_info_map;//ĞèÒªÖØĞÂµÇÂ¼µÄÍæ¼ÒÁĞ±í
+		re_login_info_map m_re_login_info_map;//éœ€è¦é‡æ–°ç™»å½•çš„ç©å®¶åˆ—è¡¨
 	};
 
 }

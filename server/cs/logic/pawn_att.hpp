@@ -50,7 +50,7 @@ namespace faith
 		pawn_att();
 		~pawn_att();
 		/************************************************************************/
-		/*  Íâ²¿µ÷ÓÃÊôĞÔ¸üĞÂ½Ó¿Ú                                                */
+		/*  å¤–éƒ¨è°ƒç”¨å±æ€§æ›´æ–°æ¥å£                                                */
 		/************************************************************************/
 		void									set_unit_ptr(int32 unit_array_index){ m_unit_array_index = unit_array_index; }
 		void									clear_data();
@@ -58,9 +58,9 @@ namespace faith
 		void									heart_tick_3_sec(const int64& new_time);
 		void									stop_tick() { m_unit_tick_begin = false; }
 		/************************************************************************/
-		/* ³õÊ¼»¯¡¢¼ÓÔØ¡¢´æÅÌÏà¹Ø                                               */
+		/* åˆå§‹åŒ–ã€åŠ è½½ã€å­˜ç›˜ç›¸å…³                                               */
 		/************************************************************************/
-		//³õÊ¼»¯
+		//åˆå§‹åŒ–
 		void									load_base_att_by_db(const s_base_att_info& base_att);
 		bool                                    load_base_att_by_db_lua(const char *data_ptr, int32 data_len);
 		void									load_unit_att_by_db(const s_arena_char_fight_att& unit_att);
@@ -76,32 +76,32 @@ namespace faith
 		void									calcu_unit_att_by_level(bool use_ower);
 		s_arena_char_fight_att					get_unit_fight_att_inst();
 		/************************************************************************/
-		/* Éı¼¶Ïà¹Ø                                                             */
+		/* å‡çº§ç›¸å…³                                                             */
 		/************************************************************************/
 		void									exp_levelup();
 		/************************************************************************/
-		/* ÊôĞÔÏà¹Ø                                                             */
+		/* å±æ€§ç›¸å…³                                                             */
 		/************************************************************************/
-		//×°±¸Ôö¼Ó¸øÈËÎïÒ»¶ÔÊôĞÔ,Ò»¸öÊıÖµÒ»¸ö°Ù·Ö±È 
-		//att_level ÊôĞÔµÈ¼¶ e_pawn_att_index
-		//id ÊôĞÔid e_unit_att_index
-		//value ÊôĞÔÖµ
-		//percent ÊôĞÔ°Ù·Ö±È
-		//apply	ÊôĞÔÊÇÔö¼Ó»¹ÊÇ¼õÉÙ
-		//coef	ÊôĞÔ²ãÊı
-		//is_gs ÊôĞÔÊÇ·ñ¼ÆËãÕ½Á¦Öµ
+		//è£…å¤‡å¢åŠ ç»™äººç‰©ä¸€å¯¹å±æ€§,ä¸€ä¸ªæ•°å€¼ä¸€ä¸ªç™¾åˆ†æ¯” 
+		//att_level å±æ€§ç­‰çº§ e_pawn_att_index
+		//id å±æ€§id e_unit_att_index
+		//value å±æ€§å€¼
+		//percent å±æ€§ç™¾åˆ†æ¯”
+		//apply	å±æ€§æ˜¯å¢åŠ è¿˜æ˜¯å‡å°‘
+		//coef	å±æ€§å±‚æ•°
+		//is_gs å±æ€§æ˜¯å¦è®¡ç®—æˆ˜åŠ›å€¼
 		void									apply_att_change_by_array(const std::vector<float>& att_array, bool is_add, f32 add_count = 1.0);
 		void									apply_att_change_by_array(const std::vector<std::string>& att_array, bool is_add, f32 add_count = 1.0);
 		void									apply_att_change_effect(int32 att_level, int32 id, f32 value, f32 percent, int32 is_show, bool apply);
-		double									get_attack_att_gs(uint32 att_index) const;//»ñÈ¡¼ÆËãÕ½¶·Á¦µÄÊôĞÔµÄ×îÖÕÊôĞÔÖµ
+		double									get_attack_att_gs(uint32 att_index) const;//è·å–è®¡ç®—æˆ˜æ–—åŠ›çš„å±æ€§çš„æœ€ç»ˆå±æ€§å€¼
 
-		double									get_attack_att_by_att(uint32 att_index) const;//»ñÈ¡ĞèÒªÍ¬²½ÊôĞÔµÄ×îÖÕÊôĞÔÖµ
+		double									get_attack_att_by_att(uint32 att_index) const;//è·å–éœ€è¦åŒæ­¥å±æ€§çš„æœ€ç»ˆå±æ€§å€¼
 	private:
-		double									get_attack_att_by_gs_and_hide(uint32 att_index) const;//»ñÈ¡ËùÓĞµÄÊôĞÔ×îÖÕÊôĞÔÖµ
+		double									get_attack_att_by_gs_and_hide(uint32 att_index) const;//è·å–æ‰€æœ‰çš„å±æ€§æœ€ç»ˆå±æ€§å€¼
 	public:
 		double									get_attack_att_value(uint32 att_index);
 		const double*							get_attack_att_all() { return m_unit_att_end; }
-		f32										get_unit_att(uint32 att_level, int32 att_id) const;//»ñÈ¡Ä³²ã´Î,Ä³¸ö¾ßÌåÖµ
+		f32										get_unit_att(uint32 att_level, int32 att_id) const;//è·å–æŸå±‚æ¬¡,æŸä¸ªå…·ä½“å€¼
 		int32									get_use_owner_att() { return m_use_owner_att; }
 		void									set_use_owner_att(int32 use_owner) { m_use_owner_att = use_owner; }
 		void									change_base_body_att(const std::vector<int32>& base_body_att, bool is_refresh = false);
@@ -109,12 +109,12 @@ namespace faith
 		void									change_gs_for_att(e_pawn_att_index pawn_att_index, const std::vector<int32>& change_arr, int32 value, int32 is_show);
 		void									change_equip_gs(bool is_add, bool is_refresh);
 		/************************************************************************/
-		/* µ¥Ò»ÊôĞÔÏà¹Ø                                                         */
+		/* å•ä¸€å±æ€§ç›¸å…³                                                         */
 		/************************************************************************/
 		void									set_game_att(int32 att_index, float value, bool apply);
 		float									get_game_att(uint32 att_index) const;
 		/************************************************************************/
-		/* ×´Ì¬Ïà¹Ø                                                             */
+		/* çŠ¶æ€ç›¸å…³                                                             */
 		/************************************************************************/
 		void									set_state_att(uint32 att_index, bool flag);
 		bool									get_state_att(uint32 att_index) const;
@@ -138,7 +138,7 @@ namespace faith
 		bool									can_cur_energy(double energy_value);
 		void									change_energy(double energy_value);
 		/************************************************************************/
-		/*	¹¤¾ßº¯Êı		                                                    */
+		/*	å·¥å…·å‡½æ•°		                                                    */
 		/************************************************************************/
 		inline void								set_att_update_mask(int32 att_index, e_pawn_att_type att_type);
 		inline void								clear_att_update_mask();
@@ -147,11 +147,11 @@ namespace faith
 		void									syn_all_att();
 		void									send_unit_dead(bool is_dead);
 	private:
-		void									strength_to_second_att(int32 class_type, e_pawn_att_index pawn_att_index, int32 value, int32 is_show);//Á¦Á¿ÊôĞÔ±ä»¯Ôö¼Ó¶ş¼¶ÊôĞÔ
-		void									agility_to_second_att(int32 class_type, e_pawn_att_index pawn_att_index, int32 value, int32 is_show);//Ãô½İÊôĞÔ±ä»¯Ôö¼Ó¶ş¼¶ÊôĞÔ
-		void									intellect_to_second_att(int32 class_type, e_pawn_att_index pawn_att_index, int32 value, int32 is_show);//Á¦Á¿ÊôĞÔÔö¼Ó¶ş¼¶ÊôĞÔ
-		void									stamina_to_second_att(int32 class_type, e_pawn_att_index pawn_att_index, int32 value, int32 is_show);//ÄÍÁ¦ÊôĞÔ±ä»¯Ôö¼Ó¶ş¼¶ÊôĞÔ
-		bool									att_modifier(e_pawn_att_index modifier_type, int32 att_index, f32 value, int32 is_show, bool apply);//¾ßÌåµ÷ÕûÄ³¸öÊôĞÔ
+		void									strength_to_second_att(int32 class_type, e_pawn_att_index pawn_att_index, int32 value, int32 is_show);//åŠ›é‡å±æ€§å˜åŒ–å¢åŠ äºŒçº§å±æ€§
+		void									agility_to_second_att(int32 class_type, e_pawn_att_index pawn_att_index, int32 value, int32 is_show);//æ•æ·å±æ€§å˜åŒ–å¢åŠ äºŒçº§å±æ€§
+		void									intellect_to_second_att(int32 class_type, e_pawn_att_index pawn_att_index, int32 value, int32 is_show);//åŠ›é‡å±æ€§å¢åŠ äºŒçº§å±æ€§
+		void									stamina_to_second_att(int32 class_type, e_pawn_att_index pawn_att_index, int32 value, int32 is_show);//è€åŠ›å±æ€§å˜åŒ–å¢åŠ äºŒçº§å±æ€§
+		bool									att_modifier(e_pawn_att_index modifier_type, int32 att_index, f32 value, int32 is_show, bool apply);//å…·ä½“è°ƒæ•´æŸä¸ªå±æ€§
 	public:
 		inline bool&							is_att_mask();
 	public:
@@ -176,25 +176,25 @@ namespace faith
 	public:
 		void									show_att(int32 att_type);
 	private:
-		s_base_att_info							m_unit_base_att;//ÈËÎïĞèÒª´æµµµÄÊôĞÔ
-		int32									m_unit_array_index;//¶ÔÓ¦unit
-		bool									m_unit_tick_begin;//ÔÚÏß×´Ì¬
-		bool									m_att_change;//ÊÇ·ñÊÇÊôĞÔ·¢ÉúÁË¸Ä±ä
+		s_base_att_info							m_unit_base_att;//äººç‰©éœ€è¦å­˜æ¡£çš„å±æ€§
+		int32									m_unit_array_index;//å¯¹åº”unit
+		bool									m_unit_tick_begin;//åœ¨çº¿çŠ¶æ€
+		bool									m_att_change;//æ˜¯å¦æ˜¯å±æ€§å‘ç”Ÿäº†æ”¹å˜
 
 		tag_unit_att							m_unit_att_all[send_max][epai_max];
 
-		double									m_unit_att_end[e_unit_attack_att_max];//Íæ¼ÒÊôĞÔµÄ×îÖÕ½á¹û
-		f32										m_game_att[e_unit_game_att_max];//µ¥Ò»³£ÓÃÊôĞÔ
-		int32									m_state_att[e_unit_attack_state_max];//Íæ¼Ò×´Ì¬
-		int32									m_state_att_percent[e_unit_attack_state_max];//Íæ¼Ò×´Ì¬ÉúĞ§°Ù·Ö±È
-		bool									m_state_trigger[e_unit_attack_state_max];//Íæ¼Ò´¥·¢×´Ì¬
-		bool									m_update_att_mask[e_unit_attack_att_max + e_unit_game_att_max + e_unit_attack_state_max + e_unit_attack_state_max];//È«ÊôĞÔÊÇ·ñ¸³ÖµÅĞ¶Ï
+		double									m_unit_att_end[e_unit_attack_att_max];//ç©å®¶å±æ€§çš„æœ€ç»ˆç»“æœ
+		f32										m_game_att[e_unit_game_att_max];//å•ä¸€å¸¸ç”¨å±æ€§
+		int32									m_state_att[e_unit_attack_state_max];//ç©å®¶çŠ¶æ€
+		int32									m_state_att_percent[e_unit_attack_state_max];//ç©å®¶çŠ¶æ€ç”Ÿæ•ˆç™¾åˆ†æ¯”
+		bool									m_state_trigger[e_unit_attack_state_max];//ç©å®¶è§¦å‘çŠ¶æ€
+		bool									m_update_att_mask[e_unit_attack_att_max + e_unit_game_att_max + e_unit_attack_state_max + e_unit_attack_state_max];//å…¨å±æ€§æ˜¯å¦èµ‹å€¼åˆ¤æ–­
 		bool									m_is_update_att;
 		int32									m_be_hurt_type;
 		int32									m_use_owner_att;
-		std::list<s_adversity_aid>				m_adversity_aid_buff_list;//Äæ¾³Ô®Öúbuffid
-		std::list<s_damage_absorb>				m_damage_absorb_list;//ÉËº¦ÎüÊÕ
-		std::map<int32, s_exp_add>				m_exp_add_map;//¾­Ñé¼Ó³É¼ÆËã
+		std::list<s_adversity_aid>				m_adversity_aid_buff_list;//é€†å¢ƒæ´åŠ©buffid
+		std::list<s_damage_absorb>				m_damage_absorb_list;//ä¼¤å®³å¸æ”¶
+		std::map<int32, s_exp_add>				m_exp_add_map;//ç»éªŒåŠ æˆè®¡ç®—
 	private:
 		int64									m_cur_hp_last_sync;
 		int64									m_cur_hp_last_sync_ws;
@@ -208,7 +208,7 @@ namespace faith
 		int32									m_max_move_length;
 		bool									m_close_speed;
 
-		int32									m_is_dead;//µ¥¶ÀĞ´³öµÄÔ­ÒòÊÇÓÅ»¯ĞÔÄÜ
+		int32									m_is_dead;//å•ç‹¬å†™å‡ºçš„åŸå› æ˜¯ä¼˜åŒ–æ€§èƒ½
 		int32									m_change_bush_id;
 	};
 	/************************************************************************/

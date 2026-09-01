@@ -8,11 +8,11 @@ namespace faith
 	class cpp_damage_counter
 	{
 	public:
-		static void	buff_damage_by_server(use_buff_param& param, bool be_server);//·şÎñÆ÷ÉËº¦¼ÆËã
+		static void	buff_damage_by_server(use_buff_param& param, bool be_server);//æœåŠ¡å™¨ä¼¤å®³è®¡ç®—
 	public:
-		static void	buff_damage_by_client(use_buff_param& param);//¿Í»§¶Ë×öÃüÖĞºÍ±©»÷´¦Àí
+		static void	buff_damage_by_client(use_buff_param& param);//å®¢æˆ·ç«¯åšå‘½ä¸­å’Œæš´å‡»å¤„ç†
 	private:
-		static void damage_reflect(unit& attacker, unit& targeter, double end_damage, use_buff_param& param);//ÉËº¦·´Éä
-		static void suck_blood(unit& attacker, unit& targeter, double end_damage, use_buff_param& param);//ÎüÑª
+		static void damage_reflect(unit& attacker, unit& targeter, double end_damage, use_buff_param& param);//ä¼¤å®³åå°„
+		static void suck_blood(unit& attacker, unit& targeter, double end_damage, use_buff_param& param);//å¸è¡€
 	};
 }

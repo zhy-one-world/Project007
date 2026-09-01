@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê9ÔÂ20ÈÕ17:46:11
+created: 2016å¹´9æœˆ20æ—¥17:46:11
 file base: meditation_manager
 file ext: h
 author: zhangminghai
@@ -68,7 +68,7 @@ namespace faith
 				start_mediation(false);
 			}
 
-			/*È¡ÏûÚ¤ÏëÒ©Ë® ÒÔ¼°Ê£ÓàÊ±¼ä¼ÆËã
+			/*å–æ¶ˆå†¥æƒ³è¯æ°´ ä»¥åŠå‰©ä½™æ—¶é—´è®¡ç®—
 			if (m_no_operate_time >= meditation_begin_time && m_player_ptr->get_time_data(e_time_type_meditation_remaining_time) > 0)
 			{
 				start_mediation(false);
@@ -77,7 +77,7 @@ namespace faith
 
 		}
 
-		/*È¡ÏûÚ¤ÏëÒ©Ë® ÒÔ¼°Ê£ÓàÊ±¼ä¼ÆËã
+		/*å–æ¶ˆå†¥æƒ³è¯æ°´ ä»¥åŠå‰©ä½™æ—¶é—´è®¡ç®—
 		else if(m_player_ptr->get_time_data(e_time_type_have_meditation_time) + gap_time < meditation_time_max && m_player_ptr->get_time_data(e_time_type_meditation_remaining_time) > gap_time)
 		{
 			int64 cur_meditation_time = m_player_ptr->get_time_data(e_time_type_have_meditation_time);
@@ -123,7 +123,7 @@ namespace faith
 						m_player_ptr->get_unit_info(e_role_info_server_id),
 						"90303013", "90303027", "90303028",
 						0, 0, 0, 0, 0, 0);
- 					m_player_ptr->set_time_data(e_time_type_meditation_full_send_mail, 1); //³É¹¦·¢ËÍºó½«±ê¼ÇÖÃÎ» 1 £¬±íÊ¾ÎÞÐèÔÙ·¢ËÍÓÊ¼þ
+ 					m_player_ptr->set_time_data(e_time_type_meditation_full_send_mail, 1); //æˆåŠŸå‘é€åŽå°†æ ‡è®°ç½®ä½ 1 ï¼Œè¡¨ç¤ºæ— éœ€å†å‘é€é‚®ä»¶
  				}
  			}
  		}
@@ -154,7 +154,7 @@ namespace faith
 		const int64 have_meditation_time = m_player_ptr->get_time_data(e_time_type_have_meditation_time);
 		int32 meditation_time_max = GAMECONFIG->MeditationTimeMax * second_tick_time;
 
-		//È¡ÏûÚ¤ÏëÒ©Ë® ÒÔ¼°Ê£ÓàÊ±¼ä¼ÆËã
+		//å–æ¶ˆå†¥æƒ³è¯æ°´ ä»¥åŠå‰©ä½™æ—¶é—´è®¡ç®—
 		/*int64 meditation_remaining_time = m_player_ptr->get_time_data(e_time_type_meditation_remaining_time);
 		if (last_logout_time > 0 && meditation_remaining_time > 0)
 		{
@@ -191,7 +191,7 @@ namespace faith
 		}
 		//if (!m_player_ptr->get_func_unlock_mgr().is_func_unlock("Meditation"))
 		//{
-		//	//·ÀÖ¹µ½Ê±¼äºóÎÞÏÞµ÷ÓÃÕâ¸öº¯Êý
+		//	//é˜²æ­¢åˆ°æ—¶é—´åŽæ— é™è°ƒç”¨è¿™ä¸ªå‡½æ•°
 		//	m_no_operate_time = 0;
 		//	return;
 		//}
@@ -214,7 +214,7 @@ namespace faith
 		if (nullptr != m_player_ptr)
 		{
 			m_player_ptr->send_time_one(e_time_type_have_meditation_time);
-			//m_player_ptr->send_time_one(e_time_type_meditation_remaining_time);			//È¡ÏûÚ¤ÏëÒ©Ë® ÒÔ¼°Ê£ÓàÊ±¼ä¼ÆËã
+			//m_player_ptr->send_time_one(e_time_type_meditation_remaining_time);			//å–æ¶ˆå†¥æƒ³è¯æ°´ ä»¥åŠå‰©ä½™æ—¶é—´è®¡ç®—
 			character_proto_stop_meditation resp;
 			resp.add_role_guid(m_player_ptr->get_unit_guid().A);
 			resp.add_role_guid(m_player_ptr->get_unit_guid().B);
@@ -259,7 +259,7 @@ namespace faith
 
 		}
 		break;
-		case e_meditation_reward_four:	//×êÊ¯½±Àø
+		case e_meditation_reward_four:	//é’»çŸ³å¥–åŠ±
 		{
 			exp_num = exp_num + gs_value * (int64)(BaseExp) * (int64)(MeditationExpAddition * 100) * (int64)(MeditationExpRewardRadio) / meditation_standard_gs / (int64)(coefficient);
 			exp_num *= 1.5;

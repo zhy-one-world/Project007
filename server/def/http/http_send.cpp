@@ -54,7 +54,7 @@ namespace faith
 			channel_data = it->first + channel_data;
 			user_data += channel_data + ",";
 		}
-		// 自定义请求头
+		// 鑷畾涔夎姹傚ご
 		std::vector<xstring> head_list;
 		//head_list.push_back("application/json");
 
@@ -72,7 +72,7 @@ namespace faith
 		post_content += "signature=" + md5.toString();
 
 
-		// 异步请求
+		// 寮傛璇锋眰
 		http_access_mgr::get_instance().async_request
 		(
 			0,
@@ -99,7 +99,7 @@ namespace faith
 		xstring secr_key = "af8143bf48ad60ccad6484ee7e3213c4";
 		xstring sdk_url = "https://game.apesgame.com/outapi/notify_level";
 
-		// 自定义请求头
+		// 鑷畾涔夎姹傚ご
 		std::vector<xstring> head_list;
 		head_list.push_back("GAME-ID:" + app_key);
 		head_list.push_back("CHANNEL:" + channel_id);
@@ -122,7 +122,7 @@ namespace faith
 		md5.update(md5_str.c_str(), md5_str.size());
 		post_content += "&signature=" + md5.toString();
 
-		// 异步请求
+		// 寮傛璇锋眰
 		http_access_mgr::get_instance().async_request
 		(
 			0,

@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2014/07/30
 	created:	30:7:2014   18:31
 	file base:	fep_client
@@ -195,7 +195,7 @@ namespace faith
 		daemon_client::getInstance().heart_tick(time_now);
 		http_access_mgr::get_instance().tick(time_now);
 
-		static uint64 sync_fep_data = 0;	// fepͬ�����ݼ�ʱ��
+		static uint64 sync_fep_data = 0;
 		if(time_now >= sync_fep_data)
 		{
 			sync_fep_data = time_now + server_player_to_ws;

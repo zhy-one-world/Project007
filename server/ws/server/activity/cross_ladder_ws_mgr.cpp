@@ -1,9 +1,9 @@
 /********************************************************************
-created: 2019Äê5ÔÂ24ÈÕ
+created: 2019å¹´5æœˆ24æ—¥
 file base: cross_ladder_ws_mgr
 file ext: cpp
 author: pengbiao
-purpose: ¿ç·şÌìÌİ
+purpose: è·¨æœå¤©æ¢¯
 *********************************************************************/
 
 #include "cross_ladder_ws_mgr.h"
@@ -283,7 +283,7 @@ namespace faith
 
 		update_info_to_dp();
 
-		//¸üĞÂÍæ¼ÒÊı¾İ
+		//æ›´æ–°ç©å®¶æ•°æ®
 		ws2ws_cross_ladder_sync_game_result msg;
 		memcpy(msg.role_name, m_role_info.role_name, max_name_size);
 		msg.ladder_score = m_role_info.data_array[e_cross_ladder_role_info_ladder_score];
@@ -531,7 +531,7 @@ namespace faith
 	}
 
 	//-----------------------------------------------------------------------------------------------------------------------------------------
-	//	½ÇÉ«Ô­Çøws¹¦ÄÜ
+	//	è§’è‰²åŸåŒºwsåŠŸèƒ½
 	//-----------------------------------------------------------------------------------------------------------------------------------------
 
 	bool cross_ladder_ws_mgr_new::send_req_cross_ladder_role_info(client_session* session, bool is_online)
@@ -627,7 +627,7 @@ namespace faith
 	{
 		int32 create_time = time_helper::get_cur_time_new().second;
 
-		//1.Í¬²½ÅÅĞĞ°ñ
+		//1.åŒæ­¥æ’è¡Œæ¦œ
 		s_ranking_player_info role_info;
 		role_info.role_guid = role_guid;
 		role_info.set_role_name(msg->role_name);
@@ -644,7 +644,7 @@ namespace faith
 		if (nullptr == ladder_template_ptr)
 			return;
 
-		//2.·¢ËÍÏµÍ³¹«¸æ
+		//2.å‘é€ç³»ç»Ÿå…¬å‘Š
 		legion_ws* legion_ptr = legion_ws_mgr::get_instance().get_unit_legion(role_guid);
 		if (nullptr != legion_ptr)
 		{
@@ -676,8 +676,8 @@ namespace faith
 			event_ws_mgr::get_instance().send_notice_to_all(world_notice_id, create_time, guid_64(), notice_str);
 		}
 
-		//3.µ¯´°ÌáÊ¾ ÕâÀï½øĞĞÁËĞŞ¸Ä Èç¹û½ÇÉ«ÔÚÔ­Çø±ÈÈüÒ²Í¬ÑùÑÓ³Ùµ½Íæ¼ÒÇĞ»»µØÍ¼»òÉÏÏß·¢ËÍ
-		//ÒòÎªÔÚ±ÈÈü½áÊøÊ±ºò»áµ¯³ö½áËã½çÃæ µ¼ÖÂ2¸ö½çÃæ³åÍ»
+		//3.å¼¹çª—æç¤º è¿™é‡Œè¿›è¡Œäº†ä¿®æ”¹ å¦‚æœè§’è‰²åœ¨åŸåŒºæ¯”èµ›ä¹ŸåŒæ ·å»¶è¿Ÿåˆ°ç©å®¶åˆ‡æ¢åœ°å›¾æˆ–ä¸Šçº¿å‘é€
+		//å› ä¸ºåœ¨æ¯”èµ›ç»“æŸæ—¶å€™ä¼šå¼¹å‡ºç»“ç®—ç•Œé¢ å¯¼è‡´2ä¸ªç•Œé¢å†²çª
 		//client_session* session_ptr = client_session_mgr::getInstance().get_session(role_guid);
 		//if (nullptr != session_ptr && session_ptr->is_in_game())
 		//{
@@ -689,7 +689,7 @@ namespace faith
 		//}
 		m_notify_map[role_guid] = ladder_template_ptr->attribute_id;
 
-		//4.¶ÎÎ»ÌáÉı½±Àø
+		//4.æ®µä½æå‡å¥–åŠ±
 		const auto& reward_vec = ladder_template_ptr->UpgradeReward;
 		int32 vec_size = reward_vec.size();
 		if (vec_size && vec_size % 3 == 0)
@@ -772,7 +772,7 @@ namespace faith
 
 	bool cross_ladder_ws_mgr_new::get_transfer_game_info(const guid_64& role_guid, const int32& server_id, s_game_info& game_info)
 	{
-		//¿çµ½±ÈÈü·ş
+		//è·¨åˆ°æ¯”èµ›æœ
 		{
 			auto iter = m_transfer_info_map.find(role_guid);
 			if (iter != m_transfer_info_map.end())
@@ -786,7 +786,7 @@ namespace faith
 				return false;
 			}
 		}
-		//»Øµ½Ô­Çø
+		//å›åˆ°åŸåŒº
 		{
 			auto iter = m_role_server_info_map.find(role_guid);
 			if (iter != m_role_server_info_map.end())
@@ -812,7 +812,7 @@ namespace faith
 	}
 
 	//-----------------------------------------------------------------------------------------------------------------------------------------
-	// ±ÈÈü·şÎñÆ÷ws¹¦ÄÜ
+	// æ¯”èµ›æœåŠ¡å™¨wsåŠŸèƒ½
 	//-----------------------------------------------------------------------------------------------------------------------------------------
 
 	void cross_ladder_ws_mgr_new::deal_with_create_map_msg(s_cross_ladder_match_info& match_info)
@@ -938,7 +938,7 @@ namespace faith
 	}
 
 	//-----------------------------------------------------------------------------------------------------------------------------------------
-	//	Æ¥Åä·şws¹¦ÄÜ
+	//	åŒ¹é…æœwsåŠŸèƒ½
 	//-----------------------------------------------------------------------------------------------------------------------------------------
 
 	void cross_ladder_ws_mgr_new::load_info_from_db()
@@ -1228,7 +1228,7 @@ namespace faith
 			final_mail_info.mail_guid = guid_gen::make_guid();
 			final_mail_info.set_mail_title(titletext);
 			final_mail_info.set_mail_content_text(contenttext);
-			final_mail_info.data_ary[EMailInfo_IsNeedDelete] = time_helper::get_cur_time_new().second + day_time_second * 15;//15ÌìÉ¾³ı
+			final_mail_info.data_ary[EMailInfo_IsNeedDelete] = time_helper::get_cur_time_new().second + day_time_second * 15;//15å¤©åˆ é™¤
 			final_mail_info.data_ary[EMailInfo_SendTime] = time_helper::get_cur_time_new().second;
 			event_ws_mgr::get_instance().add_globel_mail(final_mail_info, final_item_array, 0);
 
@@ -1392,7 +1392,7 @@ namespace faith
 			return;
 		}
 
-		//4.µ±Ç°Ëù´ïµ½¶ÎÎ»ËùÓĞµÄ½±Àø
+		//4.å½“å‰æ‰€è¾¾åˆ°æ®µä½æ‰€æœ‰çš„å¥–åŠ±
 		std::vector<LadderTemplate*> ladder_template_ptr_arr = template_manager::get_instance().get_template_array_by_ladder_score(reserved_score);
 		for (int32 i = 0; i < ladder_template_ptr_arr.size(); i++)
 		{
@@ -1532,7 +1532,7 @@ namespace faith
 			}
 			else
 			{
-				//³¢ÊÔÆ¥Åä»úÆ÷ÈË
+				//å°è¯•åŒ¹é…æœºå™¨äºº
 				if (rand() % 100 < template_ptr->RobotRate)
 				{
 					if (match_with_robot(*first_role_iter, template_ptr->RobotTemplateID))
@@ -1608,9 +1608,9 @@ namespace faith
 		int32 min_reduce_score = 0;
 		int32 max_reduce_score = GAMECONFIG->ScoreReduce;
 
-		std::vector<ui64> enemy_guid_list;//´Ó¸Ã×éÀïËæ»ú³éÒ»¸ö´ò
+		std::vector<ui64> enemy_guid_list;//ä»è¯¥ç»„é‡ŒéšæœºæŠ½ä¸€ä¸ªæ‰“
 		enemy_guid_list.clear();
-		std::vector<ui64> server_guid_list;//ÏàÍ¬·şÎñÆ÷Êı×é
+		std::vector<ui64> server_guid_list;//ç›¸åŒæœåŠ¡å™¨æ•°ç»„
 		server_guid_list.clear();
 		auto iter = m_all_ladder_info_map.begin();
 
@@ -1629,7 +1629,7 @@ namespace faith
 					{
 						enemy_guid_list.push_back(guid_64);
 					}
-					else if (count == 9) //µÚ¾Å´ÎµÄÊ±ºò¼ÇÂ¼ËùÓĞ¿É¹¥»÷½ÇÉ«Êı¾İ
+					else if (count == 9) //ç¬¬ä¹æ¬¡çš„æ—¶å€™è®°å½•æ‰€æœ‰å¯æ”»å‡»è§’è‰²æ•°æ®
 					{
 						server_guid_list.push_back(guid_64);
 					}

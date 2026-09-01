@@ -378,7 +378,7 @@ void item_system::open_auto_use_item(std::vector<s_item_template_info>& res_item
 		return;
 	}
 
-	// ʹǮ����ĸı���Ч
+	// 使钱财类的改变生效
 	for (int32 i = 0; i < prop_template->MoneyChange.size(); i += 2)
 	{
 		int32 money_type = prop_template->MoneyChange[i];

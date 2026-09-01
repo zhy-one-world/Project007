@@ -8,12 +8,12 @@ namespace faith
 {
 #pragma pack(push,1)
 
-	const int32 max_team_member_num = 3;	// Ò»¸ö×é¶ÓÖĞ³ÉÔ±µÄ×î´óÊıÁ¿
-	const int32 gain_treasure_gain_team_num = 5; //´ò±¦boss¶ÓÎéÊı¾İ¼ÇÂ¼ÊıÁ¿
-	const int32 ready_transfer_sec = 3;		// ´«ËÍµ¹¼ÆÊ±
+	const int32 max_team_member_num = 3;	// ä¸€ä¸ªç»„é˜Ÿä¸­æˆå‘˜çš„æœ€å¤§æ•°é‡
+	const int32 gain_treasure_gain_team_num = 5; //æ‰“å®bossé˜Ÿä¼æ•°æ®è®°å½•æ•°é‡
+	const int32 ready_transfer_sec = 3;		// ä¼ é€å€’è®¡æ—¶
 	const int32 platform_get_team_num = 10;
-	const int32 cap_offline_check_sec = 15;	// ÀëÏß¼à²â
-	const int32 wait_for_mem_ready_sec = 20;//×¼±¸µÈ´ıÊ±¼ä
+	const int32 cap_offline_check_sec = 15;	// ç¦»çº¿ç›‘æµ‹
+	const int32 wait_for_mem_ready_sec = 20;//å‡†å¤‡ç­‰å¾…æ—¶é—´
 
 	const int32 first_team_aim_template_id = 122000001;
 	
@@ -23,39 +23,39 @@ namespace faith
 
 	enum e_join_team_way
 	{
-		e_join_team_way_by_team_guid,        // Í¨¹ı¶ÓÎéµÄGUIDÀ´¼ÓÈë¶ÓÎé
-		e_join_team_way_by_captain_guid,     // Í¨¹ı¶Ó³¤µÄGUIDÀ´¼ÓÈë¶ÓÎé
+		e_join_team_way_by_team_guid,        // é€šè¿‡é˜Ÿä¼çš„GUIDæ¥åŠ å…¥é˜Ÿä¼
+		e_join_team_way_by_captain_guid,     // é€šè¿‡é˜Ÿé•¿çš„GUIDæ¥åŠ å…¥é˜Ÿä¼
 		e_join_team_way_max
 	};
 
 	enum ETeamMemberInfo
 	{
-		ETeamMemberInfo_is_online,			// ³ÉÔ±ÊÇ·ñÔÚÏß
-		ETeamMemberInfo_line_id,			// ³ÉÔ±ËùÔÚÏß
-		ETeamMemberInfo_player_template_id,	// ³ÉÔ±µÄÍ·ÏñID
-		ETeamMemberInfo_cur_hp,				// ³ÉÔ±µÄµ±Ç°ÉúÃüÖµ
-		ETeamMemberInfo_max_hp,				// ³ÉÔ±µÄ×î´óÉúÃüÖµ
-		ETeamMemberInfo_level,				// ³ÉÔ±µÄµÈ¼¶
-		ETeamMemberInfo_fighting_power,		// ³ÉÔ±µÄÕ½¶·Á¦
-		ETeamMemberInfo_cur_map,			// ³ÉÔ±µ±Ç°ËùÔÚµÄµØÍ¼ID
-		ETeamMemberInfo_damage,				// Ôì³ÉµÄÉËº¦
-		ETeamMemberInfo_PosX,				// µ±Ç°×ø±êX
-		ETeamMemberInfo_PosY,				// µ±Ç°×ø±êY
-		ETeamMemberInfo_PosZ,				// µ±Ç°×ø±êZ
-		ETeamMemberInfo_ready_state,		// ×¼±¸×´Ì¬
-		ETeamMemberInfo_follow_state,		// ¸úËæ×´Ì¬
+		ETeamMemberInfo_is_online,			// æˆå‘˜æ˜¯å¦åœ¨çº¿
+		ETeamMemberInfo_line_id,			// æˆå‘˜æ‰€åœ¨çº¿
+		ETeamMemberInfo_player_template_id,	// æˆå‘˜çš„å¤´åƒID
+		ETeamMemberInfo_cur_hp,				// æˆå‘˜çš„å½“å‰ç”Ÿå‘½å€¼
+		ETeamMemberInfo_max_hp,				// æˆå‘˜çš„æœ€å¤§ç”Ÿå‘½å€¼
+		ETeamMemberInfo_level,				// æˆå‘˜çš„ç­‰çº§
+		ETeamMemberInfo_fighting_power,		// æˆå‘˜çš„æˆ˜æ–—åŠ›
+		ETeamMemberInfo_cur_map,			// æˆå‘˜å½“å‰æ‰€åœ¨çš„åœ°å›¾ID
+		ETeamMemberInfo_damage,				// é€ æˆçš„ä¼¤å®³
+		ETeamMemberInfo_PosX,				// å½“å‰åæ ‡X
+		ETeamMemberInfo_PosY,				// å½“å‰åæ ‡Y
+		ETeamMemberInfo_PosZ,				// å½“å‰åæ ‡Z
+		ETeamMemberInfo_ready_state,		// å‡†å¤‡çŠ¶æ€
+		ETeamMemberInfo_follow_state,		// è·ŸéšçŠ¶æ€
 		ETeamMemberInfo_check_ret,			// checkret
-		ETeamMemberInfo_one_stop_flags,		// Ò»ÌõÁúflags
+		ETeamMemberInfo_one_stop_flags,		// ä¸€æ¡é¾™flags
 		ETeamMemberInfo_agora_id,			// AgoraId
 		ETeamMemberInfo_max
 	};
 
 	struct s_team_member_info
 	{
-		guid_64		role_guid;						// ³ÉÔ±µÄ½ÇÉ«GUID
-		int32		role_index;						// ³ÉÔ±µÄÊı×éÏÂ±ê
-		xchar		role_name[max_name_size + 1];	// ³ÉÔ±µÄÃû³Æ
-		int64		gs_value;						// ³ÉÔ±µÄÕ½Á¦Öµ
+		guid_64		role_guid;						// æˆå‘˜çš„è§’è‰²GUID
+		int32		role_index;						// æˆå‘˜çš„æ•°ç»„ä¸‹æ ‡
+		xchar		role_name[max_name_size + 1];	// æˆå‘˜çš„åç§°
+		int64		gs_value;						// æˆå‘˜çš„æˆ˜åŠ›å€¼
 		int64		data_ary[ETeamMemberInfo_max];
 
 		bool is_valid() const
@@ -156,23 +156,23 @@ namespace faith
 	enum e_team_error
 	{
 		e_team_error_none,
-		e_team_error_team_full,							// ¶ÓÎéÒÑÂú
-		e_team_error_fighting_power_not_enough,			// Õ½¶·Á¦²»×ã²»ÄÜ¼ÓÈë¶ÓÎé
-		e_team_error_level_not_enough,					// µÈ¼¶²»×ã²»ÄÜ¼ÓÈë¶ÓÎé
-		e_team_error_player_already_join_team,			// Íæ¼ÒÒÑ¾­¼ÓÁË¶ÓÎé
-		e_team_error_player_already_join_other_team,	// Íæ¼ÒÒÑ¾­¼ÓÈëÁËÆäËû¶ÓÎé
-		e_team_error_player_already_offline,			// Íæ¼ÒÒÑ¾­ÀëÏß
-		e_team_error_team_already_dissolve,				// ¶ÓÎéÒÑ¾­½âÉ¢
-		e_team_error_target_player_not_in_team,			// Ä¿±êÍæ¼ÒÎ´ÔÚÈÎºÎ¶ÓÎéÖĞ
-		e_team_error_target_player_is_not_captain,		// Ä¿±êÍæ¼Ò²»ÊÇ¶Ó³¤
-		e_team_error_captain_change,					// ¶Ó³¤ÒÑ±ä¸ü
-		e_team_error_create_raid_failed,				// ´´½¨¸±±¾Ê§°Ü
-		e_team_error_invalid_raid_instance,				// ÎŞĞ§µÄ¸±±¾µØÍ¼ÊµÀı
-		e_team_error_member_change_during_transfer,		// ´«ËÍÆÚ¼ä¶ÓÎé³ÉÔ±·¢Éú¸Ä±ä
-		e_team_error_raid_condition_less,				// ²»Âú×ãÄ¿±ê¸±±¾Ìõ¼ş ÈçµÈ¼¶½øÈë´ÎÊı
-		e_team_error_cur_map_cant_ready,				// µ±Ç°µØÍ¼²»¿É·¢Æğ×¼±¸
-		e_team_error_team_member_is_full,				// ¶ÓÎéÈËÊıÒÑÂú
-		e_team_error_raidmulti_ingame,					// ¶ÓÎéÒÑ¾­½øÈë¶àÈË±¾
+		e_team_error_team_full,							// é˜Ÿä¼å·²æ»¡
+		e_team_error_fighting_power_not_enough,			// æˆ˜æ–—åŠ›ä¸è¶³ä¸èƒ½åŠ å…¥é˜Ÿä¼
+		e_team_error_level_not_enough,					// ç­‰çº§ä¸è¶³ä¸èƒ½åŠ å…¥é˜Ÿä¼
+		e_team_error_player_already_join_team,			// ç©å®¶å·²ç»åŠ äº†é˜Ÿä¼
+		e_team_error_player_already_join_other_team,	// ç©å®¶å·²ç»åŠ å…¥äº†å…¶ä»–é˜Ÿä¼
+		e_team_error_player_already_offline,			// ç©å®¶å·²ç»ç¦»çº¿
+		e_team_error_team_already_dissolve,				// é˜Ÿä¼å·²ç»è§£æ•£
+		e_team_error_target_player_not_in_team,			// ç›®æ ‡ç©å®¶æœªåœ¨ä»»ä½•é˜Ÿä¼ä¸­
+		e_team_error_target_player_is_not_captain,		// ç›®æ ‡ç©å®¶ä¸æ˜¯é˜Ÿé•¿
+		e_team_error_captain_change,					// é˜Ÿé•¿å·²å˜æ›´
+		e_team_error_create_raid_failed,				// åˆ›å»ºå‰¯æœ¬å¤±è´¥
+		e_team_error_invalid_raid_instance,				// æ— æ•ˆçš„å‰¯æœ¬åœ°å›¾å®ä¾‹
+		e_team_error_member_change_during_transfer,		// ä¼ é€æœŸé—´é˜Ÿä¼æˆå‘˜å‘ç”Ÿæ”¹å˜
+		e_team_error_raid_condition_less,				// ä¸æ»¡è¶³ç›®æ ‡å‰¯æœ¬æ¡ä»¶ å¦‚ç­‰çº§è¿›å…¥æ¬¡æ•°
+		e_team_error_cur_map_cant_ready,				// å½“å‰åœ°å›¾ä¸å¯å‘èµ·å‡†å¤‡
+		e_team_error_team_member_is_full,				// é˜Ÿä¼äººæ•°å·²æ»¡
+		e_team_error_raidmulti_ingame,					// é˜Ÿä¼å·²ç»è¿›å…¥å¤šäººæœ¬
 		e_team_error_max
 	};
 

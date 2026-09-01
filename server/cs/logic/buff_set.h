@@ -29,7 +29,7 @@ namespace faith
 	public:
 		buff_set();
 		~buff_set();
-	private://内存已经创建好了 禁止拷贝
+	private://鍐呭瓨宸茬粡鍒涘缓濂戒簡 绂佹鎷疯礉
 		buff_set(const buff_set& unit_ref);
 		buff_set& operator=(const buff_set&);
 	public:
@@ -105,7 +105,7 @@ namespace faith
 		buff_item_map			m_buff_inst_vector;
 		uint32					m_buff_inst_vector_len;
 
-		int64					m_buff_update_time;		//每秒刷新一次是否需要向客户端刷新buff
+		int64					m_buff_update_time;		//姣忕鍒锋柊涓�娆℃槸鍚﹂渶瑕佸悜瀹㈡埛绔埛鏂癰uff
 	};
 }
 

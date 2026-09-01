@@ -73,11 +73,11 @@ namespace faith
 
 		if (m_cur_person_info.infor_state == 0)
 		{
-			m_cur_person_info.infor_state = 1;//“—–ﬁ∏ƒ
+			m_cur_person_info.infor_state = 1;//Â∑≤‰øÆÊîπ
 		}
 		if (m_cur_person_info.reward_state == 0)
 		{
-			m_cur_person_info.reward_state = 1;//ø…¡Ï»°
+			m_cur_person_info.reward_state = 1;//ÂèØÈ¢ÜÂèñ
 		}
 	}
 	void person_information_mgr::clear_person_information_tags()
@@ -102,7 +102,7 @@ namespace faith
 		player& target_ref = unit_man::get_player(target_guid);
 		if (true == target_ref.is_valid() && target_ref.get_session_state() == e_session_status_in_gaming)
 		{
-			//‘⁄œﬂ
+			//Âú®Á∫ø
 			s_role_person_information role_info = target_ref.get_person_infor_mgr().get_person_info();
 			faith::character_proto_sync_person_information msg;
 			msg.set_is_main_player(false);
@@ -290,17 +290,17 @@ namespace faith
 		player& player_ref = unit_man::get_player(m_array_index);
 		if (m_cur_person_info.reward_state == 0)
 		{
-			//≤ªø…¡Ï»°
+			//‰∏çÂèØÈ¢ÜÂèñ
 
 		}
 		else if (m_cur_person_info.reward_state == 1)
 		{
-			//ø…¡Ï»°
+			//ÂèØÈ¢ÜÂèñ
 			if (GAMECONFIG->PersonInforReward.size() < 2)
-			{//ø™∆Ù÷˜œﬂŒ¥ÕÍ≥…
+			{//ÂºÄÂêØ‰∏ªÁ∫øÊú™ÂÆåÊàê
 				return;
 			}
-			//ŒÔ∆∑Ω±¿¯
+			//Áâ©ÂìÅÂ•ñÂä±
 			std::vector<citem*> item_array;
 			std::vector<s_item_template_info> promp_item_data;
 			for (int32 i = 0; i * 2 + 1 < GAMECONFIG->PersonInforReward.size(); i++)
@@ -332,7 +332,7 @@ namespace faith
 		}
 		else if (m_cur_person_info.reward_state == 2)
 		{
-			//“—¡Ï»°
+			//Â∑≤È¢ÜÂèñ
 		}
 	}
 

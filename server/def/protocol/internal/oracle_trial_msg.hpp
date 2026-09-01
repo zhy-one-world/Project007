@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2019Äê5ÔÂ24ÈÕ
+created: 2019å¹´5æœˆ24æ—¥
 file base: oracle_trial_msg
 file ext: hpp
 author: zhaoyuming

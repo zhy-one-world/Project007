@@ -1,4 +1,4 @@
-/********************************************************************
+ï»¿/********************************************************************
 	created:	2014/07/25
 	created:	25:7:2014   19:34
 	file base:	logic_logger
@@ -63,183 +63,180 @@ namespace faith
 		enum log_content
 		{
 			log_begin = 100,
-			log_login,						//ÓÃ»§µÇÂ¼
-			log_logout,						//ÓÃ»§µÇ³ö
-			log_enter_scene,				//½øÈë³¡¾°
-			log_exit_scene,					//Àë¿ª³¡¾°
-			log_create_character,			//´´½¨½ÇÉ«
-			log_del_character,				//É¾³ı½ÇÉ«
-			log_revive_character,			//»Ö¸´½ÇÉ«
-			log_kick_account,				//Íæ¼Ò±»Ìß
-			log_role_online,				//½ÇÉ«ÉÏÏß
-			log_role_offline,				//½ÇÉ«ÏÂÏß
-			log_market_buyitem,				//ÉÌ³Ç¹ºÂòÎïÆ·	
-			log_market_buydolly,			//ÉÌ³Ç¹ºÎï³µ¹ºÂò
-			log_market_gift,				//ÔùËÍÉÌ³ÇÎïÆ·
-			log_market_group,				//·¢ÆğÍÅ¹º
-			log_market_groupjoin,			//¼ÓÈëÍÅ¹º
-			log_market_group_getback,		//ÍÅ¹ºÊ§°Ü£¬ÁìÈ¡Ôª±¦
-			log_market_getgift,				//ÁìÈ¡ÉÌ³ÇÎïÆ·
-			log_item_trade,					//½»Ò×
-			log_item_npc_trade,				//NPC½»Ò×
-			log_item_npc_item,				//NPC½»Ò×ÎïÆ·£¨NPC½»Ò×µÄ´Ó±í£©
-			log_item_pick,					//Ê°È¡ÎïÆ·
-			log_item_drop,					//¶ªÆúÎïÆ·
-			log_item_consume,				//ÎïÆ·ÏûºÄ
-			log_item_levelup,				//µÀ¾ßÉı¼¶
-			log_item_enchase,				//µÀ¾ßÏâÇ¶
-			log_item_fuse,					//µÀ¾ßÈÚºÏ
-			log_item_hecheng,				//ÁéÊ¯ºÏ³É
-			log_item_stiletto,				//µÀ¾ß´ò¿×
-			log_item_reehence,				//ÊôĞÔÖØ³é
-			log_item_auction_sell,			//¼ÄÂôÎïÆ·
-			log_item_auction_takeitem,		//È¡¼ÄÂôÎïÆ·
-			log_item_auction_takemoney,		//È¡¼ÄÂôËùµÃÓÎÏ·±Ò
-			log_item_auction_takeyb,		//È¡¼ÄÂôËùµÃÔª±¦
-			log_item_auction_buy,			//ÓÎÏ·±Ò¾ºÂò
-			log_item_auction_buyyb,			//Ôª±¦¾ºÂò
-			log_item_auction_tackback_sell_item,			//³·Ïú¼ÄÂôÎïÆ·
-			log_item_giftbox,				//¼ñµ½ÀñÆ·Ïä
-			log_item_moneybox,				//¼ñµ½Ç®Ïä
-			log_item_ybbox,					//¼ñµ½Ôª±¦Ïä
-			log_item_yb_trade,				//Ôª±¦½»Ò×
-			log_dopot_item,					//²Ö¿â´æÈ¡ÎïÆ·
-			log_dopot_pet,					//²Ö¿â´æÈ¡±ø»ê
-			log_dopot_money,				//²Ö¿â´æÈ¡ÓÎÏ·±Ò
-			log_mail_send,					//·¢ËÍÓÊ¼ş
-			log_mail_receive,				//½ÓÊÜÓÊ¼ş
-			log_mail_delete,				//É¾³ıÓÊ¼ş
-			log_yb_consume,					//Ôª±¦ÏûºÄ
-			log_item_vitiate,				//ÎïÆ·±äÖÊ
-			log_fortune_change,				//½ğÇ®±ä»¯
-			log_market_encourage,			//½Úµã½±Àø
-			log_item_zhaichu,				//Õª³ıÁéÊ¯
-			log_cast_cfaithose,				//ÖÆ×÷µÀ¾ß
-			log_quest_accept,				//½ÓÈÎÎñ
-			log_quest_submit,				//½»ÈÎÎñ
-			log_quest_reward,				//ÈÎÎñ½±ÀøµÀ¾ß
-			log_quest_save,					//±£´æÈÎÎñ½ø¶È
-			log_player_addexp,				//Íæ¼Ò»ñµÃ¾­Ñé
-			log_player_useexp,				//Íæ¼ÒÊ¹ÓÃ¾­Ñé
-			log_player_levelup,				//Íæ¼ÒÉı¼¶
-			log_player_die,					//Íæ¼ÒËÀÍö
-			log_player_revive,				//Ô­µØ¸´»î
-			log_friend_add,					//Ìí¼ÓºÃÓÑ
-			log_friend_remove,				//½â³ıºÃÓÑ
-			log_blacklist_add,				//Ìí¼ÓºÚÃûµ¥
-			log_blacklist_remove,			//ÒÆ³ıºÚÃûµ¥
-			log_add_speciality,				//Ñ§Ï°Éú»î¼¼ÄÜ
-			log_del_speciality,				//ÒÅÍüÉú»î¼¼ÄÜ
-			log_add_cfaithose,				//Ñ§Ï°Åä·½
-			//ÁÄÌì¼ÇÂ¼
-			log_chat_world,					//ÊÀ½çÆµµÀ
-			log_chat_camp,					//ÊÀ¼ÒÆµµÀ
-			log_chat_team,					//¶ÓÎéÆµµÀ
-			log_chat_guild,					//¼Ò×åÆµµÀ
-			log_chat_trade,					//½»Ò×ÆµµÀ
-			log_chat_aoi,					//¸½½üÆµµÀ
-			log_chat_map,					//µØÇøÆµµÀ
-			log_chat_private,				//Ë½ÁÄÆµµÀ
-			log_chat_room,					//×Ô½¨ÁÄÌìÊÒÆµµÀ
-			log_pet_get_from_item,			//±ø»ê»ñµÃ
-			log_pet_get,					//±ø»ê»ñµÃ
-			log_pet_smelt,					//±ø»êÆíÁé
-			log_pet_ghost,					//±ø»êÏ´»ê
-			log_pet_skill,					//±ø»êÑ§Ï°¼¼ÄÜ
-			log_pet_drop,					//±ø»ê¶ªÆú		
-			log_pet_seal,					//±ø»ê·âÓ¡
-			log_pet_unseal,					//±ø»ê½â·â
-			log_pet_feed,					//±ø»êÎ¹Ñø
-			log_pet_change,					//±ø»ê¼¼
-			log_pet_trade,					//±ø»ê»Ã»¯
-			log_pet_enhence,				//±ø»êĞÇ¼¶ÈÚºÏ
+			log_login,						//ç”¨æˆ·ç™»å½•
+			log_logout,						//ç”¨æˆ·ç™»å‡º
+			log_enter_scene,				//è¿›å…¥åœºæ™¯
+			log_exit_scene,					//ç¦»å¼€åœºæ™¯
+			log_create_character,			//åˆ›å»ºè§’è‰²
+			log_del_character,				//åˆ é™¤è§’è‰²
+			log_revive_character,			//æ¢å¤è§’è‰²
+			log_kick_account,				//ç©å®¶è¢«è¸¢
+			log_role_online,				//è§’è‰²ä¸Šçº¿
+			log_role_offline,				//è§’è‰²ä¸‹çº¿
+			log_market_buyitem,				//å•†åŸè´­ä¹°ç‰©å“	
+			log_market_buydolly,			//å•†åŸè´­ç‰©è½¦è´­ä¹°
+			log_market_gift,				//èµ é€å•†åŸç‰©å“
+			log_market_group,				//å‘èµ·å›¢è´­
+			log_market_groupjoin,			//åŠ å…¥å›¢è´­
+			log_market_group_getback,		//å›¢è´­å¤±è´¥ï¼Œé¢†å–å…ƒå®
+			log_market_getgift,				//é¢†å–å•†åŸç‰©å“
+			log_item_trade,					//äº¤æ˜“
+			log_item_npc_trade,				//NPCäº¤æ˜“
+			log_item_npc_item,				//NPCäº¤æ˜“ç‰©å“ï¼ˆNPCäº¤æ˜“çš„ä»è¡¨ï¼‰
+			log_item_pick,					//æ‹¾å–ç‰©å“
+			log_item_drop,					//ä¸¢å¼ƒç‰©å“
+			log_item_consume,				//ç‰©å“æ¶ˆè€—
+			log_item_levelup,				//é“å…·å‡çº§
+			log_item_enchase,				//é“å…·é•¶åµŒ
+			log_item_fuse,					//é“å…·èåˆ
+			log_item_hecheng,				//çµçŸ³åˆæˆ
+			log_item_stiletto,				//é“å…·æ‰“å­”
+			log_item_reehence,				//å±æ€§é‡æŠ½
+			log_item_auction_sell,			//å¯„å–ç‰©å“
+			log_item_auction_takeitem,		//å–å¯„å–ç‰©å“
+			log_item_auction_takemoney,		//å–å¯„å–æ‰€å¾—æ¸¸æˆå¸
+			log_item_auction_takeyb,		//å–å¯„å–æ‰€å¾—å…ƒå®
+			log_item_auction_buy,			//æ¸¸æˆå¸ç«ä¹°
+			log_item_auction_buyyb,			//å…ƒå®ç«ä¹°
+			log_item_auction_tackback_sell_item,			//æ’¤é”€å¯„å–ç‰©å“
+			log_item_giftbox,				//æ¡åˆ°ç¤¼å“ç®±
+			log_item_moneybox,				//æ¡åˆ°é’±ç®±
+			log_item_ybbox,					//æ¡åˆ°å…ƒå®ç®±
+			log_item_yb_trade,				//å…ƒå®äº¤æ˜“
+			log_dopot_item,					//ä»“åº“å­˜å–ç‰©å“
+			log_dopot_pet,					//ä»“åº“å­˜å–å…µé­‚
+			log_dopot_money,				//ä»“åº“å­˜å–æ¸¸æˆå¸
+			log_mail_send,					//å‘é€é‚®ä»¶
+			log_mail_receive,				//æ¥å—é‚®ä»¶
+			log_mail_delete,				//åˆ é™¤é‚®ä»¶
+			log_yb_consume,					//å…ƒå®æ¶ˆè€—
+			log_item_vitiate,				//ç‰©å“å˜è´¨
+			log_fortune_change,				//é‡‘é’±å˜åŒ–
+			log_market_encourage,			//èŠ‚ç‚¹å¥–åŠ±
+			log_item_zhaichu,				//æ‘˜é™¤çµçŸ³
+			log_cast_cfaithose,				//åˆ¶ä½œé“å…·
+			log_quest_accept,				//æ¥ä»»åŠ¡
+			log_quest_submit,				//äº¤ä»»åŠ¡
+			log_quest_reward,				//ä»»åŠ¡å¥–åŠ±é“å…·
+			log_quest_save,					//ä¿å­˜ä»»åŠ¡è¿›åº¦
+			log_player_addexp,				//ç©å®¶è·å¾—ç»éªŒ
+			log_player_useexp,				//ç©å®¶ä½¿ç”¨ç»éªŒ
+			log_player_levelup,				//ç©å®¶å‡çº§
+			log_player_die,					//ç©å®¶æ­»äº¡
+			log_player_revive,				//åŸåœ°å¤æ´»
+			log_friend_add,					//æ·»åŠ å¥½å‹
+			log_friend_remove,				//è§£é™¤å¥½å‹
+			log_blacklist_add,				//æ·»åŠ é»‘åå•
+			log_blacklist_remove,			//ç§»é™¤é»‘åå•
+			log_add_speciality,				//å­¦ä¹ ç”Ÿæ´»æŠ€èƒ½
+			log_del_speciality,				//é—å¿˜ç”Ÿæ´»æŠ€èƒ½
+			log_add_cfaithose,				//å­¦ä¹ é…æ–¹
+			//èŠå¤©è®°å½•
+			log_chat_world,					//ä¸–ç•Œé¢‘é“
+			log_chat_camp,					//ä¸–å®¶é¢‘é“
+			log_chat_team,					//é˜Ÿä¼é¢‘é“
+			log_chat_guild,					//å®¶æ—é¢‘é“
+			log_chat_trade,					//äº¤æ˜“é¢‘é“
+			log_chat_aoi,					//é™„è¿‘é¢‘é“
+			log_chat_map,					//åœ°åŒºé¢‘é“
+			log_chat_private,				//ç§èŠé¢‘é“
+			log_chat_room,					//è‡ªå»ºèŠå¤©å®¤é¢‘é“
+			log_pet_get_from_item,			//å…µé­‚è·å¾—
+			log_pet_get,					//å…µé­‚è·å¾—
+			log_pet_smelt,					//å…µé­‚ç¥ˆçµ
+			log_pet_ghost,					//å…µé­‚æ´—é­‚
+			log_pet_skill,					//å…µé­‚å­¦ä¹ æŠ€èƒ½
+			log_pet_drop,					//å…µé­‚ä¸¢å¼ƒ		
+			log_pet_seal,					//å…µé­‚å°å°
+			log_pet_unseal,					//å…µé­‚è§£å°
+			log_pet_feed,					//å…µé­‚å–‚å…»
+			log_pet_change,					//å…µé­‚æŠ€
+			log_pet_trade,					//å…µé­‚å¹»åŒ–
+			log_pet_enhence,				//å…µé­‚æ˜Ÿçº§èåˆ
 			log_pet_extend,	
 
-			log_guild_create,				//¼Ò×å´´½¨
-			log_guild_join,					//¼ÓÈë¼Ò×å
-			log_guild_exit,					//ÍË³ö¼Ò×å
-			log_guild_destroy,				//½âÉ¢¼Ò×å
-			log_guild_duty,					//¼Ò×åÖ°Î»ÈÎÃü
-			log_guild_present,				//¼Ò×å½±Àø
+			log_guild_create,				//å®¶æ—åˆ›å»º
+			log_guild_join,					//åŠ å…¥å®¶æ—
+			log_guild_exit,					//é€€å‡ºå®¶æ—
+			log_guild_destroy,				//è§£æ•£å®¶æ—
+			log_guild_duty,					//å®¶æ—èŒä½ä»»å‘½
+			log_guild_present,				//å®¶æ—å¥–åŠ±
 
-			log_camp_join,					//¼ÓÈëÊÀ¼Ò
-			log_camp_change,				//ÊÀ¼Ò±ä¸ü
-			log_camp_elect,					//ÊÀ¼Ò²ÎÑ¡
-			log_camp_vote,					//ÊÀ¼ÒÑ¡¾ÙÍ¶Æ±
-			log_camp_point_get,				//»ñµÃÊÀ¼ÒµãÊı
-			log_camp_point_consume,			//ÏûºÄÊÀ¼ÒµãÊı
-			log_camp_buy,					//¹ºÂòÊÀ¼ÒÎïÆ·
+			log_camp_join,					//åŠ å…¥ä¸–å®¶
+			log_camp_change,				//ä¸–å®¶å˜æ›´
+			log_camp_elect,					//ä¸–å®¶å‚é€‰
+			log_camp_vote,					//ä¸–å®¶é€‰ä¸¾æŠ•ç¥¨
+			log_camp_point_get,				//è·å¾—ä¸–å®¶ç‚¹æ•°
+			log_camp_point_consume,			//æ¶ˆè€—ä¸–å®¶ç‚¹æ•°
+			log_camp_buy,					//è´­ä¹°ä¸–å®¶ç‰©å“
 
-			log_ym_create,					//ÒåÃË´´½¨
-			log_ym_join,					//¼ÓÈëÒåÃË
-			log_ym_leave,					//ÍË³öÒåÃË
-			log_ym_dismiss,					//ÒåÃË½âÉ¢
-			log_ym_levelup,					//ÒåÃËÉı¼¶
+			log_ym_create,					//ä¹‰ç›Ÿåˆ›å»º
+			log_ym_join,					//åŠ å…¥ä¹‰ç›Ÿ
+			log_ym_leave,					//é€€å‡ºä¹‰ç›Ÿ
+			log_ym_dismiss,					//ä¹‰ç›Ÿè§£æ•£
+			log_ym_levelup,					//ä¹‰ç›Ÿå‡çº§
 
-			log_ys_levelup,					//ÔªÉñÉı¼¶
-			log_ys_redeem,					//ÔªÉñĞŞÁ¶
-			log_ys_consume,					//ÔªÉñÏûºÄ
-			log_ys_reset,					//ÔªÉñÏ´µã
+			log_ys_levelup,					//å…ƒç¥å‡çº§
+			log_ys_redeem,					//å…ƒç¥ä¿®ç‚¼
+			log_ys_consume,					//å…ƒç¥æ¶ˆè€—
+			log_ys_reset,					//å…ƒç¥æ´—ç‚¹
 
-			log_ride_enhance,				//×øÆïÇ¿»¯
+			log_ride_enhance,				//åéª‘å¼ºåŒ–
 
-			log_player_count,				//ÔÚÏßÈËÊıÍ³¼Æ
-			log_player_instance,			//½ÇÉ«½ø³ö¸±±¾
-			log_money_overload,				//ÏµÍ³É¾³ı½ğÇ®
+			log_player_count,				//åœ¨çº¿äººæ•°ç»Ÿè®¡
+			log_player_instance,			//è§’è‰²è¿›å‡ºå‰¯æœ¬
+			log_money_overload,				//ç³»ç»Ÿåˆ é™¤é‡‘é’±
 
-			log_active_branch,				//ÇĞ»»¼¼ÄÜ·ÖÖ§
-			log_add_skill,					//Ñ§Ï°¼¼ÄÜ
-			log_use_skill,					//Ê¹ÓÃ¼¼ÄÜ
-			log_fly,						//¹Ì¶¨Â·Ïß·ÉĞĞ
-			log_gm_fortune,					//Í¨¹ıGMÖÆ¶¨µÃµ½Ç®»òÔª±¦
-			log_offline_exp,				//ÀëÏß¾­Ñé
-			log_gift_money,					//Ê±³¤Ôª±¦
+			log_active_branch,				//åˆ‡æ¢æŠ€èƒ½åˆ†æ”¯
+			log_add_skill,					//å­¦ä¹ æŠ€èƒ½
+			log_use_skill,					//ä½¿ç”¨æŠ€èƒ½
+			log_fly,						//å›ºå®šè·¯çº¿é£è¡Œ
+			log_gm_fortune,					//é€šè¿‡GMåˆ¶å®šå¾—åˆ°é’±æˆ–å…ƒå®
+			log_offline_exp,				//ç¦»çº¿ç»éªŒ
+			log_gift_money,					//æ—¶é•¿å…ƒå®
 
-			log_quest_consume,				// ÈÎÎñ¿Û³ıÎïÆ·
-			log_guild_levelup,				//¼Ò×åÉı¼¶
-			log_guild_addmoney,				//¼Ò×å¾è¿î
-			log_guild_addmaterial,			//¼Ò×å¾èÏ×²ÄÁÏ
-			log_vip_info,					//ÕÊºÅVIP
+			log_quest_consume,				// ä»»åŠ¡æ‰£é™¤ç‰©å“
+			log_guild_levelup,				//å®¶æ—å‡çº§
+			log_guild_addmoney,				//å®¶æ—ææ¬¾
+			log_guild_addmaterial,			//å®¶æ—æçŒ®ææ–™
+			log_vip_info,					//å¸å·VIP
 
-			log_market_group_finish,		// 2012-02-22 330°æ±¾£ºÔö¼ÓÍÅ¹º³É¹¦LOG
+			log_market_group_finish,		// 2012-02-22 330ç‰ˆæœ¬ï¼šå¢åŠ å›¢è´­æˆåŠŸLOG
 
 
-			log_ghost_pet,					//±ø»êÏ´»ê
+			log_ghost_pet,					//å…µé­‚æ´—é­‚
 			log_fuse_pet,
-			//...
 
 			//////////////////////////////////////////////////////////////////////////
-			//
-			//	2011-12-13: Zeguo.Gao Ôö¼ÓLogÀàĞÍ: Ôö¼Ó±ø»ê²ÛÎ»ÏûºÄ
-			//
+			//	2011-12-13: Zeguo.Gao å¢åŠ Logç±»å‹: å¢åŠ å…µé­‚æ§½ä½æ¶ˆè€—
 			//////////////////////////////////////////////////////////////////////////
-			log_pet_add_pet_slot,			// Ôö¼Ó±ø»ê²ÛÎ»
+			log_pet_add_pet_slot,			// å¢åŠ å…µé­‚æ§½ä½
 
-			log_change_camp_point,			// Ôª±¦¶Ò»»¾«Á¦Öµ
+			log_change_camp_point,			// å…ƒå®å…‘æ¢ç²¾åŠ›å€¼
 
 			log_qingling_pet,	
 			log_paiyang_pet,	
-			log_item_synthesis,				// ÎïÆ·ºÏ³É
+			log_item_synthesis,				// ç‰©å“åˆæˆ
 
-			log_title_info,					// ³ÆºÅĞÅÏ¢
+			log_title_info,					// ç§°å·ä¿¡æ¯
 
-			log_online_time,				// ÔÚÏßÊ±¼ä
-			// 2012-04-26 Zeguo.Gao Ôö¼ÓLOGÀàĞÍ
-			log_yuanbao_auction_sale,		// ¼ÄÂôÔª±¦
-			log_yuanbao_auction_buy,		// ¹ºÂòÔª±¦
-			log_yuanbao_auction_take_back,	// ¼ÄÂôÔª±¦¹Òµ¥ÏÂ¼Ü
+			log_online_time,				// åœ¨çº¿æ—¶é—´
+			// 2012-04-26 Zeguo.Gao å¢åŠ LOGç±»å‹
+			log_yuanbao_auction_sale,		// å¯„å–å…ƒå®
+			log_yuanbao_auction_buy,		// è´­ä¹°å…ƒå®
+			log_yuanbao_auction_take_back,	// å¯„å–å…ƒå®æŒ‚å•ä¸‹æ¶
 
-			low_buff_cost_yb_begin,			// 242 ~ 342Îªbuff¿Û³ıÔª±¦ÀàĞÍ
+			low_buff_cost_yb_begin,			// 242 ~ 342ä¸ºbuffæ‰£é™¤å…ƒå®ç±»å‹
 			low_buff_cost_yb_end = low_buff_cost_yb_begin + 100,
 
 			//////////////////////////////////////////////////////////////////////////
-			//	2012-05-21 ¸ßÔó¹úÔö¼Ó£ºÊÀ½çÁÄÌì¿Û³ıÔª±¦
+			//	2012-05-21 é«˜æ³½å›½å¢åŠ ï¼šä¸–ç•ŒèŠå¤©æ‰£é™¤å…ƒå®
 			//////////////////////////////////////////////////////////////////////////
 			log_chat_world_deduct_yuanbao,
 			//////////////////////////////////////////////////////////////////////////
-			log_starteam,					// ĞÇÕó
+			log_starteam,					// æ˜Ÿé˜µ
 			//////////////////////////////////////////////////////////////////////////
-			//	2012-05-30 ¸ßÔó¹ú£º»÷É±Ò°ÍâBOSS±£´æLOG
+			//	2012-05-30 é«˜æ³½å›½ï¼šå‡»æ€é‡å¤–BOSSä¿å­˜LOG
 			//////////////////////////////////////////////////////////////////////////
 			log_kill_world_boss,
 			//////////////////////////////////////////////////////////////////////////
@@ -247,43 +244,39 @@ namespace faith
 			log_pet_transfer,
 
 			//////////////////////////////////////////////////////////////////////////
-			//	2012-06-27 ¸ßÔó¹ú£º¸¶·ÑÓÊ¼ş¿Û³ı
+			//	2012-06-27 é«˜æ³½å›½ï¼šä»˜è´¹é‚®ä»¶æ‰£é™¤
 			//////////////////////////////////////////////////////////////////////////
-			// Ö§¸¶½ğÇ®
+			// æ”¯ä»˜é‡‘é’±
 			log_mail_pay_money,
-			// Ö§¸¶½ğÔª±¦
+			// æ”¯ä»˜é‡‘å…ƒå®
 			log_mail_pay_yuanbao,
 			//////////////////////////////////////////////////////////////////////////
 
 			//////////////////////////////////////////////////////////////////////////
-			//
-			//	2012-05-30 ×£»ÆÇå£º¾Ü¾ø¼Ò×åµĞ¶ÔÔª±¦ÏûºÄ
-			//
+			//	2012-05-30 ç¥é»„æ¸…ï¼šæ‹’ç»å®¶æ—æ•Œå¯¹å…ƒå®æ¶ˆè€—
 			//////////////////////////////////////////////////////////////////////////
 			log_refuse_guild_hostility,
 			//////////////////////////////////////////////////////////////////////////
 
 			//////////////////////////////////////////////////////////////////////////
-			//
-			//	2012-08-02 715Ôö¼ÓÄÚÈİ£ºµ±Ç°Ö÷·ÖÖ§×î´óÊı£º349
-			//
+			//	2012-08-02 715å¢åŠ å†…å®¹ï¼šå½“å‰ä¸»åˆ†æ”¯æœ€å¤§æ•°ï¼š349
 			//////////////////////////////////////////////////////////////////////////
 			log_715_use_begin			= 350,
-			log_quest_abort				= log_715_use_begin,	// ·ÅÆúÈÎÎñ
-			log_yuanshen,				// ÔªÉñ
-			log_kill_npc,				// É±¹Ö
+			log_quest_abort				= log_715_use_begin,	// æ”¾å¼ƒä»»åŠ¡
+			log_yuanshen,				// å…ƒç¥
+			log_kill_npc,				// æ€æ€ª
 			log_buff,					// buff
-			log_change_xiewang_card,	// ½ğÇ®¶Ò»»Ğ·Íõ¿¨
-			log_change_yanshen_card,	// ½ğÇ®¶Ò»»Ñ×Éñ¿¨
-			log_change_jushou_card,		// ½ğÇ®¶Ò»»¾ŞÊŞ¿¨
-			log_change_mozun_card,		// ½ğÇ®¶Ò»»Ä§×ğ¿¨
-			low_repair_item,			// ĞŞÀíÎïÆ·
+			log_change_xiewang_card,	// é‡‘é’±å…‘æ¢èŸ¹ç‹å¡
+			log_change_yanshen_card,	// é‡‘é’±å…‘æ¢ç‚ç¥å¡
+			log_change_jushou_card,		// é‡‘é’±å…‘æ¢å·¨å…½å¡
+			log_change_mozun_card,		// é‡‘é’±å…‘æ¢é­”å°Šå¡
+			low_repair_item,			// ä¿®ç†ç‰©å“
 			//////////////////////////////////////////////////////////////////////////
-			log_star_eat,				// ĞÇ»êÎ¹Ê³
+			log_star_eat,				// æ˜Ÿé­‚å–‚é£Ÿ
 
-			low_use_item,				//Ê¹ÓÃÎïÆ·¿Û³ıÔª±¦
-			low_pk_kill,				//É±Â¾ÖµLOG
-			low_mail_pay_info,			//Ö§¸¶ĞÅÏ¢LOG
+			low_use_item,				//ä½¿ç”¨ç‰©å“æ‰£é™¤å…ƒå®
+			low_pk_kill,				//æ€æˆ®å€¼LOG
+			low_mail_pay_info,			//æ”¯ä»˜ä¿¡æ¯LOG
 
 			max_content_id,		
 		};

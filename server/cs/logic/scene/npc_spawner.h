@@ -7,20 +7,20 @@ namespace faith
 {
 	enum e_respawn_period_tuple
 	{
-		e_respawn_period_tuple_begin_time,	// ÖØÉúÊ±¼ä¶ÎµÄÆğÊ¼Ê±¼ä
-		e_respawn_period_tuple_end_time,	// ÖØÉúÊ±¼ä¶ÎµÄ½áÊøÊ±¼ä
+		e_respawn_period_tuple_begin_time,	// é‡ç”Ÿæ—¶é—´æ®µçš„èµ·å§‹æ—¶é—´
+		e_respawn_period_tuple_end_time,	// é‡ç”Ÿæ—¶é—´æ®µçš„ç»“æŸæ—¶é—´
 		e_respawn_period_tuple_max
 	};
 
 	struct s_tigger_volume
 	{
-		int32       m_trigger_wave_id;					// ²¨´Î¶ÔÓ¦µÄ²¨´ÎID
-		int32		m_wave_num;							// ²¨´Î
-		float		m_next_time;						// ÏÂÒ»²¨¿ªÊ¼µÄÊ£ÓàÊ±¼ä
-		guid_64		m_npc_guid_ary[wave_npc_num_max];	// ÕâÒ»²¨Ë¢³öµÄnpcµÄindex
-		int32		m_npc_index_ary[wave_npc_num_max];	// ÕâÒ»²¨Ë¢³öµÄnpcµÄguid
-		int32       m_npc_count;						// npcµÄÊıÁ¿
-		plot_tip	m_plot_tip;							// ¾çÇéÌáÊ¾¹ÜÀíÆ÷
+		int32       m_trigger_wave_id;					// æ³¢æ¬¡å¯¹åº”çš„æ³¢æ¬¡ID
+		int32		m_wave_num;							// æ³¢æ¬¡
+		float		m_next_time;						// ä¸‹ä¸€æ³¢å¼€å§‹çš„å‰©ä½™æ—¶é—´
+		guid_64		m_npc_guid_ary[wave_npc_num_max];	// è¿™ä¸€æ³¢åˆ·å‡ºçš„npcçš„index
+		int32		m_npc_index_ary[wave_npc_num_max];	// è¿™ä¸€æ³¢åˆ·å‡ºçš„npcçš„guid
+		int32       m_npc_count;						// npcçš„æ•°é‡
+		plot_tip	m_plot_tip;							// å‰§æƒ…æç¤ºç®¡ç†å™¨
 
 		s_tigger_volume()
 		{
@@ -137,7 +137,7 @@ namespace faith
 	typedef std::map<int32, s_tigger_volume>	tiggervolumemap;
 	typedef tiggervolumemap::iterator	tiggervolumemap_it;
 
-	// Ë¢¹Ö¶ÓÁĞµÄ½Úµã,½ÚµãÖĞµÄ¹Ö»áÔÚdelay_time±íÊ¾µÄÊ±¼äÖ®ºó±»Ë¢³ö
+	// åˆ·æ€ªé˜Ÿåˆ—çš„èŠ‚ç‚¹,èŠ‚ç‚¹ä¸­çš„æ€ªä¼šåœ¨delay_timeè¡¨ç¤ºçš„æ—¶é—´ä¹‹åè¢«åˆ·å‡º
 	struct s_add_npc_queue_node
 	{
 		int32        npc_template_id;
@@ -146,7 +146,7 @@ namespace faith
 		int64        delay_time;
 		int32        dynamic_level;
 
-		//ÏÂÃæÕâ¼¸¸ö³ÉÔ±£¬ÊÇ¸ø ÎŞÏŞË¢ĞÂ µÄ¹ÖÓÃµÄ£¬ÈÔĞè¼ÓÈë²¨´ÎĞÅÏ¢
+		//ä¸‹é¢è¿™å‡ ä¸ªæˆå‘˜ï¼Œæ˜¯ç»™ æ— é™åˆ·æ–° çš„æ€ªç”¨çš„ï¼Œä»éœ€åŠ å…¥æ³¢æ¬¡ä¿¡æ¯
 		int32		dead_time;
 		int32		refresh_delta_time;
 		guid_64		cur_npc_guid;

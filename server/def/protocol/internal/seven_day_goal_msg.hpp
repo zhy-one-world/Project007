@@ -1,9 +1,9 @@
 /********************************************************************
-created: 2019Äê2ÔÂ13ÈÕ
+created: 2019å¹´2æœˆ13æ—¥
 file base: seven_day_goal_msg
 file ext: hpp
 author: wangdi
-purpose: ÆßÈÕÄ¿±ê´æµµÏûÏ¢
+purpose: ä¸ƒæ—¥ç›®æ ‡å­˜æ¡£æ¶ˆæ¯
 *********************************************************************/
 #ifndef _FAITH_SEVEN_DAY_GOAL_HPP_
 #define _FAITH_SEVEN_DAY_GOAL_HPP_
@@ -26,7 +26,7 @@ namespace faith
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
-		bool								is_over;		// ±êÊ¶ÊÇ·ñ·¢ËÍÍê±Ï, true±íÊ¾·¢ËÍ³É¹¦Íê±Ï£¬false±íÊ¾Ã»ÓĞ·¢ËÍÍê£¬errroÍ¨¹ıÁíÒ»ÌõÏûÏ¢´«µİ
+		bool								is_over;		// æ ‡è¯†æ˜¯å¦å‘é€å®Œæ¯•, trueè¡¨ç¤ºå‘é€æˆåŠŸå®Œæ¯•ï¼Œfalseè¡¨ç¤ºæ²¡æœ‰å‘é€å®Œï¼Œerrroé€šè¿‡å¦ä¸€æ¡æ¶ˆæ¯ä¼ é€’
 		int32								data_num;
 		s_seven_day_goal_info				data_list[max_seven_day_goal_num];
 		dp2cs_load_char_seven_day_goal()

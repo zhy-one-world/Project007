@@ -1,10 +1,10 @@
 /********************************************************************
-created: 2019Äê4ÔÂ24ÈÕ
+created: 2019å¹´4æœˆ24æ—¥
 file base: msgproc_role_harry_info
 file ext: h
 author: zhangshuo
 
-purpose: ÓÀºãµº
+purpose: æ°¸æ’å²›
 *********************************************************************/
 
 #ifndef _DP_MSGPROC_ROLE_HARRY_INFO_HPP_

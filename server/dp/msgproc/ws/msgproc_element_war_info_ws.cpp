@@ -1,9 +1,9 @@
 /***********************************************
-* created	: 2020Äê8ÔÂ20ÈÕ
+* created	: 2020å¹´8æœˆ20æ—¥
 * file base : msgproc_element_war_info_ws
 * file ext  : cpp
-* author    : ÕÔÓñÃ÷
-* purpose   : ÔªËØÕù°Ô
+* author    : èµµç‰æ˜
+* purpose   : å…ƒç´ äº‰éœ¸
 ************************************************/
 #include "msgproc_element_war_info_ws.hpp"
 #include <element_heart_msg.hpp>

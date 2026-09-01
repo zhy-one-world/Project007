@@ -1,11 +1,11 @@
-/********************************************************************
+ï»¿/********************************************************************
   created: 2014/07/04
   created: 4:7:2014 17:58
   file base: serialize_msg
   file ext: h
   author: YU REN
   
-  purpose: ·şÎñÆ÷·â×°·¢ËÍ¸ø¿Í»§¶ËµÄgoogleprotocolbuffÀàĞÍÏûÏ¢
+  purpose: æœåŠ¡å™¨å°è£…å‘é€ç»™å®¢æˆ·ç«¯çš„googleprotocolbuffç±»å‹æ¶ˆæ¯
 *********************************************************************/
 #ifndef serialize_msg_h
 #define serialize_msg_h
@@ -25,7 +25,6 @@ namespace faith
 	public:
 // 		void		set_server_data(net_proto& net_prot,uint32 server_uid,uint32 connect_idx);
 // 		void		set_server_data(net_proto& net_prot,s_client_uid client_uid);
-// 
 // 		void		set_serialize_msg(packet_c2s_s2c& msg, net_proto& net_prot);
 // 		void		set_serialize_msg(packet_c2s_s2c& msg, net_proto& net_prot,s_client_uid client_uid);
 

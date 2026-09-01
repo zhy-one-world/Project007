@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 created: 2014/07/14
 created: 14:7:2014 19:40
 file base: item_set
@@ -85,10 +85,8 @@ item_set::~item_set(void)
 	clear_data();
 }
 
-// ��������Ʒ�����ʱ����
 void item_set::heart_tick(const int64& new_time)
 {
-	// ˢ������CD����Ʒ��CD
 	if (m_unit_array_index >= npc_arrary_index_begin)
 	{
 		return;
@@ -119,13 +117,11 @@ void item_set::heart_tick(const int64& new_time)
 	}
 }
 
-// ������Ʒ��������Ϸ��ɫ
 void item_set::set_unit_ptr(int32 unit_array_index)
 {
 	m_unit_array_index = unit_array_index;
 }
 
-// ���������Ʒ������(������Ʒ��+װ����)
 void item_set::clear_data()
 {
 	m_item_load_flag = 0;
@@ -151,7 +147,6 @@ void item_set::clear_data()
 }
 
 
-// �ѽ�ɫ����Я������Ʒ�����ݴ������ݿ�
 void item_set::save_item_to_db(int32 save_type)
 {
 	player& player_ref = unit_man::get_player(m_unit_array_index);
@@ -428,7 +423,6 @@ void item_set::init_skill_and_item_gs()
 	}
 }
 
-// ��ͻ��˷���������Ʒ������
 void item_set::send_item_all()
 {
 	unit& temp_unit = unit_man::get_unit(m_unit_array_index);
@@ -505,7 +499,6 @@ s_item_template_info item_set::get_const_att_item_by_id(int32 item_tem_id, int32
 		return item_info;
 	}
 
-	//����Ƿ�Ϊ�̶�׿Խ����װ������������Ҫ������item_info�Ĵ���
 	if (item_template_ptr->item_type == e_item_type_expendable && item_template_ptr->sub_type == e_prop_sub_type_const_att_equip)
 	{
 		PropBasicAttributeTemplate* prop_basic_temp_ptr = GET_TEMPLATE(PropBasicAttributeTemplate, item_template_ptr->logic_id);
@@ -599,7 +592,6 @@ void item_set::all_wing_sort()
 	}
 }
 
-// ��ͻ��˷������г�������
 void item_set::send_wing_item_all()
 {
 	unit& temp_unit = unit_man::get_unit(m_unit_array_index);
@@ -944,7 +936,7 @@ void item_set::set_equip_att_all()
 				{
 					if (item_template_ptr->sub_type == 0)
 					{
-						if (item_ptr->get_data_info(e_item_info_is_first) > 0)	//Ů������ͼ�����
+						if (item_ptr->get_data_info(e_item_info_is_first) > 0)
 						{
 							set_goddess_equip_att(item_ptr, true);
 							player_ref.get_goddess_mgr().set_star_is_open(item_ptr, true);
@@ -966,7 +958,6 @@ void item_set::set_equip_att_all()
 		}
 	}
 
-	//����������
 	for (int32 i = 0; i < max_wedding_equip_num; i++)
 	{
 		if (GET_BAG(e_bag_type_wedding_equip)[i].is_valid())
@@ -1147,12 +1138,11 @@ void item_set::set_equip_att(citem* equip_ptr, bool is_add)
 	auto item_template_ptr = equip_ptr->get_item_info_ptr();
 
 	if (item_template_ptr->item_type != e_item_type_weapon && item_template_ptr->item_type != e_item_type_armor)
-	{//�ж��Ƿ�Ϊ����������Ʒ
+	{
 		CONSOLE_ERROR("item_set::set_equip_att item_type:{}", item_template_ptr->item_type);
 		return;
 	}
 
-	//����ģ������
 	auto equip_template_ptr = equip_ptr->get_equip_info_ptr();
 	if (nullptr == equip_template_ptr)
 	{
@@ -1202,7 +1192,7 @@ void item_set::set_sky_equip_att(citem* equip_ptr, bool is_add)
 		return;
 	}
 	if (item_template_ptr->item_type != e_item_type_sky_equip)
-	{//�ж��Ƿ�Ϊ���װ��
+	{
 		return;
 	}
 	EquipTemplate* equip_template_ptr = equip_ptr->get_equip_info_ptr();
@@ -1230,7 +1220,7 @@ void item_set::set_skygod_equip_att(citem* equip_ptr, bool is_add)
 		return;
 	}
 	if (item_template_ptr->item_type != e_item_type_skygod_equip)
-	{//�ж��Ƿ�Ϊ����װ��
+	{
 		return;
 	}
 	EquipTemplate* equip_template_ptr = equip_ptr->get_equip_info_ptr();
@@ -1258,7 +1248,7 @@ void item_set::set_supreme_equip_att(citem* equip_ptr, bool is_add)
 		return;
 	}
 	if (item_template_ptr->item_type != e_item_type_supreme_equip)
-	{//�ж��Ƿ�Ϊ����װ��
+	{
 		return;
 	}
 	EquipTemplate* equip_template_ptr = equip_ptr->get_equip_info_ptr();
@@ -1416,7 +1406,6 @@ void item_set::set_equip_excellent_att(const EquipTemplate* equip_template_ptr, 
 }
 void item_set::set_equip_jewel_att(citem& equip_ptr, bool is_add)
 {
-	//��ʯ����
 	for (int32 i = e_item_info_jewel_slot_0; i <= e_item_info_jewel_vip_slot_1; ++i)
 	{
 		int32 jewel_id = equip_ptr.get_data_info((e_item_info)i);
@@ -1467,7 +1456,6 @@ void item_set::set_equip_enchant_att(citem& equip_ptr, const int32& enchant_num,
 		return;
 	}
 
-	//��ֵ�ӳ�
 	item_change_att(enchant_template_ptr->AttArray, 1, is_add);
 
 }
@@ -1489,7 +1477,7 @@ void item_set::set_goddess_equip_att(citem* equip_ptr, bool is_add)
 		return;
 	}
 	if (item_template_ptr->item_type != e_item_type_goddess_equip)
-	{//�ж��Ƿ�ΪŮ���Ů��װ��
+	{
 		return;
 	}
 	DeityTemplate* deity_template_ptr = equip_ptr->get_deity_info_ptr();
@@ -1644,7 +1632,6 @@ void item_set::set_fashion_att(citem* fashion_ptr, bool is_add, int32 star_num)
 		return;
 	}
 
-	//����ģ������
 	FasionTemplate* fashion_template_ptr = GET_TEMPLATE(FasionTemplate, item_template_ptr->logic_id + star_num);
 	if (nullptr == fashion_template_ptr)
 	{
@@ -1662,7 +1649,7 @@ void item_set::set_wing_att(bool is_add)
 	m_wing_att_change = is_add;
 	citem* wing_ptr = get_cur_level_wing();
 	if (wing_ptr)
-	{//��������������
+	{
 		auto item_template_ptr = wing_ptr->get_item_info_ptr();
 		if (item_template_ptr)
 		{
@@ -1676,7 +1663,6 @@ void item_set::set_wing_att(bool is_add)
 		}
 	}
 
-	//�������γ������
 	std::vector<citem*> shape_wing_block = get_all_shape_wing();
 	int32 array_size = shape_wing_block.size();
 	for (int32 shape_wing_index = 0; shape_wing_index < array_size; shape_wing_index++)
@@ -1724,7 +1710,7 @@ void item_set::set_wing_att(bool is_add)
 
 	citem* spirit_ptr = get_wing_add_spirit();
 	if (spirit_ptr != nullptr)
-	{//ע��
+	{
 		ItemTemplate* item_template_ptr = spirit_ptr->get_item_info_ptr();
 		if (item_template_ptr != nullptr)
 		{
@@ -1739,7 +1725,7 @@ void item_set::set_wing_att(bool is_add)
 
 	citem* soul_ptr = get_wing_add_soul();
 	if (soul_ptr != nullptr)
-	{//ע��
+	{
 		ItemTemplate* item_template_ptr = soul_ptr->get_item_info_ptr();
 		if (item_template_ptr)
 		{
@@ -1780,7 +1766,6 @@ void item_set::set_feather_att(const citem& feather_ptr, bool is_add)
 	}
 
 	int32 real_id = feather_template_ptr->logic_id + feather_ptr.get_data_info(e_item_info_upgrade_count);
-	//����ģ������
 	FeatherTemplate* feather_att_ptr = GET_TEMPLATE(FeatherTemplate, real_id);
 	if (nullptr == feather_att_ptr)
 	{
@@ -1944,7 +1929,7 @@ int32 item_set::item_star_skill_unlock(guid_64 choosed_guid, int32 choosed_index
 	break;
 	case e_item_type_wing:
 	{
-		if (item_sub_type == 2)//�������
+		if (item_sub_type == 2)
 		{
 			FeatherTemplate* feather_template_ptr = GET_TEMPLATE(FeatherTemplate, logic_id + temp_item->get_data_info(e_item_info_upgrade_count));
 			if (nullptr == feather_template_ptr)
@@ -2012,7 +1997,7 @@ int32 item_set::item_star_skill_unlock(guid_64 choosed_guid, int32 choosed_index
 		if (passive_skill_template_ptr->OpenItem.size() >= 2 && use_item)
 		{
 			if (item_system::can_cost_item(&player_ref, e_bag_type_bag, passive_skill_template_ptr->OpenItem[0], passive_skill_template_ptr->OpenItem[1]) == false)
-			{//�زĲ���
+			{
 				return e_item_string_matirial_not_enough;
 			}
 			item_system::cost_item_from_bag(&player_ref, e_bag_type_bag, passive_skill_template_ptr->OpenItem[0], passive_skill_template_ptr->OpenItem[1]);
@@ -2039,8 +2024,7 @@ int32 item_set::item_star_skill_unlock(guid_64 choosed_guid, int32 choosed_index
 
 			open_time = temp_item->get_data_info(e_item_info_succinct_property4);
 		}
-		//���ԭ����ͬϵ�������ܻᶥ��
-		player_ref.get_passive_skill().passive_skill_special(passive_skill_template_id, true);//�ı�ս��
+		player_ref.get_passive_skill().passive_skill_special(passive_skill_template_id, true);
 
 		result = 1;
 		//unlock_flag = (1 << choosed_index) | unlock_flag;
@@ -2059,8 +2043,7 @@ int32 item_set::wing_psychic_skill_unlock(int32 passive_skill_template_id, bool 
 	{
 		return result;
 	}
-	//���ԭ����ͬϵ�������ܻᶥ��
-	player_ref.get_passive_skill().passive_skill_special(passive_skill_template_id, is_add);//�ı�ս��
+	player_ref.get_passive_skill().passive_skill_special(passive_skill_template_id, is_add);
 
 	result = 1;
 	return result;
@@ -2108,7 +2091,6 @@ int32 item_set::get_double_att_element_num()
 		if (temp_element_heart_ptr != nullptr)
 		{
 			//ElementHeartTemplate* element_heart_temp_ptr = player_ref.get_element_heart_mgr().get_element_heart_template(*temp_element_heart_ptr);
-			//if (element_heart_temp_ptr != nullptr && element_heart_temp_ptr->Type == 1)//�������������ֶκ��޸�
 			//{
 			//	total_num++;
 			//}
@@ -2284,9 +2266,7 @@ void item_set::init_awaken_fetter_att()
 					{
 						continue;
 					}
-					//��������
 					item_change_att(template_ptr->AttArray, 1, true);
-					//���Ӽ���
 					int32 skill_level = temp_item->get_data_info((e_item_info)(e_item_info_random_property1 + template_ptr->SubIndex));
 					if (template_ptr->Type == 1 && template_ptr->UnLockSkillList.size() > skill_level - 1 && skill_level > 0)
 					{
@@ -2360,7 +2340,6 @@ citem* item_set::create_item_by_template(e_server_log_add_item add_type, int32 p
 		return nullptr;
 	}
 
-	//����Ƿ�Ϊ�̶�׿Խ����װ��������
 	if (item_template_ptr->item_type == e_item_type_expendable && item_template_ptr->sub_type == e_prop_sub_type_const_att_equip)
 	{
 		PropBasicAttributeTemplate* prop_basic_temp_ptr = GET_TEMPLATE(PropBasicAttributeTemplate, item_template_ptr->logic_id);
@@ -2391,7 +2370,6 @@ citem* item_set::create_item_by_template(e_server_log_add_item add_type, int32 p
 			return nullptr;
 		}
 	}
-	//��ʱ��Ʒid����
 	if (item_template_ptr->item_type == e_item_type_time_limit)
 	{
 		item_template_id = item_template_ptr->logic_id;
@@ -2411,23 +2389,22 @@ citem* item_set::create_item_by_template(e_server_log_add_item add_type, int32 p
 		item_over_time = time_helper::get_cur_time_new().second + item_template_ptr->EffectiveTime;
 	}
 
-	//����Ƿ�Ϊ��ʱ��������
 	if (item_template_ptr->item_type == e_item_type_expendable && item_template_ptr->sub_type == e_prop_sub_type_wing_experience)
 	{
 		int32 class_type = player_ref.get_unit_info(e_role_info_class_type);
 		int32 item_wing_template_id = 0;
 		switch (class_type)
 		{
-		case e_class_type_barserker://��սʿ
+		case e_class_type_barserker:
 			item_wing_template_id = 31040001;
 			break;
-		case e_class_type_wizard: //��ʦ
+		case e_class_type_wizard:
 			item_wing_template_id = 31040011;
 			break;
-		case e_class_type_guardian: //�ػ���
+		case e_class_type_guardian:
 			item_wing_template_id = 31040021;
 			break;
-		case e_class_type_assassinator: //��ɱ��
+		case e_class_type_assassinator:
 			item_wing_template_id = 31040031;
 			break;
 		}
@@ -2438,10 +2415,10 @@ citem* item_set::create_item_by_template(e_server_log_add_item add_type, int32 p
 			if (true == is_unlock)
 			{
 				CONSOLE_ERROR("item is unlock item_template_id:{}", item_template_id);
-				return nullptr;//����ѽ�������ܣ������ƷΪ��Ч��Ʒ
+				return nullptr;
 			}
 		}
-		if (nullptr != get_showed_wing())//�����չʾ�ĳ�򣬾����أ�������ʹ�ø���Ʒ
+		if (nullptr != get_showed_wing())
 		{
 			CONSOLE_ERROR("item is showed wing item_template_id:{}", item_template_id);
 			return nullptr;
@@ -2474,7 +2451,7 @@ citem* item_set::create_item_by_template(e_server_log_add_item add_type, int32 p
 			//	}
 			//}
 			CONSOLE_ERROR("temp is nullptr item_template_id:{}", item_template_id);
-			return temp;//��Ϊ����Ѿ�����ʼ�������Բ�����Ϊ��
+			return temp;
 		}
 		else
 		{
@@ -2689,12 +2666,6 @@ citem* item_set::create_item_by_info(const s_item_info& temp_info, e_server_log_
 	return nullptr;
 }
 
-// ����ֵ˵��:
-//  1 ��ȷ����
-// -1 ��Ʒ���ݴ���
-// -2 ��Ʒ�Ѿ��ڱ�����
-// -3 ��������Ʒʧ��(������Ʒ����������Ҫ���ʱ��Ҫ�������Ʒ��������)
-// -4 ������������
 bool item_set::put_item_into_bag(citem* item_ptr, e_bag_type bag_type, bool merge, e_update_item_info_mode update_mode, bool is_show_go_to_bag, bool is_continue_put)
 {
 	ZoneScoped;
@@ -2721,11 +2692,10 @@ bool item_set::put_item_into_bag(citem* item_ptr, e_bag_type bag_type, bool merg
 		return false;
 	}
 	if (item_template_ptr->item_type == faith::e_item_type_stone && item_template_ptr->sub_type == faith::e_stone_sub_type_psyche)
-	{//ΪӦ�Կͻ����Զ��ֽ�����⣬ǿ�ưѸ������͵�����
+	{
 		update_mode = e_update_item_info_mode_default;
 	}
 
-	// �Ѿ��ڱ��������Ʒ����Ҫ���·���
 	if (item_ptr->get_data_info(e_item_info_container_type) == bag_type)
 	{
 		send_item_one(item_ptr);
@@ -2742,14 +2712,12 @@ bool item_set::put_item_into_bag(citem* item_ptr, e_bag_type bag_type, bool merg
 
 	int32 left_item_num = total_item_num;
 
-	// �����Ʒ������Ϊ0����������
 	if (total_item_num <= 0)
 	{
 		del_item(e_server_log_del_item_bag_zero, old_slot, item_ptr, 1);
 		return true;
 	}
 
-	// �����Ʒ��������"�Զ�ʹ��",����Ҫ�ڷ��뱳��ʱʹ����
 	if (item_template_ptr->AutoUse > 0)
 	{
 		citem* end_item = nullptr;
@@ -2791,7 +2759,6 @@ bool item_set::put_item_into_bag(citem* item_ptr, e_bag_type bag_type, bool merg
 		}
 	}
 
-	// ����ĺ͸ò�ֵĶ������˾Ϳ����ڱ������Ҹ��ո��Ӱ���Ʒ�Ž�ȥ��
 	if (left_item_num > 0)
 	{
 		if (left_item_num > item_template_ptr->max_pile_num)
@@ -2849,7 +2816,6 @@ bool item_set::put_item_into_bag(citem* item_ptr, e_bag_type bag_type, bool merg
 		player_ref.send_message_to_self(&show_go_to_bag_info, e_msgindex_s2c_item_show_goto_bag);
 	}
 
-	//�»�õģ���ɫ ���������ߣ�Ҫ�㲥һ��
 	if (put_count == 0)
 	{
 		item_ptr->set_data_info(e_item_info_put_in_bag_count, 1);
@@ -2863,13 +2829,13 @@ bool item_set::put_item_into_bag(citem* item_ptr, e_bag_type bag_type, bool merg
 				if (temp_string_array_list.size() >= 2
 					&& temp_item_string_array_list.size() >= 1)
 				{
-					std::string first_string = temp_string_array_list[0];		//"���˱����ϲ"
-					std::string second_string = temp_string_array_list[1];		//"�����������"
+					std::string first_string = temp_string_array_list[0];
+					std::string second_string = temp_string_array_list[1];
 
-					std::string final_string = first_string;				//"���˱����ϲ"
-					final_string += player_ref.get_name();					//"���˱����ϲXXX"
-					final_string += second_string;							//"���˱����ϲXXX�����������"
-					final_string += temp_item_string_array_list[0];					//"���˱����ϲXXX�����������XXXX"
+					std::string final_string = first_string;
+					final_string += player_ref.get_name();
+					final_string += second_string;
+					final_string += temp_item_string_array_list[0];
 					player_ref.get_chat_mgr().send_globel_message(final_string);
 				}
 			}
@@ -2877,7 +2843,7 @@ bool item_set::put_item_into_bag(citem* item_ptr, e_bag_type bag_type, bool merg
 	}
 
 	if (left_item_num <= 0)
-	{//д����� ��ֹ�����߼�ʹ��item����
+	{
 		del_item(e_server_log_del_item_bag_merge, 0, item_ptr, total_item_num);
 	}
 	return true;
@@ -2905,7 +2871,7 @@ bool item_set::put_in_bag(std::vector<citem*>& item_inst_array, e_bag_type bag_t
 	{
 		return false;
 	}
-	vector<citem*> will_send_email_item_array;												// �����±���װ���µ���Ʒ ����ʼ�
+	vector<citem*> will_send_email_item_array;
 
 	for (int32 item_array_index = 0; item_array_index < item_inst_array_size; item_array_index++)
 	{
@@ -2925,7 +2891,7 @@ bool item_set::put_in_bag(std::vector<citem*>& item_inst_array, e_bag_type bag_t
 	}
 	bool all_success = will_send_email_item_array.empty();
 	if (will_send_email_item_array.empty() == false)
-	{// ����Ʒ���ʼ���ʽ����
+	{
 		if (mail_type > 0)
 		{
 			send_item_by_mail(will_send_email_item_array, mail_type);
@@ -3146,7 +3112,7 @@ std::vector<s_item_info> item_set::get_item_info_array(std::vector<citem*>& item
 
 s_item_info item_set::filter_items_with_notice(std::vector<citem*> item_ptr_array, std::string& item_names_str, int32 notices_id)
 {
-	int32 notice_id = 93000204;//�����������id��������⴦��
+	int32 notice_id = 93000204;
 	//std::vector<citem*> filter_item_ptr_array;
 	s_item_info item_data;
 	const int32 item_ptr_array_size = item_ptr_array.size();
@@ -3242,7 +3208,6 @@ int32 item_set::against_buy_item(guid_64 item_guid, int32 goods_id)
 		return false;
 	}
 
-	//�ܷ�Ǯ
 	if (temp_player.can_cut_money((e_money_type)goods_template->NewPrice[money_type_index], goods_template->NewPrice[money_num_index]) == false)
 	{
 		return false;
@@ -3254,7 +3219,6 @@ int32 item_set::against_buy_item(guid_64 item_guid, int32 goods_id)
 	int32 item_info_over_time = 0;
 	bool is_equip = true;
 
-	//�����ǰʱ����ڵ�����Ʒ�Ĺ���ʱ��,���ڵ�ǰʱ������+ʱ��
 	if (cur_second_time >= item_ptr->get_data_info(e_item_info_over_time))
 	{
 		if (goods_template->EffectiveTime == 0)
@@ -3275,7 +3239,7 @@ int32 item_set::against_buy_item(guid_64 item_guid, int32 goods_id)
 			}
 		}
 	}
-	else//û����,���ڵ�ǰʱ������ʱ��
+	else
 	{
 		if (goods_template->EffectiveTime == 0)
 		{
@@ -3641,16 +3605,16 @@ int32  item_set::show_this_init_max_wing(citem* item_ptr)
 		int32 item_wing_template_id = 0;
 		switch (class_type)
 		{
-		case e_class_type_barserker://��սʿ
+		case e_class_type_barserker:
 			item_wing_template_id = 31040001;
 			break;
-		case e_class_type_wizard: //��ʦ
+		case e_class_type_wizard:
 			item_wing_template_id = 31040011;
 			break;
-		case e_class_type_guardian: //�ػ���
+		case e_class_type_guardian:
 			item_wing_template_id = 31040021;
 			break;
-		case e_class_type_assassinator: //��ɱ��
+		case e_class_type_assassinator:
 			item_wing_template_id = 31040031;
 			break;
 		}
@@ -3660,7 +3624,7 @@ int32  item_set::show_this_init_max_wing(citem* item_ptr)
 			bool is_unlock = temp_player_ref.get_func_unlock_mgr().is_func_unlock(item_ptr_lock->FuncUnlockid);
 			if (false == is_unlock && nullptr != item_ptr)
 			{
-				item_ptr->set_data_info(e_item_info_activate, 1);//���伤��������³��
+				item_ptr->set_data_info(e_item_info_activate, 1);
 				show_this_wing(item_ptr, -1, true, true);
 				item_ptr->set_data_info(e_item_info_activate, 0);
 				return -1;
@@ -3690,7 +3654,7 @@ int32  item_set::show_this_init_max_wing(citem* item_ptr)
 		bool is_unlock = temp_player_ref.get_func_unlock_mgr().is_func_unlock(item_ptr_lock->FuncUnlockid);
 		if (false == is_unlock && nullptr != item_ptr)
 		{
-			item_ptr->set_data_info(e_item_info_activate, 1);//���伤��������³��
+			item_ptr->set_data_info(e_item_info_activate, 1);
 			show_this_wing(item_ptr, -1, true, true);
 			item_ptr->set_data_info(e_item_info_activate, 0);
 			return -1;
@@ -3777,14 +3741,14 @@ bool item_set::put_in_bag(e_server_log_add_item add_type, int32 param, const std
 	}
 	bool b_can_put_item_into_bag = can_put_items(item_array);
 
-	if (true == b_can_put_item_into_bag || mail_type > 0)						// ���Խ���Ʒ�Ž�����
+	if (true == b_can_put_item_into_bag || mail_type > 0)
 	{
 		std::string item_names_str;
 		item_names_str.reserve(100);
 		s_item_info item_data[chat_max_item];
 		int32 item_data_size = 0;
 		std::vector<xstring> item_name_array;
-		std::vector<citem*> item_ptr_array = create_items(add_type, param, item_array);	// ������Ʒʵ��
+		std::vector<citem*> item_ptr_array = create_items(add_type, param, item_array);
 		if (item_data_size < chat_max_item)
 		{
 			item_data[item_data_size] = filter_items_with_notice(item_ptr_array, item_names_str);
@@ -3793,7 +3757,7 @@ bool item_set::put_in_bag(e_server_log_add_item add_type, int32 param, const std
 				item_data_size++;
 			}
 		}
-		if (0 < notice_id && 0 < item_data_size)								// ������Ʒ��ù���
+		if (0 < notice_id && 0 < item_data_size)
 		{
 			std::string notice_str_id = template_manager::get_instance().get_str_id_by_notice_id(notice_id);
 			std::vector<std::string> notice_str_params_vec;
@@ -3804,13 +3768,13 @@ bool item_set::put_in_bag(e_server_log_add_item add_type, int32 param, const std
 			player_ref.get_chat_mgr().send_notice(notice_id, notice_str, item_data, item_data_size - 1);
 		}
 
-		if (false == b_can_put_item_into_bag)		// ������ʾ ���ᷢ�� "�������ʼ���ʽ���͹�ȥ"
+		if (false == b_can_put_item_into_bag)
 		{
 			std::string show_string = template_manager::get_instance().get_str_id_by_notice_id(mail_with_item_notice_id);
 			player_ref.get_chat_mgr().send_notice(mail_with_item_notice_id, show_string);
 		}
 
-		put_in_bag(item_ptr_array, bag_type, mail_type);									// ��Ʒ����
+		put_in_bag(item_ptr_array, bag_type, mail_type);
 		return true;
 	}
 	else
@@ -3959,8 +3923,6 @@ std::vector<citem*> item_set::create_items(e_server_log_add_item add_type, int32
 	return items_array;
 }
 
-// locked: 0��ʾֻ��÷ǰ���Ʒ���� 1��ʾֻ��ȡ�󶨵���Ʒ���� 2��ʾ�󶨺ͷǰ󶨵Ķ���ȡ
-// only_bag��ʾ�Ƿ�ֻ��ȡ�����е���Ӧ��Ʒ
 std::vector<citem*> item_set::get_items_by_template_id(int32 item_template_id, int32 locked, bool only_bag)
 {
 	std::vector<citem*> item_array;
@@ -3995,9 +3957,6 @@ int32 item_set::del_item_instance(e_server_log_del_item causeid, int32 location,
 	}
 	return del_item_instance(causeid, location, item_ptr, del_num);
 }
-// ����ɾ����Ʒ��ø���ʣ�����Ʒ��Ŀ
-//
-// PS: ���е���Ʒɾ���������ն�������������
 int32 item_set::del_item_instance(e_server_log_del_item causeid, int32 location, citem* item_ptr, int32 del_num)
 {
 	if (nullptr == item_ptr)
@@ -4289,7 +4248,6 @@ void item_set::del_item(e_server_log_del_item causeid, int32 location, citem* it
 	del_item(causeid, location, item_ptr->get_item_guid(), del_num);
 }
 
-// ������Ʒ���е�������Ʒ
 bool item_set::tidy_item(e_bag_type tidy_bag_typ, bool is_not_tidy_time)
 {
 	unit& unit_ref = unit_man::get_unit(m_unit_array_index);
@@ -4297,7 +4255,6 @@ bool item_set::tidy_item(e_bag_type tidy_bag_typ, bool is_not_tidy_time)
 	{
 		return false;
 	}
-	// ����������ȴ�ڼ䲻���ٽ�������
 	if (m_item_tidy_cd > utility::get_tick_count())
 	{
 		if (is_not_tidy_time)
@@ -4395,7 +4352,7 @@ void item_set::refresh_element_heart_faker_player_buff()
 	{
 		citem* temp_equip_rune = get_item_by_slot(e_bag_type_equip_elemenet, i);
 		if (temp_equip_rune == nullptr)
-		{//ûװ���Ĳ���
+		{
 			continue;
 		}
 		ElementHeartTemplate* temp_template_ptr = GET_TEMPLATE(ElementHeartTemplate, temp_equip_rune->get_item_logic_id());
@@ -4450,11 +4407,11 @@ void item_set::calcu_addition_with_fake_player(e_addition_buff addition_buff_typ
 
 	faith::template_manager::template_type::iterator ite;
 	AdditionBuffTemplate* addition_tmpl_ptr = nullptr;
-	std::vector<int32> new_buff_id_arr;          // ��ǰ����Ч�����Ч����BUFFģ���ID
-	std::vector<int32> new_buff_equip_num_arr;   // ��ǰ��Ч�����Ч����BUFFģ���Ҫ��װ������
-	std::vector<int32> new_buff_need_num_arr;    // ��ǰ��Ч�����Ч����BUFFģ���Ҫ���������
-	std::vector<int32> new_buff_sub_type_arr;	 //	��ǰ��Ч�����Ч����BUFFģ���������
-	std::vector<int32> new_buff_level_arr;		 //	��ǰ��Ч�����Ч����BUFFģ��ĵȼ�
+	std::vector<int32> new_buff_id_arr;
+	std::vector<int32> new_buff_equip_num_arr;
+	std::vector<int32> new_buff_need_num_arr;
+	std::vector<int32> new_buff_sub_type_arr;
+	std::vector<int32> new_buff_level_arr;
 
 	for (ite = addition_buff_tmpl_table->begin(); ite != addition_buff_tmpl_table->end(); ++ite)
 	{
@@ -4478,8 +4435,6 @@ void item_set::calcu_addition(e_addition_buff addition_buff_type, bool need_send
 	{
 		return;
 	}
-	// ��õ�ǰ������Ч��ǿ��BUFF��ID������Ϊ���������Ҫ����ĳ����BUFF��ʱ���ܰ�����������Ч��
-	// BUFF������
 	std::vector<int32> old_buff_id_arr = temp_player.get_addition_buff_id_arr(addition_buff_type);
 
 	faith::template_manager::template_type* addition_buff_tmpl_table = template_manager::get_instance().get_templates(e_AdditionBuffTemplate);
@@ -4490,11 +4445,11 @@ void item_set::calcu_addition(e_addition_buff addition_buff_type, bool need_send
 
 	faith::template_manager::template_type::iterator ite;
 	AdditionBuffTemplate* addition_tmpl_ptr = nullptr;
-	std::vector<int32> new_buff_id_arr;          // ��ǰ����Ч�����Ч����BUFFģ���ID
-	std::vector<int32> new_buff_equip_num_arr;   // ��ǰ��Ч�����Ч����BUFFģ���Ҫ��װ������
-	std::vector<int32> new_buff_need_num_arr;    // ��ǰ��Ч�����Ч����BUFFģ���Ҫ���������
-	std::vector<int32> new_buff_sub_type_arr;	 //	��ǰ��Ч�����Ч����BUFFģ���������
-	std::vector<int32> new_buff_level_arr;		 //	��ǰ��Ч�����Ч����BUFFģ��ĵȼ�
+	std::vector<int32> new_buff_id_arr;
+	std::vector<int32> new_buff_equip_num_arr;
+	std::vector<int32> new_buff_need_num_arr;
+	std::vector<int32> new_buff_sub_type_arr;
+	std::vector<int32> new_buff_level_arr;
 	for (ite = addition_buff_tmpl_table->begin(); ite != addition_buff_tmpl_table->end(); ++ite)
 	{
 		addition_tmpl_ptr = (AdditionBuffTemplate*)(ite->second);
@@ -4530,7 +4485,6 @@ void item_set::calcu_addition(e_addition_buff addition_buff_type, bool need_send
 	int32 old_addtion_level = 0;
 	for (int32 i = 0; i < old_buff_id_arr.size(); i++)
 	{
-		// �����ǰ�Ѿ���������Ч��BUFF����ж����
 		if (old_buff_id_arr[i] > 0)
 		{
 			AdditionBuffTemplate* cur_addition_tmpl_ptr = GET_TEMPLATE(AdditionBuffTemplate, old_buff_id_arr[i]);
@@ -4573,7 +4527,6 @@ void item_set::calcu_addition(e_addition_buff addition_buff_type, bool need_send
 				temp_player.send_addition_buff_info(temp_player.get_unit_guid(), addition_buff_type, new_buff_id_arr[i]);
 				if (true == need_send_notice && new_addtion_level > old_addtion_level)
 				{
-					//wucun ����װ����ħ�Ĺ���û�м���
 					temp_player.send_addition_notice_with_type(addition_buff_type, new_buff_id_arr[i]);
 				}
 			}
@@ -4592,7 +4545,6 @@ void item_set::calcu_addition(e_addition_buff addition_buff_type, bool need_send
 	}
 }
 
-// ����һ��buff�Ƿ����
 void item_set::calcu_addition_by_one(AdditionBuffTemplate* addition_tmpl_ptr, std::vector<int32>& buff_id_arr, std::vector<int32>& buff_equip_num_arr, std::vector<int32>& buff_need_num_arr, std::vector<int32>& buff_sub_type_arr, std::vector<int32>& buff_level_arr)
 {
 	if (buff_id_arr.size() != buff_equip_num_arr.size() || buff_id_arr.size() != buff_need_num_arr.size() || buff_id_arr.size() != buff_sub_type_arr.size() || buff_id_arr.size() != buff_level_arr.size())
@@ -4625,7 +4577,6 @@ void item_set::calcu_addition_by_one(AdditionBuffTemplate* addition_tmpl_ptr, st
 				}
 			}
 
-			// ��������������if����˵����ǰ�ĸ�װ��ǿ�������������BUFF�������ٱȽ����BUFF�Ƿ���ĿǰΪֹЧ����ѵ�BUFF
 			if (equip_num >= addition_tmpl_ptr->EquipNum)
 			{
 				if (buff_id_arr.size() <= 0)
@@ -5300,7 +5251,7 @@ bool item_set::item_operate(const std::vector<guid_64>& item_guid, int32 item_sl
 		}
 	}
 	break;
-	case e_item_operation_wing_shape_unlock:		//�������ν���
+	case e_item_operation_wing_shape_unlock:
 		if (item_guid.size() > 0)
 		{
 			citem* temp_item = get_item(item_guid[0]);
@@ -5308,7 +5259,7 @@ bool item_set::item_operate(const std::vector<guid_64>& item_guid, int32 item_sl
 			{
 				if (temp_item->get_item_info_ptr()->sub_type == 2)
 				{
-					bSuccess = wing_feather_unlock(item_guid[0], item_slot);//����������
+					bSuccess = wing_feather_unlock(item_guid[0], item_slot);
 				}
 				else
 				{
@@ -5504,7 +5455,6 @@ bool item_set::item_operate(const std::vector<guid_64>& item_guid, int32 item_sl
 	case e_item_operation_against_buy:
 		if (item_guid.size() > 0)
 		{
-			//����item_slot�����Ĳ�����������ƷID
 			bSuccess = against_buy_item(item_guid[0], item_slot);
 			if (bSuccess)
 			{
@@ -5515,13 +5465,13 @@ bool item_set::item_operate(const std::vector<guid_64>& item_guid, int32 item_sl
 	case e_item_operation_buy_and_use:
 		if (item_guid.size() > 0)
 		{
-			bSuccess = item_buy_and_use(item_slot);//�����item_slotҲ��������ƷID
+			bSuccess = item_buy_and_use(item_slot);
 		}
 		break;
 	case e_item_operation_use_beast_spirit:
 		if (item_guid.size() > 0)
 		{
-			bSuccess = use_beast_spirit(item_guid[0], item_num);//�����item_slotҲ��������ƷID
+			bSuccess = use_beast_spirit(item_guid[0], item_num);
 		}
 		break;
 	case e_item_operation_set_jewel_on:
@@ -5655,7 +5605,7 @@ bool item_set::is_class_enable(citem* target_item)
 	int32 real_class_type = temp_unit.get_unit_info(e_role_info_class_type);
 	for (int32 i = 0; i < item_template_ptr->class_type.size(); ++i)
 	{
-		if (item_template_ptr->class_type[i] == 0	//ȫְҵ
+		if (item_template_ptr->class_type[i] == 0
 			|| real_class_type == item_template_ptr->class_type[i])
 		{
 			return true;
@@ -5726,7 +5676,6 @@ int32 item_set::get_highest_mount_level()
 	return max_level;
 }
 
-// ������Ӧ��װ��
 bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_without_auto_inherit, bool is_against_buy_time)
 {
 	unit& temp_unit = unit_man::get_unit(m_unit_array_index);
@@ -5769,13 +5718,11 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 		return false;
 	}
 
-	// ���ְҵ����
 	if (!is_class_enable(item_ptr))
 	{
 		CONSOLE_ERROR("item_set::equip_on is_class_enable false");
 		return false;
 	}
-	// �ȼ����㲻�ܴ�����װ��
 	if (item_template_ptr->level_limit.size() >= 2)
 	{
 		if (temp_unit.get_unit_info(e_role_info_exp_level) < item_template_ptr->level_limit[0])
@@ -5785,7 +5732,6 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 		}
 	}
 
-	// in_which_item_slot��ʾ��Ʒ��ǰ����Ʒ���е�С���ڵ�λ��
 	int32 in_which_item_slot = item_ptr->get_data_info(e_item_info_slot);
 	e_bag_type in_which_bag_type = e_bag_type(item_ptr->get_data_info(e_item_info_container_type));
 	citem* old_equip_item_ptr = nullptr;
@@ -5831,10 +5777,9 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 			}
 		}
 
-		equip_off_equip_show_buff();	//ȥװ����Чbuff
+		equip_off_equip_show_buff();
 
-		// ����Ӧ��װ������������Ҫװ������Ʒ
-		item_ptr->set_data_info(e_item_info_container_type, e_bag_type_equip_fasion); // ����Ʒ��λ������Ϊ��װ��������
+		item_ptr->set_data_info(e_item_info_container_type, e_bag_type_equip_fasion);
 		item_ptr->set_data_info(e_item_info_slot, item_template_ptr->sub_type);
 
 		GET_BAG(e_bag_type_equip_fasion)[item_template_ptr->sub_type] = item_ptr->get_item_guid();
@@ -5842,7 +5787,6 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 		item_ptr->set_data_info(e_item_info_locked, 1);
 		send_item_one(item_ptr);
 
-		//��װ����Чbuff
 		equip_on_equip_show_buff();
 
 		player& player_ref = unit_man::get_player(m_unit_array_index);
@@ -5856,7 +5800,6 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 			player_ref.send_message_to_aoi(&show_request_end, e_msgindex_s2c_show_fashion, true);
 		}
 
-		//����ʱװ��ʱ�������ϴ�����װ���Ƿ�����Ч�����������1�׳�ɫװ����鲢ɾ��
 		//reset_weapon_fashion_effect();
 		if (false == player_ref.is_valid())
 		{
@@ -5875,7 +5818,6 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 			item_ptr->set_unit_buff(m_unit_array_index, true);
 		}
 
-		//����ͷ���
 		if (item_template_ptr->sub_type == e_fashion_show_type_head_frame)
 		{
 			player_ref.set_unit_info(e_role_info_head_frame, item_template_ptr->attribute_id);
@@ -5917,7 +5859,7 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 		GET_BAG(e_bag_type_sky_equip)[should_in_which_equip_slot] = item_ptr->get_item_guid();
 		send_item_one(item_ptr);
 
-		set_sky_equip_att(item_ptr, true);//װ����������
+		set_sky_equip_att(item_ptr, true);
 		calcu_addition(e_addition_buff_sky_equip);
 		return true;
 	}
@@ -5955,7 +5897,7 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 		GET_BAG(e_bag_type_skygod_equip)[should_in_which_equip_slot] = item_ptr->get_item_guid();
 		send_item_one(item_ptr);
 
-		set_skygod_equip_att(item_ptr, true);//װ����������
+		set_skygod_equip_att(item_ptr, true);
 		calcu_addition(e_addition_buff_skygod_equip);
 		return true;
 	}
@@ -5993,7 +5935,7 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 		GET_BAG(e_bag_type_supreme_equip)[should_in_which_equip_slot] = item_ptr->get_item_guid();
 		send_item_one(item_ptr);
 
-		set_supreme_equip_att(item_ptr, true);//װ����������
+		set_supreme_equip_att(item_ptr, true);
 		calcu_addition(e_addition_buff_supreme_equip);
 	}
 	break;
@@ -6044,7 +5986,7 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 		send_item_one(item_ptr);
 
 
-		set_goddess_equip_att(item_ptr, true);//װ����������
+		set_goddess_equip_att(item_ptr, true);
 		calcu_addition(e_addition_buff_goddess);
 		player& player_ref = unit_man::get_player(m_unit_array_index);
 
@@ -6061,7 +6003,6 @@ bool item_set::equip_on(const guid_64& item_guid, int32& item_slot, bool is_with
 	default:
 	{
 		//auto& unit_ref = unit_man::get_unit(m_unit_array_index);
-		//
 		//return equipment_system::equip_on_equip(&unit_ref, item_ptr, item_slot);
 	}
 	}
@@ -6146,18 +6087,17 @@ void item_set::change_att_for_equip(const guid_64& item_guid, bool is_add)
 	{
 		return;
 	}
-	equip_off_equip_show_buff();	//ȥװ����Чbuff
+	equip_off_equip_show_buff();
 	calcu_addition(e_addition_buff_upgrade);
 	calcu_addition(e_addition_buff_quality);
 	calcu_addition(e_addition_buff_addon);
 	calcu_addition(e_addition_buff_succinct);
 	calcu_addition(e_addition_buff_enchant);
-	equip_on_equip_show_buff();	//����װ����Чbuff
+	equip_on_equip_show_buff();
 	set_equip_att(item_ptr, is_add);
 }
 
 
-// �ѵ���Ӧ��װ��
 bool item_set::equip_off(const guid_64& item_guid, int32 item_slot, bool is_auto_equip_off, bool is_change_equipment)
 {
 	ZoneScoped;
@@ -6213,7 +6153,7 @@ bool item_set::equip_off(const guid_64& item_guid, int32 item_slot, bool is_auto
 		GET_BAG(e_bag_type_bag)[empty_slot] = item_ptr->get_item_guid();
 		clear_target_slot(e_bag_type_sky_equip, old_slot);
 
-		if (false == is_auto_equip_off)//�������װ����ִ�е���װ���������򲻼���⻷����equipon�������
+		if (false == is_auto_equip_off)
 		{
 			calcu_addition(e_addition_buff_sky_equip);
 		}
@@ -6259,7 +6199,7 @@ bool item_set::equip_off(const guid_64& item_guid, int32 item_slot, bool is_auto
 		GET_BAG(e_bag_type_bag)[empty_slot] = item_ptr->get_item_guid();
 		clear_target_slot(e_bag_type_skygod_equip, old_slot);
 
-		if (false == is_auto_equip_off)//�������װ����ִ�е���װ���������򲻼���⻷����equipon�������
+		if (false == is_auto_equip_off)
 		{
 			calcu_addition(e_addition_buff_skygod_equip);
 		}
@@ -6306,7 +6246,7 @@ bool item_set::equip_off(const guid_64& item_guid, int32 item_slot, bool is_auto
 		GET_BAG(e_bag_type_bag)[empty_slot] = item_ptr->get_item_guid();
 		clear_target_slot(e_bag_type_supreme_equip, old_slot);
 
-		if (false == is_auto_equip_off)//�������װ����ִ�е���װ���������򲻼���⻷����equipon�������
+		if (false == is_auto_equip_off)
 		{
 			calcu_addition(e_addition_buff_supreme_equip);
 		}
@@ -6357,7 +6297,7 @@ bool item_set::equip_off(const guid_64& item_guid, int32 item_slot, bool is_auto
 		GET_BAG(e_bag_type_bag)[empty_slot] = item_ptr->get_item_guid();
 		clear_target_slot(e_bag_type_goddess_equip, old_slot);
 
-		if (false == is_auto_equip_off)//�������װ����ִ�е���װ���������򲻼���⻷����equipon�������
+		if (false == is_auto_equip_off)
 		{
 			calcu_addition(e_addition_buff_goddess);
 		}
@@ -6382,7 +6322,7 @@ bool item_set::equip_off(const guid_64& item_guid, int32 item_slot, bool is_auto
 		}
 		if (item_ptr->get_data_info(e_item_info_activate) > 0)
 		{
-			equip_off_upgrade_show_buff();	//ȥװ����Чbuff ֻ��ǿ���Ǹ��Ĳ��� �� �޸�ģ�͵�
+			equip_off_upgrade_show_buff();
 			//set_fashion_att(item_ptr, false);
 		}
 		int32 old_slot = item_ptr->get_data_info(e_item_info_slot);
@@ -6407,14 +6347,13 @@ bool item_set::equip_off(const guid_64& item_guid, int32 item_slot, bool is_auto
 		{
 			reset_weapon_fashion_effect();
 		}
-		//����ͷ���
 		if (item_template_ptr->sub_type == e_fashion_show_type_head_frame)
 		{
 			temp_player.set_unit_info(e_role_info_head_frame, 0);
 		}
 		send_item_one(item_ptr);
 
-		equip_on_upgrade_show_buff();	//�ټ�һ��ǿ��buff
+		equip_on_upgrade_show_buff();
 		return true;
 	}
 	return false;
@@ -6556,7 +6495,7 @@ bool item_set::is_can_add_fashion_buff(citem* item_fashion)
 	return false;
 }
 
-void item_set::equip_off_upgrade_show_buff()		//ȥ��װ����ʾ��Чbuff
+void item_set::equip_off_upgrade_show_buff()
 {
 	int32 weapon_buff_id = get_equipment_upgrade_buff_id(true);
 	buff_man::del_buff_by_template_id(m_unit_array_index, m_unit_array_index, weapon_buff_id);
@@ -6564,7 +6503,7 @@ void item_set::equip_off_upgrade_show_buff()		//ȥ��װ����ʾ��Ч
 	int32 equip_buff_id = get_equipment_upgrade_buff_id(false);
 	buff_man::del_buff_by_template_id(m_unit_array_index, m_unit_array_index, equip_buff_id);
 }
-void item_set::equip_on_upgrade_show_buff()		//����װ����ʾ��Чbuff
+void item_set::equip_on_upgrade_show_buff()
 {
 	player& temp_player = unit_man::get_player(m_unit_array_index);
 	if (temp_player.is_valid() == false)
@@ -6667,12 +6606,6 @@ bool item_set::check_equip_by_item_id(int32 item_id)
 
 faith::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_template_id, int32 first_use_lock)
 {
-	//�����ж� ģ������ �Ƿ�����һ�� �����㹻
-	//�۳���Ʒ
-	//��ȥԭ����ֵ�ӳ� ɾ��������װbuff
-	//����װ����ħ����
-	//������ֵ�ӳ� ����������װbuff
-	//���سɹ�
 	player& temp_player = unit_man::get_player(m_unit_array_index);
 	if (temp_player.is_valid() == false)
 	{
@@ -6700,7 +6633,6 @@ faith::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_temp
 		return e_item_string_unkown;
 	}
 
-	//ģ������
 	int32 enchant_num = item_ptr->get_data_info(e_item_info_illusion_had_byte);
 	if (enchant_num / faith::max_enchant_type_num != (enchant_template_ptr->Level - 1))
 	{
@@ -6715,7 +6647,6 @@ faith::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_temp
 		return e_item_string_unkown;
 	}
 
-	//װ��Ʒ��
 	if (item_template_ptr->item_color < faith::e_item_color_purple)
 	{
 		return e_item_string_unkown;
@@ -6725,7 +6656,6 @@ faith::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_temp
 		return e_item_string_unkown;
 	}
 
-	//�����㹻
 	if (enchant_template_ptr->ItemConsume.size() % 2 != 0)
 	{
 		return e_item_string_unkown;
@@ -6742,13 +6672,11 @@ faith::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_temp
 		}
 	}
 
-	//�۳���Ʒ
 	for (int32 i = 0; i < enchant_template_ptr->ItemConsume.size() / 2; i++)
 	{
 		cost_item_by_id_with_lock_states(e_server_log_del_item_enchant, 0, enchant_template_ptr->ItemConsume[i * 2], enchant_template_ptr->ItemConsume[i * 2 + 1], first_use_lock);
 	}
 
-	//ɾ����ֵ�ӳ�
 	faith::template_manager::template_type* enchant_table = template_manager::get_instance().get_templates(e_EquipEnchantTemplate);
 	if (nullptr == enchant_table)
 	{
@@ -6768,10 +6696,8 @@ faith::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_temp
 			item_change_att(temp_enchant_template_ptr->AttArray, 1, false);
 		}
 	}
-	//����װ����ħ����
 	item_ptr->set_data_info(e_item_info_illusion_had_byte, enchant_template_ptr->Level * faith::max_enchant_type_num + enchant_template_ptr->Type);
 
-	//������ֵ�ӳ� ����������װbuff
 	calcu_addition(e_addition_buff_enchant);
 	item_change_att(enchant_template_ptr->AttArray, 1, true);
 
@@ -6779,18 +6705,11 @@ faith::int32 item_set::item_enchant(const guid_64& item_guid, int32 enchant_temp
 
 	temp_player.get_ranking_mgr().set_and_sync_single_equip_ranking_data(item_ptr);
 
-	//���سɹ�
 	return e_item_string_succeed;
 }
 
 faith::int32 item_set::item_unenchant(const guid_64& item_guid)
 {
-	//�����ж� �Ƿ��Ǹ�ħ��Ʒ
-	//��ȥԭ����ֵ�ӳ� ɾ��������װbuff
-	//����װ����ħ����
-	//������Ʒ
-	//����������װbuff
-	//���سɹ�
 	player& temp_player = unit_man::get_player(m_unit_array_index);
 	if (temp_player.is_valid() == false)
 	{
@@ -6853,24 +6772,19 @@ faith::int32 item_set::item_unenchant(const guid_64& item_guid)
 	{
 		return e_item_string_unkown;
 	}
-	//ֻ����װ������Ʒ��ȥ��ֵ
 	if (item_ptr->get_data_info(e_item_info_container_type) == e_bag_type_equip)
 	{
-		//��ȥ��ֵ�ӳ�
 		item_change_att(enchant_template_ptr->AttArray, 1, false);
 	}
-	//����װ����ħ����
 	item_ptr->set_data_info(e_item_info_illusion_had_byte, 0);
 	send_item_one(item_ptr);
 
-	//������Ʒ
 	std::vector<s_item_template_info> data_array;
 	for (int32 i = 0; i < enchant_template_ptr->ItemGet.size() / 2; i++)
 	{
 		data_array.push_back({ enchant_template_ptr->ItemGet[i * 2],enchant_template_ptr->ItemGet[i * 2 + 1], 1 });
 	}
 	put_in_bag(e_server_log_add_item_unenchant, 0, data_array);
-	//����������װbuff
 	calcu_addition(e_addition_buff_enchant);
 
 	temp_player.get_ranking_mgr().set_and_sync_single_equip_ranking_data(item_ptr);
@@ -6916,7 +6830,6 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 	for (int32 i = 0; i < max_item_advance_num; i++)
 	{
 		citem* item_ptr = get_item(item_guids[i]);
-		//��ʱ��Ʒ���ɽ���
 		if (nullptr == item_ptr || item_ptr->get_data_info(e_item_info_over_time) > 0)
 		{
 			//return e_error_code_item_advance_over_time;
@@ -6939,7 +6852,6 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 	{
 		vec_item_succinct_level.push_back(0);
 	}
-	//����������װ����Ʒ��
 	for (int32 i = 0; i < vec_item_color.size(); i++)
 	{
 		if (i > 0 && vec_item_ptr[i]->get_data_info(e_item_info_info_id) != vec_item_ptr[0]->get_data_info(e_item_info_info_id))
@@ -6950,7 +6862,6 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 		vec_item_color[i] = vec_item_ptr[i]->get_item_color();
 	}
 
-	//����������װ����ģ��
 	for (int32 i = 0; i < vec_item_equip_template_ptr.size(); i++)
 	{
 		EquipTemplate* equip_template_ptr = vec_item_ptr[i]->get_equip_info_ptr();
@@ -6962,7 +6873,6 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 		vec_item_equip_template_ptr[i] = equip_template_ptr;
 	}
 
-	//��ȡ����װ����׿Խ������Ŀ����
 	for (int32 i = 0; i < vec_item_ptr.size(); i++)
 	{
 		vec_item_excellent_num[i] = vec_item_ptr[i]->get_excellent_att_num();
@@ -6990,7 +6900,6 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 		}
 	}
 
-	//����������װ���������ٷֱ�
 	for (int32 i = 0; i < vec_item_culturing_percent.size(); i++)
 	{
 		vector<int32> item_property_max_limit;
@@ -7031,7 +6940,6 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 		}
 	}
 
-	//��Ʒ�Ľ������Ͳ��� ��ͨ����
 	ItemTemplate* item_template_ptr = vec_item_ptr[0]->get_item_info_ptr();
 	if (nullptr == item_template_ptr || item_template_ptr->advanced_type != e_item_advance_normal)
 	{
@@ -7050,7 +6958,6 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 	//		return e_error_code_item_advance;
 	//	}
 	//}
-	////��������
 	//if (vec_item_equip_template_ptr[0]->AdvanceSpend.size() % 2 != 0)
 	//{
 	//	return e_error_code_item_advance;
@@ -7069,7 +6976,6 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 	//	temp_player.cut_money((e_money_type)vec_item_equip_template_ptr[0]->AdvanceSpend[i], vec_item_equip_template_ptr[0]->AdvanceSpend[i + 1], e_server_log_cut_money_item_advance, vec_item_ptr[0]->get_data_info(e_item_info_info_id));
 	//}
 
-	////8��������Ʒ����
 	//if (vec_item_equip_template_ptr[0]->quality_level >= EQUIP_QUALITY_MAX)
 	//{
 	//	if (vec_item_equip_template_ptr[0]->AdvanceItemSpend.size() % 2 != 0)
@@ -7117,7 +7023,6 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 	//if the any one suply_items is locked ,then the result one is locked.
 	std::vector<int32> succinct_property;
 
-	//��ȡϴ������
 	int32 property_start = 0;
 	int32 property_end = int32(e_item_info_succinct_property6) - int32(e_item_info_succinct_property1);
 	for (; property_start <= property_end; property_start++)
@@ -7141,7 +7046,6 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 			return e_error_code_item_advance;
 		}
 
-		//��ʯ����
 		std::vector<int32> waiting_inherit_jewer_array;
 		waiting_inherit_jewer_array.reserve((e_item_info_jewel_vip_slot_1 - e_item_info_jewel_slot_0) * max_item_advance_num);
 		for (int32 i = e_item_info_jewel_slot_0; i <= e_item_info_jewel_vip_slot_1; ++i)
@@ -7161,7 +7065,7 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 	}
 
 	temp_item = *new_item_ptr;
-	s_item_info main_item_data; //��ȡ��λװ������Ϣ
+	s_item_info main_item_data;
 	main_item_data = vec_item_ptr[0]->get_item_inst();
 
 	ItemTemplate* new_advance_ptr = new_item_ptr->get_item_info_ptr();
@@ -7191,14 +7095,13 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 	new_item_ptr->set_data_info(e_item_info_jewel_carve_1, skill_id1);
 	new_item_ptr->set_data_info(e_item_info_jewel_carve_2, skill_id2);
 
-	//�ϳɺ�װ�����Ӹ�ħЧ��
 	new_item_ptr->set_data_info(e_item_info_illusion_had_byte, main_item_data.data_ary[e_item_info_illusion_had_byte]);
 	e_role_equip_slot equip_slot = init_unit::get_slot_by_item_type(item_template_ptr->item_type, item_template_ptr->sub_type);
 	for (int32 i = e_item_info_random_had_flag; i <= e_item_info_random_property6; ++i)
-	{//���׺��װ��׿Խ����Ҫ�̳в�Ҫ������ǵģ������ˣ�
+	{
 		if (equip_slot == e_role_equip_slot_magic_1)
 		{
-			break;//�����ħ�����򲻼̳�׿Խ����
+			break;
 		}
 		new_item_ptr->set_data_info(e_item_info(i), main_item_data.data_ary[i]);
 	}
@@ -7232,7 +7135,6 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 	temp_item_data_array.push_back({ temp_item.get_data_info(e_item_info_info_id),temp_item.get_data_info(e_item_info_stack_count),temp_item.get_data_info(e_item_info_locked) });
 	get_item_send_promp_msg_to_client(temp_item_data_array);
 
-	//�������Ʒ��ǿ����׷�ӡ��Ƚ�ֵ
 	int32 finish_item_quality_level = 0;
 	int32 finish_item_upgrade_level = 0;
 	int32 finish_item_addon_level = 0;
@@ -7251,7 +7153,6 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 	{
 		finish_item_addon_level = new_addon_template_ptr->level;
 	}
-	//�������԰ٷֱ�
 	int32 cur_succinct_num = 0;
 	int32 Max_succinct_num = 0;
 	float finish_item_culturing_percent = 0;
@@ -7285,7 +7186,6 @@ int32 item_set::item_advance(const std::vector<guid_64>& item_guids, int32 use_u
 
 	temp_player.get_mission_mgr().target_check(e_mission_end_type_equip_levelup);
 
-	//��ָ�װ����ħЧ��
 	for (int32 i = 1; i < max_item_advance_num; i++)
 	{
 		citem* item_ptr = get_item(item_guids[i]);
@@ -7340,7 +7240,7 @@ bool item_set::is_can_inherit(citem* strip_item_ptr, citem* inherited_item_ptr)
 	vector<int32> vec_property_max_limit;
 	inherited_item_ptr->get_property_max_limit(vec_property_max_limit);
 	if (vec_property_max_limit.size() > 0)
-	{//Ҳ��������û��ϴ������
+	{
 		for (int32 i = e_item_info_succinct_property1; i <= e_item_info_succinct_property4; ++i)
 		{
 			int32 temp_index = i - e_item_info_succinct_property1;
@@ -7465,10 +7365,9 @@ int64 item_set::get_inherit_money_num(citem* strip_item_ptr, int32 cost_type)
 		return return_value;
 	}
 
-	//����������һ�飨ID+����/ϵ������һ�����飨���+��ʯ��������ֻȡ��Ӧ��Ǯ����������
 	int32 money_num_get_index = 1;
 	if (cost_type > 0)
-	{//cost_type = 0�ǰ��cost_type = 1 ������ʯ�� ����������� > 0 �ж�
+	{
 		money_num_get_index = 3;
 	}
 	//if (money_num_get_index >= equip_template_ptr->InheritUpgradeSpend.size()
@@ -7500,7 +7399,6 @@ int64 item_set::get_inherit_money_num(citem* strip_item_ptr, int32 cost_type)
 	//	base_add_on_cost *= add_on_template_ptr->InheritAddonRatio[money_num_get_index];
 	//}
 
-	//ϴ�����Ѳ�����ϴ�����Ծ�����ֵ���䣬ֱ�Ӿ���baseֵ,����Ҫȷ��������װ��ȷʵ�� ϴ������
 	//if (money_num_get_index < equip_template_ptr->InheritSuccinctSpend.size())
 	//{
 	//	for (int32 i = e_item_info_succinct_property1; i <= e_item_info_succinct_property4; ++i)
@@ -7531,7 +7429,6 @@ int32 item_set::item_inherit(const std::vector<guid_64>& item_guids, bool is_aut
 	}
 	citem* item_strip_ptr = get_item(item_guids[0]);
 	citem* item_inherit_ptr = get_item(item_guids[1]);
-	//��Ʒ�����ж�
 	if (nullptr == item_strip_ptr)
 	{
 		return e_error_code_item_inherit;
@@ -7569,7 +7466,6 @@ int32 item_set::item_inherit(const std::vector<guid_64>& item_guids, bool is_aut
 		return e_error_code_item_inherit;
 	}
 
-	//��������ѵ���
 	//int32 money_cost_type = e_money_type_silver_bind;
 	//if (use_up_item > 0)
 	//{
@@ -7648,7 +7544,6 @@ int32 item_set::item_inherit(const std::vector<guid_64>& item_guids, bool is_aut
 	}
 
 	{
-		//��ʯ����
 		std::vector<int32> waiting_inherit_jewer_array;
 		waiting_inherit_jewer_array.reserve((e_item_info_jewel_vip_slot_1 - e_item_info_jewel_slot_0) * 2);
 		for (int32 i = e_item_info_jewel_slot_0; i <= e_item_info_jewel_vip_slot_1; ++i)
@@ -7782,19 +7677,16 @@ int32 item_set::item_assembly(const guid_64& item_guid, int32 first_use_lock)
 		return e_error_code_item_godassembly;
 	}
 
-	//��ʱ��Ʒ��������װ����
 	if (item_ptr->get_data_info(e_item_info_over_time) > 0)
 	{
 		return e_error_code_item_godassembly;
 	}
 
-	//��ɫ��ǰ�ȼ��Ƿ�  ����7ת99��
 	if (temp_player.get_unit_info(e_role_info_exp_level) < 2)
 	{
 		return e_error_code_item_godassembly;
 	}
 
-	//װ��Ʒ���Ƿ����10��
 	EquipTemplate* equiptemplate_ptr = item_ptr->get_equip_info_ptr();
 	if (!equiptemplate_ptr)
 	{
@@ -7805,24 +7697,20 @@ int32 item_set::item_assembly(const guid_64& item_guid, int32 first_use_lock)
 	//	return e_error_code_item_godassembly;
 	//}
 
-	//�Ƿ�������װ����
 	if (item_ptr->get_item_info_ptr()->advanced_type != e_item_advance_godassembly)
 	{
 		return e_error_code_item_godassembly;
 	}
-	//���Ĳ����Ƿ��㹻
 	//std::vector<int32>& materialList = equiptemplate_ptr->AdvanceSpend;
 	//int32   materialTypeInt = materialList.size();
 	//bool is_use_lock_material = false;
 	//if (materialTypeInt >= 4 && materialTypeInt % 2 == 0)
 	//{
-	//	//����Ƿ��㹻
 	//	if (!temp_player.can_cut_money((e_money_type)materialList[0], materialList[1]))
 	//	{
 	//		return e_error_code_item_godassembly;
 	//	}
 
-	//	//��������Ƿ��㹻
 	//	if (!temp_player.can_cut_money((e_money_type)materialList[2], materialList[3]))
 	//	{
 	//		return e_error_code_item_godassembly;
@@ -7836,12 +7724,10 @@ int32 item_set::item_assembly(const guid_64& item_guid, int32 first_use_lock)
 	//			return e_error_code_item_godassembly;
 	//		}
 	//	}
-		//���Ľ��,�������
 
 	//	temp_player.cut_money((e_money_type)materialList[0], materialList[1], e_server_log_cut_money_item_assembly, item_ptr->get_data_info(e_item_info_info_id));
 	//	temp_player.cut_money((e_money_type)materialList[2], materialList[3], e_server_log_cut_money_item_assembly, item_ptr->get_data_info(e_item_info_info_id));
 
-	//	//�����ز�
 	//	for (int32 i = 2; i < materialTypeInt; i++)
 	//	{
 	//		if (first_use_lock == 1 && get_item_count(e_bag_type_bag, materialList[i * 2], 1) > 0)
@@ -7849,7 +7735,6 @@ int32 item_set::item_assembly(const guid_64& item_guid, int32 first_use_lock)
 	//			is_use_lock_material = true;
 	//		}
 	//		else if (get_item_count(e_bag_type_bag, materialList[i * 2], 0) < materialList[i * 2 + 1])
-	//		{//ʹ�õ��˰��ز�
 	//			is_use_lock_material = true;
 	//		}
 	//		cost_item_by_id_with_lock_states(e_server_log_del_item_assembly, 0, materialList[i * 2], materialList[i * 2 + 1], first_use_lock);
@@ -7862,7 +7747,6 @@ int32 item_set::item_assembly(const guid_64& item_guid, int32 first_use_lock)
 
 	//if (rand() % 100 < (equiptemplate_ptr->AdvanceRadio * 100))
 	//{
-	//	//��ȡ����Ʒ��Ϣ
 	//	int32 upgrade = item_ptr->get_data_info(e_item_info_upgrade_count);
 	//	int32 addon = item_ptr->get_data_info(e_item_info_add_on);
 	//	int32 islock = item_ptr->get_data_info(e_item_info_locked);
@@ -7871,13 +7755,11 @@ int32 item_set::item_assembly(const guid_64& item_guid, int32 first_use_lock)
 
 	//	int32 property_start = int32(e_item_info_succinct_property1);
 	//	int32 property_end = int32(e_item_info_succinct_property6);
-	//	for (; property_start <= property_end; property_start++)//ϴ������
 	//	{
 	//		succinct_property.push_back(int32(item_ptr->get_data_info((e_item_info)property_start)));
 	//	}
 
 	//	int32 advanced_id = item_ptr->get_item_info_ptr()->advanced_id;
-	//	//ɾ������Ʒ
 	//	del_item(e_server_log_del_item_assembly_cost, 0, item_guid, 1);
 
 	//	int32 temp_id = 0;
@@ -7896,7 +7778,6 @@ int32 item_set::item_assembly(const guid_64& item_guid, int32 first_use_lock)
 	//		{
 	//			new_item->set_data_info(e_item_info_locked, 1);
 	//		}
-	//		//����ϴ������
 	//		for (int32 i = 0; i < succinct_property.size(); i++)
 	//		{
 	//			new_item->set_data_info((e_item_info)(int32(e_item_info_succinct_property1) + i), succinct_property[i]);
@@ -7931,7 +7812,6 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 	{
 		return e_error_code_item_godassembled;
 	}
-	//�Ƿ�������װ�ϳ�
 	if (item_template_ptr->god_assembled <= 0)
 	{
 		return e_error_code_item_godassembled;
@@ -7941,7 +7821,6 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 	{
 		return e_error_code_item_godassembled;
 	}
-	//ȡ�����Һ����Ĳ���
 	std::vector<int32> need_money_list;
 	std::vector<int32> need_material_list;
 	for (int32 j = 0; j < equiptemplate_ptr->GodAssembledSpend.size() / 2; j++)
@@ -7957,7 +7836,6 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 			need_material_list.push_back(equiptemplate_ptr->GodAssembledSpend[j * 2 + 1]);
 		}
 	}
-	//����Ƿ��㹻
 	if (need_money_list.size() >= 2)
 	{
 		if (!temp_player.can_cut_money((e_money_type)need_money_list[0], need_money_list[1]))
@@ -7966,7 +7844,6 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 		}
 	}
 
-	//�ز��Ƿ��㹻
 	int32   materialTypeInt = need_material_list.size();
 	if (materialTypeInt < 2 || materialTypeInt % 2 != 0)
 	{
@@ -7986,7 +7863,6 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 	}
 
 	bool is_use_lock_material = false;
-	//�����ز�
 	for (int32 i = 0; i < materialTypeInt; i++)
 	{
 		if (first_use_lock == 1 && get_item_count(e_bag_type_bag, need_material_list[i * 2], 1) > 0)
@@ -7994,14 +7870,13 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 			is_use_lock_material = true;
 		}
 		else if (get_item_count(e_bag_type_bag, need_material_list[i * 2], 0) < need_material_list[i * 2 + 1])
-		{//ʹ�õ��˰��ز�
+		{
 			is_use_lock_material = true;
 		}
 		cost_item_by_id_with_lock_states(e_server_log_del_item_assembled, 0, need_material_list[i * 2], need_material_list[i * 2 + 1], first_use_lock);
 	}
 	if (rand() % 100 < (equiptemplate_ptr->GodAssembledRadio * 100))
 	{
-		//��ȡ����Ʒ��Ϣ
 		int32 upgrade = item_ptr->get_data_info(e_item_info_upgrade_count);
 		int32 addon = item_ptr->get_data_info(e_item_info_add_on);
 		int32 islock = item_ptr->get_data_info(e_item_info_locked);
@@ -8009,7 +7884,7 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 		std::vector<int32> succinct_property;
 		int32 property_start = int32(e_item_info_succinct_property1);
 		int32 property_end = int32(e_item_info_succinct_property6);
-		for (; property_start <= property_end; property_start++)//ϴ������
+		for (; property_start <= property_end; property_start++)
 		{
 			succinct_property.push_back(int32(item_ptr->get_data_info((e_item_info)property_start)));
 		}
@@ -8052,13 +7927,12 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 		{
 			new_item->set_data_info(e_item_info_locked, 1);
 		}
-		//����ϴ������
 		for (int32 i = 0; i < succinct_property.size(); i++)
 		{
 			new_item->set_data_info((e_item_info)(int32(e_item_info_succinct_property1) + i), succinct_property[i]);
 		}
 		for (int32 i = e_item_info_random_had_flag; i <= e_item_info_random_property6; ++i)
-		{//���׺��װ��׿Խ����Ҫ�̳в�Ҫ������ǵģ������ˣ�
+		{
 			new_item->set_data_info(e_item_info(i), item_ptr->get_item_inst().data_ary[i]);
 		}
 
@@ -8084,7 +7958,6 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 		std::vector<s_item_template_info> item_data;
 		item_data.push_back({ temp_id ,temp_num,temp_locked });
 		get_item_send_promp_msg_to_client(item_data);
-		//�ϳɳɹ�������
 		ItemTemplate* new_item_template_ptr = new_item->get_item_info_ptr();
 		if (nullptr != new_item_template_ptr)
 		{
@@ -8094,7 +7967,6 @@ int32 item_set::item_assembled(const guid_64& item_guid, int32 first_use_lock)
 			temp_player.get_chat_mgr().send_notice_new(notice_id, notice_data);
 		}
 
-		//ɾ������Ʒ
 		del_item(e_server_log_del_item_assembled_cost, 0, item_guid, 1);
 
 		return e_error_code_success;
@@ -8115,7 +7987,6 @@ e_error_code item_set::item_use_check(citem& item_ref, int32& use_num)
 		return e_error_code_item_over_time;
 	}
 
-	// ���ʹ�������Ƿ����
 	if (use_num <= 0 || use_num > item_ref.get_data_info(e_item_info_stack_count))
 	{
 		return e_error_code_item_invalid_use_num;
@@ -8128,21 +7999,18 @@ e_error_code item_set::item_use_check(citem& item_ref, int32& use_num)
 	}
 
 
-	//���ʹ����תְ�ȼ��Ƿ����ʹ�ø���Ʒ
 	int32 player_grade_num = temp_player.get_grade_num();
 	if (player_grade_num < item_template_ptr->grade_level_limit)
 	{
 		return	e_error_code_item_invalid_player_state;
 	}
 
-	// ���ʹ���ߵ�ְҵ�Ƿ����ʹ�ø���Ʒ
 	int32 player_class_type = temp_player.get_unit_info(e_role_info_class_type);
 	if (item_ref.can_used_by_class_type((e_class_type)player_class_type) == false)
 	{
 		return e_error_code_item_class_type_limit;
 	}
 
-	// ���ʹ���ߵĵȼ��Ƿ����ʹ�ø���Ʒ
 
 	int32 player_level = temp_player.get_unit_info(e_role_info_exp_level);
 	if (item_template_ptr->level_limit.size() >= 2)
@@ -8176,7 +8044,6 @@ e_error_code item_set::item_use_check(citem& item_ref, int32& use_num)
 		return	e_error_code_item_invalid_player_state;
 	}
 
-	// ��齫Ҫͨ������Ʒ��õĳƺ��Ƿ��Ѿ�������
 	int32 title_template_id = prop_template_ptr->TitleGet;
 	if (title_template_id > 0)
 	{
@@ -8193,13 +8060,11 @@ e_error_code item_set::item_use_check(citem& item_ref, int32& use_num)
 		}
 	}
 
-	// �����Ʒ����CD�����޷�ʹ��
 	if (m_item_use_cd.find(item_template_ptr->attribute_id) != m_item_use_cd.end())
 	{
 		return e_error_code_item_in_cd;
 	}
 
-	//----------ִ�е�������Ѿ�˵������Ʒ����ʹ����,���������߼�������������Ʒʹ������(�����ʵ������)-----------
 
 	e_fruit_type fruit_type = item_ref.is_fruit();
 	if (e_fruit_type_none != fruit_type)
@@ -8207,7 +8072,7 @@ e_error_code item_set::item_use_check(citem& item_ref, int32& use_num)
 		int32 fruit_cur_eated, fruid_can_eat_max;
 		temp_player.get_fruit_eating_info(fruit_type, fruit_cur_eated, fruid_can_eat_max);
 
-		int32 can_eat_now = fruid_can_eat_max - fruit_cur_eated; // ��ȡ��ǰ���ԳԵĹ�ʵ����Ŀ
+		int32 can_eat_now = fruid_can_eat_max - fruit_cur_eated;
 		if (can_eat_now < 0)
 		{
 			can_eat_now = 0;
@@ -8283,7 +8148,6 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 
 	e_error_code item_use_check_ret = item_use_check(*item_ptr, item_num);
 
-	// ʹ�������ķ����Ȳ�����������,��Ϊʹ���������ܻ���ݹ�ʵ�򱳰��ռ�����������
 	item_proto_item_use_end item_use_end_msg;
 	item_use_end_msg.set_result(item_use_check_ret);
 	item_use_end_msg.set_item_template_id(item_id);
@@ -8445,7 +8309,6 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 	//	get_item_send_promp_msg_to_client(get_item_list, is_cotinue_use);
 	//}
 
-	// ʹ�����øı�������Ե�Ч����Ч
 	int32 len = prop_template->RoleAttributeChange.size();
 	if (len > 0 && len % e_att_one_max == 0)
 	{
@@ -8457,10 +8320,8 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 		}
 	}
 
-	// ��Ʒ��Ч����ͨ��BUFF���ṩ
 	item_ptr->set_unit_buff(m_unit_array_index, true);
 
-	// ʹǮ����ĸı���Ч
 	len = prop_template->MoneyChange.size();
 	vector<int32> get_money_list;
 	if (len > 0)
@@ -8468,22 +8329,18 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 		add_money_by_card(prop_template->MoneyChange, item_num, get_money_list);
 	}
 
-	// ��óƺ�
 	temp_player.get_title_mgr().add_title_by_template_id(prop_template->TitleGet);
 
-	// �����Ʒ��ʹ��CD������CD��ȴʱ��
 	if (prop_template->UseCD > 0)
 	{
 		m_item_use_cd.insert({ item_id, init_unit::get_end_time(prop_template->UseCD) });
 	}
 
-	//��̬���Ӿ���ֵ��Ʒ
 	if (e_prop_sub_type_add_exp_with_num == real_item_template_ptr->sub_type)
 	{
 		float exp_fix_num = prop_template->ExpNum;
 		if (exp_fix_num >= .0f)
 		{
-			//����Ҳ�ܼӾ��飬�ۻ�����
 			//if (true == temp_player.can_add_exp())
 			{
 				int32 upgrade_temp_id = temp_player.get_unit_info(e_role_info_upgrade_id);
@@ -8530,7 +8387,6 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 		}
 	}
 
-	//���鵤��ʹ�ȼ��;���ı�,
 	if (e_prop_sub_type_max_level_up_medicine == real_item_template_ptr->sub_type
 		|| e_prop_sub_type_mid_level_up_medicine == real_item_template_ptr->sub_type
 		|| e_prop_sub_type_min_level_up_medicine == real_item_template_ptr->sub_type)
@@ -8538,10 +8394,8 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 		int32 level_array_size = prop_template->LevelUp.size();
 		if (3 == level_array_size)
 		{
-			//����Ҳ�ܼӾ��飬�ۻ�����
 			//if (true == temp_player.can_add_exp())
 			{
-				//��ȡ��ҵȼ��;���
 				int32 old_level = temp_player.get_unit_info(e_role_info_exp_level);
 				//int64 exp_num = 0;
 				if (old_level < prop_template->LevelUp[0])
@@ -8613,7 +8467,6 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 		}
 	}
 
-	//ϴ��ˮ
 	if (e_prop_sub_type_wash_talent_water == real_item_template_ptr->sub_type)
 	{
 		player& ref_player = unit_man::get_player(m_unit_array_index);
@@ -8628,7 +8481,6 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 		ref_player.get_talent_mgr().talent_reset();
 	}
 
-	//ϴ����
 	if (e_prop_sub_type_refresh_body_att == real_item_template_ptr->sub_type)
 	{
 		player& ref_player = unit_man::get_player(m_unit_array_index);
@@ -8644,7 +8496,6 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 		ref_player.get_pawn_att().change_base_body_att(init_body_att, true);
 	}
 
-	//���ӵ�ͼ����
 	if (e_prop_sub_type_add_map_count == real_item_template_ptr->sub_type)
 	{
 		player& ref_player = unit_man::get_player(m_unit_array_index);
@@ -8670,7 +8521,6 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 
 	}
 
-	//���ӵ�ͼʱ��
 	if (e_prop_sub_type_add_map_time == real_item_template_ptr->sub_type)
 	{
 		player& ref_player = unit_man::get_player(m_unit_array_index);
@@ -8730,7 +8580,6 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 		}
 	}
 
-	//ڤ��ҩˮ
 	if (e_prop_sub_type_meditation_medicine == real_item_template_ptr->sub_type)
 	{
 		player& ref_player = unit_man::get_player(m_unit_array_index);
@@ -8796,13 +8645,11 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 		temp_player.set_unit_info(e_role_info_recharge_num, vip_card_add_point + cur_vip_recharge_num);
 		temp_player.set_unit_info(e_role_info_daily_recharge_num, cur_daily_recharge_num + vip_card_add_point);
 
-		//��ʱ��ۼƳ�ֵ��������
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_total_charge, vip_card_add_point);
 		temp_player.get_time_limit_activity_mgr().reset_ranking_value(e_time_limit_activity_type_total_charge);
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_cross_total_charge, vip_card_add_point);
 		temp_player.get_time_limit_activity_mgr().reset_ranking_value(e_time_limit_activity_type_cross_total_charge);
 
-		//��ʱ�ÿ�ճ�ֵ��������
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_daily_charge, vip_card_add_point);
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_daily_charge2, vip_card_add_point);
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_daily_charge3, vip_card_add_point);
@@ -8814,11 +8661,8 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_new_total_charge_2, vip_card_add_point);
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_new_total_charge_3, vip_card_add_point);
 
-		//��ʱ�ȫ��۱���ֵ��������
-		//���
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_national_treasure_1, vip_card_add_point);
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_national_treasure_2, vip_card_add_point);
-		//����
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_national_treasure_3, vip_card_add_point);
 		temp_player.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_national_treasure_4, vip_card_add_point);
 
@@ -8834,7 +8678,6 @@ bool item_set::item_use(const guid_64& item_guid, citem*& end_item, int32 item_n
 				temp_player.refresh_vip_title();
 			}
 			temp_player.broadcast_info_one(e_role_info_vip_level);
-			//ͬ��vip�ȼ���session
 			temp_player.sync_data_to_ws(e_sync_cs2ws_data_vip_level, new_vip_level);
 		}
 
@@ -8942,7 +8785,6 @@ int32 item_set::item_buy_and_use(int32 goods_id)
 		return e_item_string_unkown;
 	}
 
-	// �ж���ҵĵȼ��Ƿ�ﵽ���ܹ��������Ʒ��Ҫ��
 	int32 player_level = temp_player.get_unit_info(e_role_info_exp_level);
 	if (goods_template->Levellimit.size() < 2)
 	{
@@ -9010,7 +8852,7 @@ bool item_set::use_beast_spirit(const guid_64& item_guid, int32 item_num)
 		return false;
 	}
 
-	if (item_ptr->get_data_info(e_item_info_stack_count) < item_num || item_num <= 0)//�����������
+	if (item_ptr->get_data_info(e_item_info_stack_count) < item_num || item_num <= 0)
 	{
 		return false;
 	}
@@ -9042,11 +8884,11 @@ bool item_set::use_beast_spirit(const guid_64& item_guid, int32 item_num)
 
 				if (mount_template_ptr->ClassNow >= beast_spirit_template_ptr->UnlockConditionArray[i + 1])
 				{
-					is_upgrade = true;//����ʹ������
+					is_upgrade = true;
 					break;
 				}
 			}
-			else if (beast_spirit_template_ptr->BeastSpiritType == e_beast_spirit_type_wing)//����
+			else if (beast_spirit_template_ptr->BeastSpiritType == e_beast_spirit_type_wing)
 			{
 				WingTemplate* wing_template_ptr = item_mount_or_wing_ptr->get_wing_template_ptr();
 				if (nullptr == wing_template_ptr)
@@ -9056,7 +8898,7 @@ bool item_set::use_beast_spirit(const guid_64& item_guid, int32 item_num)
 
 				if (wing_template_ptr->UpgradeNow >= beast_spirit_template_ptr->UnlockConditionArray[i + 1])
 				{
-					is_upgrade = true;//����ʹ������
+					is_upgrade = true;
 					break;
 				}
 			}
@@ -9068,7 +8910,7 @@ bool item_set::use_beast_spirit(const guid_64& item_guid, int32 item_num)
 	}
 	if (!is_upgrade)
 	{
-		return false;//δ�����������
+		return false;
 	}
 
 	change_beast_spirit_att(beast_spirit_template_ptr->BeastSpiritType, false);
@@ -9154,7 +8996,6 @@ bool item_set::item_one_key_use(const std::vector<guid_64>& item_guid_array)
 
 		e_error_code item_use_check_ret = item_use_check(*item_ptr, item_num);
 
-		// ʹ�������ķ����Ȳ�����������,��Ϊʹ���������ܻ���ݹ�ʵ�򱳰��ռ�����������
 		item_proto_item_use_end item_use_end_msg;
 		item_use_end_msg.set_result(item_use_check_ret);
 		item_use_end_msg.set_item_template_id(item_gid);
@@ -9266,7 +9107,6 @@ bool item_set::item_sell(const guid_64& item_guid, int32 item_num)
 
 		SpiritTemplate* temp_template = GET_TEMPLATE(SpiritTemplate, spirit_templateid);
 		//int32 earn_money_num = temp_template->Recycle;
-		//���鲻�ѵ�
 		if (temp_template->RecoveryMoney.size() % e_money_tuple_max != 0)
 		{
 			return false;
@@ -9748,14 +9588,14 @@ void item_set::cost_item_by_id_with_lock_states(e_server_log_del_item causeid, i
 			{
 				int32 item_num = item_ptr->get_data_info(e_item_info_stack_count);
 				if (item_num > temp_item_count)
-				{//ĳ����Ʒ�㹻����
+				{
 					m_bind_material_num += temp_item_count;
 					del_item(causeid, location, item_ptr, temp_item_count);
 					temp_item_count = 0;
 					break;
 				}
 				else
-				{//������Ʒ���Ĳ���
+				{
 					m_bind_material_num += item_num;
 					temp_item_count -= item_num;
 					del_item(causeid, location, item_ptr, item_num);
@@ -9764,7 +9604,7 @@ void item_set::cost_item_by_id_with_lock_states(e_server_log_del_item causeid, i
 		}
 	}
 
-	if (temp_item_count > 0)//����δ����
+	if (temp_item_count > 0)
 	{
 		for (int32 i = 0; i < MAX_ITEM_BAG_NUM; ++i)
 		{
@@ -9782,13 +9622,13 @@ void item_set::cost_item_by_id_with_lock_states(e_server_log_del_item causeid, i
 					del_item(causeid, location, item_ptr, temp_item_count);
 					temp_item_count = 0;
 					break;
-				}//ĳ����Ʒ�㹻����
+				}
 				else
 				{
 					m_no_bind_material_num += item_num;
 					temp_item_count -= item_num;
 					del_item(causeid, location, item_ptr, item_num);
-				}//��Ʒ���Ĳ���
+				}
 			}
 		}
 	}
@@ -9833,7 +9673,6 @@ int32 item_set::upgrade_protect_item_can_use(const ItemUpgradeTemplate* item_upg
 	//{
 	//	return e_error_code_item_upgrade;
 	//}
-	////���ʹ��С���������޻��ߴ����������ޣ�����ʹ��
 	//if (props_template_ptr->FuncLevelLimit.size() >= 2)
 	//{
 	//	if (cur_upgrade_num < props_template_ptr->FuncLevelLimit[0] || cur_upgrade_num > props_template_ptr->FuncLevelLimit[1])
@@ -10106,16 +9945,16 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 	if (nullptr == wing_ptr
 		|| nullptr == wing_ptr->get_item_info_ptr())
 	{
-		return e_item_string_no_item;//û����Ʒ
+		return e_item_string_no_item;
 	}
 
 	if (wing_ptr->get_data_info(e_item_info_activate) == 0 || wing_ptr->get_data_info(e_item_info_over_time) != 0)
 	{
-		return e_item_string_unkown;//δ����ó��,��������
+		return e_item_string_unkown;
 	}
 
 	if (wing_ptr->get_item_info_ptr()->item_type != e_item_type_wing)
-	{//���ǳ��
+	{
 		return e_item_string_unkown;
 	}
 	bool use_money_instead_matirial = false;
@@ -10145,7 +9984,7 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 		return e_item_string_unkown;
 	}
 
-	if (wing_template_ptr->GradeLimit > temp_player_ref.get_grade_num())  // ����תְ�޶�
+	if (wing_template_ptr->GradeLimit > temp_player_ref.get_grade_num())
 	{
 		return e_item_string_unkown;
 	}
@@ -10158,7 +9997,7 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 
 	if (wing_template_ptr->Type == e_item_wing_type_normal
 		&& wing_ptr != get_cur_level_wing())
-	{//ѡ����һ���ͽ׵��������ĳ���������
+	{
 		return e_item_string_full_level;
 	}
 	if (wing_template_ptr->Type == e_item_wing_type_illusion || wing_template_ptr->Type == e_item_wing_type_special_santo)
@@ -10167,18 +10006,17 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 	}
 
 	if ((cur_wing_star_num >= max_wing_star_num) && (cur_wing_level >= max_wing_level))
-	{//����
+	{
 		return e_item_string_full_level;
 	}
 
 	if (cur_wing_star_num == max_wing_star_num)
 	{
-		//���� ���жϵȼ�����,���жϲ���
 		if (wing_template_ptr->Type == e_item_wing_type_normal)
 		{
 			if (temp_player_ref.get_unit_info(e_role_info_exp_level) < wing_template_ptr->WingOpenNeedRoleClass)
 			{
-				return e_item_string_level;//δ����ȼ�����
+				return e_item_string_level;
 			}
 		}
 		else
@@ -10202,9 +10040,9 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 		}
 
 		if (get_item_count(wing_template_ptr->UpgradeMatirialId, e_bag_type_bag) < wing_template_ptr->UpgradeMatirialNum)
-		{//�زĲ���
+		{
 			if (use_up_item == 0)
-			{//������ʯ
+			{
 				return e_item_string_matirial_not_enough;
 			}
 			else
@@ -10212,7 +10050,6 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 				use_money_instead_matirial = true;
 			}
 		}
-		//���ı�ʯ�������
 		if (use_money_instead_matirial)
 		{
 			GoodsTemplate* goods_ptr = GET_TEMPLATE(GoodsTemplate, wing_template_ptr->UpgradeShopId);
@@ -10257,9 +10094,8 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 
 		wing_ptr->set_data_info(e_item_info_wing_bless, upgrade_bless_now + wing_template_ptr->EachUpgradeBless);
 		upgrade_bless_now = wing_ptr->get_data_info(e_item_info_wing_bless);
-		//�ȼ�ף��ֵ
 		if (wing_upgrade_rate(upgrade_bless_now, wing_template_ptr) == true)
-		{//���׸����жϳɹ�,������,ף��,�������.
+		{
 			set_wing_att(false);
 
 			wing_ptr->set_data_info(e_item_info_wing_exp, 0);
@@ -10273,7 +10109,6 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 				effect_msg.set_show_type(e_item_upgrade_effect_type_wing_upgrade);
 				effect_msg.set_show_value(cur_wing_level + 1);
 				temp_player_ref.send_message_to_self(&effect_msg, e_msgindex_s2c_show_item_upgrade_effect);
-				//������׹���
 				WingTemplate* new_wing_template_ptr = get_wing_template_ptr(*wing_ptr);
 				if (new_wing_template_ptr != nullptr)
 				{
@@ -10297,7 +10132,6 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 			}
 			else
 			{
-				//���ڳ�����Ҫ�ѵ�ǰ�׳�����������⣬��Ҫ������һ�׳��
 				reset_wings_order();
 				citem* next_level_wing = get_item_by_slot(e_bag_type_wing, wing_ptr->get_data_info(e_item_info_slot) + 1);
 				if (next_level_wing == nullptr)
@@ -10342,7 +10176,6 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 				temp_player_ref.get_mission_mgr().target_check(e_mission_end_type_wing_upgrade);
 				temp_player_ref.get_achievement_mgr().item_changed(wing_ptr, e_item_operation_featherupgrade_grade);
 
-				//������׹���
 				WingTemplate* current_wing_template_ptr = cur_level_wing->get_wing_template_ptr();
 				if (current_wing_template_ptr && current_wing_template_ptr->NoticeId > 0)
 				{
@@ -10367,17 +10200,17 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 		}
 
 		send_item_one(wing_ptr);
-		int32 temp_cur_value = temp_player_ref.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_wing); // ��Ծ��
+		int32 temp_cur_value = temp_player_ref.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_wing);
 		temp_player_ref.get_welfare_mgr().set_active_degree_info(e_daily_active_degree_type_strengthing_one_wing, temp_cur_value + 1);
 		//sync_ranking_wing();
 		return e_error_code_success;
 	}
 	else
-	{//����
+	{
 		if (get_item_count(wing_template_ptr->AddStarMatirialId, e_bag_type_bag) < wing_template_ptr->AddStarMatirialNum)
-		{//�زĲ���
+		{
 			if (use_up_item == 0)
-			{//������ʯ
+			{
 				return e_item_string_matirial_not_enough;
 			}
 			else
@@ -10385,7 +10218,6 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 				use_money_instead_matirial = true;
 			}
 		}
-		//���ı�ʯ�������
 		if (use_money_instead_matirial)
 		{
 			GoodsTemplate* goods_ptr = GET_TEMPLATE(GoodsTemplate, wing_template_ptr->StarShopId);
@@ -10413,24 +10245,24 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 		int32 add_star_exp_max = wing_template_ptr->AddStarMaxEXP;
 		bool crirical_flag;
 		if (rand() % 100 < wing_template_ptr->AddStarCriticalRate)
-		{//���Ǳ�������
+		{
 			add_star_exp_now += wing_template_ptr->EachAddStarExp * 2;
 			crirical_flag = true;
 		}
 		else
-		{//δ����
+		{
 			add_star_exp_now += wing_template_ptr->EachAddStarExp;
 			crirical_flag = false;
 		}
 
 		int32 temp_star = 0;
 		while (add_star_exp_now >= add_star_exp_max)
-		{//������������
+		{
 			add_star_exp_now -= add_star_exp_max;
 			temp_star++;
 		}
 		if (temp_star > 0)
-		{//����ȷ�ϸı�����
+		{
 			set_wing_att(false);
 			if (cur_wing_star_num + temp_star > max_wing_star_num)
 			{
@@ -10467,7 +10299,7 @@ int32 item_set::wing_upgrade(const guid_64& wing_guid, int32 use_up_item)
 			return e_error_code_item_add_star_critical;
 		}
 
-		int32 temp_cur_value = temp_player_ref.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_wing); // ��Ծ��
+		int32 temp_cur_value = temp_player_ref.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_wing);
 		temp_player_ref.get_welfare_mgr().set_active_degree_info(e_daily_active_degree_type_strengthing_one_wing, temp_cur_value + 1);
 		return e_error_code_success;
 	}
@@ -10490,16 +10322,16 @@ int32 item_set::wing_starupgrade(const guid_64& wing_guid, int32 use_up_item)
 	if (nullptr == wing_ptr
 		|| nullptr == wing_ptr->get_item_info_ptr())
 	{
-		return e_item_string_no_item;//û����Ʒ
+		return e_item_string_no_item;
 	}
 
 	if (wing_ptr->get_data_info(e_item_info_activate) == 0 || wing_ptr->get_data_info(e_item_info_over_time) != 0)
 	{
-		return e_item_string_unkown;//δ����ó��,��������
+		return e_item_string_unkown;
 	}
 
 	if (wing_ptr->get_item_info_ptr()->item_type != e_item_type_wing)
-	{//���ǳ��
+	{
 		return e_item_string_unkown;
 	}
 	bool use_money_instead_matirial = false;
@@ -10546,15 +10378,14 @@ int32 item_set::wing_starupgrade(const guid_64& wing_guid, int32 use_up_item)
 	int32 max_wing_star_num = wing_template_ptr->StarGradeMax;
 
 	if (wing_template_ptr->Type == e_item_wing_type_shape_illusion && (cur_wing_star_num >= max_wing_star_num))
-	{//����
+	{
 		return e_item_string_full_level;
 	}
 
-	//����
 	if (get_item_count(wing_template_ptr->AddStarMatirialId, e_bag_type_bag) < wing_template_ptr->AddStarMatirialNum)
-	{//�زĲ���
+	{
 		if (use_up_item == 0)
-		{//������ʯ
+		{
 			return e_item_string_matirial_not_enough;
 		}
 		else
@@ -10562,7 +10393,6 @@ int32 item_set::wing_starupgrade(const guid_64& wing_guid, int32 use_up_item)
 			use_money_instead_matirial = true;
 		}
 	}
-	//���ı�ʯ�������
 	if (use_money_instead_matirial)
 	{
 		GoodsTemplate* goods_ptr = GET_TEMPLATE(GoodsTemplate, wing_template_ptr->StarShopId);
@@ -10587,7 +10417,6 @@ int32 item_set::wing_starupgrade(const guid_64& wing_guid, int32 use_up_item)
 		cost_item_by_id_with_lock_states(e_server_log_del_item_wing_starupgrade , 0 ,wing_template_ptr->AddStarMatirialId, wing_template_ptr->AddStarMatirialNum, e_item_locked);
 	}
 
-	//����ȷ�ϸı�����
 	item_change_att(wing_template_ptr->AttArray, 1, false);
 	wing_ptr->set_data_info(e_item_info_stargrade_count, wing_ptr->get_data_info(e_item_info_stargrade_count) + 1);
 	int32 wing_next_id = wing_ptr->get_item_info_ptr()->logic_id + wing_ptr->get_data_info(e_item_info_stargrade_count) + 1000;
@@ -10602,9 +10431,6 @@ int32 item_set::wing_starupgrade(const guid_64& wing_guid, int32 use_up_item)
 		temp_player_ref.send_message_to_self(&effect_msg, e_msgindex_s2c_show_item_upgrade_effect);
 
 		// wangsonghao
-		// ��������
-		// �����൱�ڻ���ֱ�Ӽ�buff�����������޸ģ�ͨ�� PassiveSkillManager �����б������ܵĹ���
-		// ������δʵ�� PassiveSkillManager
 		if (wing_next_temp_ptr->StarBuffId > 0)
 		{
 			PassiveSkillTemplate* passive_skill_template_ptr = GET_TEMPLATE(PassiveSkillTemplate, wing_next_temp_ptr->StarBuffId);
@@ -10621,7 +10447,7 @@ int32 item_set::wing_starupgrade(const guid_64& wing_guid, int32 use_up_item)
 	//sync_ranking_wing();
 	//temp_player_ref.refresh_service_goal(e_service_goal_type_wing_level);
 
-	int32 temp_cur_value = temp_player_ref.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_wing); // ��Ծ��
+	int32 temp_cur_value = temp_player_ref.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_wing);
 	temp_player_ref.get_welfare_mgr().set_active_degree_info(e_daily_active_degree_type_strengthing_one_wing, temp_cur_value + 1);
 	return e_error_code_success;
 	*/
@@ -10638,16 +10464,16 @@ int32 item_set::wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 
 	if (nullptr == wing_ptr
 		|| nullptr == wing_ptr->get_item_info_ptr())
 	{
-		return e_error_code_success;//û����Ʒ
+		return e_error_code_success;
 	}
 
 	if (wing_ptr->get_data_info(e_item_info_activate) == 0 || wing_ptr->get_data_info(e_item_info_over_time) != 0)
 	{
-		return e_error_code_template_param;//δ����ó��,��������
+		return e_error_code_template_param;
 	}
 
 	if (wing_ptr->get_item_info_ptr()->item_type != e_item_type_wing)
-	{//���ǳ��
+	{
 		return e_error_code_template_param;
 	}
 
@@ -10659,7 +10485,7 @@ int32 item_set::wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 
 	}
 	if (wing_upgrade_template_ptr->UpgradeNow < GAMECONFIG->WingPsychicUnlockNum)
 	{
-		return e_error_code_template_param; //���Ľ���С�����õĽ���
+		return e_error_code_template_param;
 	}
 
 	if (wing_ptr->get_data_info(e_item_info_forge_property1) < 0 || wing_ptr->get_data_info(e_item_info_forge_property1) >= 110)
@@ -10667,7 +10493,6 @@ int32 item_set::wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 
 		return e_error_code_template_param;
 	}
 
-	//�õ���Ӧ����ֵ�ĳ��
 	int32 real_id = wing_ptr->get_item_info_ptr()->logic_id + wing_ptr->get_data_info(e_item_info_forge_property1) + 2000;
 	WingTemplate* wing_template_ptr = GET_TEMPLATE(WingTemplate, real_id);
 	if (nullptr == wing_template_ptr)
@@ -10675,18 +10500,16 @@ int32 item_set::wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 
 		return e_error_code_template_param;
 	}
 
-	//����ȷ�ϸı�����
 	if (wing_ptr->get_data_info(e_item_info_forge_property1) < 50)
 	{
 
-		//��ȴʱ�䲻Ϊ0������ȴʱ��û��
 		if (wing_ptr->get_data_info(e_item_info_forge_property2) != 0 && time_helper::get_cur_time_new().second < wing_ptr->get_data_info(e_item_info_forge_property2))
 		{
 			return e_error_code_template_param;
 		}
 
 		if (get_item_count(e_bag_type_bag, wing_template_ptr->AddStarMatirialId) < wing_template_ptr->AddStarMatirialNum)
-		{//�زĲ���
+		{
 			return e_error_code_template_param;
 		}
 		else
@@ -10697,7 +10520,6 @@ int32 item_set::wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 
 		wing_ptr->set_data_info(e_item_info_forge_property1, wing_ptr->get_data_info(e_item_info_forge_property1) + 10);
 		wing_ptr->set_data_info(e_item_info_forge_property2, time_helper::get_cur_time_new().second + wing_template_ptr->LengQueTime * 3600);
 	}
-	//ע��ȷ�ϸı�����
 	else
 	{
 		if (GAMECONFIG->WingZhuLingFrequency.size() < 2 || GAMECONFIG->WingZhuLingRandomRange.size() < 9)
@@ -10705,7 +10527,6 @@ int32 item_set::wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 
 			return e_error_code_template_param;
 		}
 
-		//ע������Ƿ��㹻
 		if (wing_ptr->get_data_info(e_item_info_forge_property1) < 80)
 		{
 			if (wing_ptr->get_data_info(e_item_info_forge_property4) > GAMECONFIG->WingZhuLingFrequency[0] - 1)
@@ -10721,14 +10542,13 @@ int32 item_set::wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 
 			}
 		}
 
-		//ע����Ϻ���������Ϊ0
 		if (use_up_item == 0 || item_num == 0)
 		{
 			return e_error_code_template_param;
 		}
 
 		if (get_item_count(e_bag_type_bag, use_up_item) < item_num)
-		{//�زĲ���
+		{
 			return e_error_code_template_param;
 		}
 		else
@@ -10750,7 +10570,6 @@ int32 item_set::wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 
 		wing_ptr->set_data_info(e_item_info_forge_property4, wing_ptr->get_data_info(e_item_info_forge_property4) + 1);
 	}
 
-	//�����������ֵ ��Ϊ�������ֵ
 	if (wing_ptr->get_data_info(e_item_info_forge_property1) > 110)
 	{
 		wing_ptr->set_data_info(e_item_info_forge_property1, 110);
@@ -10769,7 +10588,6 @@ int32 item_set::wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 
 		temp_player_ref.send_message_to_self(&effect_msg, e_msgindex_s2c_show_item_upgrade_effect);*/
 	}
 
-	//����ֵ��һ�ε���80
 	if (wing_ptr->get_data_info(e_item_info_forge_property1) >= 80 && wing_ptr->get_data_info(e_item_info_forge_property5) < 80)
 	{
 		if (wing_next_temp_ptr->SkillPool.size() % 2 != 0)
@@ -10798,7 +10616,6 @@ int32 item_set::wing_zhuling(const guid_64& wing_guid, int32 use_up_item, int32 
 		wing_ptr->set_data_info(e_item_info_forge_property5, wing_ptr->get_data_info(e_item_info_forge_property1));
 	}
 
-	//����ֵ����110��Ӧ���ܱ�Ϊ2��
 	if (wing_ptr->get_data_info(e_item_info_forge_property1) >= 110 && wing_ptr->get_data_info(e_item_info_forge_property6) == 0)
 	{
 		if (!wing_psychic_skill_unlock(wing_ptr->get_data_info(e_item_info_forge_property3), false))
@@ -10829,16 +10646,16 @@ int32 item_set::wing_lengque(const guid_64& wing_guid, int32 use_up_item)
 	if (nullptr == wing_ptr
 		|| nullptr == wing_ptr->get_item_info_ptr())
 	{
-		return e_error_code_template_param;//û����Ʒ
+		return e_error_code_template_param;
 	}
 
 	if (wing_ptr->get_data_info(e_item_info_activate) == 0 || wing_ptr->get_data_info(e_item_info_over_time) != 0)
 	{
-		return e_error_code_template_param;//δ����ó��,��������
+		return e_error_code_template_param;
 	}
 
 	if (wing_ptr->get_item_info_ptr()->item_type != e_item_type_wing)
-	{//���ǳ��
+	{
 		return e_error_code_template_param;
 	}
 
@@ -10850,16 +10667,14 @@ int32 item_set::wing_lengque(const guid_64& wing_guid, int32 use_up_item)
 	}
 	if (wing_upgrade_template_ptr->UpgradeNow < GAMECONFIG->WingPsychicUnlockNum)
 	{
-		return e_error_code_template_param; //���Ľ���С�����õĽ���
+		return e_error_code_template_param;
 	}
 
-	//��һ����ȴ����ֵ����Ϊ10
 	if (wing_ptr->get_data_info(e_item_info_forge_property1) < 10 || wing_ptr->get_data_info(e_item_info_forge_property1) >= 50)
 	{
 		return e_error_code_template_param;
 	}
 
-	//�õ���Ӧ����ֵ�ĳ��
 	int32 real_id = wing_ptr->get_item_info_ptr()->logic_id + wing_ptr->get_data_info(e_item_info_forge_property1) + 2000;
 	WingTemplate* wing_template_ptr = GET_TEMPLATE(WingTemplate, real_id);
 	if (nullptr == wing_template_ptr)
@@ -10867,13 +10682,11 @@ int32 item_set::wing_lengque(const guid_64& wing_guid, int32 use_up_item)
 		return e_error_code_template_param;
 	}
 
-	//��ȴʱ��Ϊ0������ȴʱ�����
 	if (wing_ptr->get_data_info(e_item_info_forge_property2) == 0 || time_helper::get_cur_time_new().second - wing_ptr->get_data_info(e_item_info_forge_property2) >= 0)
 	{
 		return e_error_code_template_param;
 	}
 
-	//�ڼ�������
 	int32 money_times = (wing_ptr->get_data_info(e_item_info_forge_property1) / 10 - 1) * 3;
 
 	if (GAMECONFIG->WingZhuLingMoneyCost.size() < 12 || money_times < 0 || money_times > 9)
@@ -10905,16 +10718,16 @@ int32 item_set::wing_xiling(const guid_64& wing_guid, int32 use_up_item)
 	if (nullptr == wing_ptr
 		|| nullptr == wing_ptr->get_item_info_ptr())
 	{
-		return e_error_code_template_param;//û����Ʒ
+		return e_error_code_template_param;
 	}
 
 	if (wing_ptr->get_data_info(e_item_info_activate) == 0 || wing_ptr->get_data_info(e_item_info_over_time) != 0)
 	{
-		return e_error_code_template_param;//δ����ó��,��������
+		return e_error_code_template_param;
 	}
 
 	if (wing_ptr->get_item_info_ptr()->item_type != e_item_type_wing)
-	{//���ǳ��
+	{
 		return e_error_code_template_param;
 	}
 
@@ -10926,7 +10739,7 @@ int32 item_set::wing_xiling(const guid_64& wing_guid, int32 use_up_item)
 	}
 	if (wing_upgrade_template_ptr->UpgradeNow < GAMECONFIG->WingPsychicUnlockNum)
 	{
-		return e_error_code_template_param; //���Ľ���С�����õĽ���
+		return e_error_code_template_param;
 	}
 
 	if (wing_ptr->get_data_info(e_item_info_forge_property1) < 50 || wing_ptr->get_data_info(e_item_info_forge_property1) > 110)
@@ -10934,7 +10747,6 @@ int32 item_set::wing_xiling(const guid_64& wing_guid, int32 use_up_item)
 		return e_error_code_template_param;
 	}
 
-	//�õ���Ӧ����ֵ�ĳ��
 	int32 real_id = wing_ptr->get_item_info_ptr()->logic_id + wing_ptr->get_data_info(e_item_info_forge_property1) + 2000;
 	WingTemplate* wing_template_ptr = GET_TEMPLATE(WingTemplate, real_id);
 	if (nullptr == wing_template_ptr)
@@ -11022,7 +10834,7 @@ int32 item_set::wing_xiling(const guid_64& wing_guid, int32 use_up_item)
 		temp_player_ref.cut_money((e_money_type)money_id, money_num, e_server_log_cut_money_wing_xiling);
 		wing_ptr->set_data_info(e_item_info_forge_property4, 0);
 		wing_ptr->set_data_info(e_item_info_forge_property6, 0);
-		wing_ptr->set_data_info(e_item_info_forge_property1, wing_ptr->get_data_info(e_item_info_forge_property5)); //ϴ����������ֵΪһ�γ���80��ֵ
+		wing_ptr->set_data_info(e_item_info_forge_property1, wing_ptr->get_data_info(e_item_info_forge_property5));
 		set_wing_att(true);
 	}
 
@@ -11057,7 +10869,6 @@ int32 item_set::wing_illusionupgrade(const guid_64& wing_guid, int32 use_up_item
 	if (wing_ptr->get_data_info(e_item_info_activate) <= 0)
 	{
 		return e_item_string_mount_unlock;
-		//��Ҫ�ĳ�����ר�е���ʾ
 	}
 	ItemTemplate* temp_item_template_ptr = wing_ptr->get_item_info_ptr();
 	if (temp_item_template_ptr == nullptr)
@@ -11089,14 +10900,14 @@ int32 item_set::wing_illusionupgrade(const guid_64& wing_guid, int32 use_up_item
 		return e_item_string_full_level;
 	}
 
-	int32 temp_cur_value = temp_player.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_mount); // ��Ծ��
+	int32 temp_cur_value = temp_player.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_mount);
 	temp_player.get_welfare_mgr().set_active_degree_info(e_daily_active_degree_type_strengthing_one_mount, temp_cur_value + 1);
 
 	matirial_count = get_item_count(real_wing_template_ptr->UpgradeMatirialId, e_bag_type_bag);
 	if (matirial_count < real_wing_template_ptr->UpgradeMatirialNum)
-	{//�زĲ���
+	{
 		if (use_up_item == 0)
-		{//������ʯ
+		{
 			return e_item_string_matirial_not_enough;
 		}
 		else
@@ -11108,7 +10919,6 @@ int32 item_set::wing_illusionupgrade(const guid_64& wing_guid, int32 use_up_item
 
 	if (use_money_instead_matirial)
 	{
-		//������ϵ���ʯ�㹻
 		GoodsTemplate* goods_ptr = GET_TEMPLATE(GoodsTemplate, real_wing_template_ptr->UpgradeShopId);
 		if (goods_ptr != nullptr
 			&& goods_ptr->NewPrice.size() > region_money_num_index)
@@ -11139,9 +10949,6 @@ int32 item_set::wing_illusionupgrade(const guid_64& wing_guid, int32 use_up_item
 		item_change_att(wing_ptr->get_wing_template_ptr()->AttArray, 1, true);
 
 		// wangsonghao
-		// ��������
-		// �����൱�ڻ���ֱ�Ӽ�buff�����������޸ģ�ͨ�� PassiveSkillManager �����б������ܵĹ���
-		// ������δʵ�� PassiveSkillManager
 		if (wing_ptr->get_wing_template_ptr()->StarBuffId > 0)
 		{
 			star_skill_unlock(wing_guid, wing_ptr->get_data_info(e_item_info_upgrade_count), false, false);
@@ -11194,7 +11001,7 @@ int32 item_set::wing_shape_upgrade(citem& ref_wing_item_shape, int32 use_up_item
 	const int32 max_wing_upgrade_num = wing_template_ptr->WingUpgradeMax;
 
 	if ((cur_wing_star_num == max_wing_star_num) && (cur_wing_upgrade_num == max_wing_upgrade_num))
-	{//����
+	{
 		return e_item_string_full_level;
 	}
 
@@ -11232,9 +11039,9 @@ int32 item_set::wing_shape_upgrade(citem& ref_wing_item_shape, int32 use_up_item
 		if (cur_wing_star_num == max_wing_star_num)
 		{
 			if (get_item_count(e_bag_type_bag, wing_template_ptr->UpgradeMatirialId) < wing_template_ptr->UpgradeMatirialNum)
-			{//�زĲ���
+			{
 				if (use_up_item == 0)
-				{//������ʯ
+				{
 					return e_item_string_matirial_not_enough;
 				}
 				else
@@ -11242,7 +11049,6 @@ int32 item_set::wing_shape_upgrade(citem& ref_wing_item_shape, int32 use_up_item
 					use_money_instead_matirial = true;
 				}
 			}
-			//���ı�ʯ�������
 			if (use_money_instead_matirial)
 			{
 				GoodsTemplate* goods_ptr = GET_TEMPLATE(GoodsTemplate, wing_template_ptr->UpgradeShopId);
@@ -11278,9 +11084,9 @@ int32 item_set::wing_shape_upgrade(citem& ref_wing_item_shape, int32 use_up_item
 		else
 		{
 			if (get_item_count(e_bag_type_bag, wing_template_ptr->AddStarMatirialId) < wing_template_ptr->AddStarMatirialNum)
-			{//�زĲ���
+			{
 				if (use_up_item == 0)
-				{//������ʯ
+				{
 					return e_item_string_matirial_not_enough;
 				}
 				else
@@ -11288,7 +11094,6 @@ int32 item_set::wing_shape_upgrade(citem& ref_wing_item_shape, int32 use_up_item
 					use_money_instead_matirial = true;
 				}
 			}
-			//���ı�ʯ�������
 			if (use_money_instead_matirial)
 			{
 				GoodsTemplate* goods_ptr = GET_TEMPLATE(GoodsTemplate, wing_template_ptr->StarShopId);
@@ -11347,8 +11152,6 @@ int32 item_set::wing_shape_upgrade(citem& ref_wing_item_shape, int32 use_up_item
 	set_wing_att(true);
 	send_item_one(&ref_wing_item_shape);
 
-	//��������
-	//������׹���
 	WingTemplate* new_wing_template_ptr = get_wing_template_ptr(ref_wing_item_shape);
 	if (new_wing_template_ptr != nullptr)
 	{
@@ -11580,7 +11383,6 @@ int32 item_set::wing_shape_illusion_unlock(const guid_64& wing_guid, const int32
 	{
 		return e_item_string_have_no_illusion;
 	}
-	//�ж�ǰ������
 	if (temp_illusion_wing_template_ptr->PreWingRequirement.size() >= 2)
 	{
 		if (real_wing_template_ptr->UpgradeNow < temp_illusion_wing_template_ptr->PreWingRequirement[1])
@@ -11606,7 +11408,7 @@ int32 item_set::wing_shape_illusion_unlock(const guid_64& wing_guid, const int32
 	{
 		if (!temp_player_ref.can_cut_money((e_money_type)temp_illusion_wing_template_ptr->UnlockNeedMoney[e_money_tuple_id], temp_illusion_wing_template_ptr->UnlockNeedMoney[e_money_tuple_num]))
 		{
-			return e_item_string_money;//Ǯ����
+			return e_item_string_money;
 		}
 		is_cut_money = true;
 	}
@@ -11725,7 +11527,7 @@ void  item_set::sync_ranking_wing()
 	}
 }
 
-bool item_set::wing_upgrade_rate(int32 bless, WingTemplate* wing_template_ptr)//���ֵһ��,ĿǰΪ����50ʱ(bless-50)/50
+bool item_set::wing_upgrade_rate(int32 bless, WingTemplate* wing_template_ptr)
 {
 	if (wing_template_ptr == nullptr)
 	{
@@ -11768,18 +11570,18 @@ int32 item_set::wing_add_soul(const guid_64& add_soul_guid)
 	if (nullptr == item_ptr)
 	{
 		return e_item_string_unkown;
-	}//û����Ʒ
+	}
 	if (nullptr == item_ptr->get_item_info_ptr())
 	{
 		return e_item_string_unkown;
 	}
 	if (item_ptr->get_item_info_ptr()->item_type != e_item_type_wing)
-	{//���ǳ��
+	{
 		return e_item_string_unkown;
 	}
 
 	if (item_ptr->get_item_info_ptr()->sub_type != e_wing_sub_type_soul)
-	{//����ע��
+	{
 		return e_item_string_unkown;
 	}
 
@@ -11792,7 +11594,7 @@ int32 item_set::wing_add_soul(const guid_64& add_soul_guid)
 	}
 	WingAddSoulTemplate* next_wing_add_soul_ptr = GET_TEMPLATE(WingAddSoulTemplate, real_id + 1);
 	if (nullptr == next_wing_add_soul_ptr)
-	{//����
+	{
 		return e_item_string_full_level;
 	}
 
@@ -11802,11 +11604,10 @@ int32 item_set::wing_add_soul(const guid_64& add_soul_guid)
 		return e_item_string_unkown;
 	}
 	//if ((wing_item_ptr->get_data_info(e_item_info_slot)+1) < ADD_SOUL_OPEN)
-	//{//�������㿪������
 	//	return e_item_string_unkown;
 	//}
 	if (get_item_count(e_bag_type_bag, wing_add_soul_ptr->AddSoulMatirialId) < wing_add_soul_ptr->AddSoulMatirialNum)
-	{//�زĲ���		
+	{
 		return e_item_string_matirial_not_enough;
 	}
 	if (wing_add_soul_ptr->AddSoulMoney.size() < 2)
@@ -11814,12 +11615,10 @@ int32 item_set::wing_add_soul(const guid_64& add_soul_guid)
 		return e_item_string_unkown;
 	}
 	if (false == temp_player.can_cut_money((e_money_type)wing_add_soul_ptr->AddSoulMoney[0], wing_add_soul_ptr->AddSoulMoney[1]))
-	{//ûǮ
+	{
 		return e_item_string_money;
 	}
 
-	//����ע��
-	//���Ĳ���
 	cost_item_by_id_with_lock_states(e_server_log_del_item_add_soul, 0, wing_add_soul_ptr->AddSoulMatirialId, wing_add_soul_ptr->AddSoulMatirialNum, e_item_locked);
 	temp_player.cut_money((e_money_type)wing_add_soul_ptr->AddSoulMoney[0], wing_add_soul_ptr->AddSoulMoney[1], e_server_log_cut_money_add_soul, real_id);
 	set_wing_att(false);
@@ -11840,18 +11639,18 @@ int32 item_set::wing_add_spirit(const guid_64& add_spirit_guid)
 	if (nullptr == item_ptr)
 	{
 		return e_item_string_unkown;
-	}//û����Ʒ
+	}
 	if (nullptr == item_ptr->get_item_info_ptr())
 	{
 		return e_item_string_unkown;
 	}
 	if (item_ptr->get_item_info_ptr()->item_type != e_item_type_wing)
-	{//���ǳ��
+	{
 		return e_item_string_unkown;
 	}
 
 	if (item_ptr->get_item_info_ptr()->sub_type != e_wing_sub_type_spirit)
-	{//����ע��
+	{
 		return e_item_string_unkown;
 	}
 
@@ -11865,7 +11664,7 @@ int32 item_set::wing_add_spirit(const guid_64& add_spirit_guid)
 
 	WingAddSpiritTemplate* next_wing_add_spirit_ptr = GET_TEMPLATE(WingAddSpiritTemplate, real_id + 1);
 	if (nullptr == next_wing_add_spirit_ptr)
-	{//����
+	{
 		return e_item_string_full_level;
 	}
 
@@ -11875,12 +11674,11 @@ int32 item_set::wing_add_spirit(const guid_64& add_spirit_guid)
 		return e_item_string_unkown;
 	}
 	//if ((wing_item_ptr->get_data_info(e_item_info_slot) + 1) < ADD_SPIRIT_OPEN)
-	//{//�������㿪������
 	//	return e_item_string_unkown;
 	//}
 
 	if (get_item_count(e_bag_type_bag, wing_add_spirit_ptr->AddSpiritMatirialId) < wing_add_spirit_ptr->AddSpiritMatirialNum)
-	{//�زĲ���		
+	{
 		return e_item_string_matirial_not_enough;
 	}
 	if (wing_add_spirit_ptr->AddSpiritMoney.size() < 2)
@@ -11888,15 +11686,12 @@ int32 item_set::wing_add_spirit(const guid_64& add_spirit_guid)
 		return e_item_string_unkown;
 	}
 	if (false == temp_player.can_cut_money((e_money_type)wing_add_spirit_ptr->AddSpiritMoney[0], wing_add_spirit_ptr->AddSpiritMoney[1]))
-	{//ûǮ
+	{
 		return e_item_string_money;
 	}
 
-	//����ע��
-	//���Ĳ���
 	cost_item_by_id_with_lock_states(e_server_log_del_item_add_sprite, 0, wing_add_spirit_ptr->AddSpiritMatirialId, wing_add_spirit_ptr->AddSpiritMatirialNum, e_item_locked);
 
-	//��Ǯ
 	temp_player.cut_money((e_money_type)wing_add_spirit_ptr->AddSpiritMoney[0], wing_add_spirit_ptr->AddSpiritMoney[1], e_server_log_cut_money_add_sprite, real_id);
 	set_wing_att(false);
 	item_ptr->set_data_info(e_item_info_upgrade_count, now_spirit_count + 1);
@@ -11921,7 +11716,7 @@ int32 item_set::feather_upgrade(const guid_64& feather_guid, int32 use_up_item)
 	if (nullptr == feather_ptr)
 	{
 		return e_item_string_unkown;
-	}//û����Ʒ
+	}
 	if (feather_ptr->get_data_info(e_item_info_activate) != 1)
 	{
 		return e_item_string_unkown;
@@ -11931,11 +11726,11 @@ int32 item_set::feather_upgrade(const guid_64& feather_guid, int32 use_up_item)
 		return e_item_string_unkown;
 	}
 	if (feather_ptr->get_item_info_ptr()->item_type != e_item_type_wing)
-	{//���ǳ��
+	{
 		return e_item_string_unkown;
 	}
 	if (feather_ptr->get_item_info_ptr()->sub_type != e_wing_sub_type_feather)
-	{//��������
+	{
 		return e_item_string_unkown;
 	}
 	RegionTemplate* region_template_ptr = globle_data::get_instance().get_region_template_ptr();
@@ -11977,33 +11772,31 @@ int32 item_set::feather_upgrade(const guid_64& feather_guid, int32 use_up_item)
 	}
 	//int32 mount_upgrade_now = wing_ptr->get_data_info(e_item_info_upgrade_count);
 	//if ((cur_wing_ptr->get_data_info(e_item_info_slot) + 1) < FEATHER_EQUIP_OPEN)
-	//{//����������㿪������
 	//	return e_item_string_unkown;
 	//}
 
 	bool is_use_jewel_instead_matirial = false;
 
 	if (cur_star_num == max_star_num)
-	{//����
+	{
 		if (get_item_count(feather_upgrade_ptr->UpgradeMatirialId, e_bag_type_bag) < feather_upgrade_ptr->UpgradeMatirialNum)
-		{//�زĲ���
+		{
 			if (use_up_item == 0)
-			{//������ʯ
+			{
 				return e_item_string_matirial_not_enough;
 			}
 			else
-			{//ʹ����ʯ��ȥ�̵�����
+			{
 				is_use_jewel_instead_matirial = true;
 			}
 
 		}
 
 		//if (false == temp_player.can_cut_money((e_money_type)feather_upgrade_ptr->UpgradeMoneyList[0], feather_upgrade_ptr->UpgradeMoneyList[1]))
-		//{//ûǮ
 		//	return e_item_string_money;
 		//}
 		if (is_use_jewel_instead_matirial == false)
-		{//���Ĳ���
+		{
 			cost_item_by_id_with_lock_states(e_server_log_del_item_feather_add_star , 0, feather_upgrade_ptr->UpgradeMatirialId, feather_upgrade_ptr->UpgradeMatirialNum, e_item_locked);
 		}
 		else
@@ -12025,7 +11818,6 @@ int32 item_set::feather_upgrade(const guid_64& feather_guid, int32 use_up_item)
 				return e_item_string_no_item;
 			}
 		}
-		//��Ǯ
 		//temp_player.cut_money((e_money_type)feather_upgrade_ptr->UpgradeMoneyList[0], feather_upgrade_ptr->UpgradeMoneyList[1], e_server_log_cut_money_feather_upgrade, real_id);
 		set_feather_att(*feather_ptr, false);
 		feather_ptr->set_data_info(e_item_info_upgrade_count, now_feather_count + 1);
@@ -12038,27 +11830,25 @@ int32 item_set::feather_upgrade(const guid_64& feather_guid, int32 use_up_item)
 		temp_player.get_achievement_mgr().item_changed(feather_ptr, e_item_operation_featherupgrade_star);
 	}
 	else
-	{//����
+	{
 		if (get_item_count(feather_upgrade_ptr->AddStarMatirialId, e_bag_type_bag) < feather_upgrade_ptr->AddStarMatirialNum)
-		{//�زĲ���
+		{
 			if (use_up_item == 0)
-			{//������ʯ
+			{
 				return e_item_string_matirial_not_enough;
 			}
 			else
-			{//ʹ����ʯֱ��ȥ�̵깺��
+			{
 				is_use_jewel_instead_matirial = true;
 			}
 		}
 		//if (false == temp_player.can_cut_money((e_money_type)feather_upgrade_ptr->AddStarMoneyList[0], feather_upgrade_ptr->AddStarMoneyList[1]))
-		//{//ûǮ
 		//	return e_item_string_money;
 		//}
 
-		//��������
 
 		if (is_use_jewel_instead_matirial == false)
-		{//���Ĳ���
+		{
 			cost_item_by_id_with_lock_states(e_server_log_del_item_feather_add_star , 0, feather_upgrade_ptr->AddStarMatirialId, feather_upgrade_ptr->AddStarMatirialNum, e_item_locked);
 		}
 		else
@@ -12080,14 +11870,12 @@ int32 item_set::feather_upgrade(const guid_64& feather_guid, int32 use_up_item)
 				return e_item_string_no_item;
 			}
 		}
-		//��Ǯ
 		//temp_player.cut_money((e_money_type)feather_upgrade_ptr->AddStarMoneyList[0], feather_upgrade_ptr->AddStarMoneyList[1], e_server_log_cut_money_feather_add_star, real_id);
 		set_feather_att(*feather_ptr, false);
 		feather_ptr->set_data_info(e_item_info_upgrade_count, now_feather_count + 1);
 		send_item_one(feather_ptr);
 		set_feather_att(*feather_ptr, true);
 	}
-	//����
 	if (next_feather_upgrade_ptr->SkillID > 0)
 	{
 		PassiveSkillTemplate* passive_skill_template_ptr = GET_TEMPLATE(PassiveSkillTemplate, next_feather_upgrade_ptr->SkillID);
@@ -12178,7 +11966,6 @@ void item_set::equip_all_feather()
 			{
 				send_item_one(temp_feather);
 
-				//���ﲻҪ�������� �� set wing att ͳһ�� 
 				//set_feather_att(*temp_feather, true);
 			}
 
@@ -12318,13 +12105,12 @@ citem* item_set::get_item_in_bag_with_template_id(int32 item_template_id)
 
 int32 item_set::get_equip_smallest_upgrade_level()
 {
-	//��ȡȫ��װ��8��װ��ǿ���ȼ����ֵ		
 	int32 return_value = -1;
 	for (int32 i = e_role_equip_slot_hat; i < e_role_equip_slot_amulet; ++i)
 	{
 		citem* temp_equip_item_ptr = get_item(GET_BAG(e_bag_type_equip)[i]);
 		if (temp_equip_item_ptr == nullptr)
-		{//һ������������
+		{
 			return 0;
 		}
 		bool is_can_att = is_equipment_effective(temp_equip_item_ptr->get_item_guid());
@@ -12343,7 +12129,6 @@ int32 item_set::get_equip_smallest_upgrade_level()
 
 int32 item_set::get_equip_num_by_color(int32 target_color)
 {
-	//��ȡȫ��װ����ָ����ɫ�����ϼ��ݣ�����
 	int32 return_value = 0;
 	if (target_color < e_item_color_white
 		|| target_color >= e_item_color_max)
@@ -12840,7 +12625,6 @@ int32 item_set::item_save_succinct(const guid_64& item_guid)
 
 		temp_unit.check_and_set_highest_record(e_role_history_highest_record_item_succinct_reach_mark_level, temp_item->get_item_grade(), item_template_ptr->item_color);
 
-		// ��Ʒϴ������������
 		int32 notice_id = temp_succinct_template->Noticeld;
 		if (notice_id > 0)
 		{
@@ -12865,12 +12649,10 @@ int32 item_set::item_save_succinct(const guid_64& item_guid)
 	}
 	temp_unit.get_ranking_mgr().set_and_sync_single_equip_ranking_data(temp_item);
 
-	//����
 	if (item_template_ptr->item_type == e_item_type_weapon)
 	{
 		temp_unit.check_and_set_highest_record(e_role_history_highest_record_weapon_full_succinct_grade);
 	}
-	//װ��
 	if (item_template_ptr->item_type == e_item_type_armor)
 	{
 		temp_unit.check_and_set_highest_record(e_role_history_highest_record_equip_full_succinct_grade);
@@ -12887,7 +12669,6 @@ int32 item_set::rand_excellent_att_color(EquipTemplate* equip_template_ptr)
 	}
 
 	int32 color_rand_value = random_gen::get_random(1, 100);
-	//���ܴ�0��ʼ
 
 	int32 color_rand_target_value = 0;
 	int32 final_excellent_color = 0;
@@ -12924,7 +12705,6 @@ int32 item_set::rand_spirit_excellent_att_color(SpiritTemplate* spirit_template_
 		return e_item_color_max;
 	}
 	int32 color_rand_value = random_gen::get_random(1, 100);
-	//���ܴ�0��ʼ
 	int32 color_rand_target_value = 0;
 	int32 final_excellent_color = 0;
 	for (int32 i = 0; i < spirit_template_ptr->ForgeExcellentAttQualityWeight.size(); ++i)
@@ -13375,7 +13155,6 @@ int32 item_set::show_this_wing(citem* wing_ptr, int32 item_slot, bool is_mission
 	if (cur_showing_wing == wing_template_id)
 	{
 		wing_template_id = 0;
-		//��ʾ������ʾ�ĳ�򣬾��൱�ڲ���ʾ���
 	}
 	temp_unit.set_unit_info(e_role_info_wing_showd_template_id, wing_template_id);
 	temp_unit.send_info_one(e_role_info_wing_showd_template_id);
@@ -13491,11 +13270,11 @@ int32 item_set::get_use_time_item_empty_slot()
 
 bool item_set::set_mount_or_wing_beast_spirit_bag_data(int32 item_id, int32 item_type, int32 upgrade_num)
 {
-	if (e_beast_spirit_type_mount == item_type)//�����
+	if (e_beast_spirit_type_mount == item_type)
 	{
 		for (int32 i = 0; i < MAX_BEAST_SPIRIT_NUM; i++)
 		{
-			if (GET_BAG(e_bag_type_mount_beast_spirit)[i].is_valid())//˳�����
+			if (GET_BAG(e_bag_type_mount_beast_spirit)[i].is_valid())
 			{
 				citem* item_mount_beast_spirit = get_item(GET_BAG(e_bag_type_mount_beast_spirit)[i]);
 				if (nullptr != item_mount_beast_spirit && item_mount_beast_spirit->get_data_info(e_item_info_info_id) == item_id)
@@ -13517,7 +13296,7 @@ bool item_set::set_mount_or_wing_beast_spirit_bag_data(int32 item_id, int32 item
 						}
 						else
 						{
-							return false;//������
+							return false;
 						}
 					}
 					else
@@ -13537,7 +13316,7 @@ bool item_set::set_mount_or_wing_beast_spirit_bag_data(int32 item_id, int32 item
 						}
 						else
 						{
-							return false;//������
+							return false;
 						}
 					}
 				}
@@ -13565,11 +13344,11 @@ bool item_set::set_mount_or_wing_beast_spirit_bag_data(int32 item_id, int32 item
 			}
 		}
 	}
-	else if (e_beast_spirit_type_wing == item_type)//����
+	else if (e_beast_spirit_type_wing == item_type)
 	{
 		for (int32 i = 0; i < MAX_BEAST_SPIRIT_NUM; i++)
 		{
-			if (GET_BAG(e_bag_type_wing_beast_spirit)[i].is_valid())//˳�����
+			if (GET_BAG(e_bag_type_wing_beast_spirit)[i].is_valid())
 			{
 				citem* item_wing_beast_spirit = get_item(GET_BAG(e_bag_type_wing_beast_spirit)[i]);
 				if (nullptr != item_wing_beast_spirit && item_wing_beast_spirit->get_data_info(e_item_info_info_id) == item_id)
@@ -13591,7 +13370,7 @@ bool item_set::set_mount_or_wing_beast_spirit_bag_data(int32 item_id, int32 item
 						}
 						else
 						{
-							return false;//������
+							return false;
 						}
 
 					}
@@ -13612,7 +13391,7 @@ bool item_set::set_mount_or_wing_beast_spirit_bag_data(int32 item_id, int32 item
 						}
 						else
 						{
-							return false;//������
+							return false;
 						}
 					}
 				}
@@ -13641,11 +13420,11 @@ bool item_set::set_mount_or_wing_beast_spirit_bag_data(int32 item_id, int32 item
 			}
 		}
 	}
-	else if (e_beast_spirit_type_spirit == item_type)//����
+	else if (e_beast_spirit_type_spirit == item_type)
 	{
 		for (int32 i = 0; i < MAX_BEAST_SPIRIT_NUM; i++)
 		{
-			if (GET_BAG(e_bag_type_spirit_beast_spirit)[i].is_valid())//˳�����
+			if (GET_BAG(e_bag_type_spirit_beast_spirit)[i].is_valid())
 			{
 				citem* item_spirit_beast_spirit = get_item(GET_BAG(e_bag_type_spirit_beast_spirit)[i]);
 				if (nullptr != item_spirit_beast_spirit && item_spirit_beast_spirit->get_data_info(e_item_info_info_id) == item_id)
@@ -13667,7 +13446,7 @@ bool item_set::set_mount_or_wing_beast_spirit_bag_data(int32 item_id, int32 item
 						}
 						else
 						{
-							return false;//������
+							return false;
 						}
 
 					}
@@ -13688,7 +13467,7 @@ bool item_set::set_mount_or_wing_beast_spirit_bag_data(int32 item_id, int32 item
 						}
 						else
 						{
-							return false;//������
+							return false;
 						}
 					}
 				}
@@ -13722,7 +13501,7 @@ bool item_set::set_mount_or_wing_beast_spirit_bag_data(int32 item_id, int32 item
 
 void item_set::change_beast_spirit_att(int32 beast_spirit_type, bool is_add_att)
 {
-	if (beast_spirit_type == e_beast_spirit_type_mount)//�����
+	if (beast_spirit_type == e_beast_spirit_type_mount)
 	{
 		for (int32 i = 0; i < MAX_BEAST_SPIRIT_NUM; i++)
 		{
@@ -13744,7 +13523,7 @@ void item_set::change_beast_spirit_att(int32 beast_spirit_type, bool is_add_att)
 			}
 		}
 	}
-	else if (beast_spirit_type == e_beast_spirit_type_wing)//����
+	else if (beast_spirit_type == e_beast_spirit_type_wing)
 	{
 		for (int32 i = 0; i < MAX_BEAST_SPIRIT_NUM; i++)
 		{
@@ -13766,7 +13545,7 @@ void item_set::change_beast_spirit_att(int32 beast_spirit_type, bool is_add_att)
 			}
 		}
 	}
-	else if (beast_spirit_type == e_beast_spirit_type_spirit)//����
+	else if (beast_spirit_type == e_beast_spirit_type_spirit)
 	{
 		for (int32 i = 0; i < MAX_BEAST_SPIRIT_NUM; i++)
 		{
@@ -13829,7 +13608,7 @@ void item_set::set_mount_att(bool is_add)
 					}
 
 				}
-				if (temp_player.is_valid() == false)  //�����
+				if (temp_player.is_valid() == false)
 				{
 					continue;
 				}
@@ -13867,7 +13646,6 @@ int32 item_set::mount_upgrade(const guid_64& mount_guid, int32 use_up_item)
 	if (mount_ptr->get_data_info(e_item_info_activate) <= 0)
 	{
 		return e_item_string_mount_unlock;
-		//��Ҫ�ĳ�����ר�е���ʾ
 	}
 	ItemTemplate* temp_item_template_ptr = mount_ptr->get_item_info_ptr();
 	if (temp_item_template_ptr == nullptr)
@@ -13898,7 +13676,6 @@ int32 item_set::mount_upgrade(const guid_64& mount_guid, int32 use_up_item)
 
 	if (real_mount_template_ptr->Type == mount_type_warlord || real_mount_template_ptr->Type == mount_type_lordlegionmem)
 	{
-		//�������ﲻ������
 		return e_item_string_auto_use_money_not_enough;
 	}
 
@@ -13912,18 +13689,17 @@ int32 item_set::mount_upgrade(const guid_64& mount_guid, int32 use_up_item)
 		return e_item_string_unkown;
 	}
 
-	int32 temp_cur_value = temp_player.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_mount); // ��Ծ��
+	int32 temp_cur_value = temp_player.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_mount);
 	temp_player.get_welfare_mgr().set_active_degree_info(e_daily_active_degree_type_strengthing_one_mount, temp_cur_value + 1);
 
 	bool is_big_upgrade = false;
-	//�ȼ���������ߵȼ�������
 	if (real_mount_template_ptr->GradeNow != real_mount_template_ptr->MountGradeMax)
 	{
 		matirial_count = get_item_count(real_mount_template_ptr->UpgradeMatirialId, e_bag_type_bag);
 		if (matirial_count < real_mount_template_ptr->UpgradeMatirialNum)
-		{//�زĲ���
+		{
 			if (use_up_item == 0)
-			{//������ʯ
+			{
 				return e_item_string_matirial_not_enough;
 			}
 			else
@@ -13940,7 +13716,6 @@ int32 item_set::mount_upgrade(const guid_64& mount_guid, int32 use_up_item)
 
 		if (use_money_instead_matirial)
 		{
-			//������ϵ���ʯ�㹻
 			GoodsTemplate* goods_ptr = GET_TEMPLATE(GoodsTemplate, real_mount_template_ptr->UpgradeMatirialShopId);
 			if (goods_ptr != nullptr
 				&& goods_ptr->NewPrice.size() > region_money_num_index)
@@ -13995,15 +13770,14 @@ int32 item_set::mount_upgrade(const guid_64& mount_guid, int32 use_up_item)
 		//set_mount_att(true);
 
 	}
-	//��������
 	else
 	{
 		is_big_upgrade = true;
 		matirial_count = get_item_count(real_mount_template_ptr->LiftingClassMatirialId, e_bag_type_bag);
 		if (matirial_count < real_mount_template_ptr->LiftingClassMatirialNum)
-		{//�زĲ���
+		{
 			if (use_up_item == 0)
-			{//������ʯ
+			{
 				return e_item_string_matirial_not_enough;
 			}
 			else
@@ -14019,7 +13793,6 @@ int32 item_set::mount_upgrade(const guid_64& mount_guid, int32 use_up_item)
 
 		if (use_money_instead_matirial)
 		{
-			//������ϵ���ʯ�㹻
 			GoodsTemplate* goods_ptr = GET_TEMPLATE(GoodsTemplate, real_mount_template_ptr->LiftingClassShopId);
 			if (goods_ptr != nullptr
 				&& goods_ptr->NewPrice.size() > region_money_num_index)
@@ -14085,10 +13858,8 @@ int32 item_set::mount_upgrade(const guid_64& mount_guid, int32 use_up_item)
 	}
 
 
-	//�������а�
 	//sync_ranking_mount();
 
-	//�������׹���
 	if (is_big_upgrade)
 	{
 		int32 current_mount_id = temp_item_template_ptr->logic_id + mount_ptr->get_data_info(e_item_info_upgrade_count);
@@ -14160,7 +13931,6 @@ int32 item_set::fashion_upgrade(const guid_64& fashion_guid, int32 use_up_item, 
 	}
 
 	bool is_big_upgrade = false;
-	//�ȼ���������ߵȼ�������
 	if (real_fashion_template_ptr->UpgradeMaterial.size() != 0 && real_fashion_template_ptr->UpgradeMaterial[0] > 0)
 	{
 		int32 item_id = real_fashion_template_ptr->UpgradeMaterial[0];
@@ -14268,7 +14038,6 @@ int32 item_set::mount_starupgrade(const guid_64& mount_guid, int32 use_up_item)
 	if (mount_ptr->get_data_info(e_item_info_activate) <= 0)
 	{
 		return e_item_string_mount_unlock;
-		//��Ҫ�ĳ�����ר�е���ʾ
 	}
 	ItemTemplate* temp_item_template_ptr = mount_ptr->get_item_info_ptr();
 	if (temp_item_template_ptr == nullptr)
@@ -14292,7 +14061,6 @@ int32 item_set::mount_starupgrade(const guid_64& mount_guid, int32 use_up_item)
 
 	if (real_mount_template_ptr->Type == mount_type_warlord || real_mount_template_ptr->Type == mount_type_lordlegionmem)
 	{
-		//�������ﲻ������
 		return e_item_string_auto_use_money_not_enough;
 	}
 
@@ -14313,14 +14081,14 @@ int32 item_set::mount_starupgrade(const guid_64& mount_guid, int32 use_up_item)
 		return e_item_string_unkown;
 	}
 
-	int32 temp_cur_value = temp_player.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_mount); // ��Ծ��
+	int32 temp_cur_value = temp_player.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_mount);
 	temp_player.get_welfare_mgr().set_active_degree_info(e_daily_active_degree_type_strengthing_one_mount, temp_cur_value + 1);
 
 	matirial_count = get_item_count(real_mount_template_ptr->UpgradeMatirialId, e_bag_type_bag);
 	if (matirial_count < real_mount_template_ptr->UpgradeMatirialNum)
-	{//�زĲ���
+	{
 		if (use_up_item == 0)
-		{//������ʯ
+		{
 			return e_item_string_matirial_not_enough;
 		}
 		else
@@ -14332,7 +14100,6 @@ int32 item_set::mount_starupgrade(const guid_64& mount_guid, int32 use_up_item)
 
 	if (use_money_instead_matirial)
 	{
-		//������ϵ���ʯ�㹻
 		GoodsTemplate* goods_ptr = GET_TEMPLATE(GoodsTemplate, real_mount_template_ptr->UpgradeMatirialShopId);
 		if (goods_ptr != nullptr
 			&& goods_ptr->NewPrice.size() > region_money_num_index)
@@ -14358,7 +14125,6 @@ int32 item_set::mount_starupgrade(const guid_64& mount_guid, int32 use_up_item)
 	int32 mount_starupgrade_now = mount_ptr->get_data_info(e_item_info_stargrade_count);
 	mount_ptr->set_data_info(e_item_info_stargrade_count, mount_starupgrade_now + 1);
 
-	// ��Ƭ�������Ըı�
 	item_change_att(real_mount_template_ptr->AttArray, 1, false);
 
 	int32 next_mount_real_id = temp_item_template_ptr->logic_id + mount_ptr->get_data_info(e_item_info_stargrade_count) + 1000;
@@ -14368,9 +14134,6 @@ int32 item_set::mount_starupgrade(const guid_64& mount_guid, int32 use_up_item)
 		item_change_att(next_real_mount_template_ptr->AttArray, 1, true);
 
 		// wangsonghao
-		// ��������
-		// �����൱�ڻ���ֱ�Ӽ�buff�����������޸ģ�ͨ�� PassiveSkillManager �����б������ܵĹ���
-		// ������δʵ�� PassiveSkillManager
 		if (next_real_mount_template_ptr->StarBuffId > 0)
 		{
 			PassiveSkillTemplate* passive_skill_template_ptr = GET_TEMPLATE(PassiveSkillTemplate, next_real_mount_template_ptr->StarBuffId);
@@ -14418,7 +14181,6 @@ int32 item_set::mount_illusionupgrade(const guid_64& mount_guid, int32 use_up_it
 	if (mount_ptr->get_data_info(e_item_info_activate) <= 0)
 	{
 		return e_item_string_mount_unlock;
-		//��Ҫ�ĳ�����ר�е���ʾ
 	}
 	ItemTemplate* temp_item_template_ptr = mount_ptr->get_item_info_ptr();
 	if (temp_item_template_ptr == nullptr)
@@ -14450,7 +14212,7 @@ int32 item_set::mount_illusionupgrade(const guid_64& mount_guid, int32 use_up_it
 		return e_item_string_full_level;
 	}
 
-	if (real_mount_template_ptr->PreMountRequirement.size() > 1)  // �û�����������ǰ������
+	if (real_mount_template_ptr->PreMountRequirement.size() > 1)
 	{
 		citem* pre_mount = get_item_by_template_id(real_mount_template_ptr->PreMountRequirement[0]);
 		if (pre_mount == nullptr)
@@ -14462,14 +14224,14 @@ int32 item_set::mount_illusionupgrade(const guid_64& mount_guid, int32 use_up_it
 			return e_item_string_unkown;
 		}
 	}
-	int32 temp_cur_value = temp_player.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_mount); // ��Ծ��
+	int32 temp_cur_value = temp_player.get_welfare_mgr().get_active_degree_info(e_daily_active_degree_type_strengthing_one_mount);
 	temp_player.get_welfare_mgr().set_active_degree_info(e_daily_active_degree_type_strengthing_one_mount, temp_cur_value + 1);
 
 	matirial_count = get_item_count(real_mount_template_ptr->UpgradeMatirialId, e_bag_type_bag);
 	if (matirial_count < real_mount_template_ptr->UpgradeMatirialNum)
-	{//�زĲ���
+	{
 		if (use_up_item == 0)
-		{//������ʯ
+		{
 			return e_item_string_matirial_not_enough;
 		}
 		else
@@ -14481,7 +14243,6 @@ int32 item_set::mount_illusionupgrade(const guid_64& mount_guid, int32 use_up_it
 
 	if (use_money_instead_matirial)
 	{
-		//������ϵ���ʯ�㹻
 		GoodsTemplate* goods_ptr = GET_TEMPLATE(GoodsTemplate, real_mount_template_ptr->UpgradeMatirialShopId);
 		if (goods_ptr != nullptr
 			&& goods_ptr->NewPrice.size() > region_money_num_index)
@@ -14512,9 +14273,6 @@ int32 item_set::mount_illusionupgrade(const guid_64& mount_guid, int32 use_up_it
 		item_change_att(mount_ptr->get_mount_template_ptr()->AttArray, 1, true);
 
 		// wangsonghao
-		// ��������
-		// �����൱�ڻ���ֱ�Ӽ�buff�����������޸ģ�ͨ�� PassiveSkillManager �����б������ܵĹ���
-		// ������δʵ�� PassiveSkillManager
 		if (mount_ptr->get_mount_template_ptr()->StarBuffId > 0)
 		{
 			star_skill_unlock(mount_guid, mount_ptr->get_data_info(e_item_info_upgrade_count), false, false);
@@ -14575,7 +14333,6 @@ int32 item_set::mount_unlock(const guid_64& mount_guid)
 	bool matirial_cost = false;
 	bool money_cost = false;
 
-	//�ж�Ǯ
 	if (temp_mount_template_ptr->UnlockMoneyRequirement.size() > 1)
 	{
 		money_cost = true;
@@ -14590,7 +14347,6 @@ int32 item_set::mount_unlock(const guid_64& mount_guid)
 		money_done = true;
 	}
 
-	//�жϲ���
 	if (temp_mount_template_ptr->UnlockMatirialRequirement.size() > 1)
 	{
 		matirial_cost = true;
@@ -14607,7 +14363,6 @@ int32 item_set::mount_unlock(const guid_64& mount_guid)
 		matirial_done = true;
 	}
 
-	//�ж�ǰ������
 	if (temp_mount_template_ptr->PreMountRequirement.size() > 1)
 	{
 		citem* pre_mount = get_item_by_template_id(temp_mount_template_ptr->PreMountRequirement[0]);
@@ -14645,10 +14400,8 @@ int32 item_set::mount_unlock(const guid_64& mount_guid)
 
 		show_this_mount(temp_mount_item, -1);
 
-		//�������а�
 		//sync_ranking_mount();
 
-		// �������﹫��
 		if (temp_mount_template_ptr->NoticeId > 0)
 		{
 			s_chat_notice_info notice_data;
@@ -14673,7 +14426,6 @@ int32 item_set::mount_unlock(const guid_64& mount_guid)
 
 void  item_set::sync_ranking_mount()
 {
-	//Ŀǰ��ս����������������͵������ս���ĺ�
 	int32	sum_fight_num = 0;
 	int32	max_fight_num = 0;
 	citem* highest_mount_item = nullptr;
@@ -14722,7 +14474,6 @@ void  item_set::sync_ranking_mount()
 
 void  item_set::sync_ranking_spirit()
 {
-	//����ս��
 	int32	sum_fight_num = 0;
 	player& temp_player = unit_man::get_player(m_unit_array_index);
 	if (temp_player.is_valid() == false)
@@ -15078,7 +14829,7 @@ citem* item_set::get_illusion_range_mount_or_wing(citem* item_mount_or_wing)
 		}
 		else
 		{
-			return nullptr;//��������������ԭʼ����
+			return nullptr;
 		}
 
 	}
@@ -15109,7 +14860,7 @@ citem* item_set::get_illusion_range_mount_or_wing(citem* item_mount_or_wing)
 		}
 		else
 		{
-			return nullptr;//�������ĳ����ԭʼ���
+			return nullptr;
 		}
 	}
 
@@ -15329,21 +15080,18 @@ void item_set::set_quick_mount_call_array(guid_64* guid_array)
 
 		if (temp_item == nullptr || temp_item->get_item_inst().data_ary[e_item_info_activate] <= 0)
 		{
-			//��Ʒ�����ڻ���û����
 			m_quick_call_mount_array[i] = guid_64(0, 0);
 			continue;
 		}
 		ItemTemplate* temp_template = temp_item->get_item_info_ptr();
 		if (temp_template == nullptr)
 		{
-			//��������
 			m_quick_call_mount_array[i] = guid_64(0, 0);
 			continue;
 		}
 
 		if (temp_template->item_type != e_item_type_mount)
 		{
-			//��������
 			m_quick_call_mount_array[i] = guid_64(0, 0);
 			continue;
 		}
@@ -15405,7 +15153,6 @@ void item_set::get_hope_item(int32 get_typ)
 	item_proto_item_hope_item_get_end msg;
 	msg.set_get_typ(get_typ);
 
-	//������Ϊ�ɹ���0����ʧ��ʱ���ٵ�������
 	msg.set_get_result(0);
 
 	player& temp_player = unit_man::get_player(m_unit_array_index);
@@ -15444,7 +15191,6 @@ void item_set::get_hope_item(int32 get_typ)
 		int32 cur_time = time_helper::get_cur_time_new().second;
 		if (max_interval_time > (cur_time - last_get_time))
 		{
-			//û��ʱ
 			msg.set_get_result(e_item_string_cant_free_get_hope_item);
 			temp_player.send_message_to_self(&msg, e_msgindex_s2c_get_hope_item_end);
 			return;
@@ -15462,7 +15208,6 @@ void item_set::get_hope_item(int32 get_typ)
 				drop_template_id = rare_drop_id;
 				temp_player.set_unit_info(e_role_info_hope_value, 0);
 				temp_player.send_info_one(e_role_info_hope_value);
-				//�鵽һ�α��װ���������ף��ֵ
 			}
 			else
 			{
@@ -15476,7 +15221,6 @@ void item_set::get_hope_item(int32 get_typ)
 				{
 					temp_player.set_unit_info(e_role_info_hope_value, 0);
 					temp_player.send_info_one(e_role_info_hope_value);
-					//�鵽һ�α��װ���������ף��ֵ
 				}
 			}
 			std::vector<s_item_template_info> item_drop_list_with_att;
@@ -15485,14 +15229,12 @@ void item_set::get_hope_item(int32 get_typ)
 
 			if (item_drop_list_with_att.empty())
 			{
-				//������ɶ��û�鵽
 				msg.set_get_result(e_item_string_unkown);
 				temp_player.send_message_to_self(&msg, e_msgindex_s2c_get_hope_item_end);
 				return;
 			}
 			temp_item_with_num.m_item_id = item_drop_list_with_att[0].m_item_id;
 			temp_item_with_num.m_item_num = item_drop_list_with_att.size();
-			//����ֻ��һ��Id�����ǿ����Ƕ��
 			final_list.push_back(temp_item_with_num);
 
 			int32 cur_get_time = time_helper::get_cur_time_new().second;
@@ -15518,7 +15260,6 @@ void item_set::get_hope_item(int32 get_typ)
 				drop_template_id = rare_drop_id;
 				temp_player.set_unit_info(e_role_info_hope_value, 0);
 				temp_player.send_info_one(e_role_info_hope_value);
-				//�鵽һ�α��װ���������ף��ֵ
 			}
 			else
 			{
@@ -15532,7 +15273,6 @@ void item_set::get_hope_item(int32 get_typ)
 				{
 					temp_player.set_unit_info(e_role_info_hope_value, 0);
 					temp_player.send_info_one(e_role_info_hope_value);
-					//�鵽һ�α��װ���������ף��ֵ
 				}
 			}
 			std::vector<s_item_template_info> item_drop_list_with_att;
@@ -15541,21 +15281,18 @@ void item_set::get_hope_item(int32 get_typ)
 
 			if (item_drop_list_with_att.empty())
 			{
-				//������ɶ��û�鵽
 				msg.set_get_result(e_item_string_unkown);
 				temp_player.send_message_to_self(&msg, e_msgindex_s2c_get_hope_item_end);
 				return;
 			}
 			temp_item_with_num.m_item_id = item_drop_list_with_att[0].m_item_id;
 			temp_item_with_num.m_item_num = item_drop_list_with_att.size();
-			//����ֻ��һ��Id�����ǿ����Ƕ��
 			final_list.push_back(temp_item_with_num);
 
 			cost_item_by_id_with_lock_states(e_server_log_del_item_hope_item_one, 0, hop_item_get_voucher_id, 1, 1);
 		}
 		else
 		{
-			//�ͻ���û��ʹ�þ��İ�ť����ͨ���ж� û��ʱ + �о� ���� �þ���һ������Ϣ�ģ����Բ�Ӧ�ó���û�о������
 		}
 	}
 	break;
@@ -15579,7 +15316,6 @@ void item_set::get_hope_item(int32 get_typ)
 					drop_template_id = rare_drop_id;
 					temp_player.set_unit_info(e_role_info_hope_value, 0);
 					temp_player.send_info_one(e_role_info_hope_value);
-					//�鵽һ�α��װ���������ף��ֵ
 				}
 				else
 				{
@@ -15593,7 +15329,6 @@ void item_set::get_hope_item(int32 get_typ)
 					{
 						temp_player.set_unit_info(e_role_info_hope_value, 0);
 						temp_player.send_info_one(e_role_info_hope_value);
-						//�鵽һ�α��װ���������ף��ֵ
 					}
 				}
 				std::vector<s_item_template_info> item_drop_list_with_att;
@@ -15602,21 +15337,18 @@ void item_set::get_hope_item(int32 get_typ)
 
 				if (item_drop_list_with_att.empty())
 				{
-					//������ɶ��û�鵽
 					msg.set_get_result(e_item_string_unkown);
 					temp_player.send_message_to_self(&msg, e_msgindex_s2c_get_hope_item_end);
 					return;
 				}
 				temp_item_with_num.m_item_id = item_drop_list_with_att[0].m_item_id;
 				temp_item_with_num.m_item_num = item_drop_list_with_att.size();
-				//����ֻ��һ��Id�����ǿ����Ƕ��
 				final_list.push_back(temp_item_with_num);
 			}
 			cost_item_by_id_with_lock_states(e_server_log_del_item_hope_item_ten, 0, hop_item_get_voucher_id, 10, 1);
 		}
 		else
 		{
-			//�ͻ���û��ʹ�þ��İ�ť����ͨ���ж� û��ʱ + �о� ���� �þ���һ������Ϣ�ģ����Բ�Ӧ�ó���û�о������
 		}
 	}
 	break;
@@ -15641,7 +15373,6 @@ void item_set::get_hope_item(int32 get_typ)
 			drop_template_id = rare_drop_id;
 			temp_player.set_unit_info(e_role_info_hope_value, 0);
 			temp_player.send_info_one(e_role_info_hope_value);
-			//�鵽һ�α��װ���������ף��ֵ
 		}
 		else
 		{
@@ -15655,7 +15386,6 @@ void item_set::get_hope_item(int32 get_typ)
 			{
 				temp_player.set_unit_info(e_role_info_hope_value, 0);
 				temp_player.send_info_one(e_role_info_hope_value);
-				//�鵽һ�α��װ���������ף��ֵ
 			}
 		}
 		std::vector<s_item_template_info> item_drop_list_with_att;
@@ -15664,14 +15394,12 @@ void item_set::get_hope_item(int32 get_typ)
 
 		if (item_drop_list_with_att.empty())
 		{
-			//������ɶ��û�鵽
 			msg.set_get_result(e_item_string_unkown);
 			temp_player.send_message_to_self(&msg, e_msgindex_s2c_get_hope_item_end);
 			return;
 		}
 		temp_item_with_num.m_item_id = item_drop_list_with_att[0].m_item_id;
 		temp_item_with_num.m_item_num = item_drop_list_with_att.size();
-		//����ֻ��һ��Id�����ǿ����Ƕ��
 		final_list.push_back(temp_item_with_num);
 
 		temp_player.cut_money(e_money_type_jewel, cost, e_server_log_cut_money_hope_item_one);
@@ -15703,7 +15431,6 @@ void item_set::get_hope_item(int32 get_typ)
 				drop_template_id = rare_drop_id;
 				temp_player.set_unit_info(e_role_info_hope_value, 0);
 				temp_player.send_info_one(e_role_info_hope_value);
-				//�鵽һ�α��װ���������ף��ֵ
 			}
 			else
 			{
@@ -15717,7 +15444,6 @@ void item_set::get_hope_item(int32 get_typ)
 				{
 					temp_player.set_unit_info(e_role_info_hope_value, 0);
 					temp_player.send_info_one(e_role_info_hope_value);
-					//�鵽һ�α��װ���������ף��ֵ
 				}
 			}
 			std::vector<s_item_template_info> item_drop_list_with_att;
@@ -15726,14 +15452,12 @@ void item_set::get_hope_item(int32 get_typ)
 
 			if (item_drop_list_with_att.empty())
 			{
-				//������ɶ��û�鵽
 				msg.set_get_result(e_item_string_unkown);
 				temp_player.send_message_to_self(&msg, e_msgindex_s2c_get_hope_item_end);
 				return;
 			}
 			temp_item_with_num.m_item_id = item_drop_list_with_att[0].m_item_id;
 			temp_item_with_num.m_item_num = item_drop_list_with_att.size();
-			//����ֻ��һ��Id�����ǿ����Ƕ��
 			final_list.push_back(temp_item_with_num);
 		}
 
@@ -15772,7 +15496,6 @@ void item_set::get_hope_item(int32 get_typ)
 	s_item_info item_data[chat_max_item];
 	int32 item_num = 0;
 
-	//��������
 	if (msg.get_result() == 0 && final_list.size() > 0)
 	{
 		bool if_notice = false;
@@ -15802,7 +15525,6 @@ void item_set::get_hope_item(int32 get_typ)
 			}
 
 
-			//������¼
 			cs2ws_add_new_draw_record add_record_msg;
 			add_record_msg.record_info.info_guid = guid_gen::make_guid(temp_player.get_unit_guid());
 			add_record_msg.record_info.role_guid = temp_player.get_unit_guid();
@@ -16182,12 +15904,11 @@ int32 item_set::get_wing_and_total_feather_star_num()
 					WingTemplate* wing_ptr = GET_TEMPLATE(WingTemplate, real_id);
 					if (wing_ptr != nullptr)
 					{
-						//��ͨ�������������һ���ȼ�����ֻ��Ҫ�����Ǽ�����
 						if (wing_ptr->Type == e_item_wing_type_normal)
 						{
 							return_value += wing_ptr->StarNow;
 						}
-						else if (wing_ptr->Type != e_item_wing_type_special_santo)	//��������������
+						else if (wing_ptr->Type != e_item_wing_type_special_santo)
 						{
 							return_value += (wing_ptr->UpgradeNow - 1) * wing_ptr->WingAddStarMax + wing_ptr->StarNow;
 						}
@@ -16419,7 +16140,6 @@ int32 item_set::add_money_by_card(const std::vector<int32>& money_card, const in
 		if (money_id == e_money_type_jewel)
 		{
 			int32 cur_real_recharge_jewel_num = temp_player.get_unit_info(e_role_info_real_recharge_jewel_num);
-			//�ж��Ƿ��ǵ�һ��ʹ�ó�ֵ��
 			if (cur_real_recharge_jewel_num == 0)
 			{
 				int32 cur_time = time_helper::get_today_zero_time_info().second;
@@ -16434,7 +16154,6 @@ int32 item_set::add_money_by_card(const std::vector<int32>& money_card, const in
 			//int32 cur_daily_recharge_num = temp_player.get_unit_info(e_role_info_daily_recharge_num);
 			//temp_player.set_unit_info(e_role_info_daily_recharge_num, cur_daily_recharge_num + money_num);
 
-			//ͬ����ֵ���а���Ϣ
 			temp_player.get_ranking_mgr().set_and_sync_ranking_data(e_RankingIndex_recharge_rmb, temp_player.get_unit_info(e_role_info_real_recharge_jewel_num));
 
 			//temp_player.send_info_one(e_role_info_daily_recharge_num);
@@ -16461,7 +16180,6 @@ int32 item_set::open_fruit_bag(const PropBasicAttributeTemplate* prop_template, 
 	int32 has_prop_num = 0;
 	for (; has_prop_num < package_num; has_prop_num++)
 	{
-		// ʹ�����øı�������Ե�Ч����Ч
 		int32 len = prop_template->RoleAttributeChange.size();
 		if (len > 0 && len % e_att_one_max == 0)
 		{
@@ -16556,7 +16274,7 @@ int32 item_set::open_package_bag(const int32 drop_template_id, const int32 packa
 				item_data_num++;
 			}
 		}
-		if (0 < notice_id && chat_max_item <= item_data_num)								// ������Ʒ��ù���
+		if (0 < notice_id && chat_max_item <= item_data_num)
 		{
 			player& temp_player = unit_man::get_player(m_unit_array_index);
 			if (temp_player.is_valid() == false)
@@ -16569,7 +16287,6 @@ int32 item_set::open_package_bag(const int32 drop_template_id, const int32 packa
 			std::vector<std::string> notice_str_params_vec;
 			notice_str_params_vec.push_back(notice_str_id);
 			notice_str_params_vec.push_back(temp_player.get_name());
-			//��Ӣ�ķ����������﷨��ͬ��Ҫ������2�����3���Ⱥ�˳���ת
 			if (region_template_ptr->RegionCode == e_version_region_type_en)
 			{
 				notice_str_params_vec.push_back(item_names_str);
@@ -16603,7 +16320,7 @@ int32 item_set::open_package_bag(const int32 drop_template_id, const int32 packa
 		}
 	}
 
-	if (0 < notice_id && 0 < item_data_num)								// ������Ʒ��ù���
+	if (0 < notice_id && 0 < item_data_num)
 	{
 		player& temp_player = unit_man::get_player(m_unit_array_index);
 		if (temp_player.is_valid() == false)
@@ -16728,7 +16445,7 @@ int32 item_set::open_choose_package_bag(const int32 logic_id, const int32 packag
 		}
 	}
 
-	if (0 < notice_id && 0 < item_data_num)								// ������Ʒ��ù���
+	if (0 < notice_id && 0 < item_data_num)
 	{
 		player& temp_player = unit_man::get_player(m_unit_array_index);
 		if (temp_player.is_valid() == false)
@@ -16741,7 +16458,6 @@ int32 item_set::open_choose_package_bag(const int32 logic_id, const int32 packag
 		std::vector<std::string> notice_str_params_vec;
 		notice_str_params_vec.push_back(notice_str_id);
 		notice_str_params_vec.push_back(temp_player.get_name());
-		//��Ӣ�ķ����������﷨��ͬ��Ҫ������2�����3���Ⱥ�˳���ת
 		if (region_template_ptr->RegionCode == e_version_region_type_en)
 		{
 			notice_str_params_vec.push_back(item_names_str);
@@ -16814,7 +16530,6 @@ int32 item_set::open_package_elementbag(const int32 drop_template_id, const int3
 	put_in_bag(item_array);
 	item_use_end_result = e_error_code_success;
 
-	//���͹���
 	if (notice_id > 0)
 	{
 		if (notice_data.item_data.size() > 0)
@@ -16858,7 +16573,6 @@ int32 item_set::open_package_wingbag(const int32 drop_template_id, item_proto_it
 	ItemTemplate* item_template_ptr = GET_TEMPLATE(ItemTemplate, item_template_id);
 	if (nullptr == item_template_ptr)
 	{
-		// ���ݴ���
 		item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 		return 0;
 	}
@@ -16869,14 +16583,12 @@ int32 item_set::open_package_wingbag(const int32 drop_template_id, item_proto_it
 		WingTemplate* item_wing_illustion_template_ptr = GET_TEMPLATE(WingTemplate, item_wing_illustion_template_id);
 		if (nullptr == item_wing_illustion_template_ptr)
 		{
-			// ���ݴ���
 			item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 			return 0;
 		}
 
 		if (item_wing_illustion_template_ptr->PreWingRequirement.size() <= 0)
 		{
-			// ���ݴ���
 			item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 			return 0;
 		}
@@ -16884,18 +16596,14 @@ int32 item_set::open_package_wingbag(const int32 drop_template_id, item_proto_it
 		const citem* item_wing_origin_template_ptr = get_item_by_template_id(item_wing_origin_template_id);
 		if (nullptr == item_wing_origin_template_ptr)
 		{
-			// ���ݴ���
 			item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 			return 0;
 		}
-		// �жϱ����Ƿ����
 		if (0 == item_wing_origin_template_ptr->get_data_info(e_item_info_activate))
 		{
-			// δ�ﵽ��������
 			item_use_end_msg.set_result(e_error_code_item_cant_unlock_wing_illusion);
 			return 0;
 		}
-		// �ж��Ƿ�����ȼ�Ҫ��
 		/*				if (item_wing_illustion_template_ptr->IllusionOpenClass > (item_wing_origin_template_ptr->get_data_info(e_item_info_upgrade_count) + 1))
 		{
 		item_use_end_msg.set_result(e_error_code_item_cant_unlock_illusion);
@@ -16916,7 +16624,6 @@ int32 item_set::open_package_wingbag(const int32 drop_template_id, item_proto_it
 	}
 	if (1 == new_wing_item->get_data_info(e_item_info_activate))
 	{
-		// �����ظ�����
 		item_use_end_msg.set_result(e_error_code_item_has_unlocked);
 		return 0;
 	}
@@ -16960,7 +16667,6 @@ faith::int32 item_set::open_package_mountbag(const int32 drop_template_id, item_
 	ItemTemplate* item_template_ptr = GET_TEMPLATE(ItemTemplate, item_template_id);
 	if (nullptr == item_template_ptr)
 	{
-		// ���ݴ���
 		item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 		return 0;
 	}
@@ -16975,14 +16681,12 @@ faith::int32 item_set::open_package_mountbag(const int32 drop_template_id, item_
 		MountTemplate* item_mount_illustion_template_ptr = GET_TEMPLATE(MountTemplate, item_mount_illustion_template_id);
 		if (nullptr == item_mount_illustion_template_ptr)
 		{
-			// ���ݴ���
 			item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 			return 0;
 		}
 
 		if (item_mount_illustion_template_ptr->PreMountRequirement.size() <= 1)
 		{
-			// ���ݴ���
 			item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 			return 0;
 		}
@@ -16990,21 +16694,16 @@ faith::int32 item_set::open_package_mountbag(const int32 drop_template_id, item_
 		item_mount_origin_ptr = get_item_by_template_id(item_mount_origin_template_id);
 		if (nullptr == item_mount_origin_ptr)
 		{
-			// ���ݴ���
 			item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 			return 0;
 		}
-		// �жϱ����Ƿ����
 		if (0 == item_mount_origin_ptr->get_data_info(e_item_info_activate))
 		{
-			// δ�ﵽ��������
 			item_use_end_msg.set_result(e_error_code_item_cant_unlock_mount_illusion);
 			return 0;
 		}
-		// �ж��Ƿ�����ȼ�Ҫ��
 		//if (item_mount_illustion_template_ptr->PreMountRequirement[1] > item_mount_origin_ptr->get_data_info(e_item_info_upgrade_count))
 		//{
-		//	// δ�ﵽ��������
 		//	item_use_end_msg.set_result(e_error_code_item_cant_unlock_illusion);
 		//	temp_player.send_message_to_self(&item_use_end_msg, e_msgindex_s2c_item_use_end);
 		//	return false;
@@ -17017,14 +16716,12 @@ faith::int32 item_set::open_package_mountbag(const int32 drop_template_id, item_
 		new_mount_item = create_item_by_template(e_server_log_add_item_mount_illusion, 0, item_template_id, 1, 0);
 		if (new_mount_item == nullptr)
 		{
-			// ���ݴ���
 			item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 			return 0;
 		}
 	}
 	if (1 == new_mount_item->get_data_info(e_item_info_activate))
 	{
-		// �����ظ�����
 		item_use_end_msg.set_result(e_error_code_item_has_unlocked);
 		temp_player.send_message_to_self(&item_use_end_msg, e_msgindex_s2c_item_use_end);
 		return 0;
@@ -17034,7 +16731,6 @@ faith::int32 item_set::open_package_mountbag(const int32 drop_template_id, item_
 	MountTemplate* new_mount_template_ptr = new_mount_item->get_mount_template_ptr();
 	if (nullptr == new_mount_template_ptr)
 	{
-		// ���ݴ���
 		item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 		return 0;
 	}
@@ -17052,7 +16748,6 @@ faith::int32 item_set::open_package_mountbag(const int32 drop_template_id, item_
 		const int32 illusion_slot = get_mount_illusion_slot(item_template_ptr->logic_id);
 		if (-1 == illusion_slot)
 		{
-			// ���ݴ���
 			item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 			return 0;
 		}
@@ -17096,7 +16791,6 @@ int32 item_set::open_package_time_limit_prop(const int32 drop_template_id, item_
 	ItemTemplate* item_template_ptr = GET_TEMPLATE(ItemTemplate, item_template_id);
 	if (nullptr == item_template_ptr)
 	{
-		// ���ݴ���
 		item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 		return 0;
 	}
@@ -17107,7 +16801,6 @@ int32 item_set::open_package_time_limit_prop(const int32 drop_template_id, item_
 		item_ptr = create_item_by_template(e_server_log_add_item_mount_illusion, 0, item_template_id, 1, 0);
 		if (item_ptr == nullptr)
 		{
-			// ���ݴ���
 			item_use_end_msg.set_result(e_error_code_item_invalid_item_template);
 			return 0;
 		}
@@ -17115,7 +16808,6 @@ int32 item_set::open_package_time_limit_prop(const int32 drop_template_id, item_
 
 	if (1 == item_ptr->get_data_info(e_item_info_activate) && 0 == item_ptr->get_data_info(e_item_info_over_time))
 	{
-		// �����ظ�����
 		item_use_end_msg.set_result(e_error_code_item_has_unlocked);
 		temp_player.send_message_to_self(&item_use_end_msg, e_msgindex_s2c_item_use_end);
 		return 0;
@@ -17123,7 +16815,6 @@ int32 item_set::open_package_time_limit_prop(const int32 drop_template_id, item_
 
 	item_ptr->set_data_info(e_item_info_activate, 1);
 
-	//���鿨���Ե���ʱ��
 	bool is_equip = true;
 	int32 cur_second_time = time_helper::get_cur_time_new().second;
 	if (cur_second_time >= item_ptr->get_data_info(e_item_info_over_time))
@@ -17134,7 +16825,7 @@ int32 item_set::open_package_time_limit_prop(const int32 drop_template_id, item_
 		}
 		else
 		{
-			if (item_ptr->get_data_info(e_item_info_over_time) < 0)//��û��ʹ�ù�(��ʱʱװδװ��ʱʱ�����Ǹ���)
+			if (item_ptr->get_data_info(e_item_info_over_time) < 0)
 			{
 				over_time = item_ptr->get_data_info(e_item_info_over_time) - over_time;
 				item_ptr->set_data_info(e_item_info_over_time, over_time);
@@ -17146,7 +16837,7 @@ int32 item_set::open_package_time_limit_prop(const int32 drop_template_id, item_
 			}
 		}
 	}
-	else//û����,���ڵ�ǰʱ������ʱ��
+	else
 	{
 		if (over_time == 0)
 		{
@@ -17201,7 +16892,6 @@ int32 item_set::open_package_time_limit_prop(const int32 drop_template_id, item_
 
 int32 faith::item_set::open_const_att_equip_bag(const int32 drop_template_id, const int32 package_num, e_error_code& item_use_end_result, std::vector<s_item_template_info>& get_item_list, citem*& end_item)
 {
-	//���Զ�ʹ�õ�װ�������� ֻ��һ��װ��
 	player& player_ref = unit_man::get_player(m_unit_array_index);
 	if (false == player_ref.is_valid())
 	{
@@ -17254,7 +16944,7 @@ int32 item_set::open_rand_equip_package_bag(const int32 drop_template_id, const 
 	{
 		return 0;
 	}
-	int32 notice_id = 0;			//��װ����ֻ�Ὺ��һ��װ��
+	int32 notice_id = 0;
 	s_chat_notice_info notice_data;
 	int32 has_opened_package_num = 0;
 	for (int32 package_index = 0; package_index < package_num; package_index++)
@@ -17305,7 +16995,6 @@ int32 item_set::open_rand_equip_package_bag(const int32 drop_template_id, const 
 	}
 	item_use_end_result = e_error_code_success;
 
-	//���͹���
 	if (notice_id > 0)
 	{
 		if (notice_data.item_data.size() > 0)
@@ -17640,7 +17329,7 @@ e_item_succinct_buff_level item_set::get_succinct_equip_buff_level()
 		int32 cur_buff_level_num = 0;
 		int32 non_equip_num = 0;
 		for (int32 i = e_role_equip_slot_hat; i <= e_role_equip_slot_magic_2; ++i)
-		{//ħ����ͻ�����Ҫ�����ж�
+		{
 			if (non_equip_num >= e_role_equip_slot_magic_2 - add_buff_need_equip_num)
 			{
 				return e_item_succinct_buff_level_none;
@@ -17902,7 +17591,6 @@ void item_set::set_wedding_init_fashion_state(bool activate)
 {
 	if (false == activate)
 	{
-		//�����ȡ������ ��ô���Ѿ��������ϵĽ���ж�²���
 		for (int32 i = 0; i < e_fashion_equip_slot_max; ++i)
 		{
 			if (GET_BAG(e_bag_type_equip_fasion)[i].is_valid())
@@ -17924,7 +17612,6 @@ void item_set::set_wedding_init_fashion_state(bool activate)
 			{
 				if (item_ptr->get_data_info(e_item_info_activate) && false == activate)
 				{
-					//���ر�
 					int32 star_num = item_ptr->get_data_info(e_item_info_upgrade_count);
 					item_ptr->set_data_info(e_item_info_activate, 0);
 					item_ptr->set_data_info(e_item_info_upgrade_count, 0);
@@ -17933,7 +17620,6 @@ void item_set::set_wedding_init_fashion_state(bool activate)
 				}
 				else if (0 == item_ptr->get_data_info(e_item_info_activate) && true == activate)
 				{
-					//��鼤�� ��ʼ����Ϊһ��
 					item_ptr->set_data_info(e_item_info_activate, 1);
 					item_ptr->set_data_info(e_item_info_upgrade_count, 1);
 					set_fashion_att(item_ptr, true, 1);
@@ -17946,13 +17632,12 @@ void item_set::set_wedding_init_fashion_state(bool activate)
 
 int32 item_set::get_equip_smallest_addon_level()
 {
-	//��ȡȫ��װ��׷�ӵȼ����ֵ		
 	int32 return_value = -1;
 	for (int32 i = e_role_equip_slot_weapon_1; i < e_role_equip_slot_amulet; ++i)
 	{
 		citem* temp_equip_item_ptr = get_item(GET_BAG(e_bag_type_equip)[i]);
 		if (temp_equip_item_ptr == nullptr)
-		{//һ������������
+		{
 			return 0;
 		}
 		if (false == is_equipment_effective(temp_equip_item_ptr->get_item_guid()))
@@ -17969,13 +17654,12 @@ int32 item_set::get_equip_smallest_addon_level()
 
 int32 item_set::get_equip_smallest_awaken_level()
 {
-	//��ȡȫ��װ��׷�ӵȼ����ֵ		
 	int32 return_value = -1;
 	for (int32 i = e_role_equip_slot_weapon_1; i < e_role_equip_slot_amulet; ++i)
 	{
 		citem* temp_equip_item_ptr = get_item(GET_BAG(e_bag_type_equip)[i]);
 		if (temp_equip_item_ptr == nullptr)
-		{//һ������������
+		{
 			return 0;
 		}
 		if (false == is_equipment_effective(temp_equip_item_ptr->get_item_guid()))
@@ -17991,13 +17675,12 @@ int32 item_set::get_equip_smallest_awaken_level()
 }
 int32 item_set::get_equip_smallest_forge_level()
 {
-	//��ȡȫ��װ��׷�ӵȼ����ֵ		
 	int32 return_value = -1;
 	for (int32 i = e_role_equip_slot_weapon_1; i < e_role_equip_slot_amulet; ++i)
 	{
 		citem* temp_equip_item_ptr = get_item(GET_BAG(e_bag_type_equip)[i]);
 		if (temp_equip_item_ptr == nullptr)
-		{//һ������������
+		{
 			return 0;
 		}
 		if (false == is_equipment_effective(temp_equip_item_ptr->get_item_guid()))
@@ -18041,7 +17724,6 @@ int32 item_set::get_equip_smallest_forge_level()
 }
 int32 item_set::get_equip_smallest_enchant_level(bool is_jewelry)
 {
-	//��ȡȫ��װ��׷�ӵȼ����ֵ		
 	int32 return_value = -1;
 
 	std::vector<int32> check_equip_slot;
@@ -18067,7 +17749,6 @@ int32 item_set::get_equip_smallest_enchant_level(bool is_jewelry)
 		citem* temp_equip_item_ptr = get_item(GET_BAG(e_bag_type_equip)[*iter]);
 		if (temp_equip_item_ptr == nullptr)
 		{
-			//һ������������
 			return 0;
 		}
 		if (false == is_equipment_effective(temp_equip_item_ptr->get_item_guid()))
@@ -18076,7 +17757,6 @@ int32 item_set::get_equip_smallest_enchant_level(bool is_jewelry)
 		}
 
 		int32 enchant_value = temp_equip_item_ptr->get_data_info(e_item_info_illusion_had_byte);
-		//��һ��û��ħҲ����
 		if (enchant_value <= 0)
 			return 0;
 		int32 enchant_type = enchant_value % faith::max_enchant_type_num;
@@ -18128,7 +17808,6 @@ int32 item_set::get_equip_smallest_enchant_level_by_type(int32 show_type)
 		citem* temp_equip_item_ptr = get_equip_item_by_slot(e_role_equip_slot(item_slot));
 		if (temp_equip_item_ptr == nullptr)
 		{
-			//һ������������
 			return 0;
 		}
 		if (false == is_equipment_effective(temp_equip_item_ptr->get_item_guid()))
@@ -18137,7 +17816,6 @@ int32 item_set::get_equip_smallest_enchant_level_by_type(int32 show_type)
 		}
 
 		int32 enchant_value = temp_equip_item_ptr->get_data_info(e_item_info_illusion_had_byte);
-		//��һ��û��ħҲ����
 		if (enchant_value <= 0)
 		{
 			return 0;

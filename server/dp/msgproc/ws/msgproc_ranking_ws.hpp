@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2016Äê12ÔÂ12ÈÕ12:50:18
+	created:	2016å¹´12æœˆ12æ—¥12:50:18
 	file base:	msgproc_ranking_ws
 	file ext:	hpp
 	author:		zhy
@@ -14,8 +14,8 @@
 
 namespace faith
 {
-	// ĞèÒªÔ½¹ıcsÖ±½Ó¶Á/Ğ´Êı¾İ¿âµÄÄÚÈİ
-	//ÅÅĞĞ°ñ
+	// éœ€è¦è¶Šè¿‡csç›´æ¥è¯»/å†™æ•°æ®åº“çš„å†…å®¹
+	//æ’è¡Œæ¦œ
 	void save_arena_rank(uint32 connindex, const void *data_ptr, size_t data_len);
 	void save_arena_rank_(uint32 connindex, const void *data_ptr, size_t data_len);
 	void save_arena_rank_end(db_result_type result);

@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
   created: 2014/07/14
   created: 14:7:2014 20:24
   file base: msgproc_dp
@@ -147,7 +147,6 @@ namespace faith
 		}
 		if (move_map_template_ptr->Type != faith::e_map_type_big_map && map_object_ptr->get_map_type() == faith::e_map_type_big_map)
 		{
-			// �Ӹ������˳���Ϸ �����ߺ� �����Ѿ������յĻ� ��������
 			unit_info.data_ary[e_role_info_move_pos_x] = unit_info.data_ary[e_role_info_main_pos_x];
 			unit_info.data_ary[e_role_info_move_pos_y] = unit_info.data_ary[e_role_info_main_pos_y];
 			unit_info.data_ary[e_role_info_move_pos_z] = unit_info.data_ary[e_role_info_main_pos_z];
@@ -217,7 +216,6 @@ namespace faith
 
 
 
-	// 1. ����
 	void dp2cs_rep_load_char_info(uint32 conn_index,const void* data_ptr,size_t data_len)
 	{
 		const dp2cs_load_role_info* packet = static_cast<const dp2cs_load_role_info*>(data_ptr);
@@ -278,7 +276,6 @@ namespace faith
 		}
 		if (move_map_template_ptr->Type != faith::e_map_type_big_map && base_map_cp->m_map_template->Type == faith::e_map_type_big_map)
 		{
-			// �Ӹ������˳���Ϸ �����ߺ� �����Ѿ������յĻ� ��������
 			unit_info.data_ary[e_role_info_move_pos_x] = unit_info.data_ary[e_role_info_main_pos_x];
 			unit_info.data_ary[e_role_info_move_pos_y] = unit_info.data_ary[e_role_info_main_pos_y];
 			unit_info.data_ary[e_role_info_move_pos_z] = unit_info.data_ary[e_role_info_main_pos_z];
@@ -1065,7 +1062,6 @@ namespace faith
 			CONSOLE_INFO("player_ref is null");
 			return;
 		}
-		// �������ݴ�������session playerɾ��
 		unit_man::logout_player(player_ref.get_unit_guid(), player_ref.get_array_index(), true, e_logout_result_load_data_fail);
 	}
 
@@ -1086,7 +1082,6 @@ namespace faith
 		if (false == packet->is_ok)
 		{
 			CONSOLE_ERROR("packet->is_ok is false");
-			// �浵���ݴ�������session playerɾ��
 			unit_man::logout_player(player_ref.get_unit_guid(),player_ref.get_array_index(), true, e_logout_result_save_data_fail);
 			return;
 		}

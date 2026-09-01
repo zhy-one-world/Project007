@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê4ÔÂ26ÈÕ19:19
+created: 2016å¹´4æœˆ26æ—¥19:19
 file base: spirit
 file ext: hpp
 author: lxy
@@ -22,16 +22,16 @@ namespace faith
 {
 #pragma pack(push,1)
 
-	const int32			max_spirit_level = 100;				// ¾«Áé×î´óµÄµÈ¼¶
+	const int32			max_spirit_level = 100;				// ç²¾çµæœ€å¤§çš„ç­‰çº§
 
 	enum e_spirit_color
 	{
-		e_spirit_color_white = 1,		// °×É«
-		e_spirit_color_green,			// ÂÌÉ«
-		e_spirit_color_blue,			// À¶É«
-		e_spirit_color_purple,		// ×ÏÉ«
-		e_spirit_color_orange,		// ³ÈÉ«
-		e_spirit_color_red,			// ¼tÉ«
+		e_spirit_color_white = 1,		// ç™½è‰²
+		e_spirit_color_green,			// ç»¿è‰²
+		e_spirit_color_blue,			// è“è‰²
+		e_spirit_color_purple,		// ç´«è‰²
+		e_spirit_color_orange,		// æ©™è‰²
+		e_spirit_color_red,			// ç´…è‰²
 		e_spirit_color_max
 	};
 
@@ -39,7 +39,7 @@ namespace faith
 	struct s_spirit_info
 	{
 		guid_64						spirit_guid;								// guid		
-		int32						data_ary[e_spirit_info_max];				// ¾«ÁéÊµÀıÊı¾İ
+		int32						data_ary[e_spirit_info_max];				// ç²¾çµå®ä¾‹æ•°æ®
 		s_spirit_info()
 		{
 			clear_data();
@@ -82,7 +82,7 @@ namespace faith
 	};
 	struct s_spirit_fetter_info
 	{	
-		int32 data_ary[e_spirit_fetter_info_max];				// ¾«ÁéÊµÀıÊı¾İ
+		int32 data_ary[e_spirit_fetter_info_max];				// ç²¾çµå®ä¾‹æ•°æ®
 		s_spirit_fetter_info()
 		{
 			clear_data();
@@ -146,15 +146,15 @@ namespace faith
 	enum ESpiritTipType
 	{
 		ESpiritTip_none,
-		ESpiritTip_role_level_up,//ÈËÎïÉı¼¶
-		ESpiritTip_role_upgrade,//ÈËÎï´ó×ªÖ°
-		ESpiritTip_role_fight,//ÈËÎï½øÈëÕ½¶·
-		ESpiritTip_role_idle,//ÈËÎï¾²Ö¹
-		ESpiritTip_daily_mission_done,//Íê³ÉÈÕ³£ÈÎÎñ
-		ESpiritTip_unread_mail,//Î´¶ÁÈ¡µÄÓÊ¼ş
-		ESpiritTip_team_invite,//×é¶ÓÑûÇë
-		ESpiritTip_friend_message,//ºÃÓÑĞÅÏ¢
-		ESpiritTip_legion_invite//¾üÍÅÑûÇë
+		ESpiritTip_role_level_up,//äººç‰©å‡çº§
+		ESpiritTip_role_upgrade,//äººç‰©å¤§è½¬èŒ
+		ESpiritTip_role_fight,//äººç‰©è¿›å…¥æˆ˜æ–—
+		ESpiritTip_role_idle,//äººç‰©é™æ­¢
+		ESpiritTip_daily_mission_done,//å®Œæˆæ—¥å¸¸ä»»åŠ¡
+		ESpiritTip_unread_mail,//æœªè¯»å–çš„é‚®ä»¶
+		ESpiritTip_team_invite,//ç»„é˜Ÿé‚€è¯·
+		ESpiritTip_friend_message,//å¥½å‹ä¿¡æ¯
+		ESpiritTip_legion_invite//å†›å›¢é‚€è¯·
 	};
 
 	enum ESpirit_jiban_type

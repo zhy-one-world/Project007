@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2022Äê2ÔÂ23ÈÕ
+created: 2022å¹´2æœˆ23æ—¥
 file base: time_feed_back_mgr
 file ext: hpp
 author: zhaoyuming
@@ -21,41 +21,41 @@ namespace faith
 	public:
 		void clear_data();
 
-		// ³õÊ¼»¯Êı¾İ
+		// åˆå§‹åŒ–æ•°æ®
 		void init_data();
 		
 		// Tick
 		void heart_tick(const int64 & new_time);
 
-		// ½ÓÊÕÊı¾İ½á¹û
+		// æ¥æ”¶æ•°æ®ç»“æœ
 		void load_info_end(const s_time_feed_back_db_info * dp_info, int32 data_num);
 
-		// ±£´æÊı¾İ
+		// ä¿å­˜æ•°æ®
 		void save_info(e_save_role_data_type eType);
 
-		// ÉèÖÃ½ÇÉ«Ë÷Òı
+		// è®¾ç½®è§’è‰²ç´¢å¼•
 		void set_player_ptr(const int32 array_index);
 
-		// »ñÈ¡¼¸ÌìºóµÄ0µãÊ±¼ä´Á
+		// è·å–å‡ å¤©åçš„0ç‚¹æ—¶é—´æˆ³
 		int32 get_receive_award_time(int32 day_num);
 
-		// ·¢ËÍ»î¶¯Êı¾İ
+		// å‘é€æ´»åŠ¨æ•°æ®
 		void send_time_feed_back_info();
 
-		// »î¶¯²Ù×÷
+		// æ´»åŠ¨æ“ä½œ
 		void time_feed_back_operation(int32 operation_type, int32 mian_id, int32 sub_id);
 
-		// ·¢ËÍ²Ù×÷½á¹û
+		// å‘é€æ“ä½œç»“æœ
 		void send_operate_end(e_time_feed_back_operation_end_type end_type);
 
-		// ¼ì²é³äÖµ
+		// æ£€æŸ¥å……å€¼
 		void apply_recharge(int32 goods_id);
-		// ¸ù¾İ»î¶¯±í»ñÈ¡ÉÌÆ·Êı¾İ
+		// æ ¹æ®æ´»åŠ¨è¡¨è·å–å•†å“æ•°æ®
 		s_time_feed_back_info& get_info_by_id(int32 main_id, int32 sub_id);
 	private:
-		int32									m_array_index;				// Íæ¼ÒË÷Òı
-		std::vector<s_time_feed_back_info>		m_info_list;				// »î¶¯ĞÅÏ¢ÁĞ±í
-		s_time_feed_back_info					m_empty_info;				// ¿ÕĞÅÏ¢	
+		int32									m_array_index;				// ç©å®¶ç´¢å¼•
+		std::vector<s_time_feed_back_info>		m_info_list;				// æ´»åŠ¨ä¿¡æ¯åˆ—è¡¨
+		s_time_feed_back_info					m_empty_info;				// ç©ºä¿¡æ¯	
 	};
 
 }

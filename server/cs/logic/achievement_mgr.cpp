@@ -1,8 +1,8 @@
 /********************************************************************
-created: 2016Äê7ÔÂ15ÈÕ
+created: 2016å¹´7æœˆ15æ—¥
 file base: achievement
-author: ÕÅÓîÏè
-purpose: ³É¾Í¹ÜÀíÏµÍ³
+author: å¼ å®‡ç¿”
+purpose: æˆå°±ç®¡ç†ç³»ç»Ÿ
 *********************************************************************/
 
 #include "server_log.hpp"
@@ -32,7 +32,7 @@ namespace faith
 	cachievement_mgr::~cachievement_mgr()
 	{
 	}
-	//³õÊ¼»¯
+	//åˆå§‹åŒ–
 	void cachievement_mgr::clear_data()
 	{
 		m_achievement_array.clear();
@@ -113,7 +113,7 @@ namespace faith
 			achievement_msg_one.add_achievement_info(my_achievement.get_inst_data(i));
 		}
 	}
-	//´æµµ
+	//å­˜æ¡£
 	void cachievement_mgr::save_achievement_to_db(int32 save_type)
 	{
 		player& player_ref = unit_man::get_player(m_array_index);
@@ -428,11 +428,11 @@ namespace faith
 			{
 			case eat_npc_kill_count:
 			{
-				//¶¼ĞĞ£¬²»ÅĞ¶Ï
+				//éƒ½è¡Œï¼Œä¸åˆ¤æ–­
 			}
 			break;
 			case eat_boss_kill_count:
-			{//É±boss
+			{//æ€boss
 				if (dead_npc_ptr->get_npc_template()->NpcType != e_unit_type_monster
 					|| init_unit::is_world_boss(dead_npc_ptr->get_npc_template()->SubType) == false)
 				{
@@ -441,7 +441,7 @@ namespace faith
 			}
 			break;
 			case eat_legion_boss:
-			{//¾üÍÅBOSS
+			{//å†›å›¢BOSS
 				if (dead_npc_ptr->get_npc_template()->NpcType != e_unit_type_monster)
 				{
 					continue;
@@ -459,7 +459,7 @@ namespace faith
 				&& temp_achieve_ptr->get_achievement_template_ptr()->AchievementGoal[e_item_tuple_id] > 0
 				&& temp_achieve_ptr->get_achievement_template_ptr()->AchievementGoal[e_item_tuple_id] != dead_npc_ptr->get_unit_info(e_role_info_template_id))
 			{
-				//ÓĞIDÒªÇó»¹²»Æ¥ÅäµÄ
+				//æœ‰IDè¦æ±‚è¿˜ä¸åŒ¹é…çš„
 				continue;
 			}
 
@@ -585,7 +585,7 @@ namespace faith
 				&& temp_achieve_ptr->get_achievement_template_ptr()->AchievementGoal[e_item_tuple_id] > 0
 				&& temp_achieve_ptr->get_achievement_template_ptr()->AchievementGoal[e_item_tuple_id] != changed_item_ptr->get_data_info(e_item_info_info_id))
 			{
-				//ÓĞIDÒªÇó»¹²»Æ¥ÅäµÄ
+				//æœ‰IDè¦æ±‚è¿˜ä¸åŒ¹é…çš„
 				continue;
 			}
 			if (temp_achieve_ptr->replace_count(new_current_num))

@@ -63,7 +63,7 @@ namespace faith
 		
 		if (is_teleport_to_same_map(map_guid, map_tempate_id, line_id))
 		{
-			//Í¬µØÍ¼´«ËÍ
+			//åŒåœ°å›¾ä¼ é€
 			CONSOLE_INFO("teleport_to_same_map map_tempate_id:{} line_id:{}", map_tempate_id, line_id);
 			teleport_to_local(teleport_pos);
 			return;
@@ -120,8 +120,8 @@ namespace faith
 		}
 		if (group_id != 0 && is_teleport_to_same_map(map_guid, map_tempate_id, line_id))
 		{
-			// ´Ë½Ó¿Ú²»Ö§³Ö Í¬µØÍ¼´«ËÍ
-			//return;¿ç·þ´«ËÍ£¬Ö§³ÖÍ¬µØÍ¼´«ËÍ
+			// æ­¤æŽ¥å£ä¸æ”¯æŒ åŒåœ°å›¾ä¼ é€
+			//return;è·¨æœä¼ é€ï¼Œæ”¯æŒåŒåœ°å›¾ä¼ é€
 		}
 		if (map_ptr->Type == faith::e_map_type_king_of_pk && map_ptr->SubType == e_pk_king_map_sub_type_combat)
 		{
@@ -136,7 +136,7 @@ namespace faith
 
 		if (map_ptr->Type == faith::e_map_type_big_map && map_tempate_id == m_player_ptr->get_unit_info(e_role_info_main_map_id))
 		{
-			temp_pos = m_player_ptr->get_main_pos();//´Ó¸±±¾´«»Ø´óÊÀ½ç»á×ßµ½Õâ
+			temp_pos = m_player_ptr->get_main_pos();//ä»Žå‰¯æœ¬ä¼ å›žå¤§ä¸–ç•Œä¼šèµ°åˆ°è¿™
 		}
 		req_start_teleport(e_scene_type_low_map, map_tempate_id, line_id, temp_pos, map_guid, war_index, false, group_id);
 	}
@@ -246,7 +246,7 @@ namespace faith
 		return temp_pos;
 	}
 
-	// ÓÃÓÚ¸±±¾ÖÐÇ¿ÖÆÍË³ö
+	// ç”¨äºŽå‰¯æœ¬ä¸­å¼ºåˆ¶é€€å‡º
 	void teleport_control::teleport_world_update(uint32 elapse_time)
 	{
 		ZoneScoped;

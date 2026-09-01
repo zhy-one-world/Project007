@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2014/08/07
 	created:	7:8:2014   14:55
 	file base:	client_session
@@ -25,34 +25,34 @@ namespace faith
 	public:
 		enum e_session_status
 		{
-			e_ss_logout,						//	�ǳ���
-			e_ss_created,						//	��ʼ����session
-			e_ss_login_ok,						//	��½�ɹ�
-			e_ss_ingame,						//	�ѽ���CS/IS����Ϸ��
-			e_ss_queue,							//	�ڵ�½������
-			e_ss_map_transfer,					//	��ͼ�л���
-			e_ss_cross_transfer,				//	���������
-			e_ss_check_token,					//  ��֤Token������
+			e_ss_logout,
+			e_ss_created,
+			e_ss_login_ok,
+			e_ss_ingame,
+			e_ss_queue,
+			e_ss_map_transfer,
+			e_ss_cross_transfer,
+			e_ss_check_token,
 		};
 		enum e_session_step
 		{
-			e_session_step_null,				//	��ʼ״̬
-			e_session_step_login,				//	��½
-			e_session_step_login_win,			//	��½�ɹ�
+			e_session_step_null,
+			e_session_step_login,
+			e_session_step_login_win,
 			e_session_step_enter_game,			//	enter_game
-			e_session_step_dp_load,				//	dp����role_info��Ϣ
-			e_session_step_send_enter_game_cs,	//	��cs����enter_game��Ϣ
-			e_session_step_cs_enter_game,		//	cs����enter_game�ɹ�
-			e_session_step_send_enter_scene,	//  ��cs����enter_scene��Ϣ
-			e_session_step_cs_enter_scene,		//  cs����enter_scene�ɹ�
+			e_session_step_dp_load,
+			e_session_step_send_enter_game_cs,
+			e_session_step_cs_enter_game,
+			e_session_step_send_enter_scene,
+			e_session_step_cs_enter_scene,
 		};
 		enum e_player_scene_status_type
 		{
-			e_pss_left,			//	���뿪
-			e_pss_leaving,		//	�뿪��
-			e_pss_entering,		//	������
-			e_pss_entered,		//	�ѽ���
-			e_pss_sys_transfer,	//  ����������
+			e_pss_left,
+			e_pss_leaving,
+			e_pss_entering,
+			e_pss_entered,
+			e_pss_sys_transfer,
 		};
 
 		/*
@@ -65,9 +65,9 @@ namespace faith
 		*/
 		enum e_online_state
 		{
-			e_os_offline,		//	Ϊ������Ϸ
-			e_os_online,		//	��Ϸ��
-			e_os_inqueue,		//	������
+			e_os_offline,
+			e_os_online,
+			e_os_inqueue,
 		};
 	public:
 		client_session();
@@ -85,9 +85,9 @@ namespace faith
 	public:
 		void									set_client_logout_begin();
 	public:
-		void									tick(const int64& new_time);						//	��Ϸѭ���ڱ����ã����ڸ���
-		void									send_to_fep( const void*,size_t );			//	������Ϣ���� session ���ڵ� fep server	
-		void									send_to_cs( const void*,size_t );			//	������Ϣ���� session ���ڵ� ls server
+		void									tick(const int64& new_time);
+		void									send_to_fep( const void*,size_t );
+		void									send_to_cs( const void*,size_t );
 		bool                                    send_to_cs_lua(google::protobuf::Message* net_pro, uint32 header);
 		void                                    send_to_cs_lua(const char* msg, int32 msg_len, uint32 header);
 		void									send_to_client(google::protobuf::Message* net_pro, uint32 header);
@@ -132,11 +132,11 @@ namespace faith
 		void									player_enter_game_transfer(guid_64 role_guid, int32 server_id);
 		void									login_try_enter_scene();
 		void									enter_scene_logic_proc();
-		void									enter_scene_logic_proc_login(); //ֻ�ڵ�¼��enterscene����
+		void									enter_scene_logic_proc_login();
 		void									send_notice(std::string notice_str);
 		void									send_recharge(const xchar* order_id, int32 goods_id, float pay_price, int64 order_num, int32 payment_type, int32 direct_diamond = 0);
 		int64									get_login_time() { return m_logout_time - m_logintime; };
-		bool									is_self_server(guid_64 target_guid = guid_64(), bool is_need_same_server_for_ws = true);//��������Ƿ��ڸ÷��������Լ��жϸ�WS�Ƿ������
+		bool									is_self_server(guid_64 target_guid = guid_64(), bool is_need_same_server_for_ws = true);
 		void									load_offline_chat();
 
 		guid_64									get_last_map_guid() { return m_last_map_guid; };
@@ -145,7 +145,7 @@ namespace faith
 		void									set_cross_server_save_time(int64 time_sec) { m_cross_server_save_time_sec = time_sec; };
 		void									set_need_send_save_end(bool need_send) { m_is_need_send_save_end = need_send; };
 		void									set_is_cross_server_save_end(bool is_save_end) { m_is_cross_server_save_end = is_save_end; };
-		void									func_session_load_dp_end();//WS session�������ݿ�֮��ִ�еĺ���
+		void									func_session_load_dp_end();
 
 		void									get_log_common_head_info(s_log_common_head &log_head);
 		xstring									get_class_name();
@@ -166,37 +166,36 @@ namespace faith
 		bool									m_is_robot_account;
 		bool									m_is_data_use;
 		int32									m_array_index;
-		s_unit_info								m_role_info;												// ��ɫ����Ϣ
-		s_unit_ws_info							m_role_ws_info;												// ��ɫWS����Ϣ
-		int32									m_is_send_chat;												// �Ƿ��������
-		int64									m_worship_value;												// ��ɫ�����ֵ
+		s_unit_info								m_role_info;
+		s_unit_ws_info							m_role_ws_info;
+		int32									m_is_send_chat;
+		int64									m_worship_value;
 		s_client_uid							m_client_uid;
 		e_session_status						m_status;
 		int32									m_step_num;
 		ui8										m_online_state;
 		s_transfer_info							m_transfer_info;
 		int32									m_dest_group_id;
-		int32									m_cs_conn_index;													//	�� session ���ڵ� cs/is
+		int32									m_cs_conn_index;
 		int32									m_cs_array_index;
-		xchar									m_account[max_account_length + 1];							//	�� session ��¼�õ��˺�
-		int32									m_login_type;												//	��¼����
-		int32									m_login_type_plus;											//	��¼����
-		login_fixed_data						m_login_third_data;											//	��������½����
+		xchar									m_account[max_account_length + 1];
+		int32									m_login_type;
+		int32									m_login_type_plus;
+		login_fixed_data						m_login_third_data;
 		xstring									m_ip_address;
-		uint32									m_cross_callback_val[limit_call_back_val_count];			//	������Ͳ���	
-		guid_64									m_map_guid;													//	��ͼguid
-		int32									m_line_id;													//	��id
+		uint32									m_cross_callback_val[limit_call_back_val_count];
+		guid_64									m_map_guid;
+		int32									m_line_id;
 
-		guid_64									m_team_guid;												// ��ǰ���������GUID
-		//guid_64								m_legion_guid;												// ��ǰ�������ŵ�GUID
+		guid_64									m_team_guid;
 
-		int64									m_logintime;												//��½ʱ��
-		relation_mgr							m_relation_mgr;												//���ѹ�ϵ���� 
+		int64									m_logintime;
+		relation_mgr							m_relation_mgr;
 
-		bool									m_is_already_login;											//�Ƿ��ǵ�һ�ε�½��Ϸ
-		int64									m_logout_time;												//�뿪��ʱ��
-		bool									m_logout_begin;												//���ߺ����뿪�ļ�ʱ
-		int64									m_activate_code_time;										//����뷢��ʱ��
+		bool									m_is_already_login;
+		int64									m_logout_time;
+		bool									m_logout_begin;
+		int64									m_activate_code_time;
 
 		int64									m_update_time_count;
 		int32									m_out_send_count;
@@ -206,7 +205,7 @@ namespace faith
 		int64									m_login_time;
 		int32									m_jewel_num;
 
-		int64									m_last_send_world_boss_damage_list_sec;//�ϴη�boss�˺���Ϣ�б���ʱ���
+		int64									m_last_send_world_boss_damage_list_sec;
 
 		int64									m_client_session_tick_min_last;
 
@@ -214,12 +213,12 @@ namespace faith
 
 		s_player_legion_info					m_player_legion_info;
 
-		guid_64									m_last_map_guid;//����ǰ��mapguid����һ�����棬�����ʧ��ʱ�����ظ�map
+		guid_64									m_last_map_guid;
 
 		int64									m_recharge_time;
 
-		bool									m_is_cross_server_save_end;//���Ŀ�������saveend
-		int64									m_cross_server_save_time_sec;//���Ŀ�������save��ʼʱ��
+		bool									m_is_cross_server_save_end;
+		int64									m_cross_server_save_time_sec;
 		bool									m_is_need_send_save_end;
 
 		bool									m_is_in_assist;

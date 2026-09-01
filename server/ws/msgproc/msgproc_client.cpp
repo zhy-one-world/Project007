@@ -1,4 +1,4 @@
-#include "assist_fight.pb.h"
+﻿#include "assist_fight.pb.h"
 #include "base/ecs_world.h"
 #include "character.pb.h"
 #include "chat.pb.h"
@@ -115,7 +115,6 @@ namespace faith
 			return;
 		}
 
-		// ���ҪT�Ľ�ɫ���ڵĶ���
 		guid_64 team_guid(req.team_guid());
 		if (team_guid.is_valid() == false)
 		{
@@ -127,7 +126,6 @@ namespace faith
 			return;
 		}
 
-		// �����ǰҪ����T������Ľ�ɫ���Ƕӳ��Ͳ���T��
 		if (team_ws_ptr->get_captain_guid() != session->get_role_guid())
 		{
 			return;
@@ -138,7 +136,6 @@ namespace faith
 		{
 			return;
 		}
-		//���ҪT���˴��ڶ��˸����У��������߳�����
 		client_session* leave_player_session = client_session_mgr::getInstance().get_session(leaver_guid);
 		if (nullptr != leave_player_session)
 		{
@@ -180,7 +177,6 @@ namespace faith
 			return;
 		}
 
-		// ������Ƕӳ��Ͳ��ܻ��ӳ�
 		if (team_ws_ptr->get_captain_guid() != session->get_role_guid())
 		{
 			return;
@@ -212,7 +208,6 @@ namespace faith
 		//	return;
 		//}
 
-		//// ������Ƕӳ��Ͳ�������
 		///*if (team_ws_ptr->get_captain_guid() != session->get_role_guid())
 		//{
 		//	return;
@@ -223,13 +218,11 @@ namespace faith
 		//{
 		//	return;
 		//}
-		////�������Ҹ��Լ�����ͬ�����ֹ
 		////if (false == session->is_self_server(invitee_guid, false))
 		////{
 		////	session->send_notice("90305139");
 		////	return;
 		////}
-		////���������Ҳ�����
 		//client_session* invitee_session = client_session_mgr::getInstance().get_session(invitee_guid);
 		//if (nullptr == invitee_session)
 		//{
@@ -239,21 +232,18 @@ namespace faith
 		//}
 
 
-		//// �����������Ѿ��������ߵĶ�����
 		//if (team_ws_ptr->get_member(invitee_guid) != nullptr)
 		//{
 		//	team_ws_mgr_ref.send_team_error_to_session(session, e_team_error_player_already_join_team);
 		//	return;
 		//}
 
-		//// �����������Ѿ�������������
 		//if (team_ws_mgr_ref.get_unit_team(invitee_guid) != nullptr)
 		//{
 		//	team_ws_mgr_ref.send_team_error_to_session(session, e_team_error_player_already_join_other_team);
 		//	return;
 		//}
 
-		//// ����Ƕӳ�����ͼ��������б���
 		//if (team_ws_ptr->get_captain_guid() == session->get_role_guid())
 		//{
 		//	team_ws_ptr->add_invite_guid(invitee_guid);
@@ -285,7 +275,6 @@ namespace faith
 			return;
 		}
 
-		// ������Ƕӳ��Ͳ�������
 		/*if (team_ws_ptr->get_captain_guid() != session->get_role_guid())
 		{
 		return;
@@ -296,13 +285,11 @@ namespace faith
 		{
 			return;
 		}
-		//�������Ҹ��Լ�����ͬ�����ֹ
 		//if (false == session->is_self_server(invitee_guid, false))
 		//{
 		//	session->send_notice("90305139");
 		//	return;
 		//}
-		//���������Ҳ�����
 		client_session* invitee_session = client_session_mgr::getInstance().get_session(invitee_guid);
 		if (nullptr == invitee_session)
 		{
@@ -312,21 +299,18 @@ namespace faith
 		}
 
 
-		// �����������Ѿ��������ߵĶ�����
 		if (team_ws_ptr->get_member(invitee_guid) != nullptr)
 		{
 			team_ws_mgr_ref.send_team_error_to_session(session, e_team_error_player_already_join_team);
 			return;
 		}
 
-		// �����������Ѿ�������������
 		if (team_ws_mgr_ref.get_unit_team(invitee_guid) != nullptr)
 		{
 			team_ws_mgr_ref.send_team_error_to_session(session, e_team_error_player_already_join_other_team);
 			return;
 		}
 
-		// ����Ƕӳ�����ͼ��������б���
 		if (team_ws_ptr->get_captain_guid() == session->get_role_guid())
 		{
 			team_ws_ptr->add_invite_guid(invitee_guid);
@@ -371,7 +355,6 @@ namespace faith
 			return;
 		}
 
-		// ֻ�жӳ����ܽ��д���
 		if (session->get_role_guid() != team_ws_ptr->get_captain_guid())
 		{
 			return;
@@ -416,7 +399,6 @@ namespace faith
 		//	return;
 		//}
 
-		////���������Ƿ��п�����
 		//const std::list<s_team_member_info>& team_member_list = team_ws_ptr->get_member_list();
 		//if (session->get_role_guid() == team_ws_ptr->get_captain_guid())
 		//{
@@ -456,7 +438,6 @@ namespace faith
 		////MapTemplate* map_template_ptr = GET_TEMPLATE(MapTemplate, team_ws_ptr->get_team_sub_type_id());
 		////if (nullptr != map_template_ptr && map_template_ptr->Order == e_map_order_type_multiplayer_raid)
 		////{
-		////	//���˸��������ж�
 		////	bool m_result = team_ws_ptr->check_all_commmon_legion();
 		////	if (!m_result)
 		////	{
@@ -467,7 +448,6 @@ namespace faith
 		//bool is_ready = (req.is_ready() > 0 ? true : false);
 		//if (is_ready && team_ws_mgr_ref.is_team_type_raid(team_ws_ptr->get_team_type()))
 		//{
-		//	//Ŀǰ������ֻ��raid���͵Ķ�����
 		//	team_ws_mgr_ref.req_condition_check_to_cs(session, e_team_common_check_invoker_mem_ready, team_type, sub_type_id, team_guid);
 		//}
 		//else
@@ -500,7 +480,6 @@ namespace faith
 			return;
 		}
 
-		//���������Ƿ��п�����
 		const std::list<s_team_member_info>& team_member_list = team_ws_ptr->get_member_list();
 		if (session->get_role_guid() == team_ws_ptr->get_captain_guid())
 		{
@@ -540,7 +519,6 @@ namespace faith
 		//MapTemplate* map_template_ptr = GET_TEMPLATE(MapTemplate, team_ws_ptr->get_team_sub_type_id());
 		//if (nullptr != map_template_ptr && map_template_ptr->Order == e_map_order_type_multiplayer_raid)
 		//{
-		//	//���˸��������ж�
 		//	bool m_result = team_ws_ptr->check_all_commmon_legion();
 		//	if (!m_result)
 		//	{
@@ -551,7 +529,6 @@ namespace faith
 		bool is_ready = (req.is_ready() > 0 ? true : false);
 		if (is_ready && team_ws_mgr_ref.is_team_type_raid(team_ws_ptr->get_team_type()))
 		{
-			//Ŀǰ������ֻ��raid���͵Ķ�����
 			team_ws_mgr_ref.req_condition_check_to_cs(session, e_team_common_check_invoker_mem_ready, team_type, sub_type_id, team_guid);
 		}
 		else
@@ -571,26 +548,21 @@ namespace faith
 //		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
 // 		team_proto_ready_to_transfer_team req;
 // 		parse_msg::getInstance().parse_message_new(&req, data_ptr, data_len);
-// 
 // 		client_session* session = client_session_mgr::getInstance().get_session(client_uid);
 // 		if (nullptr == session)
 // 		{
 // 			return;
 // 		}
-// 
 // 		guid_64 team_guid(req.team_guid());
 // 		team_ws* team_ws_ptr = team_ws_mgr::get_instance().get_team(team_guid);
 // 		if (nullptr == team_ws_ptr)
 // 		{
 // 			return;
 // 		}
-// 
-// 		// ֻ�жӳ����ܿ�ʼ׼������
 // 		if (session->get_role_guid() != team_ws_ptr->get_captain_guid())
 // 		{
 // 			return;
 // 		}
-// 
 // 		team_ws_ptr->ready_transfer_all_member_to_scene();
 	}
 
@@ -627,7 +599,6 @@ namespace faith
 		//int32 team_list_len = 0;
 		//for (team_ws* team_ws_ptr : team_ws_list)
 		//{
-		//	// ������������ڵĶ���
 		//	if (nullptr != cur_team)
 		//	{
 		//		if (team_ws_ptr != nullptr && cur_team->get_team_guid() == team_ws_ptr->get_team_guid())
@@ -636,7 +607,6 @@ namespace faith
 		//		}
 		//	}
 
-		//	// ս��������
 		//	int32 required_fighting_power = team_ws_ptr->get_required_fighting_power();
 		//	if (session->get_role_gs_value() < required_fighting_power)
 		//	{
@@ -683,7 +653,6 @@ namespace faith
 		int32 team_list_len = 0;
 		for (team_ws* team_ws_ptr : team_ws_list)
 		{
-			// ������������ڵĶ���
 			if (nullptr != cur_team)
 			{
 				if (team_ws_ptr != nullptr && cur_team->get_team_guid() == team_ws_ptr->get_team_guid())
@@ -692,7 +661,6 @@ namespace faith
 				}
 			}
 
-			// ս��������
 			int32 required_fighting_power = team_ws_ptr->get_required_fighting_power();
 			if (session->get_role_gs_value() < required_fighting_power)
 			{
@@ -786,7 +754,6 @@ namespace faith
 		team_ws* team_ws_ptr = nullptr;
 		switch (join_team_way)
 		{
-			// ͨ�������ID����ȡ����
 		case e_join_team_way_by_team_guid:
 			team_ws_ptr = team_ws_mgr_ref.get_team(given_guid);
 			if (nullptr == team_ws_ptr)
@@ -797,7 +764,6 @@ namespace faith
 			captain_guid = team_ws_ptr->get_captain_guid();
 			break;
 
-			// ͨ���ӳ���ID����ȡ����
 		case e_join_team_way_by_captain_guid:
 			team_ws_ptr = team_ws_mgr_ref.get_unit_team(given_guid);
 			if (nullptr == team_ws_ptr)
@@ -817,14 +783,12 @@ namespace faith
 			return;
 		}
 
-		// �������Ѿ���ĳ��������
 		if (team_ws_mgr_ref.get_unit_team(session->get_role_guid()) != nullptr)
 		{
 			team_ws_mgr_ref.send_team_error_to_session(session, e_team_error_player_already_join_other_team);
 			return;
 		}
 
-		// �������Ѿ�������˱��ȸ�����ʱ���޷��������
 		if (team_ws_ptr->get_team_state() == e_team_state_game && init_unit::is_team_type_raid_map(team_ws_ptr->get_team_type()))
 		{
 			team_ws_mgr_ref.send_team_error_to_session(session, e_team_error_raidmulti_ingame);
@@ -835,7 +799,6 @@ namespace faith
 		//	session->send_notice("90305139");
 		//	return;
 		//}
-		//����ETeamMemberInfo_check_ret��Ҫȥcs�ϼ�� ������ǲ�ȷ���� ����߼���ʱҲû�� �����ε�
 		//if (marry_mgr_ws::get_instance().is_couple(session->get_role_guid(), team_ws_ptr->get_captain_guid()))
 		//{
 		//	s_team_member_info new_mem_info;
@@ -963,7 +926,6 @@ namespace faith
 		int32 match_ret = e_player_match_team_none;
 		if (is_begin_match)
 		{
-			//�������͵��Զ�ƥ�䶼��Ҫ��ȥcs�ϼ��һ��
 			//if (team_ws_mgr_ref.is_team_type_raid(team_type_id) || e_team_type_one_dragon == team_type_id)
 			//{
 			team_ws_mgr_ref.req_condition_check_to_cs(session, e_team_common_check_invoker_auto_match_team, team_type_id, sub_type_id, guid_64());
@@ -1016,7 +978,6 @@ namespace faith
 
 		if (false == req.has_team_sub_type_id())
 		{
-			// sub_type_id��ǰ�� ��Ϊ�����п��ܸ�
 			team_sub_type_id = team_ws_ptr->get_team_sub_type_id();
 		}
 		
@@ -1027,7 +988,6 @@ namespace faith
 			{
 				if (team_ws_ptr->is_one_stop_team())
 				{
-					//һ�����������ֶ���Ŀ��
 					return;
 				}
 				else
@@ -1039,7 +999,7 @@ namespace faith
 			}
 			else
 			{
-				team_ws_ptr->set_one_stop_flags(-1); //һ�����޸�Ŀ���Ͳ���һ������
+				team_ws_ptr->set_one_stop_flags(-1);
 			}
 
 			update_team_attr_end_msg.set_n_one_stop_flags(team_ws_ptr->get_one_stop_flags());
@@ -1125,7 +1085,6 @@ namespace faith
 		//}
 
 		//e_team_operate operate_type = (e_team_operate)req.operate_type();
-		//
 		//team_proto_team_mem_operate_end team_mem_operate_end_msg;
 		//team_mem_operate_end_msg.set_req_role_guid(team_mem_guid.server_64);
 		//team_mem_operate_end_msg.set_operate_type(operate_type);
@@ -1230,7 +1189,6 @@ namespace faith
 	}
 
 
-	///////////////////////////////////////����/////////////////////////////////////////////////////////////////////////////
 
 	void c2ws_req_get_best_record(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
@@ -1338,7 +1296,7 @@ namespace faith
 			return;
 		}
 		crystal_fairyland_mgr& crystal_mgr_ref = crystal_fairyland_mgr::get_instance();
-		if (false == world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_activity))//����ˮ���þ�
+		if (false == world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_activity))
 		{
 			auto ret = crystal_mgr_ref.is_can_join();
 			if (e_error_code_success != ret)
@@ -1356,7 +1314,7 @@ namespace faith
 			}
 			cs_map_mgr_system::transfer_to_map(session, shui_jing_map_tempplate_id, shui_jing_map_guid, war_idx);
 		}
-		else if (world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_activity))//���ˮ���þ��߼�
+		else if (world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_activity))
 		{
 			if (crystal_mgr_ref.is_activity_open() == false)
 			{
@@ -1394,7 +1352,7 @@ namespace faith
 			return;
 		}
 		pk_king_mgr& pk_king_mgr_ref = pk_king_mgr::get_instance();
-		if (false == world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_activity))//����PK֮���߼�
+		if (false == world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_activity))
 		{
 			e_error_code ret = pk_king_mgr_ref.is_can_join(session->get_role_guid());
 			if (e_error_code_success != ret)
@@ -1417,7 +1375,7 @@ namespace faith
 			}
 			cs_map_mgr_system::transfer_to_map(session, pk_king_map_template_id, pk_map_guid, war_idx);
 		}
-		else if (world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_activity))//���PK֮���߼�
+		else if (world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_activity))
 		{
 			if (pk_king_mgr_ref.is_in_notice_time())
 			{
@@ -1676,7 +1634,6 @@ namespace faith
 		{
 			return;
 		}
-		//�����ֹ
 		if (false == client_session_ptr->is_self_server())
 		{
 			return;
@@ -1711,7 +1668,6 @@ namespace faith
 		{
 			return;
 		}
-		//�����ֹ
 		if (false == client_session_ptr->is_self_server())
 		{
 			return;
@@ -1756,7 +1712,6 @@ namespace faith
 		{
 			return;
 		}
-		//�����ֹ
 		if (false == client_session_ptr->is_self_server())
 		{
 			return;
@@ -1795,7 +1750,6 @@ namespace faith
 		{
 			return;
 		}
-		//�����ֹ
 		if (false == client_session_ptr->is_self_server())
 		{
 			return;
@@ -1877,7 +1831,6 @@ namespace faith
 		{
 			return;
 		}
-		//�����ֹ
 		if (false == client_session_ptr->is_self_server())
 		{
 			return;
@@ -1921,7 +1874,6 @@ namespace faith
 		{
 			return;
 		}
-		//�����ֹ
 		if (false == client_session_ptr->is_self_server())
 		{
 			return;
@@ -1951,7 +1903,6 @@ namespace faith
 		{
 			return;
 		}
-		//�����ֹ
 		if (false == client_session_ptr->is_self_server())
 		{
 			return;
@@ -2007,7 +1958,6 @@ namespace faith
 		{
 			return;
 		}
-		//�����ֹ
 		if (false == client_session_ptr->is_self_server())
 		{
 			return;
@@ -2037,7 +1987,6 @@ namespace faith
 		{
 			return;
 		}
-		//�����ֹ
 		if (false == client_session_ptr->is_self_server())
 		{
 			return;
@@ -2097,11 +2046,9 @@ namespace faith
 
 		//if (request.is_receive() == 0)
 		//{
-		//	//�ܾ���ʾ
 		//	couple_session_ptr->send_notice("90096814");
 		//	return;
 		//}
-		////֪ͨcs���ӽ������
 		//ws2cs_marry_get_marry_task msg;
 		//msg.role_guid = role_guid;
 		//bool is_use = proto_by_lua(e_msgindex_ws2cs_marry_get_marry_task);
@@ -2144,11 +2091,9 @@ namespace faith
 
 		if (request.is_receive() == 0)
 		{
-			//�ܾ���ʾ
 			couple_session_ptr->send_notice("90096814");
 			return;
 		}
-		//֪ͨcs���ӽ������
 		ws2cs_marry_get_marry_task msg;
 		msg.role_guid = role_guid;
 		bool is_use = proto_by_lua(e_msgindex_ws2cs_marry_get_marry_task);
@@ -2203,7 +2148,6 @@ namespace faith
 		{
 			return;
 		}
-		//�����ֹ
 		if (false == client_session_ptr->is_self_server())
 		{
 			return;
@@ -2812,7 +2756,6 @@ namespace faith
 		}
 		legion_ws_answer::get_instance().send_legion_answer_rank_list(session->get_role_guid());
 	}
-	//�ͻ��˷��ʹ��͵����ͼ������
 	void c2ws_req_transfer_to_cross_server_world_boss_map(uint32 conn_index, const void * data_ptr, size_t data_len)
 	{
 		if (world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_cross_begin_cross_boss) == false)
@@ -2869,7 +2812,6 @@ namespace faith
 
 	}
 
-	//�ͻ��˷�����ʾ��ɱboss��Ϣ������
 	void c2ws_get_cross_boss_show_info(uint32 conn_index, const void * data_ptr, size_t data_len)
 	{
 		s_client_uid client_uid;
@@ -2908,7 +2850,6 @@ namespace faith
 		{
 			return;
 		}
-		//���״̬�²�����
 		if (false == session->is_self_server())
 		{
 			return;

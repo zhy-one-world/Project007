@@ -12,6 +12,6 @@ namespace faith
 		gm_order_proc_ws();
 		~gm_order_proc_ws();
 	public:
-		static void proc_gm_order(e_gm_order_type order_type, const int32 *order_param, int32 param_num);//处理gm指令专用
+		static void proc_gm_order(e_gm_order_type order_type, const int32 *order_param, int32 param_num);//澶勭悊gm鎸囦护涓撶敤
 	};
 }

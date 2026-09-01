@@ -1,10 +1,10 @@
 /********************************************************************
-created: 2019Äê4ÔÂ24ÈÕ
+created: 2019å¹´4æœˆ24æ—¥
 file base: server_harry_mgr
 file ext: cpp
 author: zhangshuo
 
-purpose: ¿ç·şÂÓ¶á
+purpose: è·¨æœæ å¤º
 *********************************************************************/
 
 
@@ -462,7 +462,7 @@ namespace faith
 		{
 			return;
 		}
-		if (killed_player_ref.get_last_kill_me_player_guid() == m_player_ptr->get_unit_guid() && killed_player_ref.get_last_kill_me_player_time() + interval_time <= cur_time_sec)//¼ì²âÊÇ·ñË¢ÈËÍ·
+		if (killed_player_ref.get_last_kill_me_player_guid() == m_player_ptr->get_unit_guid() && killed_player_ref.get_last_kill_me_player_time() + interval_time <= cur_time_sec)//æ£€æµ‹æ˜¯å¦åˆ·äººå¤´
 		{
 			return;
 		}
@@ -490,7 +490,7 @@ namespace faith
 		guid_64 cur_other_player_id = killed_player_ref.get_unit_guid();
 		int32 cur_player_level = m_player_ptr->get_owner_unit_level();
 		int32 cur_other_level = killed_player_ref.get_owner_unit_level();
-		bool whether_add_sorce = unit_man::kill_player_num(cur_player_id, cur_other_player_id, cur_player_level, cur_other_level); //¼ÓÔÚÄÄÀïÄØ
+		bool whether_add_sorce = unit_man::kill_player_num(cur_player_id, cur_other_player_id, cur_player_level, cur_other_level); //åŠ åœ¨å“ªé‡Œå‘¢
 		if (!whether_add_sorce)
 		{
 			return;
@@ -607,7 +607,7 @@ namespace faith
 		s_server_harry_msg& cur_harry_msg = cell_server::getInstance().get_cur_server_harry_msg();
 		cur_harry_msg.server_money += 1;
 		m_player_ptr->send_notice("90203548");
-		send_ws_change_server_money(false, 1, cur_server_id);//Ìá½»²É¼¯Ê± ²»¼Ó¶Ô·½·şÎñÆ÷ÌØÊâ²É¼¯
+		send_ws_change_server_money(false, 1, cur_server_id);//æäº¤é‡‡é›†æ—¶ ä¸åŠ å¯¹æ–¹æœåŠ¡å™¨ç‰¹æ®Šé‡‡é›†
 
 		if (m_player_ptr)
 		{

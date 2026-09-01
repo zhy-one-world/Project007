@@ -17,7 +17,7 @@ namespace faith
 	std::string		from_wstring_to_string(std::wstring& wstr);
 	int32			get_wchar_num_in_string(std::string& str);
 	/*
-	*	ÓÎÏ·µÄÆÁ±Î×Ö¿â
+	*	æ¸¸æˆçš„å±è”½å­—åº“
 	*/
 	class CInvalidWord : public faith::singleton< CInvalidWord >
 	{

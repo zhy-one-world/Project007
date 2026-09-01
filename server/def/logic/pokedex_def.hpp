@@ -32,7 +32,7 @@ namespace faith
 	const int32 patron_saint_start_id = 62010001;
 
 	static const int32 succinct_mark_req_type_num = 8;
-	const int32 succinct_mark_req_color[succinct_mark_req_type_num] = { 0,2,3,4,4,4,5,6 }; //ÂÌ£¬À¶£¬×Ï£¬×Ï£¬×Ï£¬³È£¬ºì
+	const int32 succinct_mark_req_color[succinct_mark_req_type_num] = { 0,2,3,4,4,4,5,6 }; //ç»¿ï¼Œè“ï¼Œç´«ï¼Œç´«ï¼Œç´«ï¼Œæ©™ï¼Œçº¢
 	const int32 succinct_mark_req_grade[succinct_mark_req_type_num] = { 0,1,2,3,4,5,5,5 };
 
 	const int32 tinder_level_start_id = 65010001;
@@ -51,13 +51,13 @@ namespace faith
 
 	enum EPokedexInfo
 	{
-		EPokedexInfo_template_id,															    // Ä£°åid
-		EPokedexInfo_upgrade_num,																//µ±Ç°µÈ¼¶
-		EPokedexInfo_state,																		// ¼¤»î×´Ì¬
-		EPokedexInfo_fetter_state1,																//î¿°í
+		EPokedexInfo_template_id,															    // æ¨¡æ¿id
+		EPokedexInfo_upgrade_num,																//å½“å‰ç­‰çº§
+		EPokedexInfo_state,																		// æ¿€æ´»çŠ¶æ€
+		EPokedexInfo_fetter_state1,																//ç¾ç»Š
 		EPokedexInfo_fetter_state2,
 		EPokedexInfo_fetter_state3,
-		EPokedexInfo_psyche_num1,																//¾«ÆÇ
+		EPokedexInfo_psyche_num1,																//ç²¾é­„
 		EPokedexInfo_psyche_num2,
 		EPokedexInfo_psyche_num3,
 		EPokedexInfo_psyche_num4,
@@ -69,25 +69,25 @@ namespace faith
 	};
 	enum EPokedexActiveState
 	{
-		EPokedexActiveState_no_active = 0,															         // Î´¼¤»î
-		EPokedexActiveState_active,																		// ¼¤»î
+		EPokedexActiveState_no_active = 0,															         // æœªæ¿€æ´»
+		EPokedexActiveState_active,																		// æ¿€æ´»
 		
 	};
 
 
 	enum e_protect_god_operation_type
 	{
-		e_pokedex_operation_protect_max_level,			// ÒÑÉıÂú
-		e_pokedex_operation_protect_god_headup,			// Éı¼¶
-		e_pokedex_operation_protect_god_rankup,			// Éı½×
+		e_pokedex_operation_protect_max_level,			// å·²å‡æ»¡
+		e_pokedex_operation_protect_god_headup,			// å‡çº§
+		e_pokedex_operation_protect_god_rankup,			// å‡é˜¶
 		e_pokedex_operation_protect_god_max
 	};
 
 	enum e_protect_spirit_operation_type
 	{
-		e_protect_operation_equipe,			//    ×°±¸ÊØ»¤Ö®Áé
-		e_protect_operation_unequipe,	    //    Ğ¶ÏÂÊØ»¤Ö®Áé
-		e_protect_operation_replace,        //    Ìæ»»ÊØ»¤Ö®Áé
+		e_protect_operation_equipe,			//    è£…å¤‡å®ˆæŠ¤ä¹‹çµ
+		e_protect_operation_unequipe,	    //    å¸ä¸‹å®ˆæŠ¤ä¹‹çµ
+		e_protect_operation_replace,        //    æ›¿æ¢å®ˆæŠ¤ä¹‹çµ
 		e_protect_operation_max
 	};
 

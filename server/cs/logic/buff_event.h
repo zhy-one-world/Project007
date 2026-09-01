@@ -22,10 +22,10 @@ namespace faith
 	// buff Event
 	struct event_trigger_buf
 	{
-		e_buff_event_type	trig_event; // ´¥·¢ÊÂ¼şÀàĞÍ
-		guid_64			srcid;      // ´¥·¢Ô´
-		guid_64			targetid;   // ´¥·¢×÷ÓÃµÄÄ¿±ê
-		uint32				id;         // Ä£°åid
+		e_buff_event_type	trig_event; // è§¦å‘äº‹ä»¶ç±»å‹
+		guid_64			srcid;      // è§¦å‘æº
+		guid_64			targetid;   // è§¦å‘ä½œç”¨çš„ç›®æ ‡
+		uint32				id;         // æ¨¡æ¿id
 		uint32				skillid;
 		uint32				skilltimestamp;
 	};

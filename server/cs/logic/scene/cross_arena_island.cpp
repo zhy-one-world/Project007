@@ -269,7 +269,7 @@ namespace faith
 		{
 			player& temp_player = unit_man::get_player(m_island_player_msg[i].player_guid);
 			temp_player.get_pk_community_mgr().init_map_pk_type(mode_type);
-			temp_player.get_pk_community_mgr().set_entire_pk_mode(pk_mode);//ÕâÑùÉèÖÃºó ·´»÷µÈÑ¡ÏîÎª0
+			temp_player.get_pk_community_mgr().set_entire_pk_mode(pk_mode);//è¿™æ ·è®¾ç½®å åå‡»ç­‰é€‰é¡¹ä¸º0
 		}
 	}
 

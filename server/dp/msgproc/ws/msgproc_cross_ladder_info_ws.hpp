@@ -1,10 +1,10 @@
 /********************************************************************
-created: 2019Äê5ÔÂ31ÈÕ
+created: 2019å¹´5æœˆ31æ—¥
 file base: msgproc_cross_ladder_info_ws
 file ext: h
 author: pengbiao
 
-purpose: ¿ç·şÌìÌİ
+purpose: è·¨æœå¤©æ¢¯
 *********************************************************************/
 
 #ifndef _DP_MSGPROC_CROSS_LADDER_INFO_WS_HPP_

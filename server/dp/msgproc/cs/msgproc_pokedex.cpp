@@ -1,5 +1,5 @@
 /********************************************************************
-created:	2016Äê8ÔÂ16ÈÕ 11:08:08
+created:	2016å¹´8æœˆ16æ—¥ 11:08:08
 file base:	msgproc_pokedex
 file ext:	cpp
 author:		XingLong

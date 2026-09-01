@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2020Äê6ÔÂ17ÈÕ
+created: 2020å¹´6æœˆ17æ—¥
 file base: pk_king_msg
 file ext: hpp
 author: zhaoyuming
@@ -22,9 +22,9 @@ namespace faith
 #pragma pack(push,1)
 	enum
 	{
-		e_msgindex_cs2ws_create_pk_king_combat_map = faith::e_msg_base_pk_king,				//·¢ËÍ´´½¨µØÍ¼ÇëÇó
-		e_msgindex_ws2cs_create_pk_king_combat_map_end,										//·µ»Ø´´½¨µØÍ¼½á¹û²¢´«»ØµØÍ¼Id
-		e_msgindex_cs2ws_send_is_pk_king,													//·¢ËÍ³ÉÎªPkÖ®ÍõÏûÏ¢
+		e_msgindex_cs2ws_create_pk_king_combat_map = faith::e_msg_base_pk_king,				//å‘é€åˆ›å»ºåœ°å›¾è¯·æ±‚
+		e_msgindex_ws2cs_create_pk_king_combat_map_end,										//è¿”å›åˆ›å»ºåœ°å›¾ç»“æœå¹¶ä¼ å›åœ°å›¾Id
+		e_msgindex_cs2ws_send_is_pk_king,													//å‘é€æˆä¸ºPkä¹‹ç‹æ¶ˆæ¯
 		e_msgindex_ws2ws_send_is_pk_king,
 		e_msgindex_cs2ws_send_break_line,
 		e_msgindex_ws2ws_break_login_transfer_map,

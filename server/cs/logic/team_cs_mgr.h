@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2017Äê7ÔÂ7ÈÕ
+created: 2017å¹´7æœˆ7æ—¥
 file base: team_cs_mgr
 file ext: h
 author: Kero
@@ -93,8 +93,8 @@ namespace faith
 		void						check_update_team_mission();
 		void						give_captain_reward();
 
-		void						check_raid_team_finish_state(); //Ò»ÌõÁú¿ÛÍê¸±±¾´ÎÊıÓÃ
-		void						check_one_stop_finish_flags(bool is_player_init = false); //Ò»ÌõÁúÍê³ÉÈÕ³£ ÌÖ·¥ÓÃ
+		void						check_raid_team_finish_state(); //ä¸€æ¡é¾™æ‰£å®Œå‰¯æœ¬æ¬¡æ•°ç”¨
+		void						check_one_stop_finish_flags(bool is_player_init = false); //ä¸€æ¡é¾™å®Œæˆæ—¥å¸¸ è®¨ä¼ç”¨
 		void						check_new_aim_for_one_stop(bool from_raid_map = true);
 		int32						get_self_one_stop_flags(int32 temp = -1);
 		void						get_self_adapt_team_aim(e_team_type& adapt_type, int32& adapt_sub_id);
@@ -136,7 +136,7 @@ namespace faith
 
 	private:
 		int32						m_unit_array_index;
-		bool						m_is_not_drop;	//ÉèÖÃ²»µôÂä
+		bool						m_is_not_drop;	//è®¾ç½®ä¸æ‰è½
 		s_player_team_info			m_unit_team_info;
 		int32						m_self_one_stop_flags;
 	};

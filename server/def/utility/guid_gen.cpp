@@ -30,7 +30,7 @@ namespace faith
 		memset(&GUID, 0, sizeof(GUID));
 		GUID.A = server_id;
 
-		//当前时间
+		//褰撳墠鏃堕棿
 		uint32 current_second = utility::time();
 
 		uint32 current_inc = 0;

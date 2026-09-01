@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2021Äê3ÔÂ24ÈÕ
+created: 2021å¹´3æœˆ24æ—¥
 file base: lucky_card_mgr
 file ext: hpp
 author: zhaoyuming
@@ -23,84 +23,84 @@ namespace faith
 	public:
 		void clear_data();
 
-		// ³õÊ¼»¯Êı¾İ
+		// åˆå§‹åŒ–æ•°æ®
 		void init_data();
 		
 		// Tick
 		void heart_tick(const int64 & new_time);
 
-		// ÉèÖÃ½ÇÉ«Ë÷Òı
+		// è®¾ç½®è§’è‰²ç´¢å¼•
 		void set_player_ptr(const int32 array_index);
 
-		// Load½áÊøÉèÖÃ½ÇÉ«ĞÅÏ¢
+		// Loadç»“æŸè®¾ç½®è§’è‰²ä¿¡æ¯
 		void load_lucky_card_end(s_time_limit_activity_info activity_info, bool is_init = false);
 		
-		// ÉèÖÃÊı¾İ¿â´æ´¢Êı¾İ
+		// è®¾ç½®æ•°æ®åº“å­˜å‚¨æ•°æ®
 		void set_limit_activiy_info();
 
-		// ÖÜÆÚË¢ĞÂ ÇåÀíÊı¾İ
+		// å‘¨æœŸåˆ·æ–° æ¸…ç†æ•°æ®
 		void refresh_recycle();
 
-		// ½øĞĞÏÂÒ»¸ö×´Ì¬
+		// è¿›è¡Œä¸‹ä¸€ä¸ªçŠ¶æ€
 		void next_state(int32 touch_index, int32 is_jump);
 
-		// ½øĞĞ¿ªÊ¼
+		// è¿›è¡Œå¼€å§‹
 		void game_begin();
 
-		// Ìø¹ı
+		// è·³è¿‡
 		void jump_game();
 		
-		// Í¨¹ıµã»÷½øĞĞÏÂÒ»²½
+		// é€šè¿‡ç‚¹å‡»è¿›è¡Œä¸‹ä¸€æ­¥
 		void game_next(int32 touch_index);
 
-		// »ñÈ¡ÊÇ·ñ³õÊ¼»¯½áÊø
+		// è·å–æ˜¯å¦åˆå§‹åŒ–ç»“æŸ
 		bool get_init_end() { return  m_init_end; };
 
-		// Ôö¼Ó½±Àø»ñÈ¡´ÎÊı
+		// å¢åŠ å¥–åŠ±è·å–æ¬¡æ•°
 		void add_award_get_num(int32 item_index, int32 add_num);
 
-		// ¼ì²é½±Àø»ñÈ¡´ÎÊıÈç¹û¶¼´óÓÚ1¾ÍÈ«¼õÈ¥1
+		// æ£€æŸ¥å¥–åŠ±è·å–æ¬¡æ•°å¦‚æœéƒ½å¤§äº1å°±å…¨å‡å»1
 		void check_award_get_num(int32 award_type);
 
-		// »ñÈ¡½±Àø»ñÈ¡´ÎÊı
+		// è·å–å¥–åŠ±è·å–æ¬¡æ•°
 		int32 get_award_get_num(int32 item_index);
 
-		// »ñÈ¡½±ÀøÊı×é
+		// è·å–å¥–åŠ±æ•°ç»„
 		std::vector<s_lucky_card_award_item_info> get_item_array_by_award_type(int32 award_type);
 
-		// ¸ù¾İ½±ÀøÊı×éËæ»ú½±Àø
+		// æ ¹æ®å¥–åŠ±æ•°ç»„éšæœºå¥–åŠ±
 		s_lucky_card_award_item_info get_award_by_item_list(std::vector<s_lucky_card_award_item_info>& item_list);
 
-		// ¸ù¾İ½±ÀøÊı×éËæ»ú½±Àø
+		// æ ¹æ®å¥–åŠ±æ•°ç»„éšæœºå¥–åŠ±
 		s_lucky_card_award_item_info get_award_by_item_index(int32 item_index);
 
-		// »ñÈ¡½±ÀøÀàĞÍ
+		// è·å–å¥–åŠ±ç±»å‹
 		int32 get_award_type_by_use_type(int32 use_type);
 
-		// Ë¢ĞÂÃâ·Ñ´ÎÊı
+		// åˆ·æ–°å…è´¹æ¬¡æ•°
 		void refresh_free_num();
 
-		// »ñÈ¡ÏÂÒ»¸öµã»÷½á¹û
+		// è·å–ä¸‹ä¸€ä¸ªç‚¹å‡»ç»“æœ
 		int32 get_next_touch_result();
 
-		// ·¢ËÍ½±Àø¹«¸æ
+		// å‘é€å¥–åŠ±å…¬å‘Š
 		void send_reward_notice(int32 item_id);
 
-		/**************************·¢ÏûÏ¢µ½¿Í»§¶Ë**************************************/
-		// ·¢ËÍÊı¾İĞÅÏ¢
+		/**************************å‘æ¶ˆæ¯åˆ°å®¢æˆ·ç«¯**************************************/
+		// å‘é€æ•°æ®ä¿¡æ¯
 		void send_lucky_card_to_client();
 
-		// ·¢ËÍµã»÷½á¹û
+		// å‘é€ç‚¹å‡»ç»“æœ
 		void send_operate_end(e_lucak_card_operate_end error_index);
 
-		// ·¢ËÍË¢ĞÂ¿¨ÅÆ×´Ì¬
+		// å‘é€åˆ·æ–°å¡ç‰ŒçŠ¶æ€
 		void send_lucky_card_info(int32 card_index);
 
 	private:
-		int32						m_array_index;				// Íæ¼ÒË÷Òı
-		bool						m_init_end;					// ÊÇ·ñ³õÊ¼»¯½áÊø
-		s_lucky_card_role_info		m_lucky_card_info;			// ½ÇÉ«»î¶¯ĞÅÏ¢
-		int64						m_clear_time;				// ÇåÀí¼ÆÊ±
+		int32						m_array_index;				// ç©å®¶ç´¢å¼•
+		bool						m_init_end;					// æ˜¯å¦åˆå§‹åŒ–ç»“æŸ
+		s_lucky_card_role_info		m_lucky_card_info;			// è§’è‰²æ´»åŠ¨ä¿¡æ¯
+		int64						m_clear_time;				// æ¸…ç†è®¡æ—¶
 
 
 	};

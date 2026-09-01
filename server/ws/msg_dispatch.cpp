@@ -85,13 +85,13 @@ namespace faith
 
 bool msg_dispatch::init()
 {
-	// ¼ÓÔØ×ÊÔ´
+	// åŠ è½½èµ„æº
 	res_load();
 
-	// ×¢²álua½Å±¾º¯Êı
+	// æ³¨å†Œluaè„šæœ¬å‡½æ•°
 	register_lua_handler();
 
-	// ×¢²áÏûÏ¢´¦Àíº¯Êı
+	// æ³¨å†Œæ¶ˆæ¯å¤„ç†å‡½æ•°
 	// internal message
 	message_manager::getInstance().register_handler(e_msg_index_req_login, boost::bind(&world_server::internal_req_login, &world_server::getInstance(), _1, _2, _3));
 	message_manager::getInstance().register_handler(e_msg_index_appserver_dataupdate, boost::bind(&world_server::internal_appserver_dataupdate, &world_server::getInstance(), _1, _2, _3));
@@ -231,7 +231,7 @@ bool msg_dispatch::init()
 	message_manager::getInstance().register_handler(e_msgindex_c2s_leave_legion,							c2ws_req_leave_legion);
 	message_manager::getInstance().register_handler(e_msgindex_c2s_dissolve_legion,						c2ws_req_disslove_legion);
 	message_manager::getInstance().register_handler(e_msgindex_c2s_get_legion_list,						c2ws_req_get_legion_list);
-	//message_manager::getInstance().register_handler(e_msgindex_c2s_apply_to_join_legion,					c2ws_req_apply_to_join_legion);Å²µ½CSÉÏÅĞ¶Ï½âËø
+	//message_manager::getInstance().register_handler(e_msgindex_c2s_apply_to_join_legion,					c2ws_req_apply_to_join_legion);æŒªåˆ°CSä¸Šåˆ¤æ–­è§£é”
 	message_manager::getInstance().register_handler(e_msgindex_c2s_get_legion_applicant_info_list,			c2ws_req_get_legion_applicant_list);
 	message_manager::getInstance().register_handler(e_msgindex_c2s_process_legion_apply,					c2ws_req_process_legion_apply);
 	message_manager::getInstance().register_handler(e_msg_index_cs2ws_convenient_join_legion,				cs2ws_req_convenient_join_legion);
@@ -283,7 +283,7 @@ bool msg_dispatch::init()
 	message_manager::getInstance().register_handler(e_msgindex_c2s_get_city_war_territory_info,			c2ws_req_get_city_war_terr_info);
 	message_manager::getInstance().register_handler(e_msgindex_c2s_get_city_war_rank_info,					c2ws_req_get_city_war_legion_rank_info);
 	message_manager::getInstance().register_handler(e_msgindex_c2s_set_territory_prior_maintain,			c2ws_req_set_territory_prior_maintain);
-	//message_manager::getInstance().register_handler(e_msgindex_c2s_invite_player_to_join_legion,			c2ws_req_invite_player_to_join_legion);Å²µ½CSÉÏÅĞ¶Ï±»ÑûÇëµÄ¶ÔÏóÊÇ·ñ½âËø¾üÍÅ¹¦ÄÜ
+	//message_manager::getInstance().register_handler(e_msgindex_c2s_invite_player_to_join_legion,			c2ws_req_invite_player_to_join_legion);æŒªåˆ°CSä¸Šåˆ¤æ–­è¢«é‚€è¯·çš„å¯¹è±¡æ˜¯å¦è§£é”å†›å›¢åŠŸèƒ½
 	message_manager::getInstance().register_handler(e_msgindex_c2s_draw_bonfire_daily_award,				c2ws_req_draw_bonfire_daily_reward);
 	message_manager::getInstance().register_handler(e_msgindex_c2s_legion_call_operate,					c2ws_req_legion_call_operate);
 	message_manager::getInstance().register_handler(e_msgindex_c2s_level_up_legion_skill,					c2ws_req_level_up_legion_skill);
@@ -470,7 +470,7 @@ bool msg_dispatch::init()
 
 	//server_time
 	message_manager::getInstance().register_handler(e_msgindex_dp2ws_load_server_attr_val_end,				dp2ws_load_server_attr_val_proc);
-	//gmÖ¸Áî×¨ÓÃ
+	//gmæŒ‡ä»¤ä¸“ç”¨
 	message_manager::getInstance().register_handler(e_msgindex_cs2ws_gm_order,								cs2ws_gm_order_proc);
 
 	//gain_treasure

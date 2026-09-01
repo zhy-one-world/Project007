@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê10ÔÂ25ÈÕ12:02:46
+created: 2016å¹´10æœˆ25æ—¥12:02:46
 file base: war_state
 file ext: h
 author: zhy
@@ -44,9 +44,9 @@ namespace faith
 		void										add_in_war(int32 unit_index, int32 war_time = -1);
 		void										clear_war_state();
 	private:
-		unit_war_time_vec							m_unit_war_time_vec;//Êı¾İÊı×é
-		int32										m_unit_war_time_vec_num;//Êı¾İÊı×éµÄÊıÁ¿
-		int32										m_unit_war_time_num;//Êı¾İÊı×éÓĞ¶àÉÙ±»Ê¹ÓÃ
+		unit_war_time_vec							m_unit_war_time_vec;//æ•°æ®æ•°ç»„
+		int32										m_unit_war_time_vec_num;//æ•°æ®æ•°ç»„çš„æ•°é‡
+		int32										m_unit_war_time_num;//æ•°æ®æ•°ç»„æœ‰å¤šå°‘è¢«ä½¿ç”¨
 		int32										m_unit_array_index;
 	};
 }

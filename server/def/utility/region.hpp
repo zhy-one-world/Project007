@@ -1,4 +1,4 @@
-#ifndef __REGION_H_
+﻿#ifndef __REGION_H_
 #define __REGION_H_
 
 #include "logic/type_def.hpp"
@@ -6,7 +6,6 @@
 
 namespace faith
 {
-    //����ӿ�
     class region
     {
     public:

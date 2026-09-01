@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2022Äê8ÔÂ22ÈÕ
+created: 2022å¹´8æœˆ22æ—¥
 file base: star_trip_mgr
 file ext: hpp
 author: zhaoyuming
@@ -21,50 +21,50 @@ namespace faith
 	public:
 		void clear_data();
 
-		// ³õÊ¼»¯Êı¾İ
+		// åˆå§‹åŒ–æ•°æ®
 		void init_data();
 		
 		// Tick
 		void heart_tick(const int64 & new_time);
 
-		// ÉèÖÃ½ÇÉ«Ë÷Òı
+		// è®¾ç½®è§’è‰²ç´¢å¼•
 		void set_player_ptr(const int32 array_index);
 
-		// Ë¢ĞÂÃ¿ÈÕÈÎÎñ
+		// åˆ·æ–°æ¯æ—¥ä»»åŠ¡
 		void refresh_today_mission();
 
-		// ÉèÖÃÊı¾İ¿â´æ´¢Êı¾İ
+		// è®¾ç½®æ•°æ®åº“å­˜å‚¨æ•°æ®
 		void set_limit_activiy_info();
 
-		// ³õÊ¼»¯»î¶¯Êı¾İ
+		// åˆå§‹åŒ–æ´»åŠ¨æ•°æ®
 		void init_activiy_info();
 
-		// ·¢ËÍËùÓĞ»î¶¯Êı¾İ
+		// å‘é€æ‰€æœ‰æ´»åŠ¨æ•°æ®
 		void send_all_activity_info_to_client();
 
 		// operate
 		void activity_operate(int32 operate_type, int32 parame1, int32 parame2);
 
-		// ¼ì²éÈÎÎñ
+		// æ£€æŸ¥ä»»åŠ¡
 		void target_mission(int32 mission_type, int32 parame1 = 0);
 
-		// ¼ì²éÈÎÎñ
+		// æ£€æŸ¥ä»»åŠ¡
 		void target_mission_by_mission_type(e_mission_end_type mission_type, int32 parame1 = 0, int32 parame2 = 0);
 
-		// ¶Ò»»ÎïÆ·
+		// å…‘æ¢ç‰©å“
 		int32 buy_item(int32 item_index);
 
-		// ÁìÈ¡ÈÎÎñ½±Àø
+		// é¢†å–ä»»åŠ¡å¥–åŠ±
 		int32 finish_mission(int32 missione_index);
 
 		bool get_is_init();
 	private:
-		int32										m_array_index;				// Íæ¼ÒË÷Òı
-		int32										m_target_mission_time;		// ÈÎÎñÍê³ÉÊ±¼ä
-		int32										m_need_tip;					// Ê¹ÓÃÓĞ¶Ò»»ÌáÊ¾
+		int32										m_array_index;				// ç©å®¶ç´¢å¼•
+		int32										m_target_mission_time;		// ä»»åŠ¡å®Œæˆæ—¶é—´
+		int32										m_need_tip;					// ä½¿ç”¨æœ‰å…‘æ¢æç¤º
 		bool										m_init;
-		std::vector<s_star_trip_goods_info>			m_goods_list;				// ÉÌÆ·¶Ò»»ÁĞ±í
-		std::vector<s_star_trip_mission_info>		m_mission_list;				// ÈÎÎñÁĞ±í
+		std::vector<s_star_trip_goods_info>			m_goods_list;				// å•†å“å…‘æ¢åˆ—è¡¨
+		std::vector<s_star_trip_mission_info>		m_mission_list;				// ä»»åŠ¡åˆ—è¡¨
 	};
 
 }

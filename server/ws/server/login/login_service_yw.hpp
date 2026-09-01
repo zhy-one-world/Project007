@@ -1,4 +1,4 @@
-/*@@
+ï»¿/*@@
 
 	Copyright (c) Beijing Second Laboratory Game Studio. All rights reserved. 
 	
@@ -15,9 +15,7 @@
 
 @@*/
 //////////////////////////////////////////////////////////////////////////
-//
 //	File Include
-//
 //////////////////////////////////////////////////////////////////////////
 #ifndef _LOGIN_SERVICE_YW_HPP_
 #define _LOGIN_SERVICE_YW_HPP_
@@ -29,17 +27,13 @@
 #include "http/http_access_mgr.hpp"
 
 //////////////////////////////////////////////////////////////////////////
-//
 //	Class Declare
-//
 //////////////////////////////////////////////////////////////////////////
 
 namespace faith
 {
 	//////////////////////////////////////////////////////////////////////////
-	//
 	//	Class Declare
-	//
 	//////////////////////////////////////////////////////////////////////////
 
 	class login_service_yw : public login_service, public singleton<login_service_yw>
@@ -68,18 +62,18 @@ namespace faith
 			const xstring& sdk_version,
 			const xstring& lang,
 			const xstring& sing);
-		xstring								create_sign(i16 param_num, ...);															// ¸ù¾İµÚÈı·½·şÎñ¶¨ÖÆÇ©Ãû,¿É±ä²Î¶¼ÊÇxstringÀàĞÍ
-		void								create_http_head_list(std::vector<xstring>& head_list, i16 param_num, ...);				// ¸ù¾İµÚÈı·½·şÎñ¶¨ÖÆÇëÇóÍ·,¿É±ä²Î¶¼ÊÇxstringÀàĞÍ
+		xstring								create_sign(i16 param_num, ...);															// æ ¹æ®ç¬¬ä¸‰æ–¹æœåŠ¡å®šåˆ¶ç­¾å,å¯å˜å‚éƒ½æ˜¯xstringç±»å‹
+		void								create_http_head_list(std::vector<xstring>& head_list, i16 param_num, ...);				// æ ¹æ®ç¬¬ä¸‰æ–¹æœåŠ¡å®šåˆ¶è¯·æ±‚å¤´,å¯å˜å‚éƒ½æ˜¯xstringç±»å‹
 
 		void								save_account(const xstring& account, const xstring& server_msg, const s_client_uid client_uid, int64* ban_role_array, int64* ban_chat_array);
 	private:
 		int32								m_time_count;
 
-		//µÇÂ¼½áÊøºóÔÙÇåÀíµÄÁÙÊ±Êı¾İ£¬ÏÖ½×¶Î£¬logÓÃ
+		//ç™»å½•ç»“æŸåå†æ¸…ç†çš„ä¸´æ—¶æ•°æ®ï¼Œç°é˜¶æ®µï¼Œlogç”¨
 		//client_data_map						m_temp_datas;
 
 		/************************************************************************/
-		/*							  ·¢ËÍlog						       	    */
+		/*							  å‘é€log						       	    */
 		/************************************************************************/
 	public:
 		void									ls2dp_save_server_log(const xstring& log_sql_name, const xstring& sql_param_string);

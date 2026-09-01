@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2016Äê10ÔÂ09
+	created:	2016å¹´10æœˆ09
 	file base:	msgproc_welfare
 	file ext:	hpp
 	author:		lxy
@@ -13,7 +13,7 @@
 
 namespace faith
 {
-	//½ÇÉ«¸£Àû
+	//è§’è‰²ç¦åˆ©
 	void cs2dp_req_load_char_welfare(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index);
 	void cs2dp_req_load_char_welfare_end(db_result_type result, uint32 connindex, const guid_64& role_guid, const int32& unit_array_index);
 	void cs2dp_req_save_char_welfare(uint32 connindex, const void* data_ptr, size_t data_len);

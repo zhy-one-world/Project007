@@ -8,8 +8,8 @@ namespace faith
 	class player;
 	enum e_error_code;
 
-	const int32 g_flip_box_count = 3;//开宝箱数量
-	const int32 g_flip_box_win_count = 3;//开几个宝箱获胜
+	const int32 g_flip_box_count = 3;//寮�瀹濈鏁伴噺
+	const int32 g_flip_box_win_count = 3;//寮�鍑犱釜瀹濈鑾疯儨
 
 	class beat_hp_system
 	{

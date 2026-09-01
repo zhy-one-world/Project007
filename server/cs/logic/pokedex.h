@@ -21,17 +21,17 @@ namespace faith
 		cpokedex();
 		~cpokedex();
 	public: 
-		void									clear_data();																		 //Çå¿ÕÍ¼¼øĞÅÏ¢
+		void									clear_data();																		 //æ¸…ç©ºå›¾é‰´ä¿¡æ¯
 		
 	public:
 		int32									get_template_id() { return m_pokedex_data.data_ary[EPokedexInfo_template_id]; }
-		void									set_pokedex_info(const s_pokedex_info&  pokedex_data);								//ÉèÖÃÍ¼¼øµÄÈ«²¿ÊµÀıĞÅÏ¢
+		void									set_pokedex_info(const s_pokedex_info&  pokedex_data);								//è®¾ç½®å›¾é‰´çš„å…¨éƒ¨å®ä¾‹ä¿¡æ¯
 		void									set_pokedex_template_id(const int32&  pokedex_template_id);
 		s_pokedex_info&							get_data_info() { return m_pokedex_data; }
-		int32									get_data_info(int32 eIndex);														//µÃµ½Ä³ÖÖ¸ö¾«ÆÇµÄÊıÁ¿	
+		int32									get_data_info(int32 eIndex);														//å¾—åˆ°æŸç§ä¸ªç²¾é­„çš„æ•°é‡	
 		void									set_data_info(e_pokedex_Info eIndex, int32 iValue);
 		int32									get_psyche_num(int32 eIndex);
-		void                                    add_psyche_num(int32 eIndex, int32 iValue);											//Ìí¼Ó¾«ÆÇÊıÁ¿
+		void                                    add_psyche_num(int32 eIndex, int32 iValue);											//æ·»åŠ ç²¾é­„æ•°é‡
 		PokedexTemplate*						get_pokedex_info_ptr();
 
 		bool									is_single_target_active(int32 index);
@@ -39,13 +39,13 @@ namespace faith
 		bool									is_all_active();
 		bool									is_psyche_submit_finish(int32 psyche_item_template_id);
 
-		int32									get_active_num();//µÃµ½¼¤»îÊıÁ¿
+		int32									get_active_num();//å¾—åˆ°æ¿€æ´»æ•°é‡
 
 		bool									is_active();
 
 	private:
-		s_pokedex_info							m_pokedex_data;																					//Í¼¼øÊµÀıĞÅÏ¢
-		PokedexTemplate*						m_pokedex_info_ptr;																				//Í¼¼øÄ£°åÖ¸Õë
+		s_pokedex_info							m_pokedex_data;																					//å›¾é‰´å®ä¾‹ä¿¡æ¯
+		PokedexTemplate*						m_pokedex_info_ptr;																				//å›¾é‰´æ¨¡æ¿æŒ‡é’ˆ
 	};
 }
 #endif

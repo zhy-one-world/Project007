@@ -37,25 +37,25 @@ namespace faith
 	{
 		m_is_end = false;
 		m_data_use = false;
-		m_sender_index = 0;					//·¢ËÍÕß
-		m_owner_index = 0;					//ÓµÓĞÕß
-		m_buff_guid.clear_data();					//buff id (Í¬Ò»playerÉÏ±êÊ¶²»Í¬buff)
+		m_sender_index = 0;					//å‘é€è€…
+		m_owner_index = 0;					//æ‹¥æœ‰è€…
+		m_buff_guid.clear_data();					//buff id (åŒä¸€playerä¸Šæ ‡è¯†ä¸åŒbuff)
 		m_life_time = 0;
-		m_buff_data.Clear();					//buffÊı¾İ
+		m_buff_data.Clear();					//buffæ•°æ®
 		for (int32 i = 0; i < EBuffInfo_max; ++i)
 		{
 			m_buff_data.add_data_ary(0);
 		}
-		m_buff_template_ptr = nullptr;			//Ä£°åÖ¸Õë
-		m_begin_action.clear();					//¿ªÊ¼µÄaction
+		m_buff_template_ptr = nullptr;			//æ¨¡æ¿æŒ‡é’ˆ
+		m_begin_action.clear();					//å¼€å§‹çš„action
 		m_begin_action_num = 0;
-		m_cyc_effect.clear();					//Ñ­»·µÄaction
+		m_cyc_effect.clear();					//å¾ªç¯çš„action
 		m_cyc_action_num = 0;
-		m_end_action.clear();					//½áÊøaction
+		m_end_action.clear();					//ç»“æŸaction
 		m_end_action_num = 0;
-		m_effect_action.clear();				//³ÖĞøaction
+		m_effect_action.clear();				//æŒç»­action
 		m_effect_action_num = 0;
-		m_event_action.clear();					//ÊÂ¼şaction
+		m_event_action.clear();					//äº‹ä»¶action
 		m_event_action_num = 0;
 		m_last_action_tick = 0;
 		m_jump_tick = 0;
@@ -106,11 +106,11 @@ namespace faith
 	void buff_item::trigger_event(int32 target_index, bool is_add)
 	{
 		if (is_add)
-		{//´¥·¢×ö¸ö±ê¼Ç
+		{//è§¦å‘åšä¸ªæ ‡è®°
 			m_trigger_event = true;
 		}
 		if (m_trigger_event == false || is_add == false)
-		{//Èç¹ûÃ»ÓĞ´¥·¢¹ı£¬¾Í²»×öÉ¾³ı²Ù×÷
+		{//å¦‚æœæ²¡æœ‰è§¦å‘è¿‡ï¼Œå°±ä¸åšåˆ é™¤æ“ä½œ
 			return;
 		}
 		m_env.pbuff = this;
@@ -202,7 +202,7 @@ namespace faith
 				if (m_is_ignore_att
 					&& buff_action_ptr->Action == "modatt")
 				{
-					//Õâ¸öBuffÔÚ´´½¨Ê±ÉèÖÃÁË¡°ºöÂÔÊôĞÔ¡±²¢ÇÒ´ËAction¾ÍÊÇÒª¸ü¸ÄÊôĞÔÊ±£¬ºöÂÔ´Ë²Ù×÷
+					//è¿™ä¸ªBuffåœ¨åˆ›å»ºæ—¶è®¾ç½®äº†â€œå¿½ç•¥å±æ€§â€å¹¶ä¸”æ­¤Actionå°±æ˜¯è¦æ›´æ”¹å±æ€§æ—¶ï¼Œå¿½ç•¥æ­¤æ“ä½œ
 				}
 				else
 				{
@@ -226,7 +226,7 @@ namespace faith
 				if (m_is_ignore_att
 					&& buff_action_ptr->Action == "modatt")
 				{
-					//Õâ¸öBuffÔÚ´´½¨Ê±ÉèÖÃÁË¡°ºöÂÔÊôĞÔ¡±²¢ÇÒ´ËAction¾ÍÊÇÒª¸ü¸ÄÊôĞÔÊ±£¬ºöÂÔ´Ë²Ù×÷
+					//è¿™ä¸ªBuffåœ¨åˆ›å»ºæ—¶è®¾ç½®äº†â€œå¿½ç•¥å±æ€§â€å¹¶ä¸”æ­¤Actionå°±æ˜¯è¦æ›´æ”¹å±æ€§æ—¶ï¼Œå¿½ç•¥æ­¤æ“ä½œ
 				}
 				else
 				{
@@ -264,7 +264,7 @@ namespace faith
 				if (m_is_ignore_att
 					&& buff_action_ptr->Action == "modatt")
 				{
-					//Õâ¸öBuffÔÚ´´½¨Ê±ÉèÖÃÁË¡°ºöÂÔÊôĞÔ¡±²¢ÇÒ´ËAction¾ÍÊÇÒª¸ü¸ÄÊôĞÔÊ±£¬ºöÂÔ´Ë²Ù×÷
+					//è¿™ä¸ªBuffåœ¨åˆ›å»ºæ—¶è®¾ç½®äº†â€œå¿½ç•¥å±æ€§â€å¹¶ä¸”æ­¤Actionå°±æ˜¯è¦æ›´æ”¹å±æ€§æ—¶ï¼Œå¿½ç•¥æ­¤æ“ä½œ
 				}
 				else
 				{
@@ -288,7 +288,7 @@ namespace faith
 				if (m_is_ignore_att
 					&& buff_action_ptr->Action == "modatt")
 				{
-					//Õâ¸öBuffÔÚ´´½¨Ê±ÉèÖÃÁË¡°ºöÂÔÊôĞÔ¡±²¢ÇÒ´ËAction¾ÍÊÇÒª¸ü¸ÄÊôĞÔÊ±£¬ºöÂÔ´Ë²Ù×÷
+					//è¿™ä¸ªBuffåœ¨åˆ›å»ºæ—¶è®¾ç½®äº†â€œå¿½ç•¥å±æ€§â€å¹¶ä¸”æ­¤Actionå°±æ˜¯è¦æ›´æ”¹å±æ€§æ—¶ï¼Œå¿½ç•¥æ­¤æ“ä½œ
 				}
 				else
 				{
@@ -311,7 +311,7 @@ namespace faith
 				if (m_is_ignore_att
 					&& buff_action_ptr->Action == "modatt")
 				{
-					//Õâ¸öBuffÔÚ´´½¨Ê±ÉèÖÃÁË¡°ºöÂÔÊôĞÔ¡±²¢ÇÒ´ËAction¾ÍÊÇÒª¸ü¸ÄÊôĞÔÊ±£¬ºöÂÔ´Ë²Ù×÷
+					//è¿™ä¸ªBuffåœ¨åˆ›å»ºæ—¶è®¾ç½®äº†â€œå¿½ç•¥å±æ€§â€å¹¶ä¸”æ­¤Actionå°±æ˜¯è¦æ›´æ”¹å±æ€§æ—¶ï¼Œå¿½ç•¥æ­¤æ“ä½œ
 				}
 				else
 				{
@@ -687,7 +687,7 @@ namespace faith
 					|| m_buff_template_ptr->Series == 90002
 					|| m_buff_template_ptr->Series == 90003
 					|| recver_unit.get_cur_map_type() == e_map_type_attack_city)
-				{//×øÆïºÍ³á°òÏà¹ØµÄbuff»¹ÊÇÒªÈ«²¿¹ã²¥
+				{//åéª‘å’Œç¿…è†€ç›¸å…³çš„buffè¿˜æ˜¯è¦å…¨éƒ¨å¹¿æ’­
 					recver_unit.send_message_to_aoi(&badd, e_msgindex_s2c_buff_operation, true, false);
 				}
 				else
@@ -1101,7 +1101,7 @@ namespace faith
 					}
 				}
 			}
-			//ÓÖ²»ÄÜµşÓÖ²»ÄÜĞøµÄ
+			//åˆä¸èƒ½å åˆä¸èƒ½ç»­çš„
 			return e_buff_add_judge_has_it;
 		}
 		else
@@ -1109,11 +1109,11 @@ namespace faith
 			if (buff_template_ptr->DiffLevelCover)
 			{
 				if (m_buff_template_ptr->Level >= buff_template_ptr->Level)
-				{//µ±Ç°µÄ±ÈĞÂµÄĞ¡£¬»¹²»ÈÃ¼Ó£¬¾ÍËµ ÒÑÓĞÁË
+				{//å½“å‰çš„æ¯”æ–°çš„å°ï¼Œè¿˜ä¸è®©åŠ ï¼Œå°±è¯´ å·²æœ‰äº†
 					return e_buff_add_judge_has_it;
 				}
 				else
-				{//µ±Ç°µÄ±ÈĞÂµÄ´ó£¬¾ÍËµ ÏÖÔÚµÄ¸üŒÅ
+				{//å½“å‰çš„æ¯”æ–°çš„å¤§ï¼Œå°±è¯´ ç°åœ¨çš„æ›´å±Œ
 					return e_buff_add_judge_can_cover;
 				}
 			}

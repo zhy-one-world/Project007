@@ -7,20 +7,20 @@ namespace faith
 {
 	struct cs_map_component
 	{
-		std::set<int64>	m_role_list;//µØÍ¼ÄÚÈËÎïÁĞ±í(ÓÃÓÚÅĞ¶ÏµØÍ¼ÊÇ·ñĞèÒªÏú»Ù)ÈËÎï½ø³ö»áÏû³ı
-		std::set<int64>	m_enter_role_list;//µØÍ¼ÄÚÈËÎïÁĞ±í(ÓÃÓÚÅĞ¶ÏÊÇ·ñ¿ÉÒÔÖØÁ¬½øÈë)ÈËÎï½ø³ö²»»áÏû³ı
-		guid_64 m_map_guid;//µØÍ¼guid
-		int32 m_line_id;//µØÍ¼Ïßid
-		int32 m_cs_uid;//µØÍ¼ÔÚÄÄ¸ö·şÎñÆ÷ÉÏ
-		int32 m_map_template_id;//µØÍ¼Ä£°åid
-		MapTemplate* m_map_template_ptr;//µØÍ¼Ä£°åÖ¸Õë
-		e_map_state m_map_state;//µØÍ¼ÏÖÔÚËù´¦µÄ×´Ì¬
-		int64 m_begin_time;//µØÍ¼¿ªÆôµÄÊ±¼ä
-		int32 m_is_double_line;//¿ªÆôË«±¶
+		std::set<int64>	m_role_list;//åœ°å›¾å†…äººç‰©åˆ—è¡¨(ç”¨äºåˆ¤æ–­åœ°å›¾æ˜¯å¦éœ€è¦é”€æ¯)äººç‰©è¿›å‡ºä¼šæ¶ˆé™¤
+		std::set<int64>	m_enter_role_list;//åœ°å›¾å†…äººç‰©åˆ—è¡¨(ç”¨äºåˆ¤æ–­æ˜¯å¦å¯ä»¥é‡è¿è¿›å…¥)äººç‰©è¿›å‡ºä¸ä¼šæ¶ˆé™¤
+		guid_64 m_map_guid;//åœ°å›¾guid
+		int32 m_line_id;//åœ°å›¾çº¿id
+		int32 m_cs_uid;//åœ°å›¾åœ¨å“ªä¸ªæœåŠ¡å™¨ä¸Š
+		int32 m_map_template_id;//åœ°å›¾æ¨¡æ¿id
+		MapTemplate* m_map_template_ptr;//åœ°å›¾æ¨¡æ¿æŒ‡é’ˆ
+		e_map_state m_map_state;//åœ°å›¾ç°åœ¨æ‰€å¤„çš„çŠ¶æ€
+		int64 m_begin_time;//åœ°å›¾å¼€å¯çš„æ—¶é—´
+		int32 m_is_double_line;//å¼€å¯åŒå€
 		guid_64 m_own_team_guid;
 	};
 	struct cs_map_tick_component
 	{
-		int64 m_empty_end_time;//µØÍ¼ÎŞÍæ¼Ò¹Ø±ÕµÄÊ±¼ä
+		int64 m_empty_end_time;//åœ°å›¾æ— ç©å®¶å…³é—­çš„æ—¶é—´
 	};
 }

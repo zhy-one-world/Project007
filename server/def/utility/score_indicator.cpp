@@ -207,7 +207,7 @@ namespace faith
 		}
 	}
 
-	// »ñÈ¡ÉËº¦¼ÇÂ¼ÖĞÉËº¦Öµ×î´óµÄÒ»Ìõ¼ÇÂ¼,Èç¹ûÃ»ÓĞ¼ÇÂ¼Ôò·µ»Ønullptr
+	// è·å–ä¼¤å®³è®°å½•ä¸­ä¼¤å®³å€¼æœ€å¤§çš„ä¸€æ¡è®°å½•,å¦‚æœæ²¡æœ‰è®°å½•åˆ™è¿”å›nullptr
 	score_record* score_indicator::get_highest_score_record()
 	{
 		int32 temp_len = m_score_record_list.size();

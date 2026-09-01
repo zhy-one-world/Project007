@@ -72,7 +72,7 @@ namespace faith
 
 	bool	relation_set::del_relation(const guid_64& relation_guid)
 	{
-		//关系是否合法
+		//鍏崇郴鏄惁鍚堟硶
 		if (!relation_guid.is_valid())
 		{
 			return false;

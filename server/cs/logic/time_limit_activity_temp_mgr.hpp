@@ -25,10 +25,10 @@ namespace faith
 		void														heart_tick(const int64& time_new);
 		void														clear_data();
 
-		const s_time_limit_activity_temp&							get_time_limit_act_with_id(int32 temp_id);//¸ù¾İ±íID»ñµÃÖ÷±í
-		const s_time_limit_activity_branch_temp&					get_time_limit_act_branch_with_id(int32 role_id);//¸ù¾İ×Ó±íÎ¨Ò»id»ñµÃ×Ó±í
+		const s_time_limit_activity_temp&							get_time_limit_act_with_id(int32 temp_id);//æ ¹æ®è¡¨IDè·å¾—ä¸»è¡¨
+		const s_time_limit_activity_branch_temp&					get_time_limit_act_branch_with_id(int32 role_id);//æ ¹æ®å­è¡¨å”¯ä¸€idè·å¾—å­è¡¨
 
-		int32														get_new_limit_act_with_act_type(int32 activity_type);//¸ù¾İ»î¶¯ÀàĞÍÈ¡µÃ×îĞÂÖ÷±í
+		int32														get_new_limit_act_with_act_type(int32 activity_type);//æ ¹æ®æ´»åŠ¨ç±»å‹å–å¾—æœ€æ–°ä¸»è¡¨
 
 		const std::map<int32, s_time_limit_activity_temp>&			get_temp_map() { return m_time_limit_activity_temp_map; };
 		const std::map<int32, s_time_limit_activity_branch_temp>&	get_branch_temp_map() { return m_time_limit_activity_branch_temp_map; };
@@ -41,8 +41,8 @@ namespace faith
 	private:
 		explicit time_limit_activity_temp_mgr();
 
-		void														parse_char_temp(s_time_limit_activity_temp& temp_info, const s_time_limit_activity_temp_db& temp_dp_info);//DP±í×ª³£ÓÃ±í
-		void														parse_char_branch_temp(s_time_limit_activity_branch_temp& temp_info, const s_time_limit_activity_branch_temp_db& temp_dp_info);//DP±í×ª³£ÓÃ±í		
+		void														parse_char_temp(s_time_limit_activity_temp& temp_info, const s_time_limit_activity_temp_db& temp_dp_info);//DPè¡¨è½¬å¸¸ç”¨è¡¨
+		void														parse_char_branch_temp(s_time_limit_activity_branch_temp& temp_info, const s_time_limit_activity_branch_temp_db& temp_dp_info);//DPè¡¨è½¬å¸¸ç”¨è¡¨		
 
 		std::map<int32, s_time_limit_activity_temp>					m_time_limit_activity_temp_map;
 		std::map<int32, s_time_limit_activity_temp>					m_temporary_time_limit_activity_temp_map;

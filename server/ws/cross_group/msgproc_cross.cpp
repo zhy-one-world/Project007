@@ -1,4 +1,4 @@
-/*@@
+ï»¿/*@@
 
 	Copyright (c) Beijing Second Laboratory Game Studio. All rights reserved. 
 	
@@ -16,9 +16,7 @@
 @@*/
 
 //////////////////////////////////////////////////////////////////////////
-//
 //	File Include
-//
 //////////////////////////////////////////////////////////////////////////
 #include "msgproc_cross.hpp"
 #include <gate_msg.hpp>
@@ -457,7 +455,7 @@ namespace faith
 					world_server::getInstance().send_begin_cross_gm_to_cs((e_need_server_cross)i);
 				}
 				world_server::getInstance().save_gm_common_to_db();
-				if (!world_server::getInstance().is_loading_flag_finish(e_ws_flag_gm_common))//·ÀÖ¹¶ş´Î¼ÓÔØµ¼ÖÂµÄÎÊÌâ
+				if (!world_server::getInstance().is_loading_flag_finish(e_ws_flag_gm_common))//é˜²æ­¢äºŒæ¬¡åŠ è½½å¯¼è‡´çš„é—®é¢˜
 				{
 					world_server::getInstance().set_ws_loading_flag(e_ws_flag_gm_common);
 					legion_ws_city_war& city_war_mgr = legion_ws_mgr::get_instance().get_legion_city_war();
@@ -748,7 +746,7 @@ namespace faith
 				}
 				else if (cross_info_ptr->notice_type == e_overload_notice_type_world_begin)
 				{
-					int32 notice_id = 93000408;//¿ç·şÊÀ½ç°ÔÖ÷·Ö×éÍê±Ï¹«¸æ
+					int32 notice_id = 93000408;//è·¨æœä¸–ç•Œéœ¸ä¸»åˆ†ç»„å®Œæ¯•å…¬å‘Š
 					std::vector<std::string> vec_str_up_item;
 					vec_str_up_item.push_back(template_manager::get_instance().get_str_id_by_notice_id(notice_id));
 					std::string notice_str = init_unit::implode(vec_str_up_item);
@@ -757,7 +755,7 @@ namespace faith
 				}
 				else if (cross_info_ptr->notice_type == e_overload_notice_type_cross_city_war_begin_world)
 				{
-					int32 notice_id = 93000413;//¿ç·şÊÀ½ç°ÔÖ÷¿ªÆô¹«¸æ
+					int32 notice_id = 93000413;//è·¨æœä¸–ç•Œéœ¸ä¸»å¼€å¯å…¬å‘Š
 					std::vector<std::string> vec_str_up_item;
 					vec_str_up_item.push_back(template_manager::get_instance().get_str_id_by_notice_id(notice_id));
 					std::string notice_str = init_unit::implode(vec_str_up_item);
@@ -1420,9 +1418,9 @@ namespace faith
 					attack_city_ws_mgr::get_instance().change_legion_name(msg->legion_guid, msg->legion_name);
 				}
 
-				//¸Ä±äÅÅĞĞ°ñ¾üÍÅÃû
+				//æ”¹å˜æ’è¡Œæ¦œå†›å›¢å
 				ranking_mgr_ws::set_gate_ranking_legion_name(msg->legion_guid, msg->legion_name);
-				//Ïòcs·¢ËÍ¸ü¸Ä¾üÍÅÃûÏûÏ¢
+				//å‘cså‘é€æ›´æ”¹å†›å›¢åæ¶ˆæ¯
 				ws2cs_change_gate_legion_name _msg;
 				_msg.legion_guid = msg->legion_guid;
 				_msg.set_legion_name(msg->legion_name);
@@ -1576,7 +1574,7 @@ namespace faith
 				error_guid.clear_data();
 				if (msg_ptr->team_guid.is_valid())
 				{
-					//¶àÈËÆ¥Åä´¦Àí
+					//å¤šäººåŒ¹é…å¤„ç†
 					std::vector<guid_64> role_guid_list;
 					for (int32 i = 0; i < ELEMENT_WAR_PLAY_NUM; ++i)
 					{
@@ -1602,7 +1600,7 @@ namespace faith
 				}
 				else
 				{
-					//µ¥ÈËÆ¥Åä´¦Àí
+					//å•äººåŒ¹é…å¤„ç†
 					if (msg_ptr->role_guid_list[0].is_valid())
 					{
 						ret = element_war_ws_mgr::get_instance().single_sign_up(msg_ptr->role_guid_list[0]);
@@ -1613,7 +1611,7 @@ namespace faith
 					msg.set_guid_b(msg_ptr->role_guid_list[0].B);
 					cross::send_msg_to_ws(msg_ptr->role_guid_list[0], msg_ptr->server_id, e_mgsindex_s2c_element_war_send_sign_up_end, &msg);
 				}
-				//ÉèÖÃ·şÎñÆ÷ĞÅÏ¢
+				//è®¾ç½®æœåŠ¡å™¨ä¿¡æ¯
 				if (ret == e_element_war_sign_up_success)
 				{
 					for (int32 i = 0; i < ELEMENT_WAR_PLAY_NUM; ++i)

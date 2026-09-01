@@ -1,10 +1,10 @@
 /********************************************************************
-created: 2019Äê10ÔÂ15ÈÕ
+created: 2019å¹´10æœˆ15æ—¥
 file base: legion_dance_mgr
 file ext: cpp
-author: ÕÔÓñÃ÷
+author: èµµç‰æ˜
 
-purpose: ¾üÍÅ´«¹¦
+purpose: å†›å›¢ä¼ åŠŸ
 *********************************************************************/
 
 
@@ -175,7 +175,7 @@ namespace faith
 			return;
 		}
 		
-		//·¢ËÍÑûÇë·¢ËÍ³É¹¦ÌáÊ¾
+		//å‘é€é‚€è¯·å‘é€æˆåŠŸæç¤º
 		std::vector<std::string> vec_str_time;
 		vec_str_time.push_back(template_manager::get_instance().get_str_by_string_template_id(90305442));
 		std::string role_name = target_ref.get_name();
@@ -183,7 +183,7 @@ namespace faith
 		std::string notice_str = init_unit::implode(vec_str_time);
 		player_ref.send_notice(notice_str);
 
-		//·¢ËÍÑûÇë
+		//å‘é€é‚€è¯·
 		legion_proto_be_invite_legion_dance msg;
 		msg.set_play_guid_a(player_ref.get_unit_guid().A);
 		msg.set_play_guid_b(player_ref.get_unit_guid().B);

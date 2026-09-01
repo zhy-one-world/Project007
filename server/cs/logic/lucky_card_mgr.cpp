@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2021Äê3ÔÂ24ÈÕ
+created: 2021å¹´3æœˆ24æ—¥
 file base: lucky_card_mgr
 file ext: cpp
 author: zhaoyuming
@@ -59,7 +59,7 @@ namespace faith
 			return;
 		}
 
-		//±íÊ¾³õÊ¼»¯½áÊø
+		//è¡¨ç¤ºåˆå§‹åŒ–ç»“æŸ
 		m_init_end = true;
 	}
 
@@ -182,7 +182,7 @@ namespace faith
 		{
 		case e_lucak_card_game_state_type_begin:
 		{
-			//·şÎñÆ÷×öÒ»ÏÂÀ¹½Ø·ÀÖ¹¿Í»§¶Ë¶à´Îµã»÷·­ÅÆµ¼ÖÂ×´Ì¬´íÂÒ
+			//æœåŠ¡å™¨åšä¸€ä¸‹æ‹¦æˆªé˜²æ­¢å®¢æˆ·ç«¯å¤šæ¬¡ç‚¹å‡»ç¿»ç‰Œå¯¼è‡´çŠ¶æ€é”™ä¹±
 			if (touch_index != 0)
 			{
 				return;
@@ -241,7 +241,7 @@ namespace faith
 
 		bool is_can = false;
 		bool is_use_free = false;
-		//¼ì²éÊÇ·ñÊÇÃâ·Ñ´ÎÊı
+		//æ£€æŸ¥æ˜¯å¦æ˜¯å…è´¹æ¬¡æ•°
 		if (m_lucky_card_info.is_have_free > 0)
 		{
 			is_use_free = true;
@@ -249,7 +249,7 @@ namespace faith
 		}
 		else
 		{
-			// ¼ì²éÏûºÄÎïÆ·ÊÇ·ñ³ä×ã
+			// æ£€æŸ¥æ¶ˆè€—ç‰©å“æ˜¯å¦å……è¶³
 			int32 item_id = branch_template_ptr.Condition[0];
 			int32 item_num = branch_template_ptr.Condition[1];
 			if (item_system::can_cost_item(&player_ref, e_bag_type_bag, item_id, item_num))
@@ -265,7 +265,7 @@ namespace faith
 			}
 		}
 
-		// ÉèÖÃÏû·ÑÀàĞÍ
+		// è®¾ç½®æ¶ˆè´¹ç±»å‹
 		int32 use_type = e_lucak_card_use_type_normal;
 		if (is_use_free)
 		{
@@ -283,7 +283,7 @@ namespace faith
 			m_lucky_card_info.no_get_num += 1;
 		}
 
-		// ÉèÖÃ½±ÀøÀàĞÍ
+		// è®¾ç½®å¥–åŠ±ç±»å‹
 		int32 award_type = get_award_type_by_use_type(use_type);
 		m_lucky_card_info.end_info = award_type;
 		if (award_type == e_lucak_card_award_type_special || award_type == e_lucak_card_award_type_first)
@@ -291,28 +291,28 @@ namespace faith
 			m_lucky_card_info.no_get_num = 0;
 		}
 
-		// ¸ù¾İ½±ÀøÀàĞÍ»ñÈ¡½±ÀøÁĞ±í
+		// æ ¹æ®å¥–åŠ±ç±»å‹è·å–å¥–åŠ±åˆ—è¡¨
 		std::vector<s_lucky_card_award_item_info> item_list = get_item_array_by_award_type(award_type);
 	
-		// ¸ù¾İ½±ÀøÁĞ±íËæ»ú³ö×îÖÕ½±Æ·
+		// æ ¹æ®å¥–åŠ±åˆ—è¡¨éšæœºå‡ºæœ€ç»ˆå¥–å“
 		s_lucky_card_award_item_info item_info = get_award_by_item_list(item_list);
 	
-		// ¼ÇÂ¼×îÖÕ½±Àø
+		// è®°å½•æœ€ç»ˆå¥–åŠ±
 		m_lucky_card_info.end_item_id = item_info.get_item_info(e_lucak_card_item_info_item_index);
 	
-		// Ôö¼Ó½±ÀøÁìÈ¡´ÎÊı
+		// å¢åŠ å¥–åŠ±é¢†å–æ¬¡æ•°
 		add_award_get_num(item_info.get_item_info(e_lucak_card_item_info_item_index), 1);
 		
-		// ¼ì²é½±ÀøÁìÈ¡´ÎÊı
+		// æ£€æŸ¥å¥–åŠ±é¢†å–æ¬¡æ•°
 		check_award_get_num(award_type);
 		
-		// ÉèÖÃ½ø¶È×´Ì¬
+		// è®¾ç½®è¿›åº¦çŠ¶æ€
 		m_lucky_card_info.state_info = e_lucak_card_game_state_type_first;
 
-		// ÉèÖÃ·­ÅÆÊı¾İ
+		// è®¾ç½®ç¿»ç‰Œæ•°æ®
 		m_lucky_card_info.lucky_card_info = 0;
 
-		//Í¬²½Êı¾İµ½¿Í»§¶Ë
+		//åŒæ­¥æ•°æ®åˆ°å®¢æˆ·ç«¯
 		send_lucky_card_to_client();
 	}
 
@@ -340,7 +340,7 @@ namespace faith
 
 		bool is_can = false;
 		bool is_use_free = false;
-		//¼ì²éÊÇ·ñÊÇÃâ·Ñ´ÎÊı
+		//æ£€æŸ¥æ˜¯å¦æ˜¯å…è´¹æ¬¡æ•°
 		if (m_lucky_card_info.is_have_free > 0)
 		{
 			is_use_free = true;
@@ -348,7 +348,7 @@ namespace faith
 		}
 		else
 		{
-			// ¼ì²éÏûºÄÎïÆ·ÊÇ·ñ³ä×ã
+			// æ£€æŸ¥æ¶ˆè€—ç‰©å“æ˜¯å¦å……è¶³
 			int32 item_id = branch_template_ptr.Condition[0];
 			int32 item_num = branch_template_ptr.Condition[1];
 			if (item_system::can_cost_item(&player_ref, e_bag_type_bag, item_id, item_num))
@@ -364,7 +364,7 @@ namespace faith
 			}
 		}
 
-		// ÉèÖÃÏû·ÑÀàĞÍ
+		// è®¾ç½®æ¶ˆè´¹ç±»å‹
 		int32 use_type = e_lucak_card_use_type_normal;
 		if (is_use_free)
 		{
@@ -382,7 +382,7 @@ namespace faith
 			m_lucky_card_info.no_get_num += 1;
 		}
 
-		// ÉèÖÃ½±ÀøÀàĞÍ
+		// è®¾ç½®å¥–åŠ±ç±»å‹
 		int32 award_type = get_award_type_by_use_type(use_type);
 		m_lucky_card_info.end_info = award_type;
 		if (award_type == e_lucak_card_award_type_special || award_type == e_lucak_card_award_type_first)
@@ -390,25 +390,25 @@ namespace faith
 			m_lucky_card_info.no_get_num = 0;
 		}
 
-		// ¸ù¾İ½±ÀøÀàĞÍ»ñÈ¡½±ÀøÁĞ±í
+		// æ ¹æ®å¥–åŠ±ç±»å‹è·å–å¥–åŠ±åˆ—è¡¨
 		std::vector<s_lucky_card_award_item_info> item_list = get_item_array_by_award_type(award_type);
 
-		// ¸ù¾İ½±ÀøÁĞ±íËæ»ú³ö×îÖÕ½±Æ·
+		// æ ¹æ®å¥–åŠ±åˆ—è¡¨éšæœºå‡ºæœ€ç»ˆå¥–å“
 		s_lucky_card_award_item_info item_info = get_award_by_item_list(item_list);
 
-		// Ôö¼Ó½±ÀøÁìÈ¡´ÎÊı
+		// å¢åŠ å¥–åŠ±é¢†å–æ¬¡æ•°
 		add_award_get_num(item_info.get_item_info(e_lucak_card_item_info_item_index), 1);
 
-		// ¼ì²é½±ÀøÁìÈ¡´ÎÊı
+		// æ£€æŸ¥å¥–åŠ±é¢†å–æ¬¡æ•°
 		check_award_get_num(award_type);
 
-		// ÉèÖÃ½ø¶È×´Ì¬
+		// è®¾ç½®è¿›åº¦çŠ¶æ€
 		m_lucky_card_info.state_info = e_lucak_card_game_state_type_end;
 
-		// ¼ÇÂ¼×îÖÕ½±Àø
+		// è®°å½•æœ€ç»ˆå¥–åŠ±
 		m_lucky_card_info.end_item_id = item_info.get_item_info(e_lucak_card_item_info_item_index);
 
-		// ·¢·Å½±Àø
+		// å‘æ”¾å¥–åŠ±
 		s_lucky_card_award_item_info reward_info = get_award_by_item_index(m_lucky_card_info.end_item_id);
 		std::vector<int32> item_arr;
 		item_arr.push_back(reward_info.get_item_info(e_lucak_card_item_info_item_id));
@@ -423,7 +423,7 @@ namespace faith
 		int64 time_now = utility::get_tick_count();
 		m_clear_time = time_now + (1 * second_tick_time);
 
-		//Í¬²½Êı¾İµ½¿Í»§¶Ë
+		//åŒæ­¥æ•°æ®åˆ°å®¢æˆ·ç«¯
 		send_lucky_card_to_client();
 	}
 
@@ -565,7 +565,7 @@ namespace faith
 			return item_array;
 		}
 
-		// µ±Ç°ÒÑ»ñµÃ½±ÀøÁĞ±í
+		// å½“å‰å·²è·å¾—å¥–åŠ±åˆ—è¡¨
 		std::vector<int32> arr_value;
 		init_unit::parse_char_to_vector(arr_value, m_lucky_card_info.get_item_array);
 
@@ -768,7 +768,7 @@ namespace faith
 	{
 		int32 touch_result = e_lucak_card_info_null;
 		int32 reward_type = m_lucky_card_info.end_info;
-		// ¸ù¾İ½±ÀøÀàĞÍ¼ÆËãÃ¿ÖÖÑÕÉ«µÄÊıÁ¿	½±ÀøÀàĞÍ1Ê± ºìÉ«3¸ö ºÚÉ«0¸ö ÀàĞÍÃ¿¼ÓÒ»¼¶ ºìÉ«¼õÒ»¸ö ºÚÉ«¼ÓÒ»¸ö
+		// æ ¹æ®å¥–åŠ±ç±»å‹è®¡ç®—æ¯ç§é¢œè‰²çš„æ•°é‡	å¥–åŠ±ç±»å‹1æ—¶ çº¢è‰²3ä¸ª é»‘è‰²0ä¸ª ç±»å‹æ¯åŠ ä¸€çº§ çº¢è‰²å‡ä¸€ä¸ª é»‘è‰²åŠ ä¸€ä¸ª
 		int32 red_num = 3 - (reward_type - 1);
 		int32 black_num = reward_type - 1;
 

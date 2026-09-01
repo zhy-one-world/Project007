@@ -1,9 +1,9 @@
 /********************************************************************
-created: 2019Äê2ÔÂ13ÈÕ
+created: 2019å¹´2æœˆ13æ—¥
 file base: msgproc_seven_day_goal
 file ext: hpp
 author: wangdi
-purpose: ÆßÈÕÄ¿±êÏûÏ¢Âß¼­ÎÄ¼ş
+purpose: ä¸ƒæ—¥ç›®æ ‡æ¶ˆæ¯é€»è¾‘æ–‡ä»¶
 *********************************************************************/
 #ifndef _DP_MSGPROC_SEVEN_DAY_GOAL_HPP_
 #define _DP_MSGPROC_SEVEN_DAY_GOAL_HPP_

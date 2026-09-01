@@ -1,4 +1,4 @@
-/********************************************************************
+ï»¿/********************************************************************
   created: 2014/07/15
   created: 15:7:2014 19:41
   file base: att_def
@@ -15,29 +15,29 @@
 #include "internet/st.pb.h"
 
 /************************************************************************/
-/*        »ù±¾Êı¾İÀàĞÍ¡¢³£Á¿ºÍÊı¾İ½á¹¹µÄ¶¨Òå£¬¿Í»§¶ËºÍ·şÎñÆ÷¹²ÓÃ        */
+/*        åŸºæœ¬æ•°æ®ç±»å‹ã€å¸¸é‡å’Œæ•°æ®ç»“æ„çš„å®šä¹‰ï¼Œå®¢æˆ·ç«¯å’ŒæœåŠ¡å™¨å…±ç”¨        */
 /************************************************************************/
 
 namespace faith 
 {
 #pragma pack(push,1)
 
-	const float in_war_time_max							= 5;		// ÍÑÀëÕ½¶·µÄÊ±¼ä
+	const float in_war_time_max							= 5;		// è„±ç¦»æˆ˜æ–—çš„æ—¶é—´
 	const int32	game_att_sync = 1000;
 	const int32 state_att_sync = 2000;
 	const int32 state_trigger_sync = 3000;
-	const int32 tier_att_max = 4;									//ÉèÖÃÊôĞÔ×î´ó²ã¼¶
-	const int32 tier_att_min = 3;									//ÉèÖÃÊôĞÔ×îĞ¡²ã¼¶
+	const int32 tier_att_max = 4;									//è®¾ç½®å±æ€§æœ€å¤§å±‚çº§
+	const int32 tier_att_min = 3;									//è®¾ç½®å±æ€§æœ€å°å±‚çº§
 
 
 
 	enum e_att_one
 	{
-		e_att_one_level,//²ã¼¶
-		e_att_one_att_id,//ÊôĞÔid
-		e_att_one_value,//ÊôĞÔÖµ
-		e_att_one_percent,//ÊôĞÔ°Ù·Ö±È
-		e_att_one_show,//ÊÇ·ñÏÔÊ¾µ½Ãæ°åÖĞ 0²»ÏÔÊ¾£¬1ÏÔÊ¾
+		e_att_one_level,//å±‚çº§
+		e_att_one_att_id,//å±æ€§id
+		e_att_one_value,//å±æ€§å€¼
+		e_att_one_percent,//å±æ€§ç™¾åˆ†æ¯”
+		e_att_one_show,//æ˜¯å¦æ˜¾ç¤ºåˆ°é¢æ¿ä¸­ 0ä¸æ˜¾ç¤ºï¼Œ1æ˜¾ç¤º
 		e_att_one_max
 	};
 
@@ -52,18 +52,18 @@ namespace faith
 
 	enum e_pawn_att_index
 	{
-		epai_self_value,			    // ×ÔÉíÊôĞÔµãÊı
-		epai_self_rate,			        // ×ÔÉíÊôĞÔ°Ù·Ö±È
-		epai_equip_value,			    // ×°±¸ÊôĞÔµãÊı
-		epai_equip_rate,			    // ×°±¸ÊôĞÔ°Ù·Ö±È
+		epai_self_value,			    // è‡ªèº«å±æ€§ç‚¹æ•°
+		epai_self_rate,			        // è‡ªèº«å±æ€§ç™¾åˆ†æ¯”
+		epai_equip_value,			    // è£…å¤‡å±æ€§ç‚¹æ•°
+		epai_equip_rate,			    // è£…å¤‡å±æ€§ç™¾åˆ†æ¯”
 		epai_max
 	};
 
 	enum e_pawn_att_sync_type
 	{
-		send_att_to_client,//ÊôĞÔÍ¬²½
-		send_gs_to_client,//GSÍ¬²½
-		send_nothing_to_client,//¶¼²»Í¬²½
+		send_att_to_client,//å±æ€§åŒæ­¥
+		send_gs_to_client,//GSåŒæ­¥
+		send_nothing_to_client,//éƒ½ä¸åŒæ­¥
 		send_max
 
 	};
@@ -77,14 +77,14 @@ namespace faith
 		es_max
 	};
 
-	// ½ÇÉ«µ±Ç°µÄÒÆ¶¯·½Ê½
+	// è§’è‰²å½“å‰çš„ç§»åŠ¨æ–¹å¼
 	enum e_move_ment
 	{
-		e_move_ment_walk,			// ÈËĞÎÌ¬ÅÜÂ·
-		e_move_ment_wing_walk,		// ±³³á°òÅÜ
-		e_move_ment_mount_walk,		// Æï×øÆïĞÎÌ¬ÏÂÅÜÂ·
-		e_move_ment_mount_fly,		// Æï×øÆïĞÎÌ¬ÏÂ·ÉĞĞ 
-		e_move_ment_wing_fly,		// ³á°òĞÎÌ¬ÏÂ·ÉĞĞ 
+		e_move_ment_walk,			// äººå½¢æ€è·‘è·¯
+		e_move_ment_wing_walk,		// èƒŒç¿…è†€è·‘
+		e_move_ment_mount_walk,		// éª‘åéª‘å½¢æ€ä¸‹è·‘è·¯
+		e_move_ment_mount_fly,		// éª‘åéª‘å½¢æ€ä¸‹é£è¡Œ 
+		e_move_ment_wing_fly,		// ç¿…è†€å½¢æ€ä¸‹é£è¡Œ 
 		e_move_ment_max 
 	};
 
@@ -97,40 +97,40 @@ namespace faith
 	};
 	enum e_be_hurt_type
 	{
-		e_be_hurt_type_nomal,//ÆÕÍ¨
-		e_be_hurt_type_count,//´ÎÊı
-		e_be_hurt_type_self,//Ö»ÄÜ×ÔÉíµôÑª
+		e_be_hurt_type_nomal,//æ™®é€š
+		e_be_hurt_type_count,//æ¬¡æ•°
+		e_be_hurt_type_self,//åªèƒ½è‡ªèº«æ‰è¡€
 	};
-	// ½ÇÉ«
+	// è§’è‰²
 	struct tag_unit_att
 	{
 		tag_unit_att()
 		{
 			memset(this, 0, sizeof(*this));
 		}
-		f32	att[e_unit_attack_att_max];		// ÊôĞÔÊı¾İÊ¹ÓÃf32ĞÍ¼ÆËãºÍ±£´æ
+		f32	att[e_unit_attack_att_max];		// å±æ€§æ•°æ®ä½¿ç”¨f32å‹è®¡ç®—å’Œä¿å­˜
 	};
 
 	enum e_base_att_info
 	{
 		e_base_att_info_none = 0,
-		e_base_att_info_strength,						// Á¦Á¿(·ÀÓù)		--¹ûÊµ¼ÓµÄÊôĞÔ
-		e_base_att_info_agility,						// Ãô½İ(ÉÁ±Ü)
-		e_base_att_info_intellect,						// ÖÇÁ¦(¿¹ĞÔ)
-		e_base_att_info_stamina,						// ÄÍÁ¦(ÉúÃü)
-		e_base_att_info_hp_cur,							// µ±Ç°ÉúÃüÖµ
-		e_base_att_info_pk_value,						// Íæ¼ÒpkÖµ
-		e_base_att_info_pk_mode,						// Íæ¼ÒpkÄ£Ê½
-		e_base_att_info_community_type,					// Íæ¼ÒÕóÓªÀàĞÍ
-		e_base_att_info_equip_title_id,					// Íæ¼ÒÅå´÷³ÆºÅid
-		e_base_att_info_magic_cur,						// µ±Ç°Ä§·¨Öµ
-		e_base_att_info_body_power_cur,					// µ±Ç°ÌåÁ¦Öµ
-		e_base_att_info_body_strength,					// Á¦Á¿				--Íæ¼Ò×ÔÉíÊôĞÔ
-		e_base_att_info_body_agility,					// Ãô½İ
-		e_base_att_info_body_intellect,					// ÖÇÁ¦
-		e_base_att_info_body_stamina,					// ÄÍÁ¦
-		e_base_att_info_hp_main,						// ÔÚ´óÊÀ½çÊ±µÄÑªÁ¿
-		e_base_att_info_cur_energy,						// µ±Ç°³å´ÌÄÜÁ¿Öµ
+		e_base_att_info_strength,						// åŠ›é‡(é˜²å¾¡)		--æœå®åŠ çš„å±æ€§
+		e_base_att_info_agility,						// æ•æ·(é—ªé¿)
+		e_base_att_info_intellect,						// æ™ºåŠ›(æŠ—æ€§)
+		e_base_att_info_stamina,						// è€åŠ›(ç”Ÿå‘½)
+		e_base_att_info_hp_cur,							// å½“å‰ç”Ÿå‘½å€¼
+		e_base_att_info_pk_value,						// ç©å®¶pkå€¼
+		e_base_att_info_pk_mode,						// ç©å®¶pkæ¨¡å¼
+		e_base_att_info_community_type,					// ç©å®¶é˜µè¥ç±»å‹
+		e_base_att_info_equip_title_id,					// ç©å®¶ä½©æˆ´ç§°å·id
+		e_base_att_info_magic_cur,						// å½“å‰é­”æ³•å€¼
+		e_base_att_info_body_power_cur,					// å½“å‰ä½“åŠ›å€¼
+		e_base_att_info_body_strength,					// åŠ›é‡				--ç©å®¶è‡ªèº«å±æ€§
+		e_base_att_info_body_agility,					// æ•æ·
+		e_base_att_info_body_intellect,					// æ™ºåŠ›
+		e_base_att_info_body_stamina,					// è€åŠ›
+		e_base_att_info_hp_main,						// åœ¨å¤§ä¸–ç•Œæ—¶çš„è¡€é‡
+		e_base_att_info_cur_energy,						// å½“å‰å†²åˆºèƒ½é‡å€¼
 		e_base_att_info_max
 	};
 
@@ -189,21 +189,21 @@ namespace faith
 	enum e_level_up_result
 	{
 		e_level_up_failed_unknown = 0,
-		e_level_up_succeed,//³É¹¦
-		e_level_up_failed_exp,//¾­Ñé²»×ã
-		e_level_up_failed_level_max,//´ïµ½µÈ¼¶ÉÏÏŞ
+		e_level_up_succeed,//æˆåŠŸ
+		e_level_up_failed_exp,//ç»éªŒä¸è¶³
+		e_level_up_failed_level_max,//è¾¾åˆ°ç­‰çº§ä¸Šé™
 	};
 
-	//ÒÆ¶¯Ğ­ÒéÓĞ±ä»¯£¬¿Í»§¶ËÈ«²¿ÆÁ±ÎÁËÒÔÏÂĞĞÎªµÄ±í´ï£¬Ö»±£ÁôÁËjump 8 µÄÖµ
+	//ç§»åŠ¨åè®®æœ‰å˜åŒ–ï¼Œå®¢æˆ·ç«¯å…¨éƒ¨å±è”½äº†ä»¥ä¸‹è¡Œä¸ºçš„è¡¨è¾¾ï¼Œåªä¿ç•™äº†jump 8 çš„å€¼
 	enum e_sync_pos_move_flag
 	{
 		syncmoveflag_min				= 0,
 		syncmoveflag_doubleclickmove	= 1,
-		syncmoveflag_run				= 1,		//½ÇÉ«ÅÜ¶¯
-		syncmoveflag_duck				= 8,		//Ç±Ë®
-		syncmoveflag_pressjump			= 8,		//½ÇÉ«Ò»Ö±Ìø¶¯
-		syncmoveflag_dooublejump		= 8,		//½ÇÉ«µ¥¶ÀÌø¶¯
-		syncmoveflag_precisedestination = 128,		//
+		syncmoveflag_run				= 1,		//è§’è‰²è·‘åŠ¨
+		syncmoveflag_duck				= 8,		//æ½œæ°´
+		syncmoveflag_pressjump			= 8,		//è§’è‰²ä¸€ç›´è·³åŠ¨
+		syncmoveflag_dooublejump		= 8,		//è§’è‰²å•ç‹¬è·³åŠ¨
+		syncmoveflag_precisedestination = 128,
 		syncmoveflag_max,
 	};
 

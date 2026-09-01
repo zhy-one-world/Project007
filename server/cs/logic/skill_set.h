@@ -21,14 +21,14 @@ namespace faith
 	typedef skill_ptr_map::iterator skill_ptr_map_it;
 	typedef std::map<int64, skill_effect*> skill_effect_map;
 	typedef skill_effect_map::iterator skill_effect_map_it;
-    // ·â×°Ò»¸öÈËÉíÉÏµÄ¼¼ÄÜÂß¼­
+    // å°è£…ä¸€ä¸ªäººèº«ä¸Šçš„æŠ€èƒ½é€»è¾‘
     class skill_set
     {
     public:
 		skill_set() { clear_data(); }
 		~skill_set();
 
-	private://ÄÚ´æÒÑ¾­´´½¨ºÃÁË ½ûÖ¹¿½±´
+	private://å†…å­˜å·²ç»åˆ›å»ºå¥½äº† ç¦æ­¢æ‹·è´
 		skill_set(const skill_set& skill_set_ref);
 		skill_set& operator=(const skill_set&);
 	public:
@@ -76,7 +76,7 @@ namespace faith
 		void						unlock_skill(const int32& skill_template_id, const int32& up_level);
 		void						resp_upgrade_skill(const skill_proto_skill_operation& req);
 		
-		void						upgrade_skill_achievement();//¸üĞÂ³É¾ÍÍ³¼Æ
+		void						upgrade_skill_achievement();//æ›´æ–°æˆå°±ç»Ÿè®¡
 		void						all_skill_level_count_to_achievement();
 		
 		void						activate_skill(int32 skill_template_id, bool is_activate = true);
@@ -86,7 +86,7 @@ namespace faith
 
 		bool						is_can_break_skill(int32 skill_template_id);
 		void						set_break_skill(std::vector<int32> skill_array);
-		//gmÌØÊâ²Ù×÷
+		//gmç‰¹æ®Šæ“ä½œ
 		bool						gm_set_all_career_skill_level(int32 new_level);
 		bool						gm_reset_all_career_skill_cd();
 		bool						activate_all_skill();
@@ -95,14 +95,14 @@ namespace faith
 		int32						get_skill_num() { return m_skill_map.size(); };
 		int32						get_skill_equip_num();
     private:
-		s_unit_identifier			m_unit_idf;//Ë­ÓµÓĞÕâ¸ö¼¼ÄÜ³Ø
-		skill_map					m_skill_map;//¼¼ÄÜµÄÊµÀıÁĞ±í
-		skill_ptr_map				m_skill_tick_map;//ÄÄĞ©¼¼ÄÜĞèÒª×ßtick£¬¼õÉÙtickÊıÁ¿
+		s_unit_identifier			m_unit_idf;//è°æ‹¥æœ‰è¿™ä¸ªæŠ€èƒ½æ± 
+		skill_map					m_skill_map;//æŠ€èƒ½çš„å®ä¾‹åˆ—è¡¨
+		skill_ptr_map				m_skill_tick_map;//å“ªäº›æŠ€èƒ½éœ€è¦èµ°tickï¼Œå‡å°‘tickæ•°é‡
 		fvector						m_return_location;
 		float						m_sub_cd_all;
 		float						m_sub_percent_all;
 		int64						m_public_time;
-		skill_effect_map			m_effect_map;//×Óµ¯µÄÁĞ±í
+		skill_effect_map			m_effect_map;//å­å¼¹çš„åˆ—è¡¨
 		std::vector<int32>			m_break_skill_array;
     };
 

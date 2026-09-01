@@ -93,12 +93,12 @@ namespace faith
 
 	enum e_recycle_param
 	{
-		e_recycle_param_open_server,			// ¿ª·şÊ±¼ä
-		e_recycle_param_level,					// ĞèÒªµÈ¼¶
-		e_recycle_param_days,					// ĞèÒªÀëÏßÌìÊı
-		e_recycle_param_restart_days,			// ÖØÆô»î¶¯ĞèÒªÌìÊı
-		e_recycle_param_invited_open_sevrver,	// ÑûÇëÕß¿ª·şÌìÊı
-		e_recycle_param_invited_level,			// ÑûÇëÕßµÈ¼¶
+		e_recycle_param_open_server,			// å¼€æœæ—¶é—´
+		e_recycle_param_level,					// éœ€è¦ç­‰çº§
+		e_recycle_param_days,					// éœ€è¦ç¦»çº¿å¤©æ•°
+		e_recycle_param_restart_days,			// é‡å¯æ´»åŠ¨éœ€è¦å¤©æ•°
+		e_recycle_param_invited_open_sevrver,	// é‚€è¯·è€…å¼€æœå¤©æ•°
+		e_recycle_param_invited_level,			// é‚€è¯·è€…ç­‰çº§
 		e_recycle_param_max,
 	};
 

@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2018Äê4ÔÂ12ÈÕ11:42
+created: 2018å¹´4æœˆ12æ—¥11:42
 file base: service_rank_mgr
 file ext: cpp
 author: wangdi
@@ -225,7 +225,7 @@ namespace faith
 		}
 		else if (0 == role_num)
 		{
-			//Îª0µÄÊÇÎ´½øÈëÅÅĞĞ µ¥¶À´¦Àí
+			//ä¸º0çš„æ˜¯æœªè¿›å…¥æ’è¡Œ å•ç‹¬å¤„ç†
 			reward_index = service_rank_template_ptr->RankNum.size();
 		}
 		else
@@ -280,7 +280,7 @@ namespace faith
 		}
 
 		std::vector<s_item_template_info> promp_item_data;
-		//³¬Ê±Ê±·¢ÓÊ¼ş
+		//è¶…æ—¶æ—¶å‘é‚®ä»¶
 		std::vector<s_item_template_info> mail_item_list;
 		for (int32 i = 0; i < item_vec.size() / 2; i++)
 		{
@@ -293,7 +293,7 @@ namespace faith
 				continue;
 			}
 
-			//Ìø¹ı²»ÊôÓÚ×Ô¼ºµÄÎïÆ·
+			//è·³è¿‡ä¸å±äºè‡ªå·±çš„ç‰©å“
 			if (ItemTemplatePtr->class_type.size() > 0)
 			{
 				bool need_pass = true;

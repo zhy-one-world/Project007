@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê7ÔÂ14ÈÕ13:56:28
+created: 2016å¹´7æœˆ14æ—¥13:56:28
 file base: Special_name_mgr
 file ext: h
 author: zhangminghai
@@ -49,7 +49,7 @@ namespace faith
 		int32	get_solider_rank_star();
 	private:
 		s_special_name_info							m_special_name_ary;
-		int32										m_array_index;//ËùÊôÍæ¼Ò
+		int32										m_array_index;//æ‰€å±ç©å®¶
 		
 	};
 }

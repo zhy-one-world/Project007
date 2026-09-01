@@ -1,10 +1,10 @@
 /********************************************************************
-created: 2019Äê9ÔÂ27ÈÕ
+created: 2019å¹´9æœˆ27æ—¥
 file base: world_server
 file ext: hpp
 author: zhangshuo
 
-purpose: WSloadingÁ´ÓÃÊı¾İ°ü
+purpose: WSloadingé“¾ç”¨æ•°æ®åŒ…
 *********************************************************************/
 
 #ifndef _FAITH_WORLD_SERVER_MSG_HPP_

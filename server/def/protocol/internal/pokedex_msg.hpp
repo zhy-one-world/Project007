@@ -34,7 +34,7 @@ namespace faith
 		e_msgindex_cs2dp_save_char_tinder,
 	};
 
-	// DP2CS ·ÖÅú·¢ËÍÍæ¼ÒµÄËùÓĞĞÅÑöĞÅÏ¢
+	// DP2CS åˆ†æ‰¹å‘é€ç©å®¶çš„æ‰€æœ‰ä¿¡ä»°ä¿¡æ¯
 	struct dp2cs_load_char_pokedex : public faith::packet_base
 	{
 		guid_64								role_guid;
@@ -54,7 +54,7 @@ namespace faith
 		int32								unit_array_index;
 		int32								save_type_ex;
 		int32								data_num;
-		s_pokedex_info						data_list[POKEDEX_NUM_MAX];	//Í¼¼øÊµÀıÊı¾İ
+		s_pokedex_info						data_list[POKEDEX_NUM_MAX];	//å›¾é‰´å®ä¾‹æ•°æ®
 		cs2dp_save_char_pokedex()
 		{
 			memset(this, 0, sizeof(*this));

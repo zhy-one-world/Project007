@@ -399,7 +399,7 @@ enum
 		s_client_uid					client_uid;	//	unique client session identifier
 		int32							server_id;
 		xchar							account[max_account_length + 1];
-		guid_64							role_guid;	//
+		guid_64							role_guid;
 		e_del_char_type					del_type;	//0暂时删除,可恢复,1恢复,2彻底删除
 
 		ls2dp_delete_character()

@@ -1,8 +1,8 @@
 /********************************************************************
-created: 2016Äê5ÔÂ5ÈÕ11:14:26
+created: 2016å¹´5æœˆ5æ—¥11:14:26
 file base: mission
-author: ÕÅÓîÏè
-purpose: µ¥¸öÈÎÎñ
+author: å¼ å®‡ç¿”
+purpose: å•ä¸ªä»»åŠ¡
 *********************************************************************/
 
 #include "aoi/aoi_system.h"
@@ -66,7 +66,7 @@ namespace faith
 
 		int32 old_mission_id = m_mission_info.data_ary[e_mission_inst_data_id];
 
-		//³õÊ¼»¯
+		//åˆå§‹åŒ–
 		m_mission_info.clear_data();
 		m_mission_info.data_ary[e_mission_inst_data_id] = mission_id;
 		m_mission_info.data_ary[e_mission_inst_type] = mission_ptr->MissionShowType;
@@ -146,7 +146,7 @@ namespace faith
 		{
 			return;
 		}
-		//³õÊ¼»¯
+		//åˆå§‹åŒ–
 		m_player_ptr = player_ptr;
 		m_mission_ptr = mission_ptr;
 		clear_mission_create_npcs();
@@ -198,11 +198,11 @@ namespace faith
 		//		, m_mission_ptr->GetMissionNpcLocation[0]
 		//		, m_mission_ptr->GetMissionNpcLocation[1]
 		//		, m_mission_ptr->GetMissionNpcLocation[2]) > MIN_DISTENCE_TO_DONE_MISSION)
-		//{//Ö÷ÏßÈÎÎñ¾àÀë¹ıÔ¶
+		//{//ä¸»çº¿ä»»åŠ¡è·ç¦»è¿‡è¿œ
 		//	return false;
 		//}
 		if (get_mission_state() == e_mission_state_can_accept)
-		{//½ÓÈ¡
+		{//æ¥å–
 			set_mission_state(e_mission_state_accepted);
 			return true;
 		}
@@ -315,7 +315,7 @@ namespace faith
 		}
 
 
-		// Õı³£ÈÎÎñ½±Àø
+		// æ­£å¸¸ä»»åŠ¡å¥–åŠ±
 		for (int32 item_index = 0; item_index < MAX_AWARD_ITEM * 2; item_index += TEMPLATE_ONE_NPC_OR_ITEM_INFO_LEN)
 		{
 			int32 award_item_id = get_inst_data(e_mission_inst_data_finish_item_id1 + item_index);
@@ -326,7 +326,7 @@ namespace faith
 			{
 				continue;
 			}
-			//ÈÎÎñ¸øµÄ¶«Î÷¶¼ÊÇ°ó¶¨µÄ
+			//ä»»åŠ¡ç»™çš„ä¸œè¥¿éƒ½æ˜¯ç»‘å®šçš„
 			init_unit::merge_item(item_reward_array, award_item_id, award_item_num);
 		}
 		int32 world_base_exp = m_player_ptr->get_cur_player_world_level_exp();
@@ -376,7 +376,7 @@ namespace faith
 			break;
 		}
 
-		//ÒÔÏÂÎªÈÕ³£¡¢ÌÖ·¥È«²¿Íê³É½±Àø
+		//ä»¥ä¸‹ä¸ºæ—¥å¸¸ã€è®¨ä¼å…¨éƒ¨å®Œæˆå¥–åŠ±
 		if (!is_last_daily_or_against()
 			&& finish_type != e_mission_finish_type_endall)
 		{
@@ -458,11 +458,11 @@ namespace faith
 			return e_mission_operate_end_state_system_wrong;
 		}
 
-		//¾àÀë¼ì²â
+		//è·ç¦»æ£€æµ‹
 		const s_map_pos& now_position = m_player_ptr->get_old_map_pos();
 		if (m_mission_ptr->FinishMissionNpcId > 0)
 		{
-			//Ö÷Ïß²Ù×÷µÄnpc²»ÊÇÈÎÎñ¶ÔÓ¦µÄnpc
+			//ä¸»çº¿æ“ä½œçš„npcä¸æ˜¯ä»»åŠ¡å¯¹åº”çš„npc
 			NpcSpawnPointTemplate* finish_spawn_template_ptr = GET_TEMPLATE(NpcSpawnPointTemplate, m_mission_ptr->FinishMissionNpcId);
 			if (finish_spawn_template_ptr == nullptr)
 			{
@@ -474,8 +474,8 @@ namespace faith
 			}
 			if (m_mission_ptr->MissionShowType == e_mission_type_main
 				&& m_mission_ptr->NeedLevel > m_player_ptr->get_unit_info(e_role_info_exp_level))
-			{//ÅĞ¶ÏÊÇ·ñ´ïµ½Ö÷ÏßÈÎÎñÒªÇóµÈ¼¶
-				return -1;//²»ÌáÊ¾´íÎó Ö±½ÓÏÔÊ¾µÈ¼¶²»×ãÎŞ·¨Íê³É
+			{//åˆ¤æ–­æ˜¯å¦è¾¾åˆ°ä¸»çº¿ä»»åŠ¡è¦æ±‚ç­‰çº§
+				return -1;//ä¸æç¤ºé”™è¯¯ ç›´æ¥æ˜¾ç¤ºç­‰çº§ä¸è¶³æ— æ³•å®Œæˆ
 			}
 
 			fvector npc_location(finish_spawn_template_ptr->PosX, finish_spawn_template_ptr->PosY, finish_spawn_template_ptr->PosZ);
@@ -495,13 +495,13 @@ namespace faith
 			else
 			{
 				if (m_mission_ptr->MissionShowType == e_mission_type_main && (now_position.unit_location - npc_location).length_2d() > MIN_DISTENCE_TO_DONE_MISSION)
-				{//ÊÇÖ÷ÏßÈÎÎñµ«ÊÇ¾àÀëÍê³Énpc¾àÀë²»¹»½ü
+				{//æ˜¯ä¸»çº¿ä»»åŠ¡ä½†æ˜¯è·ç¦»å®Œæˆnpcè·ç¦»ä¸å¤Ÿè¿‘
 					return e_mission_operate_end_state_too_far;
 				}
 			}
 		}
 
-		//Ö»ÓĞÖ÷ÏßÈÎÎñ±ØĞë±³°üÓĞ¸ñ×Ó
+		//åªæœ‰ä¸»çº¿ä»»åŠ¡å¿…é¡»èƒŒåŒ…æœ‰æ ¼å­
 		if (m_mission_ptr->MissionShowType == e_mission_type_main)
 		{
 			int32 item_bag_slot_req_num = 0;
@@ -532,7 +532,7 @@ namespace faith
 			}
 		}
 
-		//»¨Ç®ÅĞ¶Ï
+		//èŠ±é’±åˆ¤æ–­
 		for (auto& it : money_cost_array)
 		{
 			if (!m_player_ptr->can_cut_money(e_money_type(it.m_item_id), it.m_item_num))
@@ -557,7 +557,7 @@ namespace faith
 			return e_mission_operate_end_state_system_wrong;
 		}
 
-		//¿ÛÇ®
+		//æ‰£é’±
 		for (auto& it : money_cost_array)
 		{
 			if (!m_player_ptr->can_cut_money((e_money_type)it.m_item_id, it.m_item_num))
@@ -566,19 +566,19 @@ namespace faith
 			}
 		}
 
-		//¿ÛÇ®
+		//æ‰£é’±
 		for (auto& it : money_cost_array)
 		{
 			m_player_ptr->cut_money((e_money_type)it.m_item_id, it.m_item_num, e_server_log_cut_money_finish_mission, get_inst_data(e_mission_inst_data_id));
 		}
 
-		//¸øÇ®
+		//ç»™é’±
 		for (auto& it : money_reward_array)
 		{
 			m_player_ptr->add_money_or_exp(e_money_type(it.m_item_id), it.m_item_num, e_server_log_add_money_finish_mission, get_inst_data(e_mission_inst_data_id));
 		}
 
-		//¸øÎïÆ·
+		//ç»™ç‰©å“
 		std::string add_item_cause_id;
 		std::stringstream add_item_cause_id_stream;
 		add_item_cause_id_stream << int32(e_server_log_add_item_finish_mission);
@@ -617,7 +617,7 @@ namespace faith
 		{
 			return e_mission_operate_end_state_system_wrong;
 		}
-		//ÒªÏÈÉèÖÃ£¬ºóĞøÂß¼­ÓĞÒÀÀµ£¬±ÈÈç func_unlock
+		//è¦å…ˆè®¾ç½®ï¼Œåç»­é€»è¾‘æœ‰ä¾èµ–ï¼Œæ¯”å¦‚ func_unlock
 		set_mission_state(e_mission_state_finished);
 
 		if (m_player_ptr->get_write_log())
@@ -636,7 +636,7 @@ namespace faith
 		{
 		case e_mission_type_main:
 		{
-			//map_record_mgr::get_instance().unlock_map(m_player_ptr->get_array_index(), get_mission_id()); //map±íµÄPreconditionsÖ»ÊÇµØÍ¼id
+			//map_record_mgr::get_instance().unlock_map(m_player_ptr->get_array_index(), get_mission_id()); //mapè¡¨çš„Preconditionsåªæ˜¯åœ°å›¾id
 			m_player_ptr->get_achievement_mgr().mission_finish(this);
 			m_player_ptr->get_func_unlock_mgr().func_unlock_trigger_activate();
 		}
@@ -720,7 +720,7 @@ namespace faith
 			break;
 		}
 
-		// ÈÎºÎÈÎÎñÍê³É¶¼ÓĞ¿ÉÄÜ½âËøĞÂµÄÒ»ÌõÁúÄ¿±ê ÈÕ³£»òÌÖ·¥ÈÎÎñÍê³É¿ÉÄÜ¸Ä±äĞÂµÄÒ»ÌõÁúÄ¿±ê
+		// ä»»ä½•ä»»åŠ¡å®Œæˆéƒ½æœ‰å¯èƒ½è§£é”æ–°çš„ä¸€æ¡é¾™ç›®æ ‡ æ—¥å¸¸æˆ–è®¨ä¼ä»»åŠ¡å®Œæˆå¯èƒ½æ”¹å˜æ–°çš„ä¸€æ¡é¾™ç›®æ ‡
 		m_player_ptr->get_team_cs_mgr().check_one_stop_finish_flags();
 		m_player_ptr->get_team_cs_mgr().check_new_aim_for_one_stop(false);
 
@@ -791,7 +791,7 @@ namespace faith
 			return;
 		}
 
-		// ÒÑ¾­´ï³ÉÁË½»¸¶ÈÎÎñµÄÌõ¼ş¾Í²»ÔÙË¢NPC
+		// å·²ç»è¾¾æˆäº†äº¤ä»˜ä»»åŠ¡çš„æ¡ä»¶å°±ä¸å†åˆ·NPC
 		if (is_finish_mission_when_have_mission_create_npc() == true)
 		{
 			return;
@@ -811,14 +811,14 @@ namespace faith
 			spawn_id = m_mission_ptr->CreateNpc[i];
 			need_num = m_mission_ptr->CreateNpc[i + 1];
 
-			// ¼ì²é±í¸ñÊı¾İÊÇ·ñÓĞÅäÖÃ´íÎó
+			// æ£€æŸ¥è¡¨æ ¼æ•°æ®æ˜¯å¦æœ‰é…ç½®é”™è¯¯
 			NpcSpawnPointTemplate* spawn_template_ptr = GET_TEMPLATE(NpcSpawnPointTemplate, spawn_id);
 			if (nullptr == spawn_template_ptr)
 			{
 				continue;
 			}
 			
-			// ÒÑ¾­´ï³ÉµÄÄ¿±ê¾Í²»ÔÙË¢¶ÔÓ¦µÄNPC
+			// å·²ç»è¾¾æˆçš„ç›®æ ‡å°±ä¸å†åˆ·å¯¹åº”çš„NPC
 			const int32 goal_index = i / TEMPLATE_ONE_NPC_OR_ITEM_INFO_LEN;
 			const int32 cur_mission_goal_num = get_cur_mission_goal_num(goal_index);
 			if (cur_mission_goal_num >= need_num)
@@ -826,13 +826,13 @@ namespace faith
 				continue;
 			}
 
-			// ÒÑ¾­ÓĞË¢³öµÄNPC¾Í²»ÔÙÖØ¸´Ë¢
+			// å·²ç»æœ‰åˆ·å‡ºçš„NPCå°±ä¸å†é‡å¤åˆ·
 			if (exist_mission_create_npc_by_goal_index(goal_index) == true)
 			{
 				continue;
 			}
 
-			// Ë¢³öĞèÒªµÄNPC
+			// åˆ·å‡ºéœ€è¦çš„NPC
 			auto map_type = base_map_system::get_map_type(m_player_ptr->get_map_ent());
 			if (map_type != faith::e_map_type_big_map)
 			{
@@ -874,7 +874,7 @@ namespace faith
 			return false;
 		}
 		if (get_mission_state() == e_mission_state_can_accept)
-		{//ÒÑÅĞ¶ÏÍê³É
+		{//å·²åˆ¤æ–­å®Œæˆ
 			return true;
 		}
 		if (get_mission_state() > e_mission_state_can_accept)
@@ -896,7 +896,7 @@ namespace faith
 			return false;
 		}
 		if (get_mission_state() >= e_mission_state_can_finish)
-		{//ÒÑ¿É½»¸¶
+		{//å·²å¯äº¤ä»˜
 			return true;
 		}
 		if (m_mission_ptr->MissionShowType >= e_mission_type_main && get_mission_state() == e_mission_state_done)
@@ -905,19 +905,19 @@ namespace faith
 		}
 		if (m_mission_ptr->MissionShowType == e_mission_type_main
 			&& m_player_ptr->get_unit_info(e_role_info_exp_level) < m_mission_ptr->NeedLevel)
-		{//Ö÷ÏßÈÎÎñ²é²éµÈ¼¶
+		{//ä¸»çº¿ä»»åŠ¡æŸ¥æŸ¥ç­‰çº§
 			return false;
 		}
 		if (get_mission_state() == e_mission_state_chat)
-		{//¶Ô»°Íê³É
+		{//å¯¹è¯å®Œæˆ
 			set_mission_state(e_mission_state_can_finish);
 		}
 
 		switch (m_mission_ptr->MissionEndType)
 		{
-		case e_mission_end_type_transfer: //´«ËÍ
-		case e_mission_end_type_dialog://¶Ô»°
-		case e_mission_end_type_mission://ÕÂ½Ú
+		case e_mission_end_type_transfer: //ä¼ é€
+		case e_mission_end_type_dialog://å¯¹è¯
+		case e_mission_end_type_mission://ç« èŠ‚
 		{
 			if (get_mission_state() > e_mission_state_done)
 			{
@@ -927,7 +927,7 @@ namespace faith
 			return false;
 		}
 		break;
-		case e_mission_end_type_reach_level://´ïµ½ÏÂÒ»¸öÈÎÎñµÈ¼¶
+		case e_mission_end_type_reach_level://è¾¾åˆ°ä¸‹ä¸€ä¸ªä»»åŠ¡ç­‰çº§
 		{
 			MissionTemplate* next_mission_ptr = GET_TEMPLATE(MissionTemplate, m_mission_ptr->NextMissionId);
 			if (nullptr == next_mission_ptr)
@@ -939,7 +939,7 @@ namespace faith
 				set_mission_state(e_mission_state_can_finish);
 				if (m_mission_ptr->attribute_id == first_recharge_time_mission_id)
 				{
-					m_player_ptr->set_time_data(e_time_type_first_recharge_open_time, time_helper::get_cur_time_new().second);//Õâ¸öµØ·½ĞèÒªĞ´ËÀ
+					m_player_ptr->set_time_data(e_time_type_first_recharge_open_time, time_helper::get_cur_time_new().second);//è¿™ä¸ªåœ°æ–¹éœ€è¦å†™æ­»
 					m_player_ptr->send_time_one(e_time_type_first_recharge_open_time);
 				}
 				return true;
@@ -1174,7 +1174,7 @@ namespace faith
 		case e_mission_end_type_add_dot:
 		case e_mission_end_type_intensify_add_gs:
 		{
-			//µ÷ÓÃÒ»´Î¹Ì¶¨+1
+			//è°ƒç”¨ä¸€æ¬¡å›ºå®š+1
 			cur_reached_num = get_inst_data(e_mission_inst_data_goal1_num) + 1;
 		}
 		break;
@@ -1182,7 +1182,7 @@ namespace faith
 		case e_mission_end_type_equip_addon:
 		case e_mission_end_type_choose_a_fashion:
 		{
-			//´«É¶ÊÇÉ¶
+			//ä¼ å•¥æ˜¯å•¥
 			cur_reached_num = target_info_0;
 		}
 		break;
@@ -1199,7 +1199,7 @@ namespace faith
 		case e_mission_end_type_kill_home_boss:
 		case e_mission_end_type_new_map_finish:
 		{
-			//Æ¥ÅäÉÏÁË¾Í+1
+			//åŒ¹é…ä¸Šäº†å°±+1
 			if (m_mission_ptr->GoalNpcKill.size() >= 2)
 			{
 				if (target_info_0 == m_mission_ptr->GoalNpcKill[0])
@@ -1215,7 +1215,7 @@ namespace faith
 		break;
 		case e_mission_end_type_map:
 		{
-			//´óÓÚµÈÓÚµ±Ç°µØÍ¼¾ÍÈÏÎªÈÎÎñÍê³É
+			//å¤§äºç­‰äºå½“å‰åœ°å›¾å°±è®¤ä¸ºä»»åŠ¡å®Œæˆ
 			if (m_mission_ptr->GoalNpcKill.size() >= 2)
 			{
 				if (target_info_0 >= m_mission_ptr->GoalNpcKill[0])
@@ -1707,7 +1707,7 @@ namespace faith
 		}
 		if (goal_arr_len % e_mission_goal_tuple_max != 0)
 		{
-			// ±í¸ñÊı¾İÅäÖÃ
+			// è¡¨æ ¼æ•°æ®é…ç½®
 			return false;
 		}
 
@@ -1923,7 +1923,7 @@ namespace faith
 			{
 				if (cur_mission_state == npc_template_ptr->EndShowMissionState)
 				{
-					//Ç¿ĞĞÍ¬²½Ò»ÏÂÊı¾İ£¬·ÀÖ¹Êı¾İ²»Í¬²½Ôì³ÉµÄaoi±»¿Í»§¶ËÀ¹½Ø
+					//å¼ºè¡ŒåŒæ­¥ä¸€ä¸‹æ•°æ®ï¼Œé˜²æ­¢æ•°æ®ä¸åŒæ­¥é€ æˆçš„aoiè¢«å®¢æˆ·ç«¯æ‹¦æˆª
 					m_player_ptr->get_mission_mgr().send_one_mission(*this);
 
 					aoi_proto_unit_aoi_out unit_aoi_out_msg;
@@ -1938,7 +1938,7 @@ namespace faith
 			{
 				if (cur_mission_state == npc_template_ptr->StartShowMissionState)
 				{
-					//Ç¿ĞĞÍ¬²½Ò»ÏÂÊı¾İ£¬·ÀÖ¹Êı¾İ²»Í¬²½Ôì³ÉµÄaoi±»¿Í»§¶ËÀ¹½Ø
+					//å¼ºè¡ŒåŒæ­¥ä¸€ä¸‹æ•°æ®ï¼Œé˜²æ­¢æ•°æ®ä¸åŒæ­¥é€ æˆçš„aoiè¢«å®¢æˆ·ç«¯æ‹¦æˆª
 					m_player_ptr->get_mission_mgr().send_one_mission(*this);
 
 					aoi_proto_unit_aoi_all unit_aoi_enter_msg;
@@ -2029,7 +2029,7 @@ namespace faith
 		case e_mission_end_type_transfer:
 			break;
 		default:
-			return; //Ö»ÓĞ´«ËÍºÍ¶Ô»°ÈÎÎñĞèÒªÔÚÕâÀï¼ì²é
+			return; //åªæœ‰ä¼ é€å’Œå¯¹è¯ä»»åŠ¡éœ€è¦åœ¨è¿™é‡Œæ£€æŸ¥
 		}
 
 		if (m_player_ptr == nullptr)
@@ -2075,7 +2075,7 @@ namespace faith
 	bool cmission::marry_mission_can_check()
 	{
 		bool is_can = false;
-		//·òÆŞÈÎÎñÌØÊâ´¦Àí
+		//å¤«å¦»ä»»åŠ¡ç‰¹æ®Šå¤„ç†
 		if (!m_player_ptr->is_player_in_team())
 		{
 			return is_can;
@@ -2098,7 +2098,7 @@ namespace faith
 				}
 				if (m_player_ptr->aoi_is_watch_all_data(couple_player.m_array_index))
 				{
-					//ÔÚAOI·¶Î§ÄÚ
+					//åœ¨AOIèŒƒå›´å†…
 					is_can = true;
 				}
 				else
@@ -2187,7 +2187,7 @@ namespace faith
 		}
 		if ((target_type == e_mission_end_type_npc_kill || target_type == e_mission_end_type_get_item || target_type == e_mission_end_type_marry_dance) && m_mission_ptr->MissionShowType == e_mission_type_marry)
 		{
-			//·òÆŞÈÎÎñÌØÊâ´¦Àí
+			//å¤«å¦»ä»»åŠ¡ç‰¹æ®Šå¤„ç†
 			is_can = marry_mission_can_check();
 			if (!is_can)
 			{
@@ -2200,7 +2200,7 @@ namespace faith
 		case e_mission_end_type_kill_monster_get_item:
 		case e_mission_end_type_beat_npc:
 		case e_mission_end_type_kill_home_boss:
-		{//Õâ¼¸¸öÂß¼­ÏàÍ¬
+		{//è¿™å‡ ä¸ªé€»è¾‘ç›¸åŒ
 			if (m_mission_ptr->MissionEndType == e_mission_end_type_npc_kill
 				|| m_mission_ptr->MissionEndType == e_mission_end_type_kill_monster_get_item
 				|| m_mission_ptr->MissionEndType == e_mission_end_type_beat_npc
@@ -2220,7 +2220,7 @@ namespace faith
 		case e_mission_end_type_map_clear_history:
 		case e_mission_end_type_reach_level:
 		case e_mission_end_type_new_map_finish:
-		{//Õâ¼¸¸öÂß¼­ÏàÍ¬
+		{//è¿™å‡ ä¸ªé€»è¾‘ç›¸åŒ
 			if (m_mission_ptr->MissionEndType == e_mission_end_type_map
 				|| m_mission_ptr->MissionEndType == e_mission_end_type_map_clear_current
 				|| m_mission_ptr->MissionEndType == e_mission_end_type_activity_clear_current
@@ -2267,13 +2267,13 @@ namespace faith
 		case e_mission_end_type_kill_any_single_boss:
 		case e_mission_end_type_choose_a_fashion:
 		{
-			//ÕâĞ©ÀàĞÍĞèÒªÒÀÀµÍâ²¿´«ÈëµÄ
+			//è¿™äº›ç±»å‹éœ€è¦ä¾èµ–å¤–éƒ¨ä¼ å…¥çš„
 			is_can = (target_info_0 > 0);
 		}
 		break;
 		case e_mission_end_type_purchase_goods:
 		{
-			//ÓĞĞ©ÏŞ¹ºÉÌÆ·Ö®Ç°¿ÉÄÜÂò¹ı£¬ÒÀÀµ¹ºÂò¼ÇÂ¼
+			//æœ‰äº›é™è´­å•†å“ä¹‹å‰å¯èƒ½ä¹°è¿‡ï¼Œä¾èµ–è´­ä¹°è®°å½•
 			is_can = true;
 		}
 		break;
@@ -2292,7 +2292,7 @@ namespace faith
 		case e_mission_end_type_transform:
 		case e_mission_end_type_add_dot:
 		{
-			//ÕâĞ©ÀàĞÍĞèÒªÍâ²¿´«ÈëÒ»¸ö0£¨·ÇÄ¬ÈÏ²ÎÊı£©£¬±íÊ¾ÆäÊÇÓÉÕæµÄÍæ¼ÒĞĞÎª´¥·¢µÄ£¬¶ø²»ÊÇ×Ô¶¯¼ì²âÖ®ÀàµÄ
+			//è¿™äº›ç±»å‹éœ€è¦å¤–éƒ¨ä¼ å…¥ä¸€ä¸ª0ï¼ˆéé»˜è®¤å‚æ•°ï¼‰ï¼Œè¡¨ç¤ºå…¶æ˜¯ç”±çœŸçš„ç©å®¶è¡Œä¸ºè§¦å‘çš„ï¼Œè€Œä¸æ˜¯è‡ªåŠ¨æ£€æµ‹ä¹‹ç±»çš„
 			is_can = (target_info_0 == 0);
 		}
 		break;
@@ -2316,7 +2316,7 @@ namespace faith
 		break;
 		default:
 		{
-			//ÕâĞ©ÀàĞÍ²»ĞèÒªÍâ²¿²ÎÊı£¬¿ÉÒÔÍ¨¹ıµ÷ÓÃº¯ÊıÈ¡µÃÊı¾İ
+			//è¿™äº›ç±»å‹ä¸éœ€è¦å¤–éƒ¨å‚æ•°ï¼Œå¯ä»¥é€šè¿‡è°ƒç”¨å‡½æ•°å–å¾—æ•°æ®
 			is_can = true;
 		}
 		break;
@@ -2366,7 +2366,7 @@ namespace faith
 			return false;
 		}
 
-		// ²»ÊÇ¶Ô»°µÄnpc
+		// ä¸æ˜¯å¯¹è¯çš„npc
 		//if (m_mission_ptr->FinishMissionNpcId != npc_id)
 		//{
 		//	return false;

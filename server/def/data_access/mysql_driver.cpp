@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2014/05/28
 	created:	28:5:2014   21:27
 	file base:	mysql_driver
@@ -101,7 +101,6 @@ namespace faith
 		const xchar * charset_name = DEFALUT_CHARSET_NAME; 
 		mysql_options(&mysql_,MYSQL_SET_CHARSET_NAME, charset_name);
 
-		//ͨ�����ݽضϴ���
 		bool on_data_truncation = true;
 		mysql_options(&mysql_, MYSQL_REPORT_DATA_TRUNCATION, &on_data_truncation);
 
@@ -114,8 +113,6 @@ namespace faith
 			m_conn_params = params;
 			is_connected_ = true;
 			///*
-			//	����Ҫע��dp�����ݿ�ע��dp������Ҫע��dp�����ݿ��ִ��ʧ�ܣ������������֮
-			//	����Ϊdp��ʶ������0
 			//	*/
 			//xchar sql[256];
 			//sprintf(sql, "CALL SP_ON_DP_STARTED (%u)", 0);

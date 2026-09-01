@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 created: 2016��10��18��
 file base: title_mgr
 file ext: cpp
@@ -297,8 +297,6 @@ namespace faith
 
 		push_msg_own_title_all();
 
-		// ��������ʱ��title���
-		// Ҫ���ִ�������������ظ���
 		for (int32 i = 0; i < MAX_TITLE_NUM; i++)
 		{
 			e_title_special_handle handle_type = m_loading_finish_need_add_title_type_arr[i];
@@ -360,7 +358,6 @@ namespace faith
 		load_title_by_db((const s_title_info *)p_data, msg.row_count());
 		return true;
 	}
-	//��������
 	bool ctitle_mgr::is_have_title(int32 title_template_id)
 	{
 		title_map_it it = m_title_info.find(title_template_id);
@@ -412,7 +409,7 @@ namespace faith
 		}
 		int32 title_template_id = -1;
 		faith::template_manager::template_type::iterator ite;
-		for (ite = title_table->begin(); ite != title_table->end(); ++ite)	// ���⴦��
+		for (ite = title_table->begin(); ite != title_table->end(); ++ite)
 		{
 			TitleTemplate *title_template_ptr = title_template_ptr = (TitleTemplate*)(ite->second);
 			if (nullptr == title_template_ptr)
@@ -525,8 +522,7 @@ namespace faith
 		return 0;	
 	}
 
-	//������ɾ��
-	void ctitle_mgr::add_title_by_template_id(int32 title_template_id)	//1--���ӳƺ�,2--����ʱ��,3--�����ٴ�ʹ��
+	void ctitle_mgr::add_title_by_template_id(int32 title_template_id)
 	{
 		if (title_template_id <= 0)
 		{
@@ -602,7 +598,6 @@ namespace faith
 					default:
 						break;
 					}
-					//���Ӹóƺ�
 					title_info.data_ary[e_title_info_start_time] = time_helper::get_cur_time_new().second;
 					title_info.data_ary[e_title_info_end_time] = time_helper::get_cur_time_new().second + add_time;
 					result = faith::e_title_add_result_type_normal;
@@ -612,14 +607,12 @@ namespace faith
 			{
 				if (it != m_title_info.end())
 				{
-					//����ʱ��(start_time���Ƴ���ʱ��)
 					int32 end_time = it->second.get_inst_data(e_title_info_end_time) + title_template_ptr->LastTime * 60;
 					it->second.set_inst_data(e_title_info_end_time, end_time);
 					result = faith::e_title_add_result_type_add_time;
 				}
 				else
 				{
-					//���Ӹóƺ�
 					title_info.data_ary[e_title_info_start_time] = time_helper::get_cur_time_new().second;
 					title_info.data_ary[e_title_info_end_time] = time_helper::get_cur_time_new().second + title_template_ptr->LastTime * 60;
 					result = faith::e_title_add_result_type_normal;
@@ -655,7 +648,6 @@ namespace faith
 
 		if (faith::e_title_add_result_type_cannot_use_again != result)
 		{
-			// �����ƺŹ���
 			int32 notice_id = title_template_ptr->Noticeld;	//93000035
 			std::vector<std::string> vec_notice_str;
 			vec_notice_str.push_back(template_manager::get_instance().get_str_id_by_notice_id(notice_id));
@@ -697,7 +689,6 @@ namespace faith
 		push_msg_one_title(title_template_id);
 	}
 
-	//װ����ж��
 	void ctitle_mgr::equip_on_title(int32 title_template_id)
 	{
 		script_mgr::get_instance().call_func("role_summary", "equip_on_title_lua", 0, false, "%d%d", m_unit_array_index, title_template_id);
@@ -744,14 +735,13 @@ namespace faith
 		player_ref.get_pawn_att().send_base_att_one(faith::e_base_att_info_equip_title_id);*/
 	}
 
-	//���ӳƺŸ������
 	void ctitle_mgr::add_title_by_type_and_value(e_title_type title_type, int32 value1, int32  value2)
 	{
 		int32 title_template_id = get_template_id_by_type_and_value(title_type, value1, value2);
 		add_title_by_template_id(title_template_id);
 	}
 
-	void ctitle_mgr::ranking_first_changed(int32 ranking_type, bool is_first, bool is_notice)	//����������һ�����ߴӵ�һ��������
+	void ctitle_mgr::ranking_first_changed(int32 ranking_type, bool is_first, bool is_notice)
 	{
 		player& player_ref = unit_man::get_player(m_unit_array_index);
 		if (player_ref.is_valid() == false)
@@ -800,7 +790,6 @@ namespace faith
 		}
 		if (is_first)
 		{
-			//���С��һ�죬�Ͳ���ӳƺ�
 			int32 open_days = globle_data::get_instance().get_server_on_days();
 			if (open_days > 1)
 			{

@@ -11,15 +11,15 @@ namespace faith
 	class  ranking_mgr_ws
 	{
 	public:
-		static void init_manager();	//³õÊ¼»¯¹ÜÀí
+		static void init_manager();	//åˆå§‹åŒ–ç®¡ç†
 		static void heart_tick(int64& time_now);
 		static void clear_data();
-		static void clear_data_by_ranking_type(e_RankingIndex rank_type);//ÏŞÊ±»î¶¯ÅÅĞĞ°ñÊı¾İÇåÀíµ÷ÓÃ
+		static void clear_data_by_ranking_type(e_RankingIndex rank_type);//é™æ—¶æ´»åŠ¨æ’è¡Œæ¦œæ•°æ®æ¸…ç†è°ƒç”¨
 	public:
 		static void tick_save_ranking_list();
 		static void save_ranking_info_to_db(const s_ranking_player_info& ranking_info);
 		static void set_ranking_save_flag(int32 ranking_type, bool is_save);
-		static void req_load_all_ranking_from_db();					//ÏÖÔÚrankingµÄload ÊÇÔÚ¾üÍÅ¹ÜÀíÆ÷µÄdbloadÍê³Éºó½øĞĞµÄ
+		static void req_load_all_ranking_from_db();					//ç°åœ¨rankingçš„load æ˜¯åœ¨å†›å›¢ç®¡ç†å™¨çš„dbloadå®Œæˆåè¿›è¡Œçš„
 		static bool fixed_ranking_supporting_data(s_ranking_player_info* load_info, const guid_64& legion_guid, const xstring& legion_name);
 		static bool fixed_ranking_legion_name_data(s_ranking_player_info* load_info, const guid_64& legion_guid, const xstring& legion_name);
 		static void change_ranking_player_legion_info(const guid_64& ranking_guid, const guid_64& legion_guid, const xstring& legion_name);
@@ -32,7 +32,7 @@ namespace faith
 		static bool make_ranking_data(ranking_proto_ranking_player_info* ranking_player_data, const s_ranking_player_info& player_data);
 		static s_ranking_player_info* get_ranking_player_info_by_type(e_RankingIndex ranking_index, const guid_64& target_guid);
 		static void set_gate_ranking_legion_name(const guid_64& legion_guid, const xstring& legion_name);
-		static void set_ranking_leigon_chief_guid(int32 rank_type, const guid_64& legion_guid, const guid_64& role_guid, const xstring& legion_chief_name, const int32& legion_chief_vip_level);//¸ü¸Ä¾üÍÅ³¤µÄGuid
+		static void set_ranking_leigon_chief_guid(int32 rank_type, const guid_64& legion_guid, const guid_64& role_guid, const xstring& legion_chief_name, const int32& legion_chief_vip_level);//æ›´æ”¹å†›å›¢é•¿çš„Guid
 		static void delete_ranking_by_role_guid(e_RankingIndex ranking_index, const guid_64& target_guid);
 		static void open_server_first_day_proc();
 		static void send_gs_ranking(e_RankingIndex get_ranking_type, e_RankingIndex cross_ranking_type);
@@ -49,7 +49,7 @@ namespace faith
 		static s_ranking_player_info* get_ranking_info_by_type(e_RankingIndex ranking_index, int32 begin_index, int32 end_index);
 		static bool is_legion_ranking(e_RankingIndex ranking_index);
 		static void cs2ws_sync_player_vip_level_func(const guid_64& role_guid,const int32& vip_level);
-		static void change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//½ÇÉ«¸ÄÃûÍ¬²½
+		static void change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//è§’è‰²æ”¹ååŒæ­¥
 		static void change_ranking_legion_name_info(const guid_64& ranking_guid, const guid_64& legion_guid, const xstring& legion_name);
 	public:		    				    
 		static void sync_player_info(const s_ranking_player_info& player_info);
@@ -98,16 +98,16 @@ namespace faith
 				    
 		static void replace_element_war_ranking();
 		/************************************************************************/
-		/*						¸ù¾İÅÅĞĞ°ñ¼ÆËãÆ½¾ùµÈ¼¶				       	    */
+		/*						æ ¹æ®æ’è¡Œæ¦œè®¡ç®—å¹³å‡ç­‰çº§				       	    */
 		/************************************************************************/
 	public:
 		static int32 get_srv_avg_level();
 		static int32 get_world_level_last();
 		static int32 get_world_level_cur();
 		static int32 calcu_srv_avg_level(int32 rank_min_index, int32 rank_max_index);
-		static int32 calcu_all_server_avg_level();//¿ç·şÆ½¾ùµÈ¼¶
+		static int32 calcu_all_server_avg_level();//è·¨æœå¹³å‡ç­‰çº§
 		static void	sync_srv_avg_level_to_cs();
-		static int32 get_rank_level_with_num(int32 num);	//¸ù¾İ´«Èënum »ñµÃµÈ¼¶ÅÅĞĞ°ñÇ°numµÄÆ½¾ùµÈ¼¶
+		static int32 get_rank_level_with_num(int32 num);	//æ ¹æ®ä¼ å…¥num è·å¾—ç­‰çº§æ’è¡Œæ¦œå‰numçš„å¹³å‡ç­‰çº§
 		static void	send_world_srv_lv_info_all(int32 conn_index = -1);
 		static void get_world_level_param(int32 &start, int32& end);
 		static int32 get_world_level_for_now();

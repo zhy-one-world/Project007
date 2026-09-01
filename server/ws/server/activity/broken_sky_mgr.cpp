@@ -101,7 +101,7 @@ namespace faith
  			{
 				continue;
  			}
-			// ÅĞ¶ÏÊÇ·ñÊÇÔÚÆÆËéĞé¿ÕµÄµØÍ¼
+			// åˆ¤æ–­æ˜¯å¦æ˜¯åœ¨ç ´ç¢è™šç©ºçš„åœ°å›¾
 			int32 role_in_map_id = client_session_ref.m_role_info.data_ary[e_role_info_move_map_id];
 			if (is_broken_sky_map_id(role_in_map_id) == false)
 			{
@@ -198,7 +198,7 @@ namespace faith
 			return;
 		}
 
-		// ¸üĞÂ¶ÔÓ¦µÄ·ÖÊı°ñ
+		// æ›´æ–°å¯¹åº”çš„åˆ†æ•°æ¦œ
 		compare_and_update_top_records(map_id, top_record_arr, record_num);
 		m_all_damage += damage;
 
@@ -452,7 +452,7 @@ namespace faith
 		
 		if (m_is_boss_dead || m_game_over_flag)
 		{
-			broken_sky_creat_boss_msg.boss_level = -1; //±íÃ÷´´½¨¸±±¾Ê±»î¶¯»¹ÔÚ ¸±±¾ÄÚÒª´´½¨bossÊ±»î¶¯½áÊø
+			broken_sky_creat_boss_msg.boss_level = -1; //è¡¨æ˜åˆ›å»ºå‰¯æœ¬æ—¶æ´»åŠ¨è¿˜åœ¨ å‰¯æœ¬å†…è¦åˆ›å»ºbossæ—¶æ´»åŠ¨ç»“æŸ
 		}
 		bool is_use = proto_by_lua(e_msg_index_ws2cs_broken_sky_creat_boss);
 		if (is_use == false)

@@ -1,4 +1,4 @@
-/*@@
+ï»¿/*@@
 
 	Copyright (c) Beijing Second Laboratory Game Studio. All rights reserved.
 
@@ -16,9 +16,7 @@
 @@*/
 
 //////////////////////////////////////////////////////////////////////////
-//
 //	File Include
-//
 //////////////////////////////////////////////////////////////////////////
 #include "game_mgr.h"
 #include "game_cfg/servers_config.h"
@@ -40,16 +38,12 @@
 #include "net.pb.h"
 
 //////////////////////////////////////////////////////////////////////////
-//
 //	Macro And Struct Define
-//
 //////////////////////////////////////////////////////////////////////////
 namespace faith
 {
 	//////////////////////////////////////////////////////////////////////////
-	//
 	//	Class Implement
-	//
 	//////////////////////////////////////////////////////////////////////////
 	using namespace faith::utility;
 	game_mgr::game_mgr()
@@ -111,7 +105,7 @@ namespace faith
 			return;
 		}
 		static int32 loop_counter = 0;
-		static int64 tick_time = get_tick_count();	// Ã¿´Î³¡¾°tickÊ±¼ä(Æ½¾ùÖµ)
+		static int64 tick_time = get_tick_count();	// æ¯æ¬¡åœºæ™¯tickæ—¶é—´(å¹³å‡å€¼)
 		static int64 last_log_time = 0;
 		++loop_counter;
 		int64 time_now = get_tick_count();
@@ -138,7 +132,7 @@ namespace faith
 		http_access_mgr::get_instance().tick(time_now);
 		if (daemon_client::getInstance().get_server_close())
 		{
-			// Êä³öÐÅÏ¢
+			// è¾“å‡ºä¿¡æ¯
 			CONSOLE_INFO("daemon close, all player offline, please shutdown gate ! ! !");
 			stop();
 			app_server::getInstance().stop();
@@ -224,7 +218,7 @@ namespace faith
 					gate2server_reload_csv msg;
 					msg.need_reload = 1;
 					send_to_server(&msg, sizeof(msg), need_send_server_id, e_server_type_ws);
-					//²é¿´Ê£ÄÄÐ©·þÎñÆ÷Ã»ÓÐreloadcsv
+					//æŸ¥çœ‹å‰©å“ªäº›æœåŠ¡å™¨æ²¡æœ‰reloadcsv
 					CONSOLE_INFO("last_server_reload_csv_all! need_send_server_id:{}", need_send_server_id);
 				}
 				ite = server_ite->second.erase(ite);
@@ -421,7 +415,7 @@ namespace faith
 		{
 			return;
 		}
-		gate2ws_change_server_id msg;//»Ø¸ø¸Ã¿ç·þ×éËùÓÐWSµÄÊý¾Ý
+		gate2ws_change_server_id msg;//å›žç»™è¯¥è·¨æœç»„æ‰€æœ‰WSçš„æ•°æ®
 		cross_mgr* old_cross_mgr_ptr = get_cross_server(old_cross_id);
 		if (old_cross_mgr_ptr != nullptr)
 		{
@@ -462,7 +456,7 @@ namespace faith
 			return;
 		}
 
-		gate2ws_all_server_arr all_msg;//·¢¸ø±¾·þ¸Ã¿ç·þ×éµ±Ç°ËùÓÐ·þÎñÆ÷ÐÅÏ¢
+		gate2ws_all_server_arr all_msg;//å‘ç»™æœ¬æœè¯¥è·¨æœç»„å½“å‰æ‰€æœ‰æœåŠ¡å™¨ä¿¡æ¯
 		new_cross_mgr_ptr->get_this_cross_all_server(all_msg.server_info, all_msg.server_num);
 		game_server_ptr->send_message(&all_msg, sizeof(all_msg), e_server_type_ws);
 	}

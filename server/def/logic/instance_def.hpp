@@ -17,21 +17,21 @@ namespace faith
 {
 	enum instance_type
 	{
-		nouse_world,//0,ÎŞ·ìÊÀ½ç(Ä¿Ç°ÎŞĞ§)
-		nouse_seamworld,//1,ÓĞ·ìÊÀ½ç(Ã»ÓÃ)
-		loading_area,//2,ÔØÈëÇøÓò
-		multi_play,//3,ÆÕÍ¨¸±±¾
-		team_play,//4,ÆÕÍ¨×é¶Ó¸±±¾
-		battle,//5,Õ½³¡
-		guild_instance,//6,¼Ò×å
-		internet_bar,//7,Íø°É
-		same_guild_enter_same_instance,//8,Í¬Ò»¸ö¼Ò×å½øÈëÍ¬Ò»¸ö¸±±¾
-		corps_instance,	// 9,Í¬Ò»¸ö¾üÍÅ½øÒ»¸ö¸±±¾
+		nouse_world,//0,æ— ç¼ä¸–ç•Œ(ç›®å‰æ— æ•ˆ)
+		nouse_seamworld,//1,æœ‰ç¼ä¸–ç•Œ(æ²¡ç”¨)
+		loading_area,//2,è½½å…¥åŒºåŸŸ
+		multi_play,//3,æ™®é€šå‰¯æœ¬
+		team_play,//4,æ™®é€šç»„é˜Ÿå‰¯æœ¬
+		battle,//5,æˆ˜åœº
+		guild_instance,//6,å®¶æ—
+		internet_bar,//7,ç½‘å§
+		same_guild_enter_same_instance,//8,åŒä¸€ä¸ªå®¶æ—è¿›å…¥åŒä¸€ä¸ªå‰¯æœ¬
+		corps_instance,	// 9,åŒä¸€ä¸ªå†›å›¢è¿›ä¸€ä¸ªå‰¯æœ¬
 	};
 	struct tagForce
 	{
-		int32			ForceID;			// ËùĞèÒªµÄÉùÍûID
-		int32			ForceValue;			// ËùĞèÒªµÄÉùÍûÖµ
+		int32			ForceID;			// æ‰€éœ€è¦çš„å£°æœ›ID
+		int32			ForceValue;			// æ‰€éœ€è¦çš„å£°æœ›å€¼
 
 		tagForce()
 		{
@@ -39,58 +39,58 @@ namespace faith
 			ForceValue = 0;
 		}
 	};
-	// ¸±±¾Ä£°å
+	// å‰¯æœ¬æ¨¡æ¿
 	struct tagInstanceInfo
 	{
-		int32						ResID;					// ¸±±¾³¡¾°×ÊÔ´id
-		std::string				ResModName;				// ¸±±¾npc×ÊÔ´ĞŞ¸Äid
-		instance_type			i_type;					// ¸±±¾ÀàĞÍ
-		uint32					exit_pos;				// ³ö¿ÚÎ»ÖÃ
-		uint32					born_pos;				// Èë¿ÚÎ»ÖÃ
-		uint32					relive_pos;				// ¸´»îµã
-		uint32					re_online_pos;			// ÖØĞÂµÇÂ½µã
-		int32						dl_limit_player_count;	// ¸Ã¸±±¾ËùÈİÄÉµÄ×î´óÈËÊı
-		int32						aoi;					// aoi·¶Î§
-		int32						limit_count;			// ×î¶à´æÔÚ¸öÊı
-		int32						limit_duration_time;	// ×ÜÊ±¼äÏŞÖÆ
-		int32						delay_delete;			// ÑÓ³ÙÉ¾³ı
-		bool					can_login;				// ÏÂÏßºóÊÇ·ñ¿ÉÒÔÖ±½ÓµÇÂ¼µ½¸±±¾
-		int32						can_pk;					// ÊÇ·ñ¿ÉÒÔpk 0,¸ù¾İ³¡¾°,1,²»¿É,2ÍêÈ«¿ÉÒÔ
-		bool					camp_split;				// ÊÇ·ñ¸ù¾İÕóÓª·Ö¸îÉ¸Ñ¡
-		int32						force_team_countdown;	// Àë¶ÓÊÇ·ñµ¹¼ÆÊ±(Ê±¼ä)
-		int32						limit_level_low;		// ½øÈë¸Ã¸±±¾µÄ×îµÍ¾­ÑéµÈ¼¶
-		int32						limit_level_high;		// ½øÈë¸Ã¸±±¾µÄ×î¸ß¾­ÑéµÈ¼¶
-		std::vector<tagForce>	limit_forces;			// ËùĞèÒªµÄÉùÍûÖµ
-		std::map<uint32, uint32>		limit_item;			// ËùĞèÒªµÄÎïÆ·ID (Íæ¼ÒÓµÓĞÕâ¸öÎïÆ·¼´¿É£¬²»·Ö×°±¸ÉÏ»¹ÊÇ±³°üÀïÓĞ)
-		std::vector<uint32>		limit_buff;				// ËùĞèÒªµÄbuff ID (buffÏûÊ§ÔõÃ´°ì)
-		std::vector<uint32>		limit_rewarded_quest;	// ĞèÒªÍê³ÉÁËµÄÈÎÎñ
-		std::vector<uint32>		limit_have_quest;		// ĞèÒªÍê³ÉÖĞµÄÈÎÎñ
-		std::set<uint32>			limit_job;				// Ö°ÒµÏŞÖÆ
-		int32						limit_sex;				// ĞÔ±ğÏŞÖÆ
-		std::set<uint32>			limit_ip_group;			// ipÏŞÖÆ
-		f32						reset_time;				// ¸±±¾ÖØÖÃÊ±¼ä
-		int32						enter_times;			// ¸±±¾ÖØÖÃÇ°£¬Íæ¼Ò×î¶à½øÈëµÄ´ÎÊı
-		f32						finish_time;			// ¸±±¾Íê³ÉÖÜÆÚ
-		int32						finish_times;			// ¸±±¾Íê³ÉÖÜÆÚ£¬Íæ¼Ò×î¶àÍê³ÉµÄ´ÎÊı
-		f32						reset_time_player;		// ¸±±¾ÖØÖÃÊ±¼ä
-		int32						enter_times_player;		// ¸±±¾ÖØÖÃÇ°£¬Íæ¼Ò×î¶à½øÈëµÄ´ÎÊı
-		f32						finish_time_player;		// ¸±±¾Íê³ÉÖÜÆÚ
-		int32						finish_times_player;	// ¸±±¾Íê³ÉÖÜÆÚ£¬Íæ¼Ò×î¶àÍê³ÉµÄ´ÎÊı
-		std::vector<uint32>		buff_info;				// ½øÈë¸±±¾ºóÌí¼ÓµÄbuff
-		std::map<uint32, uint32>		tird_info;			// Æ£ÀÍĞÅÏ¢
-		std::map<uint32, uint32>		del_item_info;		// ½øÈë¸±±¾ºó¿Û³ıµÄµÀ¾ßÁĞ±í
-		std::string				script_name;			// À©Õ¹½Å±¾
+		int32						ResID;					// å‰¯æœ¬åœºæ™¯èµ„æºid
+		std::string				ResModName;				// å‰¯æœ¬npcèµ„æºä¿®æ”¹id
+		instance_type			i_type;					// å‰¯æœ¬ç±»å‹
+		uint32					exit_pos;				// å‡ºå£ä½ç½®
+		uint32					born_pos;				// å…¥å£ä½ç½®
+		uint32					relive_pos;				// å¤æ´»ç‚¹
+		uint32					re_online_pos;			// é‡æ–°ç™»é™†ç‚¹
+		int32						dl_limit_player_count;	// è¯¥å‰¯æœ¬æ‰€å®¹çº³çš„æœ€å¤§äººæ•°
+		int32						aoi;					// aoièŒƒå›´
+		int32						limit_count;			// æœ€å¤šå­˜åœ¨ä¸ªæ•°
+		int32						limit_duration_time;	// æ€»æ—¶é—´é™åˆ¶
+		int32						delay_delete;			// å»¶è¿Ÿåˆ é™¤
+		bool					can_login;				// ä¸‹çº¿åæ˜¯å¦å¯ä»¥ç›´æ¥ç™»å½•åˆ°å‰¯æœ¬
+		int32						can_pk;					// æ˜¯å¦å¯ä»¥pk 0,æ ¹æ®åœºæ™¯,1,ä¸å¯,2å®Œå…¨å¯ä»¥
+		bool					camp_split;				// æ˜¯å¦æ ¹æ®é˜µè¥åˆ†å‰²ç­›é€‰
+		int32						force_team_countdown;	// ç¦»é˜Ÿæ˜¯å¦å€’è®¡æ—¶(æ—¶é—´)
+		int32						limit_level_low;		// è¿›å…¥è¯¥å‰¯æœ¬çš„æœ€ä½ç»éªŒç­‰çº§
+		int32						limit_level_high;		// è¿›å…¥è¯¥å‰¯æœ¬çš„æœ€é«˜ç»éªŒç­‰çº§
+		std::vector<tagForce>	limit_forces;			// æ‰€éœ€è¦çš„å£°æœ›å€¼
+		std::map<uint32, uint32>		limit_item;			// æ‰€éœ€è¦çš„ç‰©å“ID (ç©å®¶æ‹¥æœ‰è¿™ä¸ªç‰©å“å³å¯ï¼Œä¸åˆ†è£…å¤‡ä¸Šè¿˜æ˜¯èƒŒåŒ…é‡Œæœ‰)
+		std::vector<uint32>		limit_buff;				// æ‰€éœ€è¦çš„buff ID (buffæ¶ˆå¤±æ€ä¹ˆåŠ)
+		std::vector<uint32>		limit_rewarded_quest;	// éœ€è¦å®Œæˆäº†çš„ä»»åŠ¡
+		std::vector<uint32>		limit_have_quest;		// éœ€è¦å®Œæˆä¸­çš„ä»»åŠ¡
+		std::set<uint32>			limit_job;				// èŒä¸šé™åˆ¶
+		int32						limit_sex;				// æ€§åˆ«é™åˆ¶
+		std::set<uint32>			limit_ip_group;			// ipé™åˆ¶
+		f32						reset_time;				// å‰¯æœ¬é‡ç½®æ—¶é—´
+		int32						enter_times;			// å‰¯æœ¬é‡ç½®å‰ï¼Œç©å®¶æœ€å¤šè¿›å…¥çš„æ¬¡æ•°
+		f32						finish_time;			// å‰¯æœ¬å®Œæˆå‘¨æœŸ
+		int32						finish_times;			// å‰¯æœ¬å®Œæˆå‘¨æœŸï¼Œç©å®¶æœ€å¤šå®Œæˆçš„æ¬¡æ•°
+		f32						reset_time_player;		// å‰¯æœ¬é‡ç½®æ—¶é—´
+		int32						enter_times_player;		// å‰¯æœ¬é‡ç½®å‰ï¼Œç©å®¶æœ€å¤šè¿›å…¥çš„æ¬¡æ•°
+		f32						finish_time_player;		// å‰¯æœ¬å®Œæˆå‘¨æœŸ
+		int32						finish_times_player;	// å‰¯æœ¬å®Œæˆå‘¨æœŸï¼Œç©å®¶æœ€å¤šå®Œæˆçš„æ¬¡æ•°
+		std::vector<uint32>		buff_info;				// è¿›å…¥å‰¯æœ¬åæ·»åŠ çš„buff
+		std::map<uint32, uint32>		tird_info;			// ç–²åŠ³ä¿¡æ¯
+		std::map<uint32, uint32>		del_item_info;		// è¿›å…¥å‰¯æœ¬åæ‰£é™¤çš„é“å…·åˆ—è¡¨
+		std::string				script_name;			// æ‰©å±•è„šæœ¬
 		uint32					war_map_id;
 		uint32					jzbase_map_id;
-		i8						limit_mt_low;			// ½øÈë¸Ã¸±±¾µÄ×îµÍ×ªÉú´ÎÊı
-		i8						limit_mt_high;			// ½øÈë¸Ã¸±±¾µÄ×î¸ß×ªÉú´ÎÊı
-		int32						one_day_finish_times;	// Ã¿Ìì×î¶àÍê³É´ÎÊı
+		i8						limit_mt_low;			// è¿›å…¥è¯¥å‰¯æœ¬çš„æœ€ä½è½¬ç”Ÿæ¬¡æ•°
+		i8						limit_mt_high;			// è¿›å…¥è¯¥å‰¯æœ¬çš„æœ€é«˜è½¬ç”Ÿæ¬¡æ•°
+		int32						one_day_finish_times;	// æ¯å¤©æœ€å¤šå®Œæˆæ¬¡æ•°
 		bool					check_high;
 		bool					disable_hidden_line;
 		bool					disable_player_limit;
 		bool					bactionmap;
 
-		// .. ÆäËüÊı¾İ
+		// .. å…¶å®ƒæ•°æ®
 
 		tagInstanceInfo() :
 			ResID(0),

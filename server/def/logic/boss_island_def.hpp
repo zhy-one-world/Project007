@@ -1,10 +1,10 @@
 /********************************************************************
-created: 2018Äê9ÔÂ6ÈÕ
+created: 2018å¹´9æœˆ6æ—¥
 file base: boss_island_def
 file ext: h
 author: zhangshuo
 
-purpose: ÓÀºãµº
+purpose: æ°¸æ’å²›
 *********************************************************************/
 #ifndef _BOSS_ISLAND_DEF_HPP_
 #define _BOSS_ISLAND_DEF_HPP_

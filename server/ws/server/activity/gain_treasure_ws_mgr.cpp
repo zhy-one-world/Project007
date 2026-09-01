@@ -1,4 +1,4 @@
-#include "gain_treasure_ws_mgr.h"
+﻿#include "gain_treasure_ws_mgr.h"
 #include "template/template_manager.h"
 #include <gain_treasure_msg.hpp>
 #include "ws_client.hpp"
@@ -271,7 +271,6 @@ namespace faith
 
 	void gain_treasure_ws_mgr::add_gain_item_reocrd_by_one_boss(const s_gain_treasure_record_info_one& record_info)
 	{
-		//�ȷż�¼ �ٷ��ö� �������ö�����Ʒһֱ�ڼ�¼����
 		add_gain_item_reocrd_by_dorp_record_model(record_info, e_drop_record_model_type_record);
 		add_gain_item_reocrd_by_dorp_record_model(record_info, e_drop_record_model_type_set_top);
 	}
@@ -380,7 +379,6 @@ namespace faith
 			return 0;
 		}
 
-		//���ҵ��Ѿ����ͼ�¼��λ��
 		auto ite = m_gain_item_record_list.begin();
 		if (record_index >= 0)
 		{
@@ -461,14 +459,12 @@ namespace faith
 		}
 		else
 		{
-			//boss�ո�����߸����� ��Ϣ���͸�ȫ�����
 			if ((!ite->second.boss_guid.is_valid() && boss_info.boss_guid.is_valid())
 				|| !boss_info.boss_guid.is_valid())
 			{
 				ite->second = boss_info;
 				send_gain_treasure_boss_to_all(boss_info.boss_spawn_point_template_id);
 			}
-			//boss�����ı�ֻ������Ӧ��ͼ�����
 			else
 			{
 				ite->second = boss_info;
@@ -570,7 +566,7 @@ namespace faith
 				cur_num++;
 			}
 		}
-		if (cur_num == 0)//���Ϊ0���ʾ��ޱ����������������
+		if (cur_num == 0)
 		{
 			client_session_mgr::getInstance().send_message_to_all_client(&boss_info_msg, e_msgindex_s2c_gain_treasure_boss_info_one);
 			return;

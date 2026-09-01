@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê8ÔÂ16ÈÕ
+created: 2016å¹´8æœˆ16æ—¥
 file base: mail_mgr
 file ext: cpp
 author: luoxingyu
@@ -133,7 +133,7 @@ namespace faith
 		}
 
 		bool is_need_clear = true;
-		//È«²¿ÓÊ¼ş¸üĞÂÊ±£¬ĞèÒª½«¿Í»§¶ËµÄÊı¾İÏÈÇå³ı
+		//å…¨éƒ¨é‚®ä»¶æ›´æ–°æ—¶ï¼Œéœ€è¦å°†å®¢æˆ·ç«¯çš„æ•°æ®å…ˆæ¸…é™¤
 
 		mail_proto_update_mail mail_msg;
 		mail_msg.add_role_guid(m_player_ptr->get_unit_guid().A);
@@ -142,7 +142,7 @@ namespace faith
 		{
 			int32 temp_size = mail_msg.ByteSize();
 
-			//°ü´óĞ¡´óÓÚ4800¾Í²»ÄÜ·¢ÁË£¬ËùÒÔÅĞ¶Ï´óÓÚ4000¾ÍÏÈ·¢Ò»²¨
+			//åŒ…å¤§å°å¤§äº4800å°±ä¸èƒ½å‘äº†ï¼Œæ‰€ä»¥åˆ¤æ–­å¤§äº4000å°±å…ˆå‘ä¸€æ³¢
 			if (temp_size > packege_length_max)
 			{
 				mail_msg.set_is_over(false);
@@ -174,7 +174,7 @@ namespace faith
 
 		for (unit_mail_item_map_it it = m_mail_item_map.begin();it != m_mail_item_map.end(); it ++)
 		{
-			//°ü´óĞ¡´óÓÚ4800¾Í²»ÄÜ·¢ÁË£¬ËùÒÔÅĞ¶Ï´óÓÚ4000¾ÍÏÈ·¢Ò»²¨
+			//åŒ…å¤§å°å¤§äº4800å°±ä¸èƒ½å‘äº†ï¼Œæ‰€ä»¥åˆ¤æ–­å¤§äº4000å°±å…ˆå‘ä¸€æ³¢
 			if (item_msg.item_list_size() > send_item_max_num)
 			{
 				m_player_ptr->send_message_to_self(&item_msg, e_msgindex_s2c_mail_item_update);
@@ -208,12 +208,12 @@ namespace faith
 			if ((cur_living_time > GAMECONFIG->MailLiveTime || is_need_delete)
 				&& !m_mail_list[i].is_has_item_or_money())
 			{
-				//ÓÊ¼şµ½Ê±£¬½«É¾³ı±êÖ¾Î»ÖÃ1
+				//é‚®ä»¶åˆ°æ—¶ï¼Œå°†åˆ é™¤æ ‡å¿—ä½ç½®1
 				m_mail_list[i].set_data_info(EMailInfo_IsNeedDelete, 1);
 
 				add_to_del_array(m_mail_list[i].get_mail_guid());
 
-				//É¾³ı¸½¼şÎïÆ·
+				//åˆ é™¤é™„ä»¶ç‰©å“
 				for (int32 item_index = 0; item_index < max_item_per_mail; ++item_index)
 				{
 					guid_64 temp_item_guid = m_mail_list[i].get_target_item_guid(item_index);
@@ -241,7 +241,7 @@ namespace faith
 			mail_msg.set_mail_num(del_array_effect_num);
 			m_player_ptr->send_message_to_self(&mail_msg, e_msgindex_s2c_mail_delete_mail_by_live_time);
 
-			//É¾³ıÓÊ¼ş±¾Éí
+			//åˆ é™¤é‚®ä»¶æœ¬èº«
 			del_by_del_array();
 		}
 
@@ -553,7 +553,7 @@ namespace faith
 				{
 					temp_mail->set_data_info(EMailInfo_ReadState, 1);
 
-					//·ÀÖ¹Ë¢ĞÂ£¬²»Ö÷¶¯·¢£¬·´Õı¾ÍÊÇ1¡¢0±ä»»£¬ÔÚOperateEndÊ±ÉèÖÃÎª1
+					//é˜²æ­¢åˆ·æ–°ï¼Œä¸ä¸»åŠ¨å‘ï¼Œåæ­£å°±æ˜¯1ã€0å˜æ¢ï¼Œåœ¨OperateEndæ—¶è®¾ç½®ä¸º1
 					//send_mail_one(*temp_mail);
 					add_mail_to_db(temp_mail->get_mail_inst());
 					return e_item_string_succeed;
@@ -629,7 +629,7 @@ namespace faith
 		send_mail_item_all();
 		send_mail_all();
 
-		//Ôö¼ÓÁËÎïÆ·£¬»òÕß ¼ÓÁËÇ®ÇÒÇ®µÄIDºÍÊıÁ¿¶ÔÓ¦
+		//å¢åŠ äº†ç‰©å“ï¼Œæˆ–è€… åŠ äº†é’±ä¸”é’±çš„IDå’Œæ•°é‡å¯¹åº”
 		if ((all_item_get_array.size() > 0) || (all_money_get_array.size() > 0))
 		{
 			mail_proto_mail_contents_get mail_get_msg;
@@ -746,7 +746,7 @@ namespace faith
 		}
 		if (m_mail_list[mail_index].is_has_item_or_money())
 		{
-			//ÓĞ¸½¼şµÄ½²µÀÀíÊÇ²»ÄÜ½øÈëÕâ¸öº¯ÊıµÄ
+			//æœ‰é™„ä»¶çš„è®²é“ç†æ˜¯ä¸èƒ½è¿›å…¥è¿™ä¸ªå‡½æ•°çš„
 			return e_item_string_unkown;
 		}
 		m_mail_list[mail_index].set_data_info(EMailInfo_IsNeedDelete, 1);
@@ -841,7 +841,7 @@ namespace faith
 			//if(m_player_ptr->get_item_set().put_in_bag(temp_item) == false)
 			//		all_success = false;
 
-			////³É¹¦ÁìÈ¡ÎïÆ·£¬Çå¿Õ¸Ã´æ´¢Î»
+			////æˆåŠŸé¢†å–ç‰©å“ï¼Œæ¸…ç©ºè¯¥å­˜å‚¨ä½
 			//temp_mail->set_target_item_guid_empty(item_index);
 			//delete_mail_item_in_db(temp_item_guid);
 			//m_mail_item_map.erase(temp_item_it);
@@ -862,8 +862,8 @@ namespace faith
 		int64 temp_money_get_num2 = temp_mail->get_data_info(EMailInfo_MoneyNum2);
 		int64 log_money_get_num2 = temp_money_get_num2;
 
-		//¼ÆËã±¾´ÎÌáÈ¡£¬»õ±ÒÔö¼ÓÁ¿
-		//µÚÒ»ÖÖ»õ±Ò
+		//è®¡ç®—æœ¬æ¬¡æå–ï¼Œè´§å¸å¢åŠ é‡
+		//ç¬¬ä¸€ç§è´§å¸
 		if(temp_money_get_num1 > 0)
 		{
 			bool add_money_1_success = false;
@@ -906,7 +906,7 @@ namespace faith
 			}
 		}
 
-		//µÚ¶şÖÖ»õ±Ò
+		//ç¬¬äºŒç§è´§å¸
 		if(temp_money_get_num2 > 0)
 		{
 			bool add_money_2_success = false;
@@ -975,10 +975,10 @@ namespace faith
 			return e_item_string_unkown;
 		}
 
-		//ÓÊ¼şÓĞĞ§ĞÔÅĞ¶ÏÍê±Ï£¬¿ªÊ¼Õı³£Âß¼­
+		//é‚®ä»¶æœ‰æ•ˆæ€§åˆ¤æ–­å®Œæ¯•ï¼Œå¼€å§‹æ­£å¸¸é€»è¾‘
 		for (int32 item_guid_index = EMailInfo_ItemGuid11; item_guid_index <= EMailInfo_ItemGuid51; item_guid_index += 2)
 		{
-			//ÔÚ´ËÑ­»·ÖĞ´¦ÀíËùÓĞÎå¸öÎïÆ·
+			//åœ¨æ­¤å¾ªç¯ä¸­å¤„ç†æ‰€æœ‰äº”ä¸ªç‰©å“
 			guid_64 temp_item_guid(m_mail_list[mail_index].get_data_info((EMailInfo)item_guid_index), m_mail_list[mail_index].get_data_info((EMailInfo)(item_guid_index + 1)));
 			if (!temp_item_guid.is_valid())
 			{
@@ -1014,7 +1014,7 @@ namespace faith
 
 				for (int32 item_guid_index = EMailInfo_ItemGuid11; item_guid_index <= EMailInfo_ItemGuid51; item_guid_index += 2)
 				{
-					//ÔÚ´ËÑ­»·ÖĞ´¦ÀíËùÓĞÎå¸öÎïÆ·
+					//åœ¨æ­¤å¾ªç¯ä¸­å¤„ç†æ‰€æœ‰äº”ä¸ªç‰©å“
 					guid_64 temp_item_guid(m_mail_list[i].get_data_info((EMailInfo)item_guid_index), m_mail_list[i].get_data_info((EMailInfo)(item_guid_index + 1)));
 					if (!temp_item_guid.is_valid())
 					{
@@ -1067,10 +1067,10 @@ namespace faith
 				if (mail_slot >= 0
 					&& mail_slot < m_mail_list_num)
 				{
-					//ÓÊ¼şÓĞĞ§ĞÔÅĞ¶ÏÍê±Ï£¬¿ªÊ¼Õı³£Âß¼­
+					//é‚®ä»¶æœ‰æ•ˆæ€§åˆ¤æ–­å®Œæ¯•ï¼Œå¼€å§‹æ­£å¸¸é€»è¾‘
 					for (int32 item_guid_index = EMailInfo_ItemGuid11; item_guid_index <= EMailInfo_ItemGuid51; item_guid_index += 2)
 					{
-						//ÔÚ´ËÑ­»·ÖĞ´¦ÀíËùÓĞÎå¸öÎïÆ·
+						//åœ¨æ­¤å¾ªç¯ä¸­å¤„ç†æ‰€æœ‰äº”ä¸ªç‰©å“
 						guid_64 temp_item_guid(m_mail_list[mail_slot].get_data_info((EMailInfo)item_guid_index), m_mail_list[mail_slot].get_data_info((EMailInfo)(item_guid_index + 1)));
 						if (!temp_item_guid.is_valid())
 						{
@@ -1115,7 +1115,7 @@ namespace faith
 		{
 			int32 temp_size = mail_msg.ByteSize();
 
-			//°ü´óĞ¡´óÓÚ4800¾Í²»ÄÜ·¢ÁË£¬ËùÒÔÅĞ¶Ï´óÓÚ4000¾ÍÏÈ·¢Ò»²¨
+			//åŒ…å¤§å°å¤§äº4800å°±ä¸èƒ½å‘äº†ï¼Œæ‰€ä»¥åˆ¤æ–­å¤§äº4000å°±å…ˆå‘ä¸€æ³¢
 			if (temp_size > packege_length_max)
 			{
 				m_player_ptr->send_message_to_self(&mail_msg, e_msgindex_s2c_mail_update);
@@ -1140,7 +1140,7 @@ namespace faith
 		int32 money_num2,
 		std::vector<guid_64>& item_guid_list)
 	{
-		//µ¥»ú°æÃ»ÓĞÊÕ·¢ÓÊ¼ş
+		//å•æœºç‰ˆæ²¡æœ‰æ”¶å‘é‚®ä»¶
 
 		if (m_player_ptr == nullptr)
 		{
@@ -1155,7 +1155,7 @@ namespace faith
 			return;
 		}
 
-		//¼ì²éÎïÆ·ÊÇ·ñ´æÔÚ
+		//æ£€æŸ¥ç‰©å“æ˜¯å¦å­˜åœ¨
 		std::vector<Entity*> item_list;
 		for (uint32 i = 0 ; i < item_guid_list.size() ; ++i)
 		{
@@ -1166,7 +1166,7 @@ namespace faith
 			}
 		}
 
-		//¼ì²éÇ®¹»²»¹»
+		//æ£€æŸ¥é’±å¤Ÿä¸å¤Ÿ
 		if(!m_player_ptr->can_cut_money((e_money_type)money_typ1, money_num1) ||
 		!m_player_ptr->can_cut_money((e_money_type)money_typ2, money_num2))
 		{
@@ -1203,7 +1203,7 @@ namespace faith
 
 
 
-		//ÎïÆ·Êı¾İ
+		//ç‰©å“æ•°æ®
 		for (int32 i = 0; i < item_list.size(); ++i)
 		{
 			send_mail_info.item_list[i].item_guid = item_list[i]->getEntityId();
@@ -1211,7 +1211,7 @@ namespace faith
 			{
 				//send_mail_info.item_list[i].data_ary[j] = item_list[i]->get_data_info((e_item_info)j);
 
-				//ÉèÖÃÎª ÓÊ¼ş°ü/-1¸ñ×Ó
+				//è®¾ç½®ä¸º é‚®ä»¶åŒ…/-1æ ¼å­
 				if (j == e_item_info_container_type)
 				{
 					send_mail_info.item_list[i].data_ary[j] = e_bag_type_mail;
@@ -1226,11 +1226,11 @@ namespace faith
 
 		for (int32 i = 0 ; i < item_list.size(); ++i)
 		{
-			//É¾³ı±¾µØÎïÆ·
+			//åˆ é™¤æœ¬åœ°ç‰©å“
 			item_system::cost_item_by_ent(item_list[i]);
 		}
 
-		//¿ÛÇ®
+		//æ‰£é’±
 		m_player_ptr->cut_money((e_money_type)money_typ1, money_num1, e_server_log_cut_money_send_mail_content);
 		m_player_ptr->cut_money((e_money_type)money_typ2, money_num2, e_server_log_cut_money_send_mail_content);
 
@@ -1248,7 +1248,7 @@ namespace faith
 		int32 money_num2,
 		const std::vector<citem*>& item_list)
 	{
-		//µ¥»ú°æÃ»ÓĞÊÕ·¢ÓÊ¼ş
+		//å•æœºç‰ˆæ²¡æœ‰æ”¶å‘é‚®ä»¶
 
 		if (m_player_ptr == nullptr)
 		{
@@ -1294,7 +1294,7 @@ namespace faith
 		}
 		memcpy(send_mail_info.mail_info.mail_title, title.c_str(), string_len);
 
-		//ÎïÆ·Êı¾İ
+		//ç‰©å“æ•°æ®
 		for (int32 i = 0; i < item_list.size(); ++i)
 		{
 			send_mail_info.item_list[i].item_guid = item_list[i]->get_item_guid();
@@ -1302,7 +1302,7 @@ namespace faith
 			{
 				send_mail_info.item_list[i].data_ary[j] = item_list[i]->get_data_info((e_item_info)j);
 
-				//ÉèÖÃÎª ÓÊ¼ş°ü/-1¸ñ×Ó
+				//è®¾ç½®ä¸º é‚®ä»¶åŒ…/-1æ ¼å­
 				if (j == e_item_info_container_type)
 				{
 					send_mail_info.item_list[i].data_ary[j] = e_bag_type_mail;
@@ -1331,7 +1331,7 @@ namespace faith
 			int32 item_num,
 			int64 cur_time_sec)
 		{
-			//µ¥»ú°æÃ»ÓĞÊÕ·¢ÓÊ¼ş
+			//å•æœºç‰ˆæ²¡æœ‰æ”¶å‘é‚®ä»¶
 
 			if (m_player_ptr == nullptr)
 			{
@@ -1380,7 +1380,7 @@ namespace faith
 			}
 			memcpy(send_mail_info.mail_info.mail_title, title.c_str(), string_len);
 
-			//ÎïÆ·Êı¾İ
+			//ç‰©å“æ•°æ®
 			for (int32 i = 0; i < item_num; ++i)
 			{
 				if (!item_list[i].item_guid.is_valid())
@@ -1392,7 +1392,7 @@ namespace faith
 				{
 					send_mail_info.item_list[i].data_ary[j] = item_list[i].data_ary[j];
 
-					//ÉèÖÃÎª ÓÊ¼ş°ü/-1¸ñ×Ó
+					//è®¾ç½®ä¸º é‚®ä»¶åŒ…/-1æ ¼å­
 					if (j == e_item_info_container_type)
 					{
 						send_mail_info.item_list[i].data_ary[j] = e_bag_type_mail;
@@ -1437,7 +1437,7 @@ namespace faith
 			//{
 			//	temp_item_info_array.push_back(temp_item_ptr->get_item_inst());
 
-			//	//Ê¹ÓÃĞÂµÄguid
+			//	//ä½¿ç”¨æ–°çš„guid
 			//	temp_item_info_array[i].item_guid = guid_gen::make_guid(m_player_ptr->get_unit_guid());
 			//	item_guid_list[i] = temp_item_info_array[i].item_guid;
 			//}
@@ -1468,7 +1468,7 @@ namespace faith
 
 
 
-		//ÎïÆ·Êı¾İ
+		//ç‰©å“æ•°æ®
 		for (int32 i = 0; i < temp_item_info_array.size(); ++i)
 		{
 			send_mail_info.item_list[i].item_guid = temp_item_info_array[i].item_guid;
@@ -1476,7 +1476,7 @@ namespace faith
 			{
 				send_mail_info.item_list[i].data_ary[j] = temp_item_info_array[i].data_ary[j];
 
-				//ÉèÖÃÎª ÓÊ¼ş°ü/-1¸ñ×Ó
+				//è®¾ç½®ä¸º é‚®ä»¶åŒ…/-1æ ¼å­
 				if (j == e_item_info_container_type)
 				{
 					send_mail_info.item_list[i].data_ary[j] = e_bag_type_mail;
@@ -1500,15 +1500,15 @@ namespace faith
 		
 		for (int32 _count = 0;; ++_count)
 		{
-			//É¾³ı¾ÉÓÊ¼ş£¬×öÑ­»·ÊÇÈç¹ûÈÕºóÓÊ¼ş×ÜÊı±äĞ¡£¬ÊÕ¼şÊ±½«»á°Ñ¶à³öÀ´µÄÓÊ¼şÈ«Çåµô
+			//åˆ é™¤æ—§é‚®ä»¶ï¼Œåšå¾ªç¯æ˜¯å¦‚æœæ—¥åé‚®ä»¶æ€»æ•°å˜å°ï¼Œæ”¶ä»¶æ—¶å°†ä¼šæŠŠå¤šå‡ºæ¥çš„é‚®ä»¶å…¨æ¸…æ‰
 
 			if (_count == MAX_MAIL_NUM)
 			{
-				//·À´í£¬É¾³ı¶àÓëÓÊ¼şµÄÊıÁ¿µÈÓÚÈ«²¿ÓÊ¼şÊı£¬Ó¦¸Ã¾ÍÊÇÓĞÎÊÌâÁË
+				//é˜²é”™ï¼Œåˆ é™¤å¤šä¸é‚®ä»¶çš„æ•°é‡ç­‰äºå…¨éƒ¨é‚®ä»¶æ•°ï¼Œåº”è¯¥å°±æ˜¯æœ‰é—®é¢˜äº†
 				return nullptr;
 			}
 
-			//Õı³£Çé¿ö£¬µÚ¶ş´ÎÑ­»·¾ÍÓ¦¸Ã break ÁË
+			//æ­£å¸¸æƒ…å†µï¼Œç¬¬äºŒæ¬¡å¾ªç¯å°±åº”è¯¥ break äº†
 			if (!can_receive_new_mail())
 			{
 				del_oldest_mail();
@@ -1782,7 +1782,7 @@ namespace faith
 		{
 			return;
 		}
-		//É¾³ı¸½¼şÎïÆ·
+		//åˆ é™¤é™„ä»¶ç‰©å“
 		for (int32 i = 0 ; i < max_item_per_mail; ++i)
 		{
 			guid_64 temp_guid = m_mail_list[last_mail_index].get_target_item_guid(i);
@@ -1802,7 +1802,7 @@ namespace faith
 		m_mail_list[last_mail_index].set_data_info(EMailInfo_IsNeedDelete, 1);
 		send_mail_one(m_mail_list[last_mail_index]);
 
-		//²»ÇåÊı¾İ¿âÖ»ÇåÀíÄÚ´æ Êı¾İ¿âÖĞµÄ»¹ÒªÄØ
+		//ä¸æ¸…æ•°æ®åº“åªæ¸…ç†å†…å­˜ æ•°æ®åº“ä¸­çš„è¿˜è¦å‘¢
 		//delete_mail_in_db(m_mail_list[last_mail_index].get_mail_guid());
 
 		clear_date_by_index(last_mail_index);
@@ -1867,7 +1867,7 @@ namespace faith
 
 		m_auto_load_timer = init_unit::get_end_time(auto_load_mail_time);
 
-		//ÓÊ¼ş±¾Ìå1´Î£¬ÓÊ¼şÎïÆ·1´Î
+		//é‚®ä»¶æœ¬ä½“1æ¬¡ï¼Œé‚®ä»¶ç‰©å“1æ¬¡
 		operate_load_lock(2);
 	}
 

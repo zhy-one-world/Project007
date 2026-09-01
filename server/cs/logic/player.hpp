@@ -105,8 +105,8 @@ namespace faith
 	{
 		bool		is_interact;
 		int64		finish_interact_time;
-		NpcTemplate	npc_template;			//¶àÈË²É¼¯Ò»¸ö¶«Î÷Ê±£¬ºó¿ªÊ¼²É¼¯µÄÍæ¼ÒµÄÕâ¸öÊı¾İÖĞµÄnpcÖ¸Õë»á±»Çå¿Õ»òÕß±äÒ°Ö¸Õë£¬ËùÒÔÒªµ¥´æÕâĞ©¶«Î÷
-		guid_64		npc_guid;				//¶àÈË²É¼¯Ò»¸ö¶«Î÷Ê±£¬ºó¿ªÊ¼²É¼¯µÄÍæ¼ÒµÄÕâ¸öÊı¾İÖĞµÄnpcÖ¸Õë»á±»Çå¿Õ»òÕß±äÒ°Ö¸Õë£¬ËùÒÔÒªµ¥´æÕâĞ©¶«Î÷
+		NpcTemplate	npc_template;			//å¤šäººé‡‡é›†ä¸€ä¸ªä¸œè¥¿æ—¶ï¼Œåå¼€å§‹é‡‡é›†çš„ç©å®¶çš„è¿™ä¸ªæ•°æ®ä¸­çš„npcæŒ‡é’ˆä¼šè¢«æ¸…ç©ºæˆ–è€…å˜é‡æŒ‡é’ˆï¼Œæ‰€ä»¥è¦å•å­˜è¿™äº›ä¸œè¥¿
+		guid_64		npc_guid;				//å¤šäººé‡‡é›†ä¸€ä¸ªä¸œè¥¿æ—¶ï¼Œåå¼€å§‹é‡‡é›†çš„ç©å®¶çš„è¿™ä¸ªæ•°æ®ä¸­çš„npcæŒ‡é’ˆä¼šè¢«æ¸…ç©ºæˆ–è€…å˜é‡æŒ‡é’ˆï¼Œæ‰€ä»¥è¦å•å­˜è¿™äº›ä¸œè¥¿
 		int32		max_distance;
 
 		int32		npc_array_index;
@@ -129,7 +129,7 @@ namespace faith
 	public:
 		player();
 		virtual ~player();
-	private://ÄÚ´æÒÑ¾­´´½¨ºÃÁË ½ûÖ¹¿½±´
+	private://å†…å­˜å·²ç»åˆ›å»ºå¥½äº† ç¦æ­¢æ‹·è´
 		player(const player& unit_ref);
 		player& operator=(const player&);
 	public:
@@ -140,7 +140,7 @@ namespace faith
 		void										set_array_index(int32 array_index);
 	public:
 		/************************************************************************/
-		/*							³õÊ¼»¯ÒÔ¼°Êı¾İÔØÈë¡¢´æÅÌ					*/
+		/*							åˆå§‹åŒ–ä»¥åŠæ•°æ®è½½å…¥ã€å­˜ç›˜					*/
 		/************************************************************************/
 		void 										init_by_inst_data_over();
 		int32										put_in_scene();
@@ -154,12 +154,12 @@ namespace faith
 		void										clear_trans_cache();
 		void										set_loading_flag(e_data_flag flag);
 		bool										get_loading_flag_all_finish(void);
-		void										load_role_data_online(const guid_64& up_role_guid); // ÉÏÏß»ù´¡Êı¾İLoading¼ÓÔØ	
-		void										send_role_data_online(); // ·¢ËÍÍæ¼ÒËùÓĞµÄÔÚÏßÊı¾İ
+		void										load_role_data_online(const guid_64& up_role_guid); // ä¸Šçº¿åŸºç¡€æ•°æ®LoadingåŠ è½½	
+		void										send_role_data_online(); // å‘é€ç©å®¶æ‰€æœ‰çš„åœ¨çº¿æ•°æ®
 		void										clear_saving_flag(int32 type);
 		void										set_saving_flag(int32 type, e_data_flag flag);
 		bool										get_saveing_flag_all_finish(void);
-		void										save_role_all_data(e_save_role_data_type eType = e_save_data_type_update);	// ½ÇÉ«ÏÂÏß¡¢´«ËÍ¡¢ÊµÊ±´æÅÌÊı¾İÍ³Ò»´¦Àí
+		void										save_role_all_data(e_save_role_data_type eType = e_save_data_type_update);	// è§’è‰²ä¸‹çº¿ã€ä¼ é€ã€å®æ—¶å­˜ç›˜æ•°æ®ç»Ÿä¸€å¤„ç†
 		void										map_in_out_hp_process();
 		void										set_update_db_flag(bool saving_flag) { m_update_db_flag = saving_flag; }
 		void										push_all_info_to_client();
@@ -168,30 +168,30 @@ namespace faith
 
 		virtual	void								be_dead(bool is_auto_put_into_bag = false);
 		virtual bool								can_become_target();
-		void										save_yesterday_must_do_remain(int32 save_typ); //´æ´¢×òÈÕÎ´Íê³ÉµÄÃ¿ÈÕÈÎÎñÊı¾İ
-		void										load_yesterday_must_do_remain_end(const s_unit_yesterday_must_do_remain* data_info); //¶ÁÈ¡×òÈÕÎ´Íê³ÉµÄÃ¿ÈÕÈÎÎñÊı¾İ
+		void										save_yesterday_must_do_remain(int32 save_typ); //å­˜å‚¨æ˜¨æ—¥æœªå®Œæˆçš„æ¯æ—¥ä»»åŠ¡æ•°æ®
+		void										load_yesterday_must_do_remain_end(const s_unit_yesterday_must_do_remain* data_info); //è¯»å–æ˜¨æ—¥æœªå®Œæˆçš„æ¯æ—¥ä»»åŠ¡æ•°æ®
 		bool                                        load_yesterday_must_do_remain_by_db_lua(const char *data_ptr, int32 data_len);
 		login_fixed_data&							get_third_info() { return m_login_third_data; };
 		int64										get_login_time() { return m_login_time; };
 		void										set_login_time(int64 login_time) { m_login_time = login_time; };
 		void										save_daily_must_do_count(int32 save_typ);
-		void										load_daily_must_do_count(s_role_daily_must_do_count data_info); //¶ÁÈ¡Ã¿ÈÕ±Ø×öÈÎÎñ´ÎÊı
+		void										load_daily_must_do_count(s_role_daily_must_do_count data_info); //è¯»å–æ¯æ—¥å¿…åšä»»åŠ¡æ¬¡æ•°
 		bool                                        load_daily_must_do_count_by_db_lua(int64 role_id,const char *data_ptr, int32 data_len);
-		void										set_daily_active_degree_info(e_daily_must_do_typ eType, int32 add_num = 1); //Ã¿ÈÕ»îÔ¾¶ÈÍ¬²½
+		void										set_daily_active_degree_info(e_daily_must_do_typ eType, int32 add_num = 1); //æ¯æ—¥æ´»è·ƒåº¦åŒæ­¥
 		int32                                       is_need_daily_finish(e_daily_must_do_typ eType);
 		void										send_dead_notice_with_cross_server(int32 server_id, std::string killer_name);
-		int32										get_daily_exp_raid_time();				//»ñÈ¡¾­Ñé¸±±¾¸ù¾İ»îÔ¾Ê±¼ä»ñµÃµÄÊ±¼ä(Ãë)
-		int32										get_max_daily_exp_raid_time();			//»ñÈ¡¾­Ñé¸±±¾¸ù¾İ×î´ó»îÔ¾Ê±¼ä»ñµÃµÄÊ±¼ä(Ãë)
+		int32										get_daily_exp_raid_time();				//è·å–ç»éªŒå‰¯æœ¬æ ¹æ®æ´»è·ƒæ—¶é—´è·å¾—çš„æ—¶é—´(ç§’)
+		int32										get_max_daily_exp_raid_time();			//è·å–ç»éªŒå‰¯æœ¬æ ¹æ®æœ€å¤§æ´»è·ƒæ—¶é—´è·å¾—çš„æ—¶é—´(ç§’)
 		void										reload_csv();
 		int32										get_leave_num() { return m_leave_num; }
 		void										set_leave_num(int32 leave_num) { m_leave_num = leave_num; }
 
 		void										set_send_gate_save_end(bool need_send) { m_is_need_send_gate_save_end = need_send; };
 		bool										get_send_gate_save_end() { return m_is_need_send_gate_save_end; };
-		bool										m_is_need_send_gate_save_end;//ÊÇ·ñĞèÒª·¢save½áÊøĞÅÏ¢µ½±¾·ş
+		bool										m_is_need_send_gate_save_end;//æ˜¯å¦éœ€è¦å‘saveç»“æŸä¿¡æ¯åˆ°æœ¬æœ
 
 		/************************************************************************/
-		/*                            ·¢ËÍÏûÏ¢									*/
+		/*                            å‘é€æ¶ˆæ¯									*/
 		/************************************************************************/
 	public:
 		virtual	void								get_aoi_msg(faith::aoi_proto_unit_aoi_all& msg);
@@ -209,15 +209,15 @@ namespace faith
 		void                                        send_message_to_dp_lua(const char* msg, int32 msg_len, uint32 header);
 		void                                        send_message_to_dp_lua(google::protobuf::Message* net_pro, uint32 heade);
 		/************************************************************************/
-		/*                            ÎïÆ·Ïà¹Ø                                  */
+		/*                            ç‰©å“ç›¸å…³                                  */
 		/************************************************************************/
 	public:
-		void                                        set_bag_slot_open_num(int32 num); // ÉèÖÃ½ÇÉ«µ±Ç°±³°üÖĞ¿ªÆôµÄÎïÆ·¸ñµÄÊıÄ¿
-		void										set_storage_slot_open_num(int32 num);//ÉèÖÃ½ÇÉ«µ±Ç°²Ö¿âÖĞ¿ªÆôµÄÎïÆ·¸ñµÄÊıÄ¿
-		void										open_bag(const int64& diff_time);//±³°ü¿ªÆô
-		void										storage_open(const int64& diff_time);//²Ö¿â¿ªÆô
-		void										send_open_bag_info(); // ·¢ËÍ±³°ü¿ª·ÅµÄ
-		bool                                        unlock_bag_slot(int32 unlock_slot_index, int32 unlock_storage_slot_index); // ¸ù¾İÎïÆ·¸ñ×ÓÔÚÎïÆ·À¸ÖĞÏÂ±í½âËøÏàÓ¦µÄ¸ñ×Ó
+		void                                        set_bag_slot_open_num(int32 num); // è®¾ç½®è§’è‰²å½“å‰èƒŒåŒ…ä¸­å¼€å¯çš„ç‰©å“æ ¼çš„æ•°ç›®
+		void										set_storage_slot_open_num(int32 num);//è®¾ç½®è§’è‰²å½“å‰ä»“åº“ä¸­å¼€å¯çš„ç‰©å“æ ¼çš„æ•°ç›®
+		void										open_bag(const int64& diff_time);//èƒŒåŒ…å¼€å¯
+		void										storage_open(const int64& diff_time);//ä»“åº“å¼€å¯
+		void										send_open_bag_info(); // å‘é€èƒŒåŒ…å¼€æ”¾çš„
+		bool                                        unlock_bag_slot(int32 unlock_slot_index, int32 unlock_storage_slot_index); // æ ¹æ®ç‰©å“æ ¼å­åœ¨ç‰©å“æ ä¸­ä¸‹è¡¨è§£é”ç›¸åº”çš„æ ¼å­
 		bool                                        unlock_storage_slot(int32 unlock_slot_index, int32 unlock_storage_slot_index);
 		cwelfare_mgr&								get_welfare_mgr() { return m_welfare_mgr; }
 		cauction_mgr&								get_auction_mgr() { return m_auction_mgr; }
@@ -234,27 +234,27 @@ namespace faith
 		bool										m_is_have_cant_equip_item;
 	public:
 		/************************************************************************/
-		/*                            ĞÅÑöÏà¹Ø                                  */
+		/*                            ä¿¡ä»°ç›¸å…³                                  */
 		/************************************************************************/
 		cbelief_mgr&								get_belief_mgr() { return m_belief_mgr; }
 		belief_rune_mgr&							get_belief_rune_mgr() { return m_belief_rune_mgr; }
 
 		/************************************************************************/
-		/*                            Ìì¸³Ïà¹Ø                                  */
+		/*                            å¤©èµ‹ç›¸å…³                                  */
 		/************************************************************************/
 		ctalent_mgr&								get_talent_mgr() { return m_talent_mgr; }
 
 		/************************************************************************/
-		/*                            Í¼¼øÏà¹Ø                                  */
+		/*                            å›¾é‰´ç›¸å…³                                  */
 		/************************************************************************/
 		cpokedex_mgr&								get_pokedex_mgr() { return m_pokedex_mgr; }
 		int32										get_pokedex_finished_num();
 		/************************************************************************/
-		/*                            ÊØ»¤ÉñÏà¹Ø                                  */
+		/*                            å®ˆæŠ¤ç¥ç›¸å…³                                  */
 		/************************************************************************/
 		cpatron_saint_mgr&							get_patron_saint_mgr() { return m_patron_saint_mgr; }
 		/************************************************************************/
-		/*                            ×î¸ß¼ÇÂ¼                                  */
+		/*                            æœ€é«˜è®°å½•                                  */
 		/************************************************************************/
 		void										load_history_highest_record(const s_role_history_high_record_info& highest_record_info);
 		bool                                        load_history_highest_record_by_db_lua(const char *data_ptr, int32 data_len);
@@ -268,7 +268,7 @@ namespace faith
 		int64										get_new_highest_value(e_role_history_highest_record record_type, int64 single_type_target_level = 0, int64 single_type_target_color = 0);
 
 		/************************************************************************/
-		/*							  MarryÏà¹Ø                                 */
+		/*							  Marryç›¸å…³                                 */
 		/************************************************************************/
 	public:
 		void										clear_couple_info();
@@ -298,14 +298,14 @@ namespace faith
 	public:
 		/************************************************************************/
 		/************************************************************************/
-		/*                            ÅÅĞĞ°ñÏà¹Ø                                */
+		/*                            æ’è¡Œæ¦œç›¸å…³                                */
 		/************************************************************************/
 
 		cworship_target&							get_worship_target() { return m_worship_target; }
 		cranking_mgr&								get_ranking_mgr() { return m_ranking_mgr; }
 
 		/************************************************************************/
-		/*                            ÈÎÎñÏà¹Ø                                  */
+		/*                            ä»»åŠ¡ç›¸å…³                                  */
 		/************************************************************************/
 
 		cmission_mgr&								get_mission_mgr() { return m_mission_mgr; }
@@ -319,7 +319,7 @@ namespace faith
 		bool										is_special_mission_unlocked(e_mission_slot mission_slot);
 
 		void										fuben_map_enter_activity();
-		//³É¾Í
+		//æˆå°±
 		int32										get_element_heart_equip_num();
 
 
@@ -337,14 +337,14 @@ namespace faith
 		awaken_mgr&                                 get_awaken_mgr()  { return m_awakan_mgr;  }
 
 		/************************************************************************/
-		/*                            Éç½»Ïà¹Ø                                  */
+		/*                            ç¤¾äº¤ç›¸å…³                                  */
 		/************************************************************************/
 		cmail_mgr&									get_mail_mgr() { return m_mail_mgr; }
 		cchat_mgr&									get_chat_mgr() { return m_chat_mgr; }
 		cinteraction_mgr&							get_interaction_mgr() { return m_interaction_mgr; }
 
 		/************************************************************************/
-		/*                            ½»»¥Ïà¹Ø                                  */
+		/*                            äº¤äº’ç›¸å…³                                  */
 		/************************************************************************/
 		//void										prepare_interaction(guid_64 be_invited_interaction_guid, guid_64 initiator_interaction_guid, int32 be_invited_interaction_type, int32 initiator_interaction_type);
 		//void										update_interaction(guid_64 be_invited_interaction_guid, guid_64 initiator_interaction_guid, int32 be_invited_interaction_type, int32 initiator_interaction_type, int32 interaction_result);
@@ -357,7 +357,7 @@ namespace faith
 
 	public:
 		/************************************************************************/
-		/*                            Ê±¼äÏà¹Ø                                  */
+		/*                            æ—¶é—´ç›¸å…³                                  */
 		/************************************************************************/
 		void										load_role_time(const character_s2s_sl_time_data& msg);
 		bool                                        load_role_time_by_db_lua(const char *data_ptr, int32 data_len);
@@ -374,7 +374,7 @@ namespace faith
 		std::shared_ptr<map_record_set>				get_map_record_mgr() { return m_map_record_mgr; }
 	public:
 		/************************************************************************/
-		/*                            Âß¼­Ïà¹Ø                                  */
+		/*                            é€»è¾‘ç›¸å…³                                  */
 		/************************************************************************/
 		void										load_role_logic(const character_s2s_sl_logic_data& msg);
 		bool                                        load_role_logic_by_db_lua(const char *data_ptr, int32 data_len);
@@ -389,15 +389,15 @@ namespace faith
 
 	public:
 		/************************************************************************/
-		/*                            ²Æ²úÏà¹Ø                                  */
+		/*                            è´¢äº§ç›¸å…³                                  */
 		/************************************************************************/
 		inline bool									isnt_money_type(e_money_type money_type) { if (money_type >= e_money_type_max) { return true; }return false; }
 		void										set_money_all(const s_money_info& money_info);
 		void										set_money_data(e_money_type money_type, int64 money_value);
-		int64										get_money_data(e_money_type money_type);//µ±Ç°¾­¼ÃµãÊı
-		int32										get_money_data_32(e_money_type money_type);//µ±Ç°¾­¼ÃµãÊı
-		s_money_info&								get_money_data_inst() { return m_money_info; };//µ±Ç°¾­¼ÃµãÊı
-		int64										get_all_money_data(e_money_type money_type);//ÀÛ¼Æ¾­¼ÃµãÊı
+		int64										get_money_data(e_money_type money_type);//å½“å‰ç»æµç‚¹æ•°
+		int32										get_money_data_32(e_money_type money_type);//å½“å‰ç»æµç‚¹æ•°
+		s_money_info&								get_money_data_inst() { return m_money_info; };//å½“å‰ç»æµç‚¹æ•°
+		int64										get_all_money_data(e_money_type money_type);//ç´¯è®¡ç»æµç‚¹æ•°
 		bool										can_cut_money(e_money_type money_type, int64 money_value);
 		bool										can_cut_money_by_template_two_tuple_arr(const std::vector<int32>& money_arr, int32 extra_times = 1);
 		void										cut_money(e_money_type money_type, int64 money_value, e_server_log_cut_money cut_type, int32 param = -1, int32 param2 = 0);
@@ -410,9 +410,9 @@ namespace faith
 		void										save_money(int32 save_type_ex);
 		void										worship_by_type(int32 worship_type, bool is_cost_diamond);
 
-		bool										add_money_by_template_tuple(const std::vector<int32>& money_two_tuple_arr, bool pop_msg = true, float fac = 1.0); // Í¨¹ı´«ÈëÇ®Îï¶şÔª×éÀ´¸øÍæ¼Ò¼ÓÉÏÏàÓ¦µÄÇ®Êı
+		bool										add_money_by_template_tuple(const std::vector<int32>& money_two_tuple_arr, bool pop_msg = true, float fac = 1.0); // é€šè¿‡ä¼ å…¥é’±ç‰©äºŒå…ƒç»„æ¥ç»™ç©å®¶åŠ ä¸Šç›¸åº”çš„é’±æ•°
 
-		bool										add_item_by_template_tuple(e_server_log_add_item add_type, int32 param, const std::vector<int32>& item_two_tuple_arr, int32 is_locked = 0, bool pop_msg = true, float fac = 1.0, bool check_career = false, bool auto_to_money = false); // Í¨¹ı´«ÈëÎïÆ·¶şÔª×éÀ´¸øÍæ¼Ò¼ÓÉÏÏàÓ¦µÄÎïÆ·
+		bool										add_item_by_template_tuple(e_server_log_add_item add_type, int32 param, const std::vector<int32>& item_two_tuple_arr, int32 is_locked = 0, bool pop_msg = true, float fac = 1.0, bool check_career = false, bool auto_to_money = false); // é€šè¿‡ä¼ å…¥ç‰©å“äºŒå…ƒç»„æ¥ç»™ç©å®¶åŠ ä¸Šç›¸åº”çš„ç‰©å“
 
 		bool										add_item_by_template_tuple(e_server_log_add_item add_type, int32 param, const std::vector<int32>& item_id_arr, const std::vector<int32>& item_num_arr, int32 is_locked = 0, bool pop_msg = true, float fac = 1.0, bool check_career = false, bool auto_to_money = false);
 
@@ -420,14 +420,14 @@ namespace faith
 
 		void										send_add_money_msg(int32 money_id, int32 money_num);
 		void										send_add_item_msg(int32 item_id, int32 item_num, bool send_by_mail = false);
-		void										send_promp_msg_to_client(const std::vector<s_item_template_info>& items_array, const std::vector<s_item_template_info>& money_array = {});		//·¢ËÍ»ñµÃµÄÎïÆ·µ¯¿ò
+		void										send_promp_msg_to_client(const std::vector<s_item_template_info>& items_array, const std::vector<s_item_template_info>& money_array = {});		//å‘é€è·å¾—çš„ç‰©å“å¼¹æ¡†
 
 		int64										get_cur_level_max_talent_num();
 		int64										get_cur_level_max_attribute_talent_num();
 
 	public:
 		/************************************************************************/
-		/*                            ¾­ÑéÏà¹Ø                                  */
+		/*                            ç»éªŒç›¸å…³                                  */
 		/************************************************************************/
 		bool										add_money_or_exp(e_money_type money_type, int64 money_value, e_server_log_add_money add_type, int32 param = 0);
 		bool										lua_add_money_or_exp(e_money_type money_type, xstring money_value, e_server_log_add_money add_type, int32 param = 0);
@@ -451,7 +451,7 @@ namespace faith
 		void										req_relation_end(int32 relation_type, guid_64 target_guid);
 		void										send_mail_with_level(int32 cur_level);
 
-		void										set_cur_player_world_level();//»ñÈ¡¶ÔÓ¦¸ÃÍæ¼ÒµÄÊÀ½çµÈ¼¶
+		void										set_cur_player_world_level();//è·å–å¯¹åº”è¯¥ç©å®¶çš„ä¸–ç•Œç­‰çº§
 		int32										get_cur_player_world_level_exp();
 	private:
 		int64										m_get_gain_exp_in_raid;
@@ -459,7 +459,7 @@ namespace faith
 		int32										m_cur_world_level;
 	public:
 		/************************************************************************/
-		/*							  ½ÇÉ«³ÆºÅÏà¹Ø	   	          	        */
+		/*							  è§’è‰²ç§°å·ç›¸å…³	   	          	        */
 		/************************************************************************/
 		special_name_mgr&							get_special_name_mgr() { return m_special_name_mgr; }
 		ctitle_mgr&									get_title_mgr() { return m_title_mgr; }
@@ -467,75 +467,75 @@ namespace faith
 
 	public:
 		/************************************************************************/
-		/*							  Ú¤ÏëÏà¹Ø	   	          	        */
+		/*							  å†¥æƒ³ç›¸å…³	   	          	        */
 		/************************************************************************/
 		meditation_manager&							get_meditation_mgr() { return m_meditation_mgr; }
 
 	public:
 		/************************************************************************/
-		/*							  ×ª»»Ïà¹Ø	   	          	        */
+		/*							  è½¬æ¢ç›¸å…³	   	          	        */
 		/************************************************************************/
 		convert_mgr&								get_convert_mgr() { return m_convert_mgr; }
 	public:
 		/************************************************************************/
-		/*                            ¸±±¾Ïà¹Ø                                  */
+		/*                            å‰¯æœ¬ç›¸å…³                                  */
 		/************************************************************************/
 		void										game_over();
 		void										fuben_game_over(s_fuben_settlement& settlement, int32 fuben_template_id, bool finished, float award_fac);
 		int32										give_assist_reward();
 		void                                        lucky_draw(int32 fuben_template_id);
-		int32										get_assist_chest();//»ñÈ¡½ñÈÕÒÑ»ñµÃÖúÕ½½±Àø´ÎÊı
-		int32										get_max_buy_count_with_map_id(int32 map_temp_id);// »ñÈ¡µ±Ç°µØÍ¼ID¿É¹ºÂòµÄ×î´ó´ÎÊı
-		int32										get_remain_buy_count_with_map_id(int32 map_temp_id);//»ñÈ¡µ±Ç°µØÍ¼IDÊ£Óà¹ºÂò´ÎÊı
-		int32										get_buy_count_with_map_id(int32 map_temp_id);//»ñÈ¡µ±Ç°µØÍ¼IDÒÑ¹ºÂò´ÎÊı
-		bool										buy_count_with_map_id(int32 map_temp_id, int32 buy_count = 1);//¹ºÂò´ÎÊı
-		int32										get_use_things_add_map_count(int32 map_temp_id);//»ñÈ¡µ±Ç°µØÍ¼Í¨¹ıÊ¹ÓÃÎïÆ·Ôö¼ÓµÄ´ÎÊı
-		bool										add_map_count_with_things(std::vector<int32> map_temp_id, int32 add_count);//Ôö¼Ó¶ÔÓ¦(×é)µØÍ¼´ÎÊı
-		bool										add_map_time_with_things(std::vector<int32> map_time_arr, int32 item_num);//Ôö¼Ó¶ÔÓ¦µØÍ¼µÄÊ£ÓàÊ±¼ä
+		int32										get_assist_chest();//è·å–ä»Šæ—¥å·²è·å¾—åŠ©æˆ˜å¥–åŠ±æ¬¡æ•°
+		int32										get_max_buy_count_with_map_id(int32 map_temp_id);// è·å–å½“å‰åœ°å›¾IDå¯è´­ä¹°çš„æœ€å¤§æ¬¡æ•°
+		int32										get_remain_buy_count_with_map_id(int32 map_temp_id);//è·å–å½“å‰åœ°å›¾IDå‰©ä½™è´­ä¹°æ¬¡æ•°
+		int32										get_buy_count_with_map_id(int32 map_temp_id);//è·å–å½“å‰åœ°å›¾IDå·²è´­ä¹°æ¬¡æ•°
+		bool										buy_count_with_map_id(int32 map_temp_id, int32 buy_count = 1);//è´­ä¹°æ¬¡æ•°
+		int32										get_use_things_add_map_count(int32 map_temp_id);//è·å–å½“å‰åœ°å›¾é€šè¿‡ä½¿ç”¨ç‰©å“å¢åŠ çš„æ¬¡æ•°
+		bool										add_map_count_with_things(std::vector<int32> map_temp_id, int32 add_count);//å¢åŠ å¯¹åº”(ç»„)åœ°å›¾æ¬¡æ•°
+		bool										add_map_time_with_things(std::vector<int32> map_time_arr, int32 item_num);//å¢åŠ å¯¹åº”åœ°å›¾çš„å‰©ä½™æ—¶é—´
 
 		void										fuben_vip_mopping(int32 fuben_template_id, int32 settlement);
 
 																												  /************************************************************************/
-																												  /*                            ÓÑºÃ¶ÈÏà¹Ø                                 */
+																												  /*                            å‹å¥½åº¦ç›¸å…³                                 */
 																												  /************************************************************************/
 		void										send_gift_add_friend_values(guid_64& addreessee_guid, int32 gift_id, int32 gift_num, std::string chat_message);
 		void										append_gift_mail_system_string(std::string& title, std::string& context, std::string sender_name, int32 gift_id, int32 gift_count, int32 add_friendliness, const std::string& chat_info, int32 incidental_gift_id);
 		/************************************************************************/
-		/*                            ÊÀ½çbossÊ×É±Áì½±                          */
+		/*                            ä¸–ç•Œbossé¦–æ€é¢†å¥–                          */
 		/************************************************************************/
 		void										get_first_kill_world_boss_prize_func(int32 first_kill_welfare_template_id);
 	public:
 		/************************************************************************/
-		/*                            ¾üÍÅÏà¹Ø                                  */
+		/*                            å†›å›¢ç›¸å…³                                  */
 		/************************************************************************/
 		const char*									get_player_legion_name() { return get_legion_info().legion_name; }
 		int32										get_player_legion_level() { return get_legion_info().legion_level; }
 		int32                                       get_player_legion_level_3() { return get_legion_info().legion_construction_level[ELegionInfo_construction_level_3]; }
 		e_legion_job_title&							get_player_legion_job_title() { return get_legion_info().job_title; }
-		void										send_chief_dead_notice();//·¢ËÍ¾üÍÅ³¤»ò¸±¾üÍÅ³¤±»´òËÀ¹«¸æ
+		void										send_chief_dead_notice();//å‘é€å†›å›¢é•¿æˆ–å‰¯å†›å›¢é•¿è¢«æ‰“æ­»å…¬å‘Š
 
 																			 /************************************************************************/
-																			 /*                            ×é¶ÓÏà¹Ø                                  */
+																			 /*                            ç»„é˜Ÿç›¸å…³                                  */
 																			 /************************************************************************/
-		void										update_team_member_pos_info_tick();	// Ë¢ĞÂ¶ÓÔ±Î»ÖÃĞÅÏ¢
+		void										update_team_member_pos_info_tick();	// åˆ·æ–°é˜Ÿå‘˜ä½ç½®ä¿¡æ¯
 
 		int32										get_player_team_member_num() { return get_team_info().member_num; }
 		bool										is_player_team_captain() { return get_team_info().captain_guid == get_unit_guid(); }
 		bool										is_player_in_team() { return get_team_info().team_guid.is_valid(); }
-		bool										is_player_in_the_team(guid_64 team_guid); // ½ÇÉ«Èç¹ûÔÚÖ¸¶¨¶ÓÎéÖĞ¾Í·µ»Øtrue
+		bool										is_player_in_the_team(guid_64 team_guid); // è§’è‰²å¦‚æœåœ¨æŒ‡å®šé˜Ÿä¼ä¸­å°±è¿”å›true
 		bool										is_player_in_the_same_team(player *m_player);
 		int32										get_team_map_id() { return get_team_info().team_map_id; }
 
 		bool										is_get_kill_legion_boss_award_today();
-		void										mark_kill_legion_boss_get_award_today();//ÉèÖÃ½ñÈÕÒÑ»÷É±¹ı¾üÍÅboss
+		void										mark_kill_legion_boss_get_award_today();//è®¾ç½®ä»Šæ—¥å·²å‡»æ€è¿‡å†›å›¢boss
 		void										refresh_kill_legion_boss_get_award_today();
 
 		/************************************************************************/
-		/*                          ¹¦ÄÜ½âËøÏà¹Ø                                */
+		/*                          åŠŸèƒ½è§£é”ç›¸å…³                                */
 		/************************************************************************/
 		void										get_func_unlock_award(int32 func_unlock_id);
 		/************************************************************************/
-		/*                          Õ½¶·Ïà¹Ø									*/
+		/*                          æˆ˜æ–—ç›¸å…³									*/
 		/************************************************************************/
 	public:
 		virtual int32					get_random_num(int32 random_index);
@@ -544,11 +544,11 @@ namespace faith
 		int32 m_random_array[random_seed_num];
 		int64 m_random_array_time;
 		//////////////////////////////////////////////////////////////////////////
-		// Íæ¼Ò¹ØÏµÏà¹Ø end
+		// ç©å®¶å…³ç³»ç›¸å…³ end
 		//////////////////////////////////////////////////////////////////////////
 
 		//////////////////////////////////////////////////////////////////////////
-		// ÅÄÂôĞĞ
+		// æ‹å–è¡Œ
 		//////////////////////////////////////////////////////////////////////////
 	public:
 		void				set_last_auction_time(int64 time);
@@ -557,7 +557,7 @@ namespace faith
 		int64				m_last_auction_time;
 	public:
 		/************************************************************************/
-		/*                            ÏìÓ¦¿Í»§¶ËÏûÏ¢                            */
+		/*                            å“åº”å®¢æˆ·ç«¯æ¶ˆæ¯                            */
 		/************************************************************************/
 		void change_hp_and_del_fuhuo_buff(float hp_percent = 1);
 		void set_player_relive(float hp_percent = 1, bool summon_pet = true);
@@ -586,13 +586,13 @@ namespace faith
 		void grade_up_level_ani_end(int32 old_buff_id, int32 new_buff_id);
 		int32 get_login_type() { return m_login_type; };
 	private:
-		void										update_character_attribute();											// Í¬²½½ÇÉ«ÊôĞÔ
+		void										update_character_attribute();											// åŒæ­¥è§’è‰²å±æ€§
 	public:
 		s_client_uid&								get_client_uid() { return m_client_uid; }
 		uint32										get_off_line_time(void);
 	public:
 		/************************************************************************/
-		/*							 ³¡¾°¹ÜÀí¹¤¾ß  		                        */
+		/*							 åœºæ™¯ç®¡ç†å·¥å…·  		                        */
 		/************************************************************************/
 		void										transfer_by_template(int32 map_template_id, int32 line_id, int32 group_id, const guid_64& map_guid, int32 war_index);
 		void										transfer_by_template_pos(int32 map_template_id, int32 line_id, s_map_pos map_pos, guid_64 map_guid);
@@ -611,14 +611,14 @@ namespace faith
 		void 										save_role_base_info(int32 save_type_ex);
 	public:
 		/************************************************************************/
-		/*							 npcÕ¼Î»Ïà¹Ø			   					*/
+		/*							 npcå ä½ç›¸å…³			   					*/
 		/************************************************************************/
 		int32										get_npc_position();
 		void										set_npc_position(int32 npc_pos);
 
 	public:
 		/************************************************************************/
-		/*							 ½ÇÉ«×ªÉúÏà¹Ø			   					*/
+		/*							 è§’è‰²è½¬ç”Ÿç›¸å…³			   					*/
 		/************************************************************************/
 		void										grade_god_hood(int32 hood_index, int32 skill_template_id);
 		int32										get_grade_num();
@@ -627,12 +627,12 @@ namespace faith
 		void										add_att_by_load();
 	public:
 		/************************************************************************/
-		/*							 ½ÇÉ«×ªÖ°Ïà¹Ø			   					*/
+		/*							 è§’è‰²è½¬èŒç›¸å…³			   					*/
 		/************************************************************************/
 		bool										change_role_class(int32 class_change);
 	public:
 		/************************************************************************/
-		/*							  Òıµ¼Ïà¹Ø						       	    */
+		/*							  å¼•å¯¼ç›¸å…³						       	    */
 		/************************************************************************/
 		guide_mgr&									get_guide_mgr() { return m_guide_mgr; }
 		func_unlock_mgr&							get_func_unlock_mgr() { return m_func_unlock_mgr; }
@@ -640,19 +640,19 @@ namespace faith
 		first_time_do_mgr&							get_first_time_do_mgr() { return m_first_time_do_mgr; }
 	public:
 		/************************************************************************/
-		/*							  ½ÇÉ«ÊôĞÔ¸Ä±äÏà¹Ø	   	          	        */
+		/*							  è§’è‰²å±æ€§æ”¹å˜ç›¸å…³	   	          	        */
 		/************************************************************************/
 		bool                                        add_att_permanent(int32 att_type, int32 add_val);
 		bool										fuhuo_need_cut_hp() { return fuhuo_cut_hp; };
 		void										set_fuhuo_cut_hp(bool temp) { fuhuo_cut_hp = temp; };
-		virtual void								set_unit_gs_change();//ÊôĞÔ±ä»¯ºóÖØĞÂ¼ÆËãgsÖµ
-		void										get_fruit_eating_info(e_fruit_type fruit_type, int32& cur_eated, int32& can_eat_max); // »ñµÃÍæ¼Ò³Ô¹ıµÄË®¹ûµÄĞÅÏ¢(Á½¸ö²ÎÊı¶¼ÊÇÓÃÀ´Ìî³ä·µ»ØÖµµÄ)
+		virtual void								set_unit_gs_change();//å±æ€§å˜åŒ–åé‡æ–°è®¡ç®—gså€¼
+		void										get_fruit_eating_info(e_fruit_type fruit_type, int32& cur_eated, int32& can_eat_max); // è·å¾—ç©å®¶åƒè¿‡çš„æ°´æœçš„ä¿¡æ¯(ä¸¤ä¸ªå‚æ•°éƒ½æ˜¯ç”¨æ¥å¡«å……è¿”å›å€¼çš„)
 		bool										is_arround_pos(s_map_pos target_pos, float distance);
 		virtual bool								can_attack_other(int32 target_unit_idx = -1);
 
 	public:
 		/************************************************************************/
-		/*							  ½ÇÉ«ÉÌÆ·¹ºÂòÏà¹Ø	   	          	        */
+		/*							  è§’è‰²å•†å“è´­ä¹°ç›¸å…³	   	          	        */
 		/************************************************************************/
 		player_store_helper&						get_goods_helper_mgr() { return m_store_helper; }
 		void										buy_goods(int32 goods_id, int32 goods_num, int32 store_id, bool is_auto_buy, int32 back_string = 0);
@@ -665,13 +665,13 @@ namespace faith
 		float										m_hp_percent;
 
 		/************************************************************************/
-		/*							  ¾º¼¼³¡Ïà¹Ø       	   	          	        */
+		/*							  ç«æŠ€åœºç›¸å…³       	   	          	        */
 		/************************************************************************/
 	public:
 		player_arena_mgr&							get_arena_mgr() { return m_arena_mgr; }
 
 		/************************************************************************/
-		/*							  ½ÇÉ«GMÖ¸Áî   	          	                */
+		/*							  è§’è‰²GMæŒ‡ä»¤   	          	                */
 		/************************************************************************/
 		bool										gm_set_level_and_grade(int32 level);
 		bool										gm_set_career(int32 career_id);
@@ -679,24 +679,24 @@ namespace faith
 		bool										gm_set_grade_level(int32 grade_level, int32 branch);
 
 		/************************************************************************/
-		/*							  NPC½»»¥   	          	                */
+		/*							  NPCäº¤äº’   	          	                */
 		/************************************************************************/
-		void										begin_interact_with_npc(const guid_64 npc_guid); // ¿ªÊ¼ÓÚNPC½øĞĞ½»»¥
+		void										begin_interact_with_npc(const guid_64 npc_guid); // å¼€å§‹äºNPCè¿›è¡Œäº¤äº’
 		void										interact_with_npc_tick(const int64 new_time);
-		void										finish_interact_with_npc(npc* npc_ptr); // Íê³É½»»¥²¢»ñÈ¡½»»¥½±Àø
+		void										finish_interact_with_npc(npc* npc_ptr); // å®Œæˆäº¤äº’å¹¶è·å–äº¤äº’å¥–åŠ±
 
-		void										set_interact_npc_info(const float interact_time, npc* npc_ptr); // ÉèÖÃNPC½»»¥ĞÅÏ¢ Èç¼ÆÊ±µÈ
-		bool										is_interact_with_npc() { return m_interact_npc_info.is_interact; } // Èç¹ûµ±Ç°ÕıÔÚºÍNPC½øĞĞ½»»¥¾Í·µ»Øtrue
-		void										stop_interact_with_npc(bool send_msg = true, bool is_move = false); // Í£Ö¹ÓëNPCµÄ½»»¥
+		void										set_interact_npc_info(const float interact_time, npc* npc_ptr); // è®¾ç½®NPCäº¤äº’ä¿¡æ¯ å¦‚è®¡æ—¶ç­‰
+		bool										is_interact_with_npc() { return m_interact_npc_info.is_interact; } // å¦‚æœå½“å‰æ­£åœ¨å’ŒNPCè¿›è¡Œäº¤äº’å°±è¿”å›true
+		void										stop_interact_with_npc(bool send_msg = true, bool is_move = false); // åœæ­¢ä¸NPCçš„äº¤äº’
 
 		bool										is_gathering_crystal_dreamland_chest(npc* npc_ptr);
 		int32										get_left_gather_crystal_dreamland_chest_count();
-		//ÊÀ½çBOSSµôÂä±¦Ïä²É¼¯
+		//ä¸–ç•ŒBOSSæ‰è½å®ç®±é‡‡é›†
 		bool										is_gathering_world_boss_chest(npc* npc_ptr);
 		int32										get_left_gather_world_boss_chest();
-		bool										is_gathering_boss_island_chest(npc* npc_ptr);//ÊÇ·ñ¿ÉÒÔ²É¼¯ÓÀºãµº
-		bool										is_gathering_cross_pk_chest(npc* npc_ptr);//ÊÇ·ñ¿ÉÒÔ²É¼¯¿ç·ş¾º¼¼³¡±¦Ïä
-		bool										is_gathering_harry_chest(npc* npc_ptr);//ÊÇ·ñ¿ÉÒÔ²É¼¯¿ç·şÂÓ¶áµÄÎïÆ·
+		bool										is_gathering_boss_island_chest(npc* npc_ptr);//æ˜¯å¦å¯ä»¥é‡‡é›†æ°¸æ’å²›
+		bool										is_gathering_cross_pk_chest(npc* npc_ptr);//æ˜¯å¦å¯ä»¥é‡‡é›†è·¨æœç«æŠ€åœºå®ç®±
+		bool										is_gathering_harry_chest(npc* npc_ptr);//æ˜¯å¦å¯ä»¥é‡‡é›†è·¨æœæ å¤ºçš„ç‰©å“
 
 		bool										is_arround_npc(npc* npc_ptr);
 
@@ -711,7 +711,7 @@ namespace faith
 
 	public:
 		/************************************************************************/
-		/*							  È¨ÏŞÏà¹Ø   	          	                */
+		/*							  æƒé™ç›¸å…³   	          	                */
 		/************************************************************************/
 		void										set_role_right(e_role_right role_right_type, int32 type_value);
 		int32										get_role_right(e_role_right role_right_type);
@@ -721,11 +721,11 @@ namespace faith
 		bool										get_write_log();
 	public:
 		/************************************************************************/
-		/*							 ÈÕÖ¾Ïà¹Ø   	          	                */
+		/*							 æ—¥å¿—ç›¸å…³   	          	                */
 		/************************************************************************/
 		int64										m_battle_begin_time;
-		int32										m_already_must_do_remain_data_ary[e_daily_must_do_typ_max];	// ¼ÇÂ¼µ±ÈÕÒÑ¾­ÕÒ»ØµÄ
-		int32										m_yesterday_back_type;//¼ÇÂ¼ÕÒ»ØÀàĞÍ
+		int32										m_already_must_do_remain_data_ary[e_daily_must_do_typ_max];	// è®°å½•å½“æ—¥å·²ç»æ‰¾å›çš„
+		int32										m_yesterday_back_type;//è®°å½•æ‰¾å›ç±»å‹
 		int32										m_relive_times_in_map;
 		int32										get_relive_times() { return m_relive_times_in_map; };
 
@@ -753,29 +753,29 @@ namespace faith
 		bool										m_is_in_exp_raid;
 		bool										m_add_exp_raid_degree;
 	public:
-		bool                                        m_is_begin_exp_raid;                             //¾­Ñé¸±±¾Òıµ¼
-		bool                                        m_is_need_add_exp_buff;							 //Òıµ¼ÔİÍ£Ê±Çå³ı¾­Ñébuff						
+		bool                                        m_is_begin_exp_raid;                             //ç»éªŒå‰¯æœ¬å¼•å¯¼
+		bool                                        m_is_need_add_exp_buff;							 //å¼•å¯¼æš‚åœæ—¶æ¸…é™¤ç»éªŒbuff						
 
 	private:
 		/************************************************************************/
-		/*							  npcÕ¼Î»Ïà¹Ø			   					*/
+		/*							  npcå ä½ç›¸å…³			   					*/
 		/************************************************************************/
 		bool										m_npc_position[npc_position_max];
 		/************************************************************************/
-		/*							  ¼ÓÔØ¡¢´æ´¢Ïà¹Ø		   					*/
+		/*							  åŠ è½½ã€å­˜å‚¨ç›¸å…³		   					*/
 		/************************************************************************/
-		bool										m_update_db_flag;								// ¶¨Ê±´æ´¢Ê±ÊÇ·ñÕıÔÚ´æ´¢ÖĞ
-		std::set<int32>								m_loading_flag;									// ¼ÓÔØ±êÖ¾Î»
-		std::set<int32>								m_saving_flag[e_save_data_type_max];			// ´æµµ±êÖ¾Î»
-		int64										m_time_save_db;									// ¶¨Ê±´æµµÊ±¼ä²î
-		uint32										m_time_begin[4];                                // ´æ´¢Ê±¼ä
-		int64										m_leave_time;									// ¶ÏÏß²éÑ¯µÄÊ±¼ä
-		int32										m_leave_num;									// ¶ÏÏß²éÑ¯µÄ´ÎÊı
-		int32										m_cur_pound_num = 0;							// ±¾´ÎµÇÂ¼·Ö½â³öµÄÔªËØ·ÛÄ©ÊıÁ¿
+		bool										m_update_db_flag;								// å®šæ—¶å­˜å‚¨æ—¶æ˜¯å¦æ­£åœ¨å­˜å‚¨ä¸­
+		std::set<int32>								m_loading_flag;									// åŠ è½½æ ‡å¿—ä½
+		std::set<int32>								m_saving_flag[e_save_data_type_max];			// å­˜æ¡£æ ‡å¿—ä½
+		int64										m_time_save_db;									// å®šæ—¶å­˜æ¡£æ—¶é—´å·®
+		uint32										m_time_begin[4];                                // å­˜å‚¨æ—¶é—´
+		int64										m_leave_time;									// æ–­çº¿æŸ¥è¯¢çš„æ—¶é—´
+		int32										m_leave_num;									// æ–­çº¿æŸ¥è¯¢çš„æ¬¡æ•°
+		int32										m_cur_pound_num = 0;							// æœ¬æ¬¡ç™»å½•åˆ†è§£å‡ºçš„å…ƒç´ ç²‰æœ«æ•°é‡
 																										/************************************************************************/
-																										/*							  ´«ËÍ¡¢¿ç·şÏà¹Ø		   					*/
+																										/*							  ä¼ é€ã€è·¨æœç›¸å…³		   					*/
 																										/************************************************************************/
-		teleport_control							m_teleport_control;								// ´«ËÍ¹¦ÄÜ¶ÔÏó
+		teleport_control							m_teleport_control;								// ä¼ é€åŠŸèƒ½å¯¹è±¡
 		int32                                       m_teleport_map_id;
 		int32										m_teleport_line_id;
 		s_map_pos                                   m_teleport_map_pos;
@@ -788,7 +788,7 @@ namespace faith
 		void										change_big_player_title(int32 title_type);
 
 		/************************************************************************/
-		/*							  ²Æ²úÏà¹Ø	   					            */
+		/*							  è´¢äº§ç›¸å…³	   					            */
 		/************************************************************************/
 	public:
 		std::shared_ptr<finger_guess_component>		m_finger_guess_component;
@@ -796,41 +796,41 @@ namespace faith
 		std::shared_ptr<time_activity_component>	m_time_activity_component;
 		std::shared_ptr<item_upgrade_component>		m_item_upgrade_component;
 	private:
-		s_money_info								m_money_info;                                   // Íæ¼ÒµÄ²Æ²ú
+		s_money_info								m_money_info;                                   // ç©å®¶çš„è´¢äº§
 		fuben_data_set                              m_fuben_data_set;
 		int32										m_exp_buff_template_id;
 		/************************************************************************/
-		/*							  Ê±¼äÏà¹Ø	   					            */
+		/*							  æ—¶é—´ç›¸å…³	   					            */
 		/************************************************************************/
 		s_time_info									m_role_time;
 		std::shared_ptr<map_record_set>				m_map_record_mgr;
 		/************************************************************************/
-		/*							  Âß¼­Ïà¹Ø	   					            */
+		/*							  é€»è¾‘ç›¸å…³	   					            */
 		/************************************************************************/
 		s_logic_info								m_role_logic;
 		/************************************************************************/
-		/*							  ĞÅÑöÏà¹Ø	   					            */
+		/*							  ä¿¡ä»°ç›¸å…³	   					            */
 		/************************************************************************/
 		cbelief_mgr									m_belief_mgr;
 		belief_rune_mgr								m_belief_rune_mgr;
 		/************************************************************************/
-		/*							  Ìì¸³Ïà¹Ø	   					            */
+		/*							  å¤©èµ‹ç›¸å…³	   					            */
 		/************************************************************************/
 		ctalent_mgr									m_talent_mgr;
 		/************************************************************************/
-		/*							  Í¼¼øÏà¹Ø	   					            */
+		/*							  å›¾é‰´ç›¸å…³	   					            */
 		/************************************************************************/
 		cpokedex_mgr								m_pokedex_mgr;
 
 		/************************************************************************/
-		/*							  ÅÅĞĞ°ñÏà¹Ø	   					        */
+		/*							  æ’è¡Œæ¦œç›¸å…³	   					        */
 		/************************************************************************/
 
 		cworship_target								m_worship_target;
 		cranking_mgr								m_ranking_mgr;
 
 		/************************************************************************/
-		/*							  ½ÇÉ«ÊôĞÔ¸Ä±äÏà¹Ø	   	          	        */
+		/*							  è§’è‰²å±æ€§æ”¹å˜ç›¸å…³	   	          	        */
 		/************************************************************************/
 
 		bool										fuhuo_cut_hp;
@@ -846,35 +846,35 @@ namespace faith
 		awaken_mgr                                  m_awakan_mgr;
 
 		/************************************************************************/
-		/*							  Éç½»Ïà¹Ø       	   	          	        */
+		/*							  ç¤¾äº¤ç›¸å…³       	   	          	        */
 		/************************************************************************/
 		cmail_mgr									m_mail_mgr;
 		cchat_mgr									m_chat_mgr;
 
 		/************************************************************************/
-		/*							  Ã¿ÈÕ±Ø×ö						       	    */
+		/*							  æ¯æ—¥å¿…åš						       	    */
 		/************************************************************************/
 		s_unit_yesterday_must_do_remain             m_three_day_must_do_remain_ary[resource_find_back_day];
 
 		/************************************************************************/
-		/*							  NPC½»»¥						       	    */
+		/*							  NPCäº¤äº’						       	    */
 		/************************************************************************/
 		interact_npc_info							m_interact_npc_info;
 
 		/************************************************************************/
-		/*							  Ê×´Î×öÏà¹Ø						        */
+		/*							  é¦–æ¬¡åšç›¸å…³						        */
 		/************************************************************************/
 		first_time_do_mgr							m_first_time_do_mgr;
 
 		/************************************************************************/
-		/*							  Òıµ¼Ïà¹Ø						       	    */
+		/*							  å¼•å¯¼ç›¸å…³						       	    */
 		/************************************************************************/
 		guide_mgr									m_guide_mgr;
 		func_unlock_mgr								m_func_unlock_mgr;
 		//func_unlock_mgr								m_func_unlock_mgr;
 
 		/************************************************************************/
-		/*							  Ã¿ÈÕË¢ĞÂ						       	    */
+		/*							  æ¯æ—¥åˆ·æ–°						       	    */
 		/************************************************************************/
 	public:
 		bool										is_need_refresh_daily_info_at_zero_hour();
@@ -889,23 +889,23 @@ namespace faith
 		void										refresh_at_zero_hour_cross(bool bOnline);
 		void										refresh_at_weekly();
 		void										refresh_at_specify_hour(bool bOnline);
-		void										send_mail_daily_activity_no_receive_rewards();//Èç¹ûÓĞÃ»ÓĞÁìÈ¡µÄ»îÔ¾¶È½±Àø,¾Í·¢ÓÊ¼ş
+		void										send_mail_daily_activity_no_receive_rewards();//å¦‚æœæœ‰æ²¡æœ‰é¢†å–çš„æ´»è·ƒåº¦å¥–åŠ±,å°±å‘é‚®ä»¶
 		void										send_mail_daily_legion_no_receive_rewards();
 
-		bool										is_need_clear_harry_info_at_harry_time();//ÊÇ·ñĞèÒªÇåÀíÍæ¼ÒÂÓ¶áÊı¾İ
-		void										clear_harry_info_at_harry_time();//ÇåÀíÍæ¼ÒÂÓ¶áÊı¾İ
+		bool										is_need_clear_harry_info_at_harry_time();//æ˜¯å¦éœ€è¦æ¸…ç†ç©å®¶æ å¤ºæ•°æ®
+		void										clear_harry_info_at_harry_time();//æ¸…ç†ç©å®¶æ å¤ºæ•°æ®
 		/************************************************************************/
-		/*							  Ã¿ÔÂË¢ĞÂ						       	    */
+		/*							  æ¯æœˆåˆ·æ–°						       	    */
 		/************************************************************************/
 		bool										is_need_refresh_month_info();
 		void										refresh_month_info();
 		/************************************************************************/
-		/*							  È¨ÏŞÏà¹Ø						       	    */
+		/*							  æƒé™ç›¸å…³						       	    */
 		/************************************************************************/
 		s_role_right								m_role_right;
 		bool										m_is_robot;
 		/************************************************************************/
-		/*							  ÊØ»¤ÉñÏà¹Ø						        */
+		/*							  å®ˆæŠ¤ç¥ç›¸å…³						        */
 		/************************************************************************/
 		cpatron_saint_mgr							m_patron_saint_mgr;
 	public:
@@ -916,7 +916,7 @@ namespace faith
 		s_role_history_high_record_info				m_history_high_record;
 	public:
 		/************************************************************************/
-		/*							 ×ÊÔ´ÕÒ»Ø							        */
+		/*							 èµ„æºæ‰¾å›							        */
 		/************************************************************************/
 		void                                        refresh_three_day_must_do_remain_info(bool bOnline);
 		void                                        update_three_day_arean_rank(int32 arena_rank);
@@ -936,14 +936,14 @@ namespace faith
 
 
 		/************************************************************************/
-		/*							  È«Ãñ³å°ñÏà¹Ø					       	    */
+		/*							  å…¨æ°‘å†²æ¦œç›¸å…³					       	    */
 		/************************************************************************/
 	private:
 		service_rank_mgr							m_service_rank_mgr;
 	public:
 		service_rank_mgr&							get_service_rank_mgr() { return m_service_rank_mgr; }
 		/************************************************************************/
-		/*							    ´ò±¦Ïà¹Ø 					       	    */
+		/*							    æ‰“å®ç›¸å…³ 					       	    */
 		/************************************************************************/
 	private:
 		gain_treasure_mgr							m_gain_treasure_mgr;
@@ -951,7 +951,7 @@ namespace faith
 		gain_treasure_mgr&							get_gain_treasure_mgr() { return m_gain_treasure_mgr; }
 
 		/************************************************************************/
-		/*							    ÓÀºãµº					       	    */
+		/*							    æ°¸æ’å²›					       	    */
 		/************************************************************************/
 	private:
 		boss_island_mgr								m_boss_island_mgr;
@@ -968,7 +968,7 @@ namespace faith
 		void find_other_player_info(guid_64 target_guid, int32 server_id);
 		void find_other_player_info_base_end(s_unit_info other_player_info);
 		void find_other_player_info_equiping_end(const s_item_info_db* other_player_info);
-		void set_other_player_info_buff(const s_item_info_db* other_player_info);	//Í¨¹ı×°±¸end»ñÈ¡²¿·ÖbuffĞÅÏ¢
+		void set_other_player_info_buff(const s_item_info_db* other_player_info);	//é€šè¿‡è£…å¤‡endè·å–éƒ¨åˆ†buffä¿¡æ¯
 		void find_other_player_info_special_name_end(const s_special_name_info_db other_player_info);
 		void find_other_player_info_base_group_end(int32 group_job, std::string group_name, guid_64 target_guid);
 		void find_other_player_info_spirit_end(const s_item_info_db other_player_info);
@@ -985,7 +985,7 @@ namespace faith
 		void transfer_buff(int32 operate_type);
 		void send_role_info_to_gm();
 		/************************************************************************/
-		/*								ÌìÆôÊÔÁ¶					       	    */
+		/*								å¤©å¯è¯•ç‚¼					       	    */
 		/************************************************************************/
 
 		private:
@@ -999,7 +999,7 @@ namespace faith
 		void lua_oracle_trial_map_game_over(int32 map_template_id, int32 customs_state);
 
 		/************************************************************************/
-		/*                           aoiÏà¹Ø									*/
+		/*                           aoiç›¸å…³									*/
 		/************************************************************************/
 	public:
 		virtual bool							aoi_watch_all_data_in(int32 unit_array_index);
@@ -1007,17 +1007,17 @@ namespace faith
 		virtual bool							aoi_is_watch_all_data(int32 unit_array_index);
 	private:
 		player_aoi_watch						m_player_aoi_watch;
-		int64									m_half_sec_tick;// °ësÒ»´Î
-		int64									m_sec_tick;	//	Âıtick 1s Ò»´Î
-		int64									m_min_tick;	//	Âıtick 1·ÖÖÓ Ò»´Î
-		int64									m_min_10_tick;	//	Âıtick 10·ÖÖÓ Ò»´Î
+		int64									m_half_sec_tick;// åŠsä¸€æ¬¡
+		int64									m_sec_tick;	//	æ…¢tick 1s ä¸€æ¬¡
+		int64									m_min_tick;	//	æ…¢tick 1åˆ†é’Ÿ ä¸€æ¬¡
+		int64									m_min_10_tick;	//	æ…¢tick 10åˆ†é’Ÿ ä¸€æ¬¡
 		int64									m_old_tick_time;
 		bool									m_is_waiting_auto_revive;
-		int64									m_2sec_tick;//2SÒ»´Î
-		int64									m_hour_1_tick;//Âıtick 1Ğ¡Ê± Ò»´Î
+		int64									m_2sec_tick;//2Sä¸€æ¬¡
+		int64									m_hour_1_tick;//æ…¢tick 1å°æ—¶ ä¸€æ¬¡
 
 		/************************************************************************/
-		/*                           ³äÖµÏà¹Ø                                   */
+		/*                           å……å€¼ç›¸å…³                                   */
 		/************************************************************************/
 
 	public:
@@ -1032,7 +1032,7 @@ namespace faith
 		int32									get_month_card_current_activity_time();
 		int32									get_month_card_remain_time();
 		int32									get_exclusive_card_current_activity_time();
-		int32									get_vip_extra_raid_enter(int32 map_template_id);//¸Ãº¯Êı·µ»ØµÄÊÇ¿É½øÈëµÄ¶îÍâÊ£Óà´ÎÊı
+		int32									get_vip_extra_raid_enter(int32 map_template_id);//è¯¥å‡½æ•°è¿”å›çš„æ˜¯å¯è¿›å…¥çš„é¢å¤–å‰©ä½™æ¬¡æ•°
 		int32									get_vip_level(bool is_check_experience_level = true);
 		void                                    buy_message_tip(int32 type, int32 level = 0);
 		bool                                    time_is_same_day(int64 in_time_stamp);
@@ -1040,7 +1040,7 @@ namespace faith
 	private:
 		bool									m_is_dead_recharge = false;
 		/************************************************************************/
-		/*							  Í¬²½µ½WS						       	    */
+		/*							  åŒæ­¥åˆ°WS						       	    */
 		/************************************************************************/
 	public:
 		void									sync_data_to_ws(e_sync_cs2ws_data_type type, int64 data, int32 sub_data = -1);
@@ -1050,14 +1050,14 @@ namespace faith
 		int64									m_gs_last_sync_ws;
 
 		/************************************************************************/
-		/*                         ½ÇÉ«ÊôĞÔ½Ó¿Ú                                 */
+		/*                         è§’è‰²å±æ€§æ¥å£                                 */
 		/************************************************************************/
 	public:
 		int64									get_role_gs();
 		void									refresh_service_goal(const e_service_goal_type service_goal_type);
 		s_fake_player_info						get_play_fake_player_info();
 		/************************************************************************/
-		/*							  ÊÇ·ñ½ÓÊÜ»úÆ÷ÈËÁÄÌì					    */
+		/*							  æ˜¯å¦æ¥å—æœºå™¨äººèŠå¤©					    */
 		/************************************************************************/
 	public:
 		int32 get_is_receive_robot_chat() { return m_is_receive_robot_chat; }
@@ -1065,7 +1065,7 @@ namespace faith
 		int32									m_is_receive_robot_chat;
 	public:
 		/************************************************************************/
-		/*							  ±¦²Ø							       	    */
+		/*							  å®è—							       	    */
 		/************************************************************************/
 		ctreasure_mgr	m_treasure_mgr;
 		ctreasure_mgr& get_treasure_mgr() { return m_treasure_mgr; }
@@ -1074,25 +1074,25 @@ namespace faith
 
 
 		/************************************************************************/
-		/*							  ÏŞÊ±»î¶¯Ïà¹Ø	   					            */
+		/*							  é™æ—¶æ´»åŠ¨ç›¸å…³	   					            */
 		/************************************************************************/
 	private:
 		time_limit_activity_mgr					m_time_limit_activity_mgr;
 	public:
 		time_limit_activity_mgr&				get_time_limit_activity_mgr() { return m_time_limit_activity_mgr; }
 		/***********************************************************************/
-		/*								½ÇÉ«¸ÄÃû									*/
+		/*								è§’è‰²æ”¹å									*/
 		/***********************************************************************/
 	public:
 		void									change_name(xstring role_name);
 		void 									sub_rename_card(uint32 rename_card_id);
 		/***********************************************************************/
-		/*								¾üÍÅ¸ÄÃû									*/
+		/*								å†›å›¢æ”¹å									*/
 		/***********************************************************************/
 		void									sub_re_legion_name(uint32 re_legion_name_card_id);
 
 		/***********************************************************************/
-		/*								±»¶¯¼¼ÄÜ							   */
+		/*								è¢«åŠ¨æŠ€èƒ½							   */
 		/***********************************************************************/
 	private:
 		passive_skill							m_passive_skill;
@@ -1100,7 +1100,7 @@ namespace faith
 		passive_skill&							get_passive_skill() { return m_passive_skill; }
 	public:
 		/***********************************************************************/
-		/*								¾üÍÅ¼¼ÄÜ							   */
+		/*								å†›å›¢æŠ€èƒ½							   */
 		/***********************************************************************/
 	private:
 		legion_skill							    m_legion_skill;
@@ -1108,7 +1108,7 @@ namespace faith
 		legion_skill&							get_legion_skill() { return m_legion_skill; }
 	public:
 		/***********************************************************************/
-		/*								»÷É±ÌáÊ¾							   */
+		/*								å‡»æ€æç¤º							   */
 		/***********************************************************************/
 	private:
 		int64									m_continuity_kill_end_time_stamp;
@@ -1117,12 +1117,12 @@ namespace faith
 		void									send_kill_prompt(int32 kill_player_array_index, bool is_end = false);
 
 		/***********************************************************************/
-		/*								»÷É±¼ÇÂ¼							   */
+		/*								å‡»æ€è®°å½•							   */
 		/***********************************************************************/
 	private:
-		guid_64									m_last_kill_player_guid;//ÉÏÒ»¸ö»÷É±µÄÍæ¼Òguid
+		guid_64									m_last_kill_player_guid;//ä¸Šä¸€ä¸ªå‡»æ€çš„ç©å®¶guid
 		int64									m_last_kill_player_time;
-		guid_64									m_last_kill_me_player_guid;//ÉÏÒ»¸öÉ±×Ô¼ºµÄÍæ¼Òguid
+		guid_64									m_last_kill_me_player_guid;//ä¸Šä¸€ä¸ªæ€è‡ªå·±çš„ç©å®¶guid
 		int64									m_last_kill_me_player_time;
 
 		std::vector<int32>						m_first_npc_kill_id_arr;
@@ -1146,7 +1146,7 @@ namespace faith
 		int32									get_cross_ladder_can_buy_ticket_num() { return m_cross_ladder_can_buy_ticket_num; }
 		void									set_cross_ladder_can_buy_ticket_num(int32 num) { m_cross_ladder_can_buy_ticket_num = num; }
 	private:
-		int32									m_cross_ladder_can_buy_ticket_num;	//¿ç·şÌìÌİÃ¿ÈÕ¿É¹ºÂòÃÅÆ±ÊıÁ¿£¨ÁÙÊ±Êı¾İ£¬Ö»ÓÃ×öÅĞ¶Ï£©
+		int32									m_cross_ladder_can_buy_ticket_num;	//è·¨æœå¤©æ¢¯æ¯æ—¥å¯è´­ä¹°é—¨ç¥¨æ•°é‡ï¼ˆä¸´æ—¶æ•°æ®ï¼Œåªç”¨åšåˆ¤æ–­ï¼‰
 
 	public:
 		void									req_element_ladder_last_score();
@@ -1156,7 +1156,7 @@ namespace faith
 		void									send_gm_add_ticket();
 
 	/***********************************************************************/
-	/*								³èÎïÏà¹Ø							   */
+	/*								å® ç‰©ç›¸å…³							   */
 	/***********************************************************************/
 	public:
 		void									summon_all_pet();
@@ -1170,7 +1170,7 @@ namespace faith
 		int64									m_summon_tick;
 		int32									m_summon_pet_array[e_summon_pet_type_max];
 	/***********************************************************************/
-	/*								ÌáÊ¾Ïà¹Ø							   */
+	/*								æç¤ºç›¸å…³							   */
 	/***********************************************************************/
 	public:
 		void									set_notice_id(int32 notice_id) { m_notice_id = notice_id; }
@@ -1178,7 +1178,7 @@ namespace faith
 		int32									m_notice_id;
 
 	//***********************************************************************/
-	/*								¸öÈËĞÅÏ¢								*/
+	/*								ä¸ªäººä¿¡æ¯								*/
 	//***********************************************************************/
 
 	public:
@@ -1187,7 +1187,7 @@ namespace faith
 		person_information_mgr			m_person_infor_mgr;
 
 	//***********************************************************************/
-	/*								Èü¼¾½±ÀøĞÅÏ¢								*/
+	/*								èµ›å­£å¥–åŠ±ä¿¡æ¯								*/
 	//***********************************************************************/
 
 	public:
@@ -1196,7 +1196,7 @@ namespace faith
 		role_competition_mgr			m_role_competition_mgr;
 
 	//***********************************************************************/
-	/*							ÌìÌİÈü¼¾½±ÀøĞÅÏ¢								*/
+	/*							å¤©æ¢¯èµ›å­£å¥–åŠ±ä¿¡æ¯								*/
 	//***********************************************************************/
 
 	public:
@@ -1205,7 +1205,7 @@ namespace faith
 		element_competition_mgr			m_element_competition_mgr;
 
 	//***********************************************************************/
-	/*								¾üÍÅ¹²ÎèĞÅÏ¢							*/
+	/*								å†›å›¢å…±èˆä¿¡æ¯							*/
 	//***********************************************************************/
 
 	public:
@@ -1215,7 +1215,7 @@ namespace faith
 		legion_dance_mgr					m_legion_dance_mgr;
 
 	//***********************************************************************/
-	/*							ÖúÕ½ĞÅÏ¢							*/
+	/*							åŠ©æˆ˜ä¿¡æ¯							*/
 	//***********************************************************************/
 	private:
 		assist_fight_cs_mgr					m_assist_fight_mgr;
@@ -1237,13 +1237,13 @@ namespace faith
 		int32						m_attacker_index;
 		int32						m_send_attacker_info_cd;
 	//***********************************************************************/
-	/*							ÏûÏ¢Ïà¹Ø							*/
+	/*							æ¶ˆæ¯ç›¸å…³							*/
 	//***********************************************************************/
 	private:
 		packet_c2s_s2c				m_msg;
 
 	//***********************************************************************/
-	/*							½âñîµôÂäºÍÉËº¦ÁĞ±í							*/
+	/*							è§£è€¦æ‰è½å’Œä¼¤å®³åˆ—è¡¨							*/
 	//***********************************************************************/
 	public:
 		bool check_can_get_boss_drop(npc* npc_ptr);
@@ -1254,7 +1254,7 @@ namespace faith
 		bool check_can_enter_gain_treasure_map(e_map_type type);
 
 	//***********************************************************************/
-	/*							lua½Ó¿Ú·â×°									*/
+	/*							luaæ¥å£å°è£…									*/
 	//***********************************************************************/
 	public:
 		bool add_money_or_exp_with_string(e_money_type money_type, std::string money_value, e_server_log_add_money add_type, int32 param = 0);
@@ -1267,7 +1267,7 @@ namespace faith
 
 
 	/************************************************************************/
-	// ¹ÖÎï×·»÷Ê±×ÔÉí×·»÷µã
+	// æ€ªç‰©è¿½å‡»æ—¶è‡ªèº«è¿½å‡»ç‚¹
 	/************************************************************************/
 	public:
 		fvector get_position_by_chase(f32 skill_distance, fvector npc_position);
@@ -1278,56 +1278,56 @@ namespace faith
 		void show_vip(int32 is_show_vip);
 		void enchant_show_type(int32 show_type);
 	//***********************************************************************/
-	/*							ÃÈÁúÆæÓö							*/
+	/*							èŒé¾™å¥‡é‡							*/
 	//***********************************************************************/
 	private:
 		dragontrip_mgr				m_dragontrip_mgr;
 	public:
 		dragontrip_mgr&				get_dragontrip_mgr() { return m_dragontrip_mgr; }
 	//***********************************************************************/
-	/*							×øÆï¸³ÄÜ							*/
+	/*							åéª‘èµ‹èƒ½							*/
 	//***********************************************************************/
 	public:
 		mount_power_mgr             m_mount_power_mgr;
 	public:
 		mount_power_mgr&            get_mount_power_mgr() { return m_mount_power_mgr; }
 	//***********************************************************************/
-	/*							±¦Ê¯ÎÆ¿Ì							*/
+	/*							å®çŸ³çº¹åˆ»							*/
 	//***********************************************************************/
 	public:
 		jewel_carve_mgr             m_jewel_carve_mgr;
 	public:
 		jewel_carve_mgr&            get_jewel_carve_mgr() { return m_jewel_carve_mgr; }
 	//***********************************************************************/
-	/*							Ìì¿Õ±¦¿â							*/
+	/*							å¤©ç©ºå®åº“							*/
 	//***********************************************************************/
 	private:
 		skytreasure_mgr             m_skytreasure_mgr;
 	public:
 		skytreasure_mgr&            get_skytreasure_mgr() { return m_skytreasure_mgr; }
 	//***********************************************************************/
-	/*							ĞÇº£·½ÖÛ							*/
+	/*							æ˜Ÿæµ·æ–¹èˆŸ							*/
 	//***********************************************************************/
 	private:
 		starark_mgr                m_starark_mgr;
 	public:
 		starark_mgr&               get_starark_mgr() { return m_starark_mgr; }
 	//***********************************************************************/
-	/*							 ¸£ÅÆ										*/
+	/*							 ç¦ç‰Œ										*/
 	//***********************************************************************/
 	private:
 		lucky_card_mgr                m_lucky_card_mgr;
 	public:
 		lucky_card_mgr&               get_lucky_card_mgr() { return m_lucky_card_mgr; }
 	//***********************************************************************/
-	/*							ĞÇ½çÒìÂÃ										*/
+	/*							æ˜Ÿç•Œå¼‚æ—…										*/
 	//***********************************************************************/
 	private:
 		star_trip_mgr                m_star_trip_mgr;
 	public:
 		star_trip_mgr&               get_star_trip_mgr() { return m_star_trip_mgr; }
 	//***********************************************************************/
-	/*							Ê±¹â»ØÀ¡									*/
+	/*							æ—¶å…‰å›é¦ˆ									*/
 	//***********************************************************************/
 	private:
 		time_feed_back_mgr             m_time_feed_back_mgr;
@@ -1335,7 +1335,7 @@ namespace faith
 		time_feed_back_mgr&            get_time_feed_back_mgr() { return m_time_feed_back_mgr; }
 
 	//***********************************************************************/
-	/*							ÏŞÊ±Àñ°ü									*/
+	/*							é™æ—¶ç¤¼åŒ…									*/
 	//***********************************************************************/
 	private:
 		time_limit_gift_mgr             m_time_limit_gift_mgr;
@@ -1343,15 +1343,15 @@ namespace faith
 		time_limit_gift_mgr&            get_time_limit_gift_mgr() { return m_time_limit_gift_mgr; }
 
 	//***********************************************************************/
-	/*							»î¶¯Ô¤Ô¼									*/
+	/*							æ´»åŠ¨é¢„çº¦									*/
 	//***********************************************************************/
 	private:
 		std::vector<s_subscribe_daily_info>		m_subscribe_daily_list;
 	public:	
-		void			subscribe_daily(int32 must_do_type);		// »î¶¯Ô¤Ô¼
-		void			check_subscribe_daily();					// »î¶¯²ÎÓë¼ì²â
-		void			load_subscribe_daily_info_end(const s_subscribe_daily_db_info * dp_info, int32 data_num);	// ¼ÓÔØ»î¶¯Ô¤Ô¼Êı¾İ
-		void			save_subscribe_daily_info(e_save_role_data_type eType);									// ±£´æ»î¶¯Ô¤Ô¼Êı¾İ
+		void			subscribe_daily(int32 must_do_type);		// æ´»åŠ¨é¢„çº¦
+		void			check_subscribe_daily();					// æ´»åŠ¨å‚ä¸æ£€æµ‹
+		void			load_subscribe_daily_info_end(const s_subscribe_daily_db_info * dp_info, int32 data_num);	// åŠ è½½æ´»åŠ¨é¢„çº¦æ•°æ®
+		void			save_subscribe_daily_info(e_save_role_data_type eType);									// ä¿å­˜æ´»åŠ¨é¢„çº¦æ•°æ®
 		void			send_subscribe_daily_info();
 		void			send_subscribe_daily_end(int32 end_type);
 	public: 

@@ -30,7 +30,7 @@ namespace faith
 		xstring										make_today_reward_string(const cloud_shop_big_rewards& big_reward_player_vec);
 		void										check_state_need_change_by_time(const int64& new_time);
 		void										load_role_record_data(const cloud_shop_role_record_data* load_data, int32 load_num, bool is_end);
-		void										change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//角色改名同步
+		void										change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//瑙掕壊鏀瑰悕鍚屾
 		void										load_cloud_shop_players_info();
 		cloud_shop_big_rewards						calc_big_reward(e_time_limit_activity_type activity_type, int32 big_reward_num, int32 basic_reward_num, const std::vector<int32>& rewards_array);
 		void										send_cloud_shop_awards(e_time_limit_activity_type activity_type);
@@ -55,7 +55,7 @@ namespace faith
 		void										send_open_msg_to_other_server(guid_64 role_guid, int32 server_id);
 
 	private:
-		cloud_shop_info_map							m_cloud_shop_info_map;//所有玩家购买map
+		cloud_shop_info_map							m_cloud_shop_info_map;//鎵�鏈夌帺瀹惰喘涔癿ap
 	};
 }
 

@@ -81,7 +81,7 @@ namespace faith
 					}
 				}
 			}
-			// Ë¢ĞÂÅÅÎ»
+			// åˆ·æ–°æ’ä½
 			ws2fep_login_queue_status msg;
 			int32 queue_count = 1;
 			for (unit_index_list_it it = m_queued_client_list.begin(); it != m_queued_client_list.end(); ++it)
@@ -106,7 +106,7 @@ namespace faith
 		}
 	}
 
-	//Õı³£µÇÂ½Á÷³Ì
+	//æ­£å¸¸ç™»é™†æµç¨‹
 	void queued_login_mgr::login_complete(client_session* client_session_ptr)
 	{
 		if (nullptr == client_session_ptr)
@@ -120,7 +120,7 @@ namespace faith
 		if(client_session_ptr->m_login_type == e_login_type_new_token)
 		{
 			client_session_ptr->m_is_need_send_cross_server_notice = true;
-			//tokenµÇÂ½µ½Õâ¾Í¿ÉÒÔ´«ËÍÁË
+			//tokenç™»é™†åˆ°è¿™å°±å¯ä»¥ä¼ é€äº†
 			client_session_ptr->m_step_num = client_session::e_session_step_login_win;
 			client_session_ptr->m_status = client_session::e_ss_map_transfer;
 			client_session_ptr->set_cs_array_index(-1);
@@ -150,7 +150,7 @@ namespace faith
 		
 		int32 queue_num = m_queued_client_list.size();
 		if ((m_online_counter + queue_num) >= init_socket_link)
-		{//send·şÎñÆ÷ÒÑµ½´ï×î´óÁ¬½ÓÊı£¬µÇ³ö
+		{//sendæœåŠ¡å™¨å·²åˆ°è¾¾æœ€å¤§è¿æ¥æ•°ï¼Œç™»å‡º
 			ws2fep_client_logined msg;
 			msg.client_uid = client_session_ptr->m_client_uid;
 			msg.eResult = e_error_code_login_login_queue_full;
@@ -170,7 +170,7 @@ namespace faith
 		{
 			csv_synchronization_mgr::get_instance().send_template(client_session_ptr);
 		}
-		//¼ÓÈë¶ÓÁĞ
+		//åŠ å…¥é˜Ÿåˆ—
 		m_queued_client_list.push_back(client_session_ptr->get_array_index());
 
 		client_session_ptr->m_status = client_session::e_ss_queue;

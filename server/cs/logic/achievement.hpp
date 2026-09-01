@@ -1,8 +1,8 @@
 /********************************************************************
-created: 2016Äê5ÔÂ14ÈÕ
+created: 2016å¹´5æœˆ14æ—¥
 file base: achievement
-author: ÕÅÓîÏè
-purpose: µ¥¸öÈÎÎñ
+author: å¼ å®‡ç¿”
+purpose: å•ä¸ªä»»åŠ¡
 *********************************************************************/
 #ifndef _ACHIEVEMENT_HPP_
 #define _ACHIEVEMENT_HPP_
@@ -28,7 +28,7 @@ namespace faith
 
 		bool init_achievement_by_template(int32 achievement_id, player* player_ptr);
 		bool init_achievement_by_info(s_achievement_info achievement_info, player* player_ptr);
-		int32 finish_achievement(std::vector<s_item_template_info>& get_money_tuple_array);//Íê³É·¢Ç®
+		int32 finish_achievement(std::vector<s_item_template_info>& get_money_tuple_array);//å®Œæˆå‘é’±
 
 
 		AchievementTemplate* get_achievement_template_ptr() { return m_achievement_ptr; }
@@ -45,7 +45,7 @@ namespace faith
 		void set_info(s_achievement_info new_info) { m_achievement_info = new_info; }
 		int32 get_inst_data(int32 index) const;
 		bool set_inst_data(int32 index, int32 num);
-		bool check_achievement_state();// ÅĞ¶ÏÄ¿±ê´ï³É¿ÉÒÔÍê³É
+		bool check_achievement_state();// åˆ¤æ–­ç›®æ ‡è¾¾æˆå¯ä»¥å®Œæˆ
 
 	private:
 		AchievementTemplate* m_achievement_ptr;

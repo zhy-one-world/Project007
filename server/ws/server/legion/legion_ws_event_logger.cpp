@@ -96,7 +96,7 @@ namespace faith
 		}
 		vec_show_str.push_back(member_name);
 		vec_show_str.push_back(template_manager::get_instance().int_to_string(donate_money_num));
-		vec_show_str.push_back(template_manager::get_instance().int_to_string(90029602));//"½ğ±Ò"×Ö·û´®id
+		vec_show_str.push_back(template_manager::get_instance().int_to_string(90029602));//"é‡‘å¸"å­—ç¬¦ä¸²id
 		if (battle_achievement_num != 0)
 		{
 			vec_show_str.push_back(template_manager::get_instance().int_to_string(battle_achievement_num));
@@ -337,10 +337,10 @@ namespace faith
 		legion_event_msg.set_happen_time(legion_event_info.happen_time);
 	}
 
-	// ·µ»ØÖµËµÃ÷:
-	//  1 ´ò°üÕı³£
-	// -1 ÊÂ¼şÁĞ±íÊÇ¿ÕµÄ
-	// -2 ÉêÇëlegion_proto_legion_eventÊı¾İ°üÊ§°Ü
+	// è¿”å›å€¼è¯´æ˜:
+	//  1 æ‰“åŒ…æ­£å¸¸
+	// -1 äº‹ä»¶åˆ—è¡¨æ˜¯ç©ºçš„
+	// -2 ç”³è¯·legion_proto_legion_eventæ•°æ®åŒ…å¤±è´¥
 	int32 legion_ws_event_logger::fill_get_event_list_msg(legion_proto_get_legion_event_list_end& get_event_list_end_msg, uint32 happen_time)
 	{
 		get_event_list_end_msg.set_event_list_len(0);
@@ -404,7 +404,7 @@ namespace faith
 			load_legion_event(*event_data);
 		}
 
-		//sqlÖĞÅÅĞò
+		//sqlä¸­æ’åº
 		//m_event_list.sort([](const s_legion_event& a, const s_legion_event& b) { return a.happen_time > b.happen_time; });
 	}
 

@@ -1,4 +1,4 @@
-/********************************************************************
+ï»¿/********************************************************************
 created:	2014/08/01
 created:	01:08:2014   12:45
 file base: player_def
@@ -14,11 +14,11 @@ purpose:
 #include "logic/type_def.hpp"
 #include "Logic/att_def.hpp"
 
-#define  NPC_NUM_AROUND_PLAYER	32	// Î§ÈÆÍæ¼ÒÒ»È¦µÄ¹ÖÎïµãÊı
+#define  NPC_NUM_AROUND_PLAYER	32	// å›´ç»•ç©å®¶ä¸€åœˆçš„æ€ªç‰©ç‚¹æ•°
 
 namespace faith
 {
-	// player Ä£°åÊı¾İ
+	// player æ¨¡æ¿æ•°æ®
 	//struct player_template_info : public base_info
 	//{
 	//	int32		id;
@@ -40,7 +40,6 @@ namespace faith
 	//		max_physics(0),max_stamina(0),max_hp_param(0),max_magic_param(0),init_gold(0),init_magic(0),max_magic(0),max_population(0),
 	//		add_magic_speed(0),add_hp_speed(0),add_gold_speed(0)
 	//	{
-	//		
 	//	}
 	//};
 }

@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2019Äê03ÔÂ20ÈÕ
+created: 2019å¹´03æœˆ20æ—¥
 file base: time_limit_activity_mgr
 file ext: h
 author: wangdi
@@ -27,7 +27,7 @@ namespace faith
 		void													refresh_by_zero(const int64& time_now);
 		void													send_open_activity_all();
 		void													send_open_activity_branch_info_all();
-		void													add_new_act_with_new_temp();//¸ù¾İĞÂ±í»ñµÃĞÂ»î¶¯
+		void													add_new_act_with_new_temp();//æ ¹æ®æ–°è¡¨è·å¾—æ–°æ´»åŠ¨
 		void													delete_old_act_with_new_temp();
 		void													init_template_id_all();
 		void													init_template_id_cross();
@@ -43,7 +43,7 @@ namespace faith
 		int32													get_activity_branch_template_id(e_time_limit_activity_type activity_type);
 		int32													get_activity_template_id(e_time_limit_activity_type activity_type);
 		int32													get_treasure_lua_award_index(e_time_limit_activity_type activity_type);
-		int32													get_activity_schedule(e_time_limit_activity_type activity_type, int32 schedule_index = 0, int32 act_guid = 0);//act_guid±íÊ¾»î¶¯Î¨Ò»guid£¬Èç¹û²»ÌîÄ¬ÈÏÍ¨¹ıÀàĞÍÈ¥ÕÒ×îĞÂµÄ
+		int32													get_activity_schedule(e_time_limit_activity_type activity_type, int32 schedule_index = 0, int32 act_guid = 0);//act_guidè¡¨ç¤ºæ´»åŠ¨å”¯ä¸€guidï¼Œå¦‚æœä¸å¡«é»˜è®¤é€šè¿‡ç±»å‹å»æ‰¾æœ€æ–°çš„
 		void													set_activity_schedule(e_time_limit_activity_type activity_type, int32 schedule_value, int32 schedule_index = 0, int32 act_guid = 0);
 		void													add_activity_schedule(e_time_limit_activity_type activity_type, int32 add_value, int32 schedule_index = 0, int32 act_guid = 0);
 		void													sync_common_data_after_add_schedule(e_time_limit_activity_type activity_type, int32 add_value);
@@ -64,7 +64,7 @@ namespace faith
 		void													buy_time_limit_item(int32 activity_type, int32 buy_num);
 		void													send_buy_time_limit_item_end(int32 activity_type, int32 result_type);
 
-		void													send_limit_time_notice_info();	//·¢ËÍÏŞÊ±¹«¸æÊı¾İ ÓÅÏÈ¼¶½Ï¸ß
+		void													send_limit_time_notice_info();	//å‘é€é™æ—¶å…¬å‘Šæ•°æ® ä¼˜å…ˆçº§è¾ƒé«˜
 
 	private:
 		player*													m_player_ptr;

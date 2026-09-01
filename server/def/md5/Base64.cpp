@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <string>
 #include <cstring>
 #include "base64.h"
@@ -16,8 +16,8 @@ static inline bool is_base64(unsigned char c) {
 }
 
 
-std::string Base64::_base64_table = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"; /*����Base64����ʹ�õı�׼�ֵ�*/
-//�����
+std::string Base64::_base64_table = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"; /*这是Base64编码使用的标准字典*/
+//解码表
 const char DecodeTable[] =
 {
 	-2, -2, -2, -2, -2, -2, -2, -2, -2, -1, -1, -2, -2, -1, -2, -2,
@@ -73,12 +73,12 @@ std::string Base64::Decode(const char *str, int length) {
 	char ch;
 	while ((ch = *current++) != '\0' && length-- > 0)
 	{
-		if (ch == base64_pad) { // ��ǰһ���ַ��ǡ�=����
+		if (ch == base64_pad) { // 当前一个字符是“=”号
 								/*
-								��˵��һ������ڽ���ʱ��4���ַ�Ϊһ�����һ���ַ�ƥ�䡣
-								����������
-								1�����ĳһ��ƥ��ĵڶ����ǡ�=���ҵ������ַ����ǡ�=����˵������������ַ������Ϸ���ֱ�ӷ��ؿ�
-								2�������ǰ��=�����ǵڶ����ַ����Һ�����ַ�ֻ�����հ׷�����˵�������������Ϸ������Լ�����
+								先说明一个概念：在解码时，4个字符为一组进行一轮字符匹配。
+								两个条件：
+								1、如果某一轮匹配的第二个是“=”且第三个字符不是“=”，说明这个带解析字符串不合法，直接返回空
+								2、如果当前“=”不是第二个字符，且后面的字符只包含空白符，则说明这个这个条件合法，可以继续。
 								*/
 			if (*current != '=' && (i % 4) == 1) {
 				return NULL;
@@ -86,7 +86,7 @@ std::string Base64::Decode(const char *str, int length) {
 			continue;
 		}
 		ch = DecodeTable[ch];
-		//�������Ҫ�������������в��Ϸ����ַ�
+		//这个很重要，用来过滤所有不合法的字符
 		if (ch < 0) { /* a space or some other separator character, we simply skip over */
 			continue;
 		}

@@ -1,4 +1,4 @@
-/********************************************************************
+ï»¿/********************************************************************
 	created:	2014/08/07
 	created:	7:8:2014   14:56
 	file base:	client_session_mgr
@@ -18,9 +18,7 @@
 
 namespace faith
 {
-	//	
-	//	¿Í»§¶Ë»á»°¹ÜÀíÆ÷
-	//
+	//	å®¢æˆ·ç«¯ä¼šè¯ç®¡ç†å™¨
 
 	typedef	std::unordered_map<ui64, client_session*>	player_session_map;
 	typedef player_session_map::iterator	player_session_map_it;
@@ -48,8 +46,8 @@ namespace faith
 		client_session*					get_session_by_array_index(int32 array_index);
 
 
-		void							logout_by_fep( uint32 fep_uid );					//µ±ÓëfepµÄÁ¬½Ó¶Ï¿ªÊ±£¬µÇ³öËùÓĞÏà¹ØµÄÕÊºÅ
-		void							logout_by_cs( uint32 conn_index);						//µ±ÓëcsµÄÁ¬½Ó¶Ï¿ªÊ±£¬µÇ³öËùÓĞÏà¹ØµÄÕÊºÅ
+		void							logout_by_fep( uint32 fep_uid );					//å½“ä¸fepçš„è¿æ¥æ–­å¼€æ—¶ï¼Œç™»å‡ºæ‰€æœ‰ç›¸å…³çš„å¸å·
+		void							logout_by_cs( uint32 conn_index);						//å½“ä¸csçš„è¿æ¥æ–­å¼€æ—¶ï¼Œç™»å‡ºæ‰€æœ‰ç›¸å…³çš„å¸å·
 		void							logout_client( client_session* client_session_ptr);
 		void							logout_complete( client_session* client_session_ptr );
 		bool							kickout_account(xstring role_mark, e_logout_result reason);
@@ -70,7 +68,7 @@ namespace faith
 		void							send_message_to_map(int32 map_template_id, google::protobuf::Message* net_pro, uint32 header);
 		void                            send_message_to_map_lua(int32 map_template_id, const char *msg, int32 msg_len, uint32 header);
 
-		//¸ø¶ÔÓ¦¾üÍÅGUIDµÄ³ÉÔ±·¢ÏûÏ¢£¬Ä¿Ç°Ö÷ÒªÓÃÓÚ¿ç·ş
+		//ç»™å¯¹åº”å†›å›¢GUIDçš„æˆå‘˜å‘æ¶ˆæ¯ï¼Œç›®å‰ä¸»è¦ç”¨äºè·¨æœ
 		void							send_message_to_cur_server_legion(guid_64 send_guid, google::protobuf::Message* net_pro, uint32 header);
 		void							send_message_to_legion(guid_64 send_guid, google::protobuf::Message* net_pro, uint32 header);
 		void							send_message_to_legion_data(guid_64 legion_guid, const void* data_package, size_t data_len, uint32 header);
@@ -80,13 +78,13 @@ namespace faith
 		void							set_cross_player_legion(const s_cross_player_legion_info& legion_info, guid_64& role_guid);
 		s_player_legion_info&			get_cross_player_legion(guid_64 role_guid);
 
-		void							send_msg_to_cross_player(const google::protobuf::Message* proto_ptr, int32 server_id, guid_64 role_guid, uint32 header);//¿ç·ş·¢ËÍÖ±½Ó´«¸ø¿Í»§¶ËµÄÏûÏ¢°ü
+		void							send_msg_to_cross_player(const google::protobuf::Message* proto_ptr, int32 server_id, guid_64 role_guid, uint32 header);//è·¨æœå‘é€ç›´æ¥ä¼ ç»™å®¢æˆ·ç«¯çš„æ¶ˆæ¯åŒ…
 
 		void							send_temp_to_all_session();
 	public:
 		client_session*					get_empty_session();
 		//rename
-		void							change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//½ÇÉ«¸ÄÃûÍ¬²½
+		void							change_player_name_func(const guid_64& role_guid, const xstring& role_name);	//è§’è‰²æ”¹ååŒæ­¥
 
 		int32							is_can_transfer_other_line();
 		void							send_transfer_state_to_client(client_session* cur_session = nullptr);
@@ -103,7 +101,7 @@ namespace faith
 
 		int32							m_last_transfer_state;
 
-		//¾üÍÅÊı¾İ»º´æ£¬¶ÔÓ¦Íæ¼Òguid
+		//å†›å›¢æ•°æ®ç¼“å­˜ï¼Œå¯¹åº”ç©å®¶guid
 		std::map<int64, s_cross_player_legion_info>	m_cross_player_legion_info_map;
 	};
 }

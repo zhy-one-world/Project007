@@ -19,41 +19,41 @@ namespace faith
 {
 #pragma pack(push,1)
 
-	//³äÖµ
+	//å……å€¼
 	const int32  first_charge_mission_id  = 15000640;
-	const int32  first_charge_template_id_arry[4] = { 104000002, 104000003, 104000004, 104000006 }; //À¶×©³äÖµ 60 300 980 1980
+	const int32  first_charge_template_id_arry[4] = { 104000002, 104000003, 104000004, 104000006 }; //è“ç –å……å€¼ 60 300 980 1980
 	const int32  first_charge_reward_id   = 107010001;
 	const int32  auto_charge_template_id  = 104000003;
 
-	const int32 levelup_world_avg_level_time_hour = 5;				//×Ô¶¯gmÃüÁî×·¸Ï·şÎñÆ÷µÈ¼¶Ê±¼ä
-	const int32 levelup_world_days = 15;							//¿ª·şÇ°7Ìì×Ô¶¯×·¸Ï·şÎñÆ÷µÈ¼¶
-	const int32 probability_levelup_world_days = 9;					//µÚ9ÌìÖ®ºó¸ÅÂÊÌáÉıµÈ¼¶
-	const int32 levelup_probability = 80;							//ÌáÉı¼°µÈ¼¶¸ÅÂÊ 80%
+	const int32 levelup_world_avg_level_time_hour = 5;				//è‡ªåŠ¨gmå‘½ä»¤è¿½èµ¶æœåŠ¡å™¨ç­‰çº§æ—¶é—´
+	const int32 levelup_world_days = 15;							//å¼€æœå‰7å¤©è‡ªåŠ¨è¿½èµ¶æœåŠ¡å™¨ç­‰çº§
+	const int32 probability_levelup_world_days = 9;					//ç¬¬9å¤©ä¹‹åæ¦‚ç‡æå‡ç­‰çº§
+	const int32 levelup_probability = 80;							//æå‡åŠç­‰çº§æ¦‚ç‡ 80%
 
-	//ÎïÆ·
-	const int32 auto_upgrade_item_interval_time = 30000;			//×Ô¶¯Ç¿»¯×°±¸Ê±¼ä¼ä¸ô
-	const int32 team_robot_max = 1;									//¶ÓÎéÄÚ»úÆ÷ÈËÉÏÏŞ 
+	//ç‰©å“
+	const int32 auto_upgrade_item_interval_time = 30000;			//è‡ªåŠ¨å¼ºåŒ–è£…å¤‡æ—¶é—´é—´éš”
+	const int32 team_robot_max = 1;									//é˜Ÿä¼å†…æœºå™¨äººä¸Šé™ 
 
-	//¾üÍÅ
-	const int32 auto_opera_legion_time = 2 * hour_tick_time;			//×Ô¶¯¼ÓÈë¾üÍÅÊÂ¼ş120·ÖÖÓ
-	const int32 auto_join_legion_time_have_jioned = 1 * day_tick_time; //¼ÓÈë¹ı¾üÍÅºóÍË³ö¾Í1ÌìÉêÇëÒ»´Î
+	//å†›å›¢
+	const int32 auto_opera_legion_time = 2 * hour_tick_time;			//è‡ªåŠ¨åŠ å…¥å†›å›¢äº‹ä»¶120åˆ†é’Ÿ
+	const int32 auto_join_legion_time_have_jioned = 1 * day_tick_time; //åŠ å…¥è¿‡å†›å›¢åé€€å‡ºå°±1å¤©ç”³è¯·ä¸€æ¬¡
 
-	const int32 auto_quit_legion_robot_num = 5;						//¾üÍÅ³¬¹ı5¸ö»úÆ÷ÈËÍË³ö¾üÍÅ
-	const int32 auto_quit_legion_leader_out_online_time = 3 * 24 * 60 * 60;	//¾üÍÅ³¤ÈıÌì²»ÔÚÏßÍË³ö¾üÍÅ
-	const int32 request_join_legion_times_max = 5;					//»úÆ÷ÈËÉêÇëÒ»¸ö¾üÍÅµÄ´ÎÊıÉÏÏŞ
+	const int32 auto_quit_legion_robot_num = 5;						//å†›å›¢è¶…è¿‡5ä¸ªæœºå™¨äººé€€å‡ºå†›å›¢
+	const int32 auto_quit_legion_leader_out_online_time = 3 * 24 * 60 * 60;	//å†›å›¢é•¿ä¸‰å¤©ä¸åœ¨çº¿é€€å‡ºå†›å›¢
+	const int32 request_join_legion_times_max = 5;					//æœºå™¨äººç”³è¯·ä¸€ä¸ªå†›å›¢çš„æ¬¡æ•°ä¸Šé™
 
-	//µØÍ¼
-	const int32 godness_trial_map_template_id = 71030001;			//Å®ÉñµÄÊÔÁ¶¸±±¾id
+	//åœ°å›¾
+	const int32 godness_trial_map_template_id = 71030001;			//å¥³ç¥çš„è¯•ç‚¼å‰¯æœ¬id
 	const int32 lord_trials_map_template_id_arry[4] = { 71040003, 71040012, 71040013, 71040014 };
 
-	//ºÃÓÑ
-	const int32 request_add_friend_count = 5;					   //»úÆ÷ÈË×î¶à¼Ó5´ÎºÃÓÑ
+	//å¥½å‹
+	const int32 request_add_friend_count = 5;					   //æœºå™¨äººæœ€å¤šåŠ 5æ¬¡å¥½å‹
 
-	//»î¶¯
-	const int32 join_pk_king_num_max = 15;						  //pkÖ®Íõ»î¶¯µØÍ¼×î¶à½øÍ¼µÄ»úÆ÷ÈËÊıÁ¿
-	const int32 join_hollow_break_num_max = 10;					  //½øÈëĞé¿ÕÆÆËéµØÍ¼×î¶àµÄÈËÊı
+	//æ´»åŠ¨
+	const int32 join_pk_king_num_max = 15;						  //pkä¹‹ç‹æ´»åŠ¨åœ°å›¾æœ€å¤šè¿›å›¾çš„æœºå™¨äººæ•°é‡
+	const int32 join_hollow_break_num_max = 10;					  //è¿›å…¥è™šç©ºç ´ç¢åœ°å›¾æœ€å¤šçš„äººæ•°
 
-	const int32 pk_king_fight_pos_x1 = 3901;							//pkÖ®Íõ½øÍ¼Ö®ºó´ò¼ÜµÄÎ»ÖÃ
+	const int32 pk_king_fight_pos_x1 = 3901;							//pkä¹‹ç‹è¿›å›¾ä¹‹åæ‰“æ¶çš„ä½ç½®
 	const int32 pk_king_fight_pos_y1 = 3663;
 	const int32 pk_king_fight_pos_z1 = 135;
 
@@ -69,13 +69,13 @@ namespace faith
 	const int32 pk_king_fight_pos_y4 = 3572;
 	const int32 pk_king_fight_pos_z4 = 135;
 
-	//Í¼¼ø
-	const int32 commit_pokedex_time = 300000;				//Í¼¼ø×Ô¶¯Ìá½»Ê±¼ä¼ä¸ô
-	const int32 resolve_pokedex_time = 1800000;				//·Ö½âÎŞÓÃÍ¼¼øÊ±¼ä¼ä¸ô
-	const int32 max_pokedex_out_broad_num = 5;				//È¥Í¼¼ø¹Ò»úµÄÈËÊıÉÏÏŞ
+	//å›¾é‰´
+	const int32 commit_pokedex_time = 300000;				//å›¾é‰´è‡ªåŠ¨æäº¤æ—¶é—´é—´éš”
+	const int32 resolve_pokedex_time = 1800000;				//åˆ†è§£æ— ç”¨å›¾é‰´æ—¶é—´é—´éš”
+	const int32 max_pokedex_out_broad_num = 5;				//å»å›¾é‰´æŒ‚æœºçš„äººæ•°ä¸Šé™
 
 
-	//ĞèÒª¼¤»îµÄÎïÆ· ±ùËªÁú ÏÈÇıÖ®Òí
+	//éœ€è¦æ¿€æ´»çš„ç‰©å“ å†°éœœé¾™ å…ˆé©±ä¹‹ç¿¼
 	const std::vector<int32> need_renew_item_template_id_arry = { 31030012, 31040041 };
 #pragma pack(pop)
 }

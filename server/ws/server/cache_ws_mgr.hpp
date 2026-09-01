@@ -1,9 +1,9 @@
 #pragma once
 /********************************************************************
-created: 2020Äê12ÔÂ15ÈÕ
+created: 2020å¹´12æœˆ15æ—¥
 file base: cache
 author: zs
-purpose: »º´æ¹ÜÀíÏµÍ³
+purpose: ç¼“å­˜ç®¡ç†ç³»ç»Ÿ
 *********************************************************************/
 #ifndef _CACHE_WS_MGR_HPP_
 #define _CACHE_WS_MGR_HPP_
@@ -28,7 +28,7 @@ namespace faith
 			return s_cache_ws_mgr;
 		}
 	public:
-		//³õÊ¼»¯
+		//åˆå§‹åŒ–
 		void init();
 		void clear_data();
 

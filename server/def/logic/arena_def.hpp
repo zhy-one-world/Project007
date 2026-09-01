@@ -22,7 +22,7 @@ namespace faith
 
 	const int32 rank_max = 5000;
 	const int32 rank_save_per_time_max = 500;
-	const int32	challenge_log_max = 100;//×î´ó±£´æ100Ìõ¼ÇÂ¼
+	const int32	challenge_log_max = 100;//æœ€å¤§ä¿å­˜100æ¡è®°å½•
 	const int32	arena_choose_list_base_range = 300;
 	const int32	arena_map_template_id = 71100004;
 	const int32	arena_reward_template_start_id = 109000001;
@@ -32,11 +32,11 @@ namespace faith
 
 	enum e_req_challenge_end
 	{
-		e_req_challenge_end_success = 0,			//·¢ËÍÇëÇó³É¹¦
-		e_req_challenge_end_play_not_exist,			//Íæ¼Ò²»´æÔÚ
-		e_req_challenge_end_times_lack,				//´ÎÊı²»×ã
-		e_req_challenge_end_colling_time,			//ÌôÕ½ÀäÈ´ÖĞ
-		e_req_challenge_end_target_is_in_challenge,	//Íæ¼ÒÕıÔÚ±»ÆäËûÍæ¼ÒÌôÕ½
+		e_req_challenge_end_success = 0,			//å‘é€è¯·æ±‚æˆåŠŸ
+		e_req_challenge_end_play_not_exist,			//ç©å®¶ä¸å­˜åœ¨
+		e_req_challenge_end_times_lack,				//æ¬¡æ•°ä¸è¶³
+		e_req_challenge_end_colling_time,			//æŒ‘æˆ˜å†·å´ä¸­
+		e_req_challenge_end_target_is_in_challenge,	//ç©å®¶æ­£åœ¨è¢«å…¶ä»–ç©å®¶æŒ‘æˆ˜
 		e_req_challenge_end_max,
 	};
 

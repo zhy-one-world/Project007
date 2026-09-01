@@ -159,7 +159,7 @@ namespace faith
 
 		if (is_free == 0)
 		{
-			// ×êÊ¯³é½±´¦Àí
+			// é’»çŸ³æŠ½å¥–å¤„ç†
 			if (prize_type == e_treasure_prize_type_one || prize_type == e_treasure_prize_type_ten)
 			{
 				if (player_ref.can_cut_money((e_money_type)cost_money_type, cost_money_value) == false)
@@ -180,7 +180,7 @@ namespace faith
 
 				player_ref.get_item_set().put_in_bag(e_server_log_add_item_treasure, treasure_type, must_item);
 			}
-			else  // µÀ¾ß³é½±´¦Àí
+			else  // é“å…·æŠ½å¥–å¤„ç†
 			{
 				if (item_system::can_cost_item(&player_ref, e_bag_type_bag, cost_money_type, cost_money_value) == false)
 				{
@@ -357,24 +357,24 @@ namespace faith
 			}
 			else if (treasure_type == e_treasure_type_time_limit)
 			{
-				// Ôö¼Ó»î¶¯³é½±´ÎÊı
+				// å¢åŠ æ´»åŠ¨æŠ½å¥–æ¬¡æ•°
 				player_ref.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_limit_time_treasure2, prize_score, 0);
-				// Ôö¼Ó»î¶¯³é½±ĞÒÔËÖµ
+				// å¢åŠ æ´»åŠ¨æŠ½å¥–å¹¸è¿å€¼
 				player_ref.get_time_limit_activity_mgr().add_activity_schedule(e_time_limit_activity_type_limit_time_treasure2, prize_luck, 1);
 			}
 			
 		}
-		//ÏŞÊ±ĞĞÎª»Ê¼Ò±¦²Ø³é½±¼ÆÊı
+		//é™æ—¶è¡Œä¸ºçš‡å®¶å®è—æŠ½å¥–è®¡æ•°
 		if (treasure_type == e_treasure_type_item )//|| treasure_type == e_treasure_type_new_server)
 		{
 			if (prize_type == e_treasure_prize_type_one || prize_type == e_treasure_prize_type_one_item)
 			{
-				player_ref.get_time_limit_activity_mgr().activity_behavior_done(e_time_limit_behavior_type_treasure_lottery, 1);  //µ¥³é£¬Ò»´Î
+				player_ref.get_time_limit_activity_mgr().activity_behavior_done(e_time_limit_behavior_type_treasure_lottery, 1);  //å•æŠ½ï¼Œä¸€æ¬¡
 				player_ref.get_star_trip_mgr().target_mission(e_star_trip_target_type_treasure, 1);
 			}
 			else if (prize_type == e_treasure_prize_type_ten || prize_type == e_treasure_prize_type_ten_item)
 			{
-				player_ref.get_time_limit_activity_mgr().activity_behavior_done(e_time_limit_behavior_type_treasure_lottery, 10);  //Ê®³é£¬Ê®´Î
+				player_ref.get_time_limit_activity_mgr().activity_behavior_done(e_time_limit_behavior_type_treasure_lottery, 10);  //åæŠ½ï¼Œåæ¬¡
 				player_ref.get_star_trip_mgr().target_mission(e_star_trip_target_type_treasure, 10);
 			}
 		}
@@ -394,7 +394,7 @@ namespace faith
 		treasure_record.data_ary[e_treasure_record_treasure_type] = treasure_type;
 		treasure_record.data_ary[e_treasure_record_prize_type] = prize_type;
 		int32 record_index = e_treasure_record_prize_0;
-		//°Ñ·ûÎÄÀñ°ü¶ªµ½±³°üÀï
+		//æŠŠç¬¦æ–‡ç¤¼åŒ…ä¸¢åˆ°èƒŒåŒ…é‡Œ
 		std::vector<int32> item_inst_array;
 		item_inst_array.clear();
 
@@ -417,7 +417,7 @@ namespace faith
 				log_item_array.push_back(temp_item_id);
 				log_item_array.push_back(temp_item_num);
 
-				//·ûÎÄ±¦²ØÌõ¼şÏÂ ÎïÆ·²»ÊÇÔªËØ·ûÎÄ ¾ÍÊÇ·ûÎÄÀñ°ü Ö±½Ó¶ªµ½±³°üÀï
+				//ç¬¦æ–‡å®è—æ¡ä»¶ä¸‹ ç‰©å“ä¸æ˜¯å…ƒç´ ç¬¦æ–‡ å°±æ˜¯ç¬¦æ–‡ç¤¼åŒ… ç›´æ¥ä¸¢åˆ°èƒŒåŒ…é‡Œ
 				if (treasure_type == e_treasure_type_element)
 				{
 					ItemTemplate* item_template_ptr = GET_TEMPLATE(ItemTemplate, temp_item_id);

@@ -47,7 +47,7 @@ namespace faith
 		void talent_reset();
 	private:
 		std::vector<ctalent*>						m_talent_vector;
-		int32										m_unit_array_index;						// Ìì¸³ËùÊô½ÇÉ«
+		int32										m_unit_array_index;						// å¤©èµ‹æ‰€å±è§’è‰²
 		std::vector<int32>							m_empty_layer;
 	};
 }

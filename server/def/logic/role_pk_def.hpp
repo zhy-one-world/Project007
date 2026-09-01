@@ -1,4 +1,4 @@
-/*@@
+ï»¿/*@@
 
 	Copyright (c) Beijing Second Laboratory Game Studio. All rights reserved. 
 	
@@ -18,16 +18,12 @@
 #define _ROLE_PK_DEFINE_H_
 
 //////////////////////////////////////////////////////////////////////////
-//
 //	File Include
-//
 //////////////////////////////////////////////////////////////////////////
 #include <Logic/char_def.hpp>
 #include "Logic/map_def.hpp"
 //////////////////////////////////////////////////////////////////////////
-//
 //	Macro And Struct Define
-//
 //////////////////////////////////////////////////////////////////////////
 namespace faith
 {
@@ -48,10 +44,10 @@ namespace faith
 	};
 	enum e_pk_state
 	{
-		e_pk_state_no_join,//Î´±¨Ãû
-		e_pk_state_success,//±¨Ãû³É¹¦
-		e_pk_state_join_war,//Æ¥Åä³É¹¦
-		e_pk_state_begin_loading,//¿ÉÒÔ¼ÓÔØ
+		e_pk_state_no_join,//æœªæŠ¥å
+		e_pk_state_success,//æŠ¥åæˆåŠŸ
+		e_pk_state_join_war,//åŒ¹é…æˆåŠŸ
+		e_pk_state_begin_loading,//å¯ä»¥åŠ è½½
 	};
 	enum e_role_pk_info
 	{

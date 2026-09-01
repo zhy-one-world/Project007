@@ -37,8 +37,8 @@ namespace faith
 			spawn_time = chest_arrival_activity::spawn_chest_time[i];
 			disappear_time = spawn_time + chest_arrival_activity::chest_live_time;
 
-			// Èç¹ûÊÇÔÚ»î¶¯Ê±¼äÄÚ¾ÍË¢³ö±¦Ïä(¼´Ê¹ÊÇ»î¶¯Ê±¼äÄÚ¹Ø±ÕÖØÆô·şÎñÆ÷»î¶¯Ò²»á¼ÌĞøÕı³£½øĞĞ
-			// ¶øÇÒĞÂË¢±¦ÏäÒ²»áÑÓĞøÖ®Ç°µÄÊ£ÓàÊ±¼ä)
+			// å¦‚æœæ˜¯åœ¨æ´»åŠ¨æ—¶é—´å†…å°±åˆ·å‡ºå®ç®±(å³ä½¿æ˜¯æ´»åŠ¨æ—¶é—´å†…å…³é—­é‡å¯æœåŠ¡å™¨æ´»åŠ¨ä¹Ÿä¼šç»§ç»­æ­£å¸¸è¿›è¡Œ
+			// è€Œä¸”æ–°åˆ·å®ç®±ä¹Ÿä¼šå»¶ç»­ä¹‹å‰çš„å‰©ä½™æ—¶é—´)
 			if (spawn_time <= cur_time && cur_time < disappear_time)
 			{
 				if (get_chest_wave_flag(i) == true)

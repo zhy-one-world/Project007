@@ -100,7 +100,7 @@ namespace faith
 								break;
 							}
 							npc_spawn_id = next_spawn_id;
-							//ÊÀ½çBossÉ¶µÄ¹éWSÉÏµÄÄ³¸ö¹ÜÀíÆ÷´¦Àí
+							//ä¸–ç•ŒBosså•¥çš„å½’WSä¸Šçš„æŸä¸ªç®¡ç†å™¨å¤„ç†
 							continue;
 						}
 						npc* new_monster_ptr = nullptr;
@@ -146,8 +146,8 @@ namespace faith
 		return map_object::get_activity_map_sec_left(get_map_type(), player_idx);
 	}
 
-	//Ã¿ÃëÖÓ´¥·¢Ò»´ÎµÄÂıtick,ÓÃÓÚ±È½ÏÂı²»ĞèÒªÒÔÖ¡Îªµ¥Î»ÅĞ¶ÏµÄÂß¼­(±ÈÈç¿´Ò»ÏÂ¹ÖÊÇ·ñ¶¼ËÀÍöÁËÖØĞÂË¢Ò»´Î),
-	//ÉÙÅĞ¶Ï,¿É¼õĞ¡·şÎñÆ÷Ñ¹Á¦.ÒòÎª²ÉÓÃÊ±¼äÀÛ¼Ó,´Ëtick»áÓĞÉÙĞíÎó²î,ÌØ±ğÒªÇóÊ±¼ä¾«¶ÈµÄÂß¼­²»ÒªÊ¹ÓÃ --Steven.Han
+	//æ¯ç§’é’Ÿè§¦å‘ä¸€æ¬¡çš„æ…¢tick,ç”¨äºæ¯”è¾ƒæ…¢ä¸éœ€è¦ä»¥å¸§ä¸ºå•ä½åˆ¤æ–­çš„é€»è¾‘(æ¯”å¦‚çœ‹ä¸€ä¸‹æ€ªæ˜¯å¦éƒ½æ­»äº¡äº†é‡æ–°åˆ·ä¸€æ¬¡),
+	//å°‘åˆ¤æ–­,å¯å‡å°æœåŠ¡å™¨å‹åŠ›.å› ä¸ºé‡‡ç”¨æ—¶é—´ç´¯åŠ ,æ­¤tickä¼šæœ‰å°‘è®¸è¯¯å·®,ç‰¹åˆ«è¦æ±‚æ—¶é—´ç²¾åº¦çš„é€»è¾‘ä¸è¦ä½¿ç”¨ --Steven.Han
 	void map_cs::tick_sec(const int64& new_time)
 	{
 		spawn_by_target_time_sec(new_time);
@@ -252,7 +252,7 @@ namespace faith
 		float deltaseconds = (new_time - m_begin_map_time) / 1000.f;
 		m_begin_map_time = new_time;
 
-		if (new_time > m_stamp_last_sec_tick)//¿ç¶È³¬¹ı1ÃëÁË,´¥·¢Âıtick
+		if (new_time > m_stamp_last_sec_tick)//è·¨åº¦è¶…è¿‡1ç§’äº†,è§¦å‘æ…¢tick
 		{
 			m_stamp_last_sec_tick = new_time + second_tick_time;
 			tick_sec(new_time);
@@ -319,7 +319,7 @@ namespace faith
 			return;
 		}
 		
-		// Èç¹ûÊÇ´Ó´óÊÀ½ç´«ËÍµ½ÆäËûµØÍ¼ÒªÏÈ±£´æÒ»ÏÂ½ÇÉ«ÔÚ´óÊÀ½çÊ±ºòµÄPKÄ£Ê½
+		// å¦‚æœæ˜¯ä»å¤§ä¸–ç•Œä¼ é€åˆ°å…¶ä»–åœ°å›¾è¦å…ˆä¿å­˜ä¸€ä¸‹è§’è‰²åœ¨å¤§ä¸–ç•Œæ—¶å€™çš„PKæ¨¡å¼
 		if (get_map_type() == e_map_type_big_map)
 		{
 			int32 cur_pk_mode = player_ref.get_pk_community_mgr().get_entire_pk_mode();
@@ -331,7 +331,7 @@ namespace faith
 			
 		}
 
-		// Èç¹ûÊÇ´ò±¦µØÍ¼»òÕßË®¾§»Ã¾³ Àë¿ªÊ±»¹Ô­´óÊÀ½çµÄpkÄ£Ê½ 
+		// å¦‚æœæ˜¯æ‰“å®åœ°å›¾æˆ–è€…æ°´æ™¶å¹»å¢ƒ ç¦»å¼€æ—¶è¿˜åŸå¤§ä¸–ç•Œçš„pkæ¨¡å¼ 
 		if (get_map_type() == e_map_type_boss_home || get_map_type() == e_map_type_boss_vip_home || get_map_type() == e_map_type_crystak_dreamland || get_map_type() == e_map_type_cross_server_harry)
 		{
 			int32 main_pk_mode = player_ref.get_logic_data(e_role_logic_info_main_pk_mode);
@@ -442,7 +442,7 @@ namespace faith
 		int32 life_time_sec = get_npc_left_life_time(spawn_point_id);
 		if (0 == life_time_sec)
 		{
-			// Ã»ÓĞ±ØÒª´´½¨
+			// æ²¡æœ‰å¿…è¦åˆ›å»º
 			return nullptr;
 		}
 		
@@ -476,7 +476,7 @@ namespace faith
 		get_valid_period_spawn_time(spawn_template_id, begin_time_sec, end_time_sec);
 		if (-1 == begin_time_sec || -1 == end_time_sec)
 		{
-			// Õâ¸ö¹ÖÎï²»ĞèÒª¶¨Ê±ÏûÊ§µÄÂß¼­
+			// è¿™ä¸ªæ€ªç‰©ä¸éœ€è¦å®šæ—¶æ¶ˆå¤±çš„é€»è¾‘
 			return -1;
 		}
 		
@@ -515,7 +515,7 @@ namespace faith
 			int32 end_t = respawn_period_arr[i + e_respawn_period_tuple_end_time];
 			if (begin_t < 0 || end_t <= begin_t)
 			{
-				//Åä±í´íÎó
+				//é…è¡¨é”™è¯¯
 				return;
 			}
 			if (cur_time_sec < end_t)
@@ -527,7 +527,7 @@ namespace faith
 		}
 		if (-1 == begin_time_sec)
 		{
-			// ÕâÖÖÇé¿öÏÂ¾ÍÒªµÚ¶şÌìÖÖ¹ÖÁË
+			// è¿™ç§æƒ…å†µä¸‹å°±è¦ç¬¬äºŒå¤©ç§æ€ªäº†
 			begin_time_sec = respawn_period_arr[0] + day_time_second;
 			end_time_sec = respawn_period_arr[1] + day_time_second;
 		}
@@ -916,7 +916,7 @@ namespace faith
 			if (npc_template_ptr->NpcType == e_unit_type_monster
 				&& init_unit::is_world_boss(npc_template_ptr->SubType))
 			{
-				//ÊÀ½çBossÉ¶µÄ¹éWSÉÏµÄÄ³¸ö¹ÜÀíÆ÷´¦Àí
+				//ä¸–ç•ŒBosså•¥çš„å½’WSä¸Šçš„æŸä¸ªç®¡ç†å™¨å¤„ç†
 				continue;
 			}
 
@@ -956,7 +956,7 @@ namespace faith
 		guid_64 play_guid = player_ref.get_unit_guid();
 		for (int32 i = 0; i < m_enter_map_array.size(); ++i)
 		{
-			//Èç¹û´æÔÚ²»¼ÇÂ¼
+			//å¦‚æœå­˜åœ¨ä¸è®°å½•
 			if (m_enter_map_array[i] == play_guid)
 			{
 				return;

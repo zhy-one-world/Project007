@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2014/07/30
 	created:	30:7:2014   17:44
 	file base:	client_session
@@ -116,7 +116,6 @@ namespace faith
 			m_last_update_log_time = new_time + second_tick_time * 5;
 		}
 		check_session(new_time);
-		// ?????????????
 		if (new_time > m_heart_beat_time)
 		{
 			_RLOG_(MWARN, "heart beat close, connindex:" << m_conn_index
@@ -252,10 +251,8 @@ namespace faith
 		//1:app key
 		memcpy(request.fixed_data.param1, login_data.sdk_data().app_key().c_str(), sizeof(request.fixed_data.param1) > login_data.sdk_data().app_key().size() ? login_data.sdk_data().app_key().size() : sizeof(request.fixed_data.param1));
 
-		//2:???????
 		memcpy(request.fixed_data.param2, login_data.client_version().c_str(), sizeof(request.fixed_data.param2) > login_data.client_version().size() ? login_data.client_version().size() : sizeof(request.fixed_data.param2));
 
-		//3:??????ID
 		xchar server_id_buff[128];
 		sprintf(server_id_buff, "%d", login_data.server_id());
 		memcpy(request.fixed_data.param3, server_id_buff, sizeof(request.fixed_data.param3) > sizeof(server_id_buff) ? sizeof(server_id_buff) : sizeof(request.fixed_data.param3));
@@ -263,10 +260,8 @@ namespace faith
 		//4:media_id
 		memcpy(request.fixed_data.param4, login_data.sdk_data().app_secret().c_str(), sizeof(request.fixed_data.param4) > login_data.sdk_data().app_secret().size() ? login_data.sdk_data().app_secret().size() : sizeof(request.fixed_data.param4));
 
-		//5:??????
 		memcpy(request.fixed_data.param5, login_data.sdk_data().device_id().c_str(), sizeof(request.fixed_data.param5) > login_data.sdk_data().device_id().size() ? login_data.sdk_data().device_id().size() : sizeof(request.fixed_data.param5));
 
-		//6:???IP
 		memcpy(request.fixed_data.param6, m_ipaddr, sizeof(request.fixed_data.param6) > sizeof(m_ipaddr) ? sizeof(m_ipaddr) : sizeof(request.fixed_data.param6));
 		
 		//7:ChannelId

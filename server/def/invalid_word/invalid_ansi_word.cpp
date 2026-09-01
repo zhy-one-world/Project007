@@ -50,10 +50,10 @@ namespace faith
 	}
 
 	/**
-	 *	×ÖÌåÊÇ·ñÔÚÖ¸¶¨µÄ×Ö¿âÖĞ´æÔÚ
-	 *	@param	words	:	±ê×¼×Ö¿â
-	 *	@param	str		:	±»¼ì²éµÄ×Ö·û´®
-	 *	@param	len		:	±»¼ì²éµÄ×Ö·û´®³¤¶È
+	 *	å­—ä½“æ˜¯å¦åœ¨æŒ‡å®šçš„å­—åº“ä¸­å­˜åœ¨
+	 *	@param	words	:	æ ‡å‡†å­—åº“
+	 *	@param	str		:	è¢«æ£€æŸ¥çš„å­—ç¬¦ä¸²
+	 *	@param	len		:	è¢«æ£€æŸ¥çš„å­—ç¬¦ä¸²é•¿åº¦
 	 */
 	bool invalid_ansi_word::exist_in_char_lib(WordSet& words, const char* str, int32 len)
 	{
@@ -63,17 +63,17 @@ namespace faith
 		{
 			std::string cur_word;
 			if(str[index] > 0)
-			{//¶ÁÈ¡ASIIÖĞµÄ×Ö·û
+			{//è¯»å–ASIIä¸­çš„å­—ç¬¦
 				cur_word.push_back(str[index]);
 			}
 			else
-			{//¶ÁÈ¡Ò»¸öºº×Ö×Ö·û
+			{//è¯»å–ä¸€ä¸ªæ±‰å­—å­—ç¬¦
 				cur_word.push_back(str[index++]);
 				cur_word.push_back(str[index]);
 			}
 
 			if(words.end() == words.find(cur_word))
-			{//²»´æÔÚ×Ö¿âÖĞ
+			{//ä¸å­˜åœ¨å­—åº“ä¸­
 				return false;
 			}
 		}
@@ -83,9 +83,9 @@ namespace faith
 
 
 	/**
-	 *	×ÖÌåÊÇ·ñÔÚÖ¸¶¨µÄ×Ö¿âÖĞ´æÔÚ
-	 *	@param	words	:	±ê×¼×Ö¿â
-	 *	@param	str		:	±»¼ì²éµÄ×Ö·û´®
+	 *	å­—ä½“æ˜¯å¦åœ¨æŒ‡å®šçš„å­—åº“ä¸­å­˜åœ¨
+	 *	@param	words	:	æ ‡å‡†å­—åº“
+	 *	@param	str		:	è¢«æ£€æŸ¥çš„å­—ç¬¦ä¸²
 	 */
 	bool invalid_ansi_word::exist_in_char_lib(WordSet& words, const std::string& str)
 	{
@@ -93,9 +93,9 @@ namespace faith
 	}
 
 	/**
-	 *	ÊÇ·ñ´æÔÚÆÁ±Î×Ö·û´®
-	 *	@param	invalid_words	:	ÆÁ±Î×Ö¿â
-	 *	@param	str				:	±»¼ì²éµÄ×Ö·û´®
+	 *	æ˜¯å¦å­˜åœ¨å±è”½å­—ç¬¦ä¸²
+	 *	@param	invalid_words	:	å±è”½å­—åº“
+	 *	@param	str				:	è¢«æ£€æŸ¥çš„å­—ç¬¦ä¸²
 	 */
 	bool invalid_ansi_word::include_invalid_ansi_str(WordSet& invalid_words, std::string& str)
 	{
@@ -117,10 +117,10 @@ namespace faith
 
 
 	/**
-	 *	ÊÇ·ñ´æÔÚÆÁ±Î×Ö·û´®
-	 *	@param	invalid_words	:	ÆÁ±Î×Ö¿â
-	 *	@param	str				:	±»¼ì²éµÄ×Ö·û´®
-	 *	@param	len				:	±»¼ì²éµÄ×Ö·û´®µÄ³¤¶È
+	 *	æ˜¯å¦å­˜åœ¨å±è”½å­—ç¬¦ä¸²
+	 *	@param	invalid_words	:	å±è”½å­—åº“
+	 *	@param	str				:	è¢«æ£€æŸ¥çš„å­—ç¬¦ä¸²
+	 *	@param	len				:	è¢«æ£€æŸ¥çš„å­—ç¬¦ä¸²çš„é•¿åº¦
 	 */
 	bool invalid_ansi_word::include_invalid_ansi_str(WordSet& invalid_words, const char* str, int32 len)
 	{
@@ -134,9 +134,9 @@ namespace faith
 	}
 
 	/**
-	 *	ÓÃ*Ìæ»»±»ÆÁ±ÎµÄ×Ö
-	 *	@param	invalid_words	:	ÆÁ±Î×Ö¿â
-	 *	@param	str				:	±»Ìæ»»µÄ×Ö·û´®
+	 *	ç”¨*æ›¿æ¢è¢«å±è”½çš„å­—
+	 *	@param	invalid_words	:	å±è”½å­—åº“
+	 *	@param	str				:	è¢«æ›¿æ¢çš„å­—ç¬¦ä¸²
 	 */
 	void invalid_ansi_word::replace_invalid_ansi_str(WordSet& invalid_words, std::string& str)
 	{
@@ -146,7 +146,7 @@ namespace faith
 		}
 
 		if( is_sentence_valid(invalid_words, str) )
-		{//Ôö¼ÓÕû¾äÆÁ±ÎÂß¼­
+		{//å¢åŠ æ•´å¥å±è”½é€»è¾‘
 			std::fill(str.begin(), str.end(), '*');
 			return;
 		}
@@ -155,10 +155,10 @@ namespace faith
 	}
 
 	/**
-	 *	ÓÃ*Ìæ»»±»ÆÁ±ÎµÄ×Ö
-	 *	@param	invalid_words	:	ÆÁ±Î×Ö¿â
-	 *	@param	str				:	±»Ìæ»»µÄ×Ö·û´®
-	 *	@param	len				:	±»Ìæ»»µÄ×Ö·û´®µÄ³¤¶È
+	 *	ç”¨*æ›¿æ¢è¢«å±è”½çš„å­—
+	 *	@param	invalid_words	:	å±è”½å­—åº“
+	 *	@param	str				:	è¢«æ›¿æ¢çš„å­—ç¬¦ä¸²
+	 *	@param	len				:	è¢«æ›¿æ¢çš„å­—ç¬¦ä¸²çš„é•¿åº¦
 	 */
 	void invalid_ansi_word::replace_invalid_ansi_str(WordSet& invalid_words, char* str, int32 len)
 	{
@@ -170,14 +170,14 @@ namespace faith
 		std::copy(str, str+len, out_temp.begin());
 	}
 
-	//¼ì²âÊÇ·ñ´æÔÚ·Ç·¨×Ö·û
+	//æ£€æµ‹æ˜¯å¦å­˜åœ¨éæ³•å­—ç¬¦
 	bool invalid_ansi_word::include_invalid_ansi_str(std::string str)
 	{
 		return trie_filter::get_instance().exist_forbidden(str);
 		//return (include_invalid_ansi_str(CInvalidWord::getInstance().GetInvalidWordSet(), str));
 	}
 
-	//¼ì²âÊÇ·ñÃ¿¸ö×Ö¶¼ÊôÓÚ¿ÉÓÃ×Ö¿â
+	//æ£€æµ‹æ˜¯å¦æ¯ä¸ªå­—éƒ½å±äºå¯ç”¨å­—åº“
 	bool invalid_ansi_word::is_valid_ansi_str(std::string str)
 	{
 		if (false == is_region_need_check_ansi_str())
@@ -211,7 +211,7 @@ namespace faith
 	}
 
 	/** 
-	 *	ÓĞ·Ç·¨×Ö·ûÊ±£¬ÓÃ*Ìæ»»·Ç·¨×Ö·û
+	 *	æœ‰éæ³•å­—ç¬¦æ—¶ï¼Œç”¨*æ›¿æ¢éæ³•å­—ç¬¦
 	 */ 
 	void invalid_ansi_word::replace_invalid_ansi_str(std::string& str, bool only_check_symbols)
 	{
@@ -220,7 +220,7 @@ namespace faith
 	}
 
 
-	//¼ì²éÊäÈëµÄÕû¾ä»°ÊÇ·ñÊÇÆÁ±Î×Ö
+	//æ£€æŸ¥è¾“å…¥çš„æ•´å¥è¯æ˜¯å¦æ˜¯å±è”½å­—
 	bool invalid_ansi_word::is_sentence_valid(WordSet& invalid_words, std::string& str)
 	{
 		WordSet::iterator it = invalid_words.begin();
@@ -235,7 +235,7 @@ namespace faith
 		return false;
 	}
 
-	//ÆÁ±Î×î´ó×éºÏ
+	//å±è”½æœ€å¤§ç»„åˆ
 	void invalid_ansi_word::shield_componet_valid(WordSet& invalid_words, std::string& str)
 	{
 		for(WordSetIt it=invalid_words.begin(); it!=invalid_words.end(); )
@@ -260,7 +260,7 @@ namespace faith
 	}
 
 
-	//ÅĞ¶Ï²éÕÒÒ»¾ä»°ÖĞÕÒµ½µÄÖ¸¶¨Î»ÖÃºóµÄn¸ö×Ö·û×éºÏÊÇ·ñÎªÒ»¸öµ¥´Ê
+	//åˆ¤æ–­æŸ¥æ‰¾ä¸€å¥è¯ä¸­æ‰¾åˆ°çš„æŒ‡å®šä½ç½®åçš„nä¸ªå­—ç¬¦ç»„åˆæ˜¯å¦ä¸ºä¸€ä¸ªå•è¯
 	bool invalid_ansi_word::is_a_word(std::string& sentence, int32 pos, int32 n)
 	{
 		return true;
@@ -269,14 +269,14 @@ namespace faith
 
 		//if( !sentence.size() || n<1 || pos<0 ) return false;
 
-		////Ç°ÏòÅĞ¶Ï
+		////å‰å‘åˆ¤æ–­
 		//if( 0!=pos && 255>sentence[pos-1] )
 		//{
 		//	if(std::string::npos==allowed_chars.find(sentence[pos-1]))
 		//		return false;
 		//}
 
-		////ºóÏòÅĞ¶Ï
+		////åå‘åˆ¤æ–­
 		//if(((pos+n)<(int32)sentence.size()) && 255>sentence[pos+n])
 		//	return (std::string::npos!=allowed_chars.find(sentence[pos+n]));
 

@@ -1,4 +1,4 @@
-/********************************************************************
+ï»¿/********************************************************************
 created:	2014/08/20
 created:	20:8:2014   19:58
 file base:	msgproc_ws
@@ -286,9 +286,7 @@ namespace faith
 		}
 		gm_set_begin_cross_lua(connindex, request.need_begin_cross(), request.gm_type(), request.req_http_id());
 	}
-	//
-	//»ñÈ¡ÓÎÏ·½ÇÉ«ĞÅÏ¢¸øws
-	//
+	//è·å–æ¸¸æˆè§’è‰²ä¿¡æ¯ç»™ws
 	void get_char_info_ws_lua(uint32 connindex, int64 role_guid, xstring role_account)
 	{
 		sql_builder sql(db_manager::getInstance().get_db_link().game_db);

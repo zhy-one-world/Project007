@@ -1,4 +1,4 @@
-#ifndef _FAITH_LEGION_MSG_HPP_
+ï»¿#ifndef _FAITH_LEGION_MSG_HPP_
 #define _FAITH_LEGION_MSG_HPP_
 
 #include "logic/type_def.hpp"
@@ -11,14 +11,14 @@ namespace faith
 
 	enum
 	{
-		// ¾üÍÅĞÅÏ¢´æ¶ÁÏûÏ¢Í·
+		// å†›å›¢ä¿¡æ¯å­˜è¯»æ¶ˆæ¯å¤´
 		e_msgindex_ws2dp_load_all_legion_info = faith::e_msg_base_legion,
 		e_msgindex_dp2ws_load_all_legion_info,
 		e_msgindex_ws2dp_save_legion_info,
 		e_msgindex_ws2dp_delete_legion_info,
 		e_msgindex_ws2dp_delete_legion_member_info,
 		e_msgindex_ws2dp_delete_legion_city_war_member_info,
-		// ¾üÍÅ³ÉÔ±ĞÅÏ¢´æ¶ÁÏûÏ¢Í·
+		// å†›å›¢æˆå‘˜ä¿¡æ¯å­˜è¯»æ¶ˆæ¯å¤´
 		e_msgindex_ws2dp_load_all_legion_member_info,
 		e_msgindex_ws2dp_load_all_legion_city_war_member_info,
 		e_msgindex_dp2ws_load_all_legion_member_info,
@@ -26,24 +26,24 @@ namespace faith
 		e_msgindex_ws2dp_save_legion_member_info,
 		e_msgindex_ws2dp_save_legion_city_war_member_info,
 
-		// ¾üÍÅÈëÍÅÉêÇëĞÅÏ¢´æ¶ÁÏûÏ¢Í·
+		// å†›å›¢å…¥å›¢ç”³è¯·ä¿¡æ¯å­˜è¯»æ¶ˆæ¯å¤´
 		e_msgindex_ws2dp_load_all_legion_applicant,
 		e_msgindex_dp2ws_load_all_legion_applicant,
 		e_msgindex_ws2dp_save_legion_applicant,
 		e_msgindex_ws2dp_del_legion_applicant_one,
 
-		// ¾üÍÅBOSS¼ÇÂ¼µÄĞÅÏ¢´æ¶ÁÏûÏ¢Í·
+		// å†›å›¢BOSSè®°å½•çš„ä¿¡æ¯å­˜è¯»æ¶ˆæ¯å¤´
 		e_msgindex_ws2dp_load_all_legion_boss_record,
 		e_msgindex_dp2ws_load_all_legion_boss_record,
 		e_msgindex_ws2dp_save_legion_boss_record,
 		e_msgindex_ws2dp_clear_legion_boss_record,
 
-		// ¾üÍÅBOSS½±ÀøÁìÈ¡¼ÇÂ¼
+		// å†›å›¢BOSSå¥–åŠ±é¢†å–è®°å½•
 		e_msgindex_ws2dp_load_all_legion_boss_award_get_log,
 		e_msgindex_dp2ws_load_all_legion_boss_award_get_log,
 		e_msgindex_ws2dp_save_legion_boss_award_get_log,
 
-		// Íõ³ÇĞÅÏ¢µÄ´æµµ
+		// ç‹åŸä¿¡æ¯çš„å­˜æ¡£
 		e_msgindex_ws2dp_load_city_info,
 		e_msgindex_dp2ws_load_city_info,
 		e_msgindex_ws2dp_save_city_info,
@@ -53,20 +53,20 @@ namespace faith
 		e_msgindex_ws2dp_clear_war_bid_info,
 		e_msgindex_ws2dp_clear_overlord_legion_stuff,
 
-		// ¾üÍÅÊÂ¼şµÄ´æµµ
+		// å†›å›¢äº‹ä»¶çš„å­˜æ¡£
 		e_msgindex_ws2dp_load_all_legion_event,
 		e_msgindex_dp2ws_load_all_legion_event,
 		e_msgindex_ws2dp_save_legion_event,
 		e_msgindex_ws2dp_del_legion_event,
 		e_msgindex_ws2dp_clear_legion_event,
 
-		//¾üÍÅ·ÖºìµÄ´æµµ
+		//å†›å›¢åˆ†çº¢çš„å­˜æ¡£
 		e_msgindex_ws2dp_save_legion_bonus_info,
 		e_msgindex_dp2ws_load_legion_bonus_info,
 		e_msgindex_ws2dp_load_legion_bonus_info,
 		e_msgindex_ws2dp_clear_legion_bonus_info,
 
-		//¾üÍÅ²Ö¿â
+		//å†›å›¢ä»“åº“
 		e_msgindex_dp2ws_load_legion_warehouse_info,
 		e_msgindex_ws2dp_store_legion_warehouse,
 		e_msgindex_ws2dp_store_legion_warehouse_log,
@@ -76,7 +76,7 @@ namespace faith
 		e_msgindex_ws2dp_load_legion_warehouse_log,
 		e_msgindex_dp2ws_load_legion_warehouse_log,
 
-		//¿ç·ş°ÔÖ÷Õ½
+		//è·¨æœéœ¸ä¸»æˆ˜
 		e_msgindex_ws2dp_load_cross_city_info,
 		e_msgindex_dp2ws_load_cross_city_info_all,
 		e_msgindex_gws2ws_legion_rank_with_city_war,
@@ -85,21 +85,19 @@ namespace faith
 		e_msgindex_ws2gws_change_cross_city,
 		e_msgindex_gws2ws_overload_begin_notice,
 		e_msgindex_ws2dp_clear_cross_city_info,
-		//¿ç·ş³ÇÕ½Ïà¹Ø
+		//è·¨æœåŸæˆ˜ç›¸å…³
 
-		//¾º¼Û
+		//ç«ä»·
 		e_msgindex_ws2ws_legion_proto_apply_city_war_bid,
 		e_msgindex_ws2ws_legion_proto_apply_city_war_bid_response,
 		e_msgindex_ws2ws_legion_proto_apply_city_war_bid_end,
 		e_msgindex_ws2ws_legion_proto_return_city_war_bid_money,
 
 		e_msgindex_ws2ws_legion_proto_push_city_war_info,
-		//ÓÅÏÈÎ¬»¤
+		//ä¼˜å…ˆç»´æŠ¤
 		e_msgindex_ws2ws_set_territory_prior_maintain,
 		e_msgindex_ws2ws_set_territory_prior_maintain_response,
-		//
 		e_msgindex_ws2wsreq_legion_send_territory_info,
-		//
 
 		e_msgindex_ws2wsreq_legion_get_city_war_info,
 
@@ -678,7 +676,7 @@ namespace faith
 		}
 	};
 
-	//¾º¼Û
+	//ç«ä»·
 	struct ws2ws_legion_proto_apply_city_war_bid :public packet_base
 	{
 		int32 terr_id;
@@ -724,7 +722,7 @@ namespace faith
 			wheader = e_msgindex_ws2ws_legion_proto_apply_city_war_bid_end;
 		}
 	};
-	//ÓÅÏÈÎ¬»¤
+	//ä¼˜å…ˆç»´æŠ¤
 	struct ws2ws_set_territory_prior_maintain :public packet_base
 	{
 		int32 territory_ids[cross_server_territory_city_max];

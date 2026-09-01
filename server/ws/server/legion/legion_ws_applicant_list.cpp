@@ -1,4 +1,4 @@
-#include "legion_ws_applicant_list.h"
+﻿#include "legion_ws_applicant_list.h"
 #include "ws_client.hpp"
 #include "Logic/time_def.hpp"
 #include "../ws/server/legion/legion_ws_mgr.h"
@@ -66,10 +66,6 @@ namespace faith
 		return false;
 	}
 
-	// ����ֵ˵��:
-	//  1 ����ִ��
-	// -1 ���������б�����
-	// -2 ��������Ϣ�Ѿ��������б���
 	e_add_applicant_ret legion_ws_applicant_list::add_applicant(legion_ws_applicant& applicant)
 	{
 		int32 empty_pos = get_empty_pos();
@@ -174,7 +170,6 @@ namespace faith
 
 	void legion_ws_applicant_list::tick(const uint64& tick_time)
 	{
-		// �����߼�¼48Сʱ�Żᱻ����,�ò�������tick,���۵�60��tickһ�ο����������
 		if (tick_time > m_tick_time)
 		{
 			m_tick_time = tick_time + minute_tick_time;
@@ -197,15 +192,8 @@ namespace faith
 		}
 	}
 	
-	// ����ֵ˵��:
-	//  1 ����ִ��
-	// -1 û��������(��������Ϊ��)
-	// -2 ��������µ����������ݰ�ʧ��
-	// -3 �����������Ϣ�����ݰ�ʧ��
 	int32 legion_ws_applicant_list::fill_get_legion_applicant_list_msg(legion_proto_get_applicant_info_list_end& get_legion_applicant_list_end_msg)
 	{
-		// �Ȱ�Ҫ�������ݰ������������������Ϊ0,���ʾ������������Ĭ��Ϊʧ�ܵ�,ֻ�н��µ��������
-		// ��������ȷ�˲Ż����ó���ȷ�ĳ���(�ͻ��˿��Ը����б��ĳ���ȷ������˵Ĵ���Ƿ���ȷ)
 		get_legion_applicant_list_end_msg.set_list_len(0);
 
 		int32 list_len = 0;

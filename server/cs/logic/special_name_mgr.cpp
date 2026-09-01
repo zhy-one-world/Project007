@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2016Äê7ÔÂ14ÈÕ13:56:28
+created: 2016å¹´7æœˆ14æ—¥13:56:28
 file base: Special_name
 file ext: cpp
 author: zhangminghai
@@ -33,7 +33,7 @@ namespace faith
 	{
 		clear_data();
 	}
-	//Çå¿ÕËùÓĞ³ÆºÅ
+	//æ¸…ç©ºæ‰€æœ‰ç§°å·
 	void special_name_mgr::clear_data()
 	{
 		m_special_name_ary.clear_data();
@@ -58,7 +58,7 @@ namespace faith
 		return true;
 	}
 
-	//¶ÁÈ¡ËùÓĞ³ÆºÅ
+	//è¯»å–æ‰€æœ‰ç§°å·
 	void special_name_mgr::load_data_from_db(const s_special_name_info& special_name_data)
 	{
 		m_special_name_ary.clear_data();		
@@ -96,7 +96,7 @@ namespace faith
 
 	}
 	
-	//´æ´¢ËùÓĞ³ÆºÅ
+	//å­˜å‚¨æ‰€æœ‰ç§°å·
 	void special_name_mgr::save_data_to_db(int32 save_type)
 	{
 		player& player_ref = unit_man::get_player(m_array_index);
@@ -131,7 +131,7 @@ namespace faith
 		}
 	}
 	
-	//Ìí¼ÓÒ»¸ö³ÆºÅ
+	//æ·»åŠ ä¸€ä¸ªç§°å·
 	//void special_name_mgr::add_special_name(int32 special_name_id,int32 name_type)
 	//{
 
@@ -141,13 +141,13 @@ namespace faith
 		return get_value_by_id(name_type);
 	}
 
-	//É¾³ıÓĞÒ»¸ö³ÆºÅ
+	//åˆ é™¤æœ‰ä¸€ä¸ªç§°å·
 	void special_name_mgr::remove_special_name(int32 name_type,int32 name_level)
 	{
 		
 	}
 	
-	//Éı¼¶µ±Ç°³ÆºÅ
+	//å‡çº§å½“å‰ç§°å·
 	bool special_name_mgr::upgrade_sepcial_name(int32 name_type,int32 name_level)
 	{
 		if ((name_type < 0) || (name_type >= e_special_name_type_max) || (0 != name_type % 2))
@@ -169,7 +169,7 @@ namespace faith
 		{
 			return false;
 		}
-		/*¸Ã³ÆºÅÊÇ·ñµ½´ï×î¸ß¼¶*/
+		/*è¯¥ç§°å·æ˜¯å¦åˆ°è¾¾æœ€é«˜çº§*/
 		if (special_name_template_ptr->NextLevelId == 0)
 		{
 			return false;
@@ -184,7 +184,7 @@ namespace faith
 
 		temp_player.cut_money((e_money_type)special_name_template_ptr->UpgradeCost[e_money_tuple_id], special_name_template_ptr->UpgradeCost[e_money_tuple_num], e_server_log_cut_money_sepcial_name_upgrade, special_name_template_ptr->attribute_id);
 		
-		//ĞŞ¸Ä³ÆºÅµÈ¼¶
+		//ä¿®æ”¹ç§°å·ç­‰çº§
 		SpecialNameTemplate* next_name_ptr = GET_TEMPLATE(SpecialNameTemplate, special_name_template_ptr->NextLevelId);
 		if (next_name_ptr == nullptr)
 		{
@@ -268,7 +268,7 @@ namespace faith
 	}
 
 
-	//ÔİÊ±Ö»ÓĞ»ñÈ¡×Ô¼ºµÄ³ÆºÅ
+	//æš‚æ—¶åªæœ‰è·å–è‡ªå·±çš„ç§°å·
 	void  special_name_mgr::send_special_name_all()
 	{
 		player& temp_player = unit_man::get_player(m_array_index);

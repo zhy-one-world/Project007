@@ -1,5 +1,5 @@
 /********************************************************************
-created:	2016Äê8ÔÂ9ÈÕ13:11:56
+created:	2016å¹´8æœˆ9æ—¥13:11:56
 file base:	globle_data
 file ext:	cpp
 author:		zhy
@@ -469,7 +469,7 @@ namespace faith
 
 
 
-		//ÎïÆ·Êı¾İ
+		//ç‰©å“æ•°æ®
 		if (item_list)
 		{
 			for (int32 i = 0; i < item_num; ++i)
@@ -483,7 +483,7 @@ namespace faith
 				{
 					send_mail_info.item_list[i].data_ary[j] = item_list[i].data_ary[j];
 
-					//ÉèÖÃÎª ÓÊ¼ş°ü/-1¸ñ×Ó
+					//è®¾ç½®ä¸º é‚®ä»¶åŒ…/-1æ ¼å­
 					if (j == e_item_info_container_type)
 					{
 						send_mail_info.item_list[i].data_ary[j] = e_bag_type_mail;
@@ -533,7 +533,7 @@ namespace faith
 			init_unit::init_item_data(temp_item_info, it.m_item_id, -1, it.m_item_num, e_bag_type_bag, 0, it.m_lock, 0, 0);
 			if (item_in_mail_index == max_item_per_mail - 1)
 			{
-				//Ò»·âÓÊ¼şÂúÁË£¬ÏÈ·¢Ò»ÏÂ
+				//ä¸€å°é‚®ä»¶æ»¡äº†ï¼Œå…ˆå‘ä¸€ä¸‹
 				send_mail_to_another_player_by_system(player_guid, player_guid, receiver_server_id, "", title, contentText, money_typ1, money_num1, money_typ2, money_num2, mail_item_info_array, max_item_per_mail);
 				memset(mail_item_info_array, 0, sizeof(mail_item_info_array));
 				item_in_mail_index = 0;
@@ -544,7 +544,7 @@ namespace faith
 			}
 		}
 
-		//Ñ­»·ÏÂÀ´£¬ÓÊ¼şÎïÆ·Êı×éÖĞ»¹ÓĞ¶«Î÷£¬¾ÍÔÙ·¢Ò»ÏÂ
+		//å¾ªç¯ä¸‹æ¥ï¼Œé‚®ä»¶ç‰©å“æ•°ç»„ä¸­è¿˜æœ‰ä¸œè¥¿ï¼Œå°±å†å‘ä¸€ä¸‹
 		if (item_in_mail_index > 0)
 		{
 			send_mail_to_another_player_by_system(player_guid, player_guid, receiver_server_id, "", title, contentText, money_typ1, money_num1, money_typ2, money_num2, mail_item_info_array, max_item_per_mail);
@@ -673,7 +673,7 @@ namespace faith
 		if (false == size_equ)
 		{
 			CONSOLE_ERROR("drop_ptr->IDs.size():{}, drop_ptr->IDTypes.size():{}, drop_ptr->Counts.size():{}, drop_ptr->Bounds.size():{}, drop_ptr->Weights.size():{}", size_id, size_idtype, size_count, size_bound, size_weight);
-			return;//±íÌî´íÁË ÁĞµÄÊıÁ¿¶Ô²»ÉÏ
+			return;//è¡¨å¡«é”™äº† åˆ—çš„æ•°é‡å¯¹ä¸ä¸Š
 		}
 
 		std::vector<int32> need_drop_id_types;
@@ -911,7 +911,7 @@ namespace faith
 			return;
 		}
 
-		//ÏÈ¸ø¸öÄ¬ÈÏÖµ
+		//å…ˆç»™ä¸ªé»˜è®¤å€¼
 		add_percent = GAMECONFIG->ExpUpServerLevel[1] / 100.f;
 		buff_template_id = GAMECONFIG->ExpUpServerLevel[2];
 		if (player_level <= GAMECONFIG->ExpServerEndLevel)
@@ -1015,11 +1015,11 @@ namespace faith
 		}
 		else {
 
-			days += time_helper::get_days_of_year(server_on_year) - server_on_yday; //¿ª·şÄêÊ£ÓàÌìÊı
-			days += local_yday;	//µ±Ç°ÄêÒÑ¹ıÌìÊı
+			days += time_helper::get_days_of_year(server_on_year) - server_on_yday; //å¼€æœå¹´å‰©ä½™å¤©æ•°
+			days += local_yday;	//å½“å‰å¹´å·²è¿‡å¤©æ•°
 			for (int32 year = server_on_year + 1; year < local_year; year++)
 			{
-				days += time_helper::get_days_of_year(year);	// ÖĞ¼äÄêµÄÌìÊı
+				days += time_helper::get_days_of_year(year);	// ä¸­é—´å¹´çš„å¤©æ•°
 			}
 		}
 		if (days < 0)

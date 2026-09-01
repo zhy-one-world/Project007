@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2015/03/23
 	created:	23:3:2015   16:24
 	file base:	world_def
@@ -19,104 +19,101 @@ namespace faith
 #pragma pack(push,1)
 
 	const int32 color_arr_size = 4; // RGBA
-	const int32 cross_state_mark = 500000;//�������λ
+	const int32 cross_state_mark = 500000;
 	const int32 cross_state = 10000;
 	const int32 gm_set_result_len = 30;
 
-//////////////////////////////////WSloading��////////////////////////////////////////
 	const int64 e_ws_flag_none =											0x0000000000000000;
-	const int64 e_ws_flag_big_player =										0x0000000000000001;//������
-	const int64 e_ws_flag_cs_connect =										0x0000000000000002;//CS���ӳɹ�
-	const int64 e_ws_flag_gm_common =										0x0000000000000004;//GMָ��load���
-	const int64 e_ws_flag_harry =											0x0000000000000008;//����Ӷ�
-	const int64 e_ws_flag_cross_pk =										0x0000000000000010;//���ְҵ����
-	const int64 e_ws_flag_overload_war =									0x0000000000000020;//�������ս
-	const int64 e_ws_flag_city_war =										0x0000000000000040;//�����ս
-	const int64 e_ws_flag_cross_boss =										0x0000000000000080;//���BOSS
-	const int64 e_ws_flag_server_cross_time =								0x0000000000000100;//���������ʱ��
-	const int64 e_ws_flag_server_refresh =									0x0000000000000200;//������server_refresh���е����ݣ���������ˢ��ʱ���Լ��������ȼ�
-	const int64 e_ws_flag_time_limit_info =									0x0000000000000400;//��ʱ�����
-	const int64 e_ws_flag_time_limit_template =								0x0000000000000800;//��ʱ���������
-	const int64	e_ws_flag_ranking_info =									0x0000000000001000;//���а�����
-	const int64	e_ws_flag_load_legion_info =								0x0000000000002000;//��������
-	const int64	e_ws_flag_cross_server_state =								0x0000000000004000;//���״̬
-	const int64 e_ws_flag_init_time_limit_template =						0x0000000000008000;//��ʱ��������ݳ�ʼ�����
-	const int64 e_ws_flag_load_cloud_shop_info =							0x0000000000010000;//�ƹ����ݶ�ȡ
-	const int64 e_ws_flag_fep_connect =										0x0000000000020000;//fep���ӳɹ�
-	const int64 e_ws_flag_attack_city =										0x0000000000040000;//����ս
+	const int64 e_ws_flag_big_player =										0x0000000000000001;
+	const int64 e_ws_flag_cs_connect =										0x0000000000000002;
+	const int64 e_ws_flag_gm_common =										0x0000000000000004;
+	const int64 e_ws_flag_harry =											0x0000000000000008;
+	const int64 e_ws_flag_cross_pk =										0x0000000000000010;
+	const int64 e_ws_flag_overload_war =									0x0000000000000020;
+	const int64 e_ws_flag_city_war =										0x0000000000000040;
+	const int64 e_ws_flag_cross_boss =										0x0000000000000080;
+	const int64 e_ws_flag_server_cross_time =								0x0000000000000100;
+	const int64 e_ws_flag_server_refresh =									0x0000000000000200;
+	const int64 e_ws_flag_time_limit_info =									0x0000000000000400;
+	const int64 e_ws_flag_time_limit_template =								0x0000000000000800;
+	const int64	e_ws_flag_ranking_info =									0x0000000000001000;
+	const int64	e_ws_flag_load_legion_info =								0x0000000000002000;
+	const int64	e_ws_flag_cross_server_state =								0x0000000000004000;
+	const int64 e_ws_flag_init_time_limit_template =						0x0000000000008000;
+	const int64 e_ws_flag_load_cloud_shop_info =							0x0000000000010000;
+	const int64 e_ws_flag_fep_connect =										0x0000000000020000;
+	const int64 e_ws_flag_attack_city =										0x0000000000040000;
 ///////////////////////////////////////////////////////////////////////////////////////
 
-	//	������س�������
 	enum
 	{
-		e_zone_uid_invalid				= 0,			//	�Ƿ�������UID
-		e_invalid_instance_obj_id		= 0,			// ��Ч����ʵ��ID
+		e_zone_uid_invalid				= 0,
+		e_invalid_instance_obj_id		= 0,
 		e_max_limited_broadcast_count	= 0xFFFFFFFF,
 	};
 
-	//����޸���ע�����ݿ�������߼�
 	enum e_scene_type : uint32
 	{
-		e_scene_type_low_world,				//0�޷�������,����Ŀ����(0)
-		e_scene_type_low_seam_world,		//1�з�����(0)
-		e_scene_type_low_instance,			//2��ͨ��������(type_id)Ĭ�ϸ������
-		e_scene_type_low_new_instance,		//3������ʵ��������(type_id)ǿ��
-		e_scene_type_low_instance_object,	//4��������ʵ��(id)
-		e_scene_type_low_map,				//5 low��ͼ(id)
-		e_scene_type_low_load_area,			//6��������
-		e_scene_type_low_nouse0,			//7��Ӫ(id/0)
-		e_scene_type_low_guild,				//8����(id/0)
-		e_scene_type_low_battle,			//9ս��(id/0)
-		e_scene_type_low_nouse1,			//10�������(id)
-		e_scene_type_low_exit,				//11������һ�ص�(�˳�������)
-		e_scene_type_low_local = 0xffffffff,//����
+		e_scene_type_low_world,
+		e_scene_type_low_seam_world,
+		e_scene_type_low_instance,
+		e_scene_type_low_new_instance,
+		e_scene_type_low_instance_object,
+		e_scene_type_low_map,
+		e_scene_type_low_load_area,
+		e_scene_type_low_nouse0,
+		e_scene_type_low_guild,
+		e_scene_type_low_battle,
+		e_scene_type_low_nouse1,
+		e_scene_type_low_exit,
+		e_scene_type_low_local = 0xffffffff,
 	};
 
 	enum e_need_server_cross
 	{
 		e_need_server_cross_none,
-		e_need_server_cross_begin_cross,//��ʼ���
-		e_need_server_cross_begin_cross_pk,//��ʼ���ְҵ����
-		e_need_server_cross_begin_cross_activity,//��ʼ���PK֮�����������
-		e_need_server_cross_begin_cross_harry,//��ʼ����Ӷ�
-		e_need_server_cross_begin_cross_city_war,//��ʼ����ս
-		e_need_server_cross_begin_cross_legion_territory_war,//��ʼ�����ս
-		e_need_server_cross_begin_cross_boss,	//�����������boss
-		e_need_server_cross_begin_cross_ladder,//��ʼ�������
-		e_need_server_cross_begin_cross_cloud,//��ʼ����ƹ�
-		e_need_server_element_war,	//��ʼԪ������
-		e_need_server_attack_city,	//��ʼ����ս
+		e_need_server_cross_begin_cross,
+		e_need_server_cross_begin_cross_pk,
+		e_need_server_cross_begin_cross_activity,
+		e_need_server_cross_begin_cross_harry,
+		e_need_server_cross_begin_cross_city_war,
+		e_need_server_cross_begin_cross_legion_territory_war,
+		e_need_server_cross_begin_cross_boss,
+		e_need_server_cross_begin_cross_ladder,
+		e_need_server_cross_begin_cross_cloud,
+		e_need_server_element_war,
+		e_need_server_attack_city,
 		e_need_server_cross_max
 	};
 
 	enum e_server_info_type
 	{
-		e_server_info_type_begin_cross_server_time,				//��ʼ���ʱ��
-		e_server_info_type_server_state,						//���������ͣ��£��ϣ��ͣ����)
-		e_server_info_type_server_cross_state,					//������������ͣ��£��ϵȣ�
-		e_server_info_type_begin_first_cross_server_time,		//��һ�ο��������ʱ�� ����ͬ��Ӱ��
-		e_server_info_type_begin_first_merge_server_time,		//��һ�ο����Ϸ���ʱ��
-		e_server_info_type_time_limit_ranking_level,			//��ʱ��ȼ� ���ڶ�ȡ��ͬ�ȼ��������� ֻ��û�����κο���ʱˢ��
-		e_server_info_type_close_exchange,						//�ر���Ʒ�һ�
-		e_server_info_type_only_create_role,                    // ������ɫ��
+		e_server_info_type_begin_cross_server_time,
+		e_server_info_type_server_state,
+		e_server_info_type_server_cross_state,
+		e_server_info_type_begin_first_cross_server_time,
+		e_server_info_type_begin_first_merge_server_time,
+		e_server_info_type_time_limit_ranking_level,
+		e_server_info_type_close_exchange,
+		e_server_info_type_only_create_role,
 		e_server_info_type_max
 	};
 
 	enum e_server_state
 	{
-		e_server_state_none,//��
-		e_server_state_new,//�·���
-		e_server_state_cross,//�����
-		e_server_state_merge,//�Ϸ���
+		e_server_state_none,
+		e_server_state_new,
+		e_server_state_cross,
+		e_server_state_merge,
 		e_server_state_max
 	};
 
 	enum e_server_cross_state
 	{
-		e_server_cross_state_none,//��
-		e_server_cross_state_new,//�·������
-		e_server_cross_state_mid,//�����
-		e_server_cross_state_old,//�Ͽ����
+		e_server_cross_state_none,
+		e_server_cross_state_new,
+		e_server_cross_state_mid,
+		e_server_cross_state_old,
 		e_server_cross_state_max
 	};
 

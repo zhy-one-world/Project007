@@ -24,7 +24,7 @@
 
 namespace faith
 {
-	const xstring sdk_password = "zwsdk";		// ¹Ì¶¨ÃÜÂë
+	const xstring sdk_password = "zwsdk";		// å›ºå®šå¯†ç 
 
 	void login_service_zw::tick(float deltaseconds)
 	{
@@ -56,16 +56,16 @@ namespace faith
 			proto_data.sdk_data().app_secret(),
 			tag,channel_id);
 
-		// ×Ô¶¨ÒåÇëÇóÍ·
+		// è‡ªå®šä¹‰è¯·æ±‚å¤´
 		std::vector<xstring> head_list;
 		xstring gameId = "gameId:" + opcode;
 		xstring channelId = "channelId:" + channel_id;
 		create_http_head_list(head_list,HTTP_HEAD_PARAM_NUM, gameId, channelId/*,tag_str,opcode_str,channel_id_str, client_ip_str*/);
 
-		// GET/POST ²ÎÊı
+		// GET/POST å‚æ•°
 		xstring url_para = create_post_data(proto_data.sdk_data().data(), world_server::getInstance().get_server_id(), opcode, channel_id);
 
-		// Òì²½ÇëÇó
+		// å¼‚æ­¥è¯·æ±‚
 		http_access_mgr::get_instance().async_request
 			(
 				client_uid,
@@ -147,7 +147,7 @@ namespace faith
 					}
 				}
 
-				//³äÖµ¶î¶È
+				//å……å€¼é¢åº¦
 				if (time_helper::is_diff_month(request.month_recharge_time, time_helper::get_time()) == true)
 				{
 					request.month_recharge_num = 0;
@@ -169,7 +169,7 @@ namespace faith
 
 		if(http_result.size() > 0)
 		{
-			// ÏÈ°şÀëhttpÍ·
+			// å…ˆå‰¥ç¦»httpå¤´
 			if ( std::string::npos == http_result.find_first_of("{") || std::string::npos == http_result.find_last_of("}") )
 			{
 				CONSOLE_INFO("error_code:{} error_info:{}", http_error_code, http_error_info);
@@ -178,7 +178,7 @@ namespace faith
 			xstring result = http_result.substr(http_result.find_first_of("{"),http_result.find_last_of("}") + 1);
 			if(result.size() > 0)
 			{
-				// ÔÙ½âÎö
+				// å†è§£æ
 				read_json_data(result, client_uid);
 			}
 		}
@@ -234,7 +234,7 @@ namespace faith
 				}
 
 				data_value = value.get("data",default_value);
-				// ½âÎödataÊı¾İ
+				// è§£ædataæ•°æ®
 				if(data_value.empty() || data_value["userId"].isNull() || data_value["userId"].empty()  || !data_value["userId"].isString())
 				{
 					CONSOLE_INFO("billing data format error:{}", json_data);
@@ -287,11 +287,11 @@ namespace faith
 						}
 					}
 				}
-				// ¼ì²éµÇÂ½×´Ì¬
+				// æ£€æŸ¥ç™»é™†çŠ¶æ€
 				if(account.size() > 0)
 				{
 					//CONSOLE_INFO("sdk read json data : " << json_data.c_str() << " ," << time_helper::get_current_time() << " , " << faith::utility::get_tick_count());
-					// ´æÅÌ
+					// å­˜ç›˜
 					save_account(account, json_data, client_uid, ban_role_array, ban_chat_array, age);
 					return true;
 				}
@@ -354,7 +354,7 @@ namespace faith
 			memcpy(request.ban_chat_array, ban_chat_array, sizeof(request.ban_chat_array));
 			request.age = age;
 			ws_client::getInstance().send_to_dp( &request, sizeof(request));
-			//loginÈÕÖ¾
+			//loginæ—¥å¿—
 			//server_log::login_role_log(login_data->server_id(),
 			//	login_data->sdk_data().app_key(),
 			//	login_data->client_version(),

@@ -1,5 +1,5 @@
 /********************************************************************
-	created:	2017Äê10ÔÂ17ÈÕ13:04:37
+	created:	2017å¹´10æœˆ17æ—¥13:04:37
 	file base:	msgproc_auction_ws
 	file ext:	hpp
 	author:		luoxingyu

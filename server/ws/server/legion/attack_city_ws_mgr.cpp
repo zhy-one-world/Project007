@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2021Äê9ÔÂ23ÈÕ
+created: 2021å¹´9æœˆ23æ—¥
 file base: attack_city_ws_mgr
 file ext: cpp
 author: zhaoyuming
@@ -38,45 +38,45 @@ namespace faith
 
 			if (is_in_check_time() && false == m_is_check_time)
 			{
-				// ¾üÍÅ¼ì²é½×¶Î ¶ÔËùÓĞÒÑ¾­·Ö×éµÄ¾üÍÅ½øĞĞ¼ì²é
+				// å†›å›¢æ£€æŸ¥é˜¶æ®µ å¯¹æ‰€æœ‰å·²ç»åˆ†ç»„çš„å†›å›¢è¿›è¡Œæ£€æŸ¥
 				m_is_check_time = true;
 				game_check();
 			}
 
 			if (is_in_group_time() && false == m_is_group_time)
 			{
-				// ¾üÍÅ·Ö×é½×¶Î ¶Ô¾üÍÅ½øĞĞ·Ö×é
+				// å†›å›¢åˆ†ç»„é˜¶æ®µ å¯¹å†›å›¢è¿›è¡Œåˆ†ç»„
 				m_is_group_time = true;
 				game_group();
 			}
 
 			if (is_in_game_time() && false == m_is_begin_time)
 			{
-				// »î¶¯ÕıÊ½¿ªÊ¼ ³õÊ¼»¯»î¶¯µØÍ¼
+				// æ´»åŠ¨æ­£å¼å¼€å§‹ åˆå§‹åŒ–æ´»åŠ¨åœ°å›¾
 				m_is_begin_time = true;
 				game_init();
 			}
 
 			if (false == is_in_game_time() && m_is_begin_time)
 			{
-				// ²»ÔÚ»î¶¯Ê±¼ä¾ÍÊÇ»î¶¯½áÊøÁË
+				// ä¸åœ¨æ´»åŠ¨æ—¶é—´å°±æ˜¯æ´»åŠ¨ç»“æŸäº†
 				game_end();
 			}
 
 			if (false == m_is_group_time && m_tem_game_group_time < time_new)
 			{
-				// Ò»Ğ¡Ê±Ë¢ĞÂÒ»´Î Ë¢ĞÂ¾üÍÅÁÙÊ±·Ö×éĞÅÏ¢
+				// ä¸€å°æ—¶åˆ·æ–°ä¸€æ¬¡ åˆ·æ–°å†›å›¢ä¸´æ—¶åˆ†ç»„ä¿¡æ¯
 				tem_game_group();
 				if (m_is_legion_data)
 				{
-					// ±£´æ¾üÍÅÊı¾İ
+					// ä¿å­˜å†›å›¢æ•°æ®
 					save_group_data_all();
 					m_is_legion_data = false;
 				}
 				else
 				{
 					m_is_legion_data = true;
-					// ²¢ÇÒ±£´æÒ»´ÎÊı¾İ
+					// å¹¶ä¸”ä¿å­˜ä¸€æ¬¡æ•°æ®
 					save_rank_data_all();
 				}
 			
@@ -105,7 +105,7 @@ namespace faith
 	}
 	void attack_city_ws_mgr::init_manager(bool need_load_dp)
 	{
-		// ÊÇ·ñloadDPÊı¾İ
+		// æ˜¯å¦loadDPæ•°æ®
 		if (need_load_dp)
 		{
 			load_group_data();
@@ -116,7 +116,7 @@ namespace faith
 		{
 			return;
 		}
-		// ³õÊ¼»¯»î¶¯±íÊı¾İ
+		// åˆå§‹åŒ–æ´»åŠ¨è¡¨æ•°æ®
 		for (int32 i = 0; i < e_attack_city_data_max; ++i)
 		{
 			m_config_data[i] = config_ptr->ParamIntArr1[i];
@@ -124,23 +124,23 @@ namespace faith
 	}
 	void attack_city_ws_mgr::load_rank_data()
 	{
-		// ·¢ËÍLoadÅÅÃûĞÅÏ¢
+		// å‘é€Loadæ’åä¿¡æ¯
 		ws2dp_attack_city_load_rank_info msg;
 		ws_client::getInstance().send_to_dp(&msg, sizeof(msg));
 	}
 	void attack_city_ws_mgr::clear_rank_data(bool is_clear_dp)
 	{
-		// ÇåÀíÅÅÃûÁĞ±í
+		// æ¸…ç†æ’ååˆ—è¡¨
 		m_rank_list.clear();
 		if (is_clear_dp)
 		{
-			// ÇåÀíÊı¾İ¿âÖĞµÄÅÅÃûĞÂ
+			// æ¸…ç†æ•°æ®åº“ä¸­çš„æ’åæ–°
 			clear_rank_dp_data();
 		}
 	}
 	void attack_city_ws_mgr::add_rank_data(const s_attack_city_rank_info & rank_info, bool is_save)
 	{
-		// Ôö¼ÓÅÅÃûĞÅÏ¢
+		// å¢åŠ æ’åä¿¡æ¯
 		m_rank_list.push_back(rank_info);
 		if (is_save)
 		{
@@ -154,11 +154,11 @@ namespace faith
 		CONSOLE_INFO("attack_city_ws save_rank_data_all");
 		if (is_clear_dp)
 		{
-			// ÊÇ·ñĞèÒªÏÈÇåÀíÊı¾İ¿â
+			// æ˜¯å¦éœ€è¦å…ˆæ¸…ç†æ•°æ®åº“
 			clear_rank_dp_data();
 		}
 
-		// ±£´æËùÓĞÅÅÃûĞÅÏ¢
+		// ä¿å­˜æ‰€æœ‰æ’åä¿¡æ¯
 		for (int32 i = 0; i < m_rank_list.size(); ++i)
 		{
 			save_rank_data_one(m_rank_list[i]);
@@ -166,26 +166,26 @@ namespace faith
 	}
 	void attack_city_ws_mgr::save_rank_data_one(const s_attack_city_rank_info& rank_info)
 	{
-		// ±£´æÅÅÃûĞÅÏ¢µ½Êı¾İ¿â
+		// ä¿å­˜æ’åä¿¡æ¯åˆ°æ•°æ®åº“
 		ws2dp_attack_city_save_rank_info msg;
 		msg.rank_info = rank_info;
 		ws_client::getInstance().send_to_dp(&msg, sizeof(msg));
 	}
 	void attack_city_ws_mgr::load_group_data()
 	{
-		// ¼ÓÔØ¾üÍÅĞÅÏ¢
+		// åŠ è½½å†›å›¢ä¿¡æ¯
 		ws2dp_attack_city_load_legion_info msg;
 		ws_client::getInstance().send_to_dp(&msg, sizeof(msg));
 	}
 	void attack_city_ws_mgr::clear_group_dp_data()
 	{
-		// ÇåÀí¾üÍÅĞÅÏ¢
+		// æ¸…ç†å†›å›¢ä¿¡æ¯
 		ws2dp_attack_city_clear_legion_info msg;
 		ws_client::getInstance().send_to_dp(&msg, sizeof(msg));
 	}
 	void attack_city_ws_mgr::clear_rank_dp_data()
 	{ 
-		// ÇåÀí¾üÍÅĞÅÏ¢
+		// æ¸…ç†å†›å›¢ä¿¡æ¯
 		ws2dp_attack_city_clear_rank_info msg;
 		ws_client::getInstance().send_to_dp(&msg, sizeof(msg));
 	}
@@ -195,7 +195,7 @@ namespace faith
 		{
 			return;
 		}
-		// »º´æ¾üÍÅĞÅÏ¢
+		// ç¼“å­˜å†›å›¢ä¿¡æ¯
 		m_legion_info_list.clear();
 		for (int32 i = 0; i < data_num; ++i)
 		{
@@ -204,7 +204,7 @@ namespace faith
 	}
 	void attack_city_ws_mgr::save_group_data(const s_attack_city_legion_info& legion_info)
 	{
-		// ±£´æ¾üÍÅĞÅÏ¢
+		// ä¿å­˜å†›å›¢ä¿¡æ¯
 		ws2dp_attack_city_save_legion_info msg;
 		msg.legion_info = legion_info;
 		ws_client::getInstance().send_to_dp(&msg, sizeof(msg));
@@ -214,11 +214,11 @@ namespace faith
 		CONSOLE_INFO("save_group_data_all");
 		if (is_clear_dp)
 		{
-			// ÊÇ·ñĞèÒªÏÈÇåÀíÊı¾İ¿â
+			// æ˜¯å¦éœ€è¦å…ˆæ¸…ç†æ•°æ®åº“
 			clear_group_dp_data();
 		}
 
-		// ½«ËùÓĞ¼ÇÂ¼ĞÅÏ¢±£´æ
+		// å°†æ‰€æœ‰è®°å½•ä¿¡æ¯ä¿å­˜
 		for (int32 i = 0; i < m_legion_info_list.size(); ++i)
 		{
 			save_group_data(m_legion_info_list[i]);
@@ -240,14 +240,14 @@ namespace faith
 				msg.legion_list[j] = m_legion_info_list[i * attack_city_group_max_num + j];
 			}
 			
-			// ÅĞ¶ÏÊÇ·ñÓĞ¿É²Î¼Ó¾üÍÅ
+			// åˆ¤æ–­æ˜¯å¦æœ‰å¯å‚åŠ å†›å›¢
 			if (false ==  msg.legion_list[0].is_valid())
 			{
 				CONSOLE_ERROR("attack_city_ws game_init init_end level = {}", i);
 				break;
 			}
 
-			// ´´½¨¾üÍÅ
+			// åˆ›å»ºå†›å›¢
 			auto map_ent = cs_map_mgr_system::init_map_by_battle(get_config_data(e_attack_city_data_map_id));
 			if (map_ent == nullptr)
 			{
@@ -259,8 +259,8 @@ namespace faith
 			msg.map_guid = m_map_guid_list[i];
 			world_server::getInstance().broadcast(&msg, sizeof(msg), e_server_type_cs);
 		}
-		// ´´½¨µØÍ¼ºóÔÙÉ¾³ıÅÅÃû
-		// Çå³ıÅÅÃû¼ÇÂ¼
+		// åˆ›å»ºåœ°å›¾åå†åˆ é™¤æ’å
+		// æ¸…é™¤æ’åè®°å½•
 		clear_rank_data(true);
 	}
 	void attack_city_ws_mgr::game_check()
@@ -269,7 +269,7 @@ namespace faith
 		{
 			if (m_legion_info_list[i].is_valid())
 			{
-				// ÉèÖÃÎªÎ´¼ì²â×´Ì¬ Èç¹ıÓĞ·µ»ØÖµËµÃ÷¾üÍÅÃ»ÓĞÎÊÌâ
+				// è®¾ç½®ä¸ºæœªæ£€æµ‹çŠ¶æ€ å¦‚è¿‡æœ‰è¿”å›å€¼è¯´æ˜å†›å›¢æ²¡æœ‰é—®é¢˜
 				m_legion_info_list[i].is_check = (int32)e_attack_check_type_no_check;
 				ws2ws_attack_city_legion_check msg;
 				msg.legion_guid = m_legion_info_list[i].legion_guid;
@@ -283,7 +283,7 @@ namespace faith
 	}
 	void attack_city_ws_mgr::check_legion_is_valid(guid_64 legion_guid)
 	{
-		// Èç¹û»ñÈ¡²»µ½¾üÍÅĞÅÏ¢ËµÃ÷¾üÍÅÎŞĞ§ ²»ĞèÒª·µ»Ø
+		// å¦‚æœè·å–ä¸åˆ°å†›å›¢ä¿¡æ¯è¯´æ˜å†›å›¢æ— æ•ˆ ä¸éœ€è¦è¿”å›
 		legion_ws* legion_ws_ptr = legion_ws_mgr::get_instance().get_legion(legion_guid);
 		if (nullptr == legion_ws_ptr)
 		{
@@ -300,12 +300,12 @@ namespace faith
 		{
 			return;
 		}
-		// Èç¹ûÓĞ·µ»Ø½á¹ûËµÃ÷¾üÍÅÓĞĞ§
+		// å¦‚æœæœ‰è¿”å›ç»“æœè¯´æ˜å†›å›¢æœ‰æ•ˆ
 		legion_info.is_check = (int32)e_attack_check_type_check;
 	}
 	void attack_city_ws_mgr::game_group()
 	{
-		// »ñÈ¡¿ç·ş¾üÍÅÕ½Á¦ÅÅÃû  
+		// è·å–è·¨æœå†›å›¢æˆ˜åŠ›æ’å  
 		ranking_list* ranking_list_ptr = ranking_mgr_ws::get_ranking_list_by_type(e_RankingIndex_legion_gs_all);
 		if (nullptr == ranking_list_ptr)
 		{
@@ -313,22 +313,22 @@ namespace faith
 			return;
 		}
 
-		// ´´½¨ÁÙÊ±Êı×é
+		// åˆ›å»ºä¸´æ—¶æ•°ç»„
 		std::vector<s_attack_city_legion_info> _info_list;
 		_info_list.clear();
 
-		// ÏÈ¼ì²é¾üÍÅÊÇ·ñÓĞĞ§
+		// å…ˆæ£€æŸ¥å†›å›¢æ˜¯å¦æœ‰æ•ˆ
 		for (int32 i = 0; i < m_legion_info_list.size(); ++i)
 		{
-			// ¾üÍÅidÓĞĞ§, Ö»ÓĞC×éÒÔÉÏµÄ¾üÍÅÓĞĞ§ ¼ì²éÃ»ÓĞÎÊÌâ ·ÅÈëµ½ÁÙÊ±Êı×éÖĞ, 
+			// å†›å›¢idæœ‰æ•ˆ, åªæœ‰Cç»„ä»¥ä¸Šçš„å†›å›¢æœ‰æ•ˆ æ£€æŸ¥æ²¡æœ‰é—®é¢˜ æ”¾å…¥åˆ°ä¸´æ—¶æ•°ç»„ä¸­, 
 			if (m_legion_info_list[i].is_valid() && m_legion_info_list[i].is_check > (int32)e_attack_check_type_no_check &&  m_legion_info_list[i].group_level > -1 && m_legion_info_list[i].group_level < (e_attack_city_group_level_c * attack_city_group_max_num))
 			{
 				_info_list.push_back(m_legion_info_list[i]);
 			}
 		}
-		// Çå¿Õ¾ÉÁĞ±í
+		// æ¸…ç©ºæ—§åˆ—è¡¨
 		m_legion_info_list.clear();
-		// ¶ÔÁĞ±í½øĞĞÅÅĞò
+		// å¯¹åˆ—è¡¨è¿›è¡Œæ’åº
 		std::sort(_info_list.begin(), _info_list.end());
 
 		ranking_list_ite cur_list_ite = ranking_list_ptr->begin();
@@ -339,7 +339,7 @@ namespace faith
 				break;
 			}
 
-			// ÅĞ¶Ï¾üÍÅÊÇ·ñÔÚ·Ö×éÖĞ
+			// åˆ¤æ–­å†›å›¢æ˜¯å¦åœ¨åˆ†ç»„ä¸­
 			bool is_have = false;
 			for (int32 j = 0; j < _info_list.size(); ++j)
 			{
@@ -349,7 +349,7 @@ namespace faith
 					break;
 				}
 			}
-			// Èç¹û¾üÍÅ²»´æÔÚ´æÈëµ½ÁÙÊ±Êı×éÖĞ
+			// å¦‚æœå†›å›¢ä¸å­˜åœ¨å­˜å…¥åˆ°ä¸´æ—¶æ•°ç»„ä¸­
 			if (false == is_have)
 			{
 				s_attack_city_legion_info new_info;
@@ -359,7 +359,7 @@ namespace faith
 				new_info.server_id = cur_list_ite->server_id;
 				_info_list.push_back(new_info);
 			}
-			// Èç¹û·Ö×éÒÑ¾­ÕÒÂú½áÊø±éÀú
+			// å¦‚æœåˆ†ç»„å·²ç»æ‰¾æ»¡ç»“æŸéå†
 			if (_info_list.size() >= (e_attack_city_group_level_max * attack_city_group_max_num))
 			{
 				break;
@@ -368,14 +368,14 @@ namespace faith
 		ws2ws_send_attack_city_group_mail msg;
 		for (int32 i = 0; i < _info_list.size() && i < (e_attack_city_group_level_max * attack_city_group_max_num); i++)
 		{
-			// ÉèÖÃ·Ö×éÅÅÃû
+			// è®¾ç½®åˆ†ç»„æ’å
 			_info_list[i].group_level = i;
 			msg.legion_guid[i] = _info_list[i].legion_guid;
 			CONSOLE_INFO("attack_city_ws game_group level:{} legion_guid:{}", _info_list[i].group_level, _info_list[i].legion_guid.server_64);
 		}
 		m_legion_info_list = _info_list;
 		m_tem_legion_info_list = _info_list;
-		// ±£´æ·Ö×é¼ÇÂ¼
+		// ä¿å­˜åˆ†ç»„è®°å½•
 		save_group_data_all(true);
 		CONSOLE_INFO("attack_city_ws game_group succeed");
 		cross::send_msg_to_ws(guid_64(), 0, e_msgindex_ws2ws_send_attack_city_group_mail, &msg, sizeof(msg));
@@ -392,14 +392,14 @@ namespace faith
 		m_tem_legion_info_list.clear();
 		for (int32 i = 0; i < m_legion_info_list.size(); ++i)
 		{
-			// ¾üÍÅidÓĞĞ§, ¼ì²éÃ»ÓĞÎÊÌâ, Ö»ÓĞC×éÒÔÉÏµÄ¾üÍÅÓĞĞ§
+			// å†›å›¢idæœ‰æ•ˆ, æ£€æŸ¥æ²¡æœ‰é—®é¢˜, åªæœ‰Cç»„ä»¥ä¸Šçš„å†›å›¢æœ‰æ•ˆ
 			if (m_legion_info_list[i].is_valid() && m_legion_info_list[i].group_level > -1 && m_legion_info_list[i].group_level < (e_attack_city_group_level_c * attack_city_group_max_num))
 			{
-				// ½«·Ö×éĞÅÏ¢·ÅÈëµ½ÁÙÊ±Êı×é
+				// å°†åˆ†ç»„ä¿¡æ¯æ”¾å…¥åˆ°ä¸´æ—¶æ•°ç»„
 				m_tem_legion_info_list.push_back(m_legion_info_list[i]);
 			}
 		}
-		// ¶ÔÁĞ±í½øĞĞÅÅĞò
+		// å¯¹åˆ—è¡¨è¿›è¡Œæ’åº
 
 		std::sort(m_tem_legion_info_list.begin(), m_tem_legion_info_list.end());
 		ranking_list_ite cur_list_ite = ranking_list_ptr->begin();
@@ -436,20 +436,20 @@ namespace faith
 	}
 	void attack_city_ws_mgr::game_end()
 	{
-		// ÖØÖÃ×´Ì¬
+		// é‡ç½®çŠ¶æ€
 		m_is_check_time = false;
 		m_is_group_time = false;
 		m_is_begin_time = false;
-		// Çå³ıµØÍ¼ĞÅÏ¢
+		// æ¸…é™¤åœ°å›¾ä¿¡æ¯
 		for (int32 i = 0; i < e_attack_city_group_level_max; ++i)
 		{
 			m_map_guid_list[i] = 0;
 		}
-		// ±£´æ·Ö×éĞÅÏ¢
+		// ä¿å­˜åˆ†ç»„ä¿¡æ¯
 		save_group_data_all(true);
-		// ±£´æ¸öÈËÅÅÃûĞÂ
+		// ä¿å­˜ä¸ªäººæ’åæ–°
 		save_rank_data_all(true);
-		// ¼ÆËãÁÙÊ±·Ö×é
+		// è®¡ç®—ä¸´æ—¶åˆ†ç»„
 		tem_game_group();
 	}
 	void attack_city_ws_mgr::send_attack_city_legion_info(guid_64 legion_guid, guid_64 role_guid, int32 server_id)
@@ -461,7 +461,7 @@ namespace faith
 
 		for (int32 i = 0; i < m_rank_list.size(); ++i)
 		{
-			// Èç¹û¿ÉÒÔÔÚÅÅÃûÁĞ±íÖĞÕÒµ½ ËµÃ÷¾üÍÅÓĞÅÅÃûĞÅÏ¢
+			// å¦‚æœå¯ä»¥åœ¨æ’ååˆ—è¡¨ä¸­æ‰¾åˆ° è¯´æ˜å†›å›¢æœ‰æ’åä¿¡æ¯
 			if (m_rank_list[i].legion_guid == legion_guid)
 			{
 				msg.set_is_have_rank(true);
@@ -473,13 +473,13 @@ namespace faith
 		{
 			if (m_legion_info_list[i].group_level == 0)
 			{
-				// ÉèÖÃÁ¬Ê¤¾üÍÅĞÅÏ¢
+				// è®¾ç½®è¿èƒœå†›å›¢ä¿¡æ¯
 				msg.set_win_num_legion_name(m_legion_info_list[i].legion_name);
 				msg.set_win_num(m_legion_info_list[i].winning_streak_num);
 			}
 			if (m_legion_info_list[i].legion_guid == legion_guid && m_legion_info_list[i].group_level < (e_attack_city_group_level_c * attack_city_group_max_num))
 			{
-				// ÉèÖÃ×Ô¼º¾üÍÅÅÅÃû
+				// è®¾ç½®è‡ªå·±å†›å›¢æ’å
 				is_have_legion = true;
 				msg.set_is_in_game_time(1);
 				msg.set_legion_level(m_legion_info_list[i].group_level);
@@ -491,7 +491,7 @@ namespace faith
 			msg.set_is_in_game_time(2);
 		}
 
-		// ÉèÖÃ·Ö×éĞÅÏ¢
+		// è®¾ç½®åˆ†ç»„ä¿¡æ¯
 		for (int32 i = 0; i < m_tem_legion_info_list.size(); ++i)
 		{
 			game_proto_attack_city_info_level_info* legion_info = msg.add_list_info();
@@ -509,7 +509,7 @@ namespace faith
 			}
 		}
 
-		// Èç¹û·Ö×éĞÅÏ¢ÖĞÕÒ²»µ½¾üÍÅ¾Íµ½Õ½Á¦ÅÅÃûÖĞÑ°ÕÒ
+		// å¦‚æœåˆ†ç»„ä¿¡æ¯ä¸­æ‰¾ä¸åˆ°å†›å›¢å°±åˆ°æˆ˜åŠ›æ’åä¸­å¯»æ‰¾
 		if (false == is_have_legion)
 		{
 			ranking_list* ranking_list_ptr = ranking_mgr_ws::get_ranking_list_by_type(e_RankingIndex_legion_gs_all);
@@ -565,7 +565,7 @@ namespace faith
 	void attack_city_ws_mgr::send_attack_city_legion_rank_info(guid_64 legion_guid, guid_64 role_guid, int32 server_id)
 	{
 		game_proto_get_attack_city_rank_list_end msg;
-		// ÕÒµ½¾üÍÅÅÅÃû·Ö×é
+		// æ‰¾åˆ°å†›å›¢æ’ååˆ†ç»„
 		int32 legion_level = -1;
 		for (int32 i = 0; i < m_rank_list.size(); ++i)
 		{
@@ -576,13 +576,13 @@ namespace faith
 			}
 		}
 
-		// ÅĞ¶Ï·Ö×éÊÇ·ñÓĞĞ§
+		// åˆ¤æ–­åˆ†ç»„æ˜¯å¦æœ‰æ•ˆ
 		if (legion_level < e_attack_city_group_level_s || legion_level > e_attack_city_group_level_c)
 		{
 			return;
 		}
 
-		// ÕÒµ½·Ö×éÖĞµÄËùÓĞ¾üÍÅ
+		// æ‰¾åˆ°åˆ†ç»„ä¸­çš„æ‰€æœ‰å†›å›¢
 		std::vector<guid_64> legion_guid_list;
 		legion_guid_list.clear();
 		for (int32 i = 0; i < m_rank_list.size(); ++i)
@@ -593,7 +593,7 @@ namespace faith
 			}
 		}
 
-		// ÕÒ³ö²ÎÓëÍæ¼ÒÊı¾İ
+		// æ‰¾å‡ºå‚ä¸ç©å®¶æ•°æ®
 		for (int32 i = 0; i < legion_guid_list.size(); ++i)
 		{
 			game_proto_attack_city_rank_info_list* list_info = msg.add_rank_list();
@@ -663,7 +663,7 @@ namespace faith
 		for (int32 i = 0; i < m_legion_info_list.size(); i++)
 		{
 			guid_64 legion_guid = m_legion_info_list[i].legion_guid;
-			// ÏÈË¢ĞÂ¾üÍÅ·şÎñÆ÷
+			// å…ˆåˆ·æ–°å†›å›¢æœåŠ¡å™¨
 			if (nullptr != list_ptr)
 			{
 				ranking_list_ite ite = list_ptr->begin();
@@ -676,7 +676,7 @@ namespace faith
 					}
 				}
 			}
-			// ÅĞ¶Ï·şÎñÆ÷ÊÇ·ñÓĞĞ§
+			// åˆ¤æ–­æœåŠ¡å™¨æ˜¯å¦æœ‰æ•ˆ
 			if (!world_server::getInstance().is_have_this_server(m_legion_info_list[i].server_id))
 			{
 				CONSOLE_INFO("attack_city_ws refresh_del_legion:{} legion_guid:{}", m_legion_info_list[i].server_id, m_legion_info_list[i].legion_guid.server_64);
@@ -754,7 +754,7 @@ namespace faith
 		msg.map_temp_id = get_config_data(e_attack_city_data_map_id);
 		msg.war_idex = 0;
 		msg.activity_type = (int32)e_activity_type_attack_city;
-		msg.server_id = world_server::getInstance().get_cross_id();		//Õâ¸öserver_idÊÇÒª´«ËÍµ½µÄµØÍ¼·şÎñÆ÷id
+		msg.server_id = world_server::getInstance().get_cross_id();		//è¿™ä¸ªserver_idæ˜¯è¦ä¼ é€åˆ°çš„åœ°å›¾æœåŠ¡å™¨id
 		msg.result = get_map_guid_by_legion(legion_guid, map_guid);
 		if (msg.result == e_error_code_success)
 		{
@@ -766,12 +766,12 @@ namespace faith
 
 	int32 attack_city_ws_mgr::check_can_transfer_to_map(guid_64 map_guid)
 	{
-		// ¼ì²é»î¶¯ÊÇ·ñ¿ªÆô
+		// æ£€æŸ¥æ´»åŠ¨æ˜¯å¦å¼€å¯
 		if (false == world_server::getInstance().get_need_begin_cross_gm_common(e_need_server_attack_city))
 		{
 			return (int32)e_error_code_map_attack_city_game_not_open;
 		}
-		//¼ì²éÊÇ·ñÔÚ»î¶¯Ê±¼äÄÚ
+		//æ£€æŸ¥æ˜¯å¦åœ¨æ´»åŠ¨æ—¶é—´å†…
 		if (is_in_game_time() == false)
 		{
 			return (int32)e_error_code_map_attack_city_game_not_begin;
@@ -780,7 +780,7 @@ namespace faith
 		{
 			return (int32)e_error_code_map_attack_city_map_not_join;
 		}
-		//¼ì²éµØÍ¼ÊÇ·ñÓĞĞ§
+		//æ£€æŸ¥åœ°å›¾æ˜¯å¦æœ‰æ•ˆ
 		auto map_ent = get_entity(map_guid);
 		if (nullptr == map_ent)
 		{
@@ -791,7 +791,7 @@ namespace faith
 		{
 			return (int32)e_error_code_map_attack_city_map_not_join;
 		}
-		//¼ì²éµØÍ¼ÊÇ·ñÒÑÂú
+		//æ£€æŸ¥åœ°å›¾æ˜¯å¦å·²æ»¡
 		if (cs_map_system::is_full(map_guid))
 		{
 			return (int32)e_error_code_map_attack_city_player_max;
@@ -813,22 +813,22 @@ namespace faith
 		case faith::e_error_code_success:
 			break;
 		case faith::e_error_code_map_attack_city_game_not_open:
-			notice_id = "90306347";//»î¶¯Î´¿ªÆô
+			notice_id = "90306347";//æ´»åŠ¨æœªå¼€å¯
 			break;
 		case faith::e_error_code_map_attack_city_game_not_begin:
-			notice_id = "90306348";//»î¶¯Î´¿ªÊ¼
+			notice_id = "90306348";//æ´»åŠ¨æœªå¼€å§‹
 			break;
 		case faith::e_error_code_map_attack_city_map_not_join:
-			notice_id = "90306349";//»î¶¯µØÍ¼Î´´´½¨
+			notice_id = "90306349";//æ´»åŠ¨åœ°å›¾æœªåˆ›å»º
 			break;
 		case faith::e_error_code_map_attack_city_legion_not_join:
-			notice_id = "90306350";//¾üÍÅÎŞ·¨²ÎÓë
+			notice_id = "90306350";//å†›å›¢æ— æ³•å‚ä¸
 			break;
 		case faith::e_error_code_map_attack_city_player_max:
-			notice_id = "90306351";//µØÍ¼Íæ¼ÒÒÑÂú
+			notice_id = "90306351";//åœ°å›¾ç©å®¶å·²æ»¡
 			break;
 		case faith::e_error_code_map_attack_city_game_end:
-			notice_id = "90306352";//»î¶¯ÒÑ½áÊø
+			notice_id = "90306352";//æ´»åŠ¨å·²ç»“æŸ
 			break;
 		default:
 			break;
@@ -859,7 +859,7 @@ namespace faith
 		{
 			return (int32)e_error_code_map_attack_city_legion_not_join;
 		}
-		// Èç¹ûÉèÖÃÎª2 ËµÃ÷¾üÍÅ¶ÔÓ¦µØÍ¼ÒÑ¾­½áÊøÁË
+		// å¦‚æœè®¾ç½®ä¸º2 è¯´æ˜å†›å›¢å¯¹åº”åœ°å›¾å·²ç»ç»“æŸäº†
 		if (legion_info.is_check >= (int32)e_attack_check_type_join_end)
 		{
 			return (int32)e_error_code_map_attack_city_game_end;

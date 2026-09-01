@@ -9,11 +9,11 @@
 namespace faith
 {
 	/*
-	 * ½ÇÉ«ÉÏÏßÍ³Ò»LOADINDGÁ´´¦Àí
+	 * è§’è‰²ä¸Šçº¿ç»Ÿä¸€LOADINDGé“¾å¤„ç†
 	 */
 	void cs2dp_req_char_online_loading_data( uint32 connindex, const void* data_ptr, size_t data_len );
 
-	//½ÇÉ«»ù±¾ÊôĞÔ
+	//è§’è‰²åŸºæœ¬å±æ€§
 	void cs2dp_req_load_other_info(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index);
 	void cs2dp_req_send_info_end(bool result, uint32 connindex, const guid_64& role_guid, int32 unit_array_index, e_data_flag save_flag, int32 save_type_ex);
 	void cs2dp_req_load_char_info_cs(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index);
@@ -21,7 +21,7 @@ namespace faith
 	void cs2dp_req_save_char_info_cs(uint32 connindex, const void* data_ptr, size_t data_len);
 	void cs2dp_req_save_char_info_cs_end(db_result_type result, uint32 connindex, const guid_64& role_guid, int32 unit_array_index, e_data_flag save_flag, int32 save_type_ex, xstring sql);
 
-	//½ÇÉ«ÊÂ¼ş/ÓÊ¼ş
+	//è§’è‰²äº‹ä»¶/é‚®ä»¶
 	void cs2dp_req_load_char_globel_mail_had_cs(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index);
 	void cs2dp_req_load_char_globel_mail_had_cs_end(db_result_type result, uint32 connindex, const guid_64& role_guid, const int32& unit_array_index);
 
@@ -37,7 +37,7 @@ namespace faith
 
 	void cs2dp_req_loading_arena_player_data(uint32 connindex, const void* data_ptr, size_t data_len);
 
-	//»ñÈ¡ÆäËûÍæ¼ÒĞÅÏ¢
+	//è·å–å…¶ä»–ç©å®¶ä¿¡æ¯
 	void cs2dp_req_get_other_player_info(uint32 connindex, const void* data_ptr, size_t data_len);
 	//void cs2dp_req_get_other_player_info_end(db_result_type result, uint32 connindex, const guid_64& role_guid, const int32& unit_array_index);
 
@@ -111,7 +111,7 @@ namespace faith
 	void cs2dp_save_subscribe_daily_info_proc(uint32 connindex, const void* data_ptr, size_t data_len);
 
 
-	//ÇåÀíÈ«²¿»º´æ
+	//æ¸…ç†å…¨éƒ¨ç¼“å­˜
 	void cs2dp_req_load_char_data(uint32 connindex, const guid_64& role_guid, const guid_64& up_role_guid, const int32& unit_array_index, e_data_flag e_data_flag);
 	void cs2dp_req_save_char_data(uint32 connindex, const void* data_ptr, size_t data_len);
 

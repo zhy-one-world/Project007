@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2014/05/28
 	created:	28:5:2014   21:36
 	file base:	mysql_async_mgr
@@ -127,9 +127,7 @@ namespace faith
 	typedef boost::shared_ptr<mysql_async_mgr_impl> db_async_mgr_impl_ptr;
 	typedef std::map<uint32, db_async_mgr_impl_ptr> db_async_mgr_impl_ptr_map;
 
-	//
 	//	none-singleton, every mysql_async_mgr for one database. maybe multi for cross.
-	//
 	class mysql_async_mgr : public boost::noncopyable
 	{
 	public:
@@ -143,16 +141,13 @@ namespace faith
 			int32 max_rows = MAX_ROWS_LIMIT,
 			int32 max_row_size = MAX_ROW_SIZE_LIMIT );
 		void									release(	);
-		//	
 		//	desc:	order a SQL query for mysql_async_mgr
 		//			if want to batch query, please set param query.query_type = QT_BATCH_QUERY,
 		//			and param query.prefetch_rows used to indicate number of rows per one COM_FETCH
 		void									add_query( db_query_type& query );
 
-		//
 		//	desc:	process the (binary) string to escape the special characters. 
 		//			usually be used to convert binary/varbinary date, so we can correctly send SQL statement to mysql server.
-		//
 		uint32									escape_string( xchar *to, const xchar *from, uint32 length );
 		bool									empty(	);
 

@@ -17,25 +17,25 @@ namespace faith
 	class client_session;
 	typedef std::list<relation> relation_list;
 	typedef relation_list::iterator relation_list_it;
-	//Íæ¼ÒºÃÓÑÁĞ±í
+	//ç©å®¶å¥½å‹åˆ—è¡¨
 	class relation_set
 	{
 	public:
 		relation_set();
 	public:
-		//ºÃÓÑ²Ù×÷½Ó¿Ú
+		//å¥½å‹æ“ä½œæ¥å£
 		void					clear_data();
-		void					set_client_session(client_session* client_session_ptr);							//ÉèÖÃÓµÓĞÕßÀàĞÍ
-		void					set_relation_type(int32 itype);													//ÉèÖÃ¹ØÏµÈËµÄ¹ØÏµÀàĞÍ
-		bool					is_relation(const guid_64& relation_guid);										//¹ØÏµÈËÊÇ·ñÒÑ¾­´æÔÚ
-		bool					add_relation(const s_relation_info& other_realtion, bool send_client);		//Ôö¼Ó¹ØÏµÈË
-		bool					del_relation(const guid_64& relation_guid);									//É¾³ı¹ØÏµÈË
+		void					set_client_session(client_session* client_session_ptr);							//è®¾ç½®æ‹¥æœ‰è€…ç±»å‹
+		void					set_relation_type(int32 itype);													//è®¾ç½®å…³ç³»äººçš„å…³ç³»ç±»å‹
+		bool					is_relation(const guid_64& relation_guid);										//å…³ç³»äººæ˜¯å¦å·²ç»å­˜åœ¨
+		bool					add_relation(const s_relation_info& other_realtion, bool send_client);		//å¢åŠ å…³ç³»äºº
+		bool					del_relation(const guid_64& relation_guid);									//åˆ é™¤å…³ç³»äºº
 		bool					is_full();
-		int32					get_relation_num();														//µÃµ½¹ØÏµÈËÊıÁ¿
-		relation*				get_relation(const guid_64& relation_guid);									//»ñµÃ¹ØÏµÈË
-		int32					get_max_firendliness();													//»ñµÃºÃ¸Ğ¶È×î¸ßµÄÊı¾İ
+		int32					get_relation_num();														//å¾—åˆ°å…³ç³»äººæ•°é‡
+		relation*				get_relation(const guid_64& relation_guid);									//è·å¾—å…³ç³»äºº
+		int32					get_max_firendliness();													//è·å¾—å¥½æ„Ÿåº¦æœ€é«˜çš„æ•°æ®
 		relation_list&			get_relation_list() { return m_relation_array; }
-		//Êı¾İ´æ´¢½Ó¿Ú
+		//æ•°æ®å­˜å‚¨æ¥å£
 	public:
 		bool					serialize_to_db(s_relation_info* data_list, int32& list_count);
 		bool					serialize_from_db(const s_relation_info& datas);
@@ -44,8 +44,8 @@ namespace faith
 		void					send_sync_relation_list_to_client(int32 e_msg_relation_type);
 	private:
 		client_session*			m_client_session_ptr;
-		int32					m_relation_type;														//¹ØÏµÁĞ±íÀàĞÍ
-		relation_list			m_relation_array;														//Íæ¼Ò¹ØÏµÈËÁĞ±í
+		int32					m_relation_type;														//å…³ç³»åˆ—è¡¨ç±»å‹
+		relation_list			m_relation_array;														//ç©å®¶å…³ç³»äººåˆ—è¡¨
 	};
 }
 

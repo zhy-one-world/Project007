@@ -55,7 +55,7 @@ namespace faith
 	public:
 
 		/************************************************************************/
-		/*					unit数据                                            */
+		/*					unit鏁版嵁                                            */
 		/************************************************************************/
 		virtual void			on_player_enter_scene(const int32& unit_index);
 		virtual	void			on_player_leave_scene(const int32& unit_index);
@@ -85,7 +85,7 @@ namespace faith
 		void					record_server_crystal_log(int32 unit_index);
 	private:
 		xstring					m_map_lua_fun;
-		target_time_spawn_vec	m_target_time_spawn_vec;	// 指定时间刷新列表
+		target_time_spawn_vec	m_target_time_spawn_vec;	// 鎸囧畾鏃堕棿鍒锋柊鍒楄〃
 
 	private:
 		int64					m_stamp_last_sec_tick;

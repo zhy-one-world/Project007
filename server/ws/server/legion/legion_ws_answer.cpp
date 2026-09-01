@@ -27,9 +27,9 @@ namespace faith
 	{
 		if (is_in_legion_answer_read_time())
 		{
-			check_prepare_notice();	//·¢ËÍ»î¶¯×¼±¸¹«¸æ
+			check_prepare_notice();	//å‘é€æ´»åŠ¨å‡†å¤‡å…¬å‘Š
 		}
-		if (m_legion_answer_activity_begin == false && is_in_legion_answer_time())//³õÊ¼»¯¾üÍÅÊı¾İ
+		if (m_legion_answer_activity_begin == false && is_in_legion_answer_time())//åˆå§‹åŒ–å†›å›¢æ•°æ®
 		{
 			m_legion_answer_activity_begin = true;
 			m_legion_answer_activity_begin_time = time_helper::get_cur_time_new().second;;
@@ -63,7 +63,7 @@ namespace faith
 		}
 	}
 
-	//ÇåÀíÊı¾İ
+	//æ¸…ç†æ•°æ®
 	void legion_ws_answer::clear_data()
 	{
 		m_legion_answer_rank_list.clear_data();
@@ -83,7 +83,7 @@ namespace faith
 	{
 		if (m_answer_index >= max_legion_answer_num)
 		{
-			//Èç¹û¾üÍÅÌâÄ¿Ë÷ÒıÒÑ¾­ÊÇ×îºóÒ»ÌâÁË¾Í½áÊø
+			//å¦‚æœå†›å›¢é¢˜ç›®ç´¢å¼•å·²ç»æ˜¯æœ€åä¸€é¢˜äº†å°±ç»“æŸ
 			legion_answer_end();
 			return;
 		}
@@ -110,16 +110,16 @@ namespace faith
 		{
 			return;
 		}
-		++m_answer_index;								//ÌâÄ¿Ë÷Òı¼ÓÒ»
-		m_old_answer.push_back(temp_vec[rand_index]);	//½«ÌâÄ¿¼Óµ½ÌâÄ¿Àà±íÖĞ
-		//¼ÇÂ¼ĞÂÌâºÍ´ğ°¸
+		++m_answer_index;								//é¢˜ç›®ç´¢å¼•åŠ ä¸€
+		m_old_answer.push_back(temp_vec[rand_index]);	//å°†é¢˜ç›®åŠ åˆ°é¢˜ç›®ç±»è¡¨ä¸­
+		//è®°å½•æ–°é¢˜å’Œç­”æ¡ˆ
 		int32 answer_id = m_answer_id;
 		m_topic_id = question_template_ptr->attribute_id;
 		m_answer_id = question_template_ptr->answer;
 		int64 _time = time_helper::get_cur_time_new().millisecond;
-		//¼ÆËãÏÂ´ÎË¢ĞÂÌâÄ¿µÄÊ±¼ä
+		//è®¡ç®—ä¸‹æ¬¡åˆ·æ–°é¢˜ç›®çš„æ—¶é—´
 		m_next_answer_time = _time + legion_answer_interval_time;
-		//Ïò¿Í»§¶Ë·¢ËÍË¢ĞÂÌâÄ¿
+		//å‘å®¢æˆ·ç«¯å‘é€åˆ·æ–°é¢˜ç›®
 		legion_proto_get_legion_answer_question_info_end msg;
 		msg.set_question_template_id(question_template_ptr->attribute_id);
 		msg.set_time_left(legion_answer_interval_time / second_tick_time);
@@ -131,7 +131,7 @@ namespace faith
 		{
 			legion_ws& legion_ws_ref = ite->second;
 			s_legion_answer_info* answer_info = legion_ws_ref.get_legion_answer_info();	
-			//Çå³ı±¾ÌâÊı¾İ
+			//æ¸…é™¤æœ¬é¢˜æ•°æ®
 			if (answer_info->is_answer == false && m_answer_index > 1)
 			{
 				notice_on_answer_failure_notice(legion_ws_ref.get_legion_guid(), answer_id);
@@ -142,7 +142,7 @@ namespace faith
 			{
 				answer_info->the_answer_play_guid[i].clear_data();
 			}
-			//¸üĞÂÌâÄ¿
+			//æ›´æ–°é¢˜ç›®
 			msg.set_succeed_num(answer_info->answer_successfully_num);
 			legion_ws_ref.send_message_to_all_member(&msg, e_msgindex_s2c_get_legion_answer_question_info_end);
 
@@ -153,7 +153,7 @@ namespace faith
 		}
 	}
 
-	//ÊÇ·ñÔÚ»î¶¯ÆÚ¼ä
+	//æ˜¯å¦åœ¨æ´»åŠ¨æœŸé—´
 	bool legion_ws_answer::is_in_legion_answer_time()
 	{
 		int32 act_left = world_server::getInstance().get_activity_sec_left(e_activity_type_legion_answer, e_activity_time_get_gaming);
@@ -164,7 +164,7 @@ namespace faith
 		return true;
 	}
 
-	//ÊÇ·ñÔÚ»î¶¯×¼±¸ÆÚ¼ä
+	//æ˜¯å¦åœ¨æ´»åŠ¨å‡†å¤‡æœŸé—´
 	bool legion_ws_answer::is_in_legion_answer_read_time()
 	{
 		int32 act_left = world_server::getInstance().get_activity_sec_left(e_activity_type_legion_answer, e_activity_time_get_ready);
@@ -185,7 +185,7 @@ namespace faith
 		return true; return false;
 	}
 
-	//»Ø´ğÎÊÌâÅĞ¶Ï
+	//å›ç­”é—®é¢˜åˆ¤æ–­
 	void legion_ws_answer::answer_legion_question(uint64 role_guid, std::vector<xstring> answer_vec)
 	{
 		client_session* player_session = client_session_mgr::getInstance().get_session(role_guid);
@@ -198,7 +198,7 @@ namespace faith
 		if (!player_session->is_self_server())
 		{
 			return;
-		}//¿ç·ş²»´ğÌâ
+		}//è·¨æœä¸ç­”é¢˜
 
 		legion_ws* legion_ptr = legion_ws_mgr::get_instance().get_legion(player_session->get_legion_guid());
 		if (nullptr == legion_ptr)
@@ -228,7 +228,7 @@ namespace faith
 			answer_content += *iter;
 		}
 
-		//±È½Ï´ğ°¸
+		//æ¯”è¾ƒç­”æ¡ˆ
 		if (std::count(temp_array_list.begin(), temp_array_list.end(), answer_content) <= 0)
 		{
 			return;
@@ -239,7 +239,7 @@ namespace faith
 		player_session->send_to_client(&result_msg, e_msgindex_s2c_legion_answer_result);
 	}
 
-	//·¢ËÍ×¼±¸ºÍ¿ªÊ¼¹«¸æ
+	//å‘é€å‡†å¤‡å’Œå¼€å§‹å…¬å‘Š
 	void legion_ws_answer::notice_on_legion_prepare_answer(uint32 prepare_time)
 	{
 		int32 notice_id = 0;
@@ -268,7 +268,7 @@ namespace faith
 		}
 	}
 
-	//»î¶¯¾üÍÅ´ğÌâĞÅÏ¢
+	//æ´»åŠ¨å†›å›¢ç­”é¢˜ä¿¡æ¯
 	void legion_ws_answer::get_legion_question_info(guid_64 role_guid)
 	{
 		if (m_legion_answer_activity_begin_time <= 0)
@@ -393,13 +393,13 @@ namespace faith
 				break;
 			}
 		}
-		//·¢ËÍ¿ÉÒÔ»ñµÃ½±ÀøµÄÍæ¼ÒÁĞ±í
+		//å‘é€å¯ä»¥è·å¾—å¥–åŠ±çš„ç©å®¶åˆ—è¡¨
 		ws2cs_legion_answer_question_right msg;
 		msg.role_guid = role_guid;
 		msg.question_template_id = m_topic_id;
 		msg.is_answer = false;
 		
-		//·¢ËÍ»Ø´ğÕıÈ·¹«¸æ
+		//å‘é€å›ç­”æ­£ç¡®å…¬å‘Š
 		if (answer_info->is_answer == false && m_answer_index > 0 && m_answer_index - 1 < max_legion_answer_num)
 		{
 			answer_info->play_guid[m_answer_index - 1] = role_guid;
@@ -407,7 +407,7 @@ namespace faith
 			answer_info->is_answer = true;
 			msg.is_answer = true;
 			notice_on_first_answer_true_notice(player_session->get_legion_guid(), player_session->get_role_name(), m_answer_id);
-			send_legion_question_info_by_legion(player_session->get_legion_guid());//·µ»Øµ±Ç°´ğÌâ½ø¶Èµ¥ĞÅÏ¢
+			send_legion_question_info_by_legion(player_session->get_legion_guid());//è¿”å›å½“å‰ç­”é¢˜è¿›åº¦å•ä¿¡æ¯
 
 			for (int32 i = 0; i < config_ptr->ParamIntArr1.size(); ++i)
 			{
@@ -418,7 +418,7 @@ namespace faith
 			}
 		}
 
-		//¸üĞÂÅÅĞĞ°ñ
+		//æ›´æ–°æ’è¡Œæ¦œ
 		int64 add_rank = m_legion_answer_rank_list.add_score(legion_ptr->get_legion_guid(), 1);
 		if (add_rank == -1)
 		{
@@ -459,7 +459,7 @@ namespace faith
 	}
 
 
-	//·¢ËÍÇÀ´ğ³É¹¦µÄ¹«¸æ
+	//å‘é€æŠ¢ç­”æˆåŠŸçš„å…¬å‘Š
 	void legion_ws_answer::notice_on_first_answer_true_notice(guid_64 legion_guid, const xstring& role_name, int32 answer_id)
 	{
 		if (legion_guid.is_valid() == false)
@@ -476,7 +476,7 @@ namespace faith
 		event_ws_mgr::get_instance().send_notice_to_all(notice_str_id, create_time, legion_guid, award_notice_str);
 	}
 
-	//·¢ËÍÎŞÈËÇÀ´ğ³É¹¦µÄ¹«¸æ
+	//å‘é€æ— äººæŠ¢ç­”æˆåŠŸçš„å…¬å‘Š
 	void legion_ws_answer::notice_on_answer_failure_notice(guid_64 legion_guid, int32 answer_id)
 	{
 		if (legion_guid.is_valid() == false)
@@ -492,7 +492,7 @@ namespace faith
 		event_ws_mgr::get_instance().send_notice_to_all(notice_str_id, create_time, legion_guid, award_notice_str);
 	}
 
-	//·¢ËÍÇÀ´ğµ½Ö¸¶¨ÊıÁ¿µÄ¹«¸æ
+	//å‘é€æŠ¢ç­”åˆ°æŒ‡å®šæ•°é‡çš„å…¬å‘Š
 	void legion_ws_answer::notice_on_play_answer_num_notice(guid_64 legion_guid, const xstring& role_name, int32 question_num)
 	{
 		if (legion_guid.is_valid() == false)
@@ -509,7 +509,7 @@ namespace faith
 		event_ws_mgr::get_instance().send_notice_to_all(notice_str_id, create_time, legion_guid, award_notice_str);
 	}
 
-	//·¢ËÍ±¾¾üÍÅ´ğÌâ½áÊøµÄ¹«¸æ
+	//å‘é€æœ¬å†›å›¢ç­”é¢˜ç»“æŸçš„å…¬å‘Š
 	void legion_ws_answer::notice_on_legion_answer_end_notice(guid_64 legion_guid, const xstring& role_name, int32 question_num)
 	{
 		if (legion_guid.is_valid() == false)
@@ -538,7 +538,7 @@ namespace faith
 		event_ws_mgr::get_instance().send_notice_to_all(notice_str_id, create_time, legion_guid, award_notice_str);
 	}
 
-	//·¢ËÍ»î¶¯½áÊøµÄÈ«·ş¹«¸æ
+	//å‘é€æ´»åŠ¨ç»“æŸçš„å…¨æœå…¬å‘Š
 	void legion_ws_answer::send_activity_end_notice()
 	{
 		int32 notice_str_id = 0;
@@ -550,7 +550,7 @@ namespace faith
 		{
 			if (i <= rank_show_num)
 			{
-				if (rank_list[i].score > 0)//Ö»ÒªÍê³É1µÀÌâÒÔÉÏ½øÈëÅÅÃû
+				if (rank_list[i].score > 0)//åªè¦å®Œæˆ1é“é¢˜ä»¥ä¸Šè¿›å…¥æ’å
 				{
 					notice_str_id = all_legion_answer_end_one_play_notice_id + i;
 					legion_name.push_back(rank_list[i].role_name);
@@ -577,7 +577,7 @@ namespace faith
 		}
 	}
 	
-	//±¾¾üÍÅ´ğÌâ½áÊø
+	//æœ¬å†›å›¢ç­”é¢˜ç»“æŸ
 	void legion_ws_answer::legion_answer_end()
 	{
 		legion_ws_map& legion_map = legion_ws_mgr::get_instance().get_legion_map();
@@ -591,7 +591,7 @@ namespace faith
 				return;
 			}
 
-			//·¢ËÍ±¾´Î¾üÍÅ´ğÌâ½áÊø¹«¸æ
+			//å‘é€æœ¬æ¬¡å†›å›¢ç­”é¢˜ç»“æŸå…¬å‘Š
 			const s_legion_member_info* play_info = legion_ptr.get_member(answer_info->get_max_num_play());
 			if (play_info != nullptr)
 			{
@@ -601,14 +601,14 @@ namespace faith
 			legion_proto_legion_answer_end msg;
 			legion_ptr.send_message_to_all_member(&msg, e_msgindex_s2c_legion_answer_end);
 		}
-		//¼ÇÂ¼½áÊøÊ±¼ä
+		//è®°å½•ç»“æŸæ—¶é—´
 		//answer_info->answer_end_time = time_helper::get_cur_time_new().second;
 		send_activity_end_notice();
 		//clear_data();
 		m_legion_answer_activity_end_time = time_helper::get_cur_time_new().second;
 	}
 
-	//·¢ËÍÅÅÃûÁĞ±í¸øµ¥¸öÈË
+	//å‘é€æ’ååˆ—è¡¨ç»™å•ä¸ªäºº
 	void legion_ws_answer::send_legion_answer_rank_list(guid_64 role_guid)
 	{
 		client_session* play_ptr = client_session_mgr::getInstance().get_session(role_guid);
@@ -644,7 +644,7 @@ namespace faith
 		play_ptr->send_to_client(&msg, e_msgindex_s2c_send_legion_answer_rank_list);
 	}
 
-	//·¢ËÍÅÅÃûÁĞ±í¸øÈ«²¿¾üÍÅ
+	//å‘é€æ’ååˆ—è¡¨ç»™å…¨éƒ¨å†›å›¢
 	void legion_ws_answer::send_legion_answer_rank_list_all()
 	{
 		m_legion_answer_rank_list.sort();
@@ -672,7 +672,7 @@ namespace faith
 		}
 	}
 
-	//·¢ËÍ×¼±¸¹«¸æ
+	//å‘é€å‡†å¤‡å…¬å‘Š
 	void legion_ws_answer::check_prepare_notice()
 	{
 		int32 prepare_time = world_server::getInstance().get_activity_sec_left(e_activity_type_legion_answer, e_activity_time_get_ready);

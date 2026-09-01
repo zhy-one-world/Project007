@@ -1,8 +1,8 @@
 /********************************************************************
-created: 2016Äê7ÔÂ18ÈÕ21:24:26
+created: 2016å¹´7æœˆ18æ—¥21:24:26
 file base: achievement
-author: ÕÅÓîÏè
-purpose: ³É¾Í´æµµÏûÏ¢
+author: å¼ å®‡ç¿”
+purpose: æˆå°±å­˜æ¡£æ¶ˆæ¯
 *********************************************************************/
 #ifndef _FAITH_ACHIEVEMENT_HPP_
 #define _FAITH_ACHIEVEMENT_HPP_
@@ -21,12 +21,12 @@ namespace faith
 		e_msgindex_cs2dp_save_char_achievement,
 	};
 
-	// DP2CS ·ÖÅú·¢ËÍÍæ¼ÒµÄËùÓĞÎïÆ·ĞÅÏ¢
+	// DP2CS åˆ†æ‰¹å‘é€ç©å®¶çš„æ‰€æœ‰ç‰©å“ä¿¡æ¯
 	struct dp2cs_load_char_achievement : public faith::packet_base
 	{
 		guid_64								role_guid;
 		int32								unit_array_index;
-		bool								is_over;		// ±êÊ¶Íæ¼ÒÎïÆ·ÊÇ·ñ·¢ËÍÍê±Ï, true±íÊ¾·¢ËÍ³É¹¦Íê±Ï£¬false±íÊ¾Ã»ÓĞ·¢ËÍÍê£¬errroÍ¨¹ıÁíÒ»ÌõÏûÏ¢´«µİ
+		bool								is_over;		// æ ‡è¯†ç©å®¶ç‰©å“æ˜¯å¦å‘é€å®Œæ¯•, trueè¡¨ç¤ºå‘é€æˆåŠŸå®Œæ¯•ï¼Œfalseè¡¨ç¤ºæ²¡æœ‰å‘é€å®Œï¼Œerrroé€šè¿‡å¦ä¸€æ¡æ¶ˆæ¯ä¼ é€’
 		int32									data_num;
 		s_achievement_info					data_list[MAX_ACHIEVEMENT_NUM];
 		dp2cs_load_char_achievement()
@@ -46,7 +46,7 @@ namespace faith
 		int32								unit_array_index;
 		int32								save_type_ex;
 		int32								data_num;
-		s_achievement_info					data_list[MAX_ACHIEVEMENT_NUM];	//ÔªËØÖ®ĞÄÊµÀıÊı¾İ
+		s_achievement_info					data_list[MAX_ACHIEVEMENT_NUM];	//å…ƒç´ ä¹‹å¿ƒå®ä¾‹æ•°æ®
 
 		cs2dp_save_char_achievement()
 		{

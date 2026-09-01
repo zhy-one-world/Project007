@@ -1,5 +1,5 @@
 /********************************************************************
-created: 2019Äê5ÔÂ24ÈÕ
+created: 2019å¹´5æœˆ24æ—¥
 file base: cross_server_world_boss_ws_mgr
 file ext: hpp
 author: zhaoyuming
@@ -26,55 +26,55 @@ namespace faith
 			return instance;
 		}
 		explicit cross_server_world_boss_ws_mgr();
-		//»î¶¯³õÊ¼»¯
+		//æ´»åŠ¨åˆå§‹åŒ–
 		void						init_cross_server_world_boss_map();
 		void						clear_data();
 		void						init_manager();
-		//Ê±¼ä´¦Àí
+		//æ—¶é—´å¤„ç†
 		void						tick(int64 time_new);
-		bool						is_in_game_time();								//ÊÇ·ñÔÚ¿ç·şÊÀ½çboss»î¶¯Ê±¼ä
-		bool						is_in_game_ready_time();						//ÊÇ·ñÔÚ»î¶¯µÄ×¼±¸Ê±¼ä
+		bool						is_in_game_time();								//æ˜¯å¦åœ¨è·¨æœä¸–ç•Œbossæ´»åŠ¨æ—¶é—´
+		bool						is_in_game_ready_time();						//æ˜¯å¦åœ¨æ´»åŠ¨çš„å‡†å¤‡æ—¶é—´
 		bool						is_in_game_all_time();
-		bool						is_have_world_boss_map();						//¿ç·şÊÀ½çboss»î¶¯µØÍ¼ÊÇ·ñ´æÔÚ
+		bool						is_have_world_boss_map();						//è·¨æœä¸–ç•Œbossæ´»åŠ¨åœ°å›¾æ˜¯å¦å­˜åœ¨
 		bool						is_in_cross_boss_map(guid_64 map_guid);
-		//µØÍ¼´«ËÍ
+		//åœ°å›¾ä¼ é€
 		e_error_code					is_can_join_with_cross(guid_64 role_guid, int32 map_type);
 		e_error_code					is_can_join_with_cross_gate(int32 map_type);
 		void						recv_other_ws_transger_gate_map(guid_64 role_guid, int32 server_id, int32 map_type);
 		void						transfer_to_map_with_gate_msg(guid_64 role_guid, int32 error_ret, int32 map_temp_id, guid_64 map_guid, int32 war_idex, int32 server_id);
-		//Êı¾İ¿âÏà¹Ø		
-		void						send_get_boss_show_info_all();	//Ïò·şÎñÆ÷·¢ËÍ»ñµÃËùÓĞbossĞÅÏ¢
+		//æ•°æ®åº“ç›¸å…³		
+		void						send_get_boss_show_info_all();	//å‘æœåŠ¡å™¨å‘é€è·å¾—æ‰€æœ‰bossä¿¡æ¯
 		void						save_boss_info_to_dp(int32 boss_template_id);
 		void						set_kill_boss_show_info_all(const cross_boss_info * boss_info, int32 data_num);
 		void						set_kill_boss_show_info(const cross_boss_info& boss_info);
 		void						send_boss_dead_info_all_to_all_server(int32 server_id);
-		//Í¨ÓÃº¯Êı
-		void						get_world_boss_map_guid(guid_64& map_guid, int32& war_idex, int32 map_type);			//»ñµÃ¿ç·şÊÀ½çboss»î¶¯µØÍ¼id
-		int32						get_cross_server_world_boss_map_temp_id(int32 map_type);								//»ñµÃ¿ç·şÊÀ½çboss»î¶¯µØÍ¼Ä£°åid
-		void						set_boss_level();	//ÉèÖÃbossµÈ¼¶
+		//é€šç”¨å‡½æ•°
+		void						get_world_boss_map_guid(guid_64& map_guid, int32& war_idex, int32 map_type);			//è·å¾—è·¨æœä¸–ç•Œbossæ´»åŠ¨åœ°å›¾id
+		int32						get_cross_server_world_boss_map_temp_id(int32 map_type);								//è·å¾—è·¨æœä¸–ç•Œbossæ´»åŠ¨åœ°å›¾æ¨¡æ¿id
+		void						set_boss_level();	//è®¾ç½®bossç­‰çº§
 		void						locd_boss_show_info(const cross_world_boss_info_to_db * dp_info, int32 data_num);
-		//·¢ËÍÏûÏ¢µ½cs
+		//å‘é€æ¶ˆæ¯åˆ°cs
 		void						sync_create_boos_to_cs(guid_64 from_map_guid);
-		//¿ç·şÏûÏ¢µÄ´¦Àí
-		int32						get_true_boss_level();	//»ñµÃbossµÈ¼¶
-		int32						get_false_boss_level();	//»ñµÃbossµÈ¼¶
-		void						get_with_save_server_level();//»ñÈ¡·şÎñÆ÷×éµÄÆ½¾ùµÈ¼¶
-		void						send_server_level(int32 server_id);//·¢ËÍ·şÎñÆ÷µÈ¼¶
-		void						server_level_func(int32 true_server_level, int32 false_server_level, int32 server_id);//´¦Àí·şÎñÆ÷µÈ¼¶
-		//¾üÍÅ½±ÀøºÍ¹«¸æÏà¹Ø
-		void						make_cross_world_boss_legion_award(guid_64 legion_guid, int32 boss_id, int32 rank_num, guid_64* play_guid_list, int32 play_num); //·¢·Å¾üÍÅ½±Àø
-		void						send_legion_act_rank(const cs2ws_make_cross_server_world_legion_award& act_rank);//Ïò¿ç·ş×éÀïµÄËùÓĞ·şÎñÆ÷·¢ËÍ¾üÍÅÉËº¦ÁĞ±í
+		//è·¨æœæ¶ˆæ¯çš„å¤„ç†
+		int32						get_true_boss_level();	//è·å¾—bossç­‰çº§
+		int32						get_false_boss_level();	//è·å¾—bossç­‰çº§
+		void						get_with_save_server_level();//è·å–æœåŠ¡å™¨ç»„çš„å¹³å‡ç­‰çº§
+		void						send_server_level(int32 server_id);//å‘é€æœåŠ¡å™¨ç­‰çº§
+		void						server_level_func(int32 true_server_level, int32 false_server_level, int32 server_id);//å¤„ç†æœåŠ¡å™¨ç­‰çº§
+		//å†›å›¢å¥–åŠ±å’Œå…¬å‘Šç›¸å…³
+		void						make_cross_world_boss_legion_award(guid_64 legion_guid, int32 boss_id, int32 rank_num, guid_64* play_guid_list, int32 play_num); //å‘æ”¾å†›å›¢å¥–åŠ±
+		void						send_legion_act_rank(const cs2ws_make_cross_server_world_legion_award& act_rank);//å‘è·¨æœç»„é‡Œçš„æ‰€æœ‰æœåŠ¡å™¨å‘é€å†›å›¢ä¼¤å®³åˆ—è¡¨
 		void						make_kill_boss_legion_awaed(guid_64 kill_boss_legion_guid, int32 kill_boss_tmp_id, guid_64* play_guid_list, int32 play_num);
 		void						send_boss_dead_notice(int32 boss_template, int32 notice_id, int32 item_num, s_item_info * data_ary, std::string notice_string);
-		//ÓÎÏ·½áÊø
+		//æ¸¸æˆç»“æŸ
 		void						cross_boss_map_game_over(int32 map_template);
-		//½ÓÊÕ¿Í»§¶ËÏûÏ¢µÄ´¦Àí	
+		//æ¥æ”¶å®¢æˆ·ç«¯æ¶ˆæ¯çš„å¤„ç†	
 		void						send_kill_boss_show(client_session* session);
-		//½ÓÊÕcsÏûÏ¢µÄ´¦Àí
+		//æ¥æ”¶csæ¶ˆæ¯çš„å¤„ç†
 		void						cross_boss_on_dead(guid_64 kill_boss_play_guid, int32 be_kill_boss_id);
-		//·¢ËÍÏûÏ¢µ½¿Í»§¶Ë
+		//å‘é€æ¶ˆæ¯åˆ°å®¢æˆ·ç«¯
 		void						sync_kill_boss_to_all_map_inst(int32 map_template_id, int32 killer_unit_index, int32 be_kill_boss_guid, guid_64 killer_guid);
-		void						send_message_to_all_cs(const void* data_ptr, size_t data_len);//¹ã²¥ÏûÏ¢	
+		void						send_message_to_all_cs(const void* data_ptr, size_t data_len);//å¹¿æ’­æ¶ˆæ¯	
 		void						send_cross_boss_ranking_list(int32 boss_id);	
 		void						set_cross_boss_ranking_list(int32 boss_template_id, s_ranking_player_info* ranking_info, int32 data_num);
 		void						send_boss_dead_info_to_all_server(int32 boss_temp_id ,int32 server_id);
@@ -86,20 +86,20 @@ namespace faith
 		void						send_legion_welfare_rank();
 	private:
 
-		bool							m_game_over_flag;							//»î¶¯ÊÇ·ñ½áÊø
-		bool							m_is_cur_map_end[map_max];					//ÓÃÓÚ¼ÇÂ¼µØÍ¼ÊÇ·ñ´æÔÚ0
-		bool							m_ready_notice;								//ÊÇ·ñ·¢·Å¹ı»î¶¯×¼±¸¹«¸æ
-		bool							m_game_notice;								//ÊÇ·ñ·¢·Å¹ı»î¶¯¿ªÊ¼¹«¸æ
-		bool							m_is_need_clear;							//ÊÇ·ñĞèÒªÇåÀí×ÊÔ´
-		bool							m_is_send_legion_welfare;					//ÊÇ·ñ·¢·Å¾üÍÅ¸£Àû
-		int32							m_boss_level_true;							//ÕæbossµÈ¼¶
-		int32							m_boss_level_false;							//¼ÙbossµÈ¼¶
-		int32							m_boss_id[m_boss_max_num];					//ÓÃÓÚ¼ÇÂ¼»î¶¯bossÄ£°åid
-		guid_64							m_cross_world_boss_map_id[map_max];			//ÓÃÓÚ¼ÇÂ¼¿ç·şÊÀ½çboss»î¶¯µØÍ¼id
-		int64							m_boss_all_damage[m_boss_max_num];			//bossÊÜµ½µÄ×ÜÉËº¦
-		score_indicator					m_boss_damage_list[m_boss_max_num];			//bossÉËº¦ÁĞ±í
-		score_indicator					m_all_boss_damage_list;						//ËùÓĞboss×ÜÉËº¦ÁĞ±í
-		e_map_state						m_map_state[map_max];						//»î¶¯µØÍ¼×´Ì¬
+		bool							m_game_over_flag;							//æ´»åŠ¨æ˜¯å¦ç»“æŸ
+		bool							m_is_cur_map_end[map_max];					//ç”¨äºè®°å½•åœ°å›¾æ˜¯å¦å­˜åœ¨0
+		bool							m_ready_notice;								//æ˜¯å¦å‘æ”¾è¿‡æ´»åŠ¨å‡†å¤‡å…¬å‘Š
+		bool							m_game_notice;								//æ˜¯å¦å‘æ”¾è¿‡æ´»åŠ¨å¼€å§‹å…¬å‘Š
+		bool							m_is_need_clear;							//æ˜¯å¦éœ€è¦æ¸…ç†èµ„æº
+		bool							m_is_send_legion_welfare;					//æ˜¯å¦å‘æ”¾å†›å›¢ç¦åˆ©
+		int32							m_boss_level_true;							//çœŸbossç­‰çº§
+		int32							m_boss_level_false;							//å‡bossç­‰çº§
+		int32							m_boss_id[m_boss_max_num];					//ç”¨äºè®°å½•æ´»åŠ¨bossæ¨¡æ¿id
+		guid_64							m_cross_world_boss_map_id[map_max];			//ç”¨äºè®°å½•è·¨æœä¸–ç•Œbossæ´»åŠ¨åœ°å›¾id
+		int64							m_boss_all_damage[m_boss_max_num];			//bosså—åˆ°çš„æ€»ä¼¤å®³
+		score_indicator					m_boss_damage_list[m_boss_max_num];			//bossä¼¤å®³åˆ—è¡¨
+		score_indicator					m_all_boss_damage_list;						//æ‰€æœ‰bossæ€»ä¼¤å®³åˆ—è¡¨
+		e_map_state						m_map_state[map_max];						//æ´»åŠ¨åœ°å›¾çŠ¶æ€
 		cross_boss_info					m_boss_kill_all_info[m_boss_max_num];
 		cross_boss_level				m_boss_level[max_server_num];	
 	};

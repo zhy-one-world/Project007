@@ -40,13 +40,13 @@ namespace faith
 
 	enum e_del_char_type
 	{
-		e_del_char_del_resume, //0ÔİÊ±É¾³ı ¿É»Ö¸´
-		e_del_char_resume, //1»Ö¸´
-		e_del_char_delete, //2³¹µ×É¾³ı
-		e_del_char_none, //×îºóÒ»Î» ±íÊ¾´íÎó
+		e_del_char_del_resume, //0æš‚æ—¶åˆ é™¤ å¯æ¢å¤
+		e_del_char_resume, //1æ¢å¤
+		e_del_char_delete, //2å½»åº•åˆ é™¤
+		e_del_char_none, //æœ€åä¸€ä½ è¡¨ç¤ºé”™è¯¯
 	};
 
-	struct login_fixed_data				// ÓÃÓÚÍ¨¹ıµÚÈı·½sdkµÇÂ½±£´æµÄ¹Ì¶¨Êı¾İ
+	struct login_fixed_data				// ç”¨äºé€šè¿‡ç¬¬ä¸‰æ–¹sdkç™»é™†ä¿å­˜çš„å›ºå®šæ•°æ®
 	{
 		login_fixed_data()
 		{
@@ -57,11 +57,11 @@ namespace faith
 			memset(this, 0, sizeof(*this));
 		}
 		xchar param1[e_login_fixed_data_lenght];		//app key
-		xchar param2[e_login_fixed_data_lenght];		//¿Í»§¶Ë°æ±¾
-		xchar param3[e_login_fixed_data_lenght];		//ÓÎÏ··şÎñÆ÷ID
+		xchar param2[e_login_fixed_data_lenght];		//å®¢æˆ·ç«¯ç‰ˆæœ¬
+		xchar param3[e_login_fixed_data_lenght];		//æ¸¸æˆæœåŠ¡å™¨ID
 		xchar param4[e_login_fixed_data_lenght];		//MediaId
-		xchar param5[e_login_fixed_data_lenght];		//Éè±¸Î¨Ò»±êÊ¶
-		xchar param6[e_login_fixed_data_lenght];		//µÇÂ¼IP
+		xchar param5[e_login_fixed_data_lenght];		//è®¾å¤‡å”¯ä¸€æ ‡è¯†
+		xchar param6[e_login_fixed_data_lenght];		//ç™»å½•IP
 		xchar param7[e_login_fixed_data_lenght];		//ChannelId
 		xchar param8[e_login_fixed_data_lenght];		//model
 		xchar param9[e_login_fixed_data_lenght];		//idfa
@@ -171,11 +171,11 @@ namespace faith
 		{
 			memset(this,0, sizeof(*this));
 		}
-		guid_64			role_guid;										// ËùÑ¡½øÈëÓÎÏ·µÄ½ÇÉ«id
-		uint32			scene_uid;										// ½ÇÉ«ËùÔÚ³¡¾°id
-		uint32			line_uid;										// ½ÇÉ«ËùÔÚĞÂÊÖ´å·ÖÏßid
-		int32			array_index;									// ¹ÜÀíÆ÷ÏÂ˜Ë
-		s_map_pos		map_pos;										// ½ÇÉ«µÄµØÍ¼Î»ÖÃ
+		guid_64			role_guid;										// æ‰€é€‰è¿›å…¥æ¸¸æˆçš„è§’è‰²id
+		uint32			scene_uid;										// è§’è‰²æ‰€åœ¨åœºæ™¯id
+		uint32			line_uid;										// è§’è‰²æ‰€åœ¨æ–°æ‰‹æ‘åˆ†çº¿id
+		int32			array_index;									// ç®¡ç†å™¨ä¸‹æ¨™
+		s_map_pos		map_pos;										// è§’è‰²çš„åœ°å›¾ä½ç½®
 	};
 #pragma pack(pop)
 }
