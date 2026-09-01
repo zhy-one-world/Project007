@@ -68,7 +68,7 @@ namespace faith
 		if (!m_tcpserver_ptr->set_option(tcp_server::options::send_buffer_size(send_buf_size))) return false;
 		if (!m_tcpserver_ptr->set_option(tcp_server::options::recv_buffer_size(recv_buf_size))) return false;
 		if (!m_tcpserver_ptr->set_option(tcp_server::options::max_packet_size(max_packet_size))) return false;
-		m_tcpserver_ptr->init_client_server(server_num, init_num);
+		if (!m_tcpserver_ptr->set_option(tcp_server::options::connections_num_limit(server_num))) return false;
 
 		m_server_type = server_type;
 		m_server_ip = server_ip;

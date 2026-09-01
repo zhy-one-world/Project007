@@ -106,13 +106,13 @@ namespace faith
 	{
 		if (new_time >= m_last_update_log_time)
 		{
-			_RLOG_(MINFO, "client_session update, connindex:" << m_conn_index
-				<< " arrayindex:" << m_array_index
-				<< " scheduler thread:" << m_scheduler_thread_id
-				<< " logout:" << m_is_logout
-				<< " account:" << m_account
-				<< " msg count:" << m_client_send_msg_count
-				<< " heartbeat:" << m_heart_beat_time);
+			// _RLOG_(MINFO, "client_session update, connindex:" << m_conn_index
+			// 	<< " arrayindex:" << m_array_index
+			// 	<< " scheduler thread:" << m_scheduler_thread_id
+			// 	<< " logout:" << m_is_logout
+			// 	<< " account:" << m_account
+			// 	<< " msg count:" << m_client_send_msg_count
+			// 	<< " heartbeat:" << m_heart_beat_time);
 			m_last_update_log_time = new_time + second_tick_time * 5;
 		}
 		check_session(new_time);

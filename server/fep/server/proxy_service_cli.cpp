@@ -431,7 +431,7 @@ namespace faith
 //		if(!m_tcpserver->set_option(tcp_server::options::tcp_nodelay(false))) return false;
 		if(!m_tcpserver->set_option(tcp_server::options::delaysending_size_threshold(_max_packet_size))) return false;
 //		if(!m_tcpserver->set_option(tcp_server::options::delaysending_time_threshold(0))) return false;
-		m_tcpserver->init_client_server(init_socket_more, FEPCONFIG->init_socket_num);
+		if(!m_tcpserver->set_option(tcp_server::options::connections_num_limit(init_socket_more))) return false;
 		return true;
 	}
 
