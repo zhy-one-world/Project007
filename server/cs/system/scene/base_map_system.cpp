@@ -1,4 +1,4 @@
-#include "base_map_system.h"
+﻿#include "base_map_system.h"
 #include "components/scene/base_map_component.h"
 #include "base/ecs_world.h"
 #include "server_log.hpp"
@@ -9,6 +9,7 @@
 #include "logic/npc.hpp"
 #include "buff_def.hpp"
 #include "gm_order_def.hpp"
+#include <rlog.hpp>
 
 using namespace faith;
 
@@ -435,13 +436,13 @@ void base_map_system::gm_show_all_npc(Entity* map_ent)
 	auto base_map_cp = map_ent->get_component<base_map_component>();
 	if (false == base_map_cp.isValid())
 	{
-		CONSOLE_INFO("base_map_cp is null");
+		_RLOG_(MINFO, "base_map_cp is null");
 		return;
 	}
 	for (auto& it : base_map_cp->m_npc_list)
 	{
 		auto& npc = unit_man::get_npc(it);
 		auto pos = npc.get_new_map_pos();
-		CONSOLE_INFO("npc_index:{} npc_id:{} spawn_point_id:{} x:{} y:{} z:{}", it, npc.get_npc_template_id(), npc.get_spawn_point_id(), pos.unit_location.x, pos.unit_location.y, pos.unit_location.z);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("npc_index:{} npc_id:{} spawn_point_id:{} x:{} y:{} z:{}",  it,  npc.get_npc_template_id(),  npc.get_spawn_point_id(),  pos.unit_location.x,  pos.unit_location.y,  pos.unit_location.z));
 	}
 }

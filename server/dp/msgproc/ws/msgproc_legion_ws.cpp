@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 created:	2016年12月12日12:57:20
 file base:	msgproc_legion_ws
 file ext:	cpp
@@ -13,6 +13,7 @@ purpose:
 #include "data_manager/data_manager.hpp"
 #include "msgproc_ranking_ws.hpp"
 #include "utility/parse_msg.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -418,9 +419,9 @@ namespace faith
 				{
 					load_all_legion_member_info_msg.member_info[i] = legion_member_info_db[i].legion_member_info;
 				}
-				CONSOLE_INFO("load_all_legion_member_info_end data_num:{} legion_guid :{} data_size:{}", data_num, load_all_legion_member_info_msg.legion_guid.server_64, data_size);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("load_all_legion_member_info_end data_num:{} legion_guid :{} data_size:{}",  data_num,  load_all_legion_member_info_msg.legion_guid.server_64,  data_size));
 			}
-			CONSOLE_INFO("load_all_legion_member_info_end data_num:{} legion_guid:{}", data_num, load_all_legion_member_info_msg.legion_guid.server_64);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("load_all_legion_member_info_end data_num:{} legion_guid:{}",  data_num,  load_all_legion_member_info_msg.legion_guid.server_64));
 
 			load_all_legion_member_info_msg.member_info_num = data_num;
 

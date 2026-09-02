@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2018年1月4日20:45:59
 	file base:	data_manager
 	file ext:	cpp
@@ -13,6 +13,7 @@
 #include "db_manager.hpp"
 #include "dbproxy_service.hpp"
 #include "legion_def.hpp"
+#include <rlog.hpp>
 namespace faith
 {
 	std::unordered_map<int64, xstring> g_table_map;
@@ -61,7 +62,7 @@ namespace faith
 		{
 			if (!dbproxy_service::getInstance().start())
 			{
-				CONSOLE_INFO("dbproxy_service start false ");
+				_RLOG_(MINFO, "dbproxy_service start false ");
 				dbproxy_service::getInstance().stop();
 				return;
 			}
@@ -129,16 +130,16 @@ namespace faith
 	{
 		if (result.error)
 		{
-			CONSOLE_INFO("init_all_temp_end false ", result.error);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("init_all_temp_end false ",  result.error));
 			dbproxy_service::getInstance().stop();
 			return;
 		}
 		else
 		{
-			CONSOLE_INFO("init_all_temp_end ");
+			_RLOG_(MINFO, "init_all_temp_end ");
 			if (!dbproxy_service::getInstance().start())
 			{
-				CONSOLE_INFO("dbproxy_service start false ");
+				_RLOG_(MINFO, "dbproxy_service start false ");
 				dbproxy_service::getInstance().stop();
 				return;
 			}

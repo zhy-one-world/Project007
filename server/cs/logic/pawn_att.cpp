@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
   created: 2014/07/14
   created: 14:7:2014 20:00
   file base: pawn_att
@@ -29,6 +29,7 @@
 #include "internet/net.pb.h"
 #include "npc.hpp"
 #include "utility/init_unit.h"
+#include <rlog.hpp>
 
 /************************************************************************/
 /*                           Class Implement                            */
@@ -539,7 +540,7 @@ namespace faith
 		}
 		if (att_level > tier_att_max || att_level < tier_att_min)
 		{
-			CONSOLE_INFO("att_level:{} id:{} value:{} percent:{} is_show:{} apply:{}", att_level, id, value, percent, is_show, apply);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("att_level:{} id:{} value:{} percent:{} is_show:{} apply:{}",  att_level,  id,  value,  percent,  is_show,  apply));
 			return;
 		}
 		att_modifier(e_pawn_att_index((att_level-2) * 2 - 2), id, value, is_show, apply);
@@ -1621,7 +1622,7 @@ namespace faith
 			for (int32 i = e_unit_attack_att_none; i < e_unit_attack_att_max; ++i)
 			{
 				auto att_value = get_attack_att_value(i);
-				CONSOLE_INFO("attack_att att_id:{} att_value:{}", i, att_value);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("attack_att att_id:{} att_value:{}",  i,  att_value));
 			}
 		}
 		break;
@@ -1630,7 +1631,7 @@ namespace faith
 			for (int32 i = e_unit_game_att_movement; i < e_unit_game_att_max; ++i)
 			{
 				auto att_value = get_game_att(i);
-				CONSOLE_INFO("game_att att_id:{} att_value:{}", i, att_value);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("game_att att_id:{} att_value:{}",  i,  att_value));
 			}
 		}
 		break;
@@ -1639,7 +1640,7 @@ namespace faith
 			for (int32 i = e_unit_attack_state_dead; i < e_unit_attack_state_max; ++i)
 			{
 				auto att_value = get_state_att(i);
-				CONSOLE_INFO("state_att att_id:{} att_value:{}", i, att_value);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("state_att att_id:{} att_value:{}",  i,  att_value));
 			}
 		}
 		break;
@@ -1648,7 +1649,7 @@ namespace faith
 			for (int32 i = e_unit_attack_state_dead; i < e_unit_attack_state_max; ++i)
 			{
 				auto att_value = get_state_trigger(i);
-				CONSOLE_INFO("state_trigger att_id:{} att_value:{}", i, att_value);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("state_trigger att_id:{} att_value:{}",  i,  att_value));
 			}
 		}
 		break;

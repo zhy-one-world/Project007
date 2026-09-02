@@ -17,6 +17,7 @@
 #include "utility/cs_date.hpp"
 #include "utility/globle_data.h"
 #include "utility/init_unit.h"
+#include <rlog.hpp>
 
 
 namespace faith
@@ -2301,35 +2302,29 @@ namespace faith
 	void server_log::spawn_npc_log(int32 map_id, int32 npc_id, int32 spawn_id, int32 array_idx, guid_64 guid, fvector bornpos)
 	{
 #ifdef SHOW_SERVER_LOG
-		CONSOLE_INFO("{} {} {} {} {} {} {} {} {} {} {} {} {}",
-			server_common_head,"npc spawn",server_log_normversion,map_id,"tempid",npc_id,spawn_id,array_idx,guid.A,guid.B,bornpos.x,bornpos.y, bornpos.z
-		);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("{} {} {} {} {} {} {} {} {} {} {} {} {}", 
+			server_common_head, "npc spawn", server_log_normversion, map_id, "tempid", npc_id, spawn_id, array_idx, guid.A, guid.B, bornpos.x, bornpos.y,  bornpos.z));
 #endif
 	}
 
 	void server_log::remove_npc_log(int32 map_id, int32 npc_id, int32 spawn_id, int32 array_idx, guid_64 guid, fvector bornpos)
 	{
 #ifdef SHOW_SERVER_LOG
-		CONSOLE_INFO("{} {} {} {} {} {} {} {} {} {} {} {} {}",
-			server_common_head,"npcremove",server_log_normversion,map_id,"tempid",npc_id,spawn_id,array_idx,guid.A,guid.B,bornpos.x,bornpos.y,bornpos.z
-		);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("{} {} {} {} {} {} {} {} {} {} {} {} {}", 
+			server_common_head, "npcremove", server_log_normversion, map_id, "tempid", npc_id, spawn_id, array_idx, guid.A, guid.B, bornpos.x, bornpos.y, bornpos.z));
 #endif
 	}
 	void server_log::find_npc_log(int32 map_id, int32 npc_id, int32 spawn_id, int32 array_idx, guid_64 guid, fvector bornpos)
 	{
 #ifdef SHOW_SERVER_LOG
-		CONSOLE_INFO("{} {} {} {} {} {} {} {} {} {} {} {}"
-			,server_common_head,"npcaoierror",server_log_normversion,map_id,"tempid",npc_id,spawn_id,array_idx,guid.server_64,bornpos.x,bornpos.y,bornpos.z
-			);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("{} {} {} {} {} {} {} {} {} {} {} {}", server_common_head, "npcaoierror", server_log_normversion, map_id, "tempid", npc_id, spawn_id, array_idx, guid.server_64, bornpos.x, bornpos.y, bornpos.z));
 #endif
 	}
 
 	void server_log::dump_npc_log(int32 map_id, int32 npc_id, int32 spawn_id, int32 array_idx, guid_64 guid, fvector bornpos, int32 line_id)
 	{
 #ifdef SHOW_SERVER_LOG
-		CONSOLE_INFO("{} {} {} {} {} {} {} {} {} {} {} {}"
-			,server_common_head,"npcdump",server_log_normversion,map_id,npc_id,spawn_id,array_idx,guid.server_64,bornpos.x,bornpos.y,bornpos.z,line_id
-		);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("{} {} {} {} {} {} {} {} {} {} {} {}", server_common_head, "npcdump", server_log_normversion, map_id, npc_id, spawn_id, array_idx, guid.server_64, bornpos.x, bornpos.y, bornpos.z, line_id));
 #endif
 	}
 
@@ -3740,19 +3735,19 @@ namespace faith
 	{
 #ifdef SHOW_SERVER_LOG
 
-		CONSOLE_INFO("msgheader:{} msg_num:{} msg_size:{}", msg_header, msg_num, msg_size);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("msgheader:{} msg_num:{} msg_size:{}",  msg_header,  msg_num,  msg_size));
 #endif
 	}
 	void server_log::dump_msg_info_client(int32 msg_header, int32 msg_num, int64 msg_size)
 	{
 #ifdef SHOW_SERVER_LOG
-		CONSOLE_INFO("msgheader:{} msg_num:{} msg_size:{}", msg_header, msg_num, msg_size);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("msgheader:{} msg_num:{} msg_size:{}",  msg_header,  msg_num,  msg_size));
 #endif
 	}
 	void server_log::message_minor_header_verstion_error(int32 server_verstion, int32 client_verstion)
 	{
 #ifdef SHOW_SERVER_LOG
-		CONSOLE_INFO("serververstion:{} clientverstion:{}", server_verstion, client_verstion);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("serververstion:{} clientverstion:{}",  server_verstion,  client_verstion));
 #endif
 	}
 

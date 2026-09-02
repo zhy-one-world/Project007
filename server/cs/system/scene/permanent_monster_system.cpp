@@ -1,4 +1,4 @@
-#include "permanent_monster_system.h"
+﻿#include "permanent_monster_system.h"
 #include "components/scene/permanent_monster_component.h"
 #include "server_log.hpp"
 #include "logic/unit_man.h"
@@ -6,6 +6,7 @@
 #include "logic/scene/npc_spawner.h"
 #include "logic/scene/map_cs.h"
 #include "logic/npc.hpp"
+#include <rlog.hpp>
 
 using namespace faith;
 
@@ -33,7 +34,7 @@ void permanent_monster_system::start_up(Entity* map_ent, int32 spawn_point_id)
 		next_spawn_id = npc_spawn_point_template_ptr->NextSpawnNpcId;
 		if (next_spawn_id <= npc_spawn_id)
 		{
-			CONSOLE_INFO("spawn npc end npc_spawn_id:{} next_spawn_id:{}", npc_spawn_id, next_spawn_id);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("spawn npc end npc_spawn_id:{} next_spawn_id:{}",  npc_spawn_id,  next_spawn_id));
 			break;
 		}
 		if (npc_spawn_point_template_ptr->MapId != map_template_id)

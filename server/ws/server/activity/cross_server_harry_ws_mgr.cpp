@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
   created: 2019年4月4日
   file base: cross_server_harry_ws_mgr
   file ext: cpp
@@ -27,6 +27,7 @@
 #include "base/ecs_world.h"
 #include "game.pb.h"
 #include "net.pb.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -1449,7 +1450,7 @@ namespace faith
 						break;
 					}
 					cs_map_mgr_system::send_harry_player(harry_map_id, m_player_info_array[i], i);
-					CONSOLE_INFO("create_harry_player guid:{} rank:{} ", m_player_info_array[i].guid.server_64, i);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("create_harry_player guid:{} rank:{} ",  m_player_info_array[i].guid.server_64,  i));
 				}
 			}
 		}

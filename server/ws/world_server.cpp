@@ -66,6 +66,7 @@
 #include "server/arena/arena_mgr_ws.h"
 #include "server/login_role/login_role_mgr.h"
 #include "net.pb.h"
+#include <rlog.hpp>
 namespace faith
 {
 	world_server::world_server(void)
@@ -139,7 +140,7 @@ namespace faith
 		{
 			server_id_arr = server_id_arr + to_string(it->second.server_id) + ",";
 		}
-		CONSOLE_INFO("add_server_now_server_id :{}", server_id_arr);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("add_server_now_server_id :{}",  server_id_arr));
 	}
 
 	void world_server::set_gate_server_config(const s_game_info & game_info)
@@ -194,7 +195,7 @@ namespace faith
 		{
 			server_id_arr = server_id_arr + to_string(it->second.server_id) + ",";
 		}
-		CONSOLE_INFO("remove_end_now_server_id :{}", server_id_arr);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("remove_end_now_server_id :{}",  server_id_arr));
 	}
 
 	void world_server::clear_all_server_config()
@@ -415,7 +416,7 @@ namespace faith
 		recharge_mgr_ws::get_instance().init_manager();
 		element_war_ws_mgr::get_instance().init_manager();
 		attack_city_ws_mgr::get_instance().init_manager();
-		CONSOLE_INFO("ws start ok");
+		_RLOG_(MINFO, "ws start ok");
 	}
 	bool world_server::set_begin_time(const int32 begin_time)
 	{
@@ -928,38 +929,34 @@ namespace faith
 
 			if (m_gm_state)
 			{
-				CONSOLE_INFO("==========ws gm server status==========");
+				_RLOG_(MINFO, "==========ws gm server status==========");
 			}
 			else
 			{
-				CONSOLE_INFO("==========ws server status==========");
+				_RLOG_(MINFO, "==========ws server status==========");
 			}
 			if (globle_data::get_instance().get_version_template_ptr())
 			{
-				CONSOLE_INFO("res svn code : {}", globle_data::get_instance().get_version_template_ptr()->Version);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("res svn code : {}",  globle_data::get_instance().get_version_template_ptr()->Version));
 			}
 			faith::int32 dp_num = net_client_mgr::getInstance().get_server_count(e_server_type_dp);
 			faith::int32 fep_num = net_server_mgr::getInstance().get_server_count(e_server_type_fep);
 			faith::int32 gate_num = net_client_mgr::getInstance().get_server_count(e_server_type_gate);
 			faith::int32 cs_num = net_server_mgr::getInstance().get_server_count(e_server_type_cs);
-			CONSOLE_INFO(
-				"dp {}/{} cs {}/{} fep {}/{} gate {}/{}",dp_num, SERVER_DP_COUNT
-				,cs_num, SERVER_CS_COUNT
-				,fep_num, SERVER_FEP_COUNT
-				,gate_num, SERVER_GATE_COUNT);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("dp {}/{} cs {}/{} fep {}/{} gate {}/{}", dp_num,  SERVER_DP_COUNT, cs_num,  SERVER_CS_COUNT, fep_num,  SERVER_FEP_COUNT, gate_num,  SERVER_GATE_COUNT));
 			int32 session_count = client_session_mgr::getInstance().get_session_num();
-			CONSOLE_INFO("session num:{} session max:{}", session_count, init_session_max);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("session num:{} session max:{}",  session_count,  init_session_max));
 
 			int32 seesion_online_counter = queued_login_mgr::getInstance().get_online_counter();
 			int32 seesion_queue_length = queued_login_mgr::getInstance().get_queue_length();
-			CONSOLE_INFO("seesion_online_counter:{} seesion_queue_length:{}", seesion_online_counter, seesion_queue_length);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("seesion_online_counter:{} seesion_queue_length:{}",  seesion_online_counter,  seesion_queue_length));
 
 
 			int32 queue_count = queued_login_mgr::getInstance().get_queue_length();
 			int32 in_game_count = client_session_mgr::getInstance().get_game_num();
-			CONSOLE_INFO("queue_count num:{} in_game_count:{}", queue_count, in_game_count);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("queue_count num:{} in_game_count:{}",  queue_count,  in_game_count));
 			//cs_map_mgr_system::show_big_map_unit_num();
-			CONSOLE_INFO("tick:{}", heart_beat_log_timer / loop_counter);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("tick:{}",  heart_beat_log_timer / loop_counter));
 			server_log::heart_beat_role_log(SERVERCONFIG->app_key, server_header_verstion, get_server_id(), session_count, queued_login_mgr::getInstance().get_queue_length());
 			heart_beat_log_timer = 0;
 			loop_counter = 0;
@@ -996,13 +993,13 @@ namespace faith
 					m_channel_count[it->first].m_time_role_count[minute_2] = it->second;
 				}
 			}
-			CONSOLE_INFO("ws loading flag:{}", m_ws_loading_flag);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("ws loading flag:{}",  m_ws_loading_flag));
 		}
 
 		int32 session_count = client_session_mgr::getInstance().get_session_num();
 		if (daemon_client::getInstance().get_server_close() && session_count == 0)
 		{
-			CONSOLE_INFO("all fep close, all player offline, please shutdown ws");
+			_RLOG_(MINFO, "all fep close, all player offline, please shutdown ws");
 			app_server::getInstance().stop();
 		}
 		daemon_client::getInstance().heart_tick(time_now);
@@ -1013,7 +1010,7 @@ namespace faith
 
 	void world_server::set_flag_when_one_min_start()
 	{
-		CONSOLE_INFO("ws flag error ={}", m_ws_loading_flag );
+		_RLOG_(MINFO, ::faith::log_detail::format_message("ws flag error ={}",  m_ws_loading_flag));
 		//m_ws_loading_flag = 0;
 		//send_msg_to_cs_with_load_end();
 	}
@@ -1059,7 +1056,7 @@ namespace faith
 			{
 				server_id_arr = server_id_arr + to_string(it->second.server_id) + ",";
 			}
-			CONSOLE_INFO("end_refresh_server_list_server_id :{}", server_id_arr);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("end_refresh_server_list_server_id :{}",  server_id_arr));
 			if (is_same_server_list())
 			{
 				return;
@@ -1187,7 +1184,7 @@ namespace faith
 		if (m_is_begin_reload_csv)
 		{
 			m_is_begin_reload_csv = false;
-			CONSOLE_INFO("m_is_begin_reload_csv_end");
+			_RLOG_(MINFO, "m_is_begin_reload_csv_end");
 			if (m_server_id != get_gate_server_id())
 			{
 				server2gate_reload_csv_end msg;
@@ -1204,11 +1201,11 @@ namespace faith
 
 	void world_server::reload_csv_func()
 	{
-		CONSOLE_INFO("ws reload_csv_func begin");
+		_RLOG_(MINFO, "ws reload_csv_func begin");
 		m_is_begin_reload_csv = true;
 		if (m_is_begin_cs_reload_csv)
 		{
-			CONSOLE_INFO("cs_is_in_reload_csv");
+			_RLOG_(MINFO, "cs_is_in_reload_csv");
 			return;
 		}
 		if (get_gate_server_id() == m_server_id)
@@ -1507,7 +1504,7 @@ namespace faith
 		}
 
 		daemon_client::getInstance().set_server_close(true);
-		CONSOLE_INFO("FaithEye Stop Game!");
+		_RLOG_(MINFO, "FaithEye Stop Game!");
 	}
 
 	void world_server::gm_order_from_daemon(const void* data_ptr, size_t data_len)
@@ -1519,7 +1516,7 @@ namespace faith
 			web_client::get_instance().gm_order_end(e_http_error_code_proto_parse_failed, "msg is error", temp_callback_info);
 			return;
 		}
-		CONSOLE_INFO("gm_json_string:{} server_id:{}", request.gm_string(), request.server_id());
+		_RLOG_(MINFO, ::faith::log_detail::format_message("gm_json_string:{} server_id:{}",  request.gm_string(),  request.server_id()));
 
 
 		temp_callback_info.listen_port = request.listen_port();

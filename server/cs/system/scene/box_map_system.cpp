@@ -1,4 +1,4 @@
-#include "base_map_system.h"
+﻿#include "base_map_system.h"
 #include "box_map_system.h"
 #include "components/npc/box_award_component.h"
 #include "components/scene/base_map_component.h"
@@ -15,6 +15,7 @@
 #include "system/npc/treasure_pic_system.h"
 #include "template/template_manager.h"
 #include "utility/random.h"
+#include <rlog.hpp>
 
 using namespace faith;
 
@@ -507,7 +508,7 @@ int64 box_map_system::get_next_award_npc(Entity* map_ent, player* player_ptr)
 	auto box_map_cp = map_ent->get_component<box_map_component>();
 	if (false == box_map_cp.isValid())
 	{
-		CONSOLE_INFO("box_map_cp is null");
+		_RLOG_(MINFO, "box_map_cp is null");
 		return 0;
 	}
 
@@ -543,7 +544,7 @@ int64 box_map_system::get_next_award_npc(Entity* map_ent, player* player_ptr)
 		auto& npc_ref = unit_man::get_npc(it);
 		if (npc_ref.m_box_award_component && npc_ref.m_box_award_component->m_can_get_award)
 		{
-			CONSOLE_INFO("npc_guid:{} npc_index:{} spawn_id:{}", npc_ref.get_unit_guid().server_64, npc_ref.get_array_index(), npc_ref.get_spawn_point_id());
+			_RLOG_(MINFO, ::faith::log_detail::format_message("npc_guid:{} npc_index:{} spawn_id:{}",  npc_ref.get_unit_guid().server_64,  npc_ref.get_array_index(),  npc_ref.get_spawn_point_id()));
 			return npc_ref.get_unit_guid().server_64;
 		}
 	}
@@ -561,7 +562,7 @@ int64 box_map_system::get_next_award_npc(Entity* map_ent, player* player_ptr)
 				map_record_ptr->set_data_info(e_role_box_map_special_refrush_compensate, 0);
 				map_record_ptr->set_data_info(e_role_box_map_special_open_compensate, 0);
 				npc_ref.m_box_award_component->m_can_get_award = true;
-				CONSOLE_INFO("npc_guid:{} npc_index:{} spawn_id:{}", npc_ref.get_unit_guid().server_64, npc_ref.get_array_index(), npc_ref.get_spawn_point_id());
+				_RLOG_(MINFO, ::faith::log_detail::format_message("npc_guid:{} npc_index:{} spawn_id:{}",  npc_ref.get_unit_guid().server_64,  npc_ref.get_array_index(),  npc_ref.get_spawn_point_id()));
 				return npc_ref.get_unit_guid().server_64;
 			}
 		}
@@ -577,7 +578,7 @@ int64 box_map_system::get_next_award_npc(Entity* map_ent, player* player_ptr)
 			{
 				map_record_ptr->set_data_info(e_role_box_map_big_open_compensate, 0);
 				npc_ref.m_box_award_component->m_can_get_award = true;
-				CONSOLE_INFO("npc_guid:{} npc_index:{} spawn_id:{}", npc_ref.get_unit_guid().server_64, npc_ref.get_array_index(), npc_ref.get_spawn_point_id());
+				_RLOG_(MINFO, ::faith::log_detail::format_message("npc_guid:{} npc_index:{} spawn_id:{}",  npc_ref.get_unit_guid().server_64,  npc_ref.get_array_index(),  npc_ref.get_spawn_point_id()));
 				return npc_ref.get_unit_guid().server_64;
 			}
 		}
@@ -593,7 +594,7 @@ int64 box_map_system::get_next_award_npc(Entity* map_ent, player* player_ptr)
 				map_record_ptr->set_data_info(e_role_box_map_middle_open_compensate, 0);
 				map_record_ptr->add_data_info(e_role_box_map_special_open_compensate, box_map_cp->m_box_map_template->SpecialBoxOpen);
 				npc_ref.m_box_award_component->m_can_get_award = true;
-				CONSOLE_INFO("npc_guid:{} npc_index:{} spawn_id:{}", npc_ref.get_unit_guid().server_64, npc_ref.get_array_index(), npc_ref.get_spawn_point_id());
+				_RLOG_(MINFO, ::faith::log_detail::format_message("npc_guid:{} npc_index:{} spawn_id:{}",  npc_ref.get_unit_guid().server_64,  npc_ref.get_array_index(),  npc_ref.get_spawn_point_id()));
 				return npc_ref.get_unit_guid().server_64;
 			}
 		}
@@ -608,7 +609,7 @@ int64 box_map_system::get_next_award_npc(Entity* map_ent, player* player_ptr)
 			{
 				map_record_ptr->add_data_info(e_role_box_map_middle_open_compensate, box_map_cp->m_box_map_template->MiddleBoxOpen);
 				npc_ref.m_box_award_component->m_can_get_award = true;
-				CONSOLE_INFO("npc_guid:{} npc_index:{} spawn_id:{}", npc_ref.get_unit_guid().server_64, npc_ref.get_array_index(), npc_ref.get_spawn_point_id());
+				_RLOG_(MINFO, ::faith::log_detail::format_message("npc_guid:{} npc_index:{} spawn_id:{}",  npc_ref.get_unit_guid().server_64,  npc_ref.get_array_index(),  npc_ref.get_spawn_point_id()));
 				return npc_ref.get_unit_guid().server_64;
 			}
 		}
@@ -707,7 +708,7 @@ void box_map_system::get_npc_award(Entity* map_ent, player* player_ptr, e_award_
 	auto box_map_cp = map_ent->get_component<box_map_component>();
 	if (false == box_map_cp.isValid())
 	{
-		CONSOLE_INFO("box_map_cp is null");
+		_RLOG_(MINFO, "box_map_cp is null");
 		return;
 	}
 	auto base_map_cp = map_ent->get_component<base_map_component>();
@@ -731,7 +732,7 @@ npc* box_map_system::get_npc_by_level(Entity* map_ent, e_award_mark_level award_
 	auto box_map_cp = map_ent->get_component<box_map_component>();
 	if (false == box_map_cp.isValid())
 	{
-		CONSOLE_INFO("box_map_cp is null");
+		_RLOG_(MINFO, "box_map_cp is null");
 		return nullptr;
 	}
 	auto base_map_cp = map_ent->get_component<base_map_component>();
@@ -884,7 +885,7 @@ void box_map_system::clear_multiple_treasure(Entity* map_ent, player* player_ptr
 	auto box_map_cp = map_ent->get_component<box_map_component>();
 	if (false == box_map_cp.isValid())
 	{
-		CONSOLE_INFO("box_map_cp is null");
+		_RLOG_(MINFO, "box_map_cp is null");
 		return;
 	}
 	auto base_map_cp = map_ent->get_component<base_map_component>();
@@ -897,7 +898,7 @@ int64 box_map_system::open_treasure_pic(Entity* map_ent, player* player_ptr)
 	auto box_map_cp = map_ent->get_component<box_map_component>();
 	if (false == box_map_cp.isValid())
 	{
-		CONSOLE_INFO("box_map_cp is null");
+		_RLOG_(MINFO, "box_map_cp is null");
 		return 0;
 	}
 	if (box_map_cp->m_state != e_box_map_state_select_npc)
@@ -992,7 +993,7 @@ void box_map_system::map_settlement(Entity* map_ent)
 	auto box_map_cp = map_ent->get_component<box_map_component>();
 	if (false == box_map_cp.isValid())
 	{
-		CONSOLE_INFO("box_map_cp is null");
+		_RLOG_(MINFO, "box_map_cp is null");
 		return;
 	}
 	box_map_cp->m_state = e_box_map_state_end_map;

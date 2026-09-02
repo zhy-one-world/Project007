@@ -25,6 +25,7 @@ purpose:
 #include "server/mail/mail_event_ws.h"
 #include "server/legion/legion_ws_mgr.h"
 #include "net.pb.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -841,7 +842,7 @@ namespace faith
 			&& data_num < auction_clear_item_num_per_time)
 		{
 			m_is_force_clear_old_item = false;
-			CONSOLE_INFO("Server Merge Auction Clear Success, Please Wait 2 Minutes And Do Next Step");
+			_RLOG_(MINFO, "Server Merge Auction Clear Success, Please Wait 2 Minutes And Do Next Step");
 		}
 	}
 

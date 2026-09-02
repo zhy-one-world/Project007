@@ -1,4 +1,4 @@
-#include "base_map_system.h"
+﻿#include "base_map_system.h"
 #include "components/scene/base_map_component.h"
 #include "components/scene/element_map_component.h"
 #include "element_map_system.h"
@@ -12,6 +12,7 @@
 #include "system/item/item_system.h"
 #include "template/template_manager.h"
 #include "wave_monster_system.h"
+#include <rlog.hpp>
 
 using namespace faith;
 
@@ -309,7 +310,7 @@ void element_map_system::send_map_info(Entity* map_ent, player* player_ptr)
 	auto element_map_cp = map_ent->get_component<element_map_component>();
 	if (false == element_map_cp.isValid())
 	{
-		CONSOLE_INFO("element_map_cp is null");
+		_RLOG_(MINFO, "element_map_cp is null");
 		return;
 	}
 	//map_s2c_box_map_info msg;

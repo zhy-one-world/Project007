@@ -1,8 +1,9 @@
-#include "logic/unit_man.h"
+﻿#include "logic/unit_man.h"
 #include "server_log.hpp"
 #include "player_aoi_watch.h"
 #include "logic/player.hpp"
 #include "utility/init_unit.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -150,7 +151,7 @@ namespace faith
 		//	}
 		//	else
 		//	{
-		//		CONSOLE_INFO("header:{}", header);
+		//		_RLOG_(MINFO, ::faith::log_detail::format_message("header:{}",  header));
 		//	}
 		//}
 	}

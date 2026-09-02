@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2015/03/13
 	created:	13:3:2015   12:32
 	file base:	unit_man
@@ -22,6 +22,7 @@
 #include "server_log.hpp"
 #include "system/play/time_activity_system.h"
 #include "template/template_manager.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -547,7 +548,7 @@ namespace faith
 	void unit_man::save_all_player(e_logout_result logout_result)
 	{
 		ZoneScoped;
-		CONSOLE_INFO("unit_man::save_all_player logout_result = {}", (int32)logout_result);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("unit_man::save_all_player logout_result = {}",  (int32)logout_result));
 		if (m_save_all_begin)
 		{
 			return;

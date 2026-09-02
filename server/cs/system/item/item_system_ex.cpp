@@ -1,4 +1,4 @@
-#include "components/item/item_base_component.h"
+﻿#include "components/item/item_base_component.h"
 #include "components/item/item_manager_component.h"
 #include "internal/char_msg.hpp"
 #include "internet/item.pb.h"
@@ -12,6 +12,7 @@
 #include "logic/unit.hpp"
 #include "server_log.hpp"
 #include "template/template_manager.h"
+#include <rlog.hpp>
 
 using namespace faith;
 
@@ -141,7 +142,7 @@ void item_system::create_item_msg(item_s2s_item_data& msg, unit* unit_ptr, const
 		}
 	}
 	default:
-		CONSOLE_INFO("item_type is invalid item_id:{} item_type:{}", item_info.m_item_id, item_template->item_type);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("item_type is invalid item_id:{} item_type:{}",  item_info.m_item_id,  item_template->item_type));
 		break;
 	}
 }

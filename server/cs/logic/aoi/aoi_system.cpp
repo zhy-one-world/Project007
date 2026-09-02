@@ -1,10 +1,11 @@
-
+﻿
 #include "aoi_system.h"
 #include "aoi_set.h"
 #include "server_log.hpp"
 #include "logic/unit_man.h"
 #include "logic/player.hpp"
 #include "utility/init_unit.h"
+#include <rlog.hpp>
 
 using namespace faith;
 
@@ -73,7 +74,7 @@ void  aoi_system::send_message_aoi_all(unit_index_map& player_map, google::proto
 		//	g_aoi_msg.data_size = net_pro->ByteSize();
 		//	if (g_aoi_msg.data_size > packege_length_max)
 		//	{
-		//		CONSOLE_INFO("aoi_system::send_message_aoi_by_type packge is big data_size {}, header {}", g_aoi_msg.data_size, header);
+		//		_RLOG_(MINFO, ::faith::log_detail::format_message("aoi_system::send_message_aoi_by_type packge is big data_size {}, header {}",  g_aoi_msg.data_size,  header));
 		//		return;
 		//	}
 		//	if (net_pro->SerializeToArray(g_aoi_msg.data, sizeof(g_aoi_msg.data)))
@@ -82,7 +83,7 @@ void  aoi_system::send_message_aoi_all(unit_index_map& player_map, google::proto
 		//	}
 		//	else
 		//	{
-		//		CONSOLE_INFO("header {} ", header);
+		//		_RLOG_(MINFO, ::faith::log_detail::format_message("header {} ",  header));
 		//	}
 		//}
 	}
@@ -136,7 +137,7 @@ void aoi_system::send_message_aoi_all(Entity* map_ent, google::protobuf::Message
 	//	g_aoi_msg.data_size = net_pro->ByteSize();
 	//	if (g_aoi_msg.data_size > packege_length_max)
 	//	{
-	//		CONSOLE_INFO("aoi_system::send_message_aoi_by_type packge is big data_size = {} header = {}", g_aoi_msg.data_size, header);
+	//		_RLOG_(MINFO, ::faith::log_detail::format_message("aoi_system::send_message_aoi_by_type packge is big data_size = {} header = {}",  g_aoi_msg.data_size,  header));
 	//		return;
 	//	}
 	//	if (net_pro->SerializeToArray(g_aoi_msg.data, sizeof(g_aoi_msg.data)))
@@ -146,7 +147,7 @@ void aoi_system::send_message_aoi_all(Entity* map_ent, google::protobuf::Message
 	//	}
 	//	else
 	//	{
-	//		CONSOLE_INFO("header : {}", header);
+	//		_RLOG_(MINFO, ::faith::log_detail::format_message("header : {}",  header));
 	//	}
 	//}
 }
@@ -201,7 +202,7 @@ void aoi_system::send_message_aoi_by_type(Entity* map_ent, google::protobuf::Mes
 	//	g_aoi_msg.data_size = net_pro->ByteSize();
 	//	if (g_aoi_msg.data_size > packege_length_max)
 	//	{
-	//		CONSOLE_INFO("aoi_system::send_message_aoi_by_type packge is big data_size = {} header = {}", g_aoi_msg.data_size, header);
+	//		_RLOG_(MINFO, ::faith::log_detail::format_message("aoi_system::send_message_aoi_by_type packge is big data_size = {} header = {}",  g_aoi_msg.data_size,  header));
 	//		return;
 	//	}
 	//	if (net_pro->SerializeToArray(g_aoi_msg.data, sizeof(g_aoi_msg.data)))
@@ -211,7 +212,7 @@ void aoi_system::send_message_aoi_by_type(Entity* map_ent, google::protobuf::Mes
 	//	}
 	//	else
 	//	{
-	//		CONSOLE_INFO("header : {}", header);
+	//		_RLOG_(MINFO, ::faith::log_detail::format_message("header : {}",  header));
 	//	}
 	//}
 }

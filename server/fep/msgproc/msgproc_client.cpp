@@ -26,6 +26,7 @@
 #include "net.pb.h"
 #include <rlog.hpp>
 #include "character.pb.h"
+#include <net/scheduler.hpp>
 
 namespace faith
 {
@@ -42,9 +43,21 @@ namespace faith
 			client_session_ptr->get_conn_index(),
 			&server_ping,
 			e_msgindex_fep2c_ping);
-		_RLOG_(MDEBUG, "fep ping response sent, connindex:"
+		const uint32 session_thread = client_session_ptr->get_scheduler_thread_id();
+		const uint32 current_thread =
+			net::scheduler::getInstance().get_current_thread_id();
+		_RLOG_(MINFO, "fep ping response sent, connindex:"
 			<< client_session_ptr->get_conn_index()
+			<< " arrayindex:" << client_session_ptr->get_array_index()
+			<< " session_thread:" << session_thread
 			<< " client_time:" << client_time);
+		if (session_thread != current_thread)
+		{
+			_RLOG_(MWARN, "fep ping response thread mismatch, connindex:"
+				<< client_session_ptr->get_conn_index()
+				<< " session_thread:" << session_thread
+				<< " handler_thread:" << current_thread);
+		}
 	}
 
 	void c2fep_ping(uint32 array_index,const void *data_ptr,size_t data_len)
@@ -56,7 +69,23 @@ namespace faith
 		{
 			return;
 		}
-		
+
+		const uint32 session_thread = client_session_ptr->get_scheduler_thread_id();
+		const uint32 current_thread =
+			net::scheduler::getInstance().get_current_thread_id();
+		_RLOG_(MINFO, "fep ping received, connindex:"
+			<< client_session_ptr->get_conn_index()
+			<< " arrayindex:" << array_index
+			<< " session_thread:" << session_thread
+			<< " client_time:" << ping_msg.client_time());
+		if (session_thread != current_thread)
+		{
+			_RLOG_(MWARN, "fep ping receive thread mismatch, connindex:"
+				<< client_session_ptr->get_conn_index()
+				<< " session_thread:" << session_thread
+				<< " handler_thread:" << current_thread);
+		}
+
 		client_session_ptr->refresh_heart_beat();
 		fep2c_ping(client_session_ptr.get(), ping_msg.client_time());
 	}

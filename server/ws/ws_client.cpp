@@ -27,6 +27,7 @@
 #include "cross_group/gate_proxy.hpp"
 #include "net/message_manager.hpp"
 #include "utility/serialize_msg.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -201,7 +202,7 @@ namespace faith
 	{
 		if (msg_len > INTERNAL_SERVER_MAX_PACKET_SIZE || header <= 0)
 		{
-			CONSOLE_INFO("header:{} len:{}", header, msg_len);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("header:{} len:{}",  header,  msg_len));
 			return;
 		}
 		m_ws2dp_msg.wheader = header;

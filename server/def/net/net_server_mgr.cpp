@@ -22,6 +22,7 @@
 #include "server_log.hpp"
 #include "message_manager.hpp"
 #include "utility/random.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -166,13 +167,13 @@ namespace faith
 		if (nullptr == m_tcpserver_ptr)
 		{
 			const packet_c2s_s2c* packet_ptr = (packet_c2s_s2c*)data_ptr;
-			CONSOLE_INFO("connection_server::send_by_gate tcp_server is null  header = {}", packet_ptr->wheader);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("connection_server::send_by_gate tcp_server is null  header = {}",  packet_ptr->wheader));
 			return false;
 		}
 		if (m_gate_count <= 0)
 		{
 			const packet_c2s_s2c* packet_ptr = (packet_c2s_s2c*)data_ptr;
-			CONSOLE_INFO("connection_server::send_by_gate m_gate_count is 0 m_gate_count = {} header = {}", m_gate_count, packet_ptr->wheader);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("connection_server::send_by_gate m_gate_count is 0 m_gate_count = {} header = {}",  m_gate_count,  packet_ptr->wheader));
 			return false;
 		}
 		int32 gate_rand = random_gen::get_random(0, m_gate_count);
@@ -235,7 +236,7 @@ namespace faith
 
 	void net_server_mgr::handler_serverstatus(tcp_server::e_server_status_type status)
 	{
-		CONSOLE_INFO(" status = {}", (int32)status);
+		_RLOG_(MINFO, ::faith::log_detail::format_message(" status = {}",  (int32)status));
 		if(status == tcp_server::e_ss_all_connection_closed)
 		{
 			delete m_tcpserver_ptr;
@@ -245,7 +246,7 @@ namespace faith
 
 	void net_server_mgr::handler_onconnected(uint32 conn_index)
 	{
-		CONSOLE_INFO(" conn_index = {}", conn_index);
+		_RLOG_(MINFO, ::faith::log_detail::format_message(" conn_index = {}",  conn_index));
 		if (conn_index >= m_conn_num)
 		{
 			return;
@@ -266,7 +267,7 @@ namespace faith
 		{
 			return;
 		}
-		CONSOLE_INFO(" conn_index = {} type = {}", conn_index, (int32)faith_server_ref.get_server_type());
+		_RLOG_(MINFO, ::faith::log_detail::format_message(" conn_index = {} type = {}",  conn_index,  (int32)faith_server_ref.get_server_type()));
 		m_external_onclose_handler(&faith_server_ref);
 		faith_server_ref.clear_data();
 	}

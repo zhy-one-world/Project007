@@ -83,6 +83,7 @@
 #include <world_server_msg.hpp>
 #include "game.pb.h"
 #include "character.pb.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -3242,7 +3243,7 @@ namespace faith
 		legion_ws* rank_legion = legion_ws_mgr::get_instance().get_legion(packet->legion_guid);
 		if (nullptr == rank_legion)
 		{
-			CONSOLE_INFO("attack_city legion_reward legion_guid = nil");
+			_RLOG_(MINFO, "attack_city legion_reward legion_guid = nil");
 			return;
 		}
 		ActivityCommonConfigTemplate* config_ptr = GET_TEMPLATE(ActivityCommonConfigTemplate, first_activity_common_template_id + e_activity_type_attack_city);
@@ -3306,7 +3307,7 @@ namespace faith
 				legion_info.group_level = packet->group_level * attack_city_group_max_num + packet->info_list[i].group_level;
 				legion_info.winning_streak_num = 0;
 			}
-			CONSOLE_INFO("add_group_data legion_guid:{} rank:{} end_level:{}", legion_info.legion_guid.server_64, packet->info_list[i].group_level, legion_info.group_level);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("add_group_data legion_guid:{} rank:{} end_level:{}",  legion_info.legion_guid.server_64,  packet->info_list[i].group_level,  legion_info.group_level));
 			attack_city_ws_mgr::get_instance().save_group_data(legion_info);
 		}
 	}

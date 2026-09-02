@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
   created: 2014/08/09
   created: 9:8:2014 11:48
   file base: http_access_mgr
@@ -10,6 +10,7 @@
 #include "http_access_mgr.hpp"
 #include "json/json.h"
 #include "server_log.hpp"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -46,7 +47,7 @@ namespace faith
 	}
 	void http_access_mgr::start_listen_http(int32 listen_port, http_server_callback_type call_back)
 	{
-		CONSOLE_INFO("http listen success port :{}", listen_port);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("http listen success port :{}",  listen_port));
 		http_accessor::getInstance().start_listen(listen_port, call_back);
 	}
 	void http_access_mgr::repose_client_req(int64 handle_index, int32 error_code, xstring error_msg)

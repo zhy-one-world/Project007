@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
   created: 2019年6月11日
   file base: cross_server_city_war_ws_mgr
   file ext: cpp
@@ -24,6 +24,7 @@
 #include "system/scene/cs_map_mgr_system.h"
 #include "system/scene/cs_map_system.h"
 #include "net.pb.h"
+#include <rlog.hpp>
 namespace faith
 {
 	cross_server_city_war_ws_mgr::cross_server_city_war_ws_mgr()
@@ -311,7 +312,7 @@ namespace faith
 			}
 			if (!world_server::getInstance().is_have_this_server(m_city_war_all_legion_info[cur_idex].server_id))
 			{
-				CONSOLE_INFO("cross_server_city_war_ws_mgr_del_legion :{} legion_guid:{}", m_city_war_all_legion_info[cur_idex].server_id, m_city_war_all_legion_info[cur_idex].legion_guid.server_64);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("cross_server_city_war_ws_mgr_del_legion :{} legion_guid:{}",  m_city_war_all_legion_info[cur_idex].server_id,  m_city_war_all_legion_info[cur_idex].legion_guid.server_64));
 				refresh_rank_with_del_legion(m_city_war_all_legion_info[cur_idex].legion_guid);
 			}
 			else
@@ -413,7 +414,7 @@ namespace faith
 		}
 		if (first_empty_num < 0 || first_empty_num < (max_cross_server_all_city_num - empty_num))
 		{
-			CONSOLE_INFO("cross_server_city_war_ws_mgr first_empty_num:{}", first_empty_num);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("cross_server_city_war_ws_mgr first_empty_num:{}",  first_empty_num));
 			return;
 		}
 		ranking_list* cur_ranking_list_ptr = nullptr;
@@ -489,7 +490,7 @@ namespace faith
 		for (int32 i = 0; i < member_num; i++)
 		{
 			m_all_legion_member_info[empty_idex].all_member_guid[i] = legion_all_member[i];
-			CONSOLE_INFO("set_legion_all_member_list legion_guid:{} num:{} role_guid:{}", legion_guid.server_64, i, m_all_legion_member_info[empty_idex].all_member_guid[i].server_64);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("set_legion_all_member_list legion_guid:{} num:{} role_guid:{}",  legion_guid.server_64,  i,  m_all_legion_member_info[empty_idex].all_member_guid[i].server_64));
 		}
 
 	}
@@ -512,7 +513,7 @@ namespace faith
 	{
 		if (cross_city_idex >= max_cross_server_city_group_num || cross_city_idex < 0)
 		{
-			CONSOLE_INFO("cross_city_idex:{}", cross_city_idex);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("cross_city_idex:{}",  cross_city_idex));
 			return;
 		}
 		m_city_war_map_end[cross_city_idex] = true;
@@ -704,7 +705,7 @@ namespace faith
 					int32 empty_idex = 0;
 					for (int32 i = 0; i < max_legion_member_num; i++)
 					{
-						CONSOLE_INFO("send_legion_reward_with_rank legion_guid:{} server_id:{} role_guid:{}", m_city_war_all_legion_info[i].legion_guid.server_64, m_city_war_all_legion_info[i].server_id, m_all_legion_member_info[cur_legion_idex].all_member_guid[i].server_64);
+						_RLOG_(MINFO, ::faith::log_detail::format_message("send_legion_reward_with_rank legion_guid:{} server_id:{} role_guid:{}",  m_city_war_all_legion_info[i].legion_guid.server_64,  m_city_war_all_legion_info[i].server_id,  m_all_legion_member_info[cur_legion_idex].all_member_guid[i].server_64));
 						if (!m_all_legion_member_info[cur_legion_idex].all_member_guid[i].is_valid() || empty_idex >= max_legion_member_num)
 						{
 							continue;

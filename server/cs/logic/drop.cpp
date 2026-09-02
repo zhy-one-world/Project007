@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 created: 2016/04/13
 created: 14:7:2014 19:40
 file base: drop
@@ -12,6 +12,7 @@ purpose:
 #include "template/template_manager.h"
 #include "server_log.hpp"
 #include "utility/random.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -470,7 +471,7 @@ namespace faith
 		if (choosed_item_index < 0)
 		{
 			//没随到，啥都不干
-			CONSOLE_INFO("random empty item. drop_template_id:{}, choosed_item_index:{}, total_weight:{} random_value:{} cur_weight:{}", drop_template_id, choosed_item_index, total_weight, random_value, cur_weight);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("random empty item. drop_template_id:{}, choosed_item_index:{}, total_weight:{} random_value:{} cur_weight:{}",  drop_template_id,  choosed_item_index,  total_weight,  random_value,  cur_weight));
 			return;
 		}
 

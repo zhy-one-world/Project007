@@ -83,6 +83,7 @@ purpose:
 #include <Logic/item_def.hpp>
 #include <Logic/time_def.hpp>
 #include <memory>
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -706,7 +707,7 @@ namespace faith
 
 		if (m_status != e_session_status_client_loading)
 		{
-			CONSOLE_INFO("player::put_in_scene m_status = {}", (int32)m_status);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("player::put_in_scene m_status = {}",  (int32)m_status));
 			return cs2ws_enter_scene::e_enter_ret_player_err;
 		}
 
@@ -4699,7 +4700,7 @@ namespace faith
 			for (int32 i = e_role_history_highest_record_gs_value; i <= e_role_history_highest_record_spirit_value; i++)
 			{
 				int64 record_value = get_highest_record(i);
-				CONSOLE_INFO("player::heart_tick refresh_gs_up_start highest_record_type:{} value:{}", i, record_value);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("player::heart_tick refresh_gs_up_start highest_record_type:{} value:{}",  i,  record_value));
 				set_unit_i64_info_data((e_role_i64_info)(i - e_role_history_highest_record_gs_value + e_role_i64_info_history_best_gs_value), record_value);
 			}
 
@@ -5125,7 +5126,7 @@ namespace faith
 	{
 		ZoneScoped;
 		m_loading_flag.erase(flag);
-		CONSOLE_INFO("flag:{} loading_flag_size:{} time:{}", int32(flag), m_loading_flag.size(), utility::get_tick_count());
+		_RLOG_(MINFO, ::faith::log_detail::format_message("flag:{} loading_flag_size:{} time:{}",  int32(flag),  m_loading_flag.size(),  utility::get_tick_count()));
 		if (m_loading_flag.empty() == false)
 		{
 			return;
@@ -5137,7 +5138,7 @@ namespace faith
 		m_status = e_session_status_client_loading;
 		init_by_inst_data_over();
 
-		CONSOLE_INFO("player enter game end guid:{}, map guid:{}", get_unit_guid().server_64, get_map_guid().server_64);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("player enter game end guid:{}, map guid:{}",  get_unit_guid().server_64,  get_map_guid().server_64));
 
 		world_cs::player_load_data_over(get_map_ent(), this);
 		cs2ws_enter_game rep;
@@ -13107,7 +13108,7 @@ namespace faith
 			{
 				if (npc_id == 76000281)
 				{
-					CONSOLE_INFO("have same first kill npc id = {}", npc_id);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("have same first kill npc id = {}",  npc_id));
 				}
 				return true;
 			}

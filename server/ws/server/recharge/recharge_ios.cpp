@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
   created: 2018/09/08
   created: 8:9:2018 18:48
   file base: recharge_ios
@@ -13,6 +13,7 @@
 #include "md5/md5.h"
 #include <json/json.h>
 #include "server_log.hpp"
+#include <rlog.hpp>
 namespace faith
 {
 	void recharge_ios::req_recharge(const s_recharge_info& recharge_info)
@@ -46,7 +47,7 @@ namespace faith
 
 	void recharge_ios::on_recharge_result_handle(ui64 uid, uint32 http_error_code, const xstring& http_error_info, const xstring& http_result, const s_recharge_info& recharge_info)
 	{
-		CONSOLE_INFO("{}", http_result.c_str());
+		_RLOG_(MINFO, ::faith::log_detail::format_message("{}",  http_result.c_str()));
 
 		//{"receipt":
 		//			{"receipt_type":"Production", 
@@ -86,7 +87,7 @@ namespace faith
 
 		if (http_error_code != 0 || http_result.size() == 0)
 		{
-			CONSOLE_INFO(" http error:{}", http_error_info);
+			_RLOG_(MINFO, ::faith::log_detail::format_message(" http error:{}",  http_error_info));
 			recharge_mgr_ws::get_instance().send_recharge_end_result(e_recharge_error_http_verify_failed, 0, recharge_info.payment_type, recharge_info.role_guid, recharge_info.goods_id, "");
 			return;
 		}

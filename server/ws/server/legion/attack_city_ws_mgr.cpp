@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 created: 2021年9月23日
 file base: attack_city_ws_mgr
 file ext: cpp
@@ -25,6 +25,7 @@ purpose:
 #include "system/scene/cs_map_system.h"
 #include "game.pb.h"
 #include "net.pb.h"
+#include <rlog.hpp>
 namespace faith
 {
 	attack_city_ws_mgr::attack_city_ws_mgr()
@@ -146,12 +147,12 @@ namespace faith
 		{
 			save_rank_data_one(rank_info);
 		}
-		CONSOLE_INFO("add_rank_data legion_guid:{} role_guid:{} group_level:{} group_rank:{}", rank_info.legion_guid.server_64, rank_info.role_guid.server_64, rank_info.group_level, rank_info.group_rank);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("add_rank_data legion_guid:{} role_guid:{} group_level:{} group_rank:{}",  rank_info.legion_guid.server_64,  rank_info.role_guid.server_64,  rank_info.group_level,  rank_info.group_rank));
 	}
 
 	void attack_city_ws_mgr::save_rank_data_all(bool is_clear_dp)
 	{
-		CONSOLE_INFO("attack_city_ws save_rank_data_all");
+		_RLOG_(MINFO, "attack_city_ws save_rank_data_all");
 		if (is_clear_dp)
 		{
 			// 是否需要先清理数据库
@@ -211,7 +212,7 @@ namespace faith
 	}
 	void attack_city_ws_mgr::save_group_data_all(bool is_clear_dp)
 	{
-		CONSOLE_INFO("save_group_data_all");
+		_RLOG_(MINFO, "save_group_data_all");
 		if (is_clear_dp)
 		{
 			// 是否需要先清理数据库
@@ -254,7 +255,7 @@ namespace faith
 				CONSOLE_ERROR("attack_city_ws game_init create_error_code level = {}", i);
 				continue;
 			}
-			CONSOLE_INFO("attack_city_ws game_init create_map_succeed map_guid = {}", map_ent->getEntityId());
+			_RLOG_(MINFO, ::faith::log_detail::format_message("attack_city_ws game_init create_map_succeed map_guid = {}",  map_ent->getEntityId()));
 			m_map_guid_list[i] = map_ent->getEntityId();
 			msg.map_guid = m_map_guid_list[i];
 			world_server::getInstance().broadcast(&msg, sizeof(msg), e_server_type_cs);
@@ -309,7 +310,7 @@ namespace faith
 		ranking_list* ranking_list_ptr = ranking_mgr_ws::get_ranking_list_by_type(e_RankingIndex_legion_gs_all);
 		if (nullptr == ranking_list_ptr)
 		{
-			CONSOLE_INFO("attack_city_ws game_group ranking_list is_empty");
+			_RLOG_(MINFO, "attack_city_ws game_group ranking_list is_empty");
 			return;
 		}
 
@@ -371,13 +372,13 @@ namespace faith
 			// 设置分组排名
 			_info_list[i].group_level = i;
 			msg.legion_guid[i] = _info_list[i].legion_guid;
-			CONSOLE_INFO("attack_city_ws game_group level:{} legion_guid:{}", _info_list[i].group_level, _info_list[i].legion_guid.server_64);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("attack_city_ws game_group level:{} legion_guid:{}",  _info_list[i].group_level,  _info_list[i].legion_guid.server_64));
 		}
 		m_legion_info_list = _info_list;
 		m_tem_legion_info_list = _info_list;
 		// 保存分组记录
 		save_group_data_all(true);
-		CONSOLE_INFO("attack_city_ws game_group succeed");
+		_RLOG_(MINFO, "attack_city_ws game_group succeed");
 		cross::send_msg_to_ws(guid_64(), 0, e_msgindex_ws2ws_send_attack_city_group_mail, &msg, sizeof(msg));
 	}
 	void attack_city_ws_mgr::tem_game_group()
@@ -679,7 +680,7 @@ namespace faith
 			// 判断服务器是否有效
 			if (!world_server::getInstance().is_have_this_server(m_legion_info_list[i].server_id))
 			{
-				CONSOLE_INFO("attack_city_ws refresh_del_legion:{} legion_guid:{}", m_legion_info_list[i].server_id, m_legion_info_list[i].legion_guid.server_64);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("attack_city_ws refresh_del_legion:{} legion_guid:{}",  m_legion_info_list[i].server_id,  m_legion_info_list[i].legion_guid.server_64));
 			}
 			else
 			{
@@ -803,7 +804,7 @@ namespace faith
 		client_session* session_ptr = client_session_mgr::getInstance().get_session(role_guid);
 		if (nullptr == session_ptr)
 		{
-			CONSOLE_INFO("attack_city_ws transfer_error role_guid = {}", role_guid.server_64);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("attack_city_ws transfer_error role_guid = {}",  role_guid.server_64));
 			return;
 		}
 		e_error_code ret = (e_error_code)error_ret;

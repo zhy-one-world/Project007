@@ -36,6 +36,7 @@
 #include "serializer.hpp"
 #include "net/net_client_mgr.hpp"
 #include "net.pb.h"
+#include <rlog.hpp>
 
 //////////////////////////////////////////////////////////////////////////
 //	Macro And Struct Define
@@ -116,8 +117,8 @@ namespace faith
 			faith::int32 cs_num = net_server_mgr::getInstance().get_server_count(e_server_type_cs);
 			faith::int32 gate_num = net_server_mgr::getInstance().get_server_count(e_server_type_gate);
 			faith::int32 gate_client_num = net_client_mgr::getInstance().get_server_count(e_server_type_gate);
-			CONSOLE_INFO("ws:{} dp:{} cs:{} gate:{}", ws_num, dp_num, cs_num, gate_num + gate_client_num);
-			CONSOLE_INFO("tick:{}", (time_now - tick_time) / loop_counter);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("ws:{} dp:{} cs:{} gate:{}",  ws_num,  dp_num,  cs_num,  gate_num + gate_client_num));
+			_RLOG_(MINFO, ::faith::log_detail::format_message("tick:{}",  (time_now - tick_time) / loop_counter));
 			last_log_time = time_now + server_console_time;
 			tick_time = time_now;
 			loop_counter = 0;
@@ -133,7 +134,7 @@ namespace faith
 		if (daemon_client::getInstance().get_server_close())
 		{
 			// 输出信息
-			CONSOLE_INFO("daemon close, all player offline, please shutdown gate ! ! !");
+			_RLOG_(MINFO, "daemon close, all player offline, please shutdown gate ! ! !");
 			stop();
 			app_server::getInstance().stop();
 			return;
@@ -141,7 +142,7 @@ namespace faith
 	}
 	void game_mgr::on_conn_closed(const net_server* faith_server_ptr)
 	{
-		CONSOLE_INFO(" session close, connindex: {}", faith_server_ptr->get_conn_index());
+		_RLOG_(MINFO, ::faith::log_detail::format_message(" session close, connindex: {}",  faith_server_ptr->get_conn_index()));
 		del_game_server(faith_server_ptr->get_conn_index());
 	}
 
@@ -152,7 +153,7 @@ namespace faith
 		{
 			return;
 		}
-		CONSOLE_INFO("connindex:{} ip_addr:{} port:{} server_type:{} server_index:{}", connindex,  msg->server_info.ip_addr, msg->server_info.port, (int32)msg->server_info.server_type, msg->server_info.server_index);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("connindex:{} ip_addr:{} port:{} server_type:{} server_index:{}",  connindex,   msg->server_info.ip_addr,  msg->server_info.port,  (int32)msg->server_info.server_type,  msg->server_info.server_index));
 		if (msg->server_info.server_type >= e_server_type_max)
 		{
 			return;
@@ -201,7 +202,7 @@ namespace faith
 			return;
 		}
 		app_server::getInstance().stop();
-		CONSOLE_INFO("FaithEye Stop Game!");
+		_RLOG_(MINFO, "FaithEye Stop Game!");
 	}
 	void game_mgr::last_server_reload_csv_all()
 	{
@@ -219,7 +220,7 @@ namespace faith
 					msg.need_reload = 1;
 					send_to_server(&msg, sizeof(msg), need_send_server_id, e_server_type_ws);
 					//查看剩哪些服务器没有reloadcsv
-					CONSOLE_INFO("last_server_reload_csv_all! need_send_server_id:{}", need_send_server_id);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("last_server_reload_csv_all! need_send_server_id:{}",  need_send_server_id));
 				}
 				ite = server_ite->second.erase(ite);
 			}
@@ -232,7 +233,7 @@ namespace faith
 		{
 			return;
 		}
-		CONSOLE_INFO("on_server_need_reload_csv_begin!");
+		_RLOG_(MINFO, "on_server_need_reload_csv_begin!");
 		m_cur_server_msg_with_ip.clear();
 		m_begin_reload_csv_time = get_tick_count();
 		m_cur_server_msg_with_ip = m_all_server_msg_with_ip;
@@ -249,7 +250,7 @@ namespace faith
 				gate2server_reload_csv msg;
 				msg.need_reload = 1;
 				send_to_server(&msg, sizeof(msg), need_send_server_id, e_server_type_ws);
-				CONSOLE_INFO("send_to_server_reload_csv need_send_server_id:{}", need_send_server_id);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("send_to_server_reload_csv need_send_server_id:{}",  need_send_server_id));
 				server_ite->second.erase(ite);
 			}
 		}
@@ -263,7 +264,7 @@ namespace faith
 		}
 		xstring ip_msg = packet->out_ip;
 		int32 server_id = packet->server_id;
-		CONSOLE_INFO("server_reload_csv_end server_id:{}", server_id);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("server_reload_csv_end server_id:{}",  server_id));
 		if (m_cur_server_msg_with_ip.find(ip_msg) == m_cur_server_msg_with_ip.end())
 		{
 			return;
@@ -293,7 +294,7 @@ namespace faith
 			gate2server_reload_csv msg;
 			msg.need_reload = 1;
 			send_to_server(&msg, sizeof(msg), next_server_id, e_server_type_ws);
-			CONSOLE_INFO("send_to_server_reload_csv next_server_id:{}", next_server_id);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("send_to_server_reload_csv next_server_id:{}",  next_server_id));
 		}
 
 	}
@@ -309,7 +310,7 @@ namespace faith
 		{
 			return;
 		}
-		CONSOLE_INFO("connindex:{} out_ip:{} out_port:{} server_id:{} cross_id:{} server_type:{} server_index:{}", connindex, packet->game_info.out_ip, packet->game_info.out_port, packet->game_info.server_id, packet->game_info.cross_id, (int32)packet->server_type, packet->server_index);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("connindex:{} out_ip:{} out_port:{} server_id:{} cross_id:{} server_type:{} server_index:{}",  connindex,  packet->game_info.out_ip,  packet->game_info.out_port,  packet->game_info.server_id,  packet->game_info.cross_id,  (int32)packet->server_type,  packet->server_index));
 		if (packet->game_info.cross_id > 0)
 		{
 			cross_mgr* cross_mgr_ptr = get_cross_server(packet->game_info.cross_id);
@@ -547,7 +548,7 @@ namespace faith
 		game_server* game_server_ptr = game_mgr::get_game_server(game_info.server_id);
 		if (nullptr == game_server_ptr)
 		{
-			CONSOLE_INFO("add_game_server id:{} server_type:{}", game_info.server_id, (int32)server_type);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("add_game_server id:{} server_type:{}",  game_info.server_id,  (int32)server_type));
 			game_server_ptr = new game_server();
 			m_game_server_map[game_info.server_id] = game_server_ptr;
 			m_conn_server_map[conn_index] = game_server_ptr;
@@ -563,14 +564,14 @@ namespace faith
 					if (m_all_server_msg_with_ip[game_info.out_ip][i] == game_info.server_id)
 					{
 						is_have = true;
-						CONSOLE_INFO("add_game_server fail server_id:{}", game_info.server_id);
+						_RLOG_(MINFO, ::faith::log_detail::format_message("add_game_server fail server_id:{}",  game_info.server_id));
 						break;
 					}
 				}
 				if (!is_have)
 				{
 					m_all_server_msg_with_ip[game_info.out_ip].push_back(game_info.server_id);
-					CONSOLE_INFO("add_game_server succeed server_id:{}", game_info.server_id);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("add_game_server succeed server_id:{}",  game_info.server_id));
 				}
 			}
 			/*if (game_info.server_id != m_gate_server_id)
@@ -609,7 +610,7 @@ namespace faith
 				if (server_id == *ite)
 				{
 					ite = m_all_server_msg_with_ip[out_ip].erase(ite);
-					CONSOLE_INFO("del_game_server id=:{}", server_id);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("del_game_server id=:{}",  server_id));
 				}
 				else
 				{

@@ -30,6 +30,7 @@
 #include "server/legion/legion_ws_mgr.h"
 #include "web.pb.h"
 #include "mail/mail_event_ws.h"
+#include <rlog.hpp>
 
 
 namespace faith
@@ -88,8 +89,8 @@ namespace faith
 	}
 	void web_client::handler_http_onrecv(const s_http_receive_info& receive_info)
 	{
-		CONSOLE_INFO(" http data:{}", receive_info.m_req_body);
-		CONSOLE_INFO(" http path:{}", receive_info.m_path);
+		_RLOG_(MINFO, ::faith::log_detail::format_message(" http data:{}",  receive_info.m_req_body));
+		_RLOG_(MINFO, ::faith::log_detail::format_message(" http path:{}",  receive_info.m_path));
 
 		if (receive_info.m_path == "/recharge")
 		{
@@ -141,7 +142,7 @@ namespace faith
 			temp_callback_info.listen_port = receive_info.m_req_listen_port;
 
 			xstring data_str = AESDataConvert::DecryptionAES(receive_info.m_req_body);
-			CONSOLE_INFO(" Aes End path:{}", data_str);
+			_RLOG_(MINFO, ::faith::log_detail::format_message(" Aes End path:{}",  data_str));
 			if (json_reader.parse(data_str, json_value) == false || json_value.isObject() == false)
 			{
 				gm_order_end_new(0, "json is error", temp_callback_info);
@@ -207,7 +208,7 @@ namespace faith
 					daemon_client::getInstance().set_server_close(true);
 					server_stop_msg.server_type = e_server_type_fep;
 					world_server::getInstance().send_to_fep_all(&server_stop_msg, sizeof(server_stop_msg));
-					CONSOLE_INFO("FaithEye Stop Game!");
+					_RLOG_(MINFO, "FaithEye Stop Game!");
 				}
 				break;
 				case e_server_type_fep:
@@ -243,7 +244,7 @@ namespace faith
 		msg.ParseFromArray(data_ptr, length);
 		int32 test = msg.biggroupid();
 		int32 test2 = msg.servergroupid();
-		CONSOLE_INFO("{} {}", test, test2);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("{} {}",  test,  test2));
 	}
 
 	void web_client::hanlde_json(const char* data_ptr, uint32 length)
@@ -254,7 +255,7 @@ namespace faith
 		}
 		faith::web_proto::json_str_http_to_ws msg;
 		msg.ParseFromArray(data_ptr, length);
-		CONSOLE_INFO(" gm_json_string : {}", msg.datastr());
+		_RLOG_(MINFO, ::faith::log_detail::format_message(" gm_json_string : {}",  msg.datastr()));
 		Json::Reader reader;
 		Json::Value  json_value;
 		Json::FastWriter json_writer;
@@ -899,8 +900,8 @@ namespace faith
 	}
 	void web_client::send_activate_code_end(ui64 http_id, uint32 http_error_code, const xstring& http_error_info, const xstring& http_result)
 	{
-		CONSOLE_INFO("http_error_info:{}", http_error_info);
-		CONSOLE_INFO("http_result:{}", http_result);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("http_error_info:{}",  http_error_info));
+		_RLOG_(MINFO, ::faith::log_detail::format_message("http_result:{}",  http_result));
 		guid_64 role_guid(http_id);
 
 		Json::Reader reader;
@@ -3618,7 +3619,7 @@ namespace faith
 	{
 		if (server_info_type < e_server_info_type_begin_cross_server_time || server_info_type >= e_server_info_type_max)
 		{
-			CONSOLE_INFO("send_server_info_arr_with_type error: gm type begin_cross_server_time");
+			_RLOG_(MINFO, "send_server_info_arr_with_type error: gm type begin_cross_server_time");
 			return;//禁止GM指令修改开始跨服时间
 		}
 		world_server::getInstance().set_server_info_arr(server_info_value, server_info_type);
@@ -4276,7 +4277,7 @@ namespace faith
 		}
 		xstring aes_end = AES::aes_128_ecb_decrypt(base_end, key_str);
 
-		CONSOLE_INFO("http ase:{}", aes_end);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("http ase:{}",  aes_end));
 
 		if (!json_reader.parse(aes_end, json_value) || json_value.empty() || !json_value.isObject())
 		{

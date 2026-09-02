@@ -23,6 +23,7 @@
 #include "world_server.hpp"
 #include "game_cfg/servers_config.h"
 #include "server_log.hpp"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -75,7 +76,7 @@ namespace faith
 
 	void gate_proxy::on_conn_closed(const net_client* faith_client_ptr)
 	{
-		CONSOLE_INFO("connindex:{}", faith_client_ptr->get_array_index());
+		_RLOG_(MINFO, ::faith::log_detail::format_message("connindex:{}",  faith_client_ptr->get_array_index()));
 		m_connIndex = INVALID_CONN_INDEX;
 		set_status(E_GATE_CLOSED);
 	}

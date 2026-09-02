@@ -27,6 +27,7 @@ purpose: about arena system's arena_mgr_ws
 #include "arena.pb.h"
 #include "time_def.hpp"
 #include "net.pb.h"
+#include <rlog.hpp>
 
 
 namespace faith
@@ -211,7 +212,7 @@ namespace faith
 			save_ranks_to_db();
 			
 			fill_num_string += "end \n";
-			CONSOLE_INFO("{}", fill_num_string.c_str());
+			_RLOG_(MINFO, ::faith::log_detail::format_message("{}",  fill_num_string.c_str()));
 		}
 	}
 

@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
   created: 2019/07/03
   file base: server_client
   file ext: cpp
@@ -15,6 +15,7 @@
 #include "server_log.hpp"
 #include "utility/init_unit.h"
 #include <net/scheduler.hpp>
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -60,7 +61,7 @@ namespace faith
 
 	void net_client::on_conn_status(tcp_client_session_ptr session, tcp_client::e_connect_info status, xstring info)
 	{
-		CONSOLE_INFO(" info = {} status = {}", info, (int32)status);
+		_RLOG_(MINFO, ::faith::log_detail::format_message(" info = {} status = {}",  info,  (int32)status));
 		switch (status)
 		{
 		case faith::net::tcp_client::e_ci_common_error:
@@ -123,9 +124,9 @@ namespace faith
 			boost::bind(&net_client::on_data_received,this,_1,_2,_3)
 			);
 		m_server_status = e_serverstatus_initialized;
-		CONSOLE_INFO(" server_type = {} ipaddr = {} port_name = {} session={}",
-			(int32)m_server_info.server_type, m_server_info.ip_addr, m_server_info.port,
-			m_session.get());
+		_RLOG_(MINFO, ::faith::log_detail::format_message(" server_type = {} ipaddr = {} port_name = {} session={}", 
+			(int32)m_server_info.server_type,  m_server_info.ip_addr,  m_server_info.port, 
+			m_session.get()));
 		return m_session != NULL;
 	}
 	bool net_client::start(const s_server_info& server_info,

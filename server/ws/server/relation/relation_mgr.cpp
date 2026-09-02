@@ -26,6 +26,7 @@
 #include "relation.pb.h"
 #include "chat.pb.h"
 #include "net.pb.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -253,7 +254,7 @@ namespace faith
 
 		if (relation_type == e_relationlist_type_black || relation_type == e_relationlist_type_hate)
 		{
-			CONSOLE_INFO("add_relation guid:{} target:{} type:{}", m_client_session_ptr->get_role_guid().server_64, guid.server_64, (int32)relation_type);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("add_relation guid:{} target:{} type:{}",  m_client_session_ptr->get_role_guid().server_64,  guid.server_64,  (int32)relation_type));
 		}
 		if (is_relation_full(relation_type))
 		{

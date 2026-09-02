@@ -38,6 +38,7 @@
 #include "server/cache_ws_mgr.hpp"
 
 #include "system/scene/cs_map_mgr_system.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -48,7 +49,7 @@ namespace faith
 
 	static bool init( )
 	{
-		CONSOLE_INFO("main(): init begin");
+		_RLOG_(MINFO, "main(): init begin");
 		message_manager::getInstance().set_server_type(e_server_type_ws);
 		//	setup log-level
 		scheduler::getInstance().set_option(scheduler::options::thread_num( WS_SERVER_SCHEDULER_THREAD_COUNT ) );
@@ -64,7 +65,7 @@ namespace faith
 
 		if (false == world_server::getInstance().init())
 		{
-			CONSOLE_INFO("world_server init error");
+			_RLOG_(MINFO, "world_server init error");
 			return false;
 		}
 		cs_map_mgr_system::start_up();
@@ -80,15 +81,15 @@ namespace faith
 		daemon_client::getInstance().init(e_server_type_ws, SERVERCONFIG->game_id, 
 			boost::bind(&world_server::handler_daemon_onrecv, &world_server::getInstance(), _1, _2));
 
-		CONSOLE_INFO("main(): init end");
+		_RLOG_(MINFO, "main(): init end");
 		return true;
 	}
 
 	static void release( )
 	{
-		CONSOLE_INFO("main(): main-thread leave loop");
+		_RLOG_(MINFO, "main(): main-thread leave loop");
 		world_server::getInstance().stop();
-		CONSOLE_INFO("main(): world_server stopped");
+		_RLOG_(MINFO, "main(): world_server stopped");
 	}
 
 	static void set_root_directory()

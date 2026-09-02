@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2014/07/30
 	created:	30:7:2014   18:35
 	file base:	faith_app
@@ -10,6 +10,7 @@
 #include <net/scheduler.hpp>
 #include "app_server.hpp"
 #include "server_log.hpp"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -55,7 +56,7 @@ namespace faith
 
 	void app_server::stop()
 	{
-		CONSOLE_INFO(" m_stopping :{}", m_stopping);
+		_RLOG_(MINFO, ::faith::log_detail::format_message(" m_stopping :{}",  m_stopping));
 		if(m_stopping)
 		{
 			return;

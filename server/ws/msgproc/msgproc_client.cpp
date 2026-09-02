@@ -46,6 +46,7 @@
 #include "world_server.hpp"
 #include <marry_msg.hpp> 
 #include <Utility/parse_msg.h>
+#include <rlog.hpp>
 
 
 namespace faith
@@ -1679,7 +1680,7 @@ namespace faith
 		e_relationlist_type relation_type = (e_relationlist_type)request.friendtype();
 		client_session_ptr->get_relation_list_mgr().del_relation(request.guid(), relation_type);
 
-		CONSOLE_INFO("guid = {} target = {} relation_type = {}", client_session_ptr->get_role_guid().server_64, request.guid(), (int32)relation_type);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("guid = {} target = {} relation_type = {}",  client_session_ptr->get_role_guid().server_64,  request.guid(),  (int32)relation_type));
 
 		client_session* target_session_ptr = client_session_mgr::getInstance().get_session(request.guid());
 		if (nullptr != target_session_ptr)
@@ -3020,12 +3021,12 @@ namespace faith
 			}
 			else
 			{
-				CONSOLE_INFO("c2ws_transfer_attack_city_map is_gate_run_not");
+				_RLOG_(MINFO, "c2ws_transfer_attack_city_map is_gate_run_not");
 			}
 		}
 		else
 		{
-			CONSOLE_INFO("c2ws_transfer_attack_city_map not_in_self_server");
+			_RLOG_(MINFO, "c2ws_transfer_attack_city_map not_in_self_server");
 		}
 	}
 

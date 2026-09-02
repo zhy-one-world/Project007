@@ -28,6 +28,7 @@ purpose: legion mgr in cs
 #include "internal/core.hpp"
 #include "internal/cross_server_world_boss_msg.hpp"
 #include "internet/item.pb.h"
+#include <rlog.hpp>
 
 
 
@@ -299,7 +300,7 @@ namespace faith
 						msg.member_scores[msg.member_num].play_guid = damage_info.role_guid;
 						msg.member_scores[msg.member_num].legion_guid = damage_info.legion_guid;
 						msg.member_num++;
-						CONSOLE_INFO("roleguid:{} legionguid:{} bosstemplateid:{} damage:{}",damage_info.role_guid.server_64 ,damage_info.legion_guid.server_64, npc_ref.get_npc_template_id(), damage_info.score);
+						_RLOG_(MINFO, ::faith::log_detail::format_message("roleguid:{} legionguid:{} bosstemplateid:{} damage:{}", damage_info.role_guid.server_64, damage_info.legion_guid.server_64,  npc_ref.get_npc_template_id(),  damage_info.score));
 					}
 				}
 				msg.boss_id = npc_ref.get_npc_template_id();

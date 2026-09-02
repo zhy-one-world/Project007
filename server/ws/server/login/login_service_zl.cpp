@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
   created: 2014/08/05
   created: 5:8:2014 18:49
   file base: login_service_zl
@@ -18,6 +18,7 @@
 #include <Utility/cs_date.hpp>
 #include <time.hpp>
 #include "server_log.hpp"
+#include <rlog.hpp>
 namespace faith
 {
 	const xstring sdk_password = "sdk";		// 固定密码
@@ -69,7 +70,7 @@ namespace faith
 		//// GET/POST 参数
 		//xstring url_para = create_post_data(login.sdk_data().data());
 
- 	//	CONSOLE_INFO("sdk login data : " << time_helper::get_current_time() << " , " << faith::utility::get_tick_count()
+ 	//	_RLOG_(MINFO, "sdk login data : " << time_helper::get_current_time() << " , " << faith::utility::get_tick_count()
  	//		<< ","<< appkey << "," << sign_str << "," << tag_str << "," << opcode_str << "," << channel_id_str << "," << client_ip_str << ","
  	//		<< login.sdk_data().app_secret() << "," << url_para);
 
@@ -104,7 +105,7 @@ namespace faith
 		{
 			return;
 		}
-		CONSOLE_INFO(" sdk : dp to ls login end : state:{}", pdata->e_result);
+		_RLOG_(MINFO, ::faith::log_detail::format_message(" sdk : dp to ls login end : state:{}",  pdata->e_result));
 
 		ls2fep_client_login request;
 		request.eResult = pdata->e_result;
@@ -119,7 +120,7 @@ namespace faith
 
 	void login_service_zl::on_login_result_handle(ui64 uid,uint32 http_error_code,const xstring& http_error_info,const xstring& http_result)
 	{
-		CONSOLE_INFO("error_code:{} error_info:{} http_result:{}", http_error_code, http_error_info, http_result);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("error_code:{} error_info:{} http_result:{}",  http_error_code,  http_error_info,  http_result));
 		s_client_uid client_uid(uid);
 		http_access_mgr::get_instance().remove_http(client_uid);
 
@@ -128,7 +129,7 @@ namespace faith
 			// 先剥离http头
 			if ( std::string::npos == http_result.find_first_of("{") || std::string::npos == http_result.find_last_of("}") )
 			{
-				CONSOLE_INFO("error_code:{} error_info:{} http_result:{}", http_error_code, http_error_info, http_result);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("error_code:{} error_info:{} http_result:{}",  http_error_code,  http_error_info,  http_result));
 				return;
 			}
 			xstring result = http_result.substr(http_result.find_first_of("{"),http_result.find_last_of("}") + 1);
@@ -154,7 +155,7 @@ namespace faith
 		Json::Value  data_value;
 		Json::Value  default_value;
 
-		CONSOLE_INFO("sdk read json data:{}", json_data.c_str());
+		_RLOG_(MINFO, ::faith::log_detail::format_message("sdk read json data:{}",  json_data.c_str()));
 
 		try
 		{
@@ -162,12 +163,12 @@ namespace faith
 			{
 				if(value.isNull() || value.empty()  || value["data"].isNull() || value["data"].empty())
 				{
-					CONSOLE_INFO("billing respose format error:{}", json_data);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("billing respose format error:{}",  json_data));
 					return false;
 				}
 				else if(!value["state"].isInt() || value["state"].asInt() != 200 )
 				{
-					CONSOLE_INFO("billing repose op failed:{}", json_data);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("billing repose op failed:{}",  json_data));
 					return false;
 				}
 
@@ -176,7 +177,7 @@ namespace faith
 				if(data_value.empty() || data_value["status"].isNull() || data_value["status"].empty() || !data_value["status"].isString()
 					|| data_value["userid"].isNull() || data_value["userid"].empty()  || !data_value["userid"].isString())
 				{
-					CONSOLE_INFO("billing data format error:{}", json_data);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("billing data format error:{}",  json_data));
 					return false;
 				}
 
@@ -192,17 +193,17 @@ namespace faith
 				}
 				else
 				{
-					CONSOLE_INFO("billing check failed:{}", json_data);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("billing check failed:{}",  json_data));
 				}
 			}
 			else
 			{
-				CONSOLE_INFO("billing respose format error:{}", json_data);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("billing respose format error:{}",  json_data));
 			}
 		}
 		catch (...)
 		{
-			CONSOLE_INFO("  catch-exception:{}", json_data);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("  catch-exception:{}",  json_data));
 		}
 		return false;
 	}

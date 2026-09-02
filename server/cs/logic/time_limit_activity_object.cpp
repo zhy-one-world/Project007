@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 created: 2019年03月17日
 file base: time_limit_activity_object
 file ext: cpp
@@ -21,6 +21,7 @@ purpose: time limit object
 #include "internet/game.pb.h"
 #include "internet/net.pb.h"
 #include "internet/time_limit_activity.pb.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -116,8 +117,8 @@ namespace faith
 			//当天刷新过战力提升榜初始值 则使用零点的记录数值
 			if (m_player_ptr->is_need_refresh_gs_up_start_value_time() == false)
 			{
-				CONSOLE_INFO("time_limit_activity_object::set_gs_up_init_value  highest_record_type:{} value:{}", highest_record_type,
-					m_player_ptr->get_unit_i64_info_data((e_role_i64_info)((e_role_history_highest_record)highest_record_type - e_role_history_highest_record_gs_value + e_role_i64_info_history_best_gs_value)));
+				_RLOG_(MINFO, ::faith::log_detail::format_message("time_limit_activity_object::set_gs_up_init_value  highest_record_type:{} value:{}",  highest_record_type, 
+					m_player_ptr->get_unit_i64_info_data((e_role_i64_info)((e_role_history_highest_record)highest_record_type - e_role_history_highest_record_gs_value + e_role_i64_info_history_best_gs_value))));
 
 
 				int64 gs_value = m_player_ptr->get_unit_i64_info_data((e_role_i64_info)((e_role_history_highest_record)highest_record_type - e_role_history_highest_record_gs_value + e_role_i64_info_history_best_gs_value));
@@ -130,7 +131,7 @@ namespace faith
 			}
 			else
 			{
-				CONSOLE_INFO("time_limit_activity_object::set_gs_up_init_value  highest_record_type:{} value:{}", highest_record_type, m_player_ptr->get_highest_record(highest_record_type));
+				_RLOG_(MINFO, ::faith::log_detail::format_message("time_limit_activity_object::set_gs_up_init_value  highest_record_type:{} value:{}",  highest_record_type,  m_player_ptr->get_highest_record(highest_record_type)));
 
 				int64 gs_value = m_player_ptr->get_highest_record(highest_record_type);
 				int32 set_num = gs_value > int32_MAX_NUM ? int32_MAX_NUM : gs_value;

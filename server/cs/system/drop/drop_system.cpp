@@ -1,8 +1,9 @@
-#include "drop_def.hpp"
+﻿#include "drop_def.hpp"
 #include "drop_system.h"
 #include "server_log.hpp"
 #include "template/template_manager.h"
 #include "utility/random.h"
+#include <rlog.hpp>
 
 using namespace faith;
 
@@ -262,7 +263,7 @@ void drop_system::sub_drop_rand_one(int32 drop_id, std::vector<s_item_template_i
 	if (choosed_item_index < 0)
 	{
 		//没随到，啥都不干
-		CONSOLE_INFO("random empty item. drop_id:{}, choosed_item_index:{}, total_weight:{} random_value:{} cur_weight:{}", drop_id, choosed_item_index, total_weight, random_value, cur_weight);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("random empty item. drop_id:{}, choosed_item_index:{}, total_weight:{} random_value:{} cur_weight:{}",  drop_id,  choosed_item_index,  total_weight,  random_value,  cur_weight));
 		return;
 	}
 

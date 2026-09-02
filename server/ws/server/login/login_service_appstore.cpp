@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
   created: 2020/07/29
   file base: login_service_appstore
   file ext: cpp
@@ -16,6 +16,7 @@
 #include "server_log.hpp"
 #include "jwt-cpp/jwt.h"
 #include "Base64.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -115,7 +116,7 @@ namespace faith
 			{
 				if (value.isNull() || value.empty())
 				{
-					CONSOLE_INFO("billing respose format error:{}", json_data);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("billing respose format error:{}",  json_data));
 					ls2fep_client_login msg;
 					msg.client_uid = client_uid;
 					msg.eResult = e_error_code_login_invalid_bi;
@@ -124,7 +125,7 @@ namespace faith
 				}
 				else if (!value["error"].isNull())
 				{
-					CONSOLE_INFO("billing respose format error:{}", json_data);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("billing respose format error:{}",  json_data));
 					ls2fep_client_login msg;
 					msg.client_uid = client_uid;
 					msg.eResult = e_error_code_login_invalid_bi;
@@ -138,7 +139,7 @@ namespace faith
 				// 解析data数据
 				if (data_value["id_token"].isNull() || data_value["id_token"].empty() || !data_value["id_token"].isString())
 				{
-					CONSOLE_INFO("billing data format error:{}", json_data);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("billing data format error:{}",  json_data));
 					ls2fep_client_login msg;
 					msg.client_uid = client_uid;
 					msg.eResult = e_error_code_login_invalid_bi;
@@ -166,7 +167,7 @@ namespace faith
 				}
 				else
 				{
-					CONSOLE_INFO("billing check failed:{}", json_data);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("billing check failed:{}",  json_data));
 					ls2fep_client_login msg;
 					msg.client_uid = client_uid;
 					msg.eResult = e_error_code_login_invalid_bi;
@@ -176,7 +177,7 @@ namespace faith
 			}
 			else
 			{
-				CONSOLE_INFO("billing respose format error:{}", json_data);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("billing respose format error:{}",  json_data));
 				ls2fep_client_login msg;
 				msg.client_uid = client_uid;
 				msg.eResult = e_error_code_login_invalid_bi;
@@ -186,7 +187,7 @@ namespace faith
 		}
 		catch (...)
 		{
-			CONSOLE_INFO("  catch-exception:{}", json_data);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("  catch-exception:{}",  json_data));
 			ls2fep_client_login msg;
 			msg.client_uid = client_uid;
 			msg.eResult = e_error_code_login_invalid_bi;

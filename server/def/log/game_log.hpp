@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2014/07/25
 	created:	25:7:2014   19:23
 	file base:	game_log
@@ -12,6 +12,7 @@
 
 #include "logic/type_def.hpp"
 #include "common/singleton.hpp"
+#include <rlog.hpp>
 
 /**
 * Code : ZeGuo.G
@@ -44,7 +45,7 @@ namespace faith
 		time_after = utility::get_tick_count(); \
 		uint32 elapse = time_after - time_before; \
 		if (elapse != 0)\
-		CONSOLE_INFO("\t{}:{}", #s, elapse); \
+		_RLOG_(MINFO, "\t" << #s << ":" << elapse); \
 		time_before = utility::get_tick_count(); \
 	}
 	#else

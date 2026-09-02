@@ -30,6 +30,7 @@
 #include "internet/eye_proto.pb.h"
 #include "internet/net.pb.h"
 #include "logic/time_limit_activity_temp_mgr.hpp"
+#include <rlog.hpp>
 namespace faith
 {
 	using namespace faith::net;
@@ -82,7 +83,7 @@ namespace faith
 				{
 				case e_server_type_fep:
 				{
-					CONSOLE_INFO("on_conn_closed e_server_type_fep!");
+					_RLOG_(MINFO, "on_conn_closed e_server_type_fep!");
 					unit_man::save_all_player(e_logout_result_connect_dis);
 					unit_man::remove_all_player();
 				}
@@ -121,7 +122,7 @@ namespace faith
 		{
 		case e_server_type_fep:
 		{
-			CONSOLE_INFO("on_conn_closed e_server_type_fep!");
+			_RLOG_(MINFO, "on_conn_closed e_server_type_fep!");
 			unit_man::save_all_player(e_logout_result_connect_dis);
 			unit_man::remove_all_player();
 		}
@@ -191,7 +192,7 @@ namespace faith
 		{
 			return;
 		}
-		CONSOLE_INFO("on_req_stop FaithEye Stop Game!");
+		_RLOG_(MINFO, "on_req_stop FaithEye Stop Game!");
 		if (m_is_close_cs)
 		{
 			return;
@@ -223,7 +224,7 @@ namespace faith
 			time_old = tick_time;
 			sync_cs_data = tick_time;
 			is_cs_ok = true;
-			CONSOLE_INFO("cs start ok");
+			_RLOG_(MINFO, "cs start ok");
 		}
 		if (m_reload_csv)
 		{
@@ -254,15 +255,15 @@ namespace faith
 		{
 			if (m_gm_state)
 			{
-				CONSOLE_INFO("==========cs gm server status==========");
+				_RLOG_(MINFO, "==========cs gm server status==========");
 			}
 			else
 			{
-				CONSOLE_INFO("==========cs server status==========");
+				_RLOG_(MINFO, "==========cs server status==========");
 			}
 			if (globle_data::get_instance().get_version_template_ptr())
 			{
-				CONSOLE_INFO("res svn code : {}", globle_data::get_instance().get_version_template_ptr()->Version);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("res svn code : {}",  globle_data::get_instance().get_version_template_ptr()->Version));
 			}
 			faith::int32 session_count = unit_man::get_player_num();
 			faith::int32 robot_count = unit_man::get_robot_num();
@@ -271,11 +272,11 @@ namespace faith
 			faith::int32 dp_num = net_client_mgr::getInstance().get_server_count(e_server_type_dp);
 			faith::int32 fep_num = net_server_mgr::getInstance().get_server_count(e_server_type_fep);
 			faith::int32 gate_num = net_client_mgr::getInstance().get_server_count(e_server_type_gate);
-			CONSOLE_INFO("ws {}/{} dp {}/{} fep {}/{} gate {}/{}", ws_num, SERVER_WS_COUNT, dp_num, SERVER_DP_COUNT, fep_num, SERVER_FEP_COUNT, gate_num, SERVER_GATE_COUNT);
-			CONSOLE_INFO("session num {} session {}", session_count, SERVERCONFIG->init_player_num);
-			CONSOLE_INFO("robot num {} ", robot_count);
-			CONSOLE_INFO("npc num {} npc max {}", npc_count, init_npc_max);
-			CONSOLE_INFO("tick {}", (time_now - tick_time) / ticks);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("ws {}/{} dp {}/{} fep {}/{} gate {}/{}",  ws_num,  SERVER_WS_COUNT,  dp_num,  SERVER_DP_COUNT,  fep_num,  SERVER_FEP_COUNT,  gate_num,  SERVER_GATE_COUNT));
+			_RLOG_(MINFO, ::faith::log_detail::format_message("session num {} session {}",  session_count,  SERVERCONFIG->init_player_num));
+			_RLOG_(MINFO, ::faith::log_detail::format_message("robot num {} ",  robot_count));
+			_RLOG_(MINFO, ::faith::log_detail::format_message("npc num {} npc max {}",  npc_count,  init_npc_max));
+			_RLOG_(MINFO, ::faith::log_detail::format_message("tick {}",  (time_now - tick_time) / ticks));
 			last_log_time = time_now + server_console_time;
 			tick_time = time_now;
 			ticks = 0;
@@ -289,7 +290,7 @@ namespace faith
 
 		if (daemon_client::getInstance().get_server_close())
 		{
-			CONSOLE_INFO("daemon close, all player offline, please shutdown cs ! ! !");
+			_RLOG_(MINFO, "daemon close, all player offline, please shutdown cs ! ! !");
 			unit_man::save_all_player(e_logout_result_connect_dis);
 			unit_man::remove_all_player();
 			stop();
@@ -339,7 +340,7 @@ namespace faith
 		{
 			return;
 		}
-		CONSOLE_INFO("eye_proto_d2s_close_process FaithEye Stop Game!");
+		_RLOG_(MINFO, "eye_proto_d2s_close_process FaithEye Stop Game!");
 		if (m_is_close_cs)
 		{
 			return;
@@ -517,7 +518,7 @@ namespace faith
 	}
 	void cell_server::set_open_time(int32 open_time)
 	{
-		CONSOLE_INFO("set_open_time open_time:{}", open_time);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("set_open_time open_time:{}",  open_time));
 		m_open_time = open_time;
 		globle_data::get_instance().init_server_open_time(open_time);
 		time_activity_system::start_up();

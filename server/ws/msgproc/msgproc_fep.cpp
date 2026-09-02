@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2014/06/05
 	created:	5:6:2014   15:00
 	file base:	msgproc_fep
@@ -33,6 +33,7 @@
 #include <core.hpp>
 #include <login_msg.hpp>
 #include <Utility/parse_msg.h>
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -503,16 +504,16 @@ namespace faith
 		client_session* session = client_session_mgr::getInstance().get_session(client_uid);
 		if(nullptr == session)
 		{
-			CONSOLE_INFO("c2ws_enter_scene session is null  client_uid = {}", client_uid.fepsession_uid);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("c2ws_enter_scene session is null  client_uid = {}",  client_uid.fepsession_uid));
 			return;
 		}
 		if (session->get_role_guid().is_valid() == false)
 		{
-			CONSOLE_INFO("c2ws_enter_scene session guid is null ");
+			_RLOG_(MINFO, "c2ws_enter_scene session guid is null ");
 		}
 		if(session->m_status != client_session::e_ss_ingame)
 		{
-			CONSOLE_INFO("c2ws_enter_scene session m_status:{}", (int32)session->m_status);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("c2ws_enter_scene session m_status:{}",  (int32)session->m_status));
 			return;
 		}
 		session->m_step_num = client_session::e_session_step_send_enter_scene;

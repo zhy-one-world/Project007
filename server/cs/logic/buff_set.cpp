@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 created:	2010/03/01
 created:	1:3:2010   14:43
 filename: 	d:\worksite\skill\LowServer\octopus\app\cs\Low\New_Buff\buff_set.cpp
@@ -21,6 +21,7 @@ purpose:
 #include "template/template_manager.h"
 #include "utility/init_unit.h"
 #include "utility/parse_msg.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -318,7 +319,7 @@ namespace faith
 				return percent_buff(sender_index, buff_item_ptr->get_buff_guid(), buff_template_id, pEnv);
 				break;
 			default:
-				CONSOLE_INFO("buff_template_id :{} judge_result:{}", buff_template_id, (int32)judge_result);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("buff_template_id :{} judge_result:{}",  buff_template_id,  (int32)judge_result));
 				return buff_item_ptr;
 				break;
 			}

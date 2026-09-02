@@ -30,6 +30,7 @@
 #include "chat.pb.h"
 #include "game.pb.h"
 #include "net.pb.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -958,8 +959,7 @@ namespace faith
 			set_legion_info(ELegionInfo_legion_welfare_num, add_num, true);
 			send_legion_attr_one(ELegionInfo_legion_welfare_num);
 		}
-		CONSOLE_INFO("LegionWelfareReceiveAwardActivity LegionGuid:{} ActivityType:{} Rank:{} RewardNum:{} NowNum:{} MaxNum:{} AddNum:{}", get_legion_guid().server_64, activity_type, rank_index, reward_num
-			, now_num, max_num, add_num);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("LegionWelfareReceiveAwardActivity LegionGuid:{} ActivityType:{} Rank:{} RewardNum:{} NowNum:{} MaxNum:{} AddNum:{}",  get_legion_guid().server_64,  activity_type,  rank_index,  reward_num,  now_num,  max_num,  add_num));
 
 		int32 create_time = time_helper::get_cur_time_new().second;
 		std::vector<std::string> notice_str_params;
@@ -1010,7 +1010,7 @@ namespace faith
 			set_legion_info(ELegionInfo_legion_welfare_num, add_num, true);
 			send_legion_attr_one(ELegionInfo_legion_welfare_num);
 		}
-		CONSOLE_INFO("LegionWelfareReceiveAwardNpc LegionGuid:{} NpcId:{} Rank:{} RewardNum:{} NowNum:{} MaxNum:{} AddNum:{}", get_legion_guid().server_64, npc_temid, rank_index, reward_num, now_num, max_num, add_num);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("LegionWelfareReceiveAwardNpc LegionGuid:{} NpcId:{} Rank:{} RewardNum:{} NowNum:{} MaxNum:{} AddNum:{}",  get_legion_guid().server_64,  npc_temid,  rank_index,  reward_num,  now_num,  max_num,  add_num));
 
 
 		int32 notice_id = legion_welfare_kill_boss_notice_id;
@@ -3739,7 +3739,7 @@ namespace faith
 			{
 				break;
 			}
-			CONSOLE_INFO("roleguid:{} sharerate:{} itemid:{} itemnum:{} activittype:{}", mem_list[i].server_64, _share_rate, item_id, item_num, act_config_ptr->ActivityType);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("roleguid:{} sharerate:{} itemid:{} itemnum:{} activittype:{}",  mem_list[i].server_64,  _share_rate,  item_id,  item_num,  act_config_ptr->ActivityType));
 
 		}
 

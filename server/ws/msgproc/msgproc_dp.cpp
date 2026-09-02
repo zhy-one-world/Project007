@@ -79,6 +79,7 @@
 #include <marry_msg.hpp>
 #include <ranking_msg.hpp>
 #include <time_limit_activity_msg.hpp>
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -257,7 +258,7 @@ namespace faith
 				//	init global world_server obj.
 		if (!world_server::getInstance().set_begin_time(begin_time))
 		{
-			CONSOLE_INFO("world_server::getInstance().init");
+			_RLOG_(MINFO, "world_server::getInstance().init");
 			return;
 		}
 		int32 cross_server_id = gm_commond_arr[e_need_server_cross_begin_cross - 1];
@@ -290,9 +291,9 @@ namespace faith
 		world_server::getInstance().start();
 		ws_client::getInstance().start_gate();
 
-		CONSOLE_INFO("main(): scheduler started");
-		CONSOLE_INFO("main(): world_server started");
-		CONSOLE_INFO("main(): main-thread enter loop");
+		_RLOG_(MINFO, "main(): scheduler started");
+		_RLOG_(MINFO, "main(): world_server started");
+		_RLOG_(MINFO, "main(): main-thread enter loop");
 
 		if (cross_server_id <= 0)
 		{
@@ -332,11 +333,11 @@ namespace faith
 
 	void dp2ws_rep_get_game_info_ws(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
-		CONSOLE_INFO("dp2ws_rep_get_game_info_ws begin");
+		_RLOG_(MINFO, "dp2ws_rep_get_game_info_ws begin");
 		dp2s_proto_dp2ws_get_game_info request;
 		if (!parse_msg::getInstance().parse_message_server(&request, data_ptr, data_len))
 		{
-			CONSOLE_INFO("dp2ws_rep_get_game_info_ws nullptr == packet");
+			_RLOG_(MINFO, "dp2ws_rep_get_game_info_ws nullptr == packet");
 			return;
 		}
 		int32 t_server_info_arr[e_server_info_type_max];
@@ -381,7 +382,7 @@ namespace faith
 		{
 			if (is_login > 0)
 			{
-				CONSOLE_INFO("dp2ws_rep_get_role_info_ws is_login > 0");
+				_RLOG_(MINFO, "dp2ws_rep_get_role_info_ws is_login > 0");
 				ws2fep_enter_game rep;
 				rep.client_uid = session->m_client_uid;
 				rep.e_result = e_error_code_enter_no_allow;
@@ -424,7 +425,7 @@ namespace faith
 			{
 				if (session->get_role_info_data(e_role_info_move_server_id) != 0 && session->get_role_info_data(e_role_info_move_server_id) != world_server::getInstance().get_server_id())
 				{
-					CONSOLE_INFO("dp2ws_rep_get_role_info_ws move_server_id:{}, cur_server_id:{}", session->get_role_info_data(e_role_info_move_server_id), world_server::getInstance().get_server_id());
+					_RLOG_(MINFO, ::faith::log_detail::format_message("dp2ws_rep_get_role_info_ws move_server_id:{}, cur_server_id:{}",  session->get_role_info_data(e_role_info_move_server_id),  world_server::getInstance().get_server_id()));
 					ws2ws_kick_out_player kick_msg;
 					kick_msg.role_guid = session->get_role_guid();
 					kick_msg.need_send_save_end = true;
@@ -439,7 +440,7 @@ namespace faith
 			{
 				if (session->get_role_info_data(e_role_info_move_server_id) != world_server::getInstance().get_server_id())
 				{
-					CONSOLE_INFO("dp2ws_rep_get_role_info_ws move_server_id:{}, cur_server_id:{}", session->get_role_info_data(e_role_info_move_server_id), world_server::getInstance().get_server_id());
+					_RLOG_(MINFO, ::faith::log_detail::format_message("dp2ws_rep_get_role_info_ws move_server_id:{}, cur_server_id:{}",  session->get_role_info_data(e_role_info_move_server_id),  world_server::getInstance().get_server_id()));
 					ws2fep_enter_game rep;
 					rep.client_uid = session->m_client_uid;
 					memcpy(rep.account, session->m_role_info.account, sizeof(rep.account));
@@ -1076,12 +1077,12 @@ namespace faith
 		const dp2ws_load_all_legion_member_info* packet = static_cast<const dp2ws_load_all_legion_member_info*>(data_ptr);
 		if (nullptr == packet || data_len == 0)
 		{
-			CONSOLE_INFO("dp2ws_load_all_legion_member_info_process data_len = 0�� ");
+			_RLOG_(MINFO, "dp2ws_load_all_legion_member_info_process data_len = 0�� ");
 			return;
 		}
 		if (data_len != packet->get_pak_length())
 		{
-			CONSOLE_INFO("dp2ws_load_all_legion_member_info_process data_len != get_pak_length�� ");
+			_RLOG_(MINFO, "dp2ws_load_all_legion_member_info_process data_len != get_pak_length�� ");
 			return;
 		}
 
@@ -1089,7 +1090,7 @@ namespace faith
 		legion_ws* legion_ws_ptr = legion_ws_mgr::get_instance().get_legion(legion_guid);
 		if (nullptr == legion_ws_ptr)
 		{
-			CONSOLE_INFO("dp2ws_load_all_legion_member_info_process legion_ws_ptr == null ");
+			_RLOG_(MINFO, "dp2ws_load_all_legion_member_info_process legion_ws_ptr == null ");
 			return;
 		}
 
@@ -1099,7 +1100,7 @@ namespace faith
 			loaded_member_info = packet->member_info[i];
 			if (loaded_member_info.is_valid() == false)
 			{
-				CONSOLE_INFO("dp2ws_load_all_legion_member_info_process loaded_member_info.guid == null ");
+				_RLOG_(MINFO, "dp2ws_load_all_legion_member_info_process loaded_member_info.guid == null ");
 				continue;
 			}
 

@@ -35,6 +35,7 @@
 #include "internet/buff.pb.h"
 #include "utility/init_unit.h"
 #include "utility/random.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -332,7 +333,7 @@ namespace faith
 				attacker.trigger_unit_event(e_game_event_type_unit_kill_player);
 				if (param.attacker_array_index == param.target_array_index)
 				{
-					CONSOLE_INFO("Kill Self Log Skill Id = {} Damage Style = {}", param.skill_info_id, (int32)param.damage_style);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("Kill Self Log Skill Id = {} Damage Style = {}",  param.skill_info_id,  (int32)param.damage_style));
 				}
 			}
 			else

@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2014/05/28
 	created:	28:5:2014   16:23
 	file base:	_dp_main
@@ -24,6 +24,7 @@
 #include <net/scheduler.hpp>
 #include <singleton.hpp>
 #include <time.hpp>
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -36,26 +37,26 @@ namespace faith
 		db_manager::getInstance().start();
 		if (false == dbproxy_service::getInstance().init_db_conn())
 		{
-			CONSOLE_INFO("init_db_conn init false ");
+			_RLOG_(MINFO, "init_db_conn init false ");
 			return false;
 		}
 		script_mgr::get_instance().call_func(nullptr, "dp_main", 0, false, "");
 		daemon_client::getInstance().init(e_server_type_dp, SERVERCONFIG->game_id,
 			boost::bind(&dbproxy_service::handler_daemon_onrecv, &dbproxy_service::getInstance(), _1, _2));
 		template_manager::get_instance().init_for_dp();
- 		CONSOLE_INFO("main(): scheduler started" );
- 		CONSOLE_INFO("main(): dbproxy_service started" );		
- 		CONSOLE_INFO("main(): dbproxy started" );
- 		CONSOLE_INFO("main(): main-thread enter loop");
+ 		_RLOG_(MINFO, "main(): scheduler started");
+ 		_RLOG_(MINFO, "main(): dbproxy_service started");		
+ 		_RLOG_(MINFO, "main(): dbproxy started");
+ 		_RLOG_(MINFO, "main(): main-thread enter loop");
 
  		return true;
  	}
  	static void release()
  	{
- 		CONSOLE_INFO("main(): main-thread leave loop");
+ 		_RLOG_(MINFO, "main(): main-thread leave loop");
  
  		dbproxy_service::getInstance().stop();
- 		CONSOLE_INFO("main(): dbproxy_service stopped");
+ 		_RLOG_(MINFO, "main(): dbproxy_service stopped");
  
  	}
 	static void set_root_directory()

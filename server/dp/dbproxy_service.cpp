@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2014/05/28
 	created:	28:5:2014   20:59
 	file base:	dbproxy_service
@@ -151,6 +151,7 @@
 #include <treasure_msg.hpp>
 #include <welfare_msg.hpp>
 #include <world_boss_msg.hpp>
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -467,12 +468,12 @@ namespace faith
 			DP_SERVER_SEND_BUFF_SIZE, DP_SERVER_RECV_BUFF_SIZE, INTERNAL_SERVER_MAX_PACKET_SIZE, DP_NEED_SERVER_COUNT, DP_NEED_SERVER_COUNT,
 			boost::bind(&dbproxy_service::on_conn_closed, this, _1)))
 		{
-			CONSOLE_INFO("dbproxy_service init error");
+			_RLOG_(MINFO, "dbproxy_service init error");
 			return false;
 		}
 		if (false == net_server_mgr::getInstance().start())
 		{
-			CONSOLE_INFO("dbproxy_service start error");
+			_RLOG_(MINFO, "dbproxy_service start error");
 			return false;
 		}
 		m_timerindex_gameloop = scheduler::getInstance().add_timer(dp_interval_serverloop, boost::bind(&dbproxy_service::server_loop, this, _1));
@@ -495,22 +496,22 @@ namespace faith
 		{
 			game_time = time_now + server_console_time;
 
-			CONSOLE_INFO("==========dp server status==========");
+			_RLOG_(MINFO, "==========dp server status==========");
 			int32 ws_num = net_server_mgr::getInstance().get_server_count(e_server_type_ws);
 			int32 cs_num = net_server_mgr::getInstance().get_server_count(e_server_type_cs);
 			int32 gate_num = net_client_mgr::getInstance().get_server_count(e_server_type_gate);
 
-			CONSOLE_INFO("data_num:{}/{}", data_manager::get_instance().get_data_set_num(), max_save_data_count);
-			CONSOLE_INFO("player_guid_num: {} ", data_manager::get_instance().get_data_server_num());
-			CONSOLE_INFO("account_num: {} ", data_manager::get_instance().get_data_account_num());
-			CONSOLE_INFO("enum_char_num: {}", data_manager::get_instance().get_enum_char_num());
-			CONSOLE_INFO("unit_info_arr_map_num: {}", data_manager::get_instance().get_unit_info_arr_map_num());
-			CONSOLE_INFO("ws {}/{} cs {}/{} gate {}/{}", ws_num, SERVER_WS_COUNT, cs_num, SERVER_CS_COUNT, gate_num, SERVER_GATE_COUNT);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("data_num:{}/{}",  data_manager::get_instance().get_data_set_num(),  max_save_data_count));
+			_RLOG_(MINFO, ::faith::log_detail::format_message("player_guid_num: {} ",  data_manager::get_instance().get_data_server_num()));
+			_RLOG_(MINFO, ::faith::log_detail::format_message("account_num: {} ",  data_manager::get_instance().get_data_account_num()));
+			_RLOG_(MINFO, ::faith::log_detail::format_message("enum_char_num: {}",  data_manager::get_instance().get_enum_char_num()));
+			_RLOG_(MINFO, ::faith::log_detail::format_message("unit_info_arr_map_num: {}",  data_manager::get_instance().get_unit_info_arr_map_num()));
+			_RLOG_(MINFO, ::faith::log_detail::format_message("ws {}/{} cs {}/{} gate {}/{}",  ws_num,  SERVER_WS_COUNT,  cs_num,  SERVER_CS_COUNT,  gate_num,  SERVER_GATE_COUNT));
 			db_manager::getInstance().ping_db();
 			dp_client::getInstance().tick(time_now);
 			if (cs_num <= 0 && daemon_client::getInstance().get_server_close())
 			{
-				CONSOLE_INFO(" daemon close dp");
+				_RLOG_(MINFO, " daemon close dp");
 				app_server::getInstance().stop();
 			}
 		}
@@ -561,14 +562,14 @@ namespace faith
 			return;
 		}
 		daemon_client::getInstance().set_server_close(true);
-		CONSOLE_INFO("FaithEye Stop Game!");
+		_RLOG_(MINFO, "FaithEye Stop Game!");
 	}
 
 	void dbproxy_service::send_message_lua(uint32 connindex, const char* msg, int32 msg_len, uint32 header)
 	{
 		if (msg_len > INTERNAL_SERVER_MAX_PACKET_SIZE || header <= 0)
 		{
-			CONSOLE_INFO("header:{} len:{}", header, msg_len);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("header:{} len:{}",  header,  msg_len));
 			return;
 		}
 		m_dp2s_msg.wheader = header;
@@ -665,6 +666,6 @@ namespace faith
 			return;
 		}
 		daemon_client::getInstance().set_server_close(true);
-		CONSOLE_INFO("FaithEye Stop Game!");
+		_RLOG_(MINFO, "FaithEye Stop Game!");
 	}
 }

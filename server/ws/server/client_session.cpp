@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2014/08/07
 	created:	7:8:2014   14:56
 	file base:	client_session
@@ -50,6 +50,7 @@
 #include "net.pb.h"
 #include "char_msg.hpp"
 #include "game.pb.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -466,7 +467,7 @@ namespace faith
 		{
 			if (m_ban_role_array[i] == role_guid.server_64)
 			{//限制登录
-				CONSOLE_INFO("player_enter_game_transfer m_ban_role_array[i] == role_guid.server_64 role_guid.server_64:{}", role_guid.server_64);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("player_enter_game_transfer m_ban_role_array[i] == role_guid.server_64 role_guid.server_64:{}",  role_guid.server_64));
 				ws2fep_enter_game rep;
 				rep.client_uid = m_client_uid;
 				rep.e_result =e_error_code_enter_no_allow;

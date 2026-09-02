@@ -1,4 +1,4 @@
-
+﻿
 /***********************************************
 * created	: 2020年8月18日
 * file base : element_war_ws_mgr
@@ -25,6 +25,7 @@
 #include "server/team/team_ws_mgr.h"
 #include "game.pb.h"
 #include "net.pb.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -1460,7 +1461,7 @@ namespace faith
 				role_iter->second.refresh_season_info();
 			}
 		}
-		CONSOLE_INFO("element_war_ws_mgr::send_season_reward_to_player RoleGuid:{} ServerId:{} OldScore:{}",role_guid.server_64,role_iter->second.get_data_array_info(e_element_war_role_info_server_id),old_score);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("element_war_ws_mgr::send_season_reward_to_player RoleGuid:{} ServerId:{} OldScore:{}", role_guid.server_64, role_iter->second.get_data_array_info(e_element_war_role_info_server_id), old_score));
 	}
 
 	void element_war_ws_mgr::send_season_upreward_to_player(const guid_64 & role_guid)
@@ -1585,7 +1586,7 @@ namespace faith
 		role_iter->second.set_data_array_info(e_element_war_role_info_score_num, new_score);
 		int32 create_time = time_helper::get_cur_time_new().second;
 
-		CONSOLE_INFO("element_war_ws_mgr::map_game_end  RoleGuid:{} ServerId:{} NewScore:{} OldScore:{} HistoryScore:{} IsWin:{} RankNum:{} IsEscape:{}", end_info->role_guid.server_64, end_info->role_guid.server_64, new_score, old_score, role_iter->second.get_data_array_info(e_element_war_role_info_history_score), end_info->is_win, end_info->score_rank, end_info->is_escape)
+		_RLOG_(MINFO, ::faith::log_detail::format_message("element_war_ws_mgr::map_game_end  RoleGuid:{} ServerId:{} NewScore:{} OldScore:{} HistoryScore:{} IsWin:{} RankNum:{} IsEscape:{}",  end_info->role_guid.server_64,  end_info->role_guid.server_64,  new_score,  old_score,  role_iter->second.get_data_array_info(e_element_war_role_info_history_score),  end_info->is_win,  end_info->score_rank,  end_info->is_escape))
 
 		role_iter->second.game_end(end_info->is_win);
 

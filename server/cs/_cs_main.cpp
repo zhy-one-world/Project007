@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2014/08/18
 	created:	18:8:2014   17:59
 	file base:	_cs_main
@@ -30,6 +30,7 @@
 #include <net/scheduler.hpp>
 #include <time.hpp>
 #include "utility/globle_data.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -38,7 +39,7 @@ namespace faith
 
 	static bool init()
 	{
-		CONSOLE_INFO("main(): main-thread init");
+		_RLOG_(MINFO, "main(): main-thread init");
 
 		if (!net_client_mgr::getInstance().set_netpara_option(CS_CLIENT_SEND_BUFF_SIZE, CS_CLIENT_RECV_BUFF_SIZE, INTERNAL_SERVER_MAX_PACKET_SIZE, CS_NEED_CLIENT_COUNT))
 		{
@@ -52,22 +53,22 @@ namespace faith
 			return false;
 		}
 		message_manager::getInstance().set_server_type(e_server_type_cs);
-		CONSOLE_INFO("begin template");
+		_RLOG_(MINFO, "begin template");
 		template_manager::get_instance().init();
-		CONSOLE_INFO("begin CCharLib");
+		_RLOG_(MINFO, "begin CCharLib");
 		CCharLib::getInstance().LoadResource();
-		CONSOLE_INFO("begin CInvalidWord");
+		_RLOG_(MINFO, "begin CInvalidWord");
 		CInvalidWord::getInstance().LoadResource();
-		CONSOLE_INFO("begin globle_data");
+		_RLOG_(MINFO, "begin globle_data");
 		globle_data::get_instance().init_manager();
-		CONSOLE_INFO("begin init_send_ws");
+		_RLOG_(MINFO, "begin init_send_ws");
 		globle_data::get_instance().init_send_ws(boost::bind(&connection_mgr::send_to_ws, &connection_mgr::getInstance(), _1, _2, _3));
-		CONSOLE_INFO("begin msg");
+		_RLOG_(MINFO, "begin msg");
 		msg_dispatch::getInstance().init();
 		buff_man::init_manager();
 		skill_manager::init_manager();
 		item_manager::init_manager();
-		CONSOLE_INFO("begin unit");
+		_RLOG_(MINFO, "begin unit");
 		if (false == unit_man::init_manager())
 		{
 			CONSOLE_ERROR("unit_man init error");
@@ -79,15 +80,15 @@ namespace faith
 		connection_mgr::getInstance().start();
 		daemon_client::getInstance().init(e_server_type_cs, SERVERCONFIG->game_id,
 			boost::bind(&cell_server::handler_daemon_onrecv, &cell_server::getInstance(), _1, _2));
-		CONSOLE_INFO("main(): scheduler started");
-		CONSOLE_INFO("main(): cell_server started");
-		CONSOLE_INFO("main(): main-thread enter loop");
+		_RLOG_(MINFO, "main(): scheduler started");
+		_RLOG_(MINFO, "main(): cell_server started");
+		_RLOG_(MINFO, "main(): main-thread enter loop");
 
 		return true;
 	}
 	static void release()
 	{
-		CONSOLE_INFO("main(): main-thread release");
+		_RLOG_(MINFO, "main(): main-thread release");
 	}
 	static void set_root_directory()
 	{

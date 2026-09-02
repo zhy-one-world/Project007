@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 created: 2014/07/14
 created: 14:7:2014 20:25
 file base: msgproc_ws
@@ -52,6 +52,7 @@ purpose:
 #include "element_war_def.hpp"
 #include "internet/net.pb.h"
 #include "internal/attack_city_msg.hpp"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -251,10 +252,10 @@ namespace faith
 		}
 		if (init_unit::is_robot_account("hy", packet->account))
 		{
-			CONSOLE_INFO("robot time = {}", utility::get_tick_count());
+			_RLOG_(MINFO, ::faith::log_detail::format_message("robot time = {}",  utility::get_tick_count()));
 		}
 
-		CONSOLE_INFO("player guid:{}, map guid:{}",packet->role_guid.server_64, packet->map_guid.server_64);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("player guid:{}, map guid:{}", packet->role_guid.server_64,  packet->map_guid.server_64));
 
 		player& player_ref = unit_man::get_player(packet->role_guid);
 		if (player_ref.is_valid())
@@ -419,7 +420,7 @@ namespace faith
 			CONSOLE_ERROR("ws2cs_req_enter_scene put_in_scene fail. Ret = {}", (int32)rep2ws.eResult);
 			return;
 		}
-		CONSOLE_INFO("map_guid:{} role_guid:{}", player_ref.get_map_guid().server_64, role_guid.server_64);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("map_guid:{} role_guid:{}",  player_ref.get_map_guid().server_64,  role_guid.server_64));
 
 		world_cs::player_enter_scene(player_ref.get_map_ent(), &player_ref);
 	}

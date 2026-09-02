@@ -26,6 +26,7 @@
 #include "server_log.hpp"
 #include "dbproxy_service.hpp"
 #include "net/message_manager.hpp"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -154,7 +155,7 @@ namespace faith
 	}	
 	void dp_client::gate2ws_rep_gate_new(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
-		CONSOLE_INFO(" gate2ws_rep_register  data_len : {}", data_len);
+		_RLOG_(MINFO, ::faith::log_detail::format_message(" gate2ws_rep_register  data_len : {}",  data_len));
 		if (data_len != sizeof(gate2gate_req_new))
 		{
 			return;

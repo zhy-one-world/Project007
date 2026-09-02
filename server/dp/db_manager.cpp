@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 created:	2018年9月6日11:19:20
 file base:	db_manager
 file ext:	hpp
@@ -11,6 +11,7 @@ purpose:
 #include "server_log.hpp"
 #include "data_manager/data_manager.hpp"
 #include "sql_builder.hpp"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -38,7 +39,7 @@ namespace faith
 		game_conn_params.db = db_conn_info.game_name;
 		if (false == m_main_db_link.game_db.init(MYSQL_CONNECT_SCHEDULER_THREAD_COUNT, game_conn_params, 0))
 		{
-			CONSOLE_INFO("add_db_link game_db is fail host:{} port:{} user:{} password:{} db:{}", db_conn_info.game_ip, db_conn_info.game_port, db_conn_info.game_user_name, db_conn_info.game_user_password, db_conn_info.game_name);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("add_db_link game_db is fail host:{} port:{} user:{} password:{} db:{}",  db_conn_info.game_ip,  db_conn_info.game_port,  db_conn_info.game_user_name,  db_conn_info.game_user_password,  db_conn_info.game_name));
 			return false;
 		}
 		db_conn_params log_conn_params;
@@ -49,7 +50,7 @@ namespace faith
 		log_conn_params.db = db_conn_info.log_name;
 		if (false == m_main_db_link.log_db.init(MYSQL_CONNECT_SCHEDULER_THREAD_COUNT, log_conn_params, 0))
 		{
-			CONSOLE_INFO("add_db_link log_db is fail host:{} port:{} user:{} password:{} db:{} ", db_conn_info.log_ip, db_conn_info.log_port, db_conn_info.log_user_name, db_conn_info.log_user_password, db_conn_info.log_name);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("add_db_link log_db is fail host:{} port:{} user:{} password:{} db:{} ",  db_conn_info.log_ip,  db_conn_info.log_port,  db_conn_info.log_user_name,  db_conn_info.log_user_password,  db_conn_info.log_name));
 			return false;
 		}
 
@@ -172,7 +173,7 @@ namespace faith
 			m_db_error++;
 			if (m_db_error >= 10)
 			{
-				CONSOLE_INFO("dp stop self! error_count:{} error_id:{}", m_db_error, result.error);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("dp stop self! error_count:{} error_id:{}",  m_db_error,  result.error));
 				m_main_db_link.game_db.release();
 				m_main_db_link.log_db.release();
 				add_db_link(m_db_conn_info);

@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
   created: 2014/08/05
   created: 5:8:2014 18:49
   file base: login_service_zw
@@ -21,6 +21,7 @@
 #include "server_log.hpp"
 #include "template/template_manager.h"
 #include "server_log_msg.hpp"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -172,7 +173,7 @@ namespace faith
 			// 先剥离http头
 			if ( std::string::npos == http_result.find_first_of("{") || std::string::npos == http_result.find_last_of("}") )
 			{
-				CONSOLE_INFO("error_code:{} error_info:{}", http_error_code, http_error_info);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("error_code:{} error_info:{}",  http_error_code,  http_error_info));
 				return;
 			}
 			xstring result = http_result.substr(http_result.find_first_of("{"),http_result.find_last_of("}") + 1);
@@ -205,7 +206,7 @@ namespace faith
 			{
 				if (value.isNull() || value.empty())
 				{
-					CONSOLE_INFO("billing respose format error:{}", json_data);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("billing respose format error:{}",  json_data));
 					ls2fep_client_login msg;
 					msg.client_uid = client_uid;
 					msg.eResult = e_error_code_login_invalid_bi;
@@ -214,7 +215,7 @@ namespace faith
 				}
 				else if(value["data"].isNull() || value["data"].empty())
 				{
-					CONSOLE_INFO("billing respose format error:{}", json_data);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("billing respose format error:{}",  json_data));
 					ls2fep_client_login msg;
 					msg.client_uid = client_uid;
 					msg.eResult = e_error_code_login_invalid_bi;
@@ -224,7 +225,7 @@ namespace faith
 				}
 				else if(!value["code"].isInt() || value["code"].asInt() != 0 )
 				{
-					CONSOLE_INFO("billing repose op failed:{}", json_data);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("billing repose op failed:{}",  json_data));
 					ls2fep_client_login msg;
 					msg.client_uid = client_uid;
 					msg.eResult = e_error_code_login_invalid_bi;
@@ -237,7 +238,7 @@ namespace faith
 				// 解析data数据
 				if(data_value.empty() || data_value["userId"].isNull() || data_value["userId"].empty()  || !data_value["userId"].isString())
 				{
-					CONSOLE_INFO("billing data format error:{}", json_data);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("billing data format error:{}",  json_data));
 					ls2fep_client_login msg;
 					msg.client_uid = client_uid;
 					msg.eResult = e_error_code_login_invalid_bi;
@@ -297,7 +298,7 @@ namespace faith
 				}
 				else
 				{
-					CONSOLE_INFO("billing check failed:{}", json_data);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("billing check failed:{}",  json_data));
 					ls2fep_client_login msg;
 					msg.client_uid = client_uid;
 					msg.eResult = e_error_code_login_invalid_bi;
@@ -307,7 +308,7 @@ namespace faith
 			}
 			else
 			{
-				CONSOLE_INFO("billing respose format error:{}", json_data);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("billing respose format error:{}",  json_data));
 				ls2fep_client_login msg;
 				msg.client_uid = client_uid;
 				msg.eResult = e_error_code_login_invalid_bi;
@@ -317,7 +318,7 @@ namespace faith
 		}
 		catch (...)
 		{
-			CONSOLE_INFO("catch-exception:{}", json_data);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("catch-exception:{}",  json_data));
 			ls2fep_client_login msg;
 			msg.client_uid = client_uid;
 			msg.eResult = e_error_code_login_invalid_bi;

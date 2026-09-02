@@ -1,4 +1,4 @@
-// Created:	2015/4/1
+﻿// Created:	2015/4/1
 // Author: wenhm 
 
 
@@ -9,6 +9,7 @@
 #include "logic/unit.hpp"
 #include "internet/skill.pb.h"
 #include "utility/parse_msg.h"
+#include <rlog.hpp>
 
 using namespace faith;
 const int32 k_max_event_num = 2000;
@@ -122,7 +123,7 @@ void skill_manager::distribute_msg(s_unit_identifier const& unit_idf, skill_prot
 	{
 		if (be_hit == false)
 		{
-			CONSOLE_INFO("distribute_msg unit no hit");
+			_RLOG_(MINFO, "distribute_msg unit no hit");
 			return;
 		}
 		use_skill_param param;

@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
   created: 2014/08/09
   created: 9:8:2014 11:49
   file base: http_access
@@ -13,6 +13,7 @@
 #include <time.hpp>
 #include "http_access_mgr.hpp"
 #include "server_log.hpp"
+#include <rlog.hpp>
 
 namespace faith
 {	
@@ -46,7 +47,7 @@ namespace faith
 	{
 		if (http_error_code > 0)
 		{
-			CONSOLE_INFO("http fail url : {}", m_url);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("http fail url : {}",  m_url));
 		}
 		if(m_handler.empty() == false)
 		{

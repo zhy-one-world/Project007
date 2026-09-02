@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
   created: 2018/09/08
   created: 8:9:2018 18:48
   file base: login_service_facebook
@@ -20,6 +20,7 @@
 #include <time.hpp>
 #include "server_log.hpp"
 #include "server_log_msg.hpp"
+#include <rlog.hpp>
 namespace faith
 {
 	const xstring sdk_password = "googlesdk";		// 固定密码
@@ -78,8 +79,8 @@ namespace faith
 
 	void login_service_facebook::on_login_result_handle(ui64 uid,uint32 http_error_code,const xstring& http_error_info,const xstring& http_result)
 	{
-		CONSOLE_INFO(" http_error_info:{}", http_error_info);
-		CONSOLE_INFO(" login_result:{}", http_result);
+		_RLOG_(MINFO, ::faith::log_detail::format_message(" http_error_info:{}",  http_error_info));
+		_RLOG_(MINFO, ::faith::log_detail::format_message(" login_result:{}",  http_result));
 
 		s_client_uid client_uid(uid);
 		http_access_mgr::get_instance().remove_http(client_uid);
@@ -109,7 +110,7 @@ namespace faith
 			{
 				if (value.isNull() || value.empty())
 				{
-					CONSOLE_INFO("billing respose format error:{}", json_data);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("billing respose format error:{}",  json_data));
 					ls2fep_client_login msg;
 					msg.client_uid = client_uid;
 					msg.eResult = e_error_code_login_invalid_bi;
@@ -120,7 +121,7 @@ namespace faith
 					||value["data"].isNull() 
 					|| value["data"].empty())
 				{
-					CONSOLE_INFO("billing respose format error:{}", json_data);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("billing respose format error:{}",  json_data));
 					ls2fep_client_login msg;
 					msg.client_uid = client_uid;
 					msg.eResult = e_error_code_login_invalid_bi;
@@ -136,7 +137,7 @@ namespace faith
 					|| data_value["user_id"].isNull() || data_value["user_id"].empty() || !data_value["user_id"].isString()
 					|| data_value["is_valid"].isNull() || data_value["is_valid"].empty() || !data_value["is_valid"].isBool() || data_value["is_valid"].asBool() == false)
 				{
-					CONSOLE_INFO("billing data format error:{}", json_data);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("billing data format error:{}",  json_data));
 					ls2fep_client_login msg;
 					msg.client_uid = client_uid;
 					msg.eResult = e_error_code_login_invalid_bi;
@@ -162,7 +163,7 @@ namespace faith
 				}
 				else
 				{
-					CONSOLE_INFO("billing check failed:{}", json_data);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("billing check failed:{}",  json_data));
 					ls2fep_client_login msg;
 					msg.client_uid = client_uid;
 					msg.eResult = e_error_code_login_invalid_bi;
@@ -172,7 +173,7 @@ namespace faith
 			}
 			else
 			{
-				CONSOLE_INFO("billing respose format error:{}", json_data);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("billing respose format error:{}",  json_data));
 				ls2fep_client_login msg;
 				msg.client_uid = client_uid;
 				msg.eResult = e_error_code_login_invalid_bi;
@@ -182,7 +183,7 @@ namespace faith
 		}
 		catch (...)
 		{
-			CONSOLE_INFO("  catch-exception:{}", json_data);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("  catch-exception:{}",  json_data));
 			ls2fep_client_login msg;
 			msg.client_uid = client_uid;
 			msg.eResult = e_error_code_login_invalid_bi;

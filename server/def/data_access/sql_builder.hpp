@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2014/05/28
 	created:	28:5:2014   22:00
 	file base:	sql_builder
@@ -13,6 +13,7 @@
 #include "db_config.hpp"
 #include <mem_pool.hpp>
 #include "log/server_log.hpp"
+#include <rlog.hpp>
 
 const int32_t SQL_BUILDER_BUFF_SIZE = MAX_ROW_SIZE_LIMIT * 1024 * 4;	//dp允许最大行限制为MAX_ROW_SIZE_LIMIT， 那么一条sql文一般不可能超过BUFF_SIZE。
 
@@ -141,7 +142,7 @@ namespace faith
 		int32 len = f.size();
 		if (len + 1 + m_wpos >= SQL_BUILDER_BUFF_SIZE)
 		{
-			CONSOLE_INFO(" len = {} m_wpos = {} SQL_BUILDER_BUFF_SIZE = {}", len, m_wpos, SQL_BUILDER_BUFF_SIZE);
+			_RLOG_(MINFO, ::faith::log_detail::format_message(" len = {} m_wpos = {} SQL_BUILDER_BUFF_SIZE = {}",  len,  m_wpos,  SQL_BUILDER_BUFF_SIZE));
 		}
 		memcpy(m_buffer + m_wpos, f.c_str(), len);
 		m_wpos += len;
@@ -161,7 +162,7 @@ namespace faith
 		ui64 len = strlen(value);
 		if (len + 1 + m_wpos >= SQL_BUILDER_BUFF_SIZE)
 		{
-			CONSOLE_INFO(" len = {} m_wpos = {} SQL_BUILDER_BUFF_SIZE = {}", len, m_wpos, SQL_BUILDER_BUFF_SIZE);
+			_RLOG_(MINFO, ::faith::log_detail::format_message(" len = {} m_wpos = {} SQL_BUILDER_BUFF_SIZE = {}",  len,  m_wpos,  SQL_BUILDER_BUFF_SIZE));
 		}
 		memcpy(m_buffer + m_wpos, value, len);
 		m_wpos += len;
@@ -182,7 +183,7 @@ namespace faith
 		ui64 len = value.size();
 		if (len + 1 + m_wpos >= SQL_BUILDER_BUFF_SIZE)
 		{
-			CONSOLE_INFO(" len = {} m_wpos = {} SQL_BUILDER_BUFF_SIZE = {}", len, m_wpos, SQL_BUILDER_BUFF_SIZE);
+			_RLOG_(MINFO, ::faith::log_detail::format_message(" len = {} m_wpos = {} SQL_BUILDER_BUFF_SIZE = {}",  len,  m_wpos,  SQL_BUILDER_BUFF_SIZE));
 		}
 		memcpy(m_buffer + m_wpos, value.c_str(), len);
 		m_wpos += len;

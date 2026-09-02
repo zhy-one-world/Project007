@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
   created: 2019-7-22
   file base: time_limit_activity_temp_ws_mgr
   file ext: CPP
@@ -20,6 +20,7 @@
 #include "ws_client.hpp"
 #include "cloud_shop_mgr.h"
 #include "globle_data.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -987,10 +988,10 @@ namespace faith
 		int32 compare_result = compare_cycle_first_branch_temp_arr(limit_act_temp, act_temp_id);
 		if (compare_result == e_compare_temp_result_new)
 		{
-			CONSOLE_INFO(" activity type:{} template from type:{}", limit_act_temp->ActivityType, template_from_type);
+			_RLOG_(MINFO, ::faith::log_detail::format_message(" activity type:{} template from type:{}",  limit_act_temp->ActivityType,  template_from_type));
 			for (int32 first_branch_template_id : m_time_limit_activity_temp_map[act_temp_id].CycleFirstId)
 			{
-				CONSOLE_INFO(" old id : {}", first_branch_template_id);
+				_RLOG_(MINFO, ::faith::log_detail::format_message(" old id : {}",  first_branch_template_id));
 			}
 			delete_cycle_first_branch_temp_arr(m_time_limit_activity_temp_map[act_temp_id].CycleFirstId, limit_act_temp->ActivityType);
 			m_time_limit_activity_temp_map[act_temp_id].CycleFirstId = make_new_limit_act_branch_temp_with_temp_arr(limit_act_temp->CycleFirstId
@@ -998,7 +999,7 @@ namespace faith
 			m_time_limit_activity_temp_map[act_temp_id].TemplateFromType = template_from_type;
 			for (int32 first_branch_template_id : m_time_limit_activity_temp_map[act_temp_id].CycleFirstId)
 			{
-				CONSOLE_INFO(" new id : {}", first_branch_template_id);
+				_RLOG_(MINFO, ::faith::log_detail::format_message(" new id : {}",  first_branch_template_id));
 			}
 			save_temp_to_db(m_time_limit_activity_temp_map[act_temp_id]);
 		}

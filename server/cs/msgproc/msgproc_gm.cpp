@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2015��12��28��16:11:23
 	file base:	msgproc_gm
 	file ext:	cpp
@@ -24,6 +24,7 @@
 #include "system/item/item_system.h"
 #include "gm_order_def.hpp"
 #include "logic/npc.hpp"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -248,7 +249,7 @@ namespace faith
 			CONSOLE_ERROR("npc not find npc_id:{}", 1, arg_int[0]);
 		}
 		auto pos = npc_ref.get_new_map_pos().unit_location;
-		CONSOLE_INFO("npc_inde:{} npc_id:{} spawn_id:{} x:{}  y:{}  z:{} ", arg_int[0], npc_ref.get_npc_template_id(), npc_ref.get_spawn_point_id(), pos.x, pos.y, pos.z);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("npc_inde:{} npc_id:{} spawn_id:{} x:{}  y:{}  z:{} ",  arg_int[0],  npc_ref.get_npc_template_id(),  npc_ref.get_spawn_point_id(),  pos.x,  pos.y,  pos.z));
 	}
 	void gm_show_all_npc(player& player_ref, const std::vector<int>& arg_int, const std::vector<std::string>& arg_string)
 	{

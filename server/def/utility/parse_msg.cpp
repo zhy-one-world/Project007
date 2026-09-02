@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2015/03/17
 	created:	17:3:2015   12:28
 	file base:	parse_msg 
@@ -10,6 +10,7 @@
 
 #include "server_log.hpp"
 #include "parse_msg.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -151,7 +152,7 @@ namespace faith
 		}
 		else
 		{
-			CONSOLE_INFO("    header : {}", header);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("    header : {}",  header));
 			return nullptr;
 		}
 	}
@@ -172,7 +173,7 @@ namespace faith
 		}
 		else
 		{
-			CONSOLE_INFO("    header : {}", header);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("    header : {}",  header));
 			return nullptr;
 		}
 	}
@@ -194,7 +195,7 @@ namespace faith
 		}
 		else
 		{
-			CONSOLE_INFO("    header : {}", header);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("    header : {}",  header));
 			return nullptr;
 		}
 	}

@@ -61,6 +61,7 @@
 #include "cs2dp.pb.h"
 #include "common/Base64.h"
 #include "buff_def.hpp"
+#include <rlog.hpp>
 
 
 namespace faith
@@ -72,14 +73,14 @@ namespace faith
 	{
 		if (data_len != sizeof(cs2dp_load_data_online))
 		{
-			CONSOLE_INFO("cs2dp_req_char_online_loading_data data_len = {}", data_len);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("cs2dp_req_char_online_loading_data data_len = {}",  data_len));
 			return;
 		}
 
 		const cs2dp_load_data_online* pdata = static_cast<const cs2dp_load_data_online*>(data_ptr);
 		if (NULL == pdata)
 		{
-			CONSOLE_INFO("cs2dp_req_char_online_loading_data NULL == pdata ");
+			_RLOG_(MINFO, "cs2dp_req_char_online_loading_data NULL == pdata ");
 			return;
 		}
 		cs2dp_req_load_char_info_cs(connindex, pdata->role_guid, pdata->up_role_guid, pdata->unit_array_index);
@@ -90,7 +91,7 @@ namespace faith
 		const cs2dp_load_arena_player* pmsg = static_cast<const cs2dp_load_arena_player*>(data_ptr);
 		if (NULL == pmsg || data_len != sizeof(cs2dp_load_arena_player))
 		{
-			CONSOLE_INFO("cs2dp_req_loading_arena_player_data NULL == pdata ");
+			_RLOG_(MINFO, "cs2dp_req_loading_arena_player_data NULL == pdata ");
 			return;
 		}
 
@@ -310,14 +311,14 @@ namespace faith
 	{
 		if (result.error)
 		{
-			CONSOLE_INFO("cs2dp_req_save_char_info_cs_end sql:{} error:{} type:{} save_flag:{} save_type_ex:{}", sql, result.error, result.query_type, int32(save_flag), save_type_ex);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("cs2dp_req_save_char_info_cs_end sql:{} error:{} type:{} save_flag:{} save_type_ex:{}",  sql,  result.error,  result.query_type,  int32(save_flag),  save_type_ex));
 			cs2dp_req_send_info_end(false, connindex, role_guid, unit_array_index, save_flag, save_type_ex);
 		}
 		else
 		{
 			if (save_type_ex == (int32)e_save_data_type_exit_game)
 			{
-				CONSOLE_INFO("cs2dp_req_save_char_info_cs_end role_guid = {} save_flag = {}", role_guid.server_64, int32(save_flag));
+				_RLOG_(MINFO, ::faith::log_detail::format_message("cs2dp_req_save_char_info_cs_end role_guid = {} save_flag = {}",  role_guid.server_64,  int32(save_flag)));
 			}
 			cs2dp_req_send_info_end(true, connindex, role_guid, unit_array_index, save_flag, save_type_ex);
 		}
@@ -1383,14 +1384,14 @@ namespace faith
 	{
 		if (data_len != sizeof(cs2dp_save_person_information_to_db))
 		{
-			CONSOLE_INFO("cs2dp_save_person_information_to_db_proc data_len = {}", data_len);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("cs2dp_save_person_information_to_db_proc data_len = {}",  data_len));
 			return;
 		}
 
 		const cs2dp_save_person_information_to_db* pdata = static_cast<const cs2dp_save_person_information_to_db*>(data_ptr);
 		if (NULL == pdata)
 		{
-			CONSOLE_INFO("cs2dp_save_person_information_to_db_proc NULL == pdata ");
+			_RLOG_(MINFO, "cs2dp_save_person_information_to_db_proc NULL == pdata ");
 			return;
 		}
 
@@ -1456,14 +1457,14 @@ namespace faith
 	{
 		if (data_len != sizeof(cs2dp_get_other_person_information))
 		{
-			CONSOLE_INFO("cs2dp_save_person_information_to_db_proc data_len = ", data_len);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("cs2dp_save_person_information_to_db_proc data_len = ",  data_len));
 			return;
 		}
 
 		const cs2dp_get_other_person_information* pdata = static_cast<const cs2dp_get_other_person_information*>(data_ptr);
 		if (NULL == pdata)
 		{
-			CONSOLE_INFO("cs2dp_save_person_information_to_db_proc NULL == pdata ");
+			_RLOG_(MINFO, "cs2dp_save_person_information_to_db_proc NULL == pdata ");
 			return;
 		}
 		sql_builder sql(db_manager::getInstance().get_db_link().game_db);
@@ -1675,14 +1676,14 @@ namespace faith
 	{
 		if (data_len != sizeof(cs2dp_save_role_competition_to_db))
 		{
-			CONSOLE_INFO("cs2dp_save_role_competition_to_db_proc data_len = ", data_len);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("cs2dp_save_role_competition_to_db_proc data_len = ",  data_len));
 			return;
 		}
 
 		const cs2dp_save_role_competition_to_db* pdata = static_cast<const cs2dp_save_role_competition_to_db*>(data_ptr);
 		if (NULL == pdata)
 		{
-			CONSOLE_INFO("cs2dp_save_role_competition_to_db_proc NULL == pdata ");
+			_RLOG_(MINFO, "cs2dp_save_role_competition_to_db_proc NULL == pdata ");
 			return;
 		}
 

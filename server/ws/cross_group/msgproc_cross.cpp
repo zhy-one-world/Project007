@@ -75,12 +75,13 @@
 #include "ranking.pb.h"
 #include "cross.pb.h"
 #include "net.pb.h"
+#include <rlog.hpp>
 
 namespace faith
 {
 	void gate2ws_rep_register(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
-		CONSOLE_INFO("data_len : {}", data_len);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("data_len : {}",  data_len));
 		if (data_len != sizeof(server2gate_req_register))
 		{
 			return;
@@ -122,7 +123,7 @@ namespace faith
 	}
 	void gate2ws_rep_off_line(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
-		CONSOLE_INFO("data_len : {}", data_len);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("data_len : {}",  data_len));
 		if (data_len != sizeof(gate2server_req_off_line))
 		{
 			return;
@@ -147,7 +148,7 @@ namespace faith
 	}
 	void gate2ws_rep_gate_new(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
-		CONSOLE_INFO("data_len : {}", data_len);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("data_len : {}",  data_len));
 		if (data_len != sizeof(gate2gate_req_new))
 		{
 			return;

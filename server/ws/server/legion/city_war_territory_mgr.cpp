@@ -13,6 +13,7 @@
 #include "../ws/server/ranking/ranking_mgr_ws.h"
 #include "server_log.hpp"
 #include "net.pb.h"
+#include <rlog.hpp>
 namespace faith
 {
 	
@@ -1944,7 +1945,7 @@ namespace faith
 				}
 				if (!world_server::getInstance().is_have_this_server(bid_info->server_id))
 				{
-					CONSOLE_INFO("refresh_bid_info_when_server_list_end_del:{} legion_guid:{}", bid_info->server_id, bid_info->legion_guid.server_64);
+					_RLOG_(MINFO, ::faith::log_detail::format_message("refresh_bid_info_when_server_list_end_del:{} legion_guid:{}",  bid_info->server_id,  bid_info->legion_guid.server_64));
 					clear_territory_legion_bid_info(terr_info_ref.territory_id, bid_info->legion_guid);
 				}
 			}

@@ -1,8 +1,9 @@
-#include "aes.h"
+﻿#include "aes.h"
 #include "md5/Base64.h"
 #include "AESDataConvert.h"
 #include "game_cfg/servers_config.h"
 #include "log/server_log.hpp"
+#include <rlog.hpp>
 
 #pragma warning(disable: 26400 26451)
 
@@ -23,7 +24,7 @@ namespace faith {
 		size_t length = strData.length();
 		if (length > max_aes_data_length) 
 		{
-			CONSOLE_INFO("DecryptionAES Failure, string length too long. string length = {} string:{}", length , strData);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("DecryptionAES Failure, string length too long. string length = {} string:{}",  length,  strData));
 			return xstring();
 		}
 

@@ -30,6 +30,7 @@ purpose:
 #include "template/template_manager.h"
 #include "utility/parse_msg.h"
 #include "net.pb.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -48,7 +49,7 @@ namespace faith
 		// dp2ws_get_game_info msgData;
 		if (result.error || result.query.data_select.row_count != 1)
 		{
-			CONSOLE_INFO("handler_get_game_info_ws_proc result.error:{}", result.error);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("handler_get_game_info_ws_proc result.error:{}",  result.error));
 			dbproxy_service::getInstance().send_message(connindex, &msg, e_msg_dp2ws_get_game_info);
 			return;
 		}

@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
   created: 2014/07/14
   created: 14:7:2014 20:16
   file base: teleport_control
@@ -24,6 +24,7 @@
 #include "template/template_manager.h"
 #include "utility/init_unit.h"
 #include "utility/random.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -64,7 +65,7 @@ namespace faith
 		if (is_teleport_to_same_map(map_guid, map_tempate_id, line_id))
 		{
 			//同地图传送
-			CONSOLE_INFO("teleport_to_same_map map_tempate_id:{} line_id:{}", map_tempate_id, line_id);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("teleport_to_same_map map_tempate_id:{} line_id:{}",  map_tempate_id,  line_id));
 			teleport_to_local(teleport_pos);
 			return;
 		}

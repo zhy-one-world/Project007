@@ -1,4 +1,4 @@
-#include "utility/init_unit.h"
+﻿#include "utility/init_unit.h"
 #include "internet/item.pb.h"
 #include "item_composit_system.h"
 #include "item_system.h"
@@ -7,6 +7,7 @@
 #include "template/template_manager.h"
 #include "utility/random.h"
 #include "internet/net.pb.h"
+#include <rlog.hpp>
 
 using namespace faith;
 
@@ -102,7 +103,7 @@ void item_composit_system::composit_operate_message(player* player_ptr, const it
 	auto random_num = random_gen::get_random(1, 100);
 	if (success_field < random_num)
 	{
-		CONSOLE_INFO("composit fail composit_id:{} success_field:{} random_num:{}", composit_id, success_field, random_num);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("composit fail composit_id:{} success_field:{} random_num:{}",  composit_id,  success_field,  random_num));
 		return;
 	}
 	auto create_item_ent = item_system::create_item(player_ptr, composit_template->CompositItemTemplateID);

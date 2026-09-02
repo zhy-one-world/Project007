@@ -16,6 +16,7 @@
 #include "internal/skill_msg.hpp"
 #include "skill_effect.h"
 #include "template/SkillTemplate_S.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -678,7 +679,7 @@ namespace faith
 		unit& sender_unit = unit_man::get_unit(m_unit_idf);
 		if (sender_unit.get_pawn_att().is_can_move() == false)
 		{
-			CONSOLE_INFO("unit no move");
+			_RLOG_(MINFO, "unit no move");
 			return;
 		}
 		skill* skill_inst_ptr = get_skill_inst_by_id(param.skill_template_id);

@@ -63,6 +63,7 @@
 #include "internal/chat_msg.hpp"
 #include "internal/gain_treasure_msg.hpp"
 #include "internal/time_limit_activity_msg.hpp"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -72,13 +73,13 @@ namespace faith
 	packet_s2s* load_data_ptr = parse_msg::getInstance().parse_message_server(&load_data, data_ptr, data_len);\
 	if (nullptr == load_data_ptr)\
 	{\
-		CONSOLE_INFO("NULL == packet data_len:{}", data_len);\
+		_RLOG_(MINFO, ::faith::log_detail::format_message("NULL == packet data_len:{}",  data_len));\
 		return;\
 	}\
 	player& player_ref = unit_man::get_player(load_data_ptr->logic_index);\
 	if (false == player_ref.is_valid() || player_ref.get_unit_guid() != load_data_ptr->logic_guid)\
 	{\
-		CONSOLE_INFO("NULL == packet logic_index:{}", load_data_ptr->logic_index);\
+		_RLOG_(MINFO, ::faith::log_detail::format_message("NULL == packet logic_index:{}",  load_data_ptr->logic_index));\
 		return;\
 	}
 
@@ -181,14 +182,14 @@ namespace faith
 
 		if (data_ptr == nullptr || !data_len)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return false;
 		}
 		faith::cs2dp_proto::role_info_db msg;
 		bool is_sucess = parse_msg::getInstance().parse_buffer_to_proto(&msg, data_ptr, data_len);
 		if (!is_sucess)
 		{
-			CONSOLE_INFO("parse fail");
+			_RLOG_(MINFO, "parse fail");
 			return false;
 		}
 
@@ -221,20 +222,20 @@ namespace faith
 		const dp2cs_load_role_info* packet = static_cast<const dp2cs_load_role_info*>(data_ptr);
 		if ( NULL == packet )
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ptr = unit_man::get_player(packet->unit_array_index);
 		if (false == player_ptr.is_valid() || player_ptr.get_unit_guid() != packet->data_info.role_guid)
 		{
-			CONSOLE_INFO("NULL == player_ptr");
+			_RLOG_(MINFO, "NULL == player_ptr");
 			return;
 		}
 
 		MapTemplate* move_map_template_ptr = GET_TEMPLATE(MapTemplate, packet->data_info.data_ary[e_role_info_move_map_id]);
 		if (move_map_template_ptr == nullptr)
 		{
-			CONSOLE_INFO("NULL == move_map_template_ptr");
+			_RLOG_(MINFO, "NULL == move_map_template_ptr");
 			cs2ws_enter_game	rep;
 			rep.client_uid = player_ptr.get_client_uid();
 			rep.char_info_to_ws.role_guid = player_ptr.get_unit_guid();
@@ -286,7 +287,7 @@ namespace faith
 		player_ptr.check_is_robot();
 		if (false == world_cs::add_player(player_ptr.get_map_ent(), &player_ptr))
 		{
-			CONSOLE_INFO("add player fail");
+			_RLOG_(MINFO, "add player fail");
 			cs2ws_enter_game	rep;
 			rep.client_uid = player_ptr.get_client_uid();
 			rep.char_info_to_ws.role_guid = player_ptr.get_unit_guid();
@@ -307,19 +308,19 @@ namespace faith
 	{
 		if (nullptr == data_ptr || 0 == data_len)
 		{
-			CONSOLE_INFO("NULL == packet data_len:{}", data_len);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("NULL == packet data_len:{}",  data_len));
 			return;
 		}
 		packet_s2s* serer_data_ptr = (packet_s2s*)data_ptr;
 		if (nullptr == serer_data_ptr)
 		{
-			CONSOLE_INFO("NULL == serer_data_ptr");
+			_RLOG_(MINFO, "NULL == serer_data_ptr");
 			return;
 		}
 		player& player_ref = unit_man::get_player(serer_data_ptr->logic_index);
 		if (false == player_ref.is_valid() || player_ref.get_unit_guid() != serer_data_ptr->logic_guid)
 		{
-			CONSOLE_INFO("NULL == player_ref logig_index:{}, in s guid:{} msg guid:{}", serer_data_ptr->logic_index, player_ref.get_unit_guid().server_64, serer_data_ptr->logic_guid.server_64);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("NULL == player_ref logig_index:{}, in s guid:{} msg guid:{}",  serer_data_ptr->logic_index,  player_ref.get_unit_guid().server_64,  serer_data_ptr->logic_guid.server_64));
 			return;
 		}
 		switch (serer_data_ptr->data_flag)
@@ -392,7 +393,7 @@ namespace faith
 		packet_s2s* load_data_ptr = parse_msg::getInstance().parse_message_server(&load_data, data_ptr, data_len);
 		if (nullptr == load_data_ptr)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(load_data_ptr->logic_index);
@@ -425,7 +426,7 @@ namespace faith
 		const dp2cs_load_char_legion_skill* packet = static_cast<const dp2cs_load_char_legion_skill*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -444,7 +445,7 @@ namespace faith
 		packet_s2s* load_data_ptr = parse_msg::getInstance().parse_message_server(&load_proto, data_ptr, data_len);
 		if (nullptr == load_data_ptr)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(load_data_ptr->logic_index);
@@ -460,7 +461,7 @@ namespace faith
 		const dp2cs_load_money_info* packet = static_cast<const dp2cs_load_money_info*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -478,7 +479,7 @@ namespace faith
 		const dp2cs_load_char_talent* packet = static_cast<const dp2cs_load_char_talent*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -494,7 +495,7 @@ namespace faith
 		const dp2cs_load_char_treasure* packet = static_cast<const dp2cs_load_char_treasure*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -510,7 +511,7 @@ namespace faith
 	
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -528,7 +529,7 @@ namespace faith
 
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -546,7 +547,7 @@ namespace faith
 		const dp2cs_load_char_spirit* packet = static_cast<const dp2cs_load_char_spirit*>(data_ptr);
 		if (nullptr == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -564,7 +565,7 @@ namespace faith
 		const dp2cs_load_char_welfare* packet = static_cast<const dp2cs_load_char_welfare*>(data_ptr);
 		if (nullptr == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -582,7 +583,7 @@ namespace faith
 		const dp2cs_load_char_active_degree* packet = static_cast<const dp2cs_load_char_active_degree*>(data_ptr);
 		if (nullptr == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -599,7 +600,7 @@ namespace faith
 		const dp2cs_load_char_welfare_random_get* welfare_load = static_cast<const dp2cs_load_char_welfare_random_get*>(data_ptr);
 		if (nullptr == welfare_load)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -616,7 +617,7 @@ namespace faith
 		const dp2cs_load_char_title* packet = static_cast<const dp2cs_load_char_title*>(data_ptr);
 		if (nullptr == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -634,7 +635,7 @@ namespace faith
 		const dp2cs_load_char_mail* mail_load = static_cast<const dp2cs_load_char_mail*>(data_ptr);
 		if (nullptr == mail_load)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -652,7 +653,7 @@ namespace faith
 		const dp2cs_load_char_convert* packet = static_cast<const dp2cs_load_char_convert*>(data_ptr);
 		if (nullptr == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -672,7 +673,7 @@ namespace faith
 		const dp2cs_load_char_mail_item* packet = static_cast<const dp2cs_load_char_mail_item*>(data_ptr);
 		if (nullptr == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -689,7 +690,7 @@ namespace faith
 		const dp2cs_del_mail_end* mail_del_end = static_cast<const dp2cs_del_mail_end*>(data_ptr);
 		if (nullptr == mail_del_end)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(mail_del_end->unit_index);
@@ -705,7 +706,7 @@ namespace faith
 		const dp2cs_operate_load_lock_mail* operate_load_lock_mail = static_cast<const dp2cs_operate_load_lock_mail*>(data_ptr);
 		if (nullptr == operate_load_lock_mail)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(operate_load_lock_mail->unit_index);
@@ -721,7 +722,7 @@ namespace faith
 		const dp2cs_load_player_had_globel_mail_end* mail_load = static_cast<const dp2cs_load_player_had_globel_mail_end*>(data_ptr);
 		if (nullptr == mail_load)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(mail_load->unit_index);
@@ -739,7 +740,7 @@ namespace faith
 		const dp2cs_load_char_mission* packet = static_cast<const dp2cs_load_char_mission*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -756,7 +757,7 @@ namespace faith
 		const dp2cs_load_char_att* packet = static_cast<const dp2cs_load_char_att*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -774,7 +775,7 @@ namespace faith
 		const dp2cs_load_char_goods* packet = static_cast<const dp2cs_load_char_goods*>(data_ptr);
 		if (nullptr == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -791,7 +792,7 @@ namespace faith
 		const dp2cs_load_worship_target* packet = static_cast<const dp2cs_load_worship_target*>(data_ptr);
 		if (nullptr == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -808,7 +809,7 @@ namespace faith
 		const dp2cs_load_char_map* packet = static_cast<const dp2cs_load_char_map*>(data_ptr);
 		if (nullptr == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -828,7 +829,7 @@ namespace faith
 		const dp2cs_load_char_demons_tower* packet = static_cast<const dp2cs_load_char_demons_tower*>(data_ptr);
 		if (nullptr == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -852,7 +853,7 @@ namespace faith
 
 		if (nullptr == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -868,7 +869,7 @@ namespace faith
 		const dp2cs_load_char_achievement* packet = static_cast<const dp2cs_load_char_achievement*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -887,7 +888,7 @@ namespace faith
 		const dp2cs_resp_load_arena_log* arena_log = static_cast<const dp2cs_resp_load_arena_log*>(data_ptr);
 		if (NULL == arena_log)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -915,7 +916,7 @@ namespace faith
 		const dp2cs_load_arena_char_error* packet = static_cast<const dp2cs_load_arena_char_error*>(data_ptr);
 		if (NULL == packet || data_len != sizeof(dp2cs_load_arena_char_error))
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -932,7 +933,7 @@ namespace faith
 		const dp2cs_arena_load_char_info* packet = static_cast<const dp2cs_arena_load_char_info*>(data_ptr);
 		if (NULL == packet || data_len != sizeof(dp2cs_arena_load_char_info))
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		
@@ -948,7 +949,7 @@ namespace faith
 		const dp2cs_arena_load_char_att* packet = static_cast<const dp2cs_arena_load_char_att*>(data_ptr);
 		if (NULL == packet || data_len != sizeof(dp2cs_arena_load_char_att))
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -964,7 +965,7 @@ namespace faith
 		const dp2cs_arena_load_char_skill* packet = static_cast<const dp2cs_arena_load_char_skill*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -980,7 +981,7 @@ namespace faith
 		const dp2cs_arena_load_char_item* packet = static_cast<const dp2cs_arena_load_char_item*>(data_ptr);
 		if (packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		//auto map_object_ptr = world_cs::get_map_by_guid<arena_map_cs>(packet->map_guid);
@@ -995,7 +996,7 @@ namespace faith
 		const dp2cs_arena_load_char_fight_att* packet = static_cast<const dp2cs_arena_load_char_fight_att*>(data_ptr);
 		if (packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		//auto map_object_ptr = world_cs::get_map_by_guid<arena_map_cs>(packet->map_guid);
@@ -1009,7 +1010,7 @@ namespace faith
 		const dp2cs_arena_load_char_buff* packet = static_cast<const dp2cs_arena_load_char_buff*>(data_ptr);
 		if (packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		//auto map_object_ptr = world_cs::get_map_by_guid<arena_map_cs>(packet->map_guid);
@@ -1023,7 +1024,7 @@ namespace faith
 		const dp2cs_arena_load_char_spirit* packet = static_cast<const dp2cs_arena_load_char_spirit*>(data_ptr);
 		if (packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		//auto map_object_ptr = world_cs::get_map_by_guid<arena_map_cs>(packet->map_guid);
@@ -1037,7 +1038,7 @@ namespace faith
 		const dp2cs_arena_load_char_belief* packet = static_cast<const dp2cs_arena_load_char_belief*>(data_ptr);
 		if (packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		//auto map_object_ptr = world_cs::get_map_by_guid<arena_map_cs>(packet->map_guid);
@@ -1052,14 +1053,14 @@ namespace faith
 		const dp2cs_load_data_error* packet = static_cast<const dp2cs_load_data_error*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
-		CONSOLE_INFO("load data error:role_guid:{} error_code:{} error_id:{}", packet->role_guid.server_64, packet->error_code, packet->error_result);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("load data error:role_guid:{} error_code:{} error_id:{}",  packet->role_guid.server_64,  packet->error_code,  packet->error_result));
 		player& player_ref = unit_man::get_player(packet->array_index);
 		if (false == player_ref.is_valid() || player_ref.get_unit_guid() != packet->role_guid)
 		{
-			CONSOLE_INFO("player_ref is null");
+			_RLOG_(MINFO, "player_ref is null");
 			return;
 		}
 		unit_man::logout_player(player_ref.get_unit_guid(), player_ref.get_array_index(), true, e_logout_result_load_data_fail);
@@ -1086,7 +1087,7 @@ namespace faith
 			return;
 		}
 		player_ref.set_saving_flag(packet->save_type_ex, packet->save_flag);
-		CONSOLE_INFO("role_guid:{} save_type_ex:{} save_flag:{}", packet->role_guid.server_64, packet->save_type_ex, int32(packet->save_flag));
+		_RLOG_(MINFO, ::faith::log_detail::format_message("role_guid:{} save_type_ex:{} save_flag:{}",  packet->role_guid.server_64,  packet->save_type_ex,  int32(packet->save_flag)));
 		if (player_ref.get_saveing_flag_all_finish())
 		{
 			switch (packet->save_type_ex)
@@ -1126,7 +1127,7 @@ namespace faith
 		const dp2cs_load_char_show* packet = static_cast<const dp2cs_load_char_show*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& temp_player = unit_man::get_player(packet->unit_array_index);
@@ -1144,7 +1145,7 @@ namespace faith
 		const dp2cs_load_character_yesterday_remain_must_do* packet = static_cast<const dp2cs_load_character_yesterday_remain_must_do*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -1160,7 +1161,7 @@ namespace faith
 		const dp2cs_load_guide_record* packet = static_cast<const dp2cs_load_guide_record*>(data_ptr);
 		if (nullptr == packet || data_len != sizeof(dp2cs_load_guide_record))
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -1178,7 +1179,7 @@ namespace faith
 		const dp2cs_load_first_time_do_record* packet = static_cast<const dp2cs_load_first_time_do_record*>(data_ptr);
 		if (nullptr == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -1198,7 +1199,7 @@ namespace faith
 		const dp2cs_get_other_player_info_base_end* get_other_player_info_base = static_cast<const dp2cs_get_other_player_info_base_end*>(data_ptr);
 		if (nullptr == get_other_player_info_base)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -1214,7 +1215,7 @@ namespace faith
 		const dp2cs_get_other_player_info_equiping_end* get_other_player_info_equiping = static_cast<const dp2cs_get_other_player_info_equiping_end*>(data_ptr);
 		if (nullptr == get_other_player_info_equiping)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(get_other_player_info_equiping->role_guid);
@@ -1229,7 +1230,7 @@ namespace faith
 		const dp2cs_get_other_player_info_special_name_end* get_other_player_info_special_name = static_cast<const dp2cs_get_other_player_info_special_name_end*>(data_ptr);
 		if (nullptr == get_other_player_info_special_name)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -1246,7 +1247,7 @@ namespace faith
 		const dp2cs_get_other_player_info_base_group_end* get_other_player_info_base_group = static_cast<const dp2cs_get_other_player_info_base_group_end*>(data_ptr);
 		if (nullptr == get_other_player_info_base_group)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -1263,7 +1264,7 @@ namespace faith
 		const dp2cs_get_other_player_info_spirit_end* get_other_player_info_spirit = static_cast<const dp2cs_get_other_player_info_spirit_end*>(data_ptr);
 		if (nullptr == get_other_player_info_spirit)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(get_other_player_info_spirit->role_guid);
@@ -1278,7 +1279,7 @@ namespace faith
 		const dp2cs_get_other_player_info_wing_or_mount_end* get_other_player_info_wing_or_mount = static_cast<const dp2cs_get_other_player_info_wing_or_mount_end*>(data_ptr);
 		if (nullptr == get_other_player_info_wing_or_mount)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(get_other_player_info_wing_or_mount->role_guid);
@@ -1294,7 +1295,7 @@ namespace faith
 		const dp2cs_get_other_player_info_buff_end* get_other_player_info_buff = static_cast<const dp2cs_get_other_player_info_buff_end*>(data_ptr);
 		if (nullptr == get_other_player_info_buff)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -1311,7 +1312,7 @@ namespace faith
 		const dp2cs_get_other_player_info_feather_end* get_other_player_info_feather  = static_cast<const dp2cs_get_other_player_info_feather_end*>(data_ptr);
 		if (nullptr == get_other_player_info_feather)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -1329,7 +1330,7 @@ namespace faith
 		const dp2cs_get_other_player_info_appearance_end* msg_data = static_cast<const dp2cs_get_other_player_info_appearance_end*>(data_ptr);
 		if (nullptr == msg_data)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -1350,7 +1351,7 @@ namespace faith
 		const dp2cs_load_hightest_record* packet = static_cast<const dp2cs_load_hightest_record*>(data_ptr);
 		if (nullptr == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -1369,7 +1370,7 @@ namespace faith
 		const dp2cs_auction_load_self_selling_end* packet = static_cast<const dp2cs_auction_load_self_selling_end*>(data_ptr);
 		if (nullptr == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -1387,7 +1388,7 @@ namespace faith
 		const dp2cs_auction_req_goods_list_end* packet = static_cast<const dp2cs_auction_req_goods_list_end*>(data_ptr);
 		if (nullptr == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -1404,7 +1405,7 @@ namespace faith
 		const dp2cs_auction_req_trade_record_end* packet = static_cast<const dp2cs_auction_req_trade_record_end*>(data_ptr);
 		if (nullptr == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -1421,7 +1422,7 @@ namespace faith
 		const dp2cs_auction_req_other_sell_info_end* packet = static_cast<const dp2cs_auction_req_other_sell_info_end*>(data_ptr);
 		if (nullptr == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -1454,7 +1455,7 @@ namespace faith
 		const dp2cs_aution_req_bid_record_failure_end* packet = static_cast<const dp2cs_aution_req_bid_record_failure_end*>(data_ptr);
 		if (nullptr == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -1471,7 +1472,7 @@ namespace faith
 		const dp2cs_auction_req_bid_notice_end *packet = static_cast<const dp2cs_auction_req_bid_notice_end *>(data_ptr);
 		if (nullptr == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->role_guid);
@@ -1488,7 +1489,7 @@ namespace faith
 		const dp2cs_auction_get_red_state_end *packet = static_cast<const dp2cs_auction_get_red_state_end *>(data_ptr);
 		if (nullptr == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->role_guid);
@@ -1506,7 +1507,7 @@ namespace faith
 		const dp2cs_load_char_service_goal* service_goal_load = static_cast<const dp2cs_load_char_service_goal*>(data_ptr);
 		if (NULL == service_goal_load)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -1524,7 +1525,7 @@ namespace faith
 		const dp2cs_load_char_seven_day_goal* seven_day_goal_load = static_cast<const dp2cs_load_char_seven_day_goal*>(data_ptr);
 		if (NULL == seven_day_goal_load)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 
@@ -1542,7 +1543,7 @@ namespace faith
 		const dp2cs_load_character_daily_must_do_count* packet = static_cast<const dp2cs_load_character_daily_must_do_count*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -1558,7 +1559,7 @@ namespace faith
 		const dp2cs_load_service_rank_reward_state* packet = static_cast<const dp2cs_load_service_rank_reward_state*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -1575,7 +1576,7 @@ namespace faith
 		const dp2cs_load_boss_island_info* packet = static_cast<const dp2cs_load_boss_island_info*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -1592,7 +1593,7 @@ namespace faith
 		const dp2cs_load_role_harry_info* packet = static_cast<const dp2cs_load_role_harry_info*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -1608,7 +1609,7 @@ namespace faith
 		const dp2cs_load_char_phantom* packet = static_cast<const dp2cs_load_char_phantom*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -1625,7 +1626,7 @@ namespace faith
 		const dp2cs_load_char_recycle* packet = static_cast<const dp2cs_load_char_recycle*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -1642,7 +1643,7 @@ namespace faith
 		const dp2cs_load_char_recycle_task* packet = static_cast<const dp2cs_load_char_recycle_task*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -1659,7 +1660,7 @@ namespace faith
 		const dp2cs_load_char_recycle_invited* packet = static_cast<const dp2cs_load_char_recycle_invited*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -1677,7 +1678,7 @@ namespace faith
 		const dp2cs_recycle_get_inviter_info_end *packet = static_cast<const dp2cs_recycle_get_inviter_info_end*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->role_guid);
@@ -1695,7 +1696,7 @@ namespace faith
 		const dp2cs_load_oracle_trial_all_info* packet = static_cast<const dp2cs_load_oracle_trial_all_info*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -1713,7 +1714,7 @@ namespace faith
 		const dp2cs_load_chat_record* packet = static_cast<const dp2cs_load_chat_record*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -1731,7 +1732,7 @@ namespace faith
 		const dp2cs_load_gain_treasure_info* packet = static_cast<const dp2cs_load_gain_treasure_info*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -1748,7 +1749,7 @@ namespace faith
 		const dp2cs_load_time_limit_activity_info_end* packet = static_cast<const dp2cs_load_time_limit_activity_info_end*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -1766,7 +1767,7 @@ namespace faith
 		const dp2cs_connect_success* packet = static_cast<const dp2cs_connect_success*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		cell_server::getInstance().dp_connect_cs_success();
@@ -1777,7 +1778,7 @@ namespace faith
 		const dp2cs_get_person_information* packet = static_cast<const dp2cs_get_person_information*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->role_guid);
@@ -1794,7 +1795,7 @@ namespace faith
 		const dp2cs_get_other_person_information* packet = static_cast<const dp2cs_get_other_person_information*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->role_guid);
@@ -1810,7 +1811,7 @@ namespace faith
 		const dp2cs_get_role_competition* packet = static_cast<const dp2cs_get_role_competition*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -1834,7 +1835,7 @@ namespace faith
 		const dp2cs_get_role_dragontrip* packet = static_cast<const dp2cs_get_role_dragontrip*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -1852,7 +1853,7 @@ namespace faith
 		const dp2cs_get_role_skytreasure* packet = static_cast<const dp2cs_get_role_skytreasure*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -1869,7 +1870,7 @@ namespace faith
 		const dp2cs_get_role_starark* packet = static_cast<const dp2cs_get_role_starark*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->unit_array_index);
@@ -1886,7 +1887,7 @@ namespace faith
 		const dp2cs_get_time_feed_back_to_db_end* packet = static_cast<const dp2cs_get_time_feed_back_to_db_end*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->role_guid);
@@ -1903,7 +1904,7 @@ namespace faith
 		const dp2cs_get_time_limit_gift_to_db_end* packet = static_cast<const dp2cs_get_time_limit_gift_to_db_end*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->role_guid);
@@ -1919,7 +1920,7 @@ namespace faith
 		const dp2cs_get_subscribe_daily_info_to_db_end* packet = static_cast<const dp2cs_get_subscribe_daily_info_to_db_end*>(data_ptr);
 		if (NULL == packet)
 		{
-			CONSOLE_INFO("NULL == packet");
+			_RLOG_(MINFO, "NULL == packet");
 			return;
 		}
 		player& player_ref = unit_man::get_player(packet->role_guid);

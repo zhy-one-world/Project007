@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
   created: 2014/07/14
   created: 14:7:2014 20:31
   file base: connection_mgr
@@ -24,6 +24,7 @@
 #include "server_log.hpp"
 #include "utility/guid_gen.h"
 #include "utility/parse_msg.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -193,7 +194,7 @@ namespace faith
 		{
 		case e_server_type_ws:
 		{
-			CONSOLE_INFO("on_conn_closed_ws");
+			_RLOG_(MINFO, "on_conn_closed_ws");
 			//req_stop server_stop_msg;
 			//server_stop_msg.server_type = e_server_type_dp;
 			//connection_mgr::getInstance().send_to_dp(&server_stop_msg, sizeof(server_stop_msg));
@@ -284,7 +285,7 @@ namespace faith
 	}	
 	void connection_mgr::gate2ws_rep_gate_new(uint32 conn_index, const void* data_ptr, size_t data_len)
 	{
-		CONSOLE_INFO("gate2ws_rep_register  data_len:{}", data_len);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("gate2ws_rep_register  data_len:{}",  data_len));
 		if (data_len != sizeof(gate2gate_req_new))
 		{
 			return;

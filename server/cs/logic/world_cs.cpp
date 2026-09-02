@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2015/03/21
 	created:	21:3:2015   21:34
 	file base:	world_cs
@@ -30,6 +30,7 @@
 #include <Utility/parse_msg.h>
 #include "internal/chat_msg.hpp"
 #include "internal/core.hpp"
+#include <rlog.hpp>
 
 
 namespace faith
@@ -48,7 +49,7 @@ namespace faith
 	void world_cs::create_map_by_template(const guid_64& map_guid, int32 map_template_id, int32 line_id, int32 map_all_time)
 	{
 		ZoneScoped;
-		CONSOLE_INFO("map_guid = {} map_template_id = {} line_id = {} map_all_time = {}", map_guid.server_64, map_template_id, line_id, map_all_time);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("map_guid = {} map_template_id = {} line_id = {} map_all_time = {}",  map_guid.server_64,  map_template_id,  line_id,  map_all_time));
 		MapTemplate* map_template_ptr = GET_TEMPLATE(MapTemplate, map_template_id);
 		if (nullptr == map_template_ptr)
 		{
@@ -71,7 +72,7 @@ namespace faith
 	void world_cs::destroy_map(const guid_64& map_guid)
 	{
 		ZoneScoped;
-		CONSOLE_INFO("map_guid = {}", map_guid.server_64);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("map_guid = {}",  map_guid.server_64));
 		auto map_ent = get_entity(map_guid);
 		if (nullptr == map_ent)
 		{
@@ -781,7 +782,7 @@ namespace faith
 	void world_cs::create_harry_player_statue(const s_fake_player_info& player_info, const int32& big_type, const guid_64& map_guid)
 	{
 		ZoneScoped;
-		CONSOLE_INFO("create_harry_player_statue guid = {} big_type = {}", player_info.guid.server_64, big_type);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("create_harry_player_statue guid = {} big_type = {}",  player_info.guid.server_64,  big_type));
 		if (big_type >= e_fake_type_first_harry_player && big_type <= e_fake_type_third_harry_player)
 		{
 			int32 npc_spawn_id = harry_map_first_spawn_id + big_type;
@@ -807,7 +808,7 @@ namespace faith
 
 			if (nullptr == temp_npc)
 			{
-				CONSOLE_INFO("create_harry_player_statue npc guid = {} big_type = {}", player_info.guid.server_64, big_type);
+				_RLOG_(MINFO, ::faith::log_detail::format_message("create_harry_player_statue npc guid = {} big_type = {}",  player_info.guid.server_64,  big_type));
 			}
 		}
 		if (big_type >= e_fake_type_best_barserker && big_type < e_fake_type_max)//通用根据类型创建雕像逻辑，可直接调用

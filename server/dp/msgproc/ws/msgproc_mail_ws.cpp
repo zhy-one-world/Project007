@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 created:	2016年12月12日12:54:24
 file base:	msgproc_mail_ws
 file ext:	cpp
@@ -13,6 +13,7 @@ purpose:
 #include "dbproxy_service.hpp"
 #include "utility/parse_msg.h"
 #include "server_log.hpp"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -208,7 +209,7 @@ namespace faith
 	void add_new_item_finish(db_result_type result, uint32 connindex, guid_64 role_guid, const faith::ws2dp_add_mail_to_sql mail_msg)
 	{
 
-		CONSOLE_INFO("add_new_item_finish result = {} Mail Guid = {}", result.error, mail_msg.mail_info.mail_guid.server_64);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("add_new_item_finish result = {} Mail Guid = {}",  result.error,  mail_msg.mail_info.mail_guid.server_64));
 
 		//插入邮件本体
 		if (!result.error)
@@ -225,7 +226,7 @@ namespace faith
 	{
 		if (!role_guid.is_valid())
 		{
-			CONSOLE_INFO("No Guid  Mail Guid = {}", mail_msg.mail_info.mail_guid.server_64);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("No Guid  Mail Guid = {}",  mail_msg.mail_info.mail_guid.server_64));
 			return;
 		}
 
@@ -269,7 +270,7 @@ namespace faith
 
 		//if (item1_guid.is_valid())
 		//{
-		//	CONSOLE_INFO("sql = {}", sql.c_str());
+		//	_RLOG_(MINFO, ::faith::log_detail::format_message("sql = {}",  sql.c_str()));
 		//}
 		db_query_type query;
 		query.role_guid = role_guid;
@@ -282,7 +283,7 @@ namespace faith
 	{
 		if (mail_msg.item_list[0].is_valid())
 		{
-			CONSOLE_INFO("result = {} mail_guid = {}", result.error, mail_msg.mail_info.mail_guid.server_64);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("result = {} mail_guid = {}",  result.error,  mail_msg.mail_info.mail_guid.server_64));
 		}
 
 		if (!result.error)
@@ -296,7 +297,7 @@ namespace faith
 
 	void resend_mail_to_sender(uint32 connindex, const faith::ws2dp_add_mail_to_sql mail_msg)
 	{
-		CONSOLE_INFO("Mail Guid = {}", mail_msg.mail_info.mail_guid.server_64);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("Mail Guid = {}",  mail_msg.mail_info.mail_guid.server_64));
 		if (mail_msg.resend_times > 5)
 		{
 			//防错，防止数据错误反复回发

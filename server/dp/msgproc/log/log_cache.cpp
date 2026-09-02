@@ -1,10 +1,11 @@
-#include "log_cache.hpp"
+﻿#include "log_cache.hpp"
 #include "db_log_type_def.hpp"
 #include "msgproc_server_log.hpp"
 #include <net/scheduler.hpp>
 #include "utility/random.h"
 #include "time.hpp"
 #include "cs_date.hpp"
+#include <rlog.hpp>
 
 #define WRITE_DB_INTERVAL		(200)
 #define MAX_WRITE_LOG_COUNT		(50)
@@ -258,7 +259,7 @@ namespace faith
 			// FAITH_LOG_INFO(server_log::get_server_log(), _XTEXT("test_write_log count:") << m_test_write_count);
 		}
 		day++;
-		CONSOLE_INFO("day:{}", day);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("day:{}",  day));
 	}
 
 	void log_cache::test_write_loginout_log(int day, int account_idx)
@@ -596,7 +597,7 @@ namespace faith
 	{
 		if (result.error)
 		{
-			CONSOLE_INFO("init_ranking_list_log_table error:{}", result.error);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("init_ranking_list_log_table error:{}",  result.error));
 			return;
 		}
 	}

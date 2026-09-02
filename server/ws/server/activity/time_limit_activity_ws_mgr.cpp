@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 created: 2019年03月20日
 file base: time_limit_activity_ws_mgr
 file ext: cpp
@@ -22,6 +22,7 @@ purpose: time limit activity
 #include "globle_data.h"
 #include "time_limit_activity.pb.h"
 #include "net.pb.h"
+#include <rlog.hpp>
 
 namespace faith
 {
@@ -379,7 +380,7 @@ namespace faith
 
 		for (auto iter = cur_ranking_list_ptr->begin(); iter != cur_ranking_list_ptr->end(); ++iter)
 		{
-			CONSOLE_INFO("send_activity_rank_rewards  rank_type:{} role_guid:{} rank_value:{} peak:{}", (int32)activity_info_ite->second.ranking_type, iter->role_guid.server_64, iter->ranking_value, iter->Peak);
+			_RLOG_(MINFO, ::faith::log_detail::format_message("send_activity_rank_rewards  rank_type:{} role_guid:{} rank_value:{} peak:{}",  (int32)activity_info_ite->second.ranking_type,  iter->role_guid.server_64,  iter->ranking_value,  iter->Peak));
 		}
 
 		int32 min_value = get_time_limit_activity_rank_min_config_value(activity_type);

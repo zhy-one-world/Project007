@@ -29,6 +29,7 @@
 #include "http/http_access_mgr.hpp"
 #include "net/message_manager.hpp"
 #include "dump/dump.hpp"
+#include <rlog.hpp>
 
 //////////////////////////////////////////////////////////////////////////
 //	Free Functions
@@ -46,13 +47,13 @@ namespace faith
 		message_manager::getInstance().set_server_type(e_server_type_gate);
 		if (!net_client_mgr::getInstance().set_netpara_option(GATE_CLIENT_SEND_BUFF_SIZE, GATE_CLIENT_RECV_BUFF_SIZE, INTERNAL_SERVER_MAX_PACKET_SIZE, GATE_NEED_CLIENT_COUNT))
 		{
-			CONSOLE_INFO("net_client_mgr init error");
+			_RLOG_(MINFO, "net_client_mgr init error");
 			return false;
 		}
 		http_access_mgr::get_instance().init(false);
 		if (!game_mgr::getInstance().init())
 		{
-			CONSOLE_INFO("game_mgr init error");
+			_RLOG_(MINFO, "game_mgr init error");
 			return false;
 		}
 		game_mgr::getInstance().start();
@@ -64,7 +65,7 @@ namespace faith
 	}
 	static void release()
 	{
-		CONSOLE_INFO("main(): release");
+		_RLOG_(MINFO, "main(): release");
 
 	}
 

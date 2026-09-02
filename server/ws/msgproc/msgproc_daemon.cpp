@@ -1,4 +1,4 @@
-#include "msgproc_daemon.hpp"
+﻿#include "msgproc_daemon.hpp"
 #include "connection/daemon_client.hpp"
 #include "daemon_eye_msg.hpp"
 #include "utility/init_unit.h"
@@ -9,13 +9,14 @@
 #include "net/tcp_client.hpp"
 #include "../server/mail/event_ws_mgr.h"
 #include "../server/web_client.hpp"
+#include <rlog.hpp>
 
 namespace faith
 {
 	void daemon2ws_exit_func(protocolUnpacker& unpacker)
 	{
 		app_server::getInstance().stop();
-		CONSOLE_INFO("FaithEye Stop Game!");
+		_RLOG_(MINFO, "FaithEye Stop Game!");
 	}
 
 	void daemon2ws_gmcmd_func(protocolUnpacker& unpacker)

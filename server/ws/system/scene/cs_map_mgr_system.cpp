@@ -1,4 +1,4 @@
-#include "cs_map_mgr_system.h"
+﻿#include "cs_map_mgr_system.h"
 #include "components/scene/cs_map_mgr_component.h"
 #include "server_log.hpp"
 #include "cs_map_system.h"
@@ -9,6 +9,7 @@
 #include "init_unit.h"
 #include "game.pb.h"
 #include "net.pb.h"
+#include <rlog.hpp>
 
 using namespace faith;
 cs_map_mgr_component g_cs_mgr_cp;
@@ -209,14 +210,14 @@ bool cs_map_mgr_system::check_unit_can_enter_map(int32 map_template_id, const gu
 	}
 	if (g_cs_mgr_cp.m_rm_units_stamp_data.size() <= 0)
 	{
-		CONSOLE_INFO("g_cs_mgr_cp.m_rm_units_stamp_data.size() <= 0");
+		_RLOG_(MINFO, "g_cs_mgr_cp.m_rm_units_stamp_data.size() <= 0");
 		return true;
 	}
 
 	auto it_map_rm_data = g_cs_mgr_cp.m_rm_units_stamp_data.find(map_template_id);
 	if (it_map_rm_data == g_cs_mgr_cp.m_rm_units_stamp_data.end())
 	{
-		CONSOLE_INFO("it_map_rm_data == m_rm_units_stamp_data.end()");
+		_RLOG_(MINFO, "it_map_rm_data == m_rm_units_stamp_data.end()");
 		return true;
 	}
 
@@ -224,7 +225,7 @@ bool cs_map_mgr_system::check_unit_can_enter_map(int32 map_template_id, const gu
 	auto it_player_leave_stamp = rm_units_stamp.find(role_guid.server_64);
 	if (it_player_leave_stamp == rm_units_stamp.end())
 	{
-		CONSOLE_INFO("it_player_leave_stamp == rm_units_stamp.end()");
+		_RLOG_(MINFO, "it_player_leave_stamp == rm_units_stamp.end()");
 		return true;
 	}
 
@@ -235,7 +236,7 @@ bool cs_map_mgr_system::check_unit_can_enter_map(int32 map_template_id, const gu
 		CONSOLE_ERROR("pass_sec < map_template_ptr->ReenterCD map_template_id:{} pass_sec:{} map_template_ptr->ReenterCD:{}", map_template_id, pass_sec, map_template_ptr->ReenterCD);
 		return false;
 	}
-	CONSOLE_INFO("end function");
+	_RLOG_(MINFO, "end function");
 	return true;
 }
 
@@ -464,7 +465,7 @@ void cs_map_mgr_system::show_big_map_unit_num()
 {
 	ZoneScoped;
 	g_ecs->each<cs_map_component>([&](Entity* ent, ComponentHandle<cs_map_component> cs_map_cp) -> bool {
-		CONSOLE_INFO("map unit num:{} max:{} line id:{}", cs_map_cp->m_role_list.size(), cs_map_cp->m_map_template_ptr->MaxPlayerCount, cs_map_cp->m_line_id);
+		_RLOG_(MINFO, ::faith::log_detail::format_message("map unit num:{} max:{} line id:{}",  cs_map_cp->m_role_list.size(),  cs_map_cp->m_map_template_ptr->MaxPlayerCount,  cs_map_cp->m_line_id));
 		return true;
 	});
 }
