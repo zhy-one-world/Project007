@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Config Center 独立配置。
+  运行目录：config_center.xml
+  白名单 host 填 0.0.0.0 / * / 空 = 接受任意上报 IP；端口须与报名一致。
+  gateway 的 server_index 一般与 servers.xml 里 game_id 相同。
+-->
+<config_center>
+	<listen_host>0.0.0.0</listen_host>
+	<listen_port>19000</listen_port>
+	<use_https>true</use_https>
+	<heartbeat_ttl_sec>30</heartbeat_ttl_sec>
+	<ssl>
+		<cert_file>cert.pem</cert_file>
+		<key_file>key.pem</key_file>
+	</ssl>
+	<redis>
+		<host>127.0.0.1</host>
+		<port>6379</port>
+		<db>0</db>
+		<password></password>
+	</redis>
+
+	<allowed>
+		<server>
+			<server_type>gateway</server_type>
+			<server_index>10200</server_index><!-- 与 servers.xml game_id 对齐 -->
+			<internal_host>0.0.0.0</internal_host>
+			<internal_port>2200</internal_port>
+			<external_host>0.0.0.0</external_host>
+			<external_port>2200</external_port>
+		</server>
+		<server>
+			<server_type>ws</server_type>
+			<server_index>0</server_index>
+			<internal_host>192.168.1.59</internal_host>
+			<internal_port>1000</internal_port>
+			<external_host></external_host>
+			<external_port>0</external_port>
+		</server>
+		<server>
+			<server_type>cs</server_type>
+			<server_index>0</server_index>
+			<internal_host>127.0.0.1</internal_host>
+			<internal_port>2100</internal_port>
+			<external_host></external_host>
+			<external_port>0</external_port>
+		</server>
+		<server>
+			<server_type>dp</server_type>
+			<server_index>0</server_index>
+			<internal_host>127.0.0.1</internal_host>
+			<internal_port>3330</internal_port>
+			<external_host></external_host>
+			<external_port>0</external_port>
+		</server>
+		<server>
+			<server_type>gate</server_type>
+			<server_index>0</server_index>
+			<internal_host>127.0.0.1</internal_host>
+			<internal_port>8000</internal_port>
+			<external_host></external_host>
+			<external_port>0</external_port>
+		</server>
+	</allowed>
+</config_center>

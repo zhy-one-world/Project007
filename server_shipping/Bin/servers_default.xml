@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  业务进程配置（gateway / ws / cs / dp / gate ...）。
+  运行目录：servers.xml
+  config_center 自身配置见 config_center.xml
+-->
+<servers>
+	<!-- 全区公共 -->
+	<server_base>
+		<app_key>10001</app_key>
+		<game_id>10200</game_id><!-- gateway 报名 server_index 用此值 -->
+		<game_name>hy</game_name>
+		<gm_state>true</gm_state>
+		<init_player_num>10</init_player_num>
+		<robot_account>Faithrobot</robot_account>
+		<web_address>127.0.0.1</web_address>
+		<web_port>9917</web_port>
+		<daemon_address>127.0.0.1</daemon_address>
+		<daemon_port>20000</daemon_port>
+		<billing_url>http://127.0.0.1:1235/login</billing_url>
+		<recharge_url>http://127.0.0.1:1235/recharge</recharge_url>
+		<one_store_recharge_url>http://127.0.0.1:1235/recharge</one_store_recharge_url>
+		<login_url>http://billing.playtai.com/service-user/server/verify/form</login_url>
+		<server_state_url>http://192.168.0.51:8077/fullServiceMange/managerServerStatus.action</server_state_url>
+		<account_info_url>http://192.168.0.51:8077/fullServiceMange/pushAcountInfo.action</account_info_url>
+		<!-- 业务进程访问 config_center 的地址 -->
+		<config_center_host>127.0.0.1</config_center_host>
+		<config_center_port>19000</config_center_port>
+	</server_base>
+
+	<gateway>
+		<internal_host>127.0.0.1</internal_host>
+		<internal_port>2200</internal_port>
+		<external_host>10.0.63.54</external_host>
+		<external_port>2200</external_port>
+		<client_send_limit>20</client_send_limit>
+		<init_socket_num>20</init_socket_num>
+	</gateway>
+
+	<gate>
+		<internal_host>127.0.0.1</internal_host>
+		<internal_port>8000</internal_port>
+		<gate_id>19999</gate_id>
+	</gate>
+
+	<ws>
+		<internal_host>192.168.1.59</internal_host>
+		<internal_port>1000</internal_port>
+		<http_port>9918</http_port>
+		<max_team_user_num>2</max_team_user_num>
+		<max_room_team_num>2</max_room_team_num>
+		<max_room_user_num>4</max_room_user_num>
+		<sdk_url>http://cn-gs.umi-game.cn/service-user/server/verify?</sdk_url>
+		<ds_url>http://192.168.0.192:8090/</ds_url>
+	</ws>
+
+	<cs>
+		<internal_host>127.0.0.1</internal_host>
+		<internal_port>2100</internal_port>
+	</cs>
+
+	<dp>
+		<internal_host>127.0.0.1</internal_host>
+		<internal_port>3330</internal_port>
+		<save_open>1</save_open>
+		<save_interval>3600</save_interval>
+		<mysql_conn>
+			<conn>
+				<mysql_id>0</mysql_id>
+				<ip_addr>127.0.0.1</ip_addr>
+				<ip_port>3306</ip_port>
+				<user_name>root</user_name>
+				<user_password>123456</user_password>
+				<schema_name>low_game_schema</schema_name>
+				<thread_num>18</thread_num>
+			</conn>
+			<conn>
+				<mysql_id>1</mysql_id>
+				<ip_addr>127.0.0.1</ip_addr>
+				<ip_port>3306</ip_port>
+				<user_name>root</user_name>
+				<user_password>123456</user_password>
+				<schema_name>low_log_schema</schema_name>
+				<thread_num>18</thread_num>
+			</conn>
+		</mysql_conn>
+	</dp>
+</servers>
