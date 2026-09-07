@@ -7,8 +7,8 @@
 <servers>
 	<!-- 全区公共 -->
 	<server_base>
-		<app_key>10001</app_key>
-		<game_id>10200</game_id><!-- gateway 报名 server_index 用此值 -->
+		<app_key>100001</app_key>
+		<game_id>10200</game_id><!-- gateway 报名用此 game_id -->
 		<game_name>hy</game_name>
 		<gm_state>true</gm_state>
 		<init_player_num>10</init_player_num>
