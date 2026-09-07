@@ -56,8 +56,9 @@ namespace faith
 		cc_params.center_host = SERVERCONFIG->config_center_host;
 		cc_params.center_port = SERVERCONFIG->config_center_port;
 		cc_params.use_https = true;
+		cc_params.app_key = SERVERCONFIG->app_key;
 		cc_params.server_type = "gateway";
-		cc_params.server_index = SERVERCONFIG->game_id;
+		cc_params.game_id = SERVERCONFIG->game_id;
 
 		const char* local_ip = init_unit::get_host_ip();
 		const std::string lan_ip = (local_ip && local_ip[0] != '\0') ? local_ip : "127.0.0.1";
@@ -78,8 +79,9 @@ namespace faith
 		std::string cc_error;
 		_RLOG_(MINFO, "config_center register begin, host="
 			<< cc_params.center_host << " port=" << cc_params.center_port
+			<< " app_key=" << cc_params.app_key
 			<< " type=" << cc_params.server_type
-			<< " game_id=" << cc_params.server_index
+			<< " game_id=" << cc_params.game_id
 			<< " internal=" << cc_params.internal_host << ":" << cc_params.internal_port
 			<< " external=" << cc_params.external_host << ":" << cc_params.external_port);
 		if (!config_center_client::getInstance().register_sync(cc_params, cc_error))
@@ -91,7 +93,7 @@ namespace faith
 		config_center_client::getInstance().start_heartbeat();
 		_RLOG_(MINFO, "config_center register succeeded, continue gateway start");
 
-		const int32 instance_id = cc_params.server_index;
+		const int32 instance_id = cc_params.game_id;
 		message_manager::getInstance().set_server_type(e_server_type_gateway);
 		if( !net_client_mgr::getInstance().set_netpara_option(GATEWAY_CLIENT_SEND_BUFF_SIZE, GATEWAY_CLIENT_RECV_BUFF_SIZE, INTERNAL_SERVER_MAX_PACKET_SIZE, GATEWAY_NEED_CLIENT_COUNT))
 		{

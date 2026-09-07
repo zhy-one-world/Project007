@@ -113,7 +113,8 @@ namespace faith
 	bool config_center_client::register_sync(const register_params& params, std::string& error)
 	{
 		if (params.center_host.empty() || params.center_port <= 0 ||
-			params.server_type.empty() || params.internal_host.empty() ||
+			params.app_key.empty() || params.server_type.empty() ||
+			params.game_id < 0 || params.internal_host.empty() ||
 			params.internal_port <= 0)
 		{
 			error = "invalid register params";
@@ -125,8 +126,9 @@ namespace faith
 		m_peers.clear();
 
 		Json::Value body;
+		body["app_key"] = params.app_key;
 		body["server_type"] = params.server_type;
-		body["server_index"] = params.server_index;
+		body["game_id"] = params.game_id;
 		body["internal_host"] = params.internal_host;
 		body["internal_port"] = params.internal_port;
 		body["external_host"] = params.external_host;
@@ -172,7 +174,9 @@ namespace faith
 			{
 				peer_endpoint peer;
 				peer.server_type = item.get("server_type", "").asString();
-				peer.server_index = item.get("server_index", 0).asInt();
+				peer.game_id = item.isMember("game_id")
+					? item.get("game_id", 0).asInt()
+					: item.get("server_index", 0).asInt();
 				peer.internal_host = item.get("internal_host", "").asString();
 				peer.internal_port = item.get("internal_port", 0).asInt();
 				peer.external_host = item.get("external_host", "").asString();
@@ -219,7 +223,7 @@ namespace faith
 		{
 			Json::Value body;
 			body["server_type"] = m_params.server_type;
-			body["server_index"] = m_params.server_index;
+			body["game_id"] = m_params.game_id;
 			Json::StreamWriterBuilder writer;
 			writer["indentation"] = "";
 			std::string response;
@@ -236,7 +240,7 @@ namespace faith
 		}
 		Json::Value body;
 		body["server_type"] = m_params.server_type;
-		body["server_index"] = m_params.server_index;
+		body["game_id"] = m_params.game_id;
 		Json::StreamWriterBuilder writer;
 		writer["indentation"] = "";
 

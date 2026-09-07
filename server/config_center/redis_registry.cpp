@@ -64,10 +64,10 @@ namespace faith
 			m_ttl_sec = ttl_sec == 0 ? 30 : ttl_sec;
 		}
 
-		std::string redis_registry::make_key(const std::string& server_type, std::int32_t server_index)
+		std::string redis_registry::make_key(const std::string& server_type, std::int32_t game_id)
 		{
 			std::ostringstream oss;
-			oss << "cc:inst:" << server_type << ":" << server_index;
+			oss << "cc:inst:" << server_type << ":" << game_id;
 			return oss.str();
 		}
 
@@ -75,7 +75,7 @@ namespace faith
 		{
 			Json::Value root;
 			root["server_type"] = endpoint.server_type;
-			root["server_index"] = endpoint.server_index;
+			root["game_id"] = endpoint.game_id;
 			root["internal_host"] = endpoint.internal_host;
 			root["internal_port"] = endpoint.internal_port;
 			root["external_host"] = endpoint.external_host;
@@ -96,14 +96,28 @@ namespace faith
 				return false;
 			}
 			if (!root.isMember("server_type") || !root["server_type"].isString() ||
-				!root.isMember("server_index") || !root["server_index"].isInt() ||
 				!root.isMember("internal_host") || !root["internal_host"].isString() ||
 				!root.isMember("internal_port") || !root["internal_port"].isInt())
 			{
 				return false;
 			}
+
+			int game_id = -1;
+			if (root.isMember("game_id") && root["game_id"].isInt())
+			{
+				game_id = root["game_id"].asInt();
+			}
+			else if (root.isMember("server_index") && root["server_index"].isInt())
+			{
+				game_id = root["server_index"].asInt();
+			}
+			else
+			{
+				return false;
+			}
+
 			endpoint.server_type = root["server_type"].asString();
-			endpoint.server_index = root["server_index"].asInt();
+			endpoint.game_id = game_id;
 			endpoint.internal_host = root["internal_host"].asString();
 			endpoint.internal_port = root["internal_port"].asInt();
 			if (root.isMember("external_host") && root["external_host"].isString())
@@ -137,7 +151,7 @@ namespace faith
 		{
 			std::lock_guard<std::mutex> lock(m_memory_mutex);
 			purge_expired_memory();
-			const std::string key = make_key(endpoint.server_type, endpoint.server_index);
+			const std::string key = make_key(endpoint.server_type, endpoint.game_id);
 			if (m_memory.find(key) != m_memory.end())
 			{
 				error = "already registered";
@@ -152,12 +166,12 @@ namespace faith
 
 		bool redis_registry::memory_heartbeat(
 			const std::string& server_type,
-			std::int32_t server_index,
+			std::int32_t game_id,
 			std::string& error)
 		{
 			std::lock_guard<std::mutex> lock(m_memory_mutex);
 			purge_expired_memory();
-			const std::string key = make_key(server_type, server_index);
+			const std::string key = make_key(server_type, game_id);
 			auto it = m_memory.find(key);
 			if (it == m_memory.end())
 			{
@@ -170,12 +184,12 @@ namespace faith
 
 		bool redis_registry::memory_unregister(
 			const std::string& server_type,
-			std::int32_t server_index,
+			std::int32_t game_id,
 			std::string& error)
 		{
 			(void)error;
 			std::lock_guard<std::mutex> lock(m_memory_mutex);
-			m_memory.erase(make_key(server_type, server_index));
+			m_memory.erase(make_key(server_type, game_id));
 			return true;
 		}
 
@@ -201,7 +215,7 @@ namespace faith
 			}
 			try
 			{
-				const std::string key = make_key(endpoint.server_type, endpoint.server_index);
+				const std::string key = make_key(endpoint.server_type, endpoint.game_id);
 				if (m_impl->redis->exists(key) > 0)
 				{
 					error = "already registered";
@@ -229,15 +243,15 @@ namespace faith
 			}
 		}
 
-		bool redis_registry::heartbeat(const std::string& server_type, std::int32_t server_index, std::string& error)
+		bool redis_registry::heartbeat(const std::string& server_type, std::int32_t game_id, std::string& error)
 		{
 			if (!m_impl->redis)
 			{
-				return memory_heartbeat(server_type, server_index, error);
+				return memory_heartbeat(server_type, game_id, error);
 			}
 			try
 			{
-				const std::string key = make_key(server_type, server_index);
+				const std::string key = make_key(server_type, game_id);
 				if (m_impl->redis->exists(key) == 0)
 				{
 					error = "not registered";
@@ -253,15 +267,15 @@ namespace faith
 			}
 		}
 
-		bool redis_registry::unregister(const std::string& server_type, std::int32_t server_index, std::string& error)
+		bool redis_registry::unregister(const std::string& server_type, std::int32_t game_id, std::string& error)
 		{
 			if (!m_impl->redis)
 			{
-				return memory_unregister(server_type, server_index, error);
+				return memory_unregister(server_type, game_id, error);
 			}
 			try
 			{
-				const std::string key = make_key(server_type, server_index);
+				const std::string key = make_key(server_type, game_id);
 				m_impl->redis->del(key);
 				return true;
 			}
@@ -313,6 +327,27 @@ namespace faith
 				error = ex.what();
 				return false;
 			}
+		}
+
+		bool redis_registry::list_by_game_id(
+			std::int32_t game_id,
+			std::vector<server_endpoint>& out,
+			std::string& error)
+		{
+			std::vector<server_endpoint> all;
+			if (!list_all(all, error))
+			{
+				return false;
+			}
+			out.clear();
+			for (const auto& endpoint : all)
+			{
+				if (endpoint.game_id == game_id)
+				{
+					out.push_back(endpoint);
+				}
+			}
+			return true;
 		}
 	}
 }

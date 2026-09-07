@@ -23,8 +23,9 @@ namespace faith
 			std::string center_host = "127.0.0.1";
 			int center_port = 19000;
 			bool use_https = true;
+			std::string app_key;
 			std::string server_type;
-			int32 server_index = 0;
+			int32 game_id = 0;
 			std::string internal_host;
 			int32 internal_port = 0;
 			std::string external_host;
@@ -36,7 +37,7 @@ namespace faith
 		struct peer_endpoint
 		{
 			std::string server_type;
-			int32 server_index = 0;
+			int32 game_id = 0;
 			std::string internal_host;
 			int32 internal_port = 0;
 			std::string external_host;

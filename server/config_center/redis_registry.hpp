@@ -33,9 +33,10 @@ namespace faith
 			void set_heartbeat_ttl_sec(std::uint32_t ttl_sec);
 
 			bool try_register(const server_endpoint& endpoint, std::string& error);
-			bool heartbeat(const std::string& server_type, std::int32_t server_index, std::string& error);
-			bool unregister(const std::string& server_type, std::int32_t server_index, std::string& error);
+			bool heartbeat(const std::string& server_type, std::int32_t game_id, std::string& error);
+			bool unregister(const std::string& server_type, std::int32_t game_id, std::string& error);
 			bool list_all(std::vector<server_endpoint>& out, std::string& error);
+			bool list_by_game_id(std::int32_t game_id, std::vector<server_endpoint>& out, std::string& error);
 
 		private:
 			struct memory_entry
@@ -44,14 +45,14 @@ namespace faith
 				std::chrono::steady_clock::time_point expire_at;
 			};
 
-			static std::string make_key(const std::string& server_type, std::int32_t server_index);
+			static std::string make_key(const std::string& server_type, std::int32_t game_id);
 			static std::string serialize_endpoint(const server_endpoint& endpoint);
 			static bool deserialize_endpoint(const std::string& payload, server_endpoint& endpoint);
 
 			void purge_expired_memory();
 			bool memory_try_register(const server_endpoint& endpoint, std::string& error);
-			bool memory_heartbeat(const std::string& server_type, std::int32_t server_index, std::string& error);
-			bool memory_unregister(const std::string& server_type, std::int32_t server_index, std::string& error);
+			bool memory_heartbeat(const std::string& server_type, std::int32_t game_id, std::string& error);
+			bool memory_unregister(const std::string& server_type, std::int32_t game_id, std::string& error);
 			bool memory_list_all(std::vector<server_endpoint>& out, std::string& error);
 
 			struct impl;

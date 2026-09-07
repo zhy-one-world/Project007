@@ -28,7 +28,7 @@ namespace faith
 			{
 				Json::Value item;
 				item["server_type"] = endpoint.server_type;
-				item["server_index"] = endpoint.server_index;
+				item["game_id"] = endpoint.game_id;
 				item["internal_host"] = endpoint.internal_host;
 				item["internal_port"] = endpoint.internal_port;
 				item["external_host"] = endpoint.external_host;
@@ -70,8 +70,9 @@ namespace faith
 			_RLOG_(MINFO, "config center loaded, listen=" << cfg.listen_host
 				<< ":" << cfg.listen_port
 				<< " https=" << (cfg.use_https ? 1 : 0)
+				<< " app_key=" << cfg.app_key
 				<< " registry=" << (m_registry.using_redis() ? "redis" : "memory")
-				<< " allowlist=" << cfg.allowed.size()
+				<< " allowed_games=" << cfg.allowed_games.size()
 				<< " ttl=" << cfg.heartbeat_ttl_sec);
 			return true;
 		}
@@ -173,36 +174,47 @@ namespace faith
 		void config_center_service::handle_register(long handle, const Json::Value& body)
 		{
 			Json::Value rep;
+			const std::string app_key = body.get("app_key", "").asString();
 			const std::string server_type = body.get("server_type", "").asString();
-			const int server_index = body.get("server_index", -1).asInt();
+			const int game_id = body.isMember("game_id")
+				? body.get("game_id", -1).asInt()
+				: body.get("server_index", -1).asInt();
 			const std::string internal_host = body.get("internal_host", "").asString();
 			const int internal_port = body.get("internal_port", 0).asInt();
 			const std::string external_host = body.get("external_host", "").asString();
 			const int external_port = body.get("external_port", 0).asInt();
 
+			if (server_type.empty())
+			{
+				rep["ok"] = false;
+				rep["error"] = "missing server_type";
+				reply_json(handle, 400, rep);
+				return;
+			}
+			if (internal_host.empty() || internal_port <= 0)
+			{
+				rep["ok"] = false;
+				rep["error"] = "missing internal endpoint";
+				reply_json(handle, 400, rep);
+				return;
+			}
+
 			std::string error;
-			auto matched = m_allowlist.match(
-				server_type,
-				server_index,
-				internal_host,
-				internal_port,
-				external_host,
-				external_port,
-				error);
-			if (!matched)
+			if (!m_allowlist.match(app_key, game_id, error))
 			{
 				rep["ok"] = false;
 				rep["error"] = error;
 				_RLOG_(MWARN, "register rejected: " << error
-					<< " type=" << server_type << " index=" << server_index);
+					<< " type=" << server_type
+					<< " game_id=" << game_id
+					<< " app_key=" << app_key);
 				reply_json(handle, 403, rep);
 				return;
 			}
 
 			server_endpoint stored;
-			stored.server_type = matched->server_type;
-			stored.server_index = matched->server_index;
-			// Persist registrant-reported endpoints.
+			stored.server_type = server_type;
+			stored.game_id = game_id;
 			stored.internal_host = internal_host;
 			stored.internal_port = internal_port;
 			stored.external_host = external_host;
@@ -214,13 +226,13 @@ namespace faith
 				rep["error"] = error;
 				_RLOG_(MWARN, "register failed: " << error
 					<< " type=" << stored.server_type
-					<< " index=" << stored.server_index);
+					<< " game_id=" << stored.game_id);
 				reply_json(handle, 409, rep);
 				return;
 			}
 
 			std::vector<server_endpoint> peers;
-			m_registry.list_all(peers, error);
+			m_registry.list_by_game_id(game_id, peers, error);
 			Json::Value peers_json(Json::arrayValue);
 			for (const auto& peer : peers)
 			{
@@ -229,7 +241,9 @@ namespace faith
 			rep["ok"] = true;
 			rep["peers"] = peers_json;
 			_RLOG_(MINFO, "register ok type=" << stored.server_type
-				<< " index=" << stored.server_index
+				<< " game_id=" << stored.game_id
+				<< " internal=" << stored.internal_host << ":" << stored.internal_port
+				<< " external=" << stored.external_host << ":" << stored.external_port
 				<< " peers=" << peers.size());
 			reply_json(handle, 200, rep);
 		}
@@ -238,9 +252,11 @@ namespace faith
 		{
 			Json::Value rep;
 			const std::string server_type = body.get("server_type", "").asString();
-			const int server_index = body.get("server_index", -1).asInt();
+			const int game_id = body.isMember("game_id")
+				? body.get("game_id", -1).asInt()
+				: body.get("server_index", -1).asInt();
 			std::string error;
-			if (!m_registry.heartbeat(server_type, server_index, error))
+			if (!m_registry.heartbeat(server_type, game_id, error))
 			{
 				rep["ok"] = false;
 				rep["error"] = error;
@@ -255,9 +271,11 @@ namespace faith
 		{
 			Json::Value rep;
 			const std::string server_type = body.get("server_type", "").asString();
-			const int server_index = body.get("server_index", -1).asInt();
+			const int game_id = body.isMember("game_id")
+				? body.get("game_id", -1).asInt()
+				: body.get("server_index", -1).asInt();
 			std::string error;
-			if (!m_registry.unregister(server_type, server_index, error))
+			if (!m_registry.unregister(server_type, game_id, error))
 			{
 				rep["ok"] = false;
 				rep["error"] = error;
@@ -265,7 +283,7 @@ namespace faith
 				return;
 			}
 			rep["ok"] = true;
-			_RLOG_(MINFO, "unregister ok type=" << server_type << " index=" << server_index);
+			_RLOG_(MINFO, "unregister ok type=" << server_type << " game_id=" << game_id);
 			reply_json(handle, 200, rep);
 		}
 

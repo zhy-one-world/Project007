@@ -10,6 +10,26 @@ namespace faith
 {
 	namespace config_center
 	{
+		namespace
+		{
+			bool parse_bool_attr(TiXmlElement* element, const char* name, bool default_value)
+			{
+				if (element == nullptr || name == nullptr)
+				{
+					return default_value;
+				}
+				const char* value = element->Attribute(name);
+				if (value == nullptr || value[0] == '\0')
+				{
+					return default_value;
+				}
+				return std::strcmp(value, "1") == 0 ||
+					std::strcmp(value, "true") == 0 ||
+					std::strcmp(value, "TRUE") == 0 ||
+					std::strcmp(value, "True") == 0;
+			}
+		}
+
 		bool allowlist_config::load_from_file(const std::string& path, std::string& error)
 		{
 			TiXmlDocument doc;
@@ -27,6 +47,13 @@ namespace faith
 			}
 
 			center_config config;
+			config.app_key = xml_child_text(root, "app_key", "");
+			if (config.app_key.empty())
+			{
+				error = "missing <app_key>";
+				return false;
+			}
+
 			config.listen_host = xml_child_text(root, "listen_host", config.listen_host.c_str());
 			config.listen_port = xml_child_int(root, "listen_port", config.listen_port);
 			config.use_https = xml_child_bool(root, "use_https", config.use_https);
@@ -53,39 +80,34 @@ namespace faith
 				return false;
 			}
 
-			for (TiXmlElement* item = allowed->FirstChildElement("server");
-				item != nullptr;
-				item = item->NextSiblingElement("server"))
+			for (TiXmlElement* game = allowed->FirstChildElement("game");
+				game != nullptr;
+				game = game->NextSiblingElement("game"))
 			{
-				allowlist_entry entry;
-				entry.server_type = xml_child_text(item, "server_type", "");
-				entry.server_index = xml_child_int(item, "server_index", -1);
-				entry.internal_host = xml_child_text(item, "internal_host", "");
-				entry.internal_port = xml_child_int(item, "internal_port", 0);
-				entry.external_host = xml_child_text(item, "external_host", "");
-				entry.external_port = xml_child_int(item, "external_port", 0);
+				int game_id = -1;
+				if (game->Attribute("game_id"))
+				{
+					game->Attribute("game_id", &game_id);
+				}
+				else
+				{
+					game_id = xml_child_int(game, "game_id", -1);
+				}
+				if (game_id < 0)
+				{
+					error = "allowed <game> missing game_id attribute";
+					return false;
+				}
 
-				if (entry.server_type.empty())
-				{
-					error = "allowed entry missing server_type";
-					return false;
-				}
-				if (entry.server_index < 0)
-				{
-					error = "allowed entry missing server_index";
-					return false;
-				}
-				if (entry.internal_port <= 0)
-				{
-					error = "allowed entry missing internal_port";
-					return false;
-				}
-				config.allowed.push_back(entry);
+				allowed_game entry;
+				entry.game_id = game_id;
+				entry.is_open = parse_bool_attr(game, "is_open", true);
+				config.allowed_games.push_back(entry);
 			}
 
-			if (config.allowed.empty())
+			if (config.allowed_games.empty())
 			{
-				error = "allowed list is empty";
+				error = "allowed list is empty (need <game game_id=\"...\" is_open=\"true\"/>)";
 				return false;
 			}
 			if (config.listen_port <= 0 || config.heartbeat_ttl_sec == 0)
@@ -98,69 +120,33 @@ namespace faith
 			return true;
 		}
 
-		std::optional<allowlist_entry> allowlist_config::match(
-			const std::string& server_type,
-			std::int32_t server_index,
-			const std::string& internal_host,
-			std::int32_t internal_port,
-			const std::string& external_host,
-			std::int32_t external_port,
-			std::string& error) const
+		bool allowlist_config::match(const std::string& app_key, std::int32_t game_id, std::string& error) const
 		{
-			const allowlist_entry* found = nullptr;
-			for (const auto& entry : m_config.allowed)
+			if (app_key.empty() || app_key != m_config.app_key)
 			{
-				if (entry.server_type == server_type && entry.server_index == server_index)
+				error = "app_key mismatch";
+				return false;
+			}
+			if (game_id < 0)
+			{
+				error = "invalid game_id";
+				return false;
+			}
+			for (const auto& game : m_config.allowed_games)
+			{
+				if (game.game_id != game_id)
 				{
-					found = &entry;
-					break;
+					continue;
 				}
+				if (!game.is_open)
+				{
+					error = "game_id is closed";
+					return false;
+				}
+				return true;
 			}
-			if (found == nullptr)
-			{
-				error = "server not in allowlist";
-				return std::nullopt;
-			}
-			if (internal_host.empty() || internal_port <= 0)
-			{
-				error = "missing internal endpoint";
-				return std::nullopt;
-			}
-			if (found->internal_port != internal_port)
-			{
-				error = "internal port mismatch";
-				return std::nullopt;
-			}
-			const bool internal_host_wildcard =
-				found->internal_host.empty() ||
-				found->internal_host == "*" ||
-				found->internal_host == "0.0.0.0";
-			if (!internal_host_wildcard && found->internal_host != internal_host)
-			{
-				error = "internal host mismatch";
-				return std::nullopt;
-			}
-
-			if (external_host.empty() || external_port <= 0)
-			{
-				error = "missing external endpoint";
-				return std::nullopt;
-			}
-			if (found->external_port != 0 && found->external_port != external_port)
-			{
-				error = "external port mismatch";
-				return std::nullopt;
-			}
-			const bool external_host_wildcard =
-				found->external_host.empty() ||
-				found->external_host == "*" ||
-				found->external_host == "0.0.0.0";
-			if (!external_host_wildcard && found->external_host != external_host)
-			{
-				error = "external host mismatch";
-				return std::nullopt;
-			}
-			return *found;
+			error = "game_id not allowed";
+			return false;
 		}
 	}
 }
