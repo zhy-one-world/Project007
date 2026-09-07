@@ -40,7 +40,7 @@ namespace faith
 
 	static bool init()
 	{
-		if (!config_center::config_center_service::getInstance().init("./config_center.json"))
+		if (!config_center::config_center_service::getInstance().init("./config_center.xml"))
 		{
 			return false;
 		}

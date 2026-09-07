@@ -1,6 +1,11 @@
 ﻿#include "servers_config.h"
+#include "xml_config_util.hpp"
+
 #include <iostream>
-#include <fstream>
+#include <cstring>
+
+#include <tinyxml/tinyxml.h>
+
 #include "server_log.hpp"
 
 namespace faith 
@@ -31,102 +36,38 @@ namespace faith
 		config_center_host = "127.0.0.1";
 		config_center_port = 19000;
 	}
-	bool server_base_config::parse_by_json(Json::Value& json_obj)
+
+	bool server_base_config::parse_by_xml(TiXmlElement* element)
 	{
-		if (!json_obj.isObject())
+		if (element == nullptr)
 		{
 			return false;
 		}
-		if (json_obj["app_key"].isString())
-		{
-			app_key = json_obj["app_key"].asString();
-		}
-		if (json_obj["game_id"].isInt())
-		{
-			game_id = json_obj["game_id"].asInt();
-		}
-		if (json_obj["game_name"].isString())
-		{
-			game_name = json_obj["game_name"].asString();
-		}
-		if (json_obj["init_player_num"].isInt())
-		{
-			init_player_num = json_obj["init_player_num"].asInt();
-		}
-		if (json_obj["gm_state"].isBool())
-		{
-			gm_state = json_obj["gm_state"].asBool();
-		}
-		if (json_obj["robot_account"].isString())
-		{
-			robot_account = json_obj["robot_account"].asString();
-		}
-		if (json_obj["web_address"].isString())
-		{
-			web_address = json_obj["web_address"].asString();
-		}
-		if (json_obj["web_port"].isInt())
-		{
-			web_port = json_obj["web_port"].asInt();
-		}
-		if (json_obj["daemon_address"].isString())
-		{
-			daemon_address = json_obj["daemon_address"].asString();
-		}
-		if (json_obj["daemon_port"].isInt())
-		{
-			daemon_port = json_obj["daemon_port"].asInt();
-		}
-		if (json_obj["billing_url"].isString())
-		{
-			billing_url = json_obj["billing_url"].asString();
-		}
-		if (json_obj["recharge_url"].isString())
-		{
-			recharge_url = json_obj["recharge_url"].asString();
-		}
-		if (json_obj["one_store_recharge_url"].isString())
-		{
-			one_store_recharge_url = json_obj["one_store_recharge_url"].asString();
-		}
-		if (json_obj["login_url"].isString())
-		{
-			login_url = json_obj["login_url"].asString();
-		}
-		if (json_obj["server_state_url"].isString())
-		{
-			server_state_url = json_obj["server_state_url"].asString();
-		}
-		if (json_obj["account_info_url"].isString())
-		{
-			account_info_url = json_obj["account_info_url"].asString();
-		}
-		if (json_obj["http_aes"].isString())
-		{
-			http_aes = json_obj["http_aes"].asString();
-		}
-		if (json_obj["gift_url"].isString())
-		{
-			gift_url = json_obj["gift_url"].asString();
-		}
-		if (json_obj["new_log_file_root"].isString())
-		{
-			new_log_file_root = json_obj["new_log_file_root"].asString();
-		}
-		if (json_obj["not_need_db_log"].isBool())
-		{
-			not_need_db_log = json_obj["not_need_db_log"].asBool();
-		}
-		if (json_obj["config_center_host"].isString())
-		{
-			config_center_host = json_obj["config_center_host"].asString();
-		}
-		if (json_obj["config_center_port"].isInt())
-		{
-			config_center_port = json_obj["config_center_port"].asInt();
-		}
+		app_key = xml_child_text(element, "app_key", app_key.c_str());
+		game_id = xml_child_int(element, "game_id", game_id);
+		game_name = xml_child_text(element, "game_name", game_name.c_str());
+		init_player_num = xml_child_int(element, "init_player_num", init_player_num);
+		gm_state = xml_child_bool(element, "gm_state", gm_state);
+		robot_account = xml_child_text(element, "robot_account", robot_account.c_str());
+		web_address = xml_child_text(element, "web_address", web_address.c_str());
+		web_port = xml_child_int(element, "web_port", web_port);
+		daemon_address = xml_child_text(element, "daemon_address", daemon_address.c_str());
+		daemon_port = xml_child_int(element, "daemon_port", daemon_port);
+		billing_url = xml_child_text(element, "billing_url", billing_url.c_str());
+		recharge_url = xml_child_text(element, "recharge_url", recharge_url.c_str());
+		one_store_recharge_url = xml_child_text(element, "one_store_recharge_url", one_store_recharge_url.c_str());
+		login_url = xml_child_text(element, "login_url", login_url.c_str());
+		server_state_url = xml_child_text(element, "server_state_url", server_state_url.c_str());
+		account_info_url = xml_child_text(element, "account_info_url", account_info_url.c_str());
+		http_aes = xml_child_text(element, "http_aes", http_aes.c_str());
+		gift_url = xml_child_text(element, "gift_url", gift_url.c_str());
+		new_log_file_root = xml_child_text(element, "new_log_file_root", new_log_file_root.c_str());
+		not_need_db_log = xml_child_bool(element, "not_need_db_log", not_need_db_log);
+		config_center_host = xml_child_text(element, "config_center_host", config_center_host.c_str());
+		config_center_port = xml_child_int(element, "config_center_port", config_center_port);
 		return true;
 	}
+
 	void net_config_base::clear_data()
 	{
 		server_type = e_server_type_invalid;
@@ -135,79 +76,56 @@ namespace faith
 		external_host = "";
 		external_port = 0;
 	}
-	bool net_config_base::parse_by_json(Json::Value& json_obj)
+
+	bool net_config_base::parse_by_xml(TiXmlElement* element)
 	{
-		if (!json_obj.isObject())
+		if (element == nullptr)
 		{
 			return false;
 		}
-		if (json_obj["server_type"].isInt())
+		const int type_value = xml_child_int(element, "server_type", static_cast<int>(server_type));
+		if (type_value > e_server_type_invalid && type_value < e_server_type_max)
 		{
-			server_type = (e_server_type)json_obj["server_type"].asInt();
+			server_type = static_cast<e_server_type>(type_value);
 		}
-		if (json_obj["internal_host"].isString()) 
-		{
-			internal_host = json_obj["internal_host"].asString();
-		}
-		if (json_obj["internal_port"].isInt()) 
-		{
-			internal_port = json_obj["internal_port"].asInt();
-		}
-		if (json_obj["external_host"].isString())
-		{
-			external_host = json_obj["external_host"].asString();
-		}
-		if (json_obj["external_port"].isInt())
-		{
-			external_port = json_obj["external_port"].asInt();
-		}
+		internal_host = xml_child_text(element, "internal_host", internal_host.c_str());
+		internal_port = xml_child_int(element, "internal_port", internal_port);
+		external_host = xml_child_text(element, "external_host", external_host.c_str());
+		external_port = xml_child_int(element, "external_port", external_port);
 		return true;
 	}
+
 	void gateway_config::clear_data()
 	{
 		net_config_base::clear_data();
 		client_send_limit = 20;
 		init_socket_num = 20;
 	}
-	bool gateway_config::parse_by_json(Json::Value& json_obj)
+
+	bool gateway_config::parse_by_xml(TiXmlElement* element)
 	{
-		if (json_obj.isObject() == false)
+		if (!net_config_base::parse_by_xml(element))
 		{
 			return false;
 		}
-		if (net_config_base::parse_by_json(json_obj) == false)
-		{
-			return false;
-		}
-		if (json_obj["client_send_limit"].isInt())
-		{
-			client_send_limit = json_obj["client_send_limit"].asInt();
-		}
-		if (json_obj["init_socket_num"].isInt())
-		{
-			init_socket_num = json_obj["init_socket_num"].asInt();
-		}
+		client_send_limit = xml_child_int(element, "client_send_limit", client_send_limit);
+		init_socket_num = xml_child_int(element, "init_socket_num", init_socket_num);
 		return true;
 	}
+
 	void gate_config::clear_data()
 	{
 		net_config_base::clear_data();
 		gate_id = 0;
 	}
-	bool gate_config::parse_by_json(Json::Value& json_obj)
+
+	bool gate_config::parse_by_xml(TiXmlElement* element)
 	{
-		if (!json_obj.isObject())
+		if (!net_config_base::parse_by_xml(element))
 		{
 			return false;
 		}
-		if (!net_config_base::parse_by_json(json_obj))
-		{
-			return false;
-		}
-		if (json_obj["gate_id"].isInt());
-		{
-			gate_id = json_obj["gate_id"].asInt();
-		}
+		gate_id = xml_child_int(element, "gate_id", gate_id);
 		return true;
 	}
 
@@ -221,142 +139,103 @@ namespace faith
 		max_room_team_num = 0;
 		max_room_user_num = 0;
 	}
-	bool ws_config::parse_by_json(Json::Value& json_obj)
+
+	bool ws_config::parse_by_xml(TiXmlElement* element)
 	{
-		if (json_obj.isObject() == false)
+		if (!net_config_base::parse_by_xml(element))
 		{
 			return false;
 		}
-		if (net_config_base::parse_by_json(json_obj) == false)
-		{
-			return false;
-		}
-		if (json_obj["sdk_url"].isString())
-		{
-			sdk_url = json_obj["sdk_url"].asString();
-		}
-		if (json_obj["ds_url"].isString())
-		{
-			ds_url = json_obj["ds_url"].asString();
-		}
-		if (json_obj["http_port"].isInt());
-		{
-			http_port = json_obj["http_port"].asInt();
-		}
-		if (json_obj["max_team_user_num"].isInt());
-		{
-			max_team_user_num = json_obj["max_team_user_num"].asInt();
-		}
-		if (json_obj["max_room_team_num"].isInt());
-		{
-			max_room_team_num = json_obj["max_room_team_num"].asInt();
-		}
-		if (json_obj["max_room_user_num"].isInt());
-		{
-			max_room_user_num = json_obj["max_room_user_num"].asInt();
-		}
+		sdk_url = xml_child_text(element, "sdk_url", "");
+		ds_url = xml_child_text(element, "ds_url", "");
+		http_port = xml_child_int(element, "http_port", http_port);
+		max_team_user_num = xml_child_int(element, "max_team_user_num", max_team_user_num);
+		max_room_team_num = xml_child_int(element, "max_room_team_num", max_room_team_num);
+		max_room_user_num = xml_child_int(element, "max_room_user_num", max_room_user_num);
 		return true;
-	}	
+	}
+
 	void cs_config::clear_data()
 	{
 		net_config_base::clear_data();
-		role_num_limit = 2400;//最大承载人数
-		npc_num_limit = 10000;//最大承载Npc数量
-		drop_num_limit = 60000;//最大承载掉落数
-		role_data_save_time = 60000;//自动存盘间隔
-		role_data_send_time = 60000;//延迟同步间隔
+		role_num_limit = 2400;
+		npc_num_limit = 10000;
+		drop_num_limit = 60000;
+		role_data_save_time = 60000;
+		role_data_send_time = 60000;
 		process_stat_interval = 600;
 	}
-	bool cs_config::parse_by_json(Json::Value& json_obj)
+
+	bool cs_config::parse_by_xml(TiXmlElement* element)
 	{
-		if (json_obj.isObject() == false)
+		if (!net_config_base::parse_by_xml(element))
 		{
 			return false;
 		}
-		if (net_config_base::parse_by_json(json_obj) == false)
-		{
-			return false;
-		}
-		if (json_obj["role_num_limit"].isInt())
-		{
-			role_num_limit = json_obj["role_num_limit"].asInt();
-		}
-		if (json_obj["npc_num_limit"].isInt())
-		{
-			npc_num_limit = json_obj["npc_num_limit"].asInt();
-		}
-		if (json_obj["drop_num_limit"].isInt())
-		{
-			drop_num_limit = json_obj["drop_num_limit"].asInt();
-		}
-		if (json_obj["role_data_save_time"].isInt())
-		{
-			role_data_save_time = json_obj["role_data_save_time"].asInt();
-		}
-		if (json_obj["role_data_send_time"].isInt())
-		{
-			role_data_send_time = json_obj["role_data_send_time"].asInt();
-		}
-		if (json_obj["process_stat_interval"].isInt())
-		{
-			process_stat_interval = json_obj["process_stat_interval"].asInt();
-		}
+		role_num_limit = xml_child_int(element, "role_num_limit", role_num_limit);
+		npc_num_limit = xml_child_int(element, "npc_num_limit", npc_num_limit);
+		drop_num_limit = xml_child_int(element, "drop_num_limit", drop_num_limit);
+		role_data_save_time = xml_child_int(element, "role_data_save_time", role_data_save_time);
+		role_data_send_time = xml_child_int(element, "role_data_send_time", role_data_send_time);
+		process_stat_interval = xml_child_int(element, "process_stat_interval", process_stat_interval);
 		return true;
 	}
+
 	void dp_config::clear_data()
 	{
 		net_config_base::clear_data();
 		m_db_info_map.clear();
 		db_error_limit = 10;
-		db_thread_num = 18; 
+		db_thread_num = 18;
 		char_byte_size = 1;
+		save_open = 0;
+		save_interval = 0;
 	}
-	bool dp_config::parse_by_json(Json::Value& json_obj)
+
+	bool dp_config::parse_by_xml(TiXmlElement* element)
 	{
-		if (json_obj.isObject() == false)
+		if (!net_config_base::parse_by_xml(element))
 		{
 			return false;
 		}
-		if (net_config_base::parse_by_json(json_obj) == false)
+		TiXmlElement* mysql_root = xml_child(element, "mysql_conn");
+		if (mysql_root == nullptr)
 		{
 			return false;
 		}
-		if (json_obj["mysql_conn"].isNull() || json_obj["mysql_conn"].isArray() == false)
+		for (TiXmlElement* conn = mysql_root->FirstChildElement("conn");
+			conn != nullptr;
+			conn = conn->NextSiblingElement("conn"))
 		{
-			return false;
-		}
-		for (int32 i = 0; i < json_obj["mysql_conn"].size(); ++i)
-		{
-			Json::Value& db_obj = json_obj["mysql_conn"][i];
-			if (db_obj["mysql_id"].isNull() || db_obj["ip_addr"].isNull() || db_obj["ip_port"].isNull() || db_obj["user_name"].isNull() || db_obj["user_password"].isNull() || db_obj["schema_name"].isNull() || db_obj["thread_num"].isNull())
+			db_info temp_info;
+			temp_info.mysql_id = xml_child_int(conn, "mysql_id", 0);
+			temp_info.ip_addr = xml_child_text(conn, "ip_addr", "");
+			temp_info.ip_port = xml_child_int(conn, "ip_port", 0);
+			temp_info.user_name = xml_child_text(conn, "user_name", "");
+			temp_info.user_password = xml_child_text(conn, "user_password", "");
+			temp_info.schema_name = xml_child_text(conn, "schema_name", "");
+			temp_info.thread_num = xml_child_int(conn, "thread_num", 1);
+			if (temp_info.ip_addr.empty() || temp_info.ip_port <= 0 ||
+				temp_info.user_name.empty() || temp_info.schema_name.empty())
 			{
 				return false;
 			}
-			db_info temp_info;
-			temp_info.mysql_id = db_obj["mysql_id"].asInt();
-			temp_info.ip_addr = db_obj["ip_addr"].asString();
-			temp_info.ip_port = db_obj["ip_port"].asInt();
-			temp_info.user_name = db_obj["user_name"].asString();
-			temp_info.user_password = db_obj["user_password"].asString();
-			temp_info.schema_name = db_obj["schema_name"].asString();
-			temp_info.thread_num = db_obj["thread_num"].asInt();
 			m_db_info_map[temp_info.mysql_id] = temp_info;
 		}
-		if (json_obj["save_open"].isInt())
+		if (m_db_info_map.empty())
 		{
-			save_open = json_obj["save_open"].asInt();
+			return false;
 		}
-		if (json_obj["save_interval"].isInt())
-		{
-			save_interval = json_obj["save_interval"].asInt();
-		}
+		save_open = xml_child_int(element, "save_open", save_open);
+		save_interval = xml_child_int(element, "save_interval", save_interval);
 		return true;
 	}
+
 	net_config_base const* servers_config_manager::get_self_config() 
 	{ 
 		return nullptr;
-		//return get_server_config(g_worker->get_server_type());
 	}
+
 	net_config_base* servers_config_manager::get_server_config(e_server_type server_type)
 	{
 		if (server_type < 0 || server_type >= e_server_type_max)
@@ -365,99 +244,91 @@ namespace faith
 		}
 		return m_server_config_array[server_type];
 	}
+
 	bool servers_config_manager::init_config() 
 	{
 		memset(m_server_config_array, 0, sizeof(m_server_config_array));
-		Json::Reader reader;
-		Json::Value  json_value;
-		std::ifstream in("./servers.json");
-		if (reader.parse(in, json_value) == false)
+		TiXmlDocument doc;
+		if (!doc.LoadFile("./servers.xml"))
 		{
+			std::cout << "servers_config_manager::init_config fail!! load servers.xml: "
+				<< doc.ErrorDesc() << std::endl;
 			return false;
 		}
-		if (parse_by_json(json_value) == false)
+		TiXmlElement* root = doc.RootElement();
+		if (root == nullptr || std::strcmp(root->Value(), "servers") != 0)
 		{
+			std::cout << "servers_config_manager::init_config fail!! root must be <servers>" << std::endl;
 			return false;
 		}
-		return true;
+		return parse_by_xml(root);
 	}
 
-	bool servers_config_manager::parse_by_json(Json::Value& json_obj)
+	bool servers_config_manager::parse_by_xml(TiXmlElement* root)
 	{
-		if (json_obj.isObject() == false)
+		TiXmlElement* base_obj = xml_child(root, "server_base");
+		if (base_obj == nullptr)
 		{
-			std::cout << "servers_config_manager::parse_by_json fail!! no object" << std::endl;
-			return false;
-		}
-		auto& base_obj = json_obj["server_base"];
-		if (!base_obj.isObject())
-		{
-			std::cout << "servers_config_manager::parse_by_json fail!! no base_obj object" << std::endl;
+			std::cout << "servers_config_manager::parse_by_xml fail!! no server_base" << std::endl;
 			return false;
 		}
 		m_server_config = new server_base_config();
-		if (m_server_config->parse_by_json(base_obj) == false) {
-			std::cout << "servers_config_manager::parse_by_json fail!! server_base config fail" << std::endl;
+		if (!m_server_config->parse_by_xml(base_obj))
+		{
+			std::cout << "servers_config_manager::parse_by_xml fail!! server_base config fail" << std::endl;
 			return false;
 		}
 		for (int32 i = 0; i < e_server_type_max; ++i)
 		{
-			if (json_obj[e_server_type_str[i]].isObject())
+			TiXmlElement* server_elem = xml_child(root, e_server_type_str[i]);
+			if (server_elem != nullptr)
 			{
-				if (parse_by_json(json_obj[e_server_type_str[i]], (e_server_type)i) == false)
+				if (!parse_by_xml(server_elem, static_cast<e_server_type>(i)))
 				{
-					std::cout << "servers_config_manager::parse_by_json fail!! server:" << e_server_type_str[i] << std::endl;
+					std::cout << "servers_config_manager::parse_by_xml fail!! server:"
+						<< e_server_type_str[i] << std::endl;
 					return false;
 				}
 			}
 		}
 		return true;
 	}
-	bool servers_config_manager::parse_by_json(Json::Value& json_obj, e_server_type server_type)
-	{
-		if (json_obj.isObject() == false)
-		{
-			std::cout << "servers_config_manager::parse_by_json fail!! no object server:" << server_type << std::endl;
-			return false;
-		}
 
+	bool servers_config_manager::parse_by_xml(TiXmlElement* element, e_server_type server_type)
+	{
 		net_config_base* config_ptr = create_server_config(server_type);
 		if (nullptr == config_ptr)
 		{
-			std::cout << "servers_config_manager::parse_by_json fail!! create_server_config fail!!! server:" << server_type << std::endl;
+			std::cout << "servers_config_manager::parse_by_xml fail!! create_server_config fail!!! server:"
+				<< server_type << std::endl;
 			return false;
 		}
-		if (config_ptr->parse_by_json(json_obj) == false)
+		config_ptr->server_type = server_type;
+		if (!config_ptr->parse_by_xml(element))
 		{
 			delete config_ptr;
-			config_ptr = nullptr;
-			std::cout << "servers_config_manager::parse_by_json fail!! config json fail!!! server:" << server_type << std::endl;
+			std::cout << "servers_config_manager::parse_by_xml fail!! config xml fail!!! server:"
+				<< server_type << std::endl;
 			return false;
 		}
 		m_server_config_array[server_type] = config_ptr;
 		return true;
 	}
+
 	net_config_base* servers_config_manager::create_server_config(e_server_type server_type)
 	{
 		switch (server_type)
 		{
 		case faith::e_server_type_gate:
 			return new gate_config();
-			break;
 		case faith::e_server_type_ws:
 			return new ws_config();
-			break;
 		case faith::e_server_type_gateway:
 			return new gateway_config();
-			break;
 		case faith::e_server_type_cs:
 			return new cs_config();
-			break;
 		case faith::e_server_type_dp:
 			return new dp_config();
-			break;
-		case faith::e_server_type_max:
-			break;
 		default:
 			break;
 		}

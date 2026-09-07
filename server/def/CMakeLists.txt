@@ -10,6 +10,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP /utf-8")
 
 add_definitions(-DBOOST_BIND_GLOBAL_PLACEHOLDERS)
 add_definitions(-D_WIN32_WINNT=0x0601)
+add_definitions(-DTIXML_USE_STL)
 
 
 # 递归查找文件夹下的 .h .hpp. ini 文件保存到 HEADER_FILES

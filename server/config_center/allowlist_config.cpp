@@ -1,8 +1,10 @@
 #include "allowlist_config.hpp"
 
-#include <fstream>
+#include <cstring>
 
-#include <json/json.h>
+#include <tinyxml/tinyxml.h>
+
+#include "game_cfg/xml_config_util.hpp"
 
 namespace faith
 {
@@ -10,127 +12,82 @@ namespace faith
 	{
 		bool allowlist_config::load_from_file(const std::string& path, std::string& error)
 		{
-			std::ifstream in(path);
-			if (!in)
+			TiXmlDocument doc;
+			if (!doc.LoadFile(path.c_str()))
 			{
-				error = "failed to open " + path;
+				error = std::string("failed to load ") + path + ": " + (doc.ErrorDesc() ? doc.ErrorDesc() : "unknown");
 				return false;
 			}
 
-			Json::CharReaderBuilder builder;
-			Json::Value root;
-			std::string parse_error;
-			if (!Json::parseFromStream(builder, in, &root, &parse_error))
+			TiXmlElement* root = doc.RootElement();
+			if (root == nullptr || std::strcmp(root->Value(), "config_center") != 0)
 			{
-				error = "json parse failed: " + parse_error;
+				error = "root element must be <config_center>";
 				return false;
 			}
 
 			center_config config;
-			if (root.isMember("listen_host") && root["listen_host"].isString())
+			config.listen_host = xml_child_text(root, "listen_host", config.listen_host.c_str());
+			config.listen_port = xml_child_int(root, "listen_port", config.listen_port);
+			config.use_https = xml_child_bool(root, "use_https", config.use_https);
+			config.heartbeat_ttl_sec = static_cast<std::uint32_t>(
+				xml_child_int(root, "heartbeat_ttl_sec", static_cast<int>(config.heartbeat_ttl_sec)));
+
+			if (TiXmlElement* ssl = xml_child(root, "ssl"))
 			{
-				config.listen_host = root["listen_host"].asString();
+				config.ssl.cert_file = xml_child_text(ssl, "cert_file", config.ssl.cert_file.c_str());
+				config.ssl.key_file = xml_child_text(ssl, "key_file", config.ssl.key_file.c_str());
 			}
-			if (root.isMember("listen_port") && root["listen_port"].isInt())
+			if (TiXmlElement* redis = xml_child(root, "redis"))
 			{
-				config.listen_port = root["listen_port"].asInt();
-			}
-			if (root.isMember("heartbeat_ttl_sec") && root["heartbeat_ttl_sec"].isUInt())
-			{
-				config.heartbeat_ttl_sec = root["heartbeat_ttl_sec"].asUInt();
-			}
-			else if (root.isMember("heartbeat_ttl_sec") && root["heartbeat_ttl_sec"].isInt())
-			{
-				config.heartbeat_ttl_sec = static_cast<std::uint32_t>(root["heartbeat_ttl_sec"].asInt());
+				config.redis.host = xml_child_text(redis, "host", config.redis.host.c_str());
+				config.redis.port = xml_child_int(redis, "port", config.redis.port);
+				config.redis.db = xml_child_int(redis, "db", config.redis.db);
+				config.redis.password = xml_child_text(redis, "password", config.redis.password.c_str());
 			}
 
-			if (root.isMember("redis") && root["redis"].isObject())
+			TiXmlElement* allowed = xml_child(root, "allowed");
+			if (allowed == nullptr)
 			{
-				const Json::Value& redis = root["redis"];
-				if (redis.isMember("host") && redis["host"].isString())
-				{
-					config.redis.host = redis["host"].asString();
-				}
-				if (redis.isMember("port") && redis["port"].isInt())
-				{
-					config.redis.port = redis["port"].asInt();
-				}
-				if (redis.isMember("db") && redis["db"].isInt())
-				{
-					config.redis.db = redis["db"].asInt();
-				}
-				if (redis.isMember("password") && redis["password"].isString())
-				{
-					config.redis.password = redis["password"].asString();
-				}
-			}
-
-			if (root.isMember("use_https") && root["use_https"].isBool())
-			{
-				config.use_https = root["use_https"].asBool();
-			}
-			if (root.isMember("ssl") && root["ssl"].isObject())
-			{
-				const Json::Value& ssl = root["ssl"];
-				if (ssl.isMember("cert_file") && ssl["cert_file"].isString())
-				{
-					config.ssl.cert_file = ssl["cert_file"].asString();
-				}
-				if (ssl.isMember("key_file") && ssl["key_file"].isString())
-				{
-					config.ssl.key_file = ssl["key_file"].asString();
-				}
-			}
-
-			if (!root.isMember("allowed") || !root["allowed"].isArray())
-			{
-				error = "missing allowed array";
+				error = "missing <allowed>";
 				return false;
 			}
 
-			for (const auto& item : root["allowed"])
+			for (TiXmlElement* item = allowed->FirstChildElement("server");
+				item != nullptr;
+				item = item->NextSiblingElement("server"))
 			{
-				if (!item.isObject())
-				{
-					error = "allowed entry is not object";
-					return false;
-				}
 				allowlist_entry entry;
-				if (!item.isMember("server_type") || !item["server_type"].isString())
+				entry.server_type = xml_child_text(item, "server_type", "");
+				entry.server_index = xml_child_int(item, "server_index", -1);
+				entry.internal_host = xml_child_text(item, "internal_host", "");
+				entry.internal_port = xml_child_int(item, "internal_port", 0);
+				entry.external_host = xml_child_text(item, "external_host", "");
+				entry.external_port = xml_child_int(item, "external_port", 0);
+
+				if (entry.server_type.empty())
 				{
 					error = "allowed entry missing server_type";
 					return false;
 				}
-				entry.server_type = item["server_type"].asString();
-				if (!item.isMember("server_index") || !item["server_index"].isInt())
+				if (entry.server_index < 0)
 				{
 					error = "allowed entry missing server_index";
 					return false;
 				}
-				entry.server_index = item["server_index"].asInt();
-				if (!item.isMember("internal_host") || !item["internal_host"].isString())
-				{
-					error = "allowed entry missing internal_host";
-					return false;
-				}
-				entry.internal_host = item["internal_host"].asString();
-				if (!item.isMember("internal_port") || !item["internal_port"].isInt())
+				if (entry.internal_port <= 0)
 				{
 					error = "allowed entry missing internal_port";
 					return false;
 				}
-				entry.internal_port = item["internal_port"].asInt();
-				if (item.isMember("external_host") && item["external_host"].isString())
-				{
-					entry.external_host = item["external_host"].asString();
-				}
-				if (item.isMember("external_port") && item["external_port"].isInt())
-				{
-					entry.external_port = item["external_port"].asInt();
-				}
 				config.allowed.push_back(entry);
 			}
 
+			if (config.allowed.empty())
+			{
+				error = "allowed list is empty";
+				return false;
+			}
 			if (config.listen_port <= 0 || config.heartbeat_ttl_sec == 0)
 			{
 				error = "invalid listen_port or heartbeat_ttl_sec";
@@ -174,7 +131,6 @@ namespace faith
 				error = "internal port mismatch";
 				return std::nullopt;
 			}
-			// 0.0.0.0 / * / empty allowlist host = accept any reported LAN IP.
 			const bool internal_host_wildcard =
 				found->internal_host.empty() ||
 				found->internal_host == "*" ||

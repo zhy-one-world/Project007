@@ -182,10 +182,10 @@ faith::int32 _XMAIN(faith::int32 argc, xchar* argv[])
 
 	if(!faith::servers_config_manager::getInstance().init_config())
 	{
-		_RLOG_(MERROR, "servers.json initialization failed");
+		_RLOG_(MERROR, "servers.xml initialization failed");
 		return -1;
 	}
-	_RLOG_(MINFO, "servers.json initialized");
+	_RLOG_(MINFO, "servers.xml initialized");
 	//====Add for logger====
 	faith::server_log::init_new_log(SERVERCONFIG->game_id, "gateway");
 	_RLOG_(MINFO, "server log initialized");
