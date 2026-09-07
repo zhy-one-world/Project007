@@ -100,12 +100,12 @@ message game_proto
 		rot_angle		rotator_angle		= 3; // 角色的朝向
 	}
 	
-	message client2fep_ping
+	message client2gateway_ping
 	{
 		int64	client_time = 1;
 	}
 
-	message fep2client_ping
+	message gateway2client_ping
 	{
 		int64	client_time = 1;
 		int64	server_time = 2;

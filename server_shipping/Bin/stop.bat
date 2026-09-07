@@ -1,7 +1,7 @@
 
 tskill rgamews
 tskill rgamecs
-tskill rgamefep
+tskill rgamegateway
 tskill rgamedp
 
 exit

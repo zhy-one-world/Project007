@@ -1,0 +1,53 @@
+{
+	"listen_host": "0.0.0.0",
+	"listen_port": 19000,
+	"redis": {
+		"host": "127.0.0.1",
+		"port": 6379,
+		"db": 0,
+		"password": ""
+	},
+	"heartbeat_ttl_sec": 30,
+	"allowed": [
+		{
+			"server_type": "gateway",
+			"server_index": 0,
+			"internal_host": "127.0.0.1",
+			"internal_port": 2200,
+			"external_host": "192.168.1.59",
+			"external_port": 2200
+		},
+		{
+			"server_type": "ws",
+			"server_index": 0,
+			"internal_host": "192.168.1.59",
+			"internal_port": 1000,
+			"external_host": "",
+			"external_port": 0
+		},
+		{
+			"server_type": "cs",
+			"server_index": 0,
+			"internal_host": "127.0.0.1",
+			"internal_port": 2100,
+			"external_host": "",
+			"external_port": 0
+		},
+		{
+			"server_type": "dp",
+			"server_index": 0,
+			"internal_host": "127.0.0.1",
+			"internal_port": 3330,
+			"external_host": "",
+			"external_port": 0
+		},
+		{
+			"server_type": "gate",
+			"server_index": 0,
+			"internal_host": "127.0.0.1",
+			"internal_port": 8000,
+			"external_host": "",
+			"external_port": 0
+		}
+	]
+}

@@ -1,115 +1,121 @@
 
-ì
-login.protohld"×
-login_proto
-rde_encryption
-is_gm (>
-encryped_data
-index (
-data_len (
-data (	0
-encryped_data_end
-index (
-data (	"
-get_server_list
-account (	œ
-server_list_info
-	server_id (
-server_name (
-ip_addr (	
-port (
-server_state (
-recommend_state (
+ý
+login.protofaith"Þ
+login_proto%
+rde_encryption
+is_gm (RisGmT
+encryped_data
+index (Rindex
+data_len (RdataLen
+data (	Rdata=
+encryped_data_end
+index (Rindex
+data (	Rdata+
+get_server_list
+account (	Raccountè
+server_list_info
+	server_id (RserverId
+server_name (R
+serverName
+ip_addr (	RipAddr
+port (Rport!
+server_state (RserverState'
+recommend_state (RrecommendState
 
-begin_time (M
-get_server_list_end6
-server_list (2!.hld.login_proto.server_list_info^
-role_list_info
-	server_id (
-template_id (
-	exp_level (
-	role_name (	G
-get_role_list_end2
-	role_list (2.hld.login_proto.role_list_infoO
-login_reconnect
-account (	
+begin_time (R	beginTime[
+get_server_list_endD
+server_list (2#.faith.login_proto.server_list_infoR
+serverListˆ
+role_list_info
+	server_id (RserverId
+template_id (R
+templateId
+	exp_level (RexpLevel
+	role_name (	RroleNameS
+get_role_list_end>
+	role_list (2!.faith.login_proto.role_list_infoRroleListp
+login_reconnect
+account (	Raccount
 
-cur_map_id (
-cur_map_line_id (,
-login_reconnect_end
-reconnect_res (´
-login
-client_account (	
-logic_account (	
-password (	
+cur_map_id (RcurMapId%
+cur_map_line_id (RcurMapLineId:
+login_reconnect_end#
+reconnect_res (RreconnectResÊ
+login%
+client_account (	RclientAccount#
+logic_account (	RlogicAccount
+password (	Rpassword
 
-login_type (:1
-client_version (	
+login_type (R	loginType%
+client_version (	RclientVersion
 
-buildTimes (
-switch_cluster (
-	server_id (
-captcha_str	 (	
-
+buildTimes (R
+buildTimes%
+switch_cluster (RswitchCluster
+	server_id (RserverId
+captcha_str	 (	R
+captchaStr
 ip
- (	
-device_type (	
-custom_info (	1
-sdk_data (2.hld.login_proto.sdk_login_data¿
-sdk_login_data
-data (
-	data_size (
+ (	Rip
+device_type (	R
+deviceType
+custom_info (	R
+customInfo<
+sdk_data (2!.faith.login_proto.sdk_login_dataRsdkDataÕ
+sdk_login_data
+data (Rdata
+	data_size (RdataSize
 
-channel_id (	
-app_key (	
+channel_id (	R	channelId
+app_key (	RappKey
 
-app_secret (	
-	device_id (	
-opcode (	
-model (	
-idfa	 (	
+app_secret (	R	appSecret
+	device_id (	RdeviceId
+opcode (	Ropcode
+model (	Rmodel
+idfa	 (	Ridfa
 imei
- (	
+ (	Rimei
 
-android_id (	
-mac (	
+android_id (	R	androidId
+mac (	Rmac
+sn (	Rsn
+os (	Ros
 
-sn (	
+os_version (	R	osVersion
+sdk_version (	R
+sdkVersion
+lang (	Rlang#
+recharge_type (	RrechargeTypeî
+	login_end
+result (Rresult
+account (	Raccount
 
-os (	
+server_msg (	R	serverMsg
 
-os_version (	
-sdk_version (	
-lang (	
-recharge_type (	Ã
-	login_end
-result (
-account (	
+login_type (R	loginType&
+login_type_plus (RloginTypePlus
+	queue_pos (RqueuePos'
+left_time_in_sec (RleftTimeInSec
 
-server_msg (	
-
-login_type (:1
-login_type_plus (:1
-	queue_pos (
-left_time_in_sec (
-
-radio_host	 (
+radio_host	 (R	radioHost*
 is_create_account
- (
-online_duration (
-online_time (
-age (
-month_recharge_num (
-month_recharge_time (@
-login_queue_status
-left_time_in_sec (
-position (D
-kickout_account_end
-account (	
-desc (	
-reason (
-logout
-type (
+ (RisCreateAccount'
+online_duration (RonlineDuration
+online_time (R
+onlineTime
+age (Rage,
+month_recharge_num (RmonthRechargeNum.
+month_recharge_time (RmonthRechargeTimeY
+login_queue_status'
+left_time_in_sec (RleftTimeInSec
+position (Rposition[
+kickout_account_end
+account (	Raccount
+desc (	Rdesc
+reason (Rreason
+logout
+type (Rtype$
 
-logout_end
-result (
+logout_end
+result (Rresultbproto3

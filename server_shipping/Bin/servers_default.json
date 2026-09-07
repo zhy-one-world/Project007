@@ -17,7 +17,7 @@
 		"server_state_url": "http://192.168.0.51:8077/fullServiceMange/managerServerStatus.action",
 		"account_info_url": "http://192.168.0.51:8077/fullServiceMange/pushAcountInfo.action"
 	},
-	"fep": {
+	"gateway": {
 		"server_type": 3,
 		"external_host": "192.168.1.59",
 		"external_port": 2200

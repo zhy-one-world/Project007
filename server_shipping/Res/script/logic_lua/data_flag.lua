@@ -203,7 +203,7 @@ e_ws_flag_load_legion_info =								0x0000000000002000;--军团数据
 e_ws_flag_cross_server_state =								0x0000000000004000;--跨服状态
 e_ws_flag_init_time_limit_template =						0x0000000000008000;--限时活动表格数据初始化完成
 e_ws_flag_load_cloud_shop_info =							0x0000000000010000;--云购数据读取
-e_ws_flag_fep_connect =										0x0000000000020000;--fep连接成功
+e_ws_flag_gateway_connect =										0x0000000000020000;--gateway连接成功
 
 
 

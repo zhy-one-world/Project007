@@ -3,7 +3,7 @@ package faith;
 
 message login_proto
 {	
-	//此消息会在服务器(FEP)初始化或者更新客户端连接的加密信息时，发送到客户端
+	//此消息会在服务器(Gateway)初始化或者更新客户端连接的加密信息时，发送到客户端
 	//客户端收到后必须立刻初始化或更新相关信息，然后通过[RDE加密]方法收发数据
 	message rde_encryption
 	{
