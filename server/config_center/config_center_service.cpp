@@ -3,7 +3,9 @@
 #include <boost/bind.hpp>
 #include <rlog.hpp>
 
-#include "proto_codec.hpp"
+#include <net/http_server.hpp>
+
+#include "http/http_access_mgr.hpp"
 
 namespace faith
 {
@@ -11,10 +13,28 @@ namespace faith
 	{
 		namespace
 		{
-			constexpr unsigned int k_max_packet_size = 1024 * 1024;
-			constexpr unsigned int k_send_buffer_size = 4 * 1024 * 1024;
-			constexpr unsigned int k_recv_buffer_size = 4 * 1024 * 1024;
-			constexpr unsigned int k_connections_limit = 256;
+			bool parse_json_body(const std::string& text, Json::Value& out, std::string& error)
+			{
+				Json::CharReaderBuilder builder;
+				const std::unique_ptr<Json::CharReader> reader(builder.newCharReader());
+				if (!reader->parse(text.data(), text.data() + text.size(), &out, &error))
+				{
+					return false;
+				}
+				return out.isObject();
+			}
+
+			Json::Value endpoint_to_json(const server_endpoint& endpoint)
+			{
+				Json::Value item;
+				item["server_type"] = endpoint.server_type;
+				item["server_index"] = endpoint.server_index;
+				item["internal_host"] = endpoint.internal_host;
+				item["internal_port"] = endpoint.internal_port;
+				item["external_host"] = endpoint.external_host;
+				item["external_port"] = endpoint.external_port;
+				return item;
+			}
 		}
 
 		bool config_center_service::init(const std::string& config_path)
@@ -35,13 +55,22 @@ namespace faith
 			m_registry.set_heartbeat_ttl_sec(cfg.heartbeat_ttl_sec);
 			if (!m_registry.connect(redis_opts))
 			{
-				_RLOG_(MERROR, "redis connect failed, host=" << redis_opts.host
-					<< " port=" << redis_opts.port);
-				return false;
+				_RLOG_(MWARN, "redis unavailable, using in-memory registry for local verify, host="
+					<< redis_opts.host << " port=" << redis_opts.port);
 			}
+			else
+			{
+				_RLOG_(MINFO, "redis connected, host=" << redis_opts.host
+					<< " port=" << redis_opts.port);
+			}
+
+			http_access_mgr::get_instance().init(false);
+			m_http_inited = true;
 
 			_RLOG_(MINFO, "config center loaded, listen=" << cfg.listen_host
 				<< ":" << cfg.listen_port
+				<< " https=" << (cfg.use_https ? 1 : 0)
+				<< " registry=" << (m_registry.using_redis() ? "redis" : "memory")
 				<< " allowlist=" << cfg.allowed.size()
 				<< " ttl=" << cfg.heartbeat_ttl_sec);
 			return true;
@@ -50,278 +79,223 @@ namespace faith
 		bool config_center_service::start()
 		{
 			const auto& cfg = m_allowlist.get();
-			m_tcp_server = std::make_unique<net::tcp_server>(
-				boost::bind(&config_center_service::on_serverstatus_changed, this, _1),
-				boost::bind(&config_center_service::on_conn_created, this, _1),
-				boost::bind(&config_center_service::on_conn_closed, this, _1),
-				boost::bind(&config_center_service::on_data_received, this, _1, _2, _3),
-				cfg.listen_host,
-				cfg.listen_port,
-				0);
+			http_listen_options options;
+			options.bind_ip = cfg.listen_host;
+			options.port = cfg.listen_port;
+			options.scheme = cfg.use_https ? http_scheme::https : http_scheme::http;
+			options.ssl.cert_file = cfg.ssl.cert_file;
+			options.ssl.key_file = cfg.ssl.key_file;
 
-			m_tcp_server->set_option(net::tcp_server::options::max_packet_size(k_max_packet_size));
-			m_tcp_server->set_option(net::tcp_server::options::send_buffer_size(k_send_buffer_size));
-			m_tcp_server->set_option(net::tcp_server::options::recv_buffer_size(k_recv_buffer_size));
-			m_tcp_server->set_option(net::tcp_server::options::connections_num_limit(k_connections_limit));
-
-			if (!m_tcp_server->start())
+			if (!http_access_mgr::get_instance().listen(
+					options,
+					boost::bind(&config_center_service::on_http_request, this, _1)))
 			{
-				_RLOG_(MERROR, "tcp server start failed on "
+				_RLOG_(MERROR, "http(s) listen failed on "
 					<< cfg.listen_host << ":" << cfg.listen_port);
-				m_tcp_server.reset();
 				return false;
 			}
 
 			_RLOG_(MINFO, "config center acceptor started on "
+				<< (cfg.use_https ? "https://" : "http://")
 				<< cfg.listen_host << ":" << cfg.listen_port);
 			return true;
 		}
 
 		void config_center_service::stop()
 		{
-			std::vector<net::tcp_server_session_ptr> sessions;
-			{
-				std::lock_guard<std::mutex> lock(m_session_mutex);
-				sessions.reserve(m_sessions.size());
-				for (auto& item : m_sessions)
-				{
-					sessions.push_back(item.second);
-				}
-				m_sessions.clear();
-			}
-			if (m_tcp_server)
-			{
-				for (auto& session : sessions)
-				{
-					if (session)
-					{
-						m_tcp_server->close(session);
-					}
-				}
-				m_tcp_server.reset();
-			}
+			http_server::getInstance().stop();
 			_RLOG_(MINFO, "config center stopped");
 		}
 
-		void config_center_service::on_serverstatus_changed(net::tcp_server::e_server_status_type status)
+		void config_center_service::on_http_request(const http_inbound_request& request)
 		{
-			_RLOG_(MINFO, "config center server status=" << static_cast<unsigned int>(status));
-		}
+			const std::string& path = request.path;
+			const bool is_post = request.method == 2; // EVHTTP_REQ_POST
+			const bool is_get = request.method == 1;  // EVHTTP_REQ_GET
 
-		void config_center_service::on_conn_created(net::tcp_server_session_ptr session)
-		{
-			if (!session || !m_tcp_server)
+			if (path == "/v1/register" && is_post)
 			{
-				return;
-			}
-			{
-				std::lock_guard<std::mutex> lock(m_session_mutex);
-				m_sessions[session.get()] = session;
-			}
-			_RLOG_(MINFO, "client connected, ip="
-				<< m_tcp_server->get_ip_addr(session)
-				<< " port=" << m_tcp_server->get_ip_port(session));
-		}
-
-		void config_center_service::on_conn_closed(net::tcp_server_session_ptr session)
-		{
-			if (!session)
-			{
-				return;
-			}
-			{
-				std::lock_guard<std::mutex> lock(m_session_mutex);
-				m_sessions.erase(session.get());
-			}
-			_RLOG_(MINFO, "client disconnected");
-		}
-
-		void config_center_service::on_data_received(
-			net::tcp_server_session_ptr session,
-			const void* data,
-			std::size_t data_len)
-		{
-			if (!session || data == nullptr || data_len == 0)
-			{
-				return;
-			}
-
-			CcMessage request;
-			if (!proto_codec::decode(data, data_len, request))
-			{
-				_RLOG_(MWARN, "invalid config center frame, len=" << data_len);
-				if (m_tcp_server)
+				Json::Value body;
+				std::string error;
+				if (!parse_json_body(request.body, body, error))
 				{
-					m_tcp_server->close(session);
+					Json::Value rep;
+					rep["ok"] = false;
+					rep["error"] = "invalid json body";
+					reply_json(request.handle, 400, rep);
+					return;
 				}
+				handle_register(request.handle, body);
 				return;
 			}
-			handle_message(session, request);
+			if (path == "/v1/heartbeat" && is_post)
+			{
+				Json::Value body;
+				std::string error;
+				if (!parse_json_body(request.body, body, error))
+				{
+					Json::Value rep;
+					rep["ok"] = false;
+					rep["error"] = "invalid json body";
+					reply_json(request.handle, 400, rep);
+					return;
+				}
+				handle_heartbeat(request.handle, body);
+				return;
+			}
+			if (path == "/v1/unregister" && is_post)
+			{
+				Json::Value body;
+				std::string error;
+				if (!parse_json_body(request.body, body, error))
+				{
+					Json::Value rep;
+					rep["ok"] = false;
+					rep["error"] = "invalid json body";
+					reply_json(request.handle, 400, rep);
+					return;
+				}
+				handle_unregister(request.handle, body);
+				return;
+			}
+			if (path == "/v1/registry" && is_get)
+			{
+				handle_query(request.handle);
+				return;
+			}
+
+			Json::Value rep;
+			rep["ok"] = false;
+			rep["error"] = "not found";
+			reply_json(request.handle, 404, rep);
 		}
 
-		void config_center_service::fill_peers(
-			google::protobuf::RepeatedPtrField<ServerEndpoint>* peers)
+		void config_center_service::handle_register(long handle, const Json::Value& body)
 		{
-			if (peers == nullptr)
-			{
-				return;
-			}
-			std::vector<ServerEndpoint> list;
+			Json::Value rep;
+			const std::string server_type = body.get("server_type", "").asString();
+			const int server_index = body.get("server_index", -1).asInt();
+			const std::string internal_host = body.get("internal_host", "").asString();
+			const int internal_port = body.get("internal_port", 0).asInt();
+			const std::string external_host = body.get("external_host", "").asString();
+			const int external_port = body.get("external_port", 0).asInt();
+
 			std::string error;
-			if (!m_registry.list_all(list, error))
+			auto matched = m_allowlist.match(
+				server_type,
+				server_index,
+				internal_host,
+				internal_port,
+				external_host,
+				external_port,
+				error);
+			if (!matched)
 			{
-				_RLOG_(MWARN, "list peers failed: " << error);
+				rep["ok"] = false;
+				rep["error"] = error;
+				_RLOG_(MWARN, "register rejected: " << error
+					<< " type=" << server_type << " index=" << server_index);
+				reply_json(handle, 403, rep);
 				return;
 			}
-			for (const auto& item : list)
-			{
-				*peers->Add() = item;
-			}
-		}
 
-		void config_center_service::handle_message(
-			const net::tcp_server_session_ptr& session,
-			const CcMessage& request)
-		{
-			CcMessage response;
-			switch (request.body_case())
-			{
-			case CcMessage::kRegisterReq:
-			{
-				auto* rep = response.mutable_register_rep();
-				const auto& req = request.register_req();
-				if (!req.has_endpoint())
-				{
-					rep->set_ok(false);
-					rep->set_error("missing endpoint");
-					break;
-				}
-				const auto& ep = req.endpoint();
-				std::string error;
-				auto matched = m_allowlist.match(
-					ep.server_type(),
-					ep.server_index(),
-					ep.internal_host(),
-					ep.internal_port(),
-					ep.external_host(),
-					ep.external_port(),
-					error);
-				if (!matched)
-				{
-					rep->set_ok(false);
-					rep->set_error(error);
-					_RLOG_(MWARN, "register rejected: " << error
-						<< " type=" << ep.server_type()
-						<< " index=" << ep.server_index());
-					break;
-				}
+			server_endpoint stored;
+			stored.server_type = matched->server_type;
+			stored.server_index = matched->server_index;
+			// Persist registrant-reported endpoints.
+			stored.internal_host = internal_host;
+			stored.internal_port = internal_port;
+			stored.external_host = external_host;
+			stored.external_port = external_port;
 
-				ServerEndpoint stored;
-				stored.set_server_type(matched->server_type);
-				stored.set_server_index(matched->server_index);
-				stored.set_internal_host(matched->internal_host);
-				stored.set_internal_port(matched->internal_port);
-				stored.set_external_host(matched->external_host);
-				stored.set_external_port(matched->external_port);
-
-				if (!m_registry.try_register(stored, error))
-				{
-					rep->set_ok(false);
-					rep->set_error(error);
-					_RLOG_(MWARN, "register failed: " << error
-						<< " type=" << stored.server_type()
-						<< " index=" << stored.server_index());
-					break;
-				}
-
-				rep->set_ok(true);
-				fill_peers(rep->mutable_peers());
-				_RLOG_(MINFO, "register ok type=" << stored.server_type()
-					<< " index=" << stored.server_index()
-					<< " peers=" << rep->peers_size());
-				break;
-			}
-			case CcMessage::kHeartbeatReq:
+			if (!m_registry.try_register(stored, error))
 			{
-				auto* rep = response.mutable_heartbeat_rep();
-				const auto& req = request.heartbeat_req();
-				std::string error;
-				if (!m_registry.heartbeat(req.server_type(), req.server_index(), error))
-				{
-					rep->set_ok(false);
-					rep->set_error(error);
-				}
-				else
-				{
-					rep->set_ok(true);
-				}
-				break;
-			}
-			case CcMessage::kUnregisterReq:
-			{
-				auto* rep = response.mutable_unregister_rep();
-				const auto& req = request.unregister_req();
-				std::string error;
-				if (!m_registry.unregister(req.server_type(), req.server_index(), error))
-				{
-					rep->set_ok(false);
-					rep->set_error(error);
-				}
-				else
-				{
-					rep->set_ok(true);
-					_RLOG_(MINFO, "unregister ok type=" << req.server_type()
-						<< " index=" << req.server_index());
-				}
-				break;
-			}
-			case CcMessage::kQueryRegistryReq:
-			{
-				auto* rep = response.mutable_query_registry_rep();
-				std::string error;
-				std::vector<ServerEndpoint> list;
-				if (!m_registry.list_all(list, error))
-				{
-					rep->set_ok(false);
-					rep->set_error(error);
-				}
-				else
-				{
-					rep->set_ok(true);
-					for (const auto& item : list)
-					{
-						*rep->add_peers() = item;
-					}
-				}
-				break;
-			}
-			default:
-			{
-				_RLOG_(MWARN, "unsupported config center message body_case="
-					<< static_cast<int>(request.body_case()));
+				rep["ok"] = false;
+				rep["error"] = error;
+				_RLOG_(MWARN, "register failed: " << error
+					<< " type=" << stored.server_type
+					<< " index=" << stored.server_index);
+				reply_json(handle, 409, rep);
 				return;
 			}
-			}
 
-			send_message(session, response);
+			std::vector<server_endpoint> peers;
+			m_registry.list_all(peers, error);
+			Json::Value peers_json(Json::arrayValue);
+			for (const auto& peer : peers)
+			{
+				peers_json.append(endpoint_to_json(peer));
+			}
+			rep["ok"] = true;
+			rep["peers"] = peers_json;
+			_RLOG_(MINFO, "register ok type=" << stored.server_type
+				<< " index=" << stored.server_index
+				<< " peers=" << peers.size());
+			reply_json(handle, 200, rep);
 		}
 
-		bool config_center_service::send_message(
-			const net::tcp_server_session_ptr& session,
-			const CcMessage& message)
+		void config_center_service::handle_heartbeat(long handle, const Json::Value& body)
 		{
-			if (!m_tcp_server || !session)
+			Json::Value rep;
+			const std::string server_type = body.get("server_type", "").asString();
+			const int server_index = body.get("server_index", -1).asInt();
+			std::string error;
+			if (!m_registry.heartbeat(server_type, server_index, error))
 			{
-				return false;
+				rep["ok"] = false;
+				rep["error"] = error;
+				reply_json(handle, 404, rep);
+				return;
 			}
-			std::vector<std::uint8_t> buffer;
-			if (!proto_codec::encode(message, buffer))
+			rep["ok"] = true;
+			reply_json(handle, 200, rep);
+		}
+
+		void config_center_service::handle_unregister(long handle, const Json::Value& body)
+		{
+			Json::Value rep;
+			const std::string server_type = body.get("server_type", "").asString();
+			const int server_index = body.get("server_index", -1).asInt();
+			std::string error;
+			if (!m_registry.unregister(server_type, server_index, error))
 			{
-				_RLOG_(MERROR, "encode CcMessage failed");
-				return false;
+				rep["ok"] = false;
+				rep["error"] = error;
+				reply_json(handle, 500, rep);
+				return;
 			}
-			const int sent = m_tcp_server->send(session, buffer.data(), buffer.size());
-			return sent > 0;
+			rep["ok"] = true;
+			_RLOG_(MINFO, "unregister ok type=" << server_type << " index=" << server_index);
+			reply_json(handle, 200, rep);
+		}
+
+		void config_center_service::handle_query(long handle)
+		{
+			Json::Value rep;
+			std::string error;
+			std::vector<server_endpoint> peers;
+			if (!m_registry.list_all(peers, error))
+			{
+				rep["ok"] = false;
+				rep["error"] = error;
+				reply_json(handle, 500, rep);
+				return;
+			}
+			Json::Value peers_json(Json::arrayValue);
+			for (const auto& peer : peers)
+			{
+				peers_json.append(endpoint_to_json(peer));
+			}
+			rep["ok"] = true;
+			rep["peers"] = peers_json;
+			reply_json(handle, 200, rep);
+		}
+
+		void config_center_service::reply_json(long handle, int status, const Json::Value& body)
+		{
+			Json::StreamWriterBuilder writer;
+			writer["indentation"] = "";
+			http_access_mgr::get_instance().reply(handle, status, Json::writeString(writer, body));
 		}
 	}
 }

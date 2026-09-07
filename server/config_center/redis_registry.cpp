@@ -28,6 +28,11 @@ namespace faith
 			m_impl = nullptr;
 		}
 
+		bool redis_registry::using_redis() const
+		{
+			return m_impl != nullptr && m_impl->redis != nullptr;
+		}
+
 		bool redis_registry::connect(const redis_options& options)
 		{
 			try
@@ -40,8 +45,8 @@ namespace faith
 				{
 					conn.password = options.password;
 				}
-				conn.connect_timeout = std::chrono::milliseconds(3000);
-				conn.socket_timeout = std::chrono::milliseconds(3000);
+				conn.connect_timeout = std::chrono::milliseconds(1000);
+				conn.socket_timeout = std::chrono::milliseconds(1000);
 
 				m_impl->redis = std::make_unique<sw::redis::Redis>(conn);
 				m_impl->redis->ping();
@@ -66,21 +71,21 @@ namespace faith
 			return oss.str();
 		}
 
-		std::string redis_registry::serialize_endpoint(const ServerEndpoint& endpoint)
+		std::string redis_registry::serialize_endpoint(const server_endpoint& endpoint)
 		{
 			Json::Value root;
-			root["server_type"] = endpoint.server_type();
-			root["server_index"] = endpoint.server_index();
-			root["internal_host"] = endpoint.internal_host();
-			root["internal_port"] = endpoint.internal_port();
-			root["external_host"] = endpoint.external_host();
-			root["external_port"] = endpoint.external_port();
+			root["server_type"] = endpoint.server_type;
+			root["server_index"] = endpoint.server_index;
+			root["internal_host"] = endpoint.internal_host;
+			root["internal_port"] = endpoint.internal_port;
+			root["external_host"] = endpoint.external_host;
+			root["external_port"] = endpoint.external_port;
 			Json::StreamWriterBuilder writer;
 			writer["indentation"] = "";
 			return Json::writeString(writer, root);
 		}
 
-		bool redis_registry::deserialize_endpoint(const std::string& payload, ServerEndpoint& endpoint)
+		bool redis_registry::deserialize_endpoint(const std::string& payload, server_endpoint& endpoint)
 		{
 			Json::CharReaderBuilder builder;
 			Json::Value root;
@@ -97,33 +102,107 @@ namespace faith
 			{
 				return false;
 			}
-			endpoint.set_server_type(root["server_type"].asString());
-			endpoint.set_server_index(root["server_index"].asInt());
-			endpoint.set_internal_host(root["internal_host"].asString());
-			endpoint.set_internal_port(root["internal_port"].asInt());
+			endpoint.server_type = root["server_type"].asString();
+			endpoint.server_index = root["server_index"].asInt();
+			endpoint.internal_host = root["internal_host"].asString();
+			endpoint.internal_port = root["internal_port"].asInt();
 			if (root.isMember("external_host") && root["external_host"].isString())
 			{
-				endpoint.set_external_host(root["external_host"].asString());
+				endpoint.external_host = root["external_host"].asString();
 			}
 			if (root.isMember("external_port") && root["external_port"].isInt())
 			{
-				endpoint.set_external_port(root["external_port"].asInt());
+				endpoint.external_port = root["external_port"].asInt();
 			}
 			return true;
 		}
 
-		bool redis_registry::try_register(const ServerEndpoint& endpoint, std::string& error)
+		void redis_registry::purge_expired_memory()
+		{
+			const auto now = std::chrono::steady_clock::now();
+			for (auto it = m_memory.begin(); it != m_memory.end();)
+			{
+				if (it->second.expire_at <= now)
+				{
+					it = m_memory.erase(it);
+				}
+				else
+				{
+					++it;
+				}
+			}
+		}
+
+		bool redis_registry::memory_try_register(const server_endpoint& endpoint, std::string& error)
+		{
+			std::lock_guard<std::mutex> lock(m_memory_mutex);
+			purge_expired_memory();
+			const std::string key = make_key(endpoint.server_type, endpoint.server_index);
+			if (m_memory.find(key) != m_memory.end())
+			{
+				error = "already registered";
+				return false;
+			}
+			memory_entry entry;
+			entry.endpoint = endpoint;
+			entry.expire_at = std::chrono::steady_clock::now() + std::chrono::seconds(m_ttl_sec);
+			m_memory.emplace(key, entry);
+			return true;
+		}
+
+		bool redis_registry::memory_heartbeat(
+			const std::string& server_type,
+			std::int32_t server_index,
+			std::string& error)
+		{
+			std::lock_guard<std::mutex> lock(m_memory_mutex);
+			purge_expired_memory();
+			const std::string key = make_key(server_type, server_index);
+			auto it = m_memory.find(key);
+			if (it == m_memory.end())
+			{
+				error = "not registered";
+				return false;
+			}
+			it->second.expire_at = std::chrono::steady_clock::now() + std::chrono::seconds(m_ttl_sec);
+			return true;
+		}
+
+		bool redis_registry::memory_unregister(
+			const std::string& server_type,
+			std::int32_t server_index,
+			std::string& error)
+		{
+			(void)error;
+			std::lock_guard<std::mutex> lock(m_memory_mutex);
+			m_memory.erase(make_key(server_type, server_index));
+			return true;
+		}
+
+		bool redis_registry::memory_list_all(std::vector<server_endpoint>& out, std::string& error)
+		{
+			(void)error;
+			out.clear();
+			std::lock_guard<std::mutex> lock(m_memory_mutex);
+			purge_expired_memory();
+			out.reserve(m_memory.size());
+			for (const auto& item : m_memory)
+			{
+				out.push_back(item.second.endpoint);
+			}
+			return true;
+		}
+
+		bool redis_registry::try_register(const server_endpoint& endpoint, std::string& error)
 		{
 			if (!m_impl->redis)
 			{
-				error = "redis not connected";
-				return false;
+				return memory_try_register(endpoint, error);
 			}
 			try
 			{
-				const std::string key = make_key(endpoint.server_type(), endpoint.server_index());
-				const bool exists = m_impl->redis->exists(key) > 0;
-				if (exists)
+				const std::string key = make_key(endpoint.server_type, endpoint.server_index);
+				if (m_impl->redis->exists(key) > 0)
 				{
 					error = "already registered";
 					return false;
@@ -154,8 +233,7 @@ namespace faith
 		{
 			if (!m_impl->redis)
 			{
-				error = "redis not connected";
-				return false;
+				return memory_heartbeat(server_type, server_index, error);
 			}
 			try
 			{
@@ -179,8 +257,7 @@ namespace faith
 		{
 			if (!m_impl->redis)
 			{
-				error = "redis not connected";
-				return false;
+				return memory_unregister(server_type, server_index, error);
 			}
 			try
 			{
@@ -195,13 +272,12 @@ namespace faith
 			}
 		}
 
-		bool redis_registry::list_all(std::vector<ServerEndpoint>& out, std::string& error)
+		bool redis_registry::list_all(std::vector<server_endpoint>& out, std::string& error)
 		{
 			out.clear();
 			if (!m_impl->redis)
 			{
-				error = "redis not connected";
-				return false;
+				return memory_list_all(out, error);
 			}
 			try
 			{
@@ -223,7 +299,7 @@ namespace faith
 					{
 						continue;
 					}
-					ServerEndpoint endpoint;
+					server_endpoint endpoint;
 					if (!deserialize_endpoint(*value, endpoint))
 					{
 						continue;

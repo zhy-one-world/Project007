@@ -28,6 +28,8 @@ namespace faith
 		gift_url = "";
 		new_log_file_root = "";
 		not_need_db_log = false;
+		config_center_host = "127.0.0.1";
+		config_center_port = 19000;
 	}
 	bool server_base_config::parse_by_json(Json::Value& json_obj)
 	{
@@ -114,6 +116,14 @@ namespace faith
 		if (json_obj["not_need_db_log"].isBool())
 		{
 			not_need_db_log = json_obj["not_need_db_log"].asBool();
+		}
+		if (json_obj["config_center_host"].isString())
+		{
+			config_center_host = json_obj["config_center_host"].asString();
+		}
+		if (json_obj["config_center_port"].isInt())
+		{
+			config_center_port = json_obj["config_center_port"].asInt();
 		}
 		return true;
 	}

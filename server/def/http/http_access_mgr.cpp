@@ -50,6 +50,21 @@ namespace faith
 		_RLOG_(MINFO, ::faith::log_detail::format_message("http listen success port :{}",  listen_port));
 		http_accessor::getInstance().start_listen(listen_port, call_back);
 	}
+
+	bool http_access_mgr::listen(const http_listen_options& options, http_inbound_handler handler)
+	{
+		_RLOG_(MINFO, "http(s) listen scheme="
+			<< (options.scheme == http_scheme::https ? "https" : "http")
+			<< " port=" << options.port
+			<< " bind=" << options.bind_ip);
+		return http_accessor::getInstance().listen(options, handler);
+	}
+
+	void http_access_mgr::reply(long handle, int status_code, const std::string& body)
+	{
+		http_accessor::getInstance().reply(handle, status_code, body);
+	}
+
 	void http_access_mgr::repose_client_req(int64 handle_index, int32 error_code, xstring error_msg)
 	{
 		ZoneScoped;
@@ -91,6 +106,11 @@ namespace faith
 			}
 		}
 		return 1;
+	}
+
+	bool http_access_mgr::request_async(const http_request& request, http_client_handler handler)
+	{
+		return http_accessor::getInstance().request_async(request, handler);
 	}
 
 

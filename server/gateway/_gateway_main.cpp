@@ -12,6 +12,7 @@
 #include "dump/dump.hpp"
 #include <time.hpp>
 #include "server/gateway_client.hpp"
+#include "server/config_center_client.hpp"
 #include "net/net_server_mgr.hpp"
 #include "server/proxy_service_cli.hpp"
 #include "game_cfg/servers_config.h"
@@ -21,6 +22,7 @@
 #include "connection/daemon_client.hpp"
 #include "http/http_access_mgr.hpp"
 #include "net/message_manager.hpp"
+#include "utility/init_unit.h"
 #include <boost/bind.hpp>
 #include <rlog.hpp>
 //#include <windows.h>
@@ -40,6 +42,56 @@ namespace faith
 	static bool init()
 	{
 		_RLOG_(MINFO, "gateway initialization started, server index=" << g_server_index);
+
+		if (SERVERCONFIG == nullptr || GATEWAYCONFIG == nullptr)
+		{
+			_RLOG_(MERROR, "gateway config not loaded");
+			return false;
+		}
+
+		http_access_mgr::get_instance().init(false);
+		_RLOG_(MINFO, "HTTP access manager initialized");
+
+		config_center_client::register_params cc_params;
+		cc_params.center_host = SERVERCONFIG->config_center_host;
+		cc_params.center_port = SERVERCONFIG->config_center_port;
+		cc_params.use_https = true;
+		cc_params.server_type = "gateway";
+		cc_params.server_index = SERVERCONFIG->game_id;
+
+		const char* local_ip = init_unit::get_host_ip();
+		const std::string lan_ip = (local_ip && local_ip[0] != '\0') ? local_ip : "127.0.0.1";
+		const int internal_port = GATEWAYCONFIG->internal_port > 0
+			? GATEWAYCONFIG->internal_port
+			: (GATEWAYCONFIG->external_port > 0 ? GATEWAYCONFIG->external_port : 2200);
+		const int external_port = GATEWAYCONFIG->external_port > 0
+			? GATEWAYCONFIG->external_port
+			: internal_port;
+
+		cc_params.internal_host = lan_ip;
+		cc_params.internal_port = internal_port;
+		cc_params.external_host = GATEWAYCONFIG->external_host.empty()
+			? lan_ip
+			: GATEWAYCONFIG->external_host;
+		cc_params.external_port = external_port;
+
+		std::string cc_error;
+		_RLOG_(MINFO, "config_center register begin, host="
+			<< cc_params.center_host << " port=" << cc_params.center_port
+			<< " type=" << cc_params.server_type
+			<< " game_id=" << cc_params.server_index
+			<< " internal=" << cc_params.internal_host << ":" << cc_params.internal_port
+			<< " external=" << cc_params.external_host << ":" << cc_params.external_port);
+		if (!config_center_client::getInstance().register_sync(cc_params, cc_error))
+		{
+			_RLOG_(MERROR, "config_center register failed: " << cc_error
+				<< "; gateway will not start");
+			return false;
+		}
+		config_center_client::getInstance().start_heartbeat();
+		_RLOG_(MINFO, "config_center register succeeded, continue gateway start");
+
+		const int32 instance_id = cc_params.server_index;
 		message_manager::getInstance().set_server_type(e_server_type_gateway);
 		if( !net_client_mgr::getInstance().set_netpara_option(GATEWAY_CLIENT_SEND_BUFF_SIZE, GATEWAY_CLIENT_RECV_BUFF_SIZE, INTERNAL_SERVER_MAX_PACKET_SIZE, GATEWAY_NEED_CLIENT_COUNT))
 		{
@@ -47,11 +99,9 @@ namespace faith
 			return false;
 		}
 		_RLOG_(MINFO, "internal network parameters initialized");
-		http_access_mgr::get_instance().init(false);
-		_RLOG_(MINFO, "HTTP access manager initialized");
 		net_server_mgr::getInstance().set_server_type(e_server_type_gateway);
-		net_server_mgr::getInstance().set_server_index(g_server_index);
-		_RLOG_(MINFO, "server identity initialized");
+		net_server_mgr::getInstance().set_server_index(instance_id);
+		_RLOG_(MINFO, "server identity initialized, game_id=" << instance_id);
 		if (!proxy_service_cli::getInstance().init())
 		{
 			_RLOG_(MERROR, "proxy_service_cli::getInstance().init error");
@@ -83,6 +133,9 @@ namespace faith
 			scheduler::getInstance().remove_timer(g_main_alive_timer_index);
 			g_main_alive_timer_index = scheduler::scheduler_invalid_timer_index;
 		}
+
+		config_center_client::getInstance().stop();
+		_RLOG_(MINFO, "main(): config_center client stopped");
 
 		gateway_client::getInstance().stop();
 		_RLOG_(MINFO, "main(): gateway stopped");

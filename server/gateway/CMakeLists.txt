@@ -79,6 +79,11 @@ target_link_libraries(gateway PUBLIC
 	server_common
 	server_net
 	event
+	event_core
+	event_extra
+	event_openssl
+	libssl
+	libcrypto
 	libcurl
 	zlib
 	lua

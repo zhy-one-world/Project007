@@ -65,6 +65,23 @@ namespace faith
 				}
 			}
 
+			if (root.isMember("use_https") && root["use_https"].isBool())
+			{
+				config.use_https = root["use_https"].asBool();
+			}
+			if (root.isMember("ssl") && root["ssl"].isObject())
+			{
+				const Json::Value& ssl = root["ssl"];
+				if (ssl.isMember("cert_file") && ssl["cert_file"].isString())
+				{
+					config.ssl.cert_file = ssl["cert_file"].asString();
+				}
+				if (ssl.isMember("key_file") && ssl["key_file"].isString())
+				{
+					config.ssl.key_file = ssl["key_file"].asString();
+				}
+			}
+
 			if (!root.isMember("allowed") || !root["allowed"].isArray())
 			{
 				error = "missing allowed array";
@@ -147,20 +164,45 @@ namespace faith
 				error = "server not in allowlist";
 				return std::nullopt;
 			}
-			if (found->internal_host != internal_host || found->internal_port != internal_port)
+			if (internal_host.empty() || internal_port <= 0)
 			{
-				error = "internal endpoint mismatch";
+				error = "missing internal endpoint";
 				return std::nullopt;
 			}
-			const bool check_external =
-				!external_host.empty() || external_port != 0;
-			if (check_external)
+			if (found->internal_port != internal_port)
 			{
-				if (found->external_host != external_host || found->external_port != external_port)
-				{
-					error = "external endpoint mismatch";
-					return std::nullopt;
-				}
+				error = "internal port mismatch";
+				return std::nullopt;
+			}
+			// 0.0.0.0 / * / empty allowlist host = accept any reported LAN IP.
+			const bool internal_host_wildcard =
+				found->internal_host.empty() ||
+				found->internal_host == "*" ||
+				found->internal_host == "0.0.0.0";
+			if (!internal_host_wildcard && found->internal_host != internal_host)
+			{
+				error = "internal host mismatch";
+				return std::nullopt;
+			}
+
+			if (external_host.empty() || external_port <= 0)
+			{
+				error = "missing external endpoint";
+				return std::nullopt;
+			}
+			if (found->external_port != 0 && found->external_port != external_port)
+			{
+				error = "external port mismatch";
+				return std::nullopt;
+			}
+			const bool external_host_wildcard =
+				found->external_host.empty() ||
+				found->external_host == "*" ||
+				found->external_host == "0.0.0.0";
+			if (!external_host_wildcard && found->external_host != external_host)
+			{
+				error = "external host mismatch";
+				return std::nullopt;
 			}
 			return *found;
 		}

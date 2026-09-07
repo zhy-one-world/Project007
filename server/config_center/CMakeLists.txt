@@ -13,12 +13,9 @@ add_definitions(-D_WIN32_WINNT=0x0601)
 
 file(GLOB_RECURSE HEADER_FILES *.h *.hpp)
 file(GLOB_RECURSE SOURCE_FILES *.cpp)
+list(FILTER SOURCE_FILES EXCLUDE REGEX ".*/proto_codec\\.cpp$")
 
-set(PROTO_FILES
-	${PROJECT_COMPONENT_DIR}/def/protocol/config_center/config_center.pb.cc
-)
-
-set(AllFile ${HEADER_FILES} ${SOURCE_FILES} ${PROTO_FILES})
+set(AllFile ${HEADER_FILES} ${SOURCE_FILES})
 
 foreach(fileItem ${AllFile})
 	get_filename_component(PARENT_DIR "${fileItem}" DIRECTORY)
@@ -40,14 +37,11 @@ target_include_directories(config_center PUBLIC
 	${PROJECT_COMPONENT_DIR}/def/logic
 	${PROJECT_COMPONENT_DIR}/def/utility
 	${PROJECT_COMPONENT_DIR}/def/protocol
-	${PROJECT_COMPONENT_DIR}/def/protocol/config_center
 	${PROJECT_COMPONENT_DIR}/../../dep/vcpkg/installed/x64-windows/include
-	${PROJECT_COMPONENT_DIR}/../../dep/google/protocolbuff/src
 )
 
 target_link_directories(config_center PUBLIC
 	${PROJECT_COMPONENT_DIR}/../../dep/vcpkg/installed/x64-windows/lib
-	${PROJECT_COMPONENT_DIR}/../../dep/google/protocolbuff/vsprojects/Bin/Release
 )
 
 target_link_libraries(config_center PUBLIC
@@ -55,11 +49,14 @@ target_link_libraries(config_center PUBLIC
 	server_common
 	server_net
 	event
+	event_core
+	event_extra
+	event_openssl
+	libssl
+	libcrypto
 	libcurl
 	zlib
 	lua
-	libprotobuf
-	abseil_dll
 	jsoncpp
 	spdlog
 	fmt

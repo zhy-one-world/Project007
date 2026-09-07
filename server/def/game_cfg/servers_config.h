@@ -40,6 +40,8 @@ namespace faith
 		std::string gift_url;
 		std::string new_log_file_root;
 		bool not_need_db_log;
+		std::string config_center_host;
+		int32 config_center_port;
 	};
 
 	class net_config_base

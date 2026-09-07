@@ -1,10 +1,9 @@
 #pragma once
 
-#include <memory>
-#include <mutex>
-#include <unordered_map>
+#include <string>
 
-#include <net/tcp_server.hpp>
+#include <json/json.h>
+#include <net/http_types.hpp>
 #include <singleton.hpp>
 
 #include "allowlist_config.hpp"
@@ -26,21 +25,16 @@ namespace faith
 		private:
 			config_center_service() = default;
 
-			void on_serverstatus_changed(net::tcp_server::e_server_status_type status);
-			void on_conn_created(net::tcp_server_session_ptr session);
-			void on_conn_closed(net::tcp_server_session_ptr session);
-			void on_data_received(net::tcp_server_session_ptr session, const void* data, std::size_t data_len);
-
-			void handle_message(const net::tcp_server_session_ptr& session, const CcMessage& request);
-			bool send_message(const net::tcp_server_session_ptr& session, const CcMessage& message);
-
-			void fill_peers(google::protobuf::RepeatedPtrField<ServerEndpoint>* peers);
+			void on_http_request(const http_inbound_request& request);
+			void handle_register(long handle, const Json::Value& body);
+			void handle_heartbeat(long handle, const Json::Value& body);
+			void handle_unregister(long handle, const Json::Value& body);
+			void handle_query(long handle);
+			void reply_json(long handle, int status, const Json::Value& body);
 
 			allowlist_config m_allowlist;
 			redis_registry m_registry;
-			std::unique_ptr<net::tcp_server> m_tcp_server;
-			std::mutex m_session_mutex;
-			std::unordered_map<net::tcp_server_session*, net::tcp_server_session_ptr> m_sessions;
+			bool m_http_inited = false;
 		};
 	}
 }

@@ -15,6 +15,7 @@
 #include "Logic/count_def.hpp"
 #include "Logic/world_def.hpp"
 #include "base.hpp"
+#include <net/http_types.hpp>
 
 namespace faith
 {
@@ -29,10 +30,13 @@ namespace faith
 		void					init(bool need_listen);
 		void					tick(const int64& new_time);
 		void					start_listen_http(int32 listen_port, http_server_callback_type call_back);
+		bool					listen(const http_listen_options& options, http_inbound_handler handler);
+		void					reply(long handle, int status_code, const std::string& body);
 		void					repose_client_req(int64 handle_index, int32 error_code, xstring error_msg);
 		void					repose_client_req(int64 handle_index, const xstring& repose_body);
 		void					new_repose_client_req(int64 handle_index, int32 error_code, xstring error_msg);
 		uint32					async_request(ui64 uid, xstring& sdk_url, std::vector<xstring>& head_list, const xstring& params, http_accessor::result_handler_type handler, e_http_request_type request_type);
+		bool					request_async(const http_request& request, http_client_handler handler);
 		
 		void					remove_http(s_client_uid client_uid);
 		void					remove_http(int32 http_count);

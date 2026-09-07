@@ -9,6 +9,16 @@ namespace faith
 {
 	namespace config_center
 	{
+		struct server_endpoint
+		{
+			std::string server_type;
+			std::int32_t server_index = 0;
+			std::string internal_host;
+			std::int32_t internal_port = 0;
+			std::string external_host;
+			std::int32_t external_port = 0;
+		};
+
 		struct allowlist_entry
 		{
 			std::string server_type;
@@ -27,10 +37,18 @@ namespace faith
 			std::string password;
 		};
 
+		struct ssl_config
+		{
+			std::string cert_file = "cert.pem";
+			std::string key_file = "key.pem";
+		};
+
 		struct center_config
 		{
 			std::string listen_host = "0.0.0.0";
 			int listen_port = 19000;
+			bool use_https = true;
+			ssl_config ssl;
 			redis_config redis;
 			std::uint32_t heartbeat_ttl_sec = 30;
 			std::vector<allowlist_entry> allowed;
@@ -42,9 +60,6 @@ namespace faith
 			bool load_from_file(const std::string& path, std::string& error);
 			const center_config& get() const { return m_config; }
 
-			// Match (type,index) and require internal host/port equal.
-			// If request provides non-empty external_host or non-zero external_port,
-			// those must also match the allowlist entry.
 			std::optional<allowlist_entry> match(
 				const std::string& server_type,
 				std::int32_t server_index,
