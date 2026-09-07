@@ -1,4 +1,4 @@
-﻿/********************************************************************
+/********************************************************************
 	created:	2014/07/30
 	created:	30:7:2014   17:32
 	file base:	client_session
@@ -22,6 +22,12 @@
 
 namespace faith
 {
+	namespace net
+	{
+		class tcp_server_session;
+		typedef std::shared_ptr<tcp_server_session> tcp_server_session_ptr;
+	}
+
 	class client_session : private boost::noncopyable
 	{
 	public:	
@@ -35,6 +41,8 @@ namespace faith
 		void				set_is_logout(bool is_logout) { m_is_logout = is_logout; }
 		void				set_conn_index(uint32 conn_index) { m_conn_index = conn_index; }
 		uint32				get_conn_index() { return m_conn_index; }
+		void				set_tcp_session(const net::tcp_server_session_ptr& session) { m_tcp_session = session; }
+		const net::tcp_server_session_ptr& get_tcp_session() const { return m_tcp_session; }
 		void				set_scheduler_thread_id(uint32 thread_id) { m_scheduler_thread_id = thread_id; }
 		uint32				get_scheduler_thread_id() { return m_scheduler_thread_id; }
 
@@ -104,12 +112,13 @@ namespace faith
 	private:
 		bool				m_is_logout;
 		ui8					m_msg_index;
-		uint32				m_conn_index;
+		uint32				m_conn_index;				// business slot index in proxy_service_cli
 		uint32				m_array_index;
 		uint32				m_scheduler_thread_id;
 		uint32				m_cs_conn_index;							//The cell server uid that the client session use
 		int32				m_cs_array_index;					//cs unit_man player array index;
 		s_client_uid		m_client_uid;
+		net::tcp_server_session_ptr	m_tcp_session;
 		//guid_64				m_optional_char_guids[max_enum_character_num];
 
 		int64				m_client_send_msg_time;

@@ -44,9 +44,9 @@ namespace faith
 		/* ws tcp server                                                        */
 		/************************************************************************/
 		void handler_serverstatus(tcp_server::e_server_status_type status);
-		void handler_onconnected(uint32 conn_index);
-		void handler_onclose(uint32 conn_index);
-		void handler_onrecv(uint32 conn_index, const void* data_ptr, size_t data_len);;
+		void handler_onconnected(tcp_server_session_ptr session);
+		void handler_onclose(tcp_server_session_ptr session);
+		void handler_onrecv(tcp_server_session_ptr session, const void* data_ptr, size_t data_len);;
 		bool send_message_by_index(const void* data_ptr, size_t data_len, int32 conn_index);
 		void send_message_by_type(const void* data_ptr, size_t data_len, e_server_type server_type);
 	public:
@@ -57,7 +57,20 @@ namespace faith
 			uint32 send_buf_size, uint32 recv_buf_size, uint32 max_packet_size, uint32 server_num, uint32 init_num,
 			server_on_closed_handler_type onclosed_handler);
 		bool start();
-		void stop() { if (m_tcpserver_ptr) m_tcpserver_ptr->stop(); }
+		void stop()
+		{
+			if (!m_tcpserver_ptr || !m_conn_map)
+			{
+				return;
+			}
+			for (int32 i = 0; i < m_conn_num; ++i)
+			{
+				if (m_conn_map[i].get_tcp_session())
+				{
+					m_tcpserver_ptr->close(m_conn_map[i].get_tcp_session());
+				}
+			}
+		}
 	public:
 		void set_server_type(e_server_type server_type) { m_server_type = server_type; }
 		e_server_type get_server_type() { return m_server_type; }

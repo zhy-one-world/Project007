@@ -19,11 +19,17 @@ Change List :
 //////////////////////////////////////////////////////////////////////////
 #pragma once
 
+#include <memory>
 #include <singleton.hpp>
 #include "server_def.hpp"
 
 namespace faith
 {
+	namespace net
+	{
+		class tcp_server_session;
+		typedef std::shared_ptr<tcp_server_session> tcp_server_session_ptr;
+	}
 	using namespace net;
 
 	//////////////////////////////////////////////////////////////////////////
@@ -38,6 +44,8 @@ namespace faith
 	public:
 		void set_conn_index(int32 conn_index) { m_conn_index = conn_index; }
 		const int32 get_conn_index()const { return m_conn_index; }
+		void set_tcp_session(const tcp_server_session_ptr& session) { m_tcp_session = session; }
+		const tcp_server_session_ptr& get_tcp_session() const { return m_tcp_session; }
 		void set_server_status(e_server_status server_status) { m_server_status = server_status; }
 		e_server_status get_server_status() { return m_server_status; }
 		void set_server_info(const s_server_info& server_info) { m_server_info = server_info; }
@@ -52,6 +60,7 @@ namespace faith
 	private:
 		s_server_info m_server_info;
 		int32 m_conn_index;
+		tcp_server_session_ptr m_tcp_session;
 		e_server_status m_server_status;
 		int32 m_cur_count;
 		int32 m_max_count;

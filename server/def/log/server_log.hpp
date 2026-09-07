@@ -393,6 +393,8 @@ namespace faith
 	{ ::faith::log_detail::write(::faith::rlog::MINFO, MSG, __VA_ARGS__); }
 #define CONSOLE_ERROR(MSG, ...) \
 	{ ::faith::log_detail::write(::faith::rlog::MERROR, "{}({})|| " MSG, __FUNCTION__, __LINE__, __VA_ARGS__); }
+#define CONSOLE_INFO(MSG, ...) \
+	{ ::faith::log_detail::write(::faith::rlog::MINFO, "{}({})|| " MSG, __FUNCTION__, __LINE__, __VA_ARGS__); }
 }
 
 #endif // _SERVER_LOG_HPP_

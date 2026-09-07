@@ -20,6 +20,7 @@
 #include "net_server.hpp"
 #include "server_log.hpp"
 #include "net_server_mgr.hpp"
+#include <net/tcp_server.hpp>
 
 namespace faith
 {
@@ -41,6 +42,7 @@ namespace faith
 		m_cur_count = 0;
 		m_max_count = 0;
 		m_server_status = e_serverstatus_created;
+		m_tcp_session.reset();
 	}
 	void net_server::send_message(const void *data_ptr, size_t data_len)
 	{

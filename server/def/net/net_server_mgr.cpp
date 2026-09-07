@@ -1,4 +1,4 @@
-﻿/*@@
+/*@@
 
 	Copyright (c) Beijing Second Laboratory Game Studio. All rights reserved. 
 	
@@ -15,19 +15,23 @@
 
 @@*/
 //////////////////////////////////////////////////////////////////////////
+//
 //	File Include
+//
 //////////////////////////////////////////////////////////////////////////
 //#include <winsock2.h>
 #include "net_server_mgr.hpp"
 #include "server_log.hpp"
 #include "message_manager.hpp"
 #include "utility/random.h"
-#include <rlog.hpp>
+#include <net/tcp_server.hpp>
 
 namespace faith
 {
 	//////////////////////////////////////////////////////////////////////////
+	//
 	//	Class Implement
+	//
 	//////////////////////////////////////////////////////////////////////////
 
 	net_server_mgr::net_server_mgr(void)
@@ -145,7 +149,11 @@ namespace faith
 		{
 			return false;
 		}
-		m_tcpserver_ptr->send(conn_index, data_ptr, data_len);
+		if (!m_tcpserver_ptr || !m_conn_map[conn_index].get_tcp_session())
+		{
+			return false;
+		}
+		m_tcpserver_ptr->send(m_conn_map[conn_index].get_tcp_session(), data_ptr, data_len);
 		return true;
 	}
 	void net_server_mgr::send_message_by_type(const void* data_ptr, size_t data_len, e_server_type server_type)
@@ -154,11 +162,14 @@ namespace faith
 		{
 			return;
 		}
-		for (int32 i = 0; i < e_server_type_max; ++i)
+		for (int32 i = 0; i < m_conn_num; ++i)
 		{
 			if (server_type == e_server_type_invalid || m_conn_map[i].get_server_type() == server_type)
 			{
-				m_tcpserver_ptr->send(i, data_ptr, data_len);
+				if (m_tcpserver_ptr && m_conn_map[i].get_tcp_session())
+				{
+					m_tcpserver_ptr->send(m_conn_map[i].get_tcp_session(), data_ptr, data_len);
+				}
 			}
 		}
 	}
@@ -167,17 +178,22 @@ namespace faith
 		if (nullptr == m_tcpserver_ptr)
 		{
 			const packet_c2s_s2c* packet_ptr = (packet_c2s_s2c*)data_ptr;
-			_RLOG_(MINFO, ::faith::log_detail::format_message("connection_server::send_by_gate tcp_server is null  header = {}",  packet_ptr->wheader));
+			CONSOLE_INFO("connection_server::send_by_gate tcp_server is null  header = {}", packet_ptr->wheader);
 			return false;
 		}
 		if (m_gate_count <= 0)
 		{
 			const packet_c2s_s2c* packet_ptr = (packet_c2s_s2c*)data_ptr;
-			_RLOG_(MINFO, ::faith::log_detail::format_message("connection_server::send_by_gate m_gate_count is 0 m_gate_count = {} header = {}",  m_gate_count,  packet_ptr->wheader));
+			CONSOLE_INFO("connection_server::send_by_gate m_gate_count is 0 m_gate_count = {} header = {}", m_gate_count, packet_ptr->wheader);
 			return false;
 		}
 		int32 gate_rand = random_gen::get_random(0, m_gate_count);
-		m_tcpserver_ptr->send(m_gate_array[gate_rand], data_ptr, data_len);
+		const int32 conn_index = static_cast<int32>(m_gate_array[gate_rand]);
+		if (conn_index < 0 || conn_index >= m_conn_num || !m_conn_map[conn_index].get_tcp_session())
+		{
+			return false;
+		}
+		m_tcpserver_ptr->send(m_conn_map[conn_index].get_tcp_session(), data_ptr, data_len);
 		return true;
 	}
 	void net_server_mgr::send_message(const void* data_ptr, size_t data_len, int32 conn_index, e_server_type server_type)
@@ -216,9 +232,9 @@ namespace faith
 		{
 			for (int32 i = 0; i < m_conn_num; ++i)
 			{
-				if (i != conn_index)
+				if (i != conn_index && m_conn_map[i].get_tcp_session())
 				{
-					m_tcpserver_ptr->send(i, data_ptr, data_len);
+					m_tcpserver_ptr->send(m_conn_map[i].get_tcp_session(), data_ptr, data_len);
 				}
 			}
 		}
@@ -226,9 +242,10 @@ namespace faith
 		{
 			for (int32 i = 0; i < m_conn_num; ++i)
 			{
-				if (i != conn_index && m_conn_map[i].get_server_type() != server_type)
+				if (i != conn_index && m_conn_map[i].get_server_type() != server_type
+					&& m_conn_map[i].get_tcp_session())
 				{
-					m_tcpserver_ptr->send(i, data_ptr, data_len);
+					m_tcpserver_ptr->send(m_conn_map[i].get_tcp_session(), data_ptr, data_len);
 				}
 			}
 		}
@@ -236,7 +253,7 @@ namespace faith
 
 	void net_server_mgr::handler_serverstatus(tcp_server::e_server_status_type status)
 	{
-		_RLOG_(MINFO, ::faith::log_detail::format_message(" status = {}",  (int32)status));
+		CONSOLE_INFO(" status = {}", (int32)status);
 		if(status == tcp_server::e_ss_all_connection_closed)
 		{
 			delete m_tcpserver_ptr;
@@ -244,51 +261,77 @@ namespace faith
 		}
 	}
 
-	void net_server_mgr::handler_onconnected(uint32 conn_index)
+	void net_server_mgr::handler_onconnected(tcp_server_session_ptr session)
 	{
-		_RLOG_(MINFO, ::faith::log_detail::format_message(" conn_index = {}",  conn_index));
-		if (conn_index >= m_conn_num)
+		if (session == nullptr)
 		{
 			return;
 		}
-		net_server& faith_server_ref = m_conn_map[conn_index];
-		faith_server_ref.set_server_status(e_serverstatus_initialized);
+		for (int32 i = 0; i < m_conn_num; ++i)
+		{
+			if (m_conn_map[i].get_tcp_session() == nullptr)
+			{
+				CONSOLE_INFO(" conn_index = {}", i);
+				m_conn_map[i].set_tcp_session(session);
+				m_conn_map[i].set_server_status(e_serverstatus_initialized);
+				return;
+			}
+		}
+		CONSOLE_INFO(" no free net_server slot");
+		if (m_tcpserver_ptr)
+		{
+			m_tcpserver_ptr->close(session);
+		}
 	}
 
-	void net_server_mgr::handler_onclose(uint32 conn_index)
+	void net_server_mgr::handler_onclose(tcp_server_session_ptr session)
 	{
-		if (conn_index >= m_conn_num)
+		if (session == nullptr)
 		{
 			return;
 		}
-		net_server& faith_server_ref = m_conn_map[conn_index];
-
-		if (faith_server_ref.get_server_status() == e_serverstatus_created)
+		for (int32 i = 0; i < m_conn_num; ++i)
 		{
+			if (m_conn_map[i].get_tcp_session() != session)
+			{
+				continue;
+			}
+			net_server& faith_server_ref = m_conn_map[i];
+			if (faith_server_ref.get_server_status() == e_serverstatus_created)
+			{
+				faith_server_ref.set_tcp_session(tcp_server_session_ptr());
+				return;
+			}
+			CONSOLE_INFO(" conn_index = {} type = {}", i, (int32)faith_server_ref.get_server_type());
+			m_external_onclose_handler(&faith_server_ref);
+			faith_server_ref.clear_data();
 			return;
 		}
-		_RLOG_(MINFO, ::faith::log_detail::format_message(" conn_index = {} type = {}",  conn_index,  (int32)faith_server_ref.get_server_type()));
-		m_external_onclose_handler(&faith_server_ref);
-		faith_server_ref.clear_data();
 	}
 
-	void net_server_mgr::handler_onrecv(uint32 conn_index,const void* data_ptr,size_t data_len)
+	void net_server_mgr::handler_onrecv(tcp_server_session_ptr session,const void* data_ptr,size_t data_len)
 	{
-		if (conn_index >= m_conn_num)
+		if (session == nullptr)
 		{
 			return;
 		}
-		net_server& faith_server_ref = m_conn_map[conn_index];
-
-		const packet_base* pPacket = static_cast<const packet_base*>(data_ptr);
-		if (NULL == pPacket)
+		for (int32 i = 0; i < m_conn_num; ++i)
 		{
+			if (m_conn_map[i].get_tcp_session() != session)
+			{
+				continue;
+			}
+			const packet_base* pPacket = static_cast<const packet_base*>(data_ptr);
+			if (NULL == pPacket)
+			{
+				return;
+			}
+			if (pPacket->wheader < 0 || pPacket->wheader >= e_msg_base_max)
+			{
+				return;
+			}
+			message_manager::getInstance().on_data_received(static_cast<uint32>(i), data_ptr, data_len);
 			return;
 		}
-		if (pPacket->wheader < 0 || pPacket->wheader >= e_msg_base_max)
-		{
-			return;
-		}
-		message_manager::getInstance().on_data_received(conn_index, data_ptr, data_len);
 	}
 }

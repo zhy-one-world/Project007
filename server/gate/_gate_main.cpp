@@ -1,4 +1,4 @@
-﻿/*@@
+/*@@
 
 	Copyright (c) Beijing Second Laboratory Game Studio. All rights reserved.
 
@@ -16,7 +16,9 @@
 @@*/
 
 //////////////////////////////////////////////////////////////////////////
+//
 //	File Include
+//
 //////////////////////////////////////////////////////////////////////////
 #include <net/Scheduler.hpp>
 #include <time.hpp>
@@ -29,10 +31,11 @@
 #include "http/http_access_mgr.hpp"
 #include "net/message_manager.hpp"
 #include "dump/dump.hpp"
-#include <rlog.hpp>
 
 //////////////////////////////////////////////////////////////////////////
+//
 //	Free Functions
+//
 //////////////////////////////////////////////////////////////////////////
 //	global logger obj.
 
@@ -47,13 +50,13 @@ namespace faith
 		message_manager::getInstance().set_server_type(e_server_type_gate);
 		if (!net_client_mgr::getInstance().set_netpara_option(GATE_CLIENT_SEND_BUFF_SIZE, GATE_CLIENT_RECV_BUFF_SIZE, INTERNAL_SERVER_MAX_PACKET_SIZE, GATE_NEED_CLIENT_COUNT))
 		{
-			_RLOG_(MINFO, "net_client_mgr init error");
+			CONSOLE_INFO("net_client_mgr init error");
 			return false;
 		}
 		http_access_mgr::get_instance().init(false);
 		if (!game_mgr::getInstance().init())
 		{
-			_RLOG_(MINFO, "game_mgr init error");
+			CONSOLE_INFO("game_mgr init error");
 			return false;
 		}
 		game_mgr::getInstance().start();
@@ -65,7 +68,7 @@ namespace faith
 	}
 	static void release()
 	{
-		_RLOG_(MINFO, "main(): release");
+		CONSOLE_INFO("main(): release");
 
 	}
 

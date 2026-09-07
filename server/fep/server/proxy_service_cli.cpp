@@ -1,4 +1,4 @@
-﻿/********************************************************************
+/********************************************************************
 	created:	2014/07/30
 	created:	30:7:2014   18:04
 	file base:	proxy_service_cli
@@ -76,8 +76,10 @@ namespace faith
 		m_tcpserver=new net::tcp_server(
 			boost::bind(&proxy_service_cli::on_serverstatus_changed,this,_1),
 			boost::bind(&proxy_service_cli::on_conn_created,this,_1),
-			boost::bind(&proxy_service_cli::on_conn_closed,this,_1),
-			boost::bind(&proxy_service_cli::on_data_received,this,_1,_2,_3),
+			boost::bind(static_cast<void (proxy_service_cli::*)(net::tcp_server_session_ptr)>(
+				&proxy_service_cli::on_conn_closed),this,_1),
+			boost::bind(static_cast<void (proxy_service_cli::*)(net::tcp_server_session_ptr,const void*,size_t)>(
+				&proxy_service_cli::on_data_received),this,_1,_2,_3),
 			"127.0.0.1",m_port,
 			FEP_ACCEPTOR_SCHEDULER_THREAD_ID );
 
@@ -99,8 +101,8 @@ namespace faith
 		set_allow_connection(true);
 
 
-		m_scl_cli_sender = boost::bind(&tcp_server::send, m_tcpserver, _1,_2,_3);
-		m_scl_cli_recver = boost::bind(&proxy_service_cli::on_data_received, &proxy_service_cli::getInstance(),_1,_2,_3);
+		m_scl_cli_sender = boost::bind(&proxy_service_cli::send_on_tcp_session, this, _1, _2, _3);
+		m_scl_cli_recver = boost::bind(&proxy_service_cli::on_data_received_by_slot, this, _1, _2, _3);
 
 		_RLOG_(MINFO, "proxy service initialization completed");
 		return true;
@@ -125,11 +127,14 @@ namespace faith
 
 	void proxy_service_cli::stop()
 	{
-		if(m_tcpserver)
+		for (int32 i = 0; i < init_socket_more; ++i)
 		{
-			m_tcpserver->stop();
+			auto client_session_ptr = get_session_by_connect(i);
+			if (client_session_ptr && client_session_ptr->get_tcp_session() && m_tcpserver)
+			{
+				m_tcpserver->close(client_session_ptr->get_tcp_session());
+			}
 		}
-
 	}
 
 	void proxy_service_cli::on_serverstatus_changed(uint32 status)
@@ -142,42 +147,57 @@ namespace faith
 		}
 	}		
 
-	bool proxy_service_cli::alloc_session(uint32 connindex)
+	bool proxy_service_cli::alloc_session(net::tcp_server_session_ptr session)
 	{
-		if (connindex >= init_socket_more)
+		if (session == nullptr)
 		{
 			return false;
 		}
-		if (m_session_array[connindex])
+		int32 slot = -1;
+		client_session_ptr new_session_ptr;
 		{
-			return false;
+			std::lock_guard<std::mutex> lock(m_session_mutex);
+			for (int32 i = 0; i < init_socket_more; ++i)
+			{
+				if (!m_session_array[i])
+				{
+					slot = i;
+					break;
+				}
+			}
+			if (slot < 0)
+			{
+				return false;
+			}
+			new_session_ptr = std::make_shared<client_session>();
+			new_session_ptr->set_array_index(slot + 1);
+			new_session_ptr->set_conn_index(static_cast<uint32>(slot));
+			new_session_ptr->set_tcp_session(session);
+			new_session_ptr->set_scheduler_thread_id(
+				m_tcpserver->get_session_thread_id(session));
+			xstring ip_str = m_tcpserver->get_ip_addr(session);
+			int32 ip_len = ip_str.size() > max_ip_address_length ? max_ip_address_length : static_cast<int32>(ip_str.size());
+			memcpy(new_session_ptr->m_ipaddr, ip_str.c_str(), ip_len);
+			new_session_ptr->set_client_uid();
+			new_session_ptr->refresh_heart_beat();
+			new_session_ptr->m_heart_login_time = utility::get_tick_count() + client_session_login_time;
+			new_session_ptr->start_update_timer();
+			m_session_array[slot] = new_session_ptr;
+			m_tcp_session_map[session.get()] = new_session_ptr;
+			++m_session_array_num;
+			_RLOG_(MINFO, "client session allocated, connindex:" << slot
+				<< " arrayindex:" << new_session_ptr->get_array_index()
+				<< " ip:" << ip_str << " scheduler thread:"
+				<< new_session_ptr->get_scheduler_thread_id()
+				<< " session count:" << m_session_array_num.load());
 		}
-		auto new_session_ptr =
-			std::make_shared<client_session>();
-		new_session_ptr->set_array_index(connindex + 1);
-		new_session_ptr->set_scheduler_thread_id(
-			m_tcpserver->get_session_thread_id(connindex));
-		xstring ip_str = m_tcpserver->get_ip_addr(connindex);
-		int32 ip_len = ip_str.size() > max_ip_address_length ? max_ip_address_length : ip_str.size();
-		memcpy(new_session_ptr->m_ipaddr, ip_str.c_str(), ip_len);
-		new_session_ptr->set_conn_index(connindex);
-		new_session_ptr->set_client_uid();
-		new_session_ptr->refresh_heart_beat();
-		new_session_ptr->m_heart_login_time = utility::get_tick_count() + client_session_login_time;
-		new_session_ptr->start_update_timer();
-		m_session_array[connindex] = new_session_ptr;
-		++m_session_array_num;
-		_RLOG_(MINFO, "client session allocated, connindex:" << connindex
-			<< " arrayindex:" << new_session_ptr->get_array_index()
-			<< " ip:" << ip_str << " scheduler thread:"
-			<< new_session_ptr->get_scheduler_thread_id()
-			<< " session count:" << m_session_array_num.load());
 
 		if (get_session_num() > init_socket_link)
 		{
 			login_proto_login_end login_end;
 			login_end.set_result(e_error_code_login_login_full);
-			security_communication_layer::getInstance().send_to_session(connindex, &login_end, e_msgindex_s2c_client_login);
+			security_communication_layer::getInstance().send_to_session(
+				new_session_ptr->get_conn_index(), &login_end, e_msgindex_s2c_client_login);
 			new_session_ptr->set_is_logout(true);
 		}
 		return true;
@@ -215,24 +235,33 @@ namespace faith
 	}
 	bool proxy_service_cli::free_session(uint32 connindex)
 	{
-		auto client_session_ptr =
-			get_session_by_connect(connindex);
+		return free_session(get_session_by_connect(connindex));
+	}
+
+	bool proxy_service_cli::free_session(const client_session_ptr& client_session_ptr)
+	{
 		if (nullptr == client_session_ptr)
 		{
 			return false;
 		}
+		const uint32 connindex = client_session_ptr->get_conn_index();
 		_RLOG_(MINFO, "client session releasing, connindex:" << connindex
 			<< " arrayindex:" << client_session_ptr->get_array_index()
 			<< " scheduler thread:" << client_session_ptr->get_scheduler_thread_id()
 			<< " session count:" << m_session_array_num.load());
+		net::tcp_server_session* tcp_raw = client_session_ptr->get_tcp_session().get();
 		client_session_ptr->clear_data();
 		{
 			std::lock_guard<std::mutex> lock(m_session_mutex);
-			if (m_session_array[connindex] != client_session_ptr)
+			if (connindex >= init_socket_more || m_session_array[connindex] != client_session_ptr)
 			{
 				return false;
 			}
 			m_session_array[connindex].reset();
+			if (tcp_raw)
+			{
+				m_tcp_session_map.erase(tcp_raw);
+			}
 			--m_session_array_num;
 		}
 		return true;
@@ -277,6 +306,22 @@ namespace faith
 		return m_session_array[connindex];
 	}
 
+	client_session_ptr proxy_service_cli::get_session_by_tcp(const net::tcp_server_session_ptr& session)
+	{
+		if (session == nullptr)
+		{
+			return client_session_ptr();
+		}
+		std::lock_guard<std::mutex> lock(m_session_mutex);
+		std::unordered_map<net::tcp_server_session*, client_session_ptr>::iterator it =
+			m_tcp_session_map.find(session.get());
+		if (it == m_tcp_session_map.end())
+		{
+			return client_session_ptr();
+		}
+		return it->second;
+	}
+
 	client_session_ptr proxy_service_cli::get_session_by_account(int32 array_index, const xchar* account)
 	{
 		auto client_session_ptr =
@@ -291,28 +336,43 @@ namespace faith
 		}
 		return nullptr;
 	}
-	void proxy_service_cli::on_conn_created( uint32 connindex )
+	void proxy_service_cli::on_conn_created( net::tcp_server_session_ptr session )
 	{
-		xstring ip_str = m_tcpserver ? m_tcpserver->get_ip_addr(connindex) : "unknown";
-		_RLOG_(MINFO, "client connection received, connindex:" << connindex
-			<< " ip:" << ip_str << " connection callback thread:"
+		xstring ip_str = m_tcpserver ? m_tcpserver->get_ip_addr(session) : "unknown";
+		_RLOG_(MINFO, "client connection received, ip:" << ip_str
+			<< " connection callback thread:"
 			<< net::scheduler::getInstance().get_current_thread_id());
 		if(!m_enable_connect)
 		{
-			_RLOG_(MWARN, "client connection rejected, connindex:" << connindex
-				<< " reason: connections disabled");
-			m_tcpserver->close(connindex);
+			_RLOG_(MWARN, "client connection rejected, reason: connections disabled");
+			m_tcpserver->close(session);
 			return;
 		}
-		security_communication_layer::getInstance().add_scl_session(connindex, m_scl_cli_sender, m_scl_cli_recver);
-
-		if(!alloc_session(connindex)) 
+		if(!alloc_session(session)) 
 		{
-			_RLOG_(MERROR, "client session allocation failed, connindex:" << connindex);
-			m_tcpserver->close(connindex);
+			_RLOG_(MERROR, "client session allocation failed");
+			m_tcpserver->close(session);
 			return ;
 		}
-		_RLOG_(MINFO, "client connection accepted, connindex:" << connindex);
+		auto client_session_ptr = get_session_by_tcp(session);
+		if (client_session_ptr)
+		{
+			security_communication_layer::getInstance().add_scl_session(
+				client_session_ptr->get_conn_index(), m_scl_cli_sender, m_scl_cli_recver);
+			_RLOG_(MINFO, "client connection accepted, connindex:"
+				<< client_session_ptr->get_conn_index());
+		}
+	}
+
+	void proxy_service_cli::on_conn_closed( net::tcp_server_session_ptr session )
+	{
+		auto client_session_ptr = get_session_by_tcp(session);
+		if (nullptr == client_session_ptr)
+		{
+			_RLOG_(MWARN, "client connection closed, session not found");
+			return;
+		}
+		on_conn_closed(client_session_ptr->get_conn_index());
 	}
 
 	void proxy_service_cli::on_conn_closed( uint32 connindex )
@@ -327,14 +387,45 @@ namespace faith
 
 	void proxy_service_cli::disconn_session(uint32 connindex, e_logout_result logout_result)
 	{
-		logout(connindex, logout_result);
-		m_tcpserver->close(connindex);
+		disconn_session(get_session_by_connect(connindex), logout_result);
 	}
 
-	void proxy_service_cli::on_data_received( uint32 connindex, const void *data_ptr, size_t data_len )
+	void proxy_service_cli::disconn_session(const client_session_ptr& client_session_ptr, e_logout_result logout_result)
 	{
-		auto client_session_ptr =
-			get_session_by_connect(connindex);
+		if (nullptr == client_session_ptr)
+		{
+			return;
+		}
+		logout(client_session_ptr->get_conn_index(), logout_result);
+		if (m_tcpserver)
+		{
+			m_tcpserver->close(client_session_ptr->get_tcp_session());
+		}
+	}
+
+	int32 proxy_service_cli::send_on_tcp_session(uint32 connindex, const void* data_ptr, size_t data_len)
+	{
+		auto client_session_ptr = get_session_by_connect(connindex);
+		if (nullptr == client_session_ptr || !client_session_ptr->get_tcp_session() || !m_tcpserver)
+		{
+			return 0;
+		}
+		return m_tcpserver->send(client_session_ptr->get_tcp_session(), data_ptr, data_len);
+	}
+
+	void proxy_service_cli::on_data_received_by_slot( uint32 connindex, const void *data_ptr, size_t data_len )
+	{
+		auto client_session_ptr = get_session_by_connect(connindex);
+		if (nullptr == client_session_ptr)
+		{
+			return;
+		}
+		on_data_received(client_session_ptr->get_tcp_session(), data_ptr, data_len);
+	}
+
+	void proxy_service_cli::on_data_received( net::tcp_server_session_ptr session, const void *data_ptr, size_t data_len )
+	{
+		auto client_session_ptr = get_session_by_tcp(session);
 		if (nullptr == client_session_ptr || client_session_ptr->get_is_logout())
 		{
 			return;

@@ -1,4 +1,4 @@
-﻿/********************************************************************
+/********************************************************************
 	created:	2014/07/30
 	created:	30:7:2014   17:44
 	file base:	client_session
@@ -11,6 +11,7 @@
 #include <boost/bind.hpp>
 #include <net/scheduler.hpp>
 #include <net/tcp_client.hpp>
+#include <net/tcp_server.hpp>
 #include <rlog.hpp>
 #include <login_msg.hpp>
 #include "client_session.hpp"
@@ -74,6 +75,7 @@ namespace faith
 		m_is_logout = false;
 		m_msg_index = 0;
 		m_conn_index = 0;
+		m_tcp_session.reset();
 		m_cs_conn_index = e_invalid_server_uid;
 		m_cs_array_index = 0;
 		m_scheduler_thread_id = 0;
