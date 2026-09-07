@@ -12,7 +12,7 @@
 #include "msgproc/msgproc_client.hpp"
 #include "msgproc/msgproc_cs.hpp"
 #include "msgproc/msgproc_dp.hpp"
-#include "msgproc/msgproc_fep.hpp"
+#include "msgproc/msgproc_gateway.hpp"
 #include "net.pb.h"
 #include "net/message_manager.hpp"
 #include "world_server.hpp"
@@ -117,16 +117,16 @@ bool msg_dispatch::init()
 	message_manager::getInstance().register_handler(e_msg_index_cs2ws_get_map_info_from_cs_end,				cs2ws_rep_get_map_info_from_cs_end);
 	message_manager::getInstance().register_handler(e_msg_index_cs2ws_send_role_info_to_gm,					cs2ws_receive_role_info_gm);
 	
-	// fep2ws internal protocol
-	message_manager::getInstance().register_handler(e_msgindex_c2s_client_login, fep2ls_request_client_login);
-	message_manager::getInstance().register_handler(e_msgindex_c2s_enum_char, fep2ls_enum_character_func);
-	message_manager::getInstance().register_handler(e_msgindex_fep2ls_create_character, fep2ls_create_character_func);
-	message_manager::getInstance().register_handler(e_msgindex_c2s_del_char, fep2ls_delete_character_func);
+	// gateway2ws internal protocol
+	message_manager::getInstance().register_handler(e_msgindex_c2s_client_login, gateway2ls_request_client_login);
+	message_manager::getInstance().register_handler(e_msgindex_c2s_enum_char, gateway2ls_enum_character_func);
+	message_manager::getInstance().register_handler(e_msgindex_gateway2ls_create_character, gateway2ls_create_character_func);
+	message_manager::getInstance().register_handler(e_msgindex_c2s_del_char, gateway2ls_delete_character_func);
 
-	message_manager::getInstance().register_handler(e_msg_index_fep2ws_client_reconnect,					fep2ws_client_reconnect_func);
-	message_manager::getInstance().register_handler(e_msg_index_fep2ws_client_logined,						fep2ws_client_loginned);
-	message_manager::getInstance().register_handler(e_msg_index_fep2ws_leave_queued,						fep2ws_client_leave_queued);
-	message_manager::getInstance().register_handler(e_msg_index_fep2ws_client_logout,						fep2ws_req_logout_client);
+	message_manager::getInstance().register_handler(e_msg_index_gateway2ws_client_reconnect,					gateway2ws_client_reconnect_func);
+	message_manager::getInstance().register_handler(e_msg_index_gateway2ws_client_logined,						gateway2ws_client_loginned);
+	message_manager::getInstance().register_handler(e_msg_index_gateway2ws_leave_queued,						gateway2ws_client_leave_queued);
+	message_manager::getInstance().register_handler(e_msg_index_gateway2ws_client_logout,						gateway2ws_req_logout_client);
 	
 	//internet protocol
 	message_manager::getInstance().register_handler(e_msgindex_c2s_enter_game,								c2ws_req_enter_game);

@@ -107,7 +107,7 @@ namespace faith
 		req.pay_price = pay_price;
 		req.order_num = order_num;
 		req.payment_type = payment_type;
-		req.client_uid = client_uid.fep_uid_64;
+		req.client_uid = client_uid.gateway_uid_64;
 		req.direct_diamond = direct_diamond;
 		req.force_error_code = force_error_code;
 		req.third_info = temp_third_data;

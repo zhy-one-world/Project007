@@ -4345,7 +4345,7 @@ namespace faith
 			return 0;
 		}
 
-		cell_server::getInstance().send_to_fep(data, data_len, m_client_uid.fepserver_uid);
+		cell_server::getInstance().send_to_gateway(data, data_len, m_client_uid.gatewayserver_uid);
 		return 1;
 	}
 
@@ -4934,7 +4934,7 @@ namespace faith
 			m_leave_time = new_time + minute_tick_time;
 			if (get_client_uid().is_valid())
 			{
-				cs2fep_in_game msg;
+				cs2gateway_in_game msg;
 				memcpy(msg.account, get_account(), max_account_length);
 				msg.array_index = get_array_index();
 				msg.client_uid = get_client_uid();
@@ -5153,13 +5153,13 @@ namespace faith
 		rep.map_template_id = base_map_system::get_map_template_id(m_map_ent);
 		connection_mgr::getInstance().send_to_ws(&rep, sizeof(rep));
 
-		ws2fep_enter_game rep_fep;
-		rep_fep.client_uid = get_client_uid();
-		rep_fep.e_result = e_error_code_success;
-		rep_fep.cs_array_index = get_array_index();
-		rep_fep.server_type = e_server_type_cs;
-		memcpy(rep_fep.account, get_account(), sizeof(rep_fep.account));
-		send_message_to_self(&rep_fep, sizeof(rep_fep));
+		ws2gateway_enter_game rep_gateway;
+		rep_gateway.client_uid = get_client_uid();
+		rep_gateway.e_result = e_error_code_success;
+		rep_gateway.cs_array_index = get_array_index();
+		rep_gateway.server_type = e_server_type_cs;
+		memcpy(rep_gateway.account, get_account(), sizeof(rep_gateway.account));
+		send_message_to_self(&rep_gateway, sizeof(rep_gateway));
 
 
 
@@ -9700,7 +9700,7 @@ namespace faith
 
 		if (get_login_type() == faith::e_login_type_new_account_and_password || get_login_type() == faith::e_login_type_new_zw)
 		{
-			cs2fep_month_recharge_num msg;
+			cs2gateway_month_recharge_num msg;
 			memcpy(msg.account, get_account(), max_account_length);
 			msg.array_index = get_array_index();
 			msg.client_uid = get_client_uid();

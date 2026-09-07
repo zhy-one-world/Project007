@@ -7,7 +7,7 @@
 
 namespace faith
 {
-	//cs2fep_aoi_msg m_aoi_msg;
+	//cs2gateway_aoi_msg m_aoi_msg;
 	player_aoi_watch::player_aoi_watch()
 	{
 		m_unit_index = 0;
@@ -141,12 +141,12 @@ namespace faith
 		//if (playr_num > 0)
 		//{
 		//	m_aoi_msg.data_num = playr_num;
-		//	m_aoi_msg.wheader = e_msg_index_cs2fep_aoi_msg;
+		//	m_aoi_msg.wheader = e_msg_index_cs2gateway_aoi_msg;
 		//	m_aoi_msg.header = header;
 		//	m_aoi_msg.data_size = net_pro->ByteSize();
 		//	if (net_pro->SerializeToArray(m_aoi_msg.data, sizeof(m_aoi_msg.data)))
 		//	{
-		//		cell_server::getInstance().broadcast(&m_aoi_msg, m_aoi_msg.get_pak_length(), e_server_type_fep);
+		//		cell_server::getInstance().broadcast(&m_aoi_msg, m_aoi_msg.get_pak_length(), e_server_type_gateway);
 		//		//unit_man::log_msg_info(header, net_pro->ByteSize());
 		//	}
 		//	else
@@ -196,11 +196,11 @@ namespace faith
 		//if (playr_num > 0)
 		//{
 		//	m_aoi_msg.data_num = playr_num;
-		//	m_aoi_msg.wheader = e_msg_index_cs2fep_aoi_msg;
+		//	m_aoi_msg.wheader = e_msg_index_cs2gateway_aoi_msg;
 		//	m_aoi_msg.header = header;
 		//	memcpy(m_aoi_msg.data, msg, msg_len);
 		//	m_aoi_msg.data_size = msg_len;
-		//	cell_server::getInstance().broadcast(&m_aoi_msg, m_aoi_msg.get_pak_length(), e_server_type_fep);
+		//	cell_server::getInstance().broadcast(&m_aoi_msg, m_aoi_msg.get_pak_length(), e_server_type_gateway);
 		//	//unit_man::log_msg_info(header, net_pro->ByteSize());
 		//}
 	}

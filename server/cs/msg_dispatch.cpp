@@ -105,7 +105,7 @@ bool msg_dispatch::init()
 	message_manager::getInstance().register_handler(e_msg_gate2gate_new, boost::bind(&connection_mgr::gate2ws_rep_gate_new, &connection_mgr::getInstance(), _1, _2, _3));
 	message_manager::getInstance().register_handler(e_msg_index_reload_csv, ws2cs_req_reload_csv);
 
-	message_manager::getInstance().register_handler(e_msgindex_fep2cs_in_game, req_fep2cs_in_game);
+	message_manager::getInstance().register_handler(e_msgindex_gateway2cs_in_game, req_gateway2cs_in_game);
 	//message_manager::getInstance().register_handler(e_msgindex_c2cs_ping, c2cs_ping);
 	message_manager::getInstance().register_handler(e_msgindex_ws2dp_gm_del_cache, ws2cs_req_del_unit);
 	message_manager::getInstance().register_handler(e_msg_index_ws2cs_del_unit_item, ws2cs_req_del_unit_item);

@@ -121,46 +121,46 @@ namespace faith
 
 	struct s_client_uid
 	{
-		s_client_uid(ui32 server_uid, ui16 session_uid) : fepserver_uid(server_uid), fepsession_uid(session_uid)
+		s_client_uid(ui32 server_uid, ui16 session_uid) : gatewayserver_uid(server_uid), gatewaysession_uid(session_uid)
 		{
 			rand_num_1 = rand();
 		}
-		s_client_uid() : fepserver_uid(0), fepsession_uid(0)
+		s_client_uid() : gatewayserver_uid(0), gatewaysession_uid(0)
 		{
 			rand_num_1 = rand();
 		}
-		explicit s_client_uid(ui64 InValue) : fep_uid_64(InValue)
+		explicit s_client_uid(ui64 InValue) : gateway_uid_64(InValue)
 		{
 		}
 		bool operator == (const s_client_uid& o) const
 		{
-			return fep_uid_64 == o.fep_uid_64;
+			return gateway_uid_64 == o.gateway_uid_64;
 		}
 		bool operator != (const s_client_uid& o) const
 		{
-			return fep_uid_64 != o.fep_uid_64;;
+			return gateway_uid_64 != o.gateway_uid_64;;
 		}
 		operator ui64() const
 		{
-			return fep_uid_64;
+			return gateway_uid_64;
 		}
 		bool is_valid()
 		{
-			return fep_uid_64 > 0;
+			return gateway_uid_64 > 0;
 		}
 		void clear_data()
 		{
-			fep_uid_64 = 0;
+			gateway_uid_64 = 0;
 		}
 		union
 		{
 			struct
 			{
-				ui32	fepserver_uid;
-				ui16	fepsession_uid;
+				ui32	gatewayserver_uid;
+				ui16	gatewaysession_uid;
 				ui16	rand_num_1;
 			};
-			ui64 fep_uid_64;
+			ui64 gateway_uid_64;
 		};
 	};
 

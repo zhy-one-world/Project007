@@ -105,7 +105,7 @@ namespace faith
 			char_info.set_is_only_create_role(world_server::getInstance().get_server_info_arr(e_server_info_type_only_create_role));
 			packet_c2s_s2c msg;
 			serialize_msg::get_instance().set_serialize_msg_new(msg, &char_info, db_reponse->client_uid, e_msgindex_s2c_enum_char);
-			world_server::getInstance().send_to_fep(db_reponse->client_uid.fepserver_uid, &msg, msg.get_packet_len());
+			world_server::getInstance().send_to_gateway(db_reponse->client_uid.gatewayserver_uid, &msg, msg.get_packet_len());
 		}
 		else
 		{
@@ -158,12 +158,12 @@ namespace faith
 
 			}
 		}
-		ls2fep_create_role msg;
+		ls2gateway_create_role msg;
 		msg.client_uid = pdata->client_uid;
 		msg.eresult = pdata->eresult;
 		msg.role_guid = pdata->role_guid;
 		msg.role_info = pdata->role_info;
-		world_server::getInstance().send_to_fep(pdata->client_uid.fepserver_uid, &msg, sizeof(msg));
+		world_server::getInstance().send_to_gateway(pdata->client_uid.gatewayserver_uid, &msg, sizeof(msg));
 	}
 
 
@@ -180,7 +180,7 @@ namespace faith
 		del_msg.set_del_type(pdata->del_type);
 		packet_c2s_s2c msg;
 		serialize_msg::get_instance().set_serialize_msg_new(msg, &del_msg, pdata->client_uid, e_msgindex_s2c_del_char);
-		world_server::getInstance().send_to_fep(pdata->client_uid.fepserver_uid, &msg, msg.get_packet_len());
+		world_server::getInstance().send_to_gateway(pdata->client_uid.gatewayserver_uid, &msg, msg.get_packet_len());
 	}
 
 	void dp2ls_load_enum_item_end(uint32 conn_index, const void* data_ptr, size_t data_len)
@@ -383,11 +383,11 @@ namespace faith
 			if (is_login > 0)
 			{
 				_RLOG_(MINFO, "dp2ws_rep_get_role_info_ws is_login > 0");
-				ws2fep_enter_game rep;
+				ws2gateway_enter_game rep;
 				rep.client_uid = session->m_client_uid;
 				rep.e_result = e_error_code_enter_no_allow;
 				memcpy(rep.account, account.c_str(), account.size());
-				world_server::getInstance().send_to_fep(session->m_client_uid.fepserver_uid, &rep, sizeof(rep));
+				world_server::getInstance().send_to_gateway(session->m_client_uid.gatewayserver_uid, &rep, sizeof(rep));
 				return;
 			}
 			session->m_role_info.role_guid = role_guid;
@@ -441,11 +441,11 @@ namespace faith
 				if (session->get_role_info_data(e_role_info_move_server_id) != world_server::getInstance().get_server_id())
 				{
 					_RLOG_(MINFO, ::faith::log_detail::format_message("dp2ws_rep_get_role_info_ws move_server_id:{}, cur_server_id:{}",  session->get_role_info_data(e_role_info_move_server_id),  world_server::getInstance().get_server_id()));
-					ws2fep_enter_game rep;
+					ws2gateway_enter_game rep;
 					rep.client_uid = session->m_client_uid;
 					memcpy(rep.account, session->m_role_info.account, sizeof(rep.account));
 					rep.e_result = e_error_code_enter_error_server_id;
-					world_server::getInstance().send_to_fep(session->m_client_uid.fepserver_uid, &rep, sizeof(rep));
+					world_server::getInstance().send_to_gateway(session->m_client_uid.gatewayserver_uid, &rep, sizeof(rep));
 					return;
 				}
 			}
@@ -455,11 +455,11 @@ namespace faith
 		default:
 		{
 			CONSOLE_ERROR("dp2ws_rep_get_role_info_ws eresult:{}", eresult);
-			ws2fep_enter_game rep;
+			ws2gateway_enter_game rep;
 			rep.client_uid = session->m_client_uid;
 			memcpy(rep.account, session->m_role_info.account, sizeof(rep.account));
 			rep.e_result = (e_error_code)eresult;
-			world_server::getInstance().send_to_fep(session->m_client_uid.fepserver_uid, &rep, sizeof(rep));
+			world_server::getInstance().send_to_gateway(session->m_client_uid.gatewayserver_uid, &rep, sizeof(rep));
 		}
 		break;
 		}

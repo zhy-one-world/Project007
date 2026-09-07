@@ -87,7 +87,7 @@ namespace faith
 			return;
 		}
 		packet_c2s_s2c* package_ptr = (packet_c2s_s2c*)data_ptr;
-		array_index = package_ptr->client_uid.fepsession_uid;
+		array_index = package_ptr->client_uid.gatewaysession_uid;
 	}
 
 	bool parse_msg::is_internal_package(const void* data,size_t data_len)

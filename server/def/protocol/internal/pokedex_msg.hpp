@@ -25,7 +25,7 @@ namespace faith
 	{
 		e_msgindex_dp2cs_load_char_pokedexs = faith::e_msg_base_pokedex,
 		e_msgindex_cs2dp_save_char_pokedexs,
-		e_msgindex_cs2fep_send_pokedexs_all_info,
+		e_msgindex_cs2gateway_send_pokedexs_all_info,
 	};
 
 	enum

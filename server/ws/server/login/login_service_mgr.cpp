@@ -115,7 +115,7 @@ namespace faith
 		if (temp_login_proto.login_type() != e_login_type_new_robot
 			&& temp_login_proto.login_type() != e_login_type_new_token)
 		{
-			std::map<int64, login_keep_info>::iterator it = m_login_info_keep_map.find(client_uid.fep_uid_64);
+			std::map<int64, login_keep_info>::iterator it = m_login_info_keep_map.find(client_uid.gateway_uid_64);
 			if (it != m_login_info_keep_map.end())
 			{
 				m_login_info_keep_map.erase(it);
@@ -124,7 +124,7 @@ namespace faith
 			login_keep_info temp_info;
 			temp_info.data = temp_login_proto;
 			temp_info.invalid_time = init_unit::get_end_time(login_proto_keep_time);
-			m_login_info_keep_map.insert({ client_uid .fep_uid_64, temp_info });
+			m_login_info_keep_map.insert({ client_uid .gateway_uid_64, temp_info });
 		}
 	}
 
@@ -149,7 +149,7 @@ namespace faith
 		if (pdata->login_type != e_login_type_new_robot
 			&& pdata->login_type != e_login_type_new_token)
 		{
-			std::map<int64, login_keep_info>::iterator it = m_login_info_keep_map.find(pdata->client_uid.fep_uid_64);
+			std::map<int64, login_keep_info>::iterator it = m_login_info_keep_map.find(pdata->client_uid.gateway_uid_64);
 			if (it != m_login_info_keep_map.end())
 			{
 				login_keep_info temp_info = it->second;

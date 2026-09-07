@@ -44,10 +44,10 @@ enum
 		e_msgindex_dp2ls_load_enum_spirit,
 		e_msgindex_dp2ls_load_enum_time,
 		// Create character
-		e_msgindex_fep2ls_create_character,
+		e_msgindex_gateway2ls_create_character,
 		e_msgindex_ls2dp_create_character,
 		e_msgindex_dp2ls_create_character,
-		e_msgindex_ls2fep_create_character,
+		e_msgindex_ls2gateway_create_character,
 		// game data
 		e_msgindex_ws2dp_get_game_info,
 		e_msgindex_dp2ws_get_game_info,
@@ -332,17 +332,17 @@ enum
 	/************************************************************************/
 	/*           Create                                                     */
 	/************************************************************************/
-	struct fep2ls_create_character : public packet_base
+	struct gateway2ls_create_character : public packet_base
 	{
 		s_client_uid						client_uid;
 		int32								login_msg_len;
 		ui8									login_proto_msg[MAX_C2S_S2C_PACKAGE_SIZE];
 		int32								create_character_len;
 		ui8									create_character_msg[MAX_C2S_S2C_PACKAGE_SIZE];
-		fep2ls_create_character()
+		gateway2ls_create_character()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader = e_msgindex_fep2ls_create_character;
+			wheader = e_msgindex_gateway2ls_create_character;
 		}
 	};
 	struct ls2dp_create_character : public packet_base
@@ -379,16 +379,16 @@ enum
 			wheader = e_msgindex_dp2ls_create_character;
 		}
 	};
-	struct ls2fep_create_role : public packet_base
+	struct ls2gateway_create_role : public packet_base
 	{
 		e_create_role_result eresult;
 		faith::s_client_uid		client_uid;				//	unique client session identifier
 		guid_64				role_guid;				//	only available when eResult==e_success
 		s_unit_info role_info;
-		ls2fep_create_role()
+		ls2gateway_create_role()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader = e_msgindex_ls2fep_create_character;
+			wheader = e_msgindex_ls2gateway_create_character;
 		}
 	};
 	/************************************************************************/

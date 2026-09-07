@@ -259,7 +259,7 @@ namespace faith
 
 	void client_session_mgr::login_client(const void* data)
 	{
-		const fep2ws_client_logined* packet= static_cast<const fep2ws_client_logined*>(data);
+		const gateway2ws_client_logined* packet= static_cast<const gateway2ws_client_logined*>(data);
 		if(nullptr == packet)
 		{
 			CONSOLE_ERROR("packet is nullptr");
@@ -270,13 +270,13 @@ namespace faith
 		if(client_session_ptr == NULL)
 		{
 			CONSOLE_ERROR("get empty session fail");
-			//发送错误消息到FEP
-			ws2fep_client_logined rep;
+			//发送错误消息到GATEWAY
+			ws2gateway_client_logined rep;
 			rep.client_uid = packet->client_uid;
 			rep.login_type = packet->login_type;
 			rep.login_type_plus = packet->login_type_plus;
 			rep.eResult = e_error_code_login_login_queue_full;
-			world_server::getInstance().broadcast(&rep, sizeof(rep), e_server_type_fep);
+			world_server::getInstance().broadcast(&rep, sizeof(rep), e_server_type_gateway);
 			return;
 		}
 		int32 server_id = packet->server_id;
@@ -364,12 +364,12 @@ namespace faith
 		}
 		return channel_map;
 	}
-	void client_session_mgr::logout_by_fep(uint32 fep_uid)
+	void client_session_mgr::logout_by_gateway(uint32 gateway_uid)
 	{
 		for (int32 i = 0; i <= m_session_array_use; ++i)
 		{
 			client_session* session = get_session_by_array_index(i);
-			if (session->m_client_uid.fepserver_uid == fep_uid)
+			if (session->m_client_uid.gatewayserver_uid == gateway_uid)
 				logout_client(session);
 		}
 	}
@@ -394,10 +394,10 @@ namespace faith
 		client_session* client_session_ptr = get_session(role_mark);
 		if (client_session_ptr != NULL)
 		{
-			ws2fep_kickout_account msg;
+			ws2gateway_kickout_account msg;
 			msg.client_uid = client_session_ptr->m_client_uid;
 			msg.reason = reason;
-			client_session_ptr->send_to_fep(&msg,sizeof(msg));
+			client_session_ptr->send_to_gateway(&msg,sizeof(msg));
 			logout_client(client_session_ptr);
 			return true;
 		}
@@ -409,10 +409,10 @@ namespace faith
 		client_session* client_session_ptr = get_session(role_mark);
 		if (client_session_ptr != NULL)
 		{
-			ws2fep_kickout_account msg;
+			ws2gateway_kickout_account msg;
 			msg.client_uid = client_session_ptr->m_client_uid;
 			msg.reason = reason;
-			client_session_ptr->send_to_fep(&msg, sizeof(msg));
+			client_session_ptr->send_to_gateway(&msg, sizeof(msg));
 			logout_client(client_session_ptr);
 			return true;
 		}
@@ -423,10 +423,10 @@ namespace faith
 		client_session* client_session_ptr = get_session(role_mark);
 		if (client_session_ptr != NULL)
 		{
-			ws2fep_kickout_account msg;
+			ws2gateway_kickout_account msg;
 			msg.client_uid = client_session_ptr->m_client_uid;
 			msg.reason = reason;
-			client_session_ptr->send_to_fep(&msg, sizeof(msg));
+			client_session_ptr->send_to_gateway(&msg, sizeof(msg));
 			logout_client(client_session_ptr);
 			return true;
 		}
@@ -447,12 +447,12 @@ namespace faith
 
 	void client_session_mgr::send_message_to_all_client(google::protobuf::Message* net_pro, uint32 header)
 	{
-		m_broadcast_msg.wheader = e_msg_index_ws2fep_broadcast_msg;
+		m_broadcast_msg.wheader = e_msg_index_ws2gateway_broadcast_msg;
 		m_broadcast_msg.header = header;
 		m_broadcast_msg.data_size = net_pro->ByteSize();
 		if (net_pro->SerializeToArray(m_broadcast_msg.data, sizeof(m_broadcast_msg.data)))
 		{
-			world_server::getInstance().broadcast(&m_broadcast_msg, sizeof(m_broadcast_msg), e_server_type_fep);
+			world_server::getInstance().broadcast(&m_broadcast_msg, sizeof(m_broadcast_msg), e_server_type_gateway);
 		}
 	}
 
@@ -460,11 +460,11 @@ namespace faith
 
 	void client_session_mgr::send_message_to_all_client_data(const void* data_package, size_t data_len, uint32 header)
 	{
-		m_broadcast_msg.wheader = e_msg_index_ws2fep_broadcast_msg;
+		m_broadcast_msg.wheader = e_msg_index_ws2gateway_broadcast_msg;
 		m_broadcast_msg.header = header;
 		m_broadcast_msg.data_size = data_len;
 		memcpy(m_broadcast_msg.data, data_package, sizeof(m_broadcast_msg.data) > data_len ? data_len : sizeof(m_broadcast_msg.data));
-		world_server::getInstance().broadcast(&m_broadcast_msg, sizeof(m_broadcast_msg), e_server_type_fep);
+		world_server::getInstance().broadcast(&m_broadcast_msg, sizeof(m_broadcast_msg), e_server_type_gateway);
 	
 	}
 

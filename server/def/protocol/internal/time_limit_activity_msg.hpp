@@ -38,8 +38,8 @@ namespace faith
 		e_msgindex_ws2dp_delete_time_limit_temp,
 		e_msgindex_ws2dp_delete_time_limit_branch_temp,
 		e_msgindex_ws2dp_refresh_role_time_limit_guid,
-		e_msgindex_ws2fep_time_limit_temp,
-		e_msgindex_ws2fep_time_limit_branch_temp,
+		e_msgindex_ws2gateway_time_limit_temp,
+		e_msgindex_ws2gateway_time_limit_branch_temp,
 	};
 
 	struct ws2dp_load_time_limit_ws_info : public packet_base
@@ -215,15 +215,15 @@ namespace faith
 		}
 	};
 
-	struct ws2fep_act_limit_temp : public packet_base
+	struct ws2gateway_act_limit_temp : public packet_base
 	{
 		s_time_limit_activity_temp_db temp_db_info[max_send_cs2ws_once_num];
 		bool						is_begin;
 		int32						data_num;
-		ws2fep_act_limit_temp()
+		ws2gateway_act_limit_temp()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader = e_msgindex_ws2fep_time_limit_temp;
+			wheader = e_msgindex_ws2gateway_time_limit_temp;
 		}
 		void clear_data()
 		{
@@ -236,15 +236,15 @@ namespace faith
 		}
 	};
 
-	struct ws2fep_act_limit_branch_temp : public packet_base
+	struct ws2gateway_act_limit_branch_temp : public packet_base
 	{
 		s_time_limit_activity_branch_temp_db temp_db_info[max_send_cs2ws_once_num];
 		bool						is_end;
 		int32						data_num;
-		ws2fep_act_limit_branch_temp()
+		ws2gateway_act_limit_branch_temp()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader = e_msgindex_ws2fep_time_limit_branch_temp;
+			wheader = e_msgindex_ws2gateway_time_limit_branch_temp;
 		}
 		void clear_data()
 		{

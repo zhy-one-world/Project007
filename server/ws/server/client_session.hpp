@@ -86,7 +86,7 @@ namespace faith
 		void									set_client_logout_begin();
 	public:
 		void									tick(const int64& new_time);
-		void									send_to_fep( const void*,size_t );
+		void									send_to_gateway( const void*,size_t );
 		void									send_to_cs( const void*,size_t );
 		bool                                    send_to_cs_lua(google::protobuf::Message* net_pro, uint32 header);
 		void                                    send_to_cs_lua(const char* msg, int32 msg_len, uint32 header);

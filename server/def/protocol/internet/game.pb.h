@@ -168,9 +168,9 @@ extern game_proto_buy_speical_manual_endDefaultTypeInternal _game_proto_buy_spei
 class game_proto_client2cs_ping;
 struct game_proto_client2cs_pingDefaultTypeInternal;
 extern game_proto_client2cs_pingDefaultTypeInternal _game_proto_client2cs_ping_default_instance_;
-class game_proto_client2fep_ping;
-struct game_proto_client2fep_pingDefaultTypeInternal;
-extern game_proto_client2fep_pingDefaultTypeInternal _game_proto_client2fep_ping_default_instance_;
+class game_proto_client2gateway_ping;
+struct game_proto_client2gateway_pingDefaultTypeInternal;
+extern game_proto_client2gateway_pingDefaultTypeInternal _game_proto_client2gateway_ping_default_instance_;
 class game_proto_create_pk_end_time;
 struct game_proto_create_pk_end_timeDefaultTypeInternal;
 extern game_proto_create_pk_end_timeDefaultTypeInternal _game_proto_create_pk_end_time_default_instance_;
@@ -306,9 +306,6 @@ extern game_proto_enter_sceneDefaultTypeInternal _game_proto_enter_scene_default
 class game_proto_enter_scene_end;
 struct game_proto_enter_scene_endDefaultTypeInternal;
 extern game_proto_enter_scene_endDefaultTypeInternal _game_proto_enter_scene_end_default_instance_;
-class game_proto_fep2client_ping;
-struct game_proto_fep2client_pingDefaultTypeInternal;
-extern game_proto_fep2client_pingDefaultTypeInternal _game_proto_fep2client_ping_default_instance_;
 class game_proto_fuben_vip_mopping;
 struct game_proto_fuben_vip_moppingDefaultTypeInternal;
 extern game_proto_fuben_vip_moppingDefaultTypeInternal _game_proto_fuben_vip_mopping_default_instance_;
@@ -348,6 +345,9 @@ extern game_proto_gain_treasure_req_kill_recordDefaultTypeInternal _game_proto_g
 class game_proto_game_state;
 struct game_proto_game_stateDefaultTypeInternal;
 extern game_proto_game_stateDefaultTypeInternal _game_proto_game_state_default_instance_;
+class game_proto_gateway2client_ping;
+struct game_proto_gateway2client_pingDefaultTypeInternal;
+extern game_proto_gateway2client_pingDefaultTypeInternal _game_proto_gateway2client_ping_default_instance_;
 class game_proto_get_attack_city_info;
 struct game_proto_get_attack_city_infoDefaultTypeInternal;
 extern game_proto_get_attack_city_infoDefaultTypeInternal _game_proto_get_attack_city_info_default_instance_;
@@ -23347,6 +23347,208 @@ class game_proto_get_attack_city_info final : public ::google::protobuf::Message
 };
 // -------------------------------------------------------------------
 
+class game_proto_gateway2client_ping final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:faith.game_proto.gateway2client_ping) */ {
+ public:
+  inline game_proto_gateway2client_ping() : game_proto_gateway2client_ping(nullptr) {}
+  ~game_proto_gateway2client_ping() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(game_proto_gateway2client_ping* msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(game_proto_gateway2client_ping));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR game_proto_gateway2client_ping(
+      ::google::protobuf::internal::ConstantInitialized);
+
+  inline game_proto_gateway2client_ping(const game_proto_gateway2client_ping& from) : game_proto_gateway2client_ping(nullptr, from) {}
+  inline game_proto_gateway2client_ping(game_proto_gateway2client_ping&& from) noexcept
+      : game_proto_gateway2client_ping(nullptr, std::move(from)) {}
+  inline game_proto_gateway2client_ping& operator=(const game_proto_gateway2client_ping& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline game_proto_gateway2client_ping& operator=(game_proto_gateway2client_ping&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const game_proto_gateway2client_ping& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const game_proto_gateway2client_ping* internal_default_instance() {
+    return reinterpret_cast<const game_proto_gateway2client_ping*>(
+        &_game_proto_gateway2client_ping_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 15;
+  friend void swap(game_proto_gateway2client_ping& a, game_proto_gateway2client_ping& b) { a.Swap(&b); }
+  inline void Swap(game_proto_gateway2client_ping* other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(game_proto_gateway2client_ping* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  game_proto_gateway2client_ping* New(::google::protobuf::Arena* arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<game_proto_gateway2client_ping>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const game_proto_gateway2client_ping& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const game_proto_gateway2client_ping& from) { game_proto_gateway2client_ping::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(
+      ::google::protobuf::MessageLite& to_msg,
+      const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* _InternalSerialize(
+      const MessageLite& msg, ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(game_proto_gateway2client_ping* other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(
+      ::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "faith.game_proto.gateway2client_ping"; }
+
+ protected:
+  explicit game_proto_gateway2client_ping(::google::protobuf::Arena* arena);
+  game_proto_gateway2client_ping(::google::protobuf::Arena* arena, const game_proto_gateway2client_ping& from);
+  game_proto_gateway2client_ping(::google::protobuf::Arena* arena, game_proto_gateway2client_ping&& from) noexcept
+      : game_proto_gateway2client_ping(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* GetClassData() const PROTOBUF_FINAL;
+  static void* PlacementNew_(const void*, void* mem,
+                             ::google::protobuf::Arena* arena);
+  static constexpr auto InternalNewImpl_();
+  static const ::google::protobuf::internal::ClassDataFull _class_data_;
+
+ public:
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kClientTimeFieldNumber = 1,
+    kServerTimeFieldNumber = 2,
+  };
+  // int64 client_time = 1;
+  void clear_client_time() ;
+  ::int64_t client_time() const;
+  void set_client_time(::int64_t value);
+
+  private:
+  ::int64_t _internal_client_time() const;
+  void _internal_set_client_time(::int64_t value);
+
+  public:
+  // int64 server_time = 2;
+  void clear_server_time() ;
+  ::int64_t server_time() const;
+  void set_server_time(::int64_t value);
+
+  private:
+  ::int64_t _internal_server_time() const;
+  void _internal_set_server_time(::int64_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:faith.game_proto.gateway2client_ping)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      1, 2, 0,
+      0, 2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena, const Impl_& from,
+                          const game_proto_gateway2client_ping& from_msg);
+    ::int64_t client_time_;
+    ::int64_t server_time_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_game_2eproto;
+};
+// -------------------------------------------------------------------
+
 class game_proto_game_state final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:faith.game_proto.game_state) */ {
  public:
@@ -25262,208 +25464,6 @@ class game_proto_fuben_vip_mopping final : public ::google::protobuf::Message
                           const game_proto_fuben_vip_mopping& from_msg);
     ::int32_t fuben_template_id_;
     ::int32_t settlement_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_game_2eproto;
-};
-// -------------------------------------------------------------------
-
-class game_proto_fep2client_ping final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:faith.game_proto.fep2client_ping) */ {
- public:
-  inline game_proto_fep2client_ping() : game_proto_fep2client_ping(nullptr) {}
-  ~game_proto_fep2client_ping() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(game_proto_fep2client_ping* msg, std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(game_proto_fep2client_ping));
-  }
-#endif
-
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR game_proto_fep2client_ping(
-      ::google::protobuf::internal::ConstantInitialized);
-
-  inline game_proto_fep2client_ping(const game_proto_fep2client_ping& from) : game_proto_fep2client_ping(nullptr, from) {}
-  inline game_proto_fep2client_ping(game_proto_fep2client_ping&& from) noexcept
-      : game_proto_fep2client_ping(nullptr, std::move(from)) {}
-  inline game_proto_fep2client_ping& operator=(const game_proto_fep2client_ping& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline game_proto_fep2client_ping& operator=(game_proto_fep2client_ping&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const game_proto_fep2client_ping& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const game_proto_fep2client_ping* internal_default_instance() {
-    return reinterpret_cast<const game_proto_fep2client_ping*>(
-        &_game_proto_fep2client_ping_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 15;
-  friend void swap(game_proto_fep2client_ping& a, game_proto_fep2client_ping& b) { a.Swap(&b); }
-  inline void Swap(game_proto_fep2client_ping* other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(game_proto_fep2client_ping* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  game_proto_fep2client_ping* New(::google::protobuf::Arena* arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<game_proto_fep2client_ping>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const game_proto_fep2client_ping& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const game_proto_fep2client_ping& from) { game_proto_fep2client_ping::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(
-      ::google::protobuf::MessageLite& to_msg,
-      const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  static ::uint8_t* _InternalSerialize(
-      const MessageLite& msg, ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream);
-
-  public:
-  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  ::size_t ByteSizeLong() const final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(game_proto_fep2client_ping* other);
- private:
-  template <typename T>
-  friend ::absl::string_view(
-      ::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() { return "faith.game_proto.fep2client_ping"; }
-
- protected:
-  explicit game_proto_fep2client_ping(::google::protobuf::Arena* arena);
-  game_proto_fep2client_ping(::google::protobuf::Arena* arena, const game_proto_fep2client_ping& from);
-  game_proto_fep2client_ping(::google::protobuf::Arena* arena, game_proto_fep2client_ping&& from) noexcept
-      : game_proto_fep2client_ping(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* GetClassData() const PROTOBUF_FINAL;
-  static void* PlacementNew_(const void*, void* mem,
-                             ::google::protobuf::Arena* arena);
-  static constexpr auto InternalNewImpl_();
-  static const ::google::protobuf::internal::ClassDataFull _class_data_;
-
- public:
-  ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kClientTimeFieldNumber = 1,
-    kServerTimeFieldNumber = 2,
-  };
-  // int64 client_time = 1;
-  void clear_client_time() ;
-  ::int64_t client_time() const;
-  void set_client_time(::int64_t value);
-
-  private:
-  ::int64_t _internal_client_time() const;
-  void _internal_set_client_time(::int64_t value);
-
-  public:
-  // int64 server_time = 2;
-  void clear_server_time() ;
-  ::int64_t server_time() const;
-  void set_server_time(::int64_t value);
-
-  private:
-  ::int64_t _internal_server_time() const;
-  void _internal_set_server_time(::int64_t value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:faith.game_proto.fep2client_ping)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      1, 2, 0,
-      0, 2>
-      _table_;
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena);
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena, const Impl_& from,
-                          const game_proto_fep2client_ping& from_msg);
-    ::int64_t client_time_;
-    ::int64_t server_time_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -32894,31 +32894,31 @@ class game_proto_create_pk_end_time final : public ::google::protobuf::Message
 };
 // -------------------------------------------------------------------
 
-class game_proto_client2fep_ping final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:faith.game_proto.client2fep_ping) */ {
+class game_proto_client2gateway_ping final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:faith.game_proto.client2gateway_ping) */ {
  public:
-  inline game_proto_client2fep_ping() : game_proto_client2fep_ping(nullptr) {}
-  ~game_proto_client2fep_ping() PROTOBUF_FINAL;
+  inline game_proto_client2gateway_ping() : game_proto_client2gateway_ping(nullptr) {}
+  ~game_proto_client2gateway_ping() PROTOBUF_FINAL;
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(game_proto_client2fep_ping* msg, std::destroying_delete_t) {
+  void operator delete(game_proto_client2gateway_ping* msg, std::destroying_delete_t) {
     SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(game_proto_client2fep_ping));
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(game_proto_client2gateway_ping));
   }
 #endif
 
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR game_proto_client2fep_ping(
+  explicit PROTOBUF_CONSTEXPR game_proto_client2gateway_ping(
       ::google::protobuf::internal::ConstantInitialized);
 
-  inline game_proto_client2fep_ping(const game_proto_client2fep_ping& from) : game_proto_client2fep_ping(nullptr, from) {}
-  inline game_proto_client2fep_ping(game_proto_client2fep_ping&& from) noexcept
-      : game_proto_client2fep_ping(nullptr, std::move(from)) {}
-  inline game_proto_client2fep_ping& operator=(const game_proto_client2fep_ping& from) {
+  inline game_proto_client2gateway_ping(const game_proto_client2gateway_ping& from) : game_proto_client2gateway_ping(nullptr, from) {}
+  inline game_proto_client2gateway_ping(game_proto_client2gateway_ping&& from) noexcept
+      : game_proto_client2gateway_ping(nullptr, std::move(from)) {}
+  inline game_proto_client2gateway_ping& operator=(const game_proto_client2gateway_ping& from) {
     CopyFrom(from);
     return *this;
   }
-  inline game_proto_client2fep_ping& operator=(game_proto_client2fep_ping&& from) noexcept {
+  inline game_proto_client2gateway_ping& operator=(game_proto_client2gateway_ping&& from) noexcept {
     if (this == &from) return *this;
     if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
       InternalSwap(&from);
@@ -32946,16 +32946,16 @@ class game_proto_client2fep_ping final : public ::google::protobuf::Message
   static const ::google::protobuf::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const game_proto_client2fep_ping& default_instance() {
+  static const game_proto_client2gateway_ping& default_instance() {
     return *internal_default_instance();
   }
-  static inline const game_proto_client2fep_ping* internal_default_instance() {
-    return reinterpret_cast<const game_proto_client2fep_ping*>(
-        &_game_proto_client2fep_ping_default_instance_);
+  static inline const game_proto_client2gateway_ping* internal_default_instance() {
+    return reinterpret_cast<const game_proto_client2gateway_ping*>(
+        &_game_proto_client2gateway_ping_default_instance_);
   }
   static constexpr int kIndexInFileMessages = 14;
-  friend void swap(game_proto_client2fep_ping& a, game_proto_client2fep_ping& b) { a.Swap(&b); }
-  inline void Swap(game_proto_client2fep_ping* other) {
+  friend void swap(game_proto_client2gateway_ping& a, game_proto_client2gateway_ping& b) { a.Swap(&b); }
+  inline void Swap(game_proto_client2gateway_ping* other) {
     if (other == this) return;
     if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
       InternalSwap(other);
@@ -32963,7 +32963,7 @@ class game_proto_client2fep_ping final : public ::google::protobuf::Message
       ::google::protobuf::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(game_proto_client2fep_ping* other) {
+  void UnsafeArenaSwap(game_proto_client2gateway_ping* other) {
     if (other == this) return;
     ABSL_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -32971,13 +32971,13 @@ class game_proto_client2fep_ping final : public ::google::protobuf::Message
 
   // implements Message ----------------------------------------------
 
-  game_proto_client2fep_ping* New(::google::protobuf::Arena* arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<game_proto_client2fep_ping>(arena);
+  game_proto_client2gateway_ping* New(::google::protobuf::Arena* arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<game_proto_client2gateway_ping>(arena);
   }
   using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const game_proto_client2fep_ping& from);
+  void CopyFrom(const game_proto_client2gateway_ping& from);
   using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const game_proto_client2fep_ping& from) { game_proto_client2fep_ping::MergeImpl(*this, from); }
+  void MergeFrom(const game_proto_client2gateway_ping& from) { game_proto_client2gateway_ping::MergeImpl(*this, from); }
 
   private:
   static void MergeImpl(
@@ -33014,18 +33014,18 @@ class game_proto_client2fep_ping final : public ::google::protobuf::Message
   private:
   void SharedCtor(::google::protobuf::Arena* arena);
   static void SharedDtor(MessageLite& self);
-  void InternalSwap(game_proto_client2fep_ping* other);
+  void InternalSwap(game_proto_client2gateway_ping* other);
  private:
   template <typename T>
   friend ::absl::string_view(
       ::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() { return "faith.game_proto.client2fep_ping"; }
+  static ::absl::string_view FullMessageName() { return "faith.game_proto.client2gateway_ping"; }
 
  protected:
-  explicit game_proto_client2fep_ping(::google::protobuf::Arena* arena);
-  game_proto_client2fep_ping(::google::protobuf::Arena* arena, const game_proto_client2fep_ping& from);
-  game_proto_client2fep_ping(::google::protobuf::Arena* arena, game_proto_client2fep_ping&& from) noexcept
-      : game_proto_client2fep_ping(arena) {
+  explicit game_proto_client2gateway_ping(::google::protobuf::Arena* arena);
+  game_proto_client2gateway_ping(::google::protobuf::Arena* arena, const game_proto_client2gateway_ping& from);
+  game_proto_client2gateway_ping(::google::protobuf::Arena* arena, game_proto_client2gateway_ping&& from) noexcept
+      : game_proto_client2gateway_ping(arena) {
     *this = ::std::move(from);
   }
   const ::google::protobuf::internal::ClassData* GetClassData() const PROTOBUF_FINAL;
@@ -33052,7 +33052,7 @@ class game_proto_client2fep_ping final : public ::google::protobuf::Message
   void _internal_set_client_time(::int64_t value);
 
   public:
-  // @@protoc_insertion_point(class_scope:faith.game_proto.client2fep_ping)
+  // @@protoc_insertion_point(class_scope:faith.game_proto.client2gateway_ping)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
@@ -33074,7 +33074,7 @@ class game_proto_client2fep_ping final : public ::google::protobuf::Message
                           ::google::protobuf::Arena* arena);
     inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
                           ::google::protobuf::Arena* arena, const Impl_& from,
-                          const game_proto_client2fep_ping& from_msg);
+                          const game_proto_client2gateway_ping& from_msg);
     ::int64_t client_time_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
@@ -39858,8 +39858,8 @@ class game_proto final : public ::google::protobuf::internal::ZeroFieldsBase
   using line_list = game_proto_line_list;
   using transfer_scene_end = game_proto_transfer_scene_end;
   using trans_local_scene_end = game_proto_trans_local_scene_end;
-  using client2fep_ping = game_proto_client2fep_ping;
-  using fep2client_ping = game_proto_fep2client_ping;
+  using client2gateway_ping = game_proto_client2gateway_ping;
+  using gateway2client_ping = game_proto_gateway2client_ping;
   using client2cs_ping = game_proto_client2cs_ping;
   using cs2client_ping = game_proto_cs2client_ping;
   using version_wrong = game_proto_version_wrong;
@@ -49191,74 +49191,74 @@ inline void game_proto_trans_local_scene_end::set_allocated_rotator_angle(::fait
 
 // -------------------------------------------------------------------
 
-// game_proto_client2fep_ping
+// game_proto_client2gateway_ping
 
 // int64 client_time = 1;
-inline void game_proto_client2fep_ping::clear_client_time() {
+inline void game_proto_client2gateway_ping::clear_client_time() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.client_time_ = ::int64_t{0};
 }
-inline ::int64_t game_proto_client2fep_ping::client_time() const {
-  // @@protoc_insertion_point(field_get:faith.game_proto.client2fep_ping.client_time)
+inline ::int64_t game_proto_client2gateway_ping::client_time() const {
+  // @@protoc_insertion_point(field_get:faith.game_proto.client2gateway_ping.client_time)
   return _internal_client_time();
 }
-inline void game_proto_client2fep_ping::set_client_time(::int64_t value) {
+inline void game_proto_client2gateway_ping::set_client_time(::int64_t value) {
   _internal_set_client_time(value);
-  // @@protoc_insertion_point(field_set:faith.game_proto.client2fep_ping.client_time)
+  // @@protoc_insertion_point(field_set:faith.game_proto.client2gateway_ping.client_time)
 }
-inline ::int64_t game_proto_client2fep_ping::_internal_client_time() const {
+inline ::int64_t game_proto_client2gateway_ping::_internal_client_time() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.client_time_;
 }
-inline void game_proto_client2fep_ping::_internal_set_client_time(::int64_t value) {
+inline void game_proto_client2gateway_ping::_internal_set_client_time(::int64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.client_time_ = value;
 }
 
 // -------------------------------------------------------------------
 
-// game_proto_fep2client_ping
+// game_proto_gateway2client_ping
 
 // int64 client_time = 1;
-inline void game_proto_fep2client_ping::clear_client_time() {
+inline void game_proto_gateway2client_ping::clear_client_time() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.client_time_ = ::int64_t{0};
 }
-inline ::int64_t game_proto_fep2client_ping::client_time() const {
-  // @@protoc_insertion_point(field_get:faith.game_proto.fep2client_ping.client_time)
+inline ::int64_t game_proto_gateway2client_ping::client_time() const {
+  // @@protoc_insertion_point(field_get:faith.game_proto.gateway2client_ping.client_time)
   return _internal_client_time();
 }
-inline void game_proto_fep2client_ping::set_client_time(::int64_t value) {
+inline void game_proto_gateway2client_ping::set_client_time(::int64_t value) {
   _internal_set_client_time(value);
-  // @@protoc_insertion_point(field_set:faith.game_proto.fep2client_ping.client_time)
+  // @@protoc_insertion_point(field_set:faith.game_proto.gateway2client_ping.client_time)
 }
-inline ::int64_t game_proto_fep2client_ping::_internal_client_time() const {
+inline ::int64_t game_proto_gateway2client_ping::_internal_client_time() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.client_time_;
 }
-inline void game_proto_fep2client_ping::_internal_set_client_time(::int64_t value) {
+inline void game_proto_gateway2client_ping::_internal_set_client_time(::int64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.client_time_ = value;
 }
 
 // int64 server_time = 2;
-inline void game_proto_fep2client_ping::clear_server_time() {
+inline void game_proto_gateway2client_ping::clear_server_time() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.server_time_ = ::int64_t{0};
 }
-inline ::int64_t game_proto_fep2client_ping::server_time() const {
-  // @@protoc_insertion_point(field_get:faith.game_proto.fep2client_ping.server_time)
+inline ::int64_t game_proto_gateway2client_ping::server_time() const {
+  // @@protoc_insertion_point(field_get:faith.game_proto.gateway2client_ping.server_time)
   return _internal_server_time();
 }
-inline void game_proto_fep2client_ping::set_server_time(::int64_t value) {
+inline void game_proto_gateway2client_ping::set_server_time(::int64_t value) {
   _internal_set_server_time(value);
-  // @@protoc_insertion_point(field_set:faith.game_proto.fep2client_ping.server_time)
+  // @@protoc_insertion_point(field_set:faith.game_proto.gateway2client_ping.server_time)
 }
-inline ::int64_t game_proto_fep2client_ping::_internal_server_time() const {
+inline ::int64_t game_proto_gateway2client_ping::_internal_server_time() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.server_time_;
 }
-inline void game_proto_fep2client_ping::_internal_set_server_time(::int64_t value) {
+inline void game_proto_gateway2client_ping::_internal_set_server_time(::int64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.server_time_ = value;
 }

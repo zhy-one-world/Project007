@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package faith.config_center;
+
+message ServerEndpoint {
+  string server_type = 1;
+  int32 server_index = 2;
+  string internal_host = 3;
+  int32 internal_port = 4;
+  string external_host = 5;
+  int32 external_port = 6;
+}
+
+message RegisterReq {
+  ServerEndpoint endpoint = 1;
+}
+
+message RegisterRep {
+  bool ok = 1;
+  string error = 2;
+  repeated ServerEndpoint peers = 3;
+}
+
+message HeartbeatReq {
+  string server_type = 1;
+  int32 server_index = 2;
+}
+
+message HeartbeatRep {
+  bool ok = 1;
+  string error = 2;
+}
+
+message UnregisterReq {
+  string server_type = 1;
+  int32 server_index = 2;
+}
+
+message UnregisterRep {
+  bool ok = 1;
+  string error = 2;
+}
+
+message QueryRegistryReq {
+}
+
+message QueryRegistryRep {
+  bool ok = 1;
+  string error = 2;
+  repeated ServerEndpoint peers = 3;
+}
+
+message CcMessage {
+  oneof body {
+    RegisterReq register_req = 1;
+    RegisterRep register_rep = 2;
+    HeartbeatReq heartbeat_req = 3;
+    HeartbeatRep heartbeat_rep = 4;
+    UnregisterReq unregister_req = 5;
+    UnregisterRep unregister_rep = 6;
+    QueryRegistryReq query_registry_req = 7;
+    QueryRegistryRep query_registry_rep = 8;
+  }
+}

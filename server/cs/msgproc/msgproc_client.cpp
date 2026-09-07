@@ -104,15 +104,15 @@ namespace faith
 	}\
 	s_client_uid client_uid;\
 	parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);\
-	player& player_ref = unit_man::get_player(client_uid.fepsession_uid);\
+	player& player_ref = unit_man::get_player(client_uid.gatewaysession_uid);\
 	if (false == player_ref.is_valid() || player_ref.get_session_state() != e_session_status_in_gaming || player_ref.get_client_uid().rand_num_1 != client_uid.rand_num_1)\
 	{\
-		CONSOLE_ERROR("player is null {}", client_uid.fepsession_uid);\
+		CONSOLE_ERROR("player is null {}", client_uid.gatewaysession_uid);\
 		return;\
 	}
-	void req_fep2cs_in_game(uint32 connindex, const void* data_ptr, size_t data_len)
+	void req_gateway2cs_in_game(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
-		const fep2cs_in_game* pdata = static_cast<const fep2cs_in_game*>(data_ptr);
+		const gateway2cs_in_game* pdata = static_cast<const gateway2cs_in_game*>(data_ptr);
 		if (NULL == pdata)
 			return;
 		player& player_ref = unit_man::get_player(pdata->array_index);
@@ -185,7 +185,7 @@ namespace faith
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
 
-		player& player_ref = unit_man::get_player(client_uid.fepsession_uid);
+		player& player_ref = unit_man::get_player(client_uid.gatewaysession_uid);
 		if (false == player_ref.is_valid() || player_ref.get_session_state() != e_session_status_in_gaming || player_ref.get_client_uid().rand_num_1 != client_uid.rand_num_1
 			|| player_ref.get_loading_flag_all_finish() == false
 			|| player_ref.get_saveing_flag_all_finish() == false
@@ -1394,7 +1394,7 @@ namespace faith
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
 
-		player& player_ref = unit_man::get_player(client_uid.fepsession_uid);
+		player& player_ref = unit_man::get_player(client_uid.gatewaysession_uid);
 		if (false == player_ref.is_valid() || player_ref.get_client_uid().rand_num_1 != client_uid.rand_num_1 || (player_ref.get_session_state() != e_session_status_in_gaming && player_ref.get_session_state() != e_session_status_client_loading))
 		{
 			return;
@@ -1431,7 +1431,7 @@ namespace faith
 		}
 		s_client_uid client_uid;
 		parse_msg::getInstance().parse_clientuid_from_msg_new(data_ptr, client_uid);
-		player& player_ref = unit_man::get_player(client_uid.fepsession_uid);
+		player& player_ref = unit_man::get_player(client_uid.gatewaysession_uid);
 		if (false == player_ref.is_valid() || player_ref.get_client_uid().rand_num_1 != client_uid.rand_num_1 || (player_ref.get_session_state() != e_session_status_in_gaming && player_ref.get_session_state() != e_session_status_client_loading))
 		{
 			return;
@@ -2798,7 +2798,7 @@ namespace faith
 	void c2s_fuben_kill_boss(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
 		UNPACKING_PROTO(game_proto_kill_boss)
-		//map_search_system::repeatd_kill_boss(client_uid.fepsession_uid);
+		//map_search_system::repeatd_kill_boss(client_uid.gatewaysession_uid);
 		box_map_system::begin_kill_boss(player_ref.get_map_ent(), &player_ref);
 		auto pos = player_ref.get_new_map_pos();
 		game_proto_kill_boss_end msg;

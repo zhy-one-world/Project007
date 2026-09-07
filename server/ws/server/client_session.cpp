@@ -116,9 +116,9 @@ namespace faith
 	{
 		return m_is_data_use;
 	}
-	void	client_session::send_to_fep(const void* data_ptr,size_t data_len)
+	void	client_session::send_to_gateway(const void* data_ptr,size_t data_len)
 	{
-		world_server::getInstance().send_to_fep(m_client_uid.fepserver_uid, data_ptr, data_len);
+		world_server::getInstance().send_to_gateway(m_client_uid.gatewayserver_uid, data_ptr, data_len);
 	}
 	void	client_session::send_to_cs(const void* data_ptr,size_t data_len)
 	{
@@ -162,7 +162,7 @@ namespace faith
 	{
 		packet_c2s_s2c msg;
 		serialize_msg::get_instance().set_serialize_msg_new(msg, net_pro, m_client_uid, header);
-		send_to_fep((void*)&msg, msg.get_packet_len());
+		send_to_gateway((void*)&msg, msg.get_packet_len());
 	}
 	void client_session::send_to_client(const void* data_ptr, int32 data_len, uint32 header)
 	{
@@ -171,7 +171,7 @@ namespace faith
 		msg.wheader = header;
 		msg.google_data_len = data_len;
 		memcpy(msg.google_data, data_ptr, data_len);
-		send_to_fep((void*)&msg, msg.get_packet_len());
+		send_to_gateway((void*)&msg, msg.get_packet_len());
 	}
 	void client_session::tick(const int64& new_time)
 	{
@@ -198,7 +198,7 @@ namespace faith
 			{
 				faith::ws2cs_proto::client_logout pro_msg;
 				pro_msg.set_role_guid(get_role_guid().server_64);
-				pro_msg.set_client_uid(get_client_uid().fep_uid_64);
+				pro_msg.set_client_uid(get_client_uid().gateway_uid_64);
 				pro_msg.set_need_send_save_end(m_is_need_send_save_end);
 				world_server::getInstance().broadcast_lua(&pro_msg, e_msg_index_ws2cs_client_logout, e_server_type_cs);
 			}
@@ -468,11 +468,11 @@ namespace faith
 			if (m_ban_role_array[i] == role_guid.server_64)
 			{//限制登录
 				_RLOG_(MINFO, ::faith::log_detail::format_message("player_enter_game_transfer m_ban_role_array[i] == role_guid.server_64 role_guid.server_64:{}",  role_guid.server_64));
-				ws2fep_enter_game rep;
+				ws2gateway_enter_game rep;
 				rep.client_uid = m_client_uid;
 				rep.e_result =e_error_code_enter_no_allow;
 				memcpy(rep.account, m_account, sizeof(rep.account));
-				send_to_fep(&rep, sizeof(rep));
+				send_to_gateway(&rep, sizeof(rep));
 				return;
 			}
 		}
@@ -480,11 +480,11 @@ namespace faith
 		if (world_server::getInstance().get_server_info_arr(e_server_info_type_only_create_role))
 		{
 			CONSOLE_ERROR("e_server_info_type_only_create_role");
-			ws2fep_enter_game rep;
+			ws2gateway_enter_game rep;
 			rep.client_uid = m_client_uid;
 			rep.e_result = e_error_code_enter_only_create;
 			memcpy(rep.account, m_account, sizeof(rep.account));
-			send_to_fep(&rep, sizeof(rep));
+			send_to_gateway(&rep, sizeof(rep));
 			return;
 		}
 
@@ -637,11 +637,11 @@ namespace faith
 		if (nullptr == map_ent)
 		{
 			CONSOLE_ERROR("login_try_enter_scene map_ent == nullptr move_map_id:{}", get_role_info_data(e_role_info_main_map_id));
-			ws2fep_enter_game ws2fep_rep;
-			ws2fep_rep.client_uid = m_client_uid;
-			memcpy(ws2fep_rep.account, m_role_info.account, max_account_length);
-			ws2fep_rep.e_result = e_error_code_enter_area_not_exist;
-			send_to_fep(&ws2fep_rep, sizeof(ws2fep_rep));
+			ws2gateway_enter_game ws2gateway_rep;
+			ws2gateway_rep.client_uid = m_client_uid;
+			memcpy(ws2gateway_rep.account, m_role_info.account, max_account_length);
+			ws2gateway_rep.e_result = e_error_code_enter_area_not_exist;
+			send_to_gateway(&ws2gateway_rep, sizeof(ws2gateway_rep));
 			return;
 		}
 
@@ -651,11 +651,11 @@ namespace faith
 		if (nullptr == cs || m_status == client_session::e_ss_logout)
 		{
 			CONSOLE_ERROR("login_try_enter_scene cs == nullptr cs_uid:{}", map_cp->m_cs_uid);
-			ws2fep_enter_game ws2fep_rep;
-			ws2fep_rep.client_uid = m_client_uid;
-			memcpy(ws2fep_rep.account, m_role_info.account, max_account_length);
-			ws2fep_rep.e_result = e_error_code_enter_area_not_exist;
-			send_to_fep(&ws2fep_rep, sizeof(ws2fep_rep));
+			ws2gateway_enter_game ws2gateway_rep;
+			ws2gateway_rep.client_uid = m_client_uid;
+			memcpy(ws2gateway_rep.account, m_role_info.account, max_account_length);
+			ws2gateway_rep.e_result = e_error_code_enter_area_not_exist;
+			send_to_gateway(&ws2gateway_rep, sizeof(ws2gateway_rep));
 			return;
 		}
 		

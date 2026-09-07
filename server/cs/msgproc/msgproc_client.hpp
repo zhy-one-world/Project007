@@ -6,8 +6,8 @@
   
   purpose: 客户端到服务器的请求处理
 *********************************************************************/
-#ifndef _FEP_MSGPROC_CLIENT_H_
-#define _FEP_MSGPROC_CLIENT_H_
+#ifndef _GATEWAY_MSGPROC_CLIENT_H_
+#define _GATEWAY_MSGPROC_CLIENT_H_
 
 #include "logic/type_def.hpp"
 
@@ -37,7 +37,7 @@ namespace faith
 	class character_proto_add_guide_record;
 	class player;
 
-	void req_fep2cs_in_game(uint32 connindex, const void *data_ptr, size_t data_len);
+	void req_gateway2cs_in_game(uint32 connindex, const void *data_ptr, size_t data_len);
 	void c2cs_ping(uint32 connindex, const void *data_ptr, size_t data_len);
 
 	//npc

@@ -38,13 +38,13 @@ namespace faith
 	enum
 	{
 		// EnterGame
-		e_msg_index_fep2ws_enter_game = e_msg_base_entergame,
-		e_msg_index_fep2c_enter_game,
-		e_msg_index_ws2fep_enter_game,
+		e_msg_index_gateway2ws_enter_game = e_msg_base_entergame,
+		e_msg_index_gateway2c_enter_game,
+		e_msg_index_ws2gateway_enter_game,
 		e_msg_index_ws2cs_time_out,
 		e_msg_index_ws2cs_reconnect_game,
 		e_msg_index_cs2ws_reconnect_game,
-		e_msg_index_ws2fep_reconnect_game,
+		e_msg_index_ws2gateway_reconnect_game,
 		e_msg_index_ws2cs_enter_game,
 		e_msg_index_cs2ws_enter_game,
 		e_msg_index_cs2ws_role_info,
@@ -59,25 +59,25 @@ namespace faith
 		// EnterScene	
 		e_msg_index_ws2cs_enter_scene,
 		e_msg_index_cs2ws_enter_scene,
-		e_msg_index_fep2ws_enter_scene,
+		e_msg_index_gateway2ws_enter_scene,
 		e_msg_index_ws2cs_server_config,
 		e_msg_index_ws2cs_clear_server_config,
 		// SyncTimes
-		e_msg_index_fep2cs_sync_time_stamp,
-		e_msg_index_cs2fep_sync_time_stamp,
+		e_msg_index_gateway2cs_sync_time_stamp,
+		e_msg_index_cs2gateway_sync_time_stamp,
 
 		// LeaveGame
-		e_msg_index_fep2ws_logout_game,
-		e_msg_index_ws2fep_logout_game,
+		e_msg_index_gateway2ws_logout_game,
+		e_msg_index_ws2gateway_logout_game,
 
 		// 跨cs
 		e_msg_index_cs2ws_transfer_player,
-		e_msg_index_fep2ws_transfer,
+		e_msg_index_gateway2ws_transfer,
 		e_msg_index_ws2cs_transfer_old,
 		e_msg_index_cs2ws_transfer_old,
 		e_msg_index_ws2cs_transfer_new,
 		e_msg_index_cs2ws_transfer_new,
-		e_msg_index_ws2fep_transfer,
+		e_msg_index_ws2gateway_transfer,
 
 
 		// data
@@ -86,8 +86,8 @@ namespace faith
 
 		e_msg_index_cs2ws_dispatch_msg,
 		e_msg_index_cs2ws_batch_send,
-		e_msg_index_cs2fep_aoi_msg,
-		e_msg_index_ws2fep_broadcast_msg,
+		e_msg_index_cs2gateway_aoi_msg,
+		e_msg_index_ws2gateway_broadcast_msg,
 
 		e_msg_index_cs2ws_sync_char_data,
 		e_msg_index_cs2ws_send_role_info_to_gm,
@@ -283,8 +283,8 @@ namespace faith
 		e_msgindex_ws2ws_chat_server_legion,
 		e_msgindex_ws2ws_chat_server_all_member,
 
-		e_msgindex_cs2fep_in_game,
-		e_msgindex_fep2cs_in_game,
+		e_msgindex_cs2gateway_in_game,
+		e_msgindex_gateway2cs_in_game,
 
 		//cross_server
 		e_msgindex_ws2ws_kick_player,
@@ -294,7 +294,7 @@ namespace faith
 
 		//save online time
 		e_msgindex_ws2dp_save_account_online_time,
-		e_msgindex_cs2fep_month_recharge_num,
+		e_msgindex_cs2gateway_month_recharge_num,
 
 		e_msg_index_ws2cs_set_ladder_world_level,
 		e_msg_index_ws2cs_is_need_refresh_cs_daily_info_at_zero_hour,
@@ -303,20 +303,20 @@ namespace faith
 	/************************************************************************/
 	/*           EnterGame                                                  */
 	/************************************************************************/
-	struct fep2ws_enter_game : public packet_base
+	struct gateway2ws_enter_game : public packet_base
 	{ 
 		ui64					charindex_for_play;		//	character index
 		xchar					account[max_account_length + 1];
 		s_client_uid			client_uid;
 
-		fep2ws_enter_game()
+		gateway2ws_enter_game()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader				= e_msg_index_fep2ws_enter_game;
+			wheader				= e_msg_index_gateway2ws_enter_game;
 		}
 	};
 
-	struct ws2fep_enter_game : public packet_base
+	struct ws2gateway_enter_game : public packet_base
 	{
 		e_error_code				e_result;
 		s_client_uid				client_uid;
@@ -324,9 +324,9 @@ namespace faith
 		int32						cs_array_index;
 		xchar						account[max_account_length + 1];
 		int32						server_type;
-		ws2fep_enter_game()
+		ws2gateway_enter_game()
 		{
-			wheader		= e_msg_index_ws2fep_enter_game;
+			wheader		= e_msg_index_ws2gateway_enter_game;
 			e_result	= e_error_code_success;
 			cellserver_id = 0;
 			cs_array_index = 0;
@@ -334,17 +334,17 @@ namespace faith
 			server_type = 0;
 		}
 	};
-	struct ws2fep_reconnect_game : public packet_base
+	struct ws2gateway_reconnect_game : public packet_base
 	{
 		s_client_uid			client_uid;
 		xchar					account[max_account_length + 1];
 		int32					cellserver_id;
 		int32					array_index;
 		int32					reconnect_res;
-		ws2fep_reconnect_game()
+		ws2gateway_reconnect_game()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader = e_msg_index_ws2fep_reconnect_game;
+			wheader = e_msg_index_ws2gateway_reconnect_game;
 		}
 	};
 	struct ws2cs_time_out : public packet_base
@@ -412,7 +412,7 @@ namespace faith
 		}
 		bool to_proto(faith::ws2cs_proto::enter_game & msg)
 		{
-			msg.set_client_uid(client_uid.fep_uid_64);
+			msg.set_client_uid(client_uid.gateway_uid_64);
 			msg.set_account(account);
 			msg.set_role_guid(role_guid.server_64);
 			msg.set_up_role_guid(up_role_guid.server_64);
@@ -472,7 +472,7 @@ namespace faith
 
 		void from_proto(faith::ws2cs_proto::enter_game & msg)
 		{
-			client_uid.fep_uid_64 =	msg.client_uid();
+			client_uid.gateway_uid_64 =	msg.client_uid();
 			my_memcopy_string(account, max_account_length, msg.account());
 
 			role_guid.server_64 = msg.role_guid();
@@ -699,19 +699,19 @@ namespace faith
 			wheader = e_msg_index_cs2ws_enter_scene;
 		}
 	};
-	const int32 FEP_SESSION_UID_MAX = 2000;
-	const int32 FEP_DATA_MAX = 1000;
-	struct cs2fep_aoi_msg :public packet_base
+	const int32 GATEWAY_SESSION_UID_MAX = 2000;
+	const int32 GATEWAY_DATA_MAX = 1000;
+	struct cs2gateway_aoi_msg :public packet_base
 	{
 		int16 header;
 		int16 data_size;
 		ui8 data[MAX_C2S_S2C_PACKAGE_SIZE];
 		int16 data_num;
-		s_client_uid client_uid[FEP_SESSION_UID_MAX];
-		cs2fep_aoi_msg()
+		s_client_uid client_uid[GATEWAY_SESSION_UID_MAX];
+		cs2gateway_aoi_msg()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader = e_msg_index_cs2fep_aoi_msg;
+			wheader = e_msg_index_cs2gateway_aoi_msg;
 		}
 		uint32 get_pak_length() const
 		{
@@ -720,43 +720,43 @@ namespace faith
 		}
 	};
 
-	struct ws2fep_broadcast_msg : public packet_base
+	struct ws2gateway_broadcast_msg : public packet_base
 	{
 		uint32	data_size;
 		uint32	header;
-		ui8		data[FEP_DATA_MAX];
+		ui8		data[GATEWAY_DATA_MAX];
 
-		ws2fep_broadcast_msg()
+		ws2gateway_broadcast_msg()
 		{
-			memset(this, 0, sizeof(ws2fep_broadcast_msg));
-			wheader = e_msg_index_ws2fep_broadcast_msg;
+			memset(this, 0, sizeof(ws2gateway_broadcast_msg));
+			wheader = e_msg_index_ws2gateway_broadcast_msg;
 		}
 	};
 
 	/************************************************************************/
 	/*           SyncTimes                                                  */
 	/************************************************************************/
-	struct fep2cs_synctimestamp : public packet_base
+	struct gateway2cs_synctimestamp : public packet_base
 	{
 		uint32					time_stamp;			// 客户端此时时间戳
 		s_client_uid	client_uid;
 
-		fep2cs_synctimestamp()
+		gateway2cs_synctimestamp()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader= e_msg_index_fep2cs_sync_time_stamp;
+			wheader= e_msg_index_gateway2cs_sync_time_stamp;
 		}
 	};
 
-	struct cs2fep_synctmestamp : public packet_base
+	struct cs2gateway_synctmestamp : public packet_base
 	{
 		uint32					time_stamp;			// 服务器此时时间戳
 		s_client_uid	client_uid;
 
-		cs2fep_synctmestamp()
+		cs2gateway_synctmestamp()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader= e_msg_index_cs2fep_sync_time_stamp;
+			wheader= e_msg_index_cs2gateway_sync_time_stamp;
 		}
 	};
 
@@ -764,17 +764,17 @@ namespace faith
 	/*             LeaveGame                                                */
 	/************************************************************************/
 
-	struct fep2ws_logout_game : public packet_base
+	struct gateway2ws_logout_game : public packet_base
 	{
 		s_client_uid	client_uid;
-		fep2ws_logout_game()
+		gateway2ws_logout_game()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader = e_msg_index_fep2ws_logout_game;
+			wheader = e_msg_index_gateway2ws_logout_game;
 		}
 	};
 
-	struct ws2fep_logout_game : public packet_base
+	struct ws2gateway_logout_game : public packet_base
 	{
 		s_client_uid	client_uid;
 		enum
@@ -784,10 +784,10 @@ namespace faith
 			e_failed,	
 		}eResult;
 
-		ws2fep_logout_game()
+		ws2gateway_logout_game()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader = e_msg_index_ws2fep_logout_game;
+			wheader = e_msg_index_ws2gateway_logout_game;
 		}
 	};
 
@@ -813,14 +813,14 @@ namespace faith
 		}
 	};
 
-	struct fep2ws_transfer : public packet_base
+	struct gateway2ws_transfer : public packet_base
 	{
 		s_client_uid  client_uid;
 		uint32					switch_cs_id;
-		fep2ws_transfer()
+		gateway2ws_transfer()
 		{
 			memset(this,0,sizeof(*this));
-			wheader = e_msg_index_fep2ws_transfer;
+			wheader = e_msg_index_gateway2ws_transfer;
 		}
 	};
 
@@ -847,8 +847,8 @@ namespace faith
 		}
 	};
 
-	//	玩家对象所有权转移后，WS 通知 FEP
-	struct ws2fep_transfer : public packet_base
+	//	玩家对象所有权转移后，WS 通知 Gateway
+	struct ws2gateway_transfer : public packet_base
 	{
 		s_client_uid	client_uid;
 		uint32					dest_cs_uid;
@@ -860,10 +860,10 @@ namespace faith
 		ui8						move_flags;			// 保留
 		int32						position_id;
 
-		ws2fep_transfer()
+		ws2gateway_transfer()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader= e_msg_index_ws2fep_transfer;
+			wheader= e_msg_index_ws2gateway_transfer;
 		}
 	};
 
@@ -3169,7 +3169,7 @@ namespace faith
 		}
 		bool  to_proto(faith::ws2cs_proto::send_mail& msg)
 		{
-			msg.set_client_uid(client_uid.fep_uid_64);
+			msg.set_client_uid(client_uid.gateway_uid_64);
 
 			for (int32 i = 0; i < max_item_per_mail; i++)
 			{
@@ -3194,7 +3194,7 @@ namespace faith
 		}
 		void from_proto(const faith::ws2cs_proto::send_mail& msg)
 		{
-			client_uid.fep_uid_64 = msg.client_uid();
+			client_uid.gateway_uid_64 = msg.client_uid();
 			for (int32 i = 0; i <  msg.item_list_size() && i < max_item_per_mail; i++)
 			{
 				//item_list[i].from_proto(msg.item_list(i));
@@ -3270,7 +3270,7 @@ namespace faith
 		}
 		bool to_proto(faith::ws2cs_proto::receive_notice& msg)
 		{
-			msg.set_client_uid(client_uid.fep_uid_64);
+			msg.set_client_uid(client_uid.gateway_uid_64);
 			msg.set_sender_guid(sender_guid.server_64);
 			msg.set_addressee_guid(addressee_guid.server_64);
 			msg.set_notice_id(notice_id);
@@ -3288,7 +3288,7 @@ namespace faith
 		}
 		void from_proto(const faith::ws2cs_proto::receive_notice& msg)
 		{
-			client_uid.fep_uid_64 = msg.client_uid();
+			client_uid.gateway_uid_64 = msg.client_uid();
 			sender_guid.server_64 = msg.sender_guid();
 			addressee_guid.server_64 = msg.addressee_guid();
 			notice_id = msg.notice_id();
@@ -3710,28 +3710,28 @@ namespace faith
 			money_value = msg.money_value();
 		}
 	};
-	struct cs2fep_in_game : public packet_base
+	struct cs2gateway_in_game : public packet_base
 	{
 		xchar					account[max_account_length + 1];
 		s_client_uid			client_uid;
 		int32					array_index;
 		guid_64					role_guid;
-		cs2fep_in_game()
+		cs2gateway_in_game()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader = e_msgindex_cs2fep_in_game;
+			wheader = e_msgindex_cs2gateway_in_game;
 		}
 	};
-	struct fep2cs_in_game : public packet_base
+	struct gateway2cs_in_game : public packet_base
 	{
 		xchar					account[max_account_length + 1];
 		int32					array_index;
 		guid_64					role_guid;
 		bool					be_in_game;
-		fep2cs_in_game()
+		gateway2cs_in_game()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader = e_msgindex_fep2cs_in_game;
+			wheader = e_msgindex_gateway2cs_in_game;
 		}
 	};
 
@@ -3931,17 +3931,17 @@ namespace faith
 		}
 	};
 
-	struct cs2fep_month_recharge_num : public packet_base
+	struct cs2gateway_month_recharge_num : public packet_base
 	{
 		xchar					account[max_account_length + 1];
 		s_client_uid			client_uid;
 		int32					array_index;
 		guid_64					role_guid;
 		int32					recharge_num;
-		cs2fep_month_recharge_num()
+		cs2gateway_month_recharge_num()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader = e_msgindex_cs2fep_month_recharge_num;
+			wheader = e_msgindex_cs2gateway_month_recharge_num;
 		}
 	};
 

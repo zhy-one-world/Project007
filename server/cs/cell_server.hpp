@@ -40,7 +40,7 @@ namespace faith
 		void stop();
 		void on_req_login(uint32 connindex, const void *data_ptr, size_t data_len);
 		void on_req_stop(uint32 connindex, const void *data_ptr, size_t data_len);
-		void send_to_fep(const void* data_ptr, size_t data_len, int32 server_index);
+		void send_to_gateway(const void* data_ptr, size_t data_len, int32 server_index);
 		void broadcast(const void* data_ptr, size_t data_len, e_server_type server_type);
 	protected:
 		void	on_conn_closed(const net_server* faith_server_ptr);
@@ -101,7 +101,7 @@ namespace faith
 		int32	m_world_level_cur;
 		int32	m_world_level_last;
 		bool	m_reload_csv;
-		int32	m_fep_conn_index[SERVER_FEP_COUNT];
+		int32	m_gateway_conn_index[SERVER_GATEWAY_COUNT];
 		game_info_map m_game_info_map;
 		int64	m_next_daemon_time;
 

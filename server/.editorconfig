@@ -1,0 +1,8 @@
+root = true
+
+[*.{cpp,hpp,h,c,cc,inl}]
+charset = utf-8-bom
+end_of_line = crlf
+
+[*.{cmake,txt,md}]
+charset = utf-8

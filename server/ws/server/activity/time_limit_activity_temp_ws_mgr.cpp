@@ -140,10 +140,10 @@ namespace faith
 		}
 	}
 
-	void time_limit_activity_temp_ws_mgr::send_to_fep_template()
+	void time_limit_activity_temp_ws_mgr::send_to_gateway_template()
 	{
 		int32 data_num = 0;
-		ws2fep_act_limit_temp msg;
+		ws2gateway_act_limit_temp msg;
 		bool is_begin = true;
 		for (auto ite = m_time_limit_activity_temp_map.begin(); ite != m_time_limit_activity_temp_map.end(); ite++)
 		{
@@ -154,7 +154,7 @@ namespace faith
 			{
 				msg.data_num = data_num;
 				msg.is_begin = is_begin;
-				world_server::getInstance().broadcast(&msg, sizeof(msg), e_server_type_fep);
+				world_server::getInstance().broadcast(&msg, sizeof(msg), e_server_type_gateway);
 				msg.clear_data();
 				data_num = 0;
 				is_begin = false;
@@ -162,11 +162,11 @@ namespace faith
 		}
 		msg.data_num = data_num;
 		msg.is_begin = is_begin;
-		world_server::getInstance().broadcast(&msg, sizeof(msg), e_server_type_fep);
+		world_server::getInstance().broadcast(&msg, sizeof(msg), e_server_type_gateway);
 
 		//发分支表
 		int32 branch_data_num = 0;
-		ws2fep_act_limit_branch_temp branch_msg;
+		ws2gateway_act_limit_branch_temp branch_msg;
 		for (auto ite = m_time_limit_activity_branch_temp_map.begin(); ite != m_time_limit_activity_branch_temp_map.end(); ite++)
 		{
 			const s_time_limit_activity_branch_temp& temp_info = ite->second;
@@ -176,14 +176,14 @@ namespace faith
 			if (branch_data_num >= max_send_cs2ws_once_num)
 			{
 				branch_msg.data_num = branch_data_num;
-				world_server::getInstance().broadcast(&branch_msg, sizeof(branch_msg), e_server_type_fep);
+				world_server::getInstance().broadcast(&branch_msg, sizeof(branch_msg), e_server_type_gateway);
 				branch_msg.clear_data();
 				branch_data_num = 0;
 			}
 		}
 		branch_msg.is_end = true;
 		branch_msg.data_num = branch_data_num;
-		world_server::getInstance().broadcast(&branch_msg, sizeof(branch_msg), e_server_type_fep);
+		world_server::getInstance().broadcast(&branch_msg, sizeof(branch_msg), e_server_type_gateway);
 	}
 
 	void time_limit_activity_temp_ws_mgr::save_temp_to_db(const s_time_limit_activity_temp& temp_info)
@@ -505,7 +505,7 @@ namespace faith
 		load_limit_act_temp(is_empty, is_need_refresh_guid);
 		delete_temp_info_when_time_over();
 		check_and_clear_branch_template_no_use();
-		syn_template_info_to_cs_and_client_and_fep();
+		syn_template_info_to_cs_and_client_and_gateway();
 		time_limit_activity_ws_mgr::get_instance().init_all_time_limit_ws();
 		if (!world_server::getInstance().is_loading_flag_finish(e_ws_flag_init_time_limit_template))
 		{
@@ -1166,20 +1166,20 @@ namespace faith
 		}
 		time_limit_activity_ws_mgr::get_instance().init_all_time_limit_ws();
 		cloud_shop_mgr::get_instance().send_open_msg_to_all_client();
-		syn_template_info_to_cs_and_client_and_fep();
+		syn_template_info_to_cs_and_client_and_gateway();
 	}
 
-	void time_limit_activity_temp_ws_mgr::syn_template_info_to_cs_and_client_and_fep()
+	void time_limit_activity_temp_ws_mgr::syn_template_info_to_cs_and_client_and_gateway()
 	{
 		send_to_cs_template();
-		send_to_fep_template();
+		send_to_gateway_template();
 	}
 
 	bool time_limit_activity_temp_ws_mgr::is_can_load_new_temp()
 	{
 		return world_server::getInstance().is_loading_flag_finish(e_ws_flag_cs_connect) && world_server::getInstance().is_loading_flag_finish(e_ws_flag_server_cross_time)
 			&& world_server::getInstance().is_loading_flag_finish(e_ws_flag_time_limit_template) && world_server::getInstance().is_loading_flag_finish(e_ws_flag_cross_server_state)
-			&& world_server::getInstance().is_loading_flag_finish(e_ws_flag_load_cloud_shop_info) && world_server::getInstance().is_loading_flag_finish(e_ws_flag_fep_connect);
+			&& world_server::getInstance().is_loading_flag_finish(e_ws_flag_load_cloud_shop_info) && world_server::getInstance().is_loading_flag_finish(e_ws_flag_gateway_connect);
 	}
 
 	void time_limit_activity_temp_ws_mgr::load_new_temp_on_server_open()

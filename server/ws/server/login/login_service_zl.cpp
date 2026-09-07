@@ -51,7 +51,7 @@ namespace faith
 		//xstring opcode = login.sdk_data().opcode();
 
 		//xchar tag_buff[32];
-		//sprintf(tag_buff,"%d%d",client_uid.fepserver_uid,client_uid.fepsession_uid);
+		//sprintf(tag_buff,"%d%d",client_uid.gatewayserver_uid,client_uid.gatewaysession_uid);
 		//xstring tag = tag_buff;
 		//tag = tag.substr(0,8);
 		////sign
@@ -107,7 +107,7 @@ namespace faith
 		}
 		_RLOG_(MINFO, ::faith::log_detail::format_message(" sdk : dp to ls login end : state:{}",  pdata->e_result));
 
-		ls2fep_client_login request;
+		ls2gateway_client_login request;
 		request.eResult = pdata->e_result;
 		request.client_uid = pdata->client_uid;
 		request.login_type = pdata->login_type;
@@ -115,7 +115,7 @@ namespace faith
 		request.jewel_num = pdata->jewel_num;
 		request.is_create_new = pdata->is_create_new;
 		memcpy(request.account, pdata->account, sizeof(pdata->account));
-		world_server::getInstance().send_to_fep(pdata->client_uid.fepserver_uid, &request, sizeof(request));
+		world_server::getInstance().send_to_gateway(pdata->client_uid.gatewayserver_uid, &request, sizeof(request));
 	}
 
 	void login_service_zl::on_login_result_handle(ui64 uid,uint32 http_error_code,const xstring& http_error_info,const xstring& http_result)
@@ -210,7 +210,7 @@ namespace faith
 
 	void login_service_zl::save_account(const xstring& account, const s_client_uid client_uid)
 	{
-		const login_proto_login* login_data = login_service_mgr::getInstance().get_login_info(client_uid.fep_uid_64);
+		const login_proto_login* login_data = login_service_mgr::getInstance().get_login_info(client_uid.gateway_uid_64);
 		if (login_data == nullptr)
 		{
 			return;

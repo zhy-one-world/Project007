@@ -9,7 +9,7 @@
 
 using namespace faith;
 
-//static cs2fep_aoi_msg g_aoi_msg;
+//static cs2gateway_aoi_msg g_aoi_msg;
 static int32 g_aoi_tower_ary[init_player_max];
 
 void aoi_system::start_up(Entity* map_ent, MapTemplate* map_template)
@@ -69,7 +69,7 @@ void  aoi_system::send_message_aoi_all(unit_index_map& player_map, google::proto
 		//if (playr_num > 0)
 		//{
 		//	g_aoi_msg.data_num = playr_num;
-		//	g_aoi_msg.wheader = e_msg_index_cs2fep_aoi_msg;
+		//	g_aoi_msg.wheader = e_msg_index_cs2gateway_aoi_msg;
 		//	g_aoi_msg.header = header;
 		//	g_aoi_msg.data_size = net_pro->ByteSize();
 		//	if (g_aoi_msg.data_size > packege_length_max)
@@ -79,7 +79,7 @@ void  aoi_system::send_message_aoi_all(unit_index_map& player_map, google::proto
 		//	}
 		//	if (net_pro->SerializeToArray(g_aoi_msg.data, sizeof(g_aoi_msg.data)))
 		//	{
-		//		cell_server::getInstance().broadcast(&g_aoi_msg, g_aoi_msg.get_pak_length(), e_server_type_fep);
+		//		cell_server::getInstance().broadcast(&g_aoi_msg, g_aoi_msg.get_pak_length(), e_server_type_gateway);
 		//	}
 		//	else
 		//	{
@@ -132,7 +132,7 @@ void aoi_system::send_message_aoi_all(Entity* map_ent, google::protobuf::Message
 	//if (playr_num > 0)
 	//{
 	//	g_aoi_msg.data_num = playr_num;
-	//	g_aoi_msg.wheader = e_msg_index_cs2fep_aoi_msg;
+	//	g_aoi_msg.wheader = e_msg_index_cs2gateway_aoi_msg;
 	//	g_aoi_msg.header = header;
 	//	g_aoi_msg.data_size = net_pro->ByteSize();
 	//	if (g_aoi_msg.data_size > packege_length_max)
@@ -142,7 +142,7 @@ void aoi_system::send_message_aoi_all(Entity* map_ent, google::protobuf::Message
 	//	}
 	//	if (net_pro->SerializeToArray(g_aoi_msg.data, sizeof(g_aoi_msg.data)))
 	//	{
-	//		cell_server::getInstance().broadcast(&g_aoi_msg, g_aoi_msg.get_pak_length(), e_server_type_fep);
+	//		cell_server::getInstance().broadcast(&g_aoi_msg, g_aoi_msg.get_pak_length(), e_server_type_gateway);
 	//		//unit_man::log_msg_info(header, net_pro->ByteSize());
 	//	}
 	//	else
@@ -197,7 +197,7 @@ void aoi_system::send_message_aoi_by_type(Entity* map_ent, google::protobuf::Mes
 	//if (playr_num > 0)
 	//{
 	//	g_aoi_msg.data_num = playr_num;
-	//	g_aoi_msg.wheader = e_msg_index_cs2fep_aoi_msg;
+	//	g_aoi_msg.wheader = e_msg_index_cs2gateway_aoi_msg;
 	//	g_aoi_msg.header = header;
 	//	g_aoi_msg.data_size = net_pro->ByteSize();
 	//	if (g_aoi_msg.data_size > packege_length_max)
@@ -207,7 +207,7 @@ void aoi_system::send_message_aoi_by_type(Entity* map_ent, google::protobuf::Mes
 	//	}
 	//	if (net_pro->SerializeToArray(g_aoi_msg.data, sizeof(g_aoi_msg.data)))
 	//	{
-	//		cell_server::getInstance().broadcast(&g_aoi_msg, g_aoi_msg.get_pak_length(), e_server_type_fep);
+	//		cell_server::getInstance().broadcast(&g_aoi_msg, g_aoi_msg.get_pak_length(), e_server_type_gateway);
 	//		//unit_man::log_msg_info(header, net_pro->ByteSize());
 	//	}
 	//	else

@@ -77,8 +77,8 @@ namespace faith
 		m_server_time_zero = 0;
 		m_gm_state = SERVERCONFIG->gm_state;
 		m_server_id = SERVERCONFIG->game_id;
-		m_out_ip = FEPCONFIG->external_host;
-		m_out_port = FEPCONFIG->external_port;
+		m_out_ip = GATEWAYCONFIG->external_host;
+		m_out_port = GATEWAYCONFIG->external_port;
 		m_ws_ip = WSCONFIG->internal_host;
 		m_ws_port = WSCONFIG->internal_port;;
 		m_server_name = SERVERCONFIG->game_name;
@@ -102,7 +102,7 @@ namespace faith
 		}
 		m_is_set_cross_time = false;
 		guid_gen::set_server_id(m_server_id);
-		memset(m_fep_conn_index, 0, sizeof(m_fep_conn_index));
+		memset(m_gateway_conn_index, 0, sizeof(m_gateway_conn_index));
 		m_cross_info_map.clear();
 		m_ws_loading_flag = e_ws_flag_big_player
 			| e_ws_flag_cs_connect
@@ -121,7 +121,7 @@ namespace faith
 			| e_ws_flag_cross_server_state
 			| e_ws_flag_init_time_limit_template
 			| e_ws_flag_load_cloud_shop_info
-			| e_ws_flag_fep_connect
+			| e_ws_flag_gateway_connect
 			| e_ws_flag_attack_city
 			;
 		m_need_send_gate_flag_arr.clear();
@@ -691,9 +691,9 @@ namespace faith
 		}
 		switch (faith_server_ptr->get_server_type())
 		{
-		case e_server_type_fep:
+		case e_server_type_gateway:
 		{
-			client_session_mgr::getInstance().logout_by_fep(faith_server_ptr->get_conn_index());
+			client_session_mgr::getInstance().logout_by_gateway(faith_server_ptr->get_conn_index());
 		}
 		break;
 		case e_server_type_cs:
@@ -734,18 +734,18 @@ namespace faith
 		send_by_uid(conn_index, &pak_rep, data_len);
 		switch (msg->server_info.server_type)
 		{
-		case e_server_type_fep:
+		case e_server_type_gateway:
 		{
-			if (msg->server_info.server_index > SERVER_FEP_COUNT)
+			if (msg->server_info.server_index > SERVER_GATEWAY_COUNT)
 			{
 				return;
 			}
-			m_fep_conn_index[msg->server_info.server_index] = conn_index;
-			if (world_server::getInstance().is_loading_flag_finish(e_ws_flag_fep_connect))
+			m_gateway_conn_index[msg->server_info.server_index] = conn_index;
+			if (world_server::getInstance().is_loading_flag_finish(e_ws_flag_gateway_connect))
 			{
-				time_limit_activity_temp_ws_mgr::get_instance().send_to_fep_template();
+				time_limit_activity_temp_ws_mgr::get_instance().send_to_gateway_template();
 			}
-			world_server::getInstance().set_ws_loading_flag(e_ws_flag_fep_connect);
+			world_server::getInstance().set_ws_loading_flag(e_ws_flag_gateway_connect);
 		}
 		break;
 		case e_server_type_cs:
@@ -807,19 +807,19 @@ namespace faith
 		}
 		send_by_uid(conn_index, p_s2s, p_s2s->get_packet_len());
 	}
-	void world_server::send_to_fep(int32 server_index, const void* data_ptr, size_t data_len)
+	void world_server::send_to_gateway(int32 server_index, const void* data_ptr, size_t data_len)
 	{
-		if (server_index < 0 || server_index >= SERVER_FEP_COUNT)
+		if (server_index < 0 || server_index >= SERVER_GATEWAY_COUNT)
 		{
 			return;
 		}
-		net_server_mgr::getInstance().send_message(data_ptr, data_len, m_fep_conn_index[server_index], e_server_type_fep);
+		net_server_mgr::getInstance().send_message(data_ptr, data_len, m_gateway_conn_index[server_index], e_server_type_gateway);
 	}
-	void world_server::send_to_fep_all(const void* data_ptr, size_t data_len)
+	void world_server::send_to_gateway_all(const void* data_ptr, size_t data_len)
 	{
-		for (int32 i = 0; i < SERVER_FEP_COUNT; ++i)
+		for (int32 i = 0; i < SERVER_GATEWAY_COUNT; ++i)
 		{
-			net_server_mgr::getInstance().send_message(data_ptr, data_len, m_fep_conn_index[i], e_server_type_fep);
+			net_server_mgr::getInstance().send_message(data_ptr, data_len, m_gateway_conn_index[i], e_server_type_gateway);
 		}
 	}
 	void world_server::send_to_cs(int32 conn_index, const void* data_ptr, size_t data_len)
@@ -940,10 +940,10 @@ namespace faith
 				_RLOG_(MINFO, ::faith::log_detail::format_message("res svn code : {}",  globle_data::get_instance().get_version_template_ptr()->Version));
 			}
 			faith::int32 dp_num = net_client_mgr::getInstance().get_server_count(e_server_type_dp);
-			faith::int32 fep_num = net_server_mgr::getInstance().get_server_count(e_server_type_fep);
+			faith::int32 gateway_num = net_server_mgr::getInstance().get_server_count(e_server_type_gateway);
 			faith::int32 gate_num = net_client_mgr::getInstance().get_server_count(e_server_type_gate);
 			faith::int32 cs_num = net_server_mgr::getInstance().get_server_count(e_server_type_cs);
-			_RLOG_(MINFO, ::faith::log_detail::format_message("dp {}/{} cs {}/{} fep {}/{} gate {}/{}", dp_num,  SERVER_DP_COUNT, cs_num,  SERVER_CS_COUNT, fep_num,  SERVER_FEP_COUNT, gate_num,  SERVER_GATE_COUNT));
+			_RLOG_(MINFO, ::faith::log_detail::format_message("dp {}/{} cs {}/{} gateway {}/{} gate {}/{}", dp_num,  SERVER_DP_COUNT, cs_num,  SERVER_CS_COUNT, gateway_num,  SERVER_GATEWAY_COUNT, gate_num,  SERVER_GATE_COUNT));
 			int32 session_count = client_session_mgr::getInstance().get_session_num();
 			_RLOG_(MINFO, ::faith::log_detail::format_message("session num:{} session max:{}",  session_count,  init_session_max));
 
@@ -999,7 +999,7 @@ namespace faith
 		int32 session_count = client_session_mgr::getInstance().get_session_num();
 		if (daemon_client::getInstance().get_server_close() && session_count == 0)
 		{
-			_RLOG_(MINFO, "all fep close, all player offline, please shutdown ws");
+			_RLOG_(MINFO, "all gateway close, all player offline, please shutdown ws");
 			app_server::getInstance().stop();
 		}
 		daemon_client::getInstance().heart_tick(time_now);

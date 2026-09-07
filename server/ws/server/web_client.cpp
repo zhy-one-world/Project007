@@ -206,14 +206,14 @@ namespace faith
 					server_stop_msg.server_type = e_server_type_dp;
 					ws_client::getInstance().send_to_dp(&server_stop_msg, sizeof(server_stop_msg));
 					daemon_client::getInstance().set_server_close(true);
-					server_stop_msg.server_type = e_server_type_fep;
-					world_server::getInstance().send_to_fep_all(&server_stop_msg, sizeof(server_stop_msg));
+					server_stop_msg.server_type = e_server_type_gateway;
+					world_server::getInstance().send_to_gateway_all(&server_stop_msg, sizeof(server_stop_msg));
 					_RLOG_(MINFO, "FaithEye Stop Game!");
 				}
 				break;
-				case e_server_type_fep:
+				case e_server_type_gateway:
 				{
-					world_server::getInstance().send_to_fep_all(&server_stop_msg, sizeof(server_stop_msg));
+					world_server::getInstance().send_to_gateway_all(&server_stop_msg, sizeof(server_stop_msg));
 				}
 				break;
 				case e_server_type_cs:
@@ -760,7 +760,7 @@ namespace faith
 		std::string server_info_json_str = fastWriter.write(server_info_json);
 
 		s_client_uid temp_uid;
-		temp_uid.fep_uid_64 = world_server::getInstance().get_server_id();
+		temp_uid.gateway_uid_64 = world_server::getInstance().get_server_id();
 		xstring target_url = SERVERCONFIG->server_state_url;
 		std::vector<xstring> head_list;
 		head_list.push_back("Content-Type: application/json");
@@ -797,7 +797,7 @@ namespace faith
 		std::string server_info_json_str = fastWriter.write(server_info_json);
 
 		s_client_uid temp_uid;
-		temp_uid.fep_uid_64 = world_server::getInstance().get_server_id();
+		temp_uid.gateway_uid_64 = world_server::getInstance().get_server_id();
 		xstring target_url = SERVERCONFIG->account_info_url;
 		std::vector<xstring> head_list;
 		head_list.push_back("Content-Type: application/json");

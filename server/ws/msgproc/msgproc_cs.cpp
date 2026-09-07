@@ -113,7 +113,7 @@ namespace faith
 			{
 				faith::ws2cs_proto::client_logout pro_msg;
 				pro_msg.set_role_guid(packet->role_guid.server_64);
-				pro_msg.set_client_uid(packet->client_uid.fep_uid_64);
+				pro_msg.set_client_uid(packet->client_uid.gateway_uid_64);
 				pro_msg.set_need_send_save_end(false);
 				world_server::getInstance().broadcast_lua(&pro_msg, e_msg_index_ws2cs_client_logout, e_server_type_cs);
 			}
@@ -136,21 +136,21 @@ namespace faith
 			world_boss_ws_mgr::get_instance().send_world_boss_all(client_session_ptr);
 			world_boss_ws_mgr::get_instance().send_all_boss_hp_per(client_session_ptr);
 
-			ws2fep_reconnect_game fep_msg;
-			fep_msg.client_uid = packet->client_uid;
-			fep_msg.cellserver_id = client_session_ptr->get_cs_conn_index();
-			fep_msg.array_index = client_session_ptr->get_cs_array_index();
-			fep_msg.reconnect_res = e_reconnect_result_win;
-			memcpy(fep_msg.account, client_session_ptr->m_account, sizeof(fep_msg.account));
-			client_session_ptr->send_to_fep(&fep_msg, sizeof(fep_msg));
+			ws2gateway_reconnect_game gateway_msg;
+			gateway_msg.client_uid = packet->client_uid;
+			gateway_msg.cellserver_id = client_session_ptr->get_cs_conn_index();
+			gateway_msg.array_index = client_session_ptr->get_cs_array_index();
+			gateway_msg.reconnect_res = e_reconnect_result_win;
+			memcpy(gateway_msg.account, client_session_ptr->m_account, sizeof(gateway_msg.account));
+			client_session_ptr->send_to_gateway(&gateway_msg, sizeof(gateway_msg));
 		}
 		else
 		{
-			ws2fep_reconnect_game fep_msg;
-			fep_msg.client_uid = packet->client_uid;
-			fep_msg.reconnect_res = e_reconnect_result_cs_no_find;
-			memcpy(fep_msg.account, client_session_ptr->m_account, sizeof(fep_msg.account));
-			client_session_ptr->send_to_fep(&fep_msg, sizeof(fep_msg));
+			ws2gateway_reconnect_game gateway_msg;
+			gateway_msg.client_uid = packet->client_uid;
+			gateway_msg.reconnect_res = e_reconnect_result_cs_no_find;
+			memcpy(gateway_msg.account, client_session_ptr->m_account, sizeof(gateway_msg.account));
+			client_session_ptr->send_to_gateway(&gateway_msg, sizeof(gateway_msg));
 
 			client_session_mgr::getInstance().logout_client(client_session_ptr);
 		}
@@ -180,7 +180,7 @@ namespace faith
 			{
 				faith::ws2cs_proto::client_logout pro_msg;
 				pro_msg.set_role_guid(packet->char_info_to_ws.role_guid.server_64);
-				pro_msg.set_client_uid(packet->client_uid.fep_uid_64);
+				pro_msg.set_client_uid(packet->client_uid.gateway_uid_64);
 				pro_msg.set_need_send_save_end(false);
 				world_server::getInstance().send_by_uid_lua(conn_index, &pro_msg, e_msg_index_ws2cs_client_logout);
 			}
@@ -194,13 +194,13 @@ namespace faith
 			session->m_status = client_session::e_ss_ingame;
 			session->set_cs_array_index(packet->char_info_to_ws.array_index);
 			session->m_step_num = client_session::e_session_step_cs_enter_game;
-			ws2fep_enter_game rep_fep;
-			rep_fep.client_uid = session->get_client_uid();
-			rep_fep.e_result = e_error_code_success;
-			rep_fep.cs_array_index = packet->char_info_to_ws.array_index;
-			rep_fep.server_type = e_server_type_ws;
-			memcpy(rep_fep.account, session->m_account, sizeof(rep_fep.account));
-			session->send_to_fep(&rep_fep, sizeof(rep_fep));
+			ws2gateway_enter_game rep_gateway;
+			rep_gateway.client_uid = session->get_client_uid();
+			rep_gateway.e_result = e_error_code_success;
+			rep_gateway.cs_array_index = packet->char_info_to_ws.array_index;
+			rep_gateway.server_type = e_server_type_ws;
+			memcpy(rep_gateway.account, session->m_account, sizeof(rep_gateway.account));
+			session->send_to_gateway(&rep_gateway, sizeof(rep_gateway));
 		}
 			break;
 		case cs2ws_enter_game::e_failed_repeat_player_id:

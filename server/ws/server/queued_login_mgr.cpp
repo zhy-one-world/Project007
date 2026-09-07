@@ -82,7 +82,7 @@ namespace faith
 				}
 			}
 			// 刷新排位
-			ws2fep_login_queue_status msg;
+			ws2gateway_login_queue_status msg;
 			int32 queue_count = 1;
 			for (unit_index_list_it it = m_queued_client_list.begin(); it != m_queued_client_list.end(); ++it)
 			{
@@ -99,7 +99,7 @@ namespace faith
 						msg.left_time_in_sec = 9999;
 					}
 					msg.client_uid = client_session_ptr->m_client_uid;
-					client_session_ptr->send_to_fep(&msg, sizeof(msg));
+					client_session_ptr->send_to_gateway(&msg, sizeof(msg));
 					queue_count++;
 				}
 			}
@@ -129,13 +129,13 @@ namespace faith
 		}
 		else
 		{
-			ws2fep_client_logined msg;
+			ws2gateway_client_logined msg;
 			msg.client_uid = client_session_ptr->m_client_uid;
 			memcpy(msg.account, client_session_ptr->m_account, max_account_length);
 			msg.eResult = e_error_code_success;
 			msg.login_type = client_session_ptr->m_login_type;
 			msg.login_type_plus = client_session_ptr->m_login_type_plus;
-			client_session_ptr->send_to_fep(&msg, sizeof(msg));
+			client_session_ptr->send_to_gateway(&msg, sizeof(msg));
 			client_session_ptr->m_step_num = client_session::e_session_step_login_win;
 		}
 	}
@@ -151,12 +151,12 @@ namespace faith
 		int32 queue_num = m_queued_client_list.size();
 		if ((m_online_counter + queue_num) >= init_socket_link)
 		{//send服务器已到达最大连接数，登出
-			ws2fep_client_logined msg;
+			ws2gateway_client_logined msg;
 			msg.client_uid = client_session_ptr->m_client_uid;
 			msg.eResult = e_error_code_login_login_queue_full;
 			msg.login_type = client_session_ptr->m_login_type;
 			msg.login_type_plus = client_session_ptr->m_login_type_plus;
-			client_session_ptr->send_to_fep(&msg, sizeof(msg));
+			client_session_ptr->send_to_gateway(&msg, sizeof(msg));
 			client_session_mgr::getInstance().logout_client(client_session_ptr);
 			return;
 		}
@@ -177,7 +177,7 @@ namespace faith
 		client_session_ptr->m_online_state = client_session::e_os_inqueue;
 		if (m_queued_client_list.size() > queue_player_count || m_online_counter >= m_max_login_normal_player)
 		{
-			ws2fep_client_logined msg;
+			ws2gateway_client_logined msg;
 			msg.client_uid = client_session_ptr->m_client_uid;
 			msg.login_type = client_session_ptr->m_login_type;
 			msg.login_type_plus = client_session_ptr->m_login_type_plus;
@@ -192,7 +192,7 @@ namespace faith
 				msg.left_time_in_sec = 9999;
 			}
 			memcpy(msg.account, client_session_ptr->m_account, sizeof(msg.account));
-			client_session_ptr->send_to_fep(&msg, sizeof(msg));
+			client_session_ptr->send_to_gateway(&msg, sizeof(msg));
 		}
 	}
 

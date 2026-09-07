@@ -61,10 +61,10 @@ namespace faith
 		int32 external_port;//外网端口
 	};
 
-	class fep_config : public net_config_base {
+	class gateway_config : public net_config_base {
 	public:
-		fep_config() { clear_data(); };
-		virtual ~fep_config() {};
+		gateway_config() { clear_data(); };
+		virtual ~gateway_config() {};
 
 		virtual void clear_data();
 		virtual bool parse_by_json(Json::Value& json_obj);
@@ -182,7 +182,7 @@ namespace faith
 
 }
 #define SERVERCONFIG faith::servers_config_manager::getInstance().get_server_config()
-#define FEPCONFIG ((fep_config*)(faith::servers_config_manager::getInstance().get_server_config(e_server_type_fep)))
+#define GATEWAYCONFIG ((gateway_config*)(faith::servers_config_manager::getInstance().get_server_config(e_server_type_gateway)))
 #define GATECONFIG ((gate_config*)(faith::servers_config_manager::getInstance().get_server_config(e_server_type_gate)))
 #define CSCONFIG ((cs_config*)(faith::servers_config_manager::getInstance().get_server_config(e_server_type_cs)))
 #define WSCONFIG ((ws_config*)(faith::servers_config_manager::getInstance().get_server_config(e_server_type_ws)))

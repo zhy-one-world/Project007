@@ -70,7 +70,7 @@ namespace faith
 		void														change_limit_act_branch_temp(const TimeLimitActivityBranchTemplate* limit_act_temp, int32 act_temp_id);
 		void														change_limit_act_branch_temp_all(const TimeLimitActivityTemplate* limit_act_temp, int32 act_temp_id);
 		void														send_to_cs_template();
-		void														send_to_fep_template();
+		void														send_to_gateway_template();
 		bool														is_self_server_temp_line(e_time_limit_activity_type activity_type, const std::vector<int32>& param_int_arr);//该行是否为本服所需
 		void														check_and_update_branch_temp_info(const TimeLimitActivityTemplate* limit_act_temp, int32 act_temp_id, int32 mark_time, int32 template_from_type);
 		void														delete_temp_info_when_time_over();
@@ -78,7 +78,7 @@ namespace faith
 		std::vector<int32>											get_activity_id_arr_by_type(int32 activity_type);
 		s_time_limit_activity_temp									exchange_to_struct_by_template_ptr(const TimeLimitActivityTemplate* template_ptr);
 		void														delete_time_limit_activity_by_type(int32 time_limit_activity_type);
-		void														syn_template_info_to_cs_and_client_and_fep();
+		void														syn_template_info_to_cs_and_client_and_gateway();
 		bool														is_can_load_new_temp();
 		void														load_new_temp_on_server_open();
 		void														refresh_activity_guid(int32 old_act_guid, int32 new_act_guid);

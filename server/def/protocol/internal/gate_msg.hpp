@@ -31,7 +31,7 @@ namespace faith
 		e_msg_gate2server_rep_register,
 		e_msg_gate2server_off_line,
 		e_msg_gate2ws_rep_off_line,
-		e_msg_index_fep2ws_check_token,
+		e_msg_index_gateway2ws_check_token,
 		e_msg_gate2ws_rep_token,
 		e_msg_server2gate_send_to_server,
 		e_msg_gate2ws_rep_check_from_ws,

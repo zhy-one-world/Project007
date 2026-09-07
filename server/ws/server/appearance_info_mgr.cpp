@@ -32,7 +32,7 @@ namespace faith
 			net_proto.set_appearance_info_string(appearance_info);
 			packet_c2s_s2c msg;
 			serialize_msg::get_instance().set_serialize_msg_new(msg, &net_proto, client_uid, e_msgindex_s2c_save_appearance_info_to_id_end);
-			world_server::getInstance().send_to_fep(client_uid.fepserver_uid, (void*)&msg, msg.get_packet_len());
+			world_server::getInstance().send_to_gateway(client_uid.gatewayserver_uid, (void*)&msg, msg.get_packet_len());
 		}
 		else
 		{
@@ -50,7 +50,7 @@ namespace faith
 		net_proto.set_appearance_info_string(appearance_info);
 		packet_c2s_s2c msg;
 		serialize_msg::get_instance().set_serialize_msg_new(msg, &net_proto, client_uid, e_msgindex_s2c_save_appearance_info_to_id_end);
-		world_server::getInstance().send_to_fep(client_uid.fepserver_uid, (void*)&msg, msg.get_packet_len());
+		world_server::getInstance().send_to_gateway(client_uid.gatewayserver_uid, (void*)&msg, msg.get_packet_len());
 
 		m_appearance_info_by_string[appearance_info] = id;
 		m_appearance_info_by_id[id] = appearance_info;
@@ -66,7 +66,7 @@ namespace faith
 			net_proto.set_appearance_info_string(iter->second);
 			packet_c2s_s2c msg;
 			serialize_msg::get_instance().set_serialize_msg_new(msg, &net_proto, client_uid, e_msgindex_s2c_load_appearance_info_by_id_end);
-			world_server::getInstance().send_to_fep(client_uid.fepserver_uid, (void*)&msg, msg.get_packet_len());
+			world_server::getInstance().send_to_gateway(client_uid.gatewayserver_uid, (void*)&msg, msg.get_packet_len());
 		}
 		else
 		{
@@ -84,7 +84,7 @@ namespace faith
 		net_proto.set_appearance_info_string(appearance_info);
 		packet_c2s_s2c msg;
 		serialize_msg::get_instance().set_serialize_msg_new(msg, &net_proto, client_uid, e_msgindex_s2c_load_appearance_info_by_id_end);
-		world_server::getInstance().send_to_fep(client_uid.fepserver_uid, (void*)&msg, msg.get_packet_len());
+		world_server::getInstance().send_to_gateway(client_uid.gatewayserver_uid, (void*)&msg, msg.get_packet_len());
 
 		if (appearance_info != "")
 		{

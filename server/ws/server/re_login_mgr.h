@@ -19,7 +19,7 @@ namespace faith
 	struct s_re_login_info
 	{
 		xchar					m_account[max_account_length + 1];
-		fep2ws_client_logined	m_login_data;
+		gateway2ws_client_logined	m_login_data;
 		s_re_login_info()
 		{
 			memset(this, 0, sizeof(*this));

@@ -858,7 +858,7 @@ namespace faith
          e_logout_result_ls_crash, //LS当机
          e_logout_result_kick_by_rpc, //网页上踢的
          e_logout_result_no_find_player, //未找到这个玩家
-         e_logout_result_fep_id_error, //发错fep了
+         e_logout_result_gateway_id_error, //发错gateway了
          e_logout_result_connect_dis, //网络连接断开
          e_logout_result_begin_time, //时间未到不能进入
          e_logout_result_password_error, //密码错误
@@ -880,7 +880,7 @@ namespace faith
      enum e_reconnect_result
      {
          e_reconnect_result_win, //成功
-         e_reconnect_result_fep_no_find, //fep未找到数据
+         e_reconnect_result_gateway_no_find, //gateway未找到数据
          e_reconnect_result_ws_no_find, //ws未找到数据
          e_reconnect_result_cs_no_find, //cs未找到数据
          e_reconnect_result_max

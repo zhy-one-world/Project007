@@ -153,13 +153,13 @@ namespace faith
 		}
 		return true;
 	}
-	void fep_config::clear_data()
+	void gateway_config::clear_data()
 	{
 		net_config_base::clear_data();
 		client_send_limit = 20;
 		init_socket_num = 20;
 	}
-	bool fep_config::parse_by_json(Json::Value& json_obj)
+	bool gateway_config::parse_by_json(Json::Value& json_obj)
 	{
 		if (json_obj.isObject() == false)
 		{
@@ -437,8 +437,8 @@ namespace faith
 		case faith::e_server_type_ws:
 			return new ws_config();
 			break;
-		case faith::e_server_type_fep:
-			return new fep_config();
+		case faith::e_server_type_gateway:
+			return new gateway_config();
 			break;
 		case faith::e_server_type_cs:
 			return new cs_config();

@@ -58,8 +58,8 @@ namespace faith {
 enum proto_header : int {
   e_msgindex_s2c_proto_version_wrong = 0,
   e_msgindex_s2c_common_error = 10001,
-  e_msgindex_c2fep_ping = 10002,
-  e_msgindex_fep2c_ping = 10003,
+  e_msgindex_c2gateway_ping = 10002,
+  e_msgindex_gateway2c_ping = 10003,
   e_msgindex_c2cs_ping = 10004,
   e_msgindex_cs2c_ping = 10005,
   e_msgindex_c2sp_server_list = 10006,

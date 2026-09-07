@@ -54,7 +54,7 @@ namespace faith
 	const int32 auction_check_time = 60 * second_tick_time;//拍卖行检测时间
 	const int32 back_hp_magic_time = 10 * second_tick_time;//30s tick
 	const int32 all_day_in_week = 7;//一周的天数
-	const int32 gate_fet_state = 5 * second_tick_time;//gate上fep的状态同步
+	const int32 gate_fet_state = 5 * second_tick_time;//gate上gateway的状态同步
 	const int32 legion_answer_interval_time = 60 * second_tick_time;			//军团答题间隔时间
 	const int32 legion_answer_fisrt_notice_time = 60;							//军团答题第一次准备公告时间
 	const int32 legion_answer_second_notice_time = 30;							//军团答题第二次准备公告时间

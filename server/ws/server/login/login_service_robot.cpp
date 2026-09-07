@@ -44,7 +44,7 @@ namespace faith
 		{
 			return;
 		}
-		ls2fep_client_login request;
+		ls2gateway_client_login request;
 		request.eResult = pdata->e_result;
 		request.client_uid = pdata->client_uid;
 		request.login_type = pdata->login_type;
@@ -53,7 +53,7 @@ namespace faith
 		request.radio_host = pdata->radio_host;
 		request.is_create_new = pdata->is_create_new;
 		memcpy(request.account, pdata->account, sizeof(request.account));
-		world_server::getInstance().send_to_fep(pdata->client_uid.fepserver_uid, &request, sizeof(request));
+		world_server::getInstance().send_to_gateway(pdata->client_uid.gatewayserver_uid, &request, sizeof(request));
 	}
 
 }

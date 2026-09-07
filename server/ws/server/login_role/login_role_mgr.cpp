@@ -198,6 +198,6 @@ namespace faith
 
 		packet_c2s_s2c msg;
 		serialize_msg::get_instance().set_serialize_msg_new(msg, &char_info, login_info.client_uid, e_msgindex_s2c_enum_char);
-		world_server::getInstance().send_to_fep(login_info.client_uid.fepserver_uid, &msg, msg.get_packet_len());
+		world_server::getInstance().send_to_gateway(login_info.client_uid.gatewayserver_uid, &msg, msg.get_packet_len());
 	}
 }

@@ -24,37 +24,37 @@ namespace faith
 	enum
 	{
 		// login
-		e_msg_index_fep2ls_client_login = e_msg_base_login,
-		e_msg_index_ls2fep_client_login,						
+		e_msg_index_gateway2ls_client_login = e_msg_base_login,
+		e_msg_index_ls2gateway_client_login,						
 		e_msg_index_ls2dp_client_login,				
 		e_msg_index_dp2ls_client_login,
-		e_msg_index_fep2ws_client_reconnect,
-		e_msg_index_fep2ws_client_logined,
-		e_msg_index_fep2ws_leave_queued,
-		e_msg_index_ws2fep_client_logined,	
-		e_msg_index_c2fep_token_login,
-		e_msg_index_fep2ls_client_login_token,
+		e_msg_index_gateway2ws_client_reconnect,
+		e_msg_index_gateway2ws_client_logined,
+		e_msg_index_gateway2ws_leave_queued,
+		e_msg_index_ws2gateway_client_logined,	
+		e_msg_index_c2gateway_token_login,
+		e_msg_index_gateway2ls_client_login_token,
 		e_msg_index_ls2dp_client_login_token,
 		e_msg_index_ws2ls_reactive_client,
 		e_msg_index_ws2c_login_queue_status,
 		// logout
-		e_msg_index_fep2ws_client_logout,
+		e_msg_index_gateway2ws_client_logout,
 		e_msg_index_ws2cs_client_logout,
 		e_msg_index_cs2ws_client_logout,
 		// account
-		e_msg_index_fep2ws_disable_account,
-		e_msg_index_ws2fep_kickout_account,
+		e_msg_index_gateway2ws_disable_account,
+		e_msg_index_ws2gateway_kickout_account,
 		// check
 		e_msg_index_ls2dp_check_cluster_login_key,
 		e_msg_index_dp2ls_check_cluster_login_key,
-		e_msg_index_fep2c_captcha_check,
-		e_msg_index_c2fep_captcha_check,
+		e_msg_index_gateway2c_captcha_check,
+		e_msg_index_c2gateway_captcha_check,
 		// encrypt
-		e_msg_index_c2fep_encrypted_data,
-		e_msg_index_c2fep_encrypted_data_,
+		e_msg_index_c2gateway_encrypted_data,
+		e_msg_index_c2gateway_encrypted_data_,
 		// captcha
-		e_msg_index_c2fep_refresh_login_captcha,
-		e_msg_index_fep2c_refresh_login_captcha,
+		e_msg_index_c2gateway_refresh_login_captcha,
+		e_msg_index_gateway2c_refresh_login_captcha,
 
 	};
 
@@ -62,8 +62,8 @@ namespace faith
 	/*           Login                                                      */
 	/************************************************************************/
 
-	// 登陆时ls向fep发送信息
-	struct ls2fep_client_login : public packet_base		
+	// 登陆时ls向gateway发送信息
+	struct ls2gateway_client_login : public packet_base		
 	{
 		s_client_uid								client_uid;
 		int32										eResult;
@@ -81,10 +81,10 @@ namespace faith
 		int32										age;
 		int32										month_recharge_num;
 		int32										month_recharge_time;
-		ls2fep_client_login()
+		ls2gateway_client_login()
 		{
 			memset(this,0,sizeof(*this));
-			wheader  = e_msg_index_ls2fep_client_login;
+			wheader  = e_msg_index_ls2gateway_client_login;
 		}
 	};
 
@@ -137,33 +137,33 @@ namespace faith
 			wheader= e_msg_index_dp2ls_client_login;
 		}
 	};
-	// 登陆成功时fep向ws发送信息
-	struct fep2ws_client_reconnect : public packet_base
+	// 登陆成功时gateway向ws发送信息
+	struct gateway2ws_client_reconnect : public packet_base
 	{
 		s_client_uid								client_uid;
 		xchar										account[max_account_length + 1];
 		int32										cur_map_id;
 		int32										cur_map_line_id;
-		fep2ws_client_reconnect()
+		gateway2ws_client_reconnect()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader = e_msg_index_fep2ws_client_reconnect;
+			wheader = e_msg_index_gateway2ws_client_reconnect;
 		}
 	};
 
-	struct fep2ws_leave_queued : public packet_base
+	struct gateway2ws_leave_queued : public packet_base
 	{
 		s_client_uid								client_uid;
 		xchar										account[max_account_length + 1];
-		fep2ws_leave_queued()
+		gateway2ws_leave_queued()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader = e_msg_index_fep2ws_leave_queued;
+			wheader = e_msg_index_gateway2ws_leave_queued;
 		}
 	};
 
-	// 登陆成功时fep向ws发送信息
-	struct fep2ws_client_logined : public packet_base
+	// 登陆成功时gateway向ws发送信息
+	struct gateway2ws_client_logined : public packet_base
 	{
 		s_client_uid								client_uid;
 		xchar										account[max_account_length+1];
@@ -177,14 +177,14 @@ namespace faith
 		int32										server_id;
 		int64										ban_role_array[faith::max_character_num];
 		int64										ban_chat_array[faith::max_character_num];
-		fep2ws_client_logined()
+		gateway2ws_client_logined()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader= e_msg_index_fep2ws_client_logined;
+			wheader= e_msg_index_gateway2ws_client_logined;
 		}
 	};
 
-	struct ws2fep_client_logined : public packet_base
+	struct ws2gateway_client_logined : public packet_base
 	{
 		s_client_uid									client_uid;
 		e_error_code									eResult;
@@ -195,20 +195,20 @@ namespace faith
 		ui16											data_len;
 		xchar											account[max_account_length + 1];
 
-		ws2fep_client_logined()
+		ws2gateway_client_logined()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader= e_msg_index_ws2fep_client_logined;
+			wheader= e_msg_index_ws2gateway_client_logined;
 		}
 	};
 
-	struct ws2fep_login_queue_status : public packet_base
+	struct ws2gateway_login_queue_status : public packet_base
 	{
 		uint32					left_time_in_sec;		//	估计剩余时间
 		uint32					queue_pos;				//	在队列中的位置
 		s_client_uid				client_uid;
 
-		ws2fep_login_queue_status()
+		ws2gateway_login_queue_status()
 		{
 			memset(this,0,sizeof(*this));
 			wheader = e_msg_index_ws2c_login_queue_status;
@@ -217,7 +217,7 @@ namespace faith
 	/************************************************************************/
 	/*           Logout                                                      */
 	/************************************************************************/
-	struct fep2ws_client_logout : public packet_base
+	struct gateway2ws_client_logout : public packet_base
 	{
 		s_client_uid	client_uid;
 		e_logout_result eReason;
@@ -227,10 +227,10 @@ namespace faith
 		int32			online_time;
 		int32			month_recharge_num;
 		int32			month_recharge_time;
-		fep2ws_client_logout()
+		gateway2ws_client_logout()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader= e_msg_index_fep2ws_client_logout;
+			wheader= e_msg_index_gateway2ws_client_logout;
 		}
 	};
 
@@ -262,7 +262,7 @@ namespace faith
 	/************************************************************************/
 	/*           account                                                    */
 	/************************************************************************/
-	struct fep2ws_disable_account : public packet_base
+	struct gateway2ws_disable_account : public packet_base
 	{
 		s_client_uid	client_uid;
 
@@ -270,22 +270,22 @@ namespace faith
 		int32													 reason;
 		uint32													  minutes;
 
-		fep2ws_disable_account()
+		gateway2ws_disable_account()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader = e_msg_index_fep2ws_disable_account;
+			wheader = e_msg_index_gateway2ws_disable_account;
 		}
 	};
 
-	struct ws2fep_kickout_account : public packet_base
+	struct ws2gateway_kickout_account : public packet_base
 	{
 		s_client_uid		client_uid;
 		e_logout_result		reason;
 
-		ws2fep_kickout_account()
+		ws2gateway_kickout_account()
 		{ 
 			memset(this, 0, sizeof(*this));
-			wheader = e_msg_index_ws2fep_kickout_account;
+			wheader = e_msg_index_ws2gateway_kickout_account;
 		}
 	};
 
@@ -327,7 +327,7 @@ namespace faith
 		}
 	};
 
-	struct fep2c_check_captcha : public packet_base
+	struct gateway2c_check_captcha : public packet_base
 	{
 		enum{	datalen_limit = 8000,datafile_extname_len = 4, answer_len = 10, answer_num = 4	};
 		enum
@@ -341,7 +341,7 @@ namespace faith
 		};
 
 		ui8		type;									
-		xchar	file_type[datafile_extname_len + 1];	//验证码图片文件的格式（bmp/jpg/gif ...），如果fep没有使用验证码，则file_type="",data_len=0
+		xchar	file_type[datafile_extname_len + 1];	//验证码图片文件的格式（bmp/jpg/gif ...），如果gateway没有使用验证码，则file_type="",data_len=0
 		xchar	answer[answer_num][answer_len + 1];
 		uint32	data_len;
 		xchar	data[datalen_limit];
@@ -352,20 +352,20 @@ namespace faith
 			return basic_len + data_len;
 		}
 
-		fep2c_check_captcha()
+		gateway2c_check_captcha()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader = e_msg_index_fep2c_captcha_check;
+			wheader = e_msg_index_gateway2c_captcha_check;
 		}
 	};
 
-	struct c2fep_check_captcha : public packet_base
+	struct c2gateway_check_captcha : public packet_base
 	{
 		xchar	captcha_str[max_captcha_length + 1];		// captcha_str for login
-		c2fep_check_captcha()
+		c2gateway_check_captcha()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader = e_msg_index_c2fep_captcha_check;
+			wheader = e_msg_index_c2gateway_captcha_check;
 		}
 	};	
 
@@ -389,16 +389,16 @@ namespace faith
 	/************************************************************************/
 	/*                                                                      */
 	/************************************************************************/
-	struct c2fep_refresh_login_captcha : public packet_base
+	struct c2gateway_refresh_login_captcha : public packet_base
 	{
-		c2fep_refresh_login_captcha()
+		c2gateway_refresh_login_captcha()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader = e_msg_index_c2fep_refresh_login_captcha;
+			wheader = e_msg_index_c2gateway_refresh_login_captcha;
 		}
 	};
 
-	struct fep2c_refresh_login_captcha : public packet_base
+	struct gateway2c_refresh_login_captcha : public packet_base
 	{
 		enum
 		{
@@ -411,7 +411,7 @@ namespace faith
 
 		enum{	datalen_limit = 8000,datafile_extname_len = 4	};
 
-		xchar	file_type[datafile_extname_len + 1];	//验证码图片文件的格式（bmp/jpg/gif ...），如果fep没有使用验证码，则file_type="",data_len=0
+		xchar	file_type[datafile_extname_len + 1];	//验证码图片文件的格式（bmp/jpg/gif ...），如果gateway没有使用验证码，则file_type="",data_len=0
 		uint32	data_len;
 		xchar	data[datalen_limit];
 
@@ -421,10 +421,10 @@ namespace faith
 			return basic_len + data_len;
 		}
 
-		fep2c_refresh_login_captcha()
+		gateway2c_refresh_login_captcha()
 		{
 			memset(this, 0, sizeof(*this));
-			wheader = e_msg_index_fep2c_refresh_login_captcha;
+			wheader = e_msg_index_gateway2c_refresh_login_captcha;
 		}
 	};
 

@@ -92,7 +92,7 @@ namespace faith
 			return;
 		}
 
-		std::vector<client_session*> fep_session_data;
+		std::vector<client_session*> gateway_session_data;
 		client_session* all_session_map = client_session_mgr::getInstance().get_all_session();
 		for (int32 i = 0; i <= client_session_mgr::getInstance().get_session_array_used(); ++i)
  		{
@@ -107,10 +107,10 @@ namespace faith
 			{
 				continue;
 			}
-			fep_session_data.push_back(&client_session_ref);
+			gateway_session_data.push_back(&client_session_ref);
 		}
 
-		int32 session_num = fep_session_data.size();
+		int32 session_num = gateway_session_data.size();
 		if (session_num <= 0)
 		{
 			return;
@@ -123,7 +123,7 @@ namespace faith
 
 		for (int32 j = 0; j < session_num; ++j)
 		{
-			client_session* client_session_ptr = fep_session_data[j];
+			client_session* client_session_ptr = gateway_session_data[j];
 			if (nullptr == client_session_ptr)
 			{
 				continue;

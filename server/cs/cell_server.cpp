@@ -50,7 +50,7 @@ namespace faith
 		{
 			m_need_begin_cross_server_config[i] = 0;
 		}
-		memset(m_fep_conn_index, 0, sizeof(m_fep_conn_index));
+		memset(m_gateway_conn_index, 0, sizeof(m_gateway_conn_index));
 
 		for (int32 i = e_server_info_type_begin_cross_server_time; i < e_server_info_type_max; i++)
 		{
@@ -81,9 +81,9 @@ namespace faith
 				}
 				switch (faith_server_ptr->get_server_type())
 				{
-				case e_server_type_fep:
+				case e_server_type_gateway:
 				{
-					_RLOG_(MINFO, "on_conn_closed e_server_type_fep!");
+					_RLOG_(MINFO, "on_conn_closed e_server_type_gateway!");
 					unit_man::save_all_player(e_logout_result_connect_dis);
 					unit_man::remove_all_player();
 				}
@@ -120,9 +120,9 @@ namespace faith
 		}
 		switch (faith_server_ptr->get_server_type())
 		{
-		case e_server_type_fep:
+		case e_server_type_gateway:
 		{
-			_RLOG_(MINFO, "on_conn_closed e_server_type_fep!");
+			_RLOG_(MINFO, "on_conn_closed e_server_type_gateway!");
 			unit_man::save_all_player(e_logout_result_connect_dis);
 			unit_man::remove_all_player();
 		}
@@ -131,13 +131,13 @@ namespace faith
 			break;
 		}
 	}
-	void cell_server::send_to_fep(const void* data_ptr, size_t data_len, int32 server_index)
+	void cell_server::send_to_gateway(const void* data_ptr, size_t data_len, int32 server_index)
 	{
-		if (server_index < 0 || server_index >= SERVER_FEP_COUNT)
+		if (server_index < 0 || server_index >= SERVER_GATEWAY_COUNT)
 		{
 			return;
 		}
-		net_server_mgr::getInstance().send_message(data_ptr, data_len, m_fep_conn_index[server_index], e_server_type_fep);
+		net_server_mgr::getInstance().send_message(data_ptr, data_len, m_gateway_conn_index[server_index], e_server_type_gateway);
 	}
 	void cell_server::broadcast(const void* data_ptr, size_t data_len, e_server_type server_type)
 	{
@@ -161,13 +161,13 @@ namespace faith
 		}
 		switch (msg->server_info.server_type)
 		{
-		case e_server_type_fep:
+		case e_server_type_gateway:
 		{
-			if (msg->server_info.server_index > SERVER_FEP_COUNT)
+			if (msg->server_info.server_index > SERVER_GATEWAY_COUNT)
 			{
 				return;
 			}
-			m_fep_conn_index[msg->server_info.server_index] = conn_index;
+			m_gateway_conn_index[msg->server_info.server_index] = conn_index;
 		}
 		break;
 		default:
@@ -270,9 +270,9 @@ namespace faith
 			faith::int32 npc_count = unit_man::get_npc_num();
 			faith::int32 ws_num = net_client_mgr::getInstance().get_server_count(e_server_type_ws);
 			faith::int32 dp_num = net_client_mgr::getInstance().get_server_count(e_server_type_dp);
-			faith::int32 fep_num = net_server_mgr::getInstance().get_server_count(e_server_type_fep);
+			faith::int32 gateway_num = net_server_mgr::getInstance().get_server_count(e_server_type_gateway);
 			faith::int32 gate_num = net_client_mgr::getInstance().get_server_count(e_server_type_gate);
-			_RLOG_(MINFO, ::faith::log_detail::format_message("ws {}/{} dp {}/{} fep {}/{} gate {}/{}",  ws_num,  SERVER_WS_COUNT,  dp_num,  SERVER_DP_COUNT,  fep_num,  SERVER_FEP_COUNT,  gate_num,  SERVER_GATE_COUNT));
+			_RLOG_(MINFO, ::faith::log_detail::format_message("ws {}/{} dp {}/{} gateway {}/{} gate {}/{}",  ws_num,  SERVER_WS_COUNT,  dp_num,  SERVER_DP_COUNT,  gateway_num,  SERVER_GATEWAY_COUNT,  gate_num,  SERVER_GATE_COUNT));
 			_RLOG_(MINFO, ::faith::log_detail::format_message("session num {} session {}",  session_count,  SERVERCONFIG->init_player_num));
 			_RLOG_(MINFO, ::faith::log_detail::format_message("robot num {} ",  robot_count));
 			_RLOG_(MINFO, ::faith::log_detail::format_message("npc num {} npc max {}",  npc_count,  init_npc_max));

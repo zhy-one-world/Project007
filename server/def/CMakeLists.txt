@@ -17,6 +17,9 @@ file(GLOB_RECURSE HEADER_FILES *.h *.hpp)
 
 # 递归查找文件夹下的 *.cpp *.c 文件保存到 SOURCE_FILES
 file(GLOB_RECURSE SOURCE_FILES *.cpp *.cc)
+# config_center.pb.cc 由 config_center 目标单独编译，避免重复符号
+list(FILTER SOURCE_FILES EXCLUDE REGEX ".*/protocol/config_center/.*")
+list(FILTER HEADER_FILES EXCLUDE REGEX ".*/protocol/config_center/.*")
 
 # 递归查找文件夹下的 *.hlsl 文件保存到 SHADER_FILES(如果没有 shader 可以删除)
 #file(GLOB_RECURSE SHADER_FILES *.hlsl)

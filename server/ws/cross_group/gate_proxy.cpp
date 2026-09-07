@@ -37,7 +37,7 @@ namespace faith
 		RECV_BUFFER_SIZE			=	1024	*1024,
 		SEND_BUFFER_SIZE			=	1024	*1024,
 		INTERVAL_RETRY_CONNECT2SAS	=	5000,
-		INTERVAL_FEP_STATUS			=	5000,
+		INTERVAL_GATEWAY_STATUS			=	5000,
 	};
 
 	//////////////////////////////////////////////////////////////////////////

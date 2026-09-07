@@ -2899,6 +2899,32 @@ struct game_proto_get_attack_city_infoDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 game_proto_get_attack_city_infoDefaultTypeInternal _game_proto_get_attack_city_info_default_instance_;
 
+inline constexpr game_proto_gateway2client_ping::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : client_time_{::int64_t{0}},
+        server_time_{::int64_t{0}},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR game_proto_gateway2client_ping::game_proto_gateway2client_ping(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct game_proto_gateway2client_pingDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR game_proto_gateway2client_pingDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~game_proto_gateway2client_pingDefaultTypeInternal() {}
+  union {
+    game_proto_gateway2client_ping _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 game_proto_gateway2client_pingDefaultTypeInternal _game_proto_gateway2client_ping_default_instance_;
+
 inline constexpr game_proto_game_state::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : state_{0},
@@ -3143,32 +3169,6 @@ struct game_proto_fuben_vip_moppingDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 game_proto_fuben_vip_moppingDefaultTypeInternal _game_proto_fuben_vip_mopping_default_instance_;
-
-inline constexpr game_proto_fep2client_ping::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : client_time_{::int64_t{0}},
-        server_time_{::int64_t{0}},
-        _cached_size_{0} {}
-
-template <typename>
-PROTOBUF_CONSTEXPR game_proto_fep2client_ping::game_proto_fep2client_ping(::_pbi::ConstantInitialized)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(_class_data_.base()),
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(),
-#endif  // PROTOBUF_CUSTOM_VTABLE
-      _impl_(::_pbi::ConstantInitialized()) {
-}
-struct game_proto_fep2client_pingDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR game_proto_fep2client_pingDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~game_proto_fep2client_pingDefaultTypeInternal() {}
-  union {
-    game_proto_fep2client_ping _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 game_proto_fep2client_pingDefaultTypeInternal _game_proto_fep2client_ping_default_instance_;
 
 inline constexpr game_proto_enter_scene_end::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -4110,13 +4110,13 @@ struct game_proto_create_pk_end_timeDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 game_proto_create_pk_end_timeDefaultTypeInternal _game_proto_create_pk_end_time_default_instance_;
 
-inline constexpr game_proto_client2fep_ping::Impl_::Impl_(
+inline constexpr game_proto_client2gateway_ping::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : client_time_{::int64_t{0}},
         _cached_size_{0} {}
 
 template <typename>
-PROTOBUF_CONSTEXPR game_proto_client2fep_ping::game_proto_client2fep_ping(::_pbi::ConstantInitialized)
+PROTOBUF_CONSTEXPR game_proto_client2gateway_ping::game_proto_client2gateway_ping(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(_class_data_.base()),
 #else   // PROTOBUF_CUSTOM_VTABLE
@@ -4124,16 +4124,16 @@ PROTOBUF_CONSTEXPR game_proto_client2fep_ping::game_proto_client2fep_ping(::_pbi
 #endif  // PROTOBUF_CUSTOM_VTABLE
       _impl_(::_pbi::ConstantInitialized()) {
 }
-struct game_proto_client2fep_pingDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR game_proto_client2fep_pingDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~game_proto_client2fep_pingDefaultTypeInternal() {}
+struct game_proto_client2gateway_pingDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR game_proto_client2gateway_pingDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~game_proto_client2gateway_pingDefaultTypeInternal() {}
   union {
-    game_proto_client2fep_ping _instance;
+    game_proto_client2gateway_ping _instance;
   };
 };
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 game_proto_client2fep_pingDefaultTypeInternal _game_proto_client2fep_ping_default_instance_;
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 game_proto_client2gateway_pingDefaultTypeInternal _game_proto_client2gateway_ping_default_instance_;
 
 inline constexpr game_proto_client2cs_ping::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -6120,24 +6120,24 @@ const ::uint32_t
         0,
         1,
         ~0u,  // no _has_bits_
-        PROTOBUF_FIELD_OFFSET(::faith::game_proto_client2fep_ping, _internal_metadata_),
+        PROTOBUF_FIELD_OFFSET(::faith::game_proto_client2gateway_ping, _internal_metadata_),
         ~0u,  // no _extensions_
         ~0u,  // no _oneof_case_
         ~0u,  // no _weak_field_map_
         ~0u,  // no _inlined_string_donated_
         ~0u,  // no _split_
         ~0u,  // no sizeof(Split)
-        PROTOBUF_FIELD_OFFSET(::faith::game_proto_client2fep_ping, _impl_.client_time_),
+        PROTOBUF_FIELD_OFFSET(::faith::game_proto_client2gateway_ping, _impl_.client_time_),
         ~0u,  // no _has_bits_
-        PROTOBUF_FIELD_OFFSET(::faith::game_proto_fep2client_ping, _internal_metadata_),
+        PROTOBUF_FIELD_OFFSET(::faith::game_proto_gateway2client_ping, _internal_metadata_),
         ~0u,  // no _extensions_
         ~0u,  // no _oneof_case_
         ~0u,  // no _weak_field_map_
         ~0u,  // no _inlined_string_donated_
         ~0u,  // no _split_
         ~0u,  // no sizeof(Split)
-        PROTOBUF_FIELD_OFFSET(::faith::game_proto_fep2client_ping, _impl_.client_time_),
-        PROTOBUF_FIELD_OFFSET(::faith::game_proto_fep2client_ping, _impl_.server_time_),
+        PROTOBUF_FIELD_OFFSET(::faith::game_proto_gateway2client_ping, _impl_.client_time_),
+        PROTOBUF_FIELD_OFFSET(::faith::game_proto_gateway2client_ping, _impl_.server_time_),
         ~0u,  // no _has_bits_
         PROTOBUF_FIELD_OFFSET(::faith::game_proto_client2cs_ping, _internal_metadata_),
         ~0u,  // no _extensions_
@@ -8372,8 +8372,8 @@ static const ::_pbi::MigrationSchema
         {112, -1, -1, sizeof(::faith::game_proto_line_list)},
         {121, 133, -1, sizeof(::faith::game_proto_transfer_scene_end)},
         {137, 148, -1, sizeof(::faith::game_proto_trans_local_scene_end)},
-        {151, -1, -1, sizeof(::faith::game_proto_client2fep_ping)},
-        {160, -1, -1, sizeof(::faith::game_proto_fep2client_ping)},
+        {151, -1, -1, sizeof(::faith::game_proto_client2gateway_ping)},
+        {160, -1, -1, sizeof(::faith::game_proto_gateway2client_ping)},
         {170, -1, -1, sizeof(::faith::game_proto_client2cs_ping)},
         {181, -1, -1, sizeof(::faith::game_proto_cs2client_ping)},
         {192, -1, -1, sizeof(::faith::game_proto_version_wrong)},
@@ -8603,8 +8603,8 @@ static const ::_pb::Message* const file_default_instances[] = {
     &::faith::_game_proto_line_list_default_instance_._instance,
     &::faith::_game_proto_transfer_scene_end_default_instance_._instance,
     &::faith::_game_proto_trans_local_scene_end_default_instance_._instance,
-    &::faith::_game_proto_client2fep_ping_default_instance_._instance,
-    &::faith::_game_proto_fep2client_ping_default_instance_._instance,
+    &::faith::_game_proto_client2gateway_ping_default_instance_._instance,
+    &::faith::_game_proto_gateway2client_ping_default_instance_._instance,
     &::faith::_game_proto_client2cs_ping_default_instance_._instance,
     &::faith::_game_proto_cs2client_ping_default_instance_._instance,
     &::faith::_game_proto_version_wrong_default_instance_._instance,
@@ -8821,7 +8821,7 @@ static const ::_pb::Message* const file_default_instances[] = {
 };
 const char descriptor_table_protodef_game_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
-    "\n\ngame.proto\022\005faith\"\212\222\001\n\ngame_proto\032A\n\ne"
+    "\n\ngame.proto\022\005faith\"\222\222\001\n\ngame_proto\032A\n\ne"
     "nter_game\022\021\n\trole_guid\030\001 \001(\003\022\017\n\007account\030"
     "\002 \001(\t\022\017\n\007line_id\030\003 \001(\005\0325\n\016enter_game_end"
     "\022\016\n\006result\030\001 \001(\r\022\023\n\013server_type\030\002 \001(\005\032-\n"
@@ -8845,457 +8845,457 @@ const char descriptor_table_protodef_game_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIA
     "o.rot_angle\032\216\001\n\025trans_local_scene_end\022\021\n"
     "\trole_guid\030\001 \001(\003\022.\n\010position\030\002 \001(\0132\034.fai"
     "th.game_proto.pos_vector\0222\n\rrotator_angl"
-    "e\030\003 \001(\0132\033.faith.game_proto.rot_angle\032&\n\017"
-    "client2fep_ping\022\023\n\013client_time\030\001 \001(\003\032;\n\017"
-    "fep2client_ping\022\023\n\013client_time\030\001 \001(\003\022\023\n\013"
-    "server_time\030\002 \001(\003\032P\n\016client2cs_ping\022\022\n\nt"
-    "race_time\030\001 \001(\003\022\024\n\014trace_time_2\030\002 \001(\003\022\024\n"
-    "\014trace_time_3\030\003 \001(\003\032P\n\016cs2client_ping\022\022\n"
-    "\ntrace_time\030\001 \001(\003\022\024\n\014trace_time_2\030\002 \001(\003\022"
-    "\024\n\014trace_time_3\030\003 \001(\003\032\017\n\rversion_wrong\0324"
-    "\n\017set_timekeeping\022\014\n\004time\030\001 \001(\005\022\023\n\013prefi"
-    "x_text\030\002 \001(\005\032\'\n\024wave_trigger_message\022\017\n\007"
-    "message\030\001 \001(\005\032H\n\ngame_state\022\r\n\005state\030\001 \001"
-    "(\005\022\022\n\nstate_time\030\002 \001(\005\022\027\n\017cur_server_tim"
-    "e\030\003 \001(\005\032M\n\nboss_state\022\017\n\007boss_id\030\001 \001(\005\022\027"
-    "\n\017boss_state_code\030\002 \001(\005\022\025\n\ris_final_boss"
-    "\030\003 \001(\010\032D\n\014bosses_state\0224\n\016created_bosses"
-    "\030\001 \003(\0132\034.faith.game_proto.boss_state\032M\n\021"
-    "protect_npc_state\022\016\n\006npc_id\030\001 \001(\005\022\020\n\010npc"
-    "_guid\030\002 \001(\003\022\026\n\016npc_state_code\030\003 \001(\005\032H\n\025u"
-    "pdate_map_record_end\022\021\n\trole_guid\030\001 \003(\005\022"
-    "\034\n\024map_record_info_data\030\002 \003(\005\032b\n\031update_"
-    "map_record_all_end\022\035\n\025map_record_info_ar"
-    "ray\030\001 \003(\005\022\025\n\ris_end_record\030\002 \001(\005\022\017\n\007map_"
-    "num\030\003 \001(\005\032f\n\034update_demons_tower_info_en"
-    "d\022\021\n\trole_guid\030\001 \003(\005\022\031\n\021demons_tower_inf"
-    "o\030\002 \003(\005\022\030\n\020is_in_mopping_up\030\003 \001(\010\032C\n\014sco"
-    "re_record\022\021\n\trole_guid\030\001 \003(\005\022\021\n\trole_nam"
-    "e\030\002 \001(\t\022\r\n\005score\030\003 \001(\003\032\321\001\n\021score_record_"
-    "list\022\026\n\016score_list_len\030\001 \001(\005\0222\n\nscore_li"
-    "st\030\002 \003(\0132\036.faith.game_proto.score_record"
-    "\0223\n\013extra_score\030\003 \001(\0132\036.faith.game_proto"
-    ".score_record\022\022\n\nextra_rank\030\004 \001(\005\022\027\n\017is_"
-    "legion_score\030\005 \001(\010\022\016\n\006npc_id\030\006 \001(\005\032\207\001\n\020t"
-    "emple_game_over\022\021\n\tnpc_score\030\001 \001(\005\022\026\n\016wi"
-    "n_money_id_1\030\002 \001(\005\022\027\n\017win_money_num_1\030\003 "
-    "\001(\005\022\026\n\016win_money_id_2\030\004 \001(\005\022\027\n\017win_money"
-    "_num_2\030\005 \001(\005\032,\n\024get_temple_over_gift\022\024\n\014"
-    "get_over_num\030\001 \001(\005\032\032\n\030get_temple_over_gi"
-    "ft_end\0323\n\014pop_plot_tip\022\016\n\006str_id\030\001 \001(\005\022\023"
-    "\n\013str_id_type\030\002 \001(\005\032*\n\017get_best_record\022\027"
-    "\n\017map_template_id\030\001 \001(\005\032h\n\023get_best_reco"
-    "rd_end\022\027\n\017map_template_id\030\001 \001(\005\022\035\n\025best_"
-    "record_role_name\030\002 \003(\t\022\031\n\021best_record_va"
-    "lue\030\003 \003(\003\032$\n\016transfer_error\022\022\n\nerror_cod"
-    "e\030\001 \001(\005\032\031\n\027transfer_to_pk_king_map\032;\n\021pk"
-    "_king_game_over\022\021\n\taward_exp\030\001 \001(\005\022\023\n\013aw"
-    "ard_money\030\002 \001(\005\032\?\n\032transfer_to_broken_sk"
-    "y_map\022\016\n\006map_id\030\001 \001(\005\022\021\n\trole_guid\030\002 \001(\003"
-    "\032)\n\024broken_sky_boss_dead\022\021\n\tboss_guid\030\001 "
-    "\001(\003\032\013\n\tleave_map\032+\n\020get_one_map_info\022\027\n\017"
-    "map_template_id\030\001 \001(\005\032E\n\024get_one_map_inf"
-    "o_end\022\027\n\017map_template_id\030\001 \001(\005\022\024\n\014map_in"
-    "fo_arr\030\002 \003(\003\032R\n\020server_exp_level\022\021\n\texp_"
-    "level\030\001 \001(\005\022\023\n\013exp_percent\030\002 \001(\002\022\026\n\016exp_"
-    "last_level\030\003 \001(\005\032&\n\017need_hot_update\022\023\n\013u"
-    "pdate_type\030\001 \001(\005\032\?\n\026gain_treasure_info_o"
-    "ne\022\021\n\tinfo_type\030\001 \001(\005\022\022\n\ninfo_value\030\002 \001("
-    "\005\032T\n\026gain_treasure_info_all\022:\n\010info_arr\030"
-    "\001 \003(\0132(.faith.game_proto.gain_treasure_i"
-    "nfo_one\032&\n\021add_exp_raid_buff\022\021\n\tadd_coun"
-    "t\030\001 \001(\005\032*\n\025add_exp_raid_buff_end\022\021\n\tadd_"
-    "count\030\001 \001(\005\032V\n\030add_legion_boss_buff_end\022"
-    "\021\n\tadd_count\030\001 \001(\005\022\023\n\013demon_count\030\002 \001(\005\022"
-    "\022\n\ngold_count\030\003 \001(\005\032]\n\037add_legion_boss_b"
-    "ig_player_info\022\022\n\nclass_type\030\001 \001(\005\022\021\n\tad"
-    "d_count\030\002 \001(\005\022\023\n\013player_name\030\003 \001(\t\032E\n\035ga"
-    "in_treasure_req_kill_record\022$\n\034boss_spaw"
-    "n_point_template_id\030\001 \001(\005\032H\n\035gain_treasu"
-    "re_kill_record_one\022\024\n\014killed_stamp\030\001 \001(\005"
-    "\022\021\n\trole_name\030\002 \003(\t\032\212\001\n\035gain_treasure_ki"
-    "ll_record_end\022$\n\034boss_spawn_point_templa"
-    "te_id\030\001 \001(\005\022C\n\nrecord_arr\030\002 \003(\0132/.faith."
-    "game_proto.gain_treasure_kill_record_one"
-    "\032:\n\"gain_treasure_req_gain_item_record\022\024"
-    "\n\014record_index\030\001 \001(\005\032\273\001\n\'gain_treasure_g"
-    "ain_item_record_info_one\022\021\n\trole_name\030\001 "
-    "\001(\t\022$\n\034boss_spawn_point_template_id\030\002 \001("
-    "\005\022\030\n\020item_template_id\030\003 \001(\005\022\024\n\014killed_st"
-    "amp\030\004 \001(\005\022\024\n\014record_index\030\005 \001(\005\022\021\n\trole_"
-    "guid\030\006 \001(\003\032s\n\"gain_treasure_gain_item_re"
-    "cord_end\022M\n\nrecord_arr\030\001 \003(\01329.faith.gam"
-    "e_proto.gain_treasure_gain_item_record_i"
-    "nfo_one\032\264\001\n\033gain_treasure_boss_info_one\022"
-    "$\n\034boss_spawn_point_template_id\030\001 \001(\005\022\021\n"
-    "\tboss_guid\030\002 \001(\003\022\032\n\022next_refresh_stamp\030\003"
-    " \001(\005\022\031\n\021first_player_name\030\004 \001(\t\022\023\n\013playe"
-    "r_guid\030\005 \003(\003\022\020\n\010map_type\030\006 \001(\005\032_\n\033gain_t"
-    "reasure_boss_info_all\022@\n\tboss_info\030\001 \003(\013"
-    "2-.faith.game_proto.gain_treasure_boss_i"
-    "nfo_one\0328\n\016buy_raid_count\022\023\n\013map_temp_id"
-    "\030\001 \001(\005\022\021\n\tbuy_count\030\002 \001(\005\032<\n\022buy_raid_co"
-    "unt_end\022\023\n\013map_temp_id\030\001 \001(\005\022\021\n\tbuy_coun"
-    "t\030\002 \001(\005\032=\n\024boss_island_info_one\022\021\n\tinfo_"
-    "type\030\001 \001(\005\022\022\n\ninfo_value\030\002 \001(\005\032*\n\024boss_i"
-    "sland_info_all\022\022\n\ninfo_value\030\001 \003(\005\032g\n\021se"
-    "rver_config_all\022\021\n\tserver_id\030\001 \003(\005\022\027\n\017is"
-    "_cross_server\030\002 \003(\005\022\021\n\tserver_ip\030\003 \003(\t\022\023"
-    "\n\013server_name\030\004 \003(\t\032@\n\016gm_begin_cross\022\026\n"
-    "\016is_begin_cross\030\001 \001(\010\022\026\n\016gate_server_id\030"
-    "\002 \001(\005\0327\n\022gm_begin_cross_one\022\017\n\007gm_type\030\001"
-    " \001(\005\022\020\n\010is_begin\030\002 \001(\010\032*\n\022gm_begin_cross"
-    "_all\022\024\n\014is_begin_arr\030\001 \003(\010\032%\n\021is_close_e"
-    "xchange\022\020\n\010is_close\030\001 \001(\010\032+\n\021gm_begin_cr"
-    "oss_pk\022\026\n\016is_begin_cross\030\001 \001(\010\032.\n\024gm_beg"
-    "in_cross_harry\022\026\n\016is_begin_cross\030\001 \001(\010\0326"
-    "\n\034gm_begin_cross_territory_war\022\026\n\016is_beg"
-    "in_cross\030\001 \001(\010\0323\n\031gm_begin_cross_world_b"
-    "oss\022\026\n\016is_begin_cross\030\001 \001(\010\032/\n\025gm_begin_"
-    "cross_ladder\022\026\n\016is_begin_cross\030\001 \001(\010\032\213\001\n"
-    "\021pk_one_player_msg\022\024\n\014player_guidA\030\001 \001(\005"
-    "\022\024\n\014player_guidB\030\002 \001(\005\022\023\n\013player_name\030\003 "
-    "\001(\t\022\017\n\007win_num\030\004 \001(\005\022\021\n\tserver_id\030\005 \001(\005\022"
-    "\021\n\tis_winner\030\006 \001(\005\032\323\001\n\033cross_server_one_"
-    "island_msg\022\020\n\010war_idex\030\001 \001(\005\022\027\n\017island_p"
-    "k_state\030\002 \001(\005\0227\n\nplayer_msg\030\003 \003(\0132#.fait"
-    "h.game_proto.pk_one_player_msg\022\024\n\014winner"
-    "_guidA\030\004 \001(\005\022\024\n\014winner_guidB\030\005 \001(\005\022\022\n\nis"
-    "_end_war\030\006 \001(\005\022\020\n\010pk_count\030\007 \001(\005\032Y\n\024cros"
-    "s_server_all_msg\022A\n\nisland_msg\030\001 \003(\0132-.f"
-    "aith.game_proto.cross_server_one_island_"
-    "msg\032S\n\024cross_server_map_msg\022\021\n\tmap_state"
-    "\030\001 \001(\005\022\021\n\tleft_time\030\002 \001(\005\022\025\n\ris_in_the_w"
-    "ar\030\003 \001(\010\032m\n\036cross_server_pk_map_island_m"
-    "sg\022\021\n\tmap_state\030\001 \001(\005\022\023\n\013island_idex\030\002 \001"
-    "(\005\022\021\n\tleft_time\030\003 \001(\005\022\020\n\010war_idex\030\004 \001(\005\032"
-    "\036\n\034cross_server_pk_map_transfer\0321\n\035cross"
-    "_server_pk_state_end_msg\022\020\n\010pk_state\030\001 \001"
-    "(\005\032(\n\025get_world_boss_damage\022\017\n\007boss_id\030\001"
-    " \001(\005\032E\n\033template_table_param_string\022\022\n\np"
-    "aram_name\030\001 \001(\t\022\022\n\nparam_date\030\002 \001(\t\032B\n\030t"
-    "emplate_table_param_int\022\022\n\nparam_name\030\001 "
-    "\001(\t\022\022\n\nparam_date\030\002 \001(\005\032\257\001\n\023template_tab"
-    "le_data\022C\n\014param_string\030\001 \003(\0132-.faith.ga"
-    "me_proto.template_table_param_string\022=\n\t"
-    "param_int\030\002 \003(\0132*.faith.game_proto.templ"
-    "ate_table_param_int\022\024\n\014attribute_id\030\003 \001("
-    "\005\032}\n\022set_template_table\022<\n\rtemplate_data"
-    "\030\001 \003(\0132%.faith.game_proto.template_table"
-    "_data\022\022\n\ntabel_name\030\002 \001(\t\022\025\n\rif_first_se"
-    "nd\030\003 \001(\005\032\021\n\017get_world_level\032(\n\020send_worl"
-    "d_level\022\024\n\014server_level\030\001 \001(\005\032\241\002\n\032cross_"
-    "server_harry_one_msg\022\021\n\tserver_id\030\001 \001(\005\022"
-    "\024\n\014server_money\030\002 \001(\005\022\025\n\rspecial_money\030\003"
-    " \001(\005\022\032\n\022first_player_guidA\030\004 \001(\005\022\032\n\022firs"
-    "t_player_guidB\030\005 \001(\005\022\033\n\023second_player_gu"
-    "idA\030\006 \001(\005\022\033\n\023second_player_guidB\030\007 \001(\005\022\032"
-    "\n\022third_player_guidA\030\010 \001(\005\022\032\n\022third_play"
-    "er_guidB\030\t \001(\005\022\031\n\021first_player_name\030\n \001("
-    "\t\032a\n\032cross_server_harry_all_msg\022C\n\rall_h"
-    "arry_msg\030\001 \003(\0132,.faith.game_proto.cross_"
-    "server_harry_one_msg\032\026\n\024give_server_item"
-    "_msg\032B\n\027role_harry_msg_info_one\022\022\n\nharry"
-    "_idex\030\001 \001(\005\022\023\n\013harry_value\030\002 \001(\005\0322\n\027role"
-    "_harry_msg_info_all\022\027\n\017harry_value_arr\030\001"
-    " \003(\005\032*\n\025transfer_to_harry_map\022\021\n\tserver_"
-    "id\030\001 \001(\005\032\"\n\014random_array\022\022\n\nrandom_num\030\001"
-    " \003(\005\032=\n$cross_server_world_boss_map_tran"
-    "sfer\022\025\n\rboss_map_type\030\001 \001(\005\032\032\n\030get_cross"
-    "_boss_show_info\032^\n\030set_cross_boss_show_i"
-    "nfo\022\023\n\013player_name\030\002 \003(\t\022\023\n\013legion_name\030"
-    "\003 \003(\t\022\030\n\020boss_residue_num\030\004 \003(\005\032\034\n\032get_c"
-    "ross_boss_damage_list\032X\n\024cross_boss_rank"
-    "_info\022\024\n\014legion_value\030\001 \001(\005\022\023\n\013legion_na"
-    "me\030\002 \001(\t\022\025\n\rlegion_damage\030\003 \001(\t\032\231\001\n\033cros"
-    "s_boss_legion_rank_list\0229\n\trank_info\030\001 \003"
-    "(\0132&.faith.game_proto.cross_boss_rank_in"
-    "fo\022\023\n\013legion_rank\030\002 \001(\005\022\025\n\rlegion_damage"
-    "\030\003 \001(\t\022\023\n\013boss_tmp_id\030\004 \001(\005\032g\n\037cross_bos"
-    "s_legion_rank_list_all\022D\n\rrank_info_all\030"
-    "\001 \003(\0132-.faith.game_proto.cross_boss_legi"
-    "on_rank_list\032\?\n\022cross_boss_is_dead\022\023\n\013bo"
-    "ss_tmp_id\030\001 \003(\005\022\024\n\014boss_is_dead\030\002 \003(\005\032+\n"
-    "\030send_boss_god_begin_time\022\017\n\007boss_id\030\002 \001"
-    "(\005\032$\n\021get_boss_god_time\022\017\n\007boss_id\030\001 \001(\005"
-    "\0327\n\022send_boss_god_time\022\020\n\010god_time\030\001 \001(\005"
-    "\022\017\n\007boss_id\030\002 \001(\005\032/\n\024get_map_boss_is_dea"
-    "d\022\027\n\017map_template_id\030\001 \001(\005\032G\n\031oracle_tri"
-    "al_customs_info\022\025\n\rcustoms_state\030\001 \001(\005\022\023"
-    "\n\013reward_stat\030\002 \001(\005\032\247\001\n\025oracle_trial_inf"
-    "o_all\022\022\n\nhight_rank\030\001 \001(\005\022\020\n\010max_tier\030\002 "
-    "\001(\005\022\024\n\014max_commping\030\003 \001(\005\022=\n\010all_info\030\004 "
-    "\003(\0132+.faith.game_proto.oracle_trial_cust"
-    "oms_info\022\023\n\013show_prompt\030\005 \001(\010\032\036\n\034send_or"
-    "acle_trial_commpingup\0322\n\033oracle_trial_co"
-    "mmpingup_end\022\023\n\013error_index\030\001 \001(\005\032E\n\036get"
-    "_oracle_trial_customs_award\022\020\n\010tier_num\030"
-    "\001 \001(\005\022\021\n\taward_num\030\002 \001(\005\032:\n#send_oracle_"
-    "trial_customs_award_end\022\023\n\013error_index\030\001"
-    " \001(\005\032\027\n\025get_oracle_trial_rank\032Z\n\"send_or"
-    "acle_trial_funben_over_info\022\016\n\006map_id\030\001 "
-    "\001(\005\022\021\n\told_statr\030\002 \001(\005\022\021\n\tnew_statr\030\003 \001("
-    "\005\032\?\n\020send_server_name\022\026\n\016is_self_server\030"
-    "\001 \001(\010\022\023\n\013server_name\030\002 \001(\t\032\035\n\033send_trans"
-    "fer_new_map_error\032\276\001\n\025boss_damage_list_i"
-    "tem\022\021\n\trole_name\030\001 \001(\t\022\023\n\013role_guid_a\030\002 "
-    "\001(\005\022\023\n\013role_guid_b\030\003 \001(\005\022\024\n\014damage_value"
-    "\030\004 \001(\t\022\023\n\013damage_rate\030\005 \001(\005\022\017\n\007is_team\030\006"
-    " \001(\005\022\025\n\rlegion_guid_a\030\007 \001(\005\022\025\n\rlegion_gu"
-    "id_b\030\010 \001(\005\032\352\001\n\031send_boss_damage_list_msg"
-    "\022=\n\014ranking_list\030\001 \003(\0132\'.faith.game_prot"
-    "o.boss_damage_list_item\022<\n\013helper_list\030\002"
-    " \003(\0132\'.faith.game_proto.boss_damage_list"
-    "_item\022\021\n\tmy_damage\030\003 \001(\t\022\023\n\013damage_rate\030"
-    "\004 \001(\005\022\016\n\006is_end\030\005 \001(\005\022\030\n\020boss_template_i"
-    "d\030\006 \001(\005\032!\n\037send_leave_boss_damage_list_m"
-    "sg\032i\n\025help_succes_list_item\022\021\n\trole_name"
-    "\030\001 \001(\t\022\023\n\013role_guid_a\030\002 \001(\005\022\023\n\013role_guid"
-    "_b\030\003 \001(\005\022\023\n\013template_id\030\004 \001(\005\032}\n\025send_he"
-    "lp_success_msg\022:\n\thelp_list\030\001 \003(\0132\'.fait"
-    "h.game_proto.help_succes_list_item\022\025\n\rhe"
-    "lper_reward\030\002 \001(\005\022\021\n\tmy_reward\030\003 \001(\005\032\216\001\n"
-    "\026send_the_attacker_info\022\021\n\trole_name\030\001 \001"
-    "(\t\022\023\n\013role_guid_a\030\002 \001(\005\022\023\n\013role_guid_b\030\003"
-    " \001(\005\022\023\n\013template_id\030\004 \001(\005\022\022\n\nrole_level\030"
-    "\005 \001(\005\022\016\n\006is_npc\030\006 \001(\010\032\'\n\023buy_simple_boss"
-    "_num\022\020\n\010map_type\030\001 \001(\005\032.\n\027buy_simple_bos"
-    "s_num_end\022\023\n\013error_index\030\001 \001(\005\0324\n\032is_can"
-    "_transfer_other_line\022\026\n\016transfer_state\030\001"
-    " \001(\005\032X\n\030legion_auction_item_show\022<\n\010item"
-    "_all\030\001 \003(\0132*.faith.game_proto.legion_aun"
-    "ction_item_one\032U\n\030legion_aunction_item_o"
-    "ne\022\024\n\014item_temp_id\030\001 \001(\005\022\020\n\010item_num\030\002 \001"
-    "(\005\022\021\n\titem_lock\030\003 \001(\005\032t\n\023pk_king_player_"
-    "info\022\020\n\010kill_num\030\001 \001(\005\022\025\n\rhigh_kill_num\030"
-    "\002 \001(\005\022\020\n\010cur_rank\030\003 \001(\005\022\021\n\tcur_score\030\004 \001"
-    "(\005\022\017\n\007is_dead\030\005 \001(\005\032P\n\025pk_king_kill_num_"
-    "info\022\021\n\trole_name\030\001 \001(\t\022\020\n\010kill_num\030\002 \001("
-    "\005\022\022\n\nclass_type\030\003 \001(\005\032|\n\026pk_king_map_sta"
-    "te_info\022\020\n\010map_time\030\001 \001(\005\022\030\n\020map_time_re"
-    "maing\030\002 \001(\005\022\026\n\016map_time_state\030\003 \001(\005\022\036\n\026m"
-    "ap_time_state_remaing\030\004 \001(\005\032)\n\025pk_king_m"
-    "ap_game_over\022\020\n\010end_type\030\001 \001(\005\032]\n\021pk_kin"
-    "g_rank_list\0226\n\trank_list\030\001 \003(\0132#.faith.g"
-    "ame_proto.pk_king_rank_info\022\020\n\010rank_num\030"
-    "\002 \001(\005\032{\n\021pk_king_rank_info\022\016\n\006guid_A\030\001 \001"
-    "(\005\022\016\n\006guid_B\030\002 \001(\005\022\021\n\trole_name\030\003 \001(\t\022\021\n"
-    "\tscore_num\030\004 \001(\005\022\020\n\010rank_num\030\005 \001(\005\022\016\n\006is"
-    "_sur\030\006 \001(\005\032J\n\032send_need_break_line_login"
-    "\022\027\n\017map_template_id\030\001 \001(\005\022\023\n\013active_type"
-    "\030\002 \001(\005\032G\n\036send_need_break_line_login_end"
-    "\022\020\n\010is_login\030\001 \001(\010\022\023\n\013active_type\030\002 \001(\005\032"
-    "P\n\022create_pk_end_time\022\022\n\nbegin_time\030\001 \001("
-    "\005\022\020\n\010end_time\030\002 \001(\005\022\024\n\014end_str_type\030\003 \001("
-    "\005\0321\n\032send_to_server_special_msg\022\023\n\013speci"
-    "al_msg\030\001 \001(\t\032U\n\027pk_king_target_list_msg\022"
-    "\023\n\013guid_a_list\030\001 \003(\005\022\023\n\013guid_b_list\030\002 \003("
-    "\005\022\020\n\010data_num\030\003 \001(\005\032*\n\026server_act_is_ope"
-    "n_end\022\020\n\010is_hiden\030\001 \001(\010\0325\n\037element_war_s"
-    "end_upgrade_notify\022\022\n\nupgrade_id\030\001 \001(\005\032\032"
-    "\n\030element_war_send_sign_up\032Q\n\034element_wa"
-    "r_send_sign_up_end\022\021\n\tret_index\030\001 \001(\005\022\016\n"
-    "\006guid_a\030\002 \001(\005\022\016\n\006guid_b\030\003 \001(\005\0327\n#element"
-    "_war_send_sign_up_team_ready\022\020\n\010is_ready"
-    "\030\001 \001(\005\032\\\n\'element_war_send_sign_up_team_"
-    "ready_end\022\021\n\tret_index\030\001 \001(\005\022\016\n\006guid_a\030\002"
-    " \001(\005\022\016\n\006guid_b\030\003 \001(\005\032 \n\036element_war_send"
-    "_close_sign_up\032W\n\"element_war_send_close"
-    "_sign_up_end\022\021\n\tret_index\030\001 \001(\005\022\016\n\006guid_"
-    "a\030\002 \001(\005\022\016\n\006guid_b\030\003 \001(\005\032\224\001\n\022element_matc"
-    "h_info\022\016\n\006guid_a\030\001 \001(\005\022\016\n\006guid_b\030\002 \001(\005\022\021"
-    "\n\trole_name\030\003 \001(\t\022\020\n\010is_robot\030\004 \001(\010\022\023\n\013t"
-    "emplate_id\030\005 \001(\005\022\021\n\tscore_num\030\006 \001(\005\022\021\n\tv"
-    "ip_level\030\007 \001(\005\032\237\001\n\"element_war_send_matc"
-    "h_success_msg\022:\n\014my_team_info\030\001 \003(\0132$.fa"
-    "ith.game_proto.element_match_info\022=\n\017oth"
-    "er_team_info\030\002 \003(\0132$.faith.game_proto.el"
-    "ement_match_info\032\213\001\n\025element_war_role_in"
-    "fo\022\021\n\tinfo_data\030\001 \003(\005\022\021\n\tmax_index\030\002 \001(\005"
-    "\022\024\n\014cross_result\030\003 \001(\005\022\022\n\nlast_score\030\004 \001"
-    "(\005\022\021\n\tis_online\030\005 \001(\005\022\017\n\007is_sign\030\006 \001(\010\032\211"
-    "\001\n\031element_war_map_role_info\022\025\n\rcur_scor"
-    "e_num\030\001 \001(\005\022\026\n\016team_score_num\030\002 \001(\005\022\022\n\nt"
-    "eam_index\030\003 \001(\005\022\024\n\014kill_monster\030\004 \001(\005\022\023\n"
-    "\013kill_player\030\005 \001(\005\032U\n\025element_war_boss_i"
-    "nfo\022\017\n\007boss_id\030\001 \001(\005\022\r\n\005pos_x\030\002 \001(\005\022\r\n\005p"
-    "os_y\030\003 \001(\005\022\r\n\005pos_z\030\004 \001(\005\032\305\002\n\024element_wa"
-    "r_map_info\022\027\n\017first_score_num\030\001 \001(\005\022\030\n\020s"
-    "ecord_score_num\030\002 \001(\005\022\021\n\tmap_state\030\003 \001(\005"
-    "\022;\n\nfirst_boss\030\004 \001(\0132\'.faith.game_proto."
-    "element_war_boss_info\022<\n\013secord_boss\030\005 \001"
-    "(\0132\'.faith.game_proto.element_war_boss_i"
-    "nfo\022<\n\013target_boss\030\006 \001(\0132\'.faith.game_pr"
-    "oto.element_war_boss_info\022\026\n\016buff_have_t"
-    "eam\030\007 \003(\005\022\026\n\016buff_have_name\030\010 \003(\t\032\302\001\n\035el"
-    "ement_war_map_end_role_info\022\021\n\trole_name"
-    "\030\001 \001(\t\022\031\n\021cur_element_score\030\002 \001(\005\022\020\n\010cur"
-    "_rank\030\003 \001(\005\022\021\n\tadd_score\030\004 \001(\005\022\021\n\tscore_"
-    "num\030\005 \001(\005\022\021\n\tis_escape\030\006 \001(\010\022\024\n\014is_kill_"
-    "boss\030\007 \001(\010\022\022\n\nteam_index\030\010 \001(\005\032\265\001\n\030eleme"
-    "nt_war_map_end_info\022C\n\nfirst_team\030\001 \003(\0132"
-    "/.faith.game_proto.element_war_map_end_r"
-    "ole_info\022D\n\013secord_team\030\002 \003(\0132/.faith.ga"
-    "me_proto.element_war_map_end_role_info\022\016"
-    "\n\006is_win\030\003 \001(\010\032\240\001\n\037element_war_send_boss"
-    "_be_attack\022\r\n\005pos_x\030\001 \001(\005\022\r\n\005pos_y\030\002 \001(\005"
-    "\022\r\n\005pos_z\030\003 \001(\005\022\017\n\007is_open\030\004 \001(\010\022\023\n\013atta"
-    "ck_name\030\005 \001(\t\022\024\n\014attack_class\030\006 \001(\005\022\024\n\014a"
-    "ttack_level\030\007 \001(\005\0327\n\036element_war_get_mis"
-    "sion_reward\022\025\n\rmission_index\030\001 \001(\005\0327\n\"el"
-    "ement_war_get_mission_reward_end\022\021\n\tret_"
-    "index\030\001 \001(\005\032\037\n\035element_war_request_role_"
-    "info\032\030\n\026element_war_buy_ticket\032/\n\032elemen"
-    "t_war_buy_ticket_end\022\021\n\tret_index\030\001 \001(\005\032"
-    "\"\n element_war_send_create_ready_ui\032i\n\034e"
-    "lement_war_create_boss_dead\022\022\n\nclass_typ"
-    "e\030\001 \001(\005\022\021\n\trole_name\030\002 \001(\t\022\021\n\tstring_id\030"
-    "\003 \001(\005\022\017\n\007boss_id\030\004 \001(\005\032q\n\016boss_rank_item"
-    "\022\021\n\trole_name\030\001 \001(\t\022\023\n\013role_guid_a\030\002 \001(\005"
-    "\022\023\n\013role_guid_b\030\003 \001(\005\022\024\n\014damage_value\030\004 "
-    "\001(\t\022\014\n\004rank\030\005 \001(\005\032\255\001\n\031boss_result_rank_l"
-    "ist_end\0222\n\010top_list\030\001 \003(\0132 .faith.game_p"
-    "roto.boss_rank_item\022\017\n\007top_num\030\002 \001(\005\0221\n\007"
-    "my_rank\030\003 \001(\0132 .faith.game_proto.boss_ra"
-    "nk_item\022\030\n\020boss_template_id\030\004 \001(\005\032v\n\032ele"
-    "ment_map_rank_role_info\022\021\n\trole_name\030\001 \001"
-    "(\t\022\021\n\tscore_num\030\002 \001(\005\022\022\n\nteam_index\030\003 \001("
-    "\005\022\016\n\006guid_a\030\004 \001(\005\022\016\n\006guid_b\030\005 \001(\005\032X\n\025ele"
-    "ment_map_rank_info\022\?\n\trank_info\030\001 \003(\0132,."
-    "faith.game_proto.element_map_rank_role_i"
-    "nfo\032K\n\024map_target_show_info\022\016\n\006guid_a\030\001 "
-    "\001(\005\022\016\n\006guid_b\030\002 \001(\005\022\023\n\013image_index\030\003 \001(\005"
-    "\032V\n\031map_target_show_info_list\0229\n\tinfo_li"
-    "st\030\001 \003(\0132&.faith.game_proto.map_target_s"
-    "how_info\032\037\n\035get_map_target_show_info_lis"
-    "t\032\210\001\n\027refresh_lucky_card_info\022\025\n\ractivit"
-    "y_guid\030\001 \001(\005\022\022\n\nstate_info\030\002 \001(\005\022\024\n\014is_h"
-    "ave_free\030\003 \001(\005\022\023\n\013end_item_id\030\004 \001(\005\022\027\n\017l"
-    "ucky_card_info\030\005 \001(\005\032(\n\022refresh_lucky_ca"
-    "rd\022\022\n\ncard_index\030\001 \001(\005\032:\n\022lucky_card_ope"
-    "rate\022\023\n\013touch_index\030\001 \001(\005\022\017\n\007is_jump\030\002 \001"
-    "(\005\032-\n\026lucky_card_operate_end\022\023\n\013error_in"
-    "dex\030\001 \001(\005\032\031\n\027get_element_competition\032C\n\031"
-    "get_competition_lv_reward\022\021\n\tmanual_id\030\001"
-    " \001(\005\022\023\n\013manual_type\030\002 \001(\005\032c\n\035get_competi"
-    "tion_lv_reward_end\022\026\n\016manual_id_list\030\001 \003"
-    "(\005\022\030\n\020manual_type_list\030\002 \003(\005\022\020\n\010get_type"
-    "\030\003 \001(\005\032\037\n\035get_competition_lv_reward_all\032"
-    "#\n\022buy_competition_lv\022\r\n\005level\030\001 \001(\005\0328\n\026"
-    "buy_competition_lv_end\022\r\n\005level\030\001 \001(\005\022\017\n"
-    "\007cur_exp\030\002 \001(\005\032)\n\022buy_speical_manual\022\023\n\013"
-    "manual_type\030\001 \001(\005\032=\n\026buy_speical_manual_"
-    "end\022\016\n\006is_buy\030\001 \001(\005\022\023\n\013manual_type\030\002 \001(\005"
-    "\032\205\002\n\025sync_role_competition\022\016\n\006is_buy\030\001 \001"
-    "(\005\022\016\n\006season\030\002 \001(\005\022\027\n\017buy_manual_type\030\003 "
-    "\001(\005\022\036\n\026competition_begin_time\030\004 \001(\005\022\034\n\024c"
-    "ompetition_end_time\030\005 \001(\005\022\r\n\005level\030\006 \001(\005"
-    "\022\017\n\007cur_exp\030\007 \001(\005\022\025\n\rnormal_reward\030\010 \003(\005"
-    "\022\026\n\016special_reward\030\t \003(\005\022\021\n\tcur_state\030\n "
-    "\001(\005\022\023\n\013world_level\030\013 \001(\005\032!\n\037send_new_ser"
-    "ver_treasure_finish\032\032\n\030transfer_attack_c"
-    "ity_map\0326\n\024get_attack_city_info\022\016\n\006guid_"
-    "a\030\001 \001(\005\022\016\n\006guid_b\030\002 \001(\005\032g\n\033attack_city_i"
-    "nfo_level_info\022\016\n\006guid_a\030\001 \001(\005\022\016\n\006guid_b"
-    "\030\002 \001(\005\022\023\n\013legion_name\030\003 \001(\t\022\023\n\013group_lev"
-    "el\030\004 \001(\005\032\360\001\n\025attack_city_info_list\022\024\n\014le"
-    "gion_level\030\001 \001(\005\022\021\n\ttem_level\030\002 \001(\005\022\017\n\007g"
-    "s_rank\030\003 \001(\005\022\024\n\014is_have_rank\030\004 \001(\005\022\033\n\023wi"
-    "n_num_legion_name\030\005 \001(\t\022\017\n\007win_num\030\006 \001(\005"
-    "\022@\n\tlist_info\030\007 \003(\0132-.faith.game_proto.a"
-    "ttack_city_info_level_info\022\027\n\017is_in_game"
-    "_time\030\010 \001(\005\032\033\n\031get_attack_city_rank_list"
-    "\032\037\n\035get_attack_city_map_rank_list\032\332\001\n\025at"
-    "tack_city_rank_info\022\016\n\006guid_a\030\001 \001(\005\022\016\n\006g"
-    "uid_b\030\002 \001(\005\022\021\n\trole_name\030\003 \001(\t\022\023\n\013role_s"
-    "ource\030\004 \001(\005\022\023\n\013kill_player\030\005 \001(\005\022\023\n\013kill"
-    "_statue\030\006 \001(\005\022\021\n\tkill_door\030\007 \001(\005\022\025\n\rrepa"
-    "ir_statue\030\010 \001(\005\022\021\n\tkill_boss\030\t \001(\005\022\022\n\nsh"
-    "ow_index\030\n \001(\005\032\314\001\n\032attack_city_rank_info"
-    "_list\022\023\n\013legion_name\030\001 \001(\t\022\025\n\rlegion_sou"
-    "rce\030\002 \001(\005\022:\n\tinfo_list\030\003 \003(\0132\'.faith.gam"
-    "e_proto.attack_city_rank_info\022\016\n\006guid_a\030"
-    "\004 \001(\005\022\016\n\006guid_b\030\005 \001(\005\022\022\n\nmode_index\030\006 \001("
-    "\005\022\022\n\nshow_index\030\007 \001(\005\032`\n\035get_attack_city"
-    "_rank_list_end\022\?\n\trank_list\030\001 \003(\0132,.fait"
-    "h.game_proto.attack_city_rank_info_list\032"
-    "\\\n\033attack_city_map_legion_info\022\021\n\tserver"
-    "_id\030\001 \001(\005\022\023\n\013legion_name\030\002 \001(\t\022\025\n\rlegion"
-    "_damage\030\003 \001(\t\032\262\001\n send_attack_city_map_l"
-    "egion_info\022@\n\tinfo_list\030\001 \003(\0132-.faith.ga"
-    "me_proto.attack_city_map_legion_info\022\021\n\t"
-    "map_state\030\002 \001(\005\022\031\n\021next_refresh_time\030\003 \001"
-    "(\005\022\016\n\006guid_a\030\004 \001(\005\022\016\n\006guid_b\030\005 \001(\005\032B\n\023at"
-    "tack_city_operate\022\024\n\014operate_type\030\001 \001(\005\022"
-    "\025\n\rprop_npc_guid\030\002 \001(\004\032P\n\027attack_city_op"
-    "erate_end\022\016\n\006result\030\001 \001(\005\022\025\n\rprop_npc_gu"
-    "id\030\002 \001(\004\022\016\n\006npc_id\030\003 \001(\005\032}\n\024attack_city_"
-    "npc_info\022\020\n\010npc_type\030\001 \001(\005\022\016\n\006npc_id\030\002 \001"
-    "(\005\022\020\n\010cur_life\030\003 \001(\005\022\021\n\tbuff_pile\030\004 \001(\005\022"
-    "\016\n\006guid_a\030\005 \001(\005\022\016\n\006guid_b\030\006 \001(\005\032Q\n\024attac"
-    "k_city_npc_list\0229\n\tinfo_list\030\001 \003(\0132&.fai"
-    "th.game_proto.attack_city_npc_info\032\?\n\024at"
-    "tack_city_camp_cut\022\023\n\013attack_name\030\001 \003(\t\022"
-    "\022\n\nguard_name\030\002 \001(\t\032\026\n\024transfer_to_bron_"
-    "pos\032\354\001\n\037attack_city_map_end_player_info\022"
-    "\016\n\006guid_a\030\001 \001(\005\022\016\n\006guid_b\030\002 \001(\005\022\021\n\trole_"
-    "name\030\003 \001(\t\022\023\n\013role_source\030\004 \001(\005\022\022\n\nrole_"
-    "group\030\005 \001(\005\022\016\n\006kill_1\030\006 \001(\005\022\016\n\006kill_2\030\007 "
-    "\001(\005\022\016\n\006kill_3\030\010 \001(\005\022\023\n\013kill_statue\030\t \001(\005"
-    "\022\021\n\tkill_door\030\n \001(\005\022\025\n\rrepair_statue\030\013 \001"
-    "(\005\032U\n\035attack_city_map_end_item_info\022\017\n\007i"
-    "tem_id\030\001 \001(\005\022\020\n\010item_num\030\002 \001(\005\022\021\n\tshow_t"
-    "ype\030\003 \001(\005\032\314\001\n\030attack_city_map_end_info\022D"
-    "\n\tplay_list\030\001 \003(\01321.faith.game_proto.att"
-    "ack_city_map_end_player_info\022B\n\titem_lis"
-    "t\030\002 \003(\0132/.faith.game_proto.attack_city_m"
-    "ap_end_item_info\022\023\n\013role_source\030\003 \001(\005\022\021\n"
-    "\trole_rank\030\004 \001(\005\032\024\n\022attack_legion_call\032\016"
-    "\n\014reset_camera\032&\n\024attack_transfer_info\022\016"
-    "\n\006result\030\001 \001(\005\032\032\n\030end_attack_transfer_in"
-    "fo\032;\n!attack_city_npc_state_change_info\022"
-    "\026\n\016notice_content\030\001 \001(\t\032[\n\030time_feed_bac"
-    "k_operation\022\026\n\016operation_type\030\001 \001(\005\022\023\n\013m"
-    "ain_tem_id\030\002 \001(\005\022\022\n\nsub_tem_id\030\003 \001(\005\032.\n\034"
-    "time_feed_back_operation_end\022\016\n\006result\030\001"
-    " \001(\005\032\247\001\n\030send_time_feed_back_info\022\023\n\013tem"
-    "plate_id\030\001 \001(\005\022\027\n\017sub_template_id\030\002 \001(\005\022"
-    "\022\n\ninfo_state\030\003 \001(\005\022\020\n\010get_time\030\004 \001(\005\022\020\n"
-    "\010end_time\030\005 \001(\005\022\022\n\nmoney_type\030\006 \001(\005\022\021\n\tm"
-    "oney_num\030\007 \001(\005\032^\n\035send_time_feed_back_in"
-    "fo_list\022=\n\tinfo_list\030\001 \003(\0132*.faith.game_"
-    "proto.send_time_feed_back_info\032H\n\031time_l"
-    "imit_gift_operation\022\026\n\016operation_type\030\001 "
-    "\001(\005\022\023\n\013template_id\030\002 \001(\005\032D\n\035time_limit_g"
-    "ift_operation_end\022\016\n\006result\030\001 \001(\005\022\023\n\013tem"
-    "plate_id\030\002 \001(\005\032\213\001\n\024time_limit_gift_info\022"
-    "\023\n\013template_id\030\001 \001(\005\022\022\n\nstate_info\030\002 \001(\005"
-    "\022\022\n\nbegin_time\030\003 \001(\005\022\020\n\010end_time\030\004 \001(\005\022\023"
-    "\n\013trigger_num\030\005 \001(\005\022\017\n\007buy_num\030\006 \001(\005\032X\n\033"
-    "update_time_limit_gift_info\0229\n\tinfo_list"
-    "\030\001 \003(\0132&.faith.game_proto.time_limit_gif"
-    "t_info\0321\n\032initiative_time_limit_gift\022\023\n\013"
-    "template_id\030\001 \001(\005\032A\n\026limit_time_notice_i"
-    "nfo\022\023\n\013template_id\030\001 \001(\005\022\022\n\nweight_num\030\002"
-    " \001(\005\032u\n\033limit_time_notice_info_list\022;\n\ti"
-    "nfo_list\030\001 \003(\0132(.faith.game_proto.limit_"
-    "time_notice_info\022\031\n\021black_show_notice\030\002 "
-    "\003(\005\032B\n\021fuben_vip_mopping\022\031\n\021fuben_templa"
-    "te_id\030\001 \001(\005\022\022\n\nsettlement\030\002 \001(\005\032\'\n\025fuben"
-    "_vip_mopping_end\022\016\n\006result\030\001 \001(\005\032\013\n\tkill"
-    "_boss\032\037\n\rkill_boss_end\022\016\n\006result\030\001 \001(\005\032 "
-    "\n\nmap_search\022\022\n\nmultiplier\030\001 \001(\005\032 \n\016map_"
-    "search_end\022\016\n\006result\030\001 \001(\005\032+\n\025upgrade_se"
-    "arche_level\022\022\n\nmultiplier\030\001 \001(\005\032+\n\031upgra"
-    "de_searche_level_end\022\016\n\006result\030\001 \001(\005\"+\n\020"
-    "enter_scene_type\022\t\n\005enter\020\000\022\014\n\010transfer\020"
-    "\001b\006proto3"
+    "e\030\003 \001(\0132\033.faith.game_proto.rot_angle\032*\n\023"
+    "client2gateway_ping\022\023\n\013client_time\030\001 \001(\003"
+    "\032\?\n\023gateway2client_ping\022\023\n\013client_time\030\001"
+    " \001(\003\022\023\n\013server_time\030\002 \001(\003\032P\n\016client2cs_p"
+    "ing\022\022\n\ntrace_time\030\001 \001(\003\022\024\n\014trace_time_2\030"
+    "\002 \001(\003\022\024\n\014trace_time_3\030\003 \001(\003\032P\n\016cs2client"
+    "_ping\022\022\n\ntrace_time\030\001 \001(\003\022\024\n\014trace_time_"
+    "2\030\002 \001(\003\022\024\n\014trace_time_3\030\003 \001(\003\032\017\n\rversion"
+    "_wrong\0324\n\017set_timekeeping\022\014\n\004time\030\001 \001(\005\022"
+    "\023\n\013prefix_text\030\002 \001(\005\032\'\n\024wave_trigger_mes"
+    "sage\022\017\n\007message\030\001 \001(\005\032H\n\ngame_state\022\r\n\005s"
+    "tate\030\001 \001(\005\022\022\n\nstate_time\030\002 \001(\005\022\027\n\017cur_se"
+    "rver_time\030\003 \001(\005\032M\n\nboss_state\022\017\n\007boss_id"
+    "\030\001 \001(\005\022\027\n\017boss_state_code\030\002 \001(\005\022\025\n\ris_fi"
+    "nal_boss\030\003 \001(\010\032D\n\014bosses_state\0224\n\016create"
+    "d_bosses\030\001 \003(\0132\034.faith.game_proto.boss_s"
+    "tate\032M\n\021protect_npc_state\022\016\n\006npc_id\030\001 \001("
+    "\005\022\020\n\010npc_guid\030\002 \001(\003\022\026\n\016npc_state_code\030\003 "
+    "\001(\005\032H\n\025update_map_record_end\022\021\n\trole_gui"
+    "d\030\001 \003(\005\022\034\n\024map_record_info_data\030\002 \003(\005\032b\n"
+    "\031update_map_record_all_end\022\035\n\025map_record"
+    "_info_array\030\001 \003(\005\022\025\n\ris_end_record\030\002 \001(\005"
+    "\022\017\n\007map_num\030\003 \001(\005\032f\n\034update_demons_tower"
+    "_info_end\022\021\n\trole_guid\030\001 \003(\005\022\031\n\021demons_t"
+    "ower_info\030\002 \003(\005\022\030\n\020is_in_mopping_up\030\003 \001("
+    "\010\032C\n\014score_record\022\021\n\trole_guid\030\001 \003(\005\022\021\n\t"
+    "role_name\030\002 \001(\t\022\r\n\005score\030\003 \001(\003\032\321\001\n\021score"
+    "_record_list\022\026\n\016score_list_len\030\001 \001(\005\0222\n\n"
+    "score_list\030\002 \003(\0132\036.faith.game_proto.scor"
+    "e_record\0223\n\013extra_score\030\003 \001(\0132\036.faith.ga"
+    "me_proto.score_record\022\022\n\nextra_rank\030\004 \001("
+    "\005\022\027\n\017is_legion_score\030\005 \001(\010\022\016\n\006npc_id\030\006 \001"
+    "(\005\032\207\001\n\020temple_game_over\022\021\n\tnpc_score\030\001 \001"
+    "(\005\022\026\n\016win_money_id_1\030\002 \001(\005\022\027\n\017win_money_"
+    "num_1\030\003 \001(\005\022\026\n\016win_money_id_2\030\004 \001(\005\022\027\n\017w"
+    "in_money_num_2\030\005 \001(\005\032,\n\024get_temple_over_"
+    "gift\022\024\n\014get_over_num\030\001 \001(\005\032\032\n\030get_temple"
+    "_over_gift_end\0323\n\014pop_plot_tip\022\016\n\006str_id"
+    "\030\001 \001(\005\022\023\n\013str_id_type\030\002 \001(\005\032*\n\017get_best_"
+    "record\022\027\n\017map_template_id\030\001 \001(\005\032h\n\023get_b"
+    "est_record_end\022\027\n\017map_template_id\030\001 \001(\005\022"
+    "\035\n\025best_record_role_name\030\002 \003(\t\022\031\n\021best_r"
+    "ecord_value\030\003 \003(\003\032$\n\016transfer_error\022\022\n\ne"
+    "rror_code\030\001 \001(\005\032\031\n\027transfer_to_pk_king_m"
+    "ap\032;\n\021pk_king_game_over\022\021\n\taward_exp\030\001 \001"
+    "(\005\022\023\n\013award_money\030\002 \001(\005\032\?\n\032transfer_to_b"
+    "roken_sky_map\022\016\n\006map_id\030\001 \001(\005\022\021\n\trole_gu"
+    "id\030\002 \001(\003\032)\n\024broken_sky_boss_dead\022\021\n\tboss"
+    "_guid\030\001 \001(\003\032\013\n\tleave_map\032+\n\020get_one_map_"
+    "info\022\027\n\017map_template_id\030\001 \001(\005\032E\n\024get_one"
+    "_map_info_end\022\027\n\017map_template_id\030\001 \001(\005\022\024"
+    "\n\014map_info_arr\030\002 \003(\003\032R\n\020server_exp_level"
+    "\022\021\n\texp_level\030\001 \001(\005\022\023\n\013exp_percent\030\002 \001(\002"
+    "\022\026\n\016exp_last_level\030\003 \001(\005\032&\n\017need_hot_upd"
+    "ate\022\023\n\013update_type\030\001 \001(\005\032\?\n\026gain_treasur"
+    "e_info_one\022\021\n\tinfo_type\030\001 \001(\005\022\022\n\ninfo_va"
+    "lue\030\002 \001(\005\032T\n\026gain_treasure_info_all\022:\n\010i"
+    "nfo_arr\030\001 \003(\0132(.faith.game_proto.gain_tr"
+    "easure_info_one\032&\n\021add_exp_raid_buff\022\021\n\t"
+    "add_count\030\001 \001(\005\032*\n\025add_exp_raid_buff_end"
+    "\022\021\n\tadd_count\030\001 \001(\005\032V\n\030add_legion_boss_b"
+    "uff_end\022\021\n\tadd_count\030\001 \001(\005\022\023\n\013demon_coun"
+    "t\030\002 \001(\005\022\022\n\ngold_count\030\003 \001(\005\032]\n\037add_legio"
+    "n_boss_big_player_info\022\022\n\nclass_type\030\001 \001"
+    "(\005\022\021\n\tadd_count\030\002 \001(\005\022\023\n\013player_name\030\003 \001"
+    "(\t\032E\n\035gain_treasure_req_kill_record\022$\n\034b"
+    "oss_spawn_point_template_id\030\001 \001(\005\032H\n\035gai"
+    "n_treasure_kill_record_one\022\024\n\014killed_sta"
+    "mp\030\001 \001(\005\022\021\n\trole_name\030\002 \003(\t\032\212\001\n\035gain_tre"
+    "asure_kill_record_end\022$\n\034boss_spawn_poin"
+    "t_template_id\030\001 \001(\005\022C\n\nrecord_arr\030\002 \003(\0132"
+    "/.faith.game_proto.gain_treasure_kill_re"
+    "cord_one\032:\n\"gain_treasure_req_gain_item_"
+    "record\022\024\n\014record_index\030\001 \001(\005\032\273\001\n\'gain_tr"
+    "easure_gain_item_record_info_one\022\021\n\trole"
+    "_name\030\001 \001(\t\022$\n\034boss_spawn_point_template"
+    "_id\030\002 \001(\005\022\030\n\020item_template_id\030\003 \001(\005\022\024\n\014k"
+    "illed_stamp\030\004 \001(\005\022\024\n\014record_index\030\005 \001(\005\022"
+    "\021\n\trole_guid\030\006 \001(\003\032s\n\"gain_treasure_gain"
+    "_item_record_end\022M\n\nrecord_arr\030\001 \003(\01329.f"
+    "aith.game_proto.gain_treasure_gain_item_"
+    "record_info_one\032\264\001\n\033gain_treasure_boss_i"
+    "nfo_one\022$\n\034boss_spawn_point_template_id\030"
+    "\001 \001(\005\022\021\n\tboss_guid\030\002 \001(\003\022\032\n\022next_refresh"
+    "_stamp\030\003 \001(\005\022\031\n\021first_player_name\030\004 \001(\t\022"
+    "\023\n\013player_guid\030\005 \003(\003\022\020\n\010map_type\030\006 \001(\005\032_"
+    "\n\033gain_treasure_boss_info_all\022@\n\tboss_in"
+    "fo\030\001 \003(\0132-.faith.game_proto.gain_treasur"
+    "e_boss_info_one\0328\n\016buy_raid_count\022\023\n\013map"
+    "_temp_id\030\001 \001(\005\022\021\n\tbuy_count\030\002 \001(\005\032<\n\022buy"
+    "_raid_count_end\022\023\n\013map_temp_id\030\001 \001(\005\022\021\n\t"
+    "buy_count\030\002 \001(\005\032=\n\024boss_island_info_one\022"
+    "\021\n\tinfo_type\030\001 \001(\005\022\022\n\ninfo_value\030\002 \001(\005\032*"
+    "\n\024boss_island_info_all\022\022\n\ninfo_value\030\001 \003"
+    "(\005\032g\n\021server_config_all\022\021\n\tserver_id\030\001 \003"
+    "(\005\022\027\n\017is_cross_server\030\002 \003(\005\022\021\n\tserver_ip"
+    "\030\003 \003(\t\022\023\n\013server_name\030\004 \003(\t\032@\n\016gm_begin_"
+    "cross\022\026\n\016is_begin_cross\030\001 \001(\010\022\026\n\016gate_se"
+    "rver_id\030\002 \001(\005\0327\n\022gm_begin_cross_one\022\017\n\007g"
+    "m_type\030\001 \001(\005\022\020\n\010is_begin\030\002 \001(\010\032*\n\022gm_beg"
+    "in_cross_all\022\024\n\014is_begin_arr\030\001 \003(\010\032%\n\021is"
+    "_close_exchange\022\020\n\010is_close\030\001 \001(\010\032+\n\021gm_"
+    "begin_cross_pk\022\026\n\016is_begin_cross\030\001 \001(\010\032."
+    "\n\024gm_begin_cross_harry\022\026\n\016is_begin_cross"
+    "\030\001 \001(\010\0326\n\034gm_begin_cross_territory_war\022\026"
+    "\n\016is_begin_cross\030\001 \001(\010\0323\n\031gm_begin_cross"
+    "_world_boss\022\026\n\016is_begin_cross\030\001 \001(\010\032/\n\025g"
+    "m_begin_cross_ladder\022\026\n\016is_begin_cross\030\001"
+    " \001(\010\032\213\001\n\021pk_one_player_msg\022\024\n\014player_gui"
+    "dA\030\001 \001(\005\022\024\n\014player_guidB\030\002 \001(\005\022\023\n\013player"
+    "_name\030\003 \001(\t\022\017\n\007win_num\030\004 \001(\005\022\021\n\tserver_i"
+    "d\030\005 \001(\005\022\021\n\tis_winner\030\006 \001(\005\032\323\001\n\033cross_ser"
+    "ver_one_island_msg\022\020\n\010war_idex\030\001 \001(\005\022\027\n\017"
+    "island_pk_state\030\002 \001(\005\0227\n\nplayer_msg\030\003 \003("
+    "\0132#.faith.game_proto.pk_one_player_msg\022\024"
+    "\n\014winner_guidA\030\004 \001(\005\022\024\n\014winner_guidB\030\005 \001"
+    "(\005\022\022\n\nis_end_war\030\006 \001(\005\022\020\n\010pk_count\030\007 \001(\005"
+    "\032Y\n\024cross_server_all_msg\022A\n\nisland_msg\030\001"
+    " \003(\0132-.faith.game_proto.cross_server_one"
+    "_island_msg\032S\n\024cross_server_map_msg\022\021\n\tm"
+    "ap_state\030\001 \001(\005\022\021\n\tleft_time\030\002 \001(\005\022\025\n\ris_"
+    "in_the_war\030\003 \001(\010\032m\n\036cross_server_pk_map_"
+    "island_msg\022\021\n\tmap_state\030\001 \001(\005\022\023\n\013island_"
+    "idex\030\002 \001(\005\022\021\n\tleft_time\030\003 \001(\005\022\020\n\010war_ide"
+    "x\030\004 \001(\005\032\036\n\034cross_server_pk_map_transfer\032"
+    "1\n\035cross_server_pk_state_end_msg\022\020\n\010pk_s"
+    "tate\030\001 \001(\005\032(\n\025get_world_boss_damage\022\017\n\007b"
+    "oss_id\030\001 \001(\005\032E\n\033template_table_param_str"
+    "ing\022\022\n\nparam_name\030\001 \001(\t\022\022\n\nparam_date\030\002 "
+    "\001(\t\032B\n\030template_table_param_int\022\022\n\nparam"
+    "_name\030\001 \001(\t\022\022\n\nparam_date\030\002 \001(\005\032\257\001\n\023temp"
+    "late_table_data\022C\n\014param_string\030\001 \003(\0132-."
+    "faith.game_proto.template_table_param_st"
+    "ring\022=\n\tparam_int\030\002 \003(\0132*.faith.game_pro"
+    "to.template_table_param_int\022\024\n\014attribute"
+    "_id\030\003 \001(\005\032}\n\022set_template_table\022<\n\rtempl"
+    "ate_data\030\001 \003(\0132%.faith.game_proto.templa"
+    "te_table_data\022\022\n\ntabel_name\030\002 \001(\t\022\025\n\rif_"
+    "first_send\030\003 \001(\005\032\021\n\017get_world_level\032(\n\020s"
+    "end_world_level\022\024\n\014server_level\030\001 \001(\005\032\241\002"
+    "\n\032cross_server_harry_one_msg\022\021\n\tserver_i"
+    "d\030\001 \001(\005\022\024\n\014server_money\030\002 \001(\005\022\025\n\rspecial"
+    "_money\030\003 \001(\005\022\032\n\022first_player_guidA\030\004 \001(\005"
+    "\022\032\n\022first_player_guidB\030\005 \001(\005\022\033\n\023second_p"
+    "layer_guidA\030\006 \001(\005\022\033\n\023second_player_guidB"
+    "\030\007 \001(\005\022\032\n\022third_player_guidA\030\010 \001(\005\022\032\n\022th"
+    "ird_player_guidB\030\t \001(\005\022\031\n\021first_player_n"
+    "ame\030\n \001(\t\032a\n\032cross_server_harry_all_msg\022"
+    "C\n\rall_harry_msg\030\001 \003(\0132,.faith.game_prot"
+    "o.cross_server_harry_one_msg\032\026\n\024give_ser"
+    "ver_item_msg\032B\n\027role_harry_msg_info_one\022"
+    "\022\n\nharry_idex\030\001 \001(\005\022\023\n\013harry_value\030\002 \001(\005"
+    "\0322\n\027role_harry_msg_info_all\022\027\n\017harry_val"
+    "ue_arr\030\001 \003(\005\032*\n\025transfer_to_harry_map\022\021\n"
+    "\tserver_id\030\001 \001(\005\032\"\n\014random_array\022\022\n\nrand"
+    "om_num\030\001 \003(\005\032=\n$cross_server_world_boss_"
+    "map_transfer\022\025\n\rboss_map_type\030\001 \001(\005\032\032\n\030g"
+    "et_cross_boss_show_info\032^\n\030set_cross_bos"
+    "s_show_info\022\023\n\013player_name\030\002 \003(\t\022\023\n\013legi"
+    "on_name\030\003 \003(\t\022\030\n\020boss_residue_num\030\004 \003(\005\032"
+    "\034\n\032get_cross_boss_damage_list\032X\n\024cross_b"
+    "oss_rank_info\022\024\n\014legion_value\030\001 \001(\005\022\023\n\013l"
+    "egion_name\030\002 \001(\t\022\025\n\rlegion_damage\030\003 \001(\t\032"
+    "\231\001\n\033cross_boss_legion_rank_list\0229\n\trank_"
+    "info\030\001 \003(\0132&.faith.game_proto.cross_boss"
+    "_rank_info\022\023\n\013legion_rank\030\002 \001(\005\022\025\n\rlegio"
+    "n_damage\030\003 \001(\t\022\023\n\013boss_tmp_id\030\004 \001(\005\032g\n\037c"
+    "ross_boss_legion_rank_list_all\022D\n\rrank_i"
+    "nfo_all\030\001 \003(\0132-.faith.game_proto.cross_b"
+    "oss_legion_rank_list\032\?\n\022cross_boss_is_de"
+    "ad\022\023\n\013boss_tmp_id\030\001 \003(\005\022\024\n\014boss_is_dead\030"
+    "\002 \003(\005\032+\n\030send_boss_god_begin_time\022\017\n\007bos"
+    "s_id\030\002 \001(\005\032$\n\021get_boss_god_time\022\017\n\007boss_"
+    "id\030\001 \001(\005\0327\n\022send_boss_god_time\022\020\n\010god_ti"
+    "me\030\001 \001(\005\022\017\n\007boss_id\030\002 \001(\005\032/\n\024get_map_bos"
+    "s_is_dead\022\027\n\017map_template_id\030\001 \001(\005\032G\n\031or"
+    "acle_trial_customs_info\022\025\n\rcustoms_state"
+    "\030\001 \001(\005\022\023\n\013reward_stat\030\002 \001(\005\032\247\001\n\025oracle_t"
+    "rial_info_all\022\022\n\nhight_rank\030\001 \001(\005\022\020\n\010max"
+    "_tier\030\002 \001(\005\022\024\n\014max_commping\030\003 \001(\005\022=\n\010all"
+    "_info\030\004 \003(\0132+.faith.game_proto.oracle_tr"
+    "ial_customs_info\022\023\n\013show_prompt\030\005 \001(\010\032\036\n"
+    "\034send_oracle_trial_commpingup\0322\n\033oracle_"
+    "trial_commpingup_end\022\023\n\013error_index\030\001 \001("
+    "\005\032E\n\036get_oracle_trial_customs_award\022\020\n\010t"
+    "ier_num\030\001 \001(\005\022\021\n\taward_num\030\002 \001(\005\032:\n#send"
+    "_oracle_trial_customs_award_end\022\023\n\013error"
+    "_index\030\001 \001(\005\032\027\n\025get_oracle_trial_rank\032Z\n"
+    "\"send_oracle_trial_funben_over_info\022\016\n\006m"
+    "ap_id\030\001 \001(\005\022\021\n\told_statr\030\002 \001(\005\022\021\n\tnew_st"
+    "atr\030\003 \001(\005\032\?\n\020send_server_name\022\026\n\016is_self"
+    "_server\030\001 \001(\010\022\023\n\013server_name\030\002 \001(\t\032\035\n\033se"
+    "nd_transfer_new_map_error\032\276\001\n\025boss_damag"
+    "e_list_item\022\021\n\trole_name\030\001 \001(\t\022\023\n\013role_g"
+    "uid_a\030\002 \001(\005\022\023\n\013role_guid_b\030\003 \001(\005\022\024\n\014dama"
+    "ge_value\030\004 \001(\t\022\023\n\013damage_rate\030\005 \001(\005\022\017\n\007i"
+    "s_team\030\006 \001(\005\022\025\n\rlegion_guid_a\030\007 \001(\005\022\025\n\rl"
+    "egion_guid_b\030\010 \001(\005\032\352\001\n\031send_boss_damage_"
+    "list_msg\022=\n\014ranking_list\030\001 \003(\0132\'.faith.g"
+    "ame_proto.boss_damage_list_item\022<\n\013helpe"
+    "r_list\030\002 \003(\0132\'.faith.game_proto.boss_dam"
+    "age_list_item\022\021\n\tmy_damage\030\003 \001(\t\022\023\n\013dama"
+    "ge_rate\030\004 \001(\005\022\016\n\006is_end\030\005 \001(\005\022\030\n\020boss_te"
+    "mplate_id\030\006 \001(\005\032!\n\037send_leave_boss_damag"
+    "e_list_msg\032i\n\025help_succes_list_item\022\021\n\tr"
+    "ole_name\030\001 \001(\t\022\023\n\013role_guid_a\030\002 \001(\005\022\023\n\013r"
+    "ole_guid_b\030\003 \001(\005\022\023\n\013template_id\030\004 \001(\005\032}\n"
+    "\025send_help_success_msg\022:\n\thelp_list\030\001 \003("
+    "\0132\'.faith.game_proto.help_succes_list_it"
+    "em\022\025\n\rhelper_reward\030\002 \001(\005\022\021\n\tmy_reward\030\003"
+    " \001(\005\032\216\001\n\026send_the_attacker_info\022\021\n\trole_"
+    "name\030\001 \001(\t\022\023\n\013role_guid_a\030\002 \001(\005\022\023\n\013role_"
+    "guid_b\030\003 \001(\005\022\023\n\013template_id\030\004 \001(\005\022\022\n\nrol"
+    "e_level\030\005 \001(\005\022\016\n\006is_npc\030\006 \001(\010\032\'\n\023buy_sim"
+    "ple_boss_num\022\020\n\010map_type\030\001 \001(\005\032.\n\027buy_si"
+    "mple_boss_num_end\022\023\n\013error_index\030\001 \001(\005\0324"
+    "\n\032is_can_transfer_other_line\022\026\n\016transfer"
+    "_state\030\001 \001(\005\032X\n\030legion_auction_item_show"
+    "\022<\n\010item_all\030\001 \003(\0132*.faith.game_proto.le"
+    "gion_aunction_item_one\032U\n\030legion_aunctio"
+    "n_item_one\022\024\n\014item_temp_id\030\001 \001(\005\022\020\n\010item"
+    "_num\030\002 \001(\005\022\021\n\titem_lock\030\003 \001(\005\032t\n\023pk_king"
+    "_player_info\022\020\n\010kill_num\030\001 \001(\005\022\025\n\rhigh_k"
+    "ill_num\030\002 \001(\005\022\020\n\010cur_rank\030\003 \001(\005\022\021\n\tcur_s"
+    "core\030\004 \001(\005\022\017\n\007is_dead\030\005 \001(\005\032P\n\025pk_king_k"
+    "ill_num_info\022\021\n\trole_name\030\001 \001(\t\022\020\n\010kill_"
+    "num\030\002 \001(\005\022\022\n\nclass_type\030\003 \001(\005\032|\n\026pk_king"
+    "_map_state_info\022\020\n\010map_time\030\001 \001(\005\022\030\n\020map"
+    "_time_remaing\030\002 \001(\005\022\026\n\016map_time_state\030\003 "
+    "\001(\005\022\036\n\026map_time_state_remaing\030\004 \001(\005\032)\n\025p"
+    "k_king_map_game_over\022\020\n\010end_type\030\001 \001(\005\032]"
+    "\n\021pk_king_rank_list\0226\n\trank_list\030\001 \003(\0132#"
+    ".faith.game_proto.pk_king_rank_info\022\020\n\010r"
+    "ank_num\030\002 \001(\005\032{\n\021pk_king_rank_info\022\016\n\006gu"
+    "id_A\030\001 \001(\005\022\016\n\006guid_B\030\002 \001(\005\022\021\n\trole_name\030"
+    "\003 \001(\t\022\021\n\tscore_num\030\004 \001(\005\022\020\n\010rank_num\030\005 \001"
+    "(\005\022\016\n\006is_sur\030\006 \001(\005\032J\n\032send_need_break_li"
+    "ne_login\022\027\n\017map_template_id\030\001 \001(\005\022\023\n\013act"
+    "ive_type\030\002 \001(\005\032G\n\036send_need_break_line_l"
+    "ogin_end\022\020\n\010is_login\030\001 \001(\010\022\023\n\013active_typ"
+    "e\030\002 \001(\005\032P\n\022create_pk_end_time\022\022\n\nbegin_t"
+    "ime\030\001 \001(\005\022\020\n\010end_time\030\002 \001(\005\022\024\n\014end_str_t"
+    "ype\030\003 \001(\005\0321\n\032send_to_server_special_msg\022"
+    "\023\n\013special_msg\030\001 \001(\t\032U\n\027pk_king_target_l"
+    "ist_msg\022\023\n\013guid_a_list\030\001 \003(\005\022\023\n\013guid_b_l"
+    "ist\030\002 \003(\005\022\020\n\010data_num\030\003 \001(\005\032*\n\026server_ac"
+    "t_is_open_end\022\020\n\010is_hiden\030\001 \001(\010\0325\n\037eleme"
+    "nt_war_send_upgrade_notify\022\022\n\nupgrade_id"
+    "\030\001 \001(\005\032\032\n\030element_war_send_sign_up\032Q\n\034el"
+    "ement_war_send_sign_up_end\022\021\n\tret_index\030"
+    "\001 \001(\005\022\016\n\006guid_a\030\002 \001(\005\022\016\n\006guid_b\030\003 \001(\005\0327\n"
+    "#element_war_send_sign_up_team_ready\022\020\n\010"
+    "is_ready\030\001 \001(\005\032\\\n\'element_war_send_sign_"
+    "up_team_ready_end\022\021\n\tret_index\030\001 \001(\005\022\016\n\006"
+    "guid_a\030\002 \001(\005\022\016\n\006guid_b\030\003 \001(\005\032 \n\036element_"
+    "war_send_close_sign_up\032W\n\"element_war_se"
+    "nd_close_sign_up_end\022\021\n\tret_index\030\001 \001(\005\022"
+    "\016\n\006guid_a\030\002 \001(\005\022\016\n\006guid_b\030\003 \001(\005\032\224\001\n\022elem"
+    "ent_match_info\022\016\n\006guid_a\030\001 \001(\005\022\016\n\006guid_b"
+    "\030\002 \001(\005\022\021\n\trole_name\030\003 \001(\t\022\020\n\010is_robot\030\004 "
+    "\001(\010\022\023\n\013template_id\030\005 \001(\005\022\021\n\tscore_num\030\006 "
+    "\001(\005\022\021\n\tvip_level\030\007 \001(\005\032\237\001\n\"element_war_s"
+    "end_match_success_msg\022:\n\014my_team_info\030\001 "
+    "\003(\0132$.faith.game_proto.element_match_inf"
+    "o\022=\n\017other_team_info\030\002 \003(\0132$.faith.game_"
+    "proto.element_match_info\032\213\001\n\025element_war"
+    "_role_info\022\021\n\tinfo_data\030\001 \003(\005\022\021\n\tmax_ind"
+    "ex\030\002 \001(\005\022\024\n\014cross_result\030\003 \001(\005\022\022\n\nlast_s"
+    "core\030\004 \001(\005\022\021\n\tis_online\030\005 \001(\005\022\017\n\007is_sign"
+    "\030\006 \001(\010\032\211\001\n\031element_war_map_role_info\022\025\n\r"
+    "cur_score_num\030\001 \001(\005\022\026\n\016team_score_num\030\002 "
+    "\001(\005\022\022\n\nteam_index\030\003 \001(\005\022\024\n\014kill_monster\030"
+    "\004 \001(\005\022\023\n\013kill_player\030\005 \001(\005\032U\n\025element_wa"
+    "r_boss_info\022\017\n\007boss_id\030\001 \001(\005\022\r\n\005pos_x\030\002 "
+    "\001(\005\022\r\n\005pos_y\030\003 \001(\005\022\r\n\005pos_z\030\004 \001(\005\032\305\002\n\024el"
+    "ement_war_map_info\022\027\n\017first_score_num\030\001 "
+    "\001(\005\022\030\n\020secord_score_num\030\002 \001(\005\022\021\n\tmap_sta"
+    "te\030\003 \001(\005\022;\n\nfirst_boss\030\004 \001(\0132\'.faith.gam"
+    "e_proto.element_war_boss_info\022<\n\013secord_"
+    "boss\030\005 \001(\0132\'.faith.game_proto.element_wa"
+    "r_boss_info\022<\n\013target_boss\030\006 \001(\0132\'.faith"
+    ".game_proto.element_war_boss_info\022\026\n\016buf"
+    "f_have_team\030\007 \003(\005\022\026\n\016buff_have_name\030\010 \003("
+    "\t\032\302\001\n\035element_war_map_end_role_info\022\021\n\tr"
+    "ole_name\030\001 \001(\t\022\031\n\021cur_element_score\030\002 \001("
+    "\005\022\020\n\010cur_rank\030\003 \001(\005\022\021\n\tadd_score\030\004 \001(\005\022\021"
+    "\n\tscore_num\030\005 \001(\005\022\021\n\tis_escape\030\006 \001(\010\022\024\n\014"
+    "is_kill_boss\030\007 \001(\010\022\022\n\nteam_index\030\010 \001(\005\032\265"
+    "\001\n\030element_war_map_end_info\022C\n\nfirst_tea"
+    "m\030\001 \003(\0132/.faith.game_proto.element_war_m"
+    "ap_end_role_info\022D\n\013secord_team\030\002 \003(\0132/."
+    "faith.game_proto.element_war_map_end_rol"
+    "e_info\022\016\n\006is_win\030\003 \001(\010\032\240\001\n\037element_war_s"
+    "end_boss_be_attack\022\r\n\005pos_x\030\001 \001(\005\022\r\n\005pos"
+    "_y\030\002 \001(\005\022\r\n\005pos_z\030\003 \001(\005\022\017\n\007is_open\030\004 \001(\010"
+    "\022\023\n\013attack_name\030\005 \001(\t\022\024\n\014attack_class\030\006 "
+    "\001(\005\022\024\n\014attack_level\030\007 \001(\005\0327\n\036element_war"
+    "_get_mission_reward\022\025\n\rmission_index\030\001 \001"
+    "(\005\0327\n\"element_war_get_mission_reward_end"
+    "\022\021\n\tret_index\030\001 \001(\005\032\037\n\035element_war_reque"
+    "st_role_info\032\030\n\026element_war_buy_ticket\032/"
+    "\n\032element_war_buy_ticket_end\022\021\n\tret_inde"
+    "x\030\001 \001(\005\032\"\n element_war_send_create_ready"
+    "_ui\032i\n\034element_war_create_boss_dead\022\022\n\nc"
+    "lass_type\030\001 \001(\005\022\021\n\trole_name\030\002 \001(\t\022\021\n\tst"
+    "ring_id\030\003 \001(\005\022\017\n\007boss_id\030\004 \001(\005\032q\n\016boss_r"
+    "ank_item\022\021\n\trole_name\030\001 \001(\t\022\023\n\013role_guid"
+    "_a\030\002 \001(\005\022\023\n\013role_guid_b\030\003 \001(\005\022\024\n\014damage_"
+    "value\030\004 \001(\t\022\014\n\004rank\030\005 \001(\005\032\255\001\n\031boss_resul"
+    "t_rank_list_end\0222\n\010top_list\030\001 \003(\0132 .fait"
+    "h.game_proto.boss_rank_item\022\017\n\007top_num\030\002"
+    " \001(\005\0221\n\007my_rank\030\003 \001(\0132 .faith.game_proto"
+    ".boss_rank_item\022\030\n\020boss_template_id\030\004 \001("
+    "\005\032v\n\032element_map_rank_role_info\022\021\n\trole_"
+    "name\030\001 \001(\t\022\021\n\tscore_num\030\002 \001(\005\022\022\n\nteam_in"
+    "dex\030\003 \001(\005\022\016\n\006guid_a\030\004 \001(\005\022\016\n\006guid_b\030\005 \001("
+    "\005\032X\n\025element_map_rank_info\022\?\n\trank_info\030"
+    "\001 \003(\0132,.faith.game_proto.element_map_ran"
+    "k_role_info\032K\n\024map_target_show_info\022\016\n\006g"
+    "uid_a\030\001 \001(\005\022\016\n\006guid_b\030\002 \001(\005\022\023\n\013image_ind"
+    "ex\030\003 \001(\005\032V\n\031map_target_show_info_list\0229\n"
+    "\tinfo_list\030\001 \003(\0132&.faith.game_proto.map_"
+    "target_show_info\032\037\n\035get_map_target_show_"
+    "info_list\032\210\001\n\027refresh_lucky_card_info\022\025\n"
+    "\ractivity_guid\030\001 \001(\005\022\022\n\nstate_info\030\002 \001(\005"
+    "\022\024\n\014is_have_free\030\003 \001(\005\022\023\n\013end_item_id\030\004 "
+    "\001(\005\022\027\n\017lucky_card_info\030\005 \001(\005\032(\n\022refresh_"
+    "lucky_card\022\022\n\ncard_index\030\001 \001(\005\032:\n\022lucky_"
+    "card_operate\022\023\n\013touch_index\030\001 \001(\005\022\017\n\007is_"
+    "jump\030\002 \001(\005\032-\n\026lucky_card_operate_end\022\023\n\013"
+    "error_index\030\001 \001(\005\032\031\n\027get_element_competi"
+    "tion\032C\n\031get_competition_lv_reward\022\021\n\tman"
+    "ual_id\030\001 \001(\005\022\023\n\013manual_type\030\002 \001(\005\032c\n\035get"
+    "_competition_lv_reward_end\022\026\n\016manual_id_"
+    "list\030\001 \003(\005\022\030\n\020manual_type_list\030\002 \003(\005\022\020\n\010"
+    "get_type\030\003 \001(\005\032\037\n\035get_competition_lv_rew"
+    "ard_all\032#\n\022buy_competition_lv\022\r\n\005level\030\001"
+    " \001(\005\0328\n\026buy_competition_lv_end\022\r\n\005level\030"
+    "\001 \001(\005\022\017\n\007cur_exp\030\002 \001(\005\032)\n\022buy_speical_ma"
+    "nual\022\023\n\013manual_type\030\001 \001(\005\032=\n\026buy_speical"
+    "_manual_end\022\016\n\006is_buy\030\001 \001(\005\022\023\n\013manual_ty"
+    "pe\030\002 \001(\005\032\205\002\n\025sync_role_competition\022\016\n\006is"
+    "_buy\030\001 \001(\005\022\016\n\006season\030\002 \001(\005\022\027\n\017buy_manual"
+    "_type\030\003 \001(\005\022\036\n\026competition_begin_time\030\004 "
+    "\001(\005\022\034\n\024competition_end_time\030\005 \001(\005\022\r\n\005lev"
+    "el\030\006 \001(\005\022\017\n\007cur_exp\030\007 \001(\005\022\025\n\rnormal_rewa"
+    "rd\030\010 \003(\005\022\026\n\016special_reward\030\t \003(\005\022\021\n\tcur_"
+    "state\030\n \001(\005\022\023\n\013world_level\030\013 \001(\005\032!\n\037send"
+    "_new_server_treasure_finish\032\032\n\030transfer_"
+    "attack_city_map\0326\n\024get_attack_city_info\022"
+    "\016\n\006guid_a\030\001 \001(\005\022\016\n\006guid_b\030\002 \001(\005\032g\n\033attac"
+    "k_city_info_level_info\022\016\n\006guid_a\030\001 \001(\005\022\016"
+    "\n\006guid_b\030\002 \001(\005\022\023\n\013legion_name\030\003 \001(\t\022\023\n\013g"
+    "roup_level\030\004 \001(\005\032\360\001\n\025attack_city_info_li"
+    "st\022\024\n\014legion_level\030\001 \001(\005\022\021\n\ttem_level\030\002 "
+    "\001(\005\022\017\n\007gs_rank\030\003 \001(\005\022\024\n\014is_have_rank\030\004 \001"
+    "(\005\022\033\n\023win_num_legion_name\030\005 \001(\t\022\017\n\007win_n"
+    "um\030\006 \001(\005\022@\n\tlist_info\030\007 \003(\0132-.faith.game"
+    "_proto.attack_city_info_level_info\022\027\n\017is"
+    "_in_game_time\030\010 \001(\005\032\033\n\031get_attack_city_r"
+    "ank_list\032\037\n\035get_attack_city_map_rank_lis"
+    "t\032\332\001\n\025attack_city_rank_info\022\016\n\006guid_a\030\001 "
+    "\001(\005\022\016\n\006guid_b\030\002 \001(\005\022\021\n\trole_name\030\003 \001(\t\022\023"
+    "\n\013role_source\030\004 \001(\005\022\023\n\013kill_player\030\005 \001(\005"
+    "\022\023\n\013kill_statue\030\006 \001(\005\022\021\n\tkill_door\030\007 \001(\005"
+    "\022\025\n\rrepair_statue\030\010 \001(\005\022\021\n\tkill_boss\030\t \001"
+    "(\005\022\022\n\nshow_index\030\n \001(\005\032\314\001\n\032attack_city_r"
+    "ank_info_list\022\023\n\013legion_name\030\001 \001(\t\022\025\n\rle"
+    "gion_source\030\002 \001(\005\022:\n\tinfo_list\030\003 \003(\0132\'.f"
+    "aith.game_proto.attack_city_rank_info\022\016\n"
+    "\006guid_a\030\004 \001(\005\022\016\n\006guid_b\030\005 \001(\005\022\022\n\nmode_in"
+    "dex\030\006 \001(\005\022\022\n\nshow_index\030\007 \001(\005\032`\n\035get_att"
+    "ack_city_rank_list_end\022\?\n\trank_list\030\001 \003("
+    "\0132,.faith.game_proto.attack_city_rank_in"
+    "fo_list\032\\\n\033attack_city_map_legion_info\022\021"
+    "\n\tserver_id\030\001 \001(\005\022\023\n\013legion_name\030\002 \001(\t\022\025"
+    "\n\rlegion_damage\030\003 \001(\t\032\262\001\n send_attack_ci"
+    "ty_map_legion_info\022@\n\tinfo_list\030\001 \003(\0132-."
+    "faith.game_proto.attack_city_map_legion_"
+    "info\022\021\n\tmap_state\030\002 \001(\005\022\031\n\021next_refresh_"
+    "time\030\003 \001(\005\022\016\n\006guid_a\030\004 \001(\005\022\016\n\006guid_b\030\005 \001"
+    "(\005\032B\n\023attack_city_operate\022\024\n\014operate_typ"
+    "e\030\001 \001(\005\022\025\n\rprop_npc_guid\030\002 \001(\004\032P\n\027attack"
+    "_city_operate_end\022\016\n\006result\030\001 \001(\005\022\025\n\rpro"
+    "p_npc_guid\030\002 \001(\004\022\016\n\006npc_id\030\003 \001(\005\032}\n\024atta"
+    "ck_city_npc_info\022\020\n\010npc_type\030\001 \001(\005\022\016\n\006np"
+    "c_id\030\002 \001(\005\022\020\n\010cur_life\030\003 \001(\005\022\021\n\tbuff_pil"
+    "e\030\004 \001(\005\022\016\n\006guid_a\030\005 \001(\005\022\016\n\006guid_b\030\006 \001(\005\032"
+    "Q\n\024attack_city_npc_list\0229\n\tinfo_list\030\001 \003"
+    "(\0132&.faith.game_proto.attack_city_npc_in"
+    "fo\032\?\n\024attack_city_camp_cut\022\023\n\013attack_nam"
+    "e\030\001 \003(\t\022\022\n\nguard_name\030\002 \001(\t\032\026\n\024transfer_"
+    "to_bron_pos\032\354\001\n\037attack_city_map_end_play"
+    "er_info\022\016\n\006guid_a\030\001 \001(\005\022\016\n\006guid_b\030\002 \001(\005\022"
+    "\021\n\trole_name\030\003 \001(\t\022\023\n\013role_source\030\004 \001(\005\022"
+    "\022\n\nrole_group\030\005 \001(\005\022\016\n\006kill_1\030\006 \001(\005\022\016\n\006k"
+    "ill_2\030\007 \001(\005\022\016\n\006kill_3\030\010 \001(\005\022\023\n\013kill_stat"
+    "ue\030\t \001(\005\022\021\n\tkill_door\030\n \001(\005\022\025\n\rrepair_st"
+    "atue\030\013 \001(\005\032U\n\035attack_city_map_end_item_i"
+    "nfo\022\017\n\007item_id\030\001 \001(\005\022\020\n\010item_num\030\002 \001(\005\022\021"
+    "\n\tshow_type\030\003 \001(\005\032\314\001\n\030attack_city_map_en"
+    "d_info\022D\n\tplay_list\030\001 \003(\01321.faith.game_p"
+    "roto.attack_city_map_end_player_info\022B\n\t"
+    "item_list\030\002 \003(\0132/.faith.game_proto.attac"
+    "k_city_map_end_item_info\022\023\n\013role_source\030"
+    "\003 \001(\005\022\021\n\trole_rank\030\004 \001(\005\032\024\n\022attack_legio"
+    "n_call\032\016\n\014reset_camera\032&\n\024attack_transfe"
+    "r_info\022\016\n\006result\030\001 \001(\005\032\032\n\030end_attack_tra"
+    "nsfer_info\032;\n!attack_city_npc_state_chan"
+    "ge_info\022\026\n\016notice_content\030\001 \001(\t\032[\n\030time_"
+    "feed_back_operation\022\026\n\016operation_type\030\001 "
+    "\001(\005\022\023\n\013main_tem_id\030\002 \001(\005\022\022\n\nsub_tem_id\030\003"
+    " \001(\005\032.\n\034time_feed_back_operation_end\022\016\n\006"
+    "result\030\001 \001(\005\032\247\001\n\030send_time_feed_back_inf"
+    "o\022\023\n\013template_id\030\001 \001(\005\022\027\n\017sub_template_i"
+    "d\030\002 \001(\005\022\022\n\ninfo_state\030\003 \001(\005\022\020\n\010get_time\030"
+    "\004 \001(\005\022\020\n\010end_time\030\005 \001(\005\022\022\n\nmoney_type\030\006 "
+    "\001(\005\022\021\n\tmoney_num\030\007 \001(\005\032^\n\035send_time_feed"
+    "_back_info_list\022=\n\tinfo_list\030\001 \003(\0132*.fai"
+    "th.game_proto.send_time_feed_back_info\032H"
+    "\n\031time_limit_gift_operation\022\026\n\016operation"
+    "_type\030\001 \001(\005\022\023\n\013template_id\030\002 \001(\005\032D\n\035time"
+    "_limit_gift_operation_end\022\016\n\006result\030\001 \001("
+    "\005\022\023\n\013template_id\030\002 \001(\005\032\213\001\n\024time_limit_gi"
+    "ft_info\022\023\n\013template_id\030\001 \001(\005\022\022\n\nstate_in"
+    "fo\030\002 \001(\005\022\022\n\nbegin_time\030\003 \001(\005\022\020\n\010end_time"
+    "\030\004 \001(\005\022\023\n\013trigger_num\030\005 \001(\005\022\017\n\007buy_num\030\006"
+    " \001(\005\032X\n\033update_time_limit_gift_info\0229\n\ti"
+    "nfo_list\030\001 \003(\0132&.faith.game_proto.time_l"
+    "imit_gift_info\0321\n\032initiative_time_limit_"
+    "gift\022\023\n\013template_id\030\001 \001(\005\032A\n\026limit_time_"
+    "notice_info\022\023\n\013template_id\030\001 \001(\005\022\022\n\nweig"
+    "ht_num\030\002 \001(\005\032u\n\033limit_time_notice_info_l"
+    "ist\022;\n\tinfo_list\030\001 \003(\0132(.faith.game_prot"
+    "o.limit_time_notice_info\022\031\n\021black_show_n"
+    "otice\030\002 \003(\005\032B\n\021fuben_vip_mopping\022\031\n\021fube"
+    "n_template_id\030\001 \001(\005\022\022\n\nsettlement\030\002 \001(\005\032"
+    "\'\n\025fuben_vip_mopping_end\022\016\n\006result\030\001 \001(\005"
+    "\032\013\n\tkill_boss\032\037\n\rkill_boss_end\022\016\n\006result"
+    "\030\001 \001(\005\032 \n\nmap_search\022\022\n\nmultiplier\030\001 \001(\005"
+    "\032 \n\016map_search_end\022\016\n\006result\030\001 \001(\005\032+\n\025up"
+    "grade_searche_level\022\022\n\nmultiplier\030\001 \001(\005\032"
+    "+\n\031upgrade_searche_level_end\022\016\n\006result\030\001"
+    " \001(\005\"+\n\020enter_scene_type\022\t\n\005enter\020\000\022\014\n\010t"
+    "ransfer\020\001b\006proto3"
 };
 static ::absl::once_flag descriptor_table_game_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_game_2eproto = {
     false,
     false,
-    18729,
+    18737,
     descriptor_table_protodef_game_2eproto,
     "game.proto",
     &descriptor_table_game_2eproto_once,
@@ -12867,81 +12867,81 @@ void game_proto_trans_local_scene_end::InternalSwap(game_proto_trans_local_scene
 }
 // ===================================================================
 
-class game_proto_client2fep_ping::_Internal {
+class game_proto_client2gateway_ping::_Internal {
  public:
 };
 
-game_proto_client2fep_ping::game_proto_client2fep_ping(::google::protobuf::Arena* arena)
+game_proto_client2gateway_ping::game_proto_client2gateway_ping(::google::protobuf::Arena* arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(arena, _class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
   SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:faith.game_proto.client2fep_ping)
+  // @@protoc_insertion_point(arena_constructor:faith.game_proto.client2gateway_ping)
 }
-game_proto_client2fep_ping::game_proto_client2fep_ping(
-    ::google::protobuf::Arena* arena, const game_proto_client2fep_ping& from)
-    : game_proto_client2fep_ping(arena) {
+game_proto_client2gateway_ping::game_proto_client2gateway_ping(
+    ::google::protobuf::Arena* arena, const game_proto_client2gateway_ping& from)
+    : game_proto_client2gateway_ping(arena) {
   MergeFrom(from);
 }
-inline PROTOBUF_NDEBUG_INLINE game_proto_client2fep_ping::Impl_::Impl_(
+inline PROTOBUF_NDEBUG_INLINE game_proto_client2gateway_ping::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* arena)
       : _cached_size_{0} {}
 
-inline void game_proto_client2fep_ping::SharedCtor(::_pb::Arena* arena) {
+inline void game_proto_client2gateway_ping::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   _impl_.client_time_ = {};
 }
-game_proto_client2fep_ping::~game_proto_client2fep_ping() {
-  // @@protoc_insertion_point(destructor:faith.game_proto.client2fep_ping)
+game_proto_client2gateway_ping::~game_proto_client2gateway_ping() {
+  // @@protoc_insertion_point(destructor:faith.game_proto.client2gateway_ping)
   SharedDtor(*this);
 }
-inline void game_proto_client2fep_ping::SharedDtor(MessageLite& self) {
-  game_proto_client2fep_ping& this_ = static_cast<game_proto_client2fep_ping&>(self);
+inline void game_proto_client2gateway_ping::SharedDtor(MessageLite& self) {
+  game_proto_client2gateway_ping& this_ = static_cast<game_proto_client2gateway_ping&>(self);
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.~Impl_();
 }
 
-inline void* game_proto_client2fep_ping::PlacementNew_(const void*, void* mem,
+inline void* game_proto_client2gateway_ping::PlacementNew_(const void*, void* mem,
                                         ::google::protobuf::Arena* arena) {
-  return ::new (mem) game_proto_client2fep_ping(arena);
+  return ::new (mem) game_proto_client2gateway_ping(arena);
 }
-constexpr auto game_proto_client2fep_ping::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(game_proto_client2fep_ping),
-                                            alignof(game_proto_client2fep_ping));
+constexpr auto game_proto_client2gateway_ping::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(game_proto_client2gateway_ping),
+                                            alignof(game_proto_client2gateway_ping));
 }
 PROTOBUF_CONSTINIT
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::google::protobuf::internal::ClassDataFull game_proto_client2fep_ping::_class_data_ = {
+const ::google::protobuf::internal::ClassDataFull game_proto_client2gateway_ping::_class_data_ = {
     ::google::protobuf::internal::ClassData{
-        &_game_proto_client2fep_ping_default_instance_._instance,
+        &_game_proto_client2gateway_ping_default_instance_._instance,
         &_table_.header,
         nullptr,  // OnDemandRegisterArenaDtor
         nullptr,  // IsInitialized
-        &game_proto_client2fep_ping::MergeImpl,
-        ::google::protobuf::Message::GetNewImpl<game_proto_client2fep_ping>(),
+        &game_proto_client2gateway_ping::MergeImpl,
+        ::google::protobuf::Message::GetNewImpl<game_proto_client2gateway_ping>(),
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-        &game_proto_client2fep_ping::SharedDtor,
-        ::google::protobuf::Message::GetClearImpl<game_proto_client2fep_ping>(), &game_proto_client2fep_ping::ByteSizeLong,
-            &game_proto_client2fep_ping::_InternalSerialize,
+        &game_proto_client2gateway_ping::SharedDtor,
+        ::google::protobuf::Message::GetClearImpl<game_proto_client2gateway_ping>(), &game_proto_client2gateway_ping::ByteSizeLong,
+            &game_proto_client2gateway_ping::_InternalSerialize,
 #endif  // PROTOBUF_CUSTOM_VTABLE
-        PROTOBUF_FIELD_OFFSET(game_proto_client2fep_ping, _impl_._cached_size_),
+        PROTOBUF_FIELD_OFFSET(game_proto_client2gateway_ping, _impl_._cached_size_),
         false,
     },
-    &game_proto_client2fep_ping::kDescriptorMethods,
+    &game_proto_client2gateway_ping::kDescriptorMethods,
     &descriptor_table_game_2eproto,
     nullptr,  // tracker
 };
-const ::google::protobuf::internal::ClassData* game_proto_client2fep_ping::GetClassData() const {
+const ::google::protobuf::internal::ClassData* game_proto_client2gateway_ping::GetClassData() const {
   ::google::protobuf::internal::PrefetchToLocalCache(&_class_data_);
   ::google::protobuf::internal::PrefetchToLocalCache(_class_data_.tc_table);
   return _class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 0, 2> game_proto_client2fep_ping::_table_ = {
+const ::_pbi::TcParseTable<0, 1, 0, 0, 2> game_proto_client2gateway_ping::_table_ = {
   {
     0,  // no _has_bits_
     0, // no _extensions_
@@ -12956,17 +12956,17 @@ const ::_pbi::TcParseTable<0, 1, 0, 0, 2> game_proto_client2fep_ping::_table_ = 
     nullptr,  // post_loop_handler
     ::_pbi::TcParser::GenericFallback,  // fallback
     #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-    ::_pbi::TcParser::GetTable<::faith::game_proto_client2fep_ping>(),  // to_prefetch
+    ::_pbi::TcParser::GetTable<::faith::game_proto_client2gateway_ping>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     // int64 client_time = 1;
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(game_proto_client2fep_ping, _impl_.client_time_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(game_proto_client2fep_ping, _impl_.client_time_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(game_proto_client2gateway_ping, _impl_.client_time_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(game_proto_client2gateway_ping, _impl_.client_time_)}},
   }}, {{
     65535, 65535
   }}, {{
     // int64 client_time = 1;
-    {PROTOBUF_FIELD_OFFSET(game_proto_client2fep_ping, _impl_.client_time_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(game_proto_client2gateway_ping, _impl_.client_time_), 0, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kInt64)},
   }},
   // no aux_entries
@@ -12974,8 +12974,8 @@ const ::_pbi::TcParseTable<0, 1, 0, 0, 2> game_proto_client2fep_ping::_table_ = 
   }},
 };
 
-PROTOBUF_NOINLINE void game_proto_client2fep_ping::Clear() {
-// @@protoc_insertion_point(message_clear_start:faith.game_proto.client2fep_ping)
+PROTOBUF_NOINLINE void game_proto_client2gateway_ping::Clear() {
+// @@protoc_insertion_point(message_clear_start:faith.game_proto.client2gateway_ping)
   ::google::protobuf::internal::TSanWrite(&_impl_);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
@@ -12986,17 +12986,17 @@ PROTOBUF_NOINLINE void game_proto_client2fep_ping::Clear() {
 }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-        ::uint8_t* game_proto_client2fep_ping::_InternalSerialize(
+        ::uint8_t* game_proto_client2gateway_ping::_InternalSerialize(
             const MessageLite& base, ::uint8_t* target,
             ::google::protobuf::io::EpsCopyOutputStream* stream) {
-          const game_proto_client2fep_ping& this_ = static_cast<const game_proto_client2fep_ping&>(base);
+          const game_proto_client2gateway_ping& this_ = static_cast<const game_proto_client2gateway_ping&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-        ::uint8_t* game_proto_client2fep_ping::_InternalSerialize(
+        ::uint8_t* game_proto_client2gateway_ping::_InternalSerialize(
             ::uint8_t* target,
             ::google::protobuf::io::EpsCopyOutputStream* stream) const {
-          const game_proto_client2fep_ping& this_ = *this;
+          const game_proto_client2gateway_ping& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
-          // @@protoc_insertion_point(serialize_to_array_start:faith.game_proto.client2fep_ping)
+          // @@protoc_insertion_point(serialize_to_array_start:faith.game_proto.client2gateway_ping)
           ::uint32_t cached_has_bits = 0;
           (void)cached_has_bits;
 
@@ -13012,18 +13012,18 @@ PROTOBUF_NOINLINE void game_proto_client2fep_ping::Clear() {
                 ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
                     this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
           }
-          // @@protoc_insertion_point(serialize_to_array_end:faith.game_proto.client2fep_ping)
+          // @@protoc_insertion_point(serialize_to_array_end:faith.game_proto.client2gateway_ping)
           return target;
         }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-        ::size_t game_proto_client2fep_ping::ByteSizeLong(const MessageLite& base) {
-          const game_proto_client2fep_ping& this_ = static_cast<const game_proto_client2fep_ping&>(base);
+        ::size_t game_proto_client2gateway_ping::ByteSizeLong(const MessageLite& base) {
+          const game_proto_client2gateway_ping& this_ = static_cast<const game_proto_client2gateway_ping&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-        ::size_t game_proto_client2fep_ping::ByteSizeLong() const {
-          const game_proto_client2fep_ping& this_ = *this;
+        ::size_t game_proto_client2gateway_ping::ByteSizeLong() const {
+          const game_proto_client2gateway_ping& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
-          // @@protoc_insertion_point(message_byte_size_start:faith.game_proto.client2fep_ping)
+          // @@protoc_insertion_point(message_byte_size_start:faith.game_proto.client2gateway_ping)
           ::size_t total_size = 0;
 
           ::uint32_t cached_has_bits = 0;
@@ -13041,10 +13041,10 @@ PROTOBUF_NOINLINE void game_proto_client2fep_ping::Clear() {
                                                      &this_._impl_._cached_size_);
         }
 
-void game_proto_client2fep_ping::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
-  auto* const _this = static_cast<game_proto_client2fep_ping*>(&to_msg);
-  auto& from = static_cast<const game_proto_client2fep_ping&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:faith.game_proto.client2fep_ping)
+void game_proto_client2gateway_ping::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<game_proto_client2gateway_ping*>(&to_msg);
+  auto& from = static_cast<const game_proto_client2gateway_ping&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:faith.game_proto.client2gateway_ping)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -13055,49 +13055,49 @@ void game_proto_client2fep_ping::MergeImpl(::google::protobuf::MessageLite& to_m
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void game_proto_client2fep_ping::CopyFrom(const game_proto_client2fep_ping& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:faith.game_proto.client2fep_ping)
+void game_proto_client2gateway_ping::CopyFrom(const game_proto_client2gateway_ping& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:faith.game_proto.client2gateway_ping)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 
-void game_proto_client2fep_ping::InternalSwap(game_proto_client2fep_ping* PROTOBUF_RESTRICT other) {
+void game_proto_client2gateway_ping::InternalSwap(game_proto_client2gateway_ping* PROTOBUF_RESTRICT other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
         swap(_impl_.client_time_, other->_impl_.client_time_);
 }
 
-::google::protobuf::Metadata game_proto_client2fep_ping::GetMetadata() const {
+::google::protobuf::Metadata game_proto_client2gateway_ping::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // ===================================================================
 
-class game_proto_fep2client_ping::_Internal {
+class game_proto_gateway2client_ping::_Internal {
  public:
 };
 
-game_proto_fep2client_ping::game_proto_fep2client_ping(::google::protobuf::Arena* arena)
+game_proto_gateway2client_ping::game_proto_gateway2client_ping(::google::protobuf::Arena* arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(arena, _class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
   SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:faith.game_proto.fep2client_ping)
+  // @@protoc_insertion_point(arena_constructor:faith.game_proto.gateway2client_ping)
 }
-game_proto_fep2client_ping::game_proto_fep2client_ping(
-    ::google::protobuf::Arena* arena, const game_proto_fep2client_ping& from)
-    : game_proto_fep2client_ping(arena) {
+game_proto_gateway2client_ping::game_proto_gateway2client_ping(
+    ::google::protobuf::Arena* arena, const game_proto_gateway2client_ping& from)
+    : game_proto_gateway2client_ping(arena) {
   MergeFrom(from);
 }
-inline PROTOBUF_NDEBUG_INLINE game_proto_fep2client_ping::Impl_::Impl_(
+inline PROTOBUF_NDEBUG_INLINE game_proto_gateway2client_ping::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* arena)
       : _cached_size_{0} {}
 
-inline void game_proto_fep2client_ping::SharedCtor(::_pb::Arena* arena) {
+inline void game_proto_gateway2client_ping::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   ::memset(reinterpret_cast<char *>(&_impl_) +
                offsetof(Impl_, client_time_),
@@ -13106,54 +13106,54 @@ inline void game_proto_fep2client_ping::SharedCtor(::_pb::Arena* arena) {
                offsetof(Impl_, client_time_) +
                sizeof(Impl_::server_time_));
 }
-game_proto_fep2client_ping::~game_proto_fep2client_ping() {
-  // @@protoc_insertion_point(destructor:faith.game_proto.fep2client_ping)
+game_proto_gateway2client_ping::~game_proto_gateway2client_ping() {
+  // @@protoc_insertion_point(destructor:faith.game_proto.gateway2client_ping)
   SharedDtor(*this);
 }
-inline void game_proto_fep2client_ping::SharedDtor(MessageLite& self) {
-  game_proto_fep2client_ping& this_ = static_cast<game_proto_fep2client_ping&>(self);
+inline void game_proto_gateway2client_ping::SharedDtor(MessageLite& self) {
+  game_proto_gateway2client_ping& this_ = static_cast<game_proto_gateway2client_ping&>(self);
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.~Impl_();
 }
 
-inline void* game_proto_fep2client_ping::PlacementNew_(const void*, void* mem,
+inline void* game_proto_gateway2client_ping::PlacementNew_(const void*, void* mem,
                                         ::google::protobuf::Arena* arena) {
-  return ::new (mem) game_proto_fep2client_ping(arena);
+  return ::new (mem) game_proto_gateway2client_ping(arena);
 }
-constexpr auto game_proto_fep2client_ping::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(game_proto_fep2client_ping),
-                                            alignof(game_proto_fep2client_ping));
+constexpr auto game_proto_gateway2client_ping::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(game_proto_gateway2client_ping),
+                                            alignof(game_proto_gateway2client_ping));
 }
 PROTOBUF_CONSTINIT
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::google::protobuf::internal::ClassDataFull game_proto_fep2client_ping::_class_data_ = {
+const ::google::protobuf::internal::ClassDataFull game_proto_gateway2client_ping::_class_data_ = {
     ::google::protobuf::internal::ClassData{
-        &_game_proto_fep2client_ping_default_instance_._instance,
+        &_game_proto_gateway2client_ping_default_instance_._instance,
         &_table_.header,
         nullptr,  // OnDemandRegisterArenaDtor
         nullptr,  // IsInitialized
-        &game_proto_fep2client_ping::MergeImpl,
-        ::google::protobuf::Message::GetNewImpl<game_proto_fep2client_ping>(),
+        &game_proto_gateway2client_ping::MergeImpl,
+        ::google::protobuf::Message::GetNewImpl<game_proto_gateway2client_ping>(),
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-        &game_proto_fep2client_ping::SharedDtor,
-        ::google::protobuf::Message::GetClearImpl<game_proto_fep2client_ping>(), &game_proto_fep2client_ping::ByteSizeLong,
-            &game_proto_fep2client_ping::_InternalSerialize,
+        &game_proto_gateway2client_ping::SharedDtor,
+        ::google::protobuf::Message::GetClearImpl<game_proto_gateway2client_ping>(), &game_proto_gateway2client_ping::ByteSizeLong,
+            &game_proto_gateway2client_ping::_InternalSerialize,
 #endif  // PROTOBUF_CUSTOM_VTABLE
-        PROTOBUF_FIELD_OFFSET(game_proto_fep2client_ping, _impl_._cached_size_),
+        PROTOBUF_FIELD_OFFSET(game_proto_gateway2client_ping, _impl_._cached_size_),
         false,
     },
-    &game_proto_fep2client_ping::kDescriptorMethods,
+    &game_proto_gateway2client_ping::kDescriptorMethods,
     &descriptor_table_game_2eproto,
     nullptr,  // tracker
 };
-const ::google::protobuf::internal::ClassData* game_proto_fep2client_ping::GetClassData() const {
+const ::google::protobuf::internal::ClassData* game_proto_gateway2client_ping::GetClassData() const {
   ::google::protobuf::internal::PrefetchToLocalCache(&_class_data_);
   ::google::protobuf::internal::PrefetchToLocalCache(_class_data_.tc_table);
   return _class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 0, 2> game_proto_fep2client_ping::_table_ = {
+const ::_pbi::TcParseTable<1, 2, 0, 0, 2> game_proto_gateway2client_ping::_table_ = {
   {
     0,  // no _has_bits_
     0, // no _extensions_
@@ -13168,23 +13168,23 @@ const ::_pbi::TcParseTable<1, 2, 0, 0, 2> game_proto_fep2client_ping::_table_ = 
     nullptr,  // post_loop_handler
     ::_pbi::TcParser::GenericFallback,  // fallback
     #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-    ::_pbi::TcParser::GetTable<::faith::game_proto_fep2client_ping>(),  // to_prefetch
+    ::_pbi::TcParser::GetTable<::faith::game_proto_gateway2client_ping>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     // int64 server_time = 2;
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(game_proto_fep2client_ping, _impl_.server_time_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(game_proto_fep2client_ping, _impl_.server_time_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(game_proto_gateway2client_ping, _impl_.server_time_), 63>(),
+     {16, 63, 0, PROTOBUF_FIELD_OFFSET(game_proto_gateway2client_ping, _impl_.server_time_)}},
     // int64 client_time = 1;
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(game_proto_fep2client_ping, _impl_.client_time_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(game_proto_fep2client_ping, _impl_.client_time_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(game_proto_gateway2client_ping, _impl_.client_time_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(game_proto_gateway2client_ping, _impl_.client_time_)}},
   }}, {{
     65535, 65535
   }}, {{
     // int64 client_time = 1;
-    {PROTOBUF_FIELD_OFFSET(game_proto_fep2client_ping, _impl_.client_time_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(game_proto_gateway2client_ping, _impl_.client_time_), 0, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kInt64)},
     // int64 server_time = 2;
-    {PROTOBUF_FIELD_OFFSET(game_proto_fep2client_ping, _impl_.server_time_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(game_proto_gateway2client_ping, _impl_.server_time_), 0, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kInt64)},
   }},
   // no aux_entries
@@ -13192,8 +13192,8 @@ const ::_pbi::TcParseTable<1, 2, 0, 0, 2> game_proto_fep2client_ping::_table_ = 
   }},
 };
 
-PROTOBUF_NOINLINE void game_proto_fep2client_ping::Clear() {
-// @@protoc_insertion_point(message_clear_start:faith.game_proto.fep2client_ping)
+PROTOBUF_NOINLINE void game_proto_gateway2client_ping::Clear() {
+// @@protoc_insertion_point(message_clear_start:faith.game_proto.gateway2client_ping)
   ::google::protobuf::internal::TSanWrite(&_impl_);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
@@ -13206,17 +13206,17 @@ PROTOBUF_NOINLINE void game_proto_fep2client_ping::Clear() {
 }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-        ::uint8_t* game_proto_fep2client_ping::_InternalSerialize(
+        ::uint8_t* game_proto_gateway2client_ping::_InternalSerialize(
             const MessageLite& base, ::uint8_t* target,
             ::google::protobuf::io::EpsCopyOutputStream* stream) {
-          const game_proto_fep2client_ping& this_ = static_cast<const game_proto_fep2client_ping&>(base);
+          const game_proto_gateway2client_ping& this_ = static_cast<const game_proto_gateway2client_ping&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-        ::uint8_t* game_proto_fep2client_ping::_InternalSerialize(
+        ::uint8_t* game_proto_gateway2client_ping::_InternalSerialize(
             ::uint8_t* target,
             ::google::protobuf::io::EpsCopyOutputStream* stream) const {
-          const game_proto_fep2client_ping& this_ = *this;
+          const game_proto_gateway2client_ping& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
-          // @@protoc_insertion_point(serialize_to_array_start:faith.game_proto.fep2client_ping)
+          // @@protoc_insertion_point(serialize_to_array_start:faith.game_proto.gateway2client_ping)
           ::uint32_t cached_has_bits = 0;
           (void)cached_has_bits;
 
@@ -13239,18 +13239,18 @@ PROTOBUF_NOINLINE void game_proto_fep2client_ping::Clear() {
                 ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
                     this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
           }
-          // @@protoc_insertion_point(serialize_to_array_end:faith.game_proto.fep2client_ping)
+          // @@protoc_insertion_point(serialize_to_array_end:faith.game_proto.gateway2client_ping)
           return target;
         }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-        ::size_t game_proto_fep2client_ping::ByteSizeLong(const MessageLite& base) {
-          const game_proto_fep2client_ping& this_ = static_cast<const game_proto_fep2client_ping&>(base);
+        ::size_t game_proto_gateway2client_ping::ByteSizeLong(const MessageLite& base) {
+          const game_proto_gateway2client_ping& this_ = static_cast<const game_proto_gateway2client_ping&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-        ::size_t game_proto_fep2client_ping::ByteSizeLong() const {
-          const game_proto_fep2client_ping& this_ = *this;
+        ::size_t game_proto_gateway2client_ping::ByteSizeLong() const {
+          const game_proto_gateway2client_ping& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
-          // @@protoc_insertion_point(message_byte_size_start:faith.game_proto.fep2client_ping)
+          // @@protoc_insertion_point(message_byte_size_start:faith.game_proto.gateway2client_ping)
           ::size_t total_size = 0;
 
           ::uint32_t cached_has_bits = 0;
@@ -13274,10 +13274,10 @@ PROTOBUF_NOINLINE void game_proto_fep2client_ping::Clear() {
                                                      &this_._impl_._cached_size_);
         }
 
-void game_proto_fep2client_ping::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
-  auto* const _this = static_cast<game_proto_fep2client_ping*>(&to_msg);
-  auto& from = static_cast<const game_proto_fep2client_ping&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:faith.game_proto.fep2client_ping)
+void game_proto_gateway2client_ping::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<game_proto_gateway2client_ping*>(&to_msg);
+  auto& from = static_cast<const game_proto_gateway2client_ping&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:faith.game_proto.gateway2client_ping)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -13291,26 +13291,26 @@ void game_proto_fep2client_ping::MergeImpl(::google::protobuf::MessageLite& to_m
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void game_proto_fep2client_ping::CopyFrom(const game_proto_fep2client_ping& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:faith.game_proto.fep2client_ping)
+void game_proto_gateway2client_ping::CopyFrom(const game_proto_gateway2client_ping& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:faith.game_proto.gateway2client_ping)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 
-void game_proto_fep2client_ping::InternalSwap(game_proto_fep2client_ping* PROTOBUF_RESTRICT other) {
+void game_proto_gateway2client_ping::InternalSwap(game_proto_gateway2client_ping* PROTOBUF_RESTRICT other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(game_proto_fep2client_ping, _impl_.server_time_)
-      + sizeof(game_proto_fep2client_ping::_impl_.server_time_)
-      - PROTOBUF_FIELD_OFFSET(game_proto_fep2client_ping, _impl_.client_time_)>(
+      PROTOBUF_FIELD_OFFSET(game_proto_gateway2client_ping, _impl_.server_time_)
+      + sizeof(game_proto_gateway2client_ping::_impl_.server_time_)
+      - PROTOBUF_FIELD_OFFSET(game_proto_gateway2client_ping, _impl_.client_time_)>(
           reinterpret_cast<char*>(&_impl_.client_time_),
           reinterpret_cast<char*>(&other->_impl_.client_time_));
 }
 
-::google::protobuf::Metadata game_proto_fep2client_ping::GetMetadata() const {
+::google::protobuf::Metadata game_proto_gateway2client_ping::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // ===================================================================

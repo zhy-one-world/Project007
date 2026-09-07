@@ -198,7 +198,7 @@ namespace faith
 			CONSOLE_ERROR("ws2cs_req_reconnect_game NULL == packet");
 			return;
 		}
-		ws2cs_req_reconnect_game_lua(packet->client_uid.fep_uid_64, packet->role_guid.server_64, packet->cur_map_id, packet->cur_map_line_id);
+		ws2cs_req_reconnect_game_lua(packet->client_uid.gateway_uid_64, packet->role_guid.server_64, packet->cur_map_id, packet->cur_map_line_id);
 		//cs2ws_reconnect_game rep;
 		//rep.client_uid = packet->client_uid;
 		//rep.role_guid = packet->role_guid;

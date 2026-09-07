@@ -46,7 +46,7 @@ namespace faith
 		client_session*					get_session_by_array_index(int32 array_index);
 
 
-		void							logout_by_fep( uint32 fep_uid );					//当与fep的连接断开时，登出所有相关的帐号
+		void							logout_by_gateway( uint32 gateway_uid );					//当与gateway的连接断开时，登出所有相关的帐号
 		void							logout_by_cs( uint32 conn_index);						//当与cs的连接断开时，登出所有相关的帐号
 		void							logout_client( client_session* client_session_ptr);
 		void							logout_complete( client_session* client_session_ptr );
@@ -95,7 +95,7 @@ namespace faith
 		int32							m_session_array_use;
 		int32							m_session_array_num;
 		int32							m_session_game_num;
-		ws2fep_broadcast_msg			m_broadcast_msg;
+		ws2gateway_broadcast_msg			m_broadcast_msg;
 		player_session_map				m_guid_session_map;
 		s_player_legion_info			m_empty_legion_info;
 

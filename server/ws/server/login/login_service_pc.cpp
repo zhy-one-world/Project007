@@ -46,7 +46,7 @@ namespace faith
 		}
 		else
 		{
-			ls2fep_client_login request;
+			ls2gateway_client_login request;
 			request.eResult = e_error_code_login_ban;
 			request.client_uid = client_uid;
 			request.login_type = e_login_type_new_account_and_password;
@@ -54,7 +54,7 @@ namespace faith
 			request.jewel_num = 0;
 			request.radio_host = 0;
 			memcpy(request.account, proto_data.logic_account().c_str(), sizeof(request.account) > proto_data.logic_account().size() ? proto_data.logic_account().size() : sizeof(request.account));
-			world_server::getInstance().send_to_fep(client_uid.fepserver_uid, &request, sizeof(request));
+			world_server::getInstance().send_to_gateway(client_uid.gatewayserver_uid, &request, sizeof(request));
 		}
 	}
 
@@ -65,7 +65,7 @@ namespace faith
 			return;
 		}
 
-		ls2fep_client_login request;
+		ls2gateway_client_login request;
 		request.eResult = pdata->e_result;
 		request.client_uid = pdata->client_uid;
 		request.login_type = pdata->login_type;
@@ -127,7 +127,7 @@ namespace faith
 			}
 		}
 
-		world_server::getInstance().send_to_fep(pdata->client_uid.fepserver_uid, &request, sizeof(request));
+		world_server::getInstance().send_to_gateway(pdata->client_uid.gatewayserver_uid, &request, sizeof(request));
 	}
 
 }

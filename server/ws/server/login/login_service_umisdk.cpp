@@ -64,7 +64,7 @@ namespace faith
 			return;
 		}
 
-		ls2fep_client_login request;
+		ls2gateway_client_login request;
 		request.eResult = pdata->e_result;
 		request.client_uid = pdata->client_uid;
 		request.login_type = pdata->login_type;
@@ -76,7 +76,7 @@ namespace faith
 		memcpy(request.server_msg, pdata->server_msg, sizeof(pdata->server_msg));
 		memcpy(request.ban_role_array, pdata->ban_role_array, sizeof(request.ban_role_array));
 		memcpy(request.ban_chat_array, pdata->ban_chat_array, sizeof(request.ban_chat_array));
-		world_server::getInstance().send_to_fep(pdata->client_uid.fepserver_uid, &request, sizeof(request));
+		world_server::getInstance().send_to_gateway(pdata->client_uid.gatewayserver_uid, &request, sizeof(request));
 	}
 
 	void login_service_umisdk::on_login_result_handle(ui64 http_id /*网关服务器ip*/, uint32 http_error_code, const xstring& http_error_info, const xstring& http_result)
@@ -103,10 +103,10 @@ namespace faith
 				if (value.isNull() || value.empty())
 				{
 					_RLOG_(MINFO, ::faith::log_detail::format_message("billing respose format error:{}",  json_data));
-					ls2fep_client_login msg;
+					ls2gateway_client_login msg;
 					msg.client_uid = client_uid;
 					msg.eResult = e_error_code_login_invalid_bi;
-					world_server::getInstance().send_to_fep(client_uid.fepserver_uid, &msg, sizeof(msg));
+					world_server::getInstance().send_to_gateway(client_uid.gatewayserver_uid, &msg, sizeof(msg));
 					return false;
 				}
 
@@ -116,23 +116,23 @@ namespace faith
 					|| value["msg"].isNull() || value["msg"].empty() || !value["msg"].isString())
 				{
 					_RLOG_(MINFO, ::faith::log_detail::format_message("billing data format error:{}",  json_data));
-					ls2fep_client_login msg;
+					ls2gateway_client_login msg;
 					msg.client_uid = client_uid;
 					msg.eResult = e_error_code_login_invalid_bi;
 					memcpy(msg.server_msg, json_data.c_str(), json_data.size() > max_server_msg_length ? max_server_msg_length : json_data.size());
-					world_server::getInstance().send_to_fep(client_uid.fepserver_uid, &msg, sizeof(msg));
+					world_server::getInstance().send_to_gateway(client_uid.gatewayserver_uid, &msg, sizeof(msg));
 					return false;
 				}
 
 				if (value["code"].asInt() != 0)
 				{
 					_RLOG_(MINFO, ::faith::log_detail::format_message("umisdk login faild:{}",  value["code"].asInt()));
-					ls2fep_client_login msg;
+					ls2gateway_client_login msg;
 					msg.client_uid = client_uid;
 					msg.eResult = e_error_code_login_invalid_bi;
 					std::string failed_msg = value["msg"].asString();
 					memcpy(msg.server_msg, failed_msg.c_str(), failed_msg.size() > max_server_msg_length ? max_server_msg_length : failed_msg.size());
-					world_server::getInstance().send_to_fep(client_uid.fepserver_uid, &msg, sizeof(msg));
+					world_server::getInstance().send_to_gateway(client_uid.gatewayserver_uid, &msg, sizeof(msg));
 					return false;
 				}
 				data_value = value["data"];
@@ -143,11 +143,11 @@ namespace faith
 					//|| value["chatReason"].isNull() || value["chatReason"].empty() || !value["chatReason"].isString())
 				{
 					_RLOG_(MINFO, ::faith::log_detail::format_message("billing data format error:{}",  json_data));
-					ls2fep_client_login msg;
+					ls2gateway_client_login msg;
 					msg.client_uid = client_uid;
 					msg.eResult = e_error_code_login_invalid_bi;
 					memcpy(msg.server_msg, json_data.c_str(), json_data.size() > max_server_msg_length ? max_server_msg_length : json_data.size());
-					world_server::getInstance().send_to_fep(client_uid.fepserver_uid, &msg, sizeof(msg));
+					world_server::getInstance().send_to_gateway(client_uid.gatewayserver_uid, &msg, sizeof(msg));
 					return false;
 				}
 				xstring account = data_value["userId"].asString();
@@ -164,31 +164,31 @@ namespace faith
 				else
 				{
 					_RLOG_(MINFO, ::faith::log_detail::format_message("billing check failed:{}",  json_data));
-					ls2fep_client_login msg;
+					ls2gateway_client_login msg;
 					msg.client_uid = client_uid;
 					msg.eResult = e_error_code_login_invalid_bi;
 					memcpy(msg.server_msg, json_data.c_str(), json_data.size() > max_server_msg_length ? max_server_msg_length : json_data.size());
-					world_server::getInstance().send_to_fep(client_uid.fepserver_uid, &msg, sizeof(msg));
+					world_server::getInstance().send_to_gateway(client_uid.gatewayserver_uid, &msg, sizeof(msg));
 				}
 			}
 			else
 			{
 				_RLOG_(MINFO, ::faith::log_detail::format_message("billing respose format error:{}",  json_data));
-				ls2fep_client_login msg;
+				ls2gateway_client_login msg;
 				msg.client_uid = client_uid;
 				msg.eResult = e_error_code_login_invalid_bi;
 				memcpy(msg.server_msg, json_data.c_str(), json_data.size() > max_server_msg_length ? max_server_msg_length : json_data.size());
-				world_server::getInstance().send_to_fep(client_uid.fepserver_uid, &msg, sizeof(msg));
+				world_server::getInstance().send_to_gateway(client_uid.gatewayserver_uid, &msg, sizeof(msg));
 			}
 		}
 		catch (...)
 		{
 			_RLOG_(MINFO, ::faith::log_detail::format_message("  catch-exception:{}",  json_data));
-			ls2fep_client_login msg;
+			ls2gateway_client_login msg;
 			msg.client_uid = client_uid;
 			msg.eResult = e_error_code_login_invalid_bi;
 			memcpy(msg.server_msg, json_data.c_str(), json_data.size() > max_server_msg_length ? max_server_msg_length : json_data.size());
-			world_server::getInstance().send_to_fep(client_uid.fepserver_uid, &msg, sizeof(msg));
+			world_server::getInstance().send_to_gateway(client_uid.gatewayserver_uid, &msg, sizeof(msg));
 		}
 		return false;
 	}
@@ -242,7 +242,7 @@ namespace faith
 	}
 	void login_service_umisdk::save_account(const xstring & account, const xstring & server_msg, const s_client_uid client_uid, int64 * ban_role_array, int64 * ban_chat_array)
 	{
-		const login_proto_login* login_data = login_service_mgr::getInstance().get_login_info(client_uid.fep_uid_64);
+		const login_proto_login* login_data = login_service_mgr::getInstance().get_login_info(client_uid.gateway_uid_64);
 		if (login_data == nullptr
 			|| nullptr == ban_role_array
 			|| nullptr == ban_chat_array)			

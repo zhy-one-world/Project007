@@ -41,7 +41,7 @@ namespace faith
 	const int64	e_ws_flag_cross_server_state =								0x0000000000004000;
 	const int64 e_ws_flag_init_time_limit_template =						0x0000000000008000;
 	const int64 e_ws_flag_load_cloud_shop_info =							0x0000000000010000;
-	const int64 e_ws_flag_fep_connect =										0x0000000000020000;
+	const int64 e_ws_flag_gateway_connect =										0x0000000000020000;
 	const int64 e_ws_flag_attack_city =										0x0000000000040000;
 ///////////////////////////////////////////////////////////////////////////////////////
 

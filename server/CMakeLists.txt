@@ -3,9 +3,10 @@ project(HldServer)                      # 项目名称为 HldServer
 
 # 添加所有的子目录到 ComponentAllSubDir 变量中
 list(APPEND ComponentAllSubDir "cs")
+list(APPEND ComponentAllSubDir "config_center")
 list(APPEND ComponentAllSubDir "def")
 list(APPEND ComponentAllSubDir "dp")
-list(APPEND ComponentAllSubDir "fep")
+list(APPEND ComponentAllSubDir "gateway")
 list(APPEND ComponentAllSubDir "gate")
 list(APPEND ComponentAllSubDir "ws")
 
@@ -24,4 +25,4 @@ foreach(dirname ${ComponentAllSubDir})
     add_subdirectory(${dirname})
 endforeach()
 
-add_subdirectory(tools/fep_test_client)
+add_subdirectory(tools/gateway_test_client)

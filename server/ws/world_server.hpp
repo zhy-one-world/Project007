@@ -130,8 +130,8 @@ namespace faith
 	public:
 		void	send_by_uid(int32 conn_index, const void* data_ptr, size_t data_len);
 		void    send_by_uid_lua(int32 conn_index, google::protobuf::Message* net_pro, uint32 header);
-		void	send_to_fep(int32 server_index, const void* data_ptr, size_t data_len);
-		void	send_to_fep_all(const void* data_ptr, size_t data_len);
+		void	send_to_gateway(int32 server_index, const void* data_ptr, size_t data_len);
+		void	send_to_gateway_all(const void* data_ptr, size_t data_len);
 		void	send_to_cs(int32 conn_index, const void* data_ptr, size_t data_len);
 		void	send_to_cs(const void* data_ptr, size_t data_len);
 		void	broadcast(const void* data_ptr, size_t data_len, e_server_type server_type = e_server_type_invalid);
@@ -198,7 +198,7 @@ namespace faith
 		int64			m_server_time_week_legion_welfare_refresh;//军团周贡献刷新时间戳,军福利发放时间戳 周日  23点时间戳，可以通用
 		int64			m_server_time_clear_city_war_bid;//城战清零时间戳
 		int64			m_server_ladder_wrold_level;
-		int32			m_fep_conn_index[SERVER_FEP_COUNT];
+		int32			m_gateway_conn_index[SERVER_GATEWAY_COUNT];
 		bool			m_is_load_cross_act_end;
 		int32			m_need_begin_cross_config[e_need_server_cross_max];//是否开启跨服对应配置
 
