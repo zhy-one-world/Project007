@@ -32,7 +32,7 @@
 		<!-- internal_port: WS 连入；external_port: 客户端连入；二者必须不同 -->
 		<internal_host>127.0.0.1</internal_host>
 		<internal_port>2210</internal_port>
-		<external_host>10.0.63.54</external_host>
+		<external_host>127.0.0.1</external_host>
 		<external_port>2200</external_port>
 		<client_send_limit>20</client_send_limit>
 		<init_socket_num>20</init_socket_num>
