@@ -8,7 +8,11 @@
 #include "server/client_session_mgr.hpp"
 #include "world_server.hpp"
 #include "parse_msg.h"
+#ifdef WS_SLIM_BUILD
+#include "business_stubs.hpp"
+#else
 #include "server/team/team_ws_mgr.h"
+#endif
 #include "core.hpp"
 #include "cs_map_mgr_system.h"
 #include "big_player_msg.hpp"

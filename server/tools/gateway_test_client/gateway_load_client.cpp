@@ -10,8 +10,10 @@
 
 #include "base.hpp"
 #include "game.pb.h"
+#include "login.pb.h"
 #include "net.pb.h"
 #include "utility/serialize_msg.h"
+#include "game_enum_def_s.h"
 
 namespace gateway_test_client
 {
@@ -476,18 +478,53 @@ namespace gateway_test_client
 
 		if (packet->wheader == faith::e_msgindex_s2c_rdeencryption)
 		{
-			std::lock_guard<std::mutex> lock(m_mutex);
-			if (!m_connections[connection_index]->state.handshake_received)
+			bool should_send_login = false;
 			{
-				m_connections[connection_index]->state.handshake_received = true;
-				++m_statistics.handshakes;
-				if (should_log_connection_detail(
-					connection_index, m_options.connections))
+				std::lock_guard<std::mutex> lock(m_mutex);
+				if (!m_connections[connection_index]->state.handshake_received)
 				{
-					_RLOG_(MINFO, "gateway_test_client connection " << connection_index
-						<< " handshake received");
+					m_connections[connection_index]->state.handshake_received = true;
+					++m_statistics.handshakes;
+					if (should_log_connection_detail(
+						connection_index, m_options.connections))
+					{
+						_RLOG_(MINFO, "gateway_test_client connection " << connection_index
+							<< " handshake received");
+					}
+				}
+				if (m_options.mode == "login" &&
+					!m_connections[connection_index]->state.login_sent)
+				{
+					should_send_login = true;
 				}
 			}
+			if (should_send_login)
+			{
+				faith::net::scheduler::getInstance().post(
+					boost::bind(&load_client::send_login_for_connection, this, connection_index),
+					m_connections[connection_index]->scheduler_thread_id);
+			}
+			return;
+		}
+
+		if (packet->wheader == faith::e_msgindex_s2c_client_login ||
+			packet->wheader == faith::e_msgindex_s2c_login_queue_status)
+		{
+			std::lock_guard<std::mutex> lock(m_mutex);
+			++m_statistics.login_responses;
+			_RLOG_(MINFO, "gateway_test_client login response header="
+				<< packet->wheader
+				<< " connection=" << connection_index
+				<< " payload_len=" << packet->google_data_len);
+			return;
+		}
+
+		if (m_options.mode == "login")
+		{
+			std::lock_guard<std::mutex> lock(m_mutex);
+			++m_statistics.unexpected_messages;
+			_RLOG_(MINFO, "gateway_test_client login-mode message header="
+				<< packet->wheader << " connection=" << connection_index);
 			return;
 		}
 
@@ -662,6 +699,10 @@ namespace gateway_test_client
 
 	void load_client::send_pings()
 	{
+		if (m_options.mode == "login")
+		{
+			return;
+		}
 		const time_point now = clock_type::now();
 		for (std::uint32_t i = 0; i < m_options.connections; ++i)
 		{
@@ -669,6 +710,67 @@ namespace gateway_test_client
 				boost::bind(&load_client::send_ping_for_connection, this, i, now),
 				m_connections[i]->scheduler_thread_id);
 		}
+	}
+
+	void load_client::send_login_for_connection(std::uint32_t connection_index)
+	{
+		if (m_stopping.load() || connection_index >= m_connections.size())
+		{
+			return;
+		}
+
+		faith::login_proto_login login;
+		login.set_logic_account(m_options.account);
+		login.set_client_account(m_options.account);
+		login.set_password(m_options.password);
+		login.set_login_type(faith::e_login_type_new_account_and_password);
+		login.set_client_version("1.0.0");
+		login.set_server_id(m_options.server_id);
+		login.set_device_type("pc");
+		login.set_custom_info("gateway_test_client");
+		auto* sdk = login.mutable_sdk_data();
+		sdk->set_app_key("100001");
+		sdk->set_channel_id("0");
+		sdk->set_device_id("test_device");
+
+		faith::packet_c2s_s2c packet;
+		faith::serialize_msg::get_instance().set_serialize_msg_new(
+			packet, &login, faith::e_msgindex_c2s_client_login);
+
+		faith::net::tcp_client_session_ptr session;
+		{
+			std::lock_guard<std::mutex> lock(m_mutex);
+			connection_state& connection = m_connections[connection_index]->state;
+			if (!connection.connected || !connection.handshake_received ||
+				connection.login_sent || connection.disconnecting ||
+				!m_connections[connection_index]->session)
+			{
+				return;
+			}
+			connection.login_sent = true;
+			session = m_connections[connection_index]->session;
+			++m_statistics.login_requests;
+		}
+
+		bool send_ok = false;
+		{
+			std::lock_guard<std::mutex> tcp_lock(g_tcp_client_mutex);
+			send_ok = m_tcp_client.send(session, &packet, packet.get_packet_len());
+		}
+
+		if (!send_ok)
+		{
+			std::lock_guard<std::mutex> lock(m_mutex);
+			++m_statistics.send_failures;
+			m_connections[connection_index]->state.login_sent = false;
+			_RLOG_(MERROR, "gateway_test_client login send failed, connection "
+				<< connection_index);
+			return;
+		}
+		_RLOG_(MINFO, "gateway_test_client login sent account="
+			<< m_options.account
+			<< " server_id=" << m_options.server_id
+			<< " connection=" << connection_index);
 	}
 
 	void load_client::send_ping_for_connection(
@@ -781,6 +883,8 @@ namespace gateway_test_client
 		_RLOG_(MINFO, "  connections closed:    " << m_statistics.connections_closed);
 		_RLOG_(MINFO, "  timed disconnects:     " << m_statistics.intentional_disconnects);
 		_RLOG_(MINFO, "  RDE handshakes:        " << m_statistics.handshakes);
+		_RLOG_(MINFO, "  login requests:        " << m_statistics.login_requests);
+		_RLOG_(MINFO, "  login responses:       " << m_statistics.login_responses);
 		_RLOG_(MINFO, "  ping requests:         " << m_statistics.requests);
 		_RLOG_(MINFO, "  ping responses:        " << m_statistics.responses);
 		_RLOG_(MINFO, "  ping timeouts:         " << m_statistics.timeouts);

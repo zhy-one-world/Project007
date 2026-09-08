@@ -1,16 +1,8 @@
-/********************************************************************
-	created:	2014/07/30
-	created:	30:7:2014   18:31
-	file base:	gateway_client
-	file ext:	cpp
-	author:		zhy
-	
-	purpose:	
-*********************************************************************/
 #include "gateway_client.hpp"
 #include <net/scheduler.hpp>
 #include <internal.hpp>
 #include "proxy_service_cli.hpp"
+#include "ws_connection_mgr.hpp"
 #include "game_cfg/servers_config.h"
 #include "app/app_server.hpp"
 #include "server_log.hpp"
@@ -31,15 +23,13 @@ namespace faith
 	{
 		m_timerindex_gameloop = scheduler::scheduler_invalid_timer_index;
 
-		xstring ws_ip = WSCONFIG->internal_host;
-		memcpy(m_ws_info.ip_addr, ws_ip.c_str(), ws_ip.size());
-		m_ws_info.port = WSCONFIG->internal_port;
-		m_ws_info.server_type = e_server_type_ws;
-
 		xstring cs_ip = CSCONFIG->internal_host;
 		memcpy(m_cs_info.ip_addr, cs_ip.c_str(), cs_ip.size());
 		m_cs_info.port = CSCONFIG->internal_port;
 		m_cs_info.server_type = e_server_type_cs;
+
+		memset(&m_ws_info, 0, sizeof(m_ws_info));
+		m_ws_info.server_type = e_server_type_ws;
 
 		m_gm_state = SERVERCONFIG->gm_state;
 		m_cross_server_id = 0;
@@ -72,19 +62,13 @@ namespace faith
 		scheduler::getInstance().post(
 			boost::bind(&gateway_client::start_on_session_thread, this),
 			GATEWAY_NETWORK_SCHEDULER_THREAD_ID);
-		_RLOG_(MINFO, "internal WS/CS startup task posted, thread="
+		_RLOG_(MINFO, "internal CS startup task posted, thread="
 			<< GATEWAY_NETWORK_SCHEDULER_THREAD_ID);
 	}
 
 	void gateway_client::start_on_session_thread()
 	{
-		_RLOG_(MINFO, "starting internal WS client, endpoint="
-			<< m_ws_info.ip_addr << ":" << m_ws_info.port);
-		const bool ws_start_result = net_client_mgr::getInstance().start(m_ws_info,
-			boost::bind(&gateway_client::on_conn_status, this, _1),
-			boost::bind(&gateway_client::on_conn_closed, this, _1)
-		);
-		_RLOG_(MINFO, "internal WS client start result=" << ws_start_result);
+		_RLOG_(MINFO, "skip outbound WS connect; waiting for WS inbound via ws_connection_mgr");
 		_RLOG_(MINFO, "starting internal CS client, endpoint="
 			<< m_cs_info.ip_addr << ":" << m_cs_info.port);
 		const bool cs_start_result = net_client_mgr::getInstance().start(m_cs_info,
@@ -96,6 +80,7 @@ namespace faith
 	void gateway_client::stop()
 	{
 		net_client_mgr::getInstance().stop();
+		ws_connection_mgr::getInstance().stop();
 	}
 
 	void gateway_client::on_conn_status(const net_client* faith_client_ptr)
@@ -109,7 +94,7 @@ namespace faith
 		case e_server_type_ws:
 		{
 			m_ws_session = faith_client_ptr->get_session();
-			_RLOG_(MINFO, "internal WS connected, session=" << m_ws_session.get());
+			_RLOG_(MINFO, "legacy outbound WS connected, session=" << m_ws_session.get());
 		}
 		break;
 		case e_server_type_cs:
@@ -132,7 +117,7 @@ namespace faith
 		case e_server_type_ws:
 		{
 			m_ws_session.reset();
-			_RLOG_(MWARN, "internal WS connection closed");
+			_RLOG_(MWARN, "legacy outbound WS connection closed");
 		}
 		break;
 		case e_server_type_cs:
@@ -148,6 +133,7 @@ namespace faith
 	void gateway_client::server_loop(uint32 timer_index)
 	{
 		ZoneScoped;
+		(void)timer_index;
 		static int64 game_time	= faith::utility::get_tick_count();
 		int64 time_now = faith::utility::get_tick_count();
 		static int32 loop_counter = 0;
@@ -170,8 +156,8 @@ namespace faith
 				_RLOG_(MINFO, "==========gateway server status==========");
 			}
 
-			_RLOG_(MINFO, "ws " << net_client_mgr::getInstance().get_server_count(e_server_type_ws)
-				<< "/" << SERVER_WS_COUNT << " cs "
+			_RLOG_(MINFO, "ws_inbound=" << (ws_connection_mgr::getInstance().is_ws_connected() ? 1 : 0)
+				<< " cs "
 				<< net_client_mgr::getInstance().get_server_count(e_server_type_cs)
 				<< "/" << SERVER_CS_COUNT);
 
@@ -202,17 +188,43 @@ namespace faith
 			faith::app_server_update	req;
 			req.player_count = proxy_service_cli::getInstance().get_session_num();
 			req.max_player_count = init_socket_more;
-
-			if (m_ws_session)
-			{
-				tcp_client::get_instance().send(m_ws_session, &req, sizeof(req));
-			}
+			ws_connection_mgr::getInstance().send_to_ws(&req, sizeof(req));
 		}
 
 	}
 
+	void gateway_client::internal_req_login(uint32 connindex, const void* data_ptr, size_t data_len)
+	{
+		(void)data_len;
+		const req_login* msg = static_cast<const req_login*>(data_ptr);
+		if (msg == nullptr)
+		{
+			return;
+		}
+		net_server* peer = net_server_mgr::getInstance().get_peer_by_conn_index(connindex);
+		if (peer == nullptr)
+		{
+			return;
+		}
+		peer->set_server_info(msg->server_info);
+		if (msg->server_info.server_type == e_server_type_ws)
+		{
+			ws_connection_mgr::getInstance().on_ws_login(connindex, msg->server_info);
+		}
+
+		rep_login reply;
+		reply.cross_server_id = m_cross_server_id;
+		reply.open_time = m_open_time;
+		net_server_mgr::getInstance().send_message(&reply, sizeof(reply), static_cast<int32>(connindex));
+		_RLOG_(MINFO, "internal_req_login from type=" << msg->server_info.server_type
+			<< " index=" << msg->server_info.server_index
+			<< " conn=" << connindex);
+	}
+
 	void gateway_client::internal_rep_login(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
+		(void)connindex;
+		(void)data_len;
 		const rep_login* pdata = static_cast<const rep_login*>(data_ptr);
 		if ( NULL == pdata )
 		{
@@ -223,6 +235,8 @@ namespace faith
 	}
 	void gateway_client::internal_rep_stop(uint32 connindex, const void* data_ptr, size_t data_len)
 	{
+		(void)connindex;
+		(void)data_len;
 		const faith::req_stop * msg = static_cast<const faith::req_stop*>(data_ptr);
 		if (NULL == msg)
 		{
@@ -269,10 +283,7 @@ namespace faith
 	}
 	void gateway_client::send_message_to_ws(const void* data_ptr, size_t data_len)
 	{
-		if (m_ws_session)
-		{
-			tcp_client::get_instance().send(m_ws_session, data_ptr, data_len);
-		}
+		ws_connection_mgr::getInstance().send_to_ws(data_ptr, data_len);
 	}
 	void gateway_client::send_message_to_cs(const void* data_ptr, size_t data_len, uint32 connindex)
 	{

@@ -13,6 +13,7 @@
 #include <singleton.hpp>
 #include "server_def.hpp"
 #include <net/net_client_mgr.hpp>
+#include <net/net_server_mgr.hpp>
 
 namespace faith
 {
@@ -29,6 +30,7 @@ namespace faith
 		void start();
 		void stop();
 		bool get_gm_state() { return m_gm_state; }
+		void internal_req_login(uint32 connindex, const void* data_ptr, size_t data_len);
 		void internal_rep_login(uint32 connindex, const void* data_ptr, size_t data_len);
 		void internal_rep_stop(uint32 connindex, const void* data_ptr, size_t data_len);
 		void handler_daemon_onrecv(const void* data_ptr, size_t data_len);

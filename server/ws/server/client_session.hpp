@@ -13,7 +13,11 @@
 #include "Logic/char_def.hpp"
 #include "Logic/transfer_def.hpp"
 #include "Logic/login_def.hpp"
+#ifdef WS_SLIM_BUILD
+#include "relation_mgr_stub.hpp"
+#else
 #include "relation/relation_mgr.h"
+#endif
 #include "Logic/legion_def.hpp"
 #include "server_log.hpp"
 #include "base.hpp"

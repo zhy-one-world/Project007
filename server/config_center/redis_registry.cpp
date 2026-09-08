@@ -152,15 +152,12 @@ namespace faith
 			std::lock_guard<std::mutex> lock(m_memory_mutex);
 			purge_expired_memory();
 			const std::string key = make_key(endpoint.server_type, endpoint.game_id);
-			if (m_memory.find(key) != m_memory.end())
-			{
-				error = "already registered";
-				return false;
-			}
+			// Upsert so process restart can re-register without waiting for TTL/unregister.
 			memory_entry entry;
 			entry.endpoint = endpoint;
 			entry.expire_at = std::chrono::steady_clock::now() + std::chrono::seconds(m_ttl_sec);
-			m_memory.emplace(key, entry);
+			m_memory[key] = entry;
+			error.clear();
 			return true;
 		}
 
@@ -216,24 +213,12 @@ namespace faith
 			try
 			{
 				const std::string key = make_key(endpoint.server_type, endpoint.game_id);
-				if (m_impl->redis->exists(key) > 0)
-				{
-					error = "already registered";
-					return false;
-				}
 				const std::string value = serialize_endpoint(endpoint);
 				const auto ttl = std::chrono::milliseconds(
 					static_cast<std::int64_t>(m_ttl_sec) * 1000);
-				const bool ok = m_impl->redis->set(
-					key,
-					value,
-					ttl,
-					sw::redis::UpdateType::NOT_EXIST);
-				if (!ok)
-				{
-					error = "already registered";
-					return false;
-				}
+				// Always overwrite so gateway/ws restart can refresh endpoints.
+				m_impl->redis->set(key, value, ttl);
+				error.clear();
 				return true;
 			}
 			catch (const sw::redis::Error& ex)

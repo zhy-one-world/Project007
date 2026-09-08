@@ -45,6 +45,14 @@ namespace faith
 		};
 
 		bool register_sync(const register_params& params, std::string& error);
+		// Query GET /v1/registry: gateway list with external endpoints only.
+		bool query_registry_sync(
+			const std::string& center_host,
+			int center_port,
+			bool use_https,
+			std::vector<peer_endpoint>& out,
+			std::string& error,
+			int timeout_ms = 10000);
 		void start_heartbeat();
 		void stop();
 
@@ -55,6 +63,17 @@ namespace faith
 		config_center_client() = default;
 
 		std::string make_base_url() const;
+		std::string make_base_url(
+			const std::string& center_host,
+			int center_port,
+			bool use_https) const;
+		bool request_json(
+			const std::string& url,
+			int method,
+			const std::string& body,
+			std::string& response_body,
+			std::string& error,
+			int timeout_ms);
 		bool post_json(
 			const std::string& path,
 			const std::string& body,

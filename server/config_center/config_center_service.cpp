@@ -4,6 +4,7 @@
 #include <rlog.hpp>
 
 #include <net/http_server.hpp>
+#include <net/scheduler.hpp>
 
 #include "http/http_access_mgr.hpp"
 
@@ -99,13 +100,43 @@ namespace faith
 			_RLOG_(MINFO, "config center acceptor started on "
 				<< (cfg.use_https ? "https://" : "http://")
 				<< cfg.listen_host << ":" << cfg.listen_port);
+
+			// Prove config_center process is alive; also dump live registry size.
+			if (m_alive_timer == net::scheduler::scheduler_invalid_timer_index)
+			{
+				m_alive_timer = net::scheduler::getInstance().add_timer(
+					5000,
+					0,
+					boost::bind(&config_center_service::on_alive_timer, this, _1));
+				_RLOG_(MINFO, "config_center alive heartbeat timer started, interval_ms=5000");
+			}
 			return true;
 		}
 
 		void config_center_service::stop()
 		{
+			if (m_alive_timer != net::scheduler::scheduler_invalid_timer_index)
+			{
+				net::scheduler::getInstance().remove_timer(m_alive_timer);
+				m_alive_timer = net::scheduler::scheduler_invalid_timer_index;
+			}
 			http_server::getInstance().stop();
 			_RLOG_(MINFO, "config center stopped");
+		}
+
+		void config_center_service::on_alive_timer(std::uint32_t)
+		{
+			std::vector<server_endpoint> peers;
+			std::string error;
+			std::size_t live = 0;
+			if (m_registry.list_all(peers, error))
+			{
+				live = peers.size();
+			}
+			_RLOG_(MINFO, "config_center main thread alive, live_peers=" << live
+				<< " registry=" << (m_registry.using_redis() ? "redis" : "memory")
+				<< " scheduler thread id="
+				<< net::scheduler::getInstance().get_current_thread_id());
 		}
 
 		void config_center_service::on_http_request(const http_inbound_request& request)
@@ -263,6 +294,9 @@ namespace faith
 				reply_json(handle, 404, rep);
 				return;
 			}
+			_RLOG_(MINFO, "heartbeat ok type=" << server_type
+				<< " game_id=" << game_id
+				<< " (process alive)");
 			rep["ok"] = true;
 			reply_json(handle, 200, rep);
 		}
@@ -289,6 +323,7 @@ namespace faith
 
 		void config_center_service::handle_query(long handle)
 		{
+			// Public server list: gateways only, client-facing external endpoint.
 			Json::Value rep;
 			std::string error;
 			std::vector<server_endpoint> peers;
@@ -302,7 +337,15 @@ namespace faith
 			Json::Value peers_json(Json::arrayValue);
 			for (const auto& peer : peers)
 			{
-				peers_json.append(endpoint_to_json(peer));
+				if (peer.server_type != "gateway")
+				{
+					continue;
+				}
+				Json::Value item;
+				item["game_id"] = peer.game_id;
+				item["external_host"] = peer.external_host;
+				item["external_port"] = peer.external_port;
+				peers_json.append(item);
 			}
 			rep["ok"] = true;
 			rep["peers"] = peers_json;

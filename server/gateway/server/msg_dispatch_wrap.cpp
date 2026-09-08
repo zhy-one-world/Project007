@@ -104,6 +104,7 @@ namespace faith
 	bool message_from_server_dispatcher::init()
 	{
 
+		REGISTER_MESSAGE_S2S(e_msg_index_req_login, boost::bind(&gateway_client::internal_req_login, &gateway_client::getInstance(), _1, _2, _3));
 		REGISTER_MESSAGE_S2S(e_msg_index_rep_login, boost::bind(&gateway_client::internal_rep_login, &gateway_client::getInstance(), _1, _2, _3));
 		REGISTER_MESSAGE_S2S(e_msg_index_req_stop, boost::bind(&gateway_client::internal_rep_stop, &gateway_client::getInstance(), _1, _2, _3));
 		REGISTER_MESSAGE_S2S(e_msg_index_ls2gateway_client_login, ls2gateway_rep_client_login);

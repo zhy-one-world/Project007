@@ -12,9 +12,10 @@
 #include "dump/dump.hpp"
 #include <time.hpp>
 #include "server/gateway_client.hpp"
-#include "server/config_center_client.hpp"
+#include "connection/config_center_client.hpp"
 #include "net/net_server_mgr.hpp"
 #include "server/proxy_service_cli.hpp"
+#include "server/ws_connection_mgr.hpp"
 #include "game_cfg/servers_config.h"
 #include "app/app_server.hpp"
 #include "server/msg_dispatch_wrap.hpp"
@@ -52,6 +53,17 @@ namespace faith
 		http_access_mgr::get_instance().init(false);
 		_RLOG_(MINFO, "HTTP access manager initialized");
 
+		message_manager::getInstance().set_server_type(e_server_type_gateway);
+		net_server_mgr::getInstance().set_server_type(e_server_type_gateway);
+		net_server_mgr::getInstance().set_server_index(SERVERCONFIG->game_id);
+
+		if (!ws_connection_mgr::getInstance().init() ||
+			!ws_connection_mgr::getInstance().start())
+		{
+			_RLOG_(MERROR, "ws_connection_mgr start failed");
+			return false;
+		}
+
 		config_center_client::register_params cc_params;
 		cc_params.center_host = SERVERCONFIG->config_center_host;
 		cc_params.center_port = SERVERCONFIG->config_center_port;
@@ -62,9 +74,7 @@ namespace faith
 
 		const char* local_ip = init_unit::get_host_ip();
 		const std::string lan_ip = (local_ip && local_ip[0] != '\0') ? local_ip : "127.0.0.1";
-		const int internal_port = GATEWAYCONFIG->internal_port > 0
-			? GATEWAYCONFIG->internal_port
-			: (GATEWAYCONFIG->external_port > 0 ? GATEWAYCONFIG->external_port : 2200);
+		const int internal_port = ws_connection_mgr::getInstance().listen_port();
 		const int external_port = GATEWAYCONFIG->external_port > 0
 			? GATEWAYCONFIG->external_port
 			: internal_port;
@@ -94,15 +104,12 @@ namespace faith
 		_RLOG_(MINFO, "config_center register succeeded, continue gateway start");
 
 		const int32 instance_id = cc_params.game_id;
-		message_manager::getInstance().set_server_type(e_server_type_gateway);
 		if( !net_client_mgr::getInstance().set_netpara_option(GATEWAY_CLIENT_SEND_BUFF_SIZE, GATEWAY_CLIENT_RECV_BUFF_SIZE, INTERNAL_SERVER_MAX_PACKET_SIZE, GATEWAY_NEED_CLIENT_COUNT))
 		{
 			_RLOG_(MERROR, "main(): set_netpara_option error");
 			return false;
 		}
 		_RLOG_(MINFO, "internal network parameters initialized");
-		net_server_mgr::getInstance().set_server_type(e_server_type_gateway);
-		net_server_mgr::getInstance().set_server_index(instance_id);
 		_RLOG_(MINFO, "server identity initialized, game_id=" << instance_id);
 		if (!proxy_service_cli::getInstance().init())
 		{

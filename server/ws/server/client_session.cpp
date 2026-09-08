@@ -14,16 +14,34 @@
 #include "utility/serialize_msg.h"
 #include "utility/cs_date.hpp"
 #include "Logic/time_def.hpp"
+#include "cross_group/gate_proxy.hpp"
+#include "world_server.hpp"
+#include <chat_msg.hpp>
+#include "server_log.hpp"
+#include "connection/daemon_client.hpp"
+#include "utility/parse_msg.h"
+#include "globle_data.h"
+#include "system/scene/cs_map_system.h"
+#include "system/scene/cs_map_mgr_system.h"
+#include "components/scene/cs_map_component.h"
+#include "login_msg.hpp"
+#include "character.pb.h"
+#include "net.pb.h"
+#include "char_msg.hpp"
+#include "game.pb.h"
+#include <rlog.hpp>
+#include "template/template_manager.h"
+#include "utility/init_unit.h"
+#ifdef WS_SLIM_BUILD
+#include "business_stubs.hpp"
+#include "cross_group/cross_transfer_logic.hpp"
+#else
 #include "team/team_ws_mgr.h"
 #include "role_pk/role_pk_manager.h"
-#include "cross_group/gate_proxy.hpp"
 #include "cross_group/cross_transfer_logic.hpp"
-#include "world_server.hpp"
 #include "legion/legion_ws_mgr.h"
 #include "ranking/ranking_mgr_ws.h"
 #include "big_player_ws_mgr.h"
-#include <chat_msg.hpp>
-#include "server_log.hpp"
 #include "world_boss/world_boss_ws_mgr.h"
 #include "activity/gain_treasure_ws_mgr.h"
 #include "activity/boss_island_ws_mgr.h"
@@ -38,19 +56,8 @@
 #include "assist_fight/assist_fight_mgr.h"
 #include "auction/auction_mgr_ws.h"
 #include "activity/pk_king_mgr.h"
-#include "connection/daemon_client.hpp"
-#include "utility/parse_msg.h"
-#include "globle_data.h"
-#include "system/scene/cs_map_system.h"
-#include "system/scene/cs_map_mgr_system.h"
 #include "server/relation/marry_mgr_ws.hpp"
-#include "components/scene/cs_map_component.h"
-#include "login_msg.hpp"
-#include "character.pb.h"
-#include "net.pb.h"
-#include "char_msg.hpp"
-#include "game.pb.h"
-#include <rlog.hpp>
+#endif
 
 namespace faith
 {

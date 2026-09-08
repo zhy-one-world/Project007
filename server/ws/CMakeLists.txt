@@ -15,12 +15,58 @@ add_definitions(-DSPDLOG_USE_STD_FORMAT)
 add_definitions(-DBOOST_BIND_GLOBAL_PLACEHOLDERS)
 #add_definitions(-DTRACY_ENABLE)
 add_definitions(-D_WIN32_WINNT=0x0601)
+add_definitions(-DWS_SLIM_BUILD)
 
 # 递归查找文件夹下的 .h .hpp. ini 文件保存到 HEADER_FILES
 file(GLOB_RECURSE HEADER_FILES *.h *.hpp) 
 
 # 递归查找文件夹下的 *.cpp *.c 文件保存到 SOURCE_FILES
 file(GLOB_RECURSE SOURCE_FILES *.cpp)
+
+# WS slim-down: exclude heavy business modules; keep login / map / session / minimal msgproc
+set(_WS_EXCLUDE_SOURCE_REGEXES
+	".*/server/activity/.*"
+	".*/server/arena/.*"
+	".*/server/assist_fight/.*"
+	".*/server/auction/.*"
+	".*/server/best_record/.*"
+	".*/server/chat/.*"
+	".*/server/gm/.*"
+	".*/server/legion/.*"
+	".*/server/mail/.*"
+	".*/server/person_information/.*"
+	".*/server/ranking/.*"
+	".*/server/recharge/.*"
+	".*/server/red_package/.*"
+	".*/server/relation/.*"
+	".*/server/rename/.*"
+	".*/server/role_pk/.*"
+	".*/server/team/.*"
+	".*/server/world_boss/.*"
+	".*/server/web_client\\.cpp$"
+	".*/server/cache_ws_mgr\\.cpp$"
+	".*/server/big_player_ws_mgr\\.cpp$"
+	".*/server/appearance_info_mgr\\.cpp$"
+	".*/server/csv_synchronization_mgr\\.cpp$"
+	".*/server/lucky_draw_record_ws_mgr\\.cpp$"
+	".*/server/recharge_mgr_ws\\.cpp$"
+	".*/msgproc/msgproc_client\\.legion\\.cpp$"
+	".*/msgproc/msgproc_cs\\.legion\\.cpp$"
+	".*/cross_group/msgproc_cross\\.cpp$"
+	".*/cross_group/cross_transfer_logic\\.cpp$"
+	# slim replacements live under ws/slim/; exclude full originals to avoid duplicate symbols
+	".*/ws/world_server\\.cpp$"
+	".*/msgproc/msgproc_client\\.cpp$"
+	".*/msgproc/msgproc_cs\\.cpp$"
+	".*/msgproc/msgproc_dp\\.cpp$"
+	".*/msgproc/msgproc_gateway\\.cpp$"
+	".*/msgproc/msgproc_daemon\\.cpp$"
+)
+foreach(_rx IN LISTS _WS_EXCLUDE_SOURCE_REGEXES)
+	list(FILTER SOURCE_FILES EXCLUDE REGEX "${_rx}")
+endforeach()
+
+# slim/*.cpp already included by GLOB_RECURSE — do not append again
 
 # 递归查找文件夹下的 *.hlsl 文件保存到 SHADER_FILES(如果没有 shader 可以删除)
 #file(GLOB_RECURSE SHADER_FILES *.hlsl)
@@ -52,8 +98,9 @@ set_target_properties(ws PROPERTIES FOLDER "src")
 # 设置 hlsl 为 shader 资源文件
 #set_property(SOURCE ${SHADER_FILES} PROPERTY VS_TOOL_OVERRIDE "shader") 
 
-# 头文件目录
+# 头文件目录 — slim first so stub headers can shadow when used by relative name
 target_include_directories(ws PUBLIC 
+    ${PROJECT_COMPONENT_DIR}/ws/slim
     ${PROJECT_COMPONENT_DIR}
     ${PROJECT_COMPONENT_DIR}/ws
     ${PROJECT_COMPONENT_DIR}/def
@@ -86,10 +133,10 @@ target_link_libraries(ws PUBLIC
 	server_net
 	event
 	libcrypto
+	libssl
 	libcurl
 	zlib
 	lua
-	tolua++
 	libprotobuf
 	abseil_dll
 	jsoncpp

@@ -28,6 +28,16 @@ namespace gateway_test_client
 		std::uint32_t hold_max_seconds = 30;
 		// Delay after timed disconnect before reconnect.
 		std::uint32_t reconnect_delay_milliseconds = 200;
+		// "load" = ping stress; "login" = discover gateway via config_center then login
+		std::string mode = "load";
+		std::string account = "test_account";
+		std::string password = "123456";
+		std::int32_t server_id = 10200;
+		// config_center discovery (login mode)
+		std::string config_center_host = "127.0.0.1";
+		std::uint16_t config_center_port = 19000;
+		bool config_center_https = true;
+		std::uint32_t gateway_index = 0;
 	};
 
 	class load_client
@@ -49,6 +59,7 @@ namespace gateway_test_client
 			bool connected = false;
 			bool connecting = false;
 			bool handshake_received = false;
+			bool login_sent = false;
 			bool intentional_disconnect = false;
 			bool disconnecting = false;
 			std::uint64_t session_epoch = 0;
@@ -81,6 +92,8 @@ namespace gateway_test_client
 			std::uint64_t connections_closed = 0;
 			std::uint64_t intentional_disconnects = 0;
 			std::uint64_t handshakes = 0;
+			std::uint64_t login_requests = 0;
+			std::uint64_t login_responses = 0;
 			std::uint64_t requests = 0;
 			std::uint64_t responses = 0;
 			std::uint64_t malformed_responses = 0;
@@ -131,6 +144,7 @@ namespace gateway_test_client
 		void send_ping_for_connection(
 			std::uint32_t connection_index,
 			time_point now);
+		void send_login_for_connection(std::uint32_t connection_index);
 		void retry_connections(time_point now);
 		void cycle_disconnects(time_point now);
 		void expire_timeouts(connection_state& connection, time_point now);

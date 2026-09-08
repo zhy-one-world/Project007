@@ -6,6 +6,9 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
 
+# Deploy next to shipping DLLs so System32\zlib1.dll cannot shadow libcurl deps.
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_COMPONENT_DIR}/../../../server_shipping)
+
 add_definitions(-DBOOST_BIND_GLOBAL_PLACEHOLDERS)
 add_definitions(-DSPDLOG_USE_STD_FORMAT)
 add_definitions(-D_WIN32_WINNT=0x0601)
@@ -46,6 +49,8 @@ target_link_libraries(gateway_test_client PRIVATE
 	server_net
 	event
 	libcurl
+	libssl
+	libcrypto
 	zlib
 	lua
 	libprotobuf

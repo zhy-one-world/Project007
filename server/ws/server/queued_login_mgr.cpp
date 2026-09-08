@@ -12,7 +12,11 @@
 #include "client_session_mgr.hpp"
 #include <login_msg.hpp>
 #include <Logic/char_def.hpp>
+#ifdef WS_SLIM_BUILD
+#include "../slim/csv_synchronization_mgr.h"
+#else
 #include "csv_synchronization_mgr.h"
+#endif
 
 namespace faith
 {

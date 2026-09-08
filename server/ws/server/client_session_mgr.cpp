@@ -9,18 +9,25 @@
 *********************************************************************/
 #include "client_session_mgr.hpp"
 #include "queued_login_mgr.h"
-#include "team/team_ws_mgr.h"
-#include "assist_fight/assist_fight_mgr.h"
-#include "legion/legion_ws_mgr.h"
 #include "server_log.hpp"
-#include "cross_group/cross_transfer_logic.hpp"
-#include "csv_synchronization_mgr.h"
 #include "game_cfg/servers_config.h"
 #include "system/scene/cs_map_mgr_system.h"
 #include "system/scene/cs_map_system.h"
-#include "server/relation/marry_mgr_ws.hpp"
 #include "login_msg.hpp"
 #include "net.pb.h"
+#include "game.pb.h"
+#ifdef WS_SLIM_BUILD
+#include "business_stubs.hpp"
+#include "../slim/csv_synchronization_mgr.h"
+#include "cross_group/cross_transfer_logic.hpp"
+#else
+#include "team/team_ws_mgr.h"
+#include "assist_fight/assist_fight_mgr.h"
+#include "legion/legion_ws_mgr.h"
+#include "cross_group/cross_transfer_logic.hpp"
+#include "csv_synchronization_mgr.h"
+#include "server/relation/marry_mgr_ws.hpp"
+#endif
 
 namespace faith
 {

@@ -71,8 +71,10 @@ namespace faith
 	bool proxy_service_cli::init()
 	{
 		m_port = GATEWAYCONFIG->external_port;
-		_RLOG_(MINFO, "proxy service initialization started, endpoint=127.0.0.1:"
-			<< m_port << " acceptor thread=0");
+		// Bind all interfaces so registry external_host (LAN / 127.0.0.1) is reachable.
+		const std::string listen_host = "0.0.0.0";
+		_RLOG_(MINFO, "proxy service initialization started, endpoint="
+			<< listen_host << ":" << m_port << " acceptor thread=0");
 		m_tcpserver=new net::tcp_server(
 			boost::bind(&proxy_service_cli::on_serverstatus_changed,this,_1),
 			boost::bind(&proxy_service_cli::on_conn_created,this,_1),
@@ -80,7 +82,7 @@ namespace faith
 				&proxy_service_cli::on_conn_closed),this,_1),
 			boost::bind(static_cast<void (proxy_service_cli::*)(net::tcp_server_session_ptr,const void*,size_t)>(
 				&proxy_service_cli::on_data_received),this,_1,_2,_3),
-			"127.0.0.1",m_port,
+			listen_host.c_str(),m_port,
 			GATEWAY_ACCEPTOR_SCHEDULER_THREAD_ID );
 
 		if (!m_tcpserver)

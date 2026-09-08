@@ -31,10 +31,12 @@ namespace faith
 			void handle_unregister(long handle, const Json::Value& body);
 			void handle_query(long handle);
 			void reply_json(long handle, int status, const Json::Value& body);
+			void on_alive_timer(std::uint32_t timer_index);
 
 			allowlist_config m_allowlist;
 			redis_registry m_registry;
 			bool m_http_inited = false;
+			std::uint32_t m_alive_timer = 0x0FFFFFFF;
 		};
 	}
 }

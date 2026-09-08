@@ -1,4 +1,4 @@
-#include "config_center_client.hpp"
+#include "connection/config_center_client.hpp"
 
 #include <thread>
 
@@ -7,15 +7,55 @@
 #include <json/json.h>
 #include <rlog.hpp>
 
+#include <net/http_types.hpp>
+
 #include "http/http_access_mgr.hpp"
 
 namespace faith
 {
+	namespace
+	{
+		bool parse_peers_array(const Json::Value& peers_json, std::vector<config_center_client::peer_endpoint>& out)
+		{
+			if (!peers_json.isArray())
+			{
+				return false;
+			}
+			out.clear();
+			for (const auto& item : peers_json)
+			{
+				config_center_client::peer_endpoint peer;
+				peer.server_type = item.get("server_type", "gateway").asString();
+				if (peer.server_type.empty())
+				{
+					peer.server_type = "gateway";
+				}
+				peer.game_id = item.isMember("game_id")
+					? item.get("game_id", 0).asInt()
+					: item.get("server_index", 0).asInt();
+				peer.internal_host = item.get("internal_host", "").asString();
+				peer.internal_port = item.get("internal_port", 0).asInt();
+				peer.external_host = item.get("external_host", "").asString();
+				peer.external_port = item.get("external_port", 0).asInt();
+				out.push_back(peer);
+			}
+			return true;
+		}
+	}
+
 	std::string config_center_client::make_base_url() const
 	{
-		const char* scheme = m_params.use_https ? "https://" : "http://";
-		return std::string(scheme) + m_params.center_host + ":"
-			+ boost::lexical_cast<std::string>(m_params.center_port);
+		return make_base_url(m_params.center_host, m_params.center_port, m_params.use_https);
+	}
+
+	std::string config_center_client::make_base_url(
+		const std::string& center_host,
+		int center_port,
+		bool use_https) const
+	{
+		const char* scheme = use_https ? "https://" : "http://";
+		return std::string(scheme) + center_host + ":"
+			+ boost::lexical_cast<std::string>(center_port);
 	}
 
 	void config_center_client::poll_until(std::chrono::steady_clock::time_point deadline)
@@ -34,8 +74,9 @@ namespace faith
 		}
 	}
 
-	bool config_center_client::post_json(
-		const std::string& path,
+	bool config_center_client::request_json(
+		const std::string& url,
+		int method,
 		const std::string& body,
 		std::string& response_body,
 		std::string& error,
@@ -50,10 +91,13 @@ namespace faith
 		}
 
 		http_request request;
-		request.url = make_base_url() + path;
-		request.method = e_http_request_type_post;
+		request.url = url;
+		request.method = static_cast<e_http_request_type>(method);
 		request.body = body;
-		request.headers.push_back("Content-Type: application/json");
+		if (!body.empty())
+		{
+			request.headers.push_back("Content-Type: application/json");
+		}
 		request.ssl.verify_peer = false;
 		request.ssl.verify_host = false;
 
@@ -107,6 +151,80 @@ namespace faith
 		}
 		response_body = m_wait_body;
 		error = m_wait_error;
+		return true;
+	}
+
+	bool config_center_client::post_json(
+		const std::string& path,
+		const std::string& body,
+		std::string& response_body,
+		std::string& error,
+		int timeout_ms)
+	{
+		return request_json(
+			make_base_url() + path,
+			static_cast<int>(e_http_request_type_post),
+			body,
+			response_body,
+			error,
+			timeout_ms);
+	}
+
+	bool config_center_client::query_registry_sync(
+		const std::string& center_host,
+		int center_port,
+		bool use_https,
+		std::vector<peer_endpoint>& out,
+		std::string& error,
+		int timeout_ms)
+	{
+		out.clear();
+		if (center_host.empty() || center_port <= 0)
+		{
+			error = "invalid config_center endpoint";
+			return false;
+		}
+
+		std::string response_text;
+		std::string req_error;
+		if (!request_json(
+				make_base_url(center_host, center_port, use_https) + "/v1/registry",
+				static_cast<int>(e_http_request_type_get),
+				"",
+				response_text,
+				req_error,
+				timeout_ms))
+		{
+			error = req_error.empty() ? "registry query failed" : req_error;
+			return false;
+		}
+
+		Json::CharReaderBuilder reader_builder;
+		Json::Value root;
+		std::string parse_error;
+		const std::unique_ptr<Json::CharReader> reader(reader_builder.newCharReader());
+		if (!reader->parse(
+				response_text.data(),
+				response_text.data() + response_text.size(),
+				&root,
+				&parse_error) ||
+			!root.isObject())
+		{
+			error = "invalid registry response";
+			return false;
+		}
+		if (!root.get("ok", false).asBool())
+		{
+			error = root.get("error", "registry rejected").asString();
+			return false;
+		}
+		if (!parse_peers_array(root["peers"], out))
+		{
+			error = "invalid registry peers";
+			return false;
+		}
+		error.clear();
+		_RLOG_(MINFO, "config_center registry query ok, gateways=" << out.size());
 		return true;
 	}
 
