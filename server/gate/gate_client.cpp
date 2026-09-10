@@ -22,7 +22,7 @@
 #include <internal.hpp>
 #include <gate_msg.hpp>
 #include "game_cfg/servers_config.h"
-#include "utility/init_unit.h"
+#include <net/host_ip.hpp>
 #include "log_db_proxy.hpp"
 #include "def/app/app_server.hpp"
 #include "net/net_client_mgr.hpp"
@@ -50,7 +50,7 @@ namespace faith
 
 	bool gate_client::start()
 	{
-		std::string host_ip = init_unit::get_host_ip();
+		std::string host_ip = net::get_host_ip();
 		if (host_ip == m_gate_info.ip_addr)
 		{
 			return false;

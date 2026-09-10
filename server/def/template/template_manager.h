@@ -1,6 +1,7 @@
 #pragma once
 
 #include "logic/type_def.hpp"
+#include "service/server_service.hpp"
 #include "template/ServerTemplateHead.h"
 #include "time.hpp"
 
@@ -8,15 +9,25 @@ namespace faith
 {
 	class csv_row;
 
-    class template_manager
+    class template_manager : public server_service
     {
     public:
+		enum class load_mode
+		{
+			full,
+			dp_only,
+		};
+
         static template_manager& get_instance()
         {
             static template_manager instance;
             return instance;
         }
-    public:
+
+		void configure(load_mode mode);
+		const char* service_name() const override { return "template_manager"; }
+
+		// Compatibility / hot-reload: configure + stop(if needed) + start.
         void init();
 		void init_for_dp();
         typedef std::map<int32, ui8*> template_type;
@@ -132,12 +143,19 @@ namespace faith
 		std::string									get_all_string_context(const int32 string_template_id, std::string separative_sign = ",");
 	public:
 		bool                                        is_message_use_lua(int32 head);
+	protected:
+		bool on_start() override;
+		void on_stop() override;
 	private:
 		template_manager();
+		void										load_full();
+		void										load_for_dp();
+		void										clear_all_templates();
 		template<class T>
 		void										register_template(e_template template_name, std::string&& file_name);
 		template <class T>
 		void										re_struct_in_memory(template_type& template_file, e_template template_name, std::shared_ptr<csv_row> row_content, const std::vector<std::string>& result_types, const std::vector<std::string>& key_types, int32 data_size);
+		load_mode									m_load_mode = load_mode::full;
 		template_type								template_map[e_template_max];
 		std::vector<int32>							m_empty_int_array;
 		std::vector<float>							m_empty_float_array;

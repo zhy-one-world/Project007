@@ -231,6 +231,13 @@ namespace faith
 		return true;
 	}
 
+	servers_config_manager::servers_config_manager()
+	{
+		m_self_config = nullptr;
+		m_server_config = nullptr;
+		memset(m_server_config_array, 0, sizeof(m_server_config_array));
+	}
+
 	net_config_base const* servers_config_manager::get_self_config() 
 	{ 
 		return nullptr;
@@ -245,20 +252,47 @@ namespace faith
 		return m_server_config_array[server_type];
 	}
 
-	bool servers_config_manager::init_config() 
+	bool servers_config_manager::init_config()
 	{
-		memset(m_server_config_array, 0, sizeof(m_server_config_array));
+		return start();
+	}
+
+	bool servers_config_manager::on_start()
+	{
+		return load_config();
+	}
+
+	void servers_config_manager::on_stop()
+	{
+		clear_config();
+	}
+
+	void servers_config_manager::clear_config()
+	{
+		delete m_server_config;
+		m_server_config = nullptr;
+		m_self_config = nullptr;
+		for (int32 i = 0; i < e_server_type_max; ++i)
+		{
+			delete m_server_config_array[i];
+			m_server_config_array[i] = nullptr;
+		}
+	}
+
+	bool servers_config_manager::load_config()
+	{
+		clear_config();
 		TiXmlDocument doc;
 		if (!doc.LoadFile("./servers.xml"))
 		{
-			std::cout << "servers_config_manager::init_config fail!! load servers.xml: "
+			std::cout << "servers_config_manager::load_config fail!! load servers.xml: "
 				<< doc.ErrorDesc() << std::endl;
 			return false;
 		}
 		TiXmlElement* root = doc.RootElement();
 		if (root == nullptr || std::strcmp(root->Value(), "servers") != 0)
 		{
-			std::cout << "servers_config_manager::init_config fail!! root must be <servers>" << std::endl;
+			std::cout << "servers_config_manager::load_config fail!! root must be <servers>" << std::endl;
 			return false;
 		}
 		return parse_by_xml(root);

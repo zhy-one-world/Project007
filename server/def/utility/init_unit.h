@@ -52,7 +52,6 @@ namespace faith
 		//一些字符串的处理
 		static string	implode(const vector<string>& v_src, string sep = "&#");
 		static void		explode(const string& str_src, vector<string>& v_ret, string sep = "&#");
-		static char*	get_host_ip(void);
 		static void		format_str(char* szBuf, int32 nBufSize, const char* szText, const vector<string>& vtVar);
 		static bool get_map_public(int32 map_type);
 		static bool is_cross_server_npc(int32 npc_type);//是否可以跨服与这些NPC交互

@@ -7,12 +7,14 @@
 
 
 #include "server_def.hpp"
+#include "service/server_service.hpp"
 
 #include <cstring>
 #include <map>
 #include <string>
 #include <json/json.h>
 #include <singleton.hpp>
+#include "service/server_service.hpp"
 
 
 
@@ -324,50 +326,39 @@ namespace faith
 
 
 
-	class servers_config_manager :  public  singleton<servers_config_manager>
-
+	class servers_config_manager
+		: public server_service
+		, public singleton<servers_config_manager>
 	{
-
+		friend class singleton<servers_config_manager>;
 		typedef std::map<int32, net_config_base*> server_config_map;
 
 	public:
+		const char* service_name() const override { return "servers_config_manager"; }
 
-		servers_config_manager()
-
-		{
-
-			m_self_config = nullptr;
-
-			m_server_config = nullptr;
-
-			memset(m_server_config_array, 0, sizeof(m_self_config));
-
-		};
-
+		// Compatibility wrapper around start().
 		bool init_config();
 
 		server_base_config const* get_server_config() { return m_server_config; }
-
 		net_config_base const* get_self_config();
-
 		net_config_base* get_server_config(e_server_type server_type);
 
+	protected:
+		bool on_start() override;
+		void on_stop() override;
+
 	private:
+		servers_config_manager();
 
+		bool load_config();
+		void clear_config();
 		bool parse_by_xml(TiXmlElement* root);
-
 		bool parse_by_xml(TiXmlElement* element, e_server_type server_type);
-
 		net_config_base* create_server_config(e_server_type server_type);
 
-	private:
-
 		server_base_config* m_server_config;
-
 		net_config_base* m_self_config;
-
 		net_config_base* m_server_config_array[e_server_type_max];
-
 	};
 
 

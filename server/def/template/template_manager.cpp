@@ -16,14 +16,70 @@ namespace faith
 		m_game_config_template = nullptr;
     }
 
+	void template_manager::configure(load_mode mode)
+	{
+		m_load_mode = mode;
+	}
+
+	void template_manager::init()
+	{
+		configure(load_mode::full);
+		if (is_started())
+		{
+			stop();
+		}
+		start();
+	}
+
 	void template_manager::init_for_dp()
+	{
+		configure(load_mode::dp_only);
+		if (is_started())
+		{
+			stop();
+		}
+		start();
+	}
+
+	bool template_manager::on_start()
+	{
+		if (m_load_mode == load_mode::dp_only)
+		{
+			load_for_dp();
+			return true;
+		}
+		load_full();
+		if (nullptr == m_game_config_template)
+		{
+			CONSOLE_ERROR("m_game_config_template is null");
+		}
+		return true;
+	}
+
+	void template_manager::on_stop()
+	{
+		clear_all_templates();
+	}
+
+	void template_manager::clear_all_templates()
+	{
+		for (int32 i = 0; i < e_template_max; ++i)
+		{
+			remove_template(static_cast<e_template>(i));
+		}
+		vec_grade_qiyuan_templates.clear();
+		vec_flair_qiyuan_templates.clear();
+		m_game_config_template = nullptr;
+	}
+
+	void template_manager::load_for_dp()
 	{
 		template_size::get_instance().init_template_size_for_dp();
 		std::string template_dir = R"(../res/csv/)";
 		register_template<LuaMessageTemplate>(e_LuaMessageTemplate, template_dir + "LuaMessageTemplate.csv");
 	}
 
-    void template_manager::init()    
+    void template_manager::load_full()
 	{
 		template_size::get_instance().init_template_size();
 
@@ -182,11 +238,6 @@ namespace faith
 		register_template<ResultsPreviewTemplate>(e_AwakenFetterTemplate, template_dir + "AwakenFetterTemplate.csv");
 
 		m_game_config_template = get_template<GameConfigTemplate>(e_GameConfigTemplate, 99000001);
-		if (nullptr == m_game_config_template)
-		{
-			CONSOLE_ERROR("m_game_config_template is null");
-			return;
-		}
     }
 
     static std::string get_item_type(std::string& item)

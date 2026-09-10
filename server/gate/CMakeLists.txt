@@ -82,6 +82,8 @@ target_link_libraries(gate PUBLIC
 	server_lua
 	server_net
 	event
+	libssl
+	libcrypto
 	libcurl
 	zlib
 	lua

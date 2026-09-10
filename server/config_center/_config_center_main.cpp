@@ -13,7 +13,7 @@
 #include <xchar.hpp>
 
 #include "app/app_server.hpp"
-#include "config_center_service.hpp"
+#include "cc_main_service.hpp"
 #include "dump/dump.hpp"
 
 namespace faith
@@ -40,22 +40,13 @@ namespace faith
 
 	static bool init()
 	{
-		if (!config_center::config_center_service::getInstance().init("./config_center.xml"))
-		{
-			return false;
-		}
-		if (!config_center::config_center_service::getInstance().start())
-		{
-			return false;
-		}
-		_RLOG_(MINFO, "config_center started");
-		return true;
+		cc_main_service::getInstance().configure("./config_center.xml");
+		return cc_main_service::getInstance().start();
 	}
 
 	static void release()
 	{
-		config_center::config_center_service::getInstance().stop();
-		_RLOG_(MINFO, "config_center released");
+		cc_main_service::getInstance().stop();
 	}
 }
 

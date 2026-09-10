@@ -13,7 +13,7 @@
 #include "net_client.hpp"
 #include "net_server_mgr.hpp"
 #include "server_log.hpp"
-#include "utility/init_unit.h"
+#include <net/host_ip.hpp>
 #include <net/scheduler.hpp>
 #include <rlog.hpp>
 
@@ -85,7 +85,7 @@ namespace faith
 			xstring ip = net_server_mgr::getInstance().get_server_ip();
 			if (m_server_info.server_type == e_server_type_gate)
 			{
-				ip = init_unit::get_host_ip();
+				ip = net::get_host_ip();
 			}
 			memcpy(req.server_info.ip_addr, ip.c_str(), ip.size());
 			req.server_info.port = net_server_mgr::getInstance().get_server_port();

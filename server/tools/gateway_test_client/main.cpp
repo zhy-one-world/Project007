@@ -193,11 +193,16 @@ namespace
 
 	bool resolve_gateway_from_config_center(gateway_test_client::options& config)
 	{
-		faith::net::scheduler::getInstance().set_option(
-			faith::net::scheduler::options::thread_num(
-				config.scheduler_threads > 0 ? config.scheduler_threads : 2));
-		faith::net::scheduler::getInstance().startup(false);
-		faith::http_access_mgr::get_instance().init(false);
+		static bool runtime_ready = false;
+		if (!runtime_ready)
+		{
+			faith::net::scheduler::getInstance().set_option(
+				faith::net::scheduler::options::thread_num(
+					config.scheduler_threads > 0 ? config.scheduler_threads : 2));
+			faith::net::scheduler::getInstance().startup(false);
+			faith::http_access_mgr::get_instance().init(false);
+			runtime_ready = true;
+		}
 
 		std::vector<faith::config_center_client::peer_endpoint> peers;
 		std::string error;
@@ -245,6 +250,23 @@ namespace
 
 		config.host = selected.external_host;
 		config.port = static_cast<std::uint16_t>(selected.external_port);
+		// Local compound: config_center on loopback but registry may advertise LAN IP
+		// that is unreachable from this process (firewall / wrong NIC). Prefer 127.0.0.1.
+		const bool cc_is_loopback =
+			config.config_center_host == "127.0.0.1" ||
+			config.config_center_host == "localhost" ||
+			config.config_center_host == "::1";
+		const bool gw_is_loopback =
+			config.host == "127.0.0.1" ||
+			config.host == "localhost" ||
+			config.host == "::1" ||
+			config.host == "0.0.0.0";
+		if (cc_is_loopback && !gw_is_loopback)
+		{
+			_RLOG_(MWARN, "registry external_host=" << config.host
+				<< " rewritten to 127.0.0.1 for local config_center");
+			config.host = "127.0.0.1";
+		}
 		_RLOG_(MINFO, "selected gateway[" << config.gateway_index << "/" << gateways.size()
 			<< "] game_id=" << selected.game_id
 			<< " endpoint=" << config.host << ":" << config.port);
@@ -271,10 +293,12 @@ int main(int argc, char** argv)
 
 	if (config.mode == "login")
 	{
-		if (!resolve_gateway_from_config_center(config))
+		constexpr int k_resolve_retry_ms = 10000;
+		while (!resolve_gateway_from_config_center(config))
 		{
-			faith::rlog::shutdown();
-			return 1;
+			_RLOG_(MWARN, "gateway discovery failed; retry in "
+				<< k_resolve_retry_ms << "ms");
+			std::this_thread::sleep_for(std::chrono::milliseconds(k_resolve_retry_ms));
 		}
 	}
 

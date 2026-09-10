@@ -4,7 +4,6 @@
 #include <rlog.hpp>
 
 #include "game_cfg/servers_config.h"
-#include "utility/init_unit.h"
 
 namespace faith
 {

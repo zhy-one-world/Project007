@@ -309,28 +309,43 @@ namespace faith
 		return true;
 	}
 
-	void config_center_client::start_heartbeat()
+	void config_center_client::configure(const register_params& params)
 	{
-		if (!m_registered.load())
-		{
-			return;
-		}
-		if (m_heartbeat_timer != net::scheduler::scheduler_invalid_timer_index)
-		{
-			return;
-		}
-		const int interval = m_params.heartbeat_interval_ms > 0
-			? m_params.heartbeat_interval_ms
-			: 10000;
-		m_heartbeat_timer = net::scheduler::getInstance().add_timer(
-			static_cast<uint32>(interval),
-			0,
-			boost::bind(&config_center_client::on_heartbeat_timer, this, _1));
-		_RLOG_(MINFO, "config_center heartbeat started, interval_ms=" << interval);
+		m_params = params;
 	}
 
-	void config_center_client::stop()
+	bool config_center_client::ensure_registered()
 	{
+		std::string error;
+		if (!register_sync(m_params, error))
+		{
+			_RLOG_(MWARN, "config_center_client ensure_registered failed: " << error);
+			m_registered = false;
+			return false;
+		}
+		start_heartbeat();
+		return true;
+	}
+
+	bool config_center_client::on_start()
+	{
+		m_running = true;
+		http_access_mgr::get_instance().init(false);
+
+		if (!ensure_registered())
+		{
+			_RLOG_(MWARN, "config_center_client register deferred, retry every "
+				<< k_retry_interval_ms << "ms");
+			schedule_register_retry();
+		}
+		// Process stays up even if config_center is not ready yet.
+		return true;
+	}
+
+	void config_center_client::on_stop()
+	{
+		m_running = false;
+		clear_register_retry_timer();
 		if (m_heartbeat_timer != net::scheduler::scheduler_invalid_timer_index)
 		{
 			net::scheduler::getInstance().remove_timer(m_heartbeat_timer);
@@ -350,10 +365,77 @@ namespace faith
 		}
 	}
 
-	void config_center_client::on_heartbeat_timer(uint32)
+	void config_center_client::clear_register_retry_timer()
+	{
+		if (m_register_retry_timer != net::scheduler::scheduler_invalid_timer_index)
+		{
+			net::scheduler::getInstance().remove_timer(m_register_retry_timer);
+			m_register_retry_timer = net::scheduler::scheduler_invalid_timer_index;
+		}
+	}
+
+	void config_center_client::schedule_register_retry()
+	{
+		if (!m_running.load())
+		{
+			return;
+		}
+		if (m_register_retry_timer != net::scheduler::scheduler_invalid_timer_index)
+		{
+			return;
+		}
+		m_register_retry_timer = net::scheduler::getInstance().add_timer(
+			static_cast<uint32>(k_retry_interval_ms),
+			boost::bind(&config_center_client::on_register_retry_timer, this, _1));
+	}
+
+	void config_center_client::on_register_retry_timer(uint32)
+	{
+		if (!m_running.load())
+		{
+			return;
+		}
+		if (m_registered.load())
+		{
+			clear_register_retry_timer();
+			return;
+		}
+		if (ensure_registered())
+		{
+			clear_register_retry_timer();
+		}
+	}
+
+	void config_center_client::start_heartbeat()
 	{
 		if (!m_registered.load())
 		{
+			return;
+		}
+		if (m_heartbeat_timer != net::scheduler::scheduler_invalid_timer_index)
+		{
+			return;
+		}
+		clear_register_retry_timer();
+		const int interval = m_params.heartbeat_interval_ms > 0
+			? m_params.heartbeat_interval_ms
+			: 10000;
+		m_heartbeat_timer = net::scheduler::getInstance().add_timer(
+			static_cast<uint32>(interval),
+			0,
+			boost::bind(&config_center_client::on_heartbeat_timer, this, _1));
+		_RLOG_(MINFO, "config_center heartbeat started, interval_ms=" << interval);
+	}
+
+	void config_center_client::on_heartbeat_timer(uint32)
+	{
+		if (!m_running.load())
+		{
+			return;
+		}
+		if (!m_registered.load())
+		{
+			schedule_register_retry();
 			return;
 		}
 		Json::Value body;
@@ -371,7 +453,7 @@ namespace faith
 		request.ssl.verify_host = false;
 		http_access_mgr::get_instance().request_async(
 			request,
-			[](const http_response& response)
+			[this](const http_response& response)
 			{
 				if (response.error_code != 0 ||
 					response.http_status < 200 ||
@@ -380,7 +462,15 @@ namespace faith
 					_RLOG_(MWARN, "config_center heartbeat failed status="
 						<< response.http_status
 						<< " curl=" << response.error_code
-						<< " err=" << response.error);
+						<< " err=" << response.error
+						<< "; will re-register");
+					m_registered = false;
+					if (m_heartbeat_timer != net::scheduler::scheduler_invalid_timer_index)
+					{
+						net::scheduler::getInstance().remove_timer(m_heartbeat_timer);
+						m_heartbeat_timer = net::scheduler::scheduler_invalid_timer_index;
+					}
+					schedule_register_retry();
 				}
 			});
 	}

@@ -86,7 +86,9 @@ namespace faith
 			const s_server_info& temp_server_info = m_client_connmap[i].get_server_info();
 			if (strcmp(server_info.ip_addr, temp_server_info.ip_addr) == 0 && server_info.port == temp_server_info.port)
 			{
-				return m_client_connmap[i].get_array_index();
+				// Already tracking this peer; treat as success (do not return index as bool —
+				// index 0 would look like failure).
+				return true;
 			}
 		}
 		net_client* server_client_ptr = get_empty_client();
@@ -100,7 +102,7 @@ namespace faith
 			boost::bind(&net_client_mgr::on_data_received, this, _1, _2, _3)
 		);
 		server_client_ptr->connect_to();
-		return server_client_ptr->get_array_index();
+		return true;
 	}
 
 	void net_client_mgr::stop()

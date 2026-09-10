@@ -202,20 +202,6 @@ namespace faith
 			}
 		}
 	}
-	char* init_unit::get_host_ip(void) 
-	{
-		char cHost[256];
-
-		gethostname(cHost, 256);
-
-		hostent *pHost = gethostbyname(cHost);
-		in_addr addr;
-
-		char *p = pHost->h_addr_list[0];
-		memcpy(&addr.S_un.S_addr, p, pHost->h_length);
-
-		return inet_ntoa(addr);
-	}
 	void init_unit::format_str(char* szDest, int32 nDestSize, const char* szText, const vector<string>& vtVar)
 	{
 		memset(szDest, 0, nDestSize);
