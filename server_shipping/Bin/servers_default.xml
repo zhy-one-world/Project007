@@ -45,7 +45,8 @@
 	</gate>
 
 	<ws>
-		<internal_host>192.168.1.59</internal_host>
+		<!-- 本地联调绑定本机；勿填其它机器网卡 IP，否则 listen / wait-for-ws 会失败 -->
+		<internal_host>0.0.0.0</internal_host>
 		<internal_port>1000</internal_port>
 		<http_port>9918</http_port>
 		<max_team_user_num>2</max_team_user_num>
